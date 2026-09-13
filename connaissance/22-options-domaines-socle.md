@@ -1,0 +1,81 @@
+# Options de découpage en domaines du socle transactionnel
+
+**Vue de travail courante après U75 (P81 version 0.4, D02 en réexamen) :** la [carte des domaines cœur éprouvée par les récits](25-domaines-coeur-et-epreuve-recits.md) propose dix domaines, 35 formulations de capacités et une matrice des cas. P81 prolonge cette étape ; ses frontières et capacités restent proposées. Les formulations ci-dessous conservent leur provenance historique.
+
+10 septembre 2026 — [U51](01-contributions-utilisateur.md#u51), F148 ; analyse Codex A31/P76. **Frontières et regroupements proposés. U52 confirme le critère problématique et la démarche par cas, sans valider la liste.** Cette note prolonge la [première liste U47](20-domaines-candidats.md) avec les [trois cas d’achat U48](21-achats-et-orchestration.md). Elle ne crée pas un second catalogue : les fiches CAP restent dans leur registre, sans reclassement.
+
+La capability map cible la couche transactionnelle (U50). Le domaine conserve le sens d’un espace cohérent de problèmes liés (U45/U46). Les moteurs de décision, détermination et orchestration sont des moyens de réalisation dans les deux couches (U49), sans domaine Orchestration ajouté. Le modèle fonctionnel de la couche processus reste distinct.
+
+## Précision de méthode après U52
+
+Laurent qualifie **Source to Pay de lecture processus** et **Order Promising d’approche problématique, donc de domaine**. Il approuve l’examen des frontières avec les exemples. Sources : [U52](01-contributions-utilisateur.md#u52), F149/F150 ; C42.
+
+Le critère du domaine est donc établi : des problèmes métier liés dans un périmètre cohérent. Le travail porte sur les problèmes à réunir ou à séparer et sur les règles qui justifient ces limites. Le rôle local de domaine est reconnu à Order Promising, sans arrêter ses frontières ni lui attribuer un autre niveau natif SAP.
+
+La référence principale éventuelle et les grandes familles de présentation sont des choix distincts. Les options A/B/C ci-dessous conservent la discussion U51, mais ne constituent pas trois définitions concurrentes du domaine : leurs usages doivent respecter ce critère. Aucune adoption des dix périmètres, d’un Univers ou d’un catalogue principal n’en résulte.
+
+## Trois options examinées en U51
+
+| Option | Construction proposée | Intérêt | Difficulté ou limite |
+| --- | --- | --- | --- |
+| **A — Une référence principale filtrée** | Retenir une hiérarchie existante, par exemple SAP RBA, puis sélectionner et adapter les éléments du périmètre commerce transactionnel. | Structure et vocabulaire de comparaison déjà disponibles ; adaptations faciles à localiser. | Un Business Domain natif peut être trop large pour notre domaine local. Le catalogue complet et ses définitions ne sont pas acquis ; les exclusions et frontières propres au projet demandent un filtrage. Choisir cette option ne choisirait pas un ERP. |
+| **B — De grandes familles commerce** | Partir de familles locales telles que connaissance commerciale, achats/approvisionnement, vente/service et stocks/exécution ; les affiner ensuite. | Lecture d’ensemble courte et accessible, inspirée des thèmes récurrents de l’étude. | Une famille peut réunir plusieurs problèmes distincts. Stock, promesse et exécution risquent de devenir peu visibles à cette maille. Les quatre intitulés sont une synthèse locale, pas une nomenclature commune publiée. |
+| **C — Des domaines de problèmes cohérents** | Définir les problèmes durables du socle, confronter leurs frontières aux récits et comparer leur contenu à plusieurs modèles du marché. | Correspond au critère de Laurent ; permet d’isoler les problèmes que nos cas rendent significatifs. | Demande de justifier les frontières et les correspondances ; les domaines ne seront pas toujours au même niveau nominal que ceux d’un éditeur. |
+
+**Après U52 : travailler les frontières de domaines de problèmes à partir des cas est la démarche confirmée par Laurent.** B peut fournir un niveau Univers si utile ; A peut fournir une référence de comparaison privilégiée si Laurent la choisit ultérieurement. Ces usages peuvent se combiner, mais aucun catalogue principal n’est adopté ici. La profondeur des capacités se décide ensuite selon leurs aptitudes, sans fixer mécaniquement un nombre de niveaux.
+
+## Ce que les sources apportent effectivement
+
+Les trois sources suivantes ont été reconsultées le 10 septembre 2026 ; les limites de l’[étude comparative](../marche/etudes/2026-09-09-modeles-marche/etude-comparative.md) demeurent.
+
+- **SAP RBA** : Enterprise Domain → Business Domain → Business Area → Business Capability. L’exemple distingue Inventory Management et Order Promising sous Supply Chain Execution, et identifie Sourcing and Procurement comme domaine. Une aire SAP pourrait donc servir de point de comparaison à un domaine local, après examen de son contenu. Source : [cours SAP](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), sections Reference Architecture Content Example, Framework et Business Capability Model Example ; édition du catalogue non précisée. ELM001/ELM014.
+- **IBM CBM** : la figure retail répartit des composants entre compétences métier et responsabilités Direct/Control/Execute. Elle offre d’autres rapprochements, sans constituer une hiérarchie de capacités équivalente. Source : [G510-6163-00](https://public.dhe.ibm.com/software/emea/dk/frontlines/g510-6163-component-business-models.pdf), 2005, figure 6, page imprimée 9 / PDF 11. ELM025 ; définitions détaillées absentes de cette figure.
+- **Microsoft Dynamics** : Source to pay, Order to cash et Inventory to deliver sont des parcours de bout en bout. Leur contenu permet de tester la couverture, mais leurs limites ne deviennent pas automatiquement nos domaines. Source : [vue des scénarios](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview), tableau central, date affichée 2025-12-16. ELM027 ; les titres et dates des pages liées peuvent différer.
+
+Oracle, APQC et ARTS conservent les rôles de contrôle de parcours et de vocabulaire établis dans l’étude, sans nouvelle vérification de leurs catalogues dans ce complément. Les thèmes récurrents sont des indices ; une similitude de libellé ne prouve aucune équivalence de périmètre.
+
+## Une liste élargie pour discuter l’option C
+
+Les six domaines de U47 restent identifiables. Quatre zones sont maintenant explicitées en propositions de domaines : produits, relations partenaires, achats et retours. **Dix n’est pas un nombre cible** : certaines propositions peuvent être réunies, séparées ou redéfinies. Les colonnes de marché indiquent des appuis à examiner, pas des domaines complets déjà comparés.
+
+| Domaine proposé | Problèmes liés à traiter | Appuis de terrain et limites | Repères de marché |
+| --- | --- | --- | --- |
+| **Produits opérationnels** | Qu’est-ce qui peut être acheté, stocké, transformé ou vendu, et avec quelles caractéristiques utiles aux opérations ? | CAP001 ; articles et maille SKU décrits, composants U48 à préciser. Conception PLM exclue ; usage opérationnel de ses résultats à décrire. | Gestion des produits et articles dans les matrices de l’étude ; référentiel opérationnel complet non comparé. |
+| **Relations partenaires** | Avec qui l’entreprise peut-elle acheter, vendre ou faire réaliser une prestation, à quel titre et sous quelles conditions applicables ? | Appui partiel CAP002/CAP003 ; clients, fournisseurs, façonnier. La cohérence de ce regroupement et ses règles restent peu étayées. Il ne couvre pas automatiquement les sites ni tout le CRM. | Vendor management / customer service chez IBM ; processus fournisseurs Microsoft dans l’étude. Pistes partielles, sans équivalence de domaine. |
+| **Achats et engagements fournisseurs** | Quel besoin de bien ou de prestation formaliser, quel engagement prendre et quelle fourniture a été réalisée ? | CAP029–CAP032, U48 : les trois cas d’achat. Fermeté Q034 ouverte, faits et coordination à distinguer. | Sourcing and Procurement SAP ; ELM043/ELM044 pour les variantes de sous-traitance. |
+| **Stock** | Quelles quantités sont connues, où et dans quel état ; quels faits et écarts expliquent leurs variations ? | CAP004/CAP005 ; magasin documenté. Inventaires Q065 et ressources chez le façonnier Q069 à préciser. Autorité C-Log préservée. | Inventory Management SAP et contenus stock des autres références examinées. |
+| **Disponibilité et engagements de ressources** | Quelles ressources sont utilisables pour un usage et un horizon ; comment protéger des usages et engager des quantités ? | CAP006–CAP010 ; protection et réservation du périmètre historique de Beaumanoir. Frontière avec promesse ouverte. | Fonctions SAP/Microsoft de disponibilité, protection et réservation ; périmètre agrégé local non standard. |
+| **Promesse / Order Promising** — rôle de domaine reconnu en U52, frontières ouvertes | Quelle quantité et quelle date engager envers une demande ; comment les confirmer ou les réviser ? | CAP010/CAP035 ; besoins Boardriders sur futur et priorité. Aucun déploiement détaillé prouvé. | Order Promising SAP, avec une portée qui peut inclure des sujets placés dans le domaine local précédent. |
+| **Commandes clients** — frontière processus commercial / engagements transactionnels en réexamen U54/U55 | Quelle demande commerciale est acceptée, avec quel contenu et quels changements possibles au cours de sa vie ? | CAP014 ; persistance de la commande entre tentatives d’exécution. Cycle détaillé Q023 ouvert. | Gestion des commandes dans SAP/IBM et contrôle par les processus Microsoft. |
+| **Détermination du besoin de réassort** — maille et rattachement en réexamen U53–U57 | Quel renouvellement du stock demander à partir d’objectifs et de seuils applicables ? | CAP011–CAP013 ; IRMA–Storeland. Approvisionnement interne à distinguer de l’achat fournisseur ; saison exclue. | Replenishment IBM ; contenus de réapprovisionnement de l’étude. |
+| **Prestations d’exécution du commerce** | Quelle prestation demander, quel engagement de réalisation obtenir et quel résultat connaître ? | Parties de CAP015–CAP018/CAP020/CAP036 ; magasin et échanges C-Log. Tâches et dossiers dans l’autre modèle ; exécution physique C-Log autonome. | Entrepôt, transport et exécution dans les sources : portée externe souvent plus large. Aucune équivalence ni modèle universel de prestation prouvé. |
+| **Retours et échanges** — distinguer parcours et effets transactionnels, U54/U55 | Quel retour ou échange est admissible et quels effets produit-il sur la demande, les engagements et le stock ? | CAP033/CAP034 ; cas détaillés Sarenza encore manquants. Le dossier de réclamation relève de l’autre modèle ; ses effets opérationnels restent à examiner ici. | Contrôles de parcours Oracle/Microsoft et Reverse logistics IBM dans l’étude, sans assimilation au dossier SAV. |
+
+Les **sites** et les **conditions commerciales** restent des frontières explicites à instruire, notamment dans CAP002/CAP003 et Q010. Ils ne disparaissent pas parce que la liste ne leur attribue pas encore un domaine autonome. Le sens d’un site peut intervenir dans Stock, Réassort ou Prestations ; celui d’une condition dans Produits, Relations partenaires, Achats ou Commandes. Déterminer les problèmes et règles avant d’imposer un référentiel unique ou de dupliquer l’information.
+
+Le faible niveau de preuve de certaines lignes empêche de considérer la liste comme exhaustive. La sous-traitance de confection est un cas traversant achats, ressources et résultat à expliquer ; elle ne crée pas automatiquement un domaine Manufacturing ni une capacité générique de prestation commune à toute exécution.
+
+## Frontières sur lesquelles de vraies alternatives existent
+
+| Sujet | Option de regroupement | Option de séparation | Cas discriminant et appréciation proposée |
+| --- | --- | --- | --- |
+| Stock, disponibilité et promesse | Stock et promesse comme deux domaines ; positionner disponibilité/engagements avec l’un ou l’autre selon leur résultat. | Trois domaines : Stock ; Disponibilité et engagements de ressources ; Promesse. | Protection pour un groupe sans commande, puis promesse Boardriders sur futur et révision prioritaire. La séparation à trois est utile pour explorer, mais reste une hypothèse plus fine que l’extrait SAP. |
+| Besoin de réassort et engagement commercial — réexamen U53–U57 | Examiner les problèmes de Supply communs aux achats, ventes, transferts et retours. | Distinguer formation du besoin, couverture/promesse, exécution, faits de stock et engagement commercial. | Le même besoin peut être satisfait dans une société ou entre sociétés. Ce ne sont pas deux cases concurrentes pour un parcours entier ; le type de parcours OMS est distinct des aptitudes du socle. Voir C43 et la [note de réexamen](23-reassort-transferts-et-promesse.md). |
+| Commande et exécution | Un domaine large de satisfaction des commandes. | Commandes clients et Prestations d’exécution du commerce distincts. | Commande conservée malgré l’échec d’une tentative magasin. Le récit soutient des vies et résultats distincts, sans imposer un découpage logiciel. |
+| Produits et partenaires | Un domaine Référentiels opérationnels. | Des domaines selon les problèmes de qualification des produits et des relations partenaires. | Composants techniques et fabricants/façonniers dans U48. Partager des opérations de création/modification de données ne suffit pas à établir un même domaine ; frontière encore peu documentée. |
+
+## Réexamen après U53–U57
+
+La [note sur le cœur de Supply](23-reassort-transferts-et-promesse.md) examine les transferts, la promesse et les variantes commerciales. Laurent situe les parcours de l’OMS dans un Case Management préimplémenté de vente, au-dessus du transactionnel Supply ; celui-ci contrôle, orchestre et optimise la logistique et possède une intelligence propre de rééquilibrage, prévision et gestion des impondérables. Les intitulés Commandes, Réassort ou Retours ci-dessus ne peuvent donc pas être repris comme domaines du socle du seul fait des types de demandes OMS. Les aptitudes transactionnelles durables et leurs frontières restent à identifier ; aucun candidat historique n’est déplacé automatiquement.
+
+U58/F158 distingue cette analyse métier du périmètre de développement : la logistique est hors réalisation de la plateforme FLOW, mais en adhérence. Les prestations et décisions logistiques doivent être connues à la frontière ; leur présence dans les exemples ou domaines discutés ne les attribue pas aux développements FLOW. Voir la [précision de périmètre](23-reassort-transferts-et-promesse.md#périmètre-flow-et-adhérence-logistique).
+
+## Utilisation de cette proposition
+
+Discuter d’abord le problème et les limites de chaque domaine, puis deux ou trois capacités et cas concrets. Reprendre en priorité le stock/protection/promesse, les trois achats et le réassort, puis compléter les zones peu décrites. Les grandes familles de B peuvent être ajoutées comme Univers si elles apportent une lecture utile, sans forcer les dix lignes dans un arbre définitif.
+
+[CMP031](../marche/comparaisons.md#cmp031) conserve la provenance et les limites. Les correspondances existantes de capacités restent valables à leur maille ; **les domaines complets proposés ici ne sont pas encore comparés précisément**. Les 36 fiches CAP, leurs statuts et leurs définitions sont inchangés.
+
+## Appui de marché précisé après U59
+
+Laurent juge la granularité SAP prometteuse. La [comparaison complémentaire](../marche/premier-niveau-regroupement-capacites.md#granularité-sap-et-autres-modèles-orientés-domaines) propose en P78 d’éprouver en premier la maille Business Area sur nos domaines, sans alignement obligatoire de niveaux ni adoption du catalogue complet. Après U60, IBM reste historique et non prioritaire, BIAN périphérique, TM Forum exploratoire ; la Guild est [approfondie](../marche/bizbok-capacites-et-domaines.md) pour vérifier définition et décomposition des capacités. Le critère des problèmes cohérents et le périmètre de développement FLOW restent inchangés.

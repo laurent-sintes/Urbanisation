@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FLOW modeling roadmap",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "model_id": {
+      "const": "flow-modeling-roadmap"
+    },
+    "space": {
+      "const": "backlog"
+    },
+    "as_of": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "current_focus": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "domain",
+          "capability",
+          "group",
+          "object",
+          "document",
+          "event"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "planned",
+              "deferred",
+              "structure_prepared",
+              "in_progress",
+              "completed"
+            ]
+          },
+          "candidate_terms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "name_state": {
+            "enum": [
+              "not_decided",
+              "not_applicable",
+              "decided"
+            ]
+          },
+          "semantic_definition_state": {
+            "enum": [
+              "not_defined",
+              "partly_defined",
+              "defined"
+            ]
+          },
+          "instantiate_now": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "subject",
+          "state",
+          "candidate_terms",
+          "name_state",
+          "semantic_definition_state",
+          "instantiate_now",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "model_id",
+    "space",
+    "as_of",
+    "source_refs",
+    "current_focus",
+    "extensions",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "beaumanoir-shared-context",
+  "space": "panorama-as-is",
+  "version": "2026-09-13.1",
+  "as_of": "2026-09-13",
+  "observed_at": null,
+  "assessment_status": "partially_documented",
+  "source_files": [
+    {
+      "path": "connaissance/07-composants.md",
+      "sha256": "1abde7fd576d510380efbb9ed055354eda0739337fba5afb52455ee69ccb98bf"
+    },
+    {
+      "path": "connaissance/08-flux.md",
+      "sha256": "11d06358338df5c42b08f0d4bb78e1792e7b22674c0106f4ab9e8baaa1b59c94"
+    },
+    {
+      "path": "connaissance/10-autorites-information.md",
+      "sha256": "a2da14023a030252019f389ea9ba48e724335e8f5b473c5fc6d769ae194de5a2"
+    },
+    {
+      "path": "connaissance/11-responsabilites-decision.md",
+      "sha256": "7527d1d21bddcd319eb36964b1fab2d0f5d45347724757978ab89095449364b3"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    }
+  ],
+  "objects": [
+    {
+      "id": "ORG-CLOG",
+      "source_fields": {
+        "id": "ORG-CLOG",
+        "type": "Organisation / SI autonome",
+        "nom": "C-Log",
+        "perimetre": "Frontière commerce-logistique",
+        "role": "Filiale logistique centralisée ; SI autonome ; DSI dédié.",
+        "source": "U03;U07",
+        "reserve": "Pas un logiciel ; pas à absorber dans l’ERP commercial."
+      },
+      "source_record_text": "## ORG-CLOG\n\n**id**\n\nORG-CLOG\n\n**type**\n\nOrganisation / SI autonome\n\n**nom**\n\nC-Log\n\n**perimetre**\n\nFrontière commerce-logistique\n\n**role**\n\nFiliale logistique centralisée ; SI autonome ; DSI dédié.\n\n**source**\n\nU03;U07\n\n**reserve**\n\nPas un logiciel ; pas à absorber dans l’ERP commercial.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "org-clog"
+      },
+      "source_refs": [
+        "U03",
+        "U07"
+      ],
+      "name": "C-Log",
+      "scope": "Frontière commerce-logistique",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Pas un logiciel ; pas à absorber dans l’ERP commercial."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [
+        "C06",
+        "C44"
+      ],
+      "correction_context": [
+        {
+          "id": "C06",
+          "text": "C-Log est une filiale avec DSI ; distinguer organisation, SI, OMS Crossroad et autres outils.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c06"
+          }
+        },
+        {
+          "id": "C44",
+          "text": "La logistique est hors du développement de la plateforme FLOW et reste en adhérence. Distinguer cartographie des problèmes métier et périmètre de réalisation ; représenter les responsabilités et interactions utiles avec la logistique sans en faire des développements de la plateforme. Qualifier les frontières détaillées sans exclure automatiquement toute Supply ni transférer les décisions actuelles de C-Log.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c44"
+          }
+        }
+      ],
+      "kind": "organisation",
+      "described_role": "Filiale logistique centralisée ; SI autonome ; DSI dédié.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-XRD",
+      "source_fields": {
+        "id": "APP-XRD",
+        "type": "Application externe au cœur commerce",
+        "nom": "Crossroad — éditeur KBRW",
+        "perimetre": "SI C-Log",
+        "role": "Choix entrepôt/transporteur, construction de parcours dont transferts, suivi logistique et file d’erreur.",
+        "source": "U06;U07",
+        "reserve": "Répartition WMS/TMS et composants techniques non documentée."
+      },
+      "source_record_text": "## APP-XRD\n\n**id**\n\nAPP-XRD\n\n**type**\n\nApplication externe au cœur commerce\n\n**nom**\n\nCrossroad — éditeur KBRW\n\n**perimetre**\n\nSI C-Log\n\n**role**\n\nChoix entrepôt/transporteur, construction de parcours dont transferts, suivi logistique et file d’erreur.\n\n**source**\n\nU06;U07\n\n**reserve**\n\nRépartition WMS/TMS et composants techniques non documentée.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-xrd"
+      },
+      "source_refs": [
+        "U06",
+        "U07"
+      ],
+      "name": "Crossroad — éditeur KBRW",
+      "scope": "SI C-Log",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Répartition WMS/TMS et composants techniques non documentée."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Choix entrepôt/transporteur, construction de parcours dont transferts, suivi logistique et file d’erreur.",
+      "deployment_status": "not_independently_verified"
+    }
+  ],
+  "flows": [
+    {
+      "id": "FL12",
+      "source_fields": {
+        "id": "FL12",
+        "origine": "APP-XRD",
+        "destination": "Entrepôt(s)",
+        "contenu": "Exécution du parcours et transfert éventuel",
+        "modalite": "Mécanisme non documenté",
+        "source": "U06",
+        "statut": "Décrit au niveau métier",
+        "reserve": "Outils WMS et interfaces non inventoriés."
+      },
+      "source_record_text": "## FL12\n\n**id**\n\nFL12\n\n**origine**\n\nAPP-XRD\n\n**destination**\n\nEntrepôt(s)\n\n**contenu**\n\nExécution du parcours et transfert éventuel\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU06\n\n**statut**\n\nDécrit au niveau métier\n\n**reserve**\n\nOutils WMS et interfaces non inventoriés.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl12"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Exécution du parcours et transfert éventuel",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Outils WMS et interfaces non inventoriés."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-XRD",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Entrepôt(s)"
+        }
+      },
+      "content": "Exécution du parcours et transfert éventuel",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit au niveau métier"
+    },
+    {
+      "id": "FL13",
+      "source_fields": {
+        "id": "FL13",
+        "origine": "APP-XRD",
+        "destination": "Transport / transporteur",
+        "contenu": "Choix et organisation du shipping",
+        "modalite": "Mécanisme non documenté",
+        "source": "U06",
+        "statut": "Choix décrit",
+        "reserve": "Messages et engagement transport non décrits."
+      },
+      "source_record_text": "## FL13\n\n**id**\n\nFL13\n\n**origine**\n\nAPP-XRD\n\n**destination**\n\nTransport / transporteur\n\n**contenu**\n\nChoix et organisation du shipping\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU06\n\n**statut**\n\nChoix décrit\n\n**reserve**\n\nMessages et engagement transport non décrits.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl13"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Choix et organisation du shipping",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Messages et engagement transport non décrits."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-XRD",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Transport / transporteur"
+        }
+      },
+      "content": "Choix et organisation du shipping",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Choix décrit"
+    },
+    {
+      "id": "FL14",
+      "source_fields": {
+        "id": "FL14",
+        "origine": "APP-XRD",
+        "destination": "File d’erreur / intervenants",
+        "contenu": "Demande problématique à reprendre",
+        "modalite": "Mise en file puis traitement manuel",
+        "source": "U06",
+        "statut": "Décrit",
+        "reserve": "Responsables de reprise et retours commerce inconnus."
+      },
+      "source_record_text": "## FL14\n\n**id**\n\nFL14\n\n**origine**\n\nAPP-XRD\n\n**destination**\n\nFile d’erreur / intervenants\n\n**contenu**\n\nDemande problématique à reprendre\n\n**modalite**\n\nMise en file puis traitement manuel\n\n**source**\n\nU06\n\n**statut**\n\nDécrit\n\n**reserve**\n\nResponsables de reprise et retours commerce inconnus.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl14"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Demande problématique à reprendre",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Responsables de reprise et retours commerce inconnus."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-XRD",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "File d’erreur / intervenants"
+        }
+      },
+      "content": "Demande problématique à reprendre",
+      "modality": "Mise en file puis traitement manuel",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    }
+  ],
+  "information_authorities": [
+    {
+      "id": "INF09",
+      "source_fields": {
+        "id": "INF09",
+        "objet": "Aptitudes des entrepôts",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "Crossroad utilise les opérations réalisables",
+        "reserve": "Référentiel implicite, source inconnue",
+        "source": "U06"
+      },
+      "source_record_text": "## INF09\n\n**id**\n\nINF09\n\n**objet**\n\nAptitudes des entrepôts\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nCrossroad utilise les opérations réalisables\n\n**reserve**\n\nRéférentiel implicite, source inconnue\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf09"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Aptitudes des entrepôts",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Référentiel implicite, source inconnue"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Aptitudes des entrepôts",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "Crossroad utilise les opérations réalisables",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF13",
+      "source_fields": {
+        "id": "INF13",
+        "objet": "Parcours et état logistique",
+        "autorite_ou_producteur": "Crossroad suit le processus",
+        "autres_contributions": "Équipes/outils de réalisation non inventoriés",
+        "reserve": "Autorité du suivi décrit ; autorité de chaque fait physique non prouvée",
+        "source": "U06;U07"
+      },
+      "source_record_text": "## INF13\n\n**id**\n\nINF13\n\n**objet**\n\nParcours et état logistique\n\n**autorite_ou_producteur**\n\nCrossroad suit le processus\n\n**autres_contributions**\n\nÉquipes/outils de réalisation non inventoriés\n\n**reserve**\n\nAutorité du suivi décrit ; autorité de chaque fait physique non prouvée\n\n**source**\n\nU06;U07",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf13"
+      },
+      "source_refs": [
+        "U06",
+        "U07"
+      ],
+      "name": "Parcours et état logistique",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Autorité du suivi décrit ; autorité de chaque fait physique non prouvée"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Parcours et état logistique",
+      "authority_or_producer": "Crossroad suit le processus",
+      "other_contributions": "Équipes/outils de réalisation non inventoriés",
+      "authority_qualification": "source_reservations_apply"
+    }
+  ],
+  "decision_responsibilities": [
+    {
+      "id": "DEC16",
+      "source_fields": {
+        "id": "DEC16",
+        "decision": "Choisir l’entrepôt",
+        "realisation": "OMS C-Log / Crossroad",
+        "reserve": "Aptitudes opérationnelles ; autres critères non fournis",
+        "contexte": "Logistique externalisée au cœur",
+        "source": "U04;U06;U07"
+      },
+      "source_record_text": "## DEC16\n\n**id**\n\nDEC16\n\n**decision**\n\nChoisir l’entrepôt\n\n**realisation**\n\nOMS C-Log / Crossroad\n\n**reserve**\n\nAptitudes opérationnelles ; autres critères non fournis\n\n**contexte**\n\nLogistique externalisée au cœur\n\n**source**\n\nU04;U06;U07",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec16"
+      },
+      "source_refs": [
+        "U04",
+        "U06",
+        "U07"
+      ],
+      "name": "Choisir l’entrepôt",
+      "scope": "Logistique externalisée au cœur",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Aptitudes opérationnelles ; autres critères non fournis"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Choisir l’entrepôt",
+      "described_realization": "OMS C-Log / Crossroad",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC17",
+      "source_fields": {
+        "id": "DEC17",
+        "decision": "Ajouter un transfert préalable",
+        "realisation": "OMS C-Log / Crossroad dans le récit",
+        "reserve": "Condition exacte et émission des ordres non détaillées",
+        "contexte": "Logistique",
+        "source": "U06;U07"
+      },
+      "source_record_text": "## DEC17\n\n**id**\n\nDEC17\n\n**decision**\n\nAjouter un transfert préalable\n\n**realisation**\n\nOMS C-Log / Crossroad dans le récit\n\n**reserve**\n\nCondition exacte et émission des ordres non détaillées\n\n**contexte**\n\nLogistique\n\n**source**\n\nU06;U07",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec17"
+      },
+      "source_refs": [
+        "U06",
+        "U07"
+      ],
+      "name": "Ajouter un transfert préalable",
+      "scope": "Logistique",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Condition exacte et émission des ordres non détaillées"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Ajouter un transfert préalable",
+      "described_realization": "OMS C-Log / Crossroad dans le récit",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC18",
+      "source_fields": {
+        "id": "DEC18",
+        "decision": "Choisir le transporteur",
+        "realisation": "OMS C-Log / Crossroad",
+        "reserve": "Règles, offres et coût non décrits",
+        "contexte": "Shipping",
+        "source": "U04;U06"
+      },
+      "source_record_text": "## DEC18\n\n**id**\n\nDEC18\n\n**decision**\n\nChoisir le transporteur\n\n**realisation**\n\nOMS C-Log / Crossroad\n\n**reserve**\n\nRègles, offres et coût non décrits\n\n**contexte**\n\nShipping\n\n**source**\n\nU04;U06",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec18"
+      },
+      "source_refs": [
+        "U04",
+        "U06"
+      ],
+      "name": "Choisir le transporteur",
+      "scope": "Shipping",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Règles, offres et coût non décrits"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Choisir le transporteur",
+      "described_realization": "OMS C-Log / Crossroad",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC19",
+      "source_fields": {
+        "id": "DEC19",
+        "decision": "Reprendre une demande en erreur",
+        "realisation": "Intervenant C-Log non identifié",
+        "reserve": "File d’erreur ; reprise manuelle",
+        "contexte": "Logistique exception",
+        "source": "U06"
+      },
+      "source_record_text": "## DEC19\n\n**id**\n\nDEC19\n\n**decision**\n\nReprendre une demande en erreur\n\n**realisation**\n\nIntervenant C-Log non identifié\n\n**reserve**\n\nFile d’erreur ; reprise manuelle\n\n**contexte**\n\nLogistique exception\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec19"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Reprendre une demande en erreur",
+      "scope": "Logistique exception",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "File d’erreur ; reprise manuelle"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Reprendre une demande en erreur",
+      "described_realization": "Intervenant C-Log non identifié",
+      "exercise_status": "subject_to_source_reservations"
+    }
+  ],
+  "exclusions": [],
+  "limitations": [
+    "as_of est la date de publication de cet état de connaissance, pas une attestation de fraîcheur des SI ; aucune date d’observation opérationnelle vérifiée n’est disponible.",
+    "Les descriptions sont issues de récits et registres. declared ne signifie pas observed ; inconnues, réserves et périmètres source sont conservés.",
+    "source_fields et source_record_text sont des transcriptions de provenance : leurs abréviations et formulations historiques restent intactes ; les champs de lecture utilisent les libellés canoniques.",
+    "Une source ou destination textuelle non résolue ne crée pas un nouveau composant ni une interface directe. Une organisation n’est pas un système.",
+    "Les catégories et statuts de migration qualifient la preuve disponible ; ils n’adoptent aucune architecture cible."
+  ],
+  "context_role": "Frontière C-Log et éléments partagés ; ce fichier n’est pas un quatrième SI."
+}

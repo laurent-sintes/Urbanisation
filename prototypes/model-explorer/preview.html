@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Flow Atlas</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Flow Atlas" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Flow Atlas&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;flow-atlas&quot; lang=&quot;fr&quot; aria-label=&quot;FLOW Atlas, explorateur du modèle métier&quot;&gt;
+  &lt;style&gt;
+    #flow-atlas{--fa-bg:light-dark(#f6f7f5,#161c1b);--fa-paper:light-dark(#ffffff,#202725);--fa-ink:light-dark(#22342e,#edf3ee);--fa-muted:light-dark(#68746e,#abb9b0);--fa-line:light-dark(#dce3dd,#3b4841);--fa-green:light-dark(#24634c,#98d2b2);--fa-soft:light-dark(#e8f2eb,#293f32);--fa-amber:light-dark(#795918,#e7c580);--fa-amber-bg:light-dark(#fbf3df,#413923);--fa-purple:light-dark(#68538b,#c7b7e1);--fa-purple-bg:light-dark(#f1edf6,#383043);--fa-blue:light-dark(#3b657b,#abcfdf);--fa-blue-bg:light-dark(#eaf2f7,#293c47);font:14px/1.5 &quot;Segoe UI&quot;,Arial,sans-serif;color:var(--fa-ink);background:var(--fa-bg);border:1px solid var(--fa-line);border-radius:15px;overflow:clip;text-align:left;isolation:isolate}
+    #flow-atlas *{box-sizing:border-box}#flow-atlas button,#flow-atlas input,#flow-atlas select{font:inherit}#flow-atlas button{cursor:pointer;color:inherit}#flow-atlas button:disabled{opacity:.4;cursor:default}#flow-atlas button:focus-visible,#flow-atlas input:focus-visible,#flow-atlas select:focus-visible{outline:3px solid var(--fa-green);outline-offset:3px}#flow-atlas button{transition:background .16s,border-color .16s}#flow-atlas button:hover:not(:disabled){border-color:var(--fa-green)}#flow-atlas [hidden]{display:none!important}#flow-atlas h1,#flow-atlas h2,#flow-atlas h3,#flow-atlas p{margin:0}#flow-atlas h1{font-size:27px;line-height:1.2;font-weight:600;letter-spacing:-.7px}#flow-atlas h2{font-size:19px;font-weight:600;line-height:1.3}#flow-atlas h3{font-size:15px;font-weight:600;line-height:1.4}#flow-atlas small{font-size:12px}#flow-atlas .fa-muted{color:var(--fa-muted)}#flow-atlas svg.lucide{width:17px;height:17px;flex-shrink:0}#flow-atlas .fa-top{display:flex;align-items:center;gap:25px;padding:18px 22px;background:var(--fa-paper);border-bottom:1px solid var(--fa-line)}#flow-atlas .fa-brand{display:flex;align-items:center;gap:9px;white-space:nowrap;letter-spacing:1.5px;font-weight:600}.fa-logo{display:grid;place-items:center}
+    #flow-atlas .fa-brand span:last-child{color:var(--fa-muted);font-weight:400;letter-spacing:2px}#flow-atlas .fa-searchbox{display:flex;align-items:center;gap:9px;flex:1;min-width:100px;padding:9px 12px;background:var(--fa-bg);border:1px solid var(--fa-line);border-radius:8px}#flow-atlas .fa-searchbox input{width:100%;min-width:0;border:0;background:transparent;color:var(--fa-ink);padding:0;outline-offset:7px}#flow-atlas input::placeholder{color:var(--fa-muted)}#flow-atlas kbd{font:11px &quot;Segoe UI&quot;,sans-serif;white-space:nowrap;color:var(--fa-muted);border:1px solid var(--fa-line);border-radius:3px;padding:0 4px}#flow-atlas .fa-top-note{font-size:12px;white-space:nowrap;color:var(--fa-muted)}
+    #flow-atlas .fa-body{display:grid;grid-template-columns:166px minmax(0,1fr)}#flow-atlas .fa-rail{padding:24px 12px;background:var(--fa-paper);border-right:1px solid var(--fa-line);display:flex;flex-direction:column;gap:27px}#flow-atlas .fa-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.3px;text-transform:uppercase;color:var(--fa-muted);margin-bottom:10px}#flow-atlas .fa-rail .fa-eyebrow{padding:0 9px}#flow-atlas .fa-nav{display:flex;align-items:center;gap:9px;text-align:left;width:100%;padding:9px;border:1px solid transparent;background:transparent;border-radius:7px;margin-bottom:3px;font-size:12px}#flow-atlas .fa-nav[aria-pressed=true]{background:var(--fa-soft);color:var(--fa-green);font-weight:600}#flow-atlas .fa-rail-foot{margin-top:auto;padding:30px 9px 0;font-size:11px;color:var(--fa-muted)}#flow-atlas .fa-rail-foot strong{display:block;color:var(--fa-ink);font-weight:500;font-size:12px}#flow-atlas .fa-main{min-width:0;padding:23px 25px 25px}#flow-atlas .fa-navline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:23px}#flow-atlas .fa-history{display:flex;gap:4px}#flow-atlas .fa-icon-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--fa-line);background:var(--fa-paper);border-radius:6px;width:29px;height:29px}#flow-atlas .fa-breadcrumb{display:flex;gap:7px;align-items:center;flex-wrap:wrap;min-width:0;font-size:12px}#flow-atlas .fa-breadcrumb button{border:0;background:none;padding:0;color:var(--fa-muted);text-align:left}#flow-atlas .fa-breadcrumb button:last-child{color:var(--fa-ink)}#flow-atlas .fa-breadcrumb span{color:var(--fa-muted)}
+    #flow-atlas .fa-heading{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;margin-bottom:18px}#flow-atlas .fa-heading-text{min-width:0}#flow-atlas .fa-heading-text p{font-size:13px;color:var(--fa-muted);margin-top:8px;max-width:630px}#flow-atlas .fa-heading-text .fa-eyebrow{margin-bottom:8px}#flow-atlas .fa-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--fa-line);background:var(--fa-paper);padding:7px 11px;border-radius:6px;white-space:normal;font-size:12px;text-decoration:none}#flow-atlas .fa-button.fa-primary{background:var(--fa-ink);color:var(--fa-paper);border-color:var(--fa-ink)}#flow-atlas .fa-toolbar{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding-bottom:15px;border-bottom:1px solid var(--fa-line);margin-bottom:20px}#flow-atlas .fa-segments{display:flex;gap:3px;padding:3px;background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:8px}#flow-atlas .fa-segments button{display:flex;align-items:center;gap:6px;border:0;background:transparent;padding:6px 10px;border-radius:5px;font-size:12px}#flow-atlas .fa-segments button[aria-pressed=true]{background:var(--fa-soft);color:var(--fa-green)}#flow-atlas .fa-count{font-size:12px;color:var(--fa-muted)}
+    #flow-atlas .fa-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#flow-atlas .fa-tile{display:flex;flex-direction:column;gap:10px;text-align:left;padding:17px;border:1px solid var(--fa-line);border-radius:10px;background:var(--fa-paper);min-width:0;width:100%;position:relative}#flow-atlas .fa-tile:hover{background:var(--fa-soft)}#flow-atlas .fa-tile-top{display:flex;align-items:center;justify-content:space-between;gap:8px}#flow-atlas .fa-id{font-size:11px;font-family:Consolas,monospace;color:var(--fa-muted)}#flow-atlas .fa-tile-name{font-weight:600;font-size:15px;line-height:1.3;overflow-wrap:anywhere}#flow-atlas .fa-tile-purpose{font-size:12px;color:var(--fa-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}#flow-atlas .fa-tile-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-size:11px;color:var(--fa-muted)}#flow-atlas .fa-badge{display:inline-flex;align-items:center;gap:5px;padding:2px 7px;border-radius:4px;font-size:11px;line-height:1.5;background:var(--fa-bg);color:var(--fa-muted);font-weight:400}#flow-atlas .fa-badge[data-tone=green]{background:var(--fa-soft);color:var(--fa-green)}#flow-atlas .fa-badge[data-tone=amber]{background:var(--fa-amber-bg);color:var(--fa-amber)}#flow-atlas .fa-badge[data-tone=purple]{background:var(--fa-purple-bg);color:var(--fa-purple)}#flow-atlas .fa-ref-group{margin-top:17px;background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:10px;padding:17px}#flow-atlas .fa-ref-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}#flow-atlas .fa-ref-head small{display:block;margin-top:3px;color:var(--fa-muted)}#flow-atlas .fa-ref-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}#flow-atlas .fa-ref-chips button{font-size:12px;background:var(--fa-bg);border:1px solid var(--fa-line);border-radius:5px;padding:5px 8px}#flow-atlas .fa-footnote{font-size:11px;color:var(--fa-muted);margin-top:17px}
+    #flow-atlas .fa-focus-layout{display:grid;grid-template-columns:minmax(0,1fr) 247px;gap:23px}#flow-atlas .fa-focus-layout .fa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#flow-atlas .fa-inspector{border-left:1px solid var(--fa-line);padding-left:21px;min-width:0}#flow-atlas .fa-inspector h3{font-size:12px;font-weight:600;margin:18px 0 6px}#flow-atlas .fa-inspector h3:first-child{margin-top:0}#flow-atlas .fa-inspector p{font-size:12px;line-height:1.6}#flow-atlas .fa-inspector .fa-status-note{padding:11px;background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:7px;margin:13px 0}#flow-atlas .fa-inspector .fa-status-note p{margin-top:7px;color:var(--fa-muted);font-size:11px}#flow-atlas .fa-source{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}#flow-atlas .fa-source span{font:11px Consolas,monospace;padding:2px 5px;background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:3px}#flow-atlas .fa-source-path{overflow-wrap:anywhere;font:11px/1.6 Consolas,monospace!important;color:var(--fa-muted);margin-top:10px!important}#flow-atlas .fa-source-details{margin-top:12px}#flow-atlas .fa-source-details summary{cursor:pointer;font-size:12px;color:var(--fa-green)}#flow-atlas .fa-empty{padding:24px 0;display:grid;gap:12px}#flow-atlas .fa-empty p{font-size:13px;color:var(--fa-muted)}#flow-atlas .fa-detail-hero{padding:21px;background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:10px;margin-bottom:18px}#flow-atlas .fa-detail-hero h2{margin:10px 0}#flow-atlas .fa-detail-hero p{font-size:13px;color:var(--fa-muted)}
+    #flow-atlas .fa-relations{position:relative;min-width:0}#flow-atlas .fa-links-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}#flow-atlas .fa-links-svg path{fill:none;stroke:var(--fa-line);stroke-width:1.5}#flow-atlas .fa-graph-center{position:relative;background:var(--fa-soft);border:1px solid var(--fa-green);border-radius:9px;padding:17px;max-width:360px;margin:0 auto 38px;text-align:center;z-index:1}#flow-atlas .fa-graph-center strong{display:block;overflow-wrap:anywhere;margin-top:4px}#flow-atlas .fa-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;position:relative;z-index:1}#flow-atlas .fa-related{background:var(--fa-paper);border:1px solid var(--fa-line);border-radius:8px;padding:13px;text-align:left;display:flex;flex-direction:column;gap:7px;min-width:0}#flow-atlas .fa-related strong{font-size:13px;overflow-wrap:anywhere}#flow-atlas .fa-relation-label{font-size:11px;color:var(--fa-muted)}#flow-atlas .fa-kind{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--fa-muted)}#flow-atlas .fa-kind[data-kind=object]{color:var(--fa-blue)}#flow-atlas .fa-kind[data-kind=document]{color:var(--fa-purple)}#flow-atlas .fa-kind[data-kind=event]{color:var(--fa-amber)}#flow-atlas .fa-focus-layout .fa-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#flow-atlas .fa-edge-note{margin-top:16px;font-size:11px;color:var(--fa-muted)}
+    #flow-atlas .fa-journey{padding:15px 17px;margin-bottom:20px;background:var(--fa-soft);border-radius:9px;border:1px solid var(--fa-line)}#flow-atlas .fa-journey-top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}#flow-atlas .fa-journey-top strong{font-size:12px}#flow-atlas .fa-stepper{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}#flow-atlas .fa-stepper button{border:1px solid transparent;background:transparent;padding:5px 7px;border-radius:4px;font-size:11px}#flow-atlas .fa-stepper button[aria-current=step]{background:var(--fa-paper);border-color:var(--fa-line);font-weight:600}#flow-atlas .fa-journey p{font-size:13px}#flow-atlas .fa-journey-actions{display:flex;justify-content:flex-end;gap:6px;margin-top:12px}#flow-atlas .fa-search-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}#flow-atlas .fa-search-filters label{display:flex;gap:6px;align-items:center;font-size:12px}#flow-atlas .fa-search-filters select{background:var(--fa-paper);color:var(--fa-ink);border:1px solid var(--fa-line);padding:6px;border-radius:5px;max-width:100%;font-size:12px}#flow-atlas .fa-results{display:flex;flex-direction:column;gap:8px}#flow-atlas .fa-result{width:100%;text-align:left;border:1px solid var(--fa-line);background:var(--fa-paper);border-radius:8px;padding:13px 16px;min-width:0}#flow-atlas .fa-result:hover{background:var(--fa-soft)}#flow-atlas .fa-result-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;font-weight:600}#flow-atlas .fa-result p{font-size:12px;color:var(--fa-muted);margin-top:5px;overflow-wrap:anywhere}#flow-atlas .fa-result-path{font-size:11px;color:var(--fa-muted);margin-top:7px}#flow-atlas mark{background:var(--fa-amber-bg);color:var(--fa-amber);border-radius:2px}#flow-atlas .fa-toast{font-size:12px;color:var(--fa-muted);min-height:18px;padding-top:12px}#flow-atlas .fa-ghost{border:0;background:none;padding:0;color:var(--fa-muted);font-size:12px}#flow-atlas .fa-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #flow-atlas[data-density=compact] .fa-tile{padding:12px;gap:7px}#flow-atlas[data-density=compact] .fa-grid{gap:8px}#flow-atlas[data-layout=list] .fa-grid{grid-template-columns:1fr}#flow-atlas[data-layout=list] .fa-tile-purpose{-webkit-line-clamp:1}#flow-atlas[data-definitions=false] .fa-tile-purpose{display:none}
+    @media(min-width:1150px){#flow-atlas .fa-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#flow-atlas .fa-focus-layout .fa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:900px){#flow-atlas .fa-body{grid-template-columns:145px minmax(0,1fr)}#flow-atlas .fa-main{padding:20px}#flow-atlas .fa-focus-layout{grid-template-columns:minmax(0,1fr)}#flow-atlas .fa-focus-layout .fa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#flow-atlas .fa-inspector{border-left:0;padding-left:0;border-top:1px solid var(--fa-line);padding-top:18px}#flow-atlas .fa-focus-layout .fa-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#flow-atlas .fa-top-note{display:none}}
+    @media(max-width:650px){#flow-atlas .fa-body{display:block}#flow-atlas .fa-rail{border-right:0;border-bottom:1px solid var(--fa-line);padding:10px 14px;flex-direction:row;gap:8px;flex-wrap:wrap}#flow-atlas .fa-rail&gt;div{display:flex;gap:4px;flex-wrap:wrap}#flow-atlas .fa-rail .fa-eyebrow,#flow-atlas .fa-rail-foot,#flow-atlas .fa-rail&gt;.fa-rail-history{display:none}#flow-atlas .fa-nav{width:auto;margin:0;padding:7px}#flow-atlas .fa-top{padding:14px;gap:14px;flex-wrap:wrap}#flow-atlas .fa-searchbox{flex-basis:100%;order:2}#flow-atlas .fa-top-note{display:block;margin-left:auto}#flow-atlas .fa-main{padding:18px 14px}#flow-atlas .fa-heading{flex-wrap:wrap}#flow-atlas h1{font-size:24px}#flow-atlas .fa-navline{gap:9px;margin-bottom:17px}#flow-atlas .fa-grid,#flow-atlas .fa-focus-layout .fa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#flow-atlas .fa-tile{padding:13px}#flow-atlas .fa-tile-name{font-size:14px}#flow-atlas .fa-tile-top{align-items:flex-start;flex-wrap:wrap}#flow-atlas .fa-tile-foot{align-items:flex-start}#flow-atlas .fa-searchbox input{font-size:16px}}
+    @media(max-width:440px){#flow-atlas .fa-grid,#flow-atlas .fa-focus-layout .fa-grid,#flow-atlas .fa-related-grid,#flow-atlas .fa-focus-layout .fa-related-grid{grid-template-columns:1fr}#flow-atlas .fa-rail{padding:8px}#flow-atlas .fa-nav{font-size:11px}#flow-atlas .fa-ref-head{align-items:flex-start}#flow-atlas .fa-top-note{font-size:11px}#flow-atlas .fa-heading-text p{font-size:12px}#flow-atlas .fa-search-filters label{flex-direction:column;align-items:flex-start}}
+    @media(pointer:coarse){#flow-atlas button{min-height:44px}#flow-atlas .fa-icon-btn{width:44px}#flow-atlas .fa-search-filters select{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){#flow-atlas button{transition:none}}
+  &lt;/style&gt;
+  &lt;header class=&quot;fa-top&quot;&gt;
+    &lt;div class=&quot;fa-brand&quot;&gt;&lt;i data-lucide=&quot;waypoints&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; FLOW &lt;span&gt;ATLAS&lt;/span&gt;&lt;/div&gt;
+    &lt;label class=&quot;fa-searchbox&quot;&gt;&lt;i data-lucide=&quot;search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;fa-sr&quot;&gt;Rechercher dans tout le modèle&lt;/span&gt;&lt;input id=&quot;fa-search&quot; type=&quot;search&quot; autocomplete=&quot;off&quot; placeholder=&quot;Rechercher dans le modèle…&quot;&gt;&lt;kbd&gt;Ctrl K&lt;/kbd&gt;&lt;/label&gt;
+    &lt;div class=&quot;fa-top-note&quot;&gt;Aperçu interactif · 13 sept. 2026&lt;/div&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;fa-body&quot;&gt;
+    &lt;aside class=&quot;fa-rail&quot; aria-label=&quot;Navigation du modèle&quot;&gt;
+      &lt;div&gt;&lt;div class=&quot;fa-eyebrow&quot;&gt;Modèles&lt;/div&gt;&lt;button class=&quot;fa-nav&quot; data-go=&quot;transactional&quot;&gt;&lt;i data-lucide=&quot;layers&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;Socle transactionnel&lt;/button&gt;&lt;button class=&quot;fa-nav&quot; data-go=&quot;process&quot;&gt;&lt;i data-lucide=&quot;route&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;Processus&lt;/button&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;div class=&quot;fa-eyebrow&quot;&gt;Comprendre&lt;/div&gt;&lt;button class=&quot;fa-nav&quot; data-journey=&quot;start&quot;&gt;&lt;i data-lucide=&quot;compass&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;Suivre une promesse&lt;/button&gt;&lt;/div&gt;
+      &lt;div class=&quot;fa-rail-history&quot;&gt;&lt;div class=&quot;fa-eyebrow&quot;&gt;Récemment exploré&lt;/div&gt;&lt;div id=&quot;fa-recent&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;footer class=&quot;fa-rail-foot&quot;&gt;&lt;strong&gt;Modèle en construction&lt;/strong&gt;P81 · version 0.9&lt;br&gt;Les statuts restent visibles.&lt;/footer&gt;
+    &lt;/aside&gt;
+    &lt;main class=&quot;fa-main&quot;&gt;
+      &lt;div class=&quot;fa-navline&quot;&gt;&lt;div class=&quot;fa-history&quot;&gt;&lt;button class=&quot;fa-icon-btn&quot; id=&quot;fa-back&quot; aria-label=&quot;Revenir à la visite précédente&quot;&gt;&lt;i data-lucide=&quot;arrow-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;button class=&quot;fa-icon-btn&quot; id=&quot;fa-forward&quot; aria-label=&quot;Revenir à la visite suivante&quot;&gt;&lt;i data-lucide=&quot;arrow-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&lt;nav class=&quot;fa-breadcrumb&quot; id=&quot;fa-breadcrumb&quot; aria-label=&quot;Chemin dans le modèle&quot;&gt;&lt;/nav&gt;&lt;/div&gt;
+      &lt;div id=&quot;fa-journey&quot; hidden&gt;&lt;/div&gt;
+      &lt;div id=&quot;fa-content&quot;&gt;&lt;/div&gt;
+      &lt;div id=&quot;fa-announcement&quot; class=&quot;fa-sr&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+  &lt;script type=&quot;application/json&quot; id=&quot;fa-model-data&quot;&gt;{&quot;date&quot;: &quot;2026-09-13&quot;, &quot;version&quot;: &quot;P81 0.9&quot;, &quot;source&quot;: &quot;Instantané de la carte de travail datée du 11 septembre 2026, après U103. Noms, définitions courtes et Finalités des capacités extraits de la vue courante P81 ; définitions des domaines et notes de statut synthétisées à partir des mêmes sections, de P83 et des corrections. Sept domaines transactionnels de travail et cinq références du groupe de présentation Business References ; 36 aptitudes dont neuf validées. Le groupe ne constitue ni capacité mère ni domaine fusionné. Cet instantané ne modifie aucun arbitrage.&quot;, &quot;domains&quot;: [{&quot;id&quot;: &quot;D01&quot;, &quot;name&quot;: &quot;Inventory Management&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Disposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.&quot;, &quot;definition&quot;: &quot;Connaître les stocks et les ressources attendues, expliquer leurs variations, fiabiliser les quantités et préserver les usages par les protections et réservations. Le stock futur est connu ici et mobilisé par Order Promising.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Nom Inventory Management retenu en U66. P81 conserve six aptitudes ; la fusion proposée par P82 reste non adoptée. Les frontières détaillées et la réservation demeurent à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U66&quot;, &quot;U74&quot;, &quot;U75&quot;, &quot;U78&quot;, &quot;U79&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U86&quot;, &quot;C58&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D01.a&quot;, &quot;name&quot;: &quot;Establish inventory positions&quot;, &quot;purpose&quot;: &quot;Disposer d’une connaissance exploitable des ressources.&quot;, &quot;definition&quot;: &quot;déterminer les quantités de stock physique et leurs états logiques par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes, en distinguant les ressources futures attendues.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Libellé Establish inventory positions contesté en U82, conservé dans P81 pour la traçabilité. Fusion avec D01.b dans Inventory Tracking proposée en P82, non adoptée.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P82&quot;, &quot;U81&quot;, &quot;U82&quot;, &quot;U83&quot;, &quot;C56&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D01.b&quot;, &quot;name&quot;: &quot;Record inventory facts&quot;, &quot;purpose&quot;: &quot;Expliquer les variations et leur provenance.&quot;, &quot;definition&quot;: &quot;qualifier les faits qui font évoluer les quantités physiques et les états logiques, notamment entrées, sorties, changements d’état et consommations.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée. Fusion avec D01.a dans Inventory Tracking proposée par P82, non adoptée ; P81 conserve la ligne.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P82&quot;, &quot;U81&quot;, &quot;U83&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D01.c&quot;, &quot;name&quot;: &quot;Provide a consolidated inventory view&quot;, &quot;purpose&quot;: &quot;Permettre une lecture commune des stocks distribués.&quot;, &quot;definition&quot;: &quot;présenter les positions physiques, leurs états logiques et les ressources futures connues dans une vue cohérente, sans double comptage, avec source, périmètre et fraîcheur.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité et maille proposées. Inventory Visibility est un nom alternatif de P82, sans remplacement de la ligne courante P81.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P82&quot;, &quot;U81&quot;, &quot;U83&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D01.d&quot;, &quot;name&quot;: &quot;Stocktaking&quot;, &quot;purpose&quot;: &quot;Fiabiliser les quantités enregistrées — Inventory accuracy.&quot;, &quot;definition&quot;: &quot;établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Nom Stocktaking retenu par Laurent en U86, le 11 septembre 2026 ; Inventory accuracy en exprime la Finalité. La décision de nom conserve comptage, rapprochement, écarts et corrections ; frontières détaillées ouvertes.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P82&quot;, &quot;U86&quot;, &quot;C58&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D02.b&quot;, &quot;name&quot;: &quot;Supply Protection&quot;, &quot;purpose&quot;: &quot;Préserver les possibilités d’approvisionnement des usages retenus.&quot;, &quot;definition&quot;: &quot;établir et appliquer les quantités ou limites d’usage destinées à des groupes, avec leur validité.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Aptitude métier reconnue en U67 et rattachement à Inventory Management orienté en U74. Repère historique D02.b conservé ; définition détaillée et maille à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U67&quot;, &quot;U74&quot;, &quot;C49&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D02.c&quot;, &quot;name&quot;: &quot;Reservation&quot;, &quot;purpose&quot;: &quot;Donner effet à un engagement de ressource.&quot;, &quot;definition&quot;: &quot;établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Nom Reservation retenu en U84. Rattachement à D01 issu de U75 remis en discussion en U78 ; frontière réservation/affectation ouverte, sans nouveau déplacement.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U75&quot;, &quot;U78&quot;, &quot;U84&quot;, &quot;C54&quot;, &quot;C57&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D02&quot;, &quot;name&quot;: &quot;Resource Availability and Commitments&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Évaluer ce qui peut être mobilisé et maintenir les engagements de ressources cohérents.&quot;, &quot;definition&quot;: &quot;Deux aptitudes de disponibilité et d’ajustement subsistent comme traces de travail après les rattachements de Supply Protection et Reservation à Inventory Management, et de Supply Assignment à Order Promising.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Domaine en réexamen depuis U75. Son autonomie n’est pas justifiée ; aucune suppression, répartition ni renumérotation supplémentaire n’est décidée.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U75&quot;, &quot;U87&quot;, &quot;U88&quot;, &quot;P83&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D02.a&quot;, &quot;name&quot;: &quot;Determine resource availability for a given use&quot;, &quot;purpose&quot;: &quot;Évaluer ce qui peut être mobilisé dans une situation donnée.&quot;, &quot;definition&quot;: &quot;apprécier les quantités admissibles à un horizon, compte tenu des états, attentes, protections et engagements.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Trace de travail conservée dans D02. Répartition entre disponibilité de réservation et faisabilité de promesse à examiner ; aucune suppression décidée.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U75&quot;, &quot;U87&quot;, &quot;U88&quot;, &quot;P83&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D02.d&quot;, &quot;name&quot;: &quot;Adjust resource commitments&quot;, &quot;purpose&quot;: &quot;Maintenir des affectations cohérentes avec les besoins et les ressources.&quot;, &quot;definition&quot;: &quot;réviser, transférer ou libérer les quantités affectées selon les décisions autorisées.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Trace de travail conservée dans D02. À répartir ou reformuler selon l’engagement modifié ; aucune suppression ni nouvelle affectation adoptée.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U75&quot;, &quot;U87&quot;, &quot;U88&quot;, &quot;P83&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D03&quot;, &quot;name&quot;: &quot;Order Promising&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Proposer, établir et maintenir des engagements de fourniture réalisables, en quantité et en date, avec les ressources et possibilités d’acheminement.&quot;, &quot;definition&quot;: &quot;Établir ce qui peut être promis pour satisfaire une demande, sous quelles conditions, avec quelles ressources et quelle solution de fourniture, puis maintenir la promesse lorsque la situation évolue.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Domaine reconnu en U52. Neuf capacités validées par Laurent le 11 septembre 2026 en U95 : quatre actions et cinq décisions. Frontières, autorités opérationnelles et équivalences marché restent à préciser ; CTP différé.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D03.a&quot;, &quot;name&quot;: &quot;Promise Proposal&quot;, &quot;purpose&quot;: &quot;Faire naître une proposition de promesse réalisable.&quot;, &quot;definition&quot;: &quot;construire une proposition de fourniture précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.b&quot;, &quot;name&quot;: &quot;Promise Confirmation&quot;, &quot;purpose&quot;: &quot;Donner un engagement explicite au destinataire.&quot;, &quot;definition&quot;: &quot;établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D02.e&quot;, &quot;name&quot;: &quot;Supply Assignment&quot;, &quot;purpose&quot;: &quot;Assurer la couverture des demandes par des ressources identifiées.&quot;, &quot;definition&quot;: &quot;affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des demandes ou engagements.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. Repère historique D02.e conservé ; domaine courant Order Promising depuis U75. Affectation et confirmation sans ordre obligatoire.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.c&quot;, &quot;name&quot;: &quot;Promise Revision&quot;, &quot;purpose&quot;: &quot;Maintenir des engagements cohérents avec la situation et les priorités applicables.&quot;, &quot;definition&quot;: &quot;réexaminer les promesses lorsque ressources, demandes, dates ou priorités changent et établir les modifications autorisées.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.d&quot;, &quot;name&quot;: &quot;Allocation Eligibility Decision&quot;, &quot;purpose&quot;: &quot;Respecter les droits d’accès aux ressources.&quot;, &quot;definition&quot;: &quot;décider quelle quantité une demande peut consommer au regard des allocations, protections et droits applicables.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.e&quot;, &quot;name&quot;: &quot;Fulfillment Source Decision&quot;, &quot;purpose&quot;: &quot;Fonder la promesse sur des origines de fourniture admissibles.&quot;, &quot;definition&quot;: &quot;choisir la source ou la combinaison de sources permettant de satisfaire la demande.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.f&quot;, &quot;name&quot;: &quot;Fulfillment Route Decision&quot;, &quot;purpose&quot;: &quot;Fonder la promesse sur un acheminement réalisable.&quot;, &quot;definition&quot;: &quot;choisir la chaîne d’acheminement jusqu’à destination : étapes, points de passage, modes et services, selon les contraintes de délai, de capacité et de coût.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. La décision fondant la promesse n’absorbe pas la planification détaillée du transport ; autorités C-Log et adhérence logistique préservées.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.g&quot;, &quot;name&quot;: &quot;Product Substitution Decision&quot;, &quot;purpose&quot;: &quot;Permettre une réponse acceptable lorsque le produit demandé ne peut pas être fourni tel quel.&quot;, &quot;definition&quot;: &quot;décider quel produit de remplacement est admissible pour satisfaire la demande dans les conditions autorisées.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D03.h&quot;, &quot;name&quot;: &quot;Supply Creation Decision&quot;, &quot;purpose&quot;: &quot;Rendre possible une fourniture que les ressources déjà présentes ou attendues ne permettent pas de satisfaire.&quot;, &quot;definition&quot;: &quot;décider de recourir à une fourniture nouvelle et qualifier les conditions nécessaires pour fonder la promesse.&quot;, &quot;status&quot;: &quot;validated&quot;, &quot;statusNote&quot;: &quot;Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. CTP reste différé ; cette aptitude demeure validée et n’autorise pas à elle seule un engagement d’achat.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;P83&quot;, &quot;U52&quot;, &quot;U75&quot;, &quot;U80&quot;, &quot;U81&quot;, &quot;U95&quot;, &quot;F201&quot;, &quot;C63&quot;, &quot;CMP052&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D04&quot;, &quot;name&quot;: &quot;Commercial Commitments&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Connaître les engagements portés par les commandes et ce qui reste à accomplir après leur évolution et leur réalisation.&quot;, &quot;definition&quot;: &quot;Examiner qui s’engage à fournir ou acquérir quoi, sous quelles conditions reçues, et les obligations restantes après modification, livraison ou retour. Les commandes restent distinctes des Agreements de référence.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Les quatre capacités conservent une proposition antérieure. U100 réoriente la revue avec D07 vers les documents d’autorisation de la Supply générique ; nom et frontières à refondre.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D04.a&quot;, &quot;name&quot;: &quot;Establish a commercial commitment&quot;, &quot;purpose&quot;: &quot;Disposer d’une référence sur ce qui est commandé et engagé.&quot;, &quot;definition&quot;: &quot;établir l’engagement propre à une commande, avec parties, biens ou prestations, quantités, conditions applicables et degré de fermeté.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D04.b&quot;, &quot;name&quot;: &quot;Amend commercial obligations&quot;, &quot;purpose&quot;: &quot;Faire évoluer les obligations transactionnelles et leurs effets.&quot;, &quot;definition&quot;: &quot;modifier ou éteindre les engagements d’une commande selon les conditions applicables, en conservant leur histoire.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D04.c&quot;, &quot;name&quot;: &quot;Determine commitment fulfillment and remaining obligations&quot;, &quot;purpose&quot;: &quot;Connaître les obligations encore ouvertes.&quot;, &quot;definition&quot;: &quot;rapprocher les obligations d’une commande des réalisations et corrections qui lui sont imputables.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D04.d&quot;, &quot;name&quot;: &quot;Authorize a return or replacement&quot;, &quot;purpose&quot;: &quot;Donner effet à une solution commerciale admissible après fourniture.&quot;, &quot;definition&quot;: &quot;décider de l’autorisation et des obligations correctives applicables à une commande selon les conditions reçues et les faits.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D05&quot;, &quot;name&quot;: &quot;Operational Resource Balancing&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Identifier les manques ou excédents par rapport aux besoins et objectifs opérationnels, et proposer leur traitement.&quot;, &quot;definition&quot;: &quot;Établir les objectifs de couverture, les besoins nets et les redistributions utiles à l’équilibrage opérationnel. Le dossier Demande de réassort appartient au modèle processus ; calculer un besoin ne promet ni ne réalise un transfert.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Réassort étayé par les récits ; regroupement et capacités proposés. Redistribution hypothétique ; réalisation FLOW et prévisions logistiques en frontière. Planification de saison exclue.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U06&quot;, &quot;U53&quot;, &quot;U57&quot;, &quot;U58&quot;, &quot;CAP011&quot;, &quot;CAP012&quot;, &quot;CAP013&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D05.a&quot;, &quot;name&quot;: &quot;Determine operational coverage targets&quot;, &quot;purpose&quot;: &quot;Donner une référence au renouvellement opérationnel des stocks.&quot;, &quot;definition&quot;: &quot;établir niveaux et seuils applicables par ressource et périmètre.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U06&quot;, &quot;U53&quot;, &quot;U57&quot;, &quot;U58&quot;, &quot;CAP011&quot;, &quot;CAP012&quot;, &quot;CAP013&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D05.b&quot;, &quot;name&quot;: &quot;Determine net resource requirements&quot;, &quot;purpose&quot;: &quot;Former un besoin justifié sans ignorer les ressources déjà attendues.&quot;, &quot;definition&quot;: &quot;identifier les manques ou excédents en tenant compte des positions, besoins et approvisionnements attendus pertinents.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U06&quot;, &quot;U53&quot;, &quot;U57&quot;, &quot;U58&quot;, &quot;CAP011&quot;, &quot;CAP012&quot;, &quot;CAP013&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D05.c&quot;, &quot;name&quot;: &quot;Determine resource redistribution&quot;, &quot;purpose&quot;: &quot;Rééquilibrer les ressources lorsque leur distribution devient inadaptée.&quot;, &quot;definition&quot;: &quot;proposer les quantités et destinations permettant de traiter des déséquilibres selon les contraintes.&quot;, &quot;status&quot;: &quot;hypothesis&quot;, &quot;statusNote&quot;: &quot;Hypothèse issue de U57 ; attribution de réalisation ouverte et capacité non comparée précisément au marché. Prévisions et optimisations logistiques restent en adhérence.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U57&quot;, &quot;U58&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D06&quot;, &quot;name&quot;: &quot;Execution Options&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Apprécier les prestations admissibles et la capacité de réalisation encore mobilisable.&quot;, &quot;definition&quot;: &quot;Utiliser les références du réseau et les contraintes opérationnelles pour apprécier les possibilités concrètes de réalisation et les options compatibles avec un besoin.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacités proposées, notamment à partir du récit magasin. D13 reçoit les références ; D06.a ne les administre pas. Maille D06.a/c et partage avec Order Promising à éprouver ; autorités C-Log préservées.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U04&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U102&quot;, &quot;C68&quot;, &quot;Q015&quot;, &quot;Q016&quot;, &quot;Q017&quot;, &quot;Q018&quot;, &quot;Q019&quot;, &quot;Q063&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D06.a&quot;, &quot;name&quot;: &quot;Qualify locations and feasible services&quot;, &quot;purpose&quot;: &quot;Identifier les possibilités concrètes de réalisation.&quot;, &quot;definition&quot;: &quot;connaître les lieux, leurs rôles opérationnels et les prestations qui y sont admissibles.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Les références sont reçues en D13 ; cette aptitude ne désigne pas leur administration ou contrôle de qualité.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U04&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U102&quot;, &quot;C68&quot;, &quot;Q015&quot;, &quot;Q016&quot;, &quot;Q017&quot;, &quot;Q018&quot;, &quot;Q019&quot;, &quot;Q063&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D06.b&quot;, &quot;name&quot;: &quot;Determine available execution capacity&quot;, &quot;purpose&quot;: &quot;Éviter de confondre disponibilité d’article et possibilité de le servir.&quot;, &quot;definition&quot;: &quot;apprécier limites applicables, charge engagée et capacité restante pour une prestation et une période.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U04&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U102&quot;, &quot;C68&quot;, &quot;Q015&quot;, &quot;Q016&quot;, &quot;Q017&quot;, &quot;Q018&quot;, &quot;Q019&quot;, &quot;Q063&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D06.c&quot;, &quot;name&quot;: &quot;Determine eligible execution options&quot;, &quot;purpose&quot;: &quot;Éclairer un choix réalisable selon les critères autorisés.&quot;, &quot;definition&quot;: &quot;établir et comparer les origines ou prestations compatibles avec un résultat attendu.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U04&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U102&quot;, &quot;C68&quot;, &quot;Q015&quot;, &quot;Q016&quot;, &quot;Q017&quot;, &quot;Q018&quot;, &quot;Q019&quot;, &quot;Q063&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D07&quot;, &quot;name&quot;: &quot;Execution Commitments and Facts&quot;, &quot;group&quot;: &quot;transactional&quot;, &quot;purpose&quot;: &quot;Connaître ce qui est attendu, engagé ou constaté dans la réalisation et fournir des faits utiles aux autres domaines.&quot;, &quot;definition&quot;: &quot;Exprimer le besoin de prestation, suivre les engagements d’exécution, rattacher les résultats et écarts aux attentes, et qualifier les ressources encore attendues.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Frontière à reprendre avec D04 après U100 : autorisation de mouvement, engagement d’exécution et fait de réalisation. Logistique hors développement FLOW ; aucun transfert d’autorité ni fusion décidé.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U03&quot;, &quot;U04&quot;, &quot;U05&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U10&quot;, &quot;U30&quot;, &quot;U48&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D07.a&quot;, &quot;name&quot;: &quot;Formalize a service requirement&quot;, &quot;purpose&quot;: &quot;Rendre le besoin compréhensible et exploitable par l’exécutant.&quot;, &quot;definition&quot;: &quot;exprimer biens, destinataire, résultat et opérations nécessaires à une réalisation.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U03&quot;, &quot;U04&quot;, &quot;U05&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U10&quot;, &quot;U30&quot;, &quot;U48&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D07.b&quot;, &quot;name&quot;: &quot;Establish and adjust execution commitments&quot;, &quot;purpose&quot;: &quot;Savoir quelle réalisation est effectivement engagée et quelle charge elle mobilise.&quot;, &quot;definition&quot;: &quot;qualifier prise en charge, portée, validité et effets des refus, retraits ou révisions.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U03&quot;, &quot;U04&quot;, &quot;U05&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U10&quot;, &quot;U30&quot;, &quot;U48&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D07.c&quot;, &quot;name&quot;: &quot;Qualify execution results and discrepancies&quot;, &quot;purpose&quot;: &quot;Donner aux autres domaines des faits utilisables et expliquer les écarts.&quot;, &quot;definition&quot;: &quot;rattacher constats de production, expédition, réception ou consommation au résultat attendu.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U03&quot;, &quot;U04&quot;, &quot;U05&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U10&quot;, &quot;U30&quot;, &quot;U48&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}, {&quot;id&quot;: &quot;D07.d&quot;, &quot;name&quot;: &quot;Identify and qualify expected resources&quot;, &quot;purpose&quot;: &quot;Permettre un raisonnement sur les ressources futures avec leurs limites.&quot;, &quot;definition&quot;: &quot;qualifier quantités, dates, provenance et fermeté des résultats de réalisation encore attendus.&quot;, &quot;status&quot;: &quot;review&quot;, &quot;statusNote&quot;: &quot;Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U03&quot;, &quot;U04&quot;, &quot;U05&quot;, &quot;U06&quot;, &quot;U07&quot;, &quot;U10&quot;, &quot;U30&quot;, &quot;U48&quot;, &quot;U100&quot;, &quot;C66&quot;, &quot;Q074&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D09&quot;, &quot;name&quot;: &quot;Party / Role&quot;, &quot;group&quot;: &quot;references&quot;, &quot;purpose&quot;: &quot;Disposer des identités et rôles de référence nécessaires pour relier les opérations aux bonnes parties.&quot;, &quot;definition&quot;: &quot;Recevoir les références des parties et leurs rôles métier, distincts des habilitations RBAC. L’identité sans doublon relève du maître externe ; les modèles se relient par identifiants.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Maîtrise externe et ingestion seule imposées en U97 ; groupe Business References retenu en U103. Les sources et autorités par attribut restent à documenter ; aucun rang autonome universel adopté.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;C69&quot;, &quot;INF18&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D09.d&quot;, &quot;name&quot;: &quot;Party / Role Ingestion&quot;, &quot;purpose&quot;: &quot;Utiliser une identité de référence commune dans les opérations.&quot;, &quot;definition&quot;: &quot;recevoir les parties, leurs identifiants, rôles et relations de référence ainsi que leurs évolutions, en conservant les références du maître externe.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local et description de travail ; aucune maîtrise, vérification ou enrichissement du référentiel dans la plateforme.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;P85&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D11&quot;, &quot;name&quot;: &quot;Agreement&quot;, &quot;group&quot;: &quot;references&quot;, &quot;purpose&quot;: &quot;Disposer des contrats de référence et de leurs conditions pour former les commandes et honorer leurs promesses.&quot;, &quot;definition&quot;: &quot;Recevoir les Agreements, les identités Party, les catalogues permettant de commander et les conditions particulières utiles à Order Promising. Les commandes transactionnelles restent distinctes des contrats de référence.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Maîtrise externe et ingestion seule imposées en U97/U98 ; groupe Business References retenu en U103. Cardinalités, consommation contractuelle et autorités détaillées restent ouvertes.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;C69&quot;, &quot;INF19&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D11.a&quot;, &quot;name&quot;: &quot;Agreement Ingestion&quot;, &quot;purpose&quot;: &quot;Mettre les conditions contractuelles de référence à disposition des décisions et engagements transactionnels.&quot;, &quot;definition&quot;: &quot;recevoir les contrats fournisseurs ou clients, leurs références Party et Catalog, leurs conditions particulières et leurs évolutions depuis les applications maîtres externes.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Ingestion seule exigée par U97/U98 et conservée dans Business References U103. Nom local ; contrats de référence reçus distincts des commandes. Aucune création ou administration locale d’Agreement.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;P85&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D08&quot;, &quot;name&quot;: &quot;Product Reference&quot;, &quot;group&quot;: &quot;references&quot;, &quot;purpose&quot;: &quot;Disposer d’une référence article autonome, utilisable dans plusieurs catalogues et par les opérations de la Supply.&quot;, &quot;definition&quot;: &quot;Reconnaître les mêmes articles par leur référence SKU indépendamment des catalogues qui les proposent. La référence article est reçue depuis un maître externe.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Autonomie article confirmée en U100 ; nom Product Reference et rédaction détaillée proposés. Groupe Business References retenu en U103. Maître, attributs, unités et conversions restent à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U100&quot;, &quot;U103&quot;, &quot;C66&quot;, &quot;C69&quot;, &quot;INF21&quot;, &quot;CMP058&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D08.d&quot;, &quot;name&quot;: &quot;Product Reference Ingestion&quot;, &quot;purpose&quot;: &quot;Reconnaître les mêmes articles dans les différents catalogues et opérations.&quot;, &quot;definition&quot;: &quot;recevoir les articles, leurs identifiants SKU, caractéristiques de référence utiles et évolutions depuis leur maître externe, indépendamment de leur présence dans les catalogues.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Autonomie article confirmée en U100 ; nom et rédaction détaillée de l’ingestion proposés dans la continuité U97. Business References et ses cinq ingestions distinctes retenus U103 ; attributs et maître restent ouverts.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U100&quot;, &quot;U103&quot;, &quot;C66&quot;, &quot;INF21&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D12&quot;, &quot;name&quot;: &quot;Catalog&quot;, &quot;group&quot;: &quot;references&quot;, &quot;purpose&quot;: &quot;Disposer des catalogues applicables, avec les prix et zones géographiques nécessaires aux opérations.&quot;, &quot;definition&quot;: &quot;Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Un même SKU peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Maîtrise externe et ingestion seule imposées en U97 ; autonomie article précisée en U100 ; groupe Business References retenu en U103. Sources et attributs détaillés à préciser.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U98&quot;, &quot;U100&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;C69&quot;, &quot;INF20&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D12.a&quot;, &quot;name&quot;: &quot;Catalog Ingestion&quot;, &quot;purpose&quot;: &quot;Permettre de commander et d’utiliser les informations commerciales reçues.&quot;, &quot;definition&quot;: &quot;recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques d’application et évolutions.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local ; catalogues et prix construits à l’extérieur, références article autonomes selon U100.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U100&quot;, &quot;U103&quot;, &quot;C64&quot;, &quot;P85&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}, {&quot;id&quot;: &quot;D13&quot;, &quot;name&quot;: &quot;Fulfillment Network&quot;, &quot;group&quot;: &quot;references&quot;, &quot;purpose&quot;: &quot;Disposer d’une représentation de référence des lieux et des relations du réseau nécessaires à la réalisation des mouvements de marchandises.&quot;, &quot;definition&quot;: &quot;Recevoir les points du réseau, leurs caractéristiques et relations de référence et leurs liens aux parties responsables. Les lieux restent distincts des parties ; stocks, charge et acheminement choisi appartiennent aux domaines consommateurs.&quot;, &quot;status&quot;: &quot;retained&quot;, &quot;statusNote&quot;: &quot;Référentiel demandé en U102 ; Business References retenu en U103. Repère, définition et contenu détaillé proposés ; ingestion seule dans la continuité U97. Maîtres et topologie ouverts en Q076 ; aucune autorité FLOW ou C-Log déduite.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U102&quot;, &quot;U103&quot;, &quot;C68&quot;, &quot;C69&quot;, &quot;INF22&quot;, &quot;Q076&quot;, &quot;CMP060&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;, &quot;capabilities&quot;: [{&quot;id&quot;: &quot;D13.a&quot;, &quot;name&quot;: &quot;Fulfillment Network Ingestion&quot;, &quot;purpose&quot;: &quot;Donner aux opérations et décisions une connaissance commune du réseau de réalisation.&quot;, &quot;definition&quot;: &quot;recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes.&quot;, &quot;status&quot;: &quot;proposed&quot;, &quot;statusNote&quot;: &quot;Ingestion et contenu détaillé proposés dans la continuité U97 après la demande de référentiel U102. Groupe de cinq références et ingestions retenu U103 ; maîtres, attributs et topologie restent ouverts Q076.&quot;, &quot;sources&quot;: [&quot;P81&quot;, &quot;U97&quot;, &quot;U102&quot;, &quot;U103&quot;, &quot;C68&quot;, &quot;INF22&quot;, &quot;Q076&quot;], &quot;sourcePath&quot;: &quot;connaissance/25-domaines-coeur-et-epreuve-recits.md&quot;}]}]}&lt;/script&gt;
+  &lt;script&gt;
+  (()=&gt;{
+    const root=document.getElementById(&#x27;flow-atlas&#x27;);
+    const data=JSON.parse(root.querySelector(&#x27;#fa-model-data&#x27;).textContent);
+    const content=root.querySelector(&#x27;#fa-content&#x27;);
+    const search=root.querySelector(&#x27;#fa-search&#x27;);
+    const nodes=new Map();
+    const labels={model:&#x27;Modèle&#x27;,domain:&#x27;Domaine de travail&#x27;,group:&#x27;Groupe de présentation&#x27;,reference:&#x27;Référence&#x27;,capability:&#x27;Capacité&#x27;,object:&#x27;Objet métier&#x27;,document:&#x27;Document&#x27;,event:&#x27;Événement métier&#x27;};
+    const icons={model:&#x27;layers&#x27;,domain:&#x27;grid-2x2&#x27;,group:&#x27;library&#x27;,reference:&#x27;database&#x27;,capability:&#x27;component&#x27;,object:&#x27;box&#x27;,document:&#x27;file-text&#x27;,event:&#x27;zap&#x27;};
+    const add=n=&gt;nodes.set(n.id,{children:[],sources:[],status:&#x27;proposed&#x27;,...n});
+    const mapPath=&#x27;connaissance/25-domaines-coeur-et-epreuve-recits.md&#x27;;
+    const examplePath=&#x27;connaissance/24-capacites-objets-et-faits.md&#x27;;
+    add({id:&#x27;atlas&#x27;,name:&#x27;Le modèle business&#x27;,kind:&#x27;model&#x27;,children:[&#x27;transactional&#x27;,&#x27;process&#x27;],purpose:&#x27;Explorer les modèles métier et leurs relations.&#x27;,status:&#x27;proposed&#x27;,statusNote:&#x27;Entrée de navigation proposée pour cet aperçu. Les deux modèles conservent leurs périmètres propres.&#x27;,sources:[&#x27;U50&#x27;,&#x27;U62&#x27;,&#x27;U104&#x27;],sourcePath:&#x27;AGENTS.md&#x27;});
+    add({id:&#x27;transactional&#x27;,name:&#x27;Socle transactionnel&#x27;,kind:&#x27;model&#x27;,parentId:&#x27;atlas&#x27;,children:[...data.domains.filter(d=&gt;d.group===&#x27;transactional&#x27;).map(d=&gt;d.id),&#x27;business-references&#x27;],purpose:&#x27;Les aptitudes métier du socle, leurs problèmes et leurs connaissances.&#x27;,definition:&#x27;Carte de travail des domaines et des capacités du socle transactionnel. La profondeur de navigation dépend du modèle.&#x27;,status:&#x27;proposed&#x27;,statusNote:&#x27;P81 version 0.9 : sept domaines transactionnels de travail et un groupe Business References, 36 aptitudes. Neuf capacités d’Order Promising validées ; autres statuts selon leurs sources.&#x27;,sources:[&#x27;P81&#x27;,&#x27;U95&#x27;,&#x27;U103&#x27;],sourcePath:mapPath});
+    add({id:&#x27;business-references&#x27;,name:&#x27;Business References&#x27;,kind:&#x27;group&#x27;,parentId:&#x27;transactional&#x27;,children:data.domains.filter(d=&gt;d.group===&#x27;references&#x27;).map(d=&gt;d.id),purpose:&#x27;Recevoir les références externes nécessaires aux opérations.&#x27;,definition:&#x27;Cinq modèles de référence distincts, reliés par identifiants et réunis dans un groupe de présentation. Chacun possède une capacité d’ingestion.&#x27;,status:&#x27;retained&#x27;,statusNote:&#x27;Groupe de présentation retenu par Laurent en U103. Aucun domaine fusionné ni capacité mère. Les contenus détaillés et maîtres du réseau restent ouverts.&#x27;,sources:[&#x27;U97&#x27;,&#x27;U100&#x27;,&#x27;U102&#x27;,&#x27;U103&#x27;],sourcePath:mapPath});
+    add({id:&#x27;process&#x27;,name:&#x27;Modèle processus&#x27;,kind:&#x27;model&#x27;,parentId:&#x27;atlas&#x27;,children:[&#x27;ILL-OBJ-02&#x27;],purpose:&#x27;Comprendre les situations et parcours métier, dans une approche Case Management.&#x27;,definition:&#x27;Modèle distinct du socle transactionnel, avec ses propres objets, règles et moyens de décision et d’orchestration. Son catalogue fonctionnel reste à développer.&#x27;,status:&#x27;proposed&#x27;,statusNote:&#x27;Orientation déclarée U49/U50/U62. L’objet Demande de réassort est cité par Laurent ; l’aperçu ne fournit pas une cartographie des processus.&#x27;,sources:[&#x27;U49&#x27;,&#x27;U50&#x27;,&#x27;U62&#x27;],sourcePath:examplePath});
+    const aliases={&#x27;D01&#x27;:&#x27;stock physique logique futur inventaire&#x27;,&#x27;D01.a&#x27;:&#x27;quantités position stock physique logique&#x27;,&#x27;D01.b&#x27;:&#x27;mouvements stock états&#x27;,&#x27;D01.c&#x27;:&#x27;visibilité stock consolidation&#x27;,&#x27;D01.d&#x27;:&#x27;inventaire comptage counting stocktaking physical inventory rapprochement écart&#x27;,&#x27;D02.b&#x27;:&#x27;protection allocation ressource quota&#x27;,&#x27;D02.c&#x27;:&#x27;réservation reserver reservation engagement&#x27;,&#x27;D02.e&#x27;:&#x27;affectation affecter allocation supply assignment&#x27;,&#x27;D03&#x27;:&#x27;promesse promettre ATP disponible virtuel&#x27;,&#x27;D03.a&#x27;:&#x27;proposition promesse ATP quantité date&#x27;,&#x27;D03.b&#x27;:&#x27;confirmation confirmer promesse engagement&#x27;,&#x27;D03.c&#x27;:&#x27;révision promesse réexaminer&#x27;,&#x27;D09&#x27;:&#x27;partie tiers client fournisseur identité rôle party&#x27;,&#x27;D11&#x27;:&#x27;accord contrat conditions agreement&#x27;,&#x27;D08&#x27;:&#x27;article produit SKU&#x27;,&#x27;D12&#x27;:&#x27;catalogue prix zone&#x27;,&#x27;D13&#x27;:&#x27;réseau lieu point logistique entrepôt fulfillment&#x27;};
+    data.domains.forEach(d=&gt;{
+      add({...d,kind:d.group===&#x27;references&#x27;?&#x27;reference&#x27;:&#x27;domain&#x27;,parentId:d.group===&#x27;references&#x27;?&#x27;business-references&#x27;:&#x27;transactional&#x27;,children:d.capabilities.map(c=&gt;c.id),aliases:aliases[d.id]||&#x27;&#x27;});
+      d.capabilities.forEach(c=&gt;add({...c,kind:&#x27;capability&#x27;,parentId:d.id,aliases:aliases[c.id]||&#x27;&#x27;}));
+    });
+    const confirmation=[...nodes.values()].find(n=&gt;n.name===&#x27;Promise Confirmation&#x27;).id;
+    const illustrative={status:&#x27;illustration&#x27;,sourcePath:examplePath,sources:[&#x27;U61&#x27;,&#x27;U62&#x27;,&#x27;P80&#x27;],statusNote:&#x27;Exemple proposé dans la note 24, sans validation d’un modèle détaillé. Identifiant ILL propre à cet aperçu ; objets, cardinalités, contenu et autorités restent à éprouver.&#x27;};
+    add({...illustrative,id:&#x27;ILL-OBJ-01&#x27;,name:&#x27;Engagement de fourniture&#x27;,kind:&#x27;object&#x27;,modelId:&#x27;transactional&#x27;,purpose:&#x27;Exprimer les quantités et dates de fourniture engagées.&#x27;,definition:&#x27;Objet de travail de l’exemple de confirmation : l’engagement possède des valeurs et un état. Identité, limites et cycle de vie restent à préciser.&#x27;,aliases:&#x27;promesse engagement objet&#x27;});
+    add({...illustrative,id:&#x27;ILL-DOC-01&#x27;,name:&#x27;Confirmation de promesse&#x27;,kind:&#x27;document&#x27;,modelId:&#x27;transactional&#x27;,purpose:&#x27;Porter les engagements et conditions retenus dans une confirmation identifiée et versionnée.&#x27;,definition:&#x27;Document associé proposé. Le contenu exact, la portée de la représentation de l’état et le traitement des corrections restent à définir.&#x27;,aliases:&#x27;document justificatif preuve promesse confirmation&#x27;});
+    add({...illustrative,id:&#x27;ILL-EVT-01&#x27;,name:&#x27;Promesse confirmée&#x27;,kind:&#x27;event&#x27;,modelId:&#x27;transactional&#x27;,purpose:&#x27;Constater que des quantités et dates ont été confirmées pour une demande.&#x27;,definition:&#x27;Nom illustratif du fait de gestion décrit dans la note 24. Le fait métier est distinct du message qui pourrait le notifier.&#x27;,aliases:&#x27;événement evenement fait confirmation notification&#x27;});
+    add({...illustrative,id:&#x27;ILL-OBJ-02&#x27;,name:&#x27;Demande de réassort&#x27;,kind:&#x27;object&#x27;,parentId:&#x27;process&#x27;,modelId:&#x27;process&#x27;,purpose:&#x27;Suivre une situation de réassort dans le modèle processus.&#x27;,definition:&#x27;Objet cité par Laurent en U62. Besoin exprimé, exceptions et clôture sont des contenus proposés ; aucune convention universelle Demande n’est adoptée.&#x27;,statusNote:&#x27;Objet cité par Laurent U62. Détails illustratifs proposés dans la note 24. Le repère ILL de l’aperçu ne crée pas un identifiant de registre.&#x27;,aliases:&#x27;reassort replenishment case dossier processus&#x27;});
+    const edges=[
+      {from:confirmation,to:&#x27;ILL-OBJ-01&#x27;,verb:&#x27;confirme&#x27;,inverse:&#x27;est confirmé par&#x27;,status:&#x27;illustration&#x27;,sources:[&#x27;P80&#x27;]},
+      {from:confirmation,to:&#x27;ILL-DOC-01&#x27;,verb:&#x27;a pour document associé&#x27;,inverse:&#x27;est associé à&#x27;,status:&#x27;illustration&#x27;,sources:[&#x27;P80&#x27;]},
+      {from:confirmation,to:&#x27;ILL-EVT-01&#x27;,verb:&#x27;a pour résultat constaté&#x27;,inverse:&#x27;constate le résultat de&#x27;,status:&#x27;illustration&#x27;,sources:[&#x27;P80&#x27;]},
+      {from:&#x27;ILL-DOC-01&#x27;,to:&#x27;ILL-OBJ-01&#x27;,verb:&#x27;représente les engagements de&#x27;,inverse:&#x27;est représenté dans&#x27;,status:&#x27;illustration&#x27;,sources:[&#x27;P80&#x27;]},
+      {from:&#x27;ILL-DOC-01&#x27;,to:&#x27;ILL-EVT-01&#x27;,verb:&#x27;porte la confirmation associée à&#x27;,inverse:&#x27;a pour document associé&#x27;,status:&#x27;illustration&#x27;,sources:[&#x27;P80&#x27;]},
+      {from:&#x27;D01&#x27;,to:&#x27;D03&#x27;,verb:&#x27;fournit la connaissance des stocks à&#x27;,inverse:&#x27;s’appuie sur les stocks connus dans&#x27;,status:&#x27;proposed&#x27;,sources:[&#x27;U80&#x27;,&#x27;U81&#x27;]},
+      {from:&#x27;D11&#x27;,to:&#x27;D03&#x27;,verb:&#x27;fournit les conditions à appliquer à&#x27;,inverse:&#x27;applique les conditions reçues de&#x27;,status:&#x27;proposed&#x27;,sources:[&#x27;U97&#x27;]},
+      {from:&#x27;D13&#x27;,to:&#x27;D06&#x27;,verb:&#x27;décrit le réseau utilisé par&#x27;,inverse:&#x27;utilise les références du réseau de&#x27;,status:&#x27;proposed&#x27;,sources:[&#x27;U102&#x27;]}
+    ];
+    const related=id=&gt;edges.filter(e=&gt;e.from===id||e.to===id).map(e=&gt;({...e,target:e.from===id?e.to:e.from,label:e.from===id?e.verb:e.inverse}));
+    const esc=s=&gt;String(s??&#x27;&#x27;).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,c=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[c]));
+    const normalize=s=&gt;String(s).normalize(&#x27;NFD&#x27;).replace(/[\u0300-\u036f]/g,&#x27;&#x27;).toLowerCase();
+    const icon=k=&gt;`&lt;i data-lucide=&quot;${icons[k]||k}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;`;
+    const state={id:&#x27;transactional&#x27;,view:&#x27;map&#x27;,query:&#x27;&#x27;,type:&#x27;all&#x27;,statusFilter:&#x27;all&#x27;,history:[{id:&#x27;transactional&#x27;,view:&#x27;map&#x27;}],at:0,recent:[],journey:-1};
+    const design={density:&#x27;comfortable&#x27;,layout:&#x27;cards&#x27;,definitions:true};
+    const steps=[{id:confirmation,label:&#x27;Capacité&#x27;,text:&#x27;Promise Confirmation engage les quantités et dates retenues. Sa présence dans la liste d’Order Promising est validée en U95.&#x27;},{id:&#x27;ILL-OBJ-01&#x27;,label:&#x27;Objet métier&#x27;,text:&#x27;L’engagement de fourniture donne un sens durable à ce qui est confirmé. Son identité et ses règles restent à préciser.&#x27;},{id:&#x27;ILL-DOC-01&#x27;,label:&#x27;Document&#x27;,text:&#x27;La confirmation conserve les engagements et conditions retenus. Elle représente un état ou un contenu utile à attester.&#x27;},{id:&#x27;ILL-EVT-01&#x27;,label:&#x27;Événement&#x27;,text:&#x27;Le fait décrit ce qui s’est produit. Il se relie au document et à la capacité ; sa notification éventuelle est une autre notion.&#x27;}];
+    function lineage(n){const p=[];const seen=new Set();while(n&amp;&amp;!seen.has(n.id)){p.unshift(n);seen.add(n.id);n=nodes.get(n.parentId)}return p}
+    function modelOf(n){return n.modelId||lineage(n).find(x=&gt;[&#x27;process&#x27;,&#x27;transactional&#x27;].includes(x.id))?.id}
+    function statusInfo(n){if(n.id===&#x27;D03&#x27;)return [&#x27;Liste validée U95&#x27;,&#x27;green&#x27;];if(n.status===&#x27;validated&#x27;)return [&#x27;Capacité validée&#x27;,&#x27;green&#x27;];if(n.status===&#x27;illustration&#x27;)return [&#x27;Exemple proposé&#x27;,&#x27;purple&#x27;];if(n.status===&#x27;review&#x27;)return [&#x27;En réexamen&#x27;,&#x27;amber&#x27;];if(n.status===&#x27;hypothesis&#x27;)return [&#x27;Hypothèse&#x27;,&#x27;amber&#x27;];if(n.id===&#x27;business-references&#x27;)return [&#x27;Groupe retenu&#x27;,&#x27;green&#x27;];if(n.status===&#x27;retained&#x27;)return [n.statusNote.startsWith(&#x27;Nom &#x27;)?&#x27;Nom retenu&#x27;:&#x27;Orientation retenue&#x27;,&#x27;green&#x27;];return [&#x27;Proposé&#x27;,&#x27;neutral&#x27;]}
+    function badge(n){const [t,c]=statusInfo(n);return `&lt;span class=&quot;fa-badge&quot; data-tone=&quot;${c}&quot;&gt;${t}&lt;/span&gt;`}
+    function kind(n){return `&lt;span class=&quot;fa-kind&quot; data-kind=&quot;${n.kind}&quot;&gt;${icon(n.kind)}${labels[n.kind]}&lt;/span&gt;`}
+    function childCount(n){return n.kind===&#x27;group&#x27;?`${n.children.length} références`:n.children.length?`${n.children.length} ${n.kind===&#x27;model&#x27;?&#x27;éléments&#x27;:&#x27;capacités&#x27;}`:labels[n.kind]}
+    function tile(n){return `&lt;button class=&quot;fa-tile&quot; data-go=&quot;${n.id}&quot;&gt;&lt;span class=&quot;fa-tile-top&quot;&gt;&lt;span class=&quot;fa-id&quot;&gt;${esc(n.id.startsWith(&#x27;ILL-&#x27;)?&#x27;ILLUSTRATION&#x27;:n.kind===&#x27;model&#x27;?&#x27;MODÈLE&#x27;:n.id)}&lt;/span&gt;${badge(n)}&lt;/span&gt;&lt;span class=&quot;fa-tile-name&quot;&gt;${esc(n.name)}&lt;/span&gt;&lt;span class=&quot;fa-tile-purpose&quot;&gt;${esc(n.purpose)}&lt;/span&gt;&lt;span class=&quot;fa-tile-foot&quot;&gt;&lt;span&gt;${childCount(n)}&lt;/span&gt;${icon(&#x27;arrow-up-right&#x27;)}&lt;/span&gt;&lt;/button&gt;`}
+    function inspector(n){return `&lt;aside class=&quot;fa-inspector&quot; aria-label=&quot;Comprendre ${esc(n.name)}&quot;&gt;&lt;h3&gt;Finalité&lt;/h3&gt;&lt;p&gt;${esc(n.purpose)}&lt;/p&gt;&lt;h3&gt;Définition&lt;/h3&gt;&lt;p&gt;${esc(n.definition||n.purpose)}&lt;/p&gt;&lt;div class=&quot;fa-status-note&quot;&gt;${badge(n)}&lt;p&gt;${esc(n.statusNote)}&lt;/p&gt;&lt;/div&gt;&lt;details class=&quot;fa-source-details&quot;&gt;&lt;summary&gt;Sources et provenance&lt;/summary&gt;&lt;div class=&quot;fa-source&quot;&gt;${(n.sources||[]).map(s=&gt;`&lt;span&gt;${esc(s)}&lt;/span&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;&lt;p class=&quot;fa-source-path&quot;&gt;${esc(n.sourcePath||mapPath)}&lt;/p&gt;&lt;p class=&quot;fa-footnote&quot;&gt;Synthèse de lecture · état au 13 septembre 2026. Le registre conserve la formulation et ses réserves.&lt;/p&gt;&lt;/details&gt;${n.kind===&#x27;reference&#x27;?&#x27;&lt;h3&gt;Autorité&lt;/h3&gt;&lt;p&gt;Références reçues de l’extérieur. La plateforme porte l’ingestion ; le maître et les détails sont ceux précisés dans les sources.&lt;/p&gt;&#x27;:&#x27;&#x27;}&lt;/aside&gt;`}
+    function relationView(n){const rs=related(n.id);if(!rs.length)return `&lt;div class=&quot;fa-empty&quot;&gt;${kind(n)}&lt;h2&gt;Relations à documenter&lt;/h2&gt;&lt;p&gt;Aucune relation métier détaillée n’est représentée pour cet élément dans cet aperçu.&lt;/p&gt;${n.children.length?&#x27;&lt;button class=&quot;fa-button&quot; data-view=&quot;map&quot;&gt;Explorer les éléments rattachés&lt;/button&gt;&#x27;:&#x27;&#x27;}&lt;button class=&quot;fa-button&quot; data-journey=&quot;start&quot;&gt;Voir l’exemple d’une promesse&lt;/button&gt;&lt;/div&gt;`;return `&lt;div class=&quot;fa-relations&quot;&gt;&lt;svg class=&quot;fa-links-svg&quot; aria-hidden=&quot;true&quot;&gt;&lt;/svg&gt;&lt;div class=&quot;fa-graph-center&quot;&gt;${kind(n)}&lt;strong&gt;${esc(n.name)}&lt;/strong&gt;&lt;/div&gt;&lt;div class=&quot;fa-related-grid&quot;&gt;${rs.map(e=&gt;{const t=nodes.get(e.target);return `&lt;button class=&quot;fa-related&quot; data-go=&quot;${t.id}&quot; data-open-view=&quot;links&quot;&gt;&lt;span class=&quot;fa-relation-label&quot;&gt;${esc(e.label)} ↓&lt;/span&gt;${kind(t)}&lt;strong&gt;${esc(t.name)}&lt;/strong&gt;&lt;span class=&quot;fa-badge&quot; data-tone=&quot;${e.status===&#x27;illustration&#x27;?&#x27;purple&#x27;:&#x27;neutral&#x27;}&quot;&gt;${e.status===&#x27;illustration&#x27;?&#x27;Lien illustratif&#x27;:&#x27;Lien de lecture&#x27;} · ${e.sources.join(&#x27;, &#x27;)}&lt;/span&gt;&lt;/button&gt;`}).join(&#x27;&#x27;)}&lt;/div&gt;&lt;p class=&quot;fa-edge-note&quot;&gt;Les verbes se lisent depuis l’élément sélectionné. Les liens ne constituent pas une décomposition.&lt;/p&gt;&lt;/div&gt;`}
+    function mapView(n){if(n.id===&#x27;transactional&#x27;){return `&lt;div class=&quot;fa-grid&quot;&gt;${n.children.filter(id=&gt;id!==&#x27;business-references&#x27;).map(id=&gt;tile(nodes.get(id))).join(&#x27;&#x27;)}&lt;/div&gt;&lt;section class=&quot;fa-ref-group&quot;&gt;&lt;div class=&quot;fa-ref-head&quot;&gt;&lt;div&gt;&lt;h3&gt;Business References&lt;/h3&gt;&lt;small&gt;5 modèles distincts · ingestion de références externes&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;fa-button&quot; data-go=&quot;business-references&quot;&gt;Explorer le groupe ${icon(&#x27;arrow-right&#x27;)}&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;fa-ref-chips&quot;&gt;${nodes.get(&#x27;business-references&#x27;).children.map(id=&gt;`&lt;button data-go=&quot;${id}&quot;&gt;${esc(nodes.get(id).name)}&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;&lt;/section&gt;&lt;p class=&quot;fa-footnote&quot;&gt;La position des éléments représente un classement, pas un enchaînement de processus.&lt;/p&gt;`}
+      if(n.children.length)return `&lt;div class=&quot;fa-grid&quot;&gt;${n.children.map(id=&gt;tile(nodes.get(id))).join(&#x27;&#x27;)}&lt;/div&gt;${n.id===&#x27;process&#x27;?&#x27;&lt;p class=&quot;fa-footnote&quot;&gt;Un objet cité pour ouvrir l’exploration. Le modèle fonctionnel des processus reste à construire.&lt;/p&gt;&#x27;:&#x27;&#x27;}`;
+      return `&lt;div class=&quot;fa-detail-hero&quot;&gt;${kind(n)}&lt;h2&gt;${esc(n.name)}&lt;/h2&gt;&lt;p&gt;${esc(n.purpose)}&lt;/p&gt;&lt;/div&gt;${related(n.id).length?`&lt;div class=&quot;fa-eyebrow&quot;&gt;Explorer ses relations&lt;/div&gt;${relationView(n)}`:&#x27;&lt;div class=&quot;fa-empty&quot;&gt;&lt;h3&gt;Le détail reste à enrichir&lt;/h3&gt;&lt;p&gt;Sous-capacités, objets, documents et événements pourront apparaître à mesure qu’ils seront décrits et reliés au modèle.&lt;/p&gt;&lt;button class=&quot;fa-button&quot; data-journey=&quot;start&quot;&gt;Découvrir un exemple de relations&lt;/button&gt;&lt;/div&gt;&#x27;}`;
+    }
+    function renderJourney(){const el=root.querySelector(&#x27;#fa-journey&#x27;);el.hidden=state.journey&lt;0;if(el.hidden)return;const s=steps[state.journey];el.className=&#x27;fa-journey&#x27;;el.innerHTML=`&lt;div class=&quot;fa-journey-top&quot;&gt;&lt;strong&gt;Suivre une promesse · ${state.journey+1}/4&lt;/strong&gt;&lt;button class=&quot;fa-ghost&quot; data-journey=&quot;close&quot;&gt;Quitter le parcours ×&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;fa-stepper&quot;&gt;${steps.map((p,i)=&gt;`&lt;button data-step=&quot;${i}&quot; aria-current=&quot;${i===state.journey?&#x27;step&#x27;:&#x27;false&#x27;}&quot;&gt;${i+1} · ${p.label}&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;&lt;p&gt;${esc(s.text)}&lt;/p&gt;&lt;div class=&quot;fa-journey-actions&quot;&gt;&lt;span class=&quot;fa-badge&quot; data-tone=&quot;purple&quot;&gt;Détails métier illustratifs&lt;/span&gt;&lt;button class=&quot;fa-button&quot; data-journey=&quot;prev&quot; ${state.journey===0?&#x27;disabled&#x27;:&#x27;&#x27;}&gt;Précédent&lt;/button&gt;&lt;button class=&quot;fa-button fa-primary&quot; data-journey=&quot;next&quot;&gt;${state.journey===3?&#x27;Terminer&#x27;:&#x27;Continuer →&#x27;}&lt;/button&gt;&lt;/div&gt;`}
+    function heading(n){let subtitle=n.purpose;if(n.id===&#x27;transactional&#x27;)subtitle=&#x27;Entre dans un domaine pour découvrir ses capacités, puis parcours leurs relations.&#x27;;return `&lt;div class=&quot;fa-heading&quot;&gt;&lt;div class=&quot;fa-heading-text&quot;&gt;&lt;div class=&quot;fa-eyebrow&quot;&gt;${n.id===&#x27;transactional&#x27;?&#x27;Carte du modèle&#x27;:labels[n.kind]}&lt;/div&gt;&lt;h1&gt;${esc(n.name)}&lt;/h1&gt;&lt;p&gt;${esc(subtitle)}&lt;/p&gt;&lt;/div&gt;${n.id===&#x27;transactional&#x27;?&#x27;&lt;button class=&quot;fa-button&quot; data-journey=&quot;start&quot;&gt;&#x27;+icon(&#x27;compass&#x27;)+&#x27; Visite guidée&lt;/button&gt;&#x27;:&#x27;&#x27;}&lt;/div&gt;`}
+    function drawEdges(){const graph=root.querySelector(&#x27;.fa-relations&#x27;);if(!graph)return;const svg=graph.querySelector(&#x27;.fa-links-svg&#x27;);const center=graph.querySelector(&#x27;.fa-graph-center&#x27;);const bounds=graph.getBoundingClientRect();const c=center.getBoundingClientRect();const x=c.left+c.width/2-bounds.left,y=c.bottom-bounds.top;svg.setAttribute(&#x27;viewBox&#x27;,`0 0 ${bounds.width} ${bounds.height}`);svg.innerHTML=[...graph.querySelectorAll(&#x27;.fa-related&#x27;)].map(el=&gt;{const r=el.getBoundingClientRect();const tx=r.left+r.width/2-bounds.left,ty=r.top-bounds.top;return `&lt;path d=&quot;M ${x} ${y} C ${x} ${y+18}, ${tx} ${ty-20}, ${tx} ${ty}&quot;/&gt;`}).join(&#x27;&#x27;)}
+    function refreshIcons(){if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:17,height:17}})}
+    function render(){const n=nodes.get(state.id);root.dataset.density=design.density;root.dataset.layout=design.layout;root.dataset.definitions=String(design.definitions);root.querySelector(&#x27;#fa-back&#x27;).disabled=state.at===0;root.querySelector(&#x27;#fa-forward&#x27;).disabled=state.at===state.history.length-1;root.querySelectorAll(&#x27;.fa-nav[data-go]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b.dataset.go===modelOf(n))));root.querySelector(&#x27;.fa-nav[data-journey]&#x27;).setAttribute(&#x27;aria-pressed&#x27;,String(state.journey&gt;=0));let path=lineage(n);if(!n.parentId&amp;&amp;n.modelId)path=[nodes.get(&#x27;atlas&#x27;),nodes.get(n.modelId),n];root.querySelector(&#x27;#fa-breadcrumb&#x27;).innerHTML=path.map((p,i)=&gt;`${i?&#x27;&lt;span aria-hidden=&quot;true&quot;&gt;/&lt;/span&gt;&#x27;:&#x27;&#x27;}&lt;button data-go=&quot;${p.id}&quot;&gt;${esc(p.id===&#x27;atlas&#x27;?&#x27;Modèles&#x27;:p.name)}&lt;/button&gt;`).join(&#x27;&#x27;);root.querySelector(&#x27;#fa-recent&#x27;).innerHTML=state.recent.slice(0,4).map(id=&gt;`&lt;button class=&quot;fa-nav&quot; data-go=&quot;${id}&quot;&gt;${esc(nodes.get(id).name)}&lt;/button&gt;`).join(&#x27;&#x27;)||&#x27;&lt;small class=&quot;fa-muted&quot; style=&quot;padding:9px&quot;&gt;Tes visites apparaîtront ici.&lt;/small&gt;&#x27;;renderJourney();if(state.query){renderSearch();refreshIcons();return}
+      const showInspector=![&#x27;atlas&#x27;,&#x27;transactional&#x27;].includes(n.id);const count=n.id===&#x27;transactional&#x27;?&#x27;7 domaines · 1 groupe de références&#x27;:n.children.length?`${childCount(n)} · ${related(n.id).length} liens de lecture`:`${related(n.id).length} relations dans cet aperçu`;content.innerHTML=heading(n)+`&lt;div class=&quot;fa-toolbar&quot;&gt;&lt;div class=&quot;fa-segments&quot; aria-label=&quot;Vue de l’élément&quot;&gt;&lt;button data-view=&quot;map&quot; aria-pressed=&quot;${state.view===&#x27;map&#x27;}&quot;&gt;${icon(&#x27;layout-grid&#x27;)} Structure&lt;/button&gt;&lt;button data-view=&quot;links&quot; aria-pressed=&quot;${state.view===&#x27;links&#x27;}&quot;&gt;${icon(&#x27;waypoints&#x27;)} Relations&lt;/button&gt;&lt;/div&gt;&lt;span class=&quot;fa-count&quot;&gt;${count}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;${showInspector?&#x27;fa-focus-layout&#x27;:&#x27;&#x27;}&quot;&gt;&lt;section aria-label=&quot;${state.view===&#x27;map&#x27;?&#x27;Structure&#x27;:&#x27;Relations&#x27;} de ${esc(n.name)}&quot;&gt;${state.view===&#x27;map&#x27;?mapView(n):relationView(n)}&lt;/section&gt;${showInspector?inspector(n):&#x27;&#x27;}&lt;/div&gt;`;refreshIcons();requestAnimationFrame(drawEdges)}
+    function move(id,view=&#x27;map&#x27;,record=true,keepJourney=false){if(!nodes.has(id))return;if(!keepJourney)state.journey=-1;state.id=id;state.view=view;state.query=&#x27;&#x27;;search.value=&#x27;&#x27;;if(record){state.history=state.history.slice(0,state.at+1);const last=state.history.at(-1);if(last.id!==id||last.view!==view){state.history.push({id,view});state.at=state.history.length-1}}if(![&#x27;atlas&#x27;,&#x27;transactional&#x27;,&#x27;process&#x27;].includes(id))state.recent=[id,...state.recent.filter(x=&gt;x!==id)];render();root.querySelector(&#x27;#fa-announcement&#x27;).textContent=`${nodes.get(id).name}. ${labels[nodes.get(id).kind]}. Vue ${view===&#x27;map&#x27;?&#x27;structure&#x27;:&#x27;relations&#x27;}.`}
+    function score(n,q){const tokens=normalize(q).trim().split(/\s+/);const name=normalize(n.name),id=normalize(n.id),terms=normalize([n.name,n.id,n.purpose,n.definition,n.aliases,n.sources.join(&#x27; &#x27;)].join(&#x27; &#x27;));if(!tokens.every(t=&gt;terms.includes(t)))return 0;return (id===normalize(q)?100:0)+(name===normalize(q)?90:0)+(name.includes(normalize(q))?40:0)+(normalize(n.aliases).includes(normalize(q))?20:0)+1}
+    function highlight(value,q){const text=String(value||&#x27;&#x27;);const terms=normalize(q).trim().split(/\s+/).filter(Boolean);const normalized=normalize(text);const ranges=[];terms.forEach(t=&gt;{let start=normalized.indexOf(t);while(start!==-1){ranges.push([start,start+t.length]);start=normalized.indexOf(t,start+t.length)}});ranges.sort((a,b)=&gt;a[0]-b[0]);let out=&#x27;&#x27;,at=0;ranges.forEach(([s,e])=&gt;{if(s&lt;at)return;out+=esc(text.slice(at,s))+&#x27;&lt;mark&gt;&#x27;+esc(text.slice(s,e))+&#x27;&lt;/mark&gt;&#x27;;at=e});return out+esc(text.slice(at))}
+    function matches(){return [...nodes.values()].filter(n=&gt;![&#x27;atlas&#x27;,&#x27;transactional&#x27;,&#x27;process&#x27;].includes(n.id)).map(n=&gt;({n,score:score(n,state.query)})).filter(x=&gt;x.score&gt;0&amp;&amp;(state.type===&#x27;all&#x27;||x.n.kind===state.type)&amp;&amp;(state.statusFilter===&#x27;all&#x27;||(state.statusFilter===&#x27;validated&#x27;?(x.n.kind===&#x27;capability&#x27;&amp;&amp;x.n.status===&#x27;validated&#x27;):x.n.status===state.statusFilter))).sort((a,b)=&gt;b.score-a.score||a.n.name.localeCompare(b.n.name,&#x27;fr&#x27;))}
+    function searchResults(){const results=matches();return `&lt;p class=&quot;fa-count&quot; role=&quot;status&quot;&gt;${results.length} résultat${results.length&gt;1?&#x27;s&#x27;:&#x27;&#x27;} dans tout le modèle&lt;/p&gt;&lt;div class=&quot;fa-results&quot; style=&quot;margin-top:12px&quot;&gt;${results.map(({n})=&gt;{const path=lineage(n).filter(x=&gt;![&#x27;atlas&#x27;,&#x27;transactional&#x27;].includes(x.id));const aliasMatch=normalize(n.aliases||&#x27;&#x27;).includes(normalize(state.query));return `&lt;button class=&quot;fa-result&quot; data-go=&quot;${n.id}&quot;&gt;&lt;span class=&quot;fa-result-top&quot;&gt;&lt;span&gt;${highlight(n.name,state.query)}&lt;/span&gt;${badge(n)}&lt;/span&gt;&lt;p&gt;${highlight(n.definition||n.purpose,state.query)}&lt;/p&gt;${aliasMatch?`&lt;p&gt;Vocabulaire associé : ${highlight(n.aliases,state.query)}&lt;/p&gt;`:&#x27;&#x27;}&lt;div class=&quot;fa-result-path&quot;&gt;${labels[n.kind]} · ${highlight(n.id,state.query)} · ${esc(path.slice(0,-1).map(x=&gt;x.name).join(&#x27; / &#x27;)||nodes.get(modelOf(n))?.name||&#x27;Modèle&#x27;)}&lt;/div&gt;&lt;/button&gt;`}).join(&#x27;&#x27;)||&#x27;&lt;div class=&quot;fa-empty&quot;&gt;&lt;h2&gt;Aucun résultat&lt;/h2&gt;&lt;p&gt;Essaie un libellé, un terme français ou un identifiant, par exemple « affectation », « inventaire » ou « D03.b ».&lt;/p&gt;&lt;/div&gt;&#x27;}&lt;/div&gt;`}
+    function renderSearch(){content.innerHTML=`&lt;div class=&quot;fa-heading&quot;&gt;&lt;div class=&quot;fa-heading-text&quot;&gt;&lt;div class=&quot;fa-eyebrow&quot;&gt;Recherche directe&lt;/div&gt;&lt;h1&gt;Retrouver un élément&lt;/h1&gt;&lt;p&gt;Noms, identifiants, descriptions et vocabulaire français associé.&lt;/p&gt;&lt;/div&gt;&lt;button class=&quot;fa-button&quot; data-clear-search&gt;Revenir à l’exploration&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;fa-search-filters&quot;&gt;&lt;label&gt;Type &lt;select id=&quot;fa-type&quot;&gt;&lt;option value=&quot;all&quot;&gt;Tous les éléments&lt;/option&gt;&lt;option value=&quot;domain&quot;&gt;Domaines&lt;/option&gt;&lt;option value=&quot;reference&quot;&gt;Références&lt;/option&gt;&lt;option value=&quot;group&quot;&gt;Groupes&lt;/option&gt;&lt;option value=&quot;capability&quot;&gt;Capacités&lt;/option&gt;&lt;option value=&quot;object&quot;&gt;Objets métier&lt;/option&gt;&lt;option value=&quot;document&quot;&gt;Documents&lt;/option&gt;&lt;option value=&quot;event&quot;&gt;Événements&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Statut &lt;select id=&quot;fa-status&quot;&gt;&lt;option value=&quot;all&quot;&gt;Tous les statuts&lt;/option&gt;&lt;option value=&quot;validated&quot;&gt;Capacités validées&lt;/option&gt;&lt;option value=&quot;review&quot;&gt;En réexamen&lt;/option&gt;&lt;option value=&quot;hypothesis&quot;&gt;Hypothèses&lt;/option&gt;&lt;option value=&quot;illustration&quot;&gt;Exemples proposés&lt;/option&gt;&lt;option value=&quot;proposed&quot;&gt;Proposés&lt;/option&gt;&lt;option value=&quot;retained&quot;&gt;Orientations retenues&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;/div&gt;&lt;div id=&quot;fa-results-area&quot;&gt;${searchResults()}&lt;/div&gt;`;root.querySelector(&#x27;#fa-type&#x27;).value=state.type;root.querySelector(&#x27;#fa-status&#x27;).value=state.statusFilter}
+    root.addEventListener(&#x27;click&#x27;,e=&gt;{const b=e.target.closest(&#x27;button&#x27;);if(!b||!root.contains(b)||b.disabled)return;if(b.dataset.go){move(b.dataset.go,b.dataset.openView||&#x27;map&#x27;);return}if(b.dataset.view){move(state.id,b.dataset.view,true,state.journey&gt;=0);return}if(b.id===&#x27;fa-back&#x27;||b.id===&#x27;fa-forward&#x27;){state.at+=b.id===&#x27;fa-back&#x27;?-1:1;const h=state.history[state.at];move(h.id,h.view,false);return}if(b.hasAttribute(&#x27;data-clear-search&#x27;)){state.query=&#x27;&#x27;;search.value=&#x27;&#x27;;render();return}if(b.dataset.journey||b.dataset.step!==undefined){const a=b.dataset.journey;if(a===&#x27;close&#x27;){state.journey=-1;render();return}if(a===&#x27;next&#x27;&amp;&amp;state.journey===3){state.journey=-1;move(confirmation,&#x27;links&#x27;);return}state.journey=b.dataset.step!==undefined?Number(b.dataset.step):a===&#x27;start&#x27;?0:a===&#x27;prev&#x27;?state.journey-1:state.journey+1;move(steps[state.journey].id,&#x27;links&#x27;,true,true)}});
+    root.addEventListener(&#x27;change&#x27;,e=&gt;{if(e.target.id===&#x27;fa-type&#x27;||e.target.id===&#x27;fa-status&#x27;){if(e.target.id===&#x27;fa-type&#x27;)state.type=e.target.value;else state.statusFilter=e.target.value;root.querySelector(&#x27;#fa-results-area&#x27;).innerHTML=searchResults();refreshIcons()}});
+    search.addEventListener(&#x27;input&#x27;,()=&gt;{state.query=search.value.trim();state.journey=-1;render()});
+    root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if((e.ctrlKey||e.metaKey)&amp;&amp;e.key.toLowerCase()===&#x27;k&#x27;){e.preventDefault();search.focus();search.select()}if(e.key===&#x27;Escape&#x27;&amp;&amp;state.query){state.query=&#x27;&#x27;;search.value=&#x27;&#x27;;render();search.focus()}if(e.key===&#x27;Enter&#x27;&amp;&amp;e.target===search&amp;&amp;state.query){const first=matches()[0];if(first){e.preventDefault();move(first.n.id)}}});
+    render();new ResizeObserver(()=&gt;requestAnimationFrame(drawEdges)).observe(content);
+    if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addSelect(design,&#x27;layout&#x27;,{label:&#x27;Disposition de la carte&#x27;,options:[{label:&#x27;Cartes&#x27;,value:&#x27;cards&#x27;},{label:&#x27;Liste&#x27;,value:&#x27;list&#x27;}]});tweak.addSelect(design,&#x27;density&#x27;,{label:&#x27;Densité&#x27;,options:[{label:&#x27;Aérée&#x27;,value:&#x27;comfortable&#x27;},{label:&#x27;Compacte&#x27;,value:&#x27;compact&#x27;}]});tweak.addToggle(design,&#x27;definitions&#x27;,{label:&#x27;Finalités sur la carte&#x27;});}
+  })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>

@@ -1,0 +1,959 @@
+{
+  "date": "2026-09-13",
+  "version": "P81 0.9",
+  "source": "Instantané de la carte de travail datée du 11 septembre 2026, après U103. Noms, définitions courtes et Finalités des capacités extraits de la vue courante P81 ; définitions des domaines et notes de statut synthétisées à partir des mêmes sections, de P83 et des corrections. Sept domaines transactionnels de travail et cinq références du groupe de présentation Business References ; 36 aptitudes dont neuf validées. Le groupe ne constitue ni capacité mère ni domaine fusionné. Cet instantané ne modifie aucun arbitrage.",
+  "domains": [
+    {
+      "id": "D01",
+      "name": "Inventory Management",
+      "group": "transactional",
+      "purpose": "Disposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.",
+      "definition": "Connaître les stocks et les ressources attendues, expliquer leurs variations, fiabiliser les quantités et préserver les usages par les protections et réservations. Le stock futur est connu ici et mobilisé par Order Promising.",
+      "status": "retained",
+      "statusNote": "Nom Inventory Management retenu en U66. P81 conserve six aptitudes ; la fusion proposée par P82 reste non adoptée. Les frontières détaillées et la réservation demeurent à éprouver.",
+      "sources": [
+        "P81",
+        "U66",
+        "U74",
+        "U75",
+        "U78",
+        "U79",
+        "U80",
+        "U81",
+        "U86",
+        "C58"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D01.a",
+          "name": "Establish inventory positions",
+          "purpose": "Disposer d’une connaissance exploitable des ressources.",
+          "definition": "déterminer les quantités de stock physique et leurs états logiques par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes, en distinguant les ressources futures attendues.",
+          "status": "review",
+          "statusNote": "Libellé Establish inventory positions contesté en U82, conservé dans P81 pour la traçabilité. Fusion avec D01.b dans Inventory Tracking proposée en P82, non adoptée.",
+          "sources": [
+            "P81",
+            "P82",
+            "U81",
+            "U82",
+            "U83",
+            "C56"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D01.b",
+          "name": "Record inventory facts",
+          "purpose": "Expliquer les variations et leur provenance.",
+          "definition": "qualifier les faits qui font évoluer les quantités physiques et les états logiques, notamment entrées, sorties, changements d’état et consommations.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée. Fusion avec D01.a dans Inventory Tracking proposée par P82, non adoptée ; P81 conserve la ligne.",
+          "sources": [
+            "P81",
+            "P82",
+            "U81",
+            "U83"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D01.c",
+          "name": "Provide a consolidated inventory view",
+          "purpose": "Permettre une lecture commune des stocks distribués.",
+          "definition": "présenter les positions physiques, leurs états logiques et les ressources futures connues dans une vue cohérente, sans double comptage, avec source, périmètre et fraîcheur.",
+          "status": "proposed",
+          "statusNote": "Capacité et maille proposées. Inventory Visibility est un nom alternatif de P82, sans remplacement de la ligne courante P81.",
+          "sources": [
+            "P81",
+            "P82",
+            "U81",
+            "U83"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D01.d",
+          "name": "Stocktaking",
+          "purpose": "Fiabiliser les quantités enregistrées — Inventory accuracy.",
+          "definition": "établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées.",
+          "status": "retained",
+          "statusNote": "Nom Stocktaking retenu par Laurent en U86, le 11 septembre 2026 ; Inventory accuracy en exprime la Finalité. La décision de nom conserve comptage, rapprochement, écarts et corrections ; frontières détaillées ouvertes.",
+          "sources": [
+            "P81",
+            "P82",
+            "U86",
+            "C58"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D02.b",
+          "name": "Supply Protection",
+          "purpose": "Préserver les possibilités d’approvisionnement des usages retenus.",
+          "definition": "établir et appliquer les quantités ou limites d’usage destinées à des groupes, avec leur validité.",
+          "status": "retained",
+          "statusNote": "Aptitude métier reconnue en U67 et rattachement à Inventory Management orienté en U74. Repère historique D02.b conservé ; définition détaillée et maille à éprouver.",
+          "sources": [
+            "P81",
+            "U67",
+            "U74",
+            "C49"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D02.c",
+          "name": "Reservation",
+          "purpose": "Donner effet à un engagement de ressource.",
+          "definition": "établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte.",
+          "status": "review",
+          "statusNote": "Nom Reservation retenu en U84. Rattachement à D01 issu de U75 remis en discussion en U78 ; frontière réservation/affectation ouverte, sans nouveau déplacement.",
+          "sources": [
+            "P81",
+            "U75",
+            "U78",
+            "U84",
+            "C54",
+            "C57"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Resource Availability and Commitments",
+      "group": "transactional",
+      "purpose": "Évaluer ce qui peut être mobilisé et maintenir les engagements de ressources cohérents.",
+      "definition": "Deux aptitudes de disponibilité et d’ajustement subsistent comme traces de travail après les rattachements de Supply Protection et Reservation à Inventory Management, et de Supply Assignment à Order Promising.",
+      "status": "review",
+      "statusNote": "Domaine en réexamen depuis U75. Son autonomie n’est pas justifiée ; aucune suppression, répartition ni renumérotation supplémentaire n’est décidée.",
+      "sources": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D02.a",
+          "name": "Determine resource availability for a given use",
+          "purpose": "Évaluer ce qui peut être mobilisé dans une situation donnée.",
+          "definition": "apprécier les quantités admissibles à un horizon, compte tenu des états, attentes, protections et engagements.",
+          "status": "review",
+          "statusNote": "Trace de travail conservée dans D02. Répartition entre disponibilité de réservation et faisabilité de promesse à examiner ; aucune suppression décidée.",
+          "sources": [
+            "P81",
+            "U75",
+            "U87",
+            "U88",
+            "P83"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D02.d",
+          "name": "Adjust resource commitments",
+          "purpose": "Maintenir des affectations cohérentes avec les besoins et les ressources.",
+          "definition": "réviser, transférer ou libérer les quantités affectées selon les décisions autorisées.",
+          "status": "review",
+          "statusNote": "Trace de travail conservée dans D02. À répartir ou reformuler selon l’engagement modifié ; aucune suppression ni nouvelle affectation adoptée.",
+          "sources": [
+            "P81",
+            "U75",
+            "U87",
+            "U88",
+            "P83"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Order Promising",
+      "group": "transactional",
+      "purpose": "Proposer, établir et maintenir des engagements de fourniture réalisables, en quantité et en date, avec les ressources et possibilités d’acheminement.",
+      "definition": "Établir ce qui peut être promis pour satisfaire une demande, sous quelles conditions, avec quelles ressources et quelle solution de fourniture, puis maintenir la promesse lorsque la situation évolue.",
+      "status": "validated",
+      "statusNote": "Domaine reconnu en U52. Neuf capacités validées par Laurent le 11 septembre 2026 en U95 : quatre actions et cinq décisions. Frontières, autorités opérationnelles et équivalences marché restent à préciser ; CTP différé.",
+      "sources": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D03.a",
+          "name": "Promise Proposal",
+          "purpose": "Faire naître une proposition de promesse réalisable.",
+          "definition": "construire une proposition de fourniture précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.b",
+          "name": "Promise Confirmation",
+          "purpose": "Donner un engagement explicite au destinataire.",
+          "definition": "établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D02.e",
+          "name": "Supply Assignment",
+          "purpose": "Assurer la couverture des demandes par des ressources identifiées.",
+          "definition": "affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des demandes ou engagements.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. Repère historique D02.e conservé ; domaine courant Order Promising depuis U75. Affectation et confirmation sans ordre obligatoire.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.c",
+          "name": "Promise Revision",
+          "purpose": "Maintenir des engagements cohérents avec la situation et les priorités applicables.",
+          "definition": "réexaminer les promesses lorsque ressources, demandes, dates ou priorités changent et établir les modifications autorisées.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.d",
+          "name": "Allocation Eligibility Decision",
+          "purpose": "Respecter les droits d’accès aux ressources.",
+          "definition": "décider quelle quantité une demande peut consommer au regard des allocations, protections et droits applicables.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.e",
+          "name": "Fulfillment Source Decision",
+          "purpose": "Fonder la promesse sur des origines de fourniture admissibles.",
+          "definition": "choisir la source ou la combinaison de sources permettant de satisfaire la demande.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.f",
+          "name": "Fulfillment Route Decision",
+          "purpose": "Fonder la promesse sur un acheminement réalisable.",
+          "definition": "choisir la chaîne d’acheminement jusqu’à destination : étapes, points de passage, modes et services, selon les contraintes de délai, de capacité et de coût.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. La décision fondant la promesse n’absorbe pas la planification détaillée du transport ; autorités C-Log et adhérence logistique préservées.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.g",
+          "name": "Product Substitution Decision",
+          "purpose": "Permettre une réponse acceptable lorsque le produit demandé ne peut pas être fourni tel quel.",
+          "definition": "décider quel produit de remplacement est admissible pour satisfaire la demande dans les conditions autorisées.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D03.h",
+          "name": "Supply Creation Decision",
+          "purpose": "Rendre possible une fourniture que les ressources déjà présentes ou attendues ne permettent pas de satisfaire.",
+          "definition": "décider de recourir à une fourniture nouvelle et qualifier les conditions nécessaires pour fonder la promesse.",
+          "status": "validated",
+          "statusNote": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. CTP reste différé ; cette aptitude demeure validée et n’autorise pas à elle seule un engagement d’achat.",
+          "sources": [
+            "P81",
+            "P83",
+            "U52",
+            "U75",
+            "U80",
+            "U81",
+            "U95",
+            "F201",
+            "C63",
+            "CMP052"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Commercial Commitments",
+      "group": "transactional",
+      "purpose": "Connaître les engagements portés par les commandes et ce qui reste à accomplir après leur évolution et leur réalisation.",
+      "definition": "Examiner qui s’engage à fournir ou acquérir quoi, sous quelles conditions reçues, et les obligations restantes après modification, livraison ou retour. Les commandes restent distinctes des Agreements de référence.",
+      "status": "review",
+      "statusNote": "Les quatre capacités conservent une proposition antérieure. U100 réoriente la revue avec D07 vers les documents d’autorisation de la Supply générique ; nom et frontières à refondre.",
+      "sources": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D04.a",
+          "name": "Establish a commercial commitment",
+          "purpose": "Disposer d’une référence sur ce qui est commandé et engagé.",
+          "definition": "établir l’engagement propre à une commande, avec parties, biens ou prestations, quantités, conditions applicables et degré de fermeté.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U97",
+            "U98",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D04.b",
+          "name": "Amend commercial obligations",
+          "purpose": "Faire évoluer les obligations transactionnelles et leurs effets.",
+          "definition": "modifier ou éteindre les engagements d’une commande selon les conditions applicables, en conservant leur histoire.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U97",
+            "U98",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D04.c",
+          "name": "Determine commitment fulfillment and remaining obligations",
+          "purpose": "Connaître les obligations encore ouvertes.",
+          "definition": "rapprocher les obligations d’une commande des réalisations et corrections qui lui sont imputables.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U97",
+            "U98",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D04.d",
+          "name": "Authorize a return or replacement",
+          "purpose": "Donner effet à une solution commerciale admissible après fourniture.",
+          "definition": "décider de l’autorisation et des obligations correctives applicables à une commande selon les conditions reçues et les faits.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U97",
+            "U98",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Operational Resource Balancing",
+      "group": "transactional",
+      "purpose": "Identifier les manques ou excédents par rapport aux besoins et objectifs opérationnels, et proposer leur traitement.",
+      "definition": "Établir les objectifs de couverture, les besoins nets et les redistributions utiles à l’équilibrage opérationnel. Le dossier Demande de réassort appartient au modèle processus ; calculer un besoin ne promet ni ne réalise un transfert.",
+      "status": "proposed",
+      "statusNote": "Réassort étayé par les récits ; regroupement et capacités proposés. Redistribution hypothétique ; réalisation FLOW et prévisions logistiques en frontière. Planification de saison exclue.",
+      "sources": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D05.a",
+          "name": "Determine operational coverage targets",
+          "purpose": "Donner une référence au renouvellement opérationnel des stocks.",
+          "definition": "établir niveaux et seuils applicables par ressource et périmètre.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+          "sources": [
+            "P81",
+            "U06",
+            "U53",
+            "U57",
+            "U58",
+            "CAP011",
+            "CAP012",
+            "CAP013"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D05.b",
+          "name": "Determine net resource requirements",
+          "purpose": "Former un besoin justifié sans ignorer les ressources déjà attendues.",
+          "definition": "identifier les manques ou excédents en tenant compte des positions, besoins et approvisionnements attendus pertinents.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+          "sources": [
+            "P81",
+            "U06",
+            "U53",
+            "U57",
+            "U58",
+            "CAP011",
+            "CAP012",
+            "CAP013"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D05.c",
+          "name": "Determine resource redistribution",
+          "purpose": "Rééquilibrer les ressources lorsque leur distribution devient inadaptée.",
+          "definition": "proposer les quantités et destinations permettant de traiter des déséquilibres selon les contraintes.",
+          "status": "hypothesis",
+          "statusNote": "Hypothèse issue de U57 ; attribution de réalisation ouverte et capacité non comparée précisément au marché. Prévisions et optimisations logistiques restent en adhérence.",
+          "sources": [
+            "P81",
+            "U57",
+            "U58"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Execution Options",
+      "group": "transactional",
+      "purpose": "Apprécier les prestations admissibles et la capacité de réalisation encore mobilisable.",
+      "definition": "Utiliser les références du réseau et les contraintes opérationnelles pour apprécier les possibilités concrètes de réalisation et les options compatibles avec un besoin.",
+      "status": "proposed",
+      "statusNote": "Capacités proposées, notamment à partir du récit magasin. D13 reçoit les références ; D06.a ne les administre pas. Maille D06.a/c et partage avec Order Promising à éprouver ; autorités C-Log préservées.",
+      "sources": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D06.a",
+          "name": "Qualify locations and feasible services",
+          "purpose": "Identifier les possibilités concrètes de réalisation.",
+          "definition": "connaître les lieux, leurs rôles opérationnels et les prestations qui y sont admissibles.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Les références sont reçues en D13 ; cette aptitude ne désigne pas leur administration ou contrôle de qualité.",
+          "sources": [
+            "P81",
+            "U04",
+            "U06",
+            "U07",
+            "U102",
+            "C68",
+            "Q015",
+            "Q016",
+            "Q017",
+            "Q018",
+            "Q019",
+            "Q063"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D06.b",
+          "name": "Determine available execution capacity",
+          "purpose": "Éviter de confondre disponibilité d’article et possibilité de le servir.",
+          "definition": "apprécier limites applicables, charge engagée et capacité restante pour une prestation et une période.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+          "sources": [
+            "P81",
+            "U04",
+            "U06",
+            "U07",
+            "U102",
+            "C68",
+            "Q015",
+            "Q016",
+            "Q017",
+            "Q018",
+            "Q019",
+            "Q063"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D06.c",
+          "name": "Determine eligible execution options",
+          "purpose": "Éclairer un choix réalisable selon les critères autorisés.",
+          "definition": "établir et comparer les origines ou prestations compatibles avec un résultat attendu.",
+          "status": "proposed",
+          "statusNote": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+          "sources": [
+            "P81",
+            "U04",
+            "U06",
+            "U07",
+            "U102",
+            "C68",
+            "Q015",
+            "Q016",
+            "Q017",
+            "Q018",
+            "Q019",
+            "Q063"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Execution Commitments and Facts",
+      "group": "transactional",
+      "purpose": "Connaître ce qui est attendu, engagé ou constaté dans la réalisation et fournir des faits utiles aux autres domaines.",
+      "definition": "Exprimer le besoin de prestation, suivre les engagements d’exécution, rattacher les résultats et écarts aux attentes, et qualifier les ressources encore attendues.",
+      "status": "review",
+      "statusNote": "Frontière à reprendre avec D04 après U100 : autorisation de mouvement, engagement d’exécution et fait de réalisation. Logistique hors développement FLOW ; aucun transfert d’autorité ni fusion décidé.",
+      "sources": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D07.a",
+          "name": "Formalize a service requirement",
+          "purpose": "Rendre le besoin compréhensible et exploitable par l’exécutant.",
+          "definition": "exprimer biens, destinataire, résultat et opérations nécessaires à une réalisation.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U03",
+            "U04",
+            "U05",
+            "U06",
+            "U07",
+            "U10",
+            "U30",
+            "U48",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D07.b",
+          "name": "Establish and adjust execution commitments",
+          "purpose": "Savoir quelle réalisation est effectivement engagée et quelle charge elle mobilise.",
+          "definition": "qualifier prise en charge, portée, validité et effets des refus, retraits ou révisions.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U03",
+            "U04",
+            "U05",
+            "U06",
+            "U07",
+            "U10",
+            "U30",
+            "U48",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D07.c",
+          "name": "Qualify execution results and discrepancies",
+          "purpose": "Donner aux autres domaines des faits utilisables et expliquer les écarts.",
+          "definition": "rattacher constats de production, expédition, réception ou consommation au résultat attendu.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U03",
+            "U04",
+            "U05",
+            "U06",
+            "U07",
+            "U10",
+            "U30",
+            "U48",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        },
+        {
+          "id": "D07.d",
+          "name": "Identify and qualify expected resources",
+          "purpose": "Permettre un raisonnement sur les ressources futures avec leurs limites.",
+          "definition": "qualifier quantités, dates, provenance et fermeté des résultats de réalisation encore attendus.",
+          "status": "review",
+          "statusNote": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+          "sources": [
+            "P81",
+            "U03",
+            "U04",
+            "U05",
+            "U06",
+            "U07",
+            "U10",
+            "U30",
+            "U48",
+            "U100",
+            "C66",
+            "Q074"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Party / Role",
+      "group": "references",
+      "purpose": "Disposer des identités et rôles de référence nécessaires pour relier les opérations aux bonnes parties.",
+      "definition": "Recevoir les références des parties et leurs rôles métier, distincts des habilitations RBAC. L’identité sans doublon relève du maître externe ; les modèles se relient par identifiants.",
+      "status": "retained",
+      "statusNote": "Maîtrise externe et ingestion seule imposées en U97 ; groupe Business References retenu en U103. Les sources et autorités par attribut restent à documenter ; aucun rang autonome universel adopté.",
+      "sources": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "C69",
+        "INF18"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D09.d",
+          "name": "Party / Role Ingestion",
+          "purpose": "Utiliser une identité de référence commune dans les opérations.",
+          "definition": "recevoir les parties, leurs identifiants, rôles et relations de référence ainsi que leurs évolutions, en conservant les références du maître externe.",
+          "status": "retained",
+          "statusNote": "Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local et description de travail ; aucune maîtrise, vérification ou enrichissement du référentiel dans la plateforme.",
+          "sources": [
+            "P81",
+            "U97",
+            "U103",
+            "C64",
+            "P85"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D11",
+      "name": "Agreement",
+      "group": "references",
+      "purpose": "Disposer des contrats de référence et de leurs conditions pour former les commandes et honorer leurs promesses.",
+      "definition": "Recevoir les Agreements, les identités Party, les catalogues permettant de commander et les conditions particulières utiles à Order Promising. Les commandes transactionnelles restent distinctes des contrats de référence.",
+      "status": "retained",
+      "statusNote": "Maîtrise externe et ingestion seule imposées en U97/U98 ; groupe Business References retenu en U103. Cardinalités, consommation contractuelle et autorités détaillées restent ouvertes.",
+      "sources": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "C69",
+        "INF19"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D11.a",
+          "name": "Agreement Ingestion",
+          "purpose": "Mettre les conditions contractuelles de référence à disposition des décisions et engagements transactionnels.",
+          "definition": "recevoir les contrats fournisseurs ou clients, leurs références Party et Catalog, leurs conditions particulières et leurs évolutions depuis les applications maîtres externes.",
+          "status": "retained",
+          "statusNote": "Ingestion seule exigée par U97/U98 et conservée dans Business References U103. Nom local ; contrats de référence reçus distincts des commandes. Aucune création ou administration locale d’Agreement.",
+          "sources": [
+            "P81",
+            "U97",
+            "U98",
+            "U103",
+            "C64",
+            "P85"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Product Reference",
+      "group": "references",
+      "purpose": "Disposer d’une référence article autonome, utilisable dans plusieurs catalogues et par les opérations de la Supply.",
+      "definition": "Reconnaître les mêmes articles par leur référence SKU indépendamment des catalogues qui les proposent. La référence article est reçue depuis un maître externe.",
+      "status": "retained",
+      "statusNote": "Autonomie article confirmée en U100 ; nom Product Reference et rédaction détaillée proposés. Groupe Business References retenu en U103. Maître, attributs, unités et conversions restent à préciser.",
+      "sources": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C66",
+        "C69",
+        "INF21",
+        "CMP058"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D08.d",
+          "name": "Product Reference Ingestion",
+          "purpose": "Reconnaître les mêmes articles dans les différents catalogues et opérations.",
+          "definition": "recevoir les articles, leurs identifiants SKU, caractéristiques de référence utiles et évolutions depuis leur maître externe, indépendamment de leur présence dans les catalogues.",
+          "status": "proposed",
+          "statusNote": "Autonomie article confirmée en U100 ; nom et rédaction détaillée de l’ingestion proposés dans la continuité U97. Business References et ses cinq ingestions distinctes retenus U103 ; attributs et maître restent ouverts.",
+          "sources": [
+            "P81",
+            "U97",
+            "U100",
+            "U103",
+            "C66",
+            "INF21"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D12",
+      "name": "Catalog",
+      "group": "references",
+      "purpose": "Disposer des catalogues applicables, avec les prix et zones géographiques nécessaires aux opérations.",
+      "definition": "Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Un même SKU peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.",
+      "status": "retained",
+      "statusNote": "Maîtrise externe et ingestion seule imposées en U97 ; autonomie article précisée en U100 ; groupe Business References retenu en U103. Sources et attributs détaillés à préciser.",
+      "sources": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "U103",
+        "C64",
+        "C69",
+        "INF20"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D12.a",
+          "name": "Catalog Ingestion",
+          "purpose": "Permettre de commander et d’utiliser les informations commerciales reçues.",
+          "definition": "recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques d’application et évolutions.",
+          "status": "retained",
+          "statusNote": "Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local ; catalogues et prix construits à l’extérieur, références article autonomes selon U100.",
+          "sources": [
+            "P81",
+            "U97",
+            "U100",
+            "U103",
+            "C64",
+            "P85"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    },
+    {
+      "id": "D13",
+      "name": "Fulfillment Network",
+      "group": "references",
+      "purpose": "Disposer d’une représentation de référence des lieux et des relations du réseau nécessaires à la réalisation des mouvements de marchandises.",
+      "definition": "Recevoir les points du réseau, leurs caractéristiques et relations de référence et leurs liens aux parties responsables. Les lieux restent distincts des parties ; stocks, charge et acheminement choisi appartiennent aux domaines consommateurs.",
+      "status": "retained",
+      "statusNote": "Référentiel demandé en U102 ; Business References retenu en U103. Repère, définition et contenu détaillé proposés ; ingestion seule dans la continuité U97. Maîtres et topologie ouverts en Q076 ; aucune autorité FLOW ou C-Log déduite.",
+      "sources": [
+        "P81",
+        "U97",
+        "U102",
+        "U103",
+        "C68",
+        "C69",
+        "INF22",
+        "Q076",
+        "CMP060"
+      ],
+      "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "capabilities": [
+        {
+          "id": "D13.a",
+          "name": "Fulfillment Network Ingestion",
+          "purpose": "Donner aux opérations et décisions une connaissance commune du réseau de réalisation.",
+          "definition": "recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes.",
+          "status": "proposed",
+          "statusNote": "Ingestion et contenu détaillé proposés dans la continuité U97 après la demande de référentiel U102. Groupe de cinq références et ingestions retenu U103 ; maîtres, attributs et topologie restent ouverts Q076.",
+          "sources": [
+            "P81",
+            "U97",
+            "U102",
+            "U103",
+            "C68",
+            "INF22",
+            "Q076"
+          ],
+          "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+        }
+      ]
+    }
+  ]
+}
+

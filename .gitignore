@@ -1,0 +1,28 @@
+# Local tooling and dependencies
+/.tools/
+/.venv/
+/venv/
+node_modules/
+
+# Python caches and test output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+/.tmp*/
+
+# Local server state, logs and browser captures
+/app/.runtime/
+
+# Prepared candidates are local; published snapshots remain tracked
+/modeles/staging/
+
+# Local credentials and operating-system files
+.env
+.env.*
+!.env.example
+!.env.template
+.DS_Store
+Thumbs.db
+Desktop.ini

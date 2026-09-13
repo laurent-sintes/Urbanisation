@@ -1,0 +1,4 @@
+interface:
+  display_name: "Administration de FLOW Atlas"
+  short_description: "Démarrer, arrêter et redémarrer le serveur FLOW Atlas"
+  default_prompt: "Utilise $server-admin pour vérifier puis redémarrer le serveur local FLOW Atlas."

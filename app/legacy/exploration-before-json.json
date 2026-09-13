@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "description": "Couche de présentation et exemples issus du prototype FLOW Atlas. Les domaines et capacités sont lus dans la carte courante ; les objets, documents, événements et relations ci-dessous conservent leur portée illustrative ou proposée.",
+  "labels": {
+    "model": "Modèle",
+    "domain": "Domaine de travail",
+    "group": "Groupe de présentation",
+    "reference": "Référence",
+    "capability": "Capacité",
+    "object": "Objet métier",
+    "document": "Document",
+    "event": "Événement métier"
+  },
+  "icons": {
+    "model": "layers",
+    "domain": "grid-2x2",
+    "group": "library",
+    "reference": "database",
+    "capability": "component",
+    "object": "box",
+    "document": "file-text",
+    "event": "zap"
+  },
+  "domainParents": { "transactional": "transactional", "references": "business-references" },
+  "domainKinds": { "transactional": "domain", "references": "reference" },
+  "parentOverrides": [],
+  "nodes": [
+    {
+      "id": "atlas", "name": "Le modèle business", "kind": "model",
+      "purpose": "Explorer les modèles métier et leurs relations.",
+      "status": "proposed",
+      "statusNote": "Entrée de navigation proposée pour FLOW Atlas. Les modèles conservent leurs périmètres propres.",
+      "sources": ["U50", "U62", "U104"], "sourcePath": "AGENTS.md"
+    },
+    {
+      "id": "transactional", "name": "Socle transactionnel", "kind": "model", "parentId": "atlas",
+      "purpose": "Les aptitudes métier du socle, leurs problèmes et leurs connaissances.",
+      "definition": "Carte de travail des domaines et des capacités du socle transactionnel. La profondeur de navigation dépend du modèle.",
+      "status": "proposed",
+      "statusNote": "La carte P81 distingue domaines transactionnels et groupe Business References. Neuf capacités d’Order Promising validées en U95 ; les autres statuts et les réserves de frontière sont ceux de leurs sources.",
+      "sources": ["P81", "U95", "U103"], "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+    },
+    {
+      "id": "business-references", "name": "Business References", "kind": "group", "parentId": "transactional", "displayOrder": 100,
+      "purpose": "Recevoir les références externes nécessaires aux opérations.",
+      "definition": "Cinq modèles de référence distincts, reliés par identifiants et réunis dans un groupe de présentation. Chacun possède une capacité d’ingestion.",
+      "status": "retained",
+      "statusNote": "Groupe de présentation retenu par Laurent en U103. Aucun domaine fusionné ni capacité mère. Les contenus détaillés et maîtres du réseau restent ouverts.",
+      "sources": ["U97", "U100", "U102", "U103"], "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md"
+    },
+    {
+      "id": "process", "name": "Modèle processus", "kind": "model", "parentId": "atlas",
+      "purpose": "Comprendre les situations et parcours métier, dans une approche Case Management.",
+      "definition": "Modèle distinct du socle transactionnel, avec ses propres objets, règles et moyens de décision et d’orchestration. Son catalogue fonctionnel reste à développer.",
+      "status": "proposed",
+      "statusNote": "Orientation déclarée U49/U50/U62. L’objet Demande de réassort est cité par Laurent ; l’application ne fournit pas encore une cartographie des processus.",
+      "sources": ["U49", "U50", "U62"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md"
+    },
+    {
+      "id": "ILL-OBJ-01", "name": "Engagement de fourniture", "kind": "object", "modelId": "transactional",
+      "purpose": "Exprimer les quantités et dates de fourniture engagées.",
+      "definition": "Objet de travail de l’exemple de confirmation : l’engagement possède des valeurs et un état. Identité, limites et cycle de vie restent à préciser.",
+      "status": "illustration",
+      "statusNote": "Exemple proposé dans la note 24, sans validation d’un modèle détaillé. Identifiant ILL propre à l’application ; objets, cardinalités, contenu et autorités restent à éprouver.",
+      "sources": ["U61", "U62", "P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md",
+      "aliases": "promesse engagement objet"
+    },
+    {
+      "id": "ILL-DOC-01", "name": "Confirmation de promesse", "kind": "document", "modelId": "transactional",
+      "purpose": "Porter les engagements et conditions retenus dans une confirmation identifiée et versionnée.",
+      "definition": "Document associé proposé. Le contenu exact, la portée de la représentation de l’état et le traitement des corrections restent à définir.",
+      "status": "illustration",
+      "statusNote": "Exemple proposé dans la note 24, sans validation d’un modèle détaillé. Identifiant ILL propre à l’application ; objets, cardinalités, contenu et autorités restent à éprouver.",
+      "sources": ["U61", "U62", "P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md",
+      "aliases": "document justificatif preuve promesse confirmation"
+    },
+    {
+      "id": "ILL-EVT-01", "name": "Promesse confirmée", "kind": "event", "modelId": "transactional",
+      "purpose": "Constater que des quantités et dates ont été confirmées pour une demande.",
+      "definition": "Nom illustratif du fait de gestion décrit dans la note 24. Le fait métier est distinct du message qui pourrait le notifier.",
+      "status": "illustration",
+      "statusNote": "Exemple proposé dans la note 24, sans validation d’un modèle détaillé. Identifiant ILL propre à l’application ; objets, cardinalités, contenu et autorités restent à éprouver.",
+      "sources": ["U61", "U62", "P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md",
+      "aliases": "événement evenement fait confirmation notification"
+    },
+    {
+      "id": "ILL-OBJ-02", "name": "Demande de réassort", "kind": "object", "parentId": "process", "modelId": "process",
+      "purpose": "Suivre une situation de réassort dans le modèle processus.",
+      "definition": "Objet cité par Laurent en U62. Besoin exprimé, exceptions et clôture sont des contenus proposés ; aucune convention universelle Demande n’est adoptée.",
+      "status": "illustration",
+      "statusNote": "Objet cité par Laurent U62. Détails illustratifs proposés dans la note 24. Le repère ILL de l’application ne crée pas un identifiant de registre.",
+      "sources": ["U61", "U62", "P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md",
+      "aliases": "reassort replenishment case dossier processus"
+    }
+  ],
+  "aliases": {
+    "D01": "stock physique logique futur inventaire",
+    "D01.a": "quantités position stock physique logique",
+    "D01.b": "mouvements stock états",
+    "D01.c": "visibilité stock consolidation",
+    "D01.d": "inventaire comptage counting stocktaking physical inventory rapprochement écart",
+    "D02.b": "protection allocation ressource quota",
+    "D02.c": "réservation reserver reservation engagement",
+    "D02.e": "affectation affecter allocation supply assignment",
+    "D03": "promesse promettre ATP disponible virtuel",
+    "D03.a": "proposition promesse ATP quantité date",
+    "D03.b": "confirmation confirmer promesse engagement",
+    "D03.c": "révision promesse réexaminer",
+    "D09": "partie tiers client fournisseur identité rôle party",
+    "D11": "accord contrat conditions agreement",
+    "D08": "article produit SKU",
+    "D12": "catalogue prix zone",
+    "D13": "réseau lieu point logistique entrepôt fulfillment"
+  },
+  "relations": [
+    { "from": "D03.b", "to": "ILL-OBJ-01", "type": "confirms", "verb": "confirme", "inverse": "est confirmé par", "status": "illustration", "sources": ["P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md" },
+    { "from": "D03.b", "to": "ILL-DOC-01", "type": "associated-document", "verb": "a pour document associé", "inverse": "est associé à", "status": "illustration", "sources": ["P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md" },
+    { "from": "D03.b", "to": "ILL-EVT-01", "type": "observed-result", "verb": "a pour résultat constaté", "inverse": "constate le résultat de", "status": "illustration", "sources": ["P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md" },
+    { "from": "ILL-DOC-01", "to": "ILL-OBJ-01", "type": "represents", "verb": "représente les engagements de", "inverse": "est représenté dans", "status": "illustration", "sources": ["P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md" },
+    { "from": "ILL-DOC-01", "to": "ILL-EVT-01", "type": "records", "verb": "porte la confirmation associée à", "inverse": "a pour document associé", "status": "illustration", "sources": ["P80"], "sourcePath": "connaissance/24-capacites-objets-et-faits.md" },
+    { "from": "D01", "to": "D03", "type": "provides-knowledge", "verb": "fournit la connaissance des stocks à", "inverse": "s’appuie sur les stocks connus dans", "status": "proposed", "sources": ["U80", "U81"], "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md" },
+    { "from": "D11", "to": "D03", "type": "provides-conditions", "verb": "fournit les conditions à appliquer à", "inverse": "applique les conditions reçues de", "status": "proposed", "sources": ["U97"], "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md" },
+    { "from": "D13", "to": "D06", "type": "describes-network", "verb": "décrit le réseau utilisé par", "inverse": "utilise les références du réseau de", "status": "proposed", "sources": ["U102"], "sourcePath": "connaissance/25-domaines-coeur-et-epreuve-recits.md" }
+  ],
+  "confirmation": "D03.b",
+  "steps": [
+    { "id": "D03.b", "label": "Capacité", "text": "Promise Confirmation engage les quantités et dates retenues. Sa présence dans la liste d’Order Promising est validée en U95." },
+    { "id": "ILL-OBJ-01", "label": "Objet métier", "text": "L’engagement de fourniture donne un sens durable à ce qui est confirmé. Son identité et ses règles restent à préciser." },
+    { "id": "ILL-DOC-01", "label": "Document", "text": "La confirmation conserve les engagements et conditions retenus. Elle représente un état ou un contenu utile à attester." },
+    { "id": "ILL-EVT-01", "label": "Événement", "text": "Le fait décrit ce qui s’est produit. Il se relie au document et à la capacité ; sa notification éventuelle est une autre notion." }
+  ]
+}

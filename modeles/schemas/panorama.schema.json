@@ -1,0 +1,437 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Panorama As Is par SI ou contexte partagé",
+  "type": "object",
+  "properties": {
+    "as_of": {
+      "type": "string"
+    },
+    "assessment_reason": {
+      "type": "string"
+    },
+    "assessment_status": {
+      "type": "string"
+    },
+    "context_role": {
+      "type": "string"
+    },
+    "decision_responsibilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "preserved_in": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "record_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "preserved_in",
+          "reason",
+          "record_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "flows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "information_authorities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "observed_at": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      ]
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "shared_context": {
+      "type": "object",
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "relationship_status": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "note",
+        "path",
+        "relationship_status",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "space": {
+      "const": "panorama-as-is"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "as_of",
+    "assessment_status",
+    "decision_responsibilities",
+    "exclusions",
+    "flows",
+    "information_authorities",
+    "limitations",
+    "model_id",
+    "objects",
+    "observed_at",
+    "schema_version",
+    "source_files",
+    "space",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "record": {
+      "type": "object",
+      "properties": {
+        "architecture_intent": {
+          "enum": [
+            "as_is",
+            "target",
+            "need",
+            "unknown"
+          ]
+        },
+        "authority_or_producer": {
+          "type": "string"
+        },
+        "authority_qualification": {
+          "type": "string"
+        },
+        "classification_basis": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "correction_context": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "source_locator": {
+                "type": "object",
+                "properties": {
+                  "anchor": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "anchor",
+                  "path"
+                ],
+                "additionalProperties": false
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "source_locator",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "correction_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision": {
+          "type": "string"
+        },
+        "deployment_status": {
+          "type": "string"
+        },
+        "described_realization": {
+          "type": "string"
+        },
+        "described_role": {
+          "type": "string"
+        },
+        "described_status": {
+          "type": "string"
+        },
+        "endpoints": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "unresolved_label": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "unresolved_label"
+              ],
+              "additionalProperties": false
+            },
+            "target": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "unresolved_label": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "unresolved_label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "source",
+            "target"
+          ],
+          "additionalProperties": false
+        },
+        "evidence_status": {
+          "enum": [
+            "declared",
+            "observed",
+            "inferred",
+            "unknown"
+          ]
+        },
+        "exclusion_from_as_is_reason": {
+          "type": "string"
+        },
+        "exercise_status": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "information": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "application",
+            "application_collection",
+            "application_family",
+            "business_flow",
+            "data_exchange",
+            "decision_responsibility",
+            "document_exchange",
+            "flow_to_reconcile",
+            "functional_dependency",
+            "human_interaction",
+            "information_authority_or_producer",
+            "integration_platform",
+            "organisation",
+            "solution_and_feature_mention",
+            "system_landscape_mention",
+            "unresolved_application_mention"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "modality": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "other_contributions": {
+          "type": "string"
+        },
+        "review_status": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "source_category": {
+          "type": "string"
+        },
+        "source_fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "source_locator": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "path"
+          ],
+          "additionalProperties": false
+        },
+        "source_record_text": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "technical_interface_status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "architecture_intent",
+        "classification_basis",
+        "correction_context",
+        "correction_refs",
+        "evidence_status",
+        "id",
+        "kind",
+        "limitations",
+        "name",
+        "observed_at",
+        "scope",
+        "source_category",
+        "source_fields",
+        "source_locator",
+        "source_record_text",
+        "source_refs"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

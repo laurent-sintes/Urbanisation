@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release du modèle FLOW"
+  short_description: "Comparer le backlog et publier une release qualifiée"
+  default_prompt: "Utilise $release pour évaluer les évolutions du backlog et publier la prochaine release du modèle."

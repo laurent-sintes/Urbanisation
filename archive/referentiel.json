@@ -1,0 +1,3602 @@
+{
+  "metadata": {
+    "projet": "Cartographie des capacités Beaumanoir",
+    "version": "0.1",
+    "date_consolidation": "2026-09-09",
+    "statut": "Base documentaire de travail ; pas une architecture cible approuvée",
+    "corpus": "Conversation visible, du cadrage initial à la demande de constitution exhaustive du dossier. Aucune autre conversation importée comme fait.",
+    "auteur_connaissance": "Laurent",
+    "consolidation": "ChatGPT",
+    "regle": "Un fait déclaré n’est pas une preuve de configuration ; une proposition assistant n’est pas une décision validée."
+  },
+  "contributions_utilisateur": [
+    {
+      "id": "U01",
+      "titre": "Cadrage initial",
+      "texte": "Je souhaite produire une cartographie des capacités (Business Capability) du système organisationnel Beaumanoir.\nLe scope doit être limité aux opérations et leurs référentiels associés : Commandes d'achat, de vente , service après vente, gestion du stock, des allocations => en gros le coeur de l'erp commerce.\nLe scope exclus les domaines \"post op\" : finance, controle de gestion, conformité.\nLe scope exclus les domaines amont : design des produits, planification de saison.\nL'idée est de : \n\n- s'appuyer sur des standard (à voir) ou des éditeurs de premier plan (IBM, SAP, Oracle, ...)\n- De faire en sorte que l'existant soit facilement intégrable / répertoriable malgré la diversité du SI et son ancienneté : \n  - \"Beaumanoir marque historiques\" : Storeland + UR + Socloz\n  - Sarenza : marketplace développée sur mesure\n  - Boardriders : SAP ECC + SAP AFS + NewStore\n- faire en sorte que le modèle puisse accueillir une projection sur une refonte de SI modernisée\n- faire en sorte que le modèle puisse faciliter l'intégration des 3 SI en un seul SI cible\n- Avoir une cartographie d'urbanisation des capacité en 2 ou 3 niveaux de type zone / Quartier / Ilot mais un peu plus modernisée, du genre Domaine / Capacité / sous capacité ou un truc du genre.\n- S'inspirer de méta modèle du marché (Togaf, ITil etc...)\n\nLe problème est épineux, je ne souhaite pas un résultat immédiat mais une approche itérative et exploratoire pour ouvrir des options puis les refermer avant d'aboutir à un résultat tangible sous forme documentaire, livre blanc, ppt ou autre?"
+    },
+    {
+      "id": "U02",
+      "titre": "Accord sur la démarche, plateformes et contextes des trois SI",
+      "texte": "Je suis d'accord avec la démarche.\n\n- Dans l'architecture cible je vois 2 grand niveaux : \n  - une plateforme de capacités avec la gestion des stock et des flux\n  - une plateforme de processus qui permet de prendre en compte l'organisation, les usages, les transactions longues (case management) etc.\n- Concernant le périmètre de chaque SI il faut comprendre que : \n  - \"Beaumanoir marques historiques\" (GBM) est surtout retail (store et eCommerce) à 90%, 10% en B2B (Zalando par exemple)\n  - Boardriders (BRD) est surtout B2B (60%) avec un énorme enjeu sur les allocations (AllocationRun dans SAP)\n  - Sarenza intègre des catalogues tout faits de fournisseurs (Articles) et les revend en B2C. sa force : le SAV"
+    },
+    {
+      "id": "U03",
+      "titre": "Panorama GBM : ventes, intégration et achats",
+      "texte": "On commence par GBM.\n\nOn a une instance de StoreLand (instance au sens oracle, il n'y a pas de middleware dans cette architecture) par marque. Storeland détient le stock des magasins par marque et gères les opérations backoffice de la marque (demande d'approvisionnement stock-to-store, réassort automatique etc.). Le Point Of Sales est assuré par des logiciels spécialisés (caisse, passage de commande pour le client final en magasin etc). Les stocks retails des différentes instance de Storeland sont remontées régulièrement par batch dans UR (United Retail) qui est une sorte \"d'OMS multicanal pour l'eCommerce\" (vérifie les specs chez l'éditeur anciennement Cylande et maintenant Cegid). Des échanges d'alignement de données sont orchestrés par batch entre UR et C-Log. C-Log est la filiale logistique centralisée de Beaumanoir. Les échanges de données sont orchestrés par une plateforme Talend transverse. Il est à noter qu'il existe également un \"vrai OMS\" (Socloz) qui gère le ship from store et l'extension de gamme car UR n'est pas assez évolué pour gérer ce gere de complexité. La chaine décrite Storeland / UR / Socloz est la chaîne B2C retail. Il existe une autre organisation et un autre \"sous SI\" qui gère le B2B et les marketplace en B2B qui s'appuie sur les outils Zoho (CRM pour les clients B2B) et Elastic (outil de passage de commande pour les clients B2B). Cette premiere explication donne le panorama du mode de fonctionnement des ventes.\n\nEn amont, les achats sont gérés et suivi par un logiciel sur mesure qui implémente le processus de suivi des commandes d'achat, à savoir le suivi opérationnel, la conformité (facilitation du passage de documents du fournisseur à Beaumanoir et du fournisseur aux douanes)."
+    },
+    {
+      "id": "U04",
+      "titre": "Parcours eCommerce et ship-from-store GBM",
+      "texte": "Depuis un site eCommerce d'une marque, lorsque le client passe la commande, on vérifie si l'article est dans un stock entrepot (le stock entrepot est dans UR, les stocks magasin dans Storeland). S'il est dans un entrepot, on l'expédie via C-Log qui choisira l'entrepot et le transporteur. Si l'article est dans un ou plusieurs magasins, alors on commence par envoyer une de demande de packing/shipping au premier magasin, le premier étant le moins sollicité parmi les magasins élligibles. Si au bout de 15 min, il ne répond pas ou répond défavorablement, alors on annule la commande et on passe au prochain magasin. Si aucun magasin ne répond dans la journée (il me semble), ça génère une alerte et un responsable commercial de la marque appelle les magasins pour tenter de débloquer la situation. Les magasins eligibles sont les magasins qui accepte de couvrir ce service et n'ont pas atteint leur quota. En, effet, les vendeurs dans les magasins rechignent à faire du shipping plutot que de faire un taf de vendeur (c'est compréhensible), donc on définit une quota journalier et/ou hebdomadaire."
+    },
+    {
+      "id": "U05",
+      "titre": "Confirmation de la portée de l’annulation",
+      "texte": "Oui"
+    },
+    {
+      "id": "U06",
+      "titre": "Réassort, IRMA et demande logistique C-Log",
+      "texte": "C'est Storeland qui lance des demandes automatiquement de réassort à partir du moment où le stock d'un produit a atteint un seuil minimum. Quand je dis produit, je parle de la maille fin de vente : le SKU ou l'article ou le variant référence produit - taille - couleur => tout ça c'est pareil.\n\nLa détermination des stock optimaux et la source de vérité des seuils minimum de réassort sont calculés par un outil spécialisé hors storeland : IRMA. C'est un outil sur mesure développé sur la plateforme Snowflake en cours de déploiement. IRMA remplace le vieil outil SCO-TEX qui vit une fin de vie.\n\nLorsqu'on passe une commande à C-LOG, on passe un fichier EDI qui indique le canal d'origine (eCommerce, Réassort magasin, Extension de gamme, ...), les articles à livrer, le client à livrer (B2C ou B2B) ainsi que les opérations entrepot qu'on veut réaliser : picking, light-touch (mettre sur cintre, coller une étiquette spéciale, ...), packing, shipping. L'OMS de C-LOG choisit l'entrepot (car tous ne savent pas faire toutes les opérations) et choisit le transporteur pour le shipping. Si aucun entrepot eligible ne correspond, une livraison d'un entrepot source vers l'entrepot de destination capable de réaliser l'opération vient ajouter une opération en amont de ce qui est demandé. L'OMS (développé par Crossroad) procède alors au suivi du processus logistique. En cas de problème, la demande est mise dans une file d'erreur et sera gérée manuellement."
+    },
+    {
+      "id": "U07",
+      "titre": "Noms corrigés et finalité de l’urbanisation",
+      "texte": "Gardons SCORTEX.\nPour l'OMS, l'éditeur est KBRW  qui s'appuie un logiciel appelé Crossroad.\n\nL'histoire que je t'ai raconté montre deux choses que le projet cherche à montrer :\n\n- L'information (sur le stock par exemple) est distribuée dans plusieurs applications. Ou est la source de vérité ?\n- La décision (qui choisi l'article, l'entrepot etc.) est souvent distribuée et dépend de la situation ou du canal\n\nL'enjeu de cette cartographie est de montrer où sont gérées ces notions quelles différences entre marques, canal et SI et surtout qu'est-ce qu'on veut demain ?\n\nL'idée de l'ERP commercial de demain n'est pas de gérer la logistique et d'absorber le SI C-Log (C'est un SI à part dans une filiale séparée avec un DSI dédié). Il est peut être de redéfinir les frontières de la responsabilité de la décision. C'est pourquoi, j'imagine une nomenclature des verbes utilisés pour définir les capacités ou sous capacités (on verra) pour bien différencier la détention d'une véritée et la détention d'une décision afin de revoir les périmètres des applications par rapport à l'urbanisme (capacités)"
+    },
+    {
+      "id": "U08",
+      "titre": "Relance après absence de réponse",
+      "texte": "Tu es planté ?"
+    },
+    {
+      "id": "U09",
+      "titre": "Clarification : conserver les Business Capabilities au centre",
+      "texte": "Je ne dirais pas \"recentrer\", on doit définir des capacités business MAIS on doit prendre en compte à un certain niveau de l'urbanisme ces notions."
+    },
+    {
+      "id": "U10",
+      "titre": "Autre complément GBM important : MAP, CBS et allocations",
+      "texte": "Autre complément GBM important :\nIl existe un outil MAP développé sur mesure (certainement sur base snowflake car c'est l'outil analytics GBM). Son objet est de calculer la planification qui est à 3 niveaux : \n\n- Forecast : \n  - Les prévisions de vente par marque / modele / couleur / taille\n  - Les prévisions de vente par canal\n- Allocation (sens large)\n  - protection du stock logique (seuils, volumes) par marque / canal\n  - anticipation du stockage => envoyé à C-LOG\n- Achats\n  - planification des demandes d'achat aux fournisseurs (lotissements)\n\nQui réalise la demande d'achat fournisseur ? MAP\nQui suit la fabrication chez le fournisseur et la livraison du fournisseur vers le port (Carrier) + gestion des douanes pour les entrepot sous douane ? CBS \n\nComment est géré le rééquilibrage des allocations afin de : \n\n- 1- gérer un impondérable de fabrication/livraison amont \n- 2- répondre à une demande non couverte par le stock ?\n- 3- reprioriser les demandes de vente si une demande devient prioritaire ? Pas exemple, un client Gold passe une commande qu'on ne peut pas fournir, on décide alors de déprioriser (postpone ou annulation) d'autres clients plus petits, mauvais payeurs etc.\n\nCas 1 : MAP recalcule et relivre les données dans le système opérant (annule et remplace)\nCas 2 : Ca ne peut pas arriver, on ne vend que ce qu'on a en stock.\nCas 3 : Ca n'arrive pas, on vend en FIFO => premier arrivé, premier servi. Un mauvais payeur est traité de la même manière jusqu'à ce qu'il soit sorti définitivement."
+    },
+    {
+      "id": "U11",
+      "titre": "Question sur le stockage du projet",
+      "texte": "Comment stockes tu toutes les infos du projet ?"
+    },
+    {
+      "id": "U12",
+      "titre": "Seconde relance après absence de réponse",
+      "texte": "Tu es bloqué ?"
+    },
+    {
+      "id": "U13",
+      "titre": "Demande de dossier exhaustif",
+      "texte": "Je veux : \n\n- que tu prennes en compte ma derniere histoire qui commence par : \"Autre complément GBM important :  \"\n- que tu relise la totalité de la conversation et que tu constitues le dossier sans rien oublier. Il faut être exhaustif."
+    }
+  ],
+  "assertions": [
+    {
+      "id": "F001",
+      "source": "U01",
+      "theme": "Cadrage",
+      "enonce": "Construire une cartographie des Business Capabilities du système organisationnel Beaumanoir.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F002",
+      "source": "U01",
+      "theme": "Périmètre",
+      "enonce": "Inclure opérations et référentiels associés : achats, ventes, SAV, stocks et allocations ; cœur ERP commerce.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F003",
+      "source": "U01",
+      "theme": "Périmètre",
+      "enonce": "Exclure finance, contrôle de gestion et conformité comme domaines post-op.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F004",
+      "source": "U01",
+      "theme": "Périmètre",
+      "enonce": "Exclure conception/design produit et planification de saison comme domaines amont.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F005",
+      "source": "U01",
+      "theme": "Références",
+      "enonce": "S’appuyer sur standards/métamodèles et éditeurs majeurs ; IBM, SAP, Oracle, TOGAF et ITIL cités comme candidats.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F006",
+      "source": "U01",
+      "theme": "Finalité",
+      "enonce": "Permettre l’inventaire de l’existant malgré sa diversité et son ancienneté.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F007",
+      "source": "U01",
+      "theme": "Finalité",
+      "enonce": "Permettre une projection sur une refonte modernisée et la convergence de trois SI en un SI cible commun.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F008",
+      "source": "U01",
+      "theme": "Urbanisation",
+      "enonce": "Rechercher deux ou trois niveaux, dans l’esprit zone/quartier/îlot modernisé ; Domaine/Capacité/Sous-capacité est une option.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F009",
+      "source": "U01;U02",
+      "theme": "Démarche",
+      "enonce": "Ouvrir et comparer des options, puis les refermer progressivement ; démarche itérative et exploratoire approuvée.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F010",
+      "source": "U01",
+      "theme": "Livrables",
+      "enonce": "Aboutir à un livrable documentaire tangible : document, livre blanc, présentation ou autre ; pas de carte finale immédiate.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F011",
+      "source": "U02",
+      "theme": "Cible",
+      "enonce": "Envisager une plateforme de capacités, notamment pour les stocks et flux.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F012",
+      "source": "U02",
+      "theme": "Cible",
+      "enonce": "Envisager une plateforme de processus portant organisation, usages et transactions métier longues/case management.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F013",
+      "source": "U07",
+      "theme": "Cible",
+      "enonce": "Ne pas absorber le SI logistique C-Log dans l’ERP commercial ; filiale autonome avec DSI dédié.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F014",
+      "source": "U07",
+      "theme": "Urbanisation",
+      "enonce": "Montrer où se trouvent les autorités sur l’information et les responsabilités de décision selon marque, canal, SI et situation.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F015",
+      "source": "U07;U09",
+      "theme": "Urbanisation",
+      "enonce": "Définir des capacités métier ; intégrer information et décision au niveau pertinent de la définition/décomposition, sans recentrer la carte sur ces axes.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F016",
+      "source": "U07",
+      "theme": "Urbanisation",
+      "enonce": "Explorer une nomenclature de verbes distinguant notamment détention d’une vérité et détention d’une décision.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F017",
+      "source": "U03",
+      "theme": "Démarche",
+      "enonce": "Commencer la collecte détaillée par GBM.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F018",
+      "source": "U11;U13",
+      "theme": "Documentation",
+      "enonce": "Constituer un dossier exhaustif, incluant le récit MAP/CBS et l’intégralité des informations du fil, plutôt qu’une simple mémoire de conversation.",
+      "statut": "Exigence / orientation utilisateur",
+      "perimetre": "Projet Beaumanoir",
+      "limite": ""
+    },
+    {
+      "id": "F019",
+      "source": "U01",
+      "theme": "Paysages",
+      "enonce": "GBM est initialement décrit par Storeland, UR et Socloz.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F020",
+      "source": "U02",
+      "theme": "Paysages",
+      "enonce": "GBM est approximativement 90 % retail (magasins et eCommerce) et 10 % B2B ; Zalando est cité en exemple.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Les pourcentages sont des ordres de grandeur déclarés, sans base de calcul ni période précisées."
+    },
+    {
+      "id": "F021",
+      "source": "U01",
+      "theme": "Paysages",
+      "enonce": "Boardriders est initialement décrit par SAP ECC, SAP AFS et NewStore.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "BRD",
+      "limite": ""
+    },
+    {
+      "id": "F022",
+      "source": "U02",
+      "theme": "Paysages",
+      "enonce": "BRD est environ 60 % B2B et présente un enjeu majeur d’allocation via Allocation Run dans SAP.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "BRD",
+      "limite": "Les pourcentages sont des ordres de grandeur déclarés, sans base de calcul ni période précisées."
+    },
+    {
+      "id": "F023",
+      "source": "U01",
+      "theme": "Paysages",
+      "enonce": "La plateforme Sarenza est initialement qualifiée de marketplace développée sur mesure.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "Sarenza",
+      "limite": "Ne pas déduire une intermédiation vendeurs tiers du seul terme marketplace."
+    },
+    {
+      "id": "F024",
+      "source": "U02",
+      "theme": "Paysages",
+      "enonce": "Sarenza intègre des catalogues fournisseurs déjà constitués et revend les articles en B2C.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "Sarenza",
+      "limite": "Ne pas déduire une intermédiation vendeurs tiers du seul terme marketplace."
+    },
+    {
+      "id": "F025",
+      "source": "U02",
+      "theme": "Paysages",
+      "enonce": "Le SAV est identifié comme une force de Sarenza.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "Sarenza",
+      "limite": ""
+    },
+    {
+      "id": "F026",
+      "source": "U03",
+      "theme": "Storeland",
+      "enonce": "Une instance de Storeland par marque.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F027",
+      "source": "U03",
+      "theme": "Storeland",
+      "enonce": "Instance signifie ici instance Oracle ; pas de middleware dans cette architecture Storeland.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Ne pas étendre l’absence de middleware interne à l’absence de plateforme d’intégration transverse."
+    },
+    {
+      "id": "F028",
+      "source": "U03;U04",
+      "theme": "Stocks",
+      "enonce": "Storeland détient les stocks des magasins de chaque marque.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F029",
+      "source": "U03",
+      "theme": "Storeland",
+      "enonce": "Storeland assure les opérations back-office de la marque, dont demandes stock-to-store et réassort automatique.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F030",
+      "source": "U03",
+      "theme": "POS",
+      "enonce": "Les fonctions de caisse sont assurées par des logiciels spécialisés de point de vente, distincts de Storeland.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F031",
+      "source": "U03",
+      "theme": "POS",
+      "enonce": "La prise de commande pour un client final en magasin est également réalisée par des logiciels spécialisés de POS.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F032",
+      "source": "U03",
+      "theme": "Flux",
+      "enonce": "Les stocks retail des instances Storeland remontent régulièrement par batch dans UR.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F033",
+      "source": "U03",
+      "theme": "UR",
+      "enonce": "UR signifie United Retail ; l’origine Cylande puis Cegid est citée avec une demande de vérification éditeur.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F034",
+      "source": "U03",
+      "theme": "UR",
+      "enonce": "UR est utilisé dans un rôle multicanal orienté eCommerce, décrit comme une sorte d’OMS.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F035",
+      "source": "U03",
+      "theme": "Flux",
+      "enonce": "Des échanges d’alignement de données entre UR et C-Log sont exécutés par batch.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F036",
+      "source": "U03",
+      "theme": "Intégration",
+      "enonce": "Une plateforme Talend transverse orchestre les échanges de données.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F037",
+      "source": "U03;U07",
+      "theme": "C-Log",
+      "enonce": "C-Log est la filiale logistique centralisée de Beaumanoir, avec son propre SI.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F038",
+      "source": "U03",
+      "theme": "Socloz",
+      "enonce": "Socloz prend en charge le ship-from-store.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F039",
+      "source": "U03",
+      "theme": "Socloz",
+      "enonce": "Socloz prend en charge l’extension de gamme.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F040",
+      "source": "U03",
+      "theme": "Socloz",
+      "enonce": "L’UR déployé est jugé insuffisamment évolué pour les complexités confiées à Socloz.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Limite du déploiement GBM ; ne prouve pas une incapacité générale de toutes les versions UR."
+    },
+    {
+      "id": "F041",
+      "source": "U03",
+      "theme": "B2C",
+      "enonce": "Storeland, UR et Socloz appartiennent à la chaîne B2C retail décrite.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F042",
+      "source": "U03",
+      "theme": "B2B",
+      "enonce": "Une organisation distincte et un autre sous-SI traitent le B2B ainsi que les marketplaces gérées dans cette organisation B2B.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Une organisation séparée ne prouve ni isolement technique ni séparation physique des stocks."
+    },
+    {
+      "id": "F043",
+      "source": "U03",
+      "theme": "B2B",
+      "enonce": "Zoho assure le CRM des clients B2B.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F044",
+      "source": "U03",
+      "theme": "B2B",
+      "enonce": "Elastic assure la prise de commande des clients B2B.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F045",
+      "source": "U03",
+      "theme": "Achats",
+      "enonce": "Une application sur mesure, non nommée dans le premier récit, gère le processus de suivi des commandes d’achat.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "À rapprocher de CBS, mais identité exacte et périmètre sur mesure non confirmés pour CBS."
+    },
+    {
+      "id": "F046",
+      "source": "U03",
+      "theme": "Achats",
+      "enonce": "Ce suivi comprend le suivi opérationnel et la facilitation d’échanges de documents fournisseur–Beaumanoir et fournisseur–douanes.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F047",
+      "source": "U04",
+      "theme": "eCommerce",
+      "enonce": "Depuis le site d’une marque, la recherche d’une solution de livraison examine d’abord le stock entrepôt.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F048",
+      "source": "U04",
+      "theme": "Stocks",
+      "enonce": "Le stock entrepôt est présent dans UR.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Présence dans UR ne prouve pas autorité sur le stock physique d’entrepôt."
+    },
+    {
+      "id": "F049",
+      "source": "U04",
+      "theme": "eCommerce",
+      "enonce": "Lorsque le stock est en entrepôt, l’expédition passe par C-Log.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F050",
+      "source": "U04;U06",
+      "theme": "C-Log",
+      "enonce": "C-Log choisit l’entrepôt de réalisation.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F051",
+      "source": "U04;U06",
+      "theme": "C-Log",
+      "enonce": "C-Log choisit le transporteur pour l’expédition.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F052",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "Une solution magasin est recherchée parmi les magasins disposant de l’article et éligibles.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Ordre entrepôt puis magasin décrit au niveau article ; cas multi-articles non documentés."
+    },
+    {
+      "id": "F053",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "La demande de packing/shipping est envoyée en premier au magasin le moins sollicité parmi les éligibles.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "La mesure « sollicité » n’est pas définie."
+    },
+    {
+      "id": "F054",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "Un magasin est éligible s’il participe au service et n’a pas atteint son quota.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F055",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "Les quotas sont journaliers et/ou hebdomadaires.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F056",
+      "source": "U04",
+      "theme": "Organisation",
+      "enonce": "Les quotas arbitrent la charge d’expédition avec l’activité de vente des équipes magasin ; les vendeurs privilégient leur travail de vente.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F057",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "Le magasin dispose de quinze minutes pour répondre.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F058",
+      "source": "U04;U05",
+      "theme": "Ship-from-store",
+      "enonce": "Après refus ou absence de réponse dans le délai, seule la demande de préparation/expédition adressée au magasin est annulée.",
+      "statut": "Confirmé explicitement par Laurent",
+      "perimetre": "GBM",
+      "limite": "Ne pas enregistrer une annulation commerciale."
+    },
+    {
+      "id": "F059",
+      "source": "U05",
+      "theme": "Ship-from-store",
+      "enonce": "La commande client reste ouverte pendant les tentatives successives.",
+      "statut": "Confirmé explicitement par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F060",
+      "source": "U04;U05",
+      "theme": "Ship-from-store",
+      "enonce": "Une nouvelle demande d’exécution est adressée au magasin suivant après échec de la tentative.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F061",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "Une alerte est produite quand le parcours de sollicitations ne trouve pas de prise en charge.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F062",
+      "source": "U04",
+      "theme": "Ship-from-store",
+      "enonce": "L’alerte interviendrait si aucun magasin ne répond dans la journée ; Laurent dit « il me semble ».",
+      "statut": "Hypothèse explicitement incertaine",
+      "perimetre": "GBM",
+      "limite": "Délai d’escalade non confirmé ; ne pas le convertir en SLA ferme."
+    },
+    {
+      "id": "F063",
+      "source": "U04",
+      "theme": "Organisation",
+      "enonce": "Un responsable commercial de la marque appelle les magasins pour tenter de débloquer la situation.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F064",
+      "source": "U06",
+      "theme": "Glossaire",
+      "enonce": "Au grain fin de vente, produit, article, SKU et variant référence produit–taille–couleur sont équivalents dans le vocabulaire du projet.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Convention locale du projet ; ne pas imposer cette synonymie à toutes les applications."
+    },
+    {
+      "id": "F065",
+      "source": "U06",
+      "theme": "Réassort",
+      "enonce": "Storeland déclenche automatiquement une demande de réassort lorsqu’un stock d’article atteint un seuil minimum.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "La formule de quantité à réapprovisionner n’est pas donnée."
+    },
+    {
+      "id": "F066",
+      "source": "U06",
+      "theme": "IRMA",
+      "enonce": "IRMA calcule les stocks optimaux et les seuils minimum de réassort, hors Storeland.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F067",
+      "source": "U06",
+      "theme": "IRMA",
+      "enonce": "IRMA constitue la source de vérité des seuils minimum de réassort.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F068",
+      "source": "U06",
+      "theme": "IRMA",
+      "enonce": "IRMA est un outil sur mesure développé sur Snowflake.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F069",
+      "source": "U06",
+      "theme": "Transition",
+      "enonce": "IRMA est en cours de déploiement.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Périmètres effectifs et dates par marque inconnus ; coexistence possible mais non cartographiée."
+    },
+    {
+      "id": "F070",
+      "source": "U06;U07",
+      "theme": "Transition",
+      "enonce": "IRMA remplace SCORTEX, ancien outil en fin de vie.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Nom corrigé ; pas de preuve de retrait complet."
+    },
+    {
+      "id": "F071",
+      "source": "U07",
+      "theme": "Nomenclature",
+      "enonce": "SCORTEX est l’orthographe à retenir ; SCO-TEX est l’appellation antérieure corrigée.",
+      "statut": "Confirmé explicitement par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F072",
+      "source": "U06",
+      "theme": "EDI",
+      "enonce": "Une demande adressée à C-Log est transmise dans un fichier EDI.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F073",
+      "source": "U06",
+      "theme": "EDI",
+      "enonce": "Le fichier indique l’origine : eCommerce, réassort magasin, extension de gamme, etc.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F074",
+      "source": "U06",
+      "theme": "EDI",
+      "enonce": "Le fichier indique les articles à livrer et le client/destinataire à livrer (B2C ou B2B dans le vocabulaire de l’interface).",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F075",
+      "source": "U06",
+      "theme": "EDI",
+      "enonce": "Le fichier indique les opérations demandées : picking, light-touch, packing et shipping.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F076",
+      "source": "U06",
+      "theme": "Logistique",
+      "enonce": "Le light-touch comprend notamment mise sur cintre et collage d’une étiquette spéciale.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F077",
+      "source": "U06",
+      "theme": "Logistique",
+      "enonce": "Tous les entrepôts ne savent pas réaliser toutes les opérations ; cette aptitude intervient dans le choix.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F078",
+      "source": "U06",
+      "theme": "Logistique",
+      "enonce": "Lorsqu’une solution directe n’est pas éligible, un transfert d’un entrepôt source vers un entrepôt capable peut être ajouté avant les opérations demandées.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Ne pas inférer composition logistique arbitraire ni mécanisme technique de génération des transferts."
+    },
+    {
+      "id": "F079",
+      "source": "U06",
+      "theme": "Logistique",
+      "enonce": "L’OMS C-Log assure le suivi du processus logistique.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F080",
+      "source": "U06",
+      "theme": "Logistique",
+      "enonce": "En cas de problème, la demande est placée en file d’erreur puis traitée manuellement.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F081",
+      "source": "U07",
+      "theme": "Nomenclature",
+      "enonce": "KBRW est l’éditeur de l’OMS C-Log.",
+      "statut": "Confirmé explicitement par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F082",
+      "source": "U07",
+      "theme": "Nomenclature",
+      "enonce": "Crossroad est le nom du logiciel sur lequel s’appuie KBRW dans le contexte décrit.",
+      "statut": "Confirmé explicitement par Laurent",
+      "perimetre": "GBM",
+      "limite": "Dénomination fournie par Laurent ; les références publiques vérifiées corroborent KBRW, pas nécessairement ce nom."
+    },
+    {
+      "id": "F083",
+      "source": "U07",
+      "theme": "Constat",
+      "enonce": "L’information, notamment sur le stock, est distribuée entre plusieurs applications ; l’autorité doit être clarifiée.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F084",
+      "source": "U07",
+      "theme": "Constat",
+      "enonce": "Les décisions, notamment choix d’article ou d’entrepôt, sont distribuées et dépendent du canal ou de la situation.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F085",
+      "source": "U07",
+      "theme": "Cible",
+      "enonce": "L’enjeu peut être de redéfinir les frontières de responsabilité décisionnelle entre le commerce et C-Log, sans absorber son SI.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F086",
+      "source": "U10",
+      "theme": "MAP",
+      "enonce": "MAP est un outil développé sur mesure qui calcule la planification.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F087",
+      "source": "U10",
+      "theme": "MAP",
+      "enonce": "MAP serait sur Snowflake ; Laurent le suppose en lien avec l’outillage analytics GBM.",
+      "statut": "Hypothèse explicitement incertaine",
+      "perimetre": "GBM",
+      "limite": "Ne pas attribuer à MAP le même niveau de certitude technique qu’à IRMA."
+    },
+    {
+      "id": "F088",
+      "source": "U10",
+      "theme": "MAP — Forecast",
+      "enonce": "MAP produit les prévisions de vente par marque, modèle, couleur et taille.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F089",
+      "source": "U10",
+      "theme": "MAP — Forecast",
+      "enonce": "MAP produit les prévisions de vente par canal.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F090",
+      "source": "U10",
+      "theme": "MAP — Allocation",
+      "enonce": "MAP calcule la protection du stock logique par marque et canal : seuils et volumes.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Le calcul est décrit ; autorité opérationnelle, version applicable et systèmes d’application non établis."
+    },
+    {
+      "id": "F091",
+      "source": "U10",
+      "theme": "MAP — Allocation",
+      "enonce": "MAP anticipe le stockage et transmet cette anticipation à C-Log.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F092",
+      "source": "U10",
+      "theme": "MAP — Achats",
+      "enonce": "MAP planifie les demandes d’achat fournisseurs et les lotissements.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F093",
+      "source": "U10",
+      "theme": "MAP — Achats",
+      "enonce": "MAP réalise la demande d’achat fournisseur.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Demande d’achat ne signifie pas automatiquement commande fournisseur ferme."
+    },
+    {
+      "id": "F094",
+      "source": "U10",
+      "theme": "CBS",
+      "enonce": "CBS suit la fabrication chez le fournisseur.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F095",
+      "source": "U10",
+      "theme": "CBS",
+      "enonce": "CBS suit la livraison du fournisseur vers le port, avec mention de Carrier.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Le segment port/Carrier et les interfaces exactes restent à préciser."
+    },
+    {
+      "id": "F096",
+      "source": "U10",
+      "theme": "CBS",
+      "enonce": "CBS prend en charge la gestion des douanes pour les entrepôts sous douane dans le périmètre décrit.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Documenter une contribution ne réintègre pas tout le domaine conformité dans le scope."
+    },
+    {
+      "id": "F097",
+      "source": "U10",
+      "theme": "Rééquilibrage",
+      "enonce": "Cas 1 : face à un imprévu de fabrication ou livraison amont, MAP recalcule les données.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F098",
+      "source": "U10",
+      "theme": "Rééquilibrage",
+      "enonce": "Cas 1 : MAP relivre ces données dans le système opérant en « annule et remplace ».",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Jeux de données et consommateurs non nommés ; ne pas interpréter comme annulation de commandes clients."
+    },
+    {
+      "id": "F099",
+      "source": "U10",
+      "theme": "Vente sur stock",
+      "enonce": "Cas 2 : selon la règle décrite, une demande non couverte par le stock n’est pas vendue ; on ne vend que ce que l’on a en stock.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Politique nominale déclarée ; ne démontre pas impossibilité technique de survente ou d’écart physique."
+    },
+    {
+      "id": "F100",
+      "source": "U10",
+      "theme": "Priorité des ventes",
+      "enonce": "Cas 3 : pas de repriorisation des demandes au bénéfice d’un client Gold ni report/annulation d’autres clients pour ce motif.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": ""
+    },
+    {
+      "id": "F101",
+      "source": "U10",
+      "theme": "Priorité des ventes",
+      "enonce": "Le service des demandes suit FIFO : premier arrivé, premier servi.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "FIFO des demandes, non rotation physique ; périmètre canal/marque/protection à préciser."
+    },
+    {
+      "id": "F102",
+      "source": "U10",
+      "theme": "Priorité des ventes",
+      "enonce": "Un mauvais payeur est traité de la même manière tant qu’il n’est pas sorti définitivement.",
+      "statut": "Déclaré par Laurent",
+      "perimetre": "GBM",
+      "limite": "Ne décrit ni procédure d’exclusion ni domaine financier de crédit client."
+    }
+  ],
+  "contributions_assistant_consolidees": [
+    {
+      "id": "A01",
+      "position": "Après U01",
+      "titre": "Démarche initiale",
+      "synthese": "Référentiel métier commun ; couverture de l’existant ; scénarios de convergence. Frontières de périmètre, références à comparer, trois logiques de hiérarchie, cas d’épreuve, méthode en cinq itérations, gouvernance et livrables. Accord de principe U02, pas validation détaillée de chaque proposition."
+    },
+    {
+      "id": "A02",
+      "position": "Après U02",
+      "titre": "Deux plateformes et contextes métier",
+      "synthese": "Distinction Business Capability/plateforme logicielle ; responsabilités des deux plateformes proposées ; temps long différent d’une transaction BDD ; Sarenza revendeur B2C ; ARun comme point d’entrée ; variantes de règles/organisation/engagement/implémentation ; SAV comme cas d’épreuve."
+    },
+    {
+      "id": "A03",
+      "position": "Après U03",
+      "titre": "Première fiche GBM et vérification UR",
+      "synthese": "Documentation UR 2021 citée (achats, stocks, ventes assistées, allocation/réallocation) ; annonce 2019 sans citation exploitable dans le fil ; tableau des applications et organisations ; Talend distinct de l’architecture interne Storeland ; référentiels et frontières de conformité opérationnelle."
+    },
+    {
+      "id": "A04",
+      "position": "Après U04",
+      "titre": "Analyse du ship-from-store",
+      "synthese": "Parcours ; distinction stock/service-charge/acceptation ; capacités candidates ; règle de 15 minutes non assimilée à une capacité ; engagement magasin et commande client ; questions sur quotas, réservations, réponse tardive et escalade. Question confirmée par U05 : « quand tu dis “on annule la commande”, est-ce la demande de préparation/expédition adressée au magasin qui est annulée, tandis que la commande du client reste ouverte et passe au magasin suivant ? »"
+    },
+    {
+      "id": "A05",
+      "position": "Après U05",
+      "titre": "Confirmation et transition réassort",
+      "synthese": "Annulation de tentative, pas de vente ; objets métier distincts sans imposer d’objets techniques ; question sur réassort automatique/manualité et C-Log, partiellement résolue par U06."
+    },
+    {
+      "id": "A06",
+      "position": "Après U06",
+      "titre": "IRMA et C-Log",
+      "synthese": "Calcul des seuils vs déclenchement ; demande logistique distincte du fichier EDI et de la commande commerciale ; distinction canal/finalité et client/destinataire ; parcours logistique et transferts ; opérations des sites vs OMS ; capacités candidates, questions KBRW/SCORTEX ensuite résolues par U07."
+    },
+    {
+      "id": "A07",
+      "position": "Après U09",
+      "titre": "Clarification du centre de la cartographie",
+      "synthese": "Correction du terme “recentrer” ; Business Capabilities restent le cœur ; vocabulaire de verbes à éprouver ; informations, décisions, engagements et exécution comme dimensions/decomposition au niveau utile ; périmètre C-Log conservé."
+    },
+    {
+      "id": "A08",
+      "position": "Après U12, première réponse documentaire",
+      "titre": "Stockage de la connaissance",
+      "synthese": "Conversation et notes de mémoire, mais aucun fichier maître préexistant dans cette exploration ; proposition de registre versionné, statuts et provenance ; première restitution du complément MAP/CBS."
+    },
+    {
+      "id": "A09",
+      "position": "Après U12, seconde réponse documentaire",
+      "titre": "Précisions de continuité",
+      "synthese": "Reconnaissance des réponses manquantes ; limites de la mémoire ; préservation de MAP/CBS/FIFO et des hypothèses ; proposition du dossier désormais demandée par U13."
+    }
+  ],
+  "corrections": [
+    {
+      "id": "C01",
+      "source": "U01;U02",
+      "formulation_a_eviter": "Sarenza uniquement marketplace tiers",
+      "formulation_retenue": "Retenir l’activité de revente B2C de catalogues fournisseurs décrite ; conserver le qualificatif initial de plateforme sans en inférer toutes les responsabilités.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C02",
+      "source": "U03;A03",
+      "formulation_a_eviter": "UR = uniquement OMS eCommerce",
+      "formulation_retenue": "Séparer périmètre générique du produit et rôle du déploiement GBM ; ne pas inventer des modules utilisés.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C03",
+      "source": "U03;A03",
+      "formulation_a_eviter": "UR ne sait jamais faire du ship-from-store",
+      "formulation_retenue": "Conserver le constat de limite du déploiement GBM ; une capacité produit annoncée ne prouve ni disponibilité ni usage dans la version installée.",
+      "statut": "Précaution"
+    },
+    {
+      "id": "C04",
+      "source": "U03",
+      "formulation_a_eviter": "Storeland fait aussi la caisse",
+      "formulation_retenue": "Attribuer caisse et commandes client en magasin aux logiciels POS spécialisés.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C05",
+      "source": "U03",
+      "formulation_a_eviter": "Pas de middleware = pas d’intégration transverse",
+      "formulation_retenue": "Distinguer architecture Oracle/Storeland et plateforme Talend transverse.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C06",
+      "source": "U03;U07",
+      "formulation_a_eviter": "C-Log est une application",
+      "formulation_retenue": "C-Log est une filiale avec DSI ; distinguer organisation, SI, OMS Crossroad et autres outils.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C07",
+      "source": "U04;U05",
+      "formulation_a_eviter": "Annulation de la commande client après 15 minutes",
+      "formulation_retenue": "Seule la demande magasin est annulée ; la commande client persiste ; nouvelle tentative magasin.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C08",
+      "source": "U04",
+      "formulation_a_eviter": "Escalade en fin de journée certaine",
+      "formulation_retenue": "Conserver « dans la journée, il me semble » comme délai incertain.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C09",
+      "source": "U06;U07",
+      "formulation_a_eviter": "SCO-TEX",
+      "formulation_retenue": "Nom normalisé SCORTEX ; conserver le nom antérieur uniquement dans l’historique/verbatim.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C10",
+      "source": "U06;U07",
+      "formulation_a_eviter": "Crossroad est l’éditeur",
+      "formulation_retenue": "KBRW est l’éditeur ; Crossroad est le logiciel.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C11",
+      "source": "U06",
+      "formulation_a_eviter": "IRMA a déjà remplacé SCORTEX partout",
+      "formulation_retenue": "Déploiement en cours ; inventaire des périmètres de migration non fourni.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C12",
+      "source": "U07;U09",
+      "formulation_a_eviter": "Recentrer la carte sur information et décision",
+      "formulation_retenue": "La carte reste métier ; prendre ces notions en compte au niveau d’urbanisme pertinent, encore à définir.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C13",
+      "source": "U07",
+      "formulation_a_eviter": "Absorber le SI C-Log dans le futur ERP",
+      "formulation_retenue": "Hors objectif ; documenter la frontière de responsabilité et les décisions éventuellement à redéfinir.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C14",
+      "source": "U02;A02;A06",
+      "formulation_a_eviter": "Les deux plateformes sont les deux branches L1 de la carte",
+      "formulation_retenue": "Les deux plateformes sont une orientation de réalisation ; la décomposition métier reste distincte.",
+      "statut": "Proposition cohérente, à formaliser"
+    },
+    {
+      "id": "C15",
+      "source": "U10",
+      "formulation_a_eviter": "MAP est sur Snowflake avec certitude",
+      "formulation_retenue": "Hypothèse explicite ; contrairement à IRMA, la plateforme de MAP n’est pas confirmée.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C16",
+      "source": "U06;U10",
+      "formulation_a_eviter": "MAP et IRMA font le même calcul de seuils",
+      "formulation_retenue": "IRMA : réassort magasin ; MAP : prévisions/protection marque-canal/stockage/achats. Relations et recouvrements à établir.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C17",
+      "source": "U10",
+      "formulation_a_eviter": "Annule et remplace = annulation des ventes",
+      "formulation_retenue": "MAP remplace des données dans le système opérant ; objets et effets sur engagements inconnus.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C18",
+      "source": "U10",
+      "formulation_a_eviter": "GBM réalloue au client Gold comme l’exemple hypothétique",
+      "formulation_retenue": "Scénario explicitement écarté du fonctionnement décrit : pas de repriorisation commerciale.",
+      "statut": "Confirmé"
+    },
+    {
+      "id": "C19",
+      "source": "U10",
+      "formulation_a_eviter": "FIFO décrit la rotation des lots physiques",
+      "formulation_retenue": "Dans le récit, FIFO désigne l’ordre de service des demandes.",
+      "statut": "Clarifié"
+    },
+    {
+      "id": "C20",
+      "source": "U10",
+      "formulation_a_eviter": "Vente sur stock garantit l’absence technique de survente",
+      "formulation_retenue": "Politique nominale déclarée ; garanties de synchronisation et stock réel restent à instruire.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C21",
+      "source": "U01;U10",
+      "formulation_a_eviter": "Documenter MAP réintègre toute la planification amont",
+      "formulation_retenue": "Conserver le contexte et les interfaces ; statut de frontière pour protections/achats, sans élargissement implicite.",
+      "statut": "Précaution de périmètre"
+    },
+    {
+      "id": "C22",
+      "source": "U03;U10",
+      "formulation_a_eviter": "CBS est forcément toute l’application achats sur mesure initiale",
+      "formulation_retenue": "Rapprochement plausible mais non confirmé ; MAP produit la demande, CBS suit l’amont.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C23",
+      "source": "U10",
+      "formulation_a_eviter": "Une demande d’achat est déjà une commande ferme",
+      "formulation_retenue": "Ne pas poser cette équivalence sans connaître validation, émission fournisseur et engagement.",
+      "statut": "Réserve maintenue"
+    },
+    {
+      "id": "C24",
+      "source": "A08;A09;U13",
+      "formulation_a_eviter": "Les notes mémorisées constituent déjà un dossier versionné",
+      "formulation_retenue": "Avant cette livraison, pas de document maître créé dans le fil ; la version 0.1 constitue le premier dossier effectif.",
+      "statut": "Écart traité"
+    },
+    {
+      "id": "C25",
+      "source": "A02",
+      "formulation_a_eviter": "Commande = état de la Demande, doctrine validée dans ce fil",
+      "formulation_retenue": "Formulation introduite par l’assistant en rappel d’un autre contexte ; conserver comme proposition/rappel non validé dans ce corpus. Ne pas imposer un modèle d’objet unique.",
+      "statut": "Statut corrigé"
+    },
+    {
+      "id": "C26",
+      "source": "A06;U07",
+      "formulation_a_eviter": "Capacités logistiques candidates toutes incluses dans le cœur ERP",
+      "formulation_retenue": "Conserver les responsabilités comme interfaces/frontière ; exécution C-Log hors décomposition détaillée de la cible commerce.",
+      "statut": "Statut corrigé"
+    },
+    {
+      "id": "C27",
+      "source": "U08;U12",
+      "formulation_a_eviter": "Relances utilisateur ignorées",
+      "formulation_retenue": "Conserver la trace des deux interruptions et le besoin de livraisons effectives/retours visibles. Aucune information métier supplémentaire à inférer.",
+      "statut": "Traçabilité"
+    }
+  ],
+  "propositions": [
+    {
+      "id": "P01",
+      "source": "A01",
+      "titre": "Métier avant solutions",
+      "contenu": "Un référentiel métier stable, une couverture existante contextualisée et plusieurs vues de convergence ; ne pas confondre ces objets.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P02",
+      "source": "A01;A02",
+      "titre": "Indépendance des découpages",
+      "contenu": "Ne pas poser une équivalence capacité = produit = équipe = microservice = processus = table. Une capacité peut mobiliser humains et partenaires.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P03",
+      "source": "A01",
+      "titre": "Trois options de structure",
+      "contenu": "Comparer grandes responsabilités commerciales, objets et cycles de vie, puis responsabilités de décision/exécution. Ne pas adopter automatiquement une option hybride.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P04",
+      "source": "A01",
+      "titre": "Option responsabilités",
+      "contenu": "Atout : lisibilité/inventaire. Risque : reproduire silos achats-ventes et disperser les responsabilités transverses.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P05",
+      "source": "A01",
+      "titre": "Option objets",
+      "contenu": "Atout : sémantique et rapprochement de référentiels. Risque : confondre capacité, objet métier et gestion de données.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P06",
+      "source": "A01",
+      "titre": "Option décisions/exécution",
+      "contenu": "Atout : exposer les responsabilités d’une cible modernisée. Risque : dessiner trop tôt des services techniques peu lisibles pour l’existant.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P07",
+      "source": "A01",
+      "titre": "Conventions de niveaux",
+      "contenu": "Choisir si Domaine est regroupement ou capacité de haut niveau ; ne pas mélanger les conventions. Profondeur 2/3 niveaux non uniforme si inutile.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P08",
+      "source": "A01",
+      "titre": "Cas d’épreuve",
+      "contenu": "Tester achat avec réception partielle/écarts/conditionnements ; précommande wholesale sous contrainte ; vente omnicanale/retour ; marketplace tiers seulement si activité établie.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P09",
+      "source": "A02",
+      "titre": "Priorités des cas",
+      "contenu": "Éprouver GBM vente magasin/eCommerce, BRD allocation B2B, Sarenza SAV. Comparer les mêmes responsabilités sans effacer les contextes.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P10",
+      "source": "A01",
+      "titre": "Mutualisation prudente",
+      "contenu": "Même nom d’allocation ne prouve pas même responsabilité ; différences d’application ne prouvent pas différences de capacités.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P11",
+      "source": "A01",
+      "titre": "Contributions qualifiées",
+      "contenu": "Une application peut décider, exécuter, orchestrer, tenir une information de référence, publier ou consulter ; éviter la seule couverture oui/non.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P12",
+      "source": "A01",
+      "titre": "Variantes contextualisées",
+      "contenu": "Décrire marques, canaux, modèles commerciaux, populations, sites, instances, batchs, opérations manuelles, partenaires et spécifiques.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P13",
+      "source": "A01",
+      "titre": "Inconnu différent d’absent",
+      "contenu": "Une couverture non documentée ne constitue ni un trou métier ni une absence de capacité.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P14",
+      "source": "A01",
+      "titre": "Méthode en cinq itérations",
+      "contenu": "Cadrer ; examiner références ; prototyper ; répertorier les trois existants ; comparer convergence. Autoriser les retours entre étapes.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P15",
+      "source": "A01",
+      "titre": "Journal de décisions",
+      "contenu": "Conserver options, arguments, cas en défaut, décision et conditions de réexamen ; ne pas figer une première hypothèse par sa présence dans un dessin.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P16",
+      "source": "A01",
+      "titre": "Gouvernance proposée",
+      "contenu": "Laurent porte cohérence/traçabilité ; métiers valident sens/frontières/variantes ; équipes SI documentent les réalisations ; produits et architectes solutions contribuent aux cibles.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P17",
+      "source": "A01",
+      "titre": "Critères de solidité",
+      "contenu": "Les trois paysages sont descriptibles sans artifices ; différences métier visibles ; changement d’application sans renommage ; exceptions traçables.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P18",
+      "source": "A01",
+      "titre": "Livrables complémentaires",
+      "contenu": "Catalogue versionné comme base ; cartes et matrices ; document de référence/livre blanc ; présentation de décision ; le support éditorial ne précède pas le modèle.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P19",
+      "source": "A01",
+      "titre": "Limite de la carte",
+      "contenu": "La cartographie aide à comparer mais ne prouve pas à elle seule qu’une fusion/remplacement est possible : règles, données, contraintes et responsabilités doivent être comparées.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P20",
+      "source": "A01",
+      "titre": "Rôle des références",
+      "contenu": "Un cadre de modélisation, une éventuelle structure principale et des sources de contrôle ; pas l’addition brute de plusieurs catalogues éditeurs.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P21",
+      "source": "A02",
+      "titre": "Socle métier riche",
+      "contenu": "Le socle protège ses états et engagements ; ne pas déplacer toutes les règles dans les parcours. DDD sert d’analogie, pas d’équivalence automatique de couches.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P22",
+      "source": "A02;A06",
+      "titre": "Temps et responsabilité",
+      "contenu": "Le temps long seul ne sépare pas plateformes ; un domaine logistique peut conserver sa coordination interne. Pas de moteur unique imposé.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P23",
+      "source": "A02",
+      "titre": "Case management et transactions",
+      "contenu": "Situation porte contexte, objectifs, engagements et exceptions ; transaction métier longue différente d’une transaction BDD. Saga évoquée comme option, non choix.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P24",
+      "source": "A02",
+      "titre": "Quatre types de différences",
+      "contenu": "Distinguer règle/politique, organisation/parcours, résultat ou engagement réellement distinct, et implémentation historique.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P25",
+      "source": "A02",
+      "titre": "Cas SAV illustratif",
+      "contenu": "Article défectueux : justificatifs/échanges dans une Situation ; éligibilité échange, disponibilité, réservation, autorisation de retour et stock via capacités ; finance externe.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P26",
+      "source": "A02",
+      "titre": "Force SAV à expliquer",
+      "contenu": "Chercher part des capacités, règles, organisation, accès à l’information et simplicité ; ne pas attribuer automatiquement la force à une application.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P27",
+      "source": "A03",
+      "titre": "Vues stock",
+      "contenu": "Séparer tenue des états/mouvements, visibilité, disponibilité proposable, engagement/réservation et choix/exécution. Ce ne sont pas encore cinq cases imposées.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P28",
+      "source": "A03",
+      "titre": "Trois orchestrations",
+      "contenu": "Intégration de données, coordination d’exécution de commande et pilotage d’une Situation sont distincts ; un composant peut mélanger leurs réalisations.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P29",
+      "source": "A03",
+      "titre": "Référentiels à qualifier",
+      "contenu": "Articles, fournisseurs, clients B2B, magasins, entrepôts, conditions commerciales : identifier créateur, modificateur, autorité et copies. Donnée présente ≠ responsabilité de référence.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P30",
+      "source": "A03",
+      "titre": "Documents opérationnels",
+      "contenu": "Collecter/transmettre/suivre les pièces et appliquer un statut bloquant peut rester opérationnel ; définir les exigences réglementaires et le contrôle global reste externe.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P31",
+      "source": "A03",
+      "titre": "Pas de chaîne obligatoire",
+      "contenu": "Ne pas déduire un passage obligatoire Storeland→UR→Socloz→C-Log de la seule liste des composants.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P32",
+      "source": "A04",
+      "titre": "Trois ressources SFS",
+      "contenu": "Distinguer disponibilité article, participation et charge du service, puis acceptation de la demande. Sélection ne vaut ni acceptation ni réservation.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P33",
+      "source": "A04",
+      "titre": "Règle vs capacité",
+      "contenu": "Attendre quinze minutes est une règle de parcours ; le résultat métier est la prise en charge ou la résolution, non une capacité “attendre”.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P34",
+      "source": "A04",
+      "titre": "Quota et concurrence",
+      "contenu": "La politique peut être organisationnelle mais son contrôle exige des engagements cohérents ; deux demandes ne doivent pas consommer à tort la même dernière place.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P35",
+      "source": "A04",
+      "titre": "Exception humaine",
+      "contenu": "Parcours de sollicitation réglé, puis résolution humaine moins prédéterminée ; ne pas déclarer tout le parcours non déterministe.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P36",
+      "source": "A05",
+      "titre": "Objets métier distincts",
+      "contenu": "Commande client persistante et demande d’exécution magasin ont des cycles de vie distincts ; cette distinction ne dicte pas la structure des tables.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P37",
+      "source": "A06",
+      "titre": "Réassort et plateforme technique",
+      "contenu": "Calcul IRMA opérationnel même sur Snowflake ; la quantité à demander n’est pas déduite du seul seuil ; migration SCORTEX à contextualiser.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P38",
+      "source": "A06",
+      "titre": "Demande logistique",
+      "contenu": "Objet métier distinct du fichier EDI et des commandes d’achat/vente ; articles, destinataire, opérations et contraintes.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P39",
+      "source": "A06",
+      "titre": "Canal et finalité",
+      "contenu": "Le champ origine mélange eCommerce, réassort et extension de gamme ; conserver code source et permettre deux lectures sans modifier l’existant par hypothèse.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P40",
+      "source": "A06",
+      "titre": "Destinataire et client",
+      "contenu": "Un magasin réapprovisionné est un lieu à livrer ; ne pas le transformer automatiquement en client commercial.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P41",
+      "source": "A06",
+      "titre": "Besoin/parcours/suivi",
+      "contenu": "Distinguer résultat logistique demandé, parcours retenu (incluant transfert) et suivi ; noms conceptuels, pas affirmation sur objets techniques Crossroad.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P42",
+      "source": "A06",
+      "titre": "Aptitude et charge",
+      "contenu": "Comparer qualification des services des entrepôts/magasins, sans confondre aptitude permanente et capacité disponible.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P43",
+      "source": "A06",
+      "titre": "OMS et exécution",
+      "contenu": "L’OMS décide et suit ; équipes et logiciels WMS/TMS réalisent des opérations ; leur couverture réelle reste à documenter.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P44",
+      "source": "A06",
+      "titre": "File d’erreur",
+      "contenu": "Le mécanisme technique de file n’est pas la capacité métier ; rechercher la résolution d’incident et sa responsabilité humaine.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P45",
+      "source": "A07",
+      "titre": "Verbes sans nouveau L1",
+      "contenu": "Dictionnaire de rédaction : tenir/maintenir ; calculer/évaluer/estimer ; définir/arbitrer/sélectionner/autoriser ; réserver/affecter/confirmer/engager ; piloter/coordonner/résoudre ; réaliser des opérations.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P46",
+      "source": "A07",
+      "titre": "Niveau pertinent",
+      "contenu": "Scinder une capacité seulement si responsabilités/résultats éclairent une frontière ; sinon conserver les dimensions dans sa fiche. Pas de division systématique vérité/décision.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P47",
+      "source": "A07",
+      "titre": "Fiche de capacité",
+      "contenu": "Résultat, informations faisant autorité, décisions/engagements, contexte, réalisation actuelle et options cible ; distinguer responsabilité organisationnelle et contribution logicielle.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P48",
+      "source": "A07",
+      "titre": "Exemple réassort à éprouver",
+      "contenu": "Déterminer paramètres ; tenir paramètres applicables ; déclencher demandes. Même composant peut porter plusieurs responsabilités ; catalogue non validé.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P49",
+      "source": "A07",
+      "titre": "Frontière C-Log",
+      "contenu": "Définir contraintes/engagements transmis et latitude décisionnelle laissée à C-Log ; conserver, préciser ou modifier délégation sont des options ouvertes.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P50",
+      "source": "A07",
+      "titre": "Information et décision",
+      "contenu": "Information copiée ≠ autorité ; calcul ≠ décision autorisée ; choix ≠ engagement ; verbe seul insuffisant sans objet, états et périmètre.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P51",
+      "source": "A08;A09",
+      "titre": "Dossier documentaire",
+      "contenu": "Séparer cadrage, faits, hypothèses, propositions, questions, sources et historique ; identifiants stables et version explicite.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P52",
+      "source": "A08;A09",
+      "titre": "Limite de mémoire",
+      "contenu": "Notes conversationnelles ne sont pas un référentiel exhaustif contrôlable ; aucune mise à jour automatique de fichier n’a été réalisée dans les échanges antérieurs.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P53",
+      "source": "A01;A03",
+      "titre": "Frontières commerciales",
+      "contenu": "Positionner facturation commerciale, encaissement, décision de remboursement vs exécution financière ; achat lointain ≠ plan de saison ; article exploitable ≠ design.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P54",
+      "source": "A02",
+      "titre": "ARun et temps de décision",
+      "contenu": "Décomposer les responsabilités d’ARun sans les nommer ARun ; le batch existant ne force ni un moteur unique ni le temps réel cible.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P55",
+      "source": "A01;A02",
+      "titre": "Préserver les engagements",
+      "contenu": "Comparer wholesale et eCommerce sur ce qui est engagé, envers qui, pour combien de temps et selon quelles règles de révision ; ne pas conclure simple paramétrage.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    },
+    {
+      "id": "P56",
+      "source": "A02",
+      "titre": "Demande et commande",
+      "contenu": "Rappel par l’assistant de “commande = état de la Demande” et du risque de doublon de référentiel ; non confirmé comme doctrine dans ce fil.",
+      "statut": "Proposition assistant à éprouver, sauf exigence utilisateur citée séparément"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q001",
+      "theme": "Métamodèle",
+      "question": "Le Domaine est-il une capacité L1 ou un regroupement ? À quel niveau utiliser les verbes de responsabilité ?",
+      "enjeu": "Fixer une convention lisible sans remplacer les capacités métier.",
+      "source": "U01;U09;P07;P46",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q002",
+      "theme": "Métamodèle",
+      "question": "Quelle structure principale retenir parmi responsabilités, objets/cycles de vie et responsabilités de décision/exécution ?",
+      "enjeu": "Comparer avant convergence, ne pas imposer la cible.",
+      "source": "P03-P06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q003",
+      "theme": "Références",
+      "question": "Quels référentiels détaillés sont accessibles et réutilisables ; quelles versions et conditions de réutilisation ?",
+      "enjeu": "Choisir sur contenu consulté, pas sur réputation.",
+      "source": "U01;P20",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q004",
+      "theme": "Périmètre",
+      "question": "Où placer facturation commerciale, encaissement, décision de remboursement et leurs interfaces financières ?",
+      "enjeu": "Respecter exclusion finance en rendant les frontières explicites.",
+      "source": "P53",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q005",
+      "theme": "Périmètre",
+      "question": "Quels éléments de prévision et de planification MAP restent contexte amont ; quels résultats opérationnels entrent dans la carte ?",
+      "enjeu": "Ne pas confondre périmètre observé et périmètre à refondre.",
+      "source": "U01;U10;C21",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q006",
+      "theme": "Périmètre",
+      "question": "Quelles tâches documentaires/douanières de CBS décrire comme opérations ou interfaces, sans réintégrer le domaine conformité ?",
+      "enjeu": "Clarifier une frontière, pas rendre une expertise juridique.",
+      "source": "U01;U03;U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q007",
+      "theme": "Organisation",
+      "question": "Quelles marques, entités, sites, canaux et périodes couvrent les règles déclarées ?",
+      "enjeu": "Ne pas étendre une règle locale à tous les SI.",
+      "source": "U02-U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q008",
+      "theme": "Instances",
+      "question": "Quelles instances, versions, modules et spécifiques d’UR, Socloz, Storeland et autres produits sont effectivement utilisés ?",
+      "enjeu": "Couverture déployée distincte des capacités produit.",
+      "source": "U03;P11",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q009",
+      "theme": "Migration",
+      "question": "Où et depuis quand IRMA est-il autorité effective ; où SCORTEX reste-t-il actif ?",
+      "enjeu": "Éviter une double autorité ou une transition supposée achevée.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q010",
+      "theme": "Référentiels",
+      "question": "Qui crée, modifie et fait autorité sur articles, fournisseurs, clients, sites, conditions commerciales et prix ?",
+      "enjeu": "Compléter les référentiels associés sans les déduire de copies.",
+      "source": "U01;P29",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q011",
+      "theme": "Stock entrepôt",
+      "question": "Quel système fait autorité sur le stock physique d’entrepôt et sur chaque état logique ? Quel rôle exact joue UR ?",
+      "enjeu": "UR contient le stock, mais autorité physique non établie.",
+      "source": "U04;C20",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q012",
+      "theme": "Stock magasin",
+      "question": "Comment sont calculés stock visible et disponibilité vendable, et où se font les lectures pour chaque parcours ?",
+      "enjeu": "Distinguer Storeland, projections UR et rôle de Socloz.",
+      "source": "U03;U04",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q013",
+      "theme": "Intégration",
+      "question": "Quelles fréquences, fraîcheurs, reprises et contrôles gouvernent les batchs Storeland–UR et UR–C-Log ?",
+      "enjeu": "Connaître les contraintes réelles, sans choisir la cible technique.",
+      "source": "U03",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q014",
+      "theme": "Intégration",
+      "question": "Quelles règles métier éventuelles sont contenues dans Talend et quels flux y passent réellement ?",
+      "enjeu": "Ne pas assimiler tout Talend à une simple copie de données.",
+      "source": "U03;P28",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q015",
+      "theme": "Ship-from-store",
+      "question": "Que mesure exactement “le moins sollicité” ?",
+      "enjeu": "Classement par demandes, acceptations, expéditions ou taux de charge : résultats différents.",
+      "source": "U04",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q016",
+      "theme": "Ship-from-store",
+      "question": "Qui définit les quotas, dans quel outil et sur quel périmètre ?",
+      "enjeu": "Autorité de politique vs calcul et contrôle opérationnel.",
+      "source": "U04",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q017",
+      "theme": "Ship-from-store",
+      "question": "Quand un quota est-il consommé et restitué ?",
+      "enjeu": "Contrôle de concurrence et effet des refus/annulations.",
+      "source": "U04;P34",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q018",
+      "theme": "Ship-from-store",
+      "question": "Quand et où le stock est-il réservé, confirmé puis libéré ?",
+      "enjeu": "Sélection, acceptation et réservation sont distinctes.",
+      "source": "U04;U05",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q019",
+      "theme": "Ship-from-store",
+      "question": "Comment une réponse positive reçue après expiration est-elle traitée ?",
+      "enjeu": "Éviter deux prises en charge incompatibles.",
+      "source": "U04;U05",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q020",
+      "theme": "Ship-from-store",
+      "question": "Quel est le délai exact d’escalade et comment s’applique-t-il hors ouverture du magasin ?",
+      "enjeu": "Le délai de journée est incertain ; quinze minutes ne précise pas calendrier d’ouverture.",
+      "source": "U04",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q021",
+      "theme": "Ship-from-store",
+      "question": "Quels pouvoirs et suites d’action le responsable commercial a-t-il après l’alerte ?",
+      "enjeu": "Suivre la résolution sans inventer dérogation de quota, annulation ou réallocation.",
+      "source": "U04",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q022",
+      "theme": "Commandes",
+      "question": "Quelle est l’unité d’affectation : commande complète, ligne, article, quantité ou lot d’exécution ? Comment traiter multi-articles et splits ?",
+      "enjeu": "Le récit est au grain article ; ne pas inventer un split ou son absence.",
+      "source": "U04;P36",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q023",
+      "theme": "Commandes",
+      "question": "Quel système fait autorité sur la commande client et quels événements en changent l’état ?",
+      "enjeu": "La persistance commerciale est confirmée, pas son autorité logicielle.",
+      "source": "U05",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q024",
+      "theme": "Réassort",
+      "question": "Comment la quantité de réassort est-elle calculée ?",
+      "enjeu": "Un seuil déclencheur ne définit pas la quantité.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q025",
+      "theme": "Réassort",
+      "question": "Existe-t-il des demandes manuelles ou des exceptions au réassort automatique ?",
+      "enjeu": "La réponse de Laurent décrit l’automatique, sans nier d’autres modes.",
+      "source": "A05;U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q026",
+      "theme": "Réassort",
+      "question": "Comment les seuils IRMA sont-ils publiés, versionnés, datés et appliqués dans Storeland ?",
+      "enjeu": "Source de calcul, référence et application à distinguer.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q027",
+      "theme": "MAP/IRMA",
+      "question": "Comment protections MAP marque/canal et objectifs/seuils IRMA magasin s’articulent-ils ?",
+      "enjeu": "Ne pas fusionner deux politiques homonymes ; dépendances non établies.",
+      "source": "U06;U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q028",
+      "theme": "MAP",
+      "question": "Sur quelle plateforme MAP est-il réellement implémenté ?",
+      "enjeu": "Snowflake est une hypothèse explicite.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q029",
+      "theme": "MAP",
+      "question": "À quel horizon, avec quelles unités et variantes les prévisions, lotissements et protections sont-ils calculés ?",
+      "enjeu": "Planification décrite à trois niveaux, paramètres détaillés inconnus.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q030",
+      "theme": "MAP",
+      "question": "Où les protections sont-elles tenues et rendues opposables aux ventes/réassorts ?",
+      "enjeu": "MAP calcule ; application opérationnelle et autorité restent à établir.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q031",
+      "theme": "MAP",
+      "question": "Quels consommateurs et jeux de données sont visés par “annule et remplace” ?",
+      "enjeu": "Système opérant non nommé ; pas d’annulation commerciale supposée.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q032",
+      "theme": "MAP",
+      "question": "Que devient un engagement déjà accepté lors d’un recalcul de MAP ?",
+      "enjeu": "Recalcul de politique et révision des engagements ne sont pas équivalents.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q033",
+      "theme": "MAP/CBS",
+      "question": "Quel signal de fabrication/livraison déclenche le recalcul MAP ; est-il issu de CBS et par quel circuit ?",
+      "enjeu": "Le rôle CBS ne prouve pas une interface directe CBS→MAP.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q034",
+      "theme": "Achats",
+      "question": "Quel est le statut de la demande d’achat créée par MAP, qui la valide et qui émet l’engagement fournisseur ferme ?",
+      "enjeu": "Distinguer plan, demande, commande et suivi.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q035",
+      "theme": "Achats",
+      "question": "CBS correspond-il exactement à l’application achats sur mesure initialement évoquée ?",
+      "enjeu": "Éviter de créer deux systèmes fictifs ou une fusion prématurée.",
+      "source": "U03;U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q036",
+      "theme": "CBS",
+      "question": "Quels objets, statuts et documents suivent fabrication, port/Carrier et douane ?",
+      "enjeu": "Frontières de suivi et responsables de validation non documentés.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q037",
+      "theme": "FIFO",
+      "question": "À quel périmètre le FIFO s’applique-t-il : marque, canal, site, stock protégé ou file commune ?",
+      "enjeu": "Une enveloppe protégée peut limiter les demandes réellement concurrentes.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q038",
+      "theme": "Vente sur stock",
+      "question": "Quelle information et quel engagement garantissent la vente sur stock malgré batchs et ventes magasin ?",
+      "enjeu": "Règle métier ≠ preuve de disponibilité technique parfaite.",
+      "source": "U03;U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q039",
+      "theme": "Client B2B",
+      "question": "Qui décide et applique l’exclusion d’un mauvais payeur ; quel effet sur commandes déjà acceptées ?",
+      "enjeu": "Interface commerciale du domaine exclu, pas extension au crédit client.",
+      "source": "U10",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q040",
+      "theme": "C-Log",
+      "question": "Quelles contraintes le commerce transmet-il et quels choix C-Log peut-il arrêter ou renégocier ?",
+      "enjeu": "Définir le contrat de responsabilité, sans absorber le SI.",
+      "source": "U06;U07",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q041",
+      "theme": "C-Log",
+      "question": "Qui tient l’aptitude des entrepôts, les services réalisables et leurs capacités opérationnelles ?",
+      "enjeu": "Un référentiel implicite est utilisé ; son autorité est inconnue.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q042",
+      "theme": "C-Log",
+      "question": "Quelle règle déclenche le transfert inter-entrepôts et qui crée/suit ses demandes ?",
+      "enjeu": "Distinguer besoin initial, parcours retenu et ordres d’exécution.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q043",
+      "theme": "C-Log",
+      "question": "Quels retours d’état sont adressés au commerce et qui décide la reprise après file d’erreur ?",
+      "enjeu": "Éviter de perdre les engagements lors des exceptions.",
+      "source": "U06",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q044",
+      "theme": "C-Log",
+      "question": "Quels outils réalisent les opérations entrepôt/transport et comment se relient-ils à Crossroad ?",
+      "enjeu": "Documentation de frontière seulement ; pas inventaire exhaustif imposé.",
+      "source": "U06;U07",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q045",
+      "theme": "B2B GBM",
+      "question": "Quel parcours suit une commande Elastic après sa saisie, jusqu’à réservation, livraison et SAV ?",
+      "enjeu": "L’aval n’a pas été raconté.",
+      "source": "U03",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q046",
+      "theme": "B2B GBM",
+      "question": "Quels modèles commerciaux couvrent les marketplaces B2B et quelles interfaces/conditions les distinguent ?",
+      "enjeu": "Ne pas déduire intermédiation, propriété ou consignation.",
+      "source": "U03",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q047",
+      "theme": "Sarenza",
+      "question": "Quels autres modèles éventuels coexistent avec la revente B2C décrite ?",
+      "enjeu": "Qualifier sans remettre en cause le récit de revente.",
+      "source": "U01;U02",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q048",
+      "theme": "Sarenza",
+      "question": "Quelles capacités, règles, informations et pratiques expliquent la force du SAV ?",
+      "enjeu": "Conserver une différence sans l’attribuer automatiquement au logiciel.",
+      "source": "U02;P26",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q049",
+      "theme": "BRD",
+      "question": "Quelles décisions, engagements, intrants et résultats composent l’Allocation Run réellement installé ?",
+      "enjeu": "Comparer responsabilités, pas libellés produits.",
+      "source": "U02;P54",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q050",
+      "theme": "Convergence",
+      "question": "Quelles règles doivent être communes, contextualisées, déléguées ou distinctes ?",
+      "enjeu": "Choix cible encore ouvert, y compris sur les autorités.",
+      "source": "U07;U09",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q051",
+      "theme": "Cible",
+      "question": "Comment articuler coordination transverse et coordinations internes, notamment C-Log ?",
+      "enjeu": "Deux plateformes logiques ne forcent pas un moteur unique.",
+      "source": "U02;U07;P22",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q052",
+      "theme": "Cible",
+      "question": "Le rappel “commande = état de la Demande” doit-il devenir une convention du présent modèle ?",
+      "enjeu": "Il provient de l’assistant ; ne pas l’imposer tacitement.",
+      "source": "P56",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q053",
+      "theme": "Documentation",
+      "question": "Quel support de gouvernance et quel rythme d’approbation adopter après v0.1 ?",
+      "enjeu": "Version documentaire créée, mais pas de dépôt distant ni mise à jour automatique promis.",
+      "source": "U11;U13",
+      "statut": "Ouverte",
+      "reponse": ""
+    },
+    {
+      "id": "Q054",
+      "theme": "Annulation magasin",
+      "question": "La commande client est-elle annulée à chaque tentative ?",
+      "enjeu": "Cycle de vie correct.",
+      "source": "U04;U05",
+      "statut": "Résolue dans le fil",
+      "reponse": "Non : seule la demande magasin est annulée ; commande client conservée."
+    },
+    {
+      "id": "Q055",
+      "theme": "Nomenclature",
+      "question": "Quel nom garder pour l’ancien outil ?",
+      "enjeu": "Éviter alias contradictoires.",
+      "source": "U07",
+      "statut": "Résolue dans le fil",
+      "reponse": "SCORTEX."
+    },
+    {
+      "id": "Q056",
+      "theme": "Nomenclature",
+      "question": "Qui édite l’OMS et comment s’appelle le logiciel ?",
+      "enjeu": "Distinguer organisation/éditeur/produit.",
+      "source": "U07",
+      "statut": "Résolue dans le fil",
+      "reponse": "KBRW ; Crossroad."
+    },
+    {
+      "id": "Q057",
+      "theme": "MAP/CBS",
+      "question": "Qui réalise la demande d’achat et qui suit fabrication/livraison amont ?",
+      "enjeu": "Découper deux responsabilités.",
+      "source": "U10",
+      "statut": "Résolue dans le fil",
+      "reponse": "MAP crée la demande ; CBS suit les opérations amont décrites."
+    },
+    {
+      "id": "Q058",
+      "theme": "Allocation GBM",
+      "question": "GBM dépriorise-t-il des clients pour servir un client Gold ?",
+      "enjeu": "Ne pas importer le scénario BRD.",
+      "source": "U10",
+      "statut": "Résolue dans le fil",
+      "reponse": "Non dans la politique décrite ; ordre d’arrivée."
+    },
+    {
+      "id": "Q059",
+      "theme": "Allocation GBM",
+      "question": "Comment réagir à un imprévu amont ?",
+      "enjeu": "Identifier acteur du recalcul.",
+      "source": "U10",
+      "statut": "Résolue dans le fil",
+      "reponse": "MAP recalcule et republie en annule et remplace ; détails ouverts."
+    },
+    {
+      "id": "Q060",
+      "theme": "Cadrage",
+      "question": "Faut-il recentrer la cartographie sur les informations et décisions ?",
+      "enjeu": "Préserver sa nature métier.",
+      "source": "U09",
+      "statut": "Résolue dans le fil",
+      "reponse": "Non : intégrer ces notions au niveau pertinent de l’urbanisme."
+    },
+    {
+      "id": "Q061",
+      "theme": "Documentation",
+      "question": "Existe-t-il un fichier maître avant cette livraison ?",
+      "enjeu": "Traçabilité des actions effectives.",
+      "source": "A08;A09;U13",
+      "statut": "Résolue dans le fil",
+      "reponse": "Non dans le fil ; le dossier 0.1 est créé à la demande U13."
+    }
+  ],
+  "composants": [
+    {
+      "id": "ORG-GBM",
+      "type": "Organisation",
+      "nom": "GBM — marques historiques",
+      "perimetre": "GBM",
+      "role": "Retail ≈90 %, B2B ≈10 % ; variantes par marque.",
+      "source": "U01-U03",
+      "reserve": "Liste détaillée des marques non donnée."
+    },
+    {
+      "id": "APP-STR",
+      "type": "Application / famille d’instances",
+      "nom": "Storeland",
+      "perimetre": "GBM",
+      "role": "Stock magasin, back-office, demandes stock-to-store et réassort automatique.",
+      "source": "U03;U06",
+      "reserve": "Une instance Oracle par marque ; liste, versions et spécifiques inconnus."
+    },
+    {
+      "id": "APP-POS",
+      "type": "Ensemble applicatif",
+      "nom": "Logiciels POS spécialisés",
+      "perimetre": "GBM",
+      "role": "Caisse et commandes pour client final en magasin.",
+      "source": "U03",
+      "reserve": "Noms et périmètres non inventoriés ; ne pas les inventer."
+    },
+    {
+      "id": "APP-WEB",
+      "type": "Ensemble applicatif",
+      "nom": "Sites eCommerce de marque",
+      "perimetre": "GBM",
+      "role": "Capture du parcours de commande eCommerce.",
+      "source": "U04",
+      "reserve": "Technologies et autorité commande non précisées."
+    },
+    {
+      "id": "APP-UR",
+      "type": "Application",
+      "nom": "UR / United Retail",
+      "perimetre": "GBM",
+      "role": "Stock entrepôt présent ; réception de stocks magasin ; contribution multicanale eCommerce ; alignement C-Log.",
+      "source": "U03;U04",
+      "reserve": "Cylande puis Cegid ; modules/versions/instances déployés non confirmés."
+    },
+    {
+      "id": "APP-SOC",
+      "type": "Application",
+      "nom": "Socloz",
+      "perimetre": "GBM",
+      "role": "Ship-from-store et extension de gamme.",
+      "source": "U03;U04",
+      "reserve": "Localisation de chaque règle, réservation et état non établie."
+    },
+    {
+      "id": "APP-TAL",
+      "type": "Plateforme technique",
+      "nom": "Talend transverse",
+      "perimetre": "GBM / transversal déclaré",
+      "role": "Orchestration des échanges de données, notamment batchs décrits.",
+      "source": "U03",
+      "reserve": "Ne pas présumer tous les flux groupe ou absence de logique métier."
+    },
+    {
+      "id": "APP-ZOH",
+      "type": "Application",
+      "nom": "Zoho",
+      "perimetre": "GBM B2B",
+      "role": "CRM clients B2B.",
+      "source": "U03",
+      "reserve": "Source de vérité de chaque attribut et édition non établies."
+    },
+    {
+      "id": "APP-ELA",
+      "type": "Application",
+      "nom": "Elastic",
+      "perimetre": "GBM B2B",
+      "role": "Prise de commande B2B.",
+      "source": "U03",
+      "reserve": "Ne pas assimiler à Elasticsearch ; aval non décrit."
+    },
+    {
+      "id": "APP-IRM",
+      "type": "Application sur mesure",
+      "nom": "IRMA",
+      "perimetre": "GBM",
+      "role": "Stocks optimaux ; calcul et référence des seuils minimum réassort.",
+      "source": "U06",
+      "reserve": "Sur Snowflake déclaré ; en déploiement ; couverture par marque inconnue."
+    },
+    {
+      "id": "APP-SCO",
+      "type": "Application en retrait",
+      "nom": "SCORTEX",
+      "perimetre": "GBM",
+      "role": "Outil historique remplacé par IRMA.",
+      "source": "U06;U07",
+      "reserve": "Fin de vie ; retrait complet non démontré ; périmètre détaillé non fourni."
+    },
+    {
+      "id": "APP-MAP",
+      "type": "Application sur mesure",
+      "nom": "MAP",
+      "perimetre": "GBM",
+      "role": "Forecast, protections logiques marque/canal, anticipation stockage, planification/émission demandes d’achat.",
+      "source": "U10",
+      "reserve": "Snowflake hypothétique ; consommateurs et autorité applicable non établis."
+    },
+    {
+      "id": "APP-CBS",
+      "type": "Application",
+      "nom": "CBS",
+      "perimetre": "GBM",
+      "role": "Suivi fabrication, fournisseur→port/Carrier, douanes entrepôts sous douane.",
+      "source": "U10",
+      "reserve": "Éditeur/technique non précisés ; lien avec application achats initiale à confirmer."
+    },
+    {
+      "id": "ALIAS-ACH",
+      "type": "Mention non rapprochée",
+      "nom": "Application achats sur mesure initialement non nommée",
+      "perimetre": "GBM",
+      "role": "Suivi opérationnel des commandes et circulation documentaire.",
+      "source": "U03",
+      "reserve": "Entrée de rapprochement ; ne signifie pas existence certaine d’un composant supplémentaire à CBS/MAP."
+    },
+    {
+      "id": "ORG-CLOG",
+      "type": "Organisation / SI autonome",
+      "nom": "C-Log",
+      "perimetre": "Frontière commerce-logistique",
+      "role": "Filiale logistique centralisée ; SI autonome ; DSI dédié.",
+      "source": "U03;U07",
+      "reserve": "Pas un logiciel ; pas à absorber dans l’ERP commercial."
+    },
+    {
+      "id": "APP-XRD",
+      "type": "Application externe au cœur commerce",
+      "nom": "Crossroad — éditeur KBRW",
+      "perimetre": "SI C-Log",
+      "role": "Choix entrepôt/transporteur, construction de parcours dont transferts, suivi logistique et file d’erreur.",
+      "source": "U06;U07",
+      "reserve": "Répartition WMS/TMS et composants techniques non documentée."
+    },
+    {
+      "id": "SI-SAR",
+      "type": "Paysage / application sur mesure",
+      "nom": "Sarenza",
+      "perimetre": "Sarenza",
+      "role": "Plateforme initialement dite marketplace ; intégration catalogues et revente B2C ; SAV fort.",
+      "source": "U01;U02",
+      "reserve": "Modules, interfaces, instances et autres modèles à inventorier."
+    },
+    {
+      "id": "APP-ECC",
+      "type": "Application",
+      "nom": "SAP ECC",
+      "perimetre": "BRD",
+      "role": "Composant du paysage BRD.",
+      "source": "U01",
+      "reserve": "Couverture effective à instruire."
+    },
+    {
+      "id": "APP-AFS",
+      "type": "Solution SAP",
+      "nom": "SAP AFS / Allocation Run",
+      "perimetre": "BRD",
+      "role": "Enjeu d’allocation majeur.",
+      "source": "U01;U02",
+      "reserve": "Pas d’assimilation à toutes les fonctions S/4HANA actuelles."
+    },
+    {
+      "id": "APP-NEW",
+      "type": "Application",
+      "nom": "NewStore",
+      "perimetre": "BRD",
+      "role": "Composant cité du paysage BRD.",
+      "source": "U01",
+      "reserve": "Aucune couverture détaillée déclarée dans ce fil."
+    }
+  ],
+  "flux": [
+    {
+      "id": "FL01",
+      "origine": "APP-STR",
+      "destination": "APP-UR",
+      "contenu": "Représentations de stocks magasin par marque",
+      "modalite": "Batch régulier",
+      "source": "U03",
+      "statut": "Décrit",
+      "reserve": "Fréquence, fraîcheur et reprise inconnues."
+    },
+    {
+      "id": "FL02",
+      "origine": "APP-UR",
+      "destination": "SI C-Log",
+      "contenu": "Alignement de données",
+      "modalite": "Batch",
+      "source": "U03",
+      "statut": "Décrit",
+      "reserve": "Objets et sens de chaque message non précisés ; échanges bilatéraux décrits globalement."
+    },
+    {
+      "id": "FL03",
+      "origine": "APP-IRM",
+      "destination": "APP-STR",
+      "contenu": "Seuils minimum utilisés pour le réassort",
+      "modalite": "Mécanisme non documenté",
+      "source": "U06",
+      "statut": "Dépendance fonctionnelle établie",
+      "reserve": "Ne pas dessiner une interface directe comme preuve."
+    },
+    {
+      "id": "FL04",
+      "origine": "APP-WEB",
+      "destination": "Fonction disponibilité / UR",
+      "contenu": "Recherche prioritaire d’un stock entrepôt",
+      "modalite": "Interface non documentée",
+      "source": "U04",
+      "statut": "Parcours décrit",
+      "reserve": "Appelant/cible technique exacts inconnus."
+    },
+    {
+      "id": "FL05",
+      "origine": "Commerce GBM",
+      "destination": "SI C-Log",
+      "contenu": "Demande d’exécution logistique : origine, articles, destinataire, opérations",
+      "modalite": "Fichier EDI",
+      "source": "U06",
+      "statut": "Décrit",
+      "reserve": "Système émetteur exact selon chaque origine non fourni."
+    },
+    {
+      "id": "FL06",
+      "origine": "Chaîne SFS (Socloz contribue)",
+      "destination": "Magasin sélectionné",
+      "contenu": "Demande de préparation/expédition",
+      "modalite": "Interface non documentée",
+      "source": "U03;U04",
+      "statut": "Décrit au niveau métier",
+      "reserve": "Ne pas assigner toutes les décisions à Socloz."
+    },
+    {
+      "id": "FL07",
+      "origine": "Magasin sollicité",
+      "destination": "Chaîne SFS",
+      "contenu": "Acceptation, refus ou absence de réponse",
+      "modalite": "Délai 15 minutes",
+      "source": "U04",
+      "statut": "Décrit",
+      "reserve": "Événements et stockage techniques non fournis."
+    },
+    {
+      "id": "FL08",
+      "origine": "Chaîne SFS",
+      "destination": "Magasin suivant",
+      "contenu": "Nouvelle demande après annulation de tentative",
+      "modalite": "Séquentiel décrit",
+      "source": "U04;U05",
+      "statut": "Décrit",
+      "reserve": "Commande client inchangée dans son existence."
+    },
+    {
+      "id": "FL09",
+      "origine": "Chaîne SFS",
+      "destination": "Responsable commercial marque",
+      "contenu": "Alerte de non-prise en charge",
+      "modalite": "Dans la journée : incertain",
+      "source": "U04",
+      "statut": "Décrit avec réserve",
+      "reserve": "Règle de déclenchement exacte inconnue."
+    },
+    {
+      "id": "FL10",
+      "origine": "Responsable commercial marque",
+      "destination": "Magasins",
+      "contenu": "Appels pour débloquer la situation",
+      "modalite": "Humain / téléphone",
+      "source": "U04",
+      "statut": "Décrit",
+      "reserve": "Pouvoirs d’arbitrage non établis."
+    },
+    {
+      "id": "FL11",
+      "origine": "APP-STR",
+      "destination": "Processus d’approvisionnement / C-Log",
+      "contenu": "Demande automatique de réassort",
+      "modalite": "Déclenchement sur seuil ; route exacte non précisée",
+      "source": "U06",
+      "statut": "Décrit fonctionnellement",
+      "reserve": "Ne pas inventer passage obligatoire par UR."
+    },
+    {
+      "id": "FL12",
+      "origine": "APP-XRD",
+      "destination": "Entrepôt(s)",
+      "contenu": "Exécution du parcours et transfert éventuel",
+      "modalite": "Mécanisme non documenté",
+      "source": "U06",
+      "statut": "Décrit au niveau métier",
+      "reserve": "Outils WMS et interfaces non inventoriés."
+    },
+    {
+      "id": "FL13",
+      "origine": "APP-XRD",
+      "destination": "Transport / transporteur",
+      "contenu": "Choix et organisation du shipping",
+      "modalite": "Mécanisme non documenté",
+      "source": "U06",
+      "statut": "Choix décrit",
+      "reserve": "Messages et engagement transport non décrits."
+    },
+    {
+      "id": "FL14",
+      "origine": "APP-XRD",
+      "destination": "File d’erreur / intervenants",
+      "contenu": "Demande problématique à reprendre",
+      "modalite": "Mise en file puis traitement manuel",
+      "source": "U06",
+      "statut": "Décrit",
+      "reserve": "Responsables de reprise et retours commerce inconnus."
+    },
+    {
+      "id": "FL15",
+      "origine": "APP-MAP",
+      "destination": "SI C-Log",
+      "contenu": "Anticipation du stockage",
+      "modalite": "Mécanisme non documenté",
+      "source": "U10",
+      "statut": "Décrit",
+      "reserve": "Contenu, granularité, fréquence et engagement associés inconnus."
+    },
+    {
+      "id": "FL16",
+      "origine": "APP-MAP",
+      "destination": "Système opérant non nommé",
+      "contenu": "Jeux de données recalculés après aléa amont",
+      "modalite": "Annule et remplace",
+      "source": "U10",
+      "statut": "Décrit",
+      "reserve": "Consommateurs et conséquences sur engagements non identifiés."
+    },
+    {
+      "id": "FL17",
+      "origine": "APP-MAP",
+      "destination": "Processus achats / fournisseur",
+      "contenu": "Demande d’achat fournisseur",
+      "modalite": "Mécanisme non documenté",
+      "source": "U10",
+      "statut": "Responsabilité décrite",
+      "reserve": "Émission directe au fournisseur et commande ferme non prouvées."
+    },
+    {
+      "id": "FL18",
+      "origine": "Fournisseur / échanges amont",
+      "destination": "APP-CBS",
+      "contenu": "Éléments de suivi fabrication/livraison/documents",
+      "modalite": "Mécanisme non documenté",
+      "source": "U03;U10",
+      "statut": "Responsabilité décrite",
+      "reserve": "Ne pas prouver un flux CBS–MAP à partir de cette seule dépendance métier."
+    },
+    {
+      "id": "FL19",
+      "origine": "APP-CBS / processus achats",
+      "destination": "Beaumanoir et acteurs douaniers",
+      "contenu": "Documents / suivi opérationnel douane",
+      "modalite": "Mécanisme non documenté",
+      "source": "U03;U10",
+      "statut": "À rapprocher",
+      "reserve": "Identité avec application achats initiale non confirmée."
+    },
+    {
+      "id": "FL20",
+      "origine": "Client B2B",
+      "destination": "APP-ELA",
+      "contenu": "Prise de commande",
+      "modalite": "Application B2B",
+      "source": "U03",
+      "statut": "Décrit",
+      "reserve": "Zoho→Elastic ou Elastic→C-Log non attestés dans le fil."
+    },
+    {
+      "id": "FL21",
+      "origine": "Fournisseurs Sarenza",
+      "destination": "SI-SAR",
+      "contenu": "Catalogues articles constitués",
+      "modalite": "Mécanisme non documenté",
+      "source": "U02",
+      "statut": "Décrit",
+      "reserve": "Référentiel maître et rapprochements non détaillés."
+    }
+  ],
+  "capacites_candidates": [
+    {
+      "id": "CAP001",
+      "intitule": "Tenir le référentiel opérationnel des articles",
+      "regroupement_de_travail": "Référentiels",
+      "resultat": "Articles achetables/vendables/stockables, grain SKU.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "À inventorier",
+      "source": "U01;U02;U06;P29",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP002",
+      "intitule": "Tenir les référentiels des partenaires et lieux",
+      "regroupement_de_travail": "Référentiels",
+      "resultat": "Fournisseurs, clients B2B, magasins, entrepôts ; responsabilités à qualifier.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Zoho contribue au CRM ; autorité non établie",
+      "source": "U01;U03;P29",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP003",
+      "intitule": "Tenir les conditions commerciales applicables",
+      "regroupement_de_travail": "Référentiels",
+      "resultat": "Prix et conditions utiles aux opérations, frontière à préciser.",
+      "statut_perimetre": "Dans le périmètre à délimiter",
+      "realisation_decrite": "À inventorier",
+      "source": "P29;P53",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP004",
+      "intitule": "Tenir les états du stock magasin",
+      "regroupement_de_travail": "Stock",
+      "resultat": "État et mouvements dont le magasin/la marque répond.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Storeland",
+      "source": "U03;U04",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP005",
+      "intitule": "Rendre les stocks visibles",
+      "regroupement_de_travail": "Stock",
+      "resultat": "Partager une représentation du stock avec sa provenance et fraîcheur.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Storeland/UR/Talend contribuent",
+      "source": "U03;P27",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP006",
+      "intitule": "Déterminer la disponibilité utilisable",
+      "regroupement_de_travail": "Stock",
+      "resultat": "Calculer ce qui peut être proposé compte tenu des états et contraintes.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Répartition à établir",
+      "source": "U04;U10;P27",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP007",
+      "intitule": "Définir les protections de stock",
+      "regroupement_de_travail": "Allocation",
+      "resultat": "Définir seuils/volumes logiques par marque et canal.",
+      "statut_perimetre": "Frontière planification/opération à positionner",
+      "realisation_decrite": "MAP calcule ; application opérationnelle inconnue",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP008",
+      "intitule": "Tenir les protections applicables",
+      "regroupement_de_travail": "Allocation",
+      "resultat": "Porter la version de politique effectivement en vigueur.",
+      "statut_perimetre": "Candidat analytique nouveau à valider",
+      "realisation_decrite": "Autorité non établie",
+      "source": "U07;U09;U10;P50",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP009",
+      "intitule": "Réviser les paramètres d’allocation",
+      "regroupement_de_travail": "Allocation",
+      "resultat": "Recalculer après aléa amont et republier une nouvelle politique.",
+      "statut_perimetre": "Frontière à positionner",
+      "realisation_decrite": "MAP",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP010",
+      "intitule": "Gérer les engagements sur le stock",
+      "regroupement_de_travail": "Stock / engagements",
+      "resultat": "Réserver, affecter, confirmer et libérer les quantités.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Répartition à établir",
+      "source": "P27;P45",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP011",
+      "intitule": "Déterminer les paramètres de réassort",
+      "regroupement_de_travail": "Réassort",
+      "resultat": "Calculer stocks optimaux et seuils magasin.",
+      "statut_perimetre": "Inclusion opérationnelle proposée",
+      "realisation_decrite": "IRMA ; transition SCORTEX",
+      "source": "U06;P37",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP012",
+      "intitule": "Tenir les paramètres de réassort applicables",
+      "regroupement_de_travail": "Réassort",
+      "resultat": "Conserver seuils de référence et périmètre/validité.",
+      "statut_perimetre": "Dans le périmètre proposé",
+      "realisation_decrite": "IRMA déclaré référence",
+      "source": "U06;P48",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP013",
+      "intitule": "Déclencher l’approvisionnement magasin",
+      "regroupement_de_travail": "Réassort",
+      "resultat": "Détecter le seuil et lancer une demande.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Storeland",
+      "source": "U06",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP014",
+      "intitule": "Prendre en charge les commandes clients",
+      "regroupement_de_travail": "Ventes",
+      "resultat": "Saisir et maintenir les engagements commerciaux, indépendamment des tentatives d’exécution.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "POS/sites/Elastic ; autorité à établir",
+      "source": "U03-U05",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP015",
+      "intitule": "Qualifier les services rendus par les sites",
+      "regroupement_de_travail": "Exécution commerciale",
+      "resultat": "Participation SFS et aptitude des sites aux prestations.",
+      "statut_perimetre": "Commerce + frontière logistique",
+      "realisation_decrite": "Référentiels à identifier",
+      "source": "U04;U06;P42",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP016",
+      "intitule": "Gérer la charge et les quotas d’exécution",
+      "regroupement_de_travail": "Exécution commerciale",
+      "resultat": "Définir/appliquer quotas et disponibilité de service.",
+      "statut_perimetre": "Dans le périmètre proposé",
+      "realisation_decrite": "Magasins ; responsables/applications non établis",
+      "source": "U04;P34",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP017",
+      "intitule": "Choisir l’origine de prise en charge",
+      "regroupement_de_travail": "Exécution commerciale",
+      "resultat": "Prioriser entrepôt/magasin et classer les candidats.",
+      "statut_perimetre": "Frontière de décision centrale à explorer",
+      "realisation_decrite": "Chaîne commerce + choix C-Log",
+      "source": "U04;U07",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP018",
+      "intitule": "Gérer les demandes d’exécution magasin",
+      "regroupement_de_travail": "Exécution commerciale",
+      "resultat": "Solliciter, accepter, refuser, expirer, annuler et reprendre.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Socloz contribue ; répartition détaillée inconnue",
+      "source": "U03-U05",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP019",
+      "intitule": "Piloter la résolution d’une non-prise en charge",
+      "regroupement_de_travail": "Situations",
+      "resultat": "Alerter et coordonner les actions humaines.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Responsable commercial + chaîne SFS",
+      "source": "U04;P35",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP020",
+      "intitule": "Demander une prestation logistique",
+      "regroupement_de_travail": "Interface commerce-logistique",
+      "resultat": "Exprimer articles, destinataire, finalité et prestations requises.",
+      "statut_perimetre": "Interface au périmètre",
+      "realisation_decrite": "EDI vers C-Log",
+      "source": "U06;P38",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP021",
+      "intitule": "Déterminer le parcours logistique",
+      "regroupement_de_travail": "C-Log",
+      "resultat": "Choisir entrepôt(s), éventuellement transfert préalable.",
+      "statut_perimetre": "Externe : frontière, pas absorption",
+      "realisation_decrite": "Crossroad/KBRW",
+      "source": "U06;U07",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP022",
+      "intitule": "Organiser le transport aval",
+      "regroupement_de_travail": "C-Log",
+      "resultat": "Choisir transporteur et acheminement.",
+      "statut_perimetre": "Externe : frontière",
+      "realisation_decrite": "Crossroad pour choix décrit",
+      "source": "U04;U06;U07",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP023",
+      "intitule": "Piloter l’exécution logistique",
+      "regroupement_de_travail": "C-Log",
+      "resultat": "Suivre opérations et résultats du parcours.",
+      "statut_perimetre": "Externe : frontière",
+      "realisation_decrite": "Crossroad",
+      "source": "U06;U07",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP024",
+      "intitule": "Réaliser préparation et prestations entrepôt",
+      "regroupement_de_travail": "C-Log",
+      "resultat": "Picking, light-touch, packing, shipping.",
+      "statut_perimetre": "Externe : ne pas détailler le SI C-Log",
+      "realisation_decrite": "Équipes/sites et outils non inventoriés",
+      "source": "U06;U07",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP025",
+      "intitule": "Résoudre un incident logistique",
+      "regroupement_de_travail": "C-Log / interface",
+      "resultat": "Reprendre une demande en échec et informer les parties.",
+      "statut_perimetre": "Frontière",
+      "realisation_decrite": "File d’erreur puis intervenants",
+      "source": "U06",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP026",
+      "intitule": "Prévoir les ventes",
+      "regroupement_de_travail": "Planification",
+      "resultat": "Prévisions marque/modèle/couleur/taille et canal.",
+      "statut_perimetre": "Contexte amont ; hors refonte implicite",
+      "realisation_decrite": "MAP",
+      "source": "U01;U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP027",
+      "intitule": "Anticiper les besoins de stockage",
+      "regroupement_de_travail": "Planification / logistique",
+      "resultat": "Préparer les besoins de stockage transmis à C-Log.",
+      "statut_perimetre": "Contexte/interface à positionner",
+      "realisation_decrite": "MAP",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP028",
+      "intitule": "Planifier et lotir les besoins d’achat",
+      "regroupement_de_travail": "Planification / achats",
+      "resultat": "Organiser les demandes fournisseurs et lotissements.",
+      "statut_perimetre": "Frontière amont/opération",
+      "realisation_decrite": "MAP",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP029",
+      "intitule": "Émettre une demande d’achat fournisseur",
+      "regroupement_de_travail": "Achats",
+      "resultat": "Produire la demande ; engagement ferme distinct à instruire.",
+      "statut_perimetre": "Dans le périmètre opérationnel à qualifier",
+      "realisation_decrite": "MAP",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP030",
+      "intitule": "Suivre la réalisation fournisseur",
+      "regroupement_de_travail": "Achats",
+      "resultat": "Suivi fabrication et progression opérationnelle.",
+      "statut_perimetre": "Dans le périmètre proposé",
+      "realisation_decrite": "CBS",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP031",
+      "intitule": "Suivre l’acheminement fournisseur",
+      "regroupement_de_travail": "Achats / logistique amont",
+      "resultat": "Suivi fournisseur–port/Carrier.",
+      "statut_perimetre": "Frontière à délimiter",
+      "realisation_decrite": "CBS",
+      "source": "U10",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP032",
+      "intitule": "Suivre les pièces nécessaires aux opérations",
+      "regroupement_de_travail": "Achats",
+      "resultat": "Collecter/transmettre/relancer les pièces et états requis.",
+      "statut_perimetre": "Opérationnel proposé ; politique conformité exclue",
+      "realisation_decrite": "Application achats initiale ; CBS à rapprocher",
+      "source": "U03;U10;P30",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP033",
+      "intitule": "Prendre en charge le SAV",
+      "regroupement_de_travail": "Après-vente",
+      "resultat": "Recevoir réclamation, suivre objectif et décisions.",
+      "statut_perimetre": "Dans le périmètre",
+      "realisation_decrite": "Force Sarenza ; détail non décrit",
+      "source": "U01;U02;P25",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP034",
+      "intitule": "Autoriser et traiter retour ou échange",
+      "regroupement_de_travail": "Après-vente",
+      "resultat": "Décider solution commerciale puis effets physiques, sans absorber exécution financière.",
+      "statut_perimetre": "Dans le périmètre à qualifier",
+      "realisation_decrite": "À inventorier",
+      "source": "U01;P25;P53",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    },
+    {
+      "id": "CAP035",
+      "intitule": "Arbitrer les demandes sous contrainte",
+      "regroupement_de_travail": "Allocation / ventes",
+      "resultat": "Décider d’une priorité ou d’une réaffectation dans un contexte admissible.",
+      "statut_perimetre": "Candidat transverse, non actif comme repriorisation Gold dans GBM",
+      "realisation_decrite": "GBM FIFO ; BRD à explorer",
+      "source": "U02;U10;P54;P55",
+      "statut": "Candidat de travail ; hiérarchie non validée"
+    }
+  ],
+  "autorites_information": [
+    {
+      "id": "INF01",
+      "objet": "Stock magasin",
+      "autorite_ou_producteur": "Storeland par marque",
+      "autres_contributions": "UR reçoit une copie batch",
+      "reserve": "Autorité de tenue déclarée ; états détaillés inconnus",
+      "source": "U03;U04"
+    },
+    {
+      "id": "INF02",
+      "objet": "Stock entrepôt physique/logique",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "UR contient une représentation ; SI C-Log réalise la logistique",
+      "reserve": "Présence ≠ autorité",
+      "source": "U04;U06"
+    },
+    {
+      "id": "INF03",
+      "objet": "Disponibilité proposée à la vente",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "Recherche entrepôt puis magasin décrite",
+      "reserve": "Calcul/règle/engagement à séparer",
+      "source": "U04;U10"
+    },
+    {
+      "id": "INF04",
+      "objet": "Stocks optimaux et seuils réassort",
+      "autorite_ou_producteur": "IRMA déclaré référence des seuils",
+      "autres_contributions": "Storeland applique le déclenchement",
+      "reserve": "Transition SCORTEX à dater par périmètre",
+      "source": "U06"
+    },
+    {
+      "id": "INF05",
+      "objet": "Protections marque/canal",
+      "autorite_ou_producteur": "MAP calcule",
+      "autres_contributions": "Système(s) opérant(s) consommateur(s) non nommés",
+      "reserve": "Autorité applicable et versions inconnues",
+      "source": "U10"
+    },
+    {
+      "id": "INF06",
+      "objet": "Prévisions de vente",
+      "autorite_ou_producteur": "MAP produit",
+      "autres_contributions": "Consommateurs et versions non détaillés",
+      "reserve": "Pas de maître opérationnel inventé",
+      "source": "U10"
+    },
+    {
+      "id": "INF07",
+      "objet": "Anticipations de stockage",
+      "autorite_ou_producteur": "MAP produit",
+      "autres_contributions": "C-Log reçoit",
+      "reserve": "Résultat décisionnel accepté/ajusté non documenté",
+      "source": "U10"
+    },
+    {
+      "id": "INF08",
+      "objet": "Quotas et charge magasin",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "Chaîne SFS utilise la contrainte",
+      "reserve": "Auteur, compteur et persistance inconnus",
+      "source": "U04"
+    },
+    {
+      "id": "INF09",
+      "objet": "Aptitudes des entrepôts",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "Crossroad utilise les opérations réalisables",
+      "reserve": "Référentiel implicite, source inconnue",
+      "source": "U06"
+    },
+    {
+      "id": "INF10",
+      "objet": "Commande client",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "POS/sites/Elastic contribuent ; commande maintenue pendant reprises SFS",
+      "reserve": "Ne pas déduire maître de la seule saisie",
+      "source": "U03-U05"
+    },
+    {
+      "id": "INF11",
+      "objet": "Demande d’exécution magasin",
+      "autorite_ou_producteur": "Non établi",
+      "autres_contributions": "Chaîne SFS ; Socloz contribue",
+      "reserve": "Cycle distinct de commande ; systèmes exacts inconnus",
+      "source": "U03-U05"
+    },
+    {
+      "id": "INF12",
+      "objet": "Demande d’exécution logistique",
+      "autorite_ou_producteur": "Émetteur non établi par parcours",
+      "autres_contributions": "EDI commerce→C-Log",
+      "reserve": "Origine du besoin et statut logistique peuvent relever de responsabilités différentes",
+      "source": "U06"
+    },
+    {
+      "id": "INF13",
+      "objet": "Parcours et état logistique",
+      "autorite_ou_producteur": "Crossroad suit le processus",
+      "autres_contributions": "Équipes/outils de réalisation non inventoriés",
+      "reserve": "Autorité du suivi décrit ; autorité de chaque fait physique non prouvée",
+      "source": "U06;U07"
+    },
+    {
+      "id": "INF14",
+      "objet": "Demande d’achat fournisseur",
+      "autorite_ou_producteur": "MAP réalise la demande",
+      "autres_contributions": "CBS suit fabrication/livraison amont",
+      "reserve": "Référentiel commande ferme non établi",
+      "source": "U10"
+    },
+    {
+      "id": "INF15",
+      "objet": "Faits et pièces amont",
+      "autorite_ou_producteur": "CBS suit",
+      "autres_contributions": "Application achats initiale à rapprocher",
+      "reserve": "Suivre ne signifie pas faire autorité sur toute pièce émise par fournisseur/douane",
+      "source": "U03;U10"
+    },
+    {
+      "id": "INF16",
+      "objet": "Clients B2B",
+      "autorite_ou_producteur": "Zoho assure CRM",
+      "autres_contributions": "Elastic capte les commandes",
+      "reserve": "Autorité par attribut/exclusion non établie",
+      "source": "U03;U10"
+    },
+    {
+      "id": "INF17",
+      "objet": "Articles fournisseurs Sarenza",
+      "autorite_ou_producteur": "Fournisseurs apportent catalogues",
+      "autres_contributions": "Sarenza intègre les articles",
+      "reserve": "Autorité locale et rapprochement non documentés",
+      "source": "U02"
+    }
+  ],
+  "responsabilites_decision": [
+    {
+      "id": "DEC01",
+      "decision": "Définir des protections marque/canal",
+      "realisation": "MAP",
+      "reserve": "Calcul décrit ; politique et autorisation métier non identifiées",
+      "contexte": "Planification/allocation",
+      "source": "U10"
+    },
+    {
+      "id": "DEC02",
+      "decision": "Calculer les seuils de réassort",
+      "realisation": "IRMA",
+      "reserve": "Source de référence déclarée ; coexistence SCORTEX",
+      "contexte": "Réassort magasin",
+      "source": "U06"
+    },
+    {
+      "id": "DEC03",
+      "decision": "Déclencher une demande de réassort",
+      "realisation": "Storeland",
+      "reserve": "Seuil atteint ; quantité à déterminer",
+      "contexte": "Réassort magasin",
+      "source": "U06"
+    },
+    {
+      "id": "DEC04",
+      "decision": "Recalculer après aléa amont",
+      "realisation": "MAP",
+      "reserve": "Annule et remplace des données ; aucun effet sur commandes supposé",
+      "contexte": "Planification/opération",
+      "source": "U10"
+    },
+    {
+      "id": "DEC05",
+      "decision": "Produire la demande fournisseur",
+      "realisation": "MAP",
+      "reserve": "Demande distincte d’une commande ferme à qualifier",
+      "contexte": "Achats",
+      "source": "U10"
+    },
+    {
+      "id": "DEC06",
+      "decision": "Autoriser une vente sans stock",
+      "realisation": "Politique GBM : non",
+      "reserve": "Contrôle technique et stock de référence non établis",
+      "contexte": "Ventes GBM",
+      "source": "U10"
+    },
+    {
+      "id": "DEC07",
+      "decision": "Prioriser entre demandes de vente",
+      "realisation": "Politique GBM : ordre d’arrivée",
+      "reserve": "File et périmètre de protection non définis",
+      "contexte": "Ventes GBM",
+      "source": "U10"
+    },
+    {
+      "id": "DEC08",
+      "decision": "Reprioriser pour un client Gold",
+      "realisation": "Non exercé dans le fonctionnement GBM décrit",
+      "reserve": "Ne pas inventer fonction équivalente à ARun",
+      "contexte": "Ventes GBM",
+      "source": "U10"
+    },
+    {
+      "id": "DEC09",
+      "decision": "Exclure définitivement un mauvais payeur",
+      "realisation": "Acteur/application non établis",
+      "reserve": "Avant exclusion, traitement identique ; procédure externe non décrite",
+      "contexte": "B2B / frontière",
+      "source": "U10"
+    },
+    {
+      "id": "DEC10",
+      "decision": "Rechercher d’abord une solution entrepôt",
+      "realisation": "Chaîne commerce non localisée précisément",
+      "reserve": "Le stock est présent dans UR ; calculateur exact inconnu",
+      "contexte": "eCommerce",
+      "source": "U04"
+    },
+    {
+      "id": "DEC11",
+      "decision": "Déterminer les magasins éligibles",
+      "realisation": "Chaîne SFS non localisée précisément",
+      "reserve": "Stock + participation + quota",
+      "contexte": "eCommerce/SFS",
+      "source": "U04"
+    },
+    {
+      "id": "DEC12",
+      "decision": "Classer les magasins",
+      "realisation": "Chaîne SFS non localisée précisément",
+      "reserve": "Moins sollicité ; métrique inconnue",
+      "contexte": "eCommerce/SFS",
+      "source": "U04"
+    },
+    {
+      "id": "DEC13",
+      "decision": "Accepter la préparation/expédition",
+      "realisation": "Magasin sollicité",
+      "reserve": "Rôle humain et application exacts non fournis",
+      "contexte": "SFS",
+      "source": "U04"
+    },
+    {
+      "id": "DEC14",
+      "decision": "Annuler tentative et solliciter suivant",
+      "realisation": "Chaîne SFS",
+      "reserve": "Refus ou 15 minutes ; aucune annulation vente",
+      "contexte": "SFS",
+      "source": "U04;U05"
+    },
+    {
+      "id": "DEC15",
+      "decision": "Débloquer la situation par intervention",
+      "realisation": "Responsable commercial marque",
+      "reserve": "Appelle magasins ; pouvoirs non détaillés",
+      "contexte": "SFS exception",
+      "source": "U04"
+    },
+    {
+      "id": "DEC16",
+      "decision": "Choisir l’entrepôt",
+      "realisation": "OMS C-Log / Crossroad",
+      "reserve": "Aptitudes opérationnelles ; autres critères non fournis",
+      "contexte": "Logistique externalisée au cœur",
+      "source": "U04;U06;U07"
+    },
+    {
+      "id": "DEC17",
+      "decision": "Ajouter un transfert préalable",
+      "realisation": "OMS C-Log / Crossroad dans le récit",
+      "reserve": "Condition exacte et émission des ordres non détaillées",
+      "contexte": "Logistique",
+      "source": "U06;U07"
+    },
+    {
+      "id": "DEC18",
+      "decision": "Choisir le transporteur",
+      "realisation": "OMS C-Log / Crossroad",
+      "reserve": "Règles, offres et coût non décrits",
+      "contexte": "Shipping",
+      "source": "U04;U06"
+    },
+    {
+      "id": "DEC19",
+      "decision": "Reprendre une demande en erreur",
+      "realisation": "Intervenant C-Log non identifié",
+      "reserve": "File d’erreur ; reprise manuelle",
+      "contexte": "Logistique exception",
+      "source": "U06"
+    },
+    {
+      "id": "DEC20",
+      "decision": "Réserver/libérer stock ou quota",
+      "realisation": "Non établi",
+      "reserve": "À distinguer du choix et de l’acceptation",
+      "contexte": "Transverse",
+      "source": "P32;P34;Q017;Q018"
+    }
+  ],
+  "references_externes": [
+    {
+      "id": "R01",
+      "organisme": "The Open Group",
+      "titre": "TOGAF Series Guides — Business Capabilities",
+      "url": "https://www.opengroup.org/togaf-series-guides",
+      "verification": "Catalogue officiel retrouvé le 09/09/2026",
+      "usage_et_limites": "Cadre à examiner pour définir et organiser les capacités ; pas de catalogue commerce adopté. Guide complet non analysé dans cette consolidation.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R02",
+      "organisme": "The Open Group",
+      "titre": "TOGAF — référence d’examen initialement citée",
+      "url": "https://help.opengroup.org/hc/en-us/articles/32109993154066-What-Open-Book-Is-Provided-With-the-TOGAF-Enterprise-Architecture-Part-2-Exam",
+      "verification": "URL historique conservée, non réexaminée",
+      "usage_et_limites": "La référence citée initialement est une page d’examen, pas la spécification ArchiMate. Ne pas la considérer comme preuve normative du métamodèle.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R03",
+      "organisme": "SAP Learning",
+      "titre": "Defining Business Architecture",
+      "url": "https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/defining-business-architecture",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "SAP distingue modèle de capacités, modèle de processus et solutions ; exemple de niveaux Business Domain / Business Area / Business Capability. Ce sont des appuis, pas une structure GBM déjà choisie.",
+      "origine_dans_le_fil": "A01;A07"
+    },
+    {
+      "id": "R04",
+      "organisme": "SAP Learning",
+      "titre": "Understanding SAP Reference Business Architecture",
+      "url": "https://learning.sap.com/courses/becoming-an-sap-btp-solution-architect/understanding-sap-reference-business-architecture-1",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Point d’entrée pour comparer architecture métier de référence et architecture de solutions. Ne prouve pas à lui seul les propriétés de DMN.",
+      "origine_dans_le_fil": "A01;A07"
+    },
+    {
+      "id": "R05",
+      "organisme": "SAP Learning",
+      "titre": "Utilizing SAP Enterprise Architecture Framework Reference Architecture Content",
+      "url": "https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/utilizing-sap-enterprise-architecture-framework-reference-architecture-content",
+      "verification": "URL historique conservée, non réexaminée",
+      "usage_et_limites": "Référence initiale de la distinction Business Capability / Solution Capability ; une autre page SAP a été relue [R03].",
+      "origine_dans_le_fil": "A07"
+    },
+    {
+      "id": "R06",
+      "organisme": "Business Architecture Guild",
+      "titre": "BIZBOK / exam content",
+      "url": "https://www.businessarchitectureguild.org/page/examcontent",
+      "verification": "Accès refusé (403) lors du contrôle du 09/09/2026",
+      "usage_et_limites": "Candidat méthodologique. L’accès complet était signalé comme réservé dans le fil ; aucune analyse détaillée du guide complet n’est revendiquée.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R07",
+      "organisme": "Oracle",
+      "titre": "Oracle Retail Reference Model",
+      "url": "https://www.oracle.com/ua/retail/products/reference-model/",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Contient notamment processus métier, modèles techniques et glossaire retail. À utiliser pour couverture et vocabulaire, sans convertir chaque processus en capacité.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R08",
+      "organisme": "IBM (badge publié sur Credly)",
+      "titre": "Component Business Modeling Essentials",
+      "url": "https://www.credly.com/org/ibm/badge/component-business-modeling-essentials",
+      "verification": "Description émise par IBM relue le 09/09/2026",
+      "usage_et_limites": "Présente CBM comme cadre d’analyse d’entreprise et composants mobilisant personnes, ressources, technologie et savoir-faire. Ce n’est pas un catalogue détaillé ERP retail.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R09",
+      "organisme": "APQC",
+      "titre": "Process Classification Framework — Retail, version 7.2.1",
+      "url": "https://www.apqc.org/resource-library/resource-listing/apqc-process-classification-framework-pcf-retail-pdf-version-721",
+      "verification": "Page de présentation relue le 09/09/2026 ; PDF non analysé",
+      "usage_et_limites": "Classification de processus retail comme contrôle de couverture ; version historique citée, pas affirmation de dernière version.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R10",
+      "organisme": "OMG / ARTS",
+      "titre": "Operational Data Model",
+      "url": "https://www.omg.org/retail/operational-data-model.htm",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Modèle de données et vocabulaire du retail ; appui sémantique, pas source unique du découpage des capacités.",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R11",
+      "organisme": "PeopleCert",
+      "titre": "ITIL framework",
+      "url": "https://www.peoplecert.org/Frameworks-Professionals/ITIL-framework",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Gestion des produits et services numériques. Rôle de gouvernance envisageable ; non retenu comme pivot métier commerce à ce stade (proposition assistant).",
+      "origine_dans_le_fil": "A01"
+    },
+    {
+      "id": "R12",
+      "organisme": "NZ Digital Government",
+      "titre": "Business capabilities — GEA-NZ",
+      "url": "https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Définition incluant personnes, processus, informations et technologies ; référence méthodologique, non modèle retail.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R13",
+      "organisme": "Microsoft Learn",
+      "titre": "Design a DDD-oriented microservice",
+      "url": "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice",
+      "verification": "Contenu officiel relu le 09/09/2026",
+      "usage_et_limites": "Distinction règles de domaine / coordination applicative. Analogie utilisée dans le fil, non équivalence avec les deux plateformes cibles ni obligation de microservices.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R14",
+      "organisme": "Microsoft Learn",
+      "titre": "Saga distributed transactions pattern",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/saga",
+      "verification": "Contenu officiel relu le 09/09/2026",
+      "usage_et_limites": "Coordination de transactions locales et compensations ; référence de contexte pour différencier temps long métier et transaction BDD. Aucun choix de Saga n’a été acté.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R15",
+      "organisme": "OMG",
+      "titre": "Case Management Model and Notation (CMMN)",
+      "url": "https://www.omg.org/cmmn/",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Appui sur traitements de dossiers évolutifs ; ni outil ni norme d’exécution imposés au projet.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R16",
+      "organisme": "OMG",
+      "titre": "BPM+Health",
+      "url": "https://www.omg.org/bpmplus/",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Page sectorielle santé citée dans le fil pour articulation BPMN/CMMN/DMN ; ne pas en faire un référentiel commerce.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R17",
+      "organisme": "OMG",
+      "titre": "Decision Model and Notation (DMN)",
+      "url": "https://www.omg.org/spec/DMN/",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Référence appropriée pour décrire des décisions/règles ; ne remplace pas la carte de capacités. Version d’exécution non choisie.",
+      "origine_dans_le_fil": "A07"
+    },
+    {
+      "id": "R18",
+      "organisme": "Cegid",
+      "titre": "Acquisition of the Cylande group",
+      "url": "https://www.cegid.com/global/blog/acquisition-cylande-group-cegid-gives-rise-world-leader/",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Annonce d’acquisition datée du 23 novembre 2017 dans le fil ; corrobore le passage Cylande–Cegid, sans préciser votre version UR.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R19",
+      "organisme": "Cegid Retail UR",
+      "titre": "Fonctionnalités du module achats — édition 2021",
+      "url": "https://cegid.fluidtopics.net/r/fr-FR/UR/UR/Functional_Doc/Edition-2021/Fonctionnalites-du-module-achats/6?contentId=ktZas_eXEKbR9zVlZKzpNA",
+      "verification": "URL citée dans le fil ; ouverture directe non aboutie au nouveau contrôle",
+      "usage_et_limites": "Le fil attribue à la documentation commandes/intentions/portefeuille/litiges achats. À revalider sur documentation accessible avant usage comme preuve détaillée.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R20",
+      "organisme": "Cegid Retail UR",
+      "titre": "Fonctionnalités du module stocks — édition 2021",
+      "url": "https://cegid.fluidtopics.net/r/fr-FR/UR/UR/Functional_Doc/Edition-2021/Fonctionnalites-du-module-stocks/478?contentId=sohQUMVQAri_EYJvXWBVvg",
+      "verification": "URL citée dans le fil ; ouverture directe non aboutie au nouveau contrôle",
+      "usage_et_limites": "Le fil cite stocks, mouvements, inventaires et réassort ; ne prouve aucun paramétrage GBM.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R21",
+      "organisme": "Cegid Retail UR",
+      "titre": "Fonctionnalités du module ventes assistées — édition 2021",
+      "url": "https://cegid.fluidtopics.net/r/fr-FR/UR/UR/Functional_Doc/Edition-2021/Fonctionnalites-du-module-ventes-assistees/563?contentId=CDMicsductTiI_JWTB6E7g",
+      "verification": "URL citée dans le fil ; ouverture directe non aboutie au nouveau contrôle",
+      "usage_et_limites": "Le fil cite réservations/commandes, délivrance, reprises, notifications, journal et remontées Winstore. Winstore n’a pas été déclaré comme POS GBM.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R22",
+      "organisme": "Cegid Retail UR",
+      "titre": "Lexique des ventes assistées — édition 2021",
+      "url": "https://cegid.fluidtopics.net/r/fr-FR/UR/UR/Functional_Doc/Edition-2021/Lexique-des-ventes-assistees/565?contentId=zibPNZvP3fuLA0D7NzI_Hw",
+      "verification": "URL citée dans le fil ; ouverture directe non aboutie au nouveau contrôle",
+      "usage_et_limites": "Le fil décrit allocation/réallocation de ventes assistées ; distinction avec ARun conservée comme point à vérifier, pas équivalence ni preuve d’usage GBM.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R23",
+      "organisme": "Cegid",
+      "titre": "Annonce UR/OMS/ship-from-store 2019 citée sans référence exploitable",
+      "url": "",
+      "verification": "Source précise non retrouvée lors de cette consolidation",
+      "usage_et_limites": "La réponse A03 contenait une attribution à une annonce 2019 et un emplacement de citation défectueux. Assertion conservée comme historique non vérifié, non utilisée comme fait de l’existant.",
+      "origine_dans_le_fil": "A03"
+    },
+    {
+      "id": "R24",
+      "organisme": "Cegid Retail UR",
+      "titre": "Rechercher un ou plusieurs retours — édition 2021",
+      "url": "https://cegid.fluidtopics.net/r/fr-FR/UR/UR/Functional_Doc/Edition-2021/Rechercher-un-ou-plusieurs-retours/100",
+      "verification": "Résultat officiel indexé retrouvé le 09/09/2026",
+      "usage_et_limites": "Le sommaire indexé contient modules et actions de ventes assistées ; contrôle partiel seulement, pas relecture intégrale des quatre pages R19–R22.",
+      "origine_dans_le_fil": "Contrôle v0.1"
+    },
+    {
+      "id": "R25",
+      "organisme": "SAP Learning",
+      "titre": "Comparing with SAP Fashion Management Solution (FMS)",
+      "url": "https://learning.sap.com/courses/outlining-sap-s-4hana-for-fashion-and-vertical-business-and-implementing-best-practices/comparing-with-sap-fashion-management-solution-fms",
+      "verification": "URL historique conservée, non réexaminée",
+      "usage_et_limites": "Référence évoquée pour ARun/AFS et batch ; ne constitue pas un relevé de configuration BRD.",
+      "origine_dans_le_fil": "A02"
+    },
+    {
+      "id": "R26",
+      "organisme": "KBRW",
+      "titre": "A Logistics OMS: A Key Growth Lever for Clog",
+      "url": "https://kbrw.com/use-cases/clog-multisite-omnichannel-logistics",
+      "verification": "Page officielle relue le 09/09/2026",
+      "usage_et_limites": "Corrobore le rôle de KBRW auprès de C-Log ; le nom Crossroad est confirmé par Laurent [U07], pas prétendu vérifié sur cette page.",
+      "origine_dans_le_fil": "A06;U07"
+    },
+    {
+      "id": "R27",
+      "organisme": "Beaumanoir / Caroll",
+      "titre": "Offre Gestionnaire Flux Aval citant SCORTEX et STORELAND",
+      "url": "https://recrutement.groupe-beaumanoir.com/offer/11426-MTcxNzA",
+      "verification": "URL historique conservée, non réexaminée",
+      "usage_et_limites": "Appui de nomenclature initial ; U07 valide directement SCORTEX, donc aucune dépendance à la disponibilité de l’annonce.",
+      "origine_dans_le_fil": "A06;U07"
+    },
+    {
+      "id": "R28",
+      "organisme": "OpenAI Help",
+      "titre": "Memory FAQ",
+      "url": "https://help.openai.com/en/articles/8590148-memory-faq",
+      "verification": "Référence historique des réponses sur mémoire ; non réexaminée ici",
+      "usage_et_limites": "Conserve la provenance du propos sur la mémoire. Le présent dossier n’affirme pas de réglage particulier du compte ni de persistance automatique des fichiers.",
+      "origine_dans_le_fil": "A08;A09"
+    },
+    {
+      "id": "R29",
+      "organisme": "OpenAI Help",
+      "titre": "Projects in ChatGPT",
+      "url": "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt",
+      "verification": "Référence historique des réponses sur stockage ; non réexaminée ici",
+      "usage_et_limites": "Référence de contexte ; aucune action d’ajout automatique aux sources du projet ni dépôt distant n’a été réalisée.",
+      "origine_dans_le_fil": "A08;A09"
+    }
+  ],
+  "audit_couverture": [
+    {
+      "source": "U01",
+      "chapitres": "01, 02, 03, 04, 15, 16",
+      "registre": "F001–F010; P01–P20; P53",
+      "controle": "Cadrage complet, exclusions, standards, options, trois SI, niveaux et livrables.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U02",
+      "chapitres": "05, 13, 15",
+      "registre": "F009; F011–F012; F020–F025; P21–P26",
+      "controle": "Accord méthode, deux plateformes, proportions, BRD/ARun, Sarenza revente/SAV.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U03",
+      "chapitres": "06, 07, 08, 09, 10",
+      "registre": "F017; F026–F046; FL01–FL03; FL20",
+      "controle": "Instances, stocks, POS, UR, Socloz, Talend, B2B, achats/documents.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U04",
+      "chapitres": "07, 11, 12",
+      "registre": "F047–F063; INF01–INF03; DEC10–DEC15",
+      "controle": "Parcours complet, 15 minutes, quotas, classement, escalade incertaine, intervention humaine.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U05",
+      "chapitres": "07, 14",
+      "registre": "F058–F060; C07; P36",
+      "controle": "Oui contextualisé par la question A04 : annulation demande magasin uniquement.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U06",
+      "chapitres": "08, 10, 11, 12",
+      "registre": "F064–F080; FL03; FL05; FL11–FL14",
+      "controle": "SKU, IRMA/SCORTEX, EDI, prestations, choix, transfert, suivi/file d’erreur.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U07",
+      "chapitres": "01, 10, 11, 12, 13, 14",
+      "registre": "F013–F016; F071; F081–F085; C09–C13",
+      "controle": "KBRW/Crossroad, SCORTEX, responsabilités information/décision, autonomie C-Log.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U08",
+      "chapitres": "17 / sources",
+      "registre": "C27",
+      "controle": "Relance conservée intégralement, sans fait métier ajouté.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U09",
+      "chapitres": "01, 13, 14",
+      "registre": "F015; C12; P45–P50",
+      "controle": "Business Capabilities toujours centrales ; niveau pertinent non figé.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U10",
+      "chapitres": "09, 11, 12, 14",
+      "registre": "F086–F102; FL15–FL19; C15–C23",
+      "controle": "MAP trois niveaux, CBS, hypothèse Snowflake, trois cas allocation, FIFO/mauvais payeur.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U11",
+      "chapitres": "17",
+      "registre": "F018; P51–P52; C24",
+      "controle": "Question stockage ; transparence sur absence de dossier préexistant.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U12",
+      "chapitres": "17 / sources",
+      "registre": "C27",
+      "controle": "Seconde relance conservée intégralement.",
+      "statut": "Couvert"
+    },
+    {
+      "source": "U13",
+      "chapitres": "00, 17, contrôle",
+      "registre": "F018; présente version",
+      "controle": "Livraison effective du dossier exhaustif, pas annonce d’un travail futur.",
+      "statut": "Couvert"
+    }
+  ],
+  "historique_versions": [
+    {
+      "version": "0.1",
+      "date": "2026-09-09",
+      "origine": "U13",
+      "modification": "Première consolidation documentaire du fil, intégrant MAP/CBS ; aucun fichier maître antérieur présent dans le corpus.",
+      "statut": "Référence de travail à relire, aucune cible arbitrée."
+    }
+  ]
+}

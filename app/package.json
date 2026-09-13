@@ -1,0 +1,8 @@
+{
+  "name": "flow-atlas",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Lecteur local du modèle business FLOW, sans dépendance de production.",
+  "scripts": { "test": "node --test test-model.mjs" }
+}

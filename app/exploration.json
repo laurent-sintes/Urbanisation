@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "labels": {
+    "model": "Modèle",
+    "domain": "Domaine de travail",
+    "group": "Groupe de présentation",
+    "reference": "Référence",
+    "capability": "Capacité",
+    "object": "Objet métier",
+    "document": "Document",
+    "event": "Événement métier"
+  },
+  "icons": {
+    "model": "layers",
+    "domain": "grid-2x2",
+    "group": "library",
+    "reference": "database",
+    "capability": "component",
+    "object": "box",
+    "document": "file-text",
+    "event": "zap"
+  },
+  "aliases": {
+    "D01": "stock physique logique futur inventaire",
+    "D01.a": "quantités position stock physique logique",
+    "D01.b": "mouvements stock états",
+    "D01.c": "visibilité stock consolidation",
+    "D01.d": "inventaire comptage counting stocktaking physical inventory rapprochement écart",
+    "D02.b": "protection allocation ressource quota",
+    "D02.c": "réservation reserver reservation engagement",
+    "D02.e": "affectation affecter allocation supply assignment",
+    "D03": "promesse promettre ATP disponible virtuel",
+    "D03.a": "proposition promesse ATP quantité date",
+    "D03.b": "confirmation confirmer promesse engagement",
+    "D03.c": "révision promesse réexaminer",
+    "D09": "partie tiers client fournisseur identité rôle party",
+    "D11": "accord contrat conditions agreement",
+    "D08": "article produit SKU",
+    "D12": "catalogue prix zone",
+    "D13": "réseau lieu point logistique entrepôt fulfillment"
+  },
+  "confirmation": "D03.b",
+  "steps": [
+    {
+      "id": "D03.b",
+      "label": "Capacité",
+      "text": "Promise Confirmation engage les quantités et dates retenues. Sa présence dans la liste d’Order Promising est validée en U95."
+    },
+    {
+      "id": "ILL-OBJ-01",
+      "label": "Objet métier",
+      "text": "L’engagement de fourniture donne un sens durable à ce qui est confirmé. Son identité et ses règles restent à préciser."
+    },
+    {
+      "id": "ILL-DOC-01",
+      "label": "Document",
+      "text": "La confirmation conserve les engagements et conditions retenus. Elle représente un état ou un contenu utile à attester."
+    },
+    {
+      "id": "ILL-EVT-01",
+      "label": "Événement",
+      "text": "Le fait décrit ce qui s’est produit. Il se relie au document et à la capacité ; sa notification éventuelle est une autre notion."
+    }
+  ],
+  "description": "Configuration de présentation seule. Les objets, capacités et relations sont exclusivement lus dans modeles/. Les alias et le parcours illustratif ne sont utilisés que dans le backlog."
+}

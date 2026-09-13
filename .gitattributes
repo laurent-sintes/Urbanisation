@@ -1,0 +1,10 @@
+# Preserve bytes: frozen model/provenance manifests contain SHA-256 digests.
+# Disabling text conversion does not disable normal text diffs.
+* -text
+* whitespace=trailing-space,space-before-tab,cr-at-eol
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary

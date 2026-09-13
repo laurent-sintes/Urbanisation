@@ -1,0 +1,40 @@
+---
+name: server-admin
+description: Vérifier, démarrer, arrêter ou redémarrer le serveur local FLOW Atlas du projet Beaumanoir Cartographie. Utiliser pour les demandes d’administration de ce serveur ; ne pilote pas d’autres services ni un déploiement distant.
+---
+
+# Administration du serveur FLOW Atlas
+
+Intervenir sur le projet Beaumanoir Cartographie, en français et en tutoyant Laurent. Prendre comme racine le projet courant s’il contient `AGENTS.md` et `Lancer-FLOW-Atlas.ps1` ; sinon utiliser `C:/Dev/Beaumanoir Cartographie`. Lire les règles courantes dans `AGENTS.md` et la section de lancement de `app/README.md`.
+
+## Choisir et exécuter l’action
+
+La demande indique l’action : état, démarrage, arrêt ou redémarrage. Si elle demande seulement un diagnostic, ne pas modifier le service. Si elle invoque seulement le skill sans action ni contexte, lire l’état puis demander l’action souhaitée. Utiliser le port demandé, sinon 8765. Garder ce même port pour toute l’opération.
+
+Le lanceur existant assure le suivi du processus et les contrôles d’identité. Exécuter depuis la racine du projet, dans PowerShell :
+
+```powershell
+# Démarrer sans ouvrir une fenêtre de navigateur
+.\Lancer-FLOW-Atlas.ps1 -Port 8765 -NoBrowser
+
+# Arrêter le serveur suivi
+.\Lancer-FLOW-Atlas.ps1 -Port 8765 -Stop
+```
+
+Pour **redémarrer**, exécuter l’arrêt puis le démarrage séquentiellement ; ne pas lancer le démarrage si l’arrêt échoue. Si aucun serveur n’est actif et que le port est libre, un redémarrage revient à démarrer. Un démarrage répété réutilise le serveur correspondant, sans créer de second processus. N’ouvrir le navigateur que si demandé.
+
+Lire l’état avec une requête bornée dans le temps :
+
+```powershell
+Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/status' -TimeoutSec 3
+```
+
+Le résultat attendu identifie `appName: FLOW Atlas`, `repositoryRoot` égal à la racine du projet, un PID, une version d’API et l’espace courant. Avant un arrêt, le lanceur vérifie également le fichier `app/.runtime/server-<port>.json` et la date de démarrage, afin de ne pas arrêter un PID réutilisé. Ne pas remplacer ces contrôles par un arrêt global des processus Python ou par un arrêt fondé seulement sur le numéro du port.
+
+## Vérifier le résultat et traiter les échecs
+
+Après démarrage ou redémarrage, vérifier l’identité du serveur via l’API et l’accès à l’espace demandé, backlog par défaut. Après arrêt, vérifier que le processus suivi a disparu et que l’API de ce serveur ne répond plus. Une panne de l’API seule ne prouve pas l’arrêt du processus : en cas de doute, lire le suivi et les journaux.
+
+Les journaux sont `app/.runtime/server-<port>.stdout.log` et `server-<port>.stderr.log`. En cas de port occupé, d’identité incohérente ou de suivi périmé, diagnostiquer avant toute nouvelle action ; conserver les services non identifiés comme ceux du projet. Si une permission système empêche l’action autorisée, demander uniquement l’élévation nécessaire à la commande ciblée, sans modifier les politiques PowerShell ni contourner les contrôles du lanceur.
+
+L’administration seule ne modifie ni le modèle ni le pointeur de release. Une nouvelle donnée JSON se lit après actualisation ; une modification du code Python exige un redémarrage. Terminer par l’état vérifié, l’URL et le port, ou l’erreur concrète qui empêche d’atteindre l’état demandé.

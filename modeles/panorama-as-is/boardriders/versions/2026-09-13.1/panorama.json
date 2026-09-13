@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "boardriders-si",
+  "space": "panorama-as-is",
+  "version": "2026-09-13.1",
+  "as_of": "2026-09-13",
+  "observed_at": null,
+  "assessment_status": "partially_documented",
+  "source_files": [
+    {
+      "path": "connaissance/07-composants.md",
+      "sha256": "1abde7fd576d510380efbb9ed055354eda0739337fba5afb52455ee69ccb98bf"
+    },
+    {
+      "path": "connaissance/08-flux.md",
+      "sha256": "11d06358338df5c42b08f0d4bb78e1792e7b22674c0106f4ab9e8baaa1b59c94"
+    },
+    {
+      "path": "connaissance/10-autorites-information.md",
+      "sha256": "a2da14023a030252019f389ea9ba48e724335e8f5b473c5fc6d769ae194de5a2"
+    },
+    {
+      "path": "connaissance/11-responsabilites-decision.md",
+      "sha256": "7527d1d21bddcd319eb36964b1fab2d0f5d45347724757978ab89095449364b3"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    }
+  ],
+  "objects": [
+    {
+      "id": "APP-ECC",
+      "source_fields": {
+        "id": "APP-ECC",
+        "type": "Application",
+        "nom": "SAP ECC",
+        "perimetre": "BRD",
+        "role": "Composant du paysage BRD.",
+        "source": "U01",
+        "reserve": "Couverture effective à instruire."
+      },
+      "source_record_text": "## APP-ECC\n\n**id**\n\nAPP-ECC\n\n**type**\n\nApplication\n\n**nom**\n\nSAP ECC\n\n**perimetre**\n\nBRD\n\n**role**\n\nComposant du paysage BRD.\n\n**source**\n\nU01\n\n**reserve**\n\nCouverture effective à instruire.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-ecc"
+      },
+      "source_refs": [
+        "U01"
+      ],
+      "name": "SAP ECC",
+      "scope": "Boardriders",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Couverture effective à instruire."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Composant du paysage Boardriders.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-AFS",
+      "source_fields": {
+        "id": "APP-AFS",
+        "type": "Solution SAP",
+        "nom": "SAP AFS / Allocation Run",
+        "perimetre": "BRD",
+        "role": "Enjeu d’allocation majeur.",
+        "source": "U01;U02",
+        "reserve": "Pas d’assimilation à toutes les fonctions S/4HANA actuelles."
+      },
+      "source_record_text": "## APP-AFS\n\n**id**\n\nAPP-AFS\n\n**type**\n\nSolution SAP\n\n**nom**\n\nSAP AFS / Allocation Run\n\n**perimetre**\n\nBRD\n\n**role**\n\nEnjeu d’allocation majeur.\n\n**source**\n\nU01;U02\n\n**reserve**\n\nPas d’assimilation à toutes les fonctions S/4HANA actuelles.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-afs"
+      },
+      "source_refs": [
+        "U01",
+        "U02"
+      ],
+      "name": "SAP AFS / Allocation Run",
+      "scope": "Boardriders",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Pas d’assimilation à toutes les fonctions S/4HANA actuelles."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "solution_and_feature_mention",
+      "described_role": "Enjeu d’allocation majeur.",
+      "deployment_status": "scope_not_established"
+    },
+    {
+      "id": "APP-NEW",
+      "source_fields": {
+        "id": "APP-NEW",
+        "type": "Application",
+        "nom": "NewStore",
+        "perimetre": "BRD",
+        "role": "Composant cité du paysage BRD.",
+        "source": "U01",
+        "reserve": "Aucune couverture détaillée déclarée dans ce fil."
+      },
+      "source_record_text": "## APP-NEW\n\n**id**\n\nAPP-NEW\n\n**type**\n\nApplication\n\n**nom**\n\nNewStore\n\n**perimetre**\n\nBRD\n\n**role**\n\nComposant cité du paysage BRD.\n\n**source**\n\nU01\n\n**reserve**\n\nAucune couverture détaillée déclarée dans ce fil.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-new"
+      },
+      "source_refs": [
+        "U01"
+      ],
+      "name": "NewStore",
+      "scope": "Boardriders",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Aucune couverture détaillée déclarée dans ce fil."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Composant cité du paysage Boardriders.",
+      "deployment_status": "not_independently_verified"
+    }
+  ],
+  "flows": [],
+  "information_authorities": [],
+  "decision_responsibilities": [],
+  "exclusions": [
+    {
+      "record_id": "DEC21",
+      "reason": "Besoin Boardriders déclaré, réalisation installée et responsable non établis.",
+      "preserved_in": "modeles/backlog/panorama-candidates.json"
+    },
+    {
+      "record_id": "DEC22",
+      "reason": "Besoin Boardriders déclaré, réalisation installée et responsable non établis.",
+      "preserved_in": "modeles/backlog/panorama-candidates.json"
+    }
+  ],
+  "limitations": [
+    "as_of est la date de publication de cet état de connaissance, pas une attestation de fraîcheur des SI ; aucune date d’observation opérationnelle vérifiée n’est disponible.",
+    "Les descriptions sont issues de récits et registres. declared ne signifie pas observed ; inconnues, réserves et périmètres source sont conservés.",
+    "source_fields et source_record_text sont des transcriptions de provenance : leurs abréviations et formulations historiques restent intactes ; les champs de lecture utilisent les libellés canoniques.",
+    "Une source ou destination textuelle non résolue ne crée pas un nouveau composant ni une interface directe. Une organisation n’est pas un système.",
+    "Les catégories et statuts de migration qualifient la preuve disponible ; ils n’adoptent aucune architecture cible."
+  ],
+  "shared_context": {
+    "path": "modeles/panorama-as-is/shared-2026-09-13.1.json",
+    "sha256": "67ab5928ad8dd1e29aa54a338cd5bdb27e3fa8861281c8723f863c7cc32403fb",
+    "relationship_status": "context_only",
+    "note": "Référence de contexte ; aucune relation de déploiement ou interface avec chaque SI n’est déduite de ce partage."
+  }
+}

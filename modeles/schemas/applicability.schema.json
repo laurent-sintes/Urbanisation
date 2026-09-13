@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FLOW applicability — four distinct contexts",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "model_id": {
+      "const": "flow-applicability"
+    },
+    "space": {
+      "const": "backlog"
+    },
+    "as_of": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "default_assessment": {
+      "const": "not_assessed"
+    },
+    "contexts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "perspective": {
+            "enum": [
+              "as_is",
+              "target"
+            ]
+          },
+          "model_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assessment_state": {
+            "enum": [
+              "to_structure",
+              "not_assessed",
+              "in_progress",
+              "assessed"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "perspective",
+          "model_id",
+          "assessment_state",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "type": "object",
+            "properties": {
+              "model_id": {
+                "const": "flow-urbanism"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "space": {
+                "enum": [
+                  "backlog",
+                  "release"
+                ]
+              }
+            },
+            "required": [
+              "model_id",
+              "version",
+              "node_id",
+              "space"
+            ],
+            "additionalProperties": false
+          },
+          "context_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "perspective": {
+            "enum": [
+              "as_is",
+              "target"
+            ]
+          },
+          "assessment_status": {
+            "enum": [
+              "not_assessed",
+              "in_progress",
+              "assessed"
+            ]
+          },
+          "applicability": {
+            "enum": [
+              "unknown",
+              "applicable",
+              "partly_applicable",
+              "not_applicable"
+            ]
+          },
+          "coverage": {
+            "enum": [
+              "unknown",
+              "described",
+              "partly_described",
+              "gap_identified"
+            ]
+          },
+          "realization_responsibility": {
+            "enum": [
+              "unknown",
+              "platform",
+              "external_adherence",
+              "excluded",
+              "not_applicable"
+            ]
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "realization_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "subject",
+          "context_id",
+          "perspective",
+          "assessment_status",
+          "applicability",
+          "coverage",
+          "realization_responsibility",
+          "source_refs",
+          "realization_refs",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "model_id",
+    "space",
+    "as_of",
+    "source_refs",
+    "default_assessment",
+    "contexts",
+    "assessments",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

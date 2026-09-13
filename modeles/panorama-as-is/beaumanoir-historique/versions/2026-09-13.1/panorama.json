@@ -1,0 +1,2452 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "beaumanoir-historique-si",
+  "space": "panorama-as-is",
+  "version": "2026-09-13.1",
+  "as_of": "2026-09-13",
+  "observed_at": null,
+  "assessment_status": "partially_documented",
+  "source_files": [
+    {
+      "path": "connaissance/07-composants.md",
+      "sha256": "1abde7fd576d510380efbb9ed055354eda0739337fba5afb52455ee69ccb98bf"
+    },
+    {
+      "path": "connaissance/08-flux.md",
+      "sha256": "11d06358338df5c42b08f0d4bb78e1792e7b22674c0106f4ab9e8baaa1b59c94"
+    },
+    {
+      "path": "connaissance/10-autorites-information.md",
+      "sha256": "a2da14023a030252019f389ea9ba48e724335e8f5b473c5fc6d769ae194de5a2"
+    },
+    {
+      "path": "connaissance/11-responsabilites-decision.md",
+      "sha256": "7527d1d21bddcd319eb36964b1fab2d0f5d45347724757978ab89095449364b3"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    }
+  ],
+  "objects": [
+    {
+      "id": "ORG-GBM",
+      "source_fields": {
+        "id": "ORG-GBM",
+        "type": "Organisation",
+        "nom": "GBM — marques historiques",
+        "perimetre": "GBM",
+        "role": "Retail ≈90 %, B2B ≈10 % ; variantes par marque.",
+        "source": "U01-U03",
+        "reserve": "Liste détaillée des marques non donnée."
+      },
+      "source_record_text": "## ORG-GBM\n\n**id**\n\nORG-GBM\n\n**type**\n\nOrganisation\n\n**nom**\n\nGBM — marques historiques\n\n**perimetre**\n\nGBM\n\n**role**\n\nRetail ≈90 %, B2B ≈10 % ; variantes par marque.\n\n**source**\n\nU01-U03\n\n**reserve**\n\nListe détaillée des marques non donnée.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "org-gbm"
+      },
+      "source_refs": [
+        "U01",
+        "U02",
+        "U03"
+      ],
+      "name": "Périmètre historique de Beaumanoir",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Liste détaillée des marques non donnée."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "organisation",
+      "described_role": "Retail ≈90 %, B2B ≈10 % ; variantes par marque.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-STR",
+      "source_fields": {
+        "id": "APP-STR",
+        "type": "Application / famille d’instances",
+        "nom": "Storeland",
+        "perimetre": "GBM",
+        "role": "Stock magasin, back-office, demandes stock-to-store et réassort automatique.",
+        "source": "U03;U06",
+        "reserve": "Une instance Oracle par marque ; liste, versions et spécifiques inconnus."
+      },
+      "source_record_text": "## APP-STR\n\n**id**\n\nAPP-STR\n\n**type**\n\nApplication / famille d’instances\n\n**nom**\n\nStoreland\n\n**perimetre**\n\nGBM\n\n**role**\n\nStock magasin, back-office, demandes stock-to-store et réassort automatique.\n\n**source**\n\nU03;U06\n\n**reserve**\n\nUne instance Oracle par marque ; liste, versions et spécifiques inconnus.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-str"
+      },
+      "source_refs": [
+        "U03",
+        "U06"
+      ],
+      "name": "Storeland",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Une instance Oracle par marque ; liste, versions et spécifiques inconnus."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [
+        "C04"
+      ],
+      "correction_context": [
+        {
+          "id": "C04",
+          "text": "Attribuer caisse et commandes client en magasin aux logiciels POS spécialisés.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c04"
+          }
+        }
+      ],
+      "kind": "application_family",
+      "described_role": "Stock magasin, back-office, demandes stock-to-store et réassort automatique.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-POS",
+      "source_fields": {
+        "id": "APP-POS",
+        "type": "Ensemble applicatif",
+        "nom": "Logiciels POS spécialisés",
+        "perimetre": "GBM",
+        "role": "Caisse et commandes pour client final en magasin.",
+        "source": "U03",
+        "reserve": "Noms et périmètres non inventoriés ; ne pas les inventer."
+      },
+      "source_record_text": "## APP-POS\n\n**id**\n\nAPP-POS\n\n**type**\n\nEnsemble applicatif\n\n**nom**\n\nLogiciels POS spécialisés\n\n**perimetre**\n\nGBM\n\n**role**\n\nCaisse et commandes pour client final en magasin.\n\n**source**\n\nU03\n\n**reserve**\n\nNoms et périmètres non inventoriés ; ne pas les inventer.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-pos"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Logiciels POS spécialisés",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Noms et périmètres non inventoriés ; ne pas les inventer."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application_collection",
+      "described_role": "Caisse et commandes pour client final en magasin.",
+      "deployment_status": "not_inventoried"
+    },
+    {
+      "id": "APP-WEB",
+      "source_fields": {
+        "id": "APP-WEB",
+        "type": "Ensemble applicatif",
+        "nom": "Sites eCommerce de marque",
+        "perimetre": "GBM",
+        "role": "Capture du parcours de commande eCommerce.",
+        "source": "U04",
+        "reserve": "Technologies et autorité commande non précisées."
+      },
+      "source_record_text": "## APP-WEB\n\n**id**\n\nAPP-WEB\n\n**type**\n\nEnsemble applicatif\n\n**nom**\n\nSites eCommerce de marque\n\n**perimetre**\n\nGBM\n\n**role**\n\nCapture du parcours de commande eCommerce.\n\n**source**\n\nU04\n\n**reserve**\n\nTechnologies et autorité commande non précisées.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-web"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Sites eCommerce de marque",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Technologies et autorité commande non précisées."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application_collection",
+      "described_role": "Capture du parcours de commande eCommerce.",
+      "deployment_status": "not_inventoried"
+    },
+    {
+      "id": "APP-UR",
+      "source_fields": {
+        "id": "APP-UR",
+        "type": "Application",
+        "nom": "UR / United Retail",
+        "perimetre": "GBM",
+        "role": "Stock entrepôt présent ; réception de stocks magasin ; contribution multicanale eCommerce ; alignement C-Log.",
+        "source": "U03;U04",
+        "reserve": "Cylande puis Cegid ; modules/versions/instances déployés non confirmés."
+      },
+      "source_record_text": "## APP-UR\n\n**id**\n\nAPP-UR\n\n**type**\n\nApplication\n\n**nom**\n\nUR / United Retail\n\n**perimetre**\n\nGBM\n\n**role**\n\nStock entrepôt présent ; réception de stocks magasin ; contribution multicanale eCommerce ; alignement C-Log.\n\n**source**\n\nU03;U04\n\n**reserve**\n\nCylande puis Cegid ; modules/versions/instances déployés non confirmés.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-ur"
+      },
+      "source_refs": [
+        "U03",
+        "U04"
+      ],
+      "name": "UR / United Retail",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Cylande puis Cegid ; modules/versions/instances déployés non confirmés."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [
+        "C02",
+        "C03"
+      ],
+      "correction_context": [
+        {
+          "id": "C02",
+          "text": "Séparer périmètre générique du produit et rôle du déploiement périmètre historique de Beaumanoir ; ne pas inventer des modules utilisés.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c02"
+          }
+        },
+        {
+          "id": "C03",
+          "text": "Conserver le constat de limite du déploiement périmètre historique de Beaumanoir ; une capacité produit annoncée ne prouve ni disponibilité ni usage dans la version installée.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c03"
+          }
+        }
+      ],
+      "kind": "application",
+      "described_role": "Stock entrepôt présent ; réception de stocks magasin ; contribution multicanale eCommerce ; alignement C-Log.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-SOC",
+      "source_fields": {
+        "id": "APP-SOC",
+        "type": "Application",
+        "nom": "Socloz",
+        "perimetre": "GBM",
+        "role": "Ship-from-store et extension de gamme.",
+        "source": "U03;U04",
+        "reserve": "Localisation de chaque règle, réservation et état non établie."
+      },
+      "source_record_text": "## APP-SOC\n\n**id**\n\nAPP-SOC\n\n**type**\n\nApplication\n\n**nom**\n\nSocloz\n\n**perimetre**\n\nGBM\n\n**role**\n\nShip-from-store et extension de gamme.\n\n**source**\n\nU03;U04\n\n**reserve**\n\nLocalisation de chaque règle, réservation et état non établie.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-soc"
+      },
+      "source_refs": [
+        "U03",
+        "U04"
+      ],
+      "name": "Socloz",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Localisation de chaque règle, réservation et état non établie."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Ship-from-store et extension de gamme.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-TAL",
+      "source_fields": {
+        "id": "APP-TAL",
+        "type": "Plateforme technique",
+        "nom": "Talend transverse",
+        "perimetre": "GBM / transversal déclaré",
+        "role": "Orchestration des échanges de données, notamment batchs décrits.",
+        "source": "U03",
+        "reserve": "Ne pas présumer tous les flux groupe ou absence de logique métier."
+      },
+      "source_record_text": "## APP-TAL\n\n**id**\n\nAPP-TAL\n\n**type**\n\nPlateforme technique\n\n**nom**\n\nTalend transverse\n\n**perimetre**\n\nGBM / transversal déclaré\n\n**role**\n\nOrchestration des échanges de données, notamment batchs décrits.\n\n**source**\n\nU03\n\n**reserve**\n\nNe pas présumer tous les flux groupe ou absence de logique métier.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-tal"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Talend transverse",
+      "scope": "périmètre historique de Beaumanoir / transversal déclaré",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas présumer tous les flux groupe ou absence de logique métier."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [
+        "C05"
+      ],
+      "correction_context": [
+        {
+          "id": "C05",
+          "text": "Distinguer architecture Oracle/Storeland et plateforme Talend transverse.",
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c05"
+          }
+        }
+      ],
+      "kind": "integration_platform",
+      "described_role": "Orchestration des échanges de données, notamment batchs décrits.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-ZOH",
+      "source_fields": {
+        "id": "APP-ZOH",
+        "type": "Application",
+        "nom": "Zoho",
+        "perimetre": "GBM B2B",
+        "role": "CRM clients B2B.",
+        "source": "U03",
+        "reserve": "Source de vérité de chaque attribut et édition non établies."
+      },
+      "source_record_text": "## APP-ZOH\n\n**id**\n\nAPP-ZOH\n\n**type**\n\nApplication\n\n**nom**\n\nZoho\n\n**perimetre**\n\nGBM B2B\n\n**role**\n\nCRM clients B2B.\n\n**source**\n\nU03\n\n**reserve**\n\nSource de vérité de chaque attribut et édition non établies.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-zoh"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Zoho",
+      "scope": "périmètre historique de Beaumanoir B2B",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Source de vérité de chaque attribut et édition non établies."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "CRM clients B2B.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-ELA",
+      "source_fields": {
+        "id": "APP-ELA",
+        "type": "Application",
+        "nom": "Elastic",
+        "perimetre": "GBM B2B",
+        "role": "Prise de commande B2B.",
+        "source": "U03",
+        "reserve": "Ne pas assimiler à Elasticsearch ; aval non décrit."
+      },
+      "source_record_text": "## APP-ELA\n\n**id**\n\nAPP-ELA\n\n**type**\n\nApplication\n\n**nom**\n\nElastic\n\n**perimetre**\n\nGBM B2B\n\n**role**\n\nPrise de commande B2B.\n\n**source**\n\nU03\n\n**reserve**\n\nNe pas assimiler à Elasticsearch ; aval non décrit.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-ela"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Elastic",
+      "scope": "périmètre historique de Beaumanoir B2B",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas assimiler à Elasticsearch ; aval non décrit."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Prise de commande B2B.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-IRM",
+      "source_fields": {
+        "id": "APP-IRM",
+        "type": "Application sur mesure",
+        "nom": "IRMA",
+        "perimetre": "GBM",
+        "role": "Stocks optimaux ; calcul et référence des seuils minimum réassort.",
+        "source": "U06",
+        "reserve": "Sur Snowflake déclaré ; en déploiement ; couverture par marque inconnue."
+      },
+      "source_record_text": "## APP-IRM\n\n**id**\n\nAPP-IRM\n\n**type**\n\nApplication sur mesure\n\n**nom**\n\nIRMA\n\n**perimetre**\n\nGBM\n\n**role**\n\nStocks optimaux ; calcul et référence des seuils minimum réassort.\n\n**source**\n\nU06\n\n**reserve**\n\nSur Snowflake déclaré ; en déploiement ; couverture par marque inconnue.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-irm"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "IRMA",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Sur Snowflake déclaré ; en déploiement ; couverture par marque inconnue."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Stocks optimaux ; calcul et référence des seuils minimum réassort.",
+      "deployment_status": "deployment_in_progress_declared"
+    },
+    {
+      "id": "APP-SCO",
+      "source_fields": {
+        "id": "APP-SCO",
+        "type": "Application en retrait",
+        "nom": "SCORTEX",
+        "perimetre": "GBM",
+        "role": "Outil historique remplacé par IRMA.",
+        "source": "U06;U07",
+        "reserve": "Fin de vie ; retrait complet non démontré ; périmètre détaillé non fourni."
+      },
+      "source_record_text": "## APP-SCO\n\n**id**\n\nAPP-SCO\n\n**type**\n\nApplication en retrait\n\n**nom**\n\nSCORTEX\n\n**perimetre**\n\nGBM\n\n**role**\n\nOutil historique remplacé par IRMA.\n\n**source**\n\nU06;U07\n\n**reserve**\n\nFin de vie ; retrait complet non démontré ; périmètre détaillé non fourni.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-sco"
+      },
+      "source_refs": [
+        "U06",
+        "U07"
+      ],
+      "name": "SCORTEX",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Fin de vie ; retrait complet non démontré ; périmètre détaillé non fourni."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Outil historique remplacé par IRMA.",
+      "deployment_status": "retirement_in_progress_declared"
+    },
+    {
+      "id": "APP-MAP",
+      "source_fields": {
+        "id": "APP-MAP",
+        "type": "Application sur mesure",
+        "nom": "MAP",
+        "perimetre": "GBM",
+        "role": "Forecast, protections logiques marque/canal, anticipation stockage, planification/émission demandes d’achat.",
+        "source": "U10",
+        "reserve": "Snowflake hypothétique ; consommateurs et autorité applicable non établis."
+      },
+      "source_record_text": "## APP-MAP\n\n**id**\n\nAPP-MAP\n\n**type**\n\nApplication sur mesure\n\n**nom**\n\nMAP\n\n**perimetre**\n\nGBM\n\n**role**\n\nForecast, protections logiques marque/canal, anticipation stockage, planification/émission demandes d’achat.\n\n**source**\n\nU10\n\n**reserve**\n\nSnowflake hypothétique ; consommateurs et autorité applicable non établis.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-map"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "MAP",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Snowflake hypothétique ; consommateurs et autorité applicable non établis."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Forecast, protections logiques marque/canal, anticipation stockage, planification/émission demandes d’achat.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "APP-CBS",
+      "source_fields": {
+        "id": "APP-CBS",
+        "type": "Application",
+        "nom": "CBS",
+        "perimetre": "GBM",
+        "role": "Suivi fabrication, fournisseur→port/Carrier, douanes entrepôts sous douane.",
+        "source": "U10",
+        "reserve": "Éditeur/technique non précisés ; lien avec application achats initiale à confirmer."
+      },
+      "source_record_text": "## APP-CBS\n\n**id**\n\nAPP-CBS\n\n**type**\n\nApplication\n\n**nom**\n\nCBS\n\n**perimetre**\n\nGBM\n\n**role**\n\nSuivi fabrication, fournisseur→port/Carrier, douanes entrepôts sous douane.\n\n**source**\n\nU10\n\n**reserve**\n\nÉditeur/technique non précisés ; lien avec application achats initiale à confirmer.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "app-cbs"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "CBS",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Éditeur/technique non précisés ; lien avec application achats initiale à confirmer."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "application",
+      "described_role": "Suivi fabrication, fournisseur→port/Carrier, douanes entrepôts sous douane.",
+      "deployment_status": "not_independently_verified"
+    },
+    {
+      "id": "ALIAS-ACH",
+      "source_fields": {
+        "id": "ALIAS-ACH",
+        "type": "Mention non rapprochée",
+        "nom": "Application achats sur mesure initialement non nommée",
+        "perimetre": "GBM",
+        "role": "Suivi opérationnel des commandes et circulation documentaire.",
+        "source": "U03",
+        "reserve": "Entrée de rapprochement ; ne signifie pas existence certaine d’un composant supplémentaire à CBS/MAP."
+      },
+      "source_record_text": "## ALIAS-ACH\n\n**id**\n\nALIAS-ACH\n\n**type**\n\nMention non rapprochée\n\n**nom**\n\nApplication achats sur mesure initialement non nommée\n\n**perimetre**\n\nGBM\n\n**role**\n\nSuivi opérationnel des commandes et circulation documentaire.\n\n**source**\n\nU03\n\n**reserve**\n\nEntrée de rapprochement ; ne signifie pas existence certaine d’un composant supplémentaire à CBS/MAP.",
+      "source_locator": {
+        "path": "connaissance/07-composants.md",
+        "anchor": "alias-ach"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Application achats sur mesure initialement non nommée",
+      "scope": "périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Entrée de rapprochement ; ne signifie pas existence certaine d’un composant supplémentaire à CBS/MAP."
+      ],
+      "source_category": "objects",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "unresolved_application_mention",
+      "described_role": "Suivi opérationnel des commandes et circulation documentaire.",
+      "deployment_status": "unresolved_identity"
+    }
+  ],
+  "flows": [
+    {
+      "id": "FL01",
+      "source_fields": {
+        "id": "FL01",
+        "origine": "APP-STR",
+        "destination": "APP-UR",
+        "contenu": "Représentations de stocks magasin par marque",
+        "modalite": "Batch régulier",
+        "source": "U03",
+        "statut": "Décrit",
+        "reserve": "Fréquence, fraîcheur et reprise inconnues."
+      },
+      "source_record_text": "## FL01\n\n**id**\n\nFL01\n\n**origine**\n\nAPP-STR\n\n**destination**\n\nAPP-UR\n\n**contenu**\n\nReprésentations de stocks magasin par marque\n\n**modalite**\n\nBatch régulier\n\n**source**\n\nU03\n\n**statut**\n\nDécrit\n\n**reserve**\n\nFréquence, fraîcheur et reprise inconnues.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl01"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Représentations de stocks magasin par marque",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Fréquence, fraîcheur et reprise inconnues."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "data_exchange",
+      "endpoints": {
+        "source": {
+          "id": "APP-STR",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": "APP-UR",
+          "unresolved_label": null
+        }
+      },
+      "content": "Représentations de stocks magasin par marque",
+      "modality": "Batch régulier",
+      "technical_interface_status": "declared",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL02",
+      "source_fields": {
+        "id": "FL02",
+        "origine": "APP-UR",
+        "destination": "SI C-Log",
+        "contenu": "Alignement de données",
+        "modalite": "Batch",
+        "source": "U03",
+        "statut": "Décrit",
+        "reserve": "Objets et sens de chaque message non précisés ; échanges bilatéraux décrits globalement."
+      },
+      "source_record_text": "## FL02\n\n**id**\n\nFL02\n\n**origine**\n\nAPP-UR\n\n**destination**\n\nSI C-Log\n\n**contenu**\n\nAlignement de données\n\n**modalite**\n\nBatch\n\n**source**\n\nU03\n\n**statut**\n\nDécrit\n\n**reserve**\n\nObjets et sens de chaque message non précisés ; échanges bilatéraux décrits globalement.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl02"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Alignement de données",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Objets et sens de chaque message non précisés ; échanges bilatéraux décrits globalement."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "data_exchange",
+      "endpoints": {
+        "source": {
+          "id": "APP-UR",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "SI C-Log"
+        }
+      },
+      "content": "Alignement de données",
+      "modality": "Batch",
+      "technical_interface_status": "declared",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL03",
+      "source_fields": {
+        "id": "FL03",
+        "origine": "APP-IRM",
+        "destination": "APP-STR",
+        "contenu": "Seuils minimum utilisés pour le réassort",
+        "modalite": "Mécanisme non documenté",
+        "source": "U06",
+        "statut": "Dépendance fonctionnelle établie",
+        "reserve": "Ne pas dessiner une interface directe comme preuve."
+      },
+      "source_record_text": "## FL03\n\n**id**\n\nFL03\n\n**origine**\n\nAPP-IRM\n\n**destination**\n\nAPP-STR\n\n**contenu**\n\nSeuils minimum utilisés pour le réassort\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU06\n\n**statut**\n\nDépendance fonctionnelle établie\n\n**reserve**\n\nNe pas dessiner une interface directe comme preuve.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl03"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Seuils minimum utilisés pour le réassort",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas dessiner une interface directe comme preuve."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "functional_dependency",
+      "endpoints": {
+        "source": {
+          "id": "APP-IRM",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": "APP-STR",
+          "unresolved_label": null
+        }
+      },
+      "content": "Seuils minimum utilisés pour le réassort",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Dépendance fonctionnelle établie"
+    },
+    {
+      "id": "FL04",
+      "source_fields": {
+        "id": "FL04",
+        "origine": "APP-WEB",
+        "destination": "Fonction disponibilité / UR",
+        "contenu": "Recherche prioritaire d’un stock entrepôt",
+        "modalite": "Interface non documentée",
+        "source": "U04",
+        "statut": "Parcours décrit",
+        "reserve": "Appelant/cible technique exacts inconnus."
+      },
+      "source_record_text": "## FL04\n\n**id**\n\nFL04\n\n**origine**\n\nAPP-WEB\n\n**destination**\n\nFonction disponibilité / UR\n\n**contenu**\n\nRecherche prioritaire d’un stock entrepôt\n\n**modalite**\n\nInterface non documentée\n\n**source**\n\nU04\n\n**statut**\n\nParcours décrit\n\n**reserve**\n\nAppelant/cible technique exacts inconnus.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl04"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Recherche prioritaire d’un stock entrepôt",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Appelant/cible technique exacts inconnus."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-WEB",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Fonction disponibilité / UR"
+        }
+      },
+      "content": "Recherche prioritaire d’un stock entrepôt",
+      "modality": "Interface non documentée",
+      "technical_interface_status": "not_established",
+      "described_status": "Parcours décrit"
+    },
+    {
+      "id": "FL05",
+      "source_fields": {
+        "id": "FL05",
+        "origine": "Commerce GBM",
+        "destination": "SI C-Log",
+        "contenu": "Demande d’exécution logistique : origine, articles, destinataire, opérations",
+        "modalite": "Fichier EDI",
+        "source": "U06",
+        "statut": "Décrit",
+        "reserve": "Système émetteur exact selon chaque origine non fourni."
+      },
+      "source_record_text": "## FL05\n\n**id**\n\nFL05\n\n**origine**\n\nCommerce GBM\n\n**destination**\n\nSI C-Log\n\n**contenu**\n\nDemande d’exécution logistique : origine, articles, destinataire, opérations\n\n**modalite**\n\nFichier EDI\n\n**source**\n\nU06\n\n**statut**\n\nDécrit\n\n**reserve**\n\nSystème émetteur exact selon chaque origine non fourni.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl05"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Demande d’exécution logistique : origine, articles, destinataire, opérations",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Système émetteur exact selon chaque origine non fourni."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "document_exchange",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Commerce périmètre historique de Beaumanoir"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "SI C-Log"
+        }
+      },
+      "content": "Demande d’exécution logistique : origine, articles, destinataire, opérations",
+      "modality": "Fichier EDI",
+      "technical_interface_status": "declared",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL06",
+      "source_fields": {
+        "id": "FL06",
+        "origine": "Chaîne SFS (Socloz contribue)",
+        "destination": "Magasin sélectionné",
+        "contenu": "Demande de préparation/expédition",
+        "modalite": "Interface non documentée",
+        "source": "U03;U04",
+        "statut": "Décrit au niveau métier",
+        "reserve": "Ne pas assigner toutes les décisions à Socloz."
+      },
+      "source_record_text": "## FL06\n\n**id**\n\nFL06\n\n**origine**\n\nChaîne SFS (Socloz contribue)\n\n**destination**\n\nMagasin sélectionné\n\n**contenu**\n\nDemande de préparation/expédition\n\n**modalite**\n\nInterface non documentée\n\n**source**\n\nU03;U04\n\n**statut**\n\nDécrit au niveau métier\n\n**reserve**\n\nNe pas assigner toutes les décisions à Socloz.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl06"
+      },
+      "source_refs": [
+        "U03",
+        "U04"
+      ],
+      "name": "Demande de préparation/expédition",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas assigner toutes les décisions à Socloz."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Chaîne SFS (Socloz contribue)"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Magasin sélectionné"
+        }
+      },
+      "content": "Demande de préparation/expédition",
+      "modality": "Interface non documentée",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit au niveau métier"
+    },
+    {
+      "id": "FL07",
+      "source_fields": {
+        "id": "FL07",
+        "origine": "Magasin sollicité",
+        "destination": "Chaîne SFS",
+        "contenu": "Acceptation, refus ou absence de réponse",
+        "modalite": "Délai 15 minutes",
+        "source": "U04",
+        "statut": "Décrit",
+        "reserve": "Événements et stockage techniques non fournis."
+      },
+      "source_record_text": "## FL07\n\n**id**\n\nFL07\n\n**origine**\n\nMagasin sollicité\n\n**destination**\n\nChaîne SFS\n\n**contenu**\n\nAcceptation, refus ou absence de réponse\n\n**modalite**\n\nDélai 15 minutes\n\n**source**\n\nU04\n\n**statut**\n\nDécrit\n\n**reserve**\n\nÉvénements et stockage techniques non fournis.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl07"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Acceptation, refus ou absence de réponse",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Événements et stockage techniques non fournis."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Magasin sollicité"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Chaîne SFS"
+        }
+      },
+      "content": "Acceptation, refus ou absence de réponse",
+      "modality": "Délai 15 minutes",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL08",
+      "source_fields": {
+        "id": "FL08",
+        "origine": "Chaîne SFS",
+        "destination": "Magasin suivant",
+        "contenu": "Nouvelle demande après annulation de tentative",
+        "modalite": "Séquentiel décrit",
+        "source": "U04;U05",
+        "statut": "Décrit",
+        "reserve": "Commande client inchangée dans son existence."
+      },
+      "source_record_text": "## FL08\n\n**id**\n\nFL08\n\n**origine**\n\nChaîne SFS\n\n**destination**\n\nMagasin suivant\n\n**contenu**\n\nNouvelle demande après annulation de tentative\n\n**modalite**\n\nSéquentiel décrit\n\n**source**\n\nU04;U05\n\n**statut**\n\nDécrit\n\n**reserve**\n\nCommande client inchangée dans son existence.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl08"
+      },
+      "source_refs": [
+        "U04",
+        "U05"
+      ],
+      "name": "Nouvelle demande après annulation de tentative",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Commande client inchangée dans son existence."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Chaîne SFS"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Magasin suivant"
+        }
+      },
+      "content": "Nouvelle demande après annulation de tentative",
+      "modality": "Séquentiel décrit",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL09",
+      "source_fields": {
+        "id": "FL09",
+        "origine": "Chaîne SFS",
+        "destination": "Responsable commercial marque",
+        "contenu": "Alerte de non-prise en charge",
+        "modalite": "Dans la journée : incertain",
+        "source": "U04",
+        "statut": "Décrit avec réserve",
+        "reserve": "Règle de déclenchement exacte inconnue."
+      },
+      "source_record_text": "## FL09\n\n**id**\n\nFL09\n\n**origine**\n\nChaîne SFS\n\n**destination**\n\nResponsable commercial marque\n\n**contenu**\n\nAlerte de non-prise en charge\n\n**modalite**\n\nDans la journée : incertain\n\n**source**\n\nU04\n\n**statut**\n\nDécrit avec réserve\n\n**reserve**\n\nRègle de déclenchement exacte inconnue.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl09"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Alerte de non-prise en charge",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Règle de déclenchement exacte inconnue."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Chaîne SFS"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Responsable commercial marque"
+        }
+      },
+      "content": "Alerte de non-prise en charge",
+      "modality": "Dans la journée : incertain",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit avec réserve"
+    },
+    {
+      "id": "FL10",
+      "source_fields": {
+        "id": "FL10",
+        "origine": "Responsable commercial marque",
+        "destination": "Magasins",
+        "contenu": "Appels pour débloquer la situation",
+        "modalite": "Humain / téléphone",
+        "source": "U04",
+        "statut": "Décrit",
+        "reserve": "Pouvoirs d’arbitrage non établis."
+      },
+      "source_record_text": "## FL10\n\n**id**\n\nFL10\n\n**origine**\n\nResponsable commercial marque\n\n**destination**\n\nMagasins\n\n**contenu**\n\nAppels pour débloquer la situation\n\n**modalite**\n\nHumain / téléphone\n\n**source**\n\nU04\n\n**statut**\n\nDécrit\n\n**reserve**\n\nPouvoirs d’arbitrage non établis.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl10"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Appels pour débloquer la situation",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Pouvoirs d’arbitrage non établis."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "human_interaction",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Responsable commercial marque"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Magasins"
+        }
+      },
+      "content": "Appels pour débloquer la situation",
+      "modality": "Humain / téléphone",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL11",
+      "source_fields": {
+        "id": "FL11",
+        "origine": "APP-STR",
+        "destination": "Processus d’approvisionnement / C-Log",
+        "contenu": "Demande automatique de réassort",
+        "modalite": "Déclenchement sur seuil ; route exacte non précisée",
+        "source": "U06",
+        "statut": "Décrit fonctionnellement",
+        "reserve": "Ne pas inventer passage obligatoire par UR."
+      },
+      "source_record_text": "## FL11\n\n**id**\n\nFL11\n\n**origine**\n\nAPP-STR\n\n**destination**\n\nProcessus d’approvisionnement / C-Log\n\n**contenu**\n\nDemande automatique de réassort\n\n**modalite**\n\nDéclenchement sur seuil ; route exacte non précisée\n\n**source**\n\nU06\n\n**statut**\n\nDécrit fonctionnellement\n\n**reserve**\n\nNe pas inventer passage obligatoire par UR.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl11"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Demande automatique de réassort",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas inventer passage obligatoire par UR."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-STR",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Processus d’approvisionnement / C-Log"
+        }
+      },
+      "content": "Demande automatique de réassort",
+      "modality": "Déclenchement sur seuil ; route exacte non précisée",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit fonctionnellement"
+    },
+    {
+      "id": "FL15",
+      "source_fields": {
+        "id": "FL15",
+        "origine": "APP-MAP",
+        "destination": "SI C-Log",
+        "contenu": "Anticipation du stockage",
+        "modalite": "Mécanisme non documenté",
+        "source": "U10",
+        "statut": "Décrit",
+        "reserve": "Contenu, granularité, fréquence et engagement associés inconnus."
+      },
+      "source_record_text": "## FL15\n\n**id**\n\nFL15\n\n**origine**\n\nAPP-MAP\n\n**destination**\n\nSI C-Log\n\n**contenu**\n\nAnticipation du stockage\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU10\n\n**statut**\n\nDécrit\n\n**reserve**\n\nContenu, granularité, fréquence et engagement associés inconnus.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl15"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Anticipation du stockage",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Contenu, granularité, fréquence et engagement associés inconnus."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-MAP",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "SI C-Log"
+        }
+      },
+      "content": "Anticipation du stockage",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL16",
+      "source_fields": {
+        "id": "FL16",
+        "origine": "APP-MAP",
+        "destination": "Système opérant non nommé",
+        "contenu": "Jeux de données recalculés après aléa amont",
+        "modalite": "Annule et remplace",
+        "source": "U10",
+        "statut": "Décrit",
+        "reserve": "Consommateurs et conséquences sur engagements non identifiés."
+      },
+      "source_record_text": "## FL16\n\n**id**\n\nFL16\n\n**origine**\n\nAPP-MAP\n\n**destination**\n\nSystème opérant non nommé\n\n**contenu**\n\nJeux de données recalculés après aléa amont\n\n**modalite**\n\nAnnule et remplace\n\n**source**\n\nU10\n\n**statut**\n\nDécrit\n\n**reserve**\n\nConsommateurs et conséquences sur engagements non identifiés.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl16"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Jeux de données recalculés après aléa amont",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Consommateurs et conséquences sur engagements non identifiés."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-MAP",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Système opérant non nommé"
+        }
+      },
+      "content": "Jeux de données recalculés après aléa amont",
+      "modality": "Annule et remplace",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    },
+    {
+      "id": "FL17",
+      "source_fields": {
+        "id": "FL17",
+        "origine": "APP-MAP",
+        "destination": "Processus achats / fournisseur",
+        "contenu": "Demande d’achat fournisseur ; U48 précise « Planned Purchase Order » pour le cas de fabrication complète par le fournisseur.",
+        "modalite": "Mécanisme non documenté",
+        "source": "U10 ; U48 ; F141",
+        "statut": "Responsabilité décrite",
+        "reserve": "Émission directe au fournisseur et commande ferme non prouvées."
+      },
+      "source_record_text": "## FL17\n\n**id**\n\nFL17\n\n**origine**\n\nAPP-MAP\n\n**destination**\n\nProcessus achats / fournisseur\n\n**contenu**\n\nDemande d’achat fournisseur ; U48 précise « Planned Purchase Order » pour le cas de fabrication complète par le fournisseur.\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU10 ; U48 ; F141\n\n**statut**\n\nResponsabilité décrite\n\n**reserve**\n\nÉmission directe au fournisseur et commande ferme non prouvées.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl17"
+      },
+      "source_refs": [
+        "F141",
+        "U10",
+        "U48"
+      ],
+      "name": "Demande d’achat fournisseur ; U48 précise « Planned Purchase Order » pour le cas de fabrication complète par le fournisseur.",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Émission directe au fournisseur et commande ferme non prouvées."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": "APP-MAP",
+          "unresolved_label": null
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Processus achats / fournisseur"
+        }
+      },
+      "content": "Demande d’achat fournisseur ; U48 précise « Planned Purchase Order » pour le cas de fabrication complète par le fournisseur.",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Responsabilité décrite"
+    },
+    {
+      "id": "FL18",
+      "source_fields": {
+        "id": "FL18",
+        "origine": "Fournisseur / échanges amont",
+        "destination": "APP-CBS",
+        "contenu": "Éléments de suivi fabrication/livraison/documents",
+        "modalite": "Mécanisme non documenté",
+        "source": "U03;U10",
+        "statut": "Responsabilité décrite",
+        "reserve": "Ne pas prouver un flux CBS–MAP à partir de cette seule dépendance métier."
+      },
+      "source_record_text": "## FL18\n\n**id**\n\nFL18\n\n**origine**\n\nFournisseur / échanges amont\n\n**destination**\n\nAPP-CBS\n\n**contenu**\n\nÉléments de suivi fabrication/livraison/documents\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU03;U10\n\n**statut**\n\nResponsabilité décrite\n\n**reserve**\n\nNe pas prouver un flux CBS–MAP à partir de cette seule dépendance métier.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl18"
+      },
+      "source_refs": [
+        "U03",
+        "U10"
+      ],
+      "name": "Éléments de suivi fabrication/livraison/documents",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas prouver un flux CBS–MAP à partir de cette seule dépendance métier."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Fournisseur / échanges amont"
+        },
+        "target": {
+          "id": "APP-CBS",
+          "unresolved_label": null
+        }
+      },
+      "content": "Éléments de suivi fabrication/livraison/documents",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "Responsabilité décrite"
+    },
+    {
+      "id": "FL19",
+      "source_fields": {
+        "id": "FL19",
+        "origine": "APP-CBS / processus achats",
+        "destination": "Beaumanoir et acteurs douaniers",
+        "contenu": "Documents / suivi opérationnel douane",
+        "modalite": "Mécanisme non documenté",
+        "source": "U03;U10",
+        "statut": "À rapprocher",
+        "reserve": "Identité avec application achats initiale non confirmée."
+      },
+      "source_record_text": "## FL19\n\n**id**\n\nFL19\n\n**origine**\n\nAPP-CBS / processus achats\n\n**destination**\n\nBeaumanoir et acteurs douaniers\n\n**contenu**\n\nDocuments / suivi opérationnel douane\n\n**modalite**\n\nMécanisme non documenté\n\n**source**\n\nU03;U10\n\n**statut**\n\nÀ rapprocher\n\n**reserve**\n\nIdentité avec application achats initiale non confirmée.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl19"
+      },
+      "source_refs": [
+        "U03",
+        "U10"
+      ],
+      "name": "Documents / suivi opérationnel douane",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "inferred",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Identité avec application achats initiale non confirmée."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "flow_to_reconcile",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "APP-CBS / processus achats"
+        },
+        "target": {
+          "id": null,
+          "unresolved_label": "Beaumanoir et acteurs douaniers"
+        }
+      },
+      "content": "Documents / suivi opérationnel douane",
+      "modality": "Mécanisme non documenté",
+      "technical_interface_status": "not_established",
+      "described_status": "À rapprocher"
+    },
+    {
+      "id": "FL20",
+      "source_fields": {
+        "id": "FL20",
+        "origine": "Client B2B",
+        "destination": "APP-ELA",
+        "contenu": "Prise de commande",
+        "modalite": "Application B2B",
+        "source": "U03",
+        "statut": "Décrit",
+        "reserve": "Zoho→Elastic ou Elastic→C-Log non attestés dans le fil."
+      },
+      "source_record_text": "## FL20\n\n**id**\n\nFL20\n\n**origine**\n\nClient B2B\n\n**destination**\n\nAPP-ELA\n\n**contenu**\n\nPrise de commande\n\n**modalite**\n\nApplication B2B\n\n**source**\n\nU03\n\n**statut**\n\nDécrit\n\n**reserve**\n\nZoho→Elastic ou Elastic→C-Log non attestés dans le fil.",
+      "source_locator": {
+        "path": "connaissance/08-flux.md",
+        "anchor": "fl20"
+      },
+      "source_refs": [
+        "U03"
+      ],
+      "name": "Prise de commande",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Zoho→Elastic ou Elastic→C-Log non attestés dans le fil."
+      ],
+      "source_category": "flows",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "business_flow",
+      "endpoints": {
+        "source": {
+          "id": null,
+          "unresolved_label": "Client B2B"
+        },
+        "target": {
+          "id": "APP-ELA",
+          "unresolved_label": null
+        }
+      },
+      "content": "Prise de commande",
+      "modality": "Application B2B",
+      "technical_interface_status": "not_established",
+      "described_status": "Décrit"
+    }
+  ],
+  "information_authorities": [
+    {
+      "id": "INF01",
+      "source_fields": {
+        "id": "INF01",
+        "objet": "Stock magasin",
+        "autorite_ou_producteur": "Storeland par marque",
+        "autres_contributions": "UR reçoit une copie batch",
+        "reserve": "Autorité de tenue déclarée ; états détaillés inconnus",
+        "source": "U03;U04"
+      },
+      "source_record_text": "## INF01\n\n**id**\n\nINF01\n\n**objet**\n\nStock magasin\n\n**autorite_ou_producteur**\n\nStoreland par marque\n\n**autres_contributions**\n\nUR reçoit une copie batch\n\n**reserve**\n\nAutorité de tenue déclarée ; états détaillés inconnus\n\n**source**\n\nU03;U04",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf01"
+      },
+      "source_refs": [
+        "U03",
+        "U04"
+      ],
+      "name": "Stock magasin",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Autorité de tenue déclarée ; états détaillés inconnus"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Stock magasin",
+      "authority_or_producer": "Storeland par marque",
+      "other_contributions": "UR reçoit une copie batch",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF02",
+      "source_fields": {
+        "id": "INF02",
+        "objet": "Stock entrepôt physique/logique",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "UR contient une représentation ; SI C-Log réalise la logistique",
+        "reserve": "Présence ≠ autorité",
+        "source": "U04;U06"
+      },
+      "source_record_text": "## INF02\n\n**id**\n\nINF02\n\n**objet**\n\nStock entrepôt physique/logique\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nUR contient une représentation ; SI C-Log réalise la logistique\n\n**reserve**\n\nPrésence ≠ autorité\n\n**source**\n\nU04;U06",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf02"
+      },
+      "source_refs": [
+        "U04",
+        "U06"
+      ],
+      "name": "Stock entrepôt physique/logique",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Présence ≠ autorité"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Stock entrepôt physique/logique",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "UR contient une représentation ; SI C-Log réalise la logistique",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF03",
+      "source_fields": {
+        "id": "INF03",
+        "objet": "Disponibilité proposée à la vente",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "Recherche entrepôt puis magasin décrite",
+        "reserve": "Calcul/règle/engagement à séparer",
+        "source": "U04;U10"
+      },
+      "source_record_text": "## INF03\n\n**id**\n\nINF03\n\n**objet**\n\nDisponibilité proposée à la vente\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nRecherche entrepôt puis magasin décrite\n\n**reserve**\n\nCalcul/règle/engagement à séparer\n\n**source**\n\nU04;U10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf03"
+      },
+      "source_refs": [
+        "U04",
+        "U10"
+      ],
+      "name": "Disponibilité proposée à la vente",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Calcul/règle/engagement à séparer"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Disponibilité proposée à la vente",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "Recherche entrepôt puis magasin décrite",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF04",
+      "source_fields": {
+        "id": "INF04",
+        "objet": "Stocks optimaux et seuils réassort",
+        "autorite_ou_producteur": "IRMA déclaré référence des seuils",
+        "autres_contributions": "Storeland applique le déclenchement",
+        "reserve": "Transition SCORTEX à dater par périmètre",
+        "source": "U06"
+      },
+      "source_record_text": "## INF04\n\n**id**\n\nINF04\n\n**objet**\n\nStocks optimaux et seuils réassort\n\n**autorite_ou_producteur**\n\nIRMA déclaré référence des seuils\n\n**autres_contributions**\n\nStoreland applique le déclenchement\n\n**reserve**\n\nTransition SCORTEX à dater par périmètre\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf04"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Stocks optimaux et seuils réassort",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Transition SCORTEX à dater par périmètre"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Stocks optimaux et seuils réassort",
+      "authority_or_producer": "IRMA déclaré référence des seuils",
+      "other_contributions": "Storeland applique le déclenchement",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF05",
+      "source_fields": {
+        "id": "INF05",
+        "objet": "Protections marque/canal",
+        "autorite_ou_producteur": "MAP calcule",
+        "autres_contributions": "Système(s) opérant(s) consommateur(s) non nommés",
+        "reserve": "Autorité applicable et versions inconnues",
+        "source": "U10"
+      },
+      "source_record_text": "## INF05\n\n**id**\n\nINF05\n\n**objet**\n\nProtections marque/canal\n\n**autorite_ou_producteur**\n\nMAP calcule\n\n**autres_contributions**\n\nSystème(s) opérant(s) consommateur(s) non nommés\n\n**reserve**\n\nAutorité applicable et versions inconnues\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf05"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Protections marque/canal",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Autorité applicable et versions inconnues"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Protections marque/canal",
+      "authority_or_producer": "MAP calcule",
+      "other_contributions": "Système(s) opérant(s) consommateur(s) non nommés",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF06",
+      "source_fields": {
+        "id": "INF06",
+        "objet": "Prévisions de vente",
+        "autorite_ou_producteur": "MAP produit",
+        "autres_contributions": "Consommateurs et versions non détaillés",
+        "reserve": "Pas de maître opérationnel inventé",
+        "source": "U10"
+      },
+      "source_record_text": "## INF06\n\n**id**\n\nINF06\n\n**objet**\n\nPrévisions de vente\n\n**autorite_ou_producteur**\n\nMAP produit\n\n**autres_contributions**\n\nConsommateurs et versions non détaillés\n\n**reserve**\n\nPas de maître opérationnel inventé\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf06"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Prévisions de vente",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Pas de maître opérationnel inventé"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Prévisions de vente",
+      "authority_or_producer": "MAP produit",
+      "other_contributions": "Consommateurs et versions non détaillés",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF07",
+      "source_fields": {
+        "id": "INF07",
+        "objet": "Anticipations de stockage",
+        "autorite_ou_producteur": "MAP produit",
+        "autres_contributions": "C-Log reçoit",
+        "reserve": "Résultat décisionnel accepté/ajusté non documenté",
+        "source": "U10"
+      },
+      "source_record_text": "## INF07\n\n**id**\n\nINF07\n\n**objet**\n\nAnticipations de stockage\n\n**autorite_ou_producteur**\n\nMAP produit\n\n**autres_contributions**\n\nC-Log reçoit\n\n**reserve**\n\nRésultat décisionnel accepté/ajusté non documenté\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf07"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Anticipations de stockage",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Résultat décisionnel accepté/ajusté non documenté"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Anticipations de stockage",
+      "authority_or_producer": "MAP produit",
+      "other_contributions": "C-Log reçoit",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF08",
+      "source_fields": {
+        "id": "INF08",
+        "objet": "Quotas et charge magasin",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "Chaîne SFS utilise la contrainte",
+        "reserve": "Auteur, compteur et persistance inconnus",
+        "source": "U04"
+      },
+      "source_record_text": "## INF08\n\n**id**\n\nINF08\n\n**objet**\n\nQuotas et charge magasin\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nChaîne SFS utilise la contrainte\n\n**reserve**\n\nAuteur, compteur et persistance inconnus\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf08"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Quotas et charge magasin",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Auteur, compteur et persistance inconnus"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Quotas et charge magasin",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "Chaîne SFS utilise la contrainte",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF10",
+      "source_fields": {
+        "id": "INF10",
+        "objet": "Commande client",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "POS/sites/Elastic contribuent ; commande maintenue pendant reprises SFS",
+        "reserve": "Ne pas déduire maître de la seule saisie",
+        "source": "U03-U05"
+      },
+      "source_record_text": "## INF10\n\n**id**\n\nINF10\n\n**objet**\n\nCommande client\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nPOS/sites/Elastic contribuent ; commande maintenue pendant reprises SFS\n\n**reserve**\n\nNe pas déduire maître de la seule saisie\n\n**source**\n\nU03-U05",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf10"
+      },
+      "source_refs": [
+        "U03",
+        "U04",
+        "U05"
+      ],
+      "name": "Commande client",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas déduire maître de la seule saisie"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Commande client",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "POS/sites/Elastic contribuent ; commande maintenue pendant reprises SFS",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF11",
+      "source_fields": {
+        "id": "INF11",
+        "objet": "Demande d’exécution magasin",
+        "autorite_ou_producteur": "Non établi",
+        "autres_contributions": "Chaîne SFS ; Socloz contribue",
+        "reserve": "Cycle distinct de commande ; systèmes exacts inconnus",
+        "source": "U03-U05"
+      },
+      "source_record_text": "## INF11\n\n**id**\n\nINF11\n\n**objet**\n\nDemande d’exécution magasin\n\n**autorite_ou_producteur**\n\nNon établi\n\n**autres_contributions**\n\nChaîne SFS ; Socloz contribue\n\n**reserve**\n\nCycle distinct de commande ; systèmes exacts inconnus\n\n**source**\n\nU03-U05",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf11"
+      },
+      "source_refs": [
+        "U03",
+        "U04",
+        "U05"
+      ],
+      "name": "Demande d’exécution magasin",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Cycle distinct de commande ; systèmes exacts inconnus"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Demande d’exécution magasin",
+      "authority_or_producer": "Non établi",
+      "other_contributions": "Chaîne SFS ; Socloz contribue",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF12",
+      "source_fields": {
+        "id": "INF12",
+        "objet": "Demande d’exécution logistique",
+        "autorite_ou_producteur": "Émetteur non établi par parcours",
+        "autres_contributions": "EDI commerce→C-Log",
+        "reserve": "Origine du besoin et statut logistique peuvent relever de responsabilités différentes",
+        "source": "U06"
+      },
+      "source_record_text": "## INF12\n\n**id**\n\nINF12\n\n**objet**\n\nDemande d’exécution logistique\n\n**autorite_ou_producteur**\n\nÉmetteur non établi par parcours\n\n**autres_contributions**\n\nEDI commerce→C-Log\n\n**reserve**\n\nOrigine du besoin et statut logistique peuvent relever de responsabilités différentes\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf12"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Demande d’exécution logistique",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Origine du besoin et statut logistique peuvent relever de responsabilités différentes"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Demande d’exécution logistique",
+      "authority_or_producer": "Émetteur non établi par parcours",
+      "other_contributions": "EDI commerce→C-Log",
+      "authority_qualification": "unknown"
+    },
+    {
+      "id": "INF14",
+      "source_fields": {
+        "id": "INF14",
+        "objet": "Demande d’achat fournisseur",
+        "autorite_ou_producteur": "MAP réalise la demande",
+        "autres_contributions": "CBS suit fabrication/livraison amont",
+        "reserve": "Référentiel commande ferme non établi",
+        "source": "U10"
+      },
+      "source_record_text": "## INF14\n\n**id**\n\nINF14\n\n**objet**\n\nDemande d’achat fournisseur\n\n**autorite_ou_producteur**\n\nMAP réalise la demande\n\n**autres_contributions**\n\nCBS suit fabrication/livraison amont\n\n**reserve**\n\nRéférentiel commande ferme non établi\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf14"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Demande d’achat fournisseur",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Référentiel commande ferme non établi"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Demande d’achat fournisseur",
+      "authority_or_producer": "MAP réalise la demande",
+      "other_contributions": "CBS suit fabrication/livraison amont",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF15",
+      "source_fields": {
+        "id": "INF15",
+        "objet": "Faits et pièces amont",
+        "autorite_ou_producteur": "CBS suit",
+        "autres_contributions": "Application achats initiale à rapprocher",
+        "reserve": "Suivre ne signifie pas faire autorité sur toute pièce émise par fournisseur/douane",
+        "source": "U03;U10"
+      },
+      "source_record_text": "## INF15\n\n**id**\n\nINF15\n\n**objet**\n\nFaits et pièces amont\n\n**autorite_ou_producteur**\n\nCBS suit\n\n**autres_contributions**\n\nApplication achats initiale à rapprocher\n\n**reserve**\n\nSuivre ne signifie pas faire autorité sur toute pièce émise par fournisseur/douane\n\n**source**\n\nU03;U10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf15"
+      },
+      "source_refs": [
+        "U03",
+        "U10"
+      ],
+      "name": "Faits et pièces amont",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Suivre ne signifie pas faire autorité sur toute pièce émise par fournisseur/douane"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Faits et pièces amont",
+      "authority_or_producer": "CBS suit",
+      "other_contributions": "Application achats initiale à rapprocher",
+      "authority_qualification": "source_reservations_apply"
+    },
+    {
+      "id": "INF16",
+      "source_fields": {
+        "id": "INF16",
+        "objet": "Clients B2B",
+        "autorite_ou_producteur": "Zoho assure CRM",
+        "autres_contributions": "Elastic capte les commandes",
+        "reserve": "Autorité par attribut/exclusion non établie",
+        "source": "U03;U10"
+      },
+      "source_record_text": "## INF16\n\n**id**\n\nINF16\n\n**objet**\n\nClients B2B\n\n**autorite_ou_producteur**\n\nZoho assure CRM\n\n**autres_contributions**\n\nElastic capte les commandes\n\n**reserve**\n\nAutorité par attribut/exclusion non établie\n\n**source**\n\nU03;U10",
+      "source_locator": {
+        "path": "connaissance/10-autorites-information.md",
+        "anchor": "inf16"
+      },
+      "source_refs": [
+        "U03",
+        "U10"
+      ],
+      "name": "Clients B2B",
+      "scope": "Périmètre non renseigné dans la fiche source.",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Autorité par attribut/exclusion non établie"
+      ],
+      "source_category": "information_authorities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "information_authority_or_producer",
+      "information": "Clients B2B",
+      "authority_or_producer": "Zoho assure CRM",
+      "other_contributions": "Elastic capte les commandes",
+      "authority_qualification": "source_reservations_apply"
+    }
+  ],
+  "decision_responsibilities": [
+    {
+      "id": "DEC01",
+      "source_fields": {
+        "id": "DEC01",
+        "decision": "Définir des protections marque/canal",
+        "realisation": "MAP",
+        "reserve": "Calcul décrit ; politique et autorisation métier non identifiées",
+        "contexte": "Planification/allocation",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC01\n\n**id**\n\nDEC01\n\n**decision**\n\nDéfinir des protections marque/canal\n\n**realisation**\n\nMAP\n\n**reserve**\n\nCalcul décrit ; politique et autorisation métier non identifiées\n\n**contexte**\n\nPlanification/allocation\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec01"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Définir des protections marque/canal",
+      "scope": "Planification/allocation",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Calcul décrit ; politique et autorisation métier non identifiées"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Définir des protections marque/canal",
+      "described_realization": "MAP",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC02",
+      "source_fields": {
+        "id": "DEC02",
+        "decision": "Calculer les seuils de réassort",
+        "realisation": "IRMA",
+        "reserve": "Source de référence déclarée ; coexistence éventuelle avec SCORTEX, à préciser par périmètre (F069, Q009)",
+        "contexte": "Réassort magasin",
+        "source": "U06"
+      },
+      "source_record_text": "## DEC02\n\n**id**\n\nDEC02\n\n**decision**\n\nCalculer les seuils de réassort\n\n**realisation**\n\nIRMA\n\n**reserve**\n\nSource de référence déclarée ; coexistence éventuelle avec SCORTEX, à préciser par périmètre (F069, Q009)\n\n**contexte**\n\nRéassort magasin\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec02"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Calculer les seuils de réassort",
+      "scope": "Réassort magasin",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Source de référence déclarée ; coexistence éventuelle avec SCORTEX, à préciser par périmètre (F069, Q009)"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Calculer les seuils de réassort",
+      "described_realization": "IRMA",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC03",
+      "source_fields": {
+        "id": "DEC03",
+        "decision": "Déclencher une demande de réassort",
+        "realisation": "Storeland",
+        "reserve": "Seuil atteint ; quantité à déterminer",
+        "contexte": "Réassort magasin",
+        "source": "U06"
+      },
+      "source_record_text": "## DEC03\n\n**id**\n\nDEC03\n\n**decision**\n\nDéclencher une demande de réassort\n\n**realisation**\n\nStoreland\n\n**reserve**\n\nSeuil atteint ; quantité à déterminer\n\n**contexte**\n\nRéassort magasin\n\n**source**\n\nU06",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec03"
+      },
+      "source_refs": [
+        "U06"
+      ],
+      "name": "Déclencher une demande de réassort",
+      "scope": "Réassort magasin",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Seuil atteint ; quantité à déterminer"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Déclencher une demande de réassort",
+      "described_realization": "Storeland",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC04",
+      "source_fields": {
+        "id": "DEC04",
+        "decision": "Recalculer après aléa amont",
+        "realisation": "MAP",
+        "reserve": "Annule et remplace des données ; aucun effet sur commandes supposé",
+        "contexte": "Planification/opération",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC04\n\n**id**\n\nDEC04\n\n**decision**\n\nRecalculer après aléa amont\n\n**realisation**\n\nMAP\n\n**reserve**\n\nAnnule et remplace des données ; aucun effet sur commandes supposé\n\n**contexte**\n\nPlanification/opération\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec04"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Recalculer après aléa amont",
+      "scope": "Planification/opération",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Annule et remplace des données ; aucun effet sur commandes supposé"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Recalculer après aléa amont",
+      "described_realization": "MAP",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC05",
+      "source_fields": {
+        "id": "DEC05",
+        "decision": "Produire la demande fournisseur",
+        "realisation": "MAP",
+        "reserve": "Demande distincte d’une commande ferme à qualifier",
+        "contexte": "Achats",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC05\n\n**id**\n\nDEC05\n\n**decision**\n\nProduire la demande fournisseur\n\n**realisation**\n\nMAP\n\n**reserve**\n\nDemande distincte d’une commande ferme à qualifier\n\n**contexte**\n\nAchats\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec05"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Produire la demande fournisseur",
+      "scope": "Achats",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Demande distincte d’une commande ferme à qualifier"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Produire la demande fournisseur",
+      "described_realization": "MAP",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC06",
+      "source_fields": {
+        "id": "DEC06",
+        "decision": "Autoriser une vente sans stock",
+        "realisation": "Politique GBM : non",
+        "reserve": "Contrôle technique et stock de référence non établis",
+        "contexte": "Ventes GBM",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC06\n\n**id**\n\nDEC06\n\n**decision**\n\nAutoriser une vente sans stock\n\n**realisation**\n\nPolitique GBM : non\n\n**reserve**\n\nContrôle technique et stock de référence non établis\n\n**contexte**\n\nVentes GBM\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec06"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Autoriser une vente sans stock",
+      "scope": "Ventes périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Contrôle technique et stock de référence non établis"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Autoriser une vente sans stock",
+      "described_realization": "Politique périmètre historique de Beaumanoir : non",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC07",
+      "source_fields": {
+        "id": "DEC07",
+        "decision": "Prioriser entre demandes de vente",
+        "realisation": "Politique GBM : ordre d’arrivée",
+        "reserve": "File et périmètre de protection non définis",
+        "contexte": "Ventes GBM",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC07\n\n**id**\n\nDEC07\n\n**decision**\n\nPrioriser entre demandes de vente\n\n**realisation**\n\nPolitique GBM : ordre d’arrivée\n\n**reserve**\n\nFile et périmètre de protection non définis\n\n**contexte**\n\nVentes GBM\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec07"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Prioriser entre demandes de vente",
+      "scope": "Ventes périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "File et périmètre de protection non définis"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Prioriser entre demandes de vente",
+      "described_realization": "Politique périmètre historique de Beaumanoir : ordre d’arrivée",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC08",
+      "source_fields": {
+        "id": "DEC08",
+        "decision": "Reprioriser pour un client Gold",
+        "realisation": "Non exercé dans le fonctionnement GBM décrit",
+        "reserve": "Ne pas inventer fonction équivalente à ARun",
+        "contexte": "Ventes GBM",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC08\n\n**id**\n\nDEC08\n\n**decision**\n\nReprioriser pour un client Gold\n\n**realisation**\n\nNon exercé dans le fonctionnement GBM décrit\n\n**reserve**\n\nNe pas inventer fonction équivalente à ARun\n\n**contexte**\n\nVentes GBM\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec08"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Reprioriser pour un client Gold",
+      "scope": "Ventes périmètre historique de Beaumanoir",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Ne pas inventer fonction équivalente à ARun"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Reprioriser pour un client Gold",
+      "described_realization": "Non exercé dans le fonctionnement périmètre historique de Beaumanoir décrit",
+      "exercise_status": "not_exercised_in_described_scope"
+    },
+    {
+      "id": "DEC09",
+      "source_fields": {
+        "id": "DEC09",
+        "decision": "Exclure définitivement un mauvais payeur",
+        "realisation": "Acteur/application non établis",
+        "reserve": "Avant exclusion, traitement identique ; procédure externe non décrite",
+        "contexte": "B2B / frontière",
+        "source": "U10"
+      },
+      "source_record_text": "## DEC09\n\n**id**\n\nDEC09\n\n**decision**\n\nExclure définitivement un mauvais payeur\n\n**realisation**\n\nActeur/application non établis\n\n**reserve**\n\nAvant exclusion, traitement identique ; procédure externe non décrite\n\n**contexte**\n\nB2B / frontière\n\n**source**\n\nU10",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec09"
+      },
+      "source_refs": [
+        "U10"
+      ],
+      "name": "Exclure définitivement un mauvais payeur",
+      "scope": "B2B / frontière",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Avant exclusion, traitement identique ; procédure externe non décrite"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Exclure définitivement un mauvais payeur",
+      "described_realization": "Acteur/application non établis",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC10",
+      "source_fields": {
+        "id": "DEC10",
+        "decision": "Rechercher d’abord une solution entrepôt",
+        "realisation": "Chaîne commerce non localisée précisément",
+        "reserve": "Le stock est présent dans UR ; calculateur exact inconnu",
+        "contexte": "eCommerce",
+        "source": "U04"
+      },
+      "source_record_text": "## DEC10\n\n**id**\n\nDEC10\n\n**decision**\n\nRechercher d’abord une solution entrepôt\n\n**realisation**\n\nChaîne commerce non localisée précisément\n\n**reserve**\n\nLe stock est présent dans UR ; calculateur exact inconnu\n\n**contexte**\n\neCommerce\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec10"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Rechercher d’abord une solution entrepôt",
+      "scope": "eCommerce",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Le stock est présent dans UR ; calculateur exact inconnu"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Rechercher d’abord une solution entrepôt",
+      "described_realization": "Chaîne commerce non localisée précisément",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC11",
+      "source_fields": {
+        "id": "DEC11",
+        "decision": "Déterminer les magasins éligibles",
+        "realisation": "Chaîne SFS non localisée précisément",
+        "reserve": "Stock + participation + quota",
+        "contexte": "eCommerce/SFS",
+        "source": "U04"
+      },
+      "source_record_text": "## DEC11\n\n**id**\n\nDEC11\n\n**decision**\n\nDéterminer les magasins éligibles\n\n**realisation**\n\nChaîne SFS non localisée précisément\n\n**reserve**\n\nStock + participation + quota\n\n**contexte**\n\neCommerce/SFS\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec11"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Déterminer les magasins éligibles",
+      "scope": "eCommerce/SFS",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Stock + participation + quota"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Déterminer les magasins éligibles",
+      "described_realization": "Chaîne SFS non localisée précisément",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC12",
+      "source_fields": {
+        "id": "DEC12",
+        "decision": "Classer les magasins",
+        "realisation": "Chaîne SFS non localisée précisément",
+        "reserve": "Moins sollicité ; métrique inconnue",
+        "contexte": "eCommerce/SFS",
+        "source": "U04"
+      },
+      "source_record_text": "## DEC12\n\n**id**\n\nDEC12\n\n**decision**\n\nClasser les magasins\n\n**realisation**\n\nChaîne SFS non localisée précisément\n\n**reserve**\n\nMoins sollicité ; métrique inconnue\n\n**contexte**\n\neCommerce/SFS\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec12"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Classer les magasins",
+      "scope": "eCommerce/SFS",
+      "evidence_status": "unknown",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Moins sollicité ; métrique inconnue"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Classer les magasins",
+      "described_realization": "Chaîne SFS non localisée précisément",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC13",
+      "source_fields": {
+        "id": "DEC13",
+        "decision": "Accepter la préparation/expédition",
+        "realisation": "Magasin sollicité",
+        "reserve": "Rôle humain et application exacts non fournis",
+        "contexte": "SFS",
+        "source": "U04"
+      },
+      "source_record_text": "## DEC13\n\n**id**\n\nDEC13\n\n**decision**\n\nAccepter la préparation/expédition\n\n**realisation**\n\nMagasin sollicité\n\n**reserve**\n\nRôle humain et application exacts non fournis\n\n**contexte**\n\nSFS\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec13"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Accepter la préparation/expédition",
+      "scope": "SFS",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Rôle humain et application exacts non fournis"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Accepter la préparation/expédition",
+      "described_realization": "Magasin sollicité",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC14",
+      "source_fields": {
+        "id": "DEC14",
+        "decision": "Annuler tentative et solliciter suivant",
+        "realisation": "Chaîne SFS",
+        "reserve": "Refus ou 15 minutes ; aucune annulation vente",
+        "contexte": "SFS",
+        "source": "U04;U05"
+      },
+      "source_record_text": "## DEC14\n\n**id**\n\nDEC14\n\n**decision**\n\nAnnuler tentative et solliciter suivant\n\n**realisation**\n\nChaîne SFS\n\n**reserve**\n\nRefus ou 15 minutes ; aucune annulation vente\n\n**contexte**\n\nSFS\n\n**source**\n\nU04;U05",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec14"
+      },
+      "source_refs": [
+        "U04",
+        "U05"
+      ],
+      "name": "Annuler tentative et solliciter suivant",
+      "scope": "SFS",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Refus ou 15 minutes ; aucune annulation vente"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Annuler tentative et solliciter suivant",
+      "described_realization": "Chaîne SFS",
+      "exercise_status": "subject_to_source_reservations"
+    },
+    {
+      "id": "DEC15",
+      "source_fields": {
+        "id": "DEC15",
+        "decision": "Débloquer la situation par intervention",
+        "realisation": "Responsable commercial marque",
+        "reserve": "Appelle magasins ; pouvoirs non détaillés",
+        "contexte": "SFS exception",
+        "source": "U04"
+      },
+      "source_record_text": "## DEC15\n\n**id**\n\nDEC15\n\n**decision**\n\nDébloquer la situation par intervention\n\n**realisation**\n\nResponsable commercial marque\n\n**reserve**\n\nAppelle magasins ; pouvoirs non détaillés\n\n**contexte**\n\nSFS exception\n\n**source**\n\nU04",
+      "source_locator": {
+        "path": "connaissance/11-responsabilites-decision.md",
+        "anchor": "dec15"
+      },
+      "source_refs": [
+        "U04"
+      ],
+      "name": "Débloquer la situation par intervention",
+      "scope": "SFS exception",
+      "evidence_status": "declared",
+      "architecture_intent": "as_is",
+      "observed_at": null,
+      "limitations": [
+        "Appelle magasins ; pouvoirs non détaillés"
+      ],
+      "source_category": "decision_responsibilities",
+      "classification_basis": "Qualification de migration à partir du registre et de ses réserves ; aucune observation de déploiement. Les champs source sont conservés intégralement.",
+      "correction_refs": [],
+      "correction_context": [],
+      "kind": "decision_responsibility",
+      "decision": "Débloquer la situation par intervention",
+      "described_realization": "Responsable commercial marque",
+      "exercise_status": "subject_to_source_reservations"
+    }
+  ],
+  "exclusions": [],
+  "limitations": [
+    "as_of est la date de publication de cet état de connaissance, pas une attestation de fraîcheur des SI ; aucune date d’observation opérationnelle vérifiée n’est disponible.",
+    "Les descriptions sont issues de récits et registres. declared ne signifie pas observed ; inconnues, réserves et périmètres source sont conservés.",
+    "source_fields et source_record_text sont des transcriptions de provenance : leurs abréviations et formulations historiques restent intactes ; les champs de lecture utilisent les libellés canoniques.",
+    "Une source ou destination textuelle non résolue ne crée pas un nouveau composant ni une interface directe. Une organisation n’est pas un système.",
+    "Les catégories et statuts de migration qualifient la preuve disponible ; ils n’adoptent aucune architecture cible."
+  ],
+  "shared_context": {
+    "path": "modeles/panorama-as-is/shared-2026-09-13.1.json",
+    "sha256": "67ab5928ad8dd1e29aa54a338cd5bdb27e3fa8861281c8723f863c7cc32403fb",
+    "relationship_status": "context_only",
+    "note": "Référence de contexte ; aucune relation de déploiement ou interface avec chaque SI n’est déduite de ce partage."
+  }
+}

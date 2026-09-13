@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "sarenza-si",
+  "space": "panorama-as-is",
+  "version": "2026-09-13.1",
+  "as_of": "2026-09-13",
+  "observed_at": null,
+  "assessment_status": "not_assessed",
+  "source_files": [
+    {
+      "path": "connaissance/07-composants.md",
+      "sha256": "1abde7fd576d510380efbb9ed055354eda0739337fba5afb52455ee69ccb98bf"
+    },
+    {
+      "path": "connaissance/08-flux.md",
+      "sha256": "11d06358338df5c42b08f0d4bb78e1792e7b22674c0106f4ab9e8baaa1b59c94"
+    },
+    {
+      "path": "connaissance/10-autorites-information.md",
+      "sha256": "a2da14023a030252019f389ea9ba48e724335e8f5b473c5fc6d769ae194de5a2"
+    },
+    {
+      "path": "connaissance/11-responsabilites-decision.md",
+      "sha256": "7527d1d21bddcd319eb36964b1fab2d0f5d45347724757978ab89095449364b3"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    }
+  ],
+  "objects": [],
+  "flows": [],
+  "information_authorities": [],
+  "decision_responsibilities": [],
+  "exclusions": [
+    {
+      "record_id": "SI-SAR",
+      "reason": "Sarenza n’est pas encore traité ; mention source conservée à instruire.",
+      "preserved_in": "modeles/backlog/panorama-candidates.json"
+    },
+    {
+      "record_id": "FL21",
+      "reason": "Sarenza n’est pas encore traité ; mention source conservée à instruire.",
+      "preserved_in": "modeles/backlog/panorama-candidates.json"
+    },
+    {
+      "record_id": "INF17",
+      "reason": "Sarenza n’est pas encore traité ; mention source conservée à instruire.",
+      "preserved_in": "modeles/backlog/panorama-candidates.json"
+    }
+  ],
+  "limitations": [
+    "as_of est la date de publication de cet état de connaissance, pas une attestation de fraîcheur des SI ; aucune date d’observation opérationnelle vérifiée n’est disponible.",
+    "Les descriptions sont issues de récits et registres. declared ne signifie pas observed ; inconnues, réserves et périmètres source sont conservés.",
+    "source_fields et source_record_text sont des transcriptions de provenance : leurs abréviations et formulations historiques restent intactes ; les champs de lecture utilisent les libellés canoniques.",
+    "Une source ou destination textuelle non résolue ne crée pas un nouveau composant ni une interface directe. Une organisation n’est pas un système.",
+    "Les catégories et statuts de migration qualifient la preuve disponible ; ils n’adoptent aucune architecture cible."
+  ],
+  "assessment_reason": "Panorama Sarenza non traité. Les trois mentions initiales SI-SAR, FL21 et INF17 restent à instruire dans le backlog ; aucune cartographie As Is n’est déduite de ces mentions.",
+  "shared_context": {
+    "path": "modeles/panorama-as-is/shared-2026-09-13.1.json",
+    "sha256": "67ab5928ad8dd1e29aa54a338cd5bdb27e3fa8861281c8723f863c7cc32403fb",
+    "relationship_status": "context_only",
+    "note": "Référence de contexte ; aucune relation de déploiement ou interface avec chaque SI n’est déduite de ce partage."
+  }
+}
