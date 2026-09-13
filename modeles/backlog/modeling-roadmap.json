@@ -4,7 +4,9 @@
   "space": "backlog",
   "as_of": "2026-09-13",
   "source_refs": [
-    "U112"
+    "U112",
+    "U140",
+    "U141"
   ],
   "current_focus": [
     "domain",
@@ -14,14 +16,14 @@
     {
       "id": "EXT-HIGHER-LEVEL",
       "subject": "grouping_above_domains",
-      "state": "planned",
+      "state": "structure_prepared",
       "candidate_terms": [
         "Universe"
       ],
-      "name_state": "not_decided",
-      "semantic_definition_state": "not_defined",
-      "instantiate_now": false,
-      "note": "Niveau supérieur demandé ; nom Univers envisagé, sans adoption. Distinguer group_role=urbanism_level et group_role=presentation."
+      "name_state": "decided",
+      "semantic_definition_state": "partly_defined",
+      "instantiate_now": true,
+      "note": "U141 instancie Supply et Case comme groupes urbanism_level, level_ref universe. Business References reste un groupe de présentation ; détails de définition et rattachements proposés."
     },
     {
       "id": "EXT-BUSINESS-ENTITIES",
@@ -31,7 +33,7 @@
       "name_state": "not_applicable",
       "semantic_definition_state": "partly_defined",
       "instantiate_now": false,
-      "note": "Types object, document et event prévus. Leur inventaire et leurs liens réels avec les capacités seront explorés ensuite. Les illustrations existantes ne constituent pas cet inventaire."
+      "note": "U141 : prévoir Case (process) et Order (transactional), leur rattachement caractérisé sans cardinalité présumée. Inventaire complet objets/documents/événements différé ; illustrations distinctes."
     },
     {
       "id": "EXT-QUALIFIED-LINKS",
@@ -41,7 +43,7 @@
       "name_state": "not_applicable",
       "semantic_definition_state": "not_defined",
       "instantiate_now": false,
-      "note": "Relations explicites capacité vers capacité, objet, document ou événement, avec qualification du sens, rôle, conditions, effets et périmètre. relates-to est un type technique générique, pas une relation métier constatée. Aucun nouveau lien réel créé."
+      "note": "U141 : lien caractérisé D07.c vers D04.h dans le backlog. Lien Case/Order préparé conceptuellement, objets et cardinalités différés ; ne pas assimiler demande Case et Order."
     },
     {
       "id": "EXT-APPLICABILITY",
@@ -55,8 +57,8 @@
     }
   ],
   "limitations": [
-    "La préparation de structure ne valide aucun nouveau niveau, objet ou lien métier.",
     "Le travail courant reste domaine/capacité.",
-    "La cible FLOW et l’existant des trois SI ne sont pas fusionnés."
+    "La cible FLOW et l’existant des trois SI ne sont pas fusionnés.",
+    "U141 adopte le principe Supply/Case et les quatre capacités D04 dans leur portée ; ne valide pas automatiquement les détails des objets et liens."
   ]
 }

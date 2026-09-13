@@ -23,8 +23,6 @@
   },
   "aliases": {
     "D01": "stock physique logique futur inventaire",
-    "D01.a": "quantités position stock physique logique",
-    "D01.b": "mouvements stock états",
     "D01.c": "visibilité stock consolidation",
     "D01.d": "inventaire comptage counting stocktaking physical inventory rapprochement écart",
     "D02.b": "protection allocation ressource quota",
@@ -38,7 +36,8 @@
     "D11": "accord contrat conditions agreement",
     "D08": "article produit SKU",
     "D12": "catalogue prix zone",
-    "D13": "réseau lieu point logistique entrepôt fulfillment"
+    "D13": "réseau lieu point logistique entrepôt fulfillment",
+    "D01.e": "quantités position stock physique logique mouvements états suivi inventory tracking"
   },
   "confirmation": "D03.b",
   "steps": [

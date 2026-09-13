@@ -119,7 +119,7 @@ def compile_snapshot(snapshot, decisions, version, publication_refs):
         f"Les {sum(n['kind']=='capability' for n in release['nodes'])} capacités du modèle figé sont publiées ; la publication ne valide pas leurs définitions, noms ou rattachements.",
         'approved_fields et les décisions associées délimitent les aspects validés ; proposed_fields restent à valider.',
         'Les validations contextuelles restent partielles ; le réexamen du rattachement de Reservation demeure visible.',
-        'Les alternatives P82/P84 et les illustrations restent dans le backlog.',
+        'Les alternatives non intégrées et les illustrations restent dans le backlog.',
         'Le modèle processus détaillé reste à construire ; les autorités et frontières ouvertes ne sont pas arbitrées par cette publication.'
     ]
     return release

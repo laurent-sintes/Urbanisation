@@ -7,11 +7,15 @@ import html
 import json
 import re
 import unicodedata
+import sys
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
 SCHEMA_VERSION = 2
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+if str(REPOSITORY_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPOSITORY_ROOT))
+from scripts.release_catalog import resolve_release, catalog
 MAP_PATH = "connaissance/25-domaines-coeur-et-epreuve-recits.md"
 MODEL_DIRECTORY = "modeles"
 SPACES = {"backlog", "release"}
@@ -89,12 +93,15 @@ def _read_corpus(root: Path) -> dict[str, bytes]:
     return {path: resolve_source(root, path).read_bytes() for path in source_paths(root)}
 
 
-def _model_path(root: Path, space: str) -> str:
+def _model_path(root: Path, space: str, version=None) -> str:
     if space not in SPACES:
         raise ModelError("Espace inconnu : choisir release ou backlog.")
     if space == "backlog":
         return "modeles/backlog/model.json"
-    pointer = _read_json(root, "modeles/release/current.json")
+    try:
+        pointer = resolve_release(root / 'modeles/release', version)
+    except (ValueError, OSError, KeyError) as exc:
+        raise ModelError(str(exc)) from exc
     relative = pointer.get("path")
     if not isinstance(relative, str) or not relative.endswith("/model.json"):
         raise ModelError("Le pointeur de release ne désigne pas un model.json versionné.")
@@ -123,7 +130,7 @@ def _read_json(root: Path, relative: str) -> dict:
     return value
 
 
-def get_revision(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE) -> str:
+def get_revision(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE, version=None) -> str:
     root = Path(root).resolve()
     if space == "panorama-as-is":
         index = _read_json(root, "modeles/panorama-as-is/current.json")
@@ -131,7 +138,9 @@ def get_revision(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE) -> st
         if index.get("shared", {}).get("path"):
             paths.append(index["shared"]["path"])
     else:
-        paths = [_model_path(root, space)]
+        paths = [_model_path(root, space, version)]
+        if space == 'release' and (root/'modeles/release/index.json').exists():
+            paths.append('modeles/release/index.json')
     digest = hashlib.sha256()
     # Evidence edits do not change model identity. Only the selected JSON model
     # and presentation configuration affect this view; no cross-space fallback.
@@ -179,10 +188,10 @@ def _source_index(corpus: dict[str, bytes]) -> tuple[list[dict], dict[str, dict]
     return files, references
 
 
-def load_model(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE) -> dict:
+def load_model(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE, version=None) -> dict:
     """Load one JSON space without enriching its fields from any other space."""
     root = Path(root).resolve()
-    model_path = _model_path(root, space)
+    model_path = _model_path(root, space, version)
     value = _read_json(root, model_path)
     if value.get("schema_version") != "1.0.0" or value.get("space") != space:
         raise ModelError("Schéma ou espace du modèle JSON incompatible.")
@@ -211,7 +220,7 @@ def load_model(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE) -> dict
         "schemaVersion": SCHEMA_VERSION,
         "date": value.get("as_of", value.get("date", "")),
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "revision": get_revision(root, space),
+        "dataRevision": get_revision(root, space, version),
         "sourcePath": model_path,
         "sourceFiles": source_files,
         "sourceReferences": references,

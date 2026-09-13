@@ -80,6 +80,17 @@
               "minLength": 1
             },
             "uniqueItems": true
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "last_modified": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+          },
+          "content_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
           }
         },
         "required": [
@@ -254,6 +265,23 @@
         "note"
       ],
       "additionalProperties": false
+    },
+    "revision": {
+      "type": "integer"
+    },
+    "last_modified": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "element_versioning": {
+      "const": 1
+    },
+    "lifecycle_policy": {
+      "const": 1
     }
   },
   "required": [
@@ -420,6 +448,17 @@
         "level_ref": {
           "type": "string",
           "minLength": 1
+        },
+        "last_modified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/lifecycle"
         }
       },
       "required": [
@@ -528,6 +567,17 @@
             "meaning"
           ],
           "additionalProperties": false
+        },
+        "last_modified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/lifecycle"
         }
       },
       "required": [
@@ -538,6 +588,63 @@
         "target_id",
         "source_refs",
         "review"
+      ],
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "ai_proposed",
+            "under_instruction",
+            "urbanist_validated"
+          ]
+        },
+        "recorded_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+        },
+        "recorded_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "validated_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "value_sha256": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "state",
+        "recorded_at",
+        "recorded_by",
+        "source_refs",
+        "validated_fields",
+        "value_sha256",
+        "note"
       ],
       "additionalProperties": false
     }

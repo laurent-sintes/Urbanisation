@@ -4,30 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#24634c">
-<title>FLOW Atlas — Explorer le modèle</title>
+<title>FLOW Atlas — Urbanisation</title>
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/styles.css">
 <script type="module" src="/app.js"></script>
 </head>
 <body>
 <div id="flow-atlas" lang="fr" aria-label="FLOW Atlas, explorateur du modèle métier">
+  <a class="fa-skip" href="#fa-content">Aller à la fiche</a>
   
   <header class="fa-top">
+    <button class="fa-button fa-tree-open" id="fa-tree-open" aria-controls="fa-rail" aria-expanded="false">Arbre</button>
     <div class="fa-brand"><i data-lucide="waypoints" aria-hidden="true"></i> FLOW <span>ATLAS</span></div>
     <label class="fa-searchbox"><i data-lucide="search" aria-hidden="true"></i><span class="fa-sr">Rechercher dans tout le modèle</span><input id="fa-search" type="search" autocomplete="off" placeholder="Rechercher dans le modèle…"><kbd>Ctrl K</kbd></label>
     <button class="fa-button" id="fa-refresh" type="button" aria-label="Actualiser depuis les modèles JSON">Actualiser</button><div class="fa-top-note" id="fa-date">Chargement du modèle…</div>
   </header>
   <div class="fa-body">
-    <aside class="fa-rail" aria-label="Navigation du modèle">
-      <div><label class="fa-eyebrow" for="fa-space">Espace de travail</label><select id="fa-space" class="fa-space-select"><option value="backlog">Backlog</option><option value="release">Release</option><option value="panorama-as-is">Panorama As Is</option></select></div><div><div class="fa-eyebrow">Parcourir</div><button class="fa-nav" data-go="panorama" hidden>Panorama des SI</button><button class="fa-nav" data-go="transactional"><i data-lucide="layers" aria-hidden="true"></i>Socle transactionnel</button><button class="fa-nav" data-go="process"><i data-lucide="route" aria-hidden="true"></i>Processus</button></div>
-      <div><div class="fa-eyebrow">Comprendre</div><button class="fa-nav" data-journey="start"><i data-lucide="compass" aria-hidden="true"></i>Suivre une promesse</button></div>
-      <div class="fa-rail-history"><div class="fa-eyebrow">Récemment exploré</div><div id="fa-recent"></div></div>
-      <footer class="fa-rail-foot"><strong id="fa-space-note">Réflexion et conception</strong><span id="fa-version">Carte courante</span><br>Les statuts restent visibles.</footer>
+    <aside class="fa-rail" id="fa-rail" aria-label="Arbre du modèle">
+      <div class="fa-tree-heading"><strong>Explorer le modèle</strong><button class="fa-icon-btn" id="fa-tree-close" aria-label="Fermer l’arbre">×</button></div>
+      <div><label class="fa-eyebrow" for="fa-publication">Version publiée</label><select id="fa-publication" class="fa-space-select" aria-label="Version de l’urbanisation"></select></div>
+      <div id="fa-tree-scroll"><div id="fa-tree" role="tree" aria-label="Urbanisation publiée"></div></div>
+      <footer class="fa-rail-foot"><strong id="fa-space-note">Urbanisation</strong><span id="fa-version">Carte courante</span><p>Les groupes de présentation sont signalés dans l’arbre.</p></footer>
     </aside>
-    <main class="fa-main">
+    <div id="fa-rail-resize" role="separator" aria-label="Largeur de l’arbre" aria-orientation="vertical" aria-valuemin="240" aria-valuemax="420" aria-valuenow="300" tabindex="0"></div>
+    <button id="fa-tree-backdrop" tabindex="-1" aria-label="Fermer l’arbre" hidden></button>
+    <main class="fa-main" id="fa-main">
       <div class="fa-navline"><div class="fa-history"><button class="fa-icon-btn" id="fa-back" aria-label="Revenir à la visite précédente"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button class="fa-icon-btn" id="fa-forward" aria-label="Revenir à la visite suivante"><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><nav class="fa-breadcrumb" id="fa-breadcrumb" aria-label="Chemin dans le modèle"></nav></div>
       <div id="fa-journey" hidden></div>
-      <div id="fa-notice" role="status" aria-live="polite"></div><div id="fa-content"><p>Chargement du modèle…</p></div>
+      <div id="fa-notice" role="status" aria-live="polite"></div><div id="fa-content" tabindex="-1"><p>Chargement du modèle…</p></div>
       <div id="fa-announcement" class="fa-sr" role="status" aria-live="polite"></div>
     </main>
   </div>

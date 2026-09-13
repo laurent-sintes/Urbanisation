@@ -981,3 +981,93 @@ Contrôle Codex du 2026-09-09. Les identifiants ELM restent locaux. Les sources 
 - Nature : principe de définition et décomposition des capacités.
 - Sens consulté, reformulé : l’objet focal d’une capacité reste celui de ses sous-capacités ; l’exemple Customer ne prend pas en charge les accords ni les produits.
 - Adaptation et limite : préserver les sens sous un regroupement de présentation. Ce passage ne prescrit ni un domaine par référentiel ni la hiérarchie locale Univers/Domaine/Capacité ; ne pas présenter notre conteneur comme capacité parente certifiée Guild. Aucun modèle retail réservé aux membres consulté.
+
+
+### ELM103
+
+- Référence : MKT13 SAP S/4HANA ; leçon évolutive, édition exacte non précisée.
+- Libellés natifs : Goods Movements ; Managing Stocks by Quantity.
+- Nature : vocabulaire et description fonctionnelle de produit, pas rang RBA établi.
+- Source : [Defining Inventory Management and Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), sections Managing Stocks by Quantity, Planning, Entry, and Documentation of Goods Movements et Documents for Goods Movements ; texte consulté le 2026-09-13.
+- Sens consulté, reformulé : SAP distingue les transactions modifiant le stock, les quantités mises à jour et les documents justificatifs. Les réceptions, sorties, transferts et changements de qualification illustrent les mouvements ; ces derniers peuvent exister sans déplacement physique.
+- Adaptation : appui partiel à la séparation locale mouvements/état. La documentation inclut valorisation et effets comptables, hors périmètre des capacités proposées ici. Ne prescrit pas deux capacités autonomes ni deux composants.
+
+### ELM104
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive, mise à jour affichée 2025-08-29.
+- Libellés natifs : Inventory transactions, Inventory movements, Inventory journals.
+- Nature : transactions et journaux de produit ; aucune hiérarchie de capacités établie.
+- Source : [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals), introduction et Types of inventory journals ; texte consulté le 2026-09-13, malgré le bandeau générique de connexion.
+- Sens consulté, reformulé : les journaux enregistrent des transactions de stock de plusieurs types. Movement désigne aussi un type particulier de journal, avec traitement comptable spécifique ; ne pas assimiler ce type à l’ensemble des mouvements locaux.
+- Adaptation : Inventory Movements est un nom local proposé pour la capacité à enregistrer et qualifier les mouvements. Les journaux et leur workflow ne deviennent pas des capacités supplémentaires.
+
+### ELM105
+
+- Référence : MKT14, produit Microsoft Dynamics 365 Business Central, distinct de Supply Chain Management ; documentation évolutive, édition exacte inconnue.
+- Libellé natif : Item Ledger Entry.
+- Nature : écriture dans un modèle de produit ; pas une Business Capability.
+- Source : [Design Details: Inventory Posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting), introduction et distinction quantity/value postings ; texte consulté le 2026-09-13.
+- Sens consulté, reformulé : les variations de quantités sont enregistrées dans les item ledger entries, les variations de valeur dans les value entries. Les écritures d’application relient entrées et sorties.
+- Adaptation : Ledger peut éclairer le registre métier des mouvements. Inventory Ledger Management reste un nom de capacité proposé localement, pas un libellé Microsoft attesté. Aucune importation des règles de valorisation ou du schéma technique.
+### ELM106
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive sans édition figée. Contrôle 2026-09-13.
+- Libellés : Sales Agreement, Purchase Agreement, Commitment types, Sales Order, Purchase Order. Nature : objets et règles de produit.
+- Sources et localisateurs : [Sales agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-agreements) et [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), introduction, Commitment types et application aux commandes ; textes lus.
+- Sens reformulé : les Agreements portent des engagements de quantité ou valeur que consomment les commandes liées. Commitment ne signifie pas exclusivement Order.
+- Adaptation : appui sémantique à la distinction Agreement/Order, correction C76 ; aucun rang de capacité ni responsabilité FLOW déduit.
+
+### ELM107
+
+- Référence : MKT13 SAP S/4HANA ; Manage Sales Contracts (édition exacte non obtenue) et Purchase Orders, version affichée 2025 FPS01. Contrôle 2026-09-13.
+- Nature : objets et fonctionnalités de produit. Libellés Sales Contract, Sales Order, Purchase Order.
+- Sources, liens et localisateurs : [note comparative](orders-agreements-commitments.md), section Sources consultées et limites. Extraits indexés seulement ; ouvertures directes sans texte exploitable.
+- Sens reformulé : Sales Order créée à partir d’un Sales Contract ; Purchase Order comme instruction de fourniture. Appui lexical limité, aucune équivalence de domaine ou rang RBA établi.
+
+### ELM108
+
+- Référence : Oracle Fusion Cloud Order Management, édition 25C ; complément produit au corpus Oracle Fusion MKT20, distinct de GOP et de MKT05 Retail Reference Model.
+- Source : [How Order Management Transforms Source Orders Into Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/how-order-management-transforms-source-orders-into-sales-orders.html), transformation et Parts of Sales Orders You Can Use After Transformation ; texte lu le 2026-09-13.
+- Nature : objets et orchestration de produit. Libellés Source Order, Order line, Orchestration process.
+- Sens reformulé : la commande reçue ou saisie est transformée pour sa réalisation ; structure source et structure opérationnelle peuvent différer.
+- Adaptation : appui partiel à la distinction commande source/réalisation ; pas d’équivalence globale à notre architecture, pas d’unification achat/vente démontrée.
+### ELM109
+
+- Références : MKT04 SAP RBA cité par un article d’architecture ; MKT13 S/4HANA vue produit. Sources S1–S3, liens et localisateurs dans [la localisation des Orders](localisation-orders-cartographie.md). Contrôle du 2026-09-13.
+- Libellés : Customer → Sales → Customer Order and Contract Management ; Sales order management ; Sourcing and Procurement → Operational Procurement → Purchase Order Processing.
+- Nature et accès : premier chemin dans un extrait indexé, article 403, édition RBA inconnue ; deuxième dans la page produit Sales lue ; troisième dans un extrait de navigation de configuration, ouverture sans texte. Ne pas assimiler leurs niveaux.
+- Adaptation : appui au placement distinct des commandes client et achat ; aucun domaine générique Orders ni rang uniforme établi.
+
+### ELM110
+
+- Référence : MKT14 Microsoft Dynamics 365, documentation évolutive. Sources S4–S6, liens dans [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.
+- Libellés : Order to cash / Manage sales orders ; Source to pay / Procure goods and services ; Transfer orders.
+- Nature : les deux premiers sont des positions dans le catalogue de processus ; le troisième est un objet et un paramétrage de produit. Les commandes d’achat sont traitées dans Procure goods and services ; les transferts d’entrepôts mobilisent Inventory management et Master planning.
+- Adaptation : correspondance de couverture, pas domaines métier équivalents. Aucun retour automatique à une structure locale Source to Pay.
+
+### ELM111
+
+- Référence : MKT20, complément Oracle Fusion Order Management et Procurement 25C. Sources S7–S8 de [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.
+- Libellés et nature : Source Order, Order Management, Purchase Orders ; objets et espaces de produits.
+- Sens : représentation de commande transformée pour sa réalisation, ELM108 ; espace distinct des commandes d’achat dans Procurement.
+- Adaptation : distinguer origine et réalisation ; ne pas attribuer toutes les commandes de l’entreprise au produit Order Management ni identifier ce produit au domaine D04.
+
+### ELM112
+
+- Référence : MKT23 IBM Sterling OMS, édition précise non indiquée. [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order, texte lu le 2026-09-13.
+- Libellés : Sales Order 0001, Planned Order 0002, Return Order 0003, Template Order 0004, Purchase Order 0005, Transfer Order 0006, Master Order 0007.
+- Nature : types documentaires natifs de produit. Adaptation : appui à la famille générique locale des Orders, pas preuve d’un domaine autonome, d’un objet universel ou d’une carte de capacités. Distinct d’IBM CBM.
+
+### ELM113
+
+- Référence : MKT19 TM Forum ODA ; [Component Directory](https://www.tmforum.org/oda/directory/components-map), sections Core Commerce Management, Production, Party Management ; carte lue le 2026-09-13, édition globale non affichée.
+- Libellés : TMFC002 Product Order Capture & Validation et TMFC003 Product Order Delivery Orch & Mgt dans Core Commerce Management ; TMFC007 Service Order Management et TMFC011 Resource Order Management dans Production ; TMFC039 Agreement Management dans Party Management.
+- Nature : composants ODA, pas sous-capacités attestées. Page détaillée TMFC007 v1.2.2 inaccessible 403, ne pas revendiquer sa lecture complète.
+- Adaptation : appui à la séparation demande commerciale/demandes de réalisation ; aucune équivalence Product/Service/Resource avec nos objets de commerce et de logistique.
+### ELM114
+
+- Références : MKT13 SAP S/4HANA for Fashion and Vertical Business, cours évolutif sans édition figée ; MKT14 Microsoft Dynamics 365 Supply Chain Management, Delivery schedules mis à jour 2025-05-07 ; MKT23 IBM Sterling OMS, édition inconnue.
+- Sources et localisateurs : [Supply B2B/B2C](supply-b2b-b2c.md), section Constats du marché, liens officiels. Contrôle 2026-09-13 ; SAP et Microsoft textes lus, IBM aperçu indexé et lecture précédente, ouverture directe 403.
+- Nature : fonctions et portée de produits, pas rangs de capacités. Libellés : wholesale/retail, delivery schedules, B2B/B2C.
+- Sens reformulé : socle SAP intégré et segmentation ; échelonnement de quantités sur plusieurs livraisons Microsoft ; portée multi-clients IBM.
+- Adaptation : appui partiel au domaine Order Management commun U140 ; contraintes de satisfaction et échelles différentes à éprouver. Ne prouve ni toutes capacités couvertes ni performances illimitées.

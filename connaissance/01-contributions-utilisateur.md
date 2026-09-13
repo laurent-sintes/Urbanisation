@@ -3111,3 +3111,772 @@ Je souhaite un skill "commit" et un skill "push" qui pousse sur le github distan
 **statut**
 
 Demande de mise sous Git du projet et de création des skills commit et push, avec le dépôt distant indiqué. La création des skills ne constitue pas leur invocation ni une validation métier. Le commit est local ; le push envoie des commits sur le dépôt indiqué lorsqu’il est demandé.
+
+
+## U115
+
+**id**
+
+U115
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Écart des capacités D01 entre Atlas et les échanges
+
+**contexte**
+
+Après la mise sous Git, Laurent signale des noms anciens dans les deux espaces de l’Atlas.
+
+**texte**
+
+Il y a un truc bizarre, quand j'ouvre l'atlas, les capacité en release et en backlog sont identiques et montrent des données anciennes. Quand je te demande dans cedex l'état des capacités du domaine D01, tu me sors les bon noms. Dans l'atlas, ils ne sont pas bons.
+
+**statut**
+
+Signalement d’un écart et demande de correction. Le diagnostic retrouve les six anciennes capacités P81 dans les nœuds JSON et la proposition P82 dans alternatives, alors ignorée par l’interface. Ce constat ne constitue pas une nouvelle validation métier.
+
+## U116
+
+**id**
+
+U116
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Utiliser les cinq capacités D01 dans le backlog
+
+**contexte**
+
+Réponse à la question : « Pour D01, souhaites-tu que la proposition à cinq capacités (Inventory Tracking, Inventory Visibility, Stocktaking, Supply Protection, Reservation) devienne le découpage courant du backlog, avec ses réserves et sans validation métier supplémentaire ? »
+
+**texte**
+
+Oui, utiliser les cinq capacités dans le backlog
+
+**statut**
+
+Choix explicite de la proposition comme découpage courant du backlog. Les réserves restent applicables ; aucune validation métier supplémentaire et aucune publication de release n’est demandée. D01.e est créé pour la réunion de D01.a/D01.b ; leurs identifiants restent historiques et ne sont pas réutilisés. D01.c conserve son identité et devient Inventory Visibility à une nouvelle révision.
+
+
+## U117
+
+**id**
+
+U117
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Auditer tous les domaines et afficher uniquement l’urbanisation publiée
+
+**contexte**
+
+Après la correction de D01 dans le backlog. Laurent demande de revoir la présentation d’Atlas et soupçonne des écarts similaires sur tous les domaines.
+
+**texte**
+
+Je pense qu'il y a des écarts pour tous les domaines
+
+De plus, je ne souhaite pas que l'atlas affiche la backlog, uniquement la release qui doit s'appeler dans l'atlas "urbanisation" tout simplement
+
+**statut**
+
+Demande d’audit étendu et consigne de présentation : Atlas consulte uniquement le modèle publié sous le nom Urbanisation. Le backlog reste l’espace de travail du projet, hors de l’interface. Dans ce contexte de correction de l’Atlas, le modèle corrigé est publié localement afin d’être visible ; cette intégration ne vaut pas validation métier ni push Git.
+
+## U118
+
+**id**
+
+U118
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Intégrer les libellés courts sans changement de sens
+
+**contexte**
+
+Réponse à la question : « Pour D04 à D07, souhaites-tu utiliser les noms courts déjà proposés comme libellés courants non validés (par exemple Commitment Creation, Net Requirements Calculation, Execution Capacity Assessment, Execution Reconciliation), en conservant les définitions et réserves ? Les noms conditionnels qui impliquent une nouvelle responsabilité de décision resteraient à discuter. »
+
+**texte**
+
+Oui, intégrer les renommages sans changement de sens
+
+**statut**
+
+Choix de libellés courants pour onze capacités proposées de D04 à D07 ; conserver leurs définitions, finalités, rattachements et réserves. Ce choix ne constitue pas une validation métier supplémentaire. Coverage Target Decision et Stock Redistribution Decision restent conditionnels, sans renommage automatique de D05.a/c.
+
+
+## U119
+
+**id**
+
+U119
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Release produit le modèle publié et actualise Atlas
+
+**contexte**
+
+Pendant la correction des domaines et le passage d’Atlas à la seule Urbanisation publiée.
+
+**texte**
+
+Quand j'appelle le skill "release", je veux que ça produise la release et que ça publie dans atlas (je ne sais pas si atlas a sont propre référentiel ou s'il tape directement dans le répertoire release). Si Atlas est en train de tourner, je veux que les données se rafraichissent (arret / relance par exemple)
+
+**statut**
+
+Consigne de fonctionnement : une invocation de release couvre production, publication locale et disponibilité dans Atlas. Rafraîchissement obligatoire si Atlas tourne ; arrêt/relance cité comme exemple de moyen. Atlas lit directement le pointeur de release. Le rechargement automatique des données satisfait ce besoin sans redémarrage pour un changement JSON ; relance si nécessaire et contrôle de la version servie. Aucune validation métier ni publication Git implicite.
+
+
+## U120
+
+**id**
+
+U120
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Versionner chaque élément publié
+
+**contexte**
+
+Précisions successives du cycle de publication et de la consultation Atlas.
+
+**texte**
+
+Je veux que tous les éléments du modèle release soient versionnés (auto incrément simple) et avec une date/time last-modified
+
+**statut**
+
+Consigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques.
+
+
+## U121
+
+**id**
+
+U121
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Versionner le modèle et nommer les descripteurs publiés
+
+**contexte**
+
+Précisions successives du cycle de publication et de la consultation Atlas.
+
+**texte**
+
+Le modèle en lui meme doit aussi être versionné. Le fichier current.json doit être nommé avec une version et un horodatage et ces informations doivent doivent être mentionnées dans le fichier aussi en métadonnées. On peut imaginer une petite release note aussi...
+
+**statut**
+
+Consigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques.
+
+
+## U122
+
+**id**
+
+U122
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Choisir une version publiée dans Atlas
+
+**contexte**
+
+Précisions successives du cycle de publication et de la consultation Atlas.
+
+**texte**
+
+Dans Atlas, on pourrait sélectionner la version qu'on veut visualiser dans une dropbox avec la plus récente en premier
+
+**statut**
+
+Consigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques.
+
+
+## U124
+
+**id**
+
+U124
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Vérifier la complétude de D01 et retrouver le ledger évoqué
+
+**contexte**
+
+Après publication du modèle v001, Laurent interroge la fidélité de D01 aux échanges antérieurs.
+
+**texte**
+
+Dans D01, il n'y avait pas 7 capacités voire plus ? Il y avait un ledger il me semble. Et d'autres trucs. Pas sûr que la release ait été bien construite.
+
+**statut**
+
+Souvenir à vérifier et demande d'audit ; ni adoption d'une capacité Ledger ni validation d'un nouveau nombre de capacités. Voir [l'audit D01](../audits/2026-09-13-d01-completude.md).
+
+## U123
+
+**id**
+
+U123
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Format du nom de publication
+
+**contexte**
+
+Précisions successives du cycle de publication et de la consultation Atlas.
+
+**texte**
+
+au lieu de "`urbanisation-v1-20260913T143000Z.json`  ", je préfère "urbanisation-v<version sur 3 digits>-<year>-<month>-<day>-<HHMMSS>.json
+
+**statut**
+
+Consigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques.
+
+
+## U125
+
+**id**
+
+U125
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Séparer les mouvements de stock du suivi de leur état
+
+**contexte**
+
+Suite de l’audit D01 U124 et recherche du vocabulaire des mouvements de stock.
+
+**texte**
+
+Oui, c'est ce qu'on appelle les "mouvements de stock" en français. En anglais comment on dit ? Je pense que ça mérite d'être séparé de l'inventory Tracking
+
+**statut**
+
+Orientation de séparation appliquée comme base de réflexion dans le backlog ; noms anglais et définitions détaillées proposés.
+
+
+## U126
+
+**id**
+
+U126
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Explorer le nom Ledger
+
+**contexte**
+
+Suite de l’audit D01 U124 et recherche du vocabulaire des mouvements de stock.
+
+**texte**
+
+Ledger en anglais ça veut dire quoi ? Ca pourrait correspondre...
+
+**statut**
+
+Question de vocabulaire et piste de nom, sans adoption de Ledger comme libellé de capacité.
+
+
+## U127
+
+**id**
+
+U127
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Proposer Record Inventory Movements
+
+**contexte**
+
+Recherche du nom de la capacité de mouvements de stock, après U125/U126.
+
+**texte**
+
+Record Inventory Movements ?
+
+**statut**
+
+Question et candidat de vocabulaire, sans adoption définitive. Le sens de Sourcing visé par Laurent reste à préciser ; ne pas lui attribuer un choix Event Sourcing.
+
+
+## U128
+
+**id**
+
+U128
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Examiner le mot Sourcing
+
+**contexte**
+
+Recherche du nom de la capacité de mouvements de stock, après U125/U126.
+
+**texte**
+
+Pourquoi pas employer le mot "Sourcing" ?
+
+**statut**
+
+Question et candidat de vocabulaire, sans adoption définitive. Le sens de Sourcing visé par Laurent reste à préciser ; ne pas lui attribuer un choix Event Sourcing.
+
+
+## U129
+
+**id**
+
+U129
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Adopter Record Inventory Movements
+
+**contexte**
+
+Choix du nom de la capacité distincte d’Inventory Tracking après U125–U128.
+
+**texte**
+
+Go pour Record Inventory Movements  !
+
+**statut**
+
+Validation explicite du nom Record Inventory Movements par Laurent. Définition, finalité et frontières détaillées restent proposées. Application au backlog, sans demande de publication.
+
+
+## U130
+
+**id**
+
+U130
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Publier le backlog dans Atlas
+
+**contexte**
+
+Après séparation des mouvements et de l’état du stock et adoption du nom Record Inventory Movements en U129.
+
+**texte**
+
+Lance la release
+
+**statut**
+
+Autorisation explicite de produire et activer une nouvelle release dans Atlas. La publication conserve les statuts métier ; seule l’adoption du nom D01.g provient de U129.
+
+
+## U131
+
+**id**
+
+U131
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Cycle de vie des éléments du modèle
+
+**texte**
+
+Pour le cycle de vie des objets, je te propose la chose suivante :
+
+- Lorsque c'est toi (l'IA) qui trouve des noms, des définitions, etc... l'objet doit être en statut "proposé par l'IA"
+- Lorsqu'on en discute, c'est à dire que tu me montre ce que tu as trouvé et qu'on en parle, le statut devient "en cours d'instruction".
+- Lorsque je te dis "Go" ou "je valide", alors le statut de l'objet passe à "Validé par l'urbaniste"
+
+**statut**
+
+Consigne de fonctionnement adoptée. Les trois états décrivent le cycle de discussion ; la portée de chaque accord reste explicitée. Aucune validation globale des contenus existants ni publication implicite.
+
+
+## U132
+
+**id**
+
+U132
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Auditer l’ergonomie d’Atlas et prévoir un arbre à gauche
+
+**contexte**
+
+Retour de Laurent sur l’application FLOW Atlas après sa réalisation et ses évolutions. Le texte ci-dessous conserve l’orthographe du message ; seule l’entité HTML d’espace après les deux-points de la première ligne est remplacée par un espace.
+
+**texte**
+
+L'ergonomie de l'atlas est à revoir : 
+L'urbanisme est un modèle arborescent et j'aimerais un arbre à gauche.
+De plus dans les pages de détail, les compsants sont tous dockés à droite et très serrés.
+Fais un audit de l'ergonomie.
+
+**statut**
+
+Demande d’audit ergonomique et préférence explicite de navigation par un arbre à gauche. Laurent signale aussi l’étroitesse et la concentration à droite des composants des pages de détail ; l’audit doit examiner ce constat. Cette orientation d’interface ne crée aucun niveau d’urbanisme ni rattachement métier nouveau, ne transforme pas les relations transversales en hiérarchie et ne constitue pas une demande de publication. Résultats et recommandations dans [l’audit ergonomique](../audits/2026-09-13-ergonomie-atlas.md).
+
+
+## U133
+
+**id**
+
+U133
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Retirer les visites récentes de l’interface Atlas
+
+**contexte**
+
+Précision de Laurent pendant l’audit ergonomique demandé en U132.
+
+**texte**
+
+Les visites récentes, on s'en fiche
+
+**statut**
+
+Consigne d’interface : supprimer les visites récentes dans l’évolution d’Atlas. Ne pas proposer de les maintenir dans un accès secondaire. L’audit intègre cette orientation ; aucune modification ni validation du modèle métier et aucune publication demandée.
+## U134
+
+**id**
+
+U134
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Audit D04 et projections des référentiels de la Supply
+
+**contexte**
+
+Laurent interroge le recouvrement de D04 avec Agreement et précise les aptitudes autorisées sur les projections. Texte conservé, notamment le sigle SRC, sans l’assimiler automatiquement à SRM.
+
+**texte**
+
+D04, j'ai l'impression que c'est la meme chose que Agreements (référentiel).
+
+Rappelle toi de ce principe fort : pour la supply, on considère que les référentiels de données ne sont que des projections, les sources de vérité étant gérées par des produits tiers : CRM, SRC, PLM etc. C'est pour ça qu'il ne doit pas y avoir beaucoup de capacités à part des capacité de visibilité, de recherche etc. (lecture uniquement) et au moins une capacité d'ingestion pour chacun.
+
+Fais un audit et dis moi ce que tu en penses.
+
+**statut**
+
+Principe impératif de projections de références maîtrisées à l’extérieur, avec au moins une ingestion par référentiel et des aptitudes de consultation en lecture seule. Cette précision élargit l’ancienne formulation « ingestion seule » ; elle ne valide ni une fusion D04/Agreement ni de nouvelles capacités nommées. Audit dans [D04, Agreement et projections](../audits/2026-09-13-d04-agreement-projections.md). Les autorités sur les commandes restent à préciser, conformément à U98/U100.
+
+
+## U135
+
+**id**
+
+U135
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Réaliser la réorganisation ergonomique d’Atlas
+
+**contexte**
+
+Accord contextuel après l’audit ergonomique U132 et la suppression des visites récentes U133. L’audit recommande un arbre gauche, une fiche métier centrale, des preuves à la demande et la correction des parcours et suggestions de recherche.
+
+**texte**
+
+Go
+
+**statut**
+
+Autorisation de réaliser les corrections d’interface proposées. Aucune nouvelle hiérarchie métier, validation de contenu ni publication de modèle n’est déduite de cet accord.
+## U136
+
+**id**
+
+U136
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Clarifier Commitments, Orders et les usages du marché
+
+**contexte**
+
+Deux messages successifs de Laurent après l’audit D04/Agreement U134, reproduits séparément ci-dessous. La réponse intermédiaire de Codex rapproche D04 des engagements de commandes, sans adopter un renommage.
+
+**texte**
+
+Commitments, ce sont ce qu'on appelle les Orders ? SaleOrder, PurchaseOrder etc ?
+
+Puis :
+
+Du côté du marché, ça ressemble à quoi ?
+
+**statut**
+
+Questions de vocabulaire et demande de comparaison, sans validation de nom ni de frontière. Vérification dans marche/orders-agreements-commitments.md ; les usages Microsoft imposent de ne pas réserver Commitment aux commandes.
+## U137
+
+**id**
+
+U137
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Hypothèse de composition du cadre contractuel et des engagements de période
+
+**contexte**
+
+Laurent reformule sa compréhension après la comparaison U136. Les espaces HTML sont normalisés ; la question conserve son statut d’hypothèse à discuter.
+
+**texte**
+
+Ah je comprends mieux :
+
+- on passe des contrats "cadre" avec les clients ou les fournisseurs (Aggreements)
+- Pour une période commerciale donnée (saison par exemple), on s'engage sur des volumes dans le cadre d'un contrat
+- Un contrat applicable est la composition du contrat cadre et des engagements sur une période
+- Les Orders permettent de consommer / executer le contrat
+
+C'est ça ?
+
+**statut**
+
+Hypothèse en cours d’instruction, sans adoption de trois objets distincts ni changement de domaine. La composition proposée est cohérente à examiner ; Microsoft peut porter période et engagements directement dans un Agreement. Distinguer consommation par commande et réalisation effective. Complément dans marche/orders-agreements-commitments.md.
+## U138
+
+**id**
+
+U138
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Rattacher les engagements contractuels à Agreement
+
+**contexte**
+
+Question de Laurent après U137. L’assistant distingue ensuite contenu contractuel et capacités actuelles D04 relatives aux commandes ; aucune migration n’est réalisée.
+
+**texte**
+
+Si Aggreements porte le contrat complètement, comme chez SAP (Contract), alors agreements doit remplacer commitments, non ?
+
+**statut**
+
+Orientation discutée : les engagements contractuels relèvent d’Agreement projeté depuis ses maîtres externes. Ne pas transférer les capacités de création/révision de commandes de D04 dans le référentiel. La formulation interrogative ne valide pas un nouveau découpage complet ni une équivalence universelle SAP.
+
+## U139
+
+**id**
+
+U139
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Explorer la localisation des Orders dans les cartographies du marché
+
+**contexte**
+
+Demande de recherche après clarification Agreement/Commitment/Order. Texte conservé.
+
+**texte**
+
+Ce que je voudrais savoir maintenant c'est la localisation dans la carto des Orders.
+
+C'est un domaine à part ?
+
+SAP et microsoft, ils en disent quoi ? Et pas que, explore le marché stp
+
+**statut**
+
+Demande de comparaison SAP, Microsoft et autres références pour instruire un éventuel domaine transactionnel des commandes. Aucun renommage, domaine, liste de capacités ou publication adopté. Résultat dans marche/localisation-orders-cartographie.md, CMP064.
+## U140
+
+**id**
+
+U140
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Univers Case et Supply, Order Management commun et couverture B2B/B2C
+
+**contexte**
+
+Laurent précise l’orientation après la comparaison U139. Espaces HTML normalisés ; texte conservé.
+
+**texte**
+
+C'était mon hypothèse de départ :
+
+- séparer le Case (la demande), de l'objet de pilotage de la supply (Order) => Comme TM Forum
+- Le Case sera traité plus tard dans "l'univers Case". Aujourd'hui on explore l'univers "Supply"
+- On peut regrouper les orders de toute nature, dans un domaine Order Management. C'est le moteur de décision et de workflow qui organisera les différences de comportements (DMN)
+- Par contre, il faudrait que l'Order Management gère des commandes de toute sorte, y compris les retours et surtout n'est pas cantonné au B2C, il doit gérer tout type de clients et surtout tout types de volumes.
+
+Dans le marché, au niveau supply, il y a une différence entre B2C et B2B ? Au niveau commercial, c'est possible mais au niveau Supply Management, ça me paraitrait étrange, mais qui sait ?
+
+**statut**
+
+Orientation explicite : Case et Order distincts, exploration de l’univers Supply prioritaire, univers Case ultérieur ; Order Management commun à toutes natures de commandes, retours compris, clients et volumes. Nom Order Management appliqué à D04 dans le backlog ; définition reformulée par Codex proposée, anciennes capacités encore à revoir. Aucune cardinalité Case/Order, performance illimitée, solution de moteur ou équivalence exacte TM Forum validée. Recherche dans marche/supply-b2b-b2c.md, CMP065 ; aucune publication.
+## U141
+
+**id**
+
+U141
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Appliquer la structuration Supply/Case et la refonte Order Management
+
+**contexte**
+
+Après sa question « Au vu de ce qu'on discuté, quelles mise à jours ? », Laurent approuve le plan de six mises à jour : univers Supply/Case, distinction Case/Order et lien sans cardinalité imposée, Agreement complet projeté, D04 commun, frontière D04/D07, variantes sans séparation B2B/B2C. La proposition immédiatement soumise comprend quatre capacités et leurs descriptions courtes : Order Registration — reconnaître et enregistrer une commande Supply et son origine ; Order Revision — intégrer ses évolutions autorisées, avec leur historique ; Order Visibility — restituer son contenu applicable et sa situation ; Order Reconciliation — établir ce qui reste à satisfaire en rapprochant commande, modifications et réalisations. Elle demande de réexaminer Return and Replacement Decision et maintient ouvertes annulation, suspension, fractionnement et commandes liées. La release reste inchangée.
+
+**texte**
+
+Go
+
+**statut**
+
+Accord contextuel de Laurent pour appliquer le plan au backlog et les quatre capacités présentées, dans la portée de leurs noms et descriptions courtes. Les détails nouveaux de finalité, périmètre, autorités, variantes, objets et liens proposés pendant l’implémentation ne sont pas validés par extension. Les identifiants techniques et la répartition détaillée des groupes sont des choix de modélisation traçables. Aucune release, aucun commit ni push demandé.
+## U142
+
+**id**
+
+U142
+
+**date**
+
+2026-09-13
+
+**titre**
+
+Publier la refonte Supply/Case et Order Management
+
+**contexte**
+
+Demande de publication après application U141 au backlog. Autorise la production et l’activation locale dans Atlas ; ne valide aucun contenu supplémentaire.
+
+**texte**
+
+Lance une release
+
+**statut**
+
+Publication autorisée ; accords U140/U141 transcrits dans leur portée, propositions et réserves conservées. Aucun commit ni push demandé.

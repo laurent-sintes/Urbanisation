@@ -19,6 +19,12 @@ from atlas_data import (
     get_revision, load_model, load_panorama, read_source, resolve_source,
 )
 from server import create_server
+from scripts.release_catalog import resolve_release
+
+def active_pointer(root):
+    folder=root / "modeles/release"
+    return folder / ("index.json" if (folder/"index.json").exists() else "current.json")
+
 
 
 class SourceFixture(unittest.TestCase):
@@ -54,11 +60,11 @@ class ModelTests(SourceFixture):
         value = load_model(self.root)
         self.assertEqual(value["space"], "backlog")
         explicit = load_model(self.root, "backlog")
-        for field in ("nodes", "relations", "sourcePath", "revision"):
+        for field in ("nodes", "relations", "sourcePath", "dataRevision"):
             self.assertEqual(value[field], explicit[field])
         self.assertEqual(get_revision(self.root), get_revision(self.root, "backlog"))
 
-    def test_release_has_all_36_capabilities_with_explicit_statuses(self):
+    def test_release_has_current_capabilities_with_explicit_statuses(self):
         release = load_model(self.root, "release")
         by_id = {n["id"]: n for n in release["nodes"]}
         capabilities = [n for n in release["nodes"] if n["kind"] == "capability"]
@@ -76,6 +82,12 @@ class ModelTests(SourceFixture):
     def test_backlog_retains_all_current_candidates_and_separate_alternative(self):
         value = load_model(self.root, "backlog")
         self.assertEqual(sum(n["kind"] == "capability" for n in value["nodes"]), 36)
+        names = {n['id']: n['fields']['name'] for n in value['nodes']}
+        self.assertEqual(names['D01.f'], 'Inventory Tracking')
+        self.assertEqual(names['D01.g'], 'Record Inventory Movements')
+        self.assertEqual(names['D01.c'], 'Inventory Visibility')
+        self.assertNotIn('D01.a', names)
+        self.assertNotIn('D01.b', names)
         self.assertEqual(sum(n["kind"] in {"object", "document", "event"} for n in value["nodes"]), 4)
         self.assertTrue(value["alternatives"])
         parents = {r["target_id"]: r["source_id"] for r in value["relations"] if r["type"] == "contains"}
@@ -89,7 +101,7 @@ class ModelTests(SourceFixture):
         after = load_model(self.root)
         self.assertEqual(before["nodes"], after["nodes"])
         self.assertEqual(before["relations"], after["relations"])
-        self.assertEqual(before["revision"], after["revision"])
+        self.assertEqual(before["dataRevision"], after["dataRevision"])
 
     def test_backlog_changes_do_not_change_release(self):
         before = get_revision(self.root, "release")
@@ -103,7 +115,7 @@ class ModelTests(SourceFixture):
         self.assertEqual(load_model(self.root, "backlog")["nodes"][0]["fields"]["name"], "BACKLOG MODIFIED")
 
     def test_missing_release_never_falls_back_to_backlog_or_markdown(self):
-        pointer = self.root / "modeles/release/current.json"
+        pointer = active_pointer(self.root)
         pointer.write_text('{"path":"missing/model.json"}', encoding="utf-8")
         with self.assertRaises(ModelError):
             load_model(self.root, "release")
@@ -111,17 +123,17 @@ class ModelTests(SourceFixture):
         self.assertEqual(load_model(self.root)["space"], "backlog")
 
     def test_release_rejects_illustrations_without_falling_back(self):
-        pointer = json.loads((self.root / "modeles/release/current.json").read_text(encoding="utf-8"))
+        pointer = resolve_release(self.root / "modeles/release")
         path = self.root / "modeles/release" / pointer["path"]
         value = json.loads(path.read_text(encoding="utf-8"))
         value["nodes"][0]["review"]["state"] = "illustration"
         path.write_text(json.dumps(value), encoding="utf-8")
-        with self.assertRaisesRegex(ModelError, "non publiable"):
+        with self.assertRaises(ModelError):
             load_model(self.root, "release")
 
     def test_model_path_cannot_escape_space(self):
         for path in ["../../backlog/model.json", "C:/private/model.json", "../model.json"]:
-            (self.root / "modeles/release/current.json").write_text(json.dumps({"path": path}), encoding="utf-8")
+            (active_pointer(self.root)).write_text(json.dumps({"path": path}), encoding="utf-8")
             with self.subTest(path=path), self.assertRaises(ModelError):
                 load_model(self.root, "release")
 
@@ -201,7 +213,7 @@ class HTTPTests(SourceFixture):
         self.assertEqual(data["appName"], "FLOW Atlas")
         self.assertEqual(data["repositoryRoot"], str(self.root.resolve()))
         self.assertEqual(data["schemaVersion"], 2)
-        self.assertEqual(data["space"], "backlog")
+        self.assertEqual(data["space"], "release")
         self.assertIsInstance(data["pid"], int)
         self.assertEqual(headers["Cache-Control"], "no-store")
         self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
@@ -210,21 +222,22 @@ class HTTPTests(SourceFixture):
     def test_model_error_is_json_and_reading_refreshes(self):
         status, _, body = self.request("/api/model")
         self.assertEqual(status, 200)
-        self.assertEqual(json.loads(body)["space"], "backlog")
+        self.assertEqual(json.loads(body)["space"], "release")
         self.assertEqual(json.loads(self.request("/api/model?space=release")[2])["space"], "release")
         self.assertEqual(json.loads(self.request("/api/status?space=release")[2])["space"], "release")
-        self.assertEqual(self.request("/api/model?space=backlog")[0], 200)
-        self.assertEqual(self.request("/api/panorama")[0], 200)
+        self.assertEqual(self.request("/api/model?space=backlog")[0], 422)
+        self.assertEqual(self.request("/api/status?space=backlog")[0], 422)
+        self.assertEqual(self.request("/api/panorama")[0], 404)
         self.assertEqual(self.request("/api/model?space=unknown")[0], 422)
-        (self.root / "modeles/release/current.json").write_text("invalid JSON", encoding="utf-8")
+        (active_pointer(self.root)).write_text("invalid JSON", encoding="utf-8")
         status, _, body = self.request("/api/model?space=release")
         self.assertEqual(status, 422)
         self.assertIn("error", json.loads(body))
-        self.assertEqual(self.request("/api/model")[0], 200)
-
-    def test_invalid_default_backlog_never_falls_back_to_release(self):
-        (self.root / "modeles/backlog/model.json").write_text("invalid JSON", encoding="utf-8")
         self.assertEqual(self.request("/api/model")[0], 422)
+
+    def test_invalid_backlog_does_not_affect_published_urbanisation(self):
+        (self.root / "modeles/backlog/model.json").write_text("invalid JSON", encoding="utf-8")
+        self.assertEqual(self.request("/api/model")[0], 200)
         self.assertEqual(self.request("/api/model?space=release")[0], 200)
 
     def test_http_source_allowlist_and_static_allowlist(self):

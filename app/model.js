@@ -1,3 +1,9 @@
+export const lifecycleLabels = Object.freeze({
+  ai_proposed: ['Proposé par l’IA', 'purple'],
+  under_instruction: ['En cours d’instruction', 'amber'],
+  urbanist_validated: ['Validé par l’urbaniste', 'green'],
+});
+
 /** Build navigation from exactly one authoritative JSON space.
  * UI shells are navigational only. No Markdown, prototype or backlog completion.
  */
@@ -14,8 +20,8 @@ export function createModel(data, exploration = {}) {
     if (!node.id || nodes.has(node.id)) fail(`Identifiant dupliqué ou absent : ${node.id}.`);
     nodes.set(node.id, { sources: [], sourceLinks: [], purpose: '', definition: '', aliases: '', ...node, children: [] });
   };
-  add({ id: 'atlas', kind: 'model', name: 'Le modèle business', status: 'navigation', purpose: 'Navigation dans l’espace sélectionné.' });
-  add({ id: 'transactional', kind: 'model', name: 'Socle transactionnel', parentId: 'atlas', status: 'navigation', purpose: snapshot.space === 'release' ? 'Dernier modèle publié ; validations, propositions et réexamens restent explicitement distingués.' : 'Modèle en réflexion et conception ; statuts propres à chaque élément.' });
+  add({ id: 'atlas', kind: 'model', name: snapshot.space === 'release' ? 'Atlas' : 'Le modèle business', status: 'navigation', purpose: 'Navigation dans l’espace sélectionné.' });
+  add({ id: 'transactional', kind: 'model', name: snapshot.space === 'release' ? 'Urbanisation' : 'Socle transactionnel', parentId: 'atlas', status: 'navigation', purpose: snapshot.space === 'release' ? 'Modèle publié ; validations, propositions et réexamens restent explicitement distingués.' : 'Modèle en réflexion et conception ; statuts propres à chaque élément.' });
   add({ id: 'process', kind: 'model', name: 'Modèle processus', parentId: 'atlas', status: 'navigation', purpose: 'Modèle distinct de la couche transactionnelle, à développer.' });
   for (const raw of snapshot.nodes) {
     if (!labels[raw.kind]) fail(`Type de nœud inconnu : ${raw.kind}.`);
@@ -24,14 +30,16 @@ export function createModel(data, exploration = {}) {
     const locator = raw.source_locator || {};
     const sources = raw.source_refs || [];
     add({
-      id: raw.id, revision: raw.revision, kind: raw.kind,
+      id: raw.id, revision: raw.revision, lastModified: raw.last_modified, kind: raw.kind,
+      groupRole: raw.group_role, levelRef: raw.level_ref,
       name: fields.name || `${raw.id} · Libellé à valider`,
       nameMissing: !fields.name,
       purpose: fields.finality || '', definition: fields.definition || '',
       approvedFields: raw.approved_fields || [], proposedFields: raw.proposed_fields || [], missingFields: raw.missing_fields || [], adoptionIds: raw.adoption_ids || [],
       scope: fields.scope, nature: fields.nature, fieldStatus: raw.field_status || raw.field_review || {},
       displayOrder: raw.id === 'business-references' ? 100 : 0,
-      status: statusMap[raw.review?.state] || 'review', statusNote: raw.review?.note || '',
+      status: raw.lifecycle?.state || statusMap[raw.review?.state] || 'review', statusNote: raw.review?.note || '',
+      lifecycle: raw.lifecycle, isIllustration: raw.review?.state === 'illustration',
       modelId: raw.layer === 'process' ? 'process' : 'transactional',
       sources, sourcePath: locator.path, sourceAnchor: locator.anchor, sourceLine: locator.line,
       modelPath: snapshot.sourcePath, sourceLinks: sources.map(id => snapshot.sourceReferences?.[id]).filter(Boolean),
@@ -68,7 +76,8 @@ export function createModel(data, exploration = {}) {
       id: raw.id, from: raw.source_id, to: raw.target_id, type: raw.type,
       verb: fields.verb || raw.verb || fields.label || relationLabels[raw.type]?.[0] || raw.type,
       inverse: fields.inverse || raw.inverse || relationLabels[raw.type]?.[1] || `relation entrante : ${raw.type}`,
-      status: statusMap[raw.review?.state] || 'review', statusNote: raw.review?.note || '',
+      status: raw.lifecycle?.state || statusMap[raw.review?.state] || 'review', statusNote: raw.review?.note || '',
+      lifecycle: raw.lifecycle, isIllustration: raw.review?.state === 'illustration',
       sources, sourcePath: raw.source_locator?.path,
       sourceLinks: sources.map(id => snapshot.sourceReferences?.[id]).filter(Boolean),
     };
@@ -122,7 +131,12 @@ export function createModel(data, exploration = {}) {
   function related(id) {
     return structuredClone(relationIndex.get(id) || []);
   }
-  return { nodes, related, lineage, modelOf, labels, icons, steps, confirmation };
+  function alternativesFor(id) {
+    return snapshot.space === 'backlog'
+      ? structuredClone((snapshot.alternatives || []).filter(item => item.target_id === id))
+      : [];
+  }
+  return { nodes, related, lineage, modelOf, labels, icons, steps, confirmation, alternativesFor };
 }
 
 

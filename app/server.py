@@ -13,7 +13,7 @@ from urllib.parse import parse_qs, unquote, urlsplit
 
 from atlas_data import (
     DEFAULT_SPACE, ModelError, REPOSITORY_ROOT, SCHEMA_VERSION, SourceAccessError,
-    get_revision, load_model, load_panorama, read_source,
+    get_revision, load_model, load_panorama, read_source, catalog,
 )
 
 STATIC_FILES = {
@@ -94,19 +94,22 @@ class AtlasHandler(BaseHTTPRequestHandler):
             request = urlsplit(self.path)
             route = unquote(request.path, errors="strict")
             if route in {"/api/model", "/api/status"}:
-                query = parse_qs(request.query, keep_blank_values=True, max_num_fields=2)
-                if set(query) - {"space"} or len(query.get("space", [DEFAULT_SPACE])) != 1:
+                query = parse_qs(request.query, keep_blank_values=True, max_num_fields=3)
+                if set(query) - {"space", "version"} or len(query.get("space", ["release"])) != 1 or len(query.get('version', [''])) != 1:
                     raise ValueError("Espace unique attendu.")
-                space = query.get("space", [DEFAULT_SPACE])[0]
+                space = query.get("space", ["release"])[0]
+                version = query.get('version', [''])[0] or None
+                if space != "release":
+                    raise ModelError("Atlas affiche uniquement l’urbanisation publiée.")
             if route == "/api/model":
-                self._json(200, load_model(self.root, space), head)
-            elif route == "/api/panorama":
-                self._json(200, load_panorama(self.root), head)
+                self._json(200, load_model(self.root, space, version), head)
+            elif route == '/api/releases':
+                self._json(200, catalog(self.root/'modeles/release'), head)
             elif route == "/api/status":
                 self._json(200, {
                     "appName": "FLOW Atlas", "schemaVersion": SCHEMA_VERSION,
                     "pid": os.getpid(), "repositoryRoot": str(self.root),
-                    "revision": get_revision(self.root, space), "space": space,
+                    "revision": get_revision(self.root, space, version), "space": space,
                 }, head)
             elif route == "/api/source":
                 args = parse_qs(request.query, keep_blank_values=True, max_num_fields=4)

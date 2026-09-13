@@ -20,7 +20,7 @@ Les modèles font autorité en **JSON**. Les Markdown conservent récits, insigh
 
 | Espace | Contenu | Accès |
 | --- | --- | --- |
-| **Release** | Les 36 capacités publiées, avec leurs validations et réserves explicites | [Version courante](modeles/release/current.json) · [lecture Markdown](restitutions/release.md) |
+| **Release** | Les 35 capacités publiées, avec leurs validations et réserves explicites | [Version courante](modeles/release/index.json) · [lecture Markdown](restitutions/release.md) |
 | **Backlog** | Modèle en réflexion, alternatives et illustrations | [Modèle JSON](modeles/backlog/model.json) · [lecture Markdown](restitutions/backlog.md) |
 | **Panorama As Is** | Les trois SI actuels ; Sarenza non traité | [Index JSON](modeles/panorama-as-is/current.json) · [vue de lecture](restitutions/panorama-as-is.md) |
 
@@ -43,7 +43,7 @@ Les caches, dépendances locales et fichiers du serveur sont ignorés ; les arch
 
 ## Par où commencer
 
-**Explorer le modèle — U105/U113 :** [FLOW Atlas, application locale](app/README.md), avec navigation évolutive, relations métier, recherche directe et accès aux sources. Lancer [Lancer-FLOW-Atlas.ps1](Lancer-FLOW-Atlas.ps1) depuis PowerShell ; le sélecteur Release / Backlog / Panorama As Is lit les modèles JSON, **Backlog par défaut**, avec statuts et accès aux sources documentaires. Les skills [`release`](skills/release/SKILL.md) et [`server-admin`](skills/server-admin/SKILL.md) servent à publier les évolutions du modèle et à administrer le serveur local. La [proposition et le prototype U104](prototypes/model-explorer/README.md) restent disponibles comme historique de conception.
+**Explorer l’urbanisation — U117–U123 :** [FLOW Atlas, application locale](app/README.md), avec navigation évolutive, relations métier, recherche directe et accès aux sources. Lancer [Lancer-FLOW-Atlas.ps1](Lancer-FLOW-Atlas.ps1) depuis PowerShell ; Atlas affiche uniquement **Urbanisation**, depuis les releases publiées. La liste des versions présente la plus récente en premier ; la vue courante se rafraîchit automatiquement après une publication. Les statuts, métadonnées de version et sources restent consultables. Les skills [`release`](skills/release/SKILL.md) et [`server-admin`](skills/server-admin/SKILL.md) servent à publier les évolutions du modèle et à administrer le serveur local. La [proposition et le prototype U104](prototypes/model-explorer/README.md) restent disponibles comme historique de conception.
 
 **Décision U95 — Order Promising :** [neuf capacités validées par Laurent](connaissance/25-domaines-coeur-et-epreuve-recits.md#d03-promesse-de-fourniture), quatre actions et cinq décisions. ATP est associé à la promesse ; CTP reste au glossaire, placement différé.
 

@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0.0",
+  "base_version": "2026-09-13.3",
+  "candidate_version": "2026-09-13.4",
+  "element_version_changes": [
+    {
+      "collection": "nodes",
+      "id": "D01",
+      "revision": 3,
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01.f",
+      "revision": 1,
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "reason": "new"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01.g",
+      "revision": 1,
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "reason": "new"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D01.f",
+      "revision": 1,
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "reason": "new"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D01.g",
+      "revision": 1,
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "reason": "new"
+    }
+  ],
+  "publication_is_business_validation": false,
+  "changes": {
+    "nodes": {
+      "added": [
+        {
+          "id": "D01.f",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Inventory Tracking",
+            "definition": "Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues.",
+            "finality": "Disposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu."
+          },
+          "source_refs": [
+            "U125",
+            "U126",
+            "C73",
+            "P82",
+            "CMP062",
+            "ELM103",
+            "ELM104",
+            "ELM105"
+          ],
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c73"
+          },
+          "review": {
+            "state": "proposed",
+            "note": "Scission de travail de D01.e selon U125. Définition et nom proposés ; aucune nouvelle validation métier. D01.e reste dans la publication historique v001."
+          },
+          "last_modified": "2026-09-13T16:25:42.581332Z",
+          "content_sha256": "82d4cd14deb60774aadc210ac61f5bfd9ee78a5cf36c0d0bbf380e63d44c489d",
+          "adoption_ids": [],
+          "approved_fields": [],
+          "proposed_fields": [
+            "definition",
+            "finality",
+            "name"
+          ]
+        },
+        {
+          "id": "D01.g",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Record Inventory Movements",
+            "definition": "Enregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.",
+            "finality": "Disposer d’un historique traçable des faits qui expliquent les variations du stock."
+          },
+          "source_refs": [
+            "U125",
+            "U126",
+            "C73",
+            "P82",
+            "CMP062",
+            "ELM103",
+            "ELM104",
+            "ELM105",
+            "U127",
+            "U129",
+            "C74"
+          ],
+          "source_locator": {
+            "path": "connaissance/04-corrections.md",
+            "anchor": "c73"
+          },
+          "review": {
+            "state": "partial",
+            "note": "Nom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125."
+          },
+          "last_modified": "2026-09-13T16:25:42.581332Z",
+          "content_sha256": "74e2c5dc811dac406a53bf4369e67584d761b058b11d31ea80f714a515efd637",
+          "adoption_ids": [
+            "ADOPT-048"
+          ],
+          "approved_fields": [
+            "name"
+          ],
+          "proposed_fields": [
+            "definition",
+            "finality"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "D01.e",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Inventory Tracking",
+            "definition": "Enregistrer les faits de stock et en établir les effets sur les quantités physiques et les états logiques ; suivre les ressources futures connues et leurs évolutions, en distinguant actuel et attendu.",
+            "finality": "Disposer d’un état du stock à jour et expliquer son évolution."
+          },
+          "source_refs": [
+            "P82",
+            "U81",
+            "U83",
+            "U116",
+            "C71"
+          ],
+          "source_locator": {
+            "path": "connaissance/05-propositions.md",
+            "anchor": "p82"
+          },
+          "review": {
+            "state": "proposed",
+            "note": "Découpage courant du backlog selon U116. Réunion de D01.a et D01.b, conservés dans la release 2026-09-13.2 et la révision historique. Aptitude et frontières proposées ; aucune nouvelle validation métier."
+          },
+          "last_modified": "2026-09-13T15:39:21.359705Z",
+          "content_sha256": "a41888990e3c6124e9c27a460486db09bfc1ba9345b104d8e285fcac591544fd",
+          "adoption_ids": [],
+          "approved_fields": [],
+          "proposed_fields": [
+            "definition",
+            "finality",
+            "name"
+          ]
+        }
+      ],
+      "modified": [
+        {
+          "id": "D01",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before": "c3d3fa3ff829d9828b05093fbff93a1cc5b642063eb50b9d52d4232ad0d1472a",
+              "after": "fe305d8f42239917fc42833cc8fd2148e89393503b5aa8a3999d6ad14f2e532d"
+            },
+            {
+              "path": "/last_modified",
+              "before": "2026-09-13T15:39:21.359705Z",
+              "after": "2026-09-13T16:25:42.581332Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Aucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Validations conservées dans l’historique : ADOPT-001. Note antérieure, qui ne qualifie pas cette révision : « Nom Inventory Management retenu en U66. Le backlog utilise cinq capacités selon P82/U116, dont Inventory Tracking réunissant D01.a/D01.b. La version historique 2026-09-13.2 conservait six capacités. Les frontières détaillées et la réservation restent à éprouver. »",
+              "after": "Aucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Le statut éditorial du backlog ne constitue pas une preuve de validation. Note antérieure, qui ne qualifie pas cette révision : « Nom retenu en U66. Six capacités dans le backlog après séparation mouvements/état selon U125 ; noms et définitions détaillés proposés. La publication v001 conserve cinq capacités. Frontières détaillées et réservation à éprouver. »"
+            },
+            {
+              "path": "/revision",
+              "before": 2,
+              "after": 3
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U66",
+                "U74",
+                "U75",
+                "U78",
+                "U79",
+                "U80",
+                "U81",
+                "U86",
+                "C58",
+                "P82",
+                "U116",
+                "C71"
+              ],
+              "after": [
+                "P81",
+                "U66",
+                "U74",
+                "U75",
+                "U78",
+                "U79",
+                "U80",
+                "U81",
+                "U86",
+                "C58",
+                "P82",
+                "U116",
+                "C71",
+                "U125",
+                "U126",
+                "C73"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "relations": {
+      "added": [
+        {
+          "id": "REL-MEMBER-D01.f",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.f",
+          "source_refs": [
+            "U125",
+            "C73"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Séparation de travail ; frontières détaillées à éprouver."
+          },
+          "last_modified": "2026-09-13T16:25:42.581332Z",
+          "content_sha256": "af5f5389212f6275eda8bcb57b69064ad28ffa58513fbd5985491f8a9617f438",
+          "adoption_ids": []
+        },
+        {
+          "id": "REL-MEMBER-D01.g",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.g",
+          "source_refs": [
+            "U125",
+            "C73"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Séparation de travail ; frontières détaillées à éprouver."
+          },
+          "last_modified": "2026-09-13T16:25:42.581332Z",
+          "content_sha256": "05fcce822f31dca56b49581a1a8b96c2925994270dd82f008e3a7d69df4fe8a1",
+          "adoption_ids": []
+        }
+      ],
+      "removed": [
+        {
+          "id": "REL-MEMBER-D01.e",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.e",
+          "source_refs": [
+            "P82",
+            "U116",
+            "C71"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Rattachement de travail de la capacité regroupée ; aucune nouvelle validation métier."
+          },
+          "last_modified": "2026-09-13T15:39:21.359705Z",
+          "content_sha256": "c89120ba4c90675f34f3c6fc60c065d6e7989a55a7b695f8f311a9c5bc32d441",
+          "adoption_ids": []
+        }
+      ],
+      "modified": []
+    },
+    "principles": []
+  },
+  "retained_decision_ids": [
+    "ADOPT-002",
+    "ADOPT-003",
+    "ADOPT-004",
+    "ADOPT-005",
+    "ADOPT-006",
+    "ADOPT-007",
+    "ADOPT-008",
+    "ADOPT-009",
+    "ADOPT-010",
+    "ADOPT-011",
+    "ADOPT-012",
+    "ADOPT-013",
+    "ADOPT-014",
+    "ADOPT-015",
+    "ADOPT-016",
+    "ADOPT-017",
+    "ADOPT-018",
+    "ADOPT-019",
+    "ADOPT-020",
+    "ADOPT-021",
+    "ADOPT-022",
+    "ADOPT-023",
+    "ADOPT-024",
+    "ADOPT-025",
+    "ADOPT-026",
+    "ADOPT-027",
+    "ADOPT-028",
+    "ADOPT-029",
+    "ADOPT-030",
+    "ADOPT-031",
+    "ADOPT-032",
+    "ADOPT-033",
+    "ADOPT-034",
+    "ADOPT-035",
+    "ADOPT-036",
+    "ADOPT-037",
+    "ADOPT-038",
+    "ADOPT-039",
+    "ADOPT-040",
+    "ADOPT-041",
+    "ADOPT-042",
+    "ADOPT-043",
+    "ADOPT-044",
+    "ADOPT-045",
+    "ADOPT-046",
+    "ADOPT-047"
+  ],
+  "deferred_decisions": [],
+  "new_decision_ids": [
+    "ADOPT-048"
+  ],
+  "deferred_artifacts": [
+    {
+      "path": "backlog/applicability.json",
+      "sha256": "57e4ed0d11d0a453c4c38d5d8c3a6614c17714eb4b0dfefdaedd500bd015ee30",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/legacy-capabilities.json",
+      "sha256": "47eeb826fa75ffae8e371581723baf0b85b3c4cc3e015a5101263359e746f9ec",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/modeling-roadmap.json",
+      "sha256": "97ffec20f4106cc1ab1633226f8ea949417b11fe67910390c7244b9e04e7a5bd",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/panorama-candidates.json",
+      "sha256": "0f8e74eee2cc01db7c362f69db7d57127f3416965ebd1c67c2f4506615581eac",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    }
+  ],
+  "backlog_only": {
+    "alternatives": [
+      "P86-D05"
+    ],
+    "illustrations": [
+      "ILL-OBJ-01",
+      "ILL-DOC-01",
+      "ILL-EVT-01",
+      "ILL-OBJ-02",
+      "REL-ILL-001",
+      "REL-ILL-002",
+      "REL-ILL-003",
+      "REL-ILL-004",
+      "REL-ILL-005",
+      "REL-ILL-006",
+      "REL-ILL-007",
+      "REL-ILL-008"
+    ]
+  },
+  "validation_errors": [],
+  "note": "Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés."
+}

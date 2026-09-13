@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "flow-modeling-roadmap",
+  "space": "backlog",
+  "as_of": "2026-09-13",
+  "source_refs": [
+    "U112",
+    "U140",
+    "U141"
+  ],
+  "current_focus": [
+    "domain",
+    "capability"
+  ],
+  "extensions": [
+    {
+      "id": "EXT-HIGHER-LEVEL",
+      "subject": "grouping_above_domains",
+      "state": "structure_prepared",
+      "candidate_terms": [
+        "Universe"
+      ],
+      "name_state": "decided",
+      "semantic_definition_state": "partly_defined",
+      "instantiate_now": true,
+      "note": "U141 instancie Supply et Case comme groupes urbanism_level, level_ref universe. Business References reste un groupe de présentation ; détails de définition et rattachements proposés."
+    },
+    {
+      "id": "EXT-BUSINESS-ENTITIES",
+      "subject": "business_objects_documents_events",
+      "state": "deferred",
+      "candidate_terms": [],
+      "name_state": "not_applicable",
+      "semantic_definition_state": "partly_defined",
+      "instantiate_now": false,
+      "note": "U141 : prévoir Case (process) et Order (transactional), leur rattachement caractérisé sans cardinalité présumée. Inventaire complet objets/documents/événements différé ; illustrations distinctes."
+    },
+    {
+      "id": "EXT-QUALIFIED-LINKS",
+      "subject": "qualified_business_relations",
+      "state": "structure_prepared",
+      "candidate_terms": [],
+      "name_state": "not_applicable",
+      "semantic_definition_state": "not_defined",
+      "instantiate_now": false,
+      "note": "U141 : lien caractérisé D07.c vers D04.h dans le backlog. Lien Case/Order préparé conceptuellement, objets et cardinalités différés ; ne pas assimiler demande Case et Order."
+    },
+    {
+      "id": "EXT-APPLICABILITY",
+      "subject": "domain_capability_applicability",
+      "state": "structure_prepared",
+      "candidate_terms": [],
+      "name_state": "not_applicable",
+      "semantic_definition_state": "partly_defined",
+      "instantiate_now": false,
+      "note": "Registre séparé applicability.json pour les trois SI actuels et FLOW cible. Les résultats restent à instruire ; absence de ligne = non évalué, pas non couvert."
+    }
+  ],
+  "limitations": [
+    "Le travail courant reste domaine/capacité.",
+    "La cible FLOW et l’existant des trois SI ne sont pas fusionnés.",
+    "U141 adopte le principe Supply/Case et les quatre capacités D04 dans leur portée ; ne valide pas automatiquement les détails des objets et liens."
+  ]
+}

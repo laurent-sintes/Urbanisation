@@ -340,3 +340,29 @@ TER050 Reference Ingestion s’applique désormais aux quatre références D09/D
 | TER054 | Fulfillment Network | Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises ; référentiel distinct des Party auxquelles les lieux sont reliés. | Nom demandé en U102, orthographe normalisée hors verbatim ; définition proposée. D13.a reçoit les références ; nœuds, liaisons et attributs à préciser Q076. Ni quantité de stock, ni charge courante, ni parcours déjà choisi. |
 
 Dans P81 0.8, TER050 Reference Ingestion s’applique à cinq références, D13 compris à titre proposé dans la continuité U97. Aucune maîtrise du réseau ni réalisation logistique attribuée à FLOW.
+
+
+## Mouvements, registre et état de stock — U125/U126
+
+13 septembre 2026 ; [comparaison CMP062](../marche/comparaisons.md#cmp062), sources ELM103–ELM105. Définitions proposées, sauf l’identification des mouvements de stock par Laurent.
+
+| Repère | Terme | Sens et frontière |
+| --- | --- | --- |
+| TER055 | Stock movement / Inventory movement ; Goods movement chez SAP | Mouvement de stock : fait de variation de quantité, localisation ou qualification du stock. Inclut notamment réceptions, sorties, transferts et changements d’état sans déplacement physique. Les écritures et justificatifs qui le représentent restent à distinguer du fait. |
+| TER056 | Ledger / Inventory Ledger | Registre ; grand livre dans un contexte comptable. Pour notre exploration : registre des écritures justifiant les variations du stock. Le terme ne désigne pas le mouvement lui-même et n’impose ni valorisation financière ni technologie de persistance. Inventory Ledger Management est un candidat de nom de capacité, non adopté. |
+
+Inventory Movements décrit actuellement l’aptitude à enregistrer et qualifier les mouvements ; Inventory Tracking établit et actualise les quantités et états ; Inventory Visibility les rend consultables dans une vision cohérente. Ces trois résultats doivent rester distincts, avec des relations métier à approfondir.
+
+
+### Record et Sourcing — U127/U128
+
+13 septembre 2026. **Record Inventory Movements**, proposé par Laurent en U127, explicite l’aptitude à enregistrer les mouvements. Nom alternatif conservé dans le backlog, sans adoption définitive.
+
+**Sourcing** désigne couramment, dans les achats, la recherche, l’évaluation et la sélection des fournisseurs : [SAP, Outlining Sourcing](https://learning.sap.com/courses/sourcing-in-sap-s4hana/outlining-sourcing-in-sap-s-4hana-), introduction indexée consultée le 2026-09-13, édition inconnue. Ce sens n’exprime pas l’enregistrement des mouvements.
+
+**Event Sourcing** désigne un modèle d’architecture logicielle où une succession d’événements permet de conserver et reconstruire l’état : [Microsoft, Event Sourcing](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing), résumé indexé et [exemple officiel Cosmos DB](https://learn.microsoft.com/en-us/samples/azure-samples/cosmos-db-design-patterns/event-sourcing/) consultés le 2026-09-13. Ce sont des moyens de réalisation, pas le nom d’une aptitude métier indépendante des outils. Le fait de séparer mouvements et état n’impose pas ce choix. Le sens visé par Laurent en U128 reste ouvert.
+
+
+### Nom adopté — U129
+
+13 septembre 2026 : Laurent retient **Record Inventory Movements** pour la capacité D01.g. Ce nom exprime l’enregistrement des mouvements. Inventory Movements et Inventory Ledger Management restent des options historiques ; Ledger conserve son sens de registre. Définition et finalité de la capacité restent proposées.

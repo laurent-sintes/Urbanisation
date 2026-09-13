@@ -915,6 +915,230 @@
       "captured_text": "## U114\n\n**id**\n\nU114\n\n**date**\n\n2026-09-13\n\n**titre**\n\nTravailler sous Git et créer les skills commit et push\n\n**contexte**\n\nAprès la création des skills release et server-admin. Laurent fournit le dépôt distant à utiliser.\n\n**texte**\n\nJ'ai créé un repo github distant : [https://github.com/laurent-sintes/Urbanisation](https://github.com/laurent-sintes/Urbanisation)\n\nJe souhaite travailler dans git maintenant.\n\nJe souhaite un skill \"commit\" et un skill \"push\" qui pousse sur le github distant\n\n**statut**\n\nDemande de mise sous Git du projet et de création des skills commit et push, avec le dépôt distant indiqué. La création des skills ne constitue pas leur invocation ni une validation métier. Le commit est local ; le push envoie des commits sur le dépôt indiqué lorsqu’il est demandé."
     },
     {
+      "id": "U115",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u115",
+      "line": 3116,
+      "content_sha256": "fc3c012817df06c2762046ab68dc1a256661afeba476e89b43ff3999550dc89c",
+      "captured_text": "## U115\n\n**id**\n\nU115\n\n**date**\n\n2026-09-13\n\n**titre**\n\nÉcart des capacités D01 entre Atlas et les échanges\n\n**contexte**\n\nAprès la mise sous Git, Laurent signale des noms anciens dans les deux espaces de l’Atlas.\n\n**texte**\n\nIl y a un truc bizarre, quand j'ouvre l'atlas, les capacité en release et en backlog sont identiques et montrent des données anciennes. Quand je te demande dans cedex l'état des capacités du domaine D01, tu me sors les bon noms. Dans l'atlas, ils ne sont pas bons.\n\n**statut**\n\nSignalement d’un écart et demande de correction. Le diagnostic retrouve les six anciennes capacités P81 dans les nœuds JSON et la proposition P82 dans alternatives, alors ignorée par l’interface. Ce constat ne constitue pas une nouvelle validation métier."
+    },
+    {
+      "id": "U116",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u116",
+      "line": 3142,
+      "content_sha256": "213484dc3df0415ecef81b9a0cf9d3a403fec2c1ff72b36f3c4d0b91ce6b2243",
+      "captured_text": "## U116\n\n**id**\n\nU116\n\n**date**\n\n2026-09-13\n\n**titre**\n\nUtiliser les cinq capacités D01 dans le backlog\n\n**contexte**\n\nRéponse à la question : « Pour D01, souhaites-tu que la proposition à cinq capacités (Inventory Tracking, Inventory Visibility, Stocktaking, Supply Protection, Reservation) devienne le découpage courant du backlog, avec ses réserves et sans validation métier supplémentaire ? »\n\n**texte**\n\nOui, utiliser les cinq capacités dans le backlog\n\n**statut**\n\nChoix explicite de la proposition comme découpage courant du backlog. Les réserves restent applicables ; aucune validation métier supplémentaire et aucune publication de release n’est demandée. D01.e est créé pour la réunion de D01.a/D01.b ; leurs identifiants restent historiques et ne sont pas réutilisés. D01.c conserve son identité et devient Inventory Visibility à une nouvelle révision."
+    },
+    {
+      "id": "U117",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u117",
+      "line": 3169,
+      "content_sha256": "83beb259585019f50a674343294befddfdde49bd73fdaaee4e1e9dc3a36b8eb6",
+      "captured_text": "## U117\n\n**id**\n\nU117\n\n**date**\n\n2026-09-13\n\n**titre**\n\nAuditer tous les domaines et afficher uniquement l’urbanisation publiée\n\n**contexte**\n\nAprès la correction de D01 dans le backlog. Laurent demande de revoir la présentation d’Atlas et soupçonne des écarts similaires sur tous les domaines.\n\n**texte**\n\nJe pense qu'il y a des écarts pour tous les domaines\n\nDe plus, je ne souhaite pas que l'atlas affiche la backlog, uniquement la release qui doit s'appeler dans l'atlas \"urbanisation\" tout simplement\n\n**statut**\n\nDemande d’audit étendu et consigne de présentation : Atlas consulte uniquement le modèle publié sous le nom Urbanisation. Le backlog reste l’espace de travail du projet, hors de l’interface. Dans ce contexte de correction de l’Atlas, le modèle corrigé est publié localement afin d’être visible ; cette intégration ne vaut pas validation métier ni push Git."
+    },
+    {
+      "id": "U118",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u118",
+      "line": 3197,
+      "content_sha256": "dff63824ea41a2e1093c99dec293024a6e4f619e1febdeed029c05243c22d9de",
+      "captured_text": "## U118\n\n**id**\n\nU118\n\n**date**\n\n2026-09-13\n\n**titre**\n\nIntégrer les libellés courts sans changement de sens\n\n**contexte**\n\nRéponse à la question : « Pour D04 à D07, souhaites-tu utiliser les noms courts déjà proposés comme libellés courants non validés (par exemple Commitment Creation, Net Requirements Calculation, Execution Capacity Assessment, Execution Reconciliation), en conservant les définitions et réserves ? Les noms conditionnels qui impliquent une nouvelle responsabilité de décision resteraient à discuter. »\n\n**texte**\n\nOui, intégrer les renommages sans changement de sens\n\n**statut**\n\nChoix de libellés courants pour onze capacités proposées de D04 à D07 ; conserver leurs définitions, finalités, rattachements et réserves. Ce choix ne constitue pas une validation métier supplémentaire. Coverage Target Decision et Stock Redistribution Decision restent conditionnels, sans renommage automatique de D05.a/c."
+    },
+    {
+      "id": "U119",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u119",
+      "line": 3224,
+      "content_sha256": "8eba557b55727c23dc141d8183250a660a20e0484258e4bd6263f993bb7aa550",
+      "captured_text": "## U119\n\n**id**\n\nU119\n\n**date**\n\n2026-09-13\n\n**titre**\n\nRelease produit le modèle publié et actualise Atlas\n\n**contexte**\n\nPendant la correction des domaines et le passage d’Atlas à la seule Urbanisation publiée.\n\n**texte**\n\nQuand j'appelle le skill \"release\", je veux que ça produise la release et que ça publie dans atlas (je ne sais pas si atlas a sont propre référentiel ou s'il tape directement dans le répertoire release). Si Atlas est en train de tourner, je veux que les données se rafraichissent (arret / relance par exemple)\n\n**statut**\n\nConsigne de fonctionnement : une invocation de release couvre production, publication locale et disponibilité dans Atlas. Rafraîchissement obligatoire si Atlas tourne ; arrêt/relance cité comme exemple de moyen. Atlas lit directement le pointeur de release. Le rechargement automatique des données satisfait ce besoin sans redémarrage pour un changement JSON ; relance si nécessaire et contrôle de la version servie. Aucune validation métier ni publication Git implicite."
+    },
+    {
+      "id": "U120",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u120",
+      "line": 3251,
+      "content_sha256": "aeddce1c06941e60e98b45512c491f5dc5b90111dba64e737a4e4f35edaadcf9",
+      "captured_text": "## U120\n\n**id**\n\nU120\n\n**date**\n\n2026-09-13\n\n**titre**\n\nVersionner chaque élément publié\n\n**contexte**\n\nPrécisions successives du cycle de publication et de la consultation Atlas.\n\n**texte**\n\nJe veux que tous les éléments du modèle release soient versionnés (auto incrément simple) et avec une date/time last-modified\n\n**statut**\n\nConsigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques."
+    },
+    {
+      "id": "U121",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u121",
+      "line": 3278,
+      "content_sha256": "b6e2cb94be4a2b4cfc183d0c5b3a5a291a2cd50536c3821e40920c0393e94831",
+      "captured_text": "## U121\n\n**id**\n\nU121\n\n**date**\n\n2026-09-13\n\n**titre**\n\nVersionner le modèle et nommer les descripteurs publiés\n\n**contexte**\n\nPrécisions successives du cycle de publication et de la consultation Atlas.\n\n**texte**\n\nLe modèle en lui meme doit aussi être versionné. Le fichier current.json doit être nommé avec une version et un horodatage et ces informations doivent doivent être mentionnées dans le fichier aussi en métadonnées. On peut imaginer une petite release note aussi...\n\n**statut**\n\nConsigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques."
+    },
+    {
+      "id": "U122",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u122",
+      "line": 3305,
+      "content_sha256": "eb738f95d21c5636c3ed88608c177aceb38d5419f79978dbb2f70bf15bfd5c82",
+      "captured_text": "## U122\n\n**id**\n\nU122\n\n**date**\n\n2026-09-13\n\n**titre**\n\nChoisir une version publiée dans Atlas\n\n**contexte**\n\nPrécisions successives du cycle de publication et de la consultation Atlas.\n\n**texte**\n\nDans Atlas, on pourrait sélectionner la version qu'on veut visualiser dans une dropbox avec la plus récente en premier\n\n**statut**\n\nConsigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques."
+    },
+    {
+      "id": "U124",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u124",
+      "line": 3332,
+      "content_sha256": "6e9e2989288247d995b10b3cc0dc1dff326127e0db8971c069154397033d9e8d",
+      "captured_text": "## U124\n\n**id**\n\nU124\n\n**date**\n\n2026-09-13\n\n**titre**\n\nVérifier la complétude de D01 et retrouver le ledger évoqué\n\n**contexte**\n\nAprès publication du modèle v001, Laurent interroge la fidélité de D01 aux échanges antérieurs.\n\n**texte**\n\nDans D01, il n'y avait pas 7 capacités voire plus ? Il y avait un ledger il me semble. Et d'autres trucs. Pas sûr que la release ait été bien construite.\n\n**statut**\n\nSouvenir à vérifier et demande d'audit ; ni adoption d'une capacité Ledger ni validation d'un nouveau nombre de capacités. Voir [l'audit D01](../audits/2026-09-13-d01-completude.md)."
+    },
+    {
+      "id": "U123",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u123",
+      "line": 3358,
+      "content_sha256": "d9218dfcf622453148f908a2b719d2938ed1e9b331cf11e2134d39a5d2d36c0c",
+      "captured_text": "## U123\n\n**id**\n\nU123\n\n**date**\n\n2026-09-13\n\n**titre**\n\nFormat du nom de publication\n\n**contexte**\n\nPrécisions successives du cycle de publication et de la consultation Atlas.\n\n**texte**\n\nau lieu de \"`urbanisation-v1-20260913T143000Z.json`  \", je préfère \"urbanisation-v<version sur 3 digits>-<year>-<month>-<day>-<HHMMSS>.json\n\n**statut**\n\nConsigne de fonctionnement et de métadonnées, sans validation métier supplémentaire. U123 précise le format retenu pour les nouvelles publications ; aucune heure précise inventée pour les versions historiques."
+    },
+    {
+      "id": "U125",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u125",
+      "line": 3385,
+      "content_sha256": "cc92b41d24f5de5445b808296bcb198513e7c36adac8e6c803736070e6a8fad1",
+      "captured_text": "## U125\n\n**id**\n\nU125\n\n**date**\n\n2026-09-13\n\n**titre**\n\nSéparer les mouvements de stock du suivi de leur état\n\n**contexte**\n\nSuite de l’audit D01 U124 et recherche du vocabulaire des mouvements de stock.\n\n**texte**\n\nOui, c'est ce qu'on appelle les \"mouvements de stock\" en français. En anglais comment on dit ? Je pense que ça mérite d'être séparé de l'inventory Tracking\n\n**statut**\n\nOrientation de séparation appliquée comme base de réflexion dans le backlog ; noms anglais et définitions détaillées proposés."
+    },
+    {
+      "id": "U126",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u126",
+      "line": 3412,
+      "content_sha256": "3a7934476f3177f8ed43450f719e142e0f1c6f20c6a4e43bd59dde7e9a6d6eee",
+      "captured_text": "## U126\n\n**id**\n\nU126\n\n**date**\n\n2026-09-13\n\n**titre**\n\nExplorer le nom Ledger\n\n**contexte**\n\nSuite de l’audit D01 U124 et recherche du vocabulaire des mouvements de stock.\n\n**texte**\n\nLedger en anglais ça veut dire quoi ? Ca pourrait correspondre...\n\n**statut**\n\nQuestion de vocabulaire et piste de nom, sans adoption de Ledger comme libellé de capacité."
+    },
+    {
+      "id": "U127",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u127",
+      "line": 3439,
+      "content_sha256": "e91f4250abd1e9bccd7d9ba4f23b6ba9a2fb1cc24544404572f1c94ce5b62cb8",
+      "captured_text": "## U127\n\n**id**\n\nU127\n\n**date**\n\n2026-09-13\n\n**titre**\n\nProposer Record Inventory Movements\n\n**contexte**\n\nRecherche du nom de la capacité de mouvements de stock, après U125/U126.\n\n**texte**\n\nRecord Inventory Movements ?\n\n**statut**\n\nQuestion et candidat de vocabulaire, sans adoption définitive. Le sens de Sourcing visé par Laurent reste à préciser ; ne pas lui attribuer un choix Event Sourcing."
+    },
+    {
+      "id": "U128",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u128",
+      "line": 3466,
+      "content_sha256": "45ea77cfc4e2cdd58be8ce70439e4437d0152de2a4609721e8fe39275198ed7d",
+      "captured_text": "## U128\n\n**id**\n\nU128\n\n**date**\n\n2026-09-13\n\n**titre**\n\nExaminer le mot Sourcing\n\n**contexte**\n\nRecherche du nom de la capacité de mouvements de stock, après U125/U126.\n\n**texte**\n\nPourquoi pas employer le mot \"Sourcing\" ?\n\n**statut**\n\nQuestion et candidat de vocabulaire, sans adoption définitive. Le sens de Sourcing visé par Laurent reste à préciser ; ne pas lui attribuer un choix Event Sourcing."
+    },
+    {
+      "id": "U129",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u129",
+      "line": 3493,
+      "content_sha256": "565d90c3a87605fee571cbde4b1a8906f2b5537813bd37cdb9add668bde1fa7a",
+      "captured_text": "## U129\n\n**id**\n\nU129\n\n**date**\n\n2026-09-13\n\n**titre**\n\nAdopter Record Inventory Movements\n\n**contexte**\n\nChoix du nom de la capacité distincte d’Inventory Tracking après U125–U128.\n\n**texte**\n\nGo pour Record Inventory Movements  !\n\n**statut**\n\nValidation explicite du nom Record Inventory Movements par Laurent. Définition, finalité et frontières détaillées restent proposées. Application au backlog, sans demande de publication."
+    },
+    {
+      "id": "U130",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u130",
+      "line": 3520,
+      "content_sha256": "4161548236e03b159df6b8b8762bc681c7c334541c4a6719cacc12bd769dff97",
+      "captured_text": "## U130\n\n**id**\n\nU130\n\n**date**\n\n2026-09-13\n\n**titre**\n\nPublier le backlog dans Atlas\n\n**contexte**\n\nAprès séparation des mouvements et de l’état du stock et adoption du nom Record Inventory Movements en U129.\n\n**texte**\n\nLance la release\n\n**statut**\n\nAutorisation explicite de produire et activer une nouvelle release dans Atlas. La publication conserve les statuts métier ; seule l’adoption du nom D01.g provient de U129."
+    },
+    {
+      "id": "U131",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u131",
+      "line": 3547,
+      "content_sha256": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+      "captured_text": "## U131\n\n**id**\n\nU131\n\n**date**\n\n2026-09-13\n\n**titre**\n\nCycle de vie des éléments du modèle\n\n**texte**\n\nPour le cycle de vie des objets, je te propose la chose suivante :\n\n- Lorsque c'est toi (l'IA) qui trouve des noms, des définitions, etc... l'objet doit être en statut \"proposé par l'IA\"\n- Lorsqu'on en discute, c'est à dire que tu me montre ce que tu as trouvé et qu'on en parle, le statut devient \"en cours d'instruction\".\n- Lorsque je te dis \"Go\" ou \"je valide\", alors le statut de l'objet passe à \"Validé par l'urbaniste\"\n\n**statut**\n\nConsigne de fonctionnement adoptée. Les trois états décrivent le cycle de discussion ; la portée de chaque accord reste explicitée. Aucune validation globale des contenus existants ni publication implicite."
+    },
+    {
+      "id": "U132",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u132",
+      "line": 3574,
+      "content_sha256": "18a645c0ce812d81451a84a6a1003d8331a675a632260185ec021c47709dbb7a",
+      "captured_text": "## U132\n\n**id**\n\nU132\n\n**date**\n\n2026-09-13\n\n**titre**\n\nAuditer l’ergonomie d’Atlas et prévoir un arbre à gauche\n\n**contexte**\n\nRetour de Laurent sur l’application FLOW Atlas après sa réalisation et ses évolutions. Le texte ci-dessous conserve l’orthographe du message ; seule l’entité HTML d’espace après les deux-points de la première ligne est remplacée par un espace.\n\n**texte**\n\nL'ergonomie de l'atlas est à revoir : \nL'urbanisme est un modèle arborescent et j'aimerais un arbre à gauche.\nDe plus dans les pages de détail, les compsants sont tous dockés à droite et très serrés.\nFais un audit de l'ergonomie.\n\n**statut**\n\nDemande d’audit ergonomique et préférence explicite de navigation par un arbre à gauche. Laurent signale aussi l’étroitesse et la concentration à droite des composants des pages de détail ; l’audit doit examiner ce constat. Cette orientation d’interface ne crée aucun niveau d’urbanisme ni rattachement métier nouveau, ne transforme pas les relations transversales en hiérarchie et ne constitue pas une demande de publication. Résultats et recommandations dans [l’audit ergonomique](../audits/2026-09-13-ergonomie-atlas.md)."
+    },
+    {
+      "id": "U133",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u133",
+      "line": 3604,
+      "content_sha256": "69559d6ac4b672ca4cbde45fe2efa450985fca4b4fc1de93a48b3431125382e2",
+      "captured_text": "## U133\n\n**id**\n\nU133\n\n**date**\n\n2026-09-13\n\n**titre**\n\nRetirer les visites récentes de l’interface Atlas\n\n**contexte**\n\nPrécision de Laurent pendant l’audit ergonomique demandé en U132.\n\n**texte**\n\nLes visites récentes, on s'en fiche\n\n**statut**\n\nConsigne d’interface : supprimer les visites récentes dans l’évolution d’Atlas. Ne pas proposer de les maintenir dans un accès secondaire. L’audit intègre cette orientation ; aucune modification ni validation du modèle métier et aucune publication demandée."
+    },
+    {
+      "id": "U134",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u134",
+      "line": 3629,
+      "content_sha256": "70d8980f3233af2e85d8089d5fddfe6c3edd32b42c45211b44ef70fe12b59e73",
+      "captured_text": "## U134\n\n**id**\n\nU134\n\n**date**\n\n2026-09-13\n\n**titre**\n\nAudit D04 et projections des référentiels de la Supply\n\n**contexte**\n\nLaurent interroge le recouvrement de D04 avec Agreement et précise les aptitudes autorisées sur les projections. Texte conservé, notamment le sigle SRC, sans l’assimiler automatiquement à SRM.\n\n**texte**\n\nD04, j'ai l'impression que c'est la meme chose que Agreements (référentiel).\n\nRappelle toi de ce principe fort : pour la supply, on considère que les référentiels de données ne sont que des projections, les sources de vérité étant gérées par des produits tiers : CRM, SRC, PLM etc. C'est pour ça qu'il ne doit pas y avoir beaucoup de capacités à part des capacité de visibilité, de recherche etc. (lecture uniquement) et au moins une capacité d'ingestion pour chacun.\n\nFais un audit et dis moi ce que tu en penses.\n\n**statut**\n\nPrincipe impératif de projections de références maîtrisées à l’extérieur, avec au moins une ingestion par référentiel et des aptitudes de consultation en lecture seule. Cette précision élargit l’ancienne formulation « ingestion seule » ; elle ne valide ni une fusion D04/Agreement ni de nouvelles capacités nommées. Audit dans [D04, Agreement et projections](../audits/2026-09-13-d04-agreement-projections.md). Les autorités sur les commandes restent à préciser, conformément à U98/U100."
+    },
+    {
+      "id": "U135",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u135",
+      "line": 3660,
+      "content_sha256": "e1dd08506a8e4f7748137a10b3b371bc99aef2e5715b36b329ff2fe5a24db243",
+      "captured_text": "## U135\n\n**id**\n\nU135\n\n**date**\n\n2026-09-13\n\n**titre**\n\nRéaliser la réorganisation ergonomique d’Atlas\n\n**contexte**\n\nAccord contextuel après l’audit ergonomique U132 et la suppression des visites récentes U133. L’audit recommande un arbre gauche, une fiche métier centrale, des preuves à la demande et la correction des parcours et suggestions de recherche.\n\n**texte**\n\nGo\n\n**statut**\n\nAutorisation de réaliser les corrections d’interface proposées. Aucune nouvelle hiérarchie métier, validation de contenu ni publication de modèle n’est déduite de cet accord."
+    },
+    {
+      "id": "U136",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u136",
+      "line": 3685,
+      "content_sha256": "343287814243579cd502ca62e6b320e179854eb2f58543383f47a00d0e067eb0",
+      "captured_text": "## U136\n\n**id**\n\nU136\n\n**date**\n\n2026-09-13\n\n**titre**\n\nClarifier Commitments, Orders et les usages du marché\n\n**contexte**\n\nDeux messages successifs de Laurent après l’audit D04/Agreement U134, reproduits séparément ci-dessous. La réponse intermédiaire de Codex rapproche D04 des engagements de commandes, sans adopter un renommage.\n\n**texte**\n\nCommitments, ce sont ce qu'on appelle les Orders ? SaleOrder, PurchaseOrder etc ?\n\nPuis :\n\nDu côté du marché, ça ressemble à quoi ?\n\n**statut**\n\nQuestions de vocabulaire et demande de comparaison, sans validation de nom ni de frontière. Vérification dans marche/orders-agreements-commitments.md ; les usages Microsoft imposent de ne pas réserver Commitment aux commandes."
+    },
+    {
+      "id": "U137",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u137",
+      "line": 3714,
+      "content_sha256": "7538ad8ca16e873949b310f72839f424a66953ec9c02f7b24ca2b1c9f1c8629e",
+      "captured_text": "## U137\n\n**id**\n\nU137\n\n**date**\n\n2026-09-13\n\n**titre**\n\nHypothèse de composition du cadre contractuel et des engagements de période\n\n**contexte**\n\nLaurent reformule sa compréhension après la comparaison U136. Les espaces HTML sont normalisés ; la question conserve son statut d’hypothèse à discuter.\n\n**texte**\n\nAh je comprends mieux :\n\n- on passe des contrats \"cadre\" avec les clients ou les fournisseurs (Aggreements)\n- Pour une période commerciale donnée (saison par exemple), on s'engage sur des volumes dans le cadre d'un contrat\n- Un contrat applicable est la composition du contrat cadre et des engagements sur une période\n- Les Orders permettent de consommer / executer le contrat\n\nC'est ça ?\n\n**statut**\n\nHypothèse en cours d’instruction, sans adoption de trois objets distincts ni changement de domaine. La composition proposée est cohérente à examiner ; Microsoft peut porter période et engagements directement dans un Agreement. Distinguer consommation par commande et réalisation effective. Complément dans marche/orders-agreements-commitments.md."
+    },
+    {
+      "id": "U138",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u138",
+      "line": 3746,
+      "content_sha256": "a9c12ab1010ed3caa957b66f57ac217cf02117ed1cc00ed3a24ce0829d4aee16",
+      "captured_text": "## U138\n\n**id**\n\nU138\n\n**date**\n\n2026-09-13\n\n**titre**\n\nRattacher les engagements contractuels à Agreement\n\n**contexte**\n\nQuestion de Laurent après U137. L’assistant distingue ensuite contenu contractuel et capacités actuelles D04 relatives aux commandes ; aucune migration n’est réalisée.\n\n**texte**\n\nSi Aggreements porte le contrat complètement, comme chez SAP (Contract), alors agreements doit remplacer commitments, non ?\n\n**statut**\n\nOrientation discutée : les engagements contractuels relèvent d’Agreement projeté depuis ses maîtres externes. Ne pas transférer les capacités de création/révision de commandes de D04 dans le référentiel. La formulation interrogative ne valide pas un nouveau découpage complet ni une équivalence universelle SAP."
+    },
+    {
+      "id": "U139",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u139",
+      "line": 3772,
+      "content_sha256": "d9e347e0a803a3521fa54f4680e9dc0ba2878f0ef0d95c758fc95cd5913039e4",
+      "captured_text": "## U139\n\n**id**\n\nU139\n\n**date**\n\n2026-09-13\n\n**titre**\n\nExplorer la localisation des Orders dans les cartographies du marché\n\n**contexte**\n\nDemande de recherche après clarification Agreement/Commitment/Order. Texte conservé.\n\n**texte**\n\nCe que je voudrais savoir maintenant c'est la localisation dans la carto des Orders.\n\nC'est un domaine à part ?\n\nSAP et microsoft, ils en disent quoi ? Et pas que, explore le marché stp\n\n**statut**\n\nDemande de comparaison SAP, Microsoft et autres références pour instruire un éventuel domaine transactionnel des commandes. Aucun renommage, domaine, liste de capacités ou publication adopté. Résultat dans marche/localisation-orders-cartographie.md, CMP064."
+    },
+    {
+      "id": "U140",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u140",
+      "line": 3801,
+      "content_sha256": "b5796810af4e653f97b0fbbd775d4bdd6ce2bad30c217be206919be07ee8e096",
+      "captured_text": "## U140\n\n**id**\n\nU140\n\n**date**\n\n2026-09-13\n\n**titre**\n\nUnivers Case et Supply, Order Management commun et couverture B2B/B2C\n\n**contexte**\n\nLaurent précise l’orientation après la comparaison U139. Espaces HTML normalisés ; texte conservé.\n\n**texte**\n\nC'était mon hypothèse de départ :\n\n- séparer le Case (la demande), de l'objet de pilotage de la supply (Order) => Comme TM Forum\n- Le Case sera traité plus tard dans \"l'univers Case\". Aujourd'hui on explore l'univers \"Supply\"\n- On peut regrouper les orders de toute nature, dans un domaine Order Management. C'est le moteur de décision et de workflow qui organisera les différences de comportements (DMN)\n- Par contre, il faudrait que l'Order Management gère des commandes de toute sorte, y compris les retours et surtout n'est pas cantonné au B2C, il doit gérer tout type de clients et surtout tout types de volumes.\n\nDans le marché, au niveau supply, il y a une différence entre B2C et B2B ? Au niveau commercial, c'est possible mais au niveau Supply Management, ça me paraitrait étrange, mais qui sait ?\n\n**statut**\n\nOrientation explicite : Case et Order distincts, exploration de l’univers Supply prioritaire, univers Case ultérieur ; Order Management commun à toutes natures de commandes, retours compris, clients et volumes. Nom Order Management appliqué à D04 dans le backlog ; définition reformulée par Codex proposée, anciennes capacités encore à revoir. Aucune cardinalité Case/Order, performance illimitée, solution de moteur ou équivalence exacte TM Forum validée. Recherche dans marche/supply-b2b-b2c.md, CMP065 ; aucune publication."
+    },
+    {
+      "id": "U141",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u141",
+      "line": 3833,
+      "content_sha256": "6a814365a7896b2adde55a8f1c76f8e5b36451e709f7bacefd1e86d47d6e2fa1",
+      "captured_text": "## U141\n\n**id**\n\nU141\n\n**date**\n\n2026-09-13\n\n**titre**\n\nAppliquer la structuration Supply/Case et la refonte Order Management\n\n**contexte**\n\nAprès sa question « Au vu de ce qu'on discuté, quelles mise à jours ? », Laurent approuve le plan de six mises à jour : univers Supply/Case, distinction Case/Order et lien sans cardinalité imposée, Agreement complet projeté, D04 commun, frontière D04/D07, variantes sans séparation B2B/B2C. La proposition immédiatement soumise comprend quatre capacités et leurs descriptions courtes : Order Registration — reconnaître et enregistrer une commande Supply et son origine ; Order Revision — intégrer ses évolutions autorisées, avec leur historique ; Order Visibility — restituer son contenu applicable et sa situation ; Order Reconciliation — établir ce qui reste à satisfaire en rapprochant commande, modifications et réalisations. Elle demande de réexaminer Return and Replacement Decision et maintient ouvertes annulation, suspension, fractionnement et commandes liées. La release reste inchangée.\n\n**texte**\n\nGo\n\n**statut**\n\nAccord contextuel de Laurent pour appliquer le plan au backlog et les quatre capacités présentées, dans la portée de leurs noms et descriptions courtes. Les détails nouveaux de finalité, périmètre, autorités, variantes, objets et liens proposés pendant l’implémentation ne sont pas validés par extension. Les identifiants techniques et la répartition détaillée des groupes sont des choix de modélisation traçables. Aucune release, aucun commit ni push demandé."
+    },
+    {
+      "id": "U142",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u142",
+      "line": 3858,
+      "content_sha256": "567a05f712fb582184138e33f7d93b4fc682afcf834e7b58a69fc94095ba33b3",
+      "captured_text": "## U142\n\n**id**\n\nU142\n\n**date**\n\n2026-09-13\n\n**titre**\n\nPublier la refonte Supply/Case et Order Management\n\n**contexte**\n\nDemande de publication après application U141 au backlog. Autorise la production et l’activation locale dans Atlas ; ne valide aucun contenu supplémentaire.\n\n**texte**\n\nLance une release\n\n**statut**\n\nPublication autorisée ; accords U140/U141 transcrits dans leur portée, propositions et réserves conservées. Aucun commit ni push demandé."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -3827,6 +4051,70 @@
       "captured_text": "## C70\n\n**id**\n\nC70\n\n**source**\n\nU106–U112 ; F216–F219 ; A75 ; 2026-09-13\n\n**formulation_a_eviter**\n\nLes registres Markdown sont encore le modèle courant lu par FLOW Atlas ; la release ne contient que des capacités validées ; les 36 CAP historiques sont la même nomenclature que les 36 capacités P81 ; un récit ou un besoin est une preuve de déploiement actuel.\n\n**formulation_retenue**\n\nLes JSON de backlog, release et panorama-as-is font autorité pour les modèles. Les Markdown conservent les sources, analyses, corrections et restitutions. La release publie les 36 capacités avec leurs statuts et preuves de validation distincts. Les CAP historiques restent séparées. Le panorama conserve les qualifications de preuve ; Sarenza reste non traité. U112 prépare l’extension de structure et l’épreuve sur les quatre contextes, sans adopter le nom Univers ni des objets ou liens détaillés.\n\n**statut**\n\nRemplace l’autorité décrite en U105 et l’interprétation initiale de release limitée aux éléments adoptés. La release 2026-09-13.1 restreinte reste historique, current.json pointe vers 2026-09-13.2 complète. Les validations de fond antérieures et leurs réserves demeurent."
     },
     {
+      "id": "C71",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c71",
+      "line": 1628,
+      "content_sha256": "83c5b164da441b4a87537377816c0e4bcabb8b6c7b9de7b8bb515cd30225261f",
+      "captured_text": "## C71\n\n**id**\n\nC71\n\n**source**\n\nU115/U116 ; diagnostic local du 2026-09-13, JSON backlog/release et API Atlas.\n\n**formulation_a_eviter**\n\nPrésenter les cinq capacités P82 comme la carte JSON courante avant U116, ou affirmer que la proposition non validée devait rester invisible dans le backlog. Anciens noms courants : Establish inventory positions, Record inventory facts et Provide a consolidated inventory view. Ne pas confondre état de travail et validation métier.\n\n**formulation_retenue**\n\nLe choix U116 fait de P82 le découpage courant de D01 dans le backlog : Inventory Tracking (nouveau D01.e, regroupant D01.a/D01.b), Inventory Visibility (D01.c révision 2), Stocktaking (D01.d), Supply Protection (D02.b) et Reservation (D02.c). Les trois dernières capacités restent inchangées, avec leurs validations partielles et réserves. La release 2026-09-13.2 garde les six capacités publiées ; sa mise à jour nécessite une publication explicite. Les autres propositions encore distinctes, comme P84, deviennent visibles dans Atlas sans remplacer les nœuds courants.\n\n**statut**\n\nCorrection appliquée au backlog et à la présentation Atlas. Historique préservé dans les versions figées et Git ; aucune nouvelle validation métier ni release."
+    },
+    {
+      "id": "C72",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c72",
+      "line": 1651,
+      "content_sha256": "f1c88b078d52d746492897df9a6197a8b19267c3404700900f3188edd1500fea",
+      "captured_text": "## C72\n\n**id**\n\nC72\n\n**source**\n\nU117/U118 ; P83–P87 ; audit du 2026-09-13.\n\n**formulation_a_eviter**\n\nAtlas doit proposer le backlog comme espace initial ; les propositions de noms courts sont toutes intégrées dans les nœuds JSON ; tous les domaines sont nécessairement obsolètes. Déduire une validation des aptitudes du choix de leurs noms de travail.\n\n**formulation_retenue**\n\nAtlas affiche uniquement la release sous le libellé Urbanisation. Le backlog et le panorama restent des fichiers de travail hors de cette interface. L’audit des douze repères confirme D01 corrigé, onze noms courts de D04–D07 à intégrer selon U118, neuf capacités D03 et cinq ingestions correctement reprises. D02, les décisions potentielles D05.a/c et les frontières D04/D06/D07 demeurent à discuter. Publier ces contenus conserve leurs statuts et n’arbitre pas leurs frontières.\n\n**statut**\n\nRemplace la consigne d’interface backlog par défaut et la visibilité des alternatives issue de U113/U115. La construction du modèle dans le projet reste dans le backlog. Les versions historiques restent conservées ; aucune nouvelle validation métier."
+    },
+    {
+      "id": "C73",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c73",
+      "line": 1674,
+      "content_sha256": "50b102c642b3ba16c8aa210cecee77319e79f9dd9737dc791950d7fb7bb1ef4d",
+      "captured_text": "## C73\n\n**id**\n\nC73\n\n**source**\n\nU125/U126 ; CMP062, ELM103–ELM105.\n\n**formulation_a_eviter**\n\nLa fusion des mouvements et de l’état dans Inventory Tracking reste la dernière orientation de travail. Ledger et mouvement sont synonymes ; Inventory Ledger Management est un nom adopté ou une capacité native Microsoft.\n\n**formulation_retenue**\n\nU125 demande de séparer les mouvements de stock du suivi de leur état. Le backlog remplace la capacité regroupée D01.e par D01.f Inventory Tracking (état résultant) et D01.g Inventory Movements (enregistrement, qualification et justification des mouvements), avec de nouveaux identifiants pour cette scission. U126 ouvre le nom Ledger ; Inventory Ledger Management reste une alternative proposée. Le registre est distinct des mouvements qu’il conserve. Six capacités D01 et 36 au total dans le backlog ; la release v001 garde ses cinq capacités D01 et 35 au total.\n\n**statut**\n\nOrientation de séparation appliquée au backlog ; définitions, noms et frontières détaillés proposés. Historique et release conservés, sans publication ni nouvelle validation métier."
+    },
+    {
+      "id": "C74",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c74",
+      "line": 1697,
+      "content_sha256": "47961c557a3bfca7b63a89562df842af52638cbfbac466f0165a23f8a04c0c44",
+      "captured_text": "## C74\n\n**id**\n\nC74\n\n**source**\n\nU129 ; candidat U127, séparation U125.\n\n**formulation_a_eviter**\n\nInventory Movements est le nom courant de D01.g ; Record Inventory Movements et Inventory Ledger Management sont encore des noms en concurrence.\n\n**formulation_retenue**\n\nRecord Inventory Movements est le nom adopté par Laurent le 2026-09-13 pour D01.g. La définition et la finalité restent proposées ; ne pas étendre la validation du nom. Les noms antérieurs Inventory Movements et Inventory Ledger Management restent historiques. Inventory Ledger peut continuer à désigner le registre, sans devenir le nom de la capacité. La séparation avec D01.f Inventory Tracking est conservée.\n\n**statut**\n\nChoix appliqué au backlog ; six capacités D01, 36 au total. Aucune publication. À la prochaine release, transcrire la validation U129 du seul champ name dans une nouvelle décision de publication visant D01.g et sa révision préparée."
+    },
+    {
+      "id": "C75",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c75",
+      "line": 1718,
+      "content_sha256": "4be1cadb0473dcc3b159384b653e013b495205fc8d4ac3c4adb5cf2161ce2b3f",
+      "captured_text": "## C75\n\n**id**\n\nC75\n\n**source**\n\nU134 ; précision de U97/U103, distinction U98 et orientation U100 conservées.\n\n**formulation_a_eviter**\n\nChaque référentiel de la plateforme ne peut avoir exactement qu’une capacité d’ingestion ; visibilité et recherche sont exclues. D04 et Agreement peuvent être fusionnés parce qu’ils parlent tous deux d’engagements.\n\n**formulation_retenue**\n\nLes référentiels de la Supply sont des projections de sources de vérité gérées par des produits tiers. Chacun comporte au moins une ingestion ; visibilité et recherche en lecture seule sont admises. Création, administration et validation métier des données maîtresses restent externes. L’ingestion actualise la projection, sans lui transférer la maîtrise. Agreement de référence et commande restent distincts selon U98. Les responsabilités commerciales de D04 et sa frontière avec D07 restent à instruire ; la demande d’audit ne valide pas leur fusion ou leur remplacement.\n\n**statut**\n\nPrincipe consigné dans AGENTS.md et le backlog ; analyse dans audits/2026-09-13-d04-agreement-projections.md. Aucun ajout de capacité ni publication. Les formulations historiques U97/U103 sont conservées comme provenance ; U134 prévaut pour les aptitudes de consultation."
+    },
+    {
+      "id": "C76",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c76",
+      "line": 1739,
+      "content_sha256": "623fac955df42126d7a1d63472ce7634062951d72f2e86fbd74ddd94af20f18b",
+      "captured_text": "## C76\n\n**id**\n\nC76\n\n**source**\n\nU136 ; vérification Microsoft ELM106 du 13 septembre 2026.\n\n**formulation_a_eviter**\n\nCommitment est un synonyme de commande, ou désigne exclusivement l’engagement porté par une commande dans le marché.\n\n**formulation_retenue**\n\nD04 visait localement les engagements de commandes, mais Commitment ne désigne pas exclusivement cet objet : Microsoft nomme ainsi les engagements quantitatifs ou en valeur des lignes de Sales Agreements et Purchase Agreements, consommés par des commandes. Order désigne plus directement la commande ; Agreement et Order restent distincts. Les noms et frontières de D04 restent en instruction.\n\n**statut**\n\nPrécaution lexicale enregistrée ; aucun renommage ni publication. Voir marche/orders-agreements-commitments.md et CMP063."
+    },
+    {
+      "id": "C77",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c77",
+      "line": 1760,
+      "content_sha256": "ec905e49ef9dc374f72c4f96397c5e2899a5bdc2029ce5cb8e0947ba544ec5af",
+      "captured_text": "## C77\n\n**id**\n\nC77\n\n**source**\n\nU140 ; comparaison CMP065.\n\n**formulation_a_eviter**\n\nLa demande de la couche Case et l’Order Supply sont un même objet ; Order Management reste seulement une suggestion sans orientation utilisateur, ou vise uniquement la vente B2C. Le choix d’un moteur suffit à définir toutes les variantes métier.\n\n**formulation_retenue**\n\nU140 distingue explicitement Case et Order et retient un domaine Order Management commun dans l’univers Supply, pour toutes natures de commandes, clients et volumes. D04 reprend ce nom ; ses capacités et frontières détaillées avec D07 ne sont pas automatiquement validées. Les contraintes B2B/B2C enrichissent l’analyse des aptitudes et règles ; elles ne justifient pas d’office deux domaines. Les univers et l’analogie TM Forum n’imposent pas une structure technique ou des cardinalités. Décisions et workflows restent distincts de leurs moteurs.\n\n**statut**\n\nOrientation et nom appliqués au backlog, ancienne formulation Commercial Commitments conservée ici et dans les releases. Définition nouvelle proposée par Codex ; aucune publication, aucune validation automatique des capacités héritées."
+    },
+    {
+      "id": "C78",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c78",
+      "line": 1781,
+      "content_sha256": "5168a2cd251f4e4ab7b627d4db36386bd4c4391704672e186fa1f10bc1552873",
+      "captured_text": "## C78\n\n**id**\n\nC78\n\n**source**\n\nU140/U141 ; CMP066.\n\n**formulation_a_eviter**\n\nLe backlog D04 contient toujours Commitment Creation, Commitment Revision, Commitment Reconciliation et Return and Replacement Decision ; les univers ne sont pas structurés ; l’Agreement exclut les engagements contractuels de période.\n\n**formulation_retenue**\n\nU141 applique Supply/Case comme univers explicites. D04 Order Management contient D04.e Order Registration, D04.f Order Revision, D04.g Order Visibility et D04.h Order Reconciliation. Les noms et descriptions courtes présentés sont validés par Laurent ; les compléments nouveaux restent proposés. Les anciens D04.a–d sont retirés de la carte active et conservés dans modeles/backlog/history/pre-U141.json : nouveaux résultats, nouveaux identifiants, aucune réutilisation. Agreement porte le contrat complet projeté, y compris périodes et engagements ; aucun pouvoir d’administration transféré. D04 suit la commande autorisée, D07 les engagements et faits d’exécution ; correspondances détaillées, reliquats et cas limites restent à instruire.\n\n**statut**\n\nAppliqué au backlog uniquement. Réexamen du droit commercial de retour/remplacement différé avec Case ; pas de perte du besoin, pas de capacité Case inventée. Release v002 conservée. Note de mise en œuvre : connaissance/27-order-management-et-univers.md."
+    },
+    {
       "id": "P01",
       "path": "connaissance/05-propositions.md",
       "anchor": "p01",
@@ -5131,6 +5419,14 @@
       "captured_text": "## Q076\n\n**id**\n\nQ076\n\n**theme**\n\nContenu et autorités du Fulfillment Network\n\n**question**\n\nQuels points, relations et caractéristiques doivent être reçus dans Fulfillment Network, depuis quels maîtres et avec quelle validité, en distinguant nœuds permanents et destinations ponctuelles ?\n\n**enjeu**\n\nDélimiter le réseau de référence, les liens Party/lieu et les données utilisées par D06/D03 sans y fusionner stocks, charge courante ou parcours retenus. Préserver l’autonomie C-Log et les frontières FLOW.\n\n**source**\n\nU102/F214 pour le besoin ; A73/C68 et D13 pour les distinctions proposées ; 2026-09-11.\n\n**statut**\n\nOuverte sur le détail et les maîtres ; la demande de référentiel et la distinction Party/lieu sont déjà explicites.\n\n**reponse**\n\n—"
     },
     {
+      "id": "Q077",
+      "path": "connaissance/06-questions.md",
+      "anchor": "q077",
+      "line": 2333,
+      "content_sha256": "76f70d6f8e4e7c64fba1cbf4d62fb8433798ff9ecf9268c202ad627637c15fa5",
+      "captured_text": "## Q077\n\n**id**\n\nQ077\n\n**question**\n\nQuels comportements, autorités et relations détaillés faut-il retenir pour les Orders Supply : annulation, suspension, fractionnement, commandes liées, grain de rapprochement avec D07, contraintes de satisfaction et volumétrie ? Quels liens caractérisés Case/Order et quelles cardinalités ?\n\n**source**\n\nU140/U141 ; quatre capacités D04 validées dans leur description courte, compléments à éprouver. Prolonge Q074 sans clore Q072 sur la consommation contractuelle.\n\n**statut**\n\nOuverte. La distinction Case/Order et le domaine Order Management commun sont acquis ; les détails ci-dessus restent à instruire.\n\n**reponse**\n\n—"
+    },
+    {
       "id": "ORG-GBM",
       "path": "connaissance/07-composants.md",
       "anchor": "org-gbm",
@@ -6275,6 +6571,14 @@
       "captured_text": "## MKT22\n\n- Nom / organisme : SAP Master Data Governance on SAP S/4HANA — SAP.\n- Nature : solution de gouvernance et modèles de domaines de données ; ce n’est pas une carte RBA de capacités métier.\n- Rôle envisagé : examiner la coexistence d’un dispositif commun de référentiels et de modèles distincts par sujet.\n- Version : cours public évolutif, édition logicielle précise non indiquée dans la leçon ; ne pas extrapoler sa couverture aux différentes éditions cloud.\n- Source officielle : [Describing Data Domains and Extensibility Options](https://learning.sap.com/courses/introducing-sap-master-data-governance/describing-data-domains-and-extensibility-options), sections Out-of-the-Box Domain Models et Extensibility Options.\n- Consultation : texte public lu le 2026-09-11 ; ELM099. Pas d’import du schéma ni du contenu propriétaire complet.\n- Limites : preuve de structure produit et de domaines de données, pas d’équivalence de niveaux avec notre domaine problématique. Gouvernance et administration restent hors du périmètre local des ingestions. Droits de redistribution non examinés ; synthèse courte et lien uniquement."
     },
     {
+      "id": "MKT23",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt23",
+      "line": 324,
+      "content_sha256": "45c446d2edee63e940b3e11d5555ae305dcb943a3d4dab63c073e5f4f7b6b867",
+      "captured_text": "## MKT23\n\n- Référence / organisme : IBM Sterling Order Management System — IBM.\n- Nature : produit OMS et typologie de documents, distinct du modèle historique CBM (MKT06).\n- Rôle : éprouver la famille générique des Orders achat, vente, retour et transfert, sans importer un périmètre produit comme domaine métier.\n- Source officielle : [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order ; texte lu le 2026-09-13. Documentation évolutive, édition précise non affichée.\n- Limites : aucune hiérarchie de Business Capabilities ni maîtrise installée Beaumanoir démontrée. Synthèse et liens seulement ; pas de redistribution du modèle produit. ELM112, CMP064.\n\n### Complément MKT20 — 13 septembre 2026\n\nLe corpus Oracle Fusion est complété pour la localisation des Orders : Order Management 25C (ELM108) et Procurement 25C, [Purchase Order Infolets](https://docs.oracle.com/en/cloud/saas/procurement/25c/oaprc/purchase-order-infolets.html), espace Purchase Orders, texte lu. Ce complément ne fusionne pas ces produits avec GOP et reste distinct du Retail Reference Model MKT05. Comparaison de périmètres de produits, pas de hiérarchie de capacités ; ELM111/CMP064."
+    },
+    {
       "id": "CMP001",
       "path": "marche/comparaisons.md",
       "anchor": "cmp001",
@@ -6713,6 +7017,46 @@
       "line": 631,
       "content_sha256": "37d01a3fb73a6b92393e6d43252bacbc4a52119874d3b38ed4a52e91b846591b",
       "captured_text": "### CMP061\n\n- État local : U103/F215/A74/C69 ; P87 retenue sur la présentation ; P81 0.9.\n- Corpus : ELM099–ELM102 et CMP059 pour les distinctions de niveaux ; CMP060 pour le réseau encore partiellement comparé. Aucune nouvelle consultation externe.\n- Adaptation appliquée : Business References présenté comme groupe de cinq références autonomes ; sept domaines transactionnels de travail visibles à côté. Douze repères détaillés et 36 aptitudes conservés.\n- Relation et limites : le regroupement est local, pas un domaine natif SAP, Microsoft, Guild ou TM Forum. L’accord ne valide pas de nouvelles équivalences, les maîtres ni le modèle détaillé du réseau ; il ne fusionne pas les capacités.\n- Auteur/date/statut : Codex, 2026-09-11 ; application de l’accord contextuel de Laurent Go en U103, portée explicitée en F215 ; Q075 résolue, Q076 ouverte."
+    },
+    {
+      "id": "CMP062",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp062",
+      "line": 640,
+      "content_sha256": "28a677ed55fbc65f58333e3429124cca2b5a73754bd4846049034bf9128303d1",
+      "captured_text": "### CMP062\n\n- État local : U125/U126, backlog après séparation de D01.e en D01.f Inventory Tracking et D01.g Inventory Movements ; six capacités D01, 36 au total.\n- Éléments externes : ELM103 SAP, ELM104 Microsoft Supply Chain Management, ELM105 Microsoft Business Central ; consultations du 2026-09-13.\n- Relation : appui lexical et fonctionnel partiel. Transactions, état résultant et registre sont distinguables ; le marché consulté ne prouve pas notre découpage en capacités autonomes.\n- Adaptation : les mouvements sont enregistrés, qualifiés et justifiés en D01.g ; les quantités et états résultants sont établis et actualisés en D01.f. D01.c conserve la restitution d’une vision partagée. Les ressources futures restent distinctes des mouvements réalisés.\n- Nom alternatif : Inventory Ledger Management proposé après U126 ; un ledger désigne d’abord un registre. Sa définition de capacité doit exprimer l’aptitude indépendante des outils. Nom non adopté.\n- Limites : ne pas assimiler mouvement à déplacement physique ni prendre la réalisation logistique à la charge de FLOW. Documents, autorités, liens détaillés et correspondance native de chaque capacité restent à préciser.\n- Auteur/date/statut : Codex, 2026-09-13. Séparation de travail selon Laurent ; formulations proposées, sans nouvelle validation métier ni publication.\n\n\n### Actualisation CMP062 — U129\n\n13 septembre 2026 : **Record Inventory Movements** devient le nom adopté localement pour D01.g, d’après U127/U129. La capacité et sa définition conservent les appuis partiels ELM103–ELM105 ; aucune nouvelle équivalence native ni nouvelle consultation externe. Le choix du nom ne valide pas la définition ou les frontières. Inventory Movements et Inventory Ledger Management sont historiques."
+    },
+    {
+      "id": "CMP063",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp063",
+      "line": 654,
+      "content_sha256": "c9197589ddccee3a3a60998ef0b12f978d7fa45267f2153522dd165b45df0890",
+      "captured_text": "### CMP063\n\n- État local : U136/C76, D04 Commercial Commitments, D11 Agreement et D07 dans le backlog et la release v002 ; contenu inchangé.\n- Éléments externes : ELM106 Microsoft, ELM107 SAP (extraits limités), ELM108 Oracle Order Management 25C ; contrôle du 2026-09-13.\n- Relation : appui sémantique à Agreement/Order et recouvrement partiel commande source/réalisation. Commitment est également employé pour les Agreements Microsoft.\n- Adaptation proposée : préférer Order pour l’objet commande ; examiner le domaine après clarification des autorités D04/D07. Aucun renommage appliqué ni équivalence de capacité établie.\n- Auteur/date/statut : Codex, 2026-09-13, proposé par l’IA. Analyse et limites dans [Orders, Agreements et Commitments](orders-agreements-commitments.md). U134 conserve la maîtrise externe des références ; aucune validation ni publication."
+    },
+    {
+      "id": "CMP064",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp064",
+      "line": 661,
+      "content_sha256": "cd4092fdef595dc7a6750af65f22a0a48d8d523a47848098d777f4156d40de16",
+      "captured_text": "### CMP064\n\n- État local : U138/U139 ; backlog et release v002, D04/D07 en réexamen, Agreement sous maîtrise externe U134. Aucun changement de capacités.\n- Éléments externes : ELM109 SAP, ELM110 Microsoft, ELM111 Oracle, ELM112 IBM Sterling, ELM113 TM Forum ; contrôles du 2026-09-13.\n- Relation : appuis sémantiques et méthodologiques, recouvrements partiels ; niveaux natifs explicitement différents. Pas d’équivalence globale de domaine.\n- Proposition : éprouver Order Management transactionnel comme espace de la demande autorisée, distinct de la promesse et de la réalisation ; alternative de rapprochement avec D07 si leurs résultats ne sont pas distincts. Famille documentaire commune étayée par Sterling, plusieurs représentations par Oracle/TM Forum.\n- Limites : pas de séparation achat/vente imposée, pas de domaine générique déclaré standard ; SAP RBA seulement cité par extrait d’article, pas d’export complet ; ODA n’est pas une carte de capacités.\n- Auteur/date/statut : Codex, 2026-09-13, proposé par l’IA ; noms et périmètres non adoptés. [Étude et sources](localisation-orders-cartographie.md). Aucune publication."
+    },
+    {
+      "id": "CMP065",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp065",
+      "line": 669,
+      "content_sha256": "ea333976c328e25b9d46bb45222e707676aebbfbe3426909031d006abeec4f7e",
+      "captured_text": "### CMP065\n\n- État local : U140/C77 ; D04 Order Management dans le backlog, nom retenu, définition/finalité reformulées proposées. Anciennes capacités à revoir.\n- Corpus : ELM114, compléments ELM112 et ELM113 ; sources et limites dans [Supply B2B/B2C](supply-b2b-b2c.md), contrôle 2026-09-13.\n- Relation : appuis fonctionnels partiels à un socle commun et à des variantes de satisfaction/réalisation. Pas d’équivalence native de domaine, de Case avec Product Order ou d’univers avec ODA.\n- Application : Case distinct d’Order, univers Supply prioritaire, Order Management toutes natures dont retours et tous clients/volumes. Les conditions différenciées ne sont pas automatiquement de nouvelles capacités ; vérifier leur couverture.\n- Auteur/date/statut : Codex, 2026-09-13. Orientation utilisateur appliquée ; analyse et détails proposés, aucune publication."
+    },
+    {
+      "id": "CMP066",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp066",
+      "line": 676,
+      "content_sha256": "95b849bc8e4acdaa75d8cb9fd06cde72ad36bceb36fdee703b08998459d72672",
+      "captured_text": "### CMP066\n\n- État local : U141/C78 ; univers Supply/Case et quatre capacités D04.e–h, noms et descriptions courtes approuvés ; D07 précisé sans validation nouvelle de ses formulations.\n- Corpus déjà examiné : ELM106 Agreements/Orders, ELM108/ELM111 source et réalisation Oracle, ELM112 famille de documents Sterling, ELM113 niveaux ODA, ELM114 variantes de Supply. Pas de nouvelle consultation externe pour cette application du Go.\n- Relations : appui partiel à Registration/Revision par ELM108, à Visibility par les vues de situation ELM111 ; famille de toutes natures ELM112. Reconciliation D04.h et la frontière précise D07.c restent des constructions locales à comparer au niveau exact de résultat. Aucun libellé natif ou équivalence exacte affirmé pour les quatre capacités.\n- Agreement complet : engagements et périodes selon ELM106, maîtrise externe selon U134. Le regroupement Supply/Case n’est pas une hiérarchie de marché certifiée ; ODA reste une analogie.\n- Auteur/date/statut : Codex, 2026-09-13. Application de l’accord Laurent U141, correspondances proposées et réserves préservées. Voir connaissance/27-order-management-et-univers.md et Q077. Aucune publication."
     },
     {
       "id": "CMP003",
@@ -7529,6 +7873,102 @@
       "line": 977,
       "content_sha256": "9c99494da41f0944800f4a7ae33c23eea9286ef27466592e0d8f4730feaaad5e",
       "captured_text": "### ELM102\n\n- Référence : MKT03 Business Architecture Guild ; The Business Architecture Metamodel Guide v3.0, septembre 2024.\n- Source/localisateur : [guide public](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf), §5.2, page PDF 17 (index 16), continuation page 18 ; texte relu le 2026-09-11. Complément de ELM097, pas lecture du guide BIZBOK complet.\n- Nature : principe de définition et décomposition des capacités.\n- Sens consulté, reformulé : l’objet focal d’une capacité reste celui de ses sous-capacités ; l’exemple Customer ne prend pas en charge les accords ni les produits.\n- Adaptation et limite : préserver les sens sous un regroupement de présentation. Ce passage ne prescrit ni un domaine par référentiel ni la hiérarchie locale Univers/Domaine/Capacité ; ne pas présenter notre conteneur comme capacité parente certifiée Guild. Aucun modèle retail réservé aux membres consulté."
+    },
+    {
+      "id": "ELM103",
+      "path": "marche/elements.md",
+      "anchor": "elm103",
+      "line": 986,
+      "content_sha256": "08ae38d0be29e3800cb6a3bfffa696311cc7e3dfd05f3f4c01369ad05d1b42b9",
+      "captured_text": "### ELM103\n\n- Référence : MKT13 SAP S/4HANA ; leçon évolutive, édition exacte non précisée.\n- Libellés natifs : Goods Movements ; Managing Stocks by Quantity.\n- Nature : vocabulaire et description fonctionnelle de produit, pas rang RBA établi.\n- Source : [Defining Inventory Management and Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), sections Managing Stocks by Quantity, Planning, Entry, and Documentation of Goods Movements et Documents for Goods Movements ; texte consulté le 2026-09-13.\n- Sens consulté, reformulé : SAP distingue les transactions modifiant le stock, les quantités mises à jour et les documents justificatifs. Les réceptions, sorties, transferts et changements de qualification illustrent les mouvements ; ces derniers peuvent exister sans déplacement physique.\n- Adaptation : appui partiel à la séparation locale mouvements/état. La documentation inclut valorisation et effets comptables, hors périmètre des capacités proposées ici. Ne prescrit pas deux capacités autonomes ni deux composants."
+    },
+    {
+      "id": "ELM104",
+      "path": "marche/elements.md",
+      "anchor": "elm104",
+      "line": 995,
+      "content_sha256": "9bb67bb453be30053e6b9538da6ccda272980629e656e2c5db97ad657c9376ef",
+      "captured_text": "### ELM104\n\n- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive, mise à jour affichée 2025-08-29.\n- Libellés natifs : Inventory transactions, Inventory movements, Inventory journals.\n- Nature : transactions et journaux de produit ; aucune hiérarchie de capacités établie.\n- Source : [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals), introduction et Types of inventory journals ; texte consulté le 2026-09-13, malgré le bandeau générique de connexion.\n- Sens consulté, reformulé : les journaux enregistrent des transactions de stock de plusieurs types. Movement désigne aussi un type particulier de journal, avec traitement comptable spécifique ; ne pas assimiler ce type à l’ensemble des mouvements locaux.\n- Adaptation : Inventory Movements est un nom local proposé pour la capacité à enregistrer et qualifier les mouvements. Les journaux et leur workflow ne deviennent pas des capacités supplémentaires."
+    },
+    {
+      "id": "ELM105",
+      "path": "marche/elements.md",
+      "anchor": "elm105",
+      "line": 1004,
+      "content_sha256": "665bdf4a601fc4610bffafd7c9e163d7b32908dd84fee374e6372e9cf682a245",
+      "captured_text": "### ELM105\n\n- Référence : MKT14, produit Microsoft Dynamics 365 Business Central, distinct de Supply Chain Management ; documentation évolutive, édition exacte inconnue.\n- Libellé natif : Item Ledger Entry.\n- Nature : écriture dans un modèle de produit ; pas une Business Capability.\n- Source : [Design Details: Inventory Posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting), introduction et distinction quantity/value postings ; texte consulté le 2026-09-13.\n- Sens consulté, reformulé : les variations de quantités sont enregistrées dans les item ledger entries, les variations de valeur dans les value entries. Les écritures d’application relient entrées et sorties.\n- Adaptation : Ledger peut éclairer le registre métier des mouvements. Inventory Ledger Management reste un nom de capacité proposé localement, pas un libellé Microsoft attesté. Aucune importation des règles de valorisation ou du schéma technique."
+    },
+    {
+      "id": "ELM106",
+      "path": "marche/elements.md",
+      "anchor": "elm106",
+      "line": 1012,
+      "content_sha256": "09eca7f82a9b712cfb6385028b1c5ab7feb0d89397e12568c3b405588cebe497",
+      "captured_text": "### ELM106\n\n- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive sans édition figée. Contrôle 2026-09-13.\n- Libellés : Sales Agreement, Purchase Agreement, Commitment types, Sales Order, Purchase Order. Nature : objets et règles de produit.\n- Sources et localisateurs : [Sales agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-agreements) et [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), introduction, Commitment types et application aux commandes ; textes lus.\n- Sens reformulé : les Agreements portent des engagements de quantité ou valeur que consomment les commandes liées. Commitment ne signifie pas exclusivement Order.\n- Adaptation : appui sémantique à la distinction Agreement/Order, correction C76 ; aucun rang de capacité ni responsabilité FLOW déduit."
+    },
+    {
+      "id": "ELM107",
+      "path": "marche/elements.md",
+      "anchor": "elm107",
+      "line": 1020,
+      "content_sha256": "a0a4b05809c91a44af0f86dcff147779064b5fb93463bb39c379f2fa01859199",
+      "captured_text": "### ELM107\n\n- Référence : MKT13 SAP S/4HANA ; Manage Sales Contracts (édition exacte non obtenue) et Purchase Orders, version affichée 2025 FPS01. Contrôle 2026-09-13.\n- Nature : objets et fonctionnalités de produit. Libellés Sales Contract, Sales Order, Purchase Order.\n- Sources, liens et localisateurs : [note comparative](orders-agreements-commitments.md), section Sources consultées et limites. Extraits indexés seulement ; ouvertures directes sans texte exploitable.\n- Sens reformulé : Sales Order créée à partir d’un Sales Contract ; Purchase Order comme instruction de fourniture. Appui lexical limité, aucune équivalence de domaine ou rang RBA établi."
+    },
+    {
+      "id": "ELM108",
+      "path": "marche/elements.md",
+      "anchor": "elm108",
+      "line": 1027,
+      "content_sha256": "532cb0044b6feb1753b1fe19ce70cdd33e421958a5a67a8990955df49a3fda71",
+      "captured_text": "### ELM108\n\n- Référence : Oracle Fusion Cloud Order Management, édition 25C ; complément produit au corpus Oracle Fusion MKT20, distinct de GOP et de MKT05 Retail Reference Model.\n- Source : [How Order Management Transforms Source Orders Into Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/how-order-management-transforms-source-orders-into-sales-orders.html), transformation et Parts of Sales Orders You Can Use After Transformation ; texte lu le 2026-09-13.\n- Nature : objets et orchestration de produit. Libellés Source Order, Order line, Orchestration process.\n- Sens reformulé : la commande reçue ou saisie est transformée pour sa réalisation ; structure source et structure opérationnelle peuvent différer.\n- Adaptation : appui partiel à la distinction commande source/réalisation ; pas d’équivalence globale à notre architecture, pas d’unification achat/vente démontrée."
+    },
+    {
+      "id": "ELM109",
+      "path": "marche/elements.md",
+      "anchor": "elm109",
+      "line": 1034,
+      "content_sha256": "e58ff40da26afb0d025ae6e85af3405f99a564ba726b4f5d1c82a2e99e62ada2",
+      "captured_text": "### ELM109\n\n- Références : MKT04 SAP RBA cité par un article d’architecture ; MKT13 S/4HANA vue produit. Sources S1–S3, liens et localisateurs dans [la localisation des Orders](localisation-orders-cartographie.md). Contrôle du 2026-09-13.\n- Libellés : Customer → Sales → Customer Order and Contract Management ; Sales order management ; Sourcing and Procurement → Operational Procurement → Purchase Order Processing.\n- Nature et accès : premier chemin dans un extrait indexé, article 403, édition RBA inconnue ; deuxième dans la page produit Sales lue ; troisième dans un extrait de navigation de configuration, ouverture sans texte. Ne pas assimiler leurs niveaux.\n- Adaptation : appui au placement distinct des commandes client et achat ; aucun domaine générique Orders ni rang uniforme établi."
+    },
+    {
+      "id": "ELM110",
+      "path": "marche/elements.md",
+      "anchor": "elm110",
+      "line": 1041,
+      "content_sha256": "10147c319134aa158e6d0697d688d8463deda8d81e359ec7b0fbb0c2214f49cc",
+      "captured_text": "### ELM110\n\n- Référence : MKT14 Microsoft Dynamics 365, documentation évolutive. Sources S4–S6, liens dans [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.\n- Libellés : Order to cash / Manage sales orders ; Source to pay / Procure goods and services ; Transfer orders.\n- Nature : les deux premiers sont des positions dans le catalogue de processus ; le troisième est un objet et un paramétrage de produit. Les commandes d’achat sont traitées dans Procure goods and services ; les transferts d’entrepôts mobilisent Inventory management et Master planning.\n- Adaptation : correspondance de couverture, pas domaines métier équivalents. Aucun retour automatique à une structure locale Source to Pay."
+    },
+    {
+      "id": "ELM111",
+      "path": "marche/elements.md",
+      "anchor": "elm111",
+      "line": 1048,
+      "content_sha256": "12455755f68b377e16fa4336c1c4a868454c12b24f868076c4a4e6f90870495c",
+      "captured_text": "### ELM111\n\n- Référence : MKT20, complément Oracle Fusion Order Management et Procurement 25C. Sources S7–S8 de [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.\n- Libellés et nature : Source Order, Order Management, Purchase Orders ; objets et espaces de produits.\n- Sens : représentation de commande transformée pour sa réalisation, ELM108 ; espace distinct des commandes d’achat dans Procurement.\n- Adaptation : distinguer origine et réalisation ; ne pas attribuer toutes les commandes de l’entreprise au produit Order Management ni identifier ce produit au domaine D04."
+    },
+    {
+      "id": "ELM112",
+      "path": "marche/elements.md",
+      "anchor": "elm112",
+      "line": 1055,
+      "content_sha256": "6a2063354c38b6b030b690867eff86fa7fa96c364248013353bda373860c4608",
+      "captured_text": "### ELM112\n\n- Référence : MKT23 IBM Sterling OMS, édition précise non indiquée. [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order, texte lu le 2026-09-13.\n- Libellés : Sales Order 0001, Planned Order 0002, Return Order 0003, Template Order 0004, Purchase Order 0005, Transfer Order 0006, Master Order 0007.\n- Nature : types documentaires natifs de produit. Adaptation : appui à la famille générique locale des Orders, pas preuve d’un domaine autonome, d’un objet universel ou d’une carte de capacités. Distinct d’IBM CBM."
+    },
+    {
+      "id": "ELM113",
+      "path": "marche/elements.md",
+      "anchor": "elm113",
+      "line": 1061,
+      "content_sha256": "f6ede30904ac2dbc881166a1c0711a443c08628b6b9fde9c312122af2d6d912a",
+      "captured_text": "### ELM113\n\n- Référence : MKT19 TM Forum ODA ; [Component Directory](https://www.tmforum.org/oda/directory/components-map), sections Core Commerce Management, Production, Party Management ; carte lue le 2026-09-13, édition globale non affichée.\n- Libellés : TMFC002 Product Order Capture & Validation et TMFC003 Product Order Delivery Orch & Mgt dans Core Commerce Management ; TMFC007 Service Order Management et TMFC011 Resource Order Management dans Production ; TMFC039 Agreement Management dans Party Management.\n- Nature : composants ODA, pas sous-capacités attestées. Page détaillée TMFC007 v1.2.2 inaccessible 403, ne pas revendiquer sa lecture complète.\n- Adaptation : appui à la séparation demande commerciale/demandes de réalisation ; aucune équivalence Product/Service/Resource avec nos objets de commerce et de logistique."
+    },
+    {
+      "id": "ELM114",
+      "path": "marche/elements.md",
+      "anchor": "elm114",
+      "line": 1067,
+      "content_sha256": "97bf0cc0b47ed5df8481b105fb5714255fb90a4d67c5f26e23cdd69245479d24",
+      "captured_text": "### ELM114\n\n- Références : MKT13 SAP S/4HANA for Fashion and Vertical Business, cours évolutif sans édition figée ; MKT14 Microsoft Dynamics 365 Supply Chain Management, Delivery schedules mis à jour 2025-05-07 ; MKT23 IBM Sterling OMS, édition inconnue.\n- Sources et localisateurs : [Supply B2B/B2C](supply-b2b-b2c.md), section Constats du marché, liens officiels. Contrôle 2026-09-13 ; SAP et Microsoft textes lus, IBM aperçu indexé et lecture précédente, ouverture directe 403.\n- Nature : fonctions et portée de produits, pas rangs de capacités. Libellés : wholesale/retail, delivery schedules, B2B/B2C.\n- Sens reformulé : socle SAP intégré et segmentation ; échelonnement de quantités sur plusieurs livraisons Microsoft ; portée multi-clients IBM.\n- Adaptation : appui partiel au domaine Order Management commun U140 ; contraintes de satisfaction et échelles différentes à éprouver. Ne prouve ni toutes capacités couvertes ni performances illimitées."
     },
     {
       "id": "ELM003",

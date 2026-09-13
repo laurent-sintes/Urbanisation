@@ -1,0 +1,3216 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "flow-urbanism",
+  "version": "2026-09-13.4",
+  "as_of": "2026-09-13",
+  "source_version": "P81 0.9 + P82/U116 + libellés P84/P86 retenus en U118 + séparation D01 U125 (vocabulaire U126 ouvert) + nom D01.g adopté U129",
+  "source_files": [
+    {
+      "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "sha256": "65841ecf1c8fd7abf61221af37c6f842a68ecc69aad11ee9e86cb40655ec32dd"
+    },
+    {
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "sha256": "99fe4966faedd434d30b6aee3daa41d1bcc0b36b4914f539419da21acc6aa1e6"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    },
+    {
+      "path": "connaissance/05-propositions.md",
+      "sha256": "4ec2a903af2c14744ba8b2e83ba18acf8a7042126dcc480121774f28ab6c6a16"
+    },
+    {
+      "path": "app/model-metadata.json",
+      "sha256": "89ffdbf46ce58660b9e167863ea9f474976bb8f048fb9c52b53e612a5d5a6c11"
+    },
+    {
+      "path": "app/exploration.json",
+      "sha256": "dc3d99a5ac1ff4beb6794af10c16466a45e115ff9da3651ed816db1ac438c023"
+    }
+  ],
+  "space": "release",
+  "principles": [
+    {
+      "id": "PRINCIPLE-TWO-LAYERS",
+      "statement": "Socle transactionnel et modèle processus distincts ; chacun possède ses objets, sa persistance et son urbanisation.",
+      "source_refs": [
+        "U18",
+        "U19",
+        "U20",
+        "U49",
+        "U50",
+        "U62"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "2eff74ee15b64139872ef75cbd61b73e25d1178433231110530d09b1f7e7414d"
+    },
+    {
+      "id": "PRINCIPLE-CAPABILITY",
+      "statement": "Une capacité décrit ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.",
+      "source_refs": [
+        "U33"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "8c62457d9da8dc7e2defc990f5f1e4efb3c1e5eaf51ff3dbc1138b58f508916b"
+    },
+    {
+      "id": "PRINCIPLE-SUPPLY-DOCUMENTS",
+      "statement": "Supply générique orientée documents d’autorisation ; les parcours commerciaux appartiennent au modèle processus.",
+      "source_refs": [
+        "U100"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "876694c80b423265ff73a38f9f588c9560acef7a44ce498acbcc4d9e92b95afd"
+    },
+    {
+      "id": "PRINCIPLE-FLOW-LOGISTICS",
+      "statement": "Logistique hors développement FLOW, en adhérence ; autonomie C-Log conservée.",
+      "source_refs": [
+        "U58"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "1be43e545fa8b13b1ec05e04e9dfa2f19a8144d0a950ff9c5e65fe6e7fbfeeec"
+    },
+    {
+      "id": "PRINCIPLE-CTP-DEFERRED",
+      "statement": "ATP associé à la promesse ; CTP conservé au glossaire et placement différé.",
+      "source_refs": [
+        "U95"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "481c6cd56381f236246f93dfc6781c9409400ab144e87b0b90b32ec92a6d75fd"
+    },
+    {
+      "id": "PRINCIPLE-ORDER-AGREEMENT",
+      "statement": "Commandes distinctes des Agreements de référence.",
+      "source_refs": [
+        "U98"
+      ],
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "3564bac9498b5f1a36db799cc5bb62633830dcf82ee38e80bc7eb42902e62eca"
+    }
+  ],
+  "limitations": [
+    "Les 36 capacités du modèle figé sont publiées ; la publication ne valide pas leurs définitions, noms ou rattachements.",
+    "approved_fields et les décisions associées délimitent les aspects validés ; proposed_fields restent à valider.",
+    "Les validations contextuelles restent partielles ; le réexamen du rattachement de Reservation demeure visible.",
+    "Les alternatives non intégrées et les illustrations restent dans le backlog.",
+    "Le modèle processus détaillé reste à construire ; les autorités et frontières ouvertes ne sont pas arbitrées par cette publication."
+  ],
+  "element_versioning": 1,
+  "revision": 2,
+  "content_sha256": "7700f1c59285e0f1f225b8eb3d75d441546a3f0b3a1a3d57c208c63bbd2b0714",
+  "last_modified": "2026-09-13T16:25:42.581332Z",
+  "release_kind": "published_snapshot",
+  "publication": {
+    "source_refs": [
+      "U130"
+    ],
+    "note": "Publication complète demandée par Laurent ; publier ne vaut pas valider."
+  },
+  "nodes": [
+    {
+      "id": "business-references",
+      "revision": 1,
+      "kind": "group",
+      "layer": "transactional",
+      "fields": {
+        "name": "Business References"
+      },
+      "source_refs": [
+        "U103"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "business-references"
+      },
+      "review": {
+        "state": "partial",
+        "note": "Groupe de présentation, pas une capacité mère."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "d530da2dc4a0b2c03a83ba4f388483ea20d6176561f5b7978abec8fb045e6834",
+      "adoption_ids": [
+        "ADOPT-042"
+      ],
+      "approved_fields": [
+        "name"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D01",
+      "revision": 3,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Inventory Management",
+        "definition": "Connaître les stocks et les ressources attendues, expliquer leurs variations, fiabiliser les quantités et préserver les usages par les protections et réservations. Le stock futur est connu ici et mobilisé par Order Promising.",
+        "finality": "Disposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.",
+        "scope": "Stocks physiques, états logiques et connaissance des ressources futures ; disponibilité virtuelle pour la promesse dans Order Promising."
+      },
+      "source_refs": [
+        "P81",
+        "U66",
+        "U74",
+        "U75",
+        "U78",
+        "U79",
+        "U80",
+        "U81",
+        "U86",
+        "C58",
+        "P82",
+        "U116",
+        "C71",
+        "U125",
+        "U126",
+        "C73"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d01-stocks",
+        "line": 46
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Aucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Le statut éditorial du backlog ne constitue pas une preuve de validation. Note antérieure, qui ne qualifie pas cette révision : « Nom retenu en U66. Six capacités dans le backlog après séparation mouvements/état selon U125 ; noms et définitions détaillés proposés. La publication v001 conserve cinq capacités. Frontières détaillées et réservation à éprouver. »"
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "content_sha256": "fe305d8f42239917fc42833cc8fd2148e89393503b5aa8a3999d6ad14f2e532d",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D01.f",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Inventory Tracking",
+        "definition": "Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues.",
+        "finality": "Disposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu."
+      },
+      "source_refs": [
+        "U125",
+        "U126",
+        "C73",
+        "P82",
+        "CMP062",
+        "ELM103",
+        "ELM104",
+        "ELM105"
+      ],
+      "source_locator": {
+        "path": "connaissance/04-corrections.md",
+        "anchor": "c73"
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Scission de travail de D01.e selon U125. Définition et nom proposés ; aucune nouvelle validation métier. D01.e reste dans la publication historique v001."
+      },
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "content_sha256": "82d4cd14deb60774aadc210ac61f5bfd9ee78a5cf36c0d0bbf380e63d44c489d",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D01.g",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Record Inventory Movements",
+        "definition": "Enregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.",
+        "finality": "Disposer d’un historique traçable des faits qui expliquent les variations du stock."
+      },
+      "source_refs": [
+        "U125",
+        "U126",
+        "C73",
+        "P82",
+        "CMP062",
+        "ELM103",
+        "ELM104",
+        "ELM105",
+        "U127",
+        "U129",
+        "C74"
+      ],
+      "source_locator": {
+        "path": "connaissance/04-corrections.md",
+        "anchor": "c73"
+      },
+      "review": {
+        "state": "partial",
+        "note": "Nom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125."
+      },
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "content_sha256": "74e2c5dc811dac406a53bf4369e67584d761b058b11d31ea80f714a515efd637",
+      "adoption_ids": [
+        "ADOPT-048"
+      ],
+      "approved_fields": [
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D01.c",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Inventory Visibility",
+        "definition": "Fournir une lecture cohérente des stocks physiques, de leurs états logiques et des ressources futures dans les différents lieux et périmètres, avec provenance et fraîcheur, sans double compte.",
+        "finality": "Permettre aux décisions de s’appuyer sur une connaissance partagée."
+      },
+      "source_refs": [
+        "P82",
+        "U81",
+        "U83",
+        "U116",
+        "C71"
+      ],
+      "source_locator": {
+        "path": "connaissance/05-propositions.md",
+        "anchor": "p82"
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Inventory Visibility devient le libellé courant du backlog selon U116. Même aptitude que D01.c ; définition et finalité reprises de P82. Périmètre et distinction avec Inventory Tracking à éprouver."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "db93dcbf15514ab9d6cfdf81f1da0873b3bc88bf918662050215bc20d52ffaab",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D01.d",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Stocktaking",
+        "definition": "établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées.",
+        "finality": "Fiabiliser les quantités enregistrées — Inventory accuracy."
+      },
+      "source_refs": [
+        "P81",
+        "P82",
+        "U86",
+        "C58"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d01-stocks",
+        "line": 61
+      },
+      "review": {
+        "state": "partial",
+        "note": "Nom Stocktaking retenu par Laurent en U86, le 11 septembre 2026 ; Inventory accuracy en exprime la Finalité. La décision de nom conserve comptage, rapprochement, écarts et corrections ; frontières détaillées ouvertes."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "0f1ca6b3c7be80d9bd2d822be65309306a9a97608420ab08b6c23f939d9fa2b6",
+      "adoption_ids": [
+        "ADOPT-021"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D02.b",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Supply Protection",
+        "definition": "établir et appliquer les quantités ou limites d’usage destinées à des groupes, avec leur validité.",
+        "finality": "Préserver les possibilités d’approvisionnement des usages retenus."
+      },
+      "source_refs": [
+        "P81",
+        "U67",
+        "U74",
+        "C49"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d01-stocks",
+        "line": 62
+      },
+      "review": {
+        "state": "partial",
+        "note": "Aptitude métier reconnue en U67 et rattachement à Inventory Management orienté en U74. Repère historique D02.b conservé ; définition détaillée et maille à éprouver."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "bbdb542514627cc0c5c9e3b87b8640f25d48dd73da0c68685e46d338a8bc6ec7",
+      "adoption_ids": [
+        "ADOPT-023"
+      ],
+      "approved_fields": [
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D02.c",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Reservation",
+        "definition": "établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte.",
+        "finality": "Donner effet à un engagement de ressource."
+      },
+      "source_refs": [
+        "P81",
+        "U75",
+        "U78",
+        "U84",
+        "C54",
+        "C57"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d01-stocks",
+        "line": 63
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Nom Reservation retenu en U84. Rattachement à D01 issu de U75 remis en discussion en U78 ; frontière réservation/affectation ouverte, sans nouveau déplacement."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "9f4cc068b9dd423fd2cf0662dacceb2b2d594e93850109f31e68a41292795a45",
+      "adoption_ids": [
+        "ADOPT-025"
+      ],
+      "approved_fields": [
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D02",
+      "revision": 1,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Resource Availability and Commitments",
+        "definition": "Deux aptitudes de disponibilité et d’ajustement subsistent comme traces de travail après les rattachements de Supply Protection et Reservation à Inventory Management, et de Supply Assignment à Order Promising.",
+        "finality": "Évaluer ce qui peut être mobilisé et maintenir les engagements de ressources cohérents."
+      },
+      "source_refs": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d02-disponibilité-et-engagements-de-ressources",
+        "line": 143
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Domaine en réexamen depuis U75. Son autonomie n’est pas justifiée ; aucune suppression, répartition ni renumérotation supplémentaire n’est décidée."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "0f1ac3a9d00ed60969f1203a71e2efcd8fd462610177110f618962e1da2a571b",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D02.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Determine resource availability for a given use",
+        "definition": "apprécier les quantités admissibles à un horizon, compte tenu des états, attentes, protections et engagements.",
+        "finality": "Évaluer ce qui peut être mobilisé dans une situation donnée."
+      },
+      "source_refs": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d02-disponibilité-et-engagements-de-ressources",
+        "line": 147
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Trace de travail conservée dans D02. Répartition entre disponibilité de réservation et faisabilité de promesse à examiner ; aucune suppression décidée."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "efa96f266679bf193019849c844292647ec48ca03c5dc79308a527c763ef6d28",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D02.d",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Adjust resource commitments",
+        "definition": "réviser, transférer ou libérer les quantités affectées selon les décisions autorisées.",
+        "finality": "Maintenir des affectations cohérentes avec les besoins et les ressources."
+      },
+      "source_refs": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d02-disponibilité-et-engagements-de-ressources",
+        "line": 148
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Trace de travail conservée dans D02. À répartir ou reformuler selon l’engagement modifié ; aucune suppression ni nouvelle affectation adoptée."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "25865e03b2c6264cb432207fa25b1592c79ab248f5a2c227f424c4612acba40f",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D03",
+      "revision": 1,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Order Promising",
+        "definition": "Établir ce qui peut être promis pour satisfaire une demande, sous quelles conditions, avec quelles ressources et quelle solution de fourniture, puis maintenir la promesse lorsque la situation évolue.",
+        "finality": "Proposer, établir et maintenir des engagements de fourniture réalisables, en quantité et en date, avec les ressources et possibilités d’acheminement."
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 160
+      },
+      "review": {
+        "state": "partial",
+        "note": "Domaine reconnu en U52. Neuf capacités validées par Laurent le 11 septembre 2026 en U95 : quatre actions et cinq décisions. Frontières, autorités opérationnelles et équivalences marché restent à préciser ; CTP différé."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a59e949f0b8cf310d999437c76c22d3cd50adf08e2fe2080ae5f2bdf2d57ea37",
+      "adoption_ids": [
+        "ADOPT-002"
+      ],
+      "approved_fields": [
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D03.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Promise Proposal",
+        "definition": "construire une proposition de fourniture précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation.",
+        "finality": "Faire naître une proposition de promesse réalisable.",
+        "nature": "action"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 174
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "0659714d4fb010d6173b62d64fe80029c22b390326d48f92cf6b79619630b458",
+      "adoption_ids": [
+        "ADOPT-003"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.b",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Promise Confirmation",
+        "definition": "établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.",
+        "finality": "Donner un engagement explicite au destinataire.",
+        "nature": "action"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 175
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "29f3276527be79736c9913a87e60b52c1c6457cc876b992ef2050ba73fbf2f2b",
+      "adoption_ids": [
+        "ADOPT-005"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D02.e",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Supply Assignment",
+        "definition": "affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des demandes ou engagements.",
+        "finality": "Assurer la couverture des demandes par des ressources identifiées.",
+        "nature": "action"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 176
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. Repère historique D02.e conservé ; domaine courant Order Promising depuis U75. Affectation et confirmation sans ordre obligatoire."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "dc3062f51133564b2939132e4b897b325cce2d3a01958cc638d0eb2db3449656",
+      "adoption_ids": [
+        "ADOPT-007"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.c",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Promise Revision",
+        "definition": "réexaminer les promesses lorsque ressources, demandes, dates ou priorités changent et établir les modifications autorisées.",
+        "finality": "Maintenir des engagements cohérents avec la situation et les priorités applicables.",
+        "nature": "action"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 177
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "f0fb4fc3019891a873a9bb439da0a41a8c79b7cfe8aeb3d7e9a4a499bfa3274c",
+      "adoption_ids": [
+        "ADOPT-009"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.d",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Allocation Eligibility Decision",
+        "definition": "décider quelle quantité une demande peut consommer au regard des allocations, protections et droits applicables.",
+        "finality": "Respecter les droits d’accès aux ressources.",
+        "nature": "decision"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 187
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "e2d14a2dd581104194dcac1c6ae62a927564edc6382cccef344d0bec403880e5",
+      "adoption_ids": [
+        "ADOPT-011"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.e",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Fulfillment Source Decision",
+        "definition": "choisir la source ou la combinaison de sources permettant de satisfaire la demande.",
+        "finality": "Fonder la promesse sur des origines de fourniture admissibles.",
+        "nature": "decision"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 188
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "d860b4a3380837d53008f837109d355aa921bec3b23e95bb711daad9547e11f2",
+      "adoption_ids": [
+        "ADOPT-013"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.f",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Fulfillment Route Decision",
+        "definition": "choisir la chaîne d’acheminement jusqu’à destination : étapes, points de passage, modes et services, selon les contraintes de délai, de capacité et de coût.",
+        "finality": "Fonder la promesse sur un acheminement réalisable.",
+        "nature": "decision"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 189
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. La décision fondant la promesse n’absorbe pas la planification détaillée du transport ; autorités C-Log et adhérence logistique préservées."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "4b5a25292bbbb6b73a7cbff8e0c2f4f1b5b7a0c53131dadd342e6e0ad34f58bf",
+      "adoption_ids": [
+        "ADOPT-015"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.g",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Product Substitution Decision",
+        "definition": "décider quel produit de remplacement est admissible pour satisfaire la demande dans les conditions autorisées.",
+        "finality": "Permettre une réponse acceptable lorsque le produit demandé ne peut pas être fourni tel quel.",
+        "nature": "decision"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 190
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "1f3811c6fd37ec02bf42f5424a56c11d71011c0c2f322606723c60a3072d8be2",
+      "adoption_ids": [
+        "ADOPT-017"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D03.h",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Supply Creation Decision",
+        "definition": "décider de recourir à une fourniture nouvelle et qualifier les conditions nécessaires pour fonder la promesse.",
+        "finality": "Rendre possible une fourniture que les ressources déjà présentes ou attendues ne permettent pas de satisfaire.",
+        "nature": "decision"
+      },
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d03-promesse-de-fourniture",
+        "line": 191
+      },
+      "review": {
+        "state": "accepted",
+        "note": "Capacité validée par Laurent le 11 septembre 2026, U95. Frontières détaillées, autorités et équivalences marché restent à préciser. CTP reste différé ; cette aptitude demeure validée et n’autorise pas à elle seule un engagement d’achat."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "5ebdab8b0571c78f5aa0af271c16c5dd5b8b1b2574dd392fdcd5e336d594834a",
+      "adoption_ids": [
+        "ADOPT-019"
+      ],
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name",
+        "nature"
+      ],
+      "proposed_fields": []
+    },
+    {
+      "id": "D04",
+      "revision": 2,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Commercial Commitments",
+        "definition": "Examiner qui s’engage à fournir ou acquérir quoi, sous quelles conditions reçues, et les obligations restantes après modification, livraison ou retour. Les commandes restent distinctes des Agreements de référence.",
+        "finality": "Connaître les engagements portés par les commandes et ce qui reste à accomplir après leur évolution et leur réalisation."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d04-engagements-commerciaux",
+        "line": 217
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Libellés courts P84 intégrés en U118 sans changement de définition. U100 réoriente la revue avec D07 vers les documents d’autorisation de la Supply générique ; nom du domaine et frontières restent à refondre."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "81c742fb56ce0f4dda38001b1e0425759ae486f94b0303440a70ab2c01f4201a",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D04.a",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Commitment Creation",
+        "definition": "établir l’engagement propre à une commande, avec parties, biens ou prestations, quantités, conditions applicables et degré de fermeté.",
+        "finality": "Disposer d’une référence sur ce qui est commandé et engagé."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P84"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d04-engagements-commerciaux",
+        "line": 229
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "88701f06b9970af3705cdb1a4985e8325160c0d9556a9dfd9c2200752fe4c15d",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D04.b",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Commitment Revision",
+        "definition": "modifier ou éteindre les engagements d’une commande selon les conditions applicables, en conservant leur histoire.",
+        "finality": "Faire évoluer les obligations transactionnelles et leurs effets."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P84"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d04-engagements-commerciaux",
+        "line": 230
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a3e42b7b3f9cdb1b18fe3c6ffadace8530729d4745100e11ce357cc30d040122",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D04.c",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Commitment Reconciliation",
+        "definition": "rapprocher les obligations d’une commande des réalisations et corrections qui lui sont imputables.",
+        "finality": "Connaître les obligations encore ouvertes."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P84"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d04-engagements-commerciaux",
+        "line": 231
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6dc252bcc591b233de99a7e1a85b336b4c890c635b37f0ba10ed1fb8c6ff9560",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D04.d",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Return and Replacement Decision",
+        "definition": "décider de l’autorisation et des obligations correctives applicables à une commande selon les conditions reçues et les faits.",
+        "finality": "Donner effet à une solution commerciale admissible après fourniture."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P84"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d04-engagements-commerciaux",
+        "line": 232
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "816ff4b97f5574805e8eb74829d934fafb713b2fb77663581488986a79a6b8ad",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D05",
+      "revision": 1,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Operational Resource Balancing",
+        "definition": "Établir les objectifs de couverture, les besoins nets et les redistributions utiles à l’équilibrage opérationnel. Le dossier Demande de réassort appartient au modèle processus ; calculer un besoin ne promet ni ne réalise un transfert.",
+        "finality": "Identifier les manques ou excédents par rapport aux besoins et objectifs opérationnels, et proposer leur traitement."
+      },
+      "source_refs": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d05-équilibrage-opérationnel-des-ressources",
+        "line": 248
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Réassort étayé par les récits ; regroupement et capacités proposés. Redistribution hypothétique ; réalisation FLOW et prévisions logistiques en frontière. Planification de saison exclue."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "807f23fdd760e8f3bcd23202e514a575c1cd5ce234ba6adcc7393f5f14877f59",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D05.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Determine operational coverage targets",
+        "definition": "établir niveaux et seuils applicables par ressource et périmètre.",
+        "finality": "Donner une référence au renouvellement opérationnel des stocks."
+      },
+      "source_refs": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d05-équilibrage-opérationnel-des-ressources",
+        "line": 252
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "b14f479a92ed4a6a2f80ea400d4491ba4429b4cf9e272c2d4b39ea39f5688980",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D05.b",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Net Requirements Calculation",
+        "definition": "identifier les manques ou excédents en tenant compte des positions, besoins et approvisionnements attendus pertinents.",
+        "finality": "Former un besoin justifié sans ignorer les ressources déjà attendues."
+      },
+      "source_refs": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d05-équilibrage-opérationnel-des-ressources",
+        "line": 253
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "3d67ebb041c7099262b01ced9b149506356866a69e722e4cd73ec18112a32caf",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D05.c",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Determine resource redistribution",
+        "definition": "proposer les quantités et destinations permettant de traiter des déséquilibres selon les contraintes.",
+        "finality": "Rééquilibrer les ressources lorsque leur distribution devient inadaptée."
+      },
+      "source_refs": [
+        "P81",
+        "U57",
+        "U58"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d05-équilibrage-opérationnel-des-ressources",
+        "line": 254
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Hypothèse issue de U57 ; attribution de réalisation ouverte et capacité non comparée précisément au marché. Prévisions et optimisations logistiques restent en adhérence."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "3bfa4e17b7b6372d4889011dab48a9665e2204ecfcacb5925116dbe5064b7d8b",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D06",
+      "revision": 1,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Options",
+        "definition": "Utiliser les références du réseau et les contraintes opérationnelles pour apprécier les possibilités concrètes de réalisation et les options compatibles avec un besoin.",
+        "finality": "Apprécier les prestations admissibles et la capacité de réalisation encore mobilisable."
+      },
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d06-possibilités-dexécution",
+        "line": 262
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacités proposées, notamment à partir du récit magasin. D13 reçoit les références ; D06.a ne les administre pas. Maille D06.a/c et partage avec Order Promising à éprouver ; autorités C-Log préservées."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6cd675dd214a140eca8808b589282dc64cd7d9adfc3b998dcbe1ee57b74ed214",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D06.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Qualify locations and feasible services",
+        "definition": "connaître les lieux, leurs rôles opérationnels et les prestations qui y sont admissibles.",
+        "finality": "Identifier les possibilités concrètes de réalisation."
+      },
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d06-possibilités-dexécution",
+        "line": 268
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Les références sont reçues en D13 ; cette aptitude ne désigne pas leur administration ou contrôle de qualité."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a16e8fbbf9c0266f9240db6d19ded1432a609212f796f106ef9b5c4952aa24bb",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D06.b",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Capacity Assessment",
+        "definition": "apprécier limites applicables, charge engagée et capacité restante pour une prestation et une période.",
+        "finality": "Éviter de confondre disponibilité d’article et possibilité de le servir."
+      },
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d06-possibilités-dexécution",
+        "line": 269
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6f9d1a57aef8b159db66ba2d1d0f9d3261685b786fdabb9c6034b4d56d37a22a",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D06.c",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Option Assessment",
+        "definition": "établir et comparer les origines ou prestations compatibles avec un résultat attendu.",
+        "finality": "Éclairer un choix réalisable selon les critères autorisés."
+      },
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d06-possibilités-dexécution",
+        "line": 270
+      },
+      "review": {
+        "state": "proposed",
+        "note": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "df59912c3d177ce1a8b6686454aba5f81f4ae542494afc91d5a01f63f7044509",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D07",
+      "revision": 1,
+      "kind": "domain",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Commitments and Facts",
+        "definition": "Exprimer le besoin de prestation, suivre les engagements d’exécution, rattacher les résultats et écarts aux attentes, et qualifier les ressources encore attendues.",
+        "finality": "Connaître ce qui est attendu, engagé ou constaté dans la réalisation et fournir des faits utiles aux autres domaines."
+      },
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d07-engagements-et-faits-dexécution",
+        "line": 278
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Frontière à reprendre avec D04 après U100 : autorisation de mouvement, engagement d’exécution et fait de réalisation. Logistique hors développement FLOW ; aucun transfert d’autorité ni fusion décidé."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6b98e1a03d99041b9a6b3cfac2844aae4ea1fda3adaaedf580b98e8fceae7883",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D07.a",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Requirement Definition",
+        "definition": "exprimer biens, destinataire, résultat et opérations nécessaires à une réalisation.",
+        "finality": "Rendre le besoin compréhensible et exploitable par l’exécutant."
+      },
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d07-engagements-et-faits-dexécution",
+        "line": 284
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "440d05fa3349f287710720f367e75d378ab16b5a6cb38483e5989803392b5818",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D07.b",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Commitment Management",
+        "definition": "qualifier prise en charge, portée, validité et effets des refus, retraits ou révisions.",
+        "finality": "Savoir quelle réalisation est effectivement engagée et quelle charge elle mobilise."
+      },
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d07-engagements-et-faits-dexécution",
+        "line": 285
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "35369ccc1d5b24bee75f5c4c81dca9228cb81e9513608bdc32080ab008aef487",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D07.c",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Execution Reconciliation",
+        "definition": "rattacher constats de production, expédition, réception ou consommation au résultat attendu.",
+        "finality": "Donner aux autres domaines des faits utilisables et expliquer les écarts."
+      },
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d07-engagements-et-faits-dexécution",
+        "line": 286
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "5d1121021d17a0a0abd06b4a576e1d227839c65444f3cb8d07241f3118747125",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D07.d",
+      "revision": 2,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Expected Supply Tracking",
+        "definition": "qualifier quantités, dates, provenance et fermeté des résultats de réalisation encore attendus.",
+        "finality": "Permettre un raisonnement sur les ressources futures avec leurs limites."
+      },
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074",
+        "U118",
+        "C72",
+        "P86",
+        "U99"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d07-engagements-et-faits-dexécution",
+        "line": 287
+      },
+      "review": {
+        "state": "under_review",
+        "note": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "4de94deb343e47730a67c7dae9f3df6d46afae399dde9c8478bbb3098bae38e4",
+      "adoption_ids": [],
+      "approved_fields": [],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D09",
+      "revision": 1,
+      "kind": "reference",
+      "layer": "transactional",
+      "fields": {
+        "name": "Party / Role",
+        "definition": "Recevoir les références des parties et leurs rôles métier, distincts des habilitations RBAC. L’identité sans doublon relève du maître externe ; les modèles se relient par identifiants.",
+        "finality": "Disposer des identités et rôles de référence nécessaires pour relier les opérations aux bonnes parties.",
+        "mastership": "external"
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "C69",
+        "INF18"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d09-parties-et-relations",
+        "line": 307
+      },
+      "review": {
+        "state": "partial",
+        "note": "Maîtrise externe et ingestion seule imposées en U97 ; groupe Business References retenu en U103. Les sources et autorités par attribut restent à documenter ; aucun rang autonome universel adopté."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "f285636341e5d3d0eb4666f74039ec636fb6fcfe8f9f3f38bda095a9171e646d",
+      "adoption_ids": [
+        "ADOPT-027"
+      ],
+      "approved_fields": [
+        "mastership",
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D09.d",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Party / Role Ingestion",
+        "definition": "recevoir les parties, leurs identifiants, rôles et relations de référence ainsi que leurs évolutions, en conservant les références du maître externe.",
+        "finality": "Utiliser une identité de référence commune dans les opérations.",
+        "scope": "Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d09-parties-et-relations",
+        "line": 313
+      },
+      "review": {
+        "state": "partial",
+        "note": "Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local et description de travail ; aucune maîtrise, vérification ou enrichissement du référentiel dans la plateforme."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "90f4bef10c882c88202ef81b1928435496711fbaa7edb851e9de515233741f00",
+      "adoption_ids": [
+        "ADOPT-032"
+      ],
+      "approved_fields": [
+        "scope"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D11",
+      "revision": 1,
+      "kind": "reference",
+      "layer": "transactional",
+      "fields": {
+        "name": "Agreement",
+        "definition": "Recevoir les Agreements, les identités Party, les catalogues permettant de commander et les conditions particulières utiles à Order Promising. Les commandes transactionnelles restent distinctes des contrats de référence.",
+        "finality": "Disposer des contrats de référence et de leurs conditions pour former les commandes et honorer leurs promesses.",
+        "mastership": "external"
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "C69",
+        "INF19"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d11-agreement",
+        "line": 317
+      },
+      "review": {
+        "state": "partial",
+        "note": "Maîtrise externe et ingestion seule imposées en U97/U98 ; groupe Business References retenu en U103. Cardinalités, consommation contractuelle et autorités détaillées restent ouvertes."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "f0df124350e57c87b08df5d3dad04a3712ad2d5aa491a7ec773fd841aa31ab94",
+      "adoption_ids": [
+        "ADOPT-028"
+      ],
+      "approved_fields": [
+        "mastership",
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D11.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Agreement Ingestion",
+        "definition": "recevoir les contrats fournisseurs ou clients, leurs références Party et Catalog, leurs conditions particulières et leurs évolutions depuis les applications maîtres externes.",
+        "finality": "Mettre les conditions contractuelles de référence à disposition des décisions et engagements transactionnels.",
+        "scope": "Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d11-agreement",
+        "line": 323
+      },
+      "review": {
+        "state": "partial",
+        "note": "Ingestion seule exigée par U97/U98 et conservée dans Business References U103. Nom local ; contrats de référence reçus distincts des commandes. Aucune création ou administration locale d’Agreement."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a9aa9bc7d30bf84f8ca392f23a51df8f25b99c6dfbe81592b42152d509c372c7",
+      "adoption_ids": [
+        "ADOPT-034"
+      ],
+      "approved_fields": [
+        "scope"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D08",
+      "revision": 1,
+      "kind": "reference",
+      "layer": "transactional",
+      "fields": {
+        "name": "Product Reference",
+        "definition": "Reconnaître les mêmes articles par leur référence SKU indépendamment des catalogues qui les proposent. La référence article est reçue depuis un maître externe.",
+        "finality": "Disposer d’une référence article autonome, utilisable dans plusieurs catalogues et par les opérations de la Supply.",
+        "independence": "Référence article autonome ; un SKU peut être proposé dans plusieurs catalogues."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C66",
+        "C69",
+        "INF21",
+        "CMP058"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d08-produits-opérationnels",
+        "line": 329
+      },
+      "review": {
+        "state": "partial",
+        "note": "Autonomie article confirmée en U100 ; nom Product Reference et rédaction détaillée proposés. Groupe Business References retenu en U103. Maître, attributs, unités et conversions restent à préciser."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "5b342de8a43118c56d2ab5e1d81a04ddfb2d3b45b5897a165780c89d61fc7744",
+      "adoption_ids": [
+        "ADOPT-030"
+      ],
+      "approved_fields": [
+        "independence"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D08.d",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Product Reference Ingestion",
+        "definition": "recevoir les articles, leurs identifiants SKU, caractéristiques de référence utiles et évolutions depuis leur maître externe, indépendamment de leur présence dans les catalogues.",
+        "finality": "Reconnaître les mêmes articles dans les différents catalogues et opérations.",
+        "scope": "Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C66",
+        "INF21"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d08-produits-opérationnels",
+        "line": 335
+      },
+      "review": {
+        "state": "partial",
+        "note": "Autonomie article confirmée en U100 ; nom et rédaction détaillée de l’ingestion proposés dans la continuité U97. Business References et ses cinq ingestions distinctes retenus U103 ; attributs et maître restent ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "b0ac2260919f0b4cb42ebb52c4f02721920cd41d325957eb7998fb524000f4a1",
+      "adoption_ids": [
+        "ADOPT-038"
+      ],
+      "approved_fields": [
+        "scope"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D12",
+      "revision": 1,
+      "kind": "reference",
+      "layer": "transactional",
+      "fields": {
+        "name": "Catalog",
+        "definition": "Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Un même SKU peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.",
+        "finality": "Disposer des catalogues applicables, avec les prix et zones géographiques nécessaires aux opérations.",
+        "mastership": "external"
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "U103",
+        "C64",
+        "C69",
+        "INF20"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d12-catalog",
+        "line": 339
+      },
+      "review": {
+        "state": "partial",
+        "note": "Maîtrise externe et ingestion seule imposées en U97 ; autonomie article précisée en U100 ; groupe Business References retenu en U103. Sources et attributs détaillés à préciser."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "e9206884b75347aefad9a50ecd1078788ddc327f7230d1312e8de1cd423c0adb",
+      "adoption_ids": [
+        "ADOPT-029"
+      ],
+      "approved_fields": [
+        "mastership",
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D12.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Catalog Ingestion",
+        "definition": "recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques d’application et évolutions.",
+        "finality": "Permettre de commander et d’utiliser les informations commerciales reçues.",
+        "scope": "Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d12-catalog",
+        "line": 345
+      },
+      "review": {
+        "state": "partial",
+        "note": "Ingestion seule exigée par U97 et conservée dans Business References U103. Nom local ; catalogues et prix construits à l’extérieur, références article autonomes selon U100."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "5087c1451e750a96ab7a71b06f2c79a7dee6bc3fb0bb8d2efba357e5b401d733",
+      "adoption_ids": [
+        "ADOPT-036"
+      ],
+      "approved_fields": [
+        "scope"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "id": "D13",
+      "revision": 1,
+      "kind": "reference",
+      "layer": "transactional",
+      "fields": {
+        "name": "Fulfillment Network",
+        "definition": "Recevoir les points du réseau, leurs caractéristiques et relations de référence et leurs liens aux parties responsables. Les lieux restent distincts des parties ; stocks, charge et acheminement choisi appartiennent aux domaines consommateurs.",
+        "finality": "Disposer d’une représentation de référence des lieux et des relations du réseau nécessaires à la réalisation des mouvements de marchandises.",
+        "independence": "Party et lieu distincts ; référentiel Fulfillment Network demandé."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U102",
+        "U103",
+        "C68",
+        "C69",
+        "INF22",
+        "Q076",
+        "CMP060"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d13-fulfillment-network",
+        "line": 351
+      },
+      "review": {
+        "state": "partial",
+        "note": "Référentiel demandé en U102 ; Business References retenu en U103. Repère, définition et contenu détaillé proposés ; ingestion seule dans la continuité U97. Maîtres et topologie ouverts en Q076 ; aucune autorité FLOW ou C-Log déduite."
+      },
+      "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "b5817064ebbf5fc9ca79b7143c2992ce201dc5c15e0f1519f818563cd9e86a7a",
+      "adoption_ids": [
+        "ADOPT-031"
+      ],
+      "approved_fields": [
+        "independence",
+        "name"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality"
+      ]
+    },
+    {
+      "id": "D13.a",
+      "revision": 1,
+      "kind": "capability",
+      "layer": "transactional",
+      "fields": {
+        "name": "Fulfillment Network Ingestion",
+        "definition": "recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes.",
+        "finality": "Donner aux opérations et décisions une connaissance commune du réseau de réalisation.",
+        "scope": "Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme."
+      },
+      "source_refs": [
+        "P81",
+        "U97",
+        "U102",
+        "U103",
+        "C68",
+        "INF22",
+        "Q076"
+      ],
+      "source_locator": {
+        "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+        "anchor": "d13-fulfillment-network",
+        "line": 357
+      },
+      "review": {
+        "state": "partial",
+        "note": "Ingestion et contenu détaillé proposés dans la continuité U97 après la demande de référentiel U102. Groupe de cinq références et ingestions retenu U103 ; maîtres, attributs et topologie restent ouverts Q076."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "7717f4f10462ddfd5beab9f09338a9d7b5bc577a688212c4c7932dd773ec114a",
+      "adoption_ids": [
+        "ADOPT-040"
+      ],
+      "approved_fields": [
+        "scope"
+      ],
+      "proposed_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "REL-MEMBER-D01.f",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D01.f",
+      "source_refs": [
+        "U125",
+        "C73"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Séparation de travail ; frontières détaillées à éprouver."
+      },
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "content_sha256": "af5f5389212f6275eda8bcb57b69064ad28ffa58513fbd5985491f8a9617f438",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D01.g",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D01.g",
+      "source_refs": [
+        "U125",
+        "C73"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Séparation de travail ; frontières détaillées à éprouver."
+      },
+      "last_modified": "2026-09-13T16:25:42.581332Z",
+      "content_sha256": "05fcce822f31dca56b49581a1a8b96c2925994270dd82f008e3a7d69df4fe8a1",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D01.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D01.c",
+      "source_refs": [
+        "P81",
+        "P82",
+        "U81",
+        "U83"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "8d7223eb3c4396fc9920c45f7a0f1c071562ba14bbacb28a25079edfc2512336",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D01.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D01.d",
+      "source_refs": [
+        "P81",
+        "P82",
+        "U86",
+        "C58"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Capacité discutée dans D01 ; maille complète du domaine ouverte."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "d6c8afe251e2b8482cc7995dbfe9d70a876ad98a7c6c37c32461489d0ee193c6",
+      "adoption_ids": [
+        "ADOPT-022"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D02.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D02.b",
+      "source_refs": [
+        "P81",
+        "U67",
+        "U74",
+        "C49"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": ""
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "708a5581e594c3acd7eb8fb55e1f3077560ff355fccb67fce4d74d3a190ee674",
+      "adoption_ids": [
+        "ADOPT-024"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D02.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D01",
+      "target_id": "D02.c",
+      "source_refs": [
+        "P81",
+        "U75",
+        "U78",
+        "U84",
+        "C54",
+        "C57"
+      ],
+      "review": {
+        "state": "under_review",
+        "note": "Dernier rattachement retenu U75, réexaminé U78 ; pas de nouvelle frontière décidée."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "0a2eb77d14d584471c33b11f8a034dab27640ddf9851fdd41a1b827cc29a672b",
+      "adoption_ids": [
+        "ADOPT-026"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D02.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D02",
+      "target_id": "D02.a",
+      "source_refs": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "200eb8807065dbcd59f5066a2bbab902bc013f3f96d15b9b5417c0f3632348a0",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D02.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D02",
+      "target_id": "D02.d",
+      "source_refs": [
+        "P81",
+        "U75",
+        "U87",
+        "U88",
+        "P83"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "65ec800fd8b5b3c3c36d540a17116a131077d92de3d23f4bdce4b99e73388692",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D03.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.a",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "c753f10b9acf0f6f93cb39e74e2f2a37b787e834eeb8ba95c2456711571e3a7f",
+      "adoption_ids": [
+        "ADOPT-004"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.b",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "b88a460237b7ce2f88ea916a7e4af5d1b4ea416118453eaa61923ae55c6a1915",
+      "adoption_ids": [
+        "ADOPT-006"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D02.e",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D02.e",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a919efd88e04a8233f2128640c7d72e5c0696351d05028f5eb8f4f4aed109d97",
+      "adoption_ids": [
+        "ADOPT-008"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.c",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "103fa7c5e2f5f4908af2e7014f78d1a6d8dcc1297703489856e7ca815b1722c7",
+      "adoption_ids": [
+        "ADOPT-010"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.d",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6971a5f6f4ab2b52ca2386481ede2f773541f11cfc789451dd5927f1b3336ddd",
+      "adoption_ids": [
+        "ADOPT-012"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.e",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.e",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "199d2f528642ad78f484dcb4dd0ae096a275f370d3e16ff6b566dab726536cef",
+      "adoption_ids": [
+        "ADOPT-014"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.f",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.f",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "2a5d4b141fd5982a5df2ce749d2b0b3cfb1b415be783aac2f515202e448317f3",
+      "adoption_ids": [
+        "ADOPT-016"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.g",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.g",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a85b47d110ff2f71c67137e20942446bed3d3d32826f4f7e4a759a31bfd3e3c4",
+      "adoption_ids": [
+        "ADOPT-018"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D03.h",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D03",
+      "target_id": "D03.h",
+      "source_refs": [
+        "P81",
+        "P83",
+        "U52",
+        "U75",
+        "U80",
+        "U81",
+        "U95",
+        "F201",
+        "C63",
+        "CMP052"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Liste adoptée dans Order Promising, y compris D02.e."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "38d8b39f24fb7b98a6bad223277603844faf5a61f4d3fa9281c9f05aa5710c6d",
+      "adoption_ids": [
+        "ADOPT-020"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D04.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D04",
+      "target_id": "D04.a",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "0d9f017d98433a05ac89122274f22b5b386450e043ca7cbc5cb93e7002faa9f0",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D04.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D04",
+      "target_id": "D04.b",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "8487c0df39bba8fcc125910287836fcf006b4d8659b38b1a4f61df1b25f7d16f",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D04.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D04",
+      "target_id": "D04.c",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "6d67b3a41cea5b4f82314cbf96c850fe226d199c970550b4d342d4d94d71d324",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D04.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D04",
+      "target_id": "D04.d",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "4020fbe5f60db77e075496a1585e0a262e4a954669c3d125a31060f1f8dbcaae",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D05.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D05",
+      "target_id": "D05.a",
+      "source_refs": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "c01d25beb5e0e8e9b10e677ec8ec7e97851a011d99db05d1ce946769bc7cdcc5",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D05.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D05",
+      "target_id": "D05.b",
+      "source_refs": [
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "43514a892a3a12bb9028b1987270d21fa48ff3c1f66352dc39318a5472ddbe89",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D05.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D05",
+      "target_id": "D05.c",
+      "source_refs": [
+        "P81",
+        "U57",
+        "U58"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "a074bbeee88e4b80b401a2f7214ef1e21ecb9307e17276917b66c35b1946aa43",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D06.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D06",
+      "target_id": "D06.a",
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "3b556bceedd1f371fc688ec04434cd22b64e6e6fa3c0bfbac435e51c0de1ad3d",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D06.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D06",
+      "target_id": "D06.b",
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "c26101baf7f7a0654656d6cc6ad2378562452b66520781c55dfe173adece1669",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D06.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D06",
+      "target_id": "D06.c",
+      "source_refs": [
+        "P81",
+        "U04",
+        "U06",
+        "U07",
+        "U102",
+        "C68",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q063"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "fede1d1aefc850b1953a402ae1c32be66f0505e8d7680676f9711f289622f780",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D07.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D07",
+      "target_id": "D07.a",
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "93f6d5d39ed428e52395ce10437d60493f548f3a8189cf8a78a6f283cc116ae7",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D07.b",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D07",
+      "target_id": "D07.b",
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "098276a9fbe00413ff15ba5fd8fbab461e0668c0934ff7717f2fc9b0d9432633",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D07.c",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D07",
+      "target_id": "D07.c",
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "895cadc9d549bef59522813d06b12a629bbe2bc9887b56fcb383bad2b00a2909",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-MEMBER-D07.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D07",
+      "target_id": "D07.d",
+      "source_refs": [
+        "P81",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U10",
+        "U30",
+        "U48",
+        "U100",
+        "C66",
+        "Q074"
+      ],
+      "review": {
+        "state": "proposed",
+        "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "8e609c16ceee8200f7cae19f69e01ac47cc095e3eb6c920248ab636a36bcd8ef",
+      "adoption_ids": []
+    },
+    {
+      "id": "REL-GROUP-D09",
+      "revision": 1,
+      "type": "presents",
+      "source_id": "business-references",
+      "target_id": "D09",
+      "source_refs": [
+        "U103"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Groupe de présentation distinct d’un domaine fusionné."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "538e617388e4b73dabd844bdb033ed15c58078c539663eb300fa93a9ea3747bc",
+      "adoption_ids": [
+        "ADOPT-043"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D09.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D09",
+      "target_id": "D09.d",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "65ed68acfd097ae3f4b6b6354c59d4c8b80d46413bd685cc07d255d9aeceb03e",
+      "adoption_ids": [
+        "ADOPT-033"
+      ]
+    },
+    {
+      "id": "REL-GROUP-D11",
+      "revision": 1,
+      "type": "presents",
+      "source_id": "business-references",
+      "target_id": "D11",
+      "source_refs": [
+        "U103"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Groupe de présentation distinct d’un domaine fusionné."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "c665a4044324217c9dd6b6d7ada030839d0d6c7a9fcc0dd75cdb41a0509d8276",
+      "adoption_ids": [
+        "ADOPT-044"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D11.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D11",
+      "target_id": "D11.a",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "392abb7b37e423ed00ed2cb4d85840704b9e80ec8d20c7a23bce8ae9183c2929",
+      "adoption_ids": [
+        "ADOPT-035"
+      ]
+    },
+    {
+      "id": "REL-GROUP-D08",
+      "revision": 1,
+      "type": "presents",
+      "source_id": "business-references",
+      "target_id": "D08",
+      "source_refs": [
+        "U103"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Groupe de présentation distinct d’un domaine fusionné."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "597cd7524a659185c34d7fe7e56b933e3669bf1855ee1df86077bd532cb01b7a",
+      "adoption_ids": [
+        "ADOPT-045"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D08.d",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D08",
+      "target_id": "D08.d",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C66",
+        "INF21"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "7e004ca823992b01330120c221ef013591c873028fd77bf3a2db642974e95738",
+      "adoption_ids": [
+        "ADOPT-039"
+      ]
+    },
+    {
+      "id": "REL-GROUP-D12",
+      "revision": 1,
+      "type": "presents",
+      "source_id": "business-references",
+      "target_id": "D12",
+      "source_refs": [
+        "U103"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Groupe de présentation distinct d’un domaine fusionné."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "1d06523e5259ecae99c9d8e9c86d59b0efafe22f8540b24bed6ff8f65a1928d6",
+      "adoption_ids": [
+        "ADOPT-046"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D12.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D12",
+      "target_id": "D12.a",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U100",
+        "U103",
+        "C64",
+        "P85"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "15b860017e4bd8f2d162bfabd12b758a59524e29ff36296bd6daaf76e579b4d3",
+      "adoption_ids": [
+        "ADOPT-037"
+      ]
+    },
+    {
+      "id": "REL-GROUP-D13",
+      "revision": 1,
+      "type": "presents",
+      "source_id": "business-references",
+      "target_id": "D13",
+      "source_refs": [
+        "U103"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Groupe de présentation distinct d’un domaine fusionné."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "74d5510d8e854f88d469d04d60420ce13388f6354fa0a8e2c0c4d931ef8c33a4",
+      "adoption_ids": [
+        "ADOPT-047"
+      ]
+    },
+    {
+      "id": "REL-MEMBER-D13.a",
+      "revision": 1,
+      "type": "contains",
+      "source_id": "D13",
+      "target_id": "D13.a",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U102",
+        "U103",
+        "C68",
+        "INF22",
+        "Q076"
+      ],
+      "review": {
+        "state": "accepted",
+        "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts."
+      },
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "content_sha256": "b5bfbccf93e7e372758ad431df72c950525e46d18f51b38e127e00c0c3e96684",
+      "adoption_ids": [
+        "ADOPT-041"
+      ]
+    }
+  ],
+  "excluded_nodes": [
+    {
+      "id": "ILL-OBJ-01",
+      "source_refs": [
+        "U61",
+        "U62",
+        "P80"
+      ],
+      "reason": "Illustration conservée dans le backlog."
+    },
+    {
+      "id": "ILL-DOC-01",
+      "source_refs": [
+        "U61",
+        "U62",
+        "P80"
+      ],
+      "reason": "Illustration conservée dans le backlog."
+    },
+    {
+      "id": "ILL-EVT-01",
+      "source_refs": [
+        "U61",
+        "U62",
+        "P80"
+      ],
+      "reason": "Illustration conservée dans le backlog."
+    },
+    {
+      "id": "ILL-OBJ-02",
+      "source_refs": [
+        "U61",
+        "U62",
+        "P80"
+      ],
+      "reason": "Illustration conservée dans le backlog."
+    }
+  ]
+}

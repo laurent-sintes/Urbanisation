@@ -1,4 +1,4 @@
 interface:
   display_name: "Release du modèle FLOW"
-  short_description: "Comparer le backlog et publier une release qualifiée"
-  default_prompt: "Utilise $release pour évaluer les évolutions du backlog et publier la prochaine release du modèle."
+  short_description: "Publier l’urbanisation et actualiser FLOW Atlas"
+  default_prompt: "Utilise $release pour évaluer le backlog, produire la release, la publier dans Urbanisation et vérifier son actualisation dans FLOW Atlas."

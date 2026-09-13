@@ -109,3 +109,6 @@ U89 : [Order Promising — noms, nature et couverture](order-promising-comparais
 **Audit U99 — 11 septembre 2026 :** [achats/ventes, référentiels, prix et revue des capacités](../audits/2026-09-11-modele-marche-achats-ventes-referentiels.md). ELM087–ELM098 et CMP055–CMP057 ; état courant : 21 références, 98 éléments, 57 comparaisons. Conclusions proposées, P81 inchangé quant aux capacités.
 
 [Regroupement des référentiels — U101](regroupement-referentiels.md) : séparation sémantique, domaines de données, blocs de composants et niveaux de la carte distingués. P87/CMP059, comparaison du 11 septembre 2026.
+## Localisation des Orders — 13 septembre 2026
+
+[Comparaison SAP, Microsoft, Oracle, IBM Sterling et TM Forum](localisation-orders-cartographie.md), U139 / CMP064. Distingue domaines/capacités cités, catalogue de processus, produits et composants ; propose d’éprouver Order Management et sa frontière avec D07, sans adopter un nouveau domaine. Les engagements contractuels restent dans Agreement.

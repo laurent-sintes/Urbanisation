@@ -1,0 +1,588 @@
+{
+  "capturedAt": "2026-09-13T16:49:41.605Z",
+  "status": {
+    "appName": "FLOW Atlas",
+    "schemaVersion": 2,
+    "pid": 836,
+    "repositoryRoot": "C:\\Dev\\Beaumanoir Cartographie",
+    "revision": "dbcb467e85e511a6f189",
+    "space": "release"
+  },
+  "version": "2026-09-13.4",
+  "revision": 2,
+  "hashes": {
+    "app/index.html": "908f20e030673d81d98f6ce6d915451a9bc41ac6737225a7ab9d92bd570029bb",
+    "app/app.js": "4d66ffaa5eb65cf9e13df607a6fb642c98a83b1dbe1fe3760348a3e83f3feb63",
+    "app/model.js": "32cc34577f5e74437c36e425b60267e273672c897ad4755be14aff94161a0587",
+    "app/styles.css": "e53534e51dbffde89c3f8fa185ef2be659f60ab569ec28757448e11fd7d64c0f",
+    "modeles/release/index.json": "399f62430aa548a2bfd0e0eca984dcdb52ebd930ee043e23a9f2b429cb3990e9",
+    "modeles/release/2026-09-13.4/model.json": "ea10d37b508a851d2ba889e07311877682651b6caf0b42c9a01d87b07b22d0bd"
+  },
+  "nodes": 49,
+  "capabilities": 36,
+  "relations": {
+    "contains": 36,
+    "presents": 5
+  },
+  "measurements": [
+    {
+      "name": "01-carte-1366",
+      "id": "transactional",
+      "width": 1366,
+      "height": 900,
+      "documentWidth": 1366,
+      "documentHeight": 960,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 881.890625,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": null,
+      "inspector": null,
+      "paragraph": null,
+      "title": "Urbanisation",
+      "inspectorHeadings": [],
+      "bodyText": "CARTE DU MODÈLE\nUrbanisation\n\nEntre dans un domaine pour découvrir ses capacités, puis parcours leurs relations.\n\nCopier le lien\nStructure\nRelations\n8 éléments · 0 liens de lecture\nD01\nNon validé\nInventory Management\nDisposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.\n6 capacités\nD02\nEn réexamen\nResource Availability and Commitments\nÉvaluer ce qui peut être mobilisé et maintenir les engagements de ressources cohérents.\n2 capacités\nD03\nValidation partielle\nOrder Promising\nProposer, établir et maintenir des engagements de fourniture réalisables, en quantité et en date, avec les ressources et possibilités d’acheminement.\n9 capacités\nD04\nEn réexamen\nCommercial Commitments\nConnaître les engagements portés par les commandes et ce qui reste à accomplir après leur évolution et leur réalisation.\n4 capacités\nD05\nNon validé\nOperational Resource Balancing\nIdentifier les manques ou excédents par rapport aux besoins et objectifs opérationnels, et proposer leur traitement.\n3 capacités\nD06\nNon validé\nExecution Options\nApprécier les prestations admissibles et la capacité de réalisation encore mobilisable.\n3 capacités\nD07\nEn réexamen\nExecution Commitments and Facts\nConnaître ce qui est attendu, engagé ou constaté dans la réalisation et fournir des faits utiles aux autres domaines.\n4 capacités\nBusiness References\n5 références · ingestion de références externes\nExplorer le groupe\nParty / Role\nAgreement\nProduct Reference\nCatalog\nFulfillment Network\n\nLa position des éléments représente un classement, pas un enchaînement de processus."
+    },
+    {
+      "name": "02-domaine-1366",
+      "id": "D01",
+      "width": 1366,
+      "height": 900,
+      "documentWidth": 1366,
+      "documentHeight": 1647,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 1569.125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 218,
+        "y": 351.890625,
+        "width": 818,
+        "height": 1253.234375,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 1059,
+        "y": 351.890625,
+        "width": 275,
+        "height": 1253.234375,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 1081,
+        "y": 374.6875,
+        "width": 253,
+        "height": 103.984375,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Inventory Management",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 351.890625
+        },
+        {
+          "text": "Définition",
+          "y": 496.671875
+        },
+        {
+          "text": "Périmètre",
+          "y": 662.25
+        },
+        {
+          "text": "Version",
+          "y": 1081.984375
+        },
+        {
+          "text": "Dernière modification",
+          "y": 1143.578125
+        },
+        {
+          "text": "Portée de validation",
+          "y": 1205.171875
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1329.15625
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1543.140625
+        }
+      ],
+      "bodyText": "DOMAINE\nInventory Management\n\nDisposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.\n\nCopier le lien\nStructure\nRelations\n6 capacités · 0 liens de lecture\nD01.f\nNon validé\nInventory Tracking\nDisposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu.\nCapacité\nD01.g\nValidation partielle\nRecord Inventory Movements\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\nCapacité\nD01.c\nNon validé\nInventory Visibility\nPermettre aux décisions de s’appuyer sur une connaissance partagée.\nCapacité\nD01.d\nValidation partielle\nStocktaking\nFiabiliser les quantités enregistrées — Inventory accuracy.\nCapacité\nD02.b\nValidation partielle\nSupply Protection\nPréserver les possibilités d’approvisionnement des usages retenus.\nCapacité\nD02.c\nNon validé · en réexamen\nReservation\nDonner effet à un engagement de ressource.\nCapacité\nFinalité\n\nDisposer d’une connaissance fiable des stocks physiques, de leurs états logiques et des ressources futures, préserver les usages retenus et enregistrer les quantités engagées.\n\nDéfinition\n\nConnaître les stocks et les ressources attendues, expliquer leurs variations, fiabiliser les quantités et préserver les usages par les protections et réservations. Le stock futur est connu ici et mobilisé par Order Promising.\n\nPérimètre\n\nStocks physiques, états logiques et connaissance des ressources futures ; disponibilité virtuelle pour la promesse dans Order Promising.\n\nNon validé\n\nAucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Le statut éditorial du backlog ne constitue pas une preuve de validation. Note antérieure, qui ne qualifie pas cette révision : « Nom retenu en U66. Six capacités dans le backlog après séparation mouvements/état selon U125 ; noms et définitions détaillés proposés. La publication v001 conserve cinq capacités. Frontières détaillées et réservation à éprouver. »\n\nVersion\n\n3\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : aucun champ explicitement adopté.\n\nChamps proposés, à valider : Définition, Finalité, Libellé, Périmètre.\n\nSources et provenance\nP81\nU66\nU74\nU75\nU78\nU79\nU80\nU81\nU86\nC58\nP82\nU116\nC71\nU125\nU126\nC73\nOuvrir le registre source\n\nconnaissance/25-domaines-coeur-et-epreuve-recits.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01"
+    },
+    {
+      "name": "03-capacite-1366",
+      "id": "D01.g",
+      "width": 1366,
+      "height": 900,
+      "documentWidth": 1366,
+      "documentHeight": 1502,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 1423.703125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 218,
+        "y": 332.390625,
+        "width": 818,
+        "height": 1127.3125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 1059,
+        "y": 332.390625,
+        "width": 275,
+        "height": 1127.3125,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 1081,
+        "y": 355.1875,
+        "width": 253,
+        "height": 41.59375,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Record Inventory Movements",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 332.390625
+        },
+        {
+          "text": "Définition",
+          "y": 414.78125
+        },
+        {
+          "text": "Version",
+          "y": 802.578125
+        },
+        {
+          "text": "Dernière modification",
+          "y": 864.171875
+        },
+        {
+          "text": "Portée de validation",
+          "y": 925.765625
+        },
+        {
+          "text": "Rattachement",
+          "y": 1028.953125
+        },
+        {
+          "text": "Adoptions",
+          "y": 1138.9375
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1201.328125
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1397.71875
+        }
+      ],
+      "bodyText": "CAPACITÉ\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nCopier le lien\nStructure\nRelations\n0 relations dans cette vue\nCapacité\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nLe détail reste à enrichir\n\nLes éléments et relations présents dépendent de l’espace sélectionné.\n\nFinalité\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nDéfinition\n\nEnregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.\n\nValidation partielle\n\nNom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125.\n\nVersion\n\n1\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : Libellé.\n\nChamps proposés, à valider : Définition, Finalité.\n\nRattachement\n\nSéparation de travail ; frontières détaillées à éprouver.\n\nU125, C73\n\nAdoptions\n\nADOPT-048\n\nSources et provenance\nU125\nU126\nC73\nP82\nCMP062\nELM103\nELM104\nELM105\nU127\nU129\nC74\nOuvrir le registre source\n\nconnaissance/04-corrections.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01.g"
+    },
+    {
+      "name": "04-capacite-1920",
+      "id": "D01.g",
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "documentHeight": 1388,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 1309.53125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 230,
+        "y": 336.390625,
+        "width": 1303,
+        "height": 1001.140625,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 1556,
+        "y": 336.390625,
+        "width": 320,
+        "height": 1001.140625,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 1578,
+        "y": 359.1875,
+        "width": 298,
+        "height": 41.59375,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Record Inventory Movements",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 336.390625
+        },
+        {
+          "text": "Définition",
+          "y": 418.78125
+        },
+        {
+          "text": "Version",
+          "y": 745.796875
+        },
+        {
+          "text": "Dernière modification",
+          "y": 807.390625
+        },
+        {
+          "text": "Portée de validation",
+          "y": 868.984375
+        },
+        {
+          "text": "Rattachement",
+          "y": 951.375
+        },
+        {
+          "text": "Adoptions",
+          "y": 1061.359375
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1123.75
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1293.140625
+        }
+      ],
+      "bodyText": "CAPACITÉ\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nCopier le lien\nStructure\nRelations\n0 relations dans cette vue\nCapacité\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nLe détail reste à enrichir\n\nLes éléments et relations présents dépendent de l’espace sélectionné.\n\nFinalité\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nDéfinition\n\nEnregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.\n\nValidation partielle\n\nNom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125.\n\nVersion\n\n1\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : Libellé.\n\nChamps proposés, à valider : Définition, Finalité.\n\nRattachement\n\nSéparation de travail ; frontières détaillées à éprouver.\n\nU125, C73\n\nAdoptions\n\nADOPT-048\n\nSources et provenance\nU125\nU126\nC73\nP82\nCMP062\nELM103\nELM104\nELM105\nU127\nU129\nC74\nOuvrir le registre source\n\nconnaissance/04-corrections.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01.g"
+    },
+    {
+      "name": "05-capacite-1024",
+      "id": "D01.g",
+      "width": 1024,
+      "height": 768,
+      "documentWidth": 1024,
+      "documentHeight": 1502,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 1423.703125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 218,
+        "y": 332.390625,
+        "width": 476,
+        "height": 1127.3125,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 717,
+        "y": 332.390625,
+        "width": 275,
+        "height": 1127.3125,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 739,
+        "y": 355.1875,
+        "width": 253,
+        "height": 41.59375,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Record Inventory Movements",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 332.390625
+        },
+        {
+          "text": "Définition",
+          "y": 414.78125
+        },
+        {
+          "text": "Version",
+          "y": 802.578125
+        },
+        {
+          "text": "Dernière modification",
+          "y": 864.171875
+        },
+        {
+          "text": "Portée de validation",
+          "y": 925.765625
+        },
+        {
+          "text": "Rattachement",
+          "y": 1028.953125
+        },
+        {
+          "text": "Adoptions",
+          "y": 1138.9375
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1201.328125
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1397.71875
+        }
+      ],
+      "bodyText": "CAPACITÉ\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nCopier le lien\nStructure\nRelations\n0 relations dans cette vue\nCapacité\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nLe détail reste à enrichir\n\nLes éléments et relations présents dépendent de l’espace sélectionné.\n\nFinalité\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nDéfinition\n\nEnregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.\n\nValidation partielle\n\nNom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125.\n\nVersion\n\n1\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : Libellé.\n\nChamps proposés, à valider : Définition, Finalité.\n\nRattachement\n\nSéparation de travail ; frontières détaillées à éprouver.\n\nU125, C73\n\nAdoptions\n\nADOPT-048\n\nSources et provenance\nU125\nU126\nC73\nP82\nCMP062\nELM103\nELM104\nELM105\nU127\nU129\nC74\nOuvrir le registre source\n\nconnaissance/04-corrections.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01.g"
+    },
+    {
+      "name": "06-capacite-980",
+      "id": "D01.g",
+      "width": 980,
+      "height": 900,
+      "documentWidth": 980,
+      "documentHeight": 1449,
+      "rail": {
+        "x": 0,
+        "y": 78,
+        "width": 186,
+        "height": 1370.671875,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 208,
+        "y": 328.390625,
+        "width": 750,
+        "height": 243.6875,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 208,
+        "y": 595.078125,
+        "width": 750,
+        "height": 831.59375,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 208,
+        "y": 636.875,
+        "width": 750,
+        "height": 20.796875,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Record Inventory Movements",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 614.078125
+        },
+        {
+          "text": "Définition",
+          "y": 675.671875
+        },
+        {
+          "text": "Version",
+          "y": 882.734375
+        },
+        {
+          "text": "Dernière modification",
+          "y": 944.328125
+        },
+        {
+          "text": "Portée de validation",
+          "y": 1005.921875
+        },
+        {
+          "text": "Rattachement",
+          "y": 1088.3125
+        },
+        {
+          "text": "Adoptions",
+          "y": 1177.5
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1239.890625
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1382.28125
+        }
+      ],
+      "bodyText": "CAPACITÉ\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nCopier le lien\nStructure\nRelations\n0 relations dans cette vue\nCapacité\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nLe détail reste à enrichir\n\nLes éléments et relations présents dépendent de l’espace sélectionné.\n\nFinalité\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nDéfinition\n\nEnregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.\n\nValidation partielle\n\nNom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125.\n\nVersion\n\n1\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : Libellé.\n\nChamps proposés, à valider : Définition, Finalité.\n\nRattachement\n\nSéparation de travail ; frontières détaillées à éprouver.\n\nU125, C73\n\nAdoptions\n\nADOPT-048\n\nSources et provenance\nU125\nU126\nC73\nP82\nCMP062\nELM103\nELM104\nELM105\nU127\nU129\nC74\nOuvrir le registre source\n\nconnaissance/04-corrections.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01.g"
+    },
+    {
+      "name": "07-capacite-mobile",
+      "id": "D01.g",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 1823,
+      "rail": {
+        "x": 0,
+        "y": 119,
+        "width": 390,
+        "height": 68,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "content": {
+        "x": 14,
+        "y": 540.296875,
+        "width": 362,
+        "height": 282.6875,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "position": "static"
+      },
+      "inspector": {
+        "x": 14,
+        "y": 845.984375,
+        "width": 362,
+        "height": 959.359375,
+        "fontSize": "13px",
+        "lineHeight": "19.5px",
+        "position": "static"
+      },
+      "paragraph": {
+        "x": 14,
+        "y": 887.78125,
+        "width": 362,
+        "height": 41.59375,
+        "fontSize": "13px",
+        "lineHeight": "20.8px",
+        "position": "static"
+      },
+      "title": "Record Inventory Movements",
+      "inspectorHeadings": [
+        {
+          "text": "Finalité",
+          "y": 864.984375
+        },
+        {
+          "text": "Définition",
+          "y": 947.375
+        },
+        {
+          "text": "Version",
+          "y": 1234.40625
+        },
+        {
+          "text": "Dernière modification",
+          "y": 1296
+        },
+        {
+          "text": "Portée de validation",
+          "y": 1357.59375
+        },
+        {
+          "text": "Rattachement",
+          "y": 1439.984375
+        },
+        {
+          "text": "Adoptions",
+          "y": 1529.171875
+        },
+        {
+          "text": "Sources et provenance",
+          "y": 1591.5625
+        },
+        {
+          "text": "Modèle structuré",
+          "y": 1760.953125
+        }
+      ],
+      "bodyText": "CAPACITÉ\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nCopier le lien\nStructure\nRelations\n0 relations dans cette vue\nCapacité\nRecord Inventory Movements\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nLe détail reste à enrichir\n\nLes éléments et relations présents dépendent de l’espace sélectionné.\n\nFinalité\n\nDisposer d’un historique traçable des faits qui expliquent les variations du stock.\n\nDéfinition\n\nEnregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique.\n\nValidation partielle\n\nNom Record Inventory Movements explicitement adopté par Laurent le 2026-09-13 en U129. Validation du seul nom ; définition, finalité et frontières détaillées proposées. Scission de travail de D01.e selon U125.\n\nVersion\n\n1\n\nDernière modification\n\n2026-09-13T16:25:42.581332Z\n\nPortée de validation\n\nChamps adoptés : Libellé.\n\nChamps proposés, à valider : Définition, Finalité.\n\nRattachement\n\nSéparation de travail ; frontières détaillées à éprouver.\n\nU125, C73\n\nAdoptions\n\nADOPT-048\n\nSources et provenance\nU125\nU126\nC73\nP82\nCMP062\nELM103\nELM104\nELM105\nU127\nU129\nC74\nOuvrir le registre source\n\nconnaissance/04-corrections.md\n\nModèle structuré\n\nmodeles/release/2026-09-13.4/model.json · D01.g"
+    }
+  ],
+  "checks": {
+    "scroll": {
+      "scrollY": 747,
+      "railTop": -669,
+      "navBottom": -478.5,
+      "searchBottom": -669
+    },
+    "keyboardAfterCard": {
+      "title": "Record Inventory Movements — FLOW Atlas",
+      "focus": "<body>\n<div id=\"flow-atlas\" lang=\"fr\" aria-label=\"FLOW Atlas, explorateur du modèle métier\">\n  \n  <header class=\"fa-top\">\n    <div class=\"fa-brand\"><svg class=\"lucide\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden="
+    },
+    "keyboardNextTab": {
+      "tag": "BUTTON",
+      "id": "",
+      "text": "Copier le lien"
+    },
+    "atlasRoot": "VUE DE NAVIGATION\nAtlas\n\nNavigation dans l’espace sélectionné.\n\nCopier le lien\nStructure\nRelations\n2 éléments · 0 liens de lecture\nMODÈLE\nNavigation\nUrbanisation\nModèle publié ; validations, propositions et réexamens restent explicitement distingués.\n8 éléments\nMODÈLE\nNavigation\nModèle processus\nModèle distinct de la couche transactionnelle, à développer.\nVue de navigation",
+    "relations": "Capacité\nRelations à documenter\n\nAucune relation métier détaillée n’est représentée pour cet élément dans cette vue.",
+    "search-inventaire": "0 résultat dans tout le modèle\n\nAucun résultat\n\nEssaie un terme français ou un identifiant, par exemple « affectation », « inventaire » ou « D03.b ».\n\nRéinitialiser les filtres",
+    "search-affectation": "1 résultat dans tout le modèle\n\nAdjust resource commitments\nNon validé · en réexamen\n\nréviser, transférer ou libérer les quantités affectées selon les décisions autorisées.\n\nCapacité · D02.d · Resource Availability and Commitments",
+    "search-D03.b": "1 résultat dans tout le modèle\n\nPromise Confirmation\nCapacité validée\n\nétablir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.\n\nCapacité · D03.b · Order Promising",
+    "filters": {
+      "types": "Tous les éléments\nDomaines\nRéférences\nGroupes\nCapacités\nObjets métier\nDocuments\nÉvénements\nComposants SI\nFlux SI\nAutorités d’information\nResponsabilités de décision",
+      "status": "Tous les statuts\nCapacités validées\nEn réexamen\nHypothèses\nExemples proposés\nNon validés\nValidation partielle\nDéclarés\nNon traités"
+    },
+    "keyboardAfterResult": {
+      "title": "Promise Confirmation — FLOW Atlas",
+      "focus": "<body>\n<div id=\"flow-atlas\" lang=\"fr\" aria-label=\"FLOW Atlas, explorateur du modèle métier\">\n  \n  <header class=\"fa-top\">\n    <div class=\"fa-brand\"><svg class=\"lucide\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden="
+    },
+    "searchBack": {
+      "url": "http://127.0.0.1:8765/#node=D01.g&view=links&q=D03.b",
+      "query": "D03.b",
+      "results": "1 résultat dans tout le modèle\n\nPromise Confirmation\nCapacité validée\n\nétablir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.\n\nCapacité · D03.b · Order Promising"
+    }
+  },
+  "errors": []
+}

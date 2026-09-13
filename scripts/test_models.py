@@ -23,8 +23,8 @@ def read(relative):
 class ReleaseIntegrityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        pointer = read("modeles/release/current.json")
-        cls.release = read("modeles/release/" + pointer["path"])
+        # These mutation cases intentionally exercise the original frozen fixture.
+        cls.release = read("modeles/release/2026-09-13.2/model.json")
         cls.snapshot = read("modeles/revisions/2026-09-13.1/backlog.json")
         cls.decisions = read("modeles/decisions/2026-09-13.1.json")
         cls.source_doc = read("modeles/provenance/source-records.json")
@@ -84,6 +84,9 @@ class ReleaseIntegrityTests(unittest.TestCase):
         live_backlog = read("modeles/backlog/model.json")
         baseline_digest = canonical_sha256(self.release)
         live_backlog["nodes"][0]["fields"]["name"] = "Future Proposal"
+        # Simulate a fresh legacy proposal, without claiming the old approval.
+        live_backlog['nodes'][0].pop('lifecycle', None)
+        live_backlog.pop('lifecycle_policy', None)
         module = sys.modules[validate_release.__module__]
         original_load = module._load
 

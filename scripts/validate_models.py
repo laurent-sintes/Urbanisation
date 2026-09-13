@@ -7,7 +7,7 @@ they do not decide whether a business statement should be adopted.
 
 import argparse
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 import hashlib
 import json
 from pathlib import Path
@@ -15,8 +15,10 @@ import re
 
 try:
     from .json_contract import validate as validate_contract
+    from .release_catalog import resolve_release
 except ImportError:
     from json_contract import validate as validate_contract
+    from release_catalog import resolve_release
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -94,6 +96,10 @@ def validate_sources(source_document):
 
 
 def validate_urbanism(model, sources, schema=None):
+    try:
+        from .lifecycle import validate_lifecycle
+    except ImportError:
+        from lifecycle import validate_lifecycle
     errors = validate_contract(model, schema) if schema is not None else validate_contract(model, True)
     if errors:
         return errors
@@ -103,6 +109,10 @@ def validate_urbanism(model, sources, schema=None):
         return ["model: nodes and relations must be lists"]
     nodes = _index(model["nodes"], "nodes", errors)
     relations = _index(model["relations"], "relations", errors)
+    for item in model['nodes'] + model['relations']:
+        if model.get('lifecycle_policy') == 1 and 'lifecycle' not in item:
+            errors.append('lifecycle/' + item['id'] + ': required by lifecycle_policy')
+        errors.extend(validate_lifecycle(item))
     for identifier in set(nodes) & set(relations):
         errors.append(f"model/{identifier}: id shared by node and relation")
     for identifier, node in nodes.items():
@@ -163,6 +173,20 @@ def validate_urbanism(model, sources, schema=None):
             if target not in nodes:
                 errors.append(f"alternatives/{identifier}: dangling target {target}")
     _index(model.get("principles", []), "principles", errors)
+    if model.get('element_versioning') == 1:
+        for item in [model] + model['nodes'] + model['relations'] + model.get('principles', []):
+            identifier = item.get('id', item.get('model_id'))
+            if type(item.get('revision')) is not int or item['revision'] < 1:
+                errors.append(f'versioning/{identifier}: positive integer revision required')
+            try:
+                stamp = item['last_modified']
+                if not isinstance(stamp, str) or not stamp.endswith('Z'):
+                    raise ValueError('UTC required')
+                datetime.fromisoformat(stamp.replace('Z', '+00:00'))
+            except (KeyError, TypeError, ValueError):
+                errors.append(f'versioning/{identifier}: UTC last_modified required')
+            if not re.fullmatch(r'[0-9a-f]{64}', item.get('content_sha256', '')):
+                errors.append(f'versioning/{identifier}: content fingerprint required')
     if model.get("space") == "release":
         if model.get("alternatives"):
             errors.append("release: alternatives belong in backlog")
@@ -231,8 +255,8 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
             if original is None:
                 errors.append(f"release/{identifier}: no frozen input record")
                 continue
-            metadata = ("revision", "kind", "layer", "group_role", "level_ref", "source_refs", "source_locator") if collection == "nodes" else ("revision", "source_refs")
-            for field in metadata:
+            metadata = ("revision", "last_modified", "content_sha256", "kind", "layer", "group_role", "level_ref", "source_refs", "source_locator") if collection == "nodes" else ("revision", "last_modified", "content_sha256", "source_refs")
+            for field in metadata + ('lifecycle',):
                 if item.get(field) != original.get(field):
                     errors.append(f"release/{identifier}/{field}: differs from frozen metadata")
             adoption_ids = item.get("adoption_ids", [])
@@ -257,6 +281,10 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
                         errors.append(f"release/{identifier}/{field}: conflicting adoptions")
                     expected[field] = digest
             actual = item.get("fields", {}) if collection == "nodes" else _relation_values(item)
+            lifecycle = item.get('lifecycle', {})
+            for field in lifecycle.get('validated_fields', []):
+                if field not in expected or lifecycle.get('value_sha256', {}).get(field) != expected[field]:
+                    errors.append(f'release/{identifier}: lifecycle approval lacks a matching decision: {field}')
             if not published_snapshot and set(actual) != set(expected):
                 errors.append(f"release/{identifier}: released fields differ from approved_fields")
             if published_snapshot:
@@ -292,6 +320,9 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
                     errors.append(f"release/{identifier}: fields are both present and missing")
     if release.get("principles", []) != snapshot.get("principles", []):
         errors.append("release/principles: changed from frozen source orientations")
+    for key in ('element_versioning', 'revision', 'last_modified', 'content_sha256'):
+        if release.get(key) != snapshot.get(key):
+            errors.append(f'release/{key}: differs from frozen metadata')
     excluded = _index(release.get("excluded_nodes", []), "excluded_nodes", errors)
     if set(excluded) != set(frozen["nodes"]) - {n["id"] for n in release["nodes"]}:
         errors.append("release/excluded_nodes: exclusion inventory differs from frozen input")
@@ -389,7 +420,7 @@ def validate_project(root=ROOT):
         errors.extend(f"backlog: {e}" for e in validate_urbanism(backlog, sources, urbanism_schema))
         counters["backlog_nodes"] = len(backlog["nodes"])
         counters["backlog_capabilities"] = sum(n["kind"] == "capability" for n in backlog["nodes"])
-        pointer = _load(root / "modeles/release/current.json")
+        pointer = resolve_release(root / "modeles/release")
         release_path, release = _pointer(root, root / "modeles/release", pointer, errors)
         manifest = _load(release_path.parent / "manifest.json")
         if manifest.get("model_sha256") != pointer.get("sha256") or manifest.get("version") != release.get("version") or pointer.get("version") != release.get("version"):

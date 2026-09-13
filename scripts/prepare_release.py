@@ -16,10 +16,14 @@ import sys
 import uuid
 
 try:
+    from .element_versions import assign_versions
+    from .release_catalog import resolve_release, register
     from . import publish_release as publisher
     from .json_contract import validate as validate_contract
     from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism
 except ImportError:
+    from element_versions import assign_versions
+    from release_catalog import resolve_release, register
     import publish_release as publisher
     from json_contract import validate as validate_contract
     from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism
@@ -59,7 +63,7 @@ def references(document):
 
 def load_current(root):
     models = (Path(root).resolve() / 'modeles').resolve()
-    pointer = read(models / 'release/current.json')
+    pointer = resolve_release(models / 'release')
     release_path = checked_path(models / 'release', pointer['path'])
     if digest(release_path) != pointer['sha256']:
         raise ValueError('Current release pointer hash mismatch')
@@ -96,9 +100,10 @@ def suggested_version(models):
     return prefix + str(number)
 
 
-def reconcile_decisions(old_document, snapshot, additional=None):
+def reconcile_decisions(old_document, snapshot, additional=None, previous_snapshot=None):
     """Retain exact revision AND approved values; never carry across a revision."""
     targets = {c: {item['id']: item for item in snapshot[c]} for c in ('nodes', 'relations')}
+    previous_targets = {c: {item['id']: item for item in (previous_snapshot or {}).get(c, [])} for c in targets}
     kept, deferred = [], []
     for original in old_document['decisions']:
         target = original['target']
@@ -107,11 +112,27 @@ def reconcile_decisions(old_document, snapshot, additional=None):
         reason = None
         if item is None:
             reason = 'target_removed'
-        elif item['revision'] != target['revision']:
-            reason = 'revision_changed_requires_explicit_reassessment'
         elif any(field not in values or canonical_sha256(values[field]) != target['value_sha256'][field]
                  for field in target['approved_fields']):
             reason = 'approved_value_changed'
+        elif item['revision'] != target['revision']:
+            old = previous_targets[target['collection']].get(target['id'])
+            ignored = PUBLICATION_FIELDS | {'revision', 'last_modified', 'content_sha256', 'lifecycle'}
+            content = lambda record: {k: v for k, v in record.items() if k not in ignored}
+            # U131 introduces a lifecycle without changing the approved content.
+            # Transcribe, rather than overwrite, the original decision. This is
+            # deliberately limited to the first addition of lifecycle metadata.
+            if (old and 'lifecycle' not in old and 'U131' in item.get('lifecycle', {}).get('source_refs', [])
+                    and content(old) == content(item) and old['revision'] == target['revision']):
+                decision = copy.deepcopy(original)
+                decision['id'] = original['id'] + '-LIFECYCLE-r' + str(item['revision'])
+                decision['recorded_at'] = snapshot['as_of']
+                decision['source_refs'] = list(dict.fromkeys(original['source_refs'] + ['U131']))
+                decision['note'] += ' Transcription de ' + original['id'] + ' pour l’introduction du cycle U131 ; valeurs et portée inchangées.'
+                decision['target'].update(revision=item['revision'], import_version=snapshot['version'])
+                kept.append(decision)
+                continue
+            reason = 'revision_changed_requires_explicit_reassessment'
         if reason:
             deferred.append({'id': original['id'], 'target': target['id'], 'reason': reason,
                              'approved_fields': target['approved_fields']})
@@ -224,8 +245,9 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
         for item in snapshot[collection]:
             for key in PUBLICATION_FIELDS:
                 item.pop(key, None)
+    element_changes = assign_versions(snapshot, inputs['input_revision'], published=previous)
     additional = read(additional_path) if additional_path else None
-    decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional)
+    decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'])
     explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
     deferred_paths = [p for p in sorted((models / 'backlog').glob('*.json')) if p.name != 'model.json']
@@ -253,6 +275,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
                                    'changes': changes(read(previous_path), read(path)) if previous_path.exists() else [],
                                    'disposition': 'frozen_as_context_only_not_published_as_model'})
     report = {'schema_version': '1.0.0', 'base_version': pointer['version'], 'candidate_version': version,
+              'element_version_changes': element_changes,
               'publication_is_business_validation': False, 'changes': model_diff(previous, candidate),
               'retained_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] in {o['id'] for o in inputs['decisions']['decisions']}],
               'deferred_decisions': deferred_decisions,
@@ -367,6 +390,23 @@ def publish_prepared(root, version, activate=False):
         write(checked_path(revision_dir, item['path']), read(checked_path(stage, item['path'])))
     write(release_dir / 'model.json', release)
     write(release_dir / 'changes.json', read(stage / 'report.json'))
+    report=read(stage / 'report.json')
+    notes=[f"# Urbanisation — version {release['revision']}", '', f"Publication {version} · modèle modifié le {release['last_modified']}.", '',
+           f"{sum(n['kind']=='capability' for n in release['nodes'])} capacités ; les statuts et réserves sont conservés.", '', '## Changements', '']
+    changed_ids={e['id'] for e in report['element_version_changes'] if e['collection']=='nodes' and e['reason'] in ('new','changed')}
+    for action in ('added','removed','modified'):
+        for item in report['changes']['nodes'][action]:
+            if action=='modified' and item['id'] not in changed_ids:continue
+            renaming=next((c for c in item.get('changes',[]) if c['path']=='/fields/name'),None)
+            detail=(' — '+item['fields']['name']) if 'fields' in item else (' — '+str(renaming['before'])+' → '+str(renaming['after'])) if renaming else ' — contenu ou notice actualisé'
+            notes.append(f"- {action} : {item['id']}" + detail)
+    notes+=['', '## Validations et points ouverts', '',
+            f"{len(report['retained_decision_ids'])} décisions antérieures conservées ; {len(report['deferred_decisions'])} suspendues pour les révisions modifiées.",
+            f"{sum('-LIFECYCLE-r' in key for key in report['new_decision_ids'])} accords transcrits à portée identique pour le cycle U131 ; {sum('-LIFECYCLE-r' not in key for key in report['new_decision_ids'])} autres décisions nouvelles sourcées.",
+            'Aucune publication ne vaut validation métier. Les noms conditionnels de D05, le résiduel D02 et les frontières Supply restent à instruire.', '']
+    notes += [f"- {d['id']} ({d['target']}) : conservée dans l’historique, reprise suspendue pour cette révision." for d in report['deferred_decisions']]
+    notes += ['', 'Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.', '']
+    (release_dir/'release-notes.md').write_text('\n'.join(notes),encoding='utf-8')
     output = {'schema_version': '1.0.0', 'version': version, 'model_sha256': digest(release_dir / 'model.json'),
               'input_revision_path': f'../../revisions/{version}/backlog.json', 'input_revision_sha256': digest(revision_dir / 'backlog.json'),
               'decisions_path': f'../../decisions/{version}.json', 'decisions_sha256': digest(decision_path),
@@ -379,8 +419,7 @@ def publish_prepared(root, version, activate=False):
               'note': 'Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques.'}
     write(release_dir / 'manifest.json', output)
     if activate:
-        publisher.activate_pointer(models / 'release/current.json', {'schema_version': '1.0.0', 'model_id': release['model_id'],
-                                    'space': 'release', 'version': version, 'path': f'{version}/model.json', 'sha256': output['model_sha256']})
+        register(models/'release',release,version+'/release-notes.md',write,publisher.activate_pointer)
     return {'version': version, 'manifest': str(release_dir / 'manifest.json'), 'release_activated': activate,
             'capability_count': output['capability_count'], 'complete_capability_count': output['complete_capability_count']}
 

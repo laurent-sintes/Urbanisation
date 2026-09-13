@@ -321,3 +321,14 @@ U43 : MKT01, MKT03, MKT04, MKT06, MKT07 et MKT14 sont réexaminées sur les prem
 - Source officielle : [Describing Data Domains and Extensibility Options](https://learning.sap.com/courses/introducing-sap-master-data-governance/describing-data-domains-and-extensibility-options), sections Out-of-the-Box Domain Models et Extensibility Options.
 - Consultation : texte public lu le 2026-09-11 ; ELM099. Pas d’import du schéma ni du contenu propriétaire complet.
 - Limites : preuve de structure produit et de domaines de données, pas d’équivalence de niveaux avec notre domaine problématique. Gouvernance et administration restent hors du périmètre local des ingestions. Droits de redistribution non examinés ; synthèse courte et lien uniquement.
+## MKT23
+
+- Référence / organisme : IBM Sterling Order Management System — IBM.
+- Nature : produit OMS et typologie de documents, distinct du modèle historique CBM (MKT06).
+- Rôle : éprouver la famille générique des Orders achat, vente, retour et transfert, sans importer un périmètre produit comme domaine métier.
+- Source officielle : [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order ; texte lu le 2026-09-13. Documentation évolutive, édition précise non affichée.
+- Limites : aucune hiérarchie de Business Capabilities ni maîtrise installée Beaumanoir démontrée. Synthèse et liens seulement ; pas de redistribution du modèle produit. ELM112, CMP064.
+
+### Complément MKT20 — 13 septembre 2026
+
+Le corpus Oracle Fusion est complété pour la localisation des Orders : Order Management 25C (ELM108) et Procurement 25C, [Purchase Order Infolets](https://docs.oracle.com/en/cloud/saas/procurement/25c/oaprc/purchase-order-infolets.html), espace Purchase Orders, texte lu. Ce complément ne fusionne pas ces produits avec GOP et reste distinct du Retail Reference Model MKT05. Comparaison de périmètres de produits, pas de hiérarchie de capacités ; ELM111/CMP064.

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "flow-urbanism",
+  "current": "urbanisation-v003-2026-09-13-173533.json",
+  "publications": [
+    {
+      "descriptor": "urbanisation-v003-2026-09-13-173533.json",
+      "sha256": "8b6159783aa5ec025b3a7dab5c4ffdd7b6b23943edcf54131f4851d6d0d08567"
+    },
+    {
+      "descriptor": "urbanisation-v002-2026-09-13-162623.json",
+      "sha256": "8bf034d671e21b8b5c1484358677c4a2994b00fbe675c8789779356ef7cf654c"
+    },
+    {
+      "descriptor": "urbanisation-v001-2026-09-13-153941.json",
+      "sha256": "1bfe3a9ca413b16849e775d31519ce25c15f09c493af7640d0506f4877aff23a"
+    },
+    {
+      "descriptor": "urbanisation-2026-09-13.1-legacy.json",
+      "sha256": "798ab2b9fdbfb1a165e62f0fc12583d7fdf9421c43019975cfaee40a2c65fe56"
+    },
+    {
+      "descriptor": "urbanisation-2026-09-13.2-legacy.json",
+      "sha256": "46af245297e99605af69256fd3e3b78d19a845d247c23045cd8dd288d99570fc"
+    }
+  ]
+}

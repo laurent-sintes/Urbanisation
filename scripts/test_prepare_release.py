@@ -20,12 +20,24 @@ class BacklogPublicationTests(unittest.TestCase):
         self.temp = isolated_project()
         self.root = self.temp.__enter__()
         self.addCleanup(self.temp.__exit__, None, None, None)
-        for relative in ('schemas', 'backlog', 'decisions', 'revisions', 'provenance', 'release/2026-09-13.2'):
+        for relative in ('schemas', 'backlog', 'decisions', 'revisions', 'provenance', 'release'):
             shutil.copytree(ROOT / 'modeles' / relative, self.root / 'modeles' / relative)
-        shutil.copyfile(ROOT / 'modeles/release/current.json', self.root / 'modeles/release/current.json')
         self.version = '2026-09-13.99'
         self.models = self.root / 'modeles'
         self.backlog_path = self.models / 'backlog/model.json'
+        # These tests exercise the legacy contract; lifecycle has its own tests.
+        # Pin the legacy fixture to its immutable publication, not the live
+        # backlog: new releases must not change this test's approval baseline.
+        index_path = self.models / 'release/index.json'
+        index = workflow.read(index_path)
+        index['current'] = 'urbanisation-v002-2026-09-13-162623.json'
+        save(index_path, index)
+        baseline = workflow.read(self.models / 'revisions/2026-09-13.4/backlog.json')
+        baseline.pop('lifecycle_policy', None)
+        for collection in ('nodes', 'relations'):
+            for item in baseline[collection]:
+                item.pop('lifecycle', None)
+        save(self.backlog_path, baseline)
         path = self.models / 'provenance/source-records.json'
         live = workflow.read(path)
         live['records'].append(source('PUB-TEST-NEW', 'Explicit local publication request'))
@@ -45,7 +57,7 @@ class BacklogPublicationTests(unittest.TestCase):
 
     def test_read_only_report_identifies_live_changed_field_and_lost_validation(self):
         self.mutate_capability()
-        before = (self.models / 'release/current.json').read_bytes()
+        before = (self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes()
         bundle = workflow.build_candidate(self.root, self.version)
         report = bundle['report']
         change = next(n for n in report['changes']['nodes']['modified'] if n['id'] == 'D03.a')
@@ -58,23 +70,25 @@ class BacklogPublicationTests(unittest.TestCase):
         original_note = next(n for n in workflow.read(self.backlog_path)['nodes'] if n['id'] == 'D03.a')['review']['note']
         self.assertIn(original_note, released['review']['note'])
         self.assertTrue(any(d['target'] == 'D03.a' for d in report['deferred_decisions']))
-        self.assertEqual((self.models / 'release/current.json').read_bytes(), before)
+        self.assertEqual((self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes(), before)
         self.assertFalse((self.models / 'staging').exists())
 
-    def test_changed_value_without_revision_is_reported_and_cannot_be_prepared(self):
+    def test_changed_value_without_manual_revision_is_automatically_versioned(self):
         self.mutate_capability(revision=False)
         report = workflow.build_candidate(self.root, self.version)['report']
-        self.assertTrue(any('new revision' in e for e in report['validation_errors']))
-        with self.assertRaisesRegex(ValueError, 'new revision'):
-            self.prepare()
-        self.assertFalse((self.models / 'staging').exists())
+        self.assertEqual(report['validation_errors'], [])
+        self.prepare()
+        candidate=workflow.read(self.models / 'staging' / self.version / 'candidate.json')
+        cap=next(n for n in candidate['nodes'] if n['id']=='D03.a')
+        self.assertEqual(cap['revision'], 2)
+        self.assertTrue(cap['last_modified'].endswith('Z'))
 
     def test_prepare_freezes_current_backlog_without_changing_release(self):
         self.mutate_capability()
-        pointer = (self.models / 'release/current.json').read_bytes()
+        pointer = (self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes()
         result = self.prepare()
         self.assertFalse(result['release_activated'])
-        self.assertEqual((self.models / 'release/current.json').read_bytes(), pointer)
+        self.assertEqual((self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes(), pointer)
         self.assertFalse((self.models / 'release' / self.version).exists())
         candidate = workflow.read(self.models / 'staging' / self.version / 'candidate.json')
         cap = next(n for n in candidate['nodes'] if n['id'] == 'D03.a')
@@ -89,12 +103,25 @@ class BacklogPublicationTests(unittest.TestCase):
         self.prepare()
         result = workflow.publish_prepared(self.root, self.version, activate=True)
         self.assertEqual(result['complete_capability_count'], 8)
-        self.assertEqual(workflow.read(self.models / 'release/current.json')['version'], self.version)
+        self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], self.version)
         self.assertEqual(old_path.read_bytes(), old_bytes)
         self.assertTrue((self.models / f'revisions/{self.version}/backlog.json').exists())
         self.assertTrue((self.models / f'decisions/{self.version}.json').exists())
         # The resulting current release is valid for another report/preparation.
         bundle = workflow.build_candidate(self.root, '2026-09-13.100')
+        from scripts.release_catalog import catalog
+        published = workflow.read(self.models / f'release/{self.version}/model.json')
+        for collection in ('nodes', 'relations', 'principles'):
+            previous = {x['id']: x for x in published[collection]}
+            for item in bundle['candidate'][collection]:
+                self.assertEqual(item['revision'], previous[item['id']]['revision'])
+                self.assertEqual(item['last_modified'], previous[item['id']]['last_modified'])
+        entries=catalog(self.models/'release')
+        self.assertEqual(entries['versions'][0]['version'],self.version)
+        self.assertEqual(workflow.resolve_release(self.models/'release','2026-09-13.2')['version'],'2026-09-13.2')
+        descriptor=workflow.read(self.models/'release/index.json')['current']
+        self.assertRegex(descriptor,r'^urbanisation-v\d{3,}-\d{4}-\d{2}-\d{2}-\d{6}\.json$')
+        self.assertTrue((self.models/f'release/{self.version}/release-notes.md').exists())
         self.assertFalse(bundle['report']['validation_errors'])
         published_cap = next(n for n in workflow.read(self.models / f'release/{self.version}/model.json')['nodes'] if n['id'] == 'D03.a')
         next_cap = next(n for n in bundle['candidate']['nodes'] if n['id'] == 'D03.a')
@@ -165,8 +192,9 @@ class BacklogPublicationTests(unittest.TestCase):
         save(self.backlog_path, model)
         report = workflow.build_candidate(self.root, self.version)['report']
         added = report['changes']['relations']['added']
-        self.assertEqual(added[0]['qualification']['meaning'], 'Test relation')
-        after = deepcopy(added[0])
+        test_relation = next(r for r in added if r['id'] == 'REL-TEST')
+        self.assertEqual(test_relation['qualification']['meaning'], 'Test relation')
+        after = deepcopy(test_relation)
         after['qualification']['meaning'] = 'Changed meaning'
         delta = workflow.model_diff({'nodes': [], 'relations': added}, {'nodes': [], 'relations': [after]})
         self.assertEqual(delta['relations']['modified'][0]['changes'][0]['path'], '/qualification/meaning')

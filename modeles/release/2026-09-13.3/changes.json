@@ -1,0 +1,3425 @@
+{
+  "schema_version": "1.0.0",
+  "base_version": "2026-09-13.2",
+  "candidate_version": "2026-09-13.3",
+  "element_version_changes": [
+    {
+      "collection": "nodes",
+      "id": "business-references",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "new"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01.c",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D01.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D02.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.f",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.g",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D03.h",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D04",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D04.a",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D04.b",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D04.c",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D04.d",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D05",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D05.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D05.b",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D05.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D06",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D06.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D06.b",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D06.c",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D07",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D07.a",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D07.b",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D07.c",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D07.d",
+      "revision": 2,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "changed"
+    },
+    {
+      "collection": "nodes",
+      "id": "D09",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D09.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D11",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D11.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D08",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D08.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D12",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D12.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D13",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "D13.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "ILL-OBJ-01",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "ILL-DOC-01",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "ILL-EVT-01",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "nodes",
+      "id": "ILL-OBJ-02",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D01.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "new"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D01.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D01.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D02.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D02.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D02.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D02.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D02.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.e",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.f",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.g",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D03.h",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D04.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D04.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D04.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D04.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D05.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D05.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D05.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D06.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D06.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D06.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D07.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D07.b",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D07.c",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D07.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-GROUP-D09",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D09.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-GROUP-D11",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D11.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-GROUP-D08",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D08.d",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-GROUP-D12",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D12.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-GROUP-D13",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-MEMBER-D13.a",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-001",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-002",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-003",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-004",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-005",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-006",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-007",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "relations",
+      "id": "REL-ILL-008",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-TWO-LAYERS",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-CAPABILITY",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-SUPPLY-DOCUMENTS",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-FLOW-LOGISTICS",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-CTP-DEFERRED",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    },
+    {
+      "collection": "principles",
+      "id": "PRINCIPLE-ORDER-AGREEMENT",
+      "revision": 1,
+      "last_modified": "2026-09-13T15:39:21.359705Z",
+      "reason": "tracking_initialized"
+    }
+  ],
+  "publication_is_business_validation": false,
+  "changes": {
+    "nodes": {
+      "added": [
+        {
+          "id": "D01.e",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Inventory Tracking",
+            "definition": "Enregistrer les faits de stock et en établir les effets sur les quantités physiques et les états logiques ; suivre les ressources futures connues et leurs évolutions, en distinguant actuel et attendu.",
+            "finality": "Disposer d’un état du stock à jour et expliquer son évolution."
+          },
+          "source_refs": [
+            "P82",
+            "U81",
+            "U83",
+            "U116",
+            "C71"
+          ],
+          "source_locator": {
+            "path": "connaissance/05-propositions.md",
+            "anchor": "p82"
+          },
+          "review": {
+            "state": "proposed",
+            "note": "Découpage courant du backlog selon U116. Réunion de D01.a et D01.b, conservés dans la release 2026-09-13.2 et la révision historique. Aptitude et frontières proposées ; aucune nouvelle validation métier."
+          },
+          "last_modified": "2026-09-13T15:39:21.359705Z",
+          "content_sha256": "a41888990e3c6124e9c27a460486db09bfc1ba9345b104d8e285fcac591544fd",
+          "adoption_ids": [],
+          "approved_fields": [],
+          "proposed_fields": [
+            "definition",
+            "finality",
+            "name"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "id": "D01.a",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Establish inventory positions",
+            "definition": "déterminer les quantités de stock physique et leurs états logiques par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes, en distinguant les ressources futures attendues.",
+            "finality": "Disposer d’une connaissance exploitable des ressources."
+          },
+          "source_refs": [
+            "P81",
+            "P82",
+            "U81",
+            "U82",
+            "U83",
+            "C56"
+          ],
+          "source_locator": {
+            "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+            "anchor": "d01-stocks",
+            "line": 58
+          },
+          "review": {
+            "state": "under_review",
+            "note": "Libellé Establish inventory positions contesté en U82, conservé dans P81 pour la traçabilité. Fusion avec D01.b dans Inventory Tracking proposée en P82, non adoptée."
+          },
+          "adoption_ids": [],
+          "approved_fields": [],
+          "proposed_fields": [
+            "definition",
+            "finality",
+            "name"
+          ]
+        },
+        {
+          "id": "D01.b",
+          "revision": 1,
+          "kind": "capability",
+          "layer": "transactional",
+          "fields": {
+            "name": "Record inventory facts",
+            "definition": "qualifier les faits qui font évoluer les quantités physiques et les états logiques, notamment entrées, sorties, changements d’état et consommations.",
+            "finality": "Expliquer les variations et leur provenance."
+          },
+          "source_refs": [
+            "P81",
+            "P82",
+            "U81",
+            "U83"
+          ],
+          "source_locator": {
+            "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+            "anchor": "d01-stocks",
+            "line": 59
+          },
+          "review": {
+            "state": "proposed",
+            "note": "Capacité proposée. Fusion avec D01.a dans Inventory Tracking proposée par P82, non adoptée ; P81 conserve la ligne."
+          },
+          "adoption_ids": [],
+          "approved_fields": [],
+          "proposed_fields": [
+            "definition",
+            "finality",
+            "name"
+          ]
+        }
+      ],
+      "modified": [
+        {
+          "id": "D01",
+          "changes": [
+            {
+              "path": "/adoption_ids",
+              "before": [
+                "ADOPT-001"
+              ],
+              "after": []
+            },
+            {
+              "path": "/approved_fields",
+              "before": [
+                "name",
+                "scope"
+              ],
+              "after": []
+            },
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "c3d3fa3ff829d9828b05093fbff93a1cc5b642063eb50b9d52d4232ad0d1472a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/proposed_fields",
+              "before": [
+                "definition",
+                "finality"
+              ],
+              "after": [
+                "definition",
+                "finality",
+                "name",
+                "scope"
+              ]
+            },
+            {
+              "path": "/review/note",
+              "before": "Nom Inventory Management retenu en U66. P81 conserve six aptitudes ; la fusion proposée par P82 reste non adoptée. Les frontières détaillées et la réservation demeurent à éprouver.",
+              "after": "Aucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Validations conservées dans l’historique : ADOPT-001. Note antérieure, qui ne qualifie pas cette révision : « Nom Inventory Management retenu en U66. Le backlog utilise cinq capacités selon P82/U116, dont Inventory Tracking réunissant D01.a/D01.b. La version historique 2026-09-13.2 conservait six capacités. Les frontières détaillées et la réservation restent à éprouver. »"
+            },
+            {
+              "path": "/review/state",
+              "before": "partial",
+              "after": "proposed"
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U66",
+                "U74",
+                "U75",
+                "U78",
+                "U79",
+                "U80",
+                "U81",
+                "U86",
+                "C58"
+              ],
+              "after": [
+                "P81",
+                "U66",
+                "U74",
+                "U75",
+                "U78",
+                "U79",
+                "U80",
+                "U81",
+                "U86",
+                "C58",
+                "P82",
+                "U116",
+                "C71"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D01.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "db93dcbf15514ab9d6cfdf81f1da0873b3bc88bf918662050215bc20d52ffaab"
+            },
+            {
+              "path": "/fields/definition",
+              "before": "présenter les positions physiques, leurs états logiques et les ressources futures connues dans une vue cohérente, sans double comptage, avec source, périmètre et fraîcheur.",
+              "after": "Fournir une lecture cohérente des stocks physiques, de leurs états logiques et des ressources futures dans les différents lieux et périmètres, avec provenance et fraîcheur, sans double compte."
+            },
+            {
+              "path": "/fields/finality",
+              "before": "Permettre une lecture commune des stocks distribués.",
+              "after": "Permettre aux décisions de s’appuyer sur une connaissance partagée."
+            },
+            {
+              "path": "/fields/name",
+              "before": "Provide a consolidated inventory view",
+              "after": "Inventory Visibility"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Capacité et maille proposées. Inventory Visibility est un nom alternatif de P82, sans remplacement de la ligne courante P81.",
+              "after": "Inventory Visibility devient le libellé courant du backlog selon U116. Même aptitude que D01.c ; définition et finalité reprises de P82. Périmètre et distinction avec Inventory Tracking à éprouver."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_locator/anchor",
+              "before": "d01-stocks",
+              "after": "p82"
+            },
+            {
+              "path": "/source_locator/line",
+              "before_present": true,
+              "after_present": false,
+              "before": 60,
+              "after": null
+            },
+            {
+              "path": "/source_locator/path",
+              "before": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+              "after": "connaissance/05-propositions.md"
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "P82",
+                "U81",
+                "U83"
+              ],
+              "after": [
+                "P82",
+                "U81",
+                "U83",
+                "U116",
+                "C71"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D01.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "0f1ca6b3c7be80d9bd2d822be65309306a9a97608420ab08b6c23f939d9fa2b6"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "0f1ac3a9d00ed60969f1203a71e2efcd8fd462610177110f618962e1da2a571b"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "efa96f266679bf193019849c844292647ec48ca03c5dc79308a527c763ef6d28"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "bbdb542514627cc0c5c9e3b87b8640f25d48dd73da0c68685e46d338a8bc6ec7"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "9f4cc068b9dd423fd2cf0662dacceb2b2d594e93850109f31e68a41292795a45"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "25865e03b2c6264cb432207fa25b1592c79ab248f5a2c227f424c4612acba40f"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D02.e",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "dc3062f51133564b2939132e4b897b325cce2d3a01958cc638d0eb2db3449656"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a59e949f0b8cf310d999437c76c22d3cd50adf08e2fe2080ae5f2bdf2d57ea37"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "0659714d4fb010d6173b62d64fe80029c22b390326d48f92cf6b79619630b458"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "29f3276527be79736c9913a87e60b52c1c6457cc876b992ef2050ba73fbf2f2b"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "f0fb4fc3019891a873a9bb439da0a41a8c79b7cfe8aeb3d7e9a4a499bfa3274c"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "e2d14a2dd581104194dcac1c6ae62a927564edc6382cccef344d0bec403880e5"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.e",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "d860b4a3380837d53008f837109d355aa921bec3b23e95bb711daad9547e11f2"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.f",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "4b5a25292bbbb6b73a7cbff8e0c2f4f1b5b7a0c53131dadd342e6e0ad34f58bf"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.g",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "1f3811c6fd37ec02bf42f5424a56c11d71011c0c2f322606723c60a3072d8be2"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D03.h",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "5ebdab8b0571c78f5aa0af271c16c5dd5b8b1b2574dd392fdcd5e336d594834a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D04",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "81c742fb56ce0f4dda38001b1e0425759ae486f94b0303440a70ab2c01f4201a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Les quatre capacités conservent une proposition antérieure. U100 réoriente la revue avec D07 vers les documents d’autorisation de la Supply générique ; nom et frontières à refondre.",
+              "after": "Libellés courts P84 intégrés en U118 sans changement de définition. U100 réoriente la revue avec D07 vers les documents d’autorisation de la Supply générique ; nom du domaine et frontières restent à refondre."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            }
+          ]
+        },
+        {
+          "id": "D04.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "88701f06b9970af3705cdb1a4985e8325160c0d9556a9dfd9c2200752fe4c15d"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Establish a commercial commitment",
+              "after": "Commitment Creation"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P84"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D04.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a3e42b7b3f9cdb1b18fe3c6ffadace8530729d4745100e11ce357cc30d040122"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Amend commercial obligations",
+              "after": "Commitment Revision"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P84"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D04.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6dc252bcc591b233de99a7e1a85b336b4c890c635b37f0ba10ed1fb8c6ff9560"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Determine commitment fulfillment and remaining obligations",
+              "after": "Commitment Reconciliation"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P84"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D04.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "816ff4b97f5574805e8eb74829d934fafb713b2fb77663581488986a79a6b8ad"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Authorize a return or replacement",
+              "after": "Return and Replacement Decision"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U97",
+                "U98",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P84"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D05",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "807f23fdd760e8f3bcd23202e514a575c1cd5ce234ba6adcc7393f5f14877f59"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D05.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "b14f479a92ed4a6a2f80ea400d4491ba4429b4cf9e272c2d4b39ea39f5688980"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D05.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "3d67ebb041c7099262b01ced9b149506356866a69e722e4cd73ec18112a32caf"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Determine net resource requirements",
+              "after": "Net Requirements Calculation"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+              "after": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U06",
+                "U53",
+                "U57",
+                "U58",
+                "CAP011",
+                "CAP012",
+                "CAP013"
+              ],
+              "after": [
+                "P81",
+                "U06",
+                "U53",
+                "U57",
+                "U58",
+                "CAP011",
+                "CAP012",
+                "CAP013",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D05.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "3bfa4e17b7b6372d4889011dab48a9665e2204ecfcacb5925116dbe5064b7d8b"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D06",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6cd675dd214a140eca8808b589282dc64cd7d9adfc3b998dcbe1ee57b74ed214"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D06.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a16e8fbbf9c0266f9240db6d19ded1432a609212f796f106ef9b5c4952aa24bb"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D06.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6f9d1a57aef8b159db66ba2d1d0f9d3261685b786fdabb9c6034b4d56d37a22a"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Determine available execution capacity",
+              "after": "Execution Capacity Assessment"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+              "after": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U04",
+                "U06",
+                "U07",
+                "U102",
+                "C68",
+                "Q015",
+                "Q016",
+                "Q017",
+                "Q018",
+                "Q019",
+                "Q063"
+              ],
+              "after": [
+                "P81",
+                "U04",
+                "U06",
+                "U07",
+                "U102",
+                "C68",
+                "Q015",
+                "Q016",
+                "Q017",
+                "Q018",
+                "Q019",
+                "Q063",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D06.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "df59912c3d177ce1a8b6686454aba5f81f4ae542494afc91d5a01f63f7044509"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Determine eligible execution options",
+              "after": "Execution Option Assessment"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver.",
+              "after": "Capacité proposée dans P81 ; définition et frontières détaillées à éprouver. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U04",
+                "U06",
+                "U07",
+                "U102",
+                "C68",
+                "Q015",
+                "Q016",
+                "Q017",
+                "Q018",
+                "Q019",
+                "Q063"
+              ],
+              "after": [
+                "P81",
+                "U04",
+                "U06",
+                "U07",
+                "U102",
+                "C68",
+                "Q015",
+                "Q016",
+                "Q017",
+                "Q018",
+                "Q019",
+                "Q063",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D07",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6b98e1a03d99041b9a6b3cfac2844aae4ea1fda3adaaedf580b98e8fceae7883"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D07.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "440d05fa3349f287710720f367e75d378ab16b5a6cb38483e5989803392b5818"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Formalize a service requirement",
+              "after": "Execution Requirement Definition"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D07.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "35369ccc1d5b24bee75f5c4c81dca9228cb81e9513608bdc32080ab008aef487"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Establish and adjust execution commitments",
+              "after": "Execution Commitment Management"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D07.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "5d1121021d17a0a0abd06b4a576e1d227839c65444f3cb8d07241f3118747125"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Qualify execution results and discrepancies",
+              "after": "Execution Reconciliation"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D07.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "4de94deb343e47730a67c7dae9f3df6d46afae399dde9c8478bbb3098bae38e4"
+            },
+            {
+              "path": "/fields/name",
+              "before": "Identify and qualify expected resources",
+              "after": "Expected Supply Tracking"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            },
+            {
+              "path": "/review/note",
+              "before": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial.",
+              "after": "Proposition conservée pour la refonte D04/D07 demandée après U100 ; aucune validation de cette maille ou du découpage commercial. Libellé court retenu comme rédaction courante non validée selon U118 ; définition, finalité et rattachement conservés."
+            },
+            {
+              "path": "/revision",
+              "before": 1,
+              "after": 2
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074"
+              ],
+              "after": [
+                "P81",
+                "U03",
+                "U04",
+                "U05",
+                "U06",
+                "U07",
+                "U10",
+                "U30",
+                "U48",
+                "U100",
+                "C66",
+                "Q074",
+                "U118",
+                "C72",
+                "P86",
+                "U99"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D08",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "5b342de8a43118c56d2ab5e1d81a04ddfb2d3b45b5897a165780c89d61fc7744"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D08.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "b0ac2260919f0b4cb42ebb52c4f02721920cd41d325957eb7998fb524000f4a1"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D09",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "f285636341e5d3d0eb4666f74039ec636fb6fcfe8f9f3f38bda095a9171e646d"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D09.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "90f4bef10c882c88202ef81b1928435496711fbaa7edb851e9de515233741f00"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D11",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "f0df124350e57c87b08df5d3dad04a3712ad2d5aa491a7ec773fd841aa31ab94"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D11.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a9aa9bc7d30bf84f8ca392f23a51df8f25b99c6dfbe81592b42152d509c372c7"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D12",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "e9206884b75347aefad9a50ecd1078788ddc327f7230d1312e8de1cd423c0adb"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D12.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "5087c1451e750a96ab7a71b06f2c79a7dee6bc3fb0bb8d2efba357e5b401d733"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D13",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "b5817064ebbf5fc9ca79b7143c2992ce201dc5c15e0f1519f818563cd9e86a7a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "D13.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "7717f4f10462ddfd5beab9f09338a9d7b5bc577a688212c4c7932dd773ec114a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "business-references",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "d530da2dc4a0b2c03a83ba4f388483ea20d6176561f5b7978abec8fb045e6834"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        }
+      ]
+    },
+    "relations": {
+      "added": [
+        {
+          "id": "REL-MEMBER-D01.e",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.e",
+          "source_refs": [
+            "P82",
+            "U116",
+            "C71"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Rattachement de travail de la capacité regroupée ; aucune nouvelle validation métier."
+          },
+          "last_modified": "2026-09-13T15:39:21.359705Z",
+          "content_sha256": "c89120ba4c90675f34f3c6fc60c065d6e7989a55a7b695f8f311a9c5bc32d441",
+          "adoption_ids": []
+        }
+      ],
+      "removed": [
+        {
+          "id": "REL-MEMBER-D01.a",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.a",
+          "source_refs": [
+            "P81",
+            "P82",
+            "U81",
+            "U82",
+            "U83",
+            "C56"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+          },
+          "adoption_ids": []
+        },
+        {
+          "id": "REL-MEMBER-D01.b",
+          "revision": 1,
+          "type": "contains",
+          "source_id": "D01",
+          "target_id": "D01.b",
+          "source_refs": [
+            "P81",
+            "P82",
+            "U81",
+            "U83"
+          ],
+          "review": {
+            "state": "proposed",
+            "note": "Parent explicite ; ne jamais le déduire de l’identifiant."
+          },
+          "adoption_ids": []
+        }
+      ],
+      "modified": [
+        {
+          "id": "REL-GROUP-D08",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "597cd7524a659185c34d7fe7e56b933e3669bf1855ee1df86077bd532cb01b7a"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-GROUP-D09",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "538e617388e4b73dabd844bdb033ed15c58078c539663eb300fa93a9ea3747bc"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-GROUP-D11",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "c665a4044324217c9dd6b6d7ada030839d0d6c7a9fcc0dd75cdb41a0509d8276"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-GROUP-D12",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "1d06523e5259ecae99c9d8e9c86d59b0efafe22f8540b24bed6ff8f65a1928d6"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-GROUP-D13",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "74d5510d8e854f88d469d04d60420ce13388f6354fa0a8e2c0c4d931ef8c33a4"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D01.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "8d7223eb3c4396fc9920c45f7a0f1c071562ba14bbacb28a25079edfc2512336"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D01.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "d6c8afe251e2b8482cc7995dbfe9d70a876ad98a7c6c37c32461489d0ee193c6"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D02.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "200eb8807065dbcd59f5066a2bbab902bc013f3f96d15b9b5417c0f3632348a0"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D02.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "708a5581e594c3acd7eb8fb55e1f3077560ff355fccb67fce4d74d3a190ee674"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D02.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "0a2eb77d14d584471c33b11f8a034dab27640ddf9851fdd41a1b827cc29a672b"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D02.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "65ec800fd8b5b3c3c36d540a17116a131077d92de3d23f4bdce4b99e73388692"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D02.e",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a919efd88e04a8233f2128640c7d72e5c0696351d05028f5eb8f4f4aed109d97"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "c753f10b9acf0f6f93cb39e74e2f2a37b787e834eeb8ba95c2456711571e3a7f"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "b88a460237b7ce2f88ea916a7e4af5d1b4ea416118453eaa61923ae55c6a1915"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "103fa7c5e2f5f4908af2e7014f78d1a6d8dcc1297703489856e7ca815b1722c7"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6971a5f6f4ab2b52ca2386481ede2f773541f11cfc789451dd5927f1b3336ddd"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.e",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "199d2f528642ad78f484dcb4dd0ae096a275f370d3e16ff6b566dab726536cef"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.f",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2a5d4b141fd5982a5df2ce749d2b0b3cfb1b415be783aac2f515202e448317f3"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.g",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a85b47d110ff2f71c67137e20942446bed3d3d32826f4f7e4a759a31bfd3e3c4"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D03.h",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "38d8b39f24fb7b98a6bad223277603844faf5a61f4d3fa9281c9f05aa5710c6d"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D04.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "0d9f017d98433a05ac89122274f22b5b386450e043ca7cbc5cb93e7002faa9f0"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D04.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "8487c0df39bba8fcc125910287836fcf006b4d8659b38b1a4f61df1b25f7d16f"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D04.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "6d67b3a41cea5b4f82314cbf96c850fe226d199c970550b4d342d4d94d71d324"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D04.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "4020fbe5f60db77e075496a1585e0a262e4a954669c3d125a31060f1f8dbcaae"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D05.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "c01d25beb5e0e8e9b10e677ec8ec7e97851a011d99db05d1ce946769bc7cdcc5"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D05.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "43514a892a3a12bb9028b1987270d21fa48ff3c1f66352dc39318a5472ddbe89"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D05.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "a074bbeee88e4b80b401a2f7214ef1e21ecb9307e17276917b66c35b1946aa43"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D06.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "3b556bceedd1f371fc688ec04434cd22b64e6e6fa3c0bfbac435e51c0de1ad3d"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D06.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "c26101baf7f7a0654656d6cc6ad2378562452b66520781c55dfe173adece1669"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D06.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "fede1d1aefc850b1953a402ae1c32be66f0505e8d7680676f9711f289622f780"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D07.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "93f6d5d39ed428e52395ce10437d60493f548f3a8189cf8a78a6f283cc116ae7"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D07.b",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "098276a9fbe00413ff15ba5fd8fbab461e0668c0934ff7717f2fc9b0d9432633"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D07.c",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "895cadc9d549bef59522813d06b12a629bbe2bc9887b56fcb383bad2b00a2909"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D07.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "8e609c16ceee8200f7cae19f69e01ac47cc095e3eb6c920248ab636a36bcd8ef"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D08.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "7e004ca823992b01330120c221ef013591c873028fd77bf3a2db642974e95738"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D09.d",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "65ed68acfd097ae3f4b6b6354c59d4c8b80d46413bd685cc07d255d9aeceb03e"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D11.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "392abb7b37e423ed00ed2cb4d85840704b9e80ec8d20c7a23bce8ae9183c2929"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D12.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "15b860017e4bd8f2d162bfabd12b758a59524e29ff36296bd6daaf76e579b4d3"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        },
+        {
+          "id": "REL-MEMBER-D13.a",
+          "changes": [
+            {
+              "path": "/content_sha256",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "b5bfbccf93e7e372758ad431df72c950525e46d18f51b38e127e00c0c3e96684"
+            },
+            {
+              "path": "/last_modified",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "2026-09-13T15:39:21.359705Z"
+            }
+          ]
+        }
+      ]
+    },
+    "principles": [
+      {
+        "path": "",
+        "before": [
+          {
+            "id": "PRINCIPLE-TWO-LAYERS",
+            "statement": "Socle transactionnel et modèle processus distincts ; chacun possède ses objets, sa persistance et son urbanisation.",
+            "source_refs": [
+              "U18",
+              "U19",
+              "U20",
+              "U49",
+              "U50",
+              "U62"
+            ]
+          },
+          {
+            "id": "PRINCIPLE-CAPABILITY",
+            "statement": "Une capacité décrit ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.",
+            "source_refs": [
+              "U33"
+            ]
+          },
+          {
+            "id": "PRINCIPLE-SUPPLY-DOCUMENTS",
+            "statement": "Supply générique orientée documents d’autorisation ; les parcours commerciaux appartiennent au modèle processus.",
+            "source_refs": [
+              "U100"
+            ]
+          },
+          {
+            "id": "PRINCIPLE-FLOW-LOGISTICS",
+            "statement": "Logistique hors développement FLOW, en adhérence ; autonomie C-Log conservée.",
+            "source_refs": [
+              "U58"
+            ]
+          },
+          {
+            "id": "PRINCIPLE-CTP-DEFERRED",
+            "statement": "ATP associé à la promesse ; CTP conservé au glossaire et placement différé.",
+            "source_refs": [
+              "U95"
+            ]
+          },
+          {
+            "id": "PRINCIPLE-ORDER-AGREEMENT",
+            "statement": "Commandes distinctes des Agreements de référence.",
+            "source_refs": [
+              "U98"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "PRINCIPLE-TWO-LAYERS",
+            "statement": "Socle transactionnel et modèle processus distincts ; chacun possède ses objets, sa persistance et son urbanisation.",
+            "source_refs": [
+              "U18",
+              "U19",
+              "U20",
+              "U49",
+              "U50",
+              "U62"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "2eff74ee15b64139872ef75cbd61b73e25d1178433231110530d09b1f7e7414d"
+          },
+          {
+            "id": "PRINCIPLE-CAPABILITY",
+            "statement": "Une capacité décrit ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.",
+            "source_refs": [
+              "U33"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "8c62457d9da8dc7e2defc990f5f1e4efb3c1e5eaf51ff3dbc1138b58f508916b"
+          },
+          {
+            "id": "PRINCIPLE-SUPPLY-DOCUMENTS",
+            "statement": "Supply générique orientée documents d’autorisation ; les parcours commerciaux appartiennent au modèle processus.",
+            "source_refs": [
+              "U100"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "876694c80b423265ff73a38f9f588c9560acef7a44ce498acbcc4d9e92b95afd"
+          },
+          {
+            "id": "PRINCIPLE-FLOW-LOGISTICS",
+            "statement": "Logistique hors développement FLOW, en adhérence ; autonomie C-Log conservée.",
+            "source_refs": [
+              "U58"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "1be43e545fa8b13b1ec05e04e9dfa2f19a8144d0a950ff9c5e65fe6e7fbfeeec"
+          },
+          {
+            "id": "PRINCIPLE-CTP-DEFERRED",
+            "statement": "ATP associé à la promesse ; CTP conservé au glossaire et placement différé.",
+            "source_refs": [
+              "U95"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "481c6cd56381f236246f93dfc6781c9409400ab144e87b0b90b32ec92a6d75fd"
+          },
+          {
+            "id": "PRINCIPLE-ORDER-AGREEMENT",
+            "statement": "Commandes distinctes des Agreements de référence.",
+            "source_refs": [
+              "U98"
+            ],
+            "revision": 1,
+            "last_modified": "2026-09-13T15:39:21.359705Z",
+            "content_sha256": "3564bac9498b5f1a36db799cc5bb62633830dcf82ee38e80bc7eb42902e62eca"
+          }
+        ]
+      }
+    ]
+  },
+  "retained_decision_ids": [
+    "ADOPT-002",
+    "ADOPT-003",
+    "ADOPT-004",
+    "ADOPT-005",
+    "ADOPT-006",
+    "ADOPT-007",
+    "ADOPT-008",
+    "ADOPT-009",
+    "ADOPT-010",
+    "ADOPT-011",
+    "ADOPT-012",
+    "ADOPT-013",
+    "ADOPT-014",
+    "ADOPT-015",
+    "ADOPT-016",
+    "ADOPT-017",
+    "ADOPT-018",
+    "ADOPT-019",
+    "ADOPT-020",
+    "ADOPT-021",
+    "ADOPT-022",
+    "ADOPT-023",
+    "ADOPT-024",
+    "ADOPT-025",
+    "ADOPT-026",
+    "ADOPT-027",
+    "ADOPT-028",
+    "ADOPT-029",
+    "ADOPT-030",
+    "ADOPT-031",
+    "ADOPT-032",
+    "ADOPT-033",
+    "ADOPT-034",
+    "ADOPT-035",
+    "ADOPT-036",
+    "ADOPT-037",
+    "ADOPT-038",
+    "ADOPT-039",
+    "ADOPT-040",
+    "ADOPT-041",
+    "ADOPT-042",
+    "ADOPT-043",
+    "ADOPT-044",
+    "ADOPT-045",
+    "ADOPT-046",
+    "ADOPT-047"
+  ],
+  "deferred_decisions": [
+    {
+      "id": "ADOPT-001",
+      "target": "D01",
+      "reason": "revision_changed_requires_explicit_reassessment",
+      "approved_fields": [
+        "name",
+        "scope"
+      ]
+    }
+  ],
+  "new_decision_ids": [],
+  "deferred_artifacts": [
+    {
+      "path": "backlog/applicability.json",
+      "sha256": "57e4ed0d11d0a453c4c38d5d8c3a6614c17714eb4b0dfefdaedd500bd015ee30",
+      "comparison": "baseline_not_captured",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/legacy-capabilities.json",
+      "sha256": "47eeb826fa75ffae8e371581723baf0b85b3c4cc3e015a5101263359e746f9ec",
+      "comparison": "baseline_not_captured",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/modeling-roadmap.json",
+      "sha256": "97ffec20f4106cc1ab1633226f8ea949417b11fe67910390c7244b9e04e7a5bd",
+      "comparison": "baseline_not_captured",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/panorama-candidates.json",
+      "sha256": "0f8e74eee2cc01db7c362f69db7d57127f3416965ebd1c67c2f4506615581eac",
+      "comparison": "baseline_not_captured",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    }
+  ],
+  "backlog_only": {
+    "alternatives": [
+      "P86-D05"
+    ],
+    "illustrations": [
+      "ILL-OBJ-01",
+      "ILL-DOC-01",
+      "ILL-EVT-01",
+      "ILL-OBJ-02",
+      "REL-ILL-001",
+      "REL-ILL-002",
+      "REL-ILL-003",
+      "REL-ILL-004",
+      "REL-ILL-005",
+      "REL-ILL-006",
+      "REL-ILL-007",
+      "REL-ILL-008"
+    ]
+  },
+  "validation_errors": [],
+  "note": "Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés."
+}

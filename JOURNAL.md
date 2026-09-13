@@ -1,5 +1,20 @@
 # Journal des évolutions
 
+## 2026-09-13 — U130 : publication Urbanisation v002 dans Atlas
+
+- Publication `2026-09-13.4`, descripteur `urbanisation-v002-2026-09-13-162623.json`, activée le 13 septembre à 16:26:23 UTC ; modèle révision 2. [Note de release](modeles/release/2026-09-13.4/release-notes.md).
+- D01.e remplacée par D01.f Inventory Tracking et D01.g Record Inventory Movements. Six capacités D01, 36 au total ; neuf capacités entièrement validées. Tous les autres nœuds publiés sont inchangés, avec leurs métadonnées préservées.
+- ADOPT-048 enregistre le seul nom de D01.g validé en U129 ; 46 décisions antérieures conservées et aucune suspension supplémentaire. Les définitions et frontières proposées restent qualifiées.
+- Contrôles du candidat et du modèle publié : zéro erreur. Identité du serveur FLOW Atlas vérifiée, API modèle identique au JSON publié pour les nœuds et relations, catalogue trié avec v002 en tête. Serveur existant PID 836 ; actualisation automatique des données sans relance nécessaire.
+- Modèle, révisions, décisions, sources et note figés ; ancienne release conservée. Aucun commit ou push réalisé.
+
+## 2026-09-13 — U124 : audit de complétude D01
+
+- Vérification des anciennes réponses, des sources P81/P82, des releases .2/.3 et de l'API Atlas : six capacités puis cinq par regroupement positions/faits, conforme à U116.
+- Ancienne liste de sept autour du stock retrouvée dans la grille U37 ; son périmètre dépassait D01. Aucune mention de ledger antérieure à U124 retrouvée dans les textes du projet et les messages locaux de cette conversation.
+- L'audit `audits/2026-09-13-d01-completude.md` distingue fidélité technique et complétude métier : dimensions du stock, règles de consommation des protections, ajustement et libération des réservations moins explicites dans les définitions JSON.
+- Aucun changement du modèle ni nouvelle publication. Le souvenir du ledger reste à éclaircir ; aucune capacité supplémentaire inventée.
+
 ## 2026-09-09 — Reprise du dossier ChatGPT dans le répertoire de travail
 
 - Création du point d'entrée et des règles de maintenance.
@@ -652,3 +667,107 @@ Source : U114. Dépôt distant fourni par Laurent : https://github.com/laurent-s
 La base initiale est enregistrée dans un premier commit local, après vérification des fichiers indexés et des empreintes. Aucun push n’est déclenché par la demande de création des skills ; aucun changement de visibilité GitHub ni nouvelle release métier n’est effectué.
 
 Contrôles de mise sous Git : 57 tests des scripts, 17 tests applicatifs Python (un ignoré pour lien symbolique non autorisé), huit tests JavaScript, validation des modèles et des deux skills réussis. Les 139 fichiers retenus sont indexés sans changement d’octets ; les dépendances, caches et états du serveur sont exclus. Les avertissements de blancs présents dans les contenus antérieurs sont conservés plutôt que reformater les archives ou preuves. Les fins de ligne CRLF sont reconnues par les attributs Git.
+
+
+## 2026-09-13 — U115/U116 : corriger D01 dans le backlog et les propositions Atlas
+
+- Diagnostic : l’Atlas lisait correctement les JSON, mais la migration conservait les six nœuds P81 et isolait P82 dans une collection invisible à l’écran. Les réponses conversationnelles doivent distinguer les nœuds courants et les alternatives.
+- À la demande U116, D01 utilise désormais cinq capacités dans le backlog 2026-09-13.3 : Inventory Tracking, Inventory Visibility, Stocktaking, Supply Protection et Reservation. D01.e est créé pour le regroupement D01.a/D01.b ; D01.c passe en révision 2. Les anciens identifiants ne sont pas réutilisés. Total courant : 35 capacités.
+- Les trois dernières capacités et toutes les validations préexistantes restent inchangées. La comparaison de publication reprend les 47 décisions compatibles, sans nouvelle décision ni validation différée. La release .2 conserve ses 36 capacités et six lignes D01 ; aucune publication ni modification des fichiers figés.
+- Les propositions encore distinctes, comme P84 pour D04, deviennent consultables dans le backlog Atlas avec leurs sources ; elles ne remplacent pas les nœuds et ne contaminent pas la release.
+- U115/U116, C71, audit daté, correspondances marché, AGENTS et guides actualisés ; restitution backlog et index courant des sources régénérés.
+- Vérification : 57 tests des modèles/publications, 17 tests Python Atlas (un ignoré pour lien symbolique Windows), 9 tests JavaScript et parcours navigateur réussis. Contrôle HTTP des cinq noms en backlog et six en release, recherche, rechargement et ouverture de sources vérifiés. Fichiers de release, décisions, révisions, preuves figées et archives identiques octet par octet au commit initial. Aucun redémarrage nécessaire : aucun code serveur Python modifié.
+
+
+## 2026-09-13 — U117–U123 : Urbanisation publiée, versions et actualisation Atlas
+
+- Audit des douze repères : D01 corrigé, onze noms courts D04–D07 intégrés selon U118, D03 et les cinq références déjà cohérents. D02 et les noms conditionnels D05 restent ouverts. Audit et tableau de renommages dans audits/2026-09-13-domaines-et-urbanisation.md et audits/2026-09-13-renommages.json.
+- Publication 2026-09-13.3, modèle v001 : 35 capacités, dont neuf validées. 46 décisions compatibles reprises. ADOPT-001 reste historique, sa reprise étant suspendue par la révision du domaine D01. Aucun autre statut métier promu.
+- Modèle global et 94 éléments publiés munis de revision entière automatique et last_modified UTC. Incrément sur changement, stabilité sur republication identique ; empreinte du contenu soumis distincte des annotations calculées. Les métadonnées des anciennes versions restent intactes.
+- Descripteur urbanisation-v001-2026-09-13-153941.json et note release-notes.md produits. Index technique activé après les écritures ; ancien current.json conservé dans release/legacy/current-2026-09-13.2.json. Les anciennes publications sont référencées comme historiques, sans horodatage précis inventé.
+- Atlas expose uniquement Urbanisation, avec sélection des publications en ordre décroissant. Le backlog et le panorama restent disponibles dans le projet. Le modèle courant se rafraîchit automatiquement ; une ancienne version sélectionnée reste fixe. Métadonnées visibles dans l’inspecteur et API dataRevision distincte de la version entière revision.
+- Skills release et server-admin actualisés : release inclut production, publication, disponibilité et actualisation dans Atlas. Serveur relancé sur 127.0.0.1:8765 pour installer le nouveau code Python ; contrôle d’identité réussi.
+- Validation : 61 tests Python des modèles/publications, 17 tests Python Atlas (un ignoré pour lien symbolique Windows), neuf tests JavaScript ; parcours navigateur réussi pour tous les domaines, versions historiques, anciens liens, recherche, sources, actualisation automatique et petits écrans. Validation de modèle : zéro erreur. Les tests d’actualisation simulée n’écrivent pas dans les releases.
+
+
+## 2026-09-13 — U125/U126 : mouvements de stock et Inventory Tracking
+
+- Vérification SAP Goods Movements, Microsoft Inventory transactions/movements et Business Central Item Ledger Entry ; ELM103–ELM105/CMP062 qualifient ces appuis de produit, sans rang natif de capacité affirmé.
+- Séparation de travail dans le backlog : D01.f Inventory Tracking et D01.g Inventory Movements remplacent D01.e ; nouveaux repères pour la scission, historique figé conservé. Six capacités D01, 36 au total. Les autres capacités restent inchangées.
+- Ledger expliqué comme registre ; Inventory Ledger Management conservé comme nom alternatif non adopté. Glossaire TER055/TER056, correction C73 et AGENTS actualisés.
+- Aucun changement de release, aucune nouvelle validation métier. Les détails du registre, documents, événements et autorités restent à explorer.
+
+
+## 2026-09-13 — U127/U128 : vocabulaire de la capacité de mouvements
+
+- Record Inventory Movements ajouté comme candidat de nom fourni par Laurent, distinct de l’adoption définitive.
+- Glossaire : distinction Sourcing dans les achats et Event Sourcing en architecture logicielle, avec appuis SAP/Microsoft datés. Aucune intention technique attribuée à Laurent ; sens de sa question ouvert.
+- Réserve de provenance complétée après la scission D01.e. Backlog à six capacités D01 ; release inchangée.
+
+
+## 2026-09-13 — U129 : Record Inventory Movements adopté
+
+- Nom de D01.g remplacé par Record Inventory Movements ; validation explicite du seul nom par Laurent, statut partiel dans le backlog. Définition et finalité inchangées et proposées.
+- Alternatives de nom retirées de la liste active, historique conservé en C74 et au glossaire. Correspondance CMP062 actualisée sans nouvelle équivalence marché.
+- Six capacités D01 et 36 au total dans le backlog. Release et Atlas inchangés ; validation à reprendre dans les décisions de la prochaine publication.
+
+
+## 2026-09-13 — U131 : cycle de vie des éléments
+
+- Trois états enregistrés : Proposé par l’IA, En cours d’instruction, Validé par l’urbaniste. Métadonnées lifecycle distinctes des champs effectivement approuvés.
+- Reprise dans le backlog des nœuds et relations : accords existants limités à leur portée, éléments discutés en instruction, illustrations en proposition IA. Aucun contenu métier modifié ni accord élargi.
+- Schéma, contrôles, restitutions et lecteur Atlas adaptés ; anciens modèles sans lifecycle conservés. Les nouveaux statuts paraîtront dans Atlas lors d’une prochaine release. Aucune publication implicite.
+
+- Vérification U131 : contrôles des modèles et de publication réussis, 68 tests Python de modèle/cycle, 17 tests Atlas (un ignoré sur Windows), dix tests JavaScript ; navigateur validé pour badges, portée du nom, filtres, compteurs, versions historiques et actualisation. La simulation de publication n’a modifié aucune release.
+- Reprise courante : 18 capacités en cours d’instruction et 18 validées par l’urbaniste dans leur portée ; les illustrations restent proposées par l’IA. Candidat vérifié avec 47 accords transcrits et aucune suspension, sans publication. Recharger la page lors de la prochaine release pour utiliser le JavaScript mis à jour.
+
+
+## 2026-09-13 — U132 : audit ergonomique d’Atlas
+
+- Demande enregistrée avec son texte et sa portée : arbre de navigation à gauche ; examen de la concentration à droite et de l’étroitesse des composants dans les pages de détail.
+- Orientation d’interface consignée dans AGENTS.md, en conservant la distinction entre hiérarchie explicite, regroupement de présentation et relations métier transversales.
+- [Audit ergonomique](audits/2026-09-13-ergonomie-atlas.md) consacré aux parcours, à la lisibilité et à la navigation de l’application courante. Les recommandations ne constituent pas une modification ou une validation du modèle ; aucune release n’est déclenchée par cette demande.
+- Précision U133 : Laurent écarte les visites récentes. Leur suppression est retenue dans les orientations de l’audit, sans maintien dans un accès secondaire ; consigne reprise dans AGENTS.md.
+- Audit réalisé sur v002 / 2026-09-13.4, avec lecture du code, neuf captures et mesures sur cinq formats d’écran. Sept constats hiérarchisés : arbre absent, fiche métier comprimée à 253 px sur un écran de 1366 px, répétitions, recherche française incomplète, destinations vides, provenance envahissante et perte de contexte au défilement/clavier. Organisation proposée : arbre gauche, fiche centrale, preuves à la demande. Code de l’application et publication inchangés.
+
+## 2026-09-13 — U134 : audit D04 et projections de référence
+
+- [Audit D04/Agreement](audits/2026-09-13-d04-agreement-projections.md) : distinction des contrats de référence et des commandes conservée ; responsabilités commerciales de D04 et recouvrement D07 à instruire.
+- Principe des projections externes consigné dans AGENTS.md et le JSON backlog : au moins une ingestion par référentiel, consultation et recherche en lecture seule. C75 précise la règle historique « ingestion seule » sans effacer sa provenance.
+- Cinq ingestions présentes ; visibilité absente de la carte et métadonnées de maîtrise hétérogènes. Pattern Ingestion + Visibility proposé dans l’audit, sans ajout de capacité ni validation implicite. Aucune publication.
+
+## 2026-09-13 — U135 : réorganisation ergonomique d’Atlas
+
+- Go contextuel enregistré ; réalisation de l’arbre gauche et suppression des visites récentes, avec sélection/expansion distinctes, largeur réglable et navigation au clavier. Les relations explicites de la publication restent l’autorité de la structure affichée.
+- Fiche métier centrale avec Finalité, Définition et réserves visibles ; sources, versions et preuves détaillées consultables à la demande. Parcours vides supprimés, filtres limités aux valeurs publiées et suggestions de recherche ajustées. Aucun ajout implicite de synonymes depuis le backlog.
+- Six formats d’écran vérifiés, jusqu’à 320 px ; texte de définition à 673 px sur écran de 1366 px, contre 253 px auparavant. Sur écran de 390 px, Définition à y ≈ 563 px, contre 947 px. Tiroir mobile et restitution du focus contrôlés.
+- Dix tests JavaScript et deux parcours navigateur couvrant l’arbre, les sources, la recherche, les versions, le rafraîchissement et une hiérarchie synthétique plus profonde. Aucun modèle publié modifié, aucun service relancé. Captures et résultats ajoutés à [l’audit ergonomique](audits/2026-09-13-ergonomie-atlas.md).
+## 2026-09-13 — U136 : Orders, Agreements et Commitments
+
+- Comparaison SAP, Microsoft et Oracle consignée dans marche/orders-agreements-commitments.md, ELM106–ELM108/CMP063.
+- C76 corrige l’assimilation trop générale de Commitment à une commande : Microsoft emploie aussi ce terme dans ses Agreements. Sources SAP limitées aux extraits indexés ; textes Microsoft et Oracle lus.
+- Distinction commande source/réalisation à éprouver avec D04/D07 ; aucun renommage, ajout de capacité ou publication.
+## 2026-09-13 — U137 : cadre contractuel et période
+
+- Hypothèse de Laurent enregistrée : cadre + engagements de période + commandes de consommation. Statut en cours d’instruction ; aucun objet ou domaine supplémentaire adopté.
+- Comparaison complétée : un Agreement Microsoft peut déjà porter période et engagements. Conditions applicables composées, consommation par commande et réalisation effective restent distinctes. Maîtrise externe U134 conservée.
+## 2026-09-13 — U138/U139 : localisation des Orders
+
+- Recherche dans cinq références : SAP, Microsoft, Oracle, IBM Sterling OMS et TM Forum ; étude dans marche/localisation-orders-cartographie.md.
+- Sources, versions et limites conservées en ELM109–ELM113, MKT23 et CMP064. Distinguer famille de documents, domaines, processus, composants et produits ; aucune équivalence universelle Orders établie.
+- Proposition d’un Order Management transactionnel restreint à éprouver avec D07 ; analyse des cas réassort, achats, façon, Boardriders et retours comme accueils conceptuels, sans preuve de couverture installée. Aucun changement de capacité ni publication.
+## 2026-09-13 — U140 : univers Supply et Order Management commun
+
+- Orientation enregistrée : Case/demande distinct d’Order/pilotage Supply, univers Case différé ; domaine Order Management commun, retours inclus, tous clients et volumes.
+- Nom D04 appliqué dans le backlog avec portée d’accord limitée au nom ; définition/finalité proposées et capacités héritées encore à revoir avec D07. Principe structuré Case/Supply, sans hiérarchie d’univers inventée.
+- Étude marche/supply-b2b-b2c.md, ELM114/CMP065 : socles communs mais contraintes opérationnelles différentes, dimensionnement à préciser ; DMN distinct du workflow complet. Aucune publication.
+## 2026-09-13 — U141 : application des six mises à jour
+
+- Univers Supply et Case structurés ; Business References conservé comme groupe de présentation. Modèle processus réservé, objets et liens Case/Order préparés dans la feuille de route sans cardinalité imposée.
+- D04.e–h remplacent les anciennes capacités D04.a–d, avec noms et descriptions courtes approuvés ; snapshot antérieur conservé. Agreement complet précisé ; D07 recentré sur les prestations et faits, lien de contribution au rapprochement de commande caractérisé.
+- C78, Q077 et CMP066 préservent retraits, portée des accords et limites de couverture marché. Note connaissance/27-order-management-et-univers.md. Backlog uniquement ; aucune release, commit ou push.
+## 2026-09-13 — U142 : Urbanisation v003 publiée
+
+- Publication `2026-09-13.5`, descripteur `urbanisation-v003-2026-09-13-173533.json` activé : 51 nœuds, 36 capacités, univers Supply/Case, D04 refondu et frontière D07 précisée.
+- 54 décisions : 45 transcriptions initiales du cycle U131 et neuf décisions nouvelles ciblées U140/U141. Les portées Agreement antérieures suspendues pour changement de révision sont réaffirmées avec nouveaux identifiants ; historique conservé. Aucune validation des nouveaux détails par simple publication.
+- Contrôles modèle et serveur réussis. API Atlas du dépôt vérifiée au port 8765 : version 2026-09-13.5, liste v003 en premier ; interface rechargée pour installer le code courant. Aucune copie du référentiel dans Atlas, aucun commit ni push.

@@ -33,7 +33,7 @@ Le résultat attendu identifie `appName: FLOW Atlas`, `repositoryRoot` égal à 
 
 ## Vérifier le résultat et traiter les échecs
 
-Après démarrage ou redémarrage, vérifier l’identité du serveur via l’API et l’accès à l’espace demandé, backlog par défaut. Après arrêt, vérifier que le processus suivi a disparu et que l’API de ce serveur ne répond plus. Une panne de l’API seule ne prouve pas l’arrêt du processus : en cas de doute, lire le suivi et les journaux.
+Après démarrage ou redémarrage, vérifier l’identité du serveur via l’API et l’accès à l’Urbanisation : `/api/model` doit servir l’espace `release` et la version désignée par `modeles/release/index.json` et son descripteur courant. Le backlog et le panorama ne sont plus exposés par Atlas selon U117. Après arrêt, vérifier que le processus suivi a disparu et que l’API de ce serveur ne répond plus. Une panne de l’API seule ne prouve pas l’arrêt du processus : en cas de doute, lire le suivi et les journaux.
 
 Les journaux sont `app/.runtime/server-<port>.stdout.log` et `server-<port>.stderr.log`. En cas de port occupé, d’identité incohérente ou de suivi périmé, diagnostiquer avant toute nouvelle action ; conserver les services non identifiés comme ceux du projet. Si une permission système empêche l’action autorisée, demander uniquement l’élévation nécessaire à la commande ciblée, sans modifier les politiques PowerShell ni contourner les contrôles du lanceur.
 

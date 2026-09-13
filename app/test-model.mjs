@@ -5,14 +5,43 @@ import { createModel, createPanoramaModel } from './model.js';
 
 const read = async relative => JSON.parse(await readFile(new URL(relative, import.meta.url), 'utf8'));
 const backlog = await read('../modeles/backlog/model.json');
-const pointer = await read('../modeles/release/current.json');
+const index = await read('../modeles/release/index.json');
+const pointer = await read('../modeles/release/' + index.current);
 const release = await read('../modeles/release/' + pointer.path);
 const config = await read('./exploration.json');
 const clone = value => structuredClone(value);
 
-test('le backlog conserve les identifiants déplacés et les 36 capacités', () => {
+test('cycle de vie : nom validé et définition proposée restent distincts', () => {
+  const model = createModel(backlog, config);
+  const n = model.nodes.get('D01.g');
+  assert.equal(n.status, 'urbanist_validated');
+  assert.deepEqual(n.lifecycle.validated_fields, ['name']);
+  assert.deepEqual(n.proposedFields, ['definition', 'finality']);
+  assert.equal(model.nodes.get('D01.f').status, 'under_instruction');
+  const example = model.nodes.get('ILL-OBJ-01');
+  assert.equal(example.status, 'ai_proposed');
+  assert.equal(example.isIllustration, true);
+  assert.equal(createModel(release, config).nodes.get('D01.g').status, 'urbanist_validated');
+});
+
+test('les alternatives du modèle de travail ne contaminent pas la release', () => {
+  const model = createModel(backlog, config);
+  const proposals = model.alternativesFor('D05');
+  assert.equal(proposals[0].id, 'P86-D05');
+  proposals[0].field_overrides[0].value = 'MUTATION';
+  assert.equal(model.nodes.get('D05.a').name, backlog.nodes.find(n => n.id === 'D05.a').fields.name);
+  assert.deepEqual(model.alternativesFor('D01'), []);
+  assert.equal(model.alternativesFor('D05')[0].field_overrides[0].value, 'Coverage Target Decision');
+  assert.deepEqual(createModel({...release, alternatives: backlog.alternatives}, config).alternativesFor('D01'), []);
+});
+
+test('le backlog utilise D01 à six capacités et conserve les identifiants déplacés', () => {
   const model = createModel(backlog, config);
   assert.equal([...model.nodes.values()].filter(n => n.kind === 'capability').length, 36);
+  assert.deepEqual(model.nodes.get('D01').children.map(id => model.nodes.get(id).name), ['Inventory Tracking', 'Record Inventory Movements', 'Inventory Visibility', 'Stocktaking', 'Supply Protection', 'Reservation']);
+  assert.equal(model.nodes.get('D01.f').status, 'under_instruction');
+  assert.equal(model.nodes.has('D01.a'), false);
+  assert.equal(model.nodes.has('D01.b'), false);
   assert.equal(model.nodes.get('D02.b').parentId, 'D01');
   assert.equal(model.nodes.get('D02.c').parentId, 'D01');
   assert.equal(model.nodes.get('D02.e').parentId, 'D03');
@@ -20,18 +49,21 @@ test('le backlog conserve les identifiants déplacés et les 36 capacités', () 
   assert.equal(model.nodes.get('business-references').children.length, 5);
 });
 
-test('la release publie 36 capacités avec statuts explicites et sans compléter depuis le backlog', () => {
+test('la release publie les 36 capacités courantes sans compléter depuis le backlog', () => {
   const poisoned = clone(config);
   poisoned.nodes = [{id:'D08', name:'INVENTED'}, {id:'NEW', name:'Invented'}];
   poisoned.relations = [{from:'D01',to:'D03',type:'fake'}];
   const model = createModel(release, poisoned);
   const capabilities=[...model.nodes.values()].filter(n=>n.kind==='capability');
   assert.equal(capabilities.length,36);
-  assert.equal(capabilities.filter(n=>n.status==='validated').length,9);
+  assert.equal(model.nodes.get('D01.f').name,'Inventory Tracking');
+  assert.equal(model.nodes.get('D04.e').name,'Order Registration');
+  assert.equal(capabilities.filter(n=>n.status==='urbanist_validated').length,22);
   assert.equal(model.nodes.get('D08').name,release.nodes.find(n=>n.id==='D08').fields.name);
   assert.equal(model.nodes.get('D08').aliases,'');
   assert.equal(model.nodes.has('NEW'),false);
-  assert.equal(model.nodes.get('D04.a').status,'review');
+  assert.equal(model.nodes.has('D04.a'),false);
+  assert.deepEqual(model.nodes.get('D04.e').approvedFields,['definition','name']);
   assert.equal(model.nodes.has('ILL-OBJ-01'),false);
   assert.equal(model.steps.length,0);
   assert.equal(model.related('D01').length,0);
@@ -60,7 +92,7 @@ test('les relations inverses conservent le sens, le statut et la provenance', ()
   assert.equal(relation.label, 'est confirmé par');
   assert.equal(relation.direction, 'incoming');
   assert.deepEqual(relation.sources, ['P80']);
-  assert.equal(relation.status, 'illustration');
+  assert.equal(relation.status, 'ai_proposed');
 });
 
 test('aucune profondeur fixe, cycles de hiérarchie refusés et relations métier cycliques permises', () => {
@@ -70,7 +102,8 @@ test('aucune profondeur fixe, cycles de hiérarchie refusés et relations métie
     value.relations.push({id:`edge-${i}`,type:'contains',source_id:i===1?'D03':`group-${i-1}`,target_id:`group-${i}`,source_refs:['TEST'],review:{state:'proposed'}});
   }
   value.relations.find(r=>r.target_id==='D03.b'&&r.type==='contains').source_id='group-4';
-  assert.equal(createModel(value,config).lineage('D03.b').length, 8);
+  assert.equal(createModel(value,config).lineage('D03.b').length, createModel(backlog,config).lineage('D03.b').length + 4);
+  value.relations = value.relations.filter(r => !(['contains', 'presents'].includes(r.type) && r.target_id === 'D03'));
   value.relations.push({id:'cycle',type:'contains',source_id:'group-4',target_id:'D03',source_refs:['TEST'],review:{state:'proposed'}});
   assert.throws(()=>createModel(value,config),/Cycle de hiérarchie/);
   value.relations.at(-1).type='business-cycle';

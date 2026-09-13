@@ -2330,3 +2330,24 @@ Ouverte sur le détail et les maîtres ; la demande de référentiel et la disti
 **reponse**
 
 —
+## Q077
+
+**id**
+
+Q077
+
+**question**
+
+Quels comportements, autorités et relations détaillés faut-il retenir pour les Orders Supply : annulation, suspension, fractionnement, commandes liées, grain de rapprochement avec D07, contraintes de satisfaction et volumétrie ? Quels liens caractérisés Case/Order et quelles cardinalités ?
+
+**source**
+
+U140/U141 ; quatre capacités D04 validées dans leur description courte, compléments à éprouver. Prolonge Q074 sans clore Q072 sur la consommation contractuelle.
+
+**statut**
+
+Ouverte. La distinction Case/Order et le domaine Order Management commun sont acquis ; les détails ci-dessus restent à instruire.
+
+**reponse**
+
+—

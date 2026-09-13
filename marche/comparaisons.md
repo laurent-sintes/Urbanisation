@@ -635,3 +635,48 @@ Quand une capacité change, réexaminer les CMP qui la citent. Si sa définition
 - Adaptation appliquée : Business References présenté comme groupe de cinq références autonomes ; sept domaines transactionnels de travail visibles à côté. Douze repères détaillés et 36 aptitudes conservés.
 - Relation et limites : le regroupement est local, pas un domaine natif SAP, Microsoft, Guild ou TM Forum. L’accord ne valide pas de nouvelles équivalences, les maîtres ni le modèle détaillé du réseau ; il ne fusionne pas les capacités.
 - Auteur/date/statut : Codex, 2026-09-11 ; application de l’accord contextuel de Laurent Go en U103, portée explicitée en F215 ; Q075 résolue, Q076 ouverte.
+
+
+### CMP062
+
+- État local : U125/U126, backlog après séparation de D01.e en D01.f Inventory Tracking et D01.g Inventory Movements ; six capacités D01, 36 au total.
+- Éléments externes : ELM103 SAP, ELM104 Microsoft Supply Chain Management, ELM105 Microsoft Business Central ; consultations du 2026-09-13.
+- Relation : appui lexical et fonctionnel partiel. Transactions, état résultant et registre sont distinguables ; le marché consulté ne prouve pas notre découpage en capacités autonomes.
+- Adaptation : les mouvements sont enregistrés, qualifiés et justifiés en D01.g ; les quantités et états résultants sont établis et actualisés en D01.f. D01.c conserve la restitution d’une vision partagée. Les ressources futures restent distinctes des mouvements réalisés.
+- Nom alternatif : Inventory Ledger Management proposé après U126 ; un ledger désigne d’abord un registre. Sa définition de capacité doit exprimer l’aptitude indépendante des outils. Nom non adopté.
+- Limites : ne pas assimiler mouvement à déplacement physique ni prendre la réalisation logistique à la charge de FLOW. Documents, autorités, liens détaillés et correspondance native de chaque capacité restent à préciser.
+- Auteur/date/statut : Codex, 2026-09-13. Séparation de travail selon Laurent ; formulations proposées, sans nouvelle validation métier ni publication.
+
+
+### Actualisation CMP062 — U129
+
+13 septembre 2026 : **Record Inventory Movements** devient le nom adopté localement pour D01.g, d’après U127/U129. La capacité et sa définition conservent les appuis partiels ELM103–ELM105 ; aucune nouvelle équivalence native ni nouvelle consultation externe. Le choix du nom ne valide pas la définition ou les frontières. Inventory Movements et Inventory Ledger Management sont historiques.
+### CMP063
+
+- État local : U136/C76, D04 Commercial Commitments, D11 Agreement et D07 dans le backlog et la release v002 ; contenu inchangé.
+- Éléments externes : ELM106 Microsoft, ELM107 SAP (extraits limités), ELM108 Oracle Order Management 25C ; contrôle du 2026-09-13.
+- Relation : appui sémantique à Agreement/Order et recouvrement partiel commande source/réalisation. Commitment est également employé pour les Agreements Microsoft.
+- Adaptation proposée : préférer Order pour l’objet commande ; examiner le domaine après clarification des autorités D04/D07. Aucun renommage appliqué ni équivalence de capacité établie.
+- Auteur/date/statut : Codex, 2026-09-13, proposé par l’IA. Analyse et limites dans [Orders, Agreements et Commitments](orders-agreements-commitments.md). U134 conserve la maîtrise externe des références ; aucune validation ni publication.
+### CMP064
+
+- État local : U138/U139 ; backlog et release v002, D04/D07 en réexamen, Agreement sous maîtrise externe U134. Aucun changement de capacités.
+- Éléments externes : ELM109 SAP, ELM110 Microsoft, ELM111 Oracle, ELM112 IBM Sterling, ELM113 TM Forum ; contrôles du 2026-09-13.
+- Relation : appuis sémantiques et méthodologiques, recouvrements partiels ; niveaux natifs explicitement différents. Pas d’équivalence globale de domaine.
+- Proposition : éprouver Order Management transactionnel comme espace de la demande autorisée, distinct de la promesse et de la réalisation ; alternative de rapprochement avec D07 si leurs résultats ne sont pas distincts. Famille documentaire commune étayée par Sterling, plusieurs représentations par Oracle/TM Forum.
+- Limites : pas de séparation achat/vente imposée, pas de domaine générique déclaré standard ; SAP RBA seulement cité par extrait d’article, pas d’export complet ; ODA n’est pas une carte de capacités.
+- Auteur/date/statut : Codex, 2026-09-13, proposé par l’IA ; noms et périmètres non adoptés. [Étude et sources](localisation-orders-cartographie.md). Aucune publication.
+### CMP065
+
+- État local : U140/C77 ; D04 Order Management dans le backlog, nom retenu, définition/finalité reformulées proposées. Anciennes capacités à revoir.
+- Corpus : ELM114, compléments ELM112 et ELM113 ; sources et limites dans [Supply B2B/B2C](supply-b2b-b2c.md), contrôle 2026-09-13.
+- Relation : appuis fonctionnels partiels à un socle commun et à des variantes de satisfaction/réalisation. Pas d’équivalence native de domaine, de Case avec Product Order ou d’univers avec ODA.
+- Application : Case distinct d’Order, univers Supply prioritaire, Order Management toutes natures dont retours et tous clients/volumes. Les conditions différenciées ne sont pas automatiquement de nouvelles capacités ; vérifier leur couverture.
+- Auteur/date/statut : Codex, 2026-09-13. Orientation utilisateur appliquée ; analyse et détails proposés, aucune publication.
+### CMP066
+
+- État local : U141/C78 ; univers Supply/Case et quatre capacités D04.e–h, noms et descriptions courtes approuvés ; D07 précisé sans validation nouvelle de ses formulations.
+- Corpus déjà examiné : ELM106 Agreements/Orders, ELM108/ELM111 source et réalisation Oracle, ELM112 famille de documents Sterling, ELM113 niveaux ODA, ELM114 variantes de Supply. Pas de nouvelle consultation externe pour cette application du Go.
+- Relations : appui partiel à Registration/Revision par ELM108, à Visibility par les vues de situation ELM111 ; famille de toutes natures ELM112. Reconciliation D04.h et la frontière précise D07.c restent des constructions locales à comparer au niveau exact de résultat. Aucun libellé natif ou équivalence exacte affirmé pour les quatre capacités.
+- Agreement complet : engagements et périodes selon ELM106, maîtrise externe selon U134. Le regroupement Supply/Case n’est pas une hiérarchie de marché certifiée ; ODA reste une analogie.
+- Auteur/date/statut : Codex, 2026-09-13. Application de l’accord Laurent U141, correspondances proposées et réserves préservées. Voir connaissance/27-order-management-et-univers.md et Q077. Aucune publication.

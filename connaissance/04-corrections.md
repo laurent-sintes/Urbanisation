@@ -1623,3 +1623,179 @@ Les JSON de backlog, release et panorama-as-is font autorité pour les modèles.
 **statut**
 
 Remplace l’autorité décrite en U105 et l’interprétation initiale de release limitée aux éléments adoptés. La release 2026-09-13.1 restreinte reste historique, current.json pointe vers 2026-09-13.2 complète. Les validations de fond antérieures et leurs réserves demeurent.
+
+
+## C71
+
+**id**
+
+C71
+
+**source**
+
+U115/U116 ; diagnostic local du 2026-09-13, JSON backlog/release et API Atlas.
+
+**formulation_a_eviter**
+
+Présenter les cinq capacités P82 comme la carte JSON courante avant U116, ou affirmer que la proposition non validée devait rester invisible dans le backlog. Anciens noms courants : Establish inventory positions, Record inventory facts et Provide a consolidated inventory view. Ne pas confondre état de travail et validation métier.
+
+**formulation_retenue**
+
+Le choix U116 fait de P82 le découpage courant de D01 dans le backlog : Inventory Tracking (nouveau D01.e, regroupant D01.a/D01.b), Inventory Visibility (D01.c révision 2), Stocktaking (D01.d), Supply Protection (D02.b) et Reservation (D02.c). Les trois dernières capacités restent inchangées, avec leurs validations partielles et réserves. La release 2026-09-13.2 garde les six capacités publiées ; sa mise à jour nécessite une publication explicite. Les autres propositions encore distinctes, comme P84, deviennent visibles dans Atlas sans remplacer les nœuds courants.
+
+**statut**
+
+Correction appliquée au backlog et à la présentation Atlas. Historique préservé dans les versions figées et Git ; aucune nouvelle validation métier ni release.
+
+
+## C72
+
+**id**
+
+C72
+
+**source**
+
+U117/U118 ; P83–P87 ; audit du 2026-09-13.
+
+**formulation_a_eviter**
+
+Atlas doit proposer le backlog comme espace initial ; les propositions de noms courts sont toutes intégrées dans les nœuds JSON ; tous les domaines sont nécessairement obsolètes. Déduire une validation des aptitudes du choix de leurs noms de travail.
+
+**formulation_retenue**
+
+Atlas affiche uniquement la release sous le libellé Urbanisation. Le backlog et le panorama restent des fichiers de travail hors de cette interface. L’audit des douze repères confirme D01 corrigé, onze noms courts de D04–D07 à intégrer selon U118, neuf capacités D03 et cinq ingestions correctement reprises. D02, les décisions potentielles D05.a/c et les frontières D04/D06/D07 demeurent à discuter. Publier ces contenus conserve leurs statuts et n’arbitre pas leurs frontières.
+
+**statut**
+
+Remplace la consigne d’interface backlog par défaut et la visibilité des alternatives issue de U113/U115. La construction du modèle dans le projet reste dans le backlog. Les versions historiques restent conservées ; aucune nouvelle validation métier.
+
+
+## C73
+
+**id**
+
+C73
+
+**source**
+
+U125/U126 ; CMP062, ELM103–ELM105.
+
+**formulation_a_eviter**
+
+La fusion des mouvements et de l’état dans Inventory Tracking reste la dernière orientation de travail. Ledger et mouvement sont synonymes ; Inventory Ledger Management est un nom adopté ou une capacité native Microsoft.
+
+**formulation_retenue**
+
+U125 demande de séparer les mouvements de stock du suivi de leur état. Le backlog remplace la capacité regroupée D01.e par D01.f Inventory Tracking (état résultant) et D01.g Inventory Movements (enregistrement, qualification et justification des mouvements), avec de nouveaux identifiants pour cette scission. U126 ouvre le nom Ledger ; Inventory Ledger Management reste une alternative proposée. Le registre est distinct des mouvements qu’il conserve. Six capacités D01 et 36 au total dans le backlog ; la release v001 garde ses cinq capacités D01 et 35 au total.
+
+**statut**
+
+Orientation de séparation appliquée au backlog ; définitions, noms et frontières détaillés proposés. Historique et release conservés, sans publication ni nouvelle validation métier.
+
+
+## C74
+
+**id**
+
+C74
+
+**source**
+
+U129 ; candidat U127, séparation U125.
+
+**formulation_a_eviter**
+
+Inventory Movements est le nom courant de D01.g ; Record Inventory Movements et Inventory Ledger Management sont encore des noms en concurrence.
+
+**formulation_retenue**
+
+Record Inventory Movements est le nom adopté par Laurent le 2026-09-13 pour D01.g. La définition et la finalité restent proposées ; ne pas étendre la validation du nom. Les noms antérieurs Inventory Movements et Inventory Ledger Management restent historiques. Inventory Ledger peut continuer à désigner le registre, sans devenir le nom de la capacité. La séparation avec D01.f Inventory Tracking est conservée.
+
+**statut**
+
+Choix appliqué au backlog ; six capacités D01, 36 au total. Aucune publication. À la prochaine release, transcrire la validation U129 du seul champ name dans une nouvelle décision de publication visant D01.g et sa révision préparée.
+## C75
+
+**id**
+
+C75
+
+**source**
+
+U134 ; précision de U97/U103, distinction U98 et orientation U100 conservées.
+
+**formulation_a_eviter**
+
+Chaque référentiel de la plateforme ne peut avoir exactement qu’une capacité d’ingestion ; visibilité et recherche sont exclues. D04 et Agreement peuvent être fusionnés parce qu’ils parlent tous deux d’engagements.
+
+**formulation_retenue**
+
+Les référentiels de la Supply sont des projections de sources de vérité gérées par des produits tiers. Chacun comporte au moins une ingestion ; visibilité et recherche en lecture seule sont admises. Création, administration et validation métier des données maîtresses restent externes. L’ingestion actualise la projection, sans lui transférer la maîtrise. Agreement de référence et commande restent distincts selon U98. Les responsabilités commerciales de D04 et sa frontière avec D07 restent à instruire ; la demande d’audit ne valide pas leur fusion ou leur remplacement.
+
+**statut**
+
+Principe consigné dans AGENTS.md et le backlog ; analyse dans audits/2026-09-13-d04-agreement-projections.md. Aucun ajout de capacité ni publication. Les formulations historiques U97/U103 sont conservées comme provenance ; U134 prévaut pour les aptitudes de consultation.
+## C76
+
+**id**
+
+C76
+
+**source**
+
+U136 ; vérification Microsoft ELM106 du 13 septembre 2026.
+
+**formulation_a_eviter**
+
+Commitment est un synonyme de commande, ou désigne exclusivement l’engagement porté par une commande dans le marché.
+
+**formulation_retenue**
+
+D04 visait localement les engagements de commandes, mais Commitment ne désigne pas exclusivement cet objet : Microsoft nomme ainsi les engagements quantitatifs ou en valeur des lignes de Sales Agreements et Purchase Agreements, consommés par des commandes. Order désigne plus directement la commande ; Agreement et Order restent distincts. Les noms et frontières de D04 restent en instruction.
+
+**statut**
+
+Précaution lexicale enregistrée ; aucun renommage ni publication. Voir marche/orders-agreements-commitments.md et CMP063.
+## C77
+
+**id**
+
+C77
+
+**source**
+
+U140 ; comparaison CMP065.
+
+**formulation_a_eviter**
+
+La demande de la couche Case et l’Order Supply sont un même objet ; Order Management reste seulement une suggestion sans orientation utilisateur, ou vise uniquement la vente B2C. Le choix d’un moteur suffit à définir toutes les variantes métier.
+
+**formulation_retenue**
+
+U140 distingue explicitement Case et Order et retient un domaine Order Management commun dans l’univers Supply, pour toutes natures de commandes, clients et volumes. D04 reprend ce nom ; ses capacités et frontières détaillées avec D07 ne sont pas automatiquement validées. Les contraintes B2B/B2C enrichissent l’analyse des aptitudes et règles ; elles ne justifient pas d’office deux domaines. Les univers et l’analogie TM Forum n’imposent pas une structure technique ou des cardinalités. Décisions et workflows restent distincts de leurs moteurs.
+
+**statut**
+
+Orientation et nom appliqués au backlog, ancienne formulation Commercial Commitments conservée ici et dans les releases. Définition nouvelle proposée par Codex ; aucune publication, aucune validation automatique des capacités héritées.
+## C78
+
+**id**
+
+C78
+
+**source**
+
+U140/U141 ; CMP066.
+
+**formulation_a_eviter**
+
+Le backlog D04 contient toujours Commitment Creation, Commitment Revision, Commitment Reconciliation et Return and Replacement Decision ; les univers ne sont pas structurés ; l’Agreement exclut les engagements contractuels de période.
+
+**formulation_retenue**
+
+U141 applique Supply/Case comme univers explicites. D04 Order Management contient D04.e Order Registration, D04.f Order Revision, D04.g Order Visibility et D04.h Order Reconciliation. Les noms et descriptions courtes présentés sont validés par Laurent ; les compléments nouveaux restent proposés. Les anciens D04.a–d sont retirés de la carte active et conservés dans modeles/backlog/history/pre-U141.json : nouveaux résultats, nouveaux identifiants, aucune réutilisation. Agreement porte le contrat complet projeté, y compris périodes et engagements ; aucun pouvoir d’administration transféré. D04 suit la commande autorisée, D07 les engagements et faits d’exécution ; correspondances détaillées, reliquats et cas limites restent à instruire.
+
+**statut**
+
+Appliqué au backlog uniquement. Réexamen du droit commercial de retour/remplacement différé avec Case ; pas de perte du besoin, pas de capacité Case inventée. Release v002 conservée. Note de mise en œuvre : connaissance/27-order-management-et-univers.md.

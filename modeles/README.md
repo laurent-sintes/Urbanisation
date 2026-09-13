@@ -1,5 +1,7 @@
 # Modèles structurés
 
+**Fonctionnement courant U117–U123 :** [index.json](release/index.json) désigne un descripteur `urbanisation-vNNN-YYYY-MM-DD-HHMMSS.json`, qui porte version, horodatages UTC, chemin et empreinte du modèle et de sa note de release. Chaque élément et le modèle global ont une révision entière automatique et `last_modified`. Atlas consulte uniquement ces publications, avec sélection des versions ; le backlog reste l’espace de construction. Les descriptions du refactoring initial ci-dessous sont historiques lorsqu’elles mentionnent `current.json`.
+
 État au 13 septembre 2026, après U106–U111. Les fichiers JSON portent le modèle ; les Markdown conservent les récits, les analyses, les décisions argumentées et les restitutions. La règle complète de maintenance est dans [AGENTS.md](../AGENTS.md).
 
 ## Trois espaces
@@ -7,12 +9,14 @@
 | Espace | Rôle | Entrée faisant autorité |
 | --- | --- | --- |
 | `backlog` | Modèle en réflexion, alternatives, illustrations et points à instruire | [backlog/model.json](backlog/model.json) |
-| `release` | Dernière version publiée, avec le statut de validation de chaque élément | [release/current.json](release/current.json) |
+| `release` | Dernière version publiée, avec le statut de validation de chaque élément | [release/index.json](release/index.json) |
 | `panorama-as-is` | Connaissance de l’existant des trois SI ; distincte de la cible | [panorama-as-is/current.json](panorama-as-is/current.json) |
 
 **Publication et validation sont distinctes.** Conformément à U111, la [release 2026-09-13.2](release/2026-09-13.2/model.json) contient les **36 capacités**, dont **9 validées**, **8 portant des validations partielles** et **19 sans validation individuelle enregistrée**. Parmi les 27 dernières, 12 sont en réexamen, dont Reservation qui conserve un nom adopté. Les statuts affichés sont 9 validées, 7 partiellement validées, 8 non validées et 12 en réexamen. Les validations partielles portent parfois sur le nom seul ou sur le principe d’ingestion. Elles ne valident pas automatiquement la définition, la finalité ou le rattachement.
 
 La première extraction restreinte, `2026-09-13.1`, est conservée comme historique. Elle n’est plus désignée par `current.json`. Le backlog et la release peuvent contenir les mêmes identifiants : ce sont des états de travail et de publication du même modèle, pas deux catalogues à enrichir séparément.
+
+**Évolution U116 :** le backlog `2026-09-13.3` utilise les cinq capacités D01 de P82 et contient 35 capacités au total. Inventory Tracking (`D01.e`) regroupe D01.a/D01.b ; Inventory Visibility conserve D01.c à la révision 2. Les autres domaines sont inchangés. La release `.2` reste à 36 capacités jusqu’à une nouvelle publication demandée. Les repères historiques ne sont pas réutilisés. Voir [l’audit Atlas D01](../audits/2026-09-13-atlas-d01.md).
 
 ## Organisation physique
 
@@ -87,7 +91,7 @@ Sarenza est `not_assessed`, avec des listes vides. Cela signifie « non traité 
 
 Selon U113, l’exploration et la construction se font **dans le backlog par défaut**, y compris dans FLOW Atlas. La publication reste une action distincte pilotée par le skill `release`. Une comparaison seule n’active aucune version.
 
-U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. La [feuille de route](backlog/modeling-roadmap.json) réserve les extensions ultérieures sans instancier de nouveau niveau ou objet. Univers / Universe est un nom candidat, pas un niveau adopté. Le contrat distingue `group_role: urbanism_level` avec `level_ref` et les groupes de présentation existants.
+U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. U141 structure désormais **Supply** et **Case** comme univers dans le backlog : groupes `group_role: urbanism_level`, `level_ref: universe`. Les domaines transactionnels et Business References sont rattachés à Supply ; Case réserve l’exploration processus. Business References reste un groupe de présentation. La [feuille de route](backlog/modeling-roadmap.json) prépare le lien Case/Order sans instancier leur inventaire détaillé ou leurs cardinalités. L’état avant cette refonte est conservé dans [history/pre-U141.json](backlog/history/pre-U141.json).
 
 Les relations peuvent porter `qualification` : sens (`meaning`), rôle, conditions, effets et périmètre. Le type générique `relates-to` permet capacité → capacité/objet/document/événement avec un sens explicite. Les sources et le statut appartiennent au lien lui-même. Cela prépare la structure ; aucun nouveau lien métier réel n’a été ajouté. Une relation entre capacités n’est pas automatiquement une décomposition ; un objet peut concerner plusieurs capacités sans propriétaire exclusif présumé.
 
@@ -126,3 +130,12 @@ Les schémas utilisent un sous-ensemble explicite de [JSON Schema 2020-12](https
 [FLOW Atlas](../app/README.md) est une restitution en lecture seule des trois espaces. Le Markdown des [restitutions](../restitutions/README.md) est généré depuis les JSON. Les analyses de marché MKT/ELM/CMP, le glossaire, les récits et les questions restent dans leurs registres documentaires avec leurs identifiants ; leur indexation comme sources ne vaut pas migration complète en graphe. Les 36 CAP historiques restent distinctes des 36 capacités P81.
 
 Voir l’[audit de structure et d’extraction](../audits/2026-09-13-structure-modeles.md) pour les constats, les limites et les preuves.
+
+
+## Cycle de vie — U131
+
+Les nœuds et relations du backlog portent `lifecycle` : `ai_proposed` (Proposé par l’IA), `under_instruction` (En cours d’instruction), `urbanist_validated` (Validé par l’urbaniste). Sources, date d’enregistrement, champs validés et empreintes qualifient la portée. Une validation limitée au nom ne valide pas la définition. Les décisions ADOPT et `review` restent les preuves techniques détaillées ; publication et cycle sont indépendants.
+
+`lifecycle_policy: 1` rend ce champ obligatoire pour chaque nœud et relation du modèle courant. Une empreinte périmée ou une validation sans portée bloque le contrôle. Les modèles historiques sans cette politique restent compatibles.
+
+Les modèles historiques sans lifecycle restent lisibles. L’introduction initiale de ce champ conserve les accords sur les contenus strictement inchangés, avec des décisions de transcription traçables lors de la prochaine préparation. Les illustrations ne sont pas rendues publiables par leur cycle. Les principes de fonctionnement et les données As Is conservent leurs contrats distincts.

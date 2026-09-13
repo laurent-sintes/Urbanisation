@@ -2,9 +2,23 @@
 import json
 from collections import Counter
 from pathlib import Path
+try:
+    from .release_catalog import resolve_release
+    from .lifecycle import lifecycle_label
+except ImportError:
+    from release_catalog import resolve_release
+    from lifecycle import lifecycle_label
 
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = {'accepted':'Validé','partial':'Partiellement validé','proposed':'Non validé','under_review':'En réexamen','illustration':'Illustration'}
+
+
+def status(item):
+    label = lifecycle_label(item)
+    if label:
+        scope = item['lifecycle'].get('validated_fields', [])
+        return label + (' — portée : ' + ', '.join(scope) if scope else '')
+    return LABELS[item['review']['state']]
 
 
 def read(path):
@@ -18,15 +32,22 @@ def cell(value):
 def render(model, label):
     lines = [f'# {label} — {model["version"]}', '', f'Restitution générée depuis le JSON, connaissance au {model["as_of"]}. Ne pas éditer cette vue pour modifier le modèle.', '', 'Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.', '']
     nodes = {n['id']:n for n in model['nodes']}
+    universes = [n for n in model['nodes'] if n.get('group_role') == 'urbanism_level']
+    if universes:
+        lines += ['## Niveaux d’urbanisation', '', '| Repère | Nom | Niveau | Contenu direct | Statut |', '| --- | --- | --- | --- | --- |']
+        for universe in universes:
+            children = [nodes[r['target_id']]['fields'].get('name', r['target_id']) for r in model['relations'] if r['type'] == 'presents' and r['source_id'] == universe['id']]
+            lines.append('| ' + ' | '.join(cell(v) for v in [universe['id'], universe['fields'].get('name', ''), universe['level_ref'], ', '.join(children) or 'Exploration différée', status(universe)]) + ' |')
+        lines += ['', 'Les groupes de présentation, dont Business References, conservent leur rôle distinct.', '']
     for domain in model['nodes']:
         if domain['kind'] not in ('domain','reference'):
             continue
-        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{LABELS[domain["review"]["state"]]}**.', '', domain['fields'].get('definition','Définition à préciser.'), '', '| Repère | Capacité | Statut | Définition | Finalité | Rattachement |', '| --- | --- | --- | --- | --- | --- |']
+        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '', '| Repère | Capacité | Statut | Définition | Finalité | Rattachement |', '| --- | --- | --- | --- | --- | --- |']
         for relation in model['relations']:
             if relation['type'] != 'contains' or relation['source_id'] != domain['id']:
                 continue
             n=nodes[relation['target_id']]; f=n['fields']
-            lines.append('| '+ ' | '.join(cell(v) for v in [n['id'], f.get('name','Libellé à préciser'), LABELS[n['review']['state']],f.get('definition','À préciser'),f.get('finality','À préciser'),LABELS[relation['review']['state']]])+' |')
+            lines.append('| '+ ' | '.join(cell(v) for v in [n['id'], f.get('name','Libellé à préciser'), status(n),f.get('definition','À préciser'),f.get('finality','À préciser'),status(relation)])+' |')
         lines += ['']
     if model['space']=='release':
         lines += ['## Portée des validations', '', '| Repère | Champs adoptés | Champs restant proposés | Décisions |', '| --- | --- | --- | --- |']
@@ -38,7 +59,7 @@ def render(model, label):
 
 def main():
     destination=ROOT/'restitutions'; destination.mkdir(exist_ok=True)
-    pointer=read(ROOT/'modeles/release/current.json')
+    pointer=resolve_release(ROOT/'modeles/release')
     release=read(ROOT/'modeles/release'/pointer['path'])
     backlog=read(ROOT/'modeles/backlog/model.json')
     for name,model,label in [('release',release,'Release'),('backlog',backlog,'Backlog')]:

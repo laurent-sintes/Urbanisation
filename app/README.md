@@ -36,59 +36,43 @@ python app/server.py --port 8765
 
 Ouvrir ensuite l’adresse locale ci-dessus ; `Ctrl+C` arrête ce serveur exécuté au premier plan. Ce lancement direct ne modifie aucune politique PowerShell.
 
-## Trois espaces distincts
+## Urbanisation publiée
 
-Le sélecteur **Espace de travail** choisit :
+Atlas affiche uniquement les modèles publiés, sous le nom **Urbanisation**. La liste **Version publiée** présente la plus récente en premier. Par défaut, la vue suit la dernière publication ; sélectionner une version historique fixe cette consultation. Les liens conservent la version choisie. Les anciens liens contenant un espace backlog ou panorama reviennent à l’urbanisation publiée.
 
-| Espace | Fichier faisant autorité | Lecture dans l’application |
-| --- | --- | --- |
-| **Release** | [current.json](../modeles/release/current.json), qui désigne une version publiée | Dernier modèle publié avec les 36 capacités et leurs statuts explicites. Une publication n’est pas une validation métier de toutes ses entrées. |
-| **Backlog** | [model.json](../modeles/backlog/model.json) | Réflexion, propositions, réexamens et exemples. Le parcours illustratif de promesse est réservé à cette vue. |
-| **Panorama As Is** | [current.json](../modeles/panorama-as-is/current.json), qui désigne trois fiches de SI | Périmètre historique de Beaumanoir, Boardriders et Sarenza. Sarenza reste explicitement non traité. Le contexte partagé C-Log est présenté séparément, sans en faire un quatrième SI. |
+Le serveur lit directement [l’index des publications](../modeles/release/index.json), le descripteur daté qu’il désigne, puis le modèle JSON de cette publication. Atlas n’a pas de référentiel parallèle. Le backlog et le panorama As Is restent des fichiers de travail dans le projet et ne sont pas exposés dans cette interface.
 
-Le **Backlog est la vue initiale** pour explorer et construire le modèle. Un lien qui désigne explicitement la Release ou le Panorama As Is conserve cet espace ; un lien sans espace ouvre le Backlog. Dans la Release, les neuf capacités d’Order Promising validées restent distinguées des validations partielles et des capacités non validées. L’inspecteur affiche les champs adoptés et ceux qui restent proposés. Les derniers rattachements remis en discussion conservent leur historique et leur réserve, notamment Reservation.
+Le modèle et ses éléments portent une révision entière et `last_modified` en UTC. La section **Sources et validation**, ouvrable dans chaque fiche, présente ces métadonnées et les preuves. Les versions historiques sans horodatage précis le signalent. Les notes de release et les détails de changements sont conservés avec chaque nouvelle publication. Les statuts métier restent distincts de la publication.
 
-Aucun champ de Release n’est complété à partir du Backlog, d’un prototype ou d’une synthèse Markdown. Si un champ manque dans le JSON sélectionné, l’application le signale. Les variantes de conception, dont P82, restent dans le Backlog ; elles ne sont pas transformées en nouvelles capacités de la carte courante. Leurs fiches alternatives sont encore consultables dans le JSON et dans les sources documentaires, sans éditeur ni vue de comparaison dédiée dans l’application.
+L’application vérifie automatiquement la révision toutes les cinq secondes quand elle est visible et à son retour au premier plan. Elle recharge les nouvelles données sans action manuelle lorsque la consultation suit la dernière version. Elle conserve le domaine ou la capacité consulté si son identifiant existe encore. Une ancienne version choisie ne bascule pas vers la nouvelle. Après changement du code de l’interface, recharger une fois la page ; les publications de données ultérieures sont automatiques.
 
-Le panorama décrit l’état de connaissance des SI actuels. Sa date de publication ne prouve pas une observation récente des déploiements. Les déclarations, réserves, corrections et sources restent accessibles pour chaque fiche. Les listes de composants, flux, autorités d’information et responsabilités de décision ne sont pas fusionnées avec la capability map.
+## Explorer et lire — U135
 
-## Explorer et comprendre
+L’arbre gauche suit les relations explicites de la publication. Déplier une branche et ouvrir sa fiche sont deux actions distinctes. Les groupes de présentation restent signalés ; les relations vers objets métier, documents et événements ne deviennent pas des enfants hiérarchiques. La sélection et les branches ouvertes sont conservées ; recherche, liens directs et retours révèlent les ancêtres de la fiche. Les visites récentes ont été supprimées.
 
-- Ouvrir un domaine, un groupe ou un référentiel, puis une capacité. Le fil d’Ariane conserve le contexte.
-- Dans le Backlog, suivre les relations métier et le parcours illustratif d’une promesse. Les objets, documents et événements ne deviennent pas des sous-capacités.
-- Rechercher par nom, identifiant ou texte. Les alias de recherche français sont réservés au Backlog ; ils ne renomment pas les éléments publiés.
-- Ouvrir une source pour retrouver sa formulation et ses réserves. Le lecteur Markdown ne modifie aucun document.
-- Copier le lien d’une vue : son fragment conserve l’espace choisi, l’élément, les filtres et la source. Le destinataire doit disposer de cette application locale.
-- Actualiser après une modification des fichiers JSON. Une modification du Markdown seule ne change plus le modèle affiché.
+La séparation entre l’arbre et la fiche se déplace à la souris ou avec les flèches gauche/droite lorsqu’elle a le focus. La largeur choisie et les branches ouvertes sont mémorisées localement, sans enregistrer un historique de visites. Sous 1000 px, le bouton **Arbre** ouvre un tiroir ; Échap le ferme et restitue le focus. Dans l’arbre : flèches pour parcourir et déplier, Home/End pour atteindre le premier/dernier élément visible, Entrée pour ouvrir une fiche. Le focus clavier reste distinct de la sélection.
 
-## Lecture JSON et maintenance
+La fiche présente une seule fois la Finalité, puis la Définition, le Périmètre et les réserves renseignées. Les éléments enfants viennent ensuite. Une vue Relations apparaît lorsque des liens métier sont publiés. Les sources et métadonnées se consultent à la demande ; le statut et la portée synthétique restent visibles en tête.
 
-[atlas_data.py](atlas_data.py) lit les fichiers JSON et le pointeur de Release. Le lecteur refuse les structures invalides et ne revient jamais silencieusement au Markdown ou au Backlog. La révision de l’espace est calculée à partir de ses fichiers JSON et de la configuration de présentation. Les autres espaces restent indépendants.
+La recherche porte sur les noms, identifiants et textes publiés, avec filtres selon les types et statuts présents. Ctrl+K place le focus dans la recherche ; flèche bas entre dans les résultats, Entrée ouvre le résultat ciblé. Les synonymes français non présents dans la publication ne sont pas inventés ; les anciennes suggestions sans résultat ont été retirées. La fermeture d’une source retrouve son déclencheur.
 
-[model.js](model.js) construit la navigation depuis les nœuds et relations explicites. Les préfixes d’identifiants ne déterminent pas les parents. La hiérarchie reste de profondeur variable et sans cycle ; le graphe des relations métier reste distinct. Les enveloppes Atlas, Socle transactionnel et Processus sont de simples entrées de navigation.
+## API et contrôles
 
-[exploration.json](exploration.json) ne contient plus d’objets ou de relations métier : uniquement libellés de types, icônes, alias et étapes de visite. [model-metadata.json](model-metadata.json) et [legacy/exploration-before-json.json](legacy/exploration-before-json.json) sont des entrées historiques conservées pour la traçabilité de la migration. Le lecteur courant ne les utilise pas comme modèle.
+- `/api/releases` : publications disponibles et identifiant de la publication courante.
+- `/api/model` : urbanisation courante ; `?version=2026-09-13.2` pour une publication précise.
+- `/api/status` : identité du serveur et révision des données ; même paramètre `version` facultatif.
+- `/api/source?path=…&anchor=…` : source documentaire autorisée.
 
-Le serveur utilise la bibliothèque standard Python, écoute sur `127.0.0.1` et n’expose qu’une liste autorisée de fichiers. Les API sont :
-
-- `/api/model?space=release` ou `space=backlog` : un modèle JSON et les liens de ses sources ; Backlog par défaut.
-- `/api/panorama` : l’index et les trois fiches de SI avec le contexte partagé.
-- `/api/status?space=release`, `backlog` ou `panorama-as-is` : identité du serveur et révision de l’espace ; Backlog par défaut.
-- `/api/source?path=…&anchor=…` : un document Markdown autorisé.
-
-Le Markdown n’est analysé que pour ouvrir et localiser les sources. Il n’alimente plus les noms, définitions, finalités ou rattachements du modèle. Les contenus affichés sont échappés, sans exécution de HTML contenu dans les documents.
-
-Cette application reste locale, en lecture seule, sans comptes, édition ni publication sur Internet. Le serveur doit être relancé après une modification du code Python ; un simple rechargement suffit après une modification des fichiers JSON ou de l’interface.
-
-## Vérifier l’application
+Les demandes d’espace backlog sont refusées, et `/api/panorama` n’est plus exposé. Une publication absente ou invalide provoque une erreur, sans repli vers un autre modèle. Les modèles publiés et descripteurs sont vérifiés par empreintes. Le champ API `dataRevision` sert au rafraîchissement ; `revision` conserve la version entière du modèle.
 
 ```powershell
 python app/server.py --check
 python -m unittest discover -s app -p test_data.py
 node --test --test-isolation=none app/test-model.mjs
 node app/verify-browser.mjs
+node app/verify-tree.mjs
 ```
 
-Les tests couvrent le Backlog par défaut, les liens explicites vers la Release, l’isolation Release/Backlog/As Is, les neuf validations d’Order Promising, les 36 capacités publiées avec statuts, les champs partiellement validés, le maintien des identifiants déplacés, l’absence d’effet des modifications Markdown, les erreurs sans repli automatique et les protections du lecteur de sources.
+Les tests navigateur vérifient les douze domaines et références contre le JSON publié, les anciens liens, la recherche, les sources, les versions historiques, le rafraîchissement automatique et les petits écrans. Le test de publication suivante intercepte les réponses HTTP dans un navigateur de test et ne modifie aucun fichier publié. Captures dans `app/.runtime/qa-urbanisation/`. Playwright est utilisé uniquement pour le développement ; `ATLAS_URL` et `ATLAS_PLAYWRIGHT_PATH` permettent de préciser le serveur et le module.
 
-Le test navigateur utilise Playwright pour le développement, sans dépendance de production. `ATLAS_URL` choisit un autre serveur local et `ATLAS_PLAYWRIGHT_PATH` peut préciser son module. Les captures sont produites dans `app/.runtime/qa-json/`. Le script vérifie les trois espaces, les sources, la recherche, les relations du Backlog, les liens partagés, l’historique et plusieurs largeurs d’écran. Un lien symbolique ne peut être testé sur les postes où sa création n’est pas autorisée.
+`verify-tree.mjs` contrôle les rattachements déplacés, l’expansion persistante, le focus, les sources repliées, les filtres, le redimensionnement et le tiroir mobile. Une fixture HTTP synthétique éprouve quatre niveaux supplémentaires et un objet relié sans parent hiérarchique ; aucune donnée de test n’entre dans le modèle. Captures dans `app/.runtime/qa-tree/`.

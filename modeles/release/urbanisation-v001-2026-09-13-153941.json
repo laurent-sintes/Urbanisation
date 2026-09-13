@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "flow-urbanism",
+  "space": "release",
+  "version": "2026-09-13.3",
+  "revision": 1,
+  "published_at": "2026-09-13T15:39:41.243675Z",
+  "last_modified": "2026-09-13T15:39:21.359705Z",
+  "path": "2026-09-13.3/model.json",
+  "sha256": "5707a36401d91e788223d23b3ff7835ea339a5f36fb17e403459f4c3c4b8119d",
+  "release_notes": "2026-09-13.3/release-notes.md",
+  "release_notes_sha256": "82b221a7c8d3a0dc18f328e7372df573f50b6573fca3965fae2f61f371fc5fe4"
+}

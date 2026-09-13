@@ -13,6 +13,7 @@ htmlcov/
 /.tmp*/
 
 # Local server state, logs and browser captures
+/.runtime/
 /app/.runtime/
 
 # Prepared candidates are local; published snapshots remain tracked

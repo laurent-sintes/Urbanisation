@@ -67,3 +67,134 @@ html,body{margin:0;min-height:100%;scroll-behavior:auto}button,input,select{font
 
 .fa-space-select { width: 100%; margin-top: 8px; padding: 10px 8px; border: 1px solid var(--fa-line); border-radius: 7px; background: var(--fa-paper); color: inherit; font: inherit; }
 .fa-inspector pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .78rem; }
+.fa-alternatives { margin-bottom: 28px; padding: 20px; border: 1px solid var(--fa-line); border-radius: 10px; }
+.fa-alternatives > h2 { margin-top: 0; font-size: 20px; }
+.fa-alternative-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 16px; margin: 20px 0; }
+.fa-alternative-grid article { border-top: 1px solid var(--fa-line); overflow-wrap: anywhere; }
+.fa-alternative-grid h3 { font-size: 17px; }
+.fa-alternative-grid p { font-size: 14px; line-height: 1.6; }
+/* U135 — Persistent tree and central reading surface. */
+#flow-atlas { height:100dvh; min-height:0; display:grid; grid-template-rows:auto minmax(0,1fr); overflow:hidden; --fa-tree-width:300px; }
+#flow-atlas .fa-top { padding:16px 24px; gap:20px; position:relative; z-index:2; }
+#flow-atlas .fa-top-note { margin-left:auto; }
+#flow-atlas .fa-body { min-height:0; grid-template-columns:var(--fa-tree-width) 5px minmax(0,1fr); overflow:hidden; position:relative; }
+#flow-atlas .fa-rail { min-height:0; min-width:0; padding:22px 14px 12px; gap:20px; border-right:0; display:flex; flex-direction:column; overflow:hidden; }
+#flow-atlas .fa-tree-heading { display:flex; align-items:center; justify-content:space-between; padding:0 8px; font-size:14px; }
+#flow-atlas #fa-tree-close, #flow-atlas #fa-tree-open { display:none; }
+#flow-atlas .fa-rail > div { min-width:0; }
+#flow-atlas .fa-rail .fa-eyebrow { margin-bottom:4px; padding-left:8px; }
+#flow-atlas .fa-space-select { margin-top:4px; font-size:13px; }
+#flow-atlas #fa-tree-scroll { flex:1; min-height:0; overflow:auto; padding:3px; scrollbar-width:thin; }
+#flow-atlas #fa-tree { font-size:13px; }
+#flow-atlas [role=treeitem] { outline:none; border-radius:6px; min-width:0; }
+#flow-atlas [role=group] { margin-left:15px; border-left:1px solid var(--fa-line); padding-left:3px; }
+#flow-atlas .fa-tree-row { display:flex; align-items:center; gap:4px; min-height:38px; padding:5px 7px 5px 2px; border:1px solid transparent; border-radius:6px; cursor:pointer; margin:2px 0; }
+#flow-atlas .fa-tree-row:hover { background:var(--fa-bg); }
+#flow-atlas [role=treeitem][aria-selected=true] > .fa-tree-row { background:var(--fa-soft); color:var(--fa-green); border-color:var(--fa-line); font-weight:600; box-shadow:inset 3px 0 var(--fa-green); }
+#flow-atlas [role=treeitem]:focus-visible > .fa-tree-row { outline:2px solid var(--fa-green); outline-offset:-2px; }
+#flow-atlas .fa-tree-toggle { display:grid; place-items:center; background:none; border:0; padding:0; width:22px; height:26px; flex-shrink:0; font-size:21px; border-radius:4px; }
+#flow-atlas .fa-tree-toggle:hover { background:var(--fa-line); }
+#flow-atlas .fa-tree-spacer { width:22px; flex-shrink:0; }
+#flow-atlas .fa-tree-label { min-width:0; overflow-wrap:anywhere; line-height:1.4; flex:1; }
+#flow-atlas .fa-tree-label small { display:block; margin-top:3px; font-size:10px; font-weight:400; color:var(--fa-muted); }
+#flow-atlas .fa-tree-count { font-size:11px; color:var(--fa-muted); font-weight:400; }
+#flow-atlas .fa-rail-foot { margin:0; padding:12px 8px 0; border-top:1px solid var(--fa-line); font-size:11px; }
+#flow-atlas .fa-rail-foot p { margin-top:6px; }
+#flow-atlas #fa-rail-resize { background:var(--fa-line); cursor:col-resize; touch-action:none; position:relative; }
+#flow-atlas #fa-rail-resize:hover, #flow-atlas #fa-rail-resize:focus-visible { background:var(--fa-green); outline:none; }
+#flow-atlas .fa-main { overflow:auto; padding:28px 40px 56px; scroll-padding-top:24px; min-height:0; }
+#flow-atlas #fa-content { max-width:1240px; margin:0 auto; }
+#flow-atlas .fa-navline { margin:0 auto 28px; max-width:1240px; }
+#flow-atlas .fa-breadcrumb { font-size:12px; line-height:1.7; }
+#flow-atlas .fa-breadcrumb [aria-current=page] { color:var(--fa-ink); }
+#flow-atlas .fa-heading { gap:18px; margin-bottom:20px; }
+#flow-atlas h1 { font-size:30px; letter-spacing:-.6px; line-height:1.2; overflow-wrap:anywhere; }
+#flow-atlas h1:focus, #flow-atlas #fa-content:focus { outline:none; }
+#flow-atlas .fa-heading-id { margin-left:12px; font:12px Consolas,monospace; letter-spacing:0; }
+#flow-atlas .fa-heading-text p { font-size:15px; line-height:1.6; max-width:70ch; }
+#flow-atlas .fa-heading-actions { flex-shrink:1; justify-content:flex-end; }
+#flow-atlas .fa-button { font-size:13px; padding:8px 12px; }
+#flow-atlas .fa-validation-summary { display:flex; flex-wrap:wrap; align-items:center; gap:10px; font-size:13px; color:var(--fa-muted); margin:0 0 30px; }
+#flow-atlas .fa-badge { font-size:12px; }
+#flow-atlas .fa-business { max-width:78ch; font-size:16px; line-height:1.7; }
+#flow-atlas .fa-business section { margin-bottom:28px; }
+#flow-atlas .fa-business h2 { font-size:14px; font-weight:600; color:var(--fa-green); margin-bottom:8px; }
+#flow-atlas .fa-business p { overflow-wrap:anywhere; }
+#flow-atlas .fa-finality { border-left:3px solid var(--fa-green); padding:2px 0 2px 20px; }
+#flow-atlas .fa-finality p { font-size:18px; line-height:1.6; }
+#flow-atlas .fa-review-note { border-top:1px solid var(--fa-line); padding-top:20px; }
+#flow-atlas .fa-review-note p, #flow-atlas .fa-boundary p { font-size:14px; line-height:1.7; color:var(--fa-muted); }
+#flow-atlas .fa-boundary .fa-badge { margin-top:8px; }
+#flow-atlas .fa-children { margin-top:32px; }
+#flow-atlas .fa-section-heading { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+#flow-atlas .fa-section-heading span { background:var(--fa-soft); border-radius:20px; padding:2px 9px; color:var(--fa-green); font-size:12px; }
+#flow-atlas .fa-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px; }
+#flow-atlas .fa-tile { min-height:175px; padding:20px; gap:12px; }
+#flow-atlas .fa-tile-name { font-size:16px; }
+#flow-atlas .fa-tile-purpose { font-size:14px; line-height:1.6; -webkit-line-clamp:3; }
+#flow-atlas .fa-tile-foot { font-size:12px; }
+#flow-atlas .fa-overview-note { display:flex; flex-wrap:wrap; gap:12px; align-items:center; color:var(--fa-green); font-size:14px; padding:14px 0; border-block:1px solid var(--fa-line); }
+#flow-atlas .fa-overview-note span { color:var(--fa-muted); font-size:12px; margin-left:auto; }
+#flow-atlas .fa-ref-group { margin-top:24px; padding:24px; }
+#flow-atlas .fa-ref-head h2 { font-size:18px; }
+#flow-atlas .fa-ref-chips button { font-size:13px; padding:8px 12px; }
+#flow-atlas .fa-relations-empty { font-size:13px; color:var(--fa-muted); margin:30px 0; }
+#flow-atlas .fa-provenance { border:1px solid var(--fa-line); background:var(--fa-paper); border-radius:10px; margin-top:32px; scroll-margin-top:20px; }
+#flow-atlas .fa-provenance > summary { cursor:pointer; padding:18px 22px; font-size:14px; font-weight:600; }
+#flow-atlas .fa-provenance > summary span { color:var(--fa-muted); font-weight:400; font-size:12px; margin-left:14px; }
+#flow-atlas .fa-proof-body { padding:8px 24px 24px; max-width:85ch; font-size:14px; line-height:1.7; }
+#flow-atlas .fa-proof-body section { margin:16px 0 28px; }
+#flow-atlas .fa-proof-body h2 { font-size:16px; margin-bottom:10px; }
+#flow-atlas .fa-proof-body h3 { font-size:14px; margin:16px 0 8px; }
+#flow-atlas .fa-proof-body dl { display:grid; grid-template-columns:190px 1fr; gap:8px 18px; margin:0; }
+#flow-atlas .fa-proof-body dt { color:var(--fa-muted); }
+#flow-atlas .fa-proof-body dd { margin:0; }
+#flow-atlas .fa-proof-body .fa-source-path { font-size:12px!important; }
+#flow-atlas .fa-search-filters { gap:16px; }
+#flow-atlas .fa-result p { font-size:14px; line-height:1.65; max-width:90ch; }
+#flow-atlas .fa-results { max-width:980px; }
+#flow-atlas .fa-skip { position:absolute; top:-100px; left:20px; z-index:30; padding:12px; background:var(--fa-paper); color:var(--fa-green); }
+#flow-atlas .fa-skip:focus { top:12px; }
+@media(max-width:1200px) {
+  #flow-atlas .fa-main { padding:24px 28px 40px; }
+  #flow-atlas .fa-heading { flex-wrap:wrap; }
+  #flow-atlas .fa-heading-actions { justify-content:flex-start; }
+  #flow-atlas .fa-top-note { display:none; }
+}
+@media(max-width:1000px) {
+  #flow-atlas .fa-body { display:block; }
+  #flow-atlas .fa-main { height:100%; }
+  #flow-atlas #fa-tree-open, #flow-atlas #fa-tree-close { display:inline-flex; }
+  #flow-atlas #fa-rail-resize { display:none; }
+  #flow-atlas .fa-rail { position:absolute; inset:0 auto 0 0; width:min(360px,calc(100% - 36px)); height:100%; z-index:12; box-shadow:12px 0 40px #0002; display:none; }
+  #flow-atlas.fa-tree-is-open .fa-rail { display:flex; }
+  #flow-atlas #fa-tree-backdrop { position:absolute; inset:0; border:0; background:#14241b66; z-index:11; }
+  #flow-atlas .fa-tree-heading { font-size:16px; }
+}
+@media(max-width:650px) {
+  #flow-atlas .fa-top { padding:12px 16px; gap:12px; flex-wrap:wrap; }
+  #flow-atlas .fa-brand { font-size:13px; }
+  #flow-atlas #fa-refresh { margin-left:auto; }
+  #flow-atlas .fa-searchbox { order:3; flex-basis:100%; max-width:none; }
+  #flow-atlas .fa-main { padding:20px 18px 36px; }
+  #flow-atlas .fa-navline { gap:10px; margin-bottom:22px; }
+  #flow-atlas h1 { font-size:26px; }
+  #flow-atlas .fa-heading { gap:14px; }
+  #flow-atlas .fa-heading-text p { font-size:15px; }
+  #flow-atlas .fa-heading-actions { flex-wrap:wrap; }
+  #flow-atlas .fa-business { font-size:16px; }
+  #flow-atlas .fa-finality p { font-size:17px; }
+  #flow-atlas .fa-validation-summary { margin-bottom:24px; }
+  #flow-atlas .fa-rail { padding:18px 12px 12px; flex-direction:column; flex-wrap:nowrap; gap:18px; }
+  #flow-atlas .fa-rail > div { display:block; }
+  #flow-atlas .fa-rail .fa-tree-heading { display:flex; }
+  #flow-atlas .fa-rail .fa-eyebrow, #flow-atlas .fa-rail-foot { display:block; }
+  #flow-atlas .fa-tree-row { min-height:42px; }
+  #flow-atlas .fa-tree-toggle { min-height:30px; }
+  #flow-atlas .fa-provenance > summary { padding:16px; }
+  #flow-atlas .fa-provenance > summary span { display:block; margin:6px 0 0 16px; }
+  #flow-atlas .fa-proof-body { padding:0 18px 20px; }
+  #flow-atlas .fa-proof-body dl { display:block; }
+  #flow-atlas .fa-proof-body dd { margin:0 0 10px; }
+  #flow-atlas .fa-grid { grid-template-columns:1fr; }
+}
