@@ -6,8 +6,10 @@ from pathlib import Path
 import re
 
 
-def read(path):
-    return json.loads(path.read_text(encoding='utf-8'))
+try:
+    from .structured_io import read
+except ImportError:
+    from structured_io import read
 
 
 def digest(path):
@@ -26,10 +28,12 @@ def within(folder, relative):
 
 def legacy_descriptor(folder, version):
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}\.[1-9]\d*', version): raise ValueError('Invalid publication version')
-    path=within(folder, version+'/model.json'); model=read(path)
+    manifest=read(within(folder, version+'/manifest.json'))
+    relative=version+'/'+manifest.get('model_path', 'model.json')
+    path=within(folder, relative); model=read(path)
     return {'schema_version':'1.0.0','model_id':model['model_id'],'space':'release','version':version,
             'revision':model.get('revision'), 'published_at':None, 'last_modified':model.get('last_modified'),
-            'path':version+'/model.json','sha256':digest(path),
+            'path':relative,'sha256':digest(path),
             'note':'Publication historique ; horodatage précis non enregistré.'}
 
 
@@ -83,10 +87,10 @@ def register(folder, release, notes_path, write, activate):
     """Write immutable descriptors, activate the index last, retain old pointer bytes."""
     folder=Path(folder); version=release['version']
     stamp=datetime.now(timezone.utc)
-    filename=f"urbanisation-v{release['revision']:03d}-{stamp.strftime('%Y-%m-%d-%H%M%S')}.json"
+    filename=f"urbanisation-v{release['revision']:03d}-{stamp.strftime('%Y-%m-%d-%H%M%S')}.yaml"
     descriptor={'schema_version':'1.0.0','model_id':release['model_id'],'space':'release',
                 'version':version,'revision':release['revision'],'published_at':stamp.isoformat(timespec='microseconds').replace('+00:00','Z'),
-                'last_modified':release['last_modified'],'path':version+'/model.json','sha256':digest(folder/version/'model.json'),
+                'last_modified':release['last_modified'],'path':version+'/model.yaml','sha256':digest(folder/version/'model.yaml'),
                 'release_notes':notes_path,'release_notes_sha256':digest(folder/notes_path)}
     write(folder/filename,descriptor)
     if (folder/'index.json').exists():

@@ -771,3 +771,310 @@ Contrôles de mise sous Git : 57 tests des scripts, 17 tests applicatifs Python 
 - Publication `2026-09-13.5`, descripteur `urbanisation-v003-2026-09-13-173533.json` activé : 51 nœuds, 36 capacités, univers Supply/Case, D04 refondu et frontière D07 précisée.
 - 54 décisions : 45 transcriptions initiales du cycle U131 et neuf décisions nouvelles ciblées U140/U141. Les portées Agreement antérieures suspendues pour changement de révision sont réaffirmées avec nouveaux identifiants ; historique conservé. Aucune validation des nouveaux détails par simple publication.
 - Contrôles modèle et serveur réussis. API Atlas du dépôt vérifiée au port 8765 : version 2026-09-13.5, liste v003 en premier ; interface rechargée pour installer le code courant. Aucune copie du référentiel dans Atlas, aucun commit ni push.
+
+## 2026-09-14 — U143 : étude des outils et parcours d’exploration d’Atlas
+
+- Demande conservée avec son texte ; critère de génération et de maintenance du code par IA consigné dans AGENTS.md. Recherche sur les documentations officielles de LikeC4, IcePanel, React Flow et Cytoscape.js, complétée par Kumu, Obsidian, Structurizr, D2 et trois moteurs de placement.
+- [Étude et recommandations](marche/etudes/2026-09-14-exploration-atlas/etude.md), [sources qualifiées](marche/etudes/2026-09-14-exploration-atlas/sources.md) et empreintes de l’état examiné enregistrées. Parcours de navigation réellement effectué dans le Playground LikeC4 ; autres interactions étudiées dans les sources, sans benchmark ni installation.
+- Proposition : arbre et sélection communs aux vues Fiche, Carte et Relations ; exploration progressive, qualification des liens, cartes métier lisibles et recherche contextualisée. React Flow proposé comme premier candidat, LikeC4 comme alternative à éprouver, Cytoscape pour les besoins analytiques ultérieurs. Ces choix ne sont pas adoptés par la seule étude.
+- Point d’appui réel : relation proposée D07.c → D04.h dans v003 ; l’adaptateur d’Atlas ne projette pas encore sa qualification complète. Aucun ajout d’objet ou de relation, aucune modification applicative ni publication. Aucun commit ou push.
+- Vérifications : neuf empreintes applicatives/modèles inchangées, liens locaux de l’étude valides, U143 unique ; index de provenance courant actualisé à 1 003 entrées et `validate_models.py` sans erreur. Aucun test de performance ou d’intégration d’un nouveau moteur n’est présenté comme exécuté.
+
+
+## 2026-09-14 — U144 : couverture résiduelle de D02
+
+- Accord sur les points d’examen et hypothèse de couverture par D01/D03 enregistrés. Notes d’instruction D02, D02.a et D02.d actualisées dans le backlog.
+- Audit `audits/2026-09-14-d02-couverture.md` : Supply Assignment couvre explicitement les affectations ; disponibilité pour réserver et évolution des réservations/protections demandent une clarification textuelle.
+- Retrait proposé, non appliqué ; aucune définition validée ou capacité ajoutée, aucune publication. Release et travaux d’ergonomie conservés.
+
+
+## 2026-09-14 — U145 : retrait de D02 sans renumérotation
+
+- D02, D02.a et D02.d retirés du backlog avec leurs trois relations ; état complet préservé dans `modeles/backlog/history/pre-U145.json`.
+- 52 nœuds et 34 capacités. D02.b/D02.c en D01 et D02.e en D03 conservées ; tous les autres identifiants et contenus inchangés.
+- U145, C79, audit de couverture et AGENTS.md actualisés. Clarifications des définitions consommatrices toujours à instruire. Aucune publication, aucun commit ni push.
+
+
+## 2026-09-14 — U147 : décisions et vocabulaire de D03
+
+- Remarques conservées ; ordre des quatre actions appliqué, sans changement de définition. D03 et D03.d/D03.h remis en instruction avec preuves historiques préservées.
+- ATP/CTP, échéancement, allocation, ressources et Case/Order examinés dans `marche/revue-d03-decisions-vocabulaire.md` ; sources Microsoft consultées et limites des extraits SAP précisées. Annexe structurée `modeles/backlog/d03-review.json` : propositions non adoptées, aucune nouvelle capacité active.
+- Glossaire et AGENTS.md complétés ; aucun changement de release, aucun commit ni push.
+
+
+## 2026-09-14 — U146 : essai comparatif React Flow / LikeC4
+
+- Go après U143 : prototype local dans prototypes/atlas-exploration/, consultable sur 127.0.0.1:8767. Atlas courant sur 8765 conservé et démarré avec son lanceur. Les travaux métier parallèles U144/U145 ne sont pas incorporés à cet essai de la publication v003.
+- Source publiée commune ; arbre, recherche, fiche et sélection partagés, grille React Flow et disposition des relations ELK, vues LikeC4 générées avec correspondance bijective des IDs. Statuts, qualification et sources du lien D07.c → D04.h consultables ; agrégats graphiques annoncés. Aucun historique de visites récentes.
+- Quinze tests de données/projection et douze familles de contrôles navigateur réussis, sans erreur console/HTTP ; petit écran 390/320 px, clavier, sources et récupération par lien direct vérifiés. Quatre captures conservées avec le rapport dans marche/etudes/2026-09-14-exploration-atlas/essai/.
+- Bilan et recommandation dans prototypes/atlas-exploration/bilan.md : React Flow favorisé pour la composition et la lisibilité métier, LikeC4 pour les vues générées et le contexte des relations. Coût des deux bundles et limites du prototype explicités ; choix définitif non adopté.
+- Huit empreintes applicatives et de release identiques à l’état U143. Aucun fichier applicatif d’Atlas ni modèle publié modifié par l’essai, aucune publication, aucun commit ou push. Le backlog a évolué séparément via U144/U145.
+
+
+## 2026-09-14 — U148 : faisabilité de promesse et plan d’adaptation
+
+- Contribution conservée ; annexe structurée D03 enrichie des deux résultats visés, hypothèses de retrait et frontières calcul/engagement, confirmation/commande et proposition/application.
+- Écart de vocabulaire entre CTP de marché et plan global d’adaptation explicité avec sources SAP complémentaires. Promise Feasibility Planning reste un candidat assistant.
+- Besoin d’échéancement et ordre des actions confirmés ; aucune suppression ou nouvelle capacité active, aucune release.
+
+
+## 2026-09-14 — U149 : panorama To-Promise
+
+- PTP identifié dans les sources Oracle ; variantes Channel ATP et Component/Capacity/Product family CTP chez Infor, Multilevel ATP historique SAP. Sources, versions, nature et limites de consultation dans `marche/to-promise-panorama.md`.
+- Glossaire et annexe d’instruction D03 enrichis ; distinction entre arbitrage économique, faisabilité et plan d’adaptation. Aucune capacité ajoutée ni release produite.
+
+
+## 2026-09-14 — U150 : choix React Flow et interface sur mesure validé
+
+- Validation explicite de Laurent conservée avec son texte : React Flow et l’interface sur mesure sont retenus pour Atlas. La comparaison du moteur est close ; LikeC4 reste un historique et une référence d’inspiration.
+- AGENTS.md, bilan, README du prototype et étude U143 actualisés pour distinguer décision courante et recommandations historiques. L’intégration dans l’application courante reste à réaliser ; aucun contenu métier n’est validé par cette décision.
+- Aucun changement de code applicatif, de modèle métier ou de publication ; aucun commit ni push.
+
+
+## 2026-09-14 — U151 : proposition D03 au niveau ATP/CTP/PTP
+
+- Orientation de granularité consignée ; réponse explicite au retour U148. Alternative JSON complète à quatre actions et quatre décisions, avec reprise des cinq décisions fines sans perte des règles.
+- Liste active et anciennes validations conservées ; les nouvelles définitions restent proposées. Annexe de revue, analyse et AGENTS.md reliés à cette proposition. Aucune release, aucun commit ni push.
+
+
+## 2026-09-14 — U154/U155 : adoption D03 et exploration Requisition/Order
+
+- D03 à huit capacités validé et appliqué : quatre actions conservées, décisions ATP/CTP/PTP/Delivery Schedule Decision nouvelles D03.i–l. Anciennes D03.d–h archivées avec leur état complet ; règles et couverture reprises. 51 nœuds et 33 capacités au backlog ; release inchangée.
+- U155 corrige Requisition ; analyse ERP sourcée distinguant demande interne d’achat, commande et intégration commerce/Supply. Storeland reste un usage rapporté. Aucun renommage de notion adopté, point 5 différé.
+- C80/C81, AGENTS.md, glossaire et annexe D03 mis à jour. Aucun commit, push ou release.
+
+
+## 2026-09-14 — U156 : CTP local et Response Planning
+
+- Recherche de périmètre élargie : Response Planning SAP constitue un rapprochement fort, Oracle Backlog Management un recouvrement partiel, Kinaxis Response Management un appui conceptuel.
+- Sources et limites dans marche/ctp-response-planning.md ; annexe D03 et glossaire complétés. Capacité D03.j, noms et validations inchangés ; aucune release.
+
+
+## 2026-09-14 — U157 : Orders travaillés en carnet et Supply Assignment
+
+- Orientation de Laurent consignée, comparaison SAP/Oracle et C82 : recouvrement réel, périmètre produit Supply Assignment plus large que notre définition locale.
+- Annexe D03 et AGENTS.md enrichis. Frontières de résultats et recouvrements D03/D04 à instruire ; aucune fusion, aucun renommage ni release.
+
+
+## 2026-09-14 — U152/U153 : Atlas React Flow et icônes
+
+- Refactoring de l’application courante : React/TypeScript, arbre gauche, carte React Flow, fiche centrale, recherche filtrée, sources complètes et relations inspectables. Ancien frontend JavaScript remplacé ; prototype comparatif historique conservé, aucune dépendance LikeC4 dans Atlas.
+- Icônes Lucide cohérentes pour les 51 éléments publiés, correspondances graphiques centralisées et repli pour chaque type futur. Objets, documents et événements éprouvés uniquement par fixture HTTP, sans ajout au modèle.
+- API Python et publication courante/historiques conservées. Compilation Vite servie depuis app/dist ; serveur local relancé et identifié sur 8765. Nœuds et relations toujours issus du JSON publié ; les empreintes de l’index, du descripteur et de v003 restent identiques à l’étude U143.
+- Contrôles TypeScript, projection, chargement/API, routes et serveur ; recette navigateur ordinateur/mobile, profondeur supplémentaire, sources, mises à jour et erreurs temporaires. Bilan, résultats et captures dans audits/2026-09-14-refactoring-atlas.md et audits/2026-09-14-atlas-react/.
+- Aucun changement métier ni release, aucun commit ou push. Les évolutions du backlog U151/U154–U156 restent celles de l’exploration parallèle.
+
+
+## 2026-09-14 — U158 : Backlog Management au niveau domaine
+
+- Option de renommage D03 et définition proposées dans le backlog JSON ; aucune modification des valeurs adoptées.
+- Frontière D03/D04 et décomposition de Supply Assignment à instruire ; simulation définie comme résultat candidat, avec risque de recouvrement ATP/CTP/PTP explicite.
+- Registres et AGENTS.md actualisés. Aucune publication, aucun commit ni push.
+
+
+## 2026-09-14 — U159 : calcul et impacts globaux
+
+- Distinction explicite de Laurent consignée : solutions calculées par ATP/CTP/PTP, impacts globaux mesurés par simulation. C83 corrige la réserve de doublon trop générale.
+- Annexe D03, analyse et AGENTS.md actualisés ; définition et indicateurs proposés. Carte active et release inchangées.
+
+
+## 2026-09-14 — U160 : audit des manques D03/D04
+
+- Prioritization et Backlog Assessment proposés pour D03 ; Qualification et Structuring à éprouver contre Registration/Revision dans D04. Lancement vers l’exécution à la frontière D03/D07/logistique.
+- Sources, résultats et limites dans marche/d03-d04-capacites-manquantes.md ; candidats structurés dans modeles/backlog/d03-d04-gap-review.json, tous proposés par Codex.
+- Aucun ajout actif, pas de changement des validations, aucune publication.
+
+
+## 2026-09-14 — U161/U162 : capacités et Backlog Refinement
+
+- Apports de Laurent conservés ; C84 corrige la dérivation des capacités depuis les étapes ou contrôles de processus.
+- Qualification retirée des candidats ; Structuring/Revision et Prioritization en instruction. Backlog Refinement enregistré comme activité.
+- Annexe JSON, étude et AGENTS.md actualisés ; aucune modification de la carte active ou de la release.
+
+
+## 2026-09-14 — U163 : adoption Order Prioritization
+
+- Validation explicite consignée ; ajout D03.m dans le backlog avec relation contains vers D03.
+- Nom et définition validés dans le cycle de vie, finalité et nature proposées ; candidats et analyse actualisés.
+- D03 compte neuf capacités, le backlog 34 ; aucune publication métier.
+
+
+## 2026-09-14 — U164 : reprendre le vocabulaire des besoins et commandes
+
+- Demande conservée ; étude des usages SAP, Microsoft et CMMN avec limites de consultation.
+- Définitions proposées dans modeles/backlog/vocabulary-review.json ; glossaire et correction C85 précisent notamment Case/Demand et Order/Command.
+- Aucun objet supplémentaire, rattachement, renommage de capacité ou publication.
+
+
+## 2026-09-14 — U165 : intentions et demande d’exécution
+
+- Orientation utilisateur conservée avant reformulation ; C86 distingue pattern logiciel et objet métier Command candidat.
+- Nom d’univers Case à réexaminer ; Order réaffirmé. Rapprochement proposé de la demande d’exécution avec D07.
+- Annexe de vocabulaire, glossaire, étude et AGENTS.md actualisés ; aucun objet, capacité ou univers ajouté, aucune publication.
+
+
+## 2026-09-14 — U166 : noms du marché pour l’exécution logistique
+
+- Comparaison sourcée SAP, Microsoft, Oracle et GS1 dans marche/logistics-order-et-demande-execution.md et annexe JSON de vocabulaire.
+- Logistics Order attesté en atelier SAP ; Shipment Orders Microsoft rapprochés de la séparation métier/WMS recherchée.
+- Aucun nom adopté, aucun ajout de capacité ou d’objet ; aucune publication.
+
+
+## 2026-09-14 — U167 : demande de prestation générique
+
+- Orientation utilisateur conservée : plateforme exécutante non limitée à la logistique.
+- Service Order proposé avec appuis TM Forum/SAP, contenu métier indicatif et distinction demande/engagement/réalisation ; Service Request comparé sans succession automatique.
+- Annexe JSON, analyse, glossaire et AGENTS.md actualisés ; aucun objet ni capacité ajouté, aucune publication.
+
+
+## 2026-09-14 — U168 : contextes Supply / Services
+
+- Distinction utilisateur des Orders et de leurs définitions contextualisées conservée ; portée séparée du schéma détaillé U167.
+- Annexe JSON, glossaire, étude et AGENTS.md actualisés ; précision DDD sourcée sur la frontière sémantique et la granularité ouverte.
+- Aucun objet, niveau ou capacité ajouté ; aucune publication.
+
+
+## 2026-09-14 — U169 : validation Supply / Services
+
+- Validation explicite transcrite avec portée, date UTC et empreintes des valeurs dans l’annexe JSON ; lifecycle contrôlé.
+- Définitions courtes Supply Order / Service Order, responsabilités et contrats entre modèles validés ; granularité DDD ouverte.
+- Feuille de route, glossaire, analyse et AGENTS.md actualisés. Aucun ajout de capacité ou d’objet actif ; aucune publication.
+
+
+## 2026-09-14 — U170 : nom et définition de l’univers amont
+
+- Proposition utilisateur Processus métier conservée ; Business Processes en instruction, distingué du rôle métier de l’univers.
+- Définition et frontière amont proposées dans l’annexe JSON ; analyse et AGENTS.md actualisés.
+- Aucun renommage actif ni publication.
+
+
+## 2026-09-14 — U171 : offre métier et Case Management
+
+- Précision utilisateur enregistrée : processus moyens/longs impactant l’entreprise, offre aux parties prenantes externes et internes.
+- Business Services proposé pour l’univers amont ; distinctions offre/processus/plateforme et services d’exécution consignées.
+- Annexe JSON, analyse, glossaire et AGENTS.md actualisés ; aucun renommage actif ni publication.
+
+
+## 2026-09-14 — U172 : grands processus transverses
+
+- Besoins utilisateur conservés : portail, espaces, demandes et coordination multi-services.
+- Définition de travail de l’univers amont précisée ; frontières affectation/planification versus Supply consignées.
+- Annexe JSON, analyse et AGENTS.md actualisés ; aucun renommage, ajout de capacité, développement de portail ou publication.
+
+
+## 2026-09-14 — U173 : adoption de Business Services
+
+- Univers universe-case renommé Business Services, révision 2, nom et définition validés avec empreintes ; état antérieur conservé dans history/pre-U173.json.
+- Quatre dimensions de périmètre validées dans l’annexe JSON ; domaines explicitement différés.
+- Feuille de route, analyse, glossaire et AGENTS.md actualisés ; aucune capacité ajoutée ni publication.
+
+
+## 2026-09-14 — U174 : clôture du point 6, reprise du point 5
+
+- Clôture utilisateur consignée ; états de travail des annexes actualisés.
+- Proposition de sens contextualisé Resource et exemples de fermeté documentés dans l’annexe de vocabulaire et le glossaire.
+- Aucun changement des capacités actives ni publication.
+
+
+## 2026-09-14 — U175 : biens stockés et transportés
+
+- Apport utilisateur conservé : ressource générique contextualisée et priorité à la question stock/mouvement.
+- Distinction proposée entre continuité des biens, position de stock et acheminement ; appuis GS1/SAP et exemple de non-double-comptage consignés.
+- Annexe JSON, glossaire, étude et AGENTS.md actualisés ; aucun objet, capacité ou publication ajouté.
+
+
+## 2026-09-14 — U176 : audit article, SKU, biens et colis
+
+- Dix-sept sources SAP, Microsoft et GS1 comparées ; distinction D365 SCM / Business Central et particularités Retail conservées.
+- Conclusion : article et unité logistique distincts ; SKU comme pièce physique insécable non généralisable. Sept concepts et sept constats structurés, cinq épreuves illustratives et cinq impacts sur le projet.
+- Relecture ciblée SAP et Microsoft effectuée ; nuances intégrées sur Product/famille, type d’emballage, HU et stockkeeping unit.
+- Étude, sources JSON, annexe de résultats, glossaire, C87 et AGENTS.md actualisés. Aucune modification de modèle actif ou de release.
+
+
+## 2026-09-14 — U177 à U179 : Retail et wholesale chez SAP
+
+Clarification sourcée du nom sectoriel Retail, du périmètre Fashion et des usages wholesale des articles structurés. Complément Markdown/JSON dans l’audit U176, C88 ; aucune modification de carte ni publication.
+
+
+## 2026-09-14 — U181 : définition explicite SAP Article
+
+Comparaison dictionnaire/SAP et correction C89 : ajout de la définition officielle omise dans la synthèse initiale, conservation de la tension avec génériques et ensembles. Audit, annexe JSON, glossaire et AGENTS.md actualisés. Carte active et release inchangées.
+
+
+## 2026-09-14 — U185 : correspondances Microsoft et univers/domaines
+
+Analyse des niveaux et périmètres Microsoft ; recouvrements proposés avec le backlog. Différences explicites pour workflows, exécution logistique et maîtrise des références. Markdown sourcé et JSON de comparaison ; carte active inchangée.
+
+
+## 2026-09-14 — U187 : stock unifié et conditionnements inbound/outbound
+
+Orientation utilisateur enregistrée ; proposition structurée de contenus, regroupements et faits, avec exemple de reconditionnement et points de vue du transfert. Glossaire, feuille de route et AGENTS.md précisés. Carte active et release inchangées.
+
+
+## 2026-09-14 — U188 : conditionnement pendant le stockage et au packing
+
+Complément U187 : stockage reconditionné et containers outbound créés à la volée. Exemple et propositions JSON actualisés ; distinction prévu/constaté et périmètre d’exécution conservés. Aucune instanciation dans la carte active ni publication.
+
+
+## 2026-09-14 — U189 : packing contractuel dans la promesse
+
+Exigence ATP B2B enregistrée ; distinction exigences/faisabilité/containers constatés et rôles proposés D11/D04/D06/D03/D07. Annexes JSON, analyse, glossaire et AGENTS.md actualisés. Pas de nouvelle capacité, modification de carte ou publication.
+
+
+## 2026-09-14 — U190 : références et unités concrètes
+
+Proposition utilisateur enregistrée ; grain Article/Product Unit à clarifier, référence de contenant et occurrence distinguées. Vérification GS1 des niveaux d’identification. Exploration ciblée des objets ouverte dans la feuille de route ; propositions dans l’annexe, sans nouveau nœud actif ou publication.
+
+
+## 2026-09-14 — U191/U192 : identité propre de l’exemplaire
+
+Clarification du grain Article/Product Unit comme exemplaire physique et accord sur l’indépendance du code-barres. Alternatives antérieures conservées en historique ; question résolue dans l’annexe, le glossaire, la feuille de route et AGENTS.md. Les autres détails restent en instruction ; carte active et release inchangées.
+
+
+## 2026-09-14 — U193 : variante commerciale et identification de l’exemplaire
+
+Contribution enregistrée ; Product Variant ajouté à l’exploration structurée, Serial Number éventuel distingué du GTIN et de son support. Sources GS1 vérifiées pour la série et les niveaux de conditionnement. Glossaire, feuille de route et règles actualisés ; carte active et release inchangées.
+
+
+## 2026-09-14 — U194 : contenant comme produit et rôle de contenance
+
+Hypothèse utilisateur enregistrée et confrontée aux Packaging Materials et Handling Units SAP. Alternative structurée : références communes, rôle de contenant et composition datée, distinction support/regroupement et contraintes physiques/contextuelles. Glossaire complété ; carte active et release inchangées.
+
+
+## 2026-09-14 — U195 : rôles Article et Container validés
+
+Principe utilisateur retenu et tracé dans l’annexe JSON : Product commun portant un rôle Article ou Container. Interprétations antérieures archivées dans l’annexe ; glossaire, feuille de route et AGENTS.md alignés. Définitions détaillées et multiplicité restent en instruction ; aucune publication.
+
+
+## 2026-09-14 — U196 : références au glossaire dans les textes
+
+Faisabilité examinée à partir du schéma actif et du registre documentaire. Proposition JSON préparée : texte segmenté, term_ref stable, glossaire de publication et vérification des liens. Migration et rendu Atlas décrits, pas encore implémentés ; aucune release.
+
+
+## 2026-09-14 — U197 : syntaxe légère de liens au glossaire
+
+Proposition de segments remplacée par des chaînes avec liens `[texte](glossary:ID)`, après préférence explicite pour la lisibilité humaine. Ancien contrat conservé en historique, règles alignées dans AGENTS.md. Aucun changement du schéma actif, d’Atlas ou de release.
+
+
+## 2026-09-14 — U198 : alternative YAML pour la rédaction
+
+Alternative consignée dans l’étude des références au glossaire : distinguer syntaxe des liens et format de sérialisation. Direction possible backlog YAML / publication JSON générée, sans deux autorités éditables. Aucun changement de format décidé ou réalisé.
+
+
+## 2026-09-14 — U202 : audit du vocabulaire puis refactoring YAML
+
+Audit enregistré avant application : huit constats, dix nœuds précisés et principes CTP/Business Services actualisés. Les 34 capacités et la structure restent conservées. Les reformulations de définition sont proposées ; aucun accord métier étendu. Capture et rapport dans `audits/2026-09-14-glossaire-yaml/`.
+
+Conversion de dix documents courants du backlog en YAML, contrôlée par égalité des valeurs décodées. Nouvelles publications métier et descripteurs en YAML ; API JSON via lecteur commun. Captures historiques, preuves et publications antérieures intactes, dont v003 toujours active. Schémas/manifestes/index techniques restent JSON. Les deux captures historiques de backlog liées aux migrations et au panorama restent JSON.
+
+Guides, lanceur, scripts, lecteurs Node et sources de skills actualisés. Skills release/server-admin synchronisés. Les liens au glossaire restent une évolution distincte, non implémentée. Le rapport de préparation repère des portées lifecycle à rapprocher des décisions ADOPT avant prochaine publication ; cette situation existait avant l’audit et reste explicitement bloquante, sans suppression des accords du backlog.
+
+
+## 2026-09-14 — U203 : Glossaire et liens dans Atlas
+
+Page Glossaire et recherche ajoutées. Liens explicites vers terme ou élément, descriptions au survol/focus, clic et ancres conservant la publication ; références absentes signalées. Catalogue de travail dans `modeles/backlog/glossary.yaml`, 93 termes dont 81 repères historiques préservés et 12 notions récentes. Le workflow fige et versionne le catalogue et ses termes ; le rapport relève les impacts lexicaux. Voir `audits/2026-09-14-glossaire-atlas/bilan.md`. v003 reste la publication courante, sans glossaire ; aucune release métier, aucun commit ni push.
+
+
+## 2026-09-14 — U204 : publication v004
+
+Publication locale `2026-09-14.1`, descripteur `urbanisation-v004-2026-09-14-145044.yaml`, activée dans Atlas. 48 nœuds, 34 capacités, 47 relations, 93 termes de glossaire. D02 retiré sans renumérotation, D03 recomposé, Business Services et audit de vocabulaire intégrés. 17 transcriptions d’accords existants après réconciliation, sans nouvelle validation métier des formulations proposées. Validateur corrigé pour les univers intégralement validés ; 79 tests du modèle réussis. Historiques inchangés, restitutions régénérées. Voir `audits/2026-09-14-release-v004/bilan.md`. Aucun commit ni push.

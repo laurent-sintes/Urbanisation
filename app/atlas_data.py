@@ -1,4 +1,4 @@
-"""Read authoritative JSON models; Markdown is indexed only as supporting evidence."""
+"""Read authoritative YAML/legacy JSON; API responses remain JSON."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 if str(REPOSITORY_ROOT) not in sys.path:
     sys.path.insert(0, str(REPOSITORY_ROOT))
 from scripts.release_catalog import resolve_release, catalog
+from scripts.structured_io import read as read_document, working_path
 MAP_PATH = "connaissance/25-domaines-coeur-et-epreuve-recits.md"
 MODEL_DIRECTORY = "modeles"
 SPACES = {"backlog", "release"}
@@ -97,14 +98,14 @@ def _model_path(root: Path, space: str, version=None) -> str:
     if space not in SPACES:
         raise ModelError("Espace inconnu : choisir release ou backlog.")
     if space == "backlog":
-        return "modeles/backlog/model.json"
+        return working_path(root / "modeles/backlog").relative_to(root).as_posix()
     try:
         pointer = resolve_release(root / 'modeles/release', version)
     except (ValueError, OSError, KeyError) as exc:
         raise ModelError(str(exc)) from exc
     relative = pointer.get("path")
-    if not isinstance(relative, str) or not relative.endswith("/model.json"):
-        raise ModelError("Le pointeur de release ne désigne pas un model.json versionné.")
+    if not isinstance(relative, str) or not relative.endswith(("/model.json", "/model.yaml")):
+        raise ModelError("Le pointeur de release ne désigne pas un modèle versionné YAML/JSON.")
     return _safe_model_path(root, "modeles/release/" + relative).relative_to(root).as_posix()
 
 
@@ -122,11 +123,11 @@ def _safe_model_path(root: Path, relative: str) -> Path:
 
 def _read_json(root: Path, relative: str) -> dict:
     try:
-        value = json.loads(_safe_model_path(root, relative).read_text(encoding="utf-8-sig"))
+        value = read_document(_safe_model_path(root, relative))
     except (OSError, ValueError) as exc:
-        raise ModelError(f"Modèle JSON absent ou invalide : {relative}.") from exc
+        raise ModelError(f"Modèle YAML/JSON absent ou invalide : {relative}.") from exc
     if not isinstance(value, dict):
-        raise ModelError(f"Un objet JSON est attendu : {relative}.")
+        raise ModelError(f"Un objet structuré est attendu : {relative}.")
     return value
 
 

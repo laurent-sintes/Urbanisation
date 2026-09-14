@@ -1,12 +1,52 @@
 # Objectif et fonctionnement
 
+## Publication courante — U204
+
+**14 septembre 2026 : v004**, publication `2026-09-14.1`, descripteur `urbanisation-v004-2026-09-14-145044.yaml`, publiée à `2026-09-14T14:50:44.079623Z`. Elle contient **48 nœuds, 34 capacités, 47 relations et 93 termes de glossaire**. `modeles/release/index.json` pointe vers ce descripteur et `2026-09-14.1/model.yaml` ; les anciennes releases restent immuables et sélectionnables.
+
+Cette publication intègre le retrait D02 sans renumérotation, D03 avec ATP/CTP/PTP, Delivery Schedule Decision et Order Prioritization, Business Services et l’audit de vocabulaire U202. Les nouvelles formulations proposées ne sont pas validées par la publication. Les 53 décisions comprennent 36 reprises identiques et 17 transcriptions documentées : six à portée restreinte sur des valeurs inchangées, onze issues des accords U154/U163/U173. Dix-huit anciennes décisions ne sont plus applicables intégralement sur cette révision et restent dans l’historique ; les six reprises partielles ont de nouveaux identifiants. Les correspondances marché, alternatives et illustrations non intégrées restent du contexte figé.
+
+Le contrôle de statut s’applique aux nœuds de tout type : un univers dont tous les champs sont explicitement adoptés peut être `accepted`. Pour une capacité, nom, définition, finalité et nature restent nécessaires. Les contrôles d’empreinte, d’identité et de portée restent obligatoires. Voir [le bilan v004](audits/2026-09-14-release-v004/bilan.md) et la [note de release](modeles/release/2026-09-14.1/release-notes.md). Atlas sert le modèle YAML et le glossaire en JSON, avec infobulles et navigation vérifiées. Aucun commit ni push inclus.
+
+## Glossaire et liens dans Atlas — U203
+
+**14 septembre 2026 :** Atlas possède une entrée **Glossaire** distincte de l’arbre métier, avec recherche et fiches. Les liens lexicaux explicites affichent une description courte au survol et au focus clavier ; Échap ferme l’infobulle, le clic ouvre la fiche ou sa section dans la même publication. Les liens de rattachement, d’exploration et d’extrémité de relation disposent du même aperçu. Pour un élément sans `short_description`, l’aperçu utilise sa finalité, puis sa définition.
+
+- Autorité du vocabulaire courant : `modeles/backlog/glossary.yaml`. Les tableaux et discussions de `connaissance/19-glossaire-metier.md` restent des sources historiques. La consolidation conserve 81 identifiants TER/VER et ajoute TER057–TER068 ; TER004 conserve son ancien sens, Article comme rôle possède TER060. Les nouvelles formulations restent proposées, sans étendre les validations des échanges aux compléments éditoriaux.
+- Texte léger dans les chaînes YAML : `[libellé](glossary:TER059)` ou `[libellé](model:D01.f#definition)`. Identités explicites, pas de reconnaissance automatique des mots. Ce lien lexical ne crée aucune relation de décomposition ou de possession métier. La syntaxe ne permet pas d’insérer du HTML.
+- Une préparation de release incorpore et fige le glossaire dans le modèle publié. Catalogue et termes reçoivent `revision`, `last_modified` UTC et empreinte ; le modèle global tient compte du glossaire. Le rapport et la note signalent ses changements et les textes référençant un sens modifié, à réexaminer. Une modification du glossaire après préparation exige une nouvelle préparation.
+- Atlas résout exclusivement dans le snapshot consulté. Une ancienne release dépourvue de glossaire l’indique ; aucun repli vers le backlog. La publication courante v003 reste inchangée par U203. Les liens absents sont signalés dans l’interface et refusés lors de la validation du modèle à publier.
+- Vérifications : `app/test-glossary.mjs`, `app/verify-glossary.mjs`, `scripts/test_glossary.py` et scénarios isolés de publication. Le [bilan U203](audits/2026-09-14-glossaire-atlas/bilan.md) distingue l’état réel v003 des données de test navigateur.
+
+## Règles courantes YAML et audit de vocabulaire — U200/U202
+
+**Cette section remplace les consignes de format JSON du backlog et des nouvelles releases ci-dessous.** Laurent demande d’abord l’audit du modèle face au glossaire, puis son application, puis le refactoring YAML. Audit et capture avant correction dans `audits/2026-09-14-glossaire-yaml/`. Dix nœuds précisés, 34 capacités conservées ; nouvelles formulations proposées, portées validées inchangées conservées sans extension. D08 distingue Product/Variant, rôles Article/Container et Product Unit ; les principes CTP différé et univers Case sont actualisés.
+
+- Autorité de travail : `modeles/backlog/model.yaml`, annexes courantes `.yaml`. Ne pas recréer un `model.json` concurrent. Les captures `legacy-capabilities.json`, `panorama-candidates.json` et `history/` restent historiques ; le panorama As Is n’est pas migré par cette opération.
+- Nouvelles publications : `<publication>/model.yaml`, `revisions/<publication>/backlog.yaml` et descripteur `urbanisation-v<NNN>-<YYYY>-<MM>-<DD>-<HHMMSS>.yaml`. `release/index.json`, manifestes, décisions et preuves conservent leur format technique JSON. Anciennes releases JSON immuables, toujours sélectionnables.
+- La conversion YAML conserve exactement les valeurs après l’audit. Les révisions métier utilisent le contenu canonique ; les empreintes des fichiers publiés protègent leurs octets. Un changement de format ne vaut ni modification sémantique ni validation. Le lecteur refuse deux autorités homonymes YAML/JSON.
+- Dépendance locale PyYAML épinglée dans `requirements.txt`, installation : `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Lecture/écriture par `scripts/structured_io.py` ; dates et identifiants restent du texte, clés dupliquées et alias refusés. Aucun chargement d’objets Python depuis YAML.
+- Atlas lit le YAML publié ou le JSON historique et renvoie du JSON sur ses API. Il reste exclusivement sur la release. Aucun commit, push ou publication métier implicite dans cet audit/refactoring.
+- U202 ne réalisait pas les liens textuels. Leur mise en œuvre ultérieure relève de U203, décrite ci-dessus.
+
+Les chemins `.json` de backlog dans les anciens récits désignent leurs états historiques ; consulter le `.yaml` courant pour travailler. Le guide `modeles/README.md` et les skills `release`/`server-admin` décrivent le fonctionnement actualisé.
+
+
 ## Orientation ergonomique d’Atlas — U132/U133
+
+**Réalisation U152/U153 — 14 septembre 2026 : Atlas utilise React, TypeScript et React Flow avec une interface sur mesure.** L’application courante dans `app/` remplace le frontend JavaScript initial ; l’essai comparatif reste historique. `app/src/model.ts` projette une publication sans changer ses nœuds ni ses relations ; `publication.ts` et `usePublication.ts` assurent le suivi du catalogue et les historiques fixes. L’arbre, les cartes, les fiches et la recherche emploient les SVG Lucide de `app/src/icons.tsx` : correspondances graphiques par nom connu et repli par type, sans nouvelle autorité métier. Objets, documents et événements ont des repères distincts, sans inventaire ajouté. Compiler par `pnpm --dir app build`, puis recharger la page ; Python sert uniquement `app/dist/`, aucun serveur Node permanent. Après clonage, installer les dépendances verrouillées puis compiler. Les publications restent lues à l’exécution depuis l’API, jamais embarquées dans le bundle. Voir [le bilan du refactoring](audits/2026-09-14-refactoring-atlas.md) et `app/README.md`. Aucun historique de visites ; aucune publication métier, aucun commit ni push implicite.
+
+**Choix validé U150 — 14 septembre 2026 : React Flow avec interface sur mesure est retenu pour la suite d’Atlas.** Laurent tranche explicitement après l’essai U146 : « Pas de débat : React Flow / sur mesure est bien meilleur. Je valide ! ». La comparaison de moteurs est close ; LikeC4 n’est plus candidat à l’intégration, tout en restant une référence d’inspiration et un historique d’essai. Conserver l’arbre gauche, la fiche centrale lisible, la recherche et l’exploration des relations sur le modèle JSON publié. Les mentions de choix non adopté dans l’étude U143 et l’essai U146 ci-dessous décrivent leurs étapes antérieures ; U150 prévaut. La validation porte sur l’orientation technique et ergonomique, sans validation métier ni publication supplémentaire. L’intégration demandée ensuite par U152 est décrite ci-dessus.
 
 Demande de Laurent du **13 septembre 2026** : auditer l’ergonomie d’Atlas, avec une navigation arborescente à gauche et un examen des pages de détail dont les composants sont signalés comme concentrés à droite et trop serrés. Retenir l’arbre à gauche comme orientation de navigation. Sa structure doit provenir des relations explicites du modèle publié ; ne pas déduire les parents des identifiants, inventer des niveaux ou transformer les relations métier transversales en décomposition. Le groupe de présentation Business References reste distinct d’un niveau sémantique d’urbanisme. La demande porte sur l’audit, sans publication ni validation métier supplémentaire. Voir [l’audit ergonomique](audits/2026-09-13-ergonomie-atlas.md).
 
 Précision U133 du même jour : supprimer les visites récentes de l’interface. Ne pas les conserver dans un accès secondaire.
 
 **Réalisation U135 — 13 septembre 2026 :** le Go suivant l’audit autorise sa mise en œuvre dans Atlas. Navigation par arbre gauche à largeur réglable, expansion et sélection conservées ; sur écran étroit, arbre en tiroir. Fiche métier centrale avec Finalité, Définition, Périmètre et réserves visibles ; sources, révision et portée détaillée dans une section ouvrable. Aucun historique de visites récentes. La recherche et ses filtres portent sur la publication consultée ; aucun synonyme provenant du backlog n’est ajouté implicitement. Les anciennes coquilles de navigation vides reviennent à Urbanisation. Cette évolution de l’interface ne publie ni ne valide de contenu métier.
+
+**Étude U143 — 14 septembre 2026 :** rechercher des outils modernes de cartographie pour enrichir l’expérience d’exploration ; pistes citées par Laurent : Cytoscape.js, LikeC4, React Flow et IcePanel. La génération, la compréhension et la maintenance du code par IA sont un critère explicite. Voir [l’étude d’inspiration](marche/etudes/2026-09-14-exploration-atlas/etude.md) et ses sources. Les choix de moteur et parcours qui y sont proposés restent des recommandations ; la demande n’autorise pas à les considérer comme adoptés ni à modifier le modèle. L’arbre gauche et la suppression des visites récentes restent acquis.
+
+**Essai U146 — 14 septembre 2026 :** le Go suivant U143 autorise un prototype comparatif React Flow / LikeC4, dans `prototypes/atlas-exploration/`, avec arbre, recherche, fiche centrale et relation D07.c → D04.h sur la même publication v003. Le [bilan](prototypes/atlas-exploration/bilan.md) conserve résultats et limites. Le prototype consulte une publication précise via l’API Atlas ; la projection LikeC4 est générée depuis l’index/descripteur et ne constitue pas une autorité parallèle. Les liens agrégés sont explicités et retrouvent leurs relations sources. Cet essai n’adopte pas définitivement un moteur, ne remplace pas l’application courante et ne publie aucun contenu métier. Les travaux U144/U145 du backlog restent distincts.
 
 ## Règles courantes de publication et d’Atlas — U117 à U123
 
@@ -326,3 +366,151 @@ Un réexamen discuté replace l’élément en cours d’instruction, en conserv
 La seule introduction de `lifecycle` selon U131 ne modifie aucun contenu déjà approuvé : le workflow peut transcrire les accords existants sous de nouveaux identifiants pour la révision suivante, uniquement si le contenu hors lifecycle est strictement identique et si chaque valeur approuvée conserve son empreinte. Il conserve auteur, date et sources d’origine et ajoute la provenance de migration U131. Toute modification métier reste soumise au contrôle habituel ; U131 n’est pas une nouvelle validation métier.
 
 Backlog et release restent indépendants de ce cycle : les trois statuts sont publiables. Les anciennes releases restent immuables et affichent leurs statuts historiques ; les nouveaux libellés s’appliqueront dans Atlas à la prochaine publication qui contient lifecycle. Ne pas assimiler le cycle des éléments de cartographie aux statuts de preuve des faits As Is.
+
+
+## Retrait de D02 — U145, 14 septembre 2026
+
+Le backlog retire D02 Resource Availability and Commitments et ses capacités résiduelles D02.a/D02.d selon U145. Ne pas renuméroter les autres domaines, ni réutiliser ces identifiants. D02.b/D02.c restent rattachées à Inventory Management (D01) et D02.e à Order Promising (D03) : les préfixes ne définissent pas les parents. Conserver l’état antérieur dans `modeles/backlog/history/pre-U145.json` et la reprise dans `audits/2026-09-14-d02-couverture.md` (C79). Le backlog contient 34 capacités ; v003 conserve son contenu publié jusqu’à une nouvelle release. Le retrait n’adopte pas de nouvelles définitions pour les capacités d’accueil.
+
+
+## Revue D03 — U147
+
+U147 rouvre ATP/CTP et la complétude des décisions : CTP n’est plus à laisser hors discussion au motif de U95, mais son rang reste à arbitrer. Présenter les actions dans l’ordre Promise Proposal, Promise Confirmation, Promise Revision, Supply Assignment, sans ordre de workflow induit. Aligner progressivement le vocabulaire Case/demande et Order/commande, en distinguant les besoins de simulation ou prévision. Ressource/fourniture, Allocation Eligibility Decision et Supply Creation Decision sont en réexamen ; conserver les valeurs approuvées jusqu’à arbitrage des remplacements. Propositions structurées dans `modeles/backlog/d03-review.json`, appuis et limites dans `marche/revue-d03-decisions-vocabulaire.md`. Aucun ajout automatique de capacité ni publication.
+
+
+## Granularité des décisions D03 — U151
+
+Laurent retient ATP/CTP/PTP comme niveau des aptitudes de décision à cartographier. Aligner les propositions sur ce niveau métier plutôt que créer une capacité autonome pour chaque choix de source, règle d’allocation ou critère. L’alternative structurée `D03-ALIGNMENT-U151` du backlog propose la recomposition avec Delivery Schedule Decision et les quatre actions conservées. Les règles et choix absorbés restent à documenter ; ne pas supprimer leur couverture. Les définitions nouvelles et cette recomposition détaillée ne sont pas encore validées. Préserver l’écart documenté entre le plan d’adaptation CTP envisagé localement en U148 et les réalisations de marché.
+
+
+## Adoption D03 et priorité de vocabulaire — U154
+
+U154 valide la recomposition D03 à huit capacités : quatre actions dans l’ordre convenu et quatre décisions D03.i–l (ATP, CTP, PTP, Delivery Schedule Decision). D03.d–h sont retirées, conservées dans `modeles/backlog/history/pre-U154.json`. Cette adoption remplace les mentions historiques de neuf capacités et l’état proposé de U151 ; pas de renumérotation ni de release implicite. Les choix fins restent à documenter dans les aptitudes larges. Le CTP local est le plan d’adaptation U148, avec provenance et écart au marché conservés. Explorer maintenant seulement le point 6 : Requirement/Order et Case/Demand/Command ; le substantif des ressources (point 5) attend. Ne renommer aucun objet automatiquement ni confondre Purchase Requisition et Requirement. Les usages Storeland/ECC rapportés par Laurent restent des déclarations, pas une preuve de déploiement exhaustif.
+
+
+## Carnet d’Orders — U157
+
+Laurent demande de considérer les Orders comme des éléments d’un carnet qui se travaille : priorisation, découpage, évaluation et engagement. Cette orientation ne fusionne pas Case et Order et ne choisit pas un produit. Le backlog opérationnel est distinct du dossier de conception `modeles/backlog/`. Examiner le recouvrement Backlog Management / Supply Assignment et les capacités D03/D04 par leurs résultats ; ne pas assimiler périmètre produit et définition locale, ni ajouter deux aptitudes redondantes. C82 et `marche/backlog-management-supply-assignment.md` corrigent l’opposition trop simple entre produit de simulation et simple application. Aucun renommage ou fusion adopté.
+
+
+## Hypothèse de domaine Backlog Management — U158
+
+Explorer Backlog Management comme nom et espace problématique de D03, plutôt qu’ajouter une capacité générale de même nom à côté de Supply Assignment. Option dans `D03-BACKLOG-DOMAIN-U158` ; aucune adoption définitive. Examiner la frontière avec D04 et les résultats de Supply Assignment, dont l’évaluation de scénarios. La simulation peut exprimer une aptitude métier mais son existence comme mode produit ne suffit pas ; éviter les doublons ATP/CTP/PTP. Le découpage U154 reste actif jusqu’à nouvel arbitrage.
+
+
+## Calcul et simulation — U159
+
+Dans l’exploration D03, ATP/CTP/PTP calculent des solutions ; la simulation mesure leurs impacts au niveau global selon la précision explicite de Laurent. Ne plus la traiter par défaut comme un simple mode ou doublon de ces calculs. Les mécanismes peuvent être partagés, les résultats sont distincts ; les calculs ne sont pas nécessairement limités à une commande isolée. Nom, définition détaillée, indicateurs et rattachement de la capacité de simulation restent à valider.
+
+
+## Méthode capacités et activité de refinement — U161/U162
+
+Ne pas construire un catalogue de services en transformant les étapes et contrôles nécessaires à l’implémentation des processus en capacités. Partir de ce que sait faire durablement l’entreprise, indépendamment de son organisation et de ses outils. Les fonctions produit servent d’illustrations et d’épreuves, sans imposer la granularité de la carte.
+
+Dans la discussion D03/D04, Laurent emploie grooming au sens de **Backlog Refinement, une activité**, pas une capacité. Order Qualification est retirée des candidats U160 car les vérifications évoquées relèvent ici d’un principe général de contrôle. Le rapprochement Order Structuring/Order Revision et la portée d’Order Prioritization restent en instruction ; aucun nouveau nom validé. Voir [le réexamen](marche/d03-d04-capacites-manquantes.md) et l’annexe JSON des candidats. Ne pas étendre Prioritization à tout le refinement par déduction.
+
+
+## Adoption Order Prioritization — U163
+
+U163 valide Order Prioritization dans D03 : « Établir et réviser les priorités relatives des commandes. » Le backlog contient désormais D03.m et sa relation explicite à D03, soit neuf capacités dans ce domaine. Nom et définition discutée portent la validation ; finalité et codification de nature ajoutées par Codex restent proposées. Cette décision remplace l’état en instruction d’Order Prioritization mentionné pour U161/U162. Ne pas élargir cette capacité à tout le Backlog Refinement, à la révision du contenu ou à la confirmation de promesse. Le nom de domaine Backlog Management reste une hypothèse. Aucune publication automatique.
+
+
+## Intentions, Orders et demande d’exécution — U165
+
+Laurent exclut le pattern logiciel Command du contenu métier de la carte. Il réaffirme Order dans Supply et précise la finalité de l’univers amont : faire émerger et affiner les intentions des parties prenantes en demandes ou problèmes à résoudre ; leur résolution mobilise des Orders Supply, laquelle sollicite des plateformes exécutantes. Le nom actuel Case doit être réexaminé car il désigne une mécanique ; aucun remplacement choisi.
+
+Command comme objet métier de demande d’exécution est une hypothèse en instruction, distincte du pattern technique et d’une capacité. Ne pas instancier cet objet, créer un univers Execution, imposer de cardinalité ou renommer des capacités par simple déduction. D07 fournit un point d’appui à éprouver. La logistique reste hors développement FLOW, en adhérence. Voir l’annexe `modeles/backlog/vocabulary-review.json` et l’étude de vocabulaire, complément U165.
+
+
+## Plateforme exécutante au-delà de la logistique — U167
+
+Laurent confirme que la plateforme de services ne doit pas être enfermée dans la logistique. Étudier la demande d’exécution comme prestation métier générique. Service Order est une proposition de Codex appuyée sur le vocabulaire TM Forum/SAP, sans adoption du nom, schéma, catalogue, domaine ni nouveau modèle d’objets. Les résultats attendus, conditions demandées, prise en charge et faits réalisés restent distincts ; aucune extension du développement FLOW à la logistique n’est déduite.
+
+
+## Orders contextualisés Supply / Services — U168
+
+Laurent affirme des Orders Supply et des Orders de service, avec des définitions propres aux contextes Supply et Services. Préserver cette frontière sémantique et les contrats explicites entre modèles ; ne pas imposer un Order universel ni un cycle commun. Cette orientation ne valide pas tout le schéma proposé U167. La qualification stricte et la granularité des bounded contexts DDD restent à instruire : ne pas transformer automatiquement univers ou domaines de capacités en bounded contexts, ni créer un univers Services ou un découpage logiciel par déduction.
+
+
+## Validation de la frontière Supply / Services — U169
+
+U169 valide la distinction des modèles et des Orders contextualisés présentée après U168. Supply Order : commande dont on travaille couverture, priorités et promesse. Service Order : commande de prestations confiées à un exécutant. Supply décide comment satisfaire les commandes ; Services organise et réalise les prestations puis rend compte des résultats. Employer Order localement lorsque le contexte est clair, et Supply Order / Service Order dans les comparaisons et échanges.
+
+Conserver des contrats explicites entre modèles sans objet Order partagé ni cycle commun imposé. Les domaines de capacités sont des espaces problématiques ; les bounded contexts délimitent la validité des modèles. Granularité interne ouverte : aucun univers Services, nouveau type de nœud, objet détaillé, cardinalité ou déploiement n’est créé par cette validation. Les attributs U167 restent proposés. La portée validée et ses empreintes figurent dans `modeles/backlog/vocabulary-review.json`, section `context_boundaries_U168`. Cette section remplace les mentions historiques de nom Service Order seulement proposé. Aucune publication implicite.
+
+
+## Réexamen Case / Business Processes — U170
+
+Laurent rouvre explicitement le nom et la définition de l’univers Case et propose « Processus métier ? ». Conserver Business Processes comme candidat en instruction, sans renommage automatique. Distinguer le nom d’une couche d’organisation des processus du périmètre métier d’un univers ; Supply et Services possèdent aussi des processus. La définition amont reformulée par Codex porte la prise en charge des intentions, leur précision en demandes/problèmes et leur traitement jusqu’au résultat attendu ; elle reste proposée. État courant et portée dans `modeles/backlog/vocabulary-review.json`, `upstream_universe_review`.
+
+
+## Offre amont et plateforme Case Management — U171
+
+Laurent précise que l’approche s’appuie sur une plateforme de Case Management pour les processus métier de durée moyenne ou longue qui impactent l’entreprise. L’offre s’adresse aux clients, fournisseurs, partenaires et services internes ; aucun seuil temporel fixé. Codex propose Business Services comme nom d’univers métier amont, sans adoption. Distinguer offre/résultat pour les parties prenantes, processus de traitement et plateforme qui les réalise ; conserver la frontière avec les prestations du contexte Services U169. Cette orientation ne transforme pas les capacités Supply en services applicatifs et n’instancie ni catalogue ni nouveaux objets. Proposition structurée dans `modeles/backlog/vocabulary-review.json`.
+
+
+## Plateforme des processus transverses — U172
+
+Laurent précise les besoins de la plateforme amont : portail, espaces par utilisateur, management des demandes, planification et affectation des contributions lorsque plusieurs services interviennent, à l’image d’un service desk. Elle doit représenter les grands processus transverses de l’entreprise. Consigner ces besoins dans le modèle processus à construire ; ne pas les transformer automatiquement en capacités Supply ni démarrer un développement de portail.
+
+Distinguer affectation du travail et des responsabilités des équipes, Supply Assignment et planification des contributions versus échéancier de fourniture. Les services organisationnels, l’offre de services métier et les prestations exécutantes ne sont pas synonymes. Business Services reste un nom candidat ; la définition amont actualisée par Codex reste proposée. Voir `upstream_universe_review.platform_scope_U172` dans l’annexe JSON de vocabulaire.
+
+
+## Business Services adopté — U173
+
+U173 valide **Business Services** et sa définition : « Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie prenante au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à leur réalisation. » L’univers du backlog garde l’identifiant `universe-case`, passe en révision 2 et porte la validation du nom et de la définition. Son ancien état est conservé dans `modeles/backlog/history/pre-U173.json` et les publications historiques.
+
+Les quatre dimensions présentées — accès des parties prenantes, travail des équipes, coordination, pilotage transverse — sont validées comme descriptions du périmètre dans l’annexe JSON. **Les domaines de Business Services seront travaillés plus tard** : ne pas transformer ces dimensions ou les fonctions du portail en domaines/capacités. Case Management reste l’approche de réalisation et Case peut désigner le dossier ; l’univers s’appelle désormais Business Services. Cette section remplace les mentions antérieures de nom candidat. Aucun renommage du contexte Services exécutant, aucune publication implicite.
+
+
+## Point 6 clos, point 5 actif — U174
+
+Laurent clôt explicitement le point 6 de vocabulaire et demande de travailler le point 5, consacré au substantif des biens/ressources mobilisés dans Supply. Respecter cette clôture : ne pas rouvrir les alternatives historiques Demand/Requirement, ni en déduire leur validation générale. Les portées adoptées restent conservées. Point 5 à instruire pas à pas à partir de la préférence pour ressource plutôt que fourniture ; aucun remplacement global automatique. Statut de travail dans les annexes JSON `vocabulary-review.json` et `d03-review.json`.
+
+
+## Point 5 : stock et mouvement — U175
+
+Laurent apprécie Resource comme terme générique mais souligne son sens dépendant du contexte : magasin dans Fulfillment Network, bien transporté, etc. Ne pas adopter la définition restreinte U174 comme définition universelle. Examiner d’abord si les biens stockés et transportés appellent des objets distincts. La proposition de continuité des biens avec représentations distinctes de stock et d’acheminement reste à instruire ; aucun objet ajouté. Point 6 toujours clos. Voir l’annexe de vocabulaire et `marche/ressource-stock-et-mouvement.md`.
+
+
+## Audit article / SKU / unité logistique — U176
+
+La demande U176 audite les distinctions SAP, Microsoft et GS1 sur le point 5. Ne pas traiter l’hypothèse SKU = unité physique insécable comme validée. Conserver les contextes des noms Material/Product/Article, Item et Stockkeeping Unit. L’audit propose de distinguer référence, quantité/unité de mesure, biens suivis, conditionnement et unité logistique ; ces propositions ne créent ni objets ni capacités. Resource reste générique et contextualisé. Les fonctions d’emballage des produits ne transfèrent pas l’exécution logistique à FLOW ; les références restent ingérées depuis leurs maîtres externes.
+
+Sources et limites : `marche/etudes/2026-09-14-articles-biens-unites-logistiques/`. Résultats structurés : `modeles/backlog/item-logistic-unit-audit.json`. Glossaire complété, C87. Point 6 clos, domaines Business Services différés ; aucun renommage métier ni publication déduit de l’audit.
+
+
+## Définition SAP Article et lecture du modèle — U181
+
+L’audit U176 est complété par la définition explicite SAP d’une plus petite unité ou d’un conditionnement client commandable indépendamment et non subdivisible. Ne pas remplacer cette définition par notre synthèse référence de gestion. Conserver aussi les catégories SAP génériques abstraites et structurées décomposables ; leur réconciliation par une indivisibilité commerciale contextuelle reste une interprétation. Voir C89 et marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md. Cela ne valide ni le sens universel de SKU ni un nouveau terme du modèle local.
+
+
+## Exploration guidée par le stock unifié — U187
+
+Laurent demande de revenir aux entités en partant du modèle de stock unifié. Les références d’article seules ne suffisent pas ; prendre en compte les conditionnements des flux Inbound et Outbound, qui peuvent différer. Ces deux termes sont une préférence utilisateur explicite. L’exploration ciblée est consignée dans modeles/backlog/unified-inventory-packaging.json et connaissance/28-stock-unifie-et-conditionnements.md. L’orientation ne valide pas automatiquement les noms Container/Logistic Unit, le schéma ou les relations proposés par Codex. L’inventaire exhaustif reste différé ; les propositions n’instancient pas d’objets dans la carte. Préserver la responsabilité externe de l’exécution logistique et des référentiels.
+
+
+**Précision U188 :** le modèle de stock unifié doit permettre le reconditionnement des contenants entrants pour le stockage et la création des contenants outbound au moment du packing. Ne pas présumer une identité ou une composition inchangée entre entrée, stockage et sortie. L’orientation est conservée dans l’annexe U187 ; les entités détaillées, leurs relations et responsabilités proposées restent à instruire. La logistique exécutante demeure en adhérence de FLOW.
+
+
+**Précision U189 :** dans le modèle local, prendre en compte le packing contractuel dans la promesse ATP d’une commande B2B ; ne pas assimiler stock présent et livraison conforme réalisable. La constitution à la volée des containers U188 ne dispense pas d’évaluer le conditionnement attendu avant la promesse. Les rôles proposés D11/D04/D06/D03/D07 restent à instruire ; aucune nouvelle capacité ou définition éditeur n’est adoptée par déduction.
+
+
+## Première structure d’entités du stock unifié — U190
+
+Laurent propose Product, Article ou Product Unit, Container et Container Unit, avec références de design, localisation directe et contenants imbriqués. L’exploration ciblée des objets est désormais explicitement en cours dans la feuille de route, sans inventaire exhaustif ni instanciation prématurée dans la carte. Conserver la distinction entre proposition utilisateur, précision de grain à obtenir et libellés proposés par Codex. Ne pas déduire une sérialisation ou une indivisibilité d’un code-barres ; ne pas créer un univers Design ni transférer la maîtrise des références à FLOW par cette mention. Voir modeles/backlog/unified-inventory-packaging.json, entity_structure_review, et connaissance/28-stock-unifie-et-conditionnements.md.
+
+
+**Clarification U191/U192 :** Article/Product Unit désigne chaque exemplaire physique avec son identité propre ; cette question de grain est tranchée et ne doit pas être reposée comme ouverte. Laurent confirme l’indépendance vis-à-vis du code-barres. Préserver cette portée explicite sans valider automatiquement tous les noms, liens, identifiants ou mécanismes de traçabilité. Les références et unités concrètes restent des concepts en exploration dans l’annexe ; aucune création automatique d’univers Design ou de maîtrise locale des référentiels.
+
+
+**Précision U193 :** Product Unit peut porter un Serial Number, indépendant du support code-barres. Product Variant est introduit comme niveau auquel rapprocher le GTIN de référence commerciale. La structure Product/Variant/Unit reste en instruction dans l’annexe du stock unifié ; le grain individuel U191 reste acquis. Ne pas imposer de série fabricant, de GTIN ou de support particulier à toute unité, ni de bijection variante/GTIN : distinguer les conditionnements commerciaux et l’identité du contenant physique.
+
+
+**Décision U195 :** Product est le concept commun et porte un rôle **Article** ou **Container**. Retenir le choix du rôle au niveau Product, sans imposer deux familles indépendantes de référentiels. Product Unit conserve le grain individuel U191 ; Article devient un nom de rôle, non l’alternative courante au nom générique Product Unit. Principe et noms validés, définitions détaillées et multiplicité des rôles encore ouvertes. Les anciennes hypothèses U190/U194 sont historiques sur ces points. Portée dans `modeles/backlog/unified-inventory-packaging.json`, `entity_structure_review.product_roles_decision`.
+
+
+**Besoin U196 :** les textes du modèle (libellés, descriptions, etc.) doivent pouvoir référencer explicitement des notions du glossaire. Proposition JSON dans `modeles/backlog/glossary-text-references.json` : segments de texte et identifiants stables, glossaire figé par publication, liens lexicaux distincts des relations métier. Ce contrat reste proposé ; les champs actifs sont encore des chaînes et le glossaire documentaire n’est pas encore migré. Ne pas annoncer les liens Atlas comme disponibles ni déduire une validation des définitions par leur référencement.
+
+
+**Précision U197, remplace le format proposé U196 :** conserver les textes en chaînes JSON lisibles ; Laurent écarte les tableaux de segments au profit d’une syntaxe légère de type Markdown. Proposition courante : `[texte affiché](glossary:IDENTIFIANT)`. Identifiants stables et glossaire figé par publication restent les principes proposés. La syntaxe exacte et son parseur ne sont pas encore validés/implémentés ; ne pas présenter les liens Atlas comme disponibles. Historique et contrat courant dans `modeles/backlog/glossary-text-references.json`.

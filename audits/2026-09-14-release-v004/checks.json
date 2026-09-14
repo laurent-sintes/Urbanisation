@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-09-14T14:57:40.968518+00:00",
+  "version": "2026-09-14.1",
+  "revision": 4,
+  "descriptor": "urbanisation-v004-2026-09-14-145044.yaml",
+  "model_tests": 79,
+  "javascript_tests": 33,
+  "http_tests": {
+    "passed": 20,
+    "skipped": 2
+  },
+  "validation_errors": 0,
+  "glossary_terms": 93,
+  "release_activated": true,
+  "historical_files_unchanged": 47,
+  "commit": false,
+  "push": false
+}

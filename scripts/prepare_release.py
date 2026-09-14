@@ -17,12 +17,16 @@ import uuid
 
 try:
     from .element_versions import assign_versions
+    from .glossary import reference_impacts
+    from .structured_io import working_path
     from .release_catalog import resolve_release, register
     from . import publish_release as publisher
     from .json_contract import validate as validate_contract
     from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism
 except ImportError:
     from element_versions import assign_versions
+    from glossary import reference_impacts
+    from structured_io import working_path
     from release_catalog import resolve_release, register
     import publish_release as publisher
     from json_contract import validate as validate_contract
@@ -237,9 +241,12 @@ def revision_errors(previous_snapshot, snapshot):
 def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=None):
     models, pointer, previous, inputs, manifest_path = load_current(root)
     version = valid_version(version or suggested_version(models))
-    live_path = models / 'backlog/model.json'
+    live_path = working_path(models / 'backlog')
     live = read(live_path)
     snapshot = copy.deepcopy(live)
+    glossary_path = working_path(models / 'backlog', 'glossary')
+    if glossary_path.exists():
+        snapshot['glossary'] = read(glossary_path)
     snapshot.update(space='backlog', version=version, as_of=version.split('.')[0])
     for collection in ('nodes', 'relations'):
         for item in snapshot[collection]:
@@ -250,7 +257,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'])
     explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
-    deferred_paths = [p for p in sorted((models / 'backlog').glob('*.json')) if p.name != 'model.json']
+    deferred_paths = [working_path(models / 'backlog', stem) for stem in sorted({p.stem for p in (models / 'backlog').iterdir() if p.suffix in ('.json', '.yaml', '.yml') and p.stem not in ('model', 'glossary')})]
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
     for path in deferred_paths:
         all_refs.update(references(read(path)))
@@ -269,14 +276,15 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     errors += validate_release(candidate, decisions, snapshot, sources, urbanism_schema)
     deferred_artifacts = []
     for path in deferred_paths:
-        previous_path = models / 'revisions' / pointer['version'] / 'deferred' / path.name
+        previous_path = working_path(models / 'revisions' / pointer['version'] / 'deferred', path.stem)
         deferred_artifacts.append({'path': path.relative_to(models).as_posix(), 'sha256': digest(path),
                                    'comparison': 'changed' if previous_path.exists() and read(previous_path) != read(path) else 'unchanged' if previous_path.exists() else 'baseline_not_captured',
                                    'changes': changes(read(previous_path), read(path)) if previous_path.exists() else [],
                                    'disposition': 'frozen_as_context_only_not_published_as_model'})
     report = {'schema_version': '1.0.0', 'base_version': pointer['version'], 'candidate_version': version,
               'element_version_changes': element_changes,
-              'publication_is_business_validation': False, 'changes': model_diff(previous, candidate),
+              'glossary_reference_impacts': reference_impacts(previous, candidate),
+              'publication_is_business_validation': False, 'glossary_changes': changes(previous.get('glossary'), candidate.get('glossary')), 'changes': model_diff(previous, candidate),
               'retained_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] in {o['id'] for o in inputs['decisions']['decisions']}],
               'deferred_decisions': deferred_decisions,
               'new_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] not in {o['id'] for o in inputs['decisions']['decisions']}],
@@ -287,7 +295,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
               'note': 'Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés.'}
     return {'models': models, 'pointer': pointer, 'snapshot': snapshot, 'decisions': decisions,
             'provenance': provenance, 'candidate': candidate, 'report': report,
-            'backlog_sha256': digest(live_path), 'base_manifest_sha256': digest(manifest_path),
+            'backlog_sha256': digest(live_path), 'glossary_sha256': digest(glossary_path) if glossary_path.exists() else None, 'base_manifest_sha256': digest(manifest_path),
             'publication_refs': publication_refs}
 
 
@@ -307,8 +315,8 @@ def prepare(root, version, source_refs, additional_path=None):
     temporary = destination.parent / ('.prepare-' + uuid.uuid4().hex)
     temporary.mkdir()
     try:
-        for name, key in [('backlog.json', 'snapshot'), ('decisions.json', 'decisions'),
-                          ('source-records.json', 'provenance'), ('candidate.json', 'candidate'), ('report.json', 'report')]:
+        for name, key in [('backlog.yaml', 'snapshot'), ('decisions.json', 'decisions'),
+                          ('source-records.json', 'provenance'), ('candidate.yaml', 'candidate'), ('report.json', 'report')]:
             write(temporary / name, bundle[key])
         deferred = []
         for record in bundle['report']['deferred_artifacts']:
@@ -319,8 +327,8 @@ def prepare(root, version, source_refs, additional_path=None):
                              'source_path': record['path'], 'source_sha256': record['sha256']})
         manifest = {'schema_version': '1.0.0', 'kind': 'prepared_release', 'version': version,
                     'base_pointer': bundle['pointer'], 'base_manifest_sha256': bundle['base_manifest_sha256'],
-                    'live_backlog_sha256': bundle['backlog_sha256'], 'publication_source_refs': source_refs,
-                    'files': {name: digest(temporary / name) for name in ('backlog.json', 'decisions.json', 'source-records.json', 'candidate.json', 'report.json')},
+                    'live_backlog_sha256': bundle['backlog_sha256'], 'live_glossary_sha256': bundle['glossary_sha256'], 'publication_source_refs': source_refs,
+                    'files': {name: digest(temporary / name) for name in ('backlog.yaml', 'decisions.json', 'source-records.json', 'candidate.yaml', 'report.json')},
                     'schemas': {name: digest(models / 'schemas' / name) for name in ('urbanism.schema.json', 'decisions.schema.json')},
                     'deferred': deferred}
         write(temporary / 'manifest.json', manifest)
@@ -331,7 +339,7 @@ def prepare(root, version, source_refs, additional_path=None):
                 raise ValueError('Unsafe staging cleanup target')
             shutil.rmtree(temporary)
     return {'prepared_manifest': str(destination / 'manifest.json'), 'report': str(destination / 'report.json'),
-            'candidate': str(destination / 'candidate.json'), 'release_activated': False}
+            'candidate': str(destination / 'candidate.yaml'), 'release_activated': False}
 
 
 def publish_prepared(root, version, activate=False):
@@ -343,9 +351,13 @@ def publish_prepared(root, version, activate=False):
         raise ValueError('Invalid prepared manifest')
     if manifest['base_pointer'] != pointer or digest(current_manifest_path) != manifest['base_manifest_sha256']:
         raise ValueError('Current release changed since preparation; prepare a fresh candidate')
-    if digest(models / 'backlog/model.json') != manifest['live_backlog_sha256']:
+    if digest(working_path(models / 'backlog')) != manifest['live_backlog_sha256']:
         raise ValueError('Backlog changed since preparation; prepare a fresh candidate')
-    required_files = {'backlog.json', 'decisions.json', 'source-records.json', 'candidate.json', 'report.json'}
+    glossary_path = working_path(models / 'backlog', 'glossary')
+    glossary_hash = digest(glossary_path) if glossary_path.exists() else None
+    if glossary_hash != manifest.get('live_glossary_sha256'):
+        raise ValueError('Glossary changed since preparation; prepare a fresh candidate')
+    required_files = {'backlog.yaml', 'decisions.json', 'source-records.json', 'candidate.yaml', 'report.json'}
     if set(manifest['files']) != required_files:
         raise ValueError('Prepared manifest file inventory mismatch')
     for name, sha in manifest['files'].items():
@@ -359,14 +371,14 @@ def publish_prepared(root, version, activate=False):
             raise ValueError('Deferred artifact hash mismatch')
         if digest(checked_path(models, item['source_path'])) != item['source_sha256']:
             raise ValueError('Backlog context changed since preparation; prepare a fresh candidate')
-    snapshot, decisions, provenance = (read(stage / name) for name in ('backlog.json', 'decisions.json', 'source-records.json'))
+    snapshot, decisions, provenance = (read(stage / name) for name in ('backlog.yaml', 'decisions.json', 'source-records.json'))
     if snapshot['version'] != version or decisions['version'] != version:
         raise ValueError('Prepared input version mismatch')
     source_refs = manifest['publication_source_refs']
     if not source_refs or not set(source_refs) <= {r['id'] for r in provenance['records']}:
         raise ValueError('Missing prepared publication evidence')
     release = publisher.compile_snapshot(snapshot, decisions, version, source_refs)
-    if release != read(stage / 'candidate.json'):
+    if release != read(stage / 'candidate.yaml'):
         raise ValueError('Prepared candidate differs from current compiler result')
     errors = validate_sources(provenance)
     errors += validate_contract(decisions, read(models / 'schemas/decisions.schema.json'))
@@ -383,12 +395,12 @@ def publish_prepared(root, version, activate=False):
     release_dir.mkdir()
     revision_dir.mkdir()
     proof_dir.mkdir()
-    write(revision_dir / 'backlog.json', snapshot)
+    write(revision_dir / 'backlog.yaml', snapshot)
     write(decision_path, decisions)
     write(proof_dir / 'source-records.json', provenance)
     for item in manifest['deferred']:
         write(checked_path(revision_dir, item['path']), read(checked_path(stage, item['path'])))
-    write(release_dir / 'model.json', release)
+    write(release_dir / 'model.yaml', release)
     write(release_dir / 'changes.json', read(stage / 'report.json'))
     report=read(stage / 'report.json')
     notes=[f"# Urbanisation — version {release['revision']}", '', f"Publication {version} · modèle modifié le {release['last_modified']}.", '',
@@ -400,15 +412,21 @@ def publish_prepared(root, version, activate=False):
             renaming=next((c for c in item.get('changes',[]) if c['path']=='/fields/name'),None)
             detail=(' — '+item['fields']['name']) if 'fields' in item else (' — '+str(renaming['before'])+' → '+str(renaming['after'])) if renaming else ' — contenu ou notice actualisé'
             notes.append(f"- {action} : {item['id']}" + detail)
+    if report.get('glossary_changes'):
+        notes += ['', '## Glossaire', '', f"{len(release.get('glossary', {}).get('terms', []))} termes figés dans cette publication. Les liens sont résolus dans cette même version."]
+        term_changes = [item for item in report['element_version_changes'] if item['collection'] == 'glossary']
+        notes.append(f"{sum(item['reason']=='new' for item in term_changes)} termes introduits ; {sum(item['reason']=='changed' for item in term_changes)} révisés. Détail des changements, y compris retraits éventuels, dans changes.json.")
+        for impact in report.get('glossary_reference_impacts', []):
+            notes.append(f"- Sens à réexaminer : {impact['id']} ({impact['field']}) référence {', '.join(impact['changed_terms'])}.")
     notes+=['', '## Validations et points ouverts', '',
             f"{len(report['retained_decision_ids'])} décisions antérieures conservées ; {len(report['deferred_decisions'])} suspendues pour les révisions modifiées.",
             f"{sum('-LIFECYCLE-r' in key for key in report['new_decision_ids'])} accords transcrits à portée identique pour le cycle U131 ; {sum('-LIFECYCLE-r' not in key for key in report['new_decision_ids'])} autres décisions nouvelles sourcées.",
-            'Aucune publication ne vaut validation métier. Les noms conditionnels de D05, le résiduel D02 et les frontières Supply restent à instruire.', '']
+            'Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.', '']
     notes += [f"- {d['id']} ({d['target']}) : conservée dans l’historique, reprise suspendue pour cette révision." for d in report['deferred_decisions']]
     notes += ['', 'Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.', '']
     (release_dir/'release-notes.md').write_text('\n'.join(notes),encoding='utf-8')
-    output = {'schema_version': '1.0.0', 'version': version, 'model_sha256': digest(release_dir / 'model.json'),
-              'input_revision_path': f'../../revisions/{version}/backlog.json', 'input_revision_sha256': digest(revision_dir / 'backlog.json'),
+    output = {'schema_version': '1.0.0', 'version': version, 'model_path': 'model.yaml', 'model_sha256': digest(release_dir / 'model.yaml'),
+              'input_revision_path': f'../../revisions/{version}/backlog.yaml', 'input_revision_sha256': digest(revision_dir / 'backlog.yaml'),
               'decisions_path': f'../../decisions/{version}.json', 'decisions_sha256': digest(decision_path),
               'provenance_path': f'../../provenance/{version}/source-records.json', 'provenance_sha256': digest(proof_dir / 'source-records.json'),
               'source_files': release['source_files'], 'node_count': len(release['nodes']),

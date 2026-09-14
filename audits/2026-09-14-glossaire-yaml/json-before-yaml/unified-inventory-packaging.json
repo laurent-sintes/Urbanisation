@@ -1,0 +1,593 @@
+{
+  "id": "UNIFIED-INVENTORY-PACKAGING-U187",
+  "space": "backlog",
+  "as_of": "2026-09-14",
+  "source_refs": [
+    "U175",
+    "U183",
+    "U187",
+    "U188",
+    "U189",
+    "U190",
+    "U191",
+    "U192",
+    "U193",
+    "U194",
+    "U195"
+  ],
+  "model_basis": {
+    "path": "modeles/backlog/model.json",
+    "version": "2026-09-13.3",
+    "sha256": "af65e847b40899fce80490ab03a75488facc0973950ece3eb3e214b084816ca3"
+  },
+  "user_orientation": {
+    "status": "user_stated",
+    "statements": [
+      "Le modèle de stock unifié guide l’exploration des entités.",
+      "Les références d’article seules ne suffisent pas à décrire les flux.",
+      "Les conditionnements peuvent différer entre inbound et outbound.",
+      "Les conditionnements inbound peuvent être modifiés ou reconstitués pour le stockage.",
+      "Le packing outbound peut créer des contenants à la volée.",
+      "L’ATP d’une commande B2B tient compte du packing contractuel attendu par le client wholesale ; la présence des biens en vrac ne suffit pas à établir une promesse conforme."
+    ],
+    "preferred_terms": [
+      "Inbound",
+      "Outbound"
+    ],
+    "container_wording": "Container est cité par Laurent comme terme Microsoft ; cela ne fixe pas une identité universelle entre packaging et objet Container."
+  },
+  "proposals": {
+    "status": "ai_proposed",
+    "concepts": [
+      {
+        "candidate": "Item / Article Reference",
+        "meaning": "Ce dont on suit les quantités, indépendant des regroupements physiques particuliers."
+      },
+      {
+        "candidate": "Inventory Position",
+        "meaning": "Quantités et états reconnus dans un périmètre de stock, avec les dimensions utiles."
+      },
+      {
+        "candidate": "Logistic Unit / Container",
+        "meaning": "Regroupement physique identifié dont le contenu peut évoluer ; nom local à instruire."
+      },
+      {
+        "candidate": "Packaging Specification / Container Type",
+        "meaning": "Type ou règle de conditionnement, distinct d’un contenant physique particulier."
+      },
+      {
+        "candidate": "Inventory Movement",
+        "meaning": "Fait expliquant une variation ou un transfert, avec point de vue explicite pour qualifier inbound/outbound."
+      },
+      {
+        "candidate": "Packing Requirements",
+        "meaning": "Exigences de conditionnement applicables à une commande, distinctes de la spécification de référence et des containers effectivement constitués ; provenance contractuelle à conserver."
+      }
+    ],
+    "qualified_relations": [
+      {
+        "name": "contains",
+        "from": "Logistic Unit / Container",
+        "to": "Quantité d’un article, ou unité logistique imbriquée si nécessaire",
+        "qualifiers": [
+          "quantity",
+          "unit_of_measure",
+          "lot_or_serial_when_relevant",
+          "effective_period",
+          "source",
+          "planned_or_observed"
+        ],
+        "note": "Relation de composition candidate, pas relation hiérarchique d’urbanisation ni cardinalité universelle."
+      },
+      {
+        "name": "concerns",
+        "from": "Inventory Movement",
+        "to": "Contenu et unités logistiques connus au moment du fait",
+        "qualifiers": [
+          "origin",
+          "destination",
+          "viewpoint",
+          "event_time",
+          "source"
+        ],
+        "note": "Préserver l’historique malgré le reconditionnement ultérieur."
+      },
+      {
+        "name": "applies-to",
+        "from": "Packing Requirements",
+        "to": "Supply Order / Promise candidate",
+        "qualifiers": [
+          "agreement_reference",
+          "applicable_version",
+          "scope",
+          "conditions",
+          "source"
+        ],
+        "note": "Rattachement proposé ; pas de nouvel objet ou lien instancié dans la carte."
+      }
+    ],
+    "invariants": [
+      "Le reconditionnement seul conserve les quantités de biens, hors perte ou transformation à qualifier séparément.",
+      "Ne pas additionner des quantités d’articles et des nombres de colis comme une quantité homogène.",
+      "Ne pas compter deux fois les contenus en cas d’imbrication de contenants.",
+      "Un outbound depuis A et un inbound vers B sont relatifs à leurs points de stock ; dans un périmètre incluant A, B et le transit, un transfert interne ne crée pas de nouveaux biens.",
+      "Distinguer conditionnement prévu et constaté ; la promesse peut précéder la constitution des colis.",
+      "Un fait de composition peut être utile même sans variation de quantité globale ; ne pas appeler chaque reconditionnement réception ou sortie.",
+      "Inbound, stockage et outbound sont des situations/usages à qualifier, pas nécessairement trois natures d’entités ou un cycle obligatoire.",
+      "Un contenant peut être conservé, vidé, réemployé ou remplacé ; le contenu et ses liens datés doivent rester explicables.",
+      "Une contrainte ou estimation de packaging peut précéder la création de l’identité physique du colis ; ne pas imposer tous les containers outbound dès la commande.",
+      "Un contenant mobile et un emplacement de stockage ne sont pas automatiquement une même entité.",
+      "Une promesse locale doit respecter les exigences de packing applicables et leur faisabilité à la date promise ; l’existence préalable des containers physiques n’est pas une condition générale."
+    ]
+  },
+  "illustration": {
+    "status": "illustrative",
+    "scope": "Stock au point A ; biens de même référence, sans pertes ni transformation.",
+    "steps": [
+      {
+        "event": "Inbound reception",
+        "description": "Deux cartons entrants I1 et I2 contenant chacun douze unités.",
+        "goods_at_A": 24
+      },
+      {
+        "event": "Storage repacking",
+        "description": "Réunir les vingt-quatre unités dans un bac de stockage S1 ; les cartons entrants ne contiennent plus ces unités.",
+        "goods_at_A": 24
+      },
+      {
+        "event": "Outbound packing",
+        "description": "Créer les colis O1, O2 et O3 de quatre unités chacun ; douze unités restent dans S1.",
+        "goods_at_A": 24
+      },
+      {
+        "event": "Outbound dispatch",
+        "description": "Expédier O1, O2 et O3, soit douze unités.",
+        "goods_at_A": 12
+      }
+    ],
+    "global_view": "Si le transit et B sont dans le stock unifié, les douze unités parties peuvent rester dans ce périmètre sous une autre position ; la vue attendue en B ne s’ajoute pas à leur existence en transit.",
+    "assumption_note": "Le bac et les quantités sont une illustration Codex, pas un schéma ou un comportement d’entrepôt imposé par Laurent."
+  },
+  "candidate_model_impacts": [
+    {
+      "target_ids": [
+        "D01",
+        "D01.f",
+        "D01.c",
+        "D01.g"
+      ],
+      "assessment": "Éprouver le suivi par contenu et unité logistique, l’historique de composition et les règles de non-double-compte ; capacité nouvelle non déduite."
+    },
+    {
+      "target_ids": [
+        "D03"
+      ],
+      "assessment": "Prendre en compte des contraintes de conditionnement lorsqu’elles affectent la promesse, sans exiger des colis déjà constitués."
+    },
+    {
+      "target_ids": [
+        "D07"
+      ],
+      "assessment": "Recevoir des exécutants les faits de réception, expédition et reconditionnement utiles au pilotage ; grain et autorité des faits à instruire."
+    },
+    {
+      "target_ids": [
+        "D08",
+        "D13"
+      ],
+      "assessment": "Préserver références externes et points du réseau ; ne pas créer un maître de packaging dans FLOW par déduction."
+    },
+    {
+      "target_ids": [
+        "D06"
+      ],
+      "assessment": "Examiner les possibilités de packing/reconditionnement comme contraintes de réalisation connues des services exécutants, sans nouvelle capacité ou réalisation FLOW déduite."
+    }
+  ],
+  "market_sources": [
+    {
+      "id": "MSPACK01",
+      "title": "Microsoft Dynamics 365 SCM — Pack containers for shipment",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-containers",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "support": "Container décrit une structure physique dans laquelle des articles sont emballés ; suivi du contenu, du type, du poids et du volume.",
+      "limit": "Page orientée emballage outbound ; ne prouve pas un objet identique pour tous les scénarios inbound Microsoft."
+    },
+    {
+      "id": "GS1-ID-U190",
+      "title": "GS1 System Architecture",
+      "url": "https://ref.gs1.org/architecture/system-architecture/",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "version": "12.0.0, octobre2024",
+      "support": "Distinction classe commerciale, lot, exemplaire, unité logistique et actif réutilisable ; clés et supports de capture distincts."
+    }
+  ],
+  "scope_limits": [
+    "Aucun objet ou lien ajouté à la carte active ; propositions d’entités dans cette annexe.",
+    "La définition locale d’Article reste en instruction avec les réserves U181.",
+    "Aucune équivalence universelle Container/HU/SSCC/Packaging.",
+    "La logistique exécutante reste hors développement FLOW ; modéliser ses faits utiles ne transfère pas son exécution.",
+    "Les domaines Business Services et l’inventaire exhaustif des objets restent différés."
+  ],
+  "execution_boundary_clarification": {
+    "source_ref": "U188",
+    "user_statement": "La capacité de packing des entrepôts peut créer les containers à la volée.",
+    "proposal": "Le stock unifié reçoit la composition constatée et les faits utiles ; le service exécutant réalise le packing. Granularité, responsabilité de décision et autorité des données à instruire.",
+    "adoption": false
+  },
+  "packing_and_promise": {
+    "source_ref": "U189",
+    "user_requirement": "Le packing contractuel est pris en compte dans le calcul ATP pour le cas B2B décrit.",
+    "proposed_reasoning": [
+      "Identifier les exigences de packing applicables via les conditions contractuelles et leur portée sur la commande.",
+      "Examiner le stock admissible et les possibilités de conditionnement disponibles à temps : prestation, délai et ressources nécessaires lorsqu’elles sont pertinentes.",
+      "Proposer quantités et dates conformes ; si impossible, rendre l’incompatibilité explicite au lieu de supposer une livraison en vrac.",
+      "Constituer les containers physiques lors de l’exécution et rapprocher leur contenu constaté du conditionnement attendu."
+    ],
+    "local_atp_ctp_boundary": "Prendre en compte un packing réalisable dans les moyens et règles existants ne constitue pas à lui seul une adaptation CTP. Un plan modifiant ressources/engagements/politiques relève de l’examen CTP selon notre définition locale ; ce n’est pas une équivalence de nomenclature éditeur.",
+    "illustration": {
+      "status": "ai_proposed_example",
+      "order": "24 unités à livrer en 6 cartons de 4.",
+      "inventory": "24 unités présentes en vrac.",
+      "condition": "Prestation de packing disponible seulement demain.",
+      "consequence": "Le stock seul ne justifie pas une expédition conforme aujourd’hui. Une proposition doit intégrer le packing puis l’acheminement ; les identifiants des six colis peuvent apparaître ultérieurement."
+    },
+    "candidate_responsibilities": [
+      {
+        "target_id": "D11",
+        "role": "Recevoir les conditions contractuelles applicables, sans administrer le contrat maître."
+      },
+      {
+        "target_id": "D04",
+        "role": "Conserver ou référencer les exigences applicables à la commande ; détail de l’objet à instruire."
+      },
+      {
+        "target_id": "D06",
+        "role": "Apprécier les possibilités et contraintes de réalisation du packing."
+      },
+      {
+        "target_id": "D03.i",
+        "role": "Tenir compte de la faisabilité du packing dans la proposition ATP locale."
+      },
+      {
+        "target_id": "D07",
+        "role": "Suivre la prestation et recevoir les faits de packing utiles au rapprochement."
+      }
+    ],
+    "scope": "Exigence illustrée en B2B ; pas une preuve que le packing serait sans importance dans les autres canaux.",
+    "local_adoption_of_detailed_schema": false
+  },
+  "entity_structure_review": {
+    "source_ref": "U190",
+    "state": "under_instruction",
+    "user_proposal": [
+      {
+        "term": "Product",
+        "definition": "Référentiel de design."
+      },
+      {
+        "term": "Article ou Product Unit",
+        "definition": "Référentiel des biens unitaires"
+      },
+      {
+        "term": "Container",
+        "definition": "Référentiel de design."
+      },
+      {
+        "term": "Container Unit",
+        "definition": "Référentiel des contenants dans une unité logistique de stockage ou de transit"
+      }
+    ],
+    "user_relations": [
+      "Articles rattachés à une référence Product.",
+      "Articles stockés directement dans un emplacement logistique ou dans un contenant.",
+      "Contenants pouvant contenir d’autres contenants.",
+      "Unité de contenant rattachée à une référence de contenant."
+    ],
+    "design_universe_status": "Mention utilisateur à préciser ; aucun univers Design instancié ni responsabilité de maître transférée.",
+    "grain_clarification": {
+      "state": "resolved_by_user",
+      "source_ref": "U191",
+      "question": "Article/Product Unit désigne-t-il une référence vendable partagée par des exemplaires ou chaque exemplaire physique ?",
+      "answer_verbatim": "Chaque exemplaire physique, avec son identité propre",
+      "retained_meaning": "Exemplaire physique individuel, avec identité propre.",
+      "rejected_current_interpretation": "Référence vendable commune à plusieurs exemplaires.",
+      "scope": "Grain de Product Unit/Article uniquement ; pas une validation de tous les noms ou attributs proposés."
+    },
+    "barcode_assessment": {
+      "status": "source_based_correction",
+      "findings": [
+        "Le support code-barres et la donnée identifiante qu’il porte sont distincts.",
+        "Un GTIN identifie une classe d’article commercial ; GTIN + numéro de série peut identifier un exemplaire.",
+        "Un SSCC identifie une unité logistique ; cela ne le rend pas identique à l’identifiant permanent d’un contenant réutilisable.",
+        "L’indivisibilité opérationnelle n’est pas démontrée par l’existence d’un identifiant."
+      ],
+      "basis": "GS1 System Architecture, tables4-1 et6-1 ; source relue le2026-09-14."
+    },
+    "ai_proposals": {
+      "state": "ai_proposed",
+      "container_reference_name": "Proposition historique U190 de Container Type/Specification : U195 retient désormais Product commun et rôle Container. Ne pas appliquer l’ancien nom comme référentiel séparé par défaut.",
+      "collections": "Les références de design et les registres d’exemplaires sont des collections de natures différentes. Aucun dispositif de stockage, type de base ou responsabilité de maître des unités n’est décidé.",
+      "containment": "Localisation et imbrication décrivent l’état physique daté des exemplaires retenus U191 ; aucun contenant obligatoire ni dispositif de capture imposé.",
+      "history": "Conserver la composition des unités logistiques au moment des mouvements malgré leur reconditionnement ultérieur.",
+      "no_forced_materialization": "Le grain conceptuel retenu est individuel. Si une source ne fournit que des quantités, la manière d’individualiser et de rapprocher les exemplaires reste à définir ; ne pas prétendre que des identités générées permettent à elles seules une traçabilité physique démontrée.",
+      "ownership": "Product et spécifications restent issus de maîtres externes selon la cible ; les unités/états opérationnels ne deviennent pas automatiquement des référentiels d’ingestion seule. Autorité détaillée à instruire."
+    },
+    "adoption": false,
+    "clarification_source_refs": [
+      "U191",
+      "U192",
+      "U193"
+    ],
+    "barcode_resolution": {
+      "state": "user_agreed",
+      "source_ref": "U192",
+      "answer_verbatim": "Oui tu as raison. Rien à voir avec le code barre.",
+      "scope": "Identité et notion d’unité indépendantes du code-barres ; aucun identifiant technique ni dispositif de capture imposé."
+    },
+    "interpretation_history": [
+      {
+        "if": "Article/Product Unit = référence vendable",
+        "analysis": "Distinguer Product design et référence commerciale Article. Le contenu d’un Container Unit est exprimé en quantités de références, avec lot/série si disponibles. Article ne désigne pas alors chaque exemplaire."
+      },
+      {
+        "if": "Article/Product Unit = exemplaire physique",
+        "analysis": "La paire Product/Product Unit est cohérente comme référence/occurrence si le grain du Product est précisé. L’identification individuelle doit être connue ou explicitement gérée ; elle ne se déduit pas d’un GTIN partagé. Un mode de suivi en quantité reste nécessaire pour les biens non individualisés."
+      },
+      {
+        "source_refs": [
+          "U190",
+          "U193",
+          "U194"
+        ],
+        "former_current_interpretation": {
+          "Product": "Référence/modèle de design d’un bien ; grain et autorité détaillés à préciser.",
+          "Article / Product Unit": "Exemplaire physique individuel d’un produit, avec identité propre ; grain explicite U191.",
+          "Container": "Référence/modèle de design d’un contenant, selon la nomenclature proposée par Laurent.",
+          "Container Unit": "Contenant physique particulier rattaché à sa référence de design ; composition et situation évolutives.",
+          "Product Variant": "Déclinaison précise du produit commune à plusieurs exemplaires ; terme introduit U193, définition et relations en instruction."
+        },
+        "former_proposed_relations": [
+          {
+            "from": "Product Unit",
+            "to": "Product Variant",
+            "meaning": "est un exemplaire de la variante",
+            "state": "under_instruction",
+            "source_ref": "U193"
+          },
+          {
+            "from": "Product Variant",
+            "to": "Product",
+            "meaning": "est une déclinaison du modèle de produit",
+            "state": "under_instruction",
+            "source_ref": "U193"
+          },
+          {
+            "from": "Container Unit",
+            "to": "Container",
+            "meaning": "est un exemplaire de la référence de contenant",
+            "state": "under_instruction"
+          },
+          {
+            "from": "Product Unit",
+            "to": "Logistics Location ou Container Unit",
+            "meaning": "est situé directement à un emplacement ou dans un contenant, à un instant donné",
+            "state": "under_instruction"
+          },
+          {
+            "from": "Container Unit",
+            "to": "Logistics Location ou autre Container Unit",
+            "meaning": "est situé à un emplacement ou imbriqué dans un autre contenant, à un instant donné",
+            "state": "under_instruction"
+          }
+        ],
+        "superseded_by": "U195 pour le principe et les noms de rôles ; autres points ouverts."
+      }
+    ],
+    "current_interpretation": {
+      "Product": "Concept commun de référence produit portant un rôle Article ou Container ; principe validé U195.",
+      "Product Variant": "Déclinaison du Product ; détail en instruction U193.",
+      "Product Unit": "Exemplaire physique individuel avec identité propre (U191).",
+      "Article": "Rôle de Product retenu U195 ; définition détaillée proposée dans product_roles_decision.",
+      "Container": "Rôle de Product retenu U195 ; définition détaillée proposée dans product_roles_decision.",
+      "Container Unit": "Expression contextuelle proposée pour un Product Unit dont le Product porte le rôle Container ; pas une famille indépendante de références imposée."
+    },
+    "proposed_relations_current": [
+      {
+        "from": "Product",
+        "to": "Article ou Container",
+        "meaning": "porte le rôle",
+        "state": "accepted",
+        "source_ref": "U195"
+      },
+      {
+        "from": "Product Variant",
+        "to": "Product",
+        "meaning": "est une déclinaison du produit",
+        "state": "under_instruction",
+        "source_ref": "U193"
+      },
+      {
+        "from": "Product Unit",
+        "to": "Product Variant",
+        "meaning": "est un exemplaire de la variante",
+        "state": "under_instruction",
+        "source_ref": "U193"
+      },
+      {
+        "from": "Product Unit employé comme contenant",
+        "to": "Product Unit",
+        "meaning": "contient ou supporte physiquement à un instant donné, sous contraintes",
+        "state": "under_instruction",
+        "source_ref": "U194"
+      }
+    ],
+    "adoption_scope": {
+      "explicitly_resolved": [
+        "Product Unit/Article = exemplaire physique individuel, identité propre (U191).",
+        "Code-barres indépendant de cette définition (U192).",
+        "Product porte un rôle Article ou Container (U195)."
+      ],
+      "still_open": [
+        "Définitions détaillées des rôles Article/Container, multiplicité et évolution ; noms des rôles acquis U195.",
+        "Grain de la référence Product et relation au modèle de design/variantes.",
+        "Indivisibilité comme règle opérationnelle, indépendamment de l’identification.",
+        "Schéma d’identités, sources, traçabilité et individualisation à partir de données quantitatives.",
+        "Autorités, cycles de vie et règles détaillées des relations.",
+        "Positionnement de Design dans les univers."
+      ]
+    },
+    "product_variant_and_identity_review": {
+      "source_ref": "U193",
+      "state": "under_instruction",
+      "user_statement": "Un Product Unit peut avoir un Serial Number qui n'est pas un code barre ou un GTIN nécessairement. Le GTIN, c'est plutot pour le Product Variant",
+      "user_clarifications": [
+        "Product Unit peut porter un Serial Number ; cet attribut n’est pas obligatoire.",
+        "Le GTIN est rapproché du Product Variant, pas de l’identité individuelle de Product Unit."
+      ],
+      "proposed_structure": [
+        {
+          "term": "Product",
+          "meaning": "Modèle de design du bien.",
+          "example": "Modèle de chemise A"
+        },
+        {
+          "term": "Product Variant",
+          "meaning": "Déclinaison précise de la référence produit, commune à plusieurs exemplaires.",
+          "example": "Modèle A, bleu, taille M"
+        },
+        {
+          "term": "Product Unit",
+          "meaning": "Exemplaire physique individuel avec son identité propre (grain retenu U191).",
+          "example": "Cette chemise précise"
+        }
+      ],
+      "identification_distinctions": {
+        "unit_identity": "Identité propre de l’exemplaire ; aucun protocole ou format imposé.",
+        "serial_number": "Identifiant éventuel de l’exemplaire dans un périmètre d’unicité à préciser. Peut être lisible en texte ou encodé dans un support de capture.",
+        "gtin": "Identifiant GS1 de référence commerciale. Rapprochement local avec Product Variant et, lorsque pertinent, son niveau de conditionnement commercial. Ne pas imposer une bijection variante/GTIN.",
+        "barcode": "Représentation lisible par machine pouvant porter des données identifiantes ; distincte de ces données."
+      },
+      "market_findings": [
+        "GS1 identifie un exemplaire par la combinaison GTIN et numéro de série ; le numéro de série seul n’est pas présumé globalement unique.",
+        "GS1 distingue des GTIN par variante et par niveau de conditionnement commercial. Cela ne donne pas un GTIN propre à chaque contenant physique."
+      ],
+      "sources": [
+        {
+          "title": "GS1 — Serialisation and unique identification",
+          "url": "https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-",
+          "accessed_at": "2026-09-14"
+        },
+        {
+          "title": "GS1 Finland — Product and packaging coding",
+          "url": "https://gs1.fi/en/barcodes/gs1-suppliers/product-and-packaging-coding",
+          "accessed_at": "2026-09-14"
+        }
+      ],
+      "scope": "Structure proposée en instruction ; grain individuel déjà tranché, sans validation automatique des liens, cardinalités, codes ou maîtres de données."
+    },
+    "container_as_product_review": {
+      "source_ref": "U194",
+      "state": "under_instruction",
+      "user_statement": "Ce qui est amusant c'est que Container et Product ont le même comportement en termes de ratachement à un référentiel, la déclinaison en variant et des unitées qui peuvent porter un GTIN. La seule distinction : un container peut contenir d'autres containers ou des product unit. Il y a des règles qui limitent la composition.\n\nDu coup : Un container n'est pas un produit comme un autre, ce sont juste les règles de composition qui changent ?",
+      "assessment": "Un contenant physique peut être décrit comme un produit et son exemplaire ; la communauté référence/variante/unité est pertinente. Le rôle logistique de contenant ajoute une aptitude à contenir ou supporter, des contraintes et une composition datée. La seule similitude de structure ne décide pas une fusion de modèles.",
+      "proposed_model": {
+        "shared_structure": "Product → Product Variant → Product Unit, y compris pour des biens destinés à servir de contenants. Variante facultative ou obligatoire à instruire, sans choix de schéma IT.",
+        "container_role": "Container Unit comme rôle ou spécialisation de Product Unit apte à contenir/supporter d’autres unités ; nom et choix rôle/spécialisation non adoptés.",
+        "composition": "Relation de contenance physique datée, distincte de la définition commerciale d’un lot et de la nomenclature de fabrication.",
+        "identity": "Le contenant réutilisable peut conserver son identité lorsque son contenu et les regroupements logistiques changent ; leur équivalence n’est pas présumée."
+      },
+      "illustration": {
+        "state": "ai_proposed",
+        "example": "Un bac bleu de 60 litres est acheté vide comme produit. Ce bac précis sert ensuite à contenir des chemises, est vidé puis rempli avec d’autres biens. Son identité reste celle du bac ; son rôle, sa composition et ses mouvements sont décrits séparément."
+      },
+      "candidate_rules": [
+        {
+          "scope": "caractéristiques et aptitudes du contenant",
+          "examples": [
+            "charge admissible",
+            "dimensions utiles",
+            "compatibilités physiques"
+          ]
+        },
+        {
+          "scope": "packing attendu dans un contexte",
+          "examples": [
+            "assortiment et quantité imposés par le client",
+            "mélanges autorisés",
+            "imbrication permise"
+          ]
+        },
+        {
+          "scope": "intégrité de la contenance physique",
+          "examples": [
+            "absence de cycle",
+            "cohérence temporelle",
+            "absence de double comptage du contenu"
+          ]
+        }
+      ],
+      "limits": [
+        "Un contenant vide reste un contenant : l’aptitude ne se déduit pas seulement de liens de contenu présents.",
+        "La relation contient ne signifie pas est un composant de fabrication ; une chemise dans un bac ne devient pas un composant du produit bac.",
+        "Une unité peut porter le GTIN de sa référence commerciale sans être identifiée individuellement par ce GTIN.",
+        "Ne pas dupliquer un même bac en deux biens indépendants lorsqu’il est à la fois produit stocké et contenant.",
+        "Le support physique et l’ensemble logistique support + contenu ne sont pas automatiquement le même objet."
+      ],
+      "market_sources": [
+        {
+          "title": "SAP — Maintaining Packaging Information",
+          "url": "https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/maintaining-packaging-information_d0d86e60-5eb5-4b2f-9ad8-1277f3fc3dd1",
+          "accessed_at": "2026-09-14",
+          "finding": "Packaging materials : types particuliers de materials, avec caractéristiques de packing ; instructions de contenu et de quantités, y compris imbriquées et spécifiques au client."
+        },
+        {
+          "title": "SAP EWM — Handling Unit",
+          "url": "https://help.sap.com/docs/PRODUCT_ID/3d97bec9bf1649099384bb8167df3cf2/a2043fc0-30be-41ec-b485-9a383eb901ac.html?locale=en-US&state=PRODUCTION&version=9.5.0.2",
+          "accessed_at": "2026-09-14",
+          "finding": "Une HU est une unité physique composée des emballages/supports et des biens contenus ; ne pas l’assimiler au seul bac physique."
+        },
+        {
+          "title": "GS1 — General Specifications 24.0",
+          "url": "https://ref.gs1.org/standards/genspecs/24.0.0/",
+          "accessed_at": "2026-09-14",
+          "finding": "La clé GRAI de l’actif réutilisable ne doit pas identifier le bien transporté ou contenu. Référence versionnée consultée, sans affirmation de dernière version."
+        }
+      ],
+      "adoption": false,
+      "scope": "Alternative de modélisation proposée dans le backlog ; aucun nœud, rattachement ou référentiel actif fusionné.",
+      "resolution": {
+        "source_ref": "U195",
+        "scope": "Rôle choisi au niveau Product ; explications et règles détaillées non automatiquement validées."
+      }
+    },
+    "product_roles_decision": {
+      "source_ref": "U195",
+      "state": "accepted",
+      "status_label": "Validé par l’urbaniste",
+      "author": "Laurent Sintès",
+      "date": "2026-09-14",
+      "statement_verbatim": "C'est exactement ça : Un Product porte un rôle : Container ou Article",
+      "accepted_principle": "Product est le concept commun ; Article et Container sont des rôles portés par Product.",
+      "approved_scope": [
+        "Principe du rôle, au niveau Product.",
+        "Noms des rôles Article et Container."
+      ],
+      "proposed_explanations": {
+        "Article": "Rôle de bien constituant le contenu à stocker ou à déplacer.",
+        "Container": "Rôle de bien destiné à contenir ou supporter d’autres unités, selon des contraintes de composition.",
+        "Product Variant": "Déclinaison du Product commun ; détail du rattachement et éventuelles variations du rôle à instruire.",
+        "Product Unit": "Exemplaire physique individuel du produit, avec identité propre. Les liens de contenu réel portent sur les unités."
+      },
+      "still_open": [
+        "Exclusivité ou cumul des rôles et leur évolution éventuelle.",
+        "Règles détaillées, portée sur les variantes et conditions d’usage.",
+        "Identification, autorités et cycles de vie détaillés."
+      ],
+      "terminology_effect": "Article n’est plus un nom alternatif courant pour l’entité générique Product Unit : il désigne le rôle choisi U195. Le grain individuel U191 est conservé pour Product Unit. Container désigne également un rôle plutôt qu’un référentiel indépendant obligatoire.",
+      "publication_scope": "Accord conservé dans l’exploration JSON ; aucun objet détaillé ajouté à la carte active et aucune release implicite."
+    }
+  }
+}

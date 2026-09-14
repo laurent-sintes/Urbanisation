@@ -1,0 +1,492 @@
+{
+  "id": "AUDIT-GLOSSARY-U202",
+  "source_refs": [
+    "U202"
+  ],
+  "as_of": "2026-09-14",
+  "basis": {
+    "path": "before-model.json",
+    "sha256": "af65e847b40899fce80490ab03a75488facc0973950ece3eb3e214b084816ca3"
+  },
+  "coverage": {
+    "nodes": 52,
+    "capabilities": 34,
+    "principles": 8,
+    "relations": 55
+  },
+  "findings": [
+    {
+      "id": "G01",
+      "targets": [
+        "D01.f",
+        "D06.b",
+        "D08",
+        "D08.d",
+        "D12"
+      ],
+      "finding": "Article confondu avec référence SKU et absence des rôles Product dans Product Reference.",
+      "source_refs": [
+        "U191",
+        "U193",
+        "U195"
+      ],
+      "action": "Préciser référence, variante, unité et rôles ; garder SKU comme correspondance à instruire."
+    },
+    {
+      "id": "G02",
+      "targets": [
+        "D03",
+        "D03.a",
+        "D03.c",
+        "D02.e"
+      ],
+      "finding": "Demandes et fourniture ambigus face aux Orders Supply et ressources.",
+      "source_refs": [
+        "U154",
+        "U169",
+        "U174"
+      ],
+      "action": "Employer commande Supply quand elle est visée ; conserver besoins prévisionnels dans Supply Assignment."
+    },
+    {
+      "id": "G03",
+      "targets": [
+        "PRINCIPLE-CTP-DEFERRED"
+      ],
+      "finding": "Placement différé CTP contredit D03.j adopté.",
+      "source_refs": [
+        "U154"
+      ],
+      "action": "Retirer le principe obsolète, conserver sa capture ; ajouter le principe To-Promise courant."
+    },
+    {
+      "id": "G04",
+      "targets": [
+        "PRINCIPLE-CASE-SUPPLY-ORDERS"
+      ],
+      "finding": "Univers Case obsolète face à Business Services.",
+      "source_refs": [
+        "U169",
+        "U173"
+      ],
+      "action": "Actualiser le vocabulaire du principe sans renommer les identifiants."
+    },
+    {
+      "id": "G05",
+      "targets": [
+        "D07.a"
+      ],
+      "finding": "Service Order adopté n’apparaît pas dans la capacité qui exprime les prestations attendues.",
+      "source_refs": [
+        "U169"
+      ],
+      "action": "Préciser le vocabulaire ; aucun nouvel objet de la carte ni cycle imposé."
+    },
+    {
+      "id": "G06",
+      "targets": [
+        "connaissance/19-glossaire-metier.md"
+      ],
+      "finding": "Première table TER004 encore historique ; compléments récents font autorité sur les rôles.",
+      "source_refs": [
+        "U195"
+      ],
+      "action": "Ajouter une entrée de lecture courante signalant explicitement les anciens sens ; ne pas réutiliser TER004 pour un autre concept."
+    },
+    {
+      "id": "G07",
+      "targets": [
+        "D01",
+        "D03.i",
+        "D06",
+        "D13",
+        "D04",
+        "D09",
+        "D11"
+      ],
+      "finding": "Stock physique/logique/futur, ATP, distinction Party/lieu et projections externes compatibles ; détails packing proposés hors carte.",
+      "source_refs": [
+        "U169",
+        "U187",
+        "U189",
+        "U195"
+      ],
+      "action": "Conserver ; ne pas ajouter de capacité ni étendre un accord."
+    },
+    {
+      "id": "G08",
+      "targets": [
+        "Product Variant",
+        "Container",
+        "Resource"
+      ],
+      "finding": "Cumul de rôles, grain commercial, règles de composition et portée générique de Resource encore ouverts.",
+      "source_refs": [
+        "U175",
+        "U193",
+        "U195"
+      ],
+      "action": "Conserver en instruction ; aucune fusion forcée ou attribution de GTIN individuel."
+    }
+  ],
+  "proposed_field_changes": {
+    "D01.f": {
+      "definition": "Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par référence de produit, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues."
+    },
+    "D03": {
+      "definition": "Établir ce qui peut être promis pour honorer une commande Supply, sous quelles conditions, avec quelles ressources et quelles possibilités de mise à disposition, puis maintenir la promesse lorsque la situation évolue."
+    },
+    "D03.a": {
+      "definition": "Construire une proposition de mise à disposition de ressources pour honorer une commande Supply, précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation."
+    },
+    "D03.c": {
+      "definition": "Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications autorisées."
+    },
+    "D02.e": {
+      "definition": "Affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des commandes Supply, des engagements ou des besoins prévisionnels.",
+      "finality": "Assurer la couverture des commandes, engagements ou besoins prévisionnels par des ressources identifiées."
+    },
+    "D06.b": {
+      "finality": "Éviter de confondre disponibilité des biens et possibilité de réaliser la prestation attendue."
+    },
+    "D08": {
+      "definition": "Recevoir les références Product et leurs Product Variants depuis leurs maîtres externes, indépendamment des catalogues qui les proposent. Product porte un rôle Article ou Container. Distinguer ces références des Product Units, exemplaires physiques suivis dans les opérations ; les identifiants commerciaux ne constituent pas à eux seuls leur identité individuelle.",
+      "finality": "Disposer de références produit communes aux catalogues et aux opérations de la Supply, pour les biens jouant un rôle Article ou Container.",
+      "independence": "Références produit autonomes des catalogues ; une même variante peut être proposée dans plusieurs catalogues. Correspondances avec SKU et conditionnements à préciser."
+    },
+    "D08.d": {
+      "definition": "Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues.",
+      "finality": "Reconnaître les mêmes références produit dans les différents catalogues et opérations, sans les confondre avec les exemplaires physiques."
+    },
+    "D12": {
+      "definition": "Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference."
+    },
+    "D07.a": {
+      "definition": "Exprimer les prestations attendues pour réaliser les commandes Supply, sous forme de commandes de service (Service Orders), avec biens, destinataires, résultats et opérations nécessaires, sans recréer leur autorisation commerciale."
+    }
+  },
+  "status": "applied_before_yaml_refactor",
+  "limits": [
+    "Référencement cliquable au glossaire non encore implémenté ; U197 reste une syntaxe proposée.",
+    "Releases et preuves historiques inchangées ; pas de nouveau domaine ni capacité."
+  ],
+  "applied_changes": [
+    {
+      "id": "D01.f",
+      "before": {
+        "definition": "Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues."
+      },
+      "after": {
+        "definition": "Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par référence de produit, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues."
+      },
+      "previous_lifecycle": {
+        "state": "under_instruction",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "U125",
+          "U126",
+          "C73",
+          "P82",
+          "CMP062",
+          "ELM103",
+          "ELM104",
+          "ELM105"
+        ],
+        "validated_fields": [],
+        "value_sha256": {},
+        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D03",
+      "before": {
+        "definition": "Établir ce qui peut être promis pour satisfaire une demande, sous quelles conditions, avec quelles ressources et quelle solution de fourniture, puis maintenir la promesse lorsque la situation évolue."
+      },
+      "after": {
+        "definition": "Établir ce qui peut être promis pour honorer une commande Supply, sous quelles conditions, avec quelles ressources et quelles possibilités de mise à disposition, puis maintenir la promesse lorsque la situation évolue."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-14T07:28:14.976Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "U52",
+          "U95",
+          "U147",
+          "U154"
+        ],
+        "validated_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88"
+        },
+        "note": "Nom du domaine déjà adopté ; U154 valide la liste de capacités, sans étendre la validation aux définitions éditoriales du domaine."
+      }
+    },
+    {
+      "id": "D03.a",
+      "before": {
+        "definition": "construire une proposition de fourniture précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation."
+      },
+      "after": {
+        "definition": "Construire une proposition de mise à disposition de ressources pour honorer une commande Supply, précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "C63",
+          "P83",
+          "U95"
+        ],
+        "validated_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "02dcfc02fb4496c451a97202d3d022ba0834a8aee679fa69c5a92648f3b1cb34",
+          "finality": "5f188a8edb71d19a87bfcabaec14e05f209163d77e765f50b4386518814b1ae7",
+          "name": "b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D03.c",
+      "before": {
+        "definition": "réexaminer les promesses lorsque ressources, demandes, dates ou priorités changent et établir les modifications autorisées."
+      },
+      "after": {
+        "definition": "Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications autorisées."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "C63",
+          "P83",
+          "U95"
+        ],
+        "validated_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "e4f81fd99452c68635f2a5011869beb854d5541e918ed526ed1af28d04d242c7",
+          "finality": "d0cb0c28b2507f196ade45d00fc01fb5f7e6843eab132e865541f17caf6aaf2c",
+          "name": "cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D02.e",
+      "before": {
+        "definition": "affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des demandes ou engagements.",
+        "finality": "Assurer la couverture des demandes par des ressources identifiées."
+      },
+      "after": {
+        "definition": "Affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des commandes Supply, des engagements ou des besoins prévisionnels.",
+        "finality": "Assurer la couverture des commandes, engagements ou besoins prévisionnels par des ressources identifiées."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "C63",
+          "P83",
+          "U95"
+        ],
+        "validated_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "ef67d3fd01da77bcf751fc8cadc79ada5ad98a59f995a9e64d2449e6cb6110ab",
+          "finality": "ec611dff17efe65ed0e023fa0f9217c114e93e38a9658982ed34b05c553aecef",
+          "name": "2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D06.b",
+      "before": {
+        "finality": "Éviter de confondre disponibilité d’article et possibilité de le servir."
+      },
+      "after": {
+        "finality": "Éviter de confondre disponibilité des biens et possibilité de réaliser la prestation attendue."
+      },
+      "previous_lifecycle": {
+        "state": "under_instruction",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "P81",
+          "U04",
+          "U06",
+          "U07",
+          "U102",
+          "C68",
+          "Q015",
+          "Q016",
+          "Q017",
+          "Q018",
+          "Q019",
+          "Q063",
+          "U118",
+          "C72",
+          "P86",
+          "U99"
+        ],
+        "validated_fields": [],
+        "value_sha256": {},
+        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D07.a",
+      "before": {
+        "definition": "Exprimer les prestations attendues pour réaliser les Orders, avec biens, destinataires, résultats et opérations nécessaires, sans recréer leur autorisation commerciale."
+      },
+      "after": {
+        "definition": "Exprimer les prestations attendues pour réaliser les commandes Supply, sous forme de commandes de service (Service Orders), avec biens, destinataires, résultats et opérations nécessaires, sans recréer leur autorisation commerciale."
+      },
+      "previous_lifecycle": {
+        "state": "under_instruction",
+        "recorded_at": "2026-09-13T17:32:42.257717Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "P81",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U10",
+          "U30",
+          "U48",
+          "U100",
+          "C66",
+          "Q074",
+          "U118",
+          "C72",
+          "P86",
+          "U99",
+          "U141",
+          "C78",
+          "CMP066"
+        ],
+        "validated_fields": [],
+        "value_sha256": {},
+        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D08",
+      "before": {
+        "definition": "Reconnaître les mêmes articles par leur référence SKU indépendamment des catalogues qui les proposent. La référence article est reçue depuis un maître externe.",
+        "finality": "Disposer d’une référence article autonome, utilisable dans plusieurs catalogues et par les opérations de la Supply.",
+        "independence": "Référence article autonome ; un SKU peut être proposé dans plusieurs catalogues."
+      },
+      "after": {
+        "definition": "Recevoir les références Product et leurs Product Variants depuis leurs maîtres externes, indépendamment des catalogues qui les proposent. Product porte un rôle Article ou Container. Distinguer ces références des Product Units, exemplaires physiques suivis dans les opérations ; les identifiants commerciaux ne constituent pas à eux seuls leur identité individuelle.",
+        "finality": "Disposer de références produit communes aux catalogues et aux opérations de la Supply, pour les biens jouant un rôle Article ou Container.",
+        "independence": "Références produit autonomes des catalogues ; une même variante peut être proposée dans plusieurs catalogues. Correspondances avec SKU et conditionnements à préciser."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "U100"
+        ],
+        "validated_fields": [
+          "independence"
+        ],
+        "value_sha256": {
+          "independence": "ceaf4b5fde674feb28ff51da2c68e7f3455a596aada8fc19f1e152c88edaea28"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D08.d",
+      "before": {
+        "definition": "recevoir les articles, leurs identifiants SKU, caractéristiques de référence utiles et évolutions depuis leur maître externe, indépendamment de leur présence dans les catalogues.",
+        "finality": "Reconnaître les mêmes articles dans les différents catalogues et opérations."
+      },
+      "after": {
+        "definition": "Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues.",
+        "finality": "Reconnaître les mêmes références produit dans les différents catalogues et opérations, sans les confondre avec les exemplaires physiques."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "U103"
+        ],
+        "validated_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    },
+    {
+      "id": "D12",
+      "before": {
+        "definition": "Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Un même SKU peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference."
+      },
+      "after": {
+        "definition": "Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference."
+      },
+      "previous_lifecycle": {
+        "state": "urbanist_validated",
+        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_by": "Codex",
+        "source_refs": [
+          "U131",
+          "U97",
+          "U98"
+        ],
+        "validated_fields": [
+          "mastership",
+          "name"
+        ],
+        "value_sha256": {
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9",
+          "name": "4a8dfce3f278257b51eb13d39404013980a0b0959023c773586e8d45623a5178"
+        },
+        "note": "Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date de reprise du cycle, pas date historique de l’accord."
+      }
+    }
+  ],
+  "capability_count_after": 34
+}

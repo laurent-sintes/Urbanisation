@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-13",
+  "captured_at": "2026-09-14",
   "records": [
     {
       "id": "U01",
@@ -1137,6 +1137,502 @@
       "line": 3858,
       "content_sha256": "567a05f712fb582184138e33f7d93b4fc682afcf834e7b58a69fc94095ba33b3",
       "captured_text": "## U142\n\n**id**\n\nU142\n\n**date**\n\n2026-09-13\n\n**titre**\n\nPublier la refonte Supply/Case et Order Management\n\n**contexte**\n\nDemande de publication après application U141 au backlog. Autorise la production et l’activation locale dans Atlas ; ne valide aucun contenu supplémentaire.\n\n**texte**\n\nLance une release\n\n**statut**\n\nPublication autorisée ; accords U140/U141 transcrits dans leur portée, propositions et réserves conservées. Aucun commit ni push demandé."
+    },
+    {
+      "id": "U143",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u143",
+      "line": 3885,
+      "content_sha256": "3305b774eff1df978f333ed86b3d22ff2c70939afdcfa6a19d581b7febaaefcf",
+      "captured_text": "## U143\n\n**id**\n\nU143\n\n**date**\n\n2026-09-14\n\n**titre**\n\nÉtudier les outils modernes de cartographie et une UX maintenable par IA\n\n**contexte**\n\nAprès la réorganisation U135 d’Atlas, Laurent demande une recherche Internet d’inspiration. Les pistes citées sont Cytoscape.js, LikeC4, React Flow et IcePanel. L’aptitude à produire et maintenir le code avec l’IA est un critère explicite.\n\n**texte**\n\nBeaucoup mieux mais pas parfais.\n\nTu peux faire une recherche sur internet des outils modernes de cartographie un peu péchu, avec une UX sympa etc. Pas les gros trucs lourdaud comme  MEGA.\n\nPeut etre regarder Cytoscape.js pour les graphes de dépendance à venir.\nS'inspirer de LikeC4, ça peut être interessant\nReact FLOW peut être un bon candidat pour représenter les objets\nIcePanel...\n\nFais une étude pour t'inspirer et trouver des idées.\nMais il faut que ce soit IA friendly car c'est toi qui va générer le code.\n\n**statut**\n\nDemande d’étude et d’idées d’ergonomie, sans adoption d’un produit ou d’un moteur, sans refonte immédiate ni publication. La compatibilité IA vise notamment la génération, la compréhension, la vérification et la maintenance du code. Résultat : marche/etudes/2026-09-14-exploration-atlas/etude.md."
+    },
+    {
+      "id": "U144",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u144",
+      "line": 3922,
+      "content_sha256": "db7ac1b6b7de1bbb496810574800baadd286ad2265a4652ec4b8e709515b436c",
+      "captured_text": "## U144\n\n**id**\n\nU144\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRéexaminer la couverture des capacités D02 par D01 et D03\n\n**contexte**\n\nReprise de D02 après Inventory Management et les référentiels. Codex relève les recouvrements de disponibilité et d’ajustement avec Reservation, Promise Proposal et Supply Assignment.\n\n**texte**\n\nJe suis aligné avec tes points à examiner : je pense que ces capacités sont déjà couvertes par D01 et D03\n\n**statut**\n\nAccord sur les points à examiner et hypothèse de couverture par D01/D03. Ne constitue pas une validation de nouvelles définitions ni une instruction explicite de suppression. Analyse de couverture : audits/2026-09-14-d02-couverture.md."
+    },
+    {
+      "id": "U145",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u145",
+      "line": 3949,
+      "content_sha256": "3512e49138ecccab0c9aa62f622f81d5088c006a59c1ee4d98cdd2b549a3268d",
+      "captured_text": "## U145\n\n**id**\n\nU145\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRetirer D02 sans renuméroter les autres domaines\n\n**contexte**\n\nAprès U144 et la proposition explicite de retrait de D02 et de ses deux capacités résiduelles, Laurent demande la suppression du domaine en conservant la numérotation des autres domaines. Les clarifications de définition des capacités d’accueil restent distinctes.\n\n**texte**\n\nJe propose de supprimer ce domaine mais de ne pas renuméroter les autres pour l'instant\n\n**statut**\n\nRetrait appliqué au backlog : D02, D02.a et D02.d, avec leurs trois relations de présentation/rattachement. Les identifiants déplacés D02.b, D02.c et D02.e restent actifs dans D01 et D03. Aucune renumérotation, aucune publication ni validation supplémentaire de définition."
+    },
+    {
+      "id": "U146",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u146",
+      "line": 3976,
+      "content_sha256": "de1e82ee4ce55f337003432818573e2ed85da120b81dd1a588e58592a83d8b9d",
+      "captured_text": "## U146\n\n**id**\n\nU146\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRéaliser l’essai comparatif React Flow / LikeC4\n\n**contexte**\n\nGo suivant l’étude U143 et sa proposition d’un petit essai sur le même parcours réel d’Atlas : navigation par niveaux puis relation Execution Reconciliation / Order Reconciliation. Autorise les prototypes locaux, leur vérification et leur consultation ; aucune adoption définitive de moteur ni publication métier.\n\n**texte**\n\nGo\n\n**statut**\n\nMise en œuvre du prototype comparatif dans prototypes/atlas-exploration/, avec source publiée commune, arbre, recherche, fiche centrale et deux moteurs graphiques. Les travaux métier parallèles U144/U145 restent distincts de cet essai."
+    },
+    {
+      "id": "U147",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u147",
+      "line": 4003,
+      "content_sha256": "3bbdf36fefcb78489a6c7f7172941890139ab071f83f66960a9803ebe456c26c",
+      "captured_text": "## U147\n\n**id**\n\nU147\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRéexaminer les décisions et le vocabulaire d’Order Promising\n\n**contexte**\n\nRevue de D03 après retrait de D02. Les neuf capacités U95 constituent la base existante ; Laurent rouvre ATP/CTP et interroge plusieurs noms et frontières. Les propositions de remplacement restent à discuter.\n\n**texte**\n\nMes remarques :\n\n- Je me demande si toutes les décisions sont listées. ATP et CTP doivent être des décisions à mon avis\n- \"Supply Creation Decision\" n'est pas très claire : c'est l'idée de faire un spread ou un split et proposer des commandes partielles et échelonnées ?\n- Dans l'ordre des capacités d'action, je préfèrerais les \"Promise au début\" et Supply Assignment à la fin\n- \"Allocation Elligibility\" : la question traitée est super claire mais j'ai un doute sur le nom. J'ai été obligé de faire un effort pour comprendre. Allocation est claire car dans la définition c'est la démarche d'affecter des ressources à qq chose : des orders ou une prévision. Eligibility par contre n'apporte rien dans l'explication.\n- On utilise le terme de \"Fourniture\", moi je parle de \"ressource\". Il faut définir quelque chose de clair concernant le substantif qui désigne de maniere abstraite les machins qui circulent entre les stocks, les magasins et les party.\n- On fait bien la différence entre demande (le Case) et l'order (la commande) maintenant. Il faut certainement aligner le vocabulaire.\n\nQu'en penses-tu ?\n\n**statut**\n\nOrdre de présentation appliqué aux quatre actions du backlog. ATP/CTP remis à l’étude ; noms et vocabulaire en réexamen, sans validation de remplacements proposés par Codex. Détails structurés dans modeles/backlog/d03-review.json et analyse sourcée dans marche/revue-d03-decisions-vocabulaire.md."
+    },
+    {
+      "id": "U148",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u148",
+      "line": 4039,
+      "content_sha256": "a4844fe75eb83756b4cc999f0c043fd494ad8a31b23004fc315953efcc766fad",
+      "captured_text": "## U148\n\n**id**\n\nU148\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDistinguer faisabilité à situation donnée et plan d’adaptation pour honorer une commande\n\n**contexte**\n\nSuite à U147, Laurent précise les résultats visés, propose une simplification de D03 et demande un avis. Le nom CTP et les retraits sont argumentés conditionnellement ; aucune refonte automatique des valeurs validées.\n\n**texte**\n\n- 1- ATP & CTP\n  - ATP : calcul de la promesse d'une commande par rapport à ce qui est engagé (les commandes d'achat fermes, l'état du stock, les commandes de vente engagées)\n  - CTP : Quelles commandes d'achat doit on passer, quel profil de protection de stock doit on modifier, quelles commandes de ventes doit on retarder ou diminuer ou annuler etc. pour honorer une commande\n  - => Dans les deux cas, on tente d'honorer une commande. ATP = avec ce qu'on a, CTP = avec ce qu'on peut potentiellement\n  - => Si tout est bon dans ce que je dis, alors ce sont deux capacités différentes, l'une remplit la promesse d'une commande, l'autre propose un plan de changement de configuration des flux entrants / flux sortants / protection policy\n- 2- Supply Creation Decision\n  - Si Supply Assignment est la capacité qui applique une stratégie d'allocation, alors cette capacité est inutile\n  - Oui, il manque la décision Delivery Schedule Decision\n- 3- Ordre => c'est ok\n- 4- Allocation Elligibility\n  - Oui, c'est une décision\n  - Quelle quantité la commande est-elle autorisée à mobiliser ?  => couvert par ATP ?\n  - Quelles ressources identifiées couvrent effectivement cette commande ?  => ATP aussi\n  - => Je ne suis pas sur que différencier Qualité et quantité soit une bonne idée, le niveau de granularité devient trop bas.\n  - => Selon ce raisonnement, cette capacité devrait disparaitre.\n\nOn commence par ça. Qu'ne penses-tu ?\n\n**statut**\n\nDeux résultats proposés : faisabilité à engagements/politiques donnés et plan d’adaptation. Besoin de Delivery Schedule Decision confirmé ; ordre des actions confirmé. Suppressions conditionnelles de D03.d/D03.h à instruire, sans retirer leurs règles. Différence du CTP local envisagé avec le marché signalée dans la revue. Aucun changement de liste active ni publication."
+    },
+    {
+      "id": "U149",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u149",
+      "line": 4082,
+      "content_sha256": "7745771fcb590b58bba1ca511b46cfb7ce7f1f74858ba791bcc69bc8c4132ae9",
+      "captured_text": "## U149\n\n**id**\n\nU149\n\n**date**\n\n2026-09-14\n\n**titre**\n\nVérifier la couverture des notions To-Promise\n\n**contexte**\n\nAprès U148, Laurent demande si ATP et CTP couvrent les décisions nommées To-Promise dans le marché. Recherche de notions complémentaires, sans ajout automatique de capacités.\n\n**texte**\n\nVérifie si les décision \"\\*-To-Promise\" sont complets avec ATP et CTP\n\n**statut**\n\nVérification documentée dans marche/to-promise-panorama.md. PTP explicitement identifié ; variantes et profondeur de calcul distinguées de capacités autonomes. Aucune exhaustivité universelle revendiquée ni modification de la carte active."
+    },
+    {
+      "id": "U150",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u150",
+      "line": 4109,
+      "content_sha256": "fefb027e3d6bcb345d9b6f49b95be0457e8b0ec995fd0c8125edbe8359060bed",
+      "captured_text": "## U150\n\n**id**\n\nU150\n\n**date**\n\n2026-09-14\n\n**titre**\n\nValider React Flow et l’interface sur mesure pour Atlas\n\n**contexte**\n\nAprès l’essai comparatif U146, Laurent tranche explicitement en faveur de React Flow et de l’interface sur mesure. La comparaison du moteur est close ; cette décision porte sur le choix technique et ergonomique, pas sur le contenu métier du modèle.\n\n**texte**\n\nPas de débat : React Flow / sur mesure est bien meilleur. Je valide !\n\n**statut**\n\nChoix validé par Laurent : React Flow avec interface sur mesure pour la suite d’Atlas. LikeC4 n’est plus candidat à l’intégration ; le prototype comparatif et les constats restent conservés comme historique. L’intégration dans l’application courante n’est pas présentée comme déjà réalisée."
+    },
+    {
+      "id": "U151",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u151",
+      "line": 4136,
+      "content_sha256": "3454a48cacf3ebafce287665d6128a3713b37e33af4551fb8ff3aa7a99c78264",
+      "captured_text": "## U151\n\n**id**\n\nU151\n\n**date**\n\n2026-09-14\n\n**titre**\n\nAligner la granularité des décisions D03 sur ATP/CTP/PTP\n\n**contexte**\n\nLaurent retient ATP/CTP/PTP comme niveau d’aptitude de l’entreprise et demande une réponse à son retour U148. La recomposition détaillée est proposée dans le backlog, en conservant les valeurs approuvées tant que les remplacements ne sont pas arbitrés.\n\n**texte**\n\nIl faut rester dans le scope \"ce que sait faire l'entreprise\" => ATP / CTP / PTP est le bon niveau. Il faut aligner les capacités de décisions en ce sens.\n\nEt concernant mon feedback ?\n\n**statut**\n\nGranularité ATP/CTP/PTP retenue comme orientation. Alternative complète D03 à quatre actions et quatre décisions rédigée dans le JSON, avec reprise des cinq décisions antérieures ; aucune suppression active ni nouvelle définition présentée comme validée. Le périmètre local du plan d’adaptation CTP conserve sa différence documentée avec les produits du marché."
+    },
+    {
+      "id": "U152",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u152",
+      "line": 4165,
+      "content_sha256": "b713707e0f537304295c058eed0bb4425a1c7a0e78bf5e7a660ac1168738c889",
+      "captured_text": "## U152\n\n**id**\n\nU152\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRéaliser le refactoring React Flow d’Atlas\n\n**contexte**\n\nAprès le choix U150, Laurent demande l’intégration dans l’application courante.\n\n**texte**\n\nTu peux réaliser le refacto ?\n\n**statut**\n\nRéalisation autorisée dans Atlas : React Flow et interface sur mesure, en conservant les publications, la recherche, les sources et l’arbre. Aucun changement métier ni publication implicite."
+    },
+    {
+      "id": "U153",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u153",
+      "line": 4191,
+      "content_sha256": "640bbe44c67240c2c8f237babdccfe314aa9bd04235688eb8a183d13986c3f7c",
+      "captured_text": "## U153\n\n**id**\n\nU153\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDonner des icônes aux éléments du modèle\n\n**contexte**\n\nComplément au refactoring U152 en cours.\n\n**texte**\n\nEt essaie de trouver des icones sympas pour tous les objets.\n\n**statut**\n\nFamille d’icônes cohérente à intégrer aux arbres, cartes, fiches et résultats, avec repères par type et par élément connu. Choix graphique distinct du sens et des relations du modèle."
+    },
+    {
+      "id": "U154",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u154",
+      "line": 4218,
+      "content_sha256": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+      "captured_text": "## U154\n\n**id**\n\nU154\n\n**date**\n\n2026-09-14\n\n**titre**\n\nValider D03 recomposé puis explorer Requirement, Order, Case et Command\n\n**contexte**\n\nValidation de la proposition D03-ALIGNMENT-U151 à huit capacités. Exploration suivante limitée au point 6 du vocabulaire ; le point 5 est différé. Les observations Storeland/ECC sont déclarées par Laurent, pas des constats indépendants de configuration.\n\n**texte**\n\nJe valide !\n\nQu'as tu pensé de mes définitions ATP vs CTP ?\n\nPassons aux questions de vocabulaire (points 5 et 6).\n\nOn va y aller pas à pas pour bien faire notre travail et vraiment valider les notions.\n\nCommençons par la 6.\n\nRequirement vs Order => c'est très SAP\nCase ou Demand vs Command => c'est très Laurent Sintès l'architecte\nSur Storeland et SAP ECC, on a Order qui est systématique.\nSAP ECC propose Requirement pour les PurchaseOders uniquement, ce qui est bizarre.\nSAP ECC \"coeur transactionnel\" mélange commerce et supply j'ai l'impression\n\nExplorons d'abord ça\n\n**statut**\n\nD03 à huit capacités adopté : quatre actions conservées et quatre décisions nouvelles, D03.i–l. Les anciennes D03.d–h restent historiques. ATP/CTP local et distinction proposition/application conservés. Les noms Case/Demand/Command/Requirement restent en exploration, sans renommage d’Order. L’usage de Requirement hors achats est confirmé par la documentation SAP ERP ; Purchase Requisition est distinct."
+    },
+    {
+      "id": "U155",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u155",
+      "line": 4261,
+      "content_sha256": "9527dcfa56dcb535fcc3a140e04f0d66586650964f3f014b4feae3951239d031",
+      "captured_text": "## U155\n\n**id**\n\nU155\n\n**date**\n\n2026-09-14\n\n**titre**\n\nCorriger Requirement en Requisition dans l’observation achats ECC\n\n**contexte**\n\nCorrection pendant l’exploration U154. Le terme visé était Purchase Requisition, pas Requirement. Ne plus répondre comme si Laurent affirmait que SAP réserve tous les besoins aux achats.\n\n**texte**\n\nOui c'est Requisition, désolé !\n\n**statut**\n\nCorrection prise en compte dans C81 et l’analyse. L’asymétrie Purchase Requisition/Purchase Order versus Sales Order reste le sujet exploré ; aucune équivalence Case/Requisition ou Command/Order adoptée."
+    },
+    {
+      "id": "U156",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u156",
+      "line": 4288,
+      "content_sha256": "a1e458cb942411f1e8639d71896b71a4c447e4b3916e08d3f6dd61936c34ad29",
+      "captured_text": "## U156\n\n**id**\n\nU156\n\n**date**\n\n2026-09-14\n\n**titre**\n\nChercher la notion de marché couvrant le plan d’adaptation CTP local\n\n**contexte**\n\nLaurent connaît la différence de périmètre avec CTP et demande si le besoin est cohérent ou couvert par d’autres notions. Recherche ciblée Response Planning, Response Management et Backlog Management ; pas de renommage automatique de D03.j adopté en U154.\n\n**texte**\n\n\"La réserve porte sur le nom CTP, dont notre périmètre est plus large que celui des sources consultées.\"  => je sais mais est-ce cohérent ou le périmètre total est pris par d'autres notions que je ne connais pas ?\n\n**statut**\n\nResponse Planning identifié comme rapprochement fort avec le résultat métier visé ; nature de processus/solution et limites distinctes d’une équivalence de capacité. D03.j conserve son nom et sa validation ; analyse dans marche/ctp-response-planning.md."
+    },
+    {
+      "id": "U157",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u157",
+      "line": 4315,
+      "content_sha256": "407b50bd8c5b2dfe5461dc857178386ebb54f34d206f5b044efb6ee2469f9d7e",
+      "captured_text": "## U157\n\n**id**\n\nU157\n\n**date**\n\n2026-09-14\n\n**titre**\n\nExplorer les Orders comme backlog et le recouvrement avec Supply Assignment\n\n**contexte**\n\nLaurent retient l’intérêt de travailler le carnet de commandes par priorisation, découpage, évaluation et engagement. Il demande une comparaison avec Supply Assignment ; la fusion ou le renommage des capacités n’est pas décidé.\n\n**texte**\n\nJe trouve l'approche de Backlog management est très interessante. C'est ce que je clame depuis longtemps : il faut considérer les orders comme des éléments d'une backlog : on priorise, on découpe, on évalue, on engage. un order est un objet qui se \"travaille\". J'adore l'idée.\n\nLe problème est le recouvrement potentiel avec Supply Asignment. Je pense que c'est la même chose. Tu peux vérifier ça ?\n\n**statut**\n\nOrientation du carnet d’Orders consignée. Recouvrement produit confirmé, équivalence totale non établie. Définition métier locale de Supply Assignment distincte du périmètre produit SAP ; analyse dans marche/backlog-management-supply-assignment.md. Aucun changement de noms, de frontières ou de release."
+    },
+    {
+      "id": "U158",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u158",
+      "line": 4344,
+      "content_sha256": "c4b1535e17022d301e18a61c4ba1c7907c075178a881c87017025bac482e8636",
+      "captured_text": "## U158\n\n**id**\n\nU158\n\n**date**\n\n2026-09-14\n\n**titre**\n\nExaminer Backlog Management comme domaine D03 et la décomposition de Supply Assignment\n\n**contexte**\n\nLaurent corrige le niveau d’analyse après U157 : Backlog Management pourrait nommer D03, plutôt qu’une capacité englobante. Il propose d’examiner plusieurs aptitudes dans Supply Assignment, dont la simulation. Demande d’avis, pas validation d’une liste ou d’un renommage définitif.\n\n**texte**\n\nCe n'est pas D03 qui devrait s'appeler Backlog Management ? C'est un domaine, pas une capacité. Et Supply Assignment, ça pourrait être découpé en capacités différentes, dont simulation etc.\n\nQu'en penses-tu ?\n\n**statut**\n\nOption de domaine Backlog Management consignée dans les alternatives du backlog ; décomposition de Supply Assignment à instruire par résultats métier. Frontière proposée avec D04 : arbitrage du carnet versus contenu applicable et cycle de vie de chaque Order. Aucune validation de cette frontière, aucun changement de nom actif ni nouvelle capacité."
+    },
+    {
+      "id": "U159",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u159",
+      "line": 4373,
+      "content_sha256": "21427ded0e8085cd12cda20855ed8ec08d901514be98b2aea7d6cffbce019056",
+      "captured_text": "## U159\n\n**id**\n\nU159\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDistinguer calcul des solutions et simulation des impacts globaux\n\n**contexte**\n\nLaurent précise le résultat métier propre de la simulation après U158. Cette précision répond au risque de doublon soulevé par Codex ; la granularité des résultats compte, pas la possibilité qu’un même calcul soit utilisé dans les deux aptitudes.\n\n**texte**\n\nATP, CTP et PTP permettent de calculer, simuler permet de mesurer les impact à un niveau global\n\n**statut**\n\nDistinction métier explicitement fournie : calcul de solutions versus mesure des impacts globaux. Définition de simulation et indicateurs proposés à partir de cette orientation, sans adoption automatique de leur formulation ni nouvelle capacité active. Aucun renommage de D03 ni publication."
+    },
+    {
+      "id": "U160",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u160",
+      "line": 4400,
+      "content_sha256": "ea2a05ac016238f864dd792a7256759604b74f428297eab9770de9c5f1db56f8",
+      "captured_text": "## U160\n\n**id**\n\nU160\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRechercher les capacités manquantes sur D03 et D04\n\n**contexte**\n\nAprès la distinction calcul/simulation U159, Laurent demande les manques ressortant du marché puis précise le périmètre dans un second message. Les deux textes sont conservés dans leur ordre. La demande n’adopte aucun ajout.\n\n**texte**\n\nQuelles autres capacités manquent t il d'autres tes recherches de marché ?\n\n**précision suivante**\n\nSur D03 / D04\n\n**statut**\n\nAudit ciblé marché dans marche/d03-d04-capacites-manquantes.md. Candidats structurés dans modeles/backlog/d03-d04-gap-review.json, proposés par Codex ; aucune capacité ajoutée au modèle actif."
+    },
+    {
+      "id": "U161",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u161",
+      "line": 4431,
+      "content_sha256": "dae9c8866cabf5ceb12b4dbc7475840a3831b1c2a07e03f47560f2731fea187f",
+      "captured_text": "## U161\n\n**id**\n\nU161\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDistinguer capacités, contrôles de processus et travail des commandes\n\n**texte**\n\nJe veux faire la différence entre le processus et les capacités. Si on détermine les capacités nécessaires pour pouvoir implémenter les processus, alors les capacités deviennent des services. C'est ce que je ne veux pas.\n\nC'est pourquoi :\n\n- Order Qualification est trop évident et n'apporte rien à ce que sait faire l'entreprise => c'est évident qu'on fait les choses bien et qu'on n'engage pas des choses sans rien vérifier. C'est un principe général et nécessaire pour piloter et controler les processus.\n- Order Structuring me semble équivalent à Order Revision. Je ne sais pas lequel choisir.\n- Order Prioritization est peut être utile mais est-ce que ça couvre la priorisation uniquement ? On voit ce qu'on engage ou pas, on joue sur les date d'engagement (priorisation) ou est-ce que ça couvre aussi le \"grooming\" (on travaille contenu) ?\n\n**statut**\n\nCorrection de méthode et discussion des candidats U160. Qualification retirée de la proposition ; rattachement de Structuring à Revision et portée de Prioritization en instruction. Backlog Refinement qualifié explicitement comme activité. Aucune capacité active ajoutée ou renommée."
+    },
+    {
+      "id": "U162",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u162",
+      "line": 4460,
+      "content_sha256": "4638f68af948f9e1e93515bc53b4eb94584c30ae6434e60e96cd1f018493f925",
+      "captured_text": "## U162\n\n**id**\n\nU162\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPréciser grooming comme activité de Backlog Refinement\n\n**texte**\n\nQuand je dis grooming, je parle de Backlog Refinement qui est une activité, pas vraiment une capacité.\n\n**statut**\n\nCorrection de méthode et discussion des candidats U160. Qualification retirée de la proposition ; rattachement de Structuring à Revision et portée de Prioritization en instruction. Backlog Refinement qualifié explicitement comme activité. Aucune capacité active ajoutée ou renommée."
+    },
+    {
+      "id": "U163",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u163",
+      "line": 4483,
+      "content_sha256": "158cc64cb809155aaaa8421916e9349ace7ab05135c5e573a4bb7522a996def1",
+      "captured_text": "## U163\n\n**id**\n\nU163\n\n**date**\n\n2026-09-14\n\n**titre**\n\nValider Order Prioritization\n\n**contexte**\n\nAprès U161/U162, Codex propose de limiter Order Prioritization à l’aptitude à établir et réviser les priorités relatives des commandes, distincte du contenu, des dates et de l’ensemble de l’activité de Backlog Refinement. Candidat rattaché à D03 dans la revue U160.\n\n**texte**\n\nJe valide Order Prioritization.\n\n**statut**\n\nAccord explicite : capacité intégrée au backlog sous D03.m, nom et définition discutée validés ; rattachement à D03 repris du candidat accepté. Finalité et codification de nature ajoutées par Codex restent proposées. Aucune publication implicite."
+    },
+    {
+      "id": "U164",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u164",
+      "line": 4510,
+      "content_sha256": "004d805c2242d2f6376113926aad69776e5ac61f9615af1c18ef293b08162ba6",
+      "captured_text": "## U164\n\n**id**\n\nU164\n\n**date**\n\n2026-09-14\n\n**titre**\n\nReprendre Requirement, Case, Demand, Order et Command\n\n**texte**\n\nRevenons sur tes points de remarque concernant le vocabulaire (point 5 et 6)\n\nRevenons sur Requirement / Case / Demand / Order / Command\n\n**statut**\n\nDemande d’exploration de vocabulaire, sans adoption de nouvelles définitions ni création d’objets. La précision Requisition de U155 reste acquise ; le substantif des ressources du point 5 n’est pas arbitré par cette demande."
+    },
+    {
+      "id": "U165",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u165",
+      "line": 4535,
+      "content_sha256": "c366b5e42e46d3f9d633bf3ebeb2e361c2c25803b343a49823c2f55b0e8a113e",
+      "captured_text": "## U165\n\n**id**\n\nU165\n\n**date**\n\n2026-09-14\n\n**titre**\n\nIntentions amont, Orders Supply et demande métier d’exécution\n\n**texte**\n\nSi Command fait référence au pattern Command d'architecture, ça n'a rien à faire dans la carto des capacités.\nJe pense que Order, dans l'univers Supply est indispensable.\nDans l'univers du \"Case\" (faudra le renommer car il désigne une mécanique plus qu'un univers business), je considère que c'est là que naissent les intentions des parties prenantes du système et où elles s'affinent pour matérialiser des demandes ou des problèmes à résoudre. Durant la résolution, des orders seront passés à la supply chain, laquelle appellera une plateforme de services Logistique ou autre (l'exécution). l'objet qui matérialise la demande d'exécution pourrait être \"Command\", finalement.\n\nQu'en penses-tu ?\n\n**statut**\n\nOrientation explicite : exclure le pattern logiciel Command du contenu métier de la carte ; conserver Order en Supply ; réexaminer le nom de l’univers Case selon la finalité métier précisée. Command comme objet de demande d’exécution est une hypothèse de Laurent, pas un nom adopté. Aucun nouvel objet ou univers instancié."
+    },
+    {
+      "id": "U166",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u166",
+      "line": 4562,
+      "content_sha256": "d396658d00813cd31a07dac3761bc87cd12c64564668c68957c0100e82b02ef7",
+      "captured_text": "## U166\n\n**id**\n\nU166\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRechercher le nom de marché de la demande d’exécution logistique\n\n**texte**\n\nQue dit le marché ? \"Logictic Order\" ou un truc du genre ?\n\n**statut**\n\nRecherche de vocabulaire après U165. Logistics Order, Shipment Order, Delivery Order/Request, Freight Order et Shipment Request comparés selon leur rôle ; aucun nom local adopté."
+    },
+    {
+      "id": "U167",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u167",
+      "line": 4585,
+      "content_sha256": "90ea9ca792f8a70df19a0f113e1b8530db1df0f68b2ff36f8a2664cc99938d8d",
+      "captured_text": "## U167\n\n**id**\n\nU167\n\n**date**\n\n2026-09-14\n\n**titre**\n\nMatérialiser une demande de service au-delà de la logistique\n\n**texte**\n\nNe pas s'enfermer dans la logistique pour décrire la plateforme de service me parait bien.\n\nComment matérialiser une demande de service ?\n\n**statut**\n\nOrientation explicite : plateforme exécutante non limitée à la logistique. Proposition Codex d’un objet métier Service Order, comparé à Service Request ; nom, définition, contenu et cycle proposés, sans adoption ni création d’objet actif."
+    },
+    {
+      "id": "U168",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u168",
+      "line": 4610,
+      "content_sha256": "c54faf798daf1eefdb0cae74d606a55cf2cb9fe6c6397b2c6caf4fe420a4f4ca",
+      "captured_text": "## U168\n\n**id**\n\nU168\n\n**date**\n\n2026-09-14\n\n**titre**\n\nOrders propres aux contextes Supply et Services\n\n**texte**\n\nDonc on a des orders de la supply et des orders de service.\n\nSupply et Services sont doc deux contextes bornées avec des définitions propres.\n\n**statut**\n\nLaurent affirme la distinction entre Orders Supply et Orders de service et leurs définitions propres à deux contextes. Cette orientation ne valide pas les attributs détaillés proposés U167 ni une décomposition applicative complète. La granularité des bounded contexts DDD à l’intérieur des grands périmètres reste à instruire ; aucun nouveau niveau ni objet instancié."
+    },
+    {
+      "id": "U169",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u169",
+      "line": 4635,
+      "content_sha256": "c48d7fada000b8da82297f2f83d746a836be2a98d6d6e16a2405565579366916",
+      "captured_text": "## U169\n\n**id**\n\nU169\n\n**date**\n\n2026-09-14\n\n**titre**\n\nValider la frontière des modèles Supply et Services\n\n**contexte**\n\nLaurent valide la restitution de U168 : modèles et Orders propres aux contextes Supply et Services, responsabilités distinctes, noms Order locaux et Supply Order / Service Order en comparaison, contrats explicites sans objet ni cycle partagé imposé. La restitution laisse ouverte la granularité des bounded contexts à l’intérieur de ces grands périmètres et distingue domaines de capacités et frontières de modèles.\n\n**texte**\n\nTop, je valide\n\n**statut**\n\nValidation explicite de cette orientation et des définitions courtes présentées. Portée enregistrée avec empreintes dans l’annexe JSON de vocabulaire. Les attributs détaillés U167, cardinalités, nouveaux objets ou niveaux et déploiements ne sont pas adoptés. Aucune release implicite."
+    },
+    {
+      "id": "U170",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u170",
+      "line": 4662,
+      "content_sha256": "9ca11420763a8dddce91a0af8c500a7e929b0ae9007ed0c193262731bbcb0d67",
+      "captured_text": "## U170\n\n**id**\n\nU170\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRéexaminer le nom et la définition de l’univers Case : Processus métier\n\n**texte**\n\nL'univers Case est à revoir en terme de terminologie et définition.\n\nProcessus métier ?\n\n**statut**\n\nRéexamen explicite de l’univers amont ; Business Processes est un candidat issu de la proposition française de Laurent, pas un nom adopté. Codex distingue son emploi possible comme nom de couche et la définition d’un périmètre métier. Aucun renommage actif."
+    },
+    {
+      "id": "U171",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u171",
+      "line": 4687,
+      "content_sha256": "b5c673be9325a8c5ec07a4e19de8db3957351f5a5284209d35f6e663078ef0ea",
+      "captured_text": "## U171\n\n**id**\n\nU171\n\n**date**\n\n2026-09-14\n\n**titre**\n\nOffre de services métier aux parties prenantes et réalisation par Case Management\n\n**texte**\n\nL'idée est de s'appuyer une plateforme de case management pour implémenter les processus métier long ou moyennement long. En tout cas impactant l'entreprise. C'est un peu son offre de service. Offre qui s'adresse à ses clients, ses fournisseurs, ses partenaires mais aussi ses services internes.\n\n**statut**\n\nPrécision utilisateur sur la plateforme Case Management, les processus de durée moyenne ou longue ayant un impact pour l’entreprise et les destinataires de l’offre. Codex propose Business Services comme nom métier de l’univers amont ; nom et définition reformulée restent proposés. Aucun renommage actif ni catalogue de services créé."
+    },
+    {
+      "id": "U172",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u172",
+      "line": 4710,
+      "content_sha256": "9ed5e88e9370d1017e9c0d8dbfe48e500a893587dc47b45aeb9cd372edad8934",
+      "captured_text": "## U172\n\n**id**\n\nU172\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPortail, espaces de travail et pilotage des grands processus transverses\n\n**texte**\n\nDonc il y aura bien un portail, des espaces par utilisateur, une possibilité de management des demandes, une partie planification / affectation lorsque les demandes sont traitées par plusieurs services, comme un service desk etc. Ca doit représenter les grand processus transverses de l'entreprise\n\n**statut**\n\nPrécision explicite du périmètre de la plateforme amont : accès utilisateur, management des demandes, planification et affectation entre services pour porter les grands processus transverses. Analogie service desk, sans choix de produit ni restriction IT. Ces besoins ne sont pas des capacités Supply ni une demande de développement immédiat d’un portail. Nom d’univers encore ouvert."
+    },
+    {
+      "id": "U173",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u173",
+      "line": 4733,
+      "content_sha256": "9d9793f5f3a5e707be41c0c95df96285a0f265089ed39a2433acfbdc152b32c5",
+      "captured_text": "## U173\n\n**id**\n\nU173\n\n**date**\n\n2026-09-14\n\n**titre**\n\nValider Business Services et ses définitions ; différer les domaines\n\n**contexte**\n\nValidation après la restitution U172 : nom Business Services, définition de prise en charge et pilotage des grands processus transverses, dimensions accès des parties prenantes, travail des équipes, coordination et pilotage transverse. Distinction entre organisation du travail de la couche processus et affectation/planification des ressources Supply.\n\n**texte**\n\nOn valide Business Services et les définitions. On travaillera les domaines plus tard.\n\n**statut**\n\nAccord explicite : l’univers universe-case conserve son identifiant et devient Business Services dans le backlog, révision 2 ; nom et définition validés. Les quatre dimensions sont conservées comme définitions de périmètre validées dans l’annexe JSON, sans création de domaines ou capacités. Les domaines sont différés. Pas de release implicite."
+    },
+    {
+      "id": "U174",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u174",
+      "line": 4760,
+      "content_sha256": "614e3b379f483ca5c8445a6909550c45b5cc7754caaefc7a3e3b87516441a53d",
+      "captured_text": "## U174\n\n**id**\n\nU174\n\n**date**\n\n2026-09-14\n\n**titre**\n\nClore le point 6 et travailler le point 5 : ressources\n\n**texte**\n\nAh oui, le 6 est cloturé, on doit travailler le point 5\n\n**statut**\n\nClôture explicite du point 6 de vocabulaire ; poursuivre le point 5 sur le substantif des biens et ressources mobilisés dans Supply. Ne pas rouvrir le point 6 au motif des variantes historiques Demand/Requirement et ne pas en déduire une validation de toutes ces variantes. Les nouvelles définitions du point 5 restent proposées."
+    },
+    {
+      "id": "U175",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u175",
+      "line": 4783,
+      "content_sha256": "4b0accb77eaa2462b82e5110f9acd4147682a057685f4764c3316230d3236362",
+      "captured_text": "## U175\n\n**id**\n\nU175\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRessource selon le contexte et continuité entre stock et mouvement\n\n**texte**\n\nJ'aime bien ressource qui est générique, dont bien aligné avec le concept de supply.\n\nD'un autre côté, ressource est tellement générique que ce peut représenter n'importe quoi selon l'angle de vue. Ressource peut être un magasin dans le cadre du Fulfillment Network mais c'est aussi un bien transporté etc.\n\nPremière question à transcher : doit on avoir un objet différent pour décrire quelque chose en stock ou en mouvement (livraison) ?\n\n**statut**\n\nPréférence pour le terme générique Resource avec sens contextualisé ; question d’identité et de représentation stock/mouvement à instruire en priorité. La définition U174 limitée aux biens n’est pas une définition générique adoptée. Proposition Codex : continuité des biens, représentations distinctes de position de stock et d’expédition, sans création d’objets actifs."
+    },
+    {
+      "id": "U176",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u176",
+      "line": 4810,
+      "content_sha256": "33be83cf26e99294e043e3d6a3c60e493488bcdfafd09af52e46b9f8014c3591",
+      "captured_text": "## U176\n\n**id**\n\nU176\n\n**date**\n\n2026-09-14\n\n**titre**\n\nAuditer SKU, colis, biens et Material chez SAP et Microsoft\n\n**texte**\n\nIl y a une différence entre les colis à transporter, et l'article (SKU) qui est l'unité insécable échangeable / vendable, non ?\nTout ça entre dans la définition de \"Bien\". Pourquoi SAP parle de Material ? Qu'en dit microsoft ?\nFais moi un audit des modèles pour y voir clair.\n\n**statut**\n\nDemande d’audit des concepts et de leurs granularités chez SAP, Microsoft et les références utiles. L’hypothèse SKU comme unité insécable est à éprouver, pas une définition adoptée. Résultats et propositions dans marche/etudes/2026-09-14-articles-biens-unites-logistiques/ ; aucune modification implicite de la carte active."
+    },
+    {
+      "id": "U177",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u177",
+      "line": 4835,
+      "content_sha256": "f826686987b189382a8b883fd18665f1f981d1f5e4a4c523267b9ff91b214dd9",
+      "captured_text": "## U177\n\n**id**\n\nU177\n\n**date**\n\n2026-09-14\n\n**titre**\n\nComprendre le qualificatif Retail du modèle Article SAP\n\n**texte**\n\nCe que je ne comprends pas, c'est le modèle SAP article / générique / display / prepack / Salesset qui est un modèle \"retail\". Pourquoi Retail ?\n\n**statut**\n\nQuestion sur le sens du qualificatif sectoriel Retail ; aucune adoption ni exclusion de périmètre déduite."
+    },
+    {
+      "id": "U178",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u178",
+      "line": 4858,
+      "content_sha256": "f6f6844486f1a1d5f5f4a3b3a79e2d8cdf89d49bdabb9fd8524e7cd1f128344e",
+      "captured_text": "## U178\n\n**id**\n\nU178\n\n**date**\n\n2026-09-14\n\n**titre**\n\nVérifier l'emploi du modèle Article SAP en wholesale\n\n**texte**\n\nParce que pour le wholesale, on n'utilise pas ce modèle ?\n\n**statut**\n\nPrécision de U177 : vérifier l'applicabilité au commerce de gros et distinguer le nom de l'offre SAP du périmètre métier couvert."
+    },
+    {
+      "id": "U179",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u179",
+      "line": 4881,
+      "content_sha256": "d3548c8dcb7bd6bd9eea59f980afb02add761f2f6c0720283151b3da1e4f937a",
+      "captured_text": "## U179\n\n**id**\n\nU179\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDéfinir le sens de Retail chez SAP\n\n**texte**\n\nQue signifie Retail pour SAP ?\n\n**statut**\n\nClarification terminologique de U177/U178 : distinguer commerce de détail, nom de solution sectorielle et réutilisation de son modèle dans Fashion/wholesale. Aucune modification de modèle demandée."
+    },
+    {
+      "id": "U180",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u180",
+      "line": 4904,
+      "content_sha256": "558c8a6561dbd4f1ae5f80e9b87e66fec4eba7a1f232c2a70ee13976aabba840",
+      "captured_text": "## U180\n\n**id**\n\nU180\n\n**date**\n\n2026-09-14\n\n**titre**\n\nComparer le sens anglais et français d’Article\n\n**texte**\n\nArticle en anglais ca veut dire quoi ? Meme sens qu'en francais ?\n\n**statut**\n\nQuestion lexicale dans le point 5 ; le rapprochement de langue ne valide pas une définition d’objet ni un renommage du modèle."
+    },
+    {
+      "id": "U181",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u181",
+      "line": 4927,
+      "content_sha256": "8d789f69912dbe6d2d97d809ec47ee1e010b2eff50b9ff219106b6a329547e3f",
+      "captured_text": "## U181\n\n**id**\n\nU181\n\n**date**\n\n2026-09-14\n\n**titre**\n\nComparer les définitions d’Article dans SAP et le dictionnaire\n\n**texte**\n\nOk mais quelle est la définition de Article chez SAP et dans le dictionnaire et quelle différence ?\n\n**statut**\n\nDemande de définitions explicites et comparaison. La vérification complète l’audit : SAP emploie bien la notion de plus petite unité indépendante non subdivisible, tout en étendant ses catégories aux génériques et ensembles. Aucune nouvelle définition locale adoptée."
+    },
+    {
+      "id": "U182",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u182",
+      "line": 4950,
+      "content_sha256": "b0ee38ee53d70b53ea8f4cbf90a713c6af41b6d726911da3cfd1ed123c0c8ec7",
+      "captured_text": "## U182\n\n**id**\n\nU182\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPréciser le sens de commandé dans la définition SAP Article\n\n**texte**\n\nQue signifie commandé ? commandé au fournisseur/fabricant ou commandé au vendeur ?\n\n**statut**\n\nClarification du point de vue acheteur/vendeur dans la définition. La phrase ne précise pas ses acteurs ; le contexte suggère l’approvisionnement. Les unités d’achat et de vente sont explicitement distinctes. Aucune règle universelle d’indivisibilité ni définition locale adoptée."
+    },
+    {
+      "id": "U183",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u183",
+      "line": 4973,
+      "content_sha256": "775982a718fe71d717f97d9855ff8ea707b55f95b6c43dcc5e421c383bf052b6",
+      "captured_text": "## U183\n\n**id**\n\nU183\n\n**date**\n\n2026-09-14\n\n**titre**\n\nÉprouver Article sur le display et les boosters de cartes\n\n**texte**\n\nPrenons un exemple concret. Je suis une boutique de jeux de plateaux et cartes. Je peux commander chez Hasbro des displays de boosters MTG et j'ai le droit de revendre les booster à l'unité. Mais je n'ai pas le droit de revendre le display. Le booster est l'article. J'ai bon ?\n\n**statut**\n\nScénario fourni pour éprouver les notions. L’interdiction de revendre le display est une hypothèse du scénario, pas une condition contractuelle réelle vérifiée. La question ne valide pas une définition générale d’Article ni une configuration SAP."
+    },
+    {
+      "id": "U184",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u184",
+      "line": 4996,
+      "content_sha256": "bf96b7be389ad7d969122866c017d83708f5df95761ce3305522c291ae67e18f",
+      "captured_text": "## U184\n\n**id**\n\nU184\n\n**date**\n\n2026-09-14\n\n**titre**\n\nSituer Business Central dans la gamme Dynamics 365\n\n**texte**\n\nChez microsoft, quelle différence entre dynamics365 et Business Central ?\n\n**statut**\n\nClarification de la gamme et des modèles comparés : Business Central est une application Dynamics 365, distincte de Supply Chain Management. Aucun choix de produit, de modèle principal ou de solution à déployer déduit."
+    },
+    {
+      "id": "U185",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u185",
+      "line": 5019,
+      "content_sha256": "c3d7951c6932a150a864b9dea04fa25e078aa39147e023b6e5003093e0ece150",
+      "captured_text": "## U185\n\n**id**\n\nU185\n\n**date**\n\n2026-09-14\n\n**titre**\n\nComparer le découpage Microsoft à nos univers et domaines\n\n**texte**\n\nJ'aimerais savoir si ça fitte avec notre modèle univers / domaine ou pas\n\n**statut**\n\nDemande d’analyse de correspondance dans la continuité de U184. Comparer gamme, produits et modules Microsoft aux univers et domaines métier ; aucune restructuration ou adoption implicite."
+    },
+    {
+      "id": "U186",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u186",
+      "line": 5042,
+      "content_sha256": "715dc70efe14e7b5bab59e08b3b5619c8c0c569e30b1a5f22ed239ca393496e3",
+      "captured_text": "## U186\n\n**id**\n\nU186\n\n**date**\n\n2026-09-14\n\n**titre**\n\nLocaliser Inventory Management dans la Supply Microsoft\n\n**texte**\n\nChez Microsoft, le stock n'est pas dans la Supply ? Il est dans quel domaine ?\n\n**statut**\n\nClarification de U185 : Inventory Management est bien un module de Dynamics 365 Supply Chain Management. La réserve sur les périmètres globaux des produits ne remet pas en cause cette correspondance avec Supply / D01. Aucune validation de couverture détaillée ni modification de modèle."
+    },
+    {
+      "id": "U187",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u187",
+      "line": 5065,
+      "content_sha256": "b00c48f3a77290bdcd444e663c893f0393907352476ccfc2e6d565da231bac37",
+      "captured_text": "## U187\n\n**id**\n\nU187\n\n**date**\n\n2026-09-14\n\n**titre**\n\nGuider les entités par le stock unifié et les conditionnements inbound/outbound\n\n**texte**\n\nRevenons sur notre modèle avec les entités comme article etc.\n\nEn fait, ce qui nous guide en premier lieu c'est notre modèle de stock unifié.\nOn ne peut pas avoir que des notions d'article car les flux inbound et outbound (j'aime ces termes qui fixent le vocabulaire vis à vis du stock) doivent se définir selon le packaging (container en langage microsoft) qui peut être différent en entrée et en sortie.\n\n**statut**\n\nOrientation explicite : le stock unifié guide l’exploration ; les références d’article seules sont insuffisantes ; les conditionnements entrants et sortants peuvent différer. Inbound/Outbound sont des termes appréciés pour situer les flux vis-à-vis du stock. Les noms d’entités, relations détaillées et responsabilités proposées par Codex restent à instruire."
+    },
+    {
+      "id": "U188",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u188",
+      "line": 5091,
+      "content_sha256": "5debbe02a7648513e7e5b92fb1f25e04d7b9ecadbca901f0a08a2adb18a73597",
+      "captured_text": "## U188\n\n**id**\n\nU188\n\n**date**\n\n2026-09-14\n\n**titre**\n\nConditionnements de stockage et création des containers au packing\n\n**texte**\n\nEn termes de stockage, les containers en inbound peuvent être modifiés / reconditionnés pour le stockage. Pareil pour les flux outbound, la capacité des entrepôt de packing peut créer des containers \"à la volée\".\n\n**statut**\n\nPrécision utilisateur de U187 : les contenants inbound peuvent être reconditionnés pour le stockage ; le packing outbound peut créer les contenants au moment de l’exécution. Aucun modèle de contenant figé entre réception et expédition ne doit être présumé."
+    },
+    {
+      "id": "U189",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u189",
+      "line": 5114,
+      "content_sha256": "e4e5087051098181059485a5d3c2a9ec1a0ed843f770778efbaf607f4d38904e",
+      "captured_text": "## U189\n\n**id**\n\nU189\n\n**date**\n\n2026-09-14\n\n**titre**\n\nIntégrer le packing contractuel à la promesse ATP B2B\n\n**texte**\n\nQuand je calcule l'ATP pour une commande de vente B2B, il faut prendre en compte le \"packing\" car contractuellement, le client wholesale ne veut pas se faire livrer un stock en vrac.\n\n**statut**\n\nExigence utilisateur pour le modèle local : l’ATP doit prendre en compte le conditionnement contractuellement applicable. Les conditions précises du packing, les objets détaillés et le partage de responsabilités restent à instruire. Cela ne décrit pas une définition universelle des ATP éditeurs."
+    },
+    {
+      "id": "U190",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u190",
+      "line": 5137,
+      "content_sha256": "7acd6fa10bc2d3faac0f2453e067c34761cd557304d5f5b78b16f065cdd9dcb1",
+      "captured_text": "## U190\n\n**id**\n\nU190\n\n**date**\n\n2026-09-14\n\n**titre**\n\nProposer les références Product/Container et leurs unités\n\n**texte**\n\nFinalement, on a des contenants (Container) et des unités qui possède le code barre unique et qui est donc insécable (Article). Les Articles ont une référence Produit (univers du Design). Les articles peuvent être stockés directement dans les emplacements logistiques du Fulfillment Network ou dans des Containers. Les Containers peuvent contenir des containers. Comme les articles qui viennent des Produits, les Containers (L'unité) a une référence sur un référentiel de Container.\n\nPour simplifier on pourrait avoir :\nProduct : Référentiel de design.\nArticle ou Product Unit : Référentiel des biens unitaires\nContainer : Référentiel de design.\nContainer Unit : Référentiel des contenants dans une unité logistique de stockage ou de transit\n\n**statut**\n\nProposition utilisateur en instruction : quatre termes, rattachements aux références, stockage direct ou en contenant et imbrication. Clarification demandée sur le grain Article/Product Unit (référence vendable ou exemplaire physique). Le lien code-barres unique donc insécable reste une hypothèse à corriger/qualifier. Design est mentionné, sans création automatique d’univers."
+    },
+    {
+      "id": "U191",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u191",
+      "line": 5166,
+      "content_sha256": "ef95ff6dd67f966cf45e83b145503eb640e0efbffeb8aa8deff1e605db451658",
+      "captured_text": "## U191\n\n**id**\n\nU191\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPréciser Product Unit comme exemplaire physique individuel\n\n**texte**\n\nRéponse à la question : « Quand tu dis Article / Product Unit, désignes-tu la référence vendable (par exemple chemise bleue taille M, dont 100 exemplaires peuvent partager le même code-barres) ou chaque exemplaire physique de cette référence ? »\n\nChaque exemplaire physique, avec son identité propre\n\n**statut**\n\nClarification explicite du grain de Product Unit/Article : exemplaire physique avec identité propre. Ne pas conserver la référence vendable comme alternative courante ; cela ne valide pas les autres détails du schéma."
+    },
+    {
+      "id": "U192",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u192",
+      "line": 5191,
+      "content_sha256": "f77cb2a1d4a9fd186dc3aa50105d38916bbf3a4e03f2440873d7fdb186c89261",
+      "captured_text": "## U192\n\n**id**\n\nU192\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDissocier identité physique et code-barres\n\n**texte**\n\nOui tu as raison. Rien à voir avec le code barre.\n\n**statut**\n\nAccord explicite sur la dissociation du concept et du code-barres. Ne pas définir l’identité propre ou l’indivisibilité de Product Unit par le code-barres. Aucun schéma d’identification concret adopté."
+    },
+    {
+      "id": "U193",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u193",
+      "line": 5214,
+      "content_sha256": "2c1c469185b88b664e9f6c5488092a2519fc7fbec748ff0b6d9cc373d1ca5db8",
+      "captured_text": "## U193\n\n**id**\n\nU193\n\n**date**\n\n2026-09-14\n\n**titre**\n\nDistinguer Serial Number de Product Unit et GTIN de Product Variant\n\n**texte**\n\nUn Product Unit peut avoir un Serial Number qui n'est pas un code barre ou un GTIN nécessairement. Le GTIN, c'est plutot pour le Product Variant\n\n**statut**\n\nPrécision utilisateur : Serial Number possible sur l’exemplaire, distinct du support code-barres et du GTIN. Product Variant introduit comme niveau de référence auquel rapprocher le GTIN. Relations détaillées et portée des conditionnements en instruction ; aucune publication implicite."
+    },
+    {
+      "id": "U194",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u194",
+      "line": 5237,
+      "content_sha256": "2d4c5d6cf8529bf995c6971696fc5130c00dd7a38870b6de9f8c07e122cc6ca6",
+      "captured_text": "## U194\n\n**id**\n\nU194\n\n**date**\n\n2026-09-14\n\n**titre**\n\nExaminer Container comme produit avec des règles de composition\n\n**texte**\n\nCe qui est amusant c'est que Container et Product ont le même comportement en termes de ratachement à un référentiel, la déclinaison en variant et des unitées qui peuvent porter un GTIN. La seule distinction : un container peut contenir d'autres containers ou des product unit. Il y a des règles qui limitent la composition.\n\nDu coup : Un container n'est pas un produit comme un autre, ce sont juste les règles de composition qui changent ?\n\n**statut**\n\nHypothèse utilisateur en instruction : mutualiser référence, variante et exemplaire pour produits et contenants. Examiner les règles de composition et les différences de rôle et de cycle de vie ; aucune fusion d’entités validée par la question."
+    },
+    {
+      "id": "U195",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u195",
+      "line": 5262,
+      "content_sha256": "e37a3d9d1459526f4c36a4222ecdae6d29883dd01b7c2fe6bb4ef6ffd4813416",
+      "captured_text": "## U195\n\n**id**\n\nU195\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRetenir Article et Container comme rôles de Product\n\n**texte**\n\nC'est exactement ça : Un Product porte un rôle : Container ou Article\n\n**statut**\n\nValidation explicite du principe : Product porte un rôle Article ou Container. La proposition rôle versus spécialisation est tranchée en faveur du rôle au niveau Product indiqué par Laurent. Ne pas étendre cet accord à l’exclusivité, la multiplicité, aux règles détaillées ou à un schéma IT."
+    },
+    {
+      "id": "U196",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u196",
+      "line": 5285,
+      "content_sha256": "0ed5dc173b73ce47080ba16b8f31ec54f7157fd7b1725a9069096343647b6987",
+      "captured_text": "## U196\n\n**id**\n\nU196\n\n**date**\n\n2026-09-14\n\n**titre**\n\nRelier les textes du modèle aux éléments du glossaire\n\n**texte**\n\nCe que j'aimerais, c'est que les textes (libellés, description ...) référencent les éléments du glossaire. Facile à faire en json ?\n\n**statut**\n\nBesoin explicite de références au glossaire dans les textes ; demande de faisabilité JSON. Proposition de contrat préparée dans le backlog, sans migration globale ni activation Atlas dans cette étape."
+    },
+    {
+      "id": "U197",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u197",
+      "line": 5308,
+      "content_sha256": "33e0ce3cdab1d623c46d665165085a95fa4a9e6c3361b8480260ffd91b2b84ac",
+      "captured_text": "## U197\n\n**id**\n\nU197\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPréférer des liens textuels légers dans les chaînes JSON\n\n**texte**\n\nPas possible d'avoir un truc plus léger un peu comme dans markdown, une chaine de caractère reconnaissable pour décrire les liens, sinon le json est illisible pour un humain.\n\n**statut**\n\nPréférence explicite pour des chaînes lisibles avec une syntaxe de lien de type Markdown ; remplacer la proposition de tableaux de segments. Syntaxe exacte proposée par Codex, non encore validée ni implémentée."
+    },
+    {
+      "id": "U198",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u198",
+      "line": 5331,
+      "content_sha256": "48541b76eb7382e0c1a1f7a2061542685dd53cbf66347a0ab4589d925720e24c",
+      "captured_text": "## U198\n\n**id**\n\nU198\n\n**date**\n\n2026-09-14\n\n**titre**\n\nExaminer YAML pour la lisibilité du modèle\n\n**texte**\n\nA moins de passer par yaml plutot que json\n\n**statut**\n\nAlternative YAML à examiner pour la rédaction humaine ; ne constitue pas une décision de migrer l’autorité JSON courante."
+    },
+    {
+      "id": "U199",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u199",
+      "line": 5354,
+      "content_sha256": "1efd00c1ef14b9fdd0edc4f68ad18849b185e8a63c1cdfdfe7688b2996c77e85",
+      "captured_text": "## U199\n\n**id**\n\nU199\n\n**date**\n\n2026-09-14\n\n**titre**\n\nFormat de release et API\n\n**texte**\n\nYaml pour la release c'est moins pratique pour les apis ?\n\n**statut**\n\nContribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée."
+    },
+    {
+      "id": "U200",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u200",
+      "line": 5377,
+      "content_sha256": "8045b92edba460fcb11f94bcfda05de2f71e5c617f551d482ef5836ca6d927bf",
+      "captured_text": "## U200\n\n**id**\n\nU200\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPréférer YAML en backlog et en release\n\n**texte**\n\nSi je peux demander, je préfèrerais YAML en backlog et release et un parser json pour les apis.\nPossible ?\n\n**statut**\n\nContribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée."
+    },
+    {
+      "id": "U201",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u201",
+      "line": 5401,
+      "content_sha256": "840504a6d50626a058503db2271aa22d176d1696ec876ede408f164c9a67f912",
+      "captured_text": "## U201\n\n**id**\n\nU201\n\n**date**\n\n2026-09-14\n\n**titre**\n\nArrêter avant modification\n\n**texte**\n\nStop !!!\n\n**statut**\n\nContribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée."
+    },
+    {
+      "id": "U202",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u202",
+      "line": 5424,
+      "content_sha256": "1083eaf0d285d60a3c224529a5d67fce243776c513e8df991800e4a0fdc0189f",
+      "captured_text": "## U202\n\n**id**\n\nU202\n\n**date**\n\n2026-09-14\n\n**titre**\n\nOrdonner audit, application puis refactoring YAML\n\n**texte**\n\nIl faut orchestrer 2 opérations :\n\n- auditer le contenu du modèle vis à vis du glossaire qu'on vient de mettre à jour\n- appliquer l'audit\n- Faire le refacto yaml\n\n**statut**\n\nOrdre de travail explicite : audit sémantique, application, puis migration YAML. Reprend le travail interrompu U201 ; pas de publication métier ou Git implicite."
+    },
+    {
+      "id": "U203",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u203",
+      "line": 5451,
+      "content_sha256": "79197cb579d20b4a5417820f2610ad5f9d612029ac4a0311ad8d18a4615c62c8",
+      "captured_text": "## U203\n\n**id**\n\nU203\n\n**date**\n\n2026-09-14\n\n**titre**\n\nGlossaire Atlas et liens avec infobulle\n\n**texte**\n\nDans Atlas, il y a une page sur le glossaire ?\n\nCe que j'aimerais, c'est que lorsqu'on passe la souris sur un lien une infobulle apparait avec la description courte de l'objet et un clic amène sur la page/ancre\n\n**statut**\n\nDemande d’interface et de navigation : description courte au survol, accès à la fiche/ancre au clic. N’autorise pas à remplacer les définitions d’une publication par celles du backlog ni à publier implicitement une release métier."
+    },
+    {
+      "id": "U204",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u204",
+      "line": 5476,
+      "content_sha256": "de320b778d7555d82d7862550a76b87eb2fc2ba2fadbf331202588c9e475fc18",
+      "captured_text": "## U204\n\n**id**\n\nU204\n\n**date**\n\n2026-09-14\n\n**titre**\n\nPublier une release avec le backlog et le glossaire courants\n\n**texte**\n\nPublie une release\n\n**statut**\n\nDemande explicite de publication locale du modèle courant et de son glossaire dans Atlas, après contrôles. Aucun nouvel accord métier ni commit ou push implicite."
     },
     {
       "id": "F001",
@@ -4113,6 +4609,102 @@
       "line": 1781,
       "content_sha256": "5168a2cd251f4e4ab7b627d4db36386bd4c4391704672e186fa1f10bc1552873",
       "captured_text": "## C78\n\n**id**\n\nC78\n\n**source**\n\nU140/U141 ; CMP066.\n\n**formulation_a_eviter**\n\nLe backlog D04 contient toujours Commitment Creation, Commitment Revision, Commitment Reconciliation et Return and Replacement Decision ; les univers ne sont pas structurés ; l’Agreement exclut les engagements contractuels de période.\n\n**formulation_retenue**\n\nU141 applique Supply/Case comme univers explicites. D04 Order Management contient D04.e Order Registration, D04.f Order Revision, D04.g Order Visibility et D04.h Order Reconciliation. Les noms et descriptions courtes présentés sont validés par Laurent ; les compléments nouveaux restent proposés. Les anciens D04.a–d sont retirés de la carte active et conservés dans modeles/backlog/history/pre-U141.json : nouveaux résultats, nouveaux identifiants, aucune réutilisation. Agreement porte le contrat complet projeté, y compris périodes et engagements ; aucun pouvoir d’administration transféré. D04 suit la commande autorisée, D07 les engagements et faits d’exécution ; correspondances détaillées, reliquats et cas limites restent à instruire.\n\n**statut**\n\nAppliqué au backlog uniquement. Réexamen du droit commercial de retour/remplacement différé avec Case ; pas de perte du besoin, pas de capacité Case inventée. Release v002 conservée. Note de mise en œuvre : connaissance/27-order-management-et-univers.md."
+    },
+    {
+      "id": "C79",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c79",
+      "line": 1804,
+      "content_sha256": "54076203277d17d6730e21512019b09bf29423ec182a219e6e253a15e1f2393c",
+      "captured_text": "## C79\n\n**id**\n\nC79\n\n**source**\n\nU144 ; U145\n\n**formulation_a_eviter**\n\nD02 reste un domaine actif du backlog ; supprimer D02 impose de supprimer tous les identifiants préfixés D02 ou de renuméroter D03 et les suivants.\n\n**formulation_retenue**\n\nU145 retire D02 et ses deux capacités résiduelles D02.a/D02.d, dont la reprise est examinée dans D01/D03. D02.b Supply Protection et D02.c Reservation restent en D01 ; D02.e Supply Assignment reste en D03. Les autres identifiants sont conservés. L’état antérieur et les trois relations retirées sont préservés dans modeles/backlog/history/pre-U145.json. Les clarifications de Reservation et Supply Protection restent à instruire ; le retrait ne valide pas de nouvelles définitions.\n\n**statut**\n\nAppliqué au backlog : 52 nœuds, 34 capacités. Release v003 inchangée avec D02 et 36 capacités ; aucune publication implicite."
+    },
+    {
+      "id": "C80",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c80",
+      "line": 1827,
+      "content_sha256": "c6e9b4ae643e9eb56866005b99aef8e9617f5f99437cb9af720cb76f78d6838f",
+      "captured_text": "## C80\n\n**id**\n\nC80\n\n**source**\n\nU151 ; U154\n\n**formulation_a_eviter**\n\nD03 conserve neuf capacités actives dont cinq décisions fines ; la recomposition ATP/CTP/PTP reste non adoptée.\n\n**formulation_retenue**\n\nU154 valide huit capacités : Promise Proposal, Promise Confirmation, Promise Revision, Supply Assignment ; Available-to-Promise (ATP), Capable-to-Promise (CTP), Profitable-to-Promise (PTP), Delivery Schedule Decision. Les quatre décisions nouvelles prennent D03.i–l, les anciennes D03.d–h sont retirées avec historique. Droits, sources, acheminement, substitution et recours à de nouvelles ressources restent couverts comme choix/règles des capacités plus larges. CTP porte localement le plan d’adaptation U148 ; la différence avec les produits de marché reste explicite. Proposition de plan ne vaut pas exécution de ses mesures.\n\n**statut**\n\nBacklog : 51 nœuds et 33 capacités, dont huit D03. Aucune publication ; release v003 inchangée. Vocabulaire Requirement/Order/Case/Demand/Command en exploration, aucun renommage adopté."
+    },
+    {
+      "id": "C81",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c81",
+      "line": 1850,
+      "content_sha256": "99be5c13cf4c851eea7e52d275ee8c9b80f048819fa793d00be6f265966e02ed",
+      "captured_text": "## C81\n\n**id**\n\nC81\n\n**source**\n\nU154 ; correction U155\n\n**formulation_a_eviter**\n\nLaurent maintient que Requirement est réservé aux achats dans ECC ; Requisition et Requirement sont interchangeables ; Purchase Requisition équivaut automatiquement à Case.\n\n**formulation_retenue**\n\nU155 précise que Laurent visait Requisition. La comparaison porte sur Purchase Requisition/Purchase Order et Sales Order. Purchase Requisition est une demande interne aux achats, distincte du besoin Requirement et d’une commande externe. Son équivalence avec un Case local n’est pas établie. Le traitement Sales Order intègre des préoccupations commerciales et Supply selon la documentation ERP consultée ; ne pas en déduire l’architecture installée Storeland ou SAP du groupe.\n\n**statut**\n\nVocabulaire en exploration dans marche/ecc-requisition-order-case.md. Aucun renommage d’Order ni nouvelle notion validée."
+    },
+    {
+      "id": "C82",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c82",
+      "line": 1873,
+      "content_sha256": "801cbb9983b1fe8e0f13236bc3d64cb6ed4c960095fa5a6cdeda20eedcec54f4",
+      "captured_text": "## C82\n\n**id**\n\nC82\n\n**source**\n\nU157 ; SAP Learning et Oracle, marche/backlog-management-supply-assignment.md\n\n**formulation_a_eviter**\n\nSupply Assignment SAP ne fait qu’appliquer une décision externe ; seul Backlog Management permet d’évaluer et de simuler. Backlog Management est nécessairement un synonyme exact de D02.e.\n\n**formulation_retenue**\n\nLe périmètre produit SAP de Supply Assignment inclut des fonctions de simulation et de réaffectation ; il dépasse notre définition de capacité D02.e. Oracle Backlog Management couvre aussi la planification du carnet. La distinction locale proposition/engagement/application reste utile, mais ne prouve pas des produits disjoints. La granularité et les frontières D03/D04 restent à instruire avant fusion ou renommage.\n\n**statut**\n\nAnalyse corrigée, valeurs actives et validations conservées. Aucun déploiement local ni équivalence exacte attesté."
+    },
+    {
+      "id": "C83",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c83",
+      "line": 1896,
+      "content_sha256": "5e8eaf87453a333ce0df7d824478d26d8d3590e3fdbb2a8acbf54291cc6c5df2",
+      "captured_text": "## C83\n\n**id**\n\nC83\n\n**source**\n\nU159\n\n**formulation_a_eviter**\n\nLa simulation est nécessairement un doublon ou un simple mode d’ATP/CTP/PTP ; son seul résultat est un calcul de promesse.\n\n**formulation_retenue**\n\nLaurent distingue les solutions calculées par ATP/CTP/PTP de la mesure de leurs impacts à un niveau global par la simulation. Celle-ci peut utiliser les calculs et comparer des situations sans appliquer le scénario. Les calculs eux-mêmes ne sont pas présumés limités à une commande isolée. Le résultat attendu, et non l’algorithme partagé, permet de distinguer les aptitudes.\n\n**statut**\n\nOrientation retenue dans l’annexe D03 ; définition reformulée, nom et indicateurs proposés. Aucune nouvelle capacité active ni publication."
+    },
+    {
+      "id": "C84",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c84",
+      "line": 1919,
+      "content_sha256": "0cdc9c8e30f532b397550f8ae1767e7a88b8653f08e4bec2dbf047887954e5d5",
+      "captured_text": "## C84\n\n**id**\n\nC84\n\n**source**\n\nU161, U162\n\n**formulation_a_eviter**\n\nDéduire une capacité de chaque étape ou contrôle d’un processus ; assimiler Backlog Refinement à une capacité ou élargir Order Prioritization à tout le travail du carnet.\n\n**formulation_retenue**\n\nPartir des aptitudes durables de l’entreprise. Backlog Refinement désigne ici une activité. Qualification est retirée de la proposition ; les contrôles restent un principe de fonctionnement. Le recouvrement Structuring/Revision et la portée de Prioritization sont en instruction. Conserver Order Revision et limiter Prioritization à la priorité relative sont des recommandations de Codex, pas de nouveaux arbitrages validés.\n\n**statut**\n\nCorrection de méthode enregistrée ; annexe des candidats actualisée, carte active inchangée."
+    },
+    {
+      "id": "C85",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c85",
+      "line": 1942,
+      "content_sha256": "a7be692a6845c25f2c20abcc6b3f896022f3145d33bb186346d72da5d0159715",
+      "captured_text": "## C85\n\n**id**\n\nC85\n\n**source**\n\nU164, U155\n\n**formulation_a_eviter**\n\nCase et Demand sont des synonymes de demande processus ; Requirement ne concerne que les achats ; Order et Command sont interchangeables.\n\n**formulation_retenue**\n\nCorrection analytique proposée par Codex : Case porte le traitement d’une situation, Demand/Requirement peuvent décrire des besoins Supply issus notamment d’Orders ou de prévisions. Command porte une instruction d’action et ne remplace pas la commande métier Order. U155 corrige le terme achats en Requisition. Les distinctions proposées U164 ne sont pas des objets ou relations adoptés.\n\n**statut**\n\nPrécision sourcée en instruction, sans nouvelle validation métier ni modification des capacités actives."
+    },
+    {
+      "id": "C86",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c86",
+      "line": 1965,
+      "content_sha256": "1ed3a54496babaa034a8c9d4b0c889dcbc023cb836a76842b888b3770ef9da03",
+      "captured_text": "## C86\n\n**id**\n\nC86\n\n**source**\n\nU165\n\n**formulation_a_eviter**\n\nRéduire Command au pattern logiciel ou faire entrer ce pattern dans la carte métier ; tenir Case pour le nom métier définitif de l’univers amont ; assimiler demande d’exécution et réalisation acquise.\n\n**formulation_retenue**\n\nLaurent propose Command comme objet métier de demande d’exécution, à instruire indépendamment du pattern logiciel. L’univers amont fait émerger et affiner les intentions en demandes ou problèmes ; son nom Case doit être revu. Order reste indispensable dans Supply. Demande d’exécution, prise en charge et réalisation restent à distinguer.\n\n**statut**\n\nOrientation explicite et hypothèse de nom conservées séparément ; pas de nouvel objet ni de nom de remplacement adopté."
+    },
+    {
+      "id": "C87",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c87",
+      "line": 1988,
+      "content_sha256": "49c416e17ef3be41609582750879ba5bb97952ff82f71075bd4ef560479f7e1c",
+      "captured_text": "## C87\n\n**id**\n\nC87\n\n**source**\n\nU176, U175\n\n**formulation_a_eviter**\n\nSKU est universellement une pièce physique insécable vendable ; Material signifie matière première ; tous les concepts regroupés sous Bien ont la même nature ; HU, Container, License plate et SSCC sont interchangeables.\n\n**formulation_retenue**\n\nL’audit distingue référence d’article, quantité et unité, lot/exemplaire lorsque suivi, conditionnement de référence et unité logistique physique. Divisibilité, unité de vente et niveau de référence sont des choix contextualisés. Material/Product SAP et Product Microsoft peuvent couvrir plus que des biens physiques ; les différents emplois de stockkeeping unit doivent garder leur contexte. Resource reste un rôle de mobilisation. Les correspondances restent partielles, sans imposer une hiérarchie commune.\n\n**statut**\n\nConstats documentaires et corrections proposées par Codex, à instruire ; aucune nouvelle définition de modèle validée par la demande d’audit. Voir marche/etudes/2026-09-14-articles-biens-unites-logistiques/audit.md."
+    },
+    {
+      "id": "C88",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c88",
+      "line": 2011,
+      "content_sha256": "4a9bddd8e352c60d910cf4c79f8921bb25d5e5169ebe7f289141196c79ee84dd",
+      "captured_text": "## C88\n\n**id**\n\nC88\n\n**sources**\n\nU177, U178, U179\n\n**constat**\n\nLa formule modèle retail peut laisser croire que les catégories Article SAP sont exclues du wholesale.\n\n**correction**\n\nDistinguer Retail comme activité de commerce de détail, SAP Retail comme solution sectorielle et la réutilisation de son architecture dans Fashion. SAP documente prepacks et displays en wholesale. Ne pas en déduire un usage installé chez Boardriders ni un périmètre identique de toutes les éditions. Complément sourcé : marche/etudes/2026-09-14-articles-biens-unites-logistiques/retail-wholesale.md."
+    },
+    {
+      "id": "C89",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c89",
+      "line": 2030,
+      "content_sha256": "81db652932e0559acb2bdcde15d4cb9172ec52e726ecc276ca09ad0fe9cf9b01",
+      "captured_text": "## C89\n\n**id**\n\nC89\n\n**sources**\n\nU176, U180, U181\n\n**constat**\n\nL’audit et les réponses ont présenté la synthèse Article = référence de gestion sans citer la définition explicite SAP fondée sur la plus petite unité ou le conditionnement client commandable indépendamment et non subdivisible.\n\n**correction**\n\nRétablir cette définition, qui rejoint l’intuition initiale de Laurent, en distinguant sa portée des catégories génériques abstraites et des ensembles décomposables également appelés Article. Ne pas attribuer à SAP une résolution formelle de cette tension par une indivisibilité commerciale contextuelle : c’est une interprétation possible seulement. Ni identité universelle SKU/Article ni adoption locale déduite. Sources et analyses : marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md et JSON associé."
+    },
+    {
+      "id": "C90",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c90",
+      "line": 2049,
+      "content_sha256": "e615600fbf7accbbbc02a9937f476c7da91ef61b935659da7e3850638aa3e021",
+      "captured_text": "## C90\n\n**id**\n\nC90\n\n**sources**\n\nU202, U195, U173, U169, U154\n\n**constat**\n\nLe backlog conservait Article comme référence SKU, le principe CTP différé et des formulations Case/demande antérieures aux clarifications.\n\n**correction**\n\nAudit complet puis précisions de dix nœuds et des principes concernés. Références Product/Variant distinctes des unités, Article/Container comme rôles, Orders contextualisés et CTP présent dans D03. Les nouvelles formulations détaillées restent proposées ; preuves et valeurs avant modification dans audits/2026-09-14-glossaire-yaml/. Aucun renommage de domaine ni ajout de capacité."
     },
     {
       "id": "P01",

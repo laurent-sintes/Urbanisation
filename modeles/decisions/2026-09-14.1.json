@@ -1,0 +1,1517 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-14.1",
+  "decisions": [
+    {
+      "id": "ADOPT-004-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "U75",
+        "U131"
+      ],
+      "note": "Liste adoptée dans Order Promising, y compris D02.e. Transcription de ADOPT-004 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.a",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "b336074878c6efa0c50922444982bb7f96ab73a522e09b28b4388130feb657db"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-005-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "P83",
+        "C63",
+        "U131"
+      ],
+      "note": "Quatre actions et cinq décisions dans la portée présentée ; autorités et interactions détaillées non adoptées. Transcription de ADOPT-005 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.b",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "74d248d5f671453f15ec4e94a76d49008bbeb5b570b9a2db703cf3fcf55f76cf",
+          "definition": "7893aa6d8ea80d164fb977ae662197c561630b0bfc18045f2bb0d02500e6627c",
+          "finality": "147776c5064b4770d1635797f01f11b687fca456ecad298507bebc055f6b506e",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-006-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "U75",
+        "U131"
+      ],
+      "note": "Liste adoptée dans Order Promising, y compris D02.e. Transcription de ADOPT-006 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.b",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "531e3e958ac6f4057a9db10be8cc1d4f5fa090760fc8a75b176b0f216abc2771"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-008-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "U75",
+        "U131"
+      ],
+      "note": "Liste adoptée dans Order Promising, y compris D02.e. Transcription de ADOPT-008 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D02.e",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-010-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "U75",
+        "U131"
+      ],
+      "note": "Liste adoptée dans Order Promising, y compris D02.e. Transcription de ADOPT-010 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.c",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "fa80906c4e761662ceeb7b6d271558853e957544ba4ed4ccc5a1c4324132808a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-021-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U86",
+        "C58",
+        "U131"
+      ],
+      "note": "Accord sur Stocktaking et sens de comptage/rapprochement/correction ; ne valide pas la fusion P82. Transcription de ADOPT-021 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.d",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality"
+        ],
+        "value_sha256": {
+          "name": "294c614309fd955d69fa8d5c190ec02fabfcfb09ec6ea0ea618a3a4fd933c7ef",
+          "definition": "1ab9c92b8b2d12fc5391aa6c229b60a4c34bbbe87412e3af0394e5780ac7acb9",
+          "finality": "529b931e6fac49e96c7b59cc8bfd002458fa0783ecdcbaa7b334020cfde327af"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-022-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U86",
+        "U131"
+      ],
+      "note": "Capacité discutée dans D01 ; maille complète du domaine ouverte. Transcription de ADOPT-022 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D01.d",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "121208ff481f75c3170b09ff2c95ac6efa7ab32ec9eeb2049653381840a8483f",
+          "target_id": "42b1937601c5d14c463036c1d0be253e29186758b90db269f25f241420a35696"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-023-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U67",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-023 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.b",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "976cec4fbcf6f1675db54c3061479301a3f6216f2ed91a23209b754285449dda"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-024-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U74",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-024 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D02.b",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "121208ff481f75c3170b09ff2c95ac6efa7ab32ec9eeb2049653381840a8483f",
+          "target_id": "ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-025-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U84",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-025 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.c",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4b9eab21f6de4232d82c1c4a0eb97d21f753ee727e4b8f6d24448f154439d9c0"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-026-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U75",
+        "U78",
+        "U131"
+      ],
+      "note": "Dernier rattachement retenu U75, réexaminé U78 ; pas de nouvelle frontière décidée. Transcription de ADOPT-026 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D02.c",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "121208ff481f75c3170b09ff2c95ac6efa7ab32ec9eeb2049653381840a8483f",
+          "target_id": "16264ce1ee4ae5a7d5119296b18143c69b65105fe76c2be4bf5e5da496123490"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-027-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U98",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-027 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D09",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "mastership"
+        ],
+        "value_sha256": {
+          "name": "5f6904197651fbd8b14b37d6c6017a8de09525a325b6fb5de8d36395d01bfa02",
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-031-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U102",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-031 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D13",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "independence"
+        ],
+        "value_sha256": {
+          "name": "088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31",
+          "independence": "2093ef74bde62d6235e327806ee878c1051c56192d9f9633ff7f029b0bce0981"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-032-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U131"
+      ],
+      "note": "Ingestion seule ; nom anglais exact et prose détaillée restent proposés. Transcription de ADOPT-032 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D09.d",
+        "revision": 2,
+        "approved_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-033-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U131"
+      ],
+      "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts. Transcription de ADOPT-033 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D09.d",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717",
+          "target_id": "fb5a7d6c9cfbf8e55603c6fb1382b544192c30c47012df317f512af951e6defc"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-035-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U131"
+      ],
+      "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts. Transcription de ADOPT-035 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D11.a",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "730537331e56c94b2f53a912667fd9bb3ce637bbda1b3ddf348fab55b09a932f",
+          "target_id": "9c8f04b49d849a07687467b250278a2b1bb7784ebc2f1fbe52c4c7975004422d"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-036-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U131"
+      ],
+      "note": "Ingestion seule ; nom anglais exact et prose détaillée restent proposés. Transcription de ADOPT-036 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D12.a",
+        "revision": 2,
+        "approved_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-037-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U131"
+      ],
+      "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts. Transcription de ADOPT-037 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D12.a",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "7d25f9c6f907e64ec1bd992bffa53fa42f41db0a9ab22495b3a669f825ca5711",
+          "target_id": "a852a8d740de5c5121b18e67eea31280db72dc6aaedd6a4fbe0df1c58e0d027e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-039-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts. Transcription de ADOPT-039 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D08.d",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "9e3c86800ef8915e0498fcfcfbf385c0d575ac8c4901e0d1bd09319272d46649",
+          "target_id": "7970e30efd9d28b557fff143ee2dd2ac437b4a3c86345ca4aab3c6e28e46b169"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-040-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Ingestion seule ; nom anglais exact et prose détaillée restent proposés. Transcription de ADOPT-040 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D13.a",
+        "revision": 2,
+        "approved_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-041-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Une ingestion pour ce référentiel ; détails et maître par attribut ouverts. Transcription de ADOPT-041 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D13.a",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "04de8ebf690088973924edcbf7dd36fe2245a618cf13e700d9b4425941312acf",
+          "target_id": "04d20460f04891b4b745c1fbad17a1c0f894f177c476c0e98a8b227980219d87"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-042-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Accord contextuel déjà consigné, sur la présentation de cinq références uniquement. Transcription de ADOPT-042 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "business-references",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "8e1e0dcb3563032dd2cdb03345b09ed48cc7642f479a61a9c40a76115a788fad"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-043-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Groupe de présentation distinct d’un domaine fusionné. Transcription de ADOPT-043 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D09",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-044-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Groupe de présentation distinct d’un domaine fusionné. Transcription de ADOPT-044 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D11",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "730537331e56c94b2f53a912667fd9bb3ce637bbda1b3ddf348fab55b09a932f"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-045-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Groupe de présentation distinct d’un domaine fusionné. Transcription de ADOPT-045 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D08",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "9e3c86800ef8915e0498fcfcfbf385c0d575ac8c4901e0d1bd09319272d46649"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-046-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Groupe de présentation distinct d’un domaine fusionné. Transcription de ADOPT-046 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D12",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "7d25f9c6f907e64ec1bd992bffa53fa42f41db0a9ab22495b3a669f825ca5711"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-047-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Groupe de présentation distinct d’un domaine fusionné. Transcription de ADOPT-047 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D13",
+        "revision": 2,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "04de8ebf690088973924edcbf7dd36fe2245a618cf13e700d9b4425941312acf"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-048-LIFECYCLE-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U129",
+        "U131"
+      ],
+      "note": "Adoption explicite du seul nom Record Inventory Movements ; définition, finalité et rattachement non validés par cet accord. Transcription de ADOPT-048 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.g",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "3559c65c6d1d556575aeb96d0431b4f209a8f96f92c53529e1923e0c3c69a304"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-049",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a085c2c264187bbdd7f531c281c0e931b9663e1bdd6a60d935353f90894e0794"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-050",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.e",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "4728a550543e522363e97553a5a5db614d790e7e1023b3ae00e35fd4e5132aff",
+          "definition": "892bbaa133e2a24806129b0766da1ade5fca320c3621ddff45583d5ffed5b9d8"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-051",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.f",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "d0e91c8e9732489ad7a0b77598ea41e9f63d37cefdbc66f663611eca20c6b7e3",
+          "definition": "b2c1d9d0f6f23b064fd98a8349719c99be8bcb42664fa27b2d7cf837c59edf8f"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-052",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.g",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "b834aa1a5d15f5be8aa9c692912e4ee366b348d8946c0cb0fc1e26599c56c378",
+          "definition": "e9a2a35b68a6f9a1ef1e71327cecb0a5814f0f57d83a7c150ba6117c15979e80"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-053",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.h",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "713c9ac4a0bf3e51d00c31c94a50f70658f657c9ab5617835ee1c90bf6991ee9",
+          "definition": "7931db2100671752cf27713fd20bc641606a5e2d492457530299da872c208fe3"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-054",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140",
+        "U134",
+        "U97",
+        "U98"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D11",
+        "revision": 2,
+        "approved_fields": [
+          "mastership",
+          "name"
+        ],
+        "value_sha256": {
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9",
+          "name": "45797799d3db17de1ba297aaa964be20c3e6160ade58398d009edcf78eb4d824"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-055",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140",
+        "U134",
+        "U97",
+        "U98"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D11.a",
+        "revision": 2,
+        "approved_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-056",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-13",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées.",
+      "target": {
+        "collection": "nodes",
+        "id": "universe-supply",
+        "revision": 1,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "b45f382a67d6c0eb9fc29fd6e7791cd960032c6ba565dfb624475f96f0da26c7"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-058",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U52",
+        "U95",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-002-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier.  Transcription de ADOPT-002 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-059",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "P83",
+        "C63",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-003-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier. Quatre actions et cinq décisions dans la portée présentée ; autorités et interactions détaillées non adoptées. Transcription de ADOPT-003 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.a",
+        "revision": 3,
+        "approved_fields": [
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "finality": "5f188a8edb71d19a87bfcabaec14e05f209163d77e765f50b4386518814b1ae7",
+          "name": "b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-060",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "P83",
+        "C63",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-009-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier. Quatre actions et cinq décisions dans la portée présentée ; autorités et interactions détaillées non adoptées. Transcription de ADOPT-009 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.c",
+        "revision": 3,
+        "approved_fields": [
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "finality": "d0cb0c28b2507f196ade45d00fc01fb5f7e6843eab132e865541f17caf6aaf2c",
+          "name": "cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-061",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U95",
+        "P83",
+        "C63",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-007-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier. Quatre actions et cinq décisions dans la portée présentée ; autorités et interactions détaillées non adoptées. Transcription de ADOPT-007 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.e",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-062",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-038-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier. Ingestion seule ; nom anglais exact et prose détaillée restent proposés. Transcription de ADOPT-038 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D08.d",
+        "revision": 3,
+        "approved_fields": [
+          "scope"
+        ],
+        "value_sha256": {
+          "scope": "ae27ccf4c757e419ddf6a6f46213e72e1b59402f572e8b7ef00a0a580575e31a"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-063",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U98",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-029-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier.  Transcription de ADOPT-029 pour l’introduction du cycle U131 ; valeurs et portée inchangées.",
+      "target": {
+        "collection": "nodes",
+        "id": "D12",
+        "revision": 3,
+        "approved_fields": [
+          "mastership",
+          "name"
+        ],
+        "value_sha256": {
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9",
+          "name": "4a8dfce3f278257b51eb13d39404013980a0b0959023c773586e8d45623a5178"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-064",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U148",
+        "U151",
+        "U154"
+      ],
+      "note": "Transcription de la validation U154 de D03-ALIGNMENT-U151. Libellé, définition et finalité identiques à la proposition pré-U154 ; nature décision explicitement portée par U151 et la recomposition adoptée. Aucun détail ou équivalence marché supplémentaire validé.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.i",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "0fd73d6704ab2613ce4b501575871e9795e47ebaa98f32391674ef25097bcc9c",
+          "definition": "854a87ea093641b001137a41720cb670be8011e1a3441c51b2a04bcacd89e390",
+          "finality": "8d99f1b52adeb2ed64ae7fcd936a3540b245665347b6fad596ed0e243eab653d",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-065",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154"
+      ],
+      "note": "Rattachement à D03 dans la décomposition explicitement adoptée U154. Aucun lien de processus, ordre d’exécution ou responsabilité logicielle ajouté.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.i",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "5949ed29a0923017ec50e7ed96ef50f9df9a0005ecca2fd5b0db77c50ee231b6"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-066",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U148",
+        "U151",
+        "U154"
+      ],
+      "note": "Transcription de la validation U154 de D03-ALIGNMENT-U151. Libellé, définition et finalité identiques à la proposition pré-U154 ; nature décision explicitement portée par U151 et la recomposition adoptée. Aucun détail ou équivalence marché supplémentaire validé.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.j",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f",
+          "definition": "8116834880161f3522b30fed0debe27490f5d7266f85fbfc74c533976f196984",
+          "finality": "3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-067",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154"
+      ],
+      "note": "Rattachement à D03 dans la décomposition explicitement adoptée U154. Aucun lien de processus, ordre d’exécution ou responsabilité logicielle ajouté.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.j",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "901398f16a21c2018efc974ff9cc581312f69ed182d30be3156548a6b7e419b5"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-068",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U148",
+        "U151",
+        "U154"
+      ],
+      "note": "Transcription de la validation U154 de D03-ALIGNMENT-U151. Libellé, définition et finalité identiques à la proposition pré-U154 ; nature décision explicitement portée par U151 et la recomposition adoptée. Aucun détail ou équivalence marché supplémentaire validé.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.k",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "bfdff94087144c92b1c602ab145a9033508cd2deb1acf0d62dcd78c601c9a623",
+          "definition": "934dacb7dce862a490b41d36c66c714fc72c88418c73166181394410f29f4aa5",
+          "finality": "a421ac059cc81ad41a400691d9376fef55c60694b9b2c1d49d08a7d352d363d7",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-069",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154"
+      ],
+      "note": "Rattachement à D03 dans la décomposition explicitement adoptée U154. Aucun lien de processus, ordre d’exécution ou responsabilité logicielle ajouté.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.k",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "456143c0f406bbcd9fe3f0092096179d8bf01ee7732567eccb1636befe9c44a4"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-070",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U148",
+        "U151",
+        "U154"
+      ],
+      "note": "Transcription de la validation U154 de D03-ALIGNMENT-U151. Libellé, définition et finalité identiques à la proposition pré-U154 ; nature décision explicitement portée par U151 et la recomposition adoptée. Aucun détail ou équivalence marché supplémentaire validé.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.l",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition",
+          "finality",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "67ec80322f99b596e711e97a383528683b50b3b77f353a7507b8b7c71dfaa97f",
+          "definition": "4d0ba8c30c1456eec2aed23ff6f776d562bca59235b1f0bb274ed02c56164f67",
+          "finality": "48ee4bbb23619ffc1ac39c6f01f057ec48a5a04718fcb6b7b3ad898c454373a4",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-071",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154"
+      ],
+      "note": "Rattachement à D03 dans la décomposition explicitement adoptée U154. Aucun lien de processus, ordre d’exécution ou responsabilité logicielle ajouté.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.l",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "896f550b568562bc7c8a837d7d31f537722c4835c476c917108d03c8716ef24f"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-072",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U160",
+        "U162",
+        "U163"
+      ],
+      "note": "Transcription de U163 : seul le nom et la définition courte discutée sont adoptés. Finalité et codification de nature restent proposées. Pas de validation de tout le Backlog Refinement.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.m",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "30842a2de1e5e1114f93a7569cbbf7049d043edec2071bca4389df91bb57274f",
+          "definition": "83d208c2d0ecac7df842bde758ed74086624bdf64f2e04e3f228d0de96265888"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-073",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U160",
+        "U163"
+      ],
+      "note": "Rattachement à D03 repris du candidat accepté dans la discussion D03/D04. Interprétation contextuelle conservée, distincte de la validation explicite du nom et de la définition U163.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.m",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "7dd781b075a7c8bac3ddb4b9c878c56a3fb17dc7f39781392634f2b5df1587e2"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    },
+    {
+      "id": "ADOPT-074",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-14",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U172",
+        "U173"
+      ],
+      "note": "Transcription de la validation explicite U173 de Business Services et de sa définition présentée après U172. Identité universe-case conservée ; domaines différés, aucune décomposition ajoutée.",
+      "target": {
+        "collection": "nodes",
+        "id": "universe-case",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "e3c54e3900316341992509311f8f252d0c5ef8dd756c7aa10ced01c5d0e693c1",
+          "definition": "435b609506c0822c10be8560231ca6db3052295f634aeec238d2843fad8a270e"
+        },
+        "import_version": "2026-09-14.1"
+      }
+    }
+  ]
+}

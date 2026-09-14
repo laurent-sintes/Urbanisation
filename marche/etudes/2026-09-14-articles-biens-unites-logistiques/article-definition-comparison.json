@@ -1,0 +1,124 @@
+{
+  "id": "AUDIT-U181",
+  "source_refs": [
+    "U181",
+    "U176",
+    "U180"
+  ],
+  "as_of": "2026-09-14",
+  "sources": [
+    {
+      "id": "LEX01",
+      "title": "Collins — Article",
+      "url": "https://www.collinsdictionary.com/dictionary/english/article",
+      "access": "Extrait indexé consulté",
+      "support": "Objet particulier d’une catégorie ; chose proposée à la vente. Pas de critère de commande ou d’indivisibilité.",
+      "consulted_at": "2026-09-14"
+    },
+    {
+      "id": "SAPDEF01",
+      "title": "SAP Library — article (IS-R-KUNDE)",
+      "url": "https://help.sap.com/saphelp_snc70/helpdata/EN/35/2a8d69d3895cd5e10000009b38f974/content.htm",
+      "access": "Texte ouvert et consulté ; glossaire historique",
+      "support": "Définition explicite de plus petite unité ou conditionnement client commandable indépendamment et non subdivisible.",
+      "consulted_at": "2026-09-14"
+    },
+    {
+      "id": "SAPDEF02",
+      "title": "SAP Learning — Creating Products for Retail (3I1)",
+      "url": "https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/creating-products-for-retail-3i1-",
+      "access": "Texte ouvert et consulté ; cours Public Edition, version non précisée",
+      "support": "Définition courte réaffirmée ; génériques abstraits, variantes et ensembles structurés dans le même modèle.",
+      "consulted_at": "2026-09-14"
+    },
+    {
+      "id": "SAPDEF03",
+      "title": "SAP Learning — Structured Articles",
+      "url": "https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/structured-articles-1",
+      "access": "Texte ouvert et consulté ; cours Private Edition, version non précisée",
+      "support": "Articles structurés, composants et référence propre du display ; distinction des niveaux de gestion.",
+      "consulted_at": "2026-09-14"
+    }
+  ],
+  "findings": [
+    {
+      "id": "LEXICAL",
+      "statement": "Le dictionnaire décrit un objet particulier ou une chose proposée à la vente.",
+      "basis": [
+        "LEX01"
+      ],
+      "qualification": "paraphrase"
+    },
+    {
+      "id": "SAP-DEFINITION",
+      "statement": "SAP définit explicitement Article comme la plus petite unité ou le conditionnement client commandable indépendamment et non subdivisible.",
+      "basis": [
+        "SAPDEF01",
+        "SAPDEF02"
+      ],
+      "qualification": "documented"
+    },
+    {
+      "id": "SAP-CATEGORIES",
+      "statement": "Le modèle SAP appelle également Article un générique abstrait ou un ensemble composé ; la définition courte ne rend pas compte seule de toutes les catégories.",
+      "basis": [
+        "SAPDEF02"
+      ],
+      "qualification": "source_synthesis"
+    }
+  ],
+  "correction": "L’audit U176 et les réponses suivantes auraient dû distinguer la définition SAP explicite de la synthèse du modèle par ses catégories. L’intuition U176 de Laurent est proche de cette définition ; cela ne prouve pas un sens universel identique de SKU.",
+  "interpretation_under_review": "L’indivisibilité commerciale selon le contexte est une lecture possible de notre part, pas une définition formelle démontrée par les sources consultées.",
+  "local_adoption": false,
+  "active_model_change": false,
+  "ordered_scope_review": {
+    "source_ref": "U182",
+    "statement": "La phrase ordered independently ne nomme ni l’acheteur ni le vendeur.",
+    "contextual_inference": "La précision du glossaire articles commandés pour un site puis vendus oriente vers l’approvisionnement du distributeur, sans établir une restriction exclusive aux commandes fournisseur.",
+    "documented_distinction": {
+      "Order Unit": "Unité d’achat dans les données fournisseur/article.",
+      "Sales Unit": "Unité de vente, distincte de l’unité d’achat.",
+      "Delivery/Issue Unit": "Unité de livraison/sortie, notamment distribution et wholesale."
+    },
+    "sources": [
+      "SAPDEF01",
+      "SAPDEF02"
+    ],
+    "local_example": "Une même référence de chemise peut être achetée par carton de douze et vendue à la pièce ; exemple illustratif, pas configuration observée.",
+    "adoption": false
+  },
+  "booster_display_example": {
+    "source_ref": "U183",
+    "qualification": "user_scenario_not_verified_contract",
+    "assumptions": {
+      "store_buys_display": true,
+      "store_sells_booster": true,
+      "store_sells_display": false,
+      "booster_purchasable_individually_from_supplier": null,
+      "booster_count_in_display": null
+    },
+    "assessment": "Le booster est l’article vendu à l’unité dans ce scénario. Cela ne suffit pas à exclure le display des données articles SAP.",
+    "possible_representations": [
+      {
+        "description": "Ensemble constitué de composants référencés, avec référence d’achat propre.",
+        "candidate": "Structured Article",
+        "qualification": "possible_mapping_not_installed"
+      },
+      {
+        "description": "Simple multiple d’une même référence de booster.",
+        "candidate": "Unité d’achat alternative de la référence booster",
+        "qualification": "conditional_possible_mapping"
+      }
+    ],
+    "limits": [
+      "Le nom commercial display ne suffit pas à établir la catégorie Display SAP.",
+      "Ni nombre de boosters ni composition précise inventés.",
+      "Aucune vérification de contrat Hasbro ou d’installation SAP.",
+      "Aucune définition locale ou capacité adoptée."
+    ],
+    "basis": [
+      "SAPDEF02",
+      "SAPDEF03"
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { loadPublication } from './load-publication.mjs';
+import {
+  adaptPublication, childrenOf, descendantsOf, focusGraph, isStructural,
+  lineageOf, neighborhood, parentRelationOf, parentsOf, rootsOf, searchModel,
+} from '../src/model.ts';
+
+const current = await loadPublication();
+const model = adaptPublication(current.raw);
+const relationId = 'REL-EXECUTION-FACTS-ORDER-RECONCILIATION';
+const ids = nodes => nodes.map(node => node.id);
+
+test('real v003 is resolved through its index and descriptor, with source identity', () => {
+  assert.equal(model.version, '2026-09-13.5');
+  assert.equal(model.revision, 3);
+  assert.equal(current.descriptor.version, model.version);
+  assert.equal(model.publication.version, model.version);
+  assert.equal(model.nodes.length, 51);
+  assert.equal(model.relations.length, 50);
+  assert.equal(model.sourcePath, 'modeles/release/2026-09-13.5/model.json');
+  assert.deepEqual(ids(model.nodes), current.raw.nodes.map(node => node.id));
+  assert.deepEqual(model.relations.map(relation => relation.id), current.raw.relations.map(relation => relation.id));
+  assert.equal(model.nodes.filter(node => ['object', 'document', 'event'].includes(node.kind)).length, 0);
+});
+
+test('navigation uses explicit edges even when identifiers suggest another domain', () => {
+  assert.deepEqual(ids(parentsOf(model, 'D02.b')), ['D01']);
+  assert.deepEqual(ids(parentsOf(model, 'D02.c')), ['D01']);
+  assert.deepEqual(ids(parentsOf(model, 'D02.e')), ['D03']);
+  assert.deepEqual(ids(lineageOf(model, 'D02.c')), ['universe-supply', 'D01', 'D02.c']);
+  assert.deepEqual(new Set(ids(rootsOf(model))), new Set(['universe-case', 'universe-supply']));
+  assert.equal(childrenOf(model, 'universe-case').length, 0);
+  assert.equal(parentRelationOf(model, 'D01').type, 'presents');
+  assert.equal(parentRelationOf(model, 'D02.c').type, 'contains');
+});
+
+test('presentation groups remain distinct from semantic urbanism levels', () => {
+  // Legacy publication omits the optional role; it must never become a semantic level.
+  assert.equal(model.nodeById.get('business-references').kind, 'group');
+  assert.equal(model.nodeById.get('business-references').groupRole, undefined);
+  assert.equal(model.nodeById.get('universe-supply').groupRole, 'urbanism_level');
+  assert.equal(model.nodeById.get('universe-supply').levelRef, 'universe');
+  assert.equal(childrenOf(model, 'business-references', 'presents').length, 5);
+  assert.equal(childrenOf(model, 'business-references', 'contains').length, 0);
+});
+
+test('relation qualification, sources and partial validations survive projection intact', () => {
+  const relation = model.relationById.get(relationId);
+  const rawRelation = current.raw.relations.find(item => item.id === relationId);
+  assert.deepEqual(relation.qualification, rawRelation.qualification);
+  assert.deepEqual(relation.lifecycle, rawRelation.lifecycle);
+  assert.deepEqual(relation.sourceRefs, rawRelation.source_refs);
+  assert.equal(relation.status, 'proposed');
+  assert.equal(relation.sourceId, 'D07.c');
+  assert.equal(relation.targetId, 'D04.h');
+  assert.ok(relation.qualification.conditions[0].includes('prestation'));
+  assert.ok(relation.qualification.effects[0].includes('reliquat Order'));
+  const supply = model.nodeById.get('universe-supply');
+  assert.equal(supply.status, 'partial');
+  assert.equal(supply.lifecycle.state, 'urbanist_validated');
+  assert.deepEqual(supply.approvedFields, ['name']);
+  assert.deepEqual(supply.proposedFields, ['definition']);
+});
+
+test('search uses published fields and published ancestry without backlog completion', () => {
+  assert.ok(ids(searchModel(model, 'Order Reconciliation')).includes('D04.h'));
+  assert.ok(ids(searchModel(model, 'D02.c')).includes('D02.c'));
+  assert.equal(searchModel(model, 'ILL-OBJ-01').length, 0);
+  const raw = structuredClone(current.raw);
+  raw.backlogAliases = { 'D04.h': 'synonyme-interdit-backlog' };
+  raw.excluded_nodes.push({ id: 'synonyme-interdit-backlog' });
+  assert.equal(searchModel(adaptPublication(raw), 'synonyme-interdit-backlog').length, 0);
+});
+
+test('real local graph follows published direction without adding structural dependencies', () => {
+  assert.deepEqual(ids(neighborhood(model, 'D07.c').nodes).sort(), ['D04.h', 'D07.c']);
+  assert.deepEqual(neighborhood(model, 'D07.c').relations.map(relation => relation.id), [relationId]);
+  assert.equal(neighborhood(model, 'D07.c').relations.some(isStructural), false);
+  assert.deepEqual(ids(neighborhood(model, 'D07.c', { direction: 'incoming' }).nodes), ['D07.c']);
+  assert.equal(neighborhood(model, 'D04.h', { direction: 'incoming' }).relations[0].sourceId, 'D07.c');
+  assert.equal(neighborhood(model, 'D04.h', { direction: 'outgoing' }).relations.length, 0);
+  assert.equal(focusGraph(model, relationId).relations[0].id, relationId);
+});
+
+test('helpers and attempted renderer edits cannot mutate the input publication', () => {
+  const input = structuredClone(current.raw);
+  const before = JSON.stringify(input);
+  const projection = adaptPublication(input);
+  childrenOf(projection, 'D01').reverse();
+  descendantsOf(projection, 'universe-supply').reverse();
+  neighborhood(projection, 'D07.c', { depth: 2 });
+  focusGraph(projection, 'D04');
+  searchModel(projection, 'Supply');
+  assert.throws(() => { projection.nodeById.get('D04').fields.name = 'changed'; }, TypeError);
+  assert.throws(() => { projection.relationById.get(relationId).qualification.conditions.push('changed'); }, TypeError);
+  assert.equal(JSON.stringify(input), before);
+});
+
+function syntheticFixture() {
+  const node = (id, kind = 'capability', fields = {}) => ({ id, kind, fields: { name: id, ...fields }, review: { state: 'proposed' } });
+  const edge = (id, source_id, target_id, type) => ({ id, source_id, target_id, type, review: { state: 'proposed' } });
+  return {
+    space: 'release', version: 'synthetic-test-only',
+    nodes: [
+      { ...node('universe', 'group'), group_role: 'urbanism_level', level_ref: 'universe' },
+      node('domain', 'domain'), node('level-three'), node('deep-leaf', 'object', { name: 'Événement de contrôle' }),
+      { ...node('presentation', 'group'), group_role: 'presentation' },
+      node('reference', 'reference'), node('event', 'event'), node('document', 'document'),
+    ],
+    relations: [
+      edge('u-d', 'universe', 'domain', 'contains'), edge('d-l3', 'domain', 'level-three', 'contains'),
+      edge('l3-l4', 'level-three', 'deep-leaf', 'contains'), edge('u-p', 'universe', 'presentation', 'presents'),
+      edge('p-r', 'presentation', 'reference', 'presents'),
+      { ...edge('one', 'deep-leaf', 'event', 'relates-to'), qualification: { meaning: 'Synthetic link only', role: 'synthetic', conditions: ['one'], effects: ['two'], scope: 'test' } },
+      edge('two', 'event', 'document', 'relates-to'), edge('three', 'reference', 'event', 'relates-to'),
+    ],
+  };
+}
+
+test('synthetic deeper model keeps arbitrary depth, actual types and explicit presentation', () => {
+  const fixture = adaptPublication(syntheticFixture());
+  assert.deepEqual(ids(lineageOf(fixture, 'deep-leaf')), ['universe', 'domain', 'level-three', 'deep-leaf']);
+  assert.equal(descendantsOf(fixture, 'universe').length, 5);
+  assert.equal(fixture.nodeById.get('deep-leaf').kind, 'object');
+  assert.deepEqual(ids(childrenOf(fixture, 'universe', 'contains')), ['domain']);
+  assert.deepEqual(ids(childrenOf(fixture, 'universe', 'presents')), ['presentation']);
+  assert.deepEqual(ids(searchModel(fixture, 'evenement controle')), ['deep-leaf']);
+  assert.equal(focusGraph(fixture, 'domain').mode, 'hierarchy');
+  assert.deepEqual(ids(focusGraph(fixture, 'domain').nodes), ['domain', 'level-three']);
+});
+
+test('synthetic 1/2 hop traversal handles direction, branching and filtered edge types', () => {
+  const fixture = adaptPublication(syntheticFixture());
+  assert.deepEqual(new Set(ids(neighborhood(fixture, 'deep-leaf').nodes)), new Set(['deep-leaf', 'event']));
+  assert.equal(neighborhood(fixture, 'deep-leaf').hiddenRelationCount, 2);
+  assert.deepEqual(new Set(ids(neighborhood(fixture, 'deep-leaf', { depth: 2 }).nodes)), new Set(['deep-leaf', 'event', 'document', 'reference']));
+  assert.deepEqual(new Set(ids(neighborhood(fixture, 'deep-leaf', { depth: 2, direction: 'outgoing' }).nodes)), new Set(['deep-leaf', 'event', 'document']));
+  assert.equal(neighborhood(fixture, 'deep-leaf', { relationTypes: ['unknown'] }).relations.length, 0);
+  assert.throws(() => neighborhood(fixture, 'absent'), /absent/);
+  assert.throws(() => neighborhood(fixture, 'event', { depth: 3 }), /profondeur/);
+});
+
+test('invalid topology is rejected instead of silently repairing or inferring parents', () => {
+  const mutate = change => { const fixture = syntheticFixture(); change(fixture); return () => adaptPublication(fixture); };
+  assert.throws(mutate(fixture => { fixture.space = 'backlog'; }), /release/);
+  assert.throws(mutate(fixture => fixture.nodes.push(fixture.nodes[0])), /dupliqué/);
+  assert.throws(mutate(fixture => fixture.relations.push(fixture.relations[0])), /dupliqué/);
+  assert.throws(mutate(fixture => { fixture.relations[0].target_id = 'absent'; }), /Extrémité/);
+  assert.throws(mutate(fixture => fixture.relations.push({ id: 'second-parent', source_id: 'domain', target_id: 'reference', type: 'contains' })), /Plusieurs parents/);
+  assert.throws(mutate(fixture => fixture.relations.push({ id: 'cycle', source_id: 'deep-leaf', target_id: 'universe', type: 'contains' })), /Cycle/);
+});
+
+test('historical publication is selected explicitly and never filled from current', async () => {
+  const historical = await loadPublication({ version: '2026-09-13.4' });
+  const older = adaptPublication(historical.raw);
+  assert.equal(older.version, '2026-09-13.4');
+  assert.equal(older.nodeById.has('universe-supply'), false);
+  assert.equal(older.nodeById.has('D04.h'), false);
+  assert.equal(older.relationById.has(relationId), false);
+  await assert.rejects(loadPublication({ version: 'unknown-publication' }), /absente/);
+});
+
+test('loader follows current pointer, verifies bytes and rejects paths outside release', async () => {
+  const repoRoot = await mkdtemp(path.join(tmpdir(), 'atlas-publication-test-'));
+  const release = path.join(repoRoot, 'modeles', 'release');
+  const digest = bytes => createHash('sha256').update(bytes).digest('hex');
+  try {
+    await mkdir(release, { recursive: true });
+    const raw = Buffer.from(JSON.stringify(syntheticFixture()));
+    await writeFile(path.join(release, 'snapshot.json'), raw);
+    let descriptor = Buffer.from(JSON.stringify({ version: 'synthetic-test-only', path: 'snapshot.json', sha256: digest(raw) }));
+    const saveIndex = async () => {
+      await writeFile(path.join(release, 'first.json'), descriptor);
+      await writeFile(path.join(release, 'index.json'), JSON.stringify({ current: 'first.json', publications: [{ descriptor: 'first.json', sha256: digest(descriptor) }] }));
+    };
+    await saveIndex();
+    await writeFile(path.join(release, 'zzzz-never-select.json'), '{}');
+    assert.equal((await loadPublication({ repoRoot })).raw.version, 'synthetic-test-only');
+    await writeFile(path.join(release, 'snapshot.json'), '{}');
+    await assert.rejects(loadPublication({ repoRoot }), /Empreinte du modèle/);
+    descriptor = Buffer.from(JSON.stringify({ version: 'synthetic-test-only', path: '../outside.json', sha256: digest(raw) }));
+    await saveIndex();
+    await assert.rejects(loadPublication({ repoRoot }), /Chemin de publication interdit/);
+  } finally {
+    // Test-owned temporary folder returned by mkdtemp; never a user workspace path.
+    assert.equal(path.dirname(path.resolve(repoRoot)), path.resolve(tmpdir()));
+    assert.ok(path.basename(repoRoot).startsWith('atlas-publication-test-'));
+    await rm(repoRoot, { recursive: true, force: true });
+  }
+});

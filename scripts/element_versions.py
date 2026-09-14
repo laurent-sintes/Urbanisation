@@ -41,8 +41,28 @@ def assign_versions(snapshot, previous, now=None, published=None):
                 changes.append({'collection': collection, 'id': item['id'], 'revision': revision,
                                 'last_modified': item['last_modified'],
                                 'reason': 'new' if not old else 'changed' if changed else 'tracking_initialized'})
+    if 'glossary' in snapshot:
+        old_glossary = previous.get('glossary', {})
+        before_terms = {t['id']: t for t in old_glossary.get('terms', [])}
+        glossary = snapshot['glossary']
+        for term in glossary['terms']:
+            old = before_terms.get(term['id'])
+            fingerprint = content_hash(term)
+            changed = not old or fingerprint != old.get('content_sha256', content_hash(old))
+            term.update(revision=old.get('revision', 1) + int(changed) if old else 1,
+                        last_modified=old.get('last_modified', stamp) if old and not changed else stamp,
+                        content_sha256=fingerprint)
+            if changed:
+                changes.append({'collection': 'glossary', 'id': term['id'], 'revision': term['revision'],
+                                'last_modified': term['last_modified'], 'reason': 'changed' if old else 'new'})
+        fingerprint = content_hash({k: v for k, v in glossary.items() if k != 'terms'} | {'terms': [(t['id'], t['content_sha256']) for t in glossary['terms']]})
+        changed = fingerprint != old_glossary.get('content_sha256')
+        glossary.update(revision=max(1, old_glossary.get('revision', 0) + int(changed)),
+                        last_modified=stamp if changed else old_glossary['last_modified'], content_sha256=fingerprint)
     root_value = {'model_id': snapshot['model_id'], 'limitations': snapshot.get('limitations', []),
                   'elements': {c: [(e['id'], e['content_sha256']) for e in snapshot.get(c, [])] for c in COLLECTIONS}}
+    if 'glossary' in snapshot:
+        root_value['glossary'] = snapshot['glossary']['content_sha256']
     fingerprint = content_hash(root_value)
     changed = fingerprint != previous.get('content_sha256')
     revision = previous.get('revision', 0) + int(changed)

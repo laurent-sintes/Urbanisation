@@ -532,7 +532,8 @@
         "U75",
         "U87",
         "U88",
-        "P83"
+        "P83",
+        "U144"
       ],
       "source_locator": {
         "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
@@ -541,13 +542,13 @@
       },
       "review": {
         "state": "under_review",
-        "note": "Domaine en réexamen depuis U75. Son autonomie n’est pas justifiée ; aucune suppression, répartition ni renumérotation supplémentaire n’est décidée."
+        "note": "U144 : Laurent partage l’hypothèse de couverture par D01 et D03. Autonomie non justifiée ; retrait proposé après explicitation de la reprise. Aucun retrait décidé ni nouvelle capacité validée."
       },
       "editorial_basis": "Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.",
       "adoption_ids": [],
       "lifecycle": {
         "state": "under_instruction",
-        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_at": "2026-09-14T06:35:33.299Z",
         "recorded_by": "Codex",
         "source_refs": [
           "U131",
@@ -555,11 +556,12 @@
           "U75",
           "U87",
           "U88",
-          "P83"
+          "P83",
+          "U144"
         ],
         "validated_fields": [],
         "value_sha256": {},
-        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+        "note": "U144 : Laurent partage l’hypothèse de couverture par D01 et D03. Autonomie non justifiée ; retrait proposé après explicitation de la reprise. Aucun retrait décidé ni nouvelle capacité validée."
       }
     },
     {
@@ -577,7 +579,8 @@
         "U75",
         "U87",
         "U88",
-        "P83"
+        "P83",
+        "U144"
       ],
       "source_locator": {
         "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
@@ -586,12 +589,12 @@
       },
       "review": {
         "state": "under_review",
-        "note": "Trace de travail conservée dans D02. Répartition entre disponibilité de réservation et faisabilité de promesse à examiner ; aucune suppression décidée."
+        "note": "U144 : couverture envisagée par Reservation (D01) pour les quantités réservables et Promise Proposal (D03) pour la faisabilité à un horizon. Le calcul ATP relève de la promesse selon U95 ; critères de disponibilité à préciser dans les définitions consommatrices. Aucune capacité autonome supplémentaire démontrée."
       },
       "adoption_ids": [],
       "lifecycle": {
         "state": "under_instruction",
-        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_at": "2026-09-14T06:35:33.299Z",
         "recorded_by": "Codex",
         "source_refs": [
           "U131",
@@ -599,11 +602,12 @@
           "U75",
           "U87",
           "U88",
-          "P83"
+          "P83",
+          "U144"
         ],
         "validated_fields": [],
         "value_sha256": {},
-        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+        "note": "U144 : couverture envisagée par Reservation (D01) pour les quantités réservables et Promise Proposal (D03) pour la faisabilité à un horizon. Le calcul ATP relève de la promesse selon U95 ; critères de disponibilité à préciser dans les définitions consommatrices. Aucune capacité autonome supplémentaire démontrée."
       }
     },
     {
@@ -621,7 +625,8 @@
         "U75",
         "U87",
         "U88",
-        "P83"
+        "P83",
+        "U144"
       ],
       "source_locator": {
         "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
@@ -630,12 +635,12 @@
       },
       "review": {
         "state": "under_review",
-        "note": "Trace de travail conservée dans D02. À répartir ou reformuler selon l’engagement modifié ; aucune suppression ni nouvelle affectation adoptée."
+        "note": "U144 : affectation, réaffectation et libération déjà explicites dans Supply Assignment (D03). Révision/libération de réservation et évolution des protections à expliciter dans les définitions D01 si retenues ; ne pas confondre réservation, protection, affectation et promesse."
       },
       "adoption_ids": [],
       "lifecycle": {
         "state": "under_instruction",
-        "recorded_at": "2026-09-13T16:33:38.266961Z",
+        "recorded_at": "2026-09-14T06:35:33.299Z",
         "recorded_by": "Codex",
         "source_refs": [
           "U131",
@@ -643,11 +648,12 @@
           "U75",
           "U87",
           "U88",
-          "P83"
+          "P83",
+          "U144"
         ],
         "validated_fields": [],
         "value_sha256": {},
-        "note": "Élément de la carte déjà présenté et discuté ; aucune validation de champ reprise. La présentation seule ne suffira pas à ouvrir l’instruction des nouvelles propositions. Date de reprise du cycle, pas date historique de l’accord."
+        "note": "U144 : affectation, réaffectation et libération déjà explicites dans Supply Assignment (D03). Révision/libération de réservation et évolution des protections à expliciter dans les définitions D01 si retenues ; ne pas confondre réservation, protection, affectation et promesse."
       }
     },
     {

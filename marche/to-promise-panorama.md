@@ -1,0 +1,22 @@
+# Panorama des notions To-Promise
+
+14 septembre 2026 — U149. Recherche ciblée dans les sources éditeurs ; pas de nomenclature universelle ni d’exhaustivité prouvée. Ces termes décrivent des méthodes, résultats ou fonctionnalités de produit, sans rang de Business Capability établi.
+
+| Notion | Résultat ou périmètre | Source et preuve consultée | Lecture locale proposée |
+| --- | --- | --- | --- |
+| Available-to-Promise (ATP) | Quantités/dates à partir des stocks et réceptions prévues admises. | [Microsoft SCM, documentation courante](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations), texte consulté lors d’U147. Version produit non figée. | Faisabilité sous hypothèses et règles données. Le filtre achats fermes de U148 serait un choix local, pas une définition universelle. |
+| Capable-to-Promise (CTP) | Possibilité d’obtenir/produire les biens supplémentaires et prise en compte des capacités. | [Microsoft Business Central, documentation courante](https://learn.microsoft.com/en-us/dynamics365/business-central/sales-how-to-calculate-order-promising-dates), texte consulté lors d’U147. | Ne pas assimiler automatiquement à un plan global de modification des protections et commandes tierces. |
+| Profitable-to-Promise (PTP) | Choix d’une solution de réalisation à moindre coût parmi les alternatives. | [Oracle Fusion Cloud SCM 26C — Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html), texte ouvert et consulté le 14 septembre 2026. [Oracle, guide historique Fusion 11g](https://docs.oracle.com/cd/E25054_01/fusionapps.1111/e20386/F499878AN2D1A2.htm), extrait indexé consulté : priorité à satisfaction de date, départage économique. | Dimension d’arbitrage économique complémentaire à ATP/CTP. Ne prouve pas la profitabilité globale ni un seuil minimal de marge ; ne constitue pas automatiquement un domaine Finance. |
+| Channel ATP | Disponibilité restreinte pour un canal selon ses limites. | [Infor LN 2025.x — Glossary](https://docs.infor.com/ln/2025.x/en-us/lnolh/cpolh/cpolh-glossary.html), extrait indexé détaillé consulté le 14 septembre 2026 ; ouverture directe en erreur. | Appui au traitement des droits/protections dans ATP, sans capacité de décision séparée obligatoire. |
+| Component CTP / Capacity CTP / Product family CTP | Vérifications de composants, capacités ou disponibilité au niveau famille. | Même glossaire Infor LN 2025.x, extrait indexé. | Variantes de périmètre et granularité ; pas trois nouvelles capacités par déduction. |
+| Multilevel ATP | Vérification des composants à plusieurs niveaux pour un produit à assembler/configurer. | [SAP APO 7.0 EHP3 — Multilevel ATP Check](https://help.sap.com/docs/SAP_ADVANCED_PLANNING_AND_OPTIMIZATION%2C_ON_SAP_ERP/881e9c98c2e64900bc5ec58ce4b97939/f040c95360267614e10000000a174cb4.html?version=7.0.3), extrait indexé détaillé consulté. | Source historique ; distingue ce contrôle de CTP dans ce produit. Ne pas universaliser sa réalisation. |
+
+La documentation Infor emploie aussi CTP comme cadre englobant plusieurs techniques, ATP compris : les termes ne sont pas partout trois cases exclusives de même niveau. Oracle permet de combiner la recherche CTP et les critères PTP ; PTP est transversal aux solutions faisables.
+
+## Conséquences pour D03
+
+ATP et CTP ne sont pas une liste exhaustive du vocabulaire To-Promise. PTP apporte un troisième angle explicite : le coût du scénario retenu. Son introduction comme capacité reste proposée ; vérifier les recouvrements avec les décisions de source, acheminement et échéancement et avec le plan d’adaptation U148. Un coût externe utilisé pour décider n’ajoute pas un domaine Finance à FLOW.
+
+Ne pas inventer une capacité par acronyme. Global/Advanced ATP qualifient des offres ou périmètres ; les variantes familles/composants/canaux ne démontrent pas à elles seules des aptitudes indépendantes. Delivery Schedule Decision reste à éprouver par son résultat, même sans nom To-Promise. Absence d’autre suffixe trouvé ne prouve aucune complétude de la cartographie.
+
+Le plan d’adaptation U148 conserve un périmètre propre à instruire : approvisionnements supplémentaires, révisions de confirmations, protections et impacts. Le renommer CTP sans préciser cet écart donnerait une correspondance marché trop large. Aucun élément du modèle actif ni de la release n’est modifié par cette étude.

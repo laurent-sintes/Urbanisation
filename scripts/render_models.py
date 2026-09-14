@@ -1,4 +1,4 @@
-"""Render reading views from the current JSON models. No business data is edited."""
+"""Render reading views from the current structured models. No business data is edited."""
 import json
 from collections import Counter
 from pathlib import Path
@@ -21,8 +21,10 @@ def status(item):
     return LABELS[item['review']['state']]
 
 
-def read(path):
-    return json.loads(path.read_text(encoding='utf-8'))
+try:
+    from .structured_io import read, working_path
+except ImportError:
+    from structured_io import read, working_path
 
 
 def cell(value):
@@ -30,7 +32,7 @@ def cell(value):
 
 
 def render(model, label):
-    lines = [f'# {label} — {model["version"]}', '', f'Restitution générée depuis le JSON, connaissance au {model["as_of"]}. Ne pas éditer cette vue pour modifier le modèle.', '', 'Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.', '']
+    lines = [f'# {label} — {model["version"]}', '', f'Restitution générée depuis le modèle structuré, connaissance au {model["as_of"]}. Ne pas éditer cette vue pour modifier le modèle.', '', 'Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.', '']
     nodes = {n['id']:n for n in model['nodes']}
     universes = [n for n in model['nodes'] if n.get('group_role') == 'urbanism_level']
     if universes:
@@ -61,7 +63,7 @@ def main():
     destination=ROOT/'restitutions'; destination.mkdir(exist_ok=True)
     pointer=resolve_release(ROOT/'modeles/release')
     release=read(ROOT/'modeles/release'/pointer['path'])
-    backlog=read(ROOT/'modeles/backlog/model.json')
+    backlog=read(working_path(ROOT/'modeles/backlog'))
     for name,model,label in [('release',release,'Release'),('backlog',backlog,'Backlog')]:
         (destination/(name+'.md')).write_text(render(model,label),encoding='utf-8')
     index=read(ROOT/'modeles/panorama-as-is/current.json')

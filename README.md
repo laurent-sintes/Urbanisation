@@ -21,12 +21,12 @@ Les modèles font autorité en **JSON**. Les Markdown conservent récits, insigh
 | Espace | Contenu | Accès |
 | --- | --- | --- |
 | **Release** | Les 35 capacités publiées, avec leurs validations et réserves explicites | [Version courante](modeles/release/index.json) · [lecture Markdown](restitutions/release.md) |
-| **Backlog** | Modèle en réflexion, alternatives et illustrations | [Modèle JSON](modeles/backlog/model.json) · [lecture Markdown](restitutions/backlog.md) |
+| **Backlog** | Modèle en réflexion, alternatives et illustrations | [Modèle JSON](modeles/backlog/model.yaml) · [lecture Markdown](restitutions/backlog.md) |
 | **Panorama As Is** | Les trois SI actuels ; Sarenza non traité | [Index JSON](modeles/panorama-as-is/current.json) · [vue de lecture](restitutions/panorama-as-is.md) |
 
 Publier ne vaut pas valider. La [release 2026-09-13.2](modeles/release/2026-09-13.2/model.json) conserve neuf capacités validées, les validations partielles et les capacités non validées ou en réexamen. La définition, la finalité et le rattachement ont des portées de validation distinctes.
 
-Le [guide de structure](modeles/README.md), l’[audit du refactoring](audits/2026-09-13-structure-modeles.md) et [AGENTS.md](AGENTS.md) précisent les autorités, les preuves, la publication et les contrôles. La [feuille de route](modeles/backlog/modeling-roadmap.json) prévoit le niveau supérieur à définir et les relations caractérisées. L’[applicabilité aux trois SI et à FLOW cible](modeles/backlog/applicability.json) reste à qualifier dans un registre séparé.
+Le [guide de structure](modeles/README.md), l’[audit du refactoring](audits/2026-09-13-structure-modeles.md) et [AGENTS.md](AGENTS.md) précisent les autorités, les preuves, la publication et les contrôles. La [feuille de route](modeles/backlog/modeling-roadmap.yaml) prévoit le niveau supérieur à définir et les relations caractérisées. L’[applicabilité aux trois SI et à FLOW cible](modeles/backlog/applicability.yaml) reste à qualifier dans un registre séparé.
 
 Les sections suivantes retracent la progression des analyses ; leurs versions datées ne remplacent pas les pointeurs JSON courants.
 

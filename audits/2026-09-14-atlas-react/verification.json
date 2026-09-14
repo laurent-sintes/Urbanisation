@@ -1,0 +1,111 @@
+{
+  "verified_at": "2026-09-14T07:57:19.214809+00:00",
+  "publication": "2026-09-13.5",
+  "server_pid": 15244,
+  "frontend_tests": {
+    "passed": 30
+  },
+  "python_tests": {
+    "passed": 19,
+    "skipped": 2,
+    "skip_reason": "Liens symboliques non disponibles sur cet hôte"
+  },
+  "browser": {
+    "checkedAt": "2026-09-14T07:56:21.600Z",
+    "checks": [
+      "fresh root / 51 published elements / no recent visits",
+      "all 12 domain/reference maps match explicit published children",
+      "legacy spaces and navigation shells recover to Urbanisation",
+      "invalid graph scope recovers safely / double-click on a leaf opens its sheet",
+      "P82 / U141 complete source reader, anchors and Escape focus restoration",
+      "published-only search / type and lifecycle filters / persisted current selection",
+      "historical publication fixed across refresh / reload / browser history; missing universe scope recovered",
+      "real transverse relation direction and complete qualification",
+      "automatic pointer refresh / failure retains model / recovery keeps selected node",
+      "historical selection remains fixed when current catalog advances"
+    ],
+    "version": "2026-09-13.5",
+    "assets": [
+      "http://127.0.0.1:8765/assets/index-DTRM4zK4.js",
+      "http://127.0.0.1:8765/assets/rolldown-runtime-W7wSyTde.js",
+      "http://127.0.0.1:8765/assets/index-C--Jx3eZ.css",
+      "http://127.0.0.1:8765/assets/ReactFlowPane-BoNdZssd.js",
+      "http://127.0.0.1:8765/assets/ReactFlowPane-DLioOiRN.css",
+      "http://127.0.0.1:8765/assets/elk.bundled-Duj3JzZz.js"
+    ],
+    "errors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "httpErrors": [],
+    "screenshots": "C:\\Dev\\Beaumanoir Cartographie\\app\\.runtime\\qa-react"
+  },
+  "tree": {
+    "publication": "2026-09-13.5",
+    "serverPid": 15244,
+    "checks": [
+      "Explicit parents, selection and no recent visits",
+      "Tree keyboard, expansion and selection stay distinct",
+      "Mouse collapse keeps a keyboard entry for the hidden selected leaf",
+      "Expansion persists and search reveals the selected ancestors",
+      "Published validation scope and source focus restoration",
+      "Resizable tree clamps to 240–420px and persists",
+      "Reading layout at 1920px",
+      "Reading layout at 1366px",
+      "Reading layout at 1024px",
+      "Reading layout at 980px",
+      "Drawer keyboard, inert background and focus at 980px",
+      "Reading layout at 390px",
+      "Drawer keyboard, inert background and focus at 390px",
+      "Reading layout at 320px",
+      "Drawer keyboard, inert background and focus at 320px",
+      "Four extra explicit levels and distinct object/document/event relations",
+      "No browser exceptions"
+    ],
+    "failures": [],
+    "measurements": [
+      {
+        "width": 1920,
+        "overflow": false,
+        "definition": 613.828125,
+        "readingWidth": 778.9375
+      },
+      {
+        "width": 1366,
+        "overflow": false,
+        "definition": 613.828125,
+        "readingWidth": 778.9375
+      },
+      {
+        "width": 1024,
+        "overflow": false,
+        "definition": 610.078125,
+        "readingWidth": 623
+      },
+      {
+        "width": 980,
+        "overflow": false,
+        "definition": 610.078125,
+        "readingWidth": 778.9375
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "definition": 690.125,
+        "readingWidth": 321
+      },
+      {
+        "width": 320,
+        "overflow": false,
+        "definition": 748.921875,
+        "readingWidth": 251
+      }
+    ],
+    "browserErrors": [],
+    "output": "C:\\Dev\\Beaumanoir Cartographie\\app\\.runtime\\qa-tree"
+  },
+  "published_files_unchanged_since_U143": {
+    "modeles/release/index.json": true,
+    "modeles/release/urbanisation-v003-2026-09-13-173533.json": true,
+    "modeles/release/2026-09-13.5/model.json": true
+  }
+}

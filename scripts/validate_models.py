@@ -14,11 +14,15 @@ from pathlib import Path
 import re
 
 try:
+    from .glossary import validate as validate_glossary
     from .json_contract import validate as validate_contract
     from .release_catalog import resolve_release
+    from .structured_io import read as read_document, working_path
 except ImportError:
+    from glossary import validate as validate_glossary
     from json_contract import validate as validate_contract
     from release_catalog import resolve_release
+    from structured_io import read as read_document, working_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -107,6 +111,7 @@ def validate_urbanism(model, sources, schema=None):
         return ["model: expected object"]
     if any(not isinstance(model.get(k), list) for k in ("nodes", "relations")):
         return ["model: nodes and relations must be lists"]
+    errors.extend(validate_glossary(model))
     nodes = _index(model["nodes"], "nodes", errors)
     relations = _index(model["relations"], "relations", errors)
     for item in model['nodes'] + model['relations']:
@@ -174,7 +179,9 @@ def validate_urbanism(model, sources, schema=None):
                 errors.append(f"alternatives/{identifier}: dangling target {target}")
     _index(model.get("principles", []), "principles", errors)
     if model.get('element_versioning') == 1:
-        for item in [model] + model['nodes'] + model['relations'] + model.get('principles', []):
+        glossary = model.get('glossary')
+        glossary_items = ([glossary] + glossary['terms']) if isinstance(glossary, dict) and isinstance(glossary.get('terms'), list) else []
+        for item in [model] + model['nodes'] + model['relations'] + model.get('principles', []) + [g for g in glossary_items if isinstance(g, dict)]:
             identifier = item.get('id', item.get('model_id'))
             if type(item.get('revision')) is not int or item['revision'] < 1:
                 errors.append(f'versioning/{identifier}: positive integer revision required')
@@ -201,6 +208,8 @@ def validate_urbanism(model, sources, schema=None):
 def validate_release(release, decisions_document, snapshot, sources, schema=None):
     """Validate against the frozen input, NEVER against the live backlog."""
     errors = validate_urbanism(release, sources, schema)
+    if release.get("glossary") != snapshot.get("glossary"):
+        errors.append("release: glossary differs from frozen input")
     if errors:
         return errors
     errors.extend(validate_urbanism(snapshot, sources, schema))
@@ -298,8 +307,8 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
                     if set(proposed) != set(actual) - set(expected) or len(proposed) != len(set(proposed)):
                         errors.append(f"release/{identifier}: proposed_fields do not cover the unapproved fields")
                     state = item.get("review", {}).get("state")
-                    fully_adopted = (item.get("kind") == "capability"
-                                     and {"name", "definition", "finality", "nature"} <= set(expected)
+                    fully_adopted = (bool(expected)
+                                     and (item.get("kind") != "capability" or {"name", "definition", "finality", "nature"} <= set(expected))
                                      and set(expected) == set(actual)
                                      and all(decisions[a].get("interpretation") == "explicit" for a in adoption_ids if a in decisions))
                     if (state == "accepted" and not fully_adopted) or (state == "partial" and not expected) or (state == "proposed" and expected):
@@ -330,15 +339,7 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
 
 
 def _load(path):
-    def unique_pairs(pairs):
-        value = {}
-        for key, child in pairs:
-            if key in value:
-                raise ValueError(f"duplicate JSON key {key}")
-            value[key] = child
-        return value
-    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs,
-                      parse_constant=lambda value: (_ for _ in ()).throw(ValueError(f"non-JSON constant {value}")))
+    return read_document(path)
 
 
 def validate_applicability(document, sources, models, realizations, schema=None):
@@ -416,7 +417,10 @@ def validate_project(root=ROOT):
         errors.extend(validate_sources(source_doc))
         sources = _index(source_doc["records"], "sources", errors)
         counters["source_records"] = len(sources)
-        backlog = _load(root / "modeles/backlog/model.json")
+        backlog = _load(working_path(root / "modeles/backlog"))
+        glossary_path = working_path(root / "modeles/backlog", "glossary")
+        if glossary_path.exists():
+            backlog["glossary"] = _load(glossary_path)
         errors.extend(f"backlog: {e}" for e in validate_urbanism(backlog, sources, urbanism_schema))
         counters["backlog_nodes"] = len(backlog["nodes"])
         counters["backlog_capabilities"] = sum(n["kind"] == "capability" for n in backlog["nodes"])
@@ -445,11 +449,11 @@ def validate_project(root=ROOT):
                 errors.append(f"release/manifest/{key}: count mismatch")
         counters["adoptions"] = len(decisions["decisions"])
         realizations = _validate_panoramas(root, schemas, sources, errors, counters)
-        roadmap = _load(root / "modeles/backlog/modeling-roadmap.json")
+        roadmap = _load(working_path(root / "modeles/backlog", "modeling-roadmap"))
         errors.extend(validate_contract(roadmap, _load(schemas / "modeling-roadmap.schema.json")))
         errors.extend(_source_refs(roadmap, sources, "modeling-roadmap"))
         _index(roadmap.get("extensions", []), "modeling-roadmap/extensions", errors)
-        applicability = _load(root / "modeles/backlog/applicability.json")
+        applicability = _load(working_path(root / "modeles/backlog", "applicability"))
         models = {(m["space"], m["model_id"], m["version"]): m for m in (backlog, release)}
         for assessment in applicability.get("assessments", []):
             subject = assessment.get("subject", {})
@@ -457,7 +461,7 @@ def validate_project(root=ROOT):
             if key not in models and key[0] == "release" and isinstance(key[2], str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}\.[1-9][0-9]*", key[2]):
                 historical_dir = root / "modeles/release" / key[2]
                 historical_manifest = _load(historical_dir / "manifest.json")
-                _, historical = _pointer(root, historical_dir, {"path": "model.json", "sha256": historical_manifest["model_sha256"]}, errors)
+                _, historical = _pointer(root, historical_dir, {"path": historical_manifest.get("model_path", "model.json"), "sha256": historical_manifest["model_sha256"]}, errors)
                 if historical.get("model_id") == key[1] and historical.get("version") == key[2]:
                     models[key] = historical
         errors.extend(validate_applicability(applicability, sources, models, realizations, _load(schemas / "applicability.schema.json")))

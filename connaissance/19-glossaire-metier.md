@@ -1,5 +1,10 @@
 # Glossaire des notions et des actions métier
 
+> **U203 — Catalogue courant structuré.** Les définitions de travail sont désormais dans [glossary.yaml](../modeles/backlog/glossary.yaml). Ce document conserve les sources, tableaux historiques et discussions. Les 81 anciens repères restent traçables ; TER057–TER068 explicitent les notions récentes. Ne pas réutiliser TER004 pour le rôle Article (TER060). La migration ne crée pas une validation des formulations consolidées. Atlas consulte le glossaire figé dans chaque release ; v003, antérieure à cette intégration, n’en possède pas.
+
+> **Lecture courante après U202.** Les tableaux initiaux ci-dessous conservent des définitions historiques. Pour Product, Product Variant, Product Unit, Article et Container, lire les compléments U191–U195 : Article et Container sont des rôles de Product ; Product Unit est l’exemplaire physique. TER004 ne devient pas automatiquement l’identifiant de ce nouveau sens d’Article. GTIN qualifie une référence commerciale et son conditionnement, Serial Number peut identifier un exemplaire. Business Services remplace le nom d’univers Case ; Case reste le dossier de traitement. Supply Order et Service Order ont des sens contextualisés. ATP/CTP/PTP sont présents dans D03, le placement différé CTP est historique. Voir [l’audit et ses portées](../audits/2026-09-14-glossaire-yaml/audit.md).
+
+
 Amorce du 9 septembre 2026, issue de [U33](01-contributions-utilisateur.md#u33) et [U34/U35](01-contributions-utilisateur.md#u34), F123–F127, A22 et P71. Ce glossaire accompagne le [catalogue des capacités candidates](09-capacites-candidates.md). Il donne un sens commun aux mots ; il ne détermine ni la hiérarchie des capacités ni le schéma de données.
 
 **Statut :** la définition de capacité est réaffirmée par Laurent en U33. Les définitions locales OMS/Supply sont explicitement formulées par Laurent en U55/U56. Les sens stock physique, logique et virtuel sont explicitement fournis par Laurent en U76 (TER040–TER042). Les autres définitions et conventions ci-dessous sont des **propositions locales à discuter**. Les rapprochements de marché existants sont des appuis, pas une adoption des définitions SAP ou Microsoft. Aucune capacité n’est renommée ou validée par cette amorce.
@@ -366,3 +371,170 @@ Inventory Movements décrit actuellement l’aptitude à enregistrer et qualifie
 ### Nom adopté — U129
 
 13 septembre 2026 : Laurent retient **Record Inventory Movements** pour la capacité D01.g. Ce nom exprime l’enregistrement des mouvements. Inventory Movements et Inventory Ledger Management restent des options historiques ; Ledger conserve son sens de registre. Définition et finalité de la capacité restent proposées.
+
+
+### Réexamen du vocabulaire D03 — U147, 14 septembre 2026
+
+Propositions à instruire, sans remplacement des termes historiques : Resource / ressource reste générique ; Material Resource / ressource matérielle ou Goods / marchandises désignent les biens qui circulent (produits finis, matières et composants), par opposition à leur référence Item et aux capacités de production également mobilisables. Supply désigne leur mise à disposition ou approvisionnement, pas le bien lui-même.
+
+Case = demande processus ; Order = commande Supply. Requirement est proposé pour le besoin quantifié et daté, y compris lors d’une simulation ou d’une prévision : ne pas présumer un nouvel objet métier ni l’existence préalable d’un Order. ATP/CTP peuvent soutenir des décisions de faisabilité ; U147 rouvre le placement de CTP jusque-là différé. Fractionnement/échéancement des promesses et création de ressources supplémentaires restent distincts.
+
+Voir [la revue sourcée D03](../marche/revue-d03-decisions-vocabulaire.md) et [les propositions structurées](../modeles/backlog/d03-review.yaml). Aucun nom nouveau adopté par la seule rédaction de ces propositions.
+
+
+### Complément To-Promise — U149
+
+**Profitable-to-Promise (PTP)** : notion de marché explicitement documentée par Oracle pour choisir une solution de réalisation selon son coût. Ce n’est pas automatiquement un calcul de profit global ni un seuil d’acceptation de marge. ATP/CTP établissent des possibilités, PTP peut contribuer à leur sélection économique. Capacité locale non adoptée. Channel ATP et Component/Capacity/Product family CTP restent qualifiés comme variantes dans [le panorama sourcé](../marche/to-promise-panorama.md), avec versions et limites de consultation.
+
+
+### Requisition / Order — U154/U155
+
+U155 corrige le terme visé en **Purchase Requisition** : demande interne adressée aux achats, distincte de Purchase Order et de Requirement. Explorer l’asymétrie achats/ventes et l’intégration commerce/Supply d’ECC avant de retenir des équivalences avec Case/Demand/Command. Les définitions locales de ces derniers restent à arbitrer, sans changement d’Order. [Analyse et sources ERP](../marche/ecc-requisition-order-case.md). Le point 5 du substantif ressource reste différé à la demande de Laurent.
+
+
+### Response Planning — U156
+
+Notion de marché rapprochable du plan d’adaptation de promesse envisagé en U148 et validé U154 sous CTP. La comparaison est documentée dans [CTP et Response Planning](../marche/ctp-response-planning.md). Piste de nom, pas renommage adopté ; plan proposé, changement de confirmation et modification d’Order restent distincts.
+
+
+### Requirement / Case / Demand / Order / Command — U164
+
+Réexamen proposé dans [l’étude de vocabulaire](../marche/requirement-case-demand-order-command.md) et [l’annexe JSON](../modeles/backlog/vocabulary-review.yaml). Ces cinq termes ne sont pas cinq objets ou étapes imposés. Demand et Requirement peuvent désigner des besoins Supply, y compris provenant d’Orders ; aucun partage universel demande brute/besoin formalisé n’est établi.
+
+La formulation U147 « Case = demande processus » doit être précisée : le Case organise le traitement d’une situation, avec son dossier d’informations, ses décisions et activités. Order reste la commande de pilotage Supply adoptée localement ; Command désigne une instruction d’action, avec un usage logiciel particulier en CQRS, sans choix technique. Ces reformulations restent proposées, sans renommage actif. Purchase Requisition reste distincte de Requirement selon U155.
+
+
+### Command comme demande d’exécution — U165
+
+Laurent écarte le sens pattern logiciel de la cartographie et propose **Command** pour l’objet métier matérialisant une demande d’exécution de la Supply vers une plateforme exécutante. Hypothèse en instruction, distincte d’une capacité et d’un engagement déjà accepté ; aucun objet instancié. Execution Command / Execution Request sont des précisions de libellé proposées par Codex, non validées. Order est réaffirmé dans Supply. Le nom d’univers Case est à revoir : sa finalité amont porte l’émergence et l’affinage des intentions en demandes ou problèmes à résoudre. Voir le [complément U165](../marche/requirement-case-demand-order-command.md#u165--demande-métier-dexécution).
+
+
+### Noms de demande logistique — U166
+
+[Comparaison de marché](../marche/logistics-order-et-demande-execution.md) : Logistics Order est attesté dans SAP Digital Manufacturing pour les transports d’atelier ; Inbound/Outbound Shipment Order chez Microsoft pour le WMS autonome ; Warehouse Request / Outbound Delivery Order chez SAP EWM ; Freight Order chez SAP TM ; Shipment Request chez Oracle ; Transport Instruction dans les standards GS1. Rôles et granularités distincts. Logistics Order est un candidat local pour une prestation logistique confiée, pas un standard générique interéditeur adopté. Warehouse Order SAP désigne un lot interne de tâches, pas automatiquement la demande amont.
+
+
+### Service Order — proposition U167
+
+La plateforme exécutante dépasse la logistique selon Laurent. Codex propose **Service Order** pour une commande métier de prestations adressée à un prestataire, avec résultats attendus et conditions de réalisation. Appuis de nom TM Forum et SAP, sans équivalence complète de modèles. Service Request reste une possibilité de vocabulaire mais peut désigner un traitement de problème amont dans certains produits. Aucun nom adopté, aucune succession Request/Order imposée ; émettre la commande ne prouve pas son acceptation. Voir le [complément U167](../marche/logistics-order-et-demande-execution.md#u167--généralisation-à-une-prestation-de-service) et l’annexe JSON.
+
+
+### Orders et frontière sémantique — U168
+
+Laurent distingue les Orders Supply et les Orders de service, avec définitions propres aux contextes Supply et Services. Cette orientation précise U167, sans adopter tout le contenu détaillé de l’objet proposé. Supply Order / Service Order permettent de qualifier le contexte ; Order peut rester local selon une proposition de Codex. Frontière sémantique compatible avec DDD ; ne pas déduire exactement un bounded context par grand périmètre, ni assimiler univers, domaine de capacités et bounded context.
+
+
+### Validation Supply Order / Service Order — U169
+
+**Validé par l’urbaniste** : Supply Order, commande dont on travaille la couverture, les priorités et la promesse ; Service Order, commande de prestations confiées à un exécutant. Modèles et responsabilités propres aux contextes Supply et Services ; vocabulaire Order local, qualifié aux frontières ; contrats explicites sans cycle partagé imposé. La granularité des bounded contexts reste ouverte et ne se confond pas avec les domaines de capacités. Les attributs détaillés U167 restent proposés. Cette décision remplace les mentions historiques de Service Order comme nom seulement proposé.
+
+
+### Business Services — candidat U171
+
+Proposition Codex pour l’univers amont à partir de l’offre aux clients, fournisseurs, partenaires et services internes décrite par Laurent. Business Services désignerait les services métier proposés et la prise en charge de leurs demandes/problèmes jusqu’au résultat attendu. Business Processes décrit leur organisation et Case Management l’orientation de réalisation. Nom et définition proposés ; distinction avec les services d’exécution U169, sans renommage de ceux-ci. Aucun catalogue ni capacité créé.
+
+
+### Business Services adopté — U173
+
+Nom d’univers et définition validés : « Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie prenante au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à leur réalisation. » Accès des parties prenantes, travail des équipes, coordination et pilotage transverse qualifient son périmètre ; ils ne sont pas des domaines créés. Les domaines seront explorés plus tard. L’univers universe-case devient Business Services dans le backlog ; ses anciennes appellations restent historiques.
+
+
+### Point 6 clos ; point 5 en instruction — U174
+
+Laurent clôt le point 6 : ne pas relancer la discussion Demand/Requirement/Case/Order/Command sur la base des réserves historiques. Les accords et leurs portées restent ceux consignés ; la clôture ne crée pas de nouveaux synonymes validés.
+
+Le point 5 reprend le substantif des ressources Supply. Proposition Codex : Resource / ressource, dans ce contexte, désigne un bien ou ensemble de biens, présents ou futurs, pouvant contribuer à satisfaire un Supply Order sous des conditions de quantité, lieu, date et usage. C’est une spécialisation de travail du terme général TER003, sans effacer celui-ci ni exclure les autres sortes de moyens dans d’autres contextes.
+
+Distinguer référence d’article, biens matériels, stock et ressource mobilisable. Les ressources présentes ou attendues sur engagement ne se confondent pas avec le potentiel encore achetable au titre d’un contrat. [Annexe structurée](../modeles/backlog/vocabulary-review.yaml), resource_vocabulary_review. Définition et cas proposés, sans renommage de capacité ni inventaire d’objets.
+
+
+### Ressource contextualisée et stock en transit — U175
+
+Laurent précise que Resource peut désigner un magasin comme un bien transporté selon le point de vue. Ne pas généraliser la définition de biens U174 à toutes les ressources. Première question à instruire : identité des biens stockés/transportés. Codex propose une continuité des biens et des objets distincts pour position de stock et acheminement ; le stock en transit évite l’opposition stricte stock/mouvement. Ni grain par pièce ni objet logiciel partagé imposés. [Étude et exemple](../marche/ressource-stock-et-mouvement.md), propositions non validées.
+
+
+### Audit article, SKU et unité logistique — U176
+
+[Audit comparatif](../marche/etudes/2026-09-14-articles-biens-unites-logistiques/audit.md), [résultats JSON](../modeles/backlog/item-logistic-unit-audit.yaml), C87. Références documentaires vérifiées, recommandations locales encore proposées.
+
+- **Item / référence d’article** : proposition pour une référence opérationnelle permettant de distinguer et gérer des quantités de biens ; modèle, variante et maille commerciale à préciser. Raffine TER004 sans remplacer sa valeur historique ni adopter une définition universelle de SKU.
+- **Quantity + Unit of Measure** : quantité mesurée et unité ; la divisibilité et les multiples de commande sont des règles à qualifier par opération.
+- **Goods / biens** : collectif matériel, à distinguer du code et de la fiche qui le décrivent.
+- **Logistic Unit** : candidat pour un ensemble physique constitué pour manutention, stockage ou transport. Le type d’emballage et le colis réel diffèrent. Rapprochement SAP HU, Microsoft Container/License plate et GS1 SSCC partiel : objet et identifiant restent distincts.
+- **Material SAP** : référence transversale, comprenant notamment matières, marchandises, emballages et certains services ; pas synonyme strict de matière première. **Product Microsoft** peut également porter Item ou Service.
+- **Stockkeeping Unit** : sens propre au contexte ; fiche Item/localisation/variante dans Business Central, unité de mesure de base dans la documentation SAP MM-IM consultée. Ne pas déduire une pièce insécable de ce terme.
+
+Le stock et le mouvement restent des situations ou opérations portant sur les biens. Les distinctions de référence, quantité et composition se conservent pendant stockage et transport. Pas de nouvel objet universel Resource, pas d’ajout de capacités depuis les modèles produit.
+
+
+### Article en anglais et en français — U180
+
+Les sens se recouvrent largement : article comme objet, texte publié, disposition d’un document ou terme grammatical. L’anglais emploie notamment article of clothing pour un vêtement et household articles pour des articles ménagers. Item peut aussi se traduire par article ; il désigne également un élément de liste ou un point à traiter. Ces sens lexicaux ne fixent pas une maille de référence, une unité de mesure ou une indivisibilité.
+
+Sources lexicales consultées dans les extraits indexés le 14 septembre 2026 : [Collins, Article](https://www.collinsdictionary.com/dictionary/english/article), [Cambridge, Item anglais-français](https://dictionary.cambridge.org/dictionary/english-french/item). L’ouverture directe de la page Cambridge Article a renvoyé 403 ; son contenu complet n’est pas prétendu consulté.
+
+Dans le modèle SAP étudié, Article possède une définition de gestion propre : référence simple, générique, variante ou structurée selon sa catégorie. Le mot anglais existe donc avec un sens courant proche du français, mais son emploi SAP reste à lire avec sa catégorie. Voir l’audit U176 et son complément Retail/wholesale U177–U179. Aucun terme adopté ou renommé par cette clarification.
+
+
+### Définition explicite SAP Article — U181
+
+Précision remplaçant la présentation incomplète U180 : SAP définit Article par une plus petite unité ou un conditionnement client commandable indépendamment et non subdivisible. Le dictionnaire indique un objet particulier ou proposé à la vente, sans ces contraintes. Le modèle SAP inclut aussi des génériques abstraits et ensembles décomposables : conserver définition courte et catégories distinctes. L’indivisibilité commerciale selon le contexte reste une lecture possible, pas une règle SAP démontrée. [Comparaison sourcée](../marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md), C89. Aucun renommage ni définition locale adoptée.
+
+
+### Commandé dans la définition SAP Article — U182
+
+La phrase ne précise pas qui commande à qui. Le contexte du glossaire suggère l’approvisionnement du distributeur ; ce sens ne doit pas devenir une exclusion des commandes client. SAP distingue unité d’achat, unité de vente et unité de livraison. [Complément et sources](../marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md), JSON associé. Aucun grain universel de commande ni définition locale validée.
+
+
+### Article et opération autorisée — exemple U183
+
+Le booster est l’article vendu à l’unité dans le scénario de Laurent ; le display est acheté mais sa revente est exclue par hypothèse. Cela ne suffit pas à exclure une représentation du display comme article structuré ou, selon sa composition, comme unité d’achat alternative. Ne pas déduire la catégorie technique SAP du seul nom commercial. [Exemple et sources](../marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md). Aucune définition locale adoptée.
+
+
+### Dynamics 365, Business Central et Supply Chain Management — U184
+
+Dynamics 365 désigne la gamme Microsoft d’applications ERP et CRM. Dynamics 365 Business Central en fait partie : ERP intégré destiné aux petites et moyennes organisations, issu de Dynamics NAV. Dynamics 365 Supply Chain Management et Finance appartiennent à la branche issue de Dynamics AX ; ce sont des applications distinctes de Business Central. Les noms regroupés finance and operations apps ne désignent pas Business Central ni un modèle de données unique de toute la gamme.
+
+Dans l’audit marché, préciser SCM ou Business Central. Les définitions Product/Item/Stockkeeping Unit doivent rester attribuées au produit consulté. La SKU de Business Central spécialisée par lieu/variante ne fournit pas une définition universelle Microsoft. Aucun seuil de taille, choix de solution ou adoption de modèle n’est déduit.
+
+[Sources et périmètre structurés](../marche/etudes/2026-09-14-articles-biens-unites-logistiques/microsoft-product-scope.json) ; [gamme Microsoft](https://www.microsoft.com/en-us/dynamics-365/what-is-dynamics-365), [Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/welcome), [Supply Chain Management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome). Vérifiés le 14 septembre 2026.
+
+
+### Stock unifié, Inbound / Outbound et conditionnement — U187
+
+Laurent choisit le stock unifié comme point de départ des entités et apprécie Inbound/Outbound pour qualifier les flux vis-à-vis du stock. Les conditionnements entrants et sortants peuvent différer. Codex propose de qualifier chaque direction par son point/périmètre de stock et de distinguer contenu, unité logistique identifiée et type de conditionnement. Les noms et attributs restent à instruire. [Analyse](28-stock-unifie-et-conditionnements.md) et [annexe JSON](../modeles/backlog/unified-inventory-packaging.yaml).
+
+
+### Conditionnement de stockage et packing — U188
+
+Laurent précise que les contenants peuvent être reconditionnés pour le stockage et créés à la volée pour l’outbound. Proposition : distinguer prévision de conditionnement, contenant physique et composition datée ; inbound/stockage/outbound ne deviennent pas automatiquement trois types d’objet. [Analyse U187/U188](28-stock-unifie-et-conditionnements.md).
+
+
+### Packing Requirements et promesse — U189
+
+L’exigence de Laurent est d’intégrer le packing contractuel dans l’ATP B2B. Packing Requirements est un nom candidat pour les exigences applicables ; à distinguer des moyens de packing disponibles et des containers effectivement constitués. Un stock en vrac ne prouve pas une livraison conforme ; les colis peuvent être créés après la promesse. [Analyse et rôles proposés](28-stock-unifie-et-conditionnements.md). Aucun schéma détaillé adopté.
+
+
+### Product, Article/Product Unit et Container/Container Unit — U190
+
+Proposition utilisateur en instruction, décrite dans l’[analyse du stock unifié](28-stock-unifie-et-conditionnements.md) et son [annexe JSON](../modeles/backlog/unified-inventory-packaging.yaml). Clarifier référence commerciale versus exemplaire physique. Un GTIN peut être partagé par plusieurs exemplaires ; numéro de série et indivisibilité sont des notions distinctes. Container Type/Specification est un libellé proposé pour la référence de contenant. Design reste un univers mentionné, non instancié. Aucun de ces termes n’est adopté par simple présence dans l’annexe.
+
+
+### Product Unit/Article : exemplaire physique — U191/U192
+
+Grain explicitement retenu par Laurent : chaque exemplaire physique avec son identité propre. Code-barres indépendant de cette notion. La lecture référence vendable commune à plusieurs exemplaires n’est plus l’alternative courante pour Product Unit. Noms définitifs, modèle de design et mise en correspondance des identités restent à instruire. [État courant et portée](../modeles/backlog/unified-inventory-packaging.yaml), entity_structure_review.
+
+
+### Product Variant, Serial Number, GTIN et code-barres — U193
+
+Product Variant : terme introduit par Laurent pour le niveau de référence commerciale ; définition proposée comme déclinaison précise du Product, partagée par des exemplaires Product Unit. Serial Number : identifiant possible d’un exemplaire, avec un périmètre d’unicité à préciser. GTIN : identifiant GS1 de référence commerciale, distinguant variantes et conditionnements pertinents ; ne pas le confondre avec une identité individuelle. Code-barres : support de représentation de données. Product → Product Variant → Product Unit reste une structure en instruction, avec grain individuel déjà retenu U191. [Analyse et sources GS1](28-stock-unifie-et-conditionnements.md).
+
+
+### Container comme rôle d’un produit — U194
+
+Hypothèse en instruction : un contenant partage la structure référence/variante/exemplaire des produits ; Container Unit pourrait désigner un rôle ou une spécialisation de Product Unit. Distinguer aptitude à contenir, composition physique datée, nomenclature de fabrication et regroupement logistique. Le contenant vide reste identifiable ; un remplissage n’implique pas une nouvelle identité du support. [Analyse et sources](28-stock-unifie-et-conditionnements.md). Aucune fusion adoptée.
+
+
+### Article et Container : rôles de Product — U195
+
+Principe validé par Laurent : Product porte un rôle Article ou Container. Article cesse d’être le nom alternatif courant de l’entité Product Unit ; Product Unit conserve le sens d’exemplaire physique individuel. Les noms des rôles et leur rattachement conceptuel à Product sont acquis ; définitions détaillées, multiplicité et conditions d’usage restent en instruction. [Portée et interprétation courante](../modeles/backlog/unified-inventory-packaging.yaml), product_roles_decision.

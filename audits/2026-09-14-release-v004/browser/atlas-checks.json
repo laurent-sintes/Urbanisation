@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-09-14T14:57:40.089Z",
+  "checks": [
+    "fresh root / 48 published elements / no recent visits",
+    "all domain/reference maps match explicit published children",
+    "legacy spaces and navigation shells recover to Urbanisation",
+    "invalid graph scope recovers safely / double-click on a leaf opens its sheet",
+    "P82 / U141 complete source reader, anchors and Escape focus restoration",
+    "published-only search / type and lifecycle filters / persisted current selection",
+    "historical publication fixed across refresh / reload / browser history; missing universe scope recovered",
+    "real transverse relation direction and complete qualification",
+    "automatic pointer refresh / failure retains model / recovery keeps selected node",
+    "historical selection remains fixed when current catalog advances"
+  ],
+  "version": "2026-09-14.1",
+  "assets": [
+    "http://127.0.0.1:8765/assets/index-CdlOQ_S4.js",
+    "http://127.0.0.1:8765/assets/rolldown-runtime-W7wSyTde.js",
+    "http://127.0.0.1:8765/assets/index-dZLcDHPT.css",
+    "http://127.0.0.1:8765/assets/ReactFlowPane-kz4L3eJT.js",
+    "http://127.0.0.1:8765/assets/ReactFlowPane-DLioOiRN.css",
+    "http://127.0.0.1:8765/assets/elk.bundled-Duj3JzZz.js"
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "screenshots": "C:\\Dev\\Beaumanoir Cartographie\\app\\.runtime\\qa-react"
+}

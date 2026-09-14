@@ -1,0 +1,199 @@
+{
+  "audit_id": "AUDIT-U176",
+  "date": "2026-09-14",
+  "sources": [
+    {
+      "id": "S01",
+      "publisher": "SAP",
+      "title": "Material / Product Master",
+      "url": "https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/using-materials-master-data-for-transportation-management_e2173208-52f7-4ea7-a715-80fda149121e",
+      "version": "S/4HANA TM, version de cours non affichée",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Material Master ; Material Types",
+      "support": "Référentiel transversal, incluant services et emballages ; origine historique du mot non établie."
+    },
+    {
+      "id": "S02",
+      "publisher": "SAP",
+      "title": "Retail Article Master",
+      "url": "https://learning.sap.com/courses/discovering-retail-functions-and-business-processes-in-sap-s-4hana-retail/introducing-the-retail-article-master_bd2d9df6-bf54-4612-8fa0-b35c63fbb0d8",
+      "version": "S/4HANA Retail, version de cours non affichée",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Article Categories ; unités ; structured articles",
+      "support": "Articles génériques, variantes, sets et prepacks ; plusieurs mailles de gestion et unités."
+    },
+    {
+      "id": "S03",
+      "publisher": "SAP",
+      "title": "Units of Measure in Inventory Management",
+      "url": "https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/91b21005dded4984bcccf4a69ae1300c/f962bd534f22b44ce10000000a174cb4.html",
+      "version": "2025 FPS01, février 2026",
+      "consulted_at": "2026-09-14",
+      "access": "Texte indexé consulté ; ouverture sans texte",
+      "locator": "Base unit / stockkeeping unit",
+      "support": "Stockkeeping unit peut désigner l’unité de mesure du stock ; conversions depuis les unités de saisie."
+    },
+    {
+      "id": "S04",
+      "publisher": "SAP",
+      "title": "Maintaining Handling Units",
+      "url": "https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/maintaining-handling-units-hu-_dcf41902-7052-4c3c-bbc0-2bab1a918e69",
+      "version": "S/4HANA Cloud Public Edition, cours non versionné",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Handling Unit",
+      "support": "HU physique, emballage et contenu ; identité et imbrication."
+    },
+    {
+      "id": "S05",
+      "publisher": "SAP",
+      "title": "Serial Numbers with Material Stock",
+      "url": "https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/eb2a39dd0c124fed8252f684002d55e1/a8e46aae952f489bb57f242580cc365d.html?version=2023.latest",
+      "version": "2023.latest",
+      "consulted_at": "2026-09-14",
+      "access": "Texte indexé consulté ; ouverture sans texte",
+      "locator": "A_MaterialSerialNumber",
+      "support": "Material, numéro de série, lot et position de stock distincts dans le modèle de données."
+    },
+    {
+      "id": "S06",
+      "publisher": "SAP",
+      "title": "Batch",
+      "url": "https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f340785101c548c9beeda9284efd18a0/8bfeb753128eb44ce10000000a174cb4.html?locale=en-US&state=PRODUCTION&version=2025.001",
+      "version": "2025 FPS01",
+      "consulted_at": "2026-09-14",
+      "access": "Texte indexé consulté ; ouverture sans texte",
+      "locator": "Définition Batch",
+      "support": "Lot rattaché à un Material ; homogénéité selon les spécifications de production."
+    },
+    {
+      "id": "M01",
+      "publisher": "Microsoft",
+      "title": "Product information overview",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information",
+      "version": "Dynamics 365 SCM, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Products ; product masters ; variants ; released products",
+      "support": "Product peut être Item ou Service ; famille, variante et mise à disposition dans une entité juridique distinctes."
+    },
+    {
+      "id": "M02",
+      "publisher": "Microsoft",
+      "title": "Product identifiers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-identifiers",
+      "version": "Dynamics 365 SCM, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Product number ; item number ; GTIN",
+      "support": "Identité produit globale, référence par entité juridique et identification des variantes ; conditionnements et GTIN."
+    },
+    {
+      "id": "M03",
+      "publisher": "Microsoft",
+      "title": "Set up stockkeeping units",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/inventory-how-to-set-up-stockkeeping-units",
+      "version": "Business Central, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Stockkeeping units",
+      "support": "SKU est une fiche Item pour lieu et/ou variante, avec données spécifiques de gestion."
+    },
+    {
+      "id": "M04",
+      "publisher": "Microsoft",
+      "title": "Manage units of measure",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/tasks/manage-unit-measure",
+      "version": "Dynamics 365 SCM, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Unit classes ; decimal precision ; conversions",
+      "support": "Mesures et précision gérées indépendamment de l’identité produit."
+    },
+    {
+      "id": "M05",
+      "publisher": "Microsoft",
+      "title": "Pack containers for shipment",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-containers",
+      "version": "Dynamics 365 SCM, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Containers ; packing ; license plates",
+      "support": "Conteneur physique, contenu, poids et référence d’expédition ; aucune équivalence générale LP/Container/SSCC démontrée."
+    },
+    {
+      "id": "M06",
+      "publisher": "Microsoft",
+      "title": "Item and raw material tracing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales",
+      "version": "Dynamics 365 SCM, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Tracking dimensions",
+      "support": "Article, dimensions produit, lot/série et stockage distincts."
+    },
+    {
+      "id": "M07",
+      "publisher": "Microsoft",
+      "title": "Set up units of measure",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/inventory-how-setup-units-of-measure",
+      "version": "Business Central, documentation en ligne",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Base unit ; alternate units ; rounding",
+      "support": "Unités de stock, achat, production et vente ; conversion et arrondi des quantités."
+    },
+    {
+      "id": "G01",
+      "publisher": "GS1",
+      "title": "System Architecture",
+      "url": "https://ref.gs1.org/architecture/system-architecture/",
+      "version": "12.0.0, octobre 2024",
+      "consulted_at": "2026-09-14",
+      "access": "Sections textuelles consultées",
+      "locator": "Tables 4-1 et 6-1",
+      "support": "Identités de classe, lot, exemplaire et unité logistique distinctes ; GTIN, GTIN+lot/série, SSCC."
+    },
+    {
+      "id": "G02",
+      "publisher": "GS1",
+      "title": "Logistic Label Guideline",
+      "url": "https://ref.gs1.org/guidelines/logistic-label/",
+      "version": "1.3, juillet 2019",
+      "consulted_at": "2026-09-14",
+      "access": "Sections du PDF consultées",
+      "locator": "§4.1–4.5, pages imprimées 14–18",
+      "support": "Unité logistique potentiellement aussi commerciale ; un article commercial peut être expédié en plusieurs morceaux/colis."
+    },
+    {
+      "id": "G03",
+      "publisher": "GS1",
+      "title": "Global Data Model Attribute Implementation Guideline",
+      "url": "https://ref.gs1.org/guidelines/gdm-implementation/1.13.0/",
+      "version": "1.13, novembre 2024",
+      "consulted_at": "2026-09-14",
+      "access": "Sections du PDF consultées",
+      "locator": "§2, page imprimée 25, attributs 56–59",
+      "support": "Base, consumer, orderable et shipping unit sont des qualifications distinctes ; maille commerciale relative à la hiérarchie."
+    },
+    {
+      "id": "G04",
+      "publisher": "GS1 Finland",
+      "title": "Creating a variable-measure item",
+      "url": "https://gs1.fi/en/customer-support/synkka/gs1-synkka-creating-variable-measure-item",
+      "version": "Guide Synkka en ligne, édition non établie",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté",
+      "locator": "Introduction",
+      "support": "Mesures variables dans les transactions, tissus et rouleaux notamment."
+    }
+  ],
+  "limits": [
+    "Éditions différentes, correspondances sémantiques et non tests de produits installés.",
+    "Les sources décrivent objets, données et fonctions, pas des Business Capabilities locales.",
+    "Plusieurs pages SAP Help sont connues seulement par texte indexé.",
+    "Les anciens liens GS1 en erreur ont été remplacés par des documents effectivement consultables sur ref.gs1.org."
+  ]
+}

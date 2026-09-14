@@ -282,6 +282,21 @@
     },
     "lifecycle_policy": {
       "const": 1
+    },
+    "glossary": {
+      "type": "object",
+      "properties": {
+        "terms": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "required": [
+        "terms"
+      ],
+      "additionalProperties": true
     }
   },
   "required": [

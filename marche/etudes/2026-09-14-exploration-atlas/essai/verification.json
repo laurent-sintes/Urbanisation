@@ -1,0 +1,130 @@
+{
+  "publication": "2026-09-13.5",
+  "checks": [
+    "both-engines",
+    "tree-to-map-to-sheet",
+    "qualified-relation",
+    "engine-selection-continuity",
+    "graph-to-tree-selection",
+    "source-and-focus",
+    "keyboard-search",
+    "non-prefix-parent",
+    "no-recent-visits",
+    "mobile-overflow",
+    "reject-foreign-publication",
+    "hash-link-navigation"
+  ],
+  "measurements": [
+    {
+      "engine": "react-flow",
+      "view": "supply",
+      "width": 1080,
+      "height": 600,
+      "nodes": 9,
+      "edges": 0
+    },
+    {
+      "engine": "react-flow",
+      "view": "domain",
+      "width": 1080,
+      "height": 600,
+      "nodes": 5,
+      "edges": 0
+    },
+    {
+      "engine": "react-flow",
+      "view": "relations",
+      "width": 1080,
+      "height": 600,
+      "nodes": 2,
+      "edges": 1
+    },
+    {
+      "engine": "likec4",
+      "view": "supply",
+      "width": 1080,
+      "height": 710,
+      "nodes": 8,
+      "edges": 1
+    },
+    {
+      "engine": "likec4",
+      "view": "domain",
+      "width": 1080,
+      "height": 676,
+      "nodes": 4,
+      "edges": 0
+    },
+    {
+      "engine": "likec4",
+      "view": "relations",
+      "width": 1080,
+      "height": 676,
+      "nodes": 4,
+      "edges": 1
+    },
+    {
+      "engine": "react-flow",
+      "view": "mobile-relations",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false
+    },
+    {
+      "engine": "react-flow",
+      "view": "mobile-relations",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false
+    },
+    {
+      "engine": "likec4",
+      "view": "mobile-relations",
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false
+    },
+    {
+      "engine": "likec4",
+      "view": "mobile-relations",
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "modelRequests": [
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5",
+    "http://127.0.0.1:8767/api/model?version=2026-09-13.5"
+  ],
+  "screenshots": [
+    "react-flow-supply.png",
+    "react-flow-domain.png",
+    "react-flow-relations.png",
+    "react-flow-source.png",
+    "likec4-supply.png",
+    "likec4-domain.png",
+    "likec4-relations.png",
+    "likec4-source.png",
+    "react-flow-mobile-390.png",
+    "react-flow-mobile-320.png",
+    "likec4-mobile-390.png",
+    "likec4-mobile-320.png",
+    "publication-rejected.png"
+  ],
+  "date": "2026-09-14",
+  "snapshots_scope": "Parcours locaux du prototype U146 ; pas de benchmark de performance.",
+  "retained_screenshots": [
+    "react-flow-domain.png",
+    "likec4-domain.png",
+    "react-flow-relations.png",
+    "likec4-relations.png"
+  ]
+}

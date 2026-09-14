@@ -37,4 +37,6 @@ Après démarrage ou redémarrage, vérifier l’identité du serveur via l’AP
 
 Les journaux sont `app/.runtime/server-<port>.stdout.log` et `server-<port>.stderr.log`. En cas de port occupé, d’identité incohérente ou de suivi périmé, diagnostiquer avant toute nouvelle action ; conserver les services non identifiés comme ceux du projet. Si une permission système empêche l’action autorisée, demander uniquement l’élévation nécessaire à la commande ciblée, sans modifier les politiques PowerShell ni contourner les contrôles du lanceur.
 
-L’administration seule ne modifie ni le modèle ni le pointeur de release. Une nouvelle donnée JSON se lit après actualisation ; une modification du code Python exige un redémarrage. Terminer par l’état vérifié, l’URL et le port, ou l’erreur concrète qui empêche d’atteindre l’état demandé.
+L’administration seule ne modifie ni le modèle ni le pointeur de release. Une nouvelle donnée YAML/JSON se lit après actualisation ; une modification du code Python exige un redémarrage. Terminer par l’état vérifié, l’URL et le port, ou l’erreur concrète qui empêche d’atteindre l’état demandé.
+
+Le lecteur YAML nécessite PyYAML, épinglé dans `requirements.txt`. Si absent, installer localement depuis la racine avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Le serveur lit le modèle YAML ou JSON historique et sérialise les réponses API en JSON.

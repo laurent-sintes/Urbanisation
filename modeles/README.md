@@ -1,5 +1,20 @@
 # Modèles structurés
 
+**Publication courante U204 : v004 / `2026-09-14.1`.** L’index désigne `urbanisation-v004-2026-09-14-145044.yaml`, puis `2026-09-14.1/model.yaml` : 48 nœuds, 34 capacités, 47 relations et 93 termes dans `glossary`. [Note de release](release/2026-09-14.1/release-notes.md). Les mentions de « prochaine publication » et de v003 dans les étapes précédentes ci-dessous sont historiques ; YAML et le glossaire publié sont désormais actifs.
+
+## Format courant — U200/U202
+
+Le backlog vivant et les nouvelles publications du modèle métier sont en **YAML**. L’entrée de travail est `backlog/model.yaml` ; ses annexes courantes sont aussi en YAML. Les captures `legacy-capabilities.json`, `panorama-candidates.json`, `backlog/history/`, les panoramas et les preuves historiques restent dans leur format d’origine. Ne pas créer de copie JSON éditable concurrente.
+
+La prochaine publication produira `<publication>/model.yaml`, un descripteur `urbanisation-vNNN-YYYY-MM-DD-HHMMSS.yaml` et une entrée figée `revisions/<publication>/backlog.yaml`. `index.json`, `manifest.json`, décisions, preuves et rapports restent des métadonnées techniques JSON. Les anciennes releases JSON et leurs empreintes ne sont jamais réécrites. La release active v003 demeure celle publiée avant cette migration.
+
+Le serveur charge YAML/JSON avec `scripts/structured_io.py` puis renvoie du JSON aux API. Aucun modèle parallèle n’est stocké dans Atlas. Les valeurs métier et leurs empreintes canoniques ne dépendent pas de la mise en forme YAML ; l’empreinte du fichier publié reste calculée sur ses octets exacts.
+
+Installer la dépendance locale avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Les dates, identifiants et mots comme `on` restent des chaînes ; seules les valeurs booléennes `true`/`false`, nombres JSON et `null` sont typées implicitement. Les clés dupliquées, alias, objets Python et valeurs hors du contrat JSON sont refusés. Un champ multiligne peut utiliser `|` ; `|-` évite d’ajouter une fin de ligne à sa valeur. Les textes balisés du glossaire restent une proposition de syntaxe distincte du présent refactoring.
+
+[Audit sémantique, corrections et preuves de conversion](../audits/2026-09-14-glossaire-yaml/audit.md). Les descriptions initiales ci-dessous restent historiques pour les formats et versions qu’elles citent.
+
+
 **Fonctionnement courant U117–U123 :** [index.json](release/index.json) désigne un descripteur `urbanisation-vNNN-YYYY-MM-DD-HHMMSS.json`, qui porte version, horodatages UTC, chemin et empreinte du modèle et de sa note de release. Chaque élément et le modèle global ont une révision entière automatique et `last_modified`. Atlas consulte uniquement ces publications, avec sélection des versions ; le backlog reste l’espace de construction. Les descriptions du refactoring initial ci-dessous sont historiques lorsqu’elles mentionnent `current.json`.
 
 État au 13 septembre 2026, après U106–U111. Les fichiers JSON portent le modèle ; les Markdown conservent les récits, les analyses, les décisions argumentées et les restitutions. La règle complète de maintenance est dans [AGENTS.md](../AGENTS.md).
@@ -8,7 +23,7 @@
 
 | Espace | Rôle | Entrée faisant autorité |
 | --- | --- | --- |
-| `backlog` | Modèle en réflexion, alternatives, illustrations et points à instruire | [backlog/model.json](backlog/model.json) |
+| `backlog` | Modèle en réflexion, alternatives, illustrations et points à instruire | [backlog/model.yaml](backlog/model.yaml) |
 | `release` | Dernière version publiée, avec le statut de validation de chaque élément | [release/index.json](release/index.json) |
 | `panorama-as-is` | Connaissance de l’existant des trois SI ; distincte de la cible | [panorama-as-is/current.json](panorama-as-is/current.json) |
 
@@ -91,11 +106,11 @@ Sarenza est `not_assessed`, avec des listes vides. Cela signifie « non traité 
 
 Selon U113, l’exploration et la construction se font **dans le backlog par défaut**, y compris dans FLOW Atlas. La publication reste une action distincte pilotée par le skill `release`. Une comparaison seule n’active aucune version.
 
-U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. U141 structure désormais **Supply** et **Case** comme univers dans le backlog : groupes `group_role: urbanism_level`, `level_ref: universe`. Les domaines transactionnels et Business References sont rattachés à Supply ; Case réserve l’exploration processus. Business References reste un groupe de présentation. La [feuille de route](backlog/modeling-roadmap.json) prépare le lien Case/Order sans instancier leur inventaire détaillé ou leurs cardinalités. L’état avant cette refonte est conservé dans [history/pre-U141.json](backlog/history/pre-U141.json).
+U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. U141 structure désormais **Supply** et **Case** comme univers dans le backlog : groupes `group_role: urbanism_level`, `level_ref: universe`. Les domaines transactionnels et Business References sont rattachés à Supply ; Case réserve l’exploration processus. Business References reste un groupe de présentation. La [feuille de route](backlog/modeling-roadmap.yaml) prépare le lien Case/Order sans instancier leur inventaire détaillé ou leurs cardinalités. L’état avant cette refonte est conservé dans [history/pre-U141.json](backlog/history/pre-U141.json).
 
 Les relations peuvent porter `qualification` : sens (`meaning`), rôle, conditions, effets et périmètre. Le type générique `relates-to` permet capacité → capacité/objet/document/événement avec un sens explicite. Les sources et le statut appartiennent au lien lui-même. Cela prépare la structure ; aucun nouveau lien métier réel n’a été ajouté. Une relation entre capacités n’est pas automatiquement une décomposition ; un objet peut concerner plusieurs capacités sans propriétaire exclusif présumé.
 
-Le [registre d’applicabilité](backlog/applicability.json) prépare quatre contextes, trois `as_is` et FLOW `target`. Il conserve séparément applicabilité, couverture décrite et responsabilité de réalisation. Les évaluations futures référencent l’espace, la version et l’identifiant du domaine ou de la capacité, leurs preuves et réalisations lorsqu’elles sont connues. Le tableau est vide à ce stade : absence de résultat signifie non évalué. Les récits déjà analysés restent disponibles et leur qualification structurée reste à faire. Les schémas associés sont contrôlés avec les autres modèles.
+Le [registre d’applicabilité](backlog/applicability.yaml) prépare quatre contextes, trois `as_is` et FLOW `target`. Il conserve séparément applicabilité, couverture décrite et responsabilité de réalisation. Les évaluations futures référencent l’espace, la version et l’identifiant du domaine ou de la capacité, leurs preuves et réalisations lorsqu’elles sont connues. Le tableau est vide à ce stade : absence de résultat signifie non évalué. Les récits déjà analysés restent disponibles et leur qualification structurée reste à faire. Les schémas associés sont contrôlés avec les autres modèles.
 
 1. Lire les corrections, le JSON concerné et ses sources. Enregistrer d’abord tout nouvel apport de Laurent ; distinguer proposition et validation.
 2. Modifier le backlog JSON, conserver les identifiants et incrémenter la révision des éléments modifiés. Actualiser les liens marché ou signaler leur comparaison restant à faire dans les sources associées. Consigner l’analyse en Markdown.
@@ -139,3 +154,12 @@ Les nœuds et relations du backlog portent `lifecycle` : `ai_proposed` (Proposé
 `lifecycle_policy: 1` rend ce champ obligatoire pour chaque nœud et relation du modèle courant. Une empreinte périmée ou une validation sans portée bloque le contrôle. Les modèles historiques sans cette politique restent compatibles.
 
 Les modèles historiques sans lifecycle restent lisibles. L’introduction initiale de ce champ conserve les accords sur les contenus strictement inchangés, avec des décisions de transcription traçables lors de la prochaine préparation. Les illustrations ne sont pas rendues publiables par leur cycle. Les principes de fonctionnement et les données As Is conservent leurs contrats distincts.
+# Glossaire publié et références textuelles — U203
+
+Le vocabulaire courant est dans `backlog/glossary.yaml`. Les identifiants TER/VER sont stables ; `name`, `short_description`, `definition`, `review` et `source_refs` sont obligatoires. Les sens homonymes disposent de repères distincts : TER004 est historique ; TER060 décrit Article comme rôle de Product. Le registre Markdown conserve les récits et preuves, sans seconde autorité à maintenir.
+
+Les chaînes peuvent contenir `[unités physiques](glossary:TER059)` ou `[Inventory Tracking](model:D01.f#definition)`. Le texte affiché peut être traduit ou au pluriel. Seul le lien explicite détermine sa cible, dans le même modèle ; le parseur ne crée aucune relation métier. Préfixer un crochet ouvrant par `\` pour conserver un exemple littéral. La notation est indépendante de YAML et reste une chaîne dans l’API JSON.
+
+La préparation embarque le glossaire dans `glossary` du snapshot et du modèle publié ; elle surveille aussi l’empreinte de son fichier de travail. Une release historique sans ce champ reste sans glossaire. Chaque terme et le catalogue sont versionnés automatiquement, avec UTC `last_modified`. `glossary_changes` et `glossary_reference_impacts` du rapport indiquent les différences et les références à un sens modifié, y compris par un autre terme ; examiner leur portée avant publication, sans déduire une validation depuis une phrase inchangée. Les anciens snapshots restent immuables.
+
+Dans Atlas, la fiche de terme propose sa description courte, sa définition, son contexte et sa provenance. Les liens `model` ouvrent les éléments de tout type. `#definition`, `#finality` et `#scope` désignent les sections de fiche correspondantes ; `#definition` et `#short-description` sont disponibles dans les fiches de glossaire. L’URL Atlas encode séparément la publication, la cible et la section.

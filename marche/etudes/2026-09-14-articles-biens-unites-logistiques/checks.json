@@ -1,0 +1,21 @@
+{
+  "audit_id": "AUDIT-U176",
+  "active_model_sha256_before": "af65e847b40899fce80490ab03a75488facc0973950ece3eb3e214b084816ca3",
+  "checked_at": "2026-09-14",
+  "active_model_sha256_after": "af65e847b40899fce80490ab03a75488facc0973950ece3eb3e214b084816ca3",
+  "active_model_unchanged": true,
+  "source_count": 17,
+  "source_references_resolve": true,
+  "model_targets_resolve": true,
+  "audit_local_document_links_resolve": true,
+  "audit_json_parses": true,
+  "model_validation": {
+    "command": "python scripts/validate_models.py",
+    "errors": 0,
+    "backlog_nodes": 52,
+    "backlog_capabilities": 34,
+    "release_nodes": 51,
+    "release_capabilities": 36
+  },
+  "scope": "Audit et annexes documentaires ; aucune publication, aucun commit ou push."
+}

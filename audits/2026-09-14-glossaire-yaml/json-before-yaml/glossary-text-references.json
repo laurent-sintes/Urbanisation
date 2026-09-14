@@ -1,0 +1,98 @@
+{
+  "id": "GLOSSARY-TEXT-REFERENCES-U196",
+  "space": "backlog",
+  "as_of": "2026-09-14",
+  "source_refs": [
+    "U196",
+    "U197",
+    "U198"
+  ],
+  "state": "ai_proposed",
+  "requirement": "Les libellés, définitions et autres textes référencent explicitement les éléments du glossaire.",
+  "observed_state": {
+    "texts": "Champs name/definition/finality/scope et autres : chaînes dans urbanism.schema.json.",
+    "glossary": "Registre Markdown avec identifiants TER/VER et compléments narratifs ; pas encore un catalogue JSON faisant autorité."
+  },
+  "proposed_contract": {
+    "glossary": "Catalogue JSON de concepts identifiés, avec libellés, définitions, contexte, synonymes, statut, sources, révision et date de modification ; Markdown dérivé après migration contrôlée.",
+    "rich_text": "Chaîne JSON ordinaire avec liens explicites [texte affiché](glossary:IDENTIFIANT). Le préfixe glossary distingue les notions des liens web ou documentaires.",
+    "example_only": {
+      "definition": "Consulter le [stock](glossary:TER005)."
+    },
+    "reference_resolution": "La cible glossary:IDENTIFIANT vise une notion du glossaire de la même publication. Le texte entre crochets est explicite : traduction et pluriel peuvent différer du libellé canonique sans changer la cible. Aucune réécriture automatique des phrases après renommage.",
+    "meaning": "Le lien lexical explicite le sens du texte ; ce n’est ni une relation contains du modèle ni la preuve d’un objet métier instancié.",
+    "versioning": "Figer le glossaire avec le modèle publié. Une ancienne release résout ses liens dans sa propre capture. Détecter aussi les définitions de termes modifiées utilisées par des champs inchangés pour instruire l’impact sémantique sur leurs validations.",
+    "atlas": "Affichage du texte avec accès à la définition du terme, au clic et au clavier ; prévisualisation facultative au survol. Recherche des utilisations d’un terme possible.",
+    "compatibility": "Le type string des champs JSON reste inchangé. Adapter les contrôles des liens, la publication du glossaire et les rendus Atlas/Markdown, recherche et exports texte. Les textes historiques sans balise restent lisibles ; aucun enrichissement depuis le backlog pour une release historique.",
+    "syntax": {
+      "form": "[texte affiché](glossary:IDENTIFIANT)",
+      "identifier": "Identifiant stable existant, notamment TER/VER ; ne pas inventer une référence à partir du mot.",
+      "escaping": "Prévoir les échappements Markdown des délimiteurs littéraux, puis leur échappement JSON normal. Contrat détaillé du parseur à implémenter.",
+      "scope": "Syntaxe de lien ciblée, sans imposer tout Markdown ni autoriser du HTML dans les champs."
+    }
+  },
+  "proposed_checks": [
+    "Toutes les cibles glossary:IDENTIFIANT sont résolues dans le glossaire du bon espace et de la bonne publication.",
+    "Identifiants uniques et non réutilisés pour un autre sens ; conserver TER/VER si identité sémantique compatible.",
+    "Les sens homonymes sont distingués par contexte : pas de liaison automatique par simple égalité de mots.",
+    "Texte visible dérivé de la chaîne balisée en conservant le texte des liens ; pas de copie manuelle concurrente.",
+    "Tout champ référencé, y compris définition de terme, peut utiliser le même contrat sans expansion récursive des définitions."
+  ],
+  "migration_caution": "Le glossaire narratif conserve des sens historiques remplacés, notamment Article après U195. Consolider les portées et corrections avant extraction ; ne pas prendre la première ligne Markdown pour définition courante.",
+  "implementation_status": "Proposition de syntaxe légère enregistrée après U197 ; ni parseur, migration du glossaire, activation Atlas ou release réalisés.",
+  "history": [
+    {
+      "source_ref": "U196",
+      "state": "superseded",
+      "reason": "U197 préfère une chaîne lisible à des tableaux de segments.",
+      "proposed_contract": {
+        "glossary": "Catalogue JSON de concepts identifiés, avec libellés, définitions, contexte, synonymes, statut, sources, révision et date de modification ; Markdown dérivé après migration contrôlée.",
+        "rich_text": "Liste ordonnée de segments texte. Chaque segment référencé conserve son texte affiché et un term_ref stable. Aucun décalage numérique dans la chaîne à maintenir.",
+        "example_only": {
+          "definition": [
+            {
+              "text": "Consulter le "
+            },
+            {
+              "text": "stock",
+              "term_ref": "TER005"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        "reference_resolution": "term_ref vise une notion dans le glossaire de la même publication. Le texte affiché est explicite : anglais, français, pluriel et autres formes ne sont pas réécrits automatiquement.",
+        "meaning": "Le lien lexical explicite le sens du texte ; ce n’est ni une relation contains du modèle ni la preuve d’un objet métier instancié.",
+        "versioning": "Figer le glossaire avec le modèle publié. Une ancienne release résout ses liens dans sa propre capture. Détecter aussi les définitions de termes modifiées utilisées par des champs inchangés pour instruire l’impact sémantique sur leurs validations.",
+        "atlas": "Affichage du texte avec accès à la définition du terme, au clic et au clavier ; prévisualisation facultative au survol. Recherche des utilisations d’un terme possible.",
+        "compatibility": "Migration explicite du schéma, validateurs, calculs de contenu, publication, renderers et Atlas. Conserver les publications historiques lisibles ; ne pas ajouter silencieusement des objets à des champs actuellement limités aux chaînes."
+      },
+      "proposed_checks": [
+        "Tous les term_ref sont résolus dans le glossaire du bon espace et de la bonne publication.",
+        "Identifiants uniques et non réutilisés pour un autre sens ; conserver TER/VER si identité sémantique compatible.",
+        "Les sens homonymes sont distingués par contexte : pas de liaison automatique par simple égalité de mots.",
+        "Texte brut dérivé par concaténation des segments ; pas de copie manuelle concurrente.",
+        "Tout champ référencé, y compris définition de terme, peut utiliser le même contrat sans expansion récursive des définitions."
+      ]
+    }
+  ],
+  "user_preference": "Garder les textes en chaînes de caractères JSON lisibles, avec des liens reconnaissables de type Markdown.",
+  "serialization_review": {
+    "source_ref": "U198",
+    "state": "under_instruction",
+    "distinction": "Le format du document (YAML/JSON) est indépendant de la syntaxe des liens au glossaire. YAML ne résout pas les références sans convention et contrôles.",
+    "yaml_benefits": [
+      "Textes multiligne lisibles avec des blocs littéraux.",
+      "Moins de ponctuation structurelle et commentaires possibles."
+    ],
+    "current_constraint": "Le modèle courant fait autorité en JSON ; validateurs, publication et Atlas lisent ce format.",
+    "possible_direction": "Si YAML est retenu pour la rédaction, un backlog YAML unique faisant autorité peut être converti en JSON généré puis contrôlé pour la publication et Atlas. Aucun couple YAML/JSON édité à la main en parallèle.",
+    "migration_scope": [
+      "Choisir et documenter une représentation canonique pour le calcul des révisions et empreintes sans toucher aux preuves publiées.",
+      "Adapter lecture, édition, contrôles et gel des entrées ; rejeter les clés dupliquées et borner les types implicites.",
+      "Conserver les releases historiques JSON et tester la conservation exacte des textes et des références."
+    ],
+    "decision": "Aucun changement de format adopté ou réalisé."
+  }
+}

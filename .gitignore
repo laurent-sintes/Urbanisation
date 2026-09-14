@@ -27,3 +27,6 @@ htmlcov/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Compiled frontend; rebuild with pnpm build in app/
+/app/dist/

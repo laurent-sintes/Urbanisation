@@ -1,0 +1,79 @@
+{
+  "converted": [
+    {
+      "before": "modeles/backlog/applicability.json",
+      "after": "modeles/backlog/applicability.yaml",
+      "original_sha256": "57e4ed0d11d0a453c4c38d5d8c3a6614c17714eb4b0dfefdaedd500bd015ee30",
+      "yaml_sha256": "632d78b4e3f2d88aa2f723353ac5ec23046e33b23869a8e7d6339b4d1d116d5d",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/d03-d04-gap-review.json",
+      "after": "modeles/backlog/d03-d04-gap-review.yaml",
+      "original_sha256": "c2076b043fdb73f412e6fb2344f2004dfb3b44311fea8adcdfc6221ca5f67193",
+      "yaml_sha256": "5d397802181ff434cae107c2e3cca4b0176cb5e6a15a5042991a1e9f36c233d9",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/d03-review.json",
+      "after": "modeles/backlog/d03-review.yaml",
+      "original_sha256": "59baa5e48e6e4e79dc214f593e7009121c398de12e8ab0c72fd0c54890e2ee8e",
+      "yaml_sha256": "a87624db11dc18ec95b391c179542adb4e96a9a47bf66a18ca04ea0dc1582d3a",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/glossary-text-references.json",
+      "after": "modeles/backlog/glossary-text-references.yaml",
+      "original_sha256": "fe9a726291ed46048f208b209863c529a316813353eedaf8502456abd0b75be9",
+      "yaml_sha256": "4bb00817b3e5ef04ca95cc6cc3a42407d334d5e274b452605d04f21b554403ce",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/item-logistic-unit-audit.json",
+      "after": "modeles/backlog/item-logistic-unit-audit.yaml",
+      "original_sha256": "954ec97b7dd8736b371379436847578c996ef00567f1464b977dea042b1c1f6d",
+      "yaml_sha256": "9ebebb6b490f124fe80bddebe2360b6f98141cbc443636716a8f866e0eee5d35",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/microsoft-urbanism-fit.json",
+      "after": "modeles/backlog/microsoft-urbanism-fit.yaml",
+      "original_sha256": "b984be9ac11b8c8f2bb26d93be903a3e38da0f51ba00cd8fb9fc6ad5b8b8d51c",
+      "yaml_sha256": "7ad332042113dd34bdbc03e84d6ef7fd23c290639e68e5f3c7fe648d14cb1fb5",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/model.json",
+      "after": "modeles/backlog/model.yaml",
+      "original_sha256": "46b1a299729f660a95f5082e670b0c297883fd7b4b9dea7280bdf2b94d7ff92b",
+      "yaml_sha256": "ee48eabf04d0e7632c36d5df1936a43238968e5497554445e71937b44f00af4e",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/modeling-roadmap.json",
+      "after": "modeles/backlog/modeling-roadmap.yaml",
+      "original_sha256": "941ad4c1640e12c381c2af69d7ea2525164927234e52e6a59b4da1322595c17b",
+      "yaml_sha256": "9d264bafec1f601a418a762849a0083fe3fc3ac7a374dc691c7f46e9280559f1",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/unified-inventory-packaging.json",
+      "after": "modeles/backlog/unified-inventory-packaging.yaml",
+      "original_sha256": "bf46405e7b91f0a14c1efc4c975227a620178a6cba042a31cd79209ce4003e3e",
+      "yaml_sha256": "1d0425a9462ed22422a117c355a6355cde57a168fcbd882b855dc6b32a584b50",
+      "same_values": true
+    },
+    {
+      "before": "modeles/backlog/vocabulary-review.json",
+      "after": "modeles/backlog/vocabulary-review.yaml",
+      "original_sha256": "217881cfbddee998f774f090e815ebe74f892a62b8f3364cde2f3e6c4a8ba9a4",
+      "yaml_sha256": "edf7f42c4b5e418f0f4cb286bd9a6df6128884be58fca9da1c178fd3de12b7a0",
+      "same_values": true
+    }
+  ],
+  "preserved_captures": [
+    "legacy-capabilities.json",
+    "panorama-candidates.json"
+  ],
+  "published_files_rewritten": false
+}

@@ -1,6 +1,7 @@
 """Mutation tests using the actual extracted, frozen release as a fixture."""
 
 from copy import deepcopy
+from scripts.structured_io import read as read_document
 import json
 from pathlib import Path
 import sys
@@ -17,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def read(relative):
-    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+    return read_document(ROOT / relative)
 
 
 class ReleaseIntegrityTests(unittest.TestCase):
@@ -81,7 +82,7 @@ class ReleaseIntegrityTests(unittest.TestCase):
         self.assertTrue(any("dangling" in e for e in self.verify(release=mutated)))
 
     def test_live_backlog_change_does_not_change_release(self):
-        live_backlog = read("modeles/backlog/model.json")
+        live_backlog = read("modeles/backlog/model.yaml")
         baseline_digest = canonical_sha256(self.release)
         live_backlog["nodes"][0]["fields"]["name"] = "Future Proposal"
         # Simulate a fresh legacy proposal, without claiming the old approval.
@@ -91,7 +92,7 @@ class ReleaseIntegrityTests(unittest.TestCase):
         original_load = module._load
 
         def load_with_future_backlog(path):
-            if path.resolve() == (ROOT / "modeles/backlog/model.json").resolve():
+            if path.resolve() == (ROOT / "modeles/backlog/model.yaml").resolve():
                 return live_backlog
             return original_load(path)
 
@@ -196,7 +197,7 @@ class ReleaseIntegrityTests(unittest.TestCase):
 
 class ApplicabilityTests(unittest.TestCase):
     def setUp(self):
-        self.document = read("modeles/backlog/applicability.json")
+        self.document = read("modeles/backlog/applicability.yaml")
         self.schema = read("modeles/schemas/applicability.schema.json")
         self.sources = {r["id"]: r for r in read("modeles/provenance/source-records.json")["records"]}
         release = read("modeles/release/2026-09-13.2/model.json")

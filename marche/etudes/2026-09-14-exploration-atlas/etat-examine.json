@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-14",
+  "publication": "2026-09-13.5",
+  "revision": 3,
+  "files": {
+    "app/index.html": "1600ea8293c76364987d2b97f948d15e5f8ff5c0225253e62783d236a1d31f6f",
+    "app/app.js": "4be791d0834a23d68f0b793ff8d8eacfd38c3c5f6dc75eef5efb60816097d1d9",
+    "app/model.js": "4493cd5ea7528b822b2756fe84b1c117315de90793c4b208d4c4dfa42ff6873e",
+    "app/styles.css": "0fab5eb92a800fe6ced50b38e3ae6a244894e5fd7610a12d9147a6058e3b781b",
+    "app/package.json": "fb4056a0bb9bd00d04414661333e5827cd71e046bb46a5cb6bf7f48fcd9feab4",
+    "modeles/backlog/model.json": "efb0dc6dd9c260732ea56e3b40d7c89e5ff48fdd6590ced0ef50c6e843e221c5",
+    "modeles/release/index.json": "994d8fc088ad1d45323778a21aea3e0ab00f45baa98f7c642f829a3fe7e448b0",
+    "modeles/release/urbanisation-v003-2026-09-13-173533.json": "8b6159783aa5ec025b3a7dab5c4ffdd7b6b23943edcf54131f4851d6d0d08567",
+    "modeles/release/2026-09-13.5/model.json": "80bcf8b68e5222adc3dad1683d2a5b5bb084d32b4eee3ac8897ca51c16b469df"
+  }
+}

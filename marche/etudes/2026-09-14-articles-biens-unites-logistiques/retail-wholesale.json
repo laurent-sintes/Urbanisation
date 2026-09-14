@@ -1,0 +1,50 @@
+{
+  "id": "AUDIT-U176-RETAIL-SCOPE",
+  "as_of": "2026-09-14",
+  "source_refs": [
+    "U177",
+    "U178",
+    "U179"
+  ],
+  "analysis_path": "marche/etudes/2026-09-14-articles-biens-unites-logistiques/retail-wholesale.md",
+  "sources": [
+    {
+      "url": "https://learning.sap.com/courses/discovering-retail-functions-and-business-processes-in-sap-s-4hana-retail/introducing-the-retail-article-master_bd2d9df6-bf54-4612-8fa0-b35c63fbb0d8",
+      "publisher": "SAP",
+      "access": "Texte consulté",
+      "consulted_at": "2026-09-14"
+    },
+    {
+      "url": "https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/structured-articles-1",
+      "publisher": "SAP",
+      "access": "Texte consulté",
+      "consulted_at": "2026-09-14"
+    },
+    {
+      "url": "https://learning.sap.com/courses/outlining-sap-s-4hana-for-fashion-and-vertical-business-and-implementing-best-practices/understanding-sap-s-4hana-for-fashion-and-vertical-business",
+      "publisher": "SAP",
+      "access": "Texte consulté",
+      "consulted_at": "2026-09-14"
+    }
+  ],
+  "findings": [
+    {
+      "statement": "Retail désigne le commerce de détail ; le nom SAP Retail désigne une solution sectorielle au périmètre opérationnel plus large que le seul point de vente.",
+      "qualification": "source_synthesis"
+    },
+    {
+      "statement": "Les articles structurés sont explicitement utilisés dans les scénarios wholesale documentés.",
+      "qualification": "documented"
+    },
+    {
+      "statement": "S/4HANA Fashion couvre fabrication, wholesale et retail sur une architecture issue de SAP Retail.",
+      "qualification": "documented"
+    }
+  ],
+  "proposal": {
+    "wording": "Modèle Article de SAP Retail, également mobilisé par Fashion/wholesale",
+    "state": "ai_proposed"
+  },
+  "active_model_change": false,
+  "installed_usage_inferred": false
+}

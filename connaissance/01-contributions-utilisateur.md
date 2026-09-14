@@ -3880,3 +3880,1617 @@ Lance une release
 **statut**
 
 Publication autorisée ; accords U140/U141 transcrits dans leur portée, propositions et réserves conservées. Aucun commit ni push demandé.
+
+
+## U143
+
+**id**
+
+U143
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Étudier les outils modernes de cartographie et une UX maintenable par IA
+
+**contexte**
+
+Après la réorganisation U135 d’Atlas, Laurent demande une recherche Internet d’inspiration. Les pistes citées sont Cytoscape.js, LikeC4, React Flow et IcePanel. L’aptitude à produire et maintenir le code avec l’IA est un critère explicite.
+
+**texte**
+
+Beaucoup mieux mais pas parfais.
+
+Tu peux faire une recherche sur internet des outils modernes de cartographie un peu péchu, avec une UX sympa etc. Pas les gros trucs lourdaud comme  MEGA.
+
+Peut etre regarder Cytoscape.js pour les graphes de dépendance à venir.
+S'inspirer de LikeC4, ça peut être interessant
+React FLOW peut être un bon candidat pour représenter les objets
+IcePanel...
+
+Fais une étude pour t'inspirer et trouver des idées.
+Mais il faut que ce soit IA friendly car c'est toi qui va générer le code.
+
+**statut**
+
+Demande d’étude et d’idées d’ergonomie, sans adoption d’un produit ou d’un moteur, sans refonte immédiate ni publication. La compatibilité IA vise notamment la génération, la compréhension, la vérification et la maintenance du code. Résultat : marche/etudes/2026-09-14-exploration-atlas/etude.md.
+
+
+## U144
+
+**id**
+
+U144
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Réexaminer la couverture des capacités D02 par D01 et D03
+
+**contexte**
+
+Reprise de D02 après Inventory Management et les référentiels. Codex relève les recouvrements de disponibilité et d’ajustement avec Reservation, Promise Proposal et Supply Assignment.
+
+**texte**
+
+Je suis aligné avec tes points à examiner : je pense que ces capacités sont déjà couvertes par D01 et D03
+
+**statut**
+
+Accord sur les points à examiner et hypothèse de couverture par D01/D03. Ne constitue pas une validation de nouvelles définitions ni une instruction explicite de suppression. Analyse de couverture : audits/2026-09-14-d02-couverture.md.
+
+
+## U145
+
+**id**
+
+U145
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Retirer D02 sans renuméroter les autres domaines
+
+**contexte**
+
+Après U144 et la proposition explicite de retrait de D02 et de ses deux capacités résiduelles, Laurent demande la suppression du domaine en conservant la numérotation des autres domaines. Les clarifications de définition des capacités d’accueil restent distinctes.
+
+**texte**
+
+Je propose de supprimer ce domaine mais de ne pas renuméroter les autres pour l'instant
+
+**statut**
+
+Retrait appliqué au backlog : D02, D02.a et D02.d, avec leurs trois relations de présentation/rattachement. Les identifiants déplacés D02.b, D02.c et D02.e restent actifs dans D01 et D03. Aucune renumérotation, aucune publication ni validation supplémentaire de définition.
+
+
+## U146
+
+**id**
+
+U146
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Réaliser l’essai comparatif React Flow / LikeC4
+
+**contexte**
+
+Go suivant l’étude U143 et sa proposition d’un petit essai sur le même parcours réel d’Atlas : navigation par niveaux puis relation Execution Reconciliation / Order Reconciliation. Autorise les prototypes locaux, leur vérification et leur consultation ; aucune adoption définitive de moteur ni publication métier.
+
+**texte**
+
+Go
+
+**statut**
+
+Mise en œuvre du prototype comparatif dans prototypes/atlas-exploration/, avec source publiée commune, arbre, recherche, fiche centrale et deux moteurs graphiques. Les travaux métier parallèles U144/U145 restent distincts de cet essai.
+
+
+## U147
+
+**id**
+
+U147
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Réexaminer les décisions et le vocabulaire d’Order Promising
+
+**contexte**
+
+Revue de D03 après retrait de D02. Les neuf capacités U95 constituent la base existante ; Laurent rouvre ATP/CTP et interroge plusieurs noms et frontières. Les propositions de remplacement restent à discuter.
+
+**texte**
+
+Mes remarques :
+
+- Je me demande si toutes les décisions sont listées. ATP et CTP doivent être des décisions à mon avis
+- "Supply Creation Decision" n'est pas très claire : c'est l'idée de faire un spread ou un split et proposer des commandes partielles et échelonnées ?
+- Dans l'ordre des capacités d'action, je préfèrerais les "Promise au début" et Supply Assignment à la fin
+- "Allocation Elligibility" : la question traitée est super claire mais j'ai un doute sur le nom. J'ai été obligé de faire un effort pour comprendre. Allocation est claire car dans la définition c'est la démarche d'affecter des ressources à qq chose : des orders ou une prévision. Eligibility par contre n'apporte rien dans l'explication.
+- On utilise le terme de "Fourniture", moi je parle de "ressource". Il faut définir quelque chose de clair concernant le substantif qui désigne de maniere abstraite les machins qui circulent entre les stocks, les magasins et les party.
+- On fait bien la différence entre demande (le Case) et l'order (la commande) maintenant. Il faut certainement aligner le vocabulaire.
+
+Qu'en penses-tu ?
+
+**statut**
+
+Ordre de présentation appliqué aux quatre actions du backlog. ATP/CTP remis à l’étude ; noms et vocabulaire en réexamen, sans validation de remplacements proposés par Codex. Détails structurés dans modeles/backlog/d03-review.json et analyse sourcée dans marche/revue-d03-decisions-vocabulaire.md.
+
+
+## U148
+
+**id**
+
+U148
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Distinguer faisabilité à situation donnée et plan d’adaptation pour honorer une commande
+
+**contexte**
+
+Suite à U147, Laurent précise les résultats visés, propose une simplification de D03 et demande un avis. Le nom CTP et les retraits sont argumentés conditionnellement ; aucune refonte automatique des valeurs validées.
+
+**texte**
+
+- 1- ATP & CTP
+  - ATP : calcul de la promesse d'une commande par rapport à ce qui est engagé (les commandes d'achat fermes, l'état du stock, les commandes de vente engagées)
+  - CTP : Quelles commandes d'achat doit on passer, quel profil de protection de stock doit on modifier, quelles commandes de ventes doit on retarder ou diminuer ou annuler etc. pour honorer une commande
+  - => Dans les deux cas, on tente d'honorer une commande. ATP = avec ce qu'on a, CTP = avec ce qu'on peut potentiellement
+  - => Si tout est bon dans ce que je dis, alors ce sont deux capacités différentes, l'une remplit la promesse d'une commande, l'autre propose un plan de changement de configuration des flux entrants / flux sortants / protection policy
+- 2- Supply Creation Decision
+  - Si Supply Assignment est la capacité qui applique une stratégie d'allocation, alors cette capacité est inutile
+  - Oui, il manque la décision Delivery Schedule Decision
+- 3- Ordre => c'est ok
+- 4- Allocation Elligibility
+  - Oui, c'est une décision
+  - Quelle quantité la commande est-elle autorisée à mobiliser ?  => couvert par ATP ?
+  - Quelles ressources identifiées couvrent effectivement cette commande ?  => ATP aussi
+  - => Je ne suis pas sur que différencier Qualité et quantité soit une bonne idée, le niveau de granularité devient trop bas.
+  - => Selon ce raisonnement, cette capacité devrait disparaitre.
+
+On commence par ça. Qu'ne penses-tu ?
+
+**statut**
+
+Deux résultats proposés : faisabilité à engagements/politiques donnés et plan d’adaptation. Besoin de Delivery Schedule Decision confirmé ; ordre des actions confirmé. Suppressions conditionnelles de D03.d/D03.h à instruire, sans retirer leurs règles. Différence du CTP local envisagé avec le marché signalée dans la revue. Aucun changement de liste active ni publication.
+
+
+## U149
+
+**id**
+
+U149
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Vérifier la couverture des notions To-Promise
+
+**contexte**
+
+Après U148, Laurent demande si ATP et CTP couvrent les décisions nommées To-Promise dans le marché. Recherche de notions complémentaires, sans ajout automatique de capacités.
+
+**texte**
+
+Vérifie si les décision "\*-To-Promise" sont complets avec ATP et CTP
+
+**statut**
+
+Vérification documentée dans marche/to-promise-panorama.md. PTP explicitement identifié ; variantes et profondeur de calcul distinguées de capacités autonomes. Aucune exhaustivité universelle revendiquée ni modification de la carte active.
+
+
+## U150
+
+**id**
+
+U150
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Valider React Flow et l’interface sur mesure pour Atlas
+
+**contexte**
+
+Après l’essai comparatif U146, Laurent tranche explicitement en faveur de React Flow et de l’interface sur mesure. La comparaison du moteur est close ; cette décision porte sur le choix technique et ergonomique, pas sur le contenu métier du modèle.
+
+**texte**
+
+Pas de débat : React Flow / sur mesure est bien meilleur. Je valide !
+
+**statut**
+
+Choix validé par Laurent : React Flow avec interface sur mesure pour la suite d’Atlas. LikeC4 n’est plus candidat à l’intégration ; le prototype comparatif et les constats restent conservés comme historique. L’intégration dans l’application courante n’est pas présentée comme déjà réalisée.
+
+
+## U151
+
+**id**
+
+U151
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Aligner la granularité des décisions D03 sur ATP/CTP/PTP
+
+**contexte**
+
+Laurent retient ATP/CTP/PTP comme niveau d’aptitude de l’entreprise et demande une réponse à son retour U148. La recomposition détaillée est proposée dans le backlog, en conservant les valeurs approuvées tant que les remplacements ne sont pas arbitrés.
+
+**texte**
+
+Il faut rester dans le scope "ce que sait faire l'entreprise" => ATP / CTP / PTP est le bon niveau. Il faut aligner les capacités de décisions en ce sens.
+
+Et concernant mon feedback ?
+
+**statut**
+
+Granularité ATP/CTP/PTP retenue comme orientation. Alternative complète D03 à quatre actions et quatre décisions rédigée dans le JSON, avec reprise des cinq décisions antérieures ; aucune suppression active ni nouvelle définition présentée comme validée. Le périmètre local du plan d’adaptation CTP conserve sa différence documentée avec les produits du marché.
+
+
+## U152
+
+**id**
+
+U152
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Réaliser le refactoring React Flow d’Atlas
+
+**contexte**
+
+Après le choix U150, Laurent demande l’intégration dans l’application courante.
+
+**texte**
+
+Tu peux réaliser le refacto ?
+
+**statut**
+
+Réalisation autorisée dans Atlas : React Flow et interface sur mesure, en conservant les publications, la recherche, les sources et l’arbre. Aucun changement métier ni publication implicite.
+
+## U153
+
+**id**
+
+U153
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Donner des icônes aux éléments du modèle
+
+**contexte**
+
+Complément au refactoring U152 en cours.
+
+**texte**
+
+Et essaie de trouver des icones sympas pour tous les objets.
+
+**statut**
+
+Famille d’icônes cohérente à intégrer aux arbres, cartes, fiches et résultats, avec repères par type et par élément connu. Choix graphique distinct du sens et des relations du modèle.
+
+
+## U154
+
+**id**
+
+U154
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Valider D03 recomposé puis explorer Requirement, Order, Case et Command
+
+**contexte**
+
+Validation de la proposition D03-ALIGNMENT-U151 à huit capacités. Exploration suivante limitée au point 6 du vocabulaire ; le point 5 est différé. Les observations Storeland/ECC sont déclarées par Laurent, pas des constats indépendants de configuration.
+
+**texte**
+
+Je valide !
+
+Qu'as tu pensé de mes définitions ATP vs CTP ?
+
+Passons aux questions de vocabulaire (points 5 et 6).
+
+On va y aller pas à pas pour bien faire notre travail et vraiment valider les notions.
+
+Commençons par la 6.
+
+Requirement vs Order => c'est très SAP
+Case ou Demand vs Command => c'est très Laurent Sintès l'architecte
+Sur Storeland et SAP ECC, on a Order qui est systématique.
+SAP ECC propose Requirement pour les PurchaseOders uniquement, ce qui est bizarre.
+SAP ECC "coeur transactionnel" mélange commerce et supply j'ai l'impression
+
+Explorons d'abord ça
+
+**statut**
+
+D03 à huit capacités adopté : quatre actions conservées et quatre décisions nouvelles, D03.i–l. Les anciennes D03.d–h restent historiques. ATP/CTP local et distinction proposition/application conservés. Les noms Case/Demand/Command/Requirement restent en exploration, sans renommage d’Order. L’usage de Requirement hors achats est confirmé par la documentation SAP ERP ; Purchase Requisition est distinct.
+
+
+## U155
+
+**id**
+
+U155
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Corriger Requirement en Requisition dans l’observation achats ECC
+
+**contexte**
+
+Correction pendant l’exploration U154. Le terme visé était Purchase Requisition, pas Requirement. Ne plus répondre comme si Laurent affirmait que SAP réserve tous les besoins aux achats.
+
+**texte**
+
+Oui c'est Requisition, désolé !
+
+**statut**
+
+Correction prise en compte dans C81 et l’analyse. L’asymétrie Purchase Requisition/Purchase Order versus Sales Order reste le sujet exploré ; aucune équivalence Case/Requisition ou Command/Order adoptée.
+
+
+## U156
+
+**id**
+
+U156
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Chercher la notion de marché couvrant le plan d’adaptation CTP local
+
+**contexte**
+
+Laurent connaît la différence de périmètre avec CTP et demande si le besoin est cohérent ou couvert par d’autres notions. Recherche ciblée Response Planning, Response Management et Backlog Management ; pas de renommage automatique de D03.j adopté en U154.
+
+**texte**
+
+"La réserve porte sur le nom CTP, dont notre périmètre est plus large que celui des sources consultées."  => je sais mais est-ce cohérent ou le périmètre total est pris par d'autres notions que je ne connais pas ?
+
+**statut**
+
+Response Planning identifié comme rapprochement fort avec le résultat métier visé ; nature de processus/solution et limites distinctes d’une équivalence de capacité. D03.j conserve son nom et sa validation ; analyse dans marche/ctp-response-planning.md.
+
+
+## U157
+
+**id**
+
+U157
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Explorer les Orders comme backlog et le recouvrement avec Supply Assignment
+
+**contexte**
+
+Laurent retient l’intérêt de travailler le carnet de commandes par priorisation, découpage, évaluation et engagement. Il demande une comparaison avec Supply Assignment ; la fusion ou le renommage des capacités n’est pas décidé.
+
+**texte**
+
+Je trouve l'approche de Backlog management est très interessante. C'est ce que je clame depuis longtemps : il faut considérer les orders comme des éléments d'une backlog : on priorise, on découpe, on évalue, on engage. un order est un objet qui se "travaille". J'adore l'idée.
+
+Le problème est le recouvrement potentiel avec Supply Asignment. Je pense que c'est la même chose. Tu peux vérifier ça ?
+
+**statut**
+
+Orientation du carnet d’Orders consignée. Recouvrement produit confirmé, équivalence totale non établie. Définition métier locale de Supply Assignment distincte du périmètre produit SAP ; analyse dans marche/backlog-management-supply-assignment.md. Aucun changement de noms, de frontières ou de release.
+
+
+## U158
+
+**id**
+
+U158
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Examiner Backlog Management comme domaine D03 et la décomposition de Supply Assignment
+
+**contexte**
+
+Laurent corrige le niveau d’analyse après U157 : Backlog Management pourrait nommer D03, plutôt qu’une capacité englobante. Il propose d’examiner plusieurs aptitudes dans Supply Assignment, dont la simulation. Demande d’avis, pas validation d’une liste ou d’un renommage définitif.
+
+**texte**
+
+Ce n'est pas D03 qui devrait s'appeler Backlog Management ? C'est un domaine, pas une capacité. Et Supply Assignment, ça pourrait être découpé en capacités différentes, dont simulation etc.
+
+Qu'en penses-tu ?
+
+**statut**
+
+Option de domaine Backlog Management consignée dans les alternatives du backlog ; décomposition de Supply Assignment à instruire par résultats métier. Frontière proposée avec D04 : arbitrage du carnet versus contenu applicable et cycle de vie de chaque Order. Aucune validation de cette frontière, aucun changement de nom actif ni nouvelle capacité.
+
+
+## U159
+
+**id**
+
+U159
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Distinguer calcul des solutions et simulation des impacts globaux
+
+**contexte**
+
+Laurent précise le résultat métier propre de la simulation après U158. Cette précision répond au risque de doublon soulevé par Codex ; la granularité des résultats compte, pas la possibilité qu’un même calcul soit utilisé dans les deux aptitudes.
+
+**texte**
+
+ATP, CTP et PTP permettent de calculer, simuler permet de mesurer les impact à un niveau global
+
+**statut**
+
+Distinction métier explicitement fournie : calcul de solutions versus mesure des impacts globaux. Définition de simulation et indicateurs proposés à partir de cette orientation, sans adoption automatique de leur formulation ni nouvelle capacité active. Aucun renommage de D03 ni publication.
+
+
+## U160
+
+**id**
+
+U160
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Rechercher les capacités manquantes sur D03 et D04
+
+**contexte**
+
+Après la distinction calcul/simulation U159, Laurent demande les manques ressortant du marché puis précise le périmètre dans un second message. Les deux textes sont conservés dans leur ordre. La demande n’adopte aucun ajout.
+
+**texte**
+
+Quelles autres capacités manquent t il d'autres tes recherches de marché ?
+
+**précision suivante**
+
+Sur D03 / D04
+
+**statut**
+
+Audit ciblé marché dans marche/d03-d04-capacites-manquantes.md. Candidats structurés dans modeles/backlog/d03-d04-gap-review.json, proposés par Codex ; aucune capacité ajoutée au modèle actif.
+
+
+## U161
+
+**id**
+
+U161
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Distinguer capacités, contrôles de processus et travail des commandes
+
+**texte**
+
+Je veux faire la différence entre le processus et les capacités. Si on détermine les capacités nécessaires pour pouvoir implémenter les processus, alors les capacités deviennent des services. C'est ce que je ne veux pas.
+
+C'est pourquoi :
+
+- Order Qualification est trop évident et n'apporte rien à ce que sait faire l'entreprise => c'est évident qu'on fait les choses bien et qu'on n'engage pas des choses sans rien vérifier. C'est un principe général et nécessaire pour piloter et controler les processus.
+- Order Structuring me semble équivalent à Order Revision. Je ne sais pas lequel choisir.
+- Order Prioritization est peut être utile mais est-ce que ça couvre la priorisation uniquement ? On voit ce qu'on engage ou pas, on joue sur les date d'engagement (priorisation) ou est-ce que ça couvre aussi le "grooming" (on travaille contenu) ?
+
+**statut**
+
+Correction de méthode et discussion des candidats U160. Qualification retirée de la proposition ; rattachement de Structuring à Revision et portée de Prioritization en instruction. Backlog Refinement qualifié explicitement comme activité. Aucune capacité active ajoutée ou renommée.
+
+
+## U162
+
+**id**
+
+U162
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Préciser grooming comme activité de Backlog Refinement
+
+**texte**
+
+Quand je dis grooming, je parle de Backlog Refinement qui est une activité, pas vraiment une capacité.
+
+**statut**
+
+Correction de méthode et discussion des candidats U160. Qualification retirée de la proposition ; rattachement de Structuring à Revision et portée de Prioritization en instruction. Backlog Refinement qualifié explicitement comme activité. Aucune capacité active ajoutée ou renommée.
+
+
+## U163
+
+**id**
+
+U163
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Valider Order Prioritization
+
+**contexte**
+
+Après U161/U162, Codex propose de limiter Order Prioritization à l’aptitude à établir et réviser les priorités relatives des commandes, distincte du contenu, des dates et de l’ensemble de l’activité de Backlog Refinement. Candidat rattaché à D03 dans la revue U160.
+
+**texte**
+
+Je valide Order Prioritization.
+
+**statut**
+
+Accord explicite : capacité intégrée au backlog sous D03.m, nom et définition discutée validés ; rattachement à D03 repris du candidat accepté. Finalité et codification de nature ajoutées par Codex restent proposées. Aucune publication implicite.
+
+
+## U164
+
+**id**
+
+U164
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Reprendre Requirement, Case, Demand, Order et Command
+
+**texte**
+
+Revenons sur tes points de remarque concernant le vocabulaire (point 5 et 6)
+
+Revenons sur Requirement / Case / Demand / Order / Command
+
+**statut**
+
+Demande d’exploration de vocabulaire, sans adoption de nouvelles définitions ni création d’objets. La précision Requisition de U155 reste acquise ; le substantif des ressources du point 5 n’est pas arbitré par cette demande.
+
+
+## U165
+
+**id**
+
+U165
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Intentions amont, Orders Supply et demande métier d’exécution
+
+**texte**
+
+Si Command fait référence au pattern Command d'architecture, ça n'a rien à faire dans la carto des capacités.
+Je pense que Order, dans l'univers Supply est indispensable.
+Dans l'univers du "Case" (faudra le renommer car il désigne une mécanique plus qu'un univers business), je considère que c'est là que naissent les intentions des parties prenantes du système et où elles s'affinent pour matérialiser des demandes ou des problèmes à résoudre. Durant la résolution, des orders seront passés à la supply chain, laquelle appellera une plateforme de services Logistique ou autre (l'exécution). l'objet qui matérialise la demande d'exécution pourrait être "Command", finalement.
+
+Qu'en penses-tu ?
+
+**statut**
+
+Orientation explicite : exclure le pattern logiciel Command du contenu métier de la carte ; conserver Order en Supply ; réexaminer le nom de l’univers Case selon la finalité métier précisée. Command comme objet de demande d’exécution est une hypothèse de Laurent, pas un nom adopté. Aucun nouvel objet ou univers instancié.
+
+
+## U166
+
+**id**
+
+U166
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Rechercher le nom de marché de la demande d’exécution logistique
+
+**texte**
+
+Que dit le marché ? "Logictic Order" ou un truc du genre ?
+
+**statut**
+
+Recherche de vocabulaire après U165. Logistics Order, Shipment Order, Delivery Order/Request, Freight Order et Shipment Request comparés selon leur rôle ; aucun nom local adopté.
+
+
+## U167
+
+**id**
+
+U167
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Matérialiser une demande de service au-delà de la logistique
+
+**texte**
+
+Ne pas s'enfermer dans la logistique pour décrire la plateforme de service me parait bien.
+
+Comment matérialiser une demande de service ?
+
+**statut**
+
+Orientation explicite : plateforme exécutante non limitée à la logistique. Proposition Codex d’un objet métier Service Order, comparé à Service Request ; nom, définition, contenu et cycle proposés, sans adoption ni création d’objet actif.
+
+
+## U168
+
+**id**
+
+U168
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Orders propres aux contextes Supply et Services
+
+**texte**
+
+Donc on a des orders de la supply et des orders de service.
+
+Supply et Services sont doc deux contextes bornées avec des définitions propres.
+
+**statut**
+
+Laurent affirme la distinction entre Orders Supply et Orders de service et leurs définitions propres à deux contextes. Cette orientation ne valide pas les attributs détaillés proposés U167 ni une décomposition applicative complète. La granularité des bounded contexts DDD à l’intérieur des grands périmètres reste à instruire ; aucun nouveau niveau ni objet instancié.
+
+
+## U169
+
+**id**
+
+U169
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Valider la frontière des modèles Supply et Services
+
+**contexte**
+
+Laurent valide la restitution de U168 : modèles et Orders propres aux contextes Supply et Services, responsabilités distinctes, noms Order locaux et Supply Order / Service Order en comparaison, contrats explicites sans objet ni cycle partagé imposé. La restitution laisse ouverte la granularité des bounded contexts à l’intérieur de ces grands périmètres et distingue domaines de capacités et frontières de modèles.
+
+**texte**
+
+Top, je valide
+
+**statut**
+
+Validation explicite de cette orientation et des définitions courtes présentées. Portée enregistrée avec empreintes dans l’annexe JSON de vocabulaire. Les attributs détaillés U167, cardinalités, nouveaux objets ou niveaux et déploiements ne sont pas adoptés. Aucune release implicite.
+
+
+## U170
+
+**id**
+
+U170
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Réexaminer le nom et la définition de l’univers Case : Processus métier
+
+**texte**
+
+L'univers Case est à revoir en terme de terminologie et définition.
+
+Processus métier ?
+
+**statut**
+
+Réexamen explicite de l’univers amont ; Business Processes est un candidat issu de la proposition française de Laurent, pas un nom adopté. Codex distingue son emploi possible comme nom de couche et la définition d’un périmètre métier. Aucun renommage actif.
+
+
+## U171
+
+**id**
+
+U171
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Offre de services métier aux parties prenantes et réalisation par Case Management
+
+**texte**
+
+L'idée est de s'appuyer une plateforme de case management pour implémenter les processus métier long ou moyennement long. En tout cas impactant l'entreprise. C'est un peu son offre de service. Offre qui s'adresse à ses clients, ses fournisseurs, ses partenaires mais aussi ses services internes.
+
+**statut**
+
+Précision utilisateur sur la plateforme Case Management, les processus de durée moyenne ou longue ayant un impact pour l’entreprise et les destinataires de l’offre. Codex propose Business Services comme nom métier de l’univers amont ; nom et définition reformulée restent proposés. Aucun renommage actif ni catalogue de services créé.
+
+
+## U172
+
+**id**
+
+U172
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Portail, espaces de travail et pilotage des grands processus transverses
+
+**texte**
+
+Donc il y aura bien un portail, des espaces par utilisateur, une possibilité de management des demandes, une partie planification / affectation lorsque les demandes sont traitées par plusieurs services, comme un service desk etc. Ca doit représenter les grand processus transverses de l'entreprise
+
+**statut**
+
+Précision explicite du périmètre de la plateforme amont : accès utilisateur, management des demandes, planification et affectation entre services pour porter les grands processus transverses. Analogie service desk, sans choix de produit ni restriction IT. Ces besoins ne sont pas des capacités Supply ni une demande de développement immédiat d’un portail. Nom d’univers encore ouvert.
+
+
+## U173
+
+**id**
+
+U173
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Valider Business Services et ses définitions ; différer les domaines
+
+**contexte**
+
+Validation après la restitution U172 : nom Business Services, définition de prise en charge et pilotage des grands processus transverses, dimensions accès des parties prenantes, travail des équipes, coordination et pilotage transverse. Distinction entre organisation du travail de la couche processus et affectation/planification des ressources Supply.
+
+**texte**
+
+On valide Business Services et les définitions. On travaillera les domaines plus tard.
+
+**statut**
+
+Accord explicite : l’univers universe-case conserve son identifiant et devient Business Services dans le backlog, révision 2 ; nom et définition validés. Les quatre dimensions sont conservées comme définitions de périmètre validées dans l’annexe JSON, sans création de domaines ou capacités. Les domaines sont différés. Pas de release implicite.
+
+
+## U174
+
+**id**
+
+U174
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Clore le point 6 et travailler le point 5 : ressources
+
+**texte**
+
+Ah oui, le 6 est cloturé, on doit travailler le point 5
+
+**statut**
+
+Clôture explicite du point 6 de vocabulaire ; poursuivre le point 5 sur le substantif des biens et ressources mobilisés dans Supply. Ne pas rouvrir le point 6 au motif des variantes historiques Demand/Requirement et ne pas en déduire une validation de toutes ces variantes. Les nouvelles définitions du point 5 restent proposées.
+
+
+## U175
+
+**id**
+
+U175
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Ressource selon le contexte et continuité entre stock et mouvement
+
+**texte**
+
+J'aime bien ressource qui est générique, dont bien aligné avec le concept de supply.
+
+D'un autre côté, ressource est tellement générique que ce peut représenter n'importe quoi selon l'angle de vue. Ressource peut être un magasin dans le cadre du Fulfillment Network mais c'est aussi un bien transporté etc.
+
+Première question à transcher : doit on avoir un objet différent pour décrire quelque chose en stock ou en mouvement (livraison) ?
+
+**statut**
+
+Préférence pour le terme générique Resource avec sens contextualisé ; question d’identité et de représentation stock/mouvement à instruire en priorité. La définition U174 limitée aux biens n’est pas une définition générique adoptée. Proposition Codex : continuité des biens, représentations distinctes de position de stock et d’expédition, sans création d’objets actifs.
+
+
+## U176
+
+**id**
+
+U176
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Auditer SKU, colis, biens et Material chez SAP et Microsoft
+
+**texte**
+
+Il y a une différence entre les colis à transporter, et l'article (SKU) qui est l'unité insécable échangeable / vendable, non ?
+Tout ça entre dans la définition de "Bien". Pourquoi SAP parle de Material ? Qu'en dit microsoft ?
+Fais moi un audit des modèles pour y voir clair.
+
+**statut**
+
+Demande d’audit des concepts et de leurs granularités chez SAP, Microsoft et les références utiles. L’hypothèse SKU comme unité insécable est à éprouver, pas une définition adoptée. Résultats et propositions dans marche/etudes/2026-09-14-articles-biens-unites-logistiques/ ; aucune modification implicite de la carte active.
+
+
+## U177
+
+**id**
+
+U177
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Comprendre le qualificatif Retail du modèle Article SAP
+
+**texte**
+
+Ce que je ne comprends pas, c'est le modèle SAP article / générique / display / prepack / Salesset qui est un modèle "retail". Pourquoi Retail ?
+
+**statut**
+
+Question sur le sens du qualificatif sectoriel Retail ; aucune adoption ni exclusion de périmètre déduite.
+
+
+## U178
+
+**id**
+
+U178
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Vérifier l'emploi du modèle Article SAP en wholesale
+
+**texte**
+
+Parce que pour le wholesale, on n'utilise pas ce modèle ?
+
+**statut**
+
+Précision de U177 : vérifier l'applicabilité au commerce de gros et distinguer le nom de l'offre SAP du périmètre métier couvert.
+
+
+## U179
+
+**id**
+
+U179
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Définir le sens de Retail chez SAP
+
+**texte**
+
+Que signifie Retail pour SAP ?
+
+**statut**
+
+Clarification terminologique de U177/U178 : distinguer commerce de détail, nom de solution sectorielle et réutilisation de son modèle dans Fashion/wholesale. Aucune modification de modèle demandée.
+
+
+## U180
+
+**id**
+
+U180
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Comparer le sens anglais et français d’Article
+
+**texte**
+
+Article en anglais ca veut dire quoi ? Meme sens qu'en francais ?
+
+**statut**
+
+Question lexicale dans le point 5 ; le rapprochement de langue ne valide pas une définition d’objet ni un renommage du modèle.
+
+
+## U181
+
+**id**
+
+U181
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Comparer les définitions d’Article dans SAP et le dictionnaire
+
+**texte**
+
+Ok mais quelle est la définition de Article chez SAP et dans le dictionnaire et quelle différence ?
+
+**statut**
+
+Demande de définitions explicites et comparaison. La vérification complète l’audit : SAP emploie bien la notion de plus petite unité indépendante non subdivisible, tout en étendant ses catégories aux génériques et ensembles. Aucune nouvelle définition locale adoptée.
+
+
+## U182
+
+**id**
+
+U182
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Préciser le sens de commandé dans la définition SAP Article
+
+**texte**
+
+Que signifie commandé ? commandé au fournisseur/fabricant ou commandé au vendeur ?
+
+**statut**
+
+Clarification du point de vue acheteur/vendeur dans la définition. La phrase ne précise pas ses acteurs ; le contexte suggère l’approvisionnement. Les unités d’achat et de vente sont explicitement distinctes. Aucune règle universelle d’indivisibilité ni définition locale adoptée.
+
+
+## U183
+
+**id**
+
+U183
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Éprouver Article sur le display et les boosters de cartes
+
+**texte**
+
+Prenons un exemple concret. Je suis une boutique de jeux de plateaux et cartes. Je peux commander chez Hasbro des displays de boosters MTG et j'ai le droit de revendre les booster à l'unité. Mais je n'ai pas le droit de revendre le display. Le booster est l'article. J'ai bon ?
+
+**statut**
+
+Scénario fourni pour éprouver les notions. L’interdiction de revendre le display est une hypothèse du scénario, pas une condition contractuelle réelle vérifiée. La question ne valide pas une définition générale d’Article ni une configuration SAP.
+
+
+## U184
+
+**id**
+
+U184
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Situer Business Central dans la gamme Dynamics 365
+
+**texte**
+
+Chez microsoft, quelle différence entre dynamics365 et Business Central ?
+
+**statut**
+
+Clarification de la gamme et des modèles comparés : Business Central est une application Dynamics 365, distincte de Supply Chain Management. Aucun choix de produit, de modèle principal ou de solution à déployer déduit.
+
+
+## U185
+
+**id**
+
+U185
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Comparer le découpage Microsoft à nos univers et domaines
+
+**texte**
+
+J'aimerais savoir si ça fitte avec notre modèle univers / domaine ou pas
+
+**statut**
+
+Demande d’analyse de correspondance dans la continuité de U184. Comparer gamme, produits et modules Microsoft aux univers et domaines métier ; aucune restructuration ou adoption implicite.
+
+
+## U186
+
+**id**
+
+U186
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Localiser Inventory Management dans la Supply Microsoft
+
+**texte**
+
+Chez Microsoft, le stock n'est pas dans la Supply ? Il est dans quel domaine ?
+
+**statut**
+
+Clarification de U185 : Inventory Management est bien un module de Dynamics 365 Supply Chain Management. La réserve sur les périmètres globaux des produits ne remet pas en cause cette correspondance avec Supply / D01. Aucune validation de couverture détaillée ni modification de modèle.
+
+
+## U187
+
+**id**
+
+U187
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Guider les entités par le stock unifié et les conditionnements inbound/outbound
+
+**texte**
+
+Revenons sur notre modèle avec les entités comme article etc.
+
+En fait, ce qui nous guide en premier lieu c'est notre modèle de stock unifié.
+On ne peut pas avoir que des notions d'article car les flux inbound et outbound (j'aime ces termes qui fixent le vocabulaire vis à vis du stock) doivent se définir selon le packaging (container en langage microsoft) qui peut être différent en entrée et en sortie.
+
+**statut**
+
+Orientation explicite : le stock unifié guide l’exploration ; les références d’article seules sont insuffisantes ; les conditionnements entrants et sortants peuvent différer. Inbound/Outbound sont des termes appréciés pour situer les flux vis-à-vis du stock. Les noms d’entités, relations détaillées et responsabilités proposées par Codex restent à instruire.
+
+
+## U188
+
+**id**
+
+U188
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Conditionnements de stockage et création des containers au packing
+
+**texte**
+
+En termes de stockage, les containers en inbound peuvent être modifiés / reconditionnés pour le stockage. Pareil pour les flux outbound, la capacité des entrepôt de packing peut créer des containers "à la volée".
+
+**statut**
+
+Précision utilisateur de U187 : les contenants inbound peuvent être reconditionnés pour le stockage ; le packing outbound peut créer les contenants au moment de l’exécution. Aucun modèle de contenant figé entre réception et expédition ne doit être présumé.
+
+
+## U189
+
+**id**
+
+U189
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Intégrer le packing contractuel à la promesse ATP B2B
+
+**texte**
+
+Quand je calcule l'ATP pour une commande de vente B2B, il faut prendre en compte le "packing" car contractuellement, le client wholesale ne veut pas se faire livrer un stock en vrac.
+
+**statut**
+
+Exigence utilisateur pour le modèle local : l’ATP doit prendre en compte le conditionnement contractuellement applicable. Les conditions précises du packing, les objets détaillés et le partage de responsabilités restent à instruire. Cela ne décrit pas une définition universelle des ATP éditeurs.
+
+
+## U190
+
+**id**
+
+U190
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Proposer les références Product/Container et leurs unités
+
+**texte**
+
+Finalement, on a des contenants (Container) et des unités qui possède le code barre unique et qui est donc insécable (Article). Les Articles ont une référence Produit (univers du Design). Les articles peuvent être stockés directement dans les emplacements logistiques du Fulfillment Network ou dans des Containers. Les Containers peuvent contenir des containers. Comme les articles qui viennent des Produits, les Containers (L'unité) a une référence sur un référentiel de Container.
+
+Pour simplifier on pourrait avoir :
+Product : Référentiel de design.
+Article ou Product Unit : Référentiel des biens unitaires
+Container : Référentiel de design.
+Container Unit : Référentiel des contenants dans une unité logistique de stockage ou de transit
+
+**statut**
+
+Proposition utilisateur en instruction : quatre termes, rattachements aux références, stockage direct ou en contenant et imbrication. Clarification demandée sur le grain Article/Product Unit (référence vendable ou exemplaire physique). Le lien code-barres unique donc insécable reste une hypothèse à corriger/qualifier. Design est mentionné, sans création automatique d’univers.
+
+
+## U191
+
+**id**
+
+U191
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Préciser Product Unit comme exemplaire physique individuel
+
+**texte**
+
+Réponse à la question : « Quand tu dis Article / Product Unit, désignes-tu la référence vendable (par exemple chemise bleue taille M, dont 100 exemplaires peuvent partager le même code-barres) ou chaque exemplaire physique de cette référence ? »
+
+Chaque exemplaire physique, avec son identité propre
+
+**statut**
+
+Clarification explicite du grain de Product Unit/Article : exemplaire physique avec identité propre. Ne pas conserver la référence vendable comme alternative courante ; cela ne valide pas les autres détails du schéma.
+
+
+## U192
+
+**id**
+
+U192
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Dissocier identité physique et code-barres
+
+**texte**
+
+Oui tu as raison. Rien à voir avec le code barre.
+
+**statut**
+
+Accord explicite sur la dissociation du concept et du code-barres. Ne pas définir l’identité propre ou l’indivisibilité de Product Unit par le code-barres. Aucun schéma d’identification concret adopté.
+
+
+## U193
+
+**id**
+
+U193
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Distinguer Serial Number de Product Unit et GTIN de Product Variant
+
+**texte**
+
+Un Product Unit peut avoir un Serial Number qui n'est pas un code barre ou un GTIN nécessairement. Le GTIN, c'est plutot pour le Product Variant
+
+**statut**
+
+Précision utilisateur : Serial Number possible sur l’exemplaire, distinct du support code-barres et du GTIN. Product Variant introduit comme niveau de référence auquel rapprocher le GTIN. Relations détaillées et portée des conditionnements en instruction ; aucune publication implicite.
+
+
+## U194
+
+**id**
+
+U194
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Examiner Container comme produit avec des règles de composition
+
+**texte**
+
+Ce qui est amusant c'est que Container et Product ont le même comportement en termes de ratachement à un référentiel, la déclinaison en variant et des unitées qui peuvent porter un GTIN. La seule distinction : un container peut contenir d'autres containers ou des product unit. Il y a des règles qui limitent la composition.
+
+Du coup : Un container n'est pas un produit comme un autre, ce sont juste les règles de composition qui changent ?
+
+**statut**
+
+Hypothèse utilisateur en instruction : mutualiser référence, variante et exemplaire pour produits et contenants. Examiner les règles de composition et les différences de rôle et de cycle de vie ; aucune fusion d’entités validée par la question.
+
+
+## U195
+
+**id**
+
+U195
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Retenir Article et Container comme rôles de Product
+
+**texte**
+
+C'est exactement ça : Un Product porte un rôle : Container ou Article
+
+**statut**
+
+Validation explicite du principe : Product porte un rôle Article ou Container. La proposition rôle versus spécialisation est tranchée en faveur du rôle au niveau Product indiqué par Laurent. Ne pas étendre cet accord à l’exclusivité, la multiplicité, aux règles détaillées ou à un schéma IT.
+
+
+## U196
+
+**id**
+
+U196
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Relier les textes du modèle aux éléments du glossaire
+
+**texte**
+
+Ce que j'aimerais, c'est que les textes (libellés, description ...) référencent les éléments du glossaire. Facile à faire en json ?
+
+**statut**
+
+Besoin explicite de références au glossaire dans les textes ; demande de faisabilité JSON. Proposition de contrat préparée dans le backlog, sans migration globale ni activation Atlas dans cette étape.
+
+
+## U197
+
+**id**
+
+U197
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Préférer des liens textuels légers dans les chaînes JSON
+
+**texte**
+
+Pas possible d'avoir un truc plus léger un peu comme dans markdown, une chaine de caractère reconnaissable pour décrire les liens, sinon le json est illisible pour un humain.
+
+**statut**
+
+Préférence explicite pour des chaînes lisibles avec une syntaxe de lien de type Markdown ; remplacer la proposition de tableaux de segments. Syntaxe exacte proposée par Codex, non encore validée ni implémentée.
+
+
+## U198
+
+**id**
+
+U198
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Examiner YAML pour la lisibilité du modèle
+
+**texte**
+
+A moins de passer par yaml plutot que json
+
+**statut**
+
+Alternative YAML à examiner pour la rédaction humaine ; ne constitue pas une décision de migrer l’autorité JSON courante.
+
+
+## U199
+
+**id**
+
+U199
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Format de release et API
+
+**texte**
+
+Yaml pour la release c'est moins pratique pour les apis ?
+
+**statut**
+
+Contribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée.
+
+
+## U200
+
+**id**
+
+U200
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Préférer YAML en backlog et en release
+
+**texte**
+
+Si je peux demander, je préfèrerais YAML en backlog et release et un parser json pour les apis.
+Possible ?
+
+**statut**
+
+Contribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée.
+
+
+## U201
+
+**id**
+
+U201
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Arrêter avant modification
+
+**texte**
+
+Stop !!!
+
+**statut**
+
+Contribution conservée dans sa portée ; U201 interrompt les vérifications, U202 autorise ensuite la reprise ordonnée.
+
+
+## U202
+
+**id**
+
+U202
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Ordonner audit, application puis refactoring YAML
+
+**texte**
+
+Il faut orchestrer 2 opérations :
+
+- auditer le contenu du modèle vis à vis du glossaire qu'on vient de mettre à jour
+- appliquer l'audit
+- Faire le refacto yaml
+
+**statut**
+
+Ordre de travail explicite : audit sémantique, application, puis migration YAML. Reprend le travail interrompu U201 ; pas de publication métier ou Git implicite.
+
+
+## U203
+
+**id**
+
+U203
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Glossaire Atlas et liens avec infobulle
+
+**texte**
+
+Dans Atlas, il y a une page sur le glossaire ?
+
+Ce que j'aimerais, c'est que lorsqu'on passe la souris sur un lien une infobulle apparait avec la description courte de l'objet et un clic amène sur la page/ancre
+
+**statut**
+
+Demande d’interface et de navigation : description courte au survol, accès à la fiche/ancre au clic. N’autorise pas à remplacer les définitions d’une publication par celles du backlog ni à publier implicitement une release métier.
+
+
+## U204
+
+**id**
+
+U204
+
+**date**
+
+2026-09-14
+
+**titre**
+
+Publier une release avec le backlog et le glossaire courants
+
+**texte**
+
+Publie une release
+
+**statut**
+
+Demande explicite de publication locale du modèle courant et de son glossaire dans Atlas, après contrôles. Aucun nouvel accord métier ni commit ou push implicite.

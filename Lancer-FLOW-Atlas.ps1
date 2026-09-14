@@ -127,6 +127,10 @@ if ($Stop) {
     return
 }
 
+if (-not (Test-Path -LiteralPath (Join-Path $atlasRoot 'app\dist\index.html') -PathType Leaf)) {
+    throw 'Interface Atlas non compilee. Depuis le projet : pnpm --dir app install, puis pnpm --dir app build. Le serveur peut etre arrete avec -Stop meme sans compilation.'
+}
+
 if (Test-AtlasIdentity $atlasStatus) {
     Save-AtlasProcess $atlasStatus
     Write-Host "FLOW Atlas est deja disponible : $atlasUrl"
@@ -141,6 +145,10 @@ if (-not (Test-Path -LiteralPath $atlasServer -PathType Leaf)) {
 }
 
 $atlasPython = Find-AtlasPython
+& $atlasPython -c "import sys; sys.path.insert(0, sys.argv[1]); import scripts.structured_io" $atlasRoot
+if ($LASTEXITCODE -ne 0) {
+    throw 'Lecteur YAML indisponible. Installer depuis la racine : python -m pip install --target .tools/yaml-runtime -r requirements.txt'
+}
 [void][System.IO.Directory]::CreateDirectory($atlasRuntime)
 $atlasStdout = Join-Path $atlasRuntime "server-$Port.stdout.log"
 $atlasStderr = Join-Path $atlasRuntime "server-$Port.stderr.log"

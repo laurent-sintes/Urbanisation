@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-09-14T14:43:36.111710+00:00",
+  "model_tests": {
+    "passed": 78
+  },
+  "javascript_tests": {
+    "passed": 33
+  },
+  "http_tests": {
+    "total": 22,
+    "passed": 20,
+    "skipped": 2
+  },
+  "model_validation_errors": 0,
+  "build": "passed",
+  "browser_checks": "browser-checks.json",
+  "legacy_browser_checks": "app/.runtime/qa-react ; app/.runtime/qa-tree",
+  "server": {
+    "pid": 24564,
+    "port": 8765,
+    "publication": "2026-09-13.5",
+    "glossary_present": false
+  },
+  "release_created": false,
+  "skill_validation": "passed"
+}

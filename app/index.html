@@ -1,47 +1,17 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#24634c">
-<title>FLOW Atlas — Urbanisation</title>
-<link rel="icon" href="/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css">
-<script type="module" src="/app.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#173b3e" />
+<meta name="description" content="Explore le modèle métier publié FLOW, ses niveaux d’urbanisme et ses relations." />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<title>FLOW Atlas · Urbanisation</title>
 </head>
 <body>
-<div id="flow-atlas" lang="fr" aria-label="FLOW Atlas, explorateur du modèle métier">
-  <a class="fa-skip" href="#fa-content">Aller à la fiche</a>
-  
-  <header class="fa-top">
-    <button class="fa-button fa-tree-open" id="fa-tree-open" aria-controls="fa-rail" aria-expanded="false">Arbre</button>
-    <div class="fa-brand"><i data-lucide="waypoints" aria-hidden="true"></i> FLOW <span>ATLAS</span></div>
-    <label class="fa-searchbox"><i data-lucide="search" aria-hidden="true"></i><span class="fa-sr">Rechercher dans tout le modèle</span><input id="fa-search" type="search" autocomplete="off" placeholder="Rechercher dans le modèle…"><kbd>Ctrl K</kbd></label>
-    <button class="fa-button" id="fa-refresh" type="button" aria-label="Actualiser depuis les modèles JSON">Actualiser</button><div class="fa-top-note" id="fa-date">Chargement du modèle…</div>
-  </header>
-  <div class="fa-body">
-    <aside class="fa-rail" id="fa-rail" aria-label="Arbre du modèle">
-      <div class="fa-tree-heading"><strong>Explorer le modèle</strong><button class="fa-icon-btn" id="fa-tree-close" aria-label="Fermer l’arbre">×</button></div>
-      <div><label class="fa-eyebrow" for="fa-publication">Version publiée</label><select id="fa-publication" class="fa-space-select" aria-label="Version de l’urbanisation"></select></div>
-      <div id="fa-tree-scroll"><div id="fa-tree" role="tree" aria-label="Urbanisation publiée"></div></div>
-      <footer class="fa-rail-foot"><strong id="fa-space-note">Urbanisation</strong><span id="fa-version">Carte courante</span><p>Les groupes de présentation sont signalés dans l’arbre.</p></footer>
-    </aside>
-    <div id="fa-rail-resize" role="separator" aria-label="Largeur de l’arbre" aria-orientation="vertical" aria-valuemin="240" aria-valuemax="420" aria-valuenow="300" tabindex="0"></div>
-    <button id="fa-tree-backdrop" tabindex="-1" aria-label="Fermer l’arbre" hidden></button>
-    <main class="fa-main" id="fa-main">
-      <div class="fa-navline"><div class="fa-history"><button class="fa-icon-btn" id="fa-back" aria-label="Revenir à la visite précédente"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button class="fa-icon-btn" id="fa-forward" aria-label="Revenir à la visite suivante"><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><nav class="fa-breadcrumb" id="fa-breadcrumb" aria-label="Chemin dans le modèle"></nav></div>
-      <div id="fa-journey" hidden></div>
-      <div id="fa-notice" role="status" aria-live="polite"></div><div id="fa-content" tabindex="-1"><p>Chargement du modèle…</p></div>
-      <div id="fa-announcement" class="fa-sr" role="status" aria-live="polite"></div>
-    </main>
-  </div>
-  
-  
-</div>
-<dialog id="fa-source-dialog" aria-labelledby="fa-source-title">
-  <header class="fa-document-header"><div><span class="fa-document-label">Registre source</span><h2 id="fa-source-title">Source</h2></div><button id="fa-close-source" type="button" aria-label="Fermer la source">Fermer ×</button></header>
-  <div class="fa-document-tools"><input id="fa-source-find" type="search" aria-label="Chercher dans la source" placeholder="Chercher dans cette source…"><span id="fa-source-location"></span></div>
-  <div id="fa-source-body" class="fa-document-body"></div>
-</dialog>
+<div id="root"></div>
+<noscript>Active JavaScript pour parcourir le modèle dans FLOW Atlas.</noscript>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

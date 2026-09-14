@@ -1,0 +1,71 @@
+{
+  "id": "MICROSOFT-PRODUCT-SCOPE-U184",
+  "source_refs": [
+    "U184"
+  ],
+  "as_of": "2026-09-14",
+  "sources": [
+    {
+      "id": "MSCOPE01",
+      "title": "Microsoft — What is Dynamics 365?",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/what-is-dynamics-365",
+      "support": "Gamme comprenant applications ERP et CRM ; Business Central, Finance et Supply Chain Management.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    },
+    {
+      "id": "MSCOPE02",
+      "title": "Microsoft Learn — Welcome to Business Central",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/welcome",
+      "support": "Gestion intégrée pour petites et moyennes organisations ; finance, achats, ventes, stocks, production et services.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    },
+    {
+      "id": "MSCOPE03",
+      "title": "Microsoft Learn — Welcome to Supply Chain Management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome",
+      "support": "Périmètres de planification, achats, produits, production, stocks, entrepôts et transport ; autres applications finance and operations.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    },
+    {
+      "id": "MSCOPE04",
+      "title": "Microsoft — Business Central is now live (2018)",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2018/04/02/dynamics-365-business-central-is-now-live/",
+      "support": "Continuité historique Dynamics NAV vers Business Central ; ne prouve pas une identité de code actuelle.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    },
+    {
+      "id": "MSCOPE05",
+      "title": "Microsoft Learn — Upgrade AX2012 to finance and operations apps",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/migration-upgrade/upgrade-home-page",
+      "support": "Filiation et migration Dynamics AX vers la branche finance and operations.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    },
+    {
+      "id": "MSCOPE06",
+      "title": "Microsoft Learn — Stockkeeping Units in Business Central",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/inventory-how-to-set-up-stockkeeping-units",
+      "support": "SKU associé à un Item et une localisation et/ou variante.",
+      "consulted_at": "2026-09-14",
+      "access": "Texte consulté ; MSCOPE04/05 vérifiés par agent de recherche"
+    }
+  ],
+  "distinction": {
+    "Dynamics 365": "Gamme d’applications ERP et CRM.",
+    "Dynamics 365 Business Central": "Application ERP intégrée pour petites et moyennes organisations, issue de Dynamics NAV.",
+    "Dynamics 365 Supply Chain Management": "Application de gestion des opérations Supply de la branche issue de Dynamics AX.",
+    "Dynamics 365 Finance": "Application financière de la branche issue de Dynamics AX."
+  },
+  "audit_interpretation": "Dans les comparaisons de l’audit, distinguer Dynamics 365 SCM de Dynamics 365 Business Central ; ne pas faire du nom Dynamics 365 un modèle unique.",
+  "boundaries": [
+    "Pas de seuil de taille ou de volume inventé.",
+    "Pas de recommandation d’achat ou d’exclusion par taille.",
+    "La filiation historique ne prouve pas un schéma commun actuel.",
+    "Ne pas transférer la définition SKU de Business Central à SCM."
+  ],
+  "local_model_change": false
+}

@@ -1799,3 +1799,267 @@ U141 applique Supply/Case comme univers explicites. D04 Order Management contien
 **statut**
 
 Appliqué au backlog uniquement. Réexamen du droit commercial de retour/remplacement différé avec Case ; pas de perte du besoin, pas de capacité Case inventée. Release v002 conservée. Note de mise en œuvre : connaissance/27-order-management-et-univers.md.
+
+
+## C79
+
+**id**
+
+C79
+
+**source**
+
+U144 ; U145
+
+**formulation_a_eviter**
+
+D02 reste un domaine actif du backlog ; supprimer D02 impose de supprimer tous les identifiants préfixés D02 ou de renuméroter D03 et les suivants.
+
+**formulation_retenue**
+
+U145 retire D02 et ses deux capacités résiduelles D02.a/D02.d, dont la reprise est examinée dans D01/D03. D02.b Supply Protection et D02.c Reservation restent en D01 ; D02.e Supply Assignment reste en D03. Les autres identifiants sont conservés. L’état antérieur et les trois relations retirées sont préservés dans modeles/backlog/history/pre-U145.json. Les clarifications de Reservation et Supply Protection restent à instruire ; le retrait ne valide pas de nouvelles définitions.
+
+**statut**
+
+Appliqué au backlog : 52 nœuds, 34 capacités. Release v003 inchangée avec D02 et 36 capacités ; aucune publication implicite.
+
+
+## C80
+
+**id**
+
+C80
+
+**source**
+
+U151 ; U154
+
+**formulation_a_eviter**
+
+D03 conserve neuf capacités actives dont cinq décisions fines ; la recomposition ATP/CTP/PTP reste non adoptée.
+
+**formulation_retenue**
+
+U154 valide huit capacités : Promise Proposal, Promise Confirmation, Promise Revision, Supply Assignment ; Available-to-Promise (ATP), Capable-to-Promise (CTP), Profitable-to-Promise (PTP), Delivery Schedule Decision. Les quatre décisions nouvelles prennent D03.i–l, les anciennes D03.d–h sont retirées avec historique. Droits, sources, acheminement, substitution et recours à de nouvelles ressources restent couverts comme choix/règles des capacités plus larges. CTP porte localement le plan d’adaptation U148 ; la différence avec les produits de marché reste explicite. Proposition de plan ne vaut pas exécution de ses mesures.
+
+**statut**
+
+Backlog : 51 nœuds et 33 capacités, dont huit D03. Aucune publication ; release v003 inchangée. Vocabulaire Requirement/Order/Case/Demand/Command en exploration, aucun renommage adopté.
+
+
+## C81
+
+**id**
+
+C81
+
+**source**
+
+U154 ; correction U155
+
+**formulation_a_eviter**
+
+Laurent maintient que Requirement est réservé aux achats dans ECC ; Requisition et Requirement sont interchangeables ; Purchase Requisition équivaut automatiquement à Case.
+
+**formulation_retenue**
+
+U155 précise que Laurent visait Requisition. La comparaison porte sur Purchase Requisition/Purchase Order et Sales Order. Purchase Requisition est une demande interne aux achats, distincte du besoin Requirement et d’une commande externe. Son équivalence avec un Case local n’est pas établie. Le traitement Sales Order intègre des préoccupations commerciales et Supply selon la documentation ERP consultée ; ne pas en déduire l’architecture installée Storeland ou SAP du groupe.
+
+**statut**
+
+Vocabulaire en exploration dans marche/ecc-requisition-order-case.md. Aucun renommage d’Order ni nouvelle notion validée.
+
+
+## C82
+
+**id**
+
+C82
+
+**source**
+
+U157 ; SAP Learning et Oracle, marche/backlog-management-supply-assignment.md
+
+**formulation_a_eviter**
+
+Supply Assignment SAP ne fait qu’appliquer une décision externe ; seul Backlog Management permet d’évaluer et de simuler. Backlog Management est nécessairement un synonyme exact de D02.e.
+
+**formulation_retenue**
+
+Le périmètre produit SAP de Supply Assignment inclut des fonctions de simulation et de réaffectation ; il dépasse notre définition de capacité D02.e. Oracle Backlog Management couvre aussi la planification du carnet. La distinction locale proposition/engagement/application reste utile, mais ne prouve pas des produits disjoints. La granularité et les frontières D03/D04 restent à instruire avant fusion ou renommage.
+
+**statut**
+
+Analyse corrigée, valeurs actives et validations conservées. Aucun déploiement local ni équivalence exacte attesté.
+
+
+## C83
+
+**id**
+
+C83
+
+**source**
+
+U159
+
+**formulation_a_eviter**
+
+La simulation est nécessairement un doublon ou un simple mode d’ATP/CTP/PTP ; son seul résultat est un calcul de promesse.
+
+**formulation_retenue**
+
+Laurent distingue les solutions calculées par ATP/CTP/PTP de la mesure de leurs impacts à un niveau global par la simulation. Celle-ci peut utiliser les calculs et comparer des situations sans appliquer le scénario. Les calculs eux-mêmes ne sont pas présumés limités à une commande isolée. Le résultat attendu, et non l’algorithme partagé, permet de distinguer les aptitudes.
+
+**statut**
+
+Orientation retenue dans l’annexe D03 ; définition reformulée, nom et indicateurs proposés. Aucune nouvelle capacité active ni publication.
+
+
+## C84
+
+**id**
+
+C84
+
+**source**
+
+U161, U162
+
+**formulation_a_eviter**
+
+Déduire une capacité de chaque étape ou contrôle d’un processus ; assimiler Backlog Refinement à une capacité ou élargir Order Prioritization à tout le travail du carnet.
+
+**formulation_retenue**
+
+Partir des aptitudes durables de l’entreprise. Backlog Refinement désigne ici une activité. Qualification est retirée de la proposition ; les contrôles restent un principe de fonctionnement. Le recouvrement Structuring/Revision et la portée de Prioritization sont en instruction. Conserver Order Revision et limiter Prioritization à la priorité relative sont des recommandations de Codex, pas de nouveaux arbitrages validés.
+
+**statut**
+
+Correction de méthode enregistrée ; annexe des candidats actualisée, carte active inchangée.
+
+
+## C85
+
+**id**
+
+C85
+
+**source**
+
+U164, U155
+
+**formulation_a_eviter**
+
+Case et Demand sont des synonymes de demande processus ; Requirement ne concerne que les achats ; Order et Command sont interchangeables.
+
+**formulation_retenue**
+
+Correction analytique proposée par Codex : Case porte le traitement d’une situation, Demand/Requirement peuvent décrire des besoins Supply issus notamment d’Orders ou de prévisions. Command porte une instruction d’action et ne remplace pas la commande métier Order. U155 corrige le terme achats en Requisition. Les distinctions proposées U164 ne sont pas des objets ou relations adoptés.
+
+**statut**
+
+Précision sourcée en instruction, sans nouvelle validation métier ni modification des capacités actives.
+
+
+## C86
+
+**id**
+
+C86
+
+**source**
+
+U165
+
+**formulation_a_eviter**
+
+Réduire Command au pattern logiciel ou faire entrer ce pattern dans la carte métier ; tenir Case pour le nom métier définitif de l’univers amont ; assimiler demande d’exécution et réalisation acquise.
+
+**formulation_retenue**
+
+Laurent propose Command comme objet métier de demande d’exécution, à instruire indépendamment du pattern logiciel. L’univers amont fait émerger et affiner les intentions en demandes ou problèmes ; son nom Case doit être revu. Order reste indispensable dans Supply. Demande d’exécution, prise en charge et réalisation restent à distinguer.
+
+**statut**
+
+Orientation explicite et hypothèse de nom conservées séparément ; pas de nouvel objet ni de nom de remplacement adopté.
+
+
+## C87
+
+**id**
+
+C87
+
+**source**
+
+U176, U175
+
+**formulation_a_eviter**
+
+SKU est universellement une pièce physique insécable vendable ; Material signifie matière première ; tous les concepts regroupés sous Bien ont la même nature ; HU, Container, License plate et SSCC sont interchangeables.
+
+**formulation_retenue**
+
+L’audit distingue référence d’article, quantité et unité, lot/exemplaire lorsque suivi, conditionnement de référence et unité logistique physique. Divisibilité, unité de vente et niveau de référence sont des choix contextualisés. Material/Product SAP et Product Microsoft peuvent couvrir plus que des biens physiques ; les différents emplois de stockkeeping unit doivent garder leur contexte. Resource reste un rôle de mobilisation. Les correspondances restent partielles, sans imposer une hiérarchie commune.
+
+**statut**
+
+Constats documentaires et corrections proposées par Codex, à instruire ; aucune nouvelle définition de modèle validée par la demande d’audit. Voir marche/etudes/2026-09-14-articles-biens-unites-logistiques/audit.md.
+
+
+## C88
+
+**id**
+
+C88
+
+**sources**
+
+U177, U178, U179
+
+**constat**
+
+La formule modèle retail peut laisser croire que les catégories Article SAP sont exclues du wholesale.
+
+**correction**
+
+Distinguer Retail comme activité de commerce de détail, SAP Retail comme solution sectorielle et la réutilisation de son architecture dans Fashion. SAP documente prepacks et displays en wholesale. Ne pas en déduire un usage installé chez Boardriders ni un périmètre identique de toutes les éditions. Complément sourcé : marche/etudes/2026-09-14-articles-biens-unites-logistiques/retail-wholesale.md.
+
+
+## C89
+
+**id**
+
+C89
+
+**sources**
+
+U176, U180, U181
+
+**constat**
+
+L’audit et les réponses ont présenté la synthèse Article = référence de gestion sans citer la définition explicite SAP fondée sur la plus petite unité ou le conditionnement client commandable indépendamment et non subdivisible.
+
+**correction**
+
+Rétablir cette définition, qui rejoint l’intuition initiale de Laurent, en distinguant sa portée des catégories génériques abstraites et des ensembles décomposables également appelés Article. Ne pas attribuer à SAP une résolution formelle de cette tension par une indivisibilité commerciale contextuelle : c’est une interprétation possible seulement. Ni identité universelle SKU/Article ni adoption locale déduite. Sources et analyses : marche/etudes/2026-09-14-articles-biens-unites-logistiques/article-definition-comparison.md et JSON associé.
+
+
+## C90
+
+**id**
+
+C90
+
+**sources**
+
+U202, U195, U173, U169, U154
+
+**constat**
+
+Le backlog conservait Article comme référence SKU, le principe CTP différé et des formulations Case/demande antérieures aux clarifications.
+
+**correction**
+
+Audit complet puis précisions de dix nœuds et des principes concernés. Références Product/Variant distinctes des unités, Article/Container comme rôles, Orders contextualisés et CTP présent dans D03. Les nouvelles formulations détaillées restent proposées ; preuves et valeurs avant modification dans audits/2026-09-14-glossaire-yaml/. Aucun renommage de domaine ni ajout de capacité.

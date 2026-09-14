@@ -50,3 +50,45 @@ Q077 suit les points encore ouverts : annulation, suspension, fractionnement, li
 ## Traçabilité et contrôles
 
 U141, C78, CMP066 ; principes antérieurs U134/U140 conservés. Aucun changement du panorama As Is et aucune extension de périmètre logistique. Les états de release sont immuables. Le versionnement des éléments sera recalculé par le workflow de publication ; les portées lifecycle conservent les valeurs expressément approuvées.
+
+
+## Réexamen de l’univers amont — U170
+
+Laurent demande de revoir le nom et la définition de Case et propose « Processus métier ? ». Business Processes est la traduction candidate, non adoptée. Codex la considère claire pour nommer une couche d’organisation du traitement métier, mais insuffisamment distinctive comme univers : Supply et Services ont également des processus internes.
+
+Définition proposée par Codex à partir de U165 : « Prendre en charge les intentions des parties prenantes, les préciser en demandes ou en problèmes à résoudre, puis organiser leur traitement jusqu’au résultat attendu, en mobilisant notamment la Supply et les prestations nécessaires. » Il s’agit d’une proposition en instruction, sans validation de sa formulation.
+
+Le rôle amont ne se limite pas à saisir une intention : il porte son contexte, son évolution et son traitement, y compris lorsque la Supply ou les exécutants renvoient une impossibilité ou un écart. Case peut rester un objet ou une approche de traitement sans donner son nom à l’univers. Aucun domaine ou objet ajouté ; [annexe structurée](../modeles/backlog/vocabulary-review.json), upstream_universe_review.
+
+
+## U171 — offre de services métier aux parties prenantes
+
+Laurent précise l’orientation de réalisation : une plateforme de Case Management pour implémenter les processus métier de durée moyenne ou longue, ayant un impact pour l’entreprise. L’offre s’adresse aux clients, fournisseurs, partenaires et services internes. Aucun seuil temporel ni périmètre exhaustif n’est fixé.
+
+Codex propose **Business Services** comme nom métier de l’univers amont : « Porter les services métier proposés par l’entreprise à ses clients, fournisseurs, partenaires et services internes, et organiser le traitement de leurs demandes ou problèmes jusqu’au résultat attendu. » Nom et définition restent proposés.
+
+Distinctions proposées : Business Services décrit l’offre et son résultat pour les parties prenantes ; Business Processes décrit l’organisation du traitement ; Case Management décrit l’approche et la plateforme de réalisation. L’offre amont peut mobiliser la Supply et les prestations des exécutants ; elle n’impose pas que toutes les demandes passent par Supply. Les services d’exécution du contexte Services U169 restent distincts par leur responsabilité, sans renommage de ce contexte.
+
+Illustration Codex : une demande de retour peut être portée comme service métier amont ; sa résolution peut mobiliser un Order Supply et des prestations de collecte ou de contrôle. Cet exemple ne crée aucun objet, lien ni cardinalité. La carte de capacités décrit toujours ce que l’entreprise sait faire, indépendamment du catalogue de services, des processus et des outils. Voir l’annexe de vocabulaire, upstream_universe_review.
+
+
+## U172 — prise en charge des grands processus transverses
+
+Laurent précise le périmètre de la plateforme : portail, espaces par utilisateur, management des demandes, planification et affectation lorsque plusieurs services participent au traitement, avec une analogie service desk. L’objectif est de représenter les grands processus transverses de l’entreprise. Aucun produit ni référentiel ITSM n’est choisi.
+
+Définition actualisée proposée par Codex : « Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie prenante au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à leur réalisation. » Elle remplace la proposition U171 comme rédaction de travail, sans validation supplémentaire ni renommage de Case.
+
+Distinguer accès des parties prenantes, travail des équipes, coordination des contributions et pilotage du résultat global. L’affectation du travail aux acteurs et équipes dans cette couche n’est pas Supply Assignment ; la planification des contributions n’est pas Delivery Schedule Decision. Ces responsabilités peuvent se coordonner sans partager le même modèle ni leurs règles.
+
+Le mot service peut ici désigner une unité organisationnelle, une offre métier ou une prestation confiée : préciser le sens sans assimiler les trois. Les fonctions décrites restent des besoins de plateforme et de modèle processus ; elles ne deviennent pas automatiquement des capacités de la carte Supply. Pas de centralisation automatique de tous les objets ou de toute l’exécution, pas de développement de portail ou d’Atlas déduit.
+
+
+## Adoption Business Services — U173
+
+Laurent valide **Business Services** et les définitions présentées après U172. Le backlog renomme l’univers `universe-case`, identifiant conservé, révision 2. Définition validée :
+
+> Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie prenante au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à leur réalisation.
+
+Les quatre dimensions de périmètre — accès des parties prenantes, travail des équipes, coordination et pilotage transverse — sont validées comme descriptions du périmètre, sans les transformer en domaines ou capacités. Leurs textes et empreintes sont dans l’annexe JSON de vocabulaire. La plateforme de Case Management constitue l’orientation de réalisation ; Case peut rester un dossier de traitement.
+
+**Les domaines seront travaillés plus tard.** L’ancienne valeur et la portée de validation U141 restent dans history/pre-U173.json et les releases. Cette adoption remplace les mentions de Business Services comme simple candidat, sans modifier les publications.

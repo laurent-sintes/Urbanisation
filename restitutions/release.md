@@ -1,6 +1,6 @@
-# Release — 2026-09-13.5
+# Release — 2026-09-14.1
 
-Restitution générée depuis le JSON, connaissance au 2026-09-13. Ne pas éditer cette vue pour modifier le modèle.
+Restitution générée depuis le modèle structuré, connaissance au 2026-09-14. Ne pas éditer cette vue pour modifier le modèle.
 
 Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.
 
@@ -8,8 +8,8 @@ Publication et validation sont distinctes. Le statut d’un rattachement peut di
 
 | Repère | Nom | Niveau | Contenu direct | Statut |
 | --- | --- | --- | --- | --- |
-| universe-case | Case | universe | Exploration différée | Validé par l’urbaniste — portée : name |
-| universe-supply | Supply | universe | Inventory Management, Resource Availability and Commitments, Order Promising, Order Management, Operational Resource Balancing, Execution Options, Execution Commitments and Facts, Business References | Validé par l’urbaniste — portée : name |
+| universe-case | Business Services | universe | Exploration différée | Validé par l’urbaniste — portée : name, definition |
+| universe-supply | Supply | universe | Inventory Management, Order Promising, Order Management, Operational Resource Balancing, Execution Options, Execution Commitments and Facts, Business References | Validé par l’urbaniste — portée : name |
 
 Les groupes de présentation, dont Business References, conservent leur rôle distinct.
 
@@ -21,41 +21,30 @@ Connaître les stocks et les ressources attendues, expliquer leurs variations, f
 
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
-| D01.f | Inventory Tracking | En cours d’instruction | Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par article, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues. | Disposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu. | En cours d’instruction |
+| D01.f | Inventory Tracking | Proposé par l’IA | Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par référence de produit, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement les ressources futures connues et leurs caractéristiques attendues. | Disposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu. | En cours d’instruction |
 | D01.g | Record Inventory Movements | Validé par l’urbaniste — portée : name | Enregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique. | Disposer d’un historique traçable des faits qui expliquent les variations du stock. | En cours d’instruction |
 | D01.c | Inventory Visibility | En cours d’instruction | Fournir une lecture cohérente des stocks physiques, de leurs états logiques et des ressources futures dans les différents lieux et périmètres, avec provenance et fraîcheur, sans double compte. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | En cours d’instruction |
 | D01.d | Stocktaking | Validé par l’urbaniste — portée : definition, finality, name | établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D02.b | Supply Protection | Validé par l’urbaniste — portée : name | établir et appliquer les quantités ou limites d’usage destinées à des groupes, avec leur validité. | Préserver les possibilités d’approvisionnement des usages retenus. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D02.c | Reservation | Validé par l’urbaniste — portée : name | établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Donner effet à un engagement de ressource. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
-## D02 — Resource Availability and Commitments
-
-Statut : **En cours d’instruction**.
-
-Deux aptitudes de disponibilité et d’ajustement subsistent comme traces de travail après les rattachements de Supply Protection et Reservation à Inventory Management, et de Supply Assignment à Order Promising.
-
-| Repère | Capacité | Statut | Définition | Finalité | Rattachement |
-| --- | --- | --- | --- | --- | --- |
-| D02.a | Determine resource availability for a given use | En cours d’instruction | apprécier les quantités admissibles à un horizon, compte tenu des états, attentes, protections et engagements. | Évaluer ce qui peut être mobilisé dans une situation donnée. | En cours d’instruction |
-| D02.d | Adjust resource commitments | En cours d’instruction | réviser, transférer ou libérer les quantités affectées selon les décisions autorisées. | Maintenir des affectations cohérentes avec les besoins et les ressources. | En cours d’instruction |
-
 ## D03 — Order Promising
 
 Statut : **Validé par l’urbaniste — portée : name**.
 
-Établir ce qui peut être promis pour satisfaire une demande, sous quelles conditions, avec quelles ressources et quelle solution de fourniture, puis maintenir la promesse lorsque la situation évolue.
+Établir ce qui peut être promis pour honorer une commande Supply, sous quelles conditions, avec quelles ressources et quelles possibilités de mise à disposition, puis maintenir la promesse lorsque la situation évolue.
 
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
-| D03.a | Promise Proposal | Validé par l’urbaniste — portée : definition, finality, name, nature | construire une proposition de fourniture précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation. | Faire naître une proposition de promesse réalisable. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.a | Promise Proposal | Validé par l’urbaniste — portée : finality, name, nature | Construire une proposition de mise à disposition de ressources pour honorer une commande Supply, précisant quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation. | Faire naître une proposition de promesse réalisable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.b | Promise Confirmation | Validé par l’urbaniste — portée : definition, finality, name, nature | établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas. | Donner un engagement explicite au destinataire. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D02.e | Supply Assignment | Validé par l’urbaniste — portée : definition, finality, name, nature | affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des demandes ou engagements. | Assurer la couverture des demandes par des ressources identifiées. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.c | Promise Revision | Validé par l’urbaniste — portée : definition, finality, name, nature | réexaminer les promesses lorsque ressources, demandes, dates ou priorités changent et établir les modifications autorisées. | Maintenir des engagements cohérents avec la situation et les priorités applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.d | Allocation Eligibility Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | décider quelle quantité une demande peut consommer au regard des allocations, protections et droits applicables. | Respecter les droits d’accès aux ressources. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.e | Fulfillment Source Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | choisir la source ou la combinaison de sources permettant de satisfaire la demande. | Fonder la promesse sur des origines de fourniture admissibles. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.f | Fulfillment Route Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | choisir la chaîne d’acheminement jusqu’à destination : étapes, points de passage, modes et services, selon les contraintes de délai, de capacité et de coût. | Fonder la promesse sur un acheminement réalisable. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.g | Product Substitution Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | décider quel produit de remplacement est admissible pour satisfaire la demande dans les conditions autorisées. | Permettre une réponse acceptable lorsque le produit demandé ne peut pas être fourni tel quel. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.h | Supply Creation Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | décider de recourir à une fourniture nouvelle et qualifier les conditions nécessaires pour fonder la promesse. | Rendre possible une fourniture que les ressources déjà présentes ou attendues ne permettent pas de satisfaire. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.c | Promise Revision | Validé par l’urbaniste — portée : finality, name, nature | Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications autorisées. | Maintenir des engagements cohérents avec la situation et les priorités applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D02.e | Supply Assignment | Validé par l’urbaniste — portée : name, nature | Affecter, réaffecter ou libérer des ressources admissibles présentes ou futures pour couvrir des commandes Supply, des engagements ou des besoins prévisionnels. | Assurer la couverture des commandes, engagements ou besoins prévisionnels par des ressources identifiées. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.i | Available-to-Promise (ATP) | Validé par l’urbaniste — portée : definition, finality, name, nature | Établir les quantités et dates proposées pour honorer une commande avec les stocks et engagements admissibles, en appliquant les protections et règles existantes, sans modifier ces engagements ou politiques. | Établir une solution de promesse réalisable dans la situation de référence. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.j | Capable-to-Promise (CTP) | Validé par l’urbaniste — portée : definition, finality, name, nature | Proposer un plan cohérent d’adaptation des ressources et engagements pour honorer une commande : approvisionnements supplémentaires, révisions des quantités ou dates des autres commandes ou de leurs promesses, et changements de protection, avec impacts et autorisations nécessaires. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.k | Profitable-to-Promise (PTP) | Validé par l’urbaniste — portée : definition, finality, name, nature | Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes de service applicables. | Retenir une solution économiquement pertinente parmi les possibilités examinées. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.l | Delivery Schedule Decision | Validé par l’urbaniste — portée : definition, finality, name, nature | Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les possibilités réalisables et selon les conditions de la commande. | Retenir un échéancier acceptable pour honorer la commande. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.m | Order Prioritization | Validé par l’urbaniste — portée : name, definition | Établir et réviser les priorités relatives des commandes. | Arbitrer les commandes à satisfaire en priorité lorsque leurs besoins se trouvent en concurrence. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D04 — Order Management
 
@@ -91,7 +80,7 @@ Utiliser les références du réseau et les contraintes opérationnelles pour ap
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
 | D06.a | Qualify locations and feasible services | En cours d’instruction | connaître les lieux, leurs rôles opérationnels et les prestations qui y sont admissibles. | Identifier les possibilités concrètes de réalisation. | En cours d’instruction |
-| D06.b | Execution Capacity Assessment | En cours d’instruction | apprécier limites applicables, charge engagée et capacité restante pour une prestation et une période. | Éviter de confondre disponibilité d’article et possibilité de le servir. | En cours d’instruction |
+| D06.b | Execution Capacity Assessment | Proposé par l’IA | apprécier limites applicables, charge engagée et capacité restante pour une prestation et une période. | Éviter de confondre disponibilité des biens et possibilité de réaliser la prestation attendue. | En cours d’instruction |
 | D06.c | Execution Option Assessment | En cours d’instruction | établir et comparer les origines ou prestations compatibles avec un résultat attendu. | Éclairer un choix réalisable selon les critères autorisés. | En cours d’instruction |
 
 ## D07 — Execution Commitments and Facts
@@ -102,7 +91,7 @@ Exprimer les prestations nécessaires à la réalisation des Orders, suivre leur
 
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
-| D07.a | Execution Requirement Definition | En cours d’instruction | Exprimer les prestations attendues pour réaliser les Orders, avec biens, destinataires, résultats et opérations nécessaires, sans recréer leur autorisation commerciale. | Rendre le besoin compréhensible et exploitable par l’exécutant. | En cours d’instruction |
+| D07.a | Execution Requirement Definition | Proposé par l’IA | Exprimer les prestations attendues pour réaliser les commandes Supply, sous forme de commandes de service (Service Orders), avec biens, destinataires, résultats et opérations nécessaires, sans recréer leur autorisation commerciale. | Rendre le besoin compréhensible et exploitable par l’exécutant. | En cours d’instruction |
 | D07.b | Execution Commitment Management | En cours d’instruction | qualifier prise en charge, portée, validité et effets des refus, retraits ou révisions. | Savoir quelle réalisation est effectivement engagée et quelle charge elle mobilise. | En cours d’instruction |
 | D07.c | Execution Reconciliation | En cours d’instruction | Rapprocher les faits de production, expédition, réception ou consommation des prestations attendues et qualifier leurs écarts ; fournir ces résultats au rapprochement de l’Order sans se substituer à son reliquat. | Donner aux autres domaines des faits utilisables et expliquer les écarts. | En cours d’instruction |
 | D07.d | Expected Supply Tracking | En cours d’instruction | qualifier quantités, dates, provenance et fermeté des résultats de réalisation encore attendus. | Permettre un raisonnement sur les ressources futures avec leurs limites. | En cours d’instruction |
@@ -129,19 +118,19 @@ Recevoir et consulter la projection du contrat complet : cadre, conditions parti
 
 ## D08 — Product Reference
 
-Statut : **Validé par l’urbaniste — portée : independence**.
+Statut : **Proposé par l’IA**.
 
-Reconnaître les mêmes articles par leur référence SKU indépendamment des catalogues qui les proposent. La référence article est reçue depuis un maître externe.
+Recevoir les références Product et leurs Product Variants depuis leurs maîtres externes, indépendamment des catalogues qui les proposent. Product porte un rôle Article ou Container. Distinguer ces références des Product Units, exemplaires physiques suivis dans les opérations ; les identifiants commerciaux ne constituent pas à eux seuls leur identité individuelle.
 
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
-| D08.d | Product Reference Ingestion | Validé par l’urbaniste — portée : scope | recevoir les articles, leurs identifiants SKU, caractéristiques de référence utiles et évolutions depuis leur maître externe, indépendamment de leur présence dans les catalogues. | Reconnaître les mêmes articles dans les différents catalogues et opérations. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D08.d | Product Reference Ingestion | Validé par l’urbaniste — portée : scope | Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues. | Reconnaître les mêmes références produit dans les différents catalogues et opérations, sans les confondre avec les exemplaires physiques. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D12 — Catalog
 
 Statut : **Validé par l’urbaniste — portée : mastership, name**.
 
-Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Un même SKU peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.
+Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.
 
 | Repère | Capacité | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- |
@@ -161,7 +150,7 @@ Recevoir les points du réseau, leurs caractéristiques et relations de référe
 
 | Repère | Champs adoptés | Champs restant proposés | Décisions |
 | --- | --- | --- | --- |
-| universe-case | name | definition | ADOPT-057 |
+| universe-case | definition, name | Aucun | ADOPT-074 |
 | universe-supply | name | definition | ADOPT-056 |
 | business-references | name | Aucun | ADOPT-042-LIFECYCLE-r2 |
 | D01 | Aucun | definition, finality, name, scope | Aucune |
@@ -171,19 +160,16 @@ Recevoir les points du réseau, leurs caractéristiques et relations de référe
 | D01.d | definition, finality, name | Aucun | ADOPT-021-LIFECYCLE-r2 |
 | D02.b | name | definition, finality | ADOPT-023-LIFECYCLE-r2 |
 | D02.c | name | definition, finality | ADOPT-025-LIFECYCLE-r2 |
-| D02 | Aucun | definition, finality, name | Aucune |
-| D02.a | Aucun | definition, finality, name | Aucune |
-| D02.d | Aucun | definition, finality, name | Aucune |
-| D03 | name | definition, finality | ADOPT-002-LIFECYCLE-r2 |
-| D03.a | definition, finality, name, nature | Aucun | ADOPT-003-LIFECYCLE-r2 |
+| D03 | name | definition, finality | ADOPT-058 |
+| D03.a | finality, name, nature | definition | ADOPT-059 |
 | D03.b | definition, finality, name, nature | Aucun | ADOPT-005-LIFECYCLE-r2 |
-| D02.e | definition, finality, name, nature | Aucun | ADOPT-007-LIFECYCLE-r2 |
-| D03.c | definition, finality, name, nature | Aucun | ADOPT-009-LIFECYCLE-r2 |
-| D03.d | definition, finality, name, nature | Aucun | ADOPT-011-LIFECYCLE-r2 |
-| D03.e | definition, finality, name, nature | Aucun | ADOPT-013-LIFECYCLE-r2 |
-| D03.f | definition, finality, name, nature | Aucun | ADOPT-015-LIFECYCLE-r2 |
-| D03.g | definition, finality, name, nature | Aucun | ADOPT-017-LIFECYCLE-r2 |
-| D03.h | definition, finality, name, nature | Aucun | ADOPT-019-LIFECYCLE-r2 |
+| D03.c | finality, name, nature | definition | ADOPT-060 |
+| D02.e | name, nature | definition, finality | ADOPT-061 |
+| D03.i | definition, finality, name, nature | Aucun | ADOPT-064 |
+| D03.j | definition, finality, name, nature | Aucun | ADOPT-066 |
+| D03.k | definition, finality, name, nature | Aucun | ADOPT-068 |
+| D03.l | definition, finality, name, nature | Aucun | ADOPT-070 |
+| D03.m | definition, name | finality, nature | ADOPT-072 |
 | D04 | name | definition, finality, scope | ADOPT-049 |
 | D04.e | definition, name | finality, scope | ADOPT-050 |
 | D04.f | definition, name | finality, scope | ADOPT-051 |
@@ -206,9 +192,9 @@ Recevoir les points du réseau, leurs caractéristiques et relations de référe
 | D09.d | scope | definition, finality, name | ADOPT-032-LIFECYCLE-r2 |
 | D11 | mastership, name | definition, finality | ADOPT-054 |
 | D11.a | scope | definition, finality, name | ADOPT-055 |
-| D08 | independence | definition, finality, name | ADOPT-030-LIFECYCLE-r2 |
-| D08.d | scope | definition, finality, name | ADOPT-038-LIFECYCLE-r2 |
-| D12 | mastership, name | definition, finality | ADOPT-029-LIFECYCLE-r2 |
+| D08 | Aucun | definition, finality, independence, name | Aucune |
+| D08.d | scope | definition, finality, name | ADOPT-062 |
+| D12 | mastership, name | definition, finality | ADOPT-063 |
 | D12.a | scope | definition, finality, name | ADOPT-036-LIFECYCLE-r2 |
 | D13 | independence, name | definition, finality | ADOPT-031-LIFECYCLE-r2 |
 | D13.a | scope | definition, finality, name | ADOPT-040-LIFECYCLE-r2 |

@@ -24,7 +24,7 @@ class BacklogPublicationTests(unittest.TestCase):
             shutil.copytree(ROOT / 'modeles' / relative, self.root / 'modeles' / relative)
         self.version = '2026-09-13.99'
         self.models = self.root / 'modeles'
-        self.backlog_path = self.models / 'backlog/model.json'
+        self.backlog_path = self.models / 'backlog/model.yaml'
         # These tests exercise the legacy contract; lifecycle has its own tests.
         # Pin the legacy fixture to its immutable publication, not the live
         # backlog: new releases must not change this test's approval baseline.
@@ -78,7 +78,7 @@ class BacklogPublicationTests(unittest.TestCase):
         report = workflow.build_candidate(self.root, self.version)['report']
         self.assertEqual(report['validation_errors'], [])
         self.prepare()
-        candidate=workflow.read(self.models / 'staging' / self.version / 'candidate.json')
+        candidate=workflow.read(self.models / 'staging' / self.version / 'candidate.yaml')
         cap=next(n for n in candidate['nodes'] if n['id']=='D03.a')
         self.assertEqual(cap['revision'], 2)
         self.assertTrue(cap['last_modified'].endswith('Z'))
@@ -90,11 +90,11 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertFalse(result['release_activated'])
         self.assertEqual((self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes(), pointer)
         self.assertFalse((self.models / 'release' / self.version).exists())
-        candidate = workflow.read(self.models / 'staging' / self.version / 'candidate.json')
+        candidate = workflow.read(self.models / 'staging' / self.version / 'candidate.yaml')
         cap = next(n for n in candidate['nodes'] if n['id'] == 'D03.a')
         self.assertIn('New proposed precision.', cap['fields']['definition'])
         self.assertEqual(sum(n['kind'] == 'capability' for n in candidate['nodes']), 36)
-        self.assertTrue((self.models / 'staging' / self.version / 'deferred/applicability.json').exists())
+        self.assertTrue((self.models / 'staging' / self.version / 'deferred/applicability.yaml').exists())
 
     def test_publish_prepared_activates_verified_live_backlog_and_preserves_old_release(self):
         self.mutate_capability()
@@ -105,12 +105,12 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertEqual(result['complete_capability_count'], 8)
         self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], self.version)
         self.assertEqual(old_path.read_bytes(), old_bytes)
-        self.assertTrue((self.models / f'revisions/{self.version}/backlog.json').exists())
+        self.assertTrue((self.models / f'revisions/{self.version}/backlog.yaml').exists())
         self.assertTrue((self.models / f'decisions/{self.version}.json').exists())
         # The resulting current release is valid for another report/preparation.
         bundle = workflow.build_candidate(self.root, '2026-09-13.100')
         from scripts.release_catalog import catalog
-        published = workflow.read(self.models / f'release/{self.version}/model.json')
+        published = workflow.read(self.models / f'release/{self.version}/model.yaml')
         for collection in ('nodes', 'relations', 'principles'):
             previous = {x['id']: x for x in published[collection]}
             for item in bundle['candidate'][collection]:
@@ -120,10 +120,10 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertEqual(entries['versions'][0]['version'],self.version)
         self.assertEqual(workflow.resolve_release(self.models/'release','2026-09-13.2')['version'],'2026-09-13.2')
         descriptor=workflow.read(self.models/'release/index.json')['current']
-        self.assertRegex(descriptor,r'^urbanisation-v\d{3,}-\d{4}-\d{2}-\d{2}-\d{6}\.json$')
+        self.assertRegex(descriptor,r'^urbanisation-v\d{3,}-\d{4}-\d{2}-\d{2}-\d{6}\.yaml$')
         self.assertTrue((self.models/f'release/{self.version}/release-notes.md').exists())
         self.assertFalse(bundle['report']['validation_errors'])
-        published_cap = next(n for n in workflow.read(self.models / f'release/{self.version}/model.json')['nodes'] if n['id'] == 'D03.a')
+        published_cap = next(n for n in workflow.read(self.models / f'release/{self.version}/model.yaml')['nodes'] if n['id'] == 'D03.a')
         next_cap = next(n for n in bundle['candidate']['nodes'] if n['id'] == 'D03.a')
         self.assertEqual(next_cap['review']['note'], published_cap['review']['note'])
         self.assertTrue(next_cap['review']['note'].startswith('Aucune validation antérieure reprise pour cette révision'))
@@ -135,9 +135,38 @@ class BacklogPublicationTests(unittest.TestCase):
             workflow.publish_prepared(self.root, self.version, activate=True)
         self.assertFalse((self.models / 'release' / self.version).exists())
 
+    def test_glossary_is_frozen_and_changes_require_new_preparation(self):
+        self.prepare()
+        path = self.models / 'backlog/glossary.yaml'
+        before = workflow.read(path)
+        candidate = workflow.read(self.models / 'staging' / self.version / 'candidate.yaml')
+        self.assertEqual(len(candidate['glossary']['terms']), len(before['terms']))
+        self.assertTrue(all(t['revision'] == 1 for t in candidate['glossary']['terms']))
+        altered = deepcopy(before)
+        altered['terms'][0]['definition'] += ' New definition.'
+        save(path, altered)
+        with self.assertRaisesRegex(ValueError, 'Glossary changed'):
+            workflow.publish_prepared(self.root, self.version, activate=True)
+        self.assertEqual(workflow.read(self.models / 'staging' / self.version / 'candidate.yaml'), candidate)
+        self.assertFalse((self.models / 'release' / self.version).exists())
+
+    def test_published_glossary_remains_independent_of_live_edits(self):
+        self.prepare()
+        workflow.publish_prepared(self.root, self.version, activate=True)
+        path = self.models / f'release/{self.version}/model.yaml'
+        before = path.read_bytes()
+        live_path = self.models / 'backlog/glossary.yaml'
+        live = workflow.read(live_path)
+        live['terms'][0]['definition'] += ' New proposed precision.'
+        save(live_path, live)
+        bundle = workflow.build_candidate(self.root, '2026-09-13.100')
+        self.assertEqual(bundle['report']['validation_errors'], [])
+        self.assertEqual(bundle['candidate']['glossary']['terms'][0]['revision'], 2)
+        self.assertEqual(path.read_bytes(), before)
+
     def test_modified_staged_candidate_is_rejected(self):
         self.prepare()
-        path = self.models / 'staging' / self.version / 'candidate.json'
+        path = self.models / 'staging' / self.version / 'candidate.yaml'
         path.write_text(path.read_text(encoding='utf-8') + ' ', encoding='utf-8')
         with self.assertRaisesRegex(ValueError, 'hash mismatch'):
             workflow.publish_prepared(self.root, self.version)
@@ -145,7 +174,7 @@ class BacklogPublicationTests(unittest.TestCase):
 
     def test_changed_backlog_context_refuses_publication(self):
         self.prepare()
-        path = self.models / 'backlog/modeling-roadmap.json'
+        path = self.models / 'backlog/modeling-roadmap.yaml'
         doc = workflow.read(path)
         doc['current_focus'] = ['domain']
         save(path, doc)
@@ -182,6 +211,41 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertTrue(changed['review']['note'].startswith('Seules les décisions applicables à cette version'))
         self.assertIn('OLD-APPROVAL', changed['review']['note'])
         self.assertIn('Note antérieure, qui ne qualifie pas cette révision', changed['review']['note'])
+
+    def test_universe_can_be_fully_validated_only_with_all_explicit_field_evidence(self):
+        model = workflow.read(self.backlog_path)
+        group = {'id': 'universe-test', 'kind': 'group', 'layer': 'process', 'revision': 1,
+                 'group_role': 'urbanism_level', 'level_ref': 'universe',
+                 'fields': {'name': 'Test Services', 'definition': 'A scoped test universe.'},
+                 'review': {'state': 'proposed', 'note': 'Test fixture only.'},
+                 'source_refs': ['PUB-TEST-NEW'], 'source_locator': {'path': 'test.md', 'anchor': 'universe'}}
+        model['nodes'].append(group)
+        save(self.backlog_path, model)
+        decision = {'id': 'ADOPT-TEST-UNIVERSE', 'decision_state': 'accepted', 'author': 'Laurent',
+                    'decided_at': '2026-09-14', 'recorded_at': '2026-09-14', 'interpretation': 'explicit',
+                    'source_refs': ['PUB-TEST-NEW'], 'note': 'Test fixture only.',
+                    'target': {'collection': 'nodes', 'id': group['id'], 'revision': 1,
+                               'approved_fields': list(group['fields']),
+                               'value_sha256': {k: workflow.canonical_sha256(v) for k, v in group['fields'].items()},
+                               'import_version': self.version}}
+        doc = {'schema_version': '1.0.0', 'version': self.version, 'decisions': [decision]}
+        path = self.root / 'universe-decision.json'
+        save(path, doc)
+        bundle = workflow.build_candidate(self.root, self.version, ['PUB-TEST-NEW'], path)
+        self.assertEqual(bundle['report']['validation_errors'], [])
+        released = next(n for n in bundle['candidate']['nodes'] if n['id'] == group['id'])
+        self.assertEqual(released['review']['state'], 'accepted')
+        decision['target']['approved_fields'] = ['name']
+        decision['target']['value_sha256'].pop('definition')
+        save(path, doc)
+        partial = workflow.build_candidate(self.root, self.version, ['PUB-TEST-NEW'], path)
+        item = next(n for n in partial['candidate']['nodes'] if n['id'] == group['id'])
+        self.assertEqual(item['review']['state'], 'partial')
+        item['review']['state'] = 'accepted'
+        errors = workflow.validate_release(partial['candidate'], partial['decisions'], partial['snapshot'],
+                                           {r['id']: r for r in partial['provenance']['records']},
+                                           workflow.read(self.models / 'schemas/urbanism.schema.json'))
+        self.assertTrue(any('validation status contradicts' in e for e in errors))
 
     def test_relation_qualification_diff_and_new_relation_are_explicit(self):
         model = workflow.read(self.backlog_path)

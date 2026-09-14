@@ -19,8 +19,10 @@ import tempfile
 
 try:
     from .validate_models import _load as read, validate_release, validate_sources
+    from .structured_io import dumps
 except ImportError:
     from validate_models import _load as read, validate_release, validate_sources
+    from structured_io import dumps
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,8 +35,7 @@ def write(path, document):
     """Create a new artifact exclusively; never replace a released file."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('x', encoding='utf-8', newline='\n') as handle:
-        json.dump(document, handle, ensure_ascii=False, indent=2, allow_nan=False)
-        handle.write('\n')
+        handle.write(dumps(document, path.suffix))
         handle.flush()
         os.fsync(handle.fileno())
 

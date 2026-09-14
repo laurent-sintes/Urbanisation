@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -16,22 +17,55 @@ from atlas_data import (
     get_revision, load_model, load_panorama, read_source, catalog,
 )
 
-STATIC_FILES = {
+BUILT_ROOT_FILES = {
     "/": ("index.html", "text/html; charset=utf-8"),
     "/index.html": ("index.html", "text/html; charset=utf-8"),
-    "/app.js": ("app.js", "text/javascript; charset=utf-8"),
-    "/model.js": ("model.js", "text/javascript; charset=utf-8"),
-    "/styles.css": ("styles.css", "text/css; charset=utf-8"),
     "/icon.svg": ("icon.svg", "image/svg+xml"),
-    "/exploration.json": ("exploration.json", "application/json; charset=utf-8"),
     "/manifest.webmanifest": ("manifest.webmanifest", "application/manifest+json"),
-    "/app.webmanifest": ("app.webmanifest", "application/manifest+json"),
 }
+BUILT_ASSET_TYPES = {
+    ".js": "text/javascript; charset=utf-8",
+    ".css": "text/css; charset=utf-8",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".webp": "image/webp",
+    ".ico": "image/x-icon",
+    ".woff": "font/woff",
+    ".woff2": "font/woff2",
+}
+MISSING_BUILD = "Interface Atlas non compilée. Depuis le projet : pnpm --dir app install, puis pnpm --dir app build."
 CSP = (
     "default-src 'self'; script-src 'self'; style-src 'self'; "
+    "style-src-attr 'unsafe-inline'; "
     "img-src 'self' data:; connect-src 'self'; font-src 'self'; "
     "object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
 )
+
+
+def built_file(root: Path, route: str) -> tuple[Path, str] | None:
+    """Resolve only the Vite entry, its explicit public files and flat assets.
+
+    JSON models, source maps, source files and dependency trees are deliberately
+    excluded, even if a copy were accidentally placed in the build directory.
+    No route falls back to the previous interface or to an arbitrary index.
+    """
+    if route in BUILT_ROOT_FILES:
+        filename, content_type = BUILT_ROOT_FILES[route]
+    elif re.fullmatch(r"/assets/[A-Za-z0-9][A-Za-z0-9._-]*", route) and ".." not in route:
+        filename = route.lstrip("/")
+        content_type = BUILT_ASSET_TYPES.get(Path(filename).suffix)
+        if content_type is None:
+            return None
+    else:
+        return None
+    build_dir = root / "app" / "dist"
+    path = build_dir / filename
+    # Reject symlinks and junctions for both the build root and individual files.
+    if build_dir.resolve() != build_dir or path.resolve() != path:
+        raise SourceAccessError("Fichier compilé non autorisé.")
+    return path, content_type
 
 
 class AtlasHandler(BaseHTTPRequestHandler):
@@ -117,15 +151,16 @@ class AtlasHandler(BaseHTTPRequestHandler):
                     self._error(400, "Une source path unique et une ancre facultative sont attendues.", head)
                     return
                 self._json(200, read_source(args["path"][0], args.get("anchor", [""])[0], self.root), head)
-            elif route in STATIC_FILES:
-                filename, content_type = STATIC_FILES[route]
-                app_dir = (self.root / "app").resolve()
-                path = (app_dir / filename).resolve()
-                if path.parent != app_dir:
-                    raise SourceAccessError("Fichier statique non autorisé.")
-                self._send(200, path.read_bytes(), content_type, head)
             else:
-                self._error(404, "Ressource introuvable.", head)
+                asset = built_file(self.root, route)
+                if asset is None:
+                    self._error(404, "Ressource introuvable.", head)
+                else:
+                    path, content_type = asset
+                    if route in {"/", "/index.html"} and not path.is_file():
+                        self._error(503, MISSING_BUILD, head)
+                        return
+                    self._send(200, path.read_bytes(), content_type, head)
         except SourceAccessError as exc:
             self._error(403, str(exc), head)
         except FileNotFoundError:
@@ -169,12 +204,22 @@ def main(argv=None):
         except (ModelError, OSError) as exc:
             print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)
             return 1
+        try:
+            entry, _ = built_file(REPOSITORY_ROOT, "/")
+        except SourceAccessError as exc:
+            print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)
+            return 1
+        frontend_ready = entry.is_file()
         print(json.dumps({
             "release": {"version": model["version"], "nodes": len(model["nodes"]), "capabilities": sum(n["kind"] == "capability" for n in model["nodes"])},
             "backlog": {"version": backlog["version"], "nodes": len(backlog["nodes"]), "capabilities": sum(n["kind"] == "capability" for n in backlog["nodes"])},
             "panorama_as_is": {"version": panorama["version"], "systems": len(panorama["panoramas"])},
+            "frontend": {"ready": frontend_ready, "entry": "app/dist/index.html"},
             "warnings": model["warnings"],
         }, ensure_ascii=False))
+        if not frontend_ready:
+            print(json.dumps({"error": MISSING_BUILD}, ensure_ascii=False), file=sys.stderr)
+            return 1
         return 0
     try:
         server = create_server(args.port)

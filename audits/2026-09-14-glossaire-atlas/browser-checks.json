@@ -1,0 +1,11 @@
+{
+  "publication": "2026-09-13.5",
+  "checks": [
+    "La publication réelle v003 ne reçoit aucun terme du backlog.",
+    "Lien de fiche réel : survol, focus, Échap, Entrée et publication conservée.",
+    "Fixture : lien lexical, ancre après rechargement, retour vers une fiche, référence absente et texte sûr.",
+    "Fixture : recherche par définition, mobile sans débordement et infobulle dans le viewport."
+  ],
+  "errors": [],
+  "fixture_is_published": false
+}

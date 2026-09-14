@@ -6,6 +6,8 @@ Objectif : comparer durablement l'urbanisation Beaumanoir aux référentiels du 
 
 ## Lire et utiliser le référentiel
 
+- [Étude d’exploration d’Atlas](etudes/2026-09-14-exploration-atlas/etude.md) : U143, recherche du 14 septembre 2026 sur les outils de cartographie, les parcours et la maintenance du code par IA. Comparaison d’outils d’interface, distincte des modèles de capacités ci-dessous.
+
 - [Étude comparative des modèles](etudes/2026-09-09-modeles-marche/etude-comparative.md) : résultat U25, dix références comparées, équivalences de notion, recouvrements, niveaux et matrices commerce ; quatre annexes de preuves.
 
 - [Catalogue des références](catalogue.md) : dix-sept fiches, leurs rôles, versions, accès et limites ; ITIL reste périphérique.
@@ -112,3 +114,16 @@ U89 : [Order Promising — noms, nature et couverture](order-promising-comparais
 ## Localisation des Orders — 13 septembre 2026
 
 [Comparaison SAP, Microsoft, Oracle, IBM Sterling et TM Forum](localisation-orders-cartographie.md), U139 / CMP064. Distingue domaines/capacités cités, catalogue de processus, produits et composants ; propose d’éprouver Order Management et sa frontière avec D07, sans adopter un nouveau domaine. Les engagements contractuels restent dans Agreement.
+
+
+[Panorama To-Promise — U149](to-promise-panorama.md) : ATP, CTP, PTP et variantes, avec limites de transposition à D03.
+
+
+## Audit des articles, biens et unités logistiques — U176
+
+[Audit SAP / Microsoft / GS1](etudes/2026-09-14-articles-biens-unites-logistiques/audit.md) : référence d’article, SKU, Material/Product, quantité et unité, lot/exemplaire, conditionnement, colis/HU/Container/SSCC. Dix-sept sources avec version et accès, épreuves sur les récits et effets proposés sur le modèle. [Résultats structurés](../modeles/backlog/item-logistic-unit-audit.json). Aucun objet ou capacité adopté par cet audit.
+
+
+## Microsoft et Univers / Domaine — U185
+
+[Analyse](microsoft-univers-domaines.md) et [correspondances JSON proposées](../modeles/backlog/microsoft-urbanism-fit.json). Distinguer gamme, produits, modules et processus de nos niveaux métier ; pas de nouvelle hiérarchie ou publication.

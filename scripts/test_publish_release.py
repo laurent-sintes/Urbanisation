@@ -1,6 +1,7 @@
 """Publication workflow tests; all writes stay in isolated temporary projects."""
 
 from copy import deepcopy
+from scripts.structured_io import dumps
 from contextlib import contextmanager
 import hashlib
 import json
@@ -42,7 +43,7 @@ def isolated_project():
 
 def save(path, document):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    path.write_text(dumps(document, path.suffix), encoding='utf-8')
 
 
 def source(identifier, text):

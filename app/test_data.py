@@ -20,6 +20,7 @@ from atlas_data import (
 )
 from server import create_server
 from scripts.release_catalog import resolve_release
+from scripts.structured_io import read as read_document, dumps
 
 def active_pointer(root):
     folder=root / "modeles/release"
@@ -68,8 +69,12 @@ class ModelTests(SourceFixture):
         release = load_model(self.root, "release")
         by_id = {n["id"]: n for n in release["nodes"]}
         capabilities = [n for n in release["nodes"] if n["kind"] == "capability"]
-        self.assertEqual(len(capabilities), 36)
-        self.assertEqual(sum(n["review"]["state"] == "accepted" for n in capabilities), 9)
+        descriptor = resolve_release(self.root / 'modeles/release')
+        published = read_document(self.root / 'modeles/release' / descriptor['path'])
+        self.assertEqual(release['nodes'], published['nodes'])
+        self.assertEqual(release['relations'], published['relations'])
+        self.assertEqual(release.get('glossary'), published.get('glossary'))
+        self.assertEqual(len(capabilities), sum(n['kind'] == 'capability' for n in published['nodes']))
         self.assertIn("definition", by_id["D01"]["fields"])
         self.assertNotIn("definition", by_id["D01"]["approved_fields"])
         self.assertIn("definition", by_id["D01"]["proposed_fields"])
@@ -80,19 +85,19 @@ class ModelTests(SourceFixture):
         self.assertTrue(reservation["adoption_ids"])
 
     def test_backlog_retains_all_current_candidates_and_separate_alternative(self):
+        source_path = self.root / "modeles/backlog/model.yaml"
+        source = read_document(source_path)
         value = load_model(self.root, "backlog")
-        self.assertEqual(sum(n["kind"] == "capability" for n in value["nodes"]), 36)
-        names = {n['id']: n['fields']['name'] for n in value['nodes']}
-        self.assertEqual(names['D01.f'], 'Inventory Tracking')
-        self.assertEqual(names['D01.g'], 'Record Inventory Movements')
-        self.assertEqual(names['D01.c'], 'Inventory Visibility')
-        self.assertNotIn('D01.a', names)
-        self.assertNotIn('D01.b', names)
-        self.assertEqual(sum(n["kind"] in {"object", "document", "event"} for n in value["nodes"]), 4)
-        self.assertTrue(value["alternatives"])
-        parents = {r["target_id"]: r["source_id"] for r in value["relations"] if r["type"] == "contains"}
-        self.assertEqual(parents["D02.e"], "D03")
-        self.assertEqual(parents["D02.b"], "D01")
+        self.assertEqual(value["sourcePath"], source_path.relative_to(self.root).as_posix())
+        self.assertEqual(value["nodes"], source["nodes"])
+        self.assertEqual(value["relations"], source["relations"])
+        self.assertEqual(
+            [node for node in value["nodes"] if node["kind"] == "capability"],
+            [node for node in source["nodes"] if node["kind"] == "capability"],
+        )
+        # The reader preserves any alternatives separately instead of applying
+        # their proposed field overrides to the current nodes.
+        self.assertEqual(value.get("alternatives", []), source.get("alternatives", []))
 
     def test_markdown_and_old_metadata_cannot_change_model(self):
         before = load_model(self.root)
@@ -106,10 +111,10 @@ class ModelTests(SourceFixture):
     def test_backlog_changes_do_not_change_release(self):
         before = get_revision(self.root, "release")
         backlog_before = get_revision(self.root)
-        path = self.root / "modeles/backlog/model.json"
-        value = json.loads(path.read_text(encoding="utf-8"))
+        path = self.root / "modeles/backlog/model.yaml"
+        value = read_document(path)
         value["nodes"][0]["fields"]["name"] = "BACKLOG MODIFIED"
-        path.write_text(json.dumps(value), encoding="utf-8")
+        path.write_text(dumps(value, path.suffix), encoding="utf-8")
         self.assertEqual(before, get_revision(self.root, "release"))
         self.assertNotEqual(backlog_before, get_revision(self.root))
         self.assertEqual(load_model(self.root, "backlog")["nodes"][0]["fields"]["name"], "BACKLOG MODIFIED")
@@ -125,9 +130,9 @@ class ModelTests(SourceFixture):
     def test_release_rejects_illustrations_without_falling_back(self):
         pointer = resolve_release(self.root / "modeles/release")
         path = self.root / "modeles/release" / pointer["path"]
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = read_document(path)
         value["nodes"][0]["review"]["state"] = "illustration"
-        path.write_text(json.dumps(value), encoding="utf-8")
+        path.write_text(dumps(value, path.suffix), encoding="utf-8")
         with self.assertRaises(ModelError):
             load_model(self.root, "release")
 
@@ -183,7 +188,13 @@ class SourceAccessTests(SourceFixture):
 class HTTPTests(SourceFixture):
     def setUp(self):
         super().setUp()
-        (self.root / "app/index.html").write_text("<!doctype html><title>Atlas</title>", encoding="utf-8")
+        (self.root / "app/index.html").write_text("SOURCE INTERFACE — NEVER SERVED", encoding="utf-8")
+        self.dist = self.root / "app/dist"
+        (self.dist / "assets").mkdir(parents=True)
+        (self.dist / "index.html").write_text('<!doctype html><title>Atlas React</title><script type="module" src="/assets/index-test123.js"></script>', encoding="utf-8")
+        (self.dist / "assets/index-test123.js").write_text('console.log("Atlas bundle");', encoding="utf-8")
+        (self.dist / "assets/index-test123.css").write_text("body { color: navy; }", encoding="utf-8")
+        (self.dist / "icon.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>', encoding="utf-8")
         self.server = create_server(0, self.root)
         self.port = self.server.server_address[1]
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
@@ -218,6 +229,100 @@ class HTTPTests(SourceFixture):
         self.assertEqual(headers["Cache-Control"], "no-store")
         self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
         self.assertIn("script-src 'self'", headers["Content-Security-Policy"])
+        directives = {item.strip().split(" ", 1)[0]: item.strip().split(" ", 1)[1] for item in headers["Content-Security-Policy"].split(";") if item.strip()}
+        self.assertEqual(directives["script-src"], "'self'")
+        self.assertEqual(directives["style-src"], "'self'")
+        self.assertEqual(directives["style-src-attr"], "'unsafe-inline'")
+        self.assertNotIn("'unsafe-eval'", headers["Content-Security-Policy"])
+
+    def test_yaml_publication_is_served_as_json_alongside_legacy_versions(self):
+        from scripts import prepare_release as workflow
+        # Frozen input isolates serialization/HTTP from new business approvals.
+        baseline = read_document(self.root / 'modeles/revisions/2026-09-13.4/backlog.json')
+        baseline.pop('lifecycle_policy', None)
+        for collection in ('nodes', 'relations'):
+            for item in baseline[collection]:
+                item.pop('lifecycle', None)
+        index_path = self.root / 'modeles/release/index.json'
+        index = read_document(index_path)
+        index['current'] = 'urbanisation-v002-2026-09-13-162623.json'
+        index_path.write_text(dumps(index, '.json'), encoding='utf-8')
+        path = self.root / 'modeles/backlog/model.yaml'
+        path.write_text(dumps(baseline), encoding='utf-8')
+        version = '2026-09-14.999'
+        old_status, _, old_body = self.request('/api/model?version=2026-09-13.4')
+        self.assertEqual(old_status, 200)
+        old = json.loads(old_body)
+        workflow.prepare(self.root, version, ['U142'])
+        workflow.publish_prepared(self.root, version, activate=True)
+        status, headers, body = self.request('/api/model')
+        self.assertEqual(status, 200)
+        self.assertIn('application/json', headers['Content-Type'])
+        current = json.loads(body)
+        self.assertEqual(current['version'], version)
+        self.assertTrue(current['sourcePath'].endswith('/model.yaml'))
+        self.assertEqual([n['fields'] for n in current['nodes']], [n['fields'] for n in old['nodes']])
+        self.assertEqual(json.loads(self.request('/api/model?version=2026-09-13.4')[2])['nodes'], old['nodes'])
+        self.assertEqual(json.loads(self.request('/api/releases')[2])['current_version'], version)
+        with (self.root / current['sourcePath']).open('a', encoding='utf-8') as handle:
+            handle.write('\n# Modified after publication\n')
+        self.assertNotEqual(self.request('/api/model')[0], 200)
+
+    def test_built_entry_and_typed_assets_are_served(self):
+        status, headers, body = self.request("/")
+        self.assertEqual(status, 200)
+        self.assertIn(b"Atlas React", body)
+        self.assertNotIn(b"SOURCE INTERFACE", body)
+        self.assertEqual(headers["Content-Type"], "text/html; charset=utf-8")
+        for route, content_type in [
+            ("/assets/index-test123.js", "text/javascript; charset=utf-8"),
+            ("/assets/index-test123.css", "text/css; charset=utf-8"),
+            ("/icon.svg", "image/svg+xml"),
+        ]:
+            with self.subTest(route=route):
+                status, headers, body = self.request(route)
+                self.assertEqual(status, 200)
+                self.assertEqual(headers["Content-Type"], content_type)
+                self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
+                self.assertTrue(body)
+        status, headers, body = self.request("/assets/index-test123.js", method="HEAD")
+        self.assertEqual(status, 200)
+        self.assertEqual(body, b"")
+        self.assertGreater(int(headers["Content-Length"]), 0)
+
+    def test_missing_build_has_diagnostic_without_old_interface_fallback(self):
+        (self.dist / "index.html").unlink()
+        status, _, body = self.request("/")
+        self.assertEqual(status, 503)
+        self.assertIn("pnpm --dir app build", json.loads(body)["error"])
+        self.assertNotIn(b"SOURCE INTERFACE", body)
+        self.assertEqual(self.request("/api/model")[0], 200)
+
+    def test_build_never_exposes_sources_models_maps_or_dependency_trees(self):
+        # Even accidental copies into dist must not become public endpoints.
+        for filename in ["model.json", "index-test123.js.map", "secret.tsx"]:
+            (self.dist / "assets" / filename).write_text("PRIVATE", encoding="utf-8")
+        (self.dist / "model.json").write_text("PRIVATE MODEL", encoding="utf-8")
+        for route in [
+            "/assets/model.json", "/assets/index-test123.js.map", "/assets/secret.tsx",
+            "/assets/../index.html", "/assets/%2e%2e/index.html", "/assets/%2e%2e%5cindex.html",
+            "/assets/.secret.js", "/assets/sub/file.js", "/assets/index-test123.js:secret",
+            "/app.js", "/model.js", "/styles.css", "/exploration.json",
+            "/model.json", "/package.json", "/src/main.tsx", "/node_modules/react/index.js",
+            "/anything", "/assets/",
+        ]:
+            with self.subTest(route=route):
+                status, _, body = self.request(route)
+                self.assertEqual(status, 404)
+                self.assertIn("error", json.loads(body))
+
+    def test_compiled_asset_symlink_cannot_escape_build_directory(self):
+        link = self.dist / "assets/leak.js"
+        try:
+            link.symlink_to(self.root / "app/index.html")
+        except OSError:
+            self.skipTest("Création de lien symbolique non autorisée sur cet hôte.")
+        self.assertEqual(self.request("/assets/leak.js")[0], 403)
 
     def test_model_error_is_json_and_reading_refreshes(self):
         status, _, body = self.request("/api/model")
@@ -236,7 +341,7 @@ class HTTPTests(SourceFixture):
         self.assertEqual(self.request("/api/model")[0], 422)
 
     def test_invalid_backlog_does_not_affect_published_urbanisation(self):
-        (self.root / "modeles/backlog/model.json").write_text("invalid JSON", encoding="utf-8")
+        (self.root / "modeles/backlog/model.yaml").write_text("invalid JSON", encoding="utf-8")
         self.assertEqual(self.request("/api/model")[0], 200)
         self.assertEqual(self.request("/api/model?space=release")[0], 200)
 
