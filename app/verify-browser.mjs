@@ -79,7 +79,7 @@ try {
   await waitHeading('Urbanisation');
   await waitCards(['universe-case', 'universe-supply']);
   assert.ok((await page.locator('.sidebar-bottom').innerText()).includes(`${api.nodes.length} éléments · ${api.nodes.filter(n => n.kind === 'capability').length} capacités`));
-  assert.match(await page.locator('#fa-version').innerText(), new RegExp(api.version.replace(/\./g, '\\.')));
+  assert.equal(await page.locator('#fa-version').getAttribute('data-version'), api.version);
   assert.equal(await page.locator('#fa-space').count(), 0);
   assert.equal(await page.getByText(/visites récentes/i).count(), 0);
   await capture('01-urbanisation');
@@ -167,14 +167,10 @@ try {
   await page.getByText('Aucun élément ne correspond dans cette publication.', { exact: true }).waitFor();
   assert.equal(await page.locator('[data-search-result]').count(), 0);
   await search.fill('Inventory');
-  await page.locator('#fa-type').selectOption('capability');
-  await page.locator('#fa-status').selectOption('urbanist_validated');
   await page.locator('[data-search-result="D01.g"]').waitFor();
-  assert.equal(await page.locator('[data-search-result="D01.f"]').count(), 0);
-  await page.locator('#fa-status').selectOption(api.nodes.find(node => node.id === 'D01.f').lifecycle.state);
   await page.locator('[data-search-result="D01.f"]').waitFor();
-  assert.equal(await page.locator('[data-search-result="D01.g"]').count(), 0);
-  await page.getByRole('button', { name: 'Effacer la recherche et les filtres' }).click();
+  assert.equal(await page.locator('#fa-type, #fa-status').count(), 0);
+  await page.getByRole('button', { name: 'Effacer la recherche', exact: true }).click();
   await search.fill('Order Management');
   await page.locator('[data-search-result="D04"]').click();
   await waitHeading('Order Management');
@@ -182,7 +178,7 @@ try {
   await waitHeading('Order Management');
   await page.goto(base);
   await waitHeading('Order Management');
-  checks.push('published-only search / type and lifecycle filters / persisted current selection');
+  checks.push('published-only search without type or lifecycle filters / persisted current selection');
 
   await page.goto(base + '/#node=D04&scope=universe-supply&view=map');
   await waitHeading('Supply');
@@ -251,19 +247,19 @@ try {
   intentionalFailure = true;
   await page.getByText(/Actualisation impossible : Échec simulé/).waitFor({ timeout: 13000 });
   await waitHeading('Order Management');
-  assert.ok((await page.locator('#fa-version').innerText()).includes(api.version));
+  assert.equal(await page.locator('#fa-version').getAttribute('data-version'), api.version);
   assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).get('node'), 'D04');
   assert.equal(await page.locator('#fa-main').getAttribute('aria-busy'), 'false');
   failUpdatedRead = false;
   await waitHeading(updated.nodes.find(node => node.id === 'D04').fields.name);
   intentionalFailure = false;
-  assert.ok((await page.locator('#fa-version').innerText()).includes(updated.version));
+  assert.equal(await page.locator('#fa-version').getAttribute('data-version'), updated.version);
   assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).get('node'), 'D04');
   assert.equal(await page.getByText(/Actualisation impossible : Échec simulé/).count(), 0);
   await page.unroute(catalogMatcher);
   await page.unroute(modelMatcher);
   await waitHeading('Order Management');
-  assert.ok((await page.locator('#fa-version').innerText()).includes(api.version));
+  assert.equal(await page.locator('#fa-version').getAttribute('data-version'), api.version);
   checks.push('automatic pointer refresh / failure retains model / recovery keeps selected node');
 
   const historicalPage = await context.newPage();

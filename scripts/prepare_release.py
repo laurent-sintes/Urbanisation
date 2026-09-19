@@ -1,6 +1,7 @@
 """Compare live backlog, prepare an immutable candidate, then publish explicitly.
 
-report is read-only. prepare writes only modeles/staging/<version>. publish copies
+report reads the model; optional outputs create analysis artifacts only.
+prepare writes only modeles/staging/<version>. publish copies
 verified staged inputs into the permanent history; --activate changes the local
 pointer last. Neither operation grants a business validation.
 """
@@ -23,8 +24,9 @@ try:
     from .modeling_guide_publication import capture_association, verify_association, carry_association
     from .release_catalog import resolve_release, register
     from . import publish_release as publisher
+    from . import decision_review
     from .json_contract import validate as validate_contract
-    from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism
+    from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 except ImportError:
     from element_versions import assign_versions
     from glossary import reference_impacts
@@ -32,8 +34,9 @@ except ImportError:
     from modeling_guide_publication import capture_association, verify_association, carry_association
     from release_catalog import resolve_release, register
     import publish_release as publisher
+    import decision_review
     from json_contract import validate as validate_contract
-    from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism
+    from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 
 ROOT = Path(__file__).resolve().parents[1]
 read, digest, write = publisher.read, publisher.digest, publisher.write
@@ -109,6 +112,9 @@ def load_current(root):
     if (manifest['model_sha256'] != pointer['sha256'] or manifest['version'] != pointer['version']
             or release['version'] != pointer['version']):
         raise ValueError('Current release manifest/version mismatch')
+    review_errors = validate_decision_review(Path(root).resolve(), manifest_path, manifest)
+    if review_errors:
+        raise ValueError('Archived review integrity mismatch: ' + '\n'.join(review_errors))
     inputs = {}
     for key in ('input_revision', 'decisions', 'provenance'):
         path = (manifest_path.parent / manifest[key + '_path']).resolve()
@@ -283,7 +289,9 @@ def revision_errors(previous_snapshot, snapshot):
     return errors
 
 
-def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=None):
+def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=None, *,
+                    review_path=None, include_review=False):
+    state = decision_review.input_state(root)
     models, pointer, previous, inputs, manifest_path = load_current(root)
     version = valid_version(version or suggested_version(models))
     live_path = working_path(models / 'backlog')
@@ -300,8 +308,18 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     element_changes = assign_versions(snapshot, inputs['input_revision'], published=previous)
     additional = read(additional_path) if additional_path else None
     decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'])
-    explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
+    review, review_evidence = None, {}
+    if include_review or review_path:
+        review = decision_review.make_review(snapshot, inputs['input_revision'], previous,
+            inputs['decisions'], deferred_decisions, pointer, digest(manifest_path), state,
+            publication_refs, changes)
+    if review_path:
+        transcribed, review_evidence = decision_review.apply_assessment(review_path, review)
+        if additional:
+            transcribed['decisions'].extend(additional['decisions'])
+        decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, transcribed, inputs['input_revision'])
+    explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
     deferred_paths = [working_path(models / 'backlog', stem) for stem in sorted({p.stem for p in (models / 'backlog').iterdir() if p.suffix in ('.json', '.yaml', '.yml') and p.stem not in ('model', 'glossary')})]
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
     deferred_documents = {path: read(path) for path in deferred_paths}
@@ -342,14 +360,17 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
                                'illustrations': [r['id'] for r in snapshot['nodes'] + snapshot['relations'] if r['review']['state'] == 'illustration']},
               'validation_errors': sorted(set(errors)),
               'note': 'Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés.'}
+    if state != decision_review.input_state(root):
+        raise ValueError('Inputs changed while building candidate; retry from stable inputs')
     return {'models': models, 'pointer': pointer, 'snapshot': snapshot, 'decisions': decisions,
             'provenance': provenance, 'candidate': candidate, 'report': report,
             'backlog_sha256': digest(live_path), 'glossary_sha256': digest(glossary_path) if glossary_path.exists() else None, 'base_manifest_sha256': digest(manifest_path),
-            'publication_refs': publication_refs}
+            'publication_refs': publication_refs, 'input_state': state,
+            'review': review, 'review_evidence': review_evidence}
 
 
-def prepare(root, version, source_refs, additional_path=None):
-    bundle = build_candidate(root, version, source_refs, additional_path)
+def prepare(root, version, source_refs, additional_path=None, *, review_path=None):
+    bundle = build_candidate(root, version, source_refs, additional_path, review_path=review_path)
     models = bundle['models']
     if bundle['report']['validation_errors']:
         raise ValueError('\n'.join(bundle['report']['validation_errors']))
@@ -374,6 +395,11 @@ def prepare(root, version, source_refs, additional_path=None):
             write(path, read(source_path))
             deferred.append({'path': path.relative_to(temporary).as_posix(), 'sha256': digest(path),
                              'source_path': record['path'], 'source_sha256': record['sha256']})
+        review_files = {}
+        for name, document in bundle['review_evidence'].items():
+            path = temporary / 'decision-review' / name
+            write(path, document)
+            review_files[path.relative_to(temporary).as_posix()] = digest(path)
         manifest = {'schema_version': '1.0.0', 'kind': 'prepared_release', 'version': version,
                     'base_pointer': bundle['pointer'], 'base_manifest_sha256': bundle['base_manifest_sha256'],
                     'live_backlog_sha256': bundle['backlog_sha256'], 'live_glossary_sha256': bundle['glossary_sha256'], 'publication_source_refs': source_refs,
@@ -381,7 +407,11 @@ def prepare(root, version, source_refs, additional_path=None):
                     'schemas': {name: digest(models / 'schemas' / name) for name in ('urbanism.schema.json', 'decisions.schema.json')},
                     'deferred': deferred,
                     'modeling_guide': capture_association(root, bundle['pointer']['version'])}
+        if review_files:
+            manifest['decision_review'] = review_files
         write(temporary / 'manifest.json', manifest)
+        if bundle['input_state'] != decision_review.input_state(root):
+            raise ValueError('Inputs changed during preparation; prepare from stable inputs')
         os.rename(temporary, destination)
     finally:
         if temporary.exists():
@@ -389,7 +419,8 @@ def prepare(root, version, source_refs, additional_path=None):
                 raise ValueError('Unsafe staging cleanup target')
             shutil.rmtree(temporary)
     return {'prepared_manifest': str(destination / 'manifest.json'), 'report': str(destination / 'report.json'),
-            'candidate': str(destination / 'candidate.yaml'), 'release_activated': False}
+            'candidate': str(destination / 'candidate.yaml'), 'release_activated': False,
+            'summary': summarize_report(bundle['report'])}
 
 
 def publish_prepared(root, version, activate=False):
@@ -415,6 +446,13 @@ def publish_prepared(root, version, activate=False):
     for name, sha in manifest['files'].items():
         if digest(checked_path(stage, name)) != sha:
             raise ValueError('Prepared artifact hash mismatch: ' + name)
+    review_files = manifest.get('decision_review', {})
+    if review_files and set(review_files) != {'decision-review/review.json', 'decision-review/assessment.yaml',
+                                              'decision-review/transcriptions.json'}:
+        raise ValueError('Prepared review inventory mismatch')
+    for name, sha in review_files.items():
+        if digest(checked_path(stage, name)) != sha:
+            raise ValueError('Prepared review hash mismatch: ' + name)
     for name, sha in manifest['schemas'].items():
         if digest(checked_path(models / 'schemas', name)) != sha:
             raise ValueError('Model contract changed since preparation: ' + name)
@@ -450,6 +488,8 @@ def publish_prepared(root, version, activate=False):
     write(revision_dir / 'backlog.yaml', snapshot)
     write(decision_path, decisions)
     write(proof_dir / 'source-records.json', provenance)
+    for name in review_files:
+        write(checked_path(revision_dir, name), read(checked_path(stage, name)))
     for item in manifest['deferred']:
         write(checked_path(revision_dir, item['path']), read(checked_path(stage, item['path'])))
     write(release_dir / 'model.yaml', release)
@@ -494,6 +534,9 @@ def publish_prepared(root, version, activate=False):
               'changes_path': 'changes.json', 'changes_sha256': digest(release_dir / 'changes.json'),
               'prepared_manifest_sha256': digest(stage / 'manifest.json'),
               'note': 'Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques.'}
+    if review_files:
+        output['decision_review'] = {f'../../revisions/{version}/{name}': digest(revision_dir / name)
+                                     for name in review_files}
     write(release_dir / 'manifest.json', output)
     if 'modeling_guide' in manifest:
         carry_association(root, pointer['version'], version, manifest['modeling_guide'])
@@ -519,9 +562,62 @@ def summarize_report(report):
         'glossary_reference_impacts': report['glossary_reference_impacts'],
         'deferred_artifacts': dict(Counter(a['comparison'] for a in report['deferred_artifacts'])),
         'backlog_only': report['backlog_only'],
-        'detail': 'Use report --full or report --output PATH for all fields and validation errors.',
+        'detail': 'Read saved results with inspect PATH --section SECTION --id ID. For a new diagnostic, report --output NEW_PATH saves all details.',
         'publication_is_business_validation': False,
     }
+
+
+def inspect_artifact(path, section=None, identifier=None, offset=0, limit=20, full=False):
+    """Read a saved report/review only: no candidate build, validation or publication."""
+    path = Path(path)
+    if offset < 0 or not 1 <= limit <= 100:
+        raise ValueError('Use offset >= 0 and limit between 1 and 100')
+    if path.is_dir():
+        path = path / ('review.json' if section in ('review', 'review-context') else 'report.json')
+    document = read(path)
+    if not section and not identifier:
+        return summarize_report(document)
+    section = section or 'changes'
+    rows = []
+    if section == 'review':
+        rows = document['items']
+    elif section == 'review-context':
+        rows = document['global_context_changes']
+    elif section == 'errors':
+        rows = [{'error': value} for value in document['validation_errors']]
+    elif section == 'decisions':
+        rows = ([{'state': 'deferred', **v} for v in document['deferred_decisions']]
+                + [{'state': state, 'id': v} for state, key in (('retained', 'retained_decision_ids'), ('new', 'new_decision_ids'))
+                   for v in document[key]])
+    elif section == 'context':
+        rows = document['deferred_artifacts']
+    elif section == 'changes':
+        for collection, delta in document['changes'].items():
+            if isinstance(delta, list):
+                rows.extend({'collection': collection, **v} for v in delta)
+            else:
+                for action, items in delta.items():
+                    for item in items:
+                        if action == 'modified':
+                            rows.extend({'collection': collection, 'action': action, 'id': item['id'], **v}
+                                        for v in item['changes'])
+                        else:
+                            rows.append({'collection': collection, 'action': action, 'id': item['id'], 'value': item})
+    else:
+        raise ValueError('Unknown report section: ' + section)
+    if identifier:
+        rows = [r for r in rows if identifier in (r.get('id'), r.get('decision_id'),
+                 r.get('target', {}).get('id') if isinstance(r.get('target'), dict) else r.get('target'))]
+    selected = rows[offset:offset + limit]
+    if not full:
+        def preview(value):
+            text = json.dumps(value, ensure_ascii=False)
+            return value if len(text) <= 1200 else {'preview': text[:1200], 'truncated': True,
+                                                   'value_sha256': canonical_sha256(value)}
+        selected = [{key: preview(value) for key, value in row.items()} for row in selected]
+    return {'artifact': str(path), 'section': section, 'total': len(rows), 'offset': offset,
+            'returned': len(selected), 'next_offset': offset + len(selected) if offset + len(selected) < len(rows) else None,
+            'items': selected, 'note': 'Saved evidence only; not a fresh validation. --full keeps complete values.'}
 
 
 def main():
@@ -537,12 +633,27 @@ def main():
         if command == 'report':
             child.add_argument('--full', action='store_true', help='Print the complete detailed report')
             child.add_argument('--output', type=Path, help='Save the complete detailed report to a new file')
+            child.add_argument('--review-output', type=Path, help='Create a reassessment dossier and pending assessment; requires version/source')
+        else:
+            child.add_argument('--review', type=Path, help='Dossier with explicitly completed assessment.yaml')
+    child = commands.add_parser('inspect', help='Read saved evidence without rebuilding a candidate')
+    child.add_argument('path', type=Path)
+    child.add_argument('--section', choices=['changes', 'decisions', 'errors', 'context', 'review', 'review-context'])
+    child.add_argument('--id', dest='identifier')
+    child.add_argument('--offset', type=int, default=0)
+    child.add_argument('--limit', type=int, default=20)
+    child.add_argument('--full', action='store_true')
     child = commands.add_parser('publish')
     child.add_argument('--version', required=True)
     child.add_argument('--activate', action='store_true')
     args = parser.parse_args()
     if args.command == 'report':
-        result = build_candidate(args.root, args.version, args.source, args.decisions)['report']
+        if args.review_output and (not args.version or not args.source or args.decisions):
+            parser.error('--review-output requires --version and --source, without --decisions')
+        bundle = build_candidate(args.root, args.version, args.source, args.decisions,
+                                 include_review=bool(args.review_output))
+        result = bundle['report']
+        review_result = decision_review.save_review(args.review_output, bundle['review'], result) if args.review_output else None
         if args.output:
             # Exclusive creation prevents overwriting a source or publication.
             with args.output.open('x', encoding='utf-8') as stream:
@@ -552,8 +663,12 @@ def main():
             result = summarize_report(result)
         if args.output:
             result['detailed_report'] = str(args.output)
+        if review_result:
+            result['reassessment'] = review_result
     elif args.command == 'prepare':
-        result = prepare(args.root, args.version, args.source, args.decisions)
+        result = prepare(args.root, args.version, args.source, args.decisions, review_path=args.review)
+    elif args.command == 'inspect':
+        result = inspect_artifact(args.path, args.section, args.identifier, args.offset, args.limit, args.full)
     else:
         result = publish_prepared(args.root, args.version, args.activate)
     print(json.dumps(result, ensure_ascii=False, indent=2))

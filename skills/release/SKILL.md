@@ -37,7 +37,7 @@ Chaque publication produit une courte `release-notes.md` et un descripteur immua
 
 ## Préparer un contenu contrôlable
 
-Corriger les incohérences établies dans le backlog, avec leurs sources ; les révisions sont calculées automatiquement, puis refaire le rapport. Après suspension d’une validation, vérifier aussi les notes narratives : un ancien commentaire « validé » doit être présenté comme historique et ne pas qualifier la nouvelle révision. Ne pas inventer de décision métier pour faire réussir un contrôle.
+Corriger les incohérences établies dans le backlog, avec leurs sources ; les révisions sont calculées automatiquement. Regrouper les corrections, puis passer à la préparation finale si aucun réexamen intermédiaire n’est nécessaire : elle fournit son rapport complet et sa synthèse sans appel préalable supplémentaire à `report`. Après suspension d’une validation, vérifier aussi les notes narratives : un ancien commentaire « validé » doit être présenté comme historique et ne pas qualifier la nouvelle révision. Ne pas inventer de décision métier pour faire réussir un contrôle.
 
 Une validation antérieure est conservée automatiquement uniquement pour une même identité, une même révision et des valeurs approuvées inchangées. Un changement de révision ou de valeur suspend la reprise automatique ; l’accord historique reste conservé. Le rapport rend cette suspension visible. Une nouvelle validation exige une décision sourcée conforme au schéma, avec un nouvel identifiant, la version préparée et la portée réellement adoptée. Une décision sur un nom n’adopte pas la définition ni le rattachement. Les contenus qui restent proposés peuvent néanmoins être publiés.
 
@@ -48,6 +48,19 @@ python scripts/prepare_release.py prepare --version VERSION --source SOURCE
 ```
 
 Répéter `--source` si nécessaire. Ajouter `--decisions chemin.json` seulement pour des décisions nouvelles réellement sourcées ; ne pas recopier tout l’ancien catalogue. Les décisions antérieures compatibles sont reprises automatiquement.
+
+Si des accords sont suspendus, utiliser le dossier maintenu dès le diagnostic, sans script ponctuel :
+
+```powershell
+python scripts/prepare_release.py report --version VERSION --source SOURCE --review-output .runtime/review-VERSION
+python scripts/prepare_release.py inspect .runtime/review-VERSION --section review --id IDENTIFIANT --full
+```
+
+Examiner les valeurs approuvées, leurs empreintes, les changements de fiche, de relations et du glossaire dans `review.json`, avec `inspect DOSSIER --section review-context` pour les changements globaux et `report.json` pour les autres éléments. Ces fichiers restent intacts. Compléter uniquement `assessment.yaml` : auteur du réexamen dans `reviewer`, puis `retain` ou `defer` et une justification de portée pour chaque entrée. Les choix commencent à `pending` ; l’éligibilité calculée ne vaut pas confirmation du sens. Ce réexamen peut être effectué par l’agent dans la portée déjà autorisée, comme pour les transcriptions antérieures ; une décision métier nouvelle ou complexe reste à arbitrer selon les instructions de Laurent. Aucun accord élargi par automatisation.
+
+`prepare --version VERSION --source SOURCE --review .runtime/review-VERSION` construit le candidat final une seule fois et vérifie le dossier contre les entrées, le contrat, le code et la publication de départ. Une valeur approuvée modifiée ou retirée ne peut pas être transcrite. Les reprises conservent auteur, date, sources et champs de l’accord historique, sous de nouveaux identifiants ; les preuves sont figées avec la préparation puis archivées lors de la publication. Tout dossier périmé doit être régénéré après correction, sans retoucher ses empreintes.
+
+Après préparation, lire `prepare_release.py inspect modeles/staging/VERSION` pour la synthèse et ajouter `--id IDENTIFIANT`, `--section errors`, `--section decisions` ou `--section context` pour les détails paginés. Ces lectures ne reconstruisent pas le candidat. Pour les preuves de réexamen préparées : `inspect modeles/staging/VERSION/decision-review --section review`. Ne pas relancer `report` uniquement pour relire les résultats déjà figés.
 
 La préparation écrit uniquement `modeles/staging/<version>/` : `report.json`, `candidate.yaml`, manifeste, backlog, décisions et preuves figés. Examiner les différences et les éventuelles validations suspendues avant publication, puis présenter un bilan concis à Laurent en poursuivant l’opération déjà demandée. Une erreur d’intégrité empêche de publier ; un statut non validé n’est pas une erreur.
 

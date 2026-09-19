@@ -1,0 +1,26 @@
+{
+  "targeted_read": {
+    "seconds": 1.61,
+    "returncode": 0,
+    "stdout_bytes": 16,
+    "stderr_bytes": 0
+  },
+  "validation": {
+    "seconds": 4.625,
+    "returncode": 0,
+    "stdout_bytes": 340,
+    "stderr_bytes": 0
+  },
+  "render_backlog": {
+    "seconds": 0.183,
+    "returncode": 0,
+    "stdout_bytes": 34,
+    "stderr_bytes": 0
+  },
+  "release_report": {
+    "seconds": 6.359,
+    "returncode": 0,
+    "stdout_bytes": 1350,
+    "stderr_bytes": 0
+  }
+}

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent, type RefObject } from 
 import { ChevronDown, ChevronRight, Search, X, PanelLeftClose, Compass, BookOpen, Lightbulb } from 'lucide-react';
 import type { AtlasNode, PublishedModel } from '../types';
 import { childrenOf, lineageOf, parentRelationOf, rootsOf } from '../model';
-import { searchPublication, type SearchResult } from '../search';
+import { searchPublication } from '../search';
 import { kindLabel } from '../presentation';
 import { NodeIcon } from '../icons';
 import { startsDecisionSection } from '../capabilityTypes';
@@ -26,7 +26,7 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     return new Set(Array.isArray(saved) ? saved.filter(x => typeof x === 'string') : []);
   });
   const [focused, setFocused] = useState(route.node);
-  const searching = Boolean(route.query || route.type);
+  const searching = Boolean(route.query.trim());
   useEffect(() => {
     const ancestors = lineageOf(model, route.node).map(n => n.id);
     setExpanded(previous => new Set([...previous, ...ancestors]));
@@ -107,21 +107,16 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
       {children.length > 0 && isExpanded && <ul role="group">{children.map((child, index) => renderNode(child, depth + 1, startsDecisionSection(children, index)))}</ul>}
     </li>;
   };
-  const results: SearchResult[] = route.query.trim() ? searchPublication(model, route.query)
-    : route.type === 'glossary' ? model.glossary.map(term => ({ id: term.id, kind: 'glossary', name: term.name, excerpt: '', score: 0, term }))
-    : model.nodes.map(node => ({ id: node.id, kind: 'model', name: node.name, excerpt: '', score: 0, node }));
-  const matches = results.filter(result => !route.type || (result.kind !== 'model' ? route.type === result.kind : result.node?.kind === route.type));
-  const kinds = [...new Set(model.nodes.map(n => n.kind))];
+  const matches = searching ? searchPublication(model, route.query) : [];
+  const revision = model.revision ? `v${String(model.revision).padStart(3, '0')}` : model.version;
+  const publicationLabel = `Version du modèle complet : ${revision} · ${model.version}. ${route.version ? 'Publication fixe' : 'Publication courante, actualisée automatiquement'}.`;
   return <aside ref={panel} id="atlas-tree-panel" className={`sidebar ${open ? 'open' : ''}`} aria-label="Navigation du modèle" aria-modal={mobile && open ? true : undefined} role={mobile && open ? 'dialog' : undefined}>
     <div className="sidebar-heading"><button className="root-link" onClick={() => onNavigate('')}><Compass size={20} />Urbanisation</button>
       <button className="drawer-close" aria-label="Fermer l’arbre" onClick={onClose}><PanelLeftClose size={20} /></button></div>
     <div className="search-box"><Search size={17} /><input ref={searchRef} id="fa-search" aria-label="Rechercher dans le modèle publié" placeholder="Un nom, une idée, un repère…" value={route.query} onChange={e => onSearch({ query: e.target.value })} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); panel.current?.querySelector<HTMLButtonElement>('[data-search-result]')?.focus(); }
-      if (e.key === 'Escape') onSearch({ query: '', type: '', status: '' });
-    }} />{searching ? <button aria-label="Effacer la recherche et les filtres" onClick={() => onSearch({ query: '', type: '', status: '' })}><X size={14} /></button> : <kbd>Ctrl K</kbd>}</div>
-    <div className="search-filters">
-      <select id="fa-type" aria-label="Type d’élément" value={route.type} onChange={e => onSearch({ type: e.target.value })}><option value="">Tous les types</option>{kinds.map(kind => <option key={kind} value={kind}>{({ capability: 'Capacités', behavior: 'Comportements', domain: 'Domaines', reference: 'Référentiels', group: 'Univers et groupes', object: 'Objets métier', document: 'Documents', event: 'Événements' } as Record<string, string>)[kind] || kind}</option>)}<option value="glossary">Termes du glossaire</option></select>
-    </div>
+      if (e.key === 'Escape') onSearch({ query: '', status: '' });
+    }} />{route.query ? <button aria-label="Effacer la recherche" onClick={() => onSearch({ query: '', status: '' })}><X size={14} /></button> : <kbd>Ctrl K</kbd>}</div>
     {searching ? <div className="search-results" aria-label="Résultats de recherche"><p role="status">{matches.length} résultat{matches.length > 1 ? 's' : ''}</p>{matches.map(result => <button key={`${result.kind}:${result.id}`} data-search-result={result.id} onClick={() => result.kind === 'glossary' ? onOpenTerm(result.id) : onNavigate(result.id, true)} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); (e.currentTarget.nextElementSibling as HTMLElement)?.focus(); }
       if (e.key === 'ArrowUp') { e.preventDefault(); const previous = e.currentTarget.previousElementSibling; previous?.tagName === 'BUTTON' ? (previous as HTMLElement).focus() : searchRef.current?.focus(); }
@@ -132,6 +127,6 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
       <button className="glossary-nav" onClick={() => onOpenGlossary('meta')} aria-current={route.view === 'glossary' && route.glossary === 'meta' ? 'page' : undefined}><BookOpen size={17}/>Glossaire du méta modèle</button>
       <button className="glossary-nav principles-nav" onClick={onOpenPrinciples} aria-current={route.view === 'principles' ? 'page' : undefined}><Lightbulb size={17}/>Comprendre le méta modèle</button>
     </nav>
-    <div className="sidebar-bottom"><div className="sidebar-stats"><span>{model.nodes.length} éléments</span><span>{model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}</span></div><img className="beaumanoir-source-logo" src="/assets/beaumanoir-original.png" width="1564" height="605" alt="Groupe Beaumanoir" /></div>
+    <div className="sidebar-bottom"><div className="sidebar-stats"><span id="fa-version" className="model-version" data-version={model.version} title={publicationLabel} aria-label={publicationLabel}><span className={`live-dot ${route.version ? 'fixed' : ''}`} aria-hidden="true"/>Modèle · {revision}</span><span>{model.nodes.length} éléments</span><span>{model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}</span></div><img className="beaumanoir-source-logo" src="/assets/beaumanoir-original.png" width="1564" height="605" alt="Groupe Beaumanoir" /></div>
   </aside>;
 }

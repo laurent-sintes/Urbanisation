@@ -246,6 +246,37 @@ Après une modification, utiliser la matrice de contrôles d’[AGENTS.md](../AG
 
 `prepare_release.py report` affiche une synthèse avec le nombre d’erreurs et l’aptitude à préparer une release. `--full` imprime tous les détails ; `--output chemin-nouveau.json` enregistre le rapport complet dans un nouveau fichier, sans écraser un fichier existant. Les vérifications et le rapport figé d’une préparation restent complets.
 
+### Parcours maintenu de réexamen des accords
+
+Le diagnostic peut produire en une seule construction un dossier de comparaison et de réexamen. `VERSION` est une version neuve et `SOURCE` la contribution autorisant la publication considérée. Ces commandes ne publient rien :
+
+```powershell
+python scripts/prepare_release.py report --version VERSION --source SOURCE --review-output .runtime/review-VERSION
+python scripts/prepare_release.py inspect .runtime/review-VERSION --section review --id IDENTIFIANT --full
+python scripts/prepare_release.py inspect .runtime/review-VERSION --section review-context --limit 10
+python scripts/prepare_release.py inspect .runtime/review-VERSION --id IDENTIFIANT --limit 10
+```
+
+Le dossier contient `report.json`, `review.json` et `assessment.yaml`. Les deux JSON sont des preuves à ne pas éditer. Le réexamen montre les valeurs approuvées avant/après et leurs empreintes, les changements de la fiche, des relations incidentes et du contexte global, ainsi que les impacts du glossaire. Une valeur inchangée peut changer de sens dans son contexte : l’éligibilité au réexamen n’est pas un accord. La synthèse et les pages de détail sont lisibles avec `inspect`, sans nouvelle construction ni validation ; leur ancienneté reste celle du dossier.
+
+Après lecture, remplir seulement `assessment.yaml` : `reviewer` identifie celui qui examine, et chaque entrée reçoit `retain` ou `defer` avec une `rationale` explicite sur la portée. Toutes les entrées commencent à `pending`. Ne pas remplir les choix mécaniquement depuis l’éligibilité. `retain` transcrit exclusivement une décision acceptée dont toutes les valeurs approuvées sont inchangées. Il ne reprend aucun champ nouveau ; auteur, date, sources et portée de l’accord initial sont conservés. Une valeur modifiée ou retirée impose `defer`, ou une véritable nouvelle décision sourcée fournie séparément par `--decisions`. Aucun nouvel accord métier n’est déduit du dossier.
+
+```powershell
+python scripts/prepare_release.py prepare --version VERSION --source SOURCE --review .runtime/review-VERSION
+python scripts/prepare_release.py inspect modeles/staging/VERSION
+python scripts/prepare_release.py inspect modeles/staging/VERSION --section errors
+```
+
+La préparation reconstruit une fois le candidat final, revérifie le dossier contre les sources courantes, puis fige décisions, réexamen et preuves dans `decision-review/`. Les modifications d’entrées, de contrat, de code, de version de base ou de paramètres invalident le dossier ; le recréer après correction. Le rapport de préparation est déjà disponible : ne pas relancer `report` pour le relire. La publication conserve ses contrôles complets et archive les preuves sous `modeles/revisions/VERSION/decision-review/` avec empreintes dans le manifeste. La modification ultérieure du dossier de travail ne change pas ces preuves figées.
+
+### Mesurer le parcours sans toucher au modèle
+
+```powershell
+python scripts/benchmark_reference_update.py --iterations 3 --output CHEMIN_NEUF.json
+```
+
+Le benchmark copie seulement les entrées utiles dans des dossiers jetables sous `.runtime/reference-benchmark/`, y simule une précision de note éditoriale, puis compare quatre constructions successives au parcours diagnostic + préparation. Les décisions simulées sont propres à ces copies et ne valent aucun réexamen réel. Aucun appel de publication ; les fichiers sources sont contrôlés inchangés. Exécuter seul, sans suite de tests ou autre charge concurrente. Les temps couvrent le travail Python, pas les lectures et raisonnements du LLM ni le réexamen métier réel. Les copies préparatoires sont exclues des temps comparés.
+
 `python -m scripts.render_behavior_gap_audit` réutilise un contrôle réussi uniquement si les empreintes des modèles, historiques, preuves protégées, vues et scripts sont identiques. Le checkpoint local est dans `.runtime/behavior-audit-checkpoint.json`, hors Git. Tout changement, disparition, ajout ou cache invalide impose le rejeu. `--full` force ce rejeu ; `--details` affiche toutes les vérifications. Un échec supprime le checkpoint précédent. Une modification d’entrée pendant le contrôle interdit de mémoriser sa réussite. Ce cache de vérification n’accorde aucune validation métier et n’est jamais utilisé par la publication. Python `-O` est refusé pour conserver les assertions.
 
 Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 32 Mio de fichiers sources (les objets Python peuvent occuper davantage). Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.

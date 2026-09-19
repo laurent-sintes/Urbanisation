@@ -95,20 +95,17 @@
 
 /* U458: reader hierarchy, neutral surfaces and restrained accents. */
 .breadcrumb-row nav, .eyebrow, .tree-row small, .search-box,
-.search-results > p, .search-results small, .reading-label { color: #465f58; }
-.reading-label { font-size: 12px; }
+.search-results > p, .search-results small { color: #465f58; }
 .tree-row.selected small { color: #355a50; }
 .breadcrumb-row nav { font-size: 13px; }
 .eyebrow { font-size: 12px; }
 .tree-label, .search-box input, .search-results strong { font-size: 14px; }
 .tree-row small, .search-box kbd { font-size: 11px; }
 .tree-toggle { min-width: 24px; width: 24px; min-height: 30px; }
-.search-filters { margin-bottom: 12px; }
-.search-filters select { font-size: 13px; min-height: 34px; }
 .search-results small { font-size: 12px; }
 .search-excerpt { display: block; margin-top: 7px; font-size: 12px; line-height: 1.55; color: #334d45; }
 .sidebar-help { flex: 0 0 auto; padding: 8px 12px; border-top: 1px solid var(--line); }
-.sidebar-help .glossary-nav { width: 100%; margin: 2px 0; padding: 7px 8px; min-height: 34px; font-size: 12px; border: 0; background: transparent; }
+.sidebar-help .glossary-nav { width: 100%; margin: 2px 0; padding: 7px 8px; min-height: 34px; font-size: 12px; border: 0; background: transparent; justify-content: flex-start; text-align: left; }
 .sidebar-help .glossary-nav:hover, .sidebar-help .glossary-nav[aria-current="page"] { background: #eef1fa; }
 .sheet-toc { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .sheet-toc button { padding: 8px 12px; border: 1px solid #c0d2cc; border-radius: 6px; color: var(--flow-green); background: white; font-size: 14px; }

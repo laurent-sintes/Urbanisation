@@ -1,16 +1,16 @@
 from copy import deepcopy
 from hashlib import sha256
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 from scripts.structured_io import dumps, read
 from scripts.modeling_guide_publication import capture_association, verify_association, carry_association
+from scripts.test_publish_release import isolated_project
 
 class MethodologyPublicationTests(unittest.TestCase):
     def setUp(self):
-        self.temp = TemporaryDirectory(dir=Path(__file__).resolve().parents[1] / 'app')
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # Inherit workspace ACLs, like the other publication fixtures. Python's
+        # TemporaryDirectory(mode=0700) excludes restricted Windows tokens.
+        self.root = self.enterContext(isolated_project())
         self.folder = self.root / 'modeles/modeling-guides'
         (self.folder / 'versions').mkdir(parents=True)
         self.guide = self.folder / 'versions/2026-09-19.1.yaml'

@@ -30,7 +30,7 @@ try {
   const heading = name => page.getByRole('heading', { level: 1, name, exact: true });
   const waitMap = async model => {
     await heading(nameOf(model, 'business-references')).waitFor();
-    await page.waitForFunction(version => document.querySelector('#fa-version')?.textContent.includes(version), model.version);
+    await page.waitForFunction(version => document.querySelector('#fa-version')?.dataset.version === version, model.version);
     const expected = childrenOf(model, 'business-references').map(node => node.id).sort();
     await page.waitForFunction(ids => JSON.stringify([...document.querySelectorAll('.business-card')].map(card => card.dataset.nodeId).sort()) === JSON.stringify(ids), expected);
     await page.waitForFunction(() => {

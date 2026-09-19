@@ -8,6 +8,8 @@ Sur grand écran, le fil d’Ariane et la copie du lien occupent la barre FLOW d
 
 Un changement de vue ou de périmètre remet le contenu en haut ; un lien vers une section affiche directement cette section. La sélection d’une carte dans un même périmètre conserve la position de lecture. L’onglet **Fiche** permanent remplace le bouton « Ouvrir la fiche » en bas de la carte. L’ouverture de la fiche d’un autre élément depuis l’inspecteur de relations reste disponible.
 
+Les accès aux deux glossaires et au guide du méta modèle sont alignés à gauche dans la navigation. La recherche porte sur tous les types, sans filtre ; les anciens paramètres `type` sont ignorés. La version du modèle complet apparaît une seule fois, sous la forme **Modèle · vNNN**, dans le pied de la navigation près des statistiques et du logo Beaumanoir. Son survol précise l’identifiant de publication et le suivi courant ou fixe ; elle n’est plus affichée dans le bandeau de chaque objet.
+
 Recette sur le serveur local compilé : `node app/verify-fixed-header.mjs`. Elle contrôle le défilement, les sélections, les liens de section, le clavier et les petits écrans.
 
 `node app/verify-shell.mjs` contrôle la répartition de la barre, les cinq tailles d’écran, la largeur variable de l’arbre, le logo, la copie de lien et l’accès clavier. L’option `--baseline` mesure une version avant modification pour comparer la hauteur réellement gagnée.

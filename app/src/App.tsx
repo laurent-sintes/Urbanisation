@@ -71,7 +71,7 @@ export function App() {
   const followReference = useCallback((kind: 'glossary' | 'model', id: string, section = '') => {
     changeRoute({ version: model?.version || route.version, view: kind === 'glossary' ? 'glossary' : section === 'market_comparisons' ? 'market' : 'sheet', glossary: isMetaTerm(id) ? 'meta' : 'model',
       node: kind === 'model' ? id : '', term: kind === 'glossary' ? id : '', section, principle: '',
-      scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', type: '', status: '' });
+      scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', status: '' });
     setDrawer(false);
     if (!section && kind === 'model') setTimeout(() => heading.current?.focus({ preventScroll: true }), 30);
   }, [changeRoute, model?.version, route.version, metaGlossary]);
@@ -81,7 +81,7 @@ export function App() {
     setTimeout(() => heading.current?.focus({ preventScroll: true }), 30);
   }, [changeRoute]);
   const openPrinciples = useCallback(() => {
-    changeRoute({ view: 'principles', principle: '', node: '', term: '', section: '', scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', type: '', status: '' });
+    changeRoute({ view: 'principles', principle: '', node: '', term: '', section: '', scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', status: '' });
     setDrawer(false);
     setTimeout(() => heading.current?.focus({ preventScroll: true }), 30);
   }, [changeRoute]);
@@ -101,7 +101,7 @@ export function App() {
   }, []);
   useEffect(() => {
     // Remember only the selected location. There is no visit history.
-    savePreference('selection', routeHash({ ...route, version: '', query: '', type: '', status: '', source: '', anchor: '', sourceId: '' }));
+    savePreference('selection', routeHash({ ...route, version: '', query: '', status: '', source: '', anchor: '', sourceId: '' }));
     history.replaceState({}, '', routeHash(route));
   }, [route]);
   useEffect(() => savePreference('tree-width', width), [width]);
@@ -125,7 +125,7 @@ export function App() {
     return () => document.removeEventListener('keydown', shortcut);
   }, [mobile]);
   const navigate = useCallback((id: string, focusHeading = true) => {
-    changeRoute({ node: id, scope: '', view: undefined, term: '', principle: '', section: '', query: '', type: '', status: '', relation: '', source: '', anchor: '', sourceId: '' });
+    changeRoute({ node: id, scope: '', view: undefined, term: '', principle: '', section: '', query: '', status: '', relation: '', source: '', anchor: '', sourceId: '' });
     setDrawer(false);
     if (focusHeading) setTimeout(() => heading.current?.focus({ preventScroll: true }), 50);
   }, [changeRoute]);
@@ -146,7 +146,6 @@ export function App() {
       setAnnouncement('Lien copié vers cette publication.');
     } catch { setAnnouncement('La copie est indisponible. Tu peux copier l’adresse dans le navigateur.'); }
   };
-  const revision = model?.revision ? `v${String(model.revision).padStart(3, '0')}` : 'Publication';
   const breadcrumbs = <nav className="breadcrumb" aria-label="Fil d’Ariane"><button onClick={() => navigate('')} aria-current={!headingNode && !referenceView ? 'page' : undefined}>Urbanisation</button>{headingNode && model && lineageOf(model, headingNode.id).map(node => <span key={node.id}><ChevronRight size={12} /><button title={node.name} onClick={() => navigate(node.id)} aria-current={headingNode.id === node.id ? 'page' : undefined}>{node.name}</button></span>)}{referenceView && <span><ChevronRight size={12}/><span aria-current="page">{view === 'principles' ? 'Comprendre le méta modèle' : glossaryTitle}</span></span>}</nav>;
   const shareButton = <button className="share-button" aria-label="Copier le lien" title="Copier le lien" onClick={copyLink}><Copy size={16} /><span>Copier le lien</span></button>;
   return <ModelLinksProvider value={{ model: model || null, route, onFollow: followReference }}><div className="atlas-shell" style={{ '--sidebar': `${width}px` } as CSSProperties}>
@@ -175,12 +174,12 @@ export function App() {
           <h1 id="page-title" ref={heading} tabIndex={-1}>{view === 'principles' ? 'Comprendre le méta modèle' : view === 'glossary' ? glossaryTitle : headingNode?.name || 'Urbanisation'}</h1>
           {view !== 'sheet' && <p><ModelText text={view === 'principles' ? 'Six repères pour lire la carte et contribuer à sa construction.' : view === 'glossary' ? 'Les notions et leurs définitions dans la publication consultée.' : headingNode?.purpose || (headingNode ? 'Explore cet élément et ses relations dans le modèle publié.' : 'Parcours les univers, explore les capacités et découvre les liens qui les relient.')}/></p>}
         </div></header>
-        <div className="view-bar"><div className="view-tabs" style={referenceView ? { display: 'none' } : undefined} role="tablist" aria-label="Vue du modèle">{([{ id: 'map', label: 'Carte', Icon: LayoutGrid }, { id: 'sheet', label: 'Fiche', Icon: FileText }, { id: 'relations', label: 'Relations', Icon: GitBranch }, { id: 'market', label: 'Marché & choix', Icon: BookOpen }] as const).filter(tab => selected || !['sheet', 'market'].includes(tab.id)).map(tab => <button key={tab.id} role="tab" id={`tab-${tab.id}`} aria-controls="atlas-view" tabIndex={view === tab.id ? 0 : -1} aria-selected={view === tab.id} onClick={() => changeRoute({ view: tab.id, relation: '', section: '' })} onKeyDown={e => {
+        {!referenceView && <div className="view-bar"><div className="view-tabs" role="tablist" aria-label="Vue du modèle">{([{ id: 'map', label: 'Carte', Icon: LayoutGrid }, { id: 'sheet', label: 'Fiche', Icon: FileText }, { id: 'relations', label: 'Relations', Icon: GitBranch }, { id: 'market', label: 'Marché & choix', Icon: BookOpen }] as const).filter(tab => selected || !['sheet', 'market'].includes(tab.id)).map(tab => <button key={tab.id} role="tab" id={`tab-${tab.id}`} aria-controls="atlas-view" tabIndex={view === tab.id ? 0 : -1} aria-selected={view === tab.id} onClick={() => changeRoute({ view: tab.id, relation: '', section: '' })} onKeyDown={e => {
           if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
           e.preventDefault(); const items = [...e.currentTarget.parentElement!.querySelectorAll<HTMLButtonElement>('button')];
           items[(items.indexOf(e.currentTarget) + (e.key === 'ArrowRight' ? 1 : items.length - 1)) % items.length].click();
           items[(items.indexOf(e.currentTarget) + (e.key === 'ArrowRight' ? 1 : items.length - 1)) % items.length].focus();
-        }}><tab.Icon size={16} />{tab.label}{tab.id === 'relations' && selected && !['group', 'domain', 'reference'].includes(selected.kind) && <span className="count">{links.length}</span>}</button>)}</div><div className="view-context">{view === 'map' && selected && selected.id !== headingNode?.id && <span className="view-selection" title={`Sélection : ${selected.name}`}>Sélection : {selected.name}</span>}<span id="fa-version" className="reading-label">{revision} · {model.version}<span className={`live-dot ${route.version ? 'fixed' : ''}`} title={route.version ? 'Version fixe' : 'Suit la publication courante'} /></span></div></div>
+        }}><tab.Icon size={16} />{tab.label}{tab.id === 'relations' && selected && !['group', 'domain', 'reference'].includes(selected.kind) && <span className="count">{links.length}</span>}</button>)}</div>{view === 'map' && selected && selected.id !== headingNode?.id && <div className="view-context"><span className="view-selection" title={`Sélection : ${selected.name}`}>Sélection : {selected.name}</span></div>}</div>}
         </div>
         <div className="workspace-content" ref={content} tabIndex={0} role="region" aria-label="Contenu de la vue">
         <div id="atlas-view" role={referenceView ? 'region' : 'tabpanel'} aria-labelledby={referenceView ? 'page-title' : `tab-${['sheet', 'market'].includes(view) && !selected ? 'map' : view}`}>

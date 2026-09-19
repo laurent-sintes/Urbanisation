@@ -1,0 +1,48 @@
+{
+  "measurements": {
+    "targeted_read": {
+      "before_s": 1.522,
+      "after_median_s": 0.127,
+      "after_samples_s": [
+        0.125,
+        0.127,
+        0.13
+      ],
+      "reduction_percent": 91.7
+    },
+    "validation": {
+      "before_s": 6.031,
+      "after_median_s": 1.005,
+      "after_samples_s": [
+        0.917,
+        1.005,
+        1.02
+      ],
+      "reduction_percent": 83.3
+    },
+    "render_backlog": {
+      "before_s": 1.787,
+      "after_median_s": 0.185,
+      "after_samples_s": [
+        0.17,
+        0.185,
+        0.197
+      ],
+      "reduction_percent": 89.6
+    },
+    "release_report": {
+      "before_s": 10.323,
+      "after_median_s": 1.742,
+      "after_samples_s": [
+        2.156,
+        1.684,
+        1.742
+      ],
+      "reduction_percent": 83.1
+    }
+  },
+  "business_and_frozen_files_unchanged": 777,
+  "query_output_bytes": 6111,
+  "model_bytes": 1320669,
+  "agents_words": 1783
+}

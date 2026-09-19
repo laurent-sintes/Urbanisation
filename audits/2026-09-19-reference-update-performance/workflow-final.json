@@ -1,0 +1,96 @@
+{
+  "scenario": "One editorial note changed; historical approved values unchanged",
+  "target": "D04.j",
+  "iterations": 3,
+  "median_seconds": {
+    "repeated": 18.3318,
+    "maintained": 14.5311
+  },
+  "reduction_percent": 20.7,
+  "copied_files_per_fixture": 147,
+  "copied_bytes_per_fixture": 12233055,
+  "live_inputs_unchanged": true,
+  "publication_performed": false,
+  "limits": "Local Python workflow only; excludes copying, LLM generation and real semantic reassessment. Caches are reused.",
+  "samples": {
+    "repeated": [
+      {
+        "seconds": 26.9305,
+        "steps": {
+          "diagnostic": 10.6635,
+          "repeated_review_build": 2.2668,
+          "dossier": 0.0129,
+          "repeated_final_build": 1.6811,
+          "prepare": 12.2835
+        },
+        "candidate_builds": 4,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      },
+      {
+        "seconds": 17.9806,
+        "steps": {
+          "diagnostic": 2.4387,
+          "repeated_review_build": 1.672,
+          "dossier": 0.0104,
+          "repeated_final_build": 1.6807,
+          "prepare": 12.1621
+        },
+        "candidate_builds": 4,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      },
+      {
+        "seconds": 18.3318,
+        "steps": {
+          "diagnostic": 2.2662,
+          "repeated_review_build": 1.6334,
+          "dossier": 0.0096,
+          "repeated_final_build": 1.6721,
+          "prepare": 12.7331
+        },
+        "candidate_builds": 4,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      }
+    ],
+    "maintained": [
+      {
+        "seconds": 14.7717,
+        "steps": {
+          "diagnostic": 2.2463,
+          "dossier": 0.0102,
+          "inspect_saved": 0.0004,
+          "prepare": 12.5049
+        },
+        "candidate_builds": 2,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      },
+      {
+        "seconds": 14.4119,
+        "steps": {
+          "diagnostic": 2.2474,
+          "dossier": 0.0094,
+          "inspect_saved": 0.0006,
+          "prepare": 12.1437
+        },
+        "candidate_builds": 2,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      },
+      {
+        "seconds": 14.5311,
+        "steps": {
+          "diagnostic": 2.2785,
+          "dossier": 0.01,
+          "inspect_saved": 0.0004,
+          "prepare": 12.2306
+        },
+        "candidate_builds": 2,
+        "suspended_decisions_examined": 1,
+        "candidate_sha256_without_timestamps": "309284a3f5f628938bae62fcd47a54d811b8f176dfb682289031829d1caace0f"
+      }
+    ]
+  }
+}

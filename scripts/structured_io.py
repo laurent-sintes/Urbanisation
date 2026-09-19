@@ -13,6 +13,10 @@ from collections import OrderedDict
 from copy import deepcopy
 from hashlib import sha256
 from threading import RLock
+try:
+    from . import parsed_cache
+except ImportError:
+    import parsed_cache
 
 DEPENDENCIES = Path(__file__).resolve().parents[1] / '.tools/yaml-runtime'
 if DEPENDENCIES.is_dir():
@@ -94,6 +98,12 @@ _cache_bytes = 0
 _cache_lock = RLock()
 _CACHE_LIMIT = 32 * 1024 * 1024
 _CACHE_ENTRIES = 128
+# An implementation/runtime change invalidates persisted parses, including the
+# JSON-only contract and alias/duplicate rejection. Source bytes are always read.
+_PARSER_SIGNATURE = sha256(Path(__file__).read_bytes() +
+                          Path(parsed_cache.__file__).read_bytes() +
+                          (sys.version + yaml.__version__).encode()).digest()
+_DISK_MIN_BYTES = 4096
 
 
 def clear_read_cache():
@@ -113,7 +123,18 @@ def read(path):
         if cached is not None:
             _cache.move_to_end(key)
             return deepcopy(cached[0])
-        value = loads(content.decode('utf-8-sig'), path.suffix)
+        disk_key = sha256(_PARSER_SIGNATURE + key[0].encode() + key[1]).hexdigest()
+        use_disk = key[0] in ('.yaml', '.yml') and len(content) >= _DISK_MIN_BYTES
+        value = parsed_cache.get(disk_key) if use_disk else parsed_cache.MISSING
+        if value is not parsed_cache.MISSING:
+            try:
+                check_values(value)
+            except ValueError:
+                value = parsed_cache.MISSING
+        if value is parsed_cache.MISSING:
+            value = loads(content.decode('utf-8-sig'), path.suffix)
+            if use_disk:
+                parsed_cache.put(disk_key, value)
         if len(content) <= _CACHE_LIMIT:
             _cache[key] = (value, len(content))
             _cache_bytes += len(content)

@@ -1,0 +1,29 @@
+{
+  "AGENTS.md": {
+    "bytes": 14763,
+    "lines": 97,
+    "words": 1899
+  },
+  "CONVENTIONS-MODELE.md": {
+    "bytes": 41267,
+    "lines": 139,
+    "words": 5272
+  },
+  "modeles\\backlog\\model.yaml": {
+    "bytes": 1320669,
+    "lines": 27832,
+    "words": 144486
+  },
+  "modeles\\backlog\\glossary.yaml": {
+    "bytes": 140917,
+    "lines": 2621,
+    "words": 16872
+  },
+  "connaissance\\01-contributions-utilisateur.md": {
+    "bytes": 388487,
+    "lines": 11867,
+    "words": 52536
+  },
+  "tracked_files": 1972,
+  "tracked_bytes": 178547849
+}

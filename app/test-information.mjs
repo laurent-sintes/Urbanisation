@@ -67,7 +67,7 @@ test('legacy information links return to the model with version and capability c
   assert.equal(route.information,undefined); assert.equal(route.node,'A');assert.equal(route.version,'2099-01-01.1');
   assert.equal(route.view,'sheet');assert.deepEqual(readRoute(routeHash(route)),route);
   const withoutNode=readRoute('#view=information&information=I1&type=information&version=2099-01-01.1');
-  assert.equal(withoutNode.view,'map'); assert.equal(withoutNode.type,'');
+  assert.equal(withoutNode.view,'map'); assert.ok(!routeHash(withoutNode).includes('type='));
   assert.equal(withoutNode.version,'2099-01-01.1');
   assert.ok(!routeHash({...route,view:'sheet'}).includes('information='));
   assert.equal(readRoute('#view=sheet&information=I1').information,undefined);

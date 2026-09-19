@@ -10,7 +10,7 @@ export interface GraphRoute {
 }
 export interface RouteState extends GraphRoute {
   node: string; scope: string; view?: View; version: string;
-  query: string; type: string; status: string; relation: string;
+  query: string; status: string; relation: string;
   source: string; anchor: string; sourceId: string;
   term?: string; section?: string;
   glossary?: 'model' | 'meta';
@@ -23,7 +23,6 @@ export function readRoute(hash: string): RouteState {
   const node = p.get('node') || '';
   // U470: old information links return to the model in the same publication.
   if (p.get('view') === 'information') p.set('view', node && !legacyRoots.includes(node) ? 'sheet' : 'map');
-  if (p.get('type') === 'information') p.delete('type');
   const requestedView = p.get('view') === 'sheet' && p.get('section') === 'market_comparisons' ? 'market' : p.get('view');
   const view = requestedView === 'market' && (!node || legacyRoots.includes(node)) ? 'map' : requestedView;
   const graph: GraphRoute = {};
@@ -43,7 +42,7 @@ export function readRoute(hash: string): RouteState {
     ...(p.has('term') ? { term: p.get('term') || '' } : {}),
     ...(p.get('glossary') === 'meta' ? { glossary: 'meta' as const } : {}),
     ...(p.has('section') ? { section: p.get('section') || '' } : {}),
-    version: p.get('version') || '', query: p.get('q') || '', type: p.get('type') || '',
+    version: p.get('version') || '', query: p.get('q') || '',
     status: p.get('status') || '', relation: p.get('relation') || '',
     source: p.get('source') || '', anchor: p.get('anchor') || '', sourceId: p.get('sourceId') || '',
   };
@@ -52,7 +51,7 @@ export function routeHash(route: RouteState): string {
   const p = new URLSearchParams();
   for (const [key, value] of Object.entries({
     version: route.version, node: route.node, scope: route.scope, view: route.view,
-    q: route.query, type: route.type, status: route.status, relation: route.relation,
+    q: route.query, status: route.status, relation: route.relation,
     source: route.source, anchor: route.anchor, sourceId: route.sourceId,
     term: route.term, section: route.section,
     glossary: route.view === 'glossary' ? route.glossary : undefined,

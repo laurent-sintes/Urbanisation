@@ -65,7 +65,7 @@ export function ReferenceLink({ kind = 'model', target, anchor, children, classN
   const description = plainInlineText(publicText(showBehaviors && node ? node.definition : term?.definition || term?.short_description || String(node?.fields.short_description || node?.purpose || node?.definition || 'Description non renseignée.')));
   const href = routeHash({ ...context.route, version: model.version, node: kind === 'model' ? target : '',
     view: kind === 'model' ? 'sheet' : 'glossary', term: kind === 'glossary' ? target : '', section: anchor || '',
-    scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', type: '', status: '' });
+    scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', status: '' });
   return <><a ref={link} className={`model-reference ${className || ''}`} href={href} aria-describedby={open ? id : undefined}
     onMouseEnter={show} onMouseLeave={hide} onFocus={show} onBlur={hide} onClick={event => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

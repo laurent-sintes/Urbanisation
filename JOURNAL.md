@@ -1907,3 +1907,25 @@ Release `2026-09-19.6` publiée et activée : univers Supply concret, projection
 Travaux accumulés du modèle Supply, d’Atlas et des publications jusqu’à v013 préparés pour le commit demandé. Suite complète : 144 tests Python du modèle réussis ; 40 tests du lecteur exécutés, dont 37 réussis et trois ignorés faute de création de liens symboliques Windows ; 82 tests frontend réussis. Validation, build et recette navigateur de l’état final déjà contrôlés lors des interventions et de la release.
 
 Deux fixtures de typage corrigées pour respecter le contrat historique des couches, import du test de pluralité marché compatible avec la découverte complète, dossiers temporaires `app/tmp*/` exclus de Git. Les tests de publication du guide ont été rejoués avec les droits Windows requis. Aucun code métier ou fichier publié modifié par ces corrections. Octets indexés identiques aux fichiers de travail ; les 64 espaces finaux de deux inventaires d’audit historiques sont conservés volontairement, sans reformater leurs preuves.
+
+## 19 septembre 2026 — performance des mises à jour par le LLM
+
+Périmètre précisé par Laurent : lenteur du travail sur le référentiel, pas de l’interface Atlas. Cache de parsing YAML persistant, vérifié par empreintes des contenus et du lecteur, ajouté sous `.runtime/` ; contrôles métier et intégrité toujours exécutés. Commande `inspect_model.py` pour lire les seules fiches et valeurs utiles. Fixtures du guide corrigées pour les droits Windows ; règles d’exécution ciblée ajoutées, huit paragraphes de cadrage déplacés intégralement vers les conventions.
+
+Mesures locales avec cache alimenté : validation 6,031 → 1,005 s, rapport de release 10,323 → 1,742 s, restitution backlog 1,787 → 0,185 s. Après invalidation du seul backlog : validation 2,275 s. Ces mesures ne quantifient pas la génération LLM. 153 tests modèle couverts, avec reprise ciblée réussie d’un renommage Windows transitoirement refusé ; 37 tests lecteur réussis et trois ignorés. 777 fichiers métier et preuves inchangés. Aucune publication ni intervention sur Atlas. [Audit, résultats et limites](audits/2026-09-19-reference-update-performance/rapport.md).
+
+## 19 septembre 2026 — Atlas : navigation et version globale
+
+Accès aux deux glossaires et au guide du méta modèle alignés à gauche. Filtre par type retiré de la recherche et des liens de navigation ; les anciens liens gardent leur texte de recherche et leur publication sans restriction invisible. Version déplacée du bandeau de chaque objet vers le pied de la navigation : « Modèle · v013 », près des statistiques et de Beaumanoir. Le survol précise l’identifiant complet et le suivi courant ou fixe. La rangée devenue vide dans les pages de référence est supprimée.
+
+83 tests frontend réussis et build actualisé. Recette de navigation sur cinq tailles d’écran, inspection des captures desktop/mobile et contrôle ciblé des trois pages de référence, de la recherche et de v012 fixe réussis, sans erreur navigateur. Modèle métier et publications inchangés.
+
+## 19 septembre 2026 — mise en œuvre des suites de l’audit de performance
+
+Dossier réutilisable de réexamen des accords : valeurs et empreintes, changements de fiche, de relations et de glossaire, choix explicites et justification de portée. Aucune reprise automatique depuis l’éligibilité ; valeurs modifiées exclues des transcriptions, portée historique conservée, preuves figées et contrôlées jusque dans l’archive. Commande `prepare_release.py inspect` pour lire les rapports par identifiant et section sans recalcul. Préparation finale en une construction ; procédures intégrées aux instructions et au skill release, copies projet/personnelle synchronisées.
+
+Benchmark maintenu sur une modification éditoriale de Purchase Order, dans des copies isolées des seules entrées utiles : quatre constructions contre deux, candidats identiques hors horodatages, médiane de trois passages 18,332 → 14,531 s (−20,7 %). Les 147 fichiers réels utilisés restent inchangés. Cette mesure ne quantifie ni la génération du LLM ni le réexamen sémantique réel. 52 tests ciblés réussis, dont 40 rejoués après le renforcement final des contrôles. Aucune publication réelle ni intervention Atlas, commit ou push. [Réalisation, mesures et limites](audits/2026-09-19-reference-update-performance/workflow-completion.md).
+
+## 19 septembre 2026 — contrôle du commit des optimisations et de la navigation
+
+Suite complète de 162 tests Python réussie ; contrôle du lecteur réussi et 40 tests exécutés, dont 37 réussis et trois ignorés pour les liens symboliques Windows. Les 83 tests frontend, le build et la recette sur cinq tailles restent valables sur le code inchangé depuis leur réussite. Validation du modèle sans erreur déjà réalisée sur cet état ; skill release validé et copies projet/personnelle identiques. Sur les 777 fichiers suivis par l’audit initial, 776 restent identiques et seul `modeles/README.md` porte l’ajout documentaire attendu du nouveau parcours. Aucun modèle, accord ou historique de publication modifié.

@@ -494,6 +494,20 @@ def _pointer(root, base, pointer, errors, hash_key="sha256"):
     return target, _load(target)
 
 
+def validate_decision_review(root, manifest_path, manifest):
+    """Optional reassessment evidence is immutable like the other frozen inputs."""
+    if 'decision_review' not in manifest:
+        return []
+    errors = []
+    prefix = f"../../revisions/{manifest['version']}/decision-review/"
+    expected = {prefix + name for name in ('review.json', 'assessment.yaml', 'transcriptions.json')}
+    if set(manifest['decision_review']) != expected:
+        return ['release: archived review inventory mismatch']
+    for relative, sha in manifest['decision_review'].items():
+        _pointer(root, manifest_path.parent, {'path': relative, 'sha256': sha}, errors)
+    return errors
+
+
 def validate_project(root=ROOT):
     root = Path(root).resolve()
     errors, counters = [], {}
@@ -514,6 +528,7 @@ def validate_project(root=ROOT):
         pointer = resolve_release(root / "modeles/release")
         release_path, release = _pointer(root, root / "modeles/release", pointer, errors)
         manifest = _load(release_path.parent / "manifest.json")
+        errors.extend(validate_decision_review(root, release_path.parent / 'manifest.json', manifest))
         if manifest.get("model_sha256") != pointer.get("sha256") or manifest.get("version") != release.get("version") or pointer.get("version") != release.get("version"):
             errors.append("release: pointer/manifest/model version or hash mismatch")
         _, snapshot = _pointer(root, release_path.parent, {"path": manifest["input_revision_path"], "sha256": manifest.get("input_revision_sha256")}, errors)

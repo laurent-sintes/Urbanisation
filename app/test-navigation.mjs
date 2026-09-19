@@ -5,7 +5,7 @@ import { readRoute, routeHash } from './src/navigation.ts';
 test('a shared link preserves its fixed publication, selection, source and literal characters', () => {
   const route = {
     ...readRoute(''), node: 'OBJ/été&1', scope: '@root', version: '2026-09-13.5', view: 'relations',
-    query: 'ordre & événement', type: 'object', status: 'partial', relation: 'REL-1',
+    query: 'ordre & événement', status: 'partial', relation: 'REL-1',
     source: 'connaissance/fichier avec espaces.md', anchor: 'référence-1', sourceId: 'U153',
   };
   assert.deepEqual(readRoute(routeHash(route)), route);
@@ -17,6 +17,11 @@ test('old space links use the published model and preserve actual node identitie
   assert.equal(route.version, '');
   assert.ok(!routeHash(route).includes('space='));
   for (const id of ['atlas', 'transactional', 'process']) assert.equal(readRoute(`#node=${id}`).node, '');
+});
+test('legacy type filters cannot restrict a shared search invisibly', () => {
+  const route = readRoute('#version=2026-09-19.6&node=D04&q=order&type=capability');
+  assert.deepEqual(route, readRoute('#version=2026-09-19.6&node=D04&q=order'));
+  assert.ok(!routeHash(route).includes('type='));
 });
 test('a direct capability URL leaves view selection to its published structure', () => {
   assert.equal(readRoute('#node=D04.e').view, undefined);
