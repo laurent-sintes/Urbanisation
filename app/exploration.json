@@ -27,24 +27,25 @@
     "D01.d": "inventaire comptage counting stocktaking physical inventory rapprochement écart",
     "D02.b": "protection allocation ressource quota",
     "D02.c": "réservation reserver reservation engagement",
-    "D02.e": "affectation affecter allocation supply assignment",
+    "D02.e": "affectation ressources commandes supply assignment valeur plan",
     "D03": "promesse promettre ATP disponible virtuel",
-    "D03.a": "proposition promesse ATP quantité date",
-    "D03.b": "confirmation confirmer promesse engagement",
-    "D03.c": "révision promesse réexaminer",
     "D09": "partie tiers client fournisseur identité rôle party",
     "D11": "accord contrat conditions agreement",
     "D08": "article produit SKU",
     "D12": "catalogue prix zone",
     "D13": "réseau lieu point logistique entrepôt fulfillment",
-    "D01.e": "quantités position stock physique logique mouvements états suivi inventory tracking"
+    "D01.e": "quantités position stock physique logique mouvements états suivi inventory tracking",
+    "BHV021": "proposition promesse ATP quantité date",
+    "BHV022": "confirmation confirmer promesse engagement",
+    "BHV023": "révision promesse réexaminer",
+    "D03.n": "promise management promesse proposition confirmation révision"
   },
-  "confirmation": "D03.b",
+  "confirmation": "BHV022",
   "steps": [
     {
-      "id": "D03.b",
-      "label": "Capacité",
-      "text": "Promise Confirmation engage les quantités et dates retenues. Sa présence dans la liste d’Order Promising est validée en U95."
+      "id": "BHV022",
+      "label": "Comportement",
+      "text": "Promise Confirmation précise les engagements de Promise Management ; regroupement U288, refonte U290."
     },
     {
       "id": "ILL-OBJ-01",

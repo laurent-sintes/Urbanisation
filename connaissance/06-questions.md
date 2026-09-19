@@ -2351,3 +2351,7 @@ Ouverte. La distinction Case/Order et le domaine Order Management commun sont ac
 **reponse**
 
 —
+
+**Évolution Q077 — U212–U215, 15 septembre 2026**
+
+Partiellement répondue : U214 adopte le découpage par cinq types d’ordres, Order Structuring et Order Lifecycle Management, en remplacement de D04.e–h. Fractionnement, regroupement et répartition sont explicités dans Structuring ; affermissement, lancement, attente/reprise, report, annulation et clôture dans Lifecycle. Les descriptions détaillées U215 sont proposées. La question demeure ouverte sur les règles par type, autorités, effets sur promesses/réservations/prestations, grain d’imputation, cardinalités et volumétrie. Voir `modeles/backlog/d04-refactoring.yaml`.

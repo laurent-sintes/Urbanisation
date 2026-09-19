@@ -9,6 +9,10 @@ import math
 from pathlib import Path
 import re
 import sys
+from collections import OrderedDict
+from copy import deepcopy
+from hashlib import sha256
+from threading import RLock
 
 DEPENDENCIES = Path(__file__).resolve().parents[1] / '.tools/yaml-runtime'
 if DEPENDENCIES.is_dir():
@@ -20,7 +24,11 @@ except ImportError as exc:
 
 
 class ModelLoader(yaml.SafeLoader):
-    pass
+    def compose_node(self, parent, index):
+        # Reject aliases during composition, without parsing the whole file twice.
+        if self.check_event(yaml.AliasEvent):
+            raise ValueError('YAML aliases are not supported in models')
+        return super().compose_node(parent, index)
 
 
 # Deliberately narrower than all of YAML: no yes/on booleans, octal or dates.
@@ -69,9 +77,6 @@ def check_values(value):
 def loads(text, suffix='.yaml'):
     try:
         if suffix.lower() in ('.yaml', '.yml'):
-            for event in yaml.parse(text, Loader=ModelLoader):
-                if isinstance(event, yaml.AliasEvent):
-                    raise ValueError('YAML aliases are not supported in models')
             value = yaml.load(text, Loader=ModelLoader)
         else:
             value = json.loads(text, object_pairs_hook=unique_pairs)
@@ -81,9 +86,50 @@ def loads(text, suffix='.yaml'):
         raise ValueError('Invalid model YAML: ' + str(exc)) from exc
 
 
+# Cache parsed content, never filesystem metadata or mutable caller objects.
+# Reading and hashing bytes on every call detects changes even at equal mtime/size.
+# Bounded by both entry count and source size (parsed objects can be larger).
+_cache = OrderedDict()
+_cache_bytes = 0
+_cache_lock = RLock()
+_CACHE_LIMIT = 32 * 1024 * 1024
+_CACHE_ENTRIES = 128
+
+
+def clear_read_cache():
+    global _cache_bytes
+    with _cache_lock:
+        _cache.clear()
+        _cache_bytes = 0
+
+
 def read(path):
+    global _cache_bytes
     path = Path(path)
-    return loads(path.read_text(encoding='utf-8-sig'), path.suffix)
+    content = path.read_bytes()
+    key = (path.suffix.lower(), sha256(content).digest())
+    with _cache_lock:
+        cached = _cache.get(key)
+        if cached is not None:
+            _cache.move_to_end(key)
+            return deepcopy(cached[0])
+        value = loads(content.decode('utf-8-sig'), path.suffix)
+        if len(content) <= _CACHE_LIMIT:
+            _cache[key] = (value, len(content))
+            _cache_bytes += len(content)
+            while _cache_bytes > _CACHE_LIMIT or len(_cache) > _CACHE_ENTRIES:
+                _, (_, size) = _cache.popitem(last=False)
+                _cache_bytes -= size
+        return deepcopy(value)
+
+
+def write_text_if_changed(path, text):
+    """Write a derived view only when its text changes; not for immutable evidence."""
+    path = Path(path)
+    if path.exists() and path.read_text(encoding='utf-8') == text:
+        return False
+    path.write_text(text, encoding='utf-8')
+    return True
 
 
 class ModelDumper(yaml.SafeDumper):

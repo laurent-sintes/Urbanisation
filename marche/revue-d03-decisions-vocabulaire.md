@@ -49,3 +49,8 @@ Aucune équivalence exacte de cette décomposition avec un catalogue éditeur n�
 ## Adoption U154
 
 La recomposition U151 est validée et appliquée au backlog : huit capacités dont D03.i–l nouvelles décisions. Les anciens D03.d–h et l’alternative antérieure sont conservés dans `../modeles/backlog/history/pre-U154.json`. Les paragraphes indiquant une proposition non adoptée décrivent les étapes précédentes. Aucun changement des appuis marché ni prétention d’équivalence nouvelle. Exploration lexicale poursuivie séparément dans [Requisition/Order/Case](ecc-requisition-order-case.md).
+
+
+## U251 — responsabilité de CTP précisée
+
+Après l’audit U249 et le challenge U250, Laurent adopte CTP comme faisabilité après adaptation mobilisant les décisions spécialisées. Le nom et la maille ATP/CTP/PTP sont conservés. Chaque arbitrage de priorité, échéancier, économie, politique de stock ou service garde son responsable ; CTP ne devient pas leur autorité commune. Un apport pour honorer un Order conserve sa finalité distincte de l’optimisation du stock. Définition, exemple et portées : [frontières CTP](../connaissance/33-frontieres-ctp.md), CMP086. Six dépendances structurées proposées ; les étapes U148/U151/U154 ci-dessus restent historiques pour les formulations précisées. Release v007 inchangée.

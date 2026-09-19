@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, ChevronDown, FileText, GitBranch } from 'lucide-react';
 import type { ReactNode } from 'react';
-import type { AtlasNode, AtlasRelation, PublishedModel, SourceLocator } from '../types';
+import type { AtlasNode, AtlasRelation, PublishedModel, SourceLocator, MarketComparison } from '../types';
+import { MarketComparisons } from './MarketComparisons';
 import { kindLabel, statusLabel } from '../presentation';
 import './details.css';
 import { ModelText, ReferenceLink } from './ModelLinks';
@@ -11,6 +12,8 @@ type OpenSource = (id: string, locator?: SourceLocator) => void;
 const labels: Record<string, string> = {
   name: 'Libellé', finality: 'Finalité', definition: 'Définition', scope: 'Périmètre',
   nature: 'Nature', independence: 'Indépendance', mastership: 'Maîtrise des informations',
+  decomposition_rationale: 'Pourquoi décomposer cette capacité',
+  market_comparisons: 'Comparaison par rapport au marché',
   label: 'Libellé', verb: 'Verbe de relation', meaning: 'Sens métier', role: 'Rôle',
   conditions: 'Conditions', effects: 'Effets', state: 'État', note: 'Réserve',
   source_refs: 'Sources', approved_fields: 'Champs adoptés', proposed_fields: 'Champs proposés',
@@ -66,19 +69,32 @@ function Provenance({ model, item, onOpenSource }: { model: PublishedModel; item
 export function BusinessSheet({ model, node, onOpenSource }: { model: PublishedModel; node: AtlasNode; onOpenSource: OpenSource }) {
   const parents = model.relations.filter(r => ['contains', 'presents'].includes(r.type) && r.targetId === node.id);
   const children = model.relations.filter(r => ['contains', 'presents'].includes(r.type) && r.sourceId === node.id).map(r => model.nodeById.get(r.targetId)).filter((n): n is AtlasNode => Boolean(n));
-  const extraFields = Object.entries(node.fields).filter(([key, value]) => !['name', 'finality', 'definition', 'scope'].includes(key) && hasValue(value));
+  const behaviors = children.filter(child => child.kind === 'behavior');
+  const otherChildren = children.filter(child => child.kind !== 'behavior');
+  const extraFields = Object.entries(node.fields).filter(([key, value]) => !['name', 'finality', 'definition', 'scope', 'market_comparisons'].includes(key) && hasValue(value));
   return <article className="business-sheet sheet" data-testid="business-sheet" aria-label={`Fiche métier de ${node.name}`}>
     <ValidationSummary item={node}/>
+    {node.kind === 'behavior' && <p className="behavior-context">Comportement de <ReferenceLink target={parents[0].sourceId}>{model.nodeById.get(parents[0].sourceId)?.name}</ReferenceLink> · Dernier niveau de détail</p>}
     <div className="sheet-main">
       <section id={`field-${node.id}-finality`} className="detail-finality"><h2>Finalité</h2><div className="business-copy"><Value value={node.fields.finality ?? node.purpose}/></div></section>
       <section id={`field-${node.id}-definition`}><h2>Définition</h2><div className="business-copy"><Value value={node.fields.definition ?? node.definition}/></div></section>
+      {behaviors.length > 0 && <section className="behavior-section" aria-label="Comportements de la capacité">
+        <h2>Comportements <span>{behaviors.length}</span></h2>
+        <p className="detail-muted">Ce que cette capacité prend en compte et les résultats qu’elle produit.</p>
+        <div className="behavior-list">{behaviors.map(behavior => <article className="behavior-summary" key={behavior.id} data-behavior-id={behavior.id}>
+          <h3><ReferenceLink target={behavior.id}><NodeIcon node={behavior} size={21}/>{behavior.name}<ArrowUpRight size={16}/></ReferenceLink></h3>
+          <p><ModelText text={behavior.definition}/></p>
+          <span className={`pill ${behavior.status}`}>{statusLabel(behavior)}</span>
+        </article>)}</div>
+      </section>}
       {hasValue(node.fields.scope) && <section id={`field-${node.id}-scope`}><h2>Périmètre</h2><div className="business-copy"><Value value={node.fields.scope}/></div></section>}
+      <MarketComparisons id={`field-${node.id}-market_comparisons`} entries={node.fields.market_comparisons as MarketComparison[] | undefined}/>
       {extraFields.map(([key, value]) => <section key={key} id={`field-${node.id}-${key}`}><h2>{fieldName(key)}</h2><div className="business-copy"><Value value={value}/></div></section>)}
       <Reservations item={node}/>
       {parents.length > 0 && <section className="detail-boundaries"><h2>Rattachement et frontières</h2>{parents.map(relation => <div className="detail-parent" key={relation.id}><p>{relation.type === 'presents' ? 'Présenté dans le groupe' : 'Rattaché à'} <ReferenceLink target={relation.sourceId}>{model.nodeById.get(relation.sourceId)?.name || relation.sourceId}<ArrowUpRight size={13} aria-hidden="true"/></ReferenceLink></p><span className={`pill ${relation.status}`}>{statusLabel(relation)}</span>{relation.review.note && <p>{relation.review.note}</p>}{relation.lifecycle?.note && relation.lifecycle.note !== relation.review.note && <p>{relation.lifecycle.note}</p>}<Provenance model={model} item={relation} onOpenSource={onOpenSource}/></div>)}</section>}
       <Provenance model={model} item={node} onOpenSource={onOpenSource}/>
     </div>
-    {children.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{children.length}</span></h2><div className="detail-children-list">{children.map(child => <ReferenceLink key={child.id} target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink>)}</div></section>}
+    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map(child => <ReferenceLink key={child.id} target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink>)}</div></section>}
   </article>;
 }
 

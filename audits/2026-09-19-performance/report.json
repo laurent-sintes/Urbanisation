@@ -1,0 +1,311 @@
+{
+  "task": "report",
+  "seconds": 11.436834099993575,
+  "structured_loads": {
+    ".json": {
+      "calls": 24,
+      "seconds": 0.023103699961211532
+    },
+    ".yaml": {
+      "calls": 106,
+      "seconds": 10.636811700096587
+    }
+  },
+  "read_calls": 130,
+  "unique_files": 79,
+  "read_bytes_with_repeats": 7850159,
+  "slowest_reads": [
+    {
+      "path": "modeles\\backlog\\model.yaml",
+      "calls": 1,
+      "seconds": 2.436377600010019,
+      "bytes": 1049624
+    },
+    {
+      "path": "modeles\\release\\2026-09-16.2\\model.yaml",
+      "calls": 2,
+      "seconds": 1.6734612000000197,
+      "bytes": 319581
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\backlog.yaml",
+      "calls": 1,
+      "seconds": 0.8375276000006124,
+      "bytes": 325372
+    },
+    {
+      "path": "modeles\\backlog\\refactoring-target.yaml",
+      "calls": 1,
+      "seconds": 0.8236505000095349,
+      "bytes": 347929
+    },
+    {
+      "path": "modeles\\backlog\\behavior-gap-audit.yaml",
+      "calls": 1,
+      "seconds": 0.6693967999890447,
+      "bytes": 282276
+    },
+    {
+      "path": "modeles\\backlog\\glossary.yaml",
+      "calls": 1,
+      "seconds": 0.28582859999733046,
+      "bytes": 123786
+    },
+    {
+      "path": "modeles\\backlog\\execution-services-review.yaml",
+      "calls": 3,
+      "seconds": 0.2853585999982897,
+      "bytes": 45823
+    },
+    {
+      "path": "modeles\\backlog\\d03-review.yaml",
+      "calls": 3,
+      "seconds": 0.22356899996520951,
+      "bytes": 32892
+    },
+    {
+      "path": "modeles\\backlog\\vocabulary-review.yaml",
+      "calls": 3,
+      "seconds": 0.208681699965382,
+      "bytes": 32506
+    },
+    {
+      "path": "modeles\\backlog\\d05-refactoring.yaml",
+      "calls": 3,
+      "seconds": 0.19487020000815392,
+      "bytes": 27250
+    },
+    {
+      "path": "modeles\\backlog\\unified-inventory-packaging.yaml",
+      "calls": 3,
+      "seconds": 0.19207329998607747,
+      "bytes": 27908
+    },
+    {
+      "path": "modeles\\backlog\\stock-order-boundary.yaml",
+      "calls": 3,
+      "seconds": 0.1917995999683626,
+      "bytes": 28177
+    }
+  ],
+  "repeated_reads": [
+    {
+      "path": "modeles\\release\\index.json",
+      "calls": 2,
+      "seconds": 0.0005053000058978796,
+      "bytes": 1578
+    },
+    {
+      "path": "modeles\\release\\2026-09-16.2\\model.yaml",
+      "calls": 2,
+      "seconds": 1.6734612000000197,
+      "bytes": 319581
+    },
+    {
+      "path": "modeles\\schemas\\urbanism.schema.json",
+      "calls": 2,
+      "seconds": 0.001430200005415827,
+      "bytes": 18414
+    },
+    {
+      "path": "modeles\\backlog\\applicability.yaml",
+      "calls": 3,
+      "seconds": 0.014305699995020404,
+      "bytes": 1393
+    },
+    {
+      "path": "modeles\\backlog\\d03-d04-gap-review.yaml",
+      "calls": 3,
+      "seconds": 0.04717730000265874,
+      "bytes": 6820
+    },
+    {
+      "path": "modeles\\backlog\\d03-review.yaml",
+      "calls": 3,
+      "seconds": 0.22356899996520951,
+      "bytes": 32892
+    },
+    {
+      "path": "modeles\\backlog\\d04-refactoring.yaml",
+      "calls": 3,
+      "seconds": 0.07933720000437461,
+      "bytes": 8374
+    },
+    {
+      "path": "modeles\\backlog\\d05-refactoring.yaml",
+      "calls": 3,
+      "seconds": 0.19487020000815392,
+      "bytes": 27250
+    },
+    {
+      "path": "modeles\\backlog\\execution-services-review.yaml",
+      "calls": 3,
+      "seconds": 0.2853585999982897,
+      "bytes": 45823
+    },
+    {
+      "path": "modeles\\backlog\\glossary-text-references.yaml",
+      "calls": 3,
+      "seconds": 0.04501709999749437,
+      "bytes": 7660
+    },
+    {
+      "path": "modeles\\backlog\\item-logistic-unit-audit.yaml",
+      "calls": 3,
+      "seconds": 0.08249279999290593,
+      "bytes": 8935
+    },
+    {
+      "path": "modeles\\backlog\\legacy-capabilities.json",
+      "calls": 3,
+      "seconds": 0.0016024000069592148,
+      "bytes": 29290
+    },
+    {
+      "path": "modeles\\backlog\\microsoft-urbanism-fit.yaml",
+      "calls": 3,
+      "seconds": 0.049373700021533296,
+      "bytes": 5818
+    },
+    {
+      "path": "modeles\\backlog\\modeling-glossary.yaml",
+      "calls": 3,
+      "seconds": 0.10259919997770339,
+      "bytes": 17626
+    },
+    {
+      "path": "modeles\\backlog\\modeling-roadmap.yaml",
+      "calls": 3,
+      "seconds": 0.03434359995299019,
+      "bytes": 5364
+    },
+    {
+      "path": "modeles\\backlog\\panorama-candidates.json",
+      "calls": 3,
+      "seconds": 0.0017094999784603715,
+      "bytes": 34028
+    },
+    {
+      "path": "modeles\\backlog\\stock-order-boundary.yaml",
+      "calls": 3,
+      "seconds": 0.1917995999683626,
+      "bytes": 28177
+    },
+    {
+      "path": "modeles\\backlog\\unified-inventory-packaging.yaml",
+      "calls": 3,
+      "seconds": 0.19207329998607747,
+      "bytes": 27908
+    },
+    {
+      "path": "modeles\\backlog\\vocabulary-review.yaml",
+      "calls": 3,
+      "seconds": 0.208681699965382,
+      "bytes": 32506
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\applicability.yaml",
+      "calls": 2,
+      "seconds": 0.009558100020512938,
+      "bytes": 1393
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d03-d04-gap-review.yaml",
+      "calls": 2,
+      "seconds": 0.03054780000820756,
+      "bytes": 6820
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d03-review.yaml",
+      "calls": 2,
+      "seconds": 0.05912620000890456,
+      "bytes": 12137
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d04-refactoring.yaml",
+      "calls": 2,
+      "seconds": 0.03549970002495684,
+      "bytes": 5412
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d05-refactoring.yaml",
+      "calls": 2,
+      "seconds": 0.026802699954714626,
+      "bytes": 4761
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\execution-services-review.yaml",
+      "calls": 2,
+      "seconds": 0.12027839999063872,
+      "bytes": 26759
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\glossary-text-references.yaml",
+      "calls": 2,
+      "seconds": 0.02984679999644868,
+      "bytes": 7553
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\item-logistic-unit-audit.yaml",
+      "calls": 2,
+      "seconds": 0.05514949999633245,
+      "bytes": 8935
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\legacy-capabilities.json",
+      "calls": 2,
+      "seconds": 0.0010497000184841454,
+      "bytes": 28993
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\microsoft-urbanism-fit.yaml",
+      "calls": 2,
+      "seconds": 0.033138400001917034,
+      "bytes": 5818
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\modeling-glossary.yaml",
+      "calls": 2,
+      "seconds": 0.02190100000007078,
+      "bytes": 4137
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\modeling-roadmap.yaml",
+      "calls": 2,
+      "seconds": 0.020275999995647,
+      "bytes": 4827
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\panorama-candidates.json",
+      "calls": 2,
+      "seconds": 0.0012500000011641532,
+      "bytes": 34028
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\stock-order-boundary.yaml",
+      "calls": 2,
+      "seconds": 0.12797080000746064,
+      "bytes": 28177
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\unified-inventory-packaging.yaml",
+      "calls": 2,
+      "seconds": 0.1277993000112474,
+      "bytes": 27908
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\vocabulary-review.yaml",
+      "calls": 2,
+      "seconds": 0.14003999999840744,
+      "bytes": 32506
+    }
+  ],
+  "suppressed_write_count": 0,
+  "suppressed_write_bytes": 0,
+  "stdout_bytes": 0,
+  "report_json_bytes": 2113710,
+  "report_serialization_seconds": 0.014371199999004602,
+  "validation_error_count": 469,
+  "deferred_artifacts": 43,
+  "compact_summary_bytes": 53
+}

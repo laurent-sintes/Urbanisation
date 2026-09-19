@@ -14,6 +14,7 @@ import re
 import shutil
 import sys
 import uuid
+from collections import Counter
 
 try:
     from .element_versions import assign_versions
@@ -259,8 +260,9 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
     deferred_paths = [working_path(models / 'backlog', stem) for stem in sorted({p.stem for p in (models / 'backlog').iterdir() if p.suffix in ('.json', '.yaml', '.yml') and p.stem not in ('model', 'glossary')})]
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
+    deferred_documents = {path: read(path) for path in deferred_paths}
     for path in deferred_paths:
-        all_refs.update(references(read(path)))
+        all_refs.update(references(deferred_documents[path]))
     provenance = publisher.publication_sources(inputs['provenance'], read(models / 'provenance/source-records.json'), sorted(all_refs))
     sources = {r['id']: r for r in provenance['records']}
     urbanism_schema = read(models / 'schemas/urbanism.schema.json')
@@ -277,9 +279,11 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     deferred_artifacts = []
     for path in deferred_paths:
         previous_path = working_path(models / 'revisions' / pointer['version'] / 'deferred', path.stem)
+        previous_document = read(previous_path) if previous_path.exists() else None
+        current_document = deferred_documents[path]
         deferred_artifacts.append({'path': path.relative_to(models).as_posix(), 'sha256': digest(path),
-                                   'comparison': 'changed' if previous_path.exists() and read(previous_path) != read(path) else 'unchanged' if previous_path.exists() else 'baseline_not_captured',
-                                   'changes': changes(read(previous_path), read(path)) if previous_path.exists() else [],
+                                   'comparison': 'changed' if previous_path.exists() and previous_document != current_document else 'unchanged' if previous_path.exists() else 'baseline_not_captured',
+                                   'changes': changes(previous_document, current_document) if previous_path.exists() else [],
                                    'disposition': 'frozen_as_context_only_not_published_as_model'})
     report = {'schema_version': '1.0.0', 'base_version': pointer['version'], 'candidate_version': version,
               'element_version_changes': element_changes,
@@ -290,6 +294,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
               'new_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] not in {o['id'] for o in inputs['decisions']['decisions']}],
               'deferred_artifacts': deferred_artifacts,
               'backlog_only': {'alternatives': [r['id'] for r in snapshot.get('alternatives', [])],
+                               'relations_to_illustrations': sorted(publisher.relations_to_illustrations(snapshot)),
                                'illustrations': [r['id'] for r in snapshot['nodes'] + snapshot['relations'] if r['review']['state'] == 'illustration']},
               'validation_errors': sorted(set(errors)),
               'note': 'Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés.'}
@@ -442,6 +447,27 @@ def publish_prepared(root, version, activate=False):
             'capability_count': output['capability_count'], 'complete_capability_count': output['complete_capability_count']}
 
 
+def summarize_report(report):
+    """Keep the complete report available without flooding routine CLI output."""
+    errors = report['validation_errors']
+    return {
+        'base_version': report['base_version'], 'candidate_version': report['candidate_version'],
+        'ready_to_prepare': not errors, 'validation_error_count': len(errors),
+        'validation_error_categories': dict(Counter(e.split(': ', 1)[-1] for e in errors)),
+        'validation_error_examples': errors[:5],
+        'changes': {collection: {action: len(items) for action, items in delta.items()}
+                    for collection, delta in report['changes'].items() if isinstance(delta, dict)},
+        'retained_decisions': len(report['retained_decision_ids']),
+        'deferred_decisions': len(report['deferred_decisions']),
+        'new_decisions': len(report['new_decision_ids']),
+        'glossary_reference_impacts': report['glossary_reference_impacts'],
+        'deferred_artifacts': dict(Counter(a['comparison'] for a in report['deferred_artifacts'])),
+        'backlog_only': report['backlog_only'],
+        'detail': 'Use report --full or report --output PATH for all fields and validation errors.',
+        'publication_is_business_validation': False,
+    }
+
+
 def main():
     sys.stdout.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
@@ -452,12 +478,24 @@ def main():
         child.add_argument('--version', required=command == 'prepare')
         child.add_argument('--source', action='append', required=command == 'prepare')
         child.add_argument('--decisions', type=Path, help='Only new, explicitly sourced decisions for the prepared version')
+        if command == 'report':
+            child.add_argument('--full', action='store_true', help='Print the complete detailed report')
+            child.add_argument('--output', type=Path, help='Save the complete detailed report to a new file')
     child = commands.add_parser('publish')
     child.add_argument('--version', required=True)
     child.add_argument('--activate', action='store_true')
     args = parser.parse_args()
     if args.command == 'report':
         result = build_candidate(args.root, args.version, args.source, args.decisions)['report']
+        if args.output:
+            # Exclusive creation prevents overwriting a source or publication.
+            with args.output.open('x', encoding='utf-8') as stream:
+                json.dump(result, stream, ensure_ascii=False, indent=2)
+                stream.write('\n')
+        if not args.full:
+            result = summarize_report(result)
+        if args.output:
+            result['detailed_report'] = str(args.output)
     elif args.command == 'prepare':
         result = prepare(args.root, args.version, args.source, args.decisions)
     else:

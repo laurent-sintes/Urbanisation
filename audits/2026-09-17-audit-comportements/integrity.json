@@ -1,0 +1,21 @@
+{
+  "validated_field_values_unchanged": 92,
+  "relations_unchanged": 92,
+  "protected_files_unchanged": 134,
+  "changed_nodes": [
+    "D03.i",
+    "D04.i",
+    "D04.j",
+    "D04.k",
+    "D04.l",
+    "D04.m",
+    "D05.c"
+  ],
+  "capability_assessments": 41,
+  "behavior_assessments": 4,
+  "agents_lines_before": 695,
+  "agents_lines_after": 88,
+  "agents_bytes_before": 142388,
+  "agents_bytes_after": 14098,
+  "local_links": "OK"
+}

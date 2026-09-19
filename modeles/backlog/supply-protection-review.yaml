@@ -1,0 +1,514 @@
+as_of: '2026-09-17'
+state: under_review
+parent_id: D02.b
+source_refs:
+- U274
+- U275
+- U276
+- U278
+- U279
+- U280
+- U281
+- CMP093
+- U282
+purpose: Proposition complète pour le périmètre Supply Protection examiné, au-delà des enveloppes ; neuf éditeurs, pas exhaustivité
+  de tout le marché.
+catalog_changed: false
+market_comparison: CMP093
+sources:
+- id: S01
+  market_ref: MKT14
+  vendor: Microsoft
+  title: Inventory Visibility inventory allocation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  edition: Page évolutive ; mise à jour affichée 2025-08-13
+  passages: Business background; Use the allocation APIs; Consume as a soft reservation
+  nature: documentation produit/API
+  access: ouvert et lu
+  limit: Enveloppes par groupe, opérations et soldes. Ne couvre pas toute la protection FLOW.
+  consulted_at: '2026-09-17'
+- id: S02
+  market_ref: MKT14
+  vendor: Microsoft
+  title: Replenishment methods and quantity modification
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification
+  edition: Page évolutive ; mise à jour affichée 2026-07-01
+  passages: Coverage codes; Impact of the order quantity; Min/Max examples
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Méthodes, seuils et contraintes de lots. Le maximum Min/Max peut être dépassé dans certains cas de multiples.
+  consulted_at: '2026-09-17'
+- id: S03
+  market_ref: MKT14
+  vendor: Microsoft
+  title: Safety stock fulfillment for items
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment
+  edition: Page évolutive ; édition non spécifiée
+  passages: Set safety stock; Minimum key; Min/max; FEFO; safety stock constraint
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Niveaux par lieu, dates et variations temporelles ; distinguer sécurité, disponibilité et commande.
+  consulted_at: '2026-09-17'
+- id: S04
+  market_ref: MKT14
+  vendor: Microsoft
+  title: Use the safety stock journal to update minimum coverage for items
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal
+  edition: Page évolutive ; édition non spécifiée
+  passages: Overview; Calculate minimum coverage based on historical usage
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Propositions de valeurs, analyse d’impact et mise à jour effective sont distinguées.
+  consulted_at: '2026-09-17'
+- id: S05
+  market_ref: MKT13
+  vendor: SAP
+  title: Outlining aATP with Supply Protection (SuP)
+  url: https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-aatp-with-supply-protection-sup-
+  edition: Cours S/4HANA ; édition précise non indiquée
+  passages: Activation; Core/Prioritized Protection; Time Buckets; Consuming Supply Protection
+  nature: formation produit
+  access: ouvert et lu
+  limit: Groupes, priorités, temporalité, consommation et annulation. Le périmètre SAP SuP est plus étroit que FLOW.
+  consulted_at: '2026-09-17'
+- id: S06
+  market_ref: MKT13
+  vendor: SAP
+  title: Executing Demand-Driven Replenishment in SAP S/4HANA
+  url: https://learning.sap.com/courses/exploring-production-planning-in-sap-s-4hana/executing-demand-driven-replenishment-in-sap-s-4hana
+  edition: Cours S/4HANA ; édition précise non indiquée
+  passages: Buffer Profiles; Buffer Level Calculation; Manage Buffer Levels; Schedule MRP Runs
+  nature: formation produit
+  access: ouvert et lu
+  limit: 'Buffers : sécurité, point de commande et maximum ; propositions puis utilisation des paramètres. DDMRP est une méthode,
+    pas un niveau FLOW.'
+  consulted_at: '2026-09-17'
+- id: S07
+  market_ref: MKT20
+  vendor: Oracle
+  title: Policy Assignment Sets
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  edition: Fusion Cloud 26B
+  passages: Policy Parameters; Default Policy Values; Policy Overrides; Hierarchy
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Politiques par segment, dérogations article-lieu et ordre de priorité. Ne pas importer les contraintes techniques
+    de volumétrie.
+  consulted_at: '2026-09-17'
+- id: S08
+  market_ref: MKT32
+  vendor: Oracle
+  title: Activating Items on Replenishment
+  url: https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/latest/rmpug/activating-items-replenishment.htm
+  edition: Pointeur latest ; numéro de version non affiché dans la page lue
+  passages: Creating Attributes; Managing Attributes at Item List Level; Replenishment Attributes Window
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Périmètres article-lieu, mises à jour collectives, présentation et activation/désactivation. Aucune maîtrise de référentiel
+    FLOW déduite.
+  consulted_at: '2026-09-17'
+- id: S09
+  market_ref: MKT32
+  vendor: Oracle
+  title: Manage Scheduled Updates
+  url: https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/latest/rmpug/manage-scheduled-updates.htm
+  edition: Pointeur latest ; numéro de version non affiché dans la page lue
+  passages: Create a Scheduled Update; Manage Scheduled Updates
+  nature: documentation produit
+  access: ouvert et lu
+  limit: Changements datés de paramètres et de statut ; ce n’est pas une simulation de scénario.
+  consulted_at: '2026-09-17'
+- id: S10
+  market_ref: MKT29
+  vendor: RELEX
+  title: Replenishment and allocation
+  url: https://www.relexsolutions.com/solutions/automatic-replenishment-system/
+  edition: Page produit évolutive ; version non indiquée
+  passages: Key features; store space; seasonal items; new product introductions and ramp-downs
+  nature: présentation produit
+  access: ouvert et lu
+  limit: Espace, durée de vie et retrait progressif. Appui de cas métier ; opérations détaillées non établies par cette page.
+  consulted_at: '2026-09-17'
+- id: S11
+  market_ref: MKT29
+  vendor: RELEX
+  title: Inventory Planning Software
+  url: https://www.relexsolutions.com/solutions/inventory-planning-software/
+  edition: Page produit évolutive ; version non indiquée
+  passages: Inventory policies, thresholds and exceptions
+  nature: présentation produit
+  access: ouvert et lu
+  limit: Seuils et écarts ; aucune preuve d’une interface transactionnelle précise.
+  consulted_at: '2026-09-17'
+- id: S12
+  market_ref: MKT27
+  vendor: Blue Yonder
+  title: Inventory Optimization
+  url: https://blueyonder.com/solutions/supply-chain-planning/inventory-optimization
+  edition: Page produit évolutive ; version non indiquée
+  passages: Features & Capabilities; Dynamic Segmentation; Multi-echelon Optimization
+  nature: présentation produit
+  access: ouvert et lu
+  limit: Segmentation et optimisation ; surtout appui des frontières D05, sans détail suffisant de cycle de règle.
+  consulted_at: '2026-09-17'
+- id: S13
+  market_ref: MKT28
+  vendor: Kinaxis
+  title: What is Inventory Optimization
+  url: https://www.kinaxis.com/en/inventory-optimization
+  edition: Article évolutif ; version logicielle non indiquée
+  passages: Techniques; Key inventory optimization activities
+  nature: article éditeur
+  access: ouvert et lu
+  limit: Cibles, politiques, visibilité et exceptions ; pas catalogue contractuel des fonctions installées.
+  consulted_at: '2026-09-17'
+- id: S14
+  market_ref: MKT30
+  vendor: Slimstock
+  title: Inventory Management Software — Slim4
+  url: https://www.slimstock.com/solutions/inventory-management-software/
+  edition: Page produit évolutive ; version non indiquée
+  passages: 'Key features: stocking policies; stock parameters; network balancing'
+  nature: présentation produit
+  access: ouvert et lu
+  limit: Politiques de stockage liées au cycle produit ; optimisation et rééquilibrage dépassent Protection.
+  consulted_at: '2026-09-17'
+- id: S15
+  market_ref: MKT31
+  vendor: o9
+  title: Allocation & Replenishment
+  url: https://o9solutions.com/solutions/merchandise-planning/allocation-replenishment
+  edition: Page produit évolutive ; version non indiquée
+  passages: Core Building Blocks; Advanced Building Blocks
+  nature: présentation produit
+  access: ouvert et lu
+  limit: Distingue moteur, règles, visibilité et transmission des Orders ; allocation peut signifier distribution vers les
+    lieux.
+  consulted_at: '2026-09-17'
+- id: S16
+  market_ref: MKT23
+  vendor: IBM
+  title: Safety stock rules
+  url: https://www.ibm.com/docs/en/sip?topic=inventory-managing-safety-stock-rules
+  edition: Sterling Inventory Visibility / SIP ; version non précisée
+  passages: Safety stock rules; Network level; Node level
+  nature: documentation produit
+  access: texte indexé lu ; ouverture directe en erreur
+  limit: Règles par réseau/nœud, mode de livraison et article. Comparaison limitée au passage indexé.
+  consulted_at: '2026-09-17'
+- id: S17
+  market_ref: MKT23
+  vendor: IBM
+  title: Inventory monitor
+  url: https://www.ibm.com/docs/en/order-management-sw/9.5.0?topic=monitors-inventory-monitor
+  edition: Sterling Order Management 9.5.0 ; référence historique
+  passages: Introduction; inventory availability above/below configured quantities
+  nature: documentation produit
+  access: texte indexé lu ; ouverture directe en erreur
+  limit: Appui historique de surveillance de seuils ; ne prouve pas la couverture de l’édition courante.
+  consulted_at: '2026-09-17'
+candidates:
+- key: P01
+  name: Allocation
+  result: Attribuer une enveloppe initiale à un groupe.
+  example: Le web reçoit 300 pièces.
+  complexity_or_targeted_benefit: Créer des droits utilisables distincts de ressources affectées à une commande.
+  market_source_ids:
+  - S01
+  state: adopted
+  existing_node_id: BHV011
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P02
+  name: Reallocation
+  result: Transférer des droits disponibles entre groupes.
+  example: 50 pièces de droits web passent aux magasins.
+  complexity_or_targeted_benefit: Conserver un total partagé tout en changeant de bénéficiaire.
+  market_source_ids:
+  - S01
+  state: adopted
+  existing_node_id: BHV012
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P03
+  name: Allocation Release
+  result: Restituer les droits inutilisés au disponible commun.
+  example: 20 pièces non utilisées cessent d’être protégées.
+  complexity_or_targeted_benefit: Différencier restitution et changement de bénéficiaire.
+  market_source_ids:
+  - S01
+  state: adopted
+  existing_node_id: BHV013
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P04
+  name: Allocation Consumption
+  result: Imputer un usage à une enveloppe.
+  example: 80 pièces de droits sont consommées.
+  complexity_or_targeted_benefit: Maintenir un solde sans confondre consommation de droits et sortie physique.
+  market_source_ids:
+  - S01
+  state: adopted
+  existing_node_id: BHV014
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P05
+  name: Allocation Visibility
+  result: Consulter les droits alloués, consommés et restants.
+  example: Le canal consulte son solde et les mouvements qui l’expliquent.
+  complexity_or_targeted_benefit: Lire la disponibilité des droits, distincte de celle du stock.
+  market_source_ids:
+  - S01
+  state: adopted
+  existing_node_id: BHV015
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P06
+  name: Allocation Consumption Reversal
+  result: Corriger ou annuler une imputation de consommation et rétablir les droits selon les règles applicables.
+  example: Une annulation de commande rend 10 droits à une enveloppe encore valide.
+  complexity_or_targeted_benefit: La libération de droits inutilisés ne corrige pas un usage déjà enregistré.
+  market_source_ids:
+  - S05
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P07
+  name: Coverage Threshold Setting
+  result: Enregistrer et réviser les niveaux de sécurité, déclencheurs, cibles et limites hautes retenus, avec leurs unités
+    et leurs effets.
+  example: 'Pour un magasin : sécurité 40, réassort sous 60, cible 100 ; préciser séparément un éventuel plafond strict.'
+  complexity_or_targeted_benefit: Distinguer les sémantiques de seuils pour éviter pénurie ou apports excessifs.
+  market_source_ids:
+  - S02
+  - S03
+  - S06
+  - S07
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P08
+  name: Replenishment Rule Setting
+  result: Configurer la méthode de réassort, les contraintes et conditions de renouvellement à appliquer.
+  example: Révision chaque lundi, complément jusqu’à la cible, multiples de colis et arrêt à la date de retrait.
+  complexity_or_targeted_benefit: Un même seuil donne des résultats différents selon méthode, fréquence et contraintes.
+  market_source_ids:
+  - S02
+  - S07
+  - S08
+  - S10
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P09
+  name: Consumption Rule Setting
+  result: Configurer qui peut utiliser les protections et selon quelles restrictions ou priorités de groupes.
+  example: Un groupe prioritaire peut utiliser une ressource sous conditions ; un autre reste plafonné.
+  complexity_or_targeted_benefit: Distinguer minimum protégé, plafond et priorité, sans arbitrer les commandes individuellement.
+  market_source_ids:
+  - S01
+  - S05
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P10
+  name: Protection Scope Assignment
+  result: Rattacher une politique de protection à des produits, lieux ou groupes, avec les règles de priorité des rattachements.
+  example: Une règle commune couvre un groupe de magasins ; une exception identifie un article-lieu.
+  complexity_or_targeted_benefit: Maîtriser les héritages et éviter qu’une règle s’applique au mauvais périmètre.
+  market_source_ids:
+  - S07
+  - S08
+  - S16
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P11
+  name: Protection Scheduling
+  result: Programmer les valeurs et changements de règles sur leurs périodes de validité.
+  example: La cible passe de 100 à 60 après la promotion puis revient à 40.
+  complexity_or_targeted_benefit: Préparer des changements futurs sans altérer la règle applicable aujourd’hui.
+  market_source_ids:
+  - S03
+  - S05
+  - S09
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P12
+  name: Protection Activation
+  result: Rendre une configuration applicable à son périmètre.
+  example: Les nouveaux seuils deviennent effectifs à la date retenue.
+  complexity_or_targeted_benefit: Distinguer donnée préparée et règle utilisée ; automatisation possible.
+  market_source_ids:
+  - S05
+  - S08
+  - S09
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P13
+  name: Protection Deactivation
+  result: Suspendre ou arrêter l’application d’une configuration pour son périmètre.
+  example: Arrêter le réassort automatique d’un article en retrait, tout en conservant d’autres protections.
+  complexity_or_targeted_benefit: Un arrêt de règle diffère d’une suppression de données ou d’une libération de droits.
+  market_source_ids:
+  - S05
+  - S08
+  - S09
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P14
+  name: Protection Override
+  result: Appliquer une dérogation explicite à une règle, avec périmètre, priorité et durée maîtrisés.
+  example: Un magasin conserve temporairement une cible différente du groupe.
+  complexity_or_targeted_benefit: Préserver la règle commune tout en rendant l’exception visible et réversible.
+  market_source_ids:
+  - S07
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P15
+  name: Protection Mass Update
+  result: Appliquer une modification à un ensemble de protections et rendre compte de ce qui a été appliqué ou rejeté.
+  example: Modifier 2 000 couples article-lieu et traiter les exceptions identifiées.
+  complexity_or_targeted_benefit: La maîtrise des résultats partiels justifie le comportement ; le nombre de lignes ou l’interface
+    ne suffit pas.
+  market_source_ids:
+  - S04
+  - S08
+  state: conditional
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P16
+  name: Protection Visibility
+  result: Consulter la configuration effectivement applicable, sa validité et les dérogations qui l’expliquent.
+  example: Expliquer pourquoi le magasin utilise une cible de 80 alors que la règle commune indique 100.
+  complexity_or_targeted_benefit: Différencier règle, valeur proposée et état effectif ; ne pas doubler Allocation Visibility
+    pour les soldes.
+  market_source_ids:
+  - S03
+  - S07
+  - S09
+  state: proposed
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+- key: P17
+  name: Protection Monitoring
+  result: Détecter et signaler les écarts aux règles de protection et les situations requérant un réexamen.
+  example: Stock projeté au-dessus de la limite ou quota presque épuisé.
+  complexity_or_targeted_benefit: Passer de la consultation à la détection d’exception ; rattachement à arbitrer avec Inventory
+    Visibility.
+  market_source_ids:
+  - S11
+  - S13
+  - S17
+  state: conditional
+  existing_node_id: null
+  evidence_relation: appui fonctionnel ; décomposition FLOW, pas équivalence normative
+decomposition_rationale_proposed: Distinguer les résultats métier de partage des droits, configuration de couverture, applicabilité
+  des règles et contrôle de leur usage. Chaque ligne conserve sa complexité ou son bénéfice ciblé ; aucune hiérarchie supplémentaire
+  et aucun comportement automatique par paramètre.
+scope_limits:
+- Aucune liste publique n’établit l’exhaustivité universelle. Couverture recherchée par mécanisme métier sur un panel de neuf
+  éditeurs.
+- Les présentations spécialistes servent de contrôle de couverture, pas de preuve d’opérations transactionnelles détaillées.
+- 'IBM : accès par texte indexé ; monitor 9.5.0 historique. Oracle Retail latest non figé ; ne pas en déduire une version.'
+- Les noms et rattachements P06–P17 sont proposés. P15 et P17 requièrent un arbitrage de maille ou de responsabilité.
+mechanism_coverage:
+- mechanism: Droits par groupe et limites de consommation
+  candidates: P01–P06, P09
+  support: SAP / Microsoft
+  targeted_benefit: Pénurie et concurrence entre usages
+- mechanism: Sécurité, seuil de réassort, cible et limite haute
+  candidates: P07
+  support: Microsoft / SAP / Oracle
+  targeted_benefit: Pénurie et surstock
+- mechanism: Unités ou jours de couverture, niveaux variables dans le temps
+  candidates: P07, P11
+  support: Microsoft / Oracle
+  targeted_benefit: Éviter des seuils fixes devenus inadéquats
+- mechanism: Méthode Min/Max, point de commande, cycle périodique et lots
+  candidates: P08
+  support: Microsoft / Oracle
+  targeted_benefit: Encadrer les apports et le risque d’excédent
+- mechanism: Minimum de présentation, place disponible et stock de démonstration
+  candidates: P07, P08, P10
+  support: Oracle Retail / RELEX
+  targeted_benefit: Tenir compte des contraintes magasin sans concevoir les rayons
+- mechanism: Fin de vie, arrêt progressif, dates de début/fin du réassort
+  candidates: P08, P11, P13
+  support: RELEX / Oracle Retail / Slimstock
+  targeted_benefit: Limiter le stock résiduel ; dates de saison reçues en entrée
+- mechanism: Durée de vie résiduelle / péremption
+  candidates: P08, P09, P17
+  support: RELEX / Microsoft
+  targeted_benefit: Cas conditionnel selon produits ; règle reçue, pas gestion qualité
+- mechanism: Segments, exceptions article-lieu, règles héritées
+  candidates: P10, P14, P16
+  support: Oracle / IBM / Blue Yonder
+  targeted_benefit: Éviter ambiguïtés de portée et décisions locales invisibles
+- mechanism: Activation, arrêt, application collective et lecture de l’effectif
+  candidates: P11–P16
+  support: SAP / Oracle / Microsoft
+  targeted_benefit: Distinguer préparation et application
+- mechanism: Détection d’écarts bas/haut et réexamen
+  candidates: P17
+  support: IBM / RELEX / Kinaxis
+  targeted_benefit: Maîtriser les règles dans la durée, rattachement à arbitrer
+boundaries:
+- Coverage Target Decision détermine les valeurs ; Coverage Threshold Setting configure les valeurs retenues. Stock Allocation
+  Decision reste distincte des opérations sur enveloppes.
+- Replenishment Decision détermine les apports nécessaires. Configurer une méthode ou un plafond ne crée ni ne lance un Order.
+  D04 et D06 conservent leurs responsabilités.
+- Supply Assignment lie les ressources aux besoins ; Reservation engage une quantité. Le fait consommant les droits et les
+  corrections doivent prévenir les doubles déductions.
+- Protection Scheduling programme une applicabilité ; Inventory Planning construit et éprouve des scénarios. Aucune simulation,
+  analyse d’impact ou validation de scénario copiée sous Protection.
+- Allocation Release restitue des droits encore inutilisés ; Consumption Reversal corrige des droits consommés ; Protection
+  Deactivation arrête une règle. Aucun effet automatique sur un engagement existant présumé.
+- Replenishment Rule Setting configure les contraintes déjà connues ; les maîtres Product, Agreement et Network restent externes.
+  Les décisions de fournisseur, substitution ou service ne sont pas absorbées.
+- Les plafonds de stock souhaitables, les cibles Min/Max, les plafonds de consommation et les capacités physiques sont différents.
+  Une cible haute peut être dépassée par des contraintes de lots ; un plafond strict doit être explicitement qualifié.
+- 'La configuration d’une limite de place ne mesure pas la capacité opérationnelle : D06 fournit le contexte exécutant pertinent.
+  La conception du planogramme ou de l’assortiment ne devient pas une responsabilité Supply Protection.'
+- La surveillance de seuils peut utiliser Inventory Visibility et des projections ; elle ne recalcule pas une optimisation.
+  Le rattachement exact de P17 reste un arbitrage.
+- Un surstock existant peut nécessiter redistribution, retour, report/annulation d’apport ou écoulement. Les règles orientent
+  ces réponses mais ne les exécutent pas. La décision de réduire ou reporter des apports reste à vérifier dans D05 ; ne pas
+  la prétendre couverte par la seule définition actuelle de Replenishment Decision.
+- Finance, démarque commerciale, disposition/destruction, conformité, planification de saison et création de prévision ne
+  sont pas intégrées implicitement à cette capacité. Leurs contraintes utiles peuvent être reçues.
+not_separate_behaviors:
+- Un comportement par seuil, SKU, magasin, API, écran ou canal technique
+- Créer/modifier/copier/supprimer chaque paramètre sans résultat métier propre
+- ABC/XYZ, DDMRP, Min/Max ou IA comme niveaux de maturité
+- Un comportement Planning dupliquant les six comportements D05.f
+recommended_review_order:
+- 'P07 Coverage Threshold Setting : sécurité, déclencheur, cible, plafond'
+- P08 Replenishment Rule Setting et P09 Consumption Rule Setting
+- P06 correction de consommation et frontière Reservation
+- 'P10–P14 et P16 : portée et vie des règles'
+- 'P15 et P17 : utilité et rattachement à arbitrer'
+proposal_location: modeles/backlog/supply-protection-review.yaml
+current_direction_U282:
+  state: adopted_direction_target_pending
+  source_refs:
+  - U282
+  direction: Décrire les mécanismes métier par lesquels Supply Protection protège contre pénurie, surstock et déséquilibre
+    ; distinguer les opérations fonctionnelles qui les administrent.
+  previous_candidates_status: Les 17 lignes restent une matière fonctionnelle historique ; elles ne sont plus le découpage
+    cible recommandé.
+  proposed_description_grid:
+  - Risque métier adressé
+  - Principe du mécanisme
+  - Conditions et résultat métier
+  - Cas concret
+  - Décisions mobilisées et frontières
+  - Complexité ou bénéfice ciblé
+  next_step: Requalifier la matrice des mécanismes, vérifier les recouvrements et proposer les comportements sans les déduire
+    des API.
+implementation_U290:
+  state: core_applied
+  registry: modeles/backlog/refactoring-implementation.yaml
+  source_refs:
+  - U290
+  note: Les accords historiques ci-dessus restent des preuves datées ; lire le modèle courant et le registre pour les valeurs
+    et rattachements après refonte.

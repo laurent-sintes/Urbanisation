@@ -1,0 +1,36 @@
+source_refs:
+- U379
+- U380
+- ELM229
+- CMP140
+model_before: audits/2026-09-18-return-disposition-U380/model-before.yaml
+model_before_sha256: 8078d82e0675dfda12079f8866a6345aaddd47ca037d8020532a32912f45f59c
+delta:
+  nodes:
+    added:
+      D05.i: 24931cb6ba5fd1e04cd8abea3734fd06b12fbb0c66d47963cf4a8fed059b3022
+    changed:
+      D04.l: 3180221152fe47c8ff3c69fb8463e7af36599498b91d28a9a171b19a89ee6a8d
+      D05: 5922c097482d7b73ef1363e91c6b35d192edea9bc8933d472b22c10cfb3b9afb
+    removed: []
+  relations:
+    added:
+      REL-NEEDS-U380-01: 45024664b1bbf3662f99f440aa600a5314566da0d250b23fdf10386d0415d02b
+      REL-MEMBER-D05.i: bb6da43aad6e9d26539f717c23248b1e0104bfbb907179b478be8154d58238f8
+      REL-NEEDS-U380-02: 62d5ab587fc75c81c9b812298c02201457ddb80248a26654c084852fd2faa7f7
+      REL-NEEDS-U380-03: b17c3a44687c113cbe2ec530d7eca4d4d3138f2bef1c67bbcb0fff6d7816c022
+      REL-NEEDS-U380-04: ff842709fceb38763fb15f6ae5971a98e2f6a04083a5567e71e1f17761f96f1d
+    changed: {}
+    removed: []
+behaviors: []
+node_id: D05.i
+adopted_fields:
+- name
+- definition
+- nature
+value_sha256:
+  name: cd7db088c22cbdcdefe7e9020657ef1650acbbbb1d78283a8d5a46d55f68739b
+  definition: a1e3d89d9f0fb6edb462945173b4e7b862e8d4f82cb0b8e1ea005a3dd23cecb7
+  nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+parent_id: D05
+parent_relation_id: REL-MEMBER-D05.i

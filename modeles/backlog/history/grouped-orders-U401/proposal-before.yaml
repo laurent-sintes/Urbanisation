@@ -1,0 +1,291 @@
+id: GROUPED-CONSIGNMENT-SALES-TRANSFER-U400
+as_of: '2026-09-18'
+status: proposed_in_existing_audit
+source_refs:
+- U400
+- U399
+- U398
+- ELM240
+- CMP151
+purpose: Traiter ensemble les trois capacités restantes, sans nouvel audit ni remaniement des liens.
+groups:
+- capability_id: D01.h
+  name: Consigned Inventory Management
+  decomposition_rationale: Les obligations sur le stock diffèrent selon consommation, durée contractuelle ou sortie sans acquisition
+    ; expliciter ce qui change la propriété et ce qui met fin à la détention évite de confondre mouvement et achat.
+  market_position: Microsoft et Oracle documentent acquisition à consommation, échéance et retours. Les sorties vers soldeur,
+    seconde main ou destruction sont le besoin FLOW U391 ; couverture globale de ces issues non établie. Consignment Exit
+    est un libellé de synthèse FLOW, plus large que les retours documentés.
+  candidates:
+  - name: Consumption-Based Ownership Transfer
+    definition: Appliquer le transfert de propriété lors de la vente ou consommation prévue par l’accord, en identifiant les
+      quantités et faits déclencheurs.
+    example: Vingt pièces vendues deviennent acquises au fournisseur selon les conditions convenues ; les autres restent consignées.
+    benefit: Distinguer utilisation autorisée, acquisition et stock restant fournisseur.
+    source_ids:
+    - G01
+    - G02
+    boundary: Le contrat fixe l’événement ; Purchase Order et finance portent leurs suites. Aucun automatisme vente = acquisition
+      universel.
+    status: proposed_not_adopted
+  - name: Aging-Based Ownership Transfer
+    definition: Appliquer l’acquisition des quantités encore consignées lorsque leur durée contractuelle de détention arrive
+      à échéance.
+    example: Un accord prévoit l’acquisition des pièces encore présentes après 90 jours.
+    benefit: Rendre visibles les obligations liées au temps indépendamment des ventes.
+    source_ids:
+    - G02
+    boundary: Illustration conditionnelle, sans acquisition forcée de tout stock à échéance ni règle Beaumanoir présumée.
+    status: proposed_not_adopted
+  - name: Consignment Exit
+    definition: Appliquer une sortie autorisée du régime de consignation ou de la détention, par reprise fournisseur ou autre
+      filière prévue, en conservant les droits, autorisations et liens aux opérations nécessaires.
+    example: En fin de saison, un reliquat est repris et un autre orienté vers une filière seconde main autorisée.
+    benefit: Expliciter le devenir des quantités non consommées sans achat fictif ni autorisation implicite.
+    source_ids:
+    - G03
+    boundary: Renvoi, soldeur, seconde main, destruction seulement selon accord/décision ; cette capacité applique l’issue
+      retenue, elle n’en optimise pas le choix. Supplier Return, Sales Order, Transfer Order et D06 mobilisés selon le cas.
+    status: proposed_not_adopted
+- capability_id: D04.i
+  name: Sales Order
+  decomposition_rationale: Livraison, retrait, livraison fournisseur et relation intersociétés changent la prise en charge
+    de la commande, la preuve de satisfaction et les engagements à coordonner. Ces parcours doivent se lire dans la capacité.
+  market_position: Shipping/Pickup et Direct delivery sont documentés par Microsoft ; Intercompany constitue une dimension
+    de relation commerciale combinable avec un parcours de livraison. Il ne s’agit pas de quatre catégories mutuellement exclusives.
+  candidates:
+  - name: Ship to Customer
+    definition: Prendre en charge une commande à livrer au client depuis le réseau de stockage et suivre les quantités remises
+      au client et restant à servir.
+    example: Une commande est expédiée depuis un entrepôt ou un magasin.
+    benefit: Expliciter la satisfaction par livraison à destination.
+    source_ids:
+    - G04
+    boundary: D03 décide source/promesse ; D06 orchestre préparation et transport. Pas de comportement par entrepôt ou magasin.
+    status: proposed_not_adopted
+  - name: Customer Pickup
+    definition: Prendre en charge une commande à mettre à disposition puis à remettre au client dans le lieu convenu, en distinguant
+      disponibilité pour retrait et retrait effectif.
+    example: Commande web retirée en magasin ; prête ne signifie pas remise au client.
+    benefit: Expliciter l’engagement de mise à disposition et la preuve de retrait.
+    source_ids:
+    - G04
+    boundary: Pas de règle universelle de paiement ou de réservation ; non-retrait traité selon politique et cycle de vie.
+    status: proposed_not_adopted
+  - name: Direct Delivery
+    definition: Prendre en charge une commande dont le fournisseur livre directement le client, en coordonnant les attendus
+      de vente et d’achat.
+    example: Une commande client est servie par le fournisseur sans passage par notre stock.
+    benefit: Conserver la responsabilité envers le client tout en suivant une livraison externe.
+    source_ids:
+    - G05
+    boundary: 'Comportement distinct de Direct Delivery sous Purchase Order : ici attendu client, là engagement fournisseur
+      ; réalisations liées, pas fusion.'
+    status: proposed_not_adopted
+  - name: Intercompany Sales
+    definition: Prendre en charge la vente entre entités juridiques du groupe et maintenir la cohérence avec la demande d’achat
+      correspondante.
+    example: Une entité vend à une autre, éventuellement avec livraison directe au client final.
+    benefit: Rendre explicites les engagements réciproques entre sociétés.
+    source_ids:
+    - G06
+    boundary: Peut se combiner avec un mode de livraison ; ni simple transfert de lieu ni reprise de la fiscalité/comptabilité.
+    status: proposed_not_adopted
+- capability_id: D04.k
+  name: Transfer Order
+  decomposition_rationale: 'Les transferts servent des intentions distinctes : démarrer un stock, l’alimenter, le rééquilibrer,
+    le regrouper ou satisfaire une commande identifiée. L’attendu et la justification doivent rester lisibles même lorsque
+    le transport ou l’outil est commun.'
+  market_position: Microsoft documente le réassort, le rééquilibrage et les transferts liés aux ventes ; Oracle et Nextail
+    documentent rééquilibrage/regroupement ; SAP Retail historique appuie l’implantation. Les cinq comportements forment une
+    proposition FLOW, pas une taxonomie éditeur copiée.
+  candidates:
+  - name: Initial Stocking
+    definition: Prendre en charge les transferts constituant le stock de départ d’un lieu pour un lancement, une saison ou
+      une capsule.
+    example: Acheminer les quantités d’implantation depuis l’entrepôt vers les magasins.
+    benefit: Expliciter l’attendu de démarrage.
+    source_ids:
+    - G11
+    boundary: Initial Stocking Decision dimensionne le besoin ; Transfer Order porte les départs et arrivées attendus.
+    status: proposed_not_adopted
+  - name: Continuous Replenishment
+    definition: Prendre en charge les transferts successifs alimentant un lieu pendant l’activité selon le besoin retenu.
+    example: Réassortir un magasin depuis l’entrepôt au fil de la saison.
+    benefit: Expliciter l’alimentation récurrente.
+    source_ids:
+    - G07
+    - G08
+    boundary: Replenishment Decision décide le besoin ; mêmes noms que l’apport consigné, mais ressource déjà présente ailleurs
+      dans le réseau.
+    status: proposed_not_adopted
+  - name: Inventory Rebalancing
+    definition: Prendre en charge les transferts retenus pour rééquilibrer les stocks entre lieux en conservant leur justification
+      donneur/receveur.
+    example: Déplacer des pièces d’un magasin disposant d’un excédent vers un magasin qui en manque.
+    benefit: Rendre visible la correction d’un déséquilibre.
+    source_ids:
+    - G09
+    - G08
+    boundary: Stock Redistribution Decision choisit ; ce comportement gère les Orders et leur satisfaction.
+    status: proposed_not_adopted
+  - name: Stock Consolidation
+    definition: Prendre en charge les transferts regroupant des stocks dispersés pour reconstituer un assortiment ou concentrer
+      des reliquats vers des lieux adaptés.
+    example: Rassembler des tailles dispersées sur les magasins retenus, ou rapatrier des reliquats.
+    benefit: Distinguer regroupement et simple alimentation courante.
+    source_ids:
+    - G09
+    - G10
+    boundary: Décision de redistribution distincte ; ni consolidation de bacs interne entrepôt ni automatisme de fin de saison.
+    status: proposed_not_adopted
+  - name: Order-Driven Transfer
+    definition: Prendre en charge un transfert nécessaire à la satisfaction d’une commande identifiée, en conservant le lien
+      et l’échéance de cette commande.
+    example: Acheminer une pièce dans le magasin où le client doit la retirer.
+    benefit: Distinguer un engagement pour une demande identifiée d’un apport au stock général.
+    source_ids:
+    - G08
+    boundary: D03 retient la réponse ; la promesse client et la réservation restent distinctes du transfert.
+    status: proposed_not_adopted
+sources:
+- id: G01
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Documentation évolutive
+  locator: Overview ; Inventory ownership change journal
+  finding: Apport distinct de l’acquisition ; propriété fournisseur puis changement de propriété avant consommation dans l’exemple
+    de production.
+  limit: Ne prescrit pas le fait générateur contractuel retail ni une vente automatique à chaque mouvement.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G02
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: Consigned Inventory Aging
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html
+  edition: 26A
+  locator: Aging Process ; Aging Period ; Transfer to Owned
+  finding: Une durée convenue peut déclencher l’acquisition ; transaction Transfer to Owned, acquisition usuelle par utilisation
+    ou expiration de durée.
+  limit: Condition d’accord, pas loi générale de consignation ; la documentation décrit une opération manuelle et ne prouve
+    pas une automatisation imposée.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G03
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: Examples of Consigned Inventory Returns
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html
+  edition: 25D
+  locator: Material received and put away ; Material consumed
+  finding: Retour fournisseur distingué selon propriété et communication de consommation ; un retour de stock encore consigné
+    ne génère pas nécessairement d’avoir.
+  limit: Ne couvre pas les filières soldeur, seconde main ou destruction ; aucun droit de disposition universel.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G04
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  title: Customer orders in point of sale (POS)
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/customer-orders-overview
+  edition: Documentation évolutive
+  locator: Typical scenarios ; shipment or pickup
+  finding: Commandes livrées à une adresse et commandes retirées au lieu/date convenus ; choix entre magasins et entrepôts
+    admissibles.
+  limit: Source Commerce/POS, pas preuve de couverture universelle de toutes les ventes B2B ; ne transfère pas l’exécution
+    physique à Sales Order.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G05
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Direct deliveries
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/direct-deliveries
+  edition: Documentation évolutive
+  locator: Introduction ; Delivery date ; order lines
+  finding: Fournisseur livre directement le client ; commande de vente reliée à l’achat.
+  limit: Choix documentaire produit distinct des responsabilités FLOW ; ne prouve pas une disponibilité ni une promesse automatique.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G06
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Intercompany orders and return orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+  edition: Documentation évolutive
+  locator: Introduction ; intercompany sales and purchase orders
+  finding: Commandes de vente et achat liées entre entités juridiques.
+  limit: Transaction commerciale intersociétés distincte d’un simple transfert entre lieux ; pas de schéma comptable prescrit
+    pour FLOW.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G07
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Set up warehouses for transfer orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/transfer-orders-warehouse
+  edition: Documentation évolutive
+  locator: Warehouse levels ; Refilling ; Transport lead time
+  finding: Besoins de destination alimentés par des transferts planifiés depuis un entrepôt source.
+  limit: Décrit le réassort ; pas une taxonomie exhaustive de cinq comportements.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G08
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management / SCM
+  title: Integrate Supply Chain Management transfer orders with Intelligent Order Management
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/integrate-transfer-orders
+  edition: Documentation évolutive avec avertissement preview
+  locator: Typical reasons ; View transfer order products on sales order product page
+  finding: Transferts pour réassort, pointe de demande, prestations et satisfaction de commandes ; visibilité des transferts
+    entrants associés au produit de commande.
+  limit: La page porte un avertissement preview ; appui sur le sens métier, pas recommandation de produit ni assertion de
+    disponibilité générale.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G09
+  vendor: Oracle
+  product: Fusion Cloud Replenishment Planning
+  title: Overview of Inventory Rebalancing
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+  edition: 26B
+  locator: Salient Features ; planned inbound and outbound orders
+  finding: Rééquilibrage excédents/manques et ordres planifiés ; transfert possible vers un lieu de regroupement.
+  limit: Le produit combine décision et génération des ordres ; FLOW garde ces responsabilités séparées.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G10
+  vendor: Nextail
+  product: Inventory Planning
+  title: Merkal implements AI to centralize and streamline inventory planning across all channels
+  url: https://nextail.co/customer/merkal-footwear-inventory-planning/
+  edition: Étude client, version non affichée
+  locator: Sharper store transfers ; customer quote on consolidation
+  finding: Transferts de fin de saison, rééquilibrage du réseau et consolidation des tailles.
+  limit: Témoignage éditeur/client, pas spécification normative ni preuve de déploiement Beaumanoir.
+  access: Page primaire ouverte
+  consulted_on: '2026-09-18'
+- id: G11
+  vendor: SAP
+  product: ERP Retail
+  title: Allocation Table with Reference to an OAPC-Based Purchase Order
+  url: https://help.sap.com/docs/SAP_ERP/75c4b203fca64320b998cc04e2eb1468/24e4c353b677b44ce10000000a174cb4.html?version=6.17.latest
+  edition: 6.17, documentation historique
+  locator: Fixed Initial Buy Allocation ; follow-on documents
+  finding: Répartition d’achat initial et documents subséquents dont stock transport orders.
+  limit: Appui partiel et historique pour implantation ; pas une décomposition native des capacités FLOW. Allocation reste
+    un terme éditeur qualifié.
+  access: Passage primaire indexé consulté ; ouverture du portail sans texte exploitable
+  consulted_on: '2026-09-18'
+common_boundaries: D04 porte les demandes et leur résultat attendu, D03/D05 les décisions, D01 les faits/régimes de stock,
+  D06 les prestations. Lifecycle/Structuring/Archiving restent disponibles et les opérations utiles doivent être expliquées
+  dans chaque contexte métier.
+combination: Les comportements ne sont ni une séquence obligatoire ni tous exclusifs. Intercompany est un axe de relation
+  commerciale ; les autres parcours décrivent principalement le mode de satisfaction. Identifier les quantités concernées
+  et ne pas additionner des stocks ou attendus deux fois.
+deferred_details: Règles de gestion, cas spécifiques et nouveaux liens détaillés restent à instruire si nécessaires ; pas
+  de chantier de requalification des liens au titre de U398/U399.
+catalog_changed: false

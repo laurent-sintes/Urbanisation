@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-16.1",
+  "model_path": "model.yaml",
+  "model_sha256": "35c597400a89828b882f5067b5bf767108b232c516bb865f1ad7a3b6b6951d83",
+  "input_revision_path": "../../revisions/2026-09-16.1/backlog.yaml",
+  "input_revision_sha256": "4ad4ead9a2c8dd2aae9bf6d881e88a48f47be0548390e42adcc4a74d821e33e4",
+  "decisions_path": "../../decisions/2026-09-16.1.json",
+  "decisions_sha256": "cd658223b10efd528b704f4b3cbb67358e239bfcc48918f304828db44efd3edb",
+  "provenance_path": "../../provenance/2026-09-16.1/source-records.json",
+  "provenance_sha256": "ef2a43afc5e390b1f8e7d453f8534800b3ab8ad40919c69afc7fb43378fd729b",
+  "source_files": [
+    {
+      "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "sha256": "65841ecf1c8fd7abf61221af37c6f842a68ecc69aad11ee9e86cb40655ec32dd"
+    },
+    {
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "sha256": "9d4d0376ba32de5f745d2871e7afebc0ec68920baf470b9d264ddd32e9360c68"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "bae7bbb709def2d75f763050f108c288f235a0e5c5d40392ebbbbb02bcba0fb8"
+    },
+    {
+      "path": "connaissance/05-propositions.md",
+      "sha256": "4ec2a903af2c14744ba8b2e83ba18acf8a7042126dcc480121774f28ab6c6a16"
+    },
+    {
+      "path": "app/model-metadata.json",
+      "sha256": "89ffdbf46ce58660b9e167863ea9f474976bb8f048fb9c52b53e612a5d5a6c11"
+    },
+    {
+      "path": "app/exploration.json",
+      "sha256": "dc3d99a5ac1ff4beb6794af10c16466a45e115ff9da3651ed816db1ac438c023"
+    }
+  ],
+  "node_count": 53,
+  "capability_count": 39,
+  "complete_capability_count": 5,
+  "changes_path": "changes.json",
+  "changes_sha256": "14ec5dd5e638a7f38307ab6145d85f4446fe09f7a05afa1574d957cf1a19085f",
+  "prepared_manifest_sha256": "e2fb168f5577633eb06717a2056d3776988096d84f80a8c2609b3be0c4dc4e58",
+  "note": "Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques."
+}

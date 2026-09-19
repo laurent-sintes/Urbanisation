@@ -1,0 +1,46 @@
+source_refs:
+- U342
+model_before: audits/2026-09-18-reservation-policy/model-before.yaml
+model_before_sha256: 409f1b872b38d836671882944e64d6a8d086ab1cdeb1a42d225bb020b8cf8bd2
+delta:
+  nodes:
+    added:
+      BHV032: 342082eedfb54d3fb715a0845e1d636eb1c896e863d283971e4f62acaf8a0609
+      BHV033: 753be641e21e99d2eac4410a7fba6272d7ed079debf71952ef150135b7285def
+      BHV034: 66951b6c1de7d92d9573cb6edc2ffd38ceae414c069e7548daac8ca33101c9cd
+      BHV035: abeeac1b6cab82dfc6f37b2db5f1b490e8814be4151ca1543e0652d8bf9703ac
+      D05.h: c8b189d3403d146b127a04b305ae4a27e686e11bfbaf8549e2e10e8e17c748f1
+    changed: {}
+    removed: []
+  relations:
+    added:
+      REL-BEHAVIOR-BHV032: afabb9dbbcc52bc3c7905d7becfa26ded6fbd0bcb81ac3839fbc766e223a5ef1
+      REL-BEHAVIOR-BHV033: 231fc26c0be9fdeab6683d885f6fce63eafb653526470dc9c38d22d1a3c748cc
+      REL-BEHAVIOR-BHV034: ef20f6330cdd005d46bd57f40d63057655dd84b4a7b2931037d88ef32ecaef0d
+      REL-BEHAVIOR-BHV035: 57bacda8cb7878bd9379338ee774dee564d2b7a226243966cd463e94d8f535a5
+      REL-INVENTORY-PLANNING-D05.h: aaa7bc493c1bf05c0e22c0a997ea27f12450f63c23b23c3dae67e8f768d5aaec
+      REL-MEMBER-D05.h: b0b6f11dc68dc9f96bede441dcdb9017c2a3b13b990d66c9ab89c68978e42f2a
+      REL-RESERVATION-POLICY-AGREEMENT: d7429b4a22c3135be4bb2ed7aba68eb90c10fde28a7168c570b0eb07b9d8b46d
+      REL-RESERVATION-POLICY-APPLICATION: 8df4790a38a2d686246de2d839560710b4bf33360860ef8d6bd3657a949a8d64
+      REL-RESERVATION-POLICY-ATP: aef33af8c54cd60c052207479df5301ab843e1c6d1e6bd4ef766acb43d9dd247
+      REL-RESERVATION-POLICY-INVENTORY: 79d636a2243cb0098bd66a829091ef1085ded585008dfe45e380975eb4f70980
+      REL-RESERVATION-POLICY-PRIORITY: 62a29fab6c2da1c11b5e76d04d700f4ec353db77f74393f34a27f7ed333482f3
+      REL-RESERVATION-POLICY-PROTECTION: a80665459f7ffcb6b492a7acc000cc326c98bf33be9e5570d11e45c8868342fc
+    changed: {}
+    removed: []
+behaviors: []
+capability:
+  node_id: D05.h
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: db07e9848c8df0f31bfed6512ba87a9985f8579f9d9e5339170c30eb5c92025a
+    definition: 8e07a1b75d10bed2e01618fd3f128f6ef852a398167361028c9475b33c432299
+proposed_behaviors:
+- BHV032
+- BHV033
+- BHV034
+- BHV035
+proposed_parent_id: D05
+scope: Capacité adoptée, quatre comportements documentés et proposés ; aucun ancien nœud modifié, aucune publication.

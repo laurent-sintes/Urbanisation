@@ -1,0 +1,157 @@
+"""Versioned methodology guides, explicitly associated with a publication.
+
+The guide owns frozen editorial content and source excerpts. It never reads the
+business backlog or resolves a live source, and cannot change a model response.
+"""
+
+from __future__ import annotations
+
+import hashlib
+from pathlib import Path
+import re
+import sys
+
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+if str(REPOSITORY_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPOSITORY_ROOT))
+
+from scripts.release_catalog import resolve_release
+from scripts.structured_io import loads
+
+VERSION = re.compile(r"\d{4}-\d{2}-\d{2}\.[1-9]\d*\Z")
+SCENES = {"comparison", "decomposition", "dependency", "responsibilities", "objects", "evidence"}
+
+
+class ModelingGuideError(ValueError):
+    """A guide or its publication cannot be safely and faithfully read."""
+
+
+def _require(condition, message="Structure du guide invalide."):
+    if not condition:
+        raise ModelingGuideError(message)
+
+
+def _texts(value, *fields):
+    _require(isinstance(value, dict))
+    for field in fields:
+        _require(isinstance(value.get(field), str) and bool(value[field].strip()))
+
+
+def _read(folder: Path, relative: str, sha256: str | None = None):
+    # Only these two shapes are accepted; no arbitrary path, symlink or junction.
+    _require(relative == "index.yaml" or bool(re.fullmatch(r"versions/\d{4}-\d{2}-\d{2}\.[1-9]\d*\.yaml", relative)),
+             "Chemin de guide non autorisé.")
+    path = folder / relative
+    _require(folder.resolve() == folder and path.resolve() == path, "Chemin de guide non autorisé.")
+    content = path.read_bytes()
+    if sha256 is not None:
+        _require(bool(re.fullmatch(r"[a-f0-9]{64}", sha256)), "Empreinte de guide invalide.")
+        _require(hashlib.sha256(content).hexdigest() == sha256, "L’empreinte du guide ne correspond pas au fichier.")
+    # Parse exactly the bytes whose hash was checked.
+    return loads(content.decode("utf-8-sig"), ".yaml")
+
+
+def _validate_guide(guide, version):
+    _texts(guide, "id", "version", "as_of", "title", "subtitle")
+    _require(guide["version"] == version, "La version du guide ne correspond pas à son association.")
+    _require(isinstance(guide.get("sources"), list) and bool(guide["sources"]))
+    source_ids = set()
+    for source in guide["sources"]:
+        _texts(source, "id", "title", "excerpt", "scope")
+        _require(source["id"] not in source_ids, "Source de guide dupliquée.")
+        source_ids.add(source["id"])
+
+    def refs(value):
+        _require(isinstance(value, list) and bool(value))
+        _require(all(isinstance(item, str) and item in source_ids for item in value), "Source de guide non résolue.")
+
+    refs(guide.get("source_refs"))
+    _require(isinstance(guide.get("lessons"), list) and len(guide["lessons"]) == 6)
+    lesson_ids = set()
+    for lesson in guide["lessons"]:
+        _texts(lesson, "id", "label", "title", "rule", "established_at", "question", "explanation")
+        _require(lesson["id"] not in lesson_ids, "Clé de guide dupliquée.")
+        lesson_ids.add(lesson["id"])
+        scene = lesson.get("scene")
+        _texts(scene, "kind", "caption")
+        _require(scene["kind"] in SCENES)
+        for field in ("parent", "connector"):
+            if field in scene:
+                _texts(scene, field)
+        _require(isinstance(scene.get("items"), list) and bool(scene["items"]))
+        for item in scene["items"]:
+            _texts(item, "label", "text")
+        if "variants" in scene:
+            _require(scene["kind"] == "comparison" and isinstance(scene["variants"], list) and bool(scene["variants"]))
+            variant_ids = set()
+            for variant in scene["variants"]:
+                _texts(variant, "id", "label", "description")
+                _require(variant["id"] not in variant_ids)
+                variant_ids.add(variant["id"])
+                _require(isinstance(variant.get("realizations"), list) and bool(variant["realizations"]))
+                for realization in variant["realizations"]:
+                    _texts(realization, "label")
+                    indexes = realization.get("capability_indexes")
+                    _require(isinstance(indexes, list) and bool(indexes))
+                    _require(all(type(index) is int and 0 <= index < len(scene["items"]) for index in indexes))
+        _require(isinstance(lesson.get("choices"), list) and len(lesson["choices"]) == 2)
+        for choice in lesson["choices"]:
+            _texts(choice, "label", "feedback")
+        contributor = lesson.get("contributor")
+        _texts(contributor, "criterion", "boundary", "scope")
+        refs(contributor.get("source_refs"))
+        _require(isinstance(lesson.get("model_links"), list))
+        for link in lesson["model_links"]:
+            _texts(link, "id", "label")
+    return guide
+
+
+def load_modeling_guide(root=REPOSITORY_ROOT, version=None):
+    """Read only the association for the exact, verified publication selected.
+
+    A known publication without an association is a normal unavailable result.
+    Unknown publications or invalid guide files fail this endpoint exclusively.
+    """
+    root = Path(root).resolve()
+    if version is not None and (not isinstance(version, str) or not VERSION.fullmatch(version)):
+        raise ValueError("Version de publication invalide.")
+    try:
+        publication = resolve_release(root / "modeles/release", version)
+    except (ValueError, KeyError, TypeError, OSError) as exc:
+        raise ModelingGuideError("Publication inconnue ou non vérifiable pour ce guide.") from exc
+    response = {
+        "schema_version": "1.0.0", "publication_version": publication["version"],
+        "status": "unavailable", "message": "Aucun guide n’est associé à cette publication.",
+    }
+    folder = root / "modeles/modeling-guides"
+    if not (folder / "index.yaml").exists():
+        return response
+    try:
+        index = _read(folder, "index.yaml")
+        _require(isinstance(index, dict) and index.get("schema_version") == "1.0.0")
+        _require(isinstance(index.get("guides"), list) and isinstance(index.get("associations"), list))
+        guides = {}
+        for item in index["guides"]:
+            _texts(item, "version", "path", "sha256")
+            _require(bool(VERSION.fullmatch(item["version"])) and item["version"] not in guides)
+            _require(item["path"] == "versions/" + item["version"] + ".yaml", "Chemin de guide non autorisé.")
+            guides[item["version"]] = item
+        associations = {}
+        for item in index["associations"]:
+            _texts(item, "publication_version", "guide_version", "scope", "note")
+            _require(bool(VERSION.fullmatch(item["publication_version"])) and item["publication_version"] not in associations)
+            _require(item["guide_version"] in guides, "Guide associé absent de l’index.")
+            associations[item["publication_version"]] = item
+        association = associations.get(publication["version"])
+        if association is None:
+            return response
+        entry = guides[association["guide_version"]]
+        guide = _validate_guide(_read(folder, entry["path"], entry["sha256"]), entry["version"])
+        return {
+            **response, "status": "available", "message": "Guide méthodologique associé à cette publication.",
+            "association": {key: association[key] for key in ("scope", "note")}, "guide": guide,
+        }
+    except ModelingGuideError:
+        raise
+    except (ValueError, KeyError, TypeError, OSError, UnicodeError) as exc:
+        raise ModelingGuideError("Le guide associé est indisponible ou invalide.") from exc

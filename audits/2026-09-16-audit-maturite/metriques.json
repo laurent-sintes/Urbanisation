@@ -1,0 +1,117 @@
+{
+  "publication": "2026-09-16.2",
+  "model_sha256": "c2e80b29d8adbe3b8b66cb31939577f09cb5ffbbbe6cd941e2c1cd18f5063e27",
+  "nodes_by_kind": {
+    "group": 3,
+    "domain": 5,
+    "capability": 41,
+    "reference": 6
+  },
+  "relations_by_type": {
+    "contains": 41,
+    "presents": 12,
+    "relates-to": 18,
+    "provides-conditions": 2,
+    "provides-knowledge": 1
+  },
+  "transverse_relations": 21,
+  "transverse_capability_to_capability": 18,
+  "capabilities_without_transverse_relation": [
+    "D01.f",
+    "D01.g",
+    "D01.c",
+    "D01.d",
+    "D02.b",
+    "D02.c",
+    "D03.a",
+    "D03.b",
+    "D02.e",
+    "D03.i",
+    "D03.j",
+    "D03.k",
+    "D03.l",
+    "D03.m",
+    "D04.n",
+    "D04.o",
+    "D09.d",
+    "D11.a",
+    "D08.d",
+    "D12.a",
+    "D13.a",
+    "D14.a"
+  ],
+  "capability_natures": {
+    "absente": 11,
+    "action": 12,
+    "decision": 13,
+    "planning": 1,
+    "knowledge": 2,
+    "management": 1,
+    "orchestration": 1
+  },
+  "capabilities_without_nature": [
+    "D01.f",
+    "D01.g",
+    "D01.c",
+    "D01.d",
+    "D02.b",
+    "D02.c",
+    "D09.d",
+    "D11.a",
+    "D08.d",
+    "D12.a",
+    "D13.a"
+  ],
+  "capabilities_without_scope": [
+    "D01.f",
+    "D01.g",
+    "D01.c",
+    "D01.d",
+    "D02.b",
+    "D02.c",
+    "D03.a",
+    "D03.b",
+    "D03.c",
+    "D02.e",
+    "D03.i",
+    "D03.j",
+    "D03.k",
+    "D03.l",
+    "D03.m"
+  ],
+  "capabilities_with_definition": 41,
+  "capabilities_with_finality": 41,
+  "old_D07_domain_mentions_in_scope": [
+    "D04.i",
+    "D04.j",
+    "D04.k",
+    "D04.l",
+    "D04.m",
+    "D05.c"
+  ],
+  "published_node_fields_different_from_backlog": [],
+  "published_relation_content_different_from_backlog": [],
+  "backlog_only_nodes": [
+    {
+      "id": "ILL-OBJ-01",
+      "kind": "object",
+      "name": "Engagement de fourniture"
+    },
+    {
+      "id": "ILL-DOC-01",
+      "kind": "document",
+      "name": "Confirmation de promesse"
+    },
+    {
+      "id": "ILL-EVT-01",
+      "kind": "event",
+      "name": "Promesse confirmée"
+    },
+    {
+      "id": "ILL-OBJ-02",
+      "kind": "object",
+      "name": "Demande de réassort"
+    }
+  ],
+  "example_count_note": "Comptage qualitatif manuel dans qualite-granularite.md ; non déduit d'un mot-clé."
+}

@@ -217,9 +217,16 @@ try {
     assert.equal(await item('TEST-L4').locator('[data-tree-id="D03.b"]').count(), 1);
     for (const artifact of artifacts) assert.equal(await item(artifact.id).count(), 0, `${artifact.kind} relation is not a structural child.`);
     await page.getByRole('tab', { name: /Relations/ }).click();
+    await page.waitForFunction(() => document.querySelector('[data-testid="cytoscape-canvas"]')?.getAttribute('data-status') === 'ready');
+    await page.getByTestId('cytoscape-canvas').locator('canvas').first().waitFor({ state: 'attached' });
+    const dependencyPicker = page.getByLabel('Inspecter un élément', { exact: true });
+    const graphNodeIds = await dependencyPicker.locator('option').evaluateAll(options => options.map(option => option.value));
     for (const artifact of artifacts) {
-      await page.locator(`.react-flow__node[data-id="${artifact.id}"]`).waitFor();
-      assert.equal(await page.locator(`.react-flow__node[data-id="${artifact.id}"] [data-icon-kind="${artifact.kind}"] svg.${artifact.icon}`).count(), 1);
+      assert.ok(graphNodeIds.includes(`node|${artifact.id}`), `${artifact.kind} keeps its own node in the dependency graph.`);
+      await dependencyPicker.selectOption(`node|${artifact.id}`);
+      assert.equal(await page.locator(`.dependency-node-heading [data-icon-kind="${artifact.kind}"] svg.${artifact.icon}`).count(), 1);
+      await page.locator(`[data-relation-id="REL-${artifact.id}"]`).click();
+      assert.ok((await page.getByTestId('relation-inspector').innerText()).includes(`Lien de test vers ${artifact.name}`));
     }
     await page.screenshot({ path: path.join(output, 'future-relations.png') });
     for (const artifact of artifacts) {

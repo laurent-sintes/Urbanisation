@@ -1,0 +1,49 @@
+source_refs:
+- U318
+state: applied_in_backlog
+model_before: audits/2026-09-18-redistribution-behaviors/model-before.yaml
+model_before_sha256: 86d65f0ac024f158b86c7255e449ff06745082a400601a625f7a61ddd7311908
+model_after_sha256: 846cacaecef2b662e0176aa05cfdb8c2b10d59a7e3eefb09f027372ea779921a
+delta:
+  nodes:
+    added:
+      BHV024: 7b87126bf17c00d9e231bb13546f10574e308635816b14bd0388302c8c9854e9
+      BHV025: 3255be1aa1c5859b16122d399126c8628034d8a14a9213ae0558dd718b17bc7d
+    changed:
+      D05.c: adebdb450dd10a902bcceefafc2f246288f47743b16e1142b9b37469ee8e505f
+    removed: []
+  relations:
+    added:
+      REL-BEHAVIOR-BHV024: a21bd186c3336eeae63321e63324020be7999b51574d3b7cbb64f400b4abeefa
+      REL-BEHAVIOR-BHV025: b9fab9296b55bea12fd05c87272d9af149753e360745396338642ed52ff6fd1e
+    changed: {}
+    removed: []
+behaviors:
+- node_id: BHV024
+  label_fr: Rééquilibrage entre sites
+  label_fr_sha256: c8266a0cafedc6f9fde6ac4e9753d55579bc76e5f2d16e5ed14423fbf940f906
+  adopted_fields:
+  - definition
+  value_sha256:
+    definition: 6ad30ac2d5f20bd990f73b836c53a74eda0dcc951e59669c25c7fb5d86b3c5b1
+  editorial_name: Inventory Rebalancing
+  parent_id: D05.c
+  relation_id: REL-BEHAVIOR-BHV024
+- node_id: BHV025
+  label_fr: Consolidation de stocks dispersés
+  label_fr_sha256: 7a4b660f3903ffb96a1b2ca0a4f6ad9c19e0a67d943a0d2508056192ac86db23
+  adopted_fields:
+  - definition
+  value_sha256:
+    definition: acb586ec403f33e876baef7ba809e2f604fc6508b96340581d75c0e8122bcfa1
+  editorial_name: Stock Consolidation
+  parent_id: D05.c
+  relation_id: REL-BEHAVIOR-BHV025
+adopted_cases:
+- Reconstituer des assortiments de tailles dans certains magasins.
+- Regrouper les reliquats vers des lieux de destination adaptés.
+validation_scope: Deux mécanismes, définitions présentées et parents adoptés ; noms anglais et détails éditoriaux proposés.
+  Comparaisons marché non validées par adoption du modèle.
+previous_candidates:
+  P06: BHV024 — élargi au-delà de la pénurie constatée
+  P07: BHV025 — élargi au-delà des seuls excédents

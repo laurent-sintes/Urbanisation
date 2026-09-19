@@ -1,0 +1,588 @@
+id: D05-REFACTORING-U235
+date: '2026-09-16'
+state: applied_to_backlog
+source_refs:
+- U233
+- U234
+- U235
+- U380
+before_snapshot: modeles/backlog/history/pre-U235.yaml
+before_sha256: 7533efabe2e4a667e87b69107c2e21bcab171f8ba096a4e67e2aa353f76b0757
+adopted_capabilities:
+- id: D05.a
+  name: Coverage Target Decision
+  definition: 'Déterminer les niveaux de stock souhaitables et les seuils à retenir : couverture, sécurité, déclenchement
+    du réassort, par produit, lieu et horizon.'
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: e541d92c30b841067a82addfeb2e2ca9ef0c6ab79643b8cce210dd368527b0b1
+    definition: 16feedebe6c89addbcf61c9e0fb0abd6d1aace87738d17b5e34f43e2f7bb2f1a
+  source_refs:
+  - U235
+- id: D05.d
+  name: Stock Allocation Decision
+  definition: Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: b9e8545451b5feac8acdcbb28d2e59e2ed5d2da1f46bd37dc908f3d4edf05e5d
+    definition: 462a7e18386912b742f51a6938298010ce22e60e9bfcbd7cb9c7f7120212b130
+  source_refs:
+  - U235
+- id: D05.e
+  name: Replenishment Decision
+  definition: 'Déterminer les apports nécessaires pour remplir le stock : quantités et dates, en tenant compte du stock disponible
+    et des apports déjà engagés.'
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 981dc4b9f083cad00116ccf288f95e330aad7f347e70f5a1b0bf489c5ab6eb91
+    definition: 40239dba0ae3bacf534cfdae4e7b46a5619c61ecd202bd4abb9a2ae1136f9656
+  source_refs:
+  - U235
+- id: D05.c
+  name: Stock Redistribution Decision
+  definition: Déterminer les transferts de stock existant pour corriger les excédents et insuffisances entre sites.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 4a42f5fc71ed11fa31411c07ebd95607240b680b1286e70776a69f583778cac5
+    definition: b6726694c8697bd2e33ba620f1612714971951df914b40f879f2cb928f1732c5
+  source_refs:
+  - U235
+- id: D05.f
+  name: Inventory Planning
+  definition: Reconfigurer les hypothèses et contraintes, mobiliser ces décisions, simuler leurs effets et valider un scénario
+    cohérent.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128
+    definition: b18cd430368a2ff81e22bff02948b4e016339e909feab7c8a8dc8cfca0efd6ca
+  source_refs:
+  - U235
+retired:
+  node_id: D05.b
+  name: Net Requirements Calculation
+  relation_ids:
+  - REL-MEMBER-D05.b
+  replaced_by: D05.e
+  reason: La décision de réapprovisionnement inclut le calcul net et retient quantités/dates sous contraintes ; périmètre
+    plus complet, nouvelle identité sans validation héritée.
+retained_ids:
+- D05
+- D05.a
+- D05.c
+new_ids:
+- D05.d
+- D05.e
+- D05.f
+membership_relation_ids:
+- REL-MEMBER-D05.a
+- REL-MEMBER-D05.d
+- REL-MEMBER-D05.e
+- REL-MEMBER-D05.c
+- REL-MEMBER-D05.f
+planning_use_relation_ids:
+- REL-INVENTORY-PLANNING-D05.a
+- REL-INVENTORY-PLANNING-D05.d
+- REL-INVENTORY-PLANNING-D05.e
+- REL-INVENTORY-PLANNING-D05.c
+adopted_relationship_meaning: Inventory Planning utilise les quatre décisions sans devenir leur capacité mère.
+proposed_details:
+- Finalités et natures des capacités
+- Descriptions opérationnelles, exemples et règles détaillées
+- Qualification technique des relations de mobilisation
+market_status:
+- id: D05.a
+  state: partial_comparison_proposed
+  note: 'ELM122, CMP072 : niveaux de buffer calculés et application séparée ; aucune équivalence complète avec la définition
+    locale.'
+  checked_at: '2026-09-16'
+- id: D05.d
+  state: semantic_support_only
+  note: 'ELM124, CMP073 : allocations/protections de groupes ; le choix optimal des quantités n’est pas démontré par cette
+    fonction opérationnelle.'
+  checked_at: '2026-09-16'
+- id: D05.e
+  state: partial_comparison_proposed
+  note: 'Demand-driven planning Microsoft : besoin net et quantité d’apport prévus ; définition locale et rôle D03 distincts,
+    pas d’équivalence globale.'
+  checked_at: '2026-09-16'
+- id: D05.c
+  state: detailed_equivalence_not_established
+  note: 'CMP070 : cibles multi-échelons et transferts ne démontrent pas le périmètre détaillé de redistribution des excédents
+    ; pas de preuve nouvelle sur ce point.'
+- id: D05.f
+  state: partial_comparison_proposed
+  note: 'CMP072 : appui à la séparation calcul/application ; reconfigurer/simuler/valider est le sens local U229, pas une
+    équivalence complète avec une capacité native.'
+market_study: marche/optimisation-et-application-stock.md
+modeling_glossary: modeles/backlog/modeling-glossary.yaml
+business_glossary: modeles/backlog/glossary.yaml
+publication: v005 / 2026-09-15.1 inchangée ; aucun commit ni push.
+scenario_behaviors_U269:
+  source_refs:
+  - U267
+  - U269
+  state: accepted_in_stated_scope
+  parent_id: D05.f
+  behaviors:
+  - node_id: BHV005
+    relation_id: REL-PLANNING-BHV005
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 54947870268de8a9c3439fb00cba1aeefd4ded089012eb82009b479c6c2a0260
+      definition: 04ec98296fee23103008e7706b8d0930c1678065fe91d5d406cccd5b22ddf504
+    source_refs:
+    - U269
+  - node_id: BHV006
+    relation_id: REL-PLANNING-BHV006
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: f30533e571d3400332f73128a0354fb5ef144777258fc4808d9d073cd735245f
+      definition: b8bb9bb16b506d1c8f7c39e4057f6b292ef67e1744596096dc4b617eb59699ce
+    source_refs:
+    - U269
+  - node_id: BHV007
+    relation_id: REL-PLANNING-BHV007
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: a48adf3af3c5d50867fb5957827ab3f9f9d2c1f839466265cebbbf4fac6e9156
+      definition: 0164a513c8b55f2d2007a7bd9874e173335be86413d799b5b945f9a7b8c1777e
+    source_refs:
+    - U269
+  - node_id: BHV008
+    relation_id: REL-PLANNING-BHV008
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: f3e43748f98492a84b02ba8d01437577b1306e565c967ccbb33601807aa40012
+      definition: ee97029d277abeab55293f6d0c23c4509e254550bbe1a7f4df8ab805ee008be5
+    source_refs:
+    - U269
+  - node_id: BHV009
+    relation_id: REL-PLANNING-BHV009
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 8af292a7c5323a157ecd4dc8abf1f57271ce086b0ca11b1e755c3e4e0f3e9039
+      definition: 1f6cfa571e189b44effa78394687bd2503e1e4eeb921d40bcd1cb84d4176ab56
+    source_refs:
+    - U269
+  decomposition_rationale_sha256: b834d42485fcb56cabdca2c15179769ed64354174b79887b0f102279f5ac366b
+  historical_capture: audits/2026-09-17-planning-comportements/model-before.yaml
+  proposed_details: Synthèse de la capacité, périmètres et exemples ajoutés ; aucune reprise de la validation de l’ancienne
+    définition U235 sur sa nouvelle formulation.
+  market_comparison: CMP090 ; appui fonctionnel, pas équivalence normative adoptée.
+  current_review_U283: 'U283 remplace la cible en six comportements : construction de scénarios alternatifs, simulation et
+    adaptation de l’exécution d’un scénario sont les comportements retenus dans le principe. Analyse d’impact, évaluation,
+    validation et application sont requalifiées en fonctions de produits, sans supprimer leurs besoins métier. Migration du
+    catalogue à préciser ; valeurs et accords U269/U271 conservés comme historique, pas comme cible courante.'
+scenario_impact_U271:
+  source_refs:
+  - U270
+  - U271
+  state: accepted_in_stated_scope
+  parent_id: D05.f
+  new_behavior:
+    node_id: BHV010
+    relation_id: REL-PLANNING-BHV010
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 35f0eb8006cf6501ec642b3faf82327d427641f208162eea8ede7786575c06a5
+      definition: 7d8f04dfb2fdc2122a82b30ec75ea15ae04948ae3b805373ce723c7a23ff3562
+  revised_behaviors:
+  - node_id: BHV006
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: f30533e571d3400332f73128a0354fb5ef144777258fc4808d9d073cd735245f
+      definition: f0717612d01e0218a94722ac538d345b048501a573b11486afac4e05dd6af862
+    source_refs:
+    - U271
+  - node_id: BHV007
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: a48adf3af3c5d50867fb5957827ab3f9f9d2c1f839466265cebbbf4fac6e9156
+      definition: 273faaf2eb63f5bc2d86e96ee457afc6aba8aeaf06ce8d3488f32f3ab053c16d
+    source_refs:
+    - U271
+  adopted_boundary_results:
+    BHV006: 'Une situation opérationnelle projetée : stocks, apports, transferts, demandes satisfaites ou restantes.'
+    BHV010: Les conséquences exprimées en indicateurs, leurs écarts à une référence et leurs explications.
+    BHV007: Une appréciation du compromis selon les objectifs et contraintes.
+  adopted_benefit: Rendre les conséquences métier explicites avant d’apprécier le scénario ; montrer qu’une amélioration globale
+    masque éventuellement une dégradation sur certains magasins ou certaines périodes.
+  computation_boundary: 'La simulation peut déjà produire les indicateurs : l’analyse d’impact les exploite et les explique,
+    sans imposer de les recalculer.'
+  historical_capture: audits/2026-09-17-scenario-impact/model-before.yaml
+  proposed_details: Synthèses de périmètre ajoutées ; pas d’adoption des règles détaillées d’indicateurs ni des équivalences
+    marché.
+  market_comparison: CMP091
+  current_review_U283: 'U283 remplace la cible en six comportements : construction de scénarios alternatifs, simulation et
+    adaptation de l’exécution d’un scénario sont les comportements retenus dans le principe. Analyse d’impact, évaluation,
+    validation et application sont requalifiées en fonctions de produits, sans supprimer leurs besoins métier. Migration du
+    catalogue à préciser ; valeurs et accords U269/U271 conservés comme historique, pas comme cible courante.'
+planning_mechanisms_U283:
+  source_refs:
+  - U283
+  - CMP094
+  - U284
+  state: direction_adopted_catalog_migration_pending
+  differentiating_criteria:
+  - Mécanisme
+  - Politique
+  - Variante
+  - Bénéfice
+  accepted_behavior_directions:
+  - Construction de scénarios alternatifs
+  - Simulation & analyse
+  - Adaptation de l’exécution d’un scénario
+  functional_reclassification:
+  - BHV007
+  - BHV008
+  - BHV009
+  - BHV010
+  note: 'U283 remplace la cible en six comportements : construction de scénarios alternatifs, simulation et adaptation de
+    l’exécution d’un scénario sont les comportements retenus dans le principe. Analyse d’impact, évaluation, validation et
+    application sont requalifiées en fonctions de produits, sans supprimer leurs besoins métier. Migration du catalogue à
+    préciser ; valeurs et accords U269/U271 conservés comme historique, pas comme cible courante. U284 confirme la direction
+    U283 et retient Simulation & analyse en un seul comportement : les impacts sont intégrés à ce comportement, sans Scenario
+    Impact Analysis autonome dans la cible.'
+  proposed_boundary: D05 adapte le scénario de stock à partir des faits et mobilise les décisions spécialisées ; D06 conserve
+    adaptation opérationnelle et orchestration. Cette articulation détaillée reste proposée.
+  open_points:
+  - Définitions et noms anglais révisés
+  - Rattachement et identité du comportement d’adaptation, sans réutilisation implicite de BHV009
+  - Préservation des fonctions et de leurs exigences dans les descriptions utiles, sans niveau supplémentaire
+  justification: Différencier des façons d’agir qui changent les pratiques et les processus ; conserver la justification par
+    complexité ou bénéfice ciblé U265.
+  confirmation_U284:
+    source_refs:
+    - U284
+    adopted_label_fr: Simulation & analyse
+    editorial_label_en: Simulation & Analysis
+    proposed_combined_description: Projeter les conséquences d’un scénario et en analyser les impacts sur les indicateurs
+      métier et les processus, pour éclairer les choix avant engagement ou adaptation.
+    accepted_previous_descriptions:
+      construction: 'Préparer plusieurs réponses possibles à une situation : privilégier la disponibilité, limiter l’immobilisation,
+        modifier les contraintes.'
+      simulation: Expérimenter les conséquences avant d’engager l’entreprise, y compris les impacts sur les indicateurs et
+        les processus.
+      adaptation: Réagir aux écarts observés en ajustant la trajectoire, en tenant compte des actions déjà engagées.
+    accepted_boundary: D05 fait évoluer le scénario de stock ; D06 conserve l’adaptation opérationnelle et l’orchestration
+      des prestations.
+    migration_status: Migration des nœuds et rattachements historiques à préciser ; aucune réutilisation implicite des identifiants.
+implementation_U290:
+  state: core_applied
+  registry: modeles/backlog/refactoring-implementation.yaml
+  source_refs:
+  - U290
+  note: Les accords historiques ci-dessus restent des preuves datées ; lire le modèle courant et le registre pour les valeurs
+    et rattachements après refonte.
+initial_stocking_U316:
+  source_refs:
+  - U313
+  - U316
+  state: applied_in_backlog
+  model_before: audits/2026-09-18-initial-stocking/model-before.yaml
+  model_before_sha256: d7be0ed33de953f78a840fcdc0b4932bed834620c31c371e755bacb92d48489c
+  model_after_sha256: c5f4149d60001e80581da656efd7ff18fa9805115fbbff739a9a7ff76625d36f
+  delta:
+    nodes:
+      added:
+        D05.g: c3c719e79d79b714855592592c9959dcd9fd5c5ca5efc93331bf0d2b74ba40ef
+      changed:
+        D05.e: aff182d5eec33a60fedb9664ff58ee441eda4a8b4a1c7e63d2bb3480665064d7
+        D05: b8ed01ce8acebee72f0835b344b1a17c2eb3b4d0a23a61c4f8182fe8f9a93626
+        D05.f: 860ee0e3cb48ff270de1feeb155aa5771413f1a8fd9502e9004db323eb440ed0
+      removed: []
+    relations:
+      added:
+        REL-INITIAL-STOCKING-INVENTORY: eabc2b10318801af8034e926ac25aed7f758b540a6cbf4c44bd41baf8a9dbbbe
+        REL-REDISTRIBUTION-INITIAL-STOCKING: aff0e822199f2adf4f957ed19b1e26819e888c323b20c59af9c5f87c333f3325
+        REL-INITIAL-STOCKING-TRANSFER: 7786411ed2583220115336e5877354e794c064d14fc3b59f87cb7e73072c1adf
+        REL-INITIAL-STOCKING-TARGET: 59a1291fc09b9c4321dad39e4ec87f811c0653e91dc416342b998ce4e219866e
+        REL-INITIAL-STOCKING-PROTECTION: 48e79ee5edebd5d0e8eca4deb9bdde9ab8f60521e17c982f53fe0e845e695bfb
+        REL-INITIAL-STOCKING-PURCHASE: 4cf62e9be8c66092467e4f716927c00710ae328c367ac00d99019ee3c5d752b8
+        REL-MEMBER-D05.g: 8a32a70f9beddb45408844ab66d52bd2c4c1f22ebf4e0c688a76f9a259c261d8
+        REL-INITIAL-STOCKING-TRACKING: 964bbdd5b34f7ca4919c70909845eb1f317a298ee080d80f4d31a7cba1b91b13
+        REL-INVENTORY-PLANNING-D05.g: 7296b237e7069855498a583894e4632aa58b0824cf7f9340b88a0951e22f3ab0
+      changed: {}
+      removed: []
+  adopted_node:
+    id: D05.g
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: c4ec5da77ca94c7b38a52267363a18adb7e7cf0b0acd661008d55b03baec8ee5
+      definition: 08253658f962008cad858d46c1b0df78e58b48ba4b6c1cfc72c43b5baa0376e8
+  preserved_identity: D05.e conservée pour Replenishment Decision ; D05.b retirée reste inutilisée.
+  proposed_details: Finalités, détails éditoriaux, exemples, rattachement et contrats détaillés non validés automatiquement
+    ; correspondances marché proposées.
+  no_new_behaviors: Aucun mécanisme différenciant supplémentaire justifié par le seul découpage ; pas de décomposition systématique.
+  open_boundary: Préciser les contraintes et les échanges Coverage Target / Initial Stocking sans déplacer implicitement la
+    détermination des objectifs.
+redistribution_U318:
+  source_refs:
+  - U318
+  state: applied_in_backlog
+  model_before: audits/2026-09-18-redistribution-behaviors/model-before.yaml
+  model_before_sha256: 86d65f0ac024f158b86c7255e449ff06745082a400601a625f7a61ddd7311908
+  model_after_sha256: 846cacaecef2b662e0176aa05cfdb8c2b10d59a7e3eefb09f027372ea779921a
+  delta:
+    nodes:
+      added:
+        BHV024: 7b87126bf17c00d9e231bb13546f10574e308635816b14bd0388302c8c9854e9
+        BHV025: 3255be1aa1c5859b16122d399126c8628034d8a14a9213ae0558dd718b17bc7d
+      changed:
+        D05.c: adebdb450dd10a902bcceefafc2f246288f47743b16e1142b9b37469ee8e505f
+      removed: []
+    relations:
+      added:
+        REL-BEHAVIOR-BHV024: a21bd186c3336eeae63321e63324020be7999b51574d3b7cbb64f400b4abeefa
+        REL-BEHAVIOR-BHV025: b9fab9296b55bea12fd05c87272d9af149753e360745396338642ed52ff6fd1e
+      changed: {}
+      removed: []
+  behaviors:
+  - node_id: BHV024
+    label_fr: Rééquilibrage entre sites
+    label_fr_sha256: c8266a0cafedc6f9fde6ac4e9753d55579bc76e5f2d16e5ed14423fbf940f906
+    adopted_fields:
+    - definition
+    value_sha256:
+      definition: 6ad30ac2d5f20bd990f73b836c53a74eda0dcc951e59669c25c7fb5d86b3c5b1
+    editorial_name: Inventory Rebalancing
+    parent_id: D05.c
+    relation_id: REL-BEHAVIOR-BHV024
+  - node_id: BHV025
+    label_fr: Consolidation de stocks dispersés
+    label_fr_sha256: 7a4b660f3903ffb96a1b2ca0a4f6ad9c19e0a67d943a0d2508056192ac86db23
+    adopted_fields:
+    - definition
+    value_sha256:
+      definition: acb586ec403f33e876baef7ba809e2f604fc6508b96340581d75c0e8122bcfa1
+    editorial_name: Stock Consolidation
+    parent_id: D05.c
+    relation_id: REL-BEHAVIOR-BHV025
+  adopted_cases:
+  - Reconstituer des assortiments de tailles dans certains magasins.
+  - Regrouper les reliquats vers des lieux de destination adaptés.
+  validation_scope: Deux mécanismes, définitions présentées et parents adoptés ; noms anglais et détails éditoriaux proposés.
+    Comparaisons marché non validées par adoption du modèle.
+  previous_candidates:
+    P06: BHV024 — élargi au-delà de la pénurie constatée
+    P07: BHV025 — élargi au-delà des seuls excédents
+inventory_target_U329:
+  source_refs:
+  - U329
+  model_before: audits/2026-09-18-inventory-target-adoption/model-before.yaml
+  model_before_sha256: d2efee80ef8c54123ce828d2b66f1657d470836674b302dda51a69ad1f17925e
+  delta:
+    nodes:
+      added: {}
+      removed: []
+      changed:
+        D03.j: 75bca4f2f537d75a7650c4e717186cd759de0d13d6cf9dfd71a2b3a96f1dcd85
+        D05.a: 591c7a807dd748a7f1f86760057a6defbd6934f3e0c1f768302bb03c73d13e51
+        D05.g: c8be2a44df79789e086db79ba02105fff1e2edbceb97542719398b261a7574fa
+        D05.e: 730700f595d222333a31da654fee68c5b76298d3251b1920b24c28366365a913
+        D05.f: f969c57aad42990c3c4c7ffcadf2cfbef3902285bba9eb9773adb6f1fbfab544
+    relations:
+      added: {}
+      removed: []
+      changed:
+        REL-INVENTORY-PLANNING-D05.a: 4c3c77738f329d045cbf9266d3da9b885926db94eed207b3d6850d327cbf5ebc
+        REL-CTP-COVERAGE-TARGET: 1eea6ef96a3bf1b50303ded691ffee9f087e7cc55fd8959c7fc37dc01b6a9b87
+  adoption:
+    node_id: D05.a
+    validated_fields:
+    - name
+    - definition
+    values:
+      name: Inventory Target Decision
+      definition: Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins,
+        le niveau de service recherché, les délais et les risques.
+    value_sha256:
+      name: e842daeaa7b56ef04efb0eb2e0e6bce7cbca7f7ec3be91b8a1214f642b431616
+      definition: e0cc6dcabc7ab5d0879178f868051112d90b3969e81b4f8f3007d7ed517ec19a
+  scope: Nom et définition D05.a adoptés ; références rédactionnelles et comparaisons alignées ; identifiants, hiérarchie,
+    finalités, responsabilités, comportements et anciennes preuves conservés.
+inventory_target_behaviors_U332:
+  source_refs:
+  - U332
+  model_before: audits/2026-09-18-inventory-target-behaviors/model-before.yaml
+  model_before_sha256: a75cec76a3d7aaba9fd8a8e38709053dd26887cb9e6fe7a6b043005174d068cf
+  delta:
+    nodes:
+      added:
+        BHV026: 608eab5f0aa91324cef7f9a11d13567fae4fb41151b8dbe039c5ab593bb13c1d
+        BHV027: 41dd63bf8e38ea3f01178675f498d06f1bb40eb5f8e0dd3688324d78e9440d31
+        BHV028: f35b2da85e5c36b39220fae80648a7512c215ef241ba373574962c5cbd2fc38f
+      changed:
+        D05.a: 34dc73184cf10158f76dd82e4bcfffd2370a555424a68eb301ff1aa6ed027920
+      removed: []
+    relations:
+      added:
+        REL-BEHAVIOR-BHV026: 444d7b944f3b040441fecb2b86fb40e12b288f3a2996b08d1a326c3bd8edb4c8
+        REL-BEHAVIOR-BHV027: 5881009b0beb73e684831be35c4923b0fc7b01541042a9cf5b3620c13d515c3f
+        REL-BEHAVIOR-BHV028: 43dba888ea9fdbd8bbc463f874fa4af3c0b7bcea6c8f748ffb0777a63eab4a99
+      changed: {}
+      removed: []
+  behaviors:
+  - node_id: BHV026
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV026
+    adopted_fields:
+    - name
+    value_sha256:
+      name: a65c2ae6a04b8a23040152eab3ca0fe25ca107acd2b414cb1b6891680c03241a
+    question: Quel stock viser dans ce magasin pour servir ses clients ?
+    question_sha256: 65534b45d327fc452153997dd8d8c21a4d29092c5cf2cae5368f65f9aac31fb6
+    particularity: Demande locale, assortiment retenu, présentation, capacité de stockage, cadence de réassort et risque d’excédent.
+    particularity_sha256: d96f462b09333522ca0f6b59402479274d727211b8d0fc3b8208f58827dd4471
+  - node_id: BHV027
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV027
+    adopted_fields:
+    - name
+    value_sha256:
+      name: 6684d805420271bb0bbec55a4488c773edb8634ec22eb7f3134d2d6b2fd84221
+    question: Quel stock viser dans ce centre pour alimenter les magasins ou canaux desservis ?
+    question_sha256: 85bfc9fc33a51e7242255acd690cc8d1a72dd90a0b0327499e10ef76eb59d583
+    particularity: Besoins agrégés de l’aval, délais fournisseurs, incertitudes d’approvisionnement et service attendu du
+      centre.
+    particularity_sha256: 704c9ded67f32e282a713d92cf3e73c0cc4e8207fb540a3e54c1d4fb4b64cbce
+  - node_id: BHV028
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV028
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 59a20e52119222305f68f34c07ddb44dedb7382ca1a379f4be0adc5fa37f819b
+      definition: 581a1cb766e6fdf407d83720f6ca884270e2c8ee3a1917fd5a2831db7a43dc8c
+    question: Où porter le stock dans le réseau, et quels objectifs fixer conjointement aux différents lieux ?
+    question_sha256: 2e83419af538504fee9ccceb9e88c29a868ec84511046f37a652a29c678393de
+    particularity: Arbitrer les protections amont/aval et éviter leur duplication, en tenant compte des dépendances entre
+      échelons.
+    particularity_sha256: 2ad66e0fdefa1dd9a3c2136124b0f06ca4960e0856d3c99625a316e344c4d8c3
+  scope: Trois comportements frères ; noms et questions/particularités adoptés. Définition multi-échelon déjà présentée, formulations
+    détaillées locales éditoriales. Comparaisons marché non validées implicitement.
+return_disposition_U380:
+  node_id: D05.i
+  name: Return Disposition Decision
+  status: name_definition_nature_parent_adopted
+  review_path: modeles/backlog/return-disposition-review.yaml
+  boundary: Décider le devenir logistique ; aucun remboursement ni réalisation physique repris.
+replenishment_closure_U425:
+  status: integrated
+  source_refs:
+  - U425
+  - ELM252
+  - CMP163
+  candidates:
+  - P01
+  - P02
+  - P03
+  capability_id: D05.e
+  decision: covered_without_new_behaviors
+  scope: Clôture et frontières adoptées ; descriptions détaillées et comparaisons éditoriales.
+  evidence: modeles/backlog/history/replenishment-closure-U425/implementation.yaml
+replenishment_reassessment_U426:
+  source_refs:
+  - U426
+  status: integrated_U427
+  candidate_ids:
+  - P01
+  - P02
+  - P03
+  reason: La réserve C98 portait sur la confusion de responsabilités et le bénéfice insuffisamment explicité ; elle ne disqualifie
+    pas les politiques comme comportements.
+  proposal:
+  - candidate_id: P01
+    name: Requirement-based Replenishment
+    definition: Déterminer les apports nécessaires pour satisfaire des besoins datés, nets des ressources admissibles et des
+      apports déjà prévus.
+    benefit: Répondre aux besoins identifiés à leurs échéances, individuellement ou regroupés sur une période.
+  - candidate_id: P02
+    name: Target-based Replenishment
+    definition: Déterminer les apports nécessaires pour rétablir un niveau de stock cible selon les seuils et règles de déclenchement
+      applicables.
+    benefit: Maintenir la disponibilité selon un objectif de stock, sans exiger une commande identifiée pour chaque apport.
+  - candidate_id: P03
+    name: Replenishment Adjustment
+    definition: Déterminer les modifications des apports existants lorsque les besoins ou contraintes évoluent, en respectant
+      les engagements et restrictions applicables.
+    benefit: Réduire les excédents et décalages sans recréer systématiquement un apport ; se combine avec les deux politiques.
+  market_refs:
+  - ELM252
+  - CMP163
+  limits: Proposition FLOW appuyée sur méthodes Microsoft et Action messages ; noms non présentés comme taxonomie Microsoft.
+    Le catalogue garde pour l’instant D05.e sans comportement direct.
+replenishment_behaviors_U427:
+  status: integrated
+  source_refs:
+  - U427
+  - ELM253
+  - CMP164
+  behaviors:
+  - node_id: BHV083
+    candidate_id: P01
+    parent_id: D05.e
+    name: Requirement-based Replenishment
+    definition: Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des
+      apports attendus.
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 1df05834b745102ebd81f15e86e5b548e29ba4e34babf02c5594c5c173635d81
+      definition: 9b3f00ec075ae233d420b2236e12ecd69d885ec447b59356ea0630b1ea2335d7
+  - node_id: BHV084
+    candidate_id: P02
+    parent_id: D05.e
+    name: Target-based Replenishment
+    definition: Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une
+      commande identifiée pour chaque apport.
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 75f7b0c472e6b66599384eba70bb8e860d3c87704f5484afa5445b6fee66a68a
+      definition: ad1425a43dc31bedd14693700fa0183b7036686921e657fd2b06d9b271872a46
+  - node_id: BHV085
+    candidate_id: P03
+    parent_id: D05.e
+    name: Replenishment Adjustment
+    definition: Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant
+      les engagements.
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 878d716eeff3d078968aac79d2c4cf96c32d03fe7b23add6a1b5a1369858d7f4
+      definition: be90039a46bacd4f8a8f0630f1a60b00409282188363f42b3a4d0798f71a11f0
+  scope: Noms, définitions présentées et rattachements adoptés ; justification développée, descriptions et comparaisons éditoriales.
+  evidence: modeles/backlog/history/replenishment-behaviors-U427/implementation.yaml

@@ -1,0 +1,14 @@
+{
+  "app": "FLOW Atlas",
+  "pid": 5880,
+  "version": "2026-09-19.1",
+  "sourcePath": "modeles/release/2026-09-19.1/model.yaml",
+  "nodes": 135,
+  "relations": 323,
+  "terms": 110,
+  "old_version": "2026-09-16.2",
+  "immutable_protected_files_unchanged": 124,
+  "technical_index_activated": true,
+  "previous_index_preserved_and_hash_verified": true,
+  "published_model_equal_to_served": true
+}

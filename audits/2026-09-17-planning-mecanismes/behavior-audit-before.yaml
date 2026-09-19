@@ -1,0 +1,587 @@
+as_of: '2026-09-17'
+purpose: Audit de granularité et plan U265/U266 ; propositions hors catalogue actif.
+source_refs:
+- U265
+- U266
+- CMP089
+state: proposed
+adopted_rule:
+  source_refs:
+  - U265
+  text: Toute décomposition en comportements est justifiée par une complexité ou un bénéfice ciblé.
+decision_boundary: Les recommandations de l’audit restent proposées sauf les portées explicitement adoptées en scenario_planning_U267
+  / U269. Aucune fusion ou rétrogradation de capacité appliquée. U271 adopte également les portées détaillées dans scenario_impact_U270.
+  U276 adopte le nom et rattachement Allocation sous Supply Protection ; U277 demande son enrichissement. Portées dans allocation_U276_U277.
+  U278 remplace le regroupement Allocation par cinq comportements pairs ; portées dans allocation_U278. U282 remet en question
+  la décomposition opérationnelle U278/U280 au profit des mécanismes ; accords antérieurs historisés, nouveau catalogue à
+  proposer.
+report: audits/2026-09-17-audit-comportements/rapport.md
+market_sources: audits/2026-09-17-audit-comportements/marche.md
+assessments:
+- capability_id: D01.f
+  state: proposed
+  recommendation: Conserver
+  candidate_detail: Correction d’un état sur fait tardif, seulement si nécessaire
+  complexity_or_targeted_benefit: Distinguer état courant et ressource future ; la distinction état/mouvement est adoptée
+  market_support: S6
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D01.g
+  state: proposed
+  recommendation: Conserver
+  candidate_detail: Enregistrement puis correction tracée d’un mouvement
+  complexity_or_targeted_benefit: Conserver la justification d’une évolution sans effacer l’événement d’origine ; pas de fusion
+    automatique avec Tracking
+  market_support: S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D01.c
+  state: proposed
+  recommendation: Conserver sans décomposition immédiate
+  candidate_detail: Fraîcheur, provenance et dimensions dans le périmètre
+  complexity_or_targeted_benefit: Une lecture multi-sites ne nécessite pas un comportement par lieu
+  market_support: S6
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D01.d
+  state: proposed
+  recommendation: Conserver, décomposition ciblée
+  candidate_detail: Constat de comptage ; traitement des écarts
+  complexity_or_targeted_benefit: Un stock compté et un ajustement autorisé sont deux résultats à distinguer ; nature et responsabilité
+    d’autorisation à préciser
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D02.b
+  state: under_review
+  recommendation: Refondre les comportements autour des mécanismes métier de protection (U282) ; opérations conservées comme
+    matière fonctionnelle produit.
+  candidate_detail: Cible à proposer depuis les mécanismes ; la liste des opérations ne vaut plus recommandation de découpage.
+  complexity_or_targeted_benefit: Appliquer 2 000 seuils ou quotas avec effets partiels et exceptions ; les décisions de valeur
+    restent en D05
+  market_support: S6,S12
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+  - U274
+  - U276
+  - U277
+  - CMP092
+  - U278
+  - U282
+- capability_id: D02.c
+  state: proposed
+  recommendation: Arbitrage de frontière avant déplacement
+  candidate_detail: Engager, modifier, libérer une réservation si capacité maintenue
+  complexity_or_targeted_benefit: Identifier l’engagement opposable à un besoin, sa temporalité et ses effets sur les usages
+    concurrents ; ne pas confondre avec une affectation candidate
+  market_support: S6
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.a
+  state: proposed
+  recommendation: Candidate à devenir comportement
+  candidate_detail: Proposer sous Promise Management, parent nouveau à valider
+  complexity_or_targeted_benefit: Aligner la maille d’action sur les autres gestions ; la proposition demeure sans effet de
+    confirmation
+  market_support: S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.b
+  state: proposed
+  recommendation: Candidate à devenir comportement
+  candidate_detail: Confirmer sous Promise Management, parent nouveau à valider
+  complexity_or_targeted_benefit: Distinguer quantités proposées, confirmées et non confirmées sans multiplier les capacités
+    du même cycle
+  market_support: S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.c
+  state: proposed
+  recommendation: Candidate à devenir comportement
+  candidate_detail: Réviser sous Promise Management, parent nouveau à valider
+  complexity_or_targeted_benefit: Réexaminer une promesse ou un ensemble après aléa ; préserver les modifications autorisées
+    et impacts
+  market_support: S10,S15
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D02.e
+  state: proposed
+  recommendation: Conserver, clarifier avec Reservation
+  candidate_detail: Affecter, réaffecter, libérer ; traitement collectif si pertinent
+  complexity_or_targeted_benefit: Rendre compte de l’affectation de ressources présentes/futures à plusieurs besoins ; responsabilité
+    d’engagement à trancher
+  market_support: S6,S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.i
+  state: proposed
+  recommendation: Conserver quatre comportements existants
+  candidate_detail: BHV001–BHV004 ; ne pas ajouter un cinquième par simple modalité
+  complexity_or_targeted_benefit: Engagements, lieux, temps de mobilisation et futur se combinent ; enrichir les dépendances
+    sans changer la maille
+  market_support: S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.j
+  state: proposed
+  recommendation: Conserver ; décomposition après cas concret
+  candidate_detail: Recherche de possibilités sous adaptation ; consolidation des impacts
+  complexity_or_targeted_benefit: Assembler une possibilité faisable sans reprendre les arbitrages de politiques, priorité,
+    échéancier ou service ; détails proposés, non nouvelle décision souveraine
+  market_support: S7,S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.k
+  state: proposed
+  recommendation: Conserver sans décomposition immédiate
+  candidate_detail: Critères économiques et contraintes à préciser dans le périmètre
+  complexity_or_targeted_benefit: 'Résultat autonome : arbitrage économique ; une formule de coût ne justifie pas une capacité
+    ou un comportement supplémentaire'
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.l
+  state: proposed
+  recommendation: Conserver sans décomposition immédiate
+  candidate_detail: Échéancier unique ou réparti comme conditions
+  complexity_or_targeted_benefit: Choisir un échéancier ne se confond pas avec modifier structurellement les lignes d’un Order
+  market_support: S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D03.m
+  state: proposed
+  recommendation: Conserver ; préciser le périmètre
+  candidate_detail: Priorisation d’un ensemble, conservation ou changement des priorités
+  complexity_or_targeted_benefit: Décision relative entre Orders ; les modes de tri ne sont pas chacun un comportement
+  market_support: S10
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.i
+  state: proposed
+  recommendation: Conserver gestion par type
+  candidate_detail: Amendement partiel et rapprochement du reste à servir si détail utile
+  complexity_or_targeted_benefit: 'Commande 100, livraison 60, reliquat 40 : distinguer demande, promesse et réalisation ;
+    mobiliser Structuring/Lifecycle'
+  market_support: S11
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.j
+  state: proposed
+  recommendation: Conserver gestion par type
+  candidate_detail: Intégration d’une réponse fournisseur modifiant quantité/date
+  complexity_or_targeted_benefit: Conserver attente initiale, modification acceptée et reste à recevoir ; aucune négociation
+    d’Agreement absorbée
+  market_support: S8,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.k
+  state: proposed
+  recommendation: Conserver gestion par type
+  candidate_detail: Suivi séparé du départ, transit et réception
+  complexity_or_targeted_benefit: 100 autorisées ne signifient pas 100 expédiées ni reçues ; opérations physiques externes
+  market_support: S12,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.l
+  state: proposed
+  recommendation: Conserver ; arbitrer disposition des retours
+  candidate_detail: Rapprocher attendu/reçu et lien à la vente ; disposition à instruire séparément
+  complexity_or_targeted_benefit: Retour 10, réception 6 ; le traitement logistique du produit retourné ne se déduit pas de
+    ce rapprochement
+  market_support: S13
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.m
+  state: proposed
+  recommendation: Conserver gestion par type
+  candidate_detail: Suivre quantités à renvoyer et prise en charge fournisseur
+  complexity_or_targeted_benefit: Retour et remboursement sont distincts ; pas de capacités financières introduites
+  market_support: appui indirect S13, comparaison fournisseur non établie
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.n
+  state: proposed
+  recommendation: Conserver transverse et décomposer si utile
+  candidate_detail: Scinder ; regrouper ; répartir
+  complexity_or_targeted_benefit: Préserver quantités, origines et liens à travers plusieurs types d’Orders ; éviter cinq
+    duplications
+  market_support: appui indirect S12
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D04.o
+  state: proposed
+  recommendation: Arbitrer nature puis décomposer
+  candidate_detail: Affermir/lancer ; suspendre/reprendre ; replanifier ; annuler/clôturer
+  complexity_or_targeted_benefit: Préciser autorisation et application, unité ou ensemble ; conserver sens propre des transitions
+    et refus
+  market_support: S8,S11,S12
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D05.a
+  state: proposed
+  recommendation: Conserver décision fine
+  candidate_detail: Différencier objectifs de sécurité/couverture et seuils uniquement si bénéfice démontré
+  complexity_or_targeted_benefit: 'Résultat : niveaux souhaitables ; ne pas fabriquer un comportement par paramètre ou formule'
+  market_support: S7
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D05.d
+  state: proposed
+  recommendation: Conserver décision fine
+  candidate_detail: Répartir les droits entre groupes selon contraintes
+  complexity_or_targeted_benefit: Résultat de quota distinct de son application en D01 ; préciser critères avant de décomposer
+  market_support: S6
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D05.e
+  state: proposed
+  recommendation: Conserver décision fine
+  candidate_detail: Apports nécessaires sous hypothèses ; propositions d’ajustement
+  complexity_or_targeted_benefit: Calcul de besoin net déjà intégré ; déclencher/affermir les Orders est une autre responsabilité
+  market_support: S7,S8
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D05.c
+  state: proposed
+  recommendation: Conserver décision fine
+  candidate_detail: Rééquilibrage sous protection du site donneur
+  complexity_or_targeted_benefit: Transfert d’optimisation et transfert pour honorer un Order n’ont pas la même finalité ;
+    ne pas fusionner avec CTP
+  market_support: S7
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D05.f
+  state: adopted_in_stated_scope
+  recommendation: Conserver et décomposer en six comportements adoptés U269/U271
+  candidate_detail: Scenario Construction; Scenario Simulation; Scenario Impact Analysis; Scenario Evaluation; Scenario Validation;
+    Scenario Application
+  complexity_or_targeted_benefit: Distinguer ce qu’on envisage, ses conséquences, son intérêt, ce qu’on retient et ce qu’on
+    met effectivement en action.
+  market_support: S7,S9
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+  - U269
+  - U271
+- capability_id: D06.b
+  state: proposed
+  recommendation: Conserver sans décomposition immédiate
+  candidate_detail: Capacité communiquée par période, contexte et fraîcheur
+  complexity_or_targeted_benefit: Information opérationnelle distincte d’un SLA global et de la décision de choix de service
+  market_support: S4,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D07.a
+  state: proposed
+  recommendation: Conserver décision fine
+  candidate_detail: Détailler le résultat prestations requises dans le périmètre
+  complexity_or_targeted_benefit: Préparation, document et transport sont des besoins ; pas un comportement par catégorie
+    de prestataire
+  market_support: S4,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D07.b
+  state: proposed
+  recommendation: Conserver et décomposer
+  candidate_detail: Solliciter/enregistrer réponse ; modifier/annuler ; clôturer
+  complexity_or_targeted_benefit: Séparer demande, acceptation, refus ou contre-proposition et résultat ; pas un cycle identique
+    imposé à chaque service
+  market_support: S4,S14,S15
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D07.c
+  state: proposed
+  recommendation: Conserver ; décomposition ciblée
+  candidate_detail: Rapprochement partiel ; correction et traitement d’écarts
+  complexity_or_targeted_benefit: Imputer 60 préparations sur 100 attendues, puis corriger un fait ; reliquat prestation distinct
+    du reliquat Order
+  market_support: S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D07.d
+  state: proposed
+  recommendation: Conserver ; décomposition ciblée
+  candidate_detail: Actualiser jalons/estimations ; intégrer faits tardifs ou rectifiés
+  complexity_or_targeted_benefit: Ne pas compter deux fois le même résultat et ne pas confondre prévision et fait ; partage
+    avec Reconciliation à préciser
+  market_support: S4,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D09.d
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Identités, rôles et liens corrigés depuis le maître
+  complexity_or_targeted_benefit: Éviter un doublon de Party sans devenir administrateur du référentiel ; chargement complet/incrémental
+    seulement si utile
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D11.a
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Évolution des conditions et validité de la projection
+  complexity_or_targeted_benefit: Une version d’Agreement ne réécrit pas un engagement d’Order ; dates d’effet à expliciter
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D08.d
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Recevoir variantes, rôles et références corrigées
+  complexity_or_targeted_benefit: Distinguer Product/Variant, Article/Container et unité ; pas un comportement par attribut
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D12.a
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Recevoir prix, zones et validité du catalogue
+  complexity_or_targeted_benefit: Maintenir une projection applicable sans administrer le catalogue maître
+  market_support: appui analogique S16, catalogue produits distinct
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D13.a
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Évolution des sites et relations de réseau
+  complexity_or_targeted_benefit: Une modification de référence ne garantit pas une capacité opérationnelle disponible ; ne
+    pas fusionner avec D06.b
+  market_support: non comparé directement dans cette passe
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D06.d
+  state: proposed
+  recommendation: Conserver et décomposer en priorité
+  candidate_detail: Coordonner les dépendances ; propager le plan retenu ; reprendre après incident
+  complexity_or_targeted_benefit: Après préparation partielle, n’émettre que les sollicitations applicables ; le choix de
+    variation appartient à D06.f
+  market_support: S4,S14,S15
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D14.a
+  state: proposed
+  recommendation: Conserver ingestion spécialisée
+  candidate_detail: Évolutions des SLA configurés et des accès de service
+  complexity_or_targeted_benefit: Catalogue reçu d’un maître externe, pas administration du service ni tracking opérationnel
+  market_support: S16
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D06.e
+  state: proposed
+  recommendation: Conserver ; fusion courante encore proposée
+  candidate_detail: Admissibilité puis choix de service à expliciter sans nouvelle hiérarchie
+  complexity_or_targeted_benefit: Clarifier alternatives et résultat retenu ; ni SLA suffisant seul ni qualification comme
+    terme autonome
+  market_support: S4,S14
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+- capability_id: D06.f
+  state: proposed
+  recommendation: Conserver décision distincte
+  candidate_detail: Déterminer une variation sous contraintes et effets déjà réalisés
+  complexity_or_targeted_benefit: Comparer autre service/date/quantité face à l’aléa ; orchestration applique le plan ; impacts
+    promesse transmis à D03
+  market_support: S15
+  source_refs:
+  - U265
+  - U266
+  - CMP089
+scenario_planning_U267:
+  source_refs:
+  - U267
+  - U268
+  - CMP090
+  - U269
+  state: adopted_in_stated_scope
+  capability_id: D05.f
+  user_proposal:
+  - Construction de Scenario
+  - Simulation
+  - Comparaison / Evaluation
+  - Validation
+  - Application du scénario
+  proposal_path: audits/2026-09-17-audit-comportements/scenario-planning-proposition.md
+  catalog_changed: true
+  supersedes_proposal_only: Les trois comportements proposés lors du démarrage B1 ; aucune définition adoptée remplacée.
+  market_comparison: CMP090
+  implementation_source: U269
+  behavior_ids:
+  - BHV005
+  - BHV006
+  - BHV007
+  - BHV008
+  - BHV009
+  scope_note: Cinq noms, descriptions courtes, rattachements et bénéfice adoptés ; mandat d’application via les capacités
+    responsables adopté. Autres arbitrages de l’audit inchangés.
+scenario_impact_U270:
+  source_refs:
+  - U270
+  - CMP091
+  - U271
+  state: adopted_in_stated_scope
+  parent_id: D05.f
+  user_scope: Reconnaissance de l’analyse d’impact en indicateurs comme comportement complémentaire.
+  complexity_or_targeted_benefit: Rendre visibles les impacts métier et leur répartition avant l’appréciation du compromis
+    ; distinguer situation projetée, indicateurs de conséquence et jugement.
+  boundary_review:
+  - BHV006
+  - BHV007
+  catalog_changed: true
+  analysis_path: audits/2026-09-17-planning-comportements/impact-analysis.md
+  implementation_source: U271
+  node_id: BHV010
+  adopted_name: Scenario Impact Analysis
+  adopted_definition: Quantifier et expliquer les effets attendus d’un scénario sur les indicateurs métier, par rapport à
+    une situation de référence, pour un périmètre et un horizon donnés.
+  scope_note: Nom, définition, rattachement, bénéfice et frontières présentés adoptés ; compléments éditoriaux proposés.
+allocation_U276_U277:
+  state: adopted_in_stated_scope
+  source_refs:
+  - U274
+  - U275
+  - U276
+  - U277
+  - CMP092
+  parent_id: D02.b
+  node_id: BHV011
+  relation_id: REL-PROTECTION-BHV011
+  catalog_changed: true
+  adopted_fields:
+  - name
+  value_sha256:
+    name: f5f3fcae1cd2e7380136f796d628b1294a2c3ebdbe03f5ff4dd56428dee1f54b
+  adopted_relation_fields:
+  - type
+  - source_id
+  - target_id
+  proposed_details: Définition et périmètre BHV011 ; définition, scope et decomposition_rationale D02.b. Aucun autre comportement
+    de Protection adopté.
+  market_comparison: CMP092
+  historical_capture: audits/2026-09-17-allocation-comportement/model-before.yaml
+  open_points:
+  - Fait métier consommant les droits et annulations/corrections
+  - Articulation avec Reservation sans double déduction
+  - Seuils contre pénurie et surstock
+  - Validité et frontières avec Inventory Planning
+  - Traitements en masse, exceptions et concurrence
+  superseded_scope_by: 'U278 : cinq comportements pairs ; BHV011 limité à l’attribution initiale. L’accord historique reste
+    conservé.'
+allocation_U278:
+  state: adopted_in_stated_scope
+  source_refs:
+  - U278
+  - CMP092
+  parent_id: D02.b
+  behavior_ids:
+  - BHV011
+  - BHV012
+  - BHV013
+  - BHV014
+  - BHV015
+  catalog_changed: true
+  adopted_scope: Cinq descriptions françaises et décomposition en comportements pairs. Nom Allocation conservé ; nouveaux
+    noms anglais proposés.
+  proposed_details: Noms anglais BHV012–015, scopes et exemples, justification du parent.
+  market_comparison: CMP092
+  historical_capture: audits/2026-09-17-protection-cinq-comportements/model-before.yaml
+  current_review_U282: 'U282 : découpage par opérations remis en question au profit des mécanismes métier de protection. Valeurs
+    et accords historiques conservés pour traçabilité ; cible à refondre, pas à reprendre comme découpage recommandé.'
+protection_market_U280:
+  state: under_review
+  source_refs:
+  - U279
+  - U280
+  - U281
+  - CMP093
+  proposal_path: modeles/backlog/supply-protection-review.yaml
+  report: marche/supply-protection-comportements.md
+  catalog_changed: false
+  candidate_count: 17
+  existing_behavior_count: 5
+  new_candidates: 12
+  conditional_candidates:
+  - P15
+  - P17
+  scope_note: U281 valide la méthode, pas cette nouvelle liste. Les cinq noms et résultats précédemment présentés sont approuvés
+    U279 ; scopes éditoriaux non adoptés.
+  current_review_U282: 'U282 : découpage par opérations remis en question au profit des mécanismes métier de protection. Valeurs
+    et accords historiques conservés pour traçabilité ; cible à refondre, pas à reprendre comme découpage recommandé.'

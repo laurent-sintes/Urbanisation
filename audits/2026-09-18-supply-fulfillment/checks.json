@@ -1,0 +1,23 @@
+{
+  "model_unchanged": true,
+  "methodological_glossary_unchanged": true,
+  "release_index_unchanged": true,
+  "new_terms": [
+    "TER083",
+    "TER084",
+    "TER085"
+  ],
+  "modified_terms": [
+    "TER035"
+  ],
+  "protected_files_unchanged": 125,
+  "model_validation": "passed: 0 errors",
+  "tests": {
+    "command": "python -X utf8 -m unittest scripts.test_glossary scripts.test_market_comparisons",
+    "passed": 7
+  },
+  "model_names_assessed": 10,
+  "model_names_in_inventory": 10,
+  "derived_views": "regenerated",
+  "diff_check": "passed"
+}

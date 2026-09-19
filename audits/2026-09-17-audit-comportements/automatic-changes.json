@@ -1,0 +1,18 @@
+{
+  "source_refs": [
+    "U265",
+    "U266"
+  ],
+  "corrected_obsolete_domain_references": [
+    "D04.i",
+    "D04.j",
+    "D04.k",
+    "D04.l",
+    "D04.m",
+    "D05.c"
+  ],
+  "unchanged_capacity_count": 41,
+  "unchanged_behavior_count": 4,
+  "adopted_rule": "Complexité OU bénéfice ciblé",
+  "proposed_rationale_on": "D03.i"
+}

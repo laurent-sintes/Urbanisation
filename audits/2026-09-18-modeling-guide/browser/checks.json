@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "publication": "2026-09-16.2",
+  "guide": "2026-09-18.1",
+  "checks": [
+    "Entrée depuis la fiche : six clés, vue dédiée et publication conservée.",
+    "Trois réalisations techniques différentes ; responsabilités métier inchangées.",
+    "Six sujets : chaque choix a son explication, approfondissement et extraits de sources figés. Tous les liens restent dans le snapshot affiché.",
+    "L’explication est accessible directement, sans réponse obligatoire.",
+    "Lien vers une fiche puis retour navigateur : principe et version retrouvés.",
+    "Une référence absente du snapshot n’est jamais transformée en lien ni cherchée dans le backlog.",
+    "Clavier : sélection d’une clé, réponse et ouverture de l’approfondissement.",
+    "Mobile 390 px et 320 px : les six clés, explications et sources ne débordent pas horizontalement.",
+    "Publication historique sans association : guide explicitement indisponible, aucun repli courant ou backlog.",
+    "Changement de version pendant une réponse lente : la réponse précédente ne remplace pas le guide historique."
+  ],
+  "errors": [],
+  "fixture_only": true
+}

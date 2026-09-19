@@ -1,0 +1,83 @@
+id: SRC-2026-09-18-BRD-FLUX
+object_type: documentary_source
+status: analysed_pending_corroboration
+received_at: '2026-09-18'
+provided_by: Laurent
+contribution_id: U309
+scope: Boardriders
+scope_basis: Attribution explicite de Laurent dans U309 ; périmètre géographique et marques non précisés.
+source_type: flow_diagram_image
+title: Boardriders — schéma de flux vers Elastic
+title_basis: Titre éditorial de consignation, absent de l’image.
+author: null
+document_owner: null
+source_last_update:
+  literal_reading: 'Last Update : 11.05.2021'
+  normalized_date: null
+  confidence: probable
+  limitation: Année 2021 lisible ; jour à confirmer sur un original plus lisible. Ne constitue pas une date d’observation.
+observed_at: null
+deployment_status: not_independently_verified
+raw_file:
+  path: sources/interviews/SRC-2026-09-18-BRD-FLUX/image.png
+  original_path: C:/Users/laure/Downloads/image.png
+  mime_type: image/png
+  bytes: 215534
+  width: 1075
+  height: 888
+  sha256: 6a2546ed0bad5cb41acfdba21e73720b162118be72eb1a5c564b72bd05430931
+  preservation: byte_identical_copy
+sensitivity: Architecture interne présumée ; classification et droits de diffusion non précisés.
+source_registry:
+  path: modeles/provenance/source-records.json
+  entry_id: U309
+  relationship: La contribution enregistre le document, son identifiant canonique et le dossier ; aucun nouvel identifiant
+    de modèle.
+dossier:
+  index: connaissance/sources/SRC-2026-09-18-BRD-FLUX/index.md
+  analysis: connaissance/sources/SRC-2026-09-18-BRD-FLUX/analyse.md
+  validation: connaissance/sources/SRC-2026-09-18-BRD-FLUX/validation.md
+unit_groups:
+  nodes:
+  - N01
+  - N02
+  - N03
+  - N04
+  - N05
+  - N06
+  - N07
+  connectors:
+  - E01
+  - E02
+  - E03
+  - E04
+  - E05
+  - E06
+  - E07
+  - E08
+  - E09
+  - E10
+  legend_and_date:
+  - L01
+  - L02
+  interpretations:
+  - I01
+  - I02
+  - I03
+  - I04
+baseline_references:
+  panorama_index: modeles/panorama-as-is/current.json
+  boardriders_version: 2026-09-13.1
+  boardriders_snapshot: modeles/panorama-as-is/boardriders/versions/2026-09-13.1/panorama.json
+  capability_model: modeles/backlog/model.yaml
+integration:
+  source_recorded: true
+  canonical_panorama_changed: false
+  capability_model_changed: false
+  human_validation: []
+limitations:
+- Image unique sans document parent ni contexte d’édition.
+- Dix tracés, dont un seul jaune à deux pointes ; ni requête/réponse ni contrats techniques établis.
+- Modalité des flèches grises inconnue.
+- Actualité, instances et autorités par attribut à corroborer.
+- Rapprochements de capacités proposés et partiels, sans nouvelle capacité ni preuve d’applicabilité FLOW.

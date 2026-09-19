@@ -1,0 +1,17 @@
+{
+  "source": "Template PPT projet.pptx",
+  "status": "Extracted graphic values; proposed application uses",
+  "colors": [
+    { "name": "Vert FLOW", "hex": "#236159", "source": "ppt/slideMasters/slideMaster2.xml: shape 4; slideMaster3.xml: shape 4", "observed_use": "Bandeau et trait sous le titre", "proposed_use": "Navigation active, liens et actions" },
+    { "name": "Menthe", "hex": "#D9F2EA", "source": "slideMaster1.xml: shape 14; slideMaster2.xml: shape 14; slideMaster3.xml: shape 2", "observed_use": "Ellipses, opacité 60 % ou 40 %", "proposed_use": "Sélection et fonds discrets" },
+    { "name": "Lavande", "hex": "#DAE0F2", "source": "slideMaster1.xml: shape 13; slideMaster2.xml: shape 13; slideMaster3.xml: shape 3", "observed_use": "Ellipses, opacité 50 % ou 40 %", "proposed_use": "Surfaces secondaires et glossaire" },
+    { "name": "Sable", "hex": "#EADFCD", "source": "slideMaster1.xml: shape 15; slideMaster2.xml: shape 5", "observed_use": "Carrés arrondis inclinés", "proposed_use": "Accent des groupes de présentation et référentiels" },
+    { "name": "Pêche", "hex": "#FFD8B2", "source": "slideMaster1.xml: shape 16; slideMaster2.xml: shapes 9 et 6", "observed_use": "Cercles à 90 % d’opacité", "proposed_use": "Accent graphique ponctuel" },
+    { "name": "Blanc cassé", "hex": "#FCFDFD", "source": "slideMaster1.xml: shape 6", "observed_use": "Cartouche du logo FLOW", "proposed_use": "Fond général" }
+  ],
+  "fonts": { "title": "Aptos Display", "body": "Aptos", "source": "Office themes majorFont/minorFont", "web_fallback": "Segoe UI, Arial, sans-serif; no remote font loading" },
+  "derived_surfaces": { "mint_40_percent_on_white": "#F0FAF7", "lavender_40_percent_on_white": "#F0F3FA" },
+  "excluded": { "guide_colors": ["#F26B43", "#FBAE40"], "reason": "Editing guides only, not visible fills; generic Office accent colors are not adopted as the FLOW palette." },
+  "contrast_ratios": { "green_on_white": 7.18, "green_on_mint": 6.10, "green_on_lavender": 5.44, "green_on_sand": 5.45, "green_on_peach": 5.37 },
+  "contrast_note": "Computed for opaque colors. These pairs do not constitute a complete accessibility audit of Atlas."
+}

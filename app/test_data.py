@@ -41,7 +41,19 @@ class SourceFixture(unittest.TestCase):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(REPOSITORY_ROOT / relative, target)
-        shutil.copytree(REPOSITORY_ROOT / "modeles", self.root / "modeles")
+        # HTTP/reader fixtures need publications and one legacy preparation,
+        # not the growing backlog audit history or unrelated frozen revisions.
+        for relative in ('release', 'schemas', 'panorama-as-is',
+                         'revisions/2026-09-13.4', 'decisions/2026-09-13.4.json',
+                         'provenance/2026-09-13.4', 'provenance/source-records.json',
+                         'backlog/model.yaml', 'backlog/glossary.yaml'):
+            source = REPOSITORY_ROOT/'modeles'/relative
+            target = self.root/'modeles'/relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if source.is_dir():
+                shutil.copytree(source, target)
+            else:
+                shutil.copyfile(source, target)
 
     def cleanup_fixture(self):
         target = self.root.resolve()
@@ -249,6 +261,13 @@ class HTTPTests(SourceFixture):
         index_path.write_text(dumps(index, '.json'), encoding='utf-8')
         path = self.root / 'modeles/backlog/model.yaml'
         path.write_text(dumps(baseline), encoding='utf-8')
+        # The live glossary can reference nodes introduced after this fixture's
+        # frozen model. Isolate both inputs to the same historical state.
+        glossary_path = self.root / 'modeles/backlog/glossary.yaml'
+        if 'glossary' in baseline:
+            glossary_path.write_text(dumps(baseline['glossary']), encoding='utf-8')
+        else:
+            glossary_path.unlink(missing_ok=True)
         version = '2026-09-14.999'
         old_status, _, old_body = self.request('/api/model?version=2026-09-13.4')
         self.assertEqual(old_status, 200)

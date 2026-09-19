@@ -1,0 +1,111 @@
+id: ORDER-PLAN-APPLICATION-U344
+status: proposed
+source_refs:
+- U287
+- U289
+- U293
+- U344
+- ELM214
+- CMP122
+arbitration_id: A03
+question: Un mécanisme unique d’application de plan est-il justifié au niveau comportement, et sous quel parent sans absorber
+  les autres responsabilités ?
+preserved_agreement: D04 doit pouvoir appliquer les conséquences d’un scénario ou d’un plan d’affectation sur les Orders.
+  Le plan d’affectation relie ressources et commandes ; ce n’est pas une répartition magasin.
+recommendation: Décrire d’abord le contrat transversal d’application dans les capacités existantes ; ne pas créer un comportement
+  unique sous Order Lifecycle Management ni une capacité générique uniquement pour servir de parent.
+rationale: Le plan est une origine coordonnée de changements, pas une preuve suffisante de mécanisme distinct. Un parent Lifecycle
+  serait trop étroit ; un parent englobant absorberait structure, contenu, ressources et processus.
+effects:
+- effect: Changer les liens ressources-commandes
+  owner: D02.e
+- effect: Scinder ou répartir les lignes entre échéances
+  owner: D04.n
+- effect: Changer le contenu métier de la commande
+  owner: Gestion D04 par type concerné
+- effect: Affermir, autoriser, mettre en attente ou reporter
+  owner: D04.o
+- effect: Établir ou maintenir une réservation
+  owner: D02.c
+- effect: Réviser la promesse communiquée
+  owner: D03.n
+case: 'Exemple fictif : affecter 60 pièces présentes et 40 attendues à une commande de 100 ; matérialiser deux échéances si
+  nécessaire, autoriser les 60 et maintenir les 40 en attente selon le plan retenu. L’arrivée future ne devient pas un stock
+  physique actuel.'
+common_contract:
+- Référence et version du plan retenu
+- Orders, lignes et quantités visés
+- Changements autorisés et préconditions
+- Résultats appliqués, refusés ou partiels avec motifs
+- Lien aux décisions et effets sur les engagements
+boundaries:
+- Aucune atomicité globale d’un plan déduite ; préserver les engagements existants.
+- Coordination des changements et compensations dans le processus/Case Management selon le cas ; D06 garde l’orchestration
+  des prestations d’exécution.
+- Définir ce contrat ne crée ni logiciel, ni nouvelle capacité processus, ni séquence universelle.
+- 'Ne pas retirer le principe adopté U287/U289 : seul le nœud comportement unique reste remis en question.'
+market_comparisons:
+- vendor: Microsoft
+  product: Dynamics 365 SCM
+  element_name: Action messages
+  element_type: Fonction ou mécanisme produit
+  relationship: Recouvrement partiel
+  similarities: La planification émet des suggestions de changement de dates ou de quantités sur des Orders existants ; leur
+    application reste distincte.
+  differences: Produit intégré ; les verbes Advance/Postpone/Increase/Decrease ne constituent pas quatre capacités FLOW.
+  source_title: Action messages
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  source_version: Documentation évolutive ; mise à jour affichée 2026-03-26
+  source_locator: Introduction ; Select action messages
+  consulted_on: '2026-09-18'
+  evidence_limits: Passage primaire ouvert et consulté ; aucun déploiement Beaumanoir démontré.
+  flow_position: 'Discussion A03/U344 : application de plan répartie selon les effets métier, sans parent unique nouveau ni
+    rattachement exclusif à Lifecycle. Proposition à arbitrer.'
+  status: proposed
+  source_refs:
+  - U344
+  - ELM214
+  - CMP122
+- vendor: Microsoft
+  product: Dynamics 365 SCM
+  element_name: Firm planned orders
+  element_type: Fonction ou mécanisme produit
+  relationship: Recouvrement partiel
+  similarities: L’affermissement transforme des ordres planifiés en commandes effectives ; il peut aussi regrouper des lignes.
+  differences: Même fonction produit couvrant plusieurs effets métier. Microsoft rapproche firm/release dans cette page ;
+    FLOW conserve ses distinctions. Ne prouve pas un parent unique de comportement.
+  source_title: Firm planned orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  source_version: Documentation évolutive
+  source_locator: Introduction ; Manually firm planned orders, paramètres de regroupement
+  consulted_on: '2026-09-18'
+  evidence_limits: Passage primaire ouvert et consulté ; aucun déploiement Beaumanoir démontré.
+  flow_position: 'Discussion A03/U344 : application de plan répartie selon les effets métier, sans parent unique nouveau ni
+    rattachement exclusif à Lifecycle. Proposition à arbitrer.'
+  status: proposed
+  source_refs:
+  - U344
+  - ELM214
+  - CMP122
+- vendor: Oracle
+  product: Fusion Cloud SCM
+  element_name: Compensate Sales Orders That Change
+  element_type: Fonction ou mécanisme produit
+  relationship: Recouvrement partiel
+  similarities: Une modification de commande peut déclencher l’annulation puis la recréation d’une demande d’expédition par
+    des règles d’orchestration.
+  differences: Mécanisme de réalisation du processus, compatible avec l’approche Case Management discutée ; ni comportement
+    Supply Compensation ni garantie d’annulation physique.
+  source_title: Compensate Sales Orders That Change
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/compensate-sales-orders-that-change.html
+  source_version: 26B
+  source_locator: Introduction et exemple de changement d’entrepôt
+  consulted_on: '2026-09-18'
+  evidence_limits: Passage primaire ouvert et consulté ; aucun déploiement Beaumanoir démontré.
+  flow_position: 'Discussion A03/U344 : application de plan répartie selon les effets métier, sans parent unique nouveau ni
+    rattachement exclusif à Lifecycle. Proposition à arbitrer.'
+  status: proposed
+  source_refs:
+  - U344
+  - ELM214
+  - CMP122

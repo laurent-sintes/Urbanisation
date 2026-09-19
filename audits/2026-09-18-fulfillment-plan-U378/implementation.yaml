@@ -1,0 +1,37 @@
+source_refs:
+- U377
+- U378
+- ELM228
+- CMP139
+model_before: audits/2026-09-18-fulfillment-plan-U378/model-before.yaml
+model_before_sha256: d2a86f819379c6c05de2e6e8a5b2923105d634270d800de0112655840c76a89c
+delta:
+  nodes:
+    added:
+      D03.o: 2cafa7aea05f0280597837cc17d943e81ba64b4830507817a42aff0a1def7c61
+    changed:
+      D03: 2c5432ae23c3927ceb30cfa7ab784a058afbbc23152339a39a4526dac8807c37
+    removed: []
+  relations:
+    added:
+      REL-NEEDS-U378-04: 5829e284d939f7b4cbb056026724b9e0fe6f398d65ac29b8292218b5d92dd61a
+      REL-NEEDS-U378-01: 12285ca12e50d0ddfc5d3aadf66ab8636ac207303678de4f29e6e200c21543b6
+      REL-NEEDS-U378-07: 600e09fa6b6da807643b95c2315994fadccb191029823739eee08162d496223c
+      REL-NEEDS-U378-05: 1695be1b0d87696919c792e04c1acac2b4674728f87659ea4cd2da8c9db3b4b1
+      REL-NEEDS-U378-06: b3e49aa9907a3fbec8de723a4cba3b29e090bf7e73b7eb3670616bb5007802ac
+      REL-NEEDS-U378-02: 456a7d1c4001dce6eafb3b2726fdc0bfab66e9af1d5e48621c20cb99e4c40f87
+      REL-NEEDS-U378-03: aa771a31fa55705f8a0ebae21e2b8501b6fda998eba5182661b15a7f5622e65b
+      REL-MEMBER-D03.o: 002c7c6dfed5023df0d4b8621f068d4f560654187616a4a91a9d43ccb7d8b59a
+    changed: {}
+    removed: []
+behaviors: []
+adopted_fields:
+- name
+- definition
+- nature
+node_id: D03.o
+value_sha256:
+  name: cd415ee74c2e24d6977e583c2daa5e8a576f68d9cd58196de13f3d8f803c3776
+  definition: 76114b8bb1548adc61d20c602225630b05176112d5b22299a6a766aad2f1f658
+  nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+parent_relation_status: proposed

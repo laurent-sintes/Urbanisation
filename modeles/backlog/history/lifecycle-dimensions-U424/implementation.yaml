@@ -1,0 +1,70 @@
+source_refs:
+- U424
+- ELM251
+- CMP162
+model_before: modeles/backlog/history/lifecycle-dimensions-U424/model-before.yaml
+model_before_sha256: 1e9c33665250100dad1c6a047a91513866c861778c33510184a25c31836edda1
+behaviors: []
+dimension_ids:
+- BHV038
+- BHV036
+- BHV037
+- BHV039
+- BHV040
+- BHV043
+merges:
+  BHV041: BHV038
+  BHV042: BHV043
+adopted_definition: Gouverner les évolutions autorisées des Orders selon leurs différentes dimensions métier, en préservant
+  la cohérence entre engagements, modifications en préparation et réalisations acquises.
+editorial_state_lists:
+  BHV038:
+  - Draft — Brouillon
+  - In Review — En validation
+  - Approved — Approuvé
+  - Effective — Applicable
+  - Rejected — Rejeté
+  - Withdrawn — Retiré
+  - Superseded — Remplacé
+  BHV036:
+  - Planned — Planifié
+  - Firm — Ferme
+  - Partially Firm — Partiellement ferme
+  BHV037:
+  - Unfrozen — Non gelé
+  - Frozen — Gelé
+  - Partially Frozen — Partiellement gelé
+  BHV039:
+  - Not Released — Non libéré
+  - Partially Released — Partiellement libéré
+  - Released — Libéré
+  - Release Withdrawn — Autorisation retirée
+  BHV040:
+  - Clear — Sans suspension active
+  - On Hold — Suspendu
+  - Partially On Hold — Partiellement suspendu
+  BHV043:
+  - Open — Ouvert
+  - Closing — Clôture en cours
+  - Closed — Clôturé
+delta:
+  nodes:
+    added: {}
+    removed:
+    - BHV041
+    - BHV042
+    changed:
+      BHV036: a993516c9f8d7096610b9ac5b7260bc583bd5ea62429386603aeee06fad96e11
+      BHV037: aa32530542a7ba491415465070506023f2d51d39167ae722fe1f3901537ace1e
+      BHV038: 0d1a301630cc372ca6622740735b2d1aa22050721c4c0025e8bf64a08d2c84ec
+      BHV039: 54a6a5afc59e0132ee58c3b5d3049db135d62840939bb3f8496184e6387aef6c
+      BHV040: fe31f1d54b7119aa04a7f142ed1a9dc92c3c7c0272a3651a0f1981ba7c23101b
+      BHV043: 0dced5861a2e5065d4c2b554e471f17d01b0e36614c03bd6eda54aac1b8ccef2
+      D04.o: 66f19a0c1ad6ac1dab6499957488632fd39fe58c322965df60457c0d3b73dc52
+  relations:
+    added:
+      REL-NEEDS-U424-D03.p-D04.o: 31c0b939b82e060b3b7cc8a1a0cdf3222d0c115662b2bca5d1f6ddcabce066cf
+    removed:
+    - REL-BEHAVIOR-BHV041
+    - REL-BEHAVIOR-BHV042
+    changed: {}

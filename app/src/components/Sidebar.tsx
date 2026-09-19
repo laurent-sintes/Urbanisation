@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type RefObject } from 'react';
-import { ChevronDown, ChevronRight, Search, X, PanelLeftClose, Compass, BookOpen } from 'lucide-react';
+import { ChevronDown, ChevronRight, Search, X, PanelLeftClose, Compass, BookOpen, Lightbulb } from 'lucide-react';
 import type { AtlasNode, PublishedModel } from '../types';
 import { childrenOf, lineageOf, parentRelationOf, rootsOf, searchModel } from '../model';
 import { kindLabel, statusLabel } from '../presentation';
@@ -12,12 +12,13 @@ interface Props {
   onClose: () => void; onNavigate: (id: string, focusHeading?: boolean) => void;
   onSearch: (changes: Partial<RouteState>) => void;
   onOpenGlossary: () => void;
+  onOpenPrinciples: () => void;
 }
 const lifecycleLabels: Record<string, string> = {
   urbanist_validated: 'Validé par l’urbaniste', under_instruction: 'En instruction',
   ai_proposed: 'Proposé par l’IA', rejected: 'Écarté', retired: 'Retiré',
 };
-export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavigate, onSearch, onOpenGlossary }: Props) {
+export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavigate, onSearch, onOpenGlossary, onOpenPrinciples }: Props) {
   const tree = useRef<HTMLDivElement>(null);
   const panel = useRef<HTMLElement>(null);
   const revealed = useRef('');
@@ -114,6 +115,7 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     <div className="sidebar-heading"><div><span className="section-kicker">EXPLORER LE MODÈLE</span><button className="root-link" onClick={() => onNavigate('')}><Compass size={22} />Urbanisation</button></div>
       <button className="drawer-close" aria-label="Fermer l’arbre" onClick={onClose}><PanelLeftClose size={20} /></button></div>
     <button className="glossary-nav" onClick={onOpenGlossary} aria-current={route.view === 'glossary' ? 'page' : undefined}><BookOpen size={19}/>Glossaire</button>
+    <button className="glossary-nav principles-nav" onClick={onOpenPrinciples} aria-current={route.view === 'principles' ? 'page' : undefined}><Lightbulb size={19}/>Les clés du modèle</button>
     <div className="search-box"><Search size={17} /><input ref={searchRef} id="fa-search" aria-label="Rechercher dans le modèle publié" placeholder="Un nom, une idée, un repère…" value={route.query} onChange={e => onSearch({ query: e.target.value })} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); panel.current?.querySelector<HTMLButtonElement>('[data-search-result]')?.focus(); }
       if (e.key === 'Escape') onSearch({ query: '', type: '', status: '' });
@@ -127,6 +129,6 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
       if (e.key === 'ArrowUp') { e.preventDefault(); const previous = e.currentTarget.previousElementSibling; previous?.tagName === 'BUTTON' ? (previous as HTMLElement).focus() : searchRef.current?.focus(); }
     }}><NodeIcon node={node} size={20} framed /><span><strong>{node.name}</strong><small>{lineageOf(model, node.id).slice(0, -1).map(n => n.name).join(' / ') || kindLabel(node)} · {node.id}</small></span></button>)}{!matches.length && <p>Aucun élément ne correspond dans cette publication.</p>}</div>
       : <div className="model-tree" ref={tree} role="tree" aria-label="Arbre d’urbanisation"><ul role="group">{rootsOf(model).filter(n => !['object','document','event'].includes(n.kind)).map(n => renderNode(n, 1))}</ul></div>}
-    <div className="sidebar-bottom"><span className="live-dot" /><span>{model.nodes.length} éléments · {model.nodes.filter(n => n.kind === 'capability').length} capacités<br /><small>Publier ne vaut pas valider.</small></span></div>
+    <div className="sidebar-bottom"><span className="live-dot" /><span>{model.nodes.length} éléments · {model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}<br /><small>Publier ne vaut pas valider.</small></span></div>
   </aside>;
 }

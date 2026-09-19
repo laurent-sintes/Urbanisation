@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "Fiche capacité : deux éditeurs, différences, choix FLOW, statut, source datée et lien primaire.",
+    "Implantation et Réassort : comparaison visible et recherche par terme SAP.",
+    "Mobile 390 px : cartes lisibles sans débordement horizontal.",
+    "Publication historique : aucune comparaison récupérée depuis le backlog."
+  ],
+  "errors": [],
+  "fixture_only": true
+}

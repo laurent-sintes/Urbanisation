@@ -16,6 +16,7 @@ from atlas_data import (
     DEFAULT_SPACE, ModelError, REPOSITORY_ROOT, SCHEMA_VERSION, SourceAccessError,
     get_revision, load_model, load_panorama, read_source, catalog,
 )
+from modeling_guide import ModelingGuideError, load_modeling_guide
 
 BUILT_ROOT_FILES = {
     "/": ("index.html", "text/html; charset=utf-8"),
@@ -137,6 +138,11 @@ class AtlasHandler(BaseHTTPRequestHandler):
                     raise ModelError("Atlas affiche uniquement l’urbanisation publiée.")
             if route == "/api/model":
                 self._json(200, load_model(self.root, space, version), head)
+            elif route == "/api/modeling-guide":
+                query = parse_qs(request.query, keep_blank_values=True, max_num_fields=2)
+                if set(query) - {"version"} or len(query.get("version", [None])) != 1 or query.get("version") == [""]:
+                    raise ValueError("Une version unique est attendue.")
+                self._json(200, load_modeling_guide(self.root, query.get("version", [None])[0]), head)
             elif route == '/api/releases':
                 self._json(200, catalog(self.root/'modeles/release'), head)
             elif route == "/api/status":
@@ -165,7 +171,7 @@ class AtlasHandler(BaseHTTPRequestHandler):
             self._error(403, str(exc), head)
         except FileNotFoundError:
             self._error(404, "Source ou fichier de l’application introuvable.", head)
-        except ModelError as exc:
+        except (ModelError, ModelingGuideError) as exc:
             self._error(422, str(exc), head)
         except (ValueError, UnicodeError):
             self._error(400, "Requête invalide.", head)

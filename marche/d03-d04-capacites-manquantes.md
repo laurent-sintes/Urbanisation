@@ -1,5 +1,7 @@
 # D03/D04 — capacités manquantes à examiner
 
+> **Évolution U214 — 15 septembre 2026 :** le backlog remplace les quatre capacités D04.e–h par cinq capacités par type d’ordre, Order Structuring et Order Lifecycle Management (D04.i–o). Les propositions de conserver quatre capacités sont historiques. Voir la [refonte et les descriptions concrètes](../connaissance/29-order-management-refonte.md) ; les publications restent inchangées.
+
 14 septembre 2026 — U160. État de référence : huit capacités D03 et quatre D04 dans le backlog ; Simulation en instruction U159 et Backlog Management comme nom de domaine encore proposé. [Candidats structurés](../modeles/backlog/d03-d04-gap-review.json). Aucun ajout adopté.
 
 ## Appuis de marché

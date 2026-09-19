@@ -1,0 +1,43 @@
+source_refs:
+- U313
+- U316
+state: applied_in_backlog
+model_before: audits/2026-09-18-initial-stocking/model-before.yaml
+model_before_sha256: d7be0ed33de953f78a840fcdc0b4932bed834620c31c371e755bacb92d48489c
+model_after_sha256: c5f4149d60001e80581da656efd7ff18fa9805115fbbff739a9a7ff76625d36f
+delta:
+  nodes:
+    added:
+      D05.g: c3c719e79d79b714855592592c9959dcd9fd5c5ca5efc93331bf0d2b74ba40ef
+    changed:
+      D05.e: aff182d5eec33a60fedb9664ff58ee441eda4a8b4a1c7e63d2bb3480665064d7
+      D05: b8ed01ce8acebee72f0835b344b1a17c2eb3b4d0a23a61c4f8182fe8f9a93626
+      D05.f: 860ee0e3cb48ff270de1feeb155aa5771413f1a8fd9502e9004db323eb440ed0
+    removed: []
+  relations:
+    added:
+      REL-INITIAL-STOCKING-INVENTORY: eabc2b10318801af8034e926ac25aed7f758b540a6cbf4c44bd41baf8a9dbbbe
+      REL-REDISTRIBUTION-INITIAL-STOCKING: aff0e822199f2adf4f957ed19b1e26819e888c323b20c59af9c5f87c333f3325
+      REL-INITIAL-STOCKING-TRANSFER: 7786411ed2583220115336e5877354e794c064d14fc3b59f87cb7e73072c1adf
+      REL-INITIAL-STOCKING-TARGET: 59a1291fc09b9c4321dad39e4ec87f811c0653e91dc416342b998ce4e219866e
+      REL-INITIAL-STOCKING-PROTECTION: 48e79ee5edebd5d0e8eca4deb9bdde9ab8f60521e17c982f53fe0e845e695bfb
+      REL-INITIAL-STOCKING-PURCHASE: 4cf62e9be8c66092467e4f716927c00710ae328c367ac00d99019ee3c5d752b8
+      REL-MEMBER-D05.g: 8a32a70f9beddb45408844ab66d52bd2c4c1f22ebf4e0c688a76f9a259c261d8
+      REL-INITIAL-STOCKING-TRACKING: 964bbdd5b34f7ca4919c70909845eb1f317a298ee080d80f4d31a7cba1b91b13
+      REL-INVENTORY-PLANNING-D05.g: 7296b237e7069855498a583894e4632aa58b0824cf7f9340b88a0951e22f3ab0
+    changed: {}
+    removed: []
+adopted_node:
+  id: D05.g
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: c4ec5da77ca94c7b38a52267363a18adb7e7cf0b0acd661008d55b03baec8ee5
+    definition: 08253658f962008cad858d46c1b0df78e58b48ba4b6c1cfc72c43b5baa0376e8
+preserved_identity: D05.e conservée pour Replenishment Decision ; D05.b retirée reste inutilisée.
+proposed_details: Finalités, détails éditoriaux, exemples, rattachement et contrats détaillés non validés automatiquement
+  ; correspondances marché proposées.
+no_new_behaviors: Aucun mécanisme différenciant supplémentaire justifié par le seul découpage ; pas de décomposition systématique.
+open_boundary: Préciser les contraintes et les échanges Coverage Target / Initial Stocking sans déplacer implicitement la
+  détermination des objectifs.

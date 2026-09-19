@@ -2063,3 +2063,266 @@ Le backlog conservait Article comme référence SKU, le principe CTP différé e
 **correction**
 
 Audit complet puis précisions de dix nœuds et des principes concernés. Références Product/Variant distinctes des unités, Article/Container comme rôles, Orders contextualisés et CTP présent dans D03. Les nouvelles formulations détaillées restent proposées ; preuves et valeurs avant modification dans audits/2026-09-14-glossaire-yaml/. Aucun renommage de domaine ni ajout de capacité.
+
+## C91
+
+**id**
+
+C91
+
+**sources**
+
+U212, U213, U214, U215
+
+**constat**
+
+Le découpage U141 utilisait Order Registration, Order Revision, Order Visibility et Order Reconciliation. Les études U160/U210 recommandaient provisoirement de conserver ce découpage.
+
+**correction**
+
+U214 adopte son remplacement dans le backlog par Sales Order Management, Purchase Order Management, Transfer Order Management, Customer Return Management, Supplier Return Management, Order Structuring et Order Lifecycle Management. D04.i–o sont de nouvelles identités ; D04.e–h et leurs relations sont conservés dans `modeles/backlog/history/pre-U214.yaml`. Les responsabilités antérieures sont redistribuées, sans transfert des validations. Noms et rattachements adoptés ; définitions concrètes U215 et relations d’exécution proposées. La release reste inchangée. Voir `connaissance/29-order-management-refonte.md` et `modeles/backlog/d04-refactoring.yaml`.
+
+## C92
+
+**id**
+
+C92
+
+**sources**
+
+U218, U219, U220, U221
+
+**constat**
+
+L’analyse U217 séparait surtout le besoin de la solution et suspectait un doublon entre redistribution D05 et CTP. D05 conservait le libellé large Operational Resource Balancing ; Inventory Balancing a été proposé pendant la mise à jour.
+
+**correction**
+
+La finalité distingue D03, satisfaction des Orders, et D05, stock souhaitable et ajustements nécessaires. Un transfert peut servir l’une ou l’autre sans prouver un doublon. U219 applique ce repère ; U220 retient Inventory Optimization comme nom de D05. Les trois capacités sont conservées et précisées, leurs nouvelles formulations restent proposées. D01 garde connaissance, fiabilisation, mouvements, protection et réservation. U221 ouvre le réapprovisionnement automatique comme piste de périmètre, sans capacité autonome ou exécution automatique déduite. Voir `connaissance/30-stock-et-orders.md` et `modeles/backlog/stock-order-boundary.yaml`. La release v005 conserve son état antérieur.
+
+
+## C93
+
+**id**
+
+C93
+
+**sources**
+
+U275, U287, U289
+
+**constat**
+
+Codex a interprété le plan d’allocation mentionné U287 comme une répartition de quantités vers deux magasins et a étendu cet exemple à une application de plan créant des transferts. Laurent précise U289 qu’il parlait de ressources contraintes affectées aux commandes pour améliorer leur satisfaction.
+
+**correction**
+
+Supply Assignment / affectation des ressources aux commandes est le terme courant, déjà retenu U275. Supply Assignment Plan / plan d’affectation désigne l’ensemble cohérent de ces choix. L’exemple magasin est retiré de la cible courante et conservé dans sa section historique. D04 applique les conséquences autorisées sur les Orders ; Supply Assignment garde les liens ressources-commandes. Allocation reste qualifié et rattaché à son sens éditeur/historique, sans ambiguïté avec les protections par groupe. Portée détaillée des responsabilités à instruire ; pas de mutation silencieuse du catalogue.
+
+
+## C94
+
+**id**
+
+C94
+
+**sources**
+
+U292, U293
+
+**constat**
+
+L’audit U292 mettait en avant la détection d’exceptions sans rendre aussi visible le suivi normal du transit. Sa proposition de libération coordonnée prêtait à confusion avec l’orchestration. Il proposait aussi Execution Compensation comme comportement métier autonome et utilisait surstock.
+
+**correction**
+
+U293 réaffirme la visibilité de la marchandise en mouvement ; Transit Visibility est une piste de comportement, pas un renommage adopté. Lifecycle porte états et transitions autorisées de l’Order ; le processus organise son traitement et D06 coordonne les prestations. P11 est à clarifier, P05 retiré comme comportement autonome : la compensation relève de l’adaptabilité du processus, avec l’Order comme case dans le contexte discuté. Interruption des activités en cours et compensation des effets produits sont distinguées. Employer excédent dans les propositions courantes ; définition contextuelle proposée, sans remplacement des archives ni mutation silencieuse du catalogue.
+
+
+## C95
+
+**id**
+
+C95
+
+**sources**
+
+U293, U294
+
+**constat**
+
+Codex a recommandé Transit Visibility sans établir pourquoi s’écarter des termes déjà présentés par le marché.
+
+**correction**
+
+La règle U294 donne priorité au vocabulaire établi à notion et périmètre équivalents ; déviation seulement pour une innovation explicitée. Les sources ne montrent pas de libellé universel Global Track : Global Track and Trace est le nom SAP ; Track and Trace se retrouve chez Oracle, Transportation Visibility chez les spécialistes. Track and Trace devient le nom proposé pour le périmètre logistique ; aucun nom de catalogue adopté ni nouveau comportement créé. Le périmètre inclut aussi les écarts : réexaminer le non-doublon avec P10.
+
+
+## C96
+
+**id**
+
+C96
+
+**sources**
+
+U301, U305, U306
+
+**constat**
+
+La formule « mandat de traçabilité numérique » laisse implicite la visibilité opérationnelle des prestations numériques après avoir explicité les trois comportements logistiques.
+
+**correction**
+
+Rendre explicite la visibilité de chaque sollicitation numérique et de son résultat métier. Le besoin U306 dépasse l’historique technique ou l’état de santé d’une API. Digital Service Visibility est proposé comme quatrième comportement sous Execution Tracking ; nom, définition et rattachement proposés restent distincts du besoin exprimé. Les trois comportements logistiques U305 restent adoptés.
+
+
+## C97
+
+**id**
+
+C97
+
+**sources**
+
+U312, U313, U314, CMP107
+
+**constat**
+
+Codex proposait implantation et réassort comme comportements sous Replenishment Decision, en étendant le sens du nom à partir du périmètre d’une offre logicielle.
+
+**correction**
+
+SAP, RELEX et Oracle distinguent Initial Allocation et réassort en cours de vie. Une offre ou un moteur commun ne démontre pas leur inclusion sous une même décision nommée Replenishment. U313 demande deux décisions distinctes ; la proposition de rattachement U310 est remplacée. Les noms anglais et les frontières détaillées restent à instruire ; aucune scission de catalogue n’est prétendue déjà appliquée.
+
+
+## C98
+
+**id**
+
+C98
+
+**sources**
+
+U324, CMP111
+
+**constat**
+
+La recommandation U323 présentait deux méthodes de réassort comme comportements sans suffisamment distinguer la détermination des seuils de leur utilisation, ni démontrer le bénéfice propre de cette décomposition dans FLOW.
+
+**correction**
+
+Min/max peut reposer sur des besoins prévus et varier par période. Coverage Target Decision détermine objectifs et seuils ; Supply Protection gouverne et applique leurs versions opérationnelles ; Replenishment Decision détermine les apports. Requirement/Period et Min/Max restent des politiques produit distinctes, mais leur existence ne prouve pas deux comportements métier nécessaires. Le premier candidat U323 produisait des apports datés, pas des min/max : ne pas lui attribuer rétrospectivement la responsabilité de Coverage Target. Suspendre la recommandation de création des deux comportements en attendant un bénéfice métier démontré ; conserver les politiques dans les descriptions. Aucun nœud retiré puisque ces comportements n’ont pas été créés.
+
+
+## C99
+
+**id**
+
+C99
+
+**sources**
+
+U345, CMP123
+
+**constat**
+
+La proposition U344 invoquait la transversalité de l’application d’un plan pour éviter un comportement avec un parent unique, et introduisait la compensation Oracle dans cette discussion métier.
+
+**correction**
+
+L’application des affectations d’un plan relève bien de Supply Assignment. Mobiliser d’autres capacités ne retire pas cette responsabilité ni ne justifie un simple contrat sans mécanisme métier. D04 garde les effets sur les Orders. La compensation Oracle reste un mécanisme logiciel, hors de la décomposition examinée. Décrire les recommandations comme résultats possibles de Simulation & Analysis, distincts de leur adoption et de leur application. Réexaminer les mécanismes Supply Assignment ; pas un catalogue CRUD.
+
+## C100
+
+**id**
+
+C100
+
+**sources**
+
+U370
+
+**constat**
+
+La comparaison au SCM étendu pouvait faire comprendre que les achats et l’approvisionnement manquaient et présenter la planification globale comme une responsabilité à ajouter à FLOW.
+
+**correction**
+
+Les achats et l’approvisionnement des entrepôts sont prévus. D04.j décrit les commandes d’achat, D04.k les transferts ; les décisions de stock et D06 contribuent au pilotage opérationnel. Les maîtres et la planification globale sont gérés ailleurs : leurs interfaces et données utiles restent à cartographier, sans importer leurs responsabilités. Inventory Planning conserve les scénarios opérationnels de stock. Réexaminer le nom de l’univers comme cœur d’orchestration ; aucun renommage acquis par cette correction.
+
+
+## C101
+
+**id**
+
+C101
+
+**sources**
+
+U374
+
+**constat**
+
+La comparaison U370 et la réponse à U373 affirmaient que le périmètre SAP Supply Chain Orchestration était plus large que FLOW parce que l’article mentionne design, planification, sourcing et fabrication.
+
+**correction**
+
+L’article SAP « What is supply chain orchestration? », sections Core capabilities et End-to-end supply chain management applications, décrit des fonctions connectées et coordonnées. Cela ne démontre ni leur prise en charge interne par l’orchestrateur ni une supériorité de périmètre sur FLOW, qui mobilise aussi des services externes. Les exemples de fonctions citées sont un constat ; le périmètre comparé reste non établi. Conserver l’appui sémantique au nom, retirer la conclusion « plus large ». Source : https://www.sap.com/resources/supply-chain-orchestration-explained, consultée le 18 septembre 2026.
+
+
+## C102
+
+**id**
+
+C102
+
+**sources**
+
+U391
+
+**constat**
+
+U390 conservait Consignment Procurement comme candidat supplémentaire sous Purchase Order, principalement vu par l’acquisition du stock déjà détenu.
+
+**correction**
+
+Cette entrée est trop étroite pour le besoin décrit par Laurent. Retirer le candidat du découpage achat et instruire une responsabilité de gestion du stock sous accord fournisseur : détention, propriété, droits et obligations, faits transmis à la finance et devenir du stock, notamment après saison. Les sources Microsoft et Oracle documentent un possible achat/transfert de propriété dans le cycle ; ce lien demeure sans faire de tout le cycle un comportement d’achat. Comptabilité, facturation et assurance ne sont pas automatiquement absorbées par FLOW. Le nom et la maille de la capacité restent proposés.
+
+
+## C103
+
+**id**
+
+C103
+
+**sources**
+
+U394
+
+**constat**
+
+La réponse à U393 répondait à la préférence architecturale de Laurent en rappelant la couverture fonctionnelle SAP et sa capacité à piloter selon les besoins. Elle déplaçait ainsi le débat vers « savoir faire » au lieu de « rendre le métier visible dans le design ».
+
+**correction**
+
+Ne plus attribuer à Laurent une contestation de la capacité SAP à gérer la consignation. Son critère est la lisibilité du processus, des intentions et des engagements à travers objets, données, transactions et liens. Microsoft rend explicitement distincts apport en consignation et acquisition par ses objets ; SAP conserve ces distinctions dans une catégorie et des effets d’un document commun. L’appréciation de meilleure lisibilité Microsoft sur cet exemple est argumentée ; l’explication historique de cette différence reste une opinion non vérifiée. Appliquer ce critère à FLOW, indépendamment de la couverture fonctionnelle et sans imposer une table physique par intention.
+
+
+## C104
+
+**id**
+
+C104
+
+**sources**
+
+U397, U396
+
+**constat**
+
+Codex a recommandé puis enregistré la non-décomposition de Consignment Replenishment Order, en invoquant notamment un traitement commun des demandes et les responsabilités transverses D04/D05. Ce raisonnement a minoré l’intérêt d’expliciter le métier à la lecture de chaque Order.
+
+**correction**
+
+U397 remplace la conclusion U396. Décrire les comportements métier attendus de l’Order ; une mise en œuvre commune ou l’appui sur une capacité transverse ne justifie pas leur omission. Distinguer le sens du parcours visible dans D04 des décisions et autres responsabilités mobilisées. La lisibilité des intentions et résultats métier constitue un bénéfice ciblé de décomposition. Conserver la maille Mécanisme/Politique/Variante/Bénéfice et ne pas déduire une décomposition exhaustive en opérations produit. Aucun nom ou comportement précis nouvellement proposé n’est validé par cette correction.

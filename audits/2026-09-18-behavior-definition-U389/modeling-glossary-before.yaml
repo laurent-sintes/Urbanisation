@@ -1,0 +1,181 @@
+id: flow-modeling-glossary
+kind: modeling_glossary
+as_of: '2026-09-17'
+source_refs:
+- U229
+- U230
+- U231
+- U232
+- U260
+- U262
+- U263
+- U269
+- U271
+- U282
+- U283
+- U284
+purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
+boundary:
+  business_glossary: modeles/backlog/glossary.yaml
+  rule: Ne pas fusionner ce registre avec le glossaire métier ni ajouter ses termes au catalogue métier publié.
+  coverage: Vocabulaire de modélisation U229–U232, couverture U260 et comportement U262 ; aucune reclassification exhaustive
+    des termes historiques réalisée.
+  links: 'Identifiants MOD propres à ce registre. Les liens glossary: des publications métier conservent leur résolution métier
+    ; aucun nouveau protocole lexical ni écran Atlas créé par cette séparation.'
+terms:
+- id: MOD001
+  name: Decision
+  label_fr: Décision
+  definition: Déterminer une réponse métier à partir d’hypothèses, d’objectifs et de contraintes.
+  role: Qualifier une responsabilité de décision dans le modèle.
+  notes:
+  - Les capacités de Planning se nourrissent des capacités de décision selon U229.
+  - Le calcul est un moyen possible ; U229 préfère Decision et souhaite éviter Calculation comme intitulé de capacité.
+  - Une décision modélisée ne prouve pas sa mise en application transactionnelle.
+  source_refs:
+  - U229
+  - U232
+  review:
+    state: partial
+    adopted_scope: Préférence pour Decision et distinction avec Planning ; aucun choix de capacité spécifique adopté.
+    proposed_scope: Définition synthétique rédigée par Codex.
+- id: MOD002
+  name: Planning
+  label_fr: Planification
+  definition: Construire des scénarios alternatifs, simuler et analyser leurs conséquences, puis adapter le scénario en cours
+    en mobilisant les décisions spécialisées et les capacités responsables de sa mise en action.
+  role: Qualifier les responsabilités de planification qui utilisent les décisions.
+  notes:
+  - Planning mobilise les décisions spécialisées ; elles restent des capacités distinctes.
+  - Inventory Planning comporte Scenario Construction, Simulation & Analysis et Scenario Execution Adaptation depuis U290.
+    Comparaison, autorisation et mise en action restent des fonctions utiles.
+  - Les pratiques peuvent être itératives ou automatisées ; aucun contrôle humain systématique ni cycle technique universel
+    n’est imposé.
+  - L’application mobilise les capacités opérationnelles responsables. D06 conserve la décision d’adaptation opérationnelle
+    ; D05 adapte son scénario de stock.
+  - Les accords U269/U271 remplacés sont conservés dans d05-refactoring.yaml et audits/2026-09-17-refonte-appliquee/modeling-glossary-before.yaml.
+    La généralisation détaillée à toute capacité Planning reste proposée.
+  source_refs:
+  - U229
+  - U232
+  - U267
+  - U269
+  - U271
+  - U283
+  - U284
+  - U290
+  review:
+    state: partial
+    adopted_scope: Mobilisation des décisions U229 et trois directions de comportements Inventory Planning U283/U284, appliquées
+      U290.
+    proposed_scope: Formulation générale et détails de mise en œuvre ; pas de décomposition automatique de toute capacité
+      Planning.
+- id: MOD003
+  name: Management
+  label_fr: Gestion / gouvernance
+  definition: Gérer les règles et leur validité, et tenir transactionnellement les données qui les matérialisent.
+  role: Qualifier une responsabilité de gestion, à préciser selon l’objet concerné.
+  notes:
+  - U230 qualifie Stock Protection de gouvernance/management ; U231 précise sa mise à jour transactionnelle.
+  - Cette formulation générale est proposée à partir du cas Stock Protection ; elle n’impose pas la même définition à toute
+    capacité nommée Management.
+  - Le sens d’application transactionnelle est défini par MOD004.
+  source_refs:
+  - U230
+  - U231
+  - U232
+  review:
+    state: partial
+    adopted_scope: Qualification et application transactionnelle dans le cas Stock Protection.
+    proposed_scope: Généralisation à Management et formulation hors de ce cas.
+- id: MOD004
+  name: Application transactionnelle
+  definition: Mettre à jour transactionnellement les données, unitairement, en groupe ou en masse, par plusieurs types d’interfaces
+    possibles.
+  role: Préciser le sens de l’application des résultats dans une capacité de management.
+  modalities:
+    granularities:
+    - Unitairement
+    - En groupe
+    - En masse
+    interfaces:
+    - Écrans
+    - Batch
+    - Flux
+    - Streaming
+  notes:
+  - Ces modalités ne constituent pas des capacités supplémentaires.
+  - Ne pas confondre la mise à jour des données, leur utilisation par les capacités consommatrices et un mouvement physique.
+  - Aucune technologie, garantie d’atomicité de lot ou interface particulière n’est imposée.
+  source_refs:
+  - U231
+  - U232
+  review:
+    state: partial
+    adopted_scope: Mise à jour transactionnelle et modalités précisées en U231 pour Stock Protection.
+    proposed_scope: Reformulation, généralisation et précisions de lecture.
+- id: MOD005
+  name: Couverture — convention de description
+  definition: Qualifier toute affirmation de couverture en indiquant ce qui est couvert, par quoi, dans quel périmètre et
+    horizon, et selon quel critère de satisfaction.
+  role: Rendre explicites le sens et le degré de réalisation d’une couverture dans la description des objets et capacités.
+  notes:
+  - Distinguer couverture candidate, affectation enregistrée, promesse confirmée et réalisation constatée ; ces qualifications
+    ne constituent pas un cycle universel de statuts.
+  - Préciser les quantités, dates, hypothèses et reliquats lorsque le besoin le nécessite ; aucun niveau de lot ou d’exemplaire
+    imposé.
+  - Les sens métier figurent séparément dans TER022 Couverture d’une demande et TER077 Couverture de stock. Cette convention
+    ne crée ni capacité ni relation métier.
+  source_refs:
+  - U260
+  review:
+    state: partial
+    adopted_scope: Présence du terme couverture dans le glossaire méthodologique demandée par Laurent.
+    proposed_scope: Définition, critères et exemples de qualification rédigés par Codex ; aucune adoption détaillée déduite.
+- id: MOD006
+  name: Capability Behavior
+  label_fr: Comportement
+  definition: Décrire la manière dont une capacité agit dans des circonstances données, en précisant les conditions prises
+    en compte et le résultat attendu.
+  role: Niveau complémentaire de détail sous une capacité ; dernier niveau de sa décomposition descriptive.
+  notes:
+  - U262 retient Comportement et l’arrêt de la décomposition à ce niveau.
+  - Un comportement précise une capacité ; il ne devient pas une capacité supplémentaire du catalogue.
+  - Plusieurs comportements peuvent se combiner ; ils ne sont pas nécessairement des variantes exclusives ni des étapes successives.
+  - L’arrêt concerne la décomposition des capacités. Objets, documents et événements restent des objets du modèle, sans devenir
+    des niveaux inférieurs de comportement.
+  - Le rapprochement avec Capability Behavior dans BIZBOK est documenté en CMP088. Le choix d’en faire le dernier niveau est
+    une convention FLOW.
+  - U263 impose des descriptions factuelles, sans niveaux promotionnels tels que Advanced ATP ; les appellations éditeur restent
+    dans les correspondances marché.
+  - 'U265 : une décomposition en comportements est justifiée par une complexité ou un bénéfice ciblé ; elle n’est pas systématique.
+    La justification est portée par fields.decomposition_rationale sur la capacité ; sa rédaction détaillée conserve sa propre
+    portée de validation.'
+  - 'U282 précise la maille recherchée sur Supply Protection : mécanismes métier de protection, plutôt que liste des opérations
+    sur Allocation. Les opérations fonctionnelles restent matière de conception produit ; elles ne constituent pas un nouveau
+    niveau inférieur dans le modèle. La nouvelle décomposition cible reste à proposer.'
+  - U283 retient Mécanisme, Politique, Variante ou bénéfice comme critères différenciants de décomposition. Pour Planning,
+    les effets sur les pratiques humaines et les processus distinguent les comportements des fonctions de produits. Ces critères
+    ne constituent pas quatre niveaux supplémentaires.
+  - 'U284 confirme la direction U283 et retient Simulation & analyse en un seul comportement : les impacts sont intégrés à
+    ce comportement, sans Scenario Impact Analysis autonome dans la cible.'
+  source_refs:
+  - U262
+  - U263
+  - U265
+  - U282
+  - U283
+  - U284
+  review:
+    state: partial
+    adopted_scope: 'Comportement comme niveau complémentaire sous la capacité ; arrêt de la décomposition à ce niveau. U263
+      : descriptions factuelles sans qualification marketing. U265 : exigence de justification par une complexité ou un bénéfice
+      ciblé. U282 : préférence explicite pour les mécanismes métier plutôt que les opérations, illustrée par Supply Protection.
+      U283 retient Mécanisme, Politique, Variante ou bénéfice comme critères différenciants de décomposition. Pour Planning,
+      les effets sur les pratiques humaines et les processus distinguent les comportements des fonctions de produits. Ces
+      critères ne constituent pas quatre niveaux supplémentaires. U284 confirme la direction U283 et retient Simulation &
+      analyse en un seul comportement : les impacts sont intégrés à ce comportement, sans Scenario Impact Analysis autonome
+      dans la cible.'
+    proposed_scope: Définition générale éditoriale et intitulé anglais de la notion. Les quatre définitions de comportements
+      ATP sont adoptées séparément en U263 dans d03-review.yaml. Les formulations détaillées issues de U283 restent à préciser
+      ; aucune nouvelle hiérarchie adoptée.

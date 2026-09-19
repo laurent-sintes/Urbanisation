@@ -1,0 +1,221 @@
+# Urbanisation — version 8
+
+Publication 2026-09-19.1 · modèle modifié le 2026-09-19T00:29:36.814895Z.
+
+47 capacités ; les statuts et réserves sont conservés.
+
+## Changements
+
+- added : BHV001 — Existing Commitment Consideration
+- added : BHV002 — Network Stock Availability
+- added : BHV003 — Operational Availability Timing
+- added : BHV004 — Future Supply Projection
+- added : BHV005 — Scenario Construction
+- added : BHV006 — Simulation & Analysis
+- added : BHV016 — Scenario Execution Adaptation
+- added : BHV017 — Group Supply Protection
+- added : BHV018 — Consumption Capping
+- added : BHV019 — Safety Stock Policy
+- added : BHV020 — Replenishment Regulation
+- added : BHV021 — Promise Proposal
+- added : BHV022 — Promise Confirmation
+- added : BHV023 — Promise Revision
+- added : BHV024 — Inventory Rebalancing
+- added : BHV025 — Stock Consolidation
+- added : BHV026 — Store Inventory Optimization
+- added : BHV027 — Distribution Center Inventory Optimization
+- added : BHV028 — Multi-Echelon Inventory Optimization
+- added : BHV029 — Periodic Physical Inventory
+- added : BHV030 — Cycle Counting
+- added : BHV031 — Spot Counting
+- added : BHV032 — Milestone-Based Reservation Policy
+- added : BHV033 — Time-Fenced Reservation Policy
+- added : BHV034 — Demand-Differentiated Reservation Policy
+- added : BHV035 — Risk-Adaptive Reservation Policy
+- added : BHV036 — Order Firming
+- added : BHV037 — Order Freezing
+- added : BHV038 — Order Preparation & Revision
+- added : BHV039 — Order Release
+- added : BHV040 — Order Hold & Resume
+- added : BHV043 — Order Termination
+- added : BHV044 — Order Splitting
+- added : BHV045 — Supply Assignment Plan Application
+- added : BHV046 — Incremental Supply Assignment
+- added : BHV047 — Supply Reassignment
+- added : BHV048 — Policy-based Disposition
+- added : BHV049 — Value Recovery Optimization
+- added : BHV050 — Return to Stock
+- added : BHV051 — Repair and Refurbishment
+- added : BHV052 — Return to Supplier
+- added : BHV053 — Return to Customer
+- added : BHV054 — Scrapping
+- added : BHV055 — Return for Credit
+- added : BHV056 — Return for Replacement
+- added : BHV057 — Return for Repair
+- added : BHV058 — Stock Procurement
+- added : BHV059 — Direct Delivery
+- added : BHV060 — Service Procurement
+- added : BHV061 — Initial Stocking
+- added : BHV062 — Continuous Replenishment
+- added : BHV063 — Consumption-Based Ownership Transfer
+- added : BHV064 — Aging-Based Ownership Transfer
+- added : BHV065 — Consignment Exit
+- added : BHV066 — Ship to Customer
+- added : BHV067 — Customer Pickup
+- added : BHV068 — Direct Delivery
+- added : BHV069 — Intercompany Sales
+- added : BHV070 — Initial Stocking
+- added : BHV071 — Continuous Replenishment
+- added : BHV072 — Inventory Rebalancing
+- added : BHV073 — Stock Consolidation
+- added : BHV074 — Order-Driven Transfer
+- added : BHV075 — Additional Supply Feasibility
+- added : BHV076 — Fulfillment Alternative Feasibility
+- added : BHV077 — Commitment Rebalancing Feasibility
+- added : BHV078 — Supplier Confirmation
+- added : BHV079 — Warehouse Visibility
+- added : BHV080 — Transportation Visibility
+- added : BHV081 — Store Visibility
+- added : BHV082 — Process Tracking
+- added : BHV083 — Requirement-based Replenishment
+- added : BHV084 — Target-based Replenishment
+- added : BHV085 — Replenishment Adjustment
+- added : D01.h — Consigned Inventory Management
+- added : D03.n — Promise Management
+- added : D03.o — Fulfillment Plan Decision
+- added : D03.p — Order Backlog Planning
+- added : D04.q — Order Archiving
+- added : D04.r — Consignment Replenishment Order
+- added : D05.g — Initial Stocking Decision
+- added : D05.h — Reservation Policy Decision
+- added : D05.i — Return Disposition Decision
+- removed : D03.a — Promise Proposal
+- removed : D03.b — Promise Confirmation
+- removed : D03.c — Promise Revision
+- modified : D01 — contenu ou notice actualisé
+- modified : D01.c — contenu ou notice actualisé
+- modified : D01.d — contenu ou notice actualisé
+- modified : D01.f — contenu ou notice actualisé
+- modified : D01.g — contenu ou notice actualisé
+- modified : D02.b — contenu ou notice actualisé
+- modified : D02.c — contenu ou notice actualisé
+- modified : D02.e — contenu ou notice actualisé
+- modified : D03 — Order Promising → Order Backlog Management
+- modified : D03.i — contenu ou notice actualisé
+- modified : D03.j — contenu ou notice actualisé
+- modified : D03.k — contenu ou notice actualisé
+- modified : D03.l — contenu ou notice actualisé
+- modified : D03.m — contenu ou notice actualisé
+- modified : D04 — contenu ou notice actualisé
+- modified : D04.i — Sales Order Management → Sales Order
+- modified : D04.j — Purchase Order Management → Purchase Order
+- modified : D04.k — Transfer Order Management → Transfer Order
+- modified : D04.l — Customer Return Management → Customer Return
+- modified : D04.m — Supplier Return Management → Supplier Return
+- modified : D04.n — contenu ou notice actualisé
+- modified : D04.o — contenu ou notice actualisé
+- modified : D05 — contenu ou notice actualisé
+- modified : D05.a — Coverage Target Decision → Inventory Target Decision
+- modified : D05.c — contenu ou notice actualisé
+- modified : D05.d — Stock Allocation Decision → Group Protection Decision
+- modified : D05.e — contenu ou notice actualisé
+- modified : D05.f — contenu ou notice actualisé
+- modified : D06 — Execution Management → Process Management
+- modified : D06.b — Execution Capacity Visibility → Service Capacity Visibility
+- modified : D06.d — Execution Orchestration → Process Orchestration
+- modified : D06.e — Execution Service Decision → Service Selection Decision
+- modified : D06.f — Execution Adaptation Decision → Process Adaptation Decision
+- modified : D07.a — Execution Requirements Decision → Service Requirements Decision
+- modified : D07.b — contenu ou notice actualisé
+- modified : D07.c — Execution Reconciliation → Service Reconciliation
+- modified : D07.d — Execution Tracking → Operations Tracking
+- modified : D08.d — contenu ou notice actualisé
+- modified : D09.d — contenu ou notice actualisé
+- modified : D11.a — contenu ou notice actualisé
+- modified : D12.a — contenu ou notice actualisé
+- modified : D13.a — contenu ou notice actualisé
+- modified : D14 — Execution Service Catalog → Service Catalog
+- modified : D14.a — Execution Service Catalog Ingestion → Service Catalog Ingestion
+- modified : universe-supply — Supply → Supply Chain Orchestration
+
+## Glossaire
+
+110 termes figés dans cette publication. Les liens sont résolus dans cette même version.
+9 termes introduits ; 12 révisés. Détail des changements, y compris retraits éventuels, dans changes.json.
+- Sens à réexaminer : D04.i (fields) référence TER069.
+- Sens à réexaminer : D04.j (fields) référence TER070.
+- Sens à réexaminer : D04.k (fields) référence TER071.
+- Sens à réexaminer : D04.l (fields) référence TER072.
+- Sens à réexaminer : D04.m (fields) référence TER073.
+- Sens à réexaminer : D05.g (fields) référence TER079.
+- Sens à réexaminer : D05.e (fields) référence TER080.
+- Sens à réexaminer : D03.o (fields) référence TER078.
+
+## Validations et points ouverts
+
+36 décisions antérieures conservées ; 60 suspendues pour les révisions modifiées.
+0 accords transcrits à portée identique pour le cycle U131 ; 207 autres décisions nouvelles sourcées.
+Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.
+
+- ADOPT-004-LIFECYCLE-r2 (REL-MEMBER-D03.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-005-LIFECYCLE-r2 (D03.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-006-LIFECYCLE-r2 (REL-MEMBER-D03.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-010-LIFECYCLE-r2 (REL-MEMBER-D03.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-021-LIFECYCLE-r2 (D01.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-023-LIFECYCLE-r2 (D02.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-025-LIFECYCLE-r2 (D02.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-032-LIFECYCLE-r2 (D09.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-036-LIFECYCLE-r2 (D12.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-040-LIFECYCLE-r2 (D13.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-048-LIFECYCLE-r2 (D01.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-055 (D11.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-056 (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-059 (D03.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-060 (D03.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-061 (D02.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-062 (D08.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-064 (D03.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-066 (D03.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-068 (D03.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-070 (D03.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-072 (D03.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04-r4 (D04) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.i-r1 (D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.j-r1 (D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.k-r1 (D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.l-r1 (D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.m-r1 (D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.n-r1 (D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-D04.o-r1 (D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.i-r1 (REL-MEMBER-D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.j-r1 (REL-MEMBER-D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.k-r1 (REL-MEMBER-D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.l-r1 (REL-MEMBER-D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.m-r1 (REL-MEMBER-D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.n-r1 (REL-MEMBER-D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U214-REL-MEMBER-D04.o-r1 (REL-MEMBER-D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U219-finality-D01-r5 (D01) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U219-finality-D03-r4 (D03) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U219-finality-D05-r3 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U236-reassessment-D03-r4 (D03) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U220-name-D05-r3 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U223-definition-D05-r3 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-D05.a-r3 (D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-D05.d-r1 (D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-D05.e-r1 (D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-D05.c-r3 (D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-D05.f-r1 (D05.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-INVENTORY-PLANNING-D05.a-r1 (REL-INVENTORY-PLANNING-D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-INVENTORY-PLANNING-D05.d-r1 (REL-INVENTORY-PLANNING-D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-INVENTORY-PLANNING-D05.e-r1 (REL-INVENTORY-PLANNING-D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-INVENTORY-PLANNING-D05.c-r1 (REL-INVENTORY-PLANNING-D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D06-r3 (D06) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D06.b-r5 (D06.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D07.a-r5 (D07.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D07.b-r4 (D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D07.d-r4 (D07.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D06.d-r1 (D06.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D14-r1 (D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U248-transcription-D06.f-r1 (D06.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+
+Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.

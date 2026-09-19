@@ -1,0 +1,15 @@
+source_refs:
+- U373
+model_before: audits/2026-09-18-universe-U373/model-before.yaml
+model_before_sha256: e90389703d7c3ee65e5c65af829ceefbd02db2db22f4a1fe2d18c0dc41066c94
+delta:
+  nodes:
+    added: {}
+    removed: []
+    changed:
+      universe-supply: 3b37201d2b8b10bcbe1dd3d868e1f6e1db06a12f88d797f1fe8c848e7ab56642
+  relations:
+    added: {}
+    removed: []
+    changed: {}
+behaviors: []

@@ -1078,3 +1078,684 @@ Page Glossaire et recherche ajoutées. Liens explicites vers terme ou élément,
 ## 2026-09-14 — U204 : publication v004
 
 Publication locale `2026-09-14.1`, descripteur `urbanisation-v004-2026-09-14-145044.yaml`, activée dans Atlas. 48 nœuds, 34 capacités, 47 relations, 93 termes de glossaire. D02 retiré sans renumérotation, D03 recomposé, Business Services et audit de vocabulaire intégrés. 17 transcriptions d’accords existants après réconciliation, sans nouvelle validation métier des formulations proposées. Validateur corrigé pour les univers intégralement validés ; 79 tests du modèle réussis. Historiques inchangés, restitutions régénérées. Voir `audits/2026-09-14-release-v004/bilan.md`. Aucun commit ni push.
+
+
+## 2026-09-15 — U205 : capacités accessibles depuis la vue Univers
+
+Chaque carte de domaine affiche les liens de ses capacités, avec icônes, aperçus au survol/focus et ouverture directe de la fiche dans la même publication. Les rattachements explicites restent l’autorité, notamment D02.b/c dans D01 et D02.e dans D03. Les groupes de présentation restent distincts.
+
+Les hauteurs mesurées évitent de couper les listes et la grille passe de une à trois colonnes selon l’espace disponible. La page peut défiler à la molette et au toucher ; le raccourci de recherche reste disponible depuis les liens. Compilation TypeScript/Vite et 33 tests unitaires réussis, parcours navigateur existants vérifiés, intégrité du modèle contrôlée sans erreur. Les liens, aperçus, clics/clavier et historiques v004/v003 ont été vérifiés dans le scénario ciblé `app/verify-universe.mjs`. Le geste tactile a été confirmé séparément après stabilisation de la capture mobile : défilement de 335 px sans déplacer le graphe, puis ouverture directe de D07.d. Captures et résultats dans `app/.runtime/qa-universe/` ; pas de nouvelle exécution intégrale après l’ajustement de synchronisation du test tactile.
+
+Contribution et index de provenance courant actualisés. Le serveur sert l’interface recompilée ; un rechargement de page l’installe. Modèles, publications et preuves figées inchangés ; aucun commit ni push.
+
+
+## 2026-09-15 — U206 : capacités dans les cartes de référentiels
+
+La carte Business References affiche les capacités des cinq référentiels sous forme de liens directs, avec les mêmes icônes, aperçus et dimensions adaptées que les domaines. Le comportement commun se fonde sur les types `domain`/`reference` et leurs rattachements publiés ; la navigation et le rôle de présentation de Business References sont conservés.
+
+Compilation TypeScript/Vite et 33 tests unitaires réussis. Le scénario ciblé `app/verify-references.mjs` passe : contenus et liens exacts en v004/v003, clic/Entrée vers la fiche de la même publication, affichages desktop/mobile sans débordement. Cinq contrôles, aucune erreur navigateur ; captures et rapport dans `app/.runtime/qa-references/`. Contribution et provenance courante actualisées, validation des modèles sans erreur. Interface recompilée servie localement ; modèles publiés inchangés, aucun commit ni push.
+
+
+## 2026-09-15 — U207 : proposition graphique issue du template FLOW
+
+Template PowerPoint inspecté et ses quatre diapositives rendues. Logos FLOW et Groupe Beaumanoir extraits en PNG sans transformation, avec empreintes et script d’extraction dans `prototypes/atlas-identite-flow/`. Palette des formes de masque distinguée du thème Office et des guides : vert profond, menthe, lavande, sable, pêche et blanc cassé. Sources OOXML, opacités et usages proposés documentés.
+
+Aperçu indépendant sur 5174, fondé sur les composants et API réels d’Atlas : en-tête clair avec les logos, couleurs FLOW, comparaison Actuel/FLOW et panneau de palette avec téléchargement des originaux. Emblème FLOW cadré uniquement en CSS pour l’en-tête. Les parcours et statuts métier sont conservés ; cette identité reste une proposition. L’application courante sur 8765 et ses fichiers compilés ne sont pas remplacés.
+
+Compilation de l’aperçu réussie, captures Univers/référentiels/fiche/mobile et palette inspectées. Les contrôles et passages navigateur sont consignés dans `app/.runtime/branding/`. Sources courantes actualisées, validation des modèles sans erreur ; aucune modification des modèles publiés, aucun commit ni push.
+
+
+## 2026-09-15 — U208 : identité FLOW intégrée à Atlas
+
+Le Go de Laurent adopte l’aperçu U207. Atlas possède désormais un en-tête clair avec l’emblème FLOW et le logo Groupe Beaumanoir, les couleurs du template, des surfaces pastel et les polices Aptos/Aptos Display avec repli local. Images directement dans les composants React, palette et adaptations dans `app/src/brand.css` ; aucun portail ni comparateur de prototype dans l’application. Le favicon et le manifeste reprennent FLOW. Les deux PNG de `app/public/assets/` conservent les octets des médias du PowerPoint ; empreintes, palette et règles de maintenance dans `app/BRANDING.md`.
+
+Compilation TypeScript/Vite et 33 tests Node réussis. Contrôle Python du serveur réussi ; 22 tests de données exécutés, dont deux ignorés par le scénario existant. Vérification sur le serveur réel 8765 : PNG servis à l’identique, vue Univers vers fiche avec publication conservée, cinq référentiels et leurs capacités, tiroir mobile et absence de débordement de l’en-tête de 320 à 768 px. Captures ordinateur, fiche, référentiels et mobile inspectées ; rapport dans `app/.runtime/branding/integrated-checks.json`, sans erreur navigateur ou HTTP. Le scénario `verify-references.mjs` valide aussi les liens au clic/clavier et la publication historique v003.
+
+L’index de provenance courant est actualisé à 1080 sources ; `validate_models.py` termine sans erreur et la régénération des restitutions ne produit aucun changement. Le scénario navigateur général utilise désormais le même délai de 30 secondes que les contrôles ciblés : deux passages avaient atteint 15 secondes pendant un chargement de publication, sans erreur JavaScript, console ou HTTP ; une lecture de l’API historique a été mesurée à 7,8 secondes sur ce poste.
+
+Le passage complet de `verify-browser.mjs` réussit ensuite ses dix contrôles : cartes et anciens liens, recherche et filtres, sources, publications historiques, relation transversale et rafraîchissement automatique avec reprise après échec simulé. Rapport du 15 septembre à 09:16:22 UTC dans `app/.runtime/qa-react/browser-results.json`, sans erreur JavaScript, console, requête ou HTTP.
+
+Atlas sert l’interface recompilée sur 8765. Le serveur Node temporaire de l’aperçu est arrêté ; le dossier U207 documente désormais son statut historique. L’habillage ne modifie pas les modèles publiés ni leurs validations. Aucun commit ni push.
+
+
+## 2026-09-15 — U209 : référentiels visibles dans la carte Business References de Supply
+
+La carte de présentation était exclue des listes internes, réservées aux capacités des domaines et référentiels. Le composant partage désormais une liste typée : « Capacités » dans les domaines et référentiels, « Référentiels » dans les groupes de présentation présentant des références. Les groupes des publications existantes sans `group_role` sont traités comme dans le reste d’Atlas ; aucun niveau d’urbanisme n’est déduit ou ajouté.
+
+Business References affiche les cinq références de la publication consultée, depuis les relations structurelles explicites. Icônes, infobulles et liens directs ouvrent leur fiche dans le même snapshot. Les hauteurs mesurées, les cartes responsives et le défilement tactile s’appliquent aussi à cette liste. Les styles partagés sont renommés pour distinguer une liste d’enfants de son type métier ; le pied de carte parle désormais de liens vers les fiches.
+
+Compilation TypeScript/Vite et 33 tests Node réussis. La contribution U209 porte l’index courant à 1081 sources ; validation des modèles sans erreur. Aucune modification du modèle publié, aucune release métier, aucun commit ni push.
+
+Le scénario `app/verify-universe.mjs` réussit ses sept contrôles sur le build final : données courantes/v003, cinq référentiels avec aperçu et accès au clic/Entrée, retour navigateur, capacités déjà affichées et mobile tactile. Les liens restent dans leur carte sans troncature ni débordement ; le dernier référentiel est accessible après défilement. Aucune erreur navigateur. Rapport et captures dans `app/.runtime/qa-universe/`, dont `supply-business-references.png` pour le rendu inspecté. Atlas sert cette correction sur 8765 ; recharger la page pour utiliser le nouveau bundle.
+
+
+## 2026-09-15 — U210 : abstraction d’Order Management et comparaison au marché
+
+Laurent demande la comparaison Microsoft/SAP/« ITM » et critique le caractère abstrait de D04. IBM est utilisé comme hypothèse explicitée, clarification demandée. Lecture du backlog et comparaison des champs D04/D04.e–h avec v004 : identiques. La note [Order Management : rendre les responsabilités concrètes](marche/order-management-abstraction-comparaison.md) distingue catalogue de processus Microsoft, définition SAP RBA citée, modèle historique IBM CBM et documentation produit Sterling.
+
+Les apports concrets portent sur commande/ligne/échéancier, blocages, annulations partielles, modifications autorisées et reliquats. Proposition : enrichir et éprouver les quatre capacités existantes, sans réintroduire Order Qualification ni transformer chaque opération de produit en capacité. Illustrations et scénarios explicitement proposés ; frontières Case/Order, D03/D04/D07 et références conservées. Sources officielles et limites d’accès documentées. Aucun changement de modèle, de validation, de publication ou d’Atlas.
+
+
+## 2026-09-15 — U211 : types d’Orders et pilotage de leur cycle opérationnel
+
+Laurent précise rechercher les types d’Orders Supply et les aptitudes de lancement, mise en attente, report, etc. La [note dédiée](marche/order-types-et-cycle-de-vie.md) repart du YAML courant et de la frontière Supply Order / Service Order U169. Elle distingue les familles vente/achat/transfert/retour, les documents d’exécution propres aux services, puis affermissement, libération, blocage/reprise, report, révision, annulation et clôture. Les fonctions produit Microsoft servent de preuves concrètes, avec recherche parallèle complémentaire ; elles ne deviennent pas des capacités métier par simple traduction.
+
+Order Lifecycle Management est une possibilité de regroupement proposée, non adoptée. Le report doit distinguer date demandée, promesse et plan de prestation ; Order Prioritization reste en D03. Aucun type, nœud, objet, cycle universel, domaine Services ou rattachement ajouté. Contribution et provenance courante actualisées, sans changement de modèle ou publication.
+
+## 2026-09-15 — U212–U215 : refonte D04 et descriptions concrètes
+
+U214 autorise le remplacement des quatre capacités communes par cinq capacités par type d’ordre et deux transversales. U215 demande de restituer le concret discuté. État antérieur capturé à l’identique dans `modeles/backlog/history/pre-U214.yaml` ; annexes avant modification et empreintes des publications dans `audits/2026-09-15-d04-refonte/`.
+
+D04.i–o possèdent définitions, finalités et descriptions opérationnelles : split, regroupement, spread, affermissement, libération, attente/reprise, report/avance, annulation et clôture. Exemples par type et cas transfert 100/60/40 ; distinctions entre date demandée/promesse/plan de prestation, autorisation/réalisation et reliquats conservées. Noms et rattachements adoptés ; nouveaux textes détaillés proposés. Aucune validation ancienne transposée.
+
+Sept rattachements remplacent les quatre antérieurs. Le lien D07.c → D04.h est archivé ; cinq contributions par type sont proposées, sans reprendre son identité. Glossaire complété de cinq sens proposés, candidats D03/D04 et feuille de route actualisés, Q077 partiellement répondue, C91 et correspondances marché consignées. Aucun modèle publié ni code Atlas modifié ; contrôles dans le bilan d’audit.
+
+
+## 2026-09-15 — U216 : publication v005 / 2026-09-15.1
+
+Publication locale du backlog après refonte D04, via prepare/report/publish et activation de l’index. 51 nœuds, 37 capacités, 54 relations et 98 termes de glossaire. Les quatre anciennes capacités D04.e–h sont retirées ; D04.i–o, cinq contributions d’exécution et cinq termes lexicaux sont intégrés avec leurs portées explicites.
+
+48 décisions compatibles conservées, 15 transcriptions sourcées et cinq anciennes décisions non reprises sur cette version, conservées dans l’historique. Les nouvelles descriptions restent proposées ; aucune validation transférée depuis les capacités retirées. Les cinq alertes lexicales concernent les liens des nouvelles capacités vers les cinq nouveaux sens proposés ; examen cohérent, sans étendre les validations aux définitions.
+
+Validation des modèles sans erreur, restitutions régénérées, contrôle serveur réussi. L’API de FLOW Atlas, PID 19836 sur 8765, sert le modèle YAML v005 et son catalogue ; les champs servis correspondent au modèle publié. Empreintes des 60 fichiers historiques vérifiées identiques ; seul l’index existant est activé. Contrôles navigateur et bilan dans `audits/2026-09-15-release-v005/`. Aucun commit ni push.
+
+## 2026-09-15 — U217 : différence et recouvrement D05 / D03
+
+Lecture des définitions courantes et réserves D05. La [note de comparaison](marche/operational-balancing-order-promising.md) distingue besoin/objectif de rééquilibrage et solution de couverture/promesse, sans séparation artificielle global/commande. Recouvrement principal D05.c avec CTP/Supply Assignment ; calcul des besoins nets également à clarifier. Exemple fictif de réassort, contraintes et frontières D04/D07 conservées. Analyse et recommandation proposées, aucun changement du backlog, de la release ou d’Atlas.
+
+## 2026-09-15 — U218 : Orders dans D03, stock dans D05
+
+Laurent précise la finalité respective des deux domaines : satisfaire les Orders pour D03, gérer le stock pour D05. Repère consigné dans l’annexe de revue D03 et en tête de la comparaison U217. La distinction besoin/solution ne suffit plus à définir la frontière. Les interprétations sur les objectifs et la répartition du stock, l’articulation D01/D05 et les capacités détaillées restent à éprouver. Aucun changement des nœuds du modèle ni de la release v005.
+
+## 2026-09-15 — U219/U220/U221 : Inventory Optimization et réapprovisionnement automatique
+
+U219 applique les finalités D01/D03/D05 ; U220 choisit Inventory Optimization pour D05, remplaçant Operational Resource Balancing et la proposition intermédiaire Inventory Balancing. Les trois capacités D05 conservent leurs identités et rattachements ; Coverage Target Decision et Stock Redistribution Decision deviennent leurs libellés proposés courants, Net Requirements Calculation est précisée autour du stock. Descriptions concrètes, frontières et exemples dans `connaissance/30-stock-et-orders.md`, issus du YAML.
+
+U221 envisage le réapprovisionnement automatique : complément de stock et déclenchement selon règles/autorisations figurent dans le périmètre proposé de D05. Granularité à instruire, aucune capacité supplémentaire créée. TER074 Replenishment est ajouté comme sens proposé ; les 98 termes précédents sont inchangés. D04, D03, D01 et les exécutants conservent leurs rôles.
+
+Snapshot pré-U219, portée des finalités adoptées et historique des noms dans `modeles/backlog/stock-order-boundary.yaml` et `audits/2026-09-15-stock-orders-U219/`. Six nœuds modifiés ; 37 capacités et toutes les relations conservées. Les nouvelles descriptions et règles restent proposées. Publication v005 inchangée, aucun commit ni push.
+
+
+## 2026-09-15 — U222 : comparaison Inventory Optimization
+
+Étude ciblée TM Forum, Microsoft Dynamics 365 SCM et SAP IBP/retail, sources officielles consultées. Sept éléments ELM115–ELM121 et cinq correspondances CMP067–CMP071 distinguent APIs, composants, méthode et fonctions de produit. MKT24 identifie le corpus IBP 2605. Objectifs, calcul net, réapprovisionnement et redistribution confrontés au backlog après U219–U221 ; accès indexés et limites explicites.
+
+Replenishment Decision reste une piste ; aucun nœud ni glossaire modifié. Seuls les statuts de comparaison D05 et D05.a–c de l'annexe sont actualisés ; D01/D03 non réaudités. Étude dans marche/inventory-optimization-comparaison.md. Empreintes de lecture et invariance du modèle et des publications dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml. Aucun commit, push ou publication.
+
+
+## 2026-09-15 — U223 : définition Inventory Optimization adoptée
+
+La phrase approuvée par Laurent devient la définition D05 : compromis entre disponibilité, immobilisation et risque, puis décision des ajustements nécessaires. Majuscule initiale normalisée, contenu préservé. Portée de validation limitée à la définition, en complément du nom U220 et de la finalité U219. Ancienne rédaction conservée comme précision opérationnelle proposée et dans le snapshot pre-U223.yaml. Trois capacités inchangées ; Replenishment Decision reste candidate. Restitution, provenance et consignes actualisées ; aucune publication, aucun commit ni push.
+
+
+## 2026-09-15 — U224 : optimisation analytique et application opérationnelle
+
+Direction utilisateur consignée : D05 calcule l'optimisation ; protections, paramètres, déclenchement d'Orders et réapprovisionnement appliquent ses résultats. La candidate U222 mêlant calcul et déclenchement est à revoir. Propositions analytiques conservées dans l'annexe, sans adoption des noms ni modification des nœuds. Le périmètre actuel n'est pas présenté comme déjà aligné. Définition U223 conservée ; aucune publication.
+
+
+## 2026-09-15 — U225 : comparaison calcul / application au marché
+
+Documentation officielle Microsoft (buffers calculés/actifs, affermissement, allocations), SAP (IBP, SUP/PAL et aATP), légendes SID TM Forum v22.0. Sources datées et accès indexés qualifiés dans marche/optimisation-et-application-stock.md. Six éléments ELM122–ELM127, trois rapprochements CMP072–CMP074 proposés ; annexe de direction enrichie. Aucun nœud, relation, glossaire ni publication modifié. Contrôles de provenance et modèles effectués.
+
+
+## 2026-09-16 — U226 : préférences de découpage optimisation / application
+
+Préférence Microsoft pour le découpage et le nommage, distinction SAP planification / mise en action, détail analytique de Stock Protection conditionné à sa décomposition opérationnelle. Contribution exacte et direction conservées dans l'annexe stock-order-boundary.yaml ; étude U225 annotée. Pas de nouveaux noms adoptés ni de refonte des nœuds, aucune publication.
+
+
+## 2026-09-16 — U227 : proposition de capacités concrètes
+
+Proposition consignée dans stock-order-boundary.yaml : D05 à deux capacités de planification (Stock Protection Planning, Replenishment Planning), en regard de Stock Protection et d'une candidate Replenishment Management dans D01. Extension D01, renommage D02.b, intégration du calcul net et de la redistribution explicitement proposés, non appliqués. Rôles D03/D04/exécutants conservés. Aucun changement des nœuds ni publication.
+
+
+## 2026-09-16 — U228/U229 : Decision et Planning distingués
+
+U228 clarifie la restructuration proposée. U229 conserve Decision, écarte Calculation comme préférence de nommage et définit Planning par reconfigurer/simuler/valider, alimenté par les décisions. Proposition U227 annotée, noms corrigés proposés dans l'annexe sans adoption de granularité ni changement des nœuds. Aucune publication.
+
+
+## 2026-09-16 — U230 : gouvernance de Stock Protection et décisions spécialisées
+
+Qualification utilisateur Stock Protection = gouvernance/management, rejet du pendant agrégé Stock Protection Decision. Proposition revue à quatre décisions, avec redistribution conservée distincte et allocation aux groupes explicitée. Annexe et récit actualisés, anciennes propositions annotées. Noms et détails restent proposés ; nœuds, relations et publication inchangés.
+
+
+## 2026-09-16 — U231 : application transactionnelle de Stock Protection
+
+Sens utilisateur consigné : mise à jour transactionnelle des données à l'unité, par groupe ou en masse, via écrans, batch, flux ou streaming. Annexe et récit actualisés ; aucune nouvelle capacité, modification des nœuds, architecture technique ou publication.
+
+
+## 2026-09-16 — U232 : glossaire de modélisation distinct
+
+Création de modeles/backlog/modeling-glossary.yaml : MOD001 Decision, MOD002 Planning, MOD003 Management, MOD004 Application transactionnelle. Les portées utilisateur et généralisations proposées sont distinguées. Registre en support à la définition des objets, séparé de glossary.yaml et du catalogue métier Atlas ; guide, annexe et consignes actualisés. Les sens discutés n'étaient pas présents comme entrées homonymes dans le glossaire métier ; aucune migration globale des anciens termes réalisée. Lecture YAML et identifiants contrôlés ; modèle métier, glossaire métier et fichiers de release vérifiés inchangés. Aucune publication.
+
+
+## 2026-09-16 — U233 : proposition D05 à quatre décisions et Inventory Planning
+
+Proposition du domaine : définition U223 conservée, décisions de couverture/allocation/réapprovisionnement/redistribution et Inventory Planning qui les mobilise. Frontières avec le management transactionnel, les Orders et l'exécution explicitées ; calcul net conservé comme moyen. Cinq capacités et périmètres proposés, non appliqués. Glossaire de modélisation distinct et inchangé ; aucune publication.
+
+
+## 2026-09-16 — U234/U235 : refonte D05 appliquée
+
+Cinq capacités : Coverage Target Decision, Stock Allocation Decision, Replenishment Decision, Stock Redistribution Decision, Inventory Planning. D05.b retirée avec son rattachement et remplacée par D05.e, décision intégrant les calculs ; trois nouveaux identifiants, deux conservés. Quatre relations de mobilisation depuis Planning distinctes des cinq rattachements au domaine. Définition D05 U223 conservée, scope explicite aligné sur décision/Planning/management et mise en action.
+
+Noms et définitions courtes repris à l’identique de la proposition validée ; compléments détaillés et exemples proposés. Descriptions actuelles dans connaissance/31-inventory-optimization.md ; anciennes discussions conservées. D01/D03/D04, autres nœuds, glossaires et publications inchangés. Contrôle documentaire Microsoft ciblé, CMP075 avec limites. Bilan et invariants dans audits/2026-09-16-d05-refonte/. Aucun commit, push ou publication.
+
+## 2026-09-16 — Synthèse des principes structurants dans AGENTS.md
+
+À la demande de Laurent (« Go pour ton optimisation de agents.md »), ajout en tête d'une synthèse des règles en vigueur : autorités, définition et hiérarchie du modèle, Decision/Planning/Management, frontières métier, validation et preuve, maintenance et Atlas. Liens vers les registres faisant autorité ; aucune nouvelle définition métier adoptée. Les sections antérieures sont conservées sous un repère explicite d'historique, avec une règle de lecture des états remplacés. Les futures évolutions doivent actualiser la synthèse concernée plutôt qu'ajouter seulement un nouveau jalon. Modèles, glossaires, application et publications inchangés.
+
+
+## 2026-09-16 — Publication v006, U236
+
+Publication 2026-09-16.1 activée : 53 nœuds, 39 capacités, 60 relations, 99 termes métier. Frontières D01/D03/D05 et refonte Inventory Optimization intégrées. TER074 corrigé avant préparation pour distinguer décision et mise en action ; définition proposée, état antérieur conservé dans l’audit. Glossaire de modélisation figé comme contexte séparé.
+
+82 décisions : 62 reprises compatibles et 20 transcriptions sourcées ; une ancienne décision sur le nom D03 reste historique, avec transcription du seul nom inchangé après réexamen. Validation sans erreur, vues régénérées, serveur et données API concordants, parcours navigateur et glossaire vérifiés. 88 fichiers protégés inchangés. Bilan : audits/2026-09-16-release-v006/bilan.md. Aucun commit ni push.
+
+
+## 2026-09-16 — U237 : offre de services et pilotage de l’exécution
+
+Vision utilisateur consignée dans execution-services-review.yaml : référentiel des services exécutants, sollicitation/feedback et SLA de réalisation, domaine unique de pilotage. Noms, contenu détaillé et répartition Codex proposés. Ambiguïté D05/D06 versus D06/D07 signalée ; aucune modification du modèle avant clarification. Release v006 inchangée.
+
+
+## 2026-09-16 — U238 : périmètre D06/D07 confirmé
+
+Laurent confirme que la refonte concerne D06 et D07, avec D05 conservé. Annexe de discussion actualisée ; noms et capacités proposés restent à instruire. Aucun changement des nœuds ni publication.
+
+
+## 2026-09-16 — U239 : challenge marché de l’exécution
+
+Étude critique Microsoft/SAP/TM Forum dans marche/execution-services-catalog-and-management.md, ELM129–135 / CMP076. Offre et pilotage appuyés partiellement ; préservation recommandée de la qualification, de la capacité dynamique, des dépendances et des exceptions. SLA/engagement/estimation/résultat et métier/endpoint distingués. Portées de versions et limites des sources explicites. Recommandations proposées dans l’annexe, aucun nœud ou glossaire modifié, release v006 inchangée.
+
+
+## 2026-09-16 — U240 : capacité contextuelle D06 et promesse D03
+
+Accords enregistrés avec portées et empreintes dans execution-services-review.yaml. Référentiel = services/SLA globaux configurés ; D06 décrit la capacité opérationnelle logistique contextualisée, utilisée par D03 pour calculer sa promesse Supply. Coordination, distinctions des engagements, tracking logistique et séparation métier/accès adoptés dans la portée des cinq réponses. Noms et granularité détaillée proposés, autres services U237 conservés. Synthèse AGENTS et étude mises à jour ; modèle actif et release v006 inchangés.
+
+## 2026-09-16 — U241 : comparaison du modèle d'exécution révisé
+
+Comparaison des principes U240 avec Microsoft, SAP et TM Forum dans marche/execution-services-revised-comparison.md. ELM136/137 et CMP077 documentent CTP et la contribution PP/DS vers aATP. Appuis partiels, sans équivalence des domaines ni couverture installée. Questions proposées : disponibilité résiduelle, consommation/libération de capacité et réexamen de promesse. Accords U240 préservés à l'identique ; aucun nœud, relation, glossaire ou publication modifié.
+
+
+## 2026-09-16 — U242 : orchestration et adaptation de l'exécution Supply
+
+Contribution enregistrée et accords délimités/empreintés dans execution-services-review.yaml : orchestration, tracking, réaction aux échecs et recherche de variantes du plan ; retour vers D03 pour réexaminer la promesse. Proposition de définition actualisée avec état antérieur conservé. Frontières U240 inchangées ; détails d'autonomie et de réexamen ouverts, points 1/2 de U241 toujours proposés. Synthèse AGENTS, étude et CMP077 actualisées. Aucun nœud actif, relation, glossaire ou publication modifié.
+
+
+## 2026-09-16 — U243 : latitude d'adaptation hors définition du catalogue
+
+Correction de cadrage enregistrée : la latitude d'adaptation n'impacte pas le catalogue des capacités. Question déplacée vers les règles de fonctionnement dans execution-services-review.yaml, accord sourcé et empreinté. Synthèse AGENTS et étude actualisées ; accords U240/U242 inchangés. Aucun nœud, relation ou publication modifié.
+
+
+## 2026-09-16 — U244 : refonte de l’exécution appliquée au backlog
+
+D06 Execution Management regroupe les responsabilités D06/D07, ajoute Execution Orchestration et élargit D07.d en Execution Tracking avec conservation des résultats encore attendus. D14 Execution Service Catalog et son ingestion ajoutés. Les relations D03/capacité/révision et tracking/orchestration/options/engagements sont explicites ; cinq liens de rapprochement D04 préservés. D05 inchangé. Captures, portées et contrôles dans audits/2026-09-16-execution-refonte et execution-services-review.yaml. Noms et détails ajoutés proposés ; définition de domaine présentée avant U244 adoptée. TER075/076 proposés, glossaire de modélisation séparé inchangé. Aucune publication, commit ou push.
+
+
+## 2026-09-16 — U245 : challenge du catalogue d'exécution
+
+Séparation orchestration/adaptation et usage du vocabulaire de modélisation demandés. Explication de Qualification comme admissibilité du service ; fusion avec la décision de service proposée. Proposition de huit responsabilités dans execution-services-review.yaml, review_U245 : décisions de besoins, services, capacité et adaptation ; gestion des engagements, orchestration, tracking et rapprochement. Limites des responsabilités et portée Decision/Planning explicites. Noms, fusion et granularité proposés, nœuds actifs U244 et publications inchangés.
+
+
+## 2026-09-16 — U246 : Capacity Visibility et clarification des engagements
+
+Execution Capacity Visibility retenu comme nom dans le catalogue en discussion, portée et empreinte enregistrées. Proposition de description précisée sans validation implicite. Execution Commitment Management expliqué par la tenue des demandes, prises en charge et évolutions ; Service Order Management proposé comme nom plus concret et périmètre à discuter. Nœuds actifs U244 et publications inchangés.
+
+
+## 2026-09-16 — U247 : catalogue d'exécution révisé appliqué
+
+Service Order Management adopté avec sa définition présentée ; Capacity Visibility retenu selon U246. Orchestration et Adaptation Decision séparées. Requirements Decision détermine les prestations nécessaires ; tracking et rapprochement conservés. D06.e regroupe qualification/options comme proposition ; D06.a/c archivées, D06.f nouvel identifiant d'adaptation. Huit capacités directement rattachées à D06, liens actualisés et D03/D05 préservés. Portées dans application_U247 ; descriptions détaillées proposées. Deux glossaires et publications inchangés. Contrôles et captures dans audits/2026-09-16-execution-capacites. Aucun commit, push ni publication.
+
+
+## 2026-09-16 — U248 : publication v007 de l'exécution
+
+Publication 2026-09-16.2 activée : 55 nœuds, 41 capacités, 74 relations et 101 termes métier. D06 regroupe huit capacités ; D14 ajoute le sixième référentiel. Orchestration et Adaptation Decision sont distinctes ; Service Order Management et Capacity Visibility sont publiés avec leurs portées. La fusion des services et les compléments détaillés restent proposés.
+
+96 décisions : 82 reprises compatibles et 14 transcriptions sourcées des accords récents ; aucune suspension. TER075/076 ajoutés comme propositions, 99 termes antérieurs inchangés et glossaire de modélisation figé comme contexte séparé. Validation sans erreur, restitutions régénérées, API identique au snapshot et interface Atlas vérifiée sur 8765. Anciennes publications et backlog inchangés ; seul l'index d'activation a évolué parmi les fichiers protégés. Bilan : audits/2026-09-16-release-v007/bilan.md. Aucun commit ni push.
+
+
+## 2026-09-16 — U249 : audit de maturité du modèle
+
+Audit de v007 et des champs courants identiques du backlog, sans modification du modèle. Rapport dans audits/2026-09-16-audit-maturite/ : grille des 41 capacités, comparaison de 29 sources Microsoft/SAP/Oracle/TM Forum, granularité, dépendances et huit compléments de description proposés. ELM138–157, CMP080–085 ; méthodes et limites d’accès explicites.
+
+Constats : frontières principales cohérentes ; application des paramètres/mise en action D05 à attribuer ; rapprochement des représentations de stock et devenir des retours à instruire. 74 relations dont 53 structurelles/de présentation et 21 transversales ; 22 capacités sans lien transverse, dont les six ingestions. Descriptions : 15 périmètres, 21 exemples et 11 natures manquent ; six textes citent encore D07 comme domaine. Les natures de Lifecycle et des gestions sont à discuter, sans reclassification automatique ni fusion de choix adoptés.
+
+La matrice proposée distingue besoins de résultats, flux et structure ; les scénarios préparatoires n’imposent pas un Order ou une promesse déjà confirmés. Les politiques actives restent distinctes des résultats candidats des décisions. Relecture indépendante effectuée. Empreintes de 153 fichiers contrôlées, modèle/backlog/glossaires/publications inchangés ; index de provenance courant actualisé séparément. Aucune validation métier, release, commit ou push.
+
+
+## 2026-09-16 — U250 : frontières de CTP
+
+Lecture comparée des définitions courantes D03/D05/D06 après l’audit. Risque de recouvrement de CTP avec priorisation, échéancier, arbitrage économique, politiques de stock et choix de services ; proposition de distinguer sa réponse de faisabilité sous adaptation des résultats spécialisés mobilisés. Approvisionnement/transfert pour honorer un Order et optimisation du stock gardent des finalités distinctes. Question et analyse sans modification du modèle ni adoption de la reformulation proposée.
+
+
+## 2026-09-16 — U251 : CTP et décisions spécialisées
+
+Définition de D03.j remplacée par la formulation adoptée de faisabilité après adaptation ; nom, finalité et nature inchangés de U154 conservés. Scope concret et exemple ajoutés comme propositions, six relations conditionnelles consommateur→fournisseur, sans nouveau type ni hiérarchie. Les autres capacités et relations antérieures restent inchangées. Accord et empreintes dans d03-review.yaml, ctp_boundaries_U251 ; historique pre-U251.yaml et captures dans audits/2026-09-16-ctp-frontieres/.
+
+Principe to-promise et synthèse AGENTS alignés ; TER045 actualisé comme reprise lexicale proposée, glossaire de modélisation inchangé. CMP086 actualise les appuis U249 sans nouvelle équivalence ou recherche revendiquée. Aucune application globale de l’audit, publication, commit ou push.
+
+
+## 2026-09-16 — U252 : proposition de traitement des manques
+
+Proposition en discussion : élargir la gestion des protections à Inventory Policy Management dans D01 (renommage/extension de D02.b proposé), attribuer explicitement la création/modification des Orders issus de D05 aux gestions achat/transfert D04, et examiner deux capacités D01 : Inventory Reconciliation (rapprochement des représentations) et Stock Disposition Decision (devenir/usages des biens après constat). Contrôle physique chez l’exécutant ; optimisation du stock souhaitable dans D05 ; promesse dans D03. Aucun nom ou périmètre adopté par la question, aucun nœud modifié.
+
+
+## 2026-09-16 — U253 : Supply Protection conservé
+
+Laurent estime Supply Protection plus large qu’Inventory Policy Management. Retrait du renommage/élargissement proposé U252 : une finalité de protection des possibilités Supply ne se réduit pas à la gestion des paramètres de stock. Nom actif inchangé ; périmètre détaillé et portage des paramètres à clarifier. Aucun élargissement automatique à toutes les ressources logistiques, aucune adoption des autres candidats U252 et aucune modification du modèle.
+
+
+## 2026-09-16 — U254 : intention et niveau de Supply Protection
+
+Question sur la nature de Supply Protection. Distinguer le résultat étroit de D02.b (tenir les quantités/limites d’usage par groupes) de l’intention transverse de protection, élargie dans la discussion précédente. Un domaine éventuel doit se justifier par un espace cohérent de problèmes ; aucun nouveau domaine ou renommage adopté. Modèle inchangé.
+
+
+## 2026-09-16 — U255 : recouvrement allocation et affectation
+
+Le rapprochement signalé par Laurent conduit à retirer le candidat Supply Allocation Management. Distinguer dans l’analyse les droits d’usage collectifs, les liens de couverture à des besoins identifiés et les engagements opposables aux usages concurrents ; ces résultats ne préjugent pas de trois capacités. Réexaminer ensemble Supply Protection, Supply Assignment et Reservation avant renommage ou regroupement. Aucune modification du catalogue ni publication.
+
+
+## 2026-09-16 — U256 : complétude des décisions protection/affectation
+
+Analyse de onze questions/cas sur le backlog après U251, rapprochée de l’historique pré-U154. Sept responsabilités de décision présentes ; choix détaillé de couverture et substitution à expliciter dans ATP/CTP/PTP ; dérogation ponctuelle de protection sans porteur attribué ; contrat de cycle affectation/engagement/libération à préciser. Les cas fins ne sont pas automatiquement des capacités autonomes. Rapport dans audits/2026-09-16-decisions-protection-assignment/rapport.md. Aucun nouveau nœud, renommage, fusion Reservation ou publication.
+
+
+## 2026-09-16 — U257/U258 : aptitude et granularité d’ATP/CTP/PTP
+
+Examen conceptuel demandé : les définitions courantes expriment des aptitudes de décision avec résultats distincts (faisabilité de référence, possibilités sous adaptation, sélection économique). La maille agrégée ne retire pas leur statut de capacité ; identifier des questions plus fines ne crée pas automatiquement des sous-capacités. Poursuivre la clarification des contrats et du choix de couverture sans modifier le catalogue ou les accords U154/U251.
+
+
+## 2026-09-16 — U259 : méthode de clarification des décisions
+
+Programme proposé à partir des 13 capacités marquées decision : revue conjointe D03, puis D05/D06 et nature/contrat de Lifecycle. Périmètres par question, contraintes, résultat, frontières et exemples ; premier cas disponibilité locale/apport alternatif/échéancier avec distinction date impérative/préférée. Périmètre détaillé d’ATP et responsabilité du choix de couverture à instruire ; catalogue et publications inchangés.
+
+
+## 2026-09-16 — U260 : couverture et exploration ATP/aATP
+
+Contribution conservée avant reformulation. Ajout de MOD005 dans le glossaire méthodologique séparé, précision TER022, contexte TER044 et nouveau TER077 Couverture de stock. Les formulations restent proposées ; accord de principe ATP limité à la couverture explicative, tracé dans d03-review.yaml. Catalogue et définition D03.i inchangés.
+
+Recherche officielle APICS/Microsoft/SAP : étude marche/atp-aatp-couverture.md, ELM158–162 et CMP087 proposés. aATP recouvre plusieurs responsabilités FLOW ; pas de nouvelle capacité ni de frontières éditeur adoptées. Synthèse AGENTS actualisée. États antérieurs et empreintes dans audits/2026-09-16-atp-aatp-couverture/. Aucun commit, push ou publication.
+
+
+## 2026-09-17 — U261 : ATP, variantes et niveaux de description
+
+Verbatim conservé avant interprétation. Les quatre informations ATP et le cas d’une promesse ou d’un ensemble sont consignés dans d03-review.yaml ; pas de nouvelle définition adoptée par extension.
+
+Étude marché marche/capacites-variantes-niveaux-atp.md : décomposition, comportement/variante, réalisation et maturité distingués. Proposition de dimensions combinables et profils contextualisés ; aucun niveau supplémentaire adopté. MKT25/26, ELM163–165, ELM052 reconsulté, CMP088 proposé. Catalogue, glossaires et publications inchangés ; pas de release, commit ou push.
+
+
+## 2026-09-17 — U262 : Comportement, niveau terminal
+
+Choix de Laurent consigné : Capacité → Comportement, arrêt de la décomposition à ce niveau. Glossaire méthodologique MOD006, feuille de route, revue D03 et synthèse AGENTS actualisés. Recommandation de variantes/profils U261 explicitement remplacée ; historique conservé. Quatre exemples ATP proposés, sans les présenter comme adoptés.
+
+Cette étape applique la convention de modélisation ; nouveaux nœuds, schéma et Atlas ne sont pas encore implémentés. Catalogue des capacités et glossaire métier inchangés ; aucune release, aucun commit ni push.
+
+
+## 2026-09-17 — U263 : définitions des comportements ATP adoptées
+
+Laurent valide les quatre définitions et exige un vocabulaire factuel, sans niveau marketing Advanced ATP. Valeurs et empreintes dans d03-review.yaml.atp_behaviors_U263 ; noms de présentation français conservés, noms anglais non adoptés. MOD006, synthèse AGENTS et feuille de route actualisés. Catalogue principal et publication inchangés ; comportements documentés, représentation technique encore à réaliser.
+
+
+## 2026-09-17 — U264 : modèle et Atlas implémentent les comportements
+
+Type behavior et contrat de rattachement terminal validés côté Python et adaptateur Atlas. Quatre nœuds BHV001–BHV004 et quatre relations contains pour ATP, dont les définitions adoptées U263 gardent leurs empreintes. ATP et TER044 actualisés ; synthèse, noms anglais et périmètres éditoriaux restent proposés. Catalogue de 41 capacités conservé, quatre comportements distincts.
+
+Atlas : arbre, fiches détaillées, descriptions directement dans ATP, recherche/filtre, icônes, compteurs et liens des cartes. Restitution Markdown dérivée étendue. Tests de mutation et navigation ajoutés. Le fixture historique des tests de préparation utilise désormais un glossaire figé compatible au lieu du glossaire vivant, qui référençait des éléments absents de son ancien modèle. Bilan et preuves dans audits/2026-09-17-comportements-atlas/. Aucune release, aucun commit ni push.
+
+
+## 2026-09-17 — U265/U266 : audit des comportements et plan en deux parties
+
+41 capacités et quatre comportements relus ; comparaison primaire Microsoft, SAP, Oracle, TM Forum, BIZBOK et LeanIX. Audit, matrice et plan dans audits/2026-09-17-audit-comportements/ ; propositions distinctes dans behavior-audit.yaml, CMP089. Recommandation : conserver une profondeur terminale Capacité → Comportement, décomposer sélectivement ; Promise Management et Reservation/Assignment demandent arbitrage.
+
+AGENTS consolidé par priorités ; version antérieure complète préservée. Six références de domaines D07 corrigées vers D06 dans des scopes proposés ; identifiants conservés. Limitations historiques du modèle renvoyées à la capture, principes métier conservés. Principe U265 de justification ajouté, champ decomposition_rationale et contrôle non rétroactif ; justification ATP proposée, visible dans les restitutions et fiches Atlas. Les champs adoptés restent inchangés. Aucune fusion ni rétrogradation, aucune nouvelle relation métier, release, commit ou push.
+
+
+## 2026-09-17 — U267 : comportements du scénario
+
+Proposition de Laurent consignée avant interprétation : construction, simulation, comparaison/évaluation, validation, application. Réponse détaillée et bénéfices dans audits/2026-09-17-audit-comportements/scenario-planning-proposition.md ; suivi dans behavior-audit.yaml et note MOD002. Noms anglais, résultats détaillés et responsabilité d’application proposés. Catalogue et publications inchangés.
+
+
+## 2026-09-17 — U268 : comparaison et justification systématiques
+
+Règle utilisateur inscrite dans AGENTS.md et marche/methode.md. Reprise de la proposition U267 avec comparaison primaire SAP IBP, Microsoft SCM et Oracle Supply Planning. ELM173/174, CMP090 ; distinction entre promotion des données du scénario et déclenchement de recommandations opérationnelles. Recommandation de cinq comportements justifiée ; mandat d’application en D05.f toujours à arbitrer. Aucun changement du catalogue ou des publications.
+
+
+## 2026-09-17 — U269 : cinq comportements Inventory Planning adoptés
+
+U269 enregistré puis appliqué : BHV005–BHV009 et cinq rattachements terminaux à D05.f. Noms anglais, descriptions courtes et justification du découpage adoptés ; scopes/exemples ajoutés proposés. L’application sollicite les capacités opérationnelles responsables. Synthèse D05.f et périmètre D05 alignés ; ancienne définition U235 historisée sans transport de validation. MOD002, annexe D05, suivi d’audit et CMP090 actualisés. Catalogue de 41 capacités conservé ; neuf comportements. Aucune release, aucun commit ou push.
+
+
+## 2026-09-17 — U270 : analyse d’impact en indicateurs
+
+Apport utilisateur enregistré ; comparaison SAP IBP (simulation, Inventory Analysis, Scorecard, Service Level Prediction), contrôle complémentaire Oracle. ELM175/CMP091, accès et limites documentés. Proposition Scenario Impact Analysis avec justification ciblée et frontières à préciser vis-à-vis de Simulation/Evaluation pour éviter les doublons. Reconnaissance du comportement complémentaire consignée ; nom anglais, définition détaillée et reformulations non adoptés. Les cinq comportements U269, leurs valeurs et le catalogue actif restent inchangés.
+
+
+## 2026-09-17 — U271 : Scenario Impact Analysis adopté
+
+BHV010 ajouté sous Inventory Planning, avec nom, définition et rattachement adoptés. Définitions BHV006/BHV007 précisées par les résultats du tableau accepté ; valeurs U269 conservées dans la capture pré-U271 et le registre historique. Compléments de périmètre proposés. Six comportements Planning et quatre ATP, sans nouvelle capacité. Justification et frontières consignées, glossaire méthodologique et suivi d’audit alignés. Aucune release, aucun commit ni push.
+
+
+## 2026-09-17 — U280/U281 : étude marché étendue de Supply Protection
+
+Neuf éditeurs et 17 sources primaires retenus ; profondeur et limites d’accès distinguées. Liste proposée de 17 comportements (cinq existants, dix compléments, deux conditionnels) dans supply-protection-review.yaml, restituée dans marche/supply-protection-comportements.md. MKT27–32, ELM177–186 et CMP093 ajoutés. Recommandations sourcées et justifiées par bénéfice ou complexité ; frontières avec D03/D05/exécution conservées. Aucun nœud, glossaire ou fichier de publication modifié. U281 valide la méthode d’étude, pas la nouvelle liste.
+
+
+## 2026-09-17 — U282 : recentrage des comportements sur les mécanismes métier
+
+Correction utilisateur enregistrée. AGENTS et MOD006 précisés ; D02.b et BHV011–015 placés en réexamen sans changer leurs valeurs historiques ni identifiants. L’étude de 17 opérations est signalée comme matière fonctionnelle historique, plus comme cible recommandée. Sources et accords préservés ; nouveau catalogue de mécanismes à proposer. Aucune publication ni modification des comportements ATP/Planning.
+
+
+## 2026-09-17 — U283 : critères de comportement et Planning
+
+Apport enregistré avant interprétation. AGENTS et glossaire méthodologique précisés ; direction Planning consignée dans les annexes. D05.f et ses six comportements marqués en réexamen ; requalification fonctionnelle BHV007–010 tracée. Aucun nom, définition adoptée, identifiant ou lien supprimé ; migration cible à préciser. Comparaison Kinaxis ELM187/CMP094, sans équivalence normative. Aucune publication.
+
+
+## 2026-09-17 — U284 : Simulation & analyse
+
+Accord et précision enregistrés. Direction Planning, glossaire méthodologique, AGENTS et notes de réexamen actualisés : simulation et analyse réunies. Comparaison Kinaxis documentée dans ELM187/CMP094. Valeurs historiques des nœuds et accords conservés ; migration du catalogue toujours distincte de cette clarification. Aucune publication.
+
+
+## 2026-09-17 — U285 : diagnostic de refonte du modèle
+
+Demande enregistrée ; diagnostic et plan proposés dans behavior-audit.yaml. Revue exhaustive recommandée des 41 capacités ; 15 comportements existants dont 11 directement concernés par les corrections Planning/Protection. Les anciens critères de découpage ne sont plus repris sans examen. Aucun changement de responsabilité, fusion, suppression ou publication effectué par ce diagnostic.
+
+
+## 2026-09-17 — U286 : cible complète préparée
+
+Revue des 41 capacités, migration des 15 comportements et inventaire de toutes les relations. Proposition de quatre mécanismes Protection, trois Planning et maintien des quatre ATP ; Stocktaking et Orchestration conditionnels. Sept arbitrages regroupés. Consignes obsolètes corrigées ; ancien audit conservé en historique, cible référencée depuis AGENTS. Catalogue actif et accords inchangés. Comparaison CMP095. Aucune publication ou administration serveur.
+
+
+## 2026-09-17 — U287 : application de plan dans D04
+
+Orientation reçue pendant la préparation U286 et intégrée à la cible : mécanisme d’application du scénario/plan par Order Management. Définition et cas proposés, parent précis à arbitrer A8 ; frontières quotas/Orders/prestations explicitées. Sources Microsoft/Oracle S13/S14 documentées. Aucun nœud nouveau, fusion ou publication exécuté.
+
+
+## 2026-09-17 — U288 : regroupement Promise Management adopté
+
+Correction reçue pendant U286 : les trois responsabilités de promesse deviennent trois comportements sous Promise Management. Cible actualisée, arbitrage A2 résolu dans cette portée, ancien choix « fonctions seulement » remplacé. Définitions contextualisées, identités et migration encore préparées séparément ; catalogue actif et publication inchangés.
+
+
+## 2026-09-17 — U289 : terminologie Assignment fixée et interprétation corrigée
+
+Recherche primaire SAP, Microsoft, Oracle. Convention de travail Supply Assignment / affectation et Supply Assignment Plan / plan d’affectation ; aucune alternance avec Allocation seul. Glossaire métier précisé, TER078 ajouté comme formulation proposée, AGENTS et cible U286 corrigés. Ancienne interprétation magasin préservée dans l’historique de la cible ; C93 documente la correction. D05.d : Group Protection Decision proposé en cible, nom actif conservé. Aucun modèle publié modifié.
+
+
+## 2026-09-17 — U290 : refonte du backlog appliquée
+
+Valeur multidimensionnelle pour Supply Assignment ; Promise Management D03.n et trois comportements ; trois comportements Planning ; quatre mécanismes Supply Protection ; ATP conservé. D05.d devient Group Protection Decision, D04.o management et D05.e explicite les ajustements d’apports sous contraintes. Les opérations restent dans les descriptions. Contrats de dépendance tracés sous instruction ; options conditionnelles et questions sans solution restent ouvertes. Captures, correspondances et portées : modeles/backlog/refactoring-implementation.yaml. Aucune publication modifiée.
+
+
+## 2026-09-17 — U292 : audit comparatif des comportements manquants
+
+Revue des 39 capacités et des 14 comportements après refonte U290. Recherche primaire Microsoft, SAP, Oracle, Manhattan, Blue Yonder, Kinaxis et RELEX : 28 sources avec éditions et limites. Onze mécanismes ciblés, cinq conditionnels, sept arbitrages et dix cas fictifs ; aucune création de BHV ni modification du modèle actif. ELM191, CMP098, MKT34/MKT35. Annexe YAML autoritative et restitutions dans audits/2026-09-17-comportements-manquants. Contrôle d’empreinte du modèle et des 125 fichiers protégés ; validation métier distincte des vérifications structurelles.
+
+
+## 2026-09-17 — U293 : précisions du feedback sur l’audit
+
+Contribution enregistrée, C94 et CMP099. Audit U292 annoté : Transit Visibility proposé en complément des exceptions, Lifecycle distingué du processus et de l’orchestration, P11 à clarifier, P05 retiré comme mécanisme autonome au profit de l’adaptabilité du processus. Terme excédent dans les propositions courantes. État antérieur de l’annexe conservé dans history/audit-before-U293.yaml. Catalogue et publications inchangés.
+
+
+## 2026-09-17 — U294 : vocabulaire marché pour le tracking logistique
+
+Règle de nommage enregistrée dans AGENTS et méthode marché. SAP/Oracle/project44/FourKites comparés : Global Track seul n’est pas un nom commun établi ; Track and Trace remplace Transit Visibility dans la proposition. C95 / ELM193 / CMP100 ; périmètre et non-doublon des exceptions à instruire. Aucun changement du catalogue actif ou publication.
+
+
+## 2026-09-17 — U297 : Logistics Visibility, nom adopté
+
+Nom validé par Laurent pour le suivi physique du picking à la destination finale. Accord et empreinte enregistrés dans behavior-gap-audit.yaml ; contribution U297 et complément CMP102. Rattachement et granularité distincts de la validation du nom ; aucune mutation de D07.d ni release implicite.
+
+
+## 2026-09-17 — U298 : consolidation du résultat de l’audit
+
+Vérification : catalogue U290 inchangé. La synthèse conservait des noms et priorités dépassés malgré les feedbacks. Conclusions consolidées : Logistics Visibility adopté dans sa portée, P05 retiré, P11 à clarifier ; P04 et P10 désormais à réexaminer pour risque de reformulation du parent ou doublon. Sept candidats et cinq options conditionnelles restent à instruire. Aucun changement de catalogue, rattachement ou publication. Capture de l’annexe avant consolidation dans history/audit-before-U298.yaml.
+
+
+## 2026-09-17 — U299 : deux corrections de l’audit validées
+
+Accord enregistré avec portées et empreintes : exceptions logistiques incluses dans Logistics Visibility, sans doublon ; coordination par dépendances non constitutive à elle seule d’un comportement autonome. Les autres candidats, niveau et rattachement restent ouverts. Catalogue et publications inchangés.
+
+
+## 2026-09-17 — U301–U303 : tracking numérique/physique et granularité logistique
+
+Périmètre utilisateur enregistré avant interprétation : audit de toutes les opérations numériques et physiques. Accord U302 conservé ; U303 réouvre la maille de Logistics Visibility. Comparaison Microsoft/Camunda/SAP/Oracle et proposition sur site/transport dans l’annexe d’audit. Aucun nœud ou rattachement créé pendant cet arbitrage ; catalogue et publications préservés.
+
+
+## 2026-09-17 — U305 : trois comportements de visibilité adoptés
+
+Accord enregistré avec portées et empreintes dans l’annexe du backlog : Warehouse Visibility, Transportation Visibility, Store Execution Visibility sous Execution Tracking. Logistics Visibility demeure englobant. Nœuds du catalogue non encore intégrés ; aucun changement publié.
+
+
+## 2026-09-17 — U306 : visibilité des services numériques
+
+Correction C96 : rendre explicites l’exécution et le résultat métier des services numériques. Proposition Digital Service Visibility avec bénéfice de corrélation, distinction résultat technique/métier et comparaison Microsoft/Camunda. Trois comportements logistiques adoptés conservés ; aucun ajout de nœud ni publication pendant la discussion.
+
+
+## 2026-09-18 — U308 : Store Visibility
+
+Renommage adopté à périmètre constant dans l’annexe du backlog, synthèse et références courantes actualisées. Accord historique U305 conservé intact. Catalogue actif et publications inchangés ; intégration des comportements en nœuds encore distincte de cet arbitrage de nom.
+
+
+## 2026-09-18 — U309 : document de flux Boardriders
+
+Source SRC-2026-09-18-BRD-FLUX conservée à l’identique avec empreinte SHA-256. Dossier sous connaissance/sources : sept blocs, dix tracés, légende et date probable de 2021, interprétations séparées, réconciliation avec le panorama et associations partielles de capacités à instruire. Import régional manuel explicite ; sens détaillé de l’API, identités SAP/Elastic et actualité non établis. Consignation documentaire demandée, sans modification du panorama versionné ou du catalogue. Aucun accord métier déduit des contrôles techniques.
+
+
+## 2026-09-18 — U310 : implantation et réassort
+
+Apport Laurent consigné avant interprétation ; termes TER079/TER080 ajoutés au glossaire métier avec notes éditoriales distinctes. Comparaison SAP/RELEX CMP106 : politiques initiale/continue distinctes des méthodes de calcul Microsoft. Deux saisons actuelles conservées comme existant rapporté ; capsules comme possibilité future. Audit D05.e actualisé, sans ajout de capacités/comportements ni publication.
+
+
+## 2026-09-18 — U311 : comparaisons marché dans le modèle et Atlas
+
+Règle de production ajoutée à AGENTS et méthode marché. Contrat structuré pour nœuds et glossaire ; SAP/RELEX renseignés sur Replenishment Decision, Implantation et Réassort. Affichage Atlas et recherche adaptés au snapshot publié. Recalage explicite du socle de l’audit après contrôle : seul le champ comparatif de D05.e a été ajouté au catalogue, sans altération des autres champs. Aucune release métier implicite.
+
+
+### 2026-09-18 — U316, décision d’implantation
+
+Initial Stocking Decision (D05.g) ajoutée au backlog avec nom et définition adoptés. Replenishment Decision (D05.e) conserve le réassort continu. Domaine, Planning, glossaire, comparaisons marché et audit actualisés. Relations et compléments éditoriaux restent proposés ; aucune nouvelle décomposition en comportements. Capture et portée : audits/2026-09-18-initial-stocking/. Aucune release ni publication distante.
+
+
+### 2026-09-18 — U318, comportements de redistribution
+
+Deux comportements ajoutés sous Stock Redistribution Decision : rééquilibrage entre sites et consolidation des stocks dispersés. Définitions françaises et parents adoptés ; noms anglais éditoriaux, détails et correspondances proposés. Assortiments de tailles et regroupement des reliquats conservés dans un même comportement sans niveau supplémentaire. Justification de décomposition, audit et comparaisons mis à jour. Aucune release. Capture : audits/2026-09-18-redistribution-behaviors/.
+
+
+### 2026-09-18 — U319–U322, Les clés du modèle dans Atlas
+
+Après étude sans modification du source (U319), Laurent retient deux profondeurs de lecture (U320) et autorise la réalisation (U321). Six repères interactifs, entrée dédiée, volet Pour contribuer et sources figées ; navigation par lien direct et conservation de la publication. U322 précise l’indépendance du modèle business et du découpage des solutions : comparaison de réalisations dédiées, mutualisées et distribuées sur des capacités stables. Comparaison primaire et limites consignées dans audits/2026-09-18-modeling-guide/business-solution.md. Guide pédagogique versionné et associé explicitement à v007, avec portée rétrospective visible ; aucun repli backlog ni modification des publications métier.
+
+
+## 2026-09-18 — U342 : Reservation Policy Decision
+
+Nom et définition intégrés ; D05 proposé comme parent. Quatre mécanismes documentés et proposés avec comparaisons marché, exemples, résultats, limites et inventaire des alternatives. Aucun ancien nœud changé ; preuve différentielle dans audits/2026-09-18-reservation-policy/implementation.yaml. Publications inchangées ; Atlas reste sur la release publiée.
+
+
+## 2026-09-18 — U343 : adoption des politiques de réservation
+
+Quatre comportements adoptés sous Reservation Policy Decision et rattachement D05 confirmé. Noms et responsabilités présentées tracés séparément des détails éditoriaux ; cinq relations contains validées. État U342 préservé dans audits/2026-09-18-reservation-policy-adoption. Aucune nouvelle publication.
+
+
+## 2026-09-18 — U349 : affermissement et protection contre les réoptimisations
+
+Ajout de BHV036 Order Firming et BHV037 Order Freezing sous Order Lifecycle Management. Accord sur le nom/définition du premier, principe et parent contextuel du second ; nom anglais du second et détails éditoriaux proposés. Justification de décomposition, exemples concrets, comparaisons marché et deux dépendances proposées vers la protection. État avant conservé et audit des comportements actualisé ; aucune publication.
+
+
+## 2026-09-18 — U350 : nom Order Freezing adopté
+
+Nom de BHV037 validé champ par champ. Principe et rattachement U349 conservés ; descriptions et contrats gardent leur statut éditorial.
+
+
+## 2026-09-18 — U363 : refonte D04 appliquée
+
+Quatre capacités, cinq variantes d’Order Type, neuf comportements Lifecycle. Structuring et Archiving séparés. Spread retiré du sens mutation et explicité sous Supply Assignment ; glossaire enrichi. Identifiants, liens métier et valeurs adoptées préservés, nouvelles descriptions et contrats qualifiés. Captures et migration dans audits/2026-09-18-d04-U363 ; aucune publication.
+
+
+## 2026-09-18 — U364 : comportements Supply Assignment
+
+Intégration BHV045–BHV047 : application de plan, complément préservant les affectations et réaffectation des liens modifiables. Distinction adoptée, compléments éditoriaux qualifiés ; décisions, réservations et Freezing séparés. Comparaisons SAP/Microsoft conservées dans les fiches (CMP134). Audit courant actualisé ; preuves antérieures capturées, aucune publication.
+
+
+## 2026-09-18 — U365 : cadre de l’ATP et vocabulaire Fulfillment
+
+Contribution enregistrée ; proposition Fulfillment Strategy Decision documentée dans l’annexe dédiée, avec comparaisons SAP/Microsoft ELM224/CMP135 et limites de portée ATP/PTP/CTP. Réexamen de Supply Assignment Decision, sans création ou renommage de catalogue ni publication.
+
+
+## 2026-09-18 — U366/U367 : audit Supply / Fulfillment et glossaire
+
+Audit local du catalogue, des relations, des deux glossaires, des conventions utiles et des noms d’icônes Atlas. Clarification métier Supply / Supply Chain / Fulfillment ; sens fonctionnel local Supply conservé. Renommage de D03 proposé, aucune substitution globale. Inventaire et recommandations dans audits/2026-09-18-supply-fulfillment et annexe structurée ; catalogue et publications inchangés.
+
+
+## 2026-09-18 — U368 : Supply Network recommandé
+
+Réexamen documenté de SF-A06 : Supply Network convient mieux au référentiel de lieux et relations partagé par les finalités FLOW. Appuis SAP F&R/Microsoft, différences et limites conservés ELM226/CMP137. Ancienne recommandation capturée ; rapport et annexe actualisés. Noms du catalogue et du glossaire inchangés en attente d’arbitrage.
+
+
+## 2026-09-18 — U369 : noms D03/D13 acquis, univers SCM proposé
+
+Accords de nommage Fulfillment Optimization et Supply Network enregistrés avec portée et empreintes. Supply Chain Management examiné pour l’univers : appui CSCMP/Microsoft, limites du périmètre FLOW explicites. Question d’univers encore ouverte ; application des noms acquis au catalogue à réaliser séparément de la publication.
+
+
+## 2026-09-18 — U389 : définition concrète du comportement
+
+Analyse exhaustive des 48 comportements intégrés sous 13 capacités et distinction des scopes de visibilité encore en annexe. MOD006 enrichi de sept formes illustrées ; règle mémorisée dans AGENTS.md, preuve dans modeles/backlog/behavior-typology.yaml. Appui BIZBOK/Microsoft ELM234/CMP145, sans revendication de taxonomie universelle. Catalogue métier et publications inchangés ; liste éditoriale distinguée de l’instruction acquise.
+
+
+## 2026-09-18 — U390 : proposition des comportements Purchase Order
+
+Après les retours, trois variantes proposées avec comparaison Microsoft/SAP ELM235/CMP146 : stock, livraison directe et prestations. Consignation conservée comme candidat à frontière ouverte. Définition actuelle centrée sur les biens à élargir explicitement si accord. Catalogue et publications inchangés.
+
+
+## 2026-09-18 — U391 : Purchase Order adopté et consignation recadrée
+
+Trois comportements Purchase Order intégrés BHV058–060, preuves et accords préservés. C102 retire la consignation des candidats achat ; analyse Microsoft/SAP/Oracle ELM236/CMP147 et proposition Consigned Inventory Management sous D01, avec frontières stock/accord/finance/assurance/décision/exécution. Aucune création de cette capacité ni publication implicite.
+
+
+## 2026-09-18 — U392 : apport fournisseur sans achat
+
+Comparaison Microsoft/SAP/Oracle ELM237/CMP148 : demande d’apport distincte du régime de stock et de l’acquisition. Consignment Replenishment Order proposé comme type ciblé D04 ; Procurement Order générique et Supply Order comparés avec leurs limites. Aucun nouveau nœud ou renommage de Purchase Order.
+
+
+## 2026-09-18 — U393 : architecture des demandes par intention
+
+Principe mémorisé dans AGENTS.md et order-intent-principles.yaml ; annexes de consignation/apport reliées à cette direction. Offre de stockage/location et réassort tiré par les ventes enregistrés comme intention exprimée, distincte de l’existant et de la définition générale de consignation. Comparaison Microsoft/SAP ELM238/CMP149, avec limites sur les motivations historiques et le jugement de modernité. Catalogue métier inchangé.
+
+
+## 2026-09-18 — U394 : visibilité métier du design
+
+C103 corrige le déplacement du débat vers la couverture fonctionnelle SAP. Principe et annexes précisent la lisibilité des intentions/processus dans les concepts et liens ; AGENTS.md actualisé. ELM238 reconsulté et CMP149 précisé. Opinion historique distinguée du constat de représentation ; catalogue métier inchangé.
+
+
+## 2026-09-18 — U395 : deux capacités de consignation adoptées
+
+Consigned Inventory Management D01.h et Consignment Replenishment Order D04.r intégrées au backlog, avec noms, définitions présentées et parents validés. Comparaisons Microsoft/SAP/Oracle dans les fiches ; frontières, exemple des 500 pièces et sens large de Replenishment documentés. Quatre dépendances détaillées restent éditoriales. Aucun comportement ajouté. Annexes, instructions et audit courant alignés ; preuve et capture dans audits/2026-09-18-consignment-U395. Aucune release.
+
+
+## 2026-09-18 — U396 : non-décomposition de Consignment Replenishment Order
+
+Décision et justification enregistrées dans nonpurchase-supply-order-review.yaml ; assessment D04.r de l’audit actualisé. Comparaison Microsoft/Oracle conservée avec sa limite de preuve. Aucun nœud, relation ou champ du catalogue modifié ; aucun comportement ajouté. Étude des mécanismes de Consigned Inventory Management encore ouverte.
+
+
+## 2026-09-18 — U397 : comportements métier de l’Order
+
+C104 remplace la conclusion de non-décomposition U396. Règle de lisibilité métier consignée dans AGENTS.md, principes des demandes et annexe D04.r. Initial Stocking et Continuous Replenishment proposés avec descriptions, bénéfices, exemples, frontières et comparaison Microsoft/Oracle ; leurs noms et définitions ne sont pas encore adoptés. Audit courant corrigé. Catalogue, parents et publications inchangés.
+
+
+## 2026-09-18 — U398 : comportements de consignation et liens métier
+
+BHV061 Initial Stocking et BHV062 Continuous Replenishment intégrés sous D04.r ; noms, définitions présentées et parents validés. Justification de lisibilité conservée. U399 : les règles de comportement différencié selon l’interaction et de liens lisibles sont mémorisées dans AGENTS.md, MOD006 et business-interactions.yaml pour le prochain audit ou les prochaines améliorations. Aucun nouvel audit, remaniement des liens ou chantier Atlas. Captures techniques dans modeles/backlog/history/consignment-behaviors-U398 ; poursuite de l’audit existant. Backlog uniquement.
+
+
+## 2026-09-18 — U400 : proposition groupée consignation, vente et transfert
+
+Trois capacités traitées ensemble dans la continuation de l’audit existant. Douze comportements proposés dans consignment-sales-transfer-review.yaml avec définitions, exemples, bénéfices, frontières et sources ELM240/CMP151. Catalogue métier et liens inchangés ; aucun nouvel audit. Validation du lot à recueillir sur la proposition présentée, sans confondre regroupement autorisé et adoption préalable.
+
+
+## 2026-09-18 — U401 : lot consignation, vente et transfert intégré
+
+Douze comportements validés ajoutés au backlog (BHV063–074) avec définitions présentées, parents, exemples, bénéfices et comparaison marché. Justifications de décomposition sur les trois capacités ; audit existant et annexes mis à jour. Aucun lien métier existant ni champ antérieurement validé modifié. Preuves techniques dans modeles/backlog/history/grouped-orders-U401 ; aucune nouvelle étude d’audit, release ou modification Atlas.
+
+
+## 2026-09-18 — U402 : mécanismes CTP intégrés
+
+Additional Supply Feasibility, Fulfillment Alternative Feasibility et Commitment Rebalancing Feasibility ajoutés sous CTP (BHV075–077), avec descriptions, exemples, justification et comparaisons Microsoft/SAP. Sources primaires reconsultées avant la proposition, tracées ELM241/CMP152. P14–P16 marqués intégrés dans l’audit existant ; frontière de catalogue A05 clarifiée, règles détaillées distinctes. Aucun changement des champs précédemment validés ni des relations métier existantes. Captures et empreintes dans modeles/backlog/history/ctp-behaviors-U402 ; aucune release.
+
+
+## 2026-09-19 — U403 : Supplier Confirmation
+
+Comportement BHV078 intégré sous Purchase Order avec nom et définition adoptés, exemple 100 vendredi / 60 vendredi + 40 mardi, responsabilités et explication détaillée. Demande, réponse, accord retenu, risque et promesse client distincts ; effets d’un refus ou d’une acceptation expliqués. Sources primaires relues avant la proposition : ELM242/CMP153, limites SAP indexé et impacts Microsoft directs consignées. Audit existant A06 mis à jour ; aucun ancien champ validé ni lien métier modifié, aucune release. Preuves dans modeles/backlog/history/supplier-confirmation-U403.
+
+
+## 2026-09-19 — U404–U406 : visibilité physique et Business Process Tracking
+
+Préférence de nom, précision Task/appels et accord enregistrés. BHV079–082 intégrés sous Execution Tracking : trois visibilités physiques selon U305/U308, Business Process Tracking selon U406. Description des résultats, attentes, tentatives, réussite technique et fin de Task/processus ; pas de nouveau niveau ni objet de catalogue. Sources Microsoft/Camunda et relecture ciblée SAP/project44/Blue Yonder consignées ELM243/CMP154. Audit existant et AGENTS actualisés ; anciens champs validés, relations métier et preuves historiques conservés. Aucune release.
+
+
+## 2026-09-19 — U407–U409 : le Process orchestre des Services
+
+Convention et neuf noms présentés adoptés ; deux intitulés dérivés proposés. Références narratives et comparaisons des fiches actualisées, noms natifs éditeurs préservés. Historique des accords capturé, audit existant suivi sans nouvelle étude. Pas de changement de graphe ni de publication.
+
+
+## 2026-09-19 — U410 : lancement collectif dans Order Release
+
+BHV039 enrichi avec une définition adoptée et des explications individuelles/collectives. P11 clôturé par intégration au comportement existant ; neuf comportements Lifecycle conservés. Comparaison SAP/Oracle consignée ELM245/CMP156. Audit existant et AGENTS actualisés, historique et relations préservés. Aucune release.
+
+
+## 2026-09-19 — U411–U413 : Order Backlog Management
+
+D03 renommé, mandat collectif explicité avec exemple 100 demandées / 60 prises en charge / 40 restantes. Comparaison Oracle/Microsoft ELM246/CMP157. Réexamen ciblé Lifecycle/Structuring consigné dans l’annexe de l’audit existant ; rattachements inchangés, choix de capacité parente à arbitrer. Anciennes validations et publications préservées ; aucune release.
+
+
+## 2026-09-19 — U414 : Order Backlog Planning et Order Release
+
+D03.p créé avec nom/définition présentés ; parent D03 adopté. BHV039 déplacé depuis D04.o en conservant son identifiant et sa définition. Lifecycle garde huit comportements ; Split et Structuring inchangés. Justification de décomposition, comparaisons Oracle/Microsoft ELM247/CMP158, audit existant et AGENTS actualisés. Aucune release.
+
+
+## 2026-09-19 — U416/U417 : structuration et cycle de vie du carnet
+
+D04.n et D04.o déplacés dans D03 ; définition Structuring élargie et adoptée ; BHV044 sous Structuring, BHV039 sous Lifecycle. Planning recentré sur préparation, sans comportement direct. Identifiants et définitions des comportements conservés. Comparaisons CMP159/ELM248, audit existant, descriptions et AGENTS actualisés. Les preuves U414 restent capturées ; aucune release.
+
+
+## 2026-09-19 — U420 : domaines d’Archiving et Lifecycle
+
+Order Archiving déplacé dans D03 ; Order Lifecycle Management dans D04. Comportements inchangés de parent, donc Release suit Lifecycle en D04. Structuring et Split restent en D03. Descriptions, comparaisons contextuelles, audit existant et instructions actualisés ; historique U417/U418 préservé. Aucun nouveau catalogue ni release.
+
+
+## 2026-09-19 — U424 : Lifecycle par dimensions et états
+
+Six comportements sous D04.o ; états, portées, contraintes et exemples décrits dans les fiches. Rescheduling intégré à préparation/révision ; Cancellation et Closure réunis dans fin de demande en conservant leurs effets distincts. Définition Lifecycle présentée adoptée ; listes détaillées éditoriales. D03 mobilise Lifecycle ; historique et identifiants retirés conservés. Audit existant actualisé ; aucune release.
+
+
+## 2026-09-19 — U425 : clôture des candidats de réassort
+
+P01–P03 clos comme couverts par D05.e ; politiques besoins datés/seuil-cible et ajustements explicités. Aucun nouveau comportement ni changement de structure. Audit existant, comparaisons Microsoft et instructions actualisés ; preuves antérieures conservées. Aucune release.
+
+
+## 2026-09-19 — U426 : réouverture des comportements de réassort
+
+La question de Laurent réouvre P01–P03 avant finalisation du suivi U425. Proposition corrigée : deux politiques d’apports et un mécanisme d’ajustement combinable, avec bénéfices explicites. Les descriptions U425 sont conservées ; aucun comportement créé sans accord sur la proposition. Audit et instructions portent le réexamen courant.
+
+
+## 2026-09-19 — U427 : réassort décomposé et point d’audit traité
+
+BHV083–085 intégrés sous Replenishment Decision : deux politiques et un mécanisme d’ajustement combinable. P01–P03 marqués intégrés. Justification, exemples, comparaisons Microsoft et instructions actualisés. 139 nœuds, 47 capacités, 74 comportements ; parents et anciennes validations préservés. Aucun autre arbitrage ni release implicite.
+
+
+## 2026-09-19 — U431 : clôture de l’audit des comportements
+
+Trois candidats clos comme couverts par l’existant, frontière externe consolidée et règles/contrats différés identifiés. Aucun changement du catalogue : 47 capacités et 74 comportements. Accords et versions historiques préservés ; aucune release.
+
+## 2026-09-19 — U432 : contrôle de préparation de release
+
+Défaut des liens vers illustrations corrigé dans compilation/validation et exposé dans le rapport ; 12 tests réussis. Catalogue et publications inchangés. Le rapport brut révèle les transcriptions d’accords encore nécessaires (469 champs sans décision de publication correspondante), à traiter pendant la préparation avec revue des 8 impacts de glossaire. Aucune publication demandée ni effectuée.
+
+## 2026-09-19 — Audit technique des performances
+
+Mesures et recommandations dans audits/2026-09-19-performance/rapport.md. Causes confirmées : double analyse YAML, relecture complète de l’historique, lectures répétées et rapports volumineux, contrôles trop systématiques ; coûts distincts des fixtures de tests et du backend Atlas. Expériences isolées, sans modification du code de production ou des instructions. Aucune reprise de l’audit métier ni release. La validation du modèle a été exécutée une fois comme mesure ; pas de relance systématique après rédaction du rapport.
+
+
+## 2026-09-19 — Optimisations techniques appliquées
+
+Lecture YAML en une passe et cache borné par contenu, rapports compacts, restitution ciblée, checkpoint historique vérifié, instructions compactées et fixtures réduites. Notifications Atlas évitées en l’absence de changement. Mesures et garanties : audits/2026-09-19-performance/optimisations.md. Tests ciblés et build réussis ; modèle et 125 preuves/publications protégées inchangés. Les 469 erreurs de préparation de release antérieures restent détectées. Aucun nouveau choix métier ni publication.
+
+
+## 2026-09-19 — U433 : release 2026-09-19.1 publiée dans Atlas
+
+Révision 8 activée : 135 nœuds, 47 capacités, 74 comportements, 323 relations, 110 termes. 207 décisions transcrivent 469 champs déjà adoptés ; 36 décisions conservées automatiquement et 60 reprises anciennes suspendues restent traçables. Huit impacts de glossaire examinés ; Purchase Order inclut les prestations conformément à U391, avec statut lexical proposé conservé. Catalogue métier inchangé, zéro erreur de validation. L’index technique a été activé ; ses octets précédents sont conservés et vérifiés, ainsi que les 124 autres fichiers protégés inchangés. Serveur local démarré, API courante et ancienne publication contrôlées. Revue et preuves : audits/2026-09-19-release-U433/. Aucun commit ni push.

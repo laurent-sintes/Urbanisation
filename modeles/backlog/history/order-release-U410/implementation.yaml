@@ -1,0 +1,21 @@
+source_refs:
+- U410
+- ELM245
+- CMP156
+model_before: modeles/backlog/history/order-release-U410/model-before.yaml
+model_before_sha256: 36d4194f65f1d0eb6001da7f1eb7128adef00dbcd1ffe23de891f6a77b23d2ca
+adopted_definition: Autoriser la prise en charge de tout ou partie d’un Order, ou d’un ensemble d’Orders liés, lorsque les
+  conditions de lancement individuelles et collectives sont satisfaites.
+definition_sha256: c863482f3cea7126b9883e3e5f53bd71ad428d9479fcd59301b0752bcfd83ed7
+behaviors: []
+delta:
+  nodes:
+    added: {}
+    removed: []
+    changed:
+      BHV039: 02e987108c8782d1cf18bff124d9de0a27942ee3da5c6a8cc2669d4f5f84e4d2
+      D04.o: 307cbac6f73ca000eb48872b5eede1135255884114f81456f7f35128ebd4bf6a
+  relations:
+    added: {}
+    removed: []
+    changed: {}

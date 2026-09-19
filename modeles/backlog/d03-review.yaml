@@ -1,5 +1,5 @@
 id: REVIEW-D03-U147
-as_of: '2026-09-14'
+as_of: '2026-09-17'
 source_refs:
 - U147
 - U148
@@ -11,7 +11,69 @@ source_refs:
 - U158
 - U159
 - U174
+- U218
+- U219
+- U220
+- U221
+- U260
+- U261
+- U262
+- U263
+- U264
 target_id: D03
+domain_boundary_U218:
+  date: '2026-09-15'
+  source_refs:
+  - U218
+  - U219
+  - U220
+  - U221
+  state: applied_to_backlog
+  user_statement: |-
+    D03 tente d'assouvir les orders.
+    D05 tente de gérer le stock
+  adopted_orientation:
+    D03: Satisfaction des Orders.
+    D05: Gestion du stock.
+  proposed_interpretation: D05 cherche les niveaux et la répartition souhaitables du stock et les ajustements nécessaires
+    ; D03 cherche les solutions de satisfaction des Orders, y compris les adaptations de ressources envisagées par CTP. Une
+    même opération de transfert peut servir les deux finalités sans établir un doublon de capacité.
+  limits: U219 adopte les finalités des domaines ; U220 retient Inventory Optimization comme nom de D05. Noms des capacités,
+    descriptions détaillées et règles restent proposés. Le réapprovisionnement automatique est une piste de périmètre U221
+    ; aucun ajout de capacité, fusion ou publication.
+  analysis_path: marche/operational-balancing-order-promising.md
+  history_before_U219:
+    date: '2026-09-15'
+    source_refs:
+    - U218
+    state: user_clarified
+    user_statement: |-
+      D03 tente d'assouvir les orders.
+      D05 tente de gérer le stock
+    adopted_orientation:
+      D03: Satisfaction des Orders.
+      D05: Gestion du stock.
+    proposed_interpretation: D05 cherche les niveaux et la répartition souhaitables du stock et les ajustements nécessaires
+      ; D03 cherche les solutions de satisfaction des Orders, y compris les adaptations de ressources envisagées par CTP.
+      Une même opération de transfert peut servir les deux finalités sans établir un doublon de capacité.
+    limits: Aucun nom, définition détaillée, fusion, retrait ou publication adopté par cette clarification. D01 conserve suivi,
+      mouvements, visibilité, inventaire, protection et réservation ; frontière détaillée avec D05 à préciser. La formulation
+      existante de Supply Assignment incluant des besoins prévisionnels reste à éprouver face à ce repère, sans changement
+      automatique de sa portée validée.
+    analysis_path: marche/operational-balancing-order-promising.md
+  adopted_finalities_U219:
+    D01: Connaître et fiabiliser le stock, enregistrer ses mouvements, le protéger et le réserver.
+    D03: Décider comment satisfaire les Orders avec les ressources disponibles ou adaptables.
+    D05: Décider du stock souhaitable et des ajustements nécessaires.
+  implementation_path: modeles/backlog/stock-order-boundary.yaml
+  current_D05_name: Inventory Optimization
+  alignment_U235:
+    source_refs:
+    - U235
+    record: modeles/backlog/d05-refactoring.yaml
+    note: D05 comporte quatre décisions de stock et Inventory Planning. La mise en action est distincte ; D03 conserve la
+      satisfaction des Orders et la portée de Supply Assignment. Les formulations antérieures sont historiques sur le découpage
+      D05.
 state: adopted
 action_order:
 - D03.a
@@ -194,3 +256,352 @@ vocabulary_work_status:
   point_5: under_instruction
   scope_note: La clôture du point 6 porte sur la discussion des demandes et Orders contextualisés ; elle ne valide pas toutes
     les formulations historiques. Ne pas rouvrir sans demande de Laurent.
+ctp_boundaries_U251:
+  source_refs:
+  - U250
+  - U251
+  state: urbanist_validated
+  target_id: D03.j
+  history_path: modeles/backlog/history/pre-U251.yaml
+  adopted_definition: Déterminer les possibilités de satisfaction d’un Order nécessitant une adaptation des ressources ou
+    des engagements, en mobilisant les décisions spécialisées et en explicitant les conditions de faisabilité et les impacts.
+  definition_sha256: 6a2984200c2a80430fd4a331972d06a415d3ee3552f5de341865fee9b44faae2
+  unchanged_adopted_fields:
+    name:
+      source_refs:
+      - U154
+      value: Capable-to-Promise (CTP)
+      sha256: 86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f
+    finality:
+      source_refs:
+      - U154
+      value: Établir à quelles conditions une promesse deviendrait réalisable après adaptation.
+      sha256: 3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90
+    nature:
+      source_refs:
+      - U154
+      value: decision
+      sha256: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+  adopted_boundaries:
+  - Order Prioritization porte les arbitrages entre commandes ; CTP mobilise les priorités.
+  - CTP établit les possibilités réalisables après adaptation ; Delivery Schedule Decision retient la répartition quantité/date.
+  - CTP établit faisabilité et conséquences des variantes ; PTP porte leur arbitrage économique.
+  - CTP peut identifier un changement de protection ou seuil nécessaire ; les décisions spécialisées portent les politiques
+    de stock.
+  - CTP mobilise D06 pour les possibilités de service compatibles avec le besoin Supply.
+  - D06 décide des variations du plan d’exécution ; CTP contribue au réexamen de satisfaction de l’Order si nécessaire.
+  - Les achats/transferts pour satisfaire un Order et les décisions D05 d’optimisation du stock gardent leurs finalités ;
+    pas de dépendance obligatoire de tout apport CTP à D05.
+  - CTP conserve une maille agrégée de faisabilité sous adaptation ; chaque résultat spécialisé conserve son responsable d’arbitrage.
+  proposed_details:
+    scope_sha256: 4e075d58c9fcf128922e6b8b7f3518c776386df18c9642bab7e9bb50ee5452c5
+    relation_ids:
+    - REL-CTP-ORDER-PRIORITIZATION
+    - REL-CTP-EXECUTION-SERVICE
+    - REL-CTP-STOCK-ALLOCATION
+    - REL-CTP-COVERAGE-TARGET
+    - REL-PTP-CTP-SCENARIOS
+    - REL-DELIVERY-SCHEDULE-CTP
+    glossary_term: TER045
+    note: Périmètre détaillé, exemple, qualification des relations et reprise lexicale proposés ; ne pas étendre le Go de
+      définition à ces ajouts.
+  open_points:
+  - Contrats précis et autorités d’application des adaptations.
+  - Responsabilité d’une éventuelle dérogation ponctuelle à une politique, distincte de sa redéfinition.
+  - 'Simulation avant enregistrement d’un Order : conserver la question antérieure ouverte.'
+  market_comparison:
+    id: CMP086
+    state: proposed
+    basis: Actualisation de CMP081 et des sources de l’audit U249 ; aucune nouvelle équivalence ni nouvelle consultation éditeur
+      revendiquée.
+atp_coverage_U260:
+  source_refs:
+  - U259
+  - U260
+  state: partial
+  target_id: D03.i
+  adopted_principle: ATP explicite une couverture réalisable suffisamment précise pour expliquer ses quantités et dates.
+  adoption_limit: Accord de principe sur la proposition précédente ; niveau d’identification des ressources, choix final entre
+    couvertures et formulation détaillée à préciser.
+  unchanged: Définition, finalité, nom et nature de D03.i conservés ; aucune adoption antérieure étendue ni capacité ajoutée.
+  proposed_definition: Établir les quantités et dates auxquelles une demande peut être satisfaite par les ressources présentes
+    ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces résultats réalisables.
+  open_points:
+  - Définir les ressources futures, sites et substitutions admissibles dans la situation de référence.
+  - Définir la précision utile de la couverture sans imposer une réservation ou un lien au lot.
+  - Attribuer le choix entre couvertures et son articulation avec PTP et Delivery Schedule Decision.
+  - Distinguer proposition, affectation, réservation, confirmation et réalisation ; préciser les effets et consommateurs.
+  glossaries:
+    methodological: MOD005
+    business:
+    - TER022
+    - TER044
+    - TER077
+    details_status: proposed
+  market_comparison:
+    id: CMP087
+    state: proposed
+    path: marche/atp-aatp-couverture.md
+    limit: aATP est un ensemble de fonctions produit ; ses frontières ne définissent pas automatiquement celles d’ATP/CTP
+      dans FLOW.
+atp_information_U261:
+  source_refs:
+  - U261
+  target_id: D03.i
+  state: under_review
+  user_clarifications:
+  - ATP calcule les engagements possibles pour une promesse ou un ensemble de promesses.
+  - Considérer le stock physique et ses allocations/réservations pour apprécier ce qui reste libre.
+  - Considérer tout espace de stockage admissible, dont entrepôt, magasin et darkstore.
+  - Considérer la disponibilité réelle, dont le délai de mobilisation selon la position et les conditions opérationnelles.
+  - 'Considérer les ressources futures : exemple utilisateur d’un arrivage dans 7 jours pouvant satisfaire une promesse dans
+    60 jours.'
+  scope_note: Reformulation des précisions utilisateur, verbatim U261. Aucune formule, interface ou nouvelle définition intégrale
+    de D03.i adoptée.
+  modeling_question:
+    preference: Éviter sous-capacité ; examiner variante ou niveau.
+    status: resolved_by_U262
+    market_comparison: CMP088
+    resolution: Comportement retenu comme niveau terminal sous la capacité ; voir capability_behavior_U262.
+  proposed_response:
+    status: historical_proposal_superseded_by_U262
+    dimensions:
+    - Admissibilité des quantités
+    - Périmètre spatial
+    - Disponibilité opérationnelle
+    - Disponibilité future
+    structure: Capacité stable, dimensions combinables et variantes ou profils contextualisés ; profondeur de décomposition
+      et maturité distinguées.
+    study: marche/capacites-variantes-niveaux-atp.md
+  limits:
+  - Aucun nouveau niveau, type de nœud ou relation créé.
+  - Pas de soustraction mécanique allocations/réservations sans connaître leurs recouvrements.
+  - Pour plusieurs promesses, prise en compte commune des consommations ; pas de double engagement implicite.
+  - RFID demeure une illustration ; D03 ne pilote pas par déduction les opérations internes des exécutants.
+capability_behavior_U262:
+  source_refs:
+  - U262
+  state: partial
+  glossary_ref: MOD006
+  adopted_scope: Comportement comme niveau de détail sous une capacité ; pas de niveau de décomposition supplémentaire en
+    dessous.
+  replaces: Proposition de variantes ou profils comme maille complémentaire dans la réponse U261.
+  proposed_atp_examples:
+  - name: Prise en compte des engagements existants
+    description: Établir les quantités admissibles pour la demande en tenant compte des allocations, protections et réservations,
+      sans double décompte.
+  - name: Mobilisation des stocks du réseau
+    description: Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins, darkstores
+      ou autres espaces de stockage.
+  - name: Prise en compte des délais de mobilisation
+    description: Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité opérationnelle.
+  - name: Projection des ressources futures
+    description: Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements concurrents,
+      pour une promesse ou un ensemble.
+  examples_status: Propositions U262 conservées pour historique ; définitions adoptées ensuite par U263, voir atp_behaviors_U263.
+  implementation_status: 'U264 : quatre nœuds behavior et rattachements explicites instanciés dans le backlog ; schéma et
+    Atlas adaptés. Publication distincte.'
+atp_behaviors_U263:
+  source_refs:
+  - U263
+  target_id: D03.i
+  state: partial
+  adopted_scope: Définitions des quatre comportements et décomposition d’ATP ; rester factuel sans qualification promotionnelle.
+  behaviors:
+  - name: Prise en compte des engagements existants
+    definition: Établir les quantités admissibles pour la demande en tenant compte des allocations, protections et réservations,
+      sans double décompte.
+    definition_sha256: 0155ffc7de93ece820d59008ef10e346133063e22de9b1c28d2d3c49ce08013d
+    source_refs:
+    - U261
+    - U262
+    - U263
+    review:
+      state: partial
+      adopted_scope: Définition et rattachement descriptif à ATP, U263.
+      proposed_scope: Intitulé français de présentation ; nom anglais à préciser.
+    node_id: BHV001
+    relation_id: REL-ATP-BHV001
+  - name: Mobilisation des stocks du réseau
+    definition: Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins, darkstores ou
+      autres espaces de stockage.
+    definition_sha256: 630d96f712d6b84482852aef66625de728ae9e3a710b879ee9d000db990c7a52
+    source_refs:
+    - U261
+    - U262
+    - U263
+    review:
+      state: partial
+      adopted_scope: Définition et rattachement descriptif à ATP, U263.
+      proposed_scope: Intitulé français de présentation ; nom anglais à préciser.
+    node_id: BHV002
+    relation_id: REL-ATP-BHV002
+  - name: Prise en compte des délais de mobilisation
+    definition: Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité opérationnelle.
+    definition_sha256: 3138a91122046a7730bae22c50c0396f44d966ee05e6602972ba0a8589af95ac
+    source_refs:
+    - U261
+    - U262
+    - U263
+    review:
+      state: partial
+      adopted_scope: Définition et rattachement descriptif à ATP, U263.
+      proposed_scope: Intitulé français de présentation ; nom anglais à préciser.
+    node_id: BHV003
+    relation_id: REL-ATP-BHV003
+  - name: Projection des ressources futures
+    definition: Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements concurrents,
+      pour une promesse ou un ensemble.
+    definition_sha256: 27833ffa7641434244c63aa4107acd1b23c66fd92033aa6c065be52135ba1b43
+    source_refs:
+    - U261
+    - U262
+    - U263
+    review:
+      state: partial
+      adopted_scope: Définition et rattachement descriptif à ATP, U263.
+      proposed_scope: Intitulé français de présentation ; nom anglais à préciser.
+    node_id: BHV004
+    relation_id: REL-ATP-BHV004
+  naming_rule: Décrire les informations, conditions et résultats. Advanced ATP/aATP reste le nom d’une offre SAP dans les
+    correspondances marché, pas un niveau de capacité FLOW.
+  limits:
+  - Pas de décomposition sous Comportement selon U262.
+  - Pas de catalogue exhaustif ni d’ordre obligatoire entre comportements.
+  - Pas de changement implicite des frontières ATP/CTP ni d’attribution du pilotage physique à ATP.
+  implementation_status: 'U264 : quatre nœuds behavior et rattachements explicites instanciés dans le backlog ; schéma et
+    Atlas adaptés. Publication distincte.'
+implementation_U264:
+  source_refs:
+  - U264
+  node_ids:
+  - BHV001
+  - BHV002
+  - BHV003
+  - BHV004
+  relation_type: contains
+  terminal: true
+  single_capability_parent: true
+  scope_note: Définitions U263 et rattachements adoptés ; noms anglais, finalités et périmètres proposés. Synthèse ATP mise
+    à jour sans extension des anciennes validations.
+  publication: Pas de release implicite.
+implementation_U290:
+  state: core_applied
+  registry: modeles/backlog/refactoring-implementation.yaml
+  source_refs:
+  - U290
+  note: Les accords historiques ci-dessus restent des preuves datées ; lire le modèle courant et le registre pour les valeurs
+    et rattachements après refonte.
+ctp_behaviors_U402:
+  status: integrated
+  source_refs:
+  - U402
+  - ELM241
+  - CMP152
+  parent_id: D03.j
+  behavior_ids:
+  - BHV075
+  - BHV076
+  - BHV077
+  entries:
+  - id: BHV075
+    candidate: P14
+    source: S07
+    name: Additional Supply Feasibility
+    definition: Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires, avec quantités, dates
+      et conditions de disponibilité.
+    example: 'Il manque 40 pièces : un apport fournisseur supplémentaire pourrait les rendre disponibles vendredi.'
+    finality: Expliciter les apports supplémentaires qui rendraient la commande satisfaisable et les conditions nécessaires
+      avant engagement.
+    detail: Un arrivage déjà prévu et admissible dans la situation de référence reste pris en compte par ATP. Ici, l’apport
+      supplémentaire est une hypothèse à rendre réalisable. La capacité ne crée pas l’achat ou la demande d’apport ; elle
+      ne suppose pas une acquisition quand le régime est consigné. Le fournisseur ou l’exécutant concerné fournit les possibilités
+      utiles. Replenishment Decision conserve l’objectif d’optimisation du stock ; tout apport pour satisfaire un Order ne
+      passe pas nécessairement par cette décision.
+  - id: BHV076
+    candidate: P15
+    source: S05
+    name: Fulfillment Alternative Feasibility
+    definition: Les possibilités obtenues en modifiant les modalités de satisfaction par rapport à la situation de référence.
+    example: La livraison standard ne permet pas de respecter la date ; une prestation express pourrait le permettre, sous
+      réserve de sa disponibilité et de son autorisation.
+    finality: Rendre visibles les solutions de satisfaction nécessitant une adaptation, leurs conditions et leurs effets sur
+      le service attendu.
+    detail: 'Un autre magasin déjà admissible dans la référence relève d’ATP : le caractère alternatif ne suffit pas à classer
+      une option dans CTP. Une substitution de produit exige une équivalence autorisée ; proximité de taille, couleur ou apparence
+      ne vaut pas acceptabilité. Execution Service Decision et Execution Capacity Visibility conservent respectivement choix
+      de service et information de capacité contextualisée. CTP exploite leurs résultats sans créer une seconde décision de
+      service. Un changement de date déjà possible dans la référence ne devient pas automatiquement CTP.'
+  - id: BHV077
+    candidate: P16
+    source: S06
+    name: Commitment Rebalancing Feasibility
+    definition: Les possibilités obtenues en révisant des engagements modifiables, en explicitant les conséquences sur les
+      commandes concernées.
+    example: Une commande urgente pourrait être satisfaite si une autre accepte un décalage de deux jours ; les engagements
+      gelés restent préservés.
+    finality: Rendre visibles les possibilités et conséquences croisées d’une révision d’engagements avant l’arbitrage collectif.
+    detail: CTP ne choisit pas seul quelle commande sacrifier. Il explicite les possibilités et impacts permettant à Fulfillment
+      Plan Decision d’arbitrer, avec Order Prioritization, PTP et les autres décisions utiles. La modifiabilité est une condition
+      à établir, non une autorisation déduite de l’urgence. Une même ressource ne peut soutenir des possibilités collectivement
+      incompatibles. Réservation opposable et gel restent respectés ; aucune libération ou révision implicite. Promise Revision
+      conserve la modification autorisée de l’engagement et Supply Reassignment l’application des liens révisés.
+  boundary: '[CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o)
+    détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées.
+    [Supply Assignment](model:D02.e) applique les affectations retenues ; [Promise Management](model:D03.n) porte les modifications
+    autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche
+    pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée.'
+  decomposition_rationale: 'Distinguer trois leviers métier : obtenir davantage de ressources, changer la solution de satisfaction,
+    ou réexaminer des engagements existants. Les conditions, les parties concernées et les conséquences diffèrent réellement.
+    La décomposition rend explicite ce qui doit changer pour rendre une commande satisfaisable, sans confondre faisabilité,
+    choix collectif et application. Plusieurs leviers peuvent se combiner.'
+  sources:
+  - id: S07
+    vendor: Microsoft
+    native_label: Calculate delivery dates using CTP
+    native_id: null
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+    edition: Documentation évolutive ; mise à jour affichée 2026-07-27
+    consulted_on: '2026-09-18'
+    locator: How CTP compares to ATP ; exemple de fabrication de A à partir de B et C
+    nature: documentation
+    access: Texte primaire ouvert et consulté avant la proposition approuvée U402.
+    observed_fact: CTP vérifie matières et capacités pour déterminer les dates réalisables, notamment pour assembler ou produire
+      à la demande.
+    limits: Appui au mécanisme d’apport supplémentaire ; le CTP FLOW est plus large que ce cas de fabrication. Aucun processus
+      de production interne FLOW ni équivalence de taxonomie déduit.
+    reuse: Synthèse sélective et lien ; aucune importation substantielle.
+  - id: S05
+    vendor: SAP
+    native_label: Alternative-Based Confirmation
+    native_id: null
+    url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    edition: S/4HANA ; cours couvrant plusieurs évolutions
+    consulted_on: '2026-09-18'
+    locator: 'Advanced ATP Scenario: Alternative-Based Confirmation (ABC)'
+    nature: documentation
+    access: Texte primaire ouvert et consulté avant la proposition approuvée U402.
+    observed_fact: Alternative-Based Confirmation examine des sites alternatifs et des produits de substitution selon des
+      règles.
+    limits: SAP expose ABC sous aATP. FLOW distingue alternatives déjà admissibles (ATP) et adaptations de la référence (CTP).
+      L’exemple express est une illustration FLOW ; cette page ne prouve pas un mécanisme ABC de choix de transport express.
+    reuse: Synthèse sélective et lien ; aucune importation substantielle.
+  - id: S06
+    vendor: SAP
+    native_label: Exploring Backorder Processing
+    native_id: null
+    url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+    edition: S/4HANA Cloud Public Edition ; cours évolutif
+    consulted_on: '2026-09-18'
+    locator: Backorder Processing Overview ; Confirmation Strategies
+    nature: documentation
+    access: Texte primaire ouvert et consulté avant la proposition approuvée U402.
+    observed_fact: BOP réexamine les confirmations selon disponibilités et priorités, avec stratégies de préservation, amélioration
+      et redistribution.
+    limits: 'Le processus SAP traverse plusieurs responsabilités FLOW : faisabilité CTP, décision collective, priorités, révision
+      de promesse et application des affectations. BOP ne correspond pas à un comportement CTP unique ni à une autorité de
+      CTP pour choisir les perdants.'
+    reuse: Synthèse sélective et lien ; aucune importation substantielle.
+  adoption_scope: Noms, responsabilités présentées, exemples et parent adoptés. Finalités, descriptions développées et correspondances
+    gardent leur qualification éditoriale.
+  implementation_ref: modeles/backlog/history/ctp-behaviors-U402/implementation.yaml

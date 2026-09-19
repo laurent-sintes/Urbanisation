@@ -36,3 +36,8 @@ Cette réorientation remplace la recommandation précédente d’une simple capa
 ## Clarification U159 — résultat propre de la simulation
 
 Laurent distingue ATP/CTP/PTP, qui calculent des solutions, et la simulation, qui en mesure les impacts globaux. Cela répond à la réserve de doublon formulée en U158 : les aptitudes peuvent partager des calculs tout en produisant des résultats différents. Une définition de travail est proposée dans l’annexe JSON : mesurer les conséquences globales d’un scénario par rapport à une situation de référence, sans l’appliquer. Exemples d’impacts à valider : commandes améliorées/dégradées, reliquats, mobilisation de ressources et coûts. Aucune liste d’indicateurs ni nouvelle capacité validée implicitement ; aucune nouvelle comparaison de marché revendiquée.
+
+
+## Direction courante U413 — Order Backlog Management
+
+D03 est renommé Order Backlog Management. Le mandat adopté comprend le travail collectif du carnet et la préparation de son engagement vers les processus ; les décisions spécialisées le nourrissent. D04 conserve la demande selon son intention. Réexamen ciblé de Lifecycle/Structuring dans modeles/backlog/order-backlog-review.yaml ; aucun déplacement en bloc ni parent de comportement adopté. Les réserves et propositions U157–U159 ci-dessus restent historiques. Comparaison actualisée CMP157.

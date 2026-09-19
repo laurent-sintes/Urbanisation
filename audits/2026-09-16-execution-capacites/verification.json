@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "untouched_nodes_preserved": true,
+    "untouched_relations_preserved": true,
+    "eight_direct_capabilities": true,
+    "retired_ids_absent": true,
+    "no_retired_relation_endpoints": true,
+    "protected_files_unchanged": true,
+    "adaptation_to_d03": true,
+    "model_source_hashes_valid": true
+  },
+  "protected_files": 112,
+  "nodes": 59,
+  "capabilities": 41,
+  "relations": 82
+}

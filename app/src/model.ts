@@ -82,6 +82,16 @@ export function adaptPublication(input: RawPublication): PublishedModel {
     parentByChild.set(relation.targetId, relation.sourceId);
   }
   for (const node of nodes) {
+    if (node.kind === 'behavior') {
+      const parent = nodeById.get(parentByChild.get(node.id) ?? '');
+      const relation = relations.find(edge => isStructural(edge) && edge.targetId === node.id);
+      if (parent?.kind !== 'capability' || relation?.type !== 'contains' || parent.layer !== node.layer) {
+        throw new Error(`Comportement sans rattachement unique à une capacité de même couche : ${node.id}.`);
+      }
+      if (relations.some(edge => isStructural(edge) && edge.sourceId === node.id)) {
+        throw new Error(`Un comportement est un niveau terminal : ${node.id}.`);
+      }
+    }
     const seen = new Set<string>();
     let cursor: string | undefined = node.id;
     while (cursor !== undefined) {
@@ -120,6 +130,13 @@ export function rootsOf(model: PublishedModel): AtlasNode[] {
   return model.nodes.filter(node => !children.has(node.id));
 }
 
+/** Domain/reference cards expose their capabilities without changing the navigation hierarchy. */
+export function hasCapabilityCards(model: PublishedModel, scopeId?: string): boolean {
+  const visible = scopeId ? childrenOf(model, scopeId) : rootsOf(model);
+  return visible.some(node => node.kind === 'domain' || node.kind === 'reference'
+    || (node.kind === 'capability' && childrenOf(model, node.id).some(child => child.kind === 'behavior')));
+}
+
 /** Returns explicit ancestors followed by the selected node. A presentation group stays a group. */
 export function lineageOf(model: PublishedModel, id: string): AtlasNode[] {
   const result: AtlasNode[] = [];
@@ -145,7 +162,14 @@ export function descendantsOf(model: PublishedModel, id: string): AtlasNode[] {
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
 function fieldText(fields: JsonRecord): string {
   // Search only values actually present in the selected publication.
-  return Object.values(fields).map(value => typeof value === 'string' ? value : Array.isArray(value) ? value.filter(item => typeof item === 'string').join(' ') : '').join(' ');
+  return searchableText(fields);
+}
+
+export function searchableText(value: unknown): string {
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) return value.map(searchableText).join(' ');
+  if (value && typeof value === 'object') return Object.values(value).map(searchableText).join(' ');
+  return '';
 }
 
 export function searchModel(model: PublishedModel, query: string): AtlasNode[] {

@@ -1,0 +1,55 @@
+source_refs:
+- U390
+- U391
+- ELM235
+- CMP146
+model_before: audits/2026-09-18-purchase-order-U391/model-before.yaml
+model_before_sha256: 5cab3e681cedef51aabcc136f42511ec084f9845a4d871e9e80c377dd998a647
+delta:
+  nodes:
+    added:
+      BHV058: 39a2834712c08051d9c8ca3396b3b91d39f6ad9f8bd1b04f110ff1a67bfd3885
+      BHV059: 949a7f97d848e5fe526c6c65f12d894cc9e5edf2001f94013a39353a4bfb0ede
+      BHV060: 4113429b1501493dcd202ac021e7c66d1a2d40a839ef01f08dcb8bcf02fc250c
+    changed:
+      D04.j: f3a6016b59b3ea7f560d7845dfc263d2c6cdfa146047da9f4415e0d4f0616fe6
+    removed: []
+  relations:
+    added:
+      REL-BEHAVIOR-BHV058: 984f96bc3ef256ed3f2dbd387d8550d921e700602da70220780750519937c09d
+      REL-BEHAVIOR-BHV059: 970c9253d6db5b6178c6cf04b5b464fc0d0d5b6bb17def5914a64205900912b7
+      REL-BEHAVIOR-BHV060: f0b7cd05cfe7dde7ce694e66569fa293e5991a2e7cdecfb6de1cc60e304a7152
+      REL-NEEDS-U391-DIRECT-SALES: 706bd5492f0e08bd1beb037194dad1676ea68b97deb5294d7a3475b0dea9d959
+      REL-NEEDS-U391-SERVICE-ORDER: b0d3181ab2fdb32fca32f52034a4a2948e68961a2651675caf8946615620fb91
+      REL-NEEDS-U391-STOCK-FACTS: b2c00c40db20b9161bb5adb1723065a075d3811ea903cd7b2fefd9b0a870f34e
+    changed: {}
+    removed: []
+behaviors: []
+adopted_behaviors:
+- node_id: BHV058
+  parent_id: D04.j
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 63dfbb1f517407137c1751837c7d660a7fb3330323109159105e59fdac0daaf7
+    definition: 578bc8d5e6fa5ad47235af3042f984a969ae162e43dfe142433c4f34ad1696b4
+- node_id: BHV059
+  parent_id: D04.j
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: b1354c98d184e89c3b00db40d099b0700e838d758b38c2cec4fe595e8df1df0d
+    definition: fe1b7b43e32e658dc14f45923e781258ae7b4eed38f935a5f084e2f895a53fd7
+- node_id: BHV060
+  parent_id: D04.j
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 157a3dda62e4b7a5e58573ad21e901b3f052fc17716c2c8b36cf0a416783264b
+    definition: 43ab582da72b465682fc9edc7775edb2c2a2ad7328f80fa08d0b0ca4574fe8cb
+capability_id: D04.j
+scope: Trois parcours et élargissement aux prestations adoptés ; parent développé et contrats éditoriaux ; consignation exclue
+  du découpage achat.

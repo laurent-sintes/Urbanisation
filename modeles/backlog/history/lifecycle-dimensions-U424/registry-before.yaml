@@ -1,0 +1,1074 @@
+id: REFACTORING-U290
+as_of: '2026-09-17'
+source_refs:
+- U286
+- U287
+- U288
+- U289
+- U290
+state: core_implemented
+baseline: audits/2026-09-17-refonte-appliquee/model-before.yaml
+reviewed_target: audits/2026-09-17-refonte-appliquee/refactoring-target-before.yaml
+applied_names:
+  PROMISE-MANAGEMENT: D03.n
+  PLAN-CONSTRUCT: BHV005
+  PLAN-SIMULATE: BHV006
+  PLAN-ADAPT: BHV016
+  PROTECT-GROUP: BHV017
+  PROTECT-CAP: BHV018
+  PROTECT-BUFFER: BHV019
+  PROTECT-REPLENISH: BHV020
+  PROMISE-PROPOSE: BHV021
+  PROMISE-CONFIRM: BHV022
+  PROMISE-REVISE: BHV023
+retired_node_redirects:
+  D03.a: BHV021
+  D03.b: BHV022
+  D03.c: BHV023
+  BHV007: D05.f
+  BHV008: D05.f
+  BHV009: D05.f
+  BHV010: BHV006
+  BHV011: D02.b
+  BHV012: D02.b
+  BHV013: D02.b
+  BHV014: D02.b
+  BHV015: D02.b
+retired_ids_never_reuse:
+- BHV007
+- BHV008
+- BHV009
+- BHV010
+- BHV011
+- BHV012
+- BHV013
+- BHV014
+- BHV015
+- D03.a
+- D03.b
+- D03.c
+- D04.p
+capability_merge:
+  source_ids:
+  - D03.a
+  - D03.b
+  - D03.c
+  target_id: D03.n
+  behavior_ids:
+  - BHV021
+  - BHV022
+  - BHV023
+relation_migration:
+- id: REL-MEMBER-D03.a
+  action: retired_structure
+  before:
+    id: REL-MEMBER-D03.a
+    revision: 1
+    type: contains
+    source_id: D03
+    target_id: D03.a
+    source_refs:
+    - P81
+    - P83
+    - U52
+    - U75
+    - U80
+    - U81
+    - U95
+    - F201
+    - C63
+    - CMP052
+    review:
+      state: accepted
+      note: Liste adoptée dans Order Promising, y compris D02.e.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - U75
+      - U95
+      validated_fields:
+      - source_id
+      - target_id
+      - type
+      value_sha256:
+        source_id: cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce
+        target_id: b336074878c6efa0c50922444982bb7f96ab73a522e09b28b4388130feb657db
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+      note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+        de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D03.b
+  action: retired_structure
+  before:
+    id: REL-MEMBER-D03.b
+    revision: 1
+    type: contains
+    source_id: D03
+    target_id: D03.b
+    source_refs:
+    - P81
+    - P83
+    - U52
+    - U75
+    - U80
+    - U81
+    - U95
+    - F201
+    - C63
+    - CMP052
+    review:
+      state: accepted
+      note: Liste adoptée dans Order Promising, y compris D02.e.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - U75
+      - U95
+      validated_fields:
+      - source_id
+      - target_id
+      - type
+      value_sha256:
+        source_id: cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce
+        target_id: 531e3e958ac6f4057a9db10be8cc1d4f5fa090760fc8a75b176b0f216abc2771
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+      note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+        de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D03.c
+  action: retired_structure
+  before:
+    id: REL-MEMBER-D03.c
+    revision: 1
+    type: contains
+    source_id: D03
+    target_id: D03.c
+    source_refs:
+    - P81
+    - P83
+    - U52
+    - U75
+    - U80
+    - U81
+    - U95
+    - F201
+    - C63
+    - CMP052
+    review:
+      state: accepted
+      note: Liste adoptée dans Order Promising, y compris D02.e.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - U75
+      - U95
+      validated_fields:
+      - source_id
+      - target_id
+      - type
+      value_sha256:
+        source_id: cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce
+        target_id: fa80906c4e761662ceeb7b6d271558853e957544ba4ed4ccc5a1c4324132808a
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+      note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+        de reprise du cycle, pas date historique de l’accord.
+- id: REL-ILL-001
+  action: redirected_to_same_responsibility
+  before:
+    id: REL-ILL-001
+    revision: 1
+    type: confirms
+    source_id: D03.b
+    target_id: ILL-OBJ-01
+    source_refs:
+    - P80
+    review:
+      state: illustration
+      note: Relation illustrative importée ; identité nouvellement allouée, aucune validation métier.
+    lifecycle:
+      state: ai_proposed
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      validated_fields: []
+      value_sha256: {}
+      note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
+        du cycle, pas date historique de l’accord.
+  after:
+    id: REL-ILL-001
+    revision: 1
+    type: confirms
+    source_id: D03.n
+    target_id: ILL-OBJ-01
+    source_refs:
+    - P80
+    - U290
+    review:
+      state: under_review
+      note: Intégration U290 ; détails éditoriaux proposés.
+    lifecycle:
+      state: under_instruction
+      recorded_at: '2026-09-17T13:29:45.653508Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      - U290
+      validated_fields: []
+      value_sha256: {}
+      note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-ILL-002
+  action: redirected_to_same_responsibility
+  before:
+    id: REL-ILL-002
+    revision: 1
+    type: associated-document
+    source_id: D03.b
+    target_id: ILL-DOC-01
+    source_refs:
+    - P80
+    review:
+      state: illustration
+      note: Relation illustrative importée ; identité nouvellement allouée, aucune validation métier.
+    lifecycle:
+      state: ai_proposed
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      validated_fields: []
+      value_sha256: {}
+      note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
+        du cycle, pas date historique de l’accord.
+  after:
+    id: REL-ILL-002
+    revision: 1
+    type: associated-document
+    source_id: D03.n
+    target_id: ILL-DOC-01
+    source_refs:
+    - P80
+    - U290
+    review:
+      state: under_review
+      note: Intégration U290 ; détails éditoriaux proposés.
+    lifecycle:
+      state: under_instruction
+      recorded_at: '2026-09-17T13:29:45.653508Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      - U290
+      validated_fields: []
+      value_sha256: {}
+      note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-ILL-003
+  action: redirected_to_same_responsibility
+  before:
+    id: REL-ILL-003
+    revision: 1
+    type: observed-result
+    source_id: D03.b
+    target_id: ILL-EVT-01
+    source_refs:
+    - P80
+    review:
+      state: illustration
+      note: Relation illustrative importée ; identité nouvellement allouée, aucune validation métier.
+    lifecycle:
+      state: ai_proposed
+      recorded_at: '2026-09-13T16:33:38.266961Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      validated_fields: []
+      value_sha256: {}
+      note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
+        du cycle, pas date historique de l’accord.
+  after:
+    id: REL-ILL-003
+    revision: 1
+    type: observed-result
+    source_id: D03.n
+    target_id: ILL-EVT-01
+    source_refs:
+    - P80
+    - U290
+    review:
+      state: under_review
+      note: Intégration U290 ; détails éditoriaux proposés.
+    lifecycle:
+      state: under_instruction
+      recorded_at: '2026-09-17T13:29:45.653508Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - P80
+      - U290
+      validated_fields: []
+      value_sha256: {}
+      note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+  action: redirected_to_same_responsibility
+  before:
+    id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+    revision: 1
+    type: relates-to
+    source_id: D06.f
+    target_id: D03.c
+    source_refs:
+    - U245
+    - U246
+    - U247
+    review:
+      state: proposed
+      note: Projection explicite des responsabilités ; qualification détaillée proposée.
+    qualification:
+      meaning: Si une variation remet la promesse Supply en cause, Adaptation Decision fournit les faits et variantes à D03
+        pour son réexamen ; elle ne révise pas elle-même la promesse.
+      scope: Relation métier sans hiérarchie entre capacités ni séquence technique universelle.
+      conditions: []
+      effects: []
+    lifecycle:
+      state: ai_proposed
+      recorded_at: '2026-09-16T09:38:37.449364Z'
+      recorded_by: Codex
+      source_refs:
+      - U245
+      - U246
+      - U247
+      validated_fields: []
+      value_sha256: {}
+      note: 'U247 : portée limitée au dernier tableau et à la définition présentée de Service Order Management ; nom Capacity
+        Visibility selon U246. Compléments détaillés proposés.'
+  after:
+    id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+    revision: 1
+    type: relates-to
+    source_id: D06.f
+    target_id: BHV023
+    source_refs:
+    - U245
+    - U246
+    - U247
+    - U290
+    review:
+      state: under_review
+      note: Intégration U290 ; détails éditoriaux proposés.
+    qualification:
+      meaning: Si une variation remet la promesse Supply en cause, Adaptation Decision fournit les faits et variantes à D03
+        pour son réexamen ; elle ne révise pas elle-même la promesse.
+      scope: Relation métier sans hiérarchie entre capacités ni séquence technique universelle.
+      conditions: []
+      effects: []
+    lifecycle:
+      state: under_instruction
+      recorded_at: '2026-09-17T13:29:45.653508Z'
+      recorded_by: Codex
+      source_refs:
+      - U245
+      - U246
+      - U247
+      - U290
+      validated_fields: []
+      value_sha256: {}
+      note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-PLANNING-BHV010
+  action: retired_structure
+  before:
+    id: REL-PLANNING-BHV010
+    revision: 1
+    type: contains
+    source_id: D05.f
+    target_id: BHV010
+    source_refs:
+    - U270
+    - U271
+    review:
+      state: accepted
+      note: Sixième comportement terminal d’Inventory Planning adopté U271 ; aucun niveau supplémentaire.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T08:04:08.342614Z'
+      recorded_by: Codex
+      source_refs:
+      - U271
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
+        target_id: 6817420ea01c8a4f1015f1de4d7aa214afb98945a97e61bbe3cf8fb03d88c9ab
+      note: Sixième comportement terminal d’Inventory Planning adopté U271 ; aucun niveau supplémentaire.
+- id: REL-PLANNING-BHV007
+  action: retired_structure
+  before:
+    id: REL-PLANNING-BHV007
+    revision: 1
+    type: contains
+    source_id: D05.f
+    target_id: BHV007
+    source_refs:
+    - U267
+    - U269
+    review:
+      state: accepted
+      note: Comportement terminal d’Inventory Planning adopté U269.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T07:54:46.215874Z'
+      recorded_by: Codex
+      source_refs:
+      - U269
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
+        target_id: 49a3a2951f0049d517e492807d0a70e96ad7880bef9a47b2dc21a69b44cbe9e8
+      note: Rattachement adopté avec le découpage présenté.
+- id: REL-PLANNING-BHV008
+  action: retired_structure
+  before:
+    id: REL-PLANNING-BHV008
+    revision: 1
+    type: contains
+    source_id: D05.f
+    target_id: BHV008
+    source_refs:
+    - U267
+    - U269
+    review:
+      state: accepted
+      note: Comportement terminal d’Inventory Planning adopté U269.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T07:54:46.216004Z'
+      recorded_by: Codex
+      source_refs:
+      - U269
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
+        target_id: 6ae299302537a2d376345e97f6fe916d7332d4f5ca5a1946b8862f8a0e2f7299
+      note: Rattachement adopté avec le découpage présenté.
+- id: REL-PLANNING-BHV009
+  action: retired_structure
+  before:
+    id: REL-PLANNING-BHV009
+    revision: 1
+    type: contains
+    source_id: D05.f
+    target_id: BHV009
+    source_refs:
+    - U267
+    - U269
+    review:
+      state: accepted
+      note: Comportement terminal d’Inventory Planning adopté U269.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T07:54:46.216114Z'
+      recorded_by: Codex
+      source_refs:
+      - U269
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
+        target_id: e808abe02b86a5887d51a1728e1f67d3e9e15accd536be8a14214e34a6730489
+      note: Rattachement adopté avec le découpage présenté.
+- id: REL-PROTECTION-BHV011
+  action: retired_structure
+  before:
+    id: REL-PROTECTION-BHV011
+    revision: 1
+    type: contains
+    source_id: D02.b
+    target_id: BHV011
+    source_refs:
+    - U276
+    review:
+      state: accepted
+      note: Allocation est un comportement de Supply Protection, U276.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T08:45:40.823873Z'
+      recorded_by: Codex
+      source_refs:
+      - U276
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8
+        target_id: b9c1d825b5e1fbc219417ea95c08cb00f3c7a533aa36d94d93f248aae01e82ca
+      note: Allocation est un comportement de Supply Protection, U276.
+- id: REL-PROTECTION-BHV012
+  action: retired_structure
+  before:
+    id: REL-PROTECTION-BHV012
+    revision: 1
+    type: contains
+    source_id: D02.b
+    target_id: BHV012
+    source_refs:
+    - U278
+    review:
+      state: accepted
+      note: Comportement pair de Supply Protection, découpage U278.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T09:29:29.943305Z'
+      recorded_by: Codex
+      source_refs:
+      - U278
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8
+        target_id: 50196874800180871d6e1489967741f318ac7f931d66f4c46bdc8d2ea88df1fb
+      note: Comportement pair de Supply Protection, découpage U278.
+- id: REL-PROTECTION-BHV013
+  action: retired_structure
+  before:
+    id: REL-PROTECTION-BHV013
+    revision: 1
+    type: contains
+    source_id: D02.b
+    target_id: BHV013
+    source_refs:
+    - U278
+    review:
+      state: accepted
+      note: Comportement pair de Supply Protection, découpage U278.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T09:29:29.943327Z'
+      recorded_by: Codex
+      source_refs:
+      - U278
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8
+        target_id: c1198f87c44f65c9af5dc0192877f7f613737d33d08c45f5ec1fcd2570a9ac92
+      note: Comportement pair de Supply Protection, découpage U278.
+- id: REL-PROTECTION-BHV014
+  action: retired_structure
+  before:
+    id: REL-PROTECTION-BHV014
+    revision: 1
+    type: contains
+    source_id: D02.b
+    target_id: BHV014
+    source_refs:
+    - U278
+    review:
+      state: accepted
+      note: Comportement pair de Supply Protection, découpage U278.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T09:29:29.943349Z'
+      recorded_by: Codex
+      source_refs:
+      - U278
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8
+        target_id: c79dcb3b0ef78b64cd9f482480f73d7d3829645da2a901cd094adc50ddc22bf1
+      note: Comportement pair de Supply Protection, découpage U278.
+- id: REL-PROTECTION-BHV015
+  action: retired_structure
+  before:
+    id: REL-PROTECTION-BHV015
+    revision: 1
+    type: contains
+    source_id: D02.b
+    target_id: BHV015
+    source_refs:
+    - U278
+    review:
+      state: accepted
+      note: Comportement pair de Supply Protection, découpage U278.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-17T09:29:29.943370Z'
+      recorded_by: Codex
+      source_refs:
+      - U278
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: ebd4a98424d6ec2240c8e2546c670eb0aa1860e9123f7d9c5ef87bfedd1d2ef8
+        target_id: 23859f1fbed60363eeb713b11014807bee13c21a0a4b3fa50f12762a1df6c7b3
+      note: Comportement pair de Supply Protection, découpage U278.
+dependency_contracts:
+  NEEDS-D03.b-D03.a:
+    action: internal_to_promise_management
+  NEEDS-D01.f-D01.g:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-002
+  NEEDS-D01.f-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-003
+  NEEDS-D01.g-D01.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-004
+  NEEDS-D01.g-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-005
+  NEEDS-D01.c-D01.f:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-006
+  NEEDS-D01.d-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-007
+  NEEDS-D02.b-D05.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-008
+  NEEDS-D02.b-D05.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-009
+  NEEDS-D02.c-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-010
+  NEEDS-D02.c-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-011
+  NEEDS-D03.a-D03.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-012
+  NEEDS-D03.c-D03.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-012
+  NEEDS-D03.a-D03.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-014
+  NEEDS-D03.c-D03.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-014
+  NEEDS-D03.a-D03.k:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-016
+  NEEDS-D03.a-D03.l:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-017
+  NEEDS-D03.b-D02.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-018
+  NEEDS-D03.b-D02.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-019
+  NEEDS-D03.c-D03.m:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-020
+  NEEDS-D03.c-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-021
+  NEEDS-D03.c-D06.f:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-022
+  NEEDS-D02.e-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-023
+  NEEDS-D02.e-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-024
+  NEEDS-D02.e-D02.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-025
+  NEEDS-D02.e-D03.m:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-026
+  NEEDS-D03.i-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-027
+  NEEDS-D03.i-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-028
+  NEEDS-D03.i-D02.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-029
+  NEEDS-D03.i-D02.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-030
+  NEEDS-D03.i-D06.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-031
+  NEEDS-D03.i-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-032
+  NEEDS-D03.j-D03.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-033
+  NEEDS-D03.j-D03.m:
+    action: integrated_contract_under_instruction
+    relation_id: REL-CTP-ORDER-PRIORITIZATION
+  NEEDS-D03.j-D06.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-CTP-EXECUTION-SERVICE
+  NEEDS-D03.j-D05.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-CTP-COVERAGE-TARGET
+  NEEDS-D03.j-D05.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-CTP-STOCK-ALLOCATION
+  NEEDS-D03.k-D03.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-038
+  NEEDS-D03.k-D03.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-PTP-CTP-SCENARIOS
+  NEEDS-D03.k-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-040
+  NEEDS-D03.l-D03.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-041
+  NEEDS-D03.l-D03.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-DELIVERY-SCHEDULE-CTP
+  NEEDS-D03.l-D03.k:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-043
+  NEEDS-D03.l-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-044
+  NEEDS-D03.m-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-045
+  NEEDS-D04.i-D04.n:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-046
+  NEEDS-D04.i-D04.o:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-047
+  NEEDS-D04.i-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-048
+  NEEDS-D04.i-D03.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-049
+  NEEDS-D04.i-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-050
+  NEEDS-D04.i-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-051
+  NEEDS-D04.i-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-052
+  NEEDS-D04.i-D12.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-053
+  NEEDS-D04.j-D04.n:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-054
+  NEEDS-D04.j-D04.o:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-055
+  NEEDS-D04.j-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-056
+  NEEDS-D04.j-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-057
+  NEEDS-D04.j-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-058
+  NEEDS-D04.j-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-059
+  NEEDS-D04.k-D04.n:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-060
+  NEEDS-D04.k-D04.o:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-061
+  NEEDS-D04.k-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-062
+  NEEDS-D04.k-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-063
+  NEEDS-D04.k-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-064
+  NEEDS-D04.l-D04.n:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-065
+  NEEDS-D04.l-D04.o:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-066
+  NEEDS-D04.l-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-067
+  NEEDS-D04.l-D04.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-068
+  NEEDS-D04.l-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-069
+  NEEDS-D04.m-D04.n:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-070
+  NEEDS-D04.m-D04.o:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-071
+  NEEDS-D04.m-D07.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-072
+  NEEDS-D04.m-D04.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-073
+  NEEDS-D04.m-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-074
+  NEEDS-D04.m-D11.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-075
+  NEEDS-D04.n-D03.l:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-076
+  NEEDS-D04.o-D03.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-077
+  NEEDS-D04.o-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-078
+  NEEDS-D05.a-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-079
+  NEEDS-D05.a-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-080
+  NEEDS-D05.a-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-081
+  NEEDS-D05.d-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-082
+  NEEDS-D05.d-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-083
+  NEEDS-D05.d-D05.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-084
+  NEEDS-D05.e-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-085
+  NEEDS-D05.e-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-086
+  NEEDS-D05.e-D05.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-087
+  NEEDS-D05.e-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-088
+  NEEDS-D05.e-D04.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-089
+  NEEDS-D05.e-D04.k:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-090
+  NEEDS-D05.c-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-091
+  NEEDS-D05.c-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-092
+  NEEDS-D05.c-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-093
+  NEEDS-D05.c-D05.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-094
+  NEEDS-D05.f-D05.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-INVENTORY-PLANNING-D05.a
+  NEEDS-D05.f-D05.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-INVENTORY-PLANNING-D05.d
+  NEEDS-D05.f-D05.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-INVENTORY-PLANNING-D05.e
+  NEEDS-D05.f-D05.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-INVENTORY-PLANNING-D05.c
+  NEEDS-D05.f-D01.c:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-099
+  NEEDS-D05.f-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-100
+  NEEDS-D05.f-D02.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-101
+  NEEDS-D05.f-D04.j:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-102
+  NEEDS-D05.f-D04.k:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-103
+  NEEDS-D05.f-D06.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-104
+  NEEDS-D06.b-D14.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-105
+  NEEDS-D07.a-D14.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-106
+  NEEDS-D07.a-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-107
+  NEEDS-D07.a-D04.i:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-108
+  NEEDS-D06.e-D07.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-109
+  NEEDS-D06.e-D14.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-110
+  NEEDS-D06.e-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-111
+  NEEDS-D06.e-D06.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-EXECUTION-SERVICE-CAPACITY
+  NEEDS-D06.f-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-113
+  NEEDS-D06.f-D07.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-114
+  NEEDS-D06.f-D06.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-EXECUTION-ADAPTATION-SERVICE
+  NEEDS-D06.f-D06.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-EXECUTION-ADAPTATION-CAPACITY
+  NEEDS-D06.d-D07.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-117
+  NEEDS-D06.d-D06.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-118
+  NEEDS-D06.d-D06.f:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-119
+  NEEDS-D06.d-D07.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-EXECUTION-ORCHESTRATION-COMMITMENTS
+  NEEDS-D06.d-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-121
+  NEEDS-D07.b-D07.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-122
+  NEEDS-D07.b-D06.e:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-123
+  NEEDS-D07.b-D14.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-124
+  NEEDS-D07.d-D07.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-125
+  NEEDS-D07.c-D07.b:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-126
+  NEEDS-D07.c-D07.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-127
+  NEEDS-D11.a-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-128
+  NEEDS-D11.a-D12.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-129
+  NEEDS-D12.a-D08.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-130
+  NEEDS-D13.a-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-131
+  NEEDS-D14.a-D09.d:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-132
+  NEEDS-D14.a-D13.a:
+    action: integrated_contract_under_instruction
+    relation_id: REL-NEEDS-U290-133
+decision_scope: U290 autorise la refonte présentée et adopte la valeur multidimensionnelle. Les nouveaux détails éditoriaux
+  et contrats gardent leurs statuts proposés ; les accords antérieurs ne sont conservés que pour leurs valeurs inchangées.
+open_questions:
+- 'A3 : articulation réservation/affectation et décompte sans doublon.'
+- 'A6 : quatre comportements optionnels Stocktaking/Orchestration non créés.'
+- 'A7 : contrats détaillés intégrés sous instruction, données/conditions à éprouver.'
+- 'A8 : application de plan explicitée dans D04 ; parent transverse du comportement encore ouvert.'
+migration_choices:
+- D03.n est une nouvelle capacité ; D03.a/b/c redirigent vers leurs comportements respectifs pour conserver la précision des
+  liens métier.
+- D05.d renommé Group Protection Decision à périmètre conservé.
+- D04.o nature management ; D05.e ajustements des apports futurs explicités sous contraintes.
+- Les 133 propositions de contrats sont tracées, coalescées après fusion seulement si résultat/condition/effet identiques
+  ; les liens métier de sens différent sont conservés.
+next_step_U291: Après clôture de la refonte, examiner les capacités manquant de comportements, avec comparaison marché et
+  justification par complexité ou bénéfice ; ne pas lancer dans cette passe.
+order_capabilities_U383:
+  source_refs:
+  - U383
+  retired_id: D04.p
+  successor_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  rationale: Retrait du regroupement générique ; succession un-vers-plusieurs, sans redirection arbitraire vers une seule
+    capacité.
+  retired_relation_ids:
+  - REL-MEMBER-D04.p
+  - REL-NEEDS-U363-D04.q-D04.p
+  evidence: audits/2026-09-18-orders-disposition-U383/implementation.yaml

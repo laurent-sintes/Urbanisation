@@ -680,3 +680,978 @@ Quand une capacité change, réexaminer les CMP qui la citent. Si sa définition
 - Relations : appui partiel à Registration/Revision par ELM108, à Visibility par les vues de situation ELM111 ; famille de toutes natures ELM112. Reconciliation D04.h et la frontière précise D07.c restent des constructions locales à comparer au niveau exact de résultat. Aucun libellé natif ou équivalence exacte affirmé pour les quatre capacités.
 - Agreement complet : engagements et périodes selon ELM106, maîtrise externe selon U134. Le regroupement Supply/Case n’est pas une hiérarchie de marché certifiée ; ODA reste une analogie.
 - Auteur/date/statut : Codex, 2026-09-13. Application de l’accord Laurent U141, correspondances proposées et réserves préservées. Voir connaissance/27-order-management-et-univers.md et Q077. Aucune publication.
+
+
+### CMP067
+
+- Cible : D05, backlog après U219–U221, lu le 2026-09-15 ; empreintes conservées dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml.
+- Éléments : ELM119, ELM118, ELM120 ; limite ELM116. Relation : Recouvrement partiel et appui méthodologique ; le périmètre local dépasse les seules cibles de stock IBP.
+- Contexte, justification, adaptation et limites détaillés dans [l'étude U222](inventory-optimization-comparaison.md#correspondances-avec-le-backlog).
+- Auteur/date/statut : Codex, 2026-09-15, proposé ; valideur et date de validation absents. Aucun état installé évalué, aucune équivalence globale ni changement du modèle appliqué.
+
+
+### CMP068
+
+- Cible : D05.a, backlog après U219–U221, lu le 2026-09-15 ; empreintes conservées dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml.
+- Éléments : ELM119, ELM118, ELM115. Relation : Recouvrement partiel et appuis méthodologique/sémantique ; préciser les critères et la révision des objectifs.
+- Contexte, justification, adaptation et limites détaillés dans [l'étude U222](inventory-optimization-comparaison.md#correspondances-avec-le-backlog).
+- Auteur/date/statut : Codex, 2026-09-15, proposé ; valideur et date de validation absents. Aucun état installé évalué, aucune équivalence globale ni changement du modèle appliqué.
+
+
+### CMP069
+
+- Cible : D05.b, backlog après U219–U221, lu le 2026-09-15 ; empreintes conservées dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml.
+- Éléments : ELM117, ELM120. Relation : Recouvrement partiel ; les fonctions externes englobent aussi des décisions au-delà du calcul net.
+- Contexte, justification, adaptation et limites détaillés dans [l'étude U222](inventory-optimization-comparaison.md#correspondances-avec-le-backlog).
+- Auteur/date/statut : Codex, 2026-09-15, proposé ; valideur et date de validation absents. Aucun état installé évalué, aucune équivalence globale ni changement du modèle appliqué.
+
+
+### CMP070
+
+- Cible : D05.c, backlog après U219–U221, lu le 2026-09-15 ; empreintes conservées dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml.
+- Éléments : ELM118, ELM119. Relation : Appui partiel ; redistribution opérationnelle d’excédents non démontrée par les seuls transferts ou cibles multi-échelons.
+- Contexte, justification, adaptation et limites détaillés dans [l'étude U222](inventory-optimization-comparaison.md#correspondances-avec-le-backlog).
+- Auteur/date/statut : Codex, 2026-09-15, proposé ; valideur et date de validation absents. Aucun état installé évalué, aucune équivalence globale ni changement du modèle appliqué.
+
+
+### CMP071
+
+- Cible : périmètre D05 envisagé en U221, sans nouveau nœud, backlog après U219–U221, lu le 2026-09-15 ; empreintes conservées dans marche/etudes/2026-09-15-inventory-optimization/verification.yaml.
+- Éléments : ELM117, ELM120, ELM118 ; limite ELM121. Relation : Recouvrement fonctionnel partiel ; examiner Replenishment Decision indépendamment du mode automatique.
+- Contexte, justification, adaptation et limites détaillés dans [l'étude U222](inventory-optimization-comparaison.md#correspondances-avec-le-backlog).
+- Auteur/date/statut : Codex, 2026-09-15, proposé ; valideur et date de validation absents. Aucun état installé évalué, aucune équivalence globale ni changement du modèle appliqué.
+
+
+### CMP072
+
+- État comparé : backlog après U223 et direction U224, 2026-09-15. Cible : D05 et direction analytique U224. Éléments : ELM122 / ELM125.
+- Relation / justification : Appui méthodologique à la distinction recommandation / application, sans équivalence des domaines.
+- Contexte, adaptations proposées, sources, localisateurs et limites : [étude U225](optimisation-et-application-stock.md). Pas de modification des nœuds, nouvelle hiérarchie, schéma d'objet ni réalisation SI inférée.
+- Auteur / date / statut : Codex, 2026-09-15, proposé. Valideur et date de validation absents.
+
+
+### CMP073
+
+- État comparé : backlog après U223 et direction U224, 2026-09-15. Cible : D02.b Supply Protection et périmètre Stock Protection cité U224. Éléments : ELM124 / ELM126.
+- Relation / justification : Recouvrement partiel : allocation/protection de groupes étayée ; seuil de réassort distinct, pas de regroupement universel démontré.
+- Contexte, adaptations proposées, sources, localisateurs et limites : [étude U225](optimisation-et-application-stock.md). Pas de modification des nœuds, nouvelle hiérarchie, schéma d'objet ni réalisation SI inférée.
+- Auteur / date / statut : Codex, 2026-09-15, proposé. Valideur et date de validation absents.
+
+
+### CMP074
+
+- État comparé : backlog après U223 et direction U224, 2026-09-15. Cible : Application opérationnelle U224, D04 et exécutants. Éléments : ELM123 / ELM127.
+- Relation / justification : Appuis fonctionnel et sémantique : demande, Order et réalisation distincts ; porteur exact du déclenchement local non tranché.
+- Contexte, adaptations proposées, sources, localisateurs et limites : [étude U225](optimisation-et-application-stock.md). Pas de modification des nœuds, nouvelle hiérarchie, schéma d'objet ni réalisation SI inférée.
+- Auteur / date / statut : Codex, 2026-09-15, proposé. Valideur et date de validation absents.
+
+
+### CMP075
+
+- Cible : D05.a/c/d/e/f, backlog après U235, 2026-09-16. Définitions et empreintes dans modeles/backlog/d05-refactoring.yaml.
+- Éléments : ELM122 et ELM124 revérifiés le 2026-09-16, ELM128 ; compléments datés U225 conservés sans nouvelle consultation SAP/TM Forum.
+- Relations : appui partiel aux cibles (D05.a), sémantique aux allocations (D05.d), fonctionnel au réapprovisionnement intégrant le calcul net (D05.e). Équivalence détaillée redistribution (D05.c) non établie ; Planning local (D05.f) appuyé partiellement, sans équivalence native complète.
+- Adaptation : noms et responsabilités adoptés localement par U235 ; correspondances proposées, pas validées. Auteur Codex, 2026-09-16, aucun valideur de comparaison ni couverture installée établie. [Étude et limites](optimisation-et-application-stock.md#application-u235--16-septembre-2026).
+
+
+### CMP076
+
+- Cible : proposition U237/U238 de référentiel des services exécutants et regroupement D06/D07, D05 conservé ; état comparé au 2026-09-16, release v006 inchangée.
+- Éléments : ELM129–135 ; appuis sémantiques et fonctionnels partiels au catalogue, qualification, Service Orders, coordination, suivi et engagements.
+- Adaptations proposées : préserver faisabilité dynamique, dépendances entre prestations et exceptions ; distinguer contrat métier, accès technique, engagement, estimation et résultat. Un domaine unique reste un choix local.
+- Justifications, sources et limites : [étude U239](execution-services-catalog-and-management.md). Aucun schéma, nouveau nom ou découpage adopté ; aucune preuve de réalisation installée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation.
+
+
+**CMP076 — suite U240, 16 septembre 2026 :** les principes locaux sont précisés/adoptés : services et SLA configurés, capacité contextuelle D06 utilisée par D03 pour sa promesse, coordination, engagements distincts, tracking logistique et séparation des accès techniques. Cela ne valide pas les équivalences marché ni leurs granularités. Portées dans execution-services-review.yaml ; aucun changement des capacités actives.
+
+### CMP077
+
+- Cibles : principes U240 du référentiel des services, D06 et D03, regroupement D06/D07 encore à détailler ; état au 2026-09-16, nœuds et release v006 inchangés.
+- Éléments : ELM129–134, ELM136–137. Relations : appui méthodologique à la séparation configuration/faisabilité/promesse ; recouvrements fonctionnels partiels de coordination et tracking.
+- Adaptations, justifications et limites : [comparaison du modèle révisé U241](execution-services-revised-comparison.md). La promesse Supply et l'engagement daté d'une prestation sont distincts. Disponibilité résiduelle, consommation de capacité et retour vers D03 proposés à préciser, sans nouvelle capacité créée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ou date de validation. Aucune équivalence globale, conformité ou couverture installée établie.
+
+
+**CMP077 — suite U242, 16 septembre 2026 :** accord local sur le retour de l'exécution vers le réexamen de la promesse, complété par la responsabilité d'orchestration, tracking et adaptation du plan. Correspondances marché et recommandations sur la capacité restent proposées. Voir user_agreements_U242 dans execution-services-review.yaml ; cet accord n'est pas une validation des équivalences externes.
+
+
+### CMP078
+
+- État comparé : backlog appliqué U244, D06 regroupé, D14 nouveau référentiel ; nœuds D06.a–d et D07.a–d, D14.a. D05 inchangé.
+- Éléments : ELM129–134 et ELM136–137, consultés le 16 septembre 2026 dans les études U239/U241. Actualisation de correspondance depuis ces preuves, sans nouvelle consultation éditeur.
+- D14/D14.a : appui sémantique ELM129 au catalogue, aucune équivalence de l’ingestion locale. D06.a : qualification ELM130, adaptation télécom/logistique. D06.b : ELM136/137 soutiennent partiellement capacité vers promesse, sans preuve de l’API logistique envisagée. D06.c : options de réalisation, équivalence détaillée non établie.
+- D07.a/b : appuis ELM131/133 aux demandes et engagements, sans cycle universel. D07.d : appuis ELM133/134 aux faits et suivi, extension documentaire et ressources attendues locales. D07.c : rapprochement de prestations versus reliquats Order, équivalence détaillée non établie. D06.d : appui ELM132 à la coordination des dépendances ; latitude d’adaptation locale hors définition du catalogue selon U243.
+- Justification, limites et sources : execution-services-revised-comparison.md et connaissance/32-execution-orchestration.md. Noms et granularité d’application proposés ; aucune équivalence globale, conformité ou preuve de couverture installée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur de comparaison.
+
+
+### CMP079
+
+- État comparé : catalogue D06 après U247, en remplacement de la maille U244 pour les responsabilités modifiées. Date : 2026-09-16 ; auteur Codex ; statut proposé, aucune validation d'équivalence.
+- Sources existantes : études U239/U241 et ELM129–134 / ELM136–137, consultées le 16 septembre 2026 ; aucune nouvelle consultation éditeur dans cette application.
+- D07.b Service Order Management : appuis fonctionnels partiels ELM131 et ELM133 aux demandes de service, réponses et évolutions ; pas de cycle universel ni équivalence à un domaine logiciel.
+- D06.b Capacity Visibility : recouvrement limité aux informations de capacité utiles à la promesse ; les calculs CTP/PP/DS des ELM136/137 ne sont pas assimilés à cette visibilité. Responsabilité de calcul du disponible non attribuée par ce nom.
+- D06.e Service Decision : proposition regroupant qualification et options ; appui partiel ELM130 à l'admissibilité, équivalence du choix de service non établie. D07.a Requirements Decision : définition du besoin, équivalence détaillée non établie.
+- D06.d Orchestration : appui ELM132 aux dépendances. D06.f Adaptation Decision : séparation locale demandée U245/U247, aucune capacité native équivalente démontrée. D07.d tracking et D07.c rapprochement conservent les limites CMP078.
+- La promesse Supply reste D03 ; les exécutants gardent leurs opérations internes. Description et limites : connaissance/32-execution-orchestration.md et execution-services-review.yaml, application_U247.
+
+
+### CMP080
+
+- Cible : D01 : D01.f/g/c/d, D02.b/c. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM138/139/142/144. Relation et adaptation proposées : Recouvrement partiel de visibilité, protections/réservations ; appui méthodologique au rapprochement entre représentations. Stocktaking ne devient pas équivalent à la réconciliation informatique. Préciser gouvernance de Supply Protection et contrats de stock avant création de capacité.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP081
+
+- Cible : D03 : D03.a/b/c/i/j/k/l/m et D02.e. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM136/143/144/145/148/152/155/157. Relation et adaptation proposées : Recouvrements partiels des fonctions de promesse et appuis à leurs dépendances. CTP local volontairement plus large ; maille des actions à éprouver sans fusion adoptée. Priorisation et affectation locales ne sont pas démontrées comme équivalents exacts ; conserver résultat, autorisation et application distincts.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP082
+
+- Cible : D04 : D04.i/j/k/l/m/n/o. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM141/147/153/154. Relation et adaptation proposées : Appuis fonctionnels et sémantiques aux Orders et transitions ; audit détaillé des cinq types non exhaustif chez chaque éditeur. Décision sur le devenir du retour à attribuer. Nature Lifecycle à discuter selon son résultat, pas à reclasser du seul fait de son nom.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP083
+
+- Cible : D05 : D05.a/d/e/c/f. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM139/140/146/149/150/151. Relation et adaptation proposées : Recouvrements partiels de cibles, politiques, réapprovisionnement et rééquilibrage ; appui méthodologique à planification/application. Attribuer mise à jour des paramètres et transformation des apports en Orders. Le cas PAR ne définit pas une architecture universelle ; aucun calcul autonome ni domaine supplémentaire déduit.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP084
+
+- Cible : D06 : D07.a/b/c/d, D06.b/d/e/f. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM132/133/134/142/151/155/156. Relation et adaptation proposées : Appuis partiels à demandes, coordination et suivi ; aucune équivalence native du catalogue complet. Capacité logistique, promesse Supply et SLA distincts. Orchestration/Adaptation est un choix local. Compléter résultats échangés et conditions ; la latitude opérationnelle ne conditionne pas le catalogue.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP085
+
+- Cible : Référentiels D08/D09/D11/D12/D13/D14 et leurs ingestions D08.d/D09.d/D11.a/D12.a/D13.a/D14.a. État comparé : v007, publication 2026-09-16.2 ; champs identiques au backlog au début de l’audit U249.
+- Éléments : ELM129/133/148/152. Relation et adaptation proposées : Appuis sémantiques et méthodologiques à données de référence et projections. Équivalence détaillée des six ingestions non établie. FLOW ne gère pas les maîtres ; ne pas comparer son ingestion à l’ensemble de l’administration d’un ERP. Entrées économiques, demande et capacité dynamique à contracter dans leurs contextes.
+- Justifications, contexte, sources précises et limites : [rapport U249](../audits/2026-09-16-audit-maturite/rapport.md) et ses annexes éditeurs. Aucune équivalence globale, validation de cible ou couverture installée inférée.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Les accords locaux antérieurs gardent leur portée propre.
+
+
+### CMP086
+
+- Cible : D03.j CTP après U251, au backlog ; définition resserrée sur faisabilité après adaptation, décisions spécialisées responsables de leurs résultats. Les six relations proposées explicitent des besoins et contributions ; elles ne constituent pas une équivalence marché.
+- Éléments : ELM136, ELM143/144/145/148/152/155/157, mêmes passages officiels consultés le 16 septembre 2026 pour CMP081. Aucune nouvelle consultation éditeur revendiquée dans cette application.
+- Relation : recouvrements partiels et appuis méthodologiques. L’extension locale de CTP reste explicite ; l’attribution des priorités, de l’échéancier, de l’économie, des politiques et des services est un choix FLOW. Le recours à un apport pour un Order ne devient pas équivalent à Inventory Optimization.
+- Adaptation appliquée : définition et frontières adoptées U251, détails proposés dans [frontières CTP](../connaissance/33-frontieres-ctp.md). Contexte et limites des sources : [audit U249](../audits/2026-09-16-audit-maturite/rapport.md). Les constats de v007 restent historiques pour cette définition ; aucune équivalence globale ou couverture installée déduite.
+- Auteur/date/statut : Codex, 2026-09-16, correspondance proposée ; aucun valideur ni date de validation de correspondance. L’adoption locale de définition ne valide pas le rapprochement marché.
+
+
+### CMP087
+
+- Éléments externes : ELM082 (reconsulté), ELM158–162 ; références APICS/ASCM, Microsoft SCM et SAP aATP.
+- Cibles : D03.i ATP, D03.j CTP, D03.k/l/m, D02.b Supply Protection, D02.e Supply Assignment, D03.c Promise Revision ; interfaces D04/D06. Vocabulaire TER022/044/077 et convention MOD005.
+- État comparé : backlog après U251, discussion U256–U260 ; D03.i inchangé. Aucun remplacement rétrospectif de CMP081/086.
+- Relation : appui sémantique et recouvrements partiels plusieurs-à-plusieurs ; aATP couvre des responsabilités au-delà de notre ATP. La protection collective et l’affectation individuelle restent distinctes.
+- Adaptations proposées : couverture explicative, situation de référence à expliciter, interfaces décision/application préservées. Voir [étude et tableau](atp-aatp-couverture.md).
+- Limites : sources et éditions indiquées dans l’étude ; critères détaillés de couverture FLOW non imposés par APICS ; pas de classement universel ATP/CTP à partir du nom SAP. Aucun produit installé présumé.
+- Auteur/date/statut : Codex, 2026-09-16, proposé ; aucun valideur ni date de validation de correspondance. Accord de principe U260 distinct de la correspondance.
+
+
+### CMP088
+
+- Éléments : ELM052 reconsulté, ELM163–165. Cible : granularité descriptive de D03.i ATP et convention de modélisation envisagée par U261.
+- État comparé : backlog après U260 ; catalogue de 41 capacités inchangé. Les données U261 sont consignées dans d03-review.yaml.atp_information_U261.
+- Relation : appui méthodologique BIZBOK/LeanIX/Ardoq, illustration fonctionnelle Microsoft ; aucune équivalence globale.
+- Proposition : distinguer décomposition, comportement/variante, réalisation et maturité ; documenter les dimensions combinables d’ATP et envisager des profils contextualisés.
+- Justification et limites : [étude U261](capacites-variantes-niveaux-atp.md). Profil est une proposition locale ; les quatre dimensions ne sont pas quatre niveaux successifs. Aucun nouveau niveau, schéma, capacité ou interface adopté.
+- Auteur/date/statut : Codex, 2026-09-17, proposé ; aucun valideur ni date de validation de correspondance.
+
+
+Complément U262 à CMP088 — 17 septembre 2026 : Comportement est retenu comme maille complémentaire terminale. Cela remplace la recommandation locale variantes/profils, sans modifier le constat sur les notions de marché. Appui BIZBOK Capability Behavior conservé ; pas de nouvelle consultation ni de validation d’équivalence. La profondeur terminale est un choix FLOW.
+
+
+## CMP089
+
+- Objet : granularité des 41 capacités et quatre comportements ATP ; audit U265/U266.
+- Sources : ELM166–172 ; ELM052 (BIZBOK) et ELM163 (LeanIX) reconsultés le 17 septembre 2026.
+- Relation : appui méthodologique et fonctionnel, plusieurs-à-plusieurs ; aucune équivalence par numéro de niveau.
+- Résultat proposé : conserver Capacité → Comportement comme profondeur terminale ; décomposer sélectivement Planning, Protection, Lifecycle et Orchestration ; instruire Promise Management et frontière Reservation/Assignment.
+- Catalogue local : aucun déplacement de capacité appliqué. La matrice distingue les appuis directs, analogies et éléments non comparés individuellement.
+- Sources, passages, périmètre et limites : [marché](../audits/2026-09-17-audit-comportements/marche.md) ; [matrice](../audits/2026-09-17-audit-comportements/matrice.md).
+- Auteur/date/statut : Codex, 2026-09-17, proposé ; aucun valideur ni validation d’équivalence.
+
+
+## CMP090
+
+- Objet : proposition U267, cinq comportements de scénario pour D05.f Inventory Planning ; méthode demandée U268.
+- Éléments : ELM173/174, ELM168/169 reconsultés le 17 septembre 2026.
+- Relation : appui fonctionnel, pas équivalence normative ; création/simulation/comparaison/approbation/application confrontées aux fonctions SAP IBP, Microsoft SCM et Oracle Supply Planning.
+- Recommandation : construire le scénario plutôt que reconfigurer seulement ; distinguer simulation et évaluation ; conserver validation et examiner application via capacités opérationnelles responsables.
+- Justification, sources, limites et bénéfices : audits/2026-09-17-audit-comportements/scenario-planning-proposition.md.
+- Auteur/date/statut : Codex, 2026-09-17, proposé. Rattachement et mandat de l’application à D05.f à arbitrer ; aucun comportement créé ou adopté.
+
+
+Complément U269 à CMP090 — 17 septembre 2026 : les cinq noms, descriptions courtes, rattachements à Inventory Planning et bénéfice du découpage sont adoptés. Application via capacités opérationnelles responsables adoptée. Les rapprochements SAP/Microsoft/Oracle restent des appuis fonctionnels proposés, sans adoption d’équivalence normative ; sources déjà consultées U267/U268, aucune nouvelle comparaison nécessaire pour cette transcription.
+
+
+## CMP091
+
+- Objet : U270, analyse d’impact en indicateurs comme comportement complémentaire d’Inventory Planning.
+- Références : ELM175 (SAP IBP) ; ELM174 reconsulté pour Oracle 26B et les indicateurs agrégés.
+- Proposition : Scenario Impact Analysis quantifie et explique les effets attendus sur les indicateurs, avec référence, périmètre et horizon. Simulation produit la situation projetée ; Evaluation apprécie le compromis. La simulation peut déjà fournir les indicateurs exploités par l’analyse d’impact.
+- Justification : rendre visibles impacts et répartition avant appréciation ; préciser les frontières pour éviter le recouvrement des définitions U269.
+- Portée et preuves : audits/2026-09-17-planning-comportements/impact-analysis.md. Appui fonctionnel, aucune équivalence normative adoptée.
+- Auteur/date/statut : Codex, 2026-09-17, proposé. U270 reconnaît le comportement complémentaire ; noms et définitions détaillées restent proposés. Catalogue U269 inchangé.
+
+
+Complément U271 à CMP091 — 17 septembre 2026 : Scenario Impact Analysis, sa définition, son rattachement à Inventory Planning, son bénéfice et les frontières présentées avec Simulation/Evaluation sont adoptés. Les fonctions SAP et Oracle restent des appuis, sans équivalence normative adoptée. Les sources consultées U270 sont réutilisées pour transcrire cet accord ; aucune nouvelle proposition marché.
+
+
+## CMP092
+
+- Objet : D02.b Supply Protection et BHV011 Allocation, backlog U276/U277.
+- Élément : ELM176 ; approfondissement de la source Microsoft déjà utilisée en ELM168.
+- Relation : appui fonctionnel proposé, recouvrement partiel ; aucune équivalence normative.
+- Choix FLOW : conserver un comportement Allocation terminal avec plusieurs mécanismes combinables décrits dans son périmètre. Ni un comportement par API, ni des sous-comportements.
+- Bénéfice : distinguer gouvernance des enveloppes, consommation de droits et affectation de ressources ; rendre visibles les soldes et éviter de bloquer des ressources par des enveloppes devenues inutiles.
+- Frontières : D05.d détermine les valeurs ; D02.e affecte aux besoins ; D02.c porte la réservation. Le point d’imputation et les corrections restent à instruire. Le volet surstock U274 dépasse cette documentation.
+- Statut : nom et rattachement Allocation issus de U276 ; descriptions et justification éditoriales proposées sous mandat U277. Auteur : Codex, 2026-09-17. Pas de validation d’équivalence marché.
+
+
+Complément U278 à CMP092 — 17 septembre 2026 : Laurent corrige la maille en cinq comportements pairs sous Supply Protection. La recommandation précédente de les regrouper dans un seul comportement est remplacée. La source ELM176 est reconsultée, sections Use the allocation APIs, Allocate, Reallocate, Unallocate, Consume et Query. Chaque comportement est justifié par un résultat métier distinct : création de droits, changement de bénéficiaire, restitution, imputation d’usage ou visibilité. Cette justification porte sur les effets métier, pas sur le nombre d’API. Noms anglais nouveaux et descriptions complémentaires proposés ; pas d’équivalence normative Microsoft adoptée. Le solde d’enveloppe diffère du stock physique ; les autres risques de Protection ne sont pas intégralement couverts par ces cinq comportements.
+
+
+## CMP093
+
+- Objet : Supply Protection D02.b, U279–U281 ; compléter les cinq comportements d’enveloppes après la question des seuils de réassort.
+- Sources : ELM176 reconsulté ; ELM177–186, neuf éditeurs. Registre détaillé dans modeles/backlog/supply-protection-review.yaml ; rapport marche/supply-protection-comportements.md.
+- Relations : appuis fonctionnels partiels et choix de décomposition FLOW ; aucune équivalence normative ni exhaustion de tout le marché revendiquée.
+- Résultat proposé : 17 comportements candidats, dont cinq existants, dix compléments de cœur de périmètre et deux conditionnels (mise à jour en masse et surveillance). Détail et bénéfice ciblé par ligne dans l’annexe ; aucun nouveau nœud actif.
+- Frontières : configuration de règles versus décision des valeurs, décision des apports, scénarios, affectation aux Orders, réservation et réalisation. Le volet surstock fait apparaître un besoin de vérifier les décisions de réduction/report des apports, non absorbé implicitement.
+- Limites : sources spécialistes de présentation ; IBM indexé avec une référence historique 9.5.0 ; Oracle Retail latest non figé. Absence de passage ne signifie pas absence de fonction.
+- Auteur/date/statut : Codex, 2026-09-17, proposé. U281 approuve la méthode seulement ; noms, définitions et rattachements nouveaux restent à discuter.
+
+
+Complément U282 à CMP093 — 17 septembre 2026 : la recommandation de 17 comportements est remise en question. Conserver les preuves fonctionnelles, reprendre la décomposition par mécanismes. Sources S05 SAP SuP, S02 Microsoft méthodes de réassort et S07 Oracle politiques reconsultées : mécanismes/politiques et opérations d’administration sont des lectures distinctes. La cible de mécanismes sera un choix FLOW justifié par risques et effets ; aucune nouvelle équivalence ni liste adoptée.
+
+
+## CMP094
+
+- Objet : U283 ; critères de comportement et réexamen de Planning, backlog D05.f, BHV005–010 et MOD006.
+- Référence : ELM187 / MKT28 ; source primaire Kinaxis effectivement consultée le 17 septembre 2026.
+- Relation : appui méthodologique et recouvrement partiel. Les effets sur la coordination et la réaction aux aléas étayent la distinction recherchée par Laurent.
+- Choix FLOW : mécanisme, politique, variante ou bénéfice distinguent les comportements ; construction d’alternatives, simulation et adaptation retenues dans le principe. Les quatre autres éléments de Planning sont requalifiés en fonctions de produits selon U283. Kinaxis ne prescrit ni cette terminologie ni cette séparation.
+- Limite et recommandation : un bénéfice générique ne suffit pas à différencier deux comportements ; préciser ce qui change concrètement dans la manière d’agir. Un impact humain peut exister même si la réalisation est automatisée. Ces précisions sont une interprétation proposée par Codex, cohérente avec U265 et les frontières existantes.
+- Frontière proposée : adapter le scénario de stock via les décisions D05 ; conserver la décision d’adaptation et l’orchestration opérationnelles D06. Noms et définitions détaillés restent à instruire.
+- Auteur/date/statut : Codex, 2026-09-17. Direction U283 adoptée dans sa portée ; correspondance marché proposée, aucune équivalence normative validée.
+
+
+Complément U284 à CMP094 — 17 septembre 2026 : Simulation & analyse retenu comme comportement unique. Kinaxis S&OP (complément ELM187) rapproche simulation, options et impacts. Ce rapprochement soutient le regroupement FLOW ; il ne prescrit ni notre intitulé ni nos trois comportements. Bénéfice : rendre explicite que la projection doit être interprétée pour éclairer les choix, sans réintroduire un comportement autonome d’analyse d’impact. Orientation utilisateur adoptée ; équivalence normative non revendiquée. Auteur : Codex.
+
+
+Complément U285 à CMP094 — 17 septembre 2026 : réexamen transversal recommandé après U282–U284. Sources primaires reconsultées : Microsoft Inventory Visibility allocation (ELM176, sections Business background and purpose / Use the allocation APIs) et Kinaxis What is concurrent planning? (ELM187). Microsoft distingue finalités de protection et contrôle de surconsommation des opérations API ; Kinaxis relie scénarios, adaptations et coordination. Ces appuis justifient de comparer à des mécanismes et effets, sans recopier des listes de fonctions ni déclarer toutes les capacités actuelles erronées. La nécessité de refonte découle surtout des contradictions constatées entre catalogue FLOW et arbitrages courants. Les anciennes propositions de regroupement/descente en comportement doivent être requalifiées ; pas d’adoption automatique. Diagnostic et plan : behavior-audit.yaml, refactoring_U285. Auteur : Codex ; recommandation proposée.
+
+
+## CMP095
+
+- Objet : U286, 41 capacités et 15 comportements de la capture audits/2026-09-17-refonte-modele/model-before.yaml ; empreinte dans l’annexe cible.
+- Sources : ELM188 et S01–S12 de modeles/backlog/refactoring-target.yaml ; reprend et précise aussi ELM176–179, ELM183 et ELM187.
+- Relation : appuis fonctionnels/méthodologiques partiels. Chaque recommandation est justifiée par le marché consulté ou explicitement par la cohérence FLOW.
+- Cible proposée : quatre mécanismes Protection ; trois Planning selon accords ; quatre ATP conservés ; fusion candidate Promise Management sans comportements CRUD ; ajustements des apports D05.e ; Stocktaking/Orchestration conditionnels.
+- Écarts : Supply Protection FLOW dépasse SAP SuP ; les produits combinent décisions et application que FLOW distingue. Les anciennes listes d’opérations sont matière fonctionnelle.
+- Limites : pas de copie des niveaux éditeurs, de complétude Case, ni de preuve d’installation. Fusion et frontières restent des arbitrages FLOW.
+- Statut/auteur/date : proposition Codex, 17 septembre 2026. U286 autorise la préparation ; les valeurs nouvelles ne sont pas automatiquement adoptées.
+
+
+Complément U287 à CMP095 — 17 septembre 2026 : principe d’un mécanisme d’application de scénario/plan dans D04 retenu par Laurent. S13/S14 soutiennent le passage plan → Orders. Proposition Plan-driven Order Application : cohérence d’ensemble, origine et résultat d’application ; règles de reprise et traitement partiel proposées. Parent précis à arbitrer (A8), sans duplication sous les cinq types, sans absorption de la configuration des droits D02.b ni de l’exécution D06. D05 conserve la construction, la simulation/analyse et l’adaptation du scénario. Le total cible de 39 capacités reste conditionnel à Promise Management et exclut une éventuelle capacité transverse supplémentaire.
+
+
+Complément U288 à CMP095 — 17 septembre 2026 : Laurent adopte le regroupement sous Promise Management et corrige la proposition en trois comportements (Proposal, Confirmation, Revision). L’ancienne recommandation « fonctions seulement » est remplacée. SAP BOP (S10, consulté dans cette passe) appuie le besoin de réexamen des confirmations ; il ne prescrit pas notre hiérarchie. Justification FLOW proposée : possibilités sans engagement, engagement explicite, puis révision autorisée ont des effets métier distincts. Aucun retour au découpage opérationnel d’Allocation ou de Planning n’est déduit.
+
+
+## CMP096
+
+- Objet : Supply Assignment D02.e, protections D02.b, décision de droits D05.d et plan U287 corrigé U289.
+- Sources : ELM189, T1–T4 dans assignment-terminology.yaml, effectivement consultées le 17 septembre 2026.
+- Résultat : Supply Assignment / affectation des ressources aux commandes est le terme de travail FLOW, cohérent avec SAP ARun et U275. Allocation est polysémique : PAL SAP, enveloppes Microsoft, distribution aux lieux Oracle Retail.
+- Convention : nommer le résultat Supply Assignment Plan / plan d’affectation. Groupes : enveloppes de protection et limites d’usage. Proposer Group Protection Decision en cible pour le nom ambigu Stock Allocation Decision, sans renommer le nœud adopté actif à ce stade.
+- Correction : l’exemple magasin ajouté U287 par Codex était une mauvaise interprétation ; l’application d’affectations ne se confond pas avec modifier ou créer des Orders. Frontières exactes encore à instruire.
+- Statut/auteur/date : Codex, 17 septembre 2026, convention de travail fixée sous mandat U289, appui lexical partiel. Aucune équivalence normative ni validation détaillée de définitions auto-attribuée.
+
+
+## CMP097
+
+- Objet : refonte appliquée U290 et finalité de Supply Assignment.
+- Sources : ELM188–190 ; cible U286–U289, comparaison CMP095/CMP096 et Microsoft IFO consulté le 17 septembre 2026.
+- Rapprochement : la pluralité des objectifs et contraintes de fulfillment soutient la finalité de valeur multidimensionnelle confirmée par Laurent. Les dimensions et poids FLOW sont à définir ; ne pas assimiler valeur à volume promis ou marge seule.
+- Choix FLOW : Supply Assignment conserve les liens ressources-commandes ; priorisation, faisabilité, arbitrage économique et échéancier restent leurs décisions spécialisées. Les critères éditoriaux ne deviennent pas des comportements supplémentaires.
+- Migration : Promise Management D03.n et trois comportements, trois Planning, quatre mécanismes Protection, ATP conservé. D05.d devient Group Protection Decision. Les anciennes correspondances à D03.a/b/c décrivent les responsabilités maintenant portées par BHV021/022/023 ; les preuves historiques gardent leurs IDs. Voir refactoring-implementation.yaml pour toutes les correspondances.
+- Limites : contrats détaillés en instruction ; quatre comportements optionnels non créés ; Reservation/Assignment et parent D04 à instruire. Pas de nouvel alignement exhaustif produit/produit ni de déploiement revendiqué.
+- Statut/auteur/date : Codex, 17 septembre 2026 ; refonte demandée U290, comparaison et compléments éditoriaux proposés.
+
+
+## CMP098
+
+- Objet : audit U292 des comportements manquants après refonte U290. Baseline backlog : 39 capacités, 14 comportements ; empreinte dans modeles/backlog/behavior-gap-audit.yaml.
+- Éléments externes : ELM191, S01–S28. Contexte : cible FLOW Supply ; six projections de référentiels examinées, Business Services non décomposé hors conclusion de complétude. Aucune couverture installée des trois SI inférée.
+- Relation : appuis fonctionnels et méthodologiques, recouvrements partiels. Les 39 rapprochements et 16 candidats sont explicités individuellement dans l’annexe ; aucune équivalence de hiérarchie éditeur/FLOW.
+- Résultat proposé : niveau terminal suffisant pour les mécanismes étudiés ; onze candidats ciblés sur six capacités, cinq candidats conditionnels, sept arbitrages. Les 14 comportements existants sont réexaminés sans retrait ni ajout automatique.
+- Adaptation : préserver décision, configuration, application aux Orders et exécution ; critères mécanisme/politique/variante/bénéfice plutôt que CRUD. Contrats et cas fictifs précisent les limites.
+- Limites : comparaison documentaire ciblée de sept éditeurs, pas inventaire exhaustif ; pages commerciales moins probantes que guides ; projections MDM non comparées exhaustivement ; Sarenza non évalué.
+- Statut/auteur/date : proposé, Codex, 17 septembre 2026 ; aucun valideur ni adoption attribué. U292 autorise l’étude uniquement. [Rapport](../audits/2026-09-17-comportements-manquants/rapport.md).
+
+
+## CMP099
+
+- Objet : corrections U293 de l’audit U292, sur D07.d, D04.o, D06.d et vocabulaire des excédents.
+- Appuis : ELM192, S29–S33 ; S12 pour les excédents et S17 pour la compensation produit. Baseline du catalogue U290 inchangée.
+- Résultat : tracking normal et visibilité du transit, complétés par détection d’exceptions ; séparation état métier de l’Order / conduite du processus / coordination des prestations. Retrait de P05 comme comportement autonome ; P11 à clarifier. Proposition Transit Visibility sans création de BHV.
+- Limites : compensation n’est pas spécifique au Case Management ; l’Order comme case est le choix du contexte discuté, pas un axiome général. Interruption, compensation et irréversibilité physique restent distinctes. Excédent dépend d’un besoin/cible, lieu et horizon.
+- Statut/auteur/date : corrections reçues U293 ; définitions et rattachements supplémentaires proposés par Codex le 17 septembre 2026. Aucun nom de capacité ni domaine renommé.
+
+
+## CMP100
+
+- Objet : proposition logistique sous D07.d après U294 ; catalogue U290 inchangé.
+- Sources : ELM193, S29/S34–S36 de behavior-gap-audit.yaml.
+- Relation : appui lexical et recouvrement de périmètre, pas équivalence de produits. SAP/Oracle emploient Track and Trace ; les spécialistes emploient aussi Transportation Visibility.
+- Recommandation : abandonner Transit Visibility comme proposition de nom au profit de Track and Trace ; Global Track seul non établi comme terme commun. Rattachement et articulation avec les exceptions restent proposés.
+- Statut : règle de méthode reçue U294 ; libellé et définition proposés par Codex, 17 septembre 2026. Aucune innovation FLOW alléguée pour renommer le concept, aucune mutation de catalogue.
+
+
+## CMP101
+
+- Objet : discussion U295 sur la symétrie avec Inventory Visibility D01.c, conservé dans le backlog U290.
+- Sources : S29 SAP/MKT37, S35 project44/MKT38, S36 FourKites/MKT39, effectivement reconsultées pour SAP/project44 le 17 septembre 2026 ; périmètres et limites dans behavior-gap-audit.yaml.
+- Relation : appui lexical et recouvrement de périmètre. Transportation Visibility est un terme établi, donc le miroir avec Inventory Visibility n’invente pas un vocabulaire FLOW. Logistics Visibility est également utilisé, notamment par SAP, avec suivi de fulfillment et expéditions.
+- Proposition : Transportation Visibility pour le besoin précis d’acheminement ; Logistics Visibility si un suivi logistique plus large est retenu. Cette distinction de travail n’est pas une frontière normalisée entre éditeurs. Track and Trace reste une formulation de marché légitime, pas un nom exclusif.
+- Statut : discussion, Codex, 17 septembre 2026. Aucun nom adopté, aucune mutation de catalogue ; rattachement et granularité distincts du choix de libellé.
+
+
+## CMP102
+
+- Objet : périmètre physique précisé U296, du picking au point final ; comparaison des noms proposés sous Execution Tracking, catalogue actif inchangé.
+- Sources : ELM194 / S29, S37–S40 de behavior-gap-audit.yaml. Logistics recouvre entreposage/manutention/transport chez CSCMP ; GTT SAP prévoit des événements de préparation. Fulfillment Visibility a des usages plus centrés sur la satisfaction des Orders, parfois incluant leurs apports.
+- Recommandation : Logistics Visibility pour ce parcours physique complet. Transportation Visibility trop restrictif comme signal de périmètre dans notre discussion ; Fulfillment Visibility possible mais moins précis sur l’objet physique suivi. Aucune frontière universelle prétendue entre les termes éditeurs.
+- Limites : un nom produit ne garantit pas la collecte de tous les événements. Visibilité des opérations de l’exécutant n’en transfère pas la responsabilité à FLOW ; le stock ne disparaît pas quand le picking commence. Rattachement et granularité restent à valider.
+- Statut : périmètre exprimé U296 ; nom et définition proposés par Codex, 17 septembre 2026.
+
+
+Complément U297 à CMP102 — 17 septembre 2026 : Laurent valide explicitement le nom **Logistics Visibility** pour le parcours physique précisé U296. Accord enregistré avec empreinte du nom dans behavior-gap-audit.yaml, feedback_U297. La comparaison marché étaye le nom ; elle ne valide pas automatiquement le détail éditorial, le niveau ou le rattachement. D01.c Inventory Visibility et D07.d Execution Tracking inchangés dans le catalogue ; aucune publication.
+
+
+Complément U298 à CMP098/CMP102 — 17 septembre 2026 : le socle de l’audit reste pertinent pour le catalogue U290 inchangé. Consolidation des conclusions après U293–U297 : sept candidats initiaux à instruire, cinq conditionnels, P04/P10/P11 à réexaminer, P05 retiré ; nom Logistics Visibility adopté, rattachement ouvert. Réserves P04/P10 : raisonnement sur les frontières FLOW et les limites des appuis S25/S19/S29/S38, pas nouvelle observation de couverture produit. Pas de recherche exhaustive refaite ni validation collective déduite. Détails dans current_synthesis_U298 de behavior-gap-audit.yaml.
+
+
+Complément U299 à CMP098/CMP102 — 17 septembre 2026 : validation par Laurent des deux corrections P04/P10 présentées U298. Les appuis S25 (mécanisme de processus) et S29/S38 (visibilité logistique) restent des comparaisons de portée, sans nouvelle preuve produit. Les exceptions logistiques ne sont pas dupliquées ; coordonner les dépendances ne suffit pas à créer un comportement distinct du parent. Les fiches initiales restent à réexaminer selon ces règles validées, sans adoption de nouveaux nœuds.
+
+
+## CMP103
+
+- Objet : positionnement proposé U300 de Logistics Visibility comme comportement de D07.d Execution Tracking sous D06.
+- Sources : ELM195 / S41 GS1 ; S29 SAP GTT reconsulté et S38 pour les événements de préparation. Le marché étaye la continuité physique, le contexte des Orders et les exceptions ; pas une hiérarchie métier native équivalente.
+- Justification FLOW : D07.d couvre déjà les prestations physiques et non physiques. Spécialiser le suivi du parcours permet d’expliciter sa complexité et son bénéfice sans créer un second mandat concurrent ni faire disparaître les prestations documentaires.
+- Alternatives : capacité autonome possible avec redéfinition explicite du suivi résiduel ; renommage intégral du parent déconseillé ; rattachement sous Inventory Visibility déconseillé. Ces alternatives ne sont pas déclarées impossibles par le marché.
+- Statut : proposé par Codex, 17 septembre 2026 ; nom adopté U297, niveau/rattachement et justification de décomposition soumis à arbitrage U300. Aucun nœud nouveau créé.
+
+
+## CMP104
+
+- Objet : U301–U303, périmètre transversal d’Execution Tracking et granularité de la visibilité logistique. Catalogue U290 inchangé.
+- Sources : ELM196, S42–S45 ; S35 pour Transportation Visibility. Relation : appui sémantique et recouvrement partiel des périmètres.
+- Analyse : Dataverse/Camunda documentent des audits numériques complémentaires et configurables ; SAP/Oracle couvrent réception, opérations internes et expédition sur les sites. Avant/après transport n’est pas une partition stable des réseaux à plusieurs étapes.
+- Proposition Codex : Warehouse Visibility et Transportation Visibility directement sous D07.d ; Logistics Visibility comme notion englobante sans nouveau niveau. Les deux noms/périmètres ne sont pas déclarés taxonomie universelle du marché.
+- Statut : périmètre numérique/physique exprimé U301 et accord U302 ; décomposition réouverte U303 et nouvelle proposition non validée. Aucun déploiement Beaumanoir démontré.
+
+
+Complément U304 à CMP104 : le cas de mise en rayon motive une spécialisation magasin. Store Execution est un usage de marché ; Store Execution Visibility est proposé pour FLOW avec un périmètre logistique limité. Bénéfice : distinguer stock reçu, stock en réserve et marchandise accessible au client. La proposition à deux comportements U303 est réexaminée au profit de trois spécialisations entrepôt/transport/magasin, non adoptées.
+
+
+Complément U305 à CMP104 — 17 septembre 2026 : Laurent adopte les trois noms, périmètres et rattachement direct présentés après U304. Logistics Visibility reste englobant sans nouveau niveau. Accord métier consigné avec empreintes dans adoption_U305 ; aucune équivalence de produit ni couverture installée validée. Sources S35/S44–S47 déjà consultées dans cette discussion ; pas de nouvelle affirmation marché.
+
+
+## CMP105
+
+- Objet : visibilité explicite des prestations numériques sous Execution Tracking, U306 ; catalogue U290 inchangé, trois comportements logistiques adoptés dans l’annexe U305.
+- Sources : ELM197, S48–S50. Relation : recouvrement partiel et appui sémantique. Microsoft décrit les runs/actions et la corrélation métier ; Camunda une observabilité de processus plus large.
+- Proposition : Digital Service Visibility, quatrième comportement direct sous D07.d. Bénéfice : distinguer appel accepté, prestation effectivement achevée et résultat métier, notamment réponses asynchrones et contrôles défavorables. Aucun comportement par type de contrôle.
+- Statut : besoin formulé par Laurent ; nom et description proposés par Codex le 17 septembre 2026. Pas de terme universel allégué, pas de moteur imposé ni d’extension à un domaine fraude/identité.
+
+
+Complément U307/U308 à CMP104 — 18 septembre 2026 : Store Visibility remplace le libellé FLOW Store Execution Visibility, à périmètre et parent constants. Justification : uniformité avec Warehouse Visibility et contexte Execution Tracking déjà explicite. Les sources S46/S47 étayent le périmètre magasin ; aucun des deux noms composés n’est déclaré normalisé. Accord Laurent U308 enregistré séparément de l’accord historique U305, sans modifier ses empreintes. Aucune nouvelle couverture produit alléguée.
+
+
+## CMP106
+
+- Objet : implantation et réassort U310, termes TER079/TER080 et décomposition à instruire de Replenishment Decision D05.e. Catalogue des capacités inchangé.
+- Sources : ELM198 / S51 SAP, S52 RELEX ; S08 Microsoft comme axe distinct des méthodes de calcul.
+- Relation : recouvrement des politiques métier ; pas équivalence de hiérarchie, de formule ni de réalisation installée. SAP et RELEX distinguent introduction initiale et alimentation en cours de commercialisation.
+- Interprétation : implantation/réassort constitue un axe de décomposition métier pertinent ; besoins nets et cibles peuvent alimenter les deux. Ne pas assimiler implantation à Requirement ni réassort à une formule Min/Max précise sans preuve.
+- Convention : Allocation dans Initial Allocation est un terme retail éditeur qualifié, pas une remise en cause de Supply Assignment ni des enveloppes de protection. Noms anglais FLOW à instruire.
+- Statut : vocabulaire métier exprimé par Laurent U310 ; interprétation et décomposition proposées par Codex, 18 septembre 2026. Capsules envisagées, pas observées.
+
+
+Complément U311 à CMP106 — 18 septembre 2026 : les rapprochements SAP/RELEX sont désormais portés par D05.e et les termes TER079/TER080 dans market_comparisons. La règle et le format de restitution sont demandés par Laurent ; le contenu comparatif reste proposé pour discussion client. Sources S51/S52 conservées avec leurs limites ; aucune équivalence validée déduite.
+
+
+## CMP107
+
+- Objet : D05.e, TER079 Implantation, TER080 Réassort ; backlog du 18 septembre 2026. Sources ELM198/ELM199, U312–U314.
+- Relation : appui sémantique et recouvrement partiel. SAP, RELEX et Oracle distinguent implantation initiale et réassort en cours de vie dans les passages consultés. Les solutions peuvent réunir les deux ; le nom d’un moteur ou d’une offre n’est pas une nomenclature de décisions.
+- Correction C97 : retirer le rattachement proposé des deux sous Replenishment Decision. U313 exige deux décisions distinctes. Replenishment Decision est cohérent pour le réassort ; Initial Allocation est le terme retail à examiner pour l’implantation, sans assimilation à Supply Assignment ni aux enveloppes de protection.
+- Différences : réassort Beaumanoir guidé par des seuils ; sources éditeurs couvrant aussi prévisions et autres méthodes. Le périmètre des scénarios produits dépasse une décision FLOW et peut intégrer planification/traitement. Pas de définition universelle interdisant qu’un moteur de replenishment serve un premier remplissage.
+- Statut : séparation demandée par Laurent ; rapprochement et noms anglais proposés par Codex, le 18 septembre 2026. Remplace l’interprétation de décomposition sous un parent unique de CMP106, sans effacer l’historique. Aucune preuve de réalisation installée ni création de nouvelle capacité à ce stade.
+
+
+## CMP108
+
+- Objet : TER079 Implantation et nom de la décision distincte demandée U313 ; backlog du 18 septembre 2026, sans création de nœud.
+- Sources : ELM200 (OASIS UBL 2.4, Logility, Nextail), avec édition, passages et limites sur les fiches marché de TER079.
+- Relation : appui sémantique ; Initial Stocking est attesté pour la constitution du stock de départ, y compris saisonnier. Initial Distribution est attesté dans le retail mode chez Logility et dans la description de First Allocation de Nextail.
+- Proposition Codex : U315 : proposer Initial Stocking Decision pour la décision d’implantation, avec Initial Stocking comme terme anglais de travail. Le nom met l’accent sur la constitution du stock de départ et évite Allocation. Initial Distribution reste une alternative attestée chez des éditeurs retail. Proposition non adoptée ; garder Implantation comme terme Beaumanoir, Replenishment Decision distincte, et les noms éditeurs dans les comparaisons.
+- Justification modèle : exprimer le résultat stock initial, préserver une décision distincte du réassort et des opérations D04/D06. Les choix d’assortiment restent des entrées ; la répartition avec Coverage Target Decision reste à préciser.
+- Compromis : Initial Allocation/First Allocation reste courant dans les produits retail étudiés ; Initial Stocking est un terme attesté, mais Initial Stocking Decision est notre composition selon la convention FLOW, pas un intitulé standard universel. Le mot Stocking peut aussi désigner une opération physique ; Decision et sa définition doivent expliciter le résultat attendu.
+- Définition proposée : déterminer les quantités à apporter à chaque magasin et leurs dates pour constituer le stock initial nécessaire au lancement d’une saison, d’une collection ou d’une capsule, à partir de l’assortiment retenu, des objectifs et des contraintes applicables. Les capsules sont une extension cible, pas une pratique actuelle déduite.
+- Statut : proposition Codex, non validée. Le besoin de deux décisions est acquis U313 ; U315 demande la recherche de nom, sans adopter son résultat.
+
+
+Complément U316 à CMP108 — 18 septembre 2026 : Initial Stocking / Initial Stocking Decision et la définition présentée sont adoptés. D05.g créée dans le backlog, D05.e conservée pour le réassort continu. Les rapprochements documentaires avec OASIS, Logility, Nextail, SAP et RELEX restent proposés ; aucune équivalence normative ni réalisation installée validée. Les comparaisons de D05.e sont recentrées sur In-Season Fill-In / In-season replenishment ; celles de l’implantation sont portées par D05.g et TER079.
+
+
+## CMP109
+
+- Objet : D05.c Stock Redistribution Decision, candidats P06/P07 de l’audit ; backlog U316, comparaison du 18 septembre 2026. Sources ELM201 et S12 Oracle reconsultée.
+- Recommandation : U317 : examiner sous Stock Redistribution Decision deux familles de mécanismes, rééquilibrage vers les besoins et consolidation intersites de stocks dispersés. Justifier le second par son bénéfice propre (assortiment de tailles, disponibilité concentrée, collecte pour réemploi), sans assimiler ces cas. Noms anglais, périmètres et décomposition restent proposés ; aucun nouveau comportement créé.
+- Réexamen : P06 ne doit pas être entendu comme limité à la rupture constatée ; besoins prévus et intérêt économique comptent aussi. P07 Excess Consolidation est trop étroit pour décrire sans examen la consolidation des tailles documentée par Nextail. Ne pas déclarer les deux comportements adoptés ni imposer deux comportements si les cas ne révèlent pas de mécanisme distinct.
+- Bénéfices proposés : le rééquilibrage améliore la couverture des lieux receveurs en préservant les donneurs ; la consolidation combat la fragmentation des stocks, éventuellement sans manque immédiat à destination.
+- Exemples fictifs : déplacer 20 pièces d’un magasin peu demandeur vers un magasin plus demandeur ; rassembler des tailles dispersées pour proposer un assortiment plus complet ; collecter des reliquats en un lieu de réemploi. Ces cas ne sont pas des faits Beaumanoir.
+- Limites : Inventory Rebalancing est un libellé produit large, pas forcément un comportement sous notre capacité. Stock Consolidation SAP EWM est interne à l’entrepôt. Ne pas importer un découpage produit ni renommer le parent adopté automatiquement.
+- Frontières : D05 décide des transferts de stock existant, D04 gère les Transfer Orders, D06 pilote leur exécution ; D03 conserve la satisfaction des Orders. Pas de liquidation commerciale, destruction ni remise tarifaire ajoutée.
+- Question proposée à Laurent : la consolidation des reliquats et des tailles dispersées est-elle un mécanisme attendu dans FLOW, au-delà de la correction d’un manque ? Statut proposé, pas validation.
+
+
+Complément U318 à CMP109 — 18 septembre 2026 : deux mécanismes adoptés sous D05.c et intégrés comme BHV024/BHV025. Le rééquilibrage préserve les besoins des donneurs ; la consolidation couvre assortiments de tailles et regroupement de reliquats, au-delà des seuls excédents. Inventory Rebalancing et Stock Consolidation sont des libellés anglais éditoriaux appuyés sur les usages documentés ; le second est explicitement intersites, sans assimilation au Stock Consolidation interne SAP EWM. Comparaisons sur le parent et chaque comportement ; sources consultées U317 toujours applicables. Les équivalences marché restent proposées.
+
+
+## CMP110
+
+- Objet : D05.e Replenishment Decision et candidats P01–P03 après U316/U318 ; backlog du 18 septembre 2026.
+- Sources : ELM202, Microsoft S08/S09 reconsultées. Documentation fonctionnelle, pas catalogue de capacités métier ni preuve installée.
+- Proposition Codex : Proposition U323 : distinguer Requirement-based Replenishment (besoins datés, éventuellement regroupés) et Target-based Replenishment (seuil et restauration d’une cible). Les noms sont des formulations FLOW appuyées sur les méthodes Microsoft, pas une nomenclature universelle. Les besoins restent liés à un objectif de stock ; aucune satisfaction d’Order transférée depuis D03. Réduire, augmenter ou décaler les apports prévus reste à ce stade une faculté des deux politiques, sans comportement autonome Supply Adjustment justifié. Proposition à valider ; aucun BHV créé.
+- Justification : deux politiques de déclenchement et de dimensionnement ont des conséquences métier différentes ; calcul net, calendrier et contraintes de lot restent dans leurs descriptions. Les politiques ne sont pas exclusives : les prévisions peuvent contribuer à la cible ou aux besoins datés.
+- Définition proposée Requirement-based Replenishment : déterminer les apports nécessaires pour couvrir des besoins de stock datés, après prise en compte du stock admissible et des apports déjà attendus.
+- Définition proposée Target-based Replenishment : déterminer les apports qui ramènent le stock projeté vers une cible lorsqu’un seuil ou une règle de réassort le demande.
+- Exemples fictifs : besoin de 120 à J+7, 70 utilisables et 20 attendues à temps donnent 30 à apporter ; position projetée 45, seuil 50, cible 100 donnent 55 avant contraintes. Ces exemples n’adoptent pas de formule universelle.
+- P03 : recommandation de conserver les ajustements comme faculté transverse des deux politiques, pas comme comportement autonome à ce stade. Réexaminer seulement si un mécanisme distinct lié aux engagements, à leur stabilité ou aux impacts est établi. N’efface ni le besoin ni la proposition historique ; aucune opération D04 transférée à D05.
+- Statut : deux comportements proposés, aucun adopté. Besoins métier independent du regroupement ou de la dispersion des composants de réalisation ; pas d’architecture de solution déduite.
+
+
+## CMP111
+
+- Objet : articulation D05.a / D02.b / D05.e ; réexamen de P01/P02 et CMP110, 18 septembre 2026.
+- Sources : ELM203 Microsoft et Oracle ; ELM202 reste pertinent pour la distinction native Requirement/Period/Min-Max.
+- Analyse et correction : U324/C98 : distinguer détermination des objectifs et seuils (Coverage Target Decision), gouvernance et application de leurs versions opérationnelles (Supply Protection), puis décision des quantités et dates d’apport (Replenishment Decision). Les min/max peuvent dépendre des besoins et varier par période ; la politique Min/Max utilise aussi une position de stock projetée. Requirement/Period et Min/Max restent des méthodes différentes, pas une chaîne où la première calcule les paramètres de la seconde. La création de deux comportements recommandée U323 est suspendue faute de bénéfice supplémentaire établi ; conserver les modalités dans les descriptions. Aucun comportement créé ni retiré.
+- Sens des politiques : les besoins datés peuvent conduire directement à des apports, tandis qu’une politique à seuil/cible condense des objectifs de service et de stock dans des paramètres, puis les confronte à la situation projetée. Les deux utilisent la demande ; la différence n’est pas intelligence contre garde-fou fixe. La politique à seuil/cible aide aussi à arbitrer fréquence des apports et immobilisation.
+- Précautions : le seuil de déclenchement n’est pas nécessairement un stock intouchable ; la cible haute n’est pas une capacité physique ni une interdiction absolue de dépassement. Ne pas déduire deux fois la même demande dans la cible et dans le stock projeté.
+- Proposition : conserver Replenishment Decision sans nouvelle décomposition à ce stade et expliciter ses modalités. Les frontières actuelles suffisent pour cette discussion. Rechercher un comportement seulement si un mécanisme, une politique, une variante ou un bénéfice différenciant pertinent pour FLOW est établi.
+- Statut : correction de l’explication Codex et recommandation à discuter ; aucune validation utilisateur supplémentaire. Pas de renommage, nouvelle capacité ou nouvelle architecture de solution.
+
+
+## CMP112
+
+- Objet : D05.a Coverage Target Decision, nom proposé Inventory Target Decision ; backlog du 18 septembre 2026 ; U328.
+- Auteur : Codex. Sources : ELM204 SAP IBP, Microsoft D365 SCM, Oracle Replenishment Planning ; correspondances détaillées sur fields.market_comparisons de D05.a.
+- Relation : recouvrements fonctionnels partiels, sans équivalence validée des capacités ou noms.
+- Correction de formulation : absence d'intitulé éditeur identique ne signifie pas absence de correspondance marché. Les résultats stock cible, minimum proposé et point de commande sont documentés. Un module peut regrouper plusieurs responsabilités FLOW ; une responsabilité peut mobiliser plusieurs fonctions ou opérateurs.
+- Position : conserver les décisions fines à résultat métier identifiable et rechercher les preuves dans les méthodes, propositions et résultats des outils. Ni bouton, ni formule intermédiaire, ni opérateur technique ne devient automatiquement une capacité. Le résultat doit être utilisable par un autre arbitrage ou une action, avec périmètre et finalité propres.
+- Bénéfice : rendre visibles les responsabilités susceptibles d'être assistées ou automatisées par règles, optimisation ou IA, sans en faire des capacités technologiques et sans attribuer ces mécanismes à un déploiement client.
+- Limite : correspondances proposées ; nom de remplacement non appliqué, aucune formule ni nouvelle capacité adoptée.
+
+
+Complément U329 à CMP112 — 18 septembre 2026 : Inventory Target Decision et la définition présentée sont adoptés et intégrés sur D05.a. Comparaison à la maille des responsabilités/résultats confirmée. Les correspondances SAP, Microsoft et Oracle restent des recouvrements partiels proposés ; aucun changement de sens natif ni preuve de déploiement supplémentaire.
+
+
+## CMP113
+
+- Auteur : Codex ; 18 septembre 2026 ; backlog après U329. Sources ELM205 SAP IBP / RELEX, candidates P12/P13 sous D05.a.
+- Recouvrement partiel : mécanisme de coordination des cibles et des stocks de sécurité sur plusieurs échelons ; pas simple exécution en masse de calculs indépendants par site.
+- Proposition : Multi-Echelon Inventory Optimization sous Inventory Target Decision. Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque.
+- Justification de décomposition : dépendances entre protection amont et aval ; éviter la duplication des marges de sécurité et décider où porter le stock. Le nom marché est conservé, son périmètre FLOW est limité aux cibles ; le domaine Inventory Optimization reste plus large.
+- Exemple fictif : comparer une protection concentrée à l’entrepôt et une protection davantage portée par les magasins selon les délais et leur fiabilité. Ni centralisation systématique ni réduction garantie du stock.
+- Frontières : le résultat est un ensemble cohérent de cibles ; pas l’affectation aux Orders, ni la décision/exécution des transferts. Stock Redistribution Decision conserve les transferts de stock existant et Replenishment Decision les apports continus.
+- P12 : risque et niveau de service figurent déjà dans la définition adoptée U329. Recommandation de ne pas créer de comportement autonome pour ce seul critère. Le candidat historique reste conservé en attente d’arbitrage.
+- Statut proposé. Question : FLOW doit-il déterminer conjointement les cibles entre échelons, au-delà de cibles locales ? Aucun nœud créé et aucune ambition Beaumanoir présumée.
+
+
+## CMP114
+
+- Auteur Codex ; 18 septembre 2026 ; D05.a et proposition P13 après U331. Sources ELM206 et ELM205.
+- Principe multi-échelon confirmé par Laurent ; examen demandé des contextes magasin et entrepôt.
+- Proposition : Store Inventory Optimization, Distribution Center Inventory Optimization et Multi-Echelon Inventory Optimization comme comportements frères de D05.a. Fiches et comparaisons dans modeles/backlog/inventory-target-behaviors-review.yaml.
+- Justification : demande client et disponibilité locale, alimentation des besoins aval, puis arbitrage conjoint des cibles interdépendantes. Le nombre de magasins traités en masse ne suffit pas à constituer une optimisation multi-échelons.
+- Les noms locaux sont des formulations FLOW sur des notions de marché documentées, pas des noms de capacités prétendument standards. MEIO est une appellation explicite RELEX ; SAP emploie Single-Stage/Multi-Stage.
+- Limite : l’opérateur Single-Stage SAP utilise des résultats du Global Multi-Stage ; ne pas présenter la proposition comme sa séquence technique. La maturité de déploiement est distincte de la hiérarchie du modèle.
+- Aucun comportement dark store ou autre lieu ajouté par défaut. Aucune capacité de slotting, picking, transport ou affectation absorbée. Les formulations et les trois rattachements détaillés restent proposés.
+
+
+Complément U332 à CMP114 — 18 septembre 2026 : noms et périmètres présentés des trois comportements adoptés, intégrés BHV026–BHV028 directement sous D05.a. Les formulations locales détaillées et correspondances restent éditoriales ; la définition multi-échelon présentée est conservée. P13 devient BHV028. Registre : audits/2026-09-18-inventory-target-behaviors/implementation.yaml.
+
+
+## CMP115
+
+- Auteur Codex ; 18 septembre 2026 ; D01.d Stocktaking, P08/P09 ; références ELM207.
+- Recommandation à discuter : Periodic Physical Inventory, Cycle Counting et Spot Counting comme politiques/variantes de fiabilisation. Le premier complète les deux pistes initiales de l’audit. Fiches et comparaisons dans modeles/backlog/stocktaking-behaviors-review.yaml.
+- Bénéfices : référence complète sur un périmètre, entretien récurrent de la fiabilité, réaction ciblée à une situation. Ne pas réduire le découpage à des boutons ou modalités écran/RFID/mobile.
+- Limite : les procédures produit se recouvrent ; Microsoft distingue plans/seuils de création et spot sans travail préexistant. Un signal de quantité basse ne prouve pas une anomalie et n’est pas un seuil de réassort. Le cas de picking impossible est une illustration FLOW, pas un fait de déploiement.
+- Frontière à discuter : politique et demande de vérification au niveau du modèle métier, réalisation physique par les exécutants ; pas d’architecture logicielle déduite. Record Inventory Movements conserve les ajustements traçables et Inventory Tracking les états.
+- Statut proposé. Aucun comportement créé, aucun transfert de responsabilité adopté. Autres procédures de marché non promues automatiquement.
+
+
+Complément U334 à CMP115 — 18 septembre 2026 : Periodic Physical Inventory (BHV029), Cycle Counting (BHV030) et Spot Counting (BHV031) adoptés et intégrés sous Stocktaking. La politique de vérification et les demandes de contrôle sont dans son mandat ; écarts/corrections justifiées restent communs et réalisation physique chez les exécutants. P08/P09 intégrés au périmètre réexaminé ; comparaisons marché proposées. Registre : audits/2026-09-18-stocktaking-behaviors/implementation.yaml.
+
+
+## CMP116
+
+- Auteur Codex ; 18 septembre 2026 ; D02.e Supply Assignment et D02.c Reservation, arbitrage A01 ; ELM208 SAP/Microsoft.
+- Proposition : conserver deux responsabilités, lien ressources-commandes et protection de la quantité engagée contre usages concurrents. Une opération peut matérialiser les deux. L’affectation opérationnelle SAP fournit explicitement les deux effets ; ne pas affirmer qu’une affectation est toujours non contraignante.
+- Microsoft Inventory Visibility illustre une réservation logique dont la quantité disponible est diminuée sans changer le stock physique ; soft ne signifie pas temporaire ou non opposable. Les règles et consommateurs doivent respecter cette disponibilité.
+- Bénéfice FLOW : expliciter engagements, granularité et non-double-décompte sans imposer une architecture logicielle ni une séquence universelle. Les décisions spécialisées conservent leurs arbitrages ; la gestion des liens ne devient pas un optimiseur supplémentaire.
+- Contrat, exemple et comparaisons destinées aux fiches : modeles/backlog/assignment-reservation-review.yaml. Rapprochements proposés, aucune nouvelle validation métier ni comportement créé.
+
+
+## CMP117
+
+- Auteur Codex ; 18 septembre 2026 ; U336, A01, D02.c Reservation ; sources ELM209 et ELM208.
+- Appui méthodologique : la réservation maintient l’engagement entre étapes d’une opération métier longue ; distinguer l’effet sur les usages concurrents de la coordination du processus et de ses compensations.
+- Microsoft documente des compensations métier, dont annulation de réservations ; AWS les décrit dans une réalisation saga. Ces architectures ne sont pas adoptées comme découpage métier ou logiciel de FLOW.
+- Définition et exemple proposés dans modeles/backlog/assignment-reservation-review.yaml, long_transaction_U336. Pas d’expiration automatique imposée, pas de soft assimilé à temporaire, pas de libération systématique lors de la confirmation. Une réalisation physique peut nécessiter d’autres actions que l’annulation d’un engagement.
+- Statut proposé ; aucun nom, définition ou nouveau comportement modifié dans le catalogue.
+
+
+## CMP118
+
+- Auteur Codex ; 18 septembre 2026 ; U337 ; D02.c Reservation ; ELM210 Shopify et Microsoft.
+- Appui fonctionnel à la réservation comme engagement au bénéfice du client/besoin et exclusion des usages concurrents. Le lock de traitement protège un acteur/opération, sans suffire à exprimer cet engagement commercial. Le bénéficiaire peut être différent de l’utilisateur et l’engagement survivre à la session.
+- Shopify fournit le cas de réservation d’un draft order empêchant d’autres achats ; Microsoft interdit le retrait pour d’autres commandes et inclut aussi production/ressources futures. Ne pas réduire automatiquement le modèle générique au seul client acheteur.
+- Interprétation et définition proposées dans assignment-reservation-review.yaml, commercial_commitment_U337. Pas de transfert de propriété immédiat déduit, ni d’interdiction générale des opérations autorisées servant le bénéficiaire. Préserver les frontières affectation/réservation/promesse.
+- Statut proposé ; aucun nouveau comportement, nom ou définition appliqué au catalogue.
+
+
+## CMP119
+
+- Auteur Codex ; 18 septembre 2026 ; U338–U340 ; D02.c Reservation dans le backlog courant ; ELM211.
+- Recouvrement partiel : Microsoft illustre la préservation de disponibilité contre les engagements concurrents ; les produits commerce montrent plusieurs jalons de réservation, au panier, à la soumission des informations de paiement ou à la commande. Commande ne signifie pas encaissement.
+- Proposition : expliciter Reservation comme sécurisation des ressources au service de la promesse, selon des conditions métier ; les moyens transaction/verrou restent informatiques (clarification utilisateur U339). Aucun délai, jalon universel ou nouveau comportement adopté.
+- Limite : préservation de disponibilité ne prouve pas la réussite physique de toute la promesse ; ces fonctions produit ne sont pas des capacités équivalentes terme à terme ni des preuves de déploiement.
+- Définition détaillée et correspondances proposées dans assignment-reservation-review.yaml, promise_security_U340. Catalogue actif inchangé.
+
+
+## CMP120
+
+- Codex ; 18 septembre 2026 ; U341 ; ELM212 ; backlog courant D02.c Reservation et frontière D05/D03.
+- Microsoft et commercetools : recouvrement partiel avec politiques de réservation configurées et leviers de variation ; absence de preuve d’un moteur standard choisissant le jalon commercial selon stock et vitesse des sorties.
+- IBM stock de sécurité et SAP BOP : appuis sur des adaptations voisines, sans équivalence avec une décision de politique de réservation. Ne pas déplacer ces responsabilités vers Reservation.
+- Proposition FLOW : rendre explicite la responsabilité Reservation Policy Decision, nom et rattachement à arbitrer. Politique conditionnelle définie à l’avance, sélection contextuelle et révision de politique sont distinctes ; pas besoin d’IA pour une décision adaptative.
+- Bénéfice : arbitrage explicite entre sécurisation du parcours et indisponibilité pour les autres demandes ; pénurie ne signifie pas automatiquement réservation plus précoce. Distinguer vitesse des engagements et sorties physiques. Préserver les conditions des engagements existants.
+- Statut proposé ; détaillé dans assignment-reservation-review.yaml, policy_decision_U341. Aucun changement du catalogue actif ni nouveaux comportements.
+
+
+## CMP121
+
+- Codex ; 18 septembre 2026 ; U342 ; ELM211–ELM213 ; D05.h Reservation Policy Decision, backlog courant.
+- Nom et définition de la capacité adoptés ; D05 et BHV032–BHV035 proposés. Quatre mécanismes : jalon métier, fenêtre avant besoin, régime de service différencié, adaptation au risque. La décomposition vise des garanties et des pratiques distinctes ; mécanismes combinables.
+- Appuis directs sur les jalons commerce et l’horizon Oracle EBS ; appui partiel Microsoft/IBM aux régimes différenciés. Comportement adaptatif FLOW : moyens configurables et adaptations voisines documentés, moteur standard de choix du jalon selon risque non démontré.
+- Les paramètres de durée, les opérations de gestion, les interfaces et l’emploi d’IA ne sont pas des comportements. Modes Fair Share/Percentage, priorités, lots, réservations réseau ou partielles : périmètres examinés et frontières explicités, sans recopier les regroupements produits.
+- Registre structuré : modeles/backlog/reservation-policy-review.yaml. Synthèse dérivée : audits/2026-09-18-reservation-policy/README.md. Absence de preuve d’implémentation Beaumanoir ; aucune exhaustivité absolue revendiquée.
+
+
+Complément U343 à CMP121 — 18 septembre 2026 : Laurent adopte les quatre comportements de Reservation Policy Decision (noms et responsabilités résumées présentées) et le rattachement à D05. Les équivalences marché ne sont pas validées par cet accord ; les limites sur le moteur adaptatif restent explicites. Aucune nouvelle proposition marché ni changement de périmètre motivant une nouvelle recherche.
+
+
+## CMP122
+
+- Codex ; 18 septembre 2026 ; U344 ; ELM214 ; A03, D04.n/D04.o/D02.e, backlog courant.
+- Recouvrement partiel : Microsoft sépare recommandations et mise en action, tout en combinant parfois affermissement et regroupement ; Oracle illustre les ajustements du processus après changement. Aucun produit ne tranche à lui seul la taxonomie FLOW.
+- Proposition : préserver application des plans par D04 et liens ressources-commandes par Supply Assignment ; documenter un contrat transversal selon les effets. Ne pas ajouter un comportement unique sous Lifecycle, trop étroit, ni un parent générique non justifié. Case Management garde le mécanisme de compensation discuté U293.
+- Portée : discussion, pas adoption ni modification du catalogue. Registre order-plan-application-review.yaml ; les contrats détaillés restent proposés.
+
+
+## CMP123
+
+- Codex ; 18 septembre 2026 ; U345/C99 ; ELM215 ; D02.e et BHV006, backlog courant.
+- SAP combine disponibilités, priorités, affectation et contrôles de libération ; la réalisation intégrée n’impose pas de fusion FLOW et ne prouve pas la mobilisation de toutes les capacités. Le traitement existe aussi hors batch.
+- Application de plan sous Supply Assignment établie U345. Propositions : Supply Assignment Plan Application, Incremental Supply Assignment et Assignment Rebalancing ; mécanismes combinables, pas CRUD. SAP Reassignment justifie la différence entre préserver et réexaminer les affectations ; l’import et l’application inchangée d’un plan externe ne sont pas attestés par ces sources.
+- Microsoft Action messages éclaire les recommandations dans Simulation & Analysis : propositions explicables, distinctes de décision et application. Compensation Oracle écartée de cette décomposition métier ; l’étude U344 conserve sa valeur historique, pas son autorité courante.
+- Formulations et deux mécanismes complémentaires proposés ; aucune nouvelle capacité ou comportement créé, aucune preuve d’installation Beaumanoir.
+
+
+## CMP124
+
+- Codex ; 18 septembre 2026 ; U346/U347 ; ELM216 ; backlog D02.e, Promise Management et Order Lifecycle Management.
+- API, immédiateté, calcul incrémental et préservation métier sont quatre dimensions distinctes. ACL SAP appuie le ciblage des recalculs ; Drools éclaire la réalisation technique, sans équivalence métier.
+- Microsoft Firm planned orders transforme un ordre planifié en commande effective. Keep supply for confirmed demand est plus proche de la préservation demandée, avec des limites de configuration du stock reçu ; Freeze suit une fenêtre temporelle. SAP Fixed Date and Quantity protège la confirmation par défaut, avec inclusion explicite possible en BOP. Aucun verrou absolu déduit.
+- Proposition : distinguer état de commande, stabilité date/quantité promise et stabilité de l’affectation. Préserver un engagement ne contraint pas nécessairement à garder la même source. Bénéfice : stabilité opérationnelle ; compromis : moins de latitude d’optimisation.
+- Statut : discussion, aucun nouveau comportement adopté ou créé. Détails et comparaisons structurées : supply-assignment-mechanisms-review.yaml, clarifications_U346_U347.
+
+
+## CMP125
+
+- Codex ; 18 septembre 2026 ; U348/U349 ; ELM216 ; D04.o, BHV036, BHV037. Sources Microsoft Firm planned orders, Keep supply for confirmed demand, Master plans — Freeze, et SAP Fixed Date and Quantity consultées de nouveau.
+- Affermissement : transition planifié vers ferme. Protection : stabilité d’éléments désignés contre réoptimisation ; recouvre partiellement les protections SAP et Microsoft, sans les unifier artificiellement. Microsoft freeze time fence vise une fenêtre et empêche aussi la création d’ordres planifiés ; ce n’est pas une équivalence exacte avec un gel sélectif d’Order.
+- U349 adopte Order Firming et sa définition présentée puis demande le mécanisme de protection. Order Freezing est le libellé éditorial ; périmètres, exceptions, exemples et contrats proposés. Bénéfice : stabilité des engagements et préparation ; compromis : liberté d’optimisation réduite.
+- Protéger la date/quantité promise ne fige pas nécessairement la source. D04 gouverne les restrictions, D03 et Supply Assignment les respectent dans leurs responsabilités. Aucun lock technique ni réservation implicite. Pas de preuve de déploiement Beaumanoir.
+- Comparaisons structurées sur la capacité et les comportements ; annexe order-lifecycle-behaviors.yaml. P11 non adopté par extension.
+
+
+Complément U350 à CMP125 : nom Order Freezing adopté. Les sources déjà consultées demeurent pertinentes, périmètre inchangé ; aucun consensus lexical ni équivalence supplémentaire déduit.
+
+
+## CMP126
+
+- Codex ; 18 septembre 2026 ; U351 ; ELM217 ; D04.o. Firming et Freezing ne couvrent pas tout le cycle de vie. Le périmètre de D04.o décrivait déjà release, hold/reprise, report, annulation et clôture ; leur formalisation en comportements restait incomplète.
+- Cinq mécanismes supplémentaires proposés : Order Release, Order Hold & Resume, Order Rescheduling, Order Cancellation, Order Closure. Le bénéfice et les frontières de chacun sont dans order-lifecycle-behaviors.yaml, coverage_review_U351. Aucun nouveau nœud actif adopté.
+- Microsoft justifie la distinction autorisation de traitement / blocage / changement d’échéance / annulation du reliquat / fin de traitement ; SAP et Oracle apportent restrictions selon l’avancement et portées de blocage. Chaque produit combine des responsabilités que FLOW sépare.
+- Rescheduling porte l’application au besoin de l’Order, pas la décision de promesse ni l’adaptation des prestations. Cancellation retire le besoin restant ; Closure constate et gouverne la terminaison. Hold limite progression, Freezing limite modification. Aucun cycle universel aux cinq types d’Orders.
+- Le fait qu’un mécanisme soit exposé comme action produit ne le disqualifie pas : la granularité dépend de l’effet métier et de la complexité, sans décomposition systématique des boutons. P11 reste à instruire.
+
+
+## CMP127
+
+- Codex ; 18 septembre 2026 ; U352 ; ELM218 ; D04.i–o. Le CRUD doit être couvert explicitement ; C/R/U figurent déjà dans la gestion par type, suppression admissible et archivage à préciser.
+- Oracle Fusion distingue suppression d’un brouillon et annulation d’une commande en traitement. Microsoft SCM documente archivage et consultation historique ; Oracle EBS distingue archivage et purge ; Business Central emploie aussi archive pour des versions successives. Aucun alignement automatique des états ou des durées.
+- Proposition : documenter C/R/U/D dans les capacités par type, avec contraintes Lifecycle, et ajouter comme candidat Order Archiving sous D04.o. Pas quatre comportements CRUD systématiques, pas de capacité Order Record Management concurrente. Clôture opérationnelle, sortie vers l’historique, restauration de version et réouverture métier restent distinctes.
+- Bénéfice : compléter le périmètre sans doublons et préserver l’explication des engagements passés. Noms, rattachements et règles proposés ; aucun nouveau nœud actif ni publication. Registre order-lifecycle-behaviors.yaml, crud_and_archiving_U352.
+
+
+## CMP128
+
+- Codex ; 18 septembre 2026 ; U353/U354 ; ELM219 ; D04.i–o. Principe du mode brouillon adopté ; rattachement et formulation détaillée proposés dans order-lifecycle-behaviors.yaml.
+- Oracle Draft distingue préparation enregistrée et soumission au fulfillment ; ne pas l’assimiler systématiquement à un ordre planifié ou à l’affermissement. Les éventuels effets de réservation suivent leur politique explicite.
+- Microsoft Delivery schedules appuie split/spread sous Order Structuring sans exiger plusieurs commandes. Microsoft et Oracle Copy réutilisent un contenu pour une nouvelle commande ou de nouvelles lignes ; proposition de garder la copie simple dans la gestion par type.
+- Bénéfice : distinguer préparer, transformer et engager. Split conserve la demande transformée ; clone peut créer une demande supplémentaire. Aucune copie automatique de promesse, de réservation ou de statut ferme. Aucune nouvelle hiérarchie adoptée ni nœud créé.
+
+
+## CMP129
+
+- Codex ; 18 septembre 2026 ; U355 ; ELM220 ; D04.n/D04.o. Réexamen de la frontière de CMP128, sans changer les capacités adoptées.
+- Microsoft illustre une ligne commerciale avec lignes de livraison ; Oracle un split de fulfillment avec quantité conservée. Aucun ne prouve la nécessité d’une capacité autonome Structuring. SAP Order Hierarchy illustre une responsabilité de composition, dans le contexte maintenance/service uniquement.
+- Proposition : mutation avec filiation intégrable dans Lifecycle élargi ; capacité Structuring séparée si une composition métier persistante doit être maintenue et gouvernée. L’Order chapeau n’est ni nécessaire comme implémentation ni suffisant comme simple forme de données ; examiner engagement actif, résultats d’ensemble et invariants.
+- Catalogue actuel : D04.n est une capacité transactionnelle sœur de D04.o sous D04 ; elle ne définit pas de chapeau. Les frontières restent à arbitrer. Aucun objet, fusion, retrait ou changement de parent appliqué.
+
+
+## CMP130
+
+- Codex ; 18 septembre 2026 ; U357 ; ELM221 ; cible D04 discutée. Microsoft et SAP parlent de types/catégories pour les variantes de commandes. Cela appuie le découpage par variantes mais ne prouve ni une capacité Role ni quatre capacités de catalogue identiques chez les éditeurs.
+- Proposition : Order Handling regroupant les cinq gestions par finalité en comportements, Lifecycle pour mutations internes, Structuring pour composition durable, Archiving pour conservation historique. Les deux dernières séparations suivent la direction utilisateur ; noms et détails de la cible restent proposés.
+- Rôle seul est ambigu avec Party/Role ; Order Type Management évoquerait la configuration des types. Order Handling est une proposition de nom justifiée par la responsabilité FLOW, pas un consensus revendiqué.
+- Regrouper l’aptitude ne crée pas un Order universel ou un cycle commun obligatoire. Microsoft intercompany conserve des Orders achat/vente liés. Le retour client et le retour fournisseur gardent leurs effets distincts.
+- Maintenir les identifiants et preuves si la migration est confirmée ; le catalogue actif reste inchangé. La proposition d’Archiving sous Lifecycle est marquée remplacée par la direction U357 dans l’annexe.
+
+
+## CMP131
+
+- Codex ; 18 septembre 2026 ; U358–U360 ; ELM222. Type remplace Handling comme préférence lexicale pour la finalité de l’Order ; pas de référentiel des types ni de mutation universelle de type déduits.
+- Split est documenté par Oracle sur sites, dates et substituts. Microsoft et SAP représentent l’étalement en delivery schedules/schedule lines. SAP ERP ARun emploie également spread logic pour la répartition proportionnelle de stock entre besoins : sens différent, à préserver.
+- Recommandation : Split qualifié par objet/effet ; pas de comportement générique Spread sans axe et ressource précisés. Le choix des quantités reste une décision spécialisée ; mutation, composition persistante et affectation sont trois effets distincts. Aucun catalogue de comportements éditeur transposé automatiquement.
+- Comparaisons et exemple conservés dans order-lifecycle-behaviors.yaml, split_spread_U360. Aucune modification du catalogue actif ni adoption nouvelle de noms/définitions.
+
+
+## CMP132
+
+- Codex ; 18 septembre 2026 ; U361 ; ELM222/ELM223. Spread est bien une logique SAP ARun, sans être synonyme du processus ARun. FIFO est une autre logique. Groupes, quotas et contrôles de libération encadrent le résultat.
+- La répartition proportionnelle détermine des parts ; l’affectation établit les liens ressources-commandes. Conserver décision et application dans leurs responsabilités FLOW, sans créer un comportement Structuring par ressemblance lexicale. Le split éventuel est une conséquence séparée. Parent exact de décision à instruire.
+- Exemple simplifié 100/200 avec stock 150 donne 50/100 au prorata ; ce n’est pas une garantie du résultat de tout paramétrage SAP. Référence ERP Fashion, pas preuve pour toute édition ou installation Beaumanoir.
+
+
+Complément U362 à CMP132 : Laurent fixe « Split : coupe des commandes » et « Spread : on répartit entre les commandes ». Distinction adoptée dans le contexte ARun ; SAP confirme la répartition de ressources entre besoins. Le parent précis de la décision et les futurs comportements ne sont pas adoptés par extension. Les formulations historiques de Structuring restent à mettre en cohérence lors de la migration.
+
+
+## CMP133
+
+- Codex ; 18 septembre 2026 ; U363 ; synthèse des comparaisons CMP125–CMP132 appliquée au backlog. La taxonomie FLOW à quatre capacités n’est pas présentée comme un catalogue éditeur commun.
+- Order Type porte les variantes métier ; les identifiants des cinq anciennes capacités sont reclassés en comportements. Lifecycle porte mutations et split, Structuring composition persistante, Archiving conservation historique. Microsoft et SAP documentent les types ; Microsoft/Oracle les transitions, copies et splits. Archivage Microsoft relu : commandes facturées et exclusion des chaînes intersociétés sont des restrictions produit, pas des règles FLOW.
+- Spread ARun : décision des parts et affectation distinctes des mutations. Exemple proportionnel simplifié ; aucun nouvel algorithme ni parent de décision introduit. Split/Spread ajoutés au glossaire métier avec limites de preuve.
+- Accord U363 appliqué aux principes et rattachements ; descriptions développées, nouveaux libellés Drafting/Splitting et contrats proposés. Marché exposé dans les fiches, pas preuve de réalisation Beaumanoir.
+
+
+## CMP134
+
+- Codex ; 18 septembre 2026 ; U345/U364 ; ELM215/ELM216 ; backlog D02.e et BHV045–BHV047.
+- SAP S/4HANA aATP 2025 FPS01, Backorder Processing, section Reassignment : passage primaire indexé relu pendant la discussion. Sans Reassignment, conserver les affectations et traiter le reliquat ; avec Reassignment, remettre en jeu les affectations du périmètre sélectionné. Source : https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+- Microsoft Dynamics 365 SCM, Keep supply for confirmed demand, sections What data is preserved et Control how on-hand inventory is pegged, page primaire relue pendant la discussion : conservation d’une chaîne et du pegging entre planifications, avec conditions particulières pour le stock reçu. Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- Recouvrement partiel : SAP associe décisions et application ; FLOW les sépare. Reassignment est un terme SAP établi ; Incremental Supply Assignment reste un libellé descriptif FLOW, sans consensus de nommage démontré. Microsoft protège une chaîne plus large, sans équivalence exacte avec le complément d’affectation FLOW. Pas de preuve d’import d’un plan externe arbitraire chez SAP, ni de réalisation Beaumanoir.
+- U364 adopte la distinction stabilité/adaptation et sa représentation. Compléter sans remettre en jeu l’existant n’est ni un gel permanent, ni RETE, ni une promesse de recalcul partiel. Correspondances et noms restent proposés dans leur portée ; descriptions et limites exposées dans les fiches.
+
+
+## CMP135
+
+- Codex ; 18 septembre 2026 ; U365 ; ELM224 ; D03.i/j/k/m et D02.e ; proposition dans modeles/backlog/fulfillment-strategy-review.yaml.
+- Le besoin exprimé est le cadre d’application de l’ATP : la proposition précédente de calcul autonome du plan est réexaminée au profit de Fulfillment Strategy Decision. Résultat proposé : stratégie applicable, distincte du plan et de son application.
+- SAP Supply Assignment Rule éclaire les contrôles d’ARun ; Microsoft Fulfillment strategies éclaire objectifs, contraintes, sources et sélection contextuelle. Recouvrements partiels, pas équivalence de niveaux ni preuve d’une décision autonome éditeur.
+- Fulfillment porte la finalité de satisfaction ; Assignment décrit les liens ressources-commandes. Fulfillment Optimization dépasse le cadrage et ne remplace pas le nom de la capacité d’action. Le suffixe Decision et la frontière exacte sont proposés pour FLOW.
+- ATP/aATP documente possibilités de confirmation, quantités et dates sous restrictions. La maximisation multidimensionnelle est une ambition FLOW à préciser, pas une définition universelle démontrée ; PTP et CTP conservent leurs responsabilités.
+- Aucun changement de catalogue ou de glossaire adopté ; comparaisons, différences, sources et portée disponibles dans l’annexe pour la discussion client.
+
+
+## CMP136
+
+- Codex ; 18 septembre 2026 ; U366/U367 ; ELM225 ; audit du backlog et du glossaire, sans renommage du catalogue.
+- Supply, Supply Chain et Fulfillment sont distingués dans TER083–085 ; TER035 conserve la convention locale et sa définition antérieure. Appuis marché et limites dans les fiches.
+- D03 vers Fulfillment Optimization est un candidat de nommage orienté finalité, à valider avec ses frontières. D02.e applique déjà les affectations sous D03 : ne pas déplacer sa responsabilité par confusion entre optimisation et application. Supply Protection et Future Supply Projection restent orientés ressources. Supply Order est un faux ami potentiel par rapport aux ordres d’apport Microsoft.
+- Inventaire et décisions proposées : modeles/backlog/supply-fulfillment-audit.yaml ; restitution audits/2026-09-18-supply-fulfillment/rapport.md. Correspondances qualifiées par élément, sans consensus universel inventé.
+- Aucune nouvelle définition n’étend automatiquement FLOW à toute la Supply Chain, ni Fulfillment à tous les types d’Orders et services. Comparaisons proposées ; demande d’audit et de glossaire ne vaut pas accord sur les renommages.
+
+
+## CMP137
+
+- Codex ; 18 septembre 2026 ; U368 ; ELM226 ; D13, D13.a, TER054 ; proposition de révision de SF-A06.
+- Supply Network recommandé pour la topologie de référence partagée, Supply Network Ingestion pour sa réception. L’usage SAP fournit un appui lexical et fonctionnel ; Microsoft distingue réseau d’ensemble et sources de satisfaction sans exclure les fournisseurs de ces dernières.
+- La recommandation précédente de conserver Fulfillment Network reposait trop sur le libellé déjà adopté et sa compatibilité avec la finalité, sans comparer assez directement le périmètre structurel. Elle est révisée ; capture conservée dans l’audit. Pas de nouveau réseau séparé par finalité, pas d’assimilation des lieux aux Party.
+- Formulation étendue des flux et choix des attributs proposés ; Q076 reste ouverte. Les références de stock, capacité effective, parcours retenu et catalogue de services ne sont pas absorbées. Aucun renommage de catalogue appliqué sans adoption.
+
+
+## CMP138
+
+- Codex ; 18 septembre 2026 ; U369 ; ELM227 ; universe-supply ; renommage Supply Chain Management proposé, pas adopté par la question.
+- Appui CSCMP sur le pilotage d’un système amont-aval et la coordination ; Microsoft atteste un usage englobant pour un produit. Ce dernier n’est pas notre catalogue normatif.
+- Le niveau univers peut porter SCM tout en exposant le périmètre cartographié FLOW, plus limité. Aucun ajout automatique de production, sourcing stratégique, finance ou autres domaines exclus ; pas de reprise des opérations internes des exécutants.
+- Supply Network désigne la structure, Fulfillment Optimization une finalité de domaine, SCM leur pilotage d’ensemble. Les noms D13 et D03 sont adoptés dans U369, sans validation globale des nouvelles descriptions. Application de ces noms au catalogue à réaliser.
+
+
+## CMP139
+
+- Codex ; 18 septembre 2026 ; U375/U376 ; ELM228 ; proposition Fulfillment Strategy Decision dans D03, non créée, après choix du nom de domaine Fulfillment Optimization U369.
+- Le marché distingue des configurations et leur détermination contextuelle, puis les calculs qui les utilisent. Appui fonctionnel à la proposition ; aucune capacité native au même nom ni équivalence de périmètre démontrée.
+- Recommandation : préciser la réponse métier comme cadre applicable, sans absorber priorités, protections, réservation, arbitrage économique ou calcul des affectations. La présence de règles déterministes ne disqualifie pas une décision ; leur administration ne la justifie pas à elle seule.
+- Proposition affinée, sources et limites conservées dans modeles/backlog/fulfillment-strategy-review.yaml, market_review_U376 ; proposition U365 gardée pour provenance. Statut proposé, aucun accord ni ajout de catalogue.
+
+
+### Réexamen CMP139 — U377
+
+La responsabilité demandée produit un scénario de plan d’affectation global ; elle ne se limite pas à sélectionner un cadre. Le rapprochement pertinent est le service Microsoft Intelligent Fulfillment Optimization et son résultat fulfillment plan. La sélection de stratégie U376 reste un mécanisme d’entrée, pas le résultat recherché. Nom Fulfillment Plan Decision proposé selon la convention FLOW, sans intitulé natif équivalent revendiqué. Aucune capacité créée. Source principale ELM228 relue ; complément : https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization, introduction consultée le 18 septembre 2026. Analyse détaillée : global_plan_review_U377 dans l’annexe.
+
+
+### Intégration CMP139 — U378
+
+Nom, définition et nature de Fulfillment Plan Decision adoptés et intégrés sous D03.o ; D03 renommé Fulfillment Optimization selon l’accord U369. Les correspondances Microsoft et leurs limites sont présentes dans la fiche, avec statut proposé distinct de l’accord sur la capacité. Relations détaillées éditoriales ; aucun niveau supplémentaire ni comportement créé. A02 résolue sur la responsabilité de décision collective. Preuve : audits/2026-09-18-fulfillment-plan-U378/implementation.yaml.
+
+
+## CMP140
+
+Codex ; 18 septembre 2026 ; U379 ; ELM229 ; A04 et D04.l/D04.m/D05.c/D06.f dans le backlog après U378.
+
+La gestion des Orders de retour est explicite ; la décision de devenir reste ouverte. Proposition Return Disposition Decision sous D05, fondée sur le résultat logistique et la récupération de valeur, distincte des suites commerciales et financières. Microsoft fournit le terme Disposition ; SAP documente des orientations après inspection. Les produits combinent choix, traitement et effets ; FLOW les distingue. Aucun code de disposition ne devient automatiquement comportement. Statut proposé ; aucune capacité créée. Détail : modeles/backlog/return-disposition-review.yaml.
+
+
+### Intégration CMP140 — U380
+
+Return Disposition Decision intégrée sous D05.i : nom, définition, nature et parent D05 adoptés. Aucun comportement ; contrats et comparaisons proposés. Preuve : audits/2026-09-18-return-disposition-U380/implementation.yaml. Les contrôles passent, dont préservation de 125 fichiers figés.
+
+## CMP141
+
+Codex ; 18 septembre 2026 ; U381/U382 ; ELM229/ELM230 ; D05.i et D04.l après U380. Recouvrement partiel et appui sémantique, statut proposé.
+
+Laurent distingue prises en charge par la gestion des retours et stratégies de décision. Proposition de deux mécanismes combinables : Policy-based Disposition et Value Recovery Optimization. La standardisation des cas connus et l’arbitrage contextuel justifient une décomposition à discuter. Les noms sont des formulations FLOW, pas un catalogue éditeur commun. Les sources produit combinent souvent choix et réalisation, ainsi que des effets commerciaux hors D05.i. Aucun comportement par code, objectif, canal ou opération automatique.
+
+D04.l est déjà un comportement d’Order Type : la gestion des Orders n’est pas la gestion complète du devenir des produits. Le porteur des prises en charge reste à instruire sans quatrième niveau, transfert implicite de D01/D06 ni création automatique. Aucun changement au catalogue dans cette discussion ; pas de validation attribuée aux deux candidats éditoriaux. Analyse : behavior_review_U382 dans modeles/backlog/return-disposition-review.yaml.
+
+
+## CMP142
+
+Codex ; 18 septembre 2026 ; U383 ; ELM229–ELM231 ; backlog D04.i–m et D05.i/BHV048–049. Statut : correspondances proposées ; structure et stratégies adoptées séparément.
+
+Une capacité par type d’Order est justifiée par la maille terminale FLOW : chaque responsabilité peut décrire ses mécanismes sans sous-comportement. Microsoft documente des processus propres aux achats et aux retours, mais traite le retour fournisseur comme type d’achat ; les cinq capacités FLOW ne sont donc pas un découpage universel des produits. Les correspondances héritées des cinq variantes sont marquées à réexaminer après changement de maille. Order Type D04.p est retiré, identifiant non réutilisable ; Lifecycle, Structuring et Archiving restent transverses.
+
+Policy-based Disposition et Value Recovery Optimization sont intégrés sous D05.i. Blue Yonder documente règles, orientation contextuelle et récupération de valeur ; Microsoft fournit le vocabulaire de disposition. Nos noms et la séparation décision/application ne sont pas un catalogue natif partagé. Les limites commerciales et financières des offres, ainsi que l’absence de preuve algorithmique ou de réalisation Beaumanoir, restent explicites dans les fiches. Direction remise en stock/réparation/renvoi conservée pour l’instruction des comportements d’action, sans les importer comme codes produit ni modifier implicitement D01/D06.
+
+
+## CMP143
+
+Codex ; 18 septembre 2026 ; U384 ; ELM232. Noms courts des cinq capacités D04.i–m appliqués sur demande ; aucune nouvelle équivalence avec les objets documentaires du même nom. Microsoft emploie Sales returns pour le processus et Purchase order pour le document ; la convention FLOW conserve le type capacité et une définition verbale explicite.
+
+Cinq comportements Customer Return proposés dans modeles/backlog/customer-return-behaviors.yaml : Return to Stock, Repair and Refurbishment, Return to Supplier, Return to Customer et Scrapping. Rapprochement partiel aux suites logistiques SAP et dispositions Microsoft. Les contreparties et preuves justifient la distinction des renvois ; Supplier Return reste la capacité qui porte la commande fournisseur. FLOW sépare les décisions D05.i, les suites D04, les prestations D06 et les stocks D01, là où les fonctions produit peuvent les associer avec des effets financiers.
+
+Les parcours sont combinables ; réparation puis restitution ou stock. Remplacement client et règlement sans retour sont d’autres axes, à instruire avec les frontières commerciales. Donation, revente secondaire et recyclage ne sont pas assimilés au rebut. Noms, descriptions et élargissement proposé de Customer Return restent à discuter ; seul le retrait de Management est appliqué au catalogue dans U384.
+
+
+### Intégration CMP143 — U385
+
+La définition élargie de Customer Return et les cinq parcours proposés U384 sont adoptés et intégrés sous BHV050–BHV054. Les correspondances SAP/Microsoft, leurs écarts et limites sont portés par la capacité et chaque comportement, avec statut proposé distinct de l’accord métier. Return to Supplier mobilise Supplier Return sans dupliquer sa responsabilité. Les nouvelles descriptions détaillées et le contrat formalisé de relais restent éditoriaux. Les autres axes commerciaux ou filières ne sont pas intégrés par extension. Preuve : audits/2026-09-18-customer-return-U385/implementation.yaml.
+
+
+## CMP144
+
+Codex ; 18 septembre 2026 ; U386 ; ELM233 ; D04.m Supplier Return après U385. Recouvrement partiel ; statut proposé, aucun comportement créé.
+
+Proposition de deux parcours : Return for Credit sans remplacement attendu, et Return for Replacement avec maintien d’un apport de remplacement. Oracle explicite l’effet sur les réceptions futures ; SAP ByDesign distingue avoir, remplacement et mélange par quantité ; Microsoft Business Central produit une commande de remplacement liée. FLOW conserve cette différence d’attendu Supply, sans imposer l’objet technique, la réouverture d’un statut ou reprendre le règlement comptable. Motifs, opérations et interfaces ne deviennent pas des comportements.
+
+Return for Repair demeure conditionnel : une reprise au titre de l’obligation du fournisseur et un achat de prestation à un réparateur ne sont pas automatiquement la même responsabilité. Oracle EBS documente la réparation externe via achat et mouvements, sans prouver son rattachement à un Supplier Return FLOW. Proposition et exemples : modeles/backlog/supplier-return-behaviors.yaml. Aucun accord implicite sur la définition élargie, les noms ou les contrats.
+
+
+### Intégration CMP144 — U387
+
+Return for Credit (BHV055) et Return for Replacement (BHV056) sont adoptés sous Supplier Return. La distinction porte sur l’apport de remplacement attendu ; finance, négociation, exécution et stock restent distincts. Les comparaisons Microsoft Business Central, SAP ByDesign et Oracle Fusion Cloud sont présentes dans les fiches avec leurs versions, différences et limites. Correspondances proposées, sans assimilation des produits ou des niveaux. La formalisation de la dépendance à Purchase Order est proposée ; la responsabilité de l’apport est acquise. Return for Repair demeure conditionnel et non créé. Définition élargie du parent éditoriale. Preuve : audits/2026-09-18-supplier-return-U387/implementation.yaml.
+
+
+### Complément CMP144 — U388
+
+Return for Repair ajouté sous Supplier Return (BHV057) à la demande explicite de Laurent. Le point de rattachement laissé conditionnel U386 est tranché ; les frontières d’achat de prestation, d’orchestration et de stock restent distinctes. La page primaire Oracle EBS 12.1 est ouverte de nouveau : Repair Return (Pull), délais de transfert/réparation/réception et achat au réparateur sont documentés. Le passage n’établit pas une traçabilité sérialisée identique à notre exigence. Comparaison proposée, sans assimilation au catalogue Oracle Fusion ni preuve de déploiement. Nom, principe et parent acquis ; détails éditoriaux non adoptés globalement. Preuve : audits/2026-09-18-supplier-repair-U388/implementation.yaml.
+
+
+### CMP145
+
+U389 — Codex, 18 septembre 2026 ; appui méthodologique proposé pour MOD006 et la typologie issue du backlog courant (empreinte dans modeles/backlog/behavior-typology.yaml).
+
+ELM052/BIZBOK éclaire la manière d’agir contextualisée, distincte du niveau de décomposition et du processus comme suite d’activités. ELM234/Microsoft fournit un exemple de régimes de comptage aux effets métier différents. Points communs : circonstances, politiques et pratiques peuvent différencier la réalisation d’une capacité. Adaptation FLOW : une grille de sept formes, déduite de ses 48 comportements sous 13 capacités et enrichie des scopes de visibilité arbitrés en annexe ; pas de correspondance exclusive par nature.
+
+Écart et limite : ni la liste de sept formes ni le niveau terminal Capacité → Comportement ne sont une norme universelle démontrée. Microsoft expose des processus, modalités et fonctions que FLOW sélectionne à sa maille ; tous ne sont pas des comportements. Bénéfice : rendre le critère opérant sans nouveau niveau ni catalogue produit. La règle de documentation est demandée par Laurent ; formulation et rapprochement restent éditoriaux, sans validation globale ni publication.
+
+
+### CMP146
+
+U390 — Codex, 18 septembre 2026 ; Purchase Order D04.j au backlog courant, empreinte dans modeles/backlog/purchase-order-behaviors.yaml. ELM235 : recouvrement partiel avec les processus achat Microsoft et SAP.
+
+Proposition de Stock Procurement, Direct Delivery et Service Procurement : attentes et preuves distinctes, coordination achat/vente pour le direct, réalisation d’une prestation pour le service. La définition actuelle limitée aux biens est à élargir explicitement si la proposition est adoptée. L’achat relève de D04 ; la sollicitation et le suivi opérationnel relèvent de D06, sans imposer un achat pour tout appel de service. Stock et finance gardent leurs responsabilités.
+
+Consignment Procurement reste un candidat : la documentation Microsoft distingue acquisition et détention physique, mais ne justifie pas d’attribuer toute la consignation à D04. Les libellés, définitions et rattachements proposés restent à valider ; aucun catalogue modifié. Périmètre limité à ce prochain sujet, aucune exhaustivité de tous les modes d’achat revendiquée.
+
+
+### Intégration CMP146 — U391
+
+Stock Procurement, Direct Delivery et Service Procurement intégrés sous Purchase Order (BHV058–060), avec responsabilités présentées et rattachements adoptés. Principe d’extension aux prestations acquis ; définition développée du parent éditoriale. Achat, sollicitation opérationnelle, stock et finance demeurent distincts. Consignment Procurement retiré des candidats achat : C102 et CMP147 instruisent la responsabilité de gestion du stock demandée. Comparaisons marché dans les fiches, sans validation automatique ni publication.
+
+
+### CMP147
+
+U391 — Codex, 18 septembre 2026, proposition pour D01 Inventory Management au backlog. ELM236 : rapprochement partiel et appui lexical à Consigned Inventory Management. Microsoft rattache le suivi à un parcours Inventory to deliver relié aux achats ; SAP gère les stocks spéciaux dans Inventory Management mais expose aussi une variante de Procure to Receipt. Oracle Fusion traite le cycle accord/stock/consommation/règlement et NetSuite nomme explicitement Consigned Inventory Management.
+
+Recommandation FLOW : une responsabilité de gestion du régime de stock, proposée sous D01 ; les capacités existantes conservent états, mouvements et visibilité. Le retrait de Consignment Procurement des comportements Purchase Order suit U391/C102. L’acte d’achat/transfert de propriété peut intervenir dans le cycle sans en devenir l’unique finalité.
+
+Le besoin de Laurent porte aussi conditions de responsabilité et devenirs après saison. Les conserver comme exigence FLOW, sans prétendre qu’un unique intitulé de marché les couvre. Finance, assurance, négociation, décisions et exécution restent liées, non absorbées. L’offre au fournisseur assemble plusieurs aptitudes ; pas d’équivalence offre=capacité. Nom et définition candidats à valider ; aucune nouvelle capacité créée.
+
+
+### CMP148
+
+U392 — Codex, 18 septembre 2026 ; nouveau type d’Order à instruire sous D04, en lien avec la gestion de stock proposée CMP147. ELM237 soutient un besoin de demande d’apport consigné distinct de l’achat, mais les réalisations divergent : Consignment Replenishment Order Microsoft, Purchase Order avec catégorie Consignment SAP, Consignment Order dans le parcours Oracle.
+
+Recommandation de nom ciblé Microsoft pour FLOW ; pas de Procurement Order générique sans autres cas qui justifient ce périmètre. L’objet Supply Order Oracle est plus large et orchestre achat, fabrication et transfert : ne pas le recopier comme simple type d’Order. D01 conserve le régime de stock et D06 l’exécution. Aucun nouveau nœud créé, noms et rattachements à valider.
+
+
+### CMP149
+
+U393 — Codex, 18 septembre 2026 ; appui méthodologique et comparaison partielle du principe de demande par intention. ELM238 : séparation documentaire Microsoft directement lisible pour les intentions d’apport/acquisition ; SAP porte des distinctions métier dans une structure documentaire commune et propose aussi une alimentation selon les besoins.
+
+Retenir pour FLOW les intentions, relations et engagements comme point de départ. La préférence Microsoft porte sur cette adéquation sémantique précise ; aucune supériorité globale, ancienneté explicative ou réalisation Case Management déduite du seul nombre de types de documents. La cible décrite assemble stockage pour le fournisseur, régime de propriété et réassort tiré par les ventes ; rémunération/location est une condition de l’offre à préciser, pas la définition générale de consignation. Pas de création de capacité, changement de nom ou décomposition acquis par extension.
+
+
+### Clarification CMP149 — U394 / C103
+
+Le critère de Laurent est la visibilité du métier dans les objets, données et transactions. Le rappel de la couverture SAP en réponse à U393 était hors du point discuté. La séparation Microsoft donne, sur le cas étudié, une expression plus directe des intentions apport/acquisition ; c’est une appréciation architecturale argumentée par ELM238, pas une preuve de fonction absente chez SAP. FLOW retient ce critère explicite de design. L’opinion « Microsoft, arrivé après, a corrigé le problème » est conservée comme telle, sans causalité historique documentée.
+
+
+### CMP150
+
+U398 — ELM239, appui méthodologique. La distinction des sens Flow/Triggering/Serving conforte la qualification des interactions et l’attention au sens des flèches. FLOW retient des expressions métier lisibles et l’explication des comportements selon le contexte. Notre niveau terminal et la différenciation des comportements restent des conventions FLOW, sans assimilation aux éléments ArchiMate. U399 réserve leur mise en œuvre aux travaux futurs : aucun nouvel audit ni remaniement des liens. Convention : modeles/backlog/business-interactions.yaml.
+
+
+### CMP151
+
+U400 — proposition groupée, auteur Codex, 18 septembre 2026. Douze comportements proposés : trois sous Consigned Inventory Management, quatre sous Sales Order, cinq sous Transfer Order. ELM240 apporte des appuis fonctionnels ou sémantiques, avec différences de périmètre explicites. Consignment Exit reprend les issues métier U391 au-delà des retours documentés ; Intercompany est combinable avec les modes de livraison ; le découpage des transferts exprime les intentions FLOW tout en conservant décisions et suivi des Orders distincts. Aucun nouveau comportement adopté ni créé à ce stade. Détail et justification de chaque proposition : modeles/backlog/consignment-sales-transfer-review.yaml.
+
+
+### Intégration CMP151 — U401
+
+Douze comportements intégrés : BHV063–065 sous Consigned Inventory Management, BHV066–069 sous Sales Order, BHV070–074 sous Transfer Order. Noms, responsabilités présentées et parents validés ; comparaisons qualifiées séparément. Les sources spécifiques remplacent les anciennes correspondances génériques des trois parents, conservées dans la capture antérieure. Limites SAP indexé, IOM preview, Nextail témoignage et périmètre FLOW de Consignment Exit préservées. Pas de nouvelle recherche générale, nouvelle capacité ni modification des liens métier existants.
+
+
+### CMP152
+
+U402 — Codex, 18 septembre 2026. ELM241 comparé à D03.j et BHV075–077 du backlog. Noms et responsabilités présentées des trois comportements adoptés par Laurent ; correspondances marché éditoriales qualifiées séparément. Microsoft CTP apporte un appui partiel à la faisabilité de ressources supplémentaires, notamment fabrication ; FLOW couvre plus largement les adaptations supply. SAP ABC apporte un appui aux alternatives, mais une option déjà admissible reste dans ATP FLOW. SAP BOP traverse CTP, décision collective, priorités, révision de promesse et application des affectations ; ce n’est pas un synonyme du troisième comportement.
+
+Le bénéfice est de rendre lisibles trois leviers combinables aux conditions et conséquences distinctes. CTP établit les possibilités et impacts, Fulfillment Plan Decision choisit le scénario collectif ; Supply Assignment et Promise Management appliquent leurs effets respectifs. Intitulés FLOW, pas labels de taxonomie CTP revendiqués au marché. L’exemple express est une illustration FLOW, non une fonctionnalité ABC établie par la source. Aucun engagement ou gel levé par hypothèse.
+
+
+### CMP153
+
+U403 — Codex, 19 septembre 2026. ELM242 rapproché de Purchase Order D04.j et Supplier Confirmation BHV078 : recouvrement partiel des échanges et du suivi de l’engagement fournisseur ; appui lexical SAP. Le comportement couvre établissement et révision, combinables avec les parcours achat ; son bénéfice est la lisibilité de la demande, de la réponse, de l’engagement accepté et du risque opérationnel. Noms, responsabilité, parent et principes exposés adoptés ; comparaisons et compléments rédactionnels qualifiés séparément.
+
+Vendor collaboration Microsoft est plus large que ce comportement. L’analyse Microsoft consultée couvre les impacts directs, pas tous les effets indirects. FLOW sépare contenu de l’engagement, étude des possibilités/impacts, mutations d’Order et promesse client. Refuser une modification ne rétablit pas la capacité physique du fournisseur ; accepter son engagement ne modifie pas automatiquement le nôtre. Ces frontières expriment le modèle FLOW ; aucun comportement logiciel, taxonomie universelle ou preuve installée prétendu. La négociation générale des accords reste distincte.
+
+
+### CMP154
+
+U404–U406 — Codex, 19 septembre 2026. ELM243 comparé à Execution Tracking D07.d et BHV079–082. Trois visibilités physiques déjà adoptées U305/U308 matérialisées ; Business Process Tracking adopté sous le même parent. Appui Microsoft au nom et à la corrélation d’étapes métier ; extension explicite FLOW jusqu’aux prestations et appels contribuant aux Tasks, sans imposer de cardinalité. Camunda Process Observability a un périmètre produit plus large, incluant intervention et analyse ; FLOW conserve suivi, orchestration et adaptation distincts.
+
+SAP EWM étaye le périmètre entrepôt ; project44 le vocabulaire et périmètre Transportation Visibility ; Blue Yonder les opérations magasin et le bénéfice de disponibilité en rayon. Les visibilités sont des perspectives combinables, pas une taxonomie éditeur reprise intégralement. Logistics Visibility ne crée pas de niveau intermédiaire. Digital Service Visibility reste une proposition historique remplacée, dont le besoin est conservé. Noms et périmètres adoptés selon leurs accords ; descriptions développées et rapprochements restent qualifiés séparément.
+
+
+### CMP155
+
+U407–U409 — Le Process orchestre des Services. Process Orchestration possède un appui lexical Camunda ; Microsoft conforte la distinction entre progression du parcours et contributions des providers. FLOW sépare décision d’adaptation, coordination et suivi. Process Management, Operations Tracking et les noms centrés sur Service expriment la cohérence du modèle FLOW, pas un consensus de taxonomie éditeur. Business est supprimé du nom FLOW Process Tracking, sans renommer le produit Azure Business Process Tracking dans les sources. Accord limité aux noms présentés et au principe ; les deux intitulés dérivés D14.a/D07.c et les comparaisons restent proposés. Responsabilités et couches conservées.
+
+
+### CMP156
+
+U410 — P11 rapproché du comportement Order Release BHV039. Le marché documente la cohérence collective préalable au lancement, mais ne justifie pas à lui seul une capacité ou un comportement autonome. FLOW enrichit le comportement existant : complétude, éléments indispensables et traitement partiel. SAP Release Check et Oracle Shipment Sets constituent des recouvrements partiels, pas des équivalences à tous les types d’Orders FLOW. L’affectation prépare les ressources ; Order Release autorise ; Process Orchestration coordonne les services. Autorisation collective distincte de simultanéité physique et d’atomicité technique. Définition adoptée, comparaisons éditoriales.
+
+
+### CMP157
+
+U411–U413 : Order Backlog Management nomme D03 et sa responsabilité collective. Oracle étaye le nom et la priorisation/replanification du carnet ; Microsoft apporte la pratique de travail des Planned Orders. FLOW distingue demande selon son intention (D04), travail collectif et engagement du carnet (D03), orchestration de services (D06). Oracle Release Planning Results transmet au système de gestion de commandes ; la release vers les processus est la convention FLOW. Le périmètre achat/vente/transfert/retour ne se déduit pas des seuls produits consultés. Renommage et mandat adoptés, placements détaillés en réexamen ciblé ; les anciens accords ne sont pas effacés.
+
+
+### CMP158
+
+U414 — Order Backlog Planning D03.p mobilise les décisions pour travailler les scénarios et préparer la part engagée. Appui lexical Oracle Backlog Planning, appui pratique Microsoft sur les Planned Orders. Oracle transmet des résultats à Order Management ; FLOW rattache son autorisation de prise en charge Order Release à Planning sans assimiler les deux opérations. Le comportement BHV039 est déplacé, pas dupliqué ; sa définition U410 reste inchangée. Supply Assignment applique les affectations, Promise Management gère les engagements, Process Orchestration coordonne les services. Aucun transfert automatique de Split ou Structuring, ni liste de comportements Planning déduite du produit.
+
+
+### CMP159
+
+U416/U417 — Structuring couvre découpage et composition ; Split est son comportement. Les mutations d’état ne déterminent pas à elles seules un domaine : Lifecycle gouverne les engagements et la progression du carnet dans D03. Oracle documente scission par sites/dates et progression différenciée ; Microsoft documente préparation et approbation des Planned Orders. Le rattachement FLOW est un choix de responsabilité métier, pas une arborescence éditeur reproduite. Planning prépare les scénarios, Lifecycle autorise via Release, Process Orchestration coordonne les services. Gel, affermissement et suspension restent combinables, sans séquence universelle de statuts. U417 révise explicitement U414 ; aucune duplication.
+
+
+### CMP160
+
+U421/U422 — Réexamen proposé de Lifecycle : Order Change Management en D04 (préparation et changements du besoin), Order Backlog Control en D03 (affermissement, gel, autorisation et suspension). Huit comportements tracés sans changement de catalogue. Appuis Microsoft ELM249 ; noms transverses FLOW proposés, pas consensus ni catalogue éditeur. Amendment justifié par les effets d’une révision sur une demande déjà engagée. Rescheduling actuel concerne la date du besoin, non la date promise ; Cancellation retire le besoin, non sa seule affectation. La séparation des dimensions n’impose pas leur indépendance ni une architecture de versions particulière. Rapprochement proposé, non validé.
+
+
+### CMP161
+
+U423 — Une capacité Lifecycle unique peut gouverner plusieurs dimensions métier par ses comportements. Appui méthodologique Microsoft ELM250 ; aucune taxonomie équivalente revendiquée. Préserver le parent D04 dans cette piste et rendre explicite la mobilisation par D03 ; D06 conserve les réalisations. Le tableau des dimensions est exploratoire, sans fusion ni création de comportement. La scission CMP160 reste une alternative non adoptée. Proposition Codex, non validée.
+
+
+### CMP162
+
+U424 — Lifecycle unique en D04, six dimensions documentées par des états à portée explicite. Appui Microsoft ELM249–251 ; séparation états d’approbation, réalisation et documents, affermissement et suspension. FLOW regroupe préparation/révision et fin de la demande, sans assimiler annulation à clôture ni autorisation à réalisation. BHV041 intégré à BHV038, BHV042 à BHV043. Les nouveaux noms anglais, valeurs d’état et règles détaillées sont éditoriaux ; l’accord porte sur principe, définition présentée et dimensions. Aucune preuve installée Beaumanoir. Relation D03 Planning → Lifecycle explicite la mobilisation sans mutualisation logicielle présumée.
+
+
+### CMP163
+
+U425 — P01, P02 et P03 clos comme couverts par Replenishment Decision, sans comportements supplémentaires. Les méthodes Microsoft Per requirement/Per period/Min-Max et les Action messages étayent les politiques et ajustements décrits, sans imposer un nœud par méthode. Min/max peut dépendre des besoins par période ; la détermination des cibles reste dans Inventory Target Decision. D04 applique les changements autorisés ; D06 réalise via ses services. Clôture adoptée ; descriptions et rapprochements éditoriaux. Aucun constat d’exhaustivité du marché.
+
+
+### CMP164
+
+U427 adopte Requirement-based Replenishment, Target-based Replenishment et Replenishment Adjustment sous D05.e. Appui ELM253 : Per requirement/Per period, Min/Max et Action messages. Le bénéfice métier différencie deux politiques et un mécanisme combinable ; la cadence et les paramètres ne justifient pas des nœuds supplémentaires. FLOW conserve calcul des cibles dans D05.a, modifications autorisées dans D04 et orchestration dans D06. Noms/definitions présentés et parent adoptés ; comparaisons détaillées éditoriales. Aucun code Cancel Microsoft déduit de la liste consultée.
+
+### CMP165
+
+U428, 19 septembre 2026, Codex — frontière proposée pour A04, backlog courant après U427. Appui ELM254 ; recouvrement partiel avec les processus de retour des éditeurs. Microsoft combine suites logistiques et financières dans ses actions ; SAP distingue suites logistiques et compensation dans un parcours intégré ; Oracle explicite l’orchestration de services de facturation réalisés par les composants financiers.
+
+Recommandation FLOW : facturation, avoirs, encaissement et remboursement relèvent de responsabilités externes à Supply Chain Orchestration, avec répartition Commerce/Finance à définir ailleurs. Autorisation commerciale et droit au remplacement externes ; faisabilité, demande et réalisation logistiques internes. Customer Return porte le retour physique, Return Disposition Decision le devenir du bien ; un remplacement mobilise un Sales Order lié. Un règlement sans retour ni remplacement ne justifie pas un comportement logistique fictif. Process Orchestration peut solliciter ou attendre un service externe nécessaire au processus Supply, et Process Tracking en suivre le résultat, sans s’approprier la responsabilité commerciale/financière ni la totalité du cycle Order-to-Cash.
+
+Conserver les faits et préconditions aux frontières : quantités reçues/expédiées, inspection, autorisation commerciale ou financière, références et résultats des services. Encaissement préalable et remboursement après inspection sont des exemples de politiques possibles, pas des règles imposées. Une recommandation Supply de ne pas rapatrier un bien peut informer une décision commerciale sans autoriser elle-même un remboursement. Proposition de clarification compatible avec les exclusions existantes ; statut proposé, aucun arbitrage A04 clos ni catalogue modifié.
+
+### CMP166
+
+U429 — Codex, 19 septembre 2026. Complément CMP165 pour la frontière externe au backlog Supply. ELM255 montre le paiement opérationnel dans Microsoft Commerce et Sales Billing chez SAP, articulé à Finance. Le périmètre d’un produit ne prescrit ni domaine d’entreprise ni équipe responsable. Distinguer établissement du document commercial et comptabilisation de créance ; paiement au point de vente/autorisation/capture et rapprochement bancaire/lettrage. Encaissement peut recouvrir plusieurs de ces responsabilités selon le contexte ; aucune affectation unique n’est justifiée par le seul mot.
+
+Exclusion Supply validée U429 ; attribution Commerce/Finance laissée ouverte. Recommandation : conserver ces responsabilités comme externes, sans imposer maintenant un nouvel univers ni des capacités de finance ou de commerce. Le rattachement et la décomposition proposés ici restent non validés ; aucun catalogue modifié.

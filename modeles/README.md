@@ -1,6 +1,15 @@
 # Modèles structurés
 
-**Publication courante U204 : v004 / `2026-09-14.1`.** L’index désigne `urbanisation-v004-2026-09-14-145044.yaml`, puis `2026-09-14.1/model.yaml` : 48 nœuds, 34 capacités, 47 relations et 93 termes dans `glossary`. [Note de release](release/2026-09-14.1/release-notes.md). Les mentions de « prochaine publication » et de v003 dans les étapes précédentes ci-dessous sont historiques ; YAML et le glossaire publié sont désormais actifs.
+**Backlog U290 refondu** : Promise Management, mécanismes Protection, trois comportements Planning et convention Supply Assignment à valeur multidimensionnelle. Voir le [bilan de migration](../audits/2026-09-17-refonte-appliquee/rapport.md) et le [registre des identités et questions ouvertes](backlog/refactoring-implementation.yaml). Les publications restent inchangées ; les paragraphes datés ci-dessous conservent leur contexte historique.
+
+## Deux glossaires distincts — U232
+
+- **Glossaire métier** : [backlog/glossary.yaml](backlog/glossary.yaml), vocabulaire des domaines métier, figé dans les publications selon le workflow existant.
+- **Glossaire de modélisation** : [backlog/modeling-glossary.yaml](backlog/modeling-glossary.yaml), notions transversales en support à la définition des objets du modèle : Decision, Planning, Management, application transactionnelle. Identifiants MOD distincts ; les portées utilisateur et les formulations proposées sont conservées.
+
+Le second registre est documentaire et séparé : il ne complète pas implicitement le glossaire métier publié ou son résolveur lexical. Les discussions antérieures restent des sources ; les sens courants de ces quatre notions font autorité dans modeling-glossary.yaml. La séparation U232 porte sur les notions discutées U229–U231, sans reclassification globale des notions et verbes historiques.
+
+**Publication U433 : v008 / `2026-09-19.1`.** L’index désigne `urbanisation-v008-2026-09-19-003103.yaml`, puis `2026-09-19.1/model.yaml` : 135 nœuds, 47 capacités, 74 comportements, 323 relations et 110 termes de glossaire. Audit des comportements soldé, accords transcrits à portée constante et contenus éditoriaux conservés comme proposés. [Note de release](release/2026-09-19.1/release-notes.md) ; [revue des preuves et impacts](../audits/2026-09-19-release-U433/revue.md). L’index reste l’autorité de publication courante ; les mentions de versions courantes ci-dessous sont historiques.
 
 ## Format courant — U200/U202
 
@@ -163,3 +172,38 @@ Les chaînes peuvent contenir `[unités physiques](glossary:TER059)` ou `[Invent
 La préparation embarque le glossaire dans `glossary` du snapshot et du modèle publié ; elle surveille aussi l’empreinte de son fichier de travail. Une release historique sans ce champ reste sans glossaire. Chaque terme et le catalogue sont versionnés automatiquement, avec UTC `last_modified`. `glossary_changes` et `glossary_reference_impacts` du rapport indiquent les différences et les références à un sens modifié, y compris par un autre terme ; examiner leur portée avant publication, sans déduire une validation depuis une phrase inchangée. Les anciens snapshots restent immuables.
 
 Dans Atlas, la fiche de terme propose sa description courte, sa définition, son contexte et sa provenance. Les liens `model` ouvrent les éléments de tout type. `#definition`, `#finality` et `#scope` désignent les sections de fiche correspondantes ; `#definition` et `#short-description` sont disponibles dans les fiches de glossaire. L’URL Atlas encode séparément la publication, la cible et la section.
+
+
+## Comportements — U262 à U264
+
+Le type `behavior` précise une capacité et constitue son dernier niveau descriptif. Une unique relation structurelle `contains` le rattache à un parent de type `capability`, dans la même couche. Les contrôles refusent absence/multiplicité de parent, parent d’un autre type ou couche, nom/définition vides et enfants sous un comportement. Une relation métier `relates-to` peut relier un comportement à une capacité, un comportement, un objet, un document ou un événement, avec qualification explicite ; elle ne crée pas un parent.
+
+Identités BHV001–BHV004, quatre comportements ATP ; rattachements explicites, aucun parent déduit des identifiants. Le compteur des capacités reste distinct. Définitions U263 adoptées, noms anglais et compléments proposés ; source et portées : connaissance/34-comportements-atp.md et d03-review.yaml. La publication utilise le mécanisme normal de révisions, décisions et snapshots ; cette évolution ne publie pas le backlog.
+
+
+## Justifier les comportements — U265
+
+Une capacité décomposée porte `fields.decomposition_rationale`, texte expliquant la complexité ou le bénéfice ciblé. Cette propriété fait partie des champs métier versionnés ; sa présence ne la valide pas. `PRINCIPLE-JUSTIFIED-BEHAVIOR` active le contrôle de présence non vide pour les capacités ayant des enfants de type behavior. Les snapshots antérieurs restent lisibles sans cette exigence rétroactive. Le contrôle ne juge pas la pertinence de la justification : elle reste à examiner métier.
+
+Le niveau reste terminal, les comportements combinables et facultatifs. Les propositions d’audit sont dans `backlog/behavior-audit.yaml`, hors catalogue actif ; les 41 fiches ne sont pas 41 demandes de décomposition. Les justifications sont affichées dans les fiches Atlas et la restitution dérivée lorsqu’elles appartiennent au snapshot consulté.
+
+
+## Audit des comportements manquants après U290
+
+`backlog/behavior-gap-audit.yaml` porte les propositions U292 ; [rapport et annexes](../audits/2026-09-17-comportements-manquants/rapport.md). Les IDs P/A/C sont locaux à l’audit, pas des nœuds du catalogue. Régénérer et contrôler les vues avec `python -m scripts.render_behavior_gap_audit`. Le contrôle exige l’empreinte du modèle audité ; après évolution de celui-ci, réexaminer l’analyse avant d’actualiser la baseline. Aucun candidat n’est adopté automatiquement.
+
+
+## Comparaison marché structurée — U311
+
+`fields.market_comparisons` porte les rapprochements sur les nœuds ; `market_comparisons` porte les mêmes informations sur les termes du glossaire métier. Contrat commun : `$defs.marketComparisons` dans le schéma d’urbanisme. Une entrée contient éditeur/produit, libellé/nature externe, relation, points communs, différences, position FLOW, statut et source datée. Les statuts proposés ne deviennent pas validés à la publication. Champ facultatif pour les éléments non étudiés ; lorsqu’un rapprochement est documenté, il doit être renseigné. Les anciennes publications restent valides sans ce champ.
+
+
+## Exécution ciblée et performances
+
+Après une modification, utiliser la matrice de contrôles d’[AGENTS.md](../AGENTS.md). Actualiser la provenance seulement si une source indexée a changé ; valider une fois l’état final du modèle. `render_models.py --space backlog`, `--space release` ou `--space panorama-as-is` limite la restitution à l’espace concerné ; sans option, tous les espaces sont traités. Les restitutions identiques ne sont pas réécrites.
+
+`prepare_release.py report` affiche une synthèse avec le nombre d’erreurs et l’aptitude à préparer une release. `--full` imprime tous les détails ; `--output chemin-nouveau.json` enregistre le rapport complet dans un nouveau fichier, sans écraser un fichier existant. Les vérifications et le rapport figé d’une préparation restent complets.
+
+`python -m scripts.render_behavior_gap_audit` réutilise un contrôle réussi uniquement si les empreintes des modèles, historiques, preuves protégées, vues et scripts sont identiques. Le checkpoint local est dans `.runtime/behavior-audit-checkpoint.json`, hors Git. Tout changement, disparition, ajout ou cache invalide impose le rejeu. `--full` force ce rejeu ; `--details` affiche toutes les vérifications. Un échec supprime le checkpoint précédent. Une modification d’entrée pendant le contrôle interdit de mémoriser sa réussite. Ce cache de vérification n’accorde aucune validation métier et n’est jamais utilisé par la publication. Python `-O` est refusé pour conserver les assertions.
+
+Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 32 Mio de fichiers sources (les objets Python peuvent occuper davantage). Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.

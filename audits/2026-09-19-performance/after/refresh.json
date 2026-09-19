@@ -1,0 +1,13 @@
+{
+  "task": "refresh",
+  "seconds": 0.23928100001649,
+  "structured_loads": {},
+  "read_calls": 0,
+  "unique_files": 0,
+  "read_bytes_with_repeats": 0,
+  "slowest_reads": [],
+  "repeated_reads": [],
+  "suppressed_write_count": 0,
+  "suppressed_write_bytes": 0,
+  "stdout_bytes": 70
+}

@@ -2,6 +2,9 @@
 import copy
 from pathlib import Path
 import unittest
+import os
+from unittest.mock import patch
+from scripts import structured_io
 
 from scripts.structured_io import loads, dumps, read, working_path
 from scripts.element_versions import assign_versions
@@ -9,6 +12,35 @@ from scripts.test_publish_release import isolated_project
 
 
 class StructuredIOTests(unittest.TestCase):
+    def test_cache_is_content_based_and_does_not_share_mutations(self):
+        with isolated_project() as folder:
+            path = folder/'cached.yaml'
+            path.write_text('items: [first]', encoding='utf-8')
+            stamp = path.stat()
+            structured_io.clear_read_cache()
+            with patch.object(structured_io, 'loads', wraps=loads) as parser:
+                read(path)['items'].append('local mutation')
+                self.assertEqual(read(path), {'items': ['first']})
+                self.assertEqual(parser.call_count, 1)
+                path.write_text('items: [other]', encoding='utf-8')
+                os.utime(path, ns=(stamp.st_atime_ns, stamp.st_mtime_ns))
+                self.assertEqual(read(path), {'items': ['other']})
+                self.assertEqual(parser.call_count, 2)
+                path.write_text('items: [', encoding='utf-8')
+                with self.assertRaises(ValueError):
+                    read(path)
+
+    def test_cache_evicts_entries_at_its_memory_bound(self):
+        with isolated_project() as folder, patch.object(structured_io, '_CACHE_LIMIT', 16):
+            structured_io.clear_read_cache()
+            for i in range(5):
+                path = folder/(str(i)+'.yaml')
+                path.write_text('value: '+str(i), encoding='utf-8')
+                self.assertEqual(read(path), {'value': i})
+            self.assertLessEqual(structured_io._cache_bytes, 16)
+            self.assertLessEqual(len(structured_io._cache), 2)
+        structured_io.clear_read_cache()
+
     def test_identifiers_dates_and_multiline_text_keep_their_types_and_bytes(self):
         document = {'code': '00123', 'flag_word': 'on', 'date': '2026-09-14',
                     'time': '2026-09-14T15:00:00Z', 'empty': '', 'null_word': 'null',

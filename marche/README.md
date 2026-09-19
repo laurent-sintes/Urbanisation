@@ -127,3 +127,26 @@ U89 : [Order Promising — noms, nature et couverture](order-promising-comparais
 ## Microsoft et Univers / Domaine — U185
 
 [Analyse](microsoft-univers-domaines.md) et [correspondances JSON proposées](../modeles/backlog/microsoft-urbanism-fit.json). Distinguer gamme, produits, modules et processus de nos niveaux métier ; pas de nouvelle hiérarchie ou publication.
+
+
+## Audit de maturité U249 — 16 septembre 2026
+
+[Audit de la v007](../audits/2026-09-16-audit-maturite/rapport.md) : confrontation Microsoft/SAP/Oracle et complément TM Forum, manques, granularité, dépendances et descriptions. Grille des 41 capacités, 29 sources officielles, ELM138–157 et CMP080–085. Recommandations proposées ; modèle et publications inchangés.
+
+
+## ATP, aATP et couverture — U260
+
+[Étude ATP/aATP](atp-aatp-couverture.md) : définitions officielles, fonctions SAP, comparaison FLOW et quatre frontières à préciser ; ELM158–162, CMP087. Glossaires séparés, catalogue de capacités inchangé.
+
+
+## Capacités, variantes et niveaux — U261
+
+[Étude de modélisation ATP](capacites-variantes-niveaux-atp.md) : BIZBOK, SAP LeanIX, Ardoq et Microsoft ; dimensions combinables, variantes et niveaux distingués. CMP088 proposé, sans modification du catalogue.
+
+
+Audit U265/U266 — [Capacités, comportements et niveaux marché](../audits/2026-09-17-audit-comportements/marche.md), avec [matrice des 41 capacités](../audits/2026-09-17-audit-comportements/matrice.md). Les rapprochements CMP089 restent proposés.
+
+
+## Comportements manquants après refonte — U292
+
+[Audit approfondi](../audits/2026-09-17-comportements-manquants/rapport.md) : revue des 39 capacités et 14 comportements, 28 sources primaires de sept éditeurs, onze mécanismes ciblés, cinq options conditionnelles, sept arbitrages et dix cas d’épreuve. ELM191 / CMP098. Propositions hors catalogue, sans publication ni adoption implicite.

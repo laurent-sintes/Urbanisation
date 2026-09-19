@@ -1,0 +1,104 @@
+schema_version: 1.0.0
+model_id: flow-modeling-roadmap
+space: backlog
+as_of: '2026-09-17'
+source_refs:
+- U112
+- U140
+- U141
+- U169
+- U173
+- U187
+- U190
+- U191
+- U192
+- U193
+- U195
+- U202
+- U262
+- U263
+current_focus:
+- domain
+- capability
+- object
+extensions:
+- id: EXT-HIGHER-LEVEL
+  subject: grouping_above_domains
+  state: structure_prepared
+  candidate_terms:
+  - Universe
+  name_state: decided
+  semantic_definition_state: partly_defined
+  instantiate_now: true
+  note: 'U141 instancie Supply et Case comme groupes urbanism_level, level_ref universe. Business References reste un groupe
+    de présentation ; détails de définition et rattachements proposés. U169 distingue domaines de capacités et bounded contexts
+    : la frontière Supply/Services ne crée pas automatiquement un niveau ou un univers Services. U173 renomme universe-case
+    en Business Services et valide sa définition ; domaines de cet univers différés, identifiant conservé.'
+- id: EXT-BUSINESS-ENTITIES
+  subject: business_objects_documents_events
+  state: in_progress
+  candidate_terms:
+  - Product
+  - Article
+  - Product Unit
+  - Container
+  - Container Unit
+  - Product Variant
+  name_state: not_decided
+  semantic_definition_state: partly_defined
+  instantiate_now: false
+  note: 'U141 : prévoir Case (process) et Order (transactional), leur rattachement caractérisé sans cardinalité présumée.
+    Inventaire complet objets/documents/événements différé ; illustrations distinctes. U169 valide la distinction sémantique
+    Supply Order / Service Order et les modèles propres aux contextes Supply/Services ; inventaire, attributs, cycles et cardinalités
+    restent différés. Preuve et portée dans vocabulary-review.json. U187 ouvre une exploration ciblée des entités utiles au
+    stock unifié, contenus et conditionnements inbound/outbound, dans unified-inventory-packaging.json. L’inventaire exhaustif
+    et l’instanciation dans la carte restent différés ; ne pas traiter les candidats comme adoptés. U190 propose une première
+    structure d’entités pour le stock unifié. Exploration ciblée en cours dans unified-inventory-packaging.json ; grain Article/référence/exemplaire
+    à clarifier. Pas d’instanciation dans la carte ni d’univers Design créé automatiquement. U191 tranche Product Unit/Article
+    comme exemplaire physique avec identité propre ; U192 dissocie cette notion du code-barres. Ce grain n’est plus à clarifier.
+    Noms définitifs, individualisation des sources quantitatives et schéma restent ouverts. U193 introduit Product Variant
+    et distingue Serial Number éventuel de l’exemplaire, GTIN de référence commerciale et support code-barres. Structure Product/Variant/Unit
+    en instruction dans l’annexe ; conditionnements et cardinalités à préciser. U195 retient Product comme concept commun
+    portant un rôle Article ou Container. Ces deux termes sont des rôles, non deux familles indépendantes de références imposées.
+    Grain individuel Product Unit maintenu ; définitions détaillées et multiplicité des rôles ouvertes.'
+- id: EXT-QUALIFIED-LINKS
+  subject: qualified_business_relations
+  state: structure_prepared
+  candidate_terms: []
+  name_state: not_applicable
+  semantic_definition_state: not_defined
+  instantiate_now: false
+  note: 'U214 : ancien lien D07.c vers D04.h retiré avec sa cible ; cinq nouvelles contributions proposées vers D04.i–m, à
+    éprouver par type. Lien Case/Order conceptuel, objets et cardinalités différés ; ne pas assimiler demande Case et Order.'
+- id: EXT-APPLICABILITY
+  subject: domain_capability_applicability
+  state: structure_prepared
+  candidate_terms: []
+  name_state: not_applicable
+  semantic_definition_state: partly_defined
+  instantiate_now: false
+  note: Registre séparé applicability.json pour les trois SI actuels et FLOW cible. Les résultats restent à instruire ; absence
+    de ligne = non évalué, pas non couvert.
+- id: EXT-CAPABILITY-BEHAVIOR
+  subject: capability_behavior
+  state: in_progress
+  candidate_terms:
+  - Comportement
+  name_state: decided
+  semantic_definition_state: partly_defined
+  instantiate_now: false
+  note: U262 adopte Comportement comme niveau complémentaire terminal sous la capacité ; pas de sous-comportements. MOD006
+    porte la définition méthodologique. U263 adopte les quatre définitions de comportements ATP, tracées dans d03-review.yaml.atp_behaviors_U263,
+    avec vocabulaire factuel. Les intitulés anglais et la représentation technique restent à préciser ; instantiate_now=false
+    décrit cette absence d’instanciation, pas une absence d’adoption métier.
+limitations:
+- Le travail domaine/capacité est complété par l’exploration ciblée des objets du stock unifié U187/U190 ; inventaire exhaustif
+  différé.
+- La cible FLOW et l’existant des trois SI ne sont pas fusionnés.
+- U141 adopte le principe Supply/Case et les quatre capacités D04 dans leur portée ; ne valide pas automatiquement les détails
+  des objets et liens.
+- 'U173 : Business Services est nommé et défini ; ses domaines seront travaillés plus tard. Les dimensions de périmètre ne
+  constituent pas un découpage en domaines.'
+- 'U202 : audit de vocabulaire appliqué puis format YAML ; aucune nouvelle entité ou publication métier déduite.'
+- U214 remplace les quatre capacités D04 de U141 par sept capacités. Portée et historique dans d04-refactoring.yaml ; aucun
+  objet, type de nœud ni niveau supplémentaire instancié.

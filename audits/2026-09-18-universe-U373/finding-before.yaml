@@ -1,0 +1,128 @@
+id: SF-A01
+target_ids:
+- universe-supply
+- TER035
+status: proposed
+priority: P1
+recommendation: Supply Chain Management recommandé U369 pour l’univers ; portée cartographiée et exclusions explicites, nom
+  encore proposé.
+candidate_name: Supply Chain Management
+reason: Supply isolé est ambigu entre ressources et convention locale. SCM exprime la responsabilité de pilotage au niveau
+  univers ; le nom ne prétend pas que FLOW couvre tout le périmètre professionnel.
+market_comparisons:
+- vendor: Microsoft
+  product: Dynamics 365 Business Central
+  element_name: Balancing supply and demand
+  element_type: Notion métier ou fonction produit documentée
+  relationship: Appui sémantique
+  similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts entrants
+    et retours clients. Supply orders alimente ce côté du bilan.'
+  differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+  source_title: Balancing supply and demand
+  source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  source_version: Documentation évolutive
+  source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+  consulted_on: '2026-09-18'
+  evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+    Beaumanoir déduite.
+  flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local ne
+    signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile après
+    arbitrage.
+  status: proposed
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+- vendor: CSCMP
+  product: Définitions professionnelles
+  element_name: SCM Definitions and Glossary of Terms
+  element_type: Notion métier ou fonction produit documentée
+  relationship: Appui sémantique
+  similarities: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment
+    figure parmi les activités logistiques.
+  differences: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie de
+    capacités FLOW.
+  source_title: SCM Definitions and Glossary of Terms
+  source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  source_version: Page de référence sans édition affichée
+  source_locator: Definitions of Supply Chain Management ; Logistics Management
+  consulted_on: '2026-09-18'
+  evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+    Beaumanoir déduite.
+  flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local ne
+    signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile après
+    arbitrage.
+  status: proposed
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+- vendor: ASCM
+  product: Ressource professionnelle
+  element_name: What is supply chain logistics?
+  element_type: Notion métier ou fonction produit documentée
+  relationship: Appui sémantique
+  similarities: La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation des
+    commandes.
+  differences: Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques
+    FLOW.
+  source_title: What is supply chain logistics?
+  source_url: https://www.ascm.org/topics/logistics/
+  source_version: Page évolutive
+  source_locator: Supply chain vs logistics ; Order processing and fulfillment
+  consulted_on: '2026-09-18'
+  evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+    Beaumanoir déduite.
+  flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local ne
+    signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile après
+    arbitrage.
+  status: proposed
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+- vendor: CSCMP
+  product: Définitions professionnelles
+  element_name: SCM Definitions and Glossary of Terms
+  element_type: Définition professionnelle ou périmètre de produit
+  relationship: Appui sémantique
+  similarities: SCM couvre planification, approvisionnement, transformation, logistique et coordination entre partenaires.
+  differences: Périmètre professionnel plus large que le catalogue FLOW ; les fonctions coordonnées ne deviennent pas automatiquement
+    des domaines FLOW.
+  source_title: SCM Definitions and Glossary of Terms
+  source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  source_version: Page évolutive consultée le 18 septembre 2026
+  source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+  consulted_on: '2026-09-18'
+  evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+  flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+    implicite.
+  status: proposed
+  source_refs:
+  - U369
+  - ELM227
+  - CMP138
+- vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  element_name: Welcome to Dynamics 365 Supply Chain Management
+  element_type: Définition professionnelle ou périmètre de produit
+  relationship: Appui sémantique
+  similarities: Le produit regroupe notamment stocks, planification, achats, production, entrepôt et transport.
+  differences: Catalogue produit et non modèle normatif de capacités ; aucune importation des modules ni équivalence complète
+    avec FLOW.
+  source_title: Welcome to Dynamics 365 Supply Chain Management
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+  source_version: Page évolutive consultée le 18 septembre 2026
+  source_locator: Core concepts and tasks
+  consulted_on: '2026-09-18'
+  evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+  flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+    implicite.
+  status: proposed
+  source_refs:
+  - U369
+  - ELM227
+  - CMP138

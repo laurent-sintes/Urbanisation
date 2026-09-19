@@ -16,32 +16,66 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class BacklogPublicationTests(unittest.TestCase):
-    def setUp(self):
-        self.temp = isolated_project()
-        self.root = self.temp.__enter__()
-        self.addCleanup(self.temp.__exit__, None, None, None)
-        for relative in ('schemas', 'backlog', 'decisions', 'revisions', 'provenance', 'release'):
-            shutil.copytree(ROOT / 'modeles' / relative, self.root / 'modeles' / relative)
-        self.version = '2026-09-13.99'
-        self.models = self.root / 'modeles'
-        self.backlog_path = self.models / 'backlog/model.yaml'
+    @classmethod
+    def setUpClass(cls):
+        # Build one minimal legacy fixture. Each test still receives independent
+        # copies: no hard links, no mutable shared model and no live audit history.
+        temp = isolated_project()
+        cls.fixture = temp.__enter__()
+        cls.addClassCleanup(temp.__exit__, None, None, None)
+        cls.root = cls.fixture
+        src, dst = ROOT/'modeles', cls.fixture/'modeles'
+        def copy(relative):
+            target = dst/relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if (src/relative).is_dir():
+                shutil.copytree(src/relative, target)
+            else:
+                shutil.copy2(src/relative, target)
+        for relative in ('schemas', 'release/2026-09-13.2', 'release/2026-09-13.4',
+                         'revisions/2026-09-13.4', 'decisions/2026-09-13.4.json',
+                         'provenance/2026-09-13.4', 'provenance/source-records.json',
+                         'backlog/applicability.yaml', 'backlog/modeling-roadmap.yaml'):
+            copy(relative)
+        index = workflow.read(src/'release/index.json')
+        wanted = {'urbanisation-v002-2026-09-13-162623.json', 'urbanisation-2026-09-13.2-legacy.json'}
+        index['publications'] = [e for e in index['publications'] if e['descriptor'] in wanted]
+        for entry in index['publications']:
+            copy('release/'+entry['descriptor'])
+        save(dst/'release/index.json', index)
+        # The test publication must sort after all copied historical releases.
+        cls.models = cls.root / 'modeles'
+        cls.backlog_path = cls.models / 'backlog/model.yaml'
         # These tests exercise the legacy contract; lifecycle has its own tests.
         # Pin the legacy fixture to its immutable publication, not the live
         # backlog: new releases must not change this test's approval baseline.
-        index_path = self.models / 'release/index.json'
+        index_path = cls.models / 'release/index.json'
         index = workflow.read(index_path)
         index['current'] = 'urbanisation-v002-2026-09-13-162623.json'
         save(index_path, index)
-        baseline = workflow.read(self.models / 'revisions/2026-09-13.4/backlog.json')
+        baseline = workflow.read(cls.models / 'revisions/2026-09-13.4/backlog.json')
         baseline.pop('lifecycle_policy', None)
         for collection in ('nodes', 'relations'):
             for item in baseline[collection]:
                 item.pop('lifecycle', None)
-        save(self.backlog_path, baseline)
-        path = self.models / 'provenance/source-records.json'
+        save(cls.backlog_path, baseline)
+        # Freeze vocabulary too: the current glossary now links to domains and
+        # capabilities that did not exist in this legacy fixture.
+        historical_glossary = workflow.read(ROOT / 'modeles/release/2026-09-14.1/model.yaml')['glossary']
+        save(cls.models / 'backlog/glossary.yaml', historical_glossary)
+        path = cls.models / 'provenance/source-records.json'
         live = workflow.read(path)
         live['records'].append(source('PUB-TEST-NEW', 'Explicit local publication request'))
         save(path, live)
+
+    def setUp(self):
+        self.temp = isolated_project()
+        self.root = self.temp.__enter__()
+        self.addCleanup(self.temp.__exit__, None, None, None)
+        shutil.copytree(self.fixture/'modeles', self.root/'modeles')
+        self.version = '2099-09-13.99'
+        self.models = self.root/'modeles'
+        self.backlog_path = self.models/'backlog/model.yaml'
 
     def mutate_capability(self, revision=True):
         model = workflow.read(self.backlog_path)
@@ -60,6 +94,10 @@ class BacklogPublicationTests(unittest.TestCase):
         before = (self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes()
         bundle = workflow.build_candidate(self.root, self.version)
         report = bundle['report']
+        summary = workflow.summarize_report(report)
+        self.assertEqual(summary['validation_error_count'], len(report['validation_errors']))
+        self.assertEqual(summary['ready_to_prepare'], not report['validation_errors'])
+        self.assertEqual(summary['changes']['nodes']['modified'], len(report['changes']['nodes']['modified']))
         change = next(n for n in report['changes']['nodes']['modified'] if n['id'] == 'D03.a')
         self.assertIn('/fields/definition', {c['path'] for c in change['changes']})
         released = next(n for n in bundle['candidate']['nodes'] if n['id'] == 'D03.a')

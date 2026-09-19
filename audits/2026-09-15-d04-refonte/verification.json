@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "removed_nodes_exact": true,
+    "new_nodes_exact": true,
+    "other_nodes_unchanged": true,
+    "other_relations_unchanged": true,
+    "seven_direct_memberships": true,
+    "no_dangling_relations": true,
+    "no_old_validation_transferred": true,
+    "all_descriptions_concrete": true,
+    "unchanged_principles_and_alternatives": true,
+    "previous_glossary_terms_unchanged": true,
+    "all_frozen_files_unchanged": true,
+    "snapshot_hash_matches": true
+  },
+  "frozen_files_checked": 61,
+  "before": {
+    "nodes": 52,
+    "capabilities": 34,
+    "relations": 55
+  },
+  "after": {
+    "nodes": 55,
+    "capabilities": 37,
+    "relations": 62
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-16.2",
+  "decisions": [
+    {
+      "id": "ADOPT-U248-transcription-D06-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U242",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "93419c8a7b45922b9c39181381116ebd702350b5aef3cb96710edf38552ded2d"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D06.b-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U246"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.b",
+        "revision": 5,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "1f963b5f007f2f8ae060db5e7891396e418bf8c94720ea819063034181ac38c1"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D07.a-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.a",
+        "revision": 5,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "cb8d016ed129069c57e140d6ca8315d54cbde11d7d213a73d4e7a176c8740f6e",
+          "definition": "de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D07.b-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.b",
+        "revision": 4,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910",
+          "definition": "51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D07.d-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.d",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "6c200f8b8ad9f8f9f1da543eeb07c17d31c70d81c144eb95a5be21b3e7fdc6f9"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D06.d-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.d",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "93650afec10968e36506e56aa3b2f5c5bd6d8232318a39ee07e605258734a45e",
+          "definition": "37986dcc6a0f8277ea2a08ef87dc93778177143e4f7a835ed3ad6639af97ccb7"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D14-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U240",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D14",
+        "revision": 1,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "0dc475d55b06a58e12b44e19fce07aae6e7e40a7ce6788bc6a779c31a8d0f54a"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-D06.f-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.f",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "c906b5a9cdfd99246546dcf4220f16a0e960d28c8e432f05615ce52ee51d71a1",
+          "definition": "e129ebf0182da8ad279c6967bd8c32c9ca7a589082953d79ac78563c5628c00a"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-MEMBER-D07.a-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U238",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D07.a",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4",
+          "target_id": "16af53718a888e88f2ed66aa51e85cd38fed967616b714258a075fcf5ba861c7"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-MEMBER-D07.b-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U238",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D07.b",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4",
+          "target_id": "60a11eff3fe6e88134bd0381a5ec55c21bd376c4092b529753975534f8e2b9f8"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-MEMBER-D07.c-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U238",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D07.c",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4",
+          "target_id": "3c36f2d65aa69cd33771764611e90ab31e4e7b6eae0a17d515b069398fb5708d"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-MEMBER-D07.d-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U238",
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D07.d",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4",
+          "target_id": "8fa19d03b77ad28b9cf28fbcb953abdc62f17a36fdc37858dfceb361d3ccd1a5"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-GROUP-D14-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U244"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-GROUP-D14",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a",
+          "source_id": "c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9",
+          "target_id": "ace6ded8e52413f7d896e74b5c917206850718402c7bcf8e0d3e9f62d9fd0f2d"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    },
+    {
+      "id": "ADOPT-U248-transcription-REL-MEMBER-D06.f-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U245",
+        "U246",
+        "U247"
+      ],
+      "note": "Transcription à la révision publiée des seuls champs adoptés dans les échanges référencés. Les Go portent sur les formulations présentées et les rattachements explicités ; descriptions détaillées, fusion qualification/options et autres champs non listés restent proposés. U248 autorise la publication, sans nouvelle validation métier.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D06.f",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4",
+          "target_id": "dfcd3b65d624df5c083d5ca7fcbca93254b8690698338d450c5e72028366aa17"
+        },
+        "import_version": "2026-09-16.2"
+      }
+    }
+  ]
+}

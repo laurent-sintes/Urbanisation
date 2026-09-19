@@ -23,3 +23,25 @@ test('a direct capability URL leaves view selection to its published structure',
   assert.equal(readRoute('#node=D04.e&view=unknown').view, undefined);
   assert.equal(routeHash(readRoute('')), '/');
 });
+
+test('a principle deep link pins its publication without creating a model selection', () => {
+  const route = readRoute('#version=2026-09-16.2&view=principles&principle=metier&node=D01&scope=D01');
+  assert.equal(route.view, 'principles');
+  assert.equal(route.principle, 'metier');
+  assert.equal(route.version, '2026-09-16.2');
+  assert.equal(route.node, '');
+  assert.equal(route.scope, '');
+  assert.deepEqual(readRoute(routeHash(route)), route);
+  assert.ok(!routeHash({ ...route, view: 'sheet', node: 'D01' }).includes('principle='));
+  assert.equal(readRoute('#view=glossary&principle=metier').principle, undefined);
+});
+
+test('graph exploration links preserve level, complete depth, filters and fixed publication', () => {
+  const route = { ...readRoute(''), view: 'relations', node: 'D07.c', version: '2026-09-13.5',
+    graphLevel: 'domain', graphDepth: 0, graphDirection: 'incoming', graphFamily: 'other', graphLayout: 'organic', graphLabels: 'focus' };
+  assert.deepEqual(readRoute(routeHash(route)), route);
+  assert.equal(readRoute('#view=links&depth=3&level=universe').graphDepth, 3);
+  const invalid = readRoute('#view=relations&depth=-1&level=solution&direction=random&qualification=x&layout=x&labels=x');
+  for (const key of Object.keys(route).filter(k => k.startsWith('graph'))) assert.equal(invalid[key], undefined);
+  assert.ok(!routeHash({ ...route, view: 'map' }).includes('depth='));
+});

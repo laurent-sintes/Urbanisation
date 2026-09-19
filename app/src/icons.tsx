@@ -6,13 +6,15 @@ import {
   BadgeCheck, GitBranch, RefreshCw, ListChecks, MapPin, Replace, PackagePlus,
   FilePlus2, FilePenLine, GitCompareArrows, Target, Calculator, Move, Gauge,
   MapPinned, ChartNoAxesCombined, ListTodo, CalendarCheck, PackageSearch,
-  Download, type LucideIcon,
+  Download, ListFilter, type LucideIcon,
 } from 'lucide-react';
 import type { AtlasNode } from './types';
 
 // Presentation only: exact published names, never inferred parents or business semantics.
 const namedIcons: Record<string, LucideIcon> = {
-  Supply: Orbit, Case: BriefcaseBusiness, 'Business References': BookOpen,
+  Supply: Orbit, 'Supply Chain Orchestration': Orbit, Case: BriefcaseBusiness, 'Business References': BookOpen,
+  'Fulfillment Optimization': Target, 'Fulfillment Plan Decision': GitBranch,
+  'Return Disposition Decision': PackageSearch,
   'Inventory Management': Warehouse, 'Inventory Tracking': ScanLine,
   'Record Inventory Movements': ArrowLeftRight, 'Inventory Visibility': Eye,
   Stocktaking: ClipboardCheck, 'Supply Protection': ShieldCheck, Reservation: BookmarkCheck,
@@ -39,7 +41,7 @@ const namedIcons: Record<string, LucideIcon> = {
   'Catalog Ingestion': Download, 'Fulfillment Network Ingestion': Download,
 };
 const typeIcons: Record<string, LucideIcon> = {
-  domain: Boxes, capability: Workflow, reference: BookOpen, group: FolderTree,
+  domain: Boxes, capability: Workflow, behavior: ListFilter, reference: BookOpen, group: FolderTree,
   object: Box, document: FileText, event: Zap,
 };
 export function iconFor(node: AtlasNode): LucideIcon {

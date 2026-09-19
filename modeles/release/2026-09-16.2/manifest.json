@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-16.2",
+  "model_path": "model.yaml",
+  "model_sha256": "c2e80b29d8adbe3b8b66cb31939577f09cb5ffbbbe6cd941e2c1cd18f5063e27",
+  "input_revision_path": "../../revisions/2026-09-16.2/backlog.yaml",
+  "input_revision_sha256": "4f7fe898a388312b62f75474eac2139bf5b107e532386d5513d8306d756e7448",
+  "decisions_path": "../../decisions/2026-09-16.2.json",
+  "decisions_sha256": "3e8e880c4b81396002614a18d6de7ca66159b3f0cb148b05dd8b9af3ab131669",
+  "provenance_path": "../../provenance/2026-09-16.2/source-records.json",
+  "provenance_sha256": "b1b4b3128e45e1a035cded720b1f6a8513ee64f74ee47008bfb0d8421aec26ab",
+  "source_files": [
+    {
+      "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "sha256": "f97059898b77d92f1a860ef73d7142557888b4bea8904b3f264f17b4f855ad05"
+    },
+    {
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "sha256": "6b430969b690f15c0c446b98c85497549d4e6d0c8efbe311bc86d79fba90646f"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "3382a72728cccda507090c9ca2aa748d0b5a34495e524d5674a01f882e5dcc0a"
+    },
+    {
+      "path": "connaissance/05-propositions.md",
+      "sha256": "4ec2a903af2c14744ba8b2e83ba18acf8a7042126dcc480121774f28ab6c6a16"
+    },
+    {
+      "path": "app/model-metadata.json",
+      "sha256": "89ffdbf46ce58660b9e167863ea9f474976bb8f048fb9c52b53e612a5d5a6c11"
+    },
+    {
+      "path": "app/exploration.json",
+      "sha256": "a5d7161ce76ff01f5444f3beed0d12497c3aa946ed10ef23f7bf1d9a4ec976b6"
+    },
+    {
+      "path": "connaissance/32-execution-orchestration.md",
+      "sha256": "9c0349c61c166de7ac8b30f2a84c6b42041b4800d08fdc0b047f5705a0fcb3aa"
+    }
+  ],
+  "node_count": 55,
+  "capability_count": 41,
+  "complete_capability_count": 5,
+  "changes_path": "changes.json",
+  "changes_sha256": "84c622ea1bddac7dca35df146473236bffeaf377a390b1b286479db52804ca33",
+  "prepared_manifest_sha256": "865e96c1835e48f09f3730ba70ac28cf03457defa5c379ff47e5f8659eee4be9",
+  "note": "Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques."
+}

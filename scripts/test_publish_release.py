@@ -51,6 +51,41 @@ def source(identifier, text):
             'captured_text': text, 'content_sha256': hashlib.sha256(text.strip().encode()).hexdigest()}
 
 
+class IllustrationBoundaryTests(unittest.TestCase):
+    def snapshot(self):
+        def node(identifier, state):
+            return {'id': identifier, 'revision': 1, 'kind': 'capability',
+                    'fields': {'name': identifier}, 'source_refs': ['U1'],
+                    'review': {'state': state, 'note': ''}}
+        def relation(identifier, source, target, state='under_review'):
+            return {'id': identifier, 'revision': 1, 'type': 'relates-to',
+                    'source_id': source, 'target_id': target, 'source_refs': ['U1'],
+                    'review': {'state': state, 'note': ''}}
+        return {'nodes': [node('CAP', 'proposed'), node('EXAMPLE', 'illustration')],
+                'relations': [relation('TO-EXAMPLE', 'CAP', 'EXAMPLE'),
+                              relation('FROM-EXAMPLE', 'EXAMPLE', 'CAP'),
+                              relation('BUSINESS', 'CAP', 'CAP'),
+                              relation('ILL-LINK', 'CAP', 'CAP', 'illustration')]}
+
+    def test_links_to_excluded_illustrations_stay_out_even_when_under_review(self):
+        snapshot = self.snapshot()
+        before = deepcopy(snapshot)
+        release = publisher.compile_snapshot(snapshot, {'decisions': []}, '2099-01-01.1', ['U1'])
+        self.assertEqual([r['id'] for r in release['relations']], ['BUSINESS'])
+        self.assertEqual([n['id'] for n in release['nodes']], ['CAP'])
+        self.assertEqual(publisher.relations_to_illustrations(snapshot), {'TO-EXAMPLE', 'FROM-EXAMPLE'})
+        self.assertEqual(snapshot, before)
+
+    def test_missing_endpoint_is_not_hidden_by_illustration_filter(self):
+        snapshot = self.snapshot()
+        broken = deepcopy(snapshot['relations'][2])
+        broken.update(id='BROKEN', target_id='MISSING')
+        snapshot['relations'].append(broken)
+        release = publisher.compile_snapshot(snapshot, {'decisions': []}, '2099-01-01.1', ['U1'])
+        self.assertIn(broken['id'], [r['id'] for r in release['relations']])
+        self.assertNotIn(broken['id'], publisher.relations_to_illustrations(snapshot))
+
+
 class PublicationEvidenceTests(unittest.TestCase):
     def test_live_changes_do_not_replace_frozen_proof(self):
         frozen = {'records': [source('U1', 'original proof')]}

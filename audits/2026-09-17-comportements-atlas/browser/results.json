@@ -1,0 +1,13 @@
+{
+  "fixtureOnly": true,
+  "publishedVersion": "2026-09-16.2",
+  "checks": [
+    "Candidate fixture: four exact adopted definitions, separate behavior labels and version-pinned links.",
+    "Behavior is terminal in the tree, keyboard navigation works and parent link returns to ATP.",
+    "Direct search combines ATP ancestry, French description and the Comportement filter.",
+    "Domain card exposes four behavior links; ATP map displays the four actual child nodes.",
+    "Mobile 390px: readable content, direct navigation and no horizontal overflow.",
+    "Actual publication remains unchanged and receives no behavior from the backlog."
+  ],
+  "errors": []
+}

@@ -1,0 +1,196 @@
+id: NONPURCHASE-SUPPLY-ORDER-U392
+status: proposed
+source_refs:
+- U392
+- U391
+- ELM237
+- CMP148
+- U393
+- CMP149
+- U394
+- C103
+problem: Représenter une demande fournisseur d’apport de stock sans la confondre avec l’acquisition, l’exécution logistique
+  ou la gestion durable du stock consigné.
+existing_coverage: Transfer Order couvre déjà les transferts ; Supplier Return et les retours peuvent également conduire à
+  des apports. Ne pas inventer un manque pour tous les flux sans achat.
+recommendation:
+  name: Consignment Replenishment Order
+  parent_id: D04
+  kind: capability
+  definition: 'Demander et suivre un apport de stock fournisseur sous consignation : produits, quantités, lieux, dates et
+    reste à recevoir, sans confondre cette demande avec un achat.'
+  status: proposed_not_created
+  rationale: Nommage natif Microsoft correspondant au besoin précis démontré ; ordre d’apport distinct de la gestion du régime
+    de stock.
+  benefit: Suivre une livraison attendue sans créer un achat fictif ni rendre disponible un stock non reçu.
+  boundary: D01 gère l’état et le régime du stock ; D04 suit la demande d’apport ; D06 orchestre les prestations ; D03/D05
+    décident du besoin ou de la réponse selon leur finalité. Lifecycle, Structuring et Archiving restent transverses.
+  naming_limit: Replenishment dans cet intitulé éditeur couvre la demande d’alimentation du stock consigné, y compris son
+    premier apport ; ne fusionne pas Initial Stocking et Replenishment Decision de FLOW.
+alternatives:
+- name: Procurement Order
+  assessment: Pas de convention générique indépendante de Purchase Order établie par les sources consultées. Risque de chevauchement
+    achat/apport/prestation ; nom non adopté.
+- name: Purchase Order avec variante de consignation
+  assessment: Approche documentaire SAP compatible avec plusieurs régimes, mais contredirait notre séparation métier U391
+    si la distinction achat/apport disparaît. Aucun rejet technique de SAP.
+- name: Supply Order
+  assessment: Oracle documente un objet d’orchestration plus large couvrant achat/fabrication/transfert ; pas un simple synonyme
+    du manque identifié.
+market_comparisons:
+- comparison_ref: CMP148
+  status: proposed
+  similarities: Demande fournisseur et suivi des quantités/dates peuvent précéder toute acquisition ; mécanisme explicite
+    chez Microsoft et Oracle, catégorie de ligne chez SAP.
+  differences: Les éditeurs ne retiennent pas un nom et une structure uniques. Document, catégorie de ligne, capacité et objet
+    d’orchestration ne sont pas équivalents.
+  flow_position: Proposer un type d’Order ciblé dans D04 ; conserver séparément la gestion du régime de stock proposée U391.
+    Aucun nouveau nœud ni comportement créé.
+  source_ids:
+  - NP-S1
+  - NP-S2
+  - NP-S3
+  - NP-S4
+- comparison_ref: CMP149
+  status: editorial_comparison
+  common: Microsoft distingue explicitement les intentions d’apport et d’acquisition. SAP conserve des effets métier distincts
+    dans une structure documentaire commune et peut générer des apports selon les besoins.
+  difference: 'U394 précise le critère : les intentions apport/acquisition sont plus directement identifiables dans les objets
+    Microsoft du cas étudié ; SAP les distingue au sein d’un document commun. La comparaison porte sur la lisibilité métier,
+    indépendamment de la couverture fonctionnelle.'
+  flow_position: 'Priorité à la visibilité du métier dans le design FLOW : intentions, parties, engagements, progression et
+    résultats explicites. Préférence locale Microsoft argumentée ; causalité historique non démontrée.'
+  source_ids:
+  - OI-S1
+  - OI-S2
+  - OI-S3
+sources:
+- id: NP-S1
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Documentation évolutive
+  locator: Consignment replenishment orders ; Overview of the consignment process
+  access: Page primaire ouverte
+  finding: Consignment replenishment order demande et suit les quantités à livrer dans un intervalle de dates ; le fournisseur
+    conserve la propriété à réception. Le traitement de changement de propriété génère ensuite un Purchase Order.
+  limit: Document produit illustré en production ; ne justifie pas une capacité Procurement Order générique couvrant tous
+    les apports.
+  consulted_on: '2026-09-18'
+- id: NP-S2
+  vendor: SAP
+  product: S/4HANA on-premise
+  title: Item Category
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/af9ef57f504840d2b81be8667206d485/a37eb65334e6b54ce10000000a174cb4.html
+  edition: Documentation évolutive, édition non confirmée dans le passage lu
+  locator: 'Table des catégories : Consignment'
+  access: Passage primaire indexé consulté ; ouverture directe sans texte exploitable
+  finding: Une ligne de Purchase Order de catégorie Consignment exige une réception de marchandises mais pas une réception
+    de facture sur cette ligne.
+  limit: Le nom de l’objet ERP ne prouve pas un achat/transfert de propriété à sa création ; catégorie de ligne, pas nouvelle
+    capacité. Aucun comportement légal universel déduit.
+  consulted_on: '2026-09-18'
+- id: NP-S3
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: Consigned Inventory
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/consigned-inventory.html
+  edition: 25D
+  locator: Consignment Order ; Ship and Receive Items
+  access: Page primaire ouverte
+  finding: Consignment Order demande les expéditions avec quantités, lieux et dates selon l’accord ; les biens reçus restent
+    propriété fournisseur.
+  limit: Intitulé fonctionnel du parcours ; ne démontre pas un nouvel objet technique indépendant du Purchase Order.
+  consulted_on: '2026-09-18'
+- id: NP-S4
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: How Supply Chain Orchestration Works
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauco/how-supply-orchestration-works.html
+  edition: 26A
+  locator: Transform and assign request ; Orchestrate supply order ; Fulfill
+  access: Page primaire ouverte
+  finding: Un Supply Order orchestre plusieurs modes, notamment achat, fabrication et transfert, avec leurs documents d’exécution.
+  limit: Plus large que l’apport consigné ; empièterait sur les responsabilités d’orchestration si recopié comme simple type
+    d’Order FLOW.
+  consulted_on: '2026-09-18'
+- id: OI-S1
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Documentation évolutive, mise à jour affichée 2026-05-06
+  locator: Overview of the consignment process ; Consignment replenishment orders
+  access: Page primaire ouverte
+  finding: Demande d’apport distincte du Purchase Order généré au changement de propriété ; quantités et dates selon demande
+    prévue/réelle.
+  limit: L’exemple comporte une création manuelle en contexte production ; il ne prouve ni Case Management généralisé, ni
+    location d’espace obligatoire, ni réassort retail strictement proportionnel aux ventes.
+  consulted_on: '2026-09-18'
+- id: OI-S2
+  vendor: SAP
+  product: S/4HANA Cloud Public Edition
+  title: Exploring the Supplier Consignment (2LG) Scenario
+  url: https://learning.sap.com/courses/handling-special-stocks-and-physical-inventory-in-sap-s-4hana-cloud-public-edition/exploring-the-supplier-consignment-2lg-scenario_f7d023c2-e7c4-4af1-aaed-084fd946e5fa
+  edition: Formation évolutive, version non affichée
+  locator: Create Consignment Purchase Order ; Regular Consignment Ordering ; Consignment Withdrawals
+  access: Page primaire ouverte
+  finding: Catégorie de ligne Consignment, propriété fournisseur conservée ; demandes générables par MRP selon les besoins.
+    Retraits, vente, transfert au stock propre et rebut sont distingués.
+  limit: Réutilisation de document ERP attestée ; motivations historiques de conception/conformité et incapacité au pilotage
+    par les besoins non démontrées. Aucun droit de destruction déduit des options du produit.
+  consulted_on: '2026-09-18'
+- id: OI-S3
+  vendor: SAP
+  product: Business Network for Supply Chain
+  title: Supplier-Managed Inventory
+  url: https://help.sap.com/docs/business-network-for-supply-chain/business-network-for-supply-chain-integration-and-configuration/e6fe41e52bef4c4ebcb82fab3d6b1dfc.html
+  edition: Documentation évolutive, version non affichée
+  locator: Détermination des besoins de réapprovisionnement
+  access: Passage primaire indexé lu ; ouverture directe sans texte exploitable
+  finding: Le fournisseur peut déterminer le réassort selon demande brute, stock et min/max.
+  limit: Illustration que signal de demande et acteur de décision sont deux axes distincts ; ne valide pas un VMI pour FLOW.
+  consulted_on: '2026-09-18'
+catalog_changed: false
+architecture_U393:
+  principle_ref: modeles/backlog/order-intent-principles.yaml
+  status: direction_recorded_no_new_name_adopted
+  intent: Distinguer service de stockage offert au fournisseur, demande d’apport et éventuelle acquisition.
+  context:
+    status: target_intent_expressed_by_user_not_installed_fact
+    source_refs:
+    - U393
+    perspective: Le fournisseur dispose d’un espace de stockage distant dans le réseau du distributeur ; le distributeur propose
+      une offre de mise à disposition de cet espace.
+    commercial_model: Location/rémunération d’espace évoquée par Laurent ; nature précise, assiette, montant et conditions
+      non définis. Ne pas la transformer en condition universelle de consignation.
+    ownership: L’apport en consignation n’est pas un achat de marchandises ; un éventuel changement de propriété ultérieur
+      reste distinct, selon le montage retenu.
+    replenishment: Les ventes et l’évolution du besoin déclenchent ou alimentent le réassort demandé dans la cible décrite
+      ; pas de poussée fournisseur unilatérale présumée.
+    limits:
+    - Aucun automatisme une vente = une unité immédiatement commandée.
+    - Réassort tiré par la demande ne désigne pas, à lui seul, l’acteur responsable du calcul ou de la décision.
+    - Ne pas déduire de VMI, de transfert automatique à chaque vente, de tarif de stockage ou de responsabilité assurantielle
+      non explicités.
+    - Stockage, propriété, pilotage du réassort et rémunération sont des dimensions séparées de l’offre.
+business_visibility_U394:
+  source_refs:
+  - U394
+  - C103
+  criterion: Visibilité du métier au travers du design
+  rule: Rendre identifiables dans les concepts, noms, relations, états et événements l’intention de la demande, les parties,
+    leurs engagements et la progression métier. Ne pas obliger à reconstruire le sens du processus à partir des seules transactions
+    ou d’un paramétrage implicite.
+  distinction: Évaluer la lisibilité sémantique séparément de la couverture fonctionnelle ; savoir exécuter un processus ne
+    prouve pas que son sens est visible dans le modèle.
+  application:
+  - Pouvoir distinguer une demande d’apport en consignation d’un engagement d’achat et relier leur évolution éventuelle.
+  - Montrer le lien entre intention, accord, demande, exécution et résultat, sans confondre modèle métier et schéma physique.
+  - Une réalisation commune est possible si elle conserve ces intentions explicites ; une table par intention ou la multiplication
+    des objets ne sont pas des exigences.
+  market_judgment: Préférence Microsoft sur la lisibilité des intentions d’apport et d’acquisition dans le cas étudié ; pas
+    un déni de couverture SAP.
+  historical_opinion: Laurent estime que Microsoft, arrivé après, a corrigé cette faiblesse de design. La causalité et l’intention
+    historique ne sont pas établies par les documentations fonctionnelles consultées.

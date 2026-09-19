@@ -1,0 +1,12 @@
+{
+  "market_comparisons_preserved": true,
+  "comparison_field_remains_proposed": true,
+  "glossary_comparisons_preserved": true,
+  "no_new_publication_errors": true,
+  "preexisting_errors": [
+    "relations/REL-ILL-001: dangling source_id or target_id",
+    "relations/REL-ILL-002: dangling source_id or target_id",
+    "relations/REL-ILL-003: dangling source_id or target_id"
+  ],
+  "publication_written": false
+}

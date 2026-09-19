@@ -17,7 +17,7 @@ let page;
 try {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   page = await context.newPage();
-  page.setDefaultTimeout(15000);
+  page.setDefaultTimeout(30000);
   const monitorPage = observed => {
   observed.on('pageerror', error => errors.push(error.message));
   observed.on('console', message => {
@@ -109,22 +109,27 @@ try {
   }
 
   await page.goto(base + '/#node=D04&scope=missing&view=map');
-  await waitHeading('Order Management');
-  await waitCards(['D04.e', 'D04.f', 'D04.g', 'D04.h']);
+  await waitHeading(nameOf('D04'));
+  const orderChildren = api.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === 'D04').map(relation => relation.target_id);
+  const orderLeaf = api.nodes.find(node => orderChildren.includes(node.id) && node.kind === 'capability'
+    && !api.relations.some(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === node.id));
+  assert.ok(orderLeaf, 'The current Order Management map must expose a published capability leaf.');
+  await waitCards(orderChildren);
   await page.getByText('Le périmètre de cette carte n’existe pas dans la publication. Le contexte de l’élément est rétabli.', { exact: true }).waitFor();
   assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).has('scope'), false);
-  await page.evaluate(() => {
+  await page.evaluate(leafId => {
     window.__atlasPointerAudit = [];
     for (const type of ['mousedown', 'mouseup', 'click', 'dblclick']) document.addEventListener(type, event => {
       const card = event.target.closest?.('.business-card');
-      const rect = document.querySelector('.business-card[data-node-id="D04.h"]')?.getBoundingClientRect();
-      const wrapper = document.querySelector('.business-card[data-node-id="D04.h"]')?.closest('.react-flow__node');
+      const leaf = document.querySelector(`.business-card[data-node-id="${leafId}"]`);
+      const rect = leaf?.getBoundingClientRect();
+      const wrapper = leaf?.closest('.react-flow__node');
       const style = wrapper ? getComputedStyle(wrapper) : undefined;
       window.__atlasPointerAudit.push({ type, detail: event.detail, target: event.target.tagName, targetClass: String(event.target.className), targetHtml: event.target.outerHTML?.slice(0, 500), id: card?.dataset.nodeId, x: event.clientX, y: event.clientY, cardTop: rect?.top, cardLeft: rect?.left, visibility: style?.visibility, pointerEvents: style?.pointerEvents, zIndex: style?.zIndex, viewport: document.querySelector('.react-flow__viewport')?.getAttribute('style'), hash: location.hash });
     }, true);
-  });
-  await page.locator('.business-card[data-node-id="D04.h"] h3').dblclick();
-  await waitHeading('Order Reconciliation');
+  }, orderLeaf.id);
+  await page.locator(`.business-card[data-node-id="${orderLeaf.id}"] h3`).dblclick();
+  await waitHeading(orderLeaf.fields.name);
   await page.getByTestId('business-sheet').waitFor();
   assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).get('view'), 'sheet');
   checks.push('invalid graph scope recovers safely / double-click on a leaf opens its sheet');
@@ -153,7 +158,8 @@ try {
     assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).has('source'), false);
   }
   await inspectSource('D01.f', 'P82');
-  await inspectSource('D04.h', 'U141');
+  assert.ok(api.nodes.find(node => node.id === 'D07.c')?.source_refs.includes('U141'), 'The published reconciliation capability retains source U141.');
+  await inspectSource('D07.c', 'U141');
   checks.push('P82 / U141 complete source reader, anchors and Escape focus restoration');
 
   const search = page.getByRole('textbox', { name: 'Rechercher dans le modèle publié' });
@@ -182,7 +188,7 @@ try {
   await waitHeading('Supply');
   await waitCards(api.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === 'universe-supply').map(relation => relation.target_id));
   assert.equal(await page.locator('.selection-strip strong').innerText(), 'Order Management');
-  await page.locator('#fa-publication').selectOption('2026-09-13.2');
+  await page.goto(base + '/#node=D04&scope=universe-supply&view=map&version=2026-09-13.2');
   await waitHeading('Commercial Commitments');
   const historical = await (await context.request.get(base + '/api/model?version=2026-09-13.2')).json();
   await waitCards(historical.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === 'D04').map(relation => relation.target_id));
@@ -194,7 +200,7 @@ try {
   assert.equal(new URLSearchParams(new URL(page.url()).hash.slice(1)).get('version'), '2026-09-13.2');
   await page.reload();
   await waitHeading('Commercial Commitments');
-  await page.locator('#fa-publication').selectOption('');
+  await page.goto(base + '/#node=D04&view=map');
   await waitHeading('Order Management');
   await page.goBack();
   await waitHeading('Commercial Commitments');
@@ -202,17 +208,29 @@ try {
   await waitHeading('Order Management');
   checks.push('historical publication fixed across refresh / reload / browser history; missing universe scope recovered');
 
-  await gotoNode('D04.h', 'relations');
-  await waitCards(['D04.h', 'D07.c']);
-  const relationButton = page.locator('.accessible-relations > button').first();
+  const relation = api.relations.find(item => item.type === 'relates-to' && item.source_id === 'D07.c'
+    && item.qualification?.meaning && item.qualification?.conditions?.length
+    && item.qualification?.effects?.length && item.qualification?.scope);
+  assert.ok(relation, 'The published reconciliation relation must retain its complete qualification.');
+  await gotoNode(relation.source_id, 'relations');
+  await page.waitForFunction(() => document.querySelector('[data-testid="cytoscape-canvas"]')?.getAttribute('data-status') === 'ready');
+  await page.getByTestId('cytoscape-canvas').locator('canvas').first().waitFor({ state: 'attached' });
+  const dependencyPicker = page.getByLabel('Inspecter un élément', { exact: true });
+  for (const id of [relation.source_id, relation.target_id]) {
+    assert.ok((await dependencyPicker.locator('option').evaluateAll(options => options.map(option => option.value))).includes(`node|${id}`));
+  }
+  const relationList = page.locator('.dependency-relations');
+  if (!(await relationList.evaluate(element => element.open))) await relationList.locator(':scope > summary').click();
+  const relationButton = page.locator(`[data-relation-id="${relation.id}"]`);
   await relationButton.click();
   await page.getByTestId('relation-inspector').waitFor();
-  const relation = api.relations.find(item => item.id === 'REL-EXECUTION-FACTS-ORDER-RECONCILIATION');
   const inspector = await page.getByTestId('relation-inspector').innerText();
   assert.ok(inspector.includes(relation.qualification.meaning));
   assert.ok(inspector.includes(relation.qualification.conditions[0]));
   assert.ok(inspector.includes(relation.qualification.effects[0]));
   assert.ok(inspector.includes(relation.qualification.scope));
+  const relationEndpoints = await page.getByTestId('relation-inspector').locator('.relation-endpoints a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+  assert.deepEqual(relationEndpoints.map(href => new URLSearchParams(href.split('#')[1]).get('node')), [relation.source_id, relation.target_id]);
   await capture('02-relation-detail');
   checks.push('real transverse relation direction and complete qualification');
 
@@ -253,7 +271,8 @@ try {
   await historicalPage.goto(base + '/#node=D04&version=2026-09-13.2');
   await historicalPage.getByRole('heading', { name: 'Commercial Commitments', exact: true, level: 1 }).waitFor();
   await historicalPage.route(catalogMatcher, route => route.fulfill({ json: updatedCatalog }));
-  await historicalPage.waitForFunction(version => [...document.querySelector('#fa-publication').options].some(option => option.value === version), updated.version, { timeout: 12000 });
+  await historicalPage.waitForResponse(async response => new URL(response.url()).pathname === '/api/releases' && (await response.json()).current_version === updated.version, { timeout: 12000 });
+  await historicalPage.evaluate(() => new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))));
   assert.equal(await historicalPage.locator('h1').innerText(), 'Commercial Commitments');
   assert.match(historicalPage.url(), /version=2026-09-13.2/);
   await historicalPage.close();

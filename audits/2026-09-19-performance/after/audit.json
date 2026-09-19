@@ -1,0 +1,91 @@
+{
+  "task": "audit",
+  "seconds": 48.92377320001833,
+  "structured_loads": {
+    ".yaml": {
+      "calls": 45,
+      "seconds": 48.179225499974564
+    }
+  },
+  "read_calls": 45,
+  "unique_files": 45,
+  "read_bytes_with_repeats": 30931932,
+  "slowest_reads": [
+    {
+      "path": "modeles\\backlog\\history\\backlog-planning-U414\\model-before.yaml",
+      "calls": 1,
+      "seconds": 2.0086844000034034,
+      "bytes": 1005571
+    },
+    {
+      "path": "modeles\\backlog\\history\\replenishment-behaviors-U427\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.9907470000034664,
+      "bytes": 1034194
+    },
+    {
+      "path": "modeles\\backlog\\model.yaml",
+      "calls": 1,
+      "seconds": 1.681910199986305,
+      "bytes": 1049624
+    },
+    {
+      "path": "modeles\\backlog\\history\\backlog-structure-U417\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.5643043000018224,
+      "bytes": 1014570
+    },
+    {
+      "path": "modeles\\backlog\\history\\replenishment-closure-U425\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.5390382000186946,
+      "bytes": 1031198
+    },
+    {
+      "path": "modeles\\backlog\\history\\order-placement-U420\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.5002123000158463,
+      "bytes": 1017073
+    },
+    {
+      "path": "modeles\\backlog\\history\\supplier-confirmation-U403\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.493260699993698,
+      "bytes": 916050
+    },
+    {
+      "path": "modeles\\backlog\\history\\lifecycle-dimensions-U424\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.4430928000074346,
+      "bytes": 1018527
+    },
+    {
+      "path": "modeles\\backlog\\history\\process-services-U409\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.396226500015473,
+      "bytes": 970877
+    },
+    {
+      "path": "modeles\\backlog\\history\\order-backlog-U413\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.3653621000121348,
+      "bytes": 998017
+    },
+    {
+      "path": "audits\\2026-09-18-supplier-repair-U388\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.3643402000016067,
+      "bytes": 774941
+    },
+    {
+      "path": "modeles\\backlog\\history\\order-release-U410\\model-before.yaml",
+      "calls": 1,
+      "seconds": 1.3623612999799661,
+      "bytes": 992335
+    }
+  ],
+  "repeated_reads": [],
+  "suppressed_write_count": 0,
+  "suppressed_write_bytes": 0,
+  "stdout_bytes": 0
+}

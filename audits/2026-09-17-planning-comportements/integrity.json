@@ -1,0 +1,20 @@
+{
+  "changed_existing_nodes": [
+    "D05",
+    "D05.f"
+  ],
+  "added_behaviors": [
+    "BHV005",
+    "BHV006",
+    "BHV007",
+    "BHV008",
+    "BHV009"
+  ],
+  "added_structural_relations": 5,
+  "existing_relations_unchanged": 92,
+  "protected_files_unchanged": 134,
+  "capabilities": 41,
+  "behaviors": 9,
+  "historical_parent_definition_preserved_in": "model-before.yaml",
+  "parent_synthesis_definition_proposed": true
+}

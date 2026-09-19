@@ -18,10 +18,10 @@ import re
 import tempfile
 
 try:
-    from .validate_models import _load as read, validate_release, validate_sources
+    from .validate_models import _load as read, validate_release, validate_sources, relations_to_illustrations
     from .structured_io import dumps
 except ImportError:
-    from validate_models import _load as read, validate_release, validate_sources
+    from validate_models import _load as read, validate_release, validate_sources, relations_to_illustrations
     from structured_io import dumps
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -93,11 +93,14 @@ def compile_snapshot(snapshot, decisions, version, publication_refs):
     release.update(space='release', version=version, release_kind='published_snapshot')
     release['publication'] = {'source_refs': publication_refs, 'note': 'Publication complète demandée par Laurent ; publier ne vaut pas valider.'}
     release['nodes'], release['relations'], release['excluded_nodes'] = [], [], []
+    context_relations = relations_to_illustrations(snapshot)
     for collection in ('nodes', 'relations'):
         for original in snapshot[collection]:
             if original['review']['state'] == 'illustration':
                 if collection == 'nodes':
                     release['excluded_nodes'].append({'id': original['id'], 'source_refs': original['source_refs'], 'reason': 'Illustration conservée dans le backlog.'})
+                continue
+            if collection == 'relations' and original['id'] in context_relations:
                 continue
             item = copy.deepcopy(original)
             adoptions = [d for d in decisions['decisions'] if d['decision_state'] == 'accepted' and d['target']['collection'] == collection and d['target']['id'] == item['id'] and d['target']['revision'] == item['revision']]

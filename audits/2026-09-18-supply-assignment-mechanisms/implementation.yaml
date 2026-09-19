@@ -1,0 +1,32 @@
+source_refs:
+- U345
+- C99
+model_before: audits/2026-09-18-supply-assignment-mechanisms/model-before.yaml
+model_before_sha256: 215602714c987cd321fdf7bbddfd3f791b02498fc48a10f4028ff538ffe7b5ee
+delta:
+  nodes:
+    added: {}
+    changed:
+      BHV006: 2a08d8459b7890042ff5943113ddde54714ebd6bcd61b7f3f9cbe2b612383725
+      D02.e: 667135c1553ba3d5474b250d95e6503ebc59329996881c9f2b115c7a30b03042
+    removed: []
+  relations:
+    added: {}
+    changed: {}
+    removed: []
+behaviors: []
+scope: Précisions éditoriales sur deux nœuds existants ; valeurs déjà adoptées inchangées, aucun comportement ajouté.
+principles:
+- node_id: D02.e
+  statement: 'L’application d’un plan d’affectation relève de Supply Assignment : matérialiser les liens entre ressources
+    et commandes retenus dans le plan. La capacité peut mobiliser les autres capacités Supply sans absorber leurs responsabilités.
+    Le fait qu’un traitement logiciel tel qu’ARun traverse plusieurs capacités ne remet pas en cause le parent métier de ce
+    mécanisme.'
+  statement_sha256: 40f37722a4ed4ce6431f1ca2c4a4930a9a543193d38025e54fd1e872a6d9fcde
+- node_id: BHV006
+  statement: 'Simulation & Analysis peut produire des recommandations : ajustements suggérés, raisons, hypothèses et impacts
+    attendus sur les indicateurs ou les processus. Une recommandation n’est ni une décision adoptée ni une modification opérationnelle
+    ; elle éclaire le choix du scénario et les décisions à mobiliser. Exemple fictif : recommander de reporter un apport en
+    expliquant la réduction d’immobilisation et le risque de disponibilité associé. La validation et l’application restent
+    des fonctions distinctes ; aucun comportement Recommendation autonome ajouté.'
+  statement_sha256: badb94d20efce88bed24ba6fe71aa5942cac3c025e46d77d2b94102adf41173a

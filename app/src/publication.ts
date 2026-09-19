@@ -88,7 +88,9 @@ export function createPublicationClient(fetcher: FetchLike = fetch) {
         const target = selection || nextCatalog.current;
         if (!nextCatalog.releases.some(entry => entry.version === target)) throw new Error(`La publication ${target} est absente du catalogue.`);
         if (!force && state.model?.version === target && !state.notice) {
-          emit({ ...state, catalog: nextCatalog, loading: false, error: '', notice: '' });
+          if (state.loading || state.error || JSON.stringify(state.catalog) !== JSON.stringify(nextCatalog)) {
+            emit({ ...state, catalog: nextCatalog, loading: false, error: '', notice: '' });
+          }
           return;
         }
         // Pin each read to the catalog identity. A concurrent publication cannot mix two versions.

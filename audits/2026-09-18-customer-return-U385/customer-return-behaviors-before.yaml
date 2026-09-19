@@ -1,0 +1,192 @@
+id: CUSTOMER-RETURN-BEHAVIORS-U384
+status: proposed
+source_refs:
+- U382
+- U383
+- U384
+- ELM232
+- CMP143
+capability_id: D04.l
+current_name: Customer Return
+proposed_definition: Prendre en charge les retours clients, leurs commandes et leurs suites logistiques, jusqu’au résultat
+  attendu selon les décisions et autorisations applicables.
+definition_status: proposed_not_applied
+decomposition_rationale: Les parcours diffèrent par le devenir attendu, les responsabilités sollicitées, les immobilisations
+  et les preuves nécessaires pour considérer le retour traité. Cette complexité justifie des comportements métier ; les étapes
+  de saisie, inspection, validation et clôture ne constituent pas chacune un comportement.
+rationale_status: proposed_not_applied
+proposals:
+- id: CR-P01
+  name: Return to Stock
+  definition: Prendre en charge un retour destiné à redevenir disponible dans le stock, selon l’état et les conditions retenus.
+  mechanism: 'Parcours de remise en disponibilité : suivre les quantités et conditions à satisfaire, demander les suites nécessaires
+    et rapprocher la remise en disponibilité constatée.'
+  benefit: Éviter qu’un produit simplement reçu soit promis avant sa remise en état ou sa libération effective.
+  example: Un vêtement intact reçu en magasin doit être contrôlé et réétiqueté avant de redevenir vendable. Reçu, accepté
+    et disponible restent distincts.
+  boundary: D05.i retient l’orientation ; D06 organise les prestations et D01 enregistre état et disponibilité. Aucun stock
+    réputé disponible par simple clôture de l’Order.
+  market_terms:
+  - SAP Transfer to Free Available Stock
+  - Microsoft Credit (volet logistique uniquement)
+  status: proposed
+  parent_id: D04.l
+  source_refs:
+  - U382
+  - U384
+  - ELM232
+  - CMP143
+- id: CR-P02
+  name: Repair and Refurbishment
+  definition: Prendre en charge un retour nécessitant une remise en état avant sa destination finale.
+  mechanism: 'Parcours avec prestation corrective : préserver le lien au produit et au retour, suivre la prise en charge,
+    le résultat et la suite autorisée.'
+  benefit: Récupérer un bien utilisable tout en rendant visible l’immobilisation et les échecs de remise en état.
+  example: Une fermeture défectueuse est réparée ; selon la décision applicable, le vêtement revient au client ou au stock.
+    Un échec remonte pour réexaminer le devenir.
+  boundary: La réalisation de la réparation reste chez l’exécutant et son orchestration dans D06. Le coût acceptable et le
+    choix du devenir sont dans D05.i. Aucun atelier interne imposé.
+  market_terms:
+  - SAP In-House Repair (Service)
+  - Microsoft Repair / Remanufacture-Refurbish (codes)
+  status: proposed
+  parent_id: D04.l
+  source_refs:
+  - U382
+  - U384
+  - ELM232
+  - CMP143
+- id: CR-P03
+  name: Return to Supplier
+  definition: Prendre en charge la suite d’un retour client dont les biens doivent être renvoyés au fournisseur.
+  mechanism: Relais vers une commande de retour fournisseur liée au retour client ; suivre les quantités transférées à cette
+    responsabilité et leur résultat.
+  benefit: Conserver la traçabilité entre réclamation client, biens reçus et reprise fournisseur sans gérer deux fois la même
+    commande.
+  example: Trois pièces présentant un défaut fournisseur sont rattachées à un Supplier Return ; l’expédition ne prouve ni
+    réception fournisseur ni avoir.
+  boundary: Supplier Return D04.m porte la commande fournisseur ; ce comportement porte son articulation avec le retour client.
+    L’accord de reprise est une condition, jamais déduit du choix logistique.
+  market_terms:
+  - SAP Ship to Supplier
+  - Microsoft Return to Vendor (code)
+  status: proposed
+  parent_id: D04.l
+  source_refs:
+  - U382
+  - U384
+  - ELM232
+  - CMP143
+- id: CR-P04
+  name: Return to Customer
+  definition: Prendre en charge la restitution au client du produit concerné par son retour.
+  mechanism: Parcours de restitution du même produit, après réparation ou après décision applicable de ne pas le reprendre
+    ; préserver identité, destinataire et preuve de restitution.
+  benefit: Distinguer restitution du bien et envoi d’un nouveau produit de remplacement.
+  example: Le produit réparé est rendu au client. Un autre cas peut être le retour non accepté, restitué après la décision
+    compétente.
+  boundary: Ne décide pas du refus commercial. Ne crée pas implicitement une nouvelle vente, ne remplace pas la réservation/promesse
+    d’un article de remplacement. D06 suit l’acheminement.
+  market_terms:
+  - SAP Send Back to Customer
+  - Microsoft Return to customer
+  status: proposed
+  parent_id: D04.l
+  source_refs:
+  - U382
+  - U384
+  - ELM232
+  - CMP143
+- id: CR-P05
+  name: Scrapping
+  definition: Prendre en charge la sortie définitive d’un produit retourné orienté vers le rebut.
+  mechanism: 'Parcours de retrait contrôlé : conserver le motif et l’autorisation, suivre la prestation et rapprocher la preuve
+    avec la sortie de stock.'
+  benefit: Éviter remise en vente ou disponibilité indue et distinguer décision de rebut, stock en attente et réalisation
+    effective.
+  example: Un article non récupérable attend une prestation de traitement ; le retour garde sa trace jusqu’au résultat et
+    à l’enregistrement de la sortie.
+  boundary: D05.i décide du devenir, l’exécutant réalise, D06 trace et D01 enregistre. Ne regroupe pas donation, recyclage
+    et revente secondaire sous le même résultat.
+  market_terms:
+  - SAP Transfer to Scrap
+  - Microsoft Scrap
+  status: proposed
+  parent_id: D04.l
+  source_refs:
+  - U382
+  - U384
+  - ELM232
+  - CMP143
+market_comparisons:
+- vendor: SAP
+  product: S/4HANA Cloud — Warehouse Management
+  element_name: Logistical Follow-Up Activities
+  element_type: Suites de processus produit
+  relationship: Recouvrement partiel
+  similarities: Remise en stock disponible, réparation, expédition fournisseur, restitution client et rebut documentés.
+  differences: Documents, mouvements et étapes de processus ne sont pas automatiquement des capacités ou comportements FLOW
+    ; absence d’équivalence de niveau.
+  flow_position: Appui au choix de parcours métier ; préserver D05.i pour choisir, D04 pour les Orders, D06 pour les prestations
+    et D01 pour les stocks.
+  source_title: Logistical Follow-Up Activities
+  source_url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/87f9b54f9c4f4e75aff0061860a6589a/aeb252c114df4dac9abf1626ccb04233.html
+  source_version: 2602 affiché par le passage primaire indexé
+  source_locator: 'Table : 0011, 0012, 0005, 0021 et 0026'
+  consulted_on: '2026-09-18'
+  evidence_limits: Texte primaire indexé consulté ; portail direct partiellement inaccessible. Aucune réalisation Beaumanoir
+    déduite.
+  status: proposed
+  source_refs:
+  - U384
+  - ELM232
+  - CMP143
+- vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  element_name: Disposition codes and disposition actions
+  element_type: Configuration et actions de traitement produit
+  relationship: Recouvrement partiel
+  similarities: Codes réparation, reconditionnement, renvoi fournisseur ; actions de remise en stock, rebut et restitution
+    au client.
+  differences: Les six actions prédéfinies combinent effets logistiques et financiers ; un code libre ne prouve pas un processus
+    natif complet de réparation.
+  flow_position: Conserver les parcours logistiques et expliciter les interfaces commerciales sans absorber remboursement
+    et comptabilité.
+  source_title: Specify how to dispose of returned items
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+  source_version: Mise à jour affichée 2025-05-07
+  source_locator: Disposition types/codes ; six disposition actions
+  consulted_on: '2026-09-18'
+  evidence_limits: Page primaire ouverte ; fonctionnalités produit, sans preuve de couverture Beaumanoir.
+  status: proposed
+  source_refs:
+  - U384
+  - ELM232
+  - CMP143
+combination: 'Parcours combinables par produit ou quantité : réparation puis remise en stock ou restitution client. Pas cinq
+  étapes obligatoires ni duplication des opérations communes.'
+renvoi_clarification: 'Distinguer fournisseur et client : contrepartie, obligation et preuve finale différentes. Deux comportements
+  proposés pour préciser le terme renvoi U382.'
+shared_functions:
+- Enregistrer origine, motif et références utiles.
+- Rapprocher quantités attendues et reçues ; exploiter constats et écarts.
+- Conserver liens entre retour et suites, avancement et résultats.
+- Mobiliser Lifecycle, Structuring et Archiving pour leurs responsabilités communes.
+additional_market_patterns:
+- name: Customer replacement
+  status: separate_boundary_to_review
+  reason: Microsoft utilise un Sales Order lié. Le devenir de l’ancien bien et l’envoi du remplacement sont deux axes combinables
+    ; ne pas les mélanger dans une liste exclusive.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- name: Returnless resolution
+  status: commercial_boundary_to_review
+  reason: Microsoft Credit only documente un règlement sans retour physique. Un tel parcours ne doit pas enregistrer une réception
+    fictive ; autorisation et remboursement restent à attribuer.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- name: Secondary resale, donation, recycling
+  status: to_review_if_applicable
+  reason: Filières distinctes ; ne pas les assimiler au rebut. Les codes Microsoft attestent notamment vente secondaire, donation
+    et salvage, sans prouver un parcours complet FLOW.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+naming_convention: Les libellés courts des cinq capacités sont adoptés U384. Les noms des nouveaux comportements et la définition
+  élargie restent proposés. Le renvoi fournisseur est un relais vers D04.m, pas sa duplication.

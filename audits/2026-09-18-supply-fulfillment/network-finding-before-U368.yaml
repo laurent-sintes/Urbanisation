@@ -1,0 +1,36 @@
+id: SF-A06
+target_ids:
+- D13
+- D13.a
+- TER054
+status: proposed
+priority: P2
+recommendation: Conserver Fulfillment Network et préciser au besoin ses lieux et relations admissibles.
+candidate_name: null
+reason: Le nom adopté porte déjà la finalité. Les lieux peuvent contribuer à achats, transferts ou retours selon le périmètre
+  FLOW ; la documentation Microsoft illustre les sources de satisfaction sans prouver tout ce périmètre.
+market_comparisons:
+- vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  element_name: Intelligent Fulfillment Optimization
+  element_type: Notion métier ou fonction produit documentée
+  relationship: Appui sémantique
+  similarities: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes
+    groupées et restitution d’un plan.
+  differences: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence
+    complète à D03 ni solveur universel multiobjectif démontré.
+  source_title: Intelligent Fulfillment Optimization
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  source_version: Documentation évolutive
+  source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies
+  consulted_on: '2026-09-18'
+  evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+    Beaumanoir déduite.
+  flow_position: Le nom adopté porte déjà la finalité. Les lieux peuvent contribuer à achats, transferts ou retours selon
+    le périmètre FLOW ; la documentation Microsoft illustre les sources de satisfaction sans prouver tout ce périmètre.
+  status: proposed
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136

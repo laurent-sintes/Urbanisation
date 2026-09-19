@@ -1,0 +1,74 @@
+{
+  "files": {
+    "AGENTS.md": {
+      "bytes": 34673,
+      "lines": 130,
+      "sha256": "5bbd6040c6059850a03321a20a713ef422bee1f2a55debaea3ac46d865aa926c"
+    },
+    "scripts/structured_io.py": {
+      "bytes": 4414,
+      "lines": 120,
+      "sha256": "0e0d9eeeacc72bc345427ff6ecbaeba85854ec019db9d282ccd0c60550002c64"
+    },
+    "scripts/prepare_release.py": {
+      "bytes": 30670,
+      "lines": 470,
+      "sha256": "c737dd39276450d8ae3d5cf76b0c81fe847ff4f5e43f9d5dc367c0bc0f503254"
+    },
+    "scripts/render_behavior_gap_audit.py": {
+      "bytes": 119755,
+      "lines": 1197,
+      "sha256": "4d3d89b30daaa5c91b98895822b0513e33fa58652cab1acf35c9e5a39b490855"
+    },
+    "scripts/release_catalog.py": {
+      "bytes": 5950,
+      "lines": 115,
+      "sha256": "ac3437b1162fac882b2314f102dd810579abf4e982edfe1072a00931d7af9562"
+    },
+    "scripts/test_prepare_release.py": {
+      "bytes": 18954,
+      "lines": 300,
+      "sha256": "34c395d5697245e7ba4748b6a1cff624a9258adfef42bc57de03a8cd6561c488"
+    },
+    "app/atlas_data.py": {
+      "bytes": 12514,
+      "lines": 253,
+      "sha256": "2e5c9eba2a44824ac23f1073473bd66d937dd52c85bff615bfb6edae79b3bcf3"
+    },
+    "app/src/usePublication.ts": {
+      "bytes": 1786,
+      "lines": 36,
+      "sha256": "434aef5f66bf7acf719b9347f11e7d77a027328d7378f9d28952f7dea58e14ca"
+    },
+    "app/src/publication.ts": {
+      "bytes": 6600,
+      "lines": 135,
+      "sha256": "04f8ad8e7083bc1385eb68c9c95da775f02d837bd39b46d198f999412befcbda"
+    }
+  },
+  "fixture_files": 284,
+  "fixture_bytes_per_test": 40838467,
+  "fixture_tests": 16,
+  "skills": {
+    "commit": {
+      "repo": "skills\\commit\\SKILL.md",
+      "personal": "C:\\Users\\laure\\.codex\\skills\\commit\\SKILL.md",
+      "equal_text": true
+    },
+    "push": {
+      "repo": "skills\\push\\SKILL.md",
+      "personal": "C:\\Users\\laure\\.codex\\skills\\push\\SKILL.md",
+      "equal_text": true
+    },
+    "release": {
+      "repo": "skills\\release\\SKILL.md",
+      "personal": "C:\\Users\\laure\\.codex\\skills\\release\\SKILL.md",
+      "equal_text": true
+    },
+    "server-admin": {
+      "repo": "skills\\server-admin\\SKILL.md",
+      "personal": "C:\\Users\\laure\\.codex\\skills\\server-admin\\SKILL.md",
+      "equal_text": true
+    }
+  }
+}

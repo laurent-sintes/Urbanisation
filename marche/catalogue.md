@@ -332,3 +332,197 @@ U43 : MKT01, MKT03, MKT04, MKT06, MKT07 et MKT14 sont réexaminées sur les prem
 ### Complément MKT20 — 13 septembre 2026
 
 Le corpus Oracle Fusion est complété pour la localisation des Orders : Order Management 25C (ELM108) et Procurement 25C, [Purchase Order Infolets](https://docs.oracle.com/en/cloud/saas/procurement/25c/oaprc/purchase-order-infolets.html), espace Purchase Orders, texte lu. Ce complément ne fusionne pas ces produits avec GOP et reste distinct du Retail Reference Model MKT05. Comparaison de périmètres de produits, pas de hiérarchie de capacités ; ELM111/CMP064.
+
+
+## MKT24
+
+- Référence / organisme : SAP Integrated Business Planning, Inventory Optimization — SAP.
+- Nature : fonctions de produit ; rôle envisagé : éclairer les objectifs du domaine D05, pas importer une carte de capacités.
+- Édition : Feature Scope Description 2605, sections Business Background et Key Features ; source officielle, accès réel et limites S5 dans [l'étude U222](inventory-optimization-comparaison.md#sources-versions-et-limites-daccès).
+- Consultation : 2026-09-15, texte indexé lu ; ouverture directe sans corps exploitable. Pas de catalogue RBA examiné ni de redistribution intégrale. ELM119 / CMP067–CMP070.
+
+Compléments U222 aux références existantes : MKT19 (S1/S2, TM Forum API et ODA), MKT14 (S3/S4/S7, Dynamics 365 SCM) et MKT13 (S6, cours SAP Retail). Leurs éditions, URL officielles, localisateurs, accès et limites de cette consultation sont conservés dans le tableau des sources U222 ; ces constats ne remplacent pas leurs états historiques.
+
+
+### Complément U225 — optimisation et application, 15 septembre 2026
+
+MKT14 est complété par les fonctions Dynamics 365 de paramètres calculés/actifs, d'affermissement et d'allocation ; MKT13 par SUP/PAL et leur intégration aATP ; MKT24 par l'exemple IBP 2605 ; MKT19 par les légendes de deux illustrations SID v22.0 (2022). La [table des sources](optimisation-et-application-stock.md#sources-et-limites) conserve URL officielles, éditions, passages réellement consultés et limites. Aucune redistribution de catalogue, mise à niveau implicite du SID ou adoption d'une carte de capacités.
+
+
+### Complément U239 — offre et pilotage de services, 16 septembre 2026
+
+MKT19 : TMF633 v4.0, TMF645 v5.0, TMF641 v4.2, composant TMFC007 v1.2.1 (2024) et appui historique TMF623 R14.5.1. MKT14 : configuration Carrier Services et intégration WMS only. MKT13 : statuts Freight Order du scénario Last Mile 2025 FPS01 et suivi Fiori F2750 (édition non établie dans l’extrait). Sources officielles, passages lus, accès et limites dans [l’étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). ELM129–135 / CMP076. Pas de catalogue de capacités ou schéma intégral importé ; fonctions et composants ne valent pas capacités locales.
+
+
+### Complément U249 — audit de maturité, 16 septembre 2026
+
+MKT14 (Dynamics 365 SCM, Inventory Visibility et IOM), MKT13 (S/4HANA aATP/TM/retours), MKT24 (IBP) et MKT20 (Fusion SCM Promising/Inventory/Replenishment/Order Management/Orchestration) sont revérifiés et complétés pour la v007. MKT19 conserve le rôle d’appui ciblé télécom : TMF633 v4.0, TMF641 v4.2 et TMFC007 v1.2.1.
+
+Sources officielles, éditions ou absence d’édition, dates affichées, sections consultées et limites : [Microsoft](../audits/2026-09-16-audit-maturite/microsoft.md), [SAP/Oracle](../audits/2026-09-16-audit-maturite/sap-oracle.md), [TM Forum](../audits/2026-09-16-audit-maturite/tm-forum.md). 29 sources ; les sources SAP indexées ne sont pas présentées comme des manuels ouverts intégralement. La page Microsoft Lifecycle MS12 affiche IOM In Support à la consultation, sans calendrier futur déduit. Synthèses sélectives et liens ; aucune redistribution des modèles propriétaires ni catalogue logiciel adopté. Les appuis fonctionnels ne démontrent pas une couverture installée Beaumanoir.
+
+ELM138–157 détaillent les nouveaux passages ; ELM129/131/132/133/134/136 sont revérifiés dans les annexes sans effacer leurs consultations antérieures. Correspondances U249 proposées CMP080–085 ; voir le [rapport](../audits/2026-09-16-audit-maturite/rapport.md).
+
+
+## MKT25
+
+- Référence / organisme : SAP LeanIX, pratiques de cartographie des capacités — SAP.
+- Nature et rôle : documentation méthodologique d’éditeur pour examiner profondeur et lisibilité, pas une nomenclature métier obligatoire.
+- Édition : page évolutive sans version affichée ; consultation le 17 septembre 2026 des sections 5–6 de Best Practices to Define Business Capability Maps.
+- Source officielle, localisateur et limites : S2 de [l’étude U261](capacites-variantes-niveaux-atp.md). Synthèse sélective, aucune reproduction de catalogue.
+
+## MKT26
+
+- Référence / organisme : Ardoq, Patterns for Large Enterprise Modeling — Ardoq.
+- Nature et rôle : documentation de modélisation produit ; comparer capacité et réalisation contextualisée.
+- Édition : page évolutive sans version affichée ; consultation le 17 septembre 2026 des sections Atomic and Instance Capabilities et Shared Capabilities.
+- Source officielle, localisateur et limites : S3 de [l’étude U261](capacites-variantes-niveaux-atp.md). Pas de modèle de capacités adopté ; duplication technique des composants non transposée.
+
+### Complément U261 aux références existantes
+
+MKT03 : glossaire BIZBOK 15.0 revérifié, entrées Behavior, Instance et Level (ELM052). MKT14 : ATP Inventory Visibility, configuration et données temporelles (ELM165). Sources, versions et limites dans l’étude U261 ; pas de nouvelle lecture normative TOGAF/ArchiMate réussie.
+
+
+### Complément U265 — comportements et granularité, 17 septembre 2026
+
+MKT03/04/13/14/19/20/24/25 reconsultés : BIZBOK, SAP RBA/S4/IBP, Microsoft, TM Forum, Oracle et LeanIX. Sources, versions, passages et limites : [comparaison comportements](../audits/2026-09-17-audit-comportements/marche.md). ELM166–172, ELM052/163 reconsultés, CMP089 proposé. Aucune nouvelle référence concurrente ni équivalence de niveaux adoptée.
+
+
+## MKT27
+
+- Référence / organisme : Blue Yonder — Inventory Optimization.
+- Nature et rôle : présentation produit, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://blueyonder.com/solutions/supply-chain-planning/inventory-optimization
+- Édition : Page produit évolutive ; version non indiquée. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S12 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT28
+
+- Référence / organisme : Kinaxis — Inventory Optimization.
+- Nature et rôle : article éditeur, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://www.kinaxis.com/en/inventory-optimization
+- Édition : Article évolutif ; version logicielle non indiquée. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S13 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT29
+
+- Référence / organisme : RELEX — Replenishment and Inventory Planning.
+- Nature et rôle : présentation produit, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://www.relexsolutions.com/solutions/automatic-replenishment-system/
+- Édition : Page produit évolutive ; version non indiquée. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S10 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT30
+
+- Référence / organisme : Slimstock — Slim4 Inventory Management.
+- Nature et rôle : présentation produit, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://www.slimstock.com/solutions/inventory-management-software/
+- Édition : Page produit évolutive ; version non indiquée. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S14 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT31
+
+- Référence / organisme : o9 — Allocation & Replenishment.
+- Nature et rôle : présentation produit, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://o9solutions.com/solutions/merchandise-planning/allocation-replenishment
+- Édition : Page produit évolutive ; version non indiquée. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S15 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT32
+
+- Référence / organisme : Oracle — Retail Merchandising Foundation Cloud Service.
+- Nature et rôle : documentation produit, appui fonctionnel des mécanismes de protection ; aucune carte de capacités adoptée.
+- Source primaire : https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/latest/rmpug/activating-items-replenishment.htm
+- Édition : Pointeur latest ; numéro de version non affiché dans la page lue. Consultation : 2026-09-17 ; ouvert et lu.
+- Passages, compléments et limites : source S08 et sources du même éditeur dans modeles/backlog/supply-protection-review.yaml ; étude marche/supply-protection-comportements.md.
+- Réutilisation : synthèse sélective et liens ; aucun catalogue intégral redistribué. Les annonces produit ne prouvent pas une réalisation Beaumanoir. Oracle Retail produit reste distinct du modèle de référence MKT05.
+
+
+## MKT33
+
+- Référence / organisme : Oracle Retail Allocation Cloud Service.
+- Nature et rôle : documentation produit, comparaison du sens Allocation ; distincte d’Oracle Retail Merchandising (MKT32) et de l’architecture de référence Retail (MKT05).
+- Source primaire : https://docs.oracle.com/en/industries/retail/retail-allocation-cloud/latest/ralim/allocation-overview.htm
+- Édition : pointeur latest non figé ; page d’accueil consultée affichant aussi une Release Readiness 26.2.301.0, sans attribuer cette édition au corps du guide.
+- Consultation : 17 septembre 2026 ; texte primaire indexé détaillé Allocation Overview, Item Sources et Calculation Parameters.
+- Limite : appui au sens de distribution entre lieux ; pas équivalence avec Supply Assignment ni preuve d’installation. Synthèse et liens, aucune reproduction substantielle.
+
+
+## MKT34
+
+- Référence / organisme : Manhattan Active Order Management — Optimized Fulfillment Sourcing.
+- Nature : présentation produit primaire ; rôle proposé : éprouver les critères de fulfillment et la valeur multidimensionnelle.
+- Source officielle : https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/optimized-fulfillment-sourcing
+- Édition : page évolutive, édition logicielle non indiquée. Consultation : 17 septembre 2026 ; texte consulté.
+- Contenu et limites : S15 dans modeles/backlog/behavior-gap-audit.yaml ; coûts, service, contraintes et stocks. Aucune garantie d’optimalité ni preuve de déploiement déduite. Synthèse sélective et lien, pas de reproduction substantielle.
+
+## MKT35
+
+- Référence / organisme : SAP Event Management — documentation historique.
+- Nature : documentation produit ; rôle limité : mécanisme de repérage des événements attendus en retard.
+- Source officielle : https://help.sap.com/docs/SAP_EVENT_MANAGEMENT/1d2d343a67074058a30cd9ffd093ab50/bebccb53ad377114e10000000a174cb4.html
+- Édition : version non affichée sur la page ; aucun rattachement automatique à S/4HANA ni affirmation de stratégie produit actuelle.
+- Consultation : 17 septembre 2026 ; extrait primaire indexé Expected Event Overdue List, ouverture sans corps exploitable. S19 de behavior-gap-audit.yaml consigne la limite. Synthèse courte uniquement.
+
+Complément U292 aux références MKT13/14/20/27/28/29 — 17 septembre 2026 : cours SAP, guides Microsoft SCM, Oracle 26A/26B et pages Blue Yonder, Kinaxis MEIO et RELEX. Éditions, natures et accès distingués dans les 28 sources de l’audit ; les guides produit complètent les références sans devenir des modèles de capacités natifs. Oracle annonce en 26B un retrait du planning d’orchestration en 26D : ne pas confondre annonce et retrait déjà effectif.
+
+
+## MKT36
+
+- Référence : Camunda 8, documentation de réalisation BPMN ; distincte de la norme OMG.
+- Sources : https://docs.camunda.io/docs/components/modeler/bpmn/compensation-handler/ et https://docs.camunda.io/docs/components/concepts/workflow-patterns/
+- Version affichée 8.9, textes consultés le 17 septembre 2026 ; sections compensation et interruptions.
+- Rôle et limites : éclairer réalisation de l’adaptabilité et distinction interruption/compensation ; aucun moteur, niveau métier ni équivalence Order/Case imposé. Synthèse sélective, pas de reproduction substantielle.
+
+## MKT37
+
+- Référence : SAP Business Network Global Track and Trace, présentation produit.
+- Source : https://www.sap.com/products/business-network/global-track-and-trace.html ; FAQ logistics visibility et périmètre du produit.
+- Édition logicielle non indiquée ; texte consulté le 17 septembre 2026.
+- Rôle et limites : visibilité des marchandises en transit, étapes et ETA ; appui de périmètre, pas garantie détaillée de télémétrie ni preuve de déploiement. Synthèse sélective.
+
+
+## MKT38
+
+- Référence : project44, terminologie Transportation Visibility ; article primaire sur la logistique automobile.
+- Source : https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/
+- Édition logicielle non indiquée ; texte primaire indexé consulté le 17 septembre 2026. Localisation, multimodalité, ETA et notifications.
+- Limites : appui lexical, pas capacité native ni garantie de couverture FLOW. S35 de behavior-gap-audit.yaml ; synthèse sélective.
+
+## MKT39
+
+- Référence : FourKites, terminologie et périmètre Transportation Visibility.
+- Source : https://www.fourkites.ai/blogs/evolving-beyond-traditional-visibility-evaluation-frameworks ; article du 24 février 2025, texte consulté le 17 septembre 2026.
+- Nature : positionnement éditeur, appui lexical et distinction visibilité/orchestration ; aucune revendication commerciale reprise comme preuve. S36 de behavior-gap-audit.yaml ; synthèse sélective.
+
+## MKT40
+
+- Référence : Oracle Transportation Management, distinct de Global Order Promising.
+- Source : https://docs.oracle.com/en/cloud/saas/transportation/26c/otmol/execution/giv/order_shipment_visibility_results.htm ; édition 26C, texte consulté le 17 septembre 2026.
+- Passage : Order/Shipment Visibility Actions, Track and Trace ; parcours, dates et unités expédiées.
+- Nature : documentation de fonction produit, appui lexical et de périmètre ; pas catalogue de capacités. S34 de behavior-gap-audit.yaml ; synthèse sélective.
+
+
+## MKT41
+
+- Référence : Council of Supply Chain Management Professionals (CSCMP), définitions professionnelles.
+- Source : https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx ; Definition of Logistics Management, Boundaries and Relationships.
+- Édition non indiquée ; texte primaire consulté le 17 septembre 2026. Appui au périmètre logistique comprenant entreposage, manutention, transport et fulfillment.
+- Limites : pas définition normative de Logistics Visibility ni catalogue produit. Synthèse sélective ; S37 de behavior-gap-audit.yaml.
+
+
+## MKT42
+
+- Référence : GS1 EPCIS & CBV, présentation officielle des standards de partage d’événements.
+- Source : https://www.gs1.org/standards/epcis ; introduction visibilité, status/location/movement/chain of custody.
+- Consultation : 17 septembre 2026, texte primaire indexé ; édition normative non adoptée.
+- Rôle : appui au besoin de continuité des faits entre partenaires. Aucun schéma d’implémentation ni découpage Capacité/Comportement imposé. Source S41 de behavior-gap-audit.yaml ; synthèse sélective.

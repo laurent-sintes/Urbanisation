@@ -1,0 +1,1559 @@
+schema_version: 1.0.0
+id: flow-glossary
+as_of: '2026-09-15'
+source_refs:
+- U203
+- U214
+- U215
+- U221
+terms:
+- id: TER001
+  name: Capacité métier
+  short_description: Ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.
+  definition: Ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Définition réaffirmée par Laurent, U33. Précision de lecture proposée : une opération ou une étape ne constitue
+    pas automatiquement une capacité ; examiner l’aptitude exprimée et sa maille.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER002
+  name: Objet métier
+  short_description: Notion sur laquelle l’entreprise raisonne, tient des faits ou prend des décisions.
+  definition: Notion sur laquelle l’entreprise raisonne, tient des faits ou prend des décisions.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Un objet n’est pas une table, un message ou une application. N1. Sens large du glossaire ; U61 rapproche certains
+    objets de la plateforme d’aggregate roots, sans définir leurs frontières. Voir la [note objets/faits](24-capacites-objets-et-faits.md).
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER003
+  name: Ressource
+  short_description: Moyen, bien ou droit mobilisable pour obtenir un résultat métier, sous des conditions à préciser.
+  definition: Moyen, bien ou droit mobilisable pour obtenir un résultat métier, sous des conditions à préciser.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer la ressource de sa quantité et de sa représentation ; accès, date et admissibilité peuvent limiter son
+    usage. N1/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER004
+  name: Article / unité de gestion
+  short_description: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
+  definition: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Sens historique Article / unité de gestion. Le rôle Article du modèle actuel est TER060 ; ne pas confondre les identités
+    de notion.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  historical: true
+- id: TER005
+  name: Stock
+  short_description: Ensemble de biens matériels considéré dans un périmètre et à une date ; ici, principalement les marchandises
+    du commerce.
+  definition: Ensemble de biens matériels considéré dans un périmètre et à une date ; ici, principalement les marchandises
+    du commerce.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Qualifier stock physique et stock enregistré : le second en est la représentation tenue à partir des faits connus.
+    Ni disponibilité ni propriété ne se déduisent du seul mot stock. N2.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER006
+  name: Position de stock
+  short_description: Quantité de stock décrite à une date, pour une maille et des dimensions métier explicites.
+  definition: Quantité de stock décrite à une date, pour une maille et des dimensions métier explicites.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Article, unité, lieu ou transit, état, détenteur ou propriétaire selon le besoin ; conserver la provenance. Plusieurs
+    copies ne constituent pas plusieurs stocks. N2.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER007
+  name: Mouvement de stock
+  short_description: Fait de changement d’une position de stock, par exemple une réception, une sortie ou un transfert entre
+    positions.
+  definition: Fait de changement d’une position de stock, par exemple une réception, une sortie ou un transfert entre positions.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une intention de déplacement et son exécution sont distinctes. Une réservation ne signifie pas un mouvement physique.
+    N2.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER008
+  name: Ressource attendue
+  short_description: Ressource dont la mise à disposition est attendue à une date et sous des conditions identifiées.
+  definition: Ressource dont la mise à disposition est attendue à une date et sous des conditions identifiées.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne pas l’assimiler au stock déjà présent. Distinguer prévision, approvisionnement commandé et réception annoncée.
+    N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER009
+  name: Disponibilité
+  short_description: Quantité mobilisable pour un usage et un horizon donnés, compte tenu des faits, engagements et règles
+    applicables.
+  definition: Quantité mobilisable pour un usage et un horizon donnés, compte tenu des faits, engagements et règles applicables.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ce n’est pas une propriété absolue du stock ; une réponse de disponibilité n’engage pas nécessairement une quantité.
+    Une quantité de disponibilité calculée relève du sens Stock virtuel donné en U76 ; son rattachement dépend de l’usage
+    (U77/A51). N2/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER010
+  name: Besoin
+  short_description: Résultat recherché ou manque à satisfaire, avant ou après sa formalisation.
+  definition: Résultat recherché ou manque à satisfaire, avant ou après sa formalisation.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Un besoin peut exister avant une demande identifiable. Convention proposée pour clarifier les échanges. N1/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER011
+  name: Demande
+  short_description: Expression identifiable d’un résultat souhaité, avec objet, quantité, échéance et bénéficiaire lorsque
+    ces précisions sont pertinentes.
+  definition: Expression identifiable d’un résultat souhaité, avec objet, quantité, échéance et bénéficiaire lorsque ces précisions
+    sont pertinentes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne prouve ni acceptation, ni promesse, ni couverture. Les familles ci-dessous peuvent avoir des objets et cycles
+    distincts. N3/N4.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER012
+  name: Commande
+  short_description: Acte ou document métier formalisant une instruction commerciale ou opérationnelle et ses conditions.
+  definition: Acte ou document métier formalisant une instruction commerciale ou opérationnelle et ses conditions.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Qualifier commande client, commande fournisseur ou ordre opérationnel. L’enregistrement ne garantit pas confirmation,
+    réservation ou exécution. Q052 reste ouverte : aucun objet universel Demande n’est adopté. N3/N4.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER013
+  name: Engagement
+  short_description: Décision tenue envers une demande ou un usage, avec résultat attendu, bénéficiaire et conditions explicites.
+  definition: Décision tenue envers une demande ou un usage, avec résultat attendu, bénéficiaire et conditions explicites.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer engagement commercial, de ressource et d’exécution ; leur fermeté et leur révision ne sont pas présumées.
+    N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER014
+  name: Promesse
+  short_description: Engagement sur ce qui pourra être fourni à une demande, notamment une quantité et une date.
+  definition: Engagement sur ce qui pourra être fourni à une demande, notamment une quantité et une date.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une proposition calculée n’est pas encore une promesse prise. Une promesse peut exister sans affectation à une ressource
+    précise. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER015
+  name: Confirmation de promesse
+  short_description: Acte ou résultat établissant la quantité et la date promises à une demande dans le contexte défini.
+  definition: Acte ou résultat établissant la quantité et la date promises à une demande dans le contexte défini.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer d’une confirmation de réception de message ou de constat d’un fait ; préciser l’effet d’engagement. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER016
+  name: Réservation de ressource
+  short_description: Engagement quantitatif enregistré pour une demande identifiée, avec des effets définis sur les possibilités
+    d’engagement pour les demandes concurrentes.
+  definition: Engagement quantitatif enregistré pour une demande identifiée, avec des effets définis sur les possibilités
+    d’engagement pour les demandes concurrentes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser modification, consommation et libération. Réviser un engagement existant relève de règles explicites ; ni
+    sortie physique ni irrévocabilité implicite. N2/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER017
+  name: Affectation de ressource
+  short_description: Lien entre une demande et une ressource identifiée au degré de précision utile.
+  definition: Lien entre une demande et une ressource identifiée au degré de précision utile.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: La quantité affectée peut différer de la quantité demandée ou promise. Qualifier l’affectation d’une tâche, qui relève
+    d’un autre objet. N1/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER018
+  name: Allocation de groupe
+  short_description: Attribution d’une enveloppe à un usage ou une population, avec des règles d’horizon et de consommation.
+  definition: Attribution d’une enveloppe à un usage ou une population, avec des règles d’horizon et de consommation.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Employer le qualificatif ; distinguer cette notion d’une affectation à une demande et d’un plafond de confirmation.
+    N2/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER019
+  name: Protection de ressource
+  short_description: Restriction qui préserve une ressource ou une quantité face à certaines demandes concurrentes.
+  definition: Restriction qui préserve une ressource ou une quantité face à certaines demandes concurrentes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une allocation peut porter une protection ; les deux mots ne sont pas des synonymes systématiques. Priorités et horizon
+    sont à expliciter. N2/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER020
+  name: Plafond de confirmation
+  short_description: Limite de quantité confirmable pour des critères et une période définis.
+  definition: Limite de quantité confirmable pour des critères et une période définis.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une limite n’assure pas l’existence de la ressource ; elle diffère d’une quantité protégée. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER021
+  name: Pool de ressources
+  short_description: Regroupement de ressources selon des critères et des règles explicites, pouvant porter une enveloppe
+    et sa consommation.
+  definition: Regroupement de ressources selon des critères et des règles explicites, pouvant porter une enveloppe et sa consommation.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définition proposée ; ancien synonyme stock logique retiré après U76 et conservé en C53. Un pool peut contribuer
+    à des états ou calculs, sans définir à lui seul le stock logique ou virtuel. N2.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER022
+  name: Couverture d’une demande
+  short_description: Relation à qualifier entre une demande et ce qui permet de la satisfaire.
+  definition: Relation à qualifier entre une demande et ce qui permet de la satisfaire.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Toujours préciser couverture par promesse, par ressources affectées ou par un autre critère défini. « Couvert » et
+    « uncovered » seuls sont insuffisants. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER023
+  name: Règle métier
+  short_description: Condition ou principe qui détermine la validité, l’admissibilité ou les effets d’une décision ou d’un
+    fait métier.
+  definition: Condition ou principe qui détermine la validité, l’admissibilité ou les effets d’une décision ou d’un fait métier.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Sa mise en œuvre peut varier avec les outils. Une variante de politique n’est pas automatiquement une capacité différente.
+    N1/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER024
+  name: Processus
+  short_description: Déroulement d’activités, d’événements et de décisions mobilisant des capacités pour atteindre un résultat
+    dans un contexte.
+  definition: Déroulement d’activités, d’événements et de décisions mobilisant des capacités pour atteindre un résultat dans
+    un contexte.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Décrit comment le travail s’accomplit ; ne définit pas à lui seul ce que l’entreprise sait faire. N1.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER025
+  name: Opération métier
+  short_description: Action exercée sur des objets métier avec des conditions et des effets déterminés.
+  definition: Action exercée sur des objets métier avec des conditions et des effets déterminés.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Plusieurs opérations peuvent réaliser une même capacité ; une opération d’API n’est pas automatiquement une capacité.
+    N5.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER026
+  name: Réalisation d’une capacité
+  short_description: 'Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.'
+  definition: 'Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une réalisation peut évoluer sans changer l’aptitude métier. N1/N5/N6.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER027
+  name: Fonction
+  short_description: 'Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.'
+  definition: 'Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Dans les réponses A19–A21 sur les produits, l’assistant désignait surtout une fonctionnalité de produit. « Fonction
+    métier » pourrait recevoir un autre sens explicite, sans le présumer. U34, C34.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER028
+  name: Fonctionnalité de produit
+  short_description: Comportement ou ensemble de comportements offert par un produit dans une édition et une configuration
+    données.
+  definition: Comportement ou ensemble de comportements offert par un produit dans une édition et une configuration données.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Peut contribuer à une ou plusieurs capacités, ou à une partie de capacité. Exemple : BOP comme fonctionnalité SAP
+    ; aucune équivalence automatique avec une boîte métier. N5/N6.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER029
+  name: Regroupement de capacités
+  short_description: Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.
+  definition: Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Le nom, la maille et le critère sont à préciser ; une catégorie de regroupement n’est pas automatiquement une capacité
+    mère. Aucun étage nommé Fonction n’est adopté. U34, N6.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER030
+  name: Domaine
+  short_description: Espace cohérent de problèmes métier liés entre eux, que l’on gagne à comprendre et à traiter ensemble.
+  definition: Espace cohérent de problèmes métier liés entre eux, que l’on gagne à comprendre et à traiter ensemble.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Définition rédactionnelle proposée à partir de U45/U46 : expliciter les liens et limites avant de classer les capacités.
+    Des relations entre domaines n’imposent pas leur fusion. Conception des bounded contexts hors de cette étape ; souvenir
+    du livre et textes vérifiés distingués dans MKT17/ELM041/CMP027.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER031
+  name: Orchestration
+  short_description: Coordination du déroulement d’activités et d’événements selon des dépendances et des règles de conduite
+    explicites.
+  definition: Coordination du déroulement d’activités et d’événements selon des dépendances et des règles de conduite explicites.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Définition proposée : qualifier processus métier, aptitude durable de coordination ou moyen logiciel générique.
+    Le mot seul ne fixe ni capacité ni couche. U49 prévoit des moyens d’orchestration dans les deux couches, avec Case Management
+    dans la couche processus ; U48/U49/P75/C40, ELM042, CMP029.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER032
+  name: Fabrication à façon
+  short_description: Mode d’achat dans lequel le donneur d’ordre acquiert des composants et confie leur transformation en
+    produit à un façonnier.
+  definition: Mode d’achat dans lequel le donneur d’ordre acquiert des composants et confie leur transformation en produit
+    à un façonnier.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définition de travail ancrée dans U48 ; propriété, livraisons et consommations restent à préciser. Pas équivalence
+    universelle à une catégorie de document éditeur ; Q069/CMP030.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER033
+  name: Planned Purchase Order
+  short_description: Nom rapporté pour le document que MAP émet dans le premier cas d’achat décrit en U48, après planification
+    en volumes et délais.
+  definition: Nom rapporté pour le document que MAP émet dans le premier cas d’achat décrit en U48, après planification en
+    volumes et délais.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Sens local incomplet : ne prouve ni commande ferme ni équivalence avec Planned Order, Purchase Requisition ou Purchase
+    Order. Q034, F141.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER034
+  name: OMS — sens fonctionnel du projet
+  short_description: Case Management préimplémenté pour la vente, au-dessus du transactionnel Supply.
+  definition: Case Management préimplémenté pour la vente, au-dessus du transactionnel Supply.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définition explicite de Laurent en U55 ; U54 situe ici les parcours réassort, eCommerce et retours. Pas définition
+    normative de tout produit ; ne crée pas les mêmes domaines dans le socle.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER035
+  name: Supply — sens fonctionnel du projet
+  short_description: Couche transactionnelle de contrôle, d’orchestration et d’optimisation de la logistique.
+  definition: Couche transactionnelle de contrôle, d’orchestration et d’optimisation de la logistique.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Définition explicite de Laurent en U56 ; U57 ajoute exécution pour le commerce et intelligence de backoffice : rééquilibrage,
+    prévision, impondérables. U58 distingue ce modèle fonctionnel du développement FLOW : logistique hors réalisation de la
+    plateforme, en adhérence ; attribution détaillée des aptitudes à préciser.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER036
+  name: Fait de gestion — sens plateforme
+  short_description: Événement métier associé à un document, selon la distinction exprimée par Laurent.
+  definition: Événement métier associé à un document, selon la distinction exprimée par Laurent.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Reformulation de U61/F162 ; source, date, objets concernés et effets à préciser. Ne vaut pas identité automatique
+    avec un message publié ou un Outcome de la Guild.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER037
+  name: Document — sens plateforme
+  short_description: Représentation d’un état d’objet métier, ou objet non modifiable produit ou capté.
+  definition: Représentation d’un état d’objet métier, ou objet non modifiable produit ou capté.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Reformulation de U61/F162. Contenu exact des états, versions et règles de correction à préciser ; aucune équivalence
+    avec tout Document SAP/TM Forum.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER038
+  name: État d’objet métier
+  short_description: Situation et valeurs pertinentes d’un objet à un instant donné.
+  definition: Situation et valeurs pertinentes d’un objet à un instant donné.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définition proposée pour éclairer U61 ; distinguer état courant, état représenté par un document et événement qui
+    explique un changement.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER039
+  name: Notification d’événement
+  short_description: Message qui informe un destinataire d’une occurrence avec les références nécessaires à sa compréhension.
+  definition: Message qui informe un destinataire d’une occurrence avec les références nécessaires à sa compréhension.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définition proposée, éclairée par ELM059/ELM060 ; la notification et le fait de gestion qu’elle peut signaler sont
+    distincts. Ne fixe ni protocole ni mécanisme de persistance.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER040
+  name: Stock physique
+  short_description: Biens qui existent réellement quelque part dans le périmètre considéré.
+  definition: Biens qui existent réellement quelque part dans le périmètre considéré.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Sens explicitement fourni par Laurent en U76, reformulé. Exemple utilisateur : 100 pièces effectivement dans l’entrepôt.
+    Distinguer existence réelle et information enregistrée sur cette existence.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER041
+  name: Stock logique
+  short_description: Description des états métier du stock physique considéré.
+  definition: Description des états métier du stock physique considéré.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Sens explicitement fourni par Laurent en U76, reformulé. Exemple utilisateur : 60 libres, 20 réservées, 10 allouées,
+    5 bloquées et 5 défectueuses sur 100 pièces. L’exemple forme une partition ; les règles d’exclusivité ou de combinaison
+    des dimensions restent à préciser.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER042
+  name: Stock virtuel
+  short_description: Quantité considérée comme disponible selon un calcul.
+  definition: Quantité considérée comme disponible selon un calcul.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Sens explicitement fourni par Laurent en U76, reformulé sans dépendance à un outil. Exemple utilisateur : 60 libres
+    + 30 attendues demain − 15 promises = 75. Horizon, usage, fermeté et absence de double déduction à préciser ; ni stock
+    physique supplémentaire ni formule universelle. U79 évoque aussi une existence virtuelle des ressources futures : distinguer
+    cette représentation anticipée du résultat calculé, sans assimiler futur et virtuel.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER043
+  name: Stock futur
+  short_description: Expression de travail pour les ressources dont la mise à disposition est envisagée ou attendue à un lieu
+    et pour un usage futurs.
+  definition: Expression de travail pour les ressources dont la mise à disposition est envisagée ou attendue à un lieu et
+    pour un usage futurs.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'U79 cite potentiel contractuel, achats planifiés et approvisionnements en cours. Qualification proposée : distinguer
+    potentiel encore non daté et ressource attendue TER008 ; des biens déjà physiques en transit peuvent être futurs pour
+    leur destination. Ne prouve ni engagement fournisseur ni disponibilité garantie.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER001
+  name: Définir
+  short_description: Établir la signification, les règles ou les caractéristiques d’un objet ou d’une politique.
+  definition: Établir la signification, les règles ou les caractéristiques d’un objet ou d’une politique.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer définition et application effective.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER002
+  name: Tenir — en réexamen
+  short_description: Terme proposé par l’assistant pour conserver des informations métier cohérentes et à jour.
+  definition: Terme proposé par l’assistant pour conserver des informations métier cohérentes et à jour.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Jugé peu clair par Laurent en U35 ; ne pas l’utiliser par défaut pour de nouveaux libellés. Aucun libellé français
+    SAP vérifié ; choisir une formulation selon le résultat attendu.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER003
+  name: Déterminer
+  short_description: Établir un résultat à partir de faits et de règles.
+  definition: Établir un résultat à partir de faits et de règles.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Exemple : déterminer une disponibilité ; le calcul peut être un moyen.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER004
+  name: Calculer
+  short_description: Produire une valeur par des opérations quantitatives définies.
+  definition: Produire une valeur par des opérations quantitatives définies.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: L’employer si le résultat quantitatif est bien le besoin métier ; ne pas imposer un algorithme.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER005
+  name: Vérifier
+  short_description: Établir si des conditions sont respectées et produire un constat.
+  definition: Établir si des conditions sont respectées et produire un constat.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Un contrôle favorable n’autorise pas nécessairement l’action.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER006
+  name: Autoriser
+  short_description: Rendre une action admissible dans un périmètre et sous des conditions définis.
+  definition: Rendre une action admissible dans un périmètre et sous des conditions définis.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne signifie pas exécuter l’action ni réserver sa ressource.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER007
+  name: Enregistrer
+  short_description: Prendre en compte durablement un fait ou une décision dans la connaissance métier.
+  definition: Prendre en compte durablement un fait ou une décision dans la connaissance métier.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Décrire ce qui devient connu et ses effets ; ne pas réduire le résultat à une écriture technique.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER008
+  name: Demander
+  short_description: Exprimer un résultat souhaité à un destinataire, avec les conditions pertinentes.
+  definition: Exprimer un résultat souhaité à un destinataire, avec les conditions pertinentes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer demande, acceptation et engagement de fourniture.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER009
+  name: Protéger
+  short_description: Rendre une ressource ou quantité indisponible à certaines demandes pour préserver un usage.
+  definition: Rendre une ressource ou quantité indisponible à certaines demandes pour préserver un usage.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser les usages concurrents et les règles ; aucune protection absolue implicite.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER010
+  name: Allouer à un groupe
+  short_description: Attribuer une enveloppe à un usage ou une population.
+  definition: Attribuer une enveloppe à un usage ou une population.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Qualifier l’objet ; éviter « allouer » comme synonyme indifférencié de réserver ou affecter.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER011
+  name: Réserver
+  short_description: Engager une quantité de ressource pour une demande identifiée.
+  definition: Engager une quantité de ressource pour une demande identifiée.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Définir les effets sur les possibilités d’engagement des demandes concurrentes ; la révision d’engagements existants
+    relève de règles explicites.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER012
+  name: Affecter
+  short_description: Établir un lien entre une ressource et une demande ou un bénéficiaire précis.
+  definition: Établir un lien entre une ressource et une demande ou un bénéficiaire précis.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Qualifier ressource ou tâche ; ne pas confondre avec une promesse commerciale.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER013
+  name: Promettre
+  short_description: Prendre un engagement sur le résultat qui pourra être fourni à une demande.
+  definition: Prendre un engagement sur le résultat qui pourra être fourni à une demande.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser quantité/date et conditions ; distinguer proposition et engagement.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER014
+  name: Confirmer
+  short_description: Établir ou attester un résultat, un fait ou un engagement, en précisant la portée et l’effet de cette
+    confirmation.
+  definition: Établir ou attester un résultat, un fait ou un engagement, en précisant la portée et l’effet de cette confirmation.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Compléter obligatoirement le sens : confirmer une promesse et accuser réception ne sont pas équivalents.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER015
+  name: Prioriser
+  short_description: Établir un ordre relatif de traitement ou de satisfaction entre des demandes.
+  definition: Établir un ordre relatif de traitement ou de satisfaction entre des demandes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne réaffecte pas nécessairement les ressources à lui seul.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER016
+  name: Arbitrer
+  short_description: Choisir entre des possibilités ou demandes concurrentes selon des règles et contraintes.
+  definition: Choisir entre des possibilités ou demandes concurrentes selon des règles et contraintes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Exprimer ce qui est décidé ; ne nomme pas un comité ou un outil.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER017
+  name: Réviser
+  short_description: Réexaminer puis modifier, si nécessaire, une règle, décision ou engagement existant.
+  definition: Réexaminer puis modifier, si nécessaire, une règle, décision ou engagement existant.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une simple republication technique ne démontre pas une révision métier.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER018
+  name: Réaffecter
+  short_description: Modifier une affectation existante de ressource.
+  definition: Modifier une affectation existante de ressource.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer l’effet sur le lien de ressource de l’éventuelle modification de promesse.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER019
+  name: Libérer
+  short_description: Lever tout ou partie d’une restriction ou d’un engagement sur une ressource.
+  definition: Lever tout ou partie d’une restriction ou d’un engagement sur une ressource.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser « libérer une quantité réservée » ; « libérer pour livraison » peut vouloir dire autoriser.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER020
+  name: Consommer
+  short_description: Imputer une utilisation sur un droit, une enveloppe, une quantité ou un engagement.
+  definition: Imputer une utilisation sur un droit, une enveloppe, une quantité ou un engagement.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Préciser l’objet : consommation d’allocation et sortie physique ne sont pas le même fait.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER021
+  name: Annuler
+  short_description: Retirer l’effet encore applicable d’une demande, décision ou engagement identifié, selon ses règles.
+  definition: Retirer l’effet encore applicable d’une demande, décision ou engagement identifié, selon ses règles.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne signifie pas effacer l’historique ni annuler automatiquement les autres objets liés.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER022
+  name: Rapprocher
+  short_description: Comparer des faits ou représentations pour établir leur concordance ou leurs écarts.
+  definition: Comparer des faits ou représentations pour établir leur concordance ou leurs écarts.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Constater un écart ne signifie pas autoriser sa correction.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER023
+  name: Exécuter
+  short_description: Accomplir la prestation ou l’action métier demandée.
+  definition: Accomplir la prestation ou l’action métier demandée.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser le résultat ; distinguer l’intention, l’exécution et l’enregistrement de son constat.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER024
+  name: Gérer
+  short_description: Couvrir un ensemble d’aptitudes ou d’actions relatives à un objet.
+  definition: Couvrir un ensemble d’aptitudes ou d’actions relatives à un objet.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Acceptable si le périmètre est défini ; ne suffit pas seul à préciser les effets.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER025
+  name: Valider
+  short_description: Terme courant dont le sens doit être explicité avant emploi canonique.
+  definition: Terme courant dont le sens doit être explicité avant emploi canonique.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Choisir vérifier, autoriser, accepter ou confirmer selon l’effet recherché ; ces verbes ne sont pas interchangeables.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER044
+  name: Available-to-Promise — ATP
+  short_description: Établir les quantités et dates proposées pour honorer une commande avec les stocks et engagements admissibles,
+    en appliquant les protections et règles existantes, sans modifier ces engagements ou…
+  definition: Établir les quantités et dates proposées pour honorer une commande avec les stocks et engagements admissibles,
+    en appliquant les protections et règles existantes, sans modifier ces engagements ou politiques.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U154
+  - U202
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Quantité non engagée disponible pour soutenir une promesse à un horizon donné, dans le périmètre et
+    selon les règles considérés. Son calcul et son contrôle contribuent à évaluer une possibilité de fourniture.
+- id: TER045
+  name: Capable-to-Promise — CTP
+  short_description: 'Proposer un plan cohérent d’adaptation des ressources et engagements pour honorer une commande : approvisionnements
+    supplémentaires, révisions des quantités ou dates des autres commandes ou de leurs promesses, et…'
+  definition: 'Proposer un plan cohérent d’adaptation des ressources et engagements pour honorer une commande : approvisionnements
+    supplémentaires, révisions des quantités ou dates des autres commandes ou de leurs promesses, et changements de protection,
+    avec impacts et autorisations nécessaires.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U154
+  - U202
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Raisonnement de faisabilité de promesse prenant en compte les moyens nécessaires pour rendre une fourniture
+    disponible, au-delà des ressources déjà présentes ou attendues mobilisables.
+- id: TER046
+  name: Party
+  short_description: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations
+    utiles aux opérations.
+  definition: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations utiles
+    aux opérations.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: U97 cite les personnes juridiquement responsables et une identité sans doublon ; types détaillés et autorités par
+    attribut non arrêtés. D09 reçoit cette référence.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER047
+  name: Role
+  short_description: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  definition: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Synthèse U97 : référentiel Party / Role distinct des habilitations RBAC de la couche processus ; aucun catalogue
+    complet de rôles adopté.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER048
+  name: Agreement
+  short_description: Contrat complet applicable, comprenant cadre, conditions particulières, périodes et engagements.
+  definition: 'Contrat complet applicable entre parties : cadre, conditions particulières, périodes et engagements en quantité
+    ou en valeur. Sa projection dans la plateforme conserve les identifiants Party et Catalog ; les commandes restent distinctes
+    et en consomment les conditions.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U140
+  - U141
+  - U202
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Contrat de référence client ou fournisseur indiquant le ou les catalogues permettant de commander,
+    le Party concerné et les conditions particulières utiles pour honorer la promesse d’une commande.
+- id: TER049
+  name: Catalog
+  short_description: Catalogue de référence construit à l’extérieur, portant les références proposées à la commande, les prix
+    et les zones géographiques d’application.
+  definition: Catalogue de référence construit à l’extérieur, portant les références proposées à la commande, les prix et
+    les zones géographiques d’application.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'U97 : ingestion D12 ; distinguer le catalogue commercial de la totalité des caractéristiques du modèle produit.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER050
+  name: Reference Ingestion
+  short_description: Aptitude à recevoir les informations de référence et leurs évolutions pour les rendre utilisables dans
+    les opérations, en conservant les liens et identifiants du maître externe.
+  definition: Aptitude à recevoir les informations de référence et leurs évolutions pour les rendre utilisables dans les opérations,
+    en conservant les liens et identifiants du maître externe.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Rédaction proposée pour appliquer U97 : seule aptitude retenue dans chacun des trois domaines ; administration,
+    vérification des données et parcours de référencement externes. Aucune technologie prescrite.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER051
+  name: Movement Authorization
+  short_description: Autorisation métier de déplacer une marchandise dans un périmètre et sous des conditions, dont un document
+    porte la preuve.
+  definition: Autorisation métier de déplacer une marchandise dans un périmètre et sous des conditions, dont un document porte
+    la preuve.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Sens fondé sur U100 ; nom anglais proposé. Ne vaut pas preuve de départ ou réception, ni habilitation RBAC. Cycle
+    et autorité ouverts Q074.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER052
+  name: Product Reference
+  short_description: Référentiel projeté des Product et Product Variants, distinct des catalogues et des exemplaires physiques.
+  definition: Référentiel projeté des Product et Product Variants, indépendant des catalogues qui les proposent. Product porte
+    un rôle Article ou Container ; les Product Units sont des exemplaires physiques distincts de ces références.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U191
+  - U193
+  - U195
+  - U202
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Référence de l’article indépendante des catalogues qui peuvent proposer le même SKU.
+- id: TER053
+  name: Location
+  short_description: Lieu pouvant servir d’origine, destination ou étape d’un mouvement ; un point du réseau peut offrir un
+    espace de stockage, sans que ce soit systématique.
+  definition: Lieu pouvant servir d’origine, destination ou étape d’un mouvement ; un point du réseau peut offrir un espace
+    de stockage, sans que ce soit systématique.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Raffinement proposé à partir des points U100 : le lieu est à relier aux Party responsables. U102 confirme depuis
+    Party ≠ lieu et demande Fulfillment Network ; détail et rang de domaine ouverts.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER054
+  name: Fulfillment Network
+  short_description: Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises
+    ; référentiel distinct des Party auxquelles les lieux sont reliés.
+  definition: Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises ;
+    référentiel distinct des Party auxquelles les lieux sont reliés.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Nom demandé en U102, orthographe normalisée hors verbatim ; définition proposée. D13.a reçoit les références ; nœuds,
+    liaisons et attributs à préciser Q076. Ni quantité de stock, ni charge courante, ni parcours déjà choisi.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER055
+  name: Stock movement / Inventory movement ; Goods movement chez SAP
+  short_description: 'Mouvement de stock : fait de variation de quantité, localisation ou qualification du stock. Inclut notamment
+    réceptions, sorties, transferts et changements d’état sans déplacement physique. Les écritures et justificatifs qui le…'
+  definition: 'Mouvement de stock : fait de variation de quantité, localisation ou qualification du stock. Inclut notamment
+    réceptions, sorties, transferts et changements d’état sans déplacement physique. Les écritures et justificatifs qui le
+    représentent restent à distinguer du fait.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: ''
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER056
+  name: Ledger / Inventory Ledger
+  short_description: 'Registre ; grand livre dans un contexte comptable. Pour notre exploration : registre des écritures justifiant
+    les variations du stock. Le terme ne désigne pas le mouvement lui-même et n’impose ni valorisation financière ni technologie…'
+  definition: 'Registre ; grand livre dans un contexte comptable. Pour notre exploration : registre des écritures justifiant
+    les variations du stock. Le terme ne désigne pas le mouvement lui-même et n’impose ni valorisation financière ni technologie
+    de persistance. Inventory Ledger Management est un candidat de nom de capacité, non adopté.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: ''
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER057
+  name: Product
+  short_description: Référence commune d’un produit, portant un rôle Article ou Container.
+  definition: Référence commune d’un produit, portant un rôle [Article](glossary:TER060) ou [Container](glossary:TER061).
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U195
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER058
+  name: Product Variant
+  short_description: Déclinaison précise d’un Product, commune à plusieurs exemplaires physiques.
+  definition: Déclinaison précise d’un [Product](glossary:TER057), commune à plusieurs [Product Units](glossary:TER059).
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U193
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER059
+  name: Product Unit
+  short_description: Exemplaire physique individuel d’un produit, avec son identité propre.
+  definition: Exemplaire physique individuel d’un produit, avec son identité propre. Il peut porter un [Serial Number](glossary:TER063),
+    indépendant de son support de lecture.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U191
+  - U192
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER060
+  name: Article
+  short_description: Rôle porté par Product pour les biens constituant le contenu à stocker ou déplacer.
+  definition: Rôle porté par Product pour les biens constituant le contenu à stocker ou déplacer.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U195
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: article-et-container-roles-de-product-u195
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER061
+  name: Container
+  short_description: Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles
+    de composition.
+  definition: Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles de composition.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U194
+  - U195
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: article-et-container-roles-de-product-u195
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER062
+  name: GTIN
+  short_description: Identifiant d’une référence commerciale, distinguant les variantes et conditionnements pertinents ; il
+    n’identifie pas à lui seul un exemplaire.
+  definition: Identifiant d’une référence commerciale, distinguant les variantes et conditionnements pertinents ; il n’identifie
+    pas à lui seul un exemplaire.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U193
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER063
+  name: Serial Number
+  short_description: Identifiant éventuel d’un exemplaire dans un périmètre d’unicité à préciser, indépendant de son support
+    de lecture.
+  definition: Identifiant éventuel d’un exemplaire dans un périmètre d’unicité à préciser, indépendant de son support de lecture.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U193
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER064
+  name: Case
+  short_description: Dossier de traitement d’une situation, demande ou problème dans Business Services.
+  definition: Dossier de traitement d’une situation, demande ou problème dans Business Services.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U169
+  - U173
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER065
+  name: Supply Order
+  short_description: Commande dont la Supply travaille la couverture, les priorités et la promesse.
+  definition: Commande dont la Supply travaille la couverture, les priorités et la promesse.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U169
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER066
+  name: Service Order
+  short_description: Commande de prestations confiées à un exécutant, dans le contexte Services.
+  definition: Commande de prestations confiées à un exécutant, dans le contexte Services.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U169
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER067
+  name: Business Services
+  short_description: Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie
+    prenante au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à
+    leur réalisation.
+  definition: Prendre en charge et piloter les grands processus transverses de l’entreprise, de la demande d’une partie prenante
+    au résultat attendu, en coordonnant les contributions des services et en mobilisant les moyens nécessaires à leur réalisation.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U173
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER068
+  name: Profitable-to-Promise (PTP)
+  short_description: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans
+    les contraintes de service applicables.
+  definition: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes
+    de service applicables.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U154
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER069
+  name: Sales Order
+  short_description: Commande portant les biens et quantités demandés par un client et leurs conditions applicables.
+  definition: Commande portant les biens et quantités demandés par un client et leurs conditions applicables.
+  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+  notes: Famille gérée par [Sales Order Management](model:D04.i). Aucune création de nœud objet ni de schéma détaillé ; cycle
+    distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  source_refs:
+  - U212
+  - U214
+  - U215
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: proposed
+    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+- id: TER070
+  name: Purchase Order
+  short_description: Commande d’achat portant les biens et quantités attendus d’un fournisseur et leurs conditions applicables.
+  definition: Commande d’achat portant les biens et quantités attendus d’un fournisseur et leurs conditions applicables.
+  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+  notes: Famille gérée par [Purchase Order Management](model:D04.j). Aucune création de nœud objet ni de schéma détaillé ;
+    cycle distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  source_refs:
+  - U212
+  - U214
+  - U215
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: proposed
+    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+- id: TER071
+  name: Transfer Order
+  short_description: Ordre portant un déplacement de marchandises entre une origine et une destination, avec quantités et
+    échéances.
+  definition: Ordre portant un déplacement de marchandises entre une origine et une destination, avec quantités et échéances.
+  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+  notes: Famille gérée par [Transfer Order Management](model:D04.k). Aucune création de nœud objet ni de schéma détaillé ;
+    cycle distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  source_refs:
+  - U212
+  - U214
+  - U215
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: proposed
+    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+- id: TER072
+  name: Customer Return Order
+  short_description: Commande portant un retour de marchandises provenant d’un client, distincte de la vente d’origine.
+  definition: Commande portant un retour de marchandises provenant d’un client, distincte de la vente d’origine.
+  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+  notes: Famille gérée par [Customer Return Management](model:D04.l). Aucune création de nœud objet ni de schéma détaillé
+    ; cycle distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  source_refs:
+  - U212
+  - U214
+  - U215
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: proposed
+    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+- id: TER073
+  name: Supplier Return Order
+  short_description: Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.
+  definition: Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.
+  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+  notes: Famille gérée par [Supplier Return Management](model:D04.m). Aucune création de nœud objet ni de schéma détaillé
+    ; cycle distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  source_refs:
+  - U212
+  - U214
+  - U215
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: proposed
+    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+- id: TER074
+  name: Replenishment
+  short_description: Réapprovisionnement visant à compléter un stock selon les besoins et objectifs applicables.
+  definition: Réapprovisionner un stock en fonction des besoins et objectifs applicables. Inventory Optimization détermine
+    les apports nécessaires ; les capacités opérationnelles appliquent les décisions, déclenchent les Orders utiles et organisent
+    leur mise en action selon les règles et autorisations applicables.
+  context: Sens de travail proposé, aligné sur la frontière analytique/opérationnelle U224 et la refonte D05 U235.
+  notes: '[Replenishment Decision](model:D05.e) intègre les calculs des besoins nets et détermine les quantités et dates à
+    retenir. La décision, la mise à jour transactionnelle, les Orders nécessaires, leurs promesses et les mouvements physiques
+    restent distincts. Une application automatique est possible ; aucune création directe de Purchase Order ni validation
+    humaine systématique n’est présumée.'
+  source_refs:
+  - U221
+  - U224
+  - U229
+  - U231
+  - U235
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u221
+  review:
+    state: proposed
+    note: Définition proposée par Codex, précisée avant publication pour respecter U224/U235 ; aucun accord métier supplémentaire.
+note: Catalogue structuré du backlog. Les tableaux narratifs sont conservés comme sources historiques ; ce catalogue est figé
+  avec chaque nouvelle publication. Les reformulations restent proposées.

@@ -1,0 +1,454 @@
+id: STOCK-ORDER-BOUNDARY-U219
+date: '2026-09-15'
+source_refs:
+- U218
+- U219
+- U220
+- U221
+- U223
+- U224
+- U226
+state: applied_to_backlog
+before_snapshot: modeles/backlog/history/pre-U219.yaml
+before_sha256: 767fcfc0e9ea11ba98e96f382564859859e66c2d7cec5735a2887ebe2921b317
+adopted_domain_finalities:
+- id: D01
+  field: finality
+  value: Connaître et fiabiliser le stock, enregistrer ses mouvements, le protéger et le réserver.
+  value_sha256: c4d74fdb212f15a6489e8281849ba9f791e8d950ab546a927daa5b5a49ca6fd9
+  source_refs:
+  - U219
+- id: D03
+  field: finality
+  value: Décider comment satisfaire les Orders avec les ressources disponibles ou adaptables.
+  value_sha256: 27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e
+  source_refs:
+  - U219
+- id: D05
+  field: finality
+  value: Décider du stock souhaitable et des ajustements nécessaires.
+  value_sha256: 86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c
+  source_refs:
+  - U219
+proposed_labels:
+- id: D05
+  before: Operational Resource Balancing
+  after: Inventory Balancing
+  state: historical_proposal_replaced_U220
+  current: Inventory Optimization
+- id: D05.a
+  before: Determine operational coverage targets
+  after: Coverage Target Decision
+- id: D05.c
+  before: Determine resource redistribution
+  after: Stock Redistribution Decision
+historical_label_alternative:
+  id: P86-D05
+  kind: alternative_labels
+  target_id: D05
+  state: proposed
+  source_refs:
+  - P86
+  - U99
+  - U118
+  field_overrides:
+  - target_id: D05.a
+    field: name
+    value: Coverage Target Decision
+  - target_id: D05.c
+    field: name
+    value: Stock Redistribution Decision
+  note: 'Noms conditionnels de l’audit U99 : à retenir seulement si D05 porte effectivement la décision, et si le périmètre
+    de redistribution se limite au stock. Exclus des renommages U118 ; autorités et portée à discuter.'
+identity_rule: Même problème métier précisé, mêmes identifiants ; aucune création, suppression ou fusion de capacité, aucune
+  relation ajoutée ou supprimée.
+market_status:
+- id: D01
+  state: not_compared_for_revised_scope
+  note: Construction locale précisée selon U218/U219 ; les correspondances historiques ne démontrent pas une équivalence de
+    la nouvelle rédaction.
+- id: D03
+  state: not_compared_for_revised_scope
+  note: Construction locale précisée selon U218/U219 ; les correspondances historiques ne démontrent pas une équivalence de
+    la nouvelle rédaction.
+- id: D05
+  state: partial_comparison_proposed
+  note: Recouvrement partiel et appui méthodologique ; le périmètre local dépasse les seules cibles de stock IBP.
+  comparison_ref: CMP067
+  study: marche/inventory-optimization-comparaison.md
+  compared_at: '2026-09-15'
+  source_refs:
+  - U222
+  review_U223: Définition adoptée depuis la synthèse U222 ; les rapprochements CMP067 restent partiels et proposés. Aucun
+    réexamen externe supplémentaire ni équivalence déduite de cet accord.
+- id: D05.a
+  state: partial_comparison_proposed
+  note: Recouvrement partiel et appuis méthodologique/sémantique ; préciser les critères et la révision des objectifs.
+  comparison_ref: CMP068
+  study: marche/inventory-optimization-comparaison.md
+  compared_at: '2026-09-15'
+  source_refs:
+  - U222
+- id: D05.b
+  state: partial_comparison_proposed
+  note: Recouvrement partiel ; les fonctions externes englobent aussi des décisions au-delà du calcul net.
+  comparison_ref: CMP069
+  study: marche/inventory-optimization-comparaison.md
+  compared_at: '2026-09-15'
+  source_refs:
+  - U222
+- id: D05.c
+  state: partial_comparison_proposed
+  note: Appui partiel ; redistribution opérationnelle d’excédents non démontrée par les seuls transferts ou cibles multi-échelons.
+  comparison_ref: CMP070
+  study: marche/inventory-optimization-comparaison.md
+  compared_at: '2026-09-15'
+  source_refs:
+  - U222
+glossary_review: Termes existants conservés ; TER074 Replenishment ajouté comme sens proposé lié au périmètre U221. Aucun
+  changement des 98 sens précédents.
+open_points:
+- Critères, horizons et autorités des objectifs de stock et de redistribution.
+- Prise en compte des protections, réservations, entrées attendues et engagements dans le besoin net.
+- Articulation des besoins prévisionnels déjà couverts par Supply Assignment avec D05, sans réduire implicitement cette capacité.
+- Traduction des ajustements en Orders et contrats avec les exécutants, sans cycle obligatoire.
+publication: v005 / 2026-09-15.1 reste inchangée.
+adopted_domain_name_U220:
+  id: D05
+  name: Inventory Optimization
+  value_sha256: 6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3
+  source_refs:
+  - U220
+automatic_replenishment_U221:
+  state: user_suggested_scope
+  source_refs:
+  - U221
+  proposed_description: Déterminer le complément de stock et déclencher une demande de réapprovisionnement selon les objectifs,
+    ressources attendues, règles et autorisations.
+  proposed_boundary: D05 détermine le besoin de stock et son déclenchement ; D04 gère les Orders, D03 leur satisfaction, les
+    exécutants les mouvements et D01 leur représentation.
+  capability_granularity: 'À instruire : automatiser un déclenchement ne justifie pas à lui seul une capacité distincte. Les
+    trois capacités D05 restent actives.'
+  open_points:
+  - Seuils et cadence de réévaluation.
+  - Prévention des demandes redondantes et prise en compte des Orders en cours.
+  - Autorité de création et d’affermissement des Orders ; articulation avec le dossier Demande de réassort.
+  market_review_U222:
+    comparison_ref: CMP071
+    study: marche/inventory-optimization-comparaison.md
+    state: proposed
+    note: Replenishment Decision à examiner comme résultat distinct du calcul net ; aucune capacité ajoutée. Mode automatique
+      distinct de la granularité métier.
+  clarification_U224: L’optimisation du réapprovisionnement relève de D05 ; son déclenchement effectif relève de l’application
+    opérationnelle. La rédaction U221/U222 est à revoir selon cette direction.
+adopted_domain_definition_U223:
+  id: D05
+  field: definition
+  value: Optimiser le stock consiste à choisir un compromis entre disponibilité, immobilisation et risque, puis à décider
+    des ajustements nécessaires.
+  value_sha256: 3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0
+  source_refs:
+  - U223
+  before_snapshot: modeles/backlog/history/pre-U223.yaml
+  previous_definition: 'Déterminer le stock souhaitable et les ajustements nécessaires de ses niveaux et de sa répartition
+    : fixer les objectifs de couverture, établir les manques ou excédents nets et décider des redistributions utiles, en tenant
+    compte du stock connu et des ressources attendues.'
+  previous_definition_state: historical_proposed
+  scope: Définition seule ; aucune adoption supplémentaire de capacité, règle ou périmètre détaillé.
+analytics_execution_boundary_U224:
+  state: user_direction_recorded
+  source_refs:
+  - U224
+  direction: D05 calcule les compromis, paramètres et ajustements optimisés ; leur application mobilise les capacités opérationnelles.
+  user_examples:
+  - 'Stock Protection : allocations par canal et seuils minimum de réassort'
+  - Lancer des commandes complémentaires pour remplir le stock
+  - Réapprovisionner les magasins
+  - Appliquer les seuils et allocations
+  existing_protection:
+    id: D02.b
+    current_name: Supply Protection
+    user_term: Stock Protection
+    scope_review: Allocation par groupe déjà décrite ; seuil déclencheur de réassort à distinguer d’une quantité soustraite
+      à la consommation. Nom et extension détaillée à préciser.
+  supersedes: Placement du déclenchement opérationnel directement dans D05 proposé U221/U222 ; les versions précédentes restent
+    historiques.
+  preserved: Définition D05 adoptée U223 ; satisfaction des Orders dans D03 ; responsabilités D01/D04/Services conservées.
+  proposed_analytical_capabilities:
+  - name: Stock Policy Optimization
+    result: Calculer et réviser les objectifs, seuils et allocations recommandés selon le compromis recherché.
+  - name: Replenishment Optimization
+    result: Calculer les quantités et dates de complément recommandées, en tenant compte des apports déjà attendus et contraintes.
+  - name: Stock Redistribution Optimization
+    result: Calculer les transferts recommandés pour améliorer la répartition du stock existant.
+  proposal_limits:
+  - Noms, granularité et correspondance avec les identifiants actuels non adoptés.
+  - Net Requirements Calculation pourrait devenir un calcul mobilisé par ces aptitudes ; aucune suppression décidée.
+  - Articulation complément/redistribution à préciser pour éviter la couverture double d’un manque.
+  - Un résultat analytique peut être appliqué automatiquement ; aucun passage humain obligatoire.
+  - Ce découpage métier ne prescrit pas des services logiciels ou un moteur séparés.
+  model_alignment: Nœuds et relations inchangés à cette étape ; le périmètre D05 et ses capacités doivent être reformulés
+    selon cette orientation avant de les considérer alignés.
+  market_review_U225:
+    source_refs:
+    - U225
+    study: marche/optimisation-et-application-stock.md
+    comparison_refs:
+    - CMP072
+    - CMP073
+    - CMP074
+    state: partial_comparison_proposed
+    findings:
+    - Calcul et mise en application des paramètres distincts chez Microsoft ; cibles et étapes de planification distinctes
+      chez SAP.
+    - Allocation de canal, quantité protégée et seuil de déclenchement possèdent des effets distincts.
+    - 'Légendes SID v22.0 : illustration du passage sous seuil vers une demande de réapprovisionnement, sans calcul optimal
+      démontré.'
+    limit: Pas de validation des libellés proposés, de nouveau rattachement, d’interface produit universelle ni de couverture
+      installée.
+design_preferences_U226:
+  date: '2026-09-16'
+  state: user_direction_recorded
+  source_refs:
+  - U226
+  preferred_reference: Microsoft pour le découpage et le nommage, sans adoption globale de son catalogue.
+  planning_activation: Retenir la distinction planification / mise en action appréciée chez SAP ; aucun nouveau domaine ou
+    workflow obligatoire inféré.
+  protection_granularity: Ne détailler l’optimisation de Stock Protection en capacités distinctes que si son côté opérationnel
+    est lui-même décomposé en capacités métier.
+  consequences:
+  - Partir des responsabilités opérationnelles avant de fixer le détail analytique.
+  - Les différences entre seuil, protection et plafond ne suffisent pas seules à justifier des capacités autonomes.
+  - Les libellés analytiques U224 restent des propositions à réexaminer.
+  - Aucun principe général de correspondance un pour un ni renommage Supply Protection adopté.
+  model_alignment: Nœuds, relations et publications inchangés ; découpage à proposer selon ces préférences.
+  clarification_U230: 'Ne pas interpréter U226 comme exigeant une seule décision miroir de Stock Protection : Laurent qualifie
+    cette dernière de gouvernance et demande un modèle décisionnel plus détaillé.'
+capability_proposal_U227:
+  date: '2026-09-16'
+  state: ai_proposed
+  request_source_refs:
+  - U227
+  basis_source_refs:
+  - U224
+  - U226
+  naming_note: Noms locaux proposés dans la continuité du vocabulaire étudié, pas liste officielle de capacités Microsoft.
+  D05_proposal:
+  - name: Stock Protection Planning
+    definition: Déterminer et réviser les objectifs, seuils et allocations de stock recommandés selon le compromis disponibilité,
+      immobilisation et risque.
+    output: Paramètres recommandés avec périmètre, période de validité et justification.
+    scope: Une capacité couvrant les paramètres de Stock Protection ; aucun sous-découpage par seuil, plafond ou canal.
+  - name: Replenishment Planning
+    definition: Déterminer les apports et redistributions de stock à prévoir, en quantités et dates, en tenant compte des
+      ressources attendues et contraintes.
+    output: Plan recommandé de compléments ou transferts.
+    scope: Inclut réassort magasins, complément fournisseur et rééquilibrage des excédents ; coordonner ces solutions pour
+      éviter le double comptage.
+  operational_proposal:
+  - current_id: D02.b
+    current_name: Supply Protection
+    proposed_name: Stock Protection
+    domain: D01
+    definition: Mettre en vigueur et maintenir les paramètres de protection et de couverture du stock ; faire respecter les
+      allocations et limites d’usage.
+    scope_change: 'Renommage et extension proposés : la fiche actuelle porte les groupes et limites d’usage, pas explicitement
+      les seuils de réassort. Les seuils sont maintenus ici ; leur franchissement est traité par Replenishment Management.'
+  - name: Replenishment Management
+    domain: D01
+    state: new_capability_candidate
+    definition: Déclencher et piloter les actions de réapprovisionnement à partir des plans et règles applicables, en mobilisant
+      les Orders nécessaires.
+    boundary: D04 tient les commandes et leur cycle ; D03 leur satisfaction ; exécutants et D07 les prestations. Pas de maîtrise
+      locale de la logistique physique. Tenir compte des actions déjà engagées pour éviter les doublons.
+    placement_note: D01 recommandé comme domaine opérationnel du stock ; sa définition et sa finalité devraient être élargies
+      explicitement au réapprovisionnement si la proposition est adoptée.
+  existing_capabilities_review:
+  - id: D05.a
+    proposed_treatment: Responsabilité intégrée à Stock Protection Planning ; extension aux paramètres proposés sans adoption
+      implicite.
+  - id: D05.b
+    proposed_treatment: Calcul des besoins nets intégré à Replenishment Planning ; ne plus le présenter comme capacité autonome
+      dans cette proposition.
+  - id: D05.c
+    proposed_treatment: Redistribution intégrée à Replenishment Planning comme solution de rééquilibrage, sans supprimer la
+      responsabilité métier.
+  safeguards:
+  - La définition adoptée U223 de D05 est conservée.
+  - Application manuelle ou automatique possible ; aucun contrôle humain systématique.
+  - Les noms opérationnels et analytiques sont proposés ensemble, pas déjà adoptés.
+  - 'Identités à examiner à l’application : conserver l’historique, ne pas réutiliser les identifiants retirés ni transférer
+    les validations aux nouvelles valeurs.'
+  - Les correspondances U225 appuient la séparation générale ; ces capacités locales complètes ne sont pas comparées individuellement.
+  implementation: 'Proposition uniquement : aucun nœud, relation, glossaire ou publication modifié.'
+  clarification_U228: Restructuration proposée de trois capacités vers deux, pas simple renommage ni sous-capacités ; non
+    adoptée.
+  correction_U229: Planning ne désigne pas les capacités de décision proposées ici. Les noms U227 sont historiques sur ce
+    point ; granularité et regroupements restent proposés.
+decision_planning_direction_U229:
+  date: '2026-09-16'
+  state: user_direction_recorded
+  source_refs:
+  - U229
+  naming: Conserver Decision de manière générale pour les capacités qui portent un résultat de décision ; éviter Calculation
+    comme intitulé métier.
+  planning_user_meaning:
+  - Reconfigurer
+  - Simuler
+  - Valider
+  relationship: Les capacités Planning se nourrissent des capacités Decision ; Planning ne remplace pas leur responsabilité.
+  proposed_interpretation: Une décision fournit une réponse métier sous hypothèses et contraintes. Planning modifie ces hypothèses,
+    mobilise les décisions, examine les scénarios et valide un ensemble cohérent. La mise en action reste distincte.
+  corrected_names_proposed:
+  - name: Stock Protection Decision
+    result: Déterminer les objectifs, seuils et allocations de stock à retenir pour un périmètre et des hypothèses donnés.
+  - name: Replenishment Decision
+    result: Déterminer les compléments et redistributions à retenir, avec quantités et dates, selon les hypothèses et contraintes.
+  limits:
+  - Ces noms et la réduction de trois capacités à deux ne sont pas adoptés.
+  - Le calcul des besoins nets reste nécessaire ; son intégration plutôt que son rang autonome reste proposée.
+  - Aucun emplacement de Planning ni relation de décomposition déduit de la dépendance aux décisions.
+  - Aucune validation humaine obligatoire ni séquence technique fixe imposée.
+  - Aucun renommage global du modèle, du glossaire ou des sources marché.
+  model_alignment: Orientation et corrections de proposition seulement ; nœuds, relations et publications inchangés.
+  correction_U230: Stock Protection Decision est écartée comme trop agrégée ; la proposition de deux décisions est remplacée
+    par la proposition détaillée U230, non appliquée.
+governance_and_decisions_U230:
+  date: '2026-09-16'
+  state: user_direction_recorded
+  source_refs:
+  - U230
+  user_direction:
+    stock_protection: Capacité de gouvernance (management).
+    rejected_proposal: Stock Protection Decision est trop agrégée.
+    preference: Modèle de décisions plus découpé.
+  proposed_interpretation: Une capacité de gouvernance peut s’appuyer sur plusieurs décisions spécialisées ; leur usage par
+    Planning ou gouvernance ne crée pas une relation de sous-capacité.
+  D05_capabilities_proposed:
+  - name: Coverage Target Decision
+    result: Déterminer les niveaux de stock cibles et seuils de couverture/réassort pertinents pour un produit, un lieu et
+      un horizon.
+    example: Minimum 40, point de réassort 60, cible 100 ; valeurs fictives.
+  - name: Stock Allocation Decision
+    result: Déterminer la répartition des quantités ou droits d’usage entre canaux ou groupes.
+    example: Quantité protégée ou plafond pour un canal ; ne pas confondre avec l’affectation à un Order dans Supply Assignment.
+  - name: Replenishment Decision
+    result: Déterminer les apports de réapprovisionnement nécessaires, leurs quantités et dates, compte tenu des apports déjà
+      engagés.
+    example: Complément fournisseur ou réassort magasin depuis une source habituelle ; ne crée pas l’Order.
+  - name: Stock Redistribution Decision
+    result: Déterminer les transferts de stock existant pour corriger une répartition excédentaire ou insuffisante.
+    example: Rééquilibrer entre sites ; ne réalise pas le mouvement.
+  changes_to_previous_proposal:
+  - Abandonner le pendant agrégé Stock Protection Decision.
+  - Ne plus proposer l’absorption de Stock Redistribution Decision dans Replenishment Decision.
+  - Ajouter une décision d’allocation aux groupes distincte des cibles de couverture.
+  boundaries:
+  - Planning reste reconfigurer/simuler/valider en mobilisant les décisions.
+  - Stock Protection assure la gouvernance selon U230 ; contenu détaillé de cette gouvernance à préciser.
+  - Mise en application et Orders restent distincts des résultats de décision.
+  - Réapprovisionnement et redistribution doivent tenir compte l’un de l’autre pour éviter le double comptage ; ni ordre obligatoire
+    ni moteur commun imposé.
+  limits:
+  - Quatre noms, périmètres et éventuelle évolution des identifiants proposés par Codex, non adoptés.
+  - Calcul des besoins nets toujours nécessaire ; son intégration plutôt que son rang de capacité reste proposé.
+  - La définition D05 U223 est conservée.
+  - Aucune relation structurelle, capacité ou modification de D01 n’est appliquée.
+  - Appuis marché U225 généraux ; nouvelles définitions à comparer individuellement si appliquées.
+  model_alignment: Proposition seulement ; nœuds et relations inchangés.
+stock_protection_application_U231:
+  date: '2026-09-16'
+  state: user_direction_recorded
+  source_refs:
+  - U231
+  application_meaning: Mettre à jour transactionnellement les données de Stock Protection.
+  operation_granularities:
+  - Unitairement
+  - En groupe
+  - En masse
+  possible_interfaces:
+  - Écrans
+  - Batch
+  - Flux
+  - Streaming
+  proposed_wording: Gérer les politiques de protection et leur validité, et mettre à jour transactionnellement les données
+    correspondantes, à l’unité, par groupe ou en masse, au travers des interfaces appropriées.
+  wording_state: Reformulation de Codex à partir de la précision utilisateur ; pas une validation automatique de tous les
+    champs de la capacité.
+  clarifies: Application dans la formulation de gouvernance U230 ; le management porte la tenue transactionnelle des données,
+    pas seulement une supervision.
+  boundaries:
+  - Decision détermine les valeurs à retenir ; Planning mobilise les décisions ; management enregistre et maintient les données.
+  - Ne pas assimiler la mise à jour des données à un mouvement physique ou à la consommation de ces règles par les capacités
+    utilisatrices.
+  - Granularités et interfaces sont des modalités, pas de nouvelles capacités métier.
+  implementation: Précision conservée dans l’annexe ; nœuds et relations inchangés. Aucun choix technique ou publication.
+modeling_glossary_separation_U232:
+  source_refs:
+  - U232
+  authority: modeles/backlog/modeling-glossary.yaml
+  term_refs:
+  - MOD001
+  - MOD002
+  - MOD003
+  - MOD004
+  rule: Les sens courants transversaux sont maintenus dans ce registre séparé. Les sections U229–U231 restent des traces de
+    discussion, pas une autorité lexicale concurrente.
+  state: separate_registry_created
+  business_glossary: modeles/backlog/glossary.yaml inchangé ; sens discutés non ajoutés au catalogue métier.
+domain_proposal_U233:
+  date: '2026-09-16'
+  state: ai_proposed
+  source_refs:
+  - U233
+  basis_source_refs:
+  - U223
+  - U224
+  - U229
+  - U230
+  - U231
+  - U232
+  domain_id: D05
+  domain_name: Inventory Optimization
+  definition_rule: Conserver exactement la définition adoptée U223.
+  scope_proposal: Évaluer le stock souhaitable et les ajustements sur les horizons opérationnels ; produire des décisions
+    et permettre leur reconfiguration, simulation et validation. Prévisions et coûts sont des entrées, sans ajouter la planification
+    de saison.
+  capabilities:
+  - name: Coverage Target Decision
+    definition: Déterminer les niveaux de stock et seuils à retenir par produit, lieu et horizon, selon les objectifs de service,
+      les délais et les risques.
+    result: Cibles et seuils de couverture, de sécurité et de réassort.
+  - name: Stock Allocation Decision
+    definition: Déterminer les quantités protégées ou limites d’usage à retenir pour les canaux et groupes de bénéficiaires.
+    result: Répartition des droits d’usage, quotas et protections ; distincte d’une réservation pour un Order.
+  - name: Replenishment Decision
+    definition: Déterminer les apports de réapprovisionnement à prévoir, en quantités et dates, compte tenu des besoins, des
+      stocks admissibles et des apports déjà engagés.
+    result: Compléments recommandés pour remplir le stock, par achat ou réassort du réseau habituel.
+  - name: Stock Redistribution Decision
+    definition: Déterminer les transferts de stock existant à retenir pour corriger les excédents et insuffisances entre sites.
+    result: Rééquilibrages recommandés, avec quantités, origines, destinations et dates pertinentes.
+  - name: Inventory Planning
+    definition: Reconfigurer les hypothèses et contraintes, mobiliser les décisions de stock, simuler leurs conséquences et
+      valider un scénario cohérent.
+    result: Scénario retenu avec paramètres et ajustements ; maintien de leur cohérence, sans application transactionnelle
+      implicite.
+  relationships: Inventory Planning mobilise les quatre décisions ; relation fonctionnelle proposée, pas une relation contains
+    ou une hiérarchie adoptée.
+  boundaries:
+  - Stock Protection conserve son rôle de gouvernance/management et de mise à jour transactionnelle selon U230/U231.
+  - La mise en action engage les Orders ; D04 gère leur cycle, D03 leur satisfaction et les exécutants les prestations.
+  - Une décision ou validation de scénario ne modifie pas à elle seule les données opérationnelles et ne déclenche pas nécessairement
+    un Order.
+  - Réapprovisionnement et redistribution sont coordonnés afin de ne pas couvrir deux fois le même manque.
+  - Le Planning ne suppose ni revue humaine systématique, ni processus séquentiel fixe, ni moteur logiciel distinct.
+  existing_model_delta_proposed:
+  - Préciser Coverage Target Decision et conserver Stock Redistribution Decision comme responsabilités distinctes.
+  - Ajouter Stock Allocation Decision, Replenishment Decision et Inventory Planning.
+  - Ne plus exposer Net Requirements Calculation comme capacité autonome ; préserver son calcul dans les décisions concernées.
+    Identités et historique à traiter lors d’une application autorisée.
+  market_status: Noms et définitions locaux proposés. Les comparaisons U225 appuient la séparation fonctionnelle, pas une
+    équivalence complète de ces cinq capacités avec un catalogue éditeur.
+  implementation: Aucun nœud, relation, glossaire ou publication modifié. Les sens transversaux restent exclusivement dans
+    modeling-glossary.yaml.

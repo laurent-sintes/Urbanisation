@@ -1,0 +1,1885 @@
+baseline:
+  modeles/backlog/model.yaml: e90389703d7c3ee65e5c65af829ceefbd02db2db22f4a1fe2d18c0dc41066c94
+  modeles/backlog/glossary.yaml: 56c70e33bd492c4f197a83a112b960bb4529b66d96b3c4a2117093dd02106fb4
+  modeles/backlog/modeling-glossary.yaml: 0060829439f1a3572e124da558ab9cb22ca921e184af872d9ba8b4528e873cdc
+  modeles/release/index.json: 134ef04233d208b10c56be58f3c27cc3332fb1fee1af29b02f57b663e0f40766
+scope: Avant clarification U367 ; occurrences de chaînes, pas uniquement libellés. Les catégories empêchent de confondre preuve
+  éditeur, identifiant et nom courant.
+stats:
+  nodes: 99
+  capabilities: 38
+  behaviors: 43
+  model_names_supply: 8
+  model_names_fulfillment: 2
+  strings_by_category:
+    context_metadata: 10
+    identifier_or_provenance: 18
+    current_business_text: 81
+    market_reference: 120
+    validation_or_history: 6
+  current_model_nodes_with_terms: 37
+names:
+- id: universe-supply
+  kind: group
+  name: Supply
+  parents: []
+  approved_fields:
+  - name
+- id: D02.b
+  kind: capability
+  name: Supply Protection
+  parents:
+  - D01
+  approved_fields:
+  - name
+- id: D02.e
+  kind: capability
+  name: Supply Assignment
+  parents:
+  - D03
+  approved_fields:
+  - name
+  - nature
+- id: D13
+  kind: reference
+  name: Fulfillment Network
+  parents:
+  - business-references
+  approved_fields:
+  - independence
+  - name
+- id: D13.a
+  kind: capability
+  name: Fulfillment Network Ingestion
+  parents:
+  - D13
+  approved_fields: []
+- id: BHV004
+  kind: behavior
+  name: Future Supply Projection
+  parents:
+  - D03.i
+  approved_fields:
+  - definition
+- id: BHV017
+  kind: behavior
+  name: Group Supply Protection
+  parents:
+  - D02.b
+  approved_fields:
+  - name
+- id: BHV045
+  kind: behavior
+  name: Supply Assignment Plan Application
+  parents:
+  - D02.e
+  approved_fields: []
+- id: BHV046
+  kind: behavior
+  name: Incremental Supply Assignment
+  parents:
+  - D02.e
+  approved_fields:
+  - definition
+- id: BHV047
+  kind: behavior
+  name: Supply Reassignment
+  parents:
+  - D02.e
+  approved_fields:
+  - definition
+occurrences:
+- path: modeles/backlog/model.yaml/source_version
+  owner_id: ''
+  name: ''
+  category: context_metadata
+  count: 1
+  text: P81 0.9 + P82/U116 + libellés P84/P86 retenus en U118 + séparation D01 U125 (vocabulaire U126 ouvert) + nom D01.g
+    adopté U129 + U141 univers Supply/Case et refonte D04 + U145 retrait D02 sans renumérotation + U154 D03 recomposé en huit
+    capacités + U163 Order Prioritization + U173 Business Services + audit vocabulaire U202 + U214 refonte D04 par types,
+    structuration et cycle opérationnel (descriptions U215) + U219 finalités stock/Orders + U220 Inventory Optimization +
+    piste U221 réapprovisionnement automatique + U223 définition Inventory Optimization adoptée + U235 D05 quatre décisions
+    et Inventory Planning, calcul net intégré au réapprovisionnement + U244 référentiel des services, regroupement D06/D07
+    et orchestration adaptative + U247 Service Order Management, Capacity Visibility, décisions et séparation orchestration/adaptation
+    + U251 CTP faisabilité après adaptation et frontières des décisions spécialisées + U290 refonte des comportements, Promise
+    Management et valeur multidimensionnelle
+- path: modeles/backlog/model.yaml/nodes/1/id
+  owner_id: universe-supply
+  name: Supply
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/nodes/1/fields/name
+  owner_id: universe-supply
+  name: Supply
+  category: current_business_text
+  count: 1
+  text: Supply
+- path: modeles/backlog/model.yaml/nodes/1/fields/definition
+  owner_id: universe-supply
+  name: Supply
+  category: current_business_text
+  count: 1
+  text: Univers du pilotage transactionnel de la Supply ; priorité de l’exploration courante.
+- path: modeles/backlog/model.yaml/nodes/7/fields/market_comparisons/1/product
+  owner_id: D01.d
+  name: Stocktaking
+  category: market_reference
+  count: 1
+  text: E-Business Suite Mobile Supply Chain Applications
+- path: modeles/backlog/model.yaml/nodes/7/fields/market_comparisons/2/source_url
+  owner_id: D01.d
+  name: Stocktaking
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+- path: modeles/backlog/model.yaml/nodes/8/fields/name
+  owner_id: D02.b
+  name: Supply Protection
+  category: current_business_text
+  count: 1
+  text: Supply Protection
+- path: modeles/backlog/model.yaml/nodes/8/fields/scope
+  owner_id: D02.b
+  name: Supply Protection
+  category: current_business_text
+  count: 1
+  text: |-
+    Quatre mécanismes combinables : préserver l’accès des groupes, plafonner leur consommation, définir le rôle d’un stock tampon et réguler le réassort. Les décisions spécialisées D05 déterminent les valeurs ; Supply Protection en gouverne la validité et les applique transactionnellement ; les consommateurs respectent les règles actives.
+
+    Les opérations de création d’enveloppes, réallocation entre groupes, libération des droits inutilisés, imputation ou correction de consommation et consultation des quantités allouées, consommées et restantes restent des fonctions utiles. Les règles ont une validité, une portée et des conditions de dérogation. Leur application transactionnelle est possible à l’unité, par groupe ou en masse, via écran, batch, flux ou streaming ; ces modalités ne créent pas de comportement supplémentaire.
+
+    Exemple fictif : protéger 200 pièces pour le web face à d’autres demandes, plafonner la consommation d’un groupe à 500, prévoir une sécurité de 40 et déclencher le réassort sous 60 vers 100. Ces paramètres ont des rôles distincts et ne s’additionnent pas automatiquement ; une même valeur peut contribuer à la sécurité et au seuil sans double décompte. Prévenir le surstock futur par les règles reste distinct de redistribuer un excès déjà présent.
+- path: modeles/backlog/model.yaml/nodes/10/fields/definition
+  owner_id: D03
+  name: Order Promising
+  category: current_business_text
+  count: 1
+  text: 'Chercher comment satisfaire les [Supply Orders](glossary:TER065) : établir les possibilités de couverture en ressources
+    et en dates, arbitrer les solutions et établir puis maintenir les promesses. Les solutions peuvent mobiliser les ressources
+    présentes ou attendues et proposer des adaptations lorsque la situation de référence ne suffit pas.'
+- path: modeles/backlog/model.yaml/nodes/10/fields/scope
+  owner_id: D03
+  name: Order Promising
+  category: current_business_text
+  count: 1
+  text: |-
+    La satisfaction des Orders est la finalité du domaine. ATP apprécie une solution dans les ressources et engagements admissibles ; CTP peut proposer leur adaptation ; PTP compare les scénarios économiquement. Priorités, affectations et échéanciers concourent à la proposition, à la confirmation et à la révision des promesses. Cette lecture ne limite pas D03 à une commande isolée : les arbitrages peuvent porter sur plusieurs commandes et leurs engagements.
+
+    Exemple fictif : déplacer 50 pièces pour satisfaire une commande précise. Le résultat recherché est sa satisfaction, en tenant compte des dates, protections et conséquences sur les autres engagements. [Inventory Optimization](model:D05) peut envisager un transfert semblable pour corriger la répartition du stock : la ressemblance de l’opération n’efface pas la différence de finalité.
+
+    D01 conserve la connaissance du stock, les mouvements, protections et réservations ; D04 gère les Orders et leur progression ; D06 et les services exécutants portent prestations, engagements et faits d’exécution. Proposer un scénario CTP ne crée ni n’affermit automatiquement un Order et ne réalise pas un mouvement. Supply Assignment conserve sa définition actuelle, incluant les besoins prévisionnels : leur articulation détaillée avec les besoins de stock de D05 reste à éprouver, sans réduction implicite de cette portée.
+
+    Promise Management regroupe proposition, confirmation et révision en trois comportements. La satisfaction recherchée maximise une valeur multidimensionnelle selon objectifs et contraintes ; PTP conserve son arbitrage économique spécialisé.
+- path: modeles/backlog/model.yaml/nodes/11/fields/name
+  owner_id: D02.e
+  name: Supply Assignment
+  category: current_business_text
+  count: 1
+  text: Supply Assignment
+- path: modeles/backlog/model.yaml/nodes/11/fields/definition
+  owner_id: D02.e
+  name: Supply Assignment
+  category: current_business_text
+  count: 1
+  text: Affecter les ressources Supply présentes ou futures aux commandes identifiées, selon les priorités, les engagements
+    et les contraintes applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction.
+- path: modeles/backlog/model.yaml/nodes/11/fields/scope
+  owner_id: D02.e
+  name: Supply Assignment
+  category: current_business_text
+  count: 6
+  text: |-
+    Frontière : Affectations aux commandes identifiées ; autres besoins historiques conservés à préciser. Décisions spécialisées, engagement de réservation, promesse et modification des Orders restent distincts.
+
+    Exemple fictif : Affecter 40 d’un arrivage à une commande puis changer leur provenance admissible.
+
+    La valeur peut combiner service, respect des engagements, coûts, contribution économique et risques ; ces dimensions sont des exemples, sans pondération ni formule universelle adoptée. Les décisions spécialisées conservent leurs responsabilités : priorité des Orders, faisabilité ATP/CTP, arbitrage économique PTP et échéancier. Affecter, réaffecter et libérer maintiennent les liens aux ressources ; affecté, réservé, promis et réalisé restent distincts. Le périmètre historique des engagements et besoins prévisionnels est conservé, avec articulation à préciser.
+
+    L’application d’un plan d’affectation relève de Supply Assignment : matérialiser les liens entre ressources et commandes retenus dans le plan. La capacité peut mobiliser les autres capacités Supply sans absorber leurs responsabilités. Le fait qu’un traitement logiciel tel qu’ARun traverse plusieurs capacités ne remet pas en cause le parent métier de ce mécanisme.
+
+    U362/U363 : Spread (sens SAP ARun) répartit les ressources entre commandes existantes ; il ne coupe pas les commandes. La règle de répartition détermine les parts dans les décisions spécialisées, puis Supply Assignment matérialise leurs affectations. Exemple simplifié : besoins de 100 et 200, stock de 150, prorata donnant 50 et 100 ; les demandes restent de 100 et 200. Quotas, priorités et engagements peuvent changer le résultat. Aucun nouvel optimiseur ou parent de décision Spread adopté.
+
+    U364 : [Supply Assignment Plan Application](model:BHV045) matérialise un plan retenu ; [Incremental Supply Assignment](model:BHV046) complète les besoins non affectés en conservant l’existant ; [Supply Reassignment](model:BHV047) applique une révision des affectations modifiables. Ces comportements sont combinables. Préservation pendant un traitement et gel durable sont distincts ; aucun algorithme incrémental imposé. La décision collective et les contrats d’engagement restent à préciser dans A01/A02.
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/0/element_name
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Supply Assignment (ARun)
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/0/source_title
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Supply Assignment (ARun)
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/0/flow_position
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement.'
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/1/source_locator
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/1/flow_position
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement.'
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/2/flow_position
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Spread est une politique de répartition des ressources entre commandes. Les décisions déterminent les parts ; Supply
+    Assignment applique les liens. Aucun agrégat décisionnel ou comportement automatique ajouté. U363 applique la structure
+    ; les correspondances marché restent proposées.
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/3/element_name
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/3/source_title
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/3/source_url
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 2
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- path: modeles/backlog/model.yaml/nodes/11/fields/market_comparisons/3/flow_position
+  owner_id: D02.e
+  name: Supply Assignment
+  category: market_reference
+  count: 1
+  text: Appui à la stabilité des affectations, mais périmètre produit plus large incluant la chaîne de planification. Ne démontre
+    pas une équivalence exacte avec Incremental Supply Assignment.
+- path: modeles/backlog/model.yaml/nodes/11/editorial_basis
+  owner_id: D02.e
+  name: Supply Assignment
+  category: validation_or_history
+  count: 1
+  text: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords antérieurs
+    conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml. U345 :
+    principe d’application de plan sous Supply Assignment et explication des recommandations intégrés ; formulation détaillée
+    éditoriale.'
+- path: modeles/backlog/model.yaml/nodes/13/fields/scope
+  owner_id: D03.j
+  name: Capable-to-Promise (CTP)
+  category: current_business_text
+  count: 1
+  text: |-
+    Établir les possibilités de satisfaction de l’Order lorsque la situation de référence ne suffit pas : ressources supplémentaires, autres dates ou adaptations d’engagements à examiner. Le résultat est une solution Supply candidate cohérente, avec quantités et dates réalisables sous conditions, adaptations nécessaires, impacts et points restant à autoriser. Les hypothèses de modification ne sont pas des politiques actives ni des engagements déjà modifiés.
+
+    Mobiliser [Order Prioritization](model:D03.m) pour les arbitrages entre Orders et [Execution Service Decision](model:D06.e) pour les services/exécutants compatibles. Si une évolution des politiques de stock est envisagée, mobiliser [Group Protection Decision](model:D05.d) ou [Inventory Target Decision](model:D05.a) selon le résultat concerné ; CTP peut identifier la nécessité de cette évolution sans décider seul des valeurs de politique. Une dérogation ponctuelle à une politique n’est pas attribuée automatiquement à CTP par cette frontière.
+
+    Les possibilités et impacts établis peuvent alimenter [Profitable-to-Promise (PTP)](model:D03.k), qui porte l’arbitrage économique, et [Delivery Schedule Decision](model:D03.l), qui retient l’échéancier parmi les possibilités réalisables. Identifier les dates possibles fait partie de la faisabilité ; choisir l’échéancier retenu conserve son responsable. Ces mobilisations n’imposent ni appel systématique à toutes les décisions, ni séquence universelle, ni hiérarchie de sous-capacités.
+
+    Exemple fictif : une commande demande 100 pièces vendredi, mais seules 60 sont admissibles dans la situation de référence. CTP examine sous quelles conditions obtenir les 40 manquantes : apport supplémentaire disponible à temps ou autre solution compatible. La disponibilité du service nécessaire est éclairée par D06 ; une variante qui dégraderait une autre commande respecte l’arbitrage de priorité. Les possibilités et conséquences alimentent, selon le cas, le choix économique et l’échéancier. Le résultat ne crée pas automatiquement un achat et ne modifie pas de lui-même une autre promesse ou une protection.
+
+    [Execution Adaptation Decision](model:D06.f) détermine les variations du plan d’exécution face aux aléas. Lorsqu’une variation affecte la satisfaction de l’Order, le réexamen de la promesse dans D03 peut mobiliser CTP. [Promise Revision](model:BHV023) établit les modifications autorisées de promesse ; les capacités de gestion concernées tiennent les Orders, protections, affectations et réservations. CTP ne reprend pas leur application transactionnelle.
+
+    Un apport ou un transfert envisagé pour honorer l’Order conserve cette finalité, distincte de [Replenishment Decision](model:D05.e) et [Stock Redistribution Decision](model:D05.c), qui recherchent un stock souhaitable ou mieux réparti. Leur opération commune ne crée pas une dépendance obligatoire de tout approvisionnement CTP à D05. Le partage éventuel de données ou de calculs n’impose pas de fusion. CTP reste une décision agrégée de faisabilité sous adaptation ; elle ne devient pas par cette composition une capacité Planning ni une seconde autorité sur les arbitrages spécialisés.
+- path: modeles/backlog/model.yaml/nodes/17/fields/definition
+  owner_id: D04
+  name: Order Management
+  category: current_business_text
+  count: 1
+  text: Gérer les Orders transactionnels de la Supply selon leur type métier, gouverner leurs mutations, maintenir leurs compositions
+    et assurer leur conservation historique, en distinguant contenu, promesse et exécution.
+- path: modeles/backlog/model.yaml/nodes/17/fields/scope
+  owner_id: D04
+  name: Order Management
+  category: current_business_text
+  count: 1
+  text: 'Quatre capacités : Order Type, Order Lifecycle Management, Order Structuring et Order Archiving. Les cinq variantes
+    vente, achat, transfert, retour client et retour fournisseur sont des comportements d’Order Type. Les mécanismes Lifecycle
+    sont communs sans imposer un cycle identique. Structuring porte la composition persistante ; Archiving conserve la trace
+    historique. Split transforme les commandes ; Spread répartit des ressources entre commandes et relève des décisions et
+    de Supply Assignment.'
+- path: modeles/backlog/model.yaml/nodes/18/fields/market_comparisons/0/source_url
+  owner_id: D04.i
+  name: Sales Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/18/fields/market_comparisons/1/source_url
+  owner_id: D04.i
+  name: Sales Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/18/fields/market_comparisons/3/source_url
+  owner_id: D04.i
+  name: Sales Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/19/fields/market_comparisons/0/source_url
+  owner_id: D04.j
+  name: Purchase Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/19/fields/market_comparisons/1/source_url
+  owner_id: D04.j
+  name: Purchase Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/19/fields/market_comparisons/3/source_url
+  owner_id: D04.j
+  name: Purchase Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/20/fields/market_comparisons/0/source_url
+  owner_id: D04.k
+  name: Transfer Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/20/fields/market_comparisons/1/source_url
+  owner_id: D04.k
+  name: Transfer Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/20/fields/market_comparisons/3/source_url
+  owner_id: D04.k
+  name: Transfer Order Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/21/fields/market_comparisons/0/source_url
+  owner_id: D04.l
+  name: Customer Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/21/fields/market_comparisons/1/source_url
+  owner_id: D04.l
+  name: Customer Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/21/fields/market_comparisons/3/source_url
+  owner_id: D04.l
+  name: Customer Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/22/fields/market_comparisons/0/source_url
+  owner_id: D04.m
+  name: Supplier Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/22/fields/market_comparisons/1/source_url
+  owner_id: D04.m
+  name: Supplier Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/22/fields/market_comparisons/3/source_url
+  owner_id: D04.m
+  name: Supplier Return Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/23/fields/market_comparisons/0/source_url
+  owner_id: D04.n
+  name: Order Structuring
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+- path: modeles/backlog/model.yaml/nodes/23/fields/market_comparisons/1/differences
+  owner_id: D04.n
+  name: Order Structuring
+  category: market_reference
+  count: 1
+  text: Division de lignes/fulfillment et réalisation logicielle ; ni deux Orders commerciaux autonomes ni placement sous
+    une capacité FLOW démontrés.
+- path: modeles/backlog/model.yaml/nodes/23/fields/market_comparisons/1/source_url
+  owner_id: D04.n
+  name: Order Structuring
+  category: market_reference
+  count: 2
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauom/split-fulfillment-lines.html
+- path: modeles/backlog/model.yaml/nodes/23/fields/market_comparisons/2/differences
+  owner_id: D04.n
+  name: Order Structuring
+  category: market_reference
+  count: 1
+  text: Contexte maintenance/service, pas commandes Supply de vente/achat/transfert ; analogie de responsabilité seulement,
+    aucun objet FLOW prescrit.
+- path: modeles/backlog/model.yaml/nodes/24/fields/definition
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: current_business_text
+  count: 1
+  text: Gouverner et appliquer les évolutions autorisées du cycle de vie des Orders Supply, avec leur portée, leurs conditions
+    et leurs effets sur le reste à satisfaire.
+- path: modeles/backlog/model.yaml/nodes/24/fields/scope
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: current_business_text
+  count: 3
+  text: |-
+    Gouverner et appliquer les mutations autorisées d’un Order dans sa préparation, ses engagements et sa progression. Les neuf comportements décrivent des mécanismes combinables, pas neuf états obligatoires : Drafting, Firming, Freezing, Release, Hold & Resume, Rescheduling, Cancellation, Closure et Splitting.
+
+    Le contenu spécifique demeure géré selon Order Type. Le mode brouillon organise la préparation ; le CRUD reste explicite sans quatre comportements artificiels. Distinguer suppression admissible d’un brouillon et annulation du reste engagé. Une copie prépare une nouvelle demande, sans reprendre automatiquement ses garanties.
+
+    Affermir ne libère pas automatiquement, libérer ne constate pas le démarrage physique. Hold bloque une progression ; Freezing limite des modifications. Reporter une échéance ne lève pas une attente. Annuler retire un besoin restant sans effacer les réalisations ; clôturer explique la fin opérationnelle et le reliquat. Archiver est une responsabilité séparée.
+
+    Split coupe une commande ou ses éléments avec filiation et contrôle des quantités. Structuring garde la composition durable entre Orders. Spread ARun répartit les ressources entre commandes : décision des parts et application par Supply Assignment restent hors de cette mutation.
+
+    Exemple fictif : sur un transfert de 100 pièces, 60 sont autorisées et 40 attendent. Reporter les 40 au lundi ne lève pas leur attente. Une scission éventuelle conserve l’origine ; les quantités déjà reçues ne sont pas annulables comme si elles n’avaient jamais existé. L’application d’un plan peut déclencher ces mutations autorisées ; Supply Assignment reste responsable des liens ressources-commandes.
+
+    Conditions et autorités sont propres aux types d’Orders ; automatisation possible. D03 conserve promesses et décisions, D06 les prestations, faits et adaptations d’exécution. Aucun cycle universel aux Supply Orders ou Service Orders ; compensation du processus dans la couche processus.
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/0/flow_position
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/1/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/1/flow_position
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/2/element_name
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/2/source_title
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/2/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 2
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/2/flow_position
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/3/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/3/flow_position
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/4/similarities
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: Une commande enregistrée mais non soumise au fulfillment reste Draft et peut être modifiée.
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/4/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/5/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/6/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/7/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/8/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/9/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/10/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/11/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/13/similarities
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 1
+  text: Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches de fulfillment.
+- path: modeles/backlog/model.yaml/nodes/24/fields/market_comparisons/13/source_url
+  owner_id: D04.o
+  name: Order Lifecycle Management
+  category: market_reference
+  count: 2
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+- path: modeles/backlog/model.yaml/nodes/25/fields/scope
+  owner_id: D05
+  name: Inventory Optimization
+  category: current_business_text
+  count: 2
+  text: |-
+    Le domaine produit les paramètres et ajustements de stock à retenir selon le compromis entre disponibilité, immobilisation et risque. Les décisions spécialisées portent les cibles de couverture, les droits de protection des groupes, les apports initiaux de lancement, le réassort continu et la redistribution du stock existant. [Inventory Planning](model:D05.f) les mobilise pour construire, simuler, évaluer et valider un scénario cohérent, puis en déclencher l’application via les capacités responsables ; cette mobilisation n’est pas une décomposition en sous-capacités.
+
+    Les calculs font partie des décisions. [Initial Stocking Decision](model:D05.g) détermine les apports du lancement ; [Replenishment Decision](model:D05.e) détermine les apports continus. Chacune intègre les besoins nets, contraintes, quantités et dates utiles à sa finalité. La redistribution et le réapprovisionnement demeurent distincts et coordonnés : leurs effets sur les stocks et manques sont pris en compte sans doublon. Les horizons restent opérationnels ; les prévisions et coûts peuvent être des entrées sans ajouter la planification de saison.
+
+    Exemple fictif : retenir une cible magasin de 100 pièces et un seuil de réassort de 60 ; protéger une enveloppe pour un canal ; puis arbitrer entre apports et transfert depuis un site excédentaire. Une reconfiguration du service attendu peut conduire Inventory Planning à mobiliser de nouveau plusieurs décisions et comparer leurs effets ensemble.
+
+    Stock Protection désigne la gouvernance/management discutée en U230/U231 ; la capacité courante reste [Supply Protection](model:D02.b), sans renommage implicite. Son application signifie mettre à jour transactionnellement les données correspondantes, à l’unité, par groupe ou en masse, par écrans, batch, flux ou streaming. Décider les paramètres ou valider un scénario ne réalise pas ces mises à jour à lui seul.
+
+    La mise en action du réapprovisionnement engage les Orders ; [Order Management](model:D04) les gère, [Order Promising](model:D03) travaille leur satisfaction, les exécutants réalisent les prestations et [Inventory Management](model:D01) tient la connaissance des stocks et mouvements. La fonction de mise en action d’Inventory Planning déclenche les actions retenues et connaît leur prise en compte via ces capacités responsables ; aucune nouvelle capacité autonome de déclenchement n’est ajoutée dans D05. D03 cherche à satisfaire les Orders ; D05 cherche le stock souhaitable et ses ajustements. La distinction ne repose ni sur l’absence de commandes dans les entrées ni sur un partage global/individuel. La portée actuelle de Supply Assignment, incluant les besoins prévisionnels, est conservée.
+
+    La mise en application peut être automatique selon les règles et autorités ; aucun contrôle humain systématique, séquencement fixe ou découpage logiciel imposé. Les notions transversales soutenant la définition des objets du modèle restent dans le glossaire de modélisation séparé.
+
+    Inventory Planning est décrit par trois comportements : Scenario Construction, Simulation & Analysis et Scenario Execution Adaptation. Comparaison, validation et déclenchement restent dans son périmètre ; aucune nouvelle capacité de décision ni application transactionnelle absorbée.
+- path: modeles/backlog/model.yaml/nodes/26/fields/market_comparisons/1/product
+  owner_id: D05.a
+  name: Inventory Target Decision
+  category: market_reference
+  count: 1
+  text: Dynamics 365 Supply Chain Management
+- path: modeles/backlog/model.yaml/nodes/26/fields/market_comparisons/1/source_url
+  owner_id: D05.a
+  name: Inventory Target Decision
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal
+- path: modeles/backlog/model.yaml/nodes/26/fields/market_comparisons/2/source_url
+  owner_id: D05.a
+  name: Inventory Target Decision
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+- path: modeles/backlog/model.yaml/nodes/27/fields/scope
+  owner_id: D05.d
+  name: Group Protection Decision
+  category: current_business_text
+  count: 2
+  text: |-
+    Déterminer les quantités protégées et limites d’usage des canaux, régions ou groupes de bénéficiaires, avec leur périmètre et leur période. Préserver un accès minimum et plafonner une consommation répondent à des contraintes distinctes ; la décision comprend les calculs et la comparaison des options.
+
+    Exemple fictif : sur 1 000 pièces, protéger 200 pour le web et plafonner à 500 la consommation d’un groupe de clients professionnels. Ce ne sont ni deux stocks physiques distincts ni une formule de décompte universelle. Les droits doivent rester cohérents avec les engagements et la couverture du réseau.
+
+    [Supply Protection](model:D02.b) gouverne et applique les droits retenus. [Supply Assignment](model:D02.e) affecte des ressources aux commandes. La [Reservation](model:D02.c) porte ses effets d’engagement propres, à articuler sans double décompte. Le nom historique Stock Allocation Decision désignait cette même décision sur les groupes ; l’ancien identifiant est conservé.
+- path: modeles/backlog/model.yaml/nodes/28/fields/scope
+  owner_id: D05.g
+  name: Initial Stocking Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    Décider les apports d’[implantation](glossary:TER079) destinés à constituer le stock de départ de chaque magasin à la date de lancement. Chez Beaumanoir, les deux saisons été/hiver constituent le contexte rapporté ; collections, capsules ou périodes plus fines sont des extensions possibles, pas des pratiques actuelles déduites. Le résultat précise produits ou variantes, magasins, quantités, dates et éventuels besoins non couverts.
+
+    L’assortiment retenu, les objectifs de stock et les contraintes constituent les entrées. [Inventory Target Decision](model:D05.a) conserve la détermination des cibles ; cette décision détermine les apports pour les atteindre au lancement. Examiner stock déjà présent et admissible, apports attendus à temps, conditionnements, protections et contraintes de disponibilité. Le calcul net fait partie de la décision ; ne pas compter deux fois les mêmes entrées.
+
+    Exemple fictif : pour un lancement au 1er mars, une cible de 100 pièces, 20 pièces admissibles déjà présentes et 30 attendues à temps laissent 50 pièces à apporter. Si seulement 40 peuvent être disponibles, expliciter le manque de 10 et les options à examiner ; ne pas annoncer implicitement une promesse ni modifier la cible sans mobiliser la décision responsable. Les tailles, couleurs et conditionnements peuvent contraindre le résultat sans constituer automatiquement des comportements supplémentaires.
+
+    La finalité distingue l’implantation du [réassort continu](model:D05.e). Un complément tardif destiné à achever la mise en place initiale reste à qualifier selon cette finalité ; la date seule ne suffit pas à le transformer en réassort. Les apports d’implantation engagés restent visibles pour les décisions ultérieures de réassort, afin d’éviter les doublons.
+
+    [Inventory Planning](model:D05.f) mobilise la décision pour ses scénarios. D04 gère les Orders nécessaires, D03 décide comment les satisfaire et D06 pilote les prestations ; retenir ces apports ne réalise ni livraison ni mise en rayon. [Supply Assignment](model:D02.e) conserve l’affectation des ressources aux commandes. Le choix de l’assortiment et la planification commerciale de saison ne deviennent pas des responsabilités de cette capacité.
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/2/product
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: Dynamics 365 Supply Chain Management — Master planning
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/2/source_url
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/2/flow_position
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: 'U324/C98 : distinguer détermination des objectifs et seuils (Inventory Target Decision), gouvernance et application
+    de leurs versions opérationnelles (Supply Protection), puis décision des quantités et dates d’apport (Replenishment Decision).
+    Les min/max peuvent dépendre des besoins et varier par période ; la politique Min/Max utilise aussi une position de stock
+    projetée. Requirement/Period et Min/Max restent des méthodes différentes, pas une chaîne où la première calcule les paramètres
+    de la seconde. La création de deux comportements recommandée U323 est suspendue faute de bénéfice supplémentaire établi
+    ; conserver les modalités dans les descriptions. Aucun comportement créé ni retiré.'
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/3/product
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: Dynamics 365 Supply Chain Management — Master planning
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/3/source_url
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/3/flow_position
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: 'U324/C98 : distinguer détermination des objectifs et seuils (Inventory Target Decision), gouvernance et application
+    de leurs versions opérationnelles (Supply Protection), puis décision des quantités et dates d’apport (Replenishment Decision).
+    Les min/max peuvent dépendre des besoins et varier par période ; la politique Min/Max utilise aussi une position de stock
+    projetée. Requirement/Period et Min/Max restent des méthodes différentes, pas une chaîne où la première calcule les paramètres
+    de la seconde. La création de deux comportements recommandée U323 est suspendue faute de bénéfice supplémentaire établi
+    ; conserver les modalités dans les descriptions. Aucun comportement créé ni retiré.'
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/4/product
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: Dynamics 365 Supply Chain Management — Master planning
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/4/differences
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: FLOW place la détermination des valeurs dans Inventory Target Decision et leur gouvernance/application dans Supply
+    Protection. Les écrans et clés Microsoft ne prescrivent pas cette décomposition ; aucun calendrier mensuel ou formule
+    du produit imposé à Beaumanoir.
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/4/source_title
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: Safety stock fulfillment for items
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/4/source_url
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/4/flow_position
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: 'U324/C98 : distinguer détermination des objectifs et seuils (Inventory Target Decision), gouvernance et application
+    de leurs versions opérationnelles (Supply Protection), puis décision des quantités et dates d’apport (Replenishment Decision).
+    Les min/max peuvent dépendre des besoins et varier par période ; la politique Min/Max utilise aussi une position de stock
+    projetée. Requirement/Period et Min/Max restent des méthodes différentes, pas une chaîne où la première calcule les paramètres
+    de la seconde. La création de deux comportements recommandée U323 est suspendue faute de bénéfice supplémentaire établi
+    ; conserver les modalités dans les descriptions. Aucun comportement créé ni retiré.'
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/5/source_url
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+- path: modeles/backlog/model.yaml/nodes/29/fields/market_comparisons/5/flow_position
+  owner_id: D05.e
+  name: Replenishment Decision
+  category: market_reference
+  count: 1
+  text: 'U324/C98 : distinguer détermination des objectifs et seuils (Inventory Target Decision), gouvernance et application
+    de leurs versions opérationnelles (Supply Protection), puis décision des quantités et dates d’apport (Replenishment Decision).
+    Les min/max peuvent dépendre des besoins et varier par période ; la politique Min/Max utilise aussi une position de stock
+    projetée. Requirement/Period et Min/Max restent des méthodes différentes, pas une chaîne où la première calcule les paramètres
+    de la seconde. La création de deux comportements recommandée U323 est suspendue faute de bénéfice supplémentaire établi
+    ; conserver les modalités dans les descriptions. Aucun comportement créé ni retiré.'
+- path: modeles/backlog/model.yaml/nodes/30/fields/scope
+  owner_id: D05.c
+  name: Stock Redistribution Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    Examiner les excédents et insuffisances entre sites puis déterminer les quantités, origines, destinations et dates pertinentes pour rééquilibrer le stock déjà présent. Les calculs de disponibilité admissible, de couverture et de conséquences sur les sites font partie de cette décision. Les critères économiques, tolérances et autorités détaillées restent à préciser.
+
+    Exemple fictif : transférer 50 pièces d’un site en excédent vers un autre site en manque, sous réserve de préserver les besoins et engagements du site donneur. La responsabilité reste distincte de [Replenishment Decision](model:D05.e), qui prévoit les apports ; leurs résultats doivent être coordonnés pour éviter le double comptage d’un même manque ou d’un même stock.
+
+    [Order Promising](model:D03) peut proposer un transfert pour satisfaire des Orders. Ici le résultat recherché est une meilleure répartition du stock ; le partage éventuel de données ou de moyens de calcul ne supprime pas cette distinction. Supply Assignment affecte des ressources à des besoins ou engagements sans réaliser à lui seul une redistribution physique.
+
+    La mise en action peut mobiliser des Orders gérés par D04, dont D03 travaille la satisfaction, puis des prestations suivies par [Execution Management](model:D06) et réalisées par les exécutants. Décider d’un transfert ne modifie pas transactionnellement les stocks et ne réalise pas le transport ; aucun développement de logistique dans FLOW n’est déduit.
+
+    Frontière : Coordonner Replenishment sans corriger deux fois le manque ; aucun transport réalisé ici.
+
+    U318 : [Inventory Rebalancing](model:BHV024) déplace le stock vers les lieux qui en ont davantage besoin, en préservant les donneurs ; [Stock Consolidation](model:BHV025) concentre des stocks dispersés pour reconstituer des assortiments de tailles ou regrouper des reliquats vers des lieux adaptés. Les deux mécanismes peuvent se combiner, sans séquence imposée ni niveau inférieur. La consolidation n’exige pas un manque immédiat à destination et ne concerne pas exclusivement des excédents. Ces exemples décrivent la cible, pas une pratique Beaumanoir démontrée.
+
+    La valeur recherchée intègre disponibilité, immobilisation et risque. Les coûts et contraintes de transfert peuvent conduire à ne rien déplacer. [Initial Stocking Decision](model:D05.g) et Replenishment Decision restent les décisions d’apports de lancement et d’apports continus ; coordonner leurs résultats avec la redistribution du stock existant.
+- path: modeles/backlog/model.yaml/nodes/30/fields/market_comparisons/0/source_url
+  owner_id: D05.c
+  name: Stock Redistribution Decision
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+- path: modeles/backlog/model.yaml/nodes/31/fields/scope
+  owner_id: D05.f
+  name: Inventory Planning
+  category: current_business_text
+  count: 1
+  text: |-
+    Construire des scénarios alternatifs de stock, puis simuler et analyser leurs effets en mobilisant Inventory Target Decision, Group Protection Decision, Initial Stocking Decision, Replenishment Decision et Stock Redistribution Decision. Ces décisions restent des capacités distinctes. Adapter ensuite le scénario aux faits et aux actions déjà engagées, sans imposer une séquence technique universelle.
+
+    Comparer et apprécier les options, autoriser le scénario avec conditions, déclencher les actions retenues via les capacités responsables et suivre leur prise en compte restent des fonctions de Planning. Distinguer actions acceptées, refusées ou partiellement appliquées ; une validation du scénario ne prouve pas son application. Supply Protection met à jour les politiques, D04 les Orders et D06 coordonne les prestations et conserve la décision d’adaptation opérationnelle.
+
+    Exemple fictif : construire deux scénarios de couverture magasin à 10 et 15 jours avant une promotion, simuler leurs apports et transferts, analyser les effets sur service, immobilisation et risque, retenir un scénario puis demander les actions nécessaires. Après un retard fournisseur, réviser ce scénario en tenant compte des quantités déjà expédiées. Les horizons restent opérationnels ; prévisions et coûts peuvent être des entrées sans ajouter la planification de saison.
+- path: modeles/backlog/model.yaml/nodes/32/fields/definition
+  owner_id: D06
+  name: Execution Management
+  category: current_business_text
+  count: 2
+  text: Orchestrer l’exécution Supply en coordonnant les prestations, en suivant leur réalisation et en adaptant le plan aux
+    aléas, en articulation avec la promesse Supply.
+- path: modeles/backlog/model.yaml/nodes/32/fields/scope
+  owner_id: D06
+  name: Execution Management
+  category: current_business_text
+  count: 1
+  text: |-
+    Connaître les services admissibles et la capacité logistique contextualisée ; exprimer les prestations, gérer leurs engagements, coordonner leurs dépendances, suivre leur avancement et adapter le plan aux aléas. Les services couvrent entrepôt, transport et prestations telles que la production de documents.
+
+    Un SLA configuré compatible ne garantit pas la réussite opérationnelle. Exemple : la préparation prend du retard et menace la collecte ; rechercher une autre collecte, un autre service ou une réalisation partielle selon les contraintes, puis mobiliser D03 si la promesse doit être réexaminée.
+
+    Le référentiel D14 décrit l’offre et les SLA globaux ; D06 traite le contexte opérationnel. D03 conserve la décision de promesse Supply, D04 les Orders et leurs reliquats, D01 la représentation du stock et de ses mouvements. Les exécutants conservent leurs opérations internes. La latitude d’adaptation est une règle de fonctionnement, sans effet sur le catalogue des capacités.
+- path: modeles/backlog/model.yaml/nodes/33/fields/definition
+  owner_id: D06.b
+  name: Execution Capacity Visibility
+  category: current_business_text
+  count: 1
+  text: Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période et sa fraîcheur,
+    pour alimenter les décisions Supply.
+- path: modeles/backlog/model.yaml/nodes/33/fields/scope
+  owner_id: D06.b
+  name: Execution Capacity Visibility
+  category: current_business_text
+  count: 1
+  text: |-
+    Rendre accessible la capacité logistique dans son contexte, par exemple le nombre maximal de préparations communiqué pour un site et un créneau. Expliciter le service, l’unité, la période, l’origine et la fraîcheur des informations disponibles.
+
+    Exemple : l’entrepôt annonce un plafond de 1 000 préparations sur un créneau ; si une charge ou un disponible sont également communiqués, les présenter avec leur sens et leur date de connaissance. Ne pas transformer sans règle connue ce plafond en capacité encore disponible.
+
+    Cette visibilité ne décide pas d’augmenter les ressources de l’exécutant, ne calcule pas implicitement un disponible à partir d’une formule non convenue et ne réserve pas la capacité. D03 l’utilise pour sa promesse Supply ; Service Decision et Adaptation Decision peuvent la mobiliser. Le nom est adopté U246 ; les détails de représentation et contrats restent proposés.
+- path: modeles/backlog/model.yaml/nodes/34/fields/finality
+  owner_id: D07.a
+  name: Execution Requirements Decision
+  category: current_business_text
+  count: 1
+  text: Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply.
+- path: modeles/backlog/model.yaml/nodes/34/fields/scope
+  owner_id: D07.a
+  name: Execution Requirements Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    Déterminer, à partir du besoin Supply et de ses contraintes, les prestations et résultats requis : préparation, réception, transport ou production de documents. Préciser biens ou documents concernés, quantités, destinataires, lieux et échéances utiles.
+
+    Exemple : réaliser la livraison requiert une préparation, un document et un transport. La décision explicite ces besoins ; Service Order Management tient ensuite les demandes adressées aux exécutants et leurs évolutions. La décision de service choisit les moyens de service pour y répondre.
+
+    La capacité ne se limite plus à formuler un message ou à exprimer un Service Order. Elle ne recrée ni l’autorisation de la commande D04, ni sa promesse D03, ni un Agreement ou un Case. D07.a conserve son identité pour la responsabilité de détermination des prestations, précisée par U245/U247.
+
+    Frontière : Ne choisit pas encore l’exécutant et ne pilote pas ses opérations internes.
+- path: modeles/backlog/model.yaml/nodes/35/fields/scope
+  owner_id: D07.b
+  name: Service Order Management
+  category: current_business_text
+  count: 1
+  text: |-
+    Tenir ce qui est demandé à un exécutant, ce qu’il accepte de réaliser et les évolutions de cette prise en charge. L’émission d’une demande, son acceptation et sa réalisation restent distinctes. Les opérations possibles dépendent du service et de son état ; aucun cycle universel ni acceptation systématiquement différée n’est imposé.
+
+    Exemple : demander à l’entrepôt de préparer 100 colis avant 16 h ; enregistrer l’acceptation, le refus ou une autre échéance proposée ; tenir ensuite une demande de modification ou d’annulation et la réponse correspondante. Le tracking renseigne en parallèle la préparation commencée, les 60 colis prêts ou le retard annoncé.
+
+    Requirements Decision détermine les prestations nécessaires ; Orchestration coordonne les prestations et leurs dépendances ; Adaptation Decision détermine la variation du plan. Cette gestion met à jour transactionnellement les demandes et leurs états, unitairement ou en groupe selon les interfaces disponibles ; ces modalités ne créent pas de capacités supplémentaires.
+
+    Conserver la distinction entre SLA configuré, engagement individuel, estimation et résultat. Les exécutants gardent leurs opérations internes et D03 la promesse Supply. D07.b conserve la gestion des prises en charge et engagements, désormais explicitée dans le cycle du Service Order.
+- path: modeles/backlog/model.yaml/nodes/37/fields/scope
+  owner_id: D07.d
+  name: Execution Tracking
+  category: current_business_text
+  count: 1
+  text: |-
+    Conserver la responsabilité d’Expected Supply Tracking : quantités, dates, provenance et fermeté des ressources encore attendues. Étendre explicitement le suivi aux opérations et résultats des services, y compris documentaires, sans créer un cycle identique pour tous.
+
+    Exemple : préparation commencée, retard annoncé, expédition partielle, transport en cours ou document en échec. Identifier le fait, la prestation et sa fraîcheur ; distinguer estimation, engagement et constat. Le feedback continu signifie un suivi pendant la prestation, sans télémétrie temps réel uniforme imposée.
+
+    Le tracking alimente l’orchestration pour la coordination des prestations et Adaptation Decision pour la recherche d’une variation du plan ; D03 conserve le réexamen de la promesse lorsque nécessaire. Il ne décide pas seul d’une variante et ne tient pas le stock à la place de D01.
+
+    Frontière : Batch/streaming sont modalités ; distinguer faits et estimations.
+- path: modeles/backlog/model.yaml/nodes/42/fields/finality
+  owner_id: D08
+  name: Product Reference
+  category: current_business_text
+  count: 1
+  text: Disposer de références produit communes aux catalogues et aux opérations de la Supply, pour les biens jouant un rôle
+    Article ou Container.
+- path: modeles/backlog/model.yaml/nodes/46/fields/name
+  owner_id: D13
+  name: Fulfillment Network
+  category: current_business_text
+  count: 1
+  text: Fulfillment Network
+- path: modeles/backlog/model.yaml/nodes/46/fields/independence
+  owner_id: D13
+  name: Fulfillment Network
+  category: current_business_text
+  count: 1
+  text: Party et lieu distincts ; référentiel Fulfillment Network demandé.
+- path: modeles/backlog/model.yaml/nodes/46/source_locator/anchor
+  owner_id: D13
+  name: Fulfillment Network
+  category: identifier_or_provenance
+  count: 1
+  text: d13-fulfillment-network
+- path: modeles/backlog/model.yaml/nodes/47/fields/name
+  owner_id: D13.a
+  name: Fulfillment Network Ingestion
+  category: current_business_text
+  count: 1
+  text: Fulfillment Network Ingestion
+- path: modeles/backlog/model.yaml/nodes/47/source_locator/anchor
+  owner_id: D13.a
+  name: Fulfillment Network Ingestion
+  category: identifier_or_provenance
+  count: 1
+  text: d13-fulfillment-network
+- path: modeles/backlog/model.yaml/nodes/53/fields/finality
+  owner_id: D14
+  name: Execution Service Catalog
+  category: current_business_text
+  count: 1
+  text: Partager une description des services exécutants, de leurs conditions et de leurs accès pour les mobiliser dans la
+    Supply.
+- path: modeles/backlog/model.yaml/nodes/53/fields/scope
+  owner_id: D14
+  name: Execution Service Catalog
+  category: current_business_text
+  count: 1
+  text: |-
+    Offre de préparation, réception, transport et autres services tels que la production de documents. Décrire le résultat rendu, le prestataire, les conditions d’éligibilité et le SLA de réalisation applicable, ainsi que les accès informatiques de sollicitation et de feedback.
+
+    Exemple : un service de préparation à délai configuré, un transport et une génération de document ont des résultats et engagements différents. Le SLA exprime le service rendu, notamment lorsqu’il dépend du physique ; il reste distinct du temps de réponse informatique. L’identité métier d’un service est distincte de ses accès techniques ; un exécutant partiellement manuel peut être sollicité via une adaptation.
+
+    Charge actuelle, capacité contextuelle, demandes, engagements individuels, estimations et résultats relèvent de D06. Fulfillment Network décrit les lieux et relations, Party les parties, Agreement les accords maîtres et Catalog les offres commerciales. Aucun protocole ni endpoint unique imposé.
+- path: modeles/backlog/model.yaml/nodes/53/fields/mastership
+  owner_id: D14
+  name: Execution Service Catalog
+  category: current_business_text
+  count: 1
+  text: Projection de sources maîtresses externes, suivant le principe courant des référentiels Supply. Maître de configuration
+    et articulation avec Agreement à préciser ; aucune administration locale présumée.
+- path: modeles/backlog/model.yaml/nodes/54/fields/scope
+  owner_id: D14.a
+  name: Execution Service Catalog Ingestion
+  category: current_business_text
+  count: 1
+  text: |-
+    Ingestion du référentiel, dans la continuité du principe des projections Supply. Recevoir les évolutions des services et de leurs accès sans reprendre la maîtrise des données. Consultation et recherche restent en lecture seule pour les consommateurs.
+
+    L’ingestion du catalogue ne reçoit pas à sa place le tracking des opérations et ne transforme pas une évolution du SLA en révision automatique des engagements déjà pris. Maîtres et contrats d’échange seront définis dans les règles de fonctionnement.
+
+    Frontière : SLA, engagement individuel, estimation et résultat distincts ; pas de maître local.
+
+    Exemple fictif : Recevoir service documentaire et accès sollicitation/feedback.
+- path: modeles/backlog/model.yaml/nodes/55/fields/finality
+  owner_id: D06.e
+  name: Execution Service Decision
+  category: current_business_text
+  count: 1
+  text: Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable.
+- path: modeles/backlog/model.yaml/nodes/55/fields/scope
+  owner_id: D06.e
+  name: Execution Service Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    Regrouper les responsabilités d’admissibilité et de comparaison d’options auparavant portées par D06.a et D06.c. Exploiter le catalogue des services, les lieux et relations du réseau, les conditions applicables et la visibilité sur la capacité. Déterminer les services utilisables, puis les moyens à mobiliser.
+
+    Exemple : identifier les transporteurs desservant une destination, compatibles avec les marchandises et les horaires, puis déterminer le service à solliciter. La qualification désignait ce contrôle d’admissibilité ; elle n’est plus une capacité distincte dans cette proposition.
+
+    La décision reste dans le besoin Supply et les contraintes portés par D03. Elle ne reprend pas la décision de couverture de l’Order ou la révision de sa promesse. Elle peut être mobilisée pour le plan initial ou par Adaptation Decision. Le regroupement et cette formulation sont appliqués comme proposition ; aucune validation antérieure de D06.a/c n’est transférée.
+- path: modeles/backlog/model.yaml/nodes/56/fields/finality
+  owner_id: D06.f
+  name: Execution Adaptation Decision
+  category: current_business_text
+  count: 1
+  text: Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply.
+- path: modeles/backlog/model.yaml/nodes/56/fields/scope
+  owner_id: D06.f
+  name: Execution Adaptation Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    Déterminer la variation à retenir lorsqu’un fait, un retard ou un échec remet en cause le plan d’exécution. Mobiliser les décisions de service, les capacités communiquées et les informations sur les demandes et réalisations.
+
+    Exemple : un SLA était compatible avec la collecte, mais une panne retarde la préparation. Déterminer une autre collecte, un autre transporteur ou une réalisation partielle selon les possibilités ; Orchestration coordonne ensuite les prestations du plan retenu.
+
+    Si la variation remet la promesse Supply en cause, fournir à D03 les faits et variantes utiles à son réexamen. Cette capacité ne décide pas seule d’une nouvelle promesse. La latitude d’adaptation relève des règles de fonctionnement et ne conditionne pas le catalogue.
+
+    Decision détermine une réponse métier ; Planning conserve le sens reconfigurer, simuler et valider en mobilisant des décisions. La séparation demandée n’ajoute pas automatiquement une capacité Planning ou un contrôle humain obligatoire.
+
+    Frontière : Remonter effet promesse à D03 ; D05 peut revoir son scénario sans décider le transporteur.
+- path: modeles/backlog/model.yaml/nodes/60/fields/name
+  owner_id: BHV004
+  name: Future Supply Projection
+  category: current_business_text
+  count: 1
+  text: Future Supply Projection
+- path: modeles/backlog/model.yaml/nodes/62/fields/market_comparisons/0/source_url
+  owner_id: BHV006
+  name: Simulation & Analysis
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+- path: modeles/backlog/model.yaml/nodes/62/fields/market_comparisons/0/flow_position
+  owner_id: BHV006
+  name: Simulation & Analysis
+  category: market_reference
+  count: 1
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement.'
+- path: modeles/backlog/model.yaml/nodes/62/editorial_basis
+  owner_id: BHV006
+  name: Simulation & Analysis
+  category: validation_or_history
+  count: 1
+  text: 'Comportement de la cible U286–U289 appliqué U290 ; définition détaillée, exemple et périmètre éditoriaux. Marché
+    et justification : modeles/backlog/refactoring-target.yaml, PLAN-SIMULATE. U345 : principe d’application de plan sous
+    Supply Assignment et explication des recommandations intégrés ; formulation détaillée éditoriale.'
+- path: modeles/backlog/model.yaml/nodes/63/fields/definition
+  owner_id: D03.n
+  name: Promise Management
+  category: current_business_text
+  count: 1
+  text: Gérer les propositions et engagements de promesse Supply, leurs confirmations et leurs révisions autorisées, avec
+    quantités, dates, conditions et historique.
+- path: modeles/backlog/model.yaml/nodes/63/fields/finality
+  owner_id: D03.n
+  name: Promise Management
+  category: current_business_text
+  count: 1
+  text: Établir et maintenir des engagements Supply explicites et cohérents avec les possibilités retenues.
+- path: modeles/backlog/model.yaml/nodes/63/fields/scope
+  owner_id: D03.n
+  name: Promise Management
+  category: current_business_text
+  count: 1
+  text: 'Trois comportements : proposition sans engagement confirmé, confirmation des quantités et dates, révision lorsque
+    la situation évolue. Les décisions ATP/CTP/PTP, priorités et échéancier restent distinctes, ainsi que Supply Assignment
+    et Reservation. Exemple fictif : proposer 60 vendredi et 40 lundi, confirmer la première part puis réexaminer la seconde
+    après retard fournisseur. Aucune confirmation n’est assimilée à un mouvement physique ni à une réservation automatique.'
+- path: modeles/backlog/model.yaml/nodes/65/fields/name
+  owner_id: BHV017
+  name: Group Supply Protection
+  category: current_business_text
+  count: 1
+  text: Group Supply Protection
+- path: modeles/backlog/model.yaml/nodes/69/fields/definition
+  owner_id: BHV021
+  name: Promise Proposal
+  category: current_business_text
+  count: 1
+  text: Construire une proposition de mise à disposition de ressources pour honorer une commande Supply, précisant quantités,
+    dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation.
+- path: modeles/backlog/model.yaml/nodes/72/fields/market_comparisons/0/source_url
+  owner_id: BHV024
+  name: Inventory Rebalancing
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+- path: modeles/backlog/model.yaml/nodes/73/fields/market_comparisons/0/source_url
+  owner_id: BHV025
+  name: Stock Consolidation
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+- path: modeles/backlog/model.yaml/nodes/74/fields/scope
+  owner_id: BHV026
+  name: Store Inventory Optimization
+  category: current_business_text
+  count: 1
+  text: |-
+    Déterminer les cibles et seuils par produit, magasin et période à partir de la demande et de l’assortiment retenu. Prendre en compte les contraintes de présentation et de réserve, les délais et la fréquence possibles du réassort, le service recherché et le risque d’excédent. Ces contraintes éclairent les cibles ; elles ne transfèrent ni la conception de l’assortiment ni les opérations magasin à cette décision.
+
+    Exemple fictif : pour un article d’un petit magasin, confronter les ventes attendues avant la prochaine livraison, la présentation souhaitée et la réserve disponible afin de retenir une cible compatible et d’expliciter les compromis. Le résultat ne constitue pas une commande de réassort.
+
+    Traiter plusieurs magasins en masse ne transforme pas des optimisations locales indépendantes en arbitrage multi-échelon.
+
+    [Inventory Planning](model:D05.f) peut mobiliser cette décision dans ses scénarios. [Supply Protection](model:D02.b) gouverne et applique les paramètres retenus ; [Initial Stocking Decision](model:D05.g) et [Replenishment Decision](model:D05.e) décident des apports, [Stock Redistribution Decision](model:D05.c) des transferts de stock existant. L’affectation aux Orders et la réalisation physique restent distinctes.
+- path: modeles/backlog/model.yaml/nodes/75/fields/scope
+  owner_id: BHV027
+  name: Distribution Center Inventory Optimization
+  category: current_business_text
+  count: 1
+  text: |-
+    Déterminer les cibles et seuils par produit, centre de distribution et période selon les besoins des magasins ou canaux desservis, les apports fournisseurs et leurs aléas. La demande aval peut être alimentée par des commandes projetées ; la production de ces prévisions n’est pas absorbée par ce comportement. Tenir compte du service attendu et de la capacité de stockage.
+
+    Exemple fictif : pour un centre alimentant vingt magasins, déterminer le stock cible selon leurs besoins prévus et un délai fournisseur variable. Le calcul agrège la demande aval sans nécessairement reconfigurer les cibles des vingt magasins.
+
+    Le rôle de centre de distribution est déterminant : ce comportement n’optimise ni le rangement, ni le picking, ni la main-d’œuvre de l’entrepôt.
+
+    [Inventory Planning](model:D05.f) peut mobiliser cette décision dans ses scénarios. [Supply Protection](model:D02.b) gouverne et applique les paramètres retenus ; [Initial Stocking Decision](model:D05.g) et [Replenishment Decision](model:D05.e) décident des apports, [Stock Redistribution Decision](model:D05.c) des transferts de stock existant. L’affectation aux Orders et la réalisation physique restent distinctes.
+- path: modeles/backlog/model.yaml/nodes/76/fields/scope
+  owner_id: BHV028
+  name: Multi-Echelon Inventory Optimization
+  category: current_business_text
+  count: 1
+  text: |-
+    Déterminer conjointement les cibles de lieux appartenant à plusieurs échelons en tenant compte des flux, délais, incertitudes et exigences de service. Choisir où porter la protection et éviter de multiplier les marges contre les mêmes aléas. Le résultat est un ensemble cohérent d’objectifs par produit, lieu et période, avec les hypothèses et contraintes utiles.
+
+    Exemple fictif : comparer une sécurité davantage portée par un entrepôt et une sécurité davantage répartie en magasins, selon la fiabilité du réassort et la disponibilité client recherchée. Ni centralisation systématique, ni baisse garantie du stock total.
+
+    Le mécanisme peut réviser les cibles locales ; il ne se limite pas à sommer des résultats indépendants. La progression éventuelle des outils ne constitue pas une chaîne obligatoire de comportements.
+
+    [Inventory Planning](model:D05.f) peut mobiliser cette décision dans ses scénarios. [Supply Protection](model:D02.b) gouverne et applique les paramètres retenus ; [Initial Stocking Decision](model:D05.g) et [Replenishment Decision](model:D05.e) décident des apports, [Stock Redistribution Decision](model:D05.c) des transferts de stock existant. L’affectation aux Orders et la réalisation physique restent distinctes.
+- path: modeles/backlog/model.yaml/nodes/77/fields/market_comparisons/1/product
+  owner_id: BHV029
+  name: Periodic Physical Inventory
+  category: market_reference
+  count: 1
+  text: E-Business Suite Mobile Supply Chain Applications
+- path: modeles/backlog/model.yaml/nodes/78/fields/market_comparisons/0/source_url
+  owner_id: BHV030
+  name: Cycle Counting
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+- path: modeles/backlog/model.yaml/nodes/78/fields/market_comparisons/2/product
+  owner_id: BHV030
+  name: Cycle Counting
+  category: market_reference
+  count: 1
+  text: E-Business Suite Mobile Supply Chain Applications
+- path: modeles/backlog/model.yaml/nodes/79/fields/market_comparisons/0/source_url
+  owner_id: BHV031
+  name: Spot Counting
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+- path: modeles/backlog/model.yaml/nodes/80/fields/scope
+  owner_id: D05.h
+  name: Reservation Policy Decision
+  category: current_business_text
+  count: 1
+  text: |-
+    La décision produit les conditions dans lesquelles réserver : événements déclencheurs, horizon avant le besoin, durée de protection, conditions de maintien et de réexamen. Une politique peut être définie à l’avance et contenir des règles conditionnelles ; sa sélection contextuelle et la révision de ses paramètres ne sont pas confondues.
+
+    Les quatre comportements adoptés U343 se combinent sans constituer une séquence. Les variables de sortie sont communes : elles ne donnent pas lieu à un comportement par seuil, durée, écran ou opération. Les règles doivent expliciter le résultat lorsque les conditions se contredisent ou que les données sont insuffisantes ; aucun ordre de priorité universel n’est imposé.
+
+    [Inventory Visibility](model:D01.c) fournit les états de stock ; [ATP](model:D03.i) établit les possibilités en tenant compte des engagements. Les flux de demandes et de réservations sont distincts des sorties physiques. Les estimations de conversion peuvent être utilisées si elles existent ; aucune capacité de scoring client ou architecture IA n’est présumée.
+
+    [Reservation](model:D02.c) réalise et maintient les engagements individuels. [Supply Assignment](model:D02.e) garde les liens ressources-commandes, [Order Prioritization](model:D03.m) les priorités, [Group Protection Decision](model:D05.d) les enveloppes et [Inventory Target Decision](model:D05.a) les cibles de stock. La gouvernance et la mise en vigueur des politiques restent une responsabilité de management ; leur porteur précis est à arbitrer. Aucun transfert implicite de cette gouvernance vers Reservation Policy Decision.
+
+    Exemple fictif : conserver une réservation au paiement en fonctionnement normal, puis examiner une protection plus précoce et plus courte pour une capsule sous tension. La décision compare aussi le risque de paniers abandonnés ; elle ne suppose pas que tout stock rare doit être réservé plus tôt. Les garanties existantes restent applicables selon leurs conditions.
+
+    Rattachement adopté U343 à Inventory Optimization : optimiser le compromis entre disponibilité pour les ventes, immobilisation et risque. Le résultat peut être mobilisé lors d’une promesse ou d’un parcours de vente sans transférer à D05 la satisfaction des Orders. Ce parent proposé après U342 est adopté U343 ; les contrats détaillés restent proposés.
+- path: modeles/backlog/model.yaml/nodes/80/fields/market_comparisons/0/source_url
+  owner_id: D05.h
+  name: Reservation Policy Decision
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+- path: modeles/backlog/model.yaml/nodes/81/fields/market_comparisons/0/source_url
+  owner_id: BHV032
+  name: Milestone-Based Reservation Policy
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+- path: modeles/backlog/model.yaml/nodes/83/fields/market_comparisons/0/source_url
+  owner_id: BHV034
+  name: Demand-Differentiated Reservation Policy
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+- path: modeles/backlog/model.yaml/nodes/85/fields/scope
+  owner_id: BHV036
+  name: Order Firming
+  category: current_business_text
+  count: 1
+  text: |-
+    Passer d’une intention encore planifiée à un Order ferme selon les règles de son type, en conservant l’origine et les engagements associés. Ce changement engage les pratiques de préparation et de coordination de l’entreprise ; il ne s’agit pas seulement de changer un statut informatique. L’affermissement peut être automatique ou décidé par un acteur autorisé ; aucun contrôle manuel systématique imposé.
+
+    Exemple fictif : une proposition de transfert de 100 pièces destinée à une implantation magasin devient un ordre de transfert ferme, exploitable par les responsables de sa mise en œuvre. Son affermissement ne prouve ni lancement, ni préparation physique, ni réservation de 100 pièces.
+
+    Les restrictions résultent de règles explicites : devenir ferme ne fige pas automatiquement toutes les dates, les quantités, la promesse ou la source. Order Freezing porte le mécanisme distinct de protection contre les réoptimisations ; les deux peuvent se combiner. La capacité de gestion du type d’Order conserve son contenu ; Promise Management garde la promesse et Supply Assignment les liens ressources-commandes. L’existence de la distinction planifié/ferme s’apprécie par type d’Order ; aucun cycle universel imposé.
+- path: modeles/backlog/model.yaml/nodes/85/fields/market_comparisons/0/source_url
+  owner_id: BHV036
+  name: Order Firming
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+- path: modeles/backlog/model.yaml/nodes/85/fields/market_comparisons/0/flow_position
+  owner_id: BHV036
+  name: Order Firming
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/86/fields/scope
+  owner_id: BHV037
+  name: Order Freezing
+  category: current_business_text
+  count: 2
+  text: |-
+    Appliquer et maintenir une protection métier sur un Order, une ligne ou une quantité définie : échéance identifiée, quantité, engagement confirmé et, si cela est explicitement requis, affectation de ressources. Distinguer les dates demandées des dates promises. Rendre les restrictions connues des décisions et des capacités qui appliquent leurs résultats ; le gel ne recalcule pas lui-même la meilleure promesse.
+
+    Exemple fictif : 100 pièces promises vendredi restent protégées contre une optimisation qui favoriserait une autre demande. Changer d’entrepôt fournisseur demeure possible si la source n’est pas gelée et si les autres contraintes restent satisfaites. Si un lot précis est également protégé, Supply Assignment doit préserver ce lien. Protéger un engagement et protéger son affectation sont des portées distinctes du mécanisme.
+
+    Le gel ne garantit pas la présence physique de la ressource. Si un incident rend l’engagement irréalisable, rendre l’exception visible et solliciter une révision selon les responsabilités et autorisations applicables ; ne pas masquer l’échec ni lever silencieusement la protection. Les règles de durée, d’exception et de levée sont à préciser par contexte ; aucune immutabilité absolue ni validation humaine systématique imposée.
+
+    Le bénéfice est la stabilité des engagements et de la préparation opérationnelle ; le compromis est une latitude d’optimisation réduite. Geler ne signifie pas mettre en attente l’exécution : Hold bloque une progression, le gel limite la modification des éléments désignés. Ce mécanisme ne réserve pas implicitement le stock, ne crée pas une enveloppe Supply Protection et n’est ni un verrou transactionnel ni une stratégie de calcul incrémental. API, écran, batch et flux sont des moyens d’application. Une simulation peut montrer une alternative hors gel si elle en expose la dérogation nécessaire ; son résultat ne modifie pas l’engagement protégé.
+
+    Nommage : Order Freezing reprend la notion de gel utilisée en planification. Le périmètre FLOW est une protection sélective des Orders ; il ne reprend pas automatiquement le gel temporel Microsoft, qui limite aussi la création d’ordres planifiés. Nom Order Freezing adopté U350 ; détails éditoriaux proposés.
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/0/flow_position
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/1/element_name
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/1/source_title
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/1/source_url
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 2
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/1/flow_position
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/2/source_url
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+- path: modeles/backlog/model.yaml/nodes/86/fields/market_comparisons/2/flow_position
+  owner_id: BHV037
+  name: Order Freezing
+  category: market_reference
+  count: 1
+  text: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order Lifecycle
+    Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent leurs
+    responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/87/fields/market_comparisons/0/source_url
+  owner_id: D04.p
+  name: Order Type
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+- path: modeles/backlog/model.yaml/nodes/87/fields/market_comparisons/1/source_url
+  owner_id: D04.p
+  name: Order Type
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+- path: modeles/backlog/model.yaml/nodes/87/fields/market_comparisons/3/source_url
+  owner_id: D04.p
+  name: Order Type
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+- path: modeles/backlog/model.yaml/nodes/88/fields/market_comparisons/0/similarities
+  owner_id: BHV038
+  name: Order Drafting
+  category: market_reference
+  count: 1
+  text: Une commande enregistrée mais non soumise au fulfillment reste Draft et peut être modifiée.
+- path: modeles/backlog/model.yaml/nodes/88/fields/market_comparisons/0/source_url
+  owner_id: BHV038
+  name: Order Drafting
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+- path: modeles/backlog/model.yaml/nodes/89/fields/market_comparisons/0/source_url
+  owner_id: BHV039
+  name: Order Release
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+- path: modeles/backlog/model.yaml/nodes/90/fields/market_comparisons/0/source_url
+  owner_id: BHV040
+  name: Order Hold & Resume
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+- path: modeles/backlog/model.yaml/nodes/90/fields/market_comparisons/1/source_url
+  owner_id: BHV040
+  name: Order Hold & Resume
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+- path: modeles/backlog/model.yaml/nodes/91/fields/market_comparisons/0/source_url
+  owner_id: BHV041
+  name: Order Rescheduling
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+- path: modeles/backlog/model.yaml/nodes/92/fields/market_comparisons/0/source_url
+  owner_id: BHV042
+  name: Order Cancellation
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+- path: modeles/backlog/model.yaml/nodes/92/fields/market_comparisons/1/source_url
+  owner_id: BHV042
+  name: Order Cancellation
+  category: market_reference
+  count: 1
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+- path: modeles/backlog/model.yaml/nodes/93/fields/market_comparisons/0/source_url
+  owner_id: BHV043
+  name: Order Closure
+  category: market_reference
+  count: 1
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+- path: modeles/backlog/model.yaml/nodes/94/fields/market_comparisons/0/similarities
+  owner_id: BHV044
+  name: Order Splitting
+  category: market_reference
+  count: 1
+  text: Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches de fulfillment.
+- path: modeles/backlog/model.yaml/nodes/94/fields/market_comparisons/0/source_url
+  owner_id: BHV044
+  name: Order Splitting
+  category: market_reference
+  count: 2
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+- path: modeles/backlog/model.yaml/nodes/95/fields/market_comparisons/0/element_name
+  owner_id: D04.q
+  name: Order Archiving
+  category: market_reference
+  count: 1
+  text: Archive Dynamics 365 Supply Chain Management Sales orders data
+- path: modeles/backlog/model.yaml/nodes/95/fields/market_comparisons/0/source_title
+  owner_id: D04.q
+  name: Order Archiving
+  category: market_reference
+  count: 1
+  text: Archive Dynamics 365 Supply Chain Management Sales orders data
+- path: modeles/backlog/model.yaml/nodes/96/fields/name
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: current_business_text
+  count: 1
+  text: Supply Assignment Plan Application
+- path: modeles/backlog/model.yaml/nodes/96/fields/scope
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: current_business_text
+  count: 1
+  text: |-
+    Exemple fictif : Le plan affecte 60 pièces présentes et 40 attendues à une commande. Si une ressource manque, expliquer l’écart sans substituer silencieusement un autre plan.
+
+    Un plan peut prescrire un complément avec préservation ou une réaffectation : les trois comportements sont combinables, sans séquence imposée. Restituer les écarts entre les affectations prévues et appliquées ; un écart peut appeler une nouvelle décision. Aucune transaction atomique de tout le plan ou validation humaine systématique n’est imposée.
+
+    Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu, l’état ou la structure d’un Order mobilise les responsabilités D04 ; D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+- path: modeles/backlog/model.yaml/nodes/96/fields/market_comparisons/0/element_name
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: market_reference
+  count: 1
+  text: Supply Assignment (ARun)
+- path: modeles/backlog/model.yaml/nodes/96/fields/market_comparisons/0/source_title
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: market_reference
+  count: 1
+  text: Supply Assignment (ARun)
+- path: modeles/backlog/model.yaml/nodes/96/fields/market_comparisons/0/flow_position
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: market_reference
+  count: 2
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement. U364
+    : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant les liens et réaffectation
+    des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/96/fields/market_comparisons/1/source_locator
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: market_reference
+  count: 1
+  text: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+- path: modeles/backlog/model.yaml/nodes/96/fields/market_comparisons/1/flow_position
+  owner_id: BHV045
+  name: Supply Assignment Plan Application
+  category: market_reference
+  count: 2
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement. U364
+    : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant les liens et réaffectation
+    des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/97/fields/name
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: current_business_text
+  count: 1
+  text: Incremental Supply Assignment
+- path: modeles/backlog/model.yaml/nodes/97/fields/scope
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: current_business_text
+  count: 1
+  text: |-
+    Exemple fictif : Sur 100 pièces demandées, conserver les 70 déjà affectées et rechercher les 30 restantes.
+
+    Préserver l’existant est la politique de ce traitement ; cela ne crée pas un gel durable de chaque Order. Ce mécanisme vise le reliquat, sans promettre une stratégie technique de recalcul incrémental, RETE ou traitement par API. Si une affectation conservée devient irréalisable, rendre l’exception visible ; sa révision relève d’un arbitrage et du mécanisme de réaffectation. La préservation ne garantit pas la présence physique de la ressource.
+
+    Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu, l’état ou la structure d’un Order mobilise les responsabilités D04 ; D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+
+    Nommage : libellé descriptif FLOW ; pas de terme unifié du marché démontré.
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/0/source_locator
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 1
+  text: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/0/flow_position
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 2
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement. U364
+    : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant les liens et réaffectation
+    des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/1/element_name
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/1/source_title
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 1
+  text: Keep supply for confirmed demand
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/1/source_url
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 2
+  text: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- path: modeles/backlog/model.yaml/nodes/97/fields/market_comparisons/1/flow_position
+  owner_id: BHV046
+  name: Incremental Supply Assignment
+  category: market_reference
+  count: 2
+  text: 'Appui à la stabilité des affectations, mais périmètre produit plus large incluant la chaîne de planification. Ne
+    démontre pas une équivalence exacte avec Incremental Supply Assignment. U364 : trois mécanismes sous Supply Assignment,
+    avec distinction explicite entre complément conservant les liens et réaffectation des liens révisables. Les décisions
+    et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+- path: modeles/backlog/model.yaml/nodes/98/fields/name
+  owner_id: BHV047
+  name: Supply Reassignment
+  category: current_business_text
+  count: 1
+  text: Supply Reassignment
+- path: modeles/backlog/model.yaml/nodes/98/fields/scope
+  owner_id: BHV047
+  name: Supply Reassignment
+  category: current_business_text
+  count: 1
+  text: |-
+    Exemple fictif : Après le retard d’un arrivage, modifier les ressources affectées à plusieurs commandes en respectant leurs protections.
+
+    La réaffectation peut modifier les ressources associées, y compris entre plusieurs commandes, dans le périmètre révisable. Elle n’autorise pas à dégrader une promesse protégée ni à lever silencieusement une réservation ou un gel. Elle peut préserver une partie des liens existants ; aucune suppression et reconstruction complète n’est imposée par FLOW. Spread est une politique de répartition qui alimente les décisions ; ce comportement applique leurs résultats sans devenir un optimiseur concurrent.
+
+    Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu, l’état ou la structure d’un Order mobilise les responsabilités D04 ; D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+
+    Nommage : Reassignment reprend le terme SAP. Le périmètre FLOW sépare la décision de sa mise en application.
+- path: modeles/backlog/model.yaml/nodes/98/fields/market_comparisons/0/source_locator
+  owner_id: BHV047
+  name: Supply Reassignment
+  category: market_reference
+  count: 1
+  text: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+- path: modeles/backlog/model.yaml/nodes/98/fields/market_comparisons/0/flow_position
+  owner_id: BHV047
+  name: Supply Reassignment
+  category: market_reference
+  count: 2
+  text: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées et autres capacités
+    gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer un engagement. U364
+    : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant les liens et réaffectation
+    des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+- path: modeles/backlog/model.yaml/relations/39/id
+  owner_id: REL-UNIVERSE-SUPPLY-D01
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-D01
+- path: modeles/backlog/model.yaml/relations/39/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-D01
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/40/id
+  owner_id: REL-UNIVERSE-SUPPLY-D03
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-D03
+- path: modeles/backlog/model.yaml/relations/40/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-D03
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/41/id
+  owner_id: REL-UNIVERSE-SUPPLY-D04
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-D04
+- path: modeles/backlog/model.yaml/relations/41/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-D04
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/42/id
+  owner_id: REL-UNIVERSE-SUPPLY-D05
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-D05
+- path: modeles/backlog/model.yaml/relations/42/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-D05
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/43/id
+  owner_id: REL-UNIVERSE-SUPPLY-D06
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-D06
+- path: modeles/backlog/model.yaml/relations/43/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-D06
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/44/id
+  owner_id: REL-UNIVERSE-SUPPLY-business-references
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: REL-UNIVERSE-SUPPLY-business-references
+- path: modeles/backlog/model.yaml/relations/44/source_id
+  owner_id: REL-UNIVERSE-SUPPLY-business-references
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: universe-supply
+- path: modeles/backlog/model.yaml/relations/66/qualification/meaning
+  owner_id: REL-SERVICE-CATALOG-PROMISING
+  name: ''
+  category: current_business_text
+  count: 1
+  text: D03 utilise les conditions de service configurées pour construire la promesse, avec la capacité contextuelle fournie
+    par D06 et les autres informations Supply.
+- path: modeles/backlog/model.yaml/relations/67/qualification/meaning
+  owner_id: REL-EXECUTION-PROMISING
+  name: ''
+  category: current_business_text
+  count: 1
+  text: D06 décrit les capacités et possibilités opérationnelles ainsi que les évolutions d’exécution utiles au calcul et
+    au réexamen de la promesse Supply par D03.
+- path: modeles/backlog/model.yaml/relations/76/qualification/meaning
+  owner_id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+  name: ''
+  category: current_business_text
+  count: 1
+  text: Si une variation remet la promesse Supply en cause, Adaptation Decision fournit les faits et variantes à D03 pour
+    son réexamen ; elle ne révise pas elle-même la promesse.
+- path: modeles/backlog/model.yaml/relations/80/qualification/meaning
+  owner_id: REL-CTP-EXECUTION-SERVICE
+  name: ''
+  category: current_business_text
+  count: 1
+  text: CTP a besoin des possibilités de service compatibles déterminées par Execution Service Decision pour établir la faisabilité
+    Supply.
+- path: modeles/backlog/model.yaml/relations/118/qualification/meaning
+  owner_id: REL-NEEDS-U290-022
+  name: ''
+  category: current_business_text
+  count: 1
+  text: A besoin de variation opérationnelle retenue et impacts Supply.
+- path: modeles/backlog/model.yaml/relations/202/qualification/meaning
+  owner_id: REL-NEEDS-U290-119
+  name: ''
+  category: current_business_text
+  count: 1
+  text: A besoin de variation opérationnelle retenue et impacts Supply.
+- path: modeles/backlog/model.yaml/relations/262/review/note
+  owner_id: REL-BEHAVIOR-BHV045
+  name: ''
+  category: validation_or_history
+  count: 1
+  text: Décomposition visible de Supply Assignment, U364.
+- path: modeles/backlog/model.yaml/relations/263/review/note
+  owner_id: REL-BEHAVIOR-BHV046
+  name: ''
+  category: validation_or_history
+  count: 1
+  text: Décomposition visible de Supply Assignment, U364.
+- path: modeles/backlog/model.yaml/relations/264/review/note
+  owner_id: REL-BEHAVIOR-BHV047
+  name: ''
+  category: validation_or_history
+  count: 1
+  text: Décomposition visible de Supply Assignment, U364.
+- path: modeles/backlog/model.yaml/alternatives/0/note
+  owner_id: D03-BACKLOG-DOMAIN-U158
+  name: ''
+  category: context_metadata
+  count: 1
+  text: 'Nom de domaine proposé par Laurent U158 ; définition/finalité proposées par Codex. D03.arbitrage du carnet versus
+    D04.contenu et cycle de vie des Orders : frontière à éprouver, aucune fusion décidée. Supply Assignment et simulation
+    à revoir par résultats ; les capacités U154 restent actives. Aucun rang natif Oracle de domaine métier n’est affirmé.'
+- path: modeles/backlog/model.yaml/principles/0/statement
+  owner_id: PRINCIPLE-REFERENCE-PROJECTIONS
+  name: ''
+  category: context_metadata
+  count: 2
+  text: Les référentiels de la Supply sont des projections de sources de vérité maîtrisées par des produits tiers. Chaque
+    référentiel comporte au moins une ingestion ; visibilité et recherche sont en lecture seule. L’ingestion actualise la
+    projection sans transférer la maîtrise ; administration et validation métier des données maîtresses restent externes.
+    Cette règle ne préjuge pas de l’autorité sur les commandes ni des états transactionnels propres à la Supply.
+- path: modeles/backlog/model.yaml/principles/3/id
+  owner_id: PRINCIPLE-SUPPLY-DOCUMENTS
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: PRINCIPLE-SUPPLY-DOCUMENTS
+- path: modeles/backlog/model.yaml/principles/3/statement
+  owner_id: PRINCIPLE-SUPPLY-DOCUMENTS
+  name: ''
+  category: context_metadata
+  count: 1
+  text: Supply générique orientée documents d’autorisation ; les parcours commerciaux appartiennent au modèle processus.
+- path: modeles/backlog/model.yaml/principles/6/id
+  owner_id: PRINCIPLE-CASE-SUPPLY-ORDERS
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: PRINCIPLE-CASE-SUPPLY-ORDERS
+- path: modeles/backlog/model.yaml/principles/6/statement
+  owner_id: PRINCIPLE-CASE-SUPPLY-ORDERS
+  name: ''
+  category: context_metadata
+  count: 1
+  text: Business Services porte le traitement des demandes et problèmes des parties prenantes ; le Case en est un dossier
+    de traitement. Supply pilote ses Orders, pour toutes natures de commandes, clients et volumes. Les Service Orders portent
+    les prestations confiées au contexte Services exécutant. Les modèles gardent leurs définitions propres et des contrats
+    explicites, sans cardinalité ni cycle universel imposé.
+- path: modeles/backlog/model.yaml/principles/8/statement
+  owner_id: PRINCIPLE-EXECUTION-ORCHESTRATION
+  name: ''
+  category: context_metadata
+  count: 1
+  text: Le référentiel des services porte l’offre et les SLA configurés ; D06 décrit la capacité contextuelle et orchestre
+    l’exécution, son tracking et son adaptation. D03 utilise D06 pour la promesse Supply et son réexamen ; les exécutants
+    gardent leurs opérations internes. Un SLA compatible n’empêche pas un échec opérationnel. La latitude d’adaptation relève
+    des règles de fonctionnement sans impact sur le catalogue des capacités.
+- path: modeles/backlog/model.yaml/principles/9/statement
+  owner_id: PRINCIPLE-EXECUTION-DECISION-AND-COORDINATION
+  name: ''
+  category: context_metadata
+  count: 1
+  text: La visibilité sur la capacité rend accessibles les informations communiquées par les exécutants. La décision de besoins
+    détermine les prestations nécessaires ; Service Order Management tient les demandes et leur cycle. Orchestration coordonne
+    les prestations et leurs dépendances ; Adaptation Decision détermine les variations du plan. D03 conserve la promesse
+    Supply et les exécutants leurs opérations internes.
+- path: modeles/backlog/model.yaml/principles/12/statement
+  owner_id: PRINCIPLE-INVENTORY-SCENARIO-APPLICATION
+  name: ''
+  category: context_metadata
+  count: 1
+  text: Inventory Planning comporte construction de scénarios alternatifs, Simulation & Analysis et adaptation du scénario
+    en cours. Comparaison, autorisation et mise en action restent des fonctions utiles. L’application mobilise Supply Protection,
+    les gestions d’Orders et D06 sans absorber leurs responsabilités.
+- path: modeles/backlog/model.yaml/principles/13/id
+  owner_id: PRINCIPLE-SUPPLY-ASSIGNMENT-VALUE
+  name: ''
+  category: identifier_or_provenance
+  count: 1
+  text: PRINCIPLE-SUPPLY-ASSIGNMENT-VALUE
+- path: modeles/backlog/model.yaml/principles/13/statement
+  owner_id: PRINCIPLE-SUPPLY-ASSIGNMENT-VALUE
+  name: ''
+  category: context_metadata
+  count: 2
+  text: Supply Assignment affecte les ressources aux commandes afin de maximiser une valeur multidimensionnelle sous contraintes.
+    Les critères, règles de priorité et arbitrages économiques restent explicites et mobilisent les décisions spécialisées
+    ; aucune pondération universelle ni optimum garanti. Supply Assignment Plan signifie plan d’affectation, distinct des
+    enveloppes de protection de groupes.
+- path: modeles/backlog/glossary.yaml/terms/16/notes
+  owner_id: TER017
+  name: Affectation de ressource
+  category: current_business_text
+  count: 1
+  text: |-
+    La quantité affectée peut différer de la quantité demandée ou promise. Qualifier l’affectation d’une tâche, qui relève d’un autre objet. N1/N3. U289 : notion résultat associée à Supply Assignment (affectation des ressources aux commandes). Ne pas employer Allocation seul comme synonyme. Un lien peut porter sur une ressource future ; il ne prouve ni promesse confirmée ni mouvement physique. Convention : modeles/backlog/assignment-terminology.yaml.
+
+    U290 : la finalité de l’affectation est de maximiser une valeur multidimensionnelle sous contraintes. Service, engagements, coûts et risques sont des exemples éditoriaux ; leurs poids et modes d’arbitrage ne sont pas fixés.
+- path: modeles/backlog/glossary.yaml/terms/17/notes
+  owner_id: TER018
+  name: Allocation de groupe
+  category: current_business_text
+  count: 1
+  text: 'Employer le qualificatif ; distinguer cette notion d’une affectation à une demande et d’un plafond de confirmation.
+    N2/N3. U289 : Allocation n’est pas un synonyme de Supply Assignment. Cette entrée historique reste résoluble ; le mot
+    seul est écarté des nouveaux libellés FLOW.'
+- path: modeles/backlog/glossary.yaml/terms/33/short_description
+  owner_id: TER034
+  name: OMS — sens fonctionnel du projet
+  category: current_business_text
+  count: 1
+  text: Case Management préimplémenté pour la vente, au-dessus du transactionnel Supply.
+- path: modeles/backlog/glossary.yaml/terms/33/definition
+  owner_id: TER034
+  name: OMS — sens fonctionnel du projet
+  category: current_business_text
+  count: 1
+  text: Case Management préimplémenté pour la vente, au-dessus du transactionnel Supply.
+- path: modeles/backlog/glossary.yaml/terms/34/name
+  owner_id: TER035
+  name: Supply — sens fonctionnel du projet
+  category: current_business_text
+  count: 1
+  text: Supply — sens fonctionnel du projet
+- path: modeles/backlog/glossary.yaml/terms/69/context
+  owner_id: TER045
+  name: Capable-to-Promise — CTP
+  category: current_business_text
+  count: 1
+  text: 'Sens FLOW : faisabilité Supply sous adaptation. Priorités, échéancier, arbitrage économique, politiques de stock
+    et services gardent leurs décisions responsables.'
+- path: modeles/backlog/glossary.yaml/terms/77/notes
+  owner_id: TER053
+  name: Location
+  category: current_business_text
+  count: 1
+  text: 'Raffinement proposé à partir des points U100 : le lieu est à relier aux Party responsables. U102 confirme depuis
+    Party ≠ lieu et demande Fulfillment Network ; détail et rang de domaine ouverts.'
+- path: modeles/backlog/glossary.yaml/terms/78/name
+  owner_id: TER054
+  name: Fulfillment Network
+  category: current_business_text
+  count: 1
+  text: Fulfillment Network
+- path: modeles/backlog/glossary.yaml/terms/89/name
+  owner_id: TER065
+  name: Supply Order
+  category: current_business_text
+  count: 1
+  text: Supply Order
+- path: modeles/backlog/glossary.yaml/terms/89/short_description
+  owner_id: TER065
+  name: Supply Order
+  category: current_business_text
+  count: 1
+  text: Commande dont la Supply travaille la couverture, les priorités et la promesse.
+- path: modeles/backlog/glossary.yaml/terms/89/definition
+  owner_id: TER065
+  name: Supply Order
+  category: current_business_text
+  count: 1
+  text: Commande dont la Supply travaille la couverture, les priorités et la promesse.
+- path: modeles/backlog/glossary.yaml/terms/93/context
+  owner_id: TER069
+  name: Sales Order
+  category: current_business_text
+  count: 1
+  text: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+- path: modeles/backlog/glossary.yaml/terms/94/context
+  owner_id: TER070
+  name: Purchase Order
+  category: current_business_text
+  count: 1
+  text: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+- path: modeles/backlog/glossary.yaml/terms/95/context
+  owner_id: TER071
+  name: Transfer Order
+  category: current_business_text
+  count: 1
+  text: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+- path: modeles/backlog/glossary.yaml/terms/96/context
+  owner_id: TER072
+  name: Customer Return Order
+  category: current_business_text
+  count: 1
+  text: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+- path: modeles/backlog/glossary.yaml/terms/97/context
+  owner_id: TER073
+  name: Supplier Return Order
+  category: current_business_text
+  count: 1
+  text: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
+- path: modeles/backlog/glossary.yaml/terms/102/name
+  owner_id: TER078
+  name: Supply Assignment Plan
+  category: current_business_text
+  count: 1
+  text: Supply Assignment Plan
+- path: modeles/backlog/glossary.yaml/terms/103/notes
+  owner_id: TER079
+  name: Implantation
+  category: current_business_text
+  count: 1
+  text: |-
+    L’existant rapporté utilise deux saisons annuelles, été/hiver. Des périodes plus fines ou capsules sont envisagées pour la cible, sans pratique installée déduite. Rapprochement marché : Initial Allocation chez SAP et RELEX ; allocation désigne ici la distribution retail vers les magasins, pas les enveloppes de protection ni automatiquement Supply Assignment. Décider les apports et réaliser la livraison restent distincts.
+
+    U316 : Initial Stocking est le terme anglais adopté pour l’implantation. [Initial Stocking Decision](model:D05.g) porte la décision ; [Replenishment Decision](model:D05.e) reste distincte pour le réassort continu. Initial Distribution est une alternative de marché documentée, pas le nom retenu.
+- path: modeles/backlog/glossary.yaml/terms/105/market_comparisons/0/similarities
+  owner_id: TER081
+  name: Split
+  category: market_reference
+  count: 1
+  text: Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches de fulfillment.
+- path: modeles/backlog/glossary.yaml/terms/105/market_comparisons/0/source_url
+  owner_id: TER081
+  name: Split
+  category: market_reference
+  count: 2
+  text: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+- path: modeles/backlog/glossary.yaml/terms/106/market_comparisons/0/flow_position
+  owner_id: TER082
+  name: Spread
+  category: market_reference
+  count: 1
+  text: Spread est une politique de répartition des ressources entre commandes. Les décisions déterminent les parts ; Supply
+    Assignment applique les liens. Aucun agrégat décisionnel ou comportement automatique ajouté. U363 applique la structure
+    ; les correspondances marché restent proposées.
+- path: modeles/backlog/modeling-glossary.yaml/terms/5/notes/7
+  owner_id: MOD006
+  name: Capability Behavior
+  category: context_metadata
+  count: 1
+  text: 'U282 précise la maille recherchée sur Supply Protection : mécanismes métier de protection, plutôt que liste des opérations
+    sur Allocation. Les opérations fonctionnelles restent matière de conception produit ; elles ne constituent pas un nouveau
+    niveau inférieur dans le modèle. La nouvelle décomposition cible reste à proposer.'
+- path: modeles/backlog/modeling-glossary.yaml/terms/5/review/adopted_scope
+  owner_id: MOD006
+  name: Capability Behavior
+  category: validation_or_history
+  count: 1
+  text: 'Comportement comme niveau complémentaire sous la capacité ; arrêt de la décomposition à ce niveau. U263 : descriptions
+    factuelles sans qualification marketing. U265 : exigence de justification par une complexité ou un bénéfice ciblé. U282
+    : préférence explicite pour les mécanismes métier plutôt que les opérations, illustrée par Supply Protection. U283 retient
+    Mécanisme, Politique, Variante ou bénéfice comme critères différenciants de décomposition. Pour Planning, les effets sur
+    les pratiques humaines et les processus distinguent les comportements des fonctions de produits. Ces critères ne constituent
+    pas quatre niveaux supplémentaires. U284 confirme la direction U283 et retient Simulation & analyse en un seul comportement
+    : les impacts sont intégrés à ce comportement, sans Scenario Impact Analysis autonome dans la cible.'
+app_hits:
+- path: app/src/icons.tsx
+  line: 15
+  text: 'Supply: Orbit, Case: BriefcaseBusiness, ''Business References'': BookOpen,'
+- path: app/src/icons.tsx
+  line: 18
+  text: 'Stocktaking: ClipboardCheck, ''Supply Protection'': ShieldCheck, Reservation: BookmarkCheck,'
+- path: app/src/icons.tsx
+  line: 23
+  text: '''Supply Assignment'': GitBranch, ''Promise Revision'': RefreshCw,'
+- path: app/src/icons.tsx
+  line: 24
+  text: '''Allocation Eligibility Decision'': ListChecks, ''Fulfillment Source Decision'': MapPin,'
+- path: app/src/icons.tsx
+  line: 25
+  text: '''Fulfillment Route Decision'': Route, ''Product Substitution Decision'': Replace,'
+- path: app/src/icons.tsx
+  line: 26
+  text: '''Supply Creation Decision'': PackagePlus, ''Order Management'': ClipboardList,'
+- path: app/src/icons.tsx
+  line: 35
+  text: '''Expected Supply Tracking'': PackageSearch, ''Party / Role'': Users,'
+- path: app/src/icons.tsx
+  line: 37
+  text: '''Fulfillment Network'': Network, ''Party / Role Ingestion'': Download,'
+- path: app/src/icons.tsx
+  line: 39
+  text: '''Catalog Ingestion'': Download, ''Fulfillment Network Ingestion'': Download,'

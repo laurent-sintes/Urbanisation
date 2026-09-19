@@ -3,13 +3,13 @@
   "short_name": "Atlas",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f3f5f2",
-  "theme_color": "#173b3e",
+  "background_color": "#fcfdfd",
+  "theme_color": "#236159",
   "icons": [
     {
-      "src": "/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/assets/flow-original.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ]
 }

@@ -1,0 +1,126 @@
+id: TERMINOLOGY-U289
+source_refs:
+- U275
+- U289
+- CMP096
+- U290
+- U383
+state: convention_confirmed_U290
+authority: Convention confirmée et refonte demandée U290 ; valeur multidimensionnelle adoptée. Formulations détaillées et
+  critères ajoutés restent éditoriaux.
+canonical:
+  en: Supply Assignment
+  fr: Affectation des ressources aux commandes
+  definition: Affecter les ressources Supply présentes ou futures aux commandes identifiées, selon les priorités, les engagements
+    et les contraintes applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction.
+plan:
+  en: Supply Assignment Plan
+  fr: Plan d’affectation des ressources aux commandes
+  definition: Ensemble cohérent d’affectations proposées ou retenues précisant les ressources, quantités et dates destinées
+    aux commandes d’un périmètre, avec les hypothèses et contraintes applicables.
+rules:
+- Employer Supply Assignment / affectation pour les ressources destinées aux commandes ; pas Allocation comme synonyme dans
+  les libellés FLOW.
+- Employer plan d’affectation, sans alterner avec plan d’allocation.
+- 'Pour les droits de groupes : enveloppes de protection, droits d’usage ou plafonds de consommation selon le résultat.'
+- Répartition et distribution sont des verbes descriptifs ; toujours préciser entre quoi et quoi, pas de concepts concurrents.
+- 'Allocation reste un terme éditeur ou historique qualifié : SAP PAL, Microsoft Inventory Allocation, Oracle Retail Allocation,
+  ancien Order Allocation Run.'
+- Maximiser une valeur multidimensionnelle sous contraintes ; les critères et leurs priorités sont explicites, sans réduire
+  la valeur au volume promis ni à la marge.
+boundaries:
+  protection: Configure les droits et contraintes des groupes ; ne choisit pas la ressource de chaque Order.
+  assignment: Matérialise et maintient le lien ressources ↔ commandes ; mobilise les arbitrages spécialisés selon le modèle.
+  reservation: Effet d’engagement sur les usages concurrents ; peut être porté par la même affectation, articulation toujours
+    à arbitrer sans double déduction.
+  promising: Établit les possibilités et gouverne les engagements quantité/date ; affecté, réservé et promis restent distincts.
+  order_management: Applique les changements d’Orders autorisés issus du plan ; ne devient pas implicitement propriétaire
+    du lien d’affectation.
+  execution: Réalise et suit les prestations ; affectation ne prouve pas mouvement physique.
+sources:
+- id: T1
+  vendor: SAP
+  title: Explaining Supply Assignment
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  edition: Cours S/4HANA Fashion évolutif sans édition unique
+  passage: 'Supply Assignment: Basics ; Supply Assignment (ARun)'
+  finding: ARun affecte les ressources aux besoins de commandes en pénurie ; stocks présents et futurs sont distingués.
+  limit: SAP conserve le nom ARun et le vocabulaire allocated ; pas un algorithme optimal universel ni un catalogue de capacités
+    FLOW.
+  consulted_at: '2026-09-17'
+  evidence: Source primaire ouverte ou texte indexé détaillé consulté
+  relation: appui lexical et fonctionnel ; convention FLOW distincte
+- id: T2
+  vendor: SAP
+  title: Explaining aATP Product Allocation (PAL)
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58
+  edition: Cours évolutif sans édition unique
+  passage: PAL Concept ; Advanced ATP and Supply Assignment
+  finding: PAL limite la consommation de groupes de demandes ; disponibilité et ARun respectent ces limites.
+  limit: PAL ne signifie pas le même résultat que Supply Assignment.
+  consulted_at: '2026-09-17'
+  evidence: Source primaire ouverte ou texte indexé détaillé consulté
+  relation: appui lexical et fonctionnel ; convention FLOW distincte
+- id: T3
+  vendor: Microsoft
+  title: Inventory Visibility inventory allocation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  edition: Page évolutive
+  passage: Business background ; Allocation definition
+  finding: Enveloppes affectées à des groupes avant les commandes, avec protection et contrôle de surconsommation.
+  limit: Pas synonyme de l’affectation à des commandes identifiées.
+  consulted_at: '2026-09-17'
+  evidence: Source primaire ouverte ou texte indexé détaillé consulté
+  relation: appui lexical et fonctionnel ; convention FLOW distincte
+- id: T4
+  vendor: Oracle
+  title: Retail Allocation Cloud Service / Allocation Overview
+  url: https://docs.oracle.com/en/industries/retail/retail-allocation-cloud/latest/ralim/allocation-overview.htm
+  edition: latest, édition de la page non figée
+  passage: Allocation Overview ; Item Sources ; Calculation Parameters
+  finding: Allocation au niveau des lieux selon leurs besoins, pouvant utiliser stock entrepôt ou apports attendus.
+  limit: Autre acception d’allocation ; ne pas la confondre avec affectation à des commandes déjà identifiées.
+  consulted_at: '2026-09-17'
+  evidence: Source primaire ouverte ou texte indexé détaillé consulté
+  relation: appui lexical et fonctionnel ; convention FLOW distincte
+remaining_scope: Le périmètre historique Supply Assignment couvre aussi d’autres besoins identifiés, dont prévisionnels. Aucune
+  suppression implicite de cette extension ; finalité et cas commandes stabilisés ici.
+name_cleanup:
+  id: D05.d
+  before: Stock Allocation Decision
+  proposed: Group Protection Decision
+  reason: La définition actuelle porte quantités protégées et limites par groupe ; supprimer une ambiguïté avec l’affectation
+    aux commandes.
+  status: applied_U290
+current_U363:
+  source_refs:
+  - U363
+  registry: modeles/backlog/order-lifecycle-behaviors.yaml
+  scope: Order Type regroupe cinq comportements. Lifecycle gouverne mutations et Split ; Structuring composition persistante
+    ; Archiving conservation historique. Spread répartit ressources entre commandes via décisions et Supply Assignment. Les
+    sections antérieures conservent leur contexte daté.
+current_U383:
+  source_refs:
+  - U382
+  - U383
+  capability_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.o
+  - D04.q
+  restored_capabilities:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  retired_ids:
+  - D04.p
+  scope: 'Remplace la structure U363 : une capacité par type ; Lifecycle, Structuring et Archiving transverses. Identifiants
+    stables, aucun quatrième niveau.'
+  return_behaviors_direction: 'Remise en stock, réparation, renvoi : mécanismes demandés U382 ; définitions et rattachements
+    détaillés à instruire, sans absorption des décisions ni de l’exécution physique.'

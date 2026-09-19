@@ -13,6 +13,48 @@ const model = adaptPublication(current.raw);
 const relationId = 'REL-EXECUTION-FACTS-ORDER-RECONCILIATION';
 const ids = nodes => nodes.map(node => node.id);
 
+test('market comparisons are searchable and remain isolated to their publication', () => {
+  const raw = structuredClone(current.raw);
+  const id = raw.nodes[0].id;
+  raw.nodes[0].fields.market_comparisons = [{ vendor: 'RELEX', element_name: 'In-season fill-in', differences: 'SeuilsCapsulesTest' }];
+  const enriched = adaptPublication(raw);
+  assert.ok(ids(searchModel(enriched, 'RELEX SeuilsCapsulesTest')).includes(id));
+  assert.equal(searchModel(model, 'SeuilsCapsulesTest').length, 0);
+  assert.equal(enriched.nodeById.get(id).fields.market_comparisons[0].vendor, 'RELEX');
+  assert.ok(Object.isFrozen(enriched.nodeById.get(id).fields.market_comparisons[0]));
+});
+
+function behaviorFixture() {
+  const raw = structuredClone(current.raw);
+  // This historical fixture predates ATP; use an existing capability as a test parent.
+  raw.nodes.find(n => n.id === 'D03.a').fields.name = 'Available-to-Promise (ATP)';
+  raw.nodes.push({ id: 'UNRELATED_ID', kind: 'behavior', layer: 'transactional', fields: {
+    name: 'Operational Availability Timing', definition: 'Prendre en compte les délais réels de mobilisation, magasin et réserve.'
+  }, review: { state: 'partial' } });
+  raw.relations.push({ id: 'EXPLICIT_BEHAVIOR_PARENT', source_id: 'D03.a', target_id: 'UNRELATED_ID', type: 'contains' });
+  return raw;
+}
+test('behavior has explicit lineage, searchable content and stays out of capability counts', () => {
+  const withBehavior = adaptPublication(behaviorFixture());
+  assert.equal(withBehavior.nodes.filter(n => n.kind === 'capability').length, model.nodes.filter(n => n.kind === 'capability').length);
+  assert.equal(lineageOf(withBehavior, 'UNRELATED_ID').at(-2).id, 'D03.a');
+  assert.deepEqual(ids(childrenOf(withBehavior, 'UNRELATED_ID')), []);
+  assert.ok(ids(searchModel(withBehavior, 'ATP mobilisation')).includes('UNRELATED_ID'));
+  assert.ok(ids(focusGraph(withBehavior, 'D03.a').nodes).includes('UNRELATED_ID'));
+  assert.equal(neighborhood(withBehavior, 'D03.a').relations.some(r => r.id === 'EXPLICIT_BEHAVIOR_PARENT'), false);
+});
+test('behavior rejects orphan, domain parent, recursive children and wrong layer', () => {
+  for (const mutate of [
+    raw => raw.relations.pop(),
+    raw => { raw.relations.at(-1).source_id = 'D03'; },
+    raw => raw.relations.push({ id: 'CHILD', type: 'contains', source_id: 'UNRELATED_ID', target_id: 'D01.f' }),
+    raw => { raw.nodes.at(-1).layer = 'process'; },
+  ]) {
+    const raw = behaviorFixture(); mutate(raw);
+    assert.throws(() => adaptPublication(raw));
+  }
+});
+
 test('the live current pointer projects exactly the published file it designates', async () => {
   const live = await loadPublication();
   const projected = adaptPublication(live.raw);

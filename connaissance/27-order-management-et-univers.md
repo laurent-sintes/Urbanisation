@@ -1,5 +1,7 @@
 # Univers Supply / Case et Order Management
 
+> **Évolution U214 — 15 septembre 2026 :** le backlog remplace les quatre capacités D04.e–h par cinq capacités par type d’ordre, Order Structuring et Order Lifecycle Management (D04.i–o). Les propositions de conserver quatre capacités sont historiques. Voir la [refonte et les descriptions concrètes](../connaissance/29-order-management-refonte.md) ; les publications restent inchangées.
+
 Application du Go U141, 13 septembre 2026. Autorité du modèle : [backlog JSON](../modeles/backlog/model.json). Cette note explique les changements ; elle ne remplace pas le JSON. C78 conserve la correction et CMP066 les correspondances.
 
 ## Portée de l’accord

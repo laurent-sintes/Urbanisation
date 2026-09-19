@@ -55,12 +55,32 @@ Ne pas calculer de classement global avant d'avoir ces preuves. SAP est un candi
 
 ## Décrire une capacité avant sa réalisation
 
-La définition réaffirmée par Laurent en U33 est le critère de construction : **ce que sait faire l’entreprise indépendamment de son organisation et de ses outils**. Une sous-capacité doit elle-même exprimer une aptitude durable dans le périmètre de sa capacité mère. Objets, opérations, règles et fonctionnalités de produit permettent de l’expliquer et de l’éprouver ; ils ne deviennent pas automatiquement des capacités. Responsabilités et contrats éclairent ensuite sa réalisation.
+La définition réaffirmée par Laurent en U33 est le critère de construction : **ce que sait faire l’entreprise indépendamment de son organisation et de ses outils**. Depuis U262, la décomposition descriptive FLOW est Capacité → Comportement, terminale. U265 exige une complexité ou un bénéfice ciblé pour justifier cette décomposition ; elle n’est pas systématique. Objets, opérations, règles et fonctionnalités de produit permettent de l’expliquer et de l’éprouver ; ils ne deviennent pas automatiquement des capacités ou des comportements. Responsabilités et contrats éclairent ensuite sa réalisation. Les niveaux natifs d’une référence restent documentés sans leur imposer cette convention FLOW.
 
-Le [glossaire métier](../connaissance/19-glossaire-metier.md) conserve les notions et verbes proposés, leurs limites et leur provenance. Distinguer les termes natifs de marché de nos formulations françaises ; une proximité lexicale ne vaut ni traduction officielle ni équivalence métier. Voir C33/C34 et CMP024/CMP025.
+Le [glossaire métier courant](../modeles/backlog/glossary.yaml) fait autorité pour les notions métier ; le [glossaire méthodologique](../modeles/backlog/modeling-glossary.yaml) porte les conventions de modélisation. Le registre `connaissance/19-glossaire-metier.md` conserve l’historique. Distinguer les termes natifs de marché de nos formulations françaises ; une proximité lexicale ne vaut ni traduction officielle ni équivalence métier. Voir C33/C34 et CMP024/CMP025.
 
 ## Cycle de travail
+
+### Comparaison portée par la fiche — U311
+
+Les rapprochements utiles à la discussion client ne restent pas uniquement dans les études : les exposer dans `fields.market_comparisons` sur les éléments du modèle et `market_comparisons` sur les termes métier. Le contrat se trouve dans `$defs.marketComparisons` du schéma d’urbanisme. Chaque entrée conserve points communs, différences, position FLOW et sources datées, avec statut propre. Les registres ELM/CMP portent la provenance et l’argumentation approfondie ; leurs identifiants sont référencés par la fiche. Une absence de différence établie doit être écrite comme telle, sans transformer l’incertitude en équivalence. Ne pas rendre obligatoires des comparaisons inventées sur les éléments encore non étudiés.
+
+U268 impose une comparaison aux références pertinentes pour chaque proposition de Laurent et une justification de chaque recommandation de Codex par le marché ou par le modèle FLOW. Présenter les appuis, écarts, limites de preuve et raisons du choix ; une simple proximité de nom ne suffit pas. Cette exigence s’applique dès la discussion, avant une éventuelle modification du catalogue. Une comparaison non établie reste signalée comme telle.
 
 À chaque création, fusion, scission ou changement de définition d'une capacité, consulter les éléments marché pertinents et actualiser ses correspondances ou son statut « non comparé ». À chaque nouvelle version d'une référence, conserver l'ancienne provenance, qualifier les changements et signaler les correspondances à revalider. Vérifier de nouveau les sources utilisées avant un arbitrage ou une publication ; consigner les contrôles dans le journal.
 
 Une source inaccessible n'arrête pas les autres comparaisons. Enregistrer la limite, exploiter les passages réellement disponibles et laisser la conclusion ouverte. Aucune surveillance automatique n'est configurée ; l'entretien s'effectue au fil des itérations du projet.
+
+
+## Nommage et alignement — U294
+
+À notion et périmètre équivalents, reprendre le vocabulaire établi du marché. Une déviation doit correspondre à une innovation explicitée, pas à une préférence rédactionnelle. Vérifier les usages et leur portée dans plusieurs sources lorsque possible ; ne pas confondre un nom commercial de produit, une catégorie d’offres et un concept métier. En l’absence de terme unique, signaler la pluralité et justifier le terme retenu. Cette règle ne déclenche pas un renommage automatique des noms adoptés.
+
+
+## Comparer les décisions à leur maille — U328
+
+Laurent confirme la maille fine des responsabilités de décision, notamment pour cartographier les apports possibles de la Data, de l'IA et des systèmes experts. L'absence d'un intitulé identique dans un catalogue éditeur ne prouve pas l'absence de correspondance métier. Rechercher les résultats effectivement déterminés dans les méthodes de planification, règles, recommandations et fonctions documentées, au-delà du module commercial.
+
+Application éditoriale : comparer question métier, informations mobilisées, critères/contraintes, résultat et utilisation de ce résultat. Qualifier séparément proximité de nom et correspondance fonctionnelle ; conserver la nature native de la preuve. Plusieurs fonctions éditeur peuvent contribuer à une décision FLOW et une fonction peut mêler décision, simulation et application. Ne pas importer ce découpage logiciel dans le modèle, ni transformer chaque calcul intermédiaire en capacité. La finesse se justifie par une responsabilité métier identifiable, pas par la présence d'un algorithme ou d'une technologie IA. Exemple documenté : ELM204/CMP112 et D05.a.
+
+U329 valide cette méthode de comparaison et le nom Inventory Target Decision pour D05.a. Cet accord ne valide pas automatiquement les correspondances fonctionnelles ni les réalisations techniques citées.

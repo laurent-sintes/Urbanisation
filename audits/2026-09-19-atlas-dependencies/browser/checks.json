@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "currentVersion": "2026-09-16.2",
+  "historicalVersion": "2026-09-13.5",
+  "fixtureVersion": "2099-09-19.1",
+  "fixtureOnly": false,
+  "checks": [
+    "Publication courante résolue par index/descripteur/snapshot : canvas Cytoscape réel et relation originale qualifiée.",
+    "Publication sans rôle needs : filtre vide explicite, aucun repli sur le backlog.",
+    "Fixture HTTP : qualification complète, conditions, effets, portée, statut proposé et source documentaire conservés.",
+    "Deux sens et qualifications distincts gardent leurs extrémités ; une projection depuis un comportement conserve la relation originale.",
+    "Filtres de qualification, sens, profondeurs et deux dispositions utilisables sans erreur.",
+    "Domaines et univers : regroupements inspectables, familles et relations originales accessibles.",
+    "Lien direct : niveau Univers et profondeur complète conservés après rechargement.",
+    "Capacité isolée : état sans relation utilisable.",
+    "Mobile 390 px : canvas et panneau sans débordement horizontal.",
+    "Historique v003 : lecture d’une fiche épinglée au même snapshot, sans données de la fixture courante."
+  ],
+  "errors": [],
+  "modelRequests": [
+    "2026-09-16.2",
+    "2099-09-19.1",
+    "2099-09-19.1",
+    "2026-09-13.5"
+  ],
+  "sourceRequests": [
+    {
+      "path": "fixtures/dependencies-source.md",
+      "anchor": "preuve-qa"
+    }
+  ],
+  "liveServer": {
+    "status": "passed",
+    "base": "http://127.0.0.1:18765",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+    "checks": [
+      "Publication courante : canvas réel, dispositions organique et hiérarchique sous CSP stricte, relation originale et qualification complète.",
+      "Historique v003 : graphe, ouverture de fiche et retour Relations par l’interface conservent le snapshot.",
+      "Carte univers ReactFlow : les cartes correspondent exactement aux enfants explicites de la publication courante."
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "cspViolations": [],
+    "failedRequests": [],
+    "httpErrors": []
+  },
+  "publicationFilesUnchanged": 4
+}

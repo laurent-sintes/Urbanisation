@@ -1,0 +1,259 @@
+id: STOCKTAKING-REVIEW-U333
+status: applied_to_backlog_U334
+source_refs:
+- U333
+- ELM207
+- CMP115
+- U334
+parent_id: D01.d
+proposed_behaviors:
+- parent_id: D01.d
+  status: proposed
+  fields:
+    name: Periodic Physical Inventory
+    definition: Fiabiliser l’ensemble du stock d’un périmètre défini lors d’une campagne à une date ou période de référence,
+      en rapprochant constats physiques et quantités enregistrées.
+    decomposition_rationale: 'Politique de vérification complète : établir une référence cohérente pour le périmètre choisi,
+      sans imposer une fréquence annuelle ou une fermeture.'
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition Warehouse Management
+      element_name: Physical Inventory
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Distingue inventaire périodique, procédures continues et cycle counting ; confronte quantités physiques
+        et enregistrées.
+      differences: Périmètre produit Warehouse Management ; aucune attribution automatique à FLOW des opérations WMS, ni obligation
+        comptable ajoutée.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Physical Inventory
+      source_url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/87f9b54f9c4f4e75aff0061860a6589a/ae735d9f76024645ad4f5b1a0e6e3387.html
+      source_version: '2608'
+      consulted_on: '2026-09-18'
+      source_locator: Physical inventory procedures
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+    - vendor: Oracle
+      product: E-Business Suite Mobile Supply Chain Applications
+      element_name: Counting — full physical inventory / cycle counting
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Oppose le comptage périodique de sélections d’articles au comptage physique complet pour rapprocher les
+        quantités.
+      differences: Référence EBS, pas Fusion Cloud ; les contraintes de blocage transactionnel du produit ne sont pas imposées
+        à FLOW.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Counting — full physical inventory / cycle counting
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm
+      source_version: '12.2'
+      consulted_on: '2026-09-18'
+      source_locator: Counting ; Cycle Counting
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+- parent_id: D01.d
+  status: proposed
+  fields:
+    name: Cycle Counting
+    definition: Fiabiliser le stock par des contrôles récurrents de sélections d’articles ou d’emplacements, avec des fréquences
+      adaptées aux enjeux.
+    decomposition_rationale: 'Politique de vérification répartie dans le temps : entretenir la fiabilité sans attendre une
+      campagne complète.'
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM Warehouse Management
+      element_name: Cycle counting
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Plans récurrents, seuils déclenchant un comptage et comptage ponctuel sans travail préexistant ; traitement
+        des différences constatées.
+      differences: Spot ne signifie pas exclusivement déclenché par anomalie. Un seuil de comptage ne prouve pas une incohérence
+        ; ce n’est pas un seuil de réassort. Les modalités produit se combinent et ne forment pas trois capacités universelles.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Cycle counting
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+      source_version: Documentation évolutive
+      consulted_on: '2026-09-18'
+      source_locator: Automatically create cycle counting work ; Spot cycle counting ; Resolve cycle counting differences
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition Warehouse Management
+      element_name: Physical Inventory
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Distingue inventaire périodique, procédures continues et cycle counting ; confronte quantités physiques
+        et enregistrées.
+      differences: Périmètre produit Warehouse Management ; aucune attribution automatique à FLOW des opérations WMS, ni obligation
+        comptable ajoutée.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Physical Inventory
+      source_url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/87f9b54f9c4f4e75aff0061860a6589a/ae735d9f76024645ad4f5b1a0e6e3387.html
+      source_version: '2608'
+      consulted_on: '2026-09-18'
+      source_locator: Physical inventory procedures
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+    - vendor: Oracle
+      product: E-Business Suite Mobile Supply Chain Applications
+      element_name: Counting — full physical inventory / cycle counting
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Oppose le comptage périodique de sélections d’articles au comptage physique complet pour rapprocher les
+        quantités.
+      differences: Référence EBS, pas Fusion Cloud ; les contraintes de blocage transactionnel du produit ne sont pas imposées
+        à FLOW.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Counting — full physical inventory / cycle counting
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm
+      source_version: '12.2'
+      consulted_on: '2026-09-18'
+      source_locator: Counting ; Cycle Counting
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+- parent_id: D01.d
+  status: proposed
+  fields:
+    name: Spot Counting
+    definition: Fiabiliser ponctuellement un stock ciblé lorsqu’une situation ou un doute appelle une vérification, puis qualifier
+      les écarts constatés.
+    decomposition_rationale: 'Variante de contrôle à la demande : répondre rapidement à un signal sans attendre la prochaine
+      échéance ; absence d’anomalie automatique déduite du signal.'
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM Warehouse Management
+      element_name: Cycle counting
+      element_type: Procédures métier et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Plans récurrents, seuils déclenchant un comptage et comptage ponctuel sans travail préexistant ; traitement
+        des différences constatées.
+      differences: Spot ne signifie pas exclusivement déclenché par anomalie. Un seuil de comptage ne prouve pas une incohérence
+        ; ce n’est pas un seuil de réassort. Les modalités produit se combinent et ne forment pas trois capacités universelles.
+      flow_position: 'U333 propose trois comportements de Stocktaking : Periodic Physical Inventory, Cycle Counting et Spot
+        Counting. Les corrections justifiées restent un résultat commun ; le mandat de fiabilisation est distinct des opérations
+        physiques des exécutants. Aucun comportement créé.'
+      source_title: Cycle counting
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+      source_version: Documentation évolutive
+      consulted_on: '2026-09-18'
+      source_locator: Automatically create cycle counting work ; Spot cycle counting ; Resolve cycle counting differences
+      evidence_limits: Texte primaire indexé consulté. Aucun déploiement Beaumanoir attesté ; différences de taxonomie conservées.
+      status: proposed
+      source_refs:
+      - U333
+      - ELM207
+      - CMP115
+market_label_note: Microsoft emploie Spot cycle counting ; Spot Counting est une forme courte proposée pour le contrôle ponctuel.
+  Periodic Physical Inventory reprend la notion SAP, bornée au périmètre choisi dans FLOW.
+boundaries:
+- Les trois politiques peuvent se combiner ; elles ne sont pas une séquence ni une partition stricte des options éditeur.
+- Une règle de seuil peut déclencher un cycle count ; ne pas prétendre que tout contrôle par seuil est un spot count.
+- Un échec de picking est un exemple FLOW de signal, pas un déclencheur natif documenté par ces pages.
+- Les exécutants réalisent les constats physiques. La politique de fiabilisation, la demande de vérification et le traitement
+  des écarts doivent être distingués des choix de réalisation logicielle.
+- Record Inventory Movements trace les ajustements justifiés ; Inventory Tracking actualise l’état ; Inventory Visibility
+  restitue la connaissance. Un doute ne devient pas automatiquement une correction.
+- Aucune capacité comptable, obligation annuelle, blocage automatique ou modalité RFID/mobile imposé.
+open_question: 'Tranché U334 : Stocktaking porte la politique et les demandes de vérification en complément du traitement
+  des constats.'
+candidate_mapping:
+  P08: À réexaminer sous Cycle Counting ; une campagne complète mérite un mécanisme distinct.
+  P09: À réexaminer sous contrôle ponctuel ; seuil et anomalie ne sont pas synonymes.
+  other_market_procedures: Continuous Inventory et Inventory Sampling identifiés chez SAP ; ne pas les créer sans bénéfice
+    et besoin FLOW établis.
+implementation_U334:
+  source_refs:
+  - U334
+  model_before: audits/2026-09-18-stocktaking-behaviors/model-before.yaml
+  model_before_sha256: 7408d1c2c618c8c2202ef0b4bef9830aa28674450c0593f69620682533adaa5d
+  delta:
+    nodes:
+      added:
+        BHV029: 77c6292d7580a81540d22287b587dee4a1622b8d2f2433f8cdc9b419da6f3246
+        BHV030: 4ca29ddac311f9b31ad8bbce7bc1135b7bbdad4130770b3b7b9672704fbe738a
+        BHV031: dd5d38297829a282606eeabcbe3dd31ba147623b7a300bc95763f3d50b283eed
+      changed:
+        D01.d: 824377b0d44271e24535cb1b503c1751938ed73cdb6cd521360d5a3e8ef3e0ba
+      removed: []
+    relations:
+      added:
+        REL-BEHAVIOR-BHV029: 6ab2598579880acc080735408d5661fda24fedfa47244f292ab7baedb42eec1b
+        REL-BEHAVIOR-BHV030: 9042a11d2ff85d957a255dd20b9f7387ed4d9e0d8b53c9daaae6bef9b64f5164
+        REL-BEHAVIOR-BHV031: f894972fff63de80c7d0f4fbef804f0dcbb6054062cab5bdc3610927eb152755
+      changed: {}
+      removed: []
+  behaviors:
+  - node_id: BHV029
+    parent_id: D01.d
+    relation_id: REL-BEHAVIOR-BHV029
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 074191b22df2f4f35e850c490571ba285aaaf9acee81cd7dd208c14b53ef75f0
+      definition: 8e5d2d2008ea8a89e3368c0b09b73d61a52e10e049aba94f05bc9698596af31c
+    question: Vérifier l’ensemble du stock d’un périmètre lors d’une campagne, pour établir une référence fiable.
+    question_sha256: 8e5d2d2008ea8a89e3368c0b09b73d61a52e10e049aba94f05bc9698596af31c
+    particularity: Inventorier un magasin et rapprocher les quantités constatées du stock enregistré.
+    particularity_sha256: b3c7f6094da50b1edd4d3c2b57f0879beef7fffb00c9a6660210c8a96ae39629
+  - node_id: BHV030
+    parent_id: D01.d
+    relation_id: REL-BEHAVIOR-BHV030
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: e7109cf61bebc3c5580863b83d13a3297054940c784b21be3fcdda0b6c9b0af2
+      definition: 39d7182f89dff819682e2df351623d43017b199171a281c4fedec861684d3b8f
+    question: Vérifier régulièrement des sélections d’articles ou d’emplacements, avec une fréquence adaptée aux enjeux.
+    question_sha256: 39d7182f89dff819682e2df351623d43017b199171a281c4fedec861684d3b8f
+    particularity: Contrôler plus souvent les articles à forte rotation ou sujets aux écarts.
+    particularity_sha256: 8700280a19a45342841329a8d96c844aedda8579139c2ed0587ee69751cc82c5
+  - node_id: BHV031
+    parent_id: D01.d
+    relation_id: REL-BEHAVIOR-BHV031
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 4e38fcc2861640c4f0b38b940b2f4e55b3d182dc9f649f4570be719de538a6ef
+      definition: ee66139f4cfeabed8cdd71c7f18cc76be6a6d0821f86c205d5415369ba3280d0
+    question: Vérifier ponctuellement un stock ciblé lorsqu’une situation le justifie.
+    question_sha256: ee66139f4cfeabed8cdd71c7f18cc76be6a6d0821f86c205d5415369ba3280d0
+    particularity: 'Un article annoncé disponible reste introuvable : demander un contrôle ciblé et instruire l’écart éventuel.'
+    particularity_sha256: a650c52455a08f9874794d1f97fbae4a7a4187b8ee391d160d7cc086c5362ddf
+  adopted_mandate: Stocktaking couvre aussi la politique de vérification et les demandes de contrôle, en complément du traitement
+    des constats. Les opérations physiques restent réalisées par les exécutants ; cette responsabilité métier ne présume pas
+    du logiciel qui la porte.
+  adopted_mandate_sha256: 84c4cf3b5b325b550139e68a4c10218a3f0ec4768e6db49d8139c54326193e75
+  scope: Trois comportements, noms/définitions présentés et parents adoptés. Mandat de fiabilisation élargi à la politique
+    et aux demandes de contrôle. Pas de transfert des opérations physiques ni de validation implicite des comparaisons.

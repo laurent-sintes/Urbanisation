@@ -1,0 +1,28 @@
+source_refs:
+- U403
+- ELM242
+- CMP153
+model_before: modeles/backlog/history/supplier-confirmation-U403/model-before.yaml
+model_before_sha256: b526f0fdb765d2696c2dcfad5a98b66dde401eb11cebbfa7287852446c7675a7
+delta:
+  nodes:
+    added:
+      BHV078: 07e1668b5c54bd44e6a324e18574971550b2587fb97a4691569cc69fa4a4d809
+    changed:
+      D04.j: c81a64f9722e7ff4b25994f67342f7bfbb278bbd01ad388506d0548d19826afa
+    removed: []
+  relations:
+    added:
+      REL-BEHAVIOR-BHV078: fc9de0a7a058df71d2c1eca2e0c43e322f1070e2cdc4bcc35d567e4769b519f3
+    changed: {}
+    removed: []
+adopted_behaviors:
+- node_id: BHV078
+  parent_id: D04.j
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: b71eccf7c6b87e42c0a4515138d5866ff273edc10385e06c58304be868c34603
+    definition: a74905e24afe96834be91d63be67b73c0c641adcf916b63d7b32ed54f28b68b1
+behaviors: []

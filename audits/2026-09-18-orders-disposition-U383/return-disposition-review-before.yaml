@@ -1,0 +1,212 @@
+id: RETURN-DISPOSITION-REVIEW-U379
+status: integrated_U380
+source_refs:
+- U379
+- ELM229
+- CMP140
+- U380
+audit_arbitration: A04
+existing_nodes:
+- D04.l
+- D04.m
+- D05.c
+- D06.f
+gap: Le modèle représente les Orders de retour et l’exécution ; la responsabilité du choix du devenir du bien n’est pas attribuée
+  explicitement. Cela ne prouve pas une absence de réalisation Beaumanoir.
+proposal:
+  name: Return Disposition Decision
+  nature: decision
+  proposed_domain_id: D05
+  definition: Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables
+    et les possibilités de récupération de valeur.
+  result: 'Orientation du produit retourné et conditions associées : remise en stock utilisable, réparation ou reconditionnement,
+    renvoi fournisseur, autre filière autorisée ou sortie définitive.'
+  benefit: Rendre visible la décision qui transforme un retour reçu en orientation métier ; la gestion de l’Order et la coordination
+    des prestations ne déterminent pas à elles seules la valeur récupérable.
+  rationale_for_domain: D05 proposé pour l’arbitrage disponibilité/immobilisation/risque et valeur du stock. Le rattachement
+    est une interprétation FLOW, pas un domaine éditeur équivalent.
+  boundaries:
+  - L’inspection et l’état constaté sont fournis par les exécutants ; la décision peut être réalisée chez eux sans devoir
+    être développée dans FLOW.
+  - Les Orders de retour et de suite mobilisent D04 ; D06 coordonne et suit les prestations ; D01 enregistre les mouvements
+    et changements d’état.
+  - Stock Redistribution Decision choisit les déplacements de stock existant, pas son aptitude à être remis en circulation.
+  - Autorisation commerciale du retour, remboursement et remplacement client restent distincts ; ne pas les absorber dans
+    cette décision logistique.
+  - Règles d’acceptation, seuils de coût et filières admissibles sont des politiques ; aucun comportement par code, écran
+    ou action produit.
+  example: 'Exemple fictif : sur dix pièces retournées, huit sont constatées revendables et deux nécessitent une remise en
+    état. Déterminer si la remise en état est pertinente et autorisée, puis orienter les lots. D04/D06 portent les suites
+    ; aucune inspection physique ni écriture de stock réalisée par la décision.'
+  naming: Disposition est le terme métier des documents Microsoft ; le suffixe Decision et l’autonomie de capacité sont proposés
+    selon la convention FLOW, sans intitulé natif exact revendiqué.
+market_comparisons:
+- vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  element_name: Disposition codes and disposition actions
+  element_type: Configuration et traitement de retour produit
+  relationship: Recouvrement partiel
+  similarities: Distingue le motif du retour de ce qui doit arriver au bien ; les codes déterminent des suites logistiques.
+  differences: Les actions produit peuvent aussi déclencher des effets financiers. Elles ne sont ni des capacités FLOW ni
+    automatiquement des comportements.
+  source_title: Specify how to dispose of returned items
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+  source_version: Documentation évolutive
+  source_locator: Disposition code and disposition action
+  consulted_on: '2026-09-18'
+  evidence_limits: Page primaire ouverte ; aucune couverture installée déduite.
+  flow_position: Appui au terme disposition ; proposer une responsabilité de décision distincte du traitement transactionnel
+    et des effets financiers.
+  status: proposed
+  source_refs:
+  - U379
+  - ELM229
+  - CMP140
+- vendor: SAP
+  product: S/4HANA Cloud Public Edition
+  element_name: Logistical Follow-Up Activities
+  element_type: Suites logistiques de processus produit
+  relationship: Recouvrement partiel
+  similarities: Après inspection, orientation vers stock disponible, stock spécifié, fournisseur, réparation ou rebut selon
+    le cas.
+  differences: Catalogue d’activités incluant documents et mouvements ; ne prouve ni une capacité autonome au même nom ni
+    un rattachement à D05.
+  source_title: Logistical Follow-Up Activities
+  source_url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/aad8417242c84d70a64b2742fe818c90.html
+  source_version: Documentation Cloud évolutive ; édition précise du passage non établie
+  source_locator: Table of logistical follow-up activities
+  consulted_on: '2026-09-18'
+  evidence_limits: Passages primaires indexés consultés ; portail partiellement inaccessible en lecture directe.
+  flow_position: Séparer constat, choix de devenir et réalisation ; ne pas importer les codes SAP comme comportements.
+  status: proposed
+  source_refs:
+  - U379
+  - ELM229
+  - CMP140
+implementation_U380:
+  source_refs:
+  - U379
+  - U380
+  - ELM229
+  - CMP140
+  model_before: audits/2026-09-18-return-disposition-U380/model-before.yaml
+  model_before_sha256: 8078d82e0675dfda12079f8866a6345aaddd47ca037d8020532a32912f45f59c
+  delta:
+    nodes:
+      added:
+        D05.i: 24931cb6ba5fd1e04cd8abea3734fd06b12fbb0c66d47963cf4a8fed059b3022
+      changed:
+        D04.l: 3180221152fe47c8ff3c69fb8463e7af36599498b91d28a9a171b19a89ee6a8d
+        D05: 5922c097482d7b73ef1363e91c6b35d192edea9bc8933d472b22c10cfb3b9afb
+      removed: []
+    relations:
+      added:
+        REL-NEEDS-U380-01: 45024664b1bbf3662f99f440aa600a5314566da0d250b23fdf10386d0415d02b
+        REL-MEMBER-D05.i: bb6da43aad6e9d26539f717c23248b1e0104bfbb907179b478be8154d58238f8
+        REL-NEEDS-U380-02: 62d5ab587fc75c81c9b812298c02201457ddb80248a26654c084852fd2faa7f7
+        REL-NEEDS-U380-03: b17c3a44687c113cbe2ec530d7eca4d4d3138f2bef1c67bbcb0fff6d7816c022
+        REL-NEEDS-U380-04: ff842709fceb38763fb15f6ae5971a98e2f6a04083a5567e71e1f17761f96f1d
+      changed: {}
+      removed: []
+  behaviors: []
+  node_id: D05.i
+  adopted_fields:
+  - name
+  - definition
+  - nature
+  value_sha256:
+    name: cd7db088c22cbdcdefe7e9020657ef1650acbbbb1d78283a8d5a46d55f68739b
+    definition: a1e3d89d9f0fb6edb462945173b4e7b862e8d4f82cb0b8e1ea005a3dd23cecb7
+    nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+  parent_id: D05
+  parent_relation_id: REL-MEMBER-D05.i
+current_U380:
+  node_id: D05.i
+  parent_id: D05
+  adopted_fields:
+  - name
+  - definition
+  - nature
+  adopted_parent_fields:
+  - type
+  - source_id
+  - target_id
+  no_behavior: true
+  remaining: Contrats précis, exemples développés et comparaisons qualifiés séparément ; règles non bloquantes pour le catalogue.
+behavior_review_U382:
+  status: proposed
+  source_refs:
+  - U381
+  - U382
+  - ELM229
+  - ELM230
+  - CMP141
+  user_direction: 'Gestion des retours : prises en charge du produit ; Return Disposition Decision : stratégies qui orientent
+    le choix.'
+  structural_issue: D04.l est déjà un comportement d’Order Type limité aux commandes de retour. Ne pas lui ajouter des sous-comportements.
+    Le porteur de la gestion complète du retour et ses liens à D01/D04/D06 restent à instruire.
+  proposed_decomposition_rationale: Distinguer les cas dont la disposition est déterminée par une politique connue des cas
+    nécessitant un arbitrage contextuel entre plusieurs devenirs autorisés ; rendre visibles la standardisation des prises
+    en charge et la récupération de valeur, sans imposer une technologie de décision.
+  candidates:
+  - name: Policy-based Disposition
+    status: proposed
+    definition: Déterminer le devenir du produit par application d’une politique de disposition à son état constaté, sa catégorie
+      et ses conditions de retour.
+    benefit: Rendre les orientations cohérentes et reproductibles lorsque les cas sont connus.
+    example: 'Exemple fictif : article intact et complet orienté vers remise en stock ; défaut relevant d’un accord fournisseur
+      orienté vers renvoi selon cet accord.'
+    boundary: Appliquer une politique au cas ; ni administrer la politique ni inspecter ou réparer le bien. Une règle par
+      défaut ne crée pas un comportement par code.
+  - name: Value Recovery Optimization
+    status: proposed
+    definition: Choisir entre plusieurs devenirs autorisés en comparant la valeur récupérable, les coûts, délais, risques
+      et objectifs applicables dans le contexte.
+    benefit: Éviter une orientation systématique qui dégrade la valeur récupérée lorsque le contexte change.
+    example: 'Exemple fictif textile : comparer remise en état puis revente, seconde main et renvoi fournisseur, selon coût,
+      délai et potentiel de revente avant la fin de saison.'
+    boundary: Les objectifs peuvent être multidimensionnels ; aucun poids imposé. La décision ne réalise pas le traitement,
+      ne calcule pas seule tous les transferts du réseau et n’absorbe pas remboursement ou autorisation commerciale.
+  combination: 'Les stratégies peuvent se combiner : une politique borne les choix, une optimisation les départage. Pas une
+    séquence obligatoire ni une opposition règles/IA.'
+  not_separate_at_this_stage:
+  - 'Remise en stock, réparation et renvoi : prises en charge, pas stratégies autonomes de décision.'
+  - 'Circularité et rapidité : objectifs ou politiques possibles ; un comportement autonome nécessite un mécanisme distinct
+    démontré.'
+  - 'Choix du site : dimension contextuelle documentée, à articuler avec Stock Redistribution Decision et les décisions D06
+    plutôt que les dupliquer.'
+  - 'Mode humain, règle, IA ou batch : choix de réalisation, pas stratégie métier par lui-même.'
+  naming_limit: Libellés de travail FLOW ; les sources documentent les mécanismes mais ne démontrent pas un catalogue commun
+    de comportements portant ces deux noms.
+  market_comparisons:
+  - vendor: Microsoft
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+    source_version: Mise à jour affichée 2025-05-07
+    consulted_on: '2026-09-18'
+    source_locator: Disposition type, common code et disposition action
+    similarities: Les codes de disposition représentent différentes suites du retour, dont réparation, renvoi fournisseur
+      et revente.
+    differences: La documentation de configuration ne prouve pas un moteur de sélection automatique par état. Les actions
+      mêlent effets physiques et financiers.
+    flow_position: Appui au vocabulaire et à la prise en charge ; le mécanisme Policy-based Disposition reste une interprétation
+      FLOW.
+    status: proposed
+  - vendor: Blue Yonder
+    source_url: https://blueyonder.com/solutions/returns-management/smart-disposition
+    source_version: Page produit évolutive, sans édition affichée
+    consulted_on: '2026-09-18'
+    source_locator: Intelligent routing ; Customizable reason codes and rules ; Key Benefits
+    similarities: Choix de canal et destination selon règles et contexte, récupération de valeur et coûts.
+    differences: Produit plus large incluant admission et remboursement ; page commerciale sans détail algorithmique ni preuve
+      de déploiement Beaumanoir.
+    flow_position: Appui aux deux mécanismes proposés ; conserver uniquement le choix du devenir logistique dans D05.i.
+    status: proposed
+  - vendor: Manhattan
+    source_url: https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/returns-management
+    source_version: Page produit évolutive, sans édition affichée
+    consulted_on: '2026-09-18'
+    source_locator: Returns Done Right ; Maximize Returns Profitability
+    similarities: Détermination dynamique du lieu de retour pour accélérer la remise en vente.
+    differences: Ne démontre pas à elle seule la sélection de toutes les filières de réparation ou de disposition.
+    flow_position: Le contexte réseau nourrit la stratégie ; frontière à maintenir avec redistribution et exécution.
+    status: proposed

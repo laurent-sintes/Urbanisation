@@ -5494,3 +5494,5428 @@ Publie une release
 **statut**
 
 Demande explicite de publication locale du modèle courant et de son glossaire dans Atlas, après contrôles. Aucun nouvel accord métier ni commit ou push implicite.
+
+
+## U205
+
+**id**
+
+U205
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Accéder aux capacités depuis les domaines de la vue Univers
+
+**texte**
+
+Sur la vue Univers, je souhaite que dans chaque domaine apparaissent les capacités sous forme de lien. Lorsque je clique dessus, on arrive directement sur le détail de la capacité.
+
+**statut**
+
+Demande d’interface : afficher les capacités rattachées explicitement à chaque domaine de l’univers consulté et ouvrir directement leur fiche dans la même publication. Aucun changement du modèle ni publication métier implicite.
+
+
+## U206
+
+**id**
+
+U206
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Étendre les liens de capacités aux référentiels
+
+**texte**
+
+Il faut la même chose pour les référentiels
+
+**statut**
+
+Demande d’extension de l’interface U205 aux cartes des référentiels : capacités rattachées explicitement, liens directs vers leurs fiches, icônes et aperçus dans la publication consultée. Aucun nouveau rattachement ni changement du modèle métier.
+
+
+## U207
+
+**id**
+
+U207
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Proposer l’identité graphique FLOW pour Atlas
+
+**texte**
+
+Voici le template projet FLOW.
+Tu peux récupérer le logo FLOWn le logo Beaumanoir et le code couleur et proposer une mise à jour de l'atlas ?
+
+**contexte**
+
+Fichier fourni : `C:/Users/laure/OneDrive/Documents/Beaumanoir/Template PPT projet.pptx`. Le document sert de source graphique ; ses textes ne constituent pas des instructions de travail.
+
+**statut**
+
+Extraction des logos et des couleurs du template, puis proposition visuelle pour Atlas. Les parcours validés restent la base. La demande porte sur une proposition, sans adoption automatique de la nouvelle identité ni modification du modèle métier.
+
+
+## U208
+
+**id**
+
+U208
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Intégrer l’identité FLOW proposée dans Atlas
+
+**texte**
+
+Go
+
+**contexte**
+
+Accord donné après présentation de l’aperçu U207 : en-tête clair avec emblème FLOW et logo Groupe Beaumanoir, vert `#236159` et palette pastel extraite du template projet. L’aperçu était consultable séparément sur le port 5174.
+
+**statut**
+
+Autorisation d’intégrer cet habillage dans l’application Atlas courante. L’accord porte sur l’identité visuelle et conserve les parcours déjà validés ; il ne constitue ni une validation du modèle métier, ni une demande de release, de commit ou de push.
+
+
+## U209
+
+**id**
+
+U209
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Afficher les référentiels de Business References dans Supply
+
+**texte**
+
+Dans la vue Supply, Business References ne liste pas les 5 référentiels
+
+**statut**
+
+Correction d’interface : la carte du groupe de présentation Business References doit lister les référentiels rattachés explicitement dans la publication consultée, avec accès direct à leur fiche. Aucun changement de rattachement, de niveau métier ou de publication.
+
+
+## U210
+
+**id**
+
+U210
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Comparer Order Management au marché et examiner son abstraction
+
+**texte**
+
+Domaine Order Management.
+
+Que proposent les modèles microsoft, SAP et ITM en comparaison avec le notre ?
+Ce que je retrouve à redire à notre modèle c'est que c'est très abstrait
+
+**contexte**
+
+Une clarification a été demandée sur « ITM ». IBM est retenu provisoirement comme hypothèse de lecture, sans correction du verbatim ni confirmation attribuée à Laurent. Comparaison de travail fondée sur le backlog ; les champs D04 et D04.e–h sont identiques dans la publication v004 consultée dans Atlas.
+
+**statut**
+
+Demande d’analyse comparative et réserve explicite sur le caractère abstrait du modèle. Les illustrations, enrichissements et changements de granularité éventuels restent des propositions ; aucune modification du modèle ou nouvelle validation n’est demandée par cet échange.
+
+
+## U211
+
+**id**
+
+U211
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Préciser les types d’Orders Supply et leur pilotage opérationnel
+
+**texte**
+
+En fait je cherche les types d'orders gérés par la supply et les capacités de lancement, de mise en attente, de postpone etc.
+
+**contexte**
+
+Précision après la comparaison U210 et la restitution des fonctionnalités Microsoft associées au processus Manage sales orders. Laurent recentre la recherche sur les types d’Orders et les aptitudes permettant de les lancer, mettre en attente ou reporter.
+
+**statut**
+
+Orientation de la recherche et de la discussion métier. Aucun type, nom de capacité, découpage, règle de transition ou rattachement supplémentaire n’est adopté par cette précision. La frontière Supply Order / Service Order U169 reste applicable.
+
+## U212
+
+**id**
+
+U212
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Capacités par type d’ordre, structuration et cycle opérationnel
+
+**texte**
+
+1 type d'ordre par capacité ça me parait bien.
+
+Ensuite il faut synthétiser :
+
+- Order Structuring pour splitter, spreader etc
+- Order lifecycle pour les opérations de gestion   : affermir, démarrer, etc.
+
+Qu'en penses-tu ?
+
+**contexte et portée**
+
+Préférence exprimée pour une capacité par type d’ordre et deux aptitudes transversales. La réponse propose cinq types et les noms Order Structuring / Order Lifecycle Management. Les opérations illustrent les aptitudes sans devenir chacune une capacité.
+
+## U213
+
+**id**
+
+U213
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Confirmer que le nouveau découpage remplace le contenu de D04
+
+**texte**
+
+Ca implique annuler/remplacer le contenu du domaine, non ?
+
+**contexte et portée**
+
+Question suivie de la proposition explicite de retirer D04.e–h du backlog, remplacer par cinq capacités par type et deux transversales, répartir leurs responsabilités et conserver historique, identités et publications. Cette question seule ne constitue pas encore l’ordre de mise en œuvre.
+
+## U214
+
+**id**
+
+U214
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Appliquer la refonte d’Order Management dans le backlog
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord après la réponse à U213 : remplacer les quatre capacités actuelles par les sept présentées après U212, absorber Registration, Revision, Visibility et Reconciliation dans leurs responsabilités, conserver l’historique et ne pas réutiliser les identifiants. Les noms et responsabilités courtes présentés sont adoptés dans cette portée. Les définitions détaillées, finalités, règles et relations métier ajoutées pendant la rédaction restent proposées. Aucune reprise automatique des validations anciennes, aucune publication, aucun commit ou push.
+
+## U215
+
+**id**
+
+U215
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Rendre les descriptions concrètes
+
+**texte**
+
+Ne pas oublier de générer des descriptions qui expliquent le concret partagé dans la conversation
+
+**contexte et portée**
+
+Précision pendant l’application de U214 : décrire les opérations et leurs effets discutés, avec exemples. Autorise la rédaction des descriptions ; ne valide pas par anticipation les formulations nouvelles ni les règles détaillées illustratives.
+
+## U216
+
+**id**
+
+U216
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Publier une release après la refonte d’Order Management
+
+**texte**
+
+publie une release
+
+**contexte et portée**
+
+Demande suivant l’application U214/U215 : comparer puis publier le backlog courant et rendre la nouvelle version disponible dans Atlas. La publication conserve les portées adoptées et les descriptions détaillées proposées ; elle ne valide pas les compléments par elle-même. Historique immuable, aucun commit ni push implicite.
+
+## U217
+
+**id**
+
+U217
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Examiner la différence et le recouvrement D05 / D03
+
+**texte**
+
+Quelle diff et quel recouvrement entre Operational Resource Balancing et Order Promising ?
+
+**contexte et portée**
+
+Question après publication v005. Analyse des capacités et frontières dans le backlog courant, sans demande de fusion, renommage, suppression ou publication. Les propositions de clarification restent à discuter.
+
+## U218
+
+**id**
+
+U218
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Distinguer la satisfaction des Orders et la gestion du stock
+
+**texte**
+
+D03 tente d'assouvir les orders.
+D05 tente de gérer le stock
+
+**contexte et portée**
+
+Clarification explicite de la finalité des deux domaines après U217 : D03 vise la satisfaction des Orders ; D05 vise la gestion du stock. Ce repère remplace la seule lecture besoin puis solution proposée par Codex. La déclinaison de D05 en niveaux, composition ou répartition du stock, son articulation avec D01 et les formulations détaillées restent à préciser. Aucun nouveau libellé, retrait de capacité, cycle obligatoire ou publication n’est adopté par cette précision.
+
+## U219
+
+**id**
+
+U219
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Appliquer la frontière stock / Orders au modèle de travail
+
+**texte**
+
+Clair. Go pour la mise à jour
+
+**contexte et portée**
+
+Accord après l’explication de U218 : D01 connaît et fiabilise le stock, enregistre les mouvements, protège et réserve ; D05 décide du stock souhaitable et des ajustements nécessaires ; D03 décide comment satisfaire les Orders avec les ressources disponibles ou adaptables. Le transfert peut servir le rééquilibrage du stock ou une commande précise selon la finalité. Mise à jour autorisée dans le backlog, avec nom et descriptions plus explicites de D05. Aucun nouveau nom précis n’avait été soumis : Inventory Balancing, Coverage Target Decision et Stock Redistribution Decision restent des libellés proposés lors de la rédaction. Les descriptions détaillées, règles et exemples ajoutés restent proposés ; aucune publication, fusion de domaine ou suppression de capacité demandée.
+
+## U220
+
+**id**
+
+U220
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Préférer Inventory Optimization comme nom de D05
+
+**texte**
+
+Je préfèrerais Inventory Optimization
+
+**contexte et portée**
+
+Correction du nom Inventory Balancing proposé pendant l’application de U219. Inventory Optimization devient le nom retenu pour D05. Ce choix de libellé ne valide pas de nouveaux algorithmes, critères d’optimisation, capacités ou définitions détaillées.
+
+## U221
+
+**id**
+
+U221
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Envisager le réapprovisionnement automatique dans D05
+
+**texte**
+
+Le replenishment automatique pourrait faire partie du domaine.
+
+**contexte et portée**
+
+Piste utilisateur exprimée pendant la mise à jour U219/U220 : intégrer le réapprovisionnement automatique à l’exploration du périmètre d’Inventory Optimization. Détermination du complément et déclenchement conditionnel sont décrits comme proposés. Le mode automatique ne crée pas à lui seul une capacité autonome ; granularité, règles, autorisations et articulation avec les demandes/Orders restent à préciser. Aucune publication ou réalisation technique demandée.
+
+
+## U222
+
+**id**
+
+U222
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Comparer Inventory Optimization à TM, Microsoft et SAP
+
+**texte**
+
+Autour de cette idée d'optimisation du stock, compare avec TM, Microsoft et SAP.
+
+**contexte et portée**
+
+Recherche comparative après U220/U221. TM est interprété comme TM Forum dans la continuité des échanges. Examiner les objectifs de stock et le réapprovisionnement automatique, en distinguant capacités métier, composants/API et fonctions de produits. Les résultats et une capacité Replenishment Decision restent des propositions de Codex ; aucune modification des nœuds, adoption de granularité ou publication demandée. Étude dans marche/inventory-optimization-comparaison.md, éléments ELM115–ELM121 et correspondances CMP067–CMP071.
+
+
+## U223
+
+**id**
+
+U223
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Adopter la définition du domaine Inventory Optimization
+
+**texte**
+
+"optimiser le stock consiste à choisir un compromis entre disponibilité, immobilisation et risque, puis à décider des ajustements nécessaires.  " => c'est une excellente définition du domaine.
+
+**contexte et portée**
+
+Accord explicite sur la phrase proposée après la comparaison U222, retenue comme définition de D05 dans le backlog. Seule la majuscule initiale est normalisée. Nom U220 et finalité U219 conservés. Les descriptions opérationnelles, critères détaillés, capacités et la candidate Replenishment Decision ne reçoivent aucune validation supplémentaire. Aucune publication demandée.
+
+
+## U224
+
+**id**
+
+U224
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Distinguer optimisation analytique et application opérationnelle du stock
+
+**texte**
+
+Pour les capacités proposées, ce n'est pas très clair.
+
+En fait, il y une capacité de Stock Protection (allocation par canal, seuils minimum de réassort etc.). L'idée est d'avoir un domaine analytics (ce domaine d'optimization) qui calcule cette optimisation et ensuite il faut exécuter cette optimisation : lancer des commandes complémentaires pour remplir le stock, replenish les magasins, appliquer seuils et allocations etc.
+
+**contexte et portée**
+
+Laurent précise D05 comme domaine analytique calculant l'optimisation, dont l'application mobilise des capacités opérationnelles. Il cite Stock Protection pour allocations par canal et seuils de réassort, et le lancement de commandes complémentaires / réapprovisionnement magasins parmi les applications. Cette orientation corrige le mélange entre optimisation et déclenchement opérationnel dans U221/U222. La définition adoptée U223 est conservée. Stock Protection est le terme de cet échange ; la capacité actuelle D02.b se nomme Supply Protection : aucune fusion, modification de champ ou nouveau rattachement n'est déduit sans préciser le découpage. Les trois libellés analytiques proposés par Codex après cette clarification restent à instruire. Aucune publication demandée.
+
+
+## U225
+
+**id**
+
+U225
+
+**date**
+
+2026-09-15
+
+**titre**
+
+Comparer au marché la séparation optimisation analytique et application
+
+**texte**
+
+Et compare cette vision avec le marché
+
+**contexte et portée**
+
+Comparer la direction U224 : calcul de l'optimisation dans D05, puis application des allocations, seuils et ajustements par les capacités opérationnelles. Recherche TM Forum, Microsoft et SAP dans la continuité U222. Les distinctions de règles et le découpage proposés par Codex restent à instruire ; aucune refonte des nœuds ni publication demandée. Étude marche/optimisation-et-application-stock.md, ELM122–ELM127 et CMP072–CMP074.
+
+
+## U226
+
+**id**
+
+U226
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Préférer Microsoft et conditionner la granularité de l'optimisation aux capacités opérationnelles
+
+**texte**
+
+mon feedback :
+
+- je préfère l'approche microsoft en termes de découpage et nommage
+- J'aime SPA qui découpe planification de la mise en action
+- Le découpage de "stock protection" dans la partie optimisation n'est justifiée que si le "stock protection" est découpé en termes de capacités
+
+**contexte et portée**
+
+SPA est interprété comme SAP dans le contexte de U225. Microsoft devient la référence préférée pour travailler le découpage et le nommage ; Laurent apprécie la séparation planification / mise en action présentée pour SAP. Le détail de l'optimisation de Stock Protection est conditionné à un découpage métier correspondant des capacités opérationnelles. Cette préférence ne valide pas un catalogue Microsoft entier ni les noms analytiques proposés U224 ; elle n'impose pas une correspondance un pour un entre capacités analytiques et opérationnelles. Ne pas transformer chaque paramètre (minimum, plafond, seuil) en capacité par simple différence de règle. Aucun renommage automatique de Supply Protection, modification de nœud ou publication demandé.
+
+
+## U227
+
+**id**
+
+U227
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Proposer un découpage concret après les préférences U226
+
+**texte**
+
+Que proposes tu ?
+
+**contexte et portée**
+
+Demande d'une proposition de capacités distinguant planification analytique et application opérationnelle, avec Microsoft comme référence de vocabulaire et une granularité cohérente pour Stock Protection. Les noms, regroupements, déplacements et extensions présentés restent proposés. Aucune application aux nœuds ou publication autorisée par cette seule demande de proposition.
+
+
+## U228
+
+**id**
+
+U228
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Clarifier le sens du regroupement proposé
+
+**texte**
+
+Que signifie "rejoint" ?
+
+**contexte et portée**
+
+Demande de clarification de U227. Codex explique une restructuration proposée de trois capacités D05 vers deux, avec absorption du calcul net et de la redistribution, non un simple renommage ou une hiérarchie de sous-capacités. Aucune adoption ou application par cette question.
+
+## U229
+
+**id**
+
+U229
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Conserver Decision et distinguer Planning des capacités qui le nourrissent
+
+**texte**
+
+Ce qui m'ennuie c'est que j'aimerais garder "Décision" du manière générale et éviter "Calculation". Et "Planning" est un terme qui désigne le fait de "reconfigurer, simuler, valider". Les capacités "Planning" se nourrissent de "Décision"
+
+**contexte et portée**
+
+Préférence générale pour les capacités de décision et contre Calculation comme nom de capacité. Planning désigne reconfiguration, simulation et validation, en se nourrissant des capacités de décision. Cela corrige les intitulés Stock Protection Planning et Replenishment Planning proposés U227 pour les responsabilités de décision. Stock Protection Decision et Replenishment Decision sont des noms corrigés proposés par Codex, non une adoption explicite de leurs périmètres ni de la fusion des capacités. Aucun niveau, rattachement de Planning, nouvelle capacité, suppression ou remplacement global automatique demandé.
+
+
+## U230
+
+**id**
+
+U230
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Stock Protection relève de la gouvernance et les décisions doivent être plus détaillées
+
+**texte**
+
+"Stock Protection" est une capacité de gouvernance (management).
+"Stock Protection Decision" est trop agrégé. JE préfère le modèle décision plus découpé.
+
+**contexte et portée**
+
+Laurent qualifie Stock Protection comme gouvernance/management et écarte la capacité agrégée Stock Protection Decision proposée par Codex. Préférence pour un modèle de décisions spécialisées. Cela corrige l'interprétation de U226 qui avait conduit Codex à proposer un pendant analytique unique. Les nouvelles propositions de décisions après U230 restent non adoptées, comme leur placement détaillé et les règles de gouvernance. Aucun renommage automatique de D02.b Supply Protection ni publication demandé.
+
+
+## U231
+
+**id**
+
+U231
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Préciser l'application transactionnelle des données de Stock Protection
+
+**texte**
+
+**"Stock Protection — management** : gouverner les politiques, leur validité et leur application.  " => "application" signifie mettre à jour transactionnellement les données unitairement, en groupe ou en masse par plusieurs types d'interfaces possibles (écrans, batch, flux, stereaming)
+
+**contexte et portée**
+
+Laurent précise le sens d'application dans Stock Protection : mise à jour transactionnelle des données, à l'unité, par groupe ou en masse, par écrans, batch, flux ou streaming. Le management comprend cette responsabilité concrète de tenue des données. Les interfaces et volumes sont des modalités de réalisation, pas des capacités supplémentaires adoptées. Cette précision ne choisit pas une architecture technique, une garantie d'atomicité sur un lot complet, un renommage de D02.b ou une publication.
+
+
+## U232
+
+**id**
+
+U232
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Séparer le glossaire de modélisation du glossaire métier
+
+**texte**
+
+Ces éléments sont des éléments de glossaire en support à la définition des objets mais ce n'est pas un glossaire métier. Je tiens à ce que ce soit séparé.
+
+**contexte et portée**
+
+Les notions transversales discutées en U229–U231 (Decision, Planning, Management, application transactionnelle) constituent un vocabulaire de modélisation en support aux définitions des objets du modèle, distinct du vocabulaire métier Supply. Création d'une autorité séparée modeles/backlog/modeling-glossary.yaml, sans ajout au glossaire métier. La distinction est demandée explicitement ; les formulations éditoriales ajoutées conservent leur statut proposé. Aucun transfert global des anciennes notions ou verbes métier, changement de schéma d'objets ou publication demandé.
+
+
+## U233
+
+**id**
+
+U233
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Revenir à une proposition du domaine Inventory Optimization
+
+**texte**
+
+Revenons sur le domaine, que proposes-tu ?
+
+**contexte et portée**
+
+Demande de proposition après la séparation U232 du glossaire de modélisation. Codex propose quatre décisions spécialisées et Inventory Planning dans D05, avec Stock Protection management et la mise en action distincts. La cinquième capacité, ses rattachements et les périmètres détaillés restent proposés ; aucune adoption ni modification des nœuds déduite de la demande.
+
+
+## U234
+
+**id**
+
+U234
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Clarifier que la décision intègre le calcul des besoins nets
+
+**texte**
+
+Pourquoi Calculation ? Une Décision implique aussi un calcul. Que veux tu dire ?
+
+**contexte et portée**
+
+Laurent rappelle qu'une décision intègre les calculs nécessaires. Codex précise que Net Requirements Calculation est le nom de la capacité actuelle et propose son remplacement par Replenishment Decision au périmètre plus complet : besoins nets, contraintes, quantités et dates à retenir. Aucun calcul indépendant imposé à côté de cette décision.
+
+## U235
+
+**id**
+
+U235
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Appliquer les cinq capacités d'Inventory Optimization
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur la proposition U233 clarifiée U234 : Coverage Target Decision, Stock Allocation Decision, Replenishment Decision, Stock Redistribution Decision et Inventory Planning dans D05. Les cinq noms et responsabilités courtes présentées sont retenus. Inventory Planning mobilise les quatre décisions sans les contenir dans une hiérarchie. Replenishment Decision remplace Net Requirements Calculation et intègre les calculs nécessaires ; redistribution conservée distincte. Définition de domaine U223 conservée. Descriptions détaillées, exemples, finalités et nature éditoriales ajoutés restent proposés. Aucun renommage de Supply Protection, création de Replenishment Management dans D01, modification D03/D04, fusion des glossaires, commit, push ou publication autorisé par cet accord.
+
+
+## U236
+
+**id**
+
+U236
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Publier le backlog après la refonte Inventory Optimization
+
+**texte**
+
+lance une release
+
+**contexte et portée**
+
+Demande de comparaison, préparation et publication locale du backlog courant dans FLOW Atlas. Inclut les évolutions D01/D03/D05 et la refonte U235, avec leurs portées et réserves. La publication ne valide pas les descriptions proposées ; le glossaire de modélisation reste séparé et figé comme contexte. Aucun commit ni push demandé.
+
+
+## U237
+
+**id**
+
+U237
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Offre de services d'exécution et domaine unique de pilotage
+
+**texte**
+
+Prenons les domaines D05 et D06 maintenant.
+
+Ma vision :
+
+- Dans le référentiel, ajouter un référentiel "plateforme de services d'exécution". Il contient l'offre de service de la logistique Entrepôt/Transport plus d'autres services comme la production de documents ou autres. Il faut pour chaque service un endpoint informatique de sollicitation / feedback continu et un SLA effectif du service lorsqu'il n'est pas totalement informatisé. Par exemple la logistique en prise avec le physique.
+- Dans les domaines, un seul domaine qui gère le pilotage de l'exécution.
+
+**contexte et portée**
+
+Orientation utilisateur vers une offre de services exécutants générique, ses accès informatiques et ses engagements de réalisation, et un domaine unique de pilotage. Dans le modèle courant, D05 est Inventory Optimization ; Execution Options et Execution Commitments and Facts portent D06/D07. Une clarification de ces identifiants est demandée, sans fusion ni retrait appliqué avant réponse. Les noms anglais, champs détaillés, capacités et répartition proposés par Codex restent à discuter. La maîtrise externe des référentiels et la frontière Supply/Services restent des repères ; aucun développement logistique, produit, protocole, temps réel strict ou plateforme unique déduit. Aucune publication demandée.
+
+
+## U238
+
+**id**
+
+U238
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Confirmer D06/D07 comme périmètre de refonte
+
+**texte**
+
+Oui, D06 et D07 ; conserver D05.
+
+**contexte et portée**
+
+Réponse à la clarification des identifiants cités en U237. La vision de référentiel de services exécutants et de domaine unique de pilotage concerne Execution Options (D06) et Execution Commitments and Facts (D07). Inventory Optimization (D05) est conservé. Cette précision ne valide pas les noms anglais ni les capacités et descriptions détaillées proposés par Codex.
+
+
+## U239
+
+**id**
+
+U239
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Challenger le référentiel de services et le pilotage de l'exécution face au marché
+
+**texte**
+
+Tu peux challenger l'approche avec ce que propose le marché ?
+
+**contexte et portée**
+
+Recherche critique sur la proposition U237/U238, D06/D07 avec D05 conservé. Microsoft, SAP et TM Forum examinés sur offre, qualification, sollicitation, engagements, retours et coordination. Les recommandations sont proposées, sans adoption des noms, schémas ou capacités ni modification de la carte ou publication.
+
+
+## U240
+
+**id**
+
+U240
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Préciser capacité logistique contextuelle et promesse Supply ; adopter les principes de pilotage
+
+**texte**
+
+- 1- D03 calcule une promesse dans un contexte supply, le référentiel de service a la liste des services avec des SLA globaux (configuration), D06 propose une capacité qui décrit la capacité de la logistique dans le contexte (nombre max de préparation). D03 a besoin de D06 pour calculer  la promesse.
+- 2- Oui
+- 3- oui
+- 4- Oui, c'est du tracking des opérations logistiques
+- 5- oui
+
+**contexte et portée**
+
+Réponse aux cinq points du challenge U239. Le point 1 précise la frontière : catalogue et SLA globaux en configuration, capacité opérationnelle logistique contextualisée dans D06, calcul de promesse Supply par D03 avec dépendance à D06. Le point 2 adopte la coordination des prestations et dépendances entre exécutants, qui gardent leurs opérations internes. Le point 3 adopte la distinction engagement applicable, engagement de prestation, estimation actualisée et résultat constaté, également pertinente pour les services numériques. Le point 4 qualifie le feedback de tracking des opérations logistiques ; il ne retire pas les autres services U237 du périmètre général. Le point 5 adopte la séparation de l'identité métier du service et de ses accès techniques. Ces accords ne valident ni les correspondances marché en tant qu'équivalences, ni les noms anglais proposés, le découpage détaillé, le maître de la configuration ou un protocole. D05 reste conservé ; pas de publication demandée.
+
+## U241
+
+**id**
+
+U241
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Comparer le modèle d'exécution révisé avec le marché
+
+**texte**
+
+Compare ce modèle révisé avec le marché
+
+**contexte et portée**
+
+Comparaison des principes précisés/adoptés en U240 avec Microsoft, SAP et TM Forum. Recherche et analyse documentaire ; aucune adoption supplémentaire de noms, granularités, mécanismes de capacité ou correspondances. D05 conservé, modèle actif et publication inchangés.
+
+
+## U242
+
+**id**
+
+U242
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Orchestrer l'exécution Supply pour suivre et adapter le plan face aux aléas
+
+**texte**
+
+Sur le point 3, je suis d'accord. Il faut prendre en compte un certain niveau d'agilité dans l'exécution. Le SLA dit OK mais opérationnellement, ça échoue => on doit réagir et trouver une variation du plan. C'est pourquoi ce domaine doit porter la responsabilité d'orchestrer la supply afin de faciliter la tracking et l'adaptation.
+
+**contexte et portée**
+
+Accord avec le point 3 de la réponse U241 : retour des changements d'exécution vers le réexamen de la promesse par D03. Laurent précise que le domaine regroupant D06/D07 porte l'orchestration de l'exécution Supply, son tracking et la recherche d'une variation du plan face à un échec opérationnel, même lorsque le SLA configuré était compatible. Cette responsabilité complète U240 ; elle ne transfère pas la promesse Supply de D03 ni les opérations internes des exécutants. L'accord ne porte pas sur les points 1 et 2 de U241, les noms anglais, un découpage de capacités, un objet Plan formalisé ou les règles détaillées d'autonomie et de révision. Aucun changement de publication demandé.
+
+
+## U243
+
+**id**
+
+U243
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Distinguer latitude d'adaptation et catalogue des capacités
+
+**texte**
+
+"Le point à préciser sera la latitude d’adaptation du domaine  " : c'est une bonne question mais qui n'impacte pas le catalogue des capacités
+
+**contexte et portée**
+
+Laurent corrige le cadrage de la conclusion U242 : la question de latitude d'adaptation reste pertinente mais ne modifie ni ne conditionne le catalogue des capacités. Elle est conservée séparément comme question de règles de fonctionnement. Les responsabilités d'orchestration, tracking et adaptation restent acquises ; aucun nouveau nom ou découpage n'est adopté par cette précision.
+
+
+## U244
+
+**id**
+
+U244
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Appliquer le référentiel des services et la refonte du pilotage de l'exécution
+
+**texte**
+
+On peut mettre à jour le modèle ?
+
+**contexte et portée**
+
+Demande d'application dans le backlog des principes U237–U243 : nouveau référentiel, regroupement D06/D07 avec D05 conservé, capacité contextuelle alimentant D03, orchestration, tracking et adaptation. La définition de domaine présentée après U242 est retenue pour cette application. La latitude d'adaptation ne conditionne pas le catalogue. Les noms anglais non explicitement adoptés et le détail des capacités, descriptions et relations conçus pendant cette application restent proposés. Aucune publication, aucun commit ni push demandé.
+
+
+## U245
+
+**id**
+
+U245
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Challenger les capacités d'exécution : séparer orchestration et adaptation, employer le vocabulaire de modélisation
+
+**texte**
+
+Je souhaite challenger les 8 capacités.
+
+- je souhaite séparer orchestration et adaptation
+- Le vocabulaire de modélisation ne me semble pas utilisé : décision à la place d'évaluation ou définition par exemple
+- Qualification, je ne sais pas ce que ça veut dire.
+
+**contexte et portée**
+
+Réexamen du catalogue appliqué en U244. Séparation orchestration/adaptation demandée ; demande de cohérence avec le vocabulaire Decision et critique du terme Qualification. Les noms et le regroupement proposés en réponse restent à discuter ; aucune validation implicite d'une fusion qualification/options, d'un nombre de capacités ou de leurs définitions. Cette demande de challenge ne publie ni n'applique un nouveau découpage aux nœuds actifs.
+
+
+## U246
+
+**id**
+
+U246
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Retenir Execution Capacity Visibility et clarifier la gestion des engagements d'exécution
+
+**texte**
+
+- Execution Commitment Management  : je ne comprends pas bien ce que c'est.
+- Execution Capacity Visibility  : oui c'est meilleur
+
+**contexte et portée**
+
+Dans le challenge U245, Laurent retient le nom Execution Capacity Visibility. Les descriptions détaillées et règles de mesure restent proposées. Il demande une explication d'Execution Commitment Management, sans valider son maintien, son retrait ou son remplacement. La piste Service Order Management présentée en réponse reste proposée. Le découpage en cours de discussion reste distinct des nœuds actifs U244 ; aucune publication demandée.
+
+
+## U247
+
+**id**
+
+U247
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Appliquer Service Order Management et le catalogue d'exécution révisé
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord suivant la proposition U246 de Service Order Management et le tableau séparant décision des prestations, gestion des demandes, orchestration, tracking et adaptation. Appliquer cette clarification avec Execution Capacity Visibility retenu U246 et la séparation demandée U245. Le nom et la définition présentée de Service Order Management sont adoptés ; les noms et responsabilités courtes du dernier tableau sont transcrits dans leur portée, sans étendre l'accord aux descriptions détaillées ajoutées. La fusion qualification/options en Execution Service Decision, présentée en U245 mais non reprise dans le dernier tableau, est appliquée comme proposition du catalogue en discussion ; elle ne reçoit pas de validation métier implicite. Aucune publication, aucun commit ni push demandé.
+
+
+## U248
+
+**id**
+
+U248
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Publier la refonte du pilotage et des capacités d'exécution
+
+**texte**
+
+Lance une release
+
+**contexte et portée**
+
+Publication locale du backlog après U244/U247, avec vérification dans Atlas. Les accords existants sont transcrits dans leur portée ; les capacités et détails proposés restent proposés. Aucune validation métier supplémentaire, aucun commit ni push demandé.
+
+
+## U249
+
+**id**
+
+U249
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Auditer la maturité du modèle face au marché et sa qualité de modélisation
+
+**texte**
+
+Je souhaite que tu fasses un audit sur le modèle qui est arrivé à un premier niveau de maturité.
+
+J'aimerais d'abord le challenger vis à vis du marché :
+
+- les écarts et les points communs avec les grands du marché
+- Les manques
+- L'uniformisation de la granularité par type de capacité (décision assez fin, action un peu plus grosse maille)
+- Les relations (a besoin de) entre les capacités
+- La qualité des descriptions qui doivent apporter une explication claire et des examples d'application dans une contexte métier
+
+**contexte et portée**
+
+Audit de la v007 publiée après U248, avec contrôle du backlog pour distinguer les illustrations non publiées. Comparaison de sources officielles du marché, examen des manques, de la granularité par type, des dépendances et des descriptions avec exemples. Les constats et corrections restent proposés. La demande ne modifie ni ne valide les capacités, n'autorise pas une nouvelle publication et ne demande ni commit ni push. Livrable : audits/2026-09-16-audit-maturite/.
+
+
+## U250
+
+**id**
+
+U250
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Examiner les empiètements de CTP FLOW sur les autres décisions
+
+**texte**
+
+Pour le point 1, est-ce que CTP contexte FLOW empiete sur d'autres décisions ?
+
+**contexte et portée**
+
+Question suivant l’audit U249, portant sur les frontières internes du CTP local. Examiner priorités, échéancier, choix économique, politiques de stock et décisions d’exécution ; distinguer recouvrement de responsabilité et mobilisation d’une décision spécialisée. La finalité D03 (satisfaire les Orders) reste distincte de D05 (optimiser le stock). Aucun changement de définition ou de catalogue adopté par cette question.
+
+
+## U251
+
+**id**
+
+U251
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Resserrer CTP sur la faisabilité après adaptation et ses décisions spécialisées
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord suivant U250 : conserver CTP, adopter la définition présentée de faisabilité après adaptation et les frontières proposées avec priorité, échéancier, PTP, politiques de stock, décision de service et adaptation de l’exécution. CTP assemble une solution Supply cohérente en mobilisant les décisions spécialisées ; chaque résultat conserve son responsable d’arbitrage. Un achat/transfert pour satisfaire un Order ne dépend pas obligatoirement d’une décision D05 d’optimisation du stock. Appliquer au backlog ; exemples, qualification détaillée des nouvelles relations et reprise lexicale restent proposés. Cet accord ne porte pas sur l’ensemble des recommandations de l’audit U249 et ne demande ni publication, ni commit, ni push.
+
+
+## U252
+
+**id**
+
+U252
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Proposer le traitement des manques identifiés par l’audit
+
+**texte**
+
+Point 2 : que proposes tu ?
+
+**contexte et portée**
+
+Reprise du point 2 de l’audit U249 après la clarification CTP U251 : application des paramètres, mise en action des décisions D05, réconciliation des représentations de stock et devenir des retours. La réponse propose des attributions et capacités candidates ; cette question n’adopte pas les noms ou le découpage et n’autorise aucune application au modèle ni publication.
+
+
+## U253
+
+**id**
+
+U253
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Préserver la portée de Supply Protection face au renommage proposé
+
+**texte**
+
+Supply protection me semble plus large que Inventory Policy Management
+
+**contexte et portée**
+
+Laurent conteste la proposition U252 d’élargir/renommer Supply Protection en Inventory Policy Management, car Supply Protection lui paraît plus large. Le renommage proposé est retiré de la recommandation courante ; le nom actif Supply Protection reste inchangé. Cette remarque ne fixe pas à elle seule une définition détaillée ni le rattachement de tous les paramètres, ressources ou capacités. Les autres propositions U252 restent en discussion, sans adoption implicite.
+
+
+## U254
+
+**id**
+
+U254
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Questionner Supply Protection comme capacité, intention ou domaine
+
+**texte**
+
+Supply Protection est une intention mais est-ce une capacité ? J'ai l'impression de qupply protection est presque un domaine
+
+**contexte et portée**
+
+Laurent questionne le niveau de modélisation de Supply Protection après U252/U253. Examiner la différence entre l’intention large de protection de la Supply, la capacité active D02.b limitée aux quantités/limites d’usage par groupes et un éventuel domaine de problèmes. La question ne décide ni d’un nouveau domaine, ni d’un retrait, renommage ou déplacement de capacité. La clarification de définition présentée après U253 reste proposée.
+
+
+## U255
+
+**id**
+
+U255
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Signaler le recouvrement de Supply Assignment avec Supply Allocation Management
+
+**texte**
+
+Supply Assignement devient presque identiqu à Supply Allocation Management
+
+**contexte et portée**
+
+Laurent signale que le nom candidat Supply Allocation Management proposé après U254 devient presque identique à Supply Assignment. Retirer ce candidat de la recommandation courante et examiner les résultats distincts ou communs du trio Supply Protection, Supply Assignment et Reservation, sans déduire une fusion de la remarque. Aucun nouveau nom, retrait, rattachement ou périmètre adopté ; modèle inchangé.
+
+
+## U256
+
+**id**
+
+U256
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Éprouver des actions larges de protection/affectation et la complétude des décisions
+
+**texte**
+
+Donc on serait sur des capacités d'action à scope large (Supply Protection et Supply Assignment) mais avec une compréhension des cas par un découpage plus fin des décisions ?
+Du coup il faudrait voir si les décisions sont complètes
+
+**contexte et portée**
+
+Laurent propose d’examiner Supply Protection et Supply Assignment comme actions larges, éclairées par des décisions plus fines, et demande d’en vérifier la complétude. Audit des cas et des résultats dans audits/2026-09-16-decisions-protection-assignment/rapport.md. La formulation interrogative ne vaut pas adoption d’un nouveau catalogue, fusion avec Reservation ni restauration des capacités retirées U154. Le choix de couverture, les dérogations et les effets d’engagement sont à examiner ; aucun nœud modifié.
+
+
+## U257
+
+**id**
+
+U257
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Questionner ATP, CTP et PTP comme capacités ou intentions d’optimisation
+
+**texte**
+
+Très bonne remarque : est-ce que ATP, CTP et PTP sont des capacités ou des intentions d'optimisation ?
+
+**contexte et portée**
+
+Question suivant l’analyse U256 sur la complétude des décisions de protection et d’affectation. Distinguer objectif poursuivi, aptitude durable produisant un résultat métier et granularité de cette aptitude. Aucun retrait ou changement de type adopté.
+
+## U258
+
+**id**
+
+U258
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Souligner la lecture d’ATP, CTP et PTP comme capacités
+
+**texte**
+
+Pourtant ça ressemble quand meme à des capacités...
+
+**contexte et portée**
+
+Laurent complète U257 en soulignant que les trois notions ressemblent à des capacités. Examiner leurs résultats de faisabilité dans la situation de référence, de faisabilité sous adaptation et d’arbitrage économique. Cette remarque n’adopte pas de décomposition supplémentaire ni de nouvelle formulation détaillée. Catalogue ATP/CTP/PTP inchangé.
+
+
+## U259
+
+**id**
+
+U259
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Organiser la clarification des périmètres des décisions
+
+**texte**
+
+Commençons par préciser les décisions avec des périmètres clairs.
+
+Comment on avance ? Qu'y a t il à challenger ?
+
+**contexte et portée**
+
+Demande d’organiser et commencer la clarification des décisions après U256–U258. Examiner les questions arbitrées, entrées/règles, résultats, frontières, consommateurs et cas concrets ; commencer par les cinq décisions D03 qui partagent les choix de satisfaction, puis les décisions D05/D06. Les propositions de méthode et de périmètre présentées en réponse restent à discuter ; aucune nouvelle définition, fusion, scission ou publication adoptée par cette demande.
+
+## U260
+
+**id**
+
+U260
+
+**date**
+
+2026-09-16
+
+**titre**
+
+Préciser la couverture dans les glossaires et explorer ATP/aATP
+
+**texte**
+
+Le terme de couverture doit intervenir dans le glossaire méthodologique voire métier.
+Ok sur l'ATP dans le principe. Il existe des définitions officielles de l'ATP. SAP introduit la notion de aATP qu'il est peut être interessant d'explorer.
+
+**contexte et portée**
+
+Demande explicite de traiter la couverture dans le vocabulaire de modélisation, en conservant le glossaire métier séparé. Accord de principe sur la proposition précédente : ATP explicite une couverture réalisable suffisamment précise pour expliquer les quantités et dates. Le niveau d’identification des ressources et le choix final entre couvertures restent à préciser. Recherche de références officielles ATP et des fonctions SAP aATP ; aucune adoption d’un catalogue éditeur, nouvelle capacité, définition détaillée ou publication implicite.
+
+## U261
+
+**id**
+
+U261
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Informations mobilisées par ATP et recherche d’une maille de description adaptée
+
+**texte**
+
+Oui ATP est un principe de calcul des engagements possibles pour une promesse (ou un ensemble) mais qui s'appuie sur différents niveaux d'information :
+
+- Le stock physique logiquement alloué / réservé (on regarde ce qui reste de libre)
+- Le stock entrepot & magasin & darkstore etc. (Tout espace de stockage et pas que entrepot)
+- La disponibilité réelle (il faut plus de temps pour aller chercher un article au fin fond de l'entrepot de réserve que dans un rack piloté par rfid proche de la zone de shipping
+- La prise en compte des stock futurs : j'ai promis X article dans 60j, je ne les ai pas aujourd'hui mais je sais qu'un arrivage dans 7j va pouvoir satisfaire la demande.
+
+Afin d'éviter d'ajouter trop de détail aux capacités ou d'ajouter trop de capacités, je me demande s'il ne nous manque pas un niveau : la sous capacité. Je n'aime pas le terme honnêtement. Je préfèrerais variante ou niveau. Peux tu me dire ce que propose le marché ?
+
+**contexte et portée**
+
+Laurent précise les informations à considérer par ATP, pour une promesse ou un ensemble : droits/engagements sur le stock, tous lieux de stockage, disponibilité opérationnelle et ressources futures. Il demande une comparaison marché des moyens de détailler sans multiplier les capacités, avec préférence lexicale pour variante ou niveau. Ce questionnement ne crée pas de nouveau niveau d’urbanisme ni de sous-capacité et n’adopte pas encore une convention de décomposition. Le détail des formules, des consommations et des interfaces reste à instruire.
+
+## U262
+
+**id**
+
+U262
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Retenir Comportement comme dernier niveau de détail d’une capacité
+
+**texte**
+
+Comportement est exactement ce que je cherche pour mon niveau de décomposition complémentaire. Et je ne crois pas qu'il faille descendre plus bas.
+
+**contexte et portée**
+
+Laurent retient Comportement comme niveau complémentaire sous une capacité, avec arrêt de la décomposition à ce niveau. Ce choix remplace la préférence provisoire variante/niveau et la recommandation de profils formulée en réponse à U261. La définition éditoriale, les comportements ATP individuels et leur représentation technique restent à préciser ; aucune publication demandée.
+
+## U263
+
+**id**
+
+U263
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Adopter la décomposition factuelle d’ATP en comportements
+
+**texte**
+
+Les définitions que tu proposes sont bonnes pour la décomposition de l'ATP. Et ça permet de ne pas rentrer dans une démarche marketing du style "Advanced ATP" : on doit rester factuel.
+
+**contexte et portée**
+
+Laurent adopte les définitions proposées pour décomposer ATP en comportements et exige une description factuelle, sans qualification promotionnelle du type Advanced ATP. Accord portant sur les quatre comportements discutés : engagements existants, stocks du réseau, délais de mobilisation et ressources futures. Conserver les noms de produits tels que SAP aATP uniquement pour les références marché. Aucun catalogue exhaustif, nom anglais de comportement ou changement des frontières ATP/CTP n’est déduit ; aucune publication demandée.
+
+## U264
+
+**id**
+
+U264
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Implémenter les comportements dans le modèle, ATP et Atlas
+
+**texte**
+
+Je souhaite que tu rajoutes ce niveau dans le modèle, que mettes à jour l'atp et que tu revoies l'ATLAS pour prendre en compte cette évolution.
+
+**contexte et portée**
+
+Demande d’implémenter le niveau Comportement terminal retenu U262, les quatre définitions ATP adoptées U263 et leur exploration dans Atlas. Autorise l’évolution des schémas, contrôles, backlog et interface. Les reformulations de synthèse et traductions de noms restent distinguées des définitions adoptées. Atlas demeure une lecture des publications ; aucune release métier ni commit/push implicitement demandé.
+
+
+## U265
+
+**id**
+
+U265
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Audit de granularité avec comportements et simplification des instructions
+
+**texte**
+
+On a délibérément mis un niveau de granularité haut pour les capacités d'action (management, planning etc.). Mais maintenant on va pouvoir décrire plus précisément les comportements attendus : simulation, traitement en masse etc.
+
+Je souhaite que tu fasses un audit du modèle et que tu le compares avec le marché. Je pense que le marché qui décrit un modèle sur plusieurs niveaux n'a pas rendu facile l'alignement jusqu'à aujourd'hui.
+
+Refais une passe sur agents.md et le modèle pour simplifier, éviter les doublons et reprioriser les instructions.
+
+Concernant l'audit du modèle :
+Je veux savoir si l'ajout de ce niveau est suffisant (j'espère que oui).
+Je veux savoir comment refactorer le modèle actuel en passant des capacité en comportement ou en les décomposant.
+
+P.S. : Il faut que la décomposition en comportement soit justifiée par une complexité ou un bénéfice ciblé => cette notion est en enregistrer dans le modèle.
+
+**contexte et portée**
+
+Audit et simplification autorisés. Exigence adoptée : justifier la décomposition par une complexité ou un bénéfice ciblé. Aucun regroupement, changement de nature ou nouveau comportement particulier validé par cette demande.
+
+
+## U266
+
+**id**
+
+U266
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Plan séparant corrections autonomes et arbitrages conjoints
+
+**texte**
+
+Si tu peux prévoir un plan d'actions à présenter coupé en deux :
+1- ce que tu peux prendre en compte de manière automatique qui améliore sans risque le modèle
+2- ce qui demande un travail conjoint entre toi et moi et de la validation
+
+**contexte et portée**
+
+Distinguer les améliorations sans arbitrage métier et les propositions à instruire avec Laurent. Ne pas déduire une validation de refonte du catalogue.
+
+## U267
+
+**id**
+
+U267
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Décrire Planning autour du scénario et examiner son application
+
+**texte**
+
+Pourquoi Reconfiguration ?
+
+Pourquoi Planning alors qu'on parle de scénario après ?
+
+Pourquoi pas :
+
+- Construction de Scenario
+- Simulation
+- Comparaison / Evaluation
+- Validation
+- Application du scénario
+
+**contexte et portée**
+
+Laurent questionne les intitulés proposés par Codex et propose cinq comportements centrés sur le scénario, distinguant simulation et comparaison/évaluation et ajoutant application. Proposition à instruire, sans adoption implicite des définitions détaillées ni transfert de responsabilités opérationnelles vers D05. Les trois verbes antérieurement adoptés pour Planning restent documentés ; leur reformulation générale est à réexaminer à partir de cette proposition.
+
+## U268
+
+**id**
+
+U268
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Comparer les propositions utilisateur et justifier les recommandations
+
+**texte**
+
+A chaque fois que je propose qq chose, je veux que tu compares avec le marché. Quand tu proposes qq chose, je souhaite que tu justifies ton choix vis à vis du marché ou vis à vis de notre modèle
+
+**contexte et portée**
+
+Règle de travail explicite : chaque proposition de Laurent reçoit une comparaison marché ; chaque recommandation de Codex est justifiée par le marché ou par la cohérence avec le modèle FLOW. Distinguer preuves consultées, rapprochements et choix proposés. Ne valide pas les cinq comportements de U267 ni leurs descriptions détaillées.
+
+
+## U269
+
+**id**
+
+U269
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Validation des cinq comportements du scénario pour Inventory Planning
+
+**texte**
+
+On valide.
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement précédente : Scenario Construction, Scenario Simulation, Scenario Evaluation, Scenario Validation et Scenario Application sous Inventory Planning, avec les descriptions courtes présentées et le bénéfice du découpage. Application déclenche les actions retenues et connaît leur prise en compte via les capacités opérationnelles responsables ; Supply Protection, gestions d’Orders D04 et pilotage D06 conservent leurs responsabilités. Les correspondances marché justifient la proposition sans devenir des équivalences normatives validées. Autorise la mise à jour du backlog ; aucune release demandée. Les compléments éditoriaux rédigés lors de l’intégration restent proposés.
+
+## U270
+
+**id**
+
+U270
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Analyse d’impact de scénario exprimée en indicateurs
+
+**texte**
+
+quand je relis ton analyse, SAP propose une analyse d'impact en termes d'indicateur concernant la simulation. C'est vrai que c'est un comportement complémentaire.
+
+**contexte et portée**
+
+Laurent reconnaît l’analyse d’impact en indicateurs comme un comportement complémentaire et demande implicitement de poursuivre l’examen de Planning. Comparer à SAP conformément à U268. L’intitulé anglais, la définition détaillée et l’ajustement des frontières avec Simulation et Evaluation sont à proposer ; ne pas les considérer comme déjà adoptés. Les cinq comportements U269 et leurs valeurs validées restent préservés pendant cet examen.
+
+
+## U271
+
+**id**
+
+U271
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Validation de Scenario Impact Analysis et de ses frontières
+
+**texte**
+
+je valide
+
+**contexte et portée**
+
+Accord sur la réponse immédiatement précédente : sixième comportement Scenario Impact Analysis sous Inventory Planning, définition proposée, bénéfice de rendre les conséquences métier explicites avant appréciation, et distinction des résultats de Simulation, Impact Analysis et Evaluation. La simulation peut déjà produire les indicateurs exploités par l’analyse, sans recalcul imposé. Les trois résultats du tableau sont conservés comme preuves des frontières adoptées ; les exemples sont fictifs. Les compléments d’intégration restent proposés. Aucun niveau supplémentaire, release, commit ou push demandé.
+
+## U272
+
+**id**
+
+U272
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Protection : surconsommation, seuils de réassort et question du nom Supply ou Stock
+
+**texte**
+
+Le terme Supply Protection est très large en terme de sens. Le contrôle de surconsommation proposé par Microsoft Inventory Allocation entre dans cette capacité à mon avis.
+Définir un seuil de réassort est une forme de protection.
+Je me pose la question du terme "Supply" dans l'expression "Supply Protection". Pourquoi Supply et pourquoi pas Stock ?
+
+**contexte et portée**
+
+Après le passage au sujet Supply Protection, Laurent inclut le contrôle de surconsommation et les seuils de réassort dans l’intention de protection. Il questionne Supply versus Stock ; aucun renommage n’est encore adopté. Comparer les usages du marché et la cohérence avec D01/D05 avant proposition. Cet apport ne réattribue pas implicitement les décisions de valeur de D05 à la capacité de management et ne valide pas la définition proposée au tour précédent.
+
+## U273
+
+**id**
+
+U273
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Différence fondamentale entre Supply Protection et Stock Allocation
+
+**texte**
+
+Quelle différence fondamentale entre supply protection et stock allocation ?
+
+**contexte et portée**
+
+Question complémentaire à U272 : clarifier les concepts, les différences de vocabulaire entre éditeurs et la distinction entre décision spécialisée D05 et management D01. Aucune fusion, nouvelle décomposition ni adoption de nom n’est exprimée.
+
+## U274
+
+**id**
+
+U274
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Protection contre pénurie et surstock ; allocation des ressources aux commandes
+
+**texte**
+
+La protection doit adresser le pb de pénurie mais aussi adresser le surstock.
+Je suis d'accord sur le fait que Protection et Allocation sont deux choses différentes : la protection est une capacité de configuration de la supply (planification & règles & quantités) alors que l'allocation est le processus de distribution des ressources aux commandes
+
+**contexte et portée**
+
+Laurent précise l’intention de protection dans les deux sens, pénurie et surstock, et distingue configuration de la supply et distribution des ressources aux commandes. Examiner les conséquences sur la définition actuelle de Supply Protection, le nom Stock Allocation Decision (actuellement droits d’usage par groupe), Supply Assignment (affectation à des besoins) et la frontière avec Inventory Planning. Les renommages, rattachements et nouvelles définitions restent à proposer ; cette contribution ne vaut pas adoption de la recommandation Stock Protection du tour précédent ni fusion implicite avec Inventory Planning.
+
+## U275
+
+**id**
+
+U275
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Assignment retenu pour l’affectation aux commandes ; distinction avec Allocation
+
+**texte**
+
+Oui Assignment est le terme qui correspond à ma définition.
+
+Du coup, quelle différence fondamentale avec allocation ?
+
+**contexte et portée**
+
+Laurent confirme le terme Assignment pour la distribution des ressources aux commandes décrite en U274. Il demande de clarifier Allocation en regard ; aucun renommage de Stock Allocation Decision, ni nouvelle définition détaillée de Protection ou Assignment, n’est adopté par cet accord lexical. Comparer les usages éditeurs avant de proposer une convention FLOW.
+
+## U276
+
+**id**
+
+U276
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Allocation comme comportement de Supply Protection
+
+**texte**
+
+Donc, Allocation est un des comportement de Supply Protection
+
+**contexte et portée**
+
+Laurent énonce le rattachement conceptuel du comportement Allocation à Supply Protection, dans le sens d’enveloppes et droits d’usage par groupe clarifié en U275. La décision spécialisée Stock Allocation Decision et Supply Assignment restent distincts dans la proposition qui précède. La définition détaillée du comportement, sa justification éditoriale et ses relations restent à présenter ; aucun catalogue complet de comportements ni renommage de Supply Protection n’est adopté.
+
+
+## U277
+
+**id**
+
+U277
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Alimenter les comportements par le détail fonctionnel Microsoft
+
+**texte**
+
+Le détail exposé par Microsoft est très bon. Il doit servir pour alimenter les comportements.
+
+**contexte et portée**
+
+Instruction d’enrichissement concret à partir de la documentation Microsoft Inventory Allocation discutée en U276. Intégrer Allocation sous Supply Protection selon le rattachement U276 et documenter les mécanismes utiles. Les formulations détaillées, exemples, justification et correspondances ajoutés restent proposés ; aucune conversion automatique de chaque API en comportement, aucun niveau supplémentaire, renommage ou release demandé.
+
+
+## U278
+
+**id**
+
+U278
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Cinq comportements pairs pour la gestion des enveloppes de Supply Protection
+
+**texte**
+
+Je trouve que les comportements sont plutot ceux ci :
+
+1. attribution d’une enveloppe à un groupe (c'est l'allocation initiale) ;
+2. réallocation entre groupes ;
+3. libération des quantités inutilisées ;
+4. imputation de la consommation ;
+5. consultation des quantités allouées, consommées et restantes.
+
+**contexte et portée**
+
+Correction du regroupement réalisé en U277 : ces cinq résultats constituent les comportements pairs directement sous Supply Protection. Allocation conserve son identité BHV011 mais son périmètre devient l’attribution initiale ; l’ancien périmètre agrégé est capturé. Les cinq descriptions françaises sont reprises de la liste. Les nouveaux noms anglais, exemples, frontières et justification éditoriale restent proposés. Aucun sous-comportement, nouvelle capacité, renommage du parent ni publication demandé. Les comportements de seuils/validité restent à instruire.
+
+## U279
+
+**id**
+
+U279
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Accord sur les comportements d’allocation et examen des seuils de réassort
+
+**texte**
+
+Parfait. Il n'y a pas que l'allocation comme mécanisme de protection. définir des seuils de réassort est une autre mécanique, non ?
+
+**contexte et portée**
+
+Accord sur le découpage et les noms présentés au tour précédent : Allocation, Reallocation, Allocation Release, Allocation Consumption et Allocation Visibility directement sous Supply Protection, avec leurs résultats courts. Les scopes détaillés ajoutés dans les fichiers ne sont pas implicitement validés. Laurent ouvre l’examen des seuils de réassort comme autre mécanique de protection ; aucun nouveau nom ou définition détaillée de comportement de seuils n’est encore adopté. Préserver la distinction entre décision des valeurs, configuration effective et décision des apports.
+
+
+## U280
+
+**id**
+
+U280
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Étude marché étendue pour une liste complète des comportements de protection
+
+**texte**
+
+Regarde le marché entièrement pour proposer une liste complete
+
+**contexte et portée**
+
+Demande d’élargir l’étude de Supply Protection au-delà de l’allocation, à la suite des seuils de réassort U279. Rechercher les mécanismes de pénurie, surstock et déséquilibre et proposer une liste documentée ; conserver les frontières des décisions et de l’exécution. Autorise l’étude et ses propositions, pas l’adoption automatique d’un catalogue étendu.
+
+
+## U281
+
+**id**
+
+U281
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Confirmation de l’approche d’étude marché des mécanismes de protection
+
+**texte**
+
+Très bonne approche, c'est ça ce que je veux
+
+**contexte et portée**
+
+Accord sur l’approche annoncée : explorer les principaux ERP et spécialistes, examiner seuils, règles, plafonds, temporalité, dérogations et cas retail, puis justifier les comportements et distinguer paramètres et décisions. Les résultats détaillés de l’étude et la liste candidate ne sont pas encore présentés à ce stade ; aucun nouveau comportement adopté par cet accord de méthode.
+
+
+## U282
+
+**id**
+
+U282
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Comportements centrés sur les mécanismes métier de protection
+
+**texte**
+
+Je viens de lire l'étude complète.
+
+Je me rends compte que le terme d'allocation et lister les opérations qu'on peut faire sur le concept d'allocation n'est peut être pas la bonne méthode de découpage. L'approche qui liste les mécanismes de protection est plus ce que je recherche dérriere le concept de comportement. Allouer / désallouer, etc. ça ressemble à des fonctions que je laisserai au chef de produit pour le développement. Les mécanismes m'interessent bcp plus.
+
+**contexte et portée**
+
+Laurent précise la maille recherchée derrière Comportement : mécanismes métier, plutôt que catalogue des opérations sur un concept. Le découpage Allocation/réallocation/libération/consommation/consultation et la liste de 17 opérations doivent être réexaminés selon ce critère. Les détails fonctionnels restent utiles au chef de produit. Cette correction n’adopte aucun nouveau nom ni catalogue de mécanismes et ne retire pas automatiquement les comportements ATP ou Inventory Planning. Conserver les accords historiques et les identifiants ; signaler explicitement le réexamen courant.
+
+
+## U283
+
+**id**
+
+U283
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Critères différenciants des comportements et réexamen de Planning
+
+**texte**
+
+Mécanisme, Politique, Variante, ou benefice sont les critères différenciants qui permettent de décomposer une capacité. Je suis très satisfait de ta proposition.
+Pour les capacité de "planification", les mécanismes de construction de scénarios alternatifs, d'adaptation de l'execution d'un scénario, et de simulation sont vraiment des comportements dans le sens où ça implique des impacts sur les comportements humains de l'entreprise et de ses processus. Les autres comportements sont des fonctions qu'on retrouvera dans les produits.
+
+**contexte et portée**
+
+Laurent retient Mécanisme, Politique, Variante ou bénéfice comme critères différenciants de décomposition. Pour Planning, il retient la construction de scénarios alternatifs, l’adaptation de l’exécution d’un scénario et la simulation comme comportements, au regard de leurs effets sur les pratiques humaines et les processus. Il requalifie les autres comportements discutés en fonctions de produits. Cette orientation remplace le découpage courant en six comportements comme cible recommandée ; conserver les accords historiques. Les noms anglais, définitions détaillées, rattachements et frontière entre adaptation de scénario en D05 et adaptation opérationnelle en D06 restent à préciser ; aucun transfert de responsabilité vers D05 ni nouveau niveau fonctionnel implicite.
+
+
+## U284
+
+**id**
+
+U284
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Simulation & analyse comme comportement unique de Planning
+
+**texte**
+
+Tout à fait aligné. Je préciserais "Simulation & analyse" en un seul comportement.
+
+**contexte et portée**
+
+Accord sur la lecture présentée après U283 : trois comportements de Planning, différenciation concrète et réalisation éventuellement automatisée, frontière scénario de stock D05 / adaptation opérationnelle D06. Laurent précise explicitement le regroupement Simulation & analyse. Les descriptions du tableau précédent sont acceptées dans cette portée ; le nouvel intitulé anglais et sa synthèse détaillée sont des traductions/formulations éditoriales. Aucune adoption implicite d’autres champs ou d’une migration technique non présentée.
+
+
+## U285
+
+**id**
+
+U285
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Nécessité d’une refonte profonde après clarification des comportements
+
+**texte**
+
+Je pense qu'au vu de nos discussions, un refacto en profondeur est obligatoire, non ?
+
+**contexte et portée**
+
+Laurent demande un diagnostic sur la nécessité et l’étendue de la refonte au regard des arbitrages U282–U284. Préparer une recommandation cohérente ; cette question n’adopte pas toutes les fusions, suppressions ou nouvelles définitions possibles. Conserver les accords établis et distinguer leur mise en cohérence des arbitrages métier nouveaux.
+
+
+## U286
+
+**id**
+
+U286
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Préparation de la cible complète de refonte des capacités et comportements
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Autorise la proposition cible complète recommandée après U285 : revue des 41 capacités, comportements, descriptions et dépendances ; changements déductibles des accords distingués des arbitrages nouveaux. Préparer l’avant/après et les appuis marché avant migration. Ne vaut pas validation anticipée de fusions, définitions nouvelles, liste de mécanismes de Protection, release ou réécriture technique de l’Atlas.
+
+
+## U287
+
+**id**
+
+U287
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Mécanisme d’application de scénario ou de plan d’allocation dans Order Management
+
+**texte**
+
+Order management qui possède un mécanisme d'application d'un scénario, d'un plan d'allocation est une bonne idée.
+
+**contexte et portée**
+
+Laurent retient le principe d’un mécanisme d’application de scénario/plan d’allocation dans Order Management. À intégrer à la cible U286 en cours. Le nom, la capacité parente précise et les règles détaillées ne sont pas encore définis. Distinguer part du plan matérialisée par des Orders et configuration des droits de groupes portée par Supply Protection ; cette explicitation est proposée à partir des frontières existantes, sans assimiler toute allocation à un transfert ni modifier les responsabilités D05/D06.
+
+
+## U288
+
+**id**
+
+U288
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Promise Management avec trois comportements de promesse
+
+**texte**
+
+"J’ai retenu une fusion à soumettre à ton arbitrage : les trois capacités de gestion de promesse pourraient devenir Promise Management, en gardant proposition, confirmation et révision comme fonctions.   ". Comme comportement tu veux dire :)
+
+Oui c'est une bonne idée.
+
+**contexte et portée**
+
+Laurent corrige explicitement la proposition : regrouper les trois capacités sous Promise Management et conserver proposition, confirmation et révision comme trois comportements, pas seulement des fonctions en description. Le principe du regroupement, le nom Promise Management et la décomposition présentée sont adoptés. Définitions de comportements contextualisées, exemples, identifiants nouveaux et contrats détaillés restent à préparer sans transfert automatique de validation des anciens nœuds. Cette décision précise le cas Promise ; elle ne rétablit pas les anciens découpages d’Allocation ou de Planning.
+
+
+## U289
+
+**id**
+
+U289
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Fixer le vocabulaire Allocation et Assignment après clarification du plan
+
+**texte**
+
+Je viens de parler de "plan d'allocation" avec une définition proche de celle de SAP : allocation = répartir, distribuer des ressources contraintes à des commandes pour maximiser la promesse. C'est toujours cette définition qu'on a ou on a changé ? Ce n'est pas le terme assignment qu'on utilise ? Je suis perdu. Regarde sur le marché le terme le plus cohérent pour fixer définitivement terme et définition et arreter de mélanger Allocation, répartition, Assignment etc.
+
+**contexte et portée**
+
+Laurent précise le sens du plan mentionné en U287 : affectation de ressources contraintes à des commandes pour maximiser la promesse, pas répartition entre magasins ni enveloppes par groupes. Il demande une vérification marché et une convention terminologique stable, avec correction des mélanges. Cette précision remplace l’exemple interprétatif magasin A/B ajouté par Codex à U287 ; conserver sa trace comme interprétation dépassée. Examiner explicitement la distinction décision d’affectation et application en tenant compte des frontières courantes.
+
+## U290
+
+**id**
+
+U290
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Valeur multidimensionnelle et mise en œuvre de la refonte
+
+**texte**
+
+« Maximiser la promesse »  : oui tu as raison, on est bien sur maximiser la valeur qui est multidensionnelle.
+
+Go pour la refonte
+
+**contexte et portée**
+
+Laurent valide la finalité de maximisation d’une valeur multidimensionnelle et demande l’application au backlog de la cible de refonte présentée U286–U289. La convention Supply Assignment / plan d’affectation est confirmée. Le socle recommandé est migré avec conservation des identifiants maintenus, des valeurs historiques et des portées de validation. Les variantes explicitement conditionnelles, les questions sans solution retenue et les contrats détaillés à éprouver ne deviennent pas validés par ce Go. Les nouveaux exemples, pondérations, formulations éditoriales et choix techniques de migration gardent leur portée propre. Aucune release, publication Atlas, opération Git ou administration serveur demandée.
+
+
+## U291
+
+**id**
+
+U291
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Audit des comportements manquants après la refonte
+
+**texte**
+
+L'étape d'après sera de bien regarder quelles capacités sont en manque de comportement. Mais je te laisse refactorer tranquille pour l'instant.
+
+**contexte et portée**
+
+Laurent maintient la priorité de terminer la refonte U290. L'étape suivante examinera les capacités qui bénéficieraient de comportements supplémentaires, avec justification par complexité ou bénéfice ciblé et comparaison marché. Ce message ne demande pas de lancer cette étude pendant la migration ni de décomposer toutes les capacités.
+
+
+## U292
+
+**id**
+
+U292
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Analyse approfondie des comportements manquants comparée au marché
+
+**texte**
+
+Tu peux faire une analyse profonde et comparative du marché par rapport aux comportements manquants de notre modèle ?
+
+**contexte et portée**
+
+Laurent lance l’étude prévue U291 sur le backlog refondu U290. Examiner les capacités et leurs comportements face aux mécanismes documentés par le marché, avec preuves primaires, frontières, bénéfices et limites. Préparer des recommandations et arbitrages ; ne pas adopter ni créer automatiquement les comportements étudiés. Aucune release demandée.
+
+
+## U293
+
+**id**
+
+U293
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Retour sur tracking, cycle de vie, excédents et adaptabilité des processus
+
+**texte**
+
+Mon feedback immédiat :
+
+- Execution Tracking : effectivement l'idée est de traquer les exceptions mais pas que. Savoir à tout moment où est la marchandise est important. C'est à l'image de Inventory Visibility de microsoft sauf que là c'est du "Transit Visibility" si on peut le dire comme ça.
+- Order Life Cycle  Management : ta définition n'est pas très claire et ressemble un peu à Execution Orchestration. Tu peux préciser.
+- Surstock n'est pas un terme adéquat. La Notion d'excédent me semble plus approprié.
+- La compensation des tâches après changement d'un order, c'est du Case Management : L'order est le case. Si on modifie un case alors qu'un traitement est en cours, on active le flow de compensation pour annuler les traitements en cours et relancer le workflow adapté à l'état de l'order. C'est la problématique d'adaptabilité des processus qu'on avait déjà relevé dans les capacités.
+
+**contexte et portée**
+
+Retour sur les propositions U292 : suivi normal et localisation des marchandises en transit, clarification demandée du cycle de vie, préférence pour excédent, compensation rattachée à l’adaptabilité du processus portant l’Order comme case. Enregistrer la correction de l’audit sans créer de comportement ou imposer un renommage du catalogue. Les nouvelles définitions et rattachements proposés par Codex restent à discuter.
+
+
+## U294
+
+**id**
+
+U294
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Reprendre le vocabulaire du marché à notion et périmètre équivalents
+
+**texte**
+
+Transit Visibility c'est vraiment une bonne idée ? Tu as donné le terme utilisé par SAP. Mais si le marché utilise la même notion et le même périmètre mais avec un terme unifié comme Global Track alors il faut garder ce dit le marché. Il faut dévier que si on apporte une innovation
+
+**contexte et portée**
+
+Laurent remet en question le libellé proposé Transit Visibility et fixe une règle de nommage : conserver le vocabulaire établi lorsque notion et périmètre correspondent ; une déviation exige une innovation explicitée. Global Track est un exemple à vérifier, pas un nom adopté. Comparer plusieurs sources et distinguer marque produit et notion métier ; aucune modification automatique du catalogue.
+
+
+## U295
+
+**id**
+
+U295
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Visibilité du transport en miroir d’Inventory Visibility
+
+**texte**
+
+Est ce qu'on a gardé Inventory Visibility dans le modèle ? Si oui, Transportation Visibility en miroir peut être une bonne idée. Logistics Visibility est bon aussi.
+
+**contexte et portée**
+
+Laurent demande une vérification du catalogue et ouvre deux options de nommage déjà présentes sur le marché. D01.c conserve Inventory Visibility. Transportation Visibility et Logistics Visibility ne sont pas adoptés par ce message ; nom, périmètre et niveau de décomposition restent distincts.
+
+
+## U296
+
+**id**
+
+U296
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Périmètre complet du suivi physique, du picking à la destination finale
+
+**texte**
+
+En fait, dès que la marchandise sort de son espace de stockage pour picking, préparation, embarquement, transport, dépot jusqu'au point final je veux un tracking complet. Global Track est du coup très agrégeant. Transportation Visibility me parait trop restreint au transport pur. Fulfillment Visibility why not ? Logistics Visibility, ça couvre vraiment tout ?
+
+**contexte et portée**
+
+Laurent précise le périmètre attendu : continuité du suivi physique depuis la mobilisation pour picking jusqu’au point final, avec préparation, embarquement, transport et dépôts intermédiaires. Transportation Visibility paraît trop restreint ; Fulfillment Visibility et Logistics Visibility sont à comparer. Ce message précise le besoin mais n’adopte pas encore un nom ni un rattachement et ne confie pas les opérations internes des exécutants à FLOW.
+
+
+## U297
+
+**id**
+
+U297
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Validation du nom Logistics Visibility
+
+**texte**
+
+Ok, je valide Logistics Visibility
+
+**contexte et portée**
+
+Validation explicite du libellé Logistics Visibility pour le suivi physique décrit U296, du prélèvement/picking au point final via préparation, manutention, transport et étapes intermédiaires. Le nom est adopté dans la proposition structurée ; aucune extension automatique de cet accord aux détails éditoriaux, au niveau capacité/comportement, au rattachement sous Execution Tracking, aux autres candidats de l’audit ou à une release.
+
+
+## U298
+
+**id**
+
+U298
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Réexaminer l’actualité du résultat de l’audit
+
+**texte**
+
+Reprenons le résultat de l'audit. Il est toujours bon où il faut le refaire ou mettre à jour ?
+
+**contexte et portée**
+
+Laurent demande si les conclusions de l’audit restent pertinentes après U293–U297. Vérifier le socle, les corrections et les recommandations courantes. Consolidation documentaire ciblée ; aucun nouveau comportement ni rattachement adopté par cette question.
+
+
+## U299
+
+**id**
+
+U299
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Validation des corrections sur exceptions et coordination par dépendances
+
+**texte**
+
+Ok pour les deux corrections
+
+**contexte et portée**
+
+Laurent valide les deux corrections présentées en U298 : les exceptions logistiques font partie du périmètre de Logistics Visibility et ne doivent pas être dupliquées ; la coordination par dépendances peut décrire le fonctionnement normal d’Execution Orchestration et ne justifie pas à elle seule un comportement métier autonome. Un éventuel comportement distinct doit démontrer un bénéfice supplémentaire. Accord limité à ces corrections, sans validation des autres candidats ni du niveau/rattachement de Logistics Visibility.
+
+
+## U300
+
+**id**
+
+U300
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Proposer le positionnement de Logistics Visibility et préciser l’arbitrage
+
+**texte**
+
+Positionnement de Logistics Visibility. Que proposes tu ? Quel problème à valider ?
+
+**contexte et portée**
+
+Laurent demande une recommandation explicite de niveau/rattachement et le problème restant à arbitrer. Le nom Logistics Visibility est déjà adopté U297 ; exceptions sans doublon et granularité sont corrigées U299. Préparer la proposition sans redemander la validation du nom ni créer implicitement de nouveaux nœuds.
+
+
+## U301
+
+**id**
+
+U301
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Execution Tracking : audit de toutes les opérations numériques et physiques
+
+**texte**
+
+Execution tracking comprend la logistics visibility mais aussi la visibility de tout ce qui se passe dans le système d'information : on doit pouvoir auditer la totalité des opérations : numériques et physiques.
+
+**contexte et portée**
+
+Périmètre explicitement exprimé : visibilité logistique incluse dans Execution Tracking et audit de toutes les opérations numériques et physiques. Ne pas réduire le numérique aux seuls statuts de prestations.
+
+
+## U302
+
+**id**
+
+U302
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Accord sur l’analyse du périmètre de tracking
+
+**texte**
+
+Je suis donc d'accord avec ton analyse.
+
+**contexte et portée**
+
+Accord dans le contexte U301. Le message suivant U303 réouvre explicitement la granularité du comportement Logistics Visibility ; ne pas figer son niveau sur la base de cet accord.
+
+
+## U303
+
+**id**
+
+U303
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Challenger la granularité de Logistics Visibility
+
+**texte**
+
+Néanmoins, je trouve du coup Logistics Visibility trop agrégeant pour un niveau comportement. est-ce qu'il ne faudrait pas séparer le concept en Transportation Visibility + <tout ce qu'il se passe avant le transport> Visibility + <tout ce qui se passe après le transport> Visibility ?
+
+**contexte et portée**
+
+Question de décomposition à comparer au marché. Le périmètre global de tracking reste acquis ; le nom Logistics Visibility adopté U297 ne suffit pas à imposer un comportement unique. Aucun nouveau découpage adopté par cette question.
+
+
+## U304
+
+**id**
+
+U304
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Visibilité de la mise en rayon après transport
+
+**texte**
+
+Une mise en rayon après le transport, ce sont des opérations aval du transport sur lesquelles je veux de la visibilité. Comment ça s'appelle ?
+
+**contexte et portée**
+
+Cas métier explicite : suivre les opérations magasin après livraison, notamment la mise en rayon. Comparer le vocabulaire de marché ; aucune nouvelle décomposition adoptée par la question.
+
+
+## U305
+
+**id**
+
+U305
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Validation des trois comportements de visibilité logistique
+
+**texte**
+
+Top ! Exactement ce que je veux !
+
+**contexte et portée**
+
+Validation de la proposition présentée après U304 : Warehouse Visibility, Transportation Visibility et Store Execution Visibility, avec les périmètres du tableau et un rattachement direct à Execution Tracking. Logistics Visibility reste une notion englobante sans niveau supplémentaire. Le bénéfice magasin distingue livraison reçue et marchandise accessible au client en rayon. Le mandat numérique et physique U301/U302 reste acquis. Aucun accord implicite sur de nouveaux comportements numériques ou sur les détails éditoriaux non présentés ; aucune release demandée.
+
+
+## U306
+
+**id**
+
+U306
+
+**date**
+
+2026-09-17
+
+**titre**
+
+Visibilité explicite de l’exécution des services numériques
+
+**texte**
+
+"Le mandat de traçabilité numérique reste également acquis." => Je pense que c'est une visibilité explicite. Si on appelle par exemple un service numérique de vérification quelconque comme un code barre, un dispositif anti fraude, une vérification d'identité, une production documentaire numérique etc. on doit pouvoir en avoir une visibilité claire.
+
+**contexte et portée**
+
+Laurent précise que la visibilité numérique doit être explicite : service de vérification de code-barres, antifraude, identité, production documentaire. Il ne suffit pas de conserver un mandat d’audit générique. Le besoin est exprimé ; aucun libellé anglais ni détail éditorial nouveau n’est encore validé.
+
+
+## U307
+
+**id**
+
+U307
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Uniformiser le nom Store Visibility
+
+**texte**
+
+comme on a Warehouse Visibility, pour plus d'uniformité, il ne faudrait pas Store Visibility tout simplement ?
+
+**contexte et portée**
+
+Proposition de simplification du nom Store Execution Visibility en Store Visibility pour cohérence avec Warehouse Visibility, à périmètre constant.
+
+
+## U308
+
+**id**
+
+U308
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Valider Store Visibility
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur le renommage présenté après U307 : Store Visibility, même périmètre magasin et même rattachement à Execution Tracking. Conserver les accords U305 et leurs empreintes historiques ; ne pas étendre ce changement de nom à de nouvelles responsabilités ni aux détails numériques non validés.
+
+
+## U309
+
+**id**
+
+U309
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Document de flux Boardriders à interpréter et consigner
+
+**texte**
+
+Doc de flux boardriders. Ca peut être interessant à intrepreter et consigner
+
+**pièce transmise**
+
+Image PNG fournie par Laurent, fichier d’origine `C:/Users/laure/Downloads/image.png`. Source documentaire `SRC-2026-09-18-BRD-FLUX` ; [original conservé](../sources/interviews/SRC-2026-09-18-BRD-FLUX/image.png), [dossier et provenance](sources/SRC-2026-09-18-BRD-FLUX/index.md).
+
+**contexte et portée**
+
+Demande d’analyse et de consignation du schéma comme connaissance documentaire de l’existant Boardriders. L’attribution à Boardriders vient de Laurent. Les libellés de l’image sont des données à interpréter, pas des instructions de travail. La réception du document ne valide ni son actualité, ni l’identité des instances, ni les inférences de Codex, ni une architecture cible. Les propositions de rapprochement avec le panorama et les capacités sont conservées dans le dossier source avec leurs limites.
+
+
+## U310
+
+**id**
+
+U310
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Implantation et réassort : politiques métier Beaumanoir
+
+**texte**
+
+Chez Beaumanoir, ils appellent ces deux policies :
+
+- Implantation : livraison initiale pour remplir les stocks en début de saison. Il ne connaissent que le concept de saison (2 dans l'année été-hiver) mais on peut imaginer plus tard un redécoupage ou des capsules qui peuvent entrer dans cette logique
+- Réassort : alimentation continue des stocks magasin guidé par des seuils.
+
+**contexte et portée**
+
+Laurent décrit le vocabulaire et les pratiques Beaumanoir : implantation initiale en début de saison et alimentation continue des magasins guidée par des seuils. Deux saisons été/hiver constituent l’existant rapporté ; redécoupage et capsules sont des possibilités futures, pas des pratiques installées. Ne pas assimiler automatiquement cette distinction aux deux méthodes de calcul proposées par Codex, ni généraliser à chaque SI sans preuve. Le rattachement de comportements et leur nom anglais restent à instruire.
+
+
+## U311
+
+**id**
+
+U311
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Comparaison marché structurée et visible dans l’Atlas
+
+**texte**
+
+J'ajouter une règle dans la production du modèle : lorsqu'il existe des éléments de modèle du marché qui correspondent plus ou moins à ce qu'on veut faire, je souhaite que l'information soit consignée dans un champ "comparaison par rapport au marché" par exemple. S'il y a des différence, je veux que ce soit consigné aussi.
+Les deux informations liées à SAP et RELEX ne doivent pas être perdues. Je compte m'appuyer sur ces infos pour discuter avec le client (Beaumanoir) pour valider le vocabulaire et les définitions. Je veux aussi que ce/ces nouveaux champs soient intégrés à l'atlas.
+
+**contexte et portée**
+
+Règle de production adoptée : conserver les correspondances et différences marché dans les fiches, avec un affichage Atlas pour soutenir la validation client. Intégrer notamment SAP et RELEX discutés U310. L’autorisation porte sur le contrat de données, son alimentation et sa restitution ; elle ne valide pas les équivalences éditoriales ni ne demande de release métier.
+
+
+## U312
+
+**id**
+
+U312
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Replenishment et réassort
+
+**texte**
+
+Replenishment, ce n'est pas réassort ?
+
+**contexte et portée**
+
+Question sur le sens retail de Replenishment ; réexamen du rattachement proposé de l’implantation.
+
+
+## U313
+
+**id**
+
+U313
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Deux décisions distinctes pour implantation et réassort
+
+**texte**
+
+Il faut une décision pour l'implantation et une décision pour le réassort continu
+
+**contexte et portée**
+
+Séparation des deux décisions explicitement demandée. Les noms anglais, définitions détaillées et relations ne sont pas encore validés.
+
+
+## U314
+
+**id**
+
+U314
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Périmètre marché de Replenishment
+
+**texte**
+
+Sur le marché, Replenishment c'est pour l'implantation et le réassort ??
+
+**contexte et portée**
+
+Vérifier le sens métier et le périmètre des offres ; ne pas assimiler couverture d’un produit et hiérarchie de capacités.
+
+
+## U315
+
+**id**
+
+U315
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Nom anglais d’implantation sans Allocation si possible
+
+**texte**
+
+Il faut trouver un mot anglais pour implantation. Si possible pas "Allocation" car on a vu que ce terme est flou. Que dit le marché ?
+
+**contexte et portée**
+
+Rechercher un terme attesté, de préférence sans Allocation, pour la décision d’implantation distincte du réassort U313. Aucun nom anglais adopté par cette demande.
+
+
+## U316
+
+**id**
+
+U316
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adoption d’Initial Stocking Decision pour l’implantation
+
+**texte**
+
+Ok pour ta proposition
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement précédente : Initial Stocking / Initial Stocking Decision pour l’implantation, avec la définition présentée (« Déterminer les quantités à apporter à chaque magasin et leurs dates pour constituer le stock initial nécessaire au lancement, à partir de l’assortiment retenu, des objectifs de stock et des contraintes applicables. »). Deux décisions distinctes selon U313 : constituer le stock de départ et entretenir la disponibilité pendant la commercialisation. Le nom Replenishment Decision est conservé. L’accord ne valide pas les équivalences marché, les nouveaux exemples, les fonctions ou toutes les relations détaillées ajoutées lors de l’intégration. Backlog autorisé ; aucune release demandée.
+
+
+## U317
+
+**id**
+
+U317
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuite de l’audit après Initial Stocking Decision
+
+**texte**
+
+Next
+
+**contexte et portée**
+
+Demande de poursuivre l’examen des sujets de l’audit. Codex propose d’examiner Stock Redistribution Decision ; aucun nouveau comportement adopté par cette demande. P01–P03 sur le réassort restent ouverts, sans adoption ni abandon implicites.
+
+
+## U318
+
+**id**
+
+U318
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation du rééquilibrage et de la consolidation sous Stock Redistribution Decision
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur les deux mécanismes présentés sous Stock Redistribution Decision : Rééquilibrage entre sites (« Déplacer du stock vers les lieux qui en ont davantage besoin, en préservant les besoins des donneurs. ») et Consolidation de stocks dispersés (« Regrouper des quantités fragmentées pour leur redonner une utilité ou libérer des sites. »). L’accord couvre les deux cas explicitement soumis : reconstituer des assortiments de tailles dans certains magasins et regrouper les reliquats vers des lieux de destination adaptés. La redistribution ne se limite pas aux pénuries ; la consolidation ne se limite pas aux excédents. Coûts et risques du transfert sont à confronter au bénéfice. Les noms anglais, descriptions détaillées et nouvelle synthèse de capacité rédigés lors de l’intégration restent éditoriaux ; aucune équivalence marché ni pratique installée Beaumanoir déduite. Mise à jour du backlog autorisée ; aucune release demandée.
+
+
+## U319
+
+**id**
+
+U319
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Demande d’étude pour expliquer les principes de modélisation dans Atlas
+
+**texte**
+
+Je voudrais espace dans atlas qui explique les principes de modélisation retenus. Il faut imaginer qq chose de compact, ludique, didactique, pas juste un glossaire verbeux et indigeste.
+Je veux juste une étude et des propositions sans modification du source.
+
+**contexte et portée**
+
+Demande initiale limitée à une étude et des propositions. Aucun fichier du projet modifié lors de cette phase ; prototype interactif conservé hors du dépôt dans la conversation.
+
+
+## U320
+
+**id**
+
+U320
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Deux profondeurs de lecture pour le guide Atlas
+
+**texte**
+
+Les deux, avec deux profondeurs de lecture
+
+**contexte et portée**
+
+Réponse au choix de public : lecteurs métier découvrant Atlas et contributeurs construisant le modèle. Conserver un contenu commun avec une lecture immédiate et un approfondissement facultatif.
+
+
+## U321
+
+**id**
+
+U321
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Intégrer Les clés du modèle dans Atlas
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord donné après présentation de l’étude et de la proposition interactive « Les clés du modèle » : six repères, exemples manipulables et volet Pour contribuer. Autorise la réalisation dans Atlas, avec entrée dédiée auprès du Glossaire, séparation du glossaire métier et association explicite d’une version du guide aux publications. La portée et la date des principes et exemples doivent rester visibles, notamment lorsqu’ils sont postérieurs à la publication consultée. Aucun accord supplémentaire sur une généralisation méthodologique proposée, aucune release du catalogue ni publication Git demandée.
+
+
+## U322
+
+**id**
+
+U322
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Indépendance du modèle métier et de l’architecture de solution
+
+**texte**
+
+Attention au modèle business qui est complètement décorrélé de la solution. Souvent on a une capacité implémentée par une brique logiciel/ solution mais pas nécessairement. Il peut parfois y avoir dans les solution de la mutualisation, de la généricité, des choix et des contraintes techniques qui font qu'il y a des regroupements forts ou des dispersions (microservices) justifiés.
+
+**contexte et portée**
+
+Précision pendant l’intégration du guide Atlas U321. Le modèle business est indépendant de la solution et ne prescrit pas son découpage. Une correspondance capacité/brique logicielle est possible, sans être nécessaire ni systématique ; mutualisation, généricité et contraintes/choix techniques peuvent justifier regroupements ou dispersion. À expliquer dans le guide, avec réalisations illustratives et sans déduire une bijection, une architecture microservices ou un déploiement installé. Aucun changement de catalogue ou release demandé par cette précision.
+
+
+## U323
+
+**id**
+
+U323
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuite de l’audit des mécanismes de réassort
+
+**texte**
+
+Next
+
+**contexte et portée**
+
+Demande de poursuivre après validation des comportements de redistribution U318. Codex réexamine P01–P03 sur Replenishment Decision. Aucun nouveau comportement ni retrait adopté par ce message. Les contributions U319–U322 de la tâche Atlas restent indépendantes et préservées.
+
+
+## U324
+
+**id**
+
+U324
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Dépendance des min/max aux besoins et sens des comportements de réassort
+
+**texte**
+
+La détermination de min et max dépend du besoin selon la période, non ? Du coup j'ai l'impression que le premier comportement nourrit le deuxième. A moins qu'on considère que le deuxième (min/max) est une configuration stable et indépendante des contingences : à ce moment là ça signifie que le premier comportement essaie d'ajuster au mieux l'offre et la demande alors que le deuxième est juste une limite pour éviter la pénurie. Quel sens à tout ça ?
+
+**contexte et portée**
+
+Laurent challenge la distinction proposée U323, la dépendance des paramètres aux besoins et la frontière entre détermination des cibles et décision d’apports. Les alternatives sont des questions, pas une adoption de seuils fixes ni une validation de deux comportements. Aucune nouvelle capacité ou comportement demandé.
+
+
+## U325
+
+**id**
+
+U325
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Polysémie du terme Coverage
+
+**texte**
+
+Coverage (couverture) est réellement un terme métier très transverse ? Je sais que SAP a des notions de Orders en statut "uncovered" mais là on ne parle pas de la même chose. Je me demande si il n'y a pas un problème de vocabulaire et de sens un peu comme "Allocation"
+
+**contexte et portée**
+
+Question sur le vocabulaire ; aucune fusion de sens ni modification de nom adoptée.
+
+
+## U326
+
+**id**
+
+U326
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Distinction entre besoin et réponse possible
+
+**texte**
+
+Je comprends mieux la distinction :
+
+- Décision 1 : quel est le besoin ?
+- Décision 2 : qu'est ce que je peux faire ? => Assignment Problem
+
+**contexte et portée**
+
+Proposition de lecture à comparer au marché et aux frontières courantes. Ne vaut pas fusion des décisions spécialisées, ni extension adoptée de Supply Assignment à toute réponse Supply.
+
+
+## U327
+
+**id**
+
+U327
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Rejet de Coverage et piste Threshold
+
+**texte**
+
+Oui, Coverage n'est pas bon. Threshold ?
+
+**contexte et portée**
+
+Laurent confirme que Coverage ne convient pas au nom discuté de D05.a et soumet Threshold comme piste interrogative. Aucun nom de remplacement adopté, aucun changement de périmètre demandé.
+
+
+## U328
+
+**id**
+
+U328
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Préserver la maille fine des décisions et approfondir les correspondances marché
+
+**texte**
+
+Ca me parait plus juste. Néanmoins pas de correspondance de marché ? Est-ce que ça ne viendrait pas de notre stratégie de découpage fin de la notion de décision qui implique d'aller chercher plus loin dans les implémentations des outils du marché ?
+Pourtant j'y tiens à ce découpage des décision car c'est une responsabilité de plus en plus forte apportée par la Data et L'IA & système expert et qui conviennent de cartographier.
+
+**contexte et portée**
+
+Laurent confirme son attachement à la cartographie fine des responsabilités de décision, notamment pour rendre lisible l'apport de la Data, de l'IA et des systèmes experts. Il demande de comparer à la granularité fonctionnelle pertinente dans les outils, au-delà des intitulés de modules. Appréciation favorable à Inventory Target Decision ; pas de nouvelle décomposition, solution technique ou formule de calcul adoptée. Les critères détaillés de comparaison et les rapprochements restent éditoriaux.
+
+
+## U329
+
+**id**
+
+U329
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation d’Inventory Target Decision et de la comparaison à la maille des décisions
+
+**texte**
+
+Ok je valide
+
+**contexte et portée**
+
+Accord sur la proposition discutée U327–U328 : Inventory Target Decision remplace Coverage Target Decision pour D05.a, avec la définition présentée des objectifs de stock et seuils associés par produit, lieu et période. La maille fine des décisions et leur comparaison aux responsabilités/résultats documentés des éditeurs sont confirmées. Aucun nouveau comportement, changement de rattachement ou choix de technologie. Les descriptions détaillées et les correspondances marché gardent leurs statuts propres ; l’accord ne vaut pas équivalence éditeur complète ni preuve de réalisation installée.
+
+
+## U330
+
+**id**
+
+U330
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuite de l’audit après Inventory Target Decision
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre les arbitrages. Codex examine P12/P13, risque/service et coordination des cibles entre échelons. Aucun comportement adopté par cette demande.
+
+
+## U331
+
+**id**
+
+U331
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Prévoir le multi-échelon et examiner les optimisations magasin et entrepôt
+
+**texte**
+
+Je pense qu'il faut prévoir ce comportement multi echelon qui est l'aboutissement : vision globale des lieux de stockage et de leur optimisation. Mais avant ce "niveau", on peut référencer les niveau d'optimisation inférieur : échelon magasin, échelon entrepot. Peut être d'autres.
+
+**contexte et portée**
+
+Laurent confirme le principe du comportement multi-échelon et demande d’examiner les optimisations magasin et entrepôt ainsi que d’éventuels autres périmètres. La proposition détaillée de trois comportements frères, leurs noms et définitions sont une interprétation Codex à discuter, pas une validation implicite. Aucun quatrième niveau de décomposition ou séquence de réalisation imposé.
+
+
+## U332
+
+**id**
+
+U332
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation des trois comportements d’Inventory Target Decision
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Validation de la proposition présentée après U331 : Store Inventory Optimization, Distribution Center Inventory Optimization et Multi-Echelon Inventory Optimization, trois comportements frères sous D05.a. Les noms, questions métier, particularités exposées et rattachements sont adoptés. Les formulations détaillées des fiches locales non exposées textuellement restent éditoriales ; la définition multi-échelon présentée U330 est conservée. Pas de chaîne imposée de réalisation, de niveau supplémentaire ou de comportement par type de bâtiment. Les correspondances marché gardent leur statut propre, sans équivalence complète ni déploiement déduit.
+
+
+## U333
+
+**id**
+
+U333
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuite de l’audit : Stocktaking
+
+**texte**
+
+Next
+
+**contexte et portée**
+
+Poursuite après U332. Codex examine P08/P09 et le complément inventaire complet ; aucun comportement ou changement de mandat adopté par cette demande.
+
+
+## U334
+
+**id**
+
+U334
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation des comportements et du mandat de Stocktaking
+
+**texte**
+
+C'est parfait
+
+**contexte et portée**
+
+Validation de la proposition présentée après U333 : Periodic Physical Inventory, Cycle Counting et Spot Counting, directement sous Stocktaking. Noms et descriptions du tableau sont adoptés. Stocktaking couvre la politique de vérification et les demandes de contrôle ; rapprochement, analyse des écarts et établissement des corrections justifiées restent communs. Les opérations physiques restent réalisées par les exécutants et les ajustements retenus sont tracés par Record Inventory Movements. Les descriptions éditoriales ajoutées, modalités techniques, correspondances marché et liens détaillés éventuels ne sont pas implicitement validés.
+
+
+## U335
+
+**id**
+
+U335
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuite de l’audit : affectation et réservation
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre après U334. Codex reprend A01 Supply Assignment / Reservation. Aucun nouveau contrat, comportement ou changement de définition adopté par ce message.
+
+
+## U336
+
+**id**
+
+U336
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Réservation et transaction longue
+
+**texte**
+
+La notion de réservation est très liée à la notion de transaction longue.
+
+**contexte et portée**
+
+Laurent souligne le lien entre réservation et transaction longue pendant A01. Ne vaut pas adoption d’une saga, d’un verrou de base de données, d’une durée fixe ou d’un nouveau comportement. Codex propose d’expliciter la continuité de l’engagement pendant l’opération métier et les responsabilités de maintien, consommation et libération.
+
+
+## U337
+
+**id**
+
+U337
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Verrou de traitement et engagement de réservation envers le client
+
+**texte**
+
+C'est à dire une personne accède au système, cible une ressource, et veut que pendant qu'elle traite cette ressource, personne d'autre (outil ou humain) ne touche à cette ressource. C'est une sorte de lock. On peut délocker quand on a fini. Ce qu'apporte la notion de réservation, en plus du lock transactionnel, c'est le fait que la personne est un client et que réservation indique que si le client déroule le processus de vente, alors il a une garantie que la ressource lui appartiendra.
+
+**contexte et portée**
+
+Laurent explicite une exclusion des usages concurrents pendant un traitement et distingue la réservation par son engagement au bénéfice d’un client qui poursuit le processus de vente. Conserver le sens d’engagement conditionnel, sans déduire un transfert de propriété immédiat, une impossibilité de réalisation physique ou l’interdiction de toute lecture et opération servant ce client. Ces précisions sont l’interprétation Codex à discuter. Aucune politique de durée, nouvelle capacité de verrouillage ou restriction de toutes les réservations au seul Sales Order n’est adoptée implicitement.
+
+
+## U338
+
+**id**
+
+U338
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Moment de réservation dans le parcours de vente
+
+**texte**
+
+Toute la question est : quand doit on réserver une ressource de stock dans le funnel de vente : à la mise dans le panier, au début du paiement ou après l'encaissement ?
+
+**contexte et portée**
+
+Question de politique métier ; aucun déclencheur universel adopté.
+
+
+## U339
+
+**id**
+
+U339
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Séparer réservation métier et moyens informatiques
+
+**texte**
+
+Oui, transaction et lock c'est de la technique informatique au service du business. Réservation c'est du business de vente/supply
+
+**contexte et portée**
+
+Distinction explicite : transaction et verrou relèvent de la réalisation informatique ; Reservation du métier vente/Supply. Ne pas en déduire de nouveaux comportements techniques.
+
+
+## U340
+
+**id**
+
+U340
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Réservation au service de la garantie de promesse
+
+**texte**
+
+Réservation est une méthode pour garantir une promesse à un moment donné
+
+**contexte et portée**
+
+Finalité métier explicitée par Laurent. La formulation détaillée de la définition et les limites de garantie proposées par Codex restent à discuter ; aucun déclassement automatique de la capacité en comportement.
+
+
+## U341
+
+**id**
+
+U341
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Décision de politique de réservation structurelle ou adaptative
+
+**texte**
+
+Je pense que les policies (les choix de déclenchement) sont importantes à préciser et dépendent d'une décision. La décision peut être structurelle (on définit dès le départ) ou adaptative selon le niveau de stock et le niveau de flux sortant (risque de pénurie).
+Que dit le marché sur ça ?
+
+**contexte et portée**
+
+Laurent demande une comparaison marché des décisions déterminant les politiques de déclenchement de réservation, définies à l’avance ou adaptées au stock et aux flux sortants. Aucun nom de capacité, parent, comportement, seuil ou règle de retrait d’un engagement existant adopté.
+
+
+## U342
+
+**id**
+
+U342
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adoption de Reservation Policy Decision et demande de documentation des comportements
+
+**texte**
+
+Je valide Reservation Policy Decision. Mais il faut lister tous les comportements possibles et les documenter
+
+**contexte et portée**
+
+Accord sur la capacité proposée après U341, son nom et sa définition présentée : « Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin de sécuriser la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes. » Demande de recensement et de documentation des comportements possibles. Le rattachement de domaine, la liste nouvelle de comportements, leurs noms/définitions, les contrats détaillés et les comparaisons marché restent proposés. Autorisation d’intégration au backlog, sans publication implicite.
+
+
+## U343
+
+**id**
+
+U343
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation des comportements de Reservation Policy Decision et du rattachement à D05
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition présentée après U342 : Milestone-Based Reservation Policy, Time-Fenced Reservation Policy, Demand-Differentiated Reservation Policy et Risk-Adaptive Reservation Policy, combinables et directement sous Reservation Policy Decision ; rattachement de cette capacité à D05 Inventory Optimization. Les noms et responsabilités résumées dans le tableau sont adoptés, ainsi que les cinq relations de décomposition. Les définitions développées, exemples détaillés, entrées/résultats, relations « a besoin de », comparaisons marché et 19 cas de frontière ne reçoivent pas de validation globale implicite. Les exemples chiffrés restent illustratifs. Portée et empreintes dans reservation-policy-review.yaml, adoption_U343. Aucune release demandée.
+
+
+## U344
+
+**id**
+
+U344
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuivre après la validation des politiques de réservation
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre l’audit après U343. Codex reprend A03, application d’un plan aux Orders, conformément au parcours de l’audit. Aucun nouvel arbitrage adopté ; A01 conserve ses autres questions ouvertes.
+
+
+## U345
+
+**id**
+
+U345
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Mécanismes de Supply Assignment et recommandations issues de la simulation
+
+**texte**
+
+"Supply Assignment"  porte nécessairement l'application d'un plan, en effet.
+Oracle décrit une mécanique logicielle interessante mais qui n'a pas sa place ici.
+La notion de recommandation est très interessante, elle précise la partie simulation et analyse. Ca pourrait de retrouver dans les explications.
+
+A mon avis, ce qui est important, c'est le listing des mécanismes de Supply Assignment qui est important, dont l'application d'un plan. Mais il est vrai que Supply Assignment ne travaille pas seul et traverse d'autres capacités. C'est ce qui se passe avec SAP AllocationRun qui est un batch qui globalement s'appuie sur toutes les capacités de la supply.
+
+**contexte et portée**
+
+Laurent attribue l’application d’un plan d’affectation à Supply Assignment, demande de recentrer la décomposition sur ses mécanismes et écarte la mécanique logicielle Oracle du niveau métier étudié. Les recommandations doivent éclairer les explications de Simulation & Analysis. La transversalité de la réalisation SAP ne fusionne pas les capacités FLOW ; couverture de toutes les capacités et exécution exclusivement batch ne sont pas déduites comme faits éditeur. Les nouveaux noms et mécanismes détaillés proposés par Codex restent à valider.
+
+
+## U346
+
+**id**
+
+U346
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Recalcul ciblé et analogie RETE
+
+**texte**
+
+"Affectation immédiate par api" => cela signifie qu'il existe des mécanismes d'optimisation qui évite de repasser complètement sur le stock de commandes pour tout recalculer, comme par exemple mesurer les impact d'un paramétrage, d'une règle, d'une quantité sur le stock de commande et de ne recalculer que le nécessaire ? Si oui ça me rappelle l'algorithme de RETE dans les moteurs de règles..
+
+**contexte et portée**
+
+Question exploratoire. Aucun choix technique ni nouveau comportement adopté. Distinguer interface API, traitement immédiat, réduction du périmètre et réutilisation des calculs.
+
+
+## U347
+
+**id**
+
+U347
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Préserver les engagements face aux réoptimisations et affermissement
+
+**texte**
+
+Ah oui je comprends ce que tu as voulu dire : on peut bloquer une commande (date, quantité, promesse) par api pour éviter qu'ARun ne le remodifie après. C'est une mécanique interessante de lock mais pas lié à une problématique de transaction. Plutot une protection des commandes qu'on veut rendre ferme malgré les demandes d'optimisation. Ca rejoint la notion d'affermissement de microsoft, non ?
+
+**contexte et portée**
+
+Laurent distingue protection métier contre les réoptimisations et verrou transactionnel, et interroge le rapprochement avec Microsoft. Un appel API ne prouve pas une fixation ; affermissement, confirmation et préservation des affectations ne sont pas automatiquement équivalents. Aucun nouveau nom ou rattachement adopté.
+
+
+## U348
+
+**id**
+
+U348
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Affermissement et niveau comportement
+
+**texte**
+
+Order Lifecycle Management contient des comportements dont l'un deux est "affermir" : c'est ça que tu veux dire ?
+
+**contexte et portée**
+
+Question de clarification. La réponse propose Order Firming sous Order Lifecycle Management, avec la définition reprise dans U349 ; le catalogue ne portait pas encore ce comportement.
+
+
+## U349
+
+**id**
+
+U349
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adoption de l’affermissement et ajout de la protection contre la réoptimisation
+
+**texte**
+
+Alors nous sommes ok.
+Il faut rajouter également ce mécanisme de protection contre l'optimisation
+
+**contexte et portée**
+
+Accord sur Order Firming, sa définition présentée et son rattachement à Order Lifecycle Management, puis demande d’ajouter également le mécanisme de protection contre les réoptimisations dans ce contexte. Le principe de protection et le rattachement contextuel sont retenus ; son nom anglais, sa définition détaillée, les exemples, les modalités et les relations transversales sont éditoriaux. Aucun affermissement ne fige implicitement toutes les dates, quantités ou affectations. Aucune release demandée.
+
+
+## U350
+
+**id**
+
+U350
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation du nom Order Freezing
+
+**texte**
+
+Freezing c'est très bon !
+
+**contexte et portée**
+
+Accord sur le libellé Order Freezing présenté pour BHV037. Le principe et le parent retenus U349 restent acquis. Ce message ne valide pas implicitement les descriptions développées, exemples, règles d’exception, relations transversales ni correspondances marché.
+
+
+## U351
+
+**id**
+
+U351
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Compléter les mécanismes du cycle de vie des Orders
+
+**texte**
+
+Le cycle de vie d'un Order ne peut pas se limiter à ces deux comportement.
+
+**contexte et portée**
+
+Laurent souligne que Firming et Freezing ne couvrent pas le cycle de vie. Demande de réexamen du périmètre ; aucun nom ou rattachement supplémentaire adopté par ce constat. Les opérations déjà décrites dans D04.o doivent être examinées comme mécanismes métier lorsqu’elles changent engagements, progression ou fin du traitement, sans les rejeter au seul motif qu’un produit les expose comme actions.
+
+
+## U352
+
+**id**
+
+U352
+
+**date**
+
+2026-09-18
+
+**titre**
+
+CRUD et archivage des Orders
+
+**texte**
+
+Il y a la partie CRUD et peut être l'archivage.
+
+**contexte et portée**
+
+Laurent demande de prendre en compte les responsabilités CRUD et évoque l’archivage. Aucun intitulé ni rattachement nouveau adopté. L’analyse doit rendre ces responsabilités visibles, distinguer suppression, annulation, clôture, conservation de versions et archivage, et éviter les doublons avec les cinq capacités de gestion par type d’Order.
+
+
+## U353
+
+**id**
+
+U353
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Clonage, split et spread : frontières de Structuring
+
+**texte**
+
+Je me demande si le clonage, le split, le spread (structuring) sont dans cette capacité ou ailleurs
+
+**contexte et portée**
+
+Question sur le rattachement de la copie et des transformations de structure. Aucun nouveau rattachement adopté.
+
+
+## U354
+
+**id**
+
+U354
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Validation du principe du mode brouillon
+
+**texte**
+
+Mode brouillon : très bon
+
+**contexte et portée**
+
+Le principe du mode brouillon est validé. Aucun nom anglais, définition détaillée ni nouveau comportement explicitement présenté n’est adopté par extension. Son rattachement à Lifecycle et ses effets précis sont documentés en proposition.
+
+
+## U355
+
+**id**
+
+U355
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Mutation des Orders ou composition sous un Order chapeau
+
+**texte**
+
+La question que se pose est : Si structuring implique une mutation d'un order en deux avec des liens les uns sur les autres, ça peut être dans lifecycle pris au sens large. Si Structuring consiste à reconstruire des orders avec un order chapeau, il faut que ce soit séparé. Et tout dépend où est positionné Order Structuring...
+
+**contexte et portée**
+
+Laurent propose de distinguer mutation avec liens de filiation, potentiellement dans Lifecycle élargi, et reconstruction/composition sous Order chapeau pouvant justifier une responsabilité séparée. Il demande de qualifier le positionnement de Structuring avant de trancher. Ni fusion/retrait de D04.n ni création d’un objet chapeau adoptés.
+
+
+## U356
+
+**id**
+
+U356
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Clarifier la structure actuelle des Orders
+
+**texte**
+
+Montre moi la structure du modèle actuel stp, je me mélange les pinceaux
+
+**contexte et portée**
+
+Demande de restitution du catalogue courant, distingué des propositions non intégrées.
+
+
+## U357
+
+**id**
+
+U357
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Regroupement par finalité et séparation Lifecycle, Structuring, Archiving
+
+**texte**
+
+Mon avis maintenant :
+Il faut peut être avoir une capacité générique "Rôle" avec des comportements qui listent achat, vente, retour etc.
+Lifecycle doit lister les mutations internes  d'un Order => celles que tu proposes sont bonnes
+Structuring doit être séparé
+Archiving également
+
+**contexte et portée**
+
+Direction exprimée : Lifecycle porte les mutations internes ; Structuring et Archiving restent séparés. Le regroupement des gestions par type sous une capacité générique est formulé comme hypothèse. Appréciation favorable des mutations proposées, sans validation implicite de tous les détails des annexes. Nom de la capacité générique et frontières concrètes restent proposés ; aucune restructuration du catalogue appliquée dans cette discussion.
+
+
+## U358
+
+**id**
+
+U358
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Sens du rôle de l’Order
+
+**texte**
+
+rôle métier joué par l’Order — achat, vente, retour —
+
+**contexte et portée**
+
+Clarification : il s’agit de la finalité métier de l’Order, pas du rôle d’une Party.
+
+
+## U359
+
+**id**
+
+U359
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Préférence pour Type
+
+**texte**
+
+Type est meilleur que Handling
+
+**contexte et portée**
+
+Le terme Type est préféré à Handling pour cette dimension. Ne vaut pas adoption d’un référentiel de types administrable ni d’un Order universel.
+
+
+## U360
+
+**id**
+
+U360
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Vocabulaire split et spread du marché
+
+**texte**
+
+Que penses-tu des termes split et spread qu'on retrouve dans les OMS et/ou les ERP ?
+
+**contexte et portée**
+
+Demande de comparaison et recommandation terminologique. Aucun nouveau comportement ou rattachement adopté.
+
+
+## U361
+
+**id**
+
+U361
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Spread dans ARun
+
+**texte**
+
+Spread c'est quand c'est joué depuis l'ARun il me semble. Mais pas clair....
+
+**contexte et portée**
+
+Hypothèse de rapprochement à vérifier. SAP ERP Fashion Management documente Spread comme logique de répartition proportionnelle utilisée dans ARun ; ce n’est pas un synonyme d’ARun ni du split. Aucun nouveau mécanisme FLOW ou rattachement adopté.
+
+
+## U362
+
+**id**
+
+U362
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Distinction Split et Spread
+
+**texte**
+
+Split : coupe des commandes
+Spread : on répartit entre les commandes
+
+**contexte et portée**
+
+Laurent fixe la distinction dans le contexte ARun discuté : découper les commandes versus répartir entre elles. Les formulations exactes sont conservées dans l’annexe ; « ressources » explicite éditorialement l’objet de la répartition documentée par SAP. Aucun parent de décision, nom anglais développé ou comportement supplémentaire adopté implicitement. La mention historique Spread dans Structuring devra être désambiguïsée lors de la refonte convenue.
+
+
+## U363
+
+**id**
+
+U363
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Appliquer la refonte des Orders et la distinction Split / Spread
+
+**texte**
+
+On est d'accord. Tu peux prendre en compte les modifs ?
+
+**contexte et portée**
+
+Demande d’intégration des modifications discutées U351–U362 : regroupement des cinq variantes sous Order Type, mutations internes sous Lifecycle, Structuring et Archiving séparés, mode brouillon et distinction Split/Spread. Les identifiants des variantes sont conservés. Les noms déjà présentés et principes sont retenus dans leur portée ; nouveaux libellés développés, définitions, exemples et contrats éditoriaux ne sont pas validés globalement. Aucun algorithme de décision Spread autonome, objet chapeau obligatoire, release ou push demandé.
+
+
+## U364
+
+**id**
+
+U364
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Rendre visible la distinction entre complément et réaffectation
+
+**texte**
+
+Oui je veux rendre visible cette distinction
+
+**contexte et portée**
+
+Réponse à la proposition de trois comportements sous Supply Assignment : application d’un plan (principe déjà acquis U345), complément préservant les affectations existantes, réaffectation des ressources modifiables. Accord explicite sur la distinction stabilité/adaptation et sa visibilité dans le modèle. Les deux définitions présentées sont conservées à l’identique et leur rattachement est retenu ; noms anglais utilisés comme libellés proposés, exemples développés, comparaisons et contrats non validés globalement. Aucune réoptimisation implicite dans la capacité d’action, aucun algorithme de recalcul partiel imposé, aucune publication demandée.
+
+
+## U365
+
+**id**
+
+U365
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Cadre de l’ATP et finalité Fulfillment
+
+**texte**
+
+L'ATP est un moteur qui maximise la valeur dans le cadre de "l'assignment rule". Donc je pense qu'il nous cette capacité qui donne un cadre à l'application de l'ATP sur les commandes (Assignment).
+
+D'autre part SAP parle de Supply Assignment et Microsoft de Fulfillment Optimization.
+
+Pour moi le terme Supply est très englobant, voire trop. Fulfilment donne une dimension de finalité de que j'aime beaucoup.
+
+Qu'en penses-tu ?
+
+**contexte et portée**
+
+Laurent propose une responsabilité de cadrage de l’application de l’ATP et exprime une préférence pour Fulfillment, qui porte la finalité de satisfaction. Demande d’analyse, sans adoption d’un nom, création de capacité ou renommage global. La maximisation de valeur est sa lecture cible de l’ATP ; ne pas en faire une définition officielle de marché ni modifier implicitement les frontières ATP/CTP/PTP. La proposition précédente de Codex Supply Assignment Decision doit être réexaminée : le résultat recherché ici est une stratégie applicable, pas une seconde décision calculant le même plan.
+
+
+## U366
+
+**id**
+
+U366
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Audit local Supply et Fulfillment
+
+**texte**
+
+J'aime beaucoup la définition microsoft. Peut être que partout on a mis Supply il fallait mettre Fulfillment. J'aimerais un audit local sur ce sujet.
+
+**contexte et portée**
+
+Demande d’audit ciblé des usages du modèle courant, au regard de Microsoft et des références pertinentes. Hypothèse de renommage à examiner, aucun remplacement global adopté.
+
+
+## U367
+
+**id**
+
+U367
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Distinguer Supply, Supply Chain et Fulfillment dans le glossaire
+
+**texte**
+
+Il faut bien définir dans le glossaire la diff entre les termes Supply, Supply Chain et Fulfillment
+
+**contexte et portée**
+
+Complément au même audit : ajouter les distinctions au glossaire métier. Le sens fonctionnel local Supply acquis en U56 est préservé et distingué du sens ressources. Les nouvelles formulations sont éditoriales, sans adoption automatique des renommages proposés.
+
+
+## U368
+
+**id**
+
+U368
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Réexaminer Fulfillment Network comme Supply Network
+
+**texte**
+
+Et le référentiel Fulfillment Network, ce ne serait pas plutot Supply Network ?
+
+**contexte et portée**
+
+Question de nommage fondée sur le périmètre du référentiel de lieux et relations. Réexamen de la recommandation SF-A06 de l’audit U366 : Supply Network devient le candidat recommandé, avec Supply Network Ingestion pour D13.a. Aucun renommage adopté par la seule question ; D13, D13.a et TER054 conservent leurs noms courants jusqu’à arbitrage. Définition développée, couverture de tous les flux et topologie détaillée restent proposées.
+
+
+## U369
+
+**id**
+
+U369
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Accord sur les noms réseau et optimisation ; proposition Supply Chain Management
+
+**texte**
+
+Top.
+
+Fulfillment Optimization me parait bien également.
+
+Le nom de l'univers, ce ne serait pas plutot Supply Chain Management ?
+
+**contexte et portée**
+
+Accord contextuel sur le nom Supply Network proposé en réponse à U368, et explicite sur Fulfillment Optimization pour D03. Noms consignés comme adoptés, sans adoption globale des définitions développées, attributs, nouveaux comportements ou changements de responsabilité. Supply Network Ingestion demeure la déclinaison éditoriale proposée du nom du référentiel. Supply Chain Management est soumis à discussion pour l’univers ; la question ne vaut pas adoption de ce troisième nom ni extension aux fonctions actuellement exclues. L’application des renommages au catalogue est à réaliser ; aucune release demandée.
+
+## U370
+
+**id**
+
+U370
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Cœur d’orchestration Supply : achats et approvisionnement inclus, maîtres et planification globale externes
+
+**texte**
+
+Les achats et l'approvisionnement des entrepots sont prévus normalement.
+
+Mais c'est vrai que l'univers ne gère pas l'entièreté du "Management" : il est le coeur de l'orchestration de la Supply, les référentiels étant des projections de référentiel maitre gérés ailleurs et la planification globale étant gérée ailleurs aussi.
+
+**contexte et portée**
+
+Précision de périmètre après comparaison avec le SCM étendu. Achats et approvisionnement des entrepôts sont inclus ; ne pas les présenter comme des absences. Les projections de maîtres et la planification globale externe sont des frontières assumées. Cela ne supprime ni les décisions opérationnelles ni Inventory Planning. Aucun nouveau nom d’univers adopté par cet apport ; Supply Chain Orchestration est une recommandation éditoriale à discuter. La négociation de contrats et le sourcing stratégique ne sont pas déduits du seul mot achats.
+
+
+## U371
+
+**id**
+
+U371
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Comparer OMS et Supply Chain Orchestration par leur périmètre de flux
+
+**texte**
+
+Pour moi, OMS ou Supply chain Orchestration c'est la meme fonction d'orchestration sauf que Supply Chain prend les achat et les ventes alors que l'OMS ne prend que les ventes et encore parfois que le B2C Retail.
+
+Est tu ok ?
+
+**contexte et portée**
+
+Hypothèse soumise à discussion : même principe d’orchestration, périmètre élargi aux achats et ventes. La comparaison éditoriale distingue orientation dominante des offres et frontière absolue : des OMS couvrent le B2B et peuvent intégrer achats ou transferts. Aucune équivalence de produits, fusion de capacités ou adoption de nom n’est déduite de cette question. FLOW conserve des besoins d’approvisionnement et d’optimisation du stock indépendants d’une commande client individuelle.
+
+
+## U372
+
+**id**
+
+U372
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Distinguer consommation du disponible et protection du stock dans la comparaison OMS
+
+**texte**
+
+Et les OMS ne gèrent pas la protection du Stock, ils le consomment.
+
+**contexte et portée**
+
+Proposition de distinction de responsabilités. La comparaison marché confirme l’utilité de séparer protection et consommation, mais ne confirme pas une absence universelle de protection dans les OMS. IBM documente des facteurs de sécurité configurables dans Sterling OMS ; Microsoft situe protection par enveloppes et plafonds dans Inventory Visibility. Préserver la responsabilité complète de Supply Protection et les décisions spécialisées FLOW ; aucune frontière logicielle ou modification de catalogue adoptée par cet échange.
+
+
+## U373
+
+**id**
+
+U373
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter Supply Chain Orchestration comme nom de l’univers
+
+**texte**
+
+Donc je pense que le meilleur nom pour l'univers est Supply Chain Orchestration. OMS est un type de produit commercial dont le périmètre dépend trop des éditeurs.
+
+**contexte et portée**
+
+Choix explicite du nom de l’univers après comparaison U370–U372. Application au seul champ name de universe-supply ; identifiant et périmètre préservés. OMS demeure une catégorie de produits à comparer par responsabilités effectivement couvertes. Aucune adoption globale des descriptions éditoriales ou équivalence avec une offre. Aucun renommage automatique de Supply dans les autres éléments et aucune publication demandée.
+
+
+## U374
+
+**id**
+
+U374
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Contester la conclusion de périmètre SAP plus large
+
+**texte**
+
+"même si le périmètre SAP est plus large  " => Ah bon ??
+
+**contexte et portée**
+
+Demande de justification. Réexamen de la source SAP : la connexion à des fonctions telles que planification ou fabrication ne prouve pas leur prise en charge interne, ni un périmètre d’orchestration supérieur à FLOW. Retirer cette conclusion non démontrée ; conserver les appuis sémantiques. Aucun changement de périmètre ou remise en cause du nom adopté U373 déduit de cette question.
+
+
+## U375
+
+**id**
+
+U375
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Réexaminer la maille des questions ouvertes : règles de gestion ou capacités
+
+**texte**
+
+Les 3 premiers points ouverts sont de bonnes questions mais n'est-ce pas du niveau règle de gestion et pas capacité d'entreprise ?
+
+**contexte et portée**
+
+Question visant les trois premiers points de la liste précédente : affectation/réservation (A01), alternatives ATP/CTP (A05), engagements fournisseurs (A06), et non les identifiants A01/A02/A03. Réexamen éditorial : les modalités de déclenchement, admissibilité, tolérance et propagation sont des règles ; seules les responsabilités, résultats et frontières sont nécessaires au catalogue. Ne pas en faire des validations bloquantes ni créer une capacité par règle. Aucun retrait des décisions adoptées, dont Reservation Policy Decision ; choisir une politique peut rester une responsabilité distincte de la politique choisie. Les propositions de comportement restent soumises au bénéfice ou à la complexité démontrés.
+
+
+## U376
+
+**id**
+
+U376
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Reprendre Fulfillment Strategy Decision par la comparaison marché
+
+**texte**
+
+On continue avec **Fulfillment Strategy Decision**
+
+Comment le marché voit ce truc ?
+
+**contexte et portée**
+
+Demande d’étude de la proposition U365 après distinction capacités/règles U375. Comparer stratégie, gestion de stratégie, sélection contextuelle et calcul du plan ; aucune création de capacité ni adoption de définition demandée par cette question.
+
+
+## U377
+
+**id**
+
+U377
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Décision globale produisant un scénario de plan d’affectation
+
+**texte**
+
+Pour moi c'est une décision globale sur la totalité des ressources supply pour produire un scénario de plan d'assignment. Cette décision s'appuie sur des sous décisions et du paramétrage référentiel.
+
+Je pense que ca colle assez bien avec la défintion que tu as trouvée, non ?
+
+**contexte et portée**
+
+Clarification de la responsabilité recherchée : produire un scénario de plan global en mobilisant les décisions spécialisées et le paramétrage, au-delà du choix d’une stratégie. Rapprochement à l’optimisation Microsoft et à son résultat fulfillment plan, distinct de l’objet fulfillment strategy. Le nom, la définition éditoriale et les relations détaillées restent proposés ; aucune création de capacité effectuée. Les sous-décisions désignent ici une composition de responsabilités, sans nouveau niveau hiérarchique implicite.
+
+
+## U378
+
+**id**
+
+U378
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter Fulfillment Plan Decision
+
+**texte**
+
+Le vocabulaire microsoft me plait énormément.
+
+Je valide ta proposition
+
+**contexte et portée**
+
+Accord sur la proposition présentée après U377 : nom Fulfillment Plan Decision, nature décision et définition produisant un scénario cohérent de plan d’affectation, mobilisant les décisions spécialisées et les politiques applicables pour maximiser la valeur multidimensionnelle. Le choix du seul cadre U365/U376 ne constitue plus la cible. Principe de composition par dépendances, sans niveau inférieur de capacités ; application du plan par Supply Assignment distincte. Rattachement D03 cohérent avec la proposition en cours ; relation formelle et détails de contrats restent éditoriaux. Le nom de domaine Fulfillment Optimization adopté U369 est appliqué dans ce même domaine. Aucun accord global sur les comparaisons marché, nouveaux exemples, comportements ou publication.
+
+
+## U379
+
+**id**
+
+U379
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuivre les arbitrages après Fulfillment Plan Decision
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre l’audit après l’intégration U378. Codex propose d’instruire A04, devenir des produits retournés, à la maille des responsabilités. Ce choix de sujet et la proposition Return Disposition Decision ne sont pas une validation ou une création de capacité.
+
+
+## U380
+
+**id**
+
+U380
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter Return Disposition Decision dans Inventory Optimization
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition présentée après U379 : nom Return Disposition Decision, définition du devenir logistique selon état constaté, politiques et récupération de valeur, nature décision et rattachement à D05 Inventory Optimization. Inspection par l’exécutant, choix de devenir, Orders D04, orchestration D06 et enregistrement des mouvements/états D01 restent distincts. Autorisation commerciale du retour, remboursement et remplacement client ne sont pas absorbés. Aucun comportement supplémentaire. Les nouveaux contrats détaillés, exemples développés et correspondances marché gardent leur statut éditorial propre ; aucune publication demandée.
+
+
+## U381
+
+**id**
+
+U381
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Analyser les comportements de Return Disposition Decision
+
+**texte**
+
+On peut analyser les comportements possibles de cette nouvelle décision ?
+
+**contexte et portée**
+
+Demande d’analyse de D05.i après U380 ; aucune adoption de comportements.
+
+
+## U382
+
+**id**
+
+U382
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Distinguer prises en charge des retours et stratégies de décision
+
+**texte**
+
+En effet, c'est la capacité de gestion des retour qui doit être décomposée en remise en stock, réparation, renvoi. La Décision doit être décomposée en stratégies.
+
+**contexte et portée**
+
+Orientation explicite : les prises en charge du bien relèvent de la gestion des retours ; les stratégies relèvent de la décision. Les formulations détaillées proposées par Codex restent à discuter. Le catalogue actuel ne possède pas de capacité autonome de gestion complète des retours : D04.l est un comportement d’Order Type centré sur les commandes. Aucun sous-comportement ni nouvelle capacité créé implicitement.
+
+
+## U383
+
+**id**
+
+U383
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Rétablir les capacités par type d’Order et adopter les stratégies de disposition
+
+**texte**
+
+Ah zut, ça remet en cause mon choix de mettre des types d'order. C'est une erreur, il faut pour chaque type d'order une capacité explicite afin de détailler les comportements. Pour les policies, tes recherches sont fructuantes : tu peux les prendre en compte
+
+**contexte et portée**
+
+Remplace le regroupement U363 sous Order Type : vente, achat, transfert, retour client et retour fournisseur redeviennent cinq capacités explicites, avec leurs identifiants. Lifecycle, Structuring et Archiving restent transverses. Accord pour intégrer les deux stratégies présentées de Return Disposition Decision : Policy-based Disposition et Value Recovery Optimization, avec leurs responsabilités et leur parent. Les prises en charge remise en stock, réparation et renvoi exprimées U382 restent la direction de décomposition de la gestion des retours ; leur rédaction détaillée et leurs frontières ne sont pas validées par extension. Aucun sous-comportement ni nouveau type d’Order. Les compléments éditoriaux, relations détaillées et correspondances marché gardent leur statut propre. Aucune release demandée.
+
+
+## U384
+
+**id**
+
+U384
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Nommer les capacités d’Order sans Management et détailler Customer Return
+
+**texte**
+
+Il faut détailler les comportements des orders maintenant en commencant par Customer Return.
+
+En terme de naming, enlever management à la fin de Purchase Order etc.
+
+**contexte et portée**
+
+Renommage demandé des cinq capacités par type : Sales Order, Purchase Order, Transfer Order, Customer Return et Supplier Return. Aucun changement de nature ni suppression de Management dans les autres capacités/domaines. Demande d’instruction détaillée des comportements, en commençant par Customer Return, sur la direction U382. Les compléments proposés (distinction des destinataires du renvoi, mise au rebut et descriptions développées) ne sont pas adoptés par anticipation. La distinction capacité/objet reste portée par le modèle et les définitions ; aucune release demandée.
+
+
+## U385
+
+**id**
+
+U385
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter les cinq comportements de Customer Return
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition U384 : définition élargie de Customer Return, cinq comportements Return to Stock, Repair and Refurbishment, Return to Supplier, Return to Customer et Scrapping, leurs responsabilités présentées et leur rattachement sous D04.l. Parcours combinables ; renvoi fournisseur par relais à Supplier Return, restitution du même bien distincte d’un remplacement, décision et réalisation distinctes. Le bénéfice du découpage est acquis ; sa formulation détaillée et les nouveaux contrats restent éditoriaux. Les correspondances marché conservent leur qualification propre. Remplacement client, règlement sans retour, donation, recyclage et revente secondaire restent des axes à instruire, sans adoption ni création automatique. Aucune release demandée.
+
+
+## U386
+
+**id**
+
+U386
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuivre la décomposition des Orders après Customer Return
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre après l’intégration U385. Codex examine Supplier Return, directement lié au parcours Return to Supplier de Customer Return. Deux comportements sont proposés : Return for Credit et Return for Replacement. Return for Repair est documenté comme candidat conditionnel à la frontière avec l’achat et l’exécution d’une prestation. Aucune validation de ces propositions ni modification du catalogue par cette demande.
+
+
+## U387
+
+**id**
+
+U387
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter Return for Credit et Return for Replacement
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la recommandation U386 : deux comportements sous Supplier Return, Return for Credit (sans remplacement attendu) et Return for Replacement (apport attendu conservé), leurs noms, responsabilités présentées et rattachements. Purchase Order porte l’apport de remplacement sans imposer une nouvelle commande ou une réouverture de l’existante. La finance conserve le règlement ; les deux parcours peuvent coexister sur des quantités différentes. Return for Repair demeure conditionnel et non créé. Définition élargie du parent et précisions rédactionnelles non présentées intégralement restent éditoriales ; les comparaisons et contrats détaillés gardent leur qualification propre. Aucune publication demandée.
+
+
+## U388
+
+**id**
+
+U388
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Ajouter Return for Repair sous Supplier Return
+
+**texte**
+
+Ajoute Return for Repair stp
+
+**contexte et portée**
+
+Demande explicite d’ajouter le candidat discuté U386 sous Supplier Return, après les deux parcours adoptés U387. Nom, principe de renvoi pour réparation avec restitution attendue du même bien et rattachement acquis. La réserve de création conditionnelle est levée ; responsabilités d’achat de prestation, exécution physique et enregistrement de stock restent distinctes. La rédaction détaillée, les exemples et les nouveaux contrats ne sont pas validés globalement. Aucune restriction aux seules garanties ni gratuité implicite ; aucune publication demandée.
+
+
+## U389
+
+**id**
+
+U389
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Étayer et mémoriser la définition de Comportement par une typologie concrète issue de l’existant
+
+**texte**
+
+Le niveau "comportement" du modèle traite de :
+
+- mécanisme ou policy pour les décision
+- variante de processus pour les orders
+- scope pour les actions
+- ....
+
+Ce serait bien que la définition de comportement soit étayée par une liste concrete comme je vient de le faire. Il faut la construire par analyse de l'existant. J'aimerais que cette règle soit mémorisée.
+
+**contexte et portée**
+
+Instruction de construire une liste concrète à partir du modèle et de la conserver dans la méthode. Les trois exemples donnés orientent l’analyse ; ils ne fixent pas une correspondance exclusive entre nature de capacité et forme de comportement. L’exigence est acquise ; la typologie détaillée et sa rédaction résultent de l’analyse Codex et ne sont pas réputées intégralement validées par Laurent. Aucun changement de capacités, comportements, relations ou publication demandé.
+
+
+## U390
+
+**id**
+
+U390
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Poursuivre l’examen des comportements des Orders
+
+**texte**
+
+next*
+
+**contexte et portée**
+
+Après la clarification méthodologique U389 et les retours client/fournisseur, demande de poursuivre. Codex propose Purchase Order comme prochain sujet, à la suite des liens discutés entre retour fournisseur et achat de remplacement ou de prestation. Ce choix de séquence et les comportements proposés ne sont pas validés par cette demande. Aucun changement de catalogue ou publication.
+
+
+## U391
+
+**id**
+
+U391
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Valider Purchase Order et replacer la consignation dans la gestion du stock
+
+**texte**
+
+Le "Consignment Procurement" ne touche pas l'acte d'achat en lui même mais joue sur la possession de stock qui des impacts sur la compta (valorisation de stock), la facturation, la responsabilité assurantielle et également la politique de traitement du stock après la saison (envoi chez un soldeur seconde main ou renvoi au fournisseur ou destruction etc.). C'est une capacité de gestion du stock, une offre qu'on propose au fournisseur. Je ne sais pas comment le marché gère ça dans les carto de capacité.
+
+Pour les Purchase Orders, je valide.
+
+**contexte et portée**
+
+Accord sur Stock Procurement, Direct Delivery et Service Procurement, leurs responsabilités présentées et leur rattachement à Purchase Order ; principe d’élargissement aux prestations et frontière achat/Service Order acquis. Rédactions développées et contrats détaillés gardent leur statut éditorial. Le candidat Consignment Procurement ne doit pas être intégré comme quatrième comportement d’achat. Laurent situe la responsabilité dans la gestion du stock et décrit une offre au fournisseur, avec impacts comptables, de facturation, assurantiels et devenir après saison. Recherche de positionnement marché demandée ; aucun nouveau nom ou découpage détaillé de capacité n’est encore validé. Aucune publication demandée.
+
+
+## U392
+
+**id**
+
+U392
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Examiner l’Order d’approvisionnement sans achat
+
+**texte**
+
+En effet, il peut y avoir un approvisionnement dans les stocks sans acte d'achat. Il ne manque pas un Procurement Order pour gérer ça ? Que dit le marché ?
+
+**contexte et portée**
+
+Question de modélisation dans la continuité de U391 : distinguer la demande et le suivi de l’apport des droits de propriété sur le stock. Procurement Order est un nom interrogé, pas adopté. Comparaison marché demandée ; aucun renommage de Purchase Order ni nouvelle capacité acquis. L’intégration des trois comportements validés U391 reste à terminer et contrôler indépendamment de cet arbitrage.
+
+
+## U393
+
+**id**
+
+U393
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Modéliser les demandes selon les intentions et relations entre parties
+
+**texte**
+
+Mon avis et mon intention en tant qu'architecte :
+
+SAP a conçu ses order pour piloter les opérations logistiques et les documents nécessaires à la conformité. Voilà pourquoi chez SAP, c'est un Purchase Order avec un flag consignment car j'ai un seul type d'order pour gérer le source-to-stock.
+
+Dans un SI moderne orienté processus / Case Management, on concoit les demandes par rapport aux intentions et aux rapport entre les parties prenantes. LE consignement n'est pas juste une manière de gérer la comptabilité du stock. Mon stock est vue dans ce type de contrat comme un espace de stockage distant vis à vis de mon fournisseur qu'il loue. Je ne lui achète pas du stock, je lui loue un espace. La différence est que ce n'est pas lui qui "pousse" la marchandise, on est à flux tiré, c'est à dire que ce sont mes ventes qui impliquent un réassort du stock. Dans un esprit process oriented, microsoft a l'approche la plus moderne.
+
+Qu'en penses tu ? Si tu es ok cette logique doit être consignée (c'est le case de le dire :)).
+
+**contexte et portée**
+
+Laurent explicite un principe cible d’architecture : partir des intentions et des relations entre parties pour concevoir les demandes et leur traitement orienté processus/Case Management. Il demande de mémoriser cette logique si Codex la partage. Codex retient ce principe et distingue la description de l’offre envisagée (stockage pour le fournisseur, rémunération/location et réassort tiré par les ventes) de la définition générale de la consignation et d’une pratique Beaumanoir prouvée. L’explication historique de SAP et le classement général de modernité restent des appréciations, non des faits démontrés. La comparaison conforte une meilleure adéquation sémantique de la séparation Microsoft pour le cas FLOW. Aucun nouveau nom, nœud, workflow universel ou découpage logiciel validé implicitement.
+
+
+## U394
+
+**id**
+
+U394
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Clarifier le critère de visibilité du métier au travers du design
+
+**texte**
+
+Je ne dis pas que SAP ne sait pas gérer le consignment, je dis que cet aspect n'est pas très visible dans le modèle. C'est d'ailleurs un reproche qu'on lui fait : on ne voit pas le processus dans les données et les transactions. Donc mon opinion est que microsoft, arrivé après a corrigé ce pb de design et de "visibilité du métier au travers du design"
+
+**contexte et portée**
+
+Correction de l’interprétation de Codex : Laurent compare la lisibilité des intentions et processus dans les objets, données et transactions, pas la présence des fonctions de consignation. Sa préférence Microsoft est une appréciation de design métier. L’hypothèse selon laquelle son arrivée ultérieure lui a permis de corriger intentionnellement SAP est conservée comme opinion historique, sans la transformer en fait établi. Critère à appliquer aux choix FLOW ; aucun nouveau nom ni élément de catalogue adopté.
+
+
+## U395
+
+**id**
+
+U395
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter les deux capacités de consignation et leurs frontières
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition présentée après la parenthèse historique SAP/Microsoft : Consignment Replenishment Order dans D04 et Consigned Inventory Management dans D01, leurs noms et responsabilités présentées. La première demande et suit l’apport fournisseur sans engagement d’achat des marchandises ; la seconde applique au stock les conditions de l’accord et mobilise les capacités responsables des suites autorisées. Agreement fournit les conditions ; D05 décide des besoins d’implantation ou de réassort ; D04 porte les demandes ; D01 applique le régime et enregistre les évolutions ; D06 orchestre les prestations. Exemple présenté : 500 pièces pour une implantation, fin de la demande d’apport distincte de fin de la consignation. Replenishment dans le nom Microsoft inclut le premier apport sans fusionner Initial Stocking et Replenishment Decision. Aucun comportement proposé à cette étape. Descriptions développées, contrats de dépendance et comparaisons gardent leur qualification éditoriale. Aucune release demandée.
+
+
+## U396
+
+**id**
+
+U396
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Conserver Consignment Replenishment Order sans comportement à ce stade
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la recommandation de ne pas décomposer Consignment Replenishment Order D04.r à ce stade : aucun bénéfice ou complexité différenciante démontré. Implantation et réassort sont des finalités et décisions distinctes dans D05, sans deux parcours d’Order nécessairement distincts dans D04. Création, modification, annulation et clôture restent des fonctions/mutations communes ; réception complète ou partielle ne suffit pas à créer un comportement. Acquisition du stock consigné : Consigned Inventory Management et Purchase Order selon le cas. La capacité peut porter premier apport ou alimentation continue, avec livraisons fractionnées. Comparaison Microsoft/Oracle discutée : les passages consultés ne présentent pas deux parcours distincts d’Order pour implantation et réassort ; ce constat ne prouve pas une absence générale de variantes sur le marché. L’étude suivante concerne les mécanismes contractuels de Consigned Inventory Management ; aucun nom ni comportement de cette dernière n’est adopté par extension. Aucune release demandée.
+
+
+## U397
+
+**id**
+
+U397
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Expliciter les comportements métier de chaque Order indépendamment des mutualisations informatiques
+
+**texte**
+
+Je n'avais pas bien lu. L'idée de la carto de capacité est d'expliciter le métier, pas de faire apparaitre des mutualisation informatiques. Donc la liste des comportements doit être écrite pour l'order
+
+**contexte et portée**
+
+Laurent corrige la validation U396 : la non-décomposition ne doit pas être justifiée par l’existence de traitements communs, de capacités transverses ou d’une réalisation informatique mutualisée. Il demande une description explicite des comportements pour l’Order. Le bénéfice de lisibilité métier est un bénéfice ciblé au sens U265. Cette correction n’adopte pas encore les noms ni les définitions d’une nouvelle liste ; elle ne transforme pas automatiquement chaque opération CRUD, statut ou modalité d’interface en comportement et ne retire pas les capacités transverses déjà adoptées. Les propositions révisées sont consignées séparément.
+
+
+## U398
+
+**id**
+
+U398
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter les comportements de l’apport consigné et expliciter les interactions métier
+
+**texte**
+
+Je valide !
+
+La mutualisation apparait éventuellement lorsque on trace des liens entre les capacités.
+
+D'ailleurs, si une capacité est appelée par deux capacités qui implique des comportements différents, on doit différencier les comportements et expliquer pourquoi.
+
+Je pense aussi que les liens entre les capacités doivent être valorisés avec un mot ou une expression pour faire mieux que "a besoin de". En lisant les capacités et les liens, on doit pouvoir reconstruire une logique, une histoire.
+
+**contexte et portée**
+
+Accord sur Initial Stocking et Continuous Replenishment sous Consignment Replenishment Order, leurs noms, responsabilités présentées et rattachements. Exigence de description des comportements différents selon les capacités qui mobilisent une capacité commune, avec explication des différences. Exigence de libellés métier des liens pour reconstruire la logique des interactions. Un appelant différent ne suffit pas à inventer une différence de comportement ; la condition exprimée est une différence réelle. La mutualisation n’est pas imposée comme architecture informatique. Le principe ne valide pas par extension chaque nouveau libellé, contrat ou séquence ; distinguer dépendance, résultat transmis et déclenchement. Aucune release demandée.
+
+
+## U399
+
+**id**
+
+U399
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Consigner les nouvelles règles pour les travaux futurs sans ouvrir un nouvel audit
+
+**texte**
+
+Les nouvelles règles que je t'expose ne doivent pas générer un nouvel audit. On termine déjà l'existant. Mais je veux que tu consignes ces règles pour le prochain audit et/ou les prochaines améliorations du modèle.
+
+**contexte et portée**
+
+Instruction de déroulement : poursuivre et terminer l’audit existant. Mémoriser les nouvelles règles sans déclencher de nouvel audit, revue globale, reprise des liens existants ou chantier Atlas. L’intégration des deux comportements explicitement validés U398 reste autorisée. Les principes sont destinés au prochain audit ou aux prochaines améliorations ; leur enregistrement n’en programme pas l’exécution.
+
+
+## U400
+
+**id**
+
+U400
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Traiter ensemble consignation, Sales Order et Transfer Order
+
+**texte**
+
+Je pense qu'on peut traiter consignation, Sales Order et Transfer Order en une fois car à chaque fois tes choix et ta stratégie sont bonnes.
+
+**contexte et portée**
+
+Laurent autorise une proposition groupée pour ces trois capacités dans l’audit existant. La confiance dans la démarche ne vaut pas adoption préalable de noms ou de définitions non encore présentés. Consignment Replenishment Order et ses deux comportements U398 sont déjà intégrés ; le sujet consignation concerne ici Consigned Inventory Management. Les nouvelles règles d’interaction restent consignées pour les travaux futurs conformément à U399. Aucun nouvel audit ni publication.
+
+
+## U401
+
+**id**
+
+U401
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter les douze comportements de consignation, vente et transfert
+
+**texte**
+
+Je valide !
+
+**contexte et portée**
+
+Accord sur le lot présenté après U400 : trois comportements sous Consigned Inventory Management (Consumption-Based Ownership Transfer, Aging-Based Ownership Transfer, Consignment Exit), quatre sous Sales Order (Ship to Customer, Customer Pickup, Direct Delivery, Intercompany Sales), cinq sous Transfer Order (Initial Stocking, Continuous Replenishment, Inventory Rebalancing, Stock Consolidation, Order-Driven Transfer). Noms, responsabilités présentées, rattachements et frontières exposées acquis. Les définitions validées reprennent les responsabilités effectivement présentées ; les descriptions développées, justifications éditoriales et comparaisons restent qualifiées séparément. Les comportements sont combinables selon le cas, notamment la dimension commerciale Intercompany ; Direct Delivery côté vente reste distinct du comportement côté achat. Décisions D03/D05, prise en charge D04, stock D01 et exécution D06 gardent leurs responsabilités. Aucune reprise générale des liens, nouveau chantier Atlas, nouvel audit ou release : U399 reste applicable.
+
+
+## U402
+
+**id**
+
+U402
+
+**date**
+
+2026-09-18
+
+**titre**
+
+Adopter les trois mécanismes de faisabilité sous adaptation de CTP
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Après « next », accord sur Additional Supply Feasibility, Fulfillment Alternative Feasibility et Commitment Rebalancing Feasibility, les responsabilités et exemples présentés, et leur rattachement à CTP. Trois leviers combinables : obtenir davantage de ressources, changer la solution de satisfaction, réexaminer des engagements existants. CTP établit possibilités et conséquences ; Fulfillment Plan Decision détermine le scénario collectif maximisant la valeur multidimensionnelle ; Supply Assignment applique les affectations et Promise Management les modifications autorisées de promesse. Une alternative déjà admissible dans la référence reste dans ATP ; aucun retrait implicite de garanties ou gel. Les intitulés sont des formulations FLOW appuyées par des mécanismes Microsoft/SAP, pas une taxonomie universelle CTP. L’accord ne valide pas globalement les compléments éditoriaux, paramètres, contrats de dépendance ou comparaisons marché. Poursuite de l’audit existant, aucune release.
+
+
+## U403
+
+**id**
+
+U403
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Supplier Confirmation et conserver une explication détaillée
+
+**texte**
+
+C'est malin. L'explication doit être claire et détaillée comme tu l'expliques. Je valide
+
+**contexte et portée**
+
+Accord sur Supplier Confirmation sous Purchase Order, son nom, sa définition présentée et le mécanisme d’établissement et révision d’un engagement avec le fournisseur. Combinable avec Stock Procurement, Direct Delivery et Service Procurement ; accepter, refuser, proposer et reconfirmer restent des opérations internes au comportement. Conserver l’exemple de 100 pièces demandées vendredi, avec proposition fournisseur de 60 vendredi et 40 mardi. Distinguer demande, réponse, engagement accepté, risque opérationnel et promesse client. Refuser le report ne restaure pas la capacité fournisseur ; accepter son nouvel engagement ne modifie pas automatiquement notre promesse client. Le partage exposé avec Fulfillment Optimization, Order Lifecycle Management, Promise Management, Execution Management et Inventory Management est confirmé. La négociation générale des accords reste distincte ; aucun nouveau comportement de consignation adopté par extension. Les compléments rédactionnels et correspondances marché gardent leur qualification séparée. Poursuite de l’audit existant, aucune publication demandée.
+
+
+## U404
+
+**id**
+
+U404
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Préférer Business Process Tracking
+
+**texte**
+
+Je pense Business Process Tracking est bien meilleur.
+
+**contexte et portée**
+
+Préférence explicite pour le nom de marché Microsoft, en remplacement du candidat Digital Service Visibility. La réponse propose un point de vue transversal sur les processus d’exécution Supply, complémentaire des trois visibilités physiques ; pas un élargissement au pilotage global Business Services.
+
+
+## U405
+
+**id**
+
+U405
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Relier le suivi des Tasks aux appels de services sous-jacents
+
+**texte**
+
+Le tracking de Task implique le tracking des appels de service sous jacents. Donc c'est encore mieux
+
+**contexte et portée**
+
+La Task métier devient un point d’entrée du suivi, reliée aux appels et prestations qui contribuent à sa réalisation. Ne pas confondre appel accepté, résultat métier acquis, Task terminée et processus complet. Les Tasks et appels sont des objets suivis, pas des niveaux de décomposition supplémentaires.
+
+
+## U406
+
+**id**
+
+U406
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Business Process Tracking avec suivi des Tasks et appels
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur Business Process Tracking, la définition présentée intégrant processus, Tasks métier, prestations et appels sous-jacents, les exemples et le rattachement direct à Execution Tracking. La réussite technique n’implique pas le résultat métier ni la fin du processus. Périmètre processus d’exécution Supply ; orchestration et adaptation distinctes. Les trois visibilités physiques déjà adoptées U305/U308 sont à matérialiser au même niveau, sans Logistics Visibility intermédiaire. Digital Service Visibility demeure une ancienne proposition remplacée ; aucun comportement autonome supplémentaire ni objet Task créé par extension. Comparaisons et compléments rédactionnels qualifiés séparément, aucune release.
+
+
+## U407
+
+**id**
+
+U407
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Proposer Process Orchestration
+
+**texte**
+
+J'hésite sur le mot "Execution". Est-ce que ce n'est pas tout simplement Process Orchestration ?
+
+**contexte et portée**
+
+Discussion du nom D06.d ; comparaison Camunda, Microsoft et Oracle. Aucun changement de couche ou de périmètre implicite.
+
+
+## U408
+
+**id**
+
+U408
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Préférer Process et supprimer Business dans le tracking
+
+**texte**
+
+Je pense qu'on peut supprimer le terme "Business" : on est dans une carto business.
+Execution Adaptation doit devenir Process Adaptation.
+
+Franchement, je pense qu'execution doit être remplacé par process.
+
+**contexte et portée**
+
+Orientation de nommage. La réponse distingue Process pour le pilotage, Service pour les prestations et Operations pour les faits suivis ; Decision reste explicite pour D06.f.
+
+
+## U409
+
+**id**
+
+U409
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter la convention Process orchestre des Services
+
+**texte**
+
+Le Process orchestre des services : le modèle est simple.
+
+Go
+
+**contexte et portée**
+
+Accord sur la convention et les neuf noms présentés : D06, D06.d, D06.f, D07.d, BHV082, D06.b, D07.a, D06.e et D14. D14.a et D07.c reçoivent des intitulés éditoriaux cohérents, sans validation individuelle déduite. Identifiants, responsabilités, comportements, parents et couches conservés ; descriptions explicatives et comparaisons gardent leur portée éditoriale. Pas de généralisation à tous les mots Business ni au comportement Scenario Execution Adaptation d’Inventory Planning. Aucun nouvel audit ni release.
+
+
+## U410
+
+**id**
+
+U410
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Intégrer le lancement collectif dans Order Release
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur l’enrichissement d’Order Release BHV039, sous Order Lifecycle Management D04.o, sans comportement supplémentaire. La définition présentée autorise tout ou partie d’un Order ou un ensemble d’Orders liés selon des conditions individuelles et collectives. Complétude, éléments indispensables et traitement partiel sont explicités ; seuils et règles précises restent à définir. Affectation des ressources, autorisation de prise en charge et coordination des services restent distinctes. Autoriser ensemble ne présume pas un démarrage simultané. P11 est résolu par intégration au comportement existant. Les comparaisons et compléments rédactionnels gardent leur portée éditoriale ; aucun nouveau niveau, audit ou release.
+
+
+## U411
+
+**id**
+
+U411
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Reconsidérer le carnet comme backlog et ses responsabilités
+
+**texte**
+
+On avait parlé à une époque de gestion du carnet de commandes comme une backlog : on affine, on split, on regroupe, on valide, on release. Je crois qu'il ya une référence comme ça chez microsoft. Comme nom de domaine ça pourrait être sympa, non ? Pas de nouveau domaine mais un renommage peut être. Qu'en penses-tu ? Peut être que les traitements externes aux orders (split, release etc) sont des capacités de backlog et non d'order. Il y a peut être du déplacement de capacité si on veut rester logique.
+
+**contexte et portée**
+
+Demande de comparaison et de réexamen, sans ajout de domaine. Historique U157/U158 retrouvé : Oracle Backlog Management ; Microsoft Planned Orders apporte une pratique proche, pas une taxonomie universelle.
+
+
+## U412
+
+**id**
+
+U412
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Distinguer demande individuelle et travail collectif du carnet
+
+**texte**
+
+Et pourtant ça me plait bien et ça correspond au langage du métier qui parle de "faire tourner le carnet de commande, le travailler". Il y a le niveau commande qu'on capte, qu'on gère à l'unité pour comprendre le besoin du client et puis il y a la vision carnet de commande comme une backlog : c'est là qu'on a une vision globale et qu'on priorise, découpe ce qu'on va vraiment satisfaire, c'est la notion de release qui est envoyée à l'éxécution (le process).
+
+**contexte et portée**
+
+Frontière par responsabilité métier : demande et conditions individuelles, travail collectif du carnet, puis prise en charge par les processus. Le résultat retenu peut fractionner la satisfaction sans imposer deux commandes clients ni une hiérarchie documentaire.
+
+
+## U413
+
+**id**
+
+U413
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Order Backlog Management et le réexamen ciblé
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur le renommage D03 en Order Backlog Management et le mandat présenté : travailler collectivement le carnet, préparer et engager sa satisfaction vers Process Management. D04 conserve la demande selon son intention. Les décisions spécialisées restent dans D03. Réexamen ciblé de Lifecycle et Structuring autorisé ; pas de déplacement en bloc, de nouveau domaine ou de parent précis de comportement adopté. Release et préparation collective sont candidates au rattachement D03 ; Split/regroupement à distinguer selon leur finalité. Nom et principe adoptés ; définition développée, matrice détaillée et comparaisons éditoriales. Aucun nouveau cycle d’audit ni release.
+
+
+## U414
+
+**id**
+
+U414
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Créer Order Backlog Planning et y rattacher Order Release
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur la capacité Order Backlog Planning dans D03 et sa définition présentée : construire, comparer et maintenir les scénarios, mobiliser les décisions spécialisées, préparer et autoriser la prise en charge retenue. Déplacement du comportement existant Order Release BHV039 sous cette capacité, sans duplication ni changement de son identifiant ou de sa définition U410. Split et Structuring restent en D04 pour un arbitrage ultérieur. Planning ne remplace ni Fulfillment Plan Decision, ni Supply Assignment, ni Promise Management, ni Process Orchestration ; la release ne crée pas automatiquement une réservation et ne constate pas un démarrage physique. Aucun autre comportement Planning créé par généralisation. Description développée, justification éditoriale et comparaisons qualifiées séparément ; pas de release du modèle.
+
+
+## U415
+
+**id**
+
+U415
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Retenir Cytoscape.js pour l’exploration des dépendances dans Atlas
+
+**texte**
+
+Je valide Cytoscape
+
+**contexte et portée**
+
+Choix de Cytoscape.js à la suite du test comparatif isolé avec AntV G6, présenté sur une capture du backlog de 46 capacités et 186 relations. L’accord porte sur le moteur de la future vue d’exploration des liens aux niveaux capacité, domaine et univers. Il ne valide pas individuellement les réglages de disposition, les interactions, une architecture d’intégration ou les données métier du prototype. Le regroupement testé repose sur une projection commune aux deux moteurs ; le repli natif et les performances à grande échelle n’ont pas été démontrés. La séparation du modèle métier et des solutions reste applicable. Le test travaille sur une capture figée du backlog ; l’intégration future dans Atlas devra utiliser exclusivement la publication consultée. Choix technique consigné, sans intégration applicative ni remplacement général des cartes React Flow dans cette étape.
+
+
+## U416
+
+**id**
+
+U416
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Structuring inclut Split ; Lifecycle pilote le carnet
+
+**texte**
+
+Split et Structuring, ce sont deux notions séparées ? Pour moi, Structuring est le terme large et Split est un comportement.
+
+"Firming, Freezing, Hold, Rescheduling et Cancellation  " touchent l'état de l'order mais c'est de la gestion de backlog : c'est comme si les orders changeaient de colonne comme pour suivre un processus à étape.
+
+**contexte et portée**
+
+Clarification de responsabilité métier : découpage sous Structuring ; pilotage des engagements et de la progression sous le carnet. La métaphore des colonnes ne prescrit pas une séquence unique ni un modèle de données.
+
+
+## U417
+
+**id**
+
+U417
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Déplacer Structuring et Lifecycle vers le carnet
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Adoption de la proposition : déplacer D04.n et D04.o dans D03 en conservant leurs identifiants ; rattacher BHV044 Order Splitting à Structuring et BHV039 Order Release à Lifecycle, révisant explicitement U414. Définition élargie de Structuring adoptée. Planning prépare les scénarios, Lifecycle autorise la prise en charge, Process Orchestration coordonne les services. Gel contre modification et suspension de progression restent combinables, distincts de l’affermissement. D04 conserve les intentions/types et l’archivage. Aucun nouveau domaine ou comportement ; descriptions développées et comparaisons éditoriales. La nouvelle rédaction de Planning traduit le mandat précisé, sans étendre la validation aux mots non présentés.
+
+
+## U418
+
+**id**
+
+U418
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Confirmer Order Release dans le domaine du carnet
+
+**texte**
+
+Order Release, je trouverai ça logique que ce soit dans Backlog Management
+
+**contexte et portée**
+
+Précision reçue pendant l’intégration U417 : Order Release appartient au domaine D03 Order Backlog Management. Le rattachement via Order Lifecycle Management, lui-même déplacé dans D03 selon U417, est explicité en réponse. Aucun nouveau domaine ou capacité homonyme, ni rattachement direct d’un comportement au domaine, n’est déduit.
+
+
+## U419
+
+**id**
+
+U419
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Intégrer Cytoscape.js dans la vue Relations d’Atlas
+
+**texte**
+
+Go pour l’intégration
+
+**contexte et portée**
+
+Autorisation d’intégrer le moteur choisi en U415 à la vue des relations d’Atlas : exploration par capacité, domaine et univers, profondeur progressive, filtres et lecture des qualifications. Les données viennent exclusivement de la publication consultée ; les liens d’origine, leurs sources et leurs portées de validation restent accessibles après regroupement. Les cartes de structure conservent React Flow. Cette réalisation technique ne publie pas le backlog et ne modifie pas le découpage métier. Les performances à grande échelle et le repli natif des groupes restent hors du test réalisé.
+
+
+## U420
+
+**id**
+
+U420
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Corriger les domaines d’Archiving et Lifecycle
+
+**texte**
+
+Order Archiving  doit être dans D03
+**Order Lifecycle Management** doit être dans D04
+
+**contexte et portée**
+
+Correction explicite des deux rattachements de capacités après U417/U418. Archiving rejoint D03 ; Lifecycle revient dans D04. Les comportements restent sous leurs capacités : Order Release suit donc Lifecycle dans D04, conséquence explicitée en réponse, qui remplace son appartenance indirecte à D03 issue de U418. Aucun nouveau rattachement autonome de Release ni changement de définition déduit. Structuring et Split restent en D03. Les mises en cohérence rédactionnelles restent éditoriales.
+
+
+## U421
+
+**id**
+
+U421
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Distinguer les dimensions de statut d’un Order
+
+**texte**
+
+J'ai compris, il ya plusieurs états qui peuvent se recouvrir : une demande peut être "lancée" mais en brouillon pour modification. Il faut séparér les dimensions de l'état en différents statuts.
+
+**contexte et portée**
+
+Principe de dimensions d’état distinctes et combinables. Le cas lancé/brouillon motive la distinction entre contenu applicable et modification en préparation ; les règles exactes de coexistence, versionnement, suspension et validation ne sont pas encore adoptées. Aucun statut ni comportement ajouté automatiquement.
+
+
+## U422
+
+**id**
+
+U422
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Revoir le nom et le périmètre de Lifecycle
+
+**texte**
+
+On doit revoir le lifecycle management qui est mal nommé et mal foutu.
+
+**contexte et portée**
+
+Mandat de réexamen ciblé des huit comportements et du nom de D04.o dans l’audit existant. Les deux capacités et le comportement Amendment proposés par Codex restent à arbitrer ; aucun nouveau rattachement ni nom adopté par cette demande.
+
+
+## U423
+
+**id**
+
+U423
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Examiner un Lifecycle décomposé par dimensions d’état
+
+**texte**
+
+On peut avoir un lifecycle mais avec plusieurs comportements qui représentent les dimensions de l’état ?
+
+**contexte et portée**
+
+Question orientant le réexamen vers une capacité Lifecycle unique avec des comportements gouvernant des dimensions métier distinctes. Ne vaut pas adoption de noms, regroupements, liste de statuts ou nouvelles définitions. L’option de scission U422 est conservée comme alternative de travail non adoptée. Le catalogue courant U420 reste intact.
+
+
+## U424
+
+**id**
+
+U424
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Lifecycle par dimensions et expliciter les états
+
+**texte**
+
+Il faut bien lister les états possibles dans les comportements.
+
+Go pour la mise à jour
+
+**contexte et portée**
+
+Accord sur la capacité Lifecycle unique en D04, sa définition présentée et les six dimensions de décomposition : préparation/révision, engagement, protection, autorisation, suspension, fin de la demande. D03 mobilise Lifecycle ; D06 orchestre et rapporte les réalisations. Demande explicite de documenter les états possibles. Les regroupements intègrent Rescheduling dans préparation/révision et Cancellation avec Closure dans fin de la demande, sans perte des distinctions. Libellés anglais nouveaux, listes détaillées d’états, contraintes et exemples ajoutés sont éditoriaux : leur production est autorisée, pas leur validation métier valeur par valeur. Structuring et Archiving restent distincts en D03.
+
+
+## U425
+
+**id**
+
+U425
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Clore les candidats de réassort sans décomposition supplémentaire
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord sur la proposition de clore P01, P02 et P03 comme couverts par Replenishment Decision D05.e : besoins datés, seuil/cible et ajustement des apports existants restent décrits dans la capacité, sans nouveau comportement. Inventory Target Decision détermine les objectifs et seuils, Replenishment Decision recommande les apports et ajustements, Order Management/Lifecycle applique les changements autorisés et D06 orchestre leur réalisation. Descriptions développées et correspondances produit gardent leur portée éditoriale. Aucun constat de couverture exhaustive du marché ni déploiement Beaumanoir déduit.
+
+
+## U426
+
+**id**
+
+U426
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Reconsidérer les politiques de réassort comme comportements
+
+**texte**
+
+Il faut les mettre en comportement de la décision, non ?
+
+**contexte et portée**
+
+Question reçue pendant la finalisation U425. Réouvre le choix de non-décomposition : politiques et mécanismes sont des critères admis, une fois distingués calcul des cibles et décision des apports. Les trois candidats sont remis à l’étude ; aucune création de nœud ni validation des nouveaux noms et définitions déduite de la question. Les descriptions enrichies U425 restent conservées. Codex reconnaît avoir prolongé trop largement la réserve U324/C98.
+
+
+## U427
+
+**id**
+
+U427
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter les trois comportements de Replenishment Decision
+
+**texte**
+
+ok pour le réassort
+
+**contexte et portée**
+
+Accord sur les trois comportements présentés après U426 : Requirement-based Replenishment, Target-based Replenishment et Replenishment Adjustment, avec leurs responsabilités formulées dans le tableau et leur rattachement sous Replenishment Decision. Deux politiques et un mécanisme d’ajustement combinable ; cibles/seuils restent dans Inventory Target Decision, changements autorisés dans D04, orchestration dans D06. Noms, définitions présentées et parents adoptés ; descriptions développées, exemples, comparaisons et justifications éditoriales gardent leur portée propre. Cet accord remplace la non-décomposition U425 et clôt seulement le point réassort de l’audit ; les retours et autres points restent distincts.
+
+## U428
+
+**id**
+
+U428
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Frontière commerce/finance et orchestration Supply
+
+**texte**
+
+Frontière commerciale : normalement, encaissement et facturation c'est du commerce et nous on fait de l'orchestration de supply. Qu'en penses tu ? Et le marché dit quoi ?
+
+**contexte et portée**
+
+Laurent rappelle le périmètre d’orchestration Supply et demande une comparaison marché pour l’arbitrage A04. Proposition de frontière : responsabilités commerciales et financières hors de cet univers, tout en conservant les interactions utiles aux processus Supply. La ventilation précise Commerce/Finance et les interfaces décrites par Codex restent des recommandations à discuter ; aucune nouvelle capacité, clôture A04 ou modification de catalogue déduite de la question. Comparaison CMP165, preuves ELM254.
+
+## U429
+
+**id**
+
+U429
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Exclure facturation et encaissement de Supply sans attribuer leur domaine externe
+
+**texte**
+
+Je valide le fait que c'est à l'extérieur de l'univers Supply.
+Néanmoins, encaissement et facturation, ce n'est pas très clair si c'est la finance ou le commerce qui gère.
+
+**contexte et portée**
+
+Exclusion de l’univers Supply validée. Rattachement Commerce/Finance explicitement non tranché, notamment pour facturation et encaissement. Ne pas transformer cette exclusion en attribution à Finance, en découpage organisationnel ou en validation globale du tableau CMP165. Détail des interfaces et autres responsabilités conserve sa portée propre. Convention enregistrée dans customer-return-behaviors.yaml, external_boundary_U429 ; complément marché ELM255/CMP166.
+
+
+## U430
+
+**id**
+
+U430
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Proposer le rattachement commercial de l’encaissement et de la production de facture
+
+**texte**
+
+Avec ce que tu as trouvé, on peut dire que encaissement et production de facture, c'est le définitivement le commerce.
+
+**contexte et portée**
+
+Laurent propose de stabiliser le rattachement au Commerce. Réponse Codex : choix de cartographie défendable pour la facturation client et la prise en charge opérationnelle du paiement, sans en faire une règle universelle de marché ni y inclure comptabilisation, lettrage ou rapprochement bancaire. Appuis ELM255/CMP166 reconsultés le 19 septembre 2026 (Microsoft Commerce Omnichannel payments ; SAP Learning Billing Process). Contrepoint ELM254 : Microsoft Finance Accounts receivable documente aussi la création de factures clients, ce qui interdit de déduire une attribution universelle du découpage produit. Exclusion Supply U429 reste acquise ; la formulation précise et la distinction des responsabilités présentées par Codex restent proposées, sans nouveau domaine ni capacité créés.
+
+
+## U431
+
+**id**
+
+U431
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Solder l’audit des comportements
+
+**texte**
+
+On solde.
+
+**contexte et portée**
+
+Accord sur la proposition de clôture présentée : P04, P10 et P12 sont couverts par le modèle actuel, sans création de comportement ; consolider la frontière commerciale/financière externe à Supply. Les règles de réservation, d’application des plans et de capacité engageable restent des travaux ultérieurs non bloquants pour le catalogue. Ne vaut ni validation globale des descriptions, contrats et comparaisons, ni exhaustivité de couverture du marché, ni publication. Aucun arbitrage organisationnel Commerce/Finance supplémentaire déduit de cet accord.
+
+## U432
+
+**id**
+
+U432
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Vérifier la possibilité de lancer une release après clôture de l’audit
+
+**texte**
+
+Il reste des choses en attente ou je peux lancer une release ?
+
+**contexte et portée**
+
+Demande de vérification de préparation, sans autorisation de publication déduite. Le contrôle identifie trois liens vers des objets illustratifs exclus de la release ; correction du périmètre compilé et validé, avec traçabilité dans le rapport, sans changement du catalogue ni des publications. Après correction, seules restent 469 erreurs de transcription des champs validés du lifecycle vers les décisions de la version candidate. Ce sont des contrôles de preuve à résoudre lors de la préparation : aucun nouvel accord métier à inventer, aucune suppression des validations du backlog pour contourner le contrôle. Huit alertes de propagation du glossaire sont signalées pour revue de portée lors de cette préparation. Bilan dans audits/2026-09-17-comportements-manquants/release-readiness-U432.md.
+
+
+## U433
+
+**id**
+
+U433
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier la release du modèle après clôture de l’audit et optimisation technique
+
+**texte**
+
+lance une release
+
+**contexte et portée**
+
+Autorisation de préparer et publier localement le backlog courant dans FLOW Atlas / Urbanisation. Transcrire les accords antérieurs uniquement à portée et valeurs prouvées, examiner les impacts du glossaire et conserver les propositions comme telles. Cette demande ne valide pas globalement les contenus, ne réouvre pas l’audit clos U431 et ne demande ni commit ni push Git.

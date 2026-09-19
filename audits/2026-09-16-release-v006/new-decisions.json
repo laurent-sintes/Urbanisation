@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-16.1",
+  "decisions": [
+    {
+      "id": "ADOPT-U219-finality-D01-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U218",
+        "U219"
+      ],
+      "note": "Transcription de la seule finalité adoptée U219 ; les autres champs ne sont pas approuvés par cette décision.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01",
+        "revision": 5,
+        "approved_fields": [
+          "finality"
+        ],
+        "value_sha256": {
+          "finality": "c4d74fdb212f15a6489e8281849ba9f791e8d950ab546a927daa5b5a49ca6fd9"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U219-finality-D03-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U218",
+        "U219"
+      ],
+      "note": "Transcription de la seule finalité adoptée U219 ; les autres champs ne sont pas approuvés par cette décision.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03",
+        "revision": 4,
+        "approved_fields": [
+          "finality"
+        ],
+        "value_sha256": {
+          "finality": "27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U219-finality-D05-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U218",
+        "U219"
+      ],
+      "note": "Transcription de la seule finalité adoptée U219 ; les autres champs ne sont pas approuvés par cette décision.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05",
+        "revision": 3,
+        "approved_fields": [
+          "finality"
+        ],
+        "value_sha256": {
+          "finality": "86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U236-reassessment-D03-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U52",
+        "U95",
+        "U131",
+        "U202",
+        "U219"
+      ],
+      "note": "Réexamen documentaire de ADOPT-058 après U219 : seul le nom Order Promising, inchangé, est transcrit sur la nouvelle révision. Empreinte et portée vérifiées ; aucun nouvel accord ni validation de la définition.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U220-name-D05-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U220"
+      ],
+      "note": "Transcription du seul nom Inventory Optimization adopté U220.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U223-definition-D05-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U223"
+      ],
+      "note": "Transcription exacte de la définition U223 ; le périmètre détaillé reste proposé.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-D05.a-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U233",
+        "U234",
+        "U235"
+      ],
+      "note": "Transcription U235 des seuls nom et définition courte présentés. Finalité, nature, périmètre et exemples restent proposés ; aucun transfert depuis D05.b.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.a",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "e541d92c30b841067a82addfeb2e2ca9ef0c6ab79643b8cce210dd368527b0b1",
+          "definition": "16feedebe6c89addbcf61c9e0fb0abd6d1aace87738d17b5e34f43e2f7bb2f1a"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-MEMBER-D05.a-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 du rattachement direct au domaine D05 ; aucun niveau intermédiaire.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D05.a",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "aa906f77ac2b44f5ea7cbad82d3c447d65b0924b3c08f5a89dc789444a29efc8",
+          "target_id": "b5277743f63f0175bf1121be382464fcd6bbdac45bc838a59e520915f9c73ba2"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-D05.d-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U233",
+        "U234",
+        "U235"
+      ],
+      "note": "Transcription U235 des seuls nom et définition courte présentés. Finalité, nature, périmètre et exemples restent proposés ; aucun transfert depuis D05.b.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.d",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "b9e8545451b5feac8acdcbb28d2e59e2ed5d2da1f46bd37dc908f3d4edf05e5d",
+          "definition": "462a7e18386912b742f51a6938298010ce22e60e9bfcbd7cb9c7f7120212b130"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-MEMBER-D05.d-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 du rattachement direct au domaine D05 ; aucun niveau intermédiaire.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D05.d",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "aa906f77ac2b44f5ea7cbad82d3c447d65b0924b3c08f5a89dc789444a29efc8",
+          "target_id": "486cdd433d58cbdc43ae25b19ad1b84b0fb9be709fb6387b2f804600cd35109d"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-D05.e-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U233",
+        "U234",
+        "U235"
+      ],
+      "note": "Transcription U235 des seuls nom et définition courte présentés. Finalité, nature, périmètre et exemples restent proposés ; aucun transfert depuis D05.b.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.e",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "981dc4b9f083cad00116ccf288f95e330aad7f347e70f5a1b0bf489c5ab6eb91",
+          "definition": "40239dba0ae3bacf534cfdae4e7b46a5619c61ecd202bd4abb9a2ae1136f9656"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-MEMBER-D05.e-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 du rattachement direct au domaine D05 ; aucun niveau intermédiaire.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D05.e",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "aa906f77ac2b44f5ea7cbad82d3c447d65b0924b3c08f5a89dc789444a29efc8",
+          "target_id": "d2ff497e93ca681a093ec9dfa73189a7bd5a83e6b3cb992e423a03e511bd2965"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-D05.c-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U233",
+        "U234",
+        "U235"
+      ],
+      "note": "Transcription U235 des seuls nom et définition courte présentés. Finalité, nature, périmètre et exemples restent proposés ; aucun transfert depuis D05.b.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.c",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "4a42f5fc71ed11fa31411c07ebd95607240b680b1286e70776a69f583778cac5",
+          "definition": "b6726694c8697bd2e33ba620f1612714971951df914b40f879f2cb928f1732c5"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-MEMBER-D05.c-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 du rattachement direct au domaine D05 ; aucun niveau intermédiaire.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D05.c",
+        "revision": 3,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "aa906f77ac2b44f5ea7cbad82d3c447d65b0924b3c08f5a89dc789444a29efc8",
+          "target_id": "97fe1bf4b147401f73e6d7d78b768463cfd5a7538b59e48aef2ff5b9d2274ead"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-D05.f-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U233",
+        "U234",
+        "U235"
+      ],
+      "note": "Transcription U235 des seuls nom et définition courte présentés. Finalité, nature, périmètre et exemples restent proposés ; aucun transfert depuis D05.b.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.f",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128",
+          "definition": "b18cd430368a2ff81e22bff02948b4e016339e909feab7c8a8dc8cfca0efd6ca"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-MEMBER-D05.f-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 du rattachement direct au domaine D05 ; aucun niveau intermédiaire.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D05.f",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "aa906f77ac2b44f5ea7cbad82d3c447d65b0924b3c08f5a89dc789444a29efc8",
+          "target_id": "9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-INVENTORY-PLANNING-D05.a-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 des extrémités de la mobilisation par Inventory Planning. Type technique et qualification détaillée restent proposés ; ce lien ne crée pas une décomposition.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-INVENTORY-PLANNING-D05.a",
+        "revision": 1,
+        "approved_fields": [
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "source_id": "9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0",
+          "target_id": "b5277743f63f0175bf1121be382464fcd6bbdac45bc838a59e520915f9c73ba2"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-INVENTORY-PLANNING-D05.d-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 des extrémités de la mobilisation par Inventory Planning. Type technique et qualification détaillée restent proposés ; ce lien ne crée pas une décomposition.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-INVENTORY-PLANNING-D05.d",
+        "revision": 1,
+        "approved_fields": [
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "source_id": "9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0",
+          "target_id": "486cdd433d58cbdc43ae25b19ad1b84b0fb9be709fb6387b2f804600cd35109d"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-INVENTORY-PLANNING-D05.e-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 des extrémités de la mobilisation par Inventory Planning. Type technique et qualification détaillée restent proposés ; ce lien ne crée pas une décomposition.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-INVENTORY-PLANNING-D05.e",
+        "revision": 1,
+        "approved_fields": [
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "source_id": "9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0",
+          "target_id": "d2ff497e93ca681a093ec9dfa73189a7bd5a83e6b3cb992e423a03e511bd2965"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    },
+    {
+      "id": "ADOPT-U235-REL-INVENTORY-PLANNING-D05.c-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-16",
+      "recorded_at": "2026-09-16",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235"
+      ],
+      "note": "Transcription U235 des extrémités de la mobilisation par Inventory Planning. Type technique et qualification détaillée restent proposés ; ce lien ne crée pas une décomposition.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-INVENTORY-PLANNING-D05.c",
+        "revision": 1,
+        "approved_fields": [
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "source_id": "9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0",
+          "target_id": "97fe1bf4b147401f73e6d7d78b768463cfd5a7538b59e48aef2ff5b9d2274ead"
+        },
+        "import_version": "2026-09-16.1"
+      }
+    }
+  ]
+}

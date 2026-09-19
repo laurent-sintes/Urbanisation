@@ -1,6 +1,7 @@
 """Refresh the current source index without importing or publishing a model."""
 from datetime import date
 from pathlib import Path
+import json
 
 try:
     from .migrate_urbanism import source_records
@@ -18,7 +19,8 @@ def main():
     if errors:
         raise ValueError('\n'.join(errors))
     path = Path(__file__).resolve().parents[1] / 'modeles/provenance/source-records.json'
-    activate_pointer(path, document)
+    if not path.exists() or json.loads(path.read_text(encoding='utf-8-sig')) != document:
+        activate_pointer(path, document)
     print(f'Current source index refreshed: {len(document["records"])} records; frozen files unchanged.')
 
 

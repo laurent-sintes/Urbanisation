@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "protected_files_unchanged": true,
+    "d05_unchanged": true,
+    "d03_unchanged": true,
+    "d07_domain_retired_capability_ids_preserved": true,
+    "eight_capabilities_under_d06": true,
+    "six_references_presented": true,
+    "five_order_reconciliation_links_preserved": true,
+    "capacity_and_execution_to_promising": true,
+    "adaptation_to_promise_revision": true,
+    "all_lifecycle_fingerprints_valid": true,
+    "existing_99_terms_unchanged": true,
+    "new_terms_proposed": true,
+    "model_source_file_hashes_valid": true
+  },
+  "protected_files": 111,
+  "counts": {
+    "nodes": 59,
+    "capabilities": 41,
+    "relations": 77,
+    "business_glossary_terms": 101
+  }
+}

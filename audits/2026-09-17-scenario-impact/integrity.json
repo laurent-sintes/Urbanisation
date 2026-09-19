@@ -1,0 +1,20 @@
+{
+  "protected_files_unchanged": 134,
+  "existing_relations_unchanged": 97,
+  "new_node": "BHV010",
+  "changed_existing_nodes": [
+    "D05.f",
+    "BHV006",
+    "BHV007"
+  ],
+  "capabilities": 41,
+  "behaviors": 10,
+  "planning_children": [
+    "BHV005",
+    "BHV006",
+    "BHV010",
+    "BHV007",
+    "BHV008",
+    "BHV009"
+  ]
+}

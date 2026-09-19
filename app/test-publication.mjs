@@ -246,3 +246,16 @@ test('publication and source URL parameters preserve literal values', () => {
   assert.equal(publicationUrl('version&other=value'), '/api/model?version=version%26other%3Dvalue');
   assert.equal(new URL(sourceUrl('connaissance/test.md', 'ancre & suite'), 'http://local').searchParams.get('anchor'), 'ancre & suite');
 });
+
+test('unchanged polling preserves state identity and does not notify React', async () => {
+  const client = createPublicationClient(async url => response(url === '/api/releases' ? catalog() : snapshot('v3')));
+  await client.setVersion();
+  const before = client.getState();
+  let notifications = 0;
+  client.subscribe(() => notifications++);
+  await client.check();
+  await client.check();
+  assert.equal(client.getState(), before);
+  assert.equal(notifications, 0);
+  client.dispose();
+});

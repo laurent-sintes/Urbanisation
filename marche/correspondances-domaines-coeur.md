@@ -1,5 +1,7 @@
 # Noms de marché proches des domaines cœur
 
+> État courant U290 : la refonte est appliquée au backlog. Les accords et tableaux antérieurs ci-dessous sont datés ; consulter le [bilan](../audits/2026-09-17-refonte-appliquee/rapport.md) et le registre de migration pour les identités et comportements courants. Les correspondances détaillées de marché restent partielles et à réexaminer après changement de périmètre.
+
 11 septembre 2026 — vue locale actualisée après U100, [P81 version 0.7](../connaissance/25-domaines-coeur-et-epreuve-recits.md), onze domaines actifs. Corpus issu de U65/CMP037 et des approfondissements ultérieurs ; [CMP054](comparaisons.md#cmp054) corrige les frontières de référence. **Les noms externes sont des repères attestés dans le corpus ; les correspondances sont partielles.** Les quatre domaines Party / Role, Agreement, Product Reference et Catalog ne portent localement que l’ingestion. D08.d est une proposition de formulation appliquant l’autonomie article confirmée en U100. Les fonctionnalités de maîtrise décrites par le marché restent externes à la plateforme.
 
 ## SAP et Microsoft
@@ -99,3 +101,26 @@ U75 rattache la réservation à D01 et Supply Assignment à D03 ; [CMP041](compa
 
 
 **Évolution du backlog U116 — 13 septembre 2026 :** P82 devient la base de travail de D01. Inventory Tracking (D01.e) réunit D01.a/D01.b ; Inventory Visibility conserve D01.c. Les rapprochements antérieurs des deux premières aptitudes éclairent leur regroupement, sans créer une équivalence complète. Les appuis P82 (ELM068/ELM075/ELM076, CMP040/CMP042/CMP045) restent datés de leur examen initial ; aucune nouvelle vérification externe ici. Les trois autres capacités D01 conservent leurs correspondances et réserves. Voir [la correction Atlas et son périmètre](../audits/2026-09-13-atlas-d01.md).
+
+## Refonte D04 — U214/U215, 15 septembre 2026
+
+Les correspondances antérieures de D04.e–h conservent leur portée historique. Les nouvelles capacités D04.i–o ne sont pas des renommages : aucune équivalence ni validation de comparaison n’est transportée. Les appuis produits de [U210](order-management-abstraction-comparaison.md) et [U211](order-types-et-cycle-de-vie.md) fournissent des illustrations, sans établir la même granularité de capacités. Chacune des sept nouvelles définitions est explicitement **non comparée individuellement** dans [le registre de refonte](../modeles/backlog/d04-refactoring.yaml). Les cinq contributions proposées depuis D07.c restent à éprouver ; aucun déploiement ou niveau de couverture locale établi.
+
+## Stock et Orders — U219/U220/U221, 15 septembre 2026
+
+D05 devient Inventory Optimization selon U220 ; finalités D01/D03/D05 clarifiées U219, trois capacités D05 précisées. Les six rédactions modifiées sont **non comparées pour leur périmètre révisé**, dans [le registre de frontière](../modeles/backlog/stock-order-boundary.yaml). Inventory Optimization est un choix de nom local ; aucune équivalence avec un produit ou rang de capacité éditeur n’est revendiquée. Le réapprovisionnement automatique U221 est une piste de périmètre à instruire, non une preuve de couverture installée ou de nouvelle capacité autonome.
+
+
+## Comparaison Inventory Optimization — U222, 15 septembre 2026
+
+La [comparaison TM Forum / Microsoft / SAP](inventory-optimization-comparaison.md) actualise le statut de D05 et D05.a–c en rapprochements partiels proposés, CMP067–CMP070. Elle remplace leur seule mention « non comparé » pour le périmètre étudié, sans établir d'équivalence globale. D01 et D03 restent non réaudités. CMP071 instruit le réapprovisionnement U221 ; Replenishment Decision reste candidate, aucune capacité ajoutée. Sources, versions et limites de lecture sont explicites ; aucun produit ne devient l'autorité du modèle.
+
+
+## Optimisation analytique et application — U225
+
+[Étude U225](optimisation-et-application-stock.md) après la direction U224 : CMP072 distingue calcul et application, CMP073 éprouve D02.b face aux allocations/protections SAP et Microsoft, CMP074 compare le déclenchement du réapprovisionnement. Correspondances partielles proposées ; nœuds non refondus. Les trois libellés analytiques proposés ne deviennent pas des capacités natives démontrées.
+
+
+## Refonte D05 — U235, 16 septembre 2026
+
+Le [registre U235](../modeles/backlog/d05-refactoring.yaml) remplace l’état de trois capacités par quatre décisions et Inventory Planning. CMP075 qualifie séparément les cinq capacités : appuis partiels, pas d’équivalence globale. D05.b est historique ; sa correspondance CMP069 n’est pas transférée intégralement à D05.e. Les références génériques Decision/Planning/Management restent dans le glossaire de modélisation séparé.

@@ -1,0 +1,332 @@
+id: flow-behavior-typology-U389
+kind: methodological_analysis
+as_of: '2026-09-18'
+source_refs:
+- U389
+- U265
+- U283
+- CMP145
+status: editorial_analysis_rule_requested
+canonical_definition: modeles/backlog/modeling-glossary.yaml#MOD006
+model_sha256: 5cab3e681cedef51aabcc136f42511ec084f9845a4d871e9e80c377dd998a647
+catalog_behavior_count: 48
+decomposed_capability_count: 13
+method: Lecture des définitions, justifications et rattachements explicites des 48 comportements ; regroupement par différence
+  métier. Aucun changement de catalogue.
+observations:
+- capability_id: D01.d
+  capability_name: Stocktaking
+  nature: not_specified
+  illustrative_forms:
+  - policy_strategy
+  decomposition_rationale: Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents
+    et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices
+    distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils
+    de comptage ne créent pas de comportement supplémentaire.
+  behaviors:
+  - id: BHV029
+    name: Periodic Physical Inventory
+    definition: Vérifier l’ensemble du stock d’un périmètre lors d’une campagne, pour établir une référence fiable.
+  - id: BHV030
+    name: Cycle Counting
+    definition: Vérifier régulièrement des sélections d’articles ou d’emplacements, avec une fréquence adaptée aux enjeux.
+  - id: BHV031
+    name: Spot Counting
+    definition: Vérifier ponctuellement un stock ciblé lorsqu’une situation le justifie.
+- capability_id: D02.b
+  capability_name: Supply Protection
+  nature: management
+  illustrative_forms:
+  - intervention_mechanism
+  - policy_strategy
+  decomposition_rationale: Préserver un accès, limiter une consommation, absorber l’incertitude et réguler les apports répondent
+    à des risques différents ; mécanismes combinables, pas étapes d’un cycle.
+  behaviors:
+  - id: BHV017
+    name: Group Supply Protection
+    definition: Configurer les droits préservant l’accès d’un groupe à des ressources face aux usages concurrents.
+  - id: BHV018
+    name: Consumption Capping
+    definition: Configurer les limites de consommation d’un groupe sur le périmètre et la période retenus.
+  - id: BHV019
+    name: Safety Stock Policy
+    definition: Configurer le stock tampon et ses conditions d’utilisation pour absorber les incertitudes.
+  - id: BHV020
+    name: Replenishment Regulation
+    definition: Configurer les règles de déclenchement et de limitation du réassort qui encadrent le renouvellement du stock.
+- capability_id: D02.e
+  capability_name: Supply Assignment
+  nature: action
+  illustrative_forms:
+  - intervention_mechanism
+  decomposition_rationale: 'Trois mécanismes combinables apportent des bénéfices distincts : application traçable d’un plan
+    retenu, stabilité en complétant sans remettre en jeu les liens existants, adaptation collective en révisant les liens
+    autorisés. Le choix de préserver ou réviser change les pratiques de préparation et les engagements à coordonner ; il ne
+    se réduit pas à une opération CRUD ou une optimisation technique de calcul. L’application d’un plan peut mobiliser l’une
+    ou l’autre politique.'
+  behaviors:
+  - id: BHV045
+    name: Supply Assignment Plan Application
+    definition: Appliquer les affectations d’un plan retenu, en contrôlant qu’elles restent applicables et en signalant les
+      écarts.
+  - id: BHV046
+    name: Incremental Supply Assignment
+    definition: Compléter les besoins non affectés tout en préservant les affectations existantes.
+  - id: BHV047
+    name: Supply Reassignment
+    definition: Réviser les affectations modifiables pour appliquer de nouveaux arbitrages entre commandes.
+- capability_id: D03.i
+  capability_name: Available-to-Promise (ATP)
+  nature: decision
+  illustrative_forms:
+  - decision_dimension
+  decomposition_rationale: 'Quatre différences combinables modifient les possibilités : droits engagés, réseau, mobilisation
+    et ressources futures ; aucun comportement par lieu ou technologie.'
+  behaviors:
+  - id: BHV001
+    name: Existing Commitment Consideration
+    definition: Établir les quantités admissibles pour la demande en tenant compte des allocations, protections et réservations,
+      sans double décompte.
+  - id: BHV002
+    name: Network Stock Availability
+    definition: Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins, darkstores ou
+      autres espaces de stockage.
+  - id: BHV003
+    name: Operational Availability Timing
+    definition: Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité opérationnelle.
+  - id: BHV004
+    name: Future Supply Projection
+    definition: Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements concurrents,
+      pour une promesse ou un ensemble.
+- capability_id: D04.l
+  capability_name: Customer Return
+  nature: action
+  illustrative_forms:
+  - process_variant
+  decomposition_rationale: Les parcours diffèrent par le devenir attendu, les responsabilités sollicitées, les immobilisations
+    et les preuves nécessaires pour considérer le retour traité. Cette complexité justifie des comportements métier ; les
+    étapes de saisie, inspection, validation et clôture ne constituent pas chacune un comportement.
+  behaviors:
+  - id: BHV050
+    name: Return to Stock
+    definition: Prendre en charge la remise en disponibilité du produit.
+  - id: BHV051
+    name: Repair and Refurbishment
+    definition: Prendre en charge une remise en état, suivre son résultat et la suite attendue.
+  - id: BHV052
+    name: Return to Supplier
+    definition: Relier le retour client à sa prise en charge par Supplier Return.
+  - id: BHV053
+    name: Return to Customer
+    definition: Prendre en charge la restitution du produit au client, après réparation ou décision de non-reprise.
+  - id: BHV054
+    name: Scrapping
+    definition: 'Prendre en charge la mise au rebut retenue : conserver l’autorisation, suivre la réalisation et rapprocher
+      la preuve avec la sortie de stock.'
+- capability_id: D04.m
+  capability_name: Supplier Return
+  nature: action
+  illustrative_forms:
+  - process_variant
+  decomposition_rationale: 'Le retour sans remplacement éteint l’attente de marchandises au titre des quantités reprises ;
+    le retour avec remplacement conserve un apport attendu. Cette différence change le suivi des quantités, des dates et des
+    engagements aval. Elle justifie deux parcours métier, indépendamment des motifs du retour et des interfaces. Le retour
+    pour réparation ajoute un attendu distinct : récupérer le même bien remis en état, avec sa traçabilité et son immobilisation,
+    plutôt que recevoir un autre produit.'
+  behaviors:
+  - id: BHV055
+    name: Return for Credit
+    definition: Prendre en charge un retour fournisseur donnant lieu à un avoir ou remboursement attendu, sans remplacement
+      des marchandises retournées.
+  - id: BHV056
+    name: Return for Replacement
+    definition: Prendre en charge un retour associé à un remplacement attendu, en conservant les liens entre marchandises
+      renvoyées et apports de remplacement.
+  - id: BHV057
+    name: Return for Repair
+    definition: Prendre en charge l’envoi d’un bien au fournisseur pour réparation puis sa récupération, en préservant son
+      identité et l’attendu de restitution.
+- capability_id: D04.o
+  capability_name: Order Lifecycle Management
+  nature: management
+  illustrative_forms:
+  - business_effect
+  decomposition_rationale: Préparation différée, engagement ferme, stabilité face aux optimisations, autorisation, interruption,
+    changement d’échéance, retrait du besoin, terminaison et scission modifient chacun les pratiques et responsabilités métier.
+    Leurs conditions et effets partiels justifient les mécanismes ; pas une décomposition par bouton, statut technique ou
+    interface.
+  behaviors:
+  - id: BHV036
+    name: Order Firming
+    definition: Transformer une intention planifiée en ordre ferme, avec les engagements et restrictions de révision associés.
+  - id: BHV037
+    name: Order Freezing
+    definition: Protéger les éléments désignés d’un Order contre leur modification par les réoptimisations, en explicitant
+      la portée du gel et les conditions autorisées de révision.
+  - id: BHV038
+    name: Order Drafting
+    definition: Permettre de préparer, sauvegarder et reprendre un Order avant sa soumission au traitement opérationnel, en
+      rendant explicites les effets autorisés dans cet état.
+  - id: BHV039
+    name: Order Release
+    definition: Autoriser la prise en charge de tout ou partie d’un Order lorsque ses conditions de lancement sont satisfaites.
+  - id: BHV040
+    name: Order Hold & Resume
+    definition: Suspendre une progression désignée pour un motif métier puis permettre sa reprise lorsque les conditions de
+      levée sont réunies.
+  - id: BHV041
+    name: Order Rescheduling
+    definition: Appliquer un changement autorisé d’échéance du besoin porté par l’Order et en rendre explicites les effets
+      à traiter.
+  - id: BHV042
+    name: Order Cancellation
+    definition: Retirer de manière autorisée tout ou partie du reste à satisfaire, en préservant les réalisations acquises
+      et en signalant les effets aval nécessaires.
+  - id: BHV043
+    name: Order Closure
+    definition: Constater et gouverner la fin du traitement opérationnel d’un Order en explicitant le devenir de tout reliquat.
+  - id: BHV044
+    name: Order Splitting
+    definition: Scinder un Order ou ses éléments en parties traitables distinctement, en préservant la filiation, la cohérence
+      des quantités et les engagements applicables.
+- capability_id: D05.a
+  capability_name: Inventory Target Decision
+  nature: decision
+  illustrative_forms:
+  - business_scope
+  decomposition_rationale: 'Trois façons de déterminer les cibles selon la demande servie et le périmètre d’arbitrage : disponibilité
+    client et contraintes locales du magasin ; alimentation de la demande aval du centre de distribution ; coordination des
+    protections et des cibles entre échelons interdépendants. Le bénéfice est de rendre explicites les compromis locaux et
+    globaux sans créer un comportement par type de bâtiment ni une séquence imposée.'
+  behaviors:
+  - id: BHV026
+    name: Store Inventory Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un magasin pour assurer la disponibilité client, selon la demande
+      locale, l’assortiment retenu, les contraintes de présentation et de capacité, les délais de réassort et le risque d’excédent.
+  - id: BHV027
+    name: Distribution Center Inventory Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un centre de distribution pour servir les magasins ou canaux
+      desservis, selon leurs besoins prévus, les délais fournisseurs, les aléas d’approvisionnement et les contraintes de
+      stockage.
+  - id: BHV028
+    name: Multi-Echelon Inventory Optimization
+    definition: Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs
+      dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque.
+- capability_id: D05.c
+  capability_name: Stock Redistribution Decision
+  nature: decision
+  illustrative_forms:
+  - intervention_mechanism
+  decomposition_rationale: 'Distinguer deux mécanismes aux bénéfices différents : améliorer la couverture des lieux receveurs
+    en préservant les donneurs, ou réduire la fragmentation du stock par concentration, avec reconstitution d’assortiments
+    ou regroupement de reliquats même sans manque immédiat à destination.'
+  behaviors:
+  - id: BHV024
+    name: Inventory Rebalancing
+    definition: Déplacer du stock vers les lieux qui en ont davantage besoin, en préservant les besoins des donneurs.
+  - id: BHV025
+    name: Stock Consolidation
+    definition: Regrouper des quantités fragmentées pour leur redonner une utilité ou libérer des sites.
+- capability_id: D05.f
+  capability_name: Inventory Planning
+  nature: planning
+  illustrative_forms:
+  - planning_practice
+  decomposition_rationale: Explorer des alternatives, comprendre leurs conséquences et adapter un scénario engagé changent
+    les pratiques de planification et leur articulation avec l’exécution.
+  behaviors:
+  - id: BHV005
+    name: Scenario Construction
+    definition: Construire plusieurs réponses possibles en explicitant leurs hypothèses, objectifs et contraintes.
+  - id: BHV006
+    name: Simulation & Analysis
+    definition: Projeter les conséquences d’un scénario et analyser leurs impacts sur les indicateurs métier et les processus
+      pour éclairer les choix.
+  - id: BHV016
+    name: Scenario Execution Adaptation
+    definition: Adapter le scénario de stock en cours aux écarts observés, compte tenu des actions engagées et des décisions
+      spécialisées.
+- capability_id: D03.n
+  capability_name: Promise Management
+  nature: management
+  illustrative_forms:
+  - business_effect
+  decomposition_rationale: 'Distinguer proposition, établissement de l’engagement et réexamen de cet engagement : trois façons
+    d’agir avec effets différents, sans multiplier les capacités d’action.'
+  behaviors:
+  - id: BHV021
+    name: Promise Proposal
+    definition: Construire une proposition de mise à disposition de ressources pour honorer une commande Supply, précisant
+      quantités, dates, conditions et alternatives possibles, à partir des ressources et possibilités de réalisation.
+  - id: BHV022
+    name: Promise Confirmation
+    definition: établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.
+  - id: BHV023
+    name: Promise Revision
+    definition: Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications
+      autorisées.
+- capability_id: D05.h
+  capability_name: Reservation Policy Decision
+  nature: decision
+  illustrative_forms:
+  - policy_strategy
+  decomposition_rationale: Le jalon du parcours, la proximité du besoin, la différenciation des engagements de service et
+    l’adaptation au risque changent chacun la façon de sécuriser une promesse et le coût d’immobilisation. Quatre mécanismes
+    combinables sont retenus U343 ; durées, seuils, canaux et interfaces restent des paramètres ou des contextes. La complexité
+    visée est l’arbitrage de ces mécanismes sans retirer implicitement les garanties existantes.
+  behaviors:
+  - id: BHV032
+    name: Milestone-Based Reservation Policy
+    definition: Déterminer les événements du parcours métier à partir desquels la ressource doit être réservée, puis les conditions
+      de maintien de cette protection au fil du parcours.
+  - id: BHV033
+    name: Time-Fenced Reservation Policy
+    definition: Déterminer à quelle distance de la date de besoin commencer à réserver, afin de sécuriser l’échéance sans
+      immobiliser trop tôt les ressources.
+  - id: BHV034
+    name: Demand-Differentiated Reservation Policy
+    definition: Déterminer des conditions de réservation différentes selon les engagements de service attachés aux demandes,
+      aux clients ou aux canaux, en respectant les priorités et droits d’usage établis.
+  - id: BHV035
+    name: Risk-Adaptive Reservation Policy
+    definition: Adapter les conditions de déclenchement et de durée de réservation à la tension sur les ressources et au risque
+      d’immobilisation inutile, dans les limites des engagements déjà accordés.
+- capability_id: D05.i
+  capability_name: Return Disposition Decision
+  nature: decision
+  illustrative_forms:
+  - policy_strategy
+  decomposition_rationale: Distinguer les cas dont la disposition est déterminée par une politique connue des cas nécessitant
+    un arbitrage contextuel entre plusieurs devenirs autorisés ; rendre visibles la standardisation des prises en charge et
+    la récupération de valeur, sans imposer une technologie de décision.
+  behaviors:
+  - id: BHV048
+    name: Policy-based Disposition
+    definition: Déterminer l’orientation selon une politique établie, en fonction de l’état du produit, de sa catégorie et
+      des conditions applicables.
+  - id: BHV049
+    name: Value Recovery Optimization
+    definition: Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
+supplementary_scope_evidence:
+  path: modeles/backlog/behavior-gap-audit.yaml
+  section: current_visibility_names
+  parent_id: D07.d
+  names:
+  - Warehouse Visibility
+  - Transportation Visibility
+  - Store Visibility
+  source_refs:
+  - U305
+  - U308
+  status: arbitrated_in_annex_not_integrated
+  excluded_from_catalog_count: true
+conclusion: Les sept formes sont des repères combinables. Politiques aussi sous les actions, périmètres aussi sous les décisions
+  ; pas de correspondance exclusive avec fields.nature. Le bénéfice justifie transversalement la décomposition.
+evolution_U424:
+  source_refs:
+  - U424
+  note: Les observations U389 restent datées. U424 remplace les comportements BHV041 et BHV042 par leurs successeurs ; aucune
+    lecture comme sous-comportements.
+  successors:
+    BHV041: BHV038
+    BHV042: BHV043

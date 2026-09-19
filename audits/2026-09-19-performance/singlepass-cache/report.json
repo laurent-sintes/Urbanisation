@@ -1,0 +1,299 @@
+{
+  "task": "report",
+  "seconds": 5.95206650000182,
+  "structured_loads": {
+    ".json": {
+      "calls": 24,
+      "seconds": 0.044326300092507154
+    },
+    ".yaml": {
+      "calls": 106,
+      "seconds": 5.020980700006476
+    }
+  },
+  "read_calls": 118,
+  "unique_files": 69,
+  "read_bytes_with_repeats": 7523519,
+  "slowest_reads": [
+    {
+      "path": "modeles\\backlog\\model.yaml",
+      "calls": 1,
+      "seconds": 1.6299034999974538,
+      "bytes": 1049624
+    },
+    {
+      "path": "modeles\\backlog\\refactoring-target.yaml",
+      "calls": 1,
+      "seconds": 0.5779895999876317,
+      "bytes": 347929
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\backlog.yaml",
+      "calls": 1,
+      "seconds": 0.4556196000194177,
+      "bytes": 325372
+    },
+    {
+      "path": "modeles\\backlog\\behavior-gap-audit.yaml",
+      "calls": 1,
+      "seconds": 0.3802908999787178,
+      "bytes": 282276
+    },
+    {
+      "path": "modeles\\backlog\\glossary.yaml",
+      "calls": 1,
+      "seconds": 0.23449249999248423,
+      "bytes": 123786
+    },
+    {
+      "path": "modeles\\backlog\\order-lifecycle-behaviors.yaml",
+      "calls": 1,
+      "seconds": 0.10558480001054704,
+      "bytes": 83851
+    },
+    {
+      "path": "modeles\\backlog\\refactoring-implementation.yaml",
+      "calls": 1,
+      "seconds": 0.07961400001659058,
+      "bytes": 35841
+    },
+    {
+      "path": "modeles\\backlog\\supply-fulfillment-audit.yaml",
+      "calls": 1,
+      "seconds": 0.07855119998566806,
+      "bytes": 59477
+    },
+    {
+      "path": "modeles\\backlog\\assignment-reservation-review.yaml",
+      "calls": 1,
+      "seconds": 0.06272429999080487,
+      "bytes": 51912
+    },
+    {
+      "path": "modeles\\backlog\\execution-services-review.yaml",
+      "calls": 3,
+      "seconds": 0.053886799956671894,
+      "bytes": 45823
+    },
+    {
+      "path": "modeles\\backlog\\reservation-policy-review.yaml",
+      "calls": 1,
+      "seconds": 0.04750570000032894,
+      "bytes": 29718
+    },
+    {
+      "path": "modeles\\backlog\\stock-order-boundary.yaml",
+      "calls": 3,
+      "seconds": 0.047213399986503646,
+      "bytes": 28177
+    }
+  ],
+  "repeated_reads": [
+    {
+      "path": "modeles\\schemas\\urbanism.schema.json",
+      "calls": 2,
+      "seconds": 0.0016466999950353056,
+      "bytes": 18414
+    },
+    {
+      "path": "modeles\\backlog\\applicability.yaml",
+      "calls": 3,
+      "seconds": 0.00430999998934567,
+      "bytes": 1393
+    },
+    {
+      "path": "modeles\\backlog\\d03-d04-gap-review.yaml",
+      "calls": 3,
+      "seconds": 0.00907790000201203,
+      "bytes": 6820
+    },
+    {
+      "path": "modeles\\backlog\\d03-review.yaml",
+      "calls": 3,
+      "seconds": 0.04148090002126992,
+      "bytes": 32892
+    },
+    {
+      "path": "modeles\\backlog\\d04-refactoring.yaml",
+      "calls": 3,
+      "seconds": 0.015904299973044544,
+      "bytes": 8374
+    },
+    {
+      "path": "modeles\\backlog\\d05-refactoring.yaml",
+      "calls": 3,
+      "seconds": 0.03892150000319816,
+      "bytes": 27250
+    },
+    {
+      "path": "modeles\\backlog\\execution-services-review.yaml",
+      "calls": 3,
+      "seconds": 0.053886799956671894,
+      "bytes": 45823
+    },
+    {
+      "path": "modeles\\backlog\\glossary-text-references.yaml",
+      "calls": 3,
+      "seconds": 0.008838700014166534,
+      "bytes": 7660
+    },
+    {
+      "path": "modeles\\backlog\\item-logistic-unit-audit.yaml",
+      "calls": 3,
+      "seconds": 0.01633899999433197,
+      "bytes": 8935
+    },
+    {
+      "path": "modeles\\backlog\\legacy-capabilities.json",
+      "calls": 3,
+      "seconds": 0.0016459999897051603,
+      "bytes": 29290
+    },
+    {
+      "path": "modeles\\backlog\\microsoft-urbanism-fit.yaml",
+      "calls": 3,
+      "seconds": 0.010337800020352006,
+      "bytes": 5818
+    },
+    {
+      "path": "modeles\\backlog\\modeling-glossary.yaml",
+      "calls": 3,
+      "seconds": 0.019762599986279383,
+      "bytes": 17626
+    },
+    {
+      "path": "modeles\\backlog\\modeling-roadmap.yaml",
+      "calls": 3,
+      "seconds": 0.007226299960166216,
+      "bytes": 5364
+    },
+    {
+      "path": "modeles\\backlog\\panorama-candidates.json",
+      "calls": 3,
+      "seconds": 0.0026613000372890383,
+      "bytes": 34028
+    },
+    {
+      "path": "modeles\\backlog\\stock-order-boundary.yaml",
+      "calls": 3,
+      "seconds": 0.047213399986503646,
+      "bytes": 28177
+    },
+    {
+      "path": "modeles\\backlog\\unified-inventory-packaging.yaml",
+      "calls": 3,
+      "seconds": 0.038412699999753386,
+      "bytes": 27908
+    },
+    {
+      "path": "modeles\\backlog\\vocabulary-review.yaml",
+      "calls": 3,
+      "seconds": 0.04181699999026023,
+      "bytes": 32506
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\applicability.yaml",
+      "calls": 2,
+      "seconds": 0.000683299993397668,
+      "bytes": 1393
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d03-d04-gap-review.yaml",
+      "calls": 2,
+      "seconds": 0.0008318000182043761,
+      "bytes": 6820
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d03-review.yaml",
+      "calls": 2,
+      "seconds": 0.02165039998362772,
+      "bytes": 12137
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d04-refactoring.yaml",
+      "calls": 2,
+      "seconds": 0.01323530002264306,
+      "bytes": 5412
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\d05-refactoring.yaml",
+      "calls": 2,
+      "seconds": 0.01032069997745566,
+      "bytes": 4761
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\execution-services-review.yaml",
+      "calls": 2,
+      "seconds": 0.04431050000130199,
+      "bytes": 26759
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\glossary-text-references.yaml",
+      "calls": 2,
+      "seconds": 0.0007052999862935394,
+      "bytes": 7553
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\item-logistic-unit-audit.yaml",
+      "calls": 2,
+      "seconds": 0.0010831999825313687,
+      "bytes": 8935
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\legacy-capabilities.json",
+      "calls": 2,
+      "seconds": 0.000885900022694841,
+      "bytes": 28993
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\microsoft-urbanism-fit.yaml",
+      "calls": 2,
+      "seconds": 0.000877300015417859,
+      "bytes": 5818
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\modeling-glossary.yaml",
+      "calls": 2,
+      "seconds": 0.008473000023514032,
+      "bytes": 4137
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\modeling-roadmap.yaml",
+      "calls": 2,
+      "seconds": 0.007655200024601072,
+      "bytes": 4827
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\panorama-candidates.json",
+      "calls": 2,
+      "seconds": 0.0013115000037942082,
+      "bytes": 34028
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\stock-order-boundary.yaml",
+      "calls": 2,
+      "seconds": 0.0013500999775715172,
+      "bytes": 28177
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\unified-inventory-packaging.yaml",
+      "calls": 2,
+      "seconds": 0.001232799986610189,
+      "bytes": 27908
+    },
+    {
+      "path": "modeles\\revisions\\2026-09-16.2\\deferred\\vocabulary-review.yaml",
+      "calls": 2,
+      "seconds": 0.001277399976970628,
+      "bytes": 32506
+    }
+  ],
+  "suppressed_write_count": 0,
+  "suppressed_write_bytes": 0,
+  "stdout_bytes": 0,
+  "report_json_bytes": 2113710,
+  "report_serialization_seconds": 0.021079199999803677,
+  "validation_error_count": 469,
+  "deferred_artifacts": 43,
+  "compact_summary_bytes": 53
+}

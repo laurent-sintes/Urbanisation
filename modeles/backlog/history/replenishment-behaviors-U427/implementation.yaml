@@ -1,0 +1,59 @@
+source_refs:
+- U427
+- ELM253
+- CMP164
+model_before: modeles/backlog/history/replenishment-behaviors-U427/model-before.yaml
+model_before_sha256: 17161010783d8787feab9825ab7023f2d186ee8dcd390641faf4f2b5113a6450
+behaviors:
+- node_id: BHV083
+  candidate_id: P01
+  parent_id: D05.e
+  name: Requirement-based Replenishment
+  definition: Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des
+    apports attendus.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 1df05834b745102ebd81f15e86e5b548e29ba4e34babf02c5594c5c173635d81
+    definition: 9b3f00ec075ae233d420b2236e12ecd69d885ec447b59356ea0630b1ea2335d7
+- node_id: BHV084
+  candidate_id: P02
+  parent_id: D05.e
+  name: Target-based Replenishment
+  definition: Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une commande
+    identifiée pour chaque apport.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 75f7b0c472e6b66599384eba70bb8e860d3c87704f5484afa5445b6fee66a68a
+    definition: ad1425a43dc31bedd14693700fa0183b7036686921e657fd2b06d9b271872a46
+- node_id: BHV085
+  candidate_id: P03
+  parent_id: D05.e
+  name: Replenishment Adjustment
+  definition: Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant
+    les engagements.
+  validated_fields:
+  - name
+  - definition
+  value_sha256:
+    name: 878d716eeff3d078968aac79d2c4cf96c32d03fe7b23add6a1b5a1369858d7f4
+    definition: be90039a46bacd4f8a8f0630f1a60b00409282188363f42b3a4d0798f71a11f0
+delta:
+  nodes:
+    added:
+      BHV083: 13ff1176a65c01d181b37a73dc02a881c36b4c64c6256b603b5b8230a8ec40c3
+      BHV084: b12bbe9dea843d7787508e56ebacea9646ab290840d550f110b27163704ed72a
+      BHV085: 13f171b115d1e28513af5fc8857e03f201ed2bef6719763a8c1e7650de8def71
+    removed: []
+    changed:
+      D05.e: 3b2ed2974966e10452141e6317c69fefca914d9db5cac2c29d76f5c8337fd88d
+  relations:
+    added:
+      REL-BEHAVIOR-BHV083: 87c3ab036eecbddd94676d378c396007deba1bed4f7a06a017ced13296e0f9c0
+      REL-BEHAVIOR-BHV084: 211a9de1c5ff3fd4d64c6a21dcad32b819c2b5cbaa711501c9185f3cdafb5ee3
+      REL-BEHAVIOR-BHV085: e118024fd24cedf18fdd7332942400dae0710427d04ffbb4f5f1ea8e860cee5f
+    removed: []
+    changed: {}

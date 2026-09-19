@@ -1,0 +1,52 @@
+source_refs:
+- U345
+- U364
+model_before: audits/2026-09-18-supply-assignment-U364/model-before.yaml
+model_before_sha256: 2e4b1ac2747a301316ad4d28646479165f1684ca3887d20257f3b32dacc59e43
+delta:
+  nodes:
+    added:
+      BHV045: 11837423c3e23b0c8bc59417fd2489de25209a3c04514e261edd5bdf33ae125d
+      BHV046: 1d217ab002b072732dbee8b6d8c26122f49b08834e43597f30efee512886f3a9
+      BHV047: 160cf3e87d26f33de5448138bec719a27c9d421a682fd8e2fb74d1f5287b65ea
+    changed:
+      D02.e: 897df069f85db4173fe4a8eb3abfa27be50931c2527ed623b24aa686a50cf553
+    removed: []
+  relations:
+    added:
+      REL-BEHAVIOR-BHV045: fec37398c333ccd3149da210b87086bae7f6e713e738e6b06a578bfebaa81b13
+      REL-BEHAVIOR-BHV046: 5f34dde9d780afa82ba042a4344aea3d02844db2cb1f68323036eae08944d860
+      REL-BEHAVIOR-BHV047: c5ea7e4859c84d62bde13448ca28eaa1a9593d6af70928869caf207082c257bf
+    changed: {}
+    removed: []
+behaviors: []
+adopted_mechanisms:
+- node_id: BHV045
+  parent_id: D02.e
+  adopted_fields: []
+  value_sha256: {}
+  principle: Matérialiser les liens ressources-commandes définis par un plan d’affectation retenu, en vérifiant les conditions
+    encore applicables et en explicitant les écarts d’application.
+  principle_sha256: 91e2179fa52b603d0a5689abe075c0014b485568c808f82e634483955ef2351a
+  source_refs:
+  - U345
+- node_id: BHV046
+  parent_id: D02.e
+  adopted_fields:
+  - definition
+  value_sha256:
+    definition: 2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900
+  principle: Compléter les besoins non affectés tout en préservant les affectations existantes.
+  principle_sha256: 2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900
+  source_refs:
+  - U364
+- node_id: BHV047
+  parent_id: D02.e
+  adopted_fields:
+  - definition
+  value_sha256:
+    definition: b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1
+  principle: Réviser les affectations modifiables pour appliquer de nouveaux arbitrages entre commandes.
+  principle_sha256: b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1
+  source_refs:
+  - U364

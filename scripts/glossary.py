@@ -1,5 +1,9 @@
 """Explicit inline glossary links and the published terminology catalogue."""
 import re
+try:
+    from .market_comparison import validate_comparisons
+except ImportError:
+    from market_comparison import validate_comparisons
 
 LINK = re.compile(r'(?<!\\)\[((?:\\.|[^\]\\\n])+)\]\((glossary|model):([A-Za-z0-9_.-]+)(?:#([A-Za-z0-9_-]+))?\)')
 
@@ -57,6 +61,8 @@ def validate(model):
         if not isinstance(term, dict):
             errors.append('glossary: invalid term')
             continue
+        if 'market_comparisons' in term:
+            errors.extend(validate_comparisons(term['market_comparisons'], 'glossary/' + str(term.get('id')) + '/market_comparisons'))
         identifier = term.get('id')
         if not isinstance(identifier, str) or not re.fullmatch(r'[A-Za-z0-9_.-]+', identifier) or identifier in ids:
             errors.append('glossary: absent or duplicate term id')
@@ -82,7 +88,7 @@ def validate(model):
         if target not in (ids if kind == 'glossary' else nodes):
             errors.append(f'{kind}: unresolved published link {target}')
         elif anchor:
-            allowed = {'definition', 'short-description'} if kind == 'glossary' else {'definition', 'finality'}
+            allowed = {'definition', 'short-description', 'market_comparisons'} if kind == 'glossary' else {'definition', 'finality'}
             if kind == 'model':
                 allowed.update(k for k, v in nodes[target].get('fields', {}).items() if k != 'name' and v)
             if anchor not in allowed:

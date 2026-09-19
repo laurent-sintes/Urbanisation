@@ -1,0 +1,35 @@
+source_refs:
+- U384
+- CMP143
+model_before: audits/2026-09-18-customer-return-U384/model-before.yaml
+model_before_sha256: 662fec02e7572fd22fb034f260963f771519201b117534747e945a696e4816f5
+delta:
+  nodes:
+    added: {}
+    changed:
+      D04: df47a0f3a5b1d23a33e39eccc6c510c59606ba1c8ad7f17c83d8487011601545
+      D04.i: 0cb6e190950455a9a76a133e3dc6bbe6e85731607282ecbf04fe04f1dbd5c227
+      D04.j: 306b1cb5aec908b6932ecdef859e86155c956d249267d310070c178ed55cc7e9
+      D04.k: 2690ec5310d37ca634848d38825dd500604fd9d0aee41c4acb612538a02f37ee
+      D04.l: 17b4eb145f78a97922922eaa8e119db40be27ff8a966d237f2995fb85ac412a3
+      D04.m: e24cf2947133fc8b231df5607450d1cabb45697523b6aeae1c7ee0bd5237967f
+      D05.i: 6cfe6bd6df618aa51eb059a216c88aa69db0f4a4a1fedbc9911e0e5e0a39e0d3
+    removed: []
+  relations:
+    added: {}
+    changed:
+      REL-EXECUTION-FACTS-D04.i: 657364716d4cb563125100f9f80d5d95285cebbdcdaad6a360f7de8dd73a6897
+      REL-EXECUTION-FACTS-D04.j: d7e8f719873806f3d52bbca8524cfea02c6d80ce99987d17aeb810a4a4010762
+      REL-EXECUTION-FACTS-D04.k: f485b9e3bd9a15cee15bf5db1a5d0001cb9c413131edae4e3b598f0a1f4267eb
+      REL-EXECUTION-FACTS-D04.l: 27a270e50cae7d5896cf83c01234e53484d588096bcd55839b364f57b9d70412
+      REL-EXECUTION-FACTS-D04.m: 5ad7c97239280e46cfea798d8083a2ecaa93a7596e9464c8131b1e3604d60c90
+    removed: []
+behaviors: []
+adopted_names:
+  D04.i: Sales Order
+  D04.j: Purchase Order
+  D04.k: Transfer Order
+  D04.l: Customer Return
+  D04.m: Supplier Return
+scope: Noms courts des cinq capacités et labels de référence actualisés ; comportements Customer Return proposés en annexe,
+  aucun comportement créé.

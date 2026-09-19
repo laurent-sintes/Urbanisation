@@ -28,7 +28,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
 RELATION_KINDS = {
-    "contains": ({"domain", "reference", "capability"}, {"capability"}),
+    "contains": ({"domain", "reference", "capability"}, {"capability", "behavior"}),
     "presents": ({"group"}, {"domain", "reference", "group", "capability"}),
     "confirms": ({"capability"}, {"object"}),
     "associated-document": ({"capability"}, {"document"}),
@@ -38,7 +38,7 @@ RELATION_KINDS = {
     "provides-knowledge": ({"domain"}, {"domain"}),
     "provides-conditions": ({"reference"}, {"domain"}),
     "describes-network": ({"reference"}, {"domain"}),
-    "relates-to": ({"capability"}, {"capability", "object", "document", "event"}),
+    "relates-to": ({"capability", "behavior"}, {"capability", "behavior", "object", "document", "event"}),
 }
 
 
@@ -101,6 +101,10 @@ def validate_sources(source_document):
 
 def validate_urbanism(model, sources, schema=None):
     try:
+        from .market_comparison import validate_comparisons
+    except ImportError:
+        from market_comparison import validate_comparisons
+    try:
         from .lifecycle import validate_lifecycle
     except ImportError:
         from lifecycle import validate_lifecycle
@@ -115,6 +119,8 @@ def validate_urbanism(model, sources, schema=None):
     nodes = _index(model["nodes"], "nodes", errors)
     relations = _index(model["relations"], "relations", errors)
     for item in model['nodes'] + model['relations']:
+        if 'market_comparisons' in item.get('fields', {}):
+            errors.extend(validate_comparisons(item['fields']['market_comparisons'], item['id'] + '/market_comparisons'))
         if model.get('lifecycle_policy') == 1 and 'lifecycle' not in item:
             errors.append('lifecycle/' + item['id'] + ': required by lifecycle_policy')
         errors.extend(validate_lifecycle(item))
@@ -170,6 +176,34 @@ def validate_urbanism(model, sources, schema=None):
 
     for identifier in graph:
         traverse(identifier)
+    # Justification is required only for models that adopt this convention;
+    # historical immutable snapshots retain their original contract.
+    justified_behaviors = any(p.get('id') == 'PRINCIPLE-JUSTIFIED-BEHAVIOR'
+                             for p in model.get('principles', []))
+    for identifier, node in nodes.items():
+        rationale = node.get('fields', {}).get('decomposition_rationale')
+        if rationale is not None and node.get('kind') != 'capability':
+            errors.append(f'behavior/{identifier}: decomposition rationale belongs to a capability')
+        children = [child for child in graph[identifier]
+                    if nodes.get(child, {}).get('kind') == 'behavior']
+        if justified_behaviors and children and (not isinstance(rationale, str) or not rationale.strip()):
+            errors.append(f'behavior/{identifier}: decomposition requires a complexity or targeted benefit rationale')
+    # Behaviors are terminal descriptive children, never a second capability tree.
+    for identifier, node in nodes.items():
+        if node.get('kind') != 'behavior':
+            continue
+        parents = [r for r in model['relations'] if r.get('type') in ('contains', 'presents')
+                   and r.get('target_id') == identifier]
+        if (len(parents) != 1 or parents[0]['type'] != 'contains'
+                or nodes.get(parents[0]['source_id'], {}).get('kind') != 'capability'):
+            errors.append(f'behavior/{identifier}: requires exactly one capability parent via contains')
+        elif nodes[parents[0]['source_id']].get('layer') != node.get('layer'):
+            errors.append(f'behavior/{identifier}: layer differs from parent capability')
+        if graph[identifier]:
+            errors.append(f'behavior/{identifier}: terminal level cannot contain children')
+        for field in ('name', 'definition'):
+            if not isinstance(node.get('fields', {}).get(field), str) or not node['fields'][field].strip():
+                errors.append(f'behavior/{identifier}: nonempty {field} required')
     alternatives = _index(model.get("alternatives", []), "alternatives", errors)
     for identifier, alternative in alternatives.items():
         targets = [alternative.get("target_id")]
@@ -203,6 +237,16 @@ def validate_urbanism(model, sources, schema=None):
                 if item.get("review", {}).get("state") in forbidden:
                     errors.append(f"release/{item['id']}: unpublishable review state")
     return errors
+
+
+def relations_to_illustrations(snapshot):
+    """Links to excluded examples stay in context; genuinely missing IDs do not.
+
+    Shared by compilation and validation so their publication scopes agree.
+    """
+    illustrative = {n['id'] for n in snapshot['nodes'] if n['review']['state'] == 'illustration'}
+    return {r['id'] for r in snapshot['relations']
+            if r['source_id'] in illustrative or r['target_id'] in illustrative}
 
 
 def validate_release(release, decisions_document, snapshot, sources, schema=None):
@@ -256,6 +300,8 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
     for collection in ("nodes", "relations"):
         released_ids = {r["id"] for r in release[collection]}
         expected_ids = {key for key, item in frozen[collection].items() if item.get("review", {}).get("state") != "illustration"} if published_snapshot else approved_targets[collection]
+        if published_snapshot and collection == 'relations':
+            expected_ids -= relations_to_illustrations(snapshot)
         if released_ids != expected_ids:
             errors.append(f"release/{collection}: contents differ from frozen publication scope")
         for item in release[collection]:
