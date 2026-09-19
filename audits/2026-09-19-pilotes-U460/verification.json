@@ -1,0 +1,30 @@
+{
+  "protected_files_unchanged": 303,
+  "nodes_preserved": 142,
+  "relations_unchanged": 346,
+  "node_changes": [
+    "D08",
+    "D08.d",
+    "D03.n"
+  ],
+  "term_context_changes": [
+    "TER036",
+    "TER037",
+    "TER052",
+    "TER057",
+    "TER058",
+    "TER059"
+  ],
+  "definitions_and_approval_states_preserved": true,
+  "new_comparisons": 4,
+  "new_principles": 1,
+  "pilot_count": 5,
+  "case_count": 15,
+  "review_cases": {
+    "boundary_explained": 7,
+    "business_rule_open": 8
+  },
+  "guide_draft_valid": "2026-09-19.2",
+  "source_and_pilot_references_valid": true,
+  "publication_changed": false
+}

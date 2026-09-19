@@ -59,10 +59,36 @@ def assign_versions(snapshot, previous, now=None, published=None):
         changed = fingerprint != old_glossary.get('content_sha256')
         glossary.update(revision=max(1, old_glossary.get('revision', 0) + int(changed)),
                         last_modified=stamp if changed else old_glossary['last_modified'], content_sha256=fingerprint)
+    if 'information_catalog' in snapshot:
+        catalogue = snapshot['information_catalog']
+        previous_catalogue = previous.get('information_catalog', {})
+        for collection in ('items', 'links'):
+            before = {item['id']:item for item in previous_catalogue.get(collection, [])}
+            for item in catalogue[collection]:
+                old = before.get(item['id'])
+                fingerprint = content_hash(item)
+                changed = not old or fingerprint != old.get('content_sha256', content_hash(old))
+                item.update(revision=old.get('revision', 1) + int(changed) if old else 1,
+                            last_modified=old.get('last_modified', stamp) if old and not changed else stamp,
+                            content_sha256=fingerprint)
+                if changed:
+                    changes.append({'collection': 'information_' + collection, 'id': item['id'],
+                                    'revision': item['revision'], 'last_modified': item['last_modified'],
+                                    'reason': 'changed' if old else 'new'})
+        value = {k:v for k,v in catalogue.items() if k not in ('items','links')}
+        value.update({c:[(item['id'],item['content_sha256']) for item in catalogue[c]] for c in ('items','links')})
+        fingerprint = content_hash(value)
+        changed = fingerprint != previous_catalogue.get('content_sha256')
+        catalogue.update(revision=max(1, previous_catalogue.get('revision', 0) + int(changed)),
+                         last_modified=stamp if changed else previous_catalogue['last_modified'], content_sha256=fingerprint)
     root_value = {'model_id': snapshot['model_id'], 'limitations': snapshot.get('limitations', []),
                   'elements': {c: [(e['id'], e['content_sha256']) for e in snapshot.get(c, [])] for c in COLLECTIONS}}
     if 'glossary' in snapshot:
         root_value['glossary'] = snapshot['glossary']['content_sha256']
+    if 'information_catalog' in snapshot:
+        root_value['information_catalog'] = snapshot['information_catalog']['content_sha256']
+    if 'market_reference_policy' in snapshot:
+        root_value['market_reference_policy'] = snapshot['market_reference_policy']
     fingerprint = content_hash(root_value)
     changed = fingerprint != previous.get('content_sha256')
     revision = previous.get('revision', 0) + int(changed)

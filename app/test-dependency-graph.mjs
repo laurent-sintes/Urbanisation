@@ -66,6 +66,31 @@ test('only an explicit role defines needs; text and historical types are not rec
   assert.equal(needs.relations.length + other.relations.length, model.relations.filter(relation => !isStructural(relation)).length);
 });
 
+test('explicit needs labels and verbs describe the original direction, with a safe fallback for mixed aggregates', () => {
+  for (const fields of [{ label: 'Consomme le scénario retenu' }, { verb: 'Consomme le scénario retenu' }]) {
+    const raw = rawFixture();
+    for (const id of ['a-b', 'behavior-b']) raw.relations.find(relation => relation.id === id).fields = fields;
+    const model = adaptPublication(raw);
+    const edge = project(model).edges.find(item => item.relationIds.includes('a-b'));
+    assert.equal(edge.label, 'Consomme le scénario retenu');
+    assert.equal(edge.family, 'needs');
+    assert.equal(edge.source, 'd-old.capability');
+    assert.equal(edge.target, 'b');
+    assert.deepEqual(edge.relationIds, ['a-b', 'behavior-b']);
+    assert.equal(project(model).edges.find(item => item.relationIds.includes('b-a')).label, 'A besoin de');
+  }
+  for (const secondFields of [undefined, { label: 'Consomme un autre résultat' }]) {
+    const raw = rawFixture();
+    raw.relations.find(relation => relation.id === 'a-b').fields = { label: 'Consomme le scénario retenu' };
+    if (secondFields) raw.relations.find(relation => relation.id === 'behavior-b').fields = secondFields;
+    const model = adaptPublication(raw);
+    const edge = project(model).edges.find(item => item.relationIds.includes('a-b'));
+    assert.equal(edge.label, 'A besoin de');
+    assert.deepEqual(edge.relationIds, ['a-b', 'behavior-b']);
+    assert.equal(model.relationById.get('a-b').label, 'Consomme le scénario retenu');
+  }
+});
+
 test('moved capability and reference use explicit parents, with no ID-prefix grouping', () => {
   const graph = project(fixture(), { level: 'domain' });
   assert.ok(graph.nodes.find(node => node.id === 'd2').memberIds.includes('d-old.capability'));
@@ -111,7 +136,9 @@ test('business depth is progressive, direction keeps arrows, and no transitive r
   assert.ok(!nodeIds(two).includes('d'));
   assert.ok(nodeIds(three).includes('d'));
   assert.ok(!three.edges.some(edge => edge.source === 'd-old.capability' && edge.target === 'd'));
-  assert.ok(relationIds(one).includes('b-a'), 'The induced graph keeps an opposite relation between reached nodes.');
+  assert.ok(!relationIds(one).includes('b-a'), 'The default outgoing view shows traversed links only.');
+  const expanded = project(model, { ...settings, depth: 1, includeNeighborLinks: true });
+  assert.ok(relationIds(expanded).includes('b-a'), 'The expanded view preserves the opposite original relation.');
   const incoming = project(model, { focusId: 'c', depth: 1, direction: 'incoming', family: 'needs' });
   assert.deepEqual(nodeIds(incoming).sort(), ['b', 'c']);
   assert.equal(incoming.edges[0].source, 'b');

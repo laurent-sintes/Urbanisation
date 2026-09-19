@@ -27,6 +27,8 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
+CAPABILITY_NATURES = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'decision'}
+BEHAVIOR_NATURES = {'policy_strategy', 'process_variant', 'intervention_mechanism', 'business_scope', 'decision_dimension', 'business_effect', 'planning_practice'}
 RELATION_KINDS = {
     "contains": ({"domain", "reference", "capability"}, {"capability", "behavior"}),
     "presents": ({"group"}, {"domain", "reference", "group", "capability"}),
@@ -49,6 +51,8 @@ def canonical_sha256(value):
 
 def _relation_values(relation):
     fields = {key: relation.get(key) for key in ("type", "source_id", "target_id")}
+    if "fields" in relation:
+        fields["fields"] = relation["fields"]
     if "qualification" in relation:
         fields["qualification"] = relation["qualification"]
     return fields
@@ -101,9 +105,13 @@ def validate_sources(source_document):
 
 def validate_urbanism(model, sources, schema=None):
     try:
-        from .market_comparison import validate_comparisons
+        from .information_catalog import validate_information, versioned_items
     except ImportError:
-        from market_comparison import validate_comparisons
+        from information_catalog import validate_information, versioned_items
+    try:
+        from .market_comparison import validate_comparisons, validate_reference_policy
+    except ImportError:
+        from market_comparison import validate_comparisons, validate_reference_policy
     try:
         from .lifecycle import validate_lifecycle
     except ImportError:
@@ -116,6 +124,8 @@ def validate_urbanism(model, sources, schema=None):
     if any(not isinstance(model.get(k), list) for k in ("nodes", "relations")):
         return ["model: nodes and relations must be lists"]
     errors.extend(validate_glossary(model))
+    errors.extend(validate_reference_policy(model))
+    errors.extend(validate_information(model))
     nodes = _index(model["nodes"], "nodes", errors)
     relations = _index(model["relations"], "relations", errors)
     for item in model['nodes'] + model['relations']:
@@ -134,6 +144,15 @@ def validate_urbanism(model, sources, schema=None):
             errors.append(f"nodes/{identifier}: urbanism_level requires an explicit level_ref")
         if level is not None and role != "urbanism_level":
             errors.append(f"nodes/{identifier}: level_ref is not a presentation grouping")
+    # Opt-in convention: immutable publications before U449 remain valid unchanged.
+    if any(p.get('id') == 'PRINCIPLE-BEHAVIOR-NATURE' for p in model.get('principles', [])):
+        for identifier, node in nodes.items():
+            if node.get('kind') == 'behavior' and node.get('fields', {}).get('nature') not in BEHAVIOR_NATURES:
+                errors.append(f'nodes/{identifier}: behavior nature must be one of {sorted(BEHAVIOR_NATURES)}')
+    if any(p.get('id') == 'PRINCIPLE-CAPABILITY-NATURE' for p in model.get('principles', [])):
+        for identifier, node in nodes.items():
+            if node.get('kind') == 'capability' and node.get('fields', {}).get('nature') not in CAPABILITY_NATURES:
+                errors.append(f'nodes/{identifier}: capability nature must be one of {sorted(CAPABILITY_NATURES)}')
     errors.extend(_source_refs(model, sources))
     graph = {identifier: [] for identifier in nodes}
     for identifier, rel in relations.items():
@@ -160,6 +179,18 @@ def validate_urbanism(model, sources, schema=None):
                     errors.append(f"relations/{identifier}: qualification role must be a string")
         if rel.get("type") in ("contains", "presents"):
             graph[source["id"]].append(target["id"])
+    # U461 requires a business document for each management fact. Opt-in keeps
+    # immutable publications on their original contract; no exact cardinality.
+    if any(p.get('id') == 'PRINCIPLE-MANAGEMENT-FACT-DOCUMENT' for p in model.get('principles', [])):
+        documented_facts = {
+            rel.get('target_id') for rel in relations.values()
+            if rel.get('type') == 'records'
+            and nodes.get(rel.get('source_id'), {}).get('kind') == 'document'
+            and nodes.get(rel.get('target_id'), {}).get('kind') == 'event'
+        }
+        for identifier, node in nodes.items():
+            if node.get('kind') == 'event' and identifier not in documented_facts:
+                errors.append(f'nodes/{identifier}: management fact requires an identified document via records')
     visited, active = set(), set()
 
     def traverse(identifier):
@@ -188,6 +219,14 @@ def validate_urbanism(model, sources, schema=None):
                     if nodes.get(child, {}).get('kind') == 'behavior']
         if justified_behaviors and children and (not isinstance(rationale, str) or not rationale.strip()):
             errors.append(f'behavior/{identifier}: decomposition requires a complexity or targeted benefit rationale')
+    # U455 retires the layer axis. Historical snapshots keep their original contract.
+    without_layers = any(p.get('id') == 'PRINCIPLE-DOMAIN-INTERACTIONS'
+                         for p in model.get('principles', []))
+    for identifier, node in nodes.items():
+        if without_layers and 'layer' in node:
+            errors.append(f'nodes/{identifier}: layer is retired by PRINCIPLE-DOMAIN-INTERACTIONS')
+        elif not without_layers and 'layer' not in node:
+            errors.append(f'nodes/{identifier}: historical model requires layer')
     # Behaviors are terminal descriptive children, never a second capability tree.
     for identifier, node in nodes.items():
         if node.get('kind') != 'behavior':
@@ -197,7 +236,7 @@ def validate_urbanism(model, sources, schema=None):
         if (len(parents) != 1 or parents[0]['type'] != 'contains'
                 or nodes.get(parents[0]['source_id'], {}).get('kind') != 'capability'):
             errors.append(f'behavior/{identifier}: requires exactly one capability parent via contains')
-        elif nodes[parents[0]['source_id']].get('layer') != node.get('layer'):
+        elif not without_layers and nodes[parents[0]['source_id']].get('layer') != node.get('layer'):
             errors.append(f'behavior/{identifier}: layer differs from parent capability')
         if graph[identifier]:
             errors.append(f'behavior/{identifier}: terminal level cannot contain children')
@@ -215,7 +254,7 @@ def validate_urbanism(model, sources, schema=None):
     if model.get('element_versioning') == 1:
         glossary = model.get('glossary')
         glossary_items = ([glossary] + glossary['terms']) if isinstance(glossary, dict) and isinstance(glossary.get('terms'), list) else []
-        for item in [model] + model['nodes'] + model['relations'] + model.get('principles', []) + [g for g in glossary_items if isinstance(g, dict)]:
+        for item in [model] + model['nodes'] + model['relations'] + model.get('principles', []) + [g for g in glossary_items if isinstance(g, dict)] + versioned_items(model):
             identifier = item.get('id', item.get('model_id'))
             if type(item.get('revision')) is not int or item['revision'] < 1:
                 errors.append(f'versioning/{identifier}: positive integer revision required')
@@ -254,6 +293,8 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
     errors = validate_urbanism(release, sources, schema)
     if release.get("glossary") != snapshot.get("glossary"):
         errors.append("release: glossary differs from frozen input")
+    if release.get('information_catalog') != snapshot.get('information_catalog'):
+        errors.append('release: information catalogue differs from frozen input')
     if errors:
         return errors
     errors.extend(validate_urbanism(snapshot, sources, schema))

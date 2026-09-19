@@ -1,0 +1,519 @@
+{
+  "status": "passed",
+  "single_reference_cards_completed": 47,
+  "cards_with_market_comparisons": 120,
+  "remaining_single_reference_cards": 0,
+  "cards_without_comparisons": 129,
+  "new_comparisons_with_other_vendor": 34,
+  "protected_files_unchanged": 432,
+  "nodes": 142,
+  "relations_unchanged": 346,
+  "information_items_unchanged": 14,
+  "lifecycle_approvals_unchanged": true,
+  "details": [
+    {
+      "id": "D08",
+      "name": "Product Reference",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Overview of Item Batches",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html"
+    },
+    {
+      "id": "D01.f",
+      "name": "Inventory Tracking",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Inventory journals",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals"
+    },
+    {
+      "id": "D01.c",
+      "name": "Inventory Visibility",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "How You Review Item Supply and Demand",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html"
+    },
+    {
+      "id": "D02.b",
+      "name": "Supply Protection",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Explaining aATP Product Allocation (PAL)",
+      "added_url": "https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58"
+    },
+    {
+      "id": "D02.c",
+      "name": "Reservation",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Reservations",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html"
+    },
+    {
+      "id": "D03.i",
+      "name": "Available-to-Promise (ATP)",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Promising and Reserving Inventory",
+      "added_url": "https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm"
+    },
+    {
+      "id": "D03.k",
+      "name": "Profitable-to-Promise (PTP)",
+      "documents": 2,
+      "vendors": [
+        "Oracle"
+      ],
+      "added_source": "Database Promising",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html"
+    },
+    {
+      "id": "D03.l",
+      "name": "Delivery Schedule Decision",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Delivery schedules",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules"
+    },
+    {
+      "id": "D03.m",
+      "name": "Order Prioritization",
+      "documents": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ],
+      "added_source": "Promising and Reserving Inventory",
+      "added_url": "https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm"
+    },
+    {
+      "id": "D05.d",
+      "name": "Group Protection Decision",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Explaining aATP Product Allocation (PAL)",
+      "added_url": "https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58"
+    },
+    {
+      "id": "D05.f",
+      "name": "Inventory Planning",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Master plans overview",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans"
+    },
+    {
+      "id": "D06.b",
+      "name": "Service Capacity Visibility",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Schedule workload capacity",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity"
+    },
+    {
+      "id": "D07.b",
+      "name": "Service Order Management",
+      "documents": 2,
+      "vendors": [
+        "Oracle",
+        "TM Forum"
+      ],
+      "added_source": "TMF641 Service Ordering API REST Specification R18.5.1",
+      "added_url": "https://www.tmforum.org/resources/specification/tmf641-service-ordering-api-rest-specification-r18-5-0/"
+    },
+    {
+      "id": "D08.d",
+      "name": "Product Reference Ingestion",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Overview of Item Batches",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html"
+    },
+    {
+      "id": "D06.e",
+      "name": "Service Selection Decision",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Transportation scenario – Manual rating",
+      "added_url": "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/"
+    },
+    {
+      "id": "BHV006",
+      "name": "Simulation & Analysis",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Master plans overview",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans"
+    },
+    {
+      "id": "BHV031",
+      "name": "Spot Counting",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Oracle Warehouse Management User’s Guide",
+      "added_url": "https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm"
+    },
+    {
+      "id": "BHV033",
+      "name": "Time-Fenced Reservation Policy",
+      "documents": 2,
+      "vendors": [
+        "Oracle"
+      ],
+      "added_source": "Promising and Reserving Inventory",
+      "added_url": "https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm"
+    },
+    {
+      "id": "BHV036",
+      "name": "Order Firming",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Master plans overview",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans"
+    },
+    {
+      "id": "BHV044",
+      "name": "Order Splitting",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Delivery schedules",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules"
+    },
+    {
+      "id": "BHV047",
+      "name": "Supply Reassignment",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Keep supply for confirmed demand in Planning Optimization",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand"
+    },
+    {
+      "id": "BHV057",
+      "name": "Return for Repair",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Returns Management",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement"
+    },
+    {
+      "id": "BHV058",
+      "name": "Stock Procurement",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Oracle Purchasing User’s Guide",
+      "added_url": "https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm"
+    },
+    {
+      "id": "BHV059",
+      "name": "Direct Delivery",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Overview of Supply Chain Orchestration",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html"
+    },
+    {
+      "id": "BHV061",
+      "name": "Initial Stocking",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "BHV062",
+      "name": "Continuous Replenishment",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "BHV064",
+      "name": "Aging-Based Ownership Transfer",
+      "documents": 2,
+      "vendors": [
+        "Oracle"
+      ],
+      "added_source": "Consuming Material",
+      "added_url": "https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm"
+    },
+    {
+      "id": "BHV065",
+      "name": "Consignment Exit",
+      "documents": 2,
+      "vendors": [
+        "OASIS",
+        "Oracle"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "BHV066",
+      "name": "Ship to Customer",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Store order fulfillment",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview"
+    },
+    {
+      "id": "BHV067",
+      "name": "Customer Pickup",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Store order fulfillment",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview"
+    },
+    {
+      "id": "BHV068",
+      "name": "Direct Delivery",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Overview of Supply Chain Orchestration",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html"
+    },
+    {
+      "id": "BHV069",
+      "name": "Intercompany Sales",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Executing the Advanced Intercompany Sales and Stock Transfer Process",
+      "added_url": "https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc"
+    },
+    {
+      "id": "BHV070",
+      "name": "Initial Stocking",
+      "documents": 2,
+      "vendors": [
+        "OASIS",
+        "SAP"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "BHV074",
+      "name": "Order-Driven Transfer",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Use Supply Chain Orchestration in Your Back-to-Back Flows",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html"
+    },
+    {
+      "id": "BHV075",
+      "name": "Additional Supply Feasibility",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Overview of Global Order Promising",
+      "added_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html"
+    },
+    {
+      "id": "BHV076",
+      "name": "Fulfillment Alternative Feasibility",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Intelligent fulfillment optimization architecture",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch"
+    },
+    {
+      "id": "BHV077",
+      "name": "Commitment Rebalancing Feasibility",
+      "documents": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ],
+      "added_source": "Promising and Reserving Inventory",
+      "added_url": "https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm"
+    },
+    {
+      "id": "BHV079",
+      "name": "Warehouse Visibility",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Outbound workload visualization",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/outbound-workload-visualization"
+    },
+    {
+      "id": "BHV080",
+      "name": "Transportation Visibility",
+      "documents": 2,
+      "vendors": [
+        "OASIS",
+        "project44"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "BHV081",
+      "name": "Store Visibility",
+      "documents": 2,
+      "vendors": [
+        "Blue Yonder",
+        "Microsoft"
+      ],
+      "added_source": "Store inventory management",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory"
+    },
+    {
+      "id": "BHV083",
+      "name": "Requirement-based Replenishment",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Replenishment methods and quantity modification",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification"
+    },
+    {
+      "id": "BHV084",
+      "name": "Target-based Replenishment",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Replenishment methods and quantity modification",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification"
+    },
+    {
+      "id": "BHV085",
+      "name": "Replenishment Adjustment",
+      "documents": 2,
+      "vendors": [
+        "Microsoft"
+      ],
+      "added_source": "Master plans overview",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans"
+    },
+    {
+      "id": "TER036",
+      "name": "Fait de gestion — sens plateforme",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ],
+      "added_source": "Universal Business Language Version 2.4",
+      "added_url": "https://docs.oasis-open.org/ubl/UBL-2.4.html"
+    },
+    {
+      "id": "TER059",
+      "name": "Product Unit",
+      "documents": 2,
+      "vendors": [
+        "GS1"
+      ],
+      "added_source": "GS1 Global Traceability Standard",
+      "added_url": "https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard"
+    },
+    {
+      "id": "TER081",
+      "name": "Split",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "added_source": "Delivery schedules",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules"
+    },
+    {
+      "id": "TER082",
+      "name": "Spread",
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "added_source": "Keep supply for confirmed demand in Planning Optimization",
+      "added_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand"
+    }
+  ]
+}

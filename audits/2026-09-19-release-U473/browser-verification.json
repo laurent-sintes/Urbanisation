@@ -1,0 +1,14 @@
+{
+  "version": "2026-09-19.6",
+  "checks": [
+    "Publication courante : Supply seul univers ; aperçu des comportements au survol.",
+    "Fiche Supply : entrée concrète, projections externes, lien glossaire et infobulle ; bandeau fixe.",
+    "Univers : trois références marché publiées (CSCMP, Microsoft, Oracle).",
+    "Fiche enrichie BHV006 : deux sources distinctes accessibles.",
+    "Purchase Order : exemples préservés ; catalogue information et qualifications internes masqués.",
+    "Deux glossaires et guide du méta modèle disponibles ; TER067 retiré du courant.",
+    "Historique v012 : Business Services reste consultable dans son snapshot.",
+    "Fiche Supply sur mobile : contenu disponible, sans débordement horizontal."
+  ],
+  "errors": []
+}

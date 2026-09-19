@@ -1,0 +1,119 @@
+completed:
+  D01.f:
+    nature: knowledge
+    rationale: Établir et actualiser une connaissance des états et quantités, comme Operations Tracking.
+    status: proposed
+  D01.c:
+    nature: knowledge
+    rationale: Rendre les états de stock lisibles, comme Service Capacity Visibility.
+    status: proposed
+  D01.g:
+    nature: action
+    rationale: Enregistrer les faits et leurs justifications ; aucune sélection de scénario.
+    status: proposed
+  D01.d:
+    nature: action
+    rationale: Réaliser le comptage et le rapprochement justifié, comme Service Reconciliation.
+    status: proposed
+  D02.c:
+    nature: action
+    rationale: Matérialiser un engagement qui bloque les usages concurrents ; la politique de réservation reste une décision
+      distincte.
+    status: proposed
+  D09.d:
+    nature: action
+    rationale: Recevoir et intégrer une projection de maître externe, comme Service Catalog Ingestion ; aucune administration
+      du maître.
+    status: proposed
+  D11.a:
+    nature: action
+    rationale: Recevoir et intégrer une projection de maître externe, comme Service Catalog Ingestion ; aucune administration
+      du maître.
+    status: proposed
+  D08.d:
+    nature: action
+    rationale: Recevoir et intégrer une projection de maître externe, comme Service Catalog Ingestion ; aucune administration
+      du maître.
+    status: proposed
+  D12.a:
+    nature: action
+    rationale: Recevoir et intégrer une projection de maître externe, comme Service Catalog Ingestion ; aucune administration
+      du maître.
+    status: proposed
+  D13.a:
+    nature: action
+    rationale: Recevoir et intégrer une projection de maître externe, comme Service Catalog Ingestion ; aucune administration
+      du maître.
+    status: proposed
+counts:
+  knowledge: 4
+  action: 17
+  management: 7
+  decision: 16
+  planning: 2
+  orchestration: 1
+orders:
+  D08:
+  - D08.d
+  D09:
+  - D09.d
+  D12:
+  - D12.a
+  D11:
+  - D11.a
+  D13:
+  - D13.a
+  D14:
+  - D14.a
+  D04:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.o
+  - D04.q
+  - D04.r
+  D01:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D01.d
+  - D02.b
+  - D02.c
+  - D01.h
+  D06:
+  - D06.b
+  - D07.b
+  - D07.c
+  - D07.d
+  - D06.d
+  - D07.a
+  - D06.e
+  - D06.f
+  D15:
+  - D03.n
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  D03:
+  - D02.e
+  - D03.p
+  - D03.m
+  - D03.o
+  D05:
+  - D05.f
+  - D05.a
+  - D05.d
+  - D05.e
+  - D05.c
+  - D05.g
+  - D05.h
+  - D05.i
+existing_values_and_approvals_preserved: true
+source_refs:
+- U435
+- U449
+protected_files: 230

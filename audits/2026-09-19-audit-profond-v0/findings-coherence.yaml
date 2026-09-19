@@ -1,0 +1,220 @@
+audit_id: audit-profond-v0-coherence-2026-09-19
+as_of: '2026-09-19'
+authority: modeles/backlog/model.yaml
+authority_sha256: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+status: audit_only_no_model_change
+severity_note: Sévérité relative à la qualité de présentation et à la préparation de solution. Une décision ouverte majeure
+  ne signifie pas un défaut de capacité ni la réouverture U431.
+coverage:
+  domains: 5
+  references: 6
+  capabilities: 47
+  behaviors: 74
+  decomposed_capabilities: 22
+  undecomposed_capabilities: 25
+  missing_nature: 10
+findings:
+- id: COH-01
+  severity: majeure
+  classification: defaut_editorial_avere
+  title: Responsabilités et états remplacés présents dans le texte courant
+  evidence:
+  - D01.fields.definition
+  - D01.fields.scope
+  - D04.i.fields.scope
+  - D04.k.fields.scope
+  - D05.fields.scope
+  - D05.c.fields.scope
+  - BHV045.fields.scope
+  - BHV046.fields.scope
+  - BHV047.fields.scope
+  - alternatives.D03-BACKLOG-DOMAIN-U158.state
+  - limitations[-1]
+  - PRINCIPLE-SUPPLY-DOCUMENTS
+  - BHV060.fields.scope
+  - D02.e.fields.scope
+  recommendation: Corriger les formulations actives par référence aux arbitrages courants, sans toucher archives et empreintes.
+  readiness_gate: avant_presentation_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-02
+  severity: moderee
+  classification: defaut_editorial_avere
+  title: Phrase Intercompany copiée hors du contexte vente
+  evidence:
+  - D01.h.fields.scope
+  - D04.k.fields.scope
+  - BHV063.fields.scope
+  - BHV064.fields.scope
+  - BHV065.fields.scope
+  - BHV070.fields.scope
+  - BHV071.fields.scope
+  - BHV072.fields.scope
+  - BHV073.fields.scope
+  - BHV074.fields.scope
+  recommendation: Remplacer les dix occurrences hors contexte par les critères propres à la consignation et aux transferts.
+  readiness_gate: avant_presentation_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-03
+  severity: moderee
+  classification: guidance_editoriale_obsolete
+  title: MOD006 illustre encore des comportements non intégrés ou anciens parents
+  evidence:
+  - modeling-glossary.yaml:MOD006.notes
+  - modeling-glossary.yaml:MOD006.concrete_forms.business_scope
+  - modeling-glossary.yaml:MOD006.concrete_forms.business_effect
+  recommendation: Actualiser exemples actifs, préserver explicitement la photographie historique U389.
+  readiness_gate: avant_presentation_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-04
+  severity: majeure
+  classification: decision_ouverte_deja_differee_U431
+  title: Effets concurrents des engagements et application croisée des plans à contractualiser
+  evidence:
+  - behavior-gap-audit.yaml:closure_U431.future_work.A01
+  - behavior-gap-audit.yaml:closure_U431.future_work.A03
+  - behavior-gap-audit.yaml:closure_U431.future_work.A07
+  - D02.c
+  - D03.i
+  - BHV001
+  - BHV045
+  - BHV046
+  - BHV047
+  - D06.b
+  recommendation: Décrire contrats métier de ressources engageables, réservation/affectation et retours d’application partielle
+    sur cas chiffrés.
+  readiness_gate: avant_conception_solution_non_bloquant_catalogue
+  status: proposed_finding
+  report: coherence.md
+- id: COH-05
+  severity: majeure
+  classification: decision_ouverte_deja_connue
+  title: Porteur de la mise en vigueur des politiques de réservation non attribué
+  evidence:
+  - D05.h.fields.scope
+  - reservation-policy-review.yaml:open_questions
+  recommendation: Arbitrer la responsabilité de management et ses liens, sans créer automatiquement une capacité.
+  readiness_gate: visible_v0_a_resoudre_avant_realisation
+  status: proposed_finding
+  report: coherence.md
+- id: COH-06
+  severity: majeure
+  classification: responsabilite_ouverte_deja_connue
+  title: Choix du devenir du stock consigné hors produit retourné
+  evidence:
+  - D01.h
+  - BHV065
+  - D05.i.fields.definition
+  - consignment-inventory-review.yaml:responsibility_boundaries.Choix du devenir après saison
+  recommendation: Arbitrer décision Supply et interface commerciale externe ; ne pas étendre tacitement D05.i à tous les excédents.
+  readiness_gate: visible_v0_a_resoudre_selon_perimetre
+  status: proposed_finding
+  report: coherence.md
+- id: COH-07
+  severity: moderee
+  classification: dette_lisibilite
+  title: Définitions seules et nature inégales
+  evidence:
+  - D03.m.fields.definition
+  - D07.a.fields.definition
+  - D06.d.fields.definition
+  - D06.f.fields.definition
+  - BHV024
+  - BHV025
+  - BHV075
+  - BHV076
+  - BHV077
+  - BHV079
+  - BHV080
+  - BHV081
+  recommendation: Préciser résultat/objet de quelques définitions ; qualifier dix natures absentes sans présumer leur adoption.
+  readiness_gate: avant_presentation_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-08
+  severity: moderee
+  classification: risque_presentation_non_doublon
+  title: Cinq homonymes voulus nécessitent parent et résultat visibles
+  evidence:
+  - BHV024/BHV072
+  - BHV025/BHV073
+  - BHV059/BHV068
+  - BHV061/BHV070
+  - BHV062/BHV071
+  recommendation: Conserver noms et parents ; montrer contexte et relation entre décision, attendu et application.
+  readiness_gate: support_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-09
+  severity: majeure
+  classification: manque_preuve_applicabilite
+  title: Applicabilité structurée non renseignée
+  evidence:
+  - applicability.yaml:assessments
+  - applicability.yaml:contexts
+  recommendation: Qualifier cible, applicabilité, couverture documentaire et réalisation installée dans les supports ; Sarenza
+    non évalué.
+  readiness_gate: visible_v0_sans_affirmation_couverture_installee
+  status: proposed_finding
+  report: coherence.md
+- id: COH-10
+  severity: moderee
+  classification: perimetre_volontaire_differe
+  title: Modèles d’information et Business Services encore illustratifs
+  evidence:
+  - ILL-OBJ-01
+  - ILL-DOC-01
+  - ILL-EVT-01
+  - ILL-OBJ-02
+  - universe-case
+  - limitations
+  recommendation: Présenter une carte de capacités et des contrats ciblés ; ne pas déduire agrégats, flux ou domaines de processus.
+  readiness_gate: cadrage_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-11
+  severity: moderee
+  classification: risque_interpretation
+  title: Choix spécialisés et arbitrage collectif à illustrer ensemble
+  evidence:
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  - D03.m
+  - D03.o
+  - D03.p
+  - D02.e
+  recommendation: Éprouver un cas aux objectifs contradictoires ; distinguer contraintes, résultats candidats et décisions
+    applicables.
+  readiness_gate: atelier_v0
+  status: proposed_finding
+  report: coherence.md
+- id: COH-12
+  severity: mineure
+  classification: dette_presentation_lexicale
+  title: Glossaire métier conserve des strates méthodologiques
+  evidence:
+  - glossary.yaml:TER001
+  - glossary.yaml:TER002
+  - glossary.yaml:TER024-TER030
+  - modeling-glossary.yaml:boundary.coverage
+  recommendation: Organiser la lecture et qualifier historique sans supprimer ou migrer automatiquement les identifiants.
+  readiness_gate: support_v0
+  status: proposed_finding
+  report: coherence.md
+limits:
+- Comparaisons externes instruite dans l’autre axe ; aucun nouveau constat marché revendiqué ici.
+- Aucune réalisation installée déduite du catalogue.
+- Historique des validations préservé ; une absence dans le statut courant ne prouve pas absence d’accord historique.
+subsequent_decisions:
+- source_ref: U435
+  effect: Corrections évidentes autorisées ; script préparé non exécuté par l’agent cohérence.
+  plan: coherence-fix-plan-U435.md
+- source_ref: U436
+  effect: Seule la réservation bloque les usages concurrents ; l’affectation seule ne bloque pas. Le principe n’est plus ouvert
+    ; COH-04 reste le constat initial et les contrats détaillés restent à préciser.
+  applies_to:
+  - COH-04

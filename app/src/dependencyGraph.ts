@@ -11,6 +11,8 @@ export interface DependencyOptions {
   depth: 0 | 1 | 2 | 3;
   direction: 'both' | 'incoming' | 'outgoing';
   family: 'all' | DependencyFamily;
+  /** Include edges between neighbors in addition to the traversed relationships. */
+  includeNeighborLinks?: boolean;
 }
 
 export interface DependencyNode {
@@ -55,8 +57,8 @@ const familyOf = (relation: AtlasRelation): DependencyFamily => relation.qualifi
 /**
  * Pure read-only projection of one verified publication. No relation is inferred from
  * identifiers, names, layers, labels, or the backlog. Business cycles are permitted.
- * Direction restricts the traversal; the resulting graph shows every original direct
- * relation between the reached endpoints, in its original direction.
+ * Direction restricts traversal. Only traversed original relations are shown by
+ * default; additional links between neighbors require the explicit option.
  */
 export function projectDependencies(model: PublishedModel, options: DependencyOptions): DependencyProjection {
   if (!['capability', 'domain', 'universe'].includes(options.level)) throw new Error('Niveau de dépendances inconnu.');
@@ -121,6 +123,7 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
     && (!isGrouping(item) || endpointIds.has(item.id))).map(item => item.id));
   const filtered = allRelations.filter(relation => options.family === 'all' || relation.family === options.family);
   let visible = new Set(allNodeIds);
+  const traversed = new Set<string>();
   const focus = options.focusId ? node(options.focusId) : undefined;
   const full = options.depth === 0 || !focus;
 
@@ -146,6 +149,8 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
     for (let step = 0; step < options.depth; step += 1) {
       const next = new Set<string>();
       for (const relation of filtered) {
+        if ((options.direction !== 'incoming' && frontier.has(relation.source))
+          || (options.direction !== 'outgoing' && frontier.has(relation.target))) traversed.add(relation.relation.id);
         if (options.direction !== 'incoming' && frontier.has(relation.source) && !visible.has(relation.target)) next.add(relation.target);
         if (options.direction !== 'outgoing' && frontier.has(relation.target) && !visible.has(relation.source)) next.add(relation.source);
       }
@@ -155,7 +160,8 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
     }
   }
 
-  const chosen = filtered.filter(relation => visible.has(relation.source) && visible.has(relation.target));
+  const chosen = filtered.filter(relation => visible.has(relation.source) && visible.has(relation.target)
+    && (full || options.includeNeighborLinks || traversed.has(relation.relation.id)));
   const display = new Map<string, DependencyNode>();
   function ensureNode(id: string): DependencyNode {
     const current = display.get(id);
@@ -207,10 +213,10 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
   const edges = [...buckets.values()].map(({ edge, relations }) => {
     // A normalized label is not invented from the prose qualification. Multiple
     // distinct descriptions remain in the original relations available to the UI.
-    if (edge.family === 'other') {
-      const label = relations[0].label;
-      if (label && relations.every(relation => relation.label === label && relation.label !== relation.type)) edge.label = label;
-    }
+    // An explicit business expression also describes a needs relation without
+    // changing its consumer-to-provider direction or its semantic family.
+    const label = relations[0].label;
+    if (label && relations.every(relation => relation.label === label && relation.label !== relation.type)) edge.label = label;
     return edge;
   });
   return {

@@ -35,8 +35,11 @@ def market_lines(entries):
     lines = []
     for entry in entries:
         lines += [f"### {entry['vendor']} — {entry['element_name']}", '',
-                  f"{entry['product']} · {entry['element_type']} · {entry['relationship']} · statut : {entry['status']}", '',
-                  '**Points communs.** ' + entry['similarities'], '',
+                  f"{entry['product']} · {entry['element_type']} · {entry['relationship']} · statut : {entry['status']}", '']
+        for key, label in [('term_choice', 'Pourquoi ce terme'), ('definition_choice', 'Pourquoi cette définition')]:
+            if entry.get(key):
+                lines += ['**' + label + '.** ' + entry[key], '']
+        lines += ['**Points communs.** ' + entry['similarities'], '',
                   '**Différences.** ' + entry['differences'], '',
                   '**Position FLOW.** ' + entry['flow_position'], '',
                   f"[{entry['source_title']}]({entry['source_url']}) — {entry['source_version']}, consulté le {entry['consulted_on']}.", '',
@@ -59,12 +62,12 @@ def render(model, label):
     for domain in model['nodes']:
         if domain['kind'] not in ('domain','reference'):
             continue
-        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '', '| Repère | Capacité | Statut | Définition | Finalité | Rattachement |', '| --- | --- | --- | --- | --- | --- |']
+        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '', '| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |', '| --- | --- | --- | --- | --- | --- | --- |']
         for relation in model['relations']:
             if relation['type'] != 'contains' or relation['source_id'] != domain['id']:
                 continue
             n=nodes[relation['target_id']]; f=n['fields']
-            lines.append('| '+ ' | '.join(cell(v) for v in [n['id'], f.get('name','Libellé à préciser'), status(n),f.get('definition','À préciser'),f.get('finality','À préciser'),status(relation)])+' |')
+            lines.append('| '+ ' | '.join(cell(v) for v in [n['id'], f.get('name','Libellé à préciser'), f.get('nature', 'Non renseigné'), status(n),f.get('definition','À préciser'),f.get('finality','À préciser'),status(relation)])+' |')
         lines += ['']
     for capability in model['nodes']:
         behaviors = [nodes[r['target_id']] for r in model['relations']
@@ -82,12 +85,35 @@ def render(model, label):
             lines.append('| ' + ' | '.join(cell(v) for v in [behavior['id'], behavior['fields']['name'], status(behavior), behavior['fields']['definition']]) + ' |')
         lines += ['']
     for node in model['nodes']:
+        if node['fields'].get('examples'):
+            lines += [f"## Exemples concrets — {node['id']} {node['fields'].get('name', '')}", '']
+            for example in node['fields']['examples']:
+                lines += ['### ' + example['title'], '', example['situation'], '']
+                for key, label in [('outcome', 'Ce qui se passe'), ('lesson', 'Ce que cela illustre')]:
+                    if example.get(key):
+                        lines += ['**' + label + '.** ' + example[key], '']
+                lines += ['Références : ' + ', '.join(example['source_refs']) + '.', '']
         entries = node['fields'].get('market_comparisons', [])
         if entries:
             lines += [f"## Comparaison par rapport au marché — {node['id']} {node['fields'].get('name', '')}", ''] + market_lines(entries)
     for term in model.get('glossary', {}).get('terms', []):
         if term.get('market_comparisons'):
             lines += [f"## Comparaison par rapport au marché — {term['name']}", ''] + market_lines(term['market_comparisons'])
+    catalogue = model.get('information_catalog')
+    if catalogue:
+        lines += ['## Informations métier', '', 'Vue transversale des informations utiles aux capacités ; aucune structure de données implémentable prescrite.', '']
+        for item in catalogue['items']:
+            lines += [f"### {item['id']} — {item['name']}", '', item['question'], '', item['definition'], '', '**Contexte :** ' + item['context'], '']
+            lines += ['- ' + value for value in item['essential_elements']]
+            lines += ['', '**Usages par les capacités :**', '']
+            lines += ['- ' + nodes[r['capability_ref']]['fields']['name'] + ' — ' + r['role'] + ' : ' + r['meaning'] for r in item['capability_roles']]
+            lines += ['', '**Exemples :**', ''] + ['- ' + e['situation'] for e in item['examples']]
+            lines += ['', '**Marché et choix :**', ''] + market_lines(item['market_comparisons'])
+        lines += ['### Liens entre informations', '', '| Origine | Sens | Destination | Condition | Effet |', '| --- | --- | --- | --- | --- |']
+        names = {item['id']:item['name'] for item in catalogue['items']}
+        for link in catalogue['links']:
+            lines.append('| ' + ' | '.join(cell(x) for x in [names[link['from_ref']], link['meaning'], names[link['to_ref']], link['condition'], link['effect']]) + ' |')
+        lines += ['']
     if model['space']=='release':
         lines += ['## Portée des validations', '', '| Repère | Champs adoptés | Champs restant proposés | Décisions |', '| --- | --- | --- | --- |']
         for n in model['nodes']:

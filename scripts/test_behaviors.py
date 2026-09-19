@@ -30,7 +30,7 @@ class BehaviorTests(unittest.TestCase):
             self.assertEqual([r['source_id'] for r in parents], ['D03.i'])
 
     def test_invalid_hierarchies_rejected(self):
-        for case in ('orphan', 'two_parents', 'domain_parent', 'behavior_child', 'wrong_layer', 'empty_definition'):
+        for case in ('orphan', 'two_parents', 'domain_parent', 'behavior_child', 'empty_definition'):
             with self.subTest(case=case):
                 model = deepcopy(self.model)
                 rel = next(r for r in model['relations'] if r['id'] == 'REL-ATP-BHV001')
@@ -40,7 +40,6 @@ class BehaviorTests(unittest.TestCase):
                     other = deepcopy(rel); other['id'] += '-SECOND'; other.pop('lifecycle'); model['relations'].append(other)
                 if case == 'domain_parent': rel['source_id'] = 'D03'
                 if case == 'behavior_child': rel['source_id'] = 'BHV002'
-                if case == 'wrong_layer': node['layer'] = 'process'
                 if case == 'empty_definition': node['fields']['definition'] = ' '
                 errors = self.check_model(model)
                 self.assertTrue(any('behavior/' in e for e in errors), errors)

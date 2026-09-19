@@ -1,7 +1,7 @@
 schema_version: 1.0.0
 model_id: flow-modeling-roadmap
 space: backlog
-as_of: '2026-09-17'
+as_of: '2026-09-19'
 source_refs:
 - U112
 - U140
@@ -18,6 +18,7 @@ source_refs:
 - U262
 - U263
 - U264
+- U472
 current_focus:
 - domain
 - capability
@@ -34,7 +35,9 @@ extensions:
   note: 'U141 instancie Supply et Case comme groupes urbanism_level, level_ref universe. Business References reste un groupe
     de présentation ; détails de définition et rattachements proposés. U169 distingue domaines de capacités et bounded contexts
     : la frontière Supply/Services ne crée pas automatiquement un niveau ou un univers Services. U173 renomme universe-case
-    en Business Services et valide sa définition ; domaines de cet univers différés, identifiant conservé.'
+    en Business Services et valide sa définition ; domaines de cet univers différés, identifiant conservé. U472 remplace le
+    maintien de Business Services : universe-case est retiré sans réutilisation d’identifiant. Seul Supply Chain Orchestration
+    demeure instancié comme univers ; commerce différé après la Supply Chain, sans remplacement automatique.'
 - id: EXT-BUSINESS-ENTITIES
   subject: business_objects_documents_events
   state: in_progress
@@ -97,8 +100,10 @@ limitations:
 - La cible FLOW et l’existant des trois SI ne sont pas fusionnés.
 - U141 adopte le principe Supply/Case et les quatre capacités D04 dans leur portée ; ne valide pas automatiquement les détails
   des objets et liens.
-- 'U173 : Business Services est nommé et défini ; ses domaines seront travaillés plus tard. Les dimensions de périmètre ne
-  constituent pas un découpage en domaines.'
+- 'U173 : Business Services est nommé et défini ; ce maintien est remplacé par le retrait U472. Les dimensions de périmètre
+  ne constituent pas un découpage en domaines.'
 - 'U202 : audit de vocabulaire appliqué puis format YAML ; aucune nouvelle entité ou publication métier déduite.'
 - U214 remplace les quatre capacités D04 de U141 par sept capacités. Portée et historique dans d04-refactoring.yaml ; aucun
   objet, type de nœud ni niveau supplémentaire instancié.
+- 'U472 : terminer le travail Supply Chain avant d’étudier le commerce. Les mentions de Business Services dans les annexes
+  de décisions antérieures restent des preuves historiques, pas un périmètre courant à développer.'

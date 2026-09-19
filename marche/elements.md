@@ -2645,3 +2645,330 @@ Sources primaires consultées le 19 septembre 2026 pour U428. Nature : processus
 U429 — Sources primaires consultées le 19 septembre 2026 : Microsoft Dynamics 365 Commerce, [Omnichannel payments overview](https://learn.microsoft.com/en-us/dynamics365/commerce/omni-channel-payments), Key terms, Overview et Basic principle : autorisation, capture et références de remboursement intégrées aux parcours Commerce. Page évolutive ouverte ; aucune assimilation de capture à crédit bancaire définitif.
 
 SAP Learning, [Executing the Billing Process and the Integration to SAP S/4HANA Finance](https://learning.sap.com/courses/exploring-sap-s-4hana-sales-essentials/executing-the-billing-process-and-the-integration-to-sap-s-4hana-finance_e2dd5db3-73c3-4cda-8ad5-1e7f39f04fba), page ouverte, cours Sales Essentials : création du document de facturation dans Sales et intégration à Finance. Complément primaire indexé SAP Help, [Sales Billing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/4c74c957b7018809e10000000a4450e5.html), création/gestion de documents de facturation et transfert à la comptabilité financière. Version précise du cours non affichée dans les passages consultés. Nature : responsabilités produit et processus, pas attribution universelle des capacités ni preuve d’organisation Beaumanoir.
+
+
+### ELM256
+
+Oracle E-Business Suite Order Management 12.2 — Line Sets / Fulfillment Sets. Source primaire ouverte le 19 septembre 2026 : https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T336783.htm ; sections Line (Ship or Arrival) Sets, Set Function Details, Fulfillment Sets. Mécanisme produit reliant des lignes d’une même commande sous conditions communes. La portée multi-commandes n’est pas démontrée ; aucun identifiant natif de capacité ni définition normative d’entreprise. Synthèse et limites : modeles/backlog/order-structuring-review-U439.yaml. Aucune réalisation Beaumanoir déduite.
+
+### ELM257
+
+SAP Fashion Management, ERP 6.0 EHP8 SP24 — General Requirements Grouping. Passages primaires indexés consultés le 19 septembre 2026 : https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/c617f055aa2a6d55e10000000a4450e5.html?locale=en-US&state=PRODUCTION&version=6.18.24 ; Use, Grouping Rule and Grouping Criteria, Individual Group Release Rules. Fonction produit de regroupement de besoins ; ne prouve pas un ensemble transactionnel persistant. Synthèse originale sans reproduction ; limites détaillées dans l’annexe U439.
+
+### ELM258
+
+Infor LN 10.7 Procurement — Commingling purchase orders. Texte primaire ouvert le 19 septembre 2026 : https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html ; Header level commingling, Line level commingling, Approval. Fonction produit de fusion de commandes d’achat avant approbation, distincte du seul regroupement logistique. Les règles techniques de suppression et de calcul des prix ne sont pas adoptées dans FLOW. Aucun constat installé ni équivalence universelle aux autres Orders. Synthèse originale ; détails dans l’annexe U439.
+
+### ELM259
+
+OMG DMN — MKT43, présentation officielle https://www.omg.org/dmn/, paragraphes sur la spécification des décisions/règles et la complémentarité DMN/BPMN/CMMN. Texte primaire consulté le 19 septembre 2026 ; page évolutive sans édition précise de spécification étudiée. Concept méthodologique, sans identifiant natif de capacité. Reformulation : une décision peut être décrite distinctement du processus ou du cas qui la mobilise. Aucun classement individuel FLOW ni taxonomie en six catégories n’est prescrit ; synthèse originale, sans reproduction substantielle.
+
+### Relecture U451 — ELM052 et ELM234
+
+19 septembre 2026 : textes primaires rouverts. [BIZBOK Guide 15.0, Appendix A](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf), page imprimée 456, entrées Capability et Capability Behavior ; [Microsoft Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting), présentation et modes de déclenchement. Le premier éclaire la façon d’agir selon les circonstances ; le second illustre des politiques de comptage. Les sept formes FLOW et leurs affectations ne sont prescrites par aucune de ces sources. Synthèse originale, sans reproduction intégrale ni preuve de réalisation Beaumanoir.
+
+### ELM260
+
+### Audit U453/U454 — convention documentaire des entrées suivantes
+
+ELM260–277 : consultation du 19 septembre 2026. Les libellés ci-dessous sont natifs ; les identifiants ELM sont locaux, aucun identifiant natif de capacité n’est prétendu. Les définitions sont résumées dans nos mots, sans citation intégrale ni importation des modèles. Le [registre de sources](../audits/2026-09-19-atlas-ux-ui-U453/sources.md) fournit pour chaque repère S l’URL, la section, l’édition connue et l’accès réellement obtenu. Aucune réalisation Beaumanoir n’est démontrée par ces sources.
+
+MKT25 — LeanIX, Meta Model / Data Object Modeling Guidelines, métamodèle v4 et documentation évolutive. S03–S04, Data Object / Modeling scope : concepts et relations d’un référentiel d’architecture. Reformulation : objets de données reliés aux autres catalogues, sans profondeur d’un dictionnaire technique exhaustif. Textes primaires indexés ; ne pas assimiler Data Object à toute structure physique.
+
+### ELM261
+
+MKT26 — Ardoq, Data Lineage Metamodel / Business Capability Modeling, documentation évolutive. S05–S06, Data Entity / Accesses / Owns / Perspectives : concepts et vues d’un outil EA. Reformulation : entités, responsabilités et usages peuvent se lire selon plusieurs questions. Texte primaire indexé, accès direct partiellement bloqué ; modèles détaillés des messages hors du périmètre décrit.
+
+### ELM262
+
+MKT44 — Horizzon, Color views / Highlight views / Combining filters. S07, documentation évolutive : fonctions de présentation. Reformulation : filtres et légende rendent une propriété lisible dans une vue. Aucun essai de performance, d’ergonomie ou de partage effectué.
+
+### ELM263
+
+MKT45 — OrbusInfinity, Views / Recent Views / Configurable Dashboards & Sites. S08, documentation et présentation évolutives : fonctions et positionnement produit. Reformulation : plusieurs vues peuvent servir différents destinataires. Aucun gain chiffré repris ni essai utilisateur du produit.
+
+### ELM264
+
+MKT04 — SAP Reference Business Architecture / Business Data Catalog. S01–S02, cours SAP Learning sans édition applicative établie : concepts méthodologiques. Reformulation : contenu métier et contenu de solution sont distingués, les informations métier sont reliées aux capacités. Cette pratique SAP est comparée aux cadres indépendants, sans lui donner autorité sur FLOW.
+
+### ELM265
+
+MKT14 — Dynamics 365 Finance & Operations, Data entities overview / Categories of entities. S11, documentation évolutive : abstraction de données de produit. Reformulation : des entités d’intégration regroupent des données physiques selon des concepts fonctionnels ; leurs catégories ne définissent pas les capacités d’entreprise FLOW.
+
+### ELM266
+
+MKT14 — Dynamics 365, Business events overview / Business event catalog / Idempotency. S12, page du 22 janvier 2026 : mécanisme de notification produit. Reformulation : une notification métier et un export de données répondent à des usages différents. Aucun choix d’event sourcing ni contrat de message FLOW déduit.
+
+### ELM267
+
+MKT13 — SAP S/4HANA, Purchase Order (OData V4) / Create Material Documents. S13–S14, Header / Item et création, éditions applicatives non établies : API et structures produit. Reformulation : commande et document ERP ont des représentations structurées. Textes primaires indexés ; aucun schéma, champ ou statut importé dans FLOW.
+
+### ELM268
+
+MKT42 — GS1, Electronic Product Code Information Services (EPCIS). S15, présentation du 30 mai 2025 et introduction du standard : modèle d’échange d’événements de traçabilité. Reformulation : documenter un fait et son contexte est utile aux échanges interentreprises. Pas un modèle de tous les faits de gestion ; aucune édition normative ni adoption de format.
+
+### ELM269
+
+MKT03 — Guild, Information Concept, Metamodel Guide v3.0, septembre 2024, §§5.2–5.3.1. S09 : concept d’architecture métier et relations. Reformulation : les capacités utilisent ou modifient des informations métier. Le rapprochement FLOW ne reprend pas toute la taxonomie du guide.
+
+### ELM270
+
+MKT02 — ArchiMate 4, C260, 27 avril 2026. S10, notice Details / Main changes : évolution d’un langage de modélisation. Reformulation : la version importe pour les concepts et relations disponibles. Notice officielle consultée ; norme complète non lue, aucune conformité FLOW déduite.
+
+### ELM271
+
+MKT48 / MKT49 — Fluent 2 Color et Fiori Colors v1-145. S17–S18, palettes et usages : principes de design. Reformulation : neutralité, marque et sens de la couleur remplissent des rôles distincts. Proposition de palette FLOW, pas application obligatoire d’une charte éditeur.
+
+### ELM272
+
+MKT47 — Progressive Disclosure, Jakob Nielsen, 4 décembre 2006. S19 : principe UX. Reformulation : donner accès aux développements depuis l’essentiel. Principe consulté, bénéfice de la maquette Atlas encore à éprouver par des tâches utilisateurs.
+
+### ELM273
+
+MKT46 — WCAG 2.2, Understanding 1.4.3 / 1.4.1 / 2.5.8. S20a–c : critères et explications officielles sur contraste, couleur et cibles. Reformulation : lisibilité et signification ne reposent pas sur la couleur seule ; tailles et exceptions doivent être évaluées dans leur contexte. Les observations Atlas ne constituent pas un audit de conformité exhaustif.
+
+### ELM274
+
+MKT50 — Domain analysis / Bounded contexts, page du 25 février 2026. S16 : méthode de conception contextualisée. Reformulation : la cohésion métier et les dépendances éclairent le découplage ; une carte de capacités ne fournit pas seule les limites d’un service logiciel. Aucun style d’architecture imposé.
+
+### ELM275
+
+MKT20 — Oracle Fusion Cloud Procurement 26C, Purchase Orders / Lines / Schedules / Distributions. S21 : ressources REST et structure d’intégration. Reformulation : le détail du contrat produit inclut des préoccupations plus larges que le périmètre Supply FLOW. Aucun niveau ou champ comptable ajouté à la cartographie.
+
+### ELM276
+
+MKT01 — TOGAF Series Guide G190, Information Mapping, avril 2019, chapitres 4–6. S22–S23 : méthode d’architecture ; carte d’information et modèle de données distingués. Document primaire lu sur hébergement tiers, présence de G190 confirmée dans les ressources officielles actuelles ; identité avec la distribution actuelle non contrôlée.
+
+### ELM277
+
+MKT01 — TOGAF 9.2, 2018, Phase C: Data Architecture / Data Entity–Business Function Matrix, chapitres 9 et 31. S24 : méthode et artefacts. Reformulation : données, fonctions et applications peuvent être rapprochées par des vues distinctes. Copie primaire historique consultée ; édition 10 détaillée inaccessible, aucun report automatique de ses paragraphes à cette édition.
+
+### ELM278
+
+U455/U456 — MKT01, TOGAF 9.2, 2018, chapitre 7, §§7.3.1 et 7.5.3–7.5.6, pages imprimées 81 et 89–91. [Document primaire](https://governance.foundation/assets/frameworks/togaf/c182e%20-%20TOGAF%209.2.pdf) lu le 19 septembre 2026 sur hébergement tiers, copie d’évaluation non redistribuée. Libellés natifs : Business Capability Mapping, Value Stream Mapping, Process Modeling ; concepts et techniques, pas identifiants de capacités. Reformulation : plusieurs vues complémentaires décrivent le métier. Ce passage ne prescrit pas les anciennes couches FLOW ; édition historique, pas vérification de la 10e édition. La distinction de périmètre Atlas est une décision locale, non une obligation TOGAF.
+
+### ELM279
+
+U455/U456 — MKT14, Microsoft Dynamics 365 Intelligent Order Management, [Overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), sections Components / Intelligent Order Management app / Providers / Orchestration. Texte primaire ouvert le 19 septembre 2026, documentation évolutive, édition produit non fixée. Fonctions et intégrations d’un produit, sans identifiant natif de capacité métier. Reformulation : capture de commandes, orchestration et partenaires de fulfillment coopèrent via des informations. Recouvrement partiel de l’exemple de Laurent ; ni preuve d’un déploiement Beaumanoir ni prescription de trois domaines ou de couches. Synthèse sélective et lien seulement.
+
+### ELM280
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information). Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Passages : Product definition ; Distribution, export, and import of product data ; Product masters and product variants. Nature : concepts et fonctions produit, sans identifiant natif de capacité. Reformulation : références, variantes et import de données produit ; la création des maîtres est aussi couverte. Limite : aucune dimension obligatoire FLOW ni équivalence de catalogue. Synthèse sélective, pas de reproduction.
+
+### ELM281
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data), section Master and reference data. Source primaire consultée le 19 septembre 2026 ; documentation évolutive du mode Warehouse management only, édition non figée. Nature : import et maintien de données produit, sans identifiant natif de capacité. Reformulation : une origine de maintien est configurée pour une référence dans ce contexte produit. Limite : ne prouve ni l’autorité métier FLOW ni un maître unique d’entreprise ; contrats techniques non transposés. Synthèse et lien seulement.
+
+### ELM282
+
+U460 — MKT42, GS1 GO, [How does serialisation differ from unique identification in the GS1 System?](https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-). FAQ officielle consultée le 19 septembre 2026 ; page évolutive, pas une édition des spécifications normatives. Nature : explication d’identification ; pas d’identifiant natif de capacité. Reformulation : GTIN et numéro de série distinguent une instance. Limite : pas de conformité globale GS1 déduite ni sérialisation imposée à toutes les Product Units FLOW. Synthèse sélective seulement.
+
+### ELM283
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), section Sample use case for soft reservation. Source primaire relue le 19 septembre 2026 ; documentation évolutive, édition non figée. Nature : fonction produit, aucun identifiant natif de capacité. Reformulation : une réservation souple réduit la disponibilité à réserver sans mouvement physique. Le respect effectif du refus dépend des règles des applications participantes. Limite : les types Microsoft ne deviennent pas les types FLOW ; aucune réalisation installée déduite. Appui au pilote Reservation, sans nouvelle équivalence.
+
+### ELM284
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Source primaire relue le 19 septembre 2026 ; mise à jour affichée le 27 juillet 2026, contexte Dynamics 10.0.48 ou ultérieur. Sections : What data is preserved ; Control how on-hand inventory is pegged to confirmed demand. Nature : fonction produit, sans identifiant natif de capacité. Reformulation : la préservation des liens de ressource dépend de réglages distincts de la date confirmée. Limite : ce mécanisme recouvre plusieurs responsabilités FLOW ; pas d’identité avec Supply Assignment seule. Appui au pilote, pas nouvelle règle FLOW.
+
+### ELM285
+
+U461 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Record the receipt of goods on the purchase order](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order), section Record receipt of goods, étapes 4–7. Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Nature : exemple produit, sans identifiant natif de capacité. Reformulation : un document identifié rend compte de la réception enregistrée. Limite : cet exemple n’établit pas une convention universelle fait–document, ni ses règles de correction. Synthèse et lien seulement.
+
+### ELM286
+
+U462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Confirm sales orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders), sections Confirm a single sales order / Confirm multiple sales orders. Consulté le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Fonction produit sans identifiant natif de capacité. Reformulation : confirmation documentaire et état documentaire sont explicités. Limite : cet usage n’établit pas un équivalent lexical complet de Fulfillment Commitment. Appui à l’alternative discutée U444 ; synthèse sélective, pas de reproduction.
+
+### ELM287
+
+U462 — MKT13, SAP S/4HANA Fashion, [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4), sections Supply Assignment (ARun) / Supply Assignment Scenarios. Consulté le 19 septembre 2026 ; cours évolutif sans édition unique affichée. Fonction produit sans identifiant natif de capacité. Reformulation : le scénario ARun crée un lien ressource–demande qui empêche l’usage par une autre demande. Écart explicite avec FLOW U436, qui attribue ce dernier effet à Reservation. Le vocabulaire repris ne vaut donc pas équivalence complète. Synthèse et lien seulement.
+
+### ELM288
+
+U462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Purchase order overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview), introduction et Purchase order status. Consulté le 19 septembre 2026 ; documentation évolutive, édition produit non figée. Concept documentaire, pas identifiant natif de capacité. Reformulation : achat de biens ou services, suivi de la réception et progression documentaire. Limite : FLOW reprend le nom métier pour une capacité d’action distincte de l’objet ; pas de transposition des états ERP ni de périmètre financier. Synthèse et lien seulement.
+
+### Relecture U463 — ELM019 et ELM279
+
+19 septembre 2026 : textes primaires reconsultés pour la définition de universe-supply. ELM019, TOGAF G189 (juin 2018), §2 et §2.1.2, pages imprimées 2–3 : distinction entre aptitudes métier et moyens de réalisation. Document primaire sur le [miroir tiers déjà référencé](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf), sans copie ni redistribution ; le portail officiel TOGAF 9.2 redirige vers une authentification. Appui méthodologique, pas définition de l’univers Supply ni examen de la 10e édition.
+
+ELM279, Microsoft [Intelligent Order Management overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), mise à jour affichée le 30 janvier 2026 : Introduction, Components, Orchestration, Inventory visibility service et Fulfillment optimization. Réexamen à périmètre FLOW inchangé ; le rapprochement demeure partiel. Les composants techniques ne deviennent pas des domaines. Raisons du choix et limites dans la fiche universe-supply ; CMP182. Aucune réalisation Beaumanoir ni origine SAP des anciennes couches déduite.
+
+### ELM289
+
+U464 — MKT51 : Information, Data, Data element. ISO/IEC 15944-1:2025 et ISO 20691:2022, extraits officiels consultés le 19 septembre 2026. Sens en contexte, représentation, indivisibilité contextuelle ; aucune définition de bloc minimal Atlas. URL, localisateurs et renvois normatifs dans [l’analyse structurée](../modeles/backlog/information-definition-U464.yaml). Pas d’identifiant natif de capacité ; synthèse originale, modèles sectoriels non adoptés.
+
+### ELM290
+
+U464 — MKT52 : Elementary fact / fact type is elementary in conceptual schema. SBVR 1.5, octobre 2019, §24.2.1 p.222 et §24.2.2.1 p.255, texte primaire consulté le 19 septembre 2026. Critère logique d’irréductibilité dans un schéma ; sens plus strict que le minimum utile à une fiche. URL et limites dans [l’analyse](../modeles/backlog/information-definition-U464.yaml). Aucun fait de gestion FLOW ou document déduit d’un fait logique.
+
+### ELM291
+
+U464 — MKT53 : What Is An Elementary Fact?, Terry Halpin, 1993, réédition sur orm.net. Pages 2–3 et 6–8 consultées le 19 septembre 2026 : les contraintes peuvent changer la décomposition pertinente. Appui théorique, pas adoption d’ORM ni preuve que nos exemples sont logiquement irréductibles. Localisateurs dans [l’analyse](../modeles/backlog/information-definition-U464.yaml).
+
+### Relecture U464 — ELM269 et ELM276
+
+19 septembre 2026 : Guild, Metamodel Guide v3.0, §§5.3–5.3.1 ; TOGAF G190, chapitres 1–2 et 4–6, éditions et accès déjà référencés. Leur concept d’information éclaire la relation aux capacités ; il ne garantit pas une maille indivisible. Pas de reprise automatique des correspondances objets/capacités de la Guild. Sources détaillées dans l’analyse U464 ; CMP183.
+
+
+### ELM292
+
+U470/U471 — MKT41, CSCMP, Définitions professionnelles. [SCM Definitions and Glossary of Terms](https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx). Page sans édition affichée. Nature : Définition professionnelle. Passage consulté le 19 septembre 2026 : Definition of Supply Chain Management ; Boundaries and Relationships. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour universe-supply, TER031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM293
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Welcome to Dynamics 365 Supply Chain Management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome). Page mise à jour le 10 septembre 2025. Nature : Périmètre de produit. Passage consulté le 19 septembre 2026 : Core concepts and tasks. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour universe-supply ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM294
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Supply Chain Orchestration. [Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html). 26B. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction ; receive requests, create supply orders, manage changes ; drop shipment. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV059, BHV068, universe-supply, TER031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM295
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Product Hub. [Overview of Item Batches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html). 26A. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction et options des lots d’import. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D08, D08.d ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM296
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals). Page mise à jour le 29 août 2025. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Types of inventory journals : Transfer, Item arrival, Counting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D01.f ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM297
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Inventory Management. [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). 25D. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Supply and demand ; quantities and dates ; ATP/nettable filters. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D01.c ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM298
+
+U470/U471 — MKT13, SAP, S/4HANA aATP. [Explaining aATP Product Allocation (PAL)](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58). Cours évolutif sans édition affichée. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : aATP: PAL Concept ; scénario ; restrictions par groupes de demande. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D02.b, D05.d ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM299
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Inventory Management. [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction ; supply and demand documents ; restriction des prélèvements concurrents. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D02.c ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM300
+
+U470/U471 — MKT20, Oracle, PeopleSoft Inventory. [Promising and Reserving Inventory](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm). PeopleSoft FSCM 9.0, édition historique. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Reservation lead days ; ATP ; inventory priority rules ; shortage workbench. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.i, D03.m, BHV033, BHV077 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM301
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Global Order Promising. [Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Profitable to Promise. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.k ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM302
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Create delivery schedules ; Manage delivery lines. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.l, BHV044, TER081 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM303
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Master plans ; Firming time fence ; Action message time fence. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D05.f, BHV006, BHV036, BHV085 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM304
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Schedule workload capacity](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Warehouse workload capacity ; volume, weight, inbound/outbound workload. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D06.b ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM305
+
+U470/U471 — MKT19, TM Forum, Service Ordering. [TMF641 Service Ordering API REST Specification R18.5.1](https://www.tmforum.org/resources/specification/tmf641-service-ordering-api-rest-specification-r18-5-0/). R18.5.1 ; document 4.0.1, 2019 ; version archivée. Nature : Concept documenté par un contrat sectoriel. Passage consulté le 19 septembre 2026 : Présentation publique : create, update, retrieve ; service order items. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D07.b ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM306
+
+U470/U471 — MKT14, Microsoft, Dynamics AX Transportation Management. [Transportation scenario – Manual rating](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/). Publication officielle du 16 février 2016 ; exemple historique. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Load planning workbench : Shipping carrier et Carrier service ; Manual rating. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D06.e ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM307
+
+U470/U471 — MKT20, Oracle, E-Business Suite Warehouse Management. [Oracle Warehouse Management User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Opportunistic Cycle Counting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM308
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). SCM 10.0.48 build 10.0.2645.33+ selon la page. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : What data is preserved ; Control how on-hand inventory is pegged to confirmed demand. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV047, TER082 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM309
+
+U470/U471 — MKT14, Microsoft, Dynamics GP Returns Management. [Returns Management](https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement). Guide Dynamics GP ; édition produit non précisée dans le passage. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : RTV types : Repair and Return ; Enter a repair and return RTV ; Receive an RTV. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV057 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM310
+
+U470/U471 — MKT20, Oracle, E-Business Suite Purchasing. [Oracle Purchasing User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Standard Purchase Orders ; quantités et échéances de livraison. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV058 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM311
+
+U470/U471 — MKT54, OASIS, Universal Business Language. [Universal Business Language Version 2.4](https://docs.oasis-open.org/ubl/UBL-2.4.html). OASIS Standard 2.4, 2024. Nature : Scénarios métier illustrant un standard documentaire. Passage consulté le 19 septembre 2026 : §2.3.3.5 VMI ; §2.3.5.1 Fulfilment ; §2.3.5.4 Freight Status Reporting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV061, BHV062, BHV065, BHV070, BHV080, TER036 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM312
+
+U470/U471 — MKT20, Oracle, E-Business Suite Consigned Inventory. [Consuming Material](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Aging Based Ownership Transfer. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV064 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM313
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Commerce. [Store order fulfillment](https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview). Page mise à jour le 28 janvier 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Pick up ; Shipping ; Line quantity tracking. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV066, BHV067 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM314
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Intercompany orders and return orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction : création correspondante des commandes intersociétés. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV069 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM315
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Supply Chain Orchestration. [Use Supply Chain Orchestration in Your Back-to-Back Flows](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html). 26B. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Back-to-back flows ; buy, make, transfer ; demand and supply link. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV074 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM316
+
+U470/U471 — MKT20, Oracle, Fusion Cloud Global Order Promising. [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Supply chain search ; capable-to-promise. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV075 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM317
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Intelligent Order Management. [Intelligent fulfillment optimization architecture](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Fulfillment strategies ; source priority ; distance ; partial orders. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV076 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM318
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Outbound workload visualization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/outbound-workload-visualization). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction : suivi du travail en cours et restant. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV079 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM319
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Commerce. [Store inventory management](https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Store inventory management operations ; inventory dimensions. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV081 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM320
+
+U470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Replenishment methods and quantity modification](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification). Page mise à jour le 1er juillet 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Coverage codes : Requirement, Min./Max.. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV083, BHV084 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM321
+
+U470/U471 — MKT42, GS1, Global Traceability Standard. [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard). Version en ligne ; édition non figée par cette consultation. Nature : Standard d’identification et de traçabilité. Passage consulté le 19 septembre 2026 : Identification : Class-level, Batch/Lot-level, Instance-level. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour TER059 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite.
+
+
+### ELM322
+
+U471 — MKT13, SAP S/4HANA Sales, [Executing the Advanced Intercompany Sales and Stock Transfer Process](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc). Cours évolutif ; parcours avancé introduit en S/4HANA 2022. Passage primaire consulté le 19 septembre 2026 : Advanced Intercompany Sales Processing : commandes SO2, PO3 et SO4 ; propagation des changements. Libellé natif : Advanced Intercompany Sales Processing ; processus produit, pas capacité native. Second appui distinct pour BHV069 (CMP186), à la place du doublon documentaire détecté lors du contrôle. ELM314 conserve la relecture de la première source Microsoft ; il ne compte pas comme un deuxième document. Reformulation et limites dans additions.yaml ; aucune règle comptable ou automatisation importée.
+
+
+### ELM323
+
+U472 — MKT02, communauté ArchiMate hébergée par The Open Group, [ArchiMate 101: A Practical Introduction](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/), sections External behavior: Service et Business Layer Elements, consultées le 19 septembre 2026. Tutoriel communautaire sans édition indiquée, non spécification normative. Il présente le service comme un comportement exposé. Aucun univers FLOW ni regroupement Commerce prescrit. Synthèse sélective ; chapitre normatif tenté mais inaccessible derrière authentification.
+
+### ELM324
+
+U472 — MKT14, Microsoft Dynamics 365 Customer Service, [Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), introduction et composant Cases, page mise à jour le 8 mai 2026, consultée le 19 septembre 2026. Le Case suit le traitement d’une situation client jusqu’à sa résolution. Objet produit, pas taxonomie d’univers. Appui partiel pour TER064, dont le sens FLOW demeure plus large que le service client ; aucune solution adoptée. Synthèse originale et lien.

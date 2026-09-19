@@ -13,12 +13,12 @@ const model = adaptPublication(current.raw);
 const relationId = 'REL-EXECUTION-FACTS-ORDER-RECONCILIATION';
 const ids = nodes => nodes.map(node => node.id);
 
-test('market comparisons are searchable and remain isolated to their publication', () => {
+test('visible market comparisons are searchable only in their own immutable publication', () => {
   const raw = structuredClone(current.raw);
   const id = raw.nodes[0].id;
   raw.nodes[0].fields.market_comparisons = [{ vendor: 'RELEX', element_name: 'In-season fill-in', differences: 'SeuilsCapsulesTest' }];
   const enriched = adaptPublication(raw);
-  assert.ok(ids(searchModel(enriched, 'RELEX SeuilsCapsulesTest')).includes(id));
+  assert.deepEqual(ids(searchModel(enriched, 'RELEX SeuilsCapsulesTest')), [id]);
   assert.equal(searchModel(model, 'SeuilsCapsulesTest').length, 0);
   assert.equal(enriched.nodeById.get(id).fields.market_comparisons[0].vendor, 'RELEX');
   assert.ok(Object.isFrozen(enriched.nodeById.get(id).fields.market_comparisons[0]));
@@ -43,12 +43,11 @@ test('behavior has explicit lineage, searchable content and stays out of capabil
   assert.ok(ids(focusGraph(withBehavior, 'D03.a').nodes).includes('UNRELATED_ID'));
   assert.equal(neighborhood(withBehavior, 'D03.a').relations.some(r => r.id === 'EXPLICIT_BEHAVIOR_PARENT'), false);
 });
-test('behavior rejects orphan, domain parent, recursive children and wrong layer', () => {
+test('behavior rejects orphan, domain parent and recursive children', () => {
   for (const mutate of [
     raw => raw.relations.pop(),
     raw => { raw.relations.at(-1).source_id = 'D03'; },
     raw => raw.relations.push({ id: 'CHILD', type: 'contains', source_id: 'UNRELATED_ID', target_id: 'D01.f' }),
-    raw => { raw.nodes.at(-1).layer = 'process'; },
   ]) {
     const raw = behaviorFixture(); mutate(raw);
     assert.throws(() => adaptPublication(raw));

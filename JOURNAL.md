@@ -1759,3 +1759,151 @@ Lecture YAML en une passe et cache borné par contenu, rapports compacts, restit
 ## 2026-09-19 — U433 : release 2026-09-19.1 publiée dans Atlas
 
 Révision 8 activée : 135 nœuds, 47 capacités, 74 comportements, 323 relations, 110 termes. 207 décisions transcrivent 469 champs déjà adoptés ; 36 décisions conservées automatiquement et 60 reprises anciennes suspendues restent traçables. Huit impacts de glossaire examinés ; Purchase Order inclut les prestations conformément à U391, avec statut lexical proposé conservé. Catalogue métier inchangé, zéro erreur de validation. L’index technique a été activé ; ses octets précédents sont conservés et vérifiés, ainsi que les 124 autres fichiers protégés inchangés. Serveur local démarré, API courante et ancienne publication contrôlées. Revue et preuves : audits/2026-09-19-release-U433/. Aucun commit ni push.
+
+## 2026-09-19 — U434/U435/U436 : audit profond et préparation V0
+
+Audit des 47 capacités, 74 comportements et relations ; comparaison de huit éditeurs et des cadres transverses, avec limites de preuve explicites. Corrections plausibles autorisées U435 : 36 fiches actualisées, 12 liens proposés ajoutés, 17 relations existantes libellées, 16 comparaisons en fiche ajoutées et cinq positions marché périmées corrigées. U436 réserve à Reservation le blocage des usages concurrents, sans cet effet pour l’affectation seule. Les 570 valeurs validées antérieurement sont préservées ; aucune nouvelle capacité ni comportement. Contrat des libellés et restitution Atlas corrigés, 79 tests uniques réussis, validation zéro erreur, build réussi et backlog régénéré. Les publications restent inchangées ; question du devenir des invendus consignés en attente et autres contrats complexes explicitement ouverts. Rapport final et preuves : audits/2026-09-19-audit-profond-v0/modifications.md. Aucun commit ni push.
+
+## 2026-09-19 — U437 : réexamen de la structuration D03
+
+Diagnostic ciblé des onze capacités de D03 et de leurs recouvrements de résultat, avec consultation des sources SAP, Microsoft et Oracle. Proposition de deux domaines Order Promising et Fulfillment Optimization, alternative à domaine unique et deux déplacements vers D04, soumis à Laurent comme choix complexes U435. Le catalogue garde ses noms et parents. Corrections éditoriales appliquées à D03 (autorisation portée par Lifecycle U420) et Supply Assignment (matérialisation des choix, décision collective D03.o U378) ; trois comparaisons proposées ajoutées à D03. Les 570 valeurs validées et leurs empreintes restent identiques. Contribution U437 indexée. Rapport : audits/2026-09-19-d03-U437/revue.md ; autorité des propositions : modeles/backlog/d03-domain-review-U437.yaml. Aucun changement de publication, commit ou push.
+
+## 2026-09-19 — U438 à U446 : deux domaines frères et responsabilités clarifiées
+
+U438 appliqué : D03 Fulfillment Optimization (quatre capacités), nouveau D15 Order Promising (cinq), Structuring et Archiving dans D04. U445 adopte Fulfillment Commitment sur D03.n ; identités et comportements antérieurs conservés. U439/U440/U442 : définition Structuring simplifiée, Grouping BHV086 et Merging BHV087 intégrés comme propositions étayées ; conditions détaillées ouvertes. U441/U443 distinguent engagement de satisfaction et affectation ; U436 reste inchangé. U446 : contrôle explicite, aucun domaine imbriqué, six domaines présentés directement sous Supply. Validation zéro erreur, quinze tests ciblés réussis ; 175 fichiers protégés inchangés. Rapport et preuves : audits/2026-09-19-d03-U437/modifications.md. Aucune release, commit ou push.
+
+## 2026-09-19 — U447 : ordre de lecture des référentiels aux optimisations
+
+Business References en premier, puis Order Management, Inventory Management, Process Management, Order Promising, Fulfillment Optimization et Inventory Optimization. Référentiels présentés dans l’ordre Product, Party / Role, Catalog, Agreement, Fulfillment Network, Service Catalog, avec Party / Role, Catalog et Agreement contigus. Permutation des relations presents et des nœuds domain/reference, sans modification du contenu des éléments, identifiants, parents ou accords. Restitution backlog alignée ; aucun changement frontend ni publication. Convention : modeles/backlog/reading-order-U447.yaml.
+
+## 2026-09-19 — U448 : release 2026-09-19.2 publiée dans Atlas
+
+Urbanisation v009 activée : 138 nœuds, six domaines frères, 47 capacités, 76 comportements, 338 relations et 110 termes. La publication intègre l’audit V0, la séparation Order Promising / Fulfillment Optimization, Fulfillment Commitment et l’ordre de lecture U447 ; Grouping, Merging et les nouvelles clarifications conservent leurs qualifications proposées. 72 décisions transcrivent 141 champs sur preuves historiques ou accords explicites U438/U445 ; 173 décisions compatibles sont reprises, sans étendre les validations. Impact de glossaire D03.o / TER078 examiné et compatible avec la portée U378.
+
+44 tests ciblés réussis, zéro erreur de validation, vues régénérées et frontend disponible. Le modèle et le glossaire servis par Atlas correspondent exactement au snapshot publié ; la version 2026-09-19.1 reste accessible et inchangée. 185 fichiers antérieurs de publication et de preuve vérifiés identiques ; ancien index capturé avant activation. Revue et vérification : [audits/2026-09-19-release-U448/revue.md](audits/2026-09-19-release-U448/revue.md). Aucun commit ni push.
+
+## 2026-09-19 — U449 : types, icônes et décisions en fin de domaine
+
+Les 47 capacités du backlog portent une nature : 17 action, 16 decision, sept management, quatre knowledge, deux planning et une orchestration. Les 37 valeurs existantes sont conservées ; dix compléments proposés et justifiés, sans modifier les champs adoptés. Convention MOD007 et grille dédiée ; appui méthodologique OMG DMN MKT43/ELM259/CMP169, sans taxonomie de marché revendiquée.
+
+Icônes Atlas associées au champ publié, type lisible, décisions placées après les autres capacités par partition stable. Séparation légère dans l’arbre, les cartes et les fiches ; aucun trait dans une liste homogène. Rangement du backlog aligné, comportements et relations métier conservés. Contrat de typage activé par un principe explicite, sans imposer de nouveau contenu aux publications historiques.
+
+28 tests Python, 58 tests frontend, validation sans erreur, compilation et contrôles visuels/clavier/mobile réussis. 230 fichiers protégés inchangés. Interface disponible après rechargement ; v009 reste active, les dix types complétés attendent une prochaine release. [Rapport](audits/2026-09-19-capability-types-U449/rapport.md). Aucun commit ni push.
+
+## 2026-09-19 — U450/U451 : présentation Atlas et formes de comportements
+
+Réserves, validations et sources internes retirées de la présentation. Deux glossaires, métier et méta modèle, avec défilement indépendant de la liste et de la définition. Bouton **Comprendre le méta modèle** et six repères rétablis par l’association explicite de l’édition méthodologique 2026-09-19.1 à v009. Ancienne édition conservée. Le workflow de publication capture et reporte l’association contrôlée pour éviter une nouvelle disparition du guide.
+
+Icônes spécifiques pour les capacités des référentiels ; sept formes et pictogrammes pour les comportements. Les 76 classements sont proposés dans le backlog, sur la grille retenue en U451. Ils attendent, avec les dix types U449, le choix de publication demandé à Laurent. La revue du candidat ne modifie aucun nom, définition ou rattachement ; 73 transcriptions contrôlées préservent 118 champs déjà approuvés sans adopter les types ajoutés.
+
+63 tests frontend réussis, contrôles Python ciblés et compilation réussis, validation modèle sans erreur, parcours navigateur desktop/mobile contrôlés. 231 fichiers historiques et preuves préservés. Serveur redémarré et identifié ; v009 sert toujours son snapshot exact. [Rapport détaillé](audits/2026-09-19-atlas-U450/rapport.md). Aucun commit ni push.
+
+## 2026-09-19 — U452 : publication des types dans Urbanisation v010
+
+Release `2026-09-19.3` publiée et activée à 07:41:05 UTC : 47 capacités et 76 comportements typés. Elle intègre les dix compléments U449 et les 76 formes U451, sans changement des noms, définitions, rattachements ou termes du glossaire. 172 décisions compatibles reprises et 73 transcriptions contrôlées de 118 champs identiques ; les nouveaux types restent proposés. L’association explicite à l’édition méthodologique 2026-09-19.1 est reportée : les six repères et les deux glossaires restent disponibles.
+
+Validation finale sans erreur, restitutions régénérées, API identique au candidat figé, navigateur vérifié sur les données réellement publiées. 242 fichiers antérieurs protégés et inchangés ; v009 reste consultable en version fixe. Serveur local existant conservé, aucun redémarrage nécessaire. [Rapport de release](audits/2026-09-19-release-U452/rapport.md). Aucun commit ni push Git.
+
+
+## 2026-09-19 — U458 : lancement du plan Atlas, premier jalon
+
+Lots 1 et 2 mis en œuvre : suppression de layer dans les 142 nœuds du backlog, compatibilité des publications historiques, filtres explicites de contenu métier, recherche nom/identifiant et glossaire, fiches à détails progressifs, relations directes par défaut et contrastes renforcés. Le simulateur de réalisations logicielles est retiré du guide. Noms, parents, cycles de validation et extrémités des relations conservés.
+
+Guide 2026-09-19.2 préparé en brouillon non associé à une publication ; terme TER086 Purchase Order Document proposé pour retrouver « bon de commande ». Cinq pilotes proposés dans information-pilots-U458.yaml ; suivi consolidé dans v0-readiness.yaml. La convention fait/document est soumise à Laurent, sans réponse présumée. Aucun maître, flux installé, droit de décision ou réservation automatique inventé.
+
+68 tests frontend, 33 tests Python ciblés, validation modèle sans erreur, compilation et parcours navigateur réussis. 291 fichiers de publication et de preuve vérifiés identiques. Interface locale disponible après rechargement ; v010 demeure la référence publiée. Modèle migré, terme lexical et nouveau guide attendent une publication distincte. Aucun commit ni push. [Bilan et preuves](audits/2026-09-19-plan-U458/rapport.md), [cinq pilotes](audits/2026-09-19-plan-U458/pilotes.md).
+
+
+## 2026-09-19 — U459 : overview des capacités et repères marché
+
+Infobulles des liens de capacités dans la carte : définition puis liste à puces des comportements issus des relations explicites, au survol et au focus. Rubrique « En quelques mots » retirée des deux glossaires ; anciens liens conservés par redirection vers la définition.
+
+Repères marché rétablis dans les fiches : rapprochement documenté, choix FLOW, différences, sources primaires et portée. Présentation dépliable et recherche sur les champs publics ; statuts et sources backlog restent internes. C107 corrige l’interprétation trop restrictive C106/U458, répercutée dans AGENTS.md, les conventions et le principe courant. Aucune comparaison réécrite ou qualification standard/innovant inventée ; couverture manquante explicite.
+
+69 tests frontend réussis, compilation et parcours navigateur desktop/clavier/mobile contrôlés ; validation zéro erreur et restitution backlog générée. 303 fichiers historiques protégés inchangés ; nœuds, relations et publication v010 inchangés. Interface disponible après rechargement, sans release ni commit/push. [Rapport](audits/2026-09-19-atlas-U459/rapport.md).
+
+## 2026-09-19 — U460/U461 : cinq pilotes approfondis, fait–document confirmé
+
+U461 confirme l’association de tout fait de gestion à un document métier identifié, éventuellement structuré sans PDF. Principe ajouté au backlog et contrôle conditionné à sa présence ; publications historiques conservées. V0-P01 résolu au niveau du principe, sans adoption des versions, corrections ou nombre exact de documents.
+
+Cinq fiches enrichies des responsabilités sur les informations et de quinze cas : sept frontières expliquées, huit suites métier ouvertes. Product Reference distingue autorité, émetteur, validité et fraîcheur ; Purchase Order illustre le document qui consigne une réception partielle. Quatre rapprochements Microsoft/GS1 ajoutés aux fiches, six contextes de glossaire explicités, nom Fulfillment Commitment corrigé dans une comparaison. Guide futur actualisé, suivi V0 consolidé ; aucune nouvelle entité canonique.
+
+Validation zéro erreur, 18 tests Python réussis (quatre relancés hors sandbox après un problème de droits temporaires Windows), guide et références contrôlés, restitution backlog générée. 142 nœuds, 346 relations et accords antérieurs préservés ; 303 fichiers historiques identiques. Relecture PO/expert encore à faire ; aucun lancement de release, commit, push ou serveur. [Rapport](audits/2026-09-19-pilotes-U460/rapport.md), [support des cinq pilotes](audits/2026-09-19-pilotes-U460/pilotes.md).
+
+## 2026-09-19 — U462 : marché, raisons des choix et exemples accessibles
+
+Onglet Marché & choix ajouté à Atlas, avec position FLOW et source primaire datée directement visibles ; vocabulaire et définition expliqués en tête lorsqu’ils sont documentés. Rubrique Exemples concrets placée après la définition, reprenant les passages explicites du snapshot et les exemples structurés. Anciens liens marché, navigation clavier, recherche et séparation publication/backlog préservés.
+
+Backlog : dix choix de terme/définition explicités, quatorze exemples structurés sur neuf fiches et trois rapprochements ajoutés (ELM286–288/CMP179–181). Écart SAP ARun/FLOW sur le blocage concurrent rendu explicite. Les 47 capacités disposent maintenant d’un exemple ; sept restent sans comparaison propre. Les autres lacunes sont listées sans réouverture globale de l’audit des comportements.
+
+77 tests frontend, 15 tests Python, validation zéro erreur, compilation et recette navigateur réussies. Définitions, 142 nœuds, 346 relations et accords préservés ; 303 fichiers historiques identiques. Interface disponible après rechargement ; contenus nouveaux dans le backlog, v010 reste publiée. Aucun commit, push, release ou changement serveur. [Rapport et couverture](audits/2026-09-19-contenu-U462/rapport.md).
+
+## 2026-09-19 — U463 : définition métier de l’univers Supply
+
+Supply Chain Orchestration se définit désormais par commandes, stocks, engagements, optimisation et pilotage de la réalisation. La qualification transactionnelle et la priorité d’exploration sont retirées de sa définition ; TER034/TER035 abandonnent la hiérarchie OMS/Supply. Deux rapprochements sourcés TOGAF/Microsoft et l’exemple U455 sont ajoutés à la fiche, sans changement de périmètre ni nouvelle validation implicite.
+
+U463/C108/CMP182 tracés, instructions et suivi alignés. Validation zéro erreur, 11 tests ciblés réussis, restitution backlog générée. Un nœud et deux termes modifiés ; 142 nœuds, 346 relations, noms et accords conservés. 303 fichiers historiques identiques. Atlas v010 inchangée ; nouvelle release nécessaire pour afficher ces contenus. [Rapport](audits/2026-09-19-definition-supply-U463/rapport.md).
+
+## 2026-09-19 — U464 : Information, recherche et définition proposée
+
+Recherche primaire ISO, SBVR, ORM, TOGAF et Guild. Information Concept et fait élémentaire distingués ; aucune définition normative unique assimilée au groupe minimal demandé. MOD012 Information proposé dans le méta modèle, avec sens, contexte, minimum utile aux capacités et frontière explicite avec les modèles implémentables. La granularité reste à éprouver sur les cinq pilotes ; la convention fait de gestion–document demeure distincte des faits de la logique.
+
+Brouillon du guide et suivi actualisés, U464/MKT51–53/ELM289–291/CMP183 tracés. Modèle métier, glossaire métier, schéma et publications inchangés. Validation zéro erreur, 17 tests du guide réussis et 1 ignoré pour les liens symboliques Windows ; contrôle direct du brouillon, des références et des 306 empreintes protégées réussi. Aucune publication ni changement UI. [Recherche et recommandation](audits/2026-09-19-information-U464/recherche.md).
+
+## 2026-09-19 — U465/U466 : informations métier éprouvées sur les cinq pilotes
+
+Quatorze fiches d’information proposées dans une annexe YAML : cinq pour l’achat, cinq pour la référence produit, deux pour la promesse, une pour l’affectation et une pour la réservation. Questions métier, sens, contexte minimal, frontières, 21 contributions de capacités et 15 liens qualifiés explicités. Quinze cas antérieurs repris et quatre exemples ajoutés ; les règles encore ouvertes restent visibles et la revue humaine reste à faire.
+
+U466 adopte deux informations reliées, proposition et engagement de satisfaction, pouvant coexister pendant un réexamen. Portée limitée à cette distinction ; autres découpages et rédactions proposés. Exemple ajouté à MOD012 et au brouillon du guide. Huit groupes de comparaison et CMP184 documentent les apports Microsoft, Oracle, GS1 et architecture, leurs écarts et les raisons des termes retenus. Candidats et revue U460 préservés, suivi V0 actualisé.
+
+Validation zéro erreur, 17 tests du guide réussis et un ignoré pour les liens symboliques Windows ; sources, rôles, liens et couverture contrôlés. 306 fichiers protégés identiques, dont modèle métier, glossaire métier, schéma et historique. Aucun nouveau nœud canonique, changement UI ou publication. Prochaine étape : contrat minimal et lecture des informations dans Atlas. [Rapport des cinq pilotes](audits/2026-09-19-informations-pilotes-U465/rapport.md).
+
+
+## 2026-09-19 — U467 : publication Urbanisation v011 pour essai
+
+Release `2026-09-19.4` publiée et activée avec le guide `2026-09-19.2` : retrait des couches, définition Supply corrigée, exemples et marché enrichis, Information et exemple proposition/engagement dans le méta modèle. 138 nœuds, 47 capacités, 76 comportements, 338 relations et 111 termes TER. Les quatorze fiches d’information U465 restent figées comme contexte, sans écran dédié.
+
+123 décisions reprises et 122 transcriptions contrôlées de 208 valeurs approuvées inchangées. Deux blocages de provenance corrigés sans altérer l’historique : portée des sources embarquées du guide et rattachement de notes générales aux nouvelles entrées marché. Validation zéro erreur, 24 tests de préparation/publication réussis (quatre repris hors sandbox Windows), six parcours navigateur réussis et API conforme au snapshot ; 301 fichiers historiques identiques. Serveur existant inchangé, aucun commit/push. [Rapport](audits/2026-09-19-release-U467/rapport.md).
+
+## 2026-09-19 — U468 : contrat et consultation des informations métier
+
+Lot 4 implémenté : 14 informations, 21 usages de capacités et 15 liens qualifiés intégrés dans `model.yaml#information_catalog`, sans nouveau niveau de hiérarchie. Fiches avec exemples et onglet Marché & choix, navigation depuis les capacités, recherche générale et locale, défilement indépendant et repli mobile. Les qualifications internes restent masquées ; les sources marché sont visibles. L’annexe U465 reste une preuve historique, sans second catalogue courant.
+
+Publication préparée depuis le même snapshot que le modèle, contrôle d’identité et de références, révisions automatiques et absence explicite dans les anciennes versions. Validation zéro erreur, 29 tests Python et 82 tests frontend réussis, build réussi, dix parcours navigateur isolés réussis. Rapport de préparation : aucun nœud ou lien de capacité modifié, 245 décisions conservées, aucune nouvelle ou suspendue. Les 368 fichiers historiques contrôlés sont inchangés. V011 reste courante ; aucune release, aucun commit/push ni administration serveur. Autorités et règles détaillées ouvertes préservées. [Rapport et captures](audits/2026-09-19-informations-atlas-U468/rapport.md).
+
+## 2026-09-19 — U469 : publication v012 pour revue de la base
+
+Priorité donnée à la consolidation de la base et aux retours pas à pas de Laurent ; extension et généralisation data/information mises en attente. État courant publié sans enrichissement dans v012 / `2026-09-19.5` : 138 nœuds, 47 capacités, 76 comportements et 338 relations inchangés ; 14 informations et 15 liens U468 existants désormais consultables. Guide `2026-09-19.2` repris par association explicite, glossaires inchangés. Les 245 décisions antérieures sont conservées, sans nouvel accord ni suspension.
+
+Validation zéro erreur, six parcours navigateur réels réussis, API identique au snapshot, 366 fichiers historiques protégés inchangés et anciennes associations conservées. Frontend U468 déjà construit et testé ; aucun changement de code dans cette release. Atlas disponible sur le port 8765, PID 24916 conservé sans redémarrage. Aucun commit ou push. [Rapport](audits/2026-09-19-release-U469/rapport.md).
+
+
+## 19 septembre 2026 — consolidation de la base U470/U471
+
+Univers Supply réécrit pour une lecture concrète : chaîne d’approvisionnement expliquée, projections des maîtres externes et ingestion, deux exemples, liens glossaire. Trois comparaisons du nom et du périmètre (CSCMP, Microsoft, Oracle). Reprise des 47 fiches à source unique : seconde référence primaire argumentée, 34 avec un autre organisme ou éditeur ; noms et définitions de ces fiches conservés. Règles éditoriales et contrôle de pluralité consignés.
+
+Catalogue Informations métier masqué dans Atlas sans suppression ; infobulles sur définition complète, répétitions identiques des positions marché retirées. 82 tests frontend, 30 tests Python, validation sans erreur, build et recette isolée réussis ; 432 fichiers historiques intacts. Le serveur sert le build actualisé et v012 reste la publication courante. Les contenus corrigés attendent une release distincte ; les accords des révisions enrichies restent à réexaminer, sans transcription automatique. [Rapport](audits/2026-09-19-base-U470/rapport.md).
+
+## 19 septembre 2026 — U472 : retrait de Business Services
+
+Univers vide `universe-case` et terme TER067 retirés du backlog ; aucune capacité ni relation à déplacer. Terme Case, deux principes et frontière de Process Tracking corrigés ; priorité Supply Chain puis commerce consignée, sans univers Commerce créé. U173 et les états antérieurs sont conservés, identifiants non réutilisables. Deux sources de contexte examinées et qualifiées dans CMP187, sans taxonomie de marché imposée.
+
+141 nœuds, 47 capacités, 76 comportements, 346 relations et 110 termes. Validation sans erreur, 12 tests réussis, contrôle du retrait ciblé et 519 fichiers historiques identiques. Restitution backlog régénérée ; v012 reste la publication Atlas, sans release implicite. [Rapport](audits/2026-09-19-business-services-U472/rapport.md).
+
+## 19 septembre 2026 — Atlas : barre haute compacte et signature secondaire
+
+Barre FLOW de 52 px avec fil d’Ariane et actions sur grand écran ; suppression de leur rangée au-dessus du titre. Logo Beaumanoir réduit à 76 px et placé près des statistiques dans le pied de l’arbre. Navigation mobile adaptée ; bandeau descriptif et onglets toujours fixes. Repères Carbon et Fluent documentés, médias d’origine préservés.
+
+Gain mesuré de 78 px de hauteur de contenu sur la vue univers desktop ; 10 à 14 px sur les deux petites tailles contrôlées. 82 tests frontend, 30 contrôles de défilement et recette de la barre sur cinq tailles réussis ; build actualisé. Aucune publication métier. [Rapport et captures](audits/2026-09-19-atlas-shell/rapport.md).
+
+## 19 septembre 2026 — U473 : publication v013 des retours de revue
+
+Release `2026-09-19.6` publiée et activée : univers Supply concret, projections externes et ingestion explicites, 47 fiches enrichies en références marché, Business Services et TER067 retirés. Interface compacte et bandeau fixe déjà construits disponibles ; consultation des informations masquée, catalogue interne inchangé. 137 nœuds, 47 capacités, 76 comportements, 338 relations et 110 termes. Guide `2026-09-19.2` repris par association explicite.
+
+204 décisions reprises automatiquement et 40 transcriptions après réexamen de 75 valeurs approuvées inchangées ; accord sur l’univers retiré conservé dans l’historique, sans validation nouvelle des compléments. Validation zéro erreur, API identique au snapshot, 120 fiches comparées avec au moins deux URL sources distinctes, huit parcours navigateur réussis. 430 fichiers historiques identiques ; modèle et glossaire du backlog préservés. Serveur disponible sur 8765 sans redémarrage, aucun commit/push. [Rapport et preuves](audits/2026-09-19-release-U473/rapport.md).
+
+## 19 septembre 2026 — contrôle du commit de consolidation
+
+Travaux accumulés du modèle Supply, d’Atlas et des publications jusqu’à v013 préparés pour le commit demandé. Suite complète : 144 tests Python du modèle réussis ; 40 tests du lecteur exécutés, dont 37 réussis et trois ignorés faute de création de liens symboliques Windows ; 82 tests frontend réussis. Validation, build et recette navigateur de l’état final déjà contrôlés lors des interventions et de la release.
+
+Deux fixtures de typage corrigées pour respecter le contrat historique des couches, import du test de pluralité marché compatible avec la découverte complète, dossiers temporaires `app/tmp*/` exclus de Git. Les tests de publication du guide ont été rejoués avec les droits Windows requis. Aucun code métier ou fichier publié modifié par ces corrections. Octets indexés identiques aux fichiers de travail ; les 64 espaces finaux de deux inventaires d’audit historiques sont conservés volontairement, sans reformater leurs preuves.

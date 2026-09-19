@@ -1,0 +1,49 @@
+source_refs:
+- U435
+- U436
+changes:
+- id: D01.f
+  collection: nodes
+- id: D01.g
+  collection: nodes
+- id: D01.c
+  collection: nodes
+- id: D02.c
+  collection: nodes
+- id: D02.e
+  collection: nodes
+- id: D03.k
+  collection: nodes
+- id: D03.l
+  collection: nodes
+- id: D03.m
+  collection: nodes
+- id: D06.b
+  collection: nodes
+- id: BHV003
+  collection: nodes
+- id: BHV045
+  collection: nodes
+- id: BHV046
+  collection: nodes
+- id: BHV047
+  collection: nodes
+- id: REL-NEEDS-U290-018
+  collection: relations
+- id: REL-NEEDS-U290-019
+  collection: relations
+- id: REL-NEEDS-U290-025
+  collection: relations
+- id: REL-NEEDS-U290-029
+  collection: relations
+- id: REL-NEEDS-U290-030
+  collection: relations
+principles_changed:
+- PRINCIPLE-SUPPLY-DOCUMENTS
+principles_added:
+- PRINCIPLE-RESERVATION-CONCURRENCY
+glossary_notes_changed:
+- TER016
+- TER017
+- TER078
+previous_validated_values_preserved: true

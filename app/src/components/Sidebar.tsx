@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type RefObject } from 'react';
 import { ChevronDown, ChevronRight, Search, X, PanelLeftClose, Compass, BookOpen, Lightbulb } from 'lucide-react';
 import type { AtlasNode, PublishedModel } from '../types';
-import { childrenOf, lineageOf, parentRelationOf, rootsOf, searchModel } from '../model';
-import { kindLabel, statusLabel } from '../presentation';
+import { childrenOf, lineageOf, parentRelationOf, rootsOf } from '../model';
+import { searchPublication, type SearchResult } from '../search';
+import { kindLabel } from '../presentation';
 import { NodeIcon } from '../icons';
+import { startsDecisionSection } from '../capabilityTypes';
 import { preference, savePreference, type RouteState } from '../navigation';
 
 interface Props {
@@ -11,14 +13,11 @@ interface Props {
   searchRef: RefObject<HTMLInputElement | null>;
   onClose: () => void; onNavigate: (id: string, focusHeading?: boolean) => void;
   onSearch: (changes: Partial<RouteState>) => void;
-  onOpenGlossary: () => void;
+  onOpenGlossary: (mode: 'model' | 'meta') => void;
+  onOpenTerm: (id: string) => void;
   onOpenPrinciples: () => void;
 }
-const lifecycleLabels: Record<string, string> = {
-  urbanist_validated: 'Validé par l’urbaniste', under_instruction: 'En instruction',
-  ai_proposed: 'Proposé par l’IA', rejected: 'Écarté', retired: 'Retiré',
-};
-export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavigate, onSearch, onOpenGlossary, onOpenPrinciples }: Props) {
+export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavigate, onSearch, onOpenGlossary, onOpenTerm, onOpenPrinciples }: Props) {
   const tree = useRef<HTMLDivElement>(null);
   const panel = useRef<HTMLElement>(null);
   const revealed = useRef('');
@@ -27,7 +26,7 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     return new Set(Array.isArray(saved) ? saved.filter(x => typeof x === 'string') : []);
   });
   const [focused, setFocused] = useState(route.node);
-  const searching = Boolean(route.query || route.type || route.status);
+  const searching = Boolean(route.query || route.type);
   useEffect(() => {
     const ancestors = lineageOf(model, route.node).map(n => n.id);
     setExpanded(previous => new Set([...previous, ...ancestors]));
@@ -90,10 +89,10 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     if (event.key === 'ArrowLeft') expanded.has(node.id) && ids.length ? toggle(node.id, false) : focus(parentRelationOf(model, node.id)?.sourceId);
     if (event.key === 'Enter' || event.key === ' ') onNavigate(node.id, mobile);
   };
-  const renderNode = (node: AtlasNode, depth: number) => {
+  const renderNode = (node: AtlasNode, depth: number, decisionStart = false) => {
     const children = childrenOf(model, node.id);
     const isExpanded = expanded.has(node.id);
-    return <li key={node.id} role="treeitem" data-tree-id={node.id} aria-label={`${node.name} · ${kindLabel(node)}`}
+    return <li key={node.id} role="treeitem" data-tree-id={node.id} className={decisionStart ? 'decision-section-start' : undefined} aria-label={`${node.name} · ${kindLabel(node)}`}
       aria-level={depth} aria-expanded={children.length ? isExpanded : undefined} aria-selected={route.node === node.id}
       tabIndex={tabStop === node.id ? 0 : -1}
       onFocus={e => e.target === e.currentTarget && setFocused(node.id)} onKeyDown={e => keydown(e, node)}>
@@ -105,30 +104,34 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
         <span className="tree-label" title={`${node.id} · ${kindLabel(node)}`}>{node.name}</span>
         {children.length > 0 && <small>{children.length}</small>}
       </div>
-      {children.length > 0 && isExpanded && <ul role="group">{children.map(child => renderNode(child, depth + 1))}</ul>}
+      {children.length > 0 && isExpanded && <ul role="group">{children.map((child, index) => renderNode(child, depth + 1, startsDecisionSection(children, index)))}</ul>}
     </li>;
   };
-  const matches = searchModel(model, route.query).filter(n => (!route.type || n.kind === route.type) && (!route.status || n.status === route.status || n.lifecycle?.state === route.status));
+  const results: SearchResult[] = route.query.trim() ? searchPublication(model, route.query)
+    : route.type === 'glossary' ? model.glossary.map(term => ({ id: term.id, kind: 'glossary', name: term.name, excerpt: '', score: 0, term }))
+    : model.nodes.map(node => ({ id: node.id, kind: 'model', name: node.name, excerpt: '', score: 0, node }));
+  const matches = results.filter(result => !route.type || (result.kind !== 'model' ? route.type === result.kind : result.node?.kind === route.type));
   const kinds = [...new Set(model.nodes.map(n => n.kind))];
-  const statuses = [...new Set(model.nodes.flatMap(n => [n.status, ...(n.lifecycle?.state ? [n.lifecycle.state] : [])]))];
   return <aside ref={panel} id="atlas-tree-panel" className={`sidebar ${open ? 'open' : ''}`} aria-label="Navigation du modèle" aria-modal={mobile && open ? true : undefined} role={mobile && open ? 'dialog' : undefined}>
-    <div className="sidebar-heading"><div><span className="section-kicker">EXPLORER LE MODÈLE</span><button className="root-link" onClick={() => onNavigate('')}><Compass size={22} />Urbanisation</button></div>
+    <div className="sidebar-heading"><button className="root-link" onClick={() => onNavigate('')}><Compass size={20} />Urbanisation</button>
       <button className="drawer-close" aria-label="Fermer l’arbre" onClick={onClose}><PanelLeftClose size={20} /></button></div>
-    <button className="glossary-nav" onClick={onOpenGlossary} aria-current={route.view === 'glossary' ? 'page' : undefined}><BookOpen size={19}/>Glossaire</button>
-    <button className="glossary-nav principles-nav" onClick={onOpenPrinciples} aria-current={route.view === 'principles' ? 'page' : undefined}><Lightbulb size={19}/>Les clés du modèle</button>
     <div className="search-box"><Search size={17} /><input ref={searchRef} id="fa-search" aria-label="Rechercher dans le modèle publié" placeholder="Un nom, une idée, un repère…" value={route.query} onChange={e => onSearch({ query: e.target.value })} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); panel.current?.querySelector<HTMLButtonElement>('[data-search-result]')?.focus(); }
       if (e.key === 'Escape') onSearch({ query: '', type: '', status: '' });
     }} />{searching ? <button aria-label="Effacer la recherche et les filtres" onClick={() => onSearch({ query: '', type: '', status: '' })}><X size={14} /></button> : <kbd>Ctrl K</kbd>}</div>
     <div className="search-filters">
-      <select id="fa-type" aria-label="Type d’élément" value={route.type} onChange={e => onSearch({ type: e.target.value })}><option value="">Tous les types</option>{kinds.map(kind => <option key={kind} value={kind}>{kindLabel(model.nodes.find(n => n.kind === kind)!) === 'Univers' ? 'Groupes et niveaux' : kindLabel(model.nodes.find(n => n.kind === kind)!)}</option>)}</select>
-      <select id="fa-status" aria-label="Qualification" value={route.status} onChange={e => onSearch({ status: e.target.value })}><option value="">Tous les statuts</option>{statuses.map(status => <option key={status} value={status}>{lifecycleLabels[status] || statusLabel({ status } as AtlasNode)}</option>)}</select>
+      <select id="fa-type" aria-label="Type d’élément" value={route.type} onChange={e => onSearch({ type: e.target.value })}><option value="">Tous les types</option>{kinds.map(kind => <option key={kind} value={kind}>{({ capability: 'Capacités', behavior: 'Comportements', domain: 'Domaines', reference: 'Référentiels', group: 'Univers et groupes', object: 'Objets métier', document: 'Documents', event: 'Événements' } as Record<string, string>)[kind] || kind}</option>)}<option value="glossary">Termes du glossaire</option></select>
     </div>
-    {searching ? <div className="search-results" aria-label="Résultats de recherche"><p role="status">{matches.length} résultat{matches.length > 1 ? 's' : ''}</p>{matches.map(node => <button key={node.id} data-search-result={node.id} onClick={() => onNavigate(node.id, true)} onKeyDown={e => {
+    {searching ? <div className="search-results" aria-label="Résultats de recherche"><p role="status">{matches.length} résultat{matches.length > 1 ? 's' : ''}</p>{matches.map(result => <button key={`${result.kind}:${result.id}`} data-search-result={result.id} onClick={() => result.kind === 'glossary' ? onOpenTerm(result.id) : onNavigate(result.id, true)} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); (e.currentTarget.nextElementSibling as HTMLElement)?.focus(); }
       if (e.key === 'ArrowUp') { e.preventDefault(); const previous = e.currentTarget.previousElementSibling; previous?.tagName === 'BUTTON' ? (previous as HTMLElement).focus() : searchRef.current?.focus(); }
-    }}><NodeIcon node={node} size={20} framed /><span><strong>{node.name}</strong><small>{lineageOf(model, node.id).slice(0, -1).map(n => n.name).join(' / ') || kindLabel(node)} · {node.id}</small></span></button>)}{!matches.length && <p>Aucun élément ne correspond dans cette publication.</p>}</div>
+    }}>{result.node ? <NodeIcon node={result.node} size={20} framed /> : <BookOpen size={22}/>}<span><strong>{result.name}</strong><small>{result.node ? `${kindLabel(result.node)} · ${lineageOf(model, result.id).slice(0, -1).map(n => n.name).join(' / ')}` : 'Terme du glossaire'} · {result.id}</small>{result.excerpt && <span className="search-excerpt">{result.excerpt}</span>}</span></button>)}{!matches.length && <p>Aucun élément ne correspond dans cette publication.</p>}</div>
       : <div className="model-tree" ref={tree} role="tree" aria-label="Arbre d’urbanisation"><ul role="group">{rootsOf(model).filter(n => !['object','document','event'].includes(n.kind)).map(n => renderNode(n, 1))}</ul></div>}
-    <div className="sidebar-bottom"><span className="live-dot" /><span>{model.nodes.length} éléments · {model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}<br /><small>Publier ne vaut pas valider.</small></span></div>
+    <nav className="sidebar-help" aria-label="Aide à la lecture">
+      <button className="glossary-nav" onClick={() => onOpenGlossary('model')} aria-current={route.view === 'glossary' && route.glossary !== 'meta' ? 'page' : undefined}><BookOpen size={17}/>Glossaire métier</button>
+      <button className="glossary-nav" onClick={() => onOpenGlossary('meta')} aria-current={route.view === 'glossary' && route.glossary === 'meta' ? 'page' : undefined}><BookOpen size={17}/>Glossaire du méta modèle</button>
+      <button className="glossary-nav principles-nav" onClick={onOpenPrinciples} aria-current={route.view === 'principles' ? 'page' : undefined}><Lightbulb size={17}/>Comprendre le méta modèle</button>
+    </nav>
+    <div className="sidebar-bottom"><div className="sidebar-stats"><span>{model.nodes.length} éléments</span><span>{model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}</span></div><img className="beaumanoir-source-logo" src="/assets/beaumanoir-original.png" width="1564" height="605" alt="Groupe Beaumanoir" /></div>
   </aside>;
 }

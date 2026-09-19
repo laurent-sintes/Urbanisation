@@ -1,0 +1,20 @@
+{
+  "protected_files_unchanged": 231,
+  "behavior_types_added": 76,
+  "counts": {
+    "decision_dimension": 7,
+    "planning_practice": 3,
+    "intervention_mechanism": 13,
+    "business_effect": 13,
+    "business_scope": 7,
+    "policy_strategy": 11,
+    "process_variant": 22
+  },
+  "previous_fields_and_approvals_unchanged": true,
+  "relations_unchanged": true,
+  "business_release_unchanged": "2026-09-19.2",
+  "api_matches_frozen_snapshot": true,
+  "guide_version": "2026-09-19.1",
+  "guide_available": true,
+  "server_pid": 24916
+}

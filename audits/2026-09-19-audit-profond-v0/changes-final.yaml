@@ -1,0 +1,318 @@
+source_refs:
+- U435
+- U436
+nodes:
+- id: D01
+  change: updated
+  changed_fields:
+  - definition
+  - scope
+- id: D01.f
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D01.g
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D01.c
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D02.b
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D02.c
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D03
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D02.e
+  change: updated
+  changed_fields:
+  - scope
+- id: D03.i
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D03.k
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D03.l
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D03.m
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D04.i
+  change: updated
+  changed_fields:
+  - scope
+- id: D04.k
+  change: updated
+  changed_fields:
+  - scope
+- id: D05
+  change: updated
+  changed_fields:
+  - scope
+- id: D05.d
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D05.c
+  change: updated
+  changed_fields:
+  - scope
+- id: D05.f
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D06.b
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D07.b
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: D06.e
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: BHV003
+  change: updated
+  changed_fields:
+  - scope
+- id: D03.n
+  change: updated
+  changed_fields:
+  - market_comparisons
+- id: BHV045
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV046
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV047
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV060
+  change: updated
+  changed_fields:
+  - market_comparisons
+  - scope
+- id: D01.h
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV063
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV064
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV065
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV070
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV071
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV072
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV073
+  change: updated
+  changed_fields:
+  - scope
+- id: BHV074
+  change: updated
+  changed_fields:
+  - scope
+relations:
+- id: REL-EXECUTION-TRACKING-ORCHESTRATION
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-EXECUTION-ADAPTATION-ORCHESTRATION
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-012
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-017
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-018
+  change: updated
+  changed_fields:
+  - fields
+  - qualification
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-019
+  change: updated
+  changed_fields:
+  - fields
+  - qualification
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-025
+  change: updated
+  changed_fields:
+  - fields
+  - qualification
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-029
+  change: updated
+  changed_fields:
+  - fields
+  - qualification
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-030
+  change: updated
+  changed_fields:
+  - fields
+  - qualification
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-102
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U290-103
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U378-07
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U385-SUPPLIER-RETURN
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U391-DIRECT-SALES
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-NEEDS-U424-D03.p-D04.o
+  change: updated
+  changed_fields:
+  - fields
+  - lifecycle
+  - review
+  - source_refs
+- id: REL-AUDIT-U435-PLNK-01
+  change: added
+- id: REL-AUDIT-U435-PLNK-02
+  change: added
+- id: REL-AUDIT-U435-PLNK-03
+  change: added
+- id: REL-AUDIT-U435-PLNK-04
+  change: added
+- id: REL-AUDIT-U435-PLNK-05
+  change: added
+- id: REL-AUDIT-U435-PLNK-06
+  change: added
+- id: REL-AUDIT-U435-CONSIGNED-LIFECYCLE
+  change: added
+- id: REL-AUDIT-U435-CONSIGNED-STRUCTURING
+  change: added
+- id: REL-AUDIT-U435-ARCHIVING-CONSIGNED
+  change: added
+- id: REL-AUDIT-U435-CONSIGNED-TRACKING
+  change: added
+- id: REL-AUDIT-U435-CONSIGNED-PURCHASE
+  change: added
+- id: REL-AUDIT-U435-CONSIGNED-SUPPLIER-RETURN
+  change: added
+principles:
+- id: PRINCIPLE-SUPPLY-DOCUMENTS
+  change: updated
+  changed_fields:
+  - source_refs
+  - statement
+- id: PRINCIPLE-RESERVATION-CONCURRENCY
+  change: added
+recorded_at: '2026-09-19T00:55:22.737470Z'
+model_before_sha256: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+model_after_sha256: bc6331a9e199a4723199f39b26ceb3e94ab5caded35e4075fd91d8054acd7347
+previous_validated_values_preserved: 570
+old_nodes_removed: []
+old_relations_removed_or_reoriented: []
+capability_count: 47
+behavior_count: 74

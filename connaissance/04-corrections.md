@@ -2326,3 +2326,94 @@ Codex a recommandé puis enregistré la non-décomposition de Consignment Replen
 **correction**
 
 U397 remplace la conclusion U396. Décrire les comportements métier attendus de l’Order ; une mise en œuvre commune ou l’appui sur une capacité transverse ne justifie pas leur omission. Distinguer le sens du parcours visible dans D04 des décisions et autres responsabilités mobilisées. La lisibilité des intentions et résultats métier constitue un bénéfice ciblé de décomposition. Conserver la maille Mécanisme/Politique/Variante/Bénéfice et ne pas déduire une décomposition exhaustive en opérations produit. Aucun nom ou comportement précis nouvellement proposé n’est validé par cette correction.
+
+## C105
+
+**id**
+
+C105
+
+**sources**
+
+U455, U453, U454
+
+**constat**
+
+L’audit UX recommandait d’expliquer les couches transactionnelle/processus comme un axe du méta modèle, notamment pour distinguer Process Management de Business Services. Il prolongeait le principe historique PRINCIPLE-TWO-LAYERS.
+
+**correction**
+
+U455 retire cet axe métier. Univers et domaines coopèrent autour d’intentions, engagements, informations et réalisations ; les processus peuvent traverser ces responsabilités sans constituer une couche supérieure. Conserver les différences entre décision, coordination, application et réalisation physique. L’exemple Commerce/Supply/logistique n’adopte pas de nouveaux parents, noms ou capacités ; Business Services ne devient pas Commerce par déduction. L’identifiant du principe retiré et ses sources sont conservés dans domain-interactions-U455-U456.yaml. Les marqueurs layer et contrôles hérités restent un travail de migration technique identifié, sans valeur de justification métier. Aucun constat d’origine SAP de cette séparation n’est établi.
+
+## C106
+
+**id**
+
+C106
+
+**sources**
+
+U456, U453, U454
+
+**constat**
+
+L’audit proposait des liens depuis les informations métier vers des modèles de données, contrats techniques et réalisations de solution, ainsi qu’un accès aux comparaisons produits dans la fiche Atlas.
+
+**correction**
+
+Atlas reste strictement métier. Retirer ces vues et liens de la proposition. Objets, structure conceptuelle métier, autorités, sources d’alimentation métier, documents, faits et règles restent pertinents ; schémas d’implémentation, applications et produits logiciels relèvent de dossiers distincts. Ces dossiers peuvent citer Atlas, sans extension symétrique de son périmètre. Les comparaisons éditeurs restent une justification interne ; aucun effacement de leur provenance ou des publications historiques. La distinction concerne les produits logiciels, pas les produits/articles du métier Supply.
+
+
+## C107
+
+**id**
+
+C107
+
+**sources**
+
+U459, U456, U458, C106
+
+**constat**
+
+Codex a interprété le périmètre métier d’Atlas comme imposant de masquer toutes les comparaisons marché. Cette extension a retiré les repères permettant d’expliquer les proximités, différences et appuis méthodologiques ou produits.
+
+**correction**
+
+U459 remplace cette partie de C106 : les références marché, leur portée, le positionnement FLOW et les sources primaires externes doivent être visibles dans Atlas. Le périmètre reste métier ; une référence comparative à un produit ne constitue ni un catalogue d’applications, ni un choix de solution, ni une preuve installée. Conserver les statuts de revue, réserves internes et liens vers le backlog hors affichage. Un recouvrement partiel ne devient pas conformité à un standard ; une comparaison absente ne devient pas innovation. Ne pas étendre les accords de contenu par le rétablissement de l’affichage.
+
+## C108
+
+**id**
+
+C108
+
+**sources**
+
+U463, U455, U456, U373, CMP182
+
+**constat**
+
+Le retrait du champ layer en U458 a laissé la définition de universe-supply comme « Univers du pilotage transactionnel de la Supply ». TER035 définissait encore Supply comme une couche et TER034 plaçait OMS au-dessus. Ces formulations courantes contredisaient U455.
+
+**correction**
+
+Décrire l’univers par les responsabilités de ses domaines et remplacer la hiérarchie OMS/Supply dans les deux termes. Conserver le nom Supply Chain Orchestration adopté U373, les identifiants, parents, responsabilités et accords antérieurs. Ajouter les raisons de définition et de vocabulaire, deux rapprochements sourcés et l’exemple de coopération U455 sur la fiche de l’univers. La rédaction reste proposée ; U463 n’adopte pas les nouvelles phrases par anticipation. Les sources historiques, captures avant modification et publications sont conservées. Correction ciblée du périmètre et de la hiérarchie, sans effacement des termes techniques documentés ni attribution de leur origine à SAP.
+
+## C109
+
+**id**
+
+C109
+
+**sources**
+
+U472, U173, CMP187
+
+**constat**
+
+Business Services restait un univers vide adopté en U173, accompagné du terme TER067 et de textes annonçant sa construction future. U472 demande sa suppression et diffère l’étude du commerce après la Supply Chain.
+
+**correction**
+
+Retirer universe-case et TER067 du backlog courant, sans univers de remplacement ni déplacement de capacités. Neutraliser le rattachement du terme Case (TER064), corriger les deux principes qui citaient cet univers et la frontière de Process Tracking (BHV082). Conserver les responsabilités Supply, les 346 relations du backlog, les définitions validées des capacités/comportements et leurs accords. Consigner la priorité dans PRINCIPLE-SUPPLY-FIRST, les conventions et la feuille de route. L’accord U173 est remplacé dans cette portée, sans suppression des preuves antérieures ; identifiants non réutilisables. Les annexes datées et publications demeurent historiques. État avant correction : audits/2026-09-19-business-services-U472/before/. Aucun catalogue Commerce ni publication implicite.

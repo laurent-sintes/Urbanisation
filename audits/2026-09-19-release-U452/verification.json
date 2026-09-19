@@ -1,0 +1,32 @@
+{
+  "version": "2026-09-19.3",
+  "revision": 10,
+  "source_path": "modeles/release/2026-09-19.3/model.yaml",
+  "descriptor": "urbanisation-v010-2026-09-19-074105.yaml",
+  "model_sha256": "295bbe9549e5d1e2bb2c2e6ebf4604a64d445a3d67fc4745a7f07c360bb4f5c0",
+  "protected_files_unchanged": 242,
+  "api_matches_frozen_candidate": true,
+  "prior_names_definitions_relations_glossary_unchanged": true,
+  "new_types_remain_proposed": true,
+  "previous_publication_accessible": true,
+  "guide_version": "2026-09-19.1",
+  "guide_association_preserved": true,
+  "capability_types": {
+    "knowledge": 4,
+    "action": 17,
+    "management": 7,
+    "decision": 16,
+    "planning": 2,
+    "orchestration": 1
+  },
+  "behavior_types": {
+    "decision_dimension": 7,
+    "planning_practice": 3,
+    "intervention_mechanism": 13,
+    "business_effect": 13,
+    "business_scope": 7,
+    "policy_strategy": 11,
+    "process_variant": 22
+  },
+  "server_pid": 24916
+}

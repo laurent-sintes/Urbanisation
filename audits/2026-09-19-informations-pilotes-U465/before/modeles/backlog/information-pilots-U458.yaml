@@ -1,0 +1,527 @@
+id: INFORMATION-PILOTS-U458
+as_of: '2026-09-19'
+status: document_principle_confirmed_pilot_details_proposed
+source_refs:
+- U61
+- U384
+- U391
+- U403
+- U436
+- U443
+- U445
+- U453
+- U455
+- U456
+- U458
+- U459
+- U460
+- U461
+- U464
+scope: Cinq cas pilotes internes du lot 3. Synthèses proposées des responsabilités courantes, exemples fictifs et informations
+  candidates ; aucune autorité installée, cardinalité, nouvelle entité canonique ou validation globale déduite. Product Reference
+  est un référentiel, examiné avec sa capacité d’ingestion, et non une capacité renommée.
+source_of_truth: modeles/backlog/model.yaml
+tracking: modeles/backlog/v0-readiness.yaml
+publication: Aucune ; le lecteur Atlas reste lié à son snapshot.
+conventions:
+  established:
+  - Une capacité, l’objet métier homonyme et un document qui l’exprime restent distincts.
+  - Les référentiels Supply sont des projections ; les autorités sont extérieures à Supply.
+  - Seule Reservation bloque les usages concurrents ; affectation et promesse ne la créent pas implicitement.
+  - Une information ou un fait n’est pas un sous-comportement.
+  - Tout fait de gestion est associé à un document métier identifié, éventuellement structuré sans PDF (U461). Versions, correction
+    et nombre exact de documents restent à préciser.
+  proposed_minimum_information_card:
+  - Sens et exemple métier.
+  - Identité et maille utiles ; cardinalités seulement lorsqu’elles sont établies.
+  - Informations essentielles et relations avec d’autres notions.
+  - Responsabilités qui consultent, établissent, modifient ou constatent.
+  - États, effets et règles utiles à la compréhension.
+  - Pour une projection, autorité métier, alimentation, validité et fraîcheur utiles.
+  excluded: Schémas de tables, contrats API, messages techniques, produits et applications.
+  information_definition_proposal:
+    term_ref: MOD012
+    analysis_ref: modeles/backlog/information-definition-U464.yaml
+    status: proposed_not_applied_to_all_candidates
+    rule: Éprouver la maille des informations candidates par leur sens et leurs usages. Product, Order ou un dossier entier
+      ne sont pas déclarés insécables par défaut. Les candidats existants restent conservés, sans nouveau nœud canonique.
+pilots:
+- id: PILOT-PURCHASE
+  node_ref: D04.j
+  glossary_refs:
+  - TER070
+  - TER086
+  source_refs:
+  - U384
+  - U391
+  - U403
+  - U436
+  - U460
+  - U461
+  result: Maintenir les attentes d’achat et expliquer ce qui reste à satisfaire.
+  responsibilities:
+  - Distinguer ce qui est demandé au fournisseur, sa réponse et les conditions acceptées.
+  - Conserver biens ou prestations, quantités ou unités, destinations et échéances applicables.
+  - Rapprocher les résultats reçus avec les attendus de la commande.
+  boundaries:
+  - Order Lifecycle Management conserve les évolutions du cycle de vie.
+  - Order Structuring conserve scission, regroupement et fusion ; Order Archiving la conservation.
+  - Service Reconciliation qualifie les résultats des prestations ; Inventory Management tient les mouvements de stock.
+  - La négociation contractuelle, la finance et la réalisation physique ne sont pas absorbées.
+  information_candidates:
+  - name: Purchase Order
+    role: Objet commande, distinct de la capacité ; référence lexicale TER070.
+    essentials:
+    - Parties et rôles
+    - Biens ou prestations attendus
+    - Quantités et unités
+    - Destinations
+    - Échéances
+    - Conditions applicables
+    granularity: Attendus ou lignes ; plusieurs parcours peuvent coexister. Identité des lignes et cardinalités à éprouver.
+  - name: Supplier Commitment
+    role: Réponse puis engagement fournisseur accepté ; distinct de la demande et de notre promesse client.
+    essentials:
+    - Quantités
+    - Dates
+    - Conditions
+    - Lien avec les attendus concernés
+    granularity: Proposition conceptuelle ; aucun second objet canonique créé.
+  - name: Purchase Order Document
+    role: Bon de commande exprimant le contenu de la commande à un moment donné ; proposition lexicale TER086.
+    granularity: Aucune règle de version, signature, immutabilité ou cardinalité nouvelle.
+  - name: Receipt Fact
+    role: Fait de réception associé à un document métier identifié, à rapprocher de l’attendu (convention U461).
+    essentials:
+    - Quantité et unité constatées
+    - Attendu concerné
+    - Moment du constat
+    - Écart expliqué
+    - Document métier associé identifié
+    granularity: Exemple métier, pas un message ni un nouveau nœud.
+  - name: Receipt Document
+    role: Document identifié qui consigne la réception ; peut être structuré sans PDF.
+    essentials:
+    - Référence du document
+    - Constat de réception consigné
+    - Attendus concernés
+    granularity: Exemple candidat du pilote ; pas un nouveau nœud. Identité, version, correction et nombre exact de documents
+      à instruire.
+  example: 100 pièces demandées vendredi ; le fournisseur propose 60 vendredi et 40 mardi. Accepter sa réponse ne révise pas
+    automatiquement la promesse client. Lorsque 60 pièces sont réellement reçues, le constat explique les 40 restantes, sans
+    confondre confirmation fournisseur et réalisation. Le fait « 60 pièces reçues » est associé au document de réception identifié
+    REC-EXEMPLE-01, sous forme structurée dans cet exemple ; ce document ne remplace ni le bon de commande ni l’engagement
+    fournisseur.
+  open_items:
+  - V0-P03
+  resolved_items:
+  - V0-P01
+  information_responsibilities:
+  - information: Attendus d’achat
+    node_ref: D04.j
+    role: Établit et maintient
+    boundary: Biens ou prestations, quantités, échéances et reste à satisfaire.
+    status: proposed_reading_of_current_model
+  - information: Résultats de prestation et écarts
+    node_ref: D07.c
+    role: Rapproche et qualifie
+    boundary: Transmet les faits utiles à Purchase Order ; ne se substitue pas à la réception physique.
+    status: proposed_reading_of_current_model
+  - information: Document de réception associé au fait
+    node_ref: D04.j
+    role: Utilise pour le rapprochement
+    boundary: Porteur de production et règles de correction du document à préciser ; aucune propriété exclusive déduite.
+    status: proposed_reading_of_current_model
+- id: PILOT-PRODUCT
+  node_ref: D08
+  capability_ref: D08.d
+  glossary_refs:
+  - TER052
+  - TER057
+  - TER058
+  - TER059
+  result: Mettre à disposition de Supply des références produit communes, reçues de leurs autorités externes.
+  responsibilities:
+  - Recevoir et projeter les références Product et Product Variant.
+  - Préserver la distinction avec Product Unit, exemplaire physique individuel.
+  - Distinguer une référence produit du catalogue qui la propose.
+  boundaries:
+  - Aucune administration implicite de maître produit dans Supply.
+  - Aucun PIM, ERP, propriétaire Beaumanoir ou flux installé supposé.
+  information_candidates:
+  - name: Product Reference
+    role: Projection d’informations de référence, à relier à leur origine métier.
+    essentials:
+    - Identité Product
+    - Déclinaisons Product Variant
+    - Rôle Article ou Container
+    - Identifiants applicables
+    granularity: Product, Product Variant et Product Unit conservent leurs sens du glossaire ; aucune nouvelle clé technique.
+  - name: Reference Origin
+    role: Informations de provenance métier de la projection, sans nouveau maître dans Supply.
+    essentials:
+    - Autorité déclarée sur le contenu
+    - Source qui le transmet
+    - Contexte concerné
+    granularity: Attributs conceptuels à éprouver ; ni application ni identité d’acteur réelle supposée.
+  - name: Reference Validity
+    role: Situer le contenu dans le temps et son contexte d’usage.
+    essentials:
+    - Validité applicable lorsqu’elle est connue
+    - Moment de réception
+    - Fraîcheur requise selon l’usage
+    granularity: Aucun champ technique obligatoire, seuil universel ou stratégie de conflit imposé.
+  projection:
+    authority: Extérieure à Supply ; responsabilité métier précise non établie dans ce pilote.
+    feeding_source: Information transmise par une autorité ou un relais à identifier ; ne pas assimiler automatiquement émetteur
+      et autorité.
+    context: Sens, périmètre et validité des références utilisées par les commandes et les opérations.
+    freshness: Ancienneté de l’information disponible par rapport au besoin métier. Recevoir maintenant une ancienne description
+      ne la rend pas récente ; aucun délai universel ni arrêt automatique des commandes adopté.
+    contradiction: 'Exemple à instruire : une même déclinaison est reçue avec deux caractéristiques contradictoires. Qui fait
+      autorité, qui arbitre et quel usage reste permis pendant la résolution ?'
+    missing_information: Distinguer une référence inconnue d’une indisponibilité physique. Le comportement opérationnel permis
+      en cas de référence absente reste à déterminer par usage.
+    validity: Période ou contexte dans lequel la caractéristique vaut ; distinct du moment de réception de l’information.
+  example: Une commande mentionne une déclinaison taille M. Supply utilise la référence reçue pour la reconnaître ; elle ne
+    crée pas pour autant une nouvelle définition maîtresse du produit.
+  open_items:
+  - V0-P02
+  source_refs:
+  - U460
+  - ELM280
+  - ELM281
+  - ELM282
+  - CMP175
+  - CMP176
+  - CMP177
+  information_responsibilities:
+  - information: Product / Product Variant
+    node_ref: D08.d
+    role: Reçoit et actualise la projection
+    boundary: L’autorité sur les maîtres reste externe.
+    status: proposed_reading_of_current_model
+  - information: Référence produit utile à l’achat
+    node_ref: D04.j
+    role: Consulte
+    boundary: La dépendance publiée ne constitue pas une preuve de flux installé.
+    status: proposed_reading_of_current_model
+- id: PILOT-COMMITMENT
+  node_ref: D03.n
+  result: Proposer, confirmer et réviser les quantités, dates et conditions de satisfaction.
+  source_refs:
+  - U441
+  - U443
+  - U445
+  - U436
+  - U460
+  responsibilities:
+  - Rendre distincts demande initiale, proposition et engagement confirmé.
+  - Mobiliser les décisions de faisabilité et d’échéancier sans refaire leurs arbitrages.
+  boundaries:
+  - Ne choisit pas une seconde fois l’échéancier ; ne modifie pas généralement le contenu de l’Order.
+  - Aucun mouvement physique ni réservation automatique.
+  information_candidates:
+  - name: Fulfillment Commitment
+    role: Engagement de satisfaction ; le nom est aussi celui d’une capacité, sans identité entre les deux notions.
+    essentials:
+    - Commande concernée
+    - Quantités
+    - Dates
+    - Conditions
+    - Distinction proposition et confirmation
+    granularity: Les engagements peuvent exprimer des parts de satisfaction ; identités et cardinalités à préciser.
+  example: Pour 100 pièces demandées vendredi, proposer 60 vendredi et 40 lundi. Remplacer une ressource affectée peut préserver
+    cet engagement si ses conditions restent tenues.
+  open_items:
+  - V0-P03
+  - V0-A02
+  information_responsibilities:
+  - information: Proposition et engagement de satisfaction
+    node_ref: D03.n
+    role: Propose, confirme et révise
+    boundary: Quantités, dates et conditions distinctes de la demande ; autorisations détaillées à préciser.
+    status: proposed_reading_of_current_model
+- id: PILOT-ASSIGNMENT
+  node_ref: D02.e
+  glossary_refs:
+  - TER078
+  result: Maintenir les ressources retenues pour des commandes identifiées.
+  source_refs:
+  - U345
+  - U364
+  - U436
+  - U443
+  - U460
+  responsibilities:
+  - Matérialiser les affectations retenues et leurs modifications autorisées.
+  - Mobiliser les décisions spécialisées qui déterminent les choix.
+  boundaries:
+  - Une affectation ne bloque pas les usages concurrents.
+  - Gel de modification, réservation de ressource et engagement de satisfaction ont des effets distincts.
+  information_candidates:
+  - name: Supply Assignment
+    role: Lien métier entre ressource et commande ; résultat maintenu par la capacité homonyme.
+    essentials:
+    - Commande concernée
+    - Ressource retenue
+    - Quantité
+    - Conditions temporelles applicables
+    granularity: Aucun objet technique ni identité de ligne imposés ; la maille dépend des ressources et commandes du cas.
+  example: Remplacer l’affectation de 40 pièces de l’arrivage A par celle de l’arrivage B sans changer la promesse.
+  open_items:
+  - V0-A02
+  information_responsibilities:
+  - information: Lien ressource–commande
+    node_ref: D02.e
+    role: Établit et modifie selon choix autorisé
+    boundary: Ne bloque pas les usages concurrents ; ne choisit pas à nouveau le plan.
+    status: proposed_reading_of_current_model
+- id: PILOT-RESERVATION
+  node_ref: D02.c
+  result: Donner effet à un engagement de quantité dont les usages concurrents doivent tenir compte.
+  source_refs:
+  - U436
+  - U460
+  responsibilities:
+  - Établir l’engagement de ressource pour le besoin identifié.
+  - Le rendre opposable aux usages concurrents selon la frontière adoptée.
+  boundaries:
+  - Un droit exclusif peut précéder l’affectation d’un lot précis.
+  - Ne pas déduire expiration, consommation, libération ou déclenchement automatique.
+  information_candidates:
+  - name: Reservation
+    role: Engagement portant sur la ressource ; distinct de la promesse de satisfaction et de l’affectation.
+    essentials:
+    - Besoin bénéficiaire
+    - Quantité
+    - Périmètre de ressource concerné
+    - Conditions applicables
+    granularity: Les droits et leur évolution restent à qualifier ; aucun mécanisme de concurrence technique.
+  example: Une réservation de 40 pièces exclut leur usage concurrent même si le lot précis sera affecté ultérieurement.
+  open_items:
+  - V0-A01
+  - V0-A06
+  information_responsibilities:
+  - information: Engagement de ressource opposable
+    node_ref: D02.c
+    role: Établit
+    boundary: Effet de blocage concurrent adopté ; détails de libération et de consommation ouverts.
+    status: proposed_reading_of_current_model
+scenario:
+  qualification: Exemple pédagogique fictif ; pas un workflow universel ni des flux installés.
+  steps:
+  - Commerce exprime une intention de 100 pièces vendredi.
+  - Supply détermine les possibilités ; Fulfillment Commitment propose 60 vendredi et 40 lundi.
+  - Une réponse est confirmée selon les autorisations applicables, encore à préciser.
+  - Supply Assignment matérialise les ressources retenues. Leur usage concurrent reste possible tant qu’aucune réservation
+    ne le bloque.
+  - Reservation peut établir le droit opposable ; son déclenchement n’est pas réputé automatique.
+  - Les prestations attendues sont adressées aux responsabilités de réalisation concernées, sans confondre attente et réalisation.
+  - Les constats et écarts alimentent le rapprochement des prestations et des commandes, chacun dans sa responsabilité.
+  exceptions:
+  - Un refus fournisseur n’efface pas la demande et ne restaure aucune capacité physique.
+  - Un retard conduit à réexaminer les engagements ; il ne les modifie pas automatiquement.
+  - Une réception partielle explique le restant à satisfaire sans devenir une nouvelle promesse.
+market_support:
+  inherited: CMP171, CMP173 et CMP174 documentent le niveau conceptuel des informations et la frontière métier retenue par
+    Laurent.
+  checked_2026_09_19:
+  - url: https://learn.microsoft.com/fr-fr/dynamics365/supply-chain/procurement/procurement-sourcing-overview
+    observed: Commandes, confirmation, programmes de livraison et constats de réception sont distingués dans la documentation
+      produit ; le terme bon de commande est employé.
+    flow_interpretation: Appui lexical et exemples d’informations utiles ; ni import du module ERP ni équivalence entre document
+      et capacité.
+  - url: https://archimate-community.pages.opengroup.org/workgroups/archimate-101/
+    observed: Le tutoriel communautaire distingue l’information conceptuelle utile à l’activité et les structures applicatives.
+    flow_interpretation: Appui à une description métier transverse ; ne prescrit pas le lien obligatoire fait/document propre
+      à FLOW.
+    limit: Tutoriel non normatif et antérieur à ArchiMate 4 ; aucune obligation de couches FLOW n’en est déduite.
+  - url: https://pubs.opengroup.org/architecture/archimate4-doc/chap08.html
+    limit: Redirection vers authentification ; chapitre non consulté, aucune conclusion nouvelle attribuée à ArchiMate 4.
+  current_refs:
+  - CMP175
+  - CMP176
+  - CMP177
+  - CMP178
+  - ELM283
+  - ELM284
+  scope_U461: Le document de réception Microsoft illustre le lien fait–document ; ni ce cas ni le tutoriel ArchiMate ne rendent
+    la convention FLOW universelle.
+review_U460:
+  qualification: Quinze cas fictifs analysés sur les responsabilités courantes ; revue documentaire Codex, pas recette PO/expert
+    ni validation humaine. Les suites ouvertes restent explicitement visibles.
+  cases:
+  - id: CASE-01
+    pilot: PILOT-PURCHASE
+    title: Réception partielle documentée
+    given: 100 pièces attendues ; 60 réellement reçues.
+    reading: Le document REC-EXEMPLE-01 consigne le fait de réception ; le rapprochement explique 40 restantes.
+    boundary: Une confirmation fournisseur ne constitue pas une réception.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U391
+    - U461
+  - id: CASE-02
+    pilot: PILOT-PURCHASE
+    title: Réponse fournisseur différente de la demande
+    given: 100 vendredi demandées ; réponse de 60 vendredi et 40 mardi.
+    reading: Demande, réponse et conditions acceptées restent distinguées ; la promesse client ne change pas automatiquement.
+    boundary: Qui accepte une révision et comment l’identifier restent à qualifier.
+    status: business_rule_open
+    open_items:
+    - V0-P03
+    source_refs:
+    - U391
+    - U443
+  - id: CASE-03
+    pilot: PILOT-PURCHASE
+    title: Achat d’une prestation
+    given: Une prestation achetée est annoncée terminée ; un écart est constaté.
+    reading: Purchase Order conserve l’attendu d’achat ; Service Reconciliation qualifie le résultat. Le fait de gestion est
+      associé à un document identifié.
+    boundary: Ne pas transformer une prestation en quantité de stock ; le document métier exact reste à qualifier.
+    status: business_rule_open
+    open_items:
+    - V0-P03
+    source_refs:
+    - U391
+    - U461
+  - id: CASE-04
+    pilot: PILOT-PRODUCT
+    title: Une variante dans deux catalogues
+    given: Un tee-shirt bleu M est proposé dans deux catalogues ; deux exemplaires physiques sont présents.
+    reading: Une même référence de variante peut servir aux offres ; les deux exemplaires restent deux Product Units.
+    boundary: Ni identité individuelle déduite du catalogue, ni fusion d’exemplaires.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U191
+    - U193
+    - U202
+  - id: CASE-05
+    pilot: PILOT-PRODUCT
+    title: Deux descriptions contradictoires
+    given: Deux sources transmettent des caractéristiques incompatibles pour la même référence.
+    reading: Distinguer autorité métier et émetteur rend la question visible ; le pilote ne choisit pas le gagnant.
+    boundary: Aucun écrasement automatique par le dernier message ni arbitrage maître confié à Supply.
+    status: business_rule_open
+    open_items:
+    - V0-P02
+    source_refs:
+    - U134
+    - U460
+  - id: CASE-06
+    pilot: PILOT-PRODUCT
+    title: Information reçue récemment mais ancienne
+    given: Une description datée de lundi est reçue vendredi pour un usage samedi.
+    reading: Réception, validité et fraîcheur utile sont trois questions distinctes ; il faut qualifier l’usage.
+    boundary: Aucune durée de fraîcheur ni autorisation de poursuivre inventée.
+    status: business_rule_open
+    open_items:
+    - V0-P02
+    source_refs:
+    - U460
+  - id: CASE-07
+    pilot: PILOT-COMMITMENT
+    title: Proposition sans confirmation
+    given: 60 vendredi et 40 lundi sont proposés pour une demande de 100 vendredi.
+    reading: Les possibilités et la proposition n’établissent pas seules un engagement confirmé.
+    boundary: La confirmation ne produit pas implicitement une réservation.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U441
+    - U443
+    - U436
+  - id: CASE-08
+    pilot: PILOT-COMMITMENT
+    title: Changement de ressource à conditions constantes
+    given: L’arrivage B remplace A avec les mêmes quantités, dates et conditions de satisfaction.
+    reading: L’affectation change ; l’engagement de satisfaction peut rester identique.
+    boundary: La compatibilité des conditions doit être vérifiée ; aucune nouvelle autorisation générale déduite.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U443
+  - id: CASE-09
+    pilot: PILOT-COMMITMENT
+    title: Retard sans changement de ressource
+    given: La même ressource reste affectée, mais un retard compromet la date promise.
+    reading: Le retard appelle le réexamen de l’engagement, sans effacer la demande ni modifier automatiquement la promesse.
+    boundary: L’autorité qui accepte ou refuse la révision reste à préciser.
+    status: business_rule_open
+    open_items:
+    - V0-P03
+    source_refs:
+    - U443
+  - id: CASE-10
+    pilot: PILOT-ASSIGNMENT
+    title: Affectation sans réservation
+    given: 40 pièces d’un arrivage sont affectées à la commande A ; B les demande aussi.
+    reading: L’affectation seule ne donne pas à A un droit opposable à B.
+    boundary: La politique d’arbitrage reste distincte ; ne pas annoncer une disponibilité physique garantie.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U436
+  - id: CASE-11
+    pilot: PILOT-ASSIGNMENT
+    title: Affectation gelée
+    given: Une modification de l’affectation est interdite dans le scénario.
+    reading: Le gel protège la modification du lien ; il ne devient pas une réservation de ressource.
+    boundary: Le gel n’interdit pas à lui seul tout usage concurrent.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U364
+    - U436
+  - id: CASE-12
+    pilot: PILOT-ASSIGNMENT
+    title: Plan recalculé
+    given: Un nouveau plan recommande de remplacer A par B.
+    reading: La recommandation et son application aux liens ressource–commande restent distinctes.
+    boundary: Les conditions de prise en compte et les effets sur les Orders sont à préciser.
+    status: business_rule_open
+    open_items:
+    - V0-A02
+    source_refs:
+    - U443
+  - id: CASE-13
+    pilot: PILOT-RESERVATION
+    title: Quantité réservée sans lot individuel
+    given: 40 pièces d’un périmètre de ressource sont réservées ; le lot précis n’est pas encore affecté.
+    reading: La réservation peut être opposable avant la désignation d’un lot précis.
+    boundary: Pas d’affectation physique ni de mouvement de stock déduits.
+    status: boundary_explained
+    open_items: []
+    source_refs:
+    - U436
+  - id: CASE-14
+    pilot: PILOT-RESERVATION
+    title: Échéance dépassée
+    given: Une réservation existe ; l’échéance demandée est dépassée.
+    reading: Il faut une règle explicite pour décider du maintien, de l’expiration ou de la libération.
+    boundary: Aucune libération automatique déduite de la seule date.
+    status: business_rule_open
+    open_items:
+    - V0-A01
+    - V0-A06
+    source_refs:
+    - U436
+  - id: CASE-15
+    pilot: PILOT-RESERVATION
+    title: Commande annulée
+    given: L’annulation d’une commande bénéficiant d’une réservation est demandée.
+    reading: Distinguer autorisation d’annulation, évolution de la commande et devenir de l’engagement de ressource.
+    boundary: Le devenir de la réservation et ses conditions d’application restent à préciser.
+    status: business_rule_open
+    open_items:
+    - V0-A01
+    - V0-A02
+    - V0-A06
+    source_refs:
+    - U436
+  next_step: 'Relire les cinq fiches avec PO et expert ; instruire V0-P02/P03 et les règles ciblées sans bloquer la description
+    des frontières déjà établies. Lot 4 : contrat minimal et navigation des informations, sans généralisation anticipée.'

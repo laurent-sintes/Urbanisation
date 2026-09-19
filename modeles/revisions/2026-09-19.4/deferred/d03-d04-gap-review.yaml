@@ -1,0 +1,119 @@
+id: GAP-REVIEW-D03-D04-U160
+date: '2026-09-14'
+source_refs:
+- U160
+- U161
+- U162
+- U163
+- U214
+- U215
+state: under_instruction
+analysis_path: marche/d03-d04-capacites-manquantes.md
+candidates:
+- name: Order Prioritization
+  domain: D03
+  state: adopted
+  definition: Établir et réviser les priorités relatives des commandes.
+  gap: Priorités utilisées dans les capacités existantes, mais aptitude à les arbitrer non explicite.
+  boundary: D01 protège des ressources ; PTP compare économiquement des solutions. Une priorité peut répondre à un engagement,
+    une urgence ou un service et ne se réduit pas au coût.
+  source_refs:
+  - U160
+  - U161
+  - U162
+  - U163
+  review_note: U163 valide le nom et la définition précisée après U161/U162. Intégration dans D03 sous D03.m. Finalité et
+    nature du nœud sont des compléments proposés. Les dates, le contenu et tout le Backlog Refinement ne sont pas absorbés
+    dans cette capacité.
+  active_node_id: D03.m
+- name: Backlog Assessment
+  domain: D03
+  state: ai_proposed
+  definition: Évaluer la situation du carnet et diagnostiquer les causes de non-couverture ou de non-respect des engagements,
+    pour identifier les commandes et contraintes à traiter.
+  gap: Diagnostic collectif de la situation de référence non explicite.
+  boundary: Les capacités D04 par type fournissent état et reliquat depuis U214 ; Simulation mesure les impacts globaux. L’analyse
+    des causes utilise ces données sans les recréer.
+- name: Order Qualification
+  domain: D04
+  state: withdrawn
+  definition: Établir si une commande contient les informations et conditions nécessaires à sa prise en charge Supply, et
+    qualifier ce qui manque ou empêche sa prise en charge.
+  gap: Enregistrement ne décrit pas explicitement ce résultat ; peut être une précision de Order Registration.
+  boundary: Ne recrée pas validation de données maîtresses, autorisation commerciale, qualification de client ou calcul de
+    promesse. Source SAP apporte surtout la complétude, pas preuve de toute cette définition.
+  source_refs:
+  - U160
+  - U161
+  review_note: 'Candidat retiré à la suite de U161 : vérifier les conditions nécessaires est ici un principe général de contrôle
+    des processus, sans aptitude métier distincte démontrée. La définition initiale est conservée comme historique de proposition.'
+- name: Order Structuring
+  domain: D04
+  state: adopted
+  definition: Organiser les Orders Supply et leurs éléments en scindant, regroupant ou répartissant des ordres, lignes et
+    quantités entre échéances ou destinations, selon les décisions autorisées, tout en conservant leur origine et leurs liens.
+  gap: Aptitude désormais explicite dans le découpage D04 adopté U214.
+  boundary: Le choix de fractionnement dans le temps appartient à Delivery Schedule Decision ; la matérialisation de lignes/relations
+    relève de D04. Plusieurs échéances n’imposent pas plusieurs Orders ; la logistique peut porter certains regroupements.
+  source_refs:
+  - U160
+  - U161
+  - U212
+  - U214
+  - U215
+  review_note: U214 remplace la recommandation de conserver Order Revision. Nom et responsabilité courte adoptés ; définition
+    détaillée U215 proposée. Historique conservé.
+  history_before_U214:
+    name: Order Structuring
+    domain: D04
+    state: under_instruction
+    definition: Décomposer ou regrouper les éléments d’une commande selon les décisions autorisées, en conservant origine,
+      quantités et liens entre les éléments résultants.
+    gap: Travail explicite de structure à examiner ; peut relever de Order Revision plutôt que d’une capacité distincte.
+    boundary: Le choix de fractionnement dans le temps appartient à Delivery Schedule Decision ; la matérialisation de lignes/relations
+      relève de D04. Plusieurs échéances n’imposent pas plusieurs Orders ; la logistique peut porter certains regroupements.
+    source_refs:
+    - U160
+    - U161
+    review_note: Laurent constate un recouvrement avec Order Revision et laisse le nom ouvert. Codex recommande de conserver
+      Order Revision, plus large que la modification de structure, et de traiter Structuring comme illustration de sa portée.
+      Aucun renommage ni élargissement validé.
+  active_node_id: D04.n
+- name: Fulfillment Release Decision
+  domain: D03/D07 boundary unresolved
+  state: ai_proposed
+  definition: Décider si une commande ou un ensemble de lignes peut être lancé vers l’exécution, compte tenu de sa couverture
+    et des conditions de réalisation.
+  gap: Distinguer promesse confirmée et autorisation opérationnelle de lancement.
+  boundary: Candidat de frontière uniquement ; vérifier couverture D07 et responsabilité externe logistique. Ne pas confondre
+    release check SAP, publication de plan Oracle, sortie de stock ou release du modèle.
+  review_note_U214: Order Lifecycle Management D04.o porte désormais l’autorisation de progression des Orders Supply. Ce candidat
+    historique n’est pas ajouté en doublon ; le recouvrement et les responsabilités d’exécution restent à instruire.
+covered_or_to_clarify:
+- topic: Annulation, suspension et reprise d’Order
+  existing: Order Lifecycle Management (D04.o)
+  note: U214 adopte le regroupement ; règles par type et effets d’exécution à instruire. Order Revision est retirée du découpage
+    actif.
+- topic: Réaffectation et libération des ressources
+  existing: Supply Assignment
+  note: Déjà présentes dans la définition.
+- topic: Ajuster les promesses
+  existing: Promise Revision
+  note: Déjà explicite.
+- topic: Mesurer les impacts globaux
+  existing: Simulation en cours d’instruction U159
+  note: Ne pas la compter comme nouveau manque de cette recherche.
+limitations: Sources produit principalement centrées ventes et lignes de réalisation. Applicabilité achat/transfert/retour
+  à éprouver ; aucun déploiement Beaumanoir établi. Les noms proposés ne sont pas déclarés natifs ni validés. U214 adopte
+  le nouveau découpage local ; cette adoption ne prouve aucune équivalence native de marché. États U160/U162 conservés comme
+  historique.
+method_review:
+  source_refs:
+  - U161
+  - U162
+  principle: Décrire les aptitudes durables de l’entreprise indépendamment de son organisation et de ses outils ; ne pas transformer
+    les étapes ou contrôles nécessaires à un processus en catalogue de capacités/services.
+  backlog_refinement: Activité explicitement distinguée d’une capacité par Laurent ; peut mobiliser plusieurs aptitudes sans
+    imposer leur séquence ni créer une capacité homonyme.
+  remaining_candidates: Backlog Assessment et Fulfillment Release Decision restent proposés par Codex, sans arbitrage utilisateur
+    dans U161/U162.

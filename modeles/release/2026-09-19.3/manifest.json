@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.3",
+  "model_path": "model.yaml",
+  "model_sha256": "295bbe9549e5d1e2bb2c2e6ebf4604a64d445a3d67fc4745a7f07c360bb4f5c0",
+  "input_revision_path": "../../revisions/2026-09-19.3/backlog.yaml",
+  "input_revision_sha256": "a4fb48c70dbadddb84d12355817ea0c0b67269ed86d448fc13fcb018c88ff5b8",
+  "decisions_path": "../../decisions/2026-09-19.3.json",
+  "decisions_sha256": "5cace872c970754a7439be79f8b59f3dadbdc81de0074c75ab312918f83417fe",
+  "provenance_path": "../../provenance/2026-09-19.3/source-records.json",
+  "provenance_sha256": "0a3f85eb4798e3edf930a50b41ad22df86dd738c09d5850705b1af8c440cd5d7",
+  "source_files": [
+    {
+      "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "sha256": "f97059898b77d92f1a860ef73d7142557888b4bea8904b3f264f17b4f855ad05"
+    },
+    {
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "sha256": "72b3a85717f8391fc0c6591b0eb8f2d928d1e90bdec6e455fdf11b1fce337ed6"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "e3e3ec1c7be319d29af82bcbad4beab3c59d746c5e7b17ee20cc870fc09bf188"
+    },
+    {
+      "path": "connaissance/05-propositions.md",
+      "sha256": "4ec2a903af2c14744ba8b2e83ba18acf8a7042126dcc480121774f28ab6c6a16"
+    },
+    {
+      "path": "app/model-metadata.json",
+      "sha256": "89ffdbf46ce58660b9e167863ea9f474976bb8f048fb9c52b53e612a5d5a6c11"
+    },
+    {
+      "path": "app/exploration.json",
+      "sha256": "0bbedd273956ff6de141ea22055d62466330fea26e6efe6b27b718e121e784a6"
+    },
+    {
+      "path": "connaissance/32-execution-orchestration.md",
+      "sha256": "1411d217c2d7fe648a5120fdaddf949b2124706bbcb7d4dafd1517864f65b20f"
+    },
+    {
+      "path": "connaissance/33-frontieres-ctp.md",
+      "sha256": "f59fd90ca23c929accbd8cb4f8d9342e5e71662274cb81f84d6ad5b06111c35d"
+    },
+    {
+      "path": "connaissance/34-comportements-atp.md",
+      "sha256": "aabc8b95eee8215a65b9229e83d2002c57061798ea60cf342262f7948fbe80e9"
+    }
+  ],
+  "node_count": 138,
+  "capability_count": 47,
+  "complete_capability_count": 0,
+  "changes_path": "changes.json",
+  "changes_sha256": "5e1c7a6ba2388f959b336604e34080943bc79de19caf1392fed18a08911845e8",
+  "prepared_manifest_sha256": "d8762138844645b4b3a871c02799c88e6213f384b2399b831d99b7d0290c2983",
+  "note": "Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques."
+}

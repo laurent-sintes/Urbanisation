@@ -1,0 +1,171 @@
+source: U435
+recorded_at: '2026-09-19T00:53:50.647703Z'
+added_relation_ids:
+- REL-AUDIT-U435-PLNK-01
+- REL-AUDIT-U435-PLNK-02
+- REL-AUDIT-U435-PLNK-03
+- REL-AUDIT-U435-PLNK-04
+- REL-AUDIT-U435-PLNK-05
+- REL-AUDIT-U435-PLNK-06
+- REL-AUDIT-U435-CONSIGNED-LIFECYCLE
+- REL-AUDIT-U435-CONSIGNED-STRUCTURING
+- REL-AUDIT-U435-ARCHIVING-CONSIGNED
+- REL-AUDIT-U435-CONSIGNED-TRACKING
+- REL-AUDIT-U435-CONSIGNED-PURCHASE
+- REL-AUDIT-U435-CONSIGNED-SUPPLIER-RETURN
+labels_added:
+- id: REL-NEEDS-U424-D03.p-D04.o
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D03.p
+  target_id: D04.o
+  label: Mobilise les transitions autorisées des Orders
+- id: REL-NEEDS-U378-07
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D02.e
+  target_id: D03.o
+  label: Applique les affectations du scénario retenu
+- id: REL-NEEDS-U290-012
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D03.n
+  target_id: D03.i
+  label: Établit la promesse à partir des disponibilités
+- id: REL-NEEDS-U290-017
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D03.n
+  target_id: D03.l
+  label: Construit la promesse selon l’échéancier retenu
+- id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D06.f
+  target_id: BHV023
+  label: Fournit les impacts justifiant un réexamen de promesse
+- id: REL-EXECUTION-TRACKING-ORCHESTRATION
+  before_revision: 2
+  after_revision: 3
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D07.d
+  target_id: D06.d
+  label: Fournit les faits utiles à la coordination
+- id: REL-EXECUTION-ADAPTATION-ORCHESTRATION
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D06.f
+  target_id: D06.d
+  label: Fournit la variation retenue à coordonner
+- id: REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D07.a
+  target_id: D07.b
+  label: Fournit les prestations requises à solliciter
+- id: REL-NEEDS-U290-102
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D05.f
+  target_id: D04.j
+  label: Met en action les apports achetés retenus
+- id: REL-NEEDS-U290-103
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: D05.f
+  target_id: D04.k
+  label: Met en action les transferts retenus
+- id: REL-NEEDS-U385-SUPPLIER-RETURN
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: BHV052
+  target_id: D04.m
+  label: Mobilise le renvoi fournisseur pour la suite du retour client
+- id: REL-NEEDS-U391-DIRECT-SALES
+  before_revision: 1
+  after_revision: 2
+  fields_changed:
+  - fields.label
+  - source_refs
+  - review.note
+  - lifecycle
+  - last_modified
+  source_id: BHV059
+  target_id: D04.i
+  label: Aligne la livraison fournisseur sur l’attendu client
+existing_qualifications_changed: []
+avoided_U436_relation_ids:
+- REL-NEEDS-U290-018
+- REL-NEEDS-U290-019
+- REL-NEEDS-U290-025
+- REL-NEEDS-U290-029
+- REL-NEEDS-U290-030
+adoption_created: false
+publication_created: false
+before_sha256: c1c00ec8c88331d9104532928b55633cb874ba35024cef23735715857b48c53f
+after_sha256: f0173f1ccdf6ed85a3ff8c5008ae821171855fec06edb88f141f856994ec400f

@@ -1,0 +1,2491 @@
+audit_id: AUDIT-MARCHE-EDITEURS-V0-20260919
+date: '2026-09-19'
+status: proposed_not_validated
+authority: Annexe de preuve pour audit ; aucun catalogue modèle concurrent et aucune adoption implicite.
+scope: 8 éditeurs, 27 éléments officiels et 16 axes ; diversité de rôles, pas exhaustivité produit ou du marché.
+compared_model:
+  path: modeles/backlog/model.yaml
+  version: 2026-09-13.3
+  as_of: '2026-09-17'
+  sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+  state: backlog courant, non publié par cet audit
+evidence_counts:
+  vendors: 8
+  unique_urls_attempted: 27
+  full_text_opened: 23
+  documentation_course_or_technical_announcement: 15
+  solution_presentation: 7
+  expert_article: 1
+  indexed_passages_only: 4
+  comparisons: 27
+  axes: 16
+  capabilities_in_matrix: 47
+  capabilities_with_proposed_comparison: 41
+methodology:
+- marche/methode.md
+- CONVENTIONS-MODELE.md sections 2–5
+- AGENTS.md
+limitations:
+- Le volet couvre fonctions documentées et frontières du backlog ; il ne prouve aucune réalisation Beaumanoir.
+- Sarenza reste non évalué ; les scénarios proposés sont fictifs.
+- IBM et un passage SAP sont limités aux extraits officiels indexés après échec de lecture complète.
+- Manhattan, Blue Yonder, RELEX et o9 apportent surtout présentations et articles officiels ; aucun algorithme ni résultat
+  installé confirmé.
+- Ce volet ne revalide pas exhaustivement chaque comparaison historique ni chaque condition contractuelle éditeur.
+- L’absence d’un nom ou d’un champ ne prouve pas un manque fonctionnel ; les écarts distinguent description, interface et
+  responsabilité.
+- Aucun P0 ni nouveau domaine nécessaire établi par ce volet marché. Les P1 concernent la préparation de la présentation V0.
+- La clôture historique U431 reste préservée ; ceci répond à une nouvelle demande d’audit, sans modifier son registre.
+references:
+- id: MKT-V0-01
+  name: SAP S/4HANA aATP / Retail / Fashion
+  organization: SAP
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Promesse, protection, réexamen collectif et release B2B/fashion
+  version: S/4HANA ; éditions détaillées par source
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+  - https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+  - https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  content_actually_consulted:
+  - ELM-V0-01
+  - ELM-V0-02
+  - ELM-V0-03
+- id: MKT-V0-02
+  name: Oracle Fusion Cloud SCM / Order Management / Global Order Promising
+  organization: Oracle
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Sourcing, coûts de promesse, retours et compensation
+  version: 26A, 26B et 26C selon document
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/set-up-promising-rules-and-sourcing-rules-for-order-management.html
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/compensate-sales-orders-that-change.html
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/don-t-refund-lines-that-you-return-to-your-customer.html
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/overview-of-database-centric-order-promising.html
+  content_actually_consulted:
+  - ELM-V0-04
+  - ELM-V0-05
+  - ELM-V0-06
+  - ELM-V0-07
+  - ELM-V0-08
+- id: MKT-V0-03
+  name: Dynamics 365 SCM / Commerce / Intelligent Order Management
+  organization: Microsoft
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: DOM, réservation, calendrier, consignation et intercompany
+  version: Documentation évolutive ; versions détaillées par source
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+  - https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  - https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/setup-fulfillment-source-calendar
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/supplier-requested-confirmed-dates
+  - https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/08/19/cross-legal-entity-fulfillment-dynamics-365/
+  content_actually_consulted:
+  - ELM-V0-09
+  - ELM-V0-10
+  - ELM-V0-11
+  - ELM-V0-12
+  - ELM-V0-13
+  - ELM-V0-14
+  - ELM-V0-15
+  - ELM-V0-16
+- id: MKT-V0-04
+  name: IBM Sterling Order Management
+  organization: IBM
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Scheduling, règles de fulfillment et alertes
+  version: Documentation SaaS évolutive ; édition exacte non établie pour les passages retenus
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://www.ibm.com/docs/en/order-management?topic=shipped-scheduling-shipment-order-order-line
+  - https://www.ibm.com/docs/en/order-management?topic=components-defining-fulfillment-rules
+  - https://www.ibm.com/docs/en/order-management?topic=features-order-hub
+  content_actually_consulted:
+  - ELM-V0-17
+  - ELM-V0-18
+  - ELM-V0-19
+- id: MKT-V0-05
+  name: Manhattan Active Order Management
+  organization: Manhattan
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Sourcing, arbitrage des coûts et retours omnicanaux
+  version: Page produit évolutive, sans édition affichée
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/optimized-fulfillment-sourcing
+  - https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/returns-management
+  content_actually_consulted:
+  - ELM-V0-20
+  - ELM-V0-21
+- id: MKT-V0-06
+  name: Order Promising & Optimization / Smart Disposition / Allocation & Replenishment
+  organization: Blue Yonder
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Promesse, routage retour et cycle de stock retail
+  version: Pages produit et FAQ évolutives, sans édition affichée
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://blueyonder.com/solutions/order-management-and-commerce/order-promising-and-optimization
+  - https://blueyonder.com/solutions/returns-management/smart-disposition
+  - https://info.blueyonder.com/retail-planning-category-management/what-is-blue-yonder-allocation-replenishment
+  content_actually_consulted:
+  - ELM-V0-22
+  - ELM-V0-23
+  - ELM-V0-24
+- id: MKT-V0-07
+  name: Retail forecasting, replenishment and merchandising planning
+  organization: RELEX
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Prévisions externes, implantation, réassort et fin de vie
+  version: Pages explicatives évolutives, sans édition logicielle affichée
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://www.relexsolutions.com/resources/ai-driven-retail-forecasting-and-replenishment/
+  - https://www.relexsolutions.com/resources/which-capabilities-to-prioritize-when-implementing-merchandising-systems/
+  content_actually_consulted:
+  - ELM-V0-25
+  - ELM-V0-26
+- id: MKT-V0-08
+  name: Multi-Echelon Inventory Optimization
+  organization: o9
+  nature: documentation et présentation de produits, pas catalogue universel de capacités
+  intended_role: Cibles réseau, risque et scénarios de stock
+  version: Page solution évolutive sans édition affichée
+  consulted_on: '2026-09-19'
+  access_and_reuse: Synthèses originales et liens uniquement ; aucun droit de redistribution intégrale établi.
+  status: consulted_not_adopted
+  official_sources:
+  - https://o9solutions.com/solutions/supply-chain-planning/multi-echelon-inventory-optimization-docs
+  content_actually_consulted:
+  - ELM-V0-27
+external_elements:
+- id: ELM-V0-01
+  reference_id: MKT-V0-01
+  native_id: null
+  native_label: Exploring Backorder Processing
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: BOP réexamine confirmations, priorités et quantités des commandes de vente et de transfert ; les stratégies
+    autorisent différentes dégradations ou améliorations.
+  source:
+    title: Exploring Backorder Processing
+    url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+    version: Cours S/4HANA Cloud Public Edition évolutif ; pas de numéro de release affiché
+    locator: Backorder Processing Overview ; Confirmation Strategies ; Implementing Backorder Processing
+    consulted_on: '2026-09-19'
+    content_actually_consulted: BOP réexamine confirmations, priorités et quantités des commandes de vente et de transfert
+      ; les stratégies autorisent différentes dégradations ou améliorations.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-02
+  reference_id: MKT-V0-01
+  native_id: null
+  native_label: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: PAC calcule quantité/date ; ABC étudie sites et produits alternatifs ; Release for Delivery intervient avant
+    livraison.
+  source:
+    title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+    url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    version: Cours S/4HANA évolutif, plusieurs générations présentées
+    locator: Product Availability Check ; Alternative-Based Confirmation ; Release for Delivery
+    consulted_on: '2026-09-19'
+    content_actually_consulted: PAC calcule quantité/date ; ABC étudie sites et produits alternatifs ; Release for Delivery
+      intervient avant livraison.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-03
+  reference_id: MKT-V0-01
+  native_id: null
+  native_label: Backorder Processing — Supply Assignment
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le passage indexé cite ventes, contrats fashion et transferts, tri des besoins, affectation/désaffectation/réaffectation
+    et contrôle de release.
+  source:
+    title: Backorder Processing — Supply Assignment
+    url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    version: 2025 FPS01 (Feb 2026), version affichée dans le passage indexé
+    locator: Requirement Selection ; Requirement Sorting ; Release rule for supply assignment
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le passage indexé cite ventes, contrats fashion et transferts, tri des besoins, affectation/désaffectation/réaffectation
+      et contrôle de release.
+    evidence_level: passage_indexe_consulte_ouverture_sans_texte
+    access_limit: Portail ouvert sans texte extractible ; seuls passages officiels indexés consultés. Pas de validation du
+      paramétrage complet.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-04
+  reference_id: MKT-V0-02
+  native_id: null
+  native_label: Set Up Promising Rules and Sourcing Rules for Order Management
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: ATP rules déterminent les ressources considérées ; sourcing rules et assignment sets déterminent les sources,
+    rangs et répartitions applicables.
+  source:
+    title: Set Up Promising Rules and Sourcing Rules for Order Management
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/set-up-promising-rules-and-sourcing-rules-for-order-management.html
+    version: Oracle Cloud SCM 26A
+    locator: Introduction ; Create Your Sourcing Rule ; Assign Your Sourcing Rule
+    consulted_on: '2026-09-19'
+    content_actually_consulted: ATP rules déterminent les ressources considérées ; sourcing rules et assignment sets déterminent
+      les sources, rangs et répartitions applicables.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-05
+  reference_id: MKT-V0-02
+  native_id: null
+  native_label: Create Alternative Fulfillment Scenarios to Reduce Cost
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le PTP décrit recherche un scénario de moindre coût en intégrant coûts article, ressources et transport selon
+    le contexte de promesse.
+  source:
+    title: Create Alternative Fulfillment Scenarios to Reduce Cost
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+    version: Oracle Cloud SCM 26C
+    locator: Introduction ; cost table ; Promise According to Arrival Date
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le PTP décrit recherche un scénario de moindre coût en intégrant coûts article, ressources
+      et transport selon le contexte de promesse.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-06
+  reference_id: MKT-V0-02
+  native_id: null
+  native_label: Compensate Sales Orders That Change
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Les changements de commande peuvent conduire à mettre à jour, annuler, refaire ou ne pas modifier une étape
+    déjà engagée.
+  source:
+    title: Compensate Sales Orders That Change
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/compensate-sales-orders-that-change.html
+    version: Oracle Cloud SCM 26B
+    locator: Introduction ; example Create Shipment Redo ; compensation pattern
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Les changements de commande peuvent conduire à mettre à jour, annuler, refaire ou ne pas modifier
+      une étape déjà engagée.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-07
+  reference_id: MKT-V0-02
+  native_id: null
+  native_label: Don't Refund Lines That You Return to Your Customer
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Inspection et destination du retour peuvent conditionner le déclenchement de l’avoir ; le document décrit
+    le cas renvoyé au client sans crédit.
+  source:
+    title: Don't Refund Lines That You Return to Your Customer
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/don-t-refund-lines-that-you-return-to-your-customer.html
+    version: Oracle Cloud SCM 26B
+    locator: Return flows ; orchestration rule for Create Billing Lines
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Inspection et destination du retour peuvent conditionner le déclenchement de l’avoir ; le
+      document décrit le cas renvoyé au client sans crédit.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-08
+  reference_id: MKT-V0-02
+  native_id: null
+  native_label: Database Promising
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Les options de promesse distinguent recherches concurrentes, fuseaux et hypothèse de capacité fournisseur
+    infinie.
+  source:
+    title: Database Promising
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/overview-of-database-centric-order-promising.html
+    version: Oracle Cloud SCM 26A
+    locator: Promising Horizon and Other Order Promising Options ; Suppliers and Supplier Capacity
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Les options de promesse distinguent recherches concurrentes, fuseaux et hypothèse de capacité
+      fournisseur infinie.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-09
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Order promising
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: ATP cumulé à anticipation considère stock non engagé, réceptions et sorties ; le document distingue délais
+    simples, ATP et CTP.
+  source:
+    title: Order promising
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+    version: Documentation évolutive SCM, édition logicielle non unique
+    locator: Delivery date control methods ; ATP calculations
+    consulted_on: '2026-09-19'
+    content_actually_consulted: ATP cumulé à anticipation considère stock non engagé, réceptions et sorties ; le document
+      distingue délais simples, ATP et CTP.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-10
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: DOM rules
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: DOM différencie contraintes strictes, partiel/split, indisponibilité des sites et arrêt après rejets répétés.
+  source:
+    title: DOM rules
+    url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    version: Documentation mise à jour 2026-01-22 ; paramètres dépendant des versions Commerce
+    locator: Common attributes ; Partial orders rule ; Maximum rejects rule ; Offline fulfillment location rule
+    consulted_on: '2026-09-19'
+    content_actually_consulted: DOM différencie contraintes strictes, partiel/split, indisponibilité des sites et arrêt après
+      rejets répétés.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-11
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Inventory Visibility reservations
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: La réservation souple coordonne plusieurs canaux ; l’offset lors de réservation physique ou consommation
+    évite un double décompte.
+  source:
+    title: Inventory Visibility reservations
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+    version: SCM 10.0.33+ pour soft reservations sales orders ; dépendances de versions décrites dans la page
+    locator: Sample use case for soft reservation ; Integrate soft reservations and offsets
+    consulted_on: '2026-09-19'
+    content_actually_consulted: La réservation souple coordonne plusieurs canaux ; l’offset lors de réservation physique ou
+      consommation évite un double décompte.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-12
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Inventory Visibility inventory allocation
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Des enveloppes par groupe et leur consommation sont distinctes des réservations individuelles ; le passage
+    décrit leur articulation.
+  source:
+    title: Inventory Visibility inventory allocation
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+    version: Documentation évolutive ; UI versions 1 et 2 distinguées
+    locator: Allocation workflow ; Consume as a soft reservation
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Des enveloppes par groupe et leur consommation sont distinctes des réservations individuelles
+      ; le passage décrit leur articulation.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-13
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Set up consignment
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: L’apport fournisseur conserve sa propriété ; un journal de changement de propriété déclenche le traitement
+    d’achat applicable.
+  source:
+    title: Set up consignment
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    version: Documentation évolutive SCM
+    locator: Consignment replenishment orders ; Inventory ownership change journal
+    consulted_on: '2026-09-19'
+    content_actually_consulted: L’apport fournisseur conserve sa propriété ; un journal de changement de propriété déclenche
+      le traitement d’achat applicable.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-14
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Set up a fulfillment source working calendar
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le calendrier décrit ouverture, fermeture, congés et fuseau ; il contraint sélection de source et créneau
+    de collecte.
+  source:
+    title: Set up a fulfillment source working calendar
+    url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/setup-fulfillment-source-calendar
+    version: Documentation mise à jour 2026-01-30
+    locator: Working hours ; time zone ; Using a calendar for Fulfillment optimization ; carrier pickup times
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le calendrier décrit ouverture, fermeture, congés et fuseau ; il contraint sélection de source
+      et créneau de collecte.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-15
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Calculate requested ship dates for purchase orders
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le document distingue dates demandées/confirmées de départ/réception, délais et calendriers fournisseur/entrepôt.
+  source:
+    title: Calculate requested ship dates for purchase orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/supplier-requested-confirmed-dates
+    version: SCM 10.0.40+ et Planning Optimization, prérequis explicités
+    locator: Key terms and concepts ; calculation logic ; recalculations for updated orders
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le document distingue dates demandées/confirmées de départ/réception, délais et calendriers
+      fournisseur/entrepôt.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-16
+  reference_id: MKT-V0-03
+  native_id: null
+  native_label: Cross-Legal-Entity Fulfillment in Dynamics 365 | Preview
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le scénario orchestre la vente originale et les achat/vente intercompany en conservant synchronisation et
+    règles par entité.
+  source:
+    title: Cross-Legal-Entity Fulfillment in Dynamics 365 | Preview
+    url: https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/08/19/cross-legal-entity-fulfillment-dynamics-365/
+    version: Annonce officielle du 2026-08-19, Preview ; périmètre initial retail
+    locator: What we are releasing ; How it works ; initial release supports retail orders
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le scénario orchestre la vente originale et les achat/vente intercompany en conservant synchronisation
+      et règles par entité.
+    evidence_level: passage_consulte
+    access_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-17
+  reference_id: MKT-V0-04
+  native_id: null
+  native_label: Scheduling shipment of an order or order line
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le scheduling dépend de l’état de ligne et d’une date minimale évitant de bloquer trop tôt le stock des demandes
+    futures.
+  source:
+    title: Scheduling shipment of an order or order line
+    url: https://www.ibm.com/docs/en/order-management?topic=shipped-scheduling-shipment-order-order-line
+    version: Documentation SaaS évolutive, release non établie
+    locator: Status control ; Earliest schedule date
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le scheduling dépend de l’état de ligne et d’une date minimale évitant de bloquer trop tôt
+      le stock des demandes futures.
+    evidence_level: passage_indexe_consulte_ouverture_403
+    access_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+      non vérifiées.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-18
+  reference_id: MKT-V0-04
+  native_id: null
+  native_label: Defining fulfillment rules
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Les règles peuvent séparer un reliquat pour chercher une autre source et tenir compte du site associé à une
+    prestation.
+  source:
+    title: Defining fulfillment rules
+    url: https://www.ibm.com/docs/en/order-management?topic=components-defining-fulfillment-rules
+    version: Documentation SaaS évolutive, release non établie
+    locator: Split partially backordered or unscheduled lines ; use node from work order
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Les règles peuvent séparer un reliquat pour chercher une autre source et tenir compte du site
+      associé à une prestation.
+    evidence_level: passage_indexe_consulte_ouverture_403
+    access_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+      non vérifiées.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-19
+  reference_id: MKT-V0-04
+  native_id: null
+  native_label: Order Hub
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Order Hub expose les risques de retard et les erreurs bloquant le fulfillment à traiter par les opérateurs.
+  source:
+    title: Order Hub
+    url: https://www.ibm.com/docs/en/order-management?topic=features-order-hub
+    version: Documentation SaaS évolutive, release non établie
+    locator: Manage alerts ; Managing exceptions ; sourcing and scheduling rules
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Order Hub expose les risques de retard et les erreurs bloquant le fulfillment à traiter par
+      les opérateurs.
+    evidence_level: passage_indexe_consulte_ouverture_403
+    access_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+      non vérifiées.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-20
+  reference_id: MKT-V0-05
+  native_id: null
+  native_label: Optimized Fulfillment Sourcing
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le sourcing annoncé combine promesse, coûts, capacité, risque de rejet et stock ; il recherche aussi moins
+    de splits et des regroupements.
+  source:
+    title: Optimized Fulfillment Sourcing
+    url: https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/optimized-fulfillment-sourcing
+    version: Page produit évolutive sans numéro de version
+    locator: Fulfillment Sourcing Optimization ; Improving Profitability ; Ensuring Promises
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le sourcing annoncé combine promesse, coûts, capacité, risque de rejet et stock ; il recherche
+      aussi moins de splits et des regroupements.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-21
+  reference_id: MKT-V0-05
+  native_id: null
+  native_label: Returns Management
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: La destination de retour peut être choisie dynamiquement pour remettre le produit en vente plus vite.
+  source:
+    title: Returns Management
+    url: https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/returns-management
+    version: Page produit évolutive sans numéro de version
+    locator: Returns Done Right ; Maximize Returns Profitability
+    consulted_on: '2026-09-19'
+    content_actually_consulted: La destination de retour peut être choisie dynamiquement pour remettre le produit en vente
+      plus vite.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-22
+  reference_id: MKT-V0-06
+  native_id: null
+  native_label: Order Promising & Optimization
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: La promesse annoncée combine disponibilité, sources, coût, temps de traitement et ressources de livraison.
+  source:
+    title: Order Promising & Optimization
+    url: https://blueyonder.com/solutions/order-management-and-commerce/order-promising-and-optimization
+    version: Page produit évolutive sans numéro de version
+    locator: Accuracy in delivery dates ; Lower cost to serve ; Smart resource allocation
+    consulted_on: '2026-09-19'
+    content_actually_consulted: La promesse annoncée combine disponibilité, sources, coût, temps de traitement et ressources
+      de livraison.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-23
+  reference_id: MKT-V0-06
+  native_id: null
+  native_label: Smart Disposition
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Le routage décrit mobilise état, produit et contexte ; l’offre inclut aussi admission et déclenchement du
+    remboursement.
+  source:
+    title: Smart Disposition
+    url: https://blueyonder.com/solutions/returns-management/smart-disposition
+    version: Page produit évolutive sans numéro de version
+    locator: Intelligent routing ; Configure and enforce policy ; Customizable reason codes and rules
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Le routage décrit mobilise état, produit et contexte ; l’offre inclut aussi admission et déclenchement
+      du remboursement.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-24
+  reference_id: MKT-V0-06
+  native_id: null
+  native_label: What is Blue Yonder Allocation & Replenishment?
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: L’offre décrit apports initiaux et continus, tailles/conditionnements, contraintes de place et lissage des
+    réceptions.
+  source:
+    title: What is Blue Yonder Allocation & Replenishment?
+    url: https://info.blueyonder.com/retail-planning-category-management/what-is-blue-yonder-allocation-replenishment
+    version: FAQ produit 2026, édition logicielle non indiquée
+    locator: Key Capabilities 1–4 ; Push vs Pull ; lifecycle
+    consulted_on: '2026-09-19'
+    content_actually_consulted: L’offre décrit apports initiaux et continus, tailles/conditionnements, contraintes de place
+      et lissage des réceptions.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-25
+  reference_id: MKT-V0-07
+  native_id: null
+  native_label: AI-driven forecasting & replenishment for retail profitability
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: Prévisions, saisonnalité, promotions, stock, contraintes opérationnelles et scénarios alimentent les décisions
+    retail.
+  source:
+    title: AI-driven forecasting & replenishment for retail profitability
+    url: https://www.relexsolutions.com/resources/ai-driven-retail-forecasting-and-replenishment/
+    version: Article évolutif, édition logicielle non indiquée
+    locator: How RELEX helps ; 6 keys ; seasonal planning
+    consulted_on: '2026-09-19'
+    content_actually_consulted: Prévisions, saisonnalité, promotions, stock, contraintes opérationnelles et scénarios alimentent
+      les décisions retail.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-26
+  reference_id: MKT-V0-07
+  native_id: null
+  native_label: Capabilities to prioritize when implementing merchandising systems
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: L’article distingue assortiment, apports initiaux, réassort et distribution finale ; la prévision peut contribuer
+    à plusieurs décisions.
+  source:
+    title: Capabilities to prioritize when implementing merchandising systems
+    url: https://www.relexsolutions.com/resources/which-capabilities-to-prioritize-when-implementing-merchandising-systems/
+    version: Article expert officiel, pas catalogue normatif de capacités ni version logicielle
+    locator: Traditional processes ; initial allocation ; final allocation ; evolution of merchandising
+    consulted_on: '2026-09-19'
+    content_actually_consulted: L’article distingue assortiment, apports initiaux, réassort et distribution finale ; la prévision
+      peut contribuer à plusieurs décisions.
+    evidence_level: passage_consulte_article_expert
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+- id: ELM-V0-27
+  reference_id: MKT-V0-08
+  native_id: null
+  native_label: How o9’s Multi-Echelon Inventory Optimization (MEIO) Software Works
+  nature: fonction ou mécanisme produit
+  definition_consulted: Contenu paraphrasé dans reformulation ; aucune définition normative de capacité attribuée.
+  reformulation: L’offre décrit cibles réseau, rééquilibrage, report de l’engagement, risques de délai et scénarios.
+  source:
+    title: How o9’s Multi-Echelon Inventory Optimization (MEIO) Software Works
+    url: https://o9solutions.com/solutions/supply-chain-planning/multi-echelon-inventory-optimization-docs
+    version: Page solution évolutive, sans édition logicielle malgré le suffixe docs
+    locator: Optimal Inventory Targets and Network Rebalancing ; Postponement ; Scenario Planning for Inventory Risk
+    consulted_on: '2026-09-19'
+    content_actually_consulted: L’offre décrit cibles réseau, rééquilibrage, report de l’engagement, risques de délai et scénarios.
+    evidence_level: presentation_consultee
+    access_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+      ou de déploiement Beaumanoir.
+    reuse: Paraphrase courte, lien vers la source ; pas de reproduction substantielle.
+comparisons:
+- id: CMP-V0-01
+  external_element_id: ELM-V0-01
+  flow_element_ids:
+  - D03.m
+  - D03.n
+  - D03.o
+  - D03.p
+  - D02.e
+  - D04.o
+  - BHV037
+  - BHV047
+  - BHV077
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Réexamen collectif, priorités et engagements protégés sont représentables.
+  differences: Le processus SAP traverse plusieurs capacités FLOW ; ses stratégies ne sont pas autant de capacités ou de comportements
+    obligatoires.
+  adaptation_proposed: Éprouver un cas de pénurie avec promesse gelée, nouvelle commande prioritaire et justification des
+    demandes non servies.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-02
+  external_element_id: ELM-V0-02
+  flow_element_ids:
+  - D03.i
+  - D03.j
+  - D03.n
+  - D04.o
+  - D04.n
+  - BHV003
+  - BHV039
+  - BHV044
+  - BHV076
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Possibilités, alternatives et autorisation de livraison trouvent des responsables FLOW.
+  differences: SAP place ABC dans aATP ; FLOW distingue référence admissible et adaptation. La confirmation produit ne dicte
+    pas la séparation FLOW calcul/engagement.
+  adaptation_proposed: Afficher cette différence sémantique dans les fiches ATP/CTP ; préciser admissibilité des substitutions.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-03
+  external_element_id: ELM-V0-03
+  flow_element_ids:
+  - D02.e
+  - D03.m
+  - D04.o
+  - BHV039
+  - BHV045
+  - BHV047
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Affecter, réaffecter et autoriser sont couverts.
+  differences: Les documents et statuts SAP ne définissent pas la maille métier FLOW.
+  adaptation_proposed: Éprouver une livraison B2B par ensemble assorti ; conserver les critères de complétude à instruire.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Portail ouvert sans texte extractible ; seuls passages officiels indexés consultés. Pas de validation du
+    paramétrage complet.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-04
+  external_element_id: ELM-V0-04
+  flow_element_ids:
+  - D03.i
+  - D03.j
+  - D03.o
+  - D13.a
+  - D11.a
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Admissibilité, provenance, dates de validité et sources sont pertinentes pour FLOW.
+  differences: Allocation Percent distribue ici les demandes entre sources ; ce n’est pas automatiquement Group Protection
+    ou Supply Assignment.
+  adaptation_proposed: Documenter la source des règles d’admissibilité et leur validité sans administrer implicitement un
+    maître externe.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-05
+  external_element_id: ELM-V0-05
+  flow_element_ids:
+  - D03.k
+  - D03.l
+  - D03.o
+  - D06.e
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Arbitrage économique parmi possibilités et échéances réalisables.
+  differences: Le moindre coût Oracle est un objectif produit ; FLOW maintient une valeur multidimensionnelle sans poids implicites.
+  adaptation_proposed: Préciser coûts pertinents, données disponibles, horizon et articulation PTP/décision collective ; ne
+    pas adopter une fonction objectif unique.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-06
+  external_element_id: ELM-V0-06
+  flow_element_ids:
+  - D04.o
+  - D06.f
+  - D06.d
+  - D07.b
+  - D07.c
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Mutation autorisée, adaptation, orchestration et suivi du réalisé sont séparés dans FLOW.
+  differences: Les patterns techniques de compensation ne deviennent pas des comportements métier automatiques.
+  adaptation_proposed: Éprouver annulation après expédition partielle et échec de révocation de prestation ; expliciter effets
+    irréversibles et suites correctrices.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-07
+  external_element_id: ELM-V0-07
+  flow_element_ids:
+  - D04.l
+  - D05.i
+  - D07.c
+  - D06.d
+  - BHV053
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Réception, état accepté, disponibilité et suite financière doivent rester distingués.
+  differences: FLOW exclut le remboursement de ces capacités ; le produit Oracle englobe un traitement financier.
+  adaptation_proposed: Rendre visible le contrat sortant vers la responsabilité financière/commerciale, sans ajouter Finance
+    au domaine Supply.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-08
+  external_element_id: ELM-V0-08
+  flow_element_ids:
+  - D03.i
+  - D03.j
+  - D06.b
+  - D03.n
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Les hypothèses de capacité et de temps modifient la faisabilité.
+  differences: FLOW ne présume ni capacité infinie, ni algorithme ou moteur Oracle.
+  adaptation_proposed: Rendre les hypothèses de capacité, fraîcheur et concurrence explicites dans les exemples V0.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-09
+  external_element_id: ELM-V0-09
+  flow_element_ids:
+  - D03.i
+  - D03.j
+  - D03.l
+  - BHV001
+  - BHV003
+  - BHV004
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Quantités futures, engagements et délais sont couverts.
+  differences: Une formule et des limites produit ne prescrivent pas le calcul FLOW ; le CTP FLOW est plus large que la production.
+  adaptation_proposed: Ajouter une comparaison visible à ATP, en explicitant absence de formule canonique imposée.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-10
+  external_element_id: ELM-V0-10
+  flow_element_ids:
+  - D03.o
+  - D03.k
+  - D03.m
+  - D04.n
+  - D04.o
+  - D06.f
+  - BHV039
+  - BHV044
+  - BHV047
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Arbitrer, découper et replanifier après refus sont représentables.
+  differences: Le moteur DOM implémente ses propres relaxations ; FLOW doit préserver les autorisations sans les copier.
+  adaptation_proposed: Décrire contraintes impératives/préférences, critères d’arrêt et escalade ; tester absence de solution
+    et rejets multiples.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-11
+  external_element_id: ELM-V0-11
+  flow_element_ids:
+  - D02.c
+  - D01.c
+  - D01.f
+  - D01.g
+  - D03.i
+  - D03.n
+  - D05.h
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Engagement de quantité, disponibilité et consommation conservent des effets distincts.
+  differences: La soft reservation Microsoft n’impose pas une ontologie FLOW soft/hard ni une API particulière.
+  adaptation_proposed: Éprouver deux demandes concurrentes et une consommation partielle ; rendre explicites reprise/libération,
+    expiration et décompte unique.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-12
+  external_element_id: ELM-V0-12
+  flow_element_ids:
+  - D02.b
+  - D05.d
+  - D02.c
+  - BHV017
+  - BHV018
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Protection de groupes, plafonds et engagements individuels sont séparables.
+  differences: Allocation désigne ici une enveloppe, pas l’affectation FLOW ressources-commandes.
+  adaptation_proposed: Illustrer un même stock soumis à quota de canal et réservation sans double soustraction.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-13
+  external_element_id: ELM-V0-13
+  flow_element_ids:
+  - D04.r
+  - D01.h
+  - D04.j
+  - D01.g
+  - BHV061
+  - BHV062
+  - BHV063
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Apport sans achat, propriété et acquisition sont déjà explicitement séparés.
+  differences: Le scénario Microsoft concerne notamment matières de production ; ni régime fournisseur Beaumanoir ni implémentation
+    imposés.
+  adaptation_proposed: Conserver le découpage adopté ; éprouver refus, sur-réception, consommation partielle et sortie de
+    consignation.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-14
+  external_element_id: ELM-V0-14
+  flow_element_ids:
+  - D03.i
+  - D03.l
+  - BHV003
+  - D06.b
+  - D06.e
+  - D14.a
+  - D13.a
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Délais réels et possibilités des services relèvent de capacités déjà présentes.
+  differences: Aucune capacité Calendar Management interne à créer par analogie ; le référentiel peut rester externe.
+  adaptation_proposed: 'Établir un contrat temporel : calendriers, cut-off applicable, fuseau, départ/arrivée et repli si
+    donnée inconnue.'
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-15
+  external_element_id: ELM-V0-15
+  flow_element_ids:
+  - D04.j
+  - BHV078
+  - D03.l
+  - D05.e
+  - D07.d
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Supplier Confirmation et suivi des ressources attendues permettent cette distinction.
+  differences: Ne pas généraliser les formules ou automatismes Microsoft à FLOW.
+  adaptation_proposed: Éprouver une confirmation de départ déplacée avec date de réception inchangée et tracer l’incohérence
+    à arbitrer.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-16
+  external_element_id: ELM-V0-16
+  flow_element_ids:
+  - D04.i
+  - D04.j
+  - D04.n
+  - D03.o
+  - D09.d
+  - D11.a
+  - BHV069
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Intercompany Sales et liens de composition sont déjà représentables.
+  differences: Annonce Preview limitée au retail ; aucune disponibilité générale B2B ni promesse de roadmap utilisée comme
+    preuve.
+  adaptation_proposed: Éprouver la chaîne d’engagements et le changement partiel dans deux entités sans fusionner les Orders.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-17
+  external_element_id: ELM-V0-17
+  flow_element_ids:
+  - D03.l
+  - D04.o
+  - D05.h
+  - BHV033
+  - BHV039
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Date d’éligibilité, autorisation et horizon de réservation sont distinguables.
+  differences: Le scheduling Sterling ne correspond pas à une unique capacité FLOW.
+  adaptation_proposed: Conserver comme corroboration limitée ; approfondir avant équivalence ou sélection produit.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+    non vérifiées.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-18
+  external_element_id: ELM-V0-18
+  flow_element_ids:
+  - D04.n
+  - D03.o
+  - D06.e
+  - BHV044
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Le découpage préserve lien de demande et recherche de satisfaction.
+  differences: Règles produit et objets work order ne définissent pas les frontières FLOW.
+  adaptation_proposed: Tester conservation de quantités/engagements après split ; corroboration limitée.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+    non vérifiées.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-19
+  external_element_id: ELM-V0-19
+  flow_element_ids:
+  - D07.d
+  - D06.f
+  - D06.d
+  - D04.o
+  - BHV082
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Suivi, décision de variation et suspension sont couverts.
+  differences: Une console et ses alertes ne prouvent pas une capacité autonome Exception Management manquante.
+  adaptation_proposed: Préciser propriétaire du traitement, criticité, délai, escalade et clôture sans créer une capacité
+    générique par défaut.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Ouverture directe renvoie 403 ; seuls passages indexés officiels consultés. Couverture détaillée et configuration
+    non vérifiées.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-20
+  external_element_id: ELM-V0-20
+  flow_element_ids:
+  - D03.o
+  - D03.k
+  - D04.n
+  - D06.b
+  - D06.e
+  - D06.f
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Optimisation collective et contraintes opérationnelles sont représentées.
+  differences: La page mêle décisions et exécution ; sa terminologie optimisation ne dicte ni frontière ni objectif unique
+    FLOW.
+  adaptation_proposed: Éprouver arbitrage coût/service/stock et regroupement de livraisons ; exposer les raisons de choix
+    et de rejet.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-21
+  external_element_id: ELM-V0-21
+  flow_element_ids:
+  - D05.i
+  - D05.c
+  - D04.l
+  - D06.e
+  - BHV049
+  - BHV050
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Devenir, destination et récupération de valeur sont représentables.
+  differences: Cette page ne démontre pas toutes les filières réparation/rebut ; ne pas lui attribuer cette couverture.
+  adaptation_proposed: Tester orientation logistique versus destination et prise en charge de service.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-22
+  external_element_id: ELM-V0-22
+  flow_element_ids:
+  - D03.i
+  - D03.k
+  - D03.o
+  - D06.b
+  - D06.e
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Les décisions FLOW couvrent les résultats recherchés.
+  differences: Une promesse de solution ne prouve ni algorithme ni conditions de faisabilité précises.
+  adaptation_proposed: Exiger des exemples de données et de contraintes pour transformer le rapprochement en conception.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-23
+  external_element_id: ELM-V0-23
+  flow_element_ids:
+  - D05.i
+  - D04.l
+  - D06.e
+  - BHV048
+  - BHV049
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Politique et récupération de valeur se retrouvent dans les deux comportements existants.
+  differences: Le produit est plus large que le devenir logistique FLOW ; admission et remboursement sont des interfaces distinctes.
+  adaptation_proposed: Ne pas ajouter les parcours déjà couverts ; préciser les entrées et sorties vers acteurs commerciaux/financiers.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-24
+  external_element_id: ELM-V0-24
+  flow_element_ids:
+  - D05.a
+  - D05.g
+  - D05.e
+  - D05.c
+  - D05.f
+  - D08.d
+  - D06.b
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Implantation, réassort, redistribution et variantes existent dans FLOW.
+  differences: Une offre intégrée n’exige pas leur fusion ; courbes de tailles et lissage sont des contraintes à instruire.
+  adaptation_proposed: Tester le résultat par taille/couleur/magasin et le partage de capacité entre implantation et réassort.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-25
+  external_element_id: ELM-V0-25
+  flow_element_ids:
+  - D05.a
+  - D05.e
+  - D05.g
+  - D05.f
+  - D06.b
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Les décisions de stock consomment besoins et contraintes.
+  differences: Prévision, prix et planification commerciale dépassent le périmètre Supply transactionnel retenu.
+  adaptation_proposed: Rendre le contrat entrant prévisions/assortiments visible, sans ajouter implicitement Demand Planning
+    ou Pricing.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-26
+  external_element_id: ELM-V0-26
+  flow_element_ids:
+  - D05.g
+  - D05.e
+  - D05.c
+  - D05.f
+  - BHV025
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: Finalités initiales, continues et consolidation sont déjà différenciées.
+  differences: Les systèmes éditeurs agrègent des responsabilités ; la distribution finale n’est pas automatiquement Stock
+    Consolidation.
+  adaptation_proposed: 'Éprouver une fin de saison : pousser un reliquat entrepôt, regrouper des tailles et arrêter le réassort
+    selon leurs finalités.'
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+- id: CMP-V0-27
+  external_element_id: ELM-V0-27
+  flow_element_ids:
+  - D05.a
+  - D05.c
+  - D05.f
+  - D05.h
+  - BHV028
+  - BHV033
+  - BHV035
+  compared_state:
+    path: modeles/backlog/model.yaml
+    version: 2026-09-13.3
+    as_of: '2026-09-17'
+    sha256_bytes: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+    state: backlog courant, non publié par cet audit
+  relation: recouvrement_partiel
+  context: Contrôle de cohérence et préparation V0 pour PO, experts et architectes solution
+  similarities: MEIO et arbitrage disponibilité/immobilisation/risque existent déjà.
+  differences: Le périmètre produit mêle cible, action et promesse ; aucune preuve de formulation mathématique détaillée.
+  adaptation_proposed: Tester cohérence de cibles multi-échelons et incertitudes sans créer un nouveau domaine MEIO.
+  justification: Éprouver les résultats métier et interfaces ; conserver les frontières et la maille FLOW.
+  evidence_limit: Présentation officielle de solution, pas manuel de configuration ni essai ; aucune preuve de performance
+    ou de déploiement Beaumanoir.
+  status: proposed_not_validated
+  author: Codex
+  date: '2026-09-19'
+  validator: null
+  validated_on: null
+coverage_axes:
+- id: AX-V0-01
+  name: Promesse de référence et future
+  flow_element_ids:
+  - D03.i
+  - D03.n
+  - D01.c
+  evidence_ids:
+  - ELM-V0-02
+  - ELM-V0-04
+  - ELM-V0-09
+  - ELM-V0-11
+  assessment: couvert au niveau des responsabilités ; contrat temporel à préciser
+- id: AX-V0-02
+  name: Adaptations et alternatives de satisfaction
+  flow_element_ids:
+  - D03.j
+  - D06.e
+  - D06.f
+  evidence_ids:
+  - ELM-V0-02
+  - ELM-V0-08
+  - ELM-V0-10
+  assessment: couvert ; ABC SAP traverse la frontière ATP/CTP FLOW
+- id: AX-V0-03
+  name: Arbitrage économique et priorités
+  flow_element_ids:
+  - D03.k
+  - D03.l
+  - D03.m
+  - D03.o
+  evidence_ids:
+  - ELM-V0-01
+  - ELM-V0-05
+  - ELM-V0-10
+  - ELM-V0-20
+  - ELM-V0-22
+  assessment: couvert ; descriptions D03.k/l/m trop brèves
+- id: AX-V0-04
+  name: Protection, plafonds, réservations
+  flow_element_ids:
+  - D02.b
+  - D02.c
+  - D05.d
+  - D05.h
+  evidence_ids:
+  - ELM-V0-11
+  - ELM-V0-12
+  - ELM-V0-17
+  - ELM-V0-27
+  assessment: couvert ; contrat de décompte et validité à éprouver
+- id: AX-V0-05
+  name: Backlog collectif et réaffectation
+  flow_element_ids:
+  - D03.p
+  - D03.o
+  - D02.e
+  - D04.o
+  evidence_ids:
+  - ELM-V0-01
+  - ELM-V0-03
+  - ELM-V0-10
+  assessment: couvert ; scénario de pénurie/gels à éprouver
+- id: AX-V0-06
+  name: Cibles locales et multi-échelons
+  flow_element_ids:
+  - D05.a
+  - BHV026
+  - BHV027
+  - BHV028
+  evidence_ids:
+  - ELM-V0-25
+  - ELM-V0-27
+  assessment: couvert ; entrée prévision et hypothèses à expliciter
+- id: AX-V0-07
+  name: Implantation et réassort
+  flow_element_ids:
+  - D05.g
+  - D05.e
+  - D05.f
+  evidence_ids:
+  - ELM-V0-24
+  - ELM-V0-25
+  - ELM-V0-26
+  assessment: couvert ; contraintes tailles/capacité et articulation à tester
+- id: AX-V0-08
+  name: Redistribution et fin de saison
+  flow_element_ids:
+  - D05.c
+  - BHV024
+  - BHV025
+  evidence_ids:
+  - ELM-V0-24
+  - ELM-V0-26
+  - ELM-V0-27
+  assessment: couvert partiellement ; qualification des apports finaux à instruire
+- id: AX-V0-09
+  name: Consignation et propriété
+  flow_element_ids:
+  - D01.h
+  - D04.r
+  - D04.j
+  - D01.g
+  evidence_ids:
+  - ELM-V0-13
+  assessment: couvert ; pas de manque de capacité établi
+- id: AX-V0-10
+  name: Orders, composition et intercompany
+  flow_element_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.n
+  - D04.o
+  evidence_ids:
+  - ELM-V0-03
+  - ELM-V0-10
+  - ELM-V0-15
+  - ELM-V0-16
+  - ELM-V0-18
+  assessment: responsabilités représentées ; Transfer Order non re-comparé finement ; synchronisation et partiel à tester
+- id: AX-V0-11
+  name: Retours et récupération de valeur
+  flow_element_ids:
+  - D04.l
+  - D04.m
+  - D05.i
+  evidence_ids:
+  - ELM-V0-07
+  - ELM-V0-21
+  - ELM-V0-23
+  assessment: retour client et disposition rapprochés ; Supplier Return non re-comparé ; interfaces externes à représenter
+- id: AX-V0-12
+  name: Exécution, services et exceptions
+  flow_element_ids:
+  - D06.d
+  - D06.e
+  - D06.f
+  - D07.b
+  - D07.c
+  - D07.d
+  evidence_ids:
+  - ELM-V0-06
+  - ELM-V0-10
+  - ELM-V0-19
+  - ELM-V0-20
+  assessment: couvert ; scénarios de compensation/escalade à expliciter
+- id: AX-V0-13
+  name: Temps et capacité opérationnelle
+  flow_element_ids:
+  - D06.b
+  - D13.a
+  - D14.a
+  - BHV003
+  evidence_ids:
+  - ELM-V0-08
+  - ELM-V0-14
+  - ELM-V0-15
+  - ELM-V0-20
+  - ELM-V0-22
+  assessment: responsables présents ; contrats sources/dates/capacité insuffisamment précis
+- id: AX-V0-14
+  name: Prévisions, assortiment et coûts
+  flow_element_ids:
+  - D05.a
+  - D05.g
+  - D05.e
+  - D03.k
+  evidence_ids:
+  - ELM-V0-05
+  - ELM-V0-25
+  - ELM-V0-26
+  assessment: interfaces externes à expliciter ; nouveaux domaines non justifiés
+- id: AX-V0-15
+  name: Maîtres et projections référentielles
+  flow_element_ids:
+  - D08.d
+  - D09.d
+  - D11.a
+  - D12.a
+  - D13.a
+  - D14.a
+  evidence_ids:
+  - ELM-V0-04
+  - ELM-V0-13
+  - ELM-V0-14
+  - ELM-V0-16
+  - ELM-V0-24
+  assessment: appuis partiels sur usages ; ingestion/mastering non comparés finement
+- id: AX-V0-16
+  name: Comptage, archivage et traçabilité des mouvements
+  flow_element_ids:
+  - D01.d
+  - D04.q
+  - D01.g
+  evidence_ids: []
+  assessment: non comparé à nouveau dans ce volet ; comparaisons existantes non revalidées ici
+capability_matrix:
+- id: D01.f
+  name: Inventory Tracking
+  revision: 2
+  fields_sha256_canonical: 7c7716c8cb0fec634d83b412b4173bbbcd9ab7374d64d9a20b0fd53141dd8234
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-11
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D01.g
+  name: Record Inventory Movements
+  revision: 1
+  fields_sha256_canonical: d687ffc44a7ec6081aae5af265b20c10f059b70a316cf529f26413078df01e7f
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-11
+  - CMP-V0-13
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D01.c
+  name: Inventory Visibility
+  revision: 2
+  fields_sha256_canonical: 0f422318b3f18d57b6bc1d7926078c732221b1f6b339eeb7d0c68eef121d4a37
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-11
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D01.d
+  name: Stocktaking
+  revision: 2
+  fields_sha256_canonical: caec2207cb5e93203865154e78daa98909169adb8e2b76cfdcb464fbd58c8f92
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - SAP
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D02.b
+  name: Supply Protection
+  revision: 1
+  fields_sha256_canonical: 90219c47b9acd7d61877b867be7e59dc65c8baa033d287b5eccfc21e9d7244d3
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-12
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D02.c
+  name: Reservation
+  revision: 1
+  fields_sha256_canonical: 6a98a773e52ff2c31829b6d02da79708fc28c9c583fbb9d6d9045a825abf1943
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-11
+  - CMP-V0-12
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D02.e
+  name: Supply Assignment
+  revision: 5
+  fields_sha256_canonical: 8f71b9983a993c2f9c80729d354f5b17208d2e78cf632889c6eefba74e90e47f
+  existing_market_comparisons: 4
+  existing_vendors:
+  - Microsoft
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-01
+  - CMP-V0-03
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.i
+  name: Available-to-Promise (ATP)
+  revision: 1
+  fields_sha256_canonical: d460c8fe7a1a6c65dee4d98fb490fdf5408e956d7d319c8b25701670937cac7f
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-02
+  - CMP-V0-04
+  - CMP-V0-08
+  - CMP-V0-09
+  - CMP-V0-11
+  - CMP-V0-14
+  - CMP-V0-22
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.j
+  name: Capable-to-Promise (CTP)
+  revision: 5
+  fields_sha256_canonical: cc39bf21626045377f9b163ee3b54a9206942970241c3f7822091a678fedc5eb
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-02
+  - CMP-V0-04
+  - CMP-V0-08
+  - CMP-V0-09
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.k
+  name: Profitable-to-Promise (PTP)
+  revision: 1
+  fields_sha256_canonical: b76c13a2cbe3a2edda8232677d2ee4b9a50ca21eade03c581f56c5eb6188f232
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-05
+  - CMP-V0-10
+  - CMP-V0-20
+  - CMP-V0-22
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.l
+  name: Delivery Schedule Decision
+  revision: 1
+  fields_sha256_canonical: c06584fdd45916826e48c66a94070109e9990a1f50b40ce67b682e04606bd7e9
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-05
+  - CMP-V0-09
+  - CMP-V0-14
+  - CMP-V0-15
+  - CMP-V0-17
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.m
+  name: Order Prioritization
+  revision: 1
+  fields_sha256_canonical: 1018ee71fcd7e2b17ad0ab27758cff80c2b594cc675218793931d97ff244516f
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-01
+  - CMP-V0-03
+  - CMP-V0-10
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.i
+  name: Sales Order
+  revision: 8
+  fields_sha256_canonical: b9840f5c063abd32a79025654bf8043cd1fdcfac7c9c251216f35b640b89eae0
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  audit_comparison_ids:
+  - CMP-V0-16
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.j
+  name: Purchase Order
+  revision: 10
+  fields_sha256_canonical: 03974fb0dd20f07996f6cb7194d58d5cfe90f6a615a2dd710292471bc44a6181
+  existing_market_comparisons: 6
+  existing_vendors:
+  - Microsoft
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-13
+  - CMP-V0-15
+  - CMP-V0-16
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.k
+  name: Transfer Order
+  revision: 8
+  fields_sha256_canonical: d06c43e59f55cb0aff893142b87a2279d5bdf3571dd1c072b483e107e35f2c5d
+  existing_market_comparisons: 5
+  existing_vendors:
+  - Microsoft
+  - Nextail
+  - Oracle
+  - SAP
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.l
+  name: Customer Return
+  revision: 7
+  fields_sha256_canonical: ca3a99aa60b5baf50ae38ab1d2f9f7dde69e28705e1732e78f7a8cc5efa0091b
+  existing_market_comparisons: 2
+  existing_vendors:
+  - Microsoft
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-07
+  - CMP-V0-21
+  - CMP-V0-23
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.m
+  name: Supplier Return
+  revision: 7
+  fields_sha256_canonical: 643fa9e28ba15d4f630f4ef97e63a8082bfec62a0e436165c30a0bdbf936ed9b
+  existing_market_comparisons: 4
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - SAP
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.n
+  name: Order Structuring
+  revision: 5
+  fields_sha256_canonical: 04df052b7701f3a26f2318b571b432bd93e67466ff37c46c3eb94b27edd1274b
+  existing_market_comparisons: 4
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-02
+  - CMP-V0-10
+  - CMP-V0-16
+  - CMP-V0-18
+  - CMP-V0-20
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.o
+  name: Order Lifecycle Management
+  revision: 11
+  fields_sha256_canonical: 183cc579fbe0c180dc49d10fa72091e5f920fb4fc818fa2c954ee5795f56cef4
+  existing_market_comparisons: 16
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-01
+  - CMP-V0-02
+  - CMP-V0-03
+  - CMP-V0-06
+  - CMP-V0-10
+  - CMP-V0-17
+  - CMP-V0-19
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.a
+  name: Inventory Target Decision
+  revision: 6
+  fields_sha256_canonical: 30a99ef57cbc677e7d08fd3c6ef291e8e6f7cfeaa4ac1b603f619668c249b543
+  existing_market_comparisons: 5
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - RELEX
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-24
+  - CMP-V0-25
+  - CMP-V0-27
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.d
+  name: Group Protection Decision
+  revision: 1
+  fields_sha256_canonical: c091dea59faab50b1a326b9baa948ba73d7f3671524a9c8bd7ebb2a60c89d6e0
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-12
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.g
+  name: Initial Stocking Decision
+  revision: 2
+  fields_sha256_canonical: c121459bddfe2b7d95e6773f74366d87f45ea2a2d416fe26227f226cf1839159
+  existing_market_comparisons: 5
+  existing_vendors:
+  - Logility
+  - Nextail
+  - OASIS
+  - RELEX
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-24
+  - CMP-V0-25
+  - CMP-V0-26
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.e
+  name: Replenishment Decision
+  revision: 7
+  fields_sha256_canonical: 0b050f81f21e13bbf4a7734287aebc792c001ec15087f6997b32ccba5e009d9c
+  existing_market_comparisons: 8
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - RELEX
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-15
+  - CMP-V0-24
+  - CMP-V0-25
+  - CMP-V0-26
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.c
+  name: Stock Redistribution Decision
+  revision: 5
+  fields_sha256_canonical: fe485ce46c547133a0946098bee745e49618c018c45a0c80d1c5706d1dc62118
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Nextail
+  - Oracle
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-21
+  - CMP-V0-24
+  - CMP-V0-26
+  - CMP-V0-27
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.f
+  name: Inventory Planning
+  revision: 3
+  fields_sha256_canonical: 7b0c21fccfefde6ae1e0320d231f3413e1e1fcf593af7a0b90dbab28f830a747
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-24
+  - CMP-V0-25
+  - CMP-V0-26
+  - CMP-V0-27
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D06.b
+  name: Service Capacity Visibility
+  revision: 6
+  fields_sha256_canonical: 6e744bfc46779647bc8070de376619313318dac9d0b552fcffcc943b8f66e294
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-08
+  - CMP-V0-14
+  - CMP-V0-20
+  - CMP-V0-22
+  - CMP-V0-24
+  - CMP-V0-25
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D07.a
+  name: Service Requirements Decision
+  revision: 6
+  fields_sha256_canonical: 7c07a9b8002736e9bb4fc185813ad9506616d62b4b9e488483e916bfe199eb68
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D07.b
+  name: Service Order Management
+  revision: 4
+  fields_sha256_canonical: 0ce35e0cefe611b9ccc7a0b19fb881c00f782f3c7a5bb5ba77881948ee0f7424
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-06
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D07.c
+  name: Service Reconciliation
+  revision: 4
+  fields_sha256_canonical: f260e1336454b5895781903cb562645cc6083a621da0a723dbdf8cdf2e26ef16
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-06
+  - CMP-V0-07
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D07.d
+  name: Operations Tracking
+  revision: 6
+  fields_sha256_canonical: 43e723c472bc8c7b3b1fcefe9a108fa3d0e1e28fc4d33dfbd57036535229cab9
+  existing_market_comparisons: 6
+  existing_vendors:
+  - Blue Yonder
+  - Camunda
+  - Microsoft
+  - SAP
+  - project44
+  audit_comparison_ids:
+  - CMP-V0-15
+  - CMP-V0-19
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D09.d
+  name: Party / Role Ingestion
+  revision: 1
+  fields_sha256_canonical: 651f79ad6c30c1d00bf935943f0860a14ee49e5b28f1b9a375c7d6f691e5654d
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-16
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D11.a
+  name: Agreement Ingestion
+  revision: 1
+  fields_sha256_canonical: 6ef5954cd7eeabdb7b552d6018f79ff6015a95a9521d6a12a07f45bca261d70c
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-04
+  - CMP-V0-16
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D08.d
+  name: Product Reference Ingestion
+  revision: 2
+  fields_sha256_canonical: 9d8bf7a7a02eed943b34bc47f0807b4530bff62a6f6d56761be1a84c157e092d
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-24
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D12.a
+  name: Catalog Ingestion
+  revision: 1
+  fields_sha256_canonical: fbd921ad19c01f5d5e9cfd148ad759fddb7203024705b753d723f8dc802626b5
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D13.a
+  name: Fulfillment Network Ingestion
+  revision: 1
+  fields_sha256_canonical: a9781d7f8f1767535d42180d5be1b33f969c2063ef6ec89faf108d4777fbc7d2
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-04
+  - CMP-V0-14
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D06.d
+  name: Process Orchestration
+  revision: 3
+  fields_sha256_canonical: 0dc6b52ffd6839e63e900029c0a8c42406ff27d7253f20fec0e3d190dbdde528
+  existing_market_comparisons: 2
+  existing_vendors:
+  - Camunda
+  - Microsoft
+  audit_comparison_ids:
+  - CMP-V0-06
+  - CMP-V0-07
+  - CMP-V0-19
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D14.a
+  name: Service Catalog Ingestion
+  revision: 2
+  fields_sha256_canonical: 3fa7e46ac4f87818ce4f32a8fae64a1cb018b23abec14186d192b16c159e1dfe
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-14
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D06.e
+  name: Service Selection Decision
+  revision: 2
+  fields_sha256_canonical: 2da6bcec149c16ae474d9e667eaa4e606e89329850912caf9ea52a0d13a09f12
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-05
+  - CMP-V0-14
+  - CMP-V0-18
+  - CMP-V0-20
+  - CMP-V0-21
+  - CMP-V0-22
+  - CMP-V0-23
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D06.f
+  name: Process Adaptation Decision
+  revision: 2
+  fields_sha256_canonical: 338f6b337507e710df760c201237bd9f6e45b6e2f9205d007b6ea9ad18124f77
+  existing_market_comparisons: 2
+  existing_vendors:
+  - Camunda
+  - Microsoft
+  audit_comparison_ids:
+  - CMP-V0-06
+  - CMP-V0-10
+  - CMP-V0-19
+  - CMP-V0-20
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.n
+  name: Promise Management
+  revision: 1
+  fields_sha256_canonical: d665f0ddbd70fb287ebef6424817f79dfecfdb6316402c57a8aebe1d1e413736
+  existing_market_comparisons: 0
+  existing_vendors: []
+  audit_comparison_ids:
+  - CMP-V0-01
+  - CMP-V0-02
+  - CMP-V0-08
+  - CMP-V0-11
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.h
+  name: Reservation Policy Decision
+  revision: 2
+  fields_sha256_canonical: c06eec6389be532fbd5d621097e14b0b58c3673de96baf88f6d39a5d164e4b76
+  existing_market_comparisons: 8
+  existing_vendors:
+  - IBM
+  - Microsoft
+  - Oracle
+  - SAP
+  - Shopify
+  - commercetools
+  audit_comparison_ids:
+  - CMP-V0-11
+  - CMP-V0-17
+  - CMP-V0-27
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.q
+  name: Order Archiving
+  revision: 2
+  fields_sha256_canonical: 50880d96d58204c64fe0bb0d57c2518bf063d27b6dd68e73baec8bca56f854c3
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  audit_comparison_ids: []
+  audit_status: non_recompare_dans_ce_volet
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.o
+  name: Fulfillment Plan Decision
+  revision: 1
+  fields_sha256_canonical: e61024ee95f7df4a9f5eb7fcc1125f9eae9ee45608da45363878354810f83f2e
+  existing_market_comparisons: 2
+  existing_vendors:
+  - Microsoft
+  audit_comparison_ids:
+  - CMP-V0-01
+  - CMP-V0-04
+  - CMP-V0-05
+  - CMP-V0-10
+  - CMP-V0-16
+  - CMP-V0-18
+  - CMP-V0-20
+  - CMP-V0-22
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D05.i
+  name: Return Disposition Decision
+  revision: 4
+  fields_sha256_canonical: 6c18784918c097521ab78a06a47eaf3b1ffe682fe09e83cb357a10000d730fde
+  existing_market_comparisons: 5
+  existing_vendors:
+  - Blue Yonder
+  - Manhattan
+  - Microsoft
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-07
+  - CMP-V0-21
+  - CMP-V0-23
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D04.r
+  name: Consignment Replenishment Order
+  revision: 4
+  fields_sha256_canonical: 16762706988f6e586af5af7233adee8950971f64df1306b2829d50965d3921ad
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  - SAP
+  audit_comparison_ids:
+  - CMP-V0-13
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D01.h
+  name: Consigned Inventory Management
+  revision: 5
+  fields_sha256_canonical: e5f78597bc2974dba400fd0a261f51c658e8df4e4881a2dabf058a4d44a40e12
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  audit_comparison_ids:
+  - CMP-V0-13
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+- id: D03.p
+  name: Order Backlog Planning
+  revision: 3
+  fields_sha256_canonical: 94328160e701699bebbff4195d691a44ef6bc4ee44fef4bb1ecbf327e3194f99
+  existing_market_comparisons: 3
+  existing_vendors:
+  - Microsoft
+  - Oracle
+  audit_comparison_ids:
+  - CMP-V0-01
+  audit_status: rapprochement_propose
+  limit: Une correspondance multi-capacités ne prouve pas tous les champs, comportements ou réalisations.
+findings:
+- id: MKT-F01
+  priority: P1
+  title: Contrat temporel de promesse et de service insuffisamment explicite
+  category: insuffisance_description_interface
+  nodes:
+  - D03.i
+  - D03.l
+  - BHV003
+  - D06.b
+  - D06.e
+  - D14.a
+  - D13.a
+  evidence:
+  - ELM-V0-14
+  - ELM-V0-15
+  - ELM-V0-08
+  observation: Aucune occurrence de calendrier, calendar, cut-off ou fuseau dans les champs definition/scope/finality des
+    nœuds. BHV003 couvre les délais réels, mais pas le contrat de calcul du temps.
+  recommendation: Préciser source des calendriers, jours fermés, heure limite, fuseau, date départ/réception, fraîcheur et
+    conduite sur donnée inconnue ; consommer un maître externe.
+  acceptance: Un exemple vendredi après cut-off avec fermeture lundi aboutit à une promesse expliquée ; les lecteurs identifient
+    responsable et données sans supposer un simple ajout de jours.
+  boundary: Aucune nouvelle capacité Calendar Management proposée ; absence de mot ne suffit pas à conclure absence fonctionnelle.
+- id: MKT-F02
+  priority: P1
+  title: PTP, priorités et échéancier restent trop peu définis pour une revue solution
+  category: insuffisance_description
+  nodes:
+  - D03.k
+  - D03.l
+  - D03.m
+  - D03.o
+  evidence:
+  - ELM-V0-01
+  - ELM-V0-05
+  - ELM-V0-10
+  - ELM-V0-20
+  observation: D03.l et D03.m ont un scope limité à un exemple fictif. D03.k expose une frontière et un exemple, sans inputs,
+    résultat argumenté, coûts ni gestion des préférences incompatibles.
+  recommendation: Expliciter question, entrées, contraintes impératives, préférences, résultat, justification et absence de
+    solution. Séparer choix économique PTP et compromis collectif multidimensionnel.
+  acceptance: Un même jeu de demandes permet de distinguer priorité, échéancier et arbitrage économique, sans fixer de pondération
+    métier par défaut.
+  boundary: Le marché justifie les responsabilités, pas une formule unique ni de nouveaux comportements par critère.
+- id: MKT-F03
+  priority: P1
+  title: 'Réservation, affectation, promesse et consommation : contrat commun à rendre éprouvable'
+  category: contrat_transverse_a_preciser
+  nodes:
+  - D02.c
+  - D02.e
+  - D01.c
+  - D01.g
+  - D03.i
+  - D03.n
+  evidence:
+  - ELM-V0-11
+  - ELM-V0-12
+  - ELM-V0-08
+  observation: Les responsabilités sont distinctes ; plusieurs relations gardent la formulation engagements opposables selon
+    frontière à arbitrer. Le contrat quantitatif de passage vers consommation reste un point V0 à expliciter.
+  recommendation: Fixer pour chaque quantité l’effet sur disponibilité, son identité, libération/expiration, consommation
+    partielle et échec de confirmation ; distinguer engagement logique et ressources physiques.
+  acceptance: Deux canaux promettant la dernière quantité, puis une expédition partielle, ne la comptent ni deux fois disponible
+    ni deux fois indisponible.
+  boundary: Pas de réservation obligatoire ou taxonomie soft/hard imposée ; tester les mécanismes choisis et leurs limites.
+- id: MKT-F04
+  priority: P1
+  title: 'Changements en cours d’exécution et exceptions : fermer la boucle de responsabilité'
+  category: contrat_transverse_a_preciser
+  nodes:
+  - D04.o
+  - D06.f
+  - D06.d
+  - D07.b
+  - D07.c
+  - D07.d
+  evidence:
+  - ELM-V0-06
+  - ELM-V0-10
+  - ELM-V0-19
+  observation: Tracking, adaptation et orchestration sont présents et reliés. Les textes ne forment pas encore un cas de preuve
+    complet sur refus répétés, annulation trop tardive et réalisé irréversible.
+  recommendation: Éprouver seuil d’arrêt, acteur de résolution, latitude de dérogation, prestation déjà exécutée, correction/compensation
+    et révision de promesse.
+  acceptance: Un rejet répété n’entraîne pas une boucle indéfinie ; une demande annulée après sortie physique conserve les
+    faits et identifie la suite responsable.
+  boundary: Pas de nouveau domaine générique Exception Management déduit d’une console éditeur ; les seuils restent à arbitrer.
+- id: MKT-F05
+  priority: P1
+  title: 'Prévisions, assortiment, saison et coûts externes : entrées à rendre visibles'
+  category: interface_externe_manquante_ou_peu_valorisee
+  nodes:
+  - D05.a
+  - D05.g
+  - D05.e
+  - D05.f
+  - D03.k
+  - D08
+  - D12
+  - D11
+  evidence:
+  - ELM-V0-25
+  - ELM-V0-26
+  - ELM-V0-05
+  observation: D05.g consomme un assortiment retenu et D05.f les hypothèses/prévisions ; aucun élément explicitement nommé
+    Demand Forecast ou Assortment Plan dans le catalogue. Le coût consommé par PTP n’a pas de contrat dédié lisible.
+  recommendation: Décrire dans une vue de contexte les producteurs externes à identifier, version/horizon/maille, données
+    absentes et retours vers eux ; ne pas attribuer de maître sans preuve.
+  acceptance: Un expert peut dire d’où viennent besoins, assortiment et coûts, et distinguer prévision, engagement fournisseur
+    et demande ferme sans ajouter Demand Planning à FLOW.
+  boundary: Finance, prévision commerciale, assortiment et saison ne deviennent pas de nouveaux domaines par comparaison éditeur.
+- id: MKT-F06
+  priority: P1
+  title: 'Retours : interface admission/remboursement/remplacement à expliquer'
+  category: interface_externe_peu_valorisee
+  nodes:
+  - D04.l
+  - D04.m
+  - D05.i
+  - D07.c
+  - D06.d
+  - BHV053
+  - BHV055
+  - BHV056
+  evidence:
+  - ELM-V0-07
+  - ELM-V0-21
+  - ELM-V0-23
+  observation: Les parcours et décisions logistiques sont riches ; les textes excluent explicitement autorisation commerciale,
+    remboursement et remplacement client. Ces exclusions doivent déboucher sur des interfaces expliquées.
+  recommendation: Présenter l’origine de l’autorisation et les faits/quantités transmis aux responsables des suites commerciales/financières
+    ; distinguer réparation même bien et remplacement.
+  acceptance: Un retour partiellement accepté puis partiellement renvoyé au client ne vaut pas remboursement total ; responsable
+    et événement justificatif sont identifiés.
+  boundary: Aucun domaine Finance ni remboursement ajouté à Return Disposition Decision ; aucune pratique Sarenza supposée.
+- id: MKT-F07
+  priority: P2
+  title: 'Fashion et B2B : compléter les cas de preuve, pas multiplier les capacités'
+  category: scenario_de_completude
+  nodes:
+  - D05.g
+  - D05.e
+  - D05.c
+  - D04.n
+  - D04.o
+  - D04.i
+  - D04.j
+  - BHV039
+  - BHV069
+  evidence:
+  - ELM-V0-03
+  - ELM-V0-16
+  - ELM-V0-24
+  - ELM-V0-26
+  observation: Tailles, couleurs, conditionnements, assortiment utile, intercompany et complétude sont déjà mentionnés. La
+    fin de saison et la synchronisation de la chaîne B2B nécessitent une démonstration transversale.
+  recommendation: Éprouver pack indivisible, assortiment incomplet, reliquat de fin de saison, livraisons groupées et changement
+    d’Order intercompany ; préciser intention de chaque apport.
+  acceptance: Le cas distingue implantation, réassort, redistribution et affectation ; il identifie la demande non satisfaite
+    à la maille taille/ligne sans accord implicite sur les règles.
+  boundary: La final allocation éditeur n’est pas automatiquement la Stock Consolidation FLOW ; la frontière doit être décidée
+    au cas métier.
+- id: MKT-F08
+  priority: P2
+  title: Capacité opérationnelle disponible et concurrence à éprouver
+  category: contrat_transverse_a_preciser
+  nodes:
+  - D06.b
+  - D06.e
+  - D07.b
+  - D03.i
+  - D03.o
+  - D05.f
+  evidence:
+  - ELM-V0-08
+  - ELM-V0-20
+  - ELM-V0-22
+  - ELM-V0-24
+  observation: D06.b distingue correctement plafond, charge et disponible communiqué et exclut une réservation implicite ;
+    la concurrence de plans utilisant un même créneau reste à démontrer.
+  recommendation: Préciser qui atteste et engage la capacité, avec unité, créneau, fraîcheur et réponse de prise en charge
+    ; signaler conditionnel ou inconnu.
+  acceptance: Deux décisions consommant simultanément un créneau limité ne confondent pas information de capacité et engagement
+    confirmé.
+  boundary: Ne pas inventer Capacity Reservation dans FLOW si l’engagement reste chez l’exécutant ; identifier cette dépendance
+    externe.
+- id: MKT-F09
+  priority: P1
+  title: Comparaisons marché des fiches trop inégales pour la V0
+  category: valorisation_preuve
+  nodes:
+  - D03.i
+  - D03.k
+  - D03.l
+  - D03.m
+  - D03.n
+  - D02.b
+  - D02.c
+  - D05.d
+  - D06.b
+  evidence:
+  - ELM-V0-01
+  - ELM-V0-05
+  - ELM-V0-09
+  - ELM-V0-11
+  - ELM-V0-12
+  - ELM-V0-14
+  observation: Ces capacités n’ont pas de fields.market_comparisons dans le modèle lu alors que l’audit dispose de rapprochements
+    précis. Cela mesure une documentation locale, jamais une absence marché.
+  recommendation: Après revue, reporter les rapprochements utiles et leurs limites dans les fiches selon U311 ; conserver
+    les correspondances proposées tant qu’elles ne sont pas validées.
+  acceptance: Chaque fiche prioritaire montre au moins un appui pertinent, sa différence avec FLOW et sa date ; aucune étiquette
+    validée ou réalisée déduite.
+  boundary: Cet audit écrit une annexe isolée ; il ne modifie pas les champs modèle ni les registres MKT/ELM/CMP existants.

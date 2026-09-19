@@ -1,6 +1,6 @@
 id: flow-modeling-glossary
 kind: modeling_glossary
-as_of: '2026-09-18'
+as_of: '2026-09-19'
 source_refs:
 - U229
 - U230
@@ -17,14 +17,24 @@ source_refs:
 - U389
 - U398
 - U399
+- U290
+- U406
+- U409
+- U417
+- U424
+- U435
+- U449
+- U450
+- U451
+- U464
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
   rule: Ne pas fusionner ce registre avec le glossaire métier ni ajouter ses termes au catalogue métier publié.
   coverage: Vocabulaire de modélisation U229–U232, couverture U260 et comportement U262 ; aucune reclassification exhaustive
     des termes historiques réalisée.
-  links: 'Identifiants MOD propres à ce registre. Les liens glossary: des publications métier conservent leur résolution métier
-    ; aucun nouveau protocole lexical ni écran Atlas créé par cette séparation.'
+  links: Les identifiants MOD appartiennent au méta modèle. Atlas sépare les deux glossaires selon une association méthodologique
+    figée ; les liens TER historiques restent résolus dans leur publication.
 terms:
 - id: MOD001
   name: Decision
@@ -158,7 +168,8 @@ terms:
     portée de validation.'
   - 'U282 précise la maille recherchée sur Supply Protection : mécanismes métier de protection, plutôt que liste des opérations
     sur Allocation. Les opérations fonctionnelles restent matière de conception produit ; elles ne constituent pas un nouveau
-    niveau inférieur dans le modèle. La nouvelle décomposition cible reste à proposer.'
+    niveau inférieur dans le modèle. Les quatre mécanismes BHV017–020 ont été intégrés U290 ; la proposition antérieure reste
+    historique.'
   - U283 retient Mécanisme, Politique, Variante ou bénéfice comme critères différenciants de décomposition. Pour Planning,
     les effets sur les pratiques humaines et les processus distinguent les comportements des fonctions de produits. Ces critères
     ne constituent pas quatre niveaux supplémentaires.
@@ -168,8 +179,9 @@ terms:
     obligatoire des nœuds.
   - 'Le bénéfice ciblé reste un critère transversal de justification U265/U283 : il peut différencier une manière d’agir,
     mais un bénéfice vague ne remplace pas la description de cette manière d’agir.'
-  - 'U389 : les exemples de scopes de visibilité proviennent des arbitrages U305/U308, distincts des 48 comportements intégrés.
-    Leur mention méthodologique ne les intègre ni ne les publie.'
+  - U389 a analysé les exemples de visibilité comme propositions distinctes du catalogue de l’époque. Depuis U406/U409, Operations
+    Tracking porte Warehouse Visibility, Transportation Visibility, Store Visibility et Process Tracking (BHV079–082). L’analyse
+    U389 reste une photographie historique ; leur présence actuelle ne vaut pas publication ni validation globale des détails.
   - 'U398 : la mutualisation peut se lire dans les liens. Décrire le comportement mobilisé et sa différence métier selon le
     contexte ; aucun comportement automatique par appelant et aucun sous-comportement. U399 : règles consignées pour le prochain
     audit et/ou les prochaines améliorations, sans déclencher de nouvelle revue. Convention : modeles/backlog/business-interactions.yaml.'
@@ -184,6 +196,14 @@ terms:
   - CMP145
   - U398
   - U399
+  - U290
+  - U406
+  - U409
+  - U417
+  - U424
+  - U435
+  - U438
+  - U445
   review:
     state: partial
     adopted_scope: 'Comportement comme niveau complémentaire sous la capacité ; arrêt de la décomposition à ce niveau. U263
@@ -233,8 +253,8 @@ terms:
       critère vaut aussi pour les décisions.
     examples:
     - 'Inventory Target Decision : Store, Distribution Center et Multi-Echelon Inventory Optimization (BHV026–028).'
-    - 'Execution Tracking : Warehouse, Transportation et Store Visibility, arbitrés en annexe U305/U308 mais non intégrés
-      comme nœuds dans le catalogue analysé.'
+    - 'Operations Tracking : Warehouse Visibility, Transportation Visibility, Store Visibility et Process Tracking, intégrés
+      comme comportements directs BHV079–082 (U406/U409).'
     boundary: Un comportement par site, équipe ou application n’est pas justifié par le seul changement de périmètre. Le tracking
       est une capacité de connaissance, pas une action au sens strict de fields.nature.
   - key: decision_dimension
@@ -249,9 +269,10 @@ terms:
     explanation: Distinguer des effets substantiels sur les obligations, l’autorisation, la stabilité ou la continuité du
       traitement.
     examples:
-    - 'Promise Management : Promise Proposal, Confirmation, Revision (BHV021–023).'
-    - 'Order Lifecycle Management : Drafting, Firming, Freezing, Release, Hold & Resume, Rescheduling, Cancellation, Closure,
-      Splitting (BHV036–044).'
+    - 'Fulfillment Commitment : Promise Proposal, Confirmation, Revision (BHV021–023).'
+    - 'Order Lifecycle Management : Order Firming, Order Freezing, Order Preparation & Revision, Order Release, Order Hold
+      & Resume et Order Termination (BHV036–040, BHV043 ; U424). Order Splitting BHV044 relève d’Order Structuring, déplacée
+      dans D04 en U438 ; son parent de capacité est conservé depuis U417.'
     boundary: Le nom d’un statut ou d’un bouton ne suffit pas ; expliquer l’effet métier. Ce critère n’autorise pas à dupliquer
       Lifecycle sous chaque type d’Order.
   - key: planning_practice
@@ -277,3 +298,135 @@ terms:
     - ELM052
     - ELM234
     consulted_on: '2026-09-18'
+- id: MOD007
+  name: Capability Nature
+  label_fr: Type de capacité
+  definition: Qualifier une capacité selon son résultat métier dominant, indépendamment de son nom, de ses comportements et
+    de sa réalisation technique.
+  role: Fournir une grille de lecture explicite et stable pour les icônes et la présentation des capacités.
+  notes:
+  - Les six valeurs présentes dans FLOW sont action, management, knowledge, orchestration, planning et decision.
+  - Decision, Planning et Management gardent leurs conventions MOD001–MOD003. Les types peuvent partager des opérations ;
+    la responsabilité dominante porte la classification.
+  - Les décisions sont présentées après les autres capacités ; cet ordre de lecture ne représente pas un enchaînement.
+  - La grille détaillée et les dix compléments proposés sont consignés dans capability-types-U449.yaml ; la nature propre
+    de chaque capacité reste portée par son fields.nature.
+  - OMG DMN éclaire la distinction décision/processus sans prescrire ces six types ni leurs icônes.
+  analysis_ref: modeles/backlog/capability-types-U449.yaml
+  source_refs:
+  - U449
+  - CMP169
+  - ELM259
+  review:
+    state: partial
+    adopted_scope: Typage exhaustif, icônes associées, décisions en fin de liste et séparation légère U449.
+    proposed_scope: Formulation méthodologique, grille détaillée et compléments individuels rédigés par Codex.
+- id: MOD008
+  name: Universe
+  label_fr: Univers
+  definition: Grand périmètre d’urbanisation qui présente des domaines et des groupes de référentiels.
+  role: Situer les domaines sans les imbriquer.
+  source_refs:
+  - U141
+  - U446
+  review:
+    state: proposed
+    proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
+- id: MOD009
+  name: Business Reference
+  label_fr: Référentiel métier
+  definition: Ensemble cohérent de données de référence nécessaires aux capacités métier ; dans Supply, projection de sources
+    maîtresses externes.
+  role: Distinguer les références des commandes, décisions et réalisations.
+  source_refs:
+  - U450
+  review:
+    state: proposed
+    proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
+- id: MOD010
+  name: Model Relationship
+  label_fr: Relation du modèle
+  definition: Lien explicite décrivant une appartenance, une présentation ou une interaction métier entre éléments.
+  role: Distinguer la structure de lecture des échanges et dépendances métier.
+  source_refs:
+  - U450
+  review:
+    state: proposed
+    proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
+- id: MOD011
+  name: Behavior Nature
+  label_fr: Type de comportement
+  definition: Forme qui explique ce qui distingue une manière d’agir au sein d’une capacité.
+  role: Rendre lisible la différence entre politique, parcours, mécanisme, périmètre, raisonnement, effet et pratique de planification.
+  source_refs:
+  - U451
+  review:
+    state: proposed
+    proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
+- id: MOD012
+  name: Information
+  label_fr: Information métier
+  definition: |-
+    Ensemble minimal d’éléments qui, reliés dans un contexte donné, portent un sens métier déterminé et explicitent ce qu’une capacité connaît, utilise, produit ou fait évoluer.
+
+    L’information est décrite indépendamment de sa représentation informatique. La cartographie des informations métier ne constitue pas un modèle de données implémentable.
+  role: Expliciter le contenu métier des capacités et de leurs interactions.
+  notes:
+  - Définition proposée pour FLOW, inspirée de notions distinctes ; aucune norme consultée ne donne exactement cette définition
+    d’Information.
+  - Le minimum se juge au regard d’une question métier et d’un contexte explicites. Le sens peut s’appuyer sur d’autres informations
+    identifiées, sans recopier tout leur contenu.
+  - Insécable signifie ici que les éléments et leurs relations nécessaires au sens étudié doivent être conservés. Cela ne
+    prouve ni l’irréductibilité logique d’un fait élémentaire ni l’indivisibilité d’un stockage ou d’une mise à jour.
+  - Si deux parties portent des sens autonomes utiles à des questions distinctes, les décrire comme informations reliées.
+    Une commande, un dossier complet ou une fiche produit ne sont pas déclarés minimaux par leur seul nom.
+  - Le modèle décrit des types d’information ; un exemple chiffré illustre une occurrence. Une valeur isolée n’a pas nécessairement
+    de sens métier sans son contexte.
+  - Information, objet métier, document et fait de gestion ne sont pas des synonymes. Une information décrit quelque chose
+    de pertinent ; le document la formalise ; un fait de gestion rend compte d’un événement métier.
+  - Le fait élémentaire de la logique ou d’ORM n’est pas automatiquement un fait de gestion FLOW. La règle U461 fait–document
+    demeure attachée aux faits de gestion ; elle ne requiert pas un document distinct pour chaque propriété ou proposition.
+  - 'Les informations sont reliées aux capacités par un rôle explicite : connaître, utiliser, établir, modifier ou constater.
+    Ces verbes pédagogiques ne créent pas de nouveaux types de relation dans le schéma.'
+  - Pour une information de référence projetée, préciser l’autorité et l’alimentation métier utiles, sans inventer de maître
+    installé ni transférer sa responsabilité à Supply.
+  examples:
+  - « 60 » seul ne précise pas l’information recherchée. « 60 pièces promises pour le 25 septembre sur la ligne L » explicite
+    un engagement, dans le contexte de cette ligne.
+  - 'Pour une même ligne, 60 pièces promises le 25 septembre et 40 le 28 septembre : les liens quantité–date sont indispensables.
+    Les séparer en deux listes non reliées ferait perdre le sens. L’échéancier rassemble deux échéances ; ce n’est pas un
+    fait élémentaire unique démontré.'
+  - 'Une commande complète regroupe plusieurs informations : quantités demandées, engagements, réalisations. Demande, engagement
+    et réalisation gardent leurs sens distincts même quand un document les rapproche.'
+  - 'U466 : « 100 pièces vendredi » reste engagé pendant l’étude d’une proposition « 60 vendredi et 40 lundi ». Proposition
+    et engagement de satisfaction sont deux informations métier reliées ; une nouvelle proposition ne remplace pas automatiquement
+    l’engagement.'
+  granularity_rule: Retenir le plus petit ensemble nécessaire à un sens métier explicite, avec ses liens et son contexte.
+    Écarter les détails sans rôle pour les capacités étudiées ; distinguer les sens autonomes plutôt que regrouper tout le
+    dossier.
+  boundary: L’information est décrite indépendamment de sa représentation informatique. La cartographie des informations métier
+    ne constitue pas un modèle de données implémentable.
+  analysis_ref: modeles/backlog/information-definition-U464.yaml
+  source_refs:
+  - U464
+  - U456
+  - U461
+  - ELM269
+  - ELM276
+  - ELM289
+  - ELM290
+  - ELM291
+  - CMP183
+  - U441
+  - U443
+  - U465
+  - U466
+  review:
+    state: proposed
+    requested_scope: U464 demande Information, un sens propre, une maille minimale, un lien aux capacités et l’indépendance
+      d’un modèle implémentable.
+    proposed_scope: Définition, interprétation de l’insécabilité, exemples et règles de granularité. Aucune équivalence normative
+      ni adoption du découpage des informations candidates.
+    adopted_scope_U466: 'Distinct de la définition générale encore proposée : proposition et engagement de satisfaction sont
+      deux informations métier reliées, pouvant coexister.'
+  pilot_catalogue_ref: modeles/backlog/information-cards-U465.yaml

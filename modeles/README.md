@@ -1,5 +1,33 @@
 # Modèles structurés
 
+**Publication U473 : v013 / `2026-09-19.6`.** Retours de revue U470–U472 publiés : univers Supply expliqué concrètement, périmètre d’orchestration et projections externes explicités, 47 fiches enrichies en références marché, Business Services retiré. Les 47 capacités, 76 comportements et 338 relations sont conservés. Le catalogue d’informations reste préservé en interne et masqué dans Atlas ; son extension reste en attente. Bandeau fixe et barre haute compacte disponibles. [Rapport](../audits/2026-09-19-release-U473/rapport.md) ; [note figée](release/2026-09-19.6/release-notes.md).
+
+**Retrait U472 publié dans v013 :** Business Services est retiré, ainsi que son terme TER067 ; Supply Chain Orchestration reste le seul univers instancié. Aucun domaine, capacité ou lien n’était rattaché à cet univers vide. Le commerce est différé après la Supply Chain. V012 et son historique restent inchangés. [Rapport du retrait](../audits/2026-09-19-business-services-U472/rapport.md).
+
+## Informations métier — contrat U468
+
+Le catalogue courant réside dans [`backlog/model.yaml`](backlog/model.yaml), propriété `information_catalog` : 14 informations issues des cinq pilotes, 21 usages explicites par les capacités et 15 liens qualifiés. L’annexe [`information-cards-U465.yaml`](backlog/information-cards-U465.yaml) conserve le pilote et ses preuves ; elle n’est plus la source du catalogue courant.
+
+Chaque information décrit une question métier, une définition, un contexte, les éléments essentiels à son sens, une justification de maille, des limites, des exemples et des références marché. Ce contrat organise une cartographie conceptuelle, sans définir de tables, d’API ni de schéma logiciel implémentable. Les rôles rattachent les informations à des capacités existantes ; les liens entre informations expriment un sens, une condition et un effet. Ils ne créent aucun niveau dans l’arbre ni aucun flux technique implicite.
+
+La collection est facultative pour préserver les anciennes publications. Le schéma et les contrôles interdisent les identités dupliquées, les capacités absentes ou exclues et les liens orphelins. La préparation fige le catalogue dans le snapshot, lui attribue des révisions et empreintes, puis publie exactement ce contenu. Les différences et notes de publication recensent les ajouts, modifications et retraits. Une publication ancienne sans catalogue reste sans catalogue ; Atlas ne consulte pas l’annexe pilote.
+
+Les fiches et liens conservent leurs qualifications internes proposées ; U466 porte uniquement sur la distinction et la coexistence proposition/engagement. Ce premier contrat n’ajoute pas de circuit d’adoption implicite des fiches. Autorités locales, versions, confirmations et règles de libération ne sont pas déduites des exemples.
+
+L’intégration U468 est publiée dans **v012** par U469 ; v011 reste inchangée. Le catalogue est conservé sans enrichissement dans v013, avec sa consultation masquée dans Atlas à la demande U470. [Rapport d’implémentation et recette isolée](../audits/2026-09-19-informations-atlas-U468/rapport.md).
+
+## Publications et jalons antérieurs
+
+**Publication U467 : v011 / `2026-09-19.4`.** Retrait des couches métier, définition Supply corrigée, exemples et choix marché enrichis, glossaire métier de 111 termes. L’édition méthodologique `2026-09-19.2` est explicitement associée à v011 : six repères et Information (MOD012), avec l’exemple proposition/engagement U466. Les quatorze fiches pilotes U465 sont figées comme contexte, sans devenir des nœuds consultables. Les 47 capacités et 76 comportements, leurs parents et les accords à valeurs inchangées sont conservés. [Note figée](release/2026-09-19.4/release-notes.md) ; [rapport et contrôles](../audits/2026-09-19-release-U467/rapport.md). L’index désigne la publication courante ; les paragraphes suivants conservent leur contexte historique.
+
+**Publication U452 : v010 / `2026-09-19.3`.** Les 47 capacités et 76 comportements sont typés dans Atlas. Les dix compléments U449 et les 76 formes U451 sont publiés, avec leurs qualifications proposées conservées. L’édition méthodologique `2026-09-19.1` reste accessible par une association explicite à v010 : six repères et deux glossaires distincts. Noms, définitions, rattachements et anciens snapshots préservés. [Note de release](release/2026-09-19.3/release-notes.md) ; [rapport et vérifications](../audits/2026-09-19-release-U452/rapport.md). L’index reste l’autorité de la publication courante ; les mentions de versions antérieures ci-dessous sont historiques.
+
+**Typage U449 :** 37 valeurs préservées, dix compléments proposés. Icônes par type et décisions en fin de liste, avec séparation visuelle dans Atlas. L’interface utilise les types de la publication sélectionnée, avec une icône spécifique pour les capacités contenues par les référentiels. [Grille](backlog/capability-types-U449.yaml) ; [rapport initial](../audits/2026-09-19-capability-types-U449/rapport.md).
+
+**D03/D15 — U438–U446 :** Fulfillment Optimization et Order Promising sont deux domaines frères sous Supply. Structuring et Archiving sont dans D04 ; Fulfillment Commitment remplace Promise Management (U445). Grouping et Merging sont intégrés comme comportements proposés. [Rapport des modifications](../audits/2026-09-19-d03-U437/modifications.md) ; [portée de l’accord de structure](backlog/d03-domain-review-U437.yaml), [Structuring](backlog/order-structuring-review-U439.yaml) et [engagement / affectation](backlog/promise-assignment-review-U441.yaml).
+
+**Lecture U447 :** référentiels, Order Management, Inventory Management, Process Management, Order Promising, Fulfillment Optimization, Inventory Optimization. [Ordre de présentation](backlog/reading-order-U447.yaml) ; aucune nouvelle hiérarchie.
+
 **Backlog U290 refondu** : Promise Management, mécanismes Protection, trois comportements Planning et convention Supply Assignment à valeur multidimensionnelle. Voir le [bilan de migration](../audits/2026-09-17-refonte-appliquee/rapport.md) et le [registre des identités et questions ouvertes](backlog/refactoring-implementation.yaml). Les publications restent inchangées ; les paragraphes datés ci-dessous conservent leur contexte historique.
 
 ## Deux glossaires distincts — U232
@@ -9,7 +37,7 @@
 
 Le second registre est documentaire et séparé : il ne complète pas implicitement le glossaire métier publié ou son résolveur lexical. Les discussions antérieures restent des sources ; les sens courants de ces quatre notions font autorité dans modeling-glossary.yaml. La séparation U232 porte sur les notions discutées U229–U231, sans reclassification globale des notions et verbes historiques.
 
-**Publication U433 : v008 / `2026-09-19.1`.** L’index désigne `urbanisation-v008-2026-09-19-003103.yaml`, puis `2026-09-19.1/model.yaml` : 135 nœuds, 47 capacités, 74 comportements, 323 relations et 110 termes de glossaire. Audit des comportements soldé, accords transcrits à portée constante et contenus éditoriaux conservés comme proposés. [Note de release](release/2026-09-19.1/release-notes.md) ; [revue des preuves et impacts](../audits/2026-09-19-release-U433/revue.md). L’index reste l’autorité de publication courante ; les mentions de versions courantes ci-dessous sont historiques.
+**Publication U448 : v009 / `2026-09-19.2`.** L’index désigne `urbanisation-v009-2026-09-19-013037.yaml`, puis `2026-09-19.2/model.yaml` : 138 nœuds, six domaines frères, 47 capacités, 76 comportements, 338 relations et 110 termes de glossaire. Référentiels présentés en premier, Order Promising et Fulfillment Optimization séparés, Fulfillment Commitment nommé selon U445 ; Grouping et Merging restent proposés. Accords transcrits à portée constante, anciennes publications préservées et disponibilité Atlas vérifiée. [Note de release](release/2026-09-19.2/release-notes.md) ; [revue des preuves et impacts](../audits/2026-09-19-release-U448/revue.md). L’index reste l’autorité de publication courante ; les mentions de versions courantes ci-dessous sont historiques.
 
 ## Format courant — U200/U202
 
@@ -79,11 +107,17 @@ Les trois dossiers du panorama sont des périmètres SI. Le fichier partagé ne 
 
 ## Structure du modèle
 
-Le graphe distingue `domain`, `reference`, `group`, `capability`, `object`, `document` et `event`. Le champ `layer` distingue `transactional` et `process`. Le cycle de publication est porté par `space`, indépendamment de la couche métier.
+Le graphe distingue `domain`, `reference`, `group`, `capability`, `behavior`, `object`, `document` et `event`. **U455 retire l’axe métier transactionnel/processus** : univers et domaines coopèrent par des responsabilités et interactions explicites. U458 retire `layer` du backlog courant. Le principe `PRINCIPLE-DOMAIN-INTERACTIONS` interdit sa réintroduction ; les anciens snapshots conservent leurs champs et leur contrôle historique. Le lecteur ne s’en sert plus pour déduire une frontière métier. `space` porte le cycle de publication. Ancien principe, nouveaux principes et impacts : [domain-interactions-U455-U456.yaml](backlog/domain-interactions-U455-U456.yaml).
+
+**U456 : Atlas reste strictement métier.** Structures d’information métier, autorités, documents et faits y ont leur place ; catalogues d’applications/produits logiciels, contrats techniques et liens vers les réalisations restent hors d’Atlas. Les dossiers de solution peuvent citer la référence métier. Cette décision corrige la proposition d’audit ; elle ne réécrit pas les publications ni l’application courante.
 
 Chaque nœud a un identifiant stable, une révision, des champs de contenu, un statut et des sources. `fields` contient notamment `name`, `definition`, `finality` et, quand elles sont établies, `nature`, `scope`, `independence` ou `mastership`. Une valeur absente reste inconnue ; la vue ne la complète pas depuis un autre espace.
 
 Les relations ont également leur identifiant, leur type, leurs extrémités et leur statut. `contains` décrit la décomposition et `presents` un groupe de présentation. Les autres liens décrivent des relations métier, sans convertir automatiquement objets, documents ou événements en sous-capacités. Les préfixes historiques ne déterminent jamais les parents : D02.b et D02.c sont rattachées à D01 ; D02.e à D03.
+
+Une relation peut porter une expression courte dans `fields.label` (ou `fields.verb`), lue de `source_id` vers `target_id`. Cet objet optionnel n’accepte que ces deux chaînes non vides. Le sens complet reste dans `qualification`. Avec le rôle `needs`, la flèche va toujours du consommateur vers le fournisseur du résultat ; le libellé ne change ni cette orientation ni le type du lien. Atlas affiche le libellé commun aux relations regroupées, sinon le libellé de famille et le détail de chaque relation.
+
+Ces champs font partie du contenu révisé et figé de la relation. Leur ajout n’étend pas l’accord sur les extrémités ou la qualification : la portée des preuves de cycle de vie demeure explicite. Leur modification impose une révision et ne peut pas altérer une publication existante.
 
 La hiérarchie peut être approfondie, mais un nouveau niveau ou une nouvelle relation doit avoir un sens défini. Étendre le schéma et les règles de graphe avant d’ajouter un nouveau type. Cette souplesse technique ne valide ni un niveau universel, ni des bounded contexts, ni un modèle processus détaillé.
 
@@ -118,6 +152,8 @@ Selon U113, l’exploration et la construction se font **dans le backlog par dé
 U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. U141 structure désormais **Supply** et **Case** comme univers dans le backlog : groupes `group_role: urbanism_level`, `level_ref: universe`. Les domaines transactionnels et Business References sont rattachés à Supply ; Case réserve l’exploration processus. Business References reste un groupe de présentation. La [feuille de route](backlog/modeling-roadmap.yaml) prépare le lien Case/Order sans instancier leur inventaire détaillé ou leurs cardinalités. L’état avant cette refonte est conservé dans [history/pre-U141.json](backlog/history/pre-U141.json).
 
 Les relations peuvent porter `qualification` : sens (`meaning`), rôle, conditions, effets et périmètre. Le type générique `relates-to` permet capacité → capacité/objet/document/événement avec un sens explicite. Les sources et le statut appartiennent au lien lui-même. Cela prépare la structure ; aucun nouveau lien métier réel n’a été ajouté. Une relation entre capacités n’est pas automatiquement une décomposition ; un objet peut concerner plusieurs capacités sans propriétaire exclusif présumé.
+
+**Convention fait–document U461** : lorsqu’un modèle porte `PRINCIPLE-MANAGEMENT-FACT-DOCUMENT`, chaque fait de gestion (`event`) doit être relié à un document identifié par `records` (document → fait). Le document peut être structuré sans fichier. Le validateur vérifie le lien et la nature des extrémités ; il n’impose ni relation un-à-un, ni version, ni règle de correction. Les publications antérieures sans ce principe conservent leur contrat. Les exemples candidats du lot 3 restent dans `backlog/information-pilots-U458.yaml` ; ils ne sont pas promus automatiquement en nœuds.
 
 Le [registre d’applicabilité](backlog/applicability.yaml) prépare quatre contextes, trois `as_is` et FLOW `target`. Il conserve séparément applicabilité, couverture décrite et responsabilité de réalisation. Les évaluations futures référencent l’espace, la version et l’identifiant du domaine ou de la capacité, leurs preuves et réalisations lorsqu’elles sont connues. Le tableau est vide à ce stade : absence de résultat signifie non évalué. Les récits déjà analysés restent disponibles et leur qualification structurée reste à faire. Les schémas associés sont contrôlés avec les autres modèles.
 
@@ -171,12 +207,14 @@ Les chaînes peuvent contenir `[unités physiques](glossary:TER059)` ou `[Invent
 
 La préparation embarque le glossaire dans `glossary` du snapshot et du modèle publié ; elle surveille aussi l’empreinte de son fichier de travail. Une release historique sans ce champ reste sans glossaire. Chaque terme et le catalogue sont versionnés automatiquement, avec UTC `last_modified`. `glossary_changes` et `glossary_reference_impacts` du rapport indiquent les différences et les références à un sens modifié, y compris par un autre terme ; examiner leur portée avant publication, sans déduire une validation depuis une phrase inchangée. Les anciens snapshots restent immuables.
 
-Dans Atlas, la fiche de terme propose sa description courte, sa définition, son contexte et sa provenance. Les liens `model` ouvrent les éléments de tout type. `#definition`, `#finality` et `#scope` désignent les sections de fiche correspondantes ; `#definition` et `#short-description` sont disponibles dans les fiches de glossaire. L’URL Atlas encode séparément la publication, la cible et la section.
+Dans Atlas, la fiche de terme propose sa description courte, sa définition et son contexte ; provenance et validations restent internes depuis U450. Les liens `model` ouvrent les éléments de tout type. `#definition`, `#finality` et `#scope` désignent les sections de fiche correspondantes ; Dans le glossaire, `#definition` désigne la définition ; l’ancien lien `#short-description` y est redirigé depuis U459, sans rubrique « En quelques mots » redondante. L’URL Atlas encode séparément la publication, la cible et la section.
+
+U450 sépare les accès au glossaire métier et au glossaire du méta modèle. Le guide méthodologique versionné porte ses termes MOD et la liste des termes TER du snapshot relevant du méta modèle ; les identités et textes TER ne sont pas réécrits. `modeling-guides/index.yaml` associe précisément l’édition à la publication. La préparation capture l’association de la version de départ, puis la publication la reporte explicitement après contrôle des empreintes, sans choix par tri ni repli vers le backlog. Une modification de l’association après préparation exige un nouveau candidat.
 
 
 ## Comportements — U262 à U264
 
-Le type `behavior` précise une capacité et constitue son dernier niveau descriptif. Une unique relation structurelle `contains` le rattache à un parent de type `capability`, dans la même couche. Les contrôles refusent absence/multiplicité de parent, parent d’un autre type ou couche, nom/définition vides et enfants sous un comportement. Une relation métier `relates-to` peut relier un comportement à une capacité, un comportement, un objet, un document ou un événement, avec qualification explicite ; elle ne crée pas un parent.
+Le type `behavior` précise une capacité et constitue son dernier niveau descriptif. Une unique relation structurelle `contains` le rattache à un parent de type `capability`. U455/U458 retirent le critère de couche du modèle courant. Les contrôles refusent absence/multiplicité de parent, parent d’un autre type, nom/définition vides et enfants sous un comportement. Une relation métier `relates-to` peut relier un comportement à une capacité, un comportement, un objet, un document ou un événement, avec qualification explicite ; elle ne crée pas un parent.
 
 Identités BHV001–BHV004, quatre comportements ATP ; rattachements explicites, aucun parent déduit des identifiants. Le compteur des capacités reste distinct. Définitions U263 adoptées, noms anglais et compléments proposés ; source et portées : connaissance/34-comportements-atp.md et d03-review.yaml. La publication utilise le mécanisme normal de révisions, décisions et snapshots ; cette évolution ne publie pas le backlog.
 
@@ -197,6 +235,10 @@ Le niveau reste terminal, les comportements combinables et facultatifs. Les prop
 
 `fields.market_comparisons` porte les rapprochements sur les nœuds ; `market_comparisons` porte les mêmes informations sur les termes du glossaire métier. Contrat commun : `$defs.marketComparisons` dans le schéma d’urbanisme. Une entrée contient éditeur/produit, libellé/nature externe, relation, points communs, différences, position FLOW, statut et source datée. Les statuts proposés ne deviennent pas validés à la publication. Champ facultatif pour les éléments non étudiés ; lorsqu’un rapprochement est documenté, il doit être renseigné. Les anciennes publications restent valides sans ce champ.
 
+U462 ajoute deux précisions facultatives par rapprochement : `term_choice` explique le choix de vocabulaire et les alternatives écartées ; `definition_choice` explique le périmètre retenu. Elles restent rattachées à la source primaire de la comparaison, avec les décisions internes dans `source_refs`. Un nom repris ne présume pas un effet métier identique chez l’éditeur et dans FLOW.
+
+`fields.examples` conserve les illustrations explicitement structurées : titre, situation, résultat éventuel (`outcome`), leçon métier éventuelle (`lesson`) et provenance interne (`source_refs`). Aucune valeur d’accord n’est déduite d’un exemple. Atlas donne priorité à ce champ ; pour une publication antérieure, il peut mettre en valeur les seuls passages déjà marqués comme exemples dans le périmètre de ce même snapshot. Aucun scénario n’est généré depuis une définition ni récupéré dans le backlog.
+
 
 ## Exécution ciblée et performances
 
@@ -207,3 +249,17 @@ Après une modification, utiliser la matrice de contrôles d’[AGENTS.md](../AG
 `python -m scripts.render_behavior_gap_audit` réutilise un contrôle réussi uniquement si les empreintes des modèles, historiques, preuves protégées, vues et scripts sont identiques. Le checkpoint local est dans `.runtime/behavior-audit-checkpoint.json`, hors Git. Tout changement, disparition, ajout ou cache invalide impose le rejeu. `--full` force ce rejeu ; `--details` affiche toutes les vérifications. Un échec supprime le checkpoint précédent. Une modification d’entrée pendant le contrôle interdit de mémoriser sa réussite. Ce cache de vérification n’accorde aucune validation métier et n’est jamais utilisé par la publication. Python `-O` est refusé pour conserver les assertions.
 
 Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 32 Mio de fichiers sources (les objets Python peuvent occuper davantage). Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.
+
+
+## Améliorations de lecture U458
+
+Atlas indexe les champs métier et le glossaire du snapshot sélectionné, avec priorité au nom exact et à l’identifiant. U459 corrige le retrait des comparaisons : leurs champs de positionnement métier sont affichés et recherchables. Réserves, statuts et sources internes restent hors affichage et hors index de recherche. Les champs autorisés sont explicites dans `app/src/businessContent.ts` ; cette séparation de présentation n’est pas un contrôle d’accès à l’API locale. Les dépendances directes sont montrées par défaut ; les liens entre voisins se demandent explicitement. Les fiches gardent leurs conditions et effets accessibles dans les détails.
+
+`backlog/modeling-guide-U458.yaml` conserve la source de travail des six repères sans couches métier ni exploration de réalisations. U467 en publie une édition figée `2026-09-19.2`, explicitement associée à v011 ; v010 garde son guide précédent. Les sources de leçons sont embarquées dans le guide ; ses références racines relèvent du registre global. La préparation contrôle cette distinction sans inventer de source globale pour un extrait local. Les cinq cas pilotes sont dans `backlog/information-pilots-U458.yaml`, affinés par `backlog/information-cards-U465.yaml` ; leur suivi et leurs arbitrages restent dans `backlog/v0-readiness.yaml`.
+
+
+## Pluralité des sources marché — U470/U471
+
+Le champ racine optionnel `market_reference_policy: two_primary_sources` exige au moins deux documents distincts pour chaque nœud non illustratif, relation ou terme comportant des comparaisons. `validate_models.py` et la préparation de publication l’appliquent ; les URL ne deviennent pas distinctes par changement d’ancre ou ajout de paramètres. Les fiches sans comparaison ne reçoivent aucun appui fictif. La qualité primaire et la pertinence sont contrôlées éditorialement. La politique participe à l’empreinte du modèle et laisse les snapshots historiques sans marqueur inchangés.
+
+U470 masque temporairement le catalogue Informations métier dans Atlas sans supprimer ses données du modèle. Aucune extension n’est engagée pendant cette consolidation.

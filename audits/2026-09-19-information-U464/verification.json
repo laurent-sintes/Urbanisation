@@ -1,0 +1,18 @@
+{
+  "definition": "MOD012 proposed",
+  "existing_methodology_terms_unchanged": 11,
+  "guide_valid": true,
+  "guide_lessons": 6,
+  "definition_consistent_between_glossary_guide_analysis": true,
+  "source_references_resolved": true,
+  "protected_files_unchanged": 306,
+  "business_model_glossary_schema_unchanged": true,
+  "published_guide_and_release_unchanged": true,
+  "validation_errors": 0,
+  "guide_tests_run": 18,
+  "guide_tests_passed": 17,
+  "guide_tests_skipped": 1,
+  "skip_reason": "Windows : création de liens symboliques non autorisée.",
+  "test_command": "python app/test_modeling_guide.py",
+  "initial_test_invocation": "python -m unittest app.test_modeling_guide : import local non résolu ; relancé avec le point d’entrée du fichier."
+}

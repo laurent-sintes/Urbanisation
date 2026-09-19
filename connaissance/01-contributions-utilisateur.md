@@ -10919,3 +10919,949 @@ lance une release
 **contexte et portée**
 
 Autorisation de préparer et publier localement le backlog courant dans FLOW Atlas / Urbanisation. Transcrire les accords antérieurs uniquement à portée et valeurs prouvées, examiner les impacts du glossaire et conserver les propositions comme telles. Cette demande ne valide pas globalement les contenus, ne réouvre pas l’audit clos U431 et ne demande ni commit ni push Git.
+
+## U434
+
+**id**
+
+U434
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Auditer profondément le modèle pour préparer une V0 à présenter
+
+**texte**
+
+Un Audit TRES PROFOND du modèle :
+
+- cohérence et complétude
+- Comparaison très large avec le marché
+- Vérifier les points manquants
+- Les liens manquants ou non valorisés
+
+Objectif : arriver à une V0 propre à présenter aux PO, aux domain Experts et aux archi solution.
+
+**contexte et portée**
+
+Nouvel audit explicitement demandé sur le backlog courant, avec comparaison marché, examen des frontières, des manques et des interactions, et préparation des critères de présentation V0. La clôture historique U431 reste acquise ; ses précisions futures sont prises en compte sans annuler les accords. Les constats et recommandations de ce nouvel audit restent proposés. Cette demande ne constitue ni validation des changements métier recommandés, ni autorisation de publication, de commit ou de push. Dossier : audits/2026-09-19-audit-profond-v0/.
+
+## U435
+
+**id**
+
+U435
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Appliquer les corrections évidentes et plausibles issues de l’audit V0
+
+**texte**
+
+Je souhaite que tu prennes en charge les éléments les plus évidents et plausibles sans me consulter et en me faisant un rapport à la fin des modifs opérées. Pour les pb complexes, tu me demanderas.
+
+**contexte et portée**
+
+Autorisation d’appliquer les corrections évidentes et plausibles révélées par U434 : cohérence éditoriale, liens déjà soutenus par les responsabilités décrites, comparaisons marché étayées et restitution utile. Les accords antérieurs et leur portée par champ restent préservés ; les ajouts restent qualifiés comme propositions, sans validation métier déduite de cette autorisation de travail. Les choix complexes de responsabilité ou de portée des engagements sont soumis à Laurent séparément. Rapport des changements dans audits/2026-09-19-audit-profond-v0/modifications.md. Publication, commit, push et administration serveur restent des opérations distinctes non demandées ici.
+
+## U436
+
+**id**
+
+U436
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Réserver à Reservation le blocage des usages concurrents
+
+**texte**
+
+Seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas.
+
+**contexte et portée**
+
+Réponse à la question de l’audit V0 : « Quand une affectation de ressources à des commandes devient-elle opposable aux autres demandes ? Ce choix détermine la frontière entre Supply Assignment et Reservation. » Accord explicite sur cette frontière : l’affectation seule ne produit pas le blocage concurrent ; une réservation est nécessaire pour cet effet. Les protections de groupe conservent leurs conditions d’admissibilité distinctes. Ne valide pas les règles détaillées d’expiration, de consommation, d’automatisation de la réservation, les mécanismes techniques de concurrence, ni toutes les fiches concernées. Précise A01 du suivi futur U431 sans rouvrir l’audit historique.
+
+## U437
+
+**id**
+
+U437
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Réexaminer la cohérence du domaine D03 et les recouvrements entre ses capacités
+
+**texte**
+
+Ce qui me gêne le plus, c'est le domaine D03.
+Il est un peu fourre tout. L'approche Backlog est sympa mais pas en terme de structuration de domaine.
+Chez SAP, on perle d'order Promising, chez microsoft, de fulfillment optimisation ou order optimisation. C'est mieux. Et puis les capacités se marchent un peut dessus je trouve.
+
+**contexte et portée**
+
+Réexamen ciblé de la structuration de D03, de son nom et des recouvrements entre capacités, dans le prolongement de l’audit V0 U434 et de l’autorisation U435. Laurent distingue l’intérêt de travailler le carnet d’Orders de son emploi comme principe de domaine et demande de confronter les frontières aux approches SAP et Microsoft. Ce constat ne choisit encore ni un nouveau nom, ni une fusion, ni un déplacement de capacités. Les choix complexes seront présentés avec leurs bénéfices et compromis ; U436 sur la réservation reste applicable.
+
+## U438
+
+**id**
+
+U438
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter deux domaines Order Promising et Fulfillment Optimization
+
+**texte**
+
+Deux domaines : Promising et Optimization (recommandé)
+
+**contexte et portée**
+
+Réponse à la question : « Pour D03, quel découpage veux-tu retenir ? Je recommande deux domaines : Order Promising (ATP, CTP, PTP, échéancier, Promise Management) et Fulfillment Optimization (priorités, plan de satisfaction, Planning, Supply Assignment). L’alternative garde ces neuf capacités dans un seul domaine Fulfillment Optimization. Dans les deux cas, je propose de remettre Order Structuring et Order Archiving dans D04 Order Management. Je te soumets ce choix car il modifie des frontières métier et des rattachements précédemment adoptés, ce qui relève des problèmes complexes que tu souhaites arbitrer. »
+
+Choix explicite de la première option : Order Promising reçoit D03.i, D03.j, D03.k, D03.l et D03.n ; Fulfillment Optimization conserve D03.m, D03.o, D03.p et D02.e ; Order Structuring D04.n et Order Archiving D04.q rejoignent D04 Order Management. D03 est conservé pour Fulfillment Optimization ; un identifiant de domaine neuf est attribué à Order Promising. Ces choix remplacent le nom D03 de U413 et les rattachements concernés de U417/U420. Les identifiants des capacités, leurs comportements et leurs définitions adoptées sont conservés. L’accord porte sur les noms de domaines et cette structure ; il ne valide pas globalement les descriptions nouvelles, les comparaisons marché, une fusion, le renommage de Planning, les contrats détaillés entre PTP/échéancier/plan ou une publication. La frontière U436 reste acquise.
+
+## U439
+
+**id**
+
+U439
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Clarifier Order Structuring et examiner son périmètre au-delà de Split
+
+**texte**
+
+La définition de Structuring est incompréhensible. Si le seul comportement est split, alors autant l'appeler split, non ? Il y a d'autres possibilités ?
+
+**contexte et portée**
+
+Question sur l’intelligibilité de D04.n et la justification de sa portée alors que son seul comportement est Order Splitting BHV044. Examiner des possibilités métier concrètes et les références du marché, sans créer automatiquement des comportements de fusion, regroupement ou composition, ni déduire un renommage adopté. La scission de domaines U438 et le rattachement de Structuring à D04 restent acquis ; cette nouvelle question porte sur le contenu de la capacité.
+
+## U440
+
+**id**
+
+U440
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Introduire le regroupement comme deuxième comportement de Structuring
+
+**texte**
+
+Ah oui, il y a aussi l'idée de regrouper en deuxième comportement.
+
+**contexte et portée**
+
+Laurent identifie le regroupement comme deuxième comportement pertinent de D04.n, aux côtés de Split. Son effet sur l’identité des commandes reste à préciser : ensemble de commandes distinctes liées ou fusion en une commande. Le principe de regroupement est retenu ; la définition, le nom anglais et les effets détaillés ne sont pas validés par cette seule formulation. La question d’identité est soumise à Laurent avant de matérialiser le comportement.
+
+## U441
+
+**id**
+
+U441
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Questionner la clarté et l’utilité de Promise Management
+
+**texte**
+
+Promise Management n'est pas très clair non plus. C'est bien utile ?
+
+**contexte et portée**
+
+Demande d’explication et d’évaluation de la responsabilité D03.n, notamment face aux décisions de faisabilité et d’échéancier et au cycle de vie des Orders. Aucun retrait, renommage, fusion ou changement de définition n’est adopté à ce stade. L’évaluation doit distinguer demande, possibilité, plan retenu, proposition et engagement de promesse, sans ajouter d’effet de réservation contraire à U436.
+
+## U442
+
+**id**
+
+U442
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Envisager le regroupement et la fusion comme deux comportements distincts
+
+**texte**
+
+Je pense qu'on peut imaginer les deux comportements
+
+**contexte et portée**
+
+Réponse à la distinction soumise après U440 : « Pour le deuxième comportement de Structuring, “regrouper” signifie-t-il conserver plusieurs commandes distinctes dans un ensemble métier à traiter de façon coordonnée, ou les fusionner en une seule commande ? Ce choix détermine la conservation de leur identité et de leurs engagements. » Laurent demande d’envisager les deux possibilités. Deux comportements distincts sont donc à proposer aux côtés de Split : regroupement conservant les identités et fusion produisant une commande résultante. Noms, descriptions et conditions métier restent proposés ; aucune fusion automatique ou applicabilité universelle à tous les types d’Orders n’est adoptée. La formulation ne vaut pas validation globale des futurs champs.
+
+## U443
+
+**id**
+
+U443
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Comparer Promise Management et Supply Assignment
+
+**texte**
+
+Promise Management est finalement très proche de Supply Assignment, non ?
+
+**contexte et portée**
+
+Question sur le recouvrement entre engagement de satisfaction et affectation des ressources. Éprouver leur indépendance par des cas où la provenance change sans révision de promesse, ou où la date promise évolue sans modification de l’affectation. Aucun regroupement de capacités ni retour sur la partition de domaines U438 n’est déduit de cette question. Les précisions proposées restent soumises aux frontières déjà acquises, dont U436 sur la réservation.
+
+## U444
+
+**id**
+
+U444
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Préciser que Management est le terme gênant dans Promise Management
+
+**texte**
+
+C'est le terme "management" qui est étrange.
+
+**contexte et portée**
+
+Précision de U441/U443 : l’objection vise particulièrement le nom Management. Réexaminer un intitulé plus concret pour la responsabilité de proposition, confirmation et révision de promesse, avec comparaison des termes du marché. Cette précision ne choisit pas encore un nom de remplacement et ne supprime ni la capacité ni sa distinction d’avec Supply Assignment.
+
+## U445
+
+**id**
+
+U445
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter le nom Fulfillment Commitment
+
+**texte**
+
+ok pour Fulfillment Commitment
+
+**contexte et portée**
+
+Accord explicite sur le remplacement du nom Promise Management par Fulfillment Commitment pour D03.n, rattachée à Order Promising D15 depuis U438. Le nom a été présenté avec l’explication « Proposer, confirmer et réviser les engagements de satisfaction d’une commande, en quantités, dates et conditions » et la réserve qu’aucun terme unique de marché couvrant exactement les trois effets n’était établi. Portée retenue : le nom. La définition développée, les conditions détaillées et les comparaisons restent éditoriales ; les trois comportements existants gardent leurs identifiants et noms. Aucune fusion avec Supply Assignment ni réalisation physique, réservation ou modification automatique d’engagement n’est déduite.
+
+## U446
+
+**id**
+
+U446
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Vérifier que les domaines ne sont pas imbriqués
+
+**texte**
+
+Des domaines dans des domaines ????
+
+**contexte et portée**
+
+Objection à une possible lecture imbriquée de la partition U438. Contrôle effectué sur le catalogue et sa restitution : D03 Fulfillment Optimization et D15 Order Promising sont deux domaines frères, présentés directement sous universe-supply comme les quatre autres domaines ; aucune relation contains ou presents entre domaines. Les identifiants historiques des capacités ne définissent pas leur parent. La demande ne constitue ni adoption d’une imbrication ni annulation de la scission U438.
+
+## U447
+
+**id**
+
+U447
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Présenter les référentiels avant les concepts opérationnels et l’optimisation
+
+**texte**
+
+JE voudrais revoir l'ordre des domaines. Les référentiels en premier. Et ensuite revoir pour que ce soit logique à lire : d'abord la base des concepts et ensuite l'optimisation.
+
+**contexte et portée**
+
+Demande d’ordre de lecture, sans modification de responsabilités ni nouvelle hiérarchie. Business References est présenté en premier, puis les domaines opérationnels, la promesse et les optimisations. L’ordre détaillé est une mise en œuvre éditoriale proposée dans la portée U435 : référentiels ; Order Management ; Inventory Management ; Process Management ; Order Promising ; Fulfillment Optimization ; Inventory Optimization. Les six domaines restent frères. L’ordre est porté par les relations de présentation et par les nœuds du backlog pour la restitution ; aucune modification d’une publication historique ni nouvelle release déduite.
+
+## U448
+
+**id**
+
+U448
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier une release après la revue D03 et le réordonnancement
+
+**texte**
+
+Lance une release
+
+**contexte et portée**
+
+Autorisation explicite d’évaluer, préparer et publier localement la release du backlog courant dans FLOW Atlas / Urbanisation, incluant les changements issus de l’audit V0 et les choix U438/U445 ainsi que l’ordre de lecture U447. Les propositions gardent leur statut et les accords leur portée ; publier ne vaut pas adopter les descriptions, nouveaux comportements ou contrats encore proposés. La demande n’inclut ni commit ni push Git.
+
+## U449
+
+**id**
+
+U449
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Typer les capacités et distinguer visuellement les décisions
+
+**texte**
+
+Je souhaite que pour chaque capacité soit typée : décision, action, etc.
+Je souhaite que les icones des capacités soient associées à ces types.
+Je souhaite que pour chaque domaine les décisions soient positionnées systématiquement à la fin de la liste des capacités
+Je souhaite que dans Atlas, il y ait un petit trait, une séparation horizontale légère entre les capacités non décision et les capacités de décision
+
+**contexte et portée**
+
+Demande de typage exhaustif des capacités, d’icônes déterminées par ce type et d’une présentation plaçant les décisions après les autres capacités de chaque domaine, avec séparation légère. Le champ existant fields.nature porte déjà six valeurs : action, management, knowledge, orchestration, planning, decision. Les valeurs présentes sont conservées ; les compléments évidents sont proposés dans la portée U435. Le classement est une aide de lecture, sans ordre d’exécution ni nouvelle hiérarchie. La demande n’adopte pas par extension toutes les qualifications individuelles et ne déclenche pas de release implicite.
+
+## U450
+
+**id**
+
+U450
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Atlas comme vue de présentation et séparation du méta modèle
+
+**texte**
+
+Dans Atlas,
+
+- je ne souhaite pas afficher les réserves, les liens sur les sources de la backlog, l'état de validation etc. Ca doit rester en interne
+- Le glossaire devait être coupé en deux :
+  - le glossaire du méta modèle
+  - le glossaire du modèle métier
+- Le bouton "les clefs du modèle"
+  - il faut parler de "méta modèle" => remplacer par "Comprendre le méta modèle"
+  - Rien ne s'affiche, il y a eu un pb de publication apparemment
+- Il y a un pb d'ascenseur avec le Glossaire actuel : lorsque je baisse l'ascenseur, la liste des termes défile mais pas la description, ou pas immédiatement. Il faut revoir la mécanique UI
+- Supprimer la mention en bas à gauche : "Publier ne vaut pas valider"
+- Pour les capacités de type référentiel, conserver les icones d'avant (une spécifique par capacité)
+- Pour les comportements, typer les comportements et associer des icones par type.
+
+**contexte et portée**
+
+Demande d’une présentation Atlas sans métadonnées internes d’instruction, qui restent conservées dans les sources et publications. Deux espaces lexicaux distincts ; réparation de l’association du guide au modèle consulté par une nouvelle édition méthodologique figée, sans repli sur le backlog. L’exception d’icônes porte sur les capacités explicitement rattachées aux référentiels, sans nouvelle nature métier. Refonte du défilement et typage des comportements dans leur propre grille ; choix de cette grille précisé U451. Aucune suppression de preuve, validation globale, modification de snapshot historique, ni commit ou push demandé.
+
+## U451
+
+**id**
+
+U451
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Retenir les formes propres aux comportements
+
+**texte**
+
+Les formes propres aux comportements
+
+**contexte et portée**
+
+Réponse à la proposition de typer les comportements selon les formes documentées dans MOD006 : politique/stratégie, variante de parcours, mécanisme, périmètre métier, dimension de raisonnement, effet sur un état ou engagement, pratique de planification. La grille est retenue ; les qualifications individuelles ajoutées par Codex restent proposées dans la portée U435. Les formes peuvent se combiner ; un type principal sert l’icône sans interdire des formes complémentaires.
+
+## U452
+
+**id**
+
+U452
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier le typage des capacités et des comportements dans Atlas
+
+**texte**
+
+Lance une release
+
+**contexte et portée**
+
+Demande explicite de production et de publication locale de la release du backlog courant dans FLOW Atlas, après présentation du bilan U450/U451. Elle couvre les 76 formes de comportements et les dix types de capacités complétés en U449, ainsi que le report explicite de l’édition méthodologique associée. Les vérifications de préparation et de disponibilité restent nécessaires. La demande autorise la publication sans nouvel accord métier sur les classifications proposées et sans commit ou push Git.
+
+## U453
+
+**id**
+
+U453
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Audit approfondi de l’UX, de l’UI et de la dimension informationnelle d’Atlas
+
+**texte**
+
+Je veux un audit de l'UX et l'UI d'Atlas.
+Atlas est une cartographie métier qui doit expliciter le métier pour n'importe qui dans l'entreprise, du DG au développeur qui devra implémenter les fonctions logicielles.
+Simple, clair, droit au but. Ca c'est pour comprendre.
+On doit se mettre à la place des PO/Archi Solution pour qui c'est une référence pour éviter de dériver et d'imaginer des solutions ou des produits qui implémenteraient des choses hors scope. Ca doit aussi parler aux archis techniques et solutions pour imaginer les points de découplage fonctionnels. Le découpage univers/domaine/capacité semble suffisant.
+Regarde ce qui se fait de mieux sur le marché de la carto métier / fonctionnelle.
+En terme de méta modèle, c'est pas mal. Il manque peut être pour les référentiels les source d'alimentation car on a dit que c'était des projections. Il manque peut être aussi pour les capacités qui sont des objets métier (Purchase Order etc.) une référence sur la structure de données. La notion de structure de donnée est aussi interessante pour les référentiel. Je dirais que c'est qui manque le plus : l'aspect data. Regarde sur le marché (microsoft sap et autres) si c'est dans ce type de carto qu'on parle de data ou si c'est à un niveau solution. Je ne suis pas sur...
+Regarde aussi si le méta modèle reflète bien toute la structuration.
+En terme d'UI, c'est très mono couleur. Est-ce la bonne décision ?
+Quand on parle d'ERP et de supply, on parle aussi de documents et de faits de gestion. Ma question est : est-ce que ça doit apparaitre niveau solution ou niveau carto de capacité ?
+Prends ton temps pour faire un audit profond et détaillé et me faire des propositions avec alternatives et recommandations.
+
+**contexte et portée**
+
+Audit de la publication v010, de l’interface effectivement servie et du méta modèle, avec comparaison documentée au marché. Examiner compréhension, cadrage des solutions, découplage fonctionnel et place des objets/informations/documents/faits de gestion. Distinguer constats, propositions et arbitrages ; ne pas déduire de nouvelles sources maîtresses, flux installés, structures logiques ou produits Beaumanoir. Purchase Order reste dans le catalogue une capacité d’action nommée selon U384, distincte de l’objet métier homonyme. La demande porte sur un audit et des alternatives argumentées, sans refonte, release ou déploiement implicites.
+
+## U454
+
+**id**
+
+U454
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Fonder l’audit sur la discipline d’architecture et les références indépendantes de SAP
+
+**texte**
+
+Je me méfie parfois de SAP. Que disent les autres ? Que dit la discipline d'architecture ? Togaf par exemple ?
+
+**contexte et portée**
+
+Précision du périmètre de l’audit U453 en cours : approfondir TOGAF et comparer les recommandations aux cadres d’architecture et aux autres éditeurs. Ne pas faire de la pratique SAP une autorité suffisante ni masquer les différences de niveau entre information métier, architecture des données et conception de solution. Aucun changement du modèle ni adoption d’un standard n’est demandé par cette question.
+
+## U455
+
+**id**
+
+U455
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Abandonner les couches transactionnelle/processus au profit des interactions entre univers et domaines
+
+**texte**
+
+Concernant "Couches transactionnelle/processus", je pense qu'il faut oublier le concept qui est très "SAP". Il n'y a pas de "couches" à proprement parler, ce sont des domaines et univers qui sont en interaction. Par exemple, Commerce capte des intentions et les transforme en engagement via la Supply qui elle même le concrétise via la logistique.
+
+**contexte et portée**
+
+Correction du principe de structuration évoqué dans l’audit U453/U454 : abandonner l’axe métier transactionnel/processus, décrire les interactions entre univers et domaines. Commerce, Supply et logistique illustrent la coopération autour des intentions, engagements et réalisations ; la proposition n’adopte pas leurs futurs noms anglais, niveaux, parents ou capacités détaillées. Les processus et responsabilités de décision, coordination et application restent descriptibles sans couches. L’appréciation « très SAP » est conservée comme propos de Laurent, sans attribution historique vérifiée. La migration technique du champ historique layer doit respecter les publications et preuves figées.
+
+## U456
+
+**id**
+
+U456
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Conserver Atlas dans un périmètre strictement métier
+
+**texte**
+
+D'autre pas part, je souhaite qu'Atlas reste dans un scope métier et de déborde pas sur les solutions ou les produits.
+
+**contexte et portée**
+
+Précision de l’audit en cours : Atlas décrit le métier, ses responsabilités, interactions, informations, documents, faits et règles. Les propositions de catalogues de solutions ou produits, de liens vers les réalisations et de contrats techniques dans Atlas sont retirées. Les comparaisons de marché peuvent étayer le travail interne de modélisation sans définir un découpage applicatif. Le mot produit vise ici les produits logiciels et solutions, pas les produits/articles du métier Supply. Cette frontière ne retire ni les objets métier ni les projections de référence ; leurs autorités et sources se décrivent par des responsabilités métier, sans application supposée.
+
+
+## U457
+
+**id**
+
+U457
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Proposer un plan d’amélioration du projet
+
+**texte**
+
+Tu peux proposer un plan d'action pour améliorer le projet ?
+
+**contexte et portée**
+
+Proposition de six lots dans audits/2026-09-19-atlas-ux-ui-U453/plan-action.md : cohérence du socle, consultation, cinq cas pilotes, informations métier, généralisation et recette/préparation de publication. Aucun lot lancé par cette seule demande.
+
+## U458
+
+**id**
+
+U458
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Démarrer le plan d’amélioration Atlas
+
+**texte**
+
+On démarre le plan proposé
+
+**contexte et portée**
+
+Autorisation d’exécuter le plan U457, en commençant par les lots 1 et 2 ; avancer sur les cas pilotes et travaux indépendants, soumettre les arbitrages métier complexes sur des propositions concrètes. Appliquer U455/U456, préserver les publications et accords historiques. Le lancement ne valide pas les nouveaux contenus par extension et ne demande ni release, ni commit, ni push.
+
+
+## U459
+
+**id**
+
+U459
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Vue univers enrichie, glossaire simplifié et références marché visibles
+
+**texte**
+
+Petit ajout léger : dans la vue univers, je vois les domaines et les capacités. la souris sur une capacité montre la définition. Je voudrais que dans le tooltip, j'ai la liste avec bullet point des comportements. Du coup la vue univers est réellement une vue overview.
+
+Dans le glossaire, "En quelques mots" ne sert à rien car les définitions sont déjà courtes, trop courtes peut être.
+
+On a perdu toute la référence au marché, c'était une regle explicite dans agents.md. Important sur tout le modèle. Il faut qu'on voit si on est standard ou innovant ou en appui sur une solution de marché particulière.
+
+**contexte et portée**
+
+Ajouter les comportements issus des parents explicites aux infobulles des capacités de la vue univers ; supprimer la rubrique redondante du glossaire. Rétablir les références et positions marché dans Atlas, sans catalogue applicatif ni choix d’implémentation. U459 corrige l’interprétation trop restrictive C106/U458 : le positionnement comparatif fait partie de la référence métier. Ne pas inférer conformité à un standard, innovation ou solution installée depuis une ressemblance ou une absence de comparaison. Aucun nouvel accord sur le contenu des comparaisons ; aucune release demandée.
+
+
+## U460
+
+**id**
+
+U460
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Poursuivre le plan après les ajustements de lecture
+
+**texte**
+
+next step
+
+**contexte et portée**
+
+Poursuivre le plan U458, avec les cinq pilotes du lot 3 et les repères marché visibles confirmés U459. Approfondir les informations de Product Reference et les frontières engagement/affectation/réservation ; préparer les cas de revue et les données conceptuelles utiles. Cette continuation ne répond pas à la question V0-P01 sur la convention fait/document et n’adopte ni cardinalité, ni autorité métier effective, ni règle de correction. Aucun lancement de release ou nouvel audit exhaustif des comportements.
+
+## U461
+
+**id**
+
+U461
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Conserver le lien entre fait de gestion et document métier identifié
+
+**question présentée**
+
+Pour le pilote Purchase Order, il reste un choix de méta modèle : tout fait de gestion doit-il être associé à un document métier identifié, même si ce document est un enregistrement structuré et non un PDF ? Je recommande de conserver cette distinction que tu avais posée. Pendant ce temps, j’avance sur Product Reference et sur la séparation promesse / affectation / réservation.
+
+**texte**
+
+Oui, conserver le lien fait–document
+
+**contexte et portée**
+
+Confirme la convention U61 pour les faits de gestion : association à un document métier identifié, qui peut être un enregistrement structuré sans fichier PDF. Résout le principe de V0-P01. Ne fixe ni nombre exact de documents par fait, ni identité/version des documents, ni règle d’immutabilité ou de correction, ni responsabilité d’autorisation ; les informations candidates des pilotes restent proposées. Aucun accord global ni publication implicite.
+
+## U462
+
+**id**
+
+U462
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Rendre visibles les références marché, les choix de vocabulaire et les exemples concrets
+
+**texte**
+
+En termes de contenu, ça manque cruellement de
+
+- référence du marché avec les choix qu'on a fait pour sélectionner termes et définitions. Ca pourrait être dans atlas un onglet supplémentaire à fiche, liens etc. Et il faut sourcer.
+- Exemples concrets. Dans nos discussions on en a donné, c'est très illustratif et très important.
+
+**contexte et portée**
+
+Demande de mise en valeur et de complétude éditoriale, sur les termes, définitions et exemples discutés. Ajouter une entrée de lecture dédiée au marché, rendre explicites les raisons des choix et donner accès aux sources primaires. Faire ressortir les exemples déjà présents et reprendre les cas discutés avec leur provenance interne, sans les transformer en observations installées. Aucun renommage, nouvelle validation de définition, release ou réouverture globale de l’audit des comportements implicites.
+
+## U463
+
+**id**
+
+U463
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Retirer la référence transactionnelle de la définition de l’univers Supply
+
+**texte**
+
+Dans la définition de "Supply Management" il reste encore des références à la notion de transaction que je cherche à éliminer pour ne pas s'accrocher trop à SAP qui n'est pas le meilleur modèle
+
+**contexte et portée**
+
+La définition visée est retrouvée sur universe-supply, nommé Supply Chain Orchestration depuis U373 : « Univers du pilotage transactionnel de la Supply ; priorité de l’exploration courante. » Corriger cette définition en responsabilités métier, conformément à U455/U456, et les deux définitions de glossaire qui réintroduisent la même hiérarchie OMS/Supply. Le nom adopté, le périmètre et les rattachements restent inchangés. La formulation rédigée reste éditoriale ; aucune origine exclusivement SAP de la notion de transaction ni supériorité générale d’un autre produit n’est établie. Conserver les verbatims, accords et publications historiques. Aucune release demandée.
+
+## U464
+
+**id**
+
+U464
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Définir Information dans le méta modèle et rechercher son fondement théorique
+
+**texte**
+
+Prochaine étape : la data. Ou plutot les informations métier. Il faut définir la notion d'Information dans le méta modèle et dire que ce n'est pas un modèle de données implémentable, une information est groupe de données insécables minimum, portant son propre sens et explicitant les capacités.
+Recherche dans la théorie des données la définition exacte et limpide de cette notion
+
+**contexte et portée**
+
+Demande de recherche et de définition méthodologique, indépendante des modèles de données implémentables. Préserver l’exigence de sens propre, de maille minimale et de lien aux capacités. Comparer information, concept d’information, élément de données et fait élémentaire ; ne pas présenter leur assimilation comme une définition normative. La formulation proposée et la règle précise d’insécabilité restent à discuter. Aucun nouveau type technique de nœud, maillage exhaustif du métier, conversion des objets/documents/faits, ni release n’est adopté par cette demande.
+
+## U465
+
+**id**
+
+U465
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Éprouver Information sur les cinq pilotes
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Poursuivre l’étape annoncée après U464 : éprouver la granularité des informations sur Purchase Order, Product Reference, Fulfillment Commitment, Supply Assignment et Reservation. Préparer des fiches structurées avec sens, contexte minimal, usages par les capacités, liens métier, exemples et comparaisons sourcées. Le découpage proposé ne devient pas globalement adopté ; les problèmes complexes restent à arbitrer. Aucun schéma de données implémentable, nouveau type de nœud canonique ou release implicite.
+
+## U466
+
+**id**
+
+U466
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Distinguer proposition et engagement de satisfaction comme informations reliées
+
+**question présentée**
+
+Pour éprouver la maille des informations de promesse, je recommande de distinguer « proposition de satisfaction » et « engagement de satisfaction » : une nouvelle proposition peut être étudiée pendant que l’engagement actuel reste valable. Veux-tu deux informations métier reliées, ou une même information avec des versions proposées et confirmées ? Ce choix structure le modèle métier ; il ne prescrit aucune table ou solution.
+
+**texte**
+
+Deux informations métier reliées (recommandé)
+
+**contexte et portée**
+
+Adopte la distinction de deux informations métier reliées, proposition de satisfaction et engagement de satisfaction, avec possibilité de préparer une proposition tandis que l’engagement actuel reste valable. Ne fixe ni noms anglais, définitions détaillées, identités, cardinalités, règles de version/correction ou autorisations de confirmation. Aucun report automatique à la réponse fournisseur, aucune table ou réalisation technique déduite.
+
+## U467
+
+**id**
+
+U467
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier une release pour tester Atlas
+
+**texte**
+
+Lance une release que je teste un peu
+
+**contexte et portée**
+
+Autorise la préparation contrôlée du backlog courant et sa publication locale dans FLOW Atlas, ainsi que l’actualisation explicite du guide du méta modèle préparé depuis U458, incluant Information et l’exemple U466. Les qualifications de contenu et les accords gardent leur portée. Les fiches d’information U465 restent des annexes de travail tant que leur contrat de catalogue et leur consultation dans Atlas ne sont pas implémentés ; cette demande de release ne les promeut pas silencieusement en nœuds. Vérifier la version effectivement servie. Aucun commit, push Git ou déploiement distant demandé.
+
+## U468
+
+**id**
+
+U468
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Intégrer les informations métier au catalogue et à la consultation Atlas
+
+**texte**
+
+Prochaine étape
+
+**contexte et portée**
+
+Poursuivre l’étape annoncée après la release U467 : préparer le contrat de publication des informations métier et leur consultation dans Atlas à partir des quatorze fiches pilotes U465. Décrire leurs liens aux capacités, exemples et références marché ; garder une vue transversale distincte de la décomposition Capacité → Comportement. Les contenus proposés et la portée précise de U466 sont conservés ; aucune nouvelle règle d’autorité, confirmation ou réservation n’est adoptée. Les publications historiques restent immuables ; une nouvelle release reste une opération distincte.
+
+## U469
+
+**id**
+
+U469
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Consolider la base et publier pour une revue pas à pas
+
+**texte**
+
+Je souhaite consolider la base dans un premier temps sans vraiment développer le volet data / information.
+Lance une release.
+Je vais faire une review pas à pas et te faire un feedback
+
+**contexte et portée**
+
+La priorité devient la consolidation de la base et le traitement des retours de Laurent au fil de sa revue. Mettre en attente l’extension et la généralisation du volet data/information. Publier localement l’état courant déjà préparé, incluant les travaux U468 existants sans les enrichir ; aucune demande de retrait de ces travaux. Conserver les qualifications et arbitrages ouverts. La release ne constitue pas une validation globale du contenu ni une autorisation de poursuivre automatiquement la généralisation. Aucun commit ou push Git demandé.
+
+## U470
+
+**id**
+
+U470
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Rendre les univers compréhensibles, justifier leur périmètre et alléger Atlas
+
+**texte**
+
+Premiers feedback :
+
+- Il faut, quand j'ouvre la fiche d'un univers (Supply Chain Management) je comprenne très vite de quoi il s'agit. Pas d'abstraction pompeuse, droit au but. Il faut que quelqu'un qui ne connait pas le domaine comprenne : c'est auto porté. Dans la définition de cet univers, la premiere phrase est abstraite même si elle est vraie. Ce n'est pas une bonne entrée en matière. De plus on parle de Supply Chain sans définir le terme ni même apporter des exemples. Les mots clefs ne proposent pas de liens vers le glossaire. La règle du lien avec tooltip au survol doit s'appliquer. => il faut revoir les contenus et applique ces règles éditoriales qui doivent être consignées.
+- Dans "marché et choix" de cet univers, je m'attendais à avoir une justification du périmètre et du nom de cet univers vis à vis du marché. Ce n'est pas le cas, ça synthétise les choix des capacités sous jacentes.
+- Dans la fiche de l'univers il manque cet élément important qui propose un noyau plus dense que ce que le marché propose : "Supply chain management". Comme le client souhaite garder les applications satellitaires qui gèrent la source de vérité des référentiels, alors les référentiels sont des projections dans cet univers et il n'y a pas de capacité de gestion (processus pour créer / modifier / supprimer etc.) de ces référentiels mais il y a une capacité d'ingestion à partir des sources de vérité. Donc, il ne reste que le coeur de la supply chain, c'est à dire sa fonction d'orchestration, d'où le nom.
+- Retire d'atlas les informations métiers pour l'instant afin de ne pas trop alourdir.
+- Lorsqu'il y a des références de marché, j'en veux au moins 2 systématiquement
+
+**contexte et portée**
+
+Revue de la base publiée : rendre l’entrée des fiches autonome et concrète, expliquer le vocabulaire avant de l’utiliser, fournir exemples et liens de glossaire avec infobulles. Justifier le nom et le périmètre de l’univers à cette même maille, sans substitution par un résumé des capacités. Réaffirmer le choix client de conserver les sources de vérité hors de l’univers : ingestion et projections utiles à la Supply, sans administration des référentiels maîtres ; cœur d’orchestration au périmètre plus resserré que SCM. Ne pas déduire le nom d’une application source installée. Le nom canonique Supply Chain Orchestration est conservé ; la mention Supply Chain Management introduit la comparaison de périmètre, pas un renommage demandé. Retirer temporairement le catalogue d’informations de la consultation Atlas, sans effacer le travail interne ni réécrire les publications. Consigner la règle d’au moins deux références marché pertinentes par élément comparé. Aucune nouvelle release ni validation globale des rédactions demandée.
+
+## U471
+
+**id**
+
+U471
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Compléter immédiatement les 47 fiches à référence marché unique
+
+**question présentée**
+
+La règle des deux références marché concerne aussi 47 fiches existantes qui n’en ont actuellement qu’une. Préfères-tu les compléter au fil de ta revue pas à pas, ou lancer leur reprise globale dès maintenant ? Je poursuis dans les deux cas la correction de l’univers Supply et l’allègement d’Atlas.
+
+**texte**
+
+Reprendre les 47 fiches maintenant
+
+**contexte et portée**
+
+Étend la correction U470 aux 47 fiches du modèle et du glossaire métier ne comportant qu’une source marché distincte. Ajouter une deuxième référence pertinente effectivement consultée, en explicitant proximité, écart et limites, sans inventer d’équivalence ni modifier les responsabilités. Les informations métier retirées de la lecture ne sont pas développées. Cet enrichissement documentaire ne rouvre pas l’audit des comportements clos et n’adopte pas les rapprochements proposés. Aucune publication implicite.
+
+## U472
+
+**id**
+
+U472
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Retirer Business Services et différer le commerce
+
+**texte**
+
+L'univers Business Services n'a pas de sens. Il faut le supprimer. On parlera du commerce quand on aura fini la supply chain
+
+**contexte et portée**
+
+Retirer l’univers Business Services de la structure courante du modèle et corriger les références actives qui le présentent encore comme un périmètre à construire. Le commerce sera étudié après la Supply Chain : aucun univers Commerce ni nouveau rattachement n’est créé en remplacement. Le retrait remplace, dans cette portée, l’adoption U173 ; il n’efface ni cette décision historique ni les publications antérieures. Conserver les responsabilités Supply existantes, notamment les commandes de vente et l’orchestration des prestations. La publication d’un modèle corrigé reste distincte de cette demande de modification.
+
+## U473
+
+**id**
+
+U473
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier les retours de revue et le retrait de Business Services
+
+**texte**
+
+Lance une release
+
+**contexte et portée**
+
+Autorise la préparation, le contrôle et la publication locale du backlog courant dans Atlas : contenu Supply clarifié, compléments de références marché U470/U471 et retrait Business Services U472. Les ajustements de présentation, bandeau fixe et barre haute compacte, sont déjà compilés ; le catalogue Informations métier reste masqué selon U470. Ne pas développer le commerce ni le volet data/information. Cette demande de release ne valide pas globalement les rédactions ni les comparaisons ; conserver les accords à leur portée démontrée et les propositions avec leur qualification. Aucun commit, push Git ou déploiement distant demandé.

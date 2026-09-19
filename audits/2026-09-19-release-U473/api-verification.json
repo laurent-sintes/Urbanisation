@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "version": "2026-09-19.6",
+  "revision": 13,
+  "published_at": "2026-09-19T12:28:48.183462Z",
+  "descriptor": "urbanisation-v013-2026-09-19-122848.yaml",
+  "sourcePath": "modeles/release/2026-09-19.6/model.yaml",
+  "model_equals_frozen_snapshot": true,
+  "nodes": 137,
+  "relations": 338,
+  "capabilities": 47,
+  "behaviors": 76,
+  "glossary_terms": 110,
+  "market_fiches_with_two_or_more_sources": 120,
+  "unchanged_information": 14,
+  "unchanged_information_links": 15,
+  "guide": "2026-09-19.2",
+  "historical_files_unchanged": 430,
+  "backlog_model_and_glossary_unchanged": true,
+  "server_pid": 24916
+}

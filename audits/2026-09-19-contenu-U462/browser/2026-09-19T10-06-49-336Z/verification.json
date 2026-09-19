@@ -1,0 +1,237 @@
+{
+  "status": "passed",
+  "version": "2026-09-19.3",
+  "checks": [
+    "Publication réelle : exemples extraits du snapshot, onglet marché, choix et sources visibles, clavier, ancien lien redirigé sans changer de version.",
+    "Aucun complément backlog : Product Reference reste sans comparaison dans v010.",
+    "390 px : quatre onglets, sources et exemples sans débordement horizontal.",
+    "Surface équivalente à 200 % : repli et contenu lisibles à 720 px.",
+    "Glossaire : sources externes également accessibles directement.",
+    "Fixture seule : raisons du nom/de la définition, écart SAP explicite, trois comportements illustrés et recherche des exemples.",
+    "Publication historique : aucune comparaison ou explication récupérée dans le modèle courant."
+  ],
+  "errors": [],
+  "published": {
+    "capability": {
+      "total": 47,
+      "examples": 46,
+      "market": 39,
+      "explicit_choices": 0
+    },
+    "behavior": {
+      "total": 76,
+      "examples": 73,
+      "market": 63,
+      "explicit_choices": 0
+    },
+    "domain": {
+      "total": 6,
+      "examples": 4,
+      "market": 3,
+      "explicit_choices": 0
+    },
+    "reference": {
+      "total": 6,
+      "examples": 1,
+      "market": 1,
+      "explicit_choices": 0
+    }
+  },
+  "backlog_fixture": {
+    "capability": {
+      "total": 47,
+      "examples": 47,
+      "market": 40,
+      "explicit_choices": 7
+    },
+    "behavior": {
+      "total": 76,
+      "examples": 73,
+      "market": 63,
+      "explicit_choices": 0
+    },
+    "domain": {
+      "total": 6,
+      "examples": 4,
+      "market": 3,
+      "explicit_choices": 2
+    },
+    "reference": {
+      "total": 6,
+      "examples": 2,
+      "market": 2,
+      "explicit_choices": 1
+    }
+  },
+  "gaps": {
+    "capability": {
+      "market": [
+        {
+          "id": "D07.a",
+          "name": "Service Requirements Decision"
+        },
+        {
+          "id": "D07.c",
+          "name": "Service Reconciliation"
+        },
+        {
+          "id": "D09.d",
+          "name": "Party / Role Ingestion"
+        },
+        {
+          "id": "D11.a",
+          "name": "Agreement Ingestion"
+        },
+        {
+          "id": "D12.a",
+          "name": "Catalog Ingestion"
+        },
+        {
+          "id": "D13.a",
+          "name": "Fulfillment Network Ingestion"
+        },
+        {
+          "id": "D14.a",
+          "name": "Service Catalog Ingestion"
+        }
+      ],
+      "examples": []
+    },
+    "behavior": {
+      "market": [
+        {
+          "id": "BHV001",
+          "name": "Existing Commitment Consideration"
+        },
+        {
+          "id": "BHV002",
+          "name": "Network Stock Availability"
+        },
+        {
+          "id": "BHV003",
+          "name": "Operational Availability Timing"
+        },
+        {
+          "id": "BHV004",
+          "name": "Future Supply Projection"
+        },
+        {
+          "id": "BHV005",
+          "name": "Scenario Construction"
+        },
+        {
+          "id": "BHV016",
+          "name": "Scenario Execution Adaptation"
+        },
+        {
+          "id": "BHV017",
+          "name": "Group Supply Protection"
+        },
+        {
+          "id": "BHV018",
+          "name": "Consumption Capping"
+        },
+        {
+          "id": "BHV019",
+          "name": "Safety Stock Policy"
+        },
+        {
+          "id": "BHV020",
+          "name": "Replenishment Regulation"
+        },
+        {
+          "id": "BHV021",
+          "name": "Promise Proposal"
+        },
+        {
+          "id": "BHV022",
+          "name": "Promise Confirmation"
+        },
+        {
+          "id": "BHV023",
+          "name": "Promise Revision"
+        }
+      ],
+      "examples": [
+        {
+          "id": "BHV001",
+          "name": "Existing Commitment Consideration"
+        },
+        {
+          "id": "BHV002",
+          "name": "Network Stock Availability"
+        },
+        {
+          "id": "BHV004",
+          "name": "Future Supply Projection"
+        }
+      ]
+    },
+    "domain": {
+      "market": [
+        {
+          "id": "D04",
+          "name": "Order Management"
+        },
+        {
+          "id": "D01",
+          "name": "Inventory Management"
+        },
+        {
+          "id": "D05",
+          "name": "Inventory Optimization"
+        }
+      ],
+      "examples": [
+        {
+          "id": "D04",
+          "name": "Order Management"
+        },
+        {
+          "id": "D01",
+          "name": "Inventory Management"
+        }
+      ]
+    },
+    "reference": {
+      "market": [
+        {
+          "id": "D09",
+          "name": "Party / Role"
+        },
+        {
+          "id": "D12",
+          "name": "Catalog"
+        },
+        {
+          "id": "D11",
+          "name": "Agreement"
+        },
+        {
+          "id": "D13",
+          "name": "Fulfillment Network"
+        }
+      ],
+      "examples": [
+        {
+          "id": "D09",
+          "name": "Party / Role"
+        },
+        {
+          "id": "D12",
+          "name": "Catalog"
+        },
+        {
+          "id": "D11",
+          "name": "Agreement"
+        },
+        {
+          "id": "D13",
+          "name": "Fulfillment Network"
+        }
+      ]
+    }
+  },
+  "fixture_was_not_published": true,
+  "output": "C:\\Dev\\Beaumanoir Cartographie\\audits\\2026-09-19-contenu-U462\\browser\\2026-09-19T10-06-49-336Z"
+}

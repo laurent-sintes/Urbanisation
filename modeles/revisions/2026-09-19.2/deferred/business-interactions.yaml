@@ -1,0 +1,45 @@
+id: BUSINESS-INTERACTIONS-U398
+source_refs:
+- U398
+- U399
+- U397
+- ELM239
+- CMP150
+- U434
+- U435
+- U436
+status: targeted_application_U435
+principle: Les capacités et leurs liens doivent permettre de reconstruire une logique métier. La mutualisation peut apparaître
+  dans leurs interactions ; elle ne détermine pas le découpage des comportements.
+contextual_behavior: 'Lorsqu’une capacité mobilisée par plusieurs capacités agit différemment selon le contexte, distinguer
+  ses comportements et expliquer ce qui change : intention, résultat, contraintes ou engagements. Un appelant différent ne
+  suffit pas si le comportement reste identique.'
+ownership: Chaque comportement reste sous une seule capacité ; les interactions permettent de désigner ou décrire le comportement
+  mobilisé sans le copier sous tous ses appelants.
+relation_convention:
+  status: label_storage_and_display_implemented_U435
+  label: Expression courte source vers cible dans relation.fields.label (verb accepté en compatibilité). Atlas respecte le
+    libellé explicite aussi pour needs ; agrégats hétérogènes conservent leur famille et leurs relations détaillées.
+  meaning: Sens complet, résultat métier attendu et comportements concernés dans qualification.meaning.
+  conditions: Conditions dans qualification.conditions ; expliquer pourquoi le comportement diffère.
+  effects: Effets attendus et frontières dans qualification.effects et scope.
+  semantics: Distinguer dépendance de service, information ou résultat transmis, déclenchement causal et réalisation. Ne pas
+    inverser les flèches ni inventer une séquence pour rendre le récit plus fluide.
+rollout: 'U399 : terminer l’audit existant. Règles à utiliser lors du prochain audit et/ou des prochaines améliorations, sans
+  nouvel audit, revue des liens existants ou chantier Atlas déclenché par leur mémorisation. Aucun calendrier ni automatisation
+  créé. U434 demande explicitement un nouvel audit profond ; U435 autorise les corrections évidentes. Douze liens proposés
+  et dix-sept libellés de relations existantes sont traités dans ce lot. La qualification générale des autres liens reste
+  à instruire ; U431 demeure clos.'
+market_comparison:
+  source_url: https://archimate-community.pages.opengroup.org/workgroups/archimate-101/
+  title: 'ArchiMate 101: A Practical Introduction'
+  vendor: The Open Group — ArchiMate Community
+  edition: Tutoriel évolutif ; pas une adoption normative de la spécification
+  locator: 'Relationships between systems : Sharing information, money, goods ; Temporal or causal relationship ; Dependencies
+    between systems'
+  consulted_on: '2026-09-18'
+  finding: Distingue Flow, Triggering et Serving ; leurs orientations peuvent différer selon le contexte.
+  flow_position: Appui méthodologique à des liens au sens précis et orientés. Les libellés métier, le niveau terminal Comportement
+    et la règle de différenciation par contexte sont des conventions FLOW.
+  limit: Ne démontre pas une équivalence entre nos capacités et les éléments ArchiMate ; aucune cartographie complète ni workflow
+    d’exécution adopté.

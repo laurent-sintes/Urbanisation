@@ -1,0 +1,1978 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.2",
+  "decisions": [
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D01.g-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U129",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.g",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "3559c65c6d1d556575aeb96d0431b4f209a8f96f92c53529e1923e0c3c69a304"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D02.b-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U67",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.b",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "976cec4fbcf6f1675db54c3061479301a3f6216f2ed91a23209b754285449dda"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D02.c-r4",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U84",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.c",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4b9eab21f6de4232d82c1c4a0eb97d21f753ee727e4b8f6d24448f154439d9c0"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D02.e-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "C63",
+        "P83",
+        "U95",
+        "U202",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.e",
+        "revision": 5,
+        "approved_fields": [
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.i-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.i",
+        "revision": 3,
+        "approved_fields": [
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "finality": "8d99f1b52adeb2ed64ae7fcd936a3540b245665347b6fad596ed0e243eab653d",
+          "name": "0fd73d6704ab2613ce4b501575871e9795e47ebaa98f32391674ef25097bcc9c",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.j-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U154",
+        "U251",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.j",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "6a2984200c2a80430fd4a331972d06a415d3ee3552f5de341865fee9b44faae2",
+          "finality": "3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90",
+          "name": "86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.k-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.k",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "934dacb7dce862a490b41d36c66c714fc72c88418c73166181394410f29f4aa5",
+          "finality": "a421ac059cc81ad41a400691d9376fef55c60694b9b2c1d49d08a7d352d363d7",
+          "name": "bfdff94087144c92b1c602ab145a9033508cd2deb1acf0d62dcd78c601c9a623",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.l-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.l",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "4d0ba8c30c1456eec2aed23ff6f776d562bca59235b1f0bb274ed02c56164f67",
+          "finality": "48ee4bbb23619ffc1ac39c6f01f057ec48a5a04718fcb6b7b3ad898c454373a4",
+          "name": "67ec80322f99b596e711e97a383528683b50b3b77f353a7507b8b7c71dfaa97f",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.m-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U163",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.m",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "83d208c2d0ecac7df842bde758ed74086624bdf64f2e04e3f228d0de96265888",
+          "name": "30842a2de1e5e1114f93a7569cbbf7049d043edec2071bca4389df91bb57274f"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.i-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.i",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "1f23170a299572b9e962ef813a9fc55bca6c278b88e0f076c1f4410182b75dba"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.j-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.j",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "42fbeacc04a9bc65ee40f55423024a3ebc39e330d515bbae8fc7f8ec98fc67fe"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.k-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.k",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "19b10edcbe40163468701b97541287f6d9c4a7919a008f433d1893e39114b6d3"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.n-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U417"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.n",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "391db0f320040d1b3e78f53419616c77f04f22fa24f7d6aca2089418e9a6682d"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.o-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U424"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.o",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "9f053fbcb745d2cf70709d9ec7161f2f6581100dcc03d7f0014911e4834dc76b",
+          "name": "5ebeb1081c917be0add665641af24774c7daf6d148318745b2a337365571db08",
+          "nature": "6d089caf129cd34dc77757ce8aa4d01c0d7ad38ef70d2f2433cd578d36a2ee35"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D05.d-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.d",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "462a7e18386912b742f51a6938298010ce22e60e9bfcbd7cb9c7f7120212b130",
+          "name": "68dcf14e7754e3990e251900aac5bc38912fd247c094385d0c5049f43e0849c2"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D05.e-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290",
+        "U316"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.e",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "981dc4b9f083cad00116ccf288f95e330aad7f347e70f5a1b0bf489c5ab6eb91"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D05.c-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290",
+        "U318"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.c",
+        "revision": 5,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4a42f5fc71ed11fa31411c07ebd95607240b680b1286e70776a69f583778cac5"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D05.f-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U269",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.f",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D06.b-r7",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U246",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.b",
+        "revision": 7,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "ba754539fb8b05eaf3b83c0247a709e0712e1ba4bd868b2e4633e3da81bcd541"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D07.a-r7",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.a",
+        "revision": 7,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c",
+          "name": "7a3214271bd81ca9480d569371666b8a678b5ec93c4dac5c93fe4cd4fb79294b"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D07.b-r6",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.b",
+        "revision": 6,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e",
+          "name": "84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D07.d-r6",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.d",
+        "revision": 6,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "9131d6fda562bd126262226ca451d29a633d8edcf5394002ae7d119c9a905dc1"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04-r6",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U140",
+        "C77",
+        "CMP065",
+        "U141",
+        "C78",
+        "CMP066"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04",
+        "revision": 6,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a085c2c264187bbdd7f531c281c0e931b9663e1bdd6a60d935353f90894e0794"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D01-r7",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "P81",
+        "U66",
+        "U74",
+        "U75",
+        "U78",
+        "U79",
+        "U80",
+        "U81",
+        "U86",
+        "C58",
+        "P82",
+        "U116",
+        "C71",
+        "U125",
+        "U126",
+        "C73",
+        "U218",
+        "U219"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01",
+        "revision": 7,
+        "approved_fields": [
+          "finality"
+        ],
+        "value_sha256": {
+          "finality": "c4d74fdb212f15a6489e8281849ba9f791e8d950ab546a927daa5b5a49ca6fd9"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D06-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U242",
+        "U244",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06",
+        "revision": 5,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "93419c8a7b45922b9c39181381116ebd702350b5aef3cb96710edf38552ded2d",
+          "name": "f2f87647f08544a56e38ac6fdae9987ef91ed1b539abddc7dcf7c49558b7546c"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D15-r1",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D15",
+        "revision": 1,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03-r6",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U52",
+        "U95",
+        "U147",
+        "U154",
+        "U202",
+        "U218",
+        "U219",
+        "U290",
+        "U369",
+        "U413",
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03",
+        "revision": 6,
+        "approved_fields": [
+          "finality",
+          "name"
+        ],
+        "value_sha256": {
+          "finality": "27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e",
+          "name": "1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D05-r5",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013",
+        "U218",
+        "U219",
+        "U220",
+        "U223",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05",
+        "revision": 5,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0",
+          "finality": "86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c",
+          "name": "6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D06.e-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U245",
+        "U246",
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.e",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "04adccab2575a7d626900ba0233a0ef18e41d9b2b540fa7eba381a8ca2b64300"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D06.f-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.f",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "e129ebf0182da8ad279c6967bd8c32c9ca7a589082953d79ac78563c5628c00a",
+          "name": "1c816af7ac818734e584c9f010e73f6624fefc197aff474ef1a04f6ab555638f"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV003-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U263",
+        "U264"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV003",
+        "revision": 2,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "3138a91122046a7730bae22c50c0396f44d966ee05e6602972ba0a8589af95ac"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.n-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U445"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.n",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "8fbdb29a711c0c52e959b3d77e91426b71b41c15c36887b1b1d59361904c20e7"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV021-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV021",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV022-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV022",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "74d248d5f671453f15ec4e94a76d49008bbeb5b570b9a2db703cf3fcf55f76cf"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV023-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV023",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV036-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U349"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV036",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "9ddc650c348d5907af969ef969dac5d26f8a17ef60c7f9a4fed4a8f48ae4f933",
+          "name": "ee9f174c6e0475d74fd1fbb6808456f782ed121996fd59e31e84ce6e5055037b"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.q-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U363"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.q",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "7a36b17fdbe90a738e628de69b8cb7cb1e89746cd7ffef107525f380d5c68f4a"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV046-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U364"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV046",
+        "revision": 2,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV047-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U364"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV047",
+        "revision": 2,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.o-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U378"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.o",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "76114b8bb1548adc61d20c602225630b05176112d5b22299a6a766aad2f1f658",
+          "name": "cd415ee74c2e24d6977e583c2daa5e8a576f68d9cd58196de13f3d8f803c3776",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV060-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U391"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV060",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "43ab582da72b465682fc9edc7775edb2c2a2ad7328f80fa08d0b0ca4574fe8cb",
+          "name": "157a3dda62e4b7a5e58573ad21e901b3f052fc17716c2c8b36cf0a416783264b"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D04.r-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U395"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.r",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "e6aff81542717e39c14d1bc96f085d27ce94fffbfe7706e86aa0f0c7dc95683d",
+          "name": "6bb4eb1390460dd921ba6955b74704bc463e5e8fd2192cd95eafc574e1a5b39c"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D01.h-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U395"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.h",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "554454ccb8b50ad4afbd578f49003302d46ee286efcf8473afb1452a232e5fde",
+          "name": "a85be74082d80642269072834c07af4e138cf3ec5dd47f05849b44f2983008cb"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV063-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV063",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "f7bb038c36ef74441a63cc1e82a6c3bdbeb2a91ce12e79ab8137b804e7851f96",
+          "name": "38dc10df62674d5fe79b6fad477fb9d38038b7f4844f96775b0d464fa8c048b7"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV064-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV064",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "dd204ef085ccf8983de149c37f065eec6a638fed39fb95b9a17ecd2b063c7ee8",
+          "name": "6477031757788b278f25c30f68365d8965821e1cb0ef221cc3af5016e08b3be2"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV065-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV065",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "23e438a6efebeb4dc5448123556c4442166c566b096314cb57574751aa7c7902",
+          "name": "8b785b6b259f5a3fce3162ef1f00154d3d3f15157c6024ca6f03a41f44856d9f"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV066-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV066",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "920cf2bb77b94a18d3864720e9d031fd7d9d64216a73db7b89957f8a6b5c32f2",
+          "name": "682fcd5ae55acffd4dadfb632fc3f33001a3be5364a5f65c6025a8be74f337b8"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV067-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV067",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "a5b31ccc95457d7a0b4d1b50ab3db12992fceab7c6c51291efc6f4ad3e973e5c",
+          "name": "1fac5a48993b150d54c8ba51a8186ad3e73005ba3ad557048cda9df0515bb98b"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV068-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV068",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "1436250d730f0ba5f984733851ab8235d77424a0e0e72d9ebd7d4106ab2f5685",
+          "name": "b1354c98d184e89c3b00db40d099b0700e838d758b38c2cec4fe595e8df1df0d"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV069-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV069",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "3c7b8b4f06bb9c509c846c3f79406a2697dfbe6f3542c5a3247de28144bf743f",
+          "name": "483cbe1e2f319bd661b9f7d45227253b5ed42b03bb8145de2661db03d130e6af"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV070-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV070",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "ee2fa737adee535dca2ac024fcb46e5be9144700023b669e2437ce6ca509cfc3",
+          "name": "3a73c3fed7e211116fe2cbf2befd8ef7311519391171165c376dc4c60554d23a"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV071-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV071",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "2a6a4002db018d2db5ef9729fc5056ea34c26c2f3f000228fe57af5ad17a9795",
+          "name": "dc279928c606197f5516031700c67f1afccd2845e00fc2c9a3f384c4247ef295"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV072-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV072",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "72539adcc131a9ec42099edbc1ca65f1c9a927ad1ae987259ed34b1dd1aa71ca",
+          "name": "23cb952d52b70aee8b3a5d6a8b9f39bbbaa6b772a4b0d40245f4cc9ce3c649f6"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV073-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV073",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "279f2596ffbf5b15067624586367aedd3a662cdca73612b15929f078a4bc798a",
+          "name": "6a1db54b556356c524e3e3beb9f925570b848933aaf4ce32d6ee9c1f5b1bc472"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV074-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV074",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "d7f6550a5f56f5ca89b65eecb66768f26195799dfd79dcbf52f52c0b8d002029",
+          "name": "7e760248edf81091f3aea5ed2eb8925c1ded8b992ae6d9f212753dea5e51715d"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV075-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV075",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "df4e09cc54a3408e436c6a92611dd36534b823853b7163319d51211dce541a77",
+          "name": "09dff6c06ac54b20ed3385c3c08b16b497805acb74e42d7f56af88f565a6ddfa"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV076-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV076",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "10d85d2633b8284badb15cd3db4319f94a7a77ca51a9c6b1520c7c1fa6c9cd7d",
+          "name": "ce2c6faeaf7b648f600e4a1463f17a9e0ba5b98e83d90ed5911ebb041f21881c"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV077-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV077",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "bbd57e7b9b175eaafb288a50f0f17214711fd9fa899cffea3259f3def4ae169e",
+          "name": "07736c92452cadaf077bf8ba7887432adc00c3a1876bdb0664e2c525887ee5a8"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV078-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U403"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV078",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "a74905e24afe96834be91d63be67b73c0c641adcf916b63d7b32ed54f28b68b1",
+          "name": "b71eccf7c6b87e42c0a4515138d5866ff273edc10385e06c58304be868c34603"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-D03.p-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U414"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.p",
+        "revision": 2,
+        "approved_fields": [
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "ccd68f1d92f6aa324911050be2d93891452d70aa7e229e2ae432d9794f202d2e",
+          "nature": "cb1e58d9479430bc60841495f8150f2534895ef34e547cc1fdf0739455c3f438"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-BHV085-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U427"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV085",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "be90039a46bacd4f8a8f0630f1a60b00409282188363f42b3a4d0798f71a11f0",
+          "name": "878d716eeff3d078968aac79d2c4cf96c32d03fe7b23add6a1b5a1369858d7f4"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D02.e-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D02.e",
+        "revision": 3,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.i-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.i",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "target_id": "5949ed29a0923017ec50e7ed96ef50f9df9a0005ecca2fd5b0db77c50ee231b6",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.j-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.j",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "target_id": "901398f16a21c2018efc974ff9cc581312f69ed182d30be3156548a6b7e419b5",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.k-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.k",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "target_id": "456143c0f406bbcd9fe3f0092096179d8bf01ee7732567eccb1636befe9c44a4",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.l-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.l",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "target_id": "896f550b568562bc7c8a837d7d31f537722c4835c476c917108d03c8716ef24f",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.m-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.m",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "7dd781b075a7c8bac3ddb4b9c878c56a3fb17dc7f39781392634f2b5df1587e2",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.n-r3",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D04.n",
+        "revision": 3,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "0096bde465541109b5bce54d49a5c56a6b5a8c77c79d7ed9d49996276ee29b00",
+          "target_id": "3feb616d1df22158eb469a53cae5272da8b42da72b18b2569ea1de8ca32f8ee4",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.n-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.n",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "target_id": "40ad23e87f89578345f73f92aebbcfcf1ed0617a2d7cec2979a40d9ab1dc925f",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.q-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D04.q",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "0096bde465541109b5bce54d49a5c56a6b5a8c77c79d7ed9d49996276ee29b00",
+          "target_id": "a9a7b5e7d6057e28cda8fa84021f8f515ea14a17ecdc7a076752c1a12075f1d2",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.o-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.o",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "4f4f1247ee0871450c382945a4a45ccc5001864979a9e8eb67cfe077ed56d082",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    },
+    {
+      "id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.p-r2",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D03.p",
+        "revision": 2,
+        "approved_fields": [
+          "source_id",
+          "target_id",
+          "type"
+        ],
+        "value_sha256": {
+          "source_id": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "target_id": "81de39dcba758d29442ba55df984f998a204b4cea15cfc9d2481cfdaae070c50",
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930"
+        },
+        "import_version": "2026-09-19.2"
+      }
+    }
+  ]
+}

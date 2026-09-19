@@ -1,0 +1,164 @@
+{
+  "behavior": {
+    "total": 76,
+    "documented": 63,
+    "missing": [
+      {
+        "id": "BHV001",
+        "name": "Existing Commitment Consideration"
+      },
+      {
+        "id": "BHV002",
+        "name": "Network Stock Availability"
+      },
+      {
+        "id": "BHV003",
+        "name": "Operational Availability Timing"
+      },
+      {
+        "id": "BHV004",
+        "name": "Future Supply Projection"
+      },
+      {
+        "id": "BHV005",
+        "name": "Scenario Construction"
+      },
+      {
+        "id": "BHV016",
+        "name": "Scenario Execution Adaptation"
+      },
+      {
+        "id": "BHV017",
+        "name": "Group Supply Protection"
+      },
+      {
+        "id": "BHV018",
+        "name": "Consumption Capping"
+      },
+      {
+        "id": "BHV019",
+        "name": "Safety Stock Policy"
+      },
+      {
+        "id": "BHV020",
+        "name": "Replenishment Regulation"
+      },
+      {
+        "id": "BHV021",
+        "name": "Promise Proposal"
+      },
+      {
+        "id": "BHV022",
+        "name": "Promise Confirmation"
+      },
+      {
+        "id": "BHV023",
+        "name": "Promise Revision"
+      }
+    ]
+  },
+  "capability": {
+    "total": 47,
+    "documented": 39,
+    "missing": [
+      {
+        "id": "D07.a",
+        "name": "Service Requirements Decision"
+      },
+      {
+        "id": "D07.c",
+        "name": "Service Reconciliation"
+      },
+      {
+        "id": "D09.d",
+        "name": "Party / Role Ingestion"
+      },
+      {
+        "id": "D11.a",
+        "name": "Agreement Ingestion"
+      },
+      {
+        "id": "D08.d",
+        "name": "Product Reference Ingestion"
+      },
+      {
+        "id": "D12.a",
+        "name": "Catalog Ingestion"
+      },
+      {
+        "id": "D13.a",
+        "name": "Fulfillment Network Ingestion"
+      },
+      {
+        "id": "D14.a",
+        "name": "Service Catalog Ingestion"
+      }
+    ]
+  },
+  "domain": {
+    "total": 6,
+    "documented": 3,
+    "missing": [
+      {
+        "id": "D04",
+        "name": "Order Management"
+      },
+      {
+        "id": "D01",
+        "name": "Inventory Management"
+      },
+      {
+        "id": "D05",
+        "name": "Inventory Optimization"
+      }
+    ]
+  },
+  "group": {
+    "total": 3,
+    "documented": 0,
+    "missing": [
+      {
+        "id": "universe-case",
+        "name": "Business Services"
+      },
+      {
+        "id": "universe-supply",
+        "name": "Supply Chain Orchestration"
+      },
+      {
+        "id": "business-references",
+        "name": "Business References"
+      }
+    ]
+  },
+  "reference": {
+    "total": 6,
+    "documented": 1,
+    "missing": [
+      {
+        "id": "D08",
+        "name": "Product Reference"
+      },
+      {
+        "id": "D09",
+        "name": "Party / Role"
+      },
+      {
+        "id": "D12",
+        "name": "Catalog"
+      },
+      {
+        "id": "D11",
+        "name": "Agreement"
+      },
+      {
+        "id": "D13",
+        "name": "Fulfillment Network"
+      }
+    ]
+  },
+  "glossary": {
+    "total": 110,
+    "documented": 8
+  }
+}

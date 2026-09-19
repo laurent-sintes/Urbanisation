@@ -1,0 +1,2166 @@
+{
+  "version": "2026-09-19.2",
+  "model_sha256": "b40bcd630b6aaabcb08ae6c76509429f598518e61a90018de8476346d7b468cf",
+  "target_count": 72,
+  "field_count": 141,
+  "items": [
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D01.g-r4",
+      "id": "D01.g",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "3559c65c6d1d556575aeb96d0431b4f209a8f96f92c53529e1923e0c3c69a304",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D01.g-r3",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "U129",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "U129": "565d90c3a87605fee571cbde4b1a8906f2b5537813bd37cdb9add668bde1fa7a",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D02.b-r4",
+      "id": "D02.b",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "976cec4fbcf6f1675db54c3061479301a3f6216f2ed91a23209b754285449dda",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D02.b-r3",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "U67",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "U67": "be00151cf76409a051e9aebca9e0bddf4be6b87da792f0fbf1e9a3acbcb85d1e",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D02.c-r4",
+      "id": "D02.c",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "4b9eab21f6de4232d82c1c4a0eb97d21f753ee727e4b8f6d24448f154439d9c0",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D02.c-r3",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "U84",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "U84": "a08c762670861caf3fb47f69d7c313f2aa0e8e0dafb0970a2f5e754521237668",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D02.e-r5",
+      "id": "D02.e",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D02.e-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "C63",
+            "P83",
+            "U95",
+            "U202",
+            "U290"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D02.e-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "C63",
+            "P83",
+            "U95",
+            "U202",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "C63": "fdc91150a27faa214a55890cfca185623cce8911627c07aaec779102fee52bd4",
+        "P83": "0b19bb1619fed92a8af80094a6f7b71119fe8b802770847aefa8204d78ea3a51",
+        "U95": "0d1dbaf077d46ffefab9f15eae5bffb6b87705404981e74287beac87ac00adc4",
+        "U202": "1083eaf0d285d60a3c224529a5d67fce243776c513e8df991800e4a0fdc0189f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.i-r3",
+      "id": "D03.i",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "finality",
+          "value_sha256": "8d99f1b52adeb2ed64ae7fcd936a3540b245665347b6fad596ed0e243eab653d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.i-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "0fd73d6704ab2613ce4b501575871e9795e47ebaa98f32391674ef25097bcc9c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.i-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.i-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U151": "3454a48cacf3ebafce287665d6128a3713b37e33af4551fb8ff3aa7a99c78264",
+        "U154": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.j-r3",
+      "id": "D03.j",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "6a2984200c2a80430fd4a331972d06a415d3ee3552f5de341865fee9b44faae2",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.j-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U154",
+            "U251",
+            "U290"
+          ]
+        },
+        {
+          "field": "finality",
+          "value_sha256": "3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.j-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U154",
+            "U251",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.j-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U154",
+            "U251",
+            "U290"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.j-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U154",
+            "U251",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U154": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+        "U251": "d574772784645df770fa53836c7e25ff2224197e7cc15abf5c695b5c1fb9564a",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.k-r3",
+      "id": "D03.k",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "934dacb7dce862a490b41d36c66c714fc72c88418c73166181394410f29f4aa5",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.k-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "finality",
+          "value_sha256": "a421ac059cc81ad41a400691d9376fef55c60694b9b2c1d49d08a7d352d363d7",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.k-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "bfdff94087144c92b1c602ab145a9033508cd2deb1acf0d62dcd78c601c9a623",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.k-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.k-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U151": "3454a48cacf3ebafce287665d6128a3713b37e33af4551fb8ff3aa7a99c78264",
+        "U154": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.l-r3",
+      "id": "D03.l",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "4d0ba8c30c1456eec2aed23ff6f776d562bca59235b1f0bb274ed02c56164f67",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.l-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "finality",
+          "value_sha256": "48ee4bbb23619ffc1ac39c6f01f057ec48a5a04718fcb6b7b3ad898c454373a4",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.l-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "67ec80322f99b596e711e97a383528683b50b3b77f353a7507b8b7c71dfaa97f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.l-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.l-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U151",
+            "U154",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U151": "3454a48cacf3ebafce287665d6128a3713b37e33af4551fb8ff3aa7a99c78264",
+        "U154": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.m-r3",
+      "id": "D03.m",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "83d208c2d0ecac7df842bde758ed74086624bdf64f2e04e3f228d0de96265888",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.m-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U163",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "30842a2de1e5e1114f93a7569cbbf7049d043edec2071bca4389df91bb57274f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.m-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U163",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U163": "158cc64cb809155aaaa8421916e9349ace7ab05135c5e573a4bb7522a996def1",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.i-r3",
+      "id": "D04.i",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "1f23170a299572b9e962ef813a9fc55bca6c278b88e0f076c1f4410182b75dba",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.i-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U384"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U214": "7baed9d468f9c1cf8a91511b5d013ce9bb4bb664c3c0e77f1808068514a28ff0",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U384": "4f6ce38f7bec0755cad4c8cb9c7405ce6aff69210fee92d01fabb16dbe714cf8"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.j-r3",
+      "id": "D04.j",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "42fbeacc04a9bc65ee40f55423024a3ebc39e330d515bbae8fc7f8ec98fc67fe",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.j-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U384"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U214": "7baed9d468f9c1cf8a91511b5d013ce9bb4bb664c3c0e77f1808068514a28ff0",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U384": "4f6ce38f7bec0755cad4c8cb9c7405ce6aff69210fee92d01fabb16dbe714cf8"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.k-r3",
+      "id": "D04.k",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "19b10edcbe40163468701b97541287f6d9c4a7919a008f433d1893e39114b6d3",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.k-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U384"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U214": "7baed9d468f9c1cf8a91511b5d013ce9bb4bb664c3c0e77f1808068514a28ff0",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U384": "4f6ce38f7bec0755cad4c8cb9c7405ce6aff69210fee92d01fabb16dbe714cf8"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.n-r3",
+      "id": "D04.n",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "391db0f320040d1b3e78f53419616c77f04f22fa24f7d6aca2089418e9a6682d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.n-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U417"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U214": "7baed9d468f9c1cf8a91511b5d013ce9bb4bb664c3c0e77f1808068514a28ff0",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U417": "95d4d813b0c7fc5e89ed14fdc36dff151e09832bf30f725c148823c342cf06f2"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.o-r3",
+      "id": "D04.o",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "9f053fbcb745d2cf70709d9ec7161f2f6581100dcc03d7f0014911e4834dc76b",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.o-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U424"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "5ebeb1081c917be0add665641af24774c7daf6d148318745b2a337365571db08",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.o-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U424"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "6d089caf129cd34dc77757ce8aa4d01c0d7ad38ef70d2f2433cd578d36a2ee35",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.o-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U214",
+            "U290",
+            "U424"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U214": "7baed9d468f9c1cf8a91511b5d013ce9bb4bb664c3c0e77f1808068514a28ff0",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U424": "ca12f8e151121b8c1b75577ce5bdbf259240b014277c5c05e8c7c703d7c96d3e"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D05.d-r3",
+      "id": "D05.d",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "462a7e18386912b742f51a6938298010ce22e60e9bfcbd7cb9c7f7120212b130",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05.d-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U235",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "68dcf14e7754e3990e251900aac5bc38912fd247c094385d0c5049f43e0849c2",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05.d-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U235",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U235": "8648a1e1390ea944396020cb8605bfef8e18bac2781d8941c1d1d56863924a9c",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D05.e-r3",
+      "id": "D05.e",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "981dc4b9f083cad00116ccf288f95e330aad7f347e70f5a1b0bf489c5ab6eb91",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05.e-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U235",
+            "U290",
+            "U316"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U235": "8648a1e1390ea944396020cb8605bfef8e18bac2781d8941c1d1d56863924a9c",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U316": "327ffa3ae735840fd1720ccb91401342be2079a31ba4dd00aa43106e620b8132"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D05.c-r5",
+      "id": "D05.c",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "4a42f5fc71ed11fa31411c07ebd95607240b680b1286e70776a69f583778cac5",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05.c-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U235",
+            "U290",
+            "U318"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U235": "8648a1e1390ea944396020cb8605bfef8e18bac2781d8941c1d1d56863924a9c",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U318": "4928ecafdd24707a7732e4dda7088d1e27101cca76e6a0803cb78134a60a98fe"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D05.f-r3",
+      "id": "D05.f",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05.f-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U235",
+            "U269",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U235": "8648a1e1390ea944396020cb8605bfef8e18bac2781d8941c1d1d56863924a9c",
+        "U269": "1c8f2d8164e470351ee4cbd6ed7b31fda3cf8c5329349db7f76d7ab61eb1f9bc",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D06.b-r7",
+      "id": "D06.b",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "ba754539fb8b05eaf3b83c0247a709e0712e1ba4bd868b2e4633e3da81bcd541",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06.b-r6",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U246",
+            "U290",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U246": "7e5f736455bd3cddba79d09a173f96bd129016c7b9f0e489b6e2fc5150903128",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D07.a-r7",
+      "id": "D07.a",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D07.a-r6",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290",
+            "U409"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "7a3214271bd81ca9480d569371666b8a678b5ec93c4dac5c93fe4cd4fb79294b",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D07.a-r6",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U247": "ee65f9e14141d88631e89e66cb559ebe0a8b8800aa77efe3d91927317371c50f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D07.b-r6",
+      "id": "D07.b",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D07.b-r5",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D07.b-r5",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U247": "ee65f9e14141d88631e89e66cb559ebe0a8b8800aa77efe3d91927317371c50f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D07.d-r6",
+      "id": "D07.d",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "9131d6fda562bd126262226ca451d29a633d8edcf5394002ae7d119c9a905dc1",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D07.d-r5",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U247": "ee65f9e14141d88631e89e66cb559ebe0a8b8800aa77efe3d91927317371c50f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04-r6",
+      "id": "D04",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "a085c2c264187bbdd7f531c281c0e931b9663e1bdd6a60d935353f90894e0794",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04-r5",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "P81",
+            "U97",
+            "U98",
+            "U100",
+            "C66",
+            "Q074",
+            "U140",
+            "C77",
+            "CMP065",
+            "U141",
+            "C78",
+            "CMP066"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "P81": "c0c8dd7f6aa04c47f8d25d2f4f0eb5490cbfd9ed22c41e2be87d54ace0c0a255",
+        "U97": "3c846472ce7594f4198647c036df362cf8e7d7ad6a05fb99f1e573c3ace3b396",
+        "U98": "0f47063e03fe307a1b7a34c641a3dd01658df3d1e0fb1f765b2d8a5244460080",
+        "U100": "325c8642f422d32deb83048a7b7a628de08ed8691a5f77fe10e87406f6c428ea",
+        "C66": "e19036f908cf88294667454d5491e049dc64540631a20a7df98265f22b657796",
+        "Q074": "2bf5afc882297b1cc54af05637a67edc74d81d6e25ce21fbfcb8cfb060426794",
+        "U140": "b5796810af4e653f97b0fbbd775d4bdd6ce2bad30c217be206919be07ee8e096",
+        "C77": "ec905e49ef9dc374f72c4f96397c5e2899a5bdc2029ce5cb8e0947ba544ec5af",
+        "CMP065": "ea333976c328e25b9d46bb45222e707676aebbfbe3426909031d006abeec4f7e",
+        "U141": "6a814365a7896b2adde55a8f1c76f8e5b36451e709f7bacefd1e86d47d6e2fa1",
+        "C78": "5168a2cd251f4e4ab7b627d4db36386bd4c4391704672e186fa1f10bc1552873",
+        "CMP066": "95b849bc8e4acdaa75d8cb9fd06cde72ad36bceb36fdee703b08998459d72672"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D01-r7",
+      "id": "D01",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "finality",
+          "value_sha256": "c4d74fdb212f15a6489e8281849ba9f791e8d950ab546a927daa5b5a49ca6fd9",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D01-r6",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "P81",
+            "U66",
+            "U74",
+            "U75",
+            "U78",
+            "U79",
+            "U80",
+            "U81",
+            "U86",
+            "C58",
+            "P82",
+            "U116",
+            "C71",
+            "U125",
+            "U126",
+            "C73",
+            "U218",
+            "U219"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "P81": "c0c8dd7f6aa04c47f8d25d2f4f0eb5490cbfd9ed22c41e2be87d54ace0c0a255",
+        "U66": "7f0e4dea20df7379ddcbbbc2c5521815e39a46fd42c835764fd323933b4e4c7d",
+        "U74": "4cb9dea2f43833796b7636b1560b75535f527e92b4352a93c3d477b10a999f47",
+        "U75": "5a3b18f984bc52a6af4083b38088f4e9f0827bf65c8a48c4bbb2e2a585f44dc8",
+        "U78": "7b421654ca095f33dc1ba91bc90a0193fdb7ba9b065a6212dbc5a76222230318",
+        "U79": "7a38c84abb63626177ea31061d03e2c2723cc1f950f0e1293256f0f6f06873f9",
+        "U80": "0c81cf27045b1a5fa45817c3a2e62a4bdedc40f67d70c7b19338e06a1179b1c6",
+        "U81": "9413c9efd393a7567b567fa69a2e1252dc3bccbb30c1a9d006473639d6acddbd",
+        "U86": "87060013ad037ab2b32bb262f17ba3db56e946468fb1c3185e6e45675b537d5a",
+        "C58": "320ba69c3789ad839f0665ca43ff1777033a785d65e6c28e94021b7bdefc3bf7",
+        "P82": "1bf3b0ec2749520177e61d1c5776c29cd084bf87eb4b09b281df0cfd7fb98679",
+        "U116": "213484dc3df0415ecef81b9a0cf9d3a403fec2c1ff72b36f3c4d0b91ce6b2243",
+        "C71": "83c5b164da441b4a87537377816c0e4bcabb8b6c7b9de7b8bb515cd30225261f",
+        "U125": "cc92b41d24f5de5445b808296bcb198513e7c36adac8e6c803736070e6a8fad1",
+        "U126": "3a7934476f3177f8ed43450f719e142e0f1c6f20c6a4e43bd59dde7e9a6d6eee",
+        "C73": "50b102c642b3ba16c8aa210cecee77319e79f9dd9737dc791950d7fb7bb1ef4d",
+        "U218": "4fab54f850f1a2d16fd9d55b9c34fe96122a861f7d7651779adc9fa5ca4a5822",
+        "U219": "47f7a1ad716adbff35249a33de4231d5d5c7291c4464be9cd2c0d61b78a16be9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D06-r5",
+      "id": "D06",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "93419c8a7b45922b9c39181381116ebd702350b5aef3cb96710edf38552ded2d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U242",
+            "U244",
+            "U409"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "f2f87647f08544a56e38ac6fdae9987ef91ed1b539abddc7dcf7c49558b7546c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U242",
+            "U244",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U242": "76e30d945d50da09d75373f3bb2e645fa83026db0ecce1e3103f7f3b595904a0",
+        "U244": "d0ee2277d1824f5f310aa88d189066758095895b724b20f6a6632ab16c1b8ee2",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D15-r1",
+      "id": "D15",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03-r6",
+      "id": "D03",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "finality",
+          "value_sha256": "27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03-r5",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "U52",
+            "U95",
+            "U147",
+            "U154",
+            "U202",
+            "U218",
+            "U219",
+            "U290",
+            "U369",
+            "U413"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "U52": "2c3888b201132fb6889fbbe0c0a228af1058a840620a01ad83161706f64190da",
+        "U95": "0d1dbaf077d46ffefab9f15eae5bffb6b87705404981e74287beac87ac00adc4",
+        "U147": "3bbdf36fefcb78489a6c7f7172941890139ab071f83f66960a9803ebe456c26c",
+        "U154": "7ca6a532558f9cdb9ca85bf1b4227de56caf078a8f574173b577396f5fd7be16",
+        "U202": "1083eaf0d285d60a3c224529a5d67fce243776c513e8df991800e4a0fdc0189f",
+        "U218": "4fab54f850f1a2d16fd9d55b9c34fe96122a861f7d7651779adc9fa5ca4a5822",
+        "U219": "47f7a1ad716adbff35249a33de4231d5d5c7291c4464be9cd2c0d61b78a16be9",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U369": "30020093dfb1c193492895d478c606a38a8d76c2a5eec51078d9deb27d8cca81",
+        "U413": "6525d8ee382bf43266721eb3bc4a41015bbf6ea0d7e0b41bbdbcba809f49f4f9",
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D05-r5",
+      "id": "D05",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "P81",
+            "U06",
+            "U53",
+            "U57",
+            "U58",
+            "CAP011",
+            "CAP012",
+            "CAP013",
+            "U218",
+            "U219",
+            "U220",
+            "U223",
+            "U290"
+          ]
+        },
+        {
+          "field": "finality",
+          "value_sha256": "86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "P81",
+            "U06",
+            "U53",
+            "U57",
+            "U58",
+            "CAP011",
+            "CAP012",
+            "CAP013",
+            "U218",
+            "U219",
+            "U220",
+            "U223",
+            "U290"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D05-r4",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U131",
+            "P81",
+            "U06",
+            "U53",
+            "U57",
+            "U58",
+            "CAP011",
+            "CAP012",
+            "CAP013",
+            "U218",
+            "U219",
+            "U220",
+            "U223",
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U131": "e0569c27272427ae46c4532abc20977d0c88907e5573e4629ac5ddd54155c3a0",
+        "P81": "c0c8dd7f6aa04c47f8d25d2f4f0eb5490cbfd9ed22c41e2be87d54ace0c0a255",
+        "U06": "5b6064000c1f0913f168336623aadfeff469763f34095ff5e28d79fffba8d1b8",
+        "U53": "bd8b2912d9c53949022205b4c1aec548217a03e54eb35ef4303737b4f344426a",
+        "U57": "afa882f37652839857005f065d5148e0f2473b4bf98a20c3a3a4ab18dd3c52be",
+        "U58": "7ac546221b52d3b827ba9089e43b1cb018c04e00a0aa90ecb11fb78127edcc8b",
+        "CAP011": "3234bb5be2ce5a4dfcebb9fa7b70ae350b837758c71c24f29b14fd9450edaff9",
+        "CAP012": "e285c784dad2b82c0379b9651764ee53f92a446f0d55cd27aa5cc054d29b8e6b",
+        "CAP013": "025c2cc19533abaa10e8e645a505f846c72287647ea61dd9ba3040c9fd2e95f1",
+        "U218": "4fab54f850f1a2d16fd9d55b9c34fe96122a861f7d7651779adc9fa5ca4a5822",
+        "U219": "47f7a1ad716adbff35249a33de4231d5d5c7291c4464be9cd2c0d61b78a16be9",
+        "U220": "328f4eeebc1530ce9aa845a9481b2250d6a5f8556467fa0ee8b231b81c363141",
+        "U223": "bd4ecf21c3298390548fc1ebdb985ab3a1fa1c99ee7aa115be863c971e3c2edc",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D06.e-r3",
+      "id": "D06.e",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "04adccab2575a7d626900ba0233a0ef18e41d9b2b540fa7eba381a8ca2b64300",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06.e-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U245",
+            "U246",
+            "U247",
+            "U290",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U245": "8ce86f8247cde732cd0748fce0b2769dff9d0aacb543d5f7769f2d9b48a3fd7a",
+        "U246": "7e5f736455bd3cddba79d09a173f96bd129016c7b9f0e489b6e2fc5150903128",
+        "U247": "ee65f9e14141d88631e89e66cb559ebe0a8b8800aa77efe3d91927317371c50f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D06.f-r3",
+      "id": "D06.f",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "e129ebf0182da8ad279c6967bd8c32c9ca7a589082953d79ac78563c5628c00a",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06.f-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290",
+            "U409"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "1c816af7ac818734e584c9f010e73f6624fefc197aff474ef1a04f6ab555638f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D06.f-r2",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U247",
+            "U290",
+            "U409"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U247": "ee65f9e14141d88631e89e66cb559ebe0a8b8800aa77efe3d91927317371c50f",
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa",
+        "U409": "cc05b25f288c863b7c2420651f849d1bd4ed3b07c21dd4c990f04ab5755d6627"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV003-r2",
+      "id": "BHV003",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "3138a91122046a7730bae22c50c0396f44d966ee05e6602972ba0a8589af95ac",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV003-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U263",
+            "U264"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U263": "1da5d65949c20e7f6ddd1e9a57f31e1d280254c876fb47c6c1d8ae0208eed038",
+        "U264": "c7b7ef7f0dfe62e79a461f40881058f931d72226c79ade357fbdf4ff5c814eaf"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.n-r2",
+      "id": "D03.n",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "8fbdb29a711c0c52e959b3d77e91426b71b41c15c36887b1b1d59361904c20e7",
+          "authority": "U445",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U445": "872e51e6d57b0cba1ea444266ff46b3ad193027ab4dcd50ac459c8fc920f5c37"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV021-r2",
+      "id": "BHV021",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV021-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV022-r2",
+      "id": "BHV022",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "74d248d5f671453f15ec4e94a76d49008bbeb5b570b9a2db703cf3fcf55f76cf",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV022-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV023-r2",
+      "id": "BHV023",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV023-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U290"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U290": "c4bb7abddb2a40a237d4991accf4e9c08b8d77eaba2748497d6d169ebb7c1baa"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV036-r2",
+      "id": "BHV036",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "9ddc650c348d5907af969ef969dac5d26f8a17ef60c7f9a4fed4a8f48ae4f933",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV036-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U349"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "ee9f174c6e0475d74fd1fbb6808456f782ed121996fd59e31e84ce6e5055037b",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV036-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U349"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U349": "1645befa4de3bf8cf591c11c320a0ce3ef5206b404d8433f685046418e7d0e4e"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.q-r2",
+      "id": "D04.q",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "7a36b17fdbe90a738e628de69b8cb7cb1e89746cd7ffef107525f380d5c68f4a",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.q-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U363"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U363": "fee7d7555a51896cfe3c74daa2e546bd614b321f08a98a3ee4c7093f96b9e447"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV046-r2",
+      "id": "BHV046",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV046-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U364"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U364": "7c66a54326f69b9de197a1ddf70f6130721e2d6fc38c36f06e539d4a253338f1"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV047-r2",
+      "id": "BHV047",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV047-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U364"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U364": "7c66a54326f69b9de197a1ddf70f6130721e2d6fc38c36f06e539d4a253338f1"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.o-r2",
+      "id": "D03.o",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "76114b8bb1548adc61d20c602225630b05176112d5b22299a6a766aad2f1f658",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.o-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U378"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "cd415ee74c2e24d6977e583c2daa5e8a576f68d9cd58196de13f3d8f803c3776",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.o-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U378"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.o-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U378"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U378": "c1d2c166f7911245c4da764171529b0391e6911adc59d95b1eba45f6a19984f6"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV060-r2",
+      "id": "BHV060",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "43ab582da72b465682fc9edc7775edb2c2a2ad7328f80fa08d0b0ca4574fe8cb",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV060-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U391"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "157a3dda62e4b7a5e58573ad21e901b3f052fc17716c2c8b36cf0a416783264b",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV060-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U391"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U391": "bc3a65a876b6df4676ed5064aa629a9ab4788cca891d4efd0e097487a00350b3"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D04.r-r2",
+      "id": "D04.r",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "e6aff81542717e39c14d1bc96f085d27ce94fffbfe7706e86aa0f0c7dc95683d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.r-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U395"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "6bb4eb1390460dd921ba6955b74704bc463e5e8fd2192cd95eafc574e1a5b39c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D04.r-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U395"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U395": "f68e5b1f9325ee68ae88195b9b378d51a751b59e3be358cf624d2e34103be982"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D01.h-r2",
+      "id": "D01.h",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "554454ccb8b50ad4afbd578f49003302d46ee286efcf8473afb1452a232e5fde",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D01.h-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U395"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "a85be74082d80642269072834c07af4e138cf3ec5dd47f05849b44f2983008cb",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D01.h-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U395"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U395": "f68e5b1f9325ee68ae88195b9b378d51a751b59e3be358cf624d2e34103be982"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV063-r2",
+      "id": "BHV063",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "f7bb038c36ef74441a63cc1e82a6c3bdbeb2a91ce12e79ab8137b804e7851f96",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV063-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "38dc10df62674d5fe79b6fad477fb9d38038b7f4844f96775b0d464fa8c048b7",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV063-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV064-r2",
+      "id": "BHV064",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "dd204ef085ccf8983de149c37f065eec6a638fed39fb95b9a17ecd2b063c7ee8",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV064-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "6477031757788b278f25c30f68365d8965821e1cb0ef221cc3af5016e08b3be2",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV064-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV065-r2",
+      "id": "BHV065",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "23e438a6efebeb4dc5448123556c4442166c566b096314cb57574751aa7c7902",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV065-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "8b785b6b259f5a3fce3162ef1f00154d3d3f15157c6024ca6f03a41f44856d9f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV065-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV066-r2",
+      "id": "BHV066",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "920cf2bb77b94a18d3864720e9d031fd7d9d64216a73db7b89957f8a6b5c32f2",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV066-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "682fcd5ae55acffd4dadfb632fc3f33001a3be5364a5f65c6025a8be74f337b8",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV066-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV067-r2",
+      "id": "BHV067",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "a5b31ccc95457d7a0b4d1b50ab3db12992fceab7c6c51291efc6f4ad3e973e5c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV067-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "1fac5a48993b150d54c8ba51a8186ad3e73005ba3ad557048cda9df0515bb98b",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV067-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV068-r2",
+      "id": "BHV068",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "1436250d730f0ba5f984733851ab8235d77424a0e0e72d9ebd7d4106ab2f5685",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV068-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "b1354c98d184e89c3b00db40d099b0700e838d758b38c2cec4fe595e8df1df0d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV068-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV069-r2",
+      "id": "BHV069",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "3c7b8b4f06bb9c509c846c3f79406a2697dfbe6f3542c5a3247de28144bf743f",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV069-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "483cbe1e2f319bd661b9f7d45227253b5ed42b03bb8145de2661db03d130e6af",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV069-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV070-r2",
+      "id": "BHV070",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "ee2fa737adee535dca2ac024fcb46e5be9144700023b669e2437ce6ca509cfc3",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV070-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "3a73c3fed7e211116fe2cbf2befd8ef7311519391171165c376dc4c60554d23a",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV070-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV071-r2",
+      "id": "BHV071",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "2a6a4002db018d2db5ef9729fc5056ea34c26c2f3f000228fe57af5ad17a9795",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV071-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "dc279928c606197f5516031700c67f1afccd2845e00fc2c9a3f384c4247ef295",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV071-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV072-r2",
+      "id": "BHV072",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "72539adcc131a9ec42099edbc1ca65f1c9a927ad1ae987259ed34b1dd1aa71ca",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV072-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "23cb952d52b70aee8b3a5d6a8b9f39bbbaa6b772a4b0d40245f4cc9ce3c649f6",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV072-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV073-r2",
+      "id": "BHV073",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "279f2596ffbf5b15067624586367aedd3a662cdca73612b15929f078a4bc798a",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV073-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "6a1db54b556356c524e3e3beb9f925570b848933aaf4ce32d6ee9c1f5b1bc472",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV073-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV074-r2",
+      "id": "BHV074",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "d7f6550a5f56f5ca89b65eecb66768f26195799dfd79dcbf52f52c0b8d002029",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV074-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "7e760248edf81091f3aea5ed2eb8925c1ded8b992ae6d9f212753dea5e51715d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV074-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U401"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U401": "4dca2af376a79f6ef5513e073319e66c4499cca194ccc150cd5192459c25e495"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV075-r2",
+      "id": "BHV075",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "df4e09cc54a3408e436c6a92611dd36534b823853b7163319d51211dce541a77",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV075-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "09dff6c06ac54b20ed3385c3c08b16b497805acb74e42d7f56af88f565a6ddfa",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV075-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U402": "96b63918a2f0099d9a25b6ec023aa2ba8c3d8032dc5acf6555b27b85665a6477"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV076-r2",
+      "id": "BHV076",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "10d85d2633b8284badb15cd3db4319f94a7a77ca51a9c6b1520c7c1fa6c9cd7d",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV076-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "ce2c6faeaf7b648f600e4a1463f17a9e0ba5b98e83d90ed5911ebb041f21881c",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV076-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U402": "96b63918a2f0099d9a25b6ec023aa2ba8c3d8032dc5acf6555b27b85665a6477"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV077-r2",
+      "id": "BHV077",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "bbd57e7b9b175eaafb288a50f0f17214711fd9fa899cffea3259f3def4ae169e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV077-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "07736c92452cadaf077bf8ba7887432adc00c3a1876bdb0664e2c525887ee5a8",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV077-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U402"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U402": "96b63918a2f0099d9a25b6ec023aa2ba8c3d8032dc5acf6555b27b85665a6477"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV078-r2",
+      "id": "BHV078",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "a74905e24afe96834be91d63be67b73c0c641adcf916b63d7b32ed54f28b68b1",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV078-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U403"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "b71eccf7c6b87e42c0a4515138d5866ff273edc10385e06c58304be868c34603",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV078-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U403"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U403": "a9389dd2eac7c7345511b1626f91a60d3bc851a1af239865900cbcc01c7d7356"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-D03.p-r2",
+      "id": "D03.p",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "name",
+          "value_sha256": "ccd68f1d92f6aa324911050be2d93891452d70aa7e229e2ae432d9794f202d2e",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.p-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U414"
+          ]
+        },
+        {
+          "field": "nature",
+          "value_sha256": "cb1e58d9479430bc60841495f8150f2534895ef34e547cc1fdf0739455c3f438",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-D03.p-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U414"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U414": "f26562b183df0d54d7ce1d964089587562493241f694e86d447dd71c66ecfdcf"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-BHV085-r2",
+      "id": "BHV085",
+      "collection": "nodes",
+      "fields": [
+        {
+          "field": "definition",
+          "value_sha256": "be90039a46bacd4f8a8f0630f1a60b00409282188363f42b3a4d0798f71a11f0",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV085-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U427"
+          ]
+        },
+        {
+          "field": "name",
+          "value_sha256": "878d716eeff3d078968aac79d2c4cf96c32d03fe7b23add6a1b5a1369858d7f4",
+          "historical_decision": "ADOPT-U433-TRANSCRIPTION-BHV085-r1",
+          "historical_path": "modeles/decisions/2026-09-19.1.json",
+          "source_refs": [
+            "U427"
+          ]
+        }
+      ],
+      "source_hashes": {
+        "U427": "549fa8ad0d4ef9dce8f281671ba156ec746dd659f606f7534690964b12843ad3"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D02.e-r3",
+      "id": "REL-MEMBER-D02.e",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.i-r2",
+      "id": "REL-MEMBER-D03.i",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "5949ed29a0923017ec50e7ed96ef50f9df9a0005ecca2fd5b0db77c50ee231b6",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.j-r2",
+      "id": "REL-MEMBER-D03.j",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "901398f16a21c2018efc974ff9cc581312f69ed182d30be3156548a6b7e419b5",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.k-r2",
+      "id": "REL-MEMBER-D03.k",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "456143c0f406bbcd9fe3f0092096179d8bf01ee7732567eccb1636befe9c44a4",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.l-r2",
+      "id": "REL-MEMBER-D03.l",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "896f550b568562bc7c8a837d7d31f537722c4835c476c917108d03c8716ef24f",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.m-r2",
+      "id": "REL-MEMBER-D03.m",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "7dd781b075a7c8bac3ddb4b9c878c56a3fb17dc7f39781392634f2b5df1587e2",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.n-r3",
+      "id": "REL-MEMBER-D04.n",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "0096bde465541109b5bce54d49a5c56a6b5a8c77c79d7ed9d49996276ee29b00",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "3feb616d1df22158eb469a53cae5272da8b42da72b18b2569ea1de8ca32f8ee4",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.n-r2",
+      "id": "REL-MEMBER-D03.n",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "4f4411c0d99b47aa4762b722c81a81c010934f2199e81a11c6ab88ed24c33b04",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "40ad23e87f89578345f73f92aebbcfcf1ed0617a2d7cec2979a40d9ab1dc925f",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.q-r2",
+      "id": "REL-MEMBER-D04.q",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "0096bde465541109b5bce54d49a5c56a6b5a8c77c79d7ed9d49996276ee29b00",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "a9a7b5e7d6057e28cda8fa84021f8f515ea14a17ecdc7a076752c1a12075f1d2",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.o-r2",
+      "id": "REL-MEMBER-D03.o",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "4f4f1247ee0871450c382945a4a45ccc5001864979a9e8eb67cfe077ed56d082",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    },
+    {
+      "decision_id": "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.p-r2",
+      "id": "REL-MEMBER-D03.p",
+      "collection": "relations",
+      "fields": [
+        {
+          "field": "source_id",
+          "value_sha256": "cb0e782c55c82dbc2e56703a58c295b0a4e3fcac81322068d6366c368b85efce",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "target_id",
+          "value_sha256": "81de39dcba758d29442ba55df984f998a204b4cea15cfc9d2481cfdaae070c50",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        },
+        {
+          "field": "type",
+          "value_sha256": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "authority": "U438",
+          "evidence": "Explicit choice recorded with presented scope; name or parent only."
+        }
+      ],
+      "source_hashes": {
+        "U438": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9"
+      }
+    }
+  ]
+}

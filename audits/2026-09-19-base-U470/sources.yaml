@@ -1,0 +1,313 @@
+consulted_on: '2026-09-19'
+scope: U470/U471, passages primaires sélectifs, aucune reproduction intégrale
+sources:
+- id: ELM292
+  vendor: CSCMP
+  product: Définitions professionnelles
+  source_title: SCM Definitions and Glossary of Terms
+  source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  source_version: Page sans édition affichée
+  source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+  market_ref: MKT41
+  element_type: Définition professionnelle
+  consulted_on: '2026-09-19'
+- id: ELM293
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Welcome to Dynamics 365 Supply Chain Management
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+  source_version: Page mise à jour le 10 septembre 2025
+  source_locator: Core concepts and tasks
+  market_ref: MKT14
+  element_type: Périmètre de produit
+  consulted_on: '2026-09-19'
+- id: ELM294
+  vendor: Oracle
+  product: Fusion Cloud Supply Chain Orchestration
+  source_title: Overview of Supply Chain Orchestration
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html
+  source_version: 26B
+  source_locator: Introduction ; receive requests, create supply orders, manage changes ; drop shipment
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM295
+  vendor: Oracle
+  product: Fusion Cloud Product Hub
+  source_title: Overview of Item Batches
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+  source_version: 26A
+  source_locator: Introduction et options des lots d’import
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM296
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Inventory journals
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals
+  source_version: Page mise à jour le 29 août 2025
+  source_locator: 'Types of inventory journals : Transfer, Item arrival, Counting'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM297
+  vendor: Oracle
+  product: Fusion Cloud Inventory Management
+  source_title: How You Review Item Supply and Demand
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html
+  source_version: 25D
+  source_locator: Supply and demand ; quantities and dates ; ATP/nettable filters
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM298
+  vendor: SAP
+  product: S/4HANA aATP
+  source_title: Explaining aATP Product Allocation (PAL)
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58
+  source_version: Cours évolutif sans édition affichée
+  source_locator: 'aATP: PAL Concept ; scénario ; restrictions par groupes de demande'
+  market_ref: MKT13
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM299
+  vendor: Oracle
+  product: Fusion Cloud Inventory Management
+  source_title: Reservations
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html
+  source_version: 25C
+  source_locator: Introduction ; supply and demand documents ; restriction des prélèvements concurrents
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM300
+  vendor: Oracle
+  product: PeopleSoft Inventory
+  source_title: Promising and Reserving Inventory
+  source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+  source_version: PeopleSoft FSCM 9.0, édition historique
+  source_locator: Reservation lead days ; ATP ; inventory priority rules ; shortage workbench
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM301
+  vendor: Oracle
+  product: Fusion Cloud Global Order Promising
+  source_title: Database Promising
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html
+  source_version: 25C
+  source_locator: Profitable to Promise
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM302
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Delivery schedules
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: Create delivery schedules ; Manage delivery lines
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM303
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Master plans overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: Master plans ; Firming time fence ; Action message time fence
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM304
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Schedule workload capacity
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: Warehouse workload capacity ; volume, weight, inbound/outbound workload
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM305
+  vendor: TM Forum
+  product: Service Ordering
+  source_title: TMF641 Service Ordering API REST Specification R18.5.1
+  source_url: https://www.tmforum.org/resources/specification/tmf641-service-ordering-api-rest-specification-r18-5-0/
+  source_version: R18.5.1 ; document 4.0.1, 2019 ; version archivée
+  source_locator: 'Présentation publique : create, update, retrieve ; service order items'
+  market_ref: MKT19
+  element_type: Concept documenté par un contrat sectoriel
+  consulted_on: '2026-09-19'
+- id: ELM306
+  vendor: Microsoft
+  product: Dynamics AX Transportation Management
+  source_title: Transportation scenario – Manual rating
+  source_url: https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/
+  source_version: Publication officielle du 16 février 2016 ; exemple historique
+  source_locator: 'Load planning workbench : Shipping carrier et Carrier service ; Manual rating'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM307
+  vendor: Oracle
+  product: E-Business Suite Warehouse Management
+  source_title: Oracle Warehouse Management User’s Guide
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm
+  source_version: EBS 12.2
+  source_locator: Opportunistic Cycle Counting
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM308
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Keep supply for confirmed demand in Planning Optimization
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  source_version: SCM 10.0.48 build 10.0.2645.33+ selon la page
+  source_locator: What data is preserved ; Control how on-hand inventory is pegged to confirmed demand
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM309
+  vendor: Microsoft
+  product: Dynamics GP Returns Management
+  source_title: Returns Management
+  source_url: https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement
+  source_version: Guide Dynamics GP ; édition produit non précisée dans le passage
+  source_locator: 'RTV types : Repair and Return ; Enter a repair and return RTV ; Receive an RTV'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM310
+  vendor: Oracle
+  product: E-Business Suite Purchasing
+  source_title: Oracle Purchasing User’s Guide
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm
+  source_version: EBS 12.2
+  source_locator: Standard Purchase Orders ; quantités et échéances de livraison
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM311
+  vendor: OASIS
+  product: Universal Business Language
+  source_title: Universal Business Language Version 2.4
+  source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+  source_version: OASIS Standard 2.4, 2024
+  source_locator: §2.3.3.5 VMI ; §2.3.5.1 Fulfilment ; §2.3.5.4 Freight Status Reporting
+  market_ref: MKT54
+  element_type: Scénarios métier illustrant un standard documentaire
+  consulted_on: '2026-09-19'
+- id: ELM312
+  vendor: Oracle
+  product: E-Business Suite Consigned Inventory
+  source_title: Consuming Material
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm
+  source_version: EBS 12.2
+  source_locator: Aging Based Ownership Transfer
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM313
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Store order fulfillment
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview
+  source_version: Page mise à jour le 28 janvier 2026
+  source_locator: Pick up ; Shipping ; Line quantity tracking
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM314
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Intercompany orders and return orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: 'Introduction : création correspondante des commandes intersociétés'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM315
+  vendor: Oracle
+  product: Fusion Cloud Supply Chain Orchestration
+  source_title: Use Supply Chain Orchestration in Your Back-to-Back Flows
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html
+  source_version: 26B
+  source_locator: Back-to-back flows ; buy, make, transfer ; demand and supply link
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM316
+  vendor: Oracle
+  product: Fusion Cloud Global Order Promising
+  source_title: Overview of Global Order Promising
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+  source_version: 25C
+  source_locator: Supply chain search ; capable-to-promise
+  market_ref: MKT20
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM317
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  source_title: Intelligent fulfillment optimization architecture
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: Fulfillment strategies ; source priority ; distance ; partial orders
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM318
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Outbound workload visualization
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/outbound-workload-visualization
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: 'Introduction : suivi du travail en cours et restant'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM319
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Store inventory management
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory
+  source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+  source_locator: Store inventory management operations ; inventory dimensions
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM320
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Replenishment methods and quantity modification
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification
+  source_version: Page mise à jour le 1er juillet 2026
+  source_locator: 'Coverage codes : Requirement, Min./Max.'
+  market_ref: MKT14
+  element_type: Fonction produit documentée
+  consulted_on: '2026-09-19'
+- id: ELM321
+  vendor: GS1
+  product: Global Traceability Standard
+  source_title: GS1 Global Traceability Standard
+  source_url: https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard
+  source_version: Version en ligne ; édition non figée par cette consultation
+  source_locator: 'Identification : Class-level, Batch/Lot-level, Instance-level'
+  market_ref: MKT42
+  element_type: Standard d’identification et de traçabilité
+  consulted_on: '2026-09-19'
+- id: ELM322
+  market_ref: MKT13
+  element_type: Fonction produit documentée
+  vendor: SAP
+  product: S/4HANA Sales
+  consulted_on: '2026-09-19'
+  source_title: Executing the Advanced Intercompany Sales and Stock Transfer Process
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc
+  source_version: Cours évolutif ; parcours avancé introduit en S/4HANA 2022
+  source_locator: 'Advanced Intercompany Sales Processing : commandes SO2, PO3 et SO4 ; propagation des changements'

@@ -1,0 +1,150 @@
+principles:
+- id: PRINCIPLE-REFERENCE-PROJECTIONS
+  statement: Les référentiels de la Supply sont des projections de sources de vérité maîtrisées par des produits tiers. Chaque
+    référentiel comporte au moins une ingestion ; visibilité et recherche sont en lecture seule. L’ingestion actualise la
+    projection sans transférer la maîtrise ; administration et validation métier des données maîtresses restent externes.
+    Cette règle ne préjuge pas de l’autorité sur les commandes ni des états transactionnels propres à la Supply.
+  source_refs:
+  - U134
+  - C75
+- id: PRINCIPLE-TWO-LAYERS
+  statement: Socle transactionnel et modèle processus distincts ; chacun possède ses objets, sa persistance et son urbanisation.
+  source_refs:
+  - U18
+  - U19
+  - U20
+  - U49
+  - U50
+  - U62
+- id: PRINCIPLE-CAPABILITY
+  statement: Une capacité décrit ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.
+  source_refs:
+  - U33
+- id: PRINCIPLE-SUPPLY-DOCUMENTS
+  statement: Supply porte les Orders selon leur intention métier, les parties, les engagements et le résultat attendu. Les
+    documents d’autorisation contribuent à leur traitement sans dicter le découpage des responsabilités. Les parcours transverses
+    de Business Services gardent leur modèle processus distinct.
+  source_refs:
+  - U100
+  - U393
+  - U394
+  - U435
+- id: PRINCIPLE-FLOW-LOGISTICS
+  statement: Logistique hors développement FLOW, en adhérence ; autonomie C-Log conservée.
+  source_refs:
+  - U58
+- id: PRINCIPLE-ORDER-AGREEMENT
+  statement: Commandes distinctes des Agreements de référence.
+  source_refs:
+  - U98
+- id: PRINCIPLE-CASE-SUPPLY-ORDERS
+  statement: Business Services porte le traitement des demandes et problèmes des parties prenantes ; le Case en est un dossier
+    de traitement. Supply pilote ses Orders, pour toutes natures de commandes, clients et volumes. Les Service Orders portent
+    les prestations confiées au contexte Services exécutant. Les modèles gardent leurs définitions propres et des contrats
+    explicites, sans cardinalité ni cycle universel imposé.
+  source_refs:
+  - U169
+  - U173
+  - U202
+- id: PRINCIPLE-TO-PROMISE
+  statement: 'D15 distingue ATP, CTP et PTP : ATP établit les possibilités dans la situation de référence ; CTP détermine
+    la faisabilité après adaptation en mobilisant les décisions spécialisées ; PTP porte l’arbitrage économique des scénarios.
+    Les priorités, l’échéancier, les politiques de stock et les services conservent leurs responsables d’arbitrage. Le CTP
+    local reste plus large que les acceptions éditeur consultées, sans séquence universelle ni application automatique des
+    adaptations.'
+  source_refs:
+  - U154
+  - U156
+  - U202
+  - U251
+  - U438
+- id: PRINCIPLE-EXECUTION-ORCHESTRATION
+  statement: Le référentiel des services porte l’offre et les SLA configurés ; D06 décrit la capacité contextuelle et orchestre
+    l’exécution, son tracking et son adaptation. D15 utilise D06 pour la promesse Supply et son réexamen ; les exécutants
+    gardent leurs opérations internes. Un SLA compatible n’empêche pas un échec opérationnel. La latitude d’adaptation relève
+    des règles de fonctionnement sans impact sur le catalogue des capacités.
+  source_refs:
+  - U240
+  - U242
+  - U243
+  - U244
+  - U438
+- id: PRINCIPLE-EXECUTION-DECISION-AND-COORDINATION
+  statement: La visibilité sur la capacité rend accessibles les informations communiquées par les exécutants. La décision
+    de besoins détermine les prestations nécessaires ; Service Order Management tient les demandes et leur cycle. Orchestration
+    coordonne les prestations et leurs dépendances ; Adaptation Decision détermine les variations du plan. D15 conserve la
+    promesse Supply et les exécutants leurs opérations internes.
+  source_refs:
+  - U245
+  - U246
+  - U247
+  - U438
+- id: PRINCIPLE-CAPABILITY-BEHAVIOR
+  statement: Une capacité peut être précisée par des comportements, dernier niveau de décomposition descriptive. Décrire factuellement
+    les conditions prises en compte et les résultats ; aucun niveau promotionnel Advanced ATP. Les objets, documents et événements
+    restent distincts.
+  source_refs:
+  - U262
+  - U263
+  - U264
+- id: PRINCIPLE-JUSTIFIED-BEHAVIOR
+  statement: Toute décomposition en comportements est justifiée par une complexité ou un bénéfice ciblé. Mécanisme, politique,
+    variante ou bénéfice différencient les façons d’agir. Les opérations produit et modalités unité/masse/interface ne justifient
+    pas seules un comportement. Capacité → Comportement est terminal.
+  source_refs:
+  - U265
+  - U282
+  - U283
+  - U290
+- id: PRINCIPLE-INVENTORY-SCENARIO-APPLICATION
+  statement: Inventory Planning comporte construction de scénarios alternatifs, Simulation & Analysis et adaptation du scénario
+    en cours. Comparaison, autorisation et mise en action restent des fonctions utiles. L’application mobilise Supply Protection,
+    les gestions d’Orders et D06 sans absorber leurs responsabilités.
+  source_refs:
+  - U267
+  - U269
+  - U271
+  - U283
+  - U284
+  - U290
+- id: PRINCIPLE-SUPPLY-ASSIGNMENT-VALUE
+  statement: Supply Assignment affecte les ressources aux commandes afin de maximiser une valeur multidimensionnelle sous
+    contraintes. Les critères, règles de priorité et arbitrages économiques restent explicites et mobilisent les décisions
+    spécialisées ; aucune pondération universelle ni optimum garanti. Supply Assignment Plan signifie plan d’affectation,
+    distinct des enveloppes de protection de groupes.
+  source_refs:
+  - U275
+  - U289
+  - U290
+- id: PRINCIPLE-RESERVATION-CONCURRENCY
+  statement: Seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas.
+  source_refs:
+  - U436
+- id: PRINCIPLE-CAPABILITY-NATURE
+  statement: Chaque capacité porte un type explicite dans fields.nature. Les icônes correspondent à ce type ; les décisions
+    sont présentées après les autres capacités de chaque domaine, avec une séparation visuelle légère lorsque les deux groupes
+    sont présents. Cet ordre de lecture ne définit ni séquence d’exécution ni hiérarchie supplémentaire.
+  source_refs:
+  - U449
+- id: PRINCIPLE-BEHAVIOR-NATURE
+  statement: Chaque comportement porte une forme principale explicite dans fields.nature, parmi les formes propres aux comportements
+    de MOD006. Cette forme pilote son icône ; elle n’interdit pas des dimensions complémentaires et ne crée ni niveau supplémentaire
+    ni comportement supplémentaire.
+  source_refs:
+  - U450
+  - U451
+limitations:
+- Les propositions, illustrations et justifications éditoriales ne sont pas validées par leur présence dans le modèle. Consulter
+  les portées par champ et leurs sources.
+- Le modèle processus Business Services et les objets, documents, événements restent à construire au-delà des illustrations
+  ; absence de détail ne signifie pas absence métier.
+- Les synthèses de domaines importées sont éditoriales. Les relations manquantes et natures non renseignées restent à instruire,
+  sans inférence depuis les noms ou préfixes.
+- 'Les identifiants retirés et accords remplacés restent historiques et ne doivent pas être réutilisés. Chronologie intégrale
+  des anciennes limitations : audits/2026-09-17-audit-comportements/model-before.yaml ; états antérieurs : modeles/backlog/history/
+  et publications figées.'
+- Audit des comportements clos U431 au périmètre du catalogue. Stocktaking porte ses trois comportements U334 ; Process Orchestration
+  couvre P04 sans décomposition supplémentaire. Depuis U438, Structuring, Archiving et Lifecycle appartiennent à D04 ; D03
+  porte Fulfillment Optimization et D15 Order Promising. U439–U442 instruisent de nouvelles propositions sans rouvrir le périmètre
+  historique U431. Les contrats détaillés et interfaces encore ouverts sont conservés dans modeles/backlog/behavior-gap-audit.yaml,
+  closure_U431.future_work ; la clôture ne valide pas globalement les formulations ni la réalisation installée.

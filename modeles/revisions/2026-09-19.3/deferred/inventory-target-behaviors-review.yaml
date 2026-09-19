@@ -1,0 +1,248 @@
+id: INVENTORY-TARGET-BEHAVIORS-U331
+source_refs:
+- U331
+- ELM206
+- CMP114
+- U332
+state: applied_to_backlog_U332
+adopted_principle: Prévoir le comportement multi-échelon pour une vision globale des lieux de stockage et de leur optimisation.
+adoption_limit: Trois comportements frères ; noms et questions/particularités adoptés. Définition multi-échelon déjà présentée,
+  formulations détaillées locales éditoriales. Comparaisons marché non validées implicitement.
+parent_id: D05.a
+proposed_behaviors:
+- parent_id: D05.a
+  state: proposed
+  fields:
+    name: Store Inventory Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un magasin pour assurer la disponibilité client, selon la demande
+      locale, l’assortiment retenu, les contraintes de présentation et de capacité, les délais de réassort et le risque d’excédent.
+    decomposition_rationale: 'Variante au contact de la demande client : équilibre disponibilité, présentation et immobilisation
+      locale.'
+    market_comparisons:
+    - vendor: SAP
+      product: SAP IBP
+      element_name: Decomposed (Single-Stage) Inventory Optimization
+      element_type: Opérateur produit
+      source_title: Decomposed (Single-Stage) Inventory Optimization
+      source_url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/feae3cea3cc549aaa9d9de7d363a83e6/a46e510f47e94abebb61afb1cda2f65d.html
+      source_version: '2605'
+      source_locator: Présentation ; Inputs and Outputs
+      similarities: Détermine localement stock de sécurité et position cible par produit-lieu, avec des dépendances distinctes
+        de la topologie complète du réseau.
+      differences: SAP exige ici des résultats du Global Multi-Stage en entrée ; ce n’est pas une preuve de trajectoire obligatoire
+        local puis global. Ne définit pas deux capacités nommées magasin et entrepôt.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+    - vendor: RELEX
+      product: Inventory planning
+      element_name: Store inventory / DC forecast / multi-echelon optimization
+      element_type: Mécanismes fonctionnels décrits par l’éditeur
+      source_title: 'Inventory optimization: Keys to a successful strategy'
+      source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+      source_version: Article évolutif sans version produit figée
+      source_locator: Storage and space optimization capabilities ; Multi-echelon inventory optimization
+      similarities: Considère disponibilité en rayon et contraintes de réserves/DC ; oppose dimensionnement par lieu et positionnement
+        coordonné des stocks de sécurité du réseau.
+      differences: Présentation fonctionnelle et scénario illustratif ; pas catalogue de capacités ni preuve de formule ou
+        de déploiement Beaumanoir.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+- parent_id: D05.a
+  state: proposed
+  fields:
+    name: Distribution Center Inventory Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un centre de distribution pour servir les magasins ou canaux
+      desservis, selon leurs besoins prévus, les délais fournisseurs, les aléas d’approvisionnement et les contraintes de
+      stockage.
+    decomposition_rationale: 'Variante d’alimentation aval : agrégation des besoins et protection contre les aléas amont ;
+      ne détermine pas conjointement les cibles de tous les lieux.'
+    market_comparisons:
+    - vendor: SAP
+      product: SAP IBP
+      element_name: Decomposed (Single-Stage) Inventory Optimization
+      element_type: Opérateur produit
+      source_title: Decomposed (Single-Stage) Inventory Optimization
+      source_url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/feae3cea3cc549aaa9d9de7d363a83e6/a46e510f47e94abebb61afb1cda2f65d.html
+      source_version: '2605'
+      source_locator: Présentation ; Inputs and Outputs
+      similarities: Détermine localement stock de sécurité et position cible par produit-lieu, avec des dépendances distinctes
+        de la topologie complète du réseau.
+      differences: SAP exige ici des résultats du Global Multi-Stage en entrée ; ce n’est pas une preuve de trajectoire obligatoire
+        local puis global. Ne définit pas deux capacités nommées magasin et entrepôt.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+    - vendor: RELEX
+      product: Inventory planning
+      element_name: DC forecasts from projected store orders
+      element_type: Fonction de prévision aval pour planification des stocks
+      source_title: 'The best inventory planning software: AI-powered, planner-driven'
+      source_url: https://www.relexsolutions.com/resources/inventory-planning-software/
+      source_version: Article évolutif sans version produit figée
+      source_locator: DC forecasts from projected store orders
+      similarities: La demande d’un centre de distribution peut provenir des commandes magasins projetées ; elle ne se réduit
+        pas à une prévision indépendante de ventes consommateur.
+      differences: Appui à la différence de contexte ; ne définit pas un comportement nommé Distribution Center Inventory
+        Optimization et ne transfère pas la prévision dans D05.a.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+- parent_id: D05.a
+  state: proposed
+  fields:
+    name: Multi-Echelon Inventory Optimization
+    definition: Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs
+      dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque.
+    decomposition_rationale: 'Mécanisme de coordination : éviter les protections redondantes et arbitrer où porter le stock
+      dans le réseau.'
+    market_comparisons:
+    - vendor: SAP
+      product: SAP IBP
+      element_name: Decomposed (Single-Stage) Inventory Optimization
+      element_type: Opérateur produit
+      source_title: Decomposed (Single-Stage) Inventory Optimization
+      source_url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/feae3cea3cc549aaa9d9de7d363a83e6/a46e510f47e94abebb61afb1cda2f65d.html
+      source_version: '2605'
+      source_locator: Présentation ; Inputs and Outputs
+      similarities: Détermine localement stock de sécurité et position cible par produit-lieu, avec des dépendances distinctes
+        de la topologie complète du réseau.
+      differences: SAP exige ici des résultats du Global Multi-Stage en entrée ; ce n’est pas une preuve de trajectoire obligatoire
+        local puis global. Ne définit pas deux capacités nommées magasin et entrepôt.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+    - vendor: RELEX
+      product: Inventory planning
+      element_name: Store inventory / DC forecast / multi-echelon optimization
+      element_type: Mécanismes fonctionnels décrits par l’éditeur
+      source_title: 'Inventory optimization: Keys to a successful strategy'
+      source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+      source_version: Article évolutif sans version produit figée
+      source_locator: Storage and space optimization capabilities ; Multi-echelon inventory optimization
+      similarities: Considère disponibilité en rayon et contraintes de réserves/DC ; oppose dimensionnement par lieu et positionnement
+        coordonné des stocks de sécurité du réseau.
+      differences: Présentation fonctionnelle et scénario illustratif ; pas catalogue de capacités ni preuve de formule ou
+        de déploiement Beaumanoir.
+      relationship: Appui sémantique
+      flow_position: 'U331 : principe multi-échelon confirmé. Trois comportements frères proposés sous D05.a selon la demande
+        servie et le périmètre d’arbitrage ; noms locaux composés à partir des notions marché, sans équivalence de catalogue
+        revendiquée.'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire indexé consulté ; rapprochement proposé et aucune réalisation Beaumanoir attestée.
+      status: proposed
+      source_refs:
+      - U331
+      - ELM206
+      - CMP114
+boundaries:
+- Trois comportements au même niveau terminal, sans sous-comportement ni chaîne obligatoire magasin puis entrepôt puis réseau.
+- Le multi-échelon peut reconsidérer les cibles locales ; il ne se limite pas à additionner des résultats locaux figés.
+- Entrepôt qualifié par son rôle de centre de distribution ; aucun Warehouse Optimization de picking, de rangement ou de main-d’œuvre
+  transféré depuis les exécutants.
+- Prendre en compte les besoins aval localement n’équivaut pas à décider conjointement toutes les cibles du réseau.
+- Les objectifs restent distincts des apports, transferts et affectations aux Orders.
+other_contexts: Dark store, hub régional, réserve magasin ou stock de retours à qualifier par rôle et bénéfice ; aucun comportement
+  supplémentaire à partir du seul type de lieu.
+implementation_U332:
+  source_refs:
+  - U332
+  model_before: audits/2026-09-18-inventory-target-behaviors/model-before.yaml
+  model_before_sha256: a75cec76a3d7aaba9fd8a8e38709053dd26887cb9e6fe7a6b043005174d068cf
+  delta:
+    nodes:
+      added:
+        BHV026: 608eab5f0aa91324cef7f9a11d13567fae4fb41151b8dbe039c5ab593bb13c1d
+        BHV027: 41dd63bf8e38ea3f01178675f498d06f1bb40eb5f8e0dd3688324d78e9440d31
+        BHV028: f35b2da85e5c36b39220fae80648a7512c215ef241ba373574962c5cbd2fc38f
+      changed:
+        D05.a: 34dc73184cf10158f76dd82e4bcfffd2370a555424a68eb301ff1aa6ed027920
+      removed: []
+    relations:
+      added:
+        REL-BEHAVIOR-BHV026: 444d7b944f3b040441fecb2b86fb40e12b288f3a2996b08d1a326c3bd8edb4c8
+        REL-BEHAVIOR-BHV027: 5881009b0beb73e684831be35c4923b0fc7b01541042a9cf5b3620c13d515c3f
+        REL-BEHAVIOR-BHV028: 43dba888ea9fdbd8bbc463f874fa4af3c0b7bcea6c8f748ffb0777a63eab4a99
+      changed: {}
+      removed: []
+  behaviors:
+  - node_id: BHV026
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV026
+    adopted_fields:
+    - name
+    value_sha256:
+      name: a65c2ae6a04b8a23040152eab3ca0fe25ca107acd2b414cb1b6891680c03241a
+    question: Quel stock viser dans ce magasin pour servir ses clients ?
+    question_sha256: 65534b45d327fc452153997dd8d8c21a4d29092c5cf2cae5368f65f9aac31fb6
+    particularity: Demande locale, assortiment retenu, présentation, capacité de stockage, cadence de réassort et risque d’excédent.
+    particularity_sha256: d96f462b09333522ca0f6b59402479274d727211b8d0fc3b8208f58827dd4471
+  - node_id: BHV027
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV027
+    adopted_fields:
+    - name
+    value_sha256:
+      name: 6684d805420271bb0bbec55a4488c773edb8634ec22eb7f3134d2d6b2fd84221
+    question: Quel stock viser dans ce centre pour alimenter les magasins ou canaux desservis ?
+    question_sha256: 85bfc9fc33a51e7242255acd690cc8d1a72dd90a0b0327499e10ef76eb59d583
+    particularity: Besoins agrégés de l’aval, délais fournisseurs, incertitudes d’approvisionnement et service attendu du
+      centre.
+    particularity_sha256: 704c9ded67f32e282a713d92cf3e73c0cc4e8207fb540a3e54c1d4fb4b64cbce
+  - node_id: BHV028
+    parent_id: D05.a
+    relation_id: REL-BEHAVIOR-BHV028
+    adopted_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 59a20e52119222305f68f34c07ddb44dedb7382ca1a379f4be0adc5fa37f819b
+      definition: 581a1cb766e6fdf407d83720f6ca884270e2c8ee3a1917fd5a2831db7a43dc8c
+    question: Où porter le stock dans le réseau, et quels objectifs fixer conjointement aux différents lieux ?
+    question_sha256: 2e83419af538504fee9ccceb9e88c29a868ec84511046f37a652a29c678393de
+    particularity: Arbitrer les protections amont/aval et éviter leur duplication, en tenant compte des dépendances entre
+      échelons.
+    particularity_sha256: 2ad66e0fdefa1dd9a3c2136124b0f06ca4960e0856d3c99625a316e344c4d8c3
+  scope: Trois comportements frères ; noms et questions/particularités adoptés. Définition multi-échelon déjà présentée, formulations
+    détaillées locales éditoriales. Comparaisons marché non validées implicitement.

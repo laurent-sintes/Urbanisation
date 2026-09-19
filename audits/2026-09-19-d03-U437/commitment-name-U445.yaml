@@ -1,0 +1,26 @@
+source_refs:
+- U445
+name_sha256: 8fbdb29a711c0c52e959b3d77e91426b71b41c15c36887b1b1d59361904c20e7
+changed:
+- D03
+- D15
+- D02.e
+- D03.j
+- D03.l
+- D05.e
+- D03.n
+- BHV021
+- BHV022
+- BHV023
+- BHV036
+- BHV038
+- BHV043
+- D03.o
+- BHV075
+- BHV076
+- BHV077
+- BHV078
+- D03.p
+- BHV085
+- REL-AUDIT-U435-PLNK-05
+approved_value_replaced: D03.n.name

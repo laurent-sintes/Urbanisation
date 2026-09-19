@@ -89,6 +89,65 @@ class BacklogPublicationTests(unittest.TestCase):
     def prepare(self):
         return workflow.prepare(self.root, self.version, ['PUB-TEST-NEW'])
 
+    def test_information_catalogue_is_frozen_published_and_stale_edits_rejected(self):
+        catalogue = deepcopy(workflow.read(ROOT/'modeles/backlog/model.yaml')['information_catalog'])
+        # The legacy fixture keeps its own capabilities; use two existing roles.
+        catalogue['items'] = catalogue['items'][:2]
+        catalogue['links'] = [dict(id='INFO-TEST-LINK', from_ref=catalogue['items'][0]['id'],
+            to_ref=catalogue['items'][1]['id'], meaning='réponse à un attendu', condition='Réponse reçue',
+            effect='Éclaire les conditions retenues',source_refs=['PUB-TEST-NEW'],
+            review={'state':'proposed','note':'Fixture only'})]
+        for item in catalogue['items']:
+            item['capability_roles'] = [dict(capability_ref='D03.a',role='utilise',meaning='Fixture only',source_refs=['PUB-TEST-NEW'])]
+        model=workflow.read(self.backlog_path);model['information_catalog']=catalogue;save(self.backlog_path,model)
+        self.prepare()
+        changed=deepcopy(model);changed['information_catalog']['items'][0]['definition']+=' Later edit.'
+        save(self.backlog_path,changed)
+        with self.assertRaises(ValueError): workflow.publish_prepared(self.root,self.version,activate=True)
+        self.assertFalse((self.models/f'release/{self.version}').exists())
+        save(self.backlog_path,model)
+        workflow.publish_prepared(self.root,self.version,activate=True)
+        release_path=self.models/f'release/{self.version}/model.yaml'
+        published=workflow.read(release_path)
+        self.assertEqual(published['information_catalog']['items'][0]['definition'],catalogue['items'][0]['definition'])
+        self.assertEqual(published['information_catalog']['items'][0]['revision'],1)
+        self.assertIn('Informations métier',(release_path.parent/'release-notes.md').read_text(encoding='utf-8'))
+        frozen=release_path.read_bytes();save(self.backlog_path,changed)
+        self.assertEqual(release_path.read_bytes(),frozen)
+
+    def add_methodology_association(self):
+        from hashlib import sha256
+        folder = self.models / 'modeling-guides'
+        (folder / 'versions').mkdir(parents=True)
+        guide = folder / 'versions/2026-09-19.1.yaml'
+        guide.write_text('version: 2026-09-19.1\n', encoding='utf-8')
+        save(folder / 'index.yaml', {'guides': [{'version': '2026-09-19.1', 'path': 'versions/2026-09-19.1.yaml', 'sha256': sha256(guide.read_bytes()).hexdigest()}],
+             'associations': [{'publication_version': '2026-09-13.4', 'guide_version': '2026-09-19.1', 'scope': 'test'}]})
+        return folder / 'index.yaml'
+
+    def test_prepared_publication_carries_exact_methodology_association(self):
+        path = self.add_methodology_association()
+        before = workflow.read(path)
+        self.prepare()
+        staged = workflow.read(self.models / 'staging' / self.version / 'manifest.json')
+        self.assertEqual(staged['modeling_guide']['guide'], before['guides'][0])
+        workflow.publish_prepared(self.root, self.version, activate=True)
+        after = workflow.read(path)
+        self.assertEqual(after['guides'], before['guides'])
+        self.assertEqual(after['associations'][0], before['associations'][0])
+        self.assertEqual(after['associations'][1]['publication_version'], self.version)
+        self.assertEqual(after['associations'][1]['guide_version'], before['guides'][0]['version'])
+
+    def test_changed_methodology_index_blocks_before_writing_release(self):
+        path = self.add_methodology_association()
+        self.prepare()
+        index = workflow.read(path)
+        index['associations'][0]['scope'] = 'changed'
+        save(path, index)
+        with self.assertRaisesRegex(ValueError, 'Methodology association changed'):
+            workflow.publish_prepared(self.root, self.version, activate=True)
+        self.assertFalse((self.models / 'release' / self.version).exists())
+
     def test_read_only_report_identifies_live_changed_field_and_lost_validation(self):
         self.mutate_capability()
         before = (self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes()
@@ -327,6 +386,37 @@ class BacklogPublicationTests(unittest.TestCase):
         save(path, doc)
         with self.assertRaisesRegex(ValueError, 'new id'):
             workflow.build_candidate(self.root, self.version, ['PUB-TEST-NEW'], path)
+
+
+class EmbeddedMethodologySourcesTests(unittest.TestCase):
+    def guide(self):
+        return {'id': 'flow-modeling-keys', 'source_refs': ['U467'],
+                'sources': [dict(id=identifier, title='Source', excerpt='Frozen text', scope='Dated excerpt')
+                            for identifier in ['U467', 'AGENTS-2026-09-18']],
+                'lessons': [{'contributor': {'source_refs': ['AGENTS-2026-09-18']}}]}
+
+    def test_embedded_sources_remain_in_context_without_becoming_global_records(self):
+        guide = self.guide()
+        original = deepcopy(guide)
+        self.assertEqual(workflow.context_source_references(guide), {'U467'})
+        self.assertEqual(guide, original)
+        # Other annexes cannot bypass global provenance by adding a sources list.
+        guide['id'] = 'ordinary-annex'
+        self.assertEqual(workflow.context_source_references(guide), {'U467', 'AGENTS-2026-09-18'})
+
+    def test_missing_duplicate_or_empty_embedded_evidence_is_rejected(self):
+        guide = self.guide()
+        guide['lessons'][0]['contributor']['source_refs'] = ['MISSING']
+        with self.assertRaisesRegex(ValueError, 'Unresolved embedded'):
+            workflow.context_source_references(guide)
+        guide = self.guide()
+        guide['sources'].append(deepcopy(guide['sources'][0]))
+        with self.assertRaisesRegex(ValueError, 'duplicate embedded'):
+            workflow.context_source_references(guide)
+        guide = self.guide()
+        guide['sources'][1]['excerpt'] = ''
+        with self.assertRaisesRegex(ValueError, 'Invalid'):
+            workflow.context_source_references(guide)
 
 
 if __name__ == '__main__':

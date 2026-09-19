@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "error": "TimeoutError: locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.glossary-detail') to be visible\u001b[22m\n",
+  "checks": [
+    "Univers : entrée concrète, deux exemples, périmètre explicite sans contenu replié ni lien orphelin."
+  ],
+  "errors": []
+}

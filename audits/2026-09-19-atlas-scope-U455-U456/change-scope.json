@@ -1,0 +1,22 @@
+{
+  "model_before_sha256": "1513fc6357d9b1da5de7a6a099126f2ed6d578724061620fb6e3be75cb19960c",
+  "model_after_sha256": "95e67031526cce30675841f16aff4e8484ba7b5b976e8c1e31874a36f233ae64",
+  "unchanged_collections": [
+    "schema_version",
+    "model_id",
+    "version",
+    "as_of",
+    "source_version",
+    "source_files",
+    "space",
+    "nodes",
+    "relations",
+    "alternatives",
+    "lifecycle_policy"
+  ],
+  "modified_collections": [
+    "principles",
+    "limitations"
+  ],
+  "protected_file_count": 342
+}

@@ -24,6 +24,18 @@ test('a direct capability URL leaves view selection to its published structure',
   assert.equal(routeHash(readRoute('')), '/');
 });
 
+test('market view is shareable and old sheet market anchors open the dedicated tab', () => {
+  const route = readRoute('#version=2026-09-19.3&node=D03.n&view=market');
+  assert.equal(route.view, 'market');
+  assert.deepEqual(readRoute(routeHash(route)), route);
+  const legacy = readRoute('#version=2026-09-19.3&node=D04.j&view=sheet&section=market_comparisons');
+  assert.equal(legacy.view, 'market');
+  assert.equal(legacy.node, 'D04.j');
+  assert.equal(legacy.version, '2026-09-19.3');
+  assert.equal(readRoute('#view=glossary&term=TER070&section=market_comparisons').view, 'glossary');
+  assert.equal(readRoute('#view=market').view, 'map');
+});
+
 test('a principle deep link pins its publication without creating a model selection', () => {
   const route = readRoute('#version=2026-09-16.2&view=principles&principle=metier&node=D01&scope=D01');
   assert.equal(route.view, 'principles');

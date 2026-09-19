@@ -4,9 +4,32 @@ export type JsonRecord = Record<string, unknown>;
 export interface MarketComparison {
   vendor: string; product: string; element_name: string; element_type: string;
   relationship: string; similarities: string; differences: string; flow_position: string;
+  term_choice?: string; definition_choice?: string;
   source_title: string; source_url: string; source_version: string; consulted_on: string;
   source_locator: string; evidence_limits: string; source_refs: string[];
   status: 'proposed' | 'under_review' | 'validated';
+}
+
+export interface BusinessExample {
+  title: string; situation: string; outcome?: string; lesson?: string;
+  source_refs: string[];
+}
+
+export interface BusinessInformation {
+  id: string; name: string; label_fr: string; question: string; definition: string; context: string;
+  essential_elements: string[]; granularity_rationale: string; boundaries: string[];
+  document_and_fact_boundary: string;
+  capability_roles: { capability_ref: string; role: string; meaning: string; source_refs: string[] }[];
+  examples: BusinessExample[]; market_comparisons: MarketComparison[];
+  source_refs: string[]; review: Review; revision?: number; last_modified?: string;
+}
+export interface InformationLink {
+  id: string; from_ref: string; to_ref: string; meaning: string; condition: string; effect: string;
+  source_refs: string[]; review: Review; revision?: number; last_modified?: string;
+}
+export interface InformationCatalogue {
+  id: string; items: BusinessInformation[]; links: InformationLink[]; source_refs: string[];
+  revision?: number; last_modified?: string;
 }
 
 export interface Review extends JsonRecord { state?: string; note?: string }
@@ -70,6 +93,7 @@ export interface GlossaryTerm extends JsonRecord {
   revision?: number; last_modified?: string;
 }
 export interface RawPublication extends JsonRecord {
+  information_catalog?: InformationCatalogue;
   glossary?: { terms: GlossaryTerm[] };
   space: string;
   model_id?: string;
@@ -84,12 +108,12 @@ export interface RawPublication extends JsonRecord {
   published_at?: string;
 }
 export interface AtlasNode {
+  readonly referenceParentName?: string;
   readonly id: string;
   readonly name: string;
   readonly kind: string;
   readonly groupRole?: string;
   readonly levelRef?: string;
-  readonly layer?: string;
   readonly revision?: number;
   readonly lastModified?: string;
   readonly purpose: string;
@@ -129,6 +153,10 @@ export interface AtlasRelation {
   readonly raw: Readonly<RawRelation>;
 }
 export interface PublishedModel {
+  readonly hasInformationCatalogue: boolean;
+  readonly information: readonly BusinessInformation[];
+  readonly informationById: ReadonlyMap<string, BusinessInformation>;
+  readonly informationLinks: readonly InformationLink[];
   readonly glossary: readonly GlossaryTerm[];
   readonly glossaryById: ReadonlyMap<string, GlossaryTerm>;
   readonly version: string;

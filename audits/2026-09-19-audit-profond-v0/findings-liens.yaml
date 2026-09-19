@@ -1,0 +1,308 @@
+audit_id: AUDIT-PROFOND-V0-LIENS-2026-09-19
+status: audit_proposals_only
+catalogue_changed: false
+model_sha256: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+scope:
+  backlog: 139 nœuds, 331 relations dont 198 métier.
+  published: 135 nœuds, 323 relations dont 190 métier ; publication 2026-09-19.1 issue de l’index.
+  limits:
+  - Les propositions ne sont ni des relations adoptées ni des flux installés Beaumanoir.
+  - Les chemins indirects et mentions textuelles sont distingués des liens métier explicites.
+  - Aucun lien par comportement ou par appelant n’est exigé par principe.
+  - U431 demeure clos ; A01/A03/A04/A07 gardent leur statut différé non bloquant pour le catalogue.
+  - Avant présentation signifie avant de montrer le graphe comme V0 cohérente ; une revue explicite des propositions peut servir à les qualifier.
+findings:
+- id: LNK-01
+  title: Les interactions sont documentées mais restent peu lisibles sur le graphe
+  priority: V0_presentation
+  finding_type: under_valued_existing_links
+  evidence:
+  - 177 liens needs sur 190 liens métier publiés ; aucun label ou verb dans les champs des 198 liens du backlog.
+  - 115 conditions sont exactement le même garde-fou générique ; 130 effets exactement le même rappel de responsabilité.
+  - Ces textes préviennent des interprétations erronées mais ne donnent pas toujours la condition métier et le résultat particulier.
+  - app/src/dependencyGraph.ts fixe le libellé A besoin de pour needs et ne réutilise les labels d’origine que pour other.
+  - app/src/components/BusinessSheet.tsx conserve les qualifications, conditions, effets et sources dans l’inspecteur.
+  interpretation: Le problème principal est la mise en valeur du sens, pas une perte des relations originales ni une absence totale de qualification.
+  recommendation: Qualifier les interactions des scénarios V0 avec une expression courte, le résultat attendu et les conditions utiles ; adapter ensuite la projection Atlas pour afficher cette expression aussi pour needs. Ne pas transformer la réécriture des 190 liens en préalable à un premier atelier.
+  acceptance: Les six interactions prioritaires ci-dessous se lisent sans ouvrir un paragraphe générique ; l’inspecteur conserve l’intégralité des relations originales.
+  source_refs: [U398, U399, BUSINESS-INTERACTIONS-U398, LNK-MKT-01]
+- id: LNK-02
+  title: Order Backlog Planning ne montre pas ses décisions ni ses résultats
+  priority: V0_presentation
+  finding_type: missing_explicit_interaction
+  node_ids: [D03.p, D03.o, D02.e, D03.n, D04.n, D04.o]
+  existing_relation_ids: [REL-NEEDS-U424-D03.p-D04.o]
+  evidence:
+  - D03.p possède un seul lien métier, vers D04.o ; aucun entrant.
+  - D03.p.fields.scope nomme Fulfillment Plan Decision, Supply Assignment, Promise Management et Structuring.
+  - D03.o mobilise déjà ATP, CTP, PTP, priorités, échéancier et protections ; son résultat est déjà consommé par Supply Assignment via REL-NEEDS-U378-07.
+  interpretation: Le graphe masque le mandat principal de Planning. Un chemin indirect via Lifecycle et Promise ne représente pas une mobilisation de Fulfillment Plan Decision.
+  recommendation: Prioriser PLNK-01. Qualifier ensuite la préparation et la prise en compte des affectations et promesses sans créer un comportement Planning par analogie.
+  source_refs: [U417, U420, U424]
+- id: LNK-03
+  title: La frontière autorisation et orchestration reste uniquement dans le texte
+  priority: V0_presentation
+  finding_type: missing_explicit_interaction
+  node_ids: [D04.o, BHV039, BHV040, D06.d, D06.f]
+  existing_relation_ids: [REL-NEEDS-U424-D03.p-D04.o]
+  evidence:
+  - Aucun lien métier ne relie D04.o ou BHV039 à D06.d.
+  - BHV039.fields.scope distingue autorisation, prise en charge, démarrage observé et retrait d’autorisation ; il nomme Process Orchestration.
+  - D04.o dépend d’Operations Tracking ; ce suivi ne représente pas la transmission d’une autorisation vers l’orchestration.
+  interpretation: Une démonstration de lancement partiel ne peut pas suivre la responsabilité qui empêche le démarrage non autorisé ou le redémarrage sous Hold.
+  recommendation: PLNK-02 explicite la dépendance de Process Orchestration envers les autorisations et restrictions de Lifecycle. Le choix d’une synchronisation technique reste ouvert.
+  acceptance: Pour 100 pièces dont 60 libérées et 40 non libérées, la portée autorisée reste identifiable ; un Hold et un retrait d’autorisation ne sont pas assimilés à un rollback physique.
+  source_refs: [U410, U420, U424, LNK-MKT-03]
+- id: LNK-04
+  title: La consignation a des capacités riches mais un fil métier incomplet
+  priority: V0_presentation
+  finding_type: missing_explicit_interactions
+  node_ids: [D04.r, D01.h, D01.f, D01.g, D04.o, D04.n, D04.q, D07.c, D04.j, D04.m]
+  existing_relation_ids: [REL-NEEDS-U395-01, REL-NEEDS-U395-02, REL-NEEDS-U395-03, REL-NEEDS-U395-04]
+  evidence:
+  - D01.h possède uniquement le lien vers Agreement Ingestion ; D04.r uniquement les liens vers Agreement, Initial Stocking Decision et Replenishment Decision.
+  - D01.h.fields.scope cite Inventory Tracking, Record Inventory Movements, Consignment Replenishment Order, Purchase Order et Supplier Return sans lien métier pour ces paires.
+  - D04.r.fields.scope cite la prise en charge du stock reçu par D01.h et les fonctions communes Lifecycle, Structuring et Archiving.
+  - Les cinq autres capacités de type Order ont des liens vers Lifecycle, Structuring et Service Reconciliation ; Consignment Replenishment Order n’a pas ces liens.
+  interpretation: La demande d’apport, sa satisfaction, le stock détenu, le propriétaire et l’issue de la consignation ne se parcourent pas comme responsabilités distinctes dans le graphe.
+  recommendation: Prioriser PLNK-03 et PLNK-04 puis instruire les compléments CSP-01 à CSP-08 dans un même scénario. Conserver achat éventuel et transfert de propriété comme conditions de l’accord, sans règle universelle.
+  source_refs: [U395, U398, U401, LNK-MKT-02]
+- id: LNK-05
+  title: Le report confirmé par le fournisseur ne rejoint pas explicitement la promesse
+  priority: V0_presentation
+  finding_type: missing_result_consumption
+  node_ids: [BHV078, D04.j, D03.n, D01.f, BHV004]
+  existing_relation_ids: [REL-NEEDS-U290-021, REL-NEEDS-U290-089, REL-INITIAL-STOCKING-PURCHASE]
+  evidence:
+  - BHV078.fields.scope nomme Promise Management et distingue demande fournisseur, réponse et engagement accepté.
+  - Aucun lien métier D04.j ou BHV078 avec D03.n ; le lien d’Operations Tracking vers la promesse traite des faits et estimations d’exécution.
+  - Replenishment et Initial Stocking lisent déjà les apports d’achat attendus ; ces liens fournissent un appui à conserver.
+  interpretation: La propagation métier d’une modification d’engagement fournisseur est lisible dans le texte, mais la carte ne montre pas son effet potentiel sur la promesse client.
+  recommendation: PLNK-05. Pour l’implémentation, préciser également l’origine et la fraîcheur des ressources futures dans Inventory Tracking et Future Supply Projection ; ne pas imposer un nouveau lien technique direct à chaque décision.
+  acceptance: Une réponse de 60 vendredi et 40 mardi ne modifie pas automatiquement la promesse de 100 vendredi ; la décision de réexamen et son résultat restent attribués à Promise Management.
+  source_refs: [U403]
+- id: LNK-06
+  title: La mise en action d’Inventory Planning omet la demande d’apport consigné
+  priority: V0_presentation
+  finding_type: missing_explicit_interaction
+  node_ids: [D05.f, D04.r, D05.g, D05.e]
+  existing_relation_ids: [REL-NEEDS-U290-102, REL-NEEDS-U290-103, REL-NEEDS-U395-03, REL-NEEDS-U395-04]
+  evidence:
+  - D05.f mobilise Purchase Order et Transfer Order pour créer ou modifier les apports autorisés et connaître leur prise en compte.
+  - D04.r mobilise les décisions d’implantation et de réassort mais aucun lien ne le relie à Inventory Planning.
+  - Les descriptions de la consignation attribuent les besoins à D05, les demandes à D04 et le stock sous accord à D01.
+  interpretation: La représentation de la mise en action demeure limitée aux apports achetés et transferts alors que l’apport non acheté est déjà adopté.
+  recommendation: PLNK-06 sous condition d’un scénario impliquant un stock consigné ; aucun passage obligatoire par Planning ni achat implicite.
+  source_refs: [U283, U284, U395, U398]
+- id: LNK-07
+  title: Les prestations hors vente manquent de liens explicites vers leurs intentions
+  priority: V0_review_then_implementation
+  finding_type: interaction_scope_to_qualify
+  node_ids: [D07.a, D04.i, D04.j, D04.k, D04.l, D04.m, D04.r]
+  existing_relation_ids: [REL-NEEDS-U290-108, REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER, REL-NEEDS-U388-REPAIR-EXECUTION, REL-NEEDS-U391-SERVICE-ORDER]
+  evidence:
+  - Service Requirements Decision n’a de lien vers un type d’Order qu’avec Sales Order.
+  - Sa définition et son scope couvrent préparation, réception, transport et production de documents selon le besoin Supply.
+  - Achat, transfert, retour et consignation ont des attendus propres ; les dépendances existantes via Service Order ou Reconciliation ne décrivent pas toutes l’entrée du besoin.
+  interpretation: Le graphe donne une lecture centrée sur la vente malgré un périmètre métier plus large. Ce constat ne prouve pas que chaque besoin doit traverser D07.a.
+  recommendation: Au cours des scénarios, identifier le porteur effectif de chaque besoin de prestation et documenter le résultat consommé par D07.a. Conserver les liens directs déjà utiles ; n’ajouter ni comportement ni cinq liens identiques par automatisme.
+  unknowns: [Responsable de transmission par scénario, Granularité des prestations requises, Utilisation éventuelle de besoins indépendants d’un Order]
+  source_refs: [U245, U247, U391, U395, U409]
+- id: LNK-08
+  title: Des réserves de contrat demeurent à distinguer des défauts du catalogue
+  priority: implementation
+  finding_type: known_deferred_contracts
+  node_ids: [D02.c, D02.e, D03.i, D03.n, D04.o, D06.b]
+  existing_relation_ids: [REL-NEEDS-U290-018, REL-NEEDS-U290-019, REL-NEEDS-U290-025, REL-NEEDS-U290-029, REL-NEEDS-U290-030]
+  evidence:
+  - Les cinq qualifications rappellent l’arbitrage Reservation/Assignment et l’absence de double déduction.
+  - closure_U431.future_work conserve A01, A03, A04 et A07 comme deferred_nonblocking.
+  interpretation: Les responsabilités sont décrites ; les règles d’opposabilité, d’imputation et de synchronisation restent à contractualiser. La clôture U431 n’adopte pas les réponses détaillées.
+  recommendation: Présenter ces questions comme décisions d’implémentation identifiées. Définir pour les scénarios les quantités, dates d’effet, portée, résultat partiel, refus et compensation admissible ; ne pas bloquer la V0 sur une spécification exhaustive.
+  source_refs: [U431, U429, A01, A03, A04, A07]
+- id: LNK-09
+  title: Les liens de texte et les états de revue ne valent pas validation d’une interaction
+  priority: V0_presentation
+  finding_type: interpretation_and_governance
+  evidence:
+  - 216 références model dans les champs éditoriaux, aucune cassée ; 34 occurrences entre capacités sans paire de lien métier même après projection des comportements.
+  - Ces occurrences comprennent des frontières négatives ; CTP cite Replenishment et Redistribution précisément pour éviter une dépendance obligatoire.
+  - Les 4 liens métier lifecycle urbanist_validated ne valident que source_id et target_id ; leurs qualifications restent éditoriales.
+  - Les 8 relations sans meaning sont les illustrations REL-ILL absentes de la publication ; aucun défaut de qualification des liens Atlas ne s’en déduit.
+  recommendation: Distinguer dans la V0 relation explicite, mention explicative, proposition et réserve ; conserver les scopes de validation champ par champ. Ne pas convertir automatiquement les 34 occurrences en relations.
+  source_refs: [U235, U290, U398, U399, U431]
+top_six_proposed_links:
+- proposal_id: PLNK-01
+  finding_id: LNK-02
+  source_id: D03.p
+  target_id: D03.o
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Compare et prépare les scénarios de satisfaction déterminés
+  meaning: Order Backlog Planning mobilise Fulfillment Plan Decision pour obtenir des scénarios collectifs cohérents, comparer leurs hypothèses et préparer le scénario retenu.
+  conditions: [Lorsqu’un travail collectif du carnet nécessite de construire ou de réexaminer un scénario.]
+  effects: [Scénarios et impacts explicables, Aucun engagement ou changement d’Order par la seule simulation.]
+  evidence: model.yaml D03.p.fields.scope et D03.o.fields.scope ; aucune relation directe entre ces deux capacités.
+  unknowns: [Règles de choix et d’acceptation du scénario, Version du carnet et des hypothèses]
+  before: V0_presentation
+- proposal_id: PLNK-02
+  finding_id: LNK-03
+  source_id: D06.d
+  target_id: D04.o
+  behaviors_concerned: [BHV039, BHV040]
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Coordonne la réalisation dans la portée autorisée
+  meaning: Process Orchestration consomme les autorisations de prise en charge et restrictions de progression gouvernées par Lifecycle pour coordonner les prestations admissibles.
+  conditions: [Quantités ou lignes explicitement autorisées, Hold ou retrait d’autorisation traité selon sa portée, Réalisations déjà acquises conservées.]
+  effects: [Prise en compte explicable de l’autorisation et de ses changements, Aucun démarrage physique présumé, Aucun rollback physique universel.]
+  evidence: model.yaml BHV039.fields.scope ; D06.d est nommé comme responsable de la coordination après autorisation, sans lien direct.
+  unknowns: [Délai de prise en compte du retrait, Prestations déjà irréversibles, Autorités et dérogations]
+  before: V0_presentation
+- proposal_id: PLNK-03
+  finding_id: LNK-04
+  source_id: D04.r
+  target_id: D07.c
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Rapproche l’apport consigné des réceptions reconnues
+  meaning: Consignment Replenishment Order utilise les résultats imputés aux prestations pour expliquer les quantités reçues et le reste à recevoir sans transformer la réception en acquisition.
+  conditions: [Réception reconnue et rattachée aux quantités de la demande, Écarts et résultats partiels conservés.]
+  effects: [Reste à recevoir explicable, Propriété du fournisseur préservée selon l’accord, Aucun stock créé par le seul état de la demande.]
+  evidence: D04.r.fields.scope suit les réceptions progressives ; les cinq autres types Order possèdent la dépendance à Service Reconciliation. Le choix de ce fournisseur est une proposition de cohérence.
+  unknowns: [Règles d’imputation des faits aux lignes, Relation précise entre Service Reconciliation et Record Inventory Movements]
+  before: V0_presentation
+- proposal_id: PLNK-04
+  finding_id: LNK-04
+  source_id: D01.h
+  target_id: D01.g
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Applique le régime consigné aux faits de stock tracés
+  meaning: Consigned Inventory Management mobilise les faits et écritures de stock qualifiés pour rattacher réception, consommation et changement de propriété aux quantités concernées ; Record Inventory Movements garde l’enregistrement des mouvements.
+  conditions: [Événement reconnu concernant un stock sous accord, Propriétaire et détenteur identifiés, Changement de propriété seulement selon l’accord.]
+  effects: [Propriété et mouvement physique distingués, Traçabilité du fait justifiant le changement, Aucune consommation ou acquisition déduite automatiquement d’une simple demande.]
+  evidence: D01.h.fields.scope nomme explicitement Record Inventory Movements et ses responsabilités.
+  unknowns: [Répartition des écritures de propriété et de stock, Déclencheur contractuel du changement de propriété, Faits attendus par la finance externe]
+  before: V0_presentation
+- proposal_id: PLNK-05
+  finding_id: LNK-05
+  source_id: D03.n
+  target_id: BHV078
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Réexamine la promesse selon l’engagement fournisseur révisé
+  meaning: Promise Management consomme les réponses et engagements fournisseur qualifiés par Supplier Confirmation pour apprécier les conséquences sur les promesses concernées et traiter leur éventuelle révision.
+  conditions: [Un achat contribue à la satisfaction concernée, Distinguer demande, proposition fournisseur et engagement accepté, Relier quantités et échéances concernées.]
+  effects: [Promesse réexaminable avec provenance du changement, Aucune modification automatique de la promesse à l’acceptation fournisseur, Refuser un report ne recrée pas une capacité fournisseur.]
+  evidence: BHV078.fields.scope nomme Promise Management ; aucun lien métier équivalent entre D04.j/BHV078 et D03.n.
+  unknowns: [Comment identifier les promesses impactées, Déclenchement du réexamen, Politique d’information des parties]
+  before: V0_presentation
+- proposal_id: PLNK-06
+  finding_id: LNK-06
+  source_id: D05.f
+  target_id: D04.r
+  proposed_type: relates-to
+  proposed_role: needs
+  label: Met en action les apports consignés retenus
+  meaning: Inventory Planning mobilise Consignment Replenishment Order pour formuler ou ajuster une demande d’apport consigné autorisée et connaître le résultat de sa prise en compte.
+  conditions: [Scénario retenu comprenant un apport sous accord de consignation, Besoin d’implantation ou de réassort identifié, Mutations d’Order autorisées.]
+  effects: [Demande créée ou modifiée avec traçabilité au choix retenu, Refus et prise en compte partielle visibles, Aucun engagement d’achat ni arrivée physique implicite.]
+  evidence: D05.f applique déjà cette responsabilité via Purchase Order et Transfer Order (REL-NEEDS-U290-102/103) ; D04.r et les descriptions de consignation portent l’apport non acheté.
+  unknowns: [Quelle fonction formule la demande hors scénario Planning, Gestion des changements simultanés, Autorité d’engagement fournisseur]
+  before: V0_presentation
+supplementary_candidates:
+- id: CSP-01
+  source_id: D04.r
+  target_id: D04.o
+  purpose: Gouverner les évolutions autorisées de la demande d’apport consigné.
+  evidence: D04.r.fields.scope nomme Lifecycle.
+  category: explicit_text_missing_relation
+- id: CSP-02
+  source_id: D04.r
+  target_id: D04.n
+  purpose: Conserver filiation et composition lors des découpages ou regroupements autorisés.
+  evidence: D04.r.fields.scope nomme Structuring.
+  category: explicit_text_missing_relation
+- id: CSP-03
+  source_id: D04.q
+  target_id: D04.r
+  purpose: Conserver les versions et preuves de la demande d’apport consigné.
+  evidence: D04.r.fields.scope nomme Archiving ; les cinq autres types Order sont déjà fournisseurs d’Archiving.
+  category: explicit_text_missing_relation
+- id: CSP-04
+  source_id: D04.r
+  target_id: D01.h
+  purpose: Rattacher le stock reçu à la gestion durable de l’accord de consignation.
+  evidence: D04.r.fields.scope et D01.h.fields.scope.
+  category: business_handoff_semantics_to_choose
+- id: CSP-05
+  source_id: D01.h
+  target_id: D01.f
+  purpose: Appliquer les conditions de consignation sur une connaissance du stock avec propriété et détention distinctes.
+  evidence: D01.h.fields.scope nomme Inventory Tracking.
+  category: explicit_text_missing_relation
+- id: CSP-06
+  source_id: D01.h
+  target_id: D04.j
+  purpose: Mobiliser l’achat applicable lors d’une acquisition autorisée du stock consigné.
+  evidence: D01.h.fields.scope ; BHV063 et BHV064.
+  category: conditional_interaction
+  unknowns: [Acte d’achat requis ou autre traduction contractuelle selon le contexte]
+- id: CSP-07
+  source_id: D01.h
+  target_id: D04.m
+  purpose: Mobiliser le retour fournisseur lorsqu’une sortie d’accord prévoit une reprise physique.
+  evidence: D01.h.fields.scope ; BHV065.
+  category: conditional_interaction
+- id: CSP-08
+  source_id: D05.e
+  target_id: D04.o
+  behaviors_concerned: [BHV085, BHV036, BHV037]
+  purpose: Respecter fermeté, gel et admissibilité des modifications d’apports existants.
+  evidence: D05.e.fields.scope nomme Lifecycle ; BHV085 détaille la frontière recommandation et application.
+  category: direct_link_or_existing_order_contract_to_qualify
+  unknowns: [Information consommée directement ou fournie avec les apports par chaque Order]
+- id: CSP-09
+  source_id: D03.p
+  target_id: D02.e
+  purpose: Préparer et constater l’application des affectations du scénario retenu.
+  evidence: D03.p.fields.scope ; D02.e.fields.scope ; REL-NEEDS-U378-07 couvre déjà Supply Assignment vers Fulfillment Plan Decision.
+  category: outcome_feedback_to_qualify
+- id: CSP-10
+  source_id: D03.p
+  target_id: D03.n
+  purpose: Préparer et suivre les conséquences du scénario sur les promesses concernées.
+  evidence: D03.p.fields.scope.
+  category: outcome_feedback_to_qualify
+market_sources:
+- id: LNK-MKT-01
+  title: ArchiMate 101 — Relationships between systems
+  owner: The Open Group ArchiMate Community
+  url: https://archimate-community.pages.opengroup.org/workgroups/archimate-101/
+  consulted_on: '2026-09-19'
+  edition: Tutoriel évolutif ; page mise à jour le 2026-05-26
+  locator: Sharing information money goods ; Temporal or causal relationship ; Dependencies between systems
+  observed: Distingue échanges, précédence temporelle ou causale et fourniture de fonctionnalité ; les orientations ne sont pas automatiquement identiques.
+  comparison: Appui méthodologique à U398/U399 ; permet de préserver needs comme dépendance consommateur vers fournisseur tout en explicitant résultat et conditions.
+  limit: Ni norme adoptée par FLOW ni preuve de flux métier installé ; aucune équivalence de maille avec les capacités et comportements FLOW.
+- id: LNK-MKT-02
+  title: Set up consignment
+  owner: Microsoft
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  consulted_on: '2026-09-19'
+  edition: Documentation évolutive Dynamics 365 Supply Chain Management ; page mise à jour le 2026-05-06
+  locator: Consignment replenishment orders ; Inventory ownership change journal
+  observed: Distingue demande d’apport, réception en propriété fournisseur et changement ultérieur de propriété ; le journal de changement produit des achats dans le scénario documenté.
+  comparison: Confirme l’intérêt de relier les responsabilités déjà présentes dans FLOW en gardant réception et acquisition distinctes.
+  limit: Le scénario documentaire porte notamment une consommation de production ; pas preuve d’une règle retail universelle, d’un transfert à chaque vente ni d’un déploiement Beaumanoir.
+- id: LNK-MKT-03
+  title: Release to warehouse
+  owner: Microsoft
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+  consulted_on: '2026-09-19'
+  edition: Documentation évolutive Dynamics 365 Supply Chain Management ; aucune version produit unique relevée
+  locator: Release to warehouse process ; Manual release to the warehouse ; relations aux shipments loads et work
+  observed: Relie explicitement la libération des lignes d’Order à la formation de shipments et travaux ; les étapes automatiques dépendent de la configuration.
+  comparison: Appui à une interaction lisible entre autorisation et prestations. FLOW garde une frontière plus abstraite entre Lifecycle, orchestration et réalisation.
+  limit: Ne justifie pas d’importer waves, loads ou mécanismes Microsoft comme capacités FLOW ; ne prescrit pas de lancement simultané ni de workflow universel.

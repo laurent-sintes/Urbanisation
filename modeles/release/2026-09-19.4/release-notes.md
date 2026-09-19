@@ -1,0 +1,282 @@
+# Urbanisation — version 11
+
+Publication 2026-09-19.4 · modèle modifié le 2026-09-19T10:44:51.256589Z.
+
+47 capacités ; les statuts et réserves sont conservés.
+
+## Changements
+
+- modified : BHV001 — contenu ou notice actualisé
+- modified : BHV002 — contenu ou notice actualisé
+- modified : BHV003 — contenu ou notice actualisé
+- modified : BHV004 — contenu ou notice actualisé
+- modified : BHV005 — contenu ou notice actualisé
+- modified : BHV006 — contenu ou notice actualisé
+- modified : BHV016 — contenu ou notice actualisé
+- modified : BHV017 — contenu ou notice actualisé
+- modified : BHV018 — contenu ou notice actualisé
+- modified : BHV019 — contenu ou notice actualisé
+- modified : BHV020 — contenu ou notice actualisé
+- modified : BHV021 — contenu ou notice actualisé
+- modified : BHV022 — contenu ou notice actualisé
+- modified : BHV023 — contenu ou notice actualisé
+- modified : BHV024 — contenu ou notice actualisé
+- modified : BHV025 — contenu ou notice actualisé
+- modified : BHV026 — contenu ou notice actualisé
+- modified : BHV027 — contenu ou notice actualisé
+- modified : BHV028 — contenu ou notice actualisé
+- modified : BHV029 — contenu ou notice actualisé
+- modified : BHV030 — contenu ou notice actualisé
+- modified : BHV031 — contenu ou notice actualisé
+- modified : BHV032 — contenu ou notice actualisé
+- modified : BHV033 — contenu ou notice actualisé
+- modified : BHV034 — contenu ou notice actualisé
+- modified : BHV035 — contenu ou notice actualisé
+- modified : BHV036 — contenu ou notice actualisé
+- modified : BHV037 — contenu ou notice actualisé
+- modified : BHV038 — contenu ou notice actualisé
+- modified : BHV039 — contenu ou notice actualisé
+- modified : BHV040 — contenu ou notice actualisé
+- modified : BHV043 — contenu ou notice actualisé
+- modified : BHV044 — contenu ou notice actualisé
+- modified : BHV045 — contenu ou notice actualisé
+- modified : BHV046 — contenu ou notice actualisé
+- modified : BHV047 — contenu ou notice actualisé
+- modified : BHV048 — contenu ou notice actualisé
+- modified : BHV049 — contenu ou notice actualisé
+- modified : BHV050 — contenu ou notice actualisé
+- modified : BHV051 — contenu ou notice actualisé
+- modified : BHV052 — contenu ou notice actualisé
+- modified : BHV053 — contenu ou notice actualisé
+- modified : BHV054 — contenu ou notice actualisé
+- modified : BHV055 — contenu ou notice actualisé
+- modified : BHV056 — contenu ou notice actualisé
+- modified : BHV057 — contenu ou notice actualisé
+- modified : BHV058 — contenu ou notice actualisé
+- modified : BHV059 — contenu ou notice actualisé
+- modified : BHV060 — contenu ou notice actualisé
+- modified : BHV061 — contenu ou notice actualisé
+- modified : BHV062 — contenu ou notice actualisé
+- modified : BHV063 — contenu ou notice actualisé
+- modified : BHV064 — contenu ou notice actualisé
+- modified : BHV065 — contenu ou notice actualisé
+- modified : BHV066 — contenu ou notice actualisé
+- modified : BHV067 — contenu ou notice actualisé
+- modified : BHV068 — contenu ou notice actualisé
+- modified : BHV069 — contenu ou notice actualisé
+- modified : BHV070 — contenu ou notice actualisé
+- modified : BHV071 — contenu ou notice actualisé
+- modified : BHV072 — contenu ou notice actualisé
+- modified : BHV073 — contenu ou notice actualisé
+- modified : BHV074 — contenu ou notice actualisé
+- modified : BHV075 — contenu ou notice actualisé
+- modified : BHV076 — contenu ou notice actualisé
+- modified : BHV077 — contenu ou notice actualisé
+- modified : BHV078 — contenu ou notice actualisé
+- modified : BHV079 — contenu ou notice actualisé
+- modified : BHV080 — contenu ou notice actualisé
+- modified : BHV081 — contenu ou notice actualisé
+- modified : BHV082 — contenu ou notice actualisé
+- modified : BHV083 — contenu ou notice actualisé
+- modified : BHV084 — contenu ou notice actualisé
+- modified : BHV085 — contenu ou notice actualisé
+- modified : BHV086 — contenu ou notice actualisé
+- modified : BHV087 — contenu ou notice actualisé
+- modified : D01 — contenu ou notice actualisé
+- modified : D01.c — contenu ou notice actualisé
+- modified : D01.d — contenu ou notice actualisé
+- modified : D01.f — contenu ou notice actualisé
+- modified : D01.g — contenu ou notice actualisé
+- modified : D01.h — contenu ou notice actualisé
+- modified : D02.b — contenu ou notice actualisé
+- modified : D02.c — contenu ou notice actualisé
+- modified : D02.e — contenu ou notice actualisé
+- modified : D03 — contenu ou notice actualisé
+- modified : D03.i — contenu ou notice actualisé
+- modified : D03.j — contenu ou notice actualisé
+- modified : D03.k — contenu ou notice actualisé
+- modified : D03.l — contenu ou notice actualisé
+- modified : D03.m — contenu ou notice actualisé
+- modified : D03.n — contenu ou notice actualisé
+- modified : D03.o — contenu ou notice actualisé
+- modified : D03.p — contenu ou notice actualisé
+- modified : D04 — contenu ou notice actualisé
+- modified : D04.i — contenu ou notice actualisé
+- modified : D04.j — contenu ou notice actualisé
+- modified : D04.k — contenu ou notice actualisé
+- modified : D04.l — contenu ou notice actualisé
+- modified : D04.m — contenu ou notice actualisé
+- modified : D04.n — contenu ou notice actualisé
+- modified : D04.o — contenu ou notice actualisé
+- modified : D04.q — contenu ou notice actualisé
+- modified : D04.r — contenu ou notice actualisé
+- modified : D05 — contenu ou notice actualisé
+- modified : D05.a — contenu ou notice actualisé
+- modified : D05.c — contenu ou notice actualisé
+- modified : D05.d — contenu ou notice actualisé
+- modified : D05.e — contenu ou notice actualisé
+- modified : D05.f — contenu ou notice actualisé
+- modified : D05.g — contenu ou notice actualisé
+- modified : D05.h — contenu ou notice actualisé
+- modified : D05.i — contenu ou notice actualisé
+- modified : D06 — contenu ou notice actualisé
+- modified : D06.b — contenu ou notice actualisé
+- modified : D06.d — contenu ou notice actualisé
+- modified : D06.e — contenu ou notice actualisé
+- modified : D06.f — contenu ou notice actualisé
+- modified : D07.a — contenu ou notice actualisé
+- modified : D07.b — contenu ou notice actualisé
+- modified : D07.c — contenu ou notice actualisé
+- modified : D07.d — contenu ou notice actualisé
+- modified : D08 — contenu ou notice actualisé
+- modified : D08.d — contenu ou notice actualisé
+- modified : D09 — contenu ou notice actualisé
+- modified : D09.d — contenu ou notice actualisé
+- modified : D11 — contenu ou notice actualisé
+- modified : D11.a — contenu ou notice actualisé
+- modified : D12 — contenu ou notice actualisé
+- modified : D12.a — contenu ou notice actualisé
+- modified : D13 — contenu ou notice actualisé
+- modified : D13.a — contenu ou notice actualisé
+- modified : D14 — contenu ou notice actualisé
+- modified : D14.a — contenu ou notice actualisé
+- modified : D15 — contenu ou notice actualisé
+- modified : business-references — contenu ou notice actualisé
+- modified : universe-case — contenu ou notice actualisé
+- modified : universe-supply — contenu ou notice actualisé
+
+## Glossaire
+
+111 termes figés dans cette publication. Les liens sont résolus dans cette même version.
+1 termes introduits ; 8 révisés. Détail des changements, y compris retraits éventuels, dans changes.json.
+
+## Validations et points ouverts
+
+123 décisions antérieures conservées ; 122 suspendues pour les révisions modifiées.
+0 accords transcrits à portée identique pour le cycle U131 ; 122 autres décisions nouvelles sourcées.
+Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.
+
+- ADOPT-027-LIFECYCLE-r2 (D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-031-LIFECYCLE-r2 (D13) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-042-LIFECYCLE-r2 (business-references) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-054 (D11) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-063 (D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-074 (universe-case) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-universe-supply-r2 (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D04.l-r2 (D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D04.m-r2 (D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D05.a-r4 (D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D05.g-r1 (D05.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D06.d-r2 (D06.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D14-r2 (D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D05.h-r1 (D05.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-D05.i-r1 (D05.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D02.b-r4 (D02.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D02.e-r5 (D02.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.i-r3 (D03.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.j-r3 (D03.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.k-r3 (D03.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.l-r3 (D03.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.m-r3 (D03.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.i-r3 (D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.j-r3 (D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.k-r3 (D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.n-r3 (D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.o-r3 (D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D05.d-r3 (D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D05.e-r3 (D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D05.c-r5 (D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D05.f-r3 (D05.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D06.b-r7 (D06.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D07.a-r7 (D07.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D07.b-r6 (D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D07.d-r6 (D07.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04-r6 (D04) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D01-r7 (D01) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D06-r5 (D06) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D15-r1 (D15) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03-r6 (D03) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D05-r5 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D06.e-r3 (D06.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D06.f-r3 (D06.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.n-r2 (D03.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.q-r2 (D04.q) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.o-r2 (D03.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D04.r-r2 (D04.r) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D01.h-r2 (D01.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U448-TRANSCRIPTION-D03.p-r2 (D03.p) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-D01.g-r5 (D01.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-D01.d-r4 (D01.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-D02.c-r5 (D02.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV001-r2 (BHV001) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV002-r2 (BHV002) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV003-r3 (BHV003) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV004-r2 (BHV004) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV005-r2 (BHV005) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV006-r2 (BHV006) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV016-r2 (BHV016) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV017-r2 (BHV017) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV018-r2 (BHV018) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV019-r2 (BHV019) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV020-r2 (BHV020) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV021-r3 (BHV021) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV022-r3 (BHV022) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV023-r3 (BHV023) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV024-r2 (BHV024) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV025-r2 (BHV025) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV026-r2 (BHV026) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV027-r2 (BHV027) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV028-r2 (BHV028) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV029-r2 (BHV029) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV030-r2 (BHV030) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV031-r2 (BHV031) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV032-r2 (BHV032) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV033-r2 (BHV033) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV034-r2 (BHV034) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV035-r2 (BHV035) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV036-r3 (BHV036) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV037-r2 (BHV037) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV039-r2 (BHV039) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV040-r2 (BHV040) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV046-r3 (BHV046) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV047-r3 (BHV047) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV048-r2 (BHV048) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV049-r2 (BHV049) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV050-r2 (BHV050) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV051-r2 (BHV051) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV052-r2 (BHV052) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV053-r2 (BHV053) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV054-r2 (BHV054) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV055-r2 (BHV055) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV056-r2 (BHV056) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV057-r2 (BHV057) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV058-r2 (BHV058) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV059-r2 (BHV059) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV060-r3 (BHV060) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV061-r2 (BHV061) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV062-r2 (BHV062) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV063-r3 (BHV063) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV064-r3 (BHV064) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV065-r3 (BHV065) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV066-r3 (BHV066) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV067-r3 (BHV067) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV068-r3 (BHV068) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV069-r3 (BHV069) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV070-r3 (BHV070) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV071-r3 (BHV071) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV072-r3 (BHV072) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV073-r3 (BHV073) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV074-r3 (BHV074) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV075-r3 (BHV075) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV076-r3 (BHV076) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV077-r3 (BHV077) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV078-r3 (BHV078) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV079-r2 (BHV079) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV080-r2 (BHV080) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV081-r2 (BHV081) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV082-r2 (BHV082) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV083-r2 (BHV083) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV084-r2 (BHV084) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-TYPES-UNCHANGED-BHV085-r3 (BHV085) : conservée dans l’historique, reprise suspendue pour cette révision.
+
+Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.

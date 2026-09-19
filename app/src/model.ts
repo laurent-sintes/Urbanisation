@@ -4,6 +4,8 @@ import type {
 } from './types.ts';
 
 import { plainInlineText } from './inlineLinks.ts';
+import { decisionsLast } from './capabilityTypes.ts';
+import { searchPublication } from './search.ts';
 const structuralTypes = new Set<string>(['contains', 'presents']);
 export const isStructural = (relation: AtlasRelation): boolean => structuralTypes.has(relation.type);
 
@@ -39,11 +41,14 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   }
   // Cloning prevents either renderer from altering the API response or another view.
   const raw = freezeDeep(structuredClone(input));
+  const referenceParents = new Map(raw.nodes.filter(node => node.kind === 'reference').map(node => [node.id, textField(node.fields?.name)]));
+  const referenceByChild = new Map(raw.relations.filter(edge => edge.type === 'contains' && referenceParents.has(edge.source_id)).map(edge => [edge.target_id, referenceParents.get(edge.source_id)]));
   const nodes: AtlasNode[] = raw.nodes.map(node => {
     const fields = node.fields ?? {};
     return freezeDeep({
       id: node.id, name: plainInlineText(textField(fields.name)) || node.id, kind: node.kind,
-      groupRole: node.group_role, levelRef: node.level_ref, layer: node.layer,
+      referenceParentName: node.kind === 'capability' ? referenceByChild.get(node.id) : undefined,
+      groupRole: node.group_role, levelRef: node.level_ref,
       revision: node.revision, lastModified: node.last_modified,
       purpose: textField(fields.finality), definition: textField(fields.definition), scope: textField(fields.scope),
       fields, review: node.review ?? {}, lifecycle: node.lifecycle,
@@ -58,6 +63,37 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   const glossary = raw.glossary?.terms ?? [];
   if (!Array.isArray(glossary)) throw new Error('Glossaire publié invalide.');
   const glossaryById = uniqueMap(glossary, 'Terme');
+  const catalogue = raw.information_catalog;
+  if (catalogue !== undefined && (!catalogue || !Array.isArray(catalogue.items) || !Array.isArray(catalogue.links))) {
+    throw new Error('Catalogue d’informations publié invalide.');
+  }
+  const information = catalogue?.items ?? [], informationLinks = catalogue?.links ?? [];
+  const informationById = uniqueMap(information, 'Information');
+  const informationLinkById = uniqueMap(informationLinks, 'Lien d’information');
+  const allIds = new Set([...nodeById.keys(), ...raw.relations.map(r => r.id)]);
+  for (const id of [...(catalogue ? [catalogue.id] : []), ...informationById.keys(), ...informationLinkById.keys()]) {
+    if (typeof id !== 'string' || !id.trim()) throw new Error('Identité d’information absente.');
+    if (allIds.has(id)) throw new Error(`Identité partagée par une information : ${id}.`);
+    allIds.add(id);
+  }
+  for (const item of information) {
+    if (['name', 'label_fr', 'definition', 'question', 'context', 'granularity_rationale', 'document_and_fact_boundary'].some(key => typeof item[key as keyof typeof item] !== 'string' || !String(item[key as keyof typeof item]).trim())
+      || ['essential_elements', 'boundaries', 'examples', 'market_comparisons', 'capability_roles'].some(key => !Array.isArray(item[key as keyof typeof item]) || !(item[key as keyof typeof item] as unknown[]).length)) {
+      throw new Error(`Information publiée incomplète : ${item.id}.`);
+    }
+    const roles = new Set<string>();
+    for (const role of item.capability_roles) {
+      if (nodeById.get(role.capability_ref)?.kind !== 'capability' || roles.has(role.capability_ref)) {
+        throw new Error(`Rôle de capacité invalide pour l’information ${item.id}.`);
+      }
+      roles.add(role.capability_ref);
+    }
+  }
+  for (const link of informationLinks) {
+    if (!informationById.has(link.from_ref) || !informationById.has(link.to_ref) || link.from_ref === link.to_ref) {
+      throw new Error(`Extrémité inconnue pour le lien d’information ${link.id}.`);
+    }
+  }
   const relations: AtlasRelation[] = raw.relations.map(relation => {
     if (!nodeById.has(relation.source_id) || !nodeById.has(relation.target_id)) {
       throw new Error(`Extrémité inconnue pour la relation ${relation.id}.`);
@@ -85,8 +121,8 @@ export function adaptPublication(input: RawPublication): PublishedModel {
     if (node.kind === 'behavior') {
       const parent = nodeById.get(parentByChild.get(node.id) ?? '');
       const relation = relations.find(edge => isStructural(edge) && edge.targetId === node.id);
-      if (parent?.kind !== 'capability' || relation?.type !== 'contains' || parent.layer !== node.layer) {
-        throw new Error(`Comportement sans rattachement unique à une capacité de même couche : ${node.id}.`);
+      if (parent?.kind !== 'capability' || relation?.type !== 'contains') {
+        throw new Error(`Comportement sans rattachement unique à une capacité : ${node.id}.`);
       }
       if (relations.some(edge => isStructural(edge) && edge.sourceId === node.id)) {
         throw new Error(`Un comportement est un niveau terminal : ${node.id}.`);
@@ -105,6 +141,8 @@ export function adaptPublication(input: RawPublication): PublishedModel {
     publication: Object.freeze({ version: raw.version, revision: raw.revision, sourcePath: raw.sourcePath }),
     nodes: Object.freeze(nodes), relations: Object.freeze(relations), nodeById, relationById,
     glossary: Object.freeze(glossary), glossaryById,
+    hasInformationCatalogue: catalogue !== undefined,
+    information: Object.freeze(information), informationById, informationLinks: Object.freeze(informationLinks),
     sourceReferences: raw.sourceReferences ?? {}, limitations: raw.limitations ?? [], raw,
   });
 }
@@ -114,7 +152,8 @@ export function structuralRelations(model: PublishedModel, type?: StructuralRela
 }
 
 export function childrenOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
-  return structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
+  const children = structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
+  return ['domain', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? decisionsLast(children) : children;
 }
 
 export function parentsOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
@@ -159,12 +198,6 @@ export function descendantsOf(model: PublishedModel, id: string): AtlasNode[] {
   return result;
 }
 
-const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
-function fieldText(fields: JsonRecord): string {
-  // Search only values actually present in the selected publication.
-  return searchableText(fields);
-}
-
 export function searchableText(value: unknown): string {
   if (typeof value === 'string') return value;
   if (Array.isArray(value)) return value.map(searchableText).join(' ');
@@ -173,12 +206,8 @@ export function searchableText(value: unknown): string {
 }
 
 export function searchModel(model: PublishedModel, query: string): AtlasNode[] {
-  const words = normalize(query).trim().split(/\s+/).filter(Boolean);
-  if (!words.length) return [...model.nodes];
-  return model.nodes.filter(node => {
-    const haystack = normalize(`${node.id} ${node.kind} ${plainInlineText(fieldText(node.fields))} ${lineageOf(model, node.id).map(parent => parent.name).join(' ')}`);
-    return words.every(word => haystack.includes(word));
-  });
+  if (!query.trim()) return [...model.nodes];
+  return searchPublication(model, query).flatMap(result => result.node ? [result.node] : []);
 }
 
 export function relatedTo(model: PublishedModel, id: string, includeStructural = false): AtlasRelation[] {

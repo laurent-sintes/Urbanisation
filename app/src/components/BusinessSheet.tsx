@@ -1,14 +1,18 @@
-import { ArrowRight, ArrowUpRight, ChevronDown, FileText, GitBranch } from 'lucide-react';
-import type { ReactNode } from 'react';
-import type { AtlasNode, AtlasRelation, PublishedModel, SourceLocator, MarketComparison } from '../types';
-import { MarketComparisons } from './MarketComparisons';
-import { kindLabel, statusLabel } from '../presentation';
+import { behaviorTypeLabel } from '../behaviorTypes';
+import { publicText } from '../publicText';
+import { ArrowRight, ArrowUpRight, GitBranch } from 'lucide-react';
+import { Fragment, type ReactNode } from 'react';
+import type { AtlasNode, AtlasRelation, PublishedModel, MarketComparison } from '../types';
+import { businessFields, businessQualification } from '../businessContent';
+import { kindLabel } from '../presentation';
 import './details.css';
 import { ModelText, ReferenceLink } from './ModelLinks';
 import { NodeIcon } from '../icons';
+import { childrenOf, relatedTo } from '../model';
+import { capabilityTypeLabel, startsDecisionSection } from '../capabilityTypes';
+import { businessExamples } from '../examples';
+import { BusinessExamples } from './BusinessExamples';
 
-type Element = AtlasNode | AtlasRelation;
-type OpenSource = (id: string, locator?: SourceLocator) => void;
 const labels: Record<string, string> = {
   name: 'Libellé', finality: 'Finalité', definition: 'Définition', scope: 'Périmètre',
   nature: 'Nature', independence: 'Indépendance', mastership: 'Maîtrise des informations',
@@ -20,93 +24,77 @@ const labels: Record<string, string> = {
   validated_fields: 'Champs validés dans le cycle', recorded_by: 'Enregistré par',
   recorded_at: 'Date d’enregistrement', author: 'Auteur', date: 'Date',
 };
-const lifecycleLabels: Record<string, string> = {
-  ai_proposed: 'Proposé par l’IA', under_instruction: 'En cours d’instruction', urbanist_validated: 'Validé par l’urbaniste',
-};
 const fieldName = (key: string) => labels[key] || key;
-const names = (fields: readonly string[]) => fields.map(fieldName).join(', ');
-function date(value: unknown) {
-  return typeof value === 'string' && !Number.isNaN(Date.parse(value))
-    ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(value))
-    : 'Non renseignée';
-}
 function hasValue(value: unknown) { return value !== undefined && value !== null && value !== '' && (!Array.isArray(value) || value.length > 0); }
 function Value({ value }: { value: unknown }): ReactNode {
   if (value === undefined || value === null || value === '') return <span className="detail-muted">Non renseigné.</span>;
   if (Array.isArray(value)) return value.length ? <ul>{value.map((item, i) => <li key={i}><Value value={item}/></li>)}</ul> : <span className="detail-muted">Aucun élément renseigné.</span>;
   if (typeof value === 'object') return <dl className="detail-values">{Object.entries(value).map(([key, item]) => <div key={key}><dt>{fieldName(key)}</dt><dd><Value value={item}/></dd></div>)}</dl>;
-  return <span className="detail-text"><ModelText text={typeof value === 'boolean' ? value ? 'Oui' : 'Non' : String(value)}/></span>;
+  return <span className="detail-text"><ModelText text={publicText(typeof value === 'boolean' ? value ? 'Oui' : 'Non' : String(value))}/></span>;
 }
-function SourceButtons({ model, refs, onOpenSource }: { model: PublishedModel; refs: readonly string[]; onOpenSource: OpenSource }) {
-  return <div className="source-buttons">{refs.length ? refs.map(id => {
-    const locator = model.sourceReferences[id] as SourceLocator | undefined;
-    return locator?.path ? <button type="button" key={id} onClick={() => onOpenSource(id, locator)} title={locator.path}>{id}<ArrowUpRight size={13} aria-hidden="true"/></button> : <span key={id} title="Aucun localisateur documentaire disponible">{id}</span>;
-  }) : <span className="detail-muted">Aucune référence renseignée.</span>}</div>;
-}
-function ValidationSummary({ item }: { item: Element }) {
-  return <div className="detail-validation"><span className={`pill ${item.status}`}>{statusLabel(item)}</span><div>{item.lifecycle?.state && <p className="detail-cycle">Cycle : <strong>{lifecycleLabels[item.lifecycle.state] || item.lifecycle.state}</strong></p>}<p>{item.approvedFields.length ? <>Champs adoptés : <strong>{names(item.approvedFields)}</strong>.</> : 'Aucun champ explicitement adopté dans cette publication.'}</p>{item.proposedFields.length > 0 && <p>À valider : {names(item.proposedFields)}.</p>}</div></div>;
-}
-function Reservations({ item }: { item: Element }) {
-  const lifecycleNote = item.lifecycle?.note;
-  return <>{(item.review.note || lifecycleNote) && <section className="detail-reservations"><h2>Portée et réserves</h2>{item.review.note && <p>{item.review.note}</p>}{lifecycleNote && lifecycleNote !== item.review.note && <p>{lifecycleNote}</p>}</section>}</>;
-}
-function Provenance({ model, item, onOpenSource }: { model: PublishedModel; item: Element; onOpenSource: OpenSource }) {
-  const lifecycle = item.lifecycle;
-  return <details className="provenance detail-provenance" key={item.id}>
-    <summary><FileText size={17} aria-hidden="true"/><span>Sources, révision et portée détaillée</span><small>{item.sourceRefs.length} références</small><ChevronDown size={16} aria-hidden="true"/></summary>
-    <div className="provenance-body">
-      <section><h3>Portée de validation</h3><p>Champs adoptés : {names(item.approvedFields) || 'aucun champ explicitement adopté'}.</p><p>Champs proposés : {names(item.proposedFields) || 'aucun champ indiqué ici'}.</p>
-        {Object.keys(item.fieldStatus).length > 0 && <><h4>Qualification par champ</h4><Value value={item.fieldStatus}/></>}
-        {item.adoptionIds.length > 0 && <><h4>Décisions de référence</h4><p className="detail-identifiers">{item.adoptionIds.join(' · ')}</p></>}
-      </section>
-      {lifecycle && <section><h3>Cycle d’instruction</h3><p><strong>{lifecycleLabels[lifecycle.state || ''] || lifecycle.state || 'Non renseigné'}</strong></p><p>Champs validés dans le cycle : {names(lifecycle.validated_fields || []) || 'aucun'}.</p>{lifecycle.note && <p>{lifecycle.note}</p>}<dl className="detail-meta"><div><dt>Enregistré par</dt><dd>{String(lifecycle.recorded_by || 'Non renseigné')}</dd></div><div><dt>Enregistré le</dt><dd>{date(lifecycle.recorded_at)}</dd></div></dl>{lifecycle.source_refs && <SourceButtons model={model} refs={lifecycle.source_refs} onOpenSource={onOpenSource}/>}</section>}
-      <section><h3>Sources documentaires</h3><SourceButtons model={model} refs={item.sourceRefs} onOpenSource={onOpenSource}/>{item.sourceLocator?.path && <div className="detail-register"><button type="button" onClick={() => onOpenSource(item.id, item.sourceLocator)}><FileText size={15} aria-hidden="true"/>Ouvrir le registre source<ArrowUpRight size={14} aria-hidden="true"/></button><p className="detail-path">{item.sourceLocator.path}{item.sourceLocator.anchor ? ` #${item.sourceLocator.anchor}` : ''}</p></div>}</section>
-      <section><h3>Publication et révision</h3><dl className="detail-meta"><div><dt>Identifiant</dt><dd>{item.id}</dd></div><div><dt>Révision de l’élément</dt><dd>{item.revision ?? 'Non renseignée'}</dd></div><div><dt>Dernière modification</dt><dd><time dateTime={item.lastModified}>{date(item.lastModified)}</time></dd></div><div><dt>Publication consultée</dt><dd>{model.revision ? `v${String(model.revision).padStart(3, '0')} · ` : ''}{model.version}</dd></div></dl>{model.sourcePath && <p className="detail-path">{model.sourcePath}</p>}</section>
-    </div>
-  </details>;
-}
-
-export function BusinessSheet({ model, node, onOpenSource }: { model: PublishedModel; node: AtlasNode; onOpenSource: OpenSource }) {
+export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedModel; node: AtlasNode; onShowMarket: () => void }) {
   const parents = model.relations.filter(r => ['contains', 'presents'].includes(r.type) && r.targetId === node.id);
-  const children = model.relations.filter(r => ['contains', 'presents'].includes(r.type) && r.sourceId === node.id).map(r => model.nodeById.get(r.targetId)).filter((n): n is AtlasNode => Boolean(n));
+  const children = childrenOf(model, node.id);
   const behaviors = children.filter(child => child.kind === 'behavior');
   const otherChildren = children.filter(child => child.kind !== 'behavior');
-  const extraFields = Object.entries(node.fields).filter(([key, value]) => !['name', 'finality', 'definition', 'scope', 'market_comparisons'].includes(key) && hasValue(value));
-  return <article className="business-sheet sheet" data-testid="business-sheet" aria-label={`Fiche métier de ${node.name}`}>
-    <ValidationSummary item={node}/>
+  const fields = businessFields(node.fields);
+  const examples = businessExamples(node.fields);
+  const marketCount = (node.fields.market_comparisons as readonly MarketComparison[] | undefined)?.length || 0;
+  const relations = relatedTo(model, node.id);
+  const scopeParagraphs = (fields.scope || '').split(/\n\s*\n/);
+  const longScope = (fields.scope?.length || 0) > 750;
+  const sections = [examples.length > 0 && ['examples', 'Exemples'], fields.scope && ['scope', 'Périmètre'], relations.length > 0 && ['interactions', 'Interactions'], behaviors.length > 0 && ['behaviors', 'Comportements'], ['market_comparisons', 'Marché & choix']].filter(Boolean) as string[][];
+  const jump = (field: string) => {
+    if (field === 'market_comparisons') { onShowMarket(); return; }
+    const target = document.getElementById(`field-${node.id}-${field}`);
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target?.focus({ preventScroll: true });
+  };
+  const groups = [
+    { label: 'A besoin de', items: relations.filter(r => r.qualification.role === 'needs' && r.sourceId === node.id) },
+    { label: 'Est utilisée par', items: relations.filter(r => r.qualification.role === 'needs' && r.targetId === node.id) },
+    { label: 'Autres interactions', items: relations.filter(r => r.qualification.role !== 'needs') },
+  ];
+  return <article key={node.id} className="business-sheet sheet" data-testid="business-sheet" aria-label={`Fiche métier de ${node.name}`}>
     {node.kind === 'behavior' && <p className="behavior-context">Comportement de <ReferenceLink target={parents[0].sourceId}>{model.nodeById.get(parents[0].sourceId)?.name}</ReferenceLink> · Dernier niveau de détail</p>}
+    {sections.length > 0 && <nav className="sheet-toc" aria-label="Dans cette fiche">{sections.map(([id, label]) => <button key={id} onClick={() => jump(id)}>{label}</button>)}</nav>}
     <div className="sheet-main">
-      <section id={`field-${node.id}-finality`} className="detail-finality"><h2>Finalité</h2><div className="business-copy"><Value value={node.fields.finality ?? node.purpose}/></div></section>
-      <section id={`field-${node.id}-definition`}><h2>Définition</h2><div className="business-copy"><Value value={node.fields.definition ?? node.definition}/></div></section>
-      {behaviors.length > 0 && <section className="behavior-section" aria-label="Comportements de la capacité">
-        <h2>Comportements <span>{behaviors.length}</span></h2>
-        <p className="detail-muted">Ce que cette capacité prend en compte et les résultats qu’elle produit.</p>
-        <div className="behavior-list">{behaviors.map(behavior => <article className="behavior-summary" key={behavior.id} data-behavior-id={behavior.id}>
-          <h3><ReferenceLink target={behavior.id}><NodeIcon node={behavior} size={21}/>{behavior.name}<ArrowUpRight size={16}/></ReferenceLink></h3>
-          <p><ModelText text={behavior.definition}/></p>
-          <span className={`pill ${behavior.status}`}>{statusLabel(behavior)}</span>
-        </article>)}</div>
+      <section id={`field-${node.id}-finality`} className="detail-finality"><h2>À quoi cela sert</h2><div className="business-copy"><Value value={fields.finality || fields.definition}/></div></section>
+      <section id={`field-${node.id}-definition`}><h2>Définition</h2><div className="business-copy"><Value value={fields.definition}/></div></section>
+      <BusinessExamples id={`field-${node.id}-examples`} examples={examples}/>
+      {parents.length > 0 && <div className="sheet-parent">{parents.map(relation => <span key={relation.id}>{relation.type === 'presents' ? 'Présenté dans' : 'Rattaché à'} <ReferenceLink target={relation.sourceId}>{model.nodeById.get(relation.sourceId)?.name || relation.sourceId}</ReferenceLink></span>)}</div>}
+      {fields.scope && <section id={`field-${node.id}-scope`} tabIndex={-1} className="sheet-scope"><h2>Périmètre et limites</h2>
+        {longScope ? <>{scopeParagraphs.length > 1 && <><p className="detail-muted">Extrait du périmètre</p><div className="business-copy"><Value value={scopeParagraphs[0]}/></div></>}<details className="sheet-disclosure"><summary>Lire le périmètre complet et ses conditions</summary><div className="business-copy"><Value value={fields.scope}/></div></details></> : <div className="business-copy"><Value value={fields.scope}/></div>}
       </section>}
-      {hasValue(node.fields.scope) && <section id={`field-${node.id}-scope`}><h2>Périmètre</h2><div className="business-copy"><Value value={node.fields.scope}/></div></section>}
-      <MarketComparisons id={`field-${node.id}-market_comparisons`} entries={node.fields.market_comparisons as MarketComparison[] | undefined}/>
-      {extraFields.map(([key, value]) => <section key={key} id={`field-${node.id}-${key}`}><h2>{fieldName(key)}</h2><div className="business-copy"><Value value={value}/></div></section>)}
-      <Reservations item={node}/>
-      {parents.length > 0 && <section className="detail-boundaries"><h2>Rattachement et frontières</h2>{parents.map(relation => <div className="detail-parent" key={relation.id}><p>{relation.type === 'presents' ? 'Présenté dans le groupe' : 'Rattaché à'} <ReferenceLink target={relation.sourceId}>{model.nodeById.get(relation.sourceId)?.name || relation.sourceId}<ArrowUpRight size={13} aria-hidden="true"/></ReferenceLink></p><span className={`pill ${relation.status}`}>{statusLabel(relation)}</span>{relation.review.note && <p>{relation.review.note}</p>}{relation.lifecycle?.note && relation.lifecycle.note !== relation.review.note && <p>{relation.lifecycle.note}</p>}<Provenance model={model} item={relation} onOpenSource={onOpenSource}/></div>)}</section>}
-      <Provenance model={model} item={node} onOpenSource={onOpenSource}/>
+      {(fields.nature || fields.mastership || fields.independence) && <dl className="sheet-facts">
+        {fields.nature && <div><dt>{node.kind === 'behavior' ? 'Type de comportement' : 'Type de capacité'}</dt><dd>{node.kind === 'behavior' ? behaviorTypeLabel(node) : capabilityTypeLabel(node)}</dd></div>}
+        {fields.mastership && <div><dt>Autorité sur les informations</dt><dd><Value value={fields.mastership === 'external' ? 'Informations de référence maîtrisées à l’extérieur de Supply.' : fields.mastership}/></dd></div>}
+        {fields.independence && <div><dt>Autonomie</dt><dd><Value value={fields.independence}/></dd></div>}
+      </dl>}
+      {relations.length > 0 && <section id={`field-${node.id}-interactions`} tabIndex={-1} className="sheet-interactions"><h2>Responsabilités liées <span>{relations.length}</span></h2><div className="interaction-groups">{groups.filter(group => group.items.length).map(group => <div key={group.label}><h3>{group.label}</h3>{group.items.map(relation => {
+        const other = relation.sourceId === node.id ? relation.targetId : relation.sourceId;
+        return <details className="interaction-item" key={relation.id}><summary>{model.nodeById.get(other)?.name || other}</summary><p><ReferenceLink target={other}>Lire la fiche <ArrowUpRight size={14}/></ReferenceLink></p><Value value={relation.qualification.meaning || relation.label}/>{Object.entries(businessQualification(relation.qualification)).filter(([key]) => !['meaning', 'role'].includes(key)).map(([key, value]) => <div key={key}><h4>{fieldName(key)}</h4><Value value={value}/></div>)}</details>;
+      })}</div>)}</div></section>}
+      {behaviors.length > 0 && <section id={`field-${node.id}-behaviors`} tabIndex={-1} className="behavior-section" aria-label="Comportements de la capacité">
+        <h2>Comportements <span>{behaviors.length}</span></h2>
+        <div className="behavior-list">{behaviors.map(behavior => <details className="behavior-summary" key={behavior.id} data-behavior-id={behavior.id}>
+          <summary><NodeIcon node={behavior} size={21}/><span>{behavior.name}<small>{behaviorTypeLabel(behavior)}</small></span></summary>
+          <p><ModelText text={publicText(behavior.definition)}/></p><ReferenceLink target={behavior.id}>Lire le comportement <ArrowUpRight size={16}/></ReferenceLink>
+        </details>)}</div>
+      </section>}
     </div>
-    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map(child => <ReferenceLink key={child.id} target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink>)}</div></section>}
+    <div className="sheet-market-entry"><p>{marketCount ? `${marketCount} rapprochement${marketCount > 1 ? 's' : ''} documenté${marketCount > 1 ? 's' : ''} : vocabulaire, périmètre retenu et sources.` : 'Le positionnement marché de cet élément reste à documenter dans cette publication.'}</p><button className="secondary-button" onClick={onShowMarket}>Marché & choix <ArrowUpRight size={16}/></button></div>
+    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map((child, index) => <Fragment key={child.id}>{startsDecisionSection(otherChildren, index) && <hr className="decision-divider" aria-label="Capacités de décision"/>}<ReferenceLink target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink></Fragment>)}</div></section>}
   </article>;
 }
 
-export function RelationDetails({ model, relation, onOpenSource }: { model: PublishedModel; relation: AtlasRelation; onOpenSource: OpenSource }) {
-  const fields = Object.entries(relation.fields).filter(([key, value]) => !['label', 'verb'].includes(key) && hasValue(value));
-  const qualifications = Object.entries(relation.qualification).filter(([key, value]) => key !== 'meaning' && hasValue(value));
+export function RelationDetails({ model, relation }: { model: PublishedModel; relation: AtlasRelation }) {
+  const fields = Object.entries(businessFields(relation.fields)).filter(([key, value]) => key !== 'name' && hasValue(value));
+  const qualifications = Object.entries(businessQualification(relation.qualification)).filter(([key, value]) => key !== 'meaning' && hasValue(value));
   return <section className="relation-inspector relation-details" data-testid="relation-inspector" aria-label={`Détail de la relation ${relation.id}`}>
     <div className="section-kicker"><GitBranch size={16} aria-hidden="true"/>Comprendre la relation <span className="detail-identifiers">{relation.id}</span></div>
     <div className="relation-endpoints"><ReferenceLink target={relation.sourceId}>{model.nodeById.get(relation.sourceId)?.name || relation.sourceId}</ReferenceLink><ArrowRight size={21} aria-label="vers"/><ReferenceLink target={relation.targetId}>{model.nodeById.get(relation.targetId)?.name || relation.targetId}</ReferenceLink></div>
-    <p className="relation-meaning"><ModelText text={relation.qualification.meaning || relation.label}/></p>
-    <ValidationSummary item={relation}/>
-    <div className="relation-description">{qualifications.map(([key, value]) => <section key={key}><h2>{fieldName(key)}</h2><Value value={value}/></section>)}{fields.map(([key, value]) => <section key={key}><h2>{fieldName(key)}</h2><Value value={value}/></section>)}</div>
-    <Reservations item={relation}/><Provenance model={model} item={relation} onOpenSource={onOpenSource}/>
+    <p className="relation-meaning"><ModelText text={publicText(relation.qualification.meaning || relation.label)}/></p>
+    <div className="relation-description">{qualifications.map(([key, value]) => <section key={key}><h2>{fieldName(key)}</h2><Value value={key === 'role' && value === 'needs' ? 'A besoin de' : value}/></section>)}{fields.map(([key, value]) => <section key={key}><h2>{fieldName(key)}</h2><Value value={value}/></section>)}</div>
   </section>;
 }

@@ -50,7 +50,7 @@ try {
     await waitMap(model, universe);
   };
   const capture = async name => {
-    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.locator('.workspace-content').evaluate(el => el.scrollTo({ top: 0, behavior: 'instant' }));
     await page.screenshot({ path: fileURLToPath(new URL(name + '.png', output)), fullPage: true });
   };
 
@@ -183,7 +183,7 @@ try {
     if (viewport.width < 600) {
       await page.locator('.graph-canvas').evaluate(canvas => canvas.scrollIntoView({ block: 'start', behavior: 'instant' }));
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-      const before = await page.evaluate(() => scrollY);
+      const before = await page.locator('.workspace-content').evaluate(el => el.scrollTop);
       const touch = await page.context().newCDPSession(page);
       await touch.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: 195, y: 700 }] });
       for (let y = 650; y >= 350; y -= 50) {
@@ -191,7 +191,8 @@ try {
         await new Promise(resolve => setTimeout(resolve, 50));
       }
       await touch.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-      await page.waitForFunction(start => scrollY > start + 100, before);
+      await page.waitForFunction(start => document.querySelector('.workspace-content').scrollTop > start + 100, before);
+      assert.equal(await page.evaluate(() => scrollY), 0);
       await touch.detach();
       // A full-page mobile capture temporarily changes viewport metrics; take it after the gesture.
       await capture('supply-' + viewport.width);
@@ -202,7 +203,7 @@ try {
       await page.getByTestId('business-sheet').waitFor();
     } else await capture('supply-' + viewport.width);
   }
-  checks.push('Desktop et mobile tactile : capacités et référentiels sans troncature ni débordement, balayage du canvas défile la page et dernier référentiel accessible.');
+  checks.push('Desktop et mobile tactile : capacités et référentiels sans troncature ni débordement, balayage du canvas défile le contenu sous le bandeau fixe et dernier référentiel accessible.');
   assert.deepEqual(errors, []);
   const report = { checkedAt: new Date().toISOString(), publication: current.version, checks, measurements, errors };
   await writeFile(new URL('browser-checks.json', output), JSON.stringify(report, null, 2) + '\n');

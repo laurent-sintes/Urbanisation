@@ -1,6 +1,6 @@
 # Identité FLOW — U207/U208
 
-L’identité proposée à partir du template projet FLOW est adoptée par Laurent le 15 septembre 2026 (U208). Elle est intégrée à l’application React : images dans `src/App.tsx`, palette et adaptations d’écran dans `src/brand.css`, chargé après les styles de structure. Aucun chargement de police externe ni contrôle de comparaison n’est embarqué.
+L’identité proposée à partir du template projet FLOW est adoptée par Laurent le 15 septembre 2026 (U208). Elle est intégrée à l’application React : emblème FLOW dans `src/App.tsx`, signature Beaumanoir dans `src/components/Sidebar.tsx`, palette et adaptations d’écran dans `src/brand.css`, chargé après les styles de structure. Aucun chargement de police externe ni contrôle de comparaison n’est embarqué.
 
 ## Source des logos
 
@@ -15,7 +15,11 @@ Les deux PNG de `public/assets/` sont les médias originaux extraits, sans modif
 | `flow-original.png` | `ppt/media/image2.png` | 1024 × 1024 | `e5c9c7b7bdcca2e1d152ee50365d28d37a9965493a0c12a52a50da2da754fbad` |
 | `beaumanoir-original.png` | `ppt/media/image1.png` | 1564 × 605 | `c0c534d79d78e1f582971fa742e05797d2c98261fc6f82e3da4173415135765a` |
 
-L’en-tête cadre uniquement l’emblème FLOW en CSS, près du nom FLOW Atlas. Le logo Groupe Beaumanoir reste intégral, en signature secondaire masquée sur les écrans de 600 px ou moins. Le logo FLOW intégral sert aussi d’icône de page et de manifeste. Les fichiers sources conservent leurs marges et leur signature d’origine.
+L’en-tête cadre uniquement l’emblème FLOW en CSS, près du nom FLOW Atlas. Depuis la revue du 19 septembre 2026, le logo Groupe Beaumanoir reste intégral en petite signature de 76 px dans le pied de la navigation, près des statistiques. Sur mobile, il est accessible dans le volet de navigation. Le logo FLOW intégral sert aussi d’icône de page et de manifeste. Les fichiers sources conservent leurs marges et leur signature d’origine.
+
+La barre haute mesure 52 px. Sur grand écran, elle accueille le fil d’Ariane et les actions, en supprimant la rangée de navigation auparavant placée au-dessus du titre. Sur mobile, l’ouverture du volet rejoint FLOW dans cette barre et le fil d’Ariane reste sous celle-ci. Les titres, descriptions et onglets demeurent fixes ; le contenu défile.
+
+Repères consultés le 19 septembre 2026 : [Carbon — UI shell header](https://carbondesignsystem.com/components/UI-shell-header/usage/) (identité, navigation persistante et actions) et [Fluent 2 — Layout](https://fluent2.microsoft.design/layout) (proximité, espacement et adaptation aux écrans). Ce sont des guides de design, pas une certification de conformité d’Atlas ; le placement de la signature Beaumanoir est un choix local demandé par Laurent.
 
 Extraction reproductible, sources OOXML et empreintes : [dossier U207](../prototypes/atlas-identite-flow/README.md), [provenance des médias](../prototypes/atlas-identite-flow/assets-provenance.json).
 

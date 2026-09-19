@@ -23,7 +23,8 @@ source_refs:
 - U424
 - ELM251
 - CMP162
-status: lifecycle_dimensions_integrated_U424
+- U438
+status: superseded_domain_structure_U438
 domain_id: D03
 adopted_name: Order Backlog Management
 adopted_responsibility: 'Travailler le carnet : prioriser, évaluer les possibilités, construire des scénarios de satisfaction,
@@ -154,8 +155,8 @@ targeted_review:
   current_resolution: Voir placement_U420 et structure_lifecycle_U417 ; recommandations précédentes conservées pour provenance.
 next_arbitration: Poursuivre les autres points de l’audit existant ; les codes d’état détaillés et règles par type restent
   des précisions éditoriales, pas des blocages de catalogue.
-scope: U420 remplace les rattachements de Lifecycle et Archiving ; les autres choix U417 restent acquis. Les anciennes sections
-  conservent les étapes historiques.
+scope: Les sections U411–U424 ci-dessous conservent leur état historique. U438 remplace le nom D03 et les rattachements concernés
+  par deux domaines D03/D15 et Structuring/Archiving en D04 ; voir current_review_ref.
 implementation_ref: modeles/backlog/history/order-backlog-U413/implementation.yaml
 planning_U414:
   status: integrated
@@ -623,3 +624,4 @@ implementation_U424:
   scope: Principe, définition présentée, six dimensions et documentation des états adoptés ; nouveaux libellés, définitions
     développées, états et contraintes restent éditoriaux.
   evidence: modeles/backlog/history/lifecycle-dimensions-U424/implementation.yaml
+current_review_ref: modeles/backlog/d03-domain-review-U437.yaml

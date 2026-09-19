@@ -3,9 +3,37 @@ guides:
 - version: 2026-09-18.1
   path: versions/2026-09-18.1.yaml
   sha256: b941958e9cd1863fbe58f4181d841e8b92dd4db3cbc079b729c42cca4bfcc582
+- version: 2026-09-19.1
+  path: versions/2026-09-19.1.yaml
+  sha256: c897cd814e38079f1eb2e5af2106b589e76a41c69e36aabcc1ba1e1fc80466ed
+- version: 2026-09-19.2
+  path: versions/2026-09-19.2.yaml
+  sha256: 5c43053a82840a9f8a05105933f01263696f7cccf98862a1fda0422f5b7da18d
 associations:
 - publication_version: 2026-09-16.2
   guide_version: 2026-09-18.1
   scope: retrospective_methodology
   note: Principes au 18 septembre 2026 ; certains sont postérieurs à v007 du 16 septembre. Les illustrations sont pédagogiques,
     sans modification du modèle publié.
+- publication_version: 2026-09-19.2
+  guide_version: 2026-09-19.1
+  scope: explicit_methodology_U450_U451
+  note: 'Réparation U450 : guide et glossaire du méta modèle figés, associés explicitement à v009 ; grille des comportements
+    U451. Aucun changement des octets ni des validations de la publication métier.'
+- publication_version: 2026-09-19.3
+  guide_version: 2026-09-19.1
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.2 ; aucune lecture du backlog.
+- publication_version: 2026-09-19.4
+  guide_version: 2026-09-19.2
+  scope: explicit_methodology_U467
+  note: 'Édition publiée avec U467 : coopération sans couches, périmètre métier, Information et distinction proposition/engagement
+    U466. Les rédactions proposées gardent leur portée ; les fiches pilotes ne deviennent pas des nœuds.'
+- publication_version: 2026-09-19.5
+  guide_version: 2026-09-19.2
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.4 ; aucune lecture du backlog.
+- publication_version: 2026-09-19.6
+  guide_version: 2026-09-19.2
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.5 ; aucune lecture du backlog.

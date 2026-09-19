@@ -1,0 +1,166 @@
+"""Human-authored YAML and immutable legacy JSON share the same data contract.
+
+Only JSON-compatible values are supported. YAML aliases, duplicate keys and
+non-string mapping keys are rejected; dates and identifiers stay strings.
+Content hashes elsewhere use canonical JSON, independently of file formatting.
+"""
+import json
+import math
+from pathlib import Path
+import re
+import sys
+from collections import OrderedDict
+from copy import deepcopy
+from hashlib import sha256
+from threading import RLock
+
+DEPENDENCIES = Path(__file__).resolve().parents[1] / '.tools/yaml-runtime'
+if DEPENDENCIES.is_dir():
+    sys.path.insert(0, str(DEPENDENCIES))
+try:
+    import yaml
+except ImportError as exc:
+    raise RuntimeError('PyYAML requis : python -m pip install --target .tools/yaml-runtime -r requirements.txt') from exc
+
+
+class ModelLoader(yaml.SafeLoader):
+    def compose_node(self, parent, index):
+        # Reject aliases during composition, without parsing the whole file twice.
+        if self.check_event(yaml.AliasEvent):
+            raise ValueError('YAML aliases are not supported in models')
+        return super().compose_node(parent, index)
+
+
+# Deliberately narrower than all of YAML: no yes/on booleans, octal or dates.
+ModelLoader.yaml_implicit_resolvers = {}
+ModelLoader.add_implicit_resolver('tag:yaml.org,2002:null', re.compile(r'^(?:null|~|)$'), ['n', '~', ''])
+ModelLoader.add_implicit_resolver('tag:yaml.org,2002:bool', re.compile(r'^(?:true|false)$'), ['t', 'f'])
+ModelLoader.add_implicit_resolver('tag:yaml.org,2002:int', re.compile(r'^-?(?:0|[1-9][0-9]*)$'), list('-0123456789'))
+ModelLoader.add_implicit_resolver('tag:yaml.org,2002:float', re.compile(r'^-?(?:0|[1-9][0-9]*)(?:\.[0-9]+(?:[eE][+-]?[0-9]+)?|[eE][+-]?[0-9]+)$'), list('-0123456789'))
+
+
+def unique_pairs(pairs):
+    result = {}
+    for key, value in pairs:
+        if not isinstance(key, str):
+            raise ValueError('Model mapping keys must be strings')
+        if key in result:
+            raise ValueError('duplicate key: ' + key)
+        result[key] = value
+    return result
+
+
+def construct_mapping(loader, node):
+    return unique_pairs((loader.construct_object(k, deep=True), loader.construct_object(v, deep=True))
+                        for k, v in node.value)
+
+
+ModelLoader.add_constructor('tag:yaml.org,2002:map', construct_mapping)
+
+
+def check_values(value):
+    if value is None or type(value) in (str, bool, int):
+        return
+    if type(value) is float and math.isfinite(value):
+        return
+    if type(value) is list:
+        for item in value:
+            check_values(item)
+        return
+    if type(value) is dict and all(type(k) is str for k in value):
+        for item in value.values():
+            check_values(item)
+        return
+    raise ValueError('Only finite JSON-compatible model values are allowed')
+
+
+def loads(text, suffix='.yaml'):
+    try:
+        if suffix.lower() in ('.yaml', '.yml'):
+            value = yaml.load(text, Loader=ModelLoader)
+        else:
+            value = json.loads(text, object_pairs_hook=unique_pairs)
+        check_values(value)
+        return value
+    except yaml.YAMLError as exc:
+        raise ValueError('Invalid model YAML: ' + str(exc)) from exc
+
+
+# Cache parsed content, never filesystem metadata or mutable caller objects.
+# Reading and hashing bytes on every call detects changes even at equal mtime/size.
+# Bounded by both entry count and source size (parsed objects can be larger).
+_cache = OrderedDict()
+_cache_bytes = 0
+_cache_lock = RLock()
+_CACHE_LIMIT = 32 * 1024 * 1024
+_CACHE_ENTRIES = 128
+
+
+def clear_read_cache():
+    global _cache_bytes
+    with _cache_lock:
+        _cache.clear()
+        _cache_bytes = 0
+
+
+def read(path):
+    global _cache_bytes
+    path = Path(path)
+    content = path.read_bytes()
+    key = (path.suffix.lower(), sha256(content).digest())
+    with _cache_lock:
+        cached = _cache.get(key)
+        if cached is not None:
+            _cache.move_to_end(key)
+            return deepcopy(cached[0])
+        value = loads(content.decode('utf-8-sig'), path.suffix)
+        if len(content) <= _CACHE_LIMIT:
+            _cache[key] = (value, len(content))
+            _cache_bytes += len(content)
+            while _cache_bytes > _CACHE_LIMIT or len(_cache) > _CACHE_ENTRIES:
+                _, (_, size) = _cache.popitem(last=False)
+                _cache_bytes -= size
+        return deepcopy(value)
+
+
+def write_text_if_changed(path, text):
+    """Write a derived view only when its text changes; not for immutable evidence."""
+    path = Path(path)
+    if path.exists() and path.read_text(encoding='utf-8') == text:
+        return False
+    path.write_text(text, encoding='utf-8')
+    return True
+
+
+class ModelDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
+
+
+def represent_text(dumper, value):
+    return dumper.represent_scalar('tag:yaml.org,2002:str', value, style='|' if '\n' in value else None)
+
+
+ModelDumper.add_representer(str, represent_text)
+
+
+def dumps(document, suffix='.yaml'):
+    check_values(document)
+    if suffix.lower() in ('.yaml', '.yml'):
+        # Round-trip assertion catches a future dumper/loader scalar mismatch.
+        text = yaml.dump(document, Dumper=ModelDumper, allow_unicode=True, sort_keys=False,
+                         default_flow_style=False, width=120)
+        if loads(text) != document:
+            raise ValueError('YAML serialization would change model values')
+        return text
+    return json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False) + '\n'
+
+
+def working_path(folder, stem='model'):
+    """One live authority; JSON is supported for legacy fixtures/migrations only."""
+    folder = Path(folder)
+    paths = [folder / (stem + suffix) for suffix in ('.yaml', '.yml', '.json')]
+    existing = [p for p in paths if p.exists()]
+    if len(existing) > 1:
+        raise ValueError('Competing model authorities: ' + ', '.join(str(p) for p in existing))
+    return existing[0] if existing else paths[0]

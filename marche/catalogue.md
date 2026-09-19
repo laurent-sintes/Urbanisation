@@ -526,3 +526,100 @@ Complément U292 aux références MKT13/14/20/27/28/29 — 17 septembre 2026 : c
 - Source : https://www.gs1.org/standards/epcis ; introduction visibilité, status/location/movement/chain of custody.
 - Consultation : 17 septembre 2026, texte primaire indexé ; édition normative non adoptée.
 - Rôle : appui au besoin de continuité des faits entre partenaires. Aucun schéma d’implémentation ni découpage Capacité/Comportement imposé. Source S41 de behavior-gap-audit.yaml ; synthèse sélective.
+
+**Complément U460 distinct d’EPCIS/CBV :** FAQ officielle GS1 GO sur l’[identification et la sérialisation](https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-), consultée le 19 septembre 2026. Appui sémantique à Product Unit, ELM282/CMP177. Page explicative évolutive, aucune édition normative complète ni droit de redistribution intégrale évalués ; synthèse sélective et lien seulement. Ne pas attribuer cette FAQ à la spécification EPCIS.
+
+## MKT43
+
+- Référence : OMG Decision Model and Notation (DMN), organisme Object Management Group.
+- Nature et rôle : langage de modélisation des décisions et règles métier ; appui méthodologique à la distinction entre décisions et processus.
+- Source officielle : https://www.omg.org/dmn/ ; titre Decision Model and Notation, présentation et complémentarité avec BPMN/CMMN. Texte primaire ouvert le 19 septembre 2026 ; page évolutive, aucune édition normative particulière utilisée.
+- Limites : aucune taxonomie universelle en six types de capacités, aucune convention d’icônes ou d’ordre de lecture déduite. Synthèse originale et lien ; contenu sous copyright, aucun document intégral reproduit. ELM259/CMP169.
+
+## MKT44
+
+## Compléments U453/U454 — références existantes
+
+Consultation du 19 septembre 2026. Les références MKT01 (TOGAF), MKT02 (ArchiMate), MKT03 (Guild), MKT04 (architecture SAP), MKT13 (SAP S/4HANA), MKT14 (Dynamics 365), MKT20 (Oracle), MKT25 (LeanIX), MKT26 (Ardoq) et MKT42 (GS1) sont réexaminées pour l’audit Atlas. Les éditions, passages effectivement consultés, URL officielles et limites d’accès sont détaillés dans [le registre U453/U454](../audits/2026-09-19-atlas-ux-ui-U453/sources.md), S01–S16 et S21–S24. ELM260–277 portent les éléments utilisés ; aucune équivalence de taxonomie ni réalisation Beaumanoir n’est déduite. Les contenus sont référencés et reformulés sélectivement, sans redistribution des documents.
+
+- Référence : Bizzdesign Horizzon, documentation produit des viewpoints ; rôle : comparer les modes de lecture d’une carte.
+- Source officielle : https://help.bizzdesign.com/article/horizzon-help/working-with-viewpoints-in-a-site?cm=1&ds=1&gc=1 ; Working with viewpoints in a site, Color views / Highlight views / Combining filters.
+- Consultation : 19 septembre 2026, texte primaire indexé détaillé, documentation évolutive sans version établie. ELM262 ; S07 du registre U453.
+- Limites : aucun essai du logiciel ; pas de généralisation des droits de partage. Synthèse originale, aucune reproduction substantielle.
+
+## MKT45
+
+- Référence : OrbusInfinity, documentation et présentation de l’architecture métier ; rôle : vues adaptées aux destinataires.
+- Sources officielles : https://support.orbussoftware.com/hc/en-us/articles/30293919661853-View-Data et https://www.orbussoftware.com/solutions/use-case/business-architecture ; sections Views / Recent Views et Configurable Dashboards & Sites.
+- Consultation : 19 septembre 2026, textes ouverts, pages évolutives sans édition logicielle établie. ELM263 ; S08 du registre U453.
+- Limites : documentation et discours produit, pas test UX ni preuve des gains commerciaux. Liens et synthèse sélective uniquement.
+
+## MKT46
+
+- Référence : W3C, documents Understanding WCAG 2.2 ; rôle : évaluer les observations de lisibilité sans revendiquer de conformité globale.
+- Sources officielles : https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html ; https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html ; https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html.
+- Consultation : 19 septembre 2026, pages explicatives ouvertes, critères 1.4.3, 1.4.1 et 2.5.8, sections Success Criterion / Intent. ELM273 ; S20a–c du registre U453.
+- Limites : contrôle Atlas partiel ; exceptions des critères à conserver. Aucun contenu W3C redistribué intégralement.
+
+## MKT47
+
+- Référence : Nielsen Norman Group, Progressive Disclosure, Jakob Nielsen, 4 décembre 2006 ; principe UX.
+- Source officielle : https://www.nngroup.com/articles/progressive-disclosure/ ; présentation du principe et de son emploi.
+- Consultation : 19 septembre 2026, texte primaire indexé. ELM272 ; S19 du registre U453.
+- Rôle et limites : appui à la présentation graduelle du détail ; aucune amélioration de temps de tâche Atlas démontrée. Synthèse sélective, pas reproduction de l’article.
+
+## MKT48
+
+- Référence : Microsoft Fluent 2, système de design, page Color ; rôle : séparer marque, neutralité et signification des couleurs.
+- Source officielle : https://fluent2.microsoft.design/color ; Color palettes / Semantic colors.
+- Consultation : 19 septembre 2026, texte ouvert, documentation évolutive Fluent 2. ELM271 ; S17 du registre U453.
+- Limites : aucune palette FLOW prescrite ni adoption de composants Microsoft. Synthèse originale et lien uniquement.
+
+## MKT49
+
+- Référence : SAP Fiori, guide de design web v1-145, Colors ; rôle : comparaison complémentaire de principes visuels.
+- Source officielle : https://www.sap.com/design-system/fiori-design-web/v1-145/foundations/visual/colors-overview ; Color balance / Color usage.
+- Consultation : 19 septembre 2026, texte ouvert. ELM271 ; S18 du registre U453.
+- Limites : dernière édition non revendiquée ; aucun standard métier déduit, aucune palette ou bibliothèque importée. Synthèse sélective.
+
+## MKT50
+
+- Référence : Microsoft Azure Architecture Center, Use domain analysis to model microservices ; conseil d’architecture de solution.
+- Source officielle : https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis ; Introduction / Define bounded contexts ; mise à jour du 25 février 2026.
+- Consultation : 19 septembre 2026, texte ouvert. ELM274 ; S16 du registre U453.
+- Rôle et limites : éclairer les conditions du découplage ; ne prescrit ni microservices pour FLOW ni bijection capacité/composant. Reformulation sélective sans reproduction substantielle.
+
+## MKT51
+
+- Référence : ISO/IEC, vocabulaire des données et de l’information ; rôle : préciser sens, représentation et contexte.
+- Sources officielles : [ISO/IEC 15944-1:2025](https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso-iec:15944:-1:ed-3:v1:en), §§3.13, 3.15–3.16, 3.29 ; [ISO 20691:2022](https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso:20691:ed-1:v1:en), §§3.8–3.10.
+- Consultation : 19 septembre 2026, entrées publiques officielles portant des renvois à ISO/IEC 2382 et 11179. ELM289.
+- Limites : pas de lecture intégrale des normes référencées, ni adoption des modèles sectoriels. Synthèse sélective ; aucune redistribution de norme.
+
+## MKT52
+
+- Référence : OMG, Semantics of Business Vocabulary and Business Rules (SBVR), version 1.5, octobre 2019 ; rôle : sémantique et élémentarité.
+- Source officielle : [SBVR 1.5](https://www.omg.org/spec/SBVR/1.5/PDF), §24.2.1 et §24.2.2.1, pages imprimées 222 et 255.
+- Consultation : 19 septembre 2026, passages primaires lus. ELM290.
+- Limites : aucune conformité FLOW ni adoption du formalisme ; synthèse sans reproduction de la spécification.
+
+## MKT53
+
+- Référence : Terry Halpin, recherche sur Object-Role Modeling (ORM), *What Is An Elementary Fact?*, article original publié en septembre 1993, réédition légèrement modifiée.
+- Source de l’auteur : [article sur orm.net](https://www.orm.net/pdf/ElemFact.pdf), introduction et pages 2–3, 6–8.
+- Consultation : 19 septembre 2026, texte primaire. Rôle : préciser les limites d’un critère d’insécabilité. ELM291.
+- Limites : recherche historique, pas standard imposé à FLOW ; la date d’indexation web n’est pas la date de l’article. Synthèse et lien seulement.
+
+
+## MKT54
+
+OASIS — Universal Business Language 2.4, OASIS Standard 2024. [Source officielle](https://docs.oasis-open.org/ubl/UBL-2.4.html), consultée le 19 septembre 2026. Nature : standard documentaire et scénarios métier ; distinct du modèle SOA MKT09. Passages : VMI/CRP, Fulfilment/Receipt Advice, Freight Status Reporting. Rôle : éclairer les différences entre mise en stock initiale, réapprovisionnement, retours et faits documentés. Limites : ni taxonomie de capacités ni modèle de propriété imposé ; synthèses originales, pas de schéma ou texte intégral importé.
+
+## Compléments U470/U471 — références existantes
+
+Le [registre des 31 documents consultés](../audits/2026-09-19-base-U470/sources.yaml) précise éditions, titres et passages primaires : MKT13 SAP, MKT14 Microsoft (SCM, Commerce, IOM et exemples historiques Dynamics AX/GP), MKT19 TM Forum (présentation publique TMF641 archivée), MKT20 Oracle (Fusion et exemples historiques EBS/PeopleSoft, produits distincts), MKT41 CSCMP et MKT42 GS1 (Global Traceability Standard, distinct d’EPCIS). Comparaisons sélectives, aucune édition historique présentée comme actuelle ; aucun catalogue propriétaire ni contrat technique adopté.
+
+
+## Complément U472 — MKT02 et MKT14
+
+Relecture du tutoriel communautaire [ArchiMate 101](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/) et consultation de [Microsoft Customer Service — Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), le 19 septembre 2026. Passages, nature, éditions et limites consignés dans ELM323/ELM324 ; rapprochement local CMP187. Deux organismes, aucun standard de découpage FLOW déduit. Liens et synthèses courtes, sans import de catalogue.

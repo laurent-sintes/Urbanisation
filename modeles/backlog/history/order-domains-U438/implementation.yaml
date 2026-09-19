@@ -1,0 +1,201 @@
+id: ORDER-DOMAINS-SPLIT-U438
+source_refs:
+- U438
+recorded_at: '2026-09-19T01:13:35.882622Z'
+model_before_sha256: 274a67a27946374a99da6fa8b9de4f68c5cf5b24713e1b1d74f5cbcf5f74bceb
+model_after_sha256: d0a3b35e5249c9224d83fc2d4c32687b59751a266f09a892ebfd6d706cfaf446
+adopted_domains:
+  D03: Fulfillment Optimization
+  D15: Order Promising
+capability_parents:
+  D03.i: D15
+  D03.j: D15
+  D03.k: D15
+  D03.l: D15
+  D03.n: D15
+  D04.n: D04
+  D04.q: D04
+  D03.m: D03
+  D03.o: D03
+  D03.p: D03
+  D02.e: D03
+replaced_approved_values:
+- id: D03
+  field: name
+  before: Order Backlog Management
+  after: Fulfillment Optimization
+  source_ref: U438
+- id: REL-MEMBER-D03.i
+  field: source_id
+  before: D03
+  after: D15
+  source_ref: U438
+- id: REL-MEMBER-D03.j
+  field: source_id
+  before: D03
+  after: D15
+  source_ref: U438
+- id: REL-MEMBER-D03.k
+  field: source_id
+  before: D03
+  after: D15
+  source_ref: U438
+- id: REL-MEMBER-D03.l
+  field: source_id
+  before: D03
+  after: D15
+  source_ref: U438
+- id: REL-MEMBER-D04.n
+  field: source_id
+  before: D03
+  after: D04
+  source_ref: U438
+- id: REL-MEMBER-D03.n
+  field: source_id
+  before: D03
+  after: D15
+  source_ref: U438
+- id: REL-MEMBER-D04.q
+  field: source_id
+  before: D03
+  after: D04
+  source_ref: U438
+unchanged_previous_approved_values: 562
+changed:
+- collection: nodes
+  id: D01
+- collection: nodes
+  id: D03
+- collection: nodes
+  id: D15
+- collection: nodes
+  id: D02.e
+- collection: nodes
+  id: D03.i
+- collection: nodes
+  id: D03.j
+- collection: nodes
+  id: D03.k
+- collection: nodes
+  id: D03.l
+- collection: nodes
+  id: D03.m
+- collection: nodes
+  id: D04
+- collection: nodes
+  id: D04.i
+- collection: nodes
+  id: D04.j
+- collection: nodes
+  id: D04.k
+- collection: nodes
+  id: D04.n
+- collection: nodes
+  id: D04.o
+- collection: nodes
+  id: D05
+- collection: nodes
+  id: D05.e
+- collection: nodes
+  id: D05.c
+- collection: nodes
+  id: D06
+- collection: nodes
+  id: D06.b
+- collection: nodes
+  id: D07.a
+- collection: nodes
+  id: D07.b
+- collection: nodes
+  id: D07.d
+- collection: nodes
+  id: D06.e
+- collection: nodes
+  id: D06.f
+- collection: nodes
+  id: D03.n
+- collection: nodes
+  id: BHV044
+- collection: nodes
+  id: D04.q
+- collection: nodes
+  id: BHV045
+- collection: nodes
+  id: BHV046
+- collection: nodes
+  id: BHV047
+- collection: nodes
+  id: D03.o
+- collection: nodes
+  id: D04.r
+- collection: nodes
+  id: D01.h
+- collection: nodes
+  id: BHV063
+- collection: nodes
+  id: BHV064
+- collection: nodes
+  id: BHV065
+- collection: nodes
+  id: BHV066
+- collection: nodes
+  id: BHV067
+- collection: nodes
+  id: BHV068
+- collection: nodes
+  id: BHV069
+- collection: nodes
+  id: BHV070
+- collection: nodes
+  id: BHV071
+- collection: nodes
+  id: BHV072
+- collection: nodes
+  id: BHV073
+- collection: nodes
+  id: BHV074
+- collection: nodes
+  id: BHV078
+- collection: nodes
+  id: D03.p
+- collection: relations
+  id: REL-MEMBER-D02.e
+- collection: relations
+  id: REL-MEMBER-D03.i
+- collection: relations
+  id: REL-MEMBER-D03.j
+- collection: relations
+  id: REL-MEMBER-D03.k
+- collection: relations
+  id: REL-MEMBER-D03.l
+- collection: relations
+  id: REL-MEMBER-D03.m
+- collection: relations
+  id: REL-MEMBER-D04.n
+- collection: relations
+  id: REL-SERVICE-CATALOG-PROMISING
+- collection: relations
+  id: REL-EXECUTION-PROMISING
+- collection: relations
+  id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+- collection: relations
+  id: REL-MEMBER-D03.n
+- collection: relations
+  id: REL-MEMBER-D04.q
+- collection: relations
+  id: REL-MEMBER-D03.o
+- collection: relations
+  id: REL-MEMBER-D03.p
+- collection: relations
+  id: REL-UNIVERSE-SUPPLY-D15
+- collection: principles
+  id: PRINCIPLE-TO-PROMISE
+- collection: principles
+  id: PRINCIPLE-EXECUTION-ORCHESTRATION
+- collection: principles
+  id: PRINCIPLE-EXECUTION-DECISION-AND-COORDINATION
+previous_node_ids_preserved: true
+behavior_parents_unchanged: true
+capability_count: 47
+behavior_count: 74
+domain_count: 6

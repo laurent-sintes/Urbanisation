@@ -70,15 +70,14 @@ function applyStyles(cy: Core, colors: Palette, labels: CytoscapeCanvasProps['la
   ]);
 }
 
-/** Keep overview IDs readable; full business names remain available in the adjacent inspector. */
+/** Preserve business names at every zoom level; the inspector provides the full detail. */
 function updateZoomLabels(cy: Core) {
   if (cy.destroyed()) return;
   const zoom = Math.max(cy.zoom(), 0.05);
-  const compact = zoom < 0.65;
   cy.batch(() => cy.nodes().forEach(node => {
     // Literal values are intentional: style bypasses must not leave data(...) as visible text.
-    node.style({ label: compact ? node.id() : node.data('displayLabel'),
-      'font-size': Math.max(12, 11 / zoom), 'text-wrap': compact ? 'none' : 'wrap' });
+    node.style({ label: node.data('displayLabel'),
+      'font-size': Math.max(12, Math.min(16, 10 / zoom)), 'text-wrap': 'wrap' });
   }));
 }
 

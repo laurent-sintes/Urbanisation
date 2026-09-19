@@ -66,6 +66,19 @@ def _validate_guide(guide, version):
         _require(all(isinstance(item, str) and item in source_ids for item in value), "Source de guide non résolue.")
 
     refs(guide.get("source_refs"))
+    if 'glossary' in guide:
+        glossary = guide['glossary']
+        _require(isinstance(glossary, dict) and isinstance(glossary.get('terms'), list)
+                 and isinstance(glossary.get('model_term_ids'), list), 'Glossaire du méta modèle invalide.')
+        ids = set()
+        for term in glossary['terms']:
+            _texts(term, 'id', 'name', 'definition')
+            _require(bool(re.fullmatch(r'MOD\d+', term['id'])) and term['id'] not in ids, 'Identité de terme méthodologique invalide.')
+            ids.add(term['id'])
+            if 'examples' in term:
+                _require(isinstance(term['examples'], list) and all(isinstance(value, str) for value in term['examples']))
+        _require(all(isinstance(value, str) and bool(re.fullmatch(r'TER\d+', value)) for value in glossary['model_term_ids']))
+        _require(len(set(glossary['model_term_ids'])) == len(glossary['model_term_ids']), 'Classement lexical dupliqué.')
     _require(isinstance(guide.get("lessons"), list) and len(guide["lessons"]) == 6)
     lesson_ids = set()
     for lesson in guide["lessons"]:

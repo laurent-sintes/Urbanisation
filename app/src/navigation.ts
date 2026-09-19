@@ -1,4 +1,4 @@
-export type View = 'map' | 'sheet' | 'relations' | 'glossary' | 'principles';
+export type View = 'map' | 'sheet' | 'relations' | 'market' | 'glossary' | 'principles' | 'information';
 export interface GraphRoute {
   graphLevel?: 'capability' | 'domain' | 'universe';
   graphDepth?: 0 | 1 | 2 | 3;
@@ -6,19 +6,26 @@ export interface GraphRoute {
   graphFamily?: 'all' | 'needs' | 'other';
   graphLayout?: 'organic' | 'hierarchical';
   graphLabels?: 'focus' | 'all';
+  graphNeighbors?: boolean;
 }
 export interface RouteState extends GraphRoute {
   node: string; scope: string; view?: View; version: string;
   query: string; type: string; status: string; relation: string;
   source: string; anchor: string; sourceId: string;
   term?: string; section?: string;
+  glossary?: 'model' | 'meta';
   principle?: string;
+  information?: string;
 }
 export function readRoute(hash: string): RouteState {
   const p = new URLSearchParams(hash.replace(/^#/, ''));
   const legacyRoots = ['atlas', 'transactional', 'process', 'references', 'panorama', 'backlog'];
   const node = p.get('node') || '';
-  const view = p.get('view');
+  // U470: old information links return to the model in the same publication.
+  if (p.get('view') === 'information') p.set('view', node && !legacyRoots.includes(node) ? 'sheet' : 'map');
+  if (p.get('type') === 'information') p.delete('type');
+  const requestedView = p.get('view') === 'sheet' && p.get('section') === 'market_comparisons' ? 'market' : p.get('view');
+  const view = requestedView === 'market' && (!node || legacyRoots.includes(node)) ? 'map' : requestedView;
   const graph: GraphRoute = {};
   if (['capability', 'domain', 'universe'].includes(p.get('level') || '')) graph.graphLevel = p.get('level') as GraphRoute['graphLevel'];
   if (p.has('depth') && ['0', '1', '2', '3'].includes(p.get('depth')!)) graph.graphDepth = Number(p.get('depth')) as GraphRoute['graphDepth'];
@@ -26,13 +33,15 @@ export function readRoute(hash: string): RouteState {
   if (['all', 'needs', 'other'].includes(p.get('qualification') || '')) graph.graphFamily = p.get('qualification') as GraphRoute['graphFamily'];
   if (['organic', 'hierarchical'].includes(p.get('layout') || '')) graph.graphLayout = p.get('layout') as GraphRoute['graphLayout'];
   if (['focus', 'all'].includes(p.get('labels') || '')) graph.graphLabels = p.get('labels') as GraphRoute['graphLabels'];
+  if (p.get('neighbors') === 'all') graph.graphNeighbors = true;
   return {
     ...((view === 'relations' || view === 'links') ? graph : {}),
     node: view === 'principles' || legacyRoots.includes(node) ? '' : node,
     scope: view === 'principles' ? '' : p.get('scope') || '',
-    view: view === 'links' ? 'relations' : ['map', 'sheet', 'relations', 'glossary', 'principles'].includes(view || '') ? view as View : undefined,
+    view: view === 'links' ? 'relations' : ['map', 'sheet', 'relations', 'market', 'glossary', 'principles', 'information'].includes(view || '') ? view as View : undefined,
     ...(view === 'principles' && p.has('principle') ? { principle: p.get('principle') || '' } : {}),
     ...(p.has('term') ? { term: p.get('term') || '' } : {}),
+    ...(p.get('glossary') === 'meta' ? { glossary: 'meta' as const } : {}),
     ...(p.has('section') ? { section: p.get('section') || '' } : {}),
     version: p.get('version') || '', query: p.get('q') || '', type: p.get('type') || '',
     status: p.get('status') || '', relation: p.get('relation') || '',
@@ -46,8 +55,10 @@ export function routeHash(route: RouteState): string {
     q: route.query, type: route.type, status: route.status, relation: route.relation,
     source: route.source, anchor: route.anchor, sourceId: route.sourceId,
     term: route.term, section: route.section,
+    glossary: route.view === 'glossary' ? route.glossary : undefined,
     principle: route.view === 'principles' ? route.principle : undefined,
-    ...(route.view === 'relations' ? { level: route.graphLevel, depth: route.graphDepth, direction: route.graphDirection, qualification: route.graphFamily, layout: route.graphLayout, labels: route.graphLabels } : {}),
+    information: route.view === 'information' ? route.information : undefined,
+    ...(route.view === 'relations' ? { level: route.graphLevel, depth: route.graphDepth, direction: route.graphDirection, qualification: route.graphFamily, layout: route.graphLayout, labels: route.graphLabels, neighbors: route.graphNeighbors ? 'all' : undefined } : {}),
   })) if (value !== undefined && value !== '') p.set(key, String(value));
   return p.size ? `#${p}` : '/';
 }

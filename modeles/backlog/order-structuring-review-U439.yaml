@@ -1,0 +1,406 @@
+schema_version: '1.0'
+review_id: ORDER-STRUCTURING-U439
+as_of: '2026-09-19'
+status: integrated_as_proposals_U442
+intended_lifecycle: under_instruction
+purpose: Clarifier Split, Grouping et Merging sous Order Structuring ; proposer deux comportements sans modifier le catalogue.
+authority:
+  user_sources:
+  - U439
+  - U440
+  - U442
+  U439: Laurent demande une définition intelligible de Structuring et questionne son intérêt si Split est son seul comportement.
+  U440: Laurent ajoute Grouping ; distinguer commandes liées et fusion de demandes.
+  U442_verbatim: Je pense qu'on peut imaginer les deux comportements
+  interpretation: Autorisation d’explorer deux mécanismes distincts ; aucun accord global sur leurs définitions, conditions
+    ou application à tous les types d’Orders.
+  behavior_audit_U431: Clos ; cette amélioration locale ne rouvre pas l’audit historique.
+  installed_applicability: Non évaluée ; exemples fictifs, aucune réalisation des trois SI déduite.
+existing_behavior_reference:
+  id: BHV044
+  name: Order Splitting
+  status: existing
+  plain_explanation: Une demande devient plusieurs parties traitables distinctement, avec filiation et conservation des quantités.
+  example: 100 unités deviennent deux parties de 60 et 40 ; pas nécessairement deux commandes commerciales autonomes.
+  change: Aucune modification ni duplication du comportement dans cette annexe.
+parent_wording_proposal:
+  id: D04.n
+  status: proposed
+  definition: Organiser les Orders et leurs éléments en les séparant, en les reliant dans un ensemble ou en réunissant des
+    demandes compatibles, tout en conservant leur origine, leurs quantités et leurs engagements.
+  decomposition_rationale: Trois effets métier distincts justifient le découpage proposé. Split rend des parties traitables
+    séparément ; Grouping maintient plusieurs demandes avec des conditions communes ; Merging remplace plusieurs demandes
+    par une demande active unique. Chacun décrit un mécanisme et son effet, sans comportement par bouton ni sous-comportement.
+  naming_position: Conserver Order Structuring est défendable si Grouping et Merging correspondent à des besoins retenus.
+    Order Splitting reste le nom précis si la capacité est finalement limitée au split.
+naming_review:
+- name: Order Grouping
+  status: proposed
+  basis: Grouping est attesté pour des besoins SAP et des lignes Oracle. La portée persistante entre plusieurs Orders reste
+    une proposition FLOW ; aucun consensus universel de nom ou de périmètre n’est affirmé.
+  ambiguity: Order Consolidation seul peut désigner une livraison, une facture ou une fusion.
+- name: Order Merging
+  status: proposed
+  basis: Merging est un verbe marché, notamment en planification SAP. Infor nomme Commingling la fusion de Purchase Orders.
+    Order Merging est proposé pour sa lisibilité sans présenter ce nom générique comme un standard de capacité.
+  ambiguity: Une consolidation logistique ou un Group by de Planned Orders ne prouve pas la fusion de commandes transactionnelles.
+proposed_nodes:
+- id: BHV086
+  revision: 1
+  kind: behavior
+  layer: transactional
+  fields:
+    name: Order Grouping
+    definition: Relier des Orders ou leurs éléments dans un ensemble à traiter selon des conditions communes, tout en conservant
+      chaque demande distincte.
+    finality: Suivre et respecter une attente d’ensemble sans confondre les demandes qui la composent.
+    scope: |
+      Proposition à instruire. Exemple fictif : deux Transfer Orders, l’un pour des vêtements et l’autre pour des accessoires d’ouverture d’un magasin, restent distincts mais sont rattachés à un ensemble avec une condition commune de disponibilité. L’ensemble ne crée pas une troisième demande et ne double pas les quantités.
+
+      Maintenir les membres, les liens, les conditions communes et une lecture de la satisfaction de l’ensemble. Ajouter ou retirer un membre reste soumis aux engagements applicables ; ce ne sont pas des comportements supplémentaires. Aucun Order chapeau ni nouveau type d’objet n’est imposé.
+
+      Order Structuring matérialise le regroupement autorisé. Les décisions conservent le choix des dates, ressources et priorités ; Order Lifecycle Management conserve les transitions et Order Release l’autorisation de lancement. Le regroupement ne réserve pas les ressources : seule la réservation bloque les usages concurrents. Les gels et protections applicables demeurent.
+
+      Groupe de calcul ponctuel, consolidation d’expéditions et fusion de demandes restent distincts. Types d’Orders compatibles, chevauchements de groupes, droits de modification, sortie d’un membre et effets sur les engagements restent à instruire. Aucun flux installé n’est affirmé.
+    market_comparisons:
+    - vendor: Oracle
+      product: E-Business Suite Order Management
+      element_name: Line Sets / Fulfillment Sets
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Maintenir des lignes distinctes avec une condition commune de satisfaction.
+      differences: Oracle limite les sets à une commande ; les ensembles FLOW multi-Orders proposés sont plus larges.
+      flow_position: Grouping matérialiserait l’ensemble ; décisions et lancement restent distincts.
+      source_title: Order Management Processes — Line Sets / Fulfillment Sets
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T336783.htm
+      source_version: '12.2'
+      consulted_on: '2026-09-19'
+      source_locator: Line (Ship or Arrival) Sets ; Set Function Details ; Fulfillment Sets
+      evidence_limits: Texte primaire ouvert. Appui au groupement de lignes au sein d’une commande ; aucune preuve de regroupement
+        persistant multi-Orders. Aucune réalisation Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U439
+      - U440
+      - U442
+    - vendor: SAP
+      product: Fashion Management
+      element_name: General Requirements Grouping
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Grouper plusieurs besoins sans les remplacer par une demande unique.
+      differences: La fonction SAP ne démontre pas le maintien d’un ensemble transactionnel permanent.
+      flow_position: Appui à Grouping ; la portée persistante proposée reste à instruire.
+      source_title: General Requirements Grouping
+      source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/c617f055aa2a6d55e10000000a4450e5.html?locale=en-US&state=PRODUCTION&version=6.18.24
+      source_version: ERP 6.0 EHP8 SP24
+      consulted_on: '2026-09-19'
+      source_locator: Use ; Grouping Rule and Grouping Criteria ; Individual Group Release Rules
+      evidence_limits: Passages primaires indexés consultés. Groupe de calcul et de contrôle ; ni fusion de demandes ni ensemble
+        métier permanent démontré. Aucune réalisation Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U439
+      - U440
+      - U442
+  source_refs:
+  - U439
+  - U440
+  - U442
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u442
+  review:
+    state: proposed
+    note: Prototype éditorial. U442 envisage les deux comportements ; aucun accord global sur les champs ou conditions proposés.
+  adoption_ids: []
+- id: BHV087
+  revision: 1
+  kind: behavior
+  layer: transactional
+  fields:
+    name: Order Merging
+    definition: Réunir plusieurs Orders compatibles, ou leurs éléments, dans une demande unique qui les remplace pour la suite
+      du traitement, en conservant leur origine.
+    finality: Simplifier le traitement de demandes compatibles sans perdre leur traçabilité ni compter plusieurs fois les
+      mêmes besoins.
+    scope: |
+      Proposition à instruire. Exemple fictif : deux Purchase Orders encore modifiables de 30 et 20 unités du même article, auprès du même fournisseur et sous des conditions compatibles, deviennent une demande de 50. Les demandes sources ne restent pas simultanément actives pour les mêmes quantités. Leurs identifiants et leur histoire demeurent traçables.
+
+      Order Structuring applique la fusion autorisée, la filiation et la conservation des quantités. Nouvel Order ou Order cible existant reste un choix ouvert. Réunir des commandes sous un même en-tête n’impose pas de fusionner leurs lignes lorsque leurs conditions diffèrent. Le périmètre partiel et les quantités déjà réalisées restent à préciser.
+
+      Les capacités par type d’Order conservent l’intention et les conditions métier. Order Lifecycle Management conserve les autorisations et transitions ; Fulfillment Commitment toute révision d’engagement. La fusion ne renégocie pas silencieusement prix, dates ou contrats, ne réserve pas les ressources et ne lève pas un gel. Les liens de ressources, réservations et réalisations doivent être traités explicitement avant application.
+
+      Contrairement au regroupement, les demandes concernées sont remplacées par une demande active unique pour la suite. Les origines peuvent différer : ce n’est pas uniquement l’inverse d’un split. L’appui marché concerne l’achat avant approbation ; ventes, transferts, services et commandes déjà engagées restent à instruire. Aucune pratique installée n’est affirmée.
+    market_comparisons:
+    - vendor: Infor
+      product: LN Procurement
+      element_name: Purchase Order Commingling
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Passer de plusieurs commandes compatibles à une commande portant la demande cumulée.
+      differences: Infor traite des achats Created ; autres types et états FLOW restent à instruire.
+      flow_position: Merging remplacerait les demandes actives avec filiation ; les règles produit de suppression et de prix
+        ne sont pas importées.
+      source_title: Commingling purchase orders
+      source_url: https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html
+      source_version: '10.7'
+      consulted_on: '2026-09-19'
+      source_locator: Header level commingling ; Line level commingling ; Approval
+      evidence_limits: Texte primaire ouvert. Vraies commandes d’achat avant approbation. Suppression technique et recalcul
+        de prix du produit ne deviennent pas des règles FLOW. Aucune réalisation Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U439
+      - U440
+      - U442
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Grouping during planned order firming
+      element_type: Mécanisme produit
+      relationship: Appui sémantique
+      similarities: Plusieurs propositions alimentent un Order résultant.
+      differences: Les entrées sont des Planned Orders, pas plusieurs commandes transactionnelles existantes.
+      flow_position: Référence de frontière ; ne justifie pas une fusion universelle des Orders FLOW.
+      source_title: Firm planned orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+      source_version: Page évolutive consultée le 2026-09-19
+      consulted_on: '2026-09-19'
+      source_locator: Manually firm planned orders — Group by options
+      evidence_limits: Texte primaire ouvert. Création depuis des propositions de planification ; ne démontre pas la fusion
+        de commandes transactionnelles existantes. Aucune réalisation Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U439
+      - U440
+      - U442
+  source_refs:
+  - U439
+  - U440
+  - U442
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u442
+  review:
+    state: proposed
+    note: Prototype éditorial. U442 envisage les deux comportements ; aucun accord global sur les champs ou conditions proposés.
+  adoption_ids: []
+unresolved_conditions:
+- topic: Besoins et types d’Orders
+  question: Quels parcours doivent réellement regrouper ou fusionner, et pour quelle valeur métier ?
+  priority: Avant adoption du périmètre
+- topic: Identités et quantités
+  question: Nouvel Order ou Order cible existant ; fusion partielle ; devenir des sources et des quantités déjà satisfaites
+    ?
+  priority: Avant implémentation
+- topic: Compatibilité et engagements
+  question: Quelles conditions identiques ou compatibles concernant parties, articles, destination, échéances, contrat, propriété,
+    prix et monnaie ?
+  priority: Avant implémentation ; ces critères ne sont pas adoptés
+- topic: Droits et états
+  question: Qui autorise la mutation et à quels états, avec quel traitement des gels, réservations et réalisations partielles
+    ?
+  priority: Avant implémentation
+- topic: Effets et liens
+  question: Comment préserver ou réviser explicitement promesses, affectations, réservations, exécution et filiation sans
+    double demande ?
+  priority: Avant implémentation
+- topic: Ensembles
+  question: Quelles conditions communes, possibilités de chevauchement et modalités de retrait sont utiles ?
+  priority: Avant implémentation
+market_sources:
+- id: OSR-S01
+  vendor: Oracle
+  product: E-Business Suite Order Management
+  title: Order Management Processes — Line Sets / Fulfillment Sets
+  version: '12.2'
+  url: https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T336783.htm
+  locator: Line (Ship or Arrival) Sets ; Set Function Details ; Fulfillment Sets
+  access: Texte primaire ouvert
+  finding: Des lignes restent distinctes dans des ensembles à contraintes communes. Les sets ne traversent pas plusieurs Orders.
+  limit: Appui au groupement de lignes au sein d’une commande ; aucune preuve de regroupement persistant multi-Orders.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S02
+  vendor: SAP
+  product: Fashion Management
+  title: General Requirements Grouping
+  version: ERP 6.0 EHP8 SP24
+  url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/c617f055aa2a6d55e10000000a4450e5.html?locale=en-US&state=PRODUCTION&version=6.18.24
+  locator: Use ; Grouping Rule and Grouping Criteria ; Individual Group Release Rules
+  access: Passages primaires indexés consultés
+  finding: ARun groupe les besoins selon des champs des Sales Orders ou STO ; distribution et règles de release peuvent dépendre
+    du groupe.
+  limit: Groupe de calcul et de contrôle ; ni fusion de demandes ni ensemble métier permanent démontré.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S03
+  vendor: SAP
+  product: Fashion Management
+  title: Requirement Grouping
+  version: 1.0 SP13
+  url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/b9262a5341b1e578e10000000a441470.html
+  locator: Prerequisites ; Process
+  access: Passages primaires indexés consultés
+  finding: Le paramétrage cité relève de Temporary Grouping dans ARun.
+  limit: La persistance d’un ensemble de commandes FLOW ne découle pas de cette fonction.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S04
+  vendor: Infor
+  product: LN Procurement
+  title: Commingling purchase orders
+  version: '10.7'
+  url: https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html
+  locator: Header level commingling ; Line level commingling ; Approval
+  access: Texte primaire ouvert
+  finding: Plusieurs Purchase Orders Created sont réunis sous un nouvel en-tête ; après approbation, les originaux sont remplacés
+    et les références des modules liés mises à jour.
+  limit: Vraies commandes d’achat avant approbation. Suppression technique et recalcul de prix du produit ne deviennent pas
+    des règles FLOW.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S05
+  vendor: Infor
+  product: LN Procurement
+  title: Commingle Purchase Orders (tdpur4210m000)
+  version: 2025.x
+  url: https://docs.infor.com/ln/2025.x/en-us/lnolh/tdolh/help/td/pur/tdpur4210m000.html
+  locator: Conditions de commingling
+  access: Texte primaire ouvert
+  finding: Le mécanisme reste documenté pour les Purchase Orders Created et certaines combinaisons origine, article et fournisseur
+    autorisées.
+  limit: Préconditions produit ; aucune règle universelle de compatibilité FLOW déduite.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S06
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  title: Firm planned orders
+  version: Page évolutive consultée le 2026-09-19
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  locator: Manually firm planned orders — Group by options
+  access: Texte primaire ouvert
+  finding: L’affermissement peut regrouper plusieurs Planned Orders en lignes d’une commande résultante.
+  limit: Création depuis des propositions de planification ; ne démontre pas la fusion de commandes transactionnelles existantes.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S07
+  vendor: SAP
+  product: APO
+  title: Merging Orders on Container Resources
+  version: 7.0 EHP4
+  url: https://help.sap.com/docs/SAP_ADVANCED_PLANNING_AND_OPTIMIZATION%2C_ON_SAP_ERP/c95f1f0dcd9549628efa8d7d653da63e/136cbd2d-73c4-47a0-8f86-b240b6451b39.html
+  locator: Use ; Prerequisites
+  access: Passages primaires indexés consultés ; ancien lien saphelp inaccessible à l’ouverture
+  finding: L’heuristique fusionne des Planned Orders synchronisés et transfère leurs liens de pegging.
+  limit: Production planifiée ; aucune preuve de fusion de Sales Orders ou Purchase Orders déjà engagés.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S08
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  title: Shipment consolidation policies overview
+  version: Page évolutive consultée le 2026-09-19
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/about-shipment-consolidation-policies
+  locator: Consolidation des shipments
+  access: Texte primaire ouvert
+  finding: Des expéditions issues de plusieurs commandes peuvent être regroupées selon des critères logistiques.
+  limit: Regroupement de shipments ; les demandes d’origine ne deviennent pas une commande unique.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S09
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  title: Delivery schedules
+  version: Page datée du 2025-05-07
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  locator: Commercial line ; Delivery lines
+  access: Texte primaire ouvert lors de l’analyse U439
+  finding: Une ligne commerciale récapitule plusieurs lignes de livraison de quantités et dates distinctes.
+  limit: Échéancier ; ni création nécessaire de commandes autonomes ni fusion de demandes.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+- id: OSR-S10
+  vendor: Oracle
+  product: Fusion Cloud Order Management
+  title: Order Line Splits
+  version: 25C
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/fulfillment-line-splits.html
+  locator: How Order Management Determines Availability
+  access: Texte primaire ouvert lors de l’analyse U439
+  finding: La demande peut être satisfaite par plusieurs lignes de fulfillment selon les disponibilités et entrepôts.
+  limit: Un split de fulfillment ne signifie pas nécessairement deux commandes commerciales autonomes.
+  consulted_on: '2026-09-19'
+  status: proposed
+  reuse: Synthèse courte et lien ; aucune reproduction intégrale.
+integration_notes:
+- Le catalogue courant fait autorité dans modeles/backlog/model.yaml ; les prototypes de cette annexe conservent la proposition
+  documentée avant intégration.
+- Deux nouveaux comportements seulement, terminaux, parent unique D04.n, même couche transactional. Aucun objet Order Group
+  ou sous-comportement ajouté.
+- Revérifier BHV086 et BHV087 lors de l’intégration ; ni ID réutilisé ni réservation d’identifiant définitive dans cette annexe.
+- Enregistrer les éléments externes et correspondances dans les registres ELM/CMP avant intégration, puis compléter source_refs.
+  OSR-Sxx reste local à l’annexe.
+- Les références U439/U440/U442 portent la discussion ; URL, version et localisateur de chaque comparaison portent les preuves
+  marché. Ne pas présenter les contributions comme citations éditeurs.
+- Le déplacement de D04.n et la révision de D03 sont pilotés séparément sous U438 ; aucun parent de domaine modifié ici.
+- À l’intégration, conserver review proposed et lifecycle under_instruction, sans validated_fields ni adoption fabriquée.
+  Les prototypes omettent le lifecycle daté pour laisser le pilote inscrire l’événement réel d’intégration.
+- U445 adopte le nom Fulfillment Commitment pour D03.n ; le prototype Merging utilise ce nom courant, sans étendre cet accord
+  à ses autres champs.
+baseline:
+  model_path: modeles/backlog/model.yaml
+  model_sha256: 87322f501660dd85869d6469a628460d6dc5529eb3bd11ec7f6df6c97f9da0ef
+  read_at: '2026-09-19T01:17:38.908770Z'
+  parent_id: D04.n
+  layer: transactional
+  id_check: BHV079 et BHV080 occupés ; BHV086 et BHV087 absents du catalogue lu et de la recherche modeles/connaissance/audits.
+proposed_parent_relations:
+- id: REL-BEHAVIOR-BHV086
+  revision: 1
+  type: contains
+  source_id: D04.n
+  target_id: BHV086
+  source_refs:
+  - U439
+  - U440
+  - U442
+  review:
+    state: proposed
+    note: Parent unique proposé, même couche, comportement terminal. Aucun accord global déduit de U442.
+- id: REL-BEHAVIOR-BHV087
+  revision: 1
+  type: contains
+  source_id: D04.n
+  target_id: BHV087
+  source_refs:
+  - U439
+  - U440
+  - U442
+  review:
+    state: proposed
+    note: Parent unique proposé, même couche, comportement terminal. Aucun accord global déduit de U442.
+integration:
+  recorded_at: '2026-09-19T01:20:01.053866Z'
+  model: modeles/backlog/model.yaml
+  behavior_ids:
+  - BHV086
+  - BHV087
+  parent: D04.n
+  approved_fields: []
+  definition_proposed: Scinder, regrouper ou fusionner des commandes et leurs éléments, en préservant la traçabilité des demandes,
+    les quantités et les engagements.
+  previous_approved_definition: Organiser et faire évoluer le découpage et la composition des Orders et de leurs éléments,
+    en préservant leurs liens, leurs quantités et leurs engagements.
+  previous_approved_definition_sha256: 5a577a4c72871d4d3d54918564543d05196d5f3d00daeadbdc37c1e194c8daa7
+  historical_model: audits/2026-09-19-d03-U437/model-before-structuring-U442.yaml

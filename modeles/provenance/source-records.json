@@ -3467,6 +3467,326 @@
       "captured_text": "## U433\n\n**id**\n\nU433\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPublier la release du modèle après clôture de l’audit et optimisation technique\n\n**texte**\n\nlance une release\n\n**contexte et portée**\n\nAutorisation de préparer et publier localement le backlog courant dans FLOW Atlas / Urbanisation. Transcrire les accords antérieurs uniquement à portée et valeurs prouvées, examiner les impacts du glossaire et conserver les propositions comme telles. Cette demande ne valide pas globalement les contenus, ne réouvre pas l’audit clos U431 et ne demande ni commit ni push Git."
     },
     {
+      "id": "U434",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u434",
+      "line": 10923,
+      "content_sha256": "040867b21714b94fe4f1185d160feef5841c577191261c89a199c48f6477ef48",
+      "captured_text": "## U434\n\n**id**\n\nU434\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAuditer profondément le modèle pour préparer une V0 à présenter\n\n**texte**\n\nUn Audit TRES PROFOND du modèle :\n\n- cohérence et complétude\n- Comparaison très large avec le marché\n- Vérifier les points manquants\n- Les liens manquants ou non valorisés\n\nObjectif : arriver à une V0 propre à présenter aux PO, aux domain Experts et aux archi solution.\n\n**contexte et portée**\n\nNouvel audit explicitement demandé sur le backlog courant, avec comparaison marché, examen des frontières, des manques et des interactions, et préparation des critères de présentation V0. La clôture historique U431 reste acquise ; ses précisions futures sont prises en compte sans annuler les accords. Les constats et recommandations de ce nouvel audit restent proposés. Cette demande ne constitue ni validation des changements métier recommandés, ni autorisation de publication, de commit ou de push. Dossier : audits/2026-09-19-audit-profond-v0/."
+    },
+    {
+      "id": "U435",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u435",
+      "line": 10952,
+      "content_sha256": "06218bd6dd031bfba6ea5ed3b6df58ad9e40e2bab569c6ba6262acc86b2f7b99",
+      "captured_text": "## U435\n\n**id**\n\nU435\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAppliquer les corrections évidentes et plausibles issues de l’audit V0\n\n**texte**\n\nJe souhaite que tu prennes en charge les éléments les plus évidents et plausibles sans me consulter et en me faisant un rapport à la fin des modifs opérées. Pour les pb complexes, tu me demanderas.\n\n**contexte et portée**\n\nAutorisation d’appliquer les corrections évidentes et plausibles révélées par U434 : cohérence éditoriale, liens déjà soutenus par les responsabilités décrites, comparaisons marché étayées et restitution utile. Les accords antérieurs et leur portée par champ restent préservés ; les ajouts restent qualifiés comme propositions, sans validation métier déduite de cette autorisation de travail. Les choix complexes de responsabilité ou de portée des engagements sont soumis à Laurent séparément. Rapport des changements dans audits/2026-09-19-audit-profond-v0/modifications.md. Publication, commit, push et administration serveur restent des opérations distinctes non demandées ici."
+    },
+    {
+      "id": "U436",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u436",
+      "line": 10974,
+      "content_sha256": "a5e03748558fc30843f5c1594810123654769f63aa4fa8f714377ed8cc9293e8",
+      "captured_text": "## U436\n\n**id**\n\nU436\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRéserver à Reservation le blocage des usages concurrents\n\n**texte**\n\nSeule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas.\n\n**contexte et portée**\n\nRéponse à la question de l’audit V0 : « Quand une affectation de ressources à des commandes devient-elle opposable aux autres demandes ? Ce choix détermine la frontière entre Supply Assignment et Reservation. » Accord explicite sur cette frontière : l’affectation seule ne produit pas le blocage concurrent ; une réservation est nécessaire pour cet effet. Les protections de groupe conservent leurs conditions d’admissibilité distinctes. Ne valide pas les règles détaillées d’expiration, de consommation, d’automatisation de la réservation, les mécanismes techniques de concurrence, ni toutes les fiches concernées. Précise A01 du suivi futur U431 sans rouvrir l’audit historique."
+    },
+    {
+      "id": "U437",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u437",
+      "line": 10996,
+      "content_sha256": "75f4f91f7fc9eadcd3f5539a8006a613f1c0a605cd9ce008cea2471f186e2a0a",
+      "captured_text": "## U437\n\n**id**\n\nU437\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRéexaminer la cohérence du domaine D03 et les recouvrements entre ses capacités\n\n**texte**\n\nCe qui me gêne le plus, c'est le domaine D03.\nIl est un peu fourre tout. L'approche Backlog est sympa mais pas en terme de structuration de domaine.\nChez SAP, on perle d'order Promising, chez microsoft, de fulfillment optimisation ou order optimisation. C'est mieux. Et puis les capacités se marchent un peut dessus je trouve.\n\n**contexte et portée**\n\nRéexamen ciblé de la structuration de D03, de son nom et des recouvrements entre capacités, dans le prolongement de l’audit V0 U434 et de l’autorisation U435. Laurent distingue l’intérêt de travailler le carnet d’Orders de son emploi comme principe de domaine et demande de confronter les frontières aux approches SAP et Microsoft. Ce constat ne choisit encore ni un nouveau nom, ni une fusion, ni un déplacement de capacités. Les choix complexes seront présentés avec leurs bénéfices et compromis ; U436 sur la réservation reste applicable."
+    },
+    {
+      "id": "U438",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u438",
+      "line": 11020,
+      "content_sha256": "e40e913ca580860ac610fe03abf4c256b0374a54a5905a4bdcc1e92a700323a9",
+      "captured_text": "## U438\n\n**id**\n\nU438\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAdopter deux domaines Order Promising et Fulfillment Optimization\n\n**texte**\n\nDeux domaines : Promising et Optimization (recommandé)\n\n**contexte et portée**\n\nRéponse à la question : « Pour D03, quel découpage veux-tu retenir ? Je recommande deux domaines : Order Promising (ATP, CTP, PTP, échéancier, Promise Management) et Fulfillment Optimization (priorités, plan de satisfaction, Planning, Supply Assignment). L’alternative garde ces neuf capacités dans un seul domaine Fulfillment Optimization. Dans les deux cas, je propose de remettre Order Structuring et Order Archiving dans D04 Order Management. Je te soumets ce choix car il modifie des frontières métier et des rattachements précédemment adoptés, ce qui relève des problèmes complexes que tu souhaites arbitrer. »\n\nChoix explicite de la première option : Order Promising reçoit D03.i, D03.j, D03.k, D03.l et D03.n ; Fulfillment Optimization conserve D03.m, D03.o, D03.p et D02.e ; Order Structuring D04.n et Order Archiving D04.q rejoignent D04 Order Management. D03 est conservé pour Fulfillment Optimization ; un identifiant de domaine neuf est attribué à Order Promising. Ces choix remplacent le nom D03 de U413 et les rattachements concernés de U417/U420. Les identifiants des capacités, leurs comportements et leurs définitions adoptées sont conservés. L’accord porte sur les noms de domaines et cette structure ; il ne valide pas globalement les descriptions nouvelles, les comparaisons marché, une fusion, le renommage de Planning, les contrats détaillés entre PTP/échéancier/plan ou une publication. La frontière U436 reste acquise."
+    },
+    {
+      "id": "U439",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u439",
+      "line": 11044,
+      "content_sha256": "1f168a327a11aec7c965241a829c0443fdca2889e8e623b35d3b34236e935642",
+      "captured_text": "## U439\n\n**id**\n\nU439\n\n**date**\n\n2026-09-19\n\n**titre**\n\nClarifier Order Structuring et examiner son périmètre au-delà de Split\n\n**texte**\n\nLa définition de Structuring est incompréhensible. Si le seul comportement est split, alors autant l'appeler split, non ? Il y a d'autres possibilités ?\n\n**contexte et portée**\n\nQuestion sur l’intelligibilité de D04.n et la justification de sa portée alors que son seul comportement est Order Splitting BHV044. Examiner des possibilités métier concrètes et les références du marché, sans créer automatiquement des comportements de fusion, regroupement ou composition, ni déduire un renommage adopté. La scission de domaines U438 et le rattachement de Structuring à D04 restent acquis ; cette nouvelle question porte sur le contenu de la capacité."
+    },
+    {
+      "id": "U440",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u440",
+      "line": 11066,
+      "content_sha256": "e0759902c70b97e70ca56623961db7cb5f979fd2da5d3ff7e316d209c29059ef",
+      "captured_text": "## U440\n\n**id**\n\nU440\n\n**date**\n\n2026-09-19\n\n**titre**\n\nIntroduire le regroupement comme deuxième comportement de Structuring\n\n**texte**\n\nAh oui, il y a aussi l'idée de regrouper en deuxième comportement.\n\n**contexte et portée**\n\nLaurent identifie le regroupement comme deuxième comportement pertinent de D04.n, aux côtés de Split. Son effet sur l’identité des commandes reste à préciser : ensemble de commandes distinctes liées ou fusion en une commande. Le principe de regroupement est retenu ; la définition, le nom anglais et les effets détaillés ne sont pas validés par cette seule formulation. La question d’identité est soumise à Laurent avant de matérialiser le comportement."
+    },
+    {
+      "id": "U441",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u441",
+      "line": 11088,
+      "content_sha256": "ad637f8d963eeb75117c23cfa0c45a916e1b899ee4f58cb81597dc040367eb50",
+      "captured_text": "## U441\n\n**id**\n\nU441\n\n**date**\n\n2026-09-19\n\n**titre**\n\nQuestionner la clarté et l’utilité de Promise Management\n\n**texte**\n\nPromise Management n'est pas très clair non plus. C'est bien utile ?\n\n**contexte et portée**\n\nDemande d’explication et d’évaluation de la responsabilité D03.n, notamment face aux décisions de faisabilité et d’échéancier et au cycle de vie des Orders. Aucun retrait, renommage, fusion ou changement de définition n’est adopté à ce stade. L’évaluation doit distinguer demande, possibilité, plan retenu, proposition et engagement de promesse, sans ajouter d’effet de réservation contraire à U436."
+    },
+    {
+      "id": "U442",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u442",
+      "line": 11110,
+      "content_sha256": "08bfde796b73c26e75573439ba95519c11f8ae913c62c6175a0831b85b3f5415",
+      "captured_text": "## U442\n\n**id**\n\nU442\n\n**date**\n\n2026-09-19\n\n**titre**\n\nEnvisager le regroupement et la fusion comme deux comportements distincts\n\n**texte**\n\nJe pense qu'on peut imaginer les deux comportements\n\n**contexte et portée**\n\nRéponse à la distinction soumise après U440 : « Pour le deuxième comportement de Structuring, “regrouper” signifie-t-il conserver plusieurs commandes distinctes dans un ensemble métier à traiter de façon coordonnée, ou les fusionner en une seule commande ? Ce choix détermine la conservation de leur identité et de leurs engagements. » Laurent demande d’envisager les deux possibilités. Deux comportements distincts sont donc à proposer aux côtés de Split : regroupement conservant les identités et fusion produisant une commande résultante. Noms, descriptions et conditions métier restent proposés ; aucune fusion automatique ou applicabilité universelle à tous les types d’Orders n’est adoptée. La formulation ne vaut pas validation globale des futurs champs."
+    },
+    {
+      "id": "U443",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u443",
+      "line": 11132,
+      "content_sha256": "011409805a3718c22d5b4fdc06cac6c7b604b508ef18f982de8b059712bef8fc",
+      "captured_text": "## U443\n\n**id**\n\nU443\n\n**date**\n\n2026-09-19\n\n**titre**\n\nComparer Promise Management et Supply Assignment\n\n**texte**\n\nPromise Management est finalement très proche de Supply Assignment, non ?\n\n**contexte et portée**\n\nQuestion sur le recouvrement entre engagement de satisfaction et affectation des ressources. Éprouver leur indépendance par des cas où la provenance change sans révision de promesse, ou où la date promise évolue sans modification de l’affectation. Aucun regroupement de capacités ni retour sur la partition de domaines U438 n’est déduit de cette question. Les précisions proposées restent soumises aux frontières déjà acquises, dont U436 sur la réservation."
+    },
+    {
+      "id": "U444",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u444",
+      "line": 11154,
+      "content_sha256": "290f0da82f500b2a17d3670a98b0e3f7d338e2304dc355d7524d8b502df2d157",
+      "captured_text": "## U444\n\n**id**\n\nU444\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPréciser que Management est le terme gênant dans Promise Management\n\n**texte**\n\nC'est le terme \"management\" qui est étrange.\n\n**contexte et portée**\n\nPrécision de U441/U443 : l’objection vise particulièrement le nom Management. Réexaminer un intitulé plus concret pour la responsabilité de proposition, confirmation et révision de promesse, avec comparaison des termes du marché. Cette précision ne choisit pas encore un nom de remplacement et ne supprime ni la capacité ni sa distinction d’avec Supply Assignment."
+    },
+    {
+      "id": "U445",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u445",
+      "line": 11176,
+      "content_sha256": "872e51e6d57b0cba1ea444266ff46b3ad193027ab4dcd50ac459c8fc920f5c37",
+      "captured_text": "## U445\n\n**id**\n\nU445\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAdopter le nom Fulfillment Commitment\n\n**texte**\n\nok pour Fulfillment Commitment\n\n**contexte et portée**\n\nAccord explicite sur le remplacement du nom Promise Management par Fulfillment Commitment pour D03.n, rattachée à Order Promising D15 depuis U438. Le nom a été présenté avec l’explication « Proposer, confirmer et réviser les engagements de satisfaction d’une commande, en quantités, dates et conditions » et la réserve qu’aucun terme unique de marché couvrant exactement les trois effets n’était établi. Portée retenue : le nom. La définition développée, les conditions détaillées et les comparaisons restent éditoriales ; les trois comportements existants gardent leurs identifiants et noms. Aucune fusion avec Supply Assignment ni réalisation physique, réservation ou modification automatique d’engagement n’est déduite."
+    },
+    {
+      "id": "U446",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u446",
+      "line": 11198,
+      "content_sha256": "d714e686268835f96a69386eb1a9a2e0b748f33c882c53be36782fe2bf4978e4",
+      "captured_text": "## U446\n\n**id**\n\nU446\n\n**date**\n\n2026-09-19\n\n**titre**\n\nVérifier que les domaines ne sont pas imbriqués\n\n**texte**\n\nDes domaines dans des domaines ????\n\n**contexte et portée**\n\nObjection à une possible lecture imbriquée de la partition U438. Contrôle effectué sur le catalogue et sa restitution : D03 Fulfillment Optimization et D15 Order Promising sont deux domaines frères, présentés directement sous universe-supply comme les quatre autres domaines ; aucune relation contains ou presents entre domaines. Les identifiants historiques des capacités ne définissent pas leur parent. La demande ne constitue ni adoption d’une imbrication ni annulation de la scission U438."
+    },
+    {
+      "id": "U447",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u447",
+      "line": 11220,
+      "content_sha256": "e8423585d9f6f849b88a240dd7652946a37fbcae6186d871662c4bb048b5f2e5",
+      "captured_text": "## U447\n\n**id**\n\nU447\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPrésenter les référentiels avant les concepts opérationnels et l’optimisation\n\n**texte**\n\nJE voudrais revoir l'ordre des domaines. Les référentiels en premier. Et ensuite revoir pour que ce soit logique à lire : d'abord la base des concepts et ensuite l'optimisation.\n\n**contexte et portée**\n\nDemande d’ordre de lecture, sans modification de responsabilités ni nouvelle hiérarchie. Business References est présenté en premier, puis les domaines opérationnels, la promesse et les optimisations. L’ordre détaillé est une mise en œuvre éditoriale proposée dans la portée U435 : référentiels ; Order Management ; Inventory Management ; Process Management ; Order Promising ; Fulfillment Optimization ; Inventory Optimization. Les six domaines restent frères. L’ordre est porté par les relations de présentation et par les nœuds du backlog pour la restitution ; aucune modification d’une publication historique ni nouvelle release déduite."
+    },
+    {
+      "id": "U448",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u448",
+      "line": 11242,
+      "content_sha256": "4d788b136642ce7b40da5379efd14822299697bee23e7b82bbb376649c862819",
+      "captured_text": "## U448\n\n**id**\n\nU448\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPublier une release après la revue D03 et le réordonnancement\n\n**texte**\n\nLance une release\n\n**contexte et portée**\n\nAutorisation explicite d’évaluer, préparer et publier localement la release du backlog courant dans FLOW Atlas / Urbanisation, incluant les changements issus de l’audit V0 et les choix U438/U445 ainsi que l’ordre de lecture U447. Les propositions gardent leur statut et les accords leur portée ; publier ne vaut pas adopter les descriptions, nouveaux comportements ou contrats encore proposés. La demande n’inclut ni commit ni push Git."
+    },
+    {
+      "id": "U449",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u449",
+      "line": 11264,
+      "content_sha256": "dc5b17c23543a6db4f44bf34328afb9e079c6c105efb91909fe455ed6ac17791",
+      "captured_text": "## U449\n\n**id**\n\nU449\n\n**date**\n\n2026-09-19\n\n**titre**\n\nTyper les capacités et distinguer visuellement les décisions\n\n**texte**\n\nJe souhaite que pour chaque capacité soit typée : décision, action, etc.\nJe souhaite que les icones des capacités soient associées à ces types.\nJe souhaite que pour chaque domaine les décisions soient positionnées systématiquement à la fin de la liste des capacités\nJe souhaite que dans Atlas, il y ait un petit trait, une séparation horizontale légère entre les capacités non décision et les capacités de décision\n\n**contexte et portée**\n\nDemande de typage exhaustif des capacités, d’icônes déterminées par ce type et d’une présentation plaçant les décisions après les autres capacités de chaque domaine, avec séparation légère. Le champ existant fields.nature porte déjà six valeurs : action, management, knowledge, orchestration, planning, decision. Les valeurs présentes sont conservées ; les compléments évidents sont proposés dans la portée U435. Le classement est une aide de lecture, sans ordre d’exécution ni nouvelle hiérarchie. La demande n’adopte pas par extension toutes les qualifications individuelles et ne déclenche pas de release implicite."
+    },
+    {
+      "id": "U450",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u450",
+      "line": 11289,
+      "content_sha256": "9a1b086b93ebe29e6a8c76f1bf9b391e3b9dc05d3cccc460689da6bec931949b",
+      "captured_text": "## U450\n\n**id**\n\nU450\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAtlas comme vue de présentation et séparation du méta modèle\n\n**texte**\n\nDans Atlas,\n\n- je ne souhaite pas afficher les réserves, les liens sur les sources de la backlog, l'état de validation etc. Ca doit rester en interne\n- Le glossaire devait être coupé en deux :\n  - le glossaire du méta modèle\n  - le glossaire du modèle métier\n- Le bouton \"les clefs du modèle\"\n  - il faut parler de \"méta modèle\" => remplacer par \"Comprendre le méta modèle\"\n  - Rien ne s'affiche, il y a eu un pb de publication apparemment\n- Il y a un pb d'ascenseur avec le Glossaire actuel : lorsque je baisse l'ascenseur, la liste des termes défile mais pas la description, ou pas immédiatement. Il faut revoir la mécanique UI\n- Supprimer la mention en bas à gauche : \"Publier ne vaut pas valider\"\n- Pour les capacités de type référentiel, conserver les icones d'avant (une spécifique par capacité)\n- Pour les comportements, typer les comportements et associer des icones par type.\n\n**contexte et portée**\n\nDemande d’une présentation Atlas sans métadonnées internes d’instruction, qui restent conservées dans les sources et publications. Deux espaces lexicaux distincts ; réparation de l’association du guide au modèle consulté par une nouvelle édition méthodologique figée, sans repli sur le backlog. L’exception d’icônes porte sur les capacités explicitement rattachées aux référentiels, sans nouvelle nature métier. Refonte du défilement et typage des comportements dans leur propre grille ; choix de cette grille précisé U451. Aucune suppression de preuve, validation globale, modification de snapshot historique, ni commit ou push demandé."
+    },
+    {
+      "id": "U451",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u451",
+      "line": 11323,
+      "content_sha256": "df2a0ed40f7d7e4dd3509451685d40a3cb1de3d0169e04e6cfffbe6d99494f73",
+      "captured_text": "## U451\n\n**id**\n\nU451\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRetenir les formes propres aux comportements\n\n**texte**\n\nLes formes propres aux comportements\n\n**contexte et portée**\n\nRéponse à la proposition de typer les comportements selon les formes documentées dans MOD006 : politique/stratégie, variante de parcours, mécanisme, périmètre métier, dimension de raisonnement, effet sur un état ou engagement, pratique de planification. La grille est retenue ; les qualifications individuelles ajoutées par Codex restent proposées dans la portée U435. Les formes peuvent se combiner ; un type principal sert l’icône sans interdire des formes complémentaires."
+    },
+    {
+      "id": "U452",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u452",
+      "line": 11345,
+      "content_sha256": "96f2eeaa4fec9f2a55362d1571cc7949ba0810ec94eaed3ad44d4300b3b7c158",
+      "captured_text": "## U452\n\n**id**\n\nU452\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPublier le typage des capacités et des comportements dans Atlas\n\n**texte**\n\nLance une release\n\n**contexte et portée**\n\nDemande explicite de production et de publication locale de la release du backlog courant dans FLOW Atlas, après présentation du bilan U450/U451. Elle couvre les 76 formes de comportements et les dix types de capacités complétés en U449, ainsi que le report explicite de l’édition méthodologique associée. Les vérifications de préparation et de disponibilité restent nécessaires. La demande autorise la publication sans nouvel accord métier sur les classifications proposées et sans commit ou push Git."
+    },
+    {
+      "id": "U453",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u453",
+      "line": 11367,
+      "content_sha256": "87232eabff6a792f4902c68da5cc680269611a40ede43e87e561bf0c0d79ebcb",
+      "captured_text": "## U453\n\n**id**\n\nU453\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAudit approfondi de l’UX, de l’UI et de la dimension informationnelle d’Atlas\n\n**texte**\n\nJe veux un audit de l'UX et l'UI d'Atlas.\nAtlas est une cartographie métier qui doit expliciter le métier pour n'importe qui dans l'entreprise, du DG au développeur qui devra implémenter les fonctions logicielles.\nSimple, clair, droit au but. Ca c'est pour comprendre.\nOn doit se mettre à la place des PO/Archi Solution pour qui c'est une référence pour éviter de dériver et d'imaginer des solutions ou des produits qui implémenteraient des choses hors scope. Ca doit aussi parler aux archis techniques et solutions pour imaginer les points de découplage fonctionnels. Le découpage univers/domaine/capacité semble suffisant.\nRegarde ce qui se fait de mieux sur le marché de la carto métier / fonctionnelle.\nEn terme de méta modèle, c'est pas mal. Il manque peut être pour les référentiels les source d'alimentation car on a dit que c'était des projections. Il manque peut être aussi pour les capacités qui sont des objets métier (Purchase Order etc.) une référence sur la structure de données. La notion de structure de donnée est aussi interessante pour les référentiel. Je dirais que c'est qui manque le plus : l'aspect data. Regarde sur le marché (microsoft sap et autres) si c'est dans ce type de carto qu'on parle de data ou si c'est à un niveau solution. Je ne suis pas sur...\nRegarde aussi si le méta modèle reflète bien toute la structuration.\nEn terme d'UI, c'est très mono couleur. Est-ce la bonne décision ?\nQuand on parle d'ERP et de supply, on parle aussi de documents et de faits de gestion. Ma question est : est-ce que ça doit apparaitre niveau solution ou niveau carto de capacité ?\nPrends ton temps pour faire un audit profond et détaillé et me faire des propositions avec alternatives et recommandations.\n\n**contexte et portée**\n\nAudit de la publication v010, de l’interface effectivement servie et du méta modèle, avec comparaison documentée au marché. Examiner compréhension, cadrage des solutions, découplage fonctionnel et place des objets/informations/documents/faits de gestion. Distinguer constats, propositions et arbitrages ; ne pas déduire de nouvelles sources maîtresses, flux installés, structures logiques ou produits Beaumanoir. Purchase Order reste dans le catalogue une capacité d’action nommée selon U384, distincte de l’objet métier homonyme. La demande porte sur un audit et des alternatives argumentées, sans refonte, release ou déploiement implicites."
+    },
+    {
+      "id": "U454",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u454",
+      "line": 11398,
+      "content_sha256": "e20a59eb20db7f4a0110d43faf64f3269bc1b3de24154e0afcb617df7de938c9",
+      "captured_text": "## U454\n\n**id**\n\nU454\n\n**date**\n\n2026-09-19\n\n**titre**\n\nFonder l’audit sur la discipline d’architecture et les références indépendantes de SAP\n\n**texte**\n\nJe me méfie parfois de SAP. Que disent les autres ? Que dit la discipline d'architecture ? Togaf par exemple ?\n\n**contexte et portée**\n\nPrécision du périmètre de l’audit U453 en cours : approfondir TOGAF et comparer les recommandations aux cadres d’architecture et aux autres éditeurs. Ne pas faire de la pratique SAP une autorité suffisante ni masquer les différences de niveau entre information métier, architecture des données et conception de solution. Aucun changement du modèle ni adoption d’un standard n’est demandé par cette question."
+    },
+    {
+      "id": "U455",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u455",
+      "line": 11420,
+      "content_sha256": "7ce878cd5a5a27833c976d3f616aa1ffce5bde795a64ff29c679cca75de2e91e",
+      "captured_text": "## U455\n\n**id**\n\nU455\n\n**date**\n\n2026-09-19\n\n**titre**\n\nAbandonner les couches transactionnelle/processus au profit des interactions entre univers et domaines\n\n**texte**\n\nConcernant \"Couches transactionnelle/processus\", je pense qu'il faut oublier le concept qui est très \"SAP\". Il n'y a pas de \"couches\" à proprement parler, ce sont des domaines et univers qui sont en interaction. Par exemple, Commerce capte des intentions et les transforme en engagement via la Supply qui elle même le concrétise via la logistique.\n\n**contexte et portée**\n\nCorrection du principe de structuration évoqué dans l’audit U453/U454 : abandonner l’axe métier transactionnel/processus, décrire les interactions entre univers et domaines. Commerce, Supply et logistique illustrent la coopération autour des intentions, engagements et réalisations ; la proposition n’adopte pas leurs futurs noms anglais, niveaux, parents ou capacités détaillées. Les processus et responsabilités de décision, coordination et application restent descriptibles sans couches. L’appréciation « très SAP » est conservée comme propos de Laurent, sans attribution historique vérifiée. La migration technique du champ historique layer doit respecter les publications et preuves figées."
+    },
+    {
+      "id": "U456",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u456",
+      "line": 11442,
+      "content_sha256": "e37baaae31f6457de2df93fdd1d85822318a5835e73e97620b4ddc500ab9d7af",
+      "captured_text": "## U456\n\n**id**\n\nU456\n\n**date**\n\n2026-09-19\n\n**titre**\n\nConserver Atlas dans un périmètre strictement métier\n\n**texte**\n\nD'autre pas part, je souhaite qu'Atlas reste dans un scope métier et de déborde pas sur les solutions ou les produits.\n\n**contexte et portée**\n\nPrécision de l’audit en cours : Atlas décrit le métier, ses responsabilités, interactions, informations, documents, faits et règles. Les propositions de catalogues de solutions ou produits, de liens vers les réalisations et de contrats techniques dans Atlas sont retirées. Les comparaisons de marché peuvent étayer le travail interne de modélisation sans définir un découpage applicatif. Le mot produit vise ici les produits logiciels et solutions, pas les produits/articles du métier Supply. Cette frontière ne retire ni les objets métier ni les projections de référence ; leurs autorités et sources se décrivent par des responsabilités métier, sans application supposée."
+    },
+    {
+      "id": "U457",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u457",
+      "line": 11465,
+      "content_sha256": "57ba41176e3b4949548fa6d9d6c98338ab4680ac60707faaad4ac69d9eb65279",
+      "captured_text": "## U457\n\n**id**\n\nU457\n\n**date**\n\n2026-09-19\n\n**titre**\n\nProposer un plan d’amélioration du projet\n\n**texte**\n\nTu peux proposer un plan d'action pour améliorer le projet ?\n\n**contexte et portée**\n\nProposition de six lots dans audits/2026-09-19-atlas-ux-ui-U453/plan-action.md : cohérence du socle, consultation, cinq cas pilotes, informations métier, généralisation et recette/préparation de publication. Aucun lot lancé par cette seule demande."
+    },
+    {
+      "id": "U458",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u458",
+      "line": 11487,
+      "content_sha256": "156bdc3c8e986c17fee057ec37b8556ff6dee2d072ed804e8cdeff438c1a466d",
+      "captured_text": "## U458\n\n**id**\n\nU458\n\n**date**\n\n2026-09-19\n\n**titre**\n\nDémarrer le plan d’amélioration Atlas\n\n**texte**\n\nOn démarre le plan proposé\n\n**contexte et portée**\n\nAutorisation d’exécuter le plan U457, en commençant par les lots 1 et 2 ; avancer sur les cas pilotes et travaux indépendants, soumettre les arbitrages métier complexes sur des propositions concrètes. Appliquer U455/U456, préserver les publications et accords historiques. Le lancement ne valide pas les nouveaux contenus par extension et ne demande ni release, ni commit, ni push."
+    },
+    {
+      "id": "U459",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u459",
+      "line": 11510,
+      "content_sha256": "228c9cb4a452ea8000658fed498937c39c26f8f86ff36ab74a038415b77bf9f3",
+      "captured_text": "## U459\n\n**id**\n\nU459\n\n**date**\n\n2026-09-19\n\n**titre**\n\nVue univers enrichie, glossaire simplifié et références marché visibles\n\n**texte**\n\nPetit ajout léger : dans la vue univers, je vois les domaines et les capacités. la souris sur une capacité montre la définition. Je voudrais que dans le tooltip, j'ai la liste avec bullet point des comportements. Du coup la vue univers est réellement une vue overview.\n\nDans le glossaire, \"En quelques mots\" ne sert à rien car les définitions sont déjà courtes, trop courtes peut être.\n\nOn a perdu toute la référence au marché, c'était une regle explicite dans agents.md. Important sur tout le modèle. Il faut qu'on voit si on est standard ou innovant ou en appui sur une solution de marché particulière.\n\n**contexte et portée**\n\nAjouter les comportements issus des parents explicites aux infobulles des capacités de la vue univers ; supprimer la rubrique redondante du glossaire. Rétablir les références et positions marché dans Atlas, sans catalogue applicatif ni choix d’implémentation. U459 corrige l’interprétation trop restrictive C106/U458 : le positionnement comparatif fait partie de la référence métier. Ne pas inférer conformité à un standard, innovation ou solution installée depuis une ressemblance ou une absence de comparaison. Aucun nouvel accord sur le contenu des comparaisons ; aucune release demandée."
+    },
+    {
+      "id": "U460",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u460",
+      "line": 11537,
+      "content_sha256": "2c3bfe43ab489e560ced402b8a09d3141d39c4f046574c8bb6f6053aad9dd031",
+      "captured_text": "## U460\n\n**id**\n\nU460\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPoursuivre le plan après les ajustements de lecture\n\n**texte**\n\nnext step\n\n**contexte et portée**\n\nPoursuivre le plan U458, avec les cinq pilotes du lot 3 et les repères marché visibles confirmés U459. Approfondir les informations de Product Reference et les frontières engagement/affectation/réservation ; préparer les cas de revue et les données conceptuelles utiles. Cette continuation ne répond pas à la question V0-P01 sur la convention fait/document et n’adopte ni cardinalité, ni autorité métier effective, ni règle de correction. Aucun lancement de release ou nouvel audit exhaustif des comportements."
+    },
+    {
+      "id": "U461",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u461",
+      "line": 11559,
+      "content_sha256": "97dc8e073c2c37da3ae02501fd9aa9ad8f1e5775eaf083242d811bcc79ef7661",
+      "captured_text": "## U461\n\n**id**\n\nU461\n\n**date**\n\n2026-09-19\n\n**titre**\n\nConserver le lien entre fait de gestion et document métier identifié\n\n**question présentée**\n\nPour le pilote Purchase Order, il reste un choix de méta modèle : tout fait de gestion doit-il être associé à un document métier identifié, même si ce document est un enregistrement structuré et non un PDF ? Je recommande de conserver cette distinction que tu avais posée. Pendant ce temps, j’avance sur Product Reference et sur la séparation promesse / affectation / réservation.\n\n**texte**\n\nOui, conserver le lien fait–document\n\n**contexte et portée**\n\nConfirme la convention U61 pour les faits de gestion : association à un document métier identifié, qui peut être un enregistrement structuré sans fichier PDF. Résout le principe de V0-P01. Ne fixe ni nombre exact de documents par fait, ni identité/version des documents, ni règle d’immutabilité ou de correction, ni responsabilité d’autorisation ; les informations candidates des pilotes restent proposées. Aucun accord global ni publication implicite."
+    },
+    {
+      "id": "U462",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u462",
+      "line": 11585,
+      "content_sha256": "19df17ceb4aa0cd62e03e4cef5ac1b3807ae4ee080bd560b7cafc1083251228b",
+      "captured_text": "## U462\n\n**id**\n\nU462\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRendre visibles les références marché, les choix de vocabulaire et les exemples concrets\n\n**texte**\n\nEn termes de contenu, ça manque cruellement de\n\n- référence du marché avec les choix qu'on a fait pour sélectionner termes et définitions. Ca pourrait être dans atlas un onglet supplémentaire à fiche, liens etc. Et il faut sourcer.\n- Exemples concrets. Dans nos discussions on en a donné, c'est très illustratif et très important.\n\n**contexte et portée**\n\nDemande de mise en valeur et de complétude éditoriale, sur les termes, définitions et exemples discutés. Ajouter une entrée de lecture dédiée au marché, rendre explicites les raisons des choix et donner accès aux sources primaires. Faire ressortir les exemples déjà présents et reprendre les cas discutés avec leur provenance interne, sans les transformer en observations installées. Aucun renommage, nouvelle validation de définition, release ou réouverture globale de l’audit des comportements implicites."
+    },
+    {
+      "id": "U463",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u463",
+      "line": 11610,
+      "content_sha256": "74e5b8aae77d4ee554460cc38774206fc862ab163cd55be1cee3d7e0a59870c3",
+      "captured_text": "## U463\n\n**id**\n\nU463\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRetirer la référence transactionnelle de la définition de l’univers Supply\n\n**texte**\n\nDans la définition de \"Supply Management\" il reste encore des références à la notion de transaction que je cherche à éliminer pour ne pas s'accrocher trop à SAP qui n'est pas le meilleur modèle\n\n**contexte et portée**\n\nLa définition visée est retrouvée sur universe-supply, nommé Supply Chain Orchestration depuis U373 : « Univers du pilotage transactionnel de la Supply ; priorité de l’exploration courante. » Corriger cette définition en responsabilités métier, conformément à U455/U456, et les deux définitions de glossaire qui réintroduisent la même hiérarchie OMS/Supply. Le nom adopté, le périmètre et les rattachements restent inchangés. La formulation rédigée reste éditoriale ; aucune origine exclusivement SAP de la notion de transaction ni supériorité générale d’un autre produit n’est établie. Conserver les verbatims, accords et publications historiques. Aucune release demandée."
+    },
+    {
+      "id": "U464",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u464",
+      "line": 11632,
+      "content_sha256": "93d19522adb6c1122d0d78a710d5585453a870ba480d5527fd7ec70589737bf2",
+      "captured_text": "## U464\n\n**id**\n\nU464\n\n**date**\n\n2026-09-19\n\n**titre**\n\nDéfinir Information dans le méta modèle et rechercher son fondement théorique\n\n**texte**\n\nProchaine étape : la data. Ou plutot les informations métier. Il faut définir la notion d'Information dans le méta modèle et dire que ce n'est pas un modèle de données implémentable, une information est groupe de données insécables minimum, portant son propre sens et explicitant les capacités.\nRecherche dans la théorie des données la définition exacte et limpide de cette notion\n\n**contexte et portée**\n\nDemande de recherche et de définition méthodologique, indépendante des modèles de données implémentables. Préserver l’exigence de sens propre, de maille minimale et de lien aux capacités. Comparer information, concept d’information, élément de données et fait élémentaire ; ne pas présenter leur assimilation comme une définition normative. La formulation proposée et la règle précise d’insécabilité restent à discuter. Aucun nouveau type technique de nœud, maillage exhaustif du métier, conversion des objets/documents/faits, ni release n’est adopté par cette demande."
+    },
+    {
+      "id": "U465",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u465",
+      "line": 11655,
+      "content_sha256": "f7725a210e5c0c54c47dd574d3e42d7442c57d3e69f97d220e0843fdef0d6f2d",
+      "captured_text": "## U465\n\n**id**\n\nU465\n\n**date**\n\n2026-09-19\n\n**titre**\n\nÉprouver Information sur les cinq pilotes\n\n**texte**\n\nnext\n\n**contexte et portée**\n\nPoursuivre l’étape annoncée après U464 : éprouver la granularité des informations sur Purchase Order, Product Reference, Fulfillment Commitment, Supply Assignment et Reservation. Préparer des fiches structurées avec sens, contexte minimal, usages par les capacités, liens métier, exemples et comparaisons sourcées. Le découpage proposé ne devient pas globalement adopté ; les problèmes complexes restent à arbitrer. Aucun schéma de données implémentable, nouveau type de nœud canonique ou release implicite."
+    },
+    {
+      "id": "U466",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u466",
+      "line": 11677,
+      "content_sha256": "de959e72a532eb42a71643fd47f6c70570f2bafe5c9e464ea0db936332f7de6e",
+      "captured_text": "## U466\n\n**id**\n\nU466\n\n**date**\n\n2026-09-19\n\n**titre**\n\nDistinguer proposition et engagement de satisfaction comme informations reliées\n\n**question présentée**\n\nPour éprouver la maille des informations de promesse, je recommande de distinguer « proposition de satisfaction » et « engagement de satisfaction » : une nouvelle proposition peut être étudiée pendant que l’engagement actuel reste valable. Veux-tu deux informations métier reliées, ou une même information avec des versions proposées et confirmées ? Ce choix structure le modèle métier ; il ne prescrit aucune table ou solution.\n\n**texte**\n\nDeux informations métier reliées (recommandé)\n\n**contexte et portée**\n\nAdopte la distinction de deux informations métier reliées, proposition de satisfaction et engagement de satisfaction, avec possibilité de préparer une proposition tandis que l’engagement actuel reste valable. Ne fixe ni noms anglais, définitions détaillées, identités, cardinalités, règles de version/correction ou autorisations de confirmation. Aucun report automatique à la réponse fournisseur, aucune table ou réalisation technique déduite."
+    },
+    {
+      "id": "U467",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u467",
+      "line": 11703,
+      "content_sha256": "0dd0772a7dc6097f314384175870c5213f6a20809480ef850e9b61ecab301dbc",
+      "captured_text": "## U467\n\n**id**\n\nU467\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPublier une release pour tester Atlas\n\n**texte**\n\nLance une release que je teste un peu\n\n**contexte et portée**\n\nAutorise la préparation contrôlée du backlog courant et sa publication locale dans FLOW Atlas, ainsi que l’actualisation explicite du guide du méta modèle préparé depuis U458, incluant Information et l’exemple U466. Les qualifications de contenu et les accords gardent leur portée. Les fiches d’information U465 restent des annexes de travail tant que leur contrat de catalogue et leur consultation dans Atlas ne sont pas implémentés ; cette demande de release ne les promeut pas silencieusement en nœuds. Vérifier la version effectivement servie. Aucun commit, push Git ou déploiement distant demandé."
+    },
+    {
+      "id": "U468",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u468",
+      "line": 11725,
+      "content_sha256": "2c66c44fa46abff1460091f3459e3def7b1588579991c0e8ffa89e0cbeb390b2",
+      "captured_text": "## U468\n\n**id**\n\nU468\n\n**date**\n\n2026-09-19\n\n**titre**\n\nIntégrer les informations métier au catalogue et à la consultation Atlas\n\n**texte**\n\nProchaine étape\n\n**contexte et portée**\n\nPoursuivre l’étape annoncée après la release U467 : préparer le contrat de publication des informations métier et leur consultation dans Atlas à partir des quatorze fiches pilotes U465. Décrire leurs liens aux capacités, exemples et références marché ; garder une vue transversale distincte de la décomposition Capacité → Comportement. Les contenus proposés et la portée précise de U466 sont conservés ; aucune nouvelle règle d’autorité, confirmation ou réservation n’est adoptée. Les publications historiques restent immuables ; une nouvelle release reste une opération distincte."
+    },
+    {
+      "id": "U469",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u469",
+      "line": 11747,
+      "content_sha256": "5e61524799a46c416d511ea8d47e93875ca909a920f97d48d1cae474b6832d36",
+      "captured_text": "## U469\n\n**id**\n\nU469\n\n**date**\n\n2026-09-19\n\n**titre**\n\nConsolider la base et publier pour une revue pas à pas\n\n**texte**\n\nJe souhaite consolider la base dans un premier temps sans vraiment développer le volet data / information.\nLance une release.\nJe vais faire une review pas à pas et te faire un feedback\n\n**contexte et portée**\n\nLa priorité devient la consolidation de la base et le traitement des retours de Laurent au fil de sa revue. Mettre en attente l’extension et la généralisation du volet data/information. Publier localement l’état courant déjà préparé, incluant les travaux U468 existants sans les enrichir ; aucune demande de retrait de ces travaux. Conserver les qualifications et arbitrages ouverts. La release ne constitue pas une validation globale du contenu ni une autorisation de poursuivre automatiquement la généralisation. Aucun commit ou push Git demandé."
+    },
+    {
+      "id": "U470",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u470",
+      "line": 11771,
+      "content_sha256": "d692f552db676c3df984227a657e6dd0a345e23cdb0598c02fdadd0d00fb4843",
+      "captured_text": "## U470\n\n**id**\n\nU470\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRendre les univers compréhensibles, justifier leur périmètre et alléger Atlas\n\n**texte**\n\nPremiers feedback :\n\n- Il faut, quand j'ouvre la fiche d'un univers (Supply Chain Management) je comprenne très vite de quoi il s'agit. Pas d'abstraction pompeuse, droit au but. Il faut que quelqu'un qui ne connait pas le domaine comprenne : c'est auto porté. Dans la définition de cet univers, la premiere phrase est abstraite même si elle est vraie. Ce n'est pas une bonne entrée en matière. De plus on parle de Supply Chain sans définir le terme ni même apporter des exemples. Les mots clefs ne proposent pas de liens vers le glossaire. La règle du lien avec tooltip au survol doit s'appliquer. => il faut revoir les contenus et applique ces règles éditoriales qui doivent être consignées.\n- Dans \"marché et choix\" de cet univers, je m'attendais à avoir une justification du périmètre et du nom de cet univers vis à vis du marché. Ce n'est pas le cas, ça synthétise les choix des capacités sous jacentes.\n- Dans la fiche de l'univers il manque cet élément important qui propose un noyau plus dense que ce que le marché propose : \"Supply chain management\". Comme le client souhaite garder les applications satellitaires qui gèrent la source de vérité des référentiels, alors les référentiels sont des projections dans cet univers et il n'y a pas de capacité de gestion (processus pour créer / modifier / supprimer etc.) de ces référentiels mais il y a une capacité d'ingestion à partir des sources de vérité. Donc, il ne reste que le coeur de la supply chain, c'est à dire sa fonction d'orchestration, d'où le nom.\n- Retire d'atlas les informations métiers pour l'instant afin de ne pas trop alourdir.\n- Lorsqu'il y a des références de marché, j'en veux au moins 2 systématiquement\n\n**contexte et portée**\n\nRevue de la base publiée : rendre l’entrée des fiches autonome et concrète, expliquer le vocabulaire avant de l’utiliser, fournir exemples et liens de glossaire avec infobulles. Justifier le nom et le périmètre de l’univers à cette même maille, sans substitution par un résumé des capacités. Réaffirmer le choix client de conserver les sources de vérité hors de l’univers : ingestion et projections utiles à la Supply, sans administration des référentiels maîtres ; cœur d’orchestration au périmètre plus resserré que SCM. Ne pas déduire le nom d’une application source installée. Le nom canonique Supply Chain Orchestration est conservé ; la mention Supply Chain Management introduit la comparaison de périmètre, pas un renommage demandé. Retirer temporairement le catalogue d’informations de la consultation Atlas, sans effacer le travail interne ni réécrire les publications. Consigner la règle d’au moins deux références marché pertinentes par élément comparé. Aucune nouvelle release ni validation globale des rédactions demandée."
+    },
+    {
+      "id": "U471",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u471",
+      "line": 11799,
+      "content_sha256": "f826bab8c1a01cfd28bd2697add6d5c47da1398bc4212465b2697c7af0a44ad2",
+      "captured_text": "## U471\n\n**id**\n\nU471\n\n**date**\n\n2026-09-19\n\n**titre**\n\nCompléter immédiatement les 47 fiches à référence marché unique\n\n**question présentée**\n\nLa règle des deux références marché concerne aussi 47 fiches existantes qui n’en ont actuellement qu’une. Préfères-tu les compléter au fil de ta revue pas à pas, ou lancer leur reprise globale dès maintenant ? Je poursuis dans les deux cas la correction de l’univers Supply et l’allègement d’Atlas.\n\n**texte**\n\nReprendre les 47 fiches maintenant\n\n**contexte et portée**\n\nÉtend la correction U470 aux 47 fiches du modèle et du glossaire métier ne comportant qu’une source marché distincte. Ajouter une deuxième référence pertinente effectivement consultée, en explicitant proximité, écart et limites, sans inventer d’équivalence ni modifier les responsabilités. Les informations métier retirées de la lecture ne sont pas développées. Cet enrichissement documentaire ne rouvre pas l’audit des comportements clos et n’adopte pas les rapprochements proposés. Aucune publication implicite."
+    },
+    {
+      "id": "U472",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u472",
+      "line": 11825,
+      "content_sha256": "83f105375a75691ebd5bb0c40eebb084d1f4da16ccb4708ded07dd12510ae179",
+      "captured_text": "## U472\n\n**id**\n\nU472\n\n**date**\n\n2026-09-19\n\n**titre**\n\nRetirer Business Services et différer le commerce\n\n**texte**\n\nL'univers Business Services n'a pas de sens. Il faut le supprimer. On parlera du commerce quand on aura fini la supply chain\n\n**contexte et portée**\n\nRetirer l’univers Business Services de la structure courante du modèle et corriger les références actives qui le présentent encore comme un périmètre à construire. Le commerce sera étudié après la Supply Chain : aucun univers Commerce ni nouveau rattachement n’est créé en remplacement. Le retrait remplace, dans cette portée, l’adoption U173 ; il n’efface ni cette décision historique ni les publications antérieures. Conserver les responsabilités Supply existantes, notamment les commandes de vente et l’orchestration des prestations. La publication d’un modèle corrigé reste distincte de cette demande de modification."
+    },
+    {
+      "id": "U473",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u473",
+      "line": 11847,
+      "content_sha256": "0625415f77ad9d3e6d373b6e554c6b2ca8b5a0bef98c31e4d8e856b4f5e015fa",
+      "captured_text": "## U473\n\n**id**\n\nU473\n\n**date**\n\n2026-09-19\n\n**titre**\n\nPublier les retours de revue et le retrait de Business Services\n\n**texte**\n\nLance une release\n\n**contexte et portée**\n\nAutorise la préparation, le contrôle et la publication locale du backlog courant dans Atlas : contenu Supply clarifié, compléments de références marché U470/U471 et retrait Business Services U472. Les ajustements de présentation, bandeau fixe et barre haute compacte, sont déjà compilés ; le catalogue Informations métier reste masqué selon U470. Ne pas développer le commerce ni le volet data/information. Cette demande de release ne valide pas globalement les rédactions ni les comparaisons ; conserver les accords à leur portée démontrée et les propositions avec leur qualification. Aucun commit, push Git ou déploiement distant demandé."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -6651,6 +6971,46 @@
       "captured_text": "## C104\n\n**id**\n\nC104\n\n**sources**\n\nU397, U396\n\n**constat**\n\nCodex a recommandé puis enregistré la non-décomposition de Consignment Replenishment Order, en invoquant notamment un traitement commun des demandes et les responsabilités transverses D04/D05. Ce raisonnement a minoré l’intérêt d’expliciter le métier à la lecture de chaque Order.\n\n**correction**\n\nU397 remplace la conclusion U396. Décrire les comportements métier attendus de l’Order ; une mise en œuvre commune ou l’appui sur une capacité transverse ne justifie pas leur omission. Distinguer le sens du parcours visible dans D04 des décisions et autres responsabilités mobilisées. La lisibilité des intentions et résultats métier constitue un bénéfice ciblé de décomposition. Conserver la maille Mécanisme/Politique/Variante/Bénéfice et ne pas déduire une décomposition exhaustive en opérations produit. Aucun nom ou comportement précis nouvellement proposé n’est validé par cette correction."
     },
     {
+      "id": "C105",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c105",
+      "line": 2330,
+      "content_sha256": "358434c555d0cd335befe0a619f25361553fbb02f3ecb1632108e12a6c86f6e2",
+      "captured_text": "## C105\n\n**id**\n\nC105\n\n**sources**\n\nU455, U453, U454\n\n**constat**\n\nL’audit UX recommandait d’expliquer les couches transactionnelle/processus comme un axe du méta modèle, notamment pour distinguer Process Management de Business Services. Il prolongeait le principe historique PRINCIPLE-TWO-LAYERS.\n\n**correction**\n\nU455 retire cet axe métier. Univers et domaines coopèrent autour d’intentions, engagements, informations et réalisations ; les processus peuvent traverser ces responsabilités sans constituer une couche supérieure. Conserver les différences entre décision, coordination, application et réalisation physique. L’exemple Commerce/Supply/logistique n’adopte pas de nouveaux parents, noms ou capacités ; Business Services ne devient pas Commerce par déduction. L’identifiant du principe retiré et ses sources sont conservés dans domain-interactions-U455-U456.yaml. Les marqueurs layer et contrôles hérités restent un travail de migration technique identifié, sans valeur de justification métier. Aucun constat d’origine SAP de cette séparation n’est établi."
+    },
+    {
+      "id": "C106",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c106",
+      "line": 2348,
+      "content_sha256": "9dfdf53bfc39434068bf0abaed54e95766ffc9548e5750b1754991ec23ecf162",
+      "captured_text": "## C106\n\n**id**\n\nC106\n\n**sources**\n\nU456, U453, U454\n\n**constat**\n\nL’audit proposait des liens depuis les informations métier vers des modèles de données, contrats techniques et réalisations de solution, ainsi qu’un accès aux comparaisons produits dans la fiche Atlas.\n\n**correction**\n\nAtlas reste strictement métier. Retirer ces vues et liens de la proposition. Objets, structure conceptuelle métier, autorités, sources d’alimentation métier, documents, faits et règles restent pertinents ; schémas d’implémentation, applications et produits logiciels relèvent de dossiers distincts. Ces dossiers peuvent citer Atlas, sans extension symétrique de son périmètre. Les comparaisons éditeurs restent une justification interne ; aucun effacement de leur provenance ou des publications historiques. La distinction concerne les produits logiciels, pas les produits/articles du métier Supply."
+    },
+    {
+      "id": "C107",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c107",
+      "line": 2367,
+      "content_sha256": "802484674d1c4bc6c2fdae9ef4cc15ca7e2c86de1f5da528048f8220002766a8",
+      "captured_text": "## C107\n\n**id**\n\nC107\n\n**sources**\n\nU459, U456, U458, C106\n\n**constat**\n\nCodex a interprété le périmètre métier d’Atlas comme imposant de masquer toutes les comparaisons marché. Cette extension a retiré les repères permettant d’expliquer les proximités, différences et appuis méthodologiques ou produits.\n\n**correction**\n\nU459 remplace cette partie de C106 : les références marché, leur portée, le positionnement FLOW et les sources primaires externes doivent être visibles dans Atlas. Le périmètre reste métier ; une référence comparative à un produit ne constitue ni un catalogue d’applications, ni un choix de solution, ni une preuve installée. Conserver les statuts de revue, réserves internes et liens vers le backlog hors affichage. Un recouvrement partiel ne devient pas conformité à un standard ; une comparaison absente ne devient pas innovation. Ne pas étendre les accords de contenu par le rétablissement de l’affichage."
+    },
+    {
+      "id": "C108",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c108",
+      "line": 2385,
+      "content_sha256": "e3f4d196b643d8e778fc8093b9cdd502bcf0db7e8177926e29bc64d51d67dfc4",
+      "captured_text": "## C108\n\n**id**\n\nC108\n\n**sources**\n\nU463, U455, U456, U373, CMP182\n\n**constat**\n\nLe retrait du champ layer en U458 a laissé la définition de universe-supply comme « Univers du pilotage transactionnel de la Supply ». TER035 définissait encore Supply comme une couche et TER034 plaçait OMS au-dessus. Ces formulations courantes contredisaient U455.\n\n**correction**\n\nDécrire l’univers par les responsabilités de ses domaines et remplacer la hiérarchie OMS/Supply dans les deux termes. Conserver le nom Supply Chain Orchestration adopté U373, les identifiants, parents, responsabilités et accords antérieurs. Ajouter les raisons de définition et de vocabulaire, deux rapprochements sourcés et l’exemple de coopération U455 sur la fiche de l’univers. La rédaction reste proposée ; U463 n’adopte pas les nouvelles phrases par anticipation. Les sources historiques, captures avant modification et publications sont conservées. Correction ciblée du périmètre et de la hiérarchie, sans effacement des termes techniques documentés ni attribution de leur origine à SAP."
+    },
+    {
+      "id": "C109",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c109",
+      "line": 2403,
+      "content_sha256": "0880fba71a6b83fbaac22d1101c375f7269ed64bd2b4a6ff9fbfddc93173b122",
+      "captured_text": "## C109\n\n**id**\n\nC109\n\n**sources**\n\nU472, U173, CMP187\n\n**constat**\n\nBusiness Services restait un univers vide adopté en U173, accompagné du terme TER067 et de textes annonçant sa construction future. U472 demande sa suppression et diffère l’étude du commerce après la Supply Chain.\n\n**correction**\n\nRetirer universe-case et TER067 du backlog courant, sans univers de remplacement ni déplacement de capacités. Neutraliser le rattachement du terme Case (TER064), corriger les deux principes qui citaient cet univers et la frontière de Process Tracking (BHV082). Conserver les responsabilités Supply, les 346 relations du backlog, les définitions validées des capacités/comportements et leurs accords. Consigner la priorité dans PRINCIPLE-SUPPLY-FIRST, les conventions et la feuille de route. L’accord U173 est remplacé dans cette portée, sans suppression des preuves antérieures ; identifiants non réutilisables. Les annexes datées et publications demeurent historiques. État avant correction : audits/2026-09-19-business-services-U472/before/. Aucun catalogue Commerce ni publication implicite."
+    },
+    {
       "id": "P01",
       "path": "connaissance/05-propositions.md",
       "anchor": "p01",
@@ -9263,8 +9623,104 @@
       "path": "marche/catalogue.md",
       "anchor": "mkt42",
       "line": 523,
-      "content_sha256": "a61d595087f9ddf1f8e76475804d294f63d1201a776b9e6476a6c14cb5d044d3",
-      "captured_text": "## MKT42\n\n- Référence : GS1 EPCIS & CBV, présentation officielle des standards de partage d’événements.\n- Source : https://www.gs1.org/standards/epcis ; introduction visibilité, status/location/movement/chain of custody.\n- Consultation : 17 septembre 2026, texte primaire indexé ; édition normative non adoptée.\n- Rôle : appui au besoin de continuité des faits entre partenaires. Aucun schéma d’implémentation ni découpage Capacité/Comportement imposé. Source S41 de behavior-gap-audit.yaml ; synthèse sélective."
+      "content_sha256": "7a7944299619743f632fee2fda2f5b8c15da6a0f710cc3b9c529b494048b5e79",
+      "captured_text": "## MKT42\n\n- Référence : GS1 EPCIS & CBV, présentation officielle des standards de partage d’événements.\n- Source : https://www.gs1.org/standards/epcis ; introduction visibilité, status/location/movement/chain of custody.\n- Consultation : 17 septembre 2026, texte primaire indexé ; édition normative non adoptée.\n- Rôle : appui au besoin de continuité des faits entre partenaires. Aucun schéma d’implémentation ni découpage Capacité/Comportement imposé. Source S41 de behavior-gap-audit.yaml ; synthèse sélective.\n\n**Complément U460 distinct d’EPCIS/CBV :** FAQ officielle GS1 GO sur l’[identification et la sérialisation](https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-), consultée le 19 septembre 2026. Appui sémantique à Product Unit, ELM282/CMP177. Page explicative évolutive, aucune édition normative complète ni droit de redistribution intégrale évalués ; synthèse sélective et lien seulement. Ne pas attribuer cette FAQ à la spécification EPCIS."
+    },
+    {
+      "id": "MKT43",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt43",
+      "line": 532,
+      "content_sha256": "11959685b7676fdde2c2cace05f259d1958680c186477e4d1425e1c27d9e7956",
+      "captured_text": "## MKT43\n\n- Référence : OMG Decision Model and Notation (DMN), organisme Object Management Group.\n- Nature et rôle : langage de modélisation des décisions et règles métier ; appui méthodologique à la distinction entre décisions et processus.\n- Source officielle : https://www.omg.org/dmn/ ; titre Decision Model and Notation, présentation et complémentarité avec BPMN/CMMN. Texte primaire ouvert le 19 septembre 2026 ; page évolutive, aucune édition normative particulière utilisée.\n- Limites : aucune taxonomie universelle en six types de capacités, aucune convention d’icônes ou d’ordre de lecture déduite. Synthèse originale et lien ; contenu sous copyright, aucun document intégral reproduit. ELM259/CMP169."
+    },
+    {
+      "id": "MKT44",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt44",
+      "line": 539,
+      "content_sha256": "63a3359275a1a3d3d22a293358ac998fc17c223392b5266bc6e31d5b4a4c0d74",
+      "captured_text": "## MKT44\n\n## Compléments U453/U454 — références existantes\n\nConsultation du 19 septembre 2026. Les références MKT01 (TOGAF), MKT02 (ArchiMate), MKT03 (Guild), MKT04 (architecture SAP), MKT13 (SAP S/4HANA), MKT14 (Dynamics 365), MKT20 (Oracle), MKT25 (LeanIX), MKT26 (Ardoq) et MKT42 (GS1) sont réexaminées pour l’audit Atlas. Les éditions, passages effectivement consultés, URL officielles et limites d’accès sont détaillés dans [le registre U453/U454](../audits/2026-09-19-atlas-ux-ui-U453/sources.md), S01–S16 et S21–S24. ELM260–277 portent les éléments utilisés ; aucune équivalence de taxonomie ni réalisation Beaumanoir n’est déduite. Les contenus sont référencés et reformulés sélectivement, sans redistribution des documents.\n\n- Référence : Bizzdesign Horizzon, documentation produit des viewpoints ; rôle : comparer les modes de lecture d’une carte.\n- Source officielle : https://help.bizzdesign.com/article/horizzon-help/working-with-viewpoints-in-a-site?cm=1&ds=1&gc=1 ; Working with viewpoints in a site, Color views / Highlight views / Combining filters.\n- Consultation : 19 septembre 2026, texte primaire indexé détaillé, documentation évolutive sans version établie. ELM262 ; S07 du registre U453.\n- Limites : aucun essai du logiciel ; pas de généralisation des droits de partage. Synthèse originale, aucune reproduction substantielle."
+    },
+    {
+      "id": "MKT45",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt45",
+      "line": 550,
+      "content_sha256": "d0d4d1b02c7db062d524e699079e59f19214c162d1113a421b42e49b58bc6aca",
+      "captured_text": "## MKT45\n\n- Référence : OrbusInfinity, documentation et présentation de l’architecture métier ; rôle : vues adaptées aux destinataires.\n- Sources officielles : https://support.orbussoftware.com/hc/en-us/articles/30293919661853-View-Data et https://www.orbussoftware.com/solutions/use-case/business-architecture ; sections Views / Recent Views et Configurable Dashboards & Sites.\n- Consultation : 19 septembre 2026, textes ouverts, pages évolutives sans édition logicielle établie. ELM263 ; S08 du registre U453.\n- Limites : documentation et discours produit, pas test UX ni preuve des gains commerciaux. Liens et synthèse sélective uniquement."
+    },
+    {
+      "id": "MKT46",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt46",
+      "line": 557,
+      "content_sha256": "93370f303adf57787e8d2f354434c75c1fbe7a9d2633bb4835777a19311d1bb2",
+      "captured_text": "## MKT46\n\n- Référence : W3C, documents Understanding WCAG 2.2 ; rôle : évaluer les observations de lisibilité sans revendiquer de conformité globale.\n- Sources officielles : https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html ; https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html ; https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html.\n- Consultation : 19 septembre 2026, pages explicatives ouvertes, critères 1.4.3, 1.4.1 et 2.5.8, sections Success Criterion / Intent. ELM273 ; S20a–c du registre U453.\n- Limites : contrôle Atlas partiel ; exceptions des critères à conserver. Aucun contenu W3C redistribué intégralement."
+    },
+    {
+      "id": "MKT47",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt47",
+      "line": 564,
+      "content_sha256": "7fd83880465070103df639509710f24e62f7968c4f1028ee5f3276e86a1b7f65",
+      "captured_text": "## MKT47\n\n- Référence : Nielsen Norman Group, Progressive Disclosure, Jakob Nielsen, 4 décembre 2006 ; principe UX.\n- Source officielle : https://www.nngroup.com/articles/progressive-disclosure/ ; présentation du principe et de son emploi.\n- Consultation : 19 septembre 2026, texte primaire indexé. ELM272 ; S19 du registre U453.\n- Rôle et limites : appui à la présentation graduelle du détail ; aucune amélioration de temps de tâche Atlas démontrée. Synthèse sélective, pas reproduction de l’article."
+    },
+    {
+      "id": "MKT48",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt48",
+      "line": 571,
+      "content_sha256": "5166fe1467e7b64330d737bc47b873ce2b2fb0fdfe7daa8e4144112dede14123",
+      "captured_text": "## MKT48\n\n- Référence : Microsoft Fluent 2, système de design, page Color ; rôle : séparer marque, neutralité et signification des couleurs.\n- Source officielle : https://fluent2.microsoft.design/color ; Color palettes / Semantic colors.\n- Consultation : 19 septembre 2026, texte ouvert, documentation évolutive Fluent 2. ELM271 ; S17 du registre U453.\n- Limites : aucune palette FLOW prescrite ni adoption de composants Microsoft. Synthèse originale et lien uniquement."
+    },
+    {
+      "id": "MKT49",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt49",
+      "line": 578,
+      "content_sha256": "faa7152b42ec686ef1b44c80cfbf5a39ee637a271b215ed1f25bbb84b8f34c5b",
+      "captured_text": "## MKT49\n\n- Référence : SAP Fiori, guide de design web v1-145, Colors ; rôle : comparaison complémentaire de principes visuels.\n- Source officielle : https://www.sap.com/design-system/fiori-design-web/v1-145/foundations/visual/colors-overview ; Color balance / Color usage.\n- Consultation : 19 septembre 2026, texte ouvert. ELM271 ; S18 du registre U453.\n- Limites : dernière édition non revendiquée ; aucun standard métier déduit, aucune palette ou bibliothèque importée. Synthèse sélective."
+    },
+    {
+      "id": "MKT50",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt50",
+      "line": 585,
+      "content_sha256": "753f8c41bcf71d4969679cdb118066bf6cb251dbe7c340280c8d1b59965f8a72",
+      "captured_text": "## MKT50\n\n- Référence : Microsoft Azure Architecture Center, Use domain analysis to model microservices ; conseil d’architecture de solution.\n- Source officielle : https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis ; Introduction / Define bounded contexts ; mise à jour du 25 février 2026.\n- Consultation : 19 septembre 2026, texte ouvert. ELM274 ; S16 du registre U453.\n- Rôle et limites : éclairer les conditions du découplage ; ne prescrit ni microservices pour FLOW ni bijection capacité/composant. Reformulation sélective sans reproduction substantielle."
+    },
+    {
+      "id": "MKT51",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt51",
+      "line": 592,
+      "content_sha256": "2f841789495bf978d3fd2516d9a1c27195b79a06bd18aa991ba23ed891db0435",
+      "captured_text": "## MKT51\n\n- Référence : ISO/IEC, vocabulaire des données et de l’information ; rôle : préciser sens, représentation et contexte.\n- Sources officielles : [ISO/IEC 15944-1:2025](https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso-iec:15944:-1:ed-3:v1:en), §§3.13, 3.15–3.16, 3.29 ; [ISO 20691:2022](https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso:20691:ed-1:v1:en), §§3.8–3.10.\n- Consultation : 19 septembre 2026, entrées publiques officielles portant des renvois à ISO/IEC 2382 et 11179. ELM289.\n- Limites : pas de lecture intégrale des normes référencées, ni adoption des modèles sectoriels. Synthèse sélective ; aucune redistribution de norme."
+    },
+    {
+      "id": "MKT52",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt52",
+      "line": 599,
+      "content_sha256": "7c2dfe46cb7e608e68f44f976be6fd98ea6ae078cec30057889d03dc38ca70f5",
+      "captured_text": "## MKT52\n\n- Référence : OMG, Semantics of Business Vocabulary and Business Rules (SBVR), version 1.5, octobre 2019 ; rôle : sémantique et élémentarité.\n- Source officielle : [SBVR 1.5](https://www.omg.org/spec/SBVR/1.5/PDF), §24.2.1 et §24.2.2.1, pages imprimées 222 et 255.\n- Consultation : 19 septembre 2026, passages primaires lus. ELM290.\n- Limites : aucune conformité FLOW ni adoption du formalisme ; synthèse sans reproduction de la spécification."
+    },
+    {
+      "id": "MKT53",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt53",
+      "line": 606,
+      "content_sha256": "50e9a129bc091c6ee436b64b3a2e0ec23aac953a9cd253ac55fa24a8b7331245",
+      "captured_text": "## MKT53\n\n- Référence : Terry Halpin, recherche sur Object-Role Modeling (ORM), *What Is An Elementary Fact?*, article original publié en septembre 1993, réédition légèrement modifiée.\n- Source de l’auteur : [article sur orm.net](https://www.orm.net/pdf/ElemFact.pdf), introduction et pages 2–3, 6–8.\n- Consultation : 19 septembre 2026, texte primaire. Rôle : préciser les limites d’un critère d’insécabilité. ELM291.\n- Limites : recherche historique, pas standard imposé à FLOW ; la date d’indexation web n’est pas la date de l’article. Synthèse et lien seulement."
+    },
+    {
+      "id": "MKT54",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt54",
+      "line": 614,
+      "content_sha256": "5287b8428735c8ecb3a8b9d57f19e3134943594a9aedfdfd260b6bc84639232b",
+      "captured_text": "## MKT54\n\nOASIS — Universal Business Language 2.4, OASIS Standard 2024. [Source officielle](https://docs.oasis-open.org/ubl/UBL-2.4.html), consultée le 19 septembre 2026. Nature : standard documentaire et scénarios métier ; distinct du modèle SOA MKT09. Passages : VMI/CRP, Fulfilment/Receipt Advice, Freight Status Reporting. Rôle : éclairer les différences entre mise en stock initiale, réapprovisionnement, retours et faits documentés. Limites : ni taxonomie de capacités ni modèle de propriété imposé ; synthèses originales, pas de schéma ou texte intégral importé.\n\n## Compléments U470/U471 — références existantes\n\nLe [registre des 31 documents consultés](../audits/2026-09-19-base-U470/sources.yaml) précise éditions, titres et passages primaires : MKT13 SAP, MKT14 Microsoft (SCM, Commerce, IOM et exemples historiques Dynamics AX/GP), MKT19 TM Forum (présentation publique TMF641 archivée), MKT20 Oracle (Fusion et exemples historiques EBS/PeopleSoft, produits distincts), MKT41 CSCMP et MKT42 GS1 (Global Traceability Standard, distinct d’EPCIS). Comparaisons sélectives, aucune édition historique présentée comme actuelle ; aucun catalogue propriétaire ni contrat technique adopté.\n\n\n## Complément U472 — MKT02 et MKT14\n\nRelecture du tutoriel communautaire [ArchiMate 101](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/) et consultation de [Microsoft Customer Service — Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), le 19 septembre 2026. Passages, nature, éditions et limites consignés dans ELM323/ELM324 ; rapprochement local CMP187. Deux organismes, aucun standard de découpage FLOW déduit. Liens et synthèses courtes, sans import de catalogue."
     },
     {
       "id": "CMP001",
@@ -10545,6 +11001,174 @@
       "line": 1653,
       "content_sha256": "510ecb401ede10c7f8ec7a4704ed53ecf42af9107daf6fc518cd368a04016bf5",
       "captured_text": "### CMP166\n\nU429 — Codex, 19 septembre 2026. Complément CMP165 pour la frontière externe au backlog Supply. ELM255 montre le paiement opérationnel dans Microsoft Commerce et Sales Billing chez SAP, articulé à Finance. Le périmètre d’un produit ne prescrit ni domaine d’entreprise ni équipe responsable. Distinguer établissement du document commercial et comptabilisation de créance ; paiement au point de vente/autorisation/capture et rapprochement bancaire/lettrage. Encaissement peut recouvrir plusieurs de ces responsabilités selon le contexte ; aucune affectation unique n’est justifiée par le seul mot.\n\nExclusion Supply validée U429 ; attribution Commerce/Finance laissée ouverte. Recommandation : conserver ces responsabilités comme externes, sans imposer maintenant un nouvel univers ni des capacités de finance ou de commerce. Le rattachement et la décomposition proposés ici restent non validés ; aucun catalogue modifié."
+    },
+    {
+      "id": "CMP167",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp167",
+      "line": 1660,
+      "content_sha256": "01d951ab83f2a04a0ace84b79afe02b21a1dfc84cd14fb025307bbadbaa2460e",
+      "captured_text": "### CMP167\n\nU439/U440/U442 — Codex, 19 septembre 2026. Rapprochement proposé d’Order Grouping BHV086, sous Order Structuring D04.n, avec ELM256 et ELM257. Recouvrement partiel : préserver des demandes identifiables et des conditions communes ; portée multi-Orders persistante FLOW à instruire. L’accord ne valide pas les définitions ni les règles détaillées. Pas de comportement par opération d’ajout/retrait d’un membre ; décisions, autorisation de prise en charge et réservation distinctes."
+    },
+    {
+      "id": "CMP168",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp168",
+      "line": 1664,
+      "content_sha256": "01ce215569e4dcb27d21aa61cf74ed0671abfca38b9508ef8118faef3084f1bb",
+      "captured_text": "### CMP168\n\nU439/U440/U442 — Codex, 19 septembre 2026. Rapprochement proposé d’Order Merging BHV087, sous Order Structuring D04.n, avec ELM258. Mécanisme de remplacement de plusieurs demandes actives par une demande résultante avec traçabilité. Appui documenté pour les achats avant approbation ; autres intentions, engagements, prix et réalisations à examiner. Microsoft Firm planned orders (ELM251) éclaire une frontière différente : création d’un Order depuis des propositions. Ni regroupement d’expéditions ni généralisation automatique des règles produit."
+    },
+    {
+      "id": "CMP169",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp169",
+      "line": 1668,
+      "content_sha256": "fb794bc35b9b0cf220517c69264ac6d80de7e694a7622b812afb8bdcedd462b0",
+      "captured_text": "### CMP169\n\nU449 — Codex, 19 septembre 2026. Appui méthodologique proposé entre ELM259 et le principe de typage des capacités FLOW dans le backlog courant après U448. Point commun : responsabilité de décision distincte de la coordination et de l’application. Différence : les six natures action, management, knowledge, orchestration, planning et decision sont déjà présentes dans FLOW ; ni leur liste ni les icônes ne sont prescrites par DMN. Les conserver évite de reclasser les accords et clarifie la lecture sans changer les frontières.\n\nDix absences sont complétées par analogie de responsabilité avec les capacités déjà typées, avec justification individuelle dans audits/2026-09-19-capability-types-U449/changes.yaml. Qualifications proposées dans la portée U435 ; U449 adopte le besoin de typage et les règles de présentation, sans validation globale des classements. Le résultat dominant détermine le type ; aucune inférence depuis le nom ou le préfixe d’identifiant. Aucune preuve installée ni conformité DMN revendiquée. Grille et comparaison : modeles/backlog/capability-types-U449.yaml ; convention méthodologique MOD007."
+    },
+    {
+      "id": "CMP170",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp170",
+      "line": 1674,
+      "content_sha256": "0958f4df42d080ee1118f6e5dcb93d7ccd287269022a68f3075ebf09db56a868",
+      "captured_text": "### CMP170\n\nU450/U451 — Codex, 19 septembre 2026. Appui méthodologique ELM052 et illustration produit ELM234 reconsultés pour le typage des 76 comportements du backlog courant. Point commun : distinguer les façons d’agir et leurs effets selon les circonstances. Différence : la forme principale et les sept catégories sont une convention FLOW issue de MOD006, choisie U451 ; aucune taxonomie BIZBOK/Microsoft équivalente revendiquée.\n\nLes qualifications individuelles sont proposées sur la base des définitions existantes, sans modifier les comportements ni leur parent. Une forme principale fournit l’icône ; les formes complémentaires restent combinables. La granularité Capacité → Comportement demeure terminale. Détail : modeles/backlog/behavior-types-U451.yaml. Aucun nouvel audit des lacunes, accord global ou constat installé."
+    },
+    {
+      "id": "CMP171",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp171",
+      "line": 1680,
+      "content_sha256": "5886be6372a3be54542d76bd469a18ffdfda142c4d01cf9fecdc245a8fc313ca",
+      "captured_text": "### CMP171\n\nU453 — Codex, 19 septembre 2026, **proposition d’audit**. ELM260/261/264–270/274/275 rapprochés du méta modèle FLOW et de la publication v010 / 2026-09-19.3, notamment Purchase Order D04.j, les six référentiels D08/D09/D11/D12/D13/D14, TER002/TER036/TER037 et le guide méthodologique. Relation : appui méthodologique ou sémantique, sans équivalence de catalogue.\n\nPoint commun : relier responsabilités et informations aide à expliciter usages, autorités et frontières. Différences : entité d’intégration Dynamics, information métier et objet d’un outil EA ne sont pas des synonymes ; les contrats ERP vont au-delà du cadrage Supply. Adaptation recommandée : petit catalogue transversal d’informations métier, projections qualifiées et structures essentielles, relié aux capacités ; modèles de données approfondis et contrats techniques référencés à leur niveau. Conserver Univers/Domaine/Capacité et la décomposition terminale existante.\n\nBénéfice : cadrage PO et analyse du découplage sans imposer des composants. Limites : aucune source maîtresse réelle, cardinalité, réalisation installée ou convention de faits/documents n’est validée ; besoin ancien identifié dans connaissance/24-capacites-objets-et-faits.md. Aucune modification du modèle ni validation implicite. Détails et alternatives : [rapport U453/U454](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §§6–9."
+    },
+    {
+      "id": "CMP172",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp172",
+      "line": 1688,
+      "content_sha256": "4499ed278c9235dbb394d24b0525552d2c108d6c62e222cfc770fa11edf68126",
+      "captured_text": "### CMP172\n\nU453 — Codex, 19 septembre 2026, **proposition d’audit**. ELM262/263/271–273 rapprochés des parcours de l’Atlas servant v010. Relation : appui méthodologique et analogie de fonctions de présentation, pas équivalence UX démontrée.\n\nAdaptation recommandée : synthèse avant détails, recherche pertinente aux mots du métier, dépendances directes lisibles et accents de couleur limités. Alternative : monochromie mieux composée ; couleurs par domaine réservées à une vue dédiée. Conserver les icônes par type, les décisions en fin de liste, les glossaires distincts et les liens de version. Les validations et réserves internes restent hors interface.\n\nJustification : mesures locales documentées, principes de lisibilité et de présentation progressive. Limites : comparaison documentaire des produits, aucun test utilisateur comparatif ni certification WCAG. Maquette illustrative sans modification d’Atlas ; résultats, captures et alternatives dans le [rapport](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §§5 et 10–11."
+    },
+    {
+      "id": "CMP173",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp173",
+      "line": 1696,
+      "content_sha256": "26775e8d3d5e7dc75887c0b185f04014c119d827fa1e702f82953da7c2b8e9ba",
+      "captured_text": "### CMP173\n\nU454 — Codex, 19 septembre 2026, **complément proposé** à CMP171. ELM276/277 rapprochés du même méta modèle FLOW v010 pour éprouver la recommandation indépendamment de SAP. Relation : appui méthodologique.\n\nAdaptation : distinguer information métier, architecture des données et contrats de solution ; ne pas réduire toutes les données au niveau d’implémentation. Le modèle conceptuel ou logique peut être partagé entre solutions. Ce rapprochement n’impose ni une notation ni la conformité TOGAF à Atlas. Les limites d’édition et d’accès demeurent explicites : guide 2019 et standard 9.2 consultés, ressources actuelles vérifiées, contenu détaillé de la 10e édition non contrôlé. Voir le [rapport](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §3, et son [registre de sources](../audits/2026-09-19-atlas-ux-ui-U453/sources.md)."
+    },
+    {
+      "id": "CMP174",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp174",
+      "line": 1702,
+      "content_sha256": "1f747b26568d9186404f157c6c1fe9288f7afd0899c5881a154eee800a250d60",
+      "captured_text": "### CMP174\n\nU455/U456 — Codex, 19 septembre 2026. ELM278/279 rapprochés des principes FLOW et de l’exemple Commerce → Supply → logistique. Relation : appui méthodologique TOGAF et recouvrement partiel avec un produit Microsoft. **Principes locaux adoptés par Laurent** : retrait des couches transactionnelle/processus ; univers/domaines en interaction ; Atlas strictement métier. Les reformulations détaillées, interactions illustratives et nouveaux découpages ne sont pas adoptés par extension.\n\nPoint commun : responsabilités et parcours se lisent par leurs relations. Différences : TOGAF propose plusieurs vues sans prescrire la partition FLOW ; Microsoft décrit un produit et ses intégrations, pas trois univers d’entreprise. Bénéfice : rendre lisibles intentions, engagements et faits, sans assimiler processus à couche ni capacité à composant. La frontière Atlas n’interdit pas les structures d’information métier ; elle exclut les vues de solutions et les liens vers leur réalisation.\n\n**Correction de CMP171–173 et du rapport initial** : abandonner la recommandation de conserver les couches, l’alternative du catalogue technique relié depuis Atlas et la fiche « réalisation liée ». Les comparaisons produits servent au travail interne. Aucun nouveau maître, flux installé ou origine historique SAP déduit. État comparé : backlog issu de v010, principes corrigés ; nœuds, relations, application et publication conservés. Détails et ancien principe archivé : [domain-interactions-U455-U456.yaml](../modeles/backlog/domain-interactions-U455-U456.yaml). Migration du champ layer identifiée, pas présentée comme appliquée."
+    },
+    {
+      "id": "CMP175",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp175",
+      "line": 1710,
+      "content_sha256": "b91dc09be0311aeda125f6b411089eea1011f0f0edc0b09441dfecd384b552b6",
+      "captured_text": "### CMP175\n\nU460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM280 → D08 Product Reference, backlog après U459, révision 4. Recouvrement partiel : références et variantes sont des notions documentées ; le périmètre Microsoft inclut aussi les maîtres. Adaptation FLOW : projection uniquement, conformément à U134. Bénéfice : rendre la frontière d’autorité explicite. Comparaison ajoutée dans la fiche, visible lors d’une publication future. Aucune équivalence complète, innovation ou réalisation installée affirmée ; pas de valideur métier."
+    },
+    {
+      "id": "CMP176",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp176",
+      "line": 1714,
+      "content_sha256": "faedd910ea07fd7eadde14a22088c14444b1b292519bf0f3fce9f06de61b64a0",
+      "captured_text": "### CMP176\n\nU460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM281 → D08.d Product Reference Ingestion, backlog après U459, révision 4. Recouvrement partiel avec la réception de références. Adaptation : séparer autorité métier, source d’alimentation et projection. Bénéfice : éviter qu’un émetteur soit implicitement considéré comme maître. Limite : le paramétrage d’un produit ne renseigne pas les acteurs réels FLOW. Comparaison portée par la fiche ; aucun choix d’application ou flux installé ; pas de valideur métier."
+    },
+    {
+      "id": "CMP177",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp177",
+      "line": 1718,
+      "content_sha256": "cd7fa6c94ae58de35bc8b131dc3d820b447b61c29eca4a23be323f8f8c2f5f92",
+      "captured_text": "### CMP177\n\nU460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM282 → TER059 Product Unit, glossaire du backlog, révision 2. Appui sémantique GS1 sur la distinction référence/instance. Adaptation : conserver l’identité métier sans imposer son support ou sa codification. Bénéfice : ne pas confondre variante partagée et exemplaire. Limite : pas de certification ni d’équivalence complète entre Product Unit et toutes les catégories GS1. Comparaison portée par le terme ; pas de valideur métier."
+    },
+    {
+      "id": "CMP178",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp178",
+      "line": 1722,
+      "content_sha256": "bd665507d1939741ad42ca89e33abff17de1c059178b99bc147d44f92e37c9c9",
+      "captured_text": "### CMP178\n\nU461 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM285 → TER036 et pilote Purchase Order, glossaire du backlog révision 2. Appui sémantique par un exemple de document de réception. Le lien obligatoire fait–document est adopté par Laurent en U461 ; **la comparaison et les structures candidates ne le sont pas par extension**. Bénéfice : illustrer le choix local par un usage documenté. Limite : aucun standard universel, nombre exact de documents ou mécanisme de correction déduit. Comparaison portée par TER036 ; aucun valideur de la correspondance marché."
+    },
+    {
+      "id": "CMP179",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp179",
+      "line": 1726,
+      "content_sha256": "404401972ade7b96a110d6e6a0c7226bf135a425a9eb747aa2a2a727ae70af37",
+      "captured_text": "### CMP179\n\nU462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM286 → D03.n, backlog révision 8. Appui lexical partiel pour expliquer l’alternative Order Confirmation. Le nom Fulfillment Commitment adopté U445 désigne une responsabilité plus large que confirmer un document. Les raisons de vocabulaire et de définition sont désormais dans la fiche ; elles explicitent U441/U443/U444 sans adopter un consensus de marché. Bénéfice : rendre la frontière de la promesse lisible. Aucun nouveau valideur, périmètre ou effet de réservation."
+    },
+    {
+      "id": "CMP180",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp180",
+      "line": 1730,
+      "content_sha256": "7208514c0a66ff5b6980d04a023f95bc19151d6a562112a9b873fe50ee2355c6",
+      "captured_text": "### CMP180\n\nU462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM287 → D02.e, backlog courant capturé dans l’audit U462. Appui lexical et recouvrement partiel : même lien ressource–commande, mais effet de blocage différent. FLOW conserve son choix U436 ; SAP ARun ne sert pas de preuve que l’affectation FLOW réserve. Bénéfice : sourcer explicitement la différence derrière un terme commun. La convention Allocation/Assignment U289/U290 reste inchangée ; aucune équivalence complète ou réalisation installée, aucun valideur de la comparaison."
+    },
+    {
+      "id": "CMP181",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp181",
+      "line": 1734,
+      "content_sha256": "a1af0358ab5518513ea6fc5c0445ecea3598b1d0a915a6c25fe7726cfc01a291",
+      "captured_text": "### CMP181\n\nU462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM288 → D04.j, backlog courant capturé dans l’audit U462. Appui au nom Purchase Order et à la couverture biens/prestations ; distinction explicite entre objet documentaire du produit et capacité FLOW. Noms courts U384 et parcours U391 conservés. Bénéfice : expliquer le choix de terme sans réduire la responsabilité à un document. Les formulations pédagogiques restent proposées ; aucun état ERP importé, aucun valideur de la correspondance.\n\nLes raisons lexicales et de périmètre sont également explicitées sur D03, D15, D02.c, D04.n, D05.a, D08 et D08.d à partir des arbitrages cités dans leurs fiches. Relectures primaires du 19 septembre : Microsoft DOM (introduction), Order promising (méthodes de contrôle des dates), Safety stock journals (Calculate a proposal), Inventory Visibility reservations (cas de réservation souple), Oracle 26B What's a Split Order Line (introduction, disponibilité et statut). Les URL et limites restent dans chaque comparaison. Product Reference et son ingestion reprennent les appuis ELM280/281 consultés lors de U460 ; leur périmètre ne change pas. Cette mise en valeur ne valide pas les comparaisons par extension."
+    },
+    {
+      "id": "CMP182",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp182",
+      "line": 1740,
+      "content_sha256": "d05d594868bc848fd2b385134462a11a4a6805caadf632deeed938b9d46631b8",
+      "captured_text": "### CMP182\n\nU463 — Codex, 19 septembre 2026, **rapprochements proposés**. ELM019/ELM279 → universe-supply, backlog révision 4 ; cohérence de vocabulaire avec TER034/TER035. Appui méthodologique TOGAF pour décrire les responsabilités et recouvrement partiel Microsoft pour l’orchestration métier. Les points communs, différences, éditions, localisateurs et limites sont dans les deux comparaisons de la fiche.\n\nLa définition retirée décrivait une orientation technique et une priorité de travail, sans expliquer ce métier. La nouvelle rédaction synthétise les six domaines existants. U373 garde son nom et U455 sa coopération sans couches ; aucun domaine ou produit n’est ajouté. Bénéfice : comprendre le périmètre depuis l’univers sans supposer un ERP. Compromis : le nom et le périmètre restent des choix FLOW, sans équivalence complète avec une catégorie OMS ou une nomenclature TOGAF. U463 demande la correction ; la formulation éditoriale et les comparaisons n’ont pas de nouveau valideur. Les sources ont été reconsultées, aucune supériorité globale d’un éditeur n’est affirmée."
+    },
+    {
+      "id": "CMP183",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp183",
+      "line": 1746,
+      "content_sha256": "aa34d6642086fbd4a28748c906cacb3f937a4d890cbfd53b0891c5ae7fd63cfa",
+      "captured_text": "### CMP183\n\nU464 — Codex, 19 septembre 2026, **proposition méthodologique**. ELM269/276/289/290/291 → MOD012 Information, nouveau terme proposé du glossaire méthodologique ; aucun changement du catalogue métier ou de son schéma. Comparaison de concepts, pas de fonctions produits.\n\nPoints communs : sens en contexte, explicitation des capacités et possibilité de décrire le métier indépendamment des formats informatiques. Différence décisive : Information Concept ne garantit pas l’élémentarité logique ; Data element porte aussi une problématique de représentation. Le regroupement cohérent n’est donc pas, à lui seul, une preuve de fait élémentaire.\n\nChoix proposé : garder Information, avec définition FLOW et critère explicite de minimum utile au sens étudié. Bénéfice : décrire les engagements, références et résultats nécessaires aux capacités sans fabriquer un schéma implémentable. Compromis : critère contextuel à éprouver sur les pilotes, pas une unité universelle normée. Aucune équivalence de tous ces concepts, nouvelle validation ou bijection Information/capacité/table ; le fait élémentaire n’est pas assimilé au fait de gestion U461. Raisons, alternatives et limites dans [l’analyse](../modeles/backlog/information-definition-U464.yaml) et [la recherche](../audits/2026-09-19-information-U464/recherche.md)."
+    },
+    {
+      "id": "CMP184",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp184",
+      "line": 1754,
+      "content_sha256": "60c9bc740ae0f7fa59df2fcbe5a4404e7ca7d3146aef6fac50a929cace498d43",
+      "captured_text": "### CMP184\n\nU465/U466 — Codex, 19 septembre 2026, **rapprochements proposés**. ELM242/280/282/283/284/285/220/248 et appuis méthodologiques ELM269/276/CMP183 → quatorze fiches pilotes PINFO-001 à PINFO-014 de [information-cards-U465.yaml](../modeles/backlog/information-cards-U465.yaml), état du 19 septembre. Relations : appuis sémantiques et méthodologiques, pas équivalences de catalogue.\n\nMicrosoft éclaire demande, réponse fournisseur et confirmation, produit/variante et propriétés, maintien de liens de couverture et réservation souple. GS1 borne la différence référence/instance. Microsoft et Oracle illustrent les associations quantité–date. Les sources primaires, passages, dates, points communs, différences et raisons de chaque terme et définition sont portés par les fiches et leurs huit groupes de comparaison. ELM285 et les appuis d’architecture reprennent les consultations U461/U464 du même jour ; aucune nouvelle lecture intégrale revendiquée. Une tentative supplémentaire d’ouverture de la page ELM285 n’a pas abouti ; aucun constat nouveau n’en est tiré.\n\nAdaptation proposée : séparer les sens utiles aux capacités, décrire leurs conditions et leurs liens, sans importer lignes, états, tables, autorités ou automatismes des produits. Bénéfice : expliquer ce qui est demandé, proposé, engagé, réalisé, connu, affecté ou réservé. Compromis : noms descriptifs FLOW lorsque la maille n’a pas d’équivalent exact établi ; absence d’équivalence ne prouve aucune innovation.\n\nU466 adopte seulement la distinction et le lien entre proposition et engagement de satisfaction, avec coexistence possible. Les sources éditeurs n’en font pas une norme universelle et cet accord ne valide pas les autres fiches, comparaisons ou règles d’achat. Aucun valideur des rapprochements, aucune source maîtresse Beaumanoir ni réalisation installée déduite."
+    },
+    {
+      "id": "CMP185",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp185",
+      "line": 1765,
+      "content_sha256": "15a8c5a428f1268f0908fca5083065082b12de9bbc5687a94be36bc7652107bc",
+      "captured_text": "### CMP185\n\nU470 — Codex, 19 septembre 2026, rapprochements proposés : CSCMP, Microsoft SCM et Oracle Supply Chain Orchestration → universe-supply ; CSCMP et Oracle → TER031. Backlog courant capturé avant correction dans l’audit U470. Comparaison du nom et du périmètre de l’univers, pas synthèse des capacités. Le SCM large sert de contraste de périmètre ; le nom Oracle atteste un usage sans équivalence de maille. Le choix FLOW concentre l’orchestration, garde les maîtres externes et leurs projections ingérées, et distingue les exécutants. Bénéfice : expliquer la frontière au lecteur novice. U373 conserve son nom adopté ; aucun nouveau valideur des rédactions ou correspondances. Sources, passages et limites dans les fiches et sources.yaml de l’audit."
+    },
+    {
+      "id": "CMP186",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp186",
+      "line": 1769,
+      "content_sha256": "7137ee015963ef5230d1726cf9f5c7abe48ed375362c0f506a4d8acfa8b2c9ae",
+      "captured_text": "### CMP186\n\nU471 — Codex, 19 septembre 2026, rapprochements proposés sur les 47 fiches identifiées dans single-references.json de l’audit U470. Une seconde source primaire pertinente est ajoutée à chacune ; les comparaisons préexistantes et les définitions sont préservées. [Correspondances détaillées](../audits/2026-09-19-base-U470/additions.yaml) : élément externe, cible, relation, points communs, différences, choix du terme et de définition, édition, passage, date et limites. État comparé : backlog du 19 septembre avant ces ajouts, conservé dans before/. Les sources d’un même éditeur sont signalées comme telles ; deux documents ne prouvent pas un consensus. Les recouvrements partiels restent partiels, notamment comportements plus larges que leurs exemples. Bénéfice : permettre une revue argumentée sans importer les frontières des produits. Aucun valideur des rapprochements, changement de responsabilité, réouverture de U431 ou publication implicite."
+    },
+    {
+      "id": "CMP187",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp187",
+      "line": 1774,
+      "content_sha256": "b97016acff563755610f4cdcec22cfecaa62907293203be3ba157a731c17dd9f",
+      "captured_text": "### CMP187\n\nU472 — Codex, 19 septembre 2026. Cibles : retrait de universe-case et TER067, correction de TER064 et PRINCIPLE-CASE-SUPPLY-ORDERS ; état avant modification dans [l’audit U472](../audits/2026-09-19-business-services-U472/before/).\n\nConstats : ELM323 (MKT02) décrit la notion de service exposé ; ELM324 (MKT14) décrit le dossier de traitement client. Interprétation : ni un service ni un dossier ne justifient à eux seuls un univers réunissant les grands processus transverses de l’entreprise. Les deux sources éclairent des concepts différents, pas deux taxonomies concordantes. Appuis méthodologique et sémantique partiels ; aucune équivalence Business Services/Commerce.\n\nChoix local demandé par Laurent : retirer l’univers vide et différer le commerce après la Supply Chain. Le terme Case est conservé sans rattachement à cet univers ; son périmètre générique dépasse l’exemple Microsoft. Bénéfice : supprimer une structure sans contenu et concentrer la revue. Compromis : les autres responsabilités de l’entreprise restent hors du périmètre étudié. Le retrait est adopté par U472 ; les reformulations et rapprochements restent éditoriaux, sans validation globale ni publication."
     },
     {
       "id": "CMP003",
@@ -12585,6 +13209,558 @@
       "line": 2643,
       "content_sha256": "989734be4bfe25c6bbded4fceba98d1b5c4533105a65de7e5a0d3645832078f6",
       "captured_text": "### ELM255\n\nU429 — Sources primaires consultées le 19 septembre 2026 : Microsoft Dynamics 365 Commerce, [Omnichannel payments overview](https://learn.microsoft.com/en-us/dynamics365/commerce/omni-channel-payments), Key terms, Overview et Basic principle : autorisation, capture et références de remboursement intégrées aux parcours Commerce. Page évolutive ouverte ; aucune assimilation de capture à crédit bancaire définitif.\n\nSAP Learning, [Executing the Billing Process and the Integration to SAP S/4HANA Finance](https://learning.sap.com/courses/exploring-sap-s-4hana-sales-essentials/executing-the-billing-process-and-the-integration-to-sap-s-4hana-finance_e2dd5db3-73c3-4cda-8ad5-1e7f39f04fba), page ouverte, cours Sales Essentials : création du document de facturation dans Sales et intégration à Finance. Complément primaire indexé SAP Help, [Sales Billing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/4c74c957b7018809e10000000a4450e5.html), création/gestion de documents de facturation et transfert à la comptabilité financière. Version précise du cours non affichée dans les passages consultés. Nature : responsabilités produit et processus, pas attribution universelle des capacités ni preuve d’organisation Beaumanoir."
+    },
+    {
+      "id": "ELM256",
+      "path": "marche/elements.md",
+      "anchor": "elm256",
+      "line": 2650,
+      "content_sha256": "c4bb9e9808de002280d7179c5b1b881a8f9a15a74336abbc7b1c310819a85fb6",
+      "captured_text": "### ELM256\n\nOracle E-Business Suite Order Management 12.2 — Line Sets / Fulfillment Sets. Source primaire ouverte le 19 septembre 2026 : https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T336783.htm ; sections Line (Ship or Arrival) Sets, Set Function Details, Fulfillment Sets. Mécanisme produit reliant des lignes d’une même commande sous conditions communes. La portée multi-commandes n’est pas démontrée ; aucun identifiant natif de capacité ni définition normative d’entreprise. Synthèse et limites : modeles/backlog/order-structuring-review-U439.yaml. Aucune réalisation Beaumanoir déduite."
+    },
+    {
+      "id": "ELM257",
+      "path": "marche/elements.md",
+      "anchor": "elm257",
+      "line": 2654,
+      "content_sha256": "77622006c72035092a072ac37f65a67d9598dbe6593da48d85f509b5d594f52a",
+      "captured_text": "### ELM257\n\nSAP Fashion Management, ERP 6.0 EHP8 SP24 — General Requirements Grouping. Passages primaires indexés consultés le 19 septembre 2026 : https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/c617f055aa2a6d55e10000000a4450e5.html?locale=en-US&state=PRODUCTION&version=6.18.24 ; Use, Grouping Rule and Grouping Criteria, Individual Group Release Rules. Fonction produit de regroupement de besoins ; ne prouve pas un ensemble transactionnel persistant. Synthèse originale sans reproduction ; limites détaillées dans l’annexe U439."
+    },
+    {
+      "id": "ELM258",
+      "path": "marche/elements.md",
+      "anchor": "elm258",
+      "line": 2658,
+      "content_sha256": "c5e0c3302469741e49ddcf65782d79d0c0102b81e8711cda67e2f83b3a08e254",
+      "captured_text": "### ELM258\n\nInfor LN 10.7 Procurement — Commingling purchase orders. Texte primaire ouvert le 19 septembre 2026 : https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html ; Header level commingling, Line level commingling, Approval. Fonction produit de fusion de commandes d’achat avant approbation, distincte du seul regroupement logistique. Les règles techniques de suppression et de calcul des prix ne sont pas adoptées dans FLOW. Aucun constat installé ni équivalence universelle aux autres Orders. Synthèse originale ; détails dans l’annexe U439."
+    },
+    {
+      "id": "ELM259",
+      "path": "marche/elements.md",
+      "anchor": "elm259",
+      "line": 2662,
+      "content_sha256": "9ca912453772914613bf1f3a465d5c8cf490d82a7d62e47d5f3f8fc34607d0ea",
+      "captured_text": "### ELM259\n\nOMG DMN — MKT43, présentation officielle https://www.omg.org/dmn/, paragraphes sur la spécification des décisions/règles et la complémentarité DMN/BPMN/CMMN. Texte primaire consulté le 19 septembre 2026 ; page évolutive sans édition précise de spécification étudiée. Concept méthodologique, sans identifiant natif de capacité. Reformulation : une décision peut être décrite distinctement du processus ou du cas qui la mobilise. Aucun classement individuel FLOW ni taxonomie en six catégories n’est prescrit ; synthèse originale, sans reproduction substantielle.\n\n### Relecture U451 — ELM052 et ELM234\n\n19 septembre 2026 : textes primaires rouverts. [BIZBOK Guide 15.0, Appendix A](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf), page imprimée 456, entrées Capability et Capability Behavior ; [Microsoft Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting), présentation et modes de déclenchement. Le premier éclaire la façon d’agir selon les circonstances ; le second illustre des politiques de comptage. Les sept formes FLOW et leurs affectations ne sont prescrites par aucune de ces sources. Synthèse originale, sans reproduction intégrale ni preuve de réalisation Beaumanoir."
+    },
+    {
+      "id": "ELM260",
+      "path": "marche/elements.md",
+      "anchor": "elm260",
+      "line": 2670,
+      "content_sha256": "277f85111ec02a07c1ed1c3850c5249446a9b1d0370c6495a2f3e586f982205a",
+      "captured_text": "### ELM260\n\n### Audit U453/U454 — convention documentaire des entrées suivantes\n\nELM260–277 : consultation du 19 septembre 2026. Les libellés ci-dessous sont natifs ; les identifiants ELM sont locaux, aucun identifiant natif de capacité n’est prétendu. Les définitions sont résumées dans nos mots, sans citation intégrale ni importation des modèles. Le [registre de sources](../audits/2026-09-19-atlas-ux-ui-U453/sources.md) fournit pour chaque repère S l’URL, la section, l’édition connue et l’accès réellement obtenu. Aucune réalisation Beaumanoir n’est démontrée par ces sources.\n\nMKT25 — LeanIX, Meta Model / Data Object Modeling Guidelines, métamodèle v4 et documentation évolutive. S03–S04, Data Object / Modeling scope : concepts et relations d’un référentiel d’architecture. Reformulation : objets de données reliés aux autres catalogues, sans profondeur d’un dictionnaire technique exhaustif. Textes primaires indexés ; ne pas assimiler Data Object à toute structure physique."
+    },
+    {
+      "id": "ELM261",
+      "path": "marche/elements.md",
+      "anchor": "elm261",
+      "line": 2678,
+      "content_sha256": "d5690161cff32cbadb1921709f4251dff82d0fed162d8c90f12a3a50522e9fea",
+      "captured_text": "### ELM261\n\nMKT26 — Ardoq, Data Lineage Metamodel / Business Capability Modeling, documentation évolutive. S05–S06, Data Entity / Accesses / Owns / Perspectives : concepts et vues d’un outil EA. Reformulation : entités, responsabilités et usages peuvent se lire selon plusieurs questions. Texte primaire indexé, accès direct partiellement bloqué ; modèles détaillés des messages hors du périmètre décrit."
+    },
+    {
+      "id": "ELM262",
+      "path": "marche/elements.md",
+      "anchor": "elm262",
+      "line": 2682,
+      "content_sha256": "0b26763bad9e63f2f7ecdc60e29d20942c47ce819bc4d6d47bab99b028190b83",
+      "captured_text": "### ELM262\n\nMKT44 — Horizzon, Color views / Highlight views / Combining filters. S07, documentation évolutive : fonctions de présentation. Reformulation : filtres et légende rendent une propriété lisible dans une vue. Aucun essai de performance, d’ergonomie ou de partage effectué."
+    },
+    {
+      "id": "ELM263",
+      "path": "marche/elements.md",
+      "anchor": "elm263",
+      "line": 2686,
+      "content_sha256": "1eac89309931782ad85b47580c07202488c1b1c3561ad5ec967d64ea71f66c65",
+      "captured_text": "### ELM263\n\nMKT45 — OrbusInfinity, Views / Recent Views / Configurable Dashboards & Sites. S08, documentation et présentation évolutives : fonctions et positionnement produit. Reformulation : plusieurs vues peuvent servir différents destinataires. Aucun gain chiffré repris ni essai utilisateur du produit."
+    },
+    {
+      "id": "ELM264",
+      "path": "marche/elements.md",
+      "anchor": "elm264",
+      "line": 2690,
+      "content_sha256": "e937d7d1a52a3e08131be7fdbf2d185fdadf75887f58fa94f64366372f0a3a75",
+      "captured_text": "### ELM264\n\nMKT04 — SAP Reference Business Architecture / Business Data Catalog. S01–S02, cours SAP Learning sans édition applicative établie : concepts méthodologiques. Reformulation : contenu métier et contenu de solution sont distingués, les informations métier sont reliées aux capacités. Cette pratique SAP est comparée aux cadres indépendants, sans lui donner autorité sur FLOW."
+    },
+    {
+      "id": "ELM265",
+      "path": "marche/elements.md",
+      "anchor": "elm265",
+      "line": 2694,
+      "content_sha256": "528d2a869474975937863dc57204c3217481dfe241bf19a3faaa44395ca4aa63",
+      "captured_text": "### ELM265\n\nMKT14 — Dynamics 365 Finance & Operations, Data entities overview / Categories of entities. S11, documentation évolutive : abstraction de données de produit. Reformulation : des entités d’intégration regroupent des données physiques selon des concepts fonctionnels ; leurs catégories ne définissent pas les capacités d’entreprise FLOW."
+    },
+    {
+      "id": "ELM266",
+      "path": "marche/elements.md",
+      "anchor": "elm266",
+      "line": 2698,
+      "content_sha256": "4deac8b5cf85e262235c468b6935299335d7ec90d439b9a8f8f82d9ad7954bb8",
+      "captured_text": "### ELM266\n\nMKT14 — Dynamics 365, Business events overview / Business event catalog / Idempotency. S12, page du 22 janvier 2026 : mécanisme de notification produit. Reformulation : une notification métier et un export de données répondent à des usages différents. Aucun choix d’event sourcing ni contrat de message FLOW déduit."
+    },
+    {
+      "id": "ELM267",
+      "path": "marche/elements.md",
+      "anchor": "elm267",
+      "line": 2702,
+      "content_sha256": "a3d4dc4d5e4e4f963130af915d45904963cdd6e40e00dc64f8a590bd7601c90d",
+      "captured_text": "### ELM267\n\nMKT13 — SAP S/4HANA, Purchase Order (OData V4) / Create Material Documents. S13–S14, Header / Item et création, éditions applicatives non établies : API et structures produit. Reformulation : commande et document ERP ont des représentations structurées. Textes primaires indexés ; aucun schéma, champ ou statut importé dans FLOW."
+    },
+    {
+      "id": "ELM268",
+      "path": "marche/elements.md",
+      "anchor": "elm268",
+      "line": 2706,
+      "content_sha256": "cf6ff39294499f2942ad9335674220ec23a111767a63de1514bf244de7ec1275",
+      "captured_text": "### ELM268\n\nMKT42 — GS1, Electronic Product Code Information Services (EPCIS). S15, présentation du 30 mai 2025 et introduction du standard : modèle d’échange d’événements de traçabilité. Reformulation : documenter un fait et son contexte est utile aux échanges interentreprises. Pas un modèle de tous les faits de gestion ; aucune édition normative ni adoption de format."
+    },
+    {
+      "id": "ELM269",
+      "path": "marche/elements.md",
+      "anchor": "elm269",
+      "line": 2710,
+      "content_sha256": "a564c32625bc0a4bf2cbd4c501ed608d7eafefbc9c463fd9bdbd02867d2615ba",
+      "captured_text": "### ELM269\n\nMKT03 — Guild, Information Concept, Metamodel Guide v3.0, septembre 2024, §§5.2–5.3.1. S09 : concept d’architecture métier et relations. Reformulation : les capacités utilisent ou modifient des informations métier. Le rapprochement FLOW ne reprend pas toute la taxonomie du guide."
+    },
+    {
+      "id": "ELM270",
+      "path": "marche/elements.md",
+      "anchor": "elm270",
+      "line": 2714,
+      "content_sha256": "9356d56e59c9b919b6624ac59a05cf3ef18fe8e878326e53b77dec55fd1e041c",
+      "captured_text": "### ELM270\n\nMKT02 — ArchiMate 4, C260, 27 avril 2026. S10, notice Details / Main changes : évolution d’un langage de modélisation. Reformulation : la version importe pour les concepts et relations disponibles. Notice officielle consultée ; norme complète non lue, aucune conformité FLOW déduite."
+    },
+    {
+      "id": "ELM271",
+      "path": "marche/elements.md",
+      "anchor": "elm271",
+      "line": 2718,
+      "content_sha256": "a415091d078a73238d50a8acfef031ad7574031eb8589dcefbf248fdea8784d7",
+      "captured_text": "### ELM271\n\nMKT48 / MKT49 — Fluent 2 Color et Fiori Colors v1-145. S17–S18, palettes et usages : principes de design. Reformulation : neutralité, marque et sens de la couleur remplissent des rôles distincts. Proposition de palette FLOW, pas application obligatoire d’une charte éditeur."
+    },
+    {
+      "id": "ELM272",
+      "path": "marche/elements.md",
+      "anchor": "elm272",
+      "line": 2722,
+      "content_sha256": "500f9e1ae44f28ee1d93dacc9e6cb93421ab4991b5999dd7f57a5bf46e35c327",
+      "captured_text": "### ELM272\n\nMKT47 — Progressive Disclosure, Jakob Nielsen, 4 décembre 2006. S19 : principe UX. Reformulation : donner accès aux développements depuis l’essentiel. Principe consulté, bénéfice de la maquette Atlas encore à éprouver par des tâches utilisateurs."
+    },
+    {
+      "id": "ELM273",
+      "path": "marche/elements.md",
+      "anchor": "elm273",
+      "line": 2726,
+      "content_sha256": "a2fd420b812e5f0dd76363799e5a1c39837c7f985f6e1bcb459855cecc318239",
+      "captured_text": "### ELM273\n\nMKT46 — WCAG 2.2, Understanding 1.4.3 / 1.4.1 / 2.5.8. S20a–c : critères et explications officielles sur contraste, couleur et cibles. Reformulation : lisibilité et signification ne reposent pas sur la couleur seule ; tailles et exceptions doivent être évaluées dans leur contexte. Les observations Atlas ne constituent pas un audit de conformité exhaustif."
+    },
+    {
+      "id": "ELM274",
+      "path": "marche/elements.md",
+      "anchor": "elm274",
+      "line": 2730,
+      "content_sha256": "75b384443047673b4a7f2731e2c29e4e8a005a0d03a5864594c3059caa2c35e5",
+      "captured_text": "### ELM274\n\nMKT50 — Domain analysis / Bounded contexts, page du 25 février 2026. S16 : méthode de conception contextualisée. Reformulation : la cohésion métier et les dépendances éclairent le découplage ; une carte de capacités ne fournit pas seule les limites d’un service logiciel. Aucun style d’architecture imposé."
+    },
+    {
+      "id": "ELM275",
+      "path": "marche/elements.md",
+      "anchor": "elm275",
+      "line": 2734,
+      "content_sha256": "10154b9e4babeca4dd1a94d3d4a4117ceca2031588cc96fc4ad8b9097aaf2001",
+      "captured_text": "### ELM275\n\nMKT20 — Oracle Fusion Cloud Procurement 26C, Purchase Orders / Lines / Schedules / Distributions. S21 : ressources REST et structure d’intégration. Reformulation : le détail du contrat produit inclut des préoccupations plus larges que le périmètre Supply FLOW. Aucun niveau ou champ comptable ajouté à la cartographie."
+    },
+    {
+      "id": "ELM276",
+      "path": "marche/elements.md",
+      "anchor": "elm276",
+      "line": 2738,
+      "content_sha256": "804d9865e261830ad148a04337b10978a56ce7e14862aa71c22a6f6e472aa892",
+      "captured_text": "### ELM276\n\nMKT01 — TOGAF Series Guide G190, Information Mapping, avril 2019, chapitres 4–6. S22–S23 : méthode d’architecture ; carte d’information et modèle de données distingués. Document primaire lu sur hébergement tiers, présence de G190 confirmée dans les ressources officielles actuelles ; identité avec la distribution actuelle non contrôlée."
+    },
+    {
+      "id": "ELM277",
+      "path": "marche/elements.md",
+      "anchor": "elm277",
+      "line": 2742,
+      "content_sha256": "040c86a2dc27db8dd73cf6b5e0207ea03cffc722060ef64772d463f10778abca",
+      "captured_text": "### ELM277\n\nMKT01 — TOGAF 9.2, 2018, Phase C: Data Architecture / Data Entity–Business Function Matrix, chapitres 9 et 31. S24 : méthode et artefacts. Reformulation : données, fonctions et applications peuvent être rapprochées par des vues distinctes. Copie primaire historique consultée ; édition 10 détaillée inaccessible, aucun report automatique de ses paragraphes à cette édition."
+    },
+    {
+      "id": "ELM278",
+      "path": "marche/elements.md",
+      "anchor": "elm278",
+      "line": 2746,
+      "content_sha256": "913eb1969bdc380d505f2aea16519f440218a87bfcba9e32a8c92b17ecc83b39",
+      "captured_text": "### ELM278\n\nU455/U456 — MKT01, TOGAF 9.2, 2018, chapitre 7, §§7.3.1 et 7.5.3–7.5.6, pages imprimées 81 et 89–91. [Document primaire](https://governance.foundation/assets/frameworks/togaf/c182e%20-%20TOGAF%209.2.pdf) lu le 19 septembre 2026 sur hébergement tiers, copie d’évaluation non redistribuée. Libellés natifs : Business Capability Mapping, Value Stream Mapping, Process Modeling ; concepts et techniques, pas identifiants de capacités. Reformulation : plusieurs vues complémentaires décrivent le métier. Ce passage ne prescrit pas les anciennes couches FLOW ; édition historique, pas vérification de la 10e édition. La distinction de périmètre Atlas est une décision locale, non une obligation TOGAF."
+    },
+    {
+      "id": "ELM279",
+      "path": "marche/elements.md",
+      "anchor": "elm279",
+      "line": 2750,
+      "content_sha256": "5b1893e4c467e66f26a82b8bc307cf0dfd4fb650edbb4375056075a08a179149",
+      "captured_text": "### ELM279\n\nU455/U456 — MKT14, Microsoft Dynamics 365 Intelligent Order Management, [Overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), sections Components / Intelligent Order Management app / Providers / Orchestration. Texte primaire ouvert le 19 septembre 2026, documentation évolutive, édition produit non fixée. Fonctions et intégrations d’un produit, sans identifiant natif de capacité métier. Reformulation : capture de commandes, orchestration et partenaires de fulfillment coopèrent via des informations. Recouvrement partiel de l’exemple de Laurent ; ni preuve d’un déploiement Beaumanoir ni prescription de trois domaines ou de couches. Synthèse sélective et lien seulement."
+    },
+    {
+      "id": "ELM280",
+      "path": "marche/elements.md",
+      "anchor": "elm280",
+      "line": 2754,
+      "content_sha256": "e309504e69f700223b4e01583b78e3288fba2c82b1689c869e0f7a30e3712043",
+      "captured_text": "### ELM280\n\nU460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information). Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Passages : Product definition ; Distribution, export, and import of product data ; Product masters and product variants. Nature : concepts et fonctions produit, sans identifiant natif de capacité. Reformulation : références, variantes et import de données produit ; la création des maîtres est aussi couverte. Limite : aucune dimension obligatoire FLOW ni équivalence de catalogue. Synthèse sélective, pas de reproduction."
+    },
+    {
+      "id": "ELM281",
+      "path": "marche/elements.md",
+      "anchor": "elm281",
+      "line": 2758,
+      "content_sha256": "4ca94fe2f48cf23fe9db9cb21c3f354a477b95a7c9c1bff965279018b4b05320",
+      "captured_text": "### ELM281\n\nU460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data), section Master and reference data. Source primaire consultée le 19 septembre 2026 ; documentation évolutive du mode Warehouse management only, édition non figée. Nature : import et maintien de données produit, sans identifiant natif de capacité. Reformulation : une origine de maintien est configurée pour une référence dans ce contexte produit. Limite : ne prouve ni l’autorité métier FLOW ni un maître unique d’entreprise ; contrats techniques non transposés. Synthèse et lien seulement."
+    },
+    {
+      "id": "ELM282",
+      "path": "marche/elements.md",
+      "anchor": "elm282",
+      "line": 2762,
+      "content_sha256": "78a7ae2fcc97b098ebfbef241db51ee6098bcbe844b59cb7215fb57c83641c0d",
+      "captured_text": "### ELM282\n\nU460 — MKT42, GS1 GO, [How does serialisation differ from unique identification in the GS1 System?](https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-). FAQ officielle consultée le 19 septembre 2026 ; page évolutive, pas une édition des spécifications normatives. Nature : explication d’identification ; pas d’identifiant natif de capacité. Reformulation : GTIN et numéro de série distinguent une instance. Limite : pas de conformité globale GS1 déduite ni sérialisation imposée à toutes les Product Units FLOW. Synthèse sélective seulement."
+    },
+    {
+      "id": "ELM283",
+      "path": "marche/elements.md",
+      "anchor": "elm283",
+      "line": 2766,
+      "content_sha256": "0072edb551b01904dc9f6e28cb1b49a8531b3a2d92db79761d51697134d71b17",
+      "captured_text": "### ELM283\n\nU460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), section Sample use case for soft reservation. Source primaire relue le 19 septembre 2026 ; documentation évolutive, édition non figée. Nature : fonction produit, aucun identifiant natif de capacité. Reformulation : une réservation souple réduit la disponibilité à réserver sans mouvement physique. Le respect effectif du refus dépend des règles des applications participantes. Limite : les types Microsoft ne deviennent pas les types FLOW ; aucune réalisation installée déduite. Appui au pilote Reservation, sans nouvelle équivalence."
+    },
+    {
+      "id": "ELM284",
+      "path": "marche/elements.md",
+      "anchor": "elm284",
+      "line": 2770,
+      "content_sha256": "13f7f9b8ebe89a1190c6d2414266363c1c890e57b8dcc6333248c75f112bfd4b",
+      "captured_text": "### ELM284\n\nU460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Source primaire relue le 19 septembre 2026 ; mise à jour affichée le 27 juillet 2026, contexte Dynamics 10.0.48 ou ultérieur. Sections : What data is preserved ; Control how on-hand inventory is pegged to confirmed demand. Nature : fonction produit, sans identifiant natif de capacité. Reformulation : la préservation des liens de ressource dépend de réglages distincts de la date confirmée. Limite : ce mécanisme recouvre plusieurs responsabilités FLOW ; pas d’identité avec Supply Assignment seule. Appui au pilote, pas nouvelle règle FLOW."
+    },
+    {
+      "id": "ELM285",
+      "path": "marche/elements.md",
+      "anchor": "elm285",
+      "line": 2774,
+      "content_sha256": "15daa76e47aa5163da5b2de2fb802e21e2256a54f7e73ce72717e713e212fbc7",
+      "captured_text": "### ELM285\n\nU461 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Record the receipt of goods on the purchase order](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order), section Record receipt of goods, étapes 4–7. Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Nature : exemple produit, sans identifiant natif de capacité. Reformulation : un document identifié rend compte de la réception enregistrée. Limite : cet exemple n’établit pas une convention universelle fait–document, ni ses règles de correction. Synthèse et lien seulement."
+    },
+    {
+      "id": "ELM286",
+      "path": "marche/elements.md",
+      "anchor": "elm286",
+      "line": 2778,
+      "content_sha256": "e2a3dcbe5ef46f15af1b92d96e302fde1e1f3b513c7af08397a5caa557e78d42",
+      "captured_text": "### ELM286\n\nU462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Confirm sales orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders), sections Confirm a single sales order / Confirm multiple sales orders. Consulté le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Fonction produit sans identifiant natif de capacité. Reformulation : confirmation documentaire et état documentaire sont explicités. Limite : cet usage n’établit pas un équivalent lexical complet de Fulfillment Commitment. Appui à l’alternative discutée U444 ; synthèse sélective, pas de reproduction."
+    },
+    {
+      "id": "ELM287",
+      "path": "marche/elements.md",
+      "anchor": "elm287",
+      "line": 2782,
+      "content_sha256": "69ab410cd5252bf739c266345bc35ca00718ec8f3e4f57f76f28274650fbe501",
+      "captured_text": "### ELM287\n\nU462 — MKT13, SAP S/4HANA Fashion, [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4), sections Supply Assignment (ARun) / Supply Assignment Scenarios. Consulté le 19 septembre 2026 ; cours évolutif sans édition unique affichée. Fonction produit sans identifiant natif de capacité. Reformulation : le scénario ARun crée un lien ressource–demande qui empêche l’usage par une autre demande. Écart explicite avec FLOW U436, qui attribue ce dernier effet à Reservation. Le vocabulaire repris ne vaut donc pas équivalence complète. Synthèse et lien seulement."
+    },
+    {
+      "id": "ELM288",
+      "path": "marche/elements.md",
+      "anchor": "elm288",
+      "line": 2786,
+      "content_sha256": "2837746cc7b6d602fde19d48a768fb87b1d32f406dedb996ee1337c50114e361",
+      "captured_text": "### ELM288\n\nU462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Purchase order overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview), introduction et Purchase order status. Consulté le 19 septembre 2026 ; documentation évolutive, édition produit non figée. Concept documentaire, pas identifiant natif de capacité. Reformulation : achat de biens ou services, suivi de la réception et progression documentaire. Limite : FLOW reprend le nom métier pour une capacité d’action distincte de l’objet ; pas de transposition des états ERP ni de périmètre financier. Synthèse et lien seulement.\n\n### Relecture U463 — ELM019 et ELM279\n\n19 septembre 2026 : textes primaires reconsultés pour la définition de universe-supply. ELM019, TOGAF G189 (juin 2018), §2 et §2.1.2, pages imprimées 2–3 : distinction entre aptitudes métier et moyens de réalisation. Document primaire sur le [miroir tiers déjà référencé](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf), sans copie ni redistribution ; le portail officiel TOGAF 9.2 redirige vers une authentification. Appui méthodologique, pas définition de l’univers Supply ni examen de la 10e édition.\n\nELM279, Microsoft [Intelligent Order Management overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), mise à jour affichée le 30 janvier 2026 : Introduction, Components, Orchestration, Inventory visibility service et Fulfillment optimization. Réexamen à périmètre FLOW inchangé ; le rapprochement demeure partiel. Les composants techniques ne deviennent pas des domaines. Raisons du choix et limites dans la fiche universe-supply ; CMP182. Aucune réalisation Beaumanoir ni origine SAP des anciennes couches déduite."
+    },
+    {
+      "id": "ELM289",
+      "path": "marche/elements.md",
+      "anchor": "elm289",
+      "line": 2796,
+      "content_sha256": "0fac20a43948cadba338e6962de13d779e636b897453be580cfad018b8e1aae1",
+      "captured_text": "### ELM289\n\nU464 — MKT51 : Information, Data, Data element. ISO/IEC 15944-1:2025 et ISO 20691:2022, extraits officiels consultés le 19 septembre 2026. Sens en contexte, représentation, indivisibilité contextuelle ; aucune définition de bloc minimal Atlas. URL, localisateurs et renvois normatifs dans [l’analyse structurée](../modeles/backlog/information-definition-U464.yaml). Pas d’identifiant natif de capacité ; synthèse originale, modèles sectoriels non adoptés."
+    },
+    {
+      "id": "ELM290",
+      "path": "marche/elements.md",
+      "anchor": "elm290",
+      "line": 2800,
+      "content_sha256": "5d3df85f499c16ed578f925f819ab1a36a5c6c4f4925a2913cf37f49b4ed89d0",
+      "captured_text": "### ELM290\n\nU464 — MKT52 : Elementary fact / fact type is elementary in conceptual schema. SBVR 1.5, octobre 2019, §24.2.1 p.222 et §24.2.2.1 p.255, texte primaire consulté le 19 septembre 2026. Critère logique d’irréductibilité dans un schéma ; sens plus strict que le minimum utile à une fiche. URL et limites dans [l’analyse](../modeles/backlog/information-definition-U464.yaml). Aucun fait de gestion FLOW ou document déduit d’un fait logique."
+    },
+    {
+      "id": "ELM291",
+      "path": "marche/elements.md",
+      "anchor": "elm291",
+      "line": 2804,
+      "content_sha256": "ff6a84e89a8b8270e49364ba716cbc266db8673c085910ac16ce7aa7cc24839a",
+      "captured_text": "### ELM291\n\nU464 — MKT53 : What Is An Elementary Fact?, Terry Halpin, 1993, réédition sur orm.net. Pages 2–3 et 6–8 consultées le 19 septembre 2026 : les contraintes peuvent changer la décomposition pertinente. Appui théorique, pas adoption d’ORM ni preuve que nos exemples sont logiquement irréductibles. Localisateurs dans [l’analyse](../modeles/backlog/information-definition-U464.yaml).\n\n### Relecture U464 — ELM269 et ELM276\n\n19 septembre 2026 : Guild, Metamodel Guide v3.0, §§5.3–5.3.1 ; TOGAF G190, chapitres 1–2 et 4–6, éditions et accès déjà référencés. Leur concept d’information éclaire la relation aux capacités ; il ne garantit pas une maille indivisible. Pas de reprise automatique des correspondances objets/capacités de la Guild. Sources détaillées dans l’analyse U464 ; CMP183."
+    },
+    {
+      "id": "ELM292",
+      "path": "marche/elements.md",
+      "anchor": "elm292",
+      "line": 2813,
+      "content_sha256": "34c94afd4f31e030994eacb7fe8bb34dd4c7037431087b3b87889808d724fcf1",
+      "captured_text": "### ELM292\n\nU470/U471 — MKT41, CSCMP, Définitions professionnelles. [SCM Definitions and Glossary of Terms](https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx). Page sans édition affichée. Nature : Définition professionnelle. Passage consulté le 19 septembre 2026 : Definition of Supply Chain Management ; Boundaries and Relationships. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour universe-supply, TER031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM293",
+      "path": "marche/elements.md",
+      "anchor": "elm293",
+      "line": 2818,
+      "content_sha256": "1b1283e7816fd73aacee5906a5d1531ad5780f833e0da32788e8f6cc86851018",
+      "captured_text": "### ELM293\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Welcome to Dynamics 365 Supply Chain Management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome). Page mise à jour le 10 septembre 2025. Nature : Périmètre de produit. Passage consulté le 19 septembre 2026 : Core concepts and tasks. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour universe-supply ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM294",
+      "path": "marche/elements.md",
+      "anchor": "elm294",
+      "line": 2823,
+      "content_sha256": "d2c764adb3f99441fa504e364eab7d17e2ce7f3b10ce2ce8e39471c700d1d25e",
+      "captured_text": "### ELM294\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Supply Chain Orchestration. [Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html). 26B. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction ; receive requests, create supply orders, manage changes ; drop shipment. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV059, BHV068, universe-supply, TER031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM295",
+      "path": "marche/elements.md",
+      "anchor": "elm295",
+      "line": 2828,
+      "content_sha256": "aa35eac66cc112ac90e0c743c6e5e746c875e5695290e92449a8a390548c7aea",
+      "captured_text": "### ELM295\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Product Hub. [Overview of Item Batches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html). 26A. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction et options des lots d’import. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D08, D08.d ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM296",
+      "path": "marche/elements.md",
+      "anchor": "elm296",
+      "line": 2833,
+      "content_sha256": "700b0e0a2f1eacfc47b9bbba8f26d68d36bede57347e5cff3e71896d68a79a80",
+      "captured_text": "### ELM296\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals). Page mise à jour le 29 août 2025. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Types of inventory journals : Transfer, Item arrival, Counting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D01.f ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM297",
+      "path": "marche/elements.md",
+      "anchor": "elm297",
+      "line": 2838,
+      "content_sha256": "8c829bb47d17d34bf5fe70ab0b30c4726d8f9a74b7a86f45e7d21911c5185cbe",
+      "captured_text": "### ELM297\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Inventory Management. [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). 25D. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Supply and demand ; quantities and dates ; ATP/nettable filters. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D01.c ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM298",
+      "path": "marche/elements.md",
+      "anchor": "elm298",
+      "line": 2843,
+      "content_sha256": "85156f493a1a0c87cf5cdd295384b7f42004112c6f2717b6833b6fe730e71fd8",
+      "captured_text": "### ELM298\n\nU470/U471 — MKT13, SAP, S/4HANA aATP. [Explaining aATP Product Allocation (PAL)](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58). Cours évolutif sans édition affichée. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : aATP: PAL Concept ; scénario ; restrictions par groupes de demande. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D02.b, D05.d ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM299",
+      "path": "marche/elements.md",
+      "anchor": "elm299",
+      "line": 2848,
+      "content_sha256": "98bb8e94cca38d808645b791ebecd9ade520a2ff8c9385d3516b3f9cbaf3684f",
+      "captured_text": "### ELM299\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Inventory Management. [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction ; supply and demand documents ; restriction des prélèvements concurrents. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D02.c ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM300",
+      "path": "marche/elements.md",
+      "anchor": "elm300",
+      "line": 2853,
+      "content_sha256": "2cd3606c0e400bcdcd7cfc857e1414a28572062660a8d2f19b651ac468db02f2",
+      "captured_text": "### ELM300\n\nU470/U471 — MKT20, Oracle, PeopleSoft Inventory. [Promising and Reserving Inventory](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm). PeopleSoft FSCM 9.0, édition historique. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Reservation lead days ; ATP ; inventory priority rules ; shortage workbench. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.i, D03.m, BHV033, BHV077 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM301",
+      "path": "marche/elements.md",
+      "anchor": "elm301",
+      "line": 2858,
+      "content_sha256": "66686019bcbad8cc71fa478621ed5b0a63212605f3a3f376dacf41a0c6761ee9",
+      "captured_text": "### ELM301\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Global Order Promising. [Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Profitable to Promise. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.k ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM302",
+      "path": "marche/elements.md",
+      "anchor": "elm302",
+      "line": 2863,
+      "content_sha256": "f0b1a44b4124a66cb6cfeb330097be63911cb749a256267e207025c28bb881ef",
+      "captured_text": "### ELM302\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Create delivery schedules ; Manage delivery lines. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D03.l, BHV044, TER081 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM303",
+      "path": "marche/elements.md",
+      "anchor": "elm303",
+      "line": 2868,
+      "content_sha256": "1b27a314c021d6abd55b026265f03d61d4e925380b13921e3a62c2733ae924f5",
+      "captured_text": "### ELM303\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Master plans ; Firming time fence ; Action message time fence. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D05.f, BHV006, BHV036, BHV085 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM304",
+      "path": "marche/elements.md",
+      "anchor": "elm304",
+      "line": 2873,
+      "content_sha256": "78bc76835da70a914d1ad0c504945867c46cc6593bd5e826699bb02397663344",
+      "captured_text": "### ELM304\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Schedule workload capacity](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Warehouse workload capacity ; volume, weight, inbound/outbound workload. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D06.b ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM305",
+      "path": "marche/elements.md",
+      "anchor": "elm305",
+      "line": 2878,
+      "content_sha256": "55d9bee163a1775b80116c42755db9149d2afd74e9542f41d4a99d8680972271",
+      "captured_text": "### ELM305\n\nU470/U471 — MKT19, TM Forum, Service Ordering. [TMF641 Service Ordering API REST Specification R18.5.1](https://www.tmforum.org/resources/specification/tmf641-service-ordering-api-rest-specification-r18-5-0/). R18.5.1 ; document 4.0.1, 2019 ; version archivée. Nature : Concept documenté par un contrat sectoriel. Passage consulté le 19 septembre 2026 : Présentation publique : create, update, retrieve ; service order items. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D07.b ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM306",
+      "path": "marche/elements.md",
+      "anchor": "elm306",
+      "line": 2883,
+      "content_sha256": "707732b354cfaa12dac9344e57b8685756a647f730384ba7ba5d1339bfb6a2ae",
+      "captured_text": "### ELM306\n\nU470/U471 — MKT14, Microsoft, Dynamics AX Transportation Management. [Transportation scenario – Manual rating](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/). Publication officielle du 16 février 2016 ; exemple historique. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Load planning workbench : Shipping carrier et Carrier service ; Manual rating. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour D06.e ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM307",
+      "path": "marche/elements.md",
+      "anchor": "elm307",
+      "line": 2888,
+      "content_sha256": "60aadf5106217fea9a41fa290cf9cebde8c7619bf8d0f0fe59a90bb5d837373e",
+      "captured_text": "### ELM307\n\nU470/U471 — MKT20, Oracle, E-Business Suite Warehouse Management. [Oracle Warehouse Management User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Opportunistic Cycle Counting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV031 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM308",
+      "path": "marche/elements.md",
+      "anchor": "elm308",
+      "line": 2893,
+      "content_sha256": "f9085a2e398989df8bbeee06c4c9b96eb9c3d143ed167e28c922e75bf142d2bc",
+      "captured_text": "### ELM308\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). SCM 10.0.48 build 10.0.2645.33+ selon la page. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : What data is preserved ; Control how on-hand inventory is pegged to confirmed demand. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV047, TER082 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM309",
+      "path": "marche/elements.md",
+      "anchor": "elm309",
+      "line": 2898,
+      "content_sha256": "ada6c3fcbd39ac99898f154638379c1851c5d9983969a1eb07d9bd8a46e0b211",
+      "captured_text": "### ELM309\n\nU470/U471 — MKT14, Microsoft, Dynamics GP Returns Management. [Returns Management](https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement). Guide Dynamics GP ; édition produit non précisée dans le passage. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : RTV types : Repair and Return ; Enter a repair and return RTV ; Receive an RTV. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV057 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM310",
+      "path": "marche/elements.md",
+      "anchor": "elm310",
+      "line": 2903,
+      "content_sha256": "9399d752c2f49756f283b2ad75984ef3489ea094fa9bb6df41b4cb512e8a8401",
+      "captured_text": "### ELM310\n\nU470/U471 — MKT20, Oracle, E-Business Suite Purchasing. [Oracle Purchasing User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Standard Purchase Orders ; quantités et échéances de livraison. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV058 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM311",
+      "path": "marche/elements.md",
+      "anchor": "elm311",
+      "line": 2908,
+      "content_sha256": "7418a3001441a1cbe3f1c00af56e4d37d4c1c88018aaca3dd8a61bc3b5631de6",
+      "captured_text": "### ELM311\n\nU470/U471 — MKT54, OASIS, Universal Business Language. [Universal Business Language Version 2.4](https://docs.oasis-open.org/ubl/UBL-2.4.html). OASIS Standard 2.4, 2024. Nature : Scénarios métier illustrant un standard documentaire. Passage consulté le 19 septembre 2026 : §2.3.3.5 VMI ; §2.3.5.1 Fulfilment ; §2.3.5.4 Freight Status Reporting. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV061, BHV062, BHV065, BHV070, BHV080, TER036 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM312",
+      "path": "marche/elements.md",
+      "anchor": "elm312",
+      "line": 2913,
+      "content_sha256": "c222df909773722cda1dc91de14e486615ebb82affed4fd2cec93c57a41ead97",
+      "captured_text": "### ELM312\n\nU470/U471 — MKT20, Oracle, E-Business Suite Consigned Inventory. [Consuming Material](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm). EBS 12.2. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Aging Based Ownership Transfer. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV064 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM313",
+      "path": "marche/elements.md",
+      "anchor": "elm313",
+      "line": 2918,
+      "content_sha256": "52fdb8d6a43c2f8265b7093de9cb593f72e3858e829c638a5a8b0f77b61b1d26",
+      "captured_text": "### ELM313\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Commerce. [Store order fulfillment](https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview). Page mise à jour le 28 janvier 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Pick up ; Shipping ; Line quantity tracking. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV066, BHV067 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM314",
+      "path": "marche/elements.md",
+      "anchor": "elm314",
+      "line": 2923,
+      "content_sha256": "7dd7830dd5dd3608c6b477a5d268e110479062e1ccac86fe7f97ed4b045732be",
+      "captured_text": "### ELM314\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Intercompany orders and return orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction : création correspondante des commandes intersociétés. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV069 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM315",
+      "path": "marche/elements.md",
+      "anchor": "elm315",
+      "line": 2928,
+      "content_sha256": "9ff48973ff4802a4e6596629401e5963115b8e7a4cac793bf96980ff13da7fac",
+      "captured_text": "### ELM315\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Supply Chain Orchestration. [Use Supply Chain Orchestration in Your Back-to-Back Flows](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html). 26B. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Back-to-back flows ; buy, make, transfer ; demand and supply link. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV074 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM316",
+      "path": "marche/elements.md",
+      "anchor": "elm316",
+      "line": 2933,
+      "content_sha256": "c7e6cc1044f29100a8f29ab3fafb2c5bcebe59fa9ba2751e0f8948a36a1a763b",
+      "captured_text": "### ELM316\n\nU470/U471 — MKT20, Oracle, Fusion Cloud Global Order Promising. [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html). 25C. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Supply chain search ; capable-to-promise. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV075 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM317",
+      "path": "marche/elements.md",
+      "anchor": "elm317",
+      "line": 2938,
+      "content_sha256": "014979e93858c15b3a26e021f45a0bbbe0758da1dc9928ca02a65956f4ed951c",
+      "captured_text": "### ELM317\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Intelligent Order Management. [Intelligent fulfillment optimization architecture](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Fulfillment strategies ; source priority ; distance ; partial orders. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV076 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM318",
+      "path": "marche/elements.md",
+      "anchor": "elm318",
+      "line": 2943,
+      "content_sha256": "50ebf2f09ea5e86162caaa4f2df0739feb333cdb0c9810fd058a5c5172908521",
+      "captured_text": "### ELM318\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Outbound workload visualization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/outbound-workload-visualization). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Introduction : suivi du travail en cours et restant. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV079 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM319",
+      "path": "marche/elements.md",
+      "anchor": "elm319",
+      "line": 2948,
+      "content_sha256": "c0bd71bc94bd5b0cf99837f2e258b6d26317f4e7ca9eb1537efc5d6621a08235",
+      "captured_text": "### ELM319\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Commerce. [Store inventory management](https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory). Documentation évolutive ; état consulté le 19 septembre 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Store inventory management operations ; inventory dimensions. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV081 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM320",
+      "path": "marche/elements.md",
+      "anchor": "elm320",
+      "line": 2953,
+      "content_sha256": "42acf82057d255ee47b1eb8407bbb3c7401a862b6276c9cc1c3ac0995cb51ece",
+      "captured_text": "### ELM320\n\nU470/U471 — MKT14, Microsoft, Dynamics 365 Supply Chain Management. [Replenishment methods and quantity modification](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification). Page mise à jour le 1er juillet 2026. Nature : Fonction produit documentée. Passage consulté le 19 septembre 2026 : Coverage codes : Requirement, Min./Max.. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour BHV083, BHV084 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM321",
+      "path": "marche/elements.md",
+      "anchor": "elm321",
+      "line": 2958,
+      "content_sha256": "dceb5c16c8fcad109e9fd6a7fbf9bcd1727100d095a3da9efaabfa18dd8be5e0",
+      "captured_text": "### ELM321\n\nU470/U471 — MKT42, GS1, Global Traceability Standard. [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard). Version en ligne ; édition non figée par cette consultation. Nature : Standard d’identification et de traçabilité. Passage consulté le 19 septembre 2026 : Identification : Class-level, Batch/Lot-level, Instance-level. Libellé natif : titre indiqué ; aucun identifiant natif de capacité déduit. Appuis pour TER059 ; reformulations, différences et limites dans leurs comparaisons et dans [le relevé U471](../audits/2026-09-19-base-U470/additions.yaml). Synthèse sélective et liens, sans reprise intégrale ni réalisation installée déduite."
+    },
+    {
+      "id": "ELM322",
+      "path": "marche/elements.md",
+      "anchor": "elm322",
+      "line": 2963,
+      "content_sha256": "30045a6a11a310dc92e44475a015914386faf5115d0b41c9e01fec5a9515f39d",
+      "captured_text": "### ELM322\n\nU471 — MKT13, SAP S/4HANA Sales, [Executing the Advanced Intercompany Sales and Stock Transfer Process](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc). Cours évolutif ; parcours avancé introduit en S/4HANA 2022. Passage primaire consulté le 19 septembre 2026 : Advanced Intercompany Sales Processing : commandes SO2, PO3 et SO4 ; propagation des changements. Libellé natif : Advanced Intercompany Sales Processing ; processus produit, pas capacité native. Second appui distinct pour BHV069 (CMP186), à la place du doublon documentaire détecté lors du contrôle. ELM314 conserve la relecture de la première source Microsoft ; il ne compte pas comme un deuxième document. Reformulation et limites dans additions.yaml ; aucune règle comptable ou automatisation importée."
+    },
+    {
+      "id": "ELM323",
+      "path": "marche/elements.md",
+      "anchor": "elm323",
+      "line": 2968,
+      "content_sha256": "f0a6dbccb6f895a0af4ca8e514c8cb507301ad3bbd2ccf4cd2207517be7363f9",
+      "captured_text": "### ELM323\n\nU472 — MKT02, communauté ArchiMate hébergée par The Open Group, [ArchiMate 101: A Practical Introduction](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/), sections External behavior: Service et Business Layer Elements, consultées le 19 septembre 2026. Tutoriel communautaire sans édition indiquée, non spécification normative. Il présente le service comme un comportement exposé. Aucun univers FLOW ni regroupement Commerce prescrit. Synthèse sélective ; chapitre normatif tenté mais inaccessible derrière authentification."
+    },
+    {
+      "id": "ELM324",
+      "path": "marche/elements.md",
+      "anchor": "elm324",
+      "line": 2972,
+      "content_sha256": "56421d4c7a20ec9a060a9ab5232eb43c8a7a82c0388363aeea7c4dbd6904db65",
+      "captured_text": "### ELM324\n\nU472 — MKT14, Microsoft Dynamics 365 Customer Service, [Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), introduction et composant Cases, page mise à jour le 8 mai 2026, consultée le 19 septembre 2026. Le Case suit le traitement d’une situation client jusqu’à sa résolution. Objet produit, pas taxonomie d’univers. Appui partiel pour TER064, dont le sens FLOW demeure plus large que le service client ; aucune solution adoptée. Synthèse originale et lien."
     },
     {
       "id": "ELM003",

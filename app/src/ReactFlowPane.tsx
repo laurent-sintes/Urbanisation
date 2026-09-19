@@ -2,9 +2,10 @@ import { useEffect, useLayoutEffect, useMemo, useState, useCallback, useRef } fr
 import { ReactFlow, ReactFlowProvider, Background, Controls, useReactFlow, type Node, type NodeProps } from '@xyflow/react';
 import { ArrowUpRight, FileText, LayoutGrid } from 'lucide-react';
 import { NodeIcon } from './icons';
+import { startsDecisionSection } from './capabilityTypes';
 import { ReferenceLink } from './components/ModelLinks';
 import { childrenOf, rootsOf, hasCapabilityCards } from './model';
-import { kindLabel, shortText, statusLabel } from './presentation';
+import { kindLabel, shortText } from './presentation';
 import type { AtlasNode, PublishedModel } from './types';
 import '@xyflow/react/dist/style.css';
 
@@ -32,16 +33,17 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
     {data.childList && <div className="card-child-list nodrag nopan nowheel" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}>
       <div className="child-list-heading">{listLabel} <span>{data.childList.items.length}</span></div>
       {data.childList.items.length ? <ul aria-label={`${listLabel} de ${data.item.name}`}>
-        {data.childList.items.map(child => <li key={child.id}><ReferenceLink target={child.id} className={`card-child-link ${child.kind === 'reference' ? 'reference-link' : child.kind === 'behavior' ? 'behavior-link' : 'capacity-link'}`}><NodeIcon node={child} size={16}/><span>{child.name}</span><ArrowUpRight size={12} className="child-arrow"/></ReferenceLink></li>)}
+        {data.childList.items.map((child, index) => <li key={child.id} className={startsDecisionSection(data.childList!.items, index) ? 'decision-section-start' : undefined}><ReferenceLink target={child.id} showBehaviors={child.kind === 'capability'} className={`card-child-link ${child.kind === 'reference' ? 'reference-link' : child.kind === 'behavior' ? 'behavior-link' : 'capacity-link'}`}><NodeIcon node={child} size={16}/><span>{child.name}</span><ArrowUpRight size={12} className="child-arrow"/></ReferenceLink></li>)}
       </ul> : <p>Aucune capacité publiée.</p>}
     </div>}
-    <div className="card-bottom"><span className={`status-dot ${data.item.status}`} title={statusLabel(data.item)}/><span>{data.count ? `${data.count} éléments` : statusLabel(data.item)}</span><button className="nodrag nopan" aria-label={`${data.count ? 'Explorer' : 'Lire'} ${data.item.name}`} onClick={e => { e.stopPropagation(); (data.count ? data.onExplore : data.onRead)(data.item.id); }}>{data.count ? 'Explorer' : 'Fiche'}<ArrowUpRight size={13}/></button></div>
+    <div className="card-bottom"><span>{data.count ? `${data.count} éléments` : kindLabel(data.item)}</span><button className="nodrag nopan" aria-label={`${data.count ? 'Explorer' : 'Lire'} ${data.item.name}`} onClick={e => { e.stopPropagation(); (data.count ? data.onExplore : data.onRead)(data.item.id); }}>{data.count ? 'Explorer' : 'Fiche'}<ArrowUpRight size={13}/></button></div>
   </article>;
 }
 function GroupCard({ data }: NodeProps<Container>) {
   return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong>{data.item.name}</strong><span>{kindLabel(data.item)}</span></div></div>;
 }
-const nodeTypes = { business: BusinessCard, container: GroupCard };
+function DecisionDivider() { return <div className="map-decision-divider" role="separator" aria-label="Capacités de décision"/>; }
+const nodeTypes = { business: BusinessCard, container: GroupCard, decisionDivider: DecisionDivider };
 
 export interface ReactFlowPaneProps {
   model: PublishedModel; selectedId: string; scopeId?: string;
@@ -101,17 +103,32 @@ function Canvas(props: ReactFlowPaneProps) {
     const inputs = items.map(n => ({ id: n.id, width: 300, height: childLists.has(n.id) ? cardHeights[n.id] || 260 + childLists.get(n.id)!.items.length * 34 : 220 }));
     // A bounded grid keeps cards readable; it does not create model relationships.
     const columns = Math.min(items.length, capabilityOverview ? Math.max(1, Math.min(3, Math.floor((canvasWidth - 60 + 28) / 328))) : items.length > 4 ? 3 : 2) || 1;
-    const rows = Math.ceil(items.length / columns);
-    const rowHeights = Array.from({ length: rows }, (_, row) => Math.max(...inputs.slice(row * columns, (row + 1) * columns).map(item => item.height)));
+    const boundary = items.findIndex((_, index) => startsDecisionSection(items, index));
+    const sections = boundary > 0 ? [inputs.slice(0, boundary), inputs.slice(boundary)] : [inputs];
+    const positioned: (typeof inputs[number] & { x: number; y: number })[] = [];
+    let top = 16;
+    let dividerY: number | undefined;
+    sections.forEach((section, sectionIndex) => {
+      if (sectionIndex) { dividerY = top - 7; top += 14; }
+      for (let offset = 0; offset < section.length; offset += columns) {
+        const row = section.slice(offset, offset + columns);
+        row.forEach((item, column) => positioned.push({ ...item, x: 16 + column * 328, y: top }));
+        top += Math.max(...row.map(item => item.height)) + 28;
+      }
+    });
     const placement = Promise.resolve({
       id: 'canvas', width: columns * 300 + (columns - 1) * 28 + 32,
-      height: rowHeights.reduce((sum, height) => sum + height, 0) + Math.max(0, rows - 1) * 28 + 32,
-      children: inputs.map((item, index) => ({ ...item, x: 16 + (index % columns) * 328, y: 16 + rowHeights.slice(0, Math.floor(index / columns)).reduce((sum, height) => sum + height + 28, 0) }))
+      height: Math.max(32, top - 12), children: positioned,
     });
     placement.then(result => {
       if (!current) return;
       const nodes: Node[] = [];
       if (group) nodes.push({ id: `group:${group.id}`, type: 'container', data: { item: group }, position: { x: 0, y: 0 }, width: (result.width || 380) + 28, height: (result.height || 250) + 70, style: { width: (result.width || 380) + 28, height: (result.height || 250) + 70 }, selectable: false, draggable: false, focusable: false });
+      if (dividerY !== undefined) nodes.push({ id: `decision-divider:${scopeId}`, type: 'decisionDivider', data: {},
+        position: { x: 16 + (group ? 14 : 0), y: dividerY + (group ? 54 : 0) },
+        ...(group ? { parentId: `group:${group.id}`, extent: 'parent' as const } : {}),
+        width: result.width - 32, height: 1, style: { width: result.width - 32, height: 1 },
+        selectable: false, draggable: false, focusable: false });
       for (const position of result.children || []) {
         const item = model.nodeById.get(position.id)!;
         // Explicit dimensions keep a controlled node measurable during selection updates.

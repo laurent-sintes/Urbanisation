@@ -1,0 +1,16 @@
+{
+  "version": "2026-09-19.3",
+  "checks": [
+    "Vue univers : définition et comportements explicites à puces, survol et focus clavier, Échap et capacité sans comportement.",
+    "Repères marché : positionnement, choix FLOW, écarts et source externe ; aucun statut de revue ni lien backlog affiché.",
+    "Glossaire sans doublon, ancien lien vers la définition, comparaisons du terme et recherche par référence marché.",
+    "390 px : sommaire et comparaisons dépliables sans débordement horizontal."
+  ],
+  "errors": [],
+  "behaviors": [
+    "Stock Procurement",
+    "Direct Delivery",
+    "Service Procurement",
+    "Supplier Confirmation"
+  ]
+}

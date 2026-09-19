@@ -1655,3 +1655,126 @@ Conserver les faits et préconditions aux frontières : quantités reçues/expé
 U429 — Codex, 19 septembre 2026. Complément CMP165 pour la frontière externe au backlog Supply. ELM255 montre le paiement opérationnel dans Microsoft Commerce et Sales Billing chez SAP, articulé à Finance. Le périmètre d’un produit ne prescrit ni domaine d’entreprise ni équipe responsable. Distinguer établissement du document commercial et comptabilisation de créance ; paiement au point de vente/autorisation/capture et rapprochement bancaire/lettrage. Encaissement peut recouvrir plusieurs de ces responsabilités selon le contexte ; aucune affectation unique n’est justifiée par le seul mot.
 
 Exclusion Supply validée U429 ; attribution Commerce/Finance laissée ouverte. Recommandation : conserver ces responsabilités comme externes, sans imposer maintenant un nouvel univers ni des capacités de finance ou de commerce. Le rattachement et la décomposition proposés ici restent non validés ; aucun catalogue modifié.
+
+
+### CMP167
+
+U439/U440/U442 — Codex, 19 septembre 2026. Rapprochement proposé d’Order Grouping BHV086, sous Order Structuring D04.n, avec ELM256 et ELM257. Recouvrement partiel : préserver des demandes identifiables et des conditions communes ; portée multi-Orders persistante FLOW à instruire. L’accord ne valide pas les définitions ni les règles détaillées. Pas de comportement par opération d’ajout/retrait d’un membre ; décisions, autorisation de prise en charge et réservation distinctes.
+
+### CMP168
+
+U439/U440/U442 — Codex, 19 septembre 2026. Rapprochement proposé d’Order Merging BHV087, sous Order Structuring D04.n, avec ELM258. Mécanisme de remplacement de plusieurs demandes actives par une demande résultante avec traçabilité. Appui documenté pour les achats avant approbation ; autres intentions, engagements, prix et réalisations à examiner. Microsoft Firm planned orders (ELM251) éclaire une frontière différente : création d’un Order depuis des propositions. Ni regroupement d’expéditions ni généralisation automatique des règles produit.
+
+### CMP169
+
+U449 — Codex, 19 septembre 2026. Appui méthodologique proposé entre ELM259 et le principe de typage des capacités FLOW dans le backlog courant après U448. Point commun : responsabilité de décision distincte de la coordination et de l’application. Différence : les six natures action, management, knowledge, orchestration, planning et decision sont déjà présentes dans FLOW ; ni leur liste ni les icônes ne sont prescrites par DMN. Les conserver évite de reclasser les accords et clarifie la lecture sans changer les frontières.
+
+Dix absences sont complétées par analogie de responsabilité avec les capacités déjà typées, avec justification individuelle dans audits/2026-09-19-capability-types-U449/changes.yaml. Qualifications proposées dans la portée U435 ; U449 adopte le besoin de typage et les règles de présentation, sans validation globale des classements. Le résultat dominant détermine le type ; aucune inférence depuis le nom ou le préfixe d’identifiant. Aucune preuve installée ni conformité DMN revendiquée. Grille et comparaison : modeles/backlog/capability-types-U449.yaml ; convention méthodologique MOD007.
+
+### CMP170
+
+U450/U451 — Codex, 19 septembre 2026. Appui méthodologique ELM052 et illustration produit ELM234 reconsultés pour le typage des 76 comportements du backlog courant. Point commun : distinguer les façons d’agir et leurs effets selon les circonstances. Différence : la forme principale et les sept catégories sont une convention FLOW issue de MOD006, choisie U451 ; aucune taxonomie BIZBOK/Microsoft équivalente revendiquée.
+
+Les qualifications individuelles sont proposées sur la base des définitions existantes, sans modifier les comportements ni leur parent. Une forme principale fournit l’icône ; les formes complémentaires restent combinables. La granularité Capacité → Comportement demeure terminale. Détail : modeles/backlog/behavior-types-U451.yaml. Aucun nouvel audit des lacunes, accord global ou constat installé.
+
+### CMP171
+
+U453 — Codex, 19 septembre 2026, **proposition d’audit**. ELM260/261/264–270/274/275 rapprochés du méta modèle FLOW et de la publication v010 / 2026-09-19.3, notamment Purchase Order D04.j, les six référentiels D08/D09/D11/D12/D13/D14, TER002/TER036/TER037 et le guide méthodologique. Relation : appui méthodologique ou sémantique, sans équivalence de catalogue.
+
+Point commun : relier responsabilités et informations aide à expliciter usages, autorités et frontières. Différences : entité d’intégration Dynamics, information métier et objet d’un outil EA ne sont pas des synonymes ; les contrats ERP vont au-delà du cadrage Supply. Adaptation recommandée : petit catalogue transversal d’informations métier, projections qualifiées et structures essentielles, relié aux capacités ; modèles de données approfondis et contrats techniques référencés à leur niveau. Conserver Univers/Domaine/Capacité et la décomposition terminale existante.
+
+Bénéfice : cadrage PO et analyse du découplage sans imposer des composants. Limites : aucune source maîtresse réelle, cardinalité, réalisation installée ou convention de faits/documents n’est validée ; besoin ancien identifié dans connaissance/24-capacites-objets-et-faits.md. Aucune modification du modèle ni validation implicite. Détails et alternatives : [rapport U453/U454](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §§6–9.
+
+### CMP172
+
+U453 — Codex, 19 septembre 2026, **proposition d’audit**. ELM262/263/271–273 rapprochés des parcours de l’Atlas servant v010. Relation : appui méthodologique et analogie de fonctions de présentation, pas équivalence UX démontrée.
+
+Adaptation recommandée : synthèse avant détails, recherche pertinente aux mots du métier, dépendances directes lisibles et accents de couleur limités. Alternative : monochromie mieux composée ; couleurs par domaine réservées à une vue dédiée. Conserver les icônes par type, les décisions en fin de liste, les glossaires distincts et les liens de version. Les validations et réserves internes restent hors interface.
+
+Justification : mesures locales documentées, principes de lisibilité et de présentation progressive. Limites : comparaison documentaire des produits, aucun test utilisateur comparatif ni certification WCAG. Maquette illustrative sans modification d’Atlas ; résultats, captures et alternatives dans le [rapport](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §§5 et 10–11.
+
+### CMP173
+
+U454 — Codex, 19 septembre 2026, **complément proposé** à CMP171. ELM276/277 rapprochés du même méta modèle FLOW v010 pour éprouver la recommandation indépendamment de SAP. Relation : appui méthodologique.
+
+Adaptation : distinguer information métier, architecture des données et contrats de solution ; ne pas réduire toutes les données au niveau d’implémentation. Le modèle conceptuel ou logique peut être partagé entre solutions. Ce rapprochement n’impose ni une notation ni la conformité TOGAF à Atlas. Les limites d’édition et d’accès demeurent explicites : guide 2019 et standard 9.2 consultés, ressources actuelles vérifiées, contenu détaillé de la 10e édition non contrôlé. Voir le [rapport](../audits/2026-09-19-atlas-ux-ui-U453/rapport.md), §3, et son [registre de sources](../audits/2026-09-19-atlas-ux-ui-U453/sources.md).
+
+### CMP174
+
+U455/U456 — Codex, 19 septembre 2026. ELM278/279 rapprochés des principes FLOW et de l’exemple Commerce → Supply → logistique. Relation : appui méthodologique TOGAF et recouvrement partiel avec un produit Microsoft. **Principes locaux adoptés par Laurent** : retrait des couches transactionnelle/processus ; univers/domaines en interaction ; Atlas strictement métier. Les reformulations détaillées, interactions illustratives et nouveaux découpages ne sont pas adoptés par extension.
+
+Point commun : responsabilités et parcours se lisent par leurs relations. Différences : TOGAF propose plusieurs vues sans prescrire la partition FLOW ; Microsoft décrit un produit et ses intégrations, pas trois univers d’entreprise. Bénéfice : rendre lisibles intentions, engagements et faits, sans assimiler processus à couche ni capacité à composant. La frontière Atlas n’interdit pas les structures d’information métier ; elle exclut les vues de solutions et les liens vers leur réalisation.
+
+**Correction de CMP171–173 et du rapport initial** : abandonner la recommandation de conserver les couches, l’alternative du catalogue technique relié depuis Atlas et la fiche « réalisation liée ». Les comparaisons produits servent au travail interne. Aucun nouveau maître, flux installé ou origine historique SAP déduit. État comparé : backlog issu de v010, principes corrigés ; nœuds, relations, application et publication conservés. Détails et ancien principe archivé : [domain-interactions-U455-U456.yaml](../modeles/backlog/domain-interactions-U455-U456.yaml). Migration du champ layer identifiée, pas présentée comme appliquée.
+
+### CMP175
+
+U460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM280 → D08 Product Reference, backlog après U459, révision 4. Recouvrement partiel : références et variantes sont des notions documentées ; le périmètre Microsoft inclut aussi les maîtres. Adaptation FLOW : projection uniquement, conformément à U134. Bénéfice : rendre la frontière d’autorité explicite. Comparaison ajoutée dans la fiche, visible lors d’une publication future. Aucune équivalence complète, innovation ou réalisation installée affirmée ; pas de valideur métier.
+
+### CMP176
+
+U460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM281 → D08.d Product Reference Ingestion, backlog après U459, révision 4. Recouvrement partiel avec la réception de références. Adaptation : séparer autorité métier, source d’alimentation et projection. Bénéfice : éviter qu’un émetteur soit implicitement considéré comme maître. Limite : le paramétrage d’un produit ne renseigne pas les acteurs réels FLOW. Comparaison portée par la fiche ; aucun choix d’application ou flux installé ; pas de valideur métier.
+
+### CMP177
+
+U460 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM282 → TER059 Product Unit, glossaire du backlog, révision 2. Appui sémantique GS1 sur la distinction référence/instance. Adaptation : conserver l’identité métier sans imposer son support ou sa codification. Bénéfice : ne pas confondre variante partagée et exemplaire. Limite : pas de certification ni d’équivalence complète entre Product Unit et toutes les catégories GS1. Comparaison portée par le terme ; pas de valideur métier.
+
+### CMP178
+
+U461 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM285 → TER036 et pilote Purchase Order, glossaire du backlog révision 2. Appui sémantique par un exemple de document de réception. Le lien obligatoire fait–document est adopté par Laurent en U461 ; **la comparaison et les structures candidates ne le sont pas par extension**. Bénéfice : illustrer le choix local par un usage documenté. Limite : aucun standard universel, nombre exact de documents ou mécanisme de correction déduit. Comparaison portée par TER036 ; aucun valideur de la correspondance marché.
+
+### CMP179
+
+U462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM286 → D03.n, backlog révision 8. Appui lexical partiel pour expliquer l’alternative Order Confirmation. Le nom Fulfillment Commitment adopté U445 désigne une responsabilité plus large que confirmer un document. Les raisons de vocabulaire et de définition sont désormais dans la fiche ; elles explicitent U441/U443/U444 sans adopter un consensus de marché. Bénéfice : rendre la frontière de la promesse lisible. Aucun nouveau valideur, périmètre ou effet de réservation.
+
+### CMP180
+
+U462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM287 → D02.e, backlog courant capturé dans l’audit U462. Appui lexical et recouvrement partiel : même lien ressource–commande, mais effet de blocage différent. FLOW conserve son choix U436 ; SAP ARun ne sert pas de preuve que l’affectation FLOW réserve. Bénéfice : sourcer explicitement la différence derrière un terme commun. La convention Allocation/Assignment U289/U290 reste inchangée ; aucune équivalence complète ou réalisation installée, aucun valideur de la comparaison.
+
+### CMP181
+
+U462 — Codex, 19 septembre 2026, **rapprochement proposé**. ELM288 → D04.j, backlog courant capturé dans l’audit U462. Appui au nom Purchase Order et à la couverture biens/prestations ; distinction explicite entre objet documentaire du produit et capacité FLOW. Noms courts U384 et parcours U391 conservés. Bénéfice : expliquer le choix de terme sans réduire la responsabilité à un document. Les formulations pédagogiques restent proposées ; aucun état ERP importé, aucun valideur de la correspondance.
+
+Les raisons lexicales et de périmètre sont également explicitées sur D03, D15, D02.c, D04.n, D05.a, D08 et D08.d à partir des arbitrages cités dans leurs fiches. Relectures primaires du 19 septembre : Microsoft DOM (introduction), Order promising (méthodes de contrôle des dates), Safety stock journals (Calculate a proposal), Inventory Visibility reservations (cas de réservation souple), Oracle 26B What's a Split Order Line (introduction, disponibilité et statut). Les URL et limites restent dans chaque comparaison. Product Reference et son ingestion reprennent les appuis ELM280/281 consultés lors de U460 ; leur périmètre ne change pas. Cette mise en valeur ne valide pas les comparaisons par extension.
+
+### CMP182
+
+U463 — Codex, 19 septembre 2026, **rapprochements proposés**. ELM019/ELM279 → universe-supply, backlog révision 4 ; cohérence de vocabulaire avec TER034/TER035. Appui méthodologique TOGAF pour décrire les responsabilités et recouvrement partiel Microsoft pour l’orchestration métier. Les points communs, différences, éditions, localisateurs et limites sont dans les deux comparaisons de la fiche.
+
+La définition retirée décrivait une orientation technique et une priorité de travail, sans expliquer ce métier. La nouvelle rédaction synthétise les six domaines existants. U373 garde son nom et U455 sa coopération sans couches ; aucun domaine ou produit n’est ajouté. Bénéfice : comprendre le périmètre depuis l’univers sans supposer un ERP. Compromis : le nom et le périmètre restent des choix FLOW, sans équivalence complète avec une catégorie OMS ou une nomenclature TOGAF. U463 demande la correction ; la formulation éditoriale et les comparaisons n’ont pas de nouveau valideur. Les sources ont été reconsultées, aucune supériorité globale d’un éditeur n’est affirmée.
+
+### CMP183
+
+U464 — Codex, 19 septembre 2026, **proposition méthodologique**. ELM269/276/289/290/291 → MOD012 Information, nouveau terme proposé du glossaire méthodologique ; aucun changement du catalogue métier ou de son schéma. Comparaison de concepts, pas de fonctions produits.
+
+Points communs : sens en contexte, explicitation des capacités et possibilité de décrire le métier indépendamment des formats informatiques. Différence décisive : Information Concept ne garantit pas l’élémentarité logique ; Data element porte aussi une problématique de représentation. Le regroupement cohérent n’est donc pas, à lui seul, une preuve de fait élémentaire.
+
+Choix proposé : garder Information, avec définition FLOW et critère explicite de minimum utile au sens étudié. Bénéfice : décrire les engagements, références et résultats nécessaires aux capacités sans fabriquer un schéma implémentable. Compromis : critère contextuel à éprouver sur les pilotes, pas une unité universelle normée. Aucune équivalence de tous ces concepts, nouvelle validation ou bijection Information/capacité/table ; le fait élémentaire n’est pas assimilé au fait de gestion U461. Raisons, alternatives et limites dans [l’analyse](../modeles/backlog/information-definition-U464.yaml) et [la recherche](../audits/2026-09-19-information-U464/recherche.md).
+
+### CMP184
+
+U465/U466 — Codex, 19 septembre 2026, **rapprochements proposés**. ELM242/280/282/283/284/285/220/248 et appuis méthodologiques ELM269/276/CMP183 → quatorze fiches pilotes PINFO-001 à PINFO-014 de [information-cards-U465.yaml](../modeles/backlog/information-cards-U465.yaml), état du 19 septembre. Relations : appuis sémantiques et méthodologiques, pas équivalences de catalogue.
+
+Microsoft éclaire demande, réponse fournisseur et confirmation, produit/variante et propriétés, maintien de liens de couverture et réservation souple. GS1 borne la différence référence/instance. Microsoft et Oracle illustrent les associations quantité–date. Les sources primaires, passages, dates, points communs, différences et raisons de chaque terme et définition sont portés par les fiches et leurs huit groupes de comparaison. ELM285 et les appuis d’architecture reprennent les consultations U461/U464 du même jour ; aucune nouvelle lecture intégrale revendiquée. Une tentative supplémentaire d’ouverture de la page ELM285 n’a pas abouti ; aucun constat nouveau n’en est tiré.
+
+Adaptation proposée : séparer les sens utiles aux capacités, décrire leurs conditions et leurs liens, sans importer lignes, états, tables, autorités ou automatismes des produits. Bénéfice : expliquer ce qui est demandé, proposé, engagé, réalisé, connu, affecté ou réservé. Compromis : noms descriptifs FLOW lorsque la maille n’a pas d’équivalent exact établi ; absence d’équivalence ne prouve aucune innovation.
+
+U466 adopte seulement la distinction et le lien entre proposition et engagement de satisfaction, avec coexistence possible. Les sources éditeurs n’en font pas une norme universelle et cet accord ne valide pas les autres fiches, comparaisons ou règles d’achat. Aucun valideur des rapprochements, aucune source maîtresse Beaumanoir ni réalisation installée déduite.
+
+
+### CMP185
+
+U470 — Codex, 19 septembre 2026, rapprochements proposés : CSCMP, Microsoft SCM et Oracle Supply Chain Orchestration → universe-supply ; CSCMP et Oracle → TER031. Backlog courant capturé avant correction dans l’audit U470. Comparaison du nom et du périmètre de l’univers, pas synthèse des capacités. Le SCM large sert de contraste de périmètre ; le nom Oracle atteste un usage sans équivalence de maille. Le choix FLOW concentre l’orchestration, garde les maîtres externes et leurs projections ingérées, et distingue les exécutants. Bénéfice : expliquer la frontière au lecteur novice. U373 conserve son nom adopté ; aucun nouveau valideur des rédactions ou correspondances. Sources, passages et limites dans les fiches et sources.yaml de l’audit.
+
+### CMP186
+
+U471 — Codex, 19 septembre 2026, rapprochements proposés sur les 47 fiches identifiées dans single-references.json de l’audit U470. Une seconde source primaire pertinente est ajoutée à chacune ; les comparaisons préexistantes et les définitions sont préservées. [Correspondances détaillées](../audits/2026-09-19-base-U470/additions.yaml) : élément externe, cible, relation, points communs, différences, choix du terme et de définition, édition, passage, date et limites. État comparé : backlog du 19 septembre avant ces ajouts, conservé dans before/. Les sources d’un même éditeur sont signalées comme telles ; deux documents ne prouvent pas un consensus. Les recouvrements partiels restent partiels, notamment comportements plus larges que leurs exemples. Bénéfice : permettre une revue argumentée sans importer les frontières des produits. Aucun valideur des rapprochements, changement de responsabilité, réouverture de U431 ou publication implicite.
+
+
+### CMP187
+
+U472 — Codex, 19 septembre 2026. Cibles : retrait de universe-case et TER067, correction de TER064 et PRINCIPLE-CASE-SUPPLY-ORDERS ; état avant modification dans [l’audit U472](../audits/2026-09-19-business-services-U472/before/).
+
+Constats : ELM323 (MKT02) décrit la notion de service exposé ; ELM324 (MKT14) décrit le dossier de traitement client. Interprétation : ni un service ni un dossier ne justifient à eux seuls un univers réunissant les grands processus transverses de l’entreprise. Les deux sources éclairent des concepts différents, pas deux taxonomies concordantes. Appuis méthodologique et sémantique partiels ; aucune équivalence Business Services/Commerce.
+
+Choix local demandé par Laurent : retirer l’univers vide et différer le commerce après la Supply Chain. Le terme Case est conservé sans rattachement à cet univers ; son périmètre générique dépasse l’exemple Microsoft. Bénéfice : supprimer une structure sans contenu et concentrer la revue. Compromis : les autres responsabilités de l’entreprise restent hors du périmètre étudié. Le retrait est adopté par U472 ; les reformulations et rapprochements restent éditoriaux, sans validation globale ni publication.

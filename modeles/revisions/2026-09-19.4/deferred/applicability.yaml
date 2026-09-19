@@ -1,0 +1,40 @@
+schema_version: 1.0.0
+model_id: flow-applicability
+space: backlog
+as_of: '2026-09-13'
+source_refs:
+- U112
+- U109
+- U58
+- P81
+default_assessment: not_assessed
+contexts:
+- id: beaumanoir-historique
+  name: Périmètre historique de Beaumanoir
+  perspective: as_is
+  model_id: beaumanoir-historique-si
+  assessment_state: to_structure
+  note: Des récits sont déjà examinés dans P81 ; leurs résultats restent à qualifier dans ce registre.
+- id: boardriders
+  name: Boardriders
+  perspective: as_is
+  model_id: boardriders-si
+  assessment_state: to_structure
+  note: Distinguer besoin déclaré, aptitude pertinente et réalisation installée. Les récits restent des sources à examiner.
+- id: sarenza
+  name: Sarenza
+  perspective: as_is
+  model_id: sarenza-si
+  assessment_state: not_assessed
+  note: Non traité selon U109 ; aucun résultat déduit.
+- id: flow-platform
+  name: Plateforme FLOW
+  perspective: target
+  model_id: flow-urbanism
+  assessment_state: to_structure
+  note: Évaluer la pertinence et la responsabilité cible ; une adhérence logistique ne devient pas un développement FLOW.
+assessments: []
+limitations:
+- Les cases absentes signifient non évalué.
+- Applicabilité, couverture décrite et responsabilité de réalisation sont des questions distinctes.
+- Les cas et conclusions Markdown ne sont pas effacés ; leur qualification structurée reste à effectuer.

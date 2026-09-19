@@ -1,0 +1,76 @@
+id: FLOW-V0-READINESS-U435
+as_of: '2026-09-19'
+status: targeted_corrections_applied_further_arbitrations_open
+source_refs:
+- U434
+- U435
+- U436
+scope: Préparation d’une V0 du modèle Supply pour PO, experts métier et architectes solution.
+audit:
+  report: audits/2026-09-19-audit-profond-v0/rapport.md
+  initial_model_snapshot: audits/2026-09-19-audit-profond-v0/model-before-U435.yaml
+  initial_model_sha256: 2fcc8262e753400ad74d518c7159a3f7ba06487247e4b3b923d059e58d01b1f2
+  change_report: audits/2026-09-19-audit-profond-v0/modifications.md
+  change_details: audits/2026-09-19-audit-profond-v0/changes-final.yaml
+  workshop_support: audits/2026-09-19-audit-profond-v0/kit-revue-v0.md
+  historic_behavior_audit: modeles/backlog/behavior-gap-audit.yaml
+  historic_status: Clôture U431 préservée ; aucun rejeu ou changement de sa preuve historique.
+implemented:
+- id: V0-F01-F02
+  result: Références internes, rattachements décrits, formulations hors contexte, limitation périmée et alternative active
+    remplacée corrigés.
+  qualification: Corrections éditoriales U435 fondées sur les décisions déjà enregistrées ; pas de validation globale des
+    fiches.
+- id: V0-F03-F04
+  result: Douze relations proposées ajoutées ; dix-sept relations existantes libellées, dont cinq qualifications précisées
+    selon U436.
+  qualification: Aucune ancienne relation supprimée ou réorientée ; nouveaux contrats et libellés éditoriaux.
+- id: V0-F05
+  result: PTP, priorités, échéancier, temporalité de disponibilité et correction des faits de stock explicités.
+  qualification: Entrées, résultats et exemples proposés ; définitions déjà validées préservées.
+- id: V0-F08
+  result: Seize comparaisons proposées ajoutées et cinq positions FLOW périmées actualisées ; huit capacités restent non documentées
+    en fiche par ce lot.
+  qualification: Rapprochements sourcés ; aucune équivalence complète ni réalisation installée déduite.
+- id: V0-RELATION-LABELS
+  result: Libellés stockés dans relation.fields.label et restitués pour les dépendances ; contrôles de version et d’intégrité
+    étendus.
+  qualification: Compatibilité des publications historiques conservée ; les nouvelles données restent dans le backlog tant
+    qu’aucune nouvelle release n’est demandée.
+decisions:
+- id: V0-A01
+  historic_reference: closure_U431.future_work.A01
+  status: principle_resolved_details_open
+  source_refs:
+  - U436
+  adopted_statement: Seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas.
+  remaining: Expiration, consommation, libération, automatisation éventuelle et mécanismes techniques ; règles d’admissibilité
+    des protections distinctes.
+- id: V0-A02
+  historic_reference: closure_U431.future_work.A03
+  status: open
+  remaining: Contrat détaillé d’application du plan aux affectations, structures et états des Orders, selon le scénario.
+- id: V0-A03
+  historic_reference: closure_U431.future_work.A07
+  status: open
+  remaining: Qui atteste puis engage une capacité opérationnelle ; unités, créneaux, fraîcheur, refus et concurrence des demandes.
+- id: V0-A04
+  historic_reference: closure_U431.future_work.A04
+  status: open
+  remaining: Autorisations commerciales/financières et résultats échangés ; rattachements externes non globalement tranchés.
+- id: V0-A05
+  historic_reference: modeles/backlog/consignment-inventory-review.yaml
+  status: question_submitted_to_user
+  remaining: Porteur du choix entre maintien, acquisition et retour du stock consigné après saison ; D01.h applique l’issue
+    autorisée.
+- id: V0-A06
+  historic_reference: modeles/backlog/reservation-policy-review.yaml
+  status: open
+  remaining: Porteur de gouvernance et application des versions opérationnelles des politiques de réservation, distinct de
+    D05.h qui décide.
+limits:
+- Les 47 capacités et 74 comportements sont conservés ; aucune nouvelle responsabilité durable créée automatiquement.
+- Les états de validation antérieurs et les valeurs validées sont préservés ; le principe U436 a sa portée propre.
+- Cible, applicabilité, couverture documentée et réalisation installée restent distinctes ; Sarenza non évalué.
+- Les autres qualifications génériques de relations et contrats détaillés ne sont pas annoncés comme entièrement corrigés.
+- Atlas continue de lire la publication sélectionnée ; publication, commit, push et administration serveur restent distincts.

@@ -1486,3 +1486,13 @@ dimensions_U424:
   scope: Principe, définition présentée, six dimensions et documentation des états adoptés ; nouveaux libellés, définitions
     développées, états et contraintes restent éditoriaux.
   evidence: modeles/backlog/history/lifecycle-dimensions-U424/implementation.yaml
+placement_U438:
+  status: integrated
+  source_refs:
+  - U438
+  lifecycle_domain: D04
+  archiving_domain: D04
+  structuring_domain: D04
+  release_parent: D04.o
+  split_parent: D04.n
+  note: U438 remplace uniquement les rattachements concernés de U417/U420 ; sections antérieures conservées pour provenance.

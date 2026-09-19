@@ -187,7 +187,7 @@ try {
   await page.goto(base + '/#node=D04&scope=universe-supply&view=map');
   await waitHeading('Supply');
   await waitCards(api.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === 'universe-supply').map(relation => relation.target_id));
-  assert.equal(await page.locator('.selection-strip strong').innerText(), 'Order Management');
+  assert.equal(await page.locator('.view-selection').innerText(), 'Sélection : Order Management');
   await page.goto(base + '/#node=D04&scope=universe-supply&view=map&version=2026-09-13.2');
   await waitHeading('Commercial Commitments');
   const historical = await (await context.request.get(base + '/api/model?version=2026-09-13.2')).json();

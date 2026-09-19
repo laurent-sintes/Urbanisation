@@ -1,0 +1,3247 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.4",
+  "decisions": [
+    {
+      "id": "ADOPT-U467-UNCHANGED-001",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U98",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-027 pour l’introduction du cycle U131 ; valeurs et portée inchangées. Réexamen U467 de ADOPT-027-LIFECYCLE-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D09",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "mastership"
+        ],
+        "value_sha256": {
+          "name": "5f6904197651fbd8b14b37d6c6017a8de09525a325b6fb5de8d36395d01bfa02",
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-002",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U102",
+        "U131"
+      ],
+      "note": " Transcription de ADOPT-031 pour l’introduction du cycle U131 ; valeurs et portée inchangées. Réexamen U467 de ADOPT-031-LIFECYCLE-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D13",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "independence"
+        ],
+        "value_sha256": {
+          "name": "088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31",
+          "independence": "2093ef74bde62d6235e327806ee878c1051c56192d9f9633ff7f029b0bce0981"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-003",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U103",
+        "U131"
+      ],
+      "note": "Accord contextuel déjà consigné, sur la présentation de cinq références uniquement. Transcription de ADOPT-042 pour l’introduction du cycle U131 ; valeurs et portée inchangées. Réexamen U467 de ADOPT-042-LIFECYCLE-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "business-references",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "8e1e0dcb3563032dd2cdb03345b09ed48cc7642f479a61a9c40a76115a788fad"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-004",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U141",
+        "U140",
+        "U134",
+        "U97",
+        "U98"
+      ],
+      "note": "Go U141 appliqué uniquement à la portée présentée. Pour Agreement, réaffirmation de la projection externe et de l’ingestion sans administration ; aucun accord sur les nouvelles formulations détaillées. Réexamen U467 de ADOPT-054 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D11",
+        "revision": 3,
+        "approved_fields": [
+          "mastership",
+          "name"
+        ],
+        "value_sha256": {
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9",
+          "name": "45797799d3db17de1ba297aaa964be20c3e6160ade58398d009edcf78eb4d824"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-005",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-11",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U97",
+        "U98",
+        "U131",
+        "U202"
+      ],
+      "note": "Réexamen documentaire pour U204 : transcription restreinte de ADOPT-029-LIFECYCLE-r2 aux seuls champs inchangés, après vérification des empreintes et de leur portée dans l’audit U202. Accord d’origine conservé ; les formulations modifiées restent proposées. Ne constitue pas un nouvel accord métier.  Transcription de ADOPT-029 pour l’introduction du cycle U131 ; valeurs et portée inchangées. Réexamen U467 de ADOPT-063 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D12",
+        "revision": 4,
+        "approved_fields": [
+          "mastership",
+          "name"
+        ],
+        "value_sha256": {
+          "mastership": "ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9",
+          "name": "4a8dfce3f278257b51eb13d39404013980a0b0959023c773586e8d45623a5178"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-006",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-14",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U172",
+        "U173"
+      ],
+      "note": "Transcription de la validation explicite U173 de Business Services et de sa définition présentée après U172. Identité universe-case conservée ; domaines différés, aucune décomposition ajoutée. Réexamen U467 de ADOPT-074 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "universe-case",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "e3c54e3900316341992509311f8f252d0c5ef8dd756c7aa10ced01c5d0e693c1",
+          "definition": "435b609506c0822c10be8560231ca6db3052295f634aeec238d2843fad8a270e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-007",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U373"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : U373 : nom uniquement. Accord U141 et valeur antérieure conservés dans audits/2026-09-18-universe-U373/model-before.yaml. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-universe-supply-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "universe-supply",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "9925b1127336fae5e805d2ed6df17bfb9944ae49acb73799038f3f8e433cd6f7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-008",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384",
+        "U385"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Nom adopté U384 conservé ; définition élargie et décomposition adoptées U385. Détails éditoriaux qualifiés séparément. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D04.l-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.l",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "88d95cc957621d758ff267d1ab0f28405b14d5c547755d66cd99b79b6d08c46d",
+          "name": "c6cb8f390aecc8ddd28e41248142f920b7e3013554cfd7011ac47ce82e08230d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-009",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Nom court adopté U384 ; nature capacité et accords antérieurs conservés. Descriptions et décompositions qualifiées séparément. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D04.m-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.m",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "bded3aa09e56f010985f7d49b76c5d1fff608b796c43809b383cd3d6d6e8f7d1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-010",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U329"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : U329 adopte le nom Inventory Target Decision et la définition présentée U327. Périmètre détaillé et comparaisons marché restent éditoriaux. Anciennes valeurs et validations conservées dans audits/2026-09-18-inventory-target-adoption/model-before.yaml. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D05.a-r4 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.a",
+        "revision": 5,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "e0cc6dcabc7ab5d0879178f868051112d90b3969e81b4f8f3007d7ed517ec19a",
+          "name": "e842daeaa7b56ef04efb0eb2e0e6bce7cbca7f7ec3be91b8a1214f642b431616"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-011",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U313",
+        "U316"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Nom et définition présentés adoptés U316. Finalité, nature formalisée, périmètre détaillé, exemple et correspondances marché restent éditoriaux. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D05.g-r1 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.g",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "08253658f962008cad858d46c1b0df78e58b48ba4b6c1cfc72c43b5baa0376e8",
+          "name": "c4ec5da77ca94c7b38a52267363a18adb7e7cf0b0acd661008d55b03baec8ee5"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-012",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D06.d-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.d",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "37986dcc6a0f8277ea2a08ef87dc93778177143e4f7a835ed3ad6639af97ccb7",
+          "name": "1fa13792cf41f7ea721310c3e7825f2a923c79cc4da176a36c4e808653fc9ae7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-013",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U240",
+        "U244",
+        "U409"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Compléments proposés pour appliquer U244 ; aucune validation de détail déduite. U409 : nouveau nom adopté ; validations des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D14-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D14",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "0dc475d55b06a58e12b44e19fce07aae6e7e40a7ce6788bc6a779c31a8d0f54a",
+          "name": "e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-014",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U342"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Nom et définition adoptés U342 ; décomposition et parent D05 adoptés U343. Descriptions détaillées et comparaisons restent éditoriales. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D05.h-r1 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.h",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "8e07a1b75d10bed2e01618fd3f128f6ef852a398167361028c9475b33c432299",
+          "name": "db07e9848c8df0f31bfed6512ba87a9985f8579f9d9e5339170c30eb5c92025a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-015",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U380"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : U380 : accord limité aux champs indiqués ; contrats détaillés et compléments éditoriaux proposés. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D05.i-r1 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.i",
+        "revision": 2,
+        "approved_fields": [
+          "definition",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "a1e3d89d9f0fb6edb462945173b4e7b862e8d4f82cb0b8e1ea005a3dd23cecb7",
+          "name": "cd7db088c22cbdcdefe7e9020657ef1650acbbbb1d78283a8d5a46d55f68739b",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-016",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U67",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D02.b-r4 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.b",
+        "revision": 5,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "976cec4fbcf6f1675db54c3061479301a3f6216f2ed91a23209b754285449dda"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-017",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "C63",
+        "P83",
+        "U95",
+        "U202",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D02.e-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.e",
+        "revision": 6,
+        "approved_fields": [
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd",
+          "nature": "6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-018",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.i-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.i",
+        "revision": 4,
+        "approved_fields": [
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "finality": "8d99f1b52adeb2ed64ae7fcd936a3540b245665347b6fad596ed0e243eab653d",
+          "name": "0fd73d6704ab2613ce4b501575871e9795e47ebaa98f32391674ef25097bcc9c",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-019",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U154",
+        "U251",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.j-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.j",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "6a2984200c2a80430fd4a331972d06a415d3ee3552f5de341865fee9b44faae2",
+          "finality": "3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90",
+          "name": "86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-020",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.k-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.k",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "934dacb7dce862a490b41d36c66c714fc72c88418c73166181394410f29f4aa5",
+          "finality": "a421ac059cc81ad41a400691d9376fef55c60694b9b2c1d49d08a7d352d363d7",
+          "name": "bfdff94087144c92b1c602ab145a9033508cd2deb1acf0d62dcd78c601c9a623",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-021",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U151",
+        "U154",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.l-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.l",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "4d0ba8c30c1456eec2aed23ff6f776d562bca59235b1f0bb274ed02c56164f67",
+          "finality": "48ee4bbb23619ffc1ac39c6f01f057ec48a5a04718fcb6b7b3ad898c454373a4",
+          "name": "67ec80322f99b596e711e97a383528683b50b3b77f353a7507b8b7c71dfaa97f",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-022",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U163",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.m-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.m",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "83d208c2d0ecac7df842bde758ed74086624bdf64f2e04e3f228d0de96265888",
+          "name": "30842a2de1e5e1114f93a7569cbbf7049d043edec2071bca4389df91bb57274f"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-023",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.i-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.i",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "1f23170a299572b9e962ef813a9fc55bca6c278b88e0f076c1f4410182b75dba"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-024",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.j-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.j",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "42fbeacc04a9bc65ee40f55423024a3ebc39e330d515bbae8fc7f8ec98fc67fe"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-025",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U384"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.k-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.k",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "19b10edcbe40163468701b97541287f6d9c4a7919a008f433d1893e39114b6d3"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-026",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U417"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.n-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.n",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "391db0f320040d1b3e78f53419616c77f04f22fa24f7d6aca2089418e9a6682d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-027",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U214",
+        "U290",
+        "U424"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.o-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.o",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "9f053fbcb745d2cf70709d9ec7161f2f6581100dcc03d7f0014911e4834dc76b",
+          "name": "5ebeb1081c917be0add665641af24774c7daf6d148318745b2a337365571db08",
+          "nature": "6d089caf129cd34dc77757ce8aa4d01c0d7ad38ef70d2f2433cd578d36a2ee35"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-028",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D05.d-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.d",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "462a7e18386912b742f51a6938298010ce22e60e9bfcbd7cb9c7f7120212b130",
+          "name": "68dcf14e7754e3990e251900aac5bc38912fd247c094385d0c5049f43e0849c2"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-029",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290",
+        "U316"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D05.e-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.e",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "981dc4b9f083cad00116ccf288f95e330aad7f347e70f5a1b0bf489c5ab6eb91"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-030",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U290",
+        "U318"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D05.c-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.c",
+        "revision": 6,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4a42f5fc71ed11fa31411c07ebd95607240b680b1286e70776a69f583778cac5"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-031",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U235",
+        "U269",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D05.f-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05.f",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-032",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U246",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D06.b-r7 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.b",
+        "revision": 8,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "ba754539fb8b05eaf3b83c0247a709e0712e1ba4bd868b2e4633e3da81bcd541"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-033",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D07.a-r7 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.a",
+        "revision": 8,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c",
+          "name": "7a3214271bd81ca9480d569371666b8a678b5ec93c4dac5c93fe4cd4fb79294b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-034",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D07.b-r6 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.b",
+        "revision": 7,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e",
+          "name": "84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-035",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D07.d-r6 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.d",
+        "revision": 7,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "9131d6fda562bd126262226ca451d29a633d8edcf5394002ae7d119c9a905dc1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-036",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-13",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "P81",
+        "U97",
+        "U98",
+        "U100",
+        "C66",
+        "Q074",
+        "U140",
+        "C77",
+        "CMP065",
+        "U141",
+        "C78",
+        "CMP066"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04-r6 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04",
+        "revision": 7,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a085c2c264187bbdd7f531c281c0e931b9663e1bdd6a60d935353f90894e0794"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-037",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-15",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "P81",
+        "U66",
+        "U74",
+        "U75",
+        "U78",
+        "U79",
+        "U80",
+        "U81",
+        "U86",
+        "C58",
+        "P82",
+        "U116",
+        "C71",
+        "U125",
+        "U126",
+        "C73",
+        "U218",
+        "U219"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D01-r7 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01",
+        "revision": 8,
+        "approved_fields": [
+          "finality"
+        ],
+        "value_sha256": {
+          "finality": "c4d74fdb212f15a6489e8281849ba9f791e8d950ab546a927daa5b5a49ca6fd9"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-038",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U242",
+        "U244",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D06-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06",
+        "revision": 6,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "93419c8a7b45922b9c39181381116ebd702350b5aef3cb96710edf38552ded2d",
+          "name": "f2f87647f08544a56e38ac6fdae9987ef91ed1b539abddc7dcf7c49558b7546c"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-039",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D15-r1 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D15",
+        "revision": 2,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-040",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U52",
+        "U95",
+        "U147",
+        "U154",
+        "U202",
+        "U218",
+        "U219",
+        "U290",
+        "U369",
+        "U413",
+        "U438"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03-r6 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03",
+        "revision": 7,
+        "approved_fields": [
+          "finality",
+          "name"
+        ],
+        "value_sha256": {
+          "finality": "27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e",
+          "name": "1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-041",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "P81",
+        "U06",
+        "U53",
+        "U57",
+        "U58",
+        "CAP011",
+        "CAP012",
+        "CAP013",
+        "U218",
+        "U219",
+        "U220",
+        "U223",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D05-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D05",
+        "revision": 6,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0",
+          "finality": "86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c",
+          "name": "6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-042",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U245",
+        "U246",
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D06.e-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.e",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "04adccab2575a7d626900ba0233a0ef18e41d9b2b540fa7eba381a8ca2b64300"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-043",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290",
+        "U409"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D06.f-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D06.f",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "e129ebf0182da8ad279c6967bd8c32c9ca7a589082953d79ac78563c5628c00a",
+          "name": "1c816af7ac818734e584c9f010e73f6624fefc197aff474ef1a04f6ab555638f"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-044",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U445"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.n-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.n",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "8fbdb29a711c0c52e959b3d77e91426b71b41c15c36887b1b1d59361904c20e7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-045",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U363"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.q-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.q",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "7a36b17fdbe90a738e628de69b8cb7cb1e89746cd7ffef107525f380d5c68f4a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-046",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U378"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.o-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.o",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "definition": "76114b8bb1548adc61d20c602225630b05176112d5b22299a6a766aad2f1f658",
+          "name": "cd415ee74c2e24d6977e583c2daa5e8a576f68d9cd58196de13f3d8f803c3776",
+          "nature": "0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-047",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U395"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D04.r-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.r",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "e6aff81542717e39c14d1bc96f085d27ce94fffbfe7706e86aa0f0c7dc95683d",
+          "name": "6bb4eb1390460dd921ba6955b74704bc463e5e8fd2192cd95eafc574e1a5b39c"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-048",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U395"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D01.h-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.h",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "554454ccb8b50ad4afbd578f49003302d46ee286efcf8473afb1452a232e5fde",
+          "name": "a85be74082d80642269072834c07af4e138cf3ec5dd47f05849b44f2983008cb"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-049",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U414"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D03.p-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D03.p",
+        "revision": 3,
+        "approved_fields": [
+          "name",
+          "nature"
+        ],
+        "value_sha256": {
+          "name": "ccd68f1d92f6aa324911050be2d93891452d70aa7e229e2ae432d9794f202d2e",
+          "nature": "cb1e58d9479430bc60841495f8150f2534895ef34e547cc1fdf0739455c3f438"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-050",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U129",
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-D01.g-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.g",
+        "revision": 6,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "3559c65c6d1d556575aeb96d0431b4f209a8f96f92c53529e1923e0c3c69a304"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-051",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U131",
+        "C58",
+        "U86",
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-D01.d-r4 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D01.d",
+        "revision": 5,
+        "approved_fields": [
+          "definition",
+          "finality",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "1ab9c92b8b2d12fc5391aa6c229b60a4c34bbbe87412e3af0394e5780ac7acb9",
+          "finality": "529b931e6fac49e96c7b59cc8bfd002458fa0783ecdcbaa7b334020cfde327af",
+          "name": "294c614309fd955d69fa8d5c190ec02fabfcfb09ec6ea0ea618a3a4fd933c7ef"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-052",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U131",
+        "U84",
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-D02.c-r5 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "D02.c",
+        "revision": 6,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4b9eab21f6de4232d82c1c4a0eb97d21f753ee727e4b8f6d24448f154439d9c0"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-053",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U263",
+        "U264"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV001-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV001",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "0155ffc7de93ece820d59008ef10e346133063e22de9b1c28d2d3c49ce08013d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-054",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U263",
+        "U264"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV002-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV002",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "630d96f712d6b84482852aef66625de728ae9e3a710b879ee9d000db990c7a52"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-055",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U263",
+        "U264"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV003-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV003",
+        "revision": 4,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "3138a91122046a7730bae22c50c0396f44d966ee05e6602972ba0a8589af95ac"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-056",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U263",
+        "U264"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV004-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV004",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "27833ffa7641434244c63aa4107acd1b23c66fd92033aa6c065be52135ba1b43"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-057",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U269",
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV005-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV005",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "54947870268de8a9c3439fb00cba1aeefd4ded089012eb82009b479c6c2a0260"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-058",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U269",
+        "U271",
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV006-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV006",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "3eee4a28b45b7d7cb7114ebf1fcdd032a202b38d74ffe4028f9cef137fad57e0"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-059",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV016-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV016",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "ac1bcefdded23e2beba01784b96ac3b2548690bf4319993703fe7124ab470f0e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-060",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV017-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV017",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "4562a2ee9c7b15cf840efb8c95b4f0d956e408071802aa18d22205a36b8f9730"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-061",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV018-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV018",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "f3fd339ee07c149324072378abf40aad012606e4072a83490b3f79c0c842ed0a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-062",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV019-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV019",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "7cb9f98a52839113a261bc76bf6a5324d120f47088b74cc7e1417f1af691db0c"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-063",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV020-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV020",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "0b22404d8574826158e686c5df8511b552c9b7ff843a35b93484b4e83657ee3e"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-064",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV021-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV021",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-065",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV022-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV022",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "74d248d5f671453f15ec4e94a76d49008bbeb5b570b9a2db703cf3fcf55f76cf"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-066",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U290"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV023-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV023",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-067",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U318"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV024-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV024",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "6ad30ac2d5f20bd990f73b836c53a74eda0dcc951e59669c25c7fb5d86b3c5b1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-068",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U318"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV025-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV025",
+        "revision": 3,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "acb586ec403f33e876baef7ba809e2f604fc6508b96340581d75c0e8122bcfa1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-069",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U332"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV026-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV026",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "a65c2ae6a04b8a23040152eab3ca0fe25ca107acd2b414cb1b6891680c03241a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-070",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U332"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV027-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV027",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "6684d805420271bb0bbec55a4488c773edb8634ec22eb7f3134d2d6b2fd84221"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-071",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U332"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV028-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV028",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "581a1cb766e6fdf407d83720f6ca884270e2c8ee3a1917fd5a2831db7a43dc8c",
+          "name": "59a20e52119222305f68f34c07ddb44dedb7382ca1a379f4be0adc5fa37f819b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-072",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U334"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV029-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV029",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "8e5d2d2008ea8a89e3368c0b09b73d61a52e10e049aba94f05bc9698596af31c",
+          "name": "074191b22df2f4f35e850c490571ba285aaaf9acee81cd7dd208c14b53ef75f0"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-073",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U334"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV030-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV030",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "39d7182f89dff819682e2df351623d43017b199171a281c4fedec861684d3b8f",
+          "name": "e7109cf61bebc3c5580863b83d13a3297054940c784b21be3fcdda0b6c9b0af2"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-074",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U334"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV031-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV031",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "ee66139f4cfeabed8cdd71c7f18cc76be6a6d0821f86c205d5415369ba3280d0",
+          "name": "4e38fcc2861640c4f0b38b940b2f4e55b3d182dc9f649f4570be719de538a6ef"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-075",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U343"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV032-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV032",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "e8daf9dea945644683f50ce6313c2c8cb9ddaa07ec2e67a0e7ffa3496a66874d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-076",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U343"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV033-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV033",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "be21d0cbedaf211d252b3a9da4f9ed4720e92566a5109c05f3d8446900eb0814"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-077",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U343"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV034-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV034",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "173d2bc8283e0fba09d33322f4bf3cba1a9518432c2e213aaca0166ed4d9febc"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-078",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U343"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV035-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV035",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "cd7fbacd269d0c862d87143f564d1ba81a1b6356e44d295a7cec547c369abc11"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-079",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U349"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV036-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV036",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "9ddc650c348d5907af969ef969dac5d26f8a17ef60c7f9a4fed4a8f48ae4f933",
+          "name": "ee9f174c6e0475d74fd1fbb6808456f782ed121996fd59e31e84ce6e5055037b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-080",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U349",
+        "U350"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV037-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV037",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "59f75cf35f198bfcb3ff1b1a63162725a34aecfb76e13aaf74cf96e27196b8dd"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-081",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U363",
+        "U410"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV039-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV039",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "c863482f3cea7126b9883e3e5f53bd71ad428d9479fcd59301b0752bcfd83ed7",
+          "name": "8ade222e2286753d4a2c44c5450e9d61755a3af3c4272d070a977e72a4a52097"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-082",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U363"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV040-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV040",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "5b8435c9302da5a770ba68b19550ce9bb6a668824f914dd53a969f761f7bd3d1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-083",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U364"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV046-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV046",
+        "revision": 4,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-084",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U364"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV047-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV047",
+        "revision": 4,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-085",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U383"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV048-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV048",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "494e75f5081a20b8a683320c31d3132c71f0951d3a081aaa53ca433e41749c75",
+          "name": "10d270b98990973dab76798a6fdc5c91b877011d56a116874241d513c33c74c6"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-086",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U383"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV049-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV049",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "53133b580ab9a812c4fe2f215b5719344ce554cd46c5dc682cc967d9579ecf5e",
+          "name": "79bedcfe81e0b1dce32dfbafd20cb5395b3f6fe4f526b53059b42fbc530033c7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-087",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U385"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV050-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV050",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "df6dc56cefd2d4b2ad49df2bd57d008f051ff2e2ee6e322a23445b782edabc80",
+          "name": "671a555144818704497865ece7b67d1f051c828af9bee2f03eb9f298bbde3d51"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-088",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U385"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV051-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV051",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "94ff801ca831593c56a08e1e715da0f7331fa981d065fb0801f18f936591b778",
+          "name": "ec2ae1fc2d83af061736c91dbf3f61601a624399ee18409be4b35dbea8a076a5"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-089",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U385"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV052-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV052",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "32e3f4bb1eca966b248c4705c53dcb7b61e20691d1b597aa1d3780bdb21b163a",
+          "name": "4879df67a30466a8da37a44b0d23adc8eb3d6a0cdab6f6439ea51c1cec2c9246"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-090",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U385"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV053-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV053",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "75a5cbba7295887d10c7d75cfe0923349a722d725d9f400f226239f0e3ac70dd",
+          "name": "18eee0f50003e3c9d3cf2912bf5c3dc4f6d1b02ddbcd964a1948b8196a8f3e46"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-091",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U385"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV054-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV054",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "2532a309f86d0501185b9a1b285c47e57853b965dc62481f166ad24f2c352904",
+          "name": "96bfb50cd175f3123bc8860ed0d0472491b7411dfe0b38bfd6b015f212bef3d5"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-092",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U387"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV055-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV055",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "98a7338a977912f9b46e16f70cf62ed7df99ff9f4db0b9d6aeaffab2b9a8b779",
+          "name": "7594fe2385ddce4f630ac415176fa40142e004f0030bb51b0fd14d348e87c8e9"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-093",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U387"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV056-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV056",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "347a76f5b247a46f6d87f96c73844e6ca9f45d33b602ddf5db84422df149a724",
+          "name": "6bfd31edca14f4401f09a3b2731a7797b332b70c6507136451ef09b8cdef1822"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-094",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U388"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV057-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV057",
+        "revision": 3,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "751c66d6a3a56dcc51bcc7b3964f422b9c4097854867b84e93578cedcc06b32d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-095",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U391"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV058-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV058",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "578bc8d5e6fa5ad47235af3042f984a969ae162e43dfe142433c4f34ad1696b4",
+          "name": "63dfbb1f517407137c1751837c7d660a7fb3330323109159105e59fdac0daaf7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-096",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U391"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV059-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV059",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "fe1b7b43e32e658dc14f45923e781258ae7b4eed38f935a5f084e2f895a53fd7",
+          "name": "b1354c98d184e89c3b00db40d099b0700e838d758b38c2cec4fe595e8df1df0d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-097",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U391"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV060-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV060",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "43ab582da72b465682fc9edc7775edb2c2a2ad7328f80fa08d0b0ca4574fe8cb",
+          "name": "157a3dda62e4b7a5e58573ad21e901b3f052fc17716c2c8b36cf0a416783264b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-098",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U398"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV061-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV061",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "3d7bbe927edddee64206772c0704431f21668b1cbc8a973ddd4c7869175779c0",
+          "name": "3a73c3fed7e211116fe2cbf2befd8ef7311519391171165c376dc4c60554d23a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-099",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U398"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV062-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV062",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "151887211a18346ec7c67a7fd82a1b5e243f088d29b32756bc2aba0f47efe910",
+          "name": "dc279928c606197f5516031700c67f1afccd2845e00fc2c9a3f384c4247ef295"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-100",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV063-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV063",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "f7bb038c36ef74441a63cc1e82a6c3bdbeb2a91ce12e79ab8137b804e7851f96",
+          "name": "38dc10df62674d5fe79b6fad477fb9d38038b7f4844f96775b0d464fa8c048b7"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-101",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV064-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV064",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "dd204ef085ccf8983de149c37f065eec6a638fed39fb95b9a17ecd2b063c7ee8",
+          "name": "6477031757788b278f25c30f68365d8965821e1cb0ef221cc3af5016e08b3be2"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-102",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV065-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV065",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "23e438a6efebeb4dc5448123556c4442166c566b096314cb57574751aa7c7902",
+          "name": "8b785b6b259f5a3fce3162ef1f00154d3d3f15157c6024ca6f03a41f44856d9f"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-103",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV066-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV066",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "920cf2bb77b94a18d3864720e9d031fd7d9d64216a73db7b89957f8a6b5c32f2",
+          "name": "682fcd5ae55acffd4dadfb632fc3f33001a3be5364a5f65c6025a8be74f337b8"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-104",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV067-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV067",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "a5b31ccc95457d7a0b4d1b50ab3db12992fceab7c6c51291efc6f4ad3e973e5c",
+          "name": "1fac5a48993b150d54c8ba51a8186ad3e73005ba3ad557048cda9df0515bb98b"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-105",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV068-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV068",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "1436250d730f0ba5f984733851ab8235d77424a0e0e72d9ebd7d4106ab2f5685",
+          "name": "b1354c98d184e89c3b00db40d099b0700e838d758b38c2cec4fe595e8df1df0d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-106",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV069-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV069",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "3c7b8b4f06bb9c509c846c3f79406a2697dfbe6f3542c5a3247de28144bf743f",
+          "name": "483cbe1e2f319bd661b9f7d45227253b5ed42b03bb8145de2661db03d130e6af"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-107",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV070-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV070",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "ee2fa737adee535dca2ac024fcb46e5be9144700023b669e2437ce6ca509cfc3",
+          "name": "3a73c3fed7e211116fe2cbf2befd8ef7311519391171165c376dc4c60554d23a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-108",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV071-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV071",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "2a6a4002db018d2db5ef9729fc5056ea34c26c2f3f000228fe57af5ad17a9795",
+          "name": "dc279928c606197f5516031700c67f1afccd2845e00fc2c9a3f384c4247ef295"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-109",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV072-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV072",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "72539adcc131a9ec42099edbc1ca65f1c9a927ad1ae987259ed34b1dd1aa71ca",
+          "name": "23cb952d52b70aee8b3a5d6a8b9f39bbbaa6b772a4b0d40245f4cc9ce3c649f6"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-110",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV073-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV073",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "279f2596ffbf5b15067624586367aedd3a662cdca73612b15929f078a4bc798a",
+          "name": "6a1db54b556356c524e3e3beb9f925570b848933aaf4ce32d6ee9c1f5b1bc472"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-111",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U401"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV074-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV074",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "d7f6550a5f56f5ca89b65eecb66768f26195799dfd79dcbf52f52c0b8d002029",
+          "name": "7e760248edf81091f3aea5ed2eb8925c1ded8b992ae6d9f212753dea5e51715d"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-112",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV075-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV075",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "df4e09cc54a3408e436c6a92611dd36534b823853b7163319d51211dce541a77",
+          "name": "09dff6c06ac54b20ed3385c3c08b16b497805acb74e42d7f56af88f565a6ddfa"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-113",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV076-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV076",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "10d85d2633b8284badb15cd3db4319f94a7a77ca51a9c6b1520c7c1fa6c9cd7d",
+          "name": "ce2c6faeaf7b648f600e4a1463f17a9e0ba5b98e83d90ed5911ebb041f21881c"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-114",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U402"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV077-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV077",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "bbd57e7b9b175eaafb288a50f0f17214711fd9fa899cffea3259f3def4ae169e",
+          "name": "07736c92452cadaf077bf8ba7887432adc00c3a1876bdb0664e2c525887ee5a8"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-115",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U403"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV078-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV078",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "a74905e24afe96834be91d63be67b73c0c641adcf916b63d7b32ed54f28b68b1",
+          "name": "b71eccf7c6b87e42c0a4515138d5866ff273edc10385e06c58304be868c34603"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-116",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U305"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV079-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV079",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "35595911e232c1865ac06ff1a1b38ead86f18803128d6748cd34fbeb803c9314",
+          "name": "a442e0d72da60b89186ac60632146dd478e19e5960014d2e83f16165d83c0fa2"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-117",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U305"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV080-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV080",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "4139df7a797acc0d8fbc758998fe951e874e35eba05feaf69680db6a6fe01ee8",
+          "name": "b6d56892456c27c5b826710e38c25a37e01957adce2559d7de6489b31acd476c"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-118",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-18",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U305",
+        "U308"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV081-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV081",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "63a1fa639f74647d39e258d7ccd17079e2ca1559aa7316ff7350a88be3b26b21",
+          "name": "93aa42130e2a4d754ce2d432ec1feaab6174801ad26cfbd0b96fc8b8d1add812"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-119",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U406",
+        "U409"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV082-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV082",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "14ffda3e667c2fb93262d98f1121d2c5e6e37b80d8a2c29f650de124ab465720",
+          "name": "bd394b42c8c26047542ed4f1ac0821ccefbf82248a5acc4a368d2d9d69e1e270"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-120",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U427"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV083-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV083",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "9b3f00ec075ae233d420b2236e12ecd69d885ec447b59356ea0630b1ea2335d7",
+          "name": "1df05834b745102ebd81f15e86e5b548e29ba4e34babf02c5594c5c173635d81"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-121",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U427"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV084-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV084",
+        "revision": 3,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "ad1425a43dc31bedd14693700fa0183b7036686921e657fd2b06d9b271872a46",
+          "name": "75f7b0c472e6b66599384eba70bb8e860d3c87704f5484afa5445b6fee66a68a"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    },
+    {
+      "id": "ADOPT-U467-UNCHANGED-122",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U427"
+      ],
+      "note": "Réexamen des valeurs inchangées après ajout du type : noms, définitions et finalités identiques aux accords historiques contrôlés par empreinte. Les nouveaux champs nature restent proposés. Preuves : audits/2026-09-19-atlas-U450/transcription-review.json. Réexamen U467 de ADOPT-TYPES-UNCHANGED-BHV085-r3 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV085",
+        "revision": 4,
+        "approved_fields": [
+          "definition",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "be90039a46bacd4f8a8f0630f1a60b00409282188363f42b3a4d0798f71a11f0",
+          "name": "878d716eeff3d078968aac79d2c4cf96c32d03fe7b23add6a1b5a1369858d7f4"
+        },
+        "import_version": "2026-09-19.4"
+      }
+    }
+  ]
+}

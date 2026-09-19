@@ -1,29 +1,52 @@
 import { useEffect, useRef, useState } from 'react';
 import { BookOpen, Search } from 'lucide-react';
 import type { PublishedModel } from '../types';
-import { ModelText, ReferenceLink } from './ModelLinks';
+import type { GuideState } from '../useModelingGuide';
+import { ModelText } from './ModelLinks';
 import { plainInlineText } from '../inlineLinks';
+import { publicText } from '../publicText';
 import { MarketComparisons } from './MarketComparisons';
-import { searchableText } from '../model';
 
-export function GlossaryPage({ model, selected }: { model: PublishedModel; selected?: string }) {
+export function GlossaryPage({ model, selected, mode, guideState, onSelect, onRetry }: {
+  model: PublishedModel; selected?: string; mode: 'model' | 'meta'; guideState: GuideState;
+  onSelect: (id: string) => void; onRetry: () => void;
+}) {
   const [query, setQuery] = useState('');
   const detail = useRef<HTMLElement>(null);
-  const term = selected ? model.glossaryById.get(selected) : undefined;
-  useEffect(() => { if (selected) { setQuery(''); detail.current?.focus(); } }, [selected, model.version]);
-  const matches = model.glossary.filter(t => `${t.id} ${plainInlineText(t.name)} ${plainInlineText(t.short_description)} ${plainInlineText(t.definition)} ${searchableText(t.market_comparisons)}`.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr')));
-  if (!model.glossary.length) return <section className="glossary-empty"><BookOpen size={30}/><h2>Glossaire non publié dans cette version</h2><p>Cette publication ne contient pas de glossaire structuré. Il sera disponible dans une prochaine release.</p></section>;
-  return <div className="glossary-page">
-    <section className="glossary-index" aria-label="Termes du glossaire"><label className="glossary-search"><Search size={17}/><input aria-label="Rechercher dans le glossaire" placeholder="Un terme, une définition…" value={query} onChange={e => setQuery(e.target.value)}/></label><p>{matches.length} termes dans cette publication</p>
-      <ul>{matches.map(t => <li key={t.id}><ReferenceLink kind="glossary" target={t.id} className={t.id === selected ? 'selected' : ''}>{plainInlineText(t.name)}</ReferenceLink><small>{t.id}{t.historical ? ' · historique' : ''}</small></li>)}</ul>
+  const glossary = guideState.status === 'ready' ? guideState.response.guide?.glossary : undefined;
+  const methodIds = new Set(glossary?.model_term_ids ?? []);
+  const modelTerms = model.glossary.filter(term => mode === 'meta' ? methodIds.has(term.id) : !methodIds.has(term.id));
+  const terms = [
+    ...modelTerms.map(term => ({ ...term, label_fr: '', role: '', examples: [] as readonly string[] })),
+    ...(mode === 'meta' ? (glossary?.terms ?? []).map(term => ({ ...term, short_description: term.role ?? '', context: '', notes: '', historical: false, market_comparisons: undefined })) : []),
+  ].sort((a, b) => (a.label_fr || a.name).localeCompare(b.label_fr || b.name, 'fr'));
+  const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
+  const matches = terms.filter(term => normalize(`${term.label_fr} ${plainInlineText(term.name)} ${plainInlineText(term.definition)}`).includes(normalize(query)));
+  const term = selected ? terms.find(term => term.id === selected) : matches[0];
+  useEffect(() => setQuery(''), [mode, model.version]);
+  useEffect(() => {
+    if (detail.current) { detail.current.scrollTop = 0; if (selected) detail.current.focus({ preventScroll: true }); }
+  }, [term?.id, model.version]);
+  if (guideState.status === 'loading') return <p role="status">Chargement des glossaires…</p>;
+  if (guideState.status === 'error') return <section className="glossary-empty"><h2>Les glossaires ne sont pas accessibles</h2><p>{guideState.message}</p><button onClick={onRetry}>Réessayer</button></section>;
+  if (mode === 'meta' && !glossary) return <section className="glossary-empty"><BookOpen size={30}/><h2>Glossaire du méta modèle indisponible pour cette version</h2></section>;
+  if (!terms.length) return <section className="glossary-empty"><BookOpen size={30}/><h2>Aucun terme dans cette version</h2></section>;
+  return <div className="glossary-page" data-glossary={mode}>
+    <section className="glossary-index" aria-label="Termes du glossaire">
+      <label className="glossary-search"><Search size={17}/><input aria-label="Rechercher dans le glossaire" placeholder="Un terme, une définition…" value={query} onChange={event => setQuery(event.target.value)}/></label>
+      <p role="status">{matches.length} termes</p>
+      <ul tabIndex={0} aria-label="Liste des termes">{matches.map(item => <li key={item.id}>
+        <a href={`#version=${model.version}&view=glossary&glossary=${mode}&term=${item.id}`} className={item.id === term?.id ? 'selected' : ''} aria-current={item.id === term?.id ? 'true' : undefined}
+          onClick={event => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); onSelect(item.id); } }}>{plainInlineText(item.label_fr || item.name)}</a>
+      </li>)}</ul>
     </section>
-    {term ? <article className="glossary-term" id={`term-${term.id}`} ref={detail} tabIndex={-1} aria-label={`Définition de ${term.name}`}><p className="eyebrow">{term.id}{term.historical ? ' · Sens historique' : ''}</p><h2>{plainInlineText(term.name)}</h2>
-      <section id={`term-${term.id}-short-description`}><h3>Description courte</h3><p><ModelText text={term.short_description}/></p></section>
+    {term ? <article className="glossary-term" id={`term-${term.id}`} ref={detail} tabIndex={0} aria-label={`Définition de ${term.label_fr || term.name}`}>
+      <h2>{plainInlineText(term.label_fr || term.name)}</h2>
+      {term.label_fr && term.label_fr !== term.name && <p className="glossary-english">{term.name}</p>}
       <section id={`term-${term.id}-definition`}><h3>Définition</h3><p><ModelText text={term.definition}/></p></section>
-      {term.context && <section><h3>Contexte</h3><p><ModelText text={term.context}/></p></section>}
-      {term.notes && <section><h3>Précisions</h3><p><ModelText text={term.notes}/></p></section>}
-      <MarketComparisons id={`term-${term.id}-market_comparisons`} entries={term.market_comparisons}/>
-      <section><h3>Portée et provenance</h3><p>{({ proposed: 'Proposé par l’IA', under_review: 'En cours d’instruction', accepted: 'Validé dans sa portée', partial: 'Partiellement validé' })[term.review.state] || term.review.state}</p><p>{term.review.note}</p><p>Sources : {term.source_refs.join(', ') || 'Non renseignées'}.</p><small>Publication {model.version}{term.revision ? ` · révision ${term.revision}` : ''}</small></section>
-    </article> : <section className="glossary-empty"><h2>{selected ? 'Terme absent de cette publication' : 'Explorer les notions'}</h2><p>{selected ? `La référence ${selected} n’existe pas dans ce glossaire.` : 'Survole un terme pour lire sa description courte, puis ouvre sa fiche.'}</p></section>}
+      {publicText(term.context) && <section><h3>Contexte</h3><p><ModelText text={publicText(term.context)}/></p></section>}
+      {term.examples && term.examples.length > 0 && <section><h3>Exemples</h3><ul>{term.examples.map(example => <li key={example}><ModelText text={example}/></li>)}</ul></section>}
+      {(mode === 'model' || term.market_comparisons?.length) && <MarketComparisons id={`term-${term.id}-market_comparisons`} entries={term.market_comparisons}/>}
+    </article> : <section className="glossary-empty"><h2>{selected ? 'Terme absent de ce glossaire' : 'Aucun résultat'}</h2><p>Choisis un terme dans la liste.</p></section>}
   </div>;
 }

@@ -1,0 +1,17 @@
+{
+  "behaviors_typed": 76,
+  "counts": {
+    "decision_dimension": 7,
+    "planning_practice": 3,
+    "intervention_mechanism": 13,
+    "business_effect": 13,
+    "policy_strategy": 11,
+    "process_variant": 22,
+    "business_scope": 7
+  },
+  "metamodel_terms": 11,
+  "classified_published_terms": 10,
+  "protected_files": 231,
+  "guide_version": "2026-09-19.1",
+  "business_release_unchanged": true
+}

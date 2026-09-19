@@ -20,6 +20,7 @@ try:
     from .element_versions import assign_versions
     from .glossary import reference_impacts
     from .structured_io import working_path
+    from .modeling_guide_publication import capture_association, verify_association, carry_association
     from .release_catalog import resolve_release, register
     from . import publish_release as publisher
     from .json_contract import validate as validate_contract
@@ -28,6 +29,7 @@ except ImportError:
     from element_versions import assign_versions
     from glossary import reference_impacts
     from structured_io import working_path
+    from modeling_guide_publication import capture_association, verify_association, carry_association
     from release_catalog import resolve_release, register
     import publish_release as publisher
     from json_contract import validate as validate_contract
@@ -64,6 +66,35 @@ def references(document):
         for value in document:
             found.update(references(value))
     return found
+
+
+def context_source_references(document):
+    """A methodology guide embeds its lesson sources; only its roots are global.
+
+    Keep the embedded records in the frozen annex, and reject unresolved local
+    references instead of either inventing a global record or dropping evidence.
+    Other backlog documents retain the ordinary global source contract.
+    """
+    found = references(document)
+    if not isinstance(document, dict) or document.get('id') != 'flow-modeling-keys':
+        return found
+    records = document.get('sources')
+    if not isinstance(records, list) or not records:
+        raise ValueError('Methodology context has no embedded sources')
+    local_ids = set()
+    for record in records:
+        if (not isinstance(record, dict)
+                or any(not isinstance(record.get(k), str) or not record[k].strip()
+                       for k in ('id', 'title', 'excerpt', 'scope'))
+                or record['id'] in local_ids):
+            raise ValueError('Invalid or duplicate embedded methodology source')
+        local_ids.add(record['id'])
+    if found - local_ids:
+        raise ValueError('Unresolved embedded methodology source: ' + ', '.join(sorted(found - local_ids)))
+    roots = document.get('source_refs')
+    if not isinstance(roots, list) or not roots:
+        raise ValueError('Methodology context requires global source roots')
+    return set(roots)
 
 
 def load_current(root):
@@ -220,6 +251,19 @@ def model_diff(previous, candidate):
             if delta:
                 result[collection]['modified'].append({'id': identifier, 'changes': delta})
     result['principles'] = changes(previous.get('principles', []), candidate.get('principles', []))
+    if 'information_catalog' in previous or 'information_catalog' in candidate:
+        result['information_catalog'] = changes(
+            {k:v for k,v in previous.get('information_catalog', {}).items() if k not in ('items','links')},
+            {k:v for k,v in candidate.get('information_catalog', {}).items() if k not in ('items','links')})
+    for collection in ('items', 'links'):
+        before = {r['id']:r for r in previous.get('information_catalog', {}).get(collection, [])}
+        after = {r['id']:r for r in candidate.get('information_catalog', {}).get(collection, [])}
+        if before or after:
+            result['information_' + collection] = {
+                'added':[after[k] for k in sorted(after.keys() - before.keys())],
+                'removed':[before[k] for k in sorted(before.keys() - after.keys())],
+                'modified':[{'id':k, 'changes':changes(before[k], after[k])}
+                            for k in sorted(before.keys() & after.keys()) if before[k] != after[k]]}
     return result
 
 
@@ -233,7 +277,7 @@ def revision_errors(previous_snapshot, snapshot):
                 continue
             if item['revision'] < old['revision']:
                 errors.append(item['id'] + ': revision cannot decrease')
-            keys = ('fields', 'kind', 'layer', 'group_role', 'level_ref') if collection == 'nodes' else ('type', 'source_id', 'target_id', 'qualification')
+            keys = ('fields', 'kind', 'layer', 'group_role', 'level_ref') if collection == 'nodes' else ('type', 'source_id', 'target_id', 'qualification', 'fields')
             if any(item.get(k) != old.get(k) for k in keys) and item['revision'] <= old['revision']:
                 errors.append(item['id'] + ': changed model content requires a new revision')
     return errors
@@ -262,7 +306,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
     deferred_documents = {path: read(path) for path in deferred_paths}
     for path in deferred_paths:
-        all_refs.update(references(deferred_documents[path]))
+        all_refs.update(context_source_references(deferred_documents[path]))
     provenance = publisher.publication_sources(inputs['provenance'], read(models / 'provenance/source-records.json'), sorted(all_refs))
     sources = {r['id']: r for r in provenance['records']}
     urbanism_schema = read(models / 'schemas/urbanism.schema.json')
@@ -335,7 +379,8 @@ def prepare(root, version, source_refs, additional_path=None):
                     'live_backlog_sha256': bundle['backlog_sha256'], 'live_glossary_sha256': bundle['glossary_sha256'], 'publication_source_refs': source_refs,
                     'files': {name: digest(temporary / name) for name in ('backlog.yaml', 'decisions.json', 'source-records.json', 'candidate.yaml', 'report.json')},
                     'schemas': {name: digest(models / 'schemas' / name) for name in ('urbanism.schema.json', 'decisions.schema.json')},
-                    'deferred': deferred}
+                    'deferred': deferred,
+                    'modeling_guide': capture_association(root, bundle['pointer']['version'])}
         write(temporary / 'manifest.json', manifest)
         os.rename(temporary, destination)
     finally:
@@ -356,6 +401,8 @@ def publish_prepared(root, version, activate=False):
         raise ValueError('Invalid prepared manifest')
     if manifest['base_pointer'] != pointer or digest(current_manifest_path) != manifest['base_manifest_sha256']:
         raise ValueError('Current release changed since preparation; prepare a fresh candidate')
+    if 'modeling_guide' in manifest:
+        verify_association(root, pointer['version'], manifest['modeling_guide'])
     if digest(working_path(models / 'backlog')) != manifest['live_backlog_sha256']:
         raise ValueError('Backlog changed since preparation; prepare a fresh candidate')
     glossary_path = working_path(models / 'backlog', 'glossary')
@@ -423,6 +470,13 @@ def publish_prepared(root, version, activate=False):
         notes.append(f"{sum(item['reason']=='new' for item in term_changes)} termes introduits ; {sum(item['reason']=='changed' for item in term_changes)} révisés. Détail des changements, y compris retraits éventuels, dans changes.json.")
         for impact in report.get('glossary_reference_impacts', []):
             notes.append(f"- Sens à réexaminer : {impact['id']} ({impact['field']}) référence {', '.join(impact['changed_terms'])}.")
+    if 'information_catalog' in release:
+        catalogue = release['information_catalog']
+        notes += ['', '## Informations métier', '',
+                  f"{len(catalogue['items'])} informations et {len(catalogue['links'])} liens figés dans cette publication ; usages des capacités, exemples et sources marché inclus."]
+        for collection, label in (('information_items', 'informations'), ('information_links', 'liens')):
+            delta = report['changes'].get(collection, {})
+            notes.append(f"{label.capitalize()} : {len(delta.get('added', []))} ajouts, {len(delta.get('modified', []))} modifications, {len(delta.get('removed', []))} retraits.")
     notes+=['', '## Validations et points ouverts', '',
             f"{len(report['retained_decision_ids'])} décisions antérieures conservées ; {len(report['deferred_decisions'])} suspendues pour les révisions modifiées.",
             f"{sum('-LIFECYCLE-r' in key for key in report['new_decision_ids'])} accords transcrits à portée identique pour le cycle U131 ; {sum('-LIFECYCLE-r' not in key for key in report['new_decision_ids'])} autres décisions nouvelles sourcées.",
@@ -441,6 +495,8 @@ def publish_prepared(root, version, activate=False):
               'prepared_manifest_sha256': digest(stage / 'manifest.json'),
               'note': 'Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques.'}
     write(release_dir / 'manifest.json', output)
+    if 'modeling_guide' in manifest:
+        carry_association(root, pointer['version'], version, manifest['modeling_guide'])
     if activate:
         register(models/'release',release,version+'/release-notes.md',write,publisher.activate_pointer)
     return {'version': version, 'manifest': str(release_dir / 'manifest.json'), 'release_activated': activate,

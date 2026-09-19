@@ -1,0 +1,2810 @@
+# Éléments de référence examinés
+
+État : 2026-09-09. Les identifiants ELM sont des clés locales de traçabilité, jamais des identifiants attribués par les organismes. Les six libellés IBM ci-dessous constituent une sélection, pas la reproduction de sa carte.
+
+## ELM001
+
+- Référence : [MKT04](catalogue.md#mkt04), SAP RBA.
+- Élément : trois niveaux de décomposition (Business Domain, Business Area, Business Capability), regroupés au niveau supérieur Enterprise Domain ; libellés et sources dans MKT04. Correction U24/C31 du 2026-09-09.
+- Localisateur : leçon Defining Business Architecture, passage sur les niveaux de granularité ; complément Discovering the Reference Architecture Content, sections Reference Architecture Content Example et Business Capability Model Example, pour Enterprise Domain.
+- Version : cours public consulté le 2026-09-09, édition du catalogue non établie.
+- Nature : convention de structuration ; identifiant natif non fourni dans la leçon.
+- Reformulation : rattacher une capacité à une aire métier, puis à un domaine métier, lui-même regroupé dans un domaine d’entreprise. La chaîne complète comporte quatre niveaux visibles.
+- Limite : aucune correspondance automatique avec les trois niveaux proposés pour Beaumanoir.
+
+## ELM002
+
+- Référence : [MKT04](catalogue.md#mkt04), même leçon.
+- Élément : séparation entre capacités, activités de processus et capacités de solution.
+- Localisateur : passages décrivant les architectures métier et de solution.
+- Version : même état documentaire que ELM001.
+- Nature : règle de métamodèle ; identifiant natif non fourni.
+- Reformulation : distinguer le besoin métier, son déroulement et son support logiciel.
+- Limite : les liens locaux doivent encore être définis et validés.
+- Réexamen U48 du 2026-09-10 : [Defining Business Architecture](https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/defining-business-architecture), passages sur les modèles de capacités, de processus et de solution consultés. Édition non précisée. Appui de CMP029 ; aucune exclusion universelle de la coordination des cartes métier déduite.
+
+## Sélection IBM
+
+Source commune : [MKT06](catalogue.md#mkt06), publication G510-6163-00, 2005, figure 6, page PDF 11 (page imprimée 9). Consultation du texte de la figure le 2026-09-09. Nature : composants d'un exemple retail. Identifiants natifs non fournis ; définitions détaillées absentes de l'extrait. Les reformulations françaises servent uniquement au repérage.
+
+| Identifiant local | Libellé natif | Reformulation de repérage |
+| --- | --- | --- |
+| ELM003 | Item management | Gestion des articles |
+| ELM004 | Allocation | Allocation |
+| ELM005 | Replenishment | Réassort |
+| ELM006 | Order management | Gestion des commandes |
+| ELM007 | Customer service | Service client |
+| ELM008 | Reverse logistics | Logistique des retours |
+
+La définition native demeure « non disponible dans le passage consulté » pour ELM003–ELM008. Les correspondances sont donc limitées à des pistes lexicales. La sélection ne fixe ni leur place dans notre hiérarchie ni leur responsabilité organisationnelle.
+
+## Appuis pour les deux couches
+
+Examen du 2026-09-09 par Codex, à partir de U18/U19. Les définitions ci-dessous sont reformulées, sans citation normative littérale. Les sources officielles, éditions et limites d'accès sont centralisées dans les fiches MKT indiquées ; aucun identifiant natif distinct du localisateur n'est attribué à ces concepts.
+
+### ELM009
+
+- Référence : [MKT04](catalogue.md#mkt04), leçons SAP publiques, édition inconnue ; approfondissement de ELM002.
+- Libellés natifs : *Business Capability Model*, *Business Process Model*, *Solution Capability*, *Solution Process*. Nature : distinction de métamodèle.
+- Localisateur : *Discovering the Reference Architecture Content*, sections *Linking Business and Solution* et *RBA Link to RSA* ; *Designing Application Architecture*, *Product Map* et *Solution Process*.
+- Définition reformulée : capacités et processus sont deux modèles métier indépendants des solutions ; leurs réalisations sont décrites séparément et reliées aux composants.
+- Limite : ne prescrit pas que les capacités appartiennent exclusivement au socle transactionnel, ni que les processus seraient dépourvus de modèle métier propre.
+
+### ELM010
+
+- Référence : [MKT09](catalogue.md#mkt09), SOA-RM 1.0, 12 octobre 2006.
+- Libellés natifs : *Service*, *Service Description*, *Policies and Contracts*. Nature : concepts d'architecture de services.
+- Localisateur : §§3.1, 3.3.1 et 3.3.2.
+- Définition reformulée : le service ouvre l'accès à des capacités ; sa description et ses politiques/contrats précisent les conditions d'interaction.
+- Limite : ne constitue ni notre contrat métier complet, ni un choix HTTP, événementiel ou de plateforme.
+
+### ELM011
+
+- Référence : [MKT10](catalogue.md#mkt10), CMMN 1.1, décembre 2016.
+- Libellés natifs : *Case*, *Case File*, *Case Plan Model*, *Case Roles*, *Tasks*. Nature : concepts de modélisation de dossiers.
+- Localisateur : §§4.1, 4.3 et 5.2.2.
+- Définition reformulée : un dossier articule informations, plan de traitement, rôles et tâches ; c'est un appui pour décrire les objets et comportements de la couche haute.
+- Limite : la persistance durable et l'urbanisation propres demandées par U19 restent des exigences locales ; CMMN n'impose ici ni schéma de stockage ni modèle RBAC complet.
+
+### ELM012
+
+- Référence : [MKT11](catalogue.md#mkt11), OpenAPI Specification 3.2.0, introduction.
+- Libellé natif : *OpenAPI Specification*. Nature : format de description d'interfaces.
+- Définition reformulée : description d'API HTTP indépendante du langage de programmation.
+- Limite : candidat pour la représentation d'un contrat ; sa sémantique et sa politique de compatibilité restent à définir.
+
+### ELM013
+
+- Référence : [MKT12](catalogue.md#mkt12), AsyncAPI Specification 3.0.0, introduction.
+- Libellé natif : *AsyncAPI Specification*. Nature : format de description d'interfaces à messages.
+- Définition reformulée : description des interfaces d'applications qui échangent des messages.
+- Limite : ne détermine ni les faits métier publiés, ni les garanties de livraison ou d'évolution du contrat.
+
+## Stock SAP
+
+Examen sélectif du 2026-09-09 par Codex en réponse à U22/U23. Versions de catalogue/produit inconnues, limites dans MKT04/MKT13 ; aucun identifiant natif fourni par les passages consultés. ELM015–ELM018 sont des fonctions de solution, pas des feuilles RBA nouvellement découvertes. Reformulations françaises distinctes des libellés natifs.
+
+### ELM014
+
+- Référence : [MKT04](catalogue.md#mkt04), [cours RBA](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), section *Business Capability Model Example*, première image, lue visuellement.
+- Nature : extrait de hiérarchie métier et sélection de capacités.
+- Libellés natifs sélectionnés : *Inventory Management*, *Order Promising*, *Warehouse Management* (Business Areas) ; *Goods Receipt Processing*, *Physical Inventory*, *Product Availability Check*, *Product Allocation Check* (Business Capabilities).
+- Rattachement : les trois aires relèvent du Business Domain *Supply Chain Execution*, lui-même regroupé sous l’Enterprise Domain *Supply – Fulfill Demand* (complément U24/C31, 2026-09-09). Les deux premières capacités citées relèvent de la gestion des stocks ; les deux suivantes de la promesse de commande.
+- Définition détaillée : non fournie dans l’image. Reformulation : distinguer tenue/mouvements/comptage du stock, promesse et exécution en entrepôt.
+- Limite : extrait pédagogique, sans export exhaustif ni correspondance automatique avec nos niveaux ou organisations. La [note](sap-stock.md) décrit les autres feuilles observées en français.
+- Réexamen U43 du 2026-09-10 : S1, sections sur Enterprise Domains, structure et exemple du modèle ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+- Réexamen U51 du 2026-09-10 : même cours SAP, sections Reference Architecture Content Example/Framework/Business Capability Model Example consultées ; hiérarchie et exemple stock/promesse confirmés, Sourcing and Procurement repéré comme domaine. Édition du catalogue toujours inconnue. CMP031 compare des options locales, sans équivalence de domaines complets.
+- Réexamen U53 du 2026-09-10 : Business Capability Model Example reconsulté ; Order Promising, Inventory Management, Warehouse Management et Transportation Management demeurent distingués sous Supply Chain Execution. Leur regroupement supérieur ne vaut pas adoption du périmètre Supply – Fulfill Demand ; CMP032.
+
+- Réexamen U59 du 2026-09-10 : même cours, sections Framework et Business Capability Model Example ; la maille Business Area est proposée comme point de comparaison pour les domaines locaux. La hiérarchie complète est conservée ; CMP033/P78 ne valident ni chaque aire comme espace problématique local ni le catalogue principal.
+
+- Précision U66/U67, 2026-09-11 : [ELM067](#elm067) sépare niveau natif RBA et nature de l’aptitude métier. La présentation de Supply Protection / Supply Assignment comme fonctionnalités de produit ne disqualifie pas les capacités correspondantes ; C49/CMP038.
+
+### ELM015
+
+- Référence : [MKT13](catalogue.md#mkt13), [cours stocks et inventaires](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), sections *Managing Stocks by Quantity*, *Planning, Entry, and Documentation of Goods Movements* et *Carrying Out the Physical Inventory*.
+- Libellé natif : *Inventory Management and Physical Inventory*. Nature : responsabilités fonctionnelles S/4HANA.
+- Définition reformulée : tenir les quantités et changements de stock avec leur documentation ; confronter un comptage au stock enregistré et enregistrer les différences.
+- Limite : effets en valeur traités par SAP mais finance exclue de notre domaine. Ne détermine ni autorité Beaumanoir ni organisation de l’inventaire.
+
+### ELM016
+
+- Référence : [MKT13](catalogue.md#mkt13), [cours disponibilité](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/explaining-product-availability-check_c1ca2960-2d3c-40a6-a839-ff2ad9595f08), introduction, facteurs et résultats du contrôle.
+- Libellé natif : *Product Availability Check*. Nature : fonction de solution aATP, distincte de la seule observation du libellé RBA dans ELM014.
+- Définition reformulée : calculer les quantités et dates confirmables selon le stock, les demandes et les approvisionnements retenus par le contrôle.
+- Limite : les ressources futures dépendent du périmètre de contrôle ; notre vente nominale GBM sur stock est conservée. Confirmation, réservation technique et cycle complet d’engagement ne sont pas déclarés équivalents.
+
+### ELM017
+
+- Référence : [MKT13](catalogue.md#mkt13), [cours protection](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-aatp-with-supply-protection-sup-), section d’introduction à la protection d’approvisionnement.
+- Libellé natif : *Supply Protection*. Nature : fonction de solution aATP.
+- Définition reformulée : protéger une quantité pour un groupe vis-à-vis d’autres groupes suivant des critères et un horizon ; des priorités peuvent exister dans la solution.
+- Limite : appui pour comparer protection et consommation ; aucune preuve d’équivalence avec MAP et aucune priorité SAP importée dans GBM.
+
+- Complément U63/U64, 2026-09-10 : sections Supported and Affected Document Types / Stock Transport Orders reconsultées ; le cours traite ventes et transferts et relie consommation de protection aux quantités confirmées. Provenance complète et limites dans ELM062 ; aucun regroupement de domaines locaux déduit automatiquement.
+
+- Précision U66/U67, 2026-09-11 : [ELM067](#elm067) sépare niveau natif RBA et nature de l’aptitude métier. La présentation de Supply Protection / Supply Assignment comme fonctionnalités de produit ne disqualifie pas les capacités correspondantes ; C49/CMP038.
+
+- Réexamen U74 du 2026-09-11 : contenu de protection/allocation reconsulté pour le rattachement local à D01 ; passages et limites dans [CMP040](comparaisons.md#cmp040). Aucune équivalence de rang natif ni configuration Beaumanoir déduites.
+
+### ELM018
+
+- Référence : [MKT13](catalogue.md#mkt13), [cours allocation](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-aatp-with-check-against-allocation), présentation de l’allocation et de son contrôle.
+- Libellé natif : *Product Allocation*. Nature : fonction de solution aATP.
+- Définition reformulée : limiter les quantités confirmables selon périodes et caractéristiques ; articuler le contrôle avec celui de disponibilité.
+- Limite : un plafond de confirmation n’est ni la protection d’un minimum pour un groupe ni la réservation d’une quantité pour une demande. Fonctionnement ARun local non établi.
+
+## Éléments de l’étude comparative U25
+
+Contrôle Codex du 2026-09-09. Les identifiants ELM restent locaux. Les sources originales, éditions et localisateurs sont dans les fiches MKT et annexes liées ; les définitions françaises sont des reformulations. Hors codes de vues ARTS, aucun identifiant natif d’élément n’est fourni ici. Aucune correspondance métier validée.
+
+### ELM019
+
+- Référence : [MKT01](catalogue.md#mkt01).
+- Libellés natifs / repères : Business Capabilities ; stratification / leveling.
+- Nature : Méthode.
+- Édition et localisateur : G189, juin 2018, §§2.1/3/3.2, pages imprimées 2–3 et 6–10, copie du document primaire sur miroir tiers.
+- Définition reformulée : Distinguer classement transversal et profondeur de décomposition, adaptée au besoin.
+- Limite : G211/version 2 non lu ; aucune profondeur obligatoire ni nomenclature retail déduite.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-cadres-capacites.md).
+- Réexamen U43 du 2026-09-10 : S2, G189 §3.2.1–3.2.2 ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+- Réexamen U47 du 2026-09-10 : G189 §3.1, pages imprimées 6–7, distingue les approches descendante et ascendante et propose leur combinaison pour affiner la carte. [Document primaire sur miroir tiers](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf), texte consulté ; appui méthodologique en CMP028, sans nomenclature commerce déduite.
+
+### ELM020
+
+- Référence : [MKT02](catalogue.md#mkt02).
+- Libellés natifs / repères : Capability ; composition, aggregation, specialization.
+- Nature : Métamodèle.
+- Édition et localisateur : ArchiMate 3.1/C197, novembre 2019, §§7.1/7.3/7.6, copie externe ; tutoriel communautaire en complément.
+- Définition reformulée : Représenter aptitude et relations sans imposer un catalogue sectoriel ni confondre décomposition et variante.
+- Limite : Norme 3.2 non examinée ; aucune notation adoptée.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-cadres-capacites.md).
+
+### ELM021
+
+- Référence : [MKT03](catalogue.md#mkt03).
+- Libellés natifs / repères : Tier ; Level ; Business Object.
+- Nature : Pratiques de construction.
+- Édition et localisateur : Atelier Guild du 20/06/2019, pages PDF 15–21 ; position paper octobre 2014, pages PDF 12–19.
+- Définition reformulée : Séparer catégories et niveaux ; construire autour des objets/actions ; rapprocher capacités et processus plusieurs-à-plusieurs.
+- Limite : Atelier et papier historiques ; pas guide BIZBOK 15 ni catalogue retail complet.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-cadres-capacites.md).
+- Réexamen U43 du 2026-09-10 : S3, atelier 2019 pages PDF 17–21 ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+
+- Réexamen U60 du 2026-09-10 : [atelier sur le CDN officiel](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/public_resources/baguild_ref_model_workshop_a.pdf), pages 15–21, texte relu avec succès. Motifs de définition, information et rapprochement examinés ; un rapprochement d’objets garde un objet directeur. Sources 15.0 et métamodèle 2024 qualifiées séparément en ELM052–ELM054 ; pas de catalogue actuel déduit de l’atelier.
+
+### ELM022
+
+- Référence : [MKT05](catalogue.md#mkt05).
+- Libellés natifs / repères : Retail Industry ; Business Process Areas ; Organizational Business Process Flows ; Business/System Process Flows.
+- Nature : Niveaux et exemples de processus.
+- Édition et localisateur : Guide Oracle RRM 14.1.1, juin 2015, pages imprimées 5–7, 12–21 et 26.
+- Définition reformulée : Niveaux d’information L0–L3 avec liens non strictement hiérarchiques ; exemples achats, stock, allocation, réassort, B2B et retours.
+- Limite : L2.5/3 ne crée pas un cinquième étage homogène. Bibliothèque actuelle non acquise ; fiche actuelle avec mentions divergentes.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-oracle-apqc-arts.md).
+
+### ELM023
+
+- Référence : [MKT07](catalogue.md#mkt07).
+- Libellés natifs / repères : Category ; Process Group ; Process ; Activity ; Task.
+- Nature : Classification de processus.
+- Édition et localisateur : Introduction générale PCF ©2018, figure 1/pages PDF 1–2.
+- Définition reformulée : Cinq niveaux nominaux ; identifiant distinct du chemin ; profondeur et granularité variables.
+- Limite : Taxonomie, pas enchaînement de travail. Contenu Retail 7.2.1 non consulté.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-oracle-apqc-arts.md).
+- Réexamen U43 du 2026-09-10 : S6, introduction générale et figure 1 ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+
+### ELM024
+
+- Référence : [MKT08](catalogue.md#mkt08).
+- Libellés natifs / repères : 02010 ; 07620.
+- Nature : Vues de données.
+- Édition et localisateur : ARTS ODM 7.3, introduction, sommaire et narrations des deux vues.
+- Définition reformulée : 02010 décrit comptage et ajustements ; 07620 distingue effets commande/disponibilité et expédition/stock physique.
+- Limite : Identifiants natifs de vues, pas de capacités. Autres vues surtout repérées ; aucune règle GBM présumée.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-oracle-apqc-arts.md).
+
+### ELM025
+
+- Référence : [MKT06](catalogue.md#mkt06).
+- Libellés natifs / repères : Direct ; Control ; Execute.
+- Nature : Matrice de composants métier.
+- Édition et localisateur : IBM G510-6163-00, 2005, pages PDF 7–11, figure 6 page PDF 11/imprimée 9, lecture visuelle.
+- Définition reformulée : Croiser compétences et responsabilités ; examiner les répétitions de libellés dans leur contexte.
+- Limite : Les trois lignes ne sont pas trois profondeurs ; définitions des cases absentes.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-sap-ibm.md).
+- Réexamen U43 du 2026-09-10 : S4, cadre et exemple retail pages PDF 9–11 ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+- Réexamen U51 du 2026-09-10 : document IBM G510-6163-00, 2005, figure 6 page imprimée 9 / PDF 11 relue pour les axes et thèmes retail. Les composants restent distincts de capacités métier ; CMP031.
+
+- Réexamen U59 du 2026-09-10 : texte des pages PDF 9–11 et repères de la figure 6 relus. L’exemple retail offre une autre lecture par compétences et responsabilités ; les cases restent des composants. CMP033 n’assimile pas Direct/Control/Execute aux deux couches ni aux natures locales.
+
+### ELM026
+
+- Référence : [MKT14](catalogue.md#mkt14).
+- Libellés natifs / repères : End-to-end processes ; Business process areas ; Business processes ; Scenarios ; System processes ; Test cases.
+- Nature : Structure de catalogue.
+- Édition et localisateur : Microsoft Learn About, sections niveaux/IDs, mise à jour 08/01/2026.
+- Définition reformulée : Six niveaux du parcours métier à la configuration et au test ; certaines aires reflètent fonctions ou départements.
+- Limite : Pas six profondeurs de capacités ; export complet non examiné.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-microsoft.md).
+- Réexamen U43 du 2026-09-10 : S5, section des six niveaux, page du 08/01/2026 ; texte consulté pour les premiers regroupements. [Analyse et limites](premier-niveau-regroupement-capacites.md), CMP026 ; ancienne provenance conservée.
+
+### ELM027
+
+- Référence : [MKT14](catalogue.md#mkt14).
+- Libellés natifs / repères : Inventory to deliver ; Order to cash ; Source to pay ; Design to retire ; Case to resolution.
+- Nature : Contenus de processus et évolution.
+- Édition et localisateur : Pages de présentation et aires, 2024–2026 ; changelog février 2025.
+- Définition reformulée : Décrire les thèmes commerce et leurs réalisations ; retours déplacés du traitement des dossiers vers commande/encaissement en 2025.
+- Limite : Dates hétérogènes ; certaines mentions sont des fonctions produit. Un déplacement ne prouve pas un nouveau besoin métier.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-microsoft.md).
+- Réexamen U47 du 2026-09-10 : [Inventory to deliver — business process areas](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-areas), date affichée 2025-01-21. Sections Maintain inventory levels (comptage et ajustements), Process inbound goods (retours clients), Process outbound goods (retours fournisseurs) consultées. Contrôle de couverture proposé en CMP028 ; ni capacités ni domaines locaux déduits automatiquement de ces processus.
+- Réexamen U51 du 2026-09-10 : [vue des scénarios](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview), tableau central et date affichée 2025-12-16 consultés. Source to pay, Order to cash et Inventory to deliver restent des parcours de contrôle, sans conversion automatique en domaines du socle ; CMP031. Les dates des autres pages et observations antérieures sont conservées séparément.
+
+### ELM028
+
+- Référence : [MKT14](catalogue.md#mkt14).
+- Libellés natifs / repères : Inventory Visibility inventory allocation.
+- Nature : Fonction de produit.
+- Édition et localisateur : Page allocation, sections finalité/allocation virtuelle/réservation, mise à jour 13/08/2025.
+- Définition reformulée : Préallouer une quantité à des groupes et suivre sa consommation, en distinguant réservation de transaction.
+- Limite : Recouvrement de finalité avec protection SAP proposé ; mécanismes détaillés et usages locaux non établis.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-microsoft.md).
+
+- Réexamen U74 du 2026-09-11 : contenu de protection/allocation reconsulté pour le rattachement local à D01 ; passages et limites dans [CMP040](comparaisons.md#cmp040). Aucune équivalence de rang natif ni configuration Beaumanoir déduites.
+
+### ELM029
+
+- Référence : [MKT04](catalogue.md#mkt04).
+- Libellés natifs / repères : Sales Order Management ; Service Request Management ; Sourcing Process.
+- Nature : Compléments éditoriaux.
+- Édition et localisateur : SAP EA Knowledge Base,articles 2024–2026, extraits indexés des besoins métier.
+- Définition reformulée : Éclairer commandes et support par des définitions RBA citées ; parcours de sourcing pour le contexte achats.
+- Limite : Ouvertures directes 403 : extraits seulement. Pas export versionné ni rattachement complet reconstitué.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-sap-ibm.md).
+
+### ELM030
+
+- Référence : [MKT15](catalogue.md#mkt15).
+- Libellés natifs / repères : Business Capability Reference Model.
+- Nature : Carte retail historique.
+- Édition et localisateur : Microsoft/APQC, carte V1 du 15/09/2012, pages PDF 15–16, texte extrait.
+- Définition reformulée : Repérer produits, achats, stocks, allocation, réassort, exécution et service client comme thèmes de comparaison.
+- Limite : Définitions absentes, emboîtement visuel non certifié ; distinct du PCF Retail et de Dynamics actuel.
+- Sources et accès : [annexe de preuves](etudes/2026-09-09-modeles-marche/notes-oracle-apqc-arts.md).
+
+### ELM031
+
+- Référence : [MKT14](catalogue.md#mkt14), complément produit distinct du catalogue de processus.
+- Libellé natif : Inventory Visibility reservations ; soft reservation / offset.
+- Nature : Fonction de produit.
+- Édition et localisateur : Microsoft Learn, mise à jour 27/07/2026, sections cas d’usage et intégration des réservations/compensations ; consultation 2026-09-09.
+- Définition reformulée : Tenir une quantité réservée dans Inventory Visibility et l’articuler avec les changements de statut de la commande dans l’ERP.
+- Limite : Paramétrage et versions conditionnent les contrôles ; pas de garantie ni de modèle de réservation universels.
+- Source et accès : [page officielle](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), texte consulté ; analyse et localisateurs dans la [note comparative](allocation-reservation-sap-microsoft.md).
+
+### ELM032
+
+- Référence : [MKT13](catalogue.md#mkt13).
+- Libellés natifs / identifiant : Supply Assignment (ARun), Backorder Processing ; SUPPLY_ASSIGNMENT_01.
+- Nature : Fonctions de produit et articulation.
+- Édition et localisateur : Cours SAP actuels sans édition précisée, sections PAC/BOP et Configure BOP Variant ; fiche de business function, Technical Data/Features, borne de disponibilité S/4HANA 1709. Consultation 2026-09-09.
+- Définition reformulée : Distinguer confirmation et affectation, avec exécution de Supply Assignment possible dans BOP.
+- Limite : Borne de business function, pas date de chacune des fonctions actuelles ; aucune scission historique globale démontrée ni usage Boardriders établi.
+- Sources et accès : S5/S6/S8 dans la [note comparative](allocation-reservation-sap-microsoft.md), cours consultés et passage indexé de la fiche Help Portal.
+
+- Précision U66/U67, 2026-09-11 : [ELM067](#elm067) sépare niveau natif RBA et nature de l’aptitude métier. La présentation de Supply Protection / Supply Assignment comme fonctionnalités de produit ne disqualifie pas les capacités correspondantes ; C49/CMP038.
+
+### ELM033
+
+- Référence : [MKT16](catalogue.md#mkt16).
+- Libellés natifs / identifiants : Order Allocation Run ; FASHION_20_ARUN ; FASHION_03 ; FSH_BADI_ARUN_STOCK_PROTECTION.
+- Nature : Documentation historique de produit.
+- Édition et localisateur : SAP ERP 6.0 EHP8 SPS01, EA-RETAIL 618 SP1 ; Order Allocation Run (New), sections Technical Details, Features, Customizing ; consultation 2026-09-09.
+- Définition reformulée : Ensemble Fashion associant sélection, affectation, libération et extension pour la protection de segments.
+- Limite : Pas tout ECC, pas preuve d’un unique batch ni équivalence de l’ancien ARun avec tous les mécanismes actuels.
+- Sources et accès : S7 et complément S9 (règle de réallocation, édition non affichée) dans la [note comparative](allocation-reservation-sap-microsoft.md) ; passage indexé consulté.
+
+### ELM034
+
+- Référence : [MKT14](catalogue.md#mkt14), complément produit SCM distinct du catalogue de processus.
+- Libellé natif : Reserve inventory quantities ; Reserve ordered items.
+- Nature : Fonction de produit.
+- Édition et localisateur : Microsoft Learn, page mise à jour 29/08/2025, introduction et Policies on the Inventory and warehouse management parameters page ; consultation 2026-09-09.
+- Définition reformulée : La réservation peut porter sur du physique présent ou sur du stock commandé non encore reçu, selon la politique configurée.
+- Limite : Ne prouve ni une équivalence BOP/ARun ni une réalisation GBM/BRD. Version produit précise non affichée.
+- Source et accès : [page officielle](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities), texte consulté ; [analyse U30](../connaissance/18-politiques-engagement-gbm-brd.md).
+
+### ELM035
+
+- Référence : [MKT13](catalogue.md#mkt13).
+- Libellés natifs : Product Availability Check ; Backorder Processing — Supply Assignment ; Reassignment ; Configuration Options for Exception Handling.
+- Nature : Conditions fonctionnelles de produit.
+- Édition et localisateurs : S/4HANA 2025 FPS01, février 2026 ; PAC Use ; BOP Supply Selection, Reason Codes, Reassignment ; exceptions Use/Options. Consultation 2026-09-09.
+- Définition reformulée : Distinguer confirmation et affectation ; futures réceptions et reprises selon règles ; révisions prioritaires avec possibilités d’exception.
+- Limite : Une demande non confirmée n’est pas automatiquement affectable ; une priorité ne crée pas d’offre. Conditions et version, pas fonctionnement BRD prouvé.
+- Sources et accès : S1/S2 de la [note GBM/BRD](../connaissance/18-politiques-engagement-gbm-brd.md), passages Help indexés consultés.
+
+### ELM036
+
+- Référence : [MKT13](catalogue.md#mkt13), distincte du modèle métier RBA MKT04.
+- Libellés natifs / repères : Order Promising (2LN) ; Backorder Processing (BOP) ; Advanced Order Promising ; CA-ATP-BOP.
+- Nature : Rattachement fonctionnel dans la documentation de solution.
+- Édition et localisateur : page Cloud Public Edition affichée 2608 Latest, liste des fonctions PAC/BOP ; nouveautés S/4HANA 2023, OData API: Advanced Backorder Processing Run, tableau Solution Area/Capability. Consultation 2026-09-09.
+- Définition reformulée : SAP présente BOP parmi les fonctions d’Order Promising ; l’API de réexamen est classée sous Advanced Order Promising / Advanced Available to Promise.
+- Limite : Éditions distinctes ; classification de produit, aucune feuille native BOP ni profondeur établie dans le catalogue RBA complet. Aucun niveau local adopté.
+- Sources et accès : S4 de la [note GBM/BRD et promesse](../connaissance/18-politiques-engagement-gbm-brd.md), passages indexés consultés.
+
+### ELM037
+
+- Référence : [MKT14](catalogue.md#mkt14), complément produit Inventory Visibility.
+- Libellés natifs / repères : Allocate, Unallocate, Reallocate, Consume, Query ; soft reservation, offset.
+- Nature : Opérations, objets et mesures d’un produit ; pas sous-capacités natives.
+- Éditions et localisateurs : allocation, page du 13/08/2025, Terminology et Use the allocation APIs ; réservations, page du 27/07/2026, création, intégration/offset et annulation. Consultation 2026-09-09.
+- Définition reformulée : Les fonctions disposent d’opérations et de règles détaillées, documentées dans leur contexte d’intégration.
+- Limite : Hiérarchie de groupes et mesures ne donnent ni profondeur de carte ni capacités locales automatiques. Aucun usage Beaumanoir ou Boardriders démontré.
+- Sources et accès : S2/S3 dans la [note de granularité](detail-fonctions-stock-promesse.md), textes Microsoft Learn consultés ; compléments ELM028/ELM031.
+
+### ELM038
+
+- Référence : [MKT13](catalogue.md#mkt13), distincte du modèle de capacités RBA.
+- Libellés natifs / repères : Supply Protection Object / Group ; Core / Prioritized Supply Protection ; Product Allocation Characteristics / Sequences.
+- Nature : Objets, états, variantes et règles de fonctions de produit.
+- Éditions et localisateurs : cours SUP, sections objet/activation/groupes/variantes ; cours PAL, restrictions/périodes, sans édition précisée. Help 2025 FPS01, Characteristics Use et Product Allocation Sequences, Context/étapes 4–8. Consultation 2026-09-09.
+- Définition reformulée : SUP et PAL détaillent les groupes, critères et horizons, avec cycle d’application ou composition de contrôles selon la fonction.
+- Limite : Composition d’objets ou variante de règle, pas étage natif de sous-capacités vérifié. Préserver la distinction SUP/PAL et leurs versions.
+- Sources et accès : S5/S6 dans la [note de granularité](detail-fonctions-stock-promesse.md), cours consultés et passages Help indexés ; compléments ELM017/ELM018.
+
+### ELM039
+
+- Référence : [MKT13](catalogue.md#mkt13).
+- Libellés natifs / repères : Supply Assignment Rule ; BOP segment / variant / confirmation strategy / fallback variant / run.
+- Nature : Règles d’affectation et objets de configuration/exécution du réexamen.
+- Éditions et localisateurs : Supply Assignment Rule, General Settings/Supply Configuration/Assignment Configuration/Release Check Settings, 2025 FPS01 ; Key Concepts in Backorder Processing, définitions, 2023 Latest. Consultation 2026-09-09.
+- Définition reformulée : Les fonctions ARun et BOP distinguent les règles de décision, paramètres de sélection et modes d’exécution.
+- Limite : Éditions distinctes ; pas hiérarchie de capacités, pas transfert automatique du calcul métier dans la couche processus/organisation.
+- Sources et accès : S7/S8 dans la [note de granularité](detail-fonctions-stock-promesse.md), passages Help indexés ; compléments ELM032/ELM035.
+
+### ELM040
+
+- Référence : [MKT13](catalogue.md#mkt13).
+- Libellés natifs / repères : Manage Supply Protection ; maintain protected quantities ; Maintaining Material Master Data / Maintain the material master record.
+- Nature : vocabulaire anglais de documentation de produit et de formation ; pas libellés français de capacités.
+- Éditions et localisateurs : Apps for Supply Protection (SUP), 2608 Latest, sections Use et Business Roles ; cours Maintaining Material Master Data, titre et objectif, édition produit non précisée. Consultation 2026-09-09.
+- Constat reformulé : SAP emploie Manage pour l’application de gestion des protections et Maintain pour les quantités protégées ou les données de référence.
+- Limite : ces exemples ne prouvent ni une traduction canonique par tenir, ni l’absence de ce mot dans toute la documentation SAP. Aucun niveau de capacité déduit de ces verbes.
+- Sources et accès : [Apps for Supply Protection](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/d308d458b5794b1cbf647aca23de4d9d.html), passage indexé consulté ; [Maintaining Material Master Data](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-sourcing-procurement/maintaining-material-master-data), titre et objectif consultés via extrait indexé. Analyse et propositions françaises dans le [glossaire](../connaissance/19-glossaire-metier.md#provenance-de-tenir-et-choix-de-formulations).
+
+### ELM041
+
+- Référence : [MKT17](catalogue.md#mkt17).
+- Libellés natifs : domain ; model ; bounded context.
+- Nature : définitions conceptuelles.
+- Édition et localisateur : Evans, référence DDD ©2015, page imprimée vi/page PDF 6, Definitions. Consultation du 2026-09-10.
+- Constat reformulé : le domaine est le champ étudié ; le modèle en représente des aspects utiles à la résolution de problèmes ; le contexte délimité indique où un modèle particulier est défini et applicable.
+- Limite : espace problématique est la lecture de travail exprimée en U45, pas une citation de cette définition native. Aucune hiérarchie de capacités ni correspondance un-à-un entre domaine local et contexte délimité déduite.
+- Source et accès : [document primaire de l’auteur](https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf), passage textuel consulté ; [analyse](premier-niveau-regroupement-capacites.md#donner-un-sens-au-domaine-avec-ddd).
+
+- Précision U46 du 2026-09-10 : ELM041 atteste le passage du mémento de 2015, pas la formulation du livre complet. Recherche ciblée dans l’extrait éditeur du livre décrite sous MKT17 ; passage exact évoqué non localisé, sans preuve d’absence. La limite de travail actuelle exclut la conception des bounded contexts.
+
+### ELM042
+
+- Référence : [MKT10](catalogue.md#mkt10), OMG BPMN.
+- Libellés natifs : Processes (Orchestration) ; Private non-executable / executable Business Processes.
+- Nature : concepts de modélisation de processus, pas catalogue de capacités.
+- Édition/localisateur : BPMN 2.0.2, janvier 2014, §7.2.1, page imprimée 21 / page PDF 51 ; consulté le 2026-09-10.
+- Reformulation : l’orchestration décrit des processus, qui peuvent être modélisés sans être exécutables.
+- Limite : ne fixe ni une liste de capacités métier ni le choix d’un moteur.
+- Source : [spécification primaire](https://www.omg.org/spec/BPMN/2.0.2/PDF), texte du passage consulté ; CMP029.
+
+### ELM043
+
+- Référence : [MKT13](catalogue.md#mkt13), SAP S/4HANA Cloud.
+- Libellés natifs : Subcontracting ; subcontract purchase requisition ; subcontract purchase order ; stock of material provided to supplier.
+- Nature : description fonctionnelle de produit et processus.
+- Édition/localisateur : cours Outlining Subcontracting, introduction et Applicable Process Steps ; édition produit non précisée, consulté le 2026-09-10.
+- Reformulation : demande et commande de sous-traitance, composants fournis au prestataire et consommation reliée à la réception du résultat.
+- Limite : aucune équivalence du Planned Purchase Order local avec le document SAP ; aucune propriété ou configuration Beaumanoir prouvée.
+- Source : [cours primaire SAP](https://learning.sap.com/courses/detailing-subcontracting-and-supplier-consignment/outlining-subcontracting_af403e3e-188d-4dbb-bde1-632253739fa6), texte consulté ; CMP030.
+
+### ELM044
+
+- Référence : [MKT14](catalogue.md#mkt14), complément produit Dynamics 365 SCM, distinct du catalogue de processus.
+- Libellés natifs : subcontracting ; service product ; vendor-managed warehouse.
+- Nature : documentation de réalisation de la sous-traitance.
+- Édition/localisateur : Manage subcontracting work in production, page du 2025-08-13, introduction, Subcontracting of route operations et paragraphes sur le stock au site fournisseur ; consulté le 2026-09-10.
+- Reformulation : achat de service et mise à disposition des matières sont articulés dans plusieurs variantes de production, avec des représentations distinctes.
+- Limite : aucune correspondance générale un-à-un avec SAP, aucune organisation de production ni modèle de stock imposé à Beaumanoir.
+- Source : [documentation primaire Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/production-control/manage-subcontract-work-production), passages textuels consultés ; CMP030.
+
+### ELM045
+
+- Référence : [MKT13](catalogue.md#mkt13), SAP S/4HANA / Cloud Public Edition.
+- Libellés natifs : Stock Transport Order ; Intra-Company Stock Transfer ; Intercompany Stock Transfer (1P9) ; Advanced Intercompany Stock Transfer (5HP).
+- Nature : variantes de processus et objets de réalisation de transfert.
+- Édition/localisateurs : cours d’éditions non précisées, consultés le 2026-09-10 ; S1 sections STO/One-Step Versus Two-Step, S2 scénarios 1P9/5HP, S3 Cross-Plant Stock Transfer.
+- Reformulation : des mouvements comparables s’articulent avec des engagements et effets comptables différents. Dans 5HP, commande de vente et changement de propriété en transit sont explicités séparément.
+- Limite : pas de règle fiscale universelle, ni d’identité de tous les scénarios SAP ou de preuve locale. Une facture et une écriture comptable sont distinguées.
+- Sources primaires et accès : S1–S3 de la [note réassort](../connaissance/23-reassort-transferts-et-promesse.md#sources-et-limites-de-consultation), textes consultés ; page Help supplémentaire sans texte exploitable non retenue comme preuve.
+
+### ELM046
+
+- Référence : [MKT13](catalogue.md#mkt13), SAP S/4HANA et Cloud Public Edition.
+- Libellés natifs : Available-to-Promise ; Product Availability Check ; Backorder Processing ; sales order ; stock transport order.
+- Nature : périmètre fonctionnel de confirmation et réexamen.
+- Édition/localisateurs : cours d’éditions non précisées, consultés le 2026-09-10 ; S4 Introduction to Available-to-Promise, S5 introduction et Back Order Processing.
+- Reformulation : quantité/date peuvent être confirmées pour un client ou un site receveur ; le réexamen peut concerner des commandes clients et ordres de transfert.
+- Limite : ne couvre pas toute la gestion d’un achat ou retour ; ne prouve aucune configuration locale. Libellé 2LN du cours distinct de la page versionnée ELM036 ; aucune harmonisation de version ou licence déduite.
+- Sources primaires et accès : S4/S5 de la [note réassort](../connaissance/23-reassort-transferts-et-promesse.md#sources-et-limites-de-consultation), textes consultés.
+
+- Réexamen U63/U64, 2026-09-10 : la leçon S5 renvoie actuellement surtout à l’activation ; Basic ATP et le cours BOP ciblé en ELM062 fournissent les preuves directes retenues pour la nouvelle carte. Cette observation ne réattribue pas la lecture historique à une nouvelle édition.
+
+### ELM047
+
+- Référence : [MKT13](catalogue.md#mkt13), SAP S/4HANA Advanced Returns Management.
+- Libellés natifs : Materials Received ; Advanced Notice ; Inspection at Customer ; Direct Return to Vendor.
+- Nature : description de scénarios de retour, distincte d’une capacité native RBA.
+- Édition/localisateur : édition non précisée, consultation 2026-09-10 ; Outlining Customer Returns in SAP S/4HANA, Standard Scenarios for Customer Returns.
+- Reformulation : réception, inspection, suites et effets commerciaux peuvent varier, notamment pour un retour direct au fournisseur.
+- Limite : ne démontre ni une ressource immédiatement disponible ni un fonctionnement Sarenza ; aucun retour complet assimilé à Order Promising.
+- Source et accès : S7 de la [note réassort](../connaissance/23-reassort-transferts-et-promesse.md#sources-et-limites-de-consultation), texte primaire consulté ; autre leçon BKP en 404 non utilisée.
+
+### ELM048
+
+- Référence : [MKT18](catalogue.md#mkt18), BIAN ; guide V8.1 daté juillet 2020.
+- Libellés natifs : Business Area ; Business Domain ; Service Domain.
+- Nature : classification de partitions fonctionnelles bancaires.
+- Reformulation : les deux premiers regroupent les Service Domains ; différents layouts classent les mêmes partitions. Ces partitions sont définies par des besoins métier tout en guidant une conception de services autonomes.
+- Source, localisateurs et accès : [guide officiel](https://bian.org/wp-content/uploads/2024/12/BIAN-Semantic-API-Pactitioner-Guide-V8.1-FINAL.pdf), §§2.1, 3.1, 4.2.1, pages 12–13, 26–27, 78–79 ; passages consultés le 2026-09-10.
+- Limite : distinction avec la business capability ; ni hiérarchie SAP inversée par erreur ni catalogue retail. Pas de définition locale dérivée automatiquement ; état 14.0 non comparé en détail.
+
+### ELM049
+
+- Référence : [MKT19](catalogue.md#mkt19), TM Forum Functional Framework.
+- Libellés natifs : domain ; sub-domain ; function.
+- Nature : classification de fonctions du point de vue SI.
+- Reformulation : domaines et sous-domaines regroupent les fonctions ; les sous-domaines ont un rôle taxonomique et les fonctions élémentaires sont au même niveau.
+- Source/localisateurs : [présentation officielle](https://www.tmforum.org/open-digital-architecture/functional-framework/), Fundamental units / Recognizing functions ; consultée le 2026-09-10.
+- Version/limite : GB1033 v26.0 identifié dans une notice, document détaillé non consulté. Une fonction SI n’est pas automatiquement notre capacité indépendante des outils.
+
+### ELM050
+
+- Référence : [MKT19](catalogue.md#mkt19), TM Forum Functional Architecture.
+- Libellés natifs : Core Commerce Management ; Production ; Engagement Management ; Party Management ; Intelligence Management.
+- Nature : blocs d’architecture fonctionnelle, distincts du catalogue des capacités.
+- Reformulation : la présentation sépare commerce et fourniture du service. Cette séparation peut éclairer une étude de frontière sans fournir le découpage Beaumanoir.
+- Source/localisateurs : [présentation officielle](https://www.tmforum.org/open-digital-architecture/functional-architecture/), Why is this important? / What has been accomplished so far? ; consultée le 2026-09-10.
+- Version/limite : notices 2021 identifiées en MKT19, documents détaillés non consultés. Production télécom n’est pas déclarée équivalente à Supply ou à la logistique ; aucune prescription locale de cinq blocs.
+
+### ELM051
+
+- Référence : [MKT19](catalogue.md#mkt19), TM Forum Capability Framework.
+- Libellé natif : Business Capability Framework.
+- Nature : modèle de capacités lié à d’autres vues métier.
+- Reformulation : le modèle de capacités est distinct des modèles de processus et d’architecture fonctionnelle de l’ODA.
+- Source/localisateur : [présentation officielle](https://www.tmforum.org/open-digital-architecture/capability-framework/), Overview ; consultée le 2026-09-10.
+- Version/limite : GB1029C v4.0.0 identifié dans une notice de mars 2026 ; catalogue détaillé membre non consulté. Structure fine et couverture de capacités non comparées.
+
+### ELM052
+
+- Référence : [MKT03](catalogue.md#mkt03), BIZBOK Guide 15.0, ©2026.
+- Nature : définitions du glossaire ; libellés natifs Capability, Business Service, Capability Instance, Capability Level, Capability Tier.
+- Reformulation : distinguer aptitude, service SOA, réalisation contextuelle, profondeur et catégorie. La capacité vise une finalité ou un résultat.
+- Source/localisateurs : [Appendix A](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf), pages imprimées 456–457 / PDF 4–5 ; consultées le 2026-09-10.
+- Limite : définitions externes distinctes de la convention locale impérative U33 ; aucun remplacement automatique du glossaire Beaumanoir.
+
+### ELM053
+
+- Référence : [MKT03](catalogue.md#mkt03), Business Architecture Metamodel Guide v3.0, septembre 2024.
+- Nature : métamodèle ; objet central et décomposition des capacités.
+- Reformulation : les enfants conservent l’objet métier du parent ; capacité et réalisation contextuelle sont distinguées. Domain désigne ici une perspective d’architecture, notamment capacité ou information.
+- Source/localisateurs : [guide officiel](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf), §§3, 5 et 5.2, pages PDF/imprimées 7, 12 et 17–19 ; texte consulté le 2026-09-10.
+- Limite : ce document ne remplace pas le guide BIZBOK complet ; la tentative de capture de la page 19 échoue, aucune conclusion nouvelle tirée de sa figure. Ni domaine problématique local ni allocation logicielle déduits automatiquement.
+
+### ELM054
+
+- Référence : [MKT03](catalogue.md#mkt03), BIZBOK Guide 15.0, ©2026.
+- Nature : introduction et présentation du contenu du guide.
+- Reformulation : architecture métier et modèle opératoire sont reliés et distingués ; les parties annoncées couvrent capacité, Common Reference Model et articulation avec processus/Case Management.
+- Source/localisateurs : [Part 1](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_introduction.pdf), pages 3, 6, 12 et 15–17 ; consultées le 2026-09-10.
+- Limite : présentation du §2.2, du §8.6 et des autres sections, pas lecture de ces sections détaillées. La portée entreprise de la Guild n’étend pas notre capability map au-delà du socle.
+
+### ELM055
+
+- Référence : [MKT03](catalogue.md#mkt03), notices publiques des modèles Guild, état du 2026-09-10.
+- Nature : disponibilité de livrables ; aucun contenu détaillé de capacités.
+- Constat : Common Reference Model proposé ; version non affichée sur sa notice. Companion Guide v3.0 identifié séparément. Aucun Retail/Wholesale dans la liste publique examinée, malgré une équipe identifiée dans l’index.
+- Sources/localisateurs : [liste officielle](https://learning.businessarchitectureguild.org/indref), introduction et conditions ; [Common Reference Model](https://learning.businessarchitectureguild.org/products/common-reference-model), Overview ; [Companion Guide v3.0](https://learning.businessarchitectureguild.org/products/business-architecture-common-reference-model-companion-guide-v30), titre/Contents ; pages consultées.
+- Limites : téléchargement membre et licence, ressources non acquises ; absence de listing ne prouve pas inexistence. [Équipe Retail](https://www.businessarchitectureguild.org/members/group_select.asp?type=19895) : index consulté, ouverture directe en 403. L’annonce historique v7.0 dans le [webinar](https://learning.businessarchitectureguild.org/products/webinar-common-reference-model-companion-guide-walkthrough) n’établit pas la version distribuée aujourd’hui ; vidéo non consultée.
+
+### ELM056
+
+- Référence : [MKT04](catalogue.md#mkt04), SAP EA/RBA ; cours sans édition indiquée.
+- Nature : modèle métier de l’information lié aux capacités, distinct du modèle de solution.
+- Libellés natifs : Business Data Catalog ; Business Data Mapping ; Business Data Object ; Solution Data Object.
+- Reformulation : identifier les concepts d’information à partir notamment des capacités et processus ; relier objets et capacités. Les objets métier sont distingués de leur représentation dans la solution.
+- Sources/localisateurs : [Defining Business Architecture](https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/defining-business-architecture), Business Data Catalog / Business Data Mapping ; [Investigating the SAP Enterprise Architecture Methodology](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/investigating-the-sap-enterprise-architecture-methodology), Enterprise Architecture Concepts. Passages consultés le 2026-09-10.
+- Limite : pas de dérivation exhaustive de schémas ou agrégats depuis les libellés de capacités ; catalogue détaillé versionné non acquis.
+
+### ELM057
+
+- Référence : [MKT03](catalogue.md#mkt03), Guild Metamodel Guide 3.0 de septembre 2024 et glossaire BIZBOK 15.0 ©2026.
+- Nature : relations entre aptitude, information, états et résultats.
+- Libellés natifs : Information Concept ; Business Object ; Outcome ; Event.
+- Reformulation : une capacité utilise/modifie de l’information ; les concepts représentent les objets et leurs états. Le résultat et l’occurrence sont des notions distinctes.
+- Sources/localisateurs : [métamodèle](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf), §§5.1.2, 5.2, 5.3, pages 15, 17–21, texte ; [glossaire](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf), Event/Outcome, pages 459/461. Consultés le 2026-09-10.
+- Limite : aucune identité Outcome = événement publié = document ; pas de prescription d’immutabilité, de racine d’agrégat ou de persistance. Capture du schéma page 21 échouée ; conclusion fondée sur les paragraphes textuels.
+
+### ELM058
+
+- Référence : [MKT19](catalogue.md#mkt19), TM Forum Information Framework SID et Capability Framework.
+- Nature : modèle d’information métier et regroupements sémantiques.
+- Libellés natifs : Business Entity ; Aggregate Business Entity (ABE).
+- Reformulation : le SID décrit concepts, attributs et relations indépendamment des plateformes/langages/protocoles. Les ABEs regroupent des entités ou d’autres ABEs ; leurs noms ne fixent pas une frontière transactionnelle.
+- Sources/localisateurs : [SID](https://www.tmforum.org/open-digital-architecture/information-framework-sid/), Overview / SID Domains / Business Entities ; [Capability Framework](https://www.tmforum.org/open-digital-architecture/capability-framework/), Overview. Pages publiques consultées le 2026-09-10.
+- Limite : notices SID 26.0 et GB1029C v4.0.0 identifiées, catalogues complets et correspondances détaillées non consultés. Aucun ABE assimilé à une racine d’agrégat DDD.
+
+### ELM059
+
+- Référence : [MKT13](catalogue.md#mkt13), SAP S/4HANA Cloud, inventaire.
+- Nature : documents de réalisation et notifications ; pas modèle de capacités.
+- Libellés natifs : Material Document ; Created ; Canceled.
+- Reformulation : le mouvement comptabilisé produit un document ; ses notifications le référencent. Mouvement/quantité se corrigent par annulation et nouvelle comptabilisation, mais certains compléments restent possibles.
+- Sources/localisateurs : [The Document Concept](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/b19bce0a4e5f4256b101ed2be62fa94b.html?ai=true&q=BATCH+NUMBER), Document Types/note, version non exposée ; [Material Document Events](https://help.sap.com/docs/SAP_S4HANA_CLOUD/3f57e7df4a114edabffe8b2d581a59ed/40783449115e4b53a9da6e513caf8f50.html), APIs for Inventory 2608, tableau Created/Canceled et payloads. Extractions indexées consultées le 2026-09-10 ; ouvertures directes sans texte exploitable.
+- Limite : SAP appelle le document lui-même business object. Pas d’immutabilité absolue, de preuve locale ou d’équivalence de l’événement publié avec le fait métier U61.
+
+### ELM060
+
+- Référence : [MKT19](catalogue.md#mkt19), TM Forum, exemples documentés de ressources et notifications.
+- Nature : schémas et contrats d’échange, distincts de la carte des capacités.
+- Libellés natifs : ProductOrder ; ProductOrderStateChangeEvent ; Document.
+- Reformulation : une ressource possède son cycle d’état et des notifications distinctes ; le schéma Document comporte état, version et date de mise à jour.
+- Sources/localisateurs : [TMF622 v4.0.0](https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/OpenApiTable/TMF622_Product_Ordering/4.0.0/user_guides/TMF622_Product_Ordering_Management_API_v4.0.0_specification.pdf), ©2019, Lifecycle p.13 et Notification Resource Models pp.37–40 ; [Document](https://datamodel.tmforum.org/en/latest/Common/Document/), Description / Data model, repère snapshot 04/02/2020 pour les correspondances API. Consultés le 2026-09-10.
+- Limite : exemples historiques examinés, pas dernières versions présumées ; ces ressources ne prouvent ni immutabilité de tous les documents ni Event Sourcing ni identité notification/fait de gestion.
+
+### ELM061
+
+- Référence : [MKT17](catalogue.md#mkt17), Eric Evans, DDD Reference ©2015, licence CC BY 4.0.
+- Nature : précision d’un motif de conception invoqué par analogie dans U61.
+- Libellé natif : Aggregate / root.
+- Reformulation : l’agrégat délimite des invariants et une responsabilité de cohérence ; ses limites gouvernent aussi les transactions.
+- Source/localisateur : [référence de l’auteur](https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf), Aggregates, page imprimée 16 / PDF 23 ; passage textuel sur invariants/racine/transactions consulté le 2026-09-10.
+- Limite : pas de conception d’agrégats ni de bounded contexts engagée ; l’objet métier de la carte n’est pas automatiquement une racine d’agrégat. Le mémento 2015 reste distinct du livre initial.
+
+### ELM062
+
+- Références : MKT04 SAP RBA ; MKT13 SAP S/4HANA ; MKT14 pour le complément Microsoft déjà associé à ELM028.
+- Nature : réexamen ciblé des appuis de structure et de comportements de produit pour P81 ; nouveau passage BOP et compléments à des éléments déjà examinés.
+- Libellés natifs : Business Capability Model ; Supply Protection ; Available-to-Promise ; Backorder Processing ; Subcontracting ; Inventory Visibility allocation.
+- Consultation : 2026-09-10, textes primaires ouverts et lus avec contribution indépendante. Cours SAP sans édition exposée ; Microsoft conserve sa provenance datée en ELM028, sans déduire une version de livraison homogène.
+- Sources et localisateurs : [SAP RBA](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), Framework / Business Capability Model Example ; [Supply Protection](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-aatp-with-supply-protection-sup-), protection des groupes / Supported and Affected Document Types / Stock Transport Orders ; [Basic ATP](https://learning.sap.com/courses/configuring-supply-chain-business-scenarios-in-sap-s4hana-cloud-public-edition/introducing-basic-available-to-promise_ee3a33eb-4a91-4f85-a8b6-9bc1189e9540), Introduction to Available-to-Promise ; [BOP ciblé](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-backorder-processing-for-advanced-atp-in-sap-s-4hana), General Restrictions / Configure BOP Segments / Configure BOP Variant ; [Subcontracting](https://learning.sap.com/courses/detailing-subcontracting-and-supplier-consignment/outlining-subcontracting_af403e3e-188d-4dbb-bde1-632253739fa6), introduction / Applicable Process Steps ; [Microsoft allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation), Difference between inventory allocation and soft reservation / Allocation virtual pool.
+- Reformulation du complément : les aires de stock/promesse/exécution logistique sont distinctes dans l’exemple SAP, avec quatre niveaux natifs ; protection et promesse peuvent concerner ventes et transferts. Le BOP réexamine les confirmations selon les priorités ; les variantes décrites peuvent mobiliser ATP ou Supply Assignment. Allocation de groupe et réservation de transaction restent distinctes chez Microsoft. La sous-traitance relie composants fournis et résultat reçu.
+- Limites : les domaines P81 sont locaux et non équivalents à ces catégories. Sourcing and Procurement est un Business Domain SAP, Inventory Management un Business Area. Sources de produits distinctes du catalogue de capacités ; aucune configuration Beaumanoir ni inclusion logistique dans FLOW prouvées. Le texte actuel de l’ancienne leçon S5 citée par ELM046 est surtout consacré à l’activation ; le réexamen présent s’appuie sur Basic ATP et le cours BOP ciblé ci-dessus, sans supprimer la lecture historique.
+
+### ELM063
+
+- Références : MKT04 SAP RBA ; MKT13 documentation fonctionnelle SAP, complétée par Retail, référentiels et pricing.
+- Nature : libellés natifs de niveaux et de contenus différents, destinés à un rapprochement terminologique de P81.
+- Consultation : 2026-09-11, contrôle ciblé avec contribution indépendante ; éditions de catalogue et de release non exposées dans les cours. La preuve antérieure des feuilles RBA est conservée en ELM014.
+- Libellés : Inventory Management / Order Promising (Business Areas RBA), Product Availability Check / Product Allocation Check (Business Capabilities RBA) ; Supply Protection / Supply Assignment ; Sales Order Management / Purchase Order Management ; Replenishment Planning ; Plant Determination / Alternative-Based Confirmation ; Delivery Processing / Inbound Delivery / Outbound Delivery ; Product Master / Material Master / Retail Article Master ; Business Partner / Business Partner Roles ; Pricing / Condition Records / Condition Contract Management.
+- Sources ouvertes : [RBA](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), Framework / Business Capability Model Example ; [Sales Order Management](https://learning.sap.com/courses/exploring-end-to-end-business-processes-in-sap-business-suite/describing-sales-order-management_ca7b816e-af6f-4a03-bd88-1a5bb42cef84), Overview / Processing / Pricing ; [Replenishment Planning](https://learning.sap.com/courses/discovering-retail-functions-and-business-processes-in-sap-s-4hana-retail/running-replenishment-planning_e456b0ed-3094-4056-9ba8-aa56cf6833ed), Replenishment in General / Perform Replenishment Planning ; [ATP](https://learning.sap.com/courses/performing-the-availability-check/acquiring-a-basic-understanding-of-available-to-promise-atp-_ae470c8e-1483-46ce-b5cc-e80647e8a32b), Level of the ATP Check ; [Business Partners](https://learning.sap.com/courses/exploring-business-processes-for-supply-chain-execution-in-sap-s-4hana-cloud-private-edition/maintaining-materials-and-business-partners), Business Partner Master Records.
+- Sources examinées par extraits indexés : [Fashion](https://learning.sap.com/courses/outlining-sap-s-4hana-for-fashion-and-vertical-business-and-implementing-best-practices/comparing-with-sap-fashion-management-solution-fms-1), Order Fulfillment / Supply Protection ; [Procurement for Retail 5FM](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/ordering-merchandise-with-procurement-for-retail-5fm-_fe298f93-84ad-47ff-98ff-658e887e020d), objectif Set Up Purchase Order Management ; [Delivery Processing](https://help.sap.com/docs/SAP_SUPPLY_CHAIN_MANAGEMENT/f41048b9ca054326bb9774db1d46e866/13cccb53ad377114e10000000a174cb4.html), présentation EWM ; [Retail Article Master](https://learning.sap.com/courses/discovering-retail-functions-and-business-processes-in-sap-s-4hana-retail/introducing-the-retail-article-master_bd2d9df6-bf54-4612-8fa0-b35c63fbb0d8), Article Master — General / Conversion / Manage Product Master Data ; [Pricing](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales), description et titres d’unités Working with Condition Records / Getting to Know Condition Contract Management, sans lecture de toutes les leçons sous-jacentes.
+- Reformulation et adaptation : plusieurs libellés correspondent à une seule ligne locale ; les rapprochements sont détaillés dans la note U65. Replenishment éclaire le réassort, ABC les origines alternatives, les masters les référentiels et Pricing les conditions de prix.
+- Limites : seuls les niveaux RBA indiqués sont attestés comme tels ; les autres noms ne sont pas transformés en Business Areas. Pas de domaine SAP unique démontré pour D02/D04/D06/D07 ; quota magasin, totalité des droits après fourniture et exécution générique non couverts par ces seuls noms. Aucune équivalence ni configuration Beaumanoir établie.
+
+### ELM064
+
+- Référence : MKT14, avec distinction du catalogue de processus et des documentations de produit Dynamics 365 utilisées pour le compléter.
+- Nature : intitulés d’aires de processus, de modules, de fonctionnalités et de concepts de référentiel.
+- Consultation : 2026-09-11, pages publiques ouvertes et texte disponible malgré le bandeau générique de connexion Learn ; aucune connexion utilisée. Pas d’édition homogène de catalogue ou de release déduite des pages.
+- Sources processus : [Inventory to deliver areas](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-areas), titres Maintain inventory levels / Process inbound goods / Process outbound goods / Manage warehouse operations, date 2025-01-21 ; [Order to cash areas](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/order-to-cash-areas-overview), Develop sales policies / Manage sales orders et liste Order promising, état reconsulté ; [Source to pay areas](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/source-to-pay-areas), Manage supplier relationships / Source and contract goods and services / Procure goods and services, date 2025-05-20.
+- Sources stock : [Inventory management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-home-page), titre et présentation ; [Inventory Visibility allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation) et [Reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), titres et distinction déjà détaillée en ELM028/ELM031, pas nouvelle comparaison de toutes leurs règles.
+- Sources exécution : [Distributed order management](https://learn.microsoft.com/en-us/dynamics365/commerce/dom), présentation, date 2026-06-03 ; [DOM rules](https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules), Fulfillment location priority / Offline fulfillment location / Maximum orders, date 2026-01-22 ; [Store order fulfillment](https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview), titre et résumé public indexé consultés, pas toute la page lue.
+- Sources référentiels et conditions : [Product information](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information), introduction Product information management / Product definition, date 2026-07-01 ; [Global address book](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book), présentation / Party roles, date 2026-03-18 ; [Unified pricing management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/unified-pricing-management/upm-pricing-management-overview), introduction / Pricing components, date 2026-04-21. Trade agreements est aussi attesté dans les pages achats et pricing.
+- Reformulation et adaptation : les aires servent de repères de parcours ; DOM éclaire les choix et limites des possibilités d’exécution ; produit, parties et pricing fournissent des noms de périmètres de solution proches des thèmes locaux.
+- Limites : ces noms ne définissent pas une hiérarchie de capacités équivalente à P81. DOM mélange décisions, affectations et suivi ; sa présence dans la colonne D06 ne classe pas l’OMS local dans une seule couche. La règle Maximum orders ne prouve pas l’équivalence aux quotas quotidiens/hebdomadaires locaux. Les droits après fourniture dépassent Pricing.
+
+### ELM065
+
+- Référence : MKT19, TM Forum ODA et Open APIs.
+- Nature : noms de composants ODA, notices d’API et descriptions publiques, distingués des capacités métier et du SID.
+- Consultation : 2026-09-11, avec contribution indépendante ; annuaire public sans version globale affichée. Les versions suivantes sont celles des notices consultées, pas un ensemble de dernières versions homogènes.
+- Source d’inventaire : [Component Directory](https://www.tmforum.org/oda/directory/components-map), noms et blocs. TMFC002 Product Order Capture & Validation, TMFC033 Purchase Management, TMFC032 Supply Chain Management, TMFC014 Location Management et TMFC012 Resource Inventory sont retenus ici comme noms repérés, sans détail complet analysé.
+- Pages ouvertes et lues : [TMFC009 Service Qualification Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC009), v1.1.0, 2023-08-18 ; [TMFC005 Product Inventory](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC005), v1.0.4, 2024-06-27 ; [TMFC039 Agreement Management](https://www.tmforum.org/oda/directory/components-map/party-management/TMFC039), v1.1.0, 2024-08-19 ; [TMFC007 Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007), v2.0.0, 2024-02-23 ; [TMFC011 Resource Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC011), v1.2.0, 2026-06-12, statut Pre-production.
+- Notices indexées examinées : [TMFC001 Product Catalog Management](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC001), v2.1.2, 2025-11-12 ; [TMFC010 Resource Catalog Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC010), v1.3.2, 2024-12-03 ; [TMFC028 Party Management](https://www.tmforum.org/oda/directory/components-map/party-management/TMFC028), v2.1.0, 2024-10-14, avec TMF669 Party Role Management ; [TMFC027 Product Configurator](https://www.tmforum.org/oda/directory/components-map/production/TMFC027), v2.1.1, 2023-11-27, bloc affiché Core Commerce Management malgré le chemin de l’URL.
+- Stock/réservation, notices indexées : [TMF687 Stock Management v4.0](https://www.tmforum.org/open-digital-architecture/open-apis/stock-management-api-TMF687/v4.0), date 2026-05-15 relative à une mise à jour CTK ; [guide v4.0.0](https://www.tmforum.org/resources/specification/tmf687-stock-management-api-user-guide-v4-0-0/), approuvé 2021-01-18, extraits indexés examinés, ouverture directe 403 et guide intégral non lu ; [TMF716 Resource Reservation v4.0](https://www.tmforum.org/open-digital-architecture/open-apis/resource-reservation-TMF716/v4.0), notice de l’API.
+- Reformulation : Stock Management décrit quantités, seuils, consultation et réservation du stock. Service Qualification apprécie faisabilité et date sans allocation de ressource. Agreement rapproche les accords et conditions. Les composants d’ordres, de catalogues et de parties fournissent des voisins sémantiques des domaines locaux.
+- Limites : Product Inventory concerne des produits attribués/utilisés par des parties et n’est pas assimilé au stock retail. Les analogies de D03/D05/D06/D07/D10 sont partielles ; ni promesse ferme complète, ni redistribution, quota magasin, faits génériques ou droits après fourniture démontrés. Les API ne sont pas des capacités par leur seule existence ; aucun modèle télécom importé comme cible FLOW.
+
+### ELM066
+
+- Référence : MKT03, Business Architecture Guild ; atelier public Government Reference Model Workshop.
+- Nature : exemples historiques de noms de capacités et de modèles de référence, distincts d’un catalogue retail actuel.
+- Version et consultation : support daté du 21 mars 2019, PDF ouvert et texte lu le 2026-09-11 avec contribution indépendante. Les dates récentes proposées par l’index ne remplacent pas celle de la couverture.
+- Source et localisateurs : [atelier public](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/baguild_gov_ref_model_worksh.pdf), page PDF 10 Customer Management / Product Management / Agreement Management et exemple Agreement Structuring ; pages 11–12 illustration Partner Management attribuée à Business Architecture Associates ; page 17 Asset Management parmi les capacités supporting du Common Reference Model.
+- Adaptation : repères partiels pour D04, D08, D09 ; Asset Management est trop large pour servir d’équivalent à D01. Pas de nom précis démontré ici pour D02/D03/D05/D06/D07 ou pour tout D10.
+- Limites : ne vaut ni consultation du guide BIZBOK complet ni catalogue retail livré ou actuel ; les exemples et attributions sont conservés. Aucune absence de capacité dans BIZBOK déduite d’une correspondance non trouvée dans ce support.
+
+### ELM067
+
+- Références : [MKT04](catalogue.md#mkt04) SAP RBA et [MKT13](catalogue.md#mkt13) documentation SAP S/4HANA ; contrôle ciblé U66/U67 du 2026-09-11, avec recherche indépendante.
+- Nature : distinction entre classement dans un modèle d’architecture et présentation des moyens de réalisation dans une documentation de produit. Une même expression peut désigner une aptitude métier et une fonctionnalité qui la réalise.
+- RBA : [Discovering the Reference Architecture Content](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), sections Linking Business and Solution et Business Capability Model Example, texte reconsulté. Inventory Management et Order Promising sont présentés comme Business Areas ; ELM014 conserve la lecture visuelle des feuilles Product Availability Check et Product Allocation Check. Business Capability et Solution Capability sont distinctes. Édition du catalogue non exposée.
+- Supply Protection : [Introducing Basic Available-to-Promise](https://learning.sap.com/courses/configuring-supply-chain-business-scenarios-in-sap-s4hana-cloud-public-edition/introducing-basic-available-to-promise_ee3a33eb-4a91-4f85-a8b6-9bc1189e9540), section Introduction to Available-to-Promise, texte ouvert et lu. Advanced Available-to-Promise (1JW) est présenté comme un solution process et Supply Protection parmi ses fonctionnalités supplémentaires. Cours Public Edition sans version affichée ; définition de protection de groupes conservée en ELM017/ELM062.
+- Supply Assignment : [fiche SAP Help](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/77c07c8d30664260a0b3ff864e6b5e78/8f5e14e242b74d42bada1c39c57fe291.html), Technical Data / Use / Features, extrait indexé examiné ; ouverture directe sans texte exploitable. Enterprise Business Function SUPPLY_ASSIGNMENT_01, disponible à partir de S/4HANA 1709. Cette borne ne date pas chacune des fonctionnalités décrites et ne donne pas l’édition courante de la page. Une fonction logicielle activable n’est pas un niveau Business Capability du catalogue RBA.
+- Articulation produit : [Comparing with SAP Fashion Management Solution](https://learning.sap.com/courses/outlining-sap-s-4hana-for-fashion-and-vertical-business-and-implementing-best-practices/comparing-with-sap-fashion-management-solution-fms-1), section Order Fulfillment, texte consulté, édition non affichée ; intégration des fonctionnalités d’affectation à aATP. ELM032 conserve les lectures antérieures et la distinction affectation/confirmation.
+- Reformulation et adaptation : protéger des ressources pour des usages ou groupes et couvrir des demandes par des ressources admissibles sont des aptitudes métier. Leurs définitions locales détaillées restent proposées. Allocation Run relève des mécanismes de réalisation ; une fonctionnalité ou un traitement peut contribuer à plusieurs capacités, sans équivalence un-à-un.
+- Limite de preuve : aucun classement natif exact Supply Protection ou Supply Assignment comme Business Area, Business Capability RBA ou Solution Capability RSA n’est établi dans ce corpus. Ce résultat ne prouve ni leur absence des catalogues ni l’absence d’aptitudes métier correspondantes. Aucune configuration Beaumanoir ou Boardriders démontrée. Voir C49 et CMP038.
+
+### ELM068
+
+- Références : MKT04/MKT13 SAP, MKT14 Microsoft Dynamics 365, MKT19 TM Forum. Contrôle ciblé D01 du 2026-09-11 ; pages publiques ouvertes et texte lu. Les bandeaux de connexion Microsoft n’empêchaient pas la lecture du contenu ; aucune connexion utilisée.
+- SAP RBA : [Discovering the Reference Architecture Content](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), Business Capability Model Example : Inventory Management est une Business Area sous Supply Chain Execution et Supply – Fulfill Demand. Édition du catalogue non exposée ; ELM014 conserve la preuve visuelle antérieure des feuilles, dont Physical Inventory. Pas de nouvelle lecture visuelle des feuilles dans ce contrôle.
+- SAP produit : [Defining Inventory Management and Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), Managing Stocks by Quantity / Planning, Entry, and Documentation of Goods Movements / Carrying Out the Physical Inventory ; édition non affichée. Quantités et états, lots et stocks spéciaux ; Goods Receipt, Goods Issue, Stock Transfer et Transfer Posting ; comparaison au comptage et ajustement. Les Transfer Postings peuvent changer la qualification sans déplacement physique. La source traite aussi quantités commandées, réservations et valeur ; ne pas assimiler son périmètre complet à D01. Sommaire Analyses : listes de stock et documents repérées, sans lecture de la leçon détaillée.
+- Microsoft périmètre : [Inventory management overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-home-page), présentation, page datée 2025-08-29 ; module incluant opérations entrantes/sortantes et contrôle, périmètre de solution plus large que D01.
+- Microsoft visibilité : [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility), présentation / Get a global view of real-time inventory / Central inventory adjustment / Inventory Visibility terminology ; page datée 2025-08-14. Vision de quantités et états multisources et multilieux, mises à jour et dimensions. Réservations, ATP et allocation également décrits ; leur présence dans le produit ne les rattache pas à D01. La mention temps réel n’établit pas une garantie locale de fraîcheur ou de non-double-comptage.
+- Microsoft faits et écarts : [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals), introduction / Types of inventory journals / Transfer / Counting / Inventory adjustment ; version de produit non établie. Transactions, comptage et corrections de quantités. Un Transfer journal ne suit pas le stock en transit ; la documentation renvoie à Transfer order pour ce besoin. Ne pas généraliser le comportement d’un journal à tous les transferts.
+- TM Forum : [Stock Management API TMF687 v4.0](https://www.tmforum.org/open-digital-architecture/open-apis/stock-management-api-TMF687/v4.0), Overview et Release history. Représentation du stock, consultation, modification, ajustement, réservation et notifications. La date 15 mai 2026 correspond à une mise à jour CTK ; pas une nouvelle version homogène de modèle métier. Notice lue, guide complet non lu. Une notification ne prouve pas un historique de faits de gestion ni un rapprochement physique.
+- Adaptation : appuis sémantiques séparés pour les quatre aptitudes D01.a–d, avec rapprochement particulièrement lisible de la consolidation à Inventory Visibility. Les termes de produit éclairent les capacités sans les réduire à leurs réalisations (C49).
+- Limites : aucune équivalence complète de domaine ou de capacité, aucune exhaustivité du marché et aucune configuration Beaumanoir prouvées. BIZBOK/Guild et ARTS sont repris à partir de ELM066/ELM024, sans nouvelle consultation dans ce contrôle.
+
+### ELM069
+
+- Références : MKT14 Microsoft Dynamics 365 et MKT13 SAP S/4HANA ; examen ciblé du 2026-09-11 après U75, textes publics ouverts et consultés.
+- Microsoft réservation : [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), introduction / Sample use case for soft reservation / Configure reservation mappings and dimensions / Example available-for-reservation calculation. La soft reservation modifie la quantité réservée et la quantité disponible à réserver, sans mouvement physique immédiat ; création, ajustement, annulation et compensation à la consommation sont décrits. Une mesure calculée détermine la disponibilité pour réservation selon les mesures retenues. Borne 10.0.33 pour la fonctionnalité citée de réservation depuis les commandes de vente, pas version homogène de toute la page. Aucun cycle installé Beaumanoir déduit.
+- Microsoft représentations : [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility), introduction / Feature highlights / Inventory Visibility terminology, date affichée 2025-08-14. Mesures et dimensions, visibilité multisource, quantités réservées et calculées ; physique dans le vocabulaire des mesures produit ne signifie pas nécessairement stock matériellement présent. Le produit réunit ces comportements sans imposer nos domaines.
+- SAP affectation : [Comparing with SAP Fashion Management Solution](https://learning.sap.com/courses/outlining-sap-s-4hana-for-fashion-and-vertical-business-and-implementing-best-practices/comparing-with-sap-fashion-management-solution-fms-1), Order Fulfillment ; cours sans édition affichée, texte reconsulté. Intégration des fonctionnalités de Supply Assignment à aATP ; prolongement de ELM032/ELM067. Cet appui ne fournit pas une feuille RBA exacte ni une équivalence complète avec l’aptitude locale.
+- Reformulation : réservation et disponibilité calculée sont reliées, sans changement physique nécessaire ; la disponibilité dépend des mesures et règles de l’usage. L’affectation relie couverture de demande et ressources. Ces lectures confortent la distinction des résultats métier sans imposer des applications ou des objets distincts.
+- Limites : la formule illustrative de Microsoft n’est pas transposée comme formule universelle. Pool logique, vue et ressource future restent distincts ; aucun calcul de priorité ou garantie d’absence de survente locale déduits. Les autres comparaisons D01 restent celles de ELM068/CMP039/CMP040.
+
+### ELM070
+
+- Référence : MKT13, SAP Inventory Management ; examen du 2026-09-11, textes SAP Learning ouverts et lus.
+- Sources : [Outlining Reservations in SAP S/4HANA](https://learning.sap.com/courses/inventory-management-in-sap-cloud-erp/outlining-reservations-in-sap-s-4hana-1), Function and Origin of a Reservation / Structure of a Reservation / Goods Movement with Reference to a Reservation ; [Checking Availability](https://learning.sap.com/courses/inventory-management-in-sap-cloud-erp/checking-availability-1), Dynamic Availability Check / Customizing – Set up Availability Check. Cours sans édition produit exposée.
+- Nature : documentation de capacités de réalisation et d’objets de produit ; pas nouveau rang RBA attesté.
+- Reformulation : Reservation planifie une mise à disposition de marchandises pour un mouvement, une date et un usage. Sorties et transferts notamment ; document avec lignes article/quantité/date/lieu. Origines manuelles, besoins d’ordres/projets et transferts de réassort décrits. Ne pas assimiler automatiquement toute commande client à ce document.
+- Disponibilité : le contrôle dynamique peut considérer stocks, entrées prévues et sorties/réservations ; il est utilisé notamment à la réservation et à la sortie de marchandises. L’exemple SAP 100 en stock, 30 et 20 réservées ne laisse que 50 disponibles ; une tentative de retrait de 60 déclenche avertissement ou erreur selon configuration.
+- Limites : ne conclure ni que la réservation MM bloque toujours absolument le stock ni qu’elle ne le protège jamais. Effet du contrôle et comportement en cas d’insuffisance dépendent des règles documentées. Aucun paramétrage ni cycle local Beaumanoir démontrés.
+
+### ELM071
+
+- Référence : MKT14, Microsoft Dynamics 365 Supply Chain Management ; examen du 2026-09-11, pages publiques ouvertes et textes lus malgré les bandeaux génériques de connexion.
+- Source principale : [Reserve inventory quantities](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities), introduction / Inventory reservation policies / Policies on the Inventory and warehouse management parameters page ; date affichée 2025-08-29, pas release homogène déduite. La réservation pour une commande empêche le prélèvement pour d’autres commandes sauf annulation totale ou partielle. Elle peut porter sur le stock présent et, selon configuration, sur des articles commandés mais pas encore reçus ; Reserve ordered items est explicité. Ventes, production et transferts sont documentés.
+- Source de granularité : [Reservations in Warehouse management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/reservations-in-warehouse-management), Reservation hierarchies / Making reservations on different levels / On-hand representation and calculations, version globale non établie. Reserved physical et Reserved ordered sont distingués. Pour les articles et entrepôts concernés, les dimensions peuvent être précisées progressivement : réserver à une maille site/entrepôt/état sans fixer immédiatement l’emplacement ou l’unité logistique. Un reserved physical n’est donc pas nécessairement une pièce individuelle déjà sélectionnée.
+- Source de soft reservation : [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), Sample use case / Integrate soft reservations and offsets with Supply Chain Management ; page évolutive, conditions de version détaillées selon fonction, dont 10.0.33 pour la réservation depuis les commandes. Quantité encore réservable diminuée sans mouvement physique ; compensation lors du passage à une réservation ERP ou de la consommation, selon les règles d’intégration. Ne pas déduire une expiration automatique de soft, ni un caractère non engageant du seul adjectif.
+- Adaptation : appui pour engagement de quantité présent/futur, précision de la ressource et cohérence entre représentations d’un même engagement. Réservation Microsoft peut inclure une liaison ressource/demande proche de ce que le modèle local appelle affectation.
+- Limites : ces mécanismes sont des réalisations, pas une taxonomie de capacités locales imposée. Aucun FIFO, lot, source de vérité centralisée, configuration ou garantie d’absence de survente attribués à Beaumanoir. Les détails WMS n’entrent pas dans les développements FLOW par cette comparaison.
+
+### ELM072
+
+- Référence : MKT13, SAP S/4HANA Advanced Available-to-Promise ; examen du 2026-09-11.
+- Sources et accès : [Quantities Reserved by Supply Assignment (ARun) in aATP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e11ff055aa2a6d55e10000000a4450e5.html), Use / Features / Example ; [Quantities Reserved by Supply Assignment (ARun) in MRP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/f04ff9550e5d7e43e10000000a4450e5.html), Use / Features. Extraits indexés détaillés examinés, ouvertures directes sans texte exploitable. Version affichée dans l’index : 2025 FPS01 (Feb 2026) ; exemples portant des dates anciennes conservés comme illustrations de la source, pas datation de la fonctionnalité.
+- Nature : effet des résultats de Supply Assignment sur calculs ATP/MRP, documentation de produit.
+- Reformulation : SAP nomme explicitement les quantités réservées par Supply Assignment. Les stocks ou entrées futures déjà affectés à des besoins sont pris en compte comme engagés ; aATP ne peut promettre que la part restant disponible. Le besoin et la ressource affectés sont considérés ensemble.
+- Adaptation : l’affectation peut produire un effet de réservation ; il n’est pas établi qu’il faille toujours deux engagements indépendants ou deux capacités entièrement disjointes. Cette observation est cohérente avec les précautions ELM032/ELM067, désormais mieux documentées.
+- Limites : ne pas confondre cet effet avec le document Reservation de MM-IM. Les pages ne prouvent ni configuration Boardriders ni feuille RBA sous ces noms ; traitement MRP comporte des conditions/exceptions et n’est pas généralisé. Aucun lien natif un-à-un avec nos objets ou contrats.
+
+### ELM073
+
+- Référence : MKT14, Microsoft Dynamics 365 Supply Chain Management ; descriptions de produit, pas catalogue de capacités.
+- Consultation : 2026-09-11, textes publics ouverts et lus. Version produit globale non précisée dans les passages utilisés.
+- Source : [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), page mise à jour le 2026-09-08 ; introduction, Policies for purchase agreements et Fulfillment calculations. Accords avec période de validité, engagements en quantité ou valeur, suivi du restant et option Max is enforced plafonnant le cumul des lignes de commande. Le reliquat est présenté comme engagement à satisfaire ; il ne démontre pas seul une quantité livrable à une date.
+- Source : [Inventory Visibility on-hand change schedules and ATP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise), page du 2025-06-17 ; How the on-hand change schedule and ATP calculations work. Dates et quantités attendues distinctes des quantités présentes ; scheduled supply et calcul ATP par horizon. À réception, l’exemple actualise la quantité présente et compense la variation prévue. Uncommitted qualifie ici la variation non encore appliquée au stock, pas nécessairement une commande non engagée chez un fournisseur.
+- Source : [Set up a location directive for purchase order putaway](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/tasks/set-up-location-directive-purchase-order-put-away), titre et introduction ; putaway désigne le rangement des articles reçus vers leurs emplacements. Édition non relevée ; appui terminologique uniquement.
+- Adaptation proposée : séparer potentiel contractuel, ressource attendue et résultat de disponibilité ; relier les transitions pour éviter les doubles comptes. Ces notions éclairent U79, sans imposer objets logiciels ni formule Microsoft.
+- Limites : pas de preuve qu’un reliquat de contrat soit une entrée ATP native, ni que tout achat planifié soit réservable. Autorités et règles locales non établies.
+
+### ELM074
+
+- Référence : MKT13, SAP S/4HANA aATP ; description de produit.
+- Libellé natif : Backorder Processing, passage relatif à Supply Assignment ; identifiant de page 6b8eb017a1d1431abde00056a249f72b.
+- Source : [SAP Help — Backorder Processing](https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html).
+- Consultation : 2026-09-11, extrait indexé examiné ; ouverture directe sans texte exploitable. Version non affichée dans l’extrait, guide intégral non lu.
+- Contenu consulté : stock physique et réceptions futures sont pertinents pour Supply Assignment ; l’extrait cite purchase orders, production order header, shipping notifications, planned orders et purchase requisitions. Il mentionne aussi la configuration du périmètre de contrôle de disponibilité.
+- Reformulation : l’affectation peut considérer plusieurs origines de ressources futures, y compris des éléments planifiés selon les règles du produit.
+- Adaptation : appui partiel à l’aptitude D02.e située en D03 et à U79 ; conserver nature, date, fermeté et admissibilité de chaque ressource.
+- Limites : ne prouve ni admissibilité inconditionnelle de tous les éléments, ni utilisation directe d’un reliquat contractuel fournisseur, ni configuration Boardriders. Les planned orders SAP ne sont pas assimilés aux Planned Purchase Orders du récit ; aucun classement RBA déduit.
+
+### ELM075
+
+- Référence : MKT13 SAP S/4HANA ; vocabulaire de documentation produit, distinct du rang natif RBA déjà examiné en ELM014.
+- Consultation : 2026-09-11, texte public ouvert et lu ; cours sans version de produit affichée.
+- Source et localisateurs : [Defining Inventory Management and Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), The Tasks of Inventory Management / Managing Stocks by Quantity et Carrying Out the Physical Inventory.
+- Libellés et contenu : Managing Stocks by Quantity désigne l’enregistrement des variations et la mise à jour des quantités ; le texte distingue libre utilisation, contrôle qualité, commandé non reçu et réservé. Physical Inventory est expliqué par un comptage physique, une comparaison aux quantités enregistrées et la régularisation des différences. Le terme stock-taking est employé dans cette explication.
+- Source historique complémentaire : [physical inventory document (MM-IM)](https://help.sap.com/saphelp_snc70/helpdata/EN/35/26c065afab52b9e10000009b38f974/content.htm?no_cache=true), SAP Library Glossary, chemin snc70 ; édition exacte/date non affichées. Texte consulté : document de préparation, enregistrement des comptages et différences ; rapprochement explicite avec stocktaking process. Source historique uniquement, pas preuve de nouveauté S/4HANA.
+- Adaptation : Manage inventory quantities est une proposition locale simplifiant le libellé SAP, avec états physiques/logiques et futur explicités dans la définition. Count and reconcile inventory propose de nommer le résultat de comptage et rapprochement ; Stocktaking est un intitulé court possible.
+- Limites : aucun de ces deux libellés locaux n’est présenté comme une feuille SAP native. La mise à jour des stocks rapproche D01.a et D01.b ; pas de preuve de leur séparation obligatoire. La valorisation décrite par SAP ne rejoint pas le périmètre FLOW.
+
+### ELM076
+
+- Référence : MKT14 Microsoft Dynamics 365 ; distinguer notions et fonctions de produit, business process area et processus. Consultation : 2026-09-11, pages anglaises publiques ouvertes et lues ; version produit globale non précisée.
+- [Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list), introduction et Query your on-hand inventory : vue des biens, disponibilités, attentes et réservations, actualisée par les transactions. Date de page non relevée. On-hand inventory est ici une notion/vocabulaire de vue, pas une capacité nommée ; ne pas réduire automatiquement tout le contenu aux seules quantités physiquement présentes.
+- [Maintain inventory levels](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-maintain-inventory-levels-overview), page anglaise du 2026-07-15 : introduction et process flow. Business process area dans Inventory to deliver, avec mouvements, comptages et ajustements. Count inventory est un processus listé. Périmètre plus large que D01.a ; la copie linguistique indexée datée de 2025 ne remplace pas la page anglaise consultée.
+- [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals), page du 2025-08-29, section Counting : enregistrement du comptage et ajustements pour rapprocher les différences. Counting est un type de journal de produit, pas un niveau natif de capacité. Cycle counting est cité comme variante ; aucune organisation de comptage importée dans la capability map.
+- Reformulation et adaptation : le vocabulaire distingue connaissance des quantités, comptage et corrections. Inventory accuracy apparaît comme bénéfice/finalité dans Maintain inventory levels. Proposer Manage inventory quantities et Count and reconcile inventory pour les aptitudes locales, sans affirmer qu’il s’agit de noms Microsoft exacts.
+- Limites : aucune paire de feuilles natives équivalentes à D01.a/D01.d prouvée. On-hand et Maintain inventory levels ne couvrent pas exactement la même maille ; ni fiabilité absolue, ni cible de moteur, ni configuration Beaumanoir démontrée.
+
+**Complément ELM076 — U84, 2026-09-11 :** page anglaise Inventory journals ouverte et section Counting relue ; date affichée 2025-08-29. Le même passage associe comptage physique et ajustements de rapprochement. Appui à la proposition locale Counting, sans statut de Business Capability natif affirmé ni nouvelle fonctionnalité ajoutée.
+
+### ELM077
+
+- Références : MKT13 SAP S/4HANA, MKT14 Microsoft Dynamics 365. Audit U87, textes publics ouverts et lus le 2026-09-11 ; éditions globales non exposées dans les passages utilisés.
+- SAP : [Using Advanced Available-To-Promise](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5), Product Availability Check, Backorder Processing et Confirmation Strategies. PAC détermine quantité/date et produit une confirmation ; BOP réexamine les confirmations après changement d’offre ou demande. Exemples : annulation, client prioritaire, fabrication en retard. Supply Assignment peut intervenir comme méthode de contrôle dans BOP. Ces réalisations peuvent combiner plusieurs résultats locaux ; pas de séparation logicielle imposée entre calcul, confirmation et affectation.
+- Microsoft : [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations), introduction, ATP calculations, CTP calculations. ATP prend en compte quantités non engagées, délais, entrées prévues et sorties ; ATP + Issue margin ajoute la préparation. CTP considère aussi les capacités. La formule, les moteurs et le périmètre de planification du produit ne sont pas adoptés pour FLOW ; aucune équivalence CTP avec D03 seul ou besoin de Manufacturing déduits. Date de page non relevée.
+- Microsoft : [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), introduction et Sample use case. Le cycle documenté comprend création, ajustement, annulation/libération et compensation ; il reste associé à la réservation. La configuration peut autoriser une poursuite en survente ; pas de garantie inconditionnelle déduite. Les fonctionnalités par version ne sont pas généralisées.
+- Adaptation proposée : inclure la disponibilité de promesse dans D03 ; rattacher les révisions à l’objet engagé plutôt qu’à une aptitude générique sans objet défini. Les titres Supply Feasibility, Confirmation et Promise Revision sont locaux ; Supply Assignment conserve le nom déjà retenu pour l’aptitude.
+- Limites : descriptions de produit, pas export exhaustif de capacités ni preuve de déploiement. La non-nécessité de D02 est une conclusion locale, pas une absence démontrée dans tous les référentiels. ELM014/ELM067 restent les preuves de rang RBA ; les réserves BIZBOK/TM Forum antérieures demeurent.
+
+### ELM078
+
+- Référence : MKT04, SAP Reference Business Architecture. Nouvelle lecture visuelle le 2026-09-11 du [schéma de cours](https://learning.sap.com/service/media/topic/a5b46f7b-c642-4fb7-8db0-b521946e9469/EAF00_10_en-US_media/EAF00_10_en-US_images/1BusCapabModel_Ex_image.png), colonne Order Promising ; complément de ELM014, pas remplacement d’édition.
+- Source de contexte : [Discovering the Reference Architecture Content](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content), section Business Capability Model. Édition de l’exemple inconnue.
+- Nature : cinq éléments visibles au rang Business Capability dans une Business Area. Libellés transcrits et correspondances dans la [comparaison U89](order-promising-comparaison-capacites.md#2-ce-que-lon-peut-compter).
+- Définition consultée : rangs et libellés du schéma ; définitions détaillées des cinq feuilles non disponibles dans l’image. Pas d’identifiant natif exposé. Le nombre cinq porte seulement sur cet extrait ; pas de preuve d’exhaustivité ni d’absence des capacités documentées ailleurs.
+
+### ELM079
+
+- Référence : MKT13 SAP S/4HANA. Textes publics lus le 2026-09-11, éditions globales non affichées.
+- Sources : [Using Advanced Available-To-Promise](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5), sections PAL, ABC et Release for Delivery, complément PAC/BOP de ELM077 ; [Acquiring a Basic Understanding of ATP](https://learning.sap.com/courses/performing-the-availability-check/acquiring-a-basic-understanding-of-available-to-promise-atp-_ae470c8e-1483-46ce-b5cc-e80647e8a32b), passage SBC, extrait indexé détaillé consulté.
+- Nature : comportements de produit, pas nouveaux rangs RBA déduits. Reformulation : contrôler les allocations ; chercher des alternatives ; provoquer un approvisionnement pour confirmer. SBC documente notamment la création de propositions d’approvisionnement et leur date, avec PP/DS en édition privée/on-premise.
+- Adaptation et limite : [critères U89](order-promising-comparaison-capacites.md#3-couverture-éprouvée-sur-dix-critères-explicites), sans import de réalisation logistique ou de Manufacturing. PAL et SUP ne sont pas assimilés ; l’extrait RBA et ces produits ne constituent pas une édition homogène.
+
+### ELM080
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management. Textes publics lus le 2026-09-11 ; version globale non établie.
+- Sources : [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations), introduction, cinq méthodes de contrôle des dates, note de recalcul et CTP calculations ; date affichée 2026-04-21. [Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives), introduction, Delivery alternatives FastTab et Impact of selected alternative ; date affichée 2021-09-29.
+- Nature : fonctionnalités et variantes de calcul. Reformulation : ATP/CTP éclairent la faisabilité ; alternatives de lieu, de variantes produit et de quantité partielle détaillées dans la seconde page. Les limites diffèrent selon les méthodes.
+- Adaptation : ne pas réduire Microsoft au calcul de date, ni compter les cinq méthodes comme cinq capacités. La note de recalcul ne démontre pas une préemption globale de ressources entre commandes. Substitution générale et changement de variante ne sont pas équivalents. CMP047.
+
+### ELM081
+
+- Référence : MKT20 Oracle Fusion Cloud, édition 26B. Textes publics lus le 2026-09-11.
+- Sources/localisateurs : [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/overview-of-global-order-promising.html), introduction et Principles of Promising ; [Manage Supply Allocation Rules](https://docs.oracle.com/en/cloud/saas/readiness/scm/26b/order26b/26B-order-mgmt-wn-f42969.htm), introduction, allocation nodes, partage des règles avec Backlog Management.
+- Nature : principes et comportements de produit. Reformulation : choix de ressources présentes/futures ou à créer, d’origines, de substitutions et de réponses fractionnées ; critères économiques possibles. Les allocations peuvent suivre des groupes de demandes et des priorités.
+- Adaptation : contrôle de couverture P83, pas transposition du produit en capacités. Les sept principes ne sont pas sept capacités natives ; assignment sets ne prouve pas une équivalence avec Supply Assignment. Réexamen global du backlog et cycle d’affectation non établis par ces seuls passages. Aucun fonctionnement local déduit ; CMP047.
+
+### ELM082
+
+- Référence : MKT21 APICS CPIM ; [extrait officiel diffusé par ASCM](https://learningsystem.ascm.org/wp-content/uploads/2018/11/APICS_CPIM_2019_Excerpt.pdf), texte lu le 2026-09-11.
+- Version/localisateurs : CPIM 6.1, édition 2019, PDF pages 1 et 3, pages imprimées 1-207 et 1-209, Master Scheduling and Sales et définition ATP ; PDF page 5, imprimée 1-211, Capable-to-Promise. Extrait citant le dictionnaire APICS 15e édition, pas dictionnaire complet examiné.
+- Nature et reformulation : ATP, développé **Available-to-Promise**, désigne dans ce contexte la part non engagée du stock et de la production planifiée qui soutient la promesse client. CTP est distingué avec contraintes de capacité. Order promising est présenté comme la prise d’un engagement de livraison.
+- Adaptation : appui au vocabulaire transverse proposé en U90 ; le calcul ou contrôle de l’ATP peut contribuer à une capacité locale de vérification. Aucun libellé natif Promise Verification ni hiérarchie en quatre capacités attestés. Pas de méthode de calcul universelle, d’architecture imposée ou d’extension FLOW à la planification de saison.
+
+### ELM083
+
+- Références : MKT13 SAP S/4HANA, complément Transportation Management ; MKT14 Microsoft et MKT20 Oracle pour promesse et transport. Contrôle le 2026-09-11.
+- SAP : [Defining Planning Processes](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/defining-planning-processes_c47bf785-22c2-4136-8ffd-83b8a22718d6), The Planning Processes et International Transportation, texte public ouvert et lu ; édition globale non affichée. Reformulation : planifier des acheminements peut combiner des modes, des étapes, des contraintes de capacité et des choix de transporteur. Nature : description de produit et processus, pas nouvelle feuille RBA attestée.
+- Microsoft : [Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives), introduction, Delivery date control methods et Delivery alternatives FastTab, texte relu ; date affichée 2021-09-29. Mode, calendriers et délais de transport influencent les solutions et dates proposées. Cela ne prouve pas à lui seul une conception complète de chaînes multimodales dans cette fonction.
+- Oracle : [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/overview-of-global-order-promising.html), 26B, Supply Chain et Principles of Promising, texte relu ; modes et coûts de transit interviennent dans le choix des solutions. Ne pas assimiler ce comportement à tout Transportation Management.
+- Adaptation : Fulfillment Route Decision est un nom local pour choisir l’acheminement qui soutient la promesse ; son autonomie et son domaine propriétaire restent proposés. Source et route peuvent être choisis conjointement ; aucun processus obligatoire ni périmètre de réalisation FLOW supplémentaire. CMP050.
+
+### ELM084
+
+- Référence : MKT14 Microsoft Dynamics 365, produits Supply Chain Management et Business Central explicitement distingués. Textes publics lus le 2026-09-11.
+- [Order promising — Supply Chain Management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations), ATP calculations et CTP calculations, date affichée 2026-04-21 : ATP inclut les ressources non engagées et les réceptions prévues ; CTP ajoute les capacités.
+- [Calculate sales order delivery dates using CTP — Supply Chain Management](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp), How CTP compares to ATP, Near real-time CTP et comparaison des moteurs, date de page non relevée : la disponibilité des composants et des ressources de fabrication peut fonder une réponse lorsque le produit fini manque. Modalités de calcul dépendantes de version et configuration ; Near real-time CTP et Batch CTP sont des réalisations, pas deux capacités métier. C62 conserve la divergence avec la page générale ; conditions de version 10.0.41 et activation précisées dans la page détaillée.
+- [Calculate order promising dates — Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/sales-how-to-calculate-order-promising-dates), About order promising, Available to promise, Capable to promise et Calculations, version globale/date de page non relevées : CTP raisonne sur le manque et la possibilité de produire, acheter ou transférer ; acceptation des dates peut créer des lignes de planification/réservation. Ne pas attribuer ce cycle tel quel à Supply Chain Management.
+- Nature : concepts et comportements de produit ; adaptation locale ATP/CTP comme contributions possibles à Promise Proposal, CTP lié partiellement à Supply Creation Decision. Pas d’équivalence avec deux capacités locales, ni de promesse engageante déduite d’un calcul seul. CMP051.
+
+### ELM085
+
+- Référence : MKT13, SAP, lecture du 2026-09-11. [Describing Sales Order Management](https://learning.sap.com/courses/exploring-end-to-end-business-processes-in-sap-business-suite/describing-sales-order-management_ca7b816e-af6f-4a03-bd88-1a5bb42cef84), Sales Order Overview et Sales Order Processing ; texte public ouvert, édition globale inconnue. Complément à ELM063.
+- Nature : description de produit et processus, pas nouveau rang RBA. Reformulation : la commande de vente rassemble parties, produits, conditions et résultats de contrôles, dont disponibilité et prix. Le cours présente aussi des rubriques séparées pour achats et contrats, sans analyse nouvelle complète de ces leçons.
+- Adaptation : appui à la connaissance d’un engagement commercial et à ses relations avec la promesse/pricing. Ne pas copier les fonctions entourant l’objet Sales Order comme autant de capacités D04 ; ne pas fusionner les objets ou reprendre les rôles organisationnels du produit.
+- Limites : les appuis Purchase Order Management de ELM063 et sous-traitance ELM043 restent antérieurs ; aucun domaine natif Commercial Commitments ni équivalence globale démontrés. CMP053.
+
+### ELM086
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; textes publics lus le 2026-09-11, pas édition produit globale établie.
+- [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), Commitment types, Fulfillment calculations, Confirmations and version history et Purchase agreements and intercompany trade ; date de page non relevée. Engagements, consommation/reliquat et historique illustrent le rapprochement D04, sans formule locale importée.
+- [Sales agreements overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-agreements), mêmes sections et Returning an item ordered from a sales agreement ; date affichée 2026-04-27. Accord et commandes liées sont distingués. Une confirmation dans ce produit peut historiser une version sans être une condition de création de commande ; ne pas l’assimiler automatiquement à Promise Confirmation ou à l’entrée en vigueur d’une obligation.
+- [Sales returns](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns), Return order process et Return material authorization ; date/version non relevées. Autoriser le renvoi ne vaut pas acceptation des biens ou attribution d’un crédit ; inspection et décisions ultérieures sont distinguées.
+- Nature : documents, fonctionnalités et processus de produit ; reformulation et appui partiel à P84, pas quatre capacités natives équivalentes. Le modèle commun achats/ventes demeure local ; aucune règle de déploiement Beaumanoir, obligation juridique universelle ou import des capacités financières/logistiques. CMP053.
+
+### ELM087
+
+- Référence : MKT13 SAP MDG et MKT14 Microsoft Dynamics 365.
+- Objet : Identité commune et spécialisations client/fournisseur.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP Business Partner](https://learning.sap.com/courses/sap-master-data-governance-on-sap-s-4hana/explaining-the-integrated-object-model-for-the-business-partner), Integrated Object Model, données générales et dépendantes du rôle ; édition/date de publication non affichées.
+- Source : [Microsoft Global address book](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book), introduction, Party roles et adresses ; page datée 2026-03-18.
+- Reformulation : SAP relie Customer et Supplier au même Business Partner ; Microsoft permet plusieurs rôles sur une Party. Les données communes ne suppriment pas les attributs propres à la relation commerciale.
+- Adaptation et limites : Modèles et fonctionnalités de produit. Appui à D09 partagé, pas à l’administration locale ni à une définition de Party limitée aux personnes morales. Aucun déploiement prouvé.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM088
+
+- Référence : MKT13 SAP S/4HANA et MKT14 Dynamics 365.
+- Objet : Contrats achats et ventes, distincts des commandes.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP accords achats](https://learning.sap.com/courses/sap-s-4hana-contract-management/outlining-purchasing-agreements-in-sap-s-4hana), Purchasing Agreements et Key Features ; édition non affichée.
+- Source : [SAP contrats ventes](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-sales-fundamental-business-processes/executing-solution-process-sales-contract-management-i9i-_cfe682c7-61d0-41a7-b730-e62c7d63dc55), Business Process Overview, périmètre I9I ; édition non affichée.
+- Source : [Microsoft accords achats](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), Commitment types, Fulfillment calculations et Apply purchase agreements ; date non relevée.
+- Source : [Microsoft accords ventes](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-agreements), Commitment types, Pricing terms, Policies, Fulfillment ; contrôle du contenu, date antérieure 2026-04-27 consignée en ELM086.
+- Reformulation : Les deux suites distinguent les contrats d’achat et de vente. SAP distingue aussi contrats et scheduling agreements. Microsoft expose plafonds et consommation par des commandes liées. Les contrats examinés peuvent viser des articles, catégories, quantités ou valeurs ; un lien à un catalogue nommé n’est pas une structure universelle démontrée.
+- Adaptation et limites : Objets/processus produit, sans règle juridique générale. Le reliquat de contrat n’est ni un stock reçu ni un futur certain. D11 peut recevoir les deux variantes sans dupliquer sa capacité d’ingestion ; autorité des consommations à instruire.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM089
+
+- Référence : MKT13 SAP S/4HANA et MKT14 Dynamics 365.
+- Objet : Commandes achats et ventes spécialisées et reliées.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP commande achat](https://learning.sap.com/courses/exploring-end-to-end-business-processes-in-sap-business-suite/managing-purchase-orders_dda0b0d0-7da6-43ec-b162-4faa1a6f339b), Purchase Order Overview, Sending Purchase Order, Document Structure ; édition inconnue.
+- Source : [SAP commande vente](https://learning.sap.com/courses/exploring-end-to-end-business-processes-in-sap-business-suite/describing-sales-order-management_ca7b816e-af6f-4a03-bd88-1a5bb42cef84), Sales Order Overview et Processing ; édition inconnue, complément ELM085.
+- Source : [Microsoft intercompany](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders), About intercompany orders, exemples commandes/retours/accords ; page 2026-05-29.
+- Reformulation : La commande d’achat demande une fourniture au fournisseur ; la commande de vente porte la demande client et ses confirmations. SAP distingue les deux traitements. Microsoft relie deux commandes achat/vente en intercompany sans les fondre en un seul document.
+- Adaptation et limites : Cette spécialisation produit motive une épreuve de D04 ; elle ne prescrit pas deux domaines de capacités ni une architecture OMS. Une commande d’achat peut exister sans document précédent. Les processus complets incluent des fonctions hors FLOW.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM090
+
+- Référence : MKT13 SAP S/4HANA et MKT14 Dynamics 365 Commerce/SCM.
+- Objet : Catalogues d’approvisionnement et de vente.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP catalogues achats](https://learning.sap.com/courses/describing-requisitioning/managing-catalog-items_ed8d8ea7-25c0-46ab-a4c2-533e135916f4), Catalogs in Sourcing and Procurement, Internal/External Catalog ; édition non affichée.
+- Source : [Microsoft catalogues achats](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs), introduction et Prerequisites ; page 2026-07-01.
+- Source : [Microsoft catalogues B2B](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites), introduction, Price groups, catalogues/canaux/assortiments ; versions 10.0.27+, page 2026-01-21.
+- Reformulation : Les catalogues achats des pages SAP/Microsoft servent la sélection dans les demandes d’achat ; les catalogues Commerce B2B organisent les offres aux clients et se relient à des groupes de prix. Microsoft distingue ces parcours et contenus.
+- Adaptation et limites : Les deux pages achats concernent surtout les besoins internes/achats indirects : elles ne prouvent pas le découpage de l’achat de marchandises à revendre. Ne pas confondre catalogue du fournisseur vu par un acheteur et tout le référentiel produit. Aucune capacité de publication ou validation locale proposée.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM091
+
+- Référence : MKT14 Microsoft Dynamics 365 SCM.
+- Objet : Définition produit commune et données importables.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [Microsoft Product information](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information), Product definition, Distribution/export/import, Product masters/variants ; page 2026-07-01.
+- Reformulation : La définition produit partagée comprend identifiants, variantes, unités et conversions. Elle peut être importée de PLM/PDM/PIM. Le catalogue commercial seul ne démontre donc pas la couverture des références articles opérationnelles.
+- Adaptation et limites : Description de produit et de distribution d’information. Appui à un besoin de Product Reference Ingestion, pas au rétablissement de D08.a–c en administration locale.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM092
+
+- Référence : MKT13 SAP Retail, MKT14 Dynamics 365, MKT19 TM Forum.
+- Objet : Données de prix et application de règles distinctes du catalogue.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP prix Retail](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/performing-sales-pricing-for-retail-3i4-), Sales Pricing for Retail, niveaux de prix, validité et application des conditions ; périmètre 3I4, édition inconnue.
+- Source : [Microsoft Unified pricing](https://learn.microsoft.com/en-us/dynamics365/supply-chain/unified-pricing-management/upm-pricing-management-overview), Pricing components, Architecture overview ; page 2026-04-21.
+- Source : [TM Forum configurateur](https://www.tmforum.org/resources/specifications/tmfc027-product-configurator-v2-2-0/), notice publique, description et General Information ; 2.2.0 Team Approved 2026-03-24, publiée 2026-03-31, signalée Pre-production.
+- Reformulation : SAP distingue conditions tarifaires, niveaux et périodes puis leur application. Microsoft calcule les prix de vente selon attributs et règles, consommables par d’autres applications. La notice TM Forum distingue les prix du catalogue de l’application des règles par le configurateur.
+- Adaptation et limites : Ne pas affirmer un référentiel Pricing séparé universel : TM Forum conserve les prix au catalogue. La notice 2.2.0 n’est pas la Production ; lien annoncé 2.1.2 en échec à l’ouverture, spécification membre non lue. Unified pricing ne prouve pas unification achat/vente ni équivalence entre Vendor list price et prix d’achat engagé.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM093
+
+- Référence : MKT13 SAP S/4HANA et Retail.
+- Objet : Relations fournisseur/article et décision de source d’approvisionnement.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP Purchasing Info Records](https://learning.sap.com/courses/sourcing-in-sap-s4hana/working-with-purchasing-info-records), Sources of Supply, Purchasing Info Record, Purchase Order Default Price ; édition inconnue.
+- Source : [SAP procurement Retail](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/ordering-merchandise-with-procurement-for-retail-5fm-_fe298f93-84ad-47ff-98ff-658e887e020d), Procurement for Retail, Supply source determination, Retail-specific source determination ; périmètre 5FM.
+- Reformulation : L’info record associe fournisseur et article avec conditions et délai. Le choix de source utilise des informations distinctes, dont contrats et listes de sources ; le cas Retail permet sources internes et externes. Le prix de référence et celui appliqué à une quantité commandée peuvent différer.
+- Adaptation et limites : Les priorités de sélection sont propres aux variantes de produit et ne sont pas importées. Un quota fournisseur répartit l’approvisionnement ; il n’est pas automatiquement la protection de stock D01. Le choix opérationnel de fournisseur est à éprouver hors de la seule promesse client.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM094
+
+- Référence : MKT13 SAP Retail.
+- Objet : Assortiment et listing temporel.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP assortiments](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/managing-assortments-3i5-), Assortments 3I5, association article/site et périodes de listing ; édition inconnue.
+- Reformulation : Le listing associe articles et sites sur une période pour les opérations d’approvisionnement ; la leçon distingue ces périodes de la période de vente portée par l’article.
+- Adaptation et limites : Différence de données à recevoir et de règles à appliquer ; ne pas créer un domaine de planification saisonnière ou de conception d’assortiment dans FLOW. La présence d’un article au catalogue ne suffit pas à prouver son admissibilité dans chaque lieu/date.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM095
+
+- Référence : MKT13 SAP Retail.
+- Objet : Sites et lieux opérationnels.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [SAP sites](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/maintaining-sites-for-retail-3i3-), Sites for Retail, Site and Organizational Assignments, site/storage location ; périmètre 3I3.
+- Reformulation : SAP distingue magasins, centres de distribution et emplacements, reliés aux structures de l’entreprise. Le lieu opérationnel n’est pas réductible à l’identité d’un fournisseur ou client.
+- Adaptation et limites : Ne pas reproduire les structures organisationnelles SAP dans la carte générique. D06 contient déjà des connaissances de lieux ; séparer réception des références et appréciation des possibilités d’exécution, sans choisir de maître ni créer automatiquement un domaine.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM096
+
+- Référence : MKT19 TM Forum ODA.
+- Objet : Parties, accords, catalogues et ordres : composants distincts.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [TMFC028 Party](https://www.tmforum.org/oda/directory/components-map/party-management/TMFC028), description, APIs dépendantes ; 2.1.0, publiée 2024-10-14.
+- Source : [TMFC039 Agreement](https://www.tmforum.org/oda/directory/components-map/party-management/TMFC039), description, APIs exposées/dépendantes ; 1.1.0, publiée 2024-08-19.
+- Source : [TMFC001 Catalog](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC001), description et APIs ; 2.1.2, publiée 2025-11-12.
+- Source : [TMFC002 Product Order](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC002), description ; 2.1.0, publiée 2024-11-12.
+- Source : [TMFC033 Purchase](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC033), notice : Planned, sans version ni publication ; spécification annoncée non publiée.
+- Reformulation : Party, Agreement et Catalog sont distingués, mais l’ODA contient aussi rôles, adresses/sites, catalogues de services et ressources. Agreement a une portée transversale entre parties. Product Order est orienté client ; Purchase Management est identifié séparément mais reste Planned dans la notice.
+- Adaptation et limites : Ces notices de composants et API ne sont ni le SID intégral ni une carte de capacités retail. La seule notice Purchase ne démontre pas une symétrie complète achat/vente. Spécifications détaillées membres non consultées ; versions de notices non homogènes.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM097
+
+- Référence : MKT03 Business Architecture Guild.
+- Objet : Frontière de capacité et objet métier.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [Metamodel Guide](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf), v3.0 septembre 2024, §5.2, pages PDF 17–18, imprimées 17–18 ; passage textuel relu.
+- Reformulation : Les décompositions conservent l’objet du parent : l’exemple Customer ne gère pas les accords ni les produits. Le guide distingue capacité et réalisation contextuelle.
+- Adaptation et limites : Appui méthodologique, pas prescription Party/Agreement/Catalog en trois domaines, pas preuve d’une scission achats/ventes dans un catalogue retail. Guide BIZBOK complet et modèles membres non lus ; aucun schéma ou tableau graphique utilisé comme preuve nouvelle.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM098
+
+- Référence : MKT14 Microsoft Dynamics 365.
+- Objet : Réexamen ciblé des cycles, contraintes et retours.
+- Consultation : 2026-09-11 ; passages textuels publics ouverts et lus, sans connexion. Des bandeaux génériques de connexion Microsoft n’empêchaient pas la lecture du texte.
+- Nature : documentation de produit/composant, sauf ELM097 méthodologique ; les titres ne valent pas rangs natifs de capacités.
+- Source : [Réservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), introduction : créer, ajuster, libérer et compenser à la consommation ; variantes produit conservées, date non relevée.
+- Source : [DOM rules](https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules), Partial orders, Offline location, Maximum rejects/orders ; page 2026-01-22.
+- Source : [Retours ventes](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns), Return order process et RMA ; édition/date non relevées.
+- Reformulation : Le cycle de réservation comprend ses ajustements/libérations ; les règles DOM distinguent possibilités du lieu, fractionnement et charge. Un retour autorisé ne vaut pas acceptation physique ni décision de remède.
+- Adaptation et limites : Appuis partiels à la révision du D02 résiduel, à D06 et à la maille D04.d. Ne pas importer le processus DOM complet, l’exécution entrepôt ou la finance ; aucune capacité ajoutée par opération produit.
+- Rapprochement : audit U99, CMP055–CMP057 ; pas de validation métier déduite.
+
+### ELM099
+
+- Référence : MKT22 SAP Master Data Governance on SAP S/4HANA ; édition précise inconnue, leçon évolutive.
+- Libellé natif : Out-of-the-Box Domain Models ; nature : domaines de données d’une solution, pas Business Areas RBA.
+- Source et localisateur : [leçon SAP](https://learning.sap.com/courses/introducing-sap-master-data-governance/describing-data-domains-and-extensibility-options), section du même nom, liste textuelle et Extensibility Options ; consultée le 2026-09-11.
+- Sens consulté, reformulé : une même solution accueille des modèles spécialisés, notamment client, fournisseur, produit et finance, avec des possibilités d’extension.
+- Adaptation et limite : appui à la coexistence regroupement/séparation sémantique. N’établit pas notre trio ou quartet ni un domaine unique de capacités ; la couverture native diffère des extensions et des éditions cloud. Administration et qualité des maîtres non ajoutées à FLOW.
+
+### ELM100
+
+- Référence : MKT14 Microsoft Dynamics 365 ; guide évolutif d’architecture et documentation Supply Chain Management, pas catalogue de capacités.
+- Sources et localisateurs : [Data architecture](https://learn.microsoft.com/en-us/dynamics365/guidance/implementation-guide/data-management-architecture), Data architecture et Types of enterprise data, date affichée 2024-01-23 ; [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information), introduction et Distribution, export, and import of product data, date affichée 2026-07-01.
+- Consultation : textes publics lus le 2026-09-11 malgré bandeau générique d’authentification ; pas de version globale unique. Une tentative d’ouverture d’une page Global address book a échoué ; elle n’est pas utilisée comme preuve nouvelle.
+- Sens consulté, reformulé : Microsoft réunit plusieurs sujets sous la catégorie master data, distingue celle-ci des données de configuration et transactionnelles, et documente séparément l’information produit partagée et sa réception depuis un maître externe.
+- Adaptation et limite : catégorie commune compatible avec objets spécialisés ; aucune hiérarchie native Domain/Capability ni modèle de réception unique établi. ELM091 conservé comme lecture précédente du sujet produit.
+
+### ELM101
+
+- Référence : MKT19 TM Forum ODA ; composants et Function Blocks, pas niveaux de business capabilities.
+- Sources/localisateurs : [Agreement Management](https://www.tmforum.org/oda/directory/components-map/party-management/TMFC039), description et ODA Function Block, version 1.1.0 publiée 2024-08-19 ; [Product Catalog Management](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC001), mêmes champs, version 2.1.2 publiée 2025-11-12 ; [annuaire](https://www.tmforum.org/oda/directory/components-map), rubriques Party Management et Core Commerce Management.
+- Consultation : notices publiques relues le 2026-09-11 ; spécifications membres non lues.
+- Sens consulté, reformulé : Agreement Management et le composant Party Management sont dans le bloc Party Management ; Product Catalog Management est dans Core Commerce Management. Un bloc peut donc regrouper plusieurs sujets distincts, sans bloc unique de tous les référentiels.
+- Adaptation et limite : exemple d’agrégation utile, pas prescription de rattacher Agreement à Party localement. Product Catalog englobe spécifications produit et offre ; aucune correspondance automatique au SKU retail autonome. Complète ELM096 sur le rang de regroupement.
+
+### ELM102
+
+- Référence : MKT03 Business Architecture Guild ; The Business Architecture Metamodel Guide v3.0, septembre 2024.
+- Source/localisateur : [guide public](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf), §5.2, page PDF 17 (index 16), continuation page 18 ; texte relu le 2026-09-11. Complément de ELM097, pas lecture du guide BIZBOK complet.
+- Nature : principe de définition et décomposition des capacités.
+- Sens consulté, reformulé : l’objet focal d’une capacité reste celui de ses sous-capacités ; l’exemple Customer ne prend pas en charge les accords ni les produits.
+- Adaptation et limite : préserver les sens sous un regroupement de présentation. Ce passage ne prescrit ni un domaine par référentiel ni la hiérarchie locale Univers/Domaine/Capacité ; ne pas présenter notre conteneur comme capacité parente certifiée Guild. Aucun modèle retail réservé aux membres consulté.
+
+
+### ELM103
+
+- Référence : MKT13 SAP S/4HANA ; leçon évolutive, édition exacte non précisée.
+- Libellés natifs : Goods Movements ; Managing Stocks by Quantity.
+- Nature : vocabulaire et description fonctionnelle de produit, pas rang RBA établi.
+- Source : [Defining Inventory Management and Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/defining-inventory-management-and-physical-inventory-1), sections Managing Stocks by Quantity, Planning, Entry, and Documentation of Goods Movements et Documents for Goods Movements ; texte consulté le 2026-09-13.
+- Sens consulté, reformulé : SAP distingue les transactions modifiant le stock, les quantités mises à jour et les documents justificatifs. Les réceptions, sorties, transferts et changements de qualification illustrent les mouvements ; ces derniers peuvent exister sans déplacement physique.
+- Adaptation : appui partiel à la séparation locale mouvements/état. La documentation inclut valorisation et effets comptables, hors périmètre des capacités proposées ici. Ne prescrit pas deux capacités autonomes ni deux composants.
+
+### ELM104
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive, mise à jour affichée 2025-08-29.
+- Libellés natifs : Inventory transactions, Inventory movements, Inventory journals.
+- Nature : transactions et journaux de produit ; aucune hiérarchie de capacités établie.
+- Source : [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals), introduction et Types of inventory journals ; texte consulté le 2026-09-13, malgré le bandeau générique de connexion.
+- Sens consulté, reformulé : les journaux enregistrent des transactions de stock de plusieurs types. Movement désigne aussi un type particulier de journal, avec traitement comptable spécifique ; ne pas assimiler ce type à l’ensemble des mouvements locaux.
+- Adaptation : Inventory Movements est un nom local proposé pour la capacité à enregistrer et qualifier les mouvements. Les journaux et leur workflow ne deviennent pas des capacités supplémentaires.
+
+### ELM105
+
+- Référence : MKT14, produit Microsoft Dynamics 365 Business Central, distinct de Supply Chain Management ; documentation évolutive, édition exacte inconnue.
+- Libellé natif : Item Ledger Entry.
+- Nature : écriture dans un modèle de produit ; pas une Business Capability.
+- Source : [Design Details: Inventory Posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting), introduction et distinction quantity/value postings ; texte consulté le 2026-09-13.
+- Sens consulté, reformulé : les variations de quantités sont enregistrées dans les item ledger entries, les variations de valeur dans les value entries. Les écritures d’application relient entrées et sorties.
+- Adaptation : Ledger peut éclairer le registre métier des mouvements. Inventory Ledger Management reste un nom de capacité proposé localement, pas un libellé Microsoft attesté. Aucune importation des règles de valorisation ou du schéma technique.
+### ELM106
+
+- Référence : MKT14 Microsoft Dynamics 365 Supply Chain Management ; documentation évolutive sans édition figée. Contrôle 2026-09-13.
+- Libellés : Sales Agreement, Purchase Agreement, Commitment types, Sales Order, Purchase Order. Nature : objets et règles de produit.
+- Sources et localisateurs : [Sales agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-agreements) et [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), introduction, Commitment types et application aux commandes ; textes lus.
+- Sens reformulé : les Agreements portent des engagements de quantité ou valeur que consomment les commandes liées. Commitment ne signifie pas exclusivement Order.
+- Adaptation : appui sémantique à la distinction Agreement/Order, correction C76 ; aucun rang de capacité ni responsabilité FLOW déduit.
+
+### ELM107
+
+- Référence : MKT13 SAP S/4HANA ; Manage Sales Contracts (édition exacte non obtenue) et Purchase Orders, version affichée 2025 FPS01. Contrôle 2026-09-13.
+- Nature : objets et fonctionnalités de produit. Libellés Sales Contract, Sales Order, Purchase Order.
+- Sources, liens et localisateurs : [note comparative](orders-agreements-commitments.md), section Sources consultées et limites. Extraits indexés seulement ; ouvertures directes sans texte exploitable.
+- Sens reformulé : Sales Order créée à partir d’un Sales Contract ; Purchase Order comme instruction de fourniture. Appui lexical limité, aucune équivalence de domaine ou rang RBA établi.
+
+### ELM108
+
+- Référence : Oracle Fusion Cloud Order Management, édition 25C ; complément produit au corpus Oracle Fusion MKT20, distinct de GOP et de MKT05 Retail Reference Model.
+- Source : [How Order Management Transforms Source Orders Into Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/how-order-management-transforms-source-orders-into-sales-orders.html), transformation et Parts of Sales Orders You Can Use After Transformation ; texte lu le 2026-09-13.
+- Nature : objets et orchestration de produit. Libellés Source Order, Order line, Orchestration process.
+- Sens reformulé : la commande reçue ou saisie est transformée pour sa réalisation ; structure source et structure opérationnelle peuvent différer.
+- Adaptation : appui partiel à la distinction commande source/réalisation ; pas d’équivalence globale à notre architecture, pas d’unification achat/vente démontrée.
+### ELM109
+
+- Références : MKT04 SAP RBA cité par un article d’architecture ; MKT13 S/4HANA vue produit. Sources S1–S3, liens et localisateurs dans [la localisation des Orders](localisation-orders-cartographie.md). Contrôle du 2026-09-13.
+- Libellés : Customer → Sales → Customer Order and Contract Management ; Sales order management ; Sourcing and Procurement → Operational Procurement → Purchase Order Processing.
+- Nature et accès : premier chemin dans un extrait indexé, article 403, édition RBA inconnue ; deuxième dans la page produit Sales lue ; troisième dans un extrait de navigation de configuration, ouverture sans texte. Ne pas assimiler leurs niveaux.
+- Adaptation : appui au placement distinct des commandes client et achat ; aucun domaine générique Orders ni rang uniforme établi.
+
+### ELM110
+
+- Référence : MKT14 Microsoft Dynamics 365, documentation évolutive. Sources S4–S6, liens dans [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.
+- Libellés : Order to cash / Manage sales orders ; Source to pay / Procure goods and services ; Transfer orders.
+- Nature : les deux premiers sont des positions dans le catalogue de processus ; le troisième est un objet et un paramétrage de produit. Les commandes d’achat sont traitées dans Procure goods and services ; les transferts d’entrepôts mobilisent Inventory management et Master planning.
+- Adaptation : correspondance de couverture, pas domaines métier équivalents. Aucun retour automatique à une structure locale Source to Pay.
+
+### ELM111
+
+- Référence : MKT20, complément Oracle Fusion Order Management et Procurement 25C. Sources S7–S8 de [la comparaison](localisation-orders-cartographie.md), textes lus le 2026-09-13.
+- Libellés et nature : Source Order, Order Management, Purchase Orders ; objets et espaces de produits.
+- Sens : représentation de commande transformée pour sa réalisation, ELM108 ; espace distinct des commandes d’achat dans Procurement.
+- Adaptation : distinguer origine et réalisation ; ne pas attribuer toutes les commandes de l’entreprise au produit Order Management ni identifier ce produit au domaine D04.
+
+### ELM112
+
+- Référence : MKT23 IBM Sterling OMS, édition précise non indiquée. [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order, texte lu le 2026-09-13.
+- Libellés : Sales Order 0001, Planned Order 0002, Return Order 0003, Template Order 0004, Purchase Order 0005, Transfer Order 0006, Master Order 0007.
+- Nature : types documentaires natifs de produit. Adaptation : appui à la famille générique locale des Orders, pas preuve d’un domaine autonome, d’un objet universel ou d’une carte de capacités. Distinct d’IBM CBM.
+
+### ELM113
+
+- Référence : MKT19 TM Forum ODA ; [Component Directory](https://www.tmforum.org/oda/directory/components-map), sections Core Commerce Management, Production, Party Management ; carte lue le 2026-09-13, édition globale non affichée.
+- Libellés : TMFC002 Product Order Capture & Validation et TMFC003 Product Order Delivery Orch & Mgt dans Core Commerce Management ; TMFC007 Service Order Management et TMFC011 Resource Order Management dans Production ; TMFC039 Agreement Management dans Party Management.
+- Nature : composants ODA, pas sous-capacités attestées. Page détaillée TMFC007 v1.2.2 inaccessible 403, ne pas revendiquer sa lecture complète.
+- Adaptation : appui à la séparation demande commerciale/demandes de réalisation ; aucune équivalence Product/Service/Resource avec nos objets de commerce et de logistique.
+### ELM114
+
+- Références : MKT13 SAP S/4HANA for Fashion and Vertical Business, cours évolutif sans édition figée ; MKT14 Microsoft Dynamics 365 Supply Chain Management, Delivery schedules mis à jour 2025-05-07 ; MKT23 IBM Sterling OMS, édition inconnue.
+- Sources et localisateurs : [Supply B2B/B2C](supply-b2b-b2c.md), section Constats du marché, liens officiels. Contrôle 2026-09-13 ; SAP et Microsoft textes lus, IBM aperçu indexé et lecture précédente, ouverture directe 403.
+- Nature : fonctions et portée de produits, pas rangs de capacités. Libellés : wholesale/retail, delivery schedules, B2B/B2C.
+- Sens reformulé : socle SAP intégré et segmentation ; échelonnement de quantités sur plusieurs livraisons Microsoft ; portée multi-clients IBM.
+- Adaptation : appui partiel au domaine Order Management commun U140 ; contraintes de satisfaction et échelles différentes à éprouver. Ne prouve ni toutes capacités couvertes ni performances illimitées.
+
+
+### ELM115
+
+- Référence : MKT19. Libellé natif : Product Stock et opérations associées. Identifiant natif : TMF687.
+- Nature : modèle et opérations d’API. Édition, source officielle, localisateur, accès et limites : S1 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM116
+
+- Référence : MKT19. Libellé natif : Supply Chain Management. Identifiant natif : TMFC032.
+- Nature : composant ODA. Édition, source officielle, localisateur, accès et limites : S2 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM117
+
+- Référence : MKT14. Libellé natif : Coverage settings. Identifiant natif : non indiqué dans le passage consulté.
+- Nature : fonctions de produit. Édition, source officielle, localisateur, accès et limites : S3 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM118
+
+- Référence : MKT14. Libellé natif : DDMRP. Identifiant natif : non indiqué dans le passage consulté.
+- Nature : méthode mise en œuvre dans un produit. Édition, source officielle, localisateur, accès et limites : S4 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM119
+
+- Référence : MKT24. Libellé natif : Inventory Optimization. Identifiant natif : non indiqué dans le passage consulté.
+- Nature : fonctions de produit. Édition, source officielle, localisateur, accès et limites : S5 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM120
+
+- Référence : MKT13. Libellé natif : Replenishment Planning / Forecasting and Replenishment. Identifiant natif : non indiqué dans le passage consulté.
+- Nature : fonctions et processus présentés dans un cours produit. Édition, source officielle, localisateur, accès et limites : S6 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM121
+
+- Référence : MKT14. Libellé natif : Warehouse replenishment. Identifiant natif : non indiqué dans le passage consulté.
+- Nature : fonctions WMS. Édition, source officielle, localisateur, accès et limites : S7 dans [l'étude U222](inventory-optimization-comparaison.md).
+- Passage examiné le 2026-09-15 ; synthèse française séparée de la formulation native dans la table « Éléments effectivement consultés ». Définition formelle de capacité métier non fournie par ce corpus.
+- Rapprochements proposés, sans équivalence ou validation locale déduite de la présence dans le produit.
+
+
+### ELM122
+
+- Référence : MKT14. Libellé natif : Buffer profile and levels. Nature : fonction de calcul et application de paramètres. Identifiant natif : non indiqué dans le passage consulté.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM123
+
+- Référence : MKT14. Libellé natif : Firm planned orders. Nature : fonction de transformation des ordres planifiés. Identifiant natif : non indiqué dans le passage consulté.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM124
+
+- Référence : MKT14. Libellé natif : Inventory Visibility inventory allocation. Nature : fonction opérationnelle d’allocation et protection. Identifiant natif : non indiqué dans le passage consulté.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM125
+
+- Référence : MKT24. Libellé natif : Example: Integrated Planning Process with Unified Planning Area. Nature : exemple de processus de planification SAPIBP1. Identifiant natif : non indiqué dans le passage consulté.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM126
+
+- Référence : MKT13. Libellé natif : Supply Protection / Product Allocation. Nature : fonctions aATP et leur articulation. Identifiant natif : SUP / PAL.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM127
+
+- Référence : MKT19. Libellé natif : StockLocation / StockItemRequestReplenishment. Nature : illustrations du modèle d’information SID v22.0. Identifiant natif : SI.02-I01 / SI.04-I03.
+- Source officielle, édition, date (2026-09-15), localisateur et limites : [table des sources U225](optimisation-et-application-stock.md#sources-et-limites). Reformulation distincte dans la table des constats ; aucune définition native de capacité locale revendiquée.
+- Rôle : examiner la direction U224 ; rapprochement proposé, pas validation de modèle ou de couverture installée.
+
+
+### ELM128
+
+- Référence : MKT14 Microsoft Dynamics 365 SCM, documentation évolutive, version logicielle précise non indiquée.
+- Libellé natif : Demand-driven planning, section Net flow and qualified demand. Identifiant natif de capacité : non indiqué. Nature : méthode et fonctions de planification du produit.
+- Source : [Demand-driven planning](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/ddmrp-planning), texte indexé officiel lu le 2026-09-16. Reformulation : position nette tenant compte du stock, des apports engagés et de la demande qualifiée, utilisée pour déterminer l’apport planifié.
+- Limites : pas de définition native de notre Replenishment Decision ni méthode rendue obligatoire. Synthèse et lien seulement. CMP075 et registre d05-refactoring.yaml.
+
+
+### ELM129
+
+- Référence : MKT19. Libellé natif : TMF633 Service Catalog Management. Nature : API de catalogue. Édition : v4.0.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM130
+
+- Référence : MKT19. Libellé natif : TMF645 Service Qualification Management. Nature : API de qualification avant commande. Édition : v5.0.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM131
+
+- Référence : MKT19. Libellé natif : TMF641 Service Ordering Management. Nature : API de commande de service et notifications. Édition : v4.2.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM132
+
+- Référence : MKT19. Libellé natif : TMFC007 Service Order Management. Nature : Composant ODA et fonctions de réalisation. Édition : v1.2.1, approuvé le 2 juillet 2024.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM133
+
+- Référence : MKT14. Libellé natif : Carrier Services ; Inbound/Outbound Shipment Orders. Nature : Configuration et documents/fonctions de Dynamics 365 SCM. Édition : documentation en ligne, édition produit non figée.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM134
+
+- Référence : MKT13. Libellé natif : Freight Order Statuses ; Freight Order Execution Detailed View. Nature : Statuts et suivi de produit SAP S/4HANA TM. Édition : 2025 FPS01 pour Last Mile ; édition inconnue pour le texte F2750.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+
+### ELM135
+
+- Référence : MKT19. Libellé natif : TMF623 SLA Management. Nature : API, appui historique seulement. Édition : R14.5.1.
+- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.
+- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur.
+
+### ELM136
+
+- Référence : MKT14. Libellé natif : Calculate sales order delivery dates using CTP. Nature : fonctionnalité Dynamics 365 SCM ; identifiant natif distinct non établi. Édition : documentation en ligne, produit non figé.
+- Passage consulté : introduction et options de contrôle des dates ; stock, capacité de production, temps de transport et marge de préparation. Reformulation, URL, adaptation et limites : [étude U241](execution-services-revised-comparison.md).
+- Consultation : 2026-09-16. Page Microsoft Learn ouverte ; aucune preuve d'une API native de capacité de préparation. Synthèse Codex proposée, aucune équivalence ou couverture installée validée.
+
+### ELM137
+
+- Référence : MKT13. Libellé natif : Supply Creation-Based Confirmation (SBC) in PP/DS. Nature : processus d'intégration PP/DS et aATP ; identifiant natif distinct non établi. Édition : S/4HANA 2025 FPS01, février 2026.
+- Passage consulté : Use, évaluation ressources/composants et transfert des dates vers aATP. Reformulation, URL, adaptation et limites : [étude U241](execution-services-revised-comparison.md).
+- Consultation : 2026-09-16. Texte officiel indexé lu, ouverture directe sans corps exploitable ; pas de test produit ni de reprise implicite des créations d'approvisionnement SAP. Synthèse Codex proposée, aucune équivalence ou couverture installée validée.
+
+
+## Audit de maturité U249 — consultation du 16 septembre 2026
+
+Les éléments suivants consignent les passages consultés pour la v007, sans remplacer leurs états historiques. Les tableaux de sources liés donnent les URL officielles, sections, éditions, accès et limites. Les définitions ne sont pas importées intégralement ; les reformulations sont proposées par Codex. Aucun identifiant natif supplémentaire n’est inventé.
+
+### ELM138
+
+- Référence : MKT14. Libellé natif : Inventory Visibility Add-in. Nature : fonctionnalités de visibilité et actualisation de stock. Édition : documentation évolutive ; date affichée 2025-08-14.
+- Passage consulté et localisateur : clés MS01, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Vue globale, variations et dimensions de stock ; lecture multi-source, sans équivalence avec trois capacités FLOW distinctes.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM139
+
+- Référence : MKT14. Libellé natif : Inventory allocation ; Inventory Visibility reservations. Nature : deux familles de fonctionnalités produit. Édition : documentation évolutive ; dates affichées 2025-08-13 et 2026-07-27.
+- Passage consulté et localisateur : clés MS02/MS03, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Allocation à des groupes et réservation pour une demande sont distinguées ; annulation et consommation de réservation documentées. Aucun optimum de quotas démontré.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM140
+
+- Référence : MKT14. Libellé natif : Master plans. Nature : fonctionnalités de planification. Édition : documentation évolutive ; date affichée 2026-03-25.
+- Passage consulté et localisateur : clés MS05, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Scénarios et propositions de quantités/dates, avec affermissement distinct ; appui à la frontière décision/application, pas au découpage exact de D05.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM141
+
+- Référence : MKT14. Libellé natif : Sales returns. Nature : processus et fonctionnalités de retours. Édition : documentation évolutive ; date affichée 2026-04-20.
+- Passage consulté et localisateur : clés MS06, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Motif, disposition, réception et remplacement ; périmètre produit plus large que D04.l, notamment pour les conséquences financières exclues de FLOW.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM142
+
+- Référence : MKT14. Libellé natif : Warehouse management only mode with external ERP systems. Nature : guide d’intégration et documents métier. Édition : documentation évolutive ; date affichée 2026-05-22.
+- Passage consulté et localisateur : clés MS07, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Shipment Orders, retours d’exécution et rapprochement des représentations de stock ; appui aux frontières et à la cohérence, aucune installation C-Log prouvée.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM143
+
+- Référence : MKT14. Libellé natif : Fulfillment and Returns Optimization provider. Nature : fonctions d’optimisation de réalisation. Édition : documentation évolutive ; date affichée 2026-01-28.
+- Passage consulté et localisateur : clés MS10, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Sources et contraintes d’un plan de fulfillment ; appui partiel à la solution Supply et au choix de service, pas équivalence à Inventory Optimization.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM144
+
+- Référence : MKT13. Libellé natif : Integration into Other Processes — aATP. Nature : fonctions produit articulées. Édition : S/4HANA 2025 FPS01, février 2026.
+- Passage consulté et localisateur : clés SAP01, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : PAC/PAL/BOP/SUP/ARun/ABC : articulation de disponibilité, protection et allocation. Les identifiants natifs sont ceux des fonctions mentionnées, pas des capacités FLOW.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM145
+
+- Référence : MKT13. Libellé natif : Backorder Processing. Nature : fonction produit. Édition : édition non établie dans le passage consulté.
+- Passage consulté et localisateur : clés SAP02, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Réexamen des confirmations après changements ; identifiant natif CA-ATP-BOP. Aucun processus local de validation imposé.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM146
+
+- Référence : MKT24. Libellé natif : Inventory Optimization ; Supply Planning. Nature : fonctions et processus SAP IBP. Édition : SAP IBP 2605.
+- Passage consulté et localisateur : clés SAP04/SAP05, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Cibles sous incertitudes et transfert de résultats de planification vers l’exécution ; appui au domaine D05, sans reprendre toute la maille IBP.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM147
+
+- Référence : MKT13. Libellé natif : Customer Returns Processing. Nature : processus produit. Édition : S/4HANA 2025 FPS01.
+- Passage consulté et localisateur : clés SAP07, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Ordre, inspection, suite logistique et compensation distingués ; la responsabilité de disposition dans FLOW reste à attribuer, contrôle physique et finance exclus.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM148
+
+- Référence : MKT20. Libellé natif : Database Promising. Nature : fonctions de promesse. Édition : Oracle Fusion SCM 26B.
+- Passage consulté et localisateur : clés OR02, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Bill of Resources, Profitable to Promise et capacité fournisseur ; contraintes et effets économiques, sans preuve de disponibilité logistique générique.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM149
+
+- Référence : MKT20. Libellé natif : PAR Policies. Nature : politiques et processus produit. Édition : Oracle Fusion SCM 26C.
+- Passage consulté et localisateur : clés OR04, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Politiques calculées/simulées puis publiées vers Inventory Management. Cas particulier PAR sans suivi des quantités ; ne pas généraliser aux magasins FLOW.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM150
+
+- Référence : MKT20. Libellé natif : Inventory Rebalancing Options for Replenishment Plans. Nature : fonction de rééquilibrage. Édition : Oracle Fusion SCM 26B.
+- Passage consulté et localisateur : clés OR05, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Définition des excédents/manques et périmètres de rééquilibrage ; appui partiel à D05.c sans imposer une séquence avec Replenishment Decision.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM151
+
+- Référence : MKT20. Libellé natif : Supply Chain Orchestration. Nature : module et processus. Édition : Oracle Fusion SCM 26C.
+- Passage consulté et localisateur : clés OR06, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Relie demandes, suggestions et documents ; gère changements et exceptions. Recouvrement plusieurs-à-plusieurs D03/D04/D06, pas équivalence du seul domaine D06.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM152
+
+- Référence : MKT20. Libellé natif : Keep Global Order Promising and Inventory Management Synchronized. Nature : guide d’intégration. Édition : Oracle Fusion SCM 26A.
+- Passage consulté et localisateur : clés OR07, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Décalages possibles, réservations et données à collecter ; appui aux contrats d’information et à la fraîcheur, pas aux six ingestions comme capacités natives.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM153
+
+- Référence : MKT20. Libellé natif : Hold Your Sales Orders. Nature : fonction de gestion de commande. Édition : Oracle Fusion SCM 26A.
+- Passage consulté et localisateur : clés OR03, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Blocages de portée ciblée et levée selon leur origine ; aucun cycle identique pour tous les types d’Orders FLOW.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM154
+
+- Référence : MKT14. Libellé natif : Create purchase orders. Nature : fonction et documents de commande. Édition : documentation évolutive ; date affichée 2025-08-13.
+- Passage consulté et localisateur : clés MS11, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Origines et types des achats, lignes et actions ; pas d’audit exhaustif des ventes/transferts ni modèle de capacités natif.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM155
+
+- Référence : MKT13. Libellé natif : Scenarios and Supported Features of PPAC and PAC with Supply Creation. Nature : comparaison de fonctions. Édition : S/4HANA 2025 FPS01.
+- Passage consulté et localisateur : clés SAP03, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Scénarios PPAC/PAC/SBC et limites d’intégration ; ressource de production et création de supply, sans équivalence à Capacity Visibility logistique.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM156
+
+- Référence : MKT14. Libellé natif : Intelligent Order Management — Components. Nature : composants de produit. Édition : documentation évolutive ; date affichée 2026-01-30.
+- Passage consulté et localisateur : clés MS09, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/microsoft.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : Orchestration, providers, optimisation et insights ; composition logicielle et coopération, pas catalogue homogène de capacités métier.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+### ELM157
+
+- Référence : MKT20. Libellé natif : Overview of Global Order Promising. Nature : application et fonctions. Édition : Oracle Fusion SCM 25C.
+- Passage consulté et localisateur : clés OR01, tableau des sources et rapprochements de [l’annexe U249](../audits/2026-09-16-audit-maturite/sap-oracle.md). Consultation : 2026-09-16. Identifiant natif distinct non établi, sauf indication explicite ci-dessous.
+- Reformulation séparée : ATP/CTP, alternatives, split, sourcing et coûts. Consultation 25C distincte de l’édition 26B d’ELM081 ; aucun comportement 26C extrapolé.
+- Limites : fonctions/processus et non capacités natives équivalentes ; limites propres aux passages conservées dans l’annexe. Synthèse Codex proposée, sans validation d’équivalence ni couverture installée.
+
+
+### ELM158
+
+- Référence : MKT14. Libellé natif : Order promising — ATP / CTP. Nature : documentation de fonctions produit. Identifiant natif distinct non établi.
+- Édition : Documentation Microsoft Dynamics 365 SCM, mise à jour affichée 2026-04-21. Consultation : 2026-09-16.
+- Source et passages : S2, liens et localisateurs dans [étude U260](atp-aatp-couverture.md). Passage consulté, paraphrase séparée du texte natif.
+- Reformulation : Appui sémantique pour ATP comme quantité et capacité ; ressources futures incluses selon le périmètre.
+- Limites : ni équivalence globale, ni capacité native FLOW, ni preuve de couverture installée. Restrictions par édition non auditées exhaustivement.
+
+
+### ELM159
+
+- Référence : MKT13. Libellé natif : Advanced Available-to-Promise (aATP). Nature : documentation de fonctions produit. Identifiant natif distinct non établi.
+- Édition : SAP Learning S/4HANA, cours évolutif sans édition unique affichée. Consultation : 2026-09-16.
+- Source et passages : S3, liens et localisateurs dans [étude U260](atp-aatp-couverture.md). Passage consulté, paraphrase séparée du texte natif.
+- Reformulation : Ensemble fonctionnel plus large que D03.i ; PAC, consultation du résultat et Release for Delivery.
+- Limites : ni équivalence globale, ni capacité native FLOW, ni preuve de couverture installée. Restrictions par édition non auditées exhaustivement.
+
+
+### ELM160
+
+- Référence : MKT13. Libellé natif : PAL / BOP / ABC / ARun. Nature : documentation de fonctions produit. Identifiant natif distinct non établi.
+- Édition : SAP Learning S/4HANA, cours évolutif sans édition unique affichée. Consultation : 2026-09-16.
+- Source et passages : S4, liens et localisateurs dans [étude U260](atp-aatp-couverture.md). Passage consulté, paraphrase séparée du texte natif.
+- Reformulation : Fonctions de protection, alternatives, réexamen et affectation ; correspondances plusieurs-à-plusieurs.
+- Limites : ni équivalence globale, ni capacité native FLOW, ni preuve de couverture installée. Restrictions par édition non auditées exhaustivement.
+
+
+### ELM161
+
+- Référence : MKT13. Libellé natif : Supply Protection (SUP). Nature : documentation de fonctions produit. Identifiant natif distinct non établi.
+- Édition : SAP Learning S/4HANA, cours évolutif sans édition unique affichée. Consultation : 2026-09-16.
+- Source et passages : S5, liens et localisateurs dans [étude U260](atp-aatp-couverture.md). Passage consulté, paraphrase séparée du texte natif.
+- Reformulation : Protection de groupes et priorités, distincte de l’affectation à une demande identifiée.
+- Limites : ni équivalence globale, ni capacité native FLOW, ni preuve de couverture installée. Restrictions par édition non auditées exhaustivement.
+
+
+### ELM162
+
+- Référence : MKT13. Libellé natif : Supply Creation-Based Confirmation (SBC). Nature : documentation de fonctions produit. Identifiant natif distinct non établi.
+- Édition : SAP Learning S/4HANA, cours évolutif mentionnant 2022. Consultation : 2026-09-16.
+- Source et passages : S6, liens et localisateurs dans [étude U260](atp-aatp-couverture.md). Passage consulté, paraphrase séparée du texte natif.
+- Reformulation : Intégration aATP–PP/DS ; appui partiel à la frontière ATP/CTP locale.
+- Limites : ni équivalence globale, ni capacité native FLOW, ni preuve de couverture installée. Restrictions par édition non auditées exhaustivement.
+
+
+### ELM163
+
+- Référence : MKT25. Libellé natif : Business capability levels. Nature : documentation de pratique ou de fonction produit ; identifiant natif distinct non établi.
+- Édition : documentation évolutive sans version unique affichée. Consultation : 2026-09-17.
+- Source et passages consultés : S2 dans [étude U261](capacites-variantes-niveaux-atp.md), URL et localisateurs explicites.
+- Reformulation : Profondeur limitée recommandée ; les enfants restent des capacités.
+- Limites : appui ciblé, pas équivalence de capacité ni adoption d’un découpage FLOW.
+
+
+### ELM164
+
+- Référence : MKT26. Libellé natif : Atomic and Instance Capabilities / Shared Capabilities. Nature : documentation de pratique ou de fonction produit ; identifiant natif distinct non établi.
+- Édition : documentation évolutive sans version unique affichée. Consultation : 2026-09-17.
+- Source et passages consultés : S3 dans [étude U261](capacites-variantes-niveaux-atp.md), URL et localisateurs explicites.
+- Reformulation : Capacité abstraite et réalisations contextualisées ; maturité évaluée séparément.
+- Limites : appui ciblé, pas équivalence de capacité ni adoption d’un découpage FLOW.
+
+
+### ELM165
+
+- Référence : MKT14. Libellé natif : Inventory Visibility on-hand change schedules and ATP. Nature : documentation de pratique ou de fonction produit ; identifiant natif distinct non établi.
+- Édition : documentation évolutive sans version unique affichée. Consultation : 2026-09-17.
+- Source et passages consultés : S4 dans [étude U261](capacites-variantes-niveaux-atp.md), URL et localisateurs explicites.
+- Reformulation : Calcul configuré, dimensions et ressources temporelles ; distinction du métamodèle de capacités.
+- Limites : appui ciblé, pas équivalence de capacité ni adoption d’un découpage FLOW.
+
+
+### ELM166
+
+- Référence : MKT14. Libellé natif ou famille : Business Process Catalog, six niveaux.
+- Source : S1 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Documentation évolutive ; page datée du 8 janvier 2026. Consultation : 2026-09-17.
+- Nature / limite : Métamodèle de contenus/processus, pas six niveaux de capacités. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM167
+
+- Référence : MKT04. Libellé natif ou famille : Reference Architecture Content.
+- Source : S2 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Cours public, édition non précisée. Consultation : 2026-09-17.
+- Nature / limite : Hiérarchie métier et liens de réalisation distingués. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM168
+
+- Référence : MKT14. Libellé natif ou famille : Allocation, plans, firming, holds, batch transfer release, returns.
+- Source : S6–S8/S11–S13 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Dynamics 365 Supply Chain Management, documentation évolutive. Consultation : 2026-09-17.
+- Nature / limite : Fonctionnalités de produit utilisées pour éprouver les comportements ; pas de couverture complète. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM169
+
+- Référence : MKT24. Libellé natif ou famille : Versions and Scenarios.
+- Source : S9 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Cours public SAP IBP order-based planning, édition non précisée. Consultation : 2026-09-17.
+- Nature / limite : Simulation et scénarios comme appui à Inventory Planning. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM170
+
+- Référence : MKT13. Libellé natif ou famille : aATP PAC/PAL/BOP/ABC.
+- Source : S10 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Cours public SAP S/4HANA, édition non précisée. Consultation : 2026-09-17.
+- Nature / limite : Fonctions de produit réparties entre plusieurs capacités FLOW. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM171
+
+- Référence : MKT20. Libellé natif ou famille : Supply Chain Orchestration et change management.
+- Source : S14/S15 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : Oracle Cloud SCM 26A et Order Management 25C consultés. Consultation : 2026-09-17.
+- Nature / limite : Appui à orchestration/adaptation ; périmètre produit plus large que D06. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM172
+
+- Référence : MKT19. Libellé natif ou famille : TMFC007 Service Order Management ; TMF633.
+- Source : S4/S16 dans [étude U265](../audits/2026-09-17-audit-comportements/marche.md), liens et sections explicites.
+- Édition : TMFC007 v1.2.1 / TMF633 v4.0. Consultation : 2026-09-17.
+- Nature / limite : Composant et API distincts de capacités ; contexte télécom. Identifiant de capacité native non établi sauf repères documentaires indiqués ; aucun rang FLOW déduit.
+- Usage : CMP089, correspondance proposée par Codex.
+
+
+### ELM173
+
+- Référence : MKT24, SAP IBP. Libellé natif : Creating and Comparing Versions and Scenarios.
+- Nature : fonctions produit ; cours public sans édition précise affichée, consulté le 17 septembre 2026.
+- Source et passages : S1 de la comparaison U267/U268, audits/2026-09-17-audit-comportements/scenario-planning-proposition.md ; Simulation and Scenario Concept / Version Planning and Simulation.
+- Appui : création, simulation, comparaison et promotion de données de scénario. Promotion de données et réalisation opérationnelle restent distinguées. Correspondance proposée CMP090.
+
+### ELM174
+
+- Référence : MKT20, Oracle Supply Chain Planning. Libellés natifs : Actions to Manage Your Plans ; How You Compare Supply Plans and Orders.
+- Nature : fonctions produit ; éditions 25D et 26B respectivement, consultées le 17 septembre 2026.
+- Sources et passages : S4/S5 de la comparaison U267/U268, audits/2026-09-17-audit-comportements/scenario-planning-proposition.md ; Plan Comparison / Order Comparison et tableau des actions.
+- Appui : comparaison, approbation et transmission aux systèmes exécutants. Disponibilité des actions selon le type de plan ; aucune hiérarchie de comportements ni workflow universel FLOW adopté. CMP090 proposé.
+
+
+### ELM175
+
+- Référence : MKT24, SAP IBP. Éléments : Simulations ; Inventory Analysis / Scenario Scorecard ; Service Level Prediction.
+- Nature : fonctionnalités produit, pas catalogue normatif de comportements. Consultation : 2026-09-17 ; Simulations annonce IBP 2605, éditions des cours non précisées.
+- Sources, sections et accès : S1–S4 dans audits/2026-09-17-planning-comportements/impact-analysis.md. S1/S2/S3 lus via texte indexé, ouvertures directes sans contenu ou en erreur ; S4 ouvert et lu directement.
+- Appui : indicateurs dépendants recalculés, comparaison par KPI, impact estimé d’un ajustement du plan sur le niveau de service. Ne prouve pas un comportement métier autonome SAP nommé Scenario Impact Analysis ni une explication causale exhaustive.
+- Correspondance : CMP091 proposée ; aucune réalisation Beaumanoir déduite.
+
+
+### ELM176
+
+- Référence : MKT14, Microsoft Dynamics 365 Supply Chain Management / Inventory Visibility.
+- Libellé natif : Inventory Visibility inventory allocation ; fonctionnalités produit et API.
+- Source primaire : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation ; page évolutive, édition non précisée, mise à jour affichée 2025-08-13, consultée le 2026-09-17.
+- Passages lus : Business background and purpose ; Allocation definition ; Tips for using allocation ; Use the allocation APIs (Allocate, Unallocate, Reallocate, Consume, Consume as a soft reservation, Query).
+- Reformulation : enveloppes par groupes, transfert et restitution de quantités, imputation de consommation et consultation du solde. Allocation logique ; couplage possible avec une réservation, sans identité des deux notions.
+- Limites : la source décrit un produit et ses interfaces, pas une hiérarchie de capacités. Elle ne suffit pas à couvrir la prévention du surstock ou les périodes de validité FLOW. Pas de copie des contraintes techniques Microsoft dans le contrat métier.
+- Rapprochement proposé : CMP092 ; aucun déploiement Beaumanoir déduit.
+
+
+### ELM177
+
+- Référence : MKT14. Libellés natifs : Replenishment methods and quantity modification ; Safety stock fulfillment for items ; Use the safety stock journal to update minimum coverage for items.
+- Nature : documentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S02 / S03 / S04 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM178
+
+- Référence : MKT13. Libellés natifs : Outlining aATP with Supply Protection (SuP) ; Executing Demand-Driven Replenishment in SAP S/4HANA.
+- Nature : formation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S05 / S06 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM179
+
+- Référence : MKT20. Libellés natifs : Policy Assignment Sets.
+- Nature : documentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S07 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM180
+
+- Référence : MKT32. Libellés natifs : Activating Items on Replenishment ; Manage Scheduled Updates.
+- Nature : documentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S08 / S09 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM181
+
+- Référence : MKT27. Libellés natifs : Inventory Optimization.
+- Nature : présentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S12 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM182
+
+- Référence : MKT28. Libellés natifs : What is Inventory Optimization.
+- Nature : article éditeur ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S13 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM183
+
+- Référence : MKT29. Libellés natifs : Replenishment and allocation ; Inventory Planning Software.
+- Nature : présentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S10 / S11 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM184
+
+- Référence : MKT30. Libellés natifs : Inventory Management Software — Slim4.
+- Nature : présentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S14 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM185
+
+- Référence : MKT31. Libellés natifs : Allocation & Replenishment.
+- Nature : présentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S15 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM186
+
+- Référence : MKT23. Libellés natifs : Safety stock rules ; Inventory monitor.
+- Nature : documentation produit ; fonctions ou présentations produit, pas capacités FLOW.
+- Éditions, URL primaires, passages et limites d’accès : S16 / S17 dans modeles/backlog/supply-protection-review.yaml. Consultation 2026-09-17.
+- Reformulation et rapprochement : matrice de mécanismes dans marche/supply-protection-comportements.md ; CMP093 proposé.
+- Limite : l’étendue fonctionnelle documentée ne prouve pas une décomposition normative ni une réalisation installée. Les règles de synthèse FLOW restent proposées.
+
+
+### ELM187
+
+- Référence : MKT28, Kinaxis. Libellé natif : What is concurrent planning? Nature : présentation de méthode et de produit, pas norme de décomposition.
+- Source : https://www.kinaxis.com/en/what-concurrent-planning ; sections How does concurrent planning work?, Improving agility, Planning proactively, Eliminating functional silos. Page évolutive sans édition logicielle ; texte consulté le 17 septembre 2026.
+- Reformulation : les alternatives simulées aident les équipes à anticiper ; les changements et leurs impacts partagés permettent d’adapter les plans et de coordonner les acteurs.
+- Limites : appui aux effets sur les pratiques et processus ; aucun catalogue normatif Capacité/Comportement, aucun déploiement Beaumanoir démontré. Synthèse sans import substantiel ; droits de republication non établis.
+
+
+Complément U284 à ELM187 — 17 septembre 2026 : page officielle Kinaxis S&OP, section Advanced scenarios, https://www.kinaxis.com/en/solutions/sales-and-operations-planning, texte indexé consulté. Les simulations what-if sont présentées avec l’examen des options et de leurs impacts. Présentation produit évolutive sans édition ; appui fonctionnel, pas norme de découpage ni preuve de déploiement. Aucune importation substantielle.
+
+
+### ELM188
+
+- Ensemble documentaire U286 : sources S01–S12 distinguées dans modeles/backlog/refactoring-target.yaml ; Microsoft MKT14, SAP MKT13, Oracle MKT20, Kinaxis MKT28, RELEX MKT29.
+- Éléments natifs : politiques d’allocation/réassort, comptages, recommandations, réservation, BOP, compensation et scénarios. Nature : fonctions, politiques ou processus de produits ; pas automatiquement des capacités.
+- URL, édition, passage, synthèse et limite sont conservés source par source dans l’annexe ; consultation 17 septembre 2026. S10 extrait officiel indexé ; autres pages ouvertes ou passages indexés détaillés. Oracle 25C historique explicite.
+- Appui à la différenciation des mécanismes et effets ; pas de preuve de déploiement Beaumanoir. Synthèses sélectives sans import substantiel ni droit de republication intégrale présumé.
+
+
+Complément U287 à ELM188 — 17 septembre 2026 : S13 Microsoft Firm planned orders et S14 Oracle Release Plan 26B ajoutés à la cible structurée. URL, passages, natures, synthèses et limites dans l’annexe. Textes primaires indexés consultés. Appui à la matérialisation de décisions de planification en Orders ; aucun comportement, atomicité ni parent FLOW imposé par les produits.
+
+
+### ELM189
+
+- Objet : vocabulaire Assignment/Allocation, U289. Sources T1–T4 dans modeles/backlog/assignment-terminology.yaml : SAP Supply Assignment et PAL (MKT13), Microsoft Inventory Visibility allocation (MKT14), Oracle Retail Allocation.
+- Libellés, URL, éditions, passages, synthèses et limites sont distingués dans l’annexe. Oracle Retail Allocation est ici un produit documenté, pas le modèle Oracle Retail RBA ni Merchandising. Consultation 17 septembre 2026.
+- Nature : concepts et fonctions produits ; aucun terme universel de marché revendiqué. Supply Assignment est le rapprochement le plus précis du sens donné par Laurent.
+- Réutilisation : liens et synthèses sélectives ; pas d’import de catalogue ou de preuve de déploiement.
+
+
+### ELM190
+
+- Objet : objectifs d’optimisation de fulfillment, précision U290.
+- Source primaire : [Microsoft Intelligent Fulfillment Optimization architecture](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch), documentation évolutive sans version produit figée ; introduction et Fulfillment sources, consultées le 17 septembre 2026.
+- Nature : description fonctionnelle d’un service produit. Microsoft décrit la satisfaction des commandes selon des contraintes et objectifs métier, notamment la minimisation des coûts et la proximité des sources.
+- Limite : n’impose pas un modèle universel de valeur multidimensionnelle, ses pondérations, ni les frontières entre capacités FLOW ; aucune preuve d’installation Beaumanoir.
+
+
+### ELM191
+
+- Ensemble documentaire U292 : 28 éléments sources S01–S28 distingués dans modeles/backlog/behavior-gap-audit.yaml ; [registre lisible](../audits/2026-09-17-comportements-manquants/sources.md).
+- Références : Microsoft MKT14, SAP S/4HANA MKT13, Oracle SCM MKT20, Blue Yonder MKT27, Kinaxis MKT28, RELEX MKT29, Manhattan MKT34, SAP Event Management historique MKT35.
+- Natures : politiques et fonctions documentées, processus produit, présentations commerciales. Chaque source conserve libellé natif, édition ou inconnue, URL, passage, fait observé, limite, date et accès. Identifiants natifs non disponibles : non inventés.
+- Contenu : réassort, ajustement d’apports, redistribution, engagements et révision, coordination et compensation, fiabilisation, retours et achats fournisseurs. Aucun de ces éléments n’est automatiquement une capacité ou un comportement FLOW.
+- Consultation : 17 septembre 2026. S19 extrait indexé limité ; guides et cours lus pour les autres sources documentaires ; S13–S16 pages produit sans garanties fonctionnelles détaillées. Réutilisation : synthèses sélectives et liens, pas d’importation substantielle ni de preuve installée.
+
+
+### ELM192
+
+- Éléments S29–S33 de modeles/backlog/behavior-gap-audit.yaml : SAP Global Track and Trace MKT37, Microsoft Landed Cost et états des achats MKT14, Camunda compensation/workflow patterns MKT36.
+- Consultation : 17 septembre 2026 ; faits, URL, passages, éditions et limites source par source dans l’annexe. SAP : présentation produit ; Microsoft et Camunda : guides documentaires.
+- Nature : visibilité logistique, règles de cycle de vie et mécanismes de processus ; aucune décomposition de capacités native ni adoption de moteur. CMP099 proposé.
+
+
+### ELM193
+
+- Sources S34–S36 de behavior-gap-audit.yaml : Oracle OTM MKT40, project44 MKT38, FourKites MKT39 ; relecture SAP MKT37/S29.
+- Éléments : Track and Trace, Order/Shipment Visibility, Transportation Visibility ; noms de produit, de fonctions ou de catégories distingués.
+- Consultation : 17 septembre 2026 ; éditions, passages, URL et accès dans l’annexe. Appuis lexicaux et périmètres ; pas de terme universel ni d’équivalence de produit complète établis. CMP100 proposé.
+
+
+### ELM194
+
+- Sources S37–S40 dans behavior-gap-audit.yaml : CSCMP MKT41, intégration SAP GTT MKT37, Manhattan MKT34, Oracle SCM MKT20 ; S29 SAP relu comme appui lexical.
+- Éléments : périmètre de Logistics Management, événements Picking/Packing/Load_Begin de GTT, usages Fulfillment Visibility en magasin/entrepôt et pour apports à une commande.
+- Consultation : 17 septembre 2026. S38 extrait officiel indexé, ouverture sans corps ; autres textes primaires consultés. Éditions et limites distinguées dans l’annexe ; pas de garantie universelle de couverture.
+- Nature : définition professionnelle, événements d’intégration et usages produit ; rapprochement proposé CMP102.
+
+
+### ELM195
+
+- Source S41, GS1 MKT42 : EPCIS & CBV, introduction à la visibilité fondée sur les faits d’objets, lieux, dates, contexte et prise en charge.
+- URL/édition/accès : https://www.gs1.org/standards/epcis ; présentation officielle, texte indexé consulté le 17 septembre 2026, sans adoption d’édition normative.
+- Nature : standard de partage d’événements présenté par son organisme ; appui au mécanisme de continuité proposé pour Logistics Visibility, pas preuve de sa place dans la hiérarchie FLOW. CMP103 proposé.
+
+
+### ELM196
+
+- Sources S42–S45 de behavior-gap-audit.yaml : Microsoft Dataverse (distinct de Dynamics Supply Chain), Camunda 8.9, SAP EWM, Oracle Warehouse Management. Consultation : 17 septembre 2026.
+- URL, éditions, passages, faits et limites conservés individuellement dans l’annexe. Documentation produit et présentation commerciale distinguées ; aucun identifiant natif de capacité inventé.
+- Appuis : audit numérique des données/processus ; distinction des opérations sur site et des acheminements. Aucun produit ne démontre ici un audit universel du SI ni une hiérarchie native équivalente à FLOW.
+
+
+Complément U304 à ELM196 : S46 Blue Yonder Store Execution (MKT27), S47 RELEX direct-to-shelf replenishment (MKT29). Présentations officielles consultées le 17 septembre 2026 ; sources, passages et limites dans l’annexe. Aucun nouveau nom normalisé de comportement prétendu.
+
+
+### ELM197
+
+- Sources S48–S50 de behavior-gap-audit.yaml : Microsoft Azure Logic Apps / Business Process Tracking (distinct de Dynamics 365 Supply Chain), Camunda Process Observability MKT36. Consultation : 17 septembre 2026.
+- Nature : suivi d’exécutions, corrélation métier et observabilité de processus ; fonctionnalités et présentation produit. URL, édition ou absence d’édition, passages, synthèses et limites dans l’annexe.
+- Appui à la visibilité des prestations numériques U306 ; aucun libellé normalisé de comportement ni déploiement Beaumanoir démontré.
+
+
+### ELM198
+
+- Sources S51/S52 de behavior-gap-audit.yaml : SAP Allocation Management (référence SAP MKT13, produit explicitement distinct), RELEX MKT29. Consultation 18 septembre 2026.
+- Libellés natifs : Initial Allocation, In-Season Fill-In, initial allocation, in-season replenishment. URL, versions, passages, nature et limites dans l’annexe. SAP consulté par texte indexé, ouverture sans corps ; RELEX page produit consultée.
+- Scénarios produit et fonctions, pas capacités FLOW automatiquement équivalentes. Aucun déploiement Beaumanoir déduit.
+
+
+### ELM199
+
+- Oracle Retail Inventory Planning Optimization Cloud Service, Lifecycle Allocation and Replenishment, documentation 26.1.201.0. Consultation du texte primaire indexé le 18 septembre 2026.
+- Source : https://docs.oracle.com/en/industries/retail/retail-inventory-planning-optimization-cloud/26.1.201.0/ipodl/ch-Introduction.htm
+- Passage : Introduction, Lifecycle Overview. Libellés natifs : Initial Allocation (Product Introduction), Replenishment (Product Growth and Maturity), Final Allocation (Product End of Life/Decline).
+- Nature : phases et processus pris en charge par un produit. Appui sémantique à la distinction implantation/réassort ; aucun identifiant natif de capacité ni équivalence hiérarchique déduit. Synthèse sélective, pas de reproduction substantielle.
+- Complément ELM198 : SAP Allocation Management 5.0, Business Scenarios, texte primaire indexé reconsulté : https://help.sap.com/docs/CARAB/410a12785a4945dca77e6afba0970c93/5ad109a630034a4b9b079abbe00be418.html?locale=en-US&state=PRODUCTION&version=5.0 ; Initial Allocation distinct d’In-Season Fill-In. RELEX page produit évolutive reconsultée : https://www.relexsolutions.com/solutions/automatic-replenishment-system/ ; sections Manage the full cycle for your seasonal items / Manage seasons effectively : initial allocation distinct d’automatic in-season replenishment dans une offre commune. Aucune preuve de déploiement Beaumanoir.
+
+
+### ELM200
+
+- Objet : alternatives anglaises à Implantation, recherche du 18 septembre 2026. Aucun identifiant natif de capacité attribué.
+
+- OASIS — Universal Business Language Version 2.4 (2.4).
+  Source : https://docs.oasis-open.org/ubl/UBL-2.4.html
+  Passage : 2.3.3.5.3.3 Initial Stocking of the Area by Retailer ; 2.3.3.5.3.4 Periodic (Weekly) Replenishment.
+  Nature : Processus métier documenté dans un standard d’échanges. Constat : Constitution d’un stock de départ au début d’une relation commerciale ou d’une saison ; le processus Initial Stocking est distingué du réassort périodique.
+  Limites : Texte primaire consulté. Attestation du terme Initial Stocking dans un contexte saisonnier ; pas une normalisation du nom Initial Stocking Decision ni un consensus des logiciels de mode.
+
+- Logility — Retail Optimization Gives Groupe Dynamite an Edge (Page de présentation sans édition figée ni date affichée).
+  Source : https://www.logility.com/webcast/retail-optimization-gives-groupe-dynamite-an-edge/
+  Passage : Présentation textuelle du webcast, initial distribution as well as replenishment.
+  Nature : Terme descriptif employé dans une présentation client. Constat : Distribution initiale distinguée du réassort dans un contexte de mode, de magasins et de déclinaisons style/couleur/taille.
+  Limites : Texte primaire de présentation consulté ; vidéo non visionnée. Usage descriptif attesté, pas nom de module ou taxonomie standard démontré.
+
+- Nextail — Nextail — Solution specifications (Documentation en ligne non versionnée).
+  Source : https://help.nextail.co/en/solution-specifications
+  Passage : First Allocation ; Replenishment ; Store Transfers.
+  Nature : Nom d’une solution et formulation descriptive de sa finalité. Constat : La solution First Allocation vise la distribution initiale de nouveaux produits aux magasins ; Replenishment et Store Transfers sont présentés séparément.
+  Limites : Documentation primaire consultée. Confirme le sens d’initial distribution mais pas son adoption comme libellé officiel de capacité.
+
+- Synthèses sélectives et liens vers les sources ; pas de reproduction substantielle. Aucun déploiement Beaumanoir déduit.
+
+
+### ELM201
+
+Recherche U317, consultation le 18 septembre 2026. Sources primaires, synthèses sélectives ; aucun identifiant natif de capacité inventé.
+
+- Oracle — Overview of Inventory Rebalancing (Fusion Cloud SCM 26B).
+  URL : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+  Passage : Salient Features ; Additional Points About Inventory Rebalancing.
+  Nature : Fonctionnalité de planification. Constat : Transferts de lieux en excédent vers des lieux en manque et possibilité de diriger des excédents vers un lieu de collecte. Le calcul tient compte des demandes, apports et protections du donneur.
+  Limites : Documentation primaire consultée ; ne démontre ni un optimum universel, ni la décomposition FLOW, ni un déploiement Beaumanoir.
+
+- Nextail — Merkal implements AI to centralize and streamline inventory planning across all channels (Page de cas client évolutive sans édition figée).
+  URL : https://nextail.co/customer/merkal-footwear-inventory-planning/
+  Passage : Sharper store transfers and deeper insights for additional revenue ; témoignage Alberto Garcia sur size availability / consolidation.
+  Nature : Usage produit et témoignage client publié par l’éditeur. Constat : Rééquilibrage de fin de saison entre magasins et amélioration de la disponibilité des tailles par consolidation. La valeur recherchée dépasse le simple comblement d’un manque global en unités.
+  Limites : Texte primaire de la page consulté ; étude téléchargeable non consultée. Aucune métrique commerciale reprise ni applicabilité Beaumanoir présumée.
+
+- SAP — Stock Consolidation (EWM 2025 FPS01 — février 2026).
+  URL : https://help.sap.com/docs/PRODUCT_ID/9832125c23154a179bfa1784cdc9577a/d0b4ebf54dda4179b68e334607e7fb5b.html
+  Passage : Définition de Stock Consolidation et deux stratégies.
+  Nature : Opération interne d’entrepôt. Constat : Le terme consolidation désigne un regroupement de stock avec un bénéfice de quantité ou d’espace.
+  Limites : Texte primaire indexé consulté ; ouverture directe sans corps exploitable. Contre-exemple de périmètre, pas preuve de couverture de redistribution intersites.
+
+
+### ELM202
+
+- Microsoft D365 SCM ; relecture ciblée des sources S08/S09 le 18 septembre 2026. Aucun nouvel identifiant natif de capacité.
+
+- Replenishment methods and quantity modification (Documentation D365 SCM, mise à jour affichée 2026-07-01).
+  https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification
+  Passage : Coverage codes ; Impact of the order quantity from default order settings.
+  Constat : Requirement traite les besoins identifiés, Period les regroupe sur une fenêtre, Min./Max. restaure un niveau cible lorsque le stock prévisionnel passe sous un seuil. Ces règles éclairent deux façons de décider les apports, par besoins datés ou par seuil/cible.
+  Limites : Texte primaire consulté le 18 septembre 2026. Pas de preuve de politique Requirement installée chez Beaumanoir ; ni correspondance univoque entre méthode logicielle et comportement métier.
+
+- Action messages (Documentation D365 SCM, mise à jour affichée 2026-03-26).
+  https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  Passage : Introduction ; Select action messages ; Action messages for orders related to safety stock.
+  Constat : La planification recommande de modifier dates et quantités d’apports existants après évolution des besoins, pour limiter manques et excédents.
+  Limites : Texte primaire consulté. Les règles Microsoft de période de gel et de stock de sécurité ne sont pas adoptées pour FLOW ; aucun engagement ferme déclaré librement modifiable.
+
+
+### ELM203
+
+- Clarification U324, sources primaires consultées le 18 septembre 2026 ; synthèses sélectives.
+
+- Microsoft — Safety stock fulfillment for items (Documentation D365 SCM, mise à jour affichée 2026-03-26).
+  https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment
+  Passage : Example: Minimum key ; Example: Min/max coverage code.
+  Constat : Les niveaux minimum et maximum peuvent être différenciés selon les périodes saisonnières. La logique Min/Max réagit au stock disponible projeté ; une configuration n’est donc pas nécessairement fixe ni indépendante de la demande.
+  Limites : Texte primaire consulté le 18 septembre 2026. Variation saisonnière documentée ; pas preuve d’une réoptimisation automatique à chaque événement ni d’une configuration Beaumanoir installée.
+
+- Oracle — Policy Assignment Sets (Fusion Cloud SCM 26B).
+  https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  Passage : Policy Parameters, table Policy Type / Method for Calculation of Quantities / How the Policy Type Is Used, Min-max planning.
+  Constat : Le minimum est calculé à partir de la demande pendant le délai et du stock de sécurité. La politique utilise ensuite une position de stock pour déterminer le déclenchement et la quantité de réapprovisionnement.
+  Limites : Documentation primaire consultée. Appui à la dépendance des seuils aux besoins/délais ; pas d’équivalence de hiérarchie FLOW ni de preuve d’installation Beaumanoir.
+
+
+### ELM204
+
+- Sources primaires approfondies le 18 septembre 2026 pour U328 ; responsabilité métier recherchée dans les résultats documentés, pas identité des noms.
+
+- SAP — Calculate Target Inventory Components (2608).
+  URL : https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/c1fb60cb1e9c49d99ada277ae57e9e6c/ab7b2b5a7bc24b86b949ee10d3275053.html?MDT_Attr_Appl_Models-BMforMDT=PDS+Activity&locale=en-US&version=LATEST
+  Passage : Description et fonctionnalités de l’opérateur.
+  Nature : Opérateur de planification. Constat : Détermine les cibles de stock et leurs composantes, ainsi que le point de commande ; résultats concrets correspondant à une partie importante de la responsabilité D05.a.
+  Limites : Opérateur produit qui dépend de Global (Multi-Stage) Inventory Optimization ; produit aussi des indicateurs et conversions. Ni unité logicielle ni séquence SAP ne dictent la capacité FLOW. Les contraintes et politiques détaillées ne sont pas déclarées équivalentes. Source primaire consultée (SAP : texte indexé détaillé ; Microsoft et Oracle : page ouverte). Aucun déploiement Beaumanoir ni usage obligatoire d’IA démontré.
+
+- Microsoft — Use the safety stock journal to update minimum coverage for items (Mise à jour affichée 2025-08-22).
+  URL : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal
+  Passage : Calculate minimum coverage based on historical usage ; Calculate a proposal ; Post the new minimum quantity.
+  Nature : Fonctionnalité et processus produit. Constat : Détermine un minimum proposé selon les consommations historiques, délais et service ; montre son impact sur la valeur du stock. Le résultat proposé est distinct de sa mise à jour effective.
+  Limites : Appui partiel : ne documente pas à lui seul tous les objectifs et seuils de FLOW. Le même journal regroupe proposition, révision et application ; FLOW distingue les responsabilités métier sans imposer plusieurs logiciels. Le rôle du minimum dépend de la méthode de réapprovisionnement. Source primaire consultée (SAP : texte indexé détaillé ; Microsoft et Oracle : page ouverte). Aucun déploiement Beaumanoir ni usage obligatoire d’IA démontré.
+
+- Oracle — Policy Assignment Sets (26B).
+  URL : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  Passage : Policy Parameters — Method for Calculation of Quantities / How the Policy Type Is Used.
+  Nature : Règles de détermination des paramètres de stock. Constat : Calcule des valeurs de politique par article et lieu ; documente distinctement les méthodes de calcul des quantités et leur utilisation pour le réapprovisionnement.
+  Limites : Ensemble fonctionnel plus large comprenant configuration, valeurs par défaut et surcharges ; ne constitue pas une capacité nommée Inventory Target Decision. Les politiques et formules Oracle restent des références, pas des règles FLOW adoptées. Source primaire consultée (SAP : texte indexé détaillé ; Microsoft et Oracle : page ouverte). Aucun déploiement Beaumanoir ni usage obligatoire d’IA démontré.
+
+
+### ELM205
+
+Sources primaires consultées le 18 septembre 2026 pour P13.
+
+- SAP — Minimum and Maximum Safety Stock (Documentation évolutive, édition non identifiée sur cet extrait).
+  URL : https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/feae3cea3cc549aaa9d9de7d363a83e6/c94e89301b884790b30fbd82a687bcc1.html
+  Passage : How to Use — Target Service Level.
+  Nature : Mécanisme d’optimisation documenté. Constat : Les opérateurs multi-stage peuvent ajuster les stocks de sécurité amont et aval pour respecter le service et les contraintes de sécurité.
+  Limites : Texte primaire indexé consulté le 18 septembre 2026. Le mécanisme documenté porte sur les stocks de sécurité ; ne prouve pas toutes les cibles, un optimum garanti ou une réalisation Beaumanoir.
+
+- RELEX — Multi-echelon inventory optimization (Article évolutif, sans version produit figée).
+  URL : https://www.relexsolutions.com/resources/inventory-optimization/
+  Passage : Multi-echelon inventory optimization.
+  Nature : Mécanisme d’optimisation documenté. Constat : Positionne les stocks de sécurité en considérant les dépendances du réseau, délais, variabilité et service ; oppose cette approche aux dimensionnements isolés.
+  Limites : Texte primaire indexé consulté le 18 septembre 2026. Présentation éditeur et scénario illustratif ; bénéfices annoncés non mesurés pour FLOW, algorithme non audité.
+
+
+### ELM206
+
+Sources primaires consultées le 18 septembre 2026, appuis fonctionnels à U331.
+
+- SAP — Decomposed (Single-Stage) Inventory Optimization (2605).
+  URL : https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/feae3cea3cc549aaa9d9de7d363a83e6/a46e510f47e94abebb61afb1cda2f65d.html
+  Passage : Présentation ; Inputs and Outputs.
+  Constat : Détermine localement stock de sécurité et position cible par produit-lieu, avec des dépendances distinctes de la topologie complète du réseau.
+  Limites : SAP exige ici des résultats du Global Multi-Stage en entrée ; ce n’est pas une preuve de trajectoire obligatoire local puis global. Ne définit pas deux capacités nommées magasin et entrepôt.
+
+- RELEX — Inventory optimization: Keys to a successful strategy (Article évolutif sans version produit figée).
+  URL : https://www.relexsolutions.com/resources/inventory-optimization/
+  Passage : Storage and space optimization capabilities ; Multi-echelon inventory optimization.
+  Constat : Considère disponibilité en rayon et contraintes de réserves/DC ; oppose dimensionnement par lieu et positionnement coordonné des stocks de sécurité du réseau.
+  Limites : Présentation fonctionnelle et scénario illustratif ; pas catalogue de capacités ni preuve de formule ou de déploiement Beaumanoir.
+
+- RELEX — The best inventory planning software: AI-powered, planner-driven (Article évolutif sans version produit figée).
+  URL : https://www.relexsolutions.com/resources/inventory-planning-software/
+  Passage : DC forecasts from projected store orders.
+  Constat : La demande d’un centre de distribution peut provenir des commandes magasins projetées ; elle ne se réduit pas à une prévision indépendante de ventes consommateur.
+  Limites : Appui à la différence de contexte ; ne définit pas un comportement nommé Distribution Center Inventory Optimization et ne transfère pas la prévision dans D05.a.
+
+
+### ELM207
+
+Sources primaires consultées le 18 septembre 2026.
+
+- Microsoft — Cycle counting (Documentation évolutive).
+  URL : https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+  Passage : Automatically create cycle counting work ; Spot cycle counting ; Resolve cycle counting differences.
+  Constat : Plans récurrents, seuils déclenchant un comptage et comptage ponctuel sans travail préexistant ; traitement des différences constatées.
+  Limites : Spot ne signifie pas exclusivement déclenché par anomalie. Un seuil de comptage ne prouve pas une incohérence ; ce n’est pas un seuil de réassort. Les modalités produit se combinent et ne forment pas trois capacités universelles.
+
+- SAP — Physical Inventory (2608).
+  URL : https://help.sap.com/docs/SAP_S4HANA_CLOUD/87f9b54f9c4f4e75aff0061860a6589a/ae735d9f76024645ad4f5b1a0e6e3387.html
+  Passage : Physical inventory procedures.
+  Constat : Distingue inventaire périodique, procédures continues et cycle counting ; confronte quantités physiques et enregistrées.
+  Limites : Périmètre produit Warehouse Management ; aucune attribution automatique à FLOW des opérations WMS, ni obligation comptable ajoutée.
+
+- Oracle — Counting — full physical inventory / cycle counting (12.2).
+  URL : https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm
+  Passage : Counting ; Cycle Counting.
+  Constat : Oppose le comptage périodique de sélections d’articles au comptage physique complet pour rapprocher les quantités.
+  Limites : Référence EBS, pas Fusion Cloud ; les contraintes de blocage transactionnel du produit ne sont pas imposées à FLOW.
+
+
+### ELM208
+
+Sources primaires reconsultées le 18 septembre 2026 pour A01.
+
+- SAP — Explaining Supply Assignment (documentation évolutive).
+  URL : https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  Passage : Supply Assignment Scenarios ; Copying Assignments ; Normal, Preview and Simulation.
+  Constat : En mode opérationnel décrit, le lien ressource-demande empêche l’usage de cette ressource par une autre demande ; peut porter sur des ressources futures comme les achats.
+  Limites : L’affectation SAP porte donc déjà un effet de réservation. FLOW sépare les responsabilités sans présumer deux opérations, objets techniques ou applications. Les modes preview/simulation ne sont pas assimilés à l’engagement opérationnel.
+
+- Microsoft — Inventory Visibility reservations (documentation évolutive).
+  URL : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  Passage : Sample use case for soft reservation ; Configure reservation mappings and dimensions.
+  Constat : Une soft reservation réduit la quantité disponible pour réservation sans changer le stock physique ; l’offset accompagne la consommation physique pour éviter de maintenir la même retenue deux fois.
+  Limites : Soft ne signifie pas nécessairement temporaire, faible ou dépourvu d’effet. L’effet dépend des dimensions, de la configuration et du respect des contrôles par les consommateurs ; la page autorise des choix de poursuite en survente. Ce n’est pas une garantie de réalisation physique.
+
+
+### ELM209
+
+Sources primaires consultées le 18 septembre 2026 ; patrons de réalisation, pas catalogues de capacités.
+
+- Microsoft — Compensating Transaction pattern (Mise à jour affichée 2026-04-20).
+  URL : https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
+  Passage : Context and problem ; When to use this pattern ; Problems and considerations.
+  Constat : Opérations longues à plusieurs étapes, avec compensation métier possible, notamment annulation de réservations.
+  Limites : Appui de réalisation, pas définition d’une capacité Supply. La compensation tient compte des effets déjà produits ; elle ne restaure pas nécessairement un état antérieur et peut être impossible pour certains effets.
+
+- AWS — Saga orchestration pattern (Documentation évolutive).
+  URL : https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-orchestration.html
+  Passage : Intent ; Issues and considerations.
+  Constat : Coordination d’étapes transactionnelles et compensation dans une opération répartie ; l’isolation n’est pas celle d’une transaction globale atomique.
+  Limites : Architecture de réalisation, pas obligation de microservices ou moteur d’orchestration FLOW. Ne constitue pas à elle seule une politique de réservation métier.
+
+
+### ELM210
+
+Sources primaires consultées le 18 septembre 2026 pour U337.
+
+- Shopify — Creating draft orders.
+  URL : https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders/create-draft
+  Passage : Reserve item inventory in a draft order.
+  Constat : Les quantités réservées sont dédiées au draft order et ne peuvent pas être achetées par les autres clients ; une expiration peut être définie.
+  Limites : Appui direct à l’engagement commercial conditionnel et à l’exclusion concurrente, pas preuve de transfert immédiat de propriété ou de garantie physique absolue ; les durées Shopify ne deviennent pas une politique FLOW.
+
+- Microsoft — Reserve inventory quantities.
+  URL : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+  Passage : Introduction ; reasons for reserving inventory.
+  Constat : Les quantités réservées pour un Sales Order ne peuvent pas être retirées pour d’autres Orders sans annulation de la réservation ; prise en compte de clients prioritaires, ressources présentes ou futures.
+  Limites : Le périmètre Microsoft inclut aussi des besoins de production. La réservation n’est donc pas limitée dans le marché au seul client acheteur ; aucune identité entre utilisateur du système et bénéficiaire n’est requise.
+
+
+### ELM211
+
+Sources primaires consultées le 18 septembre 2026 pour U338–U340. Éléments fonctionnels produits ; éditions évolutives, identifiants natifs indiqués lorsque disponibles.
+
+- Microsoft — Dynamics 365 Inventory Visibility — Soft reservations.
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  Passage : Sample use case for soft reservation.
+  Synthèse du constat : La réservation réduit la quantité disponible à réserver sans réduire le stock physique ; vise à éviter les engagements concurrents.
+  Limites : Les contrôles et consommateurs doivent respecter la réservation ; la survente peut être autorisée. Ne garantit pas à elle seule la livraison.
+
+- commercetools — Composable Commerce API — ReserveOnCart / ReserveOnOrder.
+  Source : https://docs.commercetools.com/api/inventory-overview
+  Passage : Inventory modes ; Reservations.
+  Synthèse du constat : Réservation au panier avec expiration ou à la création de commande ; déclenchement également possible sur une ligne existante.
+  Limites : Paramètres de produit, pas un catalogue de capacités ni une politique unique adoptée pour FLOW.
+
+- Shopify — Checkout — Inventory hold during checkout.
+  Source : https://help.shopify.com/en/manual/checkout-settings
+  Passage : Introduction, contrôle du stock dans checkout.
+  Synthèse du constat : Stock retenu à la soumission des informations de paiement ; libération en cas d’échec du paiement.
+  Limites : Ne pas assimiler ce jalon à la simple ouverture de la page paiement ou à un encaissement réalisé.
+
+- Adobe — Commerce Inventory Management — Order status and reservations.
+  Source : https://experienceleague.adobe.com/en/docs/commerce-admin/inventory/basics/order-status
+  Passage : Status and reservations.
+  Synthèse du constat : Réservation à la soumission de la commande ; maintien possible en attente de paiement.
+  Limites : Création de commande et encaissement sont des événements distincts ; aucun déploiement Beaumanoir démontré.
+
+
+### ELM212
+
+Sources primaires consultées le 18 septembre 2026 pour U341. Synthèses de mécanismes produit, aucune importation de catalogue. Éditions évolutives sauf SAP 2608 ; identifiants natifs non établis au-delà des libellés.
+
+- Microsoft — Dynamics 365 SCM — Inventory reservation policies.
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+  Passage : Inventory reservation policies ; Item sales reservation ; Production parameters.
+  Constat reformulé : Politiques configurées : réservation automatique à la création des lignes de commande ou manuelle ; jalon de réservation configurable en production.
+  Limites : Pas de preuve dans ce passage d’un choix automatique du jalon de vente selon le stock et la vitesse de sortie. Texte primaire indexé consulté ; ouverture directe en erreur 503.
+
+- commercetools — Composable Commerce — Inventory modes and expiration.
+  Source : https://docs.commercetools.com/api/inventory-overview
+  Passage : Inventory modes ; Set the default expiration ; Reserve individual Line Items.
+  Constat reformulé : Réservation au panier ou à la commande, mode par panier ou ligne ; durée configurable par défaut et par entrée de stock, changement de mode possible sur ligne existante.
+  Limites : Ces leviers permettent une intégration adaptative ; ils ne prouvent pas un moteur fourni qui arbitre le jalon selon le risque de pénurie.
+
+- IBM — Sterling Intelligent Promising — Rules-based safety stock.
+  Source : https://www.ibm.com/docs/en/sip?topic=stock-rules-based-safety
+  Passage : Benefits ; Network and node level safety stock ; Safety stock and total availability.
+  Constat reformulé : Règles de stock de sécurité évaluées en temps réel ; valeurs fixes ou pourcentage au niveau réseau, validité temporelle et critères de contexte.
+  Limites : Mécanisme voisin de protection des quantités vendables, pas décision du jalon de réservation pour un client. Texte primaire indexé consulté ; ouverture directe indisponible.
+
+- SAP — S/4HANA Cloud 2608 — Availability Change Log Events in Backorder Processing.
+  Source : https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/62d58baf16434bf1a6ad16e55e4cd0f4.html
+  Passage : Capturing Changes Caused by Backorder Processing (BOP) Run.
+  Constat reformulé : BOP réévalue la disponibilité et le réalisme des confirmations lorsque la situation de demande ou d’offre change.
+  Limites : Révision des confirmations, pas preuve d’une adaptation du jalon de réservation panier/paiement. Texte primaire indexé consulté ; page ouverte sans texte exploitable.
+
+
+### ELM213
+
+Sources primaires consultées le 18 septembre 2026 pour U342 ; compléments à ELM211/ELM212. Nature : règles et mécanismes produit, pas catalogues de capacités.
+
+- Oracle — E-Business Suite Order Management — Reservation Time Fence (12.2).
+  Source : https://docs.oracle.com/cd/E26401_01/doc.122/e48842/T373258T377249.htm
+  Passage : Reservation Time Fence ; Reserve Orders Concurrent Program ; Reservation Modes.
+  Constat reformulé : Une fenêtre avant la date planifiée conditionne la réservation automatique. Le programme Reserve Orders peut reprendre les lignes concernées.
+  Limites : Référence EBS, pas Fusion Cloud. Les modes Fair Share/Percentage/Partial du même chapitre mêlent arbitrage des quantités et réservation ; FLOW conserve leurs frontières. Texte primaire ouvert.
+
+- IBM — Sterling Order Management — Handling inventory reservation (Documentation évolutive).
+  Source : https://www.ibm.com/docs/en/order-management?topic=2-handling-inventory-reservation
+  Passage : Introduction ; Creating reservations.
+  Constat reformulé : La réservation peut servir des clients prioritaires ou un ordre premier arrivé, premier servi.
+  Limites : Appui à des politiques différenciées ; ne prouve pas une optimisation automatique de la durée par catégorie. Texte primaire indexé consulté.
+
+- IBM — Sterling Intelligent Promising — Reservations (Documentation évolutive).
+  Source : https://www.ibm.com/docs/en/sip?topic=data-reservations
+  Passage : Creating reservation for node or network ; Updating reservation quantity ; Defining expiration times.
+  Constat reformulé : Réservations par site ou réseau, expiration configurable et réservation partielle documentées.
+  Limites : Options de réalisation ; le réseau est décomposé en sites selon les priorités IBM. Ne prouve pas une réservation sans affectation sous-jacente. Texte indexé consulté ; ouverture directe indisponible.
+
+- Shopify — Checkout — Shopify Checkout (Documentation évolutive).
+  Source : https://help.shopify.com/en/manual/checkout-settings
+  Passage : Introduction, contrôle du stock au checkout.
+  Constat reformulé : Stock retenu à la soumission des informations de paiement, avec libération en cas d’échec.
+  Limites : Jalon produit spécifique, distinct de l’ouverture de page et de l’encaissement effectif ; aucun déclencheur FLOW imposé.
+
+
+### ELM214
+
+Sources primaires ouvertes le 18 septembre 2026 pour U344 ; fonctions produit et processus, pas taxonomie normative de capacités.
+
+- Microsoft — Action messages (Documentation évolutive ; mise à jour affichée 2026-03-26).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  Passage : Introduction ; Select action messages.
+  Synthèse : La planification émet des suggestions de changement de dates ou de quantités sur des Orders existants ; leur application reste distincte.
+  Limites : Produit intégré ; les verbes Advance/Postpone/Increase/Decrease ne constituent pas quatre capacités FLOW.
+
+- Microsoft — Firm planned orders (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  Passage : Introduction ; Manually firm planned orders, paramètres de regroupement.
+  Synthèse : L’affermissement transforme des ordres planifiés en commandes effectives ; il peut aussi regrouper des lignes.
+  Limites : Même fonction produit couvrant plusieurs effets métier. Microsoft rapproche firm/release dans cette page ; FLOW conserve ses distinctions. Ne prouve pas un parent unique de comportement.
+
+- Oracle — Compensate Sales Orders That Change (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/compensate-sales-orders-that-change.html
+  Passage : Introduction et exemple de changement d’entrepôt.
+  Synthèse : Une modification de commande peut déclencher l’annulation puis la recréation d’une demande d’expédition par des règles d’orchestration.
+  Limites : Mécanisme de réalisation du processus, compatible avec l’approche Case Management discutée ; ni comportement Supply Compensation ni garantie d’annulation physique.
+
+
+### ELM215
+
+Sources primaires consultées le 18 septembre 2026 pour U345.
+
+- SAP — Supply Assignment (ARun) (2025 FPS01).
+  Source : https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+  Passage : Introduction et modes d’accès.
+  Constat : Affectation des ressources aux besoins ; accès par BOP, ITA, affectation immédiate et API.
+  Limites : Fonctionnalité intégrée ; ni couverture de toutes les capacités FLOW ni réalisation exclusivement batch démontrées.
+
+- SAP — Backorder Processing — Reassignment (2025 FPS01).
+  Source : https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  Passage : Reassignment ; Requirement Sorting ; Supply Selection ; Release Check.
+  Constat : Le traitement peut conserver les affectations et compléter le reliquat, ou les réexaminer. Le mode preview ne produit pas d’effets logistiques.
+  Limites : Regroupement produit de décisions et d’action ; pas preuve qu’un plan externe arbitraire est importable ou qu’une simulation est appliquée sans recontrôle.
+
+- Microsoft — Action messages (Mise à jour 2026-03-26).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  Passage : Introduction ; Select action messages.
+  Constat : Recommandations de changement de quantités ou dates, distinctes de leur application.
+  Limites : Appui à la notion de recommandation ; ne démontre pas que toute recommandation résulte d’une simulation ni ne valide notre hiérarchie de capacités.
+
+
+### ELM216
+
+Sources primaires consultées le 18 septembre 2026, U346/U347. Nature : fonctions produit et mécanismes techniques, pas capacités par défaut.
+
+- SAP — Availability Change Log Events in Product Allocation (2608 Latest).
+  Source : https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/8e4093334e244479b1bc8f85125dbd30.html
+  Passage : Finding the Material-Plant Combinations to be Rechecked.
+  Constat : Des changements de Product Allocation identifient des couples article-site horodatés afin de limiter un traitement BOP ultérieur.
+  Limites : Ne prouve ni périmètre minimal de commandes, ni optimalité globale, ni emploi de RETE.
+
+- Drools — Phreak rule algorithm (8.44.0.Final).
+  Source : https://docs.drools.org/latest/drools-docs/drools/rule-engine/index.html
+  Passage : Phreak rule algorithm in the Drools rule engine.
+  Constat : Rapprochement technique : mémoires et propagation de modifications pour évaluer les conditions des règles ; PHREAK prolonge RETE.
+  Limites : Pas un optimiseur global de ressources ; aucune équivalence avec un comportement métier FLOW.
+
+- SAP — Handling Requirements with Fixed Date and Quantity (2025 FPS01 (Feb 2026)).
+  Source : https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/413e5cf1373142a784f6c04b2caf3fc0.html
+  Passage : Page entière.
+  Constat : Par défaut BOP conserve les confirmations marquées Fixed Date and Quantity et leur attribue Skip.
+  Limites : Un segment peut explicitement les inclure dans le contrôle ; ne prouve pas une immutabilité absolue ni le comportement de toute API ARun.
+
+- Microsoft — Firm planned orders (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  Passage : Introduction.
+  Constat : Affermir transforme des ordres planifiés en commandes effectives achat, transfert ou production.
+  Limites : Transition de cycle de vie, pas synonyme de fixation de toutes les données d’une commande client.
+
+- Microsoft — Keep supply for confirmed demand (Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  Passage : What data is preserved ; Control how on-hand inventory is pegged ; Interaction with approved planned orders.
+  Constat : Préserve une chaîne liée à une demande confirmée, notamment ordres planifiés et liens de pegging, entre les passages de planification.
+  Limites : Comportement paramétré ; la conservation du stock reçu hors positive days exige un paramètre complémentaire. Ne prouve aucun déploiement Beaumanoir.
+
+- Microsoft — Master plans — Freeze (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  Passage : Freeze ; Firming.
+  Constat : Le gel temporel conserve les ordres planifiés dans une fenêtre.
+  Limites : Le gel empêche aussi la création de nouveaux ordres planifiés dans cette fenêtre ; différent de protéger une commande individuelle.
+
+
+### ELM217
+
+Sources primaires consultées le 18 septembre 2026 pour U351 ; fonctions et processus produits, pas catalogue de capacités par défaut.
+
+- Microsoft — Release to warehouse (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+  Passage : Release to warehouse process.
+  Constat : La libération de ventes et transferts vers l’entrepôt prépare les objets logistiques nécessaires au traitement.
+  Limites : Mise en œuvre WMS spécifique ; FLOW distingue autorisation métier et orchestration/réalisation des prestations.
+
+- Microsoft — Manage order holds (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+  Passage : Introduction ; Set up order hold codes ; Manage orders on hold.
+  Constat : Mise en attente avec motifs, conditions de levée et effet configurable sur les réservations ; progression logistique bloquée.
+  Limites : Le checkout du hold est un verrou logiciel distinct. Les effets de réservation sont paramétrés, pas une conséquence universelle du Hold.
+
+- Microsoft — Action messages (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  Passage : Introduction ; Select action messages.
+  Constat : Suggestions Advance/Postpone de changement d’échéances sur des ordres existants.
+  Limites : Suggestion et application distinctes. Ne prouve pas une capacité autonome de calcul d’échéancier sous Lifecycle.
+
+- Microsoft — Approve and confirm purchase orders (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+  Passage : Canceling purchase orders ; modification après confirmation.
+  Constat : Annulation encadrée des quantités restantes et Finalize pour empêcher de nouveaux traitements.
+  Limites : Achat, pas cycle universel. Clôture opérationnelle FLOW ne reprend pas toute la finalisation financière du produit.
+
+- SAP — Functional Details: Manage Sales Orders - Version 2 (Édition non relevée dans le passage indexé).
+  Source : https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/e7f14402cf5846b4b3d0d677c15414b1.html?locale=en-US
+  Passage : Delivery Block and Billing Block ; Rejection of all Items.
+  Constat : Blocages par objet et rejet des lignes ; le rejet de toutes les lignes peut terminer le document sous conditions.
+  Limites : Restrictions si déjà livré ou achat lié. Rejection produit n’est pas équivalent à toute annulation ou clôture FLOW ; facturation hors périmètre métier étudié.
+
+- Oracle — Cancel Sales Orders (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+  Passage : Cancel Remaining Quantity.
+  Constat : Annulation des quantités non expédiées selon états et conditions ; les quantités déjà réalisées ne sont pas effacées.
+  Limites : Cycle de commande de vente propre au produit ; compensation du processus reste dans la couche processus, pas nouveau comportement de Lifecycle.
+
+- Oracle — Hold Your Sales Orders (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+  Passage : Introduction ; How Holds Work.
+  Constat : Un hold peut viser une étape de traitement : les autres étapes peuvent avancer jusqu’au point bloqué.
+  Limites : Le modèle FLOW décrit portée et effets métier ; il ne copie pas les tâches d’orchestration Oracle.
+
+
+### ELM218
+
+Sources primaires consultées le 18 septembre 2026 pour U352.
+
+- Microsoft — Archive Dynamics 365 Supply Chain Management Sales orders data (2026-01-14).
+  Source : https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+  Passage : Set up an archival job ; View historical data.
+  Constat : Archivage des commandes avec consultation ultérieure des en-têtes, lignes et informations liées.
+  Limites : Documentation de réalisation technique via Dataverse ; FLOW retient le résultat de conservation et de consultation, sans imposer cette architecture.
+
+- Oracle — Cancel Sales Orders (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+  Passage : Restrictions par statut Draft et Processing.
+  Constat : Le produit distingue suppression d’un brouillon et annulation d’une commande en traitement.
+  Limites : Conditions propres au produit ; ne pas prescrire automatiquement les mêmes règles aux cinq types FLOW.
+
+- Oracle — Order Purge and Archive (12.2).
+  Source : https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T430137.htm
+  Passage : Eligible Orders ; Purge Archive Program.
+  Constat : Archivage sous conditions d’éligibilité et purge définitive des archives sont distincts.
+  Limites : Référence EBS, pas Fusion ; aucune durée de conservation ou obligation légale FLOW déduite.
+
+- Microsoft — Archive documents (2025-10-15).
+  Source : https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+  Passage : Introduction ; Restore ; Delete archived versions.
+  Constat : Archive peut désigner des versions successives consultables, certaines restaurables sous conditions.
+  Limites : Ne pas assimiler cette notion produit à la seule sortie des commandes du stock opérationnel ; restauration de version ne signifie pas réouverture métier.
+
+
+### ELM219
+
+Sources primaires consultées le 18 septembre 2026 pour U353/U354.
+
+- Microsoft — Delivery schedules (2025-05-07).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  Passage : Introduction et lignes commerciales/de livraison.
+  Constat : Décomposition d’une quantité en lignes de livraison avec dates et quantités distinctes.
+  Limites : Appui à split/spread ; une ligne commerciale et plusieurs livraisons ne créent pas nécessairement plusieurs commandes.
+
+- Microsoft — Copy lines between sales orders (2025-04-03).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/copy-lines-between-sales-orders
+  Passage : Introduction et paramètres de copie.
+  Constat : Réutiliser des lignes et éventuellement l’en-tête pour alimenter une commande nouvelle ou existante.
+  Limites : Copie sélective avec recalculs possibles ; ni conservation globale de la demande ni copie des engagements déduite.
+
+- Oracle — Copy Sales Orders (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/copy-sales-orders.html
+  Passage : Order Details ; Order Line Details.
+  Constat : Création d’une nouvelle commande par copie avec choix des données reprises.
+  Limites : Fonction produit ; pas preuve d’un comportement transversal Order Cloning ni de duplication des réservations.
+
+- Oracle — Order Management Statuses (25C).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+  Passage : Draft.
+  Constat : Une commande enregistrée mais non soumise au fulfillment reste Draft et peut être modifiée.
+  Limites : Référence 25C ; distinction brouillon/soumission, pas équivalence automatique avec ordre planifié/affermissement Microsoft.
+
+
+### ELM220
+
+Sources primaires consultées le 18 septembre 2026 pour U355.
+
+- Microsoft — Delivery schedules (2025-05-07).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  Passage : Commercial line et delivery lines.
+  Constat : Une ligne commerciale demeure comme en-tête de lignes de livraison ; sa quantité agrège celles des livraisons.
+  Limites : Hiérarchie de lignes dans une commande, pas preuve d’un nouvel Order chapeau ni d’une capacité autonome.
+
+- Oracle — Split Order Lines (25D).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauom/split-fulfillment-lines.html
+  Passage : Exemple Seattle/Denver et effets du split.
+  Constat : Une ligne de 50 peut être scindée en 30 et 20 selon l’entrepôt ; le produit conserve la quantité globale et adapte les processus associés.
+  Limites : Division de lignes/fulfillment et réalisation logicielle ; ni deux Orders commerciaux autonomes ni placement sous une capacité FLOW démontrés.
+
+- SAP — Order Hierarchy (6.0 EHP8 Latest).
+  Source : https://help.sap.com/docs/SAP_ERP/b4174aff4a234ed5be928a10c60997fb/45c8b65334e6b54ce10000000a174cb4.html
+  Passage : Definition ; Structure.
+  Constat : Hiérarchie d’ordres et sous-ordres avec responsabilité du leading order sur l’exécution des ordres inférieurs.
+  Limites : Contexte maintenance/service, pas commandes Supply de vente/achat/transfert ; analogie de responsabilité seulement, aucun objet FLOW prescrit.
+
+
+### ELM221
+
+Sources primaires consultées le 18 septembre 2026 pour U357.
+
+- Microsoft — Create purchase orders (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+  Passage : Creating a purchase order header.
+  Constat : Le type Purchase order est distingué du type Returned order ; le contenu conserve les particularités du fournisseur.
+  Limites : Taxonomie produit ; ne prouve pas une capacité nommée Role ni l’unification des modèles de vente et achat.
+
+- Microsoft — Sales returns (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+  Passage : Introduction et types de commandes.
+  Constat : Un retour est représenté comme une commande de vente du type Returned order.
+  Limites : FLOW distingue retours client et fournisseur par responsabilités ; aucune équivalence niveau par niveau.
+
+- SAP — Sales Document Types (2025 FPS01 (Feb 2026)).
+  Source : https://help.sap.com/docs/PRODUCT_ID/7b24a64d9d0941bda1afa753263d9e39/c564b65334e6b54ce10000000a174cb4.html
+  Passage : Types of Processing ; Control Elements in Sales Document Types.
+  Constat : Les catégories/types de documents caractérisent traitements et règles, avec des variantes de vente et retour.
+  Limites : Catalogue de documents commerciaux mêlant contrats et commandes ; ne pas l’importer comme catalogue FLOW.
+
+- Microsoft — Intercompany orders and return orders (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+  Passage : Commandes de vente et achat correspondantes.
+  Constat : Une commande de vente intersociétés peut créer une commande d’achat correspondante.
+  Limites : Deux commandes liées et des perspectives distinctes ; pas preuve qu’un même enregistrement change librement de rôle.
+
+
+### ELM222
+
+Sources primaires consultées le 18 septembre 2026 pour U360.
+
+- Oracle — What’s a Split Order Line (26B).
+  Source : https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+  Passage : How Order Management Determines Availability.
+  Constat : Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches de fulfillment.
+  Limites : Ne signifie pas toujours création de plusieurs commandes autonomes ; la fonction produit combine décisions et effets que FLOW sépare.
+
+- Microsoft — Delivery schedules (2025-05-07).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  Passage : Create delivery schedules ; Manage delivery lines.
+  Constat : Quantité d’une ligne répartie sur plusieurs lignes de livraison, avec dates et quantités distinctes.
+  Limites : Échelonnement de la demande : pas synonyme de répartition d’un stock contraint entre commandes.
+
+- SAP — Maintaining a Delivery Schedule for a PO (6.0 EHP8 SP25).
+  Source : https://help.sap.com/docs/SAP_ERP_SPV/967e1c2a6a8c4183b7e07d28e7574445/c77eb65334e6b54ce10000000a174cb4.html
+  Passage : Introduction et schedule lines.
+  Constat : Spread out décrit l’étalement temporel de la quantité dans des échéances de livraison.
+  Limites : Verbe descriptif ; pas preuve d’une fonction ou capacité autonome nommée Spread.
+
+- SAP — Allocation (Édition non relevée ; contexte ERP Fashion Management).
+  Source : https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/f6a6f15562e37b43e10000000a4450e5.html
+  Passage : Use ; Allocation Logic.
+  Constat : Spread logic distribue proportionnellement les stocks existants entre les besoins selon des règles, en alternative à FIFO.
+  Limites : Référence ERP, pas preuve d’identité avec toutes les éditions aATP récentes. Ce sens concerne arbitrage et affectation ressources-demandes, pas nécessairement mutation des Orders.
+
+
+### ELM223
+
+SAP ERP Fashion Management — Steps in Order Allocation Run. Consulté le 18 septembre 2026 ; édition non relevée dans le passage indexé.
+
+- Source : https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+- Passage : Requirement Grouping ; Allocation ; Release Rules.
+- Constat : ARun peut affecter le stock selon FIFO ou une répartition proportionnelle fondée sur les quantités demandées (spread logic). Le regroupement des besoins est un prérequis au Spread.
+- Limites : Référence ERP Fashion, sans garantie pour toute édition aATP. ARun est le processus intégré ; Spread une de ses stratégies. La répartition ne nécessite pas la création de nouvelles commandes.
+
+
+### ELM224
+
+Sources primaires consultées le 18 septembre 2026 pour U365. Nature native : configuration de stratégie et fonctions produit.
+
+- SAP — Supply Assignment Rule (Édition non affichée dans le passage consulté).
+  Source : https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/9905622a5c1f49ba84e9076fc83a9c2c/8835cf8d77174b798327a4c3d14484e0.html
+  Passage : Definition ; Supply Configuration ; Assignment Strategies ; Reassignment.
+  Constat : Cadre comprenant choix et tri des ressources, horizon, stratégie séquentielle ou proportionnelle et réaffectation.
+  Limites : Objet de configuration d’ARun ; ne prouve ni une capacité autonome de choix de politique ni que tout ATP maximise une valeur multidimensionnelle.
+
+- Microsoft — Intelligent Fulfillment Optimization — Fulfillment strategies (Documentation évolutive ; aucune version produit figée).
+  Source : https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  Passage : Fulfillment strategies ; Business constraints ; Multiple fulfillment strategies.
+  Constat : Stratégies combinant objectifs, contraintes et sources ; choix selon contexte et optimisation de commandes groupées.
+  Limites : Service d’optimisation plus large que le seul cadrage ; proximité des sources comme objectif prédéfini documenté. Pas preuve d’un solveur générique multiobjectif ni d’un catalogue de capacités équivalent.
+
+- SAP — Advanced Available-to-Promise (aATP) (2025 FPS01 (Feb 2026)).
+  Source : https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/443bc939-7992-4666-afc1-d33d841deb5b.html
+  Passage : Use.
+  Constat : Propositions de quantités et dates tenant compte des stocks, réceptions futures, demandes concurrentes et restrictions.
+  Limites : La description ne définit pas ATP comme une maximisation universelle de valeur ; aATP regroupe plusieurs fonctions.
+
+
+### ELM225
+
+Audit terminologique local U366/U367 ; sources primaires consultées le 18 septembre 2026. Définitions métier, présentations et fonctions produit : ne pas aligner automatiquement leur maille.
+
+- SF01 — Microsoft / Balancing supply and demand (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  Passage : Supply and demand ; Process orders ; Priorities on the supply side.
+  Constat : Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts entrants et retours clients. Supply orders alimente ce côté du bilan.
+  Limite : Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+
+- SF02 — CSCMP / SCM Definitions and Glossary of Terms (Page de référence sans édition affichée).
+  Source : https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  Passage : Definitions of Supply Chain Management ; Logistics Management.
+  Constat : SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment figure parmi les activités logistiques.
+  Limite : Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie de capacités FLOW.
+
+- SF03 — ASCM / What is supply chain logistics? (Page évolutive).
+  Source : https://www.ascm.org/topics/logistics/
+  Passage : Supply chain vs logistics ; Order processing and fulfillment.
+  Constat : La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation des commandes.
+  Limite : Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques FLOW.
+
+- SF04 — Microsoft / Intelligent Fulfillment Optimization (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  Passage : Fulfillment sources ; Business constraints ; Fulfillment strategies.
+  Constat : Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes groupées et restitution d’un plan.
+  Limite : Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence complète à D03 ni solveur universel multiobjectif démontré.
+
+- SF05 — Microsoft / Store order fulfillment (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview
+  Passage : Introduction ; Pick ; Pack ; Pick up ; Shipping.
+  Constat : Fulfillment inclut des opérations effectives de préparation et remise ou expédition des commandes.
+  Limite : Le produit décrit l’exécution magasin ; FLOW distingue pilotage et opérations internes des exécutants.
+
+- SF06 — SAP / Backorder Processing — Supply Assignment (2025 FPS01 (Feb 2026)).
+  Source : https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  Passage : Supply Selection ; Assignment ; Reassignment.
+  Constat : Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+  Limite : Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+
+- SF07 — SAP / Supply Protection (SUP) (2602, version URL 2602.500).
+  Source : https://help.sap.com/docs/PRODUCT_ID/32da8359c8ee4e8b8e8c5e15cacba5aa/c4b704762cbd4611a3ee2dc00c7a7277.html?locale=en-US&state=PRODUCTION&version=2602.500
+  Passage : Use.
+  Constat : Protection de quantités pour des groupes face aux demandes concurrentes.
+  Limite : Plus étroit que Supply Protection FLOW qui inclut aussi tampon et régulation des apports.
+
+- SF08 — Microsoft / Inventory allocation (Documentation évolutive).
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  Passage : Business background ; Allocation definition.
+  Constat : Droits de groupes et contrôle de surconsommation avant les commandes ; distincts de la réservation liée aux ventes.
+  Limite : Appui à deux mécanismes de protection, pas équivalence avec toute la capacité FLOW.
+
+
+### ELM226
+
+18 septembre 2026 ; U368 ; réexamen du nom de D13.
+
+- SAP Forecasting and Replenishment — Supply Network, 7.0 EHP4. Passage primaire indexé : Definition, Use et Integration. Réseau de liaisons entre lieux et admissibilité des produits ; sources internes et fournisseurs externes. Référence historique, pas preuve d’une topologie FLOW complète ni de tous les flux retours.
+  Source : https://help.sap.com/docs/SAP_SUPPLY_CHAIN_MANAGEMENT/35d41850ef1d4618a0ce6ffa921e8d6d/01b4c7ac10a64d7791560ac37235fe46.html?locale=en-US&state=PRODUCTION&version=7.0.4
+- Microsoft Intelligent Fulfillment Optimization, documentation évolutive : introduction et Fulfillment sources relues. La même page parle de supply network et de sources de fulfillment ; celles-ci comprennent entrepôts, magasins, fournisseurs en dropship et sites virtuels. Deux angles de lecture du réseau, pas frontière universelle entre amont et aval.
+  Source : https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+
+
+### ELM227
+
+18 septembre 2026 ; U369 ; sources primaires ouvertes.
+
+- CSCMP — SCM Definitions and Glossary of Terms.
+  Source : https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  Passage : Definition of Supply Chain Management ; Boundaries and Relationships.
+  Constat : SCM couvre planification, approvisionnement, transformation, logistique et coordination entre partenaires.
+  Limite : Périmètre professionnel plus large que le catalogue FLOW ; les fonctions coordonnées ne deviennent pas automatiquement des domaines FLOW.
+
+- Microsoft — Welcome to Dynamics 365 Supply Chain Management.
+  Source : https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+  Passage : Core concepts and tasks.
+  Constat : Le produit regroupe notamment stocks, planification, achats, production, entrepôt et transport.
+  Limite : Catalogue produit et non modèle normatif de capacités ; aucune importation des modules ni équivalence complète avec FLOW.
+
+
+### ELM228
+
+18 septembre 2026 ; U376 ; stratégies de fulfillment. Nature : configurations et sélection de règles produit, pas catalogue de capacités. Références Microsoft MKT14 et SAP MKT03 ; documentation Oracle Fusion Cloud Global Order Promising 26B.
+
+- Microsoft, Intelligent Fulfillment Optimization : sections Fulfillment strategies et Multiple fulfillment strategies in order orchestration flows. Source primaire ouverte : https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch ; mise à jour 30 janvier 2026.
+- SAP, Supply Assignment Rule : Definition, Supply Configuration, Assignment Configuration. Texte primaire indexé consulté, édition non affichée ; ouverture directe vide : https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/9905622a5c1f49ba84e9076fc83a9c2c/8835cf8d77174b798327a4c3d14484e0.html
+- Oracle 26B, Assignments and Rules et Consider Your Sourcing Hierarchy and Assignment Set Hierarchy : pages primaires ouvertes. https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/how-order-promising-rules-work-together.html ; https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/sourcing-assignment-levels.html
+
+Faits, rapprochements, limites et proposition FLOW : modeles/backlog/fulfillment-strategy-review.yaml, market_review_U376. Synthèses sélectives, sans copie intégrale ; aucune réalisation Beaumanoir déduite.
+
+
+### ELM229
+
+18 septembre 2026 ; U379 ; A04. Sources primaires de traitement des retours :
+
+- Microsoft Dynamics 365 SCM, Specify how to dispose of returned items, documentation évolutive ; passage sur disposition code/action, page ouverte : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+- Microsoft, Set up disposition codes, mise à jour affichée 1 juillet 2026, passage primaire indexé : https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/set-up-disposition-codes ; exemple de code Repair and return.
+- SAP S/4HANA Cloud Public Edition, Logistical Follow-Up Activities, table des suites logistiques après inspection ; texte primaire indexé, édition exacte du passage non établie : https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/aad8417242c84d70a64b2742fe818c90.html
+
+Nature : configurations, actions et processus produit. Synthèse et limites dans modeles/backlog/return-disposition-review.yaml. Aucune équivalence de niveau ou couverture Beaumanoir déduite.
+
+
+### ELM230
+
+18 septembre 2026 ; U381/U382. Pages primaires ouvertes, synthèses sélectives ; édition produit non affichée.
+
+- Blue Yonder, Smart Disposition : Intelligent routing, Customizable reason codes and rules, Key Benefits. https://blueyonder.com/solutions/returns-management/smart-disposition . Nature : présentation produit, règles et optimisation du devenir/destination. Périmètre également commercial, aucune preuve d’algorithme ou de réalisation Beaumanoir.
+- Blue Yonder, Returns decisioning: The secret hack to higher recovery and improved margins, 18 février 2026 : Decisioning at any touchpoint is key. https://blueyonder.com/blog/2026/returns-decisioning-the-secret-hack-to-higher-recovery-and-improved-margins . Nature : article éditeur. État, saisonnalité, valeur, coûts et stock éclairent les orientations ; les points du parcours ne sont pas automatiquement des comportements.
+- Manhattan, Returns Management : Returns Done Right et Maximize Returns Profitability. https://www.manh.com/solutions/omnichannel-software-solutions/order-management-system/returns-management . Nature : page commerciale. Orientation dynamique vers le lieu favorisant la remise en vente ; ne prouve pas un catalogue complet de stratégies de disposition.
+- Microsoft ELM229 relu : table des codes et actions, mise à jour affichée 7 mai 2025. Configuration des suites physiques et financières, pas preuve de sélection automatisée.
+
+Interprétation, limites et propositions dans modeles/backlog/return-disposition-review.yaml, behavior_review_U382.
+
+
+### ELM231
+
+18 septembre 2026 ; U383. Microsoft Dynamics 365 SCM, Purchase order overview, documentation évolutive : introduction et Types of purchase orders, page primaire ouverte. https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview . Gestion propre aux achats, suivi des réceptions ; retour fournisseur représenté comme type de commande d’achat dans le produit. Nature : document et processus produit, pas catalogue normatif de capacités.
+
+Microsoft Disposition codes/action et Blue Yonder Smart Disposition, ELM229/ELM230, relus sur pages primaires. Configuration des orientations et optimisation du devenir ; limites et différences dans les fiches. Aucune réalisation Beaumanoir déduite.
+
+
+### ELM232
+
+18 septembre 2026 ; U384. Sources primaires consultées pour Customer Return :
+
+- SAP S/4HANA Cloud, Warehouse Management, Logistical Follow-Up Activities, version 2602 affichée dans le texte indexé. Table 0011 stock disponible, 0012 rebut, 0005 fournisseur, 0021 client et 0026 réparation. https://help.sap.com/docs/SAP_S4HANA_CLOUD/87f9b54f9c4f4e75aff0061860a6589a/aeb252c114df4dac9abf1626ccb04233.html . Portail direct partiellement inaccessible ; texte primaire indexé effectivement consulté.
+- Microsoft Dynamics 365 SCM, Specify how to dispose of returned items, page ouverte, mise à jour affichée 7 mai 2025 ; tables des codes et actions. https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items .
+- Microsoft Dynamics 365 SCM, Sales returns, page évolutive ouverte ; Return order process, RMA et Disposition codes and actions. https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns . Retours physiques et credit only ; remplacement porté par commande de vente liée.
+
+Nature : processus, configurations et activités produit ; aucune équivalence automatique avec des comportements métier, aucune preuve de réalisation Beaumanoir. Synthèses sélectives, sans reproduction intégrale.
+
+
+### ELM233
+
+18 septembre 2026 ; U386 ; Supplier Return. Sources primaires et périmètres distincts :
+
+- Microsoft Dynamics 365 Business Central, Process purchase returns or cancellations, page évolutive ouverte : introduction et Create a replacement purchase order from a purchase return order. https://learn.microsoft.com/en-us/dynamics365/business-central/purchasing-how-process-purchase-returns-cancellations .
+- SAP Business ByDesign, Create a New Return to Supplier, édition May 2026 affichée dans le passage indexé : Overview et Create a Return to Supplier in Purchasing. https://help.sap.com/docs/SAP_BUSINESS_BYDESIGN/2754875d2d2a403f95e58a41a9c7d6de/2d9b97f7722d1014a974a1fa1d11fd10.html . Texte primaire indexé consulté, portail direct vide ; avoir, remplacement et combinaison partielle.
+- Oracle Fusion Cloud SCM Receiving 25A, Return to Supplier for Credit Only, présentation ouverte. https://docs.oracle.com/en/cloud/saas/readiness/scm/25a/inv25a/25A-inventory-wn-f35542.htm . Ne pas rouvrir l’achat aux réceptions lorsqu’aucun remplacement n’est attendu.
+- Oracle EBS Service Parts Planning 12.1, Repair at sourcing / Repair-Return : passage primaire indexé consulté. https://docs.oracle.com/cd/E18727-01/doc.121/e13338/T515331T515340.htm . Réparation externe avec achat et mouvements ; référence historique, pas Oracle Fusion ni un périmètre retail démontré.
+
+Nature : configurations, processus et effets produit ; synthèses sélectives, aucune preuve de déploiement Beaumanoir. Détails et limites dans modeles/backlog/supplier-return-behaviors.yaml.
+
+
+### ELM234
+
+U389 — consulté le 18 septembre 2026. Microsoft Dynamics 365 Supply Chain Management (MKT14), **Cycle counting**, page évolutive mise à jour le 20 novembre 2025 : introduction, Automatically create cycle counting work et Perform a cycle count by using a mobile device. Source primaire : https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting .
+
+Nature : processus et fonctions produit WMS. Le texte distingue comptage selon plan récurrent, déclenchement par seuil et comptage ponctuel. Rapprochement avec des politiques de contrôle métier, sans reprendre les écrans ou étapes comme comportements. Ne couvre pas tout Stocktaking ni une taxonomie de capacités ; aucune preuve Beaumanoir. Synthèse, sans reproduction intégrale.
+
+ELM052 reconsulté pour U389 : glossaire BIZBOK 15.0, ©2026, page imprimée 456 (PDF page 4), entrées Business Process, Capability, Capability Behavior ; page 457 (PDF page 5), Capability Instance / Level. Source primaire : https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf . La définition de Behavior traite de la manière d’agir selon les circonstances. Extrait public seulement ; aucune prescription des sept formes FLOW trouvée dans ces entrées.
+
+
+### ELM235
+
+U390 — 18 septembre 2026. Microsoft Dynamics 365 SCM : Create purchase orders (Adding purchase order lines), Direct deliveries (introduction, dates, adresses et entrepôt), Set up consignment (Inventory ownership change journal), pages primaires ouvertes. SAP S/4HANA on-premise : Manage Service Entry Sheets - Lean Services et Planned and Unplanned Services, passages primaires indexés consultés ; édition 2025 FPS01 (Feb 2026) affichée sur cette dernière, ouvertures directes sans texte exploitable.
+
+Sources, URL, localisateurs et limites conservés dans modeles/backlog/purchase-order-behaviors.yaml, PO-S1 à PO-S4. Nature : processus, documents et fonctions produit. Distinctions biens/prestations, livraison directe et acquisition de stock consigné. Aucune taxonomie de capacités équivalente ni preuve Beaumanoir ; synthèses sans reproduction intégrale.
+
+
+### ELM236
+
+U391 — 18 septembre 2026. Consignation et positionnement du marché. Sources primaires CI-S1–7 dans modeles/backlog/consignment-inventory-review.yaml : Microsoft Inventory to deliver (cartographie de processus, mise à jour July 2026 partielle) et Set up consignment ; SAP Special Stocks (2608, passage indexé) et guide Enterprise Architecture Procure to Receipt (2025, texte indexé, figures non inspectées) ; Oracle Fusion 25D Consigned Inventory, fonctionnalité Redwood 25A et NetSuite Consigned Inventory Management (documentation évolutive).
+
+Localisateurs, URL, constats et limites conservés dans l’annexe. Les formes de preuve diffèrent : sous-processus, variante de parcours, type de stock, cycle fonctionnel et fonctionnalité produit. Aucune feuille de RBA non lue revendiquée, aucune responsabilité juridique ou assurantielle uniforme déduite ; pas de preuve de réalisation Beaumanoir.
+
+
+### ELM237
+
+U392 — 18 septembre 2026. Sources primaires NP-S1–4 dans modeles/backlog/nonpurchase-supply-order-review.yaml : Microsoft Consignment replenishment orders (page Set up consignment ouverte), SAP S/4HANA Item Category / Consignment (passage indexé, portail sans texte), Oracle Fusion 25D Consignment Order et 26A Supply Order orchestration (pages ouvertes).
+
+Nature : document de demande, catégorie de ligne et objet d’orchestration. Distinction entre apport physique, propriété et acquisition ; aucun consensus sur un Procurement Order générique démontré. Les noms et localisateurs natifs, limites et dates sont conservés dans l’annexe.
+
+
+### ELM238
+
+U393 — 18 septembre 2026. Microsoft Dynamics 365 SCM, Set up consignment (page mise à jour 2026-05-06, ouverte) ; SAP Learning S/4HANA Cloud Public Edition, Exploring the Supplier Consignment (2LG) Scenario (formation évolutive ouverte) ; SAP Business Network, Supplier-Managed Inventory (passage primaire indexé, portail sans texte exploitable). URL, passages et limites dans modeles/backlog/order-intent-principles.yaml, OI-S1–3.
+
+Constats : Microsoft sépare demande d’apport et achat lors du transfert ; SAP réutilise une catégorie de ligne en conservant les effets de propriété et peut générer les demandes selon les besoins MRP. L’acteur du réassort et le signal de demande sont deux axes distincts. Aucune motivation historique exclusive de SAP ni maturité Case Management globale démontrée ; la location d’espace rémunérée est l’intention FLOW décrite par Laurent, pas une propriété universelle tirée des sources.
+
+
+### Relecture ELM238 — U394
+
+18 septembre 2026 : Microsoft Set up consignment et SAP Learning Exploring the Supplier Consignment (2LG) Scenario ouverts de nouveau, mêmes URL que OI-S1/OI-S2 dans order-intent-principles.yaml. Les passages décrivent respectivement une demande d’apport distincte du Purchase Order et une catégorie de ligne Consignment au sein du Purchase Order. Ils permettent de comparer la représentation explicite des intentions ; ils ne prouvent ni incapacité fonctionnelle SAP ni causalité historique de la conception Microsoft.
+
+
+### ELM239
+
+18 septembre 2026 — The Open Group, ArchiMate Community : [ArchiMate 101](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/), tutoriel évolutif ouvert, sections Relationships between systems. Flow distingue les échanges, Triggering la précédence temporelle/causale, Serving la fourniture de comportement utile. Les directions ne sont pas nécessairement identiques. Appui méthodologique, pas catalogue de capacités FLOW ni prescription de notre niveau Comportement.
+
+
+### ELM240
+
+U400 — 18 septembre 2026. Sources primaires Microsoft SCM/Commerce/IOM, Oracle Fusion 25D/26A/26B, SAP ERP Retail 6.17 et étude client Nextail/Merkal consultées pour les trois capacités regroupées. Titres, URL, éditions, passages, constats et limites dans modeles/backlog/consignment-sales-transfer-review.yaml, G01–G11. SAP : passage indexé uniquement, portail sans texte ; IOM : avertissement preview. Aucun déploiement Beaumanoir ni taxonomie native de douze comportements déduit.
+
+
+### ELM241
+
+18 septembre 2026 — relecture ciblée avant U402 de trois textes primaires : Microsoft Dynamics 365 SCM, Calculate sales order delivery dates using CTP (page mise à jour 2026-07-27, How CTP compares to ATP) ; SAP Learning S/4HANA, Using Advanced Available-To-Promise (aATP), section Alternative-Based Confirmation ; SAP Learning S/4HANA Cloud Public Edition, Exploring Backorder Processing, sections Overview et Confirmation Strategies. URL, éditions, constats, passages et limites dans modeles/backlog/d03-review.yaml, ctp_behaviors_U402.sources (S07, S05, S06).
+
+Nature : mécanismes et processus produit. Appuis à la faisabilité par apports supplémentaires, alternatives de satisfaction et réexamen d’engagements. Les frontières éditeurs diffèrent de FLOW ; aucune taxonomie universelle de trois comportements CTP ni déploiement Beaumanoir démontré. Synthèses sélectives, aucune reproduction intégrale.
+
+
+### ELM242
+
+19 septembre 2026 — textes primaires Microsoft Dynamics 365 SCM ouverts avant U403 : Vendor collaboration with external vendors (mise à jour 2025-07-21), sections échanges sur PO, réponses et versions ; Review and accept changes to confirmed purchase orders (mise à jour 2026-07-01), modifications et impacts aval directs. SAP S/4HANA Cloud Best Practices, Create Supplier Confirmation (Optional) : passage primaire indexé sur référence au Purchase Order, date et quantité confirmées ; portail ouvert sans texte exploitable, édition non établie.
+
+Nature : processus, fonctions et objet produit. URL, localisateurs, constats et limites dans modeles/backlog/purchase-order-behaviors.yaml, supplier_confirmation_U403.source_comparisons. La source SAP appuie le nom et les données, sans prouver tout le comportement. Aucune taxonomie de capacités ou réalisation Beaumanoir déduite. Synthèses sélectives uniquement.
+
+
+### ELM243
+
+19 septembre 2026 — sources primaires consultées : Microsoft Azure Business Process Tracking (conception, identifiant métier et mapping d’étapes), Logic Apps Run History (statuts/actions/résultats), Camunda Process Observability (instances et contexte métier). Relecture ciblée SAP EWM (flux entrants, internes, sortants et monitor), project44 (article du 22 août 2023, Transportation Visibility et ETA multimodal) et Blue Yonder Store Execution (réception directe en rayon et disponibilité).
+
+URL, éditions, passages, constats et limites dans modeles/backlog/execution-services-review.yaml, tracking_U406.sources. Documentation ou présentation éditeur, sans preuve Beaumanoir. Microsoft apporte le nom et un mécanisme de corrélation ; FLOW explicite Task/appels sans correspondance un pour un ni contrainte Azure. Les pages commerciales n’établissent pas une collecte exhaustive. Synthèse sélective, pas de reproduction intégrale.
+
+
+### ELM244
+
+Process Orchestration — Camunda ; orchestration et providers — Microsoft Dynamics 365 IOM. Sources primaires consultées le 19 septembre 2026, passages, URL, éditions et limites dans modeles/backlog/execution-services-review.yaml, process_services_U409.market_comparisons. Coordination de tâches humaines et automatisées chez Camunda ; actions, événements et providers côté Microsoft. Aucun catalogue de capacités universel ni existant Beaumanoir déduit.
+
+
+### ELM245
+
+SAP S/4HANA Fashion, Supply Assignment / Release checks ; Oracle Fusion Cloud SCM 26A, Guidelines for Managing Shipment Sets. Sources primaires ouvertes le 19 septembre 2026, URL, passages, éditions et limites dans modeles/backlog/order-lifecycle-behaviors.yaml, order_release_U410.market_comparisons. SAP distingue affectation et autorisation de livraison ; Oracle documente les contraintes collectives des shipment sets. Pas de preuve installée Beaumanoir.
+
+
+### ELM246
+
+Oracle Backlog Planning 26B et Key Actions on Orders 25D ; Microsoft Dynamics 365 SCM Planned Orders, page mise à jour le 2 septembre 2026. Sources primaires ouvertes le 19 septembre 2026 ; URL, passages et limites dans modeles/backlog/order-backlog-review.yaml. Vision collective du carnet chez Oracle ; préparation et approbation des propositions d’approvisionnement chez Microsoft. Pas de taxonomie métier universelle ni de preuve installée.
+
+
+### ELM247
+
+Oracle Backlog Planning 26B / Key Actions on Orders 25D et Microsoft Planned Orders simplified (mise à jour 3 octobre 2025), pages primaires consultées le 19 septembre 2026. URL et passages dans modeles/backlog/order-backlog-review.yaml, planning_U414.market_comparisons. Travail sur les scénarios et propositions distinct de leur calcul ; aucune taxonomie universelle ni preuve installée Beaumanoir.
+
+
+### ELM248
+
+Oracle Split Order Lines 26B ; Microsoft Planned Orders, page mise à jour le 2 septembre 2026. Sources primaires consultées le 19 septembre 2026 ; passages, URL et limites dans modeles/backlog/order-backlog-review.yaml, structure_lifecycle_U417.market_comparisons. Split organise les parties de satisfaction ; statuts et approbation pilotent la préparation des ordres planifiés. Aucune preuve installée ni taxonomie universelle.
+
+
+### ELM249
+
+Microsoft Dynamics 365 SCM — change management des Purchase Orders, examen des modifications confirmées, Firm planned orders, Manage order holds, Release to warehouse et gel temporel des Master plans. Documentation évolutive, passages primaires consultés le 19 septembre 2026. URL, localisateurs, synthèses et limites dans modeles/backlog/order-backlog-review.yaml, lifecycle_redesign_U422.market_comparisons. Nature : mécanismes et processus produit ; aucune taxonomie de capacités ni preuve installée Beaumanoir.
+
+
+### ELM250
+
+Microsoft — Purchase order overview (Dynamics 365 SCM, 8 septembre 2026, Purchase order statuses) et State framework architecture (Intelligent Order Management, 30 janvier 2026, colonnes d’état et transitions, réserve de préversion). Pages primaires consultées le 19 septembre 2026. URL et limites dans modeles/backlog/order-backlog-review.yaml, lifecycle_dimensions_U423.market_comparisons. Plusieurs dimensions sur un Order et gouvernance des transitions ; éléments de données/framework, pas capacités d’entreprise.
+
+
+### ELM251
+
+Microsoft Dynamics 365 SCM — Purchase order overview (Purchase order statuses), Approve and confirm purchase orders (Approval, Changing, Canceling), Firm planned orders (Introduction), Manage order holds (motifs et levée). Pages primaires ouvertes le 19 septembre 2026. URL et rapprochements sur D04.o et comportements, complétés par ELM249/250. Plusieurs statuts métier coexistants ; mécanismes produit, pas catalogue normatif FLOW. Les listes FLOW n’affirment pas une équivalence exacte avec les codes Microsoft.
+
+
+### ELM252
+
+Microsoft Dynamics 365 SCM — Coverage settings (25 mars 2026, Coverage codes) et Action messages (26 mars 2026, Introduction et Select action messages). Pages primaires consultées le 19 septembre 2026. Méthodes de réapprovisionnement et de lotissement ; recommandations Advance/Postpone/Increase/Decrease. URLs et limites sur D05.e. Pas de taxonomie de capacités ni preuve installée Beaumanoir.
+
+
+### ELM253
+
+Microsoft Dynamics 365 SCM — Coverage settings (25 mars 2026, Coverage codes) et Action messages (26 mars 2026, Introduction et Select action messages). Sources primaires reconsultées le 19 septembre 2026 pour U427. URLs et synthèses dans les fiches BHV083–085. Deux méthodes de détermination des apports et recommandations d’ajustement ; pas de preuve de réalisation Beaumanoir.
+
+### ELM254
+
+Sources primaires consultées le 19 septembre 2026 pour U428. Nature : processus et responsabilités de composants produits, pas taxonomie de capacités d’entreprise ni preuve de déploiement Beaumanoir.
+
+- Microsoft Dynamics 365 SCM, documentation évolutive, [Sales returns](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns), sections Return order process, Return material authorization et Disposition codes and disposition actions : parcours physique et Credit only, remplacement par Sales Order lié, effets logistiques et financiers combinés. Texte primaire consulté. [Accounts receivable](https://learn.microsoft.com/en-us/dynamics365/finance/accounts-receivable/accounts-receivable) situe les factures et règlements dans Dynamics 365 Finance ; passage primaire indexé consulté.
+- SAP S/4HANA Cloud Public Edition, page produit 2602, [Customer Compensation](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/436368e8646443988837608bb121e92d.html), remboursement non pertinent, demande d’avoir et livraison gratuite ; [Customer Returns Processing](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/ef17554b70b946e588cf4fb378fa4622.html), suites logistiques et documents de compensation. Passages primaires indexés consultés ; portail direct sans texte exploitable. Ne pas en déduire une séparation logicielle totale ni un remboursement monétaire à chaque avoir.
+- Oracle Fusion Cloud SCM 26A, [How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html), étapes 3 à 5 : appels Create Billing Lines/Wait for Billing vers Receivables ; Financials réalise facturation et paiements. Page ouverte et texte consulté. Exemple configurable de processus, pas attribution universelle des domaines d’entreprise.
+
+### ELM255
+
+U429 — Sources primaires consultées le 19 septembre 2026 : Microsoft Dynamics 365 Commerce, [Omnichannel payments overview](https://learn.microsoft.com/en-us/dynamics365/commerce/omni-channel-payments), Key terms, Overview et Basic principle : autorisation, capture et références de remboursement intégrées aux parcours Commerce. Page évolutive ouverte ; aucune assimilation de capture à crédit bancaire définitif.
+
+SAP Learning, [Executing the Billing Process and the Integration to SAP S/4HANA Finance](https://learning.sap.com/courses/exploring-sap-s-4hana-sales-essentials/executing-the-billing-process-and-the-integration-to-sap-s-4hana-finance_e2dd5db3-73c3-4cda-8ad5-1e7f39f04fba), page ouverte, cours Sales Essentials : création du document de facturation dans Sales et intégration à Finance. Complément primaire indexé SAP Help, [Sales Billing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/4c74c957b7018809e10000000a4450e5.html), création/gestion de documents de facturation et transfert à la comptabilité financière. Version précise du cours non affichée dans les passages consultés. Nature : responsabilités produit et processus, pas attribution universelle des capacités ni preuve d’organisation Beaumanoir.
+
+
+### ELM256
+
+Oracle E-Business Suite Order Management 12.2 — Line Sets / Fulfillment Sets. Source primaire ouverte le 19 septembre 2026 : https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T336783.htm ; sections Line (Ship or Arrival) Sets, Set Function Details, Fulfillment Sets. Mécanisme produit reliant des lignes d’une même commande sous conditions communes. La portée multi-commandes n’est pas démontrée ; aucun identifiant natif de capacité ni définition normative d’entreprise. Synthèse et limites : modeles/backlog/order-structuring-review-U439.yaml. Aucune réalisation Beaumanoir déduite.
+
+### ELM257
+
+SAP Fashion Management, ERP 6.0 EHP8 SP24 — General Requirements Grouping. Passages primaires indexés consultés le 19 septembre 2026 : https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/c617f055aa2a6d55e10000000a4450e5.html?locale=en-US&state=PRODUCTION&version=6.18.24 ; Use, Grouping Rule and Grouping Criteria, Individual Group Release Rules. Fonction produit de regroupement de besoins ; ne prouve pas un ensemble transactionnel persistant. Synthèse originale sans reproduction ; limites détaillées dans l’annexe U439.
+
+### ELM258
+
+Infor LN 10.7 Procurement — Commingling purchase orders. Texte primaire ouvert le 19 septembre 2026 : https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html ; Header level commingling, Line level commingling, Approval. Fonction produit de fusion de commandes d’achat avant approbation, distincte du seul regroupement logistique. Les règles techniques de suppression et de calcul des prix ne sont pas adoptées dans FLOW. Aucun constat installé ni équivalence universelle aux autres Orders. Synthèse originale ; détails dans l’annexe U439.
+
+### ELM259
+
+OMG DMN — MKT43, présentation officielle https://www.omg.org/dmn/, paragraphes sur la spécification des décisions/règles et la complémentarité DMN/BPMN/CMMN. Texte primaire consulté le 19 septembre 2026 ; page évolutive sans édition précise de spécification étudiée. Concept méthodologique, sans identifiant natif de capacité. Reformulation : une décision peut être décrite distinctement du processus ou du cas qui la mobilise. Aucun classement individuel FLOW ni taxonomie en six catégories n’est prescrit ; synthèse originale, sans reproduction substantielle.
+
+### Relecture U451 — ELM052 et ELM234
+
+19 septembre 2026 : textes primaires rouverts. [BIZBOK Guide 15.0, Appendix A](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf), page imprimée 456, entrées Capability et Capability Behavior ; [Microsoft Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting), présentation et modes de déclenchement. Le premier éclaire la façon d’agir selon les circonstances ; le second illustre des politiques de comptage. Les sept formes FLOW et leurs affectations ne sont prescrites par aucune de ces sources. Synthèse originale, sans reproduction intégrale ni preuve de réalisation Beaumanoir.
+
+### Audit U453/U454 — convention documentaire des entrées suivantes
+
+ELM260–277 : consultation du 19 septembre 2026. Les libellés ci-dessous sont natifs ; les identifiants ELM sont locaux, aucun identifiant natif de capacité n’est prétendu. Les définitions sont résumées dans nos mots, sans citation intégrale ni importation des modèles. Le [registre de sources](../audits/2026-09-19-atlas-ux-ui-U453/sources.md) fournit pour chaque repère S l’URL, la section, l’édition connue et l’accès réellement obtenu. Aucune réalisation Beaumanoir n’est démontrée par ces sources.
+
+### ELM260
+
+MKT25 — LeanIX, Meta Model / Data Object Modeling Guidelines, métamodèle v4 et documentation évolutive. S03–S04, Data Object / Modeling scope : concepts et relations d’un référentiel d’architecture. Reformulation : objets de données reliés aux autres catalogues, sans profondeur d’un dictionnaire technique exhaustif. Textes primaires indexés ; ne pas assimiler Data Object à toute structure physique.
+
+### ELM261
+
+MKT26 — Ardoq, Data Lineage Metamodel / Business Capability Modeling, documentation évolutive. S05–S06, Data Entity / Accesses / Owns / Perspectives : concepts et vues d’un outil EA. Reformulation : entités, responsabilités et usages peuvent se lire selon plusieurs questions. Texte primaire indexé, accès direct partiellement bloqué ; modèles détaillés des messages hors du périmètre décrit.
+
+### ELM262
+
+MKT44 — Horizzon, Color views / Highlight views / Combining filters. S07, documentation évolutive : fonctions de présentation. Reformulation : filtres et légende rendent une propriété lisible dans une vue. Aucun essai de performance, d’ergonomie ou de partage effectué.
+
+### ELM263
+
+MKT45 — OrbusInfinity, Views / Recent Views / Configurable Dashboards & Sites. S08, documentation et présentation évolutives : fonctions et positionnement produit. Reformulation : plusieurs vues peuvent servir différents destinataires. Aucun gain chiffré repris ni essai utilisateur du produit.
+
+### ELM264
+
+MKT04 — SAP Reference Business Architecture / Business Data Catalog. S01–S02, cours SAP Learning sans édition applicative établie : concepts méthodologiques. Reformulation : contenu métier et contenu de solution sont distingués, les informations métier sont reliées aux capacités. Cette pratique SAP est comparée aux cadres indépendants, sans lui donner autorité sur FLOW.
+
+### ELM265
+
+MKT14 — Dynamics 365 Finance & Operations, Data entities overview / Categories of entities. S11, documentation évolutive : abstraction de données de produit. Reformulation : des entités d’intégration regroupent des données physiques selon des concepts fonctionnels ; leurs catégories ne définissent pas les capacités d’entreprise FLOW.
+
+### ELM266
+
+MKT14 — Dynamics 365, Business events overview / Business event catalog / Idempotency. S12, page du 22 janvier 2026 : mécanisme de notification produit. Reformulation : une notification métier et un export de données répondent à des usages différents. Aucun choix d’event sourcing ni contrat de message FLOW déduit.
+
+### ELM267
+
+MKT13 — SAP S/4HANA, Purchase Order (OData V4) / Create Material Documents. S13–S14, Header / Item et création, éditions applicatives non établies : API et structures produit. Reformulation : commande et document ERP ont des représentations structurées. Textes primaires indexés ; aucun schéma, champ ou statut importé dans FLOW.
+
+### ELM268
+
+MKT42 — GS1, Electronic Product Code Information Services (EPCIS). S15, présentation du 30 mai 2025 et introduction du standard : modèle d’échange d’événements de traçabilité. Reformulation : documenter un fait et son contexte est utile aux échanges interentreprises. Pas un modèle de tous les faits de gestion ; aucune édition normative ni adoption de format.
+
+### ELM269
+
+MKT03 — Guild, Information Concept, Metamodel Guide v3.0, septembre 2024, §§5.2–5.3.1. S09 : concept d’architecture métier et relations. Reformulation : les capacités utilisent ou modifient des informations métier. Le rapprochement FLOW ne reprend pas toute la taxonomie du guide.
+
+### ELM270
+
+MKT02 — ArchiMate 4, C260, 27 avril 2026. S10, notice Details / Main changes : évolution d’un langage de modélisation. Reformulation : la version importe pour les concepts et relations disponibles. Notice officielle consultée ; norme complète non lue, aucune conformité FLOW déduite.
+
+### ELM271
+
+MKT48 / MKT49 — Fluent 2 Color et Fiori Colors v1-145. S17–S18, palettes et usages : principes de design. Reformulation : neutralité, marque et sens de la couleur remplissent des rôles distincts. Proposition de palette FLOW, pas application obligatoire d’une charte éditeur.
+
+### ELM272
+
+MKT47 — Progressive Disclosure, Jakob Nielsen, 4 décembre 2006. S19 : principe UX. Reformulation : donner accès aux développements depuis l’essentiel. Principe consulté, bénéfice de la maquette Atlas encore à éprouver par des tâches utilisateurs.
+
+### ELM273
+
+MKT46 — WCAG 2.2, Understanding 1.4.3 / 1.4.1 / 2.5.8. S20a–c : critères et explications officielles sur contraste, couleur et cibles. Reformulation : lisibilité et signification ne reposent pas sur la couleur seule ; tailles et exceptions doivent être évaluées dans leur contexte. Les observations Atlas ne constituent pas un audit de conformité exhaustif.
+
+### ELM274
+
+MKT50 — Domain analysis / Bounded contexts, page du 25 février 2026. S16 : méthode de conception contextualisée. Reformulation : la cohésion métier et les dépendances éclairent le découplage ; une carte de capacités ne fournit pas seule les limites d’un service logiciel. Aucun style d’architecture imposé.
+
+### ELM275
+
+MKT20 — Oracle Fusion Cloud Procurement 26C, Purchase Orders / Lines / Schedules / Distributions. S21 : ressources REST et structure d’intégration. Reformulation : le détail du contrat produit inclut des préoccupations plus larges que le périmètre Supply FLOW. Aucun niveau ou champ comptable ajouté à la cartographie.
+
+### ELM276
+
+MKT01 — TOGAF Series Guide G190, Information Mapping, avril 2019, chapitres 4–6. S22–S23 : méthode d’architecture ; carte d’information et modèle de données distingués. Document primaire lu sur hébergement tiers, présence de G190 confirmée dans les ressources officielles actuelles ; identité avec la distribution actuelle non contrôlée.
+
+### ELM277
+
+MKT01 — TOGAF 9.2, 2018, Phase C: Data Architecture / Data Entity–Business Function Matrix, chapitres 9 et 31. S24 : méthode et artefacts. Reformulation : données, fonctions et applications peuvent être rapprochées par des vues distinctes. Copie primaire historique consultée ; édition 10 détaillée inaccessible, aucun report automatique de ses paragraphes à cette édition.
+
+### ELM278
+
+U455/U456 — MKT01, TOGAF 9.2, 2018, chapitre 7, §§7.3.1 et 7.5.3–7.5.6, pages imprimées 81 et 89–91. [Document primaire](https://governance.foundation/assets/frameworks/togaf/c182e%20-%20TOGAF%209.2.pdf) lu le 19 septembre 2026 sur hébergement tiers, copie d’évaluation non redistribuée. Libellés natifs : Business Capability Mapping, Value Stream Mapping, Process Modeling ; concepts et techniques, pas identifiants de capacités. Reformulation : plusieurs vues complémentaires décrivent le métier. Ce passage ne prescrit pas les anciennes couches FLOW ; édition historique, pas vérification de la 10e édition. La distinction de périmètre Atlas est une décision locale, non une obligation TOGAF.
+
+### ELM279
+
+U455/U456 — MKT14, Microsoft Dynamics 365 Intelligent Order Management, [Overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), sections Components / Intelligent Order Management app / Providers / Orchestration. Texte primaire ouvert le 19 septembre 2026, documentation évolutive, édition produit non fixée. Fonctions et intégrations d’un produit, sans identifiant natif de capacité métier. Reformulation : capture de commandes, orchestration et partenaires de fulfillment coopèrent via des informations. Recouvrement partiel de l’exemple de Laurent ; ni preuve d’un déploiement Beaumanoir ni prescription de trois domaines ou de couches. Synthèse sélective et lien seulement.
+
+### ELM280
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information). Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Passages : Product definition ; Distribution, export, and import of product data ; Product masters and product variants. Nature : concepts et fonctions produit, sans identifiant natif de capacité. Reformulation : références, variantes et import de données produit ; la création des maîtres est aussi couverte. Limite : aucune dimension obligatoire FLOW ni équivalence de catalogue. Synthèse sélective, pas de reproduction.
+
+### ELM281
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data), section Master and reference data. Source primaire consultée le 19 septembre 2026 ; documentation évolutive du mode Warehouse management only, édition non figée. Nature : import et maintien de données produit, sans identifiant natif de capacité. Reformulation : une origine de maintien est configurée pour une référence dans ce contexte produit. Limite : ne prouve ni l’autorité métier FLOW ni un maître unique d’entreprise ; contrats techniques non transposés. Synthèse et lien seulement.
+
+### ELM282
+
+U460 — MKT42, GS1 GO, [How does serialisation differ from unique identification in the GS1 System?](https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-). FAQ officielle consultée le 19 septembre 2026 ; page évolutive, pas une édition des spécifications normatives. Nature : explication d’identification ; pas d’identifiant natif de capacité. Reformulation : GTIN et numéro de série distinguent une instance. Limite : pas de conformité globale GS1 déduite ni sérialisation imposée à toutes les Product Units FLOW. Synthèse sélective seulement.
+
+### ELM283
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations), section Sample use case for soft reservation. Source primaire relue le 19 septembre 2026 ; documentation évolutive, édition non figée. Nature : fonction produit, aucun identifiant natif de capacité. Reformulation : une réservation souple réduit la disponibilité à réserver sans mouvement physique. Le respect effectif du refus dépend des règles des applications participantes. Limite : les types Microsoft ne deviennent pas les types FLOW ; aucune réalisation installée déduite. Appui au pilote Reservation, sans nouvelle équivalence.
+
+### ELM284
+
+U460 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Source primaire relue le 19 septembre 2026 ; mise à jour affichée le 27 juillet 2026, contexte Dynamics 10.0.48 ou ultérieur. Sections : What data is preserved ; Control how on-hand inventory is pegged to confirmed demand. Nature : fonction produit, sans identifiant natif de capacité. Reformulation : la préservation des liens de ressource dépend de réglages distincts de la date confirmée. Limite : ce mécanisme recouvre plusieurs responsabilités FLOW ; pas d’identité avec Supply Assignment seule. Appui au pilote, pas nouvelle règle FLOW.
+
+### ELM285
+
+U461 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Record the receipt of goods on the purchase order](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order), section Record receipt of goods, étapes 4–7. Source primaire consultée le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Nature : exemple produit, sans identifiant natif de capacité. Reformulation : un document identifié rend compte de la réception enregistrée. Limite : cet exemple n’établit pas une convention universelle fait–document, ni ses règles de correction. Synthèse et lien seulement.
+
+### ELM286
+
+U462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Confirm sales orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders), sections Confirm a single sales order / Confirm multiple sales orders. Consulté le 19 septembre 2026 ; page évolutive mise à jour le 1er juillet 2026. Fonction produit sans identifiant natif de capacité. Reformulation : confirmation documentaire et état documentaire sont explicités. Limite : cet usage n’établit pas un équivalent lexical complet de Fulfillment Commitment. Appui à l’alternative discutée U444 ; synthèse sélective, pas de reproduction.
+
+### ELM287
+
+U462 — MKT13, SAP S/4HANA Fashion, [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4), sections Supply Assignment (ARun) / Supply Assignment Scenarios. Consulté le 19 septembre 2026 ; cours évolutif sans édition unique affichée. Fonction produit sans identifiant natif de capacité. Reformulation : le scénario ARun crée un lien ressource–demande qui empêche l’usage par une autre demande. Écart explicite avec FLOW U436, qui attribue ce dernier effet à Reservation. Le vocabulaire repris ne vaut donc pas équivalence complète. Synthèse et lien seulement.
+
+### ELM288
+
+U462 — MKT14, Microsoft Dynamics 365 Supply Chain Management, [Purchase order overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview), introduction et Purchase order status. Consulté le 19 septembre 2026 ; documentation évolutive, édition produit non figée. Concept documentaire, pas identifiant natif de capacité. Reformulation : achat de biens ou services, suivi de la réception et progression documentaire. Limite : FLOW reprend le nom métier pour une capacité d’action distincte de l’objet ; pas de transposition des états ERP ni de périmètre financier. Synthèse et lien seulement.
+
+### Relecture U463 — ELM019 et ELM279
+
+19 septembre 2026 : textes primaires reconsultés pour la définition de universe-supply. ELM019, TOGAF G189 (juin 2018), §2 et §2.1.2, pages imprimées 2–3 : distinction entre aptitudes métier et moyens de réalisation. Document primaire sur le [miroir tiers déjà référencé](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf), sans copie ni redistribution ; le portail officiel TOGAF 9.2 redirige vers une authentification. Appui méthodologique, pas définition de l’univers Supply ni examen de la 10e édition.
+
+ELM279, Microsoft [Intelligent Order Management overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview), mise à jour affichée le 30 janvier 2026 : Introduction, Components, Orchestration, Inventory visibility service et Fulfillment optimization. Réexamen à périmètre FLOW inchangé ; le rapprochement demeure partiel. Les composants techniques ne deviennent pas des domaines. Raisons du choix et limites dans la fiche universe-supply ; CMP182. Aucune réalisation Beaumanoir ni origine SAP des anciennes couches déduite.
+
+### ELM289
+
+U464 — MKT51 : Information, Data, Data element. ISO/IEC 15944-1:2025 et ISO 20691:2022, extraits officiels consultés le 19 septembre 2026. Sens en contexte, représentation, indivisibilité contextuelle ; aucune définition de bloc minimal Atlas. URL, localisateurs et renvois normatifs dans [l’analyse structurée](../modeles/backlog/information-definition-U464.yaml). Pas d’identifiant natif de capacité ; synthèse originale, modèles sectoriels non adoptés.
+
+### ELM290
+
+U464 — MKT52 : Elementary fact / fact type is elementary in conceptual schema. SBVR 1.5, octobre 2019, §24.2.1 p.222 et §24.2.2.1 p.255, texte primaire consulté le 19 septembre 2026. Critère logique d’irréductibilité dans un schéma ; sens plus strict que le minimum utile à une fiche. URL et limites dans [l’analyse](../modeles/backlog/information-definition-U464.yaml). Aucun fait de gestion FLOW ou document déduit d’un fait logique.
+
+### ELM291
+
+U464 — MKT53 : What Is An Elementary Fact?, Terry Halpin, 1993, réédition sur orm.net. Pages 2–3 et 6–8 consultées le 19 septembre 2026 : les contraintes peuvent changer la décomposition pertinente. Appui théorique, pas adoption d’ORM ni preuve que nos exemples sont logiquement irréductibles. Localisateurs dans [l’analyse](../modeles/backlog/information-definition-U464.yaml).
+
+### Relecture U464 — ELM269 et ELM276
+
+19 septembre 2026 : Guild, Metamodel Guide v3.0, §§5.3–5.3.1 ; TOGAF G190, chapitres 1–2 et 4–6, éditions et accès déjà référencés. Leur concept d’information éclaire la relation aux capacités ; il ne garantit pas une maille indivisible. Pas de reprise automatique des correspondances objets/capacités de la Guild. Sources détaillées dans l’analyse U464 ; CMP183.

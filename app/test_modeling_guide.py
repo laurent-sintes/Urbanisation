@@ -71,6 +71,25 @@ class GuideFixture(unittest.TestCase):
 
 
 class ModelingGuideTests(GuideFixture):
+    def test_methodology_glossary_is_frozen_and_validated(self):
+        guide = read(self.guide_path)
+        guide['glossary'] = {'terms': [{'id': 'MOD001', 'name': 'Capability', 'definition': 'Aptitude durable.', 'examples': ['Exemple métier.']}], 'model_term_ids': ['TER001']}
+        self.rewrite_guide(guide)
+        self.assertEqual(load_modeling_guide(self.root)['guide']['glossary'], guide['glossary'])
+        guide['glossary']['terms'].append(guide['glossary']['terms'][0])
+        self.rewrite_guide(guide)
+        with self.assertRaises(ModelingGuideError):
+            load_modeling_guide(self.root)
+
+    def test_invalid_lexical_partition_is_rejected(self):
+        for ids in (['TER001', 'TER001'], ['BHV001'], [None]):
+            with self.subTest(ids=ids):
+                guide = read(self.guide_path)
+                guide['glossary'] = {'terms': [], 'model_term_ids': ids}
+                self.rewrite_guide(guide)
+                with self.assertRaises(ModelingGuideError):
+                    load_modeling_guide(self.root)
+
     def test_explicit_and_current_publication_use_the_same_association(self):
         result = load_modeling_guide(self.root)
         self.assertEqual(result, load_modeling_guide(self.root, CURRENT))

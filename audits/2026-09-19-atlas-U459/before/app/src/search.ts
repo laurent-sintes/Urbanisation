@@ -1,0 +1,60 @@
+import { businessFields } from './businessContent.ts';
+import { plainInlineText } from './inlineLinks.ts';
+import { publicText } from './publicText.ts';
+import type { AtlasNode, GlossaryTerm, PublishedModel } from './types.ts';
+
+export interface SearchResult {
+  id: string; kind: 'model' | 'glossary'; name: string; excerpt: string; score: number;
+  node?: AtlasNode; term?: GlossaryTerm;
+}
+const normalize = (text: string) => plainInlineText(text).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
+const words = (text: string) => normalize(text).match(/[a-z0-9]+(?:[._-][a-z0-9]+)*/g) ?? [];
+const stopWords = new Set(['de', 'du', 'des', 'la', 'le', 'les', 'un', 'une', 'd', 'l', 'the', 'of']);
+const caches = new WeakMap<PublishedModel, SearchResult[]>();
+function index(model: PublishedModel): SearchResult[] {
+  const saved = caches.get(model);
+  if (saved) return saved;
+  const parents = new Map(model.relations.filter(r => ['contains', 'presents'].includes(r.type)).map(r => [r.targetId, r.sourceId]));
+  const ancestry = (id: string): string => {
+    const names: string[] = [];
+    let parent = parents.get(id);
+    while (parent) { names.push(model.nodeById.get(parent)?.name || ''); parent = parents.get(parent); }
+    return names.join(' / ');
+  };
+  const entries: SearchResult[] = [
+    ...model.nodes.map(node => ({ id: node.id, kind: 'model' as const, name: node.name,
+      excerpt: [Object.values(businessFields(node.fields)).join('\n'), ancestry(node.id)].join('\n'), score: 0, node })),
+    ...model.glossary.map(term => ({ id: term.id, kind: 'glossary' as const, name: plainInlineText(term.name),
+      excerpt: [term.short_description, term.definition, term.context].filter(Boolean).map(text => publicText(String(text))).join('\n'), score: 0, term })),
+  ];
+  caches.set(model, entries);
+  return entries;
+}
+function excerpt(text: string, queryWords: string[]): string {
+  const plain = plainInlineText(text).replace(/\s+/g, ' ').trim();
+  const normalized = normalize(plain);
+  const at = queryWords.map(word => normalized.indexOf(word)).filter(i => i >= 0).sort((a, b) => a - b)[0] ?? 0;
+  const start = Math.max(0, at - 42);
+  return `${start ? '…' : ''}${plain.slice(start, start + 175).trim()}${plain.length > start + 175 ? '…' : ''}`;
+}
+/** Search only content readable in this snapshot; no implicit synonyms or editorial metadata. */
+export function searchPublication(model: PublishedModel, query: string): SearchResult[] {
+  const needle = normalize(query).trim();
+  const queryWords = words(query).filter(word => !stopWords.has(word));
+  if (!needle || !queryWords.length) return [];
+  return index(model).flatMap(entry => {
+    const title = normalize(entry.name);
+    const id = normalize(entry.id);
+    const titleWords = words(entry.name), bodyWords = words(entry.excerpt);
+    const has = (values: string[], word: string) => values.some(value => value === word || (word.length >= 3 && value.startsWith(word)));
+    const exact = id === needle || title === needle;
+    if (!exact && !queryWords.every(word => has(titleWords, word) || has(bodyWords, word) || id === word)) return [];
+    const phrase = queryWords.join(' ');
+    const bodyPhrase = bodyWords.filter(word => !stopWords.has(word)).join(' ');
+    const score = exact ? 10000 : title.startsWith(needle) ? 8000
+      : queryWords.every(word => has(titleWords, word)) ? 6000
+      : bodyPhrase.startsWith(phrase) ? 4500 : bodyPhrase.includes(phrase) ? 2000
+      : queryWords.reduce((sum, word) => sum + (has(titleWords, word) ? 500 : 10), 0);
+    return [{ ...entry, score, excerpt: excerpt(entry.excerpt, queryWords) }];
+  }).sort((a, b) => b.score - a.score);
+}
