@@ -1,0 +1,12 @@
+schema_version: 1.0.0
+version: 2026-09-19.7
+review_sha256: 4327aef8a2a789ae174073650425d9ad044dd5a62f3b1691005c57608ed4c248
+reviewer: Codex — réexamen de portée U476
+items:
+- decision_id: ADOPT-U473-UNCHANGED-001
+  action: retain
+  rationale: Le nom Supply Chain Orchestration adopté en U373 est inchangé, avec la même empreinte. La fiche garde son identité,
+    sa définition, son périmètre, ses parents et ses relations ; seuls les contenus Sources d’inspiration, leur provenance
+    et leur qualification sont enrichis selon U474/U475. Le nom désigne toujours les mêmes responsabilités. Aucune incidence
+    du glossaire. Reprise limitée au nom, sans étendre cet accord aux nouveaux textes ; market_inspiration reçoit séparément
+    la décision U475.

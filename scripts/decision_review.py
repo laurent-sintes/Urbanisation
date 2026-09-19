@@ -71,11 +71,17 @@ def make_review(snapshot, previous_snapshot, previous_release, old_decisions, de
                 'before_sha256': canonical_sha256(old_values[field]) if field in old_values else None,
                 'after_sha256': canonical_sha256(new_values[field]) if field in new_values else None,
             }
-        unchanged = all(v['before_present'] and v['after_present']
-                        and v['before_sha256'] == v['after_sha256'] == v['approved_sha256']
-                        for v in values.values())
-        eligible = (suspended['reason'] == 'revision_changed_requires_explicit_reassessment'
+        unchanged_fields = [field for field, value in values.items()
+                            if value['before_present'] and value['after_present']
+                            and value['before_sha256'] == value['after_sha256'] == value['approved_sha256']]
+        changed_fields = [field for field in values if field not in unchanged_fields]
+        unchanged = not changed_fields
+        context_reasons = ('revision_changed_requires_explicit_reassessment', 'context_changed_requires_explicit_reassessment')
+        eligible = (suspended['reason'] in context_reasons
                     and bool(values) and unchanged and original['decision_state'] == 'accepted')
+        eligible_partial = (suspended['reason'] in (*context_reasons, 'approved_value_changed')
+                            and bool(unchanged_fields) and after is not None
+                            and original['decision_state'] == 'accepted')
         # Include identities and explicit incident edges, even for relation decisions.
         neighbors = {identifier}
         if collection == 'relations':
@@ -85,6 +91,8 @@ def make_review(snapshot, previous_snapshot, previous_release, old_decisions, de
         items.append({
             'decision_id': original['id'], 'target': {'collection': collection, 'id': identifier},
             'reason': suspended['reason'], 'eligible_for_reassessment': eligible,
+            'eligible_for_partial_reassessment': eligible_partial,
+            'unchanged_fields': unchanged_fields, 'changed_fields': changed_fields,
             'prior_decision': deepcopy(original), 'prior_decision_sha256': canonical_sha256(original),
             'before_revision': target['revision'], 'after_revision': after['revision'] if after else None,
             'approved_values': values,
@@ -150,7 +158,8 @@ def apply_assessment(directory, current):
     if not isinstance(reviewer, str) or not reviewer.strip():
         raise ValueError('An explicit reviewer is required')
     entries = assessment['items']
-    if not isinstance(entries, list) or any(not isinstance(e, dict) or set(e) != {'decision_id', 'action', 'rationale'}
+    base_keys = {'decision_id', 'action', 'rationale'}
+    if not isinstance(entries, list) or any(not isinstance(e, dict) or set(e) not in (base_keys, base_keys | {'approved_fields'})
                                           or not isinstance(e['decision_id'], str) for e in entries):
         raise ValueError('Invalid assessment entries')
     by_id = {e['decision_id']: e for e in entries}
@@ -159,17 +168,39 @@ def apply_assessment(directory, current):
     decisions, transcriptions = [], []
     for item in current['items']:
         entry = by_id[item['decision_id']]
-        if (entry['action'] not in ('retain', 'defer') or not isinstance(entry['rationale'], str)
+        if (entry['action'] not in ('retain', 'retain_partial', 'defer') or not isinstance(entry['rationale'], str)
                 or not entry['rationale'].strip()):
-            raise ValueError('Explicit retain/defer and scope rationale required: ' + item['decision_id'])
+            raise ValueError('Explicit retain/retain_partial/defer and scope rationale required: ' + item['decision_id'])
+        if entry['action'] != 'retain_partial' and 'approved_fields' in entry:
+            raise ValueError('approved_fields requires retain_partial: ' + item['decision_id'])
         if entry['action'] == 'defer':
             continue
-        if not item['eligible_for_reassessment']:
+        prior_target = item['prior_decision']['target']
+        if entry['action'] == 'retain_partial':
+            selected = entry.get('approved_fields')
+            unchanged = {
+                field for field, value in item['approved_values'].items()
+                if field in prior_target['approved_fields']
+                and value['before_present'] and value['after_present']
+                and canonical_sha256(value['before']) == canonical_sha256(value['after'])
+                == prior_target['value_sha256'][field]
+            }
+            if (not item.get('eligible_for_partial_reassessment')
+                    or item['prior_decision']['decision_state'] != 'accepted'
+                    or not isinstance(selected, list) or not selected
+                    or any(not isinstance(field, str) or field not in unchanged for field in selected)
+                    or len(set(selected)) != len(selected)):
+                raise ValueError('Partial reassessment requires an explicit nonempty unchanged scope: ' + item['decision_id'])
+        elif not item['eligible_for_reassessment']:
             raise ValueError('Changed, removed or unapproved values cannot be transcribed: ' + item['decision_id'])
+        else:
+            selected = prior_target['approved_fields']
         decision = deepcopy(item['prior_decision'])
         identifier = 'ADOPT-REASSESS-' + sha256((current['candidate_version'] + ':' + decision['id']).encode()).hexdigest()[:24]
         decision.update(id=identifier, recorded_at=current['candidate_version'].split('.')[0])
         decision['target'].update(revision=item['after_revision'], import_version=current['candidate_version'])
+        decision['target']['approved_fields'] = list(selected)
+        decision['target']['value_sha256'] = {field: prior_target['value_sha256'][field] for field in selected}
         decision['note'] += (f" Réexamen de {item['decision_id']} par {reviewer.strip()} : {entry['rationale'].strip()} "
                              'Transcription des seules valeurs historiques inchangées ; aucune extension de portée. '
                              f"Preuve : modeles/revisions/{current['candidate_version']}/decision-review/assessment.yaml.")

@@ -1,0 +1,307 @@
+# Urbanisation — version 15
+
+Publication 2026-09-19.8 · modèle modifié le 2026-09-19T15:28:27.021633Z.
+
+47 capacités ; les statuts et réserves sont conservés.
+
+## Changements
+
+- modified : BHV001 — contenu ou notice actualisé
+- modified : BHV002 — contenu ou notice actualisé
+- modified : BHV003 — contenu ou notice actualisé
+- modified : BHV004 — contenu ou notice actualisé
+- modified : BHV005 — contenu ou notice actualisé
+- modified : BHV006 — contenu ou notice actualisé
+- modified : BHV016 — contenu ou notice actualisé
+- modified : BHV017 — contenu ou notice actualisé
+- modified : BHV018 — contenu ou notice actualisé
+- modified : BHV019 — contenu ou notice actualisé
+- modified : BHV020 — contenu ou notice actualisé
+- modified : BHV021 — contenu ou notice actualisé
+- modified : BHV022 — contenu ou notice actualisé
+- modified : BHV023 — contenu ou notice actualisé
+- modified : BHV024 — contenu ou notice actualisé
+- modified : BHV025 — contenu ou notice actualisé
+- modified : BHV026 — contenu ou notice actualisé
+- modified : BHV027 — contenu ou notice actualisé
+- modified : BHV028 — contenu ou notice actualisé
+- modified : BHV029 — contenu ou notice actualisé
+- modified : BHV030 — contenu ou notice actualisé
+- modified : BHV031 — contenu ou notice actualisé
+- modified : BHV032 — contenu ou notice actualisé
+- modified : BHV033 — contenu ou notice actualisé
+- modified : BHV034 — contenu ou notice actualisé
+- modified : BHV035 — contenu ou notice actualisé
+- modified : BHV036 — contenu ou notice actualisé
+- modified : BHV037 — contenu ou notice actualisé
+- modified : BHV038 — contenu ou notice actualisé
+- modified : BHV039 — contenu ou notice actualisé
+- modified : BHV040 — contenu ou notice actualisé
+- modified : BHV043 — contenu ou notice actualisé
+- modified : BHV044 — contenu ou notice actualisé
+- modified : BHV045 — contenu ou notice actualisé
+- modified : BHV046 — contenu ou notice actualisé
+- modified : BHV047 — contenu ou notice actualisé
+- modified : BHV048 — contenu ou notice actualisé
+- modified : BHV049 — contenu ou notice actualisé
+- modified : BHV050 — contenu ou notice actualisé
+- modified : BHV051 — contenu ou notice actualisé
+- modified : BHV052 — contenu ou notice actualisé
+- modified : BHV053 — contenu ou notice actualisé
+- modified : BHV054 — contenu ou notice actualisé
+- modified : BHV055 — contenu ou notice actualisé
+- modified : BHV056 — contenu ou notice actualisé
+- modified : BHV057 — contenu ou notice actualisé
+- modified : BHV058 — contenu ou notice actualisé
+- modified : BHV059 — contenu ou notice actualisé
+- modified : BHV060 — contenu ou notice actualisé
+- modified : BHV061 — contenu ou notice actualisé
+- modified : BHV062 — contenu ou notice actualisé
+- modified : BHV063 — contenu ou notice actualisé
+- modified : BHV064 — contenu ou notice actualisé
+- modified : BHV065 — contenu ou notice actualisé
+- modified : BHV066 — contenu ou notice actualisé
+- modified : BHV067 — contenu ou notice actualisé
+- modified : BHV068 — contenu ou notice actualisé
+- modified : BHV069 — contenu ou notice actualisé
+- modified : BHV070 — contenu ou notice actualisé
+- modified : BHV071 — contenu ou notice actualisé
+- modified : BHV072 — contenu ou notice actualisé
+- modified : BHV073 — contenu ou notice actualisé
+- modified : BHV074 — contenu ou notice actualisé
+- modified : BHV075 — contenu ou notice actualisé
+- modified : BHV076 — contenu ou notice actualisé
+- modified : BHV077 — contenu ou notice actualisé
+- modified : BHV078 — contenu ou notice actualisé
+- modified : BHV079 — contenu ou notice actualisé
+- modified : BHV080 — contenu ou notice actualisé
+- modified : BHV081 — contenu ou notice actualisé
+- modified : BHV082 — contenu ou notice actualisé
+- modified : BHV083 — contenu ou notice actualisé
+- modified : BHV084 — contenu ou notice actualisé
+- modified : BHV085 — contenu ou notice actualisé
+- modified : BHV086 — contenu ou notice actualisé
+- modified : BHV087 — contenu ou notice actualisé
+- modified : D01 — contenu ou notice actualisé
+- modified : D01.c — contenu ou notice actualisé
+- modified : D01.d — contenu ou notice actualisé
+- modified : D01.f — contenu ou notice actualisé
+- modified : D01.g — contenu ou notice actualisé
+- modified : D01.h — contenu ou notice actualisé
+- modified : D02.b — contenu ou notice actualisé
+- modified : D02.c — contenu ou notice actualisé
+- modified : D02.e — contenu ou notice actualisé
+- modified : D03 — contenu ou notice actualisé
+- modified : D03.i — contenu ou notice actualisé
+- modified : D03.j — contenu ou notice actualisé
+- modified : D03.k — contenu ou notice actualisé
+- modified : D03.l — contenu ou notice actualisé
+- modified : D03.m — contenu ou notice actualisé
+- modified : D03.n — contenu ou notice actualisé
+- modified : D03.o — contenu ou notice actualisé
+- modified : D03.p — contenu ou notice actualisé
+- modified : D04 — contenu ou notice actualisé
+- modified : D04.i — contenu ou notice actualisé
+- modified : D04.j — contenu ou notice actualisé
+- modified : D04.k — contenu ou notice actualisé
+- modified : D04.l — contenu ou notice actualisé
+- modified : D04.m — contenu ou notice actualisé
+- modified : D04.n — contenu ou notice actualisé
+- modified : D04.o — contenu ou notice actualisé
+- modified : D04.q — contenu ou notice actualisé
+- modified : D04.r — contenu ou notice actualisé
+- modified : D05 — contenu ou notice actualisé
+- modified : D05.a — contenu ou notice actualisé
+- modified : D05.c — contenu ou notice actualisé
+- modified : D05.d — contenu ou notice actualisé
+- modified : D05.e — contenu ou notice actualisé
+- modified : D05.f — contenu ou notice actualisé
+- modified : D05.g — contenu ou notice actualisé
+- modified : D05.h — contenu ou notice actualisé
+- modified : D05.i — contenu ou notice actualisé
+- modified : D06 — contenu ou notice actualisé
+- modified : D06.b — contenu ou notice actualisé
+- modified : D06.d — contenu ou notice actualisé
+- modified : D06.e — contenu ou notice actualisé
+- modified : D06.f — contenu ou notice actualisé
+- modified : D07.a — contenu ou notice actualisé
+- modified : D07.b — contenu ou notice actualisé
+- modified : D07.c — contenu ou notice actualisé
+- modified : D07.d — contenu ou notice actualisé
+- modified : D08 — contenu ou notice actualisé
+- modified : D08.d — contenu ou notice actualisé
+- modified : D09 — contenu ou notice actualisé
+- modified : D09.d — contenu ou notice actualisé
+- modified : D11 — contenu ou notice actualisé
+- modified : D11.a — contenu ou notice actualisé
+- modified : D12 — contenu ou notice actualisé
+- modified : D12.a — contenu ou notice actualisé
+- modified : D13 — contenu ou notice actualisé
+- modified : D13.a — contenu ou notice actualisé
+- modified : D14 — contenu ou notice actualisé
+- modified : D14.a — contenu ou notice actualisé
+- modified : D15 — contenu ou notice actualisé
+- modified : business-references — Business References → Authoritative Data
+- modified : universe-supply — contenu ou notice actualisé
+
+## Glossaire
+
+110 termes figés dans cette publication. Les liens sont résolus dans cette même version.
+0 termes introduits ; 110 révisés. Détail des changements, y compris retraits éventuels, dans changes.json.
+- Sens à réexaminer : universe-supply (fields) référence TER005, TER012, TER031, TER035, TER050, TER052, TER083, TER084, TER085.
+- Sens à réexaminer : D08 (fields) référence TER057, TER058, TER059, TER060, TER061, TER063.
+- Sens à réexaminer : D09 (fields) référence TER046.
+- Sens à réexaminer : D02.e (fields) référence TER017.
+- Sens à réexaminer : D03.i (fields) référence TER009.
+- Sens à réexaminer : D11 (fields) référence TER048.
+- Sens à réexaminer : D04.i (fields) référence TER069.
+- Sens à réexaminer : D04.j (fields) référence TER070.
+- Sens à réexaminer : D04.k (fields) référence TER071.
+- Sens à réexaminer : D04.l (fields) référence TER072.
+- Sens à réexaminer : D04.m (fields) référence TER073.
+- Sens à réexaminer : D13 (fields) référence TER053.
+- Sens à réexaminer : D05.g (fields) référence TER079.
+- Sens à réexaminer : D05.e (fields) référence TER080.
+- Sens à réexaminer : D15 (fields) référence TER014.
+- Sens à réexaminer : D06.d (fields) référence TER066, TER075.
+- Sens à réexaminer : D06.e (fields) référence TER066, TER075.
+- Sens à réexaminer : BHV022 (fields) référence TER013.
+- Sens à réexaminer : BHV047 (fields) référence VER018.
+- Sens à réexaminer : D03.o (fields) référence TER078.
+
+## Informations métier
+
+14 informations et 15 liens figés dans cette publication ; usages des capacités, exemples et sources marché inclus.
+Informations : 0 ajouts, 0 modifications, 0 retraits.
+Liens : 0 ajouts, 0 modifications, 0 retraits.
+
+## Validations et points ouverts
+
+123 décisions antérieures conservées ; 122 suspendues pour les révisions modifiées.
+0 accords transcrits à portée identique pour le cycle U131 ; 122 autres décisions nouvelles sourcées.
+Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.
+
+- ADOPT-U467-UNCHANGED-001 (D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-002 (D13) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-003 (business-references) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-004 (D11) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-005 (D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-008 (D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-009 (D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-010 (D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-011 (D05.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-012 (D06.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-013 (D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-014 (D05.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-015 (D05.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-017 (D02.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-019 (D03.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-023 (D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-024 (D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-025 (D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-026 (D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-027 (D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-029 (D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-030 (D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-033 (D07.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-035 (D07.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-036 (D04) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-037 (D01) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-038 (D06) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-039 (D15) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-040 (D03) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-041 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-043 (D06.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-044 (D03.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-045 (D04.q) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-046 (D03.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-047 (D04.r) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-048 (D01.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-049 (D03.p) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-050 (D01.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-051 (D01.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-053 (BHV001) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-054 (BHV002) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-055 (BHV003) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-056 (BHV004) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-057 (BHV005) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-059 (BHV016) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-060 (BHV017) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-061 (BHV018) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-062 (BHV019) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-063 (BHV020) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-064 (BHV021) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-065 (BHV022) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-066 (BHV023) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-067 (BHV024) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-068 (BHV025) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-069 (BHV026) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-070 (BHV027) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-071 (BHV028) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-072 (BHV029) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-073 (BHV030) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-075 (BHV032) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-077 (BHV034) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-078 (BHV035) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-080 (BHV037) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-081 (BHV039) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-082 (BHV040) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-083 (BHV046) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-085 (BHV048) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-086 (BHV049) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-087 (BHV050) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-088 (BHV051) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-089 (BHV052) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-090 (BHV053) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-091 (BHV054) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-092 (BHV055) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-093 (BHV056) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-097 (BHV060) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-100 (BHV063) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-108 (BHV071) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-109 (BHV072) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-110 (BHV073) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U467-UNCHANGED-115 (BHV078) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-002 (D02.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-003 (D03.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-004 (D03.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-005 (D03.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-006 (D03.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-007 (D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-008 (D05.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-009 (D06.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-010 (D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-011 (D06.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-012 (D02.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-013 (BHV006) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-014 (BHV031) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-015 (BHV033) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-016 (BHV036) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-017 (BHV047) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-018 (BHV057) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-019 (BHV058) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-020 (BHV059) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-021 (BHV061) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-022 (BHV062) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-023 (BHV064) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-024 (BHV065) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-025 (BHV066) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-026 (BHV067) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-027 (BHV068) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-028 (BHV069) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-029 (BHV070) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-030 (BHV074) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-031 (BHV075) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-032 (BHV076) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-033 (BHV077) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-034 (BHV079) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-035 (BHV080) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-036 (BHV081) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-037 (BHV082) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-038 (BHV083) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-039 (BHV084) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U473-UNCHANGED-040 (BHV085) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d8ad27dd4b99d1b0ac42adce (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U475-SUPPLY-INSPIRATION (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+
+Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.

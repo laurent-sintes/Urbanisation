@@ -1,0 +1,126 @@
+source: U477
+reviewer: source_science
+date: '2026-09-19'
+scope: Lecture éditoriale des 58 choix, synthèses, lignes comparatives et exemples ; vérification documentaire ciblée des
+  noms et passages à risque.
+checked_count: 58
+contract_errors: []
+changes:
+- id: D08.d
+  field: market_comparisons/concept_name + element_name
+  before: Product master data exchange
+  after: Product master data
+  reason: Le titre de rubrique et le texte Microsoft nomment les données produit ; exchange décrivait ici l’approche.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+- id: D13.a
+  field: market_comparisons/concept_name + element_name
+  before: Site and warehouse reference data
+  after: Site / Warehouse
+  reason: Microsoft nomme sites et warehouses ; le reste était une description reconstruite du référentiel.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+- id: D07.a
+  field: market_comparisons/concept_name + element_name
+  before: Work order requirements
+  after: Work Order / Resource Requirement
+  reason: Deux notions nommées explicitement dans Work order architecture.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+- id: D14.a
+  field: market_comparisons/concept_name + element_name
+  before: Service catalog lifecycle
+  after: Service Catalog
+  reason: La notice TMF633 distingue le catalogue et le cycle qui lui est appliqué.
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+- id: D14.a
+  field: market_comparisons/concept_name + element_name
+  before: Catalog service / Work order service
+  after: Product Catalog / Work Order
+  reason: Les intitulés sont présents dans la page Microsoft ; les prestations sont leur contenu décrit.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+- id: D06.f
+  field: market_comparisons/concept_name + element_name
+  before: Orchestration policies and flows
+  after: Orchestration
+  reason: Nom de la rubrique Microsoft ; les politiques et parcours restent décrits dans l’approche.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+- id: BHV079
+  field: market_comparisons/concept_name + element_name
+  before: Warehouse progress feedback
+  after: Progress data and business events
+  reason: Nom de rubrique Microsoft pour les retours de progression.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+- id: TER050
+  field: market_comparisons/concept_name + element_name
+  before: Reference data exchange
+  after: Master and reference data
+  reason: Nom de rubrique Microsoft, qui contient les références reçues.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+- id: TER054
+  field: market_comparisons/concept_name + element_name
+  before: Fulfillment network across partners
+  after: Fulfillment network
+  reason: Le réseau est nommé ainsi chez Microsoft ; across partners décrivait son utilisation.
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+- id: D14
+  field: source_title / source_version
+  before: TMF633 Service Catalog API REST Specification R18.5.0
+  after: TMF633 Service Catalog API REST Specification R18.5.1
+  reason: Titre et métadonnées de la notice primaire effectivement lus ; son URL historique reste en r18-5-0.
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+- id: D14.a
+  field: source_title / source_version
+  before: TMF633 Service Catalog API REST Specification R18.5.0
+  after: TMF633 Service Catalog API REST Specification R18.5.1
+  reason: Titre et métadonnées de la notice primaire effectivement lus ; son URL historique reste en r18-5-0.
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+- id: D14.a
+  field: source_title / source_version
+  before: TMF633 Service Catalog API REST Specification R18.5.0
+  after: TMF633 Service Catalog API REST Specification R18.5.1
+  reason: Titre et métadonnées de la notice primaire effectivement lus ; son URL historique reste en r18-5-0.
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+findings:
+- result: Aucun écart de responsabilité repéré
+  detail: Maîtres externes, autorisation distincte du mouvement, décision distincte de l’application, services documentaires
+    et limites du catalogue sont préservés.
+- result: Portée des sources visible
+  detail: TMF633 reste une notice consultée et non une prétendue lecture du corps ; les pages GS1 bloquées restent qualifiées
+    par leur consultation indexée.
+- result: Rapprochements partiels explicites
+  detail: Pour réseau, ingestion et SLA, les sources éclairent les notions et leurs différences sans prétendre fournir une
+    capacité FLOW équivalente.
+document_checks:
+- url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+  passages: Master and reference data ; Inbound and outbound shipment order messages ; Progress data and business events
+- url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+  passages: Components ; Orchestration
+- url: https://camunda.com/process-orchestration/
+  passages: What is process orchestration ; Processes with complex logic, dont Exception handling
+- url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+  passages: Created ; Scheduled to resources ; Performed by field technicians
+- url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+  passages: Notice primaire indexée, titre, description et General Information
+- url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
+  passages: Introduction p.5 ; ServiceOrderRelationship et dépendances p.12 ; dates de commande
+- url: https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard
+  passages: 'Texte primaire indexé : §3.1 CTE ; §3.5 scénarios ; tableau de partage Despatch Advice/Receiving Advice'
+follow_up: Reporter le titre documentaire TMF633 R18.5.1 dans le registre de sources parent. Aucun autre fichier de lot ni
+  builder parent modifié.
+parent_glossary_links:
+  D08:
+    from: ses variantes
+    to: ses [variantes](glossary:TER058)
+  D09:
+    from: les parties
+    to: les [parties](glossary:TER046)
+  D11:
+    from: du contrat complet
+    to: du [contrat](glossary:TER048) complet
+  D13:
+    from: les lieux
+    to: les [lieux](glossary:TER053)
+  D06.d:
+    from: les prestations
+    to: les [prestations](glossary:TER075)
+  D06.e:
+    from: les services
+    to: les [services](glossary:TER075)

@@ -876,7 +876,7 @@ def main():
     if a.get('positioning_U300'):
         f=a['positioning_U300']
         assert f['parent_id'] in caps and f['kind']=='behavior'
-        assert nodes[f['domain_id']]['kind']=='domain'
+        assert nodes[f['domain_id']]['kind'] in ('domain', 'area')
         assert set(f['market_sources'])<=set(sources)
         rows=['# Positionnement proposé de Logistics Visibility — U300','',f['recommendation'],'','**Définition proposée.** '+f['definition'],'','**Pourquoi décomposer.** '+f['decomposition_rationale'],'','**Cohérence FLOW.** '+f['model_justification'],'','**Marché.** '+f['market_justification'],'',refs(f['market_sources']),'','## Alternatives','']
         for x in f['alternatives']:

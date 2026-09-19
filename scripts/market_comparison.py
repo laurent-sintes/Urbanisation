@@ -10,10 +10,10 @@ try:
 except ImportError:
     from json_contract import validate
 
-@lru_cache(maxsize=1)
-def contract():
+@lru_cache(maxsize=2)
+def contract(name='marketComparisons'):
     path = Path(__file__).resolve().parents[1] / 'modeles/schemas/urbanism.schema.json'
-    return json.loads(path.read_text(encoding='utf-8'))['$defs']['marketComparisons']
+    return json.loads(path.read_text(encoding='utf-8'))['$defs'][name]
 
 def validate_comparisons(value, label):
     errors = [label + ': ' + error for error in validate(value, contract())]
@@ -24,6 +24,19 @@ def validate_comparisons(value, label):
             date.fromisoformat(entry['consulted_on'])
         except ValueError:
             errors.append(f'{label}/{index}: invalid consultation date')
+    return errors
+
+def validate_inspiration(value, entries, label):
+    """The optional editorial view requires complete, explicitly authored rows."""
+    errors = [label + ': ' + error for error in validate(value, contract('marketInspiration'))]
+    if not isinstance(entries, list) or not entries:
+        errors.append(label + ': market_comparisons required for the inspiration table')
+        return errors
+    for index, entry in enumerate(entries):
+        for field in ('concept_name', 'scope_summary', 'approach_summary'):
+            text = entry.get(field) if isinstance(entry, dict) else None
+            if not isinstance(text, str) or not text.strip():
+                errors.append(f'{label}/market_comparisons/{index}/{field}: nonempty summary required')
     return errors
 
 def document_key(url):

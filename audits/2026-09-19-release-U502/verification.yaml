@@ -1,0 +1,31 @@
+publication: 2026-09-19.10
+revision: 17
+validation_errors: 0
+atlas:
+  identity:
+    appName: FLOW Atlas
+    schemaVersion: 2
+    pid: 24916
+    repositoryRoot: C:\Dev\Beaumanoir Cartographie
+    revision: daba1a739514cf926f9b
+    space: release
+  sourcePath: modeles/release/2026-09-19.10/model.yaml
+  nodes: 144
+  capabilities: 48
+  behaviors: 82
+  relations: 348
+  glossary_terms: 110
+  all_published_fields_equal: true
+  request_metadata_verified: true
+  frontend_html_and_assets_equal:
+  - /assets/cytoscape-base.css
+  - /assets/index-CAVjqUrl.js
+  - /assets/rolldown-runtime-W7wSyTde.js
+  - /assets/ModelLinks-CwFA2v9n.js
+  - /assets/icons--SA4Dryh.js
+  - /assets/ModelLinks-CsCwg9Jp.css
+  - /assets/index-XEJeWo3X.css
+  current_guide: 2026-09-19.4
+  historical_guide: 2026-09-19.3
+historical_files_unchanged: 700
+checks_reused: 'U501 : 46 tests Python, 14 tests frontend, build pnpm ; code inchangé depuis ces vérifications.'

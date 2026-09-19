@@ -27,6 +27,8 @@ class BusinessExamplesTests(unittest.TestCase):
     def test_choice_explanations_are_optional_but_typed(self):
         model=read('modeles/backlog/model.yaml')
         entry=deepcopy(next(n for n in model['nodes'] if n['id']=='D03.n')['fields']['market_comparisons'][-1])
+        entry.update(term_choice='Terme retenu pour exprimer la responsabilité.',
+                     definition_choice='Définition centrée sur le service métier.')
         self.assertEqual(validate_comparisons([entry],'test'),[])
         for field in ['term_choice','definition_choice']:
             invalid=deepcopy(entry);invalid[field]=''

@@ -1,7 +1,7 @@
 import type { AtlasNode, AtlasRelation, PublishedModel } from './types.ts';
-import { isStructural } from './model.ts';
+import { hasAreaLevels, isStructural } from './model.ts';
 
-export type DependencyLevel = 'capability' | 'domain' | 'universe';
+export type DependencyLevel = 'capability' | 'area' | 'domain' | 'universe';
 export type DependencyFamily = 'needs' | 'other';
 
 export interface DependencyOptions {
@@ -51,8 +51,20 @@ export interface DependencyProjection {
 
 type EndpointRelation = { relation: AtlasRelation; source: string; target: string; family: DependencyFamily };
 const isUniverse = (node: AtlasNode): boolean => node.levelRef === 'universe';
-const isGrouping = (node: AtlasNode): boolean => ['group', 'domain', 'reference'].includes(node.kind) || isUniverse(node);
+const isGrouping = (node: AtlasNode): boolean => ['group', 'domain', 'area', 'reference'].includes(node.kind) || isUniverse(node);
 const familyOf = (relation: AtlasRelation): DependencyFamily => relation.qualification.role === 'needs' ? 'needs' : 'other';
+
+export function dependencyLevels(model: PublishedModel): { value: DependencyLevel; label: string }[] {
+  return hasAreaLevels(model)
+    ? [{ value: 'capability', label: 'Capacités' }, { value: 'area', label: 'Areas et référentiels' }, { value: 'domain', label: 'Domaines' }]
+    : [{ value: 'capability', label: 'Capacités' }, { value: 'domain', label: 'Domaines et référentiels' }, { value: 'universe', label: 'Univers' }];
+}
+
+/** Retain shareable links when changing publication without relabeling its objects. */
+export function dependencyLevel(model: PublishedModel, requested: DependencyLevel): DependencyLevel {
+  if (hasAreaLevels(model)) return requested === 'universe' ? 'domain' : requested;
+  return requested === 'area' ? 'domain' : requested;
+}
 
 /**
  * Pure read-only projection of one verified publication. No relation is inferred from
@@ -61,11 +73,16 @@ const familyOf = (relation: AtlasRelation): DependencyFamily => relation.qualifi
  * default; additional links between neighbors require the explicit option.
  */
 export function projectDependencies(model: PublishedModel, options: DependencyOptions): DependencyProjection {
-  if (!['capability', 'domain', 'universe'].includes(options.level)) throw new Error('Niveau de dépendances inconnu.');
+  if (!['capability', 'area', 'domain', 'universe'].includes(options.level)) throw new Error('Niveau de dépendances inconnu.');
   if (![0, 1, 2, 3].includes(options.depth)) throw new Error('La profondeur doit être 0, 1, 2 ou 3.');
   if (!['both', 'incoming', 'outgoing'].includes(options.direction)) throw new Error('Sens de parcours inconnu.');
   if (!['all', 'needs', 'other'].includes(options.family)) throw new Error('Famille de relations inconnue.');
   if (options.focusId && !model.nodeById.has(options.focusId)) throw new Error(`Nœud de focalisation absent : ${options.focusId}.`);
+  const level = dependencyLevel(model, options.level);
+  const areaLevels = hasAreaLevels(model);
+  const atLevel = (item: AtlasNode): boolean => level === 'area' ? item.kind === 'area' || item.kind === 'reference'
+    : level === 'domain' ? item.kind === 'domain' || (!areaLevels && item.kind === 'reference')
+    : level === 'universe' && isUniverse(item);
 
   // adaptPublication already guarantees an unambiguous, acyclic structural hierarchy.
   const parents = new Map<string, AtlasRelation>();
@@ -105,12 +122,9 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
   }
 
   function displayedId(id: string): string {
-    if (options.level === 'capability') return id;
-    if (options.level === 'domain') {
-      return ancestor(id, item => item.kind === 'domain' || item.kind === 'reference') ?? id;
-    }
-    // In particular, an unattached object/document/event does not acquire a universe.
-    return ancestor(id, isUniverse) ?? id;
+    if (level === 'capability') return id;
+    // Unattached objects/documents/events never acquire a containing domain or area.
+    return ancestor(id, atLevel) ?? id;
   }
 
   const allRelations: EndpointRelation[] = model.relations.filter(relation => !isStructural(relation)).map(relation => ({
@@ -174,11 +188,8 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
   for (const item of model.nodes) {
     if (visible.has(item.id)) ensureNode(displayedId(item.id)).memberIds.push(item.id);
   }
-  if (full && options.level === 'domain') {
-    for (const item of model.nodes.filter(item => item.kind === 'domain' || item.kind === 'reference')) ensureNode(item.id);
-  }
-  if (full && options.level === 'universe') {
-    for (const item of model.nodes.filter(isUniverse)) ensureNode(item.id);
+  if (full && level !== 'capability') {
+    for (const item of model.nodes.filter(atLevel)) ensureNode(item.id);
   }
   if (!full && focus && isGrouping(focus) && !display.size) ensureNode(focus.id);
 

@@ -46,6 +46,7 @@ try {
   assert.deepEqual(api.nodes, disk.raw.nodes);
   assert.deepEqual(api.glossary, disk.raw.glossary);
   const nameOf = id => api.nodes.find(node => node.id === id).fields.name;
+  const publishedRoots = api.nodes.filter(node => !api.relations.some(relation => ['contains', 'presents'].includes(relation.type) && relation.target_id === node.id)).map(node => node.id);
   const waitHeading = name => page.getByRole('heading', { name, exact: true, level: 1 }).waitFor();
   const waitCards = async ids => {
     await page.waitForFunction(expected => JSON.stringify([...document.querySelectorAll('.business-card[data-node-id]')].map(node => node.dataset.nodeId).sort()) === JSON.stringify([...expected].sort()), ids);
@@ -77,7 +78,7 @@ try {
   if (!process.argv.includes('--interaction-only')) {
   await page.goto(base);
   await waitHeading('Urbanisation');
-  await waitCards(['universe-case', 'universe-supply']);
+  await waitCards(publishedRoots);
   assert.ok((await page.locator('.sidebar-bottom').innerText()).includes(`${api.nodes.length} éléments · ${api.nodes.filter(n => n.kind === 'capability').length} capacités`));
   assert.equal(await page.locator('#fa-version').getAttribute('data-version'), api.version);
   assert.equal(await page.locator('#fa-space').count(), 0);
@@ -88,13 +89,13 @@ try {
   await gotoNode('business-references');
   await waitCards(api.relations.filter(relation => relation.type === 'presents' && relation.source_id === 'business-references').map(relation => relation.target_id));
   assert.match(await page.locator('.eyebrow').innerText(), /Groupe de présentation/i);
-  for (const domain of api.nodes.filter(node => ['domain', 'reference'].includes(node.kind))) {
+  for (const domain of api.nodes.filter(node => ['domain', 'area', 'reference'].includes(node.kind))) {
     await gotoNode(domain.id, 'map');
     const expected = api.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === domain.id).map(relation => relation.target_id);
     await waitCards(expected);
     assert.deepEqual(await page.locator('.business-card h3').allTextContents(), expected.map(nameOf), domain.id);
   }
-  checks.push('all domain/reference maps match explicit published children');
+  checks.push('all domain/area/reference maps match explicit published children');
 
   for (const space of ['backlog', 'release', 'panorama-as-is']) {
     await page.goto(base + '/#' + new URLSearchParams({ space, node: 'D01', view: 'map' }));
@@ -104,7 +105,7 @@ try {
   }
   await page.goto(base + '/#node=transactional');
   await waitHeading('Urbanisation');
-  await waitCards(['universe-case', 'universe-supply']);
+  await waitCards(publishedRoots);
   checks.push('legacy spaces and navigation shells recover to Urbanisation');
   }
 
@@ -181,7 +182,7 @@ try {
   checks.push('published-only search without type or lifecycle filters / persisted current selection');
 
   await page.goto(base + '/#node=D04&scope=universe-supply&view=map');
-  await waitHeading('Supply');
+  await waitHeading(nameOf('universe-supply'));
   await waitCards(api.relations.filter(relation => ['contains', 'presents'].includes(relation.type) && relation.source_id === 'universe-supply').map(relation => relation.target_id));
   assert.equal(await page.locator('.view-selection').innerText(), 'Sélection : Order Management');
   await page.goto(base + '/#node=D04&scope=universe-supply&view=map&version=2026-09-13.2');

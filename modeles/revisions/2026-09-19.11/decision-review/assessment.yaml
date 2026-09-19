@@ -1,0 +1,659 @@
+schema_version: 1.0.0
+version: 2026-09-19.11
+review_sha256: c9337410b2ca58391a3aedd86e955345823deaa3786ce2e665d17a0de032c24e
+reviewer: Codex — réexamen explicite U510 des valeurs, responsabilités, rattachements et termes concernés par U507/U509
+items:
+- decision_id: ADOPT-033-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D09.d (D09, D09.d) examiné : extrémités et champs approuvés inchangés. L’ingestion reste rattachée
+    à sa référence externe. L’ajout de Visibility et d’Assortment ne modifie pas ce parent ; la distinction identité, offre
+    et accord est préservée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-035-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D11.a (D11, D11.a) examiné : extrémités et champs approuvés inchangés. L’ingestion reste rattachée
+    à sa référence externe. L’ajout de Visibility et d’Assortment ne modifie pas ce parent ; la distinction identité, offre
+    et accord est préservée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-037-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D12.a (D12, D12.a) examiné : extrémités et champs approuvés inchangés. L’ingestion reste rattachée
+    à sa référence externe. L’ajout de Visibility et d’Assortment ne modifie pas ce parent ; la distinction identité, offre
+    et accord est préservée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-039-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D08.d (D08, D08.d) examiné : extrémités et champs approuvés inchangés. L’ingestion reste rattachée
+    à sa référence externe. L’ajout de Visibility et d’Assortment ne modifie pas ce parent ; la distinction identité, offre
+    et accord est préservée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-041-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D13.a (D13, D13.a) examiné : extrémités et champs approuvés inchangés. L’ingestion reste rattachée
+    à sa référence externe. L’ajout de Visibility et d’Assortment ne modifie pas ce parent ; la distinction identité, offre
+    et accord est préservée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-043-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-GROUP-D09 (business-references, D09) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-044-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-GROUP-D11 (business-references, D11) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-045-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-GROUP-D08 (business-references, D08) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-046-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-GROUP-D12 (business-references, D12) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-047-LIFECYCLE-r2
+  action: retain
+  rationale: 'Lien REL-GROUP-D13 (business-references, D13) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U235-REL-MEMBER-D05.a-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D05.a (D05, D05.a) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U235-REL-MEMBER-D05.c-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D05.c (D05, D05.c) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-MEMBER-D07.a-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D07.a (D06, D07.a) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-MEMBER-D07.b-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D07.b (D06, D07.b) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-MEMBER-D07.c-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D07.c (D06, D07.c) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-MEMBER-D07.d-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D07.d (D06, D07.d) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-GROUP-D14-r1
+  action: retain
+  rationale: 'Lien REL-GROUP-D14 (business-references, D14) examiné : extrémités et champs approuvés inchangés. U507 confirme
+    les références distinctes sous Authoritative Data devenu Area ; U509 en ajoute une sans déplacer celles-ci. Le lien presents
+    demeure une présentation de références, sans fusion de leurs responsabilités. Reprise limitée aux champs historiques listés
+    ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U248-transcription-REL-MEMBER-D06.f-r1
+  action: retain
+  rationale: 'Lien REL-MEMBER-D06.f (D06, D06.f) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.i-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.i (D04, D04.i) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.j-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.j (D04, D04.j) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.k-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.k (D04, D04.k) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.l-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.l (D04, D04.l) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.m-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.m (D04, D04.m) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.o-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.o (D04, D04.o) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.a-r2
+  action: retain
+  rationale: 'Lien REL-INVENTORY-PLANNING-D05.a (D05.f, D05.a) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.c-r2
+  action: retain
+  rationale: 'Lien REL-INVENTORY-PLANNING-D05.c (D05.f, D05.c) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV001-r1
+  action: retain
+  rationale: 'Lien REL-ATP-BHV001 (D03.i, BHV001) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV002-r1
+  action: retain
+  rationale: 'Lien REL-ATP-BHV002 (D03.i, BHV002) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV003-r1
+  action: retain
+  rationale: 'Lien REL-ATP-BHV003 (D03.i, BHV003) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV004-r1
+  action: retain
+  rationale: 'Lien REL-ATP-BHV004 (D03.i, BHV004) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV024-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV024 (D05.c, BHV024) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV025-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV025 (D05.c, BHV025) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV026-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV026 (D05.a, BHV026) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV027-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV027 (D05.a, BHV027) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV028-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV028 (D05.a, BHV028) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D05.h-r1
+  action: retain
+  rationale: 'Lien REL-MEMBER-D05.h (D05, D05.h) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV032-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV032 (D05.h, BHV032) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV033-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV033 (D05.h, BHV033) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV034-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV034 (D05.h, BHV034) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV035-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV035 (D05.h, BHV035) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV050-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV050 (D04.l, BHV050) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV051-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV051 (D04.l, BHV051) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV052-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV052 (D04.l, BHV052) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV053-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV053 (D04.l, BHV053) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV054-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV054 (D04.l, BHV054) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV055-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV055 (D04.m, BHV055) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV056-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV056 (D04.m, BHV056) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV057-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV057 (D04.m, BHV057) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV058-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV058 (D04.j, BHV058) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV059-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV059 (D04.j, BHV059) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV060-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV060 (D04.j, BHV060) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.r-r1
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.r (D04, D04.r) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D01.h-r1
+  action: retain
+  rationale: 'Lien REL-MEMBER-D01.h (D01, D01.h) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV061-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV061 (D04.r, BHV061) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV062-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV062 (D04.r, BHV062) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV063-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV063 (D01.h, BHV063) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV064-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV064 (D01.h, BHV064) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV065-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV065 (D01.h, BHV065) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV066-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV066 (D04.i, BHV066) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV067-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV067 (D04.i, BHV067) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV068-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV068 (D04.i, BHV068) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV069-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV069 (D04.i, BHV069) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV070-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV070 (D04.k, BHV070) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV071-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV071 (D04.k, BHV071) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV072-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV072 (D04.k, BHV072) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV073-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV073 (D04.k, BHV073) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV074-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV074 (D04.k, BHV074) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV078-r1
+  action: retain
+  rationale: 'Lien REL-BEHAVIOR-BHV078 (D04.j, BHV078) examiné : extrémités et champs approuvés inchangés. Les responsabilités
+    opérationnelles et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables
+    sans déplacer commandes, décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D02.e-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D02.e (D03, D02.e) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.i-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.i (D15, D03.i) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.j-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.j (D15, D03.j) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.k-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.k (D15, D03.k) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.l-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.l (D15, D03.l) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.m-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.m (D03, D03.m) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.n-r3
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.n (D04, D04.n) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.n-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.n (D15, D03.n) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.q-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.q (D04, D04.q) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.o-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.o (D03, D03.o) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.p-r2
+  action: retain
+  rationale: 'Lien REL-MEMBER-D03.p (D03, D03.p) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-REASSESS-d0cbc76a42168d0482a1783d
+  action: retain
+  rationale: Party / Role continue à identifier les personnes et leurs rôles métier, avec une maîtrise externe. Les noms et
+    mastership historiques gardent leur sens ; la définition reformulée relève de l’accord U507 enregistré séparément. Aucun
+    droit applicatif ni maîtrise locale ajouté. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire
+    par U510.
+- decision_id: ADOPT-REASSESS-780c57530587168b49f2dfa8
+  action: retain
+  rationale: Fulfillment Network garde son identité et son autonomie métier. Party / Role ne reprend pas les lieux ; le rattachement
+    à Authoritative Data devenu Area et la consultation ajoutée ne changent pas les champs adoptés. Reprise limitée aux champs
+    historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-85f90a900c43ef52e90af4bb
+  action: retain
+  rationale: Agreement reste la projection externe des conditions et engagements convenus. Son nom et sa maîtrise externe
+    restent valables ; le lien facultatif avec Assortment ne transforme pas chaque accord en composition Contract + Assortment.
+    Les descriptions modifiées ne sont pas reprises par cet accord. Reprise limitée aux champs historiques listés ; aucun
+    accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-d74bfad32f8ff428e6203c13
+  action: retain_partial
+  approved_fields:
+  - mastership
+  rationale: 'Reprendre uniquement mastership external : la maîtrise de l’offre demeure externe. Ne pas reprendre le nom Catalog
+    modifié ; Product Catalog bénéficie de la décision U509 distincte. La sélection Assortment reste une référence distincte.
+    Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-REASSESS-34053821ee4db79dbeef15c6
+  action: retain
+  rationale: Les seuls champs historiques de D04.l restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-4b9530c0e703582a74eecd1b
+  action: retain
+  rationale: Les seuls champs historiques de D04.m restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-6330299de6ea0bf63e22fa67
+  action: retain
+  rationale: Les seuls champs historiques de D05.a restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-e42b6e7494cdb3bcb36b41ed
+  action: retain
+  rationale: Les seuls champs historiques de D05.h restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-7f4a85421fca21f718ed0cfa
+  action: retain
+  rationale: Les seuls champs historiques de D04.i restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-ca3a42f53d2d42081cb9e1e3
+  action: retain
+  rationale: Les seuls champs historiques de D05.c restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-e171d00d192c58a54d03344c
+  action: retain
+  rationale: Les seuls champs historiques de D06 restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-989a11aaaca7512a8331819e
+  action: retain
+  rationale: Supply Assignment conserve l’affectation opérationnelle des ressources aux commandes. Assortment est une sélection
+    de référence et ne reprend ni l’affectation, ni ses analyses et simulations ; le nom adopté garde son sens. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-75d45622ef7e16393aeabefb
+  action: retain
+  rationale: ATP continue à établir une solution réalisable dans la situation de référence. Ni la lecture d’un assortiment
+    ni celle d’un accord ne remplace ce calcul ; finalité, nom et nature restent de même portée. Reprise limitée aux champs
+    historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-dd477ab96fe16a54dabb20a9
+  action: retain
+  rationale: Les champs adoptés de décision de promesse restent identiques. Les références reçues enrichissent le contexte
+    applicable sans transférer la décision à Authoritative Data ; aucune disponibilité déduite du catalogue ou de l’assortiment.
+    Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-bd98e93177a9cfb3ba1157b5
+  action: retain
+  rationale: Les champs adoptés de décision de promesse restent identiques. Les références reçues ne changent ni la responsabilité
+    d’établissement de la promesse ni ses calculs ; aucune nouvelle validation des descriptions. Reprise limitée aux champs
+    historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-7dc21aadbf74546409c527c3
+  action: retain
+  rationale: Le nom et la définition adoptés de cette décision de promesse restent identiques. La sélection de référence et
+    l’engagement contractuel demeurent des entrées distinctes de la promesse opérationnelle. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-df8ad7d5056e9b77cab15949
+  action: retain
+  rationale: Les seuls champs historiques de D06.b restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-47b54717df6c019feb60c3be
+  action: retain
+  rationale: Supply Chain Orchestration conserve son périmètre de domaine métier et la distinction Domain / Area. Les inspirations
+    sur ce niveau restent inchangées ; la source de vérité locale structurée en Area et la référence Assortment ne changent
+    ni ce nom ni le positionnement méthodologique adopté. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire
+    par U510.
+- decision_id: ADOPT-U482-SUPPLY-INSPIRATION-LEVEL
+  action: retain
+  rationale: Supply Chain Orchestration conserve son périmètre de domaine métier et la distinction Domain / Area. Les inspirations
+    sur ce niveau restent inchangées ; la source de vérité locale structurée en Area et la référence Assortment ne changent
+    ni ce nom ni le positionnement méthodologique adopté. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire
+    par U510.
+- decision_id: ADOPT-REASSESS-ad2c7a93f5aceff1d8887aac
+  action: retain
+  rationale: Authoritative Data conserve la fonction de source de vérité locale Supply. Son passage de groupe à Area relève
+    de U507 ; Assortment est ajouté par U509. Le nom déjà adopté reste pertinent, sans accord implicite sur toute la nouvelle
+    définition. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-f2e95f211883f53f6ba202d2
+  action: retain
+  rationale: Les seuls champs historiques de D04.j restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-ea3d693804bc6edb8b2df947
+  action: retain
+  rationale: Transfer reste une demande de transfert pouvant être initiée en interne ou en externe. Aucun effet de la clarification
+    des référentiels sur son nom ou les origines déjà adoptées. Reprise limitée aux champs historiques listés ; aucun accord
+    supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-96e20fd42b70a544549e9e69
+  action: retain
+  rationale: Les seuls champs historiques de D07.a restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-a32a0f439363e56e46d92dd8
+  action: retain
+  rationale: 'Order Promising conserve sa finalité et son nom : élaborer et tenir les promesses. Les références enrichies
+    fournissent des conditions, sans reprendre la décision ou la promesse opérationnelle. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-REASSESS-c94f4960b313e130ce74c772
+  action: retain
+  rationale: Les seuls champs historiques de D04.r restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-6f402fe866f4891301dd1d6d
+  action: retain
+  rationale: Les seuls champs historiques de D01.h restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-REASSESS-b2177464d8aeb6d1f400aa40
+  action: retain
+  rationale: Les seuls champs historiques de D06.e restent inchangés. Le périmètre opérationnel et son parent sont conservés
+    ; Authoritative Data met à disposition les références externes sans reprendre cette activité, ses décisions ou engagements.
+    L’ajout d’Assortment n’introduit aucune disponibilité de stock, réservation ou promesse implicite. Reprise limitée aux
+    champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-U496-SERVICE-REQUESTS
+  action: retain
+  rationale: Service Requests reste le périmètre des demandes qui activent le domaine, internes ou externes. La référence
+    d’assortiment ne devient ni une demande ni une commande ; le nom et la définition adoptés gardent leur sens. Reprise limitée
+    aux champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-U497-BACKING-SERVICE-ORDERS
+  action: retain
+  rationale: Backing Service Orders garde la demande adressée aux services d’exécution. Service Catalog Visibility consulte
+    une référence et ne porte ni la demande ni sa disponibilité réelle ; les champs historiques conservés restent dans leur
+    portée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-U501-TRANSFER-ORIGINS
+  action: retain
+  rationale: Transfer reste une demande de transfert pouvant être initiée en interne ou en externe. Aucun effet de la clarification
+    des référentiels sur son nom ou les origines déjà adoptées. Reprise limitée aux champs historiques listés ; aucun accord
+    supplémentaire par U510.
+- decision_id: ADOPT-U501-REL-MEMBER-D04.s
+  action: retain
+  rationale: 'Lien REL-MEMBER-D04.s (D04, D04.s) examiné : extrémités et champs approuvés inchangés. Les responsabilités opérationnelles
+    et leurs parents restent inchangés. Le contexte Authoritative Data précise les références applicables sans déplacer commandes,
+    décisions, stock, engagement ou exécution. Aucune qualification nouvelle adoptée. Reprise limitée aux champs historiques
+    listés ; aucun accord supplémentaire par U510.'
+- decision_id: ADOPT-U502-HISTORICAL-SUBSCOPE-D14
+  action: retain
+  rationale: Service Catalog conserve le répertoire des backing services et leur description de référence. Visibility ne confirme
+    pas une disponibilité réelle ; nom historique repris seul, sans étendre aux détails proposés. Reprise limitée aux champs
+    historiques listés ; aucun accord supplémentaire par U510.
+- decision_id: ADOPT-U502-HISTORICAL-SUBSCOPE-D07.b
+  action: retain
+  rationale: Backing Service Orders garde la demande adressée aux services d’exécution. Service Catalog Visibility consulte
+    une référence et ne porte ni la demande ni sa disponibilité réelle ; les champs historiques conservés restent dans leur
+    portée. Reprise limitée aux champs historiques listés ; aucun accord supplémentaire par U510.

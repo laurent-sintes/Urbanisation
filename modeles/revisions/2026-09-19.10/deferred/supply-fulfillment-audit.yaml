@@ -1,0 +1,1101 @@
+id: SUPPLY-FULFILLMENT-AUDIT-U366-U367
+status: audit_completed_renames_proposed
+source_refs:
+- U366
+- U367
+- ELM225
+- CMP136
+- U368
+- ELM226
+- CMP137
+- U369
+- ELM227
+- CMP138
+- U370
+- C100
+- U371
+- U372
+- U373
+- U374
+- C101
+- U378
+baseline:
+  modeles/backlog/model.yaml: e90389703d7c3ee65e5c65af829ceefbd02db2db22f4a1fe2d18c0dc41066c94
+  modeles/backlog/glossary.yaml: 56c70e33bd492c4f197a83a112b960bb4529b66d96b3c4a2117093dd02106fb4
+  modeles/backlog/modeling-glossary.yaml: 0060829439f1a3572e124da558ab9cb22ca921e184af872d9ba8b4528e873cdc
+  modeles/release/index.json: 134ef04233d208b10c56be58f3c27cc3332fb1fee1af29b02f57b663e0f40766
+inventory_path: audits/2026-09-18-supply-fulfillment/inventory.yaml
+stats:
+  nodes: 99
+  capabilities: 38
+  behaviors: 43
+  model_names_supply: 8
+  model_names_fulfillment: 2
+  strings_by_category:
+    context_metadata: 10
+    identifier_or_provenance: 18
+    current_business_text: 81
+    market_reference: 120
+    validation_or_history: 6
+  current_model_nodes_with_terms: 37
+conclusion: Pas de remplacement global. Supply ressources, Supply fonction locale, Supply Chain système et Fulfillment finalité/processus
+  sont distincts. D03 est le candidat prioritaire à examiner.
+sources:
+- id: SF01
+  vendor: Microsoft
+  product: Dynamics 365 Business Central
+  title: Balancing supply and demand
+  url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  edition: Documentation évolutive
+  consulted_on: '2026-09-18'
+  passage: Supply and demand ; Process orders ; Priorities on the supply side
+  fact: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts entrants
+    et retours clients. Supply orders alimente ce côté du bilan.'
+  limit: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF02
+  vendor: CSCMP
+  product: Définitions professionnelles
+  title: SCM Definitions and Glossary of Terms
+  url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  edition: Page de référence sans édition affichée
+  consulted_on: '2026-09-18'
+  passage: Definitions of Supply Chain Management ; Logistics Management
+  fact: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment figure
+    parmi les activités logistiques.
+  limit: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie de capacités
+    FLOW.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF03
+  vendor: ASCM
+  product: Ressource professionnelle
+  title: What is supply chain logistics?
+  url: https://www.ascm.org/topics/logistics/
+  edition: Page évolutive
+  consulted_on: '2026-09-18'
+  passage: Supply chain vs logistics ; Order processing and fulfillment
+  fact: La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation des commandes.
+  limit: Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques FLOW.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF04
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  title: Intelligent Fulfillment Optimization
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  edition: Documentation évolutive
+  consulted_on: '2026-09-18'
+  passage: Fulfillment sources ; Business constraints ; Fulfillment strategies
+  fact: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes groupées
+    et restitution d’un plan.
+  limit: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence complète
+    à D03 ni solveur universel multiobjectif démontré.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF05
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  title: Store order fulfillment
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview
+  edition: Documentation évolutive
+  consulted_on: '2026-09-18'
+  passage: Introduction ; Pick ; Pack ; Pick up ; Shipping
+  fact: Fulfillment inclut des opérations effectives de préparation et remise ou expédition des commandes.
+  limit: Le produit décrit l’exécution magasin ; FLOW distingue pilotage et opérations internes des exécutants.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF06
+  vendor: SAP
+  product: S/4HANA aATP
+  title: Backorder Processing — Supply Assignment
+  url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  edition: 2025 FPS01 (Feb 2026)
+  consulted_on: '2026-09-18'
+  passage: Supply Selection ; Assignment ; Reassignment
+  fact: Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+  limit: Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF07
+  vendor: SAP
+  product: S/4HANA Cloud
+  title: Supply Protection (SUP)
+  url: https://help.sap.com/docs/PRODUCT_ID/32da8359c8ee4e8b8e8c5e15cacba5aa/c4b704762cbd4611a3ee2dc00c7a7277.html?locale=en-US&state=PRODUCTION&version=2602.500
+  edition: 2602, version URL 2602.500
+  consulted_on: '2026-09-18'
+  passage: Use
+  fact: Protection de quantités pour des groupes face aux demandes concurrentes.
+  limit: Plus étroit que Supply Protection FLOW qui inclut aussi tampon et régulation des apports.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF08
+  vendor: Microsoft
+  product: Dynamics 365 SCM — Inventory Visibility
+  title: Inventory allocation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  edition: Documentation évolutive
+  consulted_on: '2026-09-18'
+  passage: Business background ; Allocation definition
+  fact: Droits de groupes et contrôle de surconsommation avant les commandes ; distincts de la réservation liée aux ventes.
+  limit: Appui à deux mécanismes de protection, pas équivalence avec toute la capacité FLOW.
+  evidence: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation Beaumanoir
+    déduite.
+- id: SF09
+  vendor: SAP
+  product: Forecasting and Replenishment
+  title: Supply Network
+  url: https://help.sap.com/docs/SAP_SUPPLY_CHAIN_MANAGEMENT/35d41850ef1d4618a0ce6ffa921e8d6d/01b4c7ac10a64d7791560ac37235fe46.html?locale=en-US&state=PRODUCTION&version=7.0.4
+  edition: 7.0 EHP4
+  consulted_on: '2026-09-18'
+  passage: Definition ; Use ; Integration
+  fact: Réseau de liaisons décrivant quels produits peuvent être livrés entre quels lieux, y compris sources internes et fournisseurs
+    externes.
+  limit: 'Référence SAP F&R historique : appui lexical et de périmètre, pas équivalence complète de schéma ou preuve de couverture
+    native de tous les retours FLOW.'
+  evidence: Passage primaire indexé consulté.
+findings:
+- id: SF-A01
+  target_ids:
+  - universe-supply
+  - TER035
+  status: name_adopted_applied_U373
+  priority: P1
+  recommendation: Supply Chain Orchestration adopté U373 et appliqué à universe-supply. TER035 conserve son sens historique
+    local ; aucune extension au SCM complet.
+  candidate_name: Supply Chain Orchestration
+  reason: Nom de responsabilité transverse, indépendant du périmètre commercial des OMS ; maîtres et planification globale
+    externes.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local
+      ne signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile
+      après arbitrage.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment
+      figure parmi les activités logistiques.
+    differences: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie
+      de capacités FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page de référence sans édition affichée
+    source_locator: Definitions of Supply Chain Management ; Logistics Management
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local
+      ne signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile
+      après arbitrage.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: ASCM
+    product: Ressource professionnelle
+    element_name: What is supply chain logistics?
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation
+      des commandes.
+    differences: Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques
+      FLOW.
+    source_title: What is supply chain logistics?
+    source_url: https://www.ascm.org/topics/logistics/
+    source_version: Page évolutive
+    source_locator: Supply chain vs logistics ; Order processing and fulfillment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le périmètre englobe stock, optimisation des niveaux, achats, retours et référentiels. Le libellé local
+      ne signifie ni seulement offre de ressources, ni toute la Supply Chain. Réécrire sa définition circulaire serait utile
+      après arbitrage.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Définition professionnelle ou périmètre de produit
+    relationship: Appui sémantique
+    similarities: SCM couvre planification, approvisionnement, transformation, logistique et coordination entre partenaires.
+    differences: Périmètre professionnel plus large que le catalogue FLOW ; les fonctions coordonnées ne deviennent pas automatiquement
+      des domaines FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page évolutive consultée le 18 septembre 2026
+    source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+    consulted_on: '2026-09-18'
+    evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+    flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+      implicite.
+    status: proposed
+    source_refs:
+    - U369
+    - ELM227
+    - CMP138
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Welcome to Dynamics 365 Supply Chain Management
+    element_type: Définition professionnelle ou périmètre de produit
+    relationship: Appui sémantique
+    similarities: Le produit regroupe notamment stocks, planification, achats, production, entrepôt et transport.
+    differences: Catalogue produit et non modèle normatif de capacités ; aucune importation des modules ni équivalence complète
+      avec FLOW.
+    source_title: Welcome to Dynamics 365 Supply Chain Management
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+    source_version: Page évolutive consultée le 18 septembre 2026
+    source_locator: Core concepts and tasks
+    consulted_on: '2026-09-18'
+    evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+    flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+      implicite.
+    status: proposed
+    source_refs:
+    - U369
+    - ELM227
+    - CMP138
+- id: SF-A02
+  target_ids:
+  - D03
+  status: name_adopted_U369_applied_U378
+  priority: P1
+  recommendation: Fulfillment Optimization est appliqué à D03 ; Fulfillment Plan Decision intégrée selon U378. Autres détails
+    de périmètre non adoptés globalement.
+  candidate_name: Fulfillment Optimization
+  reason: Le domaine vise la meilleure satisfaction et contient déjà ATP/CTP/PTP, priorités, échéancier, promesses et Supply
+    Assignment. Fulfillment Optimization exprime mieux cette finalité que Order Promising seul ; conserver promesse et application
+    des affectations, sans absorber D05 ni D06. Ce choix est une adaptation FLOW, pas une équivalence de module.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Intelligent Order Management
+    element_name: Intelligent Fulfillment Optimization
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes
+      groupées et restitution d’un plan.
+    differences: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence
+      complète à D03 ni solveur universel multiobjectif démontré.
+    source_title: Intelligent Fulfillment Optimization
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+    source_version: Documentation évolutive
+    source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le domaine vise la meilleure satisfaction et contient déjà ATP/CTP/PTP, priorités, échéancier, promesses
+      et Supply Assignment. Fulfillment Optimization exprime mieux cette finalité que Order Promising seul ; conserver promesse
+      et application des affectations, sans absorber D05 ni D06. Ce choix est une adaptation FLOW, pas une équivalence de
+      module.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: SAP
+    product: S/4HANA aATP
+    element_name: Backorder Processing — Supply Assignment
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+    differences: Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+    source_title: Backorder Processing — Supply Assignment
+    source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_version: 2025 FPS01 (Feb 2026)
+    source_locator: Supply Selection ; Assignment ; Reassignment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le domaine vise la meilleure satisfaction et contient déjà ATP/CTP/PTP, priorités, échéancier, promesses
+      et Supply Assignment. Fulfillment Optimization exprime mieux cette finalité que Order Promising seul ; conserver promesse
+      et application des affectations, sans absorber D05 ni D06. Ce choix est une adaptation FLOW, pas une équivalence de
+      module.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  adoption_U369:
+    field: name
+    value: Fulfillment Optimization
+    value_sha256: 1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062
+    source_refs:
+    - U369
+    scope: Nom uniquement ; définitions et extensions détaillées non adoptées globalement.
+- id: SF-A03
+  target_ids:
+  - D02.e
+  - BHV045
+  - BHV046
+  - BHV047
+  - TER078
+  status: proposed
+  priority: P1
+  recommendation: Conserver les noms Assignment actuels ; écarter le remplacement par Fulfillment Optimization.
+  candidate_name: null
+  reason: Supply désigne ici la ressource affectée ; Assignment décrit le résultat transactionnel. Fulfillment Optimization
+    déplacerait une action vers le calcul et masquerait la frontière avec les décisions. Fulfillment Assignment n’a pas de
+    consensus établi dans les références examinées.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Supply désigne ici la ressource affectée ; Assignment décrit le résultat transactionnel. Fulfillment Optimization
+      déplacerait une action vers le calcul et masquerait la frontière avec les décisions. Fulfillment Assignment n’a pas
+      de consensus établi dans les références examinées.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: SAP
+    product: S/4HANA aATP
+    element_name: Backorder Processing — Supply Assignment
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+    differences: Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+    source_title: Backorder Processing — Supply Assignment
+    source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_version: 2025 FPS01 (Feb 2026)
+    source_locator: Supply Selection ; Assignment ; Reassignment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Supply désigne ici la ressource affectée ; Assignment décrit le résultat transactionnel. Fulfillment Optimization
+      déplacerait une action vers le calcul et masquerait la frontière avec les décisions. Fulfillment Assignment n’a pas
+      de consensus établi dans les références examinées.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A04
+  target_ids:
+  - D02.b
+  - BHV017
+  status: proposed
+  priority: P1
+  recommendation: Conserver Supply Protection et Group Supply Protection dans cet audit.
+  candidate_name: null
+  reason: La protection agit sur l’accès aux ressources, leur consommation, les tampons et les apports, y compris avant toute
+    commande. Fulfillment Protection suggérerait une garantie de satisfaction plus large. Le périmètre FLOW dépasse SAP SUP
+    ; cette différence doit rester explicite.
+  market_comparisons:
+  - vendor: SAP
+    product: S/4HANA Cloud
+    element_name: Supply Protection (SUP)
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Protection de quantités pour des groupes face aux demandes concurrentes.
+    differences: Plus étroit que Supply Protection FLOW qui inclut aussi tampon et régulation des apports.
+    source_title: Supply Protection (SUP)
+    source_url: https://help.sap.com/docs/PRODUCT_ID/32da8359c8ee4e8b8e8c5e15cacba5aa/c4b704762cbd4611a3ee2dc00c7a7277.html?locale=en-US&state=PRODUCTION&version=2602.500
+    source_version: 2602, version URL 2602.500
+    source_locator: Use
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: La protection agit sur l’accès aux ressources, leur consommation, les tampons et les apports, y compris
+      avant toute commande. Fulfillment Protection suggérerait une garantie de satisfaction plus large. Le périmètre FLOW
+      dépasse SAP SUP ; cette différence doit rester explicite.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: Microsoft
+    product: Dynamics 365 SCM — Inventory Visibility
+    element_name: Inventory allocation
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Droits de groupes et contrôle de surconsommation avant les commandes ; distincts de la réservation liée
+      aux ventes.
+    differences: Appui à deux mécanismes de protection, pas équivalence avec toute la capacité FLOW.
+    source_title: Inventory allocation
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+    source_version: Documentation évolutive
+    source_locator: Business background ; Allocation definition
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: La protection agit sur l’accès aux ressources, leur consommation, les tampons et les apports, y compris
+      avant toute commande. Fulfillment Protection suggérerait une garantie de satisfaction plus large. Le périmètre FLOW
+      dépasse SAP SUP ; cette différence doit rester explicite.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A05
+  target_ids:
+  - BHV004
+  status: proposed
+  priority: P2
+  recommendation: Conserver Future Supply Projection.
+  candidate_name: null
+  reason: Projection intégrant les ressources attendues, pas projection d’un accomplissement de commande. Future Fulfillment
+    Projection changerait le résultat métier.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Projection intégrant les ressources attendues, pas projection d’un accomplissement de commande. Future
+      Fulfillment Projection changerait le résultat métier.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: SAP
+    product: S/4HANA aATP
+    element_name: Backorder Processing — Supply Assignment
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+    differences: Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+    source_title: Backorder Processing — Supply Assignment
+    source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_version: 2025 FPS01 (Feb 2026)
+    source_locator: Supply Selection ; Assignment ; Reassignment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Projection intégrant les ressources attendues, pas projection d’un accomplissement de commande. Future
+      Fulfillment Projection changerait le résultat métier.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A06
+  target_ids:
+  - D13
+  - D13.a
+  - TER054
+  status: name_adopted_U369_pending_application
+  priority: P1
+  recommendation: Recommander Supply Network pour D13/TER054 et Supply Network Ingestion pour D13.a ; renommages à valider.
+  candidate_name: Supply Network
+  reason: Le référentiel représente les lieux et liaisons possibles du réseau partagé par plusieurs finalités, pas un réseau
+    calculé pour un plan de satisfaction. Supply Network est plus adapté à cette lecture structurelle. Fulfillment Network
+    reste une lecture possible des mêmes lieux au service des commandes ; Microsoft inclut aussi des fournisseurs parmi ses
+    fulfillment sources.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Intelligent Order Management
+    element_name: Intelligent Fulfillment Optimization
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes
+      groupées et restitution d’un plan.
+    differences: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence
+      complète à D03 ni solveur universel multiobjectif démontré.
+    source_title: Intelligent Fulfillment Optimization
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+    source_version: Documentation évolutive
+    source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Microsoft emploie supply network pour le réseau d’ensemble et fulfillment sources pour les lieux mobilisables,
+      dont fournisseurs en dropship. Cela appuie deux angles de lecture, sans opposition stricte amont/aval ni catalogue de
+      réseau universel.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: SAP
+    product: Forecasting and Replenishment
+    element_name: Supply Network
+    element_type: Données maîtresses de réseau
+    relationship: Recouvrement partiel
+    similarities: Réseau de liaisons décrivant quels produits peuvent être livrés entre quels lieux, y compris sources internes
+      et fournisseurs externes.
+    differences: 'Référence SAP F&R historique : appui lexical et de périmètre, pas équivalence complète de schéma ou preuve
+      de couverture native de tous les retours FLOW.'
+    source_title: Supply Network
+    source_url: https://help.sap.com/docs/SAP_SUPPLY_CHAIN_MANAGEMENT/35d41850ef1d4618a0ce6ffa921e8d6d/01b4c7ac10a64d7791560ac37235fe46.html?locale=en-US&state=PRODUCTION&version=7.0.4
+    source_version: 7.0 EHP4
+    source_locator: Definition ; Use ; Integration
+    consulted_on: '2026-09-18'
+    evidence_limits: Passage primaire indexé consulté.
+    flow_position: 'U368 : Supply Network recommandé pour la représentation de référence des lieux et liaisons ; projection
+      de maîtres externes. Ni stocks, ni charge effective, ni trajet choisi, ni catalogue de services absorbés.'
+    status: proposed
+    source_refs:
+    - U368
+    - ELM226
+    - CMP137
+  review_source_refs:
+  - U368
+  - ELM226
+  - CMP137
+  adoption_U369:
+    field: name
+    value: Supply Network
+    value_sha256: e5999c571be3226a21a03cb223dc15795c7eef5e32bf19bb069fd98dad4d0b97
+    source_refs:
+    - U369
+    scope: Nom uniquement ; définitions et extensions détaillées non adoptées globalement.
+- id: SF-A07
+  target_ids:
+  - TER065
+  - D04
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  status: proposed
+  priority: P1
+  recommendation: Réexaminer Supply Order ; préférer Order qualifié par son type dans le contexte déjà défini.
+  candidate_name: Order
+  reason: 'Collision sémantique : FLOW regroupe les Orders traités, alors que supply order chez Microsoft désigne un apport
+    au bilan ressources. Ne pas substituer Fulfillment Order qui pourrait être compris comme un ordre de réalisation. Le maintien
+    ou retrait du terme local demande un arbitrage, sans renommer ses types.'
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: 'Collision sémantique : FLOW regroupe les Orders traités, alors que supply order chez Microsoft désigne
+      un apport au bilan ressources. Ne pas substituer Fulfillment Order qui pourrait être compris comme un ordre de réalisation.
+      Le maintien ou retrait du terme local demande un arbitrage, sans renommer ses types.'
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A08
+  target_ids:
+  - D03.n
+  - BHV021
+  - D06
+  - D06.b
+  - D07.a
+  - D06.e
+  - D06.f
+  status: proposed
+  priority: P2
+  recommendation: Clarifier les compléments français selon le résultat, sans renommage général.
+  candidate_name: null
+  reason: 'Promesse de satisfaction de la commande, ressources présentes ou attendues, prestations nécessaires à la réalisation
+    : ces formulations précisent le sens. Execution Management reste distinct de la réalisation des exécutants, et couvre
+    aussi les services numériques.'
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Commerce
+    element_name: Store order fulfillment
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Fulfillment inclut des opérations effectives de préparation et remise ou expédition des commandes.
+    differences: Le produit décrit l’exécution magasin ; FLOW distingue pilotage et opérations internes des exécutants.
+    source_title: Store order fulfillment
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview
+    source_version: Documentation évolutive
+    source_locator: Introduction ; Pick ; Pack ; Pick up ; Shipping
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: 'Promesse de satisfaction de la commande, ressources présentes ou attendues, prestations nécessaires à
+      la réalisation : ces formulations précisent le sens. Execution Management reste distinct de la réalisation des exécutants,
+      et couvre aussi les services numériques.'
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: Microsoft
+    product: Dynamics 365 Intelligent Order Management
+    element_name: Intelligent Fulfillment Optimization
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes
+      groupées et restitution d’un plan.
+    differences: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence
+      complète à D03 ni solveur universel multiobjectif démontré.
+    source_title: Intelligent Fulfillment Optimization
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+    source_version: Documentation évolutive
+    source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: 'Promesse de satisfaction de la commande, ressources présentes ou attendues, prestations nécessaires à
+      la réalisation : ces formulations précisent le sens. Execution Management reste distinct de la réalisation des exécutants,
+      et couvre aussi les services numériques.'
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A09
+  target_ids:
+  - D01
+  - D05
+  - D04
+  - D08
+  - D14
+  status: proposed
+  priority: P2
+  recommendation: Conserver les finalités Inventory, Order et Execution Service ; ne pas tout préfixer Fulfillment.
+  candidate_name: null
+  reason: Stocks à préparer et optimiser, contenu des Orders et références sont des moyens et responsabilités partagés. Leur
+    contribution à la satisfaction ne suffit pas à les rebaptiser.
+  market_comparisons:
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment
+      figure parmi les activités logistiques.
+    differences: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie
+      de capacités FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page de référence sans édition affichée
+    source_locator: Definitions of Supply Chain Management ; Logistics Management
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Stocks à préparer et optimiser, contenu des Orders et références sont des moyens et responsabilités partagés.
+      Leur contribution à la satisfaction ne suffit pas à les rebaptiser.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: ASCM
+    product: Ressource professionnelle
+    element_name: What is supply chain logistics?
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation
+      des commandes.
+    differences: Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques
+      FLOW.
+    source_title: What is supply chain logistics?
+    source_url: https://www.ascm.org/topics/logistics/
+    source_version: Page évolutive
+    source_locator: Supply chain vs logistics ; Order processing and fulfillment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Stocks à préparer et optimiser, contenu des Orders et références sont des moyens et responsabilités partagés.
+      Leur contribution à la satisfaction ne suffit pas à les rebaptiser.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: SF-A10
+  target_ids:
+  - proposal:Fulfillment Strategy Decision
+  status: proposed
+  priority: P2
+  recommendation: Maintenir la proposition U365 à discuter, sans la compter comme capacité existante.
+  candidate_name: null
+  reason: Choisir le cadre de satisfaction reste distinct du calcul ATP et de l’application. Le nom reprend Fulfillment strategies
+    Microsoft à la maille décisionnelle FLOW ; pas de consensus de catalogue revendiqué.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Intelligent Order Management
+    element_name: Intelligent Fulfillment Optimization
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Stratégies de satisfaction associant sources, objectifs et contraintes ; optimisation possible de commandes
+      groupées et restitution d’un plan.
+    differences: Service logiciel, plus large qu’une décision de cadre. Objectif de proximité documenté ; aucune équivalence
+      complète à D03 ni solveur universel multiobjectif démontré.
+    source_title: Intelligent Fulfillment Optimization
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+    source_version: Documentation évolutive
+    source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Choisir le cadre de satisfaction reste distinct du calcul ATP et de l’application. Le nom reprend Fulfillment
+      strategies Microsoft à la maille décisionnelle FLOW ; pas de consensus de catalogue revendiqué.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+glossary_change:
+  added:
+  - TER083
+  - TER084
+  - TER085
+  clarified:
+  - TER035
+  preserved_fields:
+  - TER035.name
+  - TER035.definition
+  - TER035.short_description
+  status: editorial_definitions_added_as_requested
+action_plan:
+  completed:
+  - Inventaire local exhaustif des occurrences des trois YAML courants
+  - Comparaison ciblée et propositions par élément
+  - Glossaire métier clarifié, ancien sens fonctionnel préservé
+  requires_joint_validation:
+  - Maintien ou remplacement de Supply Order
+  no_rename_recommended:
+  - D02.e et ses trois comportements
+  - D02.b et BHV017
+  - BHV004
+  - D01/D04/D05/D06 par remplacement mécanique
+  adopted_pending_application:
+  - 'D13 : Supply Network ; adoption U369, application au référentiel encore à réaliser.'
+implementation_impact:
+- Préserver les identifiants, notamment universe-supply et D02.e ; les libellés peuvent évoluer sans migration d’identité.
+- Un renommage validé implique modèle, liens textuels, glossaire, conventions, correspondances, nouveaux accords de champs,
+  vues dérivées et icônes par nom.
+- app/src/icons.tsx contient les correspondances de noms ; certaines sont historiques et ne prouvent pas un nœud courant.
+- Ne pas modifier citations, noms de produits, URLs, archives, empreintes ni publications. Atlas suit uniquement une nouvelle
+  release demandée.
+network_review_U368:
+  source_refs:
+  - U368
+  - ELM226
+  - CMP137
+  previous_finding_capture: audits/2026-09-18-supply-fulfillment/network-finding-before-U368.yaml
+  status: reference_name_adopted_U369_pending_application
+  proposed_names:
+    D13: Supply Network
+    D13.a: Supply Network Ingestion
+    TER054: Supply Network
+  proposed_reference_definition: Représentation de référence des lieux, de leurs caractéristiques et de leurs relations logistiques,
+    décrivant les possibilités d’approvisionnement, de stockage, de transfert, de distribution et de retour des marchandises.
+  proposed_ingestion_definition: Recevoir les lieux et les relations du réseau logistique, leurs caractéristiques de référence
+    et leurs évolutions depuis les sources maîtresses externes.
+  boundary: Party décrit les acteurs ; D13 leurs lieux et relations ; D14 les services. Les stocks et états, charges opérationnelles
+    et itinéraires retenus appartiennent aux domaines consommateurs. Aucune nouvelle administration de maître ni topologie
+    physique exhaustive imposée.
+  qualification: La liste de flux décrit une portée proposée ; Q076 demeure ouverte sur les points, liaisons, attributs et
+    maîtres. Le changement de nom ne crée pas les données manquantes.
+adoption_U369:
+  status: D03_applied_U378_D13_pending
+  adopted_names:
+    D03: Fulfillment Optimization
+    D13: Supply Network
+  proposed_consistency_names:
+    D13.a: Supply Network Ingestion
+    TER054: Supply Network
+  scope: D03 renommé U378 ; D13 reste adopté à appliquer. Univers renommé U373. Aucun accord global sur les compléments éditoriaux.
+universe_review_U369:
+  status: historical_proposal_reexamined_U370
+  target_id: universe-supply
+  proposed_name: Supply Chain Management
+  definition: Piloter et coordonner les ressources, les stocks, les commandes et leur réalisation au sein du réseau, afin
+    de satisfaire les besoins selon les objectifs de service, de coût et de risque.
+  definition_scope: Proposition de description du périmètre FLOW actuel sous un univers SCM ; pas définition exhaustive du
+    SCM professionnel.
+  rationale: 'Un univers regroupe des responsabilités de gestion : SCM exprime cette nature et évite la polysémie du mot Supply
+    isolé.'
+  boundaries:
+  - Le périmètre professionnel SCM est plus large que les domaines actuellement cartographiés.
+  - Nommer l’univers ne signifie pas couverture exhaustive ni extension de la plateforme FLOW.
+  - Préserver les exclusions actuelles et les responsabilités des exécutants ; signaler la portée cartographiée dans la fiche.
+  - Le réseau est la structure, le fulfillment une finalité, le SCM le pilotage du système.
+  market_comparisons:
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Définition professionnelle ou périmètre de produit
+    relationship: Appui sémantique
+    similarities: SCM couvre planification, approvisionnement, transformation, logistique et coordination entre partenaires.
+    differences: Périmètre professionnel plus large que le catalogue FLOW ; les fonctions coordonnées ne deviennent pas automatiquement
+      des domaines FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page évolutive consultée le 18 septembre 2026
+    source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+    consulted_on: '2026-09-18'
+    evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+    flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+      implicite.
+    status: proposed
+    source_refs:
+    - U369
+    - ELM227
+    - CMP138
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Welcome to Dynamics 365 Supply Chain Management
+    element_type: Définition professionnelle ou périmètre de produit
+    relationship: Appui sémantique
+    similarities: Le produit regroupe notamment stocks, planification, achats, production, entrepôt et transport.
+    differences: Catalogue produit et non modèle normatif de capacités ; aucune importation des modules ni équivalence complète
+      avec FLOW.
+    source_title: Welcome to Dynamics 365 Supply Chain Management
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+    source_version: Page évolutive consultée le 18 septembre 2026
+    source_locator: Core concepts and tasks
+    consulted_on: '2026-09-18'
+    evidence_limits: Page primaire ouverte ; pas preuve de réalisation Beaumanoir.
+    flow_position: Supply Chain Management recommandé pour le niveau univers, avec portée FLOW explicite et aucune extension
+      implicite.
+    status: proposed
+    source_refs:
+    - U369
+    - ELM227
+    - CMP138
+universe_review_U370:
+  status: name_adopted_and_applied_U373
+  target_id: universe-supply
+  source_refs:
+  - U370
+  - C100
+  user_scope:
+    included:
+    - Achats et approvisionnement des entrepôts
+    - Cœur d’orchestration opérationnelle de la Supply
+    external:
+    - Administration des référentiels maîtres ; projections locales
+    - Planification globale
+    preserved:
+    - Décisions opérationnelles et optimisation
+    - Inventory Planning et scénarios de stock
+    - Responsabilités des exécutants
+  catalogue_evidence:
+  - 'D04.j : commandes d’achat'
+  - 'D04.k : transferts entre sites'
+  - 'D05.e et D05.c : apports successifs et redistribution'
+  - 'D05.f : scénarios de stock'
+  - 'D06 : pilotage de l’exécution'
+  proposed_name: Supply Chain Orchestration
+  proposed_definition: Piloter et optimiser les flux d’approvisionnement et de satisfaction des commandes, coordonner leur
+    exécution et adapter les décisions opérationnelles, à partir des plans globaux et des données de référence gérés par les
+    systèmes responsables.
+  rationale: Exprime le rôle transverse du périmètre, incluant achats, stocks et commandes, sans revendiquer tout le SCM.
+    Orchestration désigne ici la finalité de l’univers ; D06 conserve l’orchestration des prestations d’exécution.
+  limits:
+  - 'U373 : nom adopté et appliqué ; descriptions détaillées restent proposées.'
+  - Aucune administration de maître ni planification globale ajoutée
+  - Aucun retrait de décisions ou de planification opérationnelle
+  - Aucun sourcing stratégique ou mandat de négociation déduit du mot achats
+  market_comparisons:
+  - vendor: SAP
+    element_name: Supply chain orchestration
+    element_type: Présentation conceptuelle éditeur
+    relationship: Recouvrement partiel
+    similarities: Coordonner les décisions et opérations, rendre les impacts visibles et adapter les réponses entre systèmes
+      et partenaires.
+    differences: 'SAP cite la connexion au design, à la planification, au sourcing et à la fabrication. Le périmètre comparé
+      à FLOW n’est pas établi : coordonner ces fonctions ne signifie pas les internaliser. Aucune équivalence de catalogue
+      ou d’architecture démontrée.'
+    source_url: https://www.sap.com/resources/supply-chain-orchestration-explained
+    source_version: Page évolutive sans édition affichée
+    source_locator: How supply chain orchestration works ; Core capabilities ; End-to-end supply chain management applications
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Page primaire consultée ; synthèse conceptuelle, aucune réalisation Beaumanoir déduite.
+    correction_refs:
+    - U374
+    - C101
+  - vendor: Microsoft
+    element_name: Intelligent Order Management overview
+    element_type: Présentation produit
+    relationship: Recouvrement partiel
+    similarities: Orchestration des commandes et optimisation du fulfillment entre applications et partenaires existants.
+    differences: Centré sur les flux de commandes B2C, D2C et B2B ; ne démontre pas la couverture de tous les achats et approvisionnements
+      FLOW ni une architecture identique de référentiels.
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+    source_version: Documentation évolutive
+    source_locator: Introduction ; Components
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Page primaire consultée ; comparaison de responsabilités, pas recommandation de produit.
+oms_comparison_U371:
+  status: discussion_not_adoption
+  source_refs:
+  - U371
+  conclusion: Même principe de coordination des décisions, engagements et exécution ; périmètres et responsabilités variables
+    selon les offres. OMS est une catégorie de systèmes centrée sur les commandes clients ; Supply Chain Orchestration peut
+    coordonner aussi achats, transferts et besoins de stock indépendants des ventes unitaires.
+  boundary: Ne pas définir OMS comme strictement B2C ou incapable de traiter des achats ; ne pas confondre même principe avec
+    catalogue identique ou logiciel unique.
+  market_comparisons:
+  - vendor: Microsoft
+    element_name: Intelligent Order Management overview
+    element_type: Périmètre produit
+    relationship: Appui sémantique
+    similarities: Orchestration des commandes entre systèmes et partenaires.
+    differences: 'B2C, D2C et B2B explicitement décrits : aucune limite B2C universelle.'
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+    source_version: Documentation évolutive, mise à jour affichée 29 janvier 2026
+    source_locator: Introduction
+    consulted_on: '2026-09-18'
+    status: proposed
+  - vendor: Microsoft
+    element_name: Integrate Supply Chain Management procurement with Intelligent Order Management
+    element_type: Intégration produit
+    relationship: Recouvrement partiel
+    similarities: Visibilité et création de Purchase Orders depuis IOM.
+    differences: Traitement dans Dynamics SCM ; source signalant des fonctionnalités en preview. Contre-exemple à une séparation
+      stricte achats/OMS, pas équivalence complète avec FLOW.
+    source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/integrate-procurement
+    source_version: Documentation évolutive, mise à jour affichée 28 janvier 2026
+    source_locator: Purchase Orders entity et note preview
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Passage primaire indexé consulté ; disponibilité générale non déduite.
+  - vendor: Oracle
+    element_name: How Supply Chain Orchestration Works
+    element_type: Processus produit
+    relationship: Recouvrement partiel
+    similarities: Coordination des flux buy, transfer et make, à partir de demandes de planification et de gestion des commandes.
+    differences: Supply Chain Orchestration collabore avec Order Management ; ce produit ne désigne pas simplement un OMS
+      fusionné achats-ventes. Aucune production ajoutée à FLOW.
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauco/how-supply-orchestration-works.html
+    source_version: 26A
+    source_locator: Send request ; Create supply
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Page primaire consultée ; pas preuve de réalisation Beaumanoir.
+oms_protection_review_U372:
+  status: discussion_not_adoption
+  source_refs:
+  - U372
+  model_refs:
+  - D02.b
+  - D05
+  - D03
+  finding: Distinguer définir/gouverner les protections, les faire respecter et consommer le disponible. Une même offre peut
+    réaliser plusieurs de ces responsabilités ; aucune absence générale de protection dans les OMS établie.
+  flow_position: D05 détermine les valeurs via ses décisions spécialisées ; Supply Protection gouverne et applique les règles
+    actives ; promesse, affectation et réservation les respectent. Le périmètre FLOW inclut renouvellement et maîtrise des
+    excédents, au-delà de la seule consommation des commandes.
+  market_comparisons:
+  - vendor: IBM
+    element_name: Configuring Safety stock at ShipNode Level in Sterling Order Management
+    element_type: Configuration produit
+    relationship: Recouvrement partiel
+    similarities: Un facteur de sécurité configurable par article et nœud exclut une part du stock actuel ou futur de la promesse.
+    differences: Mécanisme de protection documenté dans un OMS ; aucune couverture de toute Supply Protection ou de toute
+      décision d’optimisation démontrée.
+    source_url: https://www.ibm.com/support/pages/configuring-safety-stock-shipnode-level-sterling-order-management
+    source_version: Versions 8.5 à 9.2.1 listées ; document modifié le 16 juin 2018
+    source_locator: Question ; Answer ; UID swg21699663
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Page primaire consultée ; preuve historique de fonctionnalité, pas vérification de toute édition courante.
+  - vendor: Microsoft
+    element_name: Inventory Visibility inventory allocation
+    element_type: Fonctionnalité de service de stock
+    relationship: Recouvrement partiel
+    similarities: Enveloppes par groupe et contrôle de surconsommation distincts des réservations liées aux ventes.
+    differences: Protection portée par Inventory Visibility ; ne prouve pas sa présence native dans tout OMS ni son absence
+      dans les autres offres. Allocation est ici le terme éditeur pour les enveloppes de protection.
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+    source_version: Documentation évolutive
+    source_locator: Business background and purpose ; Difference between inventory allocation and soft reservation
+    consulted_on: '2026-09-18'
+    status: proposed
+    evidence_limits: Page primaire consultée ; aucune réalisation installée déduite.
+adoption_U373:
+  status: name_applied
+  node_id: universe-supply
+  adopted_fields:
+  - name
+  name: Supply Chain Orchestration
+  value_sha256:
+    name: 9925b1127336fae5e805d2ed6df17bfb9944ae49acb73799038f3f8e433cd6f7
+  implementation: audits/2026-09-18-universe-U373/implementation.yaml
+  scope: Nom uniquement ; périmètre et définition conservés. Les comparaisons U370–U372 restent qualifiées séparément.
+scope_comparison_correction_U374:
+  source_refs:
+  - U374
+  - C101
+  status: editorial_correction
+  finding: La source SAP justifie le concept de coordination transverse ; elle ne suffit pas à hiérarchiser les périmètres
+    SAP et FLOW.
+  preserved: Nom Supply Chain Orchestration adopté U373 ; responsabilités et frontières FLOW inchangées.
+implementation_U378:
+  domain: D03
+  name: Fulfillment Optimization
+  capability: D03.o
+  review_path: modeles/backlog/fulfillment-strategy-review.yaml

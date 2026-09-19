@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { adaptPublication, isStructural } from './src/model.ts';
-import { projectDependencies } from './src/dependencyGraph.ts';
+import { adaptPublication, childrenOf, hasCapabilityCards, isCapabilityContainer, isStructural } from './src/model.ts';
+import { dependencyLevel, dependencyLevels, projectDependencies } from './src/dependencyGraph.ts';
+import { kindLabel } from './src/presentation.ts';
 import { loadPublication } from '../scripts/load-publication.mjs';
 
 const options = { level: 'capability', depth: 0, direction: 'both', family: 'all' };
@@ -44,6 +45,59 @@ const project = (model, overrides = {}) => projectDependencies(model, { ...optio
 const nodeIds = projection => projection.nodes.map(node => node.id);
 const relationIds = projection => projection.relations.map(relation => relation.id);
 const accountedIds = projection => [...projection.edges.flatMap(edge => edge.relationIds), ...projection.nodes.flatMap(node => node.internalRelationIds)];
+
+function areaFixture() {
+  const raw = rawFixture();
+  for (const node of raw.nodes) {
+    if (node.kind === 'domain') node.kind = 'area';
+    else if (node.level_ref === 'universe') { node.kind = 'domain'; delete node.level_ref; }
+  }
+  raw.nodes.find(node => node.id === 'business-references').fields.name = 'Authoritative Data';
+  return adaptPublication(raw);
+}
+
+test('Domain / Area groups each relation at its published level while preserving reference and presentation kinds', () => {
+  const model = areaFixture();
+  const before = JSON.stringify(model.raw);
+  const originalIds = model.relations.filter(relation => !isStructural(relation)).map(relation => relation.id).sort();
+  const areas = project(model, { level: 'area' });
+  assert.ok(areas.edges.some(edge => edge.source === 'd2' && edge.target === 'd1'));
+  assert.ok(areas.nodes.find(node => node.id === 'd2').memberIds.includes('d-old.capability'));
+  assert.equal(areas.nodes.find(node => node.id === 'reference').item.kind, 'reference');
+  assert.ok(nodeIds(areas).includes('d-empty'));
+  assert.ok(!nodeIds(areas).includes('business-references'));
+  const domains = project(model, { level: 'domain' });
+  assert.ok(domains.nodes.find(node => node.id === 'scope-one').memberIds.includes('reference-capability'));
+  assert.ok(domains.nodes.find(node => node.id === 'scope-one').internalRelationIds.includes('a-reference'));
+  assert.ok(nodeIds(domains).includes('scope-empty'));
+  assert.ok(!nodeIds(domains).includes('reference'));
+  for (const level of ['capability', 'area', 'domain', 'universe']) {
+    const graph = project(model, { level });
+    assert.deepEqual(accountedIds(graph).sort(), originalIds);
+    for (const kind of ['object', 'document', 'event']) assert.ok(graph.nodes.some(node => node.item.kind === kind));
+  }
+  assert.deepEqual(project(model, { level: 'universe' }), domains);
+  assert.equal(JSON.stringify(model.raw), before);
+});
+
+test('cards and navigation retain the terminology and rank of the selected publication', () => {
+  const modern = areaFixture(), historical = fixture();
+  assert.deepEqual(dependencyLevels(modern).map(level => level.value), ['capability', 'area', 'domain']);
+  assert.deepEqual(dependencyLevels(historical).map(level => level.value), ['capability', 'domain', 'universe']);
+  assert.equal(dependencyLevel(historical, 'area'), 'domain');
+  assert.equal(dependencyLevel(modern, 'universe'), 'domain');
+  assert.equal(kindLabel(modern.nodeById.get('scope-one')), 'Domaine');
+  assert.equal(kindLabel(modern.nodeById.get('d1')), 'Area');
+  assert.equal(kindLabel(historical.nodeById.get('d1')), 'Domaine');
+  assert.equal(kindLabel({ ...historical.nodeById.get('scope-one'), groupRole: 'urbanism_level' }), 'Univers');
+  assert.equal(isCapabilityContainer(modern, modern.nodeById.get('scope-one')), false);
+  assert.equal(isCapabilityContainer(modern, modern.nodeById.get('d1')), true);
+  assert.equal(isCapabilityContainer(historical, historical.nodeById.get('d1')), true);
+  assert.equal(hasCapabilityCards(modern, 'scope-one'), true);
+  assert.equal(hasCapabilityCards(modern), false);
+  assert.deepEqual(childrenOf(modern, 'business-references').map(node => node.kind), ['reference']);
+  assert.equal(modern.nodeById.get('business-references').kind, 'group');
+});
 
 test('opposite directions, parallel semantic families and business cycles stay distinct', () => {
   const graph = project(fixture());

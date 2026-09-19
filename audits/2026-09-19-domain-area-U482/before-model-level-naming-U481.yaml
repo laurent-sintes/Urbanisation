@@ -1,0 +1,205 @@
+schema_version: '1.0'
+review_id: MODEL-LEVEL-NAMING-U481
+as_of: '2026-09-19'
+status: proposed
+source_refs:
+- U481
+- CMP195
+- ELM486
+- ELM487
+- ELM488
+- ELM489
+- ELM490
+purpose: Comparer les noms des niveaux à la structure métier actuelle, sans modifier les identités, les responsabilités ou
+  les rattachements.
+current_reading:
+  levels:
+  - Universe
+  - Domain
+  - Capability
+  - Capability Behavior
+  interpretation: Les deux premiers niveaux organisent les responsabilités ; la capacité exprime une aptitude ; le comportement
+    en précise une manière d’agir. Ce ne sont pas quatre profondeurs successives de la même nature.
+  implementation_note: 'universe-supply et business-references ont actuellement kind: group ; les six domaines et les six
+    référentiels restent distincts. Les groupes de présentation ne sont pas automatiquement des périmètres responsables.'
+recommendation:
+  levels:
+  - Domain
+  - Area
+  - Capability
+  - Behavior
+  reason: Le vocabulaire SAP apporte le parallèle le plus proche des regroupements FLOW actuels. Area nomme un périmètre cohérent
+    de responsabilité et de capacités ; Domain remplace une métaphore Universe propre au modèle.
+  french_reading:
+  - Domaine
+  - Périmètre métier
+  - Capacité
+  - Comportement
+  translation_status: Périmètre métier est une traduction pédagogique proposée, pas une appellation française normative de
+    Business Area.
+  tradeoff: Area seul demande une définition. Le vocabulaire s’inspire de SAP sans reprendre son catalogue ni sa profondeur
+    complète ; aucune hiérarchie universelle de marché n’est revendiquée.
+alternatives:
+- levels:
+  - Domain
+  - Subdomain
+  - Capability
+  - Behavior
+  assessment: Alternative la plus immédiatement compréhensible en français ; exprime une subdivision du même ensemble de problèmes.
+    Elle n’impose ni frontières logicielles ni microservices.
+- levels:
+  - Domain
+  - Capability Group
+  - Capability
+  - Behavior
+  assessment: Adapté à un rangement de capacités ; décrit moins bien la responsabilité propre d’Order Management ou Inventory
+    Optimization.
+- levels:
+  - Domain
+  - Capability Area
+  - Capability
+  - Behavior
+  assessment: Précise ce que regroupe Area, au prix d’un nom plus méthodologique ; rapprochement lexical EDGY, pas reprise
+    exacte de sa hiérarchie.
+- levels:
+  - Domain
+  - Space / Zone
+  - Capability
+  - Behavior
+  assessment: Métaphores possibles mais peu informatives sur la responsabilité. Aucun appui privilégié trouvé pour ce rang
+    dans les documents retenus ; absence de preuve ici ne signifie pas absence d’usage ailleurs.
+example:
+- id: universe-supply
+  name: Supply Chain Orchestration
+  proposed_level: Domain
+  question: Quel grand ensemble de problèmes métier couvre-t-on ?
+- id: D05
+  name: Inventory Optimization
+  proposed_level: Area
+  question: Quel périmètre cohérent de responsabilité traite-t-on ?
+- id: D05.e
+  name: Replenishment Decision
+  proposed_level: Capability
+  question: Que sait-on faire durablement ?
+- id: BHV084
+  name: Target-based Replenishment
+  proposed_level: Behavior
+  question: Selon quelle logique cette capacité agit-elle ?
+behavior_position:
+  recommendation: Conserver Behavior / Comportement, avec une explication lisible dans la fiche.
+  reason: Le terme dispose d’un appui explicite BIZBOK. Les comportements FLOW peuvent être combinables ; Sub-capability,
+    Mode ou Variante ne sont pas des remplacements neutres.
+  local_convention: L’arrêt à ce niveau et les formes retenues restent des choix FLOW U262/U265/U389 ; aucun audit de comportement
+    rouvert.
+authoritative_data_consequence:
+  proposal: Préférer le nom propre Authoritative Data, puis afficher le type Area ou Subdomain retenu, plutôt qu’inscrire
+    Domain dans le nom.
+  reason: Séparer ce que désigne le périmètre de son rang dans la cartographie ; l’autorité locale clarifiée U479 demeure.
+  boundary: La conversion éventuelle du groupe business-references en périmètre responsable, et le rôle des six référentiels,
+    restent un arbitrage de structure distinct du nom des niveaux.
+market_comparisons:
+- id: ELM486
+  reference: MKT04
+  title: Discovering the Reference Architecture Content
+  organization: SAP
+  url: https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content
+  edition: Page évolutive sans date affichée
+  locator: Reference Architecture Content Framework ; Business Capability Model Example
+  native_terms:
+  - Enterprise Domain
+  - Business Domain
+  - Business Area
+  - Business Capability
+  finding: SAP place Inventory Management et Order Promising parmi les Business Areas de Supply Chain Execution. Un Enterprise
+    Domain regroupe les Business Domains.
+  similarity: Les responsabilités regroupées dans les domaines FLOW sont proches de plusieurs Business Areas SAP.
+  difference: Supply Chain Orchestration FLOW ne recouvre pas exactement Supply Chain Execution SAP ; le niveau Enterprise
+    Domain n’est pas repris.
+  limit: Page primaire consultée ; rapprochement de vocabulaire et de fonction, aucune équivalence exhaustive de périmètre
+    ni adoption des niveaux de solution.
+  consulted_on: '2026-09-19'
+  relationship: Appui méthodologique
+  status: proposed
+- id: ELM487
+  reference: MKT69
+  title: Use Domain Analysis to Model Microservices
+  organization: Microsoft
+  url: https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis
+  edition: Documentation Azure Architecture Center évolutive
+  locator: Domain analysis ; Analyze the domain ; Define bounded contexts
+  native_terms:
+  - Domain
+  - Subdomain
+  - Bounded context
+  finding: L’analyse distingue le domaine de ses sous-domaines, puis les frontières dans lesquelles un modèle est applicable.
+  similarity: Les problèmes de Supply Chain Orchestration peuvent être répartis en sous-périmètres cohérents.
+  difference: Le guide vise la conception de microservices ; FLOW ne déduit aucun service logiciel ni bounded context de son
+    arbre métier.
+  limit: Article primaire consulté ; Domain → Subdomain fournit une analogie sémantique, pas une obligation de conception.
+  consulted_on: '2026-09-19'
+  relationship: Appui méthodologique
+  status: proposed
+- id: ELM488
+  reference: MKT70
+  title: 'Capability Modeling Guidelines: Capability Hierarchy'
+  organization: Intersection Group / EDGY
+  url: https://enterprise.design/wiki/Capability_Modeling_Guidelines:_Capability_Hierarchy
+  edition: Page modifiée le 2 mars 2026
+  locator: Capability Hierarchy
+  native_terms:
+  - Capability Area
+  - Capability Family
+  - Capability Group
+  - Specific Capabilities
+  finding: Le guide propose des regroupements successifs de capacités, avec une profondeur adaptée au besoin.
+  similarity: Area, Family et Group peuvent nommer des regroupements plutôt que des fonctions élémentaires.
+  difference: Les niveaux restent des regroupements de capacités ; leur ordre n’impose pas Domain → Area et ne définit pas
+    de Behavior terminal.
+  limit: Guide public de méthode consulté ; pas une nomenclature universelle ni un modèle Supply.
+  consulted_on: '2026-09-19'
+  relationship: Appui méthodologique
+  status: proposed
+- id: ELM489
+  reference: MKT03
+  title: 'BIZBOK Guide — Appendix A: Business Architecture Glossary'
+  organization: Business Architecture Guild
+  url: https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf
+  edition: Version 15.0, copyright 2026
+  locator: 'Pages imprimées 456–457 : Capability, Capability Behavior, Capability Level, Capability Tier'
+  native_terms:
+  - Capability
+  - Capability Behavior
+  - Capability Level
+  - Capability Tier
+  finding: Capability Behavior qualifie la manière d’agir selon les circonstances. Capability Level indique la profondeur
+    de décomposition.
+  similarity: Le concept de comportement éclaire les mécanismes, politiques et variantes du modèle FLOW.
+  difference: Le glossaire ne prescrit ni Universe → Domain ni l’arrêt de toute décomposition à Behavior.
+  limit: Glossaire primaire public consulté, déjà référencé en ELM052 ; pas le guide complet réservé aux membres. Nouveau
+    relevé ciblé U481, pas nouveau concept.
+  consulted_on: '2026-09-19'
+  relationship: Appui méthodologique
+  status: proposed
+- id: ELM490
+  reference: MKT14
+  title: About the business process catalog
+  organization: Microsoft
+  url: https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/about
+  edition: Documentation Dynamics 365 évolutive
+  locator: What’s in the catalog?
+  native_terms:
+  - End-to-end process
+  - Business process area
+  - Business process
+  - Scenario
+  - System process
+  - Test case
+  finding: Area est un regroupement de processus dans une hiérarchie qui descend ensuite vers les scénarios et tests.
+  similarity: Le mot Area peut exprimer un regroupement intermédiaire.
+  difference: La hiérarchie décrit des processus et leur réalisation logicielle, pas les niveaux du modèle de capacités FLOW.
+  limit: Article primaire consulté ; ne pas convertir les capacités en processus ni les comportements en scénarios de test.
+  consulted_on: '2026-09-19'
+  relationship: Appui méthodologique
+  status: proposed
+scope_of_any_future_adoption: Un accord sur le vocabulaire ne fusionne pas de domaines et ne transforme pas les groupes de
+  présentation ; conserver les identifiants et qualifier séparément les migrations de schéma, guide et interface.

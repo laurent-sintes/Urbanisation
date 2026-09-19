@@ -2,6 +2,8 @@
 
 Base de connaissance de travail issue du dossier ChatGPT v0.1, reprise le 9 septembre 2026.
 
+**Publication courante :** [FLOW Atlas](http://127.0.0.1:8765/) suit la version désignée par [l’index de release](modeles/release/index.json). La [restitution générée](restitutions/release.md) porte les compteurs et qualifications du snapshot publié ; le [guide des modèles](modeles/README.md) décrit le parcours. Le YAML fait autorité pour le backlog et les nouvelles publications. Les repères datés ci-dessous restent historiques.
+
 ## Objet
 
 Construire progressivement une cartographie des capacités métier du cœur ERP commerce : achats, ventes, SAV, stocks, allocations et référentiels associés. Elle doit permettre de décrire le périmètre historique de Beaumanoir, Boardriders et Sarenza, puis d'explorer leur convergence.

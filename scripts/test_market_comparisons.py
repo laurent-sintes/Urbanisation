@@ -33,6 +33,7 @@ class MarketComparisonsTest(unittest.TestCase):
         self.assertTrue(validate_glossary(model))
         for t in model['glossary']['terms']:
             t.pop('market_comparisons', None)
+            t.pop('market_inspiration', None)
         self.assertEqual(validate_glossary(model), [])
 
 if __name__=='__main__':

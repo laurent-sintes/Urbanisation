@@ -55,12 +55,13 @@ try {
   };
 
   for (const model of [current, historical]) {
-    const universes = model.nodes.filter(node => node.group_role === 'urbanism_level' && node.level_ref === 'universe');
+    const hasAreas = model.nodes.some(node => node.kind === 'area');
+    const universes = model.nodes.filter(node => hasAreas ? node.kind === 'domain' : node.group_role === 'urbanism_level' && node.level_ref === 'universe');
     assert.ok(universes.length > 0);
     for (const universe of universes) {
       await visit(model, universe, model !== current);
       for (const domain of children(model, universe.id)) {
-        const expected = domain.kind === 'domain' ? children(model, domain.id).filter(node => node.kind === 'capability') : [];
+        const expected = domain.kind === (hasAreas ? 'area' : 'domain') || domain.kind === 'reference' ? children(model, domain.id).filter(node => node.kind === 'capability') : [];
         const links = card(domain.id).locator('a.capacity-link');
         assert.deepEqual(await links.allTextContents(), expected.map(node => node.fields.name), `${model.version} / ${domain.id} : exact published capacities`);
         for (let index = 0; index < expected.length; index++) {
@@ -88,14 +89,15 @@ try {
         await page.getByText('Aucun élément publié dans ce périmètre.', { exact: true }).waitFor();
       }
     }
-    checks.push(`${model.version} : chaque domaine montre exactement ses capacités publiées ; les groupes de présentation et univers vides restent distincts.`);
+    checks.push(`${model.version} : chaque ${hasAreas ? 'Area' : 'domaine'} montre exactement ses capacités publiées ; les groupes de présentation et périmètres vides restent distincts.`);
   }
 
   const supply = current.nodes.find(node => node.id === 'universe-supply');
   await visit(current, supply, false);
   const references = children(current, 'business-references').filter(node => node.kind === 'reference');
-  assert.ok(references.length > 0, 'Business References présente des référentiels publiés.');
-  const referenceList = card('business-references').getByRole('list', { name: 'Référentiels de Business References' });
+  const referencesName = nameOf(current, 'business-references');
+  assert.ok(references.length > 0, `${referencesName} présente des référentiels publiés.`);
+  const referenceList = card('business-references').getByRole('list', { name: `Référentiels de ${referencesName}` });
   await card('business-references').screenshot({ path: fileURLToPath(new URL('supply-business-references.png', output)) });
   await referenceList.getByRole('link').first().focus();
   await page.getByRole('tooltip').waitFor();
@@ -114,7 +116,7 @@ try {
   assert.equal(params(page.url()).get('version'), current.version);
   await page.goBack();
   await waitMap(current, supply);
-  checks.push(`Business References dans Supply : ${references.length} référentiels exacts, aperçu, clic/Entrée vers leur fiche et retour à la carte.`);
+  checks.push(`${referencesName} dans ${supply.fields.name} : ${references.length} référentiels exacts, aperçu, clic/Entrée vers leur fiche et retour à la carte.`);
   const protection = card('D01').getByRole('link', { name: nameOf(current, 'D02.b'), exact: true });
   const reservation = card('D01').getByRole('link', { name: nameOf(current, 'D02.c'), exact: true });
   await protection.hover();

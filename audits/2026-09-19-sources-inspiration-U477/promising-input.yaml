@@ -1,0 +1,2596 @@
+batch: promising
+source: U477
+nodes:
+- id: D02.e
+  kind: capability
+  parent: D03
+  family: D03
+  fields:
+    name: Supply Assignment
+    definition: Matérialiser et maintenir les affectations des ressources Supply présentes ou futures aux commandes identifiées,
+      en mobilisant les décisions responsables des choix retenus et en respectant les priorités, les engagements et les contraintes
+      applicables.
+    finality: Maintenir des liens d’affectation cohérents entre ressources et commandes pour concrétiser les choix de satisfaction
+      retenus.
+    nature: action
+    scope: |-
+      Frontière : Affectations aux commandes identifiées ; autres besoins historiques conservés à préciser. Décisions spécialisées, engagement de réservation, promesse et modification des Orders restent distincts.
+
+      Exemple fictif : Affecter 40 d’un arrivage à une commande puis changer leur provenance admissible.
+
+      La valeur peut combiner service, respect des engagements, coûts, contribution économique et risques ; ces dimensions sont des exemples, sans pondération ni formule universelle adoptée. Les décisions spécialisées conservent leurs responsabilités : priorité des Orders, faisabilité ATP/CTP, arbitrage économique PTP et échéancier. Affecter, réaffecter et libérer maintiennent les liens aux ressources ; affecté, réservé, promis et réalisé restent distincts. Le périmètre historique des engagements et besoins prévisionnels est conservé, avec articulation à préciser.
+
+      L’application d’un plan d’affectation relève de Supply Assignment : matérialiser les liens entre ressources et commandes retenus dans le plan. La capacité peut mobiliser les autres capacités Supply sans absorber leurs responsabilités. Le fait qu’un traitement logiciel tel qu’ARun traverse plusieurs capacités ne remet pas en cause le parent métier de ce mécanisme.
+
+      U362/U363 : Spread (sens SAP ARun) répartit les ressources entre commandes existantes ; il ne coupe pas les commandes. La règle de répartition détermine les parts dans les décisions spécialisées, puis Supply Assignment matérialise leurs affectations. Exemple simplifié : besoins de 100 et 200, stock de 150, prorata donnant 50 et 100 ; les demandes restent de 100 et 200. Quotas, priorités et engagements peuvent changer le résultat. Aucun nouvel optimiseur ou parent de décision Spread adopté.
+
+      U364 : [Supply Assignment Plan Application](model:BHV045) matérialise un plan retenu ; [Incremental Supply Assignment](model:BHV046) complète les besoins non affectés en conservant l’existant ; [Supply Reassignment](model:BHV047) applique une révision des affectations modifiables. Ces comportements sont combinables. Préservation pendant un traitement et gel durable sont distincts ; aucun algorithme incrémental imposé. La décision collective relève de [Fulfillment Plan Decision](model:D03.o), intégrée U378. Les contrats détaillés d’engagement et d’application restent à préciser selon les travaux A01, A03 et A07 conservés à la clôture U431.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+
+      U443 : l’affectation répond à « quelles ressources sont retenues pour cette commande ? » ; Fulfillment Commitment répond à « quelles quantités et dates sont proposées ou engagées ? ». Une réaffectation peut conserver la promesse, et une révision de date promise peut conserver l’affectation. La compatibilité des deux résultats reste nécessaire, sans identité de responsabilité ni réservation implicite.
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Supply Assignment (ARun)
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Affectation des ressources aux besoins ; accès par BOP, ITA, affectation immédiate et API.
+      differences: Fonctionnalité intégrée ; ni couverture de toutes les capacités FLOW ni réalisation exclusivement batch
+        démontrées.
+      source_title: Supply Assignment (ARun)
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+      source_version: 2025 FPS01
+      source_locator: Introduction et modes d’accès
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Backorder Processing — Reassignment
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Le traitement peut conserver les affectations et compléter le reliquat, ou les réexaminer. Le mode preview
+        ne produit pas d’effets logistiques.
+      differences: Regroupement produit de décisions et d’action ; pas preuve qu’un plan externe arbitraire est importable
+        ou qu’une simulation est appliquée sans recontrôle.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_version: 2025 FPS01
+      source_locator: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+    - vendor: SAP
+      product: ERP Fashion Management
+      element_name: Steps in Order Allocation Run — Allocation
+      element_type: Stratégie de répartition dans un processus produit
+      relationship: Recouvrement partiel
+      similarities: ARun peut affecter le stock selon FIFO ou une répartition proportionnelle fondée sur les quantités demandées
+        (spread logic). Le regroupement des besoins est un prérequis au Spread.
+      differences: Référence ERP Fashion, sans garantie pour toute édition aATP. ARun est le processus intégré ; Spread une
+        de ses stratégies. La répartition ne nécessite pas la création de nouvelles commandes.
+      source_title: Steps in Order Allocation Run
+      source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+      source_version: Édition non relevée dans le passage indexé ; SAP ERP Fashion Management
+      source_locator: Requirement Grouping ; Allocation ; Release Rules
+      consulted_on: '2026-09-18'
+      evidence_limits: Passage primaire indexé consulté, complété par Allocation déjà documenté ELM222. Aucune preuve de configuration
+        ou version Beaumanoir.
+      flow_position: Spread est une politique de répartition des ressources entre commandes. Les décisions déterminent les
+        parts ; Supply Assignment applique les liens. Aucun agrégat décisionnel ou comportement automatique ajouté. U363 applique
+        la structure ; les correspondances marché restent proposées.
+      status: proposed
+      source_refs:
+      - U361
+      - ELM223
+      - CMP132
+      - U363
+      - CMP133
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Keep supply for confirmed demand
+      element_type: Fonction produit ou mécanisme technique ; pas capacité FLOW par défaut
+      relationship: Recouvrement partiel
+      similarities: Préserve une chaîne liée à une demande confirmée, notamment ordres planifiés et liens de pegging, entre
+        les passages de planification.
+      differences: Comportement paramétré ; la conservation du stock reçu hors positive days exige un paramètre complémentaire.
+        Ne prouve aucun déploiement Beaumanoir.
+      source_title: Keep supply for confirmed demand
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+      source_version: 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+      source_locator: What data is preserved ; Control how on-hand inventory is pegged ; Interaction with approved planned
+        orders
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+        client démontrée.'
+      flow_position: Appui à la stabilité des affectations, mais périmètre produit plus large incluant la chaîne de planification.
+        Ne démontre pas une équivalence exacte avec Incremental Supply Assignment.
+      status: proposed
+      source_refs:
+      - U346
+      - U347
+      - ELM216
+      - CMP124
+    - vendor: SAP
+      product: S/4HANA Fashion — Supply Assignment (ARun)
+      element_name: Explaining Supply Assignment
+      element_type: Concept ou fonction produit
+      relationship: Appui lexical et recouvrement partiel
+      similarities: Le terme relie explicitement ressources et demandes de commandes.
+      differences: Le scénario SAP crée aussi un lien qui empêche la satisfaction d’une autre demande. FLOW sépare cet effet
+        dans Reservation.
+      flow_position: 'Reprise du vocabulaire Supply Assignment avec une frontière FLOW propre : l’affectation seule ne bloque
+        pas les usages concurrents.'
+      source_title: Explaining Supply Assignment
+      source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+      source_version: Cours SAP S/4HANA Fashion évolutif ; édition unique non affichée
+      source_locator: Supply Assignment (ARun) ; Supply Assignment Scenarios
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire consultée ; aucune équivalence complète de taxonomie ni réalisation installée déduite.
+      status: proposed
+      source_refs:
+      - U289
+      - U290
+      - U436
+      - ELM287
+      - CMP180
+      - U462
+      - U275
+      term_choice: Supply Assignment rend explicite l’affectation des ressources aux commandes. Le terme Allocation seul est
+        ambigu entre affectation et droits de groupes ; les appellations éditeurs restent qualifiées.
+      definition_choice: FLOW maintient les liens ressources–commandes et sépare le blocage concurrent dans Reservation. Le
+        vocabulaire commun avec SAP ne signifie donc pas identité d’effet métier.
+    decomposition_rationale: 'Trois mécanismes combinables apportent des bénéfices distincts : application traçable d’un plan
+      retenu, stabilité en complétant sans remettre en jeu les liens existants, adaptation collective en révisant les liens
+      autorisés. Le choix de préserver ou réviser change les pratiques de préparation et les engagements à coordonner ; il
+      ne se réduit pas à une opération CRUD ou une optimisation technique de calcul. L’application d’un plan peut mobiliser
+      l’une ou l’autre politique.'
+    examples:
+    - title: Répartir une pénurie sans scinder les commandes
+      situation: Deux commandes demandent 100 et 200 pièces ; 150 pièces sont disponibles.
+      outcome: Un scénario de prorata donne 50 et 100 pièces affectées. Les demandes restent de 100 et 200.
+      lesson: 'Cet exemple de Spread ne scinde pas les commandes et ne prescrit pas le prorata : priorités, quotas et engagements
+        peuvent conduire à un autre résultat.'
+      source_refs:
+      - U362
+      - U363
+      - U462
+    - title: Affecter ne réserve pas
+      situation: 40 pièces d’un arrivage sont affectées à une commande.
+      outcome: Le lien indique la ressource retenue ; il ne bloque pas, à lui seul, les usages concurrents.
+      lesson: Seule Reservation porte cet effet opposable dans FLOW.
+      source_refs:
+      - U436
+      - U443
+      - U462
+  source_refs:
+  - P81
+  - P83
+  - U52
+  - U75
+  - U80
+  - U81
+  - U95
+  - F201
+  - C63
+  - CMP052
+  - U202
+  - U290
+  - U345
+  - C99
+  - CMP123
+  - U363
+  - CMP133
+  - U364
+  - CMP134
+  - U435
+  - U436
+  - U437
+  - U438
+  - U441
+  - U443
+  - U444
+  - U445
+  - U455
+  - U458
+  - U462
+  review:
+    state: partial
+    note: 'Intégration U290 ; principes d’application U345 et trois mécanismes sous Supply Assignment intégrés U364. Noms
+      et compléments éditoriaux conservent leurs portées propres ; aucune validation globale déduite. U435 : références au
+      placement de Structuring et à la décision collective actualisées. U437 sous autorisation U435 : définition et finalité
+      alignées sur l’application des choix ; l’optimisation collective reste à Fulfillment Plan Decision selon U378. Aucun
+      changement de parent ni des effets de réservation U436. U438 : nom de capacité conservé ; parent de domaine explicite
+      dans les relations contains, adopté séparément des descriptions. Clarification éditoriale ; noms et champs validés conservés.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - C63
+    - P83
+    - U95
+    - U202
+    - U290
+    validated_fields:
+    - name
+    - nature
+    value_sha256:
+      name: 2c92cb610451fea46f93cdcb884b4e4a640a8cc406e3a8b85cad32ad73c2b0bd
+      nature: 6b6fdce2c6f9762666c2e6dd00b3a89831d3b2f9ec0bfa4054bf88fa9b45fad6
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D03.i
+  kind: capability
+  parent: D15
+  family: D15
+  fields:
+    name: Available-to-Promise (ATP)
+    definition: Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les
+      ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces
+      engagements possibles.
+    finality: Établir une solution de promesse réalisable dans la situation de référence.
+    nature: decision
+    scope: |-
+      ATP tient compte des engagements existants, des stocks admissibles dans tout espace de stockage, des délais réels de mobilisation et des ressources futures. Ces prises en compte sont décrites par les quatre comportements rattachés. Exemple : un arrivage attendu dans 7 jours peut soutenir une promesse dans 60 jours si les autres consommations et contraintes le permettent. Pour plusieurs promesses, une même quantité ne peut soutenir des engagements incompatibles. Le calcul respecte les protections et règles existantes ; il ne modifie pas les politiques, ne réserve ni n’affecte par lui-même et ne confirme pas la promesse. Il mobilise la connaissance du stock et les informations opérationnelles des exécutants ; il ne pilote pas le rangement ou le prélèvement. Les adaptations de ressources ou d’engagements relèvent de CTP et des décisions spécialisées.
+
+      Frontière : Aucune politique modifiée ou réservation ; consommer les délais des exécutants.
+    decomposition_rationale: 'Quatre différences combinables modifient les possibilités : droits engagés, réseau, mobilisation
+      et ressources futures ; aucun comportement par lieu ou technologie.'
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM / Commerce / Intelligent Order Management
+      element_name: Order promising
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: L’ATP considère stock non engagé, réceptions futures, sorties et délais pour établir quantité et date
+        possibles.
+      differences: La formule cumulative et ses horizons décrivent Microsoft ; FLOW ne prescrit pas cette formule et distingue
+        calcul de possibilité et confirmation.
+      flow_position: D03.i établit les possibilités dans la situation de référence ; D03.n confirme ou révise la promesse,
+        D02.c réserve selon les règles. Comparaison proposée au titre de U435, sans validation ni réalisation installée déduites.
+      source_title: Order promising
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+      source_version: Documentation évolutive SCM, édition logicielle non unique
+      source_locator: Delivery date control methods ; ATP calculations
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Oracle
+      product: PeopleSoft Inventory
+      element_name: Promising and Reserving Inventory
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: L’ATP établit une disponibilité datée à partir des ressources et besoins.
+      differences: PeopleSoft mêle promesse, réservation et traitement des pénuries dans le même chapitre.
+      flow_position: Available-to-Promise conserve le terme établi, à une maille métier distincte.
+      term_choice: Available-to-Promise conserve le terme établi, à une maille métier distincte.
+      definition_choice: FLOW calcule les possibilités de la situation de référence ; confirmer un engagement et réserver
+        restent séparés.
+      source_title: Promising and Reserving Inventory
+      source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+      source_version: PeopleSoft FSCM 9.0, édition historique
+      source_locator: Available-to-Promise ; ATP lead days
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM300
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - U148
+  - U149
+  - U151
+  - U154
+  - U260
+  - U261
+  - U262
+  - U263
+  - U264
+  - U265
+  - U290
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM300
+  - CMP186
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U438 : nom de capacité conservé ; parent de domaine explicite dans
+      les relations contains, adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:33:45.906642Z'
+    recorded_by: Codex
+    source_refs:
+    - U151
+    - U154
+    - U290
+    validated_fields:
+    - finality
+    - name
+    - nature
+    value_sha256:
+      finality: 8d99f1b52adeb2ed64ae7fcd936a3540b245665347b6fad596ed0e243eab653d
+      name: 0fd73d6704ab2613ce4b501575871e9795e47ebaa98f32391674ef25097bcc9c
+      nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D03.j
+  kind: capability
+  parent: D15
+  family: D15
+  fields:
+    name: Capable-to-Promise (CTP)
+    definition: Déterminer les possibilités de satisfaction d’un Order nécessitant une adaptation des ressources ou des engagements,
+      en mobilisant les décisions spécialisées et en explicitant les conditions de faisabilité et les impacts.
+    finality: Établir à quelles conditions une promesse deviendrait réalisable après adaptation.
+    nature: decision
+    scope: |-
+      Établir les possibilités de satisfaction de l’Order lorsque la situation de référence ne suffit pas : ressources supplémentaires, autres dates ou adaptations d’engagements à examiner. Le résultat est une solution Supply candidate cohérente, avec quantités et dates réalisables sous conditions, adaptations nécessaires, impacts et points restant à autoriser. Les hypothèses de modification ne sont pas des politiques actives ni des engagements déjà modifiés.
+
+      Mobiliser [Order Prioritization](model:D03.m) pour les arbitrages entre Orders et [Service Selection Decision](model:D06.e) pour les services/exécutants compatibles. Si une évolution des politiques de stock est envisagée, mobiliser [Group Protection Decision](model:D05.d) ou [Inventory Target Decision](model:D05.a) selon le résultat concerné ; CTP peut identifier la nécessité de cette évolution sans décider seul des valeurs de politique. Une dérogation ponctuelle à une politique n’est pas attribuée automatiquement à CTP par cette frontière.
+
+      Les possibilités et impacts établis peuvent alimenter [Profitable-to-Promise (PTP)](model:D03.k), qui porte l’arbitrage économique, et [Delivery Schedule Decision](model:D03.l), qui retient l’échéancier parmi les possibilités réalisables. Identifier les dates possibles fait partie de la faisabilité ; choisir l’échéancier retenu conserve son responsable. Ces mobilisations n’imposent ni appel systématique à toutes les décisions, ni séquence universelle, ni hiérarchie de sous-capacités.
+
+      Exemple fictif : une commande demande 100 pièces vendredi, mais seules 60 sont admissibles dans la situation de référence. CTP examine sous quelles conditions obtenir les 40 manquantes : apport supplémentaire disponible à temps ou autre solution compatible. La disponibilité du service nécessaire est éclairée par D06 ; une variante qui dégraderait une autre commande respecte l’arbitrage de priorité. Les possibilités et conséquences alimentent, selon le cas, le choix économique et l’échéancier. Le résultat ne crée pas automatiquement un achat et ne modifie pas de lui-même une autre promesse ou une protection.
+
+      [Process Adaptation Decision](model:D06.f) détermine les variations du plan d’exécution face aux aléas. Lorsqu’une variation affecte la satisfaction de l’Order, le réexamen de la promesse dans D15 peut mobiliser CTP. [Promise Revision](model:BHV023) établit les modifications autorisées de promesse ; les capacités de gestion concernées tiennent les Orders, protections, affectations et réservations. CTP ne reprend pas leur application transactionnelle.
+
+      Un apport ou un transfert envisagé pour honorer l’Order conserve cette finalité, distincte de [Replenishment Decision](model:D05.e) et [Stock Redistribution Decision](model:D05.c), qui recherchent un stock souhaitable ou mieux réparti. Leur opération commune ne crée pas une dépendance obligatoire de tout approvisionnement CTP à D05. Le partage éventuel de données ou de calculs n’impose pas de fusion. CTP reste une décision agrégée de faisabilité sous adaptation ; elle ne devient pas par cette composition une capacité Planning ni une seconde autorité sur les arbitrages spécialisés.
+
+      U402 : [Additional Supply Feasibility](model:BHV075), [Fulfillment Alternative Feasibility](model:BHV076), [Commitment Rebalancing Feasibility](model:BHV077). [CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o) détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées. [Supply Assignment](model:D02.e) applique les affectations retenues ; [Fulfillment Commitment](model:D03.n) porte les modifications autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée.
+    decomposition_rationale: 'Distinguer trois leviers métier : obtenir davantage de ressources, changer la solution de satisfaction,
+      ou réexaminer des engagements existants. Les conditions, les parties concernées et les conséquences diffèrent réellement.
+      La décomposition rend explicite ce qui doit changer pour rendre une commande satisfaisable, sans confondre faisabilité,
+      choix collectif et application. Plusieurs leviers peuvent se combiner.'
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management / Planning Optimization
+      element_name: Calculate delivery dates using CTP
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: CTP vérifie matières et capacités pour déterminer les dates réalisables, notamment pour assembler ou produire
+        à la demande.
+      differences: Appui au mécanisme d’apport supplémentaire ; le CTP FLOW est plus large que ce cas de fabrication. Aucun
+        processus de production interne FLOW ni équivalence de taxonomie déduit.
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Calculate delivery dates using CTP
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+      source_version: Documentation évolutive ; mise à jour affichée 2026-07-27
+      source_locator: How CTP compares to ATP ; exemple de fabrication de A à partir de B et C
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+    - vendor: SAP
+      product: SAP S/4HANA aATP
+      element_name: Alternative-Based Confirmation
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: Alternative-Based Confirmation examine des sites alternatifs et des produits de substitution selon des
+        règles.
+      differences: SAP expose ABC sous aATP. FLOW distingue alternatives déjà admissibles (ATP) et adaptations de la référence
+        (CTP). L’exemple express est une illustration FLOW ; cette page ne prouve pas un mécanisme ABC de choix de transport
+        express.
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Alternative-Based Confirmation
+      source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+      source_version: S/4HANA ; cours couvrant plusieurs évolutions
+      source_locator: 'Advanced ATP Scenario: Alternative-Based Confirmation (ABC)'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition / Backorder Processing
+      element_name: Exploring Backorder Processing
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: BOP réexamine les confirmations selon disponibilités et priorités, avec stratégies de préservation, amélioration
+        et redistribution.
+      differences: 'Le processus SAP traverse plusieurs responsabilités FLOW : faisabilité CTP, décision collective, priorités,
+        révision de promesse et application des affectations. BOP ne correspond pas à un comportement CTP unique ni à une
+        autorité de CTP pour choisir les perdants.'
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: S/4HANA Cloud Public Edition ; cours évolutif
+      source_locator: Backorder Processing Overview ; Confirmation Strategies
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+  source_refs:
+  - U148
+  - U149
+  - U151
+  - U154
+  - U250
+  - U251
+  - CMP086
+  - U290
+  - U402
+  - ELM241
+  - CMP152
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U438
+  - U445
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U402 : trois mécanismes adoptés, détails éditoriaux et correspondances
+      marché distincts. U438 : nom de capacité conservé ; parent de domaine explicite dans les relations contains, adopté
+      séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U154
+    - U251
+    - U290
+    validated_fields:
+    - definition
+    - finality
+    - name
+    - nature
+    value_sha256:
+      definition: 6a2984200c2a80430fd4a331972d06a415d3ee3552f5de341865fee9b44faae2
+      finality: 3572a9919fc3f9b6d0ef0f1ab6b85f2cf62c03e2128d2bec6cd3640f63885e90
+      name: 86bf43e2b3dc6e67e0510c5daaa26185346a8a58454eddfcfd636e69fab73d0f
+      nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D03.k
+  kind: capability
+  parent: D15
+  family: D15
+  fields:
+    name: Profitable-to-Promise (PTP)
+    definition: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les
+      contraintes de service applicables.
+    finality: Retenir une solution économiquement pertinente parmi les possibilités examinées.
+    nature: decision
+    scope: |-
+      Comparer les conséquences économiques des scénarios de promesse réalisables : coûts pertinents de transport, de préparation, de fractionnement ou d'adaptation et effets économiques connus. Les valeurs, leur provenance, leur période de validité et les hypothèses sont des entrées à identifier ; cette capacité n'administre ni tarifs, ni comptabilité, ni politique de prix.
+
+      Prendre en compte les quantités et échéances possibles, les conditions contractuelles et les contraintes de service. Distinguer les contraintes impératives des préférences économiques. Une information de coût manquante ou incertaine doit rester visible ; elle ne vaut pas un coût nul. Aucun critère ni pondération universelle n'est imposé.
+
+      Le résultat explique les scénarios retenus ou écartés et leurs conséquences économiques, avec les hypothèses utilisées. Si aucun scénario admissible n'existe, expliciter cette limite. ATP et CTP conservent l'établissement des possibilités ; Order Prioritization détermine les priorités ; Delivery Schedule Decision choisit l'échéancier. Fulfillment Plan Decision compose un compromis collectif multidimensionnel. La sélection économique ne confirme pas à elle seule une promesse et ne déclenche pas une prestation.
+
+      Exemple fictif : comparer une livraison accélérée coûtant 120 et deux livraisons coûtant 80, si les deux respectent les conditions du client. Un scénario moins cher mais hors délai contractuel ne devient pas admissible par son seul gain. Les montants illustrent le raisonnement ; ils ne définissent aucun seuil métier.
+    market_comparisons:
+    - vendor: Oracle
+      product: Oracle Fusion Cloud SCM / Order Management / Global Order Promising
+      element_name: Create Alternative Fulfillment Scenarios to Reduce Cost
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Le scénario de satisfaction est évalué selon ses coûts et les dates réalisables.
+      differences: L’exemple Oracle privilégie le moindre coût ; FLOW ne réduit pas la valeur multidimensionnelle à ce critère
+        et ne reprend pas la production en interne.
+      flow_position: D03.k compare les conséquences économiques ; D03.o conserve le compromis collectif et les autres décisions
+        leurs contraintes. Comparaison proposée au titre de U435, sans validation ni réalisation installée déduites.
+      source_title: Create Alternative Fulfillment Scenarios to Reduce Cost
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+      source_version: Oracle Cloud SCM 26C
+      source_locator: Introduction ; cost table ; Promise According to Arrival Date
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Oracle
+      product: Fusion Cloud Global Order Promising
+      element_name: Database Promising
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: La promesse peut intégrer les coûts des ressources effectivement mobilisées.
+      differences: Cet appui et la première référence sont deux documents Oracle ; ils ne démontrent pas un consensus interéditeurs.
+      flow_position: Profitable-to-Promise est un terme documenté notamment par Oracle.
+      term_choice: Profitable-to-Promise est un terme documenté notamment par Oracle.
+      definition_choice: FLOW compare les conséquences économiques des scénarios ; il ne présuppose ni marge unique ni pondération
+        de tous les critères.
+      source_title: Database Promising
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html
+      source_version: 25C
+      source_locator: Profitable to Promise
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM301
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - U148
+  - U149
+  - U151
+  - U154
+  - U290
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM301
+  - CMP186
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U438 : nom de capacité conservé ; parent de domaine explicite dans
+      les relations contains, adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U151
+    - U154
+    - U290
+    validated_fields:
+    - definition
+    - finality
+    - name
+    - nature
+    value_sha256:
+      definition: 934dacb7dce862a490b41d36c66c714fc72c88418c73166181394410f29f4aa5
+      finality: a421ac059cc81ad41a400691d9376fef55c60694b9b2c1d49d08a7d352d363d7
+      name: bfdff94087144c92b1c602ab145a9033508cd2deb1acf0d62dcd78c601c9a623
+      nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D03.l
+  kind: capability
+  parent: D15
+  family: D15
+  fields:
+    name: Delivery Schedule Decision
+    definition: Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les possibilités
+      réalisables et selon les conditions de la commande.
+    finality: Retenir un échéancier acceptable pour honorer la commande.
+    nature: decision
+    scope: |-
+      Choisir la répartition des quantités promises entre les échéances réalisables, en tenant compte des possibilités fournies par ATP/CTP, des conditions de la commande et des décisions économiques et de priorité utiles au cas. Distinguer date demandée, date proposée, date engagée, expédition et réception.
+
+      Les possibilités temporelles doivent expliciter les calendriers applicables, jours d'ouverture, heures limites et fuseaux pertinents, ainsi que les délais et dates de connaissance des informations. Ces références proviennent des responsables externes ou des projections applicables ; leur maître précis reste à identifier. Aucun calcul universel par simple ajout de jours ni calendrier administré implicitement par cette capacité.
+
+      Le résultat indique quantités et échéances retenues, conditions, hypothèses et reste non couvert. Une préférence pour une livraison unique ou des livraisons fractionnées s'applique selon les conditions connues ; elle n'est pas présumée universelle. Si l'échéance demandée est impossible, exposer les options et la partie non satisfaite sans modifier silencieusement la demande.
+
+      Exemple fictif : retenir 60 vendredi et 40 lundi parmi les options autorisées. Si la collecte de vendredi est fermée ou si lundi est non ouvré, réexaminer les options avant de les annoncer. Deux échéances ne signifient pas deux Sales Orders : Order Structuring conserve le découpage, Fulfillment Commitment la proposition/confirmation/révision et Order Lifecycle Management les changements autorisés.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA aATP / Retail / Fashion
+      element_name: Exploring Backorder Processing
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Le réexamen des confirmations peut modifier dates et quantités confirmées, avec service partiel selon
+        la stratégie.
+      differences: BOP agrège priorités, affectation et confirmation ; il ne constitue pas une capacité autonome identique
+        à Delivery Schedule Decision.
+      flow_position: D03.l retient la répartition des quantités dans le temps parmi les possibilités admissibles ; les priorités
+        et l’engagement restent distincts. Comparaison proposée au titre de U435, sans validation ni réalisation installée
+        déduites.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: Cours S/4HANA Cloud Public Edition évolutif ; pas de numéro de release affiché
+      source_locator: Backorder Processing Overview ; Confirmation Strategies ; Implementing Backorder Processing
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Delivery schedules
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Un échéancier associe des quantités à plusieurs dates de livraison.
+      differences: La page décrit l’échéancier et son traitement, sans isoler l’arbitrage qui le choisit.
+      flow_position: Delivery Schedule nomme un résultat établi ; Decision précise la responsabilité FLOW.
+      term_choice: Delivery Schedule nomme un résultat établi ; Decision précise la responsabilité FLOW.
+      definition_choice: FLOW distingue le choix d’un échéancier réalisable de son enregistrement dans la commande.
+      source_title: Delivery schedules
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+      source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+      source_locator: Create delivery schedules ; Manage delivery lines
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM302
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - U148
+  - U149
+  - U151
+  - U154
+  - U290
+  - U435
+  - U438
+  - U445
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM302
+  - CMP186
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U438 : nom de capacité conservé ; parent de domaine explicite dans
+      les relations contains, adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U151
+    - U154
+    - U290
+    validated_fields:
+    - definition
+    - finality
+    - name
+    - nature
+    value_sha256:
+      definition: 4d0ba8c30c1456eec2aed23ff6f776d562bca59235b1f0bb274ed02c56164f67
+      finality: 48ee4bbb23619ffc1ac39c6f01f057ec48a5a04718fcb6b7b3ad898c454373a4
+      name: 67ec80322f99b596e711e97a383528683b50b3b77f353a7507b8b7c71dfaa97f
+      nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D03.m
+  kind: capability
+  parent: D03
+  family: D03
+  fields:
+    name: Order Prioritization
+    definition: Établir et réviser les priorités relatives des commandes.
+    finality: Arbitrer les commandes à satisfaire en priorité lorsque leurs besoins se trouvent en concurrence.
+    nature: decision
+    scope: |-
+      Établir un ordre de priorité entre les commandes ou fractions pertinentes lorsqu'elles sollicitent des ressources concurrentes. Mobiliser les engagements, dates demandées ou promises, accords et critères de priorité applicables ; distinguer obligations impératives, préférences et éventuelles dérogations autorisées.
+
+      Le résultat rend explicites les priorités relatives, leur périmètre, leur justification et les égalités ou conflits restant à arbitrer. Une priorité ne crée ni stock, ni faisabilité, ni droit de lever une réservation ou un gel. Réviser les priorités lorsque les faits ou règles changent sans effacer la justification de la décision antérieure.
+
+      Fulfillment Plan Decision utilise ces priorités avec les autres décisions pour examiner le carnet ; PTP conserve l'arbitrage économique et Delivery Schedule Decision le choix d'échéancier. Supply Assignment matérialise les affectations retenues et Reservation porte le blocage des usages concurrents. Aucun classement automatique par chiffre d'affaires, canal ou date seule n'est adopté.
+
+      Exemple fictif : deux commandes demandent chacune 60 pièces pour 80 admissibles. Une obligation contractuelle peut donner priorité à la première ; cette priorité ne détermine pas à elle seule la répartition des 20 restantes, une dérogation ni une promesse au second client.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA aATP / Retail / Fashion
+      element_name: Exploring Backorder Processing
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Les commandes sont segmentées et ordonnées selon des critères métier pour arbitrer une ressource limitée.
+      differences: Les stratégies BOP incluent aussi modification des confirmations ; FLOW conserve ces effets sous leurs
+        responsables.
+      flow_position: D03.m établit les priorités relatives ; D03.o construit le scénario collectif et D03.n maintient la promesse
+        autorisée. Comparaison proposée au titre de U435, sans validation ni réalisation installée déduites.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: Cours S/4HANA Cloud Public Edition évolutif ; pas de numéro de release affiché
+      source_locator: Backorder Processing Overview ; Confirmation Strategies ; Implementing Backorder Processing
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Oracle
+      product: PeopleSoft Inventory
+      element_name: Promising and Reserving Inventory
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Des règles ordonnent les demandes avant de leur attribuer les ressources.
+      differences: L’exemple applique ces priorités dans la réservation ; FLOW isole leur détermination.
+      flow_position: Order Prioritization explicite un arbitrage entre commandes.
+      term_choice: Order Prioritization explicite un arbitrage entre commandes.
+      definition_choice: Une priorité ne change à elle seule ni affectation, ni engagement, ni réservation.
+      source_title: Promising and Reserving Inventory
+      source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+      source_version: PeopleSoft FSCM 9.0, édition historique
+      source_locator: Inventory priority rules ; tri des demandes
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM300
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - U160
+  - U161
+  - U162
+  - U163
+  - U290
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM300
+  - CMP186
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U438 : nom de capacité conservé ; parent de domaine explicite dans
+      les relations contains, adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U163
+    - U290
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 30842a2de1e5e1114f93a7569cbbf7049d043edec2071bca4389df91bb57274f
+      definition: 83d208c2d0ecac7df842bde758ed74086624bdf64f2e04e3f228d0de96265888
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D15
+  kind: domain
+  parent: null
+  family: D15
+  fields:
+    name: Order Promising
+    definition: Établir ce qui peut être promis pour satisfaire les Orders, sous quelles conditions, puis maintenir les propositions
+      et engagements de quantités et de dates.
+    finality: Rendre les engagements de satisfaction explicites et compatibles avec les possibilités et arbitrages applicables.
+    scope: |-
+      ATP établit les possibilités dans la situation de référence ; CTP examine la faisabilité sous adaptation ; PTP porte l’arbitrage économique ; Delivery Schedule Decision retient l’échéancier ; Fulfillment Commitment tient propositions, confirmations et révisions autorisées.
+
+      [Fulfillment Optimization](model:D03) porte les priorités, le plan de satisfaction, le travail des scénarios et l’application des affectations. Les choix de promesse et de plan doivent rester compatibles ; le partage précis d’autorité entre PTP, échéancier et plan demeure à instruire. Cette séparation ne définit ni une séquence logicielle ni une frontière individuel/collectif.
+
+      Exemple fictif : 100 pièces demandées vendredi, 60 proposées vendredi et 40 lundi. Possibilités, proposition et engagement confirmé restent distincts ; un recalcul ne modifie pas silencieusement la promesse. Les dates de demande, de proposition, d’engagement et de réalisation ne sont pas interchangeables.
+
+      D01 apporte connaissance des ressources, protections et réservations ; D06 apporte conditions et possibilités des services ainsi que les faits d’exécution. D04 conserve intention, contenu, structure et cycle des Orders. D15 ne réalise pas les prestations et ne réserve pas implicitement des ressources : U436 demeure applicable.
+
+      Le nom et la composition sont adoptés U438 ; les descriptions développées et comparaisons sont proposées. U441/U443 précisent sa distinction d’avec l’affectation ; U445 adopte son nom Fulfillment Commitment.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition
+      element_name: Exploring Backorder Processing
+      element_type: Fonction et périmètre produit
+      relationship: Recouvrement partiel
+      similarities: Réexaminer disponibilités, priorités et confirmations après un changement de ressources ou de demandes.
+      differences: BOP réunit plusieurs responsabilités FLOW ; sa leçon cible ventes et transferts. Order Promising ne se
+        limite donc pas à une demande isolée.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: Leçon évolutive, édition précise non affichée
+      source_locator: Discovering Order Promising ; Introduction ; Backorder Processing Overview
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Page primaire consultée le 19 septembre 2026 ; comparaison documentaire proposée, sans taxonomie de
+        capacités adoptée ni preuve de réalisation installée. Les Orders FLOW ont un périmètre plus large que les cas de vente
+        et de transfert documentés. Synthèse originale, sans reproduction du contenu éditeur.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Order promising
+      element_type: Fonction et périmètre produit
+      relationship: Recouvrement partiel
+      similarities: Établir les dates possibles et la disponibilité soutenant une promesse, notamment par ATP et CTP.
+      differences: Le CTP Microsoft décrit notamment la capacité de production ; FLOW examine plus largement les adaptations.
+        Cette page ne définit pas toute la gestion de promesse FLOW.
+      source_title: Order promising
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+      source_version: Documentation évolutive, mise à jour affichée 2026-04-21
+      source_locator: In this article ; ATP calculations ; CTP calculations
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Page primaire consultée le 19 septembre 2026 ; comparaison documentaire proposée, sans taxonomie de
+        capacités adoptée ni preuve de réalisation installée. Les Orders FLOW ont un périmètre plus large que les cas de vente
+        et de transfert documentés. Synthèse originale, sans reproduction du contenu éditeur.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+      - U462
+      term_choice: Order Promising reprend un terme établi pour la promesse de satisfaction, également documenté chez Microsoft
+        ; il évite de nommer le domaine par le seul objet Backlog.
+      definition_choice: FLOW distingue possibilités ATP/CTP/PTP, échéancier et engagement de satisfaction. L’optimisation
+        collective et les affectations relèvent du domaine voisin Fulfillment Optimization.
+  source_refs:
+  - U438
+  - U437
+  - U436
+  - U445
+  - U455
+  - U458
+  - U462
+  review:
+    state: partial
+    note: Nom et cinq rattachements adoptés U438 ; descriptions et comparaisons proposées, sans validation globale.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T01:13:35.882622Z'
+    recorded_by: Codex
+    source_refs:
+    - U438
+    validated_fields:
+    - name
+    value_sha256:
+      name: a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88
+    note: U438 adopte noms et rattachements explicitement présentés ; autres champs non validés par extension. Accord antérieur
+      conservé dans history/order-domains-U438/.
+- id: D03
+  kind: domain
+  parent: null
+  family: D03
+  fields:
+    name: Fulfillment Optimization
+    definition: Arbitrer la satisfaction des Orders sous contraintes et objectifs concurrents, déterminer un plan cohérent
+      et matérialiser les affectations de ressources retenues.
+    finality: Décider comment satisfaire les Orders avec les ressources disponibles ou adaptables.
+    scope: |-
+      Order Prioritization établit les priorités ; Fulfillment Plan Decision détermine un plan cohérent de satisfaction ; Order Backlog Planning organise le travail des hypothèses et scénarios ; Supply Assignment matérialise les affectations retenues. La valeur reste multidimensionnelle, sans pondération universelle.
+
+      [Order Promising](model:D15) établit les possibilités ATP/CTP, porte les arbitrages économiques et d’échéancier, puis tient les propositions et engagements de promesse. D03 mobilise ces résultats ; les échanges peuvent conduire à réexaminer possibilités, plan et promesses. Les autorités respectives de PTP, de Delivery Schedule Decision et de Fulfillment Plan Decision restent à préciser sans second plan final implicite.
+
+      [Order Management](model:D04) conserve la demande selon son intention, sa structure et sa conservation. Order Lifecycle Management autorise la prise en charge ; [Process Management](model:D06) coordonne les services et leurs adaptations. D03 peut demander les mutations utiles mais ne reprend pas leur application ni la réalisation physique.
+
+      Exemple fictif : deux commandes sollicitent 120 pièces pour 80 admissibles. Le domaine arbitre un plan compatible avec les priorités, possibilités et engagements, puis matérialise ses affectations. Une priorité ne lève pas une réservation et le plan ne confirme pas automatiquement une promesse. Selon U436, seule Reservation bloque les usages concurrents.
+
+      Le carnet reste une vue de travail, comprenant aussi le reste à satisfaire de commandes déjà engagées. La séparation D03/D15 repose sur les responsabilités de choix et de promesse, pas sur individuel/collectif : une optimisation peut concerner une seule commande et ATP plusieurs demandes. Inventory Optimization D05 conserve les objectifs et ajustements de stock.
+
+      U438 remplace le nom Order Backlog Management adopté U413 et les rattachements concernés U417/U420. D03 conserve quatre capacités ; D15 reçoit ATP, CTP, PTP, Delivery Schedule Decision et Fulfillment Commitment ; Structuring et Archiving rejoignent D04. Les identifiants de capacités et leurs comportements restent stables. Les descriptions développées restent éditoriales.
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud SCM 26B
+      element_name: Start Backlog Planning
+      element_type: Processus et fonction produit
+      relationship: Recouvrement partiel
+      similarities: Prioriser et replannifier la satisfaction sur l’ensemble du carnet à partir des ressources et demandes
+        actualisées.
+      differences: Documentation d’un produit et de son traitement planifié, pas taxonomie de capacités ni preuve de prise
+        en charge de tous les types d’Orders FLOW.
+      source_title: Start Backlog Planning
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+      source_version: 26B
+      source_locator: Introduction ; When to Use
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la discussion ; aucune preuve de déploiement Beaumanoir. Niveaux et
+        périmètres produits non transposés automatiquement.
+      status: proposed
+      source_refs:
+      - U411
+      - U412
+      - U413
+      - ELM246
+      - CMP157
+      - U435
+      - U438
+    - vendor: Oracle
+      product: Fusion Cloud SCM 25D
+      element_name: Key Actions on Orders
+      element_type: Fonction produit
+      relationship: Recouvrement partiel
+      similarities: Travail du carnet, priorisation, simulation puis transmission des résultats retenus à Order Management.
+      differences: Release Planning Results transmet des résultats de planification ; ce n’est pas une équivalence exacte
+        de l’autorisation FLOW vers les processus. La séparation demande/carnet/processus est la convention FLOW.
+      source_title: Key Actions on Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+      source_version: 25D, édition explicitement consultée
+      source_locator: Plan Run Actions ; Attribute Data Simulation Actions ; Release Actions
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la discussion ; aucune preuve de déploiement Beaumanoir. Niveaux et
+        périmètres produits non transposés automatiquement.
+      status: proposed
+      source_refs:
+      - U411
+      - U412
+      - U413
+      - ELM246
+      - CMP157
+      - U435
+      - U438
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: View, manage, and approve planned orders
+      element_type: Pratique et fonction produit
+      relationship: Recouvrement partiel
+      similarities: Revoir et modifier les ordres planifiés, approuver les ajustements et préparer leur affermissement ; conservation
+        des ajustements approuvés sous conditions lors des planifications suivantes.
+      differences: Approvisionnements planifiés de production, achat et transfert. Aucun équivalent universel aux commandes
+        clients, retours ou à tout le carnet FLOW ; approbation, affermissement et release restent distincts.
+      source_title: View, manage, and approve planned orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+      source_version: Page mise à jour le 2 septembre 2026
+      source_locator: View and edit the status of planned orders ; Approve planned orders
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la discussion ; aucune preuve de déploiement Beaumanoir. Niveaux et
+        périmètres produits non transposés automatiquement.
+      status: proposed
+      source_refs:
+      - U411
+      - U412
+      - U413
+      - ELM246
+      - CMP157
+      - U435
+      - U438
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition
+      element_name: Exploring Backorder Processing
+      element_type: Fonction et périmètre produit
+      relationship: Recouvrement partiel
+      similarities: Réexaminer disponibilités, priorités et confirmations après un changement de ressources ou de demandes.
+      differences: BOP réunit plusieurs responsabilités FLOW ; sa leçon cible ventes et transferts. Order Promising ne se
+        limite donc pas à une demande isolée.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: Leçon évolutive, édition précise non affichée
+      source_locator: Discovering Order Promising ; Introduction ; Backorder Processing Overview
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Page primaire consultée le 19 septembre 2026 ; comparaison documentaire proposée, sans taxonomie de
+        capacités adoptée ni preuve de réalisation installée. Les Orders FLOW ont un périmètre plus large que les cas de vente
+        et de transfert documentés. Synthèse originale, sans reproduction du contenu éditeur.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      element_name: Distributed order management (DOM)
+      element_type: Fonction et périmètre produit
+      relationship: Recouvrement partiel
+      similarities: Choisir les sources de satisfaction sous contraintes et objectifs de coût et de service, pour une commande
+        ou un ensemble.
+      differences: Solution omnicanale ; son périmètre logiciel ne fixe ni les parents FLOW ni toutes les responsabilités
+        de tenue des engagements.
+      source_title: Distributed order management (DOM)
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+      source_version: Documentation évolutive, mise à jour affichée 2026-06-03
+      source_locator: In this article ; présentation de DOM
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Page primaire consultée le 19 septembre 2026 ; comparaison documentaire proposée, sans taxonomie de
+        capacités adoptée ni preuve de réalisation installée. Les Orders FLOW ont un périmètre plus large que les cas de vente
+        et de transfert documentés. Synthèse originale, sans reproduction du contenu éditeur.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+      - U462
+      term_choice: 'Fulfillment Optimization nomme le problème métier : arbitrer la satisfaction des commandes. Backlog désigne
+        le carnet travaillé, mais ne suffit pas à délimiter cette responsabilité.'
+      definition_choice: Le domaine regroupe priorités, plan, Planning et affectations. Order Promising conserve possibilités
+        et engagements ; Order Management conserve structure, cycle et archivage. Le découpage FLOW n’est pas celui du produit
+        DOM.
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Order promising
+      element_type: Fonction et périmètre produit
+      relationship: Recouvrement partiel
+      similarities: Établir les dates possibles et la disponibilité soutenant une promesse, notamment par ATP et CTP.
+      differences: Le CTP Microsoft décrit notamment la capacité de production ; FLOW examine plus largement les adaptations.
+        Cette page ne définit pas toute la gestion de promesse FLOW.
+      source_title: Order promising
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+      source_version: Documentation évolutive, mise à jour affichée 2026-04-21
+      source_locator: In this article ; ATP calculations ; CTP calculations
+      flow_position: 'U438 : D03 Fulfillment Optimization porte priorités, plan de satisfaction, Planning et affectations
+        ; D15 Order Promising porte possibilités et engagements. D04 conserve structure, cycle et archivage. La source éclaire
+        des responsabilités traversant cette partition FLOW ; elle ne prescrit pas les domaines.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Page primaire consultée le 19 septembre 2026 ; comparaison documentaire proposée, sans taxonomie de
+        capacités adoptée ni preuve de réalisation installée. Les Orders FLOW ont un périmètre plus large que les cas de vente
+        et de transfert documentés. Synthèse originale, sans reproduction du contenu éditeur.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+  source_refs:
+  - P81
+  - P83
+  - U52
+  - U75
+  - U80
+  - U81
+  - U95
+  - F201
+  - C63
+  - CMP052
+  - U147
+  - U154
+  - U163
+  - U202
+  - U218
+  - U219
+  - U220
+  - U290
+  - U369
+  - U378
+  - U411
+  - U412
+  - U413
+  - ELM246
+  - CMP157
+  - U414
+  - ELM247
+  - CMP158
+  - U416
+  - U417
+  - U418
+  - ELM248
+  - CMP159
+  - U420
+  - U435
+  - U437
+  - U438
+  - U445
+  - U455
+  - U458
+  - U462
+  review:
+    state: partial
+    note: U438 adopte Fulfillment Optimization et sa composition. Finalité antérieure conservée ; définition, périmètre et
+      comparaisons restent éditoriaux. U439–U442 instruisent séparément Structuring et Promise Management.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T01:13:35.882622Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U52
+    - U95
+    - U147
+    - U154
+    - U202
+    - U218
+    - U219
+    - U290
+    - U369
+    - U413
+    - U438
+    validated_fields:
+    - name
+    - finality
+    value_sha256:
+      name: 1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062
+      finality: 27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e
+    note: U438 adopte noms et rattachements explicitement présentés ; autres champs non validés par extension. Accord antérieur
+      conservé dans history/order-domains-U438/.
+- id: BHV001
+  kind: behavior
+  parent: D03.i
+  family: D15
+  fields:
+    name: Existing Commitment Consideration
+    definition: Établir les quantités admissibles pour la demande en tenant compte des allocations, protections et réservations,
+      sans double décompte.
+    finality: Éviter de proposer des engagements incompatibles avec les droits et engagements existants.
+    scope: Tenir compte des allocations, protections et réservations pour la demande considérée. Une quantité protégée pour
+      un groupe peut rester admissible à ses membres ; éviter de soustraire deux fois des engagements représentés dans plusieurs
+      informations. Les règles de décompte exactes restent à préciser.
+    nature: decision_dimension
+  source_refs:
+  - U261
+  - U262
+  - U263
+  - U264
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T06:26:00.871856Z'
+    recorded_by: Codex
+    source_refs:
+    - U263
+    - U264
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: 0155ffc7de93ece820d59008ef10e346133063e22de9b1c28d2d3c49ce08013d
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+- id: BHV002
+  kind: behavior
+  parent: D03.i
+  family: D15
+  fields:
+    name: Network Stock Availability
+    definition: Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins, darkstores ou
+      autres espaces de stockage.
+    finality: Identifier les stocks admissibles pouvant contribuer à la satisfaction de la demande.
+    scope: 'Inclure tout lieu de stockage admissible : entrepôt, magasin, darkstore ou autre. Le type de lieu ne détermine
+      pas à lui seul l’éligibilité ; appliquer les règles et conditions de service existantes.'
+    nature: decision_dimension
+  source_refs:
+  - U261
+  - U262
+  - U263
+  - U264
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T06:26:00.871856Z'
+    recorded_by: Codex
+    source_refs:
+    - U263
+    - U264
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: 630d96f712d6b84482852aef66625de728ae9e3a710b879ee9d000db990c7a52
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+- id: BHV003
+  kind: behavior
+  parent: D03.i
+  family: D15
+  fields:
+    name: Operational Availability Timing
+    definition: Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité opérationnelle.
+    finality: Établir une échéance compatible avec la mobilisation effective des quantités.
+    scope: |-
+      Un article au fond de la réserve peut nécessiter plus de temps de mobilisation qu’un article près de l’expédition. Consommer les délais et contraintes opérationnels pertinents ; la RFID est une illustration de moyen, pas une condition imposée.
+
+      Précision éditoriale U435 : les délais utilisables tiennent compte des calendriers, jours ouvrés, heures limites et fuseaux pertinents. Conserver origine et validité des informations ; si une contrainte temporelle est inconnue, ne pas présenter la date comme certaine. Exemple fictif : un stock présent après la dernière collecte ne permet pas de promettre un départ avant la prochaine ouverture applicable. Cette lecture des délais ne gère pas les calendriers maîtres et ne choisit pas à elle seule l’échéancier engagé.
+    nature: decision_dimension
+  source_refs:
+  - U261
+  - U262
+  - U263
+  - U264
+  - U435
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T06:26:00.871856Z'
+    recorded_by: Codex
+    source_refs:
+    - U263
+    - U264
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: 3138a91122046a7730bae22c50c0396f44d966ee05e6602972ba0a8589af95ac
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+- id: BHV004
+  kind: behavior
+  parent: D03.i
+  family: D15
+  fields:
+    name: Future Supply Projection
+    definition: Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements concurrents,
+      pour une promesse ou un ensemble.
+    finality: Établir la couverture possible à l’échéance en tenant compte des ressources futures.
+    scope: Un arrivage prévu à J+7 peut soutenir un engagement à J+60 sous réserve des autres consommations et contraintes.
+      Examiner les engagements sur l’horizon et les quantités concurrentes pour une demande ou un ensemble ; ne pas créer
+      un nouvel approvisionnement par le seul calcul ATP.
+    nature: decision_dimension
+  source_refs:
+  - U261
+  - U262
+  - U263
+  - U264
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T06:26:00.871856Z'
+    recorded_by: Codex
+    source_refs:
+    - U263
+    - U264
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: 27833ffa7641434244c63aa4107acd1b23c66fd92033aa6c065be52135ba1b43
+    note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
+- id: D03.n
+  kind: capability
+  parent: D15
+  family: D15
+  fields:
+    name: Fulfillment Commitment
+    definition: Proposer, confirmer et réviser les engagements de satisfaction d’une commande, en quantités, dates et conditions.
+    nature: management
+    finality: Établir et maintenir des engagements Supply explicites et cohérents avec les possibilités retenues.
+    decomposition_rationale: 'Distinguer proposition, établissement de l’engagement et réexamen de cet engagement : trois
+      façons d’agir avec effets différents, sans multiplier les capacités d’action.'
+    scope: |-
+      Trois comportements : proposition sans engagement confirmé, confirmation des quantités et dates, révision lorsque la situation évolue. Les décisions ATP/CTP/PTP, priorités et échéancier restent distinctes, ainsi que Supply Assignment et Reservation. Exemple fictif : proposer 60 vendredi et 40 lundi, confirmer la première part puis réexaminer la seconde après retard fournisseur. Aucune confirmation n’est assimilée à un mouvement physique ni à une réservation automatique.
+
+      U441/U443 : une demande de 100 pièces vendredi peut recevoir une promesse de 60 vendredi et 40 lundi ; la demande et l’engagement de satisfaction restent lisibles séparément. ATP/CTP établissent les possibilités, Delivery Schedule Decision choisit l’échéancier et Fulfillment Plan Decision la cohérence du plan. Promise Proposal formalise les résultats pertinents sans refaire ces arbitrages ; Promise Confirmation établit l’engagement ; Promise Revision tient ses modifications autorisées.
+
+      Supply Assignment maintient les liens entre ressources et commandes. Exemple fictif : remplacer l’affectation à l’arrivage A par B, avec mêmes quantités et mêmes conditions de satisfaction, peut préserver la promesse. Inversement, un retard de transport peut imposer de réexaminer la date promise sans changer les ressources affectées. Aucun de ces constats n’autorise à modifier automatiquement l’engagement ; selon U436, seul Reservation bloque les usages concurrents.
+
+      Order Firming rend une intention ferme ; il ne confirme pas automatiquement les quantités et dates de satisfaction. Order Preparation & Revision tient le contenu demandé et ses versions ; la présente capacité tient la proposition et l’engagement de satisfaction. Elle ne possède ni un second choix d’échéancier ni l’autorité générale de modifier les Orders. Les conditions d’autorisation et de synchronisation restent à préciser.
+
+      U445 adopte le nom Fulfillment Commitment, en remplacement de Promise Management. La définition développée et les contrats restent proposés ; aucun effet de réservation ni réalisation physique déduit du mot Commitment.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA aATP / Retail / Fashion
+      element_name: Exploring Backorder Processing
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Des engagements confirmés peuvent être réexaminés, améliorés ou dégradés selon les règles et la disponibilité.
+      differences: Le processus BOP réalise aussi le calcul et la réaffectation ; il ne correspond pas uniquement à Fulfillment
+        Commitment.
+      flow_position: D03.n distingue proposition, confirmation et révision ; ATP/CTP, priorités, affectation et autorisation
+        gardent leurs responsabilités. Comparaison proposée au titre de U435, sans validation ni réalisation installée déduites.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: Cours S/4HANA Cloud Public Edition évolutif ; pas de numéro de release affiché
+      source_locator: Backorder Processing Overview ; Confirmation Strategies ; Implementing Backorder Processing
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+      - U460
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Confirm sales orders
+      element_type: Concept ou fonction produit
+      relationship: Appui lexical et recouvrement partiel
+      similarities: Une confirmation est formalisée et peut donner lieu à un document.
+      differences: La confirmation de commande décrite ne couvre pas à elle seule la proposition et la révision de satisfaction
+        FLOW.
+      flow_position: Le nom Fulfillment Commitment exprime l’engagement de satisfaction ; il ne désigne pas une simple confirmation
+        documentaire.
+      source_title: Confirm sales orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders
+      source_version: Documentation évolutive ; mise à jour affichée le 1er juillet 2026
+      source_locator: Confirm a single sales order ; Confirm multiple sales orders
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire consultée ; aucune équivalence complète de taxonomie ni réalisation installée déduite.
+      status: proposed
+      source_refs:
+      - U444
+      - U445
+      - ELM286
+      - CMP179
+      - U462
+      - U441
+      - U443
+      term_choice: Fulfillment Commitment rend explicite l’engagement de satisfaction. Promise Management était trop vague
+        ; Promise Confirmation trop étroit pour inclure proposition et révision. Order Confirmation peut désigner la confirmation
+        documentaire. Aucun terme unique de marché couvrant exactement cette responsabilité n’est établi ici.
+      definition_choice: La définition rassemble proposer, confirmer et réviser les quantités, dates et conditions. Elle laisse
+        les calculs de faisabilité, le choix d’échéancier, l’affectation et la réservation à leurs responsabilités.
+    examples:
+    - title: Demander 100 vendredi, promettre en deux temps
+      situation: Une commande demande 100 pièces vendredi.
+      outcome: La proposition porte sur 60 vendredi et 40 lundi ; la confirmation établit les quantités et dates engagées
+        selon les autorisations applicables.
+      lesson: La demande, la proposition et l’engagement restent lisibles séparément. Confirmer ne réserve pas automatiquement
+        les ressources.
+      source_refs:
+      - U441
+      - U443
+      - U436
+      - U462
+    - title: Même promesse, autre ressource
+      situation: 40 pièces étaient affectées à l’arrivage A ; l’arrivage B offre les mêmes conditions de satisfaction.
+      outcome: L’affectation peut passer de A à B sans changer l’engagement. Inversement, un retard de transport peut conduire
+        à réexaminer la date promise avec la même ressource.
+      lesson: Fulfillment Commitment et Supply Assignment répondent à deux questions distinctes.
+      source_refs:
+      - U443
+      - U462
+  source_refs:
+  - U290
+  - U288
+  - U435
+  - U438
+  - U441
+  - U443
+  - U444
+  - U445
+  - U455
+  - U458
+  - U460
+  - U462
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U438 : nom de capacité conservé ; parent de domaine explicite dans
+      les relations contains, adopté séparément des descriptions. Clarification éditoriale ; noms et champs validés conservés.
+      U445 adopte le nouveau nom ; aucune validation globale déduite.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T01:17:45.864508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    - U445
+    validated_fields:
+    - name
+    value_sha256:
+      name: 8fbdb29a711c0c52e959b3d77e91426b71b41c15c36887b1b1d59361904c20e7
+    note: U445 adopte le nom Fulfillment Commitment ; descriptions et détails restent éditoriaux. L’ancien nom et son accord
+      sont conservés dans audits/2026-09-19-d03-U437/model-before-U445.yaml.
+- id: BHV021
+  kind: behavior
+  parent: D03.n
+  family: D15
+  fields:
+    name: Promise Proposal
+    definition: Formaliser les quantités, dates et conditions proposées pour satisfaire une commande, à partir des possibilités
+      et arbitrages établis, sans confirmer encore l’engagement.
+    scope: |-
+      Critère différenciant : mécanisme. Bénéfice ciblé : Explorer et expliciter une solution sans produire d’engagement confirmé.
+
+      Comportement de Fulfillment Commitment selon U288. Les décisions de faisabilité, priorisation et échéancier restent distinctes ; confirmation ne prouve pas réservation, affectation ou prise en charge de service.
+
+      Exemple fictif : 60 vendredi et 40 lundi proposés ; aucune réservation ou confirmation déduite.
+
+      U441/U443 : ce comportement présente une solution issue des décisions responsables ; il ne recalcule pas un autre plan d’affectation ni un autre échéancier. Une proposition n’est ni un lien d’affectation ni une réservation.
+    nature: business_effect
+  source_refs:
+  - U290
+  - U435
+  - U441
+  - U443
+  - U444
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Intégration U290 ; détails éditoriaux proposés. Clarification éditoriale ; noms et champs validés conservés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields:
+    - name
+    value_sha256:
+      name: b9c4390648f06238a66eb77ea1217c39c063b145a1b62ad7d4d49752a2bfa1a6
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: BHV022
+  kind: behavior
+  parent: D03.n
+  family: D15
+  fields:
+    name: Promise Confirmation
+    definition: établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas.
+    scope: |-
+      Critère différenciant : politique. Bénéfice ciblé : Faire passer des possibilités à un engagement explicite selon les autorisations et conditions.
+
+      Comportement de Fulfillment Commitment selon U288. Les décisions de faisabilité, priorisation et échéancier restent distinctes ; confirmation ne prouve pas réservation, affectation ou prise en charge de service.
+
+      Exemple fictif : 60 confirmées vendredi, 40 encore non confirmées ; affectation et réservation gardent leur contrat.
+    nature: business_effect
+  source_refs:
+  - U290
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields:
+    - name
+    value_sha256:
+      name: 74d248d5f671453f15ec4e94a76d49008bbeb5b570b9a2db703cf3fcf55f76cf
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: BHV023
+  kind: behavior
+  parent: D03.n
+  family: D15
+  fields:
+    name: Promise Revision
+    definition: Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications
+      autorisées.
+    scope: |-
+      Critère différenciant : mécanisme. Bénéfice ciblé : Maintenir les engagements cohérents lorsque ressources, demandes ou priorités évoluent.
+
+      Comportement de Fulfillment Commitment selon U288. Les décisions de faisabilité, priorisation et échéancier restent distinctes ; confirmation ne prouve pas réservation, affectation ou prise en charge de service.
+
+      Exemple fictif : Réexaminer les 40 après report d’arrivage et tracer la révision autorisée.
+    nature: business_effect
+  source_refs:
+  - U290
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields:
+    - name
+    value_sha256:
+      name: cb5af08e33b2474f744939e79afc919ffbd79fd21a7327ed82b51932c340bd71
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: BHV045
+  kind: behavior
+  parent: D02.e
+  family: D03
+  fields:
+    name: Supply Assignment Plan Application
+    definition: Appliquer les affectations d’un plan retenu, en contrôlant qu’elles restent applicables et en signalant les
+      écarts.
+    finality: Rendre opérationnels les choix retenus sans leur substituer silencieusement un autre plan.
+    scope: |-
+      Exemple fictif : Le plan affecte 60 pièces présentes et 40 attendues à une commande. Si une ressource manque, expliquer l’écart sans substituer silencieusement un autre plan.
+
+      Un plan peut prescrire un complément avec préservation ou une réaffectation : les trois comportements sont combinables, sans séquence imposée. Restituer les écarts entre les affectations prévues et appliquées ; un écart peut appeler une nouvelle décision. Aucune transaction atomique de tout le plan ou validation humaine systématique n’est imposée.
+
+      Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu ou l’état d’un Order mobilise les responsabilités D04 ; modifier sa structure mobilise Order Structuring dans D04. D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Supply Assignment (ARun)
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Affectation des ressources aux besoins ; accès par BOP, ITA, affectation immédiate et API.
+      differences: Fonctionnalité intégrée ; ni couverture de toutes les capacités FLOW ni réalisation exclusivement batch
+        démontrées.
+      source_title: Supply Assignment (ARun)
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+      source_version: 2025 FPS01
+      source_locator: Introduction et modes d’accès
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement. U364 : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant
+        les liens et réaffectation des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance
+        proposée.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+      - U364
+      - CMP134
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Backorder Processing — Reassignment
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Le traitement peut conserver les affectations et compléter le reliquat, ou les réexaminer. Le mode preview
+        ne produit pas d’effets logistiques.
+      differences: Regroupement produit de décisions et d’action ; pas preuve qu’un plan externe arbitraire est importable
+        ou qu’une simulation est appliquée sans recontrôle.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_version: 2025 FPS01
+      source_locator: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement. U364 : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant
+        les liens et réaffectation des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance
+        proposée.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+      - U364
+      - CMP134
+    nature: intervention_mechanism
+  source_refs:
+  - U345
+  - U364
+  - CMP134
+  - U435
+  - U436
+  - U438
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Principes et rattachement acquis ; noms et compléments éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-18T16:10:14.810983Z'
+    recorded_by: Codex
+    source_refs:
+    - U364
+    validated_fields: []
+    value_sha256: {}
+    note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+- id: BHV046
+  kind: behavior
+  parent: D02.e
+  family: D03
+  fields:
+    name: Incremental Supply Assignment
+    definition: Compléter les besoins non affectés tout en préservant les affectations existantes.
+    finality: Favoriser la stabilité des affectations et des pratiques de préparation tout en satisfaisant de nouveaux besoins
+      ou reliquats.
+    scope: |-
+      Exemple fictif : Sur 100 pièces demandées, conserver les 70 déjà affectées et rechercher les 30 restantes.
+
+      Préserver l’existant est la politique de ce traitement ; cela ne crée pas un gel durable de chaque Order. Ce mécanisme vise le reliquat, sans promettre une stratégie technique de recalcul incrémental, RETE ou traitement par API. Si une affectation conservée devient irréalisable, rendre l’exception visible ; sa révision relève d’un arbitrage et du mécanisme de réaffectation. La préservation ne garantit pas la présence physique de la ressource.
+
+      Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu ou l’état d’un Order mobilise les responsabilités D04 ; modifier sa structure mobilise Order Structuring dans D04. D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+
+      Nommage : libellé descriptif FLOW ; pas de terme unifié du marché démontré.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Backorder Processing — Reassignment
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Le traitement peut conserver les affectations et compléter le reliquat, ou les réexaminer. Le mode preview
+        ne produit pas d’effets logistiques.
+      differences: Regroupement produit de décisions et d’action ; pas preuve qu’un plan externe arbitraire est importable
+        ou qu’une simulation est appliquée sans recontrôle.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_version: 2025 FPS01
+      source_locator: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement. U364 : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant
+        les liens et réaffectation des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance
+        proposée.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+      - U364
+      - CMP134
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Keep supply for confirmed demand
+      element_type: Fonction produit ou mécanisme technique ; pas capacité FLOW par défaut
+      relationship: Recouvrement partiel
+      similarities: Préserve une chaîne liée à une demande confirmée, notamment ordres planifiés et liens de pegging, entre
+        les passages de planification.
+      differences: Comportement paramétré ; la conservation du stock reçu hors positive days exige un paramètre complémentaire.
+        Ne prouve aucun déploiement Beaumanoir.
+      source_title: Keep supply for confirmed demand
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+      source_version: 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+      source_locator: What data is preserved ; Control how on-hand inventory is pegged ; Interaction with approved planned
+        orders
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+        client démontrée.'
+      flow_position: 'Appui à la stabilité des affectations, mais périmètre produit plus large incluant la chaîne de planification.
+        Ne démontre pas une équivalence exacte avec Incremental Supply Assignment. U364 : trois mécanismes sous Supply Assignment,
+        avec distinction explicite entre complément conservant les liens et réaffectation des liens révisables. Les décisions
+        et Order Freezing gardent leurs responsabilités. Correspondance proposée.'
+      status: proposed
+      source_refs:
+      - U346
+      - U347
+      - ELM216
+      - CMP124
+      - U364
+      - CMP134
+    nature: intervention_mechanism
+  source_refs:
+  - U345
+  - U364
+  - CMP134
+  - U435
+  - U436
+  - U438
+  - U450
+  - U451
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Principes et rattachement acquis ; noms et compléments éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T16:10:14.810983Z'
+    recorded_by: Codex
+    source_refs:
+    - U364
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: 2a5d2da19ee81166ddfd3fadde5882fff2b0c2d53a1d3a60432faa3687078900
+    note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+- id: BHV047
+  kind: behavior
+  parent: D02.e
+  family: D03
+  fields:
+    name: Supply Reassignment
+    definition: Réviser les affectations modifiables pour appliquer de nouveaux arbitrages entre commandes.
+    finality: Permettre l’adaptation collective aux changements de ressources, de priorités et de demandes, dans les marges
+      autorisées.
+    scope: |-
+      Exemple fictif : Après le retard d’un arrivage, modifier les ressources affectées à plusieurs commandes en respectant leurs protections.
+
+      La réaffectation peut modifier les ressources associées, y compris entre plusieurs commandes, dans le périmètre révisable. Elle n’autorise pas à dégrader une promesse protégée ni à lever silencieusement une réservation ou un gel. Elle peut préserver une partie des liens existants ; aucune suppression et reconstruction complète n’est imposée par FLOW. Spread est une politique de répartition qui alimente les décisions ; ce comportement applique leurs résultats sans devenir un optimiseur concurrent.
+
+      Les décisions spécialisées choisissent les affectations ; Supply Assignment matérialise leurs résultats. Une affectation ne confirme pas seule une promesse et ne réserve pas implicitement le stock. Respecter les restrictions applicables de [Order Freezing](model:BHV037), les réservations et les engagements. Modifier le contenu ou l’état d’un Order mobilise les responsabilités D04 ; modifier sa structure mobilise Order Structuring dans D04. D06 conserve l’exécution. API, batch, écran, unité et masse restent des modalités, sans comportement supplémentaire. Les exemples sont fictifs ; les règles d’exception et contrats détaillés restent à éprouver.
+
+      Nommage : Reassignment reprend le terme SAP. Le périmètre FLOW sépare la décision de sa mise en application.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA aATP
+      element_name: Backorder Processing — Reassignment
+      element_type: Mécanisme métier réalisé par un produit
+      relationship: Recouvrement partiel
+      similarities: Le traitement peut conserver les affectations et compléter le reliquat, ou les réexaminer. Le mode preview
+        ne produit pas d’effets logistiques.
+      differences: Regroupement produit de décisions et d’action ; pas preuve qu’un plan externe arbitraire est importable
+        ou qu’une simulation est appliquée sans recontrôle.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_version: 2025 FPS01
+      source_locator: Reassignment ; Requirement Sorting ; Supply Selection ; Release Check
+      consulted_on: '2026-09-18'
+      evidence_limits: Documentation primaire consultée, texte indexé SAP et page Microsoft ouverte ; aucune réalisation Beaumanoir
+        démontrée.
+      flow_position: 'U345/C99 : Supply Assignment porte l’application des affectations d’un plan ; décisions spécialisées
+        et autres capacités gardent leurs responsabilités. Les recommandations éclairent Simulation & Analysis sans constituer
+        un engagement. U364 : trois mécanismes sous Supply Assignment, avec distinction explicite entre complément conservant
+        les liens et réaffectation des liens révisables. Les décisions et Order Freezing gardent leurs responsabilités. Correspondance
+        proposée.'
+      status: proposed
+      source_refs:
+      - U345
+      - C99
+      - ELM215
+      - CMP123
+      - U364
+      - CMP134
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Keep supply for confirmed demand in Planning Optimization
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Le stock reçu peut être réaffecté à des demandes antérieures selon les règles.
+      differences: Microsoft combine protection de promesses et maintien du pegging ; FLOW sépare ces responsabilités.
+      flow_position: Supply Reassignment désigne la révision des liens ressources–commandes.
+      term_choice: Supply Reassignment désigne la révision des liens ressources–commandes.
+      definition_choice: Réaffecter reste soumis aux engagements modifiables ; une affectation seule ne réserve pas.
+      source_title: Keep supply for confirmed demand in Planning Optimization
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+      source_version: SCM 10.0.48 build 10.0.2645.33+ selon la page
+      source_locator: What data is preserved ; Control how on-hand inventory is pegged to confirmed demand
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM308
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: intervention_mechanism
+  source_refs:
+  - U345
+  - U364
+  - CMP134
+  - U435
+  - U436
+  - U438
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM308
+  - CMP186
+  review:
+    state: partial
+    note: Principes et rattachement acquis ; noms et compléments éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T16:10:14.810983Z'
+    recorded_by: Codex
+    source_refs:
+    - U364
+    validated_fields:
+    - definition
+    value_sha256:
+      definition: b58c047b7acf26a303a50d09a6f2f36987a6bf45e15b06cfacbe72137f6fe7c1
+    note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+- id: D03.o
+  kind: capability
+  parent: D03
+  family: D03
+  fields:
+    name: Fulfillment Plan Decision
+    definition: Déterminer un scénario cohérent d’affectation des ressources Supply aux commandes, en mobilisant les décisions
+      spécialisées et les politiques applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction.
+    nature: decision
+    finality: Proposer un plan d’affectation collectivement cohérent pour satisfaire les commandes selon les objectifs applicables.
+    scope: |-
+      Le résultat est un scénario de [Supply Assignment Plan](glossary:TER078) : ressources présentes ou futures, quantités et dates proposées pour les commandes du périmètre, avec hypothèses et contraintes. La stratégie et le paramétrage sont des entrées ; choisir leur cadre ne suffit pas à produire le plan.
+
+      La vision globale porte sur les ressources admissibles et les demandes de l’horizon examiné. Elle n’impose ni un recalcul intégral à chaque événement, ni un algorithme, ni une garantie d’optimum mathématique. Le plan doit rendre explicites les besoins non satisfaits et les conditions de faisabilité.
+
+      Mobiliser les résultats d’[ATP](model:D03.i), de [CTP](model:D03.j), de [PTP](model:D03.k), d’[Order Prioritization](model:D03.m) et de [Delivery Schedule Decision](model:D03.l) selon le cas. Ces capacités gardent leurs responsabilités ; leur composition n’introduit aucune sous-capacité ni séquence universelle. Respecter protections, réservations et gels applicables ; aucune levée implicite par l’optimisation. Les politiques référentielles sont consommées sans administration implicite des maîtres.
+
+      [Supply Assignment](model:D02.e) applique les affectations du plan retenu ; [Fulfillment Commitment](model:D03.n) conserve proposition, confirmation et révision de promesse. Produire ce scénario ne réserve pas les ressources, ne modifie pas les Orders et ne déclenche pas à lui seul l’exécution. Cette décision opérationnelle collective ne reprend pas la planification globale externe.
+
+      Exemple fictif : deux commandes demandent chacune 80 pièces alors que 100 pièces sont admissibles. Les considérer séparément peut donner deux possibilités incompatibles. La décision établit une proposition commune selon les priorités et contraintes, explicite les 60 pièces restant sans ressource et les éventuels apports futurs nécessaires. Le chiffrage illustre la cohérence collective ; il ne prescrit aucune politique de répartition.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Intelligent Fulfillment Optimization / Fulfillment plan
+      element_type: Service d’optimisation et résultat produit
+      relationship: Recouvrement partiel
+      similarities: Le service mobilise configurations et stocks, optimise des commandes groupées et produit un fulfillment
+        plan.
+      differences: La stratégie est une entrée. La page ne prouve ni l’examen exhaustif de toutes les ressources de l’entreprise
+        ni la décomposition FLOW en ATP/CTP/PTP.
+      source_title: Intelligent Fulfillment Optimization architecture
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+      source_version: Documentation mise à jour le 30 janvier 2026
+      source_locator: Fulfillment strategies ; Fulfillment optimization in order orchestration flows
+      consulted_on: '2026-09-18'
+      evidence_limits: Page primaire ouverte ; comparaison du résultat, aucune identité de capacités ou garantie d’optimum
+        global.
+      flow_position: 'U378 intègre Fulfillment Plan Decision : scénario de plan issu de décisions spécialisées. Fulfillment
+        plan est un résultat Microsoft ; le suffixe Decision et le découpage restent propres à FLOW. Correspondance proposée.'
+      status: proposed
+      source_refs:
+      - U377
+      - ELM228
+      - CMP139
+      - U378
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Fulfillment and Returns Optimization provider
+      element_type: Service produit
+      relationship: Appui fonctionnel
+      similarities: Détermine les sources de satisfaction selon objectifs et configuration métier.
+      differences: Service logiciel intégré ; absence de preuve d’une correspondance niveau par niveau au modèle FLOW.
+      source_title: Fulfillment and Returns Optimization provider overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization
+      source_version: Documentation évolutive
+      source_locator: Introduction
+      consulted_on: '2026-09-18'
+      evidence_limits: Page primaire ouverte.
+      flow_position: 'U378 intègre Fulfillment Plan Decision : scénario de plan issu de décisions spécialisées. Fulfillment
+        plan est un résultat Microsoft ; le suffixe Decision et le découpage restent propres à FLOW. Correspondance proposée.'
+      status: proposed
+      source_refs:
+      - U377
+      - U378
+  source_refs:
+  - U377
+  - U378
+  - ELM228
+  - CMP139
+  - U438
+  - U445
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'Nom, définition et nature adoptés U378 ; finalité rédigée, scope, exemples et comparaisons proposés. U438 : nom
+      de capacité conservé ; parent de domaine explicite dans les relations contains, adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T17:34:59.156111Z'
+    recorded_by: Codex
+    source_refs:
+    - U378
+    validated_fields:
+    - name
+    - definition
+    - nature
+    value_sha256:
+      name: cd415ee74c2e24d6977e583c2daa5e8a576f68d9cd58196de13f3d8f803c3776
+      definition: 76114b8bb1548adc61d20c602225630b05176112d5b22299a6a766aad2f1f658
+      nature: 0807ce842aee519403b764131eee1dc3a4848c949a635ffabbf343abab61198e
+    note: Accord limité aux champs indiqués ; détails éditoriaux et contrats qualifiés séparément.
+- id: BHV075
+  kind: behavior
+  parent: D03.j
+  family: D15
+  fields:
+    name: Additional Supply Feasibility
+    definition: Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires, avec quantités, dates
+      et conditions de disponibilité.
+    finality: Expliciter les apports supplémentaires qui rendraient la commande satisfaisable et les conditions nécessaires
+      avant engagement.
+    scope: |-
+      Un arrivage déjà prévu et admissible dans la situation de référence reste pris en compte par ATP. Ici, l’apport supplémentaire est une hypothèse à rendre réalisable. La capacité ne crée pas l’achat ou la demande d’apport ; elle ne suppose pas une acquisition quand le régime est consigné. Le fournisseur ou l’exécutant concerné fournit les possibilités utiles. Replenishment Decision conserve l’objectif d’optimisation du stock ; tout apport pour satisfaire un Order ne passe pas nécessairement par cette décision.
+
+      Exemple fictif : Il manque 40 pièces : un apport fournisseur supplémentaire pourrait les rendre disponibles vendredi.
+
+      [CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o) détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées. [Supply Assignment](model:D02.e) applique les affectations retenues ; [Fulfillment Commitment](model:D03.n) porte les modifications autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée. Aucune pratique installée chez Beaumanoir déduite de cet exemple.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management / Planning Optimization
+      element_name: Calculate delivery dates using CTP
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: CTP vérifie matières et capacités pour déterminer les dates réalisables, notamment pour assembler ou produire
+        à la demande.
+      differences: Appui au mécanisme d’apport supplémentaire ; le CTP FLOW est plus large que ce cas de fabrication. Aucun
+        processus de production interne FLOW ni équivalence de taxonomie déduit.
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Calculate delivery dates using CTP
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+      source_version: Documentation évolutive ; mise à jour affichée 2026-07-27
+      source_locator: How CTP compares to ATP ; exemple de fabrication de A à partir de B et C
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+    - vendor: Oracle
+      product: Fusion Cloud Global Order Promising
+      element_name: Overview of Global Order Promising
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Le CTP examine une fourniture à obtenir, notamment par fabrication.
+      differences: Oracle distingue ses modes et règles ATP/CTP ; FLOW conserve sa propre situation de référence.
+      flow_position: Additional Supply Feasibility explicite la possibilité de ressources supplémentaires.
+      term_choice: Additional Supply Feasibility explicite la possibilité de ressources supplémentaires.
+      definition_choice: Le comportement évalue les quantités, dates et conditions possibles ; il ne crée pas lui-même un
+        ordre ferme.
+      source_title: Overview of Global Order Promising
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+      source_version: 25C
+      source_locator: Supply chain search ; capable-to-promise
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM316
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: decision_dimension
+  source_refs:
+  - U402
+  - ELM241
+  - CMP152
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM316
+  - CMP186
+  review:
+    state: partial
+    note: Nom, définition présentée et parent adoptés ; descriptions développées et comparaison éditoriales.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T19:27:28.525975Z'
+    recorded_by: Codex
+    source_refs:
+    - U402
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 09dff6c06ac54b20ed3385c3c08b16b497805acb74e42d7f56af88f565a6ddfa
+      definition: df4e09cc54a3408e436c6a92611dd36534b823853b7163319d51211dce541a77
+    note: 'U402 : noms, responsabilités présentées et rattachements adoptés ; descriptions développées et comparaisons qualifiées
+      séparément.'
+- id: BHV076
+  kind: behavior
+  parent: D03.j
+  family: D15
+  fields:
+    name: Fulfillment Alternative Feasibility
+    definition: Les possibilités obtenues en modifiant les modalités de satisfaction par rapport à la situation de référence.
+    finality: Rendre visibles les solutions de satisfaction nécessitant une adaptation, leurs conditions et leurs effets sur
+      le service attendu.
+    scope: |-
+      Un autre magasin déjà admissible dans la référence relève d’ATP : le caractère alternatif ne suffit pas à classer une option dans CTP. Une substitution de produit exige une équivalence autorisée ; proximité de taille, couleur ou apparence ne vaut pas acceptabilité. Service Selection Decision et Service Capacity Visibility conservent respectivement choix de service et information de capacité contextualisée. CTP exploite leurs résultats sans créer une seconde décision de service. Un changement de date déjà possible dans la référence ne devient pas automatiquement CTP.
+
+      Exemple fictif : La livraison standard ne permet pas de respecter la date ; une prestation express pourrait le permettre, sous réserve de sa disponibilité et de son autorisation.
+
+      [CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o) détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées. [Supply Assignment](model:D02.e) applique les affectations retenues ; [Fulfillment Commitment](model:D03.n) porte les modifications autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée. Aucune pratique installée chez Beaumanoir déduite de cet exemple.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA aATP
+      element_name: Alternative-Based Confirmation
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: Alternative-Based Confirmation examine des sites alternatifs et des produits de substitution selon des
+        règles.
+      differences: SAP expose ABC sous aATP. FLOW distingue alternatives déjà admissibles (ATP) et adaptations de la référence
+        (CTP). L’exemple express est une illustration FLOW ; cette page ne prouve pas un mécanisme ABC de choix de transport
+        express.
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Alternative-Based Confirmation
+      source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+      source_version: S/4HANA ; cours couvrant plusieurs évolutions
+      source_locator: 'Advanced ATP Scenario: Alternative-Based Confirmation (ABC)'
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Intelligent fulfillment optimization architecture
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Des stratégies évaluent différentes sources sous contraintes de satisfaction.
+      differences: IFO réalise aussi l’optimisation ; ce comportement FLOW est limité à la faisabilité des alternatives.
+      flow_position: Fulfillment Alternative Feasibility rend explicite l’objet de l’étude.
+      term_choice: Fulfillment Alternative Feasibility rend explicite l’objet de l’étude.
+      definition_choice: Changer de lieu ou de modalité crée une possibilité à examiner, pas un engagement automatique.
+      source_title: Intelligent fulfillment optimization architecture
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+      source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+      source_locator: Fulfillment strategies ; source priority ; distance ; partial orders
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM317
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: decision_dimension
+  source_refs:
+  - U402
+  - ELM241
+  - CMP152
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM317
+  - CMP186
+  review:
+    state: partial
+    note: Nom, définition présentée et parent adoptés ; descriptions développées et comparaison éditoriales.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T19:27:28.525975Z'
+    recorded_by: Codex
+    source_refs:
+    - U402
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: ce2c6faeaf7b648f600e4a1463f17a9e0ba5b98e83d90ed5911ebb041f21881c
+      definition: 10d85d2633b8284badb15cd3db4319f94a7a77ca51a9c6b1520c7c1fa6c9cd7d
+    note: 'U402 : noms, responsabilités présentées et rattachements adoptés ; descriptions développées et comparaisons qualifiées
+      séparément.'
+- id: BHV077
+  kind: behavior
+  parent: D03.j
+  family: D15
+  fields:
+    name: Commitment Rebalancing Feasibility
+    definition: Les possibilités obtenues en révisant des engagements modifiables, en explicitant les conséquences sur les
+      commandes concernées.
+    finality: Rendre visibles les possibilités et conséquences croisées d’une révision d’engagements avant l’arbitrage collectif.
+    scope: |-
+      CTP ne choisit pas seul quelle commande sacrifier. Il explicite les possibilités et impacts permettant à Fulfillment Plan Decision d’arbitrer, avec Order Prioritization, PTP et les autres décisions utiles. La modifiabilité est une condition à établir, non une autorisation déduite de l’urgence. Une même ressource ne peut soutenir des possibilités collectivement incompatibles. Réservation opposable et gel restent respectés ; aucune libération ou révision implicite. Promise Revision conserve la modification autorisée de l’engagement et Supply Reassignment l’application des liens révisés.
+
+      Exemple fictif : Une commande urgente pourrait être satisfaite si une autre accepte un décalage de deux jours ; les engagements gelés restent préservés.
+
+      [CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o) détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées. [Supply Assignment](model:D02.e) applique les affectations retenues ; [Fulfillment Commitment](model:D03.n) porte les modifications autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée. Aucune pratique installée chez Beaumanoir déduite de cet exemple.
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA Cloud Public Edition / Backorder Processing
+      element_name: Exploring Backorder Processing
+      element_type: Mécanisme ou processus produit
+      relationship: Recouvrement partiel
+      similarities: BOP réexamine les confirmations selon disponibilités et priorités, avec stratégies de préservation, amélioration
+        et redistribution.
+      differences: 'Le processus SAP traverse plusieurs responsabilités FLOW : faisabilité CTP, décision collective, priorités,
+        révision de promesse et application des affectations. BOP ne correspond pas à un comportement CTP unique ni à une
+        autorité de CTP pour choisir les perdants.'
+      flow_position: Trois mécanismes combinables sous CTP, noms FLOW ; faisabilité distincte du scénario collectif et de
+        sa mise en application.
+      source_title: Exploring Backorder Processing
+      source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+      source_version: S/4HANA Cloud Public Edition ; cours évolutif
+      source_locator: Backorder Processing Overview ; Confirmation Strategies
+      consulted_on: '2026-09-18'
+      evidence_limits: Texte primaire consulté ; aucune taxonomie universelle ni preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U402
+      - ELM241
+      - CMP152
+    - vendor: Oracle
+      product: PeopleSoft Inventory
+      element_name: Promising and Reserving Inventory
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: La gestion des pénuries permet de revoir la couverture des demandes prioritaires.
+      differences: Le workbench applique des changements ; FLOW distingue leur étude et leur application.
+      flow_position: Commitment Rebalancing Feasibility nomme l’évaluation des engagements révisables.
+      term_choice: Commitment Rebalancing Feasibility nomme l’évaluation des engagements révisables.
+      definition_choice: Les conséquences sur les commandes restent explicites ; aucune promesse intangible n’est retirée
+        automatiquement.
+      source_title: Promising and Reserving Inventory
+      source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+      source_version: PeopleSoft FSCM 9.0, édition historique
+      source_locator: Shortage Workbench ; unfulfill et priorités
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM300
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: decision_dimension
+  source_refs:
+  - U402
+  - ELM241
+  - CMP152
+  - U445
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM300
+  - CMP186
+  review:
+    state: partial
+    note: Nom, définition présentée et parent adoptés ; descriptions développées et comparaison éditoriales.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T19:27:28.525975Z'
+    recorded_by: Codex
+    source_refs:
+    - U402
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 07736c92452cadaf077bf8ba7887432adc00c3a1876bdb0664e2c525887ee5a8
+      definition: bbd57e7b9b175eaafb288a50f0f17214711fd9fa899cffea3259f3def4ae169e
+    note: 'U402 : noms, responsabilités présentées et rattachements adoptés ; descriptions développées et comparaisons qualifiées
+      séparément.'
+- id: D03.p
+  kind: capability
+  parent: D03
+  family: D03
+  fields:
+    name: Order Backlog Planning
+    definition: Construire, comparer et maintenir les scénarios de satisfaction du carnet d’Orders, en mobilisant les décisions
+      spécialisées, puis préparer la prise en charge de la part retenue par les processus.
+    nature: planning
+    finality: Transformer les scénarios de satisfaction du carnet en une préparation cohérente de leur prise en charge, en
+      conservant la maîtrise des engagements.
+    scope: |-
+      Construire, comparer et maintenir les scénarios de satisfaction du carnet en mobilisant Fulfillment Plan Decision et les décisions spécialisées. Planning peut être humain, automatisé ou mixte ; il travaille les hypothèses et leurs impacts et prépare la mise en action du scénario retenu.
+
+      Exemple fictif : comparer une hypothèse privilégiant les ouvertures de magasins et une autre préservant davantage les dates promises. Les décisions produisent les scénarios cohérents ; Planning organise leur examen et prépare celui qui sera engagé.
+
+      Planning prépare le scénario ; Order Lifecycle Management porte Order Release, qui autorise la prise en charge ; Process Orchestration coordonne les services. Supply Assignment applique les affectations, Fulfillment Commitment gère les engagements de promesse. Structuring organise les découpages et compositions autorisés, dont Split. Préparer 60 pièces maintenant et 40 plus tard n’impose pas deux commandes clients.
+
+      U420 : Order Release demeure sous Lifecycle, désormais dans D04 ; Planning le mobilise pour autoriser la prise en charge du scénario préparé. Planning ne porte actuellement aucun comportement direct ; aucune décomposition supplémentaire n’est créée par analogie avec Inventory Planning. Maintenir les scénarios du carnet reste distinct du choix d’adaptation des processus opérationnels.
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud SCM 26B
+      element_name: Start Backlog Planning
+      element_type: Processus et fonction produit
+      relationship: Recouvrement partiel
+      similarities: Prioriser et replannifier la satisfaction sur l’ensemble du carnet à partir des ressources et demandes
+        actualisées.
+      differences: Documentation d’un produit et de son traitement planifié, pas taxonomie de capacités ni preuve de prise
+        en charge de tous les types d’Orders FLOW.
+      source_title: Start Backlog Planning
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+      source_version: 26B
+      source_locator: Introduction ; When to Use
+      flow_position: 'U417 : Planning prépare les scénarios en mobilisant les décisions ; Lifecycle autorise la prise en charge.
+        La release produit Oracle ne se transpose pas automatiquement à FLOW.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la discussion ; aucune preuve de déploiement Beaumanoir. Niveaux et
+        périmètres produits non transposés automatiquement.
+      status: proposed
+      source_refs:
+      - U414
+      - ELM247
+      - CMP158
+    - vendor: Oracle
+      product: Fusion Cloud SCM 25D
+      element_name: Key Actions on Orders
+      element_type: Fonction produit
+      relationship: Recouvrement partiel
+      similarities: Travail du carnet, priorisation, simulation puis transmission des résultats retenus à Order Management.
+      differences: Release Planning Results transmet des résultats de planification ; ce n’est pas une équivalence exacte
+        de l’autorisation FLOW vers les processus. La séparation demande/carnet/processus est la convention FLOW.
+      source_title: Key Actions on Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+      source_version: 25D, édition explicitement consultée
+      source_locator: Plan Run Actions ; Attribute Data Simulation Actions ; Release Actions
+      flow_position: 'U417 : Planning prépare les scénarios en mobilisant les décisions ; Lifecycle autorise la prise en charge.
+        La release produit Oracle ne se transpose pas automatiquement à FLOW.'
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la discussion ; aucune preuve de déploiement Beaumanoir. Niveaux et
+        périmètres produits non transposés automatiquement.
+      status: proposed
+      source_refs:
+      - U414
+      - ELM247
+      - CMP158
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Planned orders simplified
+      element_type: Fonction produit
+      relationship: Recouvrement partiel
+      similarities: Revue, approbation et affermissement des propositions issues de la planification ; split disponible dans
+        la page standard.
+      differences: Propositions d’approvisionnement, pas tous les Orders FLOW. La liste d’opérations produit ne devient pas
+        une décomposition automatique en comportements.
+      flow_position: 'U417 : Planning prépare les scénarios en mobilisant les décisions ; Lifecycle autorise la prise en charge.
+        La release produit Oracle ne se transpose pas automatiquement à FLOW.'
+      source_title: Planned orders simplified
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-orders-simplified
+      source_version: Page mise à jour le 3 octobre 2025
+      source_locator: View, manage, and firm planned orders
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire ouverte lors de la proposition ; aucune preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U414
+      - ELM247
+      - CMP158
+  source_refs:
+  - U414
+  - ELM247
+  - CMP158
+  - U416
+  - U417
+  - U418
+  - ELM248
+  - CMP159
+  - U420
+  - U438
+  - U445
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'Nom, définition, nature Planning et parent D03 présentés et adoptés ; scope, finalité, justification développée
+      et comparaisons éditoriaux. U438 : nom de capacité conservé ; parent de domaine explicite dans les relations contains,
+      adopté séparément des descriptions.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:48:33.533541Z'
+    recorded_by: Codex
+    source_refs:
+    - U414
+    validated_fields:
+    - name
+    - nature
+    value_sha256:
+      name: ccd68f1d92f6aa324911050be2d93891452d70aa7e229e2ae432d9794f202d2e
+      nature: cb1e58d9479430bc60841495f8150f2534895ef34e547cc1fdf0739455c3f438
+    note: 'U414 : seuls les champs indiqués et rattachements présentés sont adoptés. Descriptions développées et comparaisons
+      éditoriales. U417 remplace la responsabilité d’autorisation par la préparation ; rédaction actualisée de définition
+      proposée. Définition U414 et son empreinte conservées dans la capture historique.'
+terms:
+- id: TER009
+  name: Disponibilité
+  short_description: Quantité mobilisable pour un usage et un horizon donnés, compte tenu des faits, engagements et règles
+    applicables.
+  definition: Quantité mobilisable pour un usage et un horizon donnés, compte tenu des faits, engagements et règles applicables.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ce n’est pas une propriété absolue du stock ; une réponse de disponibilité n’engage pas nécessairement une quantité.
+    Une quantité de disponibilité calculée relève du sens Stock virtuel donné en U76 ; son rattachement dépend de l’usage
+    (U77/A51). N2/N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER013
+  name: Engagement
+  short_description: Décision tenue envers une demande ou un usage, avec résultat attendu, bénéficiaire et conditions explicites.
+  definition: Décision tenue envers une demande ou un usage, avec résultat attendu, bénéficiaire et conditions explicites.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer engagement commercial, de ressource et d’exécution ; leur fermeté et leur révision ne sont pas présumées.
+    N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER014
+  name: Promesse
+  short_description: Engagement sur ce qui pourra être fourni à une demande, notamment une quantité et une date.
+  definition: Engagement sur ce qui pourra être fourni à une demande, notamment une quantité et une date.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Une proposition calculée n’est pas encore une promesse prise. Une promesse peut exister sans affectation à une ressource
+    précise. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER015
+  name: Confirmation de promesse
+  short_description: Acte ou résultat établissant la quantité et la date promises à une demande dans le contexte défini.
+  definition: Acte ou résultat établissant la quantité et la date promises à une demande dans le contexte défini.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer d’une confirmation de réception de message ou de constat d’un fait ; préciser l’effet d’engagement. N3.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER017
+  name: Affectation de ressource
+  short_description: Lien entre une demande et une ressource identifiée au degré de précision utile.
+  definition: Lien entre une demande et une ressource identifiée au degré de précision utile.
+  context: Ressources et commandes ou autres besoins identifiés ; choix lexical Assignment confirmé U275, stabilisé U289.
+  notes: |-
+    La quantité affectée peut différer de la quantité demandée ou promise. Qualifier l’affectation d’une tâche, qui relève d’un autre objet. N1/N3. U289 : notion résultat associée à Supply Assignment (affectation des ressources aux commandes). Ne pas employer Allocation seul comme synonyme. Un lien peut porter sur une ressource future ; il ne prouve ni promesse confirmée ni mouvement physique. Convention : modeles/backlog/assignment-terminology.yaml.
+
+    U290 : la finalité de l’affectation est de maximiser une valeur multidimensionnelle sous contraintes. Service, engagements, coûts et risques sont des exemples éditoriaux ; leurs poids et modes d’arbitrage ne sont pas fixés.
+
+    U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+  source_refs:
+  - U203
+  - U275
+  - U289
+  - CMP096
+  - U290
+  - U436
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: partial
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration. U436 adopte uniquement la frontière réservation
+      / affectation sur le blocage concurrent. Définitions et autres compléments conservent leur portée antérieure ; aucun
+      accord global sur le terme.
+- id: TER044
+  name: Available-to-Promise — ATP
+  short_description: Établir les engagements possibles et leur couverture avec les ressources admissibles présentes ou futures.
+  definition: Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les
+    ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements
+    possibles.
+  context: Cette définition décrit la capacité FLOW. Dans les références APICS et Microsoft, ATP désigne aussi une quantité
+    non engagée disponible à promettre à un horizon donné, incluant des ressources futures admissibles.
+  notes: 'U260 accepte le principe d’une couverture explicative des quantités/dates ; le niveau d’identification des ressources
+    et le choix final restent à préciser. Ce calcul ne prouve pas une affectation ou une promesse confirmée. SAP aATP est
+    un ensemble de fonctions plus large, et non un synonyme de cette seule capacité. Synthèse proposée et sources : marche/atp-aatp-couverture.md,
+    CMP087 ; APICS CPIM 2019 et documentation Microsoft/SAP consultés le 16 septembre 2026. U264 : synthèse alignée sur la
+    capacité et les quatre comportements d’ATP ; terminologie factuelle, pas de niveau marketing Advanced ATP.'
+  source_refs:
+  - U154
+  - U202
+  - U203
+  - U260
+  - U263
+  - U264
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Reformulation lexicale alignée U264 ; les définitions des comportements sont adoptées séparément U263.
+  previous_definition: Quantité non engagée disponible pour soutenir une promesse à un horizon donné, dans le périmètre et
+    selon les règles considérés. Son calcul et son contrôle contribuent à évaluer une possibilité de fourniture.
+  previous_notes_U260: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition
+    éditeur universelle.
+  previous_definition_U264: Établir les quantités et dates proposées pour honorer une commande avec les stocks et engagements
+    admissibles, en appliquant les protections et règles existantes, sans modifier ces engagements ou politiques.
+- id: TER045
+  name: Capable-to-Promise — CTP
+  short_description: Déterminer les possibilités de satisfaction d’un Order après adaptation, en mobilisant les décisions
+    spécialisées.
+  definition: Déterminer les possibilités de satisfaction d’un Order nécessitant une adaptation des ressources ou des engagements,
+    en mobilisant les décisions spécialisées et en explicitant les conditions de faisabilité et les impacts.
+  context: 'Sens FLOW : faisabilité Supply sous adaptation. Priorités, échéancier, arbitrage économique, politiques de stock
+    et services gardent leurs décisions responsables.'
+  notes: Alignement documentaire sur D03.j après U251 ; la définition de capacité est adoptée, cette reprise lexicale et ses
+    compléments restent proposés. CTP ne met pas en application les adaptations et ne devient pas une définition éditeur universelle.
+    État antérieur conservé dans audits/2026-09-16-ctp-frontieres/before-glossary.yaml.
+  source_refs:
+  - U154
+  - U202
+  - U203
+  - U250
+  - U251
+  source_locator:
+    path: connaissance/33-frontieres-ctp.md
+    anchor: ctp
+  review:
+    state: proposed
+    note: Reprise lexicale après U251 ; pas de validation supplémentaire du glossaire déduite de l’accord sur la capacité.
+  previous_definition: Raisonnement de faisabilité de promesse prenant en compte les moyens nécessaires pour rendre une fourniture
+    disponible, au-delà des ressources déjà présentes ou attendues mobilisables.
+- id: TER068
+  name: Profitable-to-Promise (PTP)
+  short_description: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans
+    les contraintes de service applicables.
+  definition: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes
+    de service applicables.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U154
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER078
+  name: Supply Assignment Plan
+  short_description: Plan d’affectation des ressources aux commandes.
+  definition: Ensemble cohérent d’affectations proposées ou retenues précisant les ressources, quantités et dates destinées
+    aux commandes d’un périmètre, avec les hypothèses et contraintes applicables.
+  context: Objet métier descriptif de résultat, pas un niveau supplémentaire de comportement ; convention de vocabulaire U289.
+  notes: |-
+    Préciser statut proposé/retenu/appliqué, périmètre, version et hypothèses. Exemple fictif : ressource de 100 pièces affectée à deux commandes pour 60 et 40 selon les règles. Il ne s’agit ni d’une enveloppe par canal ni nécessairement d’un transfert entre sites. Décider les affectations, les enregistrer, confirmer la promesse et modifier les Orders ont des effets distincts.
+
+    U290 : la finalité de l’affectation est de maximiser une valeur multidimensionnelle sous contraintes. Service, engagements, coûts et risques sont des exemples éditoriaux ; leurs poids et modes d’arbitrage ne sont pas fixés.
+
+    U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+  source_refs:
+  - U289
+  - CMP096
+  - U290
+  - U436
+  source_locator:
+    path: marche/assignment-allocation-convention.md
+    anchor: convention-flow
+  review:
+    state: partial
+    note: Définition éditoriale sous mandat U289 ; aucune validation détaillée auto-attribuée. U436 adopte uniquement la frontière
+      réservation / affectation sur le blocage concurrent. Définitions et autres compléments conservent leur portée antérieure
+      ; aucun accord global sur le terme.
+- id: VER005
+  name: Vérifier
+  short_description: Établir si des conditions sont respectées et produire un constat.
+  definition: Établir si des conditions sont respectées et produire un constat.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Un contrôle favorable n’autorise pas nécessairement l’action.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER006
+  name: Autoriser
+  short_description: Rendre une action admissible dans un périmètre et sous des conditions définis.
+  definition: Rendre une action admissible dans un périmètre et sous des conditions définis.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne signifie pas exécuter l’action ni réserver sa ressource.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER012
+  name: Affecter
+  short_description: Établir un lien entre une ressource et une demande ou un bénéficiaire précis.
+  definition: Établir un lien entre une ressource et une demande ou un bénéficiaire précis.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Qualifier ressource ou tâche ; ne pas confondre avec une promesse commerciale.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER013
+  name: Promettre
+  short_description: Prendre un engagement sur le résultat qui pourra être fourni à une demande.
+  definition: Prendre un engagement sur le résultat qui pourra être fourni à une demande.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser quantité/date et conditions ; distinguer proposition et engagement.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER015
+  name: Prioriser
+  short_description: Établir un ordre relatif de traitement ou de satisfaction entre des demandes.
+  definition: Établir un ordre relatif de traitement ou de satisfaction entre des demandes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Ne réaffecte pas nécessairement les ressources à lui seul.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER016
+  name: Arbitrer
+  short_description: Choisir entre des possibilités ou demandes concurrentes selon des règles et contraintes.
+  definition: Choisir entre des possibilités ou demandes concurrentes selon des règles et contraintes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Exprimer ce qui est décidé ; ne nomme pas un comité ou un outil.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER018
+  name: Réaffecter
+  short_description: Modifier une affectation existante de ressource.
+  definition: Modifier une affectation existante de ressource.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer l’effet sur le lien de ressource de l’éventuelle modification de promesse.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.

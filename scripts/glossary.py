@@ -1,9 +1,9 @@
 """Explicit inline glossary links and the published terminology catalogue."""
 import re
 try:
-    from .market_comparison import validate_comparisons
+    from .market_comparison import validate_comparisons, validate_inspiration
 except ImportError:
-    from market_comparison import validate_comparisons
+    from market_comparison import validate_comparisons, validate_inspiration
 
 LINK = re.compile(r'(?<!\\)\[((?:\\.|[^\]\\\n])+)\]\((glossary|model):([A-Za-z0-9_.-]+)(?:#([A-Za-z0-9_-]+))?\)')
 
@@ -63,6 +63,9 @@ def validate(model):
             continue
         if 'market_comparisons' in term:
             errors.extend(validate_comparisons(term['market_comparisons'], 'glossary/' + str(term.get('id')) + '/market_comparisons'))
+        if 'market_inspiration' in term:
+            errors.extend(validate_inspiration(term['market_inspiration'], term.get('market_comparisons'),
+                                              'glossary/' + str(term.get('id')) + '/market_inspiration'))
         identifier = term.get('id')
         if not isinstance(identifier, str) or not re.fullmatch(r'[A-Za-z0-9_.-]+', identifier) or identifier in ids:
             errors.append('glossary: absent or duplicate term id')
@@ -83,7 +86,7 @@ def validate(model):
     # Current statements only; historical verbatim/provenance is not rewritten.
     texts = [n.get('fields', {}) for n in model.get('nodes', [])]
     texts += [{k: r.get(k) for k in ('fields', 'qualification')} for r in model.get('relations', [])]
-    texts += [{k: t.get(k) for k in ('name', 'short_description', 'definition', 'context', 'notes')} for t in terms if isinstance(t, dict)]
+    texts += [{k: t.get(k) for k in ('name', 'short_description', 'definition', 'context', 'notes', 'market_inspiration')} for t in terms if isinstance(t, dict)]
     for kind, target, anchor in links(texts):
         if target not in (ids if kind == 'glossary' else nodes):
             errors.append(f'{kind}: unresolved published link {target}')

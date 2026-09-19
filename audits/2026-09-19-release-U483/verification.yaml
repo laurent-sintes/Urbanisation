@@ -1,0 +1,35 @@
+source_ref: U483
+version: 2026-09-19.8
+revision: 15
+sourcePath: modeles/release/2026-09-19.8/model.yaml
+validation_errors: 0
+nodes: 137
+relations: 338
+capabilities: 47
+behaviors: 76
+inspiration_cards:
+  model: 137
+  glossary: 110
+  total: 247
+active_decisions: 245
+agreements:
+  automatically_retained: 123
+  explicit_scope_reassessments: 120
+  new_scoped_decisions: 2
+guide_version: 2026-09-19.3
+guide_terms: 13
+historical_guide_version: 2026-09-19.2
+historical_files_checked: 558
+historical_files_changed: 0
+api_nodes_relations_glossary_equal_snapshot: true
+server:
+  appName: FLOW Atlas
+  schemaVersion: 2
+  pid: 24916
+  repositoryRoot: C:\Dev\Beaumanoir Cartographie
+  revision: ddaf6eed124ac815cbbb
+  space: release
+served_frontend_matches_build: true
+frontend_asset: /assets/index-BnEpWzBE.js
+frontend_sha256: 6488c871007447cbfa1209c6a96bfbdcba88442f97c8d1c2bb5c5a3fd31c92a9
+server_restart_required: false

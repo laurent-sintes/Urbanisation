@@ -47,9 +47,13 @@ class LifecycleTests(unittest.TestCase):
         self.assertFalse(result['decisions'])
         self.assertTrue(deferred)
 
-    def test_second_cycle_change_is_not_initial_migration(self):
+    def test_metadata_only_cycle_change_preserves_the_original_scope(self):
         self.old['lifecycle']=deepcopy(self.item['lifecycle'])
-        self.assertTrue(self.reconcile()[1])
+        decisions, deferred = self.reconcile()
+        self.assertEqual(deferred, [])
+        self.assertEqual(decisions['decisions'][0]['target']['approved_fields'], ['name'])
+        self.assertEqual(decisions['decisions'][0]['source_refs'], ['U129'])
+        self.assertEqual(decisions['decisions'][0]['author'], 'Laurent')
 
     def test_validated_state_requires_scope(self):
         self.item['lifecycle'].update(validated_fields=[],value_sha256={})

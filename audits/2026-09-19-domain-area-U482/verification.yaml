@@ -1,0 +1,24 @@
+source_ref: U482
+validation: 0 error
+root_targeted_tests: 26
+backend_targeted_tests: 65
+frontend_targeted_tests: 48
+test_count_note: Les suites Python partagent cinq tests de niveaux ; ne pas additionner les compteurs comme un nombre de tests
+  distincts.
+frontend_build: passed
+frontend_actual_model_projection:
+  areas: 6
+  semantic_relations_conserved_at_each_level: 210
+frozen_files_checked: 543
+frozen_files_changed: 0
+node_identifiers_preserved: true
+relation_endpoints_preserved: 346
+guide_examples_preserved:
+- MOD006
+- MOD007
+- MOD011
+information_catalog_preserved: true
+canonical_names:
+  universe-supply: Supply Chain Orchestration
+  business-references: Authoritative Data
+published_version_unchanged: 2026-09-19.7 / v014

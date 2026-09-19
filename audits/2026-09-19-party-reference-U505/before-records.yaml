@@ -1,0 +1,1908 @@
+nodes:
+- id: business-references
+  revision: 2
+  kind: group
+  fields:
+    name: Authoritative Data
+    market_comparisons:
+    - vendor: EDM Council
+      product: Data Management / DCAM
+      source_title: 'Prioritizing Data Based on Criticality: Critical Data Elements (CDEs) in Context'
+      source_url: https://ortecha.com/wp-content/uploads/2023/07/EDM-Council-Prioritizing-Data-Based-on-Criticality-Critical-Data-Elements-CDEs-in-Context.pdf
+      source_version: Novembre 2018, vF1.1
+      source_locator: 'Pages 19, 28–29 et 37 : Data Producer ; Validate Data in Scope ; Glossary'
+      evidence_limits: Rapport EDM Council primaire hébergé par Ortecha, co-auteur. Emploi exact du terme dans le glossaire
+        ; ni définition autonome détaillée de ce terme ni consultation du DCAM actuel réservé aux membres.
+      element_name: Authoritative Data Domain / Authoritative Provisioning Point
+      element_type: Vocabulaire et responsabilités de gouvernance des données
+      similarities: Désigner les données qui font référence et la responsabilité de leur fourniture.
+      differences: La gouvernance décrite peut concerner toutes les données ; FLOW circonscrit ce périmètre à ses références
+        relativement stables.
+      concept_name: Authoritative Data Domain
+      scope_summary: Données d’un périmètre identifié, y compris reçues d’un propriétaire amont.
+      approach_summary: Définir les responsabilités et les conditions de fourniture aux consommateurs.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM483
+      - CMP194
+    - vendor: Oracle
+      product: Oracle Reference Architecture — Information Management
+      source_title: ORA Information Management
+      source_url: https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf
+      source_version: Release 3.1, juillet 2013, E26368-03
+      source_locator: §2.3.4, pages 2-3/2-4 ; §6.3.3.4.3, pages 6-49/6-50
+      evidence_limits: Architecture de référence historique, pas catalogue métier Supply ni recommandation de produit actuel.
+        La définition réunit master et reference data ; les seuils de politiques métier ne sont pas explicitement inclus.
+      element_name: Authoritative Data Domain
+      element_type: Catégorie d’architecture de données
+      similarities: Donner aux opérations un contexte de référence fiable.
+      differences: Oracle classe master et reference data. FLOW part de leur utilité dans le domaine, avec une autorité locale
+        explicitée par U479.
+      concept_name: Authoritative Data Domain
+      scope_summary: Entités maîtresses et données de classification qui donnent leur contexte aux opérations.
+      approach_summary: Rendre disponibles des références cohérentes ; une consolidation peut conserver la maîtrise des sources
+        amont.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM484
+      - CMP194
+    - vendor: EDM Council
+      product: Cloud Data Management Capabilities (CDMC)
+      source_title: 'CDMC Information Model: Controls, Tests and Mappings'
+      source_url: https://edmcouncil.org/wp-content/uploads/2023/02/CDMC-Information-Model-Controls-Tests-Mappings-V1.1.pdf
+      source_version: Version 1.1, octobre 2022
+      source_locator: 'Contrôle 3, pages 13–14 : Authoritative Indication ; Authority'
+      evidence_limits: Modèle de contrôle de gestion des données cloud ; appui sur la notion d’autorité, pas prescription
+        de domaine Supply ni déclaration de conformité FLOW.
+      element_name: Authoritative Data Source / Authoritative Provisioning Point
+      element_type: Qualification de gouvernance d’un actif de données
+      similarities: Rendre explicite quelles données font autorité pour leurs consommateurs.
+      differences: Le contrôle qualifie des actifs et points de fourniture ; il ne délimite pas les références stables par
+        rapport aux transactions.
+      concept_name: Authoritative Data Source
+      scope_summary: Actifs reconnus comme source ou point de fourniture faisant autorité.
+      approach_summary: Attribuer explicitement l’autorité ; la simple présence d’une donnée ne suffit pas.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM485
+      - CMP194
+    market_inspiration:
+      choice: Les référentiels Supply portent les données relativement stables qui font foi pour les décisions et les opérations
+        de Supply Chain Orchestration. Leur autorité locale s’articule avec les sources de vérité de l’entreprise, qui restent
+        externes au domaine.
+      flow_scope: Références des produits, parties, catalogues, accords, lieux et services utilisées par les areas Supply.
+      flow_approach: Porter une référence commune au domaine, avec une origine connue et une distinction entre responsabilité
+        d’entreprise et autorité locale.
+      synthesis:
+      - EDM Council éclaire la responsabilité et la reconnaissance de l’autorité ; Oracle éclaire le contexte de référence
+        donné aux opérations. Le terme Authoritative Data Domain est attesté dans les deux familles documentaires, avec des
+        portées différentes.
+      - Pour FLOW, l’utilité recherchée est de savoir quelles références utiliser dans le domaine. La nature des données ne
+        suffit pas à tracer cette frontière ; les commandes, les stocks courants et les engagements individuels restent portés
+        par leurs areas.
+      examples:
+      - title: Illustration FLOW — une référence produit commune à la Supply
+        situation: Le maître produit d’entreprise fournit une unité de conditionnement. Les commandes et la préparation doivent
+          utiliser la référence applicable dans le domaine.
+        outcome: Le référentiel Supply porte la référence locale consommée par ces areas et conserve son lien avec la source
+          d’entreprise.
+        lesson: Porter la référence locale et maîtriser le produit à l’échelle de l’entreprise sont deux responsabilités distinctes.
+          Les règles de prise en compte des changements restent à préciser.
+        source_title: ORA Information Management — Consolidated Hub ; illustration FLOW construite
+        source_url: https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf
+        source_refs:
+        - U479
+        - ELM484
+        - CMP194
+    finality: Permettre aux activités de Supply Chain Orchestration de s’appuyer sur les mêmes références pour savoir de quel
+      produit on parle, avec quel partenaire, dans quel lieu et sous quelles conditions.
+    definition: 'Authoritative Data rassemble les données métier relativement stables qui font foi pour les décisions et les
+      opérations de Supply Chain Orchestration. Ses référentiels portent la source de vérité locale du domaine : les références
+      applicables aux produits, partenaires, offres, accords, lieux et services. Leur fonction commune est de donner un repère
+      partagé aux activités Supply, quelle que soit la nature de ces données.'
+    scope: |-
+      Six référentiels composent ce périmètre : [Product Reference](model:D08), [Party / Role](model:D09), [Catalog](model:D12), [Agreement](model:D11), [Fulfillment Network](model:D13) et [Service Catalog](model:D14). Ils restent distincts et fournissent les références utiles aux autres activités Supply.
+
+      Les [commandes](glossary:TER012), le [stock](glossary:TER005) courant, les engagements pris pour une commande et les résultats d’exécution restent portés par leurs activités respectives. Un délai de service configuré fait référence ; la promesse faite pour une commande et le délai réellement constaté sont des informations différentes.
+    mastership: 'Les sources de vérité de l’entreprise restent en dehors de Supply Chain Orchestration. Les référentiels Supply
+      reçoivent leurs données, en conservent l’origine et portent la référence locale utilisée dans le domaine. Cette autorité
+      locale ne leur transfère pas l’administration des données maîtresses d’entreprise. Porter une valeur de référence ne
+      signifie pas la décider : le rattachement de paramètres comme les seuils de réassort reste à préciser.'
+    examples:
+    - title: Un même conditionnement pour interpréter les commandes
+      situation: Dans cet exemple illustratif, une référence produit précise qu’un carton contient six pièces. Une commande
+        de deux cartons doit donc être comprise comme portant sur douze pièces.
+      outcome: Authoritative Data porte la référence de conditionnement issue du maître produit externe. Les activités Supply
+        peuvent s’y référer pour interpréter la quantité commandée et organiser sa satisfaction.
+      lesson: Le référentiel indique ce qu’est le produit et comment ses unités se correspondent. Il ne constate pas le stock
+        disponible et ne décide pas de la quantité à fournir.
+      source_refs:
+      - U479
+      - U482
+      - U484
+      - ELM484
+      - CMP194
+  source_refs:
+  - U103
+  - U455
+  - U458
+  - U477
+  - CMP193
+  - U478
+  - U479
+  - CMP194
+  - U482
+  - U484
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: business-references
+  review:
+    state: accepted
+    note: 'Groupe de présentation, pas une capacité mère. U484 : finalité, définition, périmètre, autorité sur les informations
+      et exemple complétés ; formulations proposées, sans extension de l’accord portant uniquement sur le nom.'
+  adoption_ids:
+  - ADOPT-042
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T15:16:17Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    - U482
+    validated_fields:
+    - name
+    value_sha256:
+      name: 0bb2b596fb0822d0f2a3d8c07207798d200f7f5ad14be4cca21f6839cda2e947
+    note: 'Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord. U482 : vocabulaire des niveaux actualisé à portée constante ;
+      nom Authoritative Data adopté. Champs concernés : name. Empreintes et accords antérieurs conservés dans audits/2026-09-19-domain-area-U482/before-model.yaml.'
+- id: D08
+  revision: 5
+  kind: reference
+  fields:
+    name: Product Reference
+    definition: Recevoir les références Product et leurs Product Variants depuis leurs maîtres externes, indépendamment des
+      catalogues qui les proposent. Product porte un rôle Article ou Container. Distinguer ces références des Product Units,
+      exemplaires physiques suivis dans les opérations ; les identifiants commerciaux ne constituent pas à eux seuls leur
+      identité individuelle.
+    finality: Disposer de références produit communes aux catalogues et aux opérations de la Supply, pour les biens jouant
+      un rôle Article ou Container.
+    independence: Références produit autonomes des catalogues ; une même variante peut être proposée dans plusieurs catalogues.
+      Correspondances avec SKU et conditionnements à préciser.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Product information overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+      source_version: Mise à jour du 1er juillet 2026
+      source_locator: Product definition ; Distribution, export, and import ; Product masters and product variants
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Product master / Product variant
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Référence produit et déclinaisons.
+      differences: L’administration du maître Microsoft dépasse la réception FLOW.
+      flow_position: Reconnaître un produit et ses variantes avant de les utiliser dans une commande. Product Reference reçoit
+        ces références indépendamment des catalogues qui les proposent.
+      status: proposed
+      source_refs:
+      - U460
+      - ELM280
+      - CMP175
+      - U134
+      - U191
+      - U193
+      - U202
+      - U462
+      - U477
+      - ELM423
+      - CMP193
+      concept_name: Product master / Product variant
+      scope_summary: Référence produit et déclinaisons.
+      approach_summary: Partager une définition et ses dimensions de variante.
+    - vendor: Oracle
+      product: Fusion Cloud Product Hub
+      source_title: Overview of Item Batches
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+      source_version: 26A
+      source_locator: Overview of Item Batches
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Item / Item batch
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Références produit provenant de plusieurs sources.
+      differences: Oracle inclut rapprochement et gouvernance, hors de ce référentiel FLOW.
+      flow_position: Reconnaître un produit et ses variantes avant de les utiliser dans une commande. Product Reference reçoit
+        ces références indépendamment des catalogues qui les proposent.
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM295
+      - CMP186
+      - U477
+      - ELM360
+      - CMP193
+      concept_name: Item / Item batch
+      scope_summary: Références produit provenant de plusieurs sources.
+      approach_summary: Importer et traiter les références par lots.
+    examples:
+    - title: Une variante, plusieurs offres et plusieurs exemplaires
+      situation: Un tee-shirt bleu taille M est proposé dans deux catalogues ; deux pièces physiques de cette variante sont
+        présentes.
+      outcome: Les catalogues peuvent partager la référence de variante. Les deux pièces restent deux Product Units.
+      lesson: La référence, l’offre et l’exemplaire physique ne sont pas la même chose.
+      source_refs:
+      - U191
+      - U193
+      - U202
+      - U460
+      - U462
+    market_inspiration:
+      choice: Reconnaître un produit et ses [variantes](glossary:TER058) avant de les utiliser dans une commande. Product
+        Reference reçoit ces références indépendamment des catalogues qui les proposent.
+      flow_scope: Produits, variantes, identifiants et caractéristiques utiles à la Supply.
+      flow_approach: Conserver le lien au maître externe, sans administrer le produit.
+      synthesis:
+      - Microsoft distingue la définition commune du produit de ses variantes ; Oracle décrit leur réception et leur traitement
+        dans Product Hub. Les deux couvrent aussi des activités de gestion du référentiel.
+      - FLOW retient le repère produit/variante, mais limite le référentiel à une projection reçue. La présence dans une offre
+        commerciale et l’identité d’un exemplaire physique répondent à deux autres questions.
+      examples:
+      - title: Illustration FLOW — une variante avant son offre
+        situation: La référence d’un tee-shirt bleu en taille M est reçue avant son apparition dans un catalogue.
+        outcome: Les opérations peuvent reconnaître cette variante sans créer une offre commerciale.
+        lesson: Le produit, l’offre et l’exemplaire physique gardent des identités distinctes.
+        source_title: Product information overview
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+        source_refs:
+        - U477
+        - ELM423
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C66
+  - C69
+  - INF21
+  - CMP058
+  - U202
+  - U455
+  - U458
+  - U460
+  - ELM280
+  - CMP175
+  - U462
+  - U470
+  - U471
+  - ELM295
+  - CMP186
+  - U477
+  - CMP193
+  - U482
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d08-produits-opérationnels
+    line: 329
+  review:
+    state: proposed
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
+  adoption_ids:
+  - ADOPT-030
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-14T13:53:25.091242Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U100
+    - U202
+    validated_fields: []
+    value_sha256: {}
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  approved_fields: []
+  proposed_fields:
+  - definition
+  - finality
+  - independence
+  - market_comparisons
+  - examples
+- id: D09
+  revision: 2
+  kind: reference
+  fields:
+    name: Party / Role
+    definition: Recevoir les références des parties et leurs rôles métier, distincts des habilitations RBAC. L’identité sans
+      doublon relève du maître externe ; les modèles se relient par identifiants.
+    finality: Disposer des identités et rôles de référence nécessaires pour relier les opérations aux bonnes parties.
+    mastership: external
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Finance and Operations
+      source_title: Global address book overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+      source_version: Mise à jour du 18 mars 2026
+      source_locator: Party roles ; Example
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Party / Party role
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Personne ou organisation et ses rôles client, fournisseur…
+      differences: Microsoft gère les données centrales ; FLOW en reçoit la projection.
+      flow_position: Reconnaître les parties et les rôles qu’elles jouent dans les opérations. Party / Role reçoit une identité
+        commune et ses usages métier, sans les confondre avec des droits d’accès.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM400
+      - CMP193
+      concept_name: Party / Party role
+      scope_summary: Personne ou organisation et ses rôles client, fournisseur…
+      approach_summary: Rattacher plusieurs rôles à une identité partagée.
+    - vendor: GS1
+      product: GLN Allocation Rules
+      source_title: GS1 GLN Allocation Rules Standard
+      source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+      source_version: Release 3.0.2, août 2022
+      source_locator: §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
+      consulted_on: '2026-09-19'
+      evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite
+        pour FLOW.
+      element_name: Party / Location
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Identification des acteurs et des lieux.
+      differences: Un GLN peut avoir un usage combiné ; FLOW ne déduit pas son modèle métier de la seule clé.
+      flow_position: Reconnaître les parties et les rôles qu’elles jouent dans les opérations. Party / Role reçoit une identité
+        commune et ses usages métier, sans les confondre avec des droits d’accès.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM468
+      - CMP193
+      concept_name: Party / Location
+      scope_summary: Identification des acteurs et des lieux.
+      approach_summary: Distinguer qui intervient et où.
+    market_inspiration:
+      choice: Reconnaître les [parties](glossary:TER046) et les rôles qu’elles jouent dans les opérations. Party / Role reçoit
+        une identité commune et ses usages métier, sans les confondre avec des droits d’accès.
+      flow_scope: Personnes, organisations, rôles et relations de référence.
+      flow_approach: Réutiliser les identifiants du maître externe.
+      synthesis:
+      - Microsoft montre qu’une même organisation peut être cliente et fournisseur. GS1 distingue l’acteur, le « qui », du
+        lieu, le « où » ; les documents éclairent donc deux séparations complémentaires.
+      - FLOW conserve une Party distincte de ses rôles et des lieux auxquels elle est liée. Il reçoit cette description ;
+        la tenue du carnet d’adresses Microsoft ou l’attribution des clés GS1 ne deviennent pas ses responsabilités.
+      examples:
+      - title: Exemple Microsoft — First Up Consultants
+        situation: Microsoft décrit First Up Consultants avec des rôles de client et de fournisseur.
+        outcome: Une identité partagée évite de traiter ces rôles comme deux organisations sans lien.
+        lesson: FLOW reçoit les rôles et leur référence commune ; il ne devient pas le maître des coordonnées.
+        source_title: Global address book overview
+        source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+        source_refs:
+        - U477
+        - ELM400
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - C69
+  - INF18
+  - U455
+  - U458
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d09-parties-et-relations
+    line: 307
+  review:
+    state: partial
+    note: Maîtrise externe et ingestion seule imposées en U97 ; groupe Business References retenu en U103. Les sources et
+      autorités par attribut restent à documenter ; aucun rang autonome universel adopté.
+  editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
+  adoption_ids:
+  - ADOPT-027
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 5f6904197651fbd8b14b37d6c6017a8de09525a325b6fb5de8d36395d01bfa02
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D12
+  revision: 3
+  kind: reference
+  fields:
+    name: Catalog
+    definition: Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence
+      de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.
+    finality: Disposer des catalogues applicables, avec les prix et zones géographiques nécessaires aux opérations.
+    mastership: external
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      source_title: Create Commerce catalogs for B2B sites
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+      source_version: Mise à jour du 21 janvier 2026
+      source_locator: Catalog configuration ; customer hierarchies ; price groups
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Commerce catalog
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Produits et prix proposés à une population de clients.
+      differences: FLOW ne construit ni site marchand ni politique commerciale.
+      flow_position: Savoir quelles références sont proposées et sous quelles conditions commerciales. Catalog reçoit l’offre
+        construite à l’extérieur ; il ne redéfinit pas le produit.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM391
+      - CMP193
+      concept_name: Commerce catalog
+      scope_summary: Produits et prix proposés à une population de clients.
+      approach_summary: Cibler l’offre par catalogue et période.
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Procurement catalogs overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs
+      source_version: Mise à jour du 1er juillet 2026
+      source_locator: Set up a catalog ; publication and updates
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Procurement catalog
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Biens et services accessibles aux achats internes.
+      differences: Le public et la gouvernance diffèrent du catalogue reçu dans FLOW.
+      flow_position: Savoir quelles références sont proposées et sous quelles conditions commerciales. Catalog reçoit l’offre
+        construite à l’extérieur ; il ne redéfinit pas le produit.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM424
+      - CMP193
+      concept_name: Procurement catalog
+      scope_summary: Biens et services accessibles aux achats internes.
+      approach_summary: Publier une sélection suivant les règles d’achat.
+    market_inspiration:
+      choice: Savoir quelles références sont proposées et sous quelles conditions commerciales. Catalog reçoit l’offre construite
+        à l’extérieur ; il ne redéfinit pas le produit.
+      flow_scope: Références proposées, prix et zones d’application.
+      flow_approach: Consulter une offre reçue et ses évolutions.
+      synthesis:
+      - Le catalogue B2B de Microsoft présente une offre à des clients ; son catalogue d’approvisionnement encadre les achats
+        des employés. Les destinataires diffèrent, mais les deux sélectionnent ce qu’un public peut commander.
+      - FLOW retient la distinction entre la référence produit et son offre. La construction, la publication et les politiques
+        commerciales de ces produits Microsoft restent hors du référentiel projeté.
+      examples:
+      - title: Illustration FLOW — une variante, deux offres
+        situation: La même variante figure dans deux catalogues applicables à des contextes différents.
+        outcome: Le prix ou l’applicabilité peuvent différer sans créer deux produits.
+        lesson: Catalog porte l’offre ; Product Reference conserve la référence commune.
+        source_title: Create Commerce catalogs for B2B sites
+        source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+        source_refs:
+        - U477
+        - ELM391
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U100
+  - U103
+  - C64
+  - C69
+  - INF20
+  - U202
+  - U455
+  - U458
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d12-catalog
+    line: 339
+  review:
+    state: partial
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
+  adoption_ids:
+  - ADOPT-029
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-14T13:53:25.091242Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    - U202
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 4a8dfce3f278257b51eb13d39404013980a0b0959023c773586e8d45623a5178
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  approved_fields: []
+  proposed_fields:
+  - definition
+- id: D11
+  revision: 2
+  kind: reference
+  fields:
+    name: Agreement
+    definition: 'Recevoir et consulter la projection du contrat complet : cadre, conditions particulières, périodes de validité
+      et engagements en quantité ou en valeur, avec identifiants Party et Catalog. Les commandes restent distinctes et consomment
+      les conditions reçues ; administration du contrat maître externe.'
+    finality: Disposer des conditions contractuelles applicables aux Orders et à la promesse sans administrer leur source
+      de vérité.
+    mastership: external
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Purchase agreements
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+      source_version: Mise à jour du 8 septembre 2026
+      source_locator: Commitment types ; Purchase agreement fulfillment
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Purchase agreement
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Conditions et engagements consommés par des commandes.
+      differences: L’accord d’achat est un exemple plus ciblé que le contrat complet FLOW.
+      flow_position: Retrouver les conditions et engagements qui s’appliquent aux commandes. Agreement reçoit la projection
+        du contrat complet ; les commandes en consomment les conditions sans devenir le contrat.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM426
+      - CMP193
+      concept_name: Purchase agreement
+      scope_summary: Conditions et engagements consommés par des commandes.
+      approach_summary: Suivre quantité ou valeur engagée sur une période.
+    - vendor: Oracle
+      product: Fusion Cloud Enterprise Contracts / Purchasing
+      source_title: Create and Monitor Agreements in Oracle Fusion Purchasing
+      source_url: https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html
+      source_version: Documentation évolutive sans édition affichée
+      source_locator: Track Purchasing Activity ; Import Blanket Agreements ; Import Contract Agreements
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Contract / Purchasing agreement
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Contrat communiqué au système d’achat.
+      differences: Oracle gère aussi création et approbation ; FLOW reçoit la projection.
+      flow_position: Retrouver les conditions et engagements qui s’appliquent aux commandes. Agreement reçoit la projection
+        du contrat complet ; les commandes en consomment les conditions sans devenir le contrat.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM347
+      - CMP193
+      concept_name: Contract / Purchasing agreement
+      scope_summary: Contrat communiqué au système d’achat.
+      approach_summary: Transférer les conditions et suivre l’accord obtenu.
+    market_inspiration:
+      choice: Retrouver les conditions et engagements qui s’appliquent aux commandes. Agreement reçoit la projection du [contrat](glossary:TER048)
+        complet ; les commandes en consomment les conditions sans devenir le contrat.
+      flow_scope: Cadre, conditions, périodes et engagements en quantité ou valeur.
+      flow_approach: Relier le contrat reçu aux parties, catalogues et commandes concernés.
+      synthesis:
+      - Microsoft décrit un accord d’achat consommé par plusieurs commandes. Oracle montre comment transmettre un contrat
+        vers Purchasing puis suivre l’accord correspondant. Le premier éclaire le contenu et son utilisation, le second son
+        passage entre systèmes.
+      - FLOW réunit ces repères dans une projection consultable. Il ne reprend ni la négociation, ni l’approbation du contrat
+        maître, et ne réduit pas Agreement à un tarif ou à une seule commande.
+      examples:
+      - title: Illustration FLOW — plusieurs commandes sous un accord
+        situation: Un accord prévoit un engagement annuel ; trois commandes sont passées à des dates différentes.
+        outcome: Chaque commande utilise les conditions applicables et contribue à la consommation de l’engagement.
+        lesson: L’accord reste identifiable indépendamment de ses commandes.
+        source_title: Purchase agreements
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+        source_refs:
+        - U477
+        - ELM426
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - C69
+  - INF19
+  - U141
+  - C78
+  - CMP066
+  - U455
+  - U458
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/27-order-management-et-univers.md
+    anchor: ''
+  review:
+    state: partial
+    note: Précision selon U141 ; noms et accords antérieurs conservés dans leur portée. Nouvelles formulations détaillées
+      proposées ; Q077 et Q072 ouvertes.
+  editorial_basis: Complément Codex selon U141 ; champs approuvés limités à lifecycle.validated_fields.
+  adoption_ids:
+  - ADOPT-028
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T17:32:42.257717Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    - U141
+    - C78
+    - CMP066
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 45797799d3db17de1ba297aaa964be20c3e6160ade58398d009edcf78eb4d824
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D13
+  revision: 2
+  kind: reference
+  fields:
+    name: Fulfillment Network
+    definition: Recevoir les points du réseau, leurs caractéristiques et relations de référence et leurs liens aux parties
+      responsables. Les lieux restent distincts des parties ; stocks, charge et acheminement choisi appartiennent aux areas
+      consommatrices.
+    finality: Disposer d’une représentation de référence des lieux et des relations du réseau nécessaires à la réalisation
+      des mouvements de marchandises.
+    independence: Party et lieu distincts ; référentiel Fulfillment Network demandé.
+    market_comparisons:
+    - vendor: GS1
+      product: GLN Allocation Rules
+      source_title: GS1 GLN Allocation Rules Standard
+      source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+      source_version: Release 3.0.2, août 2022
+      source_locator: §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
+      consulted_on: '2026-09-19'
+      evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite
+        pour FLOW.
+      element_name: Location / Party
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Lieux identifiables et acteurs associés.
+      differences: L’identification GS1 ne décrit pas à elle seule un réseau de desserte.
+      flow_position: Connaître les lieux et les relations qui rendent une livraison possible. Fulfillment Network décrit le
+        réseau de référence ; le stock, la charge et le trajet retenu sont connus ou décidés ailleurs.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM468
+      - CMP193
+      concept_name: Location / Party
+      scope_summary: Lieux identifiables et acteurs associés.
+      approach_summary: Partager des références non ambiguës.
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Exchange data between systems
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+      source_version: Mise à jour du 27 juillet 2026
+      source_locator: Master and reference data ; Shipment orders ; Progress data and business events
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Site / Warehouse / Location
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Repères physiques nécessaires aux opérations d’entrepôt.
+      differences: La configuration d’entrepôt est plus détaillée ; FLOW décrit le réseau utile à la Supply.
+      flow_position: Connaître les lieux et les relations qui rendent une livraison possible. Fulfillment Network décrit le
+        réseau de référence ; le stock, la charge et le trajet retenu sont connus ou décidés ailleurs.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM445
+      - CMP193
+      concept_name: Site / Warehouse / Location
+      scope_summary: Repères physiques nécessaires aux opérations d’entrepôt.
+      approach_summary: Faire correspondre les références des systèmes.
+    market_inspiration:
+      choice: Connaître les [lieux](glossary:TER053) et les relations qui rendent une livraison possible. Fulfillment Network
+        décrit le réseau de référence ; le stock, la charge et le trajet retenu sont connus ou décidés ailleurs.
+      flow_scope: Points du réseau, caractéristiques, relations et parties responsables.
+      flow_approach: Recevoir une description durable du réseau.
+      synthesis:
+      - GS1 fournit des repères pour identifier lieux et parties. Microsoft décrit les sites, entrepôts et emplacements nécessaires
+        aux échanges logistiques. Les deux aident à nommer les points, avec des mailles et des objectifs différents.
+      - FLOW ajoute la lecture métier des relations utiles à la réalisation des mouvements. Un lieu identifiable ne garantit
+        ni stock disponible, ni capacité libre, ni admissibilité d’un trajet pour une commande donnée.
+      examples:
+      - title: Illustration FLOW — le lieu et son responsable
+        situation: Un prestataire exploite deux plateformes distinctes.
+        outcome: Les deux lieux sont reliés à la même partie responsable.
+        lesson: Ni le lieu ni sa relation au prestataire ne suffisent à choisir celui qui traitera une commande.
+        source_title: GS1 GLN Allocation Rules Standard
+        source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+        source_refs:
+        - U477
+        - ELM468
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U102
+  - U103
+  - C68
+  - C69
+  - INF22
+  - Q076
+  - CMP060
+  - U455
+  - U458
+  - U477
+  - CMP193
+  - U482
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d13-fulfillment-network
+    line: 351
+  review:
+    state: partial
+    note: Référentiel demandé en U102 ; Business References retenu en U103. Repère, définition et contenu détaillé proposés
+      ; ingestion seule dans la continuité U97. Maîtres et topologie ouverts en Q076 ; aucune autorité FLOW ou C-Log déduite.
+  editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
+  adoption_ids:
+  - ADOPT-031
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U102
+    validated_fields:
+    - independence
+    - name
+    value_sha256:
+      independence: 2093ef74bde62d6235e327806ee878c1051c56192d9f9633ff7f029b0bce0981
+      name: 088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D14
+  revision: 4
+  kind: reference
+  fields:
+    name: Service Catalog
+    definition: 'Décrire les Backing Services mobilisables par l’orchestration : le résultat rendu par les exécutants, leurs
+      conditions et leurs niveaux de service configurés.'
+    finality: Savoir quelles prestations solliciter pour réaliser les demandes du Domain et dans quelles conditions.
+    scope: |-
+      Les [Backing Services](glossary:TER075) sont les prestations rendues par des exécutants que l’orchestration mobilise pour réaliser les demandes portées par [Service Requests](model:D04). Le catalogue décrit cette offre de prestations ; il ne constitue pas le catalogue des familles de demandes adressées au Domain ou nées de son activité. Un Backing Service peut être physique, humain ou numérique.
+
+      Offre de préparation, réception, transport et autres services tels que la production de documents. Décrire le résultat rendu, le prestataire, les conditions d’éligibilité et le SLA de réalisation applicable, ainsi que les accès informatiques de sollicitation et de feedback.
+
+      Exemple : un service de préparation à délai configuré, un transport et une génération de document ont des résultats et engagements différents. Le SLA exprime le service rendu, notamment lorsqu’il dépend du physique ; il reste distinct du temps de réponse informatique. L’identité métier d’un service est distincte de ses accès techniques ; un exécutant partiellement manuel peut être sollicité via une adaptation.
+
+      Charge actuelle, capacité contextuelle, demandes, engagements individuels, estimations et résultats relèvent de D06. Fulfillment Network décrit les lieux et relations, Party les parties, Agreement les accords maîtres et Catalog les offres commerciales. Aucun protocole ni endpoint unique imposé.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des areas restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    mastership: Projection de sources maîtresses externes, suivant le principe courant des référentiels Supply. Maître de
+      configuration et articulation avec Agreement à préciser ; aucune administration locale présumée.
+    market_comparisons:
+    - vendor: TM Forum
+      product: Service Catalog Management
+      source_title: TMF633 Service Catalog API REST Specification R18.5.1
+      source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+      source_version: Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019
+      source_locator: Description de la spécification
+      consulted_on: '2026-09-19'
+      evidence_limits: Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition
+        courante ni norme Supply.
+      element_name: Service catalog
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Offres et descriptions de services.
+      differences: La référence télécom couvre aussi le cycle de création et de retrait du catalogue.
+      flow_position: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service
+        Catalog décrit les Backing Services et leurs conditions ; les demandes de prestation et leur prise en charge restent
+        dans Process Management.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM482
+      - CMP193
+      concept_name: Service catalog
+      scope_summary: Offres et descriptions de services.
+      approach_summary: Consulter un catalogue pour préparer une commande.
+    - vendor: Microsoft
+      product: Dynamics 365 Field Service
+      source_title: Work order architecture
+      source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+      source_version: Documentation évolutive consultée le 19 septembre 2026
+      source_locator: A work order is created ; scheduled ; performed ; reviewed and completed
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Product catalog / Service
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Prestations et produits utiles à une intervention.
+      differences: Field Service vise l’intervention terrain ; FLOW inclut aussi transport et prestations documentaires.
+      flow_position: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service
+        Catalog décrit les Backing Services et leurs conditions ; les demandes de prestation et leur prise en charge restent
+        dans Process Management.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM397
+      - CMP193
+      concept_name: Product catalog / Service
+      scope_summary: Prestations et produits utiles à une intervention.
+      approach_summary: Décrire le travail attendu à partir du catalogue.
+    market_inspiration:
+      choice: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service Catalog
+        décrit les Backing Services et leurs conditions ; les demandes de prestation et leur prise en charge restent dans
+        Process Management.
+      flow_scope: Offre de préparation, réception, transport, production documentaire et autres prestations exécutantes mobilisables.
+      flow_approach: Décrire les résultats proposés, leurs conditions d’éligibilité et leurs niveaux de service configurés.
+      synthesis:
+      - TM Forum sépare le catalogue de services de leur commande. Microsoft Field Service utilise aussi des prestations de
+        catalogue pour décrire une intervention, dans un périmètre terrain avec ressources et facturation.
+      - FLOW conserve Service Catalog et précise que son contenu est l’offre des Backing Services mobilisés par l’orchestration.
+        Cette qualification exprime leur rôle dans notre modèle ; les sources ne proposent pas ce même nom pour un catalogue
+        Supply.
+      - Service Requests porte les demandes de travail du Domain ; Service Catalog décrit les prestations utilisables pour
+        y répondre. Une prestation peut produire un document comme réaliser une préparation physique.
+      examples:
+      - title: Illustration FLOW — préparer ou produire un document
+        situation: Une préparation de colis et une production de bordereau sont deux prestations disponibles.
+        outcome: Chacune décrit son résultat, ses conditions et son niveau de service.
+        lesson: Le délai de préparation ne se confond pas avec le temps de réponse d’un appel informatique.
+        source_title: Work order architecture
+        source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+        source_refs:
+        - U477
+        - ELM397
+        - CMP193
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U455
+  - U458
+  - U477
+  - CMP193
+  - U482
+  - U488
+  - U489
+  - U497
+  - CMP200
+  source_locator:
+    path: connaissance/32-execution-orchestration.md
+    anchor: d14
+  review:
+    state: partial
+    note: 'U496/U497 : vocabulaire Service Requests / Backing Services appliqué ; responsabilités conservées. Les détails
+      rédactionnels et correspondances gardent leur statut proposé. Accords antérieurs conservés uniquement sur les valeurs
+      inchangées ou les libellés canoniques actualisés.'
+  adoption_ids: []
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T16:05:23.261608Z'
+    recorded_by: Codex
+    source_refs:
+    - U240
+    - U244
+    - U409
+    - U497
+    validated_fields:
+    - name
+    value_sha256:
+      name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
+    note: 'Compléments proposés pour appliquer U244 ; aucune validation de détail déduite. U409 : nouveau nom adopté ; validations
+      des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409. U496/U497 : noms
+      et libellés liés actualisés ; aucun accord étendu aux compléments rédactionnels. Valeurs antérieures capturées avant
+      changement.'
+  last_modified: '2026-09-19T16:05:23.261608Z'
+- id: D09.d
+  revision: 2
+  kind: capability
+  fields:
+    name: Party / Role Ingestion
+    definition: recevoir les parties, leurs identifiants, rôles et relations de référence ainsi que leurs évolutions, en conservant
+      les références du maître externe.
+    finality: Utiliser une identité de référence commune dans les opérations.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Exemple fictif : Recevoir un rôle destinataire avec identifiant et provenance du partenaire.
+    nature: action
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud Financials
+      source_title: Customer Import
+      source_url: https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html
+      source_version: 25D
+      source_locator: File Links ; Import Trading Community Data in Bulk
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Trading Community Data Import
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Parties, sites, rôles et relations importables.
+      differences: Le périmètre Oracle inclut des données financières et de gestion absentes du besoin Supply.
+      flow_position: Recevoir les parties et leurs rôles en conservant leur identité d’origine. Party / Role Ingestion rend
+        leurs évolutions utilisables sans reprendre l’administration du référentiel maître.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM344
+      - CMP193
+      concept_name: Trading Community Data Import
+      scope_summary: Parties, sites, rôles et relations importables.
+      approach_summary: Recevoir des ensembles de références liés.
+    - vendor: Microsoft
+      product: Dynamics 365 Finance and Operations
+      source_title: Global address book overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+      source_version: Mise à jour du 18 mars 2026
+      source_locator: Party roles ; Example
+      consulted_on: '2026-09-19'
+      evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+      element_name: Party / Party role
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Une identité portant plusieurs rôles métier.
+      differences: Le carnet d’adresses gère le maître ; FLOW le reçoit.
+      flow_position: Recevoir les parties et leurs rôles en conservant leur identité d’origine. Party / Role Ingestion rend
+        leurs évolutions utilisables sans reprendre l’administration du référentiel maître.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM400
+      - CMP193
+      concept_name: Party / Party role
+      scope_summary: Une identité portant plusieurs rôles métier.
+      approach_summary: Partager les données de la partie entre ses usages.
+    market_inspiration:
+      choice: Recevoir les parties et leurs rôles en conservant leur identité d’origine. Party / Role Ingestion rend leurs
+        évolutions utilisables sans reprendre l’administration du référentiel maître.
+      flow_scope: Identifiants, rôles, coordonnées et relations de référence utiles.
+      flow_approach: Intégrer la projection reçue et sa provenance.
+      synthesis:
+      - Oracle documente l’import séparé des parties, sites, relations et responsabilités. Microsoft décrit l’identité partagée
+        qui relie plusieurs rôles. Oracle éclaire la réception ; Microsoft le sens des informations à préserver.
+      - FLOW combine ces deux besoins sans importer leurs fonctions de gestion centrale. Recevoir un nouveau rôle ne signifie
+        pas créer une nouvelle Party ni lui attribuer des droits informatiques.
+      examples:
+      - title: Illustration FLOW — nouveau rôle, même partie
+        situation: Une organisation déjà connue comme fournisseur devient aussi destinataire de marchandises.
+        outcome: Le rôle reçu est relié à l’identité existante.
+        lesson: La réception de cette évolution ne crée pas une administration locale des coordonnées.
+        source_title: Global address book overview
+        source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+        source_refs:
+        - U477
+        - ELM400
+        - CMP193
+  source_refs:
+  - P81
+  - U97
+  - U103
+  - C64
+  - P85
+  - U290
+  - U449
+  - U455
+  - U458
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d09-parties-et-relations
+    line: 313
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  adoption_ids:
+  - ADOPT-032
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
+    antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
+  proposed_fields:
+  - nature
+terms:
+- id: TER046
+  name: Party
+  short_description: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations
+    utiles aux opérations.
+  definition: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations utiles
+    aux opérations.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: U97 cite les personnes juridiquement responsables et une identité sans doublon ; types détaillés et autorités par
+    attribut non arrêtés. D09 reçoit cette référence.
+  source_refs:
+  - U203
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Finance and Operations
+    source_title: Global address book overview
+    source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+    source_version: Mise à jour du 18 mars 2026
+    source_locator: Party roles ; Example
+    consulted_on: '2026-09-19'
+    evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+    element_name: Party
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Personne ou organisation portant plusieurs rôles.
+    differences: Microsoft administre le maître, FLOW le reçoit.
+    flow_position: Identifier l’acteur qui intervient, indépendamment des rôles qu’il joue. Party représente cette partie
+      de référence, reçue depuis son maître externe.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM400
+    - CMP193
+    concept_name: Party
+    scope_summary: Personne ou organisation portant plusieurs rôles.
+    approach_summary: Partager son identité entre les usages.
+  - vendor: GS1
+    product: GLN Allocation Rules
+    source_title: GS1 GLN Allocation Rules Standard
+    source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+    source_version: Release 3.0.2, août 2022
+    source_locator: §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
+    consulted_on: '2026-09-19'
+    evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite
+      pour FLOW.
+    element_name: Party
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Acteur identifiable dans la chaîne.
+    differences: La clé d’identification peut avoir un usage combiné sans fusionner les notions FLOW.
+    flow_position: Identifier l’acteur qui intervient, indépendamment des rôles qu’il joue. Party représente cette partie
+      de référence, reçue depuis son maître externe.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM468
+    - CMP193
+    concept_name: Party
+    scope_summary: Acteur identifiable dans la chaîne.
+    approach_summary: Distinguer qui intervient du lieu concerné.
+  market_inspiration:
+    choice: Identifier l’acteur qui intervient, indépendamment des rôles qu’il joue. Party représente cette partie de référence,
+      reçue depuis son maître externe.
+    flow_scope: Personne ou organisation utile aux opérations.
+    flow_approach: Relier ses usages à une identité partagée.
+    synthesis:
+    - Microsoft rattache plusieurs rôles à une Party ; GS1 distingue les parties des lieux qu’elles occupent ou exploitent.
+      Leurs objectifs diffèrent, mais les deux évitent de réduire l’acteur à une seule opération ou adresse.
+    - FLOW retient l’acteur comme référence. Il ne fait ni de son rôle de fournisseur une identité séparée, ni de chaque lieu
+      une nouvelle partie.
+    examples:
+    - title: Exemple Microsoft — un acteur, plusieurs rôles
+      situation: First Up Consultants apparaît comme client et fournisseur dans l’exemple Microsoft.
+      outcome: Les rôles restent attachés à une même partie.
+      lesson: Le rôle décrit l’usage de l’identité, pas une organisation supplémentaire.
+      source_title: Global address book overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+      source_refs:
+      - U477
+      - ELM400
+      - CMP193
+- id: TER047
+  name: Role
+  short_description: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  definition: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Synthèse U97 : référentiel Party / Role distinct des habilitations RBAC de la couche processus ; aucun catalogue
+    complet de rôles adopté.'
+  source_refs:
+  - U203
+  - U477
+  - CMP193
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Finance and Operations
+    source_title: Global address book overview
+    source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+    source_version: Mise à jour du 18 mars 2026
+    source_locator: Party roles ; Example
+    consulted_on: '2026-09-19'
+    evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+    element_name: Party role
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Usages d’une partie, dont client et fournisseur.
+    differences: Les règles propres au carnet d’adresses ne sont pas imposées à FLOW.
+    flow_position: Préciser à quel titre une partie intervient dans une relation ou une opération. Role signifie ici rôle
+      métier, distinct d’une habilitation informatique.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM400
+    - CMP193
+    concept_name: Party role
+    scope_summary: Usages d’une partie, dont client et fournisseur.
+    approach_summary: Partager l’identité entre plusieurs rôles.
+  - vendor: TM Forum
+    product: Service Ordering Management
+    source_title: TMF641 Service Ordering Management API REST Specification
+    source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
+    source_version: Version 3.0.0, Release 18.5.0, janvier 2019
+    source_locator: 'Pages 5, 8–15 : Service Order ; dates ; dépendances ; états'
+    consulted_on: '2026-09-19'
+    evidence_limits: PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés
+      par FLOW.
+    element_name: RelatedParty role
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Rôle d’un acteur dans une demande de service.
+    differences: Exemple opérationnel télécom, sans modèle universel des rôles Supply.
+    flow_position: Préciser à quel titre une partie intervient dans une relation ou une opération. Role signifie ici rôle
+      métier, distinct d’une habilitation informatique.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM464
+    - CMP193
+    concept_name: RelatedParty role
+    scope_summary: Rôle d’un acteur dans une demande de service.
+    approach_summary: Qualifier la relation avec l’ordre concerné.
+  market_inspiration:
+    choice: Préciser à quel titre une partie intervient dans une relation ou une opération. Role signifie ici rôle métier,
+      distinct d’une habilitation informatique.
+    flow_scope: Client, fournisseur, destinataire ou autre responsabilité métier.
+    flow_approach: Relier le rôle à la Party et à son contexte.
+    synthesis:
+    - Microsoft décrit les rôles d’une partie dans un carnet d’adresses partagé. TM Forum rattache une partie et son rôle
+      à une demande de service. Microsoft insiste sur la référence réutilisable ; TM Forum sur la relation dans une opération.
+    - FLOW retient le sens métier dans ces deux contextes. Un rôle de destinataire ne donne pas automatiquement des droits
+      d’accès et ne remplace pas l’identité de la partie.
+    examples:
+    - title: Illustration FLOW — qui demande, qui reçoit
+      situation: Une partie émet la demande de service ; une autre en reçoit le résultat.
+      outcome: Les rôles permettent de comprendre leurs responsabilités respectives.
+      lesson: Ce sont des rôles métier, pas des profils de connexion.
+      source_title: TMF641 Service Ordering Management API REST Specification
+      source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
+      source_refs:
+      - U477
+      - ELM464
+      - CMP193
+relations:
+- id: REL-GROUP-D08
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D08
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 9e3c86800ef8915e0498fcfcfbf385c0d575ac8c4901e0d1bd09319272d46649
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D09.d
+  revision: 1
+  type: contains
+  source_id: D09
+  target_id: D09.d
+  source_refs:
+  - P81
+  - U97
+  - U103
+  - C64
+  - P85
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717
+      target_id: fb5a7d6c9cfbf8e55603c6fb1382b544192c30c47012df317f512af951e6defc
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D09
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D09
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D11.a
+  revision: 1
+  type: contains
+  source_id: D11
+  target_id: D11.a
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - P85
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 730537331e56c94b2f53a912667fd9bb3ce637bbda1b3ddf348fab55b09a932f
+      target_id: 9c8f04b49d849a07687467b250278a2b1bb7784ebc2f1fbe52c4c7975004422d
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D12
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D12
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 7d25f9c6f907e64ec1bd992bffa53fa42f41db0a9ab22495b3a669f825ca5711
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D08.d
+  revision: 1
+  type: contains
+  source_id: D08
+  target_id: D08.d
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C66
+  - INF21
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 9e3c86800ef8915e0498fcfcfbf385c0d575ac8c4901e0d1bd09319272d46649
+      target_id: 7970e30efd9d28b557fff143ee2dd2ac437b4a3c86345ca4aab3c6e28e46b169
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D11
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D11
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 730537331e56c94b2f53a912667fd9bb3ce637bbda1b3ddf348fab55b09a932f
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D12.a
+  revision: 1
+  type: contains
+  source_id: D12
+  target_id: D12.a
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C64
+  - P85
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 7d25f9c6f907e64ec1bd992bffa53fa42f41db0a9ab22495b3a669f825ca5711
+      target_id: a852a8d740de5c5121b18e67eea31280db72dc6aaedd6a4fbe0df1c58e0d027e
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D13
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D13
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 04de8ebf690088973924edcbf7dd36fe2245a618cf13e700d9b4425941312acf
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D13.a
+  revision: 1
+  type: contains
+  source_id: D13
+  target_id: D13.a
+  source_refs:
+  - P81
+  - U97
+  - U102
+  - U103
+  - C68
+  - INF22
+  - Q076
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 04de8ebf690088973924edcbf7dd36fe2245a618cf13e700d9b4425941312acf
+      target_id: 04d20460f04891b4b745c1fbad17a1c0f894f177c476c0e98a8b227980219d87
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-ILL-007
+  revision: 1
+  type: provides-conditions
+  source_id: D11
+  target_id: D03
+  source_refs:
+  - U97
+  review:
+    state: illustration
+    note: Relation illustrative importée ; identité nouvellement allouée, aucune validation métier.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    validated_fields: []
+    value_sha256: {}
+    note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
+      du cycle, pas date historique de l’accord.
+- id: REL-ILL-008
+  revision: 1
+  type: describes-network
+  source_id: D13
+  target_id: D06
+  source_refs:
+  - U102
+  review:
+    state: illustration
+    note: Relation illustrative importée ; identité nouvellement allouée, aucune validation métier.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U102
+    validated_fields: []
+    value_sha256: {}
+    note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
+      du cycle, pas date historique de l’accord.
+- id: REL-UNIVERSE-SUPPLY-business-references
+  revision: 1
+  type: presents
+  source_id: universe-supply
+  target_id: business-references
+  source_refs:
+  - U141
+  - C78
+  - CMP066
+  review:
+    state: proposed
+    note: Rattachement ou contribution explicite selon U141 ; détails proposés.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-13T17:32:42.257717Z'
+    recorded_by: Codex
+    source_refs:
+    - U141
+    - C78
+    - CMP066
+    validated_fields: []
+    value_sha256: {}
+    note: Détail de mise en œuvre proposé par Codex selon U141 ; non validé individuellement.
+- id: REL-GROUP-D14
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D14
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  review:
+    state: accepted
+    note: Regroupement ou nouveau référentiel demandé en U244.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-16T09:04:53.281745Z'
+    recorded_by: Codex
+    source_refs:
+    - U244
+    validated_fields:
+    - type
+    - source_id
+    - target_id
+    value_sha256:
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: ace6ded8e52413f7d896e74b5c917206850718402c7bcf8e0d3e9f62d9fd0f2d
+    note: Compléments proposés pour appliquer U244 ; aucune validation de détail déduite.
+- id: REL-MEMBER-D14.a
+  revision: 1
+  type: contains
+  source_id: D14
+  target_id: D14.a
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  review:
+    state: proposed
+    note: Relation explicitée pour U244 ; détail de projection proposé.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-16T09:04:53.281745Z'
+    recorded_by: Codex
+    source_refs:
+    - U244
+    validated_fields: []
+    value_sha256: {}
+    note: Compléments proposés pour appliquer U244 ; aucune validation de détail déduite.
+- id: REL-SERVICE-CATALOG-EXECUTION
+  revision: 1
+  type: provides-conditions
+  source_id: D14
+  target_id: D06
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - U482
+  review:
+    state: proposed
+    note: Relation explicitée pour U244 ; détail de projection proposé.
+  qualification:
+    meaning: Le référentiel fournit l’offre, les SLA configurés et les accès des services ; Process Management qualifie leur
+      emploi et pilote les prestations dans le contexte.
+    conditions: []
+    effects: []
+    scope: Responsabilité métier ; aucun contrat technique, seuil, automatisation ou cardinalité imposé.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-16T09:04:53.281745Z'
+    recorded_by: Codex
+    source_refs:
+    - U244
+    validated_fields: []
+    value_sha256: {}
+    note: Compléments proposés pour appliquer U244 ; aucune validation de détail déduite.
+- id: REL-SERVICE-CATALOG-PROMISING
+  revision: 2
+  type: provides-conditions
+  source_id: D14
+  target_id: D15
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - U438
+  review:
+    state: proposed
+    note: 'Relation explicitée pour U244 ; détail de projection proposé. U438 : cible de promesse portée par D15 ; relation
+      toujours proposée.'
+  qualification:
+    meaning: D15 utilise les conditions de service configurées pour construire la promesse, avec la capacité contextuelle
+      fournie par D06 et les autres informations Supply.
+    conditions: []
+    effects: []
+    scope: Responsabilité métier ; aucun contrat technique, seuil, automatisation ou cardinalité imposé.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-16T09:04:53.281745Z'
+    recorded_by: Codex
+    source_refs:
+    - U244
+    validated_fields: []
+    value_sha256: {}
+    note: Compléments proposés pour appliquer U244 ; aucune validation de détail déduite.
+  last_modified: '2026-09-19T01:13:35.882622Z'
+- id: REL-NEEDS-U290-051
+  revision: 1
+  type: relates-to
+  source_id: D04.i
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-NEEDS-U290-058
+  revision: 1
+  type: relates-to
+  source_id: D04.j
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-NEEDS-U290-074
+  revision: 1
+  type: relates-to
+  source_id: D04.m
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-NEEDS-U290-128
+  revision: 1
+  type: relates-to
+  source_id: D11.a
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-NEEDS-U290-131
+  revision: 1
+  type: relates-to
+  source_id: D13.a
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: REL-NEEDS-U290-132
+  revision: 1
+  type: relates-to
+  source_id: D14.a
+  target_id: D09.d
+  source_refs:
+  - U286
+  - U290
+  qualification:
+    role: needs
+    meaning: A besoin de parties et rôles externes.
+    conditions:
+    - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
+    effects:
+    - Résultat consommé sans transfert de responsabilité du fournisseur.
+    scope: 'Contrat métier proposé : consommateur → fournisseur de résultat. Aucun appel technique systématique ; sources
+      de données et conditions à éprouver.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.

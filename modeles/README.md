@@ -1,5 +1,17 @@
 # Modèles structurés
 
+**Publication courante :** [index](release/index.json) et [restitution générée](../restitutions/release.md). Le [parcours regroupé](#parcours-de-release-regroupé--u504) évite de recopier les compteurs et de refaire les contrôles manuellement.
+
+**Publication U502 : v017 / `2026-09-19.10`.** Service Requests et Backing Services, demande d’optimisation du carnet et six comportements, indicateurs Frontoffice/Backoffice. 48 capacités, 82 comportements, 348 relations et 110 termes métier. Guide méthodologique `.4` associé ; Périmètre lisible sans dépliage. Accords repris dans leur portée, détails éditoriaux proposés. Atlas vérifié, zéro erreur. [Rapport](../audits/2026-09-19-release-U502/rapport.md).
+
+**Publication U484 : v016 / `2026-09-19.9`.** La fiche métier Authoritative Data est complétée : finalité, définition, périmètre et limites, autorité sur les informations et exemple de conditionnement produit. Elle porte explicitement la source de vérité locale Supply en articulation avec les maîtres externes. Un seul nœud modifié ; autres fiches, relations, glossaire, inspirations et guide .3 conservés. Accord sur le nom repris après réexamen, ajouts éditoriaux proposés. Correction vérifiée dans Atlas. [Rapport](../audits/2026-09-19-authoritative-data-U484/rapport.md) ; [note figée](release/2026-09-19.9/release-notes.md).
+
+**Publication U483 : v015 / `2026-09-19.8`.** Les Sources d’inspiration couvrent les 247 fiches visibles : 137 objets du modèle et 110 termes du glossaire métier. La release intègre Authoritative Data et les niveaux Domain → Area → Capability → Behavior adoptés U482, avec le guide méthodologique `2026-09-19.3`. Les 47 capacités, 76 comportements et 338 relations sont conservés ; une qualification de relation est reformulée à sens constant. 123 accords repris automatiquement, 120 après réexamen explicite de portée et deux décisions limitées aux changements adoptés. Les nouvelles inspirations restent proposées. Atlas vérifié sur le snapshot publié ; publications antérieures préservées. [Rapport](../audits/2026-09-19-release-U483/rapport.md) ; [note figée](release/2026-09-19.8/release-notes.md).
+
+**Noms et niveaux U482, complétés au backlog par U507.** La hiérarchie courante est **Domain → Area → Capability → Behavior** : Supply Chain Orchestration occupe le niveau Domain, auparavant Universe. Aux six Areas opérationnelles s’ajoute désormais **Authoritative Data**, renommé en U482 et adopté comme Area en U507. Ses sept référentiels distincts, dont Assortment ajouté en U509, portent la source de vérité locale (U479), en articulation avec les sources de vérité d’entreprise externes ; chacun contient son ingestion et sa Visibility. Les liens `Area presents Reference` organisent leur présentation sans créer un niveau supplémentaire d’Area. Les identifiants et rattachements existants sont conservés. [Niveaux et inspirations](backlog/model-level-naming-U481.yaml) ; [nom et autorité locale](backlog/authoritative-data-review-U478.yaml) ; [accord U507](backlog/party-reference-review-U505.yaml). Les publications antérieures gardent leurs noms, types et contrats historiques ; Les changements U507/U509 restent au backlog jusqu’à une release demandée.
+
+**Publication U476 : v014 / `2026-09-19.7`.** La rubrique Sources d’inspiration de Supply Chain Orchestration est publiée au format C retenu en U475 : choix en tête, cinq références comparées, synthèse et exemple Oracle des 75 pièces livrables sur 100 attendues. Une seule fiche modifiée ; autres nœuds, relations et glossaire conservés. Accord sur le nom repris après réexamen ; nouvelle décision limitée à `market_inspiration`, comparaisons détaillées toujours proposées. [Note figée](release/2026-09-19.7/release-notes.md) ; [rapport de préparation](release/2026-09-19.7/changes.json).
+
 **Publication U473 : v013 / `2026-09-19.6`.** Retours de revue U470–U472 publiés : univers Supply expliqué concrètement, périmètre d’orchestration et projections externes explicités, 47 fiches enrichies en références marché, Business Services retiré. Les 47 capacités, 76 comportements et 338 relations sont conservés. Le catalogue d’informations reste préservé en interne et masqué dans Atlas ; son extension reste en attente. Bandeau fixe et barre haute compacte disponibles. [Rapport](../audits/2026-09-19-release-U473/rapport.md) ; [note figée](release/2026-09-19.6/release-notes.md).
 
 **Retrait U472 publié dans v013 :** Business Services est retiré, ainsi que son terme TER067 ; Supply Chain Orchestration reste le seul univers instancié. Aucun domaine, capacité ou lien n’était rattaché à cet univers vide. Le commerce est différé après la Supply Chain. V012 et son historique restent inchangés. [Rapport du retrait](../audits/2026-09-19-business-services-U472/rapport.md).
@@ -107,13 +119,13 @@ Les trois dossiers du panorama sont des périmètres SI. Le fichier partagé ne 
 
 ## Structure du modèle
 
-Le graphe distingue `domain`, `reference`, `group`, `capability`, `behavior`, `object`, `document` et `event`. **U455 retire l’axe métier transactionnel/processus** : univers et domaines coopèrent par des responsabilités et interactions explicites. U458 retire `layer` du backlog courant. Le principe `PRINCIPLE-DOMAIN-INTERACTIONS` interdit sa réintroduction ; les anciens snapshots conservent leurs champs et leur contrôle historique. Le lecteur ne s’en sert plus pour déduire une frontière métier. `space` porte le cycle de publication. Ancien principe, nouveaux principes et impacts : [domain-interactions-U455-U456.yaml](backlog/domain-interactions-U455-U456.yaml).
+Le graphe courant distingue `domain`, `area`, `reference`, `group`, `capability`, `behavior`, `object`, `document` et `event`. U482 place Supply Chain Orchestration au niveau `domain` et ses six périmètres opérationnels au niveau `area` ; les anciens snapshots restent interprétés selon leurs propres types et niveaux. **U455 retire l’axe métier transactionnel/processus** : Domains et Areas coopèrent par des responsabilités et interactions explicites. U458 retire `layer` du backlog courant. Le principe `PRINCIPLE-DOMAIN-INTERACTIONS` interdit sa réintroduction ; les anciens snapshots conservent leurs champs et leur contrôle historique. Le lecteur ne s’en sert plus pour déduire une frontière métier. `space` porte le cycle de publication. Ancien principe, nouveaux principes et impacts : [domain-interactions-U455-U456.yaml](backlog/domain-interactions-U455-U456.yaml).
 
 **U456 : Atlas reste strictement métier.** Structures d’information métier, autorités, documents et faits y ont leur place ; catalogues d’applications/produits logiciels, contrats techniques et liens vers les réalisations restent hors d’Atlas. Les dossiers de solution peuvent citer la référence métier. Cette décision corrige la proposition d’audit ; elle ne réécrit pas les publications ni l’application courante.
 
 Chaque nœud a un identifiant stable, une révision, des champs de contenu, un statut et des sources. `fields` contient notamment `name`, `definition`, `finality` et, quand elles sont établies, `nature`, `scope`, `independence` ou `mastership`. Une valeur absente reste inconnue ; la vue ne la complète pas depuis un autre espace.
 
-Les relations ont également leur identifiant, leur type, leurs extrémités et leur statut. `contains` décrit la décomposition et `presents` un groupe de présentation. Les autres liens décrivent des relations métier, sans convertir automatiquement objets, documents ou événements en sous-capacités. Les préfixes historiques ne déterminent jamais les parents : D02.b et D02.c sont rattachées à D01 ; D02.e à D03.
+Les relations ont également leur identifiant, leur type, leurs extrémités et leur statut. `contains` décrit la décomposition et `presents` la présentation. Authoritative Data conserve son type `group` et ses relations de présentation vers les référentiels : son nom adopté n’ajoute pas une Area ni un gestionnaire unique des données maîtresses. Les autres liens décrivent des relations métier, sans convertir automatiquement objets, documents ou événements en sous-capacités. Les préfixes historiques ne déterminent jamais les parents : D02.b et D02.c sont rattachées à D01 ; D02.e à D03. Le même principe conserve l’identifiant `universe-supply` pour le Domain Supply Chain Orchestration.
 
 Une relation peut porter une expression courte dans `fields.label` (ou `fields.verb`), lue de `source_id` vers `target_id`. Cet objet optionnel n’accepte que ces deux chaînes non vides. Le sens complet reste dans `qualification`. Avec le rôle `needs`, la flèche va toujours du consommateur vers le fournisseur du résultat ; le libellé ne change ni cette orientation ni le type du lien. Atlas affiche le libellé commun aux relations regroupées, sinon le libellé de famille et le détail de chaque relation.
 
@@ -133,7 +145,9 @@ La hiérarchie peut être approfondie, mais un nouveau niveau ou une nouvelle re
 
 Dans la release complète, `approved_fields` et `proposed_fields` qualifient séparément les champs d’un nœud. `adoption_ids` renvoie aux décisions `ADOPT-*`, qui transcrivent les accords existants avec auteur, date, source, interprétation explicite ou contextuelle, cible, révision et empreinte de chaque valeur adoptée. Ces repères techniques n’ajoutent aucune nouvelle validation métier. La validation d’un nom ne s’étend pas aux autres champs.
 
-Les rattachements sont qualifiés séparément. Reservation conserve notamment le dernier rattachement U75 avec le réexamen U78 ; son nom adopté ne ferme pas cette question de frontière. Le groupe Business References reste un groupe de présentation de cinq modèles distincts. Les neuf capacités d’Order Promising sont validées dans la portée U95 ; aucune autorité logistique supplémentaire n’est attribuée par cette validation.
+Les rattachements sont qualifiés séparément. Les deux paragraphes suivants conservent les repères historiques U75–U95 et la migration initiale ; les noms, nombres et rattachements courants se lisent dans le YAML. U482 remplace notamment le nom Business References par Authoritative Data sans transformer le groupe en Area.
+
+Reservation conserve notamment le dernier rattachement U75 avec le réexamen U78 ; son nom adopté ne ferme pas cette question de frontière. Le groupe Business References reste un groupe de présentation de cinq modèles distincts. Les neuf capacités d’Order Promising sont validées dans la portée U95 ; aucune autorité logistique supplémentaire n’est attribuée par cette validation.
 
 Le backlog conserve les alternatives P82 et P84 dans `alternatives`. Elles ne remplacent pas silencieusement les 36 fiches publiées. Les quatre objets, document et fait illustratifs sont conservés avec leurs huit relations, sans promotion par la migration.
 
@@ -149,6 +163,8 @@ Sarenza est `not_assessed`, avec des listes vides. Cela signifie « non traité 
 
 Selon U113, l’exploration et la construction se font **dans le backlog par défaut**, y compris dans FLOW Atlas. La publication reste une action distincte pilotée par le skill `release`. Une comparaison seule n’active aucune version.
 
+Le paragraphe U141 suivant est un repère historique : U472 a depuis retiré Business Services / Case et U482 a adopté Domain → Area → Capability → Behavior ainsi que le nom Authoritative Data. Il ne réactive ni l’ancien niveau Universe, ni un périmètre Commerce ou Case à développer.
+
 U112 fixe la priorité : **domaines et capacités**, puis leur épreuve sur les trois SI et FLOW cible. U141 structure désormais **Supply** et **Case** comme univers dans le backlog : groupes `group_role: urbanism_level`, `level_ref: universe`. Les domaines transactionnels et Business References sont rattachés à Supply ; Case réserve l’exploration processus. Business References reste un groupe de présentation. La [feuille de route](backlog/modeling-roadmap.yaml) prépare le lien Case/Order sans instancier leur inventaire détaillé ou leurs cardinalités. L’état avant cette refonte est conservé dans [history/pre-U141.json](backlog/history/pre-U141.json).
 
 Les relations peuvent porter `qualification` : sens (`meaning`), rôle, conditions, effets et périmètre. Le type générique `relates-to` permet capacité → capacité/objet/document/événement avec un sens explicite. Les sources et le statut appartiennent au lien lui-même. Cela prépare la structure ; aucun nouveau lien métier réel n’a été ajouté. Une relation entre capacités n’est pas automatiquement une décomposition ; un objet peut concerner plusieurs capacités sans propriétaire exclusif présumé.
@@ -160,7 +176,7 @@ Le [registre d’applicabilité](backlog/applicability.yaml) prépare quatre con
 1. Lire les corrections, le JSON concerné et ses sources. Enregistrer d’abord tout nouvel apport de Laurent ; distinguer proposition et validation.
 2. Modifier le backlog JSON, conserver les identifiants et incrémenter la révision des éléments modifiés. Actualiser les liens marché ou signaler leur comparaison restant à faire dans les sources associées. Consigner l’analyse en Markdown.
 3. Pour une publication, figer une nouvelle révision JSON dans `revisions/`, les décisions applicables dans `decisions/` et les preuves dans `provenance/`. Une modification d’un champ adopté ne réutilise pas automatiquement la validation de sa valeur antérieure. Les décisions doivent cibler les révisions et empreintes réellement publiées.
-4. Utiliser le [skill release](../skills/release/SKILL.md) et [prepare_release.py](../scripts/prepare_release.py) pour comparer le backlog vivant, préparer le candidat et publier sa capture contrôlée. La préparation écrit seulement `modeles/staging/<version>/`. La publication refuse une entrée altérée ou un contexte modifié depuis la préparation, puis active le pointeur local en dernier. Les décisions sont conservées automatiquement à identité, révision et valeurs identiques ; une reprise sur une autre révision exige une réévaluation explicite. Le rapport distingue les validations suspendues et conserve leur historique.
+4. Utiliser le [skill release](../skills/release/SKILL.md) et [prepare_release.py](../scripts/prepare_release.py) pour comparer le backlog vivant, préparer le candidat et publier sa capture contrôlée. La préparation écrit seulement `modeles/staging/<version>/`. La publication refuse une entrée altérée ou un contexte modifié depuis la préparation, puis active le pointeur local en dernier. U504 : les décisions conservent leur portée. Un report sur une autre révision est automatique uniquement si valeurs et contexte métier restent identiques ; un changement métier exige un réexamen explicite. Le rapport distingue les validations suspendues et conserve leur historique.
 5. Exécuter les contrôles, actualiser les restitutions et le journal. Publier un contenu candidat ne constitue jamais une validation métier. Une publication externe reste une action différente de cette publication locale.
 
 Commande employée pour la publication complète initiale, conservée comme exemple **à ne pas rejouer avec cette version déjà créée** :
@@ -246,28 +262,54 @@ Après une modification, utiliser la matrice de contrôles d’[AGENTS.md](../AG
 
 `prepare_release.py report` affiche une synthèse avec le nombre d’erreurs et l’aptitude à préparer une release. `--full` imprime tous les détails ; `--output chemin-nouveau.json` enregistre le rapport complet dans un nouveau fichier, sans écraser un fichier existant. Les vérifications et le rapport figé d’une préparation restent complets.
 
+### Parcours de release regroupé — U504
+
+```powershell
+python scripts/release.py --source SOURCE --activate
+```
+
+Une seule construction du candidat pour le cas courant, puis capture, publication, contrôle d’Atlas, restitution release et journal. Sans `--activate`, le parcours prépare seulement. Il affiche `prepared`, `published`, `unchanged`, `needs_review`, `blocked`, `published_checks_failed` ou `publication_incomplete`, avec durées par étape. Le compte rendu est dans `.runtime/release-runs/VERSION/`. Les publications historiques, leurs preuves et leurs associations restent immuables.
+
+La commande ne lance ni build, ni navigateur, ni redémarrage serveur. Les vérifications de données et d’intégrité sont maintenues ; les tests et le build du code sont réalisés au moment de sa modification. Les README renvoient à l’index et à la restitution générée plutôt que de multiplier les compteurs à actualiser.
+
+Une préparation figée se reprend avec `--version VERSION --source SOURCE --activate`, sans nouvelles entrées. Pour une version déjà active, cette même commande refait les contrôles sans republier ni dupliquer le journal. Un état `publication_incomplete` conserve les artefacts et demande un diagnostic ciblé ; il n’entraîne aucune réécriture ni nouvelle tentative aveugle d’activation.
+
+`--guide CHEMIN_YAML` intègre une nouvelle édition explicite du guide : sources, version, octets et association sont vérifiés et figés avant activation. Sans cette option, le guide précédent est conservé. Aucune génération automatique des formulations pédagogiques.
+
+### Enregistrer un accord explicite avant la release
+
+```powershell
+python scripts/record_decision.py --id ADOPT-SOURCE-OBJET --collection nodes --target ID --fields name --source SOURCE --author Laurent --decided-at YYYY-MM-DD --interpretation explicit --reviewer Codex --note "Portée exacte présentée et acceptée"
+```
+
+Répéter `--fields` et `--source` pour une portée multiple. L’annexe YAML `backlog/decision-intents.yaml` conserve les valeurs explicitement sélectionnées, leurs empreintes, l’auteur, les sources et le contexte. Elle ne déduit aucun accord depuis `lifecycle` et n’est pas un second modèle. L’enregistrement intervient après les modifications correspondant à l’accord ; il ne modifie pas les champs ni leur lifecycle.
+
+La préparation matérialise ces accords sur les révisions finales. Un changement des valeurs ou du contexte bloque les intentions inédites devenues périmées. Les intentions déjà figées restent historiques, même si leur décision a ensuite été remplacée, suspendue ou reportée. Leur retrait ou leur réécriture ne peut pas réactiver un accord. Les décisions JSON historiques et l’option `--decisions` restent compatibles.
+
 ### Parcours maintenu de réexamen des accords
 
-Le diagnostic peut produire en une seule construction un dossier de comparaison et de réexamen. `VERSION` est une version neuve et `SOURCE` la contribution autorisant la publication considérée. Ces commandes ne publient rien :
+Un changement de révision seul ne suspend plus systématiquement un accord. Le report automatique vérifie les valeurs approuvées, les champs métier de la cible, les relations incidentes, les voisins, les ancêtres de rattachement, les principes et les termes de glossaire liés. Les seules différences ignorées sont les métadonnées et références éditoriales expressément reconnues. Les champs inconnus sont significatifs. Un changement de contexte peut nécessiter un examen même si le texte approuvé reste identique.
+
+`needs_review` fournit directement le dossier utile. Pour un diagnostic indépendant :
 
 ```powershell
-python scripts/prepare_release.py report --version VERSION --source SOURCE --review-output .runtime/review-VERSION
-python scripts/prepare_release.py inspect .runtime/review-VERSION --section review --id IDENTIFIANT --full
-python scripts/prepare_release.py inspect .runtime/review-VERSION --section review-context --limit 10
-python scripts/prepare_release.py inspect .runtime/review-VERSION --id IDENTIFIANT --limit 10
+python scripts/prepare_release.py report --version VERSION --source SOURCE --review-output DOSSIER
+python scripts/prepare_release.py inspect DOSSIER --section review --id IDENTIFIANT --full
 ```
 
-Le dossier contient `report.json`, `review.json` et `assessment.yaml`. Les deux JSON sont des preuves à ne pas éditer. Le réexamen montre les valeurs approuvées avant/après et leurs empreintes, les changements de la fiche, des relations incidentes et du contexte global, ainsi que les impacts du glossaire. Une valeur inchangée peut changer de sens dans son contexte : l’éligibilité au réexamen n’est pas un accord. La synthèse et les pages de détail sont lisibles avec `inspect`, sans nouvelle construction ni validation ; leur ancienneté reste celle du dossier.
+Lire les valeurs et changements de contexte, puis compléter uniquement `assessment.yaml` avec `reviewer` et une justification explicite par décision :
 
-Après lecture, remplir seulement `assessment.yaml` : `reviewer` identifie celui qui examine, et chaque entrée reçoit `retain` ou `defer` avec une `rationale` explicite sur la portée. Toutes les entrées commencent à `pending`. Ne pas remplir les choix mécaniquement depuis l’éligibilité. `retain` transcrit exclusivement une décision acceptée dont toutes les valeurs approuvées sont inchangées. Il ne reprend aucun champ nouveau ; auteur, date, sources et portée de l’accord initial sont conservés. Une valeur modifiée ou retirée impose `defer`, ou une véritable nouvelle décision sourcée fournie séparément par `--decisions`. Aucun nouvel accord métier n’est déduit du dossier.
+- `retain` reprend tous les champs historiques strictement inchangés.
+- `retain_partial` reprend la liste explicite non vide `approved_fields`, limitée aux champs historiques inchangés. Les autres champs restent hors de cette reprise.
+- `defer` ne reprend aucun champ.
+
+Aucune éligibilité n’est convertie en accord. Les anciens dossiers `retain`/`defer` restent lisibles ; leurs preuves ne sont pas modifiées. Après le réexamen :
 
 ```powershell
-python scripts/prepare_release.py prepare --version VERSION --source SOURCE --review .runtime/review-VERSION
-python scripts/prepare_release.py inspect modeles/staging/VERSION
-python scripts/prepare_release.py inspect modeles/staging/VERSION --section errors
+python scripts/release.py --version VERSION --source SOURCE --review DOSSIER --activate
 ```
 
-La préparation reconstruit une fois le candidat final, revérifie le dossier contre les sources courantes, puis fige décisions, réexamen et preuves dans `decision-review/`. Les modifications d’entrées, de contrat, de code, de version de base ou de paramètres invalident le dossier ; le recréer après correction. Le rapport de préparation est déjà disponible : ne pas relancer `report` pour le relire. La publication conserve ses contrôles complets et archive les preuves sous `modeles/revisions/VERSION/decision-review/` avec empreintes dans le manifeste. La modification ultérieure du dossier de travail ne change pas ces preuves figées.
+Le parcours construit une seule préparation finale et fige le réexamen. Sources, inventaire du backlog, contrat, code Python, guide et entrées préparées sont vérifiés avant publication. Une modification significative rend la préparation périmée. `inspect` lit toujours les rapports enregistrés sans reconstruire ni publier.
 
 ### Mesurer le parcours sans toucher au modèle
 
@@ -294,3 +336,11 @@ Atlas indexe les champs métier et le glossaire du snapshot sélectionné, avec 
 Le champ racine optionnel `market_reference_policy: two_primary_sources` exige au moins deux documents distincts pour chaque nœud non illustratif, relation ou terme comportant des comparaisons. `validate_models.py` et la préparation de publication l’appliquent ; les URL ne deviennent pas distinctes par changement d’ancre ou ajout de paramètres. Les fiches sans comparaison ne reçoivent aucun appui fictif. La qualité primaire et la pertinence sont contrôlées éditorialement. La politique participe à l’empreinte du modèle et laisse les snapshots historiques sans marqueur inchangés.
 
 U470 masque temporairement le catalogue Informations métier dans Atlas sans supprimer ses données du modèle. Aucune extension n’est engagée pendant cette consolidation.
+
+
+## Métadonnées de demandes — U501
+
+Les champs facultatifs `fields.request_origins` (capacité uniquement) et `fields.behavior_aspect` (comportement uniquement) portent des informations de lecture explicites. `request_origins` accepte une liste non vide et sans doublon de `frontoffice` et/ou `backoffice` ; `behavior_aspect` accepte `trigger` ou `activity`. Ils ne modifient pas `nature` et ne créent pas de niveau de décomposition. L’absence de champ ne permet aucune inférence. Validation, compilation du snapshot, restitution Markdown et Atlas conservent les valeurs de la publication consultée ; aucune valeur n’est ajoutée aux publications historiques.
+
+
+**Réexamen des intentions inédites — U509.** `record_decision.py --supersedes ID_ANTERIEUR` ajoute une nouvelle preuve explicitement réexaminée sans modifier l’ancienne. Même cible et champs identiques ou réduits ; aucun report automatique du contexte. Les preuves déjà publiées passent par le parcours de réexamen de publication. L’API `record_intents(root, parameters)` enregistre un lot relu sur un seul état final et une seule écriture atomique ; chaque accord garde sa source, ses champs et sa note.

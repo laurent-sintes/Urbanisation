@@ -2972,3 +2972,1337 @@ U472 — MKT02, communauté ArchiMate hébergée par The Open Group, [ArchiMate 
 ### ELM324
 
 U472 — MKT14, Microsoft Dynamics 365 Customer Service, [Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), introduction et composant Cases, page mise à jour le 8 mai 2026, consultée le 19 septembre 2026. Le Case suit le traitement d’une situation client jusqu’à sa résolution. Objet produit, pas taxonomie d’univers. Appui partiel pour TER064, dont le sens FLOW demeure plus large que le service client ; aucune solution adoptée. Synthèse originale et lien.
+
+### ELM325
+
+U474/U475 — MKT55, Zacharia, Sanders et Nix, *The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator*, 2011, Journal of Business Logistics 32(1), 40–54, DOI 10.1111/j.2158-1592.2011.01004.x. [Article primaire](https://bpb-us-w2.wpmucdn.com/wordpress.lehigh.edu/dist/e/653/files/2018/01/Zacharia-JBL-3PL-Orchestrator-Role-2011-27dqkbl.pdf), introduction p. 40, modèle p. 45, exemples p. 48–49 et limites p. 50 consultés le 19 septembre 2026. Libellé natif : Orchestrator ; nature : rôle étudié d’un prestataire logistique. Reformulation : faciliter la coopération d’entreprises par la coordination et l’information partagée. L’étude empirique concerne un seul prestataire spécialisé transport ; aucune définition scientifique universelle ni équivalence à l’univers FLOW déduite. CMP188.
+
+### ELM326
+
+U474/U475 — MKT56, ASCM, [SCOR Digital Standard](https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/), page sans numéro d’édition affiché, définition Orchestrate et contexte des autres processus, texte primaire restitué par l’index de recherche le 19 septembre 2026. Libellé natif : Orchestrate ; nature : processus de référence. Reformulation : intégrer la stratégie Supply, les règles, risques, ressources et performance de la chaîne. L’ouverture directe renvoie 403 ; constat limité aux définitions restituées, sans audit du standard complet ni conformité revendiquée. Ce périmètre diffère de la coordination des commandes, stocks, engagements et prestations dans FLOW. CMP188.
+
+Complément documentaire U475 à ELM294 (MKT20) : [Oracle 26B — Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html), passage Automate Change Management consulté le 19 septembre 2026. L’exemple réduit de 100 à 75 unités la quantité que le fournisseur peut livrer ; recherche d’une autre source pour 25, puis signalement d’un écart en l’absence de solution. Reformulation attribuée dans l’exemple de Sources d’inspiration, distincte de sa lecture FLOW et de tout constat Beaumanoir.
+
+
+### ELM327
+
+U477 — MKT61. [Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization](https://arxiv.org/abs/2306.10961). Édition(s) consultée(s) : Prépublication du 19 juin 2023. Consultation du 19 septembre 2026. Éléments natifs : Multi-echelon inventory optimization. Passages : Résumé des auteurs.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Résumé primaire seul consulté ; aucune reproduction de l’algorithme ni transférabilité quantitative au textile affirmée.
+
+
+### ELM328
+
+U477 — MKT27. [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition). Édition(s) consultée(s) : Page solution sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Smart Disposition. Passages : Intelligent routing ; Configure and enforce policy ; Recover revenue.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Page commerciale de l’éditeur ; ne livre pas l’algorithme et inclut aussi remboursement et admissibilité hors périmètre FLOW.
+
+
+### ELM329
+
+U477 — MKT36. [Process Observability & AI Agent Monitoring](https://camunda.com/platform/observability/). Édition(s) consultée(s) : Page web évolutive. Consultation du 19 septembre 2026. Éléments natifs : Process observability. Passages : Observability for orchestration ; Real-time runtime visibility.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation produit ; capacités de reprise et fonctions IA ne sont pas importées dans le comportement de suivi FLOW.
+
+
+### ELM330
+
+U477 — MKT36. [The Process Orchestration Handbook](https://camunda.com/process-orchestration/). Édition(s) consultée(s) : Guide web évolutif. Consultation du 19 septembre 2026. Éléments natifs : Exception handling ; Process orchestration ; Service task / Human task ; Task execution. Passages : What is process orchestration? ; Processes with diverse endpoints ; Complexity.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM331
+
+U477 — MKT41. [SCM Definitions and Glossary of Terms](https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx). Édition(s) consultée(s) : Page web sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Supply Chain Management. Passages : Definitions ; Boundaries and Relationships.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM332
+
+U477 — MKT64. [Fulfillment by Amazon (FBA) Reports](https://developer-docs.amazon/sp-api/docs/report-type-values-fba). Édition(s) consultée(s) : Documentation en ligne consultée le 2026-09-19. Consultation du 19 septembre 2026. Éléments natifs : Inventory Ledger Report. Passages : Inventory Ledger Report — Summary View / Detailed View.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Rapports du réseau Amazon ; ne définit ni une capacité FLOW ni un registre comptable universel.
+
+
+### ELM333
+
+U477 — MKT58. [Business capabilities](https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities). Édition(s) consultée(s) : Page institutionnelle évolutive, édition non indiquée. Consultation du 19 septembre 2026. Éléments natifs : Business / organisational capability ; Capability implementation ; Categorised capabilities. Passages : Definition ; Principles 1–4 ; exemple Pay staff.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne sont pas transposés à FLOW.
+
+
+### ELM334
+
+U477 — MKT62. [Inventory overview](https://docs.commercetools.com/api/inventory-overview). Édition(s) consultée(s) : Documentation en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : ReserveOnCart / ReserveOnOrder. Passages : Inventory modes ; Reservations ; expiration ; Release a reservation.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Modes d’un moteur de commerce ; ne démontre pas un calcul autonome de politique selon le risque.
+
+
+### ELM335
+
+U477 — MKT65. [Commingling purchase orders](https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html). Édition(s) consultée(s) : Infor LN 10.7. Consultation du 19 septembre 2026. Éléments natifs : Commingling. Passages : Commingling purchase orders ; Conditions ; Results.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM336
+
+U477 — MKT54. [Universal Business Language Version 2.4](https://docs.oasis-open.org/ubl/UBL-2.4.html). Édition(s) consultée(s) : OASIS Standard 2.4, 2024 ; UBL 2.4. Consultation du 19 septembre 2026. Éléments natifs : Despatch Advice / Receipt Advice ; Order ; Order / response ; Order Response ; Order document ; Receipt Advice. Passages : 3.2.47 Order ; 3.2.48 Order Cancellation ; 3.2.49 Order Change ; 3.2.50 Order Response ; §2.3.5.1.1–2.3.5.1.4 Fulfilment ; surtout Receipt Advice Business Rules.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Standard de documents d’échange ; les exemples ne définissent ni tous les documents ni la convention obligatoire fait-document de FLOW. ; Standard d’échange documentaire ; ne normalise ni toutes les responsabilités FLOW ni les termes français locaux.
+
+
+### ELM337
+
+U477 — MKT20. [Promising and Reserving Inventory](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm). Édition(s) consultée(s) : PeopleSoft Enterprise Inventory 9.0 ; PeopleSoft FSCM 9.0. Consultation du 19 septembre 2026. Éléments natifs : Cumulative ATP ; Cumulative ATP demand ; Inventory priority rank ; Priority rank ; Promise stock ; Soft reservation / Reservation lead days. Passages : Soft Reserve Items ; reservation lead days ; pegged supply ; Understanding Inventory Reservations ; Understanding the Order Line Processing Sequence ; Calculating ATP.
+
+Reformulations, relations et limites à la maille des 11 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation d’une version historique de PeopleSoft ; les termes ATP reservation et Release ont des sens propres au produit. ; Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM338
+
+U477 — MKT20. [Service Planning Concepts](https://docs.oracle.com/cd/E18727-01/doc.121/e13338/T515331T515340.htm). Édition(s) consultée(s) : Oracle E-Business Suite 12.1. Consultation du 19 septembre 2026. Éléments natifs : Repair return. Passages : Repair Return Pull ; Repair Return Push ; Repair delays.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Source de planification des pièces ; ne démontre pas à elle seule le suivi opérationnel de chaque bien sérialisé.
+
+
+### ELM339
+
+U477 — MKT20. [Consuming Material](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm). Édition(s) consultée(s) : E-Business Suite 12.2. Consultation du 19 septembre 2026. Éléments natifs : Consumption / Aging Based Ownership Transfer. Passages : Transferring Ownership ; Aging Based Ownership Transfer.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM340
+
+U477 — MKT20. [Mobile Materials Management](https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm). Édition(s) consultée(s) : E-Business Suite 12.2. Consultation du 19 septembre 2026. Éléments natifs : Physical inventory / Cycle counting. Passages : Counting ; Cycle Counting ; Physical Inventory.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM341
+
+U477 — MKT20. [Task Management — Opportunistic Cycle Counting](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm). Édition(s) consultée(s) : E-Business Suite 12.2. Consultation du 19 septembre 2026. Éléments natifs : Opportunistic cycle counting. Passages : Opportunistic Cycle Counting.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM342
+
+U477 — MKT20. [Order Management Implementation Manual — Scheduling](https://docs.oracle.com/cd/E26401_01/doc.122/e48842/T373258T377249.htm). Édition(s) consultée(s) : E-Business Suite 12.2. Consultation du 19 septembre 2026. Éléments natifs : Reservation Time Fence. Passages : Reservation Time Fence ; Reserve Orders ; Unreserving.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM343
+
+U477 — MKT20. [Purchase Orders](https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm). Édition(s) consultée(s) : Oracle E-Business Suite 12.2. Consultation du 19 septembre 2026. Éléments natifs : Planned Purchase Order ; Standard purchase order. Passages : Standard Purchase Orders ; Planned Purchase Orders ; Scheduled Releases ; Shipments.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM344
+
+U477 — MKT20. [Customer Import](https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html). Édition(s) consultée(s) : 25D. Consultation du 19 septembre 2026. Éléments natifs : Trading Community Data Import. Passages : File Links ; Import Trading Community Data in Bulk.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM345
+
+U477 — MKT20. [What’s the difference between a purchase order, a purchase agreement, and a contract agreement?](https://docs.oracle.com/en/cloud/saas/procurement/26a/oaprc/Chunk145966296.html). Édition(s) consultée(s) : Oracle Fusion Cloud Procurement 26A. Consultation du 19 septembre 2026. Éléments natifs : Purchase order. Passages : Purchase Order ; Blanket Purchase Agreement ; Contract Purchase Agreement.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM346
+
+U477 — MKT20. [Return to Supplier for Credit Only](https://docs.oracle.com/en/cloud/saas/readiness/scm/25a/inv25a/25A-inventory-wn-f35542.htm). Édition(s) consultée(s) : Oracle Cloud Readiness 25A. Consultation du 19 septembre 2026. Éléments natifs : Return for credit only. Passages : Business Benefits ; Steps to Enable ; Tips and Considerations.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM347
+
+U477 — MKT20. [Create and Monitor Agreements in Oracle Fusion Purchasing](https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html). Édition(s) consultée(s) : Documentation évolutive sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Contract / Purchasing agreement ; Import Purchasing Agreements. Passages : Track Purchasing Activity ; Import Blanket Agreements ; Import Contract Agreements.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM348
+
+U477 — MKT20. [Manage Repair Orders from the Depot Repair Page](https://docs.oracle.com/en/cloud/saas/service-logistics/26b/fasul/manage-repair-orders-from-the-depot-repair-page.html). Édition(s) consultée(s) : Oracle Fusion Cloud Service Logistics 26B. Consultation du 19 septembre 2026. Éléments natifs : Depot repair. Passages : Create repair work orders ; Return to customer ; Serialized assets.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM349
+
+U477 — MKT20. [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). Édition(s) consultée(s) : 25C. Consultation du 19 septembre 2026. Éléments natifs : Reservation. Passages : Reservation types ; Supply and demand source types.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM350
+
+U477 — MKT20. [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 25C. Consultation du 19 septembre 2026. Éléments natifs : Availability result ; Check Availability ; Commit a promising result ; Promising result ; Schedule an availability result ; Schedule the order line ; Scheduled ship and arrival dates. Passages : Examine the Attributes ; Schedule the Order Line.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+
+
+### ELM351
+
+U477 — MKT20. [Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 25C. Consultation du 19 septembre 2026. Éléments natifs : Postprocessing lead time. Passages : Back-to-Back ; Bill of Resources ; Profitable to Promise ; Consume Transfers at the Same Time.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM352
+
+U477 — MKT20. [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html). Édition(s) consultée(s) : 25C ; Oracle Fusion Cloud SCM 25C. Consultation du 19 septembre 2026. Éléments natifs : Create new supply with CTP ; Fulfillment locations ; Global Order Promising ; Split order line ; Supply sources. Passages : Introduction ; Principles 2 and 6 ; Introduction ; Principles of Promising ; Examples.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191, CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir. ; Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM353
+
+U477 — MKT20. [Order Management Statuses](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 25C. Consultation du 19 septembre 2026. Éléments natifs : Order management status. Passages : Order ; Order line ; Fulfillment line ; Task ; Orchestration process.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM354
+
+U477 — MKT20. [Consigned Inventory](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/consigned-inventory.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 25D. Consultation du 19 septembre 2026. Éléments natifs : Consignment order. Passages : Consignment agreements ; Orders ; Consumption advice.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM355
+
+U477 — MKT20. [Examples of Consigned Inventory Returns](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html). Édition(s) consultée(s) : 25D. Consultation du 19 septembre 2026. Éléments natifs : Consigned inventory return. Passages : Material received ; Material consumed ; Transfer to Consigned.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM356
+
+U477 — MKT20. [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). Édition(s) consultée(s) : 25D. Consultation du 19 septembre 2026. Éléments natifs : Item supply and demand. Passages : Quantities to Include ; Supply Types ; Demand Types.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM357
+
+U477 — MKT20. [Key Actions on Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 25D. Consultation du 19 septembre 2026. Éléments natifs : Current commit ; Enforce Current Commit simulation ; Interactive backlog planning ; Planned values. Passages : Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM358
+
+U477 — MKT20. [Guidelines for Managing Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26A. Consultation du 19 septembre 2026. Éléments natifs : Shipment set. Passages : Shipment set attributes ; Shippable and nonshippable lines.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM359
+
+U477 — MKT20. [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html). Édition(s) consultée(s) : 26A. Consultation du 19 septembre 2026. Éléments natifs : Consigned inventory aging. Passages : Aging Process ; Aging period ; Transfer to Owned.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM360
+
+U477 — MKT20. [Overview of Item Batches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html). Édition(s) consultée(s) : 26A. Consultation du 19 septembre 2026. Éléments natifs : Item / Item batch ; Item batch ; Item import ; Item master data. Passages : Overview of Item Batches.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM361
+
+U477 — MKT20. [Keep Global Order Promising and Inventory Management Synchronized](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/keep-availability-in-global-order-promising-and-inventory-management-synchronized.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26A. Consultation du 19 septembre 2026. Éléments natifs : Future available-to-promise supply ; Item availability / on-hand availability. Passages : Back-to-Back Orders ; Set up Your Material Status and Subinventory.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+
+
+### ELM362
+
+U477 — MKT20. [Ship Order Lines in Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html#s20054853). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26A. Consultation du 19 septembre 2026. Éléments natifs : Shipment set. Passages : Shipment sets ; Examples ; Guidelines.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM363
+
+U477 — MKT20. [Start Backlog Planning](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Backlog Management ; Backlog plan. Passages : Introduction ; When to Use.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM364
+
+U477 — MKT20. [Use Supply Chain Orchestration in Your Back-to-Back Flows](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Back-to-back flow ; Contract manufacturing ; Returned stock. Passages : Buy ; Transfer ; Return Sales Orders ; Contract Manufacturing.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM365
+
+U477 — MKT20. [Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Drop ship sales fulfillment ; Drop ship supply ; Supply order ; Supply request. Passages : Supply requests ; Supply orders ; Drop Ship ; Changes.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM366
+
+U477 — MKT20. [Cancel Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Order cancellation. Passages : Cancel an order ; Partially shipped lines ; Closed orders.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM367
+
+U477 — MKT20. [Fulfillment Line Splits](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Fulfillment line split. Passages : Split manually ; Split automatically ; Examples.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM368
+
+U477 — MKT20. [Hold Your Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Task hold. Passages : Hold tasks ; Multiple holds ; Release a hold.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM369
+
+U477 — MKT20. [Overview of Inventory Rebalancing](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html). Édition(s) consultée(s) : 26B ; Oracle Fusion Cloud SCM 26B. Consultation du 19 septembre 2026. Éléments natifs : Inventory rebalancing. Passages : Introduction ; Planned orders ; Release ; Salient Features ; sweep location ; Additional Points.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir. ; Recommandations Oracle calculées à la date initiale du plan ; aucune évaluation temporelle continue n’est revendiquée.
+
+
+### ELM370
+
+U477 — MKT20. [Overview of Simulations for Replenishment Plans](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html). Édition(s) consultée(s) : 26B. Consultation du 19 septembre 2026. Éléments natifs : What-if simulation. Passages : Types of simulations ; policy values ; supply and demand.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM371
+
+U477 — MKT20. [Policy Assignment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html). Édition(s) consultée(s) : 26B. Consultation du 19 septembre 2026. Éléments natifs : Replenishment policy. Passages : Policy Parameters — fixed cycle, min-max, ROP/EOQ, PAR.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM372
+
+U477 — MKT20. [Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html). Édition(s) consultée(s) : Oracle Fusion Cloud SCM 26C. Consultation du 19 septembre 2026. Éléments natifs : Profitable to Promise ; Profitable to promise ; Select an alternative fulfillment scenario. Passages : Prioritize ; Promise According to Arrival Date ; exemple Denver/Seattle.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM373
+
+U477 — MKT59. [CloudEvents Specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md). Édition(s) consultée(s) : Version 1.0.2. Consultation du 19 septembre 2026. Éléments natifs : Event / Occurrence. Passages : Terminology : Occurrence, Event, Producer, Consumer.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Spécification d’interopérabilité des messages ; ni contrat métier exhaustif ni protocole imposé pour FLOW.
+
+
+### ELM374
+
+U477 — MKT01. [Business Capabilities](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf). Édition(s) consultée(s) : Guide G189, 2018. Consultation du 19 septembre 2026. Éléments natifs : Business capability ; Capability components ; Organizational function ; Processes enabling a capability ; Stratification / leveling. Passages : §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+
+
+### ELM375
+
+U477 — MKT60. [Solution specifications](https://help.nextail.co/en/solution-specifications). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026 ; Page en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : First Allocation ; First Allocation / Replenishment / Store Transfers ; Replenishment ; Store Transfers. Passages : First Allocation ; Replenishment ; Store Transfers.
+
+Reformulations, relations et limites à la maille des 7 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Description fonctionnelle de l’éditeur ; ne donne pas les algorithmes ni les gains d’un déploiement FLOW. ; Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM376
+
+U477 — MKT24. [Using Order-Based Planning with Flexible Master Data](https://help.sap.com/doc/99c15843d16f46beba19fb8ed09169ab/2505/en-US/0adce9e356974d9790cae131bbedee30.pdf). Édition(s) consultée(s) : SAP IBP 2505 ; document 1.4, 2025-07-04. Consultation du 19 septembre 2026. Éléments natifs : Days of Supply / Target Days of Supply. Passages : Pages 58–60 ; Stock and Buffer Stock Key Figures ; Days of Supply.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passages ciblés du guide consultés ; les conventions SAP de calendrier et de demande ne sont pas une formule universelle FLOW.
+
+
+### ELM377
+
+U477 — MKT13. [Business Overview](https://help.sap.com/docs/CARAB/00197153997746b4bec2020d00e66ea9/e99798c39a3f4956bd5ce509b39382f7.html?locale=en-US&state=PRODUCTION&version=5.0.2). Édition(s) consultée(s) : 5.0 FPS02. Consultation du 19 septembre 2026. Éléments natifs : In-Season Fill-In. Passages : Business Scenarios : Initial Allocation ; In-Season Fill-In.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire indexé consulté ; ouverture SAP Help non exploitable. Aucune formule de seuil Beaumanoir déduite.
+
+
+### ELM378
+
+U477 — MKT13. [Backorder Processing — Reassignment](https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html). Édition(s) consultée(s) : SAP S/4HANA 2025 FPS01 (février 2026). Consultation du 19 septembre 2026. Éléments natifs : Assignment without Reassignment ; Reassignment. Passages : Reassignment ; Handling of BOP Confirmation Strategies.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM379
+
+U477 — MKT16. [Steps in Order Allocation Run](https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html). Édition(s) consultée(s) : 6.0 EHP8 SP25. Consultation du 19 septembre 2026. Éléments natifs : Spread logic. Passages : Requirement Grouping ; Allocation ; Release Rules.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire indexé consulté par le lot Promising ; page directe sans texte exploitable. Pas de généralisation à toute édition aATP.
+
+
+### ELM380
+
+U477 — MKT16. [Requirement Grouping](https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/b9262a5341b1e578e10000000a441470.html). Édition(s) consultée(s) : 1.0 SP13. Consultation du 19 septembre 2026. Éléments natifs : Requirement grouping. Passages : Requirement Grouping ; exemple sold-to party.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire indexé consulté par le lot Promising ; deux documents SAP ne prouvent pas un consensus interéditeurs.
+
+
+### ELM381
+
+U477 — MKT13. [Supply Assignment Run Workflow using Apps](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html). Édition(s) consultée(s) : SAP S/4HANA 2025 FPS01 (février 2026). Consultation du 19 septembre 2026. Éléments natifs : Compare simulated assignment runs ; Executed and simulated assignment runs. Passages : Monitor Supply Assignment Runs ; Compare Supply Assignment Simulated Runs.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+
+
+### ELM382
+
+U477 — MKT13. [Supply Assignment (ARun)](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html). Édition(s) consultée(s) : SAP S/4HANA 2025 FPS01 (février 2026). Consultation du 19 septembre 2026. Éléments natifs : Supply Assignment. Passages : Supply Assignment (ARun), introduction et accès.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM383
+
+U477 — MKT13. [Integration into Other Processes](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html). Édition(s) consultée(s) : SAP S/4HANA 2025 FPS01 (février 2026). Consultation du 19 septembre 2026. Éléments natifs : Supply Protection in Product Availability Check. Passages : Product Availability Check ; Alternative-Based Confirmation.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+
+
+### ELM384
+
+U477 — MKT63. [Shopify Checkout](https://help.shopify.com/en/manual/checkout-settings). Édition(s) consultée(s) : Aide en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Inventory hold at payment. Passages : Introduction — inventory checks and payment information.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM385
+
+U477 — MKT27. [What is Blue Yonder Store Execution Inventory Management?](https://info.blueyonder.com/order-management-commerce/what-is-blue-yonder-store-execution-inventory-management). Édition(s) consultée(s) : Page web sans édition figée. Consultation du 19 septembre 2026. Éléments natifs : Store Execution Inventory Management. Passages : Mobile-Led Workflows ; Accuracy Gap.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation commerciale primaire ; pas de garantie d’exactitude ou de temps réel retenue comme fait établi.
+
+
+### ELM386
+
+U477 — MKT14. [What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview). Édition(s) consultée(s) : Mise à jour du 11 septembre 2025. Consultation du 19 septembre 2026. Éléments natifs : Business Process Tracking. Passages : Business process design and tracking ; exemple du ticket de panne électrique.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Appui sur la corrélation métier ; produit limité aux ressources Azure décrites, sans exigence d’architecture pour FLOW.
+
+
+### ELM387
+
+U477 — MKT14. [Returns Management](https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : RMA scrap ; Return Material Authorization ; Return to Vendor ; Return to Vendor from customer return ; Return to Vendor — Repair and Return ; Return to Vendor — Replacement. Passages : RMA types ; RTV types ; Repair and return ; Creating an RTV from an RMA.
+
+Reformulations, relations et limites à la maille des 7 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation d’un produit différent de Dynamics 365 ; nommage et mécanismes propres, sans équivalence de couverture supposée.
+
+
+### ELM388
+
+U477 — MKT14. [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Document archive. Passages : Archive sales and purchase documents ; Restore ; Retention policies.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM389
+
+U477 — MKT14. [Design details — Balancing supply and demand](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply). Édition(s) consultée(s) : Documentation évolutive. Consultation du 19 septembre 2026. Éléments natifs : Supply. Passages : Supply and demand ; Priorities on the supply side.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM390
+
+U477 — MKT14. [Process purchase returns or cancellations](https://learn.microsoft.com/en-us/dynamics365/business-central/purchasing-how-process-purchase-returns-cancellations). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Purchase return order. Passages : Purchase return orders ; Create a replacement purchase order ; Credit memos.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM391
+
+U477 — MKT14. [Create Commerce catalogs for B2B sites](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites). Édition(s) consultée(s) : Mise à jour du 21 janvier 2026. Consultation du 19 septembre 2026. Éléments natifs : Catalog publication ; Commerce catalog. Passages : Catalog configuration ; customer hierarchies ; price groups.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM392
+
+U477 — MKT14. [Customer orders in point of sale (POS)](https://learn.microsoft.com/en-us/dynamics365/commerce/customer-orders-overview). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Customer order. Passages : Typical scenarios ; Order fulfillment ; Editing customer orders.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM393
+
+U477 — MKT14. [Distributed order management (DOM)](https://learn.microsoft.com/en-us/dynamics365/commerce/dom). Édition(s) consultée(s) : Documentation évolutive, mise à jour affichée le 3 juin 2026. Consultation du 19 septembre 2026. Éléments natifs : Balance conflicting fulfillment needs ; Cost-based fulfillment optimization ; Fulfillment cost objectives ; Fulfillment optimization. Passages : Introduction, objectifs et contraintes.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM394
+
+U477 — MKT14. [DOM rules](https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules). Édition(s) consultée(s) : Documentation évolutive, mise à jour du 22 janvier 2026. Consultation du 19 septembre 2026. Éléments natifs : DOM rule ; Partial orders rule. Passages : Common attributes ; Minimum inventory rule ; Partial orders rule.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni ses priorités à FLOW.
+
+
+### ELM395
+
+U477 — MKT14. [Store order fulfillment](https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Order fulfillment. Passages : Accepting orders ; Shipping orders ; Picking up orders.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM396
+
+U477 — MKT14. [Commerce inventory management](https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory). Édition(s) consultée(s) : Mise à jour du 30 janvier 2026. Consultation du 19 septembre 2026. Éléments natifs : Store inventory operations. Passages : Purchase orders ; Transfer orders ; Stock counts ; Inventory lookup.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM397
+
+U477 — MKT14. [Work order architecture](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Perform the work order ; Product Catalog / Work Order ; Product catalog / Service ; Resource requirement / Scheduling ; Service / Work performed ; Work Order ; Work Order / Resource Requirement. Passages : A work order is created ; scheduled ; performed ; reviewed and completed.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM398
+
+U477 — MKT14. [Define service-level agreements (SLAs) for work orders](https://learn.microsoft.com/en-us/dynamics365/field-service/sla-work-orders). Édition(s) consultée(s) : Mise à jour du 30 mars 2026. Consultation du 19 septembre 2026. Éléments natifs : Service-level agreement. Passages : Introduction ; Create an SLA ; Schedule a work order to meet an SLA.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM399
+
+U477 — MKT14. [Case management overview](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/cases). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Case management. Passages : Examples: City Power & Light ; Fabrikam employees.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM400
+
+U477 — MKT14. [Global address book overview](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book). Édition(s) consultée(s) : Mise à jour du 18 mars 2026. Consultation du 19 septembre 2026. Éléments natifs : Party ; Party / Party role ; Party role. Passages : Party roles ; Example.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM401
+
+U477 — MKT14. [Archive sales orders](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Sales order archive. Passages : Prerequisites ; Long term retention ; History.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM402
+
+U477 — MKT14. [Fulfillment and Returns Optimization provider overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization). Édition(s) consultée(s) : Documentation évolutive ; édition non précisée. Consultation du 19 septembre 2026. Éléments natifs : Respect warehouse timings. Passages : Sources ; Respect warehouse timings ; Restrict partial fulfillment ; Limit number of warehouses.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM403
+
+U477 — MKT14. [Intelligent Fulfillment Optimization architecture](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch). Édition(s) consultée(s) : Documentation évolutive, mise à jour affichée le 30 janvier 2026. Consultation du 19 septembre 2026. Éléments natifs : Fulfillment plan ; Fulfillment sources. Passages : Fulfillment sources ; Business constraints ; Fulfillment strategies ; Fulfillment optimization in order orchestration flows.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM404
+
+U477 — MKT14. [Integrate transfer orders](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/integrate-transfer-orders). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Transfer order. Passages : Transfer order information ; Inbound and outbound transfer orders.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM405
+
+U477 — MKT14. [Intelligent Order Management overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview). Édition(s) consultée(s) : Mise à jour du 30 janvier 2026. Consultation du 19 septembre 2026. Éléments natifs : Fulfillment network ; Intelligent Order Management ; Orchestration ; Order fulfillment orchestration ; Order orchestration. Passages : Orchestration ; Providers ; Fulfillment optimization.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM406
+
+U477 — MKT14. [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Édition(s) consultée(s) : 2026-05-06 ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Consignment inventory ; Consignment replenishment order. Passages : Consignment replenishment orders ; Ownership change journals ; Overview ; Inventory ownership change journal.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir. ; Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM407
+
+U477 — MKT14. [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals). Édition(s) consultée(s) : 2025-08-29. Consultation du 19 septembre 2026. Éléments natifs : Inventory journals. Passages : Types of inventory journals ; Transfer ; Counting.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM408
+
+U477 — MKT14. [Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list). Édition(s) consultée(s) : 2026-06-15. Consultation du 19 septembre 2026. Éléments natifs : On-hand inventory. Passages : Query your on-hand inventory ; tableau des quantités ; Examples.
+
+Reformulations, relations et limites à la maille des 7 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM409
+
+U477 — MKT14. [Inventory statuses](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-statuses). Édition(s) consultée(s) : 2026-07-01. Consultation du 19 septembre 2026. Éléments natifs : Inventory status. Passages : Set up and use inventory statuses.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM410
+
+U477 — MKT14. [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation). Édition(s) consultée(s) : Documentation en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Inventory allocation. Passages : Business background and purpose ; virtual pool ; Terminology.
+
+Reformulations, relations et limites à la maille des 11 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM411
+
+U477 — MKT14. [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations). Édition(s) consultée(s) : Documentation en ligne ; SCM 10.0.33+ pour les sales orders. Consultation du 19 septembre 2026. Éléments natifs : Soft reservation. Passages : Sample use case for soft reservation ; offsets.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM412
+
+U477 — MKT14. [Reserve inventory quantities](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities). Édition(s) consultée(s) : 2025-08-29. Consultation du 19 septembre 2026. Éléments natifs : Inventory reservation policies. Passages : Reasons for reserving ; reservation policies ; production parameters.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM413
+
+U477 — MKT14. [Action messages](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages). Édition(s) consultée(s) : Documentation en ligne consultée le 2026-09-19. Consultation du 19 septembre 2026. Éléments natifs : Action messages. Passages : Action types ; Increase and decrease ; safety stock.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM414
+
+U477 — MKT14. [Coverage settings](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings). Édition(s) consultée(s) : 2026-03-25. Consultation du 19 septembre 2026. Éléments natifs : Requirement / Period / Min-Max. Passages : Coverage codes.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM415
+
+U477 — MKT14. [Master plans](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans). Édition(s) consultée(s) : Documentation en ligne consultée le 2026-09-19 ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Freeze / firming time fence ; Master plan ; Time fence settings. Passages : Freeze time fence ; Firming time fence ; Using master plans ; Freeze ; Action message ; positive and negative days.
+
+Reformulations, relations et limites à la maille des 9 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir. ; Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM416
+
+U477 — MKT14. [Approve planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026 ; Documentation évolutive, mise à jour affichée le 2 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Approved for firming ; Approved planned order. Passages : View and edit status ; Approve planned orders ; View and edit the status of planned orders ; Approve planned orders.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189, CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit. ; Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM417
+
+U477 — MKT14. [Calculate delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp). Édition(s) consultée(s) : Documentation évolutive, mise à jour affichée le 27 juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : CTP material and capacity check ; Capable-to-promise. Passages : How CTP compares to ATP ; exemple Item A composé de B et C ; View confirmed delivery dates.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM418
+
+U477 — MKT14. [Keep supply for confirmed demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026 ; Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur. Consultation du 19 septembre 2026. Éléments natifs : Customer commitments ; Keep supply for confirmed demand ; Peg demand to supply ; Pegging for confirmed demand ; Pegging information ; Preservation of pegged supply ; Reallocate received inventory. Passages : What data is preserved ; Confirmed demand ; Examples ; What data is preserved ; Control how on-hand inventory is pegged ; Example scenario 1.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189, CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit. ; Fonction conditionnée à la version et à la configuration documentées ; n’établit pas un gel universel de tous les champs.
+
+
+### ELM419
+
+U477 — MKT14. [Firm planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Planned order firming ; Planned purchase order. Passages : Manual firming ; Automatic firming ; Grouping.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM420
+
+U477 — MKT14. [Replenishment methods and quantity modification](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification). Édition(s) consultée(s) : 2026-07-01. Consultation du 19 septembre 2026. Éléments natifs : Replenishment methods. Passages : Coverage codes ; order quantity ; examples 1–3.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM421
+
+U477 — MKT14. [Use the safety stock journal to update minimum coverage for items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal). Édition(s) consultée(s) : 2025-08-22. Consultation du 19 septembre 2026. Éléments natifs : Safety stock calculation. Passages : Calculate minimum coverage ; Calculate a proposal ; Update minimum.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM422
+
+U477 — MKT14. [Safety stock fulfillment for items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment). Édition(s) consultée(s) : 2026-03-26 ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Safety stock ; Safety stock level ; Safety stock requirement. Passages : Introduction ; Example Safety stock ; Min/max coverage code ; Safety stock ; strict safety stock pegging ; minimum keys.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir. ; Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM423
+
+U477 — MKT14. [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information). Édition(s) consultée(s) : Mise à jour du 1er juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : Item ; Product / Product variant ; Product information ; Product master ; Product master / Product variant ; Product variant. Passages : Product definition ; Distribution, export, and import ; Product masters and product variants.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM424
+
+U477 — MKT14. [Procurement catalogs overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs). Édition(s) consultée(s) : Mise à jour du 1er juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : Catalog updates ; Procurement catalog. Passages : Set up a catalog ; publication and updates.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM425
+
+U477 — MKT14. [Product receipt against purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/product-receipt-against-purchase-orders). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Cancel product receipt ; Record product receipt. Passages : Preregistration ; Registration ; Product receipt ; Correction.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM426
+
+U477 — MKT14. [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements). Édition(s) consultée(s) : Mise à jour du 8 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Purchase agreement. Passages : Commitment types ; Purchase agreement fulfillment.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM427
+
+U477 — MKT14. [Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Approval / confirmation ; Purchase order confirmation ; Request change. Passages : Approval statuses ; Confirming ; Changes ; Finalized.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM428
+
+U477 — MKT14. [Review and accept changes to confirmed purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-changes-after-confirmation). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Confirmed purchase order changes ; Review purchase order changes. Passages : Assess changes ; Review impacted demand ; Accept changes.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM429
+
+U477 — MKT14. [Create purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Purchase order. Passages : Create a purchase order ; Purchase order lines.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM430
+
+U477 — MKT14. [Purchase order overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Purchase order. Passages : Purchase order types ; Purchase order statuses.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM431
+
+U477 — MKT14. [Record the receipt of goods on the purchase order](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order). Édition(s) consultée(s) : Documentation évolutive, mise à jour du 1er juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : Product receipt and receipt journal ; Product receipt journal ; Record receipt of goods. Passages : Record receipt of goods, étapes 4–7 ; Review the product receipt journal.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction n’en est déduite.
+
+
+### ELM432
+
+U477 — MKT14. [Vendor collaboration with external vendors](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/vendor-collaboration-work-external-vendors). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Vendor purchase order response. Passages : Purchase order responses ; Accept with changes ; Confirmation.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM433
+
+U477 — MKT14. [Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives). Édition(s) consultée(s) : Documentation évolutive ; édition non précisée. Consultation du 19 septembre 2026. Éléments natifs : Available today / Future availability ; Delivery alternatives. Passages : Delivery date control methods ; Delivery alternatives ; Availability information.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+
+
+### ELM434
+
+U477 — MKT14. [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations). Édition(s) consultée(s) : Documentation évolutive, mise à jour affichée le 21 avril 2026. Consultation du 19 septembre 2026. Éléments natifs : Available-to-promise ; Available-to-promise quantity ; Order promising ; Order promising update ; Planned receipts in ATP. Passages : Order promising ; ATP calculations ; Example ; CTP calculations.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM435
+
+U477 — MKT14. [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules). Édition(s) consultée(s) : Documentation évolutive ; édition non précisée ; Documentation évolutive consultée le 19 septembre 2026 ; Mise à jour du 7 mai 2025. Consultation du 19 septembre 2026. Éléments natifs : Delivery schedule ; Delivery schedule / Delivery line ; Delivery schedules. Passages : Create delivery schedules ; Manage delivery lines ; Example ; Create delivery schedules ; exemple 600 chairs ; Introduction ; Create delivery schedules ; Manage delivery lines.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189, CMP191, CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir. ; Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit. ; Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM436
+
+U477 — MKT14. [Direct deliveries](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/direct-deliveries). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Direct delivery. Passages : Introduction ; Deliver a sales order directly ; Update delivery dates.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM437
+
+U477 — MKT14. [Intercompany orders and return orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Intercompany order. Passages : Introduction ; two-legged and three-legged intercompany order chains.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM438
+
+U477 — MKT14. [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items). Édition(s) consultée(s) : Documentation en ligne consultée le 2026-09-19 ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Disposition ; Return disposition ; Return to customer ; Scrap. Passages : Disposition codes ; Disposition actions ; Disposition codes and actions.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir. ; Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM439
+
+U477 — MKT14. [Confirm sales orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders). Édition(s) consultée(s) : Documentation évolutive, mise à jour affichée le 1er juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : Sales order confirmation. Passages : Confirm a single sales order, étapes 5 à 15.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM440
+
+U477 — MKT14. [Manage order holds](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds). Édition(s) consultée(s) : Documentation évolutive ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Order hold ; Order hold / Release hold. Passages : Apply and remove order holds ; Create a hold code ; Apply ; Remove.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189, CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté par le lot Orders ; lever un empêchement ne suffit pas à prouver une autorisation de tout mouvement. ; Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM441
+
+U477 — MKT14. [Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting). Édition(s) consultée(s) : 2025-11-20. Consultation du 19 septembre 2026. Éléments natifs : Cycle counting / Spot cycle counting. Passages : Create cycle counting work ; Spot cycle counting ; Resolve differences.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM442
+
+U477 — MKT14. [Release to warehouse process](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process). Édition(s) consultée(s) : Documentation évolutive ; Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Release to warehouse. Passages : Introduction ; Manual and automatic release ; Partial release ; Release orders to warehouse.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189, CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté par le lot Orders ; appui limité au lancement logistique, sans autorisation universelle de mouvement. ; Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM443
+
+U477 — MKT14. [Schedule workload capacity](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity). Édition(s) consultée(s) : Mise à jour du 7 mai 2025. Consultation du 19 septembre 2026. Éléments natifs : Workload capacity. Passages : Warehouse workload capacity ; seasonal workforce example.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM444
+
+U477 — MKT14. [Set up warehouses for transfer orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/transfer-orders-warehouse). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Planned transfer order. Passages : Plan replenishment for warehouses ; Transport days.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM445
+
+U477 — MKT14. [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data). Édition(s) consultée(s) : Mise à jour du 27 juillet 2026. Consultation du 19 septembre 2026. Éléments natifs : Inbound / Outbound shipment order ; Master and reference data ; Order and receipt feedback ; Product master data ; Progress data and business events ; Shipment order ; Shipment order / Receiving and shipping feedback ; Site / Warehouse ; Site / Warehouse / Location. Passages : Master and reference data ; Shipment orders ; Progress data and business events.
+
+Reformulations, relations et limites à la maille des 11 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM446
+
+U477 — MKT13. [Processing a Service Entry Sheet](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-sourcing-and-procurement/processing-a-service-entry-sheet_e42ab0b6-291a-4dad-9f5c-7f508d21ae5c). Édition(s) consultée(s) : Cours SAP Learning ; édition non indiquée dans le passage. Consultation du 19 septembre 2026. Éléments natifs : Service entry ; Service entry approval ; Service entry sheet. Passages : Service Entry and Approval ; Create and Approve a Service Entry Sheet.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM447
+
+U477 — MKT13. [Outlining Subcontracting](https://learning.sap.com/courses/detailing-subcontracting-and-supplier-consignment/outlining-subcontracting_af403e3e-188d-4dbb-bde1-632253739fa6). Édition(s) consultée(s) : Cours SAP Learning ; édition non indiquée dans le passage. Consultation du 19 septembre 2026. Éléments natifs : Subcontracting. Passages : Subcontracting process ; Components ; Ownership.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM448
+
+U477 — MKT13. [Explaining aATP Product Allocation (PAL)](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58). Édition(s) consultée(s) : Cours en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Product Allocation (PAL). Passages : PAL Concept ; Product Allocation Examples ; time series.
+
+Reformulations, relations et limites à la maille des 9 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM449
+
+U477 — MKT13. [Explaining Inventory Management](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-inventory-management_d2aad6e6-a57e-4f64-9ac0-3b27f613776a). Édition(s) consultée(s) : Cours en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Inventory Management. Passages : Scenario ; Stock Overview ; Special stock types.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM450
+
+U477 — MKT13. [Explaining Replenishment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-replenishment_e87c10d4-3590-45a7-ad87-b04ed6e34bd7). Édition(s) consultée(s) : Cours en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Replenishment. Passages : Scenario ; Re-Order Point and Target Stock Settings.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM451
+
+U477 — MKT13. [Explaining Retail Allocation Management](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca). Édition(s) consultée(s) : Cours en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Retail allocation. Passages : Merchandise Distribution Concept — Scenario.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM452
+
+U477 — MKT16. [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4). Édition(s) consultée(s) : Cours SAP S/4HANA for Fashion and Vertical Business ; édition non précisée. Consultation du 19 septembre 2026. Éléments natifs : Assign ; Manual release ; Release check ; Supply Assignment (ARun) ; Supply-demand assignment. Passages : Supply Assignment Scenarios ; ARun Statuses ; Online Features ; Cross Settings.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM453
+
+U477 — MKT13. [Executing a Standard Sales from Stock Process](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-a-standard-sales-from-stock-process_f4aacaf6-1a5c-4f30-8d32-fd3e8e691252). Édition(s) consultée(s) : Cours SAP Learning ; édition non indiquée dans le passage. Consultation du 19 septembre 2026. Éléments natifs : Sales from stock. Passages : Sales order ; Outbound delivery ; Goods issue ; Billing.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM454
+
+U477 — MKT13. [Executing the Advanced Intercompany Sales and Stock Transfer Process](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc). Édition(s) consultée(s) : Cours SAP Learning ; édition non indiquée dans le passage. Consultation du 19 septembre 2026. Éléments natifs : Advanced intercompany sales. Passages : Classic versus advanced intercompany sales ; Process.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM455
+
+U477 — MKT13. [Managing Customer Returns](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc). Édition(s) consultée(s) : Cours SAP Learning ; édition non indiquée dans le passage. Consultation du 19 septembre 2026. Éléments natifs : Customer returns. Passages : Customer Returns ; Refund ; In-house Repair ; Send back to customer.
+
+Reformulations, relations et limites à la maille des 4 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM456
+
+U477 — MKT13. [Alternative-Based Confirmation](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5). Édition(s) consultée(s) : Cours SAP S/4HANA, édition non précisée dans le passage ; Cours en ligne, édition non précisée. Consultation du 19 septembre 2026. Éléments natifs : Alternative-Based Confirmation ; aATP functions. Passages : Advanced ATP Scenario: Alternative-Based Confirmation ; Release for Delivery ; Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery.
+
+Reformulations, relations et limites à la maille des 5 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192, CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une couverture installée. ; Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM457
+
+U477 — MKT24. [Global (Multi-stage) Inventory Optimization](https://learning.sap.com/courses/mastering-sap-ibp-for-inventory-planning-and-optimization/global-multi-stage-inventory-optimization_c360cea7-b52e-45cb-9436-5ea0c79451a9). Édition(s) consultée(s) : Cours SAP IBP en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Multi-stage inventory optimization. Passages : Global operator ; Multi-stage dilemma ; Interactions between stages.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+
+### ELM458
+
+U477 — MKT13. [Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe). Édition(s) consultée(s) : Cours SAP S/4HANA Cloud Public Edition ; édition non précisée. Consultation du 19 septembre 2026. Éléments natifs : Backorder Processing ; Order confirmations ; Reconfirmation ; Redistribution of confirmations ; Reprioritization ; Reprioritize requirements. Passages : Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP191). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+
+
+### ELM459
+
+U477 — MKT57. [What do you mean by Event-Driven?](https://martinfowler.com/articles/201701-event-driven.html). Édition(s) consultée(s) : 7 février 2017. Consultation du 19 septembre 2026. Éléments natifs : Event Notification. Passages : Event Notification.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Article de clarification par son auteur ; décrit plusieurs styles, sans faire de la notification un stockage du fait ni garantir sa livraison.
+
+
+### ELM460
+
+U477 — MKT57. [Bounded Context](https://martinfowler.com/bliki/BoundedContext.html). Édition(s) consultée(s) : 15 janvier 2014. Consultation du 19 septembre 2026. Éléments natifs : Bounded Context. Passages : Paragraphes sur le vocabulaire et l’exemple meter.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Retour d’auteur sur les modèles logiciels dans l’approche DDD ; document distinct d’Evans mais même école de pensée, pas preuve de consensus entre cadres.
+
+
+### ELM461
+
+U477 — MKT57. [Domain Model](https://martinfowler.com/eaaCatalog/domainModel.html). Édition(s) consultée(s) : 5 mars 2003. Consultation du 19 septembre 2026. Éléments natifs : Domain Model object. Passages : Définition et paragraphe explicatif de la fiche.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Fiche courte du patron par son auteur, pas consultation du chapitre complet ni définition normative de tout objet métier.
+
+
+### ELM462
+
+U477 — MKT60. [Merkal footwear inventory planning](https://nextail.co/customer/merkal-footwear-inventory-planning/). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026 ; Étude de cas en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Inventory rebalancing / Consolidation ; Store transfers. Passages : End-of-season transfers ; consolidation and size availability ; Impact — store transfers ; size availability through consolidation.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Cas client publié par Nextail ; résultat rapporté, sans garantie de gain ni preuve Beaumanoir. ; Témoignage publié par le fournisseur ; mécanisme illustré, aucun résultat chiffré ni causalité indépendante retenus.
+
+
+### ELM463
+
+U477 — MKT42. [EPCIS and CBV Implementation Guideline](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/). Édition(s) consultée(s) : Release 2.0, mars 2023. Consultation du 19 septembre 2026. Éléments natifs : Visibility event. Passages : 3.3 dimensions de visibilité ; 5.9 erreurs et corrections.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Guide de standard de visibilité ; ne calcule ni position de stock ni disponibilité FLOW et n’impose aucune architecture.
+
+
+### ELM464
+
+U477 — MKT19. [TMF641 Service Ordering Management API REST Specification](https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf). Édition(s) consultée(s) : Version 3.0.0, Release 18.5.0, janvier 2019. Consultation du 19 septembre 2026. Éléments natifs : RelatedParty role ; Requested / Expected / Completion date ; Requested service / Requested date ; Service Order ; Service Order Management ; Service order dependency ; Service order item / Action. Passages : Pages 5, 8–15 : Service Order ; dates ; dépendances ; états.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés par FLOW.
+
+
+### ELM465
+
+U477 — MKT56. [SCOR DS Quick Reference Guide](https://www.ascm.org/globalassets/documents--files/corporate-transformation/scor-ds-digital-guide_final.pdf). Édition(s) consultée(s) : Guide public SCOR DS ; édition non relevée. Consultation du 19 septembre 2026. Éléments natifs : SCOR DS processes. Passages : SCOR Processes ; Level 0 and Level 1.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Extrait primaire indexé consulté ; aucune transposition de hiérarchie processus vers capacités.
+
+
+### ELM466
+
+U477 — MKT56. [What Is Logistics?](https://www.ascm.org/topics/logistics/). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Order processing and fulfillment. Passages : Order processing and fulfillment ; Outbound ; Reverse logistics.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Texte primaire indexé consulté après erreur à l’ouverture ; page logistique générale, pas définition universelle de toutes les commandes FLOW.
+
+
+### ELM467
+
+U477 — MKT17. [Domain-Driven Design Reference: Definitions and Pattern Summaries](https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf). Édition(s) consultée(s) : Mars 2015. Consultation du 19 septembre 2026. Éléments natifs : Domain ; Entity / Value Object. Passages : Definitions ; Entities p.11 ; Value Objects p.12 ; Domain Events p.13 ; Services p.14.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Résumé de patrons par leur auteur, orienté conception logicielle. Les concepts éclairent le sens métier sans imposer objets de code, services ni bounded contexts au modèle FLOW.
+
+
+### ELM468
+
+U477 — MKT42. [GS1 GLN Allocation Rules Standard](https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard). Édition(s) consultée(s) : Release 3.0.2, août 2022. Consultation du 19 septembre 2026. Éléments natifs : Location ; Location / Party ; Location identification ; Locations and parties ; Party ; Party / Location. Passages : §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino.
+
+Reformulations, relations et limites à la maille des 6 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite pour FLOW.
+
+
+### ELM469
+
+U477 — MKT42. [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard). Édition(s) consultée(s) : Release 2.0, 2017. Consultation du 19 septembre 2026. Éléments natifs : Critical Tracking Events ; Despatch advice / Receiving advice ; Instance-level identification ; Receiving / Packing / Shipping events ; Transporting / Shipping / Receiving events. Passages : Identification levels ; Data recording and sharing ; R21.
+
+Reformulations, relations et limites à la maille des 7 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passages primaires indexés consultés ; ouverture directe non exploitable. Les exigences GS1 ne sont pas imposées au modèle.
+
+
+### ELM470
+
+U477 — MKT42. [GS1 Logistic Label Guideline](https://www.gs1.org/standards/gs1-logistic-label-guideline/1-3). Édition(s) consultée(s) : 1.3. Consultation du 19 septembre 2026. Éléments natifs : GTIN / SSCC ; Logistic unit ; Trade item. Passages : §1.2 ; §3 ; §4.1 ; §10.5.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passages primaires indexés consultés ; ouverture directe bloquée. Les règles d’étiquetage ne définissent pas à elles seules les objets FLOW.
+
+
+### ELM471
+
+U477 — MKT42. [GS1 System Architecture Document](https://www.gs1.org/standards/gs1-system-architecture-document/current-standard). Édition(s) consultée(s) : Page courante ; édition non vérifiée dans le passage disponible. Consultation du 19 septembre 2026. Éléments natifs : GTIN ; Logistic unit / Asset ; Master data ; Serial number / GTIN + serial ; Trade item ; Trade item / Trade item instance ; Trade item class ; Trade item instance. Passages : Table 4-1 ; Identification of objects ; Communication of business data.
+
+Reformulations, relations et limites à la maille des 8 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de reprise exhaustive du standard.
+
+
+### ELM472
+
+U477 — MKT23. [What is order management?](https://www.ibm.com/think/topics/order-management). Édition(s) consultée(s) : Page web évolutive. Consultation du 19 septembre 2026. Éléments natifs : Order Management System ; Order management. Passages : What is an order management system? ; Distributed order management.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+
+
+### ELM473
+
+U477 — MKT66. [Retail Optimization Gives Groupe Dynamite an Edge](https://www.logility.com/webcast/retail-optimization-gives-groupe-dynamite-an-edge/). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Initial distribution. Passages : Présentation écrite du webcast ; initial distribution and replenishment.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation écrite primaire consultée ; vidéo non visionnée. Témoignage fournisseur, sans gains chiffrés ni preuve locale.
+
+
+### ELM474
+
+U477 — MKT14. [Transportation scenario – Manual rating](https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/). Édition(s) consultée(s) : 16 février 2016. Consultation du 19 septembre 2026. Éléments natifs : Carrier and carrier service selection. Passages : Scenario ; Walkthrough étapes 1–3.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Exemple éditeur historique, limité au transport et au tarif ; pas une recommandation de produit actuel.
+
+
+### ELM475
+
+U477 — MKT10. [Case Management Model and Notation](https://www.omg.org/cmmn/). Édition(s) consultée(s) : Page de présentation CMMN consultée le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Case. Passages : What is case management ; Case file ; Human judgment.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP189). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+
+
+### ELM476
+
+U477 — MKT10. [Business Process Model and Notation, Version 2.0.2](https://www.omg.org/spec/BPMN/2.0.2/PDF). Édition(s) consultée(s) : BPMN 2.0.2, décembre 2013. Consultation du 19 septembre 2026. Éléments natifs : Process ; Task. Passages : §10.1 Process, p.143 ; §10.3.3 Tasks, p.154 ; Manual Task p.161–163.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Standard de notation et de déroulement ; ni carte de capacités ni règle d’équivalence entre une tâche et une opération FLOW.
+
+
+### ELM477
+
+U477 — MKT52. [Semantics of Business Vocabulary and Business Rules, Version 1.5](https://www.omg.org/spec/SBVR/1.5/PDF). Édition(s) consultée(s) : SBVR 1.5, mai 2019. Consultation du 19 septembre 2026. Éléments natifs : Business rule. Passages : §16.1.2–16.1.3 p.98–100 ; §18.1.2 exemple EU-Rent p.118.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP192). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : La juridiction métier et les catégories de SBVR sont plus précises que le terme générique FLOW ; pas d’importation de son métamodèle.
+
+
+### ELM478
+
+U477 — MKT38. [Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility](https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/). Édition(s) consultée(s) : 22 août 2023. Consultation du 19 septembre 2026. Éléments natifs : Transportation visibility / ETA. Passages : The Complexities of Outbound Finished Vehicle Logistics.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation commerciale primaire ; bénéfices annoncés non évalués, pas de précision ou couverture uniforme déduite.
+
+
+### ELM479
+
+U477 — MKT29. [Inventory optimization: Keys to a successful strategy](https://www.relexsolutions.com/resources/inventory-optimization/). Édition(s) consultée(s) : Article daté du 12 avril 2024, état consulté le 19 septembre 2026. Consultation du 19 septembre 2026. Éléments natifs : Inventory optimization. Passages : Inventory management vs optimization ; Multi-echelon inventory optimization.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation pédagogique et commerciale ; Tori est explicitement fictive et les résultats ne sont pas garantis.
+
+
+### ELM480
+
+U477 — MKT29. [The best inventory planning software: AI-powered, planner-driven](https://www.relexsolutions.com/resources/inventory-planning-software/). Édition(s) consultée(s) : Article en ligne sans édition affichée. Consultation du 19 septembre 2026. Éléments natifs : Distribution center inventory planning. Passages : Distribution center forecasts ; safety stocks ; Diagnostics.
+
+Reformulations, relations et limites à la maille des 1 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Présentation de fonctionnalités RELEX ; pas de modèle de capacités ni méthode intégralement exposée.
+
+
+### ELM481
+
+U477 — MKT29. [Automatic Replenishment System](https://www.relexsolutions.com/solutions/automatic-replenishment-system/). Édition(s) consultée(s) : Documentation évolutive consultée le 19 septembre 2026 ; Page solution sans édition affichée ; Page web évolutive. Consultation du 19 septembre 2026. Éléments natifs : Automatic replenishment ; In-season replenishment ; Initial allocation. Passages : Manage seasons ; Sync with store space ; DC replenishment ; Manage the full cycle for seasonal items ; Manage seasons effectively ; Manage the full cycle for your seasonal items ; Manage seasons effectively.
+
+Reformulations, relations et limites à la maille des 3 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP190, CMP189, CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités. ; Présentation commerciale consultée ; ni résultats annoncés ni mécanisme identique aux seuils FLOW établis. ; Présentation commerciale primaire ; aucune performance chiffrée ni installation locale déduite.
+
+
+### ELM482
+
+U477 — MKT19. [TMF633 Service Catalog API REST Specification R18.5.1](https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/). Édition(s) consultée(s) : Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019. Consultation du 19 septembre 2026. Éléments natifs : Service Catalog ; Service catalog. Passages : Description de la spécification.
+
+Reformulations, relations et limites à la maille des 2 fiche(s) dans [le relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les deltas de lot associés (CMP193). Définition mobilisée par synthèse sélective du passage ; aucune citation intégrale ni identifiant natif inventé. Limites d’accès et de portée : Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition courante ni norme Supply.
+
+### ELM483
+
+MKT67 — EDM Council, *Prioritizing Data Based on Criticality*, novembre 2018 vF1.1, pages 19, 28–29 et 37. Éléments natifs : Authoritative Data Domain, Authoritative Provisioning Point, Data Domain. Le premier est employé dans la définition du deuxième ; sa définition autonome détaillée n’est pas fournie dans ce passage. Un producteur peut fournir des données appartenant à un propriétaire amont dans les conditions convenues. Consultation : 19 septembre 2026. Appui sémantique proposé pour `business-references`, sans assimilation à un domaine métier Supply. [Document primaire](https://ortecha.com/wp-content/uploads/2023/07/EDM-Council-Prioritizing-Data-Based-on-Criticality-Critical-Data-Elements-CDEs-in-Context.pdf), [comparaison et limites](../modeles/backlog/authoritative-data-review-U478.yaml), CMP194. Aucun identifiant natif de concept disponible.
+
+### ELM484
+
+MKT68 — Oracle, *ORA Information Management*, Release 3.1, juillet 2013, §2.3.4 et §6.3.3.4.3. Éléments natifs : Authoritative Data Domain, Consolidated Hub. Appui lexical exact et exemple d’articulation entre consolidation et sources gardant la maîtrise de leurs données. Consultation : 19 septembre 2026. Adaptation FLOW proposée à l’échelle de l’univers, pas équivalence du groupe courant avec une architecture de hub. [Document primaire](https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf), [comparaison et limites](../modeles/backlog/authoritative-data-review-U478.yaml), CMP194. Aucun identifiant natif distinct des sections.
+
+### ELM485
+
+MKT67 — EDM Council, *CDMC Information Model: Controls, Tests and Mappings*, version 1.1, octobre 2022, contrôle 3, pages 13–14. Éléments natifs : Authoritative Data Source, Authoritative Provisioning Point, Authority. L’autorité est une qualification explicite de l’actif. Consultation : 19 septembre 2026. Appui méthodologique à l’autorité locale U479 ; aucune prescription de périmètre Supply ni conformité déduite. [Document primaire](https://edmcouncil.org/wp-content/uploads/2023/02/CDMC-Information-Model-Controls-Tests-Mappings-V1.1.pdf), [comparaison et limites](../modeles/backlog/authoritative-data-review-U478.yaml), CMP194. Aucun identifiant natif distinct du contrôle.
+
+
+### ELM486
+
+MKT04 — [Discovering the Reference Architecture Content](https://learning.sap.com/courses/sap-enterprise-architecture-framework-foundation-introduction/discovering-the-reference-architecture-content). Page évolutive sans date affichée. Passage : Reference Architecture Content Framework ; Business Capability Model Example. Consultation : 19 septembre 2026. Termes natifs : Enterprise Domain, Business Domain, Business Area, Business Capability.
+
+SAP place Inventory Management et Order Promising parmi les Business Areas de Supply Chain Execution. Un Enterprise Domain regroupe les Business Domains. Page primaire consultée ; rapprochement de vocabulaire et de fonction, aucune équivalence exhaustive de périmètre ni adoption des niveaux de solution. Correspondance proposée CMP195 ; [détail et adaptation FLOW](../modeles/backlog/model-level-naming-U481.yaml). Aucun identifiant natif de concept ajouté.
+
+
+### ELM487
+
+MKT69 — [Use Domain Analysis to Model Microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Documentation Azure Architecture Center évolutive. Passage : Domain analysis ; Analyze the domain ; Define bounded contexts. Consultation : 19 septembre 2026. Termes natifs : Domain, Subdomain, Bounded context.
+
+L’analyse distingue le domaine de ses sous-domaines, puis les frontières dans lesquelles un modèle est applicable. Article primaire consulté ; Domain → Subdomain fournit une analogie sémantique, pas une obligation de conception. Correspondance proposée CMP195 ; [détail et adaptation FLOW](../modeles/backlog/model-level-naming-U481.yaml). Aucun identifiant natif de concept ajouté.
+
+
+### ELM488
+
+MKT70 — [Capability Modeling Guidelines: Capability Hierarchy](https://enterprise.design/wiki/Capability_Modeling_Guidelines:_Capability_Hierarchy). Page modifiée le 2 mars 2026. Passage : Capability Hierarchy. Consultation : 19 septembre 2026. Termes natifs : Capability Area, Capability Family, Capability Group, Specific Capabilities.
+
+Le guide propose des regroupements successifs de capacités, avec une profondeur adaptée au besoin. Guide public de méthode consulté ; pas une nomenclature universelle ni un modèle Supply. Correspondance proposée CMP195 ; [détail et adaptation FLOW](../modeles/backlog/model-level-naming-U481.yaml). Aucun identifiant natif de concept ajouté.
+
+
+### ELM489
+
+MKT03 — [BIZBOK Guide — Appendix A: Business Architecture Glossary](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/bizbok15/BIZBOKv15_glossary.pdf). Version 15.0, copyright 2026. Passage : Pages imprimées 456–457 : Capability, Capability Behavior, Capability Level, Capability Tier. Consultation : 19 septembre 2026. Termes natifs : Capability, Capability Behavior, Capability Level, Capability Tier.
+
+Capability Behavior qualifie la manière d’agir selon les circonstances. Capability Level indique la profondeur de décomposition. Glossaire primaire public consulté, déjà référencé en ELM052 ; pas le guide complet réservé aux membres. Nouveau relevé ciblé U481, pas nouveau concept. Correspondance proposée CMP195 ; [détail et adaptation FLOW](../modeles/backlog/model-level-naming-U481.yaml). Aucun identifiant natif de concept ajouté.
+
+
+### ELM490
+
+MKT14 — [About the business process catalog](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/about). Documentation Dynamics 365 évolutive. Passage : What’s in the catalog?. Consultation : 19 septembre 2026. Termes natifs : End-to-end process, Business process area, Business process, Scenario, System process, Test case.
+
+Area est un regroupement de processus dans une hiérarchie qui descend ensuite vers les scénarios et tests. Article primaire consulté ; ne pas convertir les capacités en processus ni les comportements en scénarios de test. Correspondance proposée CMP195 ; [détail et adaptation FLOW](../modeles/backlog/model-level-naming-U481.yaml). Aucun identifiant natif de concept ajouté.
+
+
+### ELM491
+
+MKT19 — TM Forum ODA, TMFC002 Product Order Capture And Validation (2.1.0 affichée) et TMFC003 Product Order Delivery Orchestration And Management (1.1.1 affichée). Notices publiques, paragraphes de présentation, consultés le 19 septembre 2026 : [TMFC002](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC002), [TMFC003](https://www.tmforum.org/oda/directory/components-map/core-commerce-management/TMFC003). Capture/validation/clôture commerciale distinguées de l’orchestration de livraison. Composants télécom ; pas d’équivalence directe avec une Area métier Supply, ni lecture intégrale des spécifications. CMP196 ; éditions, localisateurs et limites dans [U485](../modeles/backlog/order-management-positioning-U485.yaml).
+
+### ELM492
+
+MKT19 — TM Forum ODA, TMFC006 Service Catalog Management (1.2.0 affichée) et TMFC007 Service Order Management (2.0.0 affichée). Présentations publiques consultées le 19 septembre 2026 : [TMFC006](https://www.tmforum.org/oda/directory/components-map/production/TMFC006), [TMFC007](https://www.tmforum.org/oda/directory/components-map/production/TMFC007). Spécifications des services distinguées des demandes de fourniture ; SOM décrit comme point d’entrée du domaine Production et doté d’orchestration. Analogie sélective de l’offre et des prises en charge ; pas un alignement D04/D06/D14. CMP196 / U485.
+
+### ELM493
+
+MKT71 — Business artifacts, entités métier décrites par leurs informations et leur cycle de vie. [Résumé primaire IBM Research](https://research.ibm.com/publications/automatic-verification-of-data-centric-business-processes), ICDT 2009, Abstract, consulté le 19 septembre 2026. Appui conceptuel à la continuité d’une demande pendant son traitement ; aucune prescription d’Area ni résultat de vérification formelle importé. CMP196 / U485.
+
+### ELM494
+
+MKT72 — Object-centric process mining, divergence et convergence entre événements et objets. [Copie auteur](https://www.vdaalst.com/publications/p1056.pdf), introduction et §3 pp.8–10, consultés le 19 septembre 2026. Plusieurs types d’objets et interactions rendent insuffisant un unique identifiant de case pour toute analyse. Appui à des correspondances multiples entre dossiers et parcours ; pas une architecture métier prescrite. CMP196 / U485.
+
+**Réexamen U485 d’ELM011 — 19 septembre 2026 :** CMMN 1.1 relu (§4.1, §5.2, §5.3.1, §5.4.10.5). Le Case associe CaseFile et CasePlanModel ; il ne se réduit pas à un objet de données. Le repère historique « couche haute » n’est pas réactivé après U455. Appui limité à l’intention, aux informations et au résultat d’un dossier ; aucun Case universel ni renommage de D04 adopté. CMP196.
+
+
+**Complément lexical U487 d’ELM364 — 19 septembre 2026 :** la [documentation Oracle 25C des flux back-to-back](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauco/how-orchestration-processes-back-to-back-flows.html), section Supply Chain Orchestration and Order Orchestration, distingue Supply Request, Supply Order et documents d’achat, fabrication ou transfert. Cette lecture complémentaire ne remplace pas la preuve 26B antérieure. Supply Requests est un appui lexical à la sollicitation du domaine ; son usage proposé pour D04 serait plus large que ce périmètre Oracle, notamment pour ventes et retours. CMP197.
+
+
+**Réexamen U489 d’ELM131 et ELM492 — 19 septembre 2026 :** les notices [TMF641 v4.2](https://www.tmforum.org/open-digital-architecture/open-apis/service-ordering-management-api-TMF641/v4.2) (Overview, paramètres de la demande et suivi ; page affichant publication stable au 14 août 2026) et [TMFC007 2.0.0](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) (point d’entrée Production et orchestration) sont relues. Le nom Service Order étaye la préférence U489 ; sa transposition en Area Service Orders est proposée, sans reprendre tout le périmètre du composant TM Forum. Backing Service Orders demeure une qualification locale proposée pour distinguer les demandes aux exécutants. Les preuves et éditions précédentes restent conservées ; guides complets non relus. CMP197.
+
+
+### ELM495
+
+MKT13 — SAP S/4HANA Backorder Processing, 2025 FPS01 ; SAP APO Event-Driven Quantity Assignment, 7.0 EHP4. Fonctions produit distinctes : réévaluer les confirmations après modification de disponibilité ; déclencher des affectations sur événements dans APO. Passages indexés primaires consultés le 19 septembre 2026, accès direct dynamique limité. URLs et localisateurs dans [l’annexe U485, complément U493–U495](../modeles/backlog/order-management-positioning-U485.yaml). Ne pas transférer l’automatisation APO à aATP ni les règles de réservation SAP à FLOW. CMP199.
+
+### ELM496
+
+MKT20 — Oracle Supply Chain Orchestration 25D, Change Management in Back-to-Back Fulfillment 25C et Overview of Backlog Management Processes 25C. Sources primaires lues le 19 septembre 2026 : réaction à changement Supply, exception si absence d’alternative, réexamen et simulation du carnet, application distincte. Complète ELM365 et ELM357 sans effacer leurs éditions. URLs, sections, exemple 100→75 et limites dans [l’annexe U485](../modeles/backlog/order-management-positioning-U485.yaml). Ni optimisation globale automatique prouvée par le cas back-to-back, ni nouvel Order obligatoire. CMP199.
+
+### ELM497
+
+MKT73 — Salesforce Service Process Studio : Service Catalog Request, Case, Fulfillment Flow. Documentation évolutive, pas d’édition précisée ; définition et exemple Address Update lus le 19 septembre 2026. Demande et traitement distingués ; vérification de justificatifs par un agent backoffice puis mise à jour bancaire. L’exemple ne prouve pas une nouvelle demande interne ou une détection de fraude. [Source primaire](https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5). CMP199.
+
+### ELM498
+
+MKT73 — Salesforce Agentforce IT Service, Service Request / Case / Incident ; Salesforce Case Fields. [Cours primaire](https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions), Service Requests, Request Tracking, Resolving Requests ; [Case Fields](https://help.salesforce.com/s/articleView?id=service.cases_fields.htm&language=en_US&type=5), Case Record Type, Origin, Reason, Type, Parent Case. Pages évolutives consultées le 19 septembre 2026, édition non précisée. Demandes internes avec suivi, approbation éventuelle et clôture ; nature et origine qualifiées séparément. Périmètre service aux employés, pas preuve du scénario fraude de Laurent ni d’une taxonomie imposée frontoffice/backoffice. CMP199.
+
+
+**Complément U499 aux éléments ELM246, ELM495 et ELM496 — 19 septembre 2026 :** relecture primaire d’Oracle Start Backlog Planning 26B (lancement à la demande ou programmé), Overview of Backlog Management Processes 25D (planification, examen, simulation et publication), et SAP APO EDQA Event-Driven Quantity Assignment, page Support Content sans édition précisée (changements de stock et documents déclenchant un traitement). Les lectures 25C et APO 7.0 EHP4 précédentes restent conservées. Les passages lus par l’index du portail SAP ne sont pas présentés comme lecture intégrale d’une spécification. URLs, localisateurs et limites dans [la proposition U499](../modeles/backlog/internal-service-requests-U499.yaml). Le découpage en comportements et la qualification Frontoffice/Backoffice sont des propositions FLOW ; aucun consensus d’éditeur attribué.
+
+
+**Complément U501 à ELM496 — 19 septembre 2026 :** [Why You Use Backlog Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/why-you-use-backlog-management.html), Oracle Fusion Cloud SCM 25D, Pain Points et How Backlog Management Helps, lu intégralement. Les changements de disponibilité peuvent rendre les dates antérieures irréalistes ; le produit permet de comparer des résultats et de simuler avant leur publication. Appui au réexamen du carnet, sans imposer un dossier portant notre nom. Key Actions on Orders 25D (ELM357), sections Plan Run, Review, Simulation et Release, reconsulté pour les comportements. Les autres documents de CMP201 et les demandes internes Salesforce ELM498 restent les appuis consultés dans la même discussion. Les sept fiches U501 ont chacune deux documents primaires distincts ; les paires Oracle ne sont pas qualifiées de consensus interéditeurs.
+
+
+### ELM499
+
+MKT13 — [Creating Business Partners](https://learning.sap.com/courses/purchasing-in-sap-s-4hana/creating-business-partners). Cours web ; numéro de release non affiché. Passage : Business Partner Concept ; Category ; Relationships ; Transactions and Apps. Consulté le 19 septembre 2026.
+
+Identité commune, catégories Person/Organization/Group, relation de contact datable ; fonctions de recherche et de consultation. Une Organization peut aussi être un département. Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM500
+
+MKT13 — [Managing Business Partners](https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners). Cours web ; numéro de release non affiché. Passage : Business Partner Categories ; Business Partner Roles ; Customer/Vendor Integration. Consulté le 19 septembre 2026.
+
+Le rôle correspond au contexte métier. Un même Business Partner peut être Customer et Supplier ; les données centrales d’identité sont partagées. Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM501
+
+MKT74 — [Customer 360 10.4 HotFix 1 — Release Guide](https://docs.informatica.com/content/dam/source/GUID-A/GUID-A22D277C-F828-4A24-BB5F-1B1E45148FCB/6/en/C360_104HF1_ReleaseGuide_en.pdf). 10.4 HotFix 1 ; changement décrit pour 10.2 HotFix 2. Passage : Chapitre 5, Changes / Data Model, p. 18. Consulté le 19 septembre 2026.
+
+Les nouvelles installations à partir de 10.2 HotFix 2 utilisent Party, pour personne ou organisation ; les installations antérieures peuvent conserver le modèle Party Role. Passage primaire indexé consulté ; ouverture directe du PDF en erreur. Référence historique, pas preuve d’une métaclasse Party Role dans le SaaS actuel ni de disparition des rôles métier. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM502
+
+MKT74 — [Customer 360 10.3 HotFix 2 — Installation and Configuration Guide](https://docs.informatica.com/content/dam/source/GUID-0/GUID-07D6D3B1-8A97-4018-8B8E-B173622F08B8/5-1-1/en/C360_103HF2_InstallationAndConfigurationGuide_en.pdf). 10.3 HotFix 2. Passage : Before You Upgrade / Migrating to the Data Model Based on the Party Table, p. 71. Consulté le 19 septembre 2026.
+
+La migration du modèle fondé sur Party Role vers Party est documentée ; les installations antérieures peuvent conserver leur modèle. Passage primaire indexé seulement ; guide intégral non consulté. Ne permet pas de conclure à la disparition des rôles métier. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM503
+
+MKT75 — [Commons Ontology Library 1.2](https://www.omg.org/spec/Commons/1.2/PDF). 1.2, février 2025, formal/25-02-03. Passage : §8.14 tableau 8.28, pp. 80–82 ; §8.13 tableau 8.26, pp. 71–72 (pagination imprimée). Consulté le 19 septembre 2026.
+
+Party désigne une personne ou une organisation ; PartyRole qualifie sa participation contextuelle, éventuellement temporaire. Party n’exige pas partout une personnalité juridique autonome. Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM504
+
+MKT67 — [Contracts Ontology](https://raw.githubusercontent.com/edmcouncil/fibo/master/FND/Agreements/Contracts.rdf). versionIRI FND/20260601. Passage : Contract ; ContractParty ; ContractThirdParty ; hasContractParty. Consulté le 19 septembre 2026.
+
+ContractParty est un PartyRole joué par une LegalPerson dans un accord contraignant ; ContractThirdParty distingue une implication indirecte. Ontologie primaire consultée ; vocabulaire contractuel financier. Rapprochement sémantique sélectif, pas qualification juridique automatique ni import du modèle financier. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM505
+
+MKT67 — [Legal Persons Ontology](https://raw.githubusercontent.com/edmcouncil/fibo/master/BE/LegalEntities/LegalPersons.rdf). versionIRI BE/20251201. Passage : LegallyCompetentNaturalPerson. Consulté le 19 septembre 2026.
+
+Une personne physique juridiquement capable est à la fois Person et LegalPerson ; LegalPerson ne se traduit donc pas automatiquement par personne morale. Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM506
+
+MKT57 — [Organization Structures — Party](https://martinfowler.com/apsupp/accountability.pdf). Extrait auteur ; édition non explicitée. Passage : Party, pp. 5–6. Consulté le 19 septembre 2026.
+
+Party généralise Person et Organization ; les exemples comprennent départements et équipes informelles. Patron de modélisation plus large que les personnes juridiquement autonomes. Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+### ELM507
+
+MKT74 — [Connecting Master Data to Agentforce](https://www.informatica.com/content/dam/informatica-cxp/techtuesdays-slides-pdf/Connecting%20Master%20Data%20to%20Agentforce.pdf). Présentation du 10 mars 2026. Passage : Diapositives 16–17 : Agentforce Actions ; CAI Processes and MDM APIs. Consulté le 19 septembre 2026.
+
+Identify Customer recherche Person et Organization ; Get Customer Profile et Get Customer Relationships consultent profil et relations. Présentation officielle consultée ; fonctions exposées par une extension. Appui à la consultation, sans reprendre l’IA, les données familiales ou la maîtrise centrale dans FLOW. CMP203 / U505–U506 ; ELM499/507 étayent également la consultation, CMP204.
+
+
+**Complément U505 à ELM423 :** [Product information overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information), Mise à jour du 1er juillet 2026, relu le 19 septembre 2026 : Product masters and product variants ; Product variant model definition workspace ; Released product maintenance workspace. Les dimensions aident à rechercher et identifier les variantes ; les espaces présentent les références et ouvrent leur détail. Texte primaire relu. Le produit inclut création et maintenance ; seule la lecture est rapprochée de FLOW. CMP204.
+
+
+### ELM508
+
+MKT20 — [How You Use the Product Information Management Work Area](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fapim/how-you-use-the-product-information-management-work-area.html). 26B. Passage : Quick Search and Manage Items. Consulté le 19 septembre 2026.
+
+Recherche d’articles et de catalogues, ouverture d’un résultat pour consulter ses attributs. Texte primaire consulté ; espace produit plus large que la seule consultation, sans réalisation locale déduite. CMP204 / U505.
+
+
+**Complément U505 à ELM426 :** [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), Mise à jour du 8 septembre 2026, relu le 19 septembre 2026 : Introduction ; Commitment types ; Confirmations and version history for purchase agreements. Durées et engagements en quantité ou valeur ; consultation et impression des versions d’accord. Texte primaire relu. Les calculs de consommation et reliquat décrits ailleurs sur la page ne sont pas repris dans Visibility. CMP204.
+
+
+### ELM509
+
+MKT20 — [Contracts Search Options](https://docs.oracle.com/en/cloud/saas/sales/facup/contracts-search-options.html). Documentation évolutive ; édition non affichée. Passage : Search by Enterprise Contract Attributes ; Search Contracts by Text ; Search Contracts with Global Search. Consulté le 19 septembre 2026.
+
+Recherche par numéro, partie, attributs ou texte, puis ouverture des contrats et documents. Texte primaire consulté. La recherche textuelle dépend de la configuration et des habilitations ; aucun choix de moteur ou d’interface imposé. CMP204 / U505.
+
+
+**Complément U505 à ELM391 :** [Create Commerce catalogs for B2B sites](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites), Mise à jour du 21 janvier 2026 ; 10.0.27 et versions ultérieures, relu le 19 septembre 2026 : Catalog configuration ; Set attribute metadata ; dates ; customer hierarchies ; price groups. Attributs visibles, recherchables et filtrables ; contenu et conditions d’applicabilité du catalogue. Texte primaire relu ; consultation seule retenue, pas administration commerciale ni ouverture du chantier Domain Commerce. CMP204.
+
+
+### ELM510
+
+MKT14 — [Catalog picker module](https://learn.microsoft.com/en-us/dynamics365/commerce/catalog-picker). Mise à jour du 21 janvier 2026. Passage : Introduction ; accès depuis le compte client. Consulté le 19 septembre 2026.
+
+Liste des catalogues accessibles à l’utilisateur B2B et navigation vers leur contenu. Texte primaire consulté. Illustration de consultation ; ne prescrit pas une interface ni une capacité par composant. Deux documents Microsoft ne prouvent pas un consensus interéditeurs. CMP204 / U505.
+
+
+### ELM511
+
+MKT42 — [Location View/Use Instructions](https://www.help.gs1us.org/location-view-use). Documentation évolutive ; édition non affichée. Passage : View Shared GLNs ; filtres de recherche ; Search for Multiple GLNs at Once. Consulté le 19 septembre 2026.
+
+Recherche et consultation de lieux partagés par GLN ou nom, attributs et filtres. Texte primaire consulté ; accès soumis au partage et parfois à une option. Appui limité aux lieux, sans identification GLN imposée ni topologie Supply complète démontrée. CMP204 / U505.
+
+
+### ELM512
+
+MKT14 — [Inventory locations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-locations). Mise à jour du 1er juillet 2026. Passage : Location properties ; Tree structure. Consulté le 19 septembre 2026.
+
+Caractéristiques des emplacements et consultation de leur organisation arborescente. Texte primaire consulté ; module Inventory Management sans Warehouse Management. Échelle intrentrepôt plus fine que le réseau FLOW ; aucune couverture complète de ses liaisons déduite. CMP204 / U505.
+
+
+### ELM513
+
+MKT19 — [Service Catalog Management v1.2.0](https://oda-production.s3.eu-west-2.amazonaws.com/v1.0.0/TMFC006_Service_Catalog_Management_v1.2.0.pdf). 1.2.0, approuvé le 26 novembre 2024, Production/GA. Passage : §1 Overview, p. 5. Consulté le 19 septembre 2026.
+
+Recherche de services et accès organisé aux spécifications ; distinction de vues client et technique. PDF primaire consulté. Composant télécom comprenant aussi conception et cycle de vie ; ces responsabilités ne sont pas importées dans la consultation FLOW. CMP204 / U505.
+
+
+### ELM514
+
+MKT76 — [Catalog Homepage Search widget](https://www.servicenow.com/docs/r/platform-user-interface/service-portal/cat-homepage-search-widget.html). Australia ; mise à jour du 12 mars 2026. Passage : Using the widget. Consulté le 19 septembre 2026.
+
+Recherche par mots-clés et parcours des catégories d’un catalogue. Texte primaire consulté ; analogie de consultation uniquement. Le catalogue de demandes ServiceNow n’est pas assimilé aux Backing Services de FLOW, ni au périmètre de D14. CMP204 / U505.
+
+
+### ELM515
+
+MKT13 — [SAP Assortment](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-1-1), cours S/4HANA Cloud Private Edition Retail, release non affichée. Sections Assortment Management and Maintenance, Local/General Assortments et Assortment Management, texte primaire consulté le 19 septembre 2026. Articles, magasins/centres de distribution/clients et périodes d’applicabilité. La référence peut être utilisée pour les commandes ; sa conception reste hors FLOW. Complète ELM094, sans remplacer la preuve précédente ni importer les cardinalités SAP. CMP205 ; [analyse U508](../modeles/backlog/catalog-assortment-review-U508.yaml).
+
+### ELM516
+
+MKT14 — [Assortment management](https://learn.microsoft.com/en-us/dynamics365/commerce/assortments), Dynamics 365 Commerce, page du 16 janvier 2026. Introduction, Basic assortment setup, Dynamic and static assortments et Date effectivity, texte primaire lu le 19 septembre 2026. Produits/catégories associés à des canaux sur une période ; plusieurs assortiments peuvent contribuer au contenu d’un canal. Disponibilité dans l’offre distincte du stock et d’une promesse Supply. CMP205 ; rédaction sélective, aucune capacité de conception commerciale ajoutée.
+
+**Complément U508 à ELM391/345 — 19 septembre 2026 :** Microsoft Create Commerce catalogs for B2B sites, page du 21 janvier 2026, Configure the catalog, relu : le catalogue utilise des produits des assortiments des canaux concernés et porte sa propre présentation commerciale. Oracle Procurement 26A, What’s the difference between a purchase order, a purchase agreement, and a contract agreement?, sections Blanket/Contract Purchase Agreement, relu : périmètre produit détaillé dans un cas, conditions sans liste de produits dans l’autre. Ni ordre universel catalogue → assortiment ni synonymie entre lignes d’accord et Assortment déduits. URLs, différences et limites dans [U508](../modeles/backlog/catalog-assortment-review-U508.yaml).
+
+
+### ELM517
+
+MKT13 — [SAP Assortment List](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-list-1-1), cours S/4HANA Cloud Private Edition Retail, numéro de release non affiché. Attributes of the Assortment List ; Full/Change/Mixed Version ; affichage et diffusion électronique, texte primaire lu le 19 septembre 2026. Appui à la transmission des évolutions et à la consultation des sélections applicables. Les formats, fréquences et enrichissements transactionnels SAP ne sont pas adoptés. Complète ELM515 pour D16.a/D16.b ; deux documents SAP ne constituent pas un consensus interéditeurs. CMP206.

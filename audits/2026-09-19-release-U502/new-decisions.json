@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.10",
+  "decisions": [
+    {
+      "id": "ADOPT-U496-SERVICE-REQUESTS",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U496"
+      ],
+      "note": "Accord sur Service Requests et la phrase d’intention présentée. Périmètre développé, finalité, exemples et inspirations restent proposés.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04",
+        "revision": 9,
+        "approved_fields": [
+          "name",
+          "definition"
+        ],
+        "value_sha256": {
+          "name": "0d558d1a7477a48802c31efafc39666607a4163a89911a545ccc990df1a30a3b",
+          "definition": "59a27513a962a709db454e22f61846c5a5ece07a3891784567b9e470768d47bf"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U497-BACKING-SERVICE-ORDERS",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U497"
+      ],
+      "note": "Accord limité au nom Backing Service Orders. La définition garde son accord historique distinct ; aucun accord nouveau sur le détail de la fiche.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.b",
+        "revision": 10,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "7c417cc7c6b784606d7010e0ccb11ccdf53020af2ec895cd9a70eb12819010c8"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-TRANSFER-ORIGINS",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U492",
+        "U501"
+      ],
+      "note": "Frontoffice et Backoffice sont deux origines possibles de la famille Transfer Order, relativement au Domain ; pas une classification des équipes ou interfaces.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.k",
+        "revision": 6,
+        "approved_fields": [
+          "request_origins"
+        ],
+        "value_sha256": {
+          "request_origins": "fb8e32313a63f98a1055a7c9bf3e54b35591ba85b22faa3d2bc36a84ee05f6cd"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BACKLOG-REQUEST",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Nom Order Backlog Optimization Request et origine Backoffice présentés et adoptés. Rédactions complémentaires et nature restent éditoriales.",
+      "target": {
+        "collection": "nodes",
+        "id": "D04.s",
+        "revision": 1,
+        "approved_fields": [
+          "name",
+          "request_origins"
+        ],
+        "value_sha256": {
+          "name": "70d8be810f39e361666398f597d715c0c642718102019c4ccfd21d8fa5aca99c",
+          "request_origins": "058050cdcffe637aa28d16d847ec879b41bb7c9474f2fefc830f84a32311365e"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV088",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV088",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect"
+        ],
+        "value_sha256": {
+          "definition": "ee2172fb71e55966cefc701bdca9aaa3d1226ba8cf6ec77dd713a1bae27b8da3",
+          "behavior_aspect": "9140ba4a5cedccc2a00e3a4ecba4e303d945fab564f637bd8e0abff43e8e74fc"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV089",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV089",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect"
+        ],
+        "value_sha256": {
+          "definition": "cbf4bed3ba1c461c1aac4929f53f7905f9ee4f4215e03551ea8aa33fd911e62a",
+          "behavior_aspect": "9140ba4a5cedccc2a00e3a4ecba4e303d945fab564f637bd8e0abff43e8e74fc"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV090",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV090",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect"
+        ],
+        "value_sha256": {
+          "definition": "d0eb0d55a1543caf714e91d2664d5c7b0f451c90836c59fb45905663e0a634c6",
+          "behavior_aspect": "9140ba4a5cedccc2a00e3a4ecba4e303d945fab564f637bd8e0abff43e8e74fc"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV091",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV091",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect",
+          "name"
+        ],
+        "value_sha256": {
+          "definition": "232f5e99433a558148fba6ea700de76a82c7a8284e36f737a1e6d7e971d29d74",
+          "behavior_aspect": "00091aa568cb13873d1e8b761941b4ab506f6fc56867b6d5a6f4fc8c8539d810",
+          "name": "3eee4a28b45b7d7cb7114ebf1fcdd032a202b38d74ffe4028f9cef137fad57e0"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV092",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV092",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect"
+        ],
+        "value_sha256": {
+          "definition": "6e78ad4f3ba409208fc161a47ac3a25453a0d093bbc5219e0e66a03f350e7114",
+          "behavior_aspect": "00091aa568cb13873d1e8b761941b4ab506f6fc56867b6d5a6f4fc8c8539d810"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-BHV093",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Sens présenté et angle Déclenchement/Activité adoptés, au même niveau terminal. Aucun cycle obligatoire. Seul Simulation & Analysis était présenté en anglais ; les autres traductions, périmètres, natures et références sont éditoriaux.",
+      "target": {
+        "collection": "nodes",
+        "id": "BHV093",
+        "revision": 1,
+        "approved_fields": [
+          "definition",
+          "behavior_aspect"
+        ],
+        "value_sha256": {
+          "definition": "c74759542ad1dbf2fef656bdfed6723a10a6e49161834cd8a0eca4f519cd5ede",
+          "behavior_aspect": "00091aa568cb13873d1e8b761941b4ab506f6fc56867b6d5a6f4fc8c8539d810"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-D04.s",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-D04.s",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "0096bde465541109b5bce54d49a5c56a6b5a8c77c79d7ed9d49996276ee29b00",
+          "target_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV088",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV088",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "855e81a4594618a7db62fbb4e29fa24975ba873a1275b9cafac31b6bbf9af6dd"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV089",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV089",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "8c6b26fd5259696728ff8798fd5bc4d47c1d28c50cadc1ed3bcee89ed560bc8f"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV090",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV090",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "324dd1c5fa3285e06ad8fbdf870c4ee9efe3c4d6b1c6b8ba468b4e6179ac2e38"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV091",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV091",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "014433c61798ac13b3cca5da00386364a63593685c0306f3fff3590bde730ed7"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV092",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV092",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "60512622a2265c38e2ba7a2878d302e0131d748b80007245bb32428b9fe8d2d2"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-MEMBER-BHV093",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-MEMBER-BHV093",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "9c676f5820a259da5abd47f9a5b28b18515834057de05950196f493231c43907"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-BACKLOG-REQUEST-PLANNING",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-BACKLOG-REQUEST-PLANNING",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1ed799852a65b796352c9edb69d8437fe1dbb15ef9313bf09653725dfb62e652",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "81de39dcba758d29442ba55df984f998a204b4cea15cfc9d2481cfdaae070c50"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-BACKLOG-REQUEST-DECISION",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-BACKLOG-REQUEST-DECISION",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1ed799852a65b796352c9edb69d8437fe1dbb15ef9313bf09653725dfb62e652",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "4f4f1247ee0871450c382945a4a45ccc5001864979a9e8eb67cfe077ed56d082"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U501-REL-BACKLOG-REQUEST-ASSIGNMENT",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U501"
+      ],
+      "note": "Rattachement ou coopération explicitement présenté et adopté U501. Qualifications détaillées, libellés, conditions et effets rédigés ensuite restent proposés.",
+      "target": {
+        "collection": "relations",
+        "id": "REL-BACKLOG-REQUEST-ASSIGNMENT",
+        "revision": 1,
+        "approved_fields": [
+          "type",
+          "source_id",
+          "target_id"
+        ],
+        "value_sha256": {
+          "type": "1ed799852a65b796352c9edb69d8437fe1dbb15ef9313bf09653725dfb62e652",
+          "source_id": "60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41",
+          "target_id": "31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U502-HISTORICAL-SUBSCOPE-D14",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U240",
+        "U244",
+        "U409"
+      ],
+      "note": "Transcription pour publication des accords antérieurs, après revue U433 : Compléments proposés pour appliquer U244 ; aucune validation de détail déduite. U409 : nouveau nom adopté ; validations des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409. Portée strictement limitée aux champs et empreintes ci-dessous. La date indique la dernière contribution de la chaîne référencée, pas un nouvel accord. U433 autorise la publication uniquement. Traçabilité : audits/2026-09-19-release-U433/transcription-review.json. Réexamen U467 de ADOPT-U433-TRANSCRIPTION-D14-r2 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json. Réexamen de ADOPT-U467-UNCHANGED-013 par Codex — réexamen explicite U483 des 122 accords suspendus, avec contrôle des champs, frontières, relations et termes liés ; aucune validation métier nouvelle : Service Catalog et sa définition approuvée (liste des services et SLA globaux en configuration) sont inchangés. Le scope remplace domaines par areas. REL-SERVICE-CATALOG-EXECUTION désigne désormais explicitement Process Management, sans changement d’extrémité, de type ou de responsabilité. Le catalogue reste distinct des prestations exécutées. Les nouvelles inspirations ne sont pas approuvées par cette reprise. Transcription des seules valeurs historiques inchangées ; aucune extension de portée. Preuve : modeles/revisions/2026-09-19.8/decision-review/assessment.yaml. Réexamen U502 limité explicitement au champ name inchangé de ADOPT-REASSESS-7d991a1476b1520419f3d3ff. La décision composite reste différée dans assessment.yaml car son autre champ change. Auteur, date et sources historiques conservés ; aucune nouvelle validation attribuée à U502/U497. Le champ modifié est exclu de cette transcription réduite.",
+      "target": {
+        "collection": "nodes",
+        "id": "D14",
+        "revision": 5,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    },
+    {
+      "id": "ADOPT-U502-HISTORICAL-SUBSCOPE-D07.b",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-17",
+      "recorded_at": "2026-09-19",
+      "interpretation": "contextual",
+      "source_refs": [
+        "U247",
+        "U290"
+      ],
+      "note": "Transcription à portée constante pour la release U448 : preuves exactes par champ dans audits/2026-09-19-release-U448/transcription-review.json. Les champs inchangés reprennent leurs décisions historiques ; U438/U445 autorisent uniquement les noms et rattachements présentés. U448 autorise la publication, sans nouvel accord métier. La date reprend la dernière contribution de la chaîne de preuve. Réexamen U467 de ADOPT-U448-TRANSCRIPTION-D07.b-r6 : valeurs approuvées inchangées, contrôlées par empreinte contre v010 ; identité, type et relations métier conservés. Le retrait de layer et les compléments éditoriaux ne créent aucun accord sur un nouveau champ. Preuve : audits/2026-09-19-release-U467/transcription-review.json. Réexamen U473 de ADOPT-U467-UNCHANGED-034 : valeurs approuvées inchangées, contrôlées par empreinte contre v012 ; identité, type et relations métier conservés. Les nouveaux textes, exemples, périmètres et rapprochements marché ne reçoivent aucun accord par extension. Les sources et la date de l’accord historique restent seules autorités des valeurs transcrites. Preuve : audits/2026-09-19-release-U473/transcription-review.json. Réexamen de ADOPT-U473-UNCHANGED-010 par Codex — réexamen explicite U483 des 122 accords suspendus, avec contrôle des champs, frontières, relations et termes liés ; aucune validation métier nouvelle : Nom et définition de Service Order Management sont inchangés pour la tenue des demandes de prestation et de leur cycle selon le service. Les inspirations maintiennent la séparation émission, acceptation et résultat, sans reprendre une machine à états télécom ou un mécanisme d’échange entrepôt universel. Aucune relation ne change ; les exemples ne valident pas un cycle nouveau. Valeurs et empreintes contrôlées identiques pour definition, name. Reprise de ces seuls champs de l’accord historique ; les inspirations U477 restent proposées. U482 renomme les niveaux sans déplacer les responsabilités. Transcription des seules valeurs historiques inchangées ; aucune extension de portée. Preuve : modeles/revisions/2026-09-19.8/decision-review/assessment.yaml. Réexamen U502 limité explicitement au champ definition inchangé de ADOPT-REASSESS-9586b06d6371c8597d9e7fbd. La décision composite reste différée dans assessment.yaml car son autre champ change. Auteur, date et sources historiques conservés ; aucune nouvelle validation attribuée à U502/U497. Le champ modifié est exclu de cette transcription réduite.",
+      "target": {
+        "collection": "nodes",
+        "id": "D07.b",
+        "revision": 10,
+        "approved_fields": [
+          "definition"
+        ],
+        "value_sha256": {
+          "definition": "51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e"
+        },
+        "import_version": "2026-09-19.10"
+      }
+    }
+  ]
+}

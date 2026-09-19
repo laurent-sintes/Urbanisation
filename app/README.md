@@ -1,8 +1,16 @@
 # FLOW Atlas — application locale
 
+## Niveaux Domain / Area — U482/U507
+
+La nomenclature adoptée est **Domain → Area → Capability → Behavior**. Atlas rend les types du snapshot consulté : `domain` reste « Domaine », `area` devient « Area », tandis que les anciens groupes `urbanism_level` / `universe` restent « Univers ». **Authoritative Data** peut être publié comme Area depuis U507 ; les publications antérieures conservent leur groupe de présentation. Ses référentiels restent distincts (sept depuis U509), reliés par `presents`, et portent leurs capacités via `contains`.
+
+Les cartes d’une Area exposent ses capacités ou ses référentiels explicites ; chaque carte de référentiel expose ses propres capacités. Les liens, le fil d’Ariane et les icônes de capacités conservent ce rattachement, y compris pour Ingestion et Visibility. Le graphe Relations propose **Capacités / Areas et référentiels / Domaines** lorsque la publication contient des Areas, et conserve **Capacités / Domaines et référentiels / Univers** pour les publications antérieures. Les regroupements suivent les relations publiées, y compris pour les références. Le paramètre de lien `level=area` est partageable ; `level=universe` reste lisible dans l’historique et rejoint le niveau Domaine d’une publication au nouveau découpage. Aucun changement de vocabulaire n’est appliqué aux anciennes données ni déduit du backlog.
+
+Tests : `node --test --test-isolation=none app/test-dependency-graph.mjs app/test-navigation.mjs app/test-model.mjs`.
+
 ## Bandeau permanent et défilement
 
-Le fil d’Ariane, le titre, la description et les onglets **Carte / Fiche / Relations / Marché & choix** restent visibles. Seule la zone de contenu sous ce bandeau défile ; l’arbre conserve son propre défilement. Cette règle est commune à l’accueil, aux univers, domaines, capacités et comportements, ainsi qu’aux glossaires et au guide du méta modèle. Sur les écrans de faible hauteur, le bandeau est plus compact.
+Le fil d’Ariane, le titre, la description et les onglets **Carte / Fiche / Relations / Sources d’inspiration** restent visibles. Seule la zone de contenu sous ce bandeau défile ; l’arbre conserve son propre défilement. Cette règle est commune à l’accueil, aux univers, domaines, capacités et comportements, ainsi qu’aux glossaires et au guide du méta modèle. Sur les écrans de faible hauteur, le bandeau est plus compact.
 
 Sur grand écran, le fil d’Ariane et la copie du lien occupent la barre FLOW de 52 px : ils ne consomment plus une rangée au-dessus du titre. Sur mobile, le bouton d’ouverture de l’arbre rejoint FLOW, tandis que le fil d’Ariane garde sa propre ligne. Beaumanoir devient une signature de 76 px dans le pied de l’arbre, près des statistiques. Les noms longs du fil d’Ariane restent nommés intégralement pour les lecteurs d’écran ; sur grand écran, l’ellipse visuelle conserve leur accès et le titre au survol. [Identité et repères de design](BRANDING.md).
 
@@ -18,7 +26,7 @@ Recette sur le serveur local compilé : `node app/verify-fixed-header.mjs`. Elle
 
 **État courant :** le catalogue est masqué dans Atlas à la demande de Laurent. Les paragraphes ci-dessous décrivent le fonctionnement conservé en interne et la recette antérieure ; les règles actuelles figurent dans « Allègement de la revue — U470 » en fin de document.
 
-La navigation propose **Informations métier**, avec index filtrable et fiche de lecture. Chaque fiche expose sa question, sa définition, un exemple, sa composition sémantique, ses limites, ses usages par les capacités et les informations liées. L’onglet **Marché & choix** donne les raisons du terme et du périmètre, les différences et les liens directs vers les sources consultées. Les qualifications de travail et identifiants de preuve ne sont pas affichés ni indexés.
+La navigation propose **Informations métier**, avec index filtrable et fiche de lecture. Chaque fiche expose sa question, sa définition, un exemple, sa composition sémantique, ses limites, ses usages par les capacités et les informations liées. L’onglet **Sources d’inspiration** donne les raisons du terme et du périmètre, les différences et les liens directs vers les sources consultées. Les qualifications de travail et identifiants de preuve ne sont pas affichés ni indexés.
 
 Les fiches de capacités, domaines et univers proposent les informations qui concernent leurs capacités explicitement rattachées. Aucun rôle n’est déduit pour un comportement ni propagé par une dépendance. La recherche générale inclut les informations, avec un filtre dédié. Les liens `#version=…&view=information&information=PINFO-…` conservent la publication ; `node=…` ajoute un périmètre de lecture facultatif. Une information absente ou une ancienne publication sans catalogue est signalée sans repli.
 
@@ -125,7 +133,7 @@ Les cartes React Flow permettent de déplacer et cadrer la vue, puis d’ouvrir 
 
 Dans la carte d’un univers, chaque domaine liste ses capacités avec leurs icônes. Le survol ou le focus d’un lien affiche son aperçu ; le clic ou Entrée ouvre directement sa fiche dans la même publication. Le retour du navigateur retrouve la vue Univers. Les listes suivent les rattachements publiés, y compris lorsqu’un identifiant conserve le préfixe d’un autre domaine. La hauteur des cartes suit leur contenu, sur une grille de une à trois colonnes ; la molette fait défiler la page et les boutons de zoom restent disponibles.
 
-La carte **Business References** offre le même parcours : chaque référentiel affiche les liens de ses capacités, avec les mêmes icônes, infobulles et accès direct aux fiches. Cette présentation suit les types et relations publiés, sans transformer le groupe de présentation en univers.
+La carte **Authoritative Data**, anciennement Business References, offre le même parcours : chaque référentiel affiche les liens de ses capacités, avec les mêmes icônes, infobulles et accès direct aux fiches. Son libellé Area ou groupe de présentation suit le type publié ; ses référentiels restent distincts.
 
 La recherche porte sur les noms, identifiants et textes publiés, avec un filtre par type d’élément. Ctrl+K place le focus dans la recherche ; flèche bas entre dans les résultats, Entrée ouvre le résultat ciblé. Les synonymes français non présents dans la publication ne sont pas inventés. Les anciens paramètres d’URL relatifs au statut ou aux sources internes ne réactivent pas leur affichage.
 
@@ -210,7 +218,7 @@ Le premier guide du 18 septembre est associé rétrospectivement à v007 (public
 
 Pour une évolution, créer une nouvelle version de guide puis actualiser volontairement les associations et empreintes ; ne pas réécrire une version déjà livrée. U450 associe l’édition méthodologique `2026-09-19.1` à v009, en conservant v007 et son guide. La préparation d’une release capture désormais l’association explicite de sa publication de départ. La publication vérifie son intégrité et la reporte explicitement vers la nouvelle version. Un changement d’index ou de guide après préparation bloque cette reprise ; une base sans association n’en invente aucune. Ce circuit ne complète jamais le modèle métier depuis le backlog.
 
-Depuis U451, les comportements portent une forme principale dans `fields.nature` : politique/stratégie, variante de parcours, mécanisme, périmètre métier, dimension de raisonnement, effet métier ou pratique de planification. Chaque forme possède son pictogramme ; les types inconnus restent neutres. Les capacités contenues par les six référentiels conservent une icône propre au référentiel, déterminée par leur parent explicite. Les décisions restent en fin de liste avec leur séparation légère.
+Depuis U451, les comportements portent une forme principale dans `fields.nature` : politique/stratégie, variante de parcours, mécanisme, périmètre métier, dimension de raisonnement, effet métier ou pratique de planification. Chaque forme possède son pictogramme ; les types inconnus restent neutres. Les capacités contenues par les référentiels conservent une icône propre au référentiel, déterminée par leur parent explicite. Les décisions restent en fin de liste avec leur séparation légère.
 
 Contrôle U450 : `node app/verify-atlas-presentation.mjs` sur le serveur local compilé. Il vérifie guide, glossaires, anciens liens, défilement, mobile, sources internes masquées et icônes. Les sept formes sont également éprouvées avec une fixture de publication isolée dans le navigateur. Aucun fichier publié n’est modifié par ce contrôle.
 
@@ -237,15 +245,23 @@ Le guide conserve son association versionnée ; le simulateur de réalisations l
 
 Les liens de capacités des cartes affichent leur définition et la liste à puces de leurs comportements explicites, au survol comme au focus clavier. Le glossaire n’affiche plus de résumé redondant ; le champ historique reste dans les données et les anciens liens conduisent à la définition.
 
-Les fiches proposent un accès « Marché » et des comparaisons dépliables : nature du rapprochement, appui externe, points communs, différences, choix FLOW et source primaire. Les fiches sans comparaison indiquent un positionnement non documenté ; aucun badge standard ou innovation n’est inventé. Les limites de portée de la preuve restent utiles à la comparaison, distinctes des statuts de revue et réserves internes.
+Les fiches proposent un accès « Sources d’inspiration » et des comparaisons dépliables : nature du rapprochement, appui externe, points communs, différences, choix FLOW et source primaire. Les fiches sans comparaison indiquent un positionnement non documenté ; aucun badge standard ou innovation n’est inventé. Les limites de portée de la preuve restent utiles à la comparaison, distinctes des statuts de revue et réserves internes.
 
 ### Marché, choix de vocabulaire et exemples U462
 
-L’onglet **Marché & choix** est voisin de Carte, Fiche et Relations sur chaque élément sélectionné. Il affiche directement la position FLOW et la source primaire datée ; les explications de terme/définition passent en tête lorsqu’elles sont documentées. Les différences, passages et limites documentaires se déplient. Le glossaire utilise la même présentation. Les liens `view=market` sont partageables avec leur publication ; les anciens liens de fiche vers `market_comparisons` sont redirigés.
+L’onglet **Sources d’inspiration** est voisin de Carte, Fiche et Relations sur chaque élément sélectionné. Il affiche directement la position FLOW et la source primaire datée ; les explications de terme/définition passent en tête lorsqu’elles sont documentées. Les différences, passages et limites documentaires se déplient. Le glossaire utilise la même présentation. Les liens `view=market` sont partageables avec leur publication ; les anciens liens de fiche vers `market_comparisons` sont redirigés.
 
 La fiche place **Exemples concrets** après la définition. `fields.examples` permet situation, résultat et leçon métier. Les anciens périmètres restent lisibles par extraction des passages explicitement signalés comme exemples, y compris les exemples discutés et les marqueurs Markdown historiques. Sources internes et statuts restent privés. La recherche indexe seulement le contenu public des exemples et des raisons de vocabulaire.
 
-Contrôle courant : `node audits/2026-09-19-contenu-U462/verify-ui.mjs`, puis lecture des captures dans le sous-dossier horodaté annoncé. Lecture du serveur local, puis fixture isolée pour les contenus encore non publiés ; aucune mutation de la publication.
+Contrôle courant : `node app/verify-market.mjs`, puis lecture des captures dans `.runtime/verify-market/` sous le sous-dossier horodaté annoncé. Lecture du serveur local, puis fixture isolée pour les contenus encore non publiés ; aucune mutation de la publication.
+
+### Sources d’inspiration — lecture métier U475
+
+Lorsqu’une fiche ou un terme publié contient `market_inspiration`, l’onglet commence par le choix FLOW, puis compare les sources et FLOW dans un tableau **Source / Nom du concept / Périmètre / Approche**. La synthèse explique leurs similitudes et différences ; les exemples citent leur source externe et distinguent la lecture FLOW. Les liens vers les documents restent visibles, avec les précisions bibliographiques et les limites dans des détails dépliables.
+
+Le tableau reçoit les champs `concept_name`, `scope_summary` et `approach_summary` des comparaisons publiées. L’objet `market_inspiration` porte `choice`, `flow_scope`, `flow_approach`, `synthesis` et les `examples` avec `source_title` / `source_url`. La ligne FLOW prend le nom du nœud ou du terme consulté. La recherche indexe ces textes publics, sans les références internes ni les qualifications de travail. Cet objet n’est pas exposé comme un bloc brut dans la fiche.
+
+Les publications sans cet objet conservent la présentation par référence ; aucun complément ni résumé n’est récupéré dans le backlog. Sur petit écran, le tableau garde ses en-têtes et défile horizontalement dans une région accessible au clavier. La recette maintenue vérifie cette branche lorsqu’un exemple structuré existe dans sa fixture isolée.
 
 
 ## Allègement de la revue — U470
@@ -253,3 +269,8 @@ Contrôle courant : `node audits/2026-09-19-contenu-U462/verify-ui.mjs`, puis le
 Le catalogue Informations métier est temporairement masqué : pas de bouton de navigation, de section dans les fiches, de résultat ni de filtre de recherche. Un ancien lien `view=information` revient à la fiche de son nœud, ou à la carte, dans la même version. Les données publiées et le travail interne sont conservés ; ce masquage n’est pas un contrôle d’accès à l’API locale. Les composants internes sont conservés sans point d’entrée public.
 
 Les mots clés explicitement reliés au glossaire ouvrent une infobulle au survol et au focus clavier. Elle donne priorité à la définition complète, plutôt qu’au résumé court. U470 ajoute ces liens dans l’univers Supply ; leur disponibilité publique dépend du snapshot publié, sans repli backlog.
+
+
+## Origines des demandes et comportements — U501
+
+Les fiches affichent Frontoffice et Backoffice à partir des seules valeurs publiées de `fields.request_origins`, avec leur sens relatif au Domain. Les deux indicateurs peuvent coexister. Les comportements dotés de `fields.behavior_aspect` se lisent sous Déclenchement ou Activité ; ce regroupement est visuel et ne change pas leurs parents. Les fiches historiques sans ces métadonnées gardent leur lecture habituelle. Les libellés visibles sont recherchables dans le même snapshot. Tests ciblés : `node --test --test-isolation=none app/test-request-metadata.mjs app/test-reader-search.mjs app/test-behavior-types.mjs`.

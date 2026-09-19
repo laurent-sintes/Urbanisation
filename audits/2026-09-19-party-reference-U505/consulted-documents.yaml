@@ -1,0 +1,238 @@
+consulted_on: '2026-09-19'
+source_refs:
+- U505
+- U506
+documents:
+- element: ELM499
+  market: MKT13
+  vendor: SAP
+  product: S/4HANA — Purchasing
+  source_title: Creating Business Partners
+  source_url: https://learning.sap.com/courses/purchasing-in-sap-s-4hana/creating-business-partners
+  source_version: Cours web ; numéro de release non affiché
+  source_locator: Business Partner Concept ; Category ; Relationships ; Transactions and Apps
+  consulted_on: '2026-09-19'
+  finding: Identité commune, catégories Person/Organization/Group, relation de contact datable ; fonctions de recherche et
+    de consultation. Une Organization peut aussi être un département.
+  evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+- element: ELM500
+  market: MKT13
+  vendor: SAP
+  product: S/4HANA — Financial Accounting
+  source_title: Managing Business Partners
+  source_url: https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners
+  source_version: Cours web ; numéro de release non affiché
+  source_locator: Business Partner Categories ; Business Partner Roles ; Customer/Vendor Integration
+  consulted_on: '2026-09-19'
+  finding: Le rôle correspond au contexte métier. Un même Business Partner peut être Customer et Supplier ; les données centrales
+    d’identité sont partagées.
+  evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+- element: ELM501
+  market: MKT74
+  vendor: Informatica
+  product: MDM — Customer 360
+  source_title: Customer 360 10.4 HotFix 1 — Release Guide
+  source_url: https://docs.informatica.com/content/dam/source/GUID-A/GUID-A22D277C-F828-4A24-BB5F-1B1E45148FCB/6/en/C360_104HF1_ReleaseGuide_en.pdf
+  source_version: 10.4 HotFix 1 ; changement décrit pour 10.2 HotFix 2
+  source_locator: Chapitre 5, Changes / Data Model, p. 18
+  consulted_on: '2026-09-19'
+  finding: Les nouvelles installations à partir de 10.2 HotFix 2 utilisent Party, pour personne ou organisation ; les installations
+    antérieures peuvent conserver le modèle Party Role.
+  evidence_limits: Passage primaire indexé consulté ; ouverture directe du PDF en erreur. Référence historique, pas preuve
+    d’une métaclasse Party Role dans le SaaS actuel ni de disparition des rôles métier.
+- element: ELM502
+  market: MKT74
+  vendor: Informatica
+  product: MDM — Customer 360
+  source_title: Customer 360 10.3 HotFix 2 — Installation and Configuration Guide
+  source_url: https://docs.informatica.com/content/dam/source/GUID-0/GUID-07D6D3B1-8A97-4018-8B8E-B173622F08B8/5-1-1/en/C360_103HF2_InstallationAndConfigurationGuide_en.pdf
+  source_version: 10.3 HotFix 2
+  source_locator: Before You Upgrade / Migrating to the Data Model Based on the Party Table, p. 71
+  consulted_on: '2026-09-19'
+  finding: La migration du modèle fondé sur Party Role vers Party est documentée ; les installations antérieures peuvent conserver
+    leur modèle.
+  evidence_limits: Passage primaire indexé seulement ; guide intégral non consulté. Ne permet pas de conclure à la disparition
+    des rôles métier.
+- element: ELM503
+  market: MKT75
+  vendor: OMG
+  product: Commons Ontology Library
+  source_title: Commons Ontology Library 1.2
+  source_url: https://www.omg.org/spec/Commons/1.2/PDF
+  source_version: 1.2, février 2025, formal/25-02-03
+  source_locator: §8.14 tableau 8.28, pp. 80–82 ; §8.13 tableau 8.26, pp. 71–72 (pagination imprimée)
+  consulted_on: '2026-09-19'
+  finding: Party désigne une personne ou une organisation ; PartyRole qualifie sa participation contextuelle, éventuellement
+    temporaire. Party n’exige pas partout une personnalité juridique autonome.
+  evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+- element: ELM504
+  market: MKT67
+  vendor: EDM Council
+  product: FIBO — Foundations
+  source_title: Contracts Ontology
+  source_url: https://raw.githubusercontent.com/edmcouncil/fibo/master/FND/Agreements/Contracts.rdf
+  source_version: versionIRI FND/20260601
+  source_locator: Contract ; ContractParty ; ContractThirdParty ; hasContractParty
+  consulted_on: '2026-09-19'
+  finding: ContractParty est un PartyRole joué par une LegalPerson dans un accord contraignant ; ContractThirdParty distingue
+    une implication indirecte.
+  evidence_limits: Ontologie primaire consultée ; vocabulaire contractuel financier. Rapprochement sémantique sélectif, pas
+    qualification juridique automatique ni import du modèle financier.
+- element: ELM505
+  market: MKT67
+  vendor: EDM Council
+  product: FIBO — Business Entities
+  source_title: Legal Persons Ontology
+  source_url: https://raw.githubusercontent.com/edmcouncil/fibo/master/BE/LegalEntities/LegalPersons.rdf
+  source_version: versionIRI BE/20251201
+  source_locator: LegallyCompetentNaturalPerson
+  consulted_on: '2026-09-19'
+  finding: Une personne physique juridiquement capable est à la fois Person et LegalPerson ; LegalPerson ne se traduit donc
+    pas automatiquement par personne morale.
+  evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+- element: ELM506
+  market: MKT57
+  vendor: Martin Fowler
+  product: Analysis Patterns — Organization Structures
+  source_title: Organization Structures — Party
+  source_url: https://martinfowler.com/apsupp/accountability.pdf
+  source_version: Extrait auteur ; édition non explicitée
+  source_locator: Party, pp. 5–6
+  consulted_on: '2026-09-19'
+  finding: Party généralise Person et Organization ; les exemples comprennent départements et équipes informelles. Patron
+    de modélisation plus large que les personnes juridiquement autonomes.
+  evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+- element: ELM507
+  market: MKT74
+  vendor: Informatica
+  product: MDM — extension Agentforce
+  source_title: Connecting Master Data to Agentforce
+  source_url: https://www.informatica.com/content/dam/informatica-cxp/techtuesdays-slides-pdf/Connecting%20Master%20Data%20to%20Agentforce.pdf
+  source_version: Présentation du 10 mars 2026
+  source_locator: 'Diapositives 16–17 : Agentforce Actions ; CAI Processes and MDM APIs'
+  consulted_on: '2026-09-19'
+  finding: Identify Customer recherche Person et Organization ; Get Customer Profile et Get Customer Relationships consultent
+    profil et relations.
+  evidence_limits: Présentation officielle consultée ; fonctions exposées par une extension. Appui à la consultation, sans
+    reprendre l’IA, les données familiales ou la maîtrise centrale dans FLOW.
+- element: ELM423
+  market: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Product information overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+  source_version: Mise à jour du 1er juillet 2026
+  source_locator: Product masters and product variants ; Product variant model definition workspace ; Released product maintenance
+    workspace
+  consulted_on: '2026-09-19'
+  finding: Les dimensions aident à rechercher et identifier les variantes ; les espaces présentent les références et ouvrent
+    leur détail.
+  evidence_limits: Texte primaire relu. Le produit inclut création et maintenance ; seule la lecture est rapprochée de FLOW.
+- element: ELM508
+  market: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Product Information Management
+  source_title: How You Use the Product Information Management Work Area
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fapim/how-you-use-the-product-information-management-work-area.html
+  source_version: 26B
+  source_locator: Quick Search and Manage Items
+  consulted_on: '2026-09-19'
+  finding: Recherche d’articles et de catalogues, ouverture d’un résultat pour consulter ses attributs.
+  evidence_limits: Texte primaire consulté ; espace produit plus large que la seule consultation, sans réalisation locale
+    déduite.
+- element: ELM426
+  market: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Purchase agreements
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+  source_version: Mise à jour du 8 septembre 2026
+  source_locator: Introduction ; Commitment types ; Confirmations and version history for purchase agreements
+  consulted_on: '2026-09-19'
+  finding: Durées et engagements en quantité ou valeur ; consultation et impression des versions d’accord.
+  evidence_limits: Texte primaire relu. Les calculs de consommation et reliquat décrits ailleurs sur la page ne sont pas repris
+    dans Visibility.
+- element: ELM509
+  market: MKT20
+  vendor: Oracle
+  product: Fusion Cloud — Enterprise Contracts
+  source_title: Contracts Search Options
+  source_url: https://docs.oracle.com/en/cloud/saas/sales/facup/contracts-search-options.html
+  source_version: Documentation évolutive ; édition non affichée
+  source_locator: Search by Enterprise Contract Attributes ; Search Contracts by Text ; Search Contracts with Global Search
+  consulted_on: '2026-09-19'
+  finding: Recherche par numéro, partie, attributs ou texte, puis ouverture des contrats et documents.
+  evidence_limits: Texte primaire consulté. La recherche textuelle dépend de la configuration et des habilitations ; aucun
+    choix de moteur ou d’interface imposé.
+- element: ELM391
+  market: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Create Commerce catalogs for B2B sites
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+  source_version: Mise à jour du 21 janvier 2026 ; 10.0.27 et versions ultérieures
+  source_locator: Catalog configuration ; Set attribute metadata ; dates ; customer hierarchies ; price groups
+  consulted_on: '2026-09-19'
+  finding: Attributs visibles, recherchables et filtrables ; contenu et conditions d’applicabilité du catalogue.
+  evidence_limits: Texte primaire relu ; consultation seule retenue, pas administration commerciale ni ouverture du chantier
+    Domain Commerce.
+- element: ELM510
+  market: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Catalog picker module
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalog-picker
+  source_version: Mise à jour du 21 janvier 2026
+  source_locator: Introduction ; accès depuis le compte client
+  consulted_on: '2026-09-19'
+  finding: Liste des catalogues accessibles à l’utilisateur B2B et navigation vers leur contenu.
+  evidence_limits: Texte primaire consulté. Illustration de consultation ; ne prescrit pas une interface ni une capacité par
+    composant. Deux documents Microsoft ne prouvent pas un consensus interéditeurs.
+- element: ELM511
+  market: MKT42
+  vendor: GS1 US
+  product: Data Hub — Location
+  source_title: Location View/Use Instructions
+  source_url: https://www.help.gs1us.org/location-view-use
+  source_version: Documentation évolutive ; édition non affichée
+  source_locator: View Shared GLNs ; filtres de recherche ; Search for Multiple GLNs at Once
+  consulted_on: '2026-09-19'
+  finding: Recherche et consultation de lieux partagés par GLN ou nom, attributs et filtres.
+  evidence_limits: Texte primaire consulté ; accès soumis au partage et parfois à une option. Appui limité aux lieux, sans
+    identification GLN imposée ni topologie Supply complète démontrée.
+- element: ELM512
+  market: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Inventory locations
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-locations
+  source_version: Mise à jour du 1er juillet 2026
+  source_locator: Location properties ; Tree structure
+  consulted_on: '2026-09-19'
+  finding: Caractéristiques des emplacements et consultation de leur organisation arborescente.
+  evidence_limits: Texte primaire consulté ; module Inventory Management sans Warehouse Management. Échelle intrentrepôt plus
+    fine que le réseau FLOW ; aucune couverture complète de ses liaisons déduite.
+- element: ELM513
+  market: MKT19
+  vendor: TM Forum
+  product: ODA — TMFC006
+  source_title: Service Catalog Management v1.2.0
+  source_url: https://oda-production.s3.eu-west-2.amazonaws.com/v1.0.0/TMFC006_Service_Catalog_Management_v1.2.0.pdf
+  source_version: 1.2.0, approuvé le 26 novembre 2024, Production/GA
+  source_locator: §1 Overview, p. 5
+  consulted_on: '2026-09-19'
+  finding: Recherche de services et accès organisé aux spécifications ; distinction de vues client et technique.
+  evidence_limits: PDF primaire consulté. Composant télécom comprenant aussi conception et cycle de vie ; ces responsabilités
+    ne sont pas importées dans la consultation FLOW.
+- element: ELM514
+  market: MKT76
+  vendor: ServiceNow
+  product: Service Portal
+  source_title: Catalog Homepage Search widget
+  source_url: https://www.servicenow.com/docs/r/platform-user-interface/service-portal/cat-homepage-search-widget.html
+  source_version: Australia ; mise à jour du 12 mars 2026
+  source_locator: Using the widget
+  consulted_on: '2026-09-19'
+  finding: Recherche par mots-clés et parcours des catégories d’un catalogue.
+  evidence_limits: Texte primaire consulté ; analogie de consultation uniquement. Le catalogue de demandes ServiceNow n’est
+    pas assimilé aux Backing Services de FLOW, ni au périmètre de D14.

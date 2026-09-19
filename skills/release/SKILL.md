@@ -9,6 +9,36 @@ Explorer et construire se fait dans le **backlog**. Une invocation de `$release`
 
 Situer le projet courant par `AGENTS.md`, `modeles/backlog/model.yaml` et `scripts/prepare_release.py` ; à défaut, utiliser `C:/Dev/Beaumanoir Cartographie`. Les chemins ci-dessous sont relatifs à cette racine, et non au dossier personnel du skill. Lire les règles de `AGENTS.md`, `modeles/README.md` et les corrections pertinentes de `connaissance/04-corrections.md`.
 
+## Parcours courant — U504
+
+Après avoir enregistré la demande de publication et actualisé les sources si nécessaire, utiliser directement :
+
+```powershell
+python scripts/release.py --source SOURCE --activate
+```
+
+Le parcours construit le candidat une fois, reprend les accords dont valeurs et contexte métier sont identiques, puis prépare, publie, vérifie le snapshot servi par Atlas et produit les restitutions et le compte rendu chronométré dans `.runtime/release-runs/VERSION/`. Sans `--activate`, il s’arrête après préparation. Il ne lance ni navigateur, ni commit, ni push et ne redémarre aucun serveur. Ne pas ajouter systématiquement un rapport préalable, un build, un audit historique ou les mêmes contrôles manuels.
+
+`needs_review` fournit un dossier sous `.runtime/release-reviews/VERSION/`. Lire les seuls éléments signalés avec `prepare_release.py inspect DOSSIER --section review --id ID`, renseigner `assessment.yaml`, puis reprendre :
+
+```powershell
+python scripts/release.py --version VERSION --source SOURCE --review DOSSIER --activate
+```
+
+`blocked` conserve un rapport d’erreurs à corriger. `publication_incomplete` conserve des artefacts non activés : diagnostiquer précisément, sans réécriture ni reprise automatique aveugle. `published_checks_failed` signifie que la publication existe mais qu’un contrôle reste en échec : ne pas republier. Après correction de la disponibilité, reprendre la même version et la même source ; le parcours vérifie sans republier. Une préparation existante se reprend avec sa version et sa source, sans nouvelles entrées ; elle reste soumise aux contrôles de fraîcheur et d’intégrité.
+
+Un nouveau guide explicite peut être fourni par `--guide CHEMIN_YAML`. Sa version doit être neuve ; texte, sources, empreinte et association sont préparés avec la release. Aucun remplacement silencieux d’un guide historique ni reconstruction automatique de son texte. Sans cette option, l’association figée précédente est conservée.
+
+## Préparer les accords au moment de leur validation
+
+Après un accord métier explicite, enregistrer immédiatement sa portée, après les éditions correspondant à cet accord, avec `scripts/record_decision.py`. Ne choisir que les champs réellement présentés et acceptés ; aucune déduction automatique depuis `lifecycle` ou une demande de publication.
+
+```powershell
+python scripts/record_decision.py --id ADOPT-SOURCE-OBJET --collection nodes --target ID --fields name --source SOURCE --author Laurent --decided-at YYYY-MM-DD --interpretation explicit --reviewer Codex --note "Portée exacte de l’accord"
+```
+
+Répéter `--fields` et `--source` au besoin. Le registre YAML `modeles/backlog/decision-intents.yaml` capture les valeurs et le contexte sans imposer une version de release. La préparation matérialise l’accord sur la révision finale ; une intention périmée bloque au lieu de valider un contexte changé. Les entrées déjà publiées restent des preuves et ne réactivent pas un ancien accord. Le registre n’est pas un second modèle ; il ne modifie ni les champs métier ni leur lifecycle.
+
 ## Évaluer les évolutions
 
 Enregistrer d’abord les nouveaux apports utilisateur selon les règles du projet. Si nécessaire, actualiser uniquement l’index courant des sources :
@@ -39,7 +69,7 @@ Chaque publication produit une courte `release-notes.md` et un descripteur immua
 
 Corriger les incohérences établies dans le backlog, avec leurs sources ; les révisions sont calculées automatiquement. Regrouper les corrections, puis passer à la préparation finale si aucun réexamen intermédiaire n’est nécessaire : elle fournit son rapport complet et sa synthèse sans appel préalable supplémentaire à `report`. Après suspension d’une validation, vérifier aussi les notes narratives : un ancien commentaire « validé » doit être présenté comme historique et ne pas qualifier la nouvelle révision. Ne pas inventer de décision métier pour faire réussir un contrôle.
 
-Une validation antérieure est conservée automatiquement uniquement pour une même identité, une même révision et des valeurs approuvées inchangées. Un changement de révision ou de valeur suspend la reprise automatique ; l’accord historique reste conservé. Le rapport rend cette suspension visible. Une nouvelle validation exige une décision sourcée conforme au schéma, avec un nouvel identifiant, la version préparée et la portée réellement adoptée. Une décision sur un nom n’adopte pas la définition ni le rattachement. Les contenus qui restent proposés peuvent néanmoins être publiés.
+Une validation antérieure reste strictement limitée aux valeurs approuvées. Un changement de révision purement éditorial peut être reporté automatiquement si les valeurs, champs métier, relations, voisins, ancêtres, principes et termes liés restent sémantiquement identiques. Un changement de valeur, de contexte métier ou de champ inconnu exige un examen ; l’accord historique reste conservé. Le rapport rend cette suspension visible. Une nouvelle validation exige une décision sourcée conforme au schéma, avec un nouvel identifiant, la version préparée et la portée réellement adoptée. Une décision sur un nom n’adopte pas la définition ni le rattachement. Les contenus qui restent proposés peuvent néanmoins être publiés.
 
 Choisir une version neuve `YYYY-MM-DD.N`, en utilisant la disponibilité indiquée par le rapport. Remplacer `VERSION` et `SOURCE` ci-dessous par les valeurs réelles ; `SOURCE` désigne la contribution autorisant cette publication, pas simplement la demande de création du skill :
 
@@ -56,7 +86,7 @@ python scripts/prepare_release.py report --version VERSION --source SOURCE --rev
 python scripts/prepare_release.py inspect .runtime/review-VERSION --section review --id IDENTIFIANT --full
 ```
 
-Examiner les valeurs approuvées, leurs empreintes, les changements de fiche, de relations et du glossaire dans `review.json`, avec `inspect DOSSIER --section review-context` pour les changements globaux et `report.json` pour les autres éléments. Ces fichiers restent intacts. Compléter uniquement `assessment.yaml` : auteur du réexamen dans `reviewer`, puis `retain` ou `defer` et une justification de portée pour chaque entrée. Les choix commencent à `pending` ; l’éligibilité calculée ne vaut pas confirmation du sens. Ce réexamen peut être effectué par l’agent dans la portée déjà autorisée, comme pour les transcriptions antérieures ; une décision métier nouvelle ou complexe reste à arbitrer selon les instructions de Laurent. Aucun accord élargi par automatisation.
+Examiner les valeurs approuvées, leurs empreintes, les changements de fiche, de relations et du glossaire dans `review.json`, avec `inspect DOSSIER --section review-context` pour les changements globaux et `report.json` pour les autres éléments. Ces fichiers restent intacts. Compléter uniquement `assessment.yaml` : auteur du réexamen dans `reviewer`, puis `retain`, `retain_partial` ou `defer` et une justification de portée pour chaque entrée. `retain_partial` exige `approved_fields` : une liste explicite non vide des seuls champs historiques inchangés à reprendre ; aucun champ modifié ou nouveau n’est admissible. Les choix commencent à `pending` ; l’éligibilité calculée ne vaut pas confirmation du sens. Ce réexamen peut être effectué par l’agent dans la portée déjà autorisée, comme pour les transcriptions antérieures ; une décision métier nouvelle ou complexe reste à arbitrer selon les instructions de Laurent. Aucun accord élargi par automatisation.
 
 `prepare --version VERSION --source SOURCE --review .runtime/review-VERSION` construit le candidat final une seule fois et vérifie le dossier contre les entrées, le contrat, le code et la publication de départ. Une valeur approuvée modifiée ou retirée ne peut pas être transcrite. Les reprises conservent auteur, date, sources et champs de l’accord historique, sous de nouveaux identifiants ; les preuves sont figées avec la préparation puis archivées lors de la publication. Tout dossier périmé doit être régénéré après correction, sans retoucher ses empreintes.
 
@@ -68,7 +98,7 @@ La préparation écrit uniquement `modeles/staging/<version>/` : `report.json`, 
 
 Le glossaire courant `modeles/backlog/glossary.yaml` est une entrée publiée : le workflow l’intègre au snapshot, le fige et versionne ses termes. Examiner `glossary_changes` et `glossary_reference_impacts` : une définition modifiée peut affecter le sens d’un champ lié pourtant inchangé. Ces alertes demandent un examen de portée, sans créer une validation. Toute modification du glossaire après préparation exige de préparer à nouveau ; aucune ancienne release ne reçoit le glossaire vivant. Vérifier aussi la page Glossaire d’Atlas après publication lorsqu’il contient des termes.
 
-Si la demande couvre la publication, exécuter :
+Le parcours courant `scripts/release.py --source SOURCE --activate` regroupe publication et contrôles. Les commandes élémentaires restent disponibles pour diagnostic ciblé :
 
 ```powershell
 python scripts/prepare_release.py publish --version VERSION --activate
@@ -91,4 +121,4 @@ Si Atlas ne tourne pas, démarrer le serveur avec le skill `server-admin`, sans 
 
 En cas d’échec serveur, préserver la release publiée et indiquer séparément « release produite » et « Atlas indisponible », avec la cause constatée. Ne pas republier une nouvelle version pour contourner une panne serveur et ne pas interrompre un autre service occupant le port.
 
-Actualiser le journal et les liens documentaires devenus obsolètes ; signaler la version, les changements, les validations conservées ou à reprendre et l’état vérifié d’Atlas. Le backlog reste l’espace de travail du projet hors de l’interface. Ce cycle n’inclut aucun commit ou push Git.
+Le parcours regroupé actualise la restitution et ajoute une entrée factuelle au journal, sans doublon lors d’une reprise. La note figée et le compte rendu généré suffisent pour une release courante ; éviter un deuxième rapport manuel, une liste exhaustive d’empreintes historiques ou des compteurs recopiés dans plusieurs README. Signaler la version, les changements, les accords conservés ou à reprendre et l’état vérifié d’Atlas. Le backlog reste l’espace de travail du projet hors de l’interface. Ce cycle n’inclut aucun commit ou push Git.

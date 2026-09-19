@@ -1,0 +1,235 @@
+schema_version: '1.0'
+review_id: INTERNAL-SERVICE-REQUESTS-U499
+as_of: '2026-09-19'
+status: adopted_with_editorial_details
+source_refs:
+- U492
+- U496
+- U497
+- U499
+- U500
+- U265
+- U284
+- U397
+- U398
+- U399
+- ELM246
+- ELM495
+- ELM496
+- ELM498
+- CMP201
+- U501
+- CMP202
+target_area: D04
+canonical_changes:
+  capability: D04.s
+  behaviors:
+  - BHV088
+  - BHV089
+  - BHV090
+  - BHV091
+  - BHV092
+  - BHV093
+  new_relations:
+  - REL-MEMBER-D04.s
+  - REL-MEMBER-BHV088
+  - REL-MEMBER-BHV089
+  - REL-MEMBER-BHV090
+  - REL-MEMBER-BHV091
+  - REL-MEMBER-BHV092
+  - REL-MEMBER-BHV093
+  - REL-BACKLOG-REQUEST-PLANNING
+  - REL-BACKLOG-REQUEST-DECISION
+  - REL-BACKLOG-REQUEST-ASSIGNMENT
+proposal:
+  name: Order Backlog Optimization Request
+  definition: Prendre en charge une demande de réexamen du carnet, préciser son objectif, son périmètre et ses contraintes,
+    et suivre les scénarios étudiés, les décisions prises et les suites autorisées.
+  naming_status: Nom FLOW proposé, construit à partir du vocabulaire du carnet et de l’optimisation ; aucun intitulé de marché
+    exactement équivalent revendiqué.
+  purpose: Donner une existence métier suivie aux travaux d’optimisation internes, avec possibilité de conclure une étude
+    sans appliquer de changement.
+  example:
+    status: fictional_proposed
+    trigger: Un retard fournisseur rend plusieurs promesses difficiles à tenir.
+    origin: Backoffice
+    request: Réexaminer les commandes concernées, comparer les solutions et faire prendre en compte le résultat autorisé.
+    distinction: Le retard fournisseur est un événement externe ; l’initiative de réoptimisation est interne au Domain.
+  decomposition_rationale: Les modes de déclenchement déterminent pourquoi et sur quel périmètre le travail est engagé ; les
+    activités distinguent exploration sans effet opérationnel, autorisation et prise en compte du résultat. Ces différences
+    peuvent justifier des comportements propres à cette demande même lorsque leur traitement mobilise d’autres capacités.
+    La liste ci-dessous reste à arbitrer et ne définit pas un parcours obligatoire.
+  behavior_views:
+  - angle: Déclenchement
+    candidates:
+    - name: Exception-Driven Backlog Review
+      meaning: Qualifier une promesse menacée, une pénurie ou un retard, puis engager le réexamen du périmètre concerné.
+      benefit: Cibler les situations qui justifient une nouvelle prise en charge, sans ouvrir une demande à chaque événement.
+    - name: Periodic Backlog Review
+      meaning: Engager une revue régulière du carnet pour tenir compte des ressources, priorités et besoins actualisés.
+      benefit: Réexaminer la cohérence d’ensemble au-delà des seules alertes ponctuelles.
+    - name: Requested Backlog Study
+      meaning: Prendre en charge une étude explicitement demandée sur un périmètre, un objectif ou une hypothèse.
+      benefit: Permettre une exploration volontaire sans l’assimiler à une anomalie ou une activation automatique.
+  - angle: Activité
+    candidates:
+    - name: Simulation & Analysis
+      meaning: Faire instruire les scénarios de la demande, comparer leurs effets et conserver les conclusions, y compris
+        si aucun changement n’est retenu.
+      benefit: Distinguer la connaissance produite de la mise en application ; analyse et simulation restent un seul comportement.
+    - name: Scenario Authorization
+      meaning: Déterminer si le scénario proposé peut être appliqué, doit être revu ou doit être abandonné, en conservant
+        les conditions et la décision.
+      benefit: Rendre explicite l’engagement à appliquer les résultats et ses conditions, avec intervention humaine ou politique
+        déléguée selon le cas.
+    - name: Plan Activation Follow-up
+      meaning: Solliciter l’application autorisée et recueillir son résultat, ses écarts ou son impossibilité pour faire progresser
+        la demande.
+      benefit: Distinguer scénario autorisé et changement effectivement pris en compte, sans reprendre la réalisation des
+        affectations ou les prestations physiques.
+  behavior_limits:
+  - Déclenchement et activité sont deux angles de lecture, pas deux niveaux sous la capacité ni une nouvelle typologie globale
+    adoptée.
+  - Les candidats sont à justifier individuellement ; une opération, une étape, un bouton, une interface ou un statut ne suffit
+    pas à créer un comportement.
+  - U397/U398 demandent de décrire les comportements propres à chaque famille, même lorsque plusieurs familles mobilisent
+    les mêmes capacités.
+  - Le cadrage, la validation ou le suivi peuvent être décrits sans devenir systématiquement des nœuds distincts. Aucun audit
+    clos rouvert.
+  - Une étude peut se clore sans application ; une politique déléguée peut autoriser l’application sans approbation humaine
+    systématique.
+  - Les règles d’autorisation de cette demande ne sont pas déduites automatiquement d’Order Release ou des modes de publication
+    Oracle.
+  responsibilities:
+  - id: D03.p
+    name: Order Backlog Planning
+    role: Construire, examiner et maintenir les scénarios de satisfaction du carnet.
+  - id: D03.o
+    name: Fulfillment Plan Decision
+    role: Déterminer un scénario cohérent et ses arbitrages.
+  - id: D02.e
+    name: Supply Assignment
+    role: Matérialiser et maintenir les affectations autorisées.
+  other_request_candidates:
+  - name: Inventory Rebalancing Request
+    purpose: Étudier et faire prendre en charge un rééquilibrage de stock ; les Transfer Orders éventuellement produits gardent
+      leur identité.
+    limit: Articulation avec Inventory Planning et Stock Redistribution Decision à instruire ; pas de nouvelle capacité créée.
+  - name: Stock Verification Request
+    purpose: Faire vérifier une situation de stock douteuse et suivre la conclusion.
+    limit: Articulation avec Stocktaking à examiner pour éviter une duplication de sa responsabilité actuelle de demande et
+      de traitement des constats.
+origin_indicator_U500:
+  status: proposed_design
+  reference_boundary: Domain métier ; ni entreprise entière, ni application, ni service d’organisation.
+  values:
+  - label: Frontoffice
+    meaning: La sollicitation est initiée à l’extérieur du Domain.
+  - label: Backoffice
+    meaning: La sollicitation est initiée à l’intérieur du Domain.
+  cardinality: Une ou deux origines possibles par famille ; les indicateurs ne sont pas exclusifs.
+  examples:
+  - request: Transfer Order
+    indicators:
+    - Frontoffice
+    - Backoffice
+    evidence: U492 admet explicitement les deux origines.
+  - request: Order Backlog Optimization Request
+    indicators:
+    - Backoffice
+    evidence: Cas interne étudié en U490/U491/U499 ; qualification de la proposition, sans interdire une variante future motivée
+      par une sollicitation extérieure.
+  distinctions:
+  - Au niveau capacité, qualifier les origines prises en charge par cette famille ; pour une demande concrète, conserver son
+    initiateur effectif.
+  - La provenance d’un événement ne détermine pas l’origine de la demande créée en réponse.
+  - Déclenchement manuel, périodique ou événementiel est un axe distinct ; une demande interne peut être créée par une personne
+    ou par une règle.
+  - La qualification vise les capacités qui portent une demande ; elle ne se déduit pas automatiquement du parent D04 ou du
+    mot Management.
+  - Les origines non étudiées restent non qualifiées ; aucun classement global implicite.
+  market_position: Salesforce documente des demandes internes suivies, mais les sources consultées ne prescrivent pas une
+    classification universelle Frontoffice/Backoffice par rapport à un Domain FLOW. Le sens précis et le caractère non exclusif
+    sont notre convention proposée à partir de U500/U492.
+sources:
+- reference: ELM246
+  vendor: Oracle
+  title: Start Backlog Planning
+  edition: 26B
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  consulted_on: '2026-09-19'
+  locator: Introduction ; When to Use ; Specifications
+  finding: Lancement à la demande ou programmé ; réexamen du carnet entier ou d’un sous-ensemble avec les données collectées
+    actualisées.
+  limit: Modes de lancement d’un traitement ; pas une taxonomie de comportements ou de demandes internes imposée.
+- reference: ELM496
+  vendor: Oracle
+  title: Overview of Backlog Management Processes
+  edition: 25D
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/overview-of-backlog-management-processes.html
+  consulted_on: '2026-09-19'
+  locator: Les quatre activités ; distinction Planned / Release
+  finding: Planification, examen, simulation puis publication des résultats ; les simulations ne changent pas la planification
+    effective avant leur publication.
+  limit: La publication Oracle transmet les résultats à Order Management ; elle n’équivaut pas à toutes les activations ou
+    autorisations FLOW.
+- reference: ELM495
+  vendor: SAP
+  title: EDQA Event-Driven Quantity Assignment
+  edition: SAP APO ; page Support Content sans numéro d’édition précisé
+  url: https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+  consulted_on: '2026-09-19'
+  locator: EDQA ; activities triggering the process ; selection criteria
+  finding: Les changements de données de stock et de documents peuvent déclencher un traitement d’affectation avec critères
+    de sélection et règles de distribution.
+  limit: Périmètre SAP APO historique ; ne prouve pas le même mécanisme dans S/4HANA ni une famille nommée Order Backlog Optimization
+    Request.
+- reference: ELM498
+  vendor: Salesforce
+  title: Explore Service Requests and Resolutions
+  edition: Agentforce IT Service ; cours évolutif sans édition précisée
+  url: https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions
+  consulted_on: '2026-09-19'
+  locator: Service Requests ; Request Tracking ; Resolving Requests
+  finding: Demandes internes avec suivi, approbation éventuelle et traitement jusqu’à clôture.
+  limit: Appui déjà consulté en CMP199 ; pas de classification native universelle Frontoffice/Backoffice ni de périmètre Supply.
+adoption_U501:
+  source_ref: U501
+  capability:
+    id: D04.s
+    name: Order Backlog Optimization Request
+    request_origins:
+    - backoffice
+  transfer_order_origins:
+  - frontoffice
+  - backoffice
+  behaviors:
+  - id: BHV088
+    name: Exception-Driven Backlog Review
+    aspect: trigger
+    definition_presented: Engager une reprise ciblée après une pénurie, un retard ou une promesse menacée.
+  - id: BHV089
+    name: Periodic Backlog Review
+    aspect: trigger
+    definition_presented: Réexaminer le carnet avec les ressources, besoins et priorités actualisés.
+  - id: BHV090
+    name: Requested Backlog Study
+    aspect: trigger
+    definition_presented: Explorer volontairement un périmètre ou une hypothèse.
+  - id: BHV091
+    name: Simulation & Analysis
+    aspect: activity
+    definition_presented: Comparer les scénarios et leurs conséquences, avec possibilité de conclure sans appliquer.
+  - id: BHV092
+    name: Scenario Authorization
+    aspect: activity
+    definition_presented: Retenir, faire revoir ou abandonner une proposition et préciser ses conditions d’application.
+  - id: BHV093
+    name: Plan Activation Follow-up
+    aspect: activity
+    definition_presented: Faire appliquer le résultat autorisé et connaître sa prise en compte ou ses écarts.
+  scope: Six sens et rattachements présentés adoptés ; indicateurs non exclusifs relatifs au Domain ; trois coopérations Planning/Decision/Assignment
+    explicites.
+  editorial_details: Traductions anglaises non présentées, définitions complémentaires, natures, finalités, limites, illustrations
+    et comparaisons restent identifiées comme éditoriales. Les nouveaux types de demandes supplémentaires ne sont pas créés.
+  publication_requested: false

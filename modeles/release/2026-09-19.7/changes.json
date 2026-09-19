@@ -1,0 +1,1109 @@
+{
+  "schema_version": "1.0.0",
+  "base_version": "2026-09-19.6",
+  "candidate_version": "2026-09-19.7",
+  "element_version_changes": [
+    {
+      "collection": "nodes",
+      "id": "universe-supply",
+      "revision": 5,
+      "last_modified": "2026-09-19T13:51:52.489356Z",
+      "reason": "changed"
+    }
+  ],
+  "glossary_reference_impacts": [],
+  "publication_is_business_validation": false,
+  "glossary_changes": [],
+  "changes": {
+    "nodes": {
+      "added": [],
+      "removed": [],
+      "modified": [
+        {
+          "id": "universe-supply",
+          "changes": [
+            {
+              "path": "/adoption_ids",
+              "before": [
+                "ADOPT-U473-UNCHANGED-001"
+              ],
+              "after": [
+                "ADOPT-REASSESS-d8ad27dd4b99d1b0ac42adce",
+                "ADOPT-U475-SUPPLY-INSPIRATION"
+              ]
+            },
+            {
+              "path": "/approved_fields",
+              "before": [
+                "name"
+              ],
+              "after": [
+                "market_inspiration",
+                "name"
+              ]
+            },
+            {
+              "path": "/content_sha256",
+              "before": "9b06007941d00ee8a713891ebc47cc935114ea38531da8ba34e593e7e8b7a28b",
+              "after": "e705f88d6262fd1354766c3c2f119a29dbd4d2bba068702a51df3331be9a0ada"
+            },
+            {
+              "path": "/fields/market_comparisons",
+              "before": [
+                {
+                  "vendor": "CSCMP",
+                  "product": "Définitions professionnelles",
+                  "element_name": "SCM Definitions and Glossary of Terms",
+                  "element_type": "Définition professionnelle",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "Le SCM inclut coordination des partenaires, approvisionnement, transformation et logistique.",
+                  "differences": "Ce périmètre professionnel est plus large que l’univers FLOW ; SCM ne désigne pas seulement son noyau d’orchestration.",
+                  "flow_position": "Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.",
+                  "term_choice": "Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.",
+                  "definition_choice": "Le choix répond au périmètre client : référentiels maîtres externes et réalisation physique confiée aux exécutants. Ce découpage est local, pas imposé par CSCMP.",
+                  "source_title": "SCM Definitions and Glossary of Terms",
+                  "source_url": "https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx",
+                  "source_version": "Page sans édition affichée",
+                  "source_locator": "Definition of Supply Chain Management ; Boundaries and Relationships",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM292",
+                    "CMP185"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite."
+                },
+                {
+                  "vendor": "Microsoft",
+                  "product": "Dynamics 365 Supply Chain Management",
+                  "element_name": "Welcome to Dynamics 365 Supply Chain Management",
+                  "element_type": "Périmètre de produit",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "La suite couvre notamment produits, stocks, planification, achats, production et entrepôts.",
+                  "differences": "FLOW ne reprend pas le périmètre complet d’une suite SCM : administration des maîtres et opérations physiques restent à l’extérieur.",
+                  "flow_position": "Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.",
+                  "term_choice": "Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.",
+                  "definition_choice": "Les référentiels Supply sont des projections reçues par ingestion ; ce choix concentre l’univers sur la coordination sans nier ses responsabilités de commandes et de stocks.",
+                  "source_title": "Welcome to Dynamics 365 Supply Chain Management",
+                  "source_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome",
+                  "source_version": "Page mise à jour le 10 septembre 2025",
+                  "source_locator": "Core concepts and tasks",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM293",
+                    "CMP185"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite."
+                },
+                {
+                  "vendor": "Oracle",
+                  "product": "Fusion Cloud Supply Chain Orchestration",
+                  "element_name": "Overview of Supply Chain Orchestration",
+                  "element_type": "Fonction produit documentée",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "Le produit reçoit des demandes et coordonne leur approvisionnement et leurs changements.",
+                  "differences": "Le module Oracle coopère avec Promising, Inventory et Order Management ; l’univers FLOW regroupe aussi des responsabilités que ces produits portent séparément.",
+                  "flow_position": "Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.",
+                  "term_choice": "Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.",
+                  "definition_choice": "Le nom met l’accent sur la coordination des engagements et des moyens de les satisfaire ; il ne signifie ni adoption du module Oracle ni équivalence de catalogue.",
+                  "source_title": "Overview of Supply Chain Orchestration",
+                  "source_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html",
+                  "source_version": "26B",
+                  "source_locator": "Introduction ; receive requests, create supply orders, manage changes ; drop shipment",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM294",
+                    "CMP185"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite."
+                }
+              ],
+              "after": [
+                {
+                  "vendor": "Zacharia, Sanders et Nix",
+                  "product": "Recherche — Journal of Business Logistics",
+                  "element_name": "The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator",
+                  "element_type": "Article scientifique",
+                  "relationship": "Appui sémantique et recouvrement partiel",
+                  "similarities": "L’orchestration coordonne un réseau de partenaires et facilite leur coopération par le partage de l’information.",
+                  "differences": "L’article étudie le rôle d’un prestataire logistique coordonnant plusieurs entreprises. FLOW décrit des responsabilités métier sans imposer ce prestataire ni cette organisation.",
+                  "flow_position": "La finalité de coordination éclaire notre choix de vocabulaire ; le périmètre FLOW reste défini par ses responsabilités propres.",
+                  "term_choice": "Orchestrator atteste un usage scientifique de la notion d’orchestration, distinct d’un nom de logiciel.",
+                  "definition_choice": "Décrire les responsabilités et leur coopération sans présupposer l’acteur qui les réalisera.",
+                  "concept_name": "Orchestrator",
+                  "scope_summary": "Un prestataire logistique coordonne plusieurs entreprises.",
+                  "approach_summary": "Partager l’information et organiser la coopération entre partenaires. L’article étudie un rôle d’acteur.",
+                  "source_title": "The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator",
+                  "source_url": "https://bpb-us-w2.wpmucdn.com/wordpress.lehigh.edu/dist/e/653/files/2018/01/Zacharia-JBL-3PL-Orchestrator-Role-2011-27dqkbl.pdf",
+                  "source_version": "Journal of Business Logistics, 2011, 32(1), 40–54 ; DOI 10.1111/j.2158-1592.2011.01004.x",
+                  "source_locator": "Introduction p. 40 ; modèle p. 45 ; exemples p. 48–49 ; limites p. 50.",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U474",
+                    "U475",
+                    "MKT55",
+                    "ELM325",
+                    "CMP188"
+                  ],
+                  "evidence_limits": "Entretiens dans un seul prestataire spécialisé transport. Cet appui ne définit pas un consensus scientifique ni un catalogue équivalent à FLOW ; aucune réalisation installée déduite."
+                },
+                {
+                  "vendor": "ASCM",
+                  "product": "SCOR Digital Standard — référentiel professionnel",
+                  "element_name": "Orchestrate",
+                  "element_type": "Processus de référence",
+                  "relationship": "Appui sémantique et recouvrement partiel",
+                  "similarities": "Le référentiel relie la coordination des acteurs, les règles et la performance de la chaîne.",
+                  "differences": "Orchestrate dans SCOR comprend notamment stratégie, risques et ressources. FLOW se concentre sur commandes, stocks, engagements, optimisation et coordination de la réalisation.",
+                  "flow_position": "SCOR éclaire la coopération entre acteurs sans imposer à FLOW son découpage en processus ni toute sa gouvernance.",
+                  "term_choice": "Orchestrate est un usage professionnel du vocabulaire d’orchestration ; ce nom ne suffit pas à établir une équivalence.",
+                  "definition_choice": "Conserver la responsabilité de coordination au périmètre FLOW sans reprendre l’ensemble de la stratégie et de la gouvernance décrites par SCOR.",
+                  "concept_name": "Orchestrate",
+                  "scope_summary": "Inclut stratégie, règles, risques, ressources et performance.",
+                  "approach_summary": "Structurer et améliorer le fonctionnement de la chaîne.",
+                  "source_title": "The SCOR Digital Standard (SCOR DS)",
+                  "source_url": "https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/",
+                  "source_version": "Page sans numéro d’édition affiché",
+                  "source_locator": "Présentation du référentiel et définitions Orchestrate, Plan, Order, Source, Transform, Fulfill et Return, texte primaire restitué par l’index de recherche.",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U474",
+                    "U475",
+                    "MKT56",
+                    "ELM326",
+                    "CMP188"
+                  ],
+                  "evidence_limits": "L’ouverture directe a renvoyé 403 ; lecture limitée au texte de la page primaire restitué par l’index de recherche. Le standard complet n’a pas été audité. Aucune conformité SCOR, équivalence de catalogue ou réalisation installée déduite."
+                },
+                {
+                  "vendor": "CSCMP",
+                  "product": "Définitions professionnelles",
+                  "element_name": "SCM Definitions and Glossary of Terms",
+                  "element_type": "Définition professionnelle",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "Le SCM inclut coordination des partenaires, approvisionnement, transformation et logistique.",
+                  "differences": "Ce périmètre professionnel est plus large que l’univers FLOW ; SCM ne désigne pas seulement son noyau d’orchestration.",
+                  "flow_position": "Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.",
+                  "term_choice": "Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.",
+                  "definition_choice": "Le choix répond au périmètre client : référentiels maîtres externes et réalisation physique confiée aux exécutants. Ce découpage est local, pas imposé par CSCMP.",
+                  "source_title": "SCM Definitions and Glossary of Terms",
+                  "source_url": "https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx",
+                  "source_version": "Page sans édition affichée",
+                  "source_locator": "Definition of Supply Chain Management ; Boundaries and Relationships",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM292",
+                    "CMP185",
+                    "U474",
+                    "U475",
+                    "CMP188"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite.",
+                  "concept_name": "Supply Chain Management",
+                  "scope_summary": "Approvisionnement, transformation, logistique et coordination des partenaires.",
+                  "approach_summary": "Définir la discipline dans son ensemble."
+                },
+                {
+                  "vendor": "Microsoft",
+                  "product": "Dynamics 365 Supply Chain Management",
+                  "element_name": "Welcome to Dynamics 365 Supply Chain Management",
+                  "element_type": "Périmètre de produit",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "La suite couvre notamment produits, stocks, planification, achats, production et entrepôts.",
+                  "differences": "FLOW ne reprend pas le périmètre complet d’une suite SCM : administration des maîtres et opérations physiques restent à l’extérieur.",
+                  "flow_position": "Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.",
+                  "term_choice": "Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.",
+                  "definition_choice": "Les référentiels Supply sont des projections reçues par ingestion ; ce choix concentre l’univers sur la coordination sans nier ses responsabilités de commandes et de stocks.",
+                  "source_title": "Welcome to Dynamics 365 Supply Chain Management",
+                  "source_url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome",
+                  "source_version": "Page mise à jour le 10 septembre 2025",
+                  "source_locator": "Core concepts and tasks",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM293",
+                    "CMP185",
+                    "U474",
+                    "U475",
+                    "CMP188"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite.",
+                  "concept_name": "Supply Chain Management",
+                  "scope_summary": "Produits, stocks, achats, planification, production, entrepôts et transport.",
+                  "approach_summary": "Réunir ces fonctions dans une suite logicielle."
+                },
+                {
+                  "vendor": "Oracle",
+                  "product": "Fusion Cloud Supply Chain Orchestration",
+                  "element_name": "Overview of Supply Chain Orchestration",
+                  "element_type": "Fonction produit documentée",
+                  "relationship": "Recouvrement partiel",
+                  "similarities": "Le produit reçoit des demandes et coordonne leur approvisionnement et leurs changements.",
+                  "differences": "Le module Oracle coopère avec Promising, Inventory et Order Management ; l’univers FLOW regroupe aussi des responsabilités que ces produits portent séparément.",
+                  "flow_position": "Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.",
+                  "term_choice": "Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.",
+                  "definition_choice": "Le nom met l’accent sur la coordination des engagements et des moyens de les satisfaire ; il ne signifie ni adoption du module Oracle ni équivalence de catalogue.",
+                  "source_title": "Overview of Supply Chain Orchestration",
+                  "source_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html",
+                  "source_version": "26B",
+                  "source_locator": "Introduction ; receive requests, create supply orders, manage changes ; drop shipment",
+                  "consulted_on": "2026-09-19",
+                  "status": "proposed",
+                  "source_refs": [
+                    "U470",
+                    "U471",
+                    "ELM294",
+                    "CMP185",
+                    "U474",
+                    "U475",
+                    "CMP188"
+                  ],
+                  "evidence_limits": "Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue, choix de solution ni réalisation Beaumanoir déduite.",
+                  "concept_name": "Supply Chain Orchestration",
+                  "scope_summary": "Coordonner les approvisionnements et leurs changements en réponse aux demandes.",
+                  "approach_summary": "Faire coopérer plusieurs applications pour satisfaire les demandes."
+                }
+              ]
+            },
+            {
+              "path": "/fields/market_inspiration",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": {
+                "choice": "Nous appelons cet univers Supply Chain Orchestration parce qu’il organise comment satisfaire les demandes : quelles quantités fournir, depuis où, à quelle date et avec quels moyens. Il coordonne les [commandes](glossary:TER012), les [stocks](glossary:TER005), les engagements et les prestations, tandis que les applications de référence gèrent les données produit et partenaires, et que les entrepôts et transporteurs réalisent les opérations physiques.",
+                "flow_scope": "Commandes, stocks, engagements, optimisation et coordination de la réalisation.",
+                "flow_approach": "Décrire les responsabilités métier et leur coopération, indépendamment des outils.",
+                "synthesis": [
+                  "CSCMP et Microsoft utilisent un nom large, pour une discipline et une suite logicielle respectivement. Notre périmètre est plus ciblé, notamment parce que la gestion des données de référence et la réalisation physique restent chez les responsables concernés.",
+                  "La recherche et SCOR éclairent la coopération entre acteurs, avec des angles différents : rôle du prestataire pour l’article, stratégie et organisation de la chaîne pour SCOR. FLOW décrit les responsabilités à assurer sans imposer cette organisation.",
+                  "Oracle utilise exactement notre nom, avec d’autres frontières. Son module coopère avec des applications distinctes pour les commandes, les stocks et les promesses ; notre univers réunit aussi ces responsabilités."
+                ],
+                "examples": [
+                  {
+                    "title": "75 pièces livrables sur les 100 attendues",
+                    "situation": "Un fournisseur ne peut livrer que 75 pièces sur les 100 attendues.",
+                    "outcome": "Oracle décrit une orchestration qui recherche une autre source pour les 25 manquantes et, si elle n’en trouve pas, signale l’écart au responsable de la commande.",
+                    "lesson": "Dans FLOW, ce cas permet d’expliquer comment relier les approvisionnements attendus, les solutions alternatives et les conséquences sur la quantité ou la date promises. La préparation et le transport sont ensuite réalisés par les exécutants.",
+                    "source_title": "Oracle — Overview of Supply Chain Orchestration, exemple de réduction de 100 à 75 unités (26B)",
+                    "source_url": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html",
+                    "source_refs": [
+                      "U474",
+                      "U475",
+                      "ELM294",
+                      "CMP188"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/last_modified",
+              "before": "2026-09-19T12:27:44.095737Z",
+              "after": "2026-09-19T13:51:52.489356Z"
+            },
+            {
+              "path": "/lifecycle/note",
+              "before": "U373 : nom uniquement. Accord U141 et valeur antérieure conservés dans audits/2026-09-18-universe-U373/model-before.yaml.",
+              "after": "U373 : nom uniquement. Accord U141 et valeur antérieure conservés dans audits/2026-09-18-universe-U373/model-before.yaml. U475 : ajout de la rédaction Sources d’inspiration présentée, champ market_inspiration ; les détails complets de market_comparisons restent hors de cette adoption globale."
+            },
+            {
+              "path": "/lifecycle/recorded_at",
+              "before": "2026-09-18T17:19:31.368308Z",
+              "after": "2026-09-19T13:47:46.815761Z"
+            },
+            {
+              "path": "/lifecycle/source_refs",
+              "before": [
+                "U373"
+              ],
+              "after": [
+                "U373",
+                "U475"
+              ]
+            },
+            {
+              "path": "/lifecycle/validated_fields",
+              "before": [
+                "name"
+              ],
+              "after": [
+                "name",
+                "market_inspiration"
+              ]
+            },
+            {
+              "path": "/lifecycle/value_sha256/market_inspiration",
+              "before_present": false,
+              "after_present": true,
+              "before": null,
+              "after": "3c2214ddc8b661cc66ef03e8caff925ad9760324dc3b96d96adb22f97d7562f5"
+            },
+            {
+              "path": "/review/note",
+              "before": "Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-U467-UNCHANGED-007. Note antérieure, qui ne qualifie pas cette révision : « U373 adopte le nom Supply Chain Orchestration ; périmètre conservé, autres champs non adoptés par cet accord. U463 corrige la définition héritée du découpage en couches ; reformulation, rapprochements et exemple éditoriaux proposés. Le nom adopté U373 reste inchangé. U470 : entrée concrète, périmètre des projections, exemples et comparaisons au niveau de l’univers ; reformulations éditoriales proposées, nom adopté inchangé. »",
+              "after": "Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-U473-UNCHANGED-001. Note antérieure, qui ne qualifie pas cette révision : « U373 adopte le nom Supply Chain Orchestration ; périmètre conservé, autres champs non adoptés par cet accord. U463 corrige la définition héritée du découpage en couches ; reformulation, rapprochements et exemple éditoriaux proposés. Le nom adopté U373 reste inchangé. U470 : entrée concrète, périmètre des projections, exemples et comparaisons au niveau de l’univers ; reformulations éditoriales proposées, nom adopté inchangé. U475 retient le format C, la synthèse, le tableau et l’exemple présentés pour Sources d’inspiration. Les qualifications détaillées des sources non présentées restent proposées ; aucun changement de responsabilité ni validation étendue aux autres fiches. »"
+            },
+            {
+              "path": "/revision",
+              "before": 4,
+              "after": 5
+            },
+            {
+              "path": "/source_refs",
+              "before": [
+                "U141",
+                "C78",
+                "CMP066",
+                "U373",
+                "U455",
+                "U458",
+                "U463",
+                "C108",
+                "ELM019",
+                "ELM279",
+                "CMP182",
+                "U470",
+                "CMP185",
+                "ELM292",
+                "ELM293",
+                "ELM294"
+              ],
+              "after": [
+                "U141",
+                "C78",
+                "CMP066",
+                "U373",
+                "U455",
+                "U458",
+                "U463",
+                "C108",
+                "ELM019",
+                "ELM279",
+                "CMP182",
+                "U470",
+                "CMP185",
+                "ELM292",
+                "ELM293",
+                "ELM294",
+                "U474",
+                "U475",
+                "ELM325",
+                "ELM326",
+                "CMP188"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "relations": {
+      "added": [],
+      "removed": [],
+      "modified": []
+    },
+    "principles": [],
+    "information_catalog": [],
+    "information_items": {
+      "added": [],
+      "removed": [],
+      "modified": []
+    },
+    "information_links": {
+      "added": [],
+      "removed": [],
+      "modified": []
+    }
+  },
+  "retained_decision_ids": [
+    "ADOPT-022-LIFECYCLE-r2",
+    "ADOPT-024-LIFECYCLE-r2",
+    "ADOPT-026-LIFECYCLE-r2",
+    "ADOPT-033-LIFECYCLE-r2",
+    "ADOPT-035-LIFECYCLE-r2",
+    "ADOPT-037-LIFECYCLE-r2",
+    "ADOPT-039-LIFECYCLE-r2",
+    "ADOPT-041-LIFECYCLE-r2",
+    "ADOPT-043-LIFECYCLE-r2",
+    "ADOPT-044-LIFECYCLE-r2",
+    "ADOPT-045-LIFECYCLE-r2",
+    "ADOPT-046-LIFECYCLE-r2",
+    "ADOPT-047-LIFECYCLE-r2",
+    "ADOPT-U235-REL-MEMBER-D05.a-r3",
+    "ADOPT-U235-REL-MEMBER-D05.d-r1",
+    "ADOPT-U235-REL-MEMBER-D05.e-r1",
+    "ADOPT-U235-REL-MEMBER-D05.c-r3",
+    "ADOPT-U235-REL-MEMBER-D05.f-r1",
+    "ADOPT-U248-transcription-REL-MEMBER-D07.a-r3",
+    "ADOPT-U248-transcription-REL-MEMBER-D07.b-r3",
+    "ADOPT-U248-transcription-REL-MEMBER-D07.c-r3",
+    "ADOPT-U248-transcription-REL-MEMBER-D07.d-r3",
+    "ADOPT-U248-transcription-REL-GROUP-D14-r1",
+    "ADOPT-U248-transcription-REL-MEMBER-D06.f-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.i-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.j-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.k-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.l-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.m-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.o-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.a-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.d-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.e-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.c-r2",
+    "ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV001-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV002-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV003-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-ATP-BHV004-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-PLANNING-BHV005-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-PLANNING-BHV006-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV016-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV017-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV018-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV019-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV020-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV021-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV022-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV023-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV024-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV025-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV026-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV027-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV028-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV029-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV030-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV031-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D05.h-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV032-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV033-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV034-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV035-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV036-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV037-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV038-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV039-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV040-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV043-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV044-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV045-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV046-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV047-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D05.i-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV048-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV049-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV050-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV051-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV052-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV053-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV054-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV055-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV056-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV057-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV058-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV059-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV060-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D04.r-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D01.h-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV061-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV062-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV063-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV064-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV065-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV066-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV067-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV068-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV069-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV070-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV071-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV072-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV073-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV074-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV075-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV076-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV077-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV078-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV079-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV080-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV081-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV082-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV083-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV084-r1",
+    "ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV085-r1",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D02.e-r3",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.i-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.j-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.k-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.l-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.m-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.n-r3",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.n-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D04.q-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.o-r2",
+    "ADOPT-U448-TRANSCRIPTION-REL-MEMBER-D03.p-r2",
+    "ADOPT-U467-UNCHANGED-001",
+    "ADOPT-U467-UNCHANGED-002",
+    "ADOPT-U467-UNCHANGED-003",
+    "ADOPT-U467-UNCHANGED-004",
+    "ADOPT-U467-UNCHANGED-005",
+    "ADOPT-U467-UNCHANGED-008",
+    "ADOPT-U467-UNCHANGED-009",
+    "ADOPT-U467-UNCHANGED-010",
+    "ADOPT-U467-UNCHANGED-011",
+    "ADOPT-U467-UNCHANGED-012",
+    "ADOPT-U467-UNCHANGED-013",
+    "ADOPT-U467-UNCHANGED-014",
+    "ADOPT-U467-UNCHANGED-015",
+    "ADOPT-U467-UNCHANGED-017",
+    "ADOPT-U467-UNCHANGED-019",
+    "ADOPT-U467-UNCHANGED-023",
+    "ADOPT-U467-UNCHANGED-024",
+    "ADOPT-U467-UNCHANGED-025",
+    "ADOPT-U467-UNCHANGED-026",
+    "ADOPT-U467-UNCHANGED-027",
+    "ADOPT-U467-UNCHANGED-029",
+    "ADOPT-U467-UNCHANGED-030",
+    "ADOPT-U467-UNCHANGED-033",
+    "ADOPT-U467-UNCHANGED-035",
+    "ADOPT-U467-UNCHANGED-036",
+    "ADOPT-U467-UNCHANGED-037",
+    "ADOPT-U467-UNCHANGED-038",
+    "ADOPT-U467-UNCHANGED-039",
+    "ADOPT-U467-UNCHANGED-040",
+    "ADOPT-U467-UNCHANGED-041",
+    "ADOPT-U467-UNCHANGED-043",
+    "ADOPT-U467-UNCHANGED-044",
+    "ADOPT-U467-UNCHANGED-045",
+    "ADOPT-U467-UNCHANGED-046",
+    "ADOPT-U467-UNCHANGED-047",
+    "ADOPT-U467-UNCHANGED-048",
+    "ADOPT-U467-UNCHANGED-049",
+    "ADOPT-U467-UNCHANGED-050",
+    "ADOPT-U467-UNCHANGED-051",
+    "ADOPT-U467-UNCHANGED-053",
+    "ADOPT-U467-UNCHANGED-054",
+    "ADOPT-U467-UNCHANGED-055",
+    "ADOPT-U467-UNCHANGED-056",
+    "ADOPT-U467-UNCHANGED-057",
+    "ADOPT-U467-UNCHANGED-059",
+    "ADOPT-U467-UNCHANGED-060",
+    "ADOPT-U467-UNCHANGED-061",
+    "ADOPT-U467-UNCHANGED-062",
+    "ADOPT-U467-UNCHANGED-063",
+    "ADOPT-U467-UNCHANGED-064",
+    "ADOPT-U467-UNCHANGED-065",
+    "ADOPT-U467-UNCHANGED-066",
+    "ADOPT-U467-UNCHANGED-067",
+    "ADOPT-U467-UNCHANGED-068",
+    "ADOPT-U467-UNCHANGED-069",
+    "ADOPT-U467-UNCHANGED-070",
+    "ADOPT-U467-UNCHANGED-071",
+    "ADOPT-U467-UNCHANGED-072",
+    "ADOPT-U467-UNCHANGED-073",
+    "ADOPT-U467-UNCHANGED-075",
+    "ADOPT-U467-UNCHANGED-077",
+    "ADOPT-U467-UNCHANGED-078",
+    "ADOPT-U467-UNCHANGED-080",
+    "ADOPT-U467-UNCHANGED-081",
+    "ADOPT-U467-UNCHANGED-082",
+    "ADOPT-U467-UNCHANGED-083",
+    "ADOPT-U467-UNCHANGED-085",
+    "ADOPT-U467-UNCHANGED-086",
+    "ADOPT-U467-UNCHANGED-087",
+    "ADOPT-U467-UNCHANGED-088",
+    "ADOPT-U467-UNCHANGED-089",
+    "ADOPT-U467-UNCHANGED-090",
+    "ADOPT-U467-UNCHANGED-091",
+    "ADOPT-U467-UNCHANGED-092",
+    "ADOPT-U467-UNCHANGED-093",
+    "ADOPT-U467-UNCHANGED-097",
+    "ADOPT-U467-UNCHANGED-100",
+    "ADOPT-U467-UNCHANGED-108",
+    "ADOPT-U467-UNCHANGED-109",
+    "ADOPT-U467-UNCHANGED-110",
+    "ADOPT-U467-UNCHANGED-115",
+    "ADOPT-U473-UNCHANGED-002",
+    "ADOPT-U473-UNCHANGED-003",
+    "ADOPT-U473-UNCHANGED-004",
+    "ADOPT-U473-UNCHANGED-005",
+    "ADOPT-U473-UNCHANGED-006",
+    "ADOPT-U473-UNCHANGED-007",
+    "ADOPT-U473-UNCHANGED-008",
+    "ADOPT-U473-UNCHANGED-009",
+    "ADOPT-U473-UNCHANGED-010",
+    "ADOPT-U473-UNCHANGED-011",
+    "ADOPT-U473-UNCHANGED-012",
+    "ADOPT-U473-UNCHANGED-013",
+    "ADOPT-U473-UNCHANGED-014",
+    "ADOPT-U473-UNCHANGED-015",
+    "ADOPT-U473-UNCHANGED-016",
+    "ADOPT-U473-UNCHANGED-017",
+    "ADOPT-U473-UNCHANGED-018",
+    "ADOPT-U473-UNCHANGED-019",
+    "ADOPT-U473-UNCHANGED-020",
+    "ADOPT-U473-UNCHANGED-021",
+    "ADOPT-U473-UNCHANGED-022",
+    "ADOPT-U473-UNCHANGED-023",
+    "ADOPT-U473-UNCHANGED-024",
+    "ADOPT-U473-UNCHANGED-025",
+    "ADOPT-U473-UNCHANGED-026",
+    "ADOPT-U473-UNCHANGED-027",
+    "ADOPT-U473-UNCHANGED-028",
+    "ADOPT-U473-UNCHANGED-029",
+    "ADOPT-U473-UNCHANGED-030",
+    "ADOPT-U473-UNCHANGED-031",
+    "ADOPT-U473-UNCHANGED-032",
+    "ADOPT-U473-UNCHANGED-033",
+    "ADOPT-U473-UNCHANGED-034",
+    "ADOPT-U473-UNCHANGED-035",
+    "ADOPT-U473-UNCHANGED-036",
+    "ADOPT-U473-UNCHANGED-037",
+    "ADOPT-U473-UNCHANGED-038",
+    "ADOPT-U473-UNCHANGED-039",
+    "ADOPT-U473-UNCHANGED-040"
+  ],
+  "deferred_decisions": [
+    {
+      "id": "ADOPT-U473-UNCHANGED-001",
+      "target": "universe-supply",
+      "reason": "revision_changed_requires_explicit_reassessment",
+      "approved_fields": [
+        "name"
+      ]
+    }
+  ],
+  "new_decision_ids": [
+    "ADOPT-REASSESS-d8ad27dd4b99d1b0ac42adce",
+    "ADOPT-U475-SUPPLY-INSPIRATION"
+  ],
+  "deferred_artifacts": [
+    {
+      "path": "backlog/applicability.yaml",
+      "sha256": "632d78b4e3f2d88aa2f723353ac5ec23046e33b23869a8e7d6339b4d1d116d5d",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/assignment-reservation-review.yaml",
+      "sha256": "31c075fc56f592cdd36e3915740565d54ff8dcacf5f145e960fb164cf1a7e19c",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/assignment-terminology.yaml",
+      "sha256": "9c21583d50e1cc33e7eb30769116ec149869c9a1824c6e21cdaee2f373527dfd",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/behavior-audit.yaml",
+      "sha256": "89040ba78c3c7fb21f338b42bc9003050f422dc87581229a59b36bbae6f5c5f3",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/behavior-gap-audit.yaml",
+      "sha256": "9e237cafe5ede01363200ec58520835fadc555bd4a738e54b5da4d94b95eb857",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/behavior-types-U451.yaml",
+      "sha256": "5cd32f7bc18a87f3d1c9f2e98aaaf5384b9da02bc3b749a824c82b1fb1195c5d",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/behavior-typology.yaml",
+      "sha256": "7f7078ac95bf7058d7df98ba8ab523bfa02e04f527932dce3c04850dcc466bbf",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/business-interactions.yaml",
+      "sha256": "1c2febbb549b2bdb620c015dbca1b1c96721d8c2b397dd8d0fd24638ba09580c",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/capability-types-U449.yaml",
+      "sha256": "230819e113532d3eec5680aac4c8706f8e09429ac4a8b918abded8a90ae2b416",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/consignment-inventory-review.yaml",
+      "sha256": "a7c70912e370312dea2ba6a3a312af7ea60eabc09dea20ebcaf8a57b18994ccd",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/consignment-sales-transfer-review.yaml",
+      "sha256": "3be33f2d8250d5b26b1fce9ee90ff1f0057daf5fbf86ee84417cfa41584a6cba",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/coverage-need-response-review.yaml",
+      "sha256": "a3847ead8faaaec1f3581e0c8c1438548a725ccdf36f3534ff688ca718577331",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/customer-return-behaviors.yaml",
+      "sha256": "6298a3522fed9ca14e2e5e5e0479342865fff0012a7b75091001f74882b219ee",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/d03-d04-gap-review.yaml",
+      "sha256": "f84fb5fb19e6f10702eb0eb1337ec7b65c32e740dd04be55439038036182c71c",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/d03-domain-review-U437.yaml",
+      "sha256": "489831bec56eabd4f62a2c995f3db25b04d0c75bb9854b2c478f5b7da5faf420",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/d03-review.yaml",
+      "sha256": "798dc51510d5f5ffb65f7300949470c95315dce4d4c55791f35112e7cae11fe5",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/d04-refactoring.yaml",
+      "sha256": "b4ccc5280219d2922fb1636bb91200ebf1980085a44b5bb4047de93fcd367b03",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/d05-refactoring.yaml",
+      "sha256": "b8b1f19ddf45f9905656348906a317551229012adb2d62a7909d0df4ebd51eaa",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/domain-interactions-U455-U456.yaml",
+      "sha256": "98facd9af1aacb80f62640256203afc5c3f8f4132504a3b3adefa75c6f250300",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/execution-services-review.yaml",
+      "sha256": "b3f00589339692313010e7d4c6ac7a969622e3efcef1f6104cce5531a2a89ec4",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/fulfillment-strategy-review.yaml",
+      "sha256": "a68c5c003be04d1138192fc595b4f3af52811129b541acf6a0611bf8532c765b",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/glossary-partition-U450.yaml",
+      "sha256": "be571c191f58e32c3f58a069b6d7b9cf056ed46e44197f291e530790b3becaa8",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/glossary-text-references.yaml",
+      "sha256": "178a5ddde55f89b1514edd131fb74b0479b77d6fff04629c68d2b96fb650fd80",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/information-cards-U465.yaml",
+      "sha256": "7698655cfb739a8ee18ffa1c57d16aeaf151c8a092bb993e897db365d7fd7bb7",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/information-definition-U464.yaml",
+      "sha256": "4f81e655d3c17d526ad904c2d946fce2ca9d5ad21d3de18a16696f5a571ea4aa",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/information-pilots-U458.yaml",
+      "sha256": "c7c7220e2cecdc446126b9d979348ec3ee759321a69f568fe439b66ae19044e4",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/inventory-target-behaviors-review.yaml",
+      "sha256": "67a654ec6b29e6e4850476980d7563380e0c21aaf299aa008e43976da35b5f18",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/item-logistic-unit-audit.yaml",
+      "sha256": "9ebebb6b490f124fe80bddebe2360b6f98141cbc443636716a8f866e0eee5d35",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/legacy-capabilities.json",
+      "sha256": "47eeb826fa75ffae8e371581723baf0b85b3c4cc3e015a5101263359e746f9ec",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/microsoft-urbanism-fit.yaml",
+      "sha256": "7ad332042113dd34bdbc03e84d6ef7fd23c290639e68e5f3c7fe648d14cb1fb5",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/modeling-glossary.yaml",
+      "sha256": "fd73dafae2b2c4a518de3488a255ebf5fe5a00e0a52f833192ac60ad08b67df7",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/modeling-guide-U458.yaml",
+      "sha256": "f9bdf159f63f3688a5b2749ac7074dc85dbd237528a2cc2eed4dec4d2c09a65b",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/modeling-roadmap.yaml",
+      "sha256": "631bdad1eeda0807b17398df845e77d4a85ec267ae239d145a35a28b2b1dd0f2",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/nonpurchase-supply-order-review.yaml",
+      "sha256": "0804640a4168c4e412f97735e79548e54c3c0f07897d9288a34b031180d090f0",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/order-backlog-review.yaml",
+      "sha256": "be47a5a96e2a541f73b3f6e9d59231a78e4a1efde9ad13c520d3d770019bb1c5",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/order-intent-principles.yaml",
+      "sha256": "80112ca1ab748c327941f06487a0ee7b72dd6b630f37f4c521055cbe4092bdbd",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/order-lifecycle-behaviors.yaml",
+      "sha256": "cef525c053e78a8422235e131786342fe1725450077a3c4c2cba2c05df25670d",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/order-plan-application-review.yaml",
+      "sha256": "6dc5130a770bd526da00988c3aa44baf6b1ac7b416b535538bf4aac8c793a46b",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/order-structuring-review-U439.yaml",
+      "sha256": "7f73f9f0330a4647504135eb0c21223e92c0643abcfe94347e25fa2c1ca56a08",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/panorama-candidates.json",
+      "sha256": "0f8e74eee2cc01db7c362f69db7d57127f3416965ebd1c67c2f4506615581eac",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/promise-assignment-review-U441.yaml",
+      "sha256": "c8a11eb605115e49965ddd789b337074e12ffb978ee7c8705dcb8a75576b6f4d",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/purchase-order-behaviors.yaml",
+      "sha256": "dff01bc85198cf1d96ff34050aa70b5aea9d746096e021d7c628657e673e1b9d",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/reading-order-U447.yaml",
+      "sha256": "2dea300767f751c065cc3698fa4fa20200bc73c5370c7ab7f1b8924e710989e2",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/refactoring-implementation.yaml",
+      "sha256": "0f7318c605cbee7606aa6d956852a5f34077b3576ba083da292fda2eef63493c",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/refactoring-target.yaml",
+      "sha256": "eb342b1b1ed9765b8584201b6abcd823a7a86475a496661946001abaeb5a9879",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/reservation-policy-review.yaml",
+      "sha256": "557c0c3d8e86f7e90df44b32646e6090a0c6f3d69bff6e034d7c96c32d334440",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/return-disposition-review.yaml",
+      "sha256": "6a01810296a34c0e625f8a74d28dceaec3cc5df9567686e634e255757d3f896b",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/stock-order-boundary.yaml",
+      "sha256": "3f2c238d6cd85c5da67ef084a8f1a35857581c84b9df64744eef472b81e0fd95",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/stocktaking-behaviors-review.yaml",
+      "sha256": "993c640d9b84d0ed0ad1f566466cf46576a07686d306ebd18f72e022241fa648",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/supplier-return-behaviors.yaml",
+      "sha256": "798a7b3decb347f674738dcb6a665798120427d441434b75f350834fc4f4961e",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/supply-assignment-mechanisms-review.yaml",
+      "sha256": "c1cfc35a7eb1da0ddb11f33978df079c776f194c3a36a6b548e57d53b75bc0af",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/supply-fulfillment-audit.yaml",
+      "sha256": "3cde0c38b6b60fc2aa6e50af37f8427a2a601b1e745f225506fe8c135c6e279f",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/supply-protection-review.yaml",
+      "sha256": "0bda559e831936da176ca6a726a9058208392166d1140e0fc7bb9fb36699748a",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/unified-inventory-packaging.yaml",
+      "sha256": "1d0425a9462ed22422a117c355a6355cde57a168fcbd882b855dc6b32a584b50",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/v0-readiness.yaml",
+      "sha256": "2698ca2198dbfad1c21877d273c61b576cff4d0998a18eb1df9b527edb1b4077",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    },
+    {
+      "path": "backlog/vocabulary-review.yaml",
+      "sha256": "edf7f42c4b5e418f0f4cb286bd9a6df6128884be58fca9da1c178fd3de12b7a0",
+      "comparison": "unchanged",
+      "changes": [],
+      "disposition": "frozen_as_context_only_not_published_as_model"
+    }
+  ],
+  "backlog_only": {
+    "alternatives": [],
+    "relations_to_illustrations": [
+      "REL-ILL-001",
+      "REL-ILL-002",
+      "REL-ILL-003",
+      "REL-ILL-004",
+      "REL-ILL-005"
+    ],
+    "illustrations": [
+      "ILL-OBJ-01",
+      "ILL-DOC-01",
+      "ILL-EVT-01",
+      "ILL-OBJ-02",
+      "REL-ILL-004",
+      "REL-ILL-005",
+      "REL-ILL-006",
+      "REL-ILL-007",
+      "REL-ILL-008"
+    ]
+  },
+  "validation_errors": [],
+  "note": "Les validations différées restent dans les versions antérieures. Les artefacts de contexte gelés ne deviennent pas des éléments publiés."
+}

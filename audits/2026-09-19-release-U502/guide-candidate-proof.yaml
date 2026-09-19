@@ -1,0 +1,10 @@
+publication_version: 2026-09-19.10
+guide_version: 2026-09-19.4
+candidate_sha256: 0d6a1dcb3ae780f2c0d6a19e70efcbd3f090d77591d630eda8e415ae4f8b9af7
+base_guide: 2026-09-19.3
+changed_terms:
+- MOD006
+- MOD007
+- MOD013
+validation: guide structure and source references valid
+method_glossary_sha256: 4b053ab485b7d5658867850e6d82e0b3f60e756d3732a2039c5e5a3eda64c35f

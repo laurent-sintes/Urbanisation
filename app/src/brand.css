@@ -49,7 +49,7 @@
   .page-heading p, .business-card p { color: #516c62; }
   .eyebrow > span:first-child { color: #456b5e; }
   .node-icon.framed { background: #f0faf7; border-color: #c6e3d8; }
-  .tone-universe, .tone-domain, .tone-capability { color: var(--flow-green); }
+  .tone-universe, .tone-domain, .tone-area, .tone-capability { color: var(--flow-green); }
   .tone-reference.framed, .tone-group.framed { background: #f6f2eb; border-color: var(--flow-sand); }
   .tone-reference, .tone-group { color: #816435; }
   .tone-object.framed { background: #f0f3fa; border-color: var(--flow-lavender); }
@@ -110,10 +110,8 @@
 .sheet-toc { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .sheet-toc button { padding: 8px 12px; border: 1px solid #c0d2cc; border-radius: 6px; color: var(--flow-green); background: white; font-size: 14px; }
 .sheet-parent { color: #465f58; font-size: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
-.sheet-scope { border-left: 3px solid var(--flow-sand); padding-left: 20px; }
-.sheet-disclosure { margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; background: white; }
-.sheet-disclosure summary { cursor: pointer; font-weight: 600; color: var(--flow-green); }
-.sheet-disclosure[open] summary { margin-bottom: 18px; }
+.sheet-scope-summary { padding: 16px 20px; border-left: 3px solid var(--flow-green); border-radius: 0 8px 8px 0; background: var(--flow-mint, #D9F2EA); }
+.sheet-scope-summary + .business-copy { margin-top: 18px; }
 .sheet-facts { display: flex; flex-wrap: wrap; gap: 20px; padding: 16px 20px; background: #f5f7fa; border-radius: 8px; font-size: 14px; }
 .sheet-facts dt { font-size: 12px; color: #465f58; margin-bottom: 4px; }
 .sheet-facts dd { margin: 0; }
@@ -131,7 +129,7 @@
 .business-sheet .sheet-main > section { margin: 24px 0; }
 .tone-document.framed { background: #fff1e3; border-color: var(--flow-peach); }
 @media (max-width: 650px) {
-  .sheet-scope { padding-left: 12px; }
+  .sheet-scope-summary { padding: 14px 16px; }
   .sheet-facts { display: block; }
   .sheet-facts > div + div { margin-top: 12px; }
 }

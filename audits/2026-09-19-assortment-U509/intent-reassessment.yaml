@@ -1,0 +1,409 @@
+contribution: U509
+reviewer: Codex
+assessments:
+- previous: ADOPT-U507-business-references
+  replacement: ADOPT-U509-REVIEW-business-references
+  target: business-references
+  approved_fields:
+  - name
+  previous_values:
+    name: Authoritative Data
+  current_values:
+    name: Authoritative Data
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-D09
+  replacement: ADOPT-U509-REVIEW-D09
+  target: D09
+  approved_fields:
+  - definition
+  - name
+  previous_values:
+    definition: Identifier les [personnes physiques et morales](glossary:TER046) auxquelles se rattachent les accords et les
+      opérations Supply, et connaître les [rôles métier](glossary:TER047) qu’elles y jouent, par exemple client ou fournisseur.
+      Une même personne conserve son identité lorsqu’elle intervient dans plusieurs rôles.
+    name: Party / Role
+  current_values:
+    definition: Identifier les [personnes physiques et morales](glossary:TER046) auxquelles se rattachent les accords et les
+      opérations Supply, et connaître les [rôles métier](glossary:TER047) qu’elles y jouent, par exemple client ou fournisseur.
+      Une même personne conserve son identité lorsqu’elle intervient dans plusieurs rôles.
+    name: Party / Role
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-D08.e
+  replacement: ADOPT-U509-REVIEW-D08.e
+  target: D08.e
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Product Reference Visibility
+    nature: knowledge
+  current_values:
+    name: Product Reference Visibility
+    nature: knowledge
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-D09.e
+  replacement: ADOPT-U509-REVIEW-D09.e
+  target: D09.e
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Party / Role Visibility
+    nature: knowledge
+  current_values:
+    name: Party / Role Visibility
+    nature: knowledge
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-D11.b
+  replacement: ADOPT-U509-REVIEW-D11.b
+  target: D11.b
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Agreement Visibility
+    nature: knowledge
+  current_values:
+    name: Agreement Visibility
+    nature: knowledge
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication. Le nom et la nature restent adoptés ; le complément
+    de périmètre sur Assortment reste proposé.'
+- previous: ADOPT-U507-D12.b
+  replacement: ADOPT-U509-REVIEW-D12.b
+  target: D12.b
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Catalog Visibility
+    nature: knowledge
+  current_values:
+    name: Product Catalog Visibility
+    nature: knowledge
+  changed_fields:
+  - name
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication. Le nom devient Product Catalog Visibility conformément
+    à U509 ; la nature knowledge reste celle adoptée U507.'
+- previous: ADOPT-U507-D13.b
+  replacement: ADOPT-U509-REVIEW-D13.b
+  target: D13.b
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Fulfillment Network Visibility
+    nature: knowledge
+  current_values:
+    name: Fulfillment Network Visibility
+    nature: knowledge
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-D14.b
+  replacement: ADOPT-U509-REVIEW-D14.b
+  target: D14.b
+  approved_fields:
+  - name
+  - nature
+  previous_values:
+    name: Service Catalog Visibility
+    nature: knowledge
+  current_values:
+    name: Service Catalog Visibility
+    nature: knowledge
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-UNIVERSE-SUPPLY-business-references
+  replacement: ADOPT-U509-REVIEW-REL-UNIVERSE-SUPPLY-business-references
+  target: REL-UNIVERSE-SUPPLY-business-references
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: universe-supply
+    target_id: business-references
+    type: presents
+  current_values:
+    source_id: universe-supply
+    target_id: business-references
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D08
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D08
+  target: REL-GROUP-D08
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D08
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D08
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D09
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D09
+  target: REL-GROUP-D09
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D09
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D09
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D12
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D12
+  target: REL-GROUP-D12
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D12
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D12
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D11
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D11
+  target: REL-GROUP-D11
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D11
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D11
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D13
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D13
+  target: REL-GROUP-D13
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D13
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D13
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-GROUP-D14
+  replacement: ADOPT-U509-REVIEW-REL-GROUP-D14
+  target: REL-GROUP-D14
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: business-references
+    target_id: D14
+    type: presents
+  current_values:
+    source_id: business-references
+    target_id: D14
+    type: presents
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D08.e
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D08.e
+  target: REL-MEMBER-D08.e
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D08
+    target_id: D08.e
+    type: contains
+  current_values:
+    source_id: D08
+    target_id: D08.e
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D09.e
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D09.e
+  target: REL-MEMBER-D09.e
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D09
+    target_id: D09.e
+    type: contains
+  current_values:
+    source_id: D09
+    target_id: D09.e
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D11.b
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D11.b
+  target: REL-MEMBER-D11.b
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D11
+    target_id: D11.b
+    type: contains
+  current_values:
+    source_id: D11
+    target_id: D11.b
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D12.b
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D12.b
+  target: REL-MEMBER-D12.b
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D12
+    target_id: D12.b
+    type: contains
+  current_values:
+    source_id: D12
+    target_id: D12.b
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D13.b
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D13.b
+  target: REL-MEMBER-D13.b
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D13
+    target_id: D13.b
+    type: contains
+  current_values:
+    source_id: D13
+    target_id: D13.b
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+- previous: ADOPT-U507-REL-MEMBER-D14.b
+  replacement: ADOPT-U509-REVIEW-REL-MEMBER-D14.b
+  target: REL-MEMBER-D14.b
+  approved_fields:
+  - source_id
+  - target_id
+  - type
+  previous_values:
+    source_id: D14
+    target_id: D14.b
+    type: contains
+  current_values:
+    source_id: D14
+    target_id: D14.b
+    type: contains
+  changed_fields: []
+  assessment: 'U507 reste applicable aux champs indiqués : Authoritative Data conserve sa fonction et les références leurs
+    responsabilités et rattachements. U509 ajoute une référence Assortment distincte, précise son lien conditionnel avec Agreement
+    et clarifie Catalog en Product Catalog. Ces ajouts ne valident pas les détails éditoriaux ni les nouvelles capacités Assortment.
+    Réexamen explicite du contexte et du glossaire avant publication.'
+new_intents:
+- ADOPT-U509-D12
+- ADOPT-U509-D12.a
+- ADOPT-U509-D16
+- ADOPT-U509-REL-GROUP-D16
+- ADOPT-U509-REL-AGREEMENT-ASSORTMENT

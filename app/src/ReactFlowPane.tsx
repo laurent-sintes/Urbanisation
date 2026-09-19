@@ -4,13 +4,12 @@ import { ArrowUpRight, FileText, LayoutGrid } from 'lucide-react';
 import { NodeIcon } from './icons';
 import { startsDecisionSection } from './capabilityTypes';
 import { ReferenceLink } from './components/ModelLinks';
-import { childrenOf, rootsOf, hasCapabilityCards } from './model';
+import { childrenOf, rootsOf, hasCapabilityCards, cardChildListOf, type CardChildList } from './model';
 import { kindLabel, shortText } from './presentation';
 import type { AtlasNode, PublishedModel } from './types';
 import '@xyflow/react/dist/style.css';
 
-type ChildList = { kind: 'capability' | 'reference' | 'behavior'; items: AtlasNode[] };
-type Card = Node<{ item: AtlasNode; count: number; childList?: ChildList; onHeight: (id: string, height: number) => void; onExplore: (id: string) => void; onRead: (id: string) => void; highlighted: boolean; muted: boolean }, 'business'>;
+type Card = Node<{ item: AtlasNode; count: number; childList?: CardChildList; onHeight: (id: string, height: number) => void; onExplore: (id: string) => void; onRead: (id: string) => void; highlighted: boolean; muted: boolean }, 'business'>;
 type Container = Node<{ item: AtlasNode }, 'container'>;
 function BusinessCard({ data, selected }: NodeProps<Card>) {
   const presentation = data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level';
@@ -88,17 +87,10 @@ function Canvas(props: ReactFlowPaneProps) {
     setError('');
     const group = graph.group;
     const items = graph.nodes.filter(n => n.id !== group?.id);
-    const childLists = new Map<string, ChildList>();
+    const childLists = new Map<string, CardChildList>();
     if (capabilityOverview) for (const item of items) {
-      const children = childrenOf(model, item.id);
-      if (item.kind === 'domain' || item.kind === 'reference') {
-        childLists.set(item.id, { kind: 'capability', items: children.filter(child => child.kind === 'capability') });
-      } else if (item.kind === 'capability' && children.some(child => child.kind === 'behavior')) {
-        childLists.set(item.id, { kind: 'behavior', items: children.filter(child => child.kind === 'behavior') });
-      } else if (item.kind === 'group' && item.groupRole !== 'urbanism_level') {
-        const references = children.filter(child => child.kind === 'reference');
-        if (references.length) childLists.set(item.id, { kind: 'reference', items: references });
-      }
+      const list = cardChildListOf(model, item);
+      if (list) childLists.set(item.id, list);
     }
     const inputs = items.map(n => ({ id: n.id, width: 300, height: childLists.has(n.id) ? cardHeights[n.id] || 260 + childLists.get(n.id)!.items.length * 34 : 220 }));
     // A bounded grid keeps cards readable; it does not create model relationships.
@@ -152,7 +144,7 @@ function Canvas(props: ReactFlowPaneProps) {
   const nodes = useMemo(() => layout.nodes.map(n => n.type !== 'business' ? n : { ...n, selected: n.id === selectedId, data: { ...n.data, onHeight, count: childrenOf(model, n.id).length, onExplore: props.onExplore, onRead: props.onRead, highlighted: Boolean(perspective && model.nodeById.get(n.id)?.status === perspective), muted: Boolean(perspective && model.nodeById.get(n.id)?.status !== perspective) } }), [layout, selectedId, model, props.onExplore, props.onRead, perspective, onHeight]);
   const select = useCallback((_event: unknown, node: Node) => { if (node.type === 'business') props.onSelect(node.id); }, [props.onSelect]);
   const emptyScope = scopeId && model.nodeById.get(scopeId);
-  if (emptyScope && ['group', 'domain', 'reference'].includes(emptyScope.kind) && !childrenOf(model, emptyScope.id).length) return <div className="graph-canvas empty-state"><NodeIcon node={emptyScope} size={38}/><h2>{emptyScope.name}</h2><p>Aucun élément publié dans ce périmètre.</p></div>;
+  if (emptyScope && ['group', 'domain', 'area', 'reference'].includes(emptyScope.kind) && !childrenOf(model, emptyScope.id).length) return <div className="graph-canvas empty-state"><NodeIcon node={emptyScope} size={38}/><h2>{emptyScope.name}</h2><p>Aucun élément publié dans ce périmètre.</p></div>;
   if (error) return <div className="empty-state" role="alert">Le placement a échoué : {error}</div>;
   // Let the page grow with capability lists, keeping text near its natural size.
   const canvasHeight = capabilityOverview && layout.width && canvasWidth ? Math.max(420, Math.ceil(layout.height * Math.min(1, canvasWidth / layout.width)) + 70) : undefined;

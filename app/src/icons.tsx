@@ -14,7 +14,7 @@ import { behaviorNature, behaviorTypes } from './behaviorTypes';
 
 // Presentation only: exact published names, never inferred parents or business semantics.
 const namedIcons: Record<string, LucideIcon> = {
-  Supply: Orbit, 'Supply Chain Orchestration': Orbit, Case: BriefcaseBusiness, 'Business References': BookOpen,
+  Supply: Orbit, 'Supply Chain Orchestration': Orbit, Case: BriefcaseBusiness, 'Business References': BookOpen, 'Authoritative Data': BookOpen,
   'Fulfillment Optimization': Target, 'Fulfillment Plan Decision': GitBranch,
   'Return Disposition Decision': PackageSearch,
   'Inventory Management': Warehouse, 'Inventory Tracking': ScanLine,
@@ -37,13 +37,13 @@ const namedIcons: Record<string, LucideIcon> = {
   'Execution Commitments and Facts': Truck, 'Execution Requirement Definition': ListTodo,
   'Execution Commitment Management': CalendarCheck, 'Execution Reconciliation': GitCompareArrows,
   'Expected Supply Tracking': PackageSearch, 'Party / Role': Users,
-  Agreement: FileSignature, 'Product Reference': Package, Catalog: BookOpen,
+  Agreement: FileSignature, 'Product Reference': Package, Catalog: BookOpen, 'Product Catalog': BookOpen, Assortment: ListFilter,
   'Fulfillment Network': Network, 'Party / Role Ingestion': Download,
   'Agreement Ingestion': Download, 'Product Reference Ingestion': Download,
   'Catalog Ingestion': Download, 'Fulfillment Network Ingestion': Download,
 };
 const typeIcons: Record<string, LucideIcon> = {
-  domain: Boxes, capability: Workflow, behavior: ListFilter, reference: BookOpen, group: FolderTree,
+  domain: Boxes, area: Boxes, capability: Workflow, behavior: ListFilter, reference: BookOpen, group: FolderTree,
   object: Box, document: FileText, event: Zap,
 };
 export function iconFor(node: AtlasNode): LucideIcon {
@@ -54,7 +54,7 @@ export function iconFor(node: AtlasNode): LucideIcon {
   }
   if (node.kind === 'capability') {
     if (node.referenceParentName) return ({ 'Product Reference': Package, 'Party / Role': Users,
-      Catalog: BookOpen, Agreement: FileSignature, 'Fulfillment Network': Network, 'Service Catalog': ClipboardList } as Record<string, LucideIcon>)[node.referenceParentName] ?? BookOpen;
+      Catalog: BookOpen, 'Product Catalog': BookOpen, Assortment: ListFilter, Agreement: FileSignature, 'Fulfillment Network': Network, 'Service Catalog': ClipboardList } as Record<string, LucideIcon>)[node.referenceParentName] ?? BookOpen;
     const nature = capabilityNature(node);
     const icons: Record<string, LucideIcon> = { Zap, SlidersHorizontal, Eye, Workflow, CalendarCheck, GitBranch };
     return nature ? icons[capabilityTypes[nature].icon] : Box;

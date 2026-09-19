@@ -1,0 +1,54 @@
+source_ref: U482
+changed_nodes:
+- universe-supply
+- business-references
+- D08
+- D13
+- D14
+- D07.c
+- D07.d
+- D04
+- D01
+- D06
+- D15
+- D03
+- D06.d
+- D05
+- D06.f
+- BHV044
+- BHV082
+lexical_relation_changes:
+- REL-SERVICE-CATALOG-EXECUTION
+approved_field_wording_updates:
+- id: universe-supply
+  field: market_inspiration
+  previous_sha256: 3c2214ddc8b661cc66ef03e8caff925ad9760324dc3b96d96adb22f97d7562f5
+  new_sha256: c163e81e51ddb255f8245ee56aaed92514b16e9af8d4aad6a2c72761419da6c2
+  scope: 'U482 : nouveau nom Authoritative Data ou seule substitution du vocabulaire des niveaux, sans nouveau contenu métier.'
+- id: business-references
+  field: name
+  previous_sha256: 8e1e0dcb3563032dd2cdb03345b09ed48cc7642f479a61a9c40a76115a788fad
+  new_sha256: 0bb2b596fb0822d0f2a3d8c07207798d200f7f5ad14be4cca21f6839cda2e947
+  scope: 'U482 : nouveau nom Authoritative Data ou seule substitution du vocabulaire des niveaux, sans nouveau contenu métier.'
+changed_glossary_terms:
+- TER024
+- TER027
+- TER029
+- TER030
+- TER031
+- TER034
+- TER064
+- TER084
+invariants:
+- node identifiers
+- relation identifiers/types/endpoints/order
+- information catalogue
+- reference grouping
+- capability/behavior kinds and parents
+counts:
+  domain: 1
+  area: 6
+  reference: 6
+  group: 1
+  capability: 47
+  behavior: 76

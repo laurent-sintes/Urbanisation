@@ -47,7 +47,7 @@ try {
   };
   const inspect = async model => {
     const references = childrenOf(model, 'business-references');
-    assert.ok(references.length > 0, 'Business References présente des référentiels publiés.');
+    assert.ok(references.length > 0, `${nameOf(model, 'business-references')} présente des référentiels publiés.`);
     for (const reference of references) {
       assert.equal(reference.kind, 'reference');
       const expected = childrenOf(model, reference.id).filter(node => node.kind === 'capability');

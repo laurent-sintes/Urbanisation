@@ -5,6 +5,7 @@ export interface MarketComparison {
   vendor: string; product: string; element_name: string; element_type: string;
   relationship: string; similarities: string; differences: string; flow_position: string;
   term_choice?: string; definition_choice?: string;
+  concept_name?: string; scope_summary?: string; approach_summary?: string;
   source_title: string; source_url: string; source_version: string; consulted_on: string;
   source_locator: string; evidence_limits: string; source_refs: string[];
   status: 'proposed' | 'under_review' | 'validated';
@@ -13,6 +14,12 @@ export interface MarketComparison {
 export interface BusinessExample {
   title: string; situation: string; outcome?: string; lesson?: string;
   source_refs: string[];
+}
+
+export interface MarketInspiration {
+  choice: string; flow_scope: string; flow_approach: string;
+  synthesis: string[];
+  examples: (BusinessExample & { source_title: string; source_url: string })[];
 }
 
 export interface BusinessInformation {
@@ -87,6 +94,7 @@ export interface RawRelation extends JsonRecord {
 }
 export interface GlossaryTerm extends JsonRecord {
   market_comparisons?: MarketComparison[];
+  market_inspiration?: MarketInspiration;
   id: string; name: string; short_description: string; definition: string;
   context?: string; notes?: string; source_refs: string[]; historical?: boolean;
   review: { state: 'proposed' | 'under_review' | 'accepted' | 'partial'; note?: string };

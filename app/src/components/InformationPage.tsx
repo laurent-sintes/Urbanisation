@@ -47,7 +47,7 @@ export function InformationPage({ model, selected, nodeId }: {
         <header className="information-header"><p className="section-kicker">INFORMATION MÉTIER</p><h2>{item.name}</h2><p>{item.label_fr}</p></header>
         {scope && !items.some(value => value.id === item.id) && <p className="information-context-note">Cette information est liée à un autre périmètre. <a href={informationHref(model, item.id)}>Voir dans le catalogue complet</a></p>}
         <div className="information-tabs" role="tablist" aria-label="Lecture de l’information">{([
-          ['sheet', 'Fiche', FileText], ['market', 'Marché & choix', BookOpen],
+          ['sheet', 'Fiche', FileText], ['market', 'Sources d’inspiration', BookOpen],
         ] as const).map(([id, label, Icon]) => <button key={id} id={`information-tab-${id}`} role="tab" aria-selected={tab === id} tabIndex={tab === id ? 0 : -1} aria-controls="information-tab-panel" onClick={() => setTab(id)} onKeyDown={event => {
           if (['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
             event.preventDefault(); const next = event.key === 'Home' ? 'sheet' : event.key === 'End' ? 'market' : tab === 'sheet' ? 'market' : 'sheet';

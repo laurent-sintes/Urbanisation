@@ -1,0 +1,1458 @@
+nodes:
+- id: business-references
+  revision: 2
+  kind: group
+  fields:
+    name: Authoritative Data
+    market_comparisons:
+    - vendor: EDM Council
+      product: Data Management / DCAM
+      source_title: 'Prioritizing Data Based on Criticality: Critical Data Elements (CDEs) in Context'
+      source_url: https://ortecha.com/wp-content/uploads/2023/07/EDM-Council-Prioritizing-Data-Based-on-Criticality-Critical-Data-Elements-CDEs-in-Context.pdf
+      source_version: Novembre 2018, vF1.1
+      source_locator: 'Pages 19, 28–29 et 37 : Data Producer ; Validate Data in Scope ; Glossary'
+      evidence_limits: Rapport EDM Council primaire hébergé par Ortecha, co-auteur. Emploi exact du terme dans le glossaire
+        ; ni définition autonome détaillée de ce terme ni consultation du DCAM actuel réservé aux membres.
+      element_name: Authoritative Data Domain / Authoritative Provisioning Point
+      element_type: Vocabulaire et responsabilités de gouvernance des données
+      similarities: Désigner les données qui font référence et la responsabilité de leur fourniture.
+      differences: La gouvernance décrite peut concerner toutes les données ; FLOW circonscrit ce périmètre à ses références
+        relativement stables.
+      concept_name: Authoritative Data Domain
+      scope_summary: Données d’un périmètre identifié, y compris reçues d’un propriétaire amont.
+      approach_summary: Définir les responsabilités et les conditions de fourniture aux consommateurs.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM483
+      - CMP194
+    - vendor: Oracle
+      product: Oracle Reference Architecture — Information Management
+      source_title: ORA Information Management
+      source_url: https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf
+      source_version: Release 3.1, juillet 2013, E26368-03
+      source_locator: §2.3.4, pages 2-3/2-4 ; §6.3.3.4.3, pages 6-49/6-50
+      evidence_limits: Architecture de référence historique, pas catalogue métier Supply ni recommandation de produit actuel.
+        La définition réunit master et reference data ; les seuils de politiques métier ne sont pas explicitement inclus.
+      element_name: Authoritative Data Domain
+      element_type: Catégorie d’architecture de données
+      similarities: Donner aux opérations un contexte de référence fiable.
+      differences: Oracle classe master et reference data. FLOW part de leur utilité dans le domaine, avec une autorité locale
+        explicitée par U479.
+      concept_name: Authoritative Data Domain
+      scope_summary: Entités maîtresses et données de classification qui donnent leur contexte aux opérations.
+      approach_summary: Rendre disponibles des références cohérentes ; une consolidation peut conserver la maîtrise des sources
+        amont.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM484
+      - CMP194
+    - vendor: EDM Council
+      product: Cloud Data Management Capabilities (CDMC)
+      source_title: 'CDMC Information Model: Controls, Tests and Mappings'
+      source_url: https://edmcouncil.org/wp-content/uploads/2023/02/CDMC-Information-Model-Controls-Tests-Mappings-V1.1.pdf
+      source_version: Version 1.1, octobre 2022
+      source_locator: 'Contrôle 3, pages 13–14 : Authoritative Indication ; Authority'
+      evidence_limits: Modèle de contrôle de gestion des données cloud ; appui sur la notion d’autorité, pas prescription
+        de domaine Supply ni déclaration de conformité FLOW.
+      element_name: Authoritative Data Source / Authoritative Provisioning Point
+      element_type: Qualification de gouvernance d’un actif de données
+      similarities: Rendre explicite quelles données font autorité pour leurs consommateurs.
+      differences: Le contrôle qualifie des actifs et points de fourniture ; il ne délimite pas les références stables par
+        rapport aux transactions.
+      concept_name: Authoritative Data Source
+      scope_summary: Actifs reconnus comme source ou point de fourniture faisant autorité.
+      approach_summary: Attribuer explicitement l’autorité ; la simple présence d’une donnée ne suffit pas.
+      consulted_on: '2026-09-19'
+      relationship: Appui sémantique
+      flow_position: Porter les références qui font foi dans Supply Chain Orchestration, en articulation avec les sources
+        de vérité d’entreprise et les décisions des areas consommatrices.
+      status: proposed
+      source_refs:
+      - U478
+      - U479
+      - ELM485
+      - CMP194
+    market_inspiration:
+      choice: Les référentiels Supply portent les données relativement stables qui font foi pour les décisions et les opérations
+        de Supply Chain Orchestration. Leur autorité locale s’articule avec les sources de vérité de l’entreprise, qui restent
+        externes au domaine.
+      flow_scope: Références des produits, parties, catalogues, accords, lieux et services utilisées par les areas Supply.
+      flow_approach: Porter une référence commune au domaine, avec une origine connue et une distinction entre responsabilité
+        d’entreprise et autorité locale.
+      synthesis:
+      - EDM Council éclaire la responsabilité et la reconnaissance de l’autorité ; Oracle éclaire le contexte de référence
+        donné aux opérations. Le terme Authoritative Data Domain est attesté dans les deux familles documentaires, avec des
+        portées différentes.
+      - Pour FLOW, l’utilité recherchée est de savoir quelles références utiliser dans le domaine. La nature des données ne
+        suffit pas à tracer cette frontière ; les commandes, les stocks courants et les engagements individuels restent portés
+        par leurs areas.
+      examples:
+      - title: Illustration FLOW — une référence produit commune à la Supply
+        situation: Le maître produit d’entreprise fournit une unité de conditionnement. Les commandes et la préparation doivent
+          utiliser la référence applicable dans le domaine.
+        outcome: Le référentiel Supply porte la référence locale consommée par ces areas et conserve son lien avec la source
+          d’entreprise.
+        lesson: Porter la référence locale et maîtriser le produit à l’échelle de l’entreprise sont deux responsabilités distinctes.
+          Les règles de prise en compte des changements restent à préciser.
+        source_title: ORA Information Management — Consolidated Hub ; illustration FLOW construite
+        source_url: https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf
+        source_refs:
+        - U479
+        - ELM484
+        - CMP194
+    finality: Permettre aux activités de Supply Chain Orchestration de s’appuyer sur les mêmes références pour savoir de quel
+      produit on parle, avec quel partenaire, dans quel lieu et sous quelles conditions.
+    definition: 'Authoritative Data rassemble les données métier relativement stables qui font foi pour les décisions et les
+      opérations de Supply Chain Orchestration. Ses référentiels portent la source de vérité locale du domaine : les références
+      applicables aux produits, partenaires, offres, accords, lieux et services. Leur fonction commune est de donner un repère
+      partagé aux activités Supply, quelle que soit la nature de ces données.'
+    scope: |-
+      Six référentiels composent ce périmètre : [Product Reference](model:D08), [Party / Role](model:D09), [Catalog](model:D12), [Agreement](model:D11), [Fulfillment Network](model:D13) et [Service Catalog](model:D14). Ils restent distincts et fournissent les références utiles aux autres activités Supply.
+
+      Les [commandes](glossary:TER012), le [stock](glossary:TER005) courant, les engagements pris pour une commande et les résultats d’exécution restent portés par leurs activités respectives. Un délai de service configuré fait référence ; la promesse faite pour une commande et le délai réellement constaté sont des informations différentes.
+    mastership: 'Les sources de vérité de l’entreprise restent en dehors de Supply Chain Orchestration. Les référentiels Supply
+      reçoivent leurs données, en conservent l’origine et portent la référence locale utilisée dans le domaine. Cette autorité
+      locale ne leur transfère pas l’administration des données maîtresses d’entreprise. Porter une valeur de référence ne
+      signifie pas la décider : le rattachement de paramètres comme les seuils de réassort reste à préciser.'
+    examples:
+    - title: Un même conditionnement pour interpréter les commandes
+      situation: Dans cet exemple illustratif, une référence produit précise qu’un carton contient six pièces. Une commande
+        de deux cartons doit donc être comprise comme portant sur douze pièces.
+      outcome: Authoritative Data porte la référence de conditionnement issue du maître produit externe. Les activités Supply
+        peuvent s’y référer pour interpréter la quantité commandée et organiser sa satisfaction.
+      lesson: Le référentiel indique ce qu’est le produit et comment ses unités se correspondent. Il ne constate pas le stock
+        disponible et ne décide pas de la quantité à fournir.
+      source_refs:
+      - U479
+      - U482
+      - U484
+      - ELM484
+      - CMP194
+  source_refs:
+  - U103
+  - U455
+  - U458
+  - U477
+  - CMP193
+  - U478
+  - U479
+  - CMP194
+  - U482
+  - U484
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: business-references
+  review:
+    state: accepted
+    note: 'Groupe de présentation, pas une capacité mère. U484 : finalité, définition, périmètre, autorité sur les informations
+      et exemple complétés ; formulations proposées, sans extension de l’accord portant uniquement sur le nom.'
+  adoption_ids:
+  - ADOPT-042
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T15:16:17Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    - U482
+    validated_fields:
+    - name
+    value_sha256:
+      name: 0bb2b596fb0822d0f2a3d8c07207798d200f7f5ad14be4cca21f6839cda2e947
+    note: 'Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord. U482 : vocabulaire des niveaux actualisé à portée constante ;
+      nom Authoritative Data adopté. Champs concernés : name. Empreintes et accords antérieurs conservés dans audits/2026-09-19-domain-area-U482/before-model.yaml.'
+- id: D09
+  revision: 3
+  kind: reference
+  fields:
+    name: Party / Role
+    definition: Identifier les [personnes physiques et morales](glossary:TER046) auxquelles se rattachent les accords et les
+      opérations Supply, et connaître les [rôles métier](glossary:TER047) qu’elles y jouent, par exemple client ou fournisseur.
+      Une même personne conserve son identité lorsqu’elle intervient dans plusieurs rôles.
+    finality: Savoir avec qui l’entreprise s’engage et à quel titre chaque personne participe aux échanges, sans confondre
+      son identité, son rôle et les engagements d’un accord.
+    mastership: external
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA — Financial Accounting
+      source_title: Managing Business Partners
+      source_url: https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners
+      source_version: Cours web ; numéro de release non affiché
+      source_locator: Business Partner Categories ; Business Partner Roles ; Customer/Vendor Integration
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+      element_name: Business Partner / Business Partner Role
+      concept_name: Business Partner / Business Partner Role
+      element_type: Concept documenté par la source primaire
+      scope_summary: Une identité partagée entre plusieurs contextes métier, dont client et fournisseur.
+      approach_summary: Rattacher les données propres à chaque rôle à une identité commune.
+      similarities: Une même personne peut intervenir sous plusieurs rôles sans devenir plusieurs personnes.
+      differences: SAP administre un maître et des données comptables ; FLOW utilise une référence locale alimentée depuis
+        les maîtres externes. Les catégories SAP sont plus larges que notre périmètre juridique.
+      relationship: Recouvrement partiel
+      flow_position: Identifier les personnes physiques et morales et comprendre à quel titre elles interviennent dans les
+        [accords](glossary:TER048) et les opérations Supply. Party / Role distingue leur identité commune des [rôles](glossary:TER047)
+        qu’elles jouent, par exemple client ou fournisseur.
+      status: proposed
+      source_refs:
+      - U505
+      - U506
+      - ELM500
+      - CMP203
+    - vendor: Informatica
+      product: MDM — Customer 360
+      source_title: Customer 360 10.4 HotFix 1 — Release Guide
+      source_url: https://docs.informatica.com/content/dam/source/GUID-A/GUID-A22D277C-F828-4A24-BB5F-1B1E45148FCB/6/en/C360_104HF1_ReleaseGuide_en.pdf
+      source_version: 10.4 HotFix 1 ; changement décrit pour 10.2 HotFix 2
+      source_locator: Chapitre 5, Changes / Data Model, p. 18
+      consulted_on: '2026-09-19'
+      evidence_limits: Passage primaire indexé consulté ; ouverture directe du PDF en erreur. Référence historique, pas preuve
+        d’une métaclasse Party Role dans le SaaS actuel ni de disparition des rôles métier.
+      element_name: Party ; modèle historique Party Role
+      concept_name: Party ; modèle historique Party Role
+      element_type: Concept documenté par la source primaire
+      scope_summary: Personnes et organisations dans Customer 360.
+      approach_summary: Représenter personnes et organisations dans un modèle commun Party, qui succède au modèle historique
+        Party Role.
+      similarities: Une notion commune Party couvre personnes et organisations ; le nom Party Role est attesté historiquement.
+      differences: Le guide décrit l’évolution de tables centrales d’un produit MDM. FLOW décrit une responsabilité métier
+        locale, sans reprendre cette architecture ni les fonctions de rapprochement du maître.
+      relationship: Recouvrement partiel
+      flow_position: Identifier les personnes physiques et morales et comprendre à quel titre elles interviennent dans les
+        [accords](glossary:TER048) et les opérations Supply. Party / Role distingue leur identité commune des [rôles](glossary:TER047)
+        qu’elles jouent, par exemple client ou fournisseur.
+      status: proposed
+      source_refs:
+      - U505
+      - U506
+      - ELM501
+      - CMP203
+    - vendor: OMG
+      product: Commons Ontology Library
+      source_title: Commons Ontology Library 1.2
+      source_url: https://www.omg.org/spec/Commons/1.2/PDF
+      source_version: 1.2, février 2025, formal/25-02-03
+      source_locator: §8.14 tableau 8.28, pp. 80–82 ; §8.13 tableau 8.26, pp. 71–72 (pagination imprimée)
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+      element_name: Party / PartyRole
+      concept_name: Party / PartyRole
+      element_type: Concept documenté par la source primaire
+      scope_summary: Personnes et organisations participant à une situation avec un rôle.
+      approach_summary: Distinguer qui intervient, à quel titre et dans quel contexte.
+      similarities: Le rôle client ou fournisseur qualifie une participation, sans remplacer l’identité.
+      differences: Party inclut aussi des organisations sans personnalité juridique autonome. FLOW centre cette référence
+        sur les personnes physiques et morales impliquées dans les accords et processus Supply.
+      relationship: Recouvrement partiel
+      flow_position: Identifier les personnes physiques et morales et comprendre à quel titre elles interviennent dans les
+        [accords](glossary:TER048) et les opérations Supply. Party / Role distingue leur identité commune des [rôles](glossary:TER047)
+        qu’elles jouent, par exemple client ou fournisseur.
+      status: proposed
+      source_refs:
+      - U505
+      - U506
+      - ELM503
+      - CMP203
+    - vendor: EDM Council
+      product: FIBO — Foundations
+      source_title: Contracts Ontology
+      source_url: https://raw.githubusercontent.com/edmcouncil/fibo/master/FND/Agreements/Contracts.rdf
+      source_version: versionIRI FND/20260601
+      source_locator: Contract ; ContractParty ; ContractThirdParty ; hasContractParty
+      consulted_on: '2026-09-19'
+      evidence_limits: Ontologie primaire consultée ; vocabulaire contractuel financier. Rapprochement sémantique sélectif,
+        pas qualification juridique automatique ni import du modèle financier.
+      element_name: ContractParty / PartyRole
+      concept_name: ContractParty / PartyRole
+      element_type: Concept documenté par la source primaire
+      scope_summary: Personnes engagées dans un contrat ; distinction des autres parties impliquées.
+      approach_summary: Relier le rôle contractant à une personne juridiquement capable et au contrat concerné.
+      similarities: Appui direct au lien personne, rôle contractuel et engagement.
+      differences: FIBO traite notamment les contrats financiers. FLOW reçoit les identités et qualifications utiles ; Agreement
+        porte les conditions et engagements, sans ajouter ici un contrôle juridique.
+      relationship: Recouvrement partiel
+      flow_position: Identifier les personnes physiques et morales et comprendre à quel titre elles interviennent dans les
+        [accords](glossary:TER048) et les opérations Supply. Party / Role distingue leur identité commune des [rôles](glossary:TER047)
+        qu’elles jouent, par exemple client ou fournisseur.
+      status: proposed
+      source_refs:
+      - U505
+      - U506
+      - ELM504
+      - CMP203
+    market_inspiration:
+      choice: Identifier les personnes physiques et morales et comprendre à quel titre elles interviennent dans les [accords](glossary:TER048)
+        et les opérations Supply. Party / Role distingue leur identité commune des [rôles](glossary:TER047) qu’elles jouent,
+        par exemple client ou fournisseur.
+      flow_scope: Personnes physiques et morales, identités et rôles de référence utiles aux accords et processus Supply.
+      flow_approach: Recevoir la référence d’entreprise, la rendre consultable localement et relier chaque rôle à son contexte.
+      synthesis:
+      - SAP rattache les rôles client et fournisseur à une identité commune. Le guide historique Informatica confirme le vocabulaire
+        Party Role puis Party, pour représenter personnes et organisations ; il ne démontre pas à lui seul le détail des rôles
+        ni un schéma SaaS actuel identique.
+      - OMG explique la séparation entre la personne et son rôle dans une situation ; FIBO la précise pour les parties d’un
+        contrat. Leurs notions de Party et d’organisation peuvent dépasser les personnes juridiquement autonomes retenues
+        ici.
+      - FLOW retient ce noyau identité, rôle et contexte. Les maîtres d’entreprise gardent leur responsabilité ; Agreement
+        porte les engagements. Person seul serait ambigu en anglais, car SAP et Informatica distinguent les personnes des
+        organisations.
+      examples:
+      - title: Illustration FLOW — une personne, deux rôles
+        situation: La société fictive Alpha fournit des marchandises dans un accord et achète une prestation dans un autre.
+        outcome: La même identité est reliée à un rôle fournisseur puis à un rôle client, chacun dans son contexte.
+        lesson: Party / Role indique qui intervient et à quel titre ; Agreement précise les engagements de chaque accord.
+        source_title: Managing Business Partners
+        source_url: https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners
+        source_refs:
+        - U505
+        - ELM500
+        - CMP203
+      - title: Exemple SAP — distinguer la personne de son entreprise
+        situation: Le cours SAP relie Mme Lopez, personne de contact, à ABC Supplier Ltd, organisation.
+        outcome: La relation conserve deux identités distinctes et peut être datée.
+        lesson: Un contact ne devient pas automatiquement le cocontractant de son entreprise ; son rôle doit être explicite.
+        source_title: Creating Business Partners
+        source_url: https://learning.sap.com/courses/purchasing-in-sap-s-4hana/creating-business-partners
+        source_refs:
+        - U505
+        - ELM499
+        - CMP203
+    scope: |-
+      Le référentiel local des personnes et de leurs rôles utiles à la Supply : identité, identifiants d’origine, qualification physique ou morale, relations et rôles métier avec leur contexte et leur validité lorsqu’ils sont fournis. Il rend ces références disponibles pour relier les accords et opérations aux bonnes personnes.
+
+      Le rôle de référence, tel que fournisseur, ne suffit pas à désigner le fournisseur d’un accord précis : cette participation est reliée à l’[Agreement](glossary:TER048) concerné. Agreement porte les conditions et engagements ; Party / Role permet de reconnaître les personnes impliquées. Un contact ou représentant est distingué de la personne qu’il représente.
+
+      La Supply reçoit l’identité et les qualifications des maîtres d’entreprise externes. Elle ne crée pas un second référentiel maître, ne certifie pas la capacité juridique et ne déduit pas une nouvelle personne d’un changement de rôle. Les lieux relèvent de Fulfillment Network ; les habilitations applicatives ne constituent pas ces rôles métier. Une unité interne sans personnalité juridique autonome n’est pas assimilée par défaut à une personne morale.
+
+      Exemple fictif : Alpha est fournisseur dans un accord d’achat et client dans un accord de prestation. Son identité reste la même ; les rôles et les engagements sont rattachés aux accords correspondants.
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - C69
+  - INF18
+  - U455
+  - U458
+  - U477
+  - CMP193
+  - U505
+  - U506
+  - CMP203
+  source_locator:
+    path: connaissance/25-domaines-coeur-et-epreuve-recits.md
+    anchor: d09-parties-et-relations
+    line: 307
+  review:
+    state: partial
+    note: Description et inspirations reprises U505/U506. Noms, maîtrise externe et portée des accords antérieurs conservés
+      ; nouveaux textes proposés.
+  editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.
+    U505/U506 : personnes, rôles et contexte contractuel ; rédaction et inspirations proposées, noms et accords historiques
+    inchangés.'
+  adoption_ids:
+  - ADOPT-027
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 5f6904197651fbd8b14b37d6c6017a8de09525a325b6fb5de8d36395d01bfa02
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+  last_modified: '2026-09-19T17:16:10.389042Z'
+- id: D08.e
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Product Reference Visibility
+    definition: Retrouver un produit ou une variante et consulter les caractéristiques de référence nécessaires pour comprendre
+      de quel produit parlent une offre, un accord ou une commande.
+    finality: Partager la même compréhension du produit et de ses variantes dans les décisions et opérations Supply.
+    scope: |-
+      Rechercher par identifiant, nom ou caractéristiques disponibles ; consulter les descriptions, variantes, unités et relations de référence reçues, avec leur provenance et leur validité lorsqu’elles sont connues.
+
+      La consultation ne crée pas de produit et ne corrige pas le maître externe. Les unités physiques, quantités en stock, disponibilité et engagements relèvent d’autres capacités.
+
+      Exemple fictif : retrouver la variante bleue en taille M mentionnée dans un accord, puis consulter ses caractéristiques sans en déduire les quantités disponibles.
+    nature: knowledge
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Product information overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+      source_version: Mise à jour du 1er juillet 2026
+      source_locator: Product masters and product variants ; Product variant model definition workspace ; Released product
+        maintenance workspace
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire relu. Le produit inclut création et maintenance ; seule la lecture est rapprochée de
+        FLOW.
+      element_name: Product information / Product variants
+      concept_name: Product information / Product variants
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Produits, variantes et caractéristiques.
+      approach_summary: Naviguer vers le détail et identifier les variantes par leurs dimensions.
+      similarities: Même besoin de retrouver la bonne référence produit.
+      differences: Microsoft administre aussi les produits ; FLOW ne retient ici que leur consultation.
+      relationship: Recouvrement partiel
+      flow_position: Rendre les références produit faciles à retrouver et à comprendre. Product Reference Visibility complète
+        l’ingestion en donnant accès aux produits et variantes utiles à la Supply.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM423
+      - CMP204
+    - vendor: Oracle
+      product: Fusion Cloud SCM — Product Information Management
+      source_title: How You Use the Product Information Management Work Area
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fapim/how-you-use-the-product-information-management-work-area.html
+      source_version: 26B
+      source_locator: Quick Search and Manage Items
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; espace produit plus large que la seule consultation, sans réalisation locale
+        déduite.
+      element_name: Quick Search / Manage Items
+      concept_name: Quick Search / Manage Items
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Articles, catalogues et attributs produit.
+      approach_summary: Rechercher puis consulter les attributs d’un résultat.
+      similarities: Le résultat recherché est une référence identifiable et compréhensible.
+      differences: L’espace Oracle comporte des fonctions de maintenance ; elles restent hors de cette capacité.
+      relationship: Recouvrement partiel
+      flow_position: Rendre les références produit faciles à retrouver et à comprendre. Product Reference Visibility complète
+        l’ingestion en donnant accès aux produits et variantes utiles à la Supply.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM508
+      - CMP204
+    market_inspiration:
+      choice: Rendre les références produit faciles à retrouver et à comprendre. Product Reference Visibility complète l’ingestion
+        en donnant accès aux produits et variantes utiles à la Supply.
+      flow_scope: Produits, variantes et caractéristiques de référence disponibles.
+      flow_approach: Rechercher et consulter la projection locale et ses relations, sans modifier le maître.
+      synthesis:
+      - Microsoft éclaire la compréhension des variantes ; Oracle montre la recherche et l’accès au détail. Les deux documentent
+        une lecture des références au sein d’outils qui permettent aussi de les administrer.
+      - FLOW retient la connaissance du produit dans sa référence locale. Visibility est notre nom de capacité, pas un intitulé
+        commun attesté chez ces éditeurs.
+      examples:
+      - title: Illustration FLOW — Product Reference Visibility
+        situation: Une commande mentionne une variante bleue en taille M.
+        outcome: La référence et ses caractéristiques sont retrouvées.
+        lesson: Connaître le produit ne signifie pas connaître sa disponibilité.
+        source_title: Product information overview
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+        source_refs:
+        - U505
+        - ELM423
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM423
+  - ELM508
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+- id: D09.e
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Party / Role Visibility
+    definition: Retrouver une [personne physique ou morale](glossary:TER046) et consulter son identité, ses relations et les
+      [rôles](glossary:TER047) sous lesquels elle participe aux accords et opérations Supply.
+    finality: Savoir qui intervient et à quel titre avant d’interpréter les accords et échanges qui le concernent.
+    scope: |-
+      Rechercher une personne par ses identifiants ou informations disponibles ; consulter ses rôles de référence, relations et contextes reçus, avec leur provenance et leur validité lorsqu’elles sont connues. Les liens permettent de retrouver les accords concernés.
+
+      Agreement porte le contenu des engagements. La consultation ne crée ni nouvelle identité, ni rôle, ni habilitation applicative et ne certifie pas la capacité juridique d’une personne. Le rôle de contact ne suffit pas à désigner un cocontractant.
+
+      Exemple fictif : retrouver Alpha par son identifiant, constater ses rôles client et fournisseur et identifier le contexte dans lequel chacun s’applique.
+    nature: knowledge
+    market_comparisons:
+    - vendor: SAP
+      product: S/4HANA — Purchasing
+      source_title: Creating Business Partners
+      source_url: https://learning.sap.com/courses/purchasing-in-sap-s-4hana/creating-business-partners
+      source_version: Cours web ; numéro de release non affiché
+      source_locator: Business Partner Concept ; Category ; Relationships ; Transactions and Apps
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
+      element_name: Search / Display Business Partners
+      concept_name: Search / Display Business Partners
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Partenaires, catégories, rôles et relations.
+      approach_summary: Rechercher une identité et afficher les informations de référence.
+      similarities: L’identité et les relations sont consultables en contexte métier.
+      differences: SAP offre aussi une maintenance du maître ; FLOW ne retient ici que sa projection en lecture.
+      relationship: Recouvrement partiel
+      flow_position: Savoir qui se trouve derrière une référence et à quel titre cette personne intervient. Party / Role Visibility
+        rend consultables les identités et rôles reçus des maîtres d’entreprise.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM499
+      - CMP204
+    - vendor: Informatica
+      product: MDM — extension Agentforce
+      source_title: Connecting Master Data to Agentforce
+      source_url: https://www.informatica.com/content/dam/informatica-cxp/techtuesdays-slides-pdf/Connecting%20Master%20Data%20to%20Agentforce.pdf
+      source_version: Présentation du 10 mars 2026
+      source_locator: 'Diapositives 16–17 : Agentforce Actions ; CAI Processes and MDM APIs'
+      consulted_on: '2026-09-19'
+      evidence_limits: Présentation officielle consultée ; fonctions exposées par une extension. Appui à la consultation,
+        sans reprendre l’IA, les données familiales ou la maîtrise centrale dans FLOW.
+      element_name: Identify Customer / Get Customer Profile / Get Customer Relationships
+      concept_name: Identify Customer / Get Customer Profile / Get Customer Relationships
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Personnes, organisations, profils et relations.
+      approach_summary: Identifier un client puis consulter son profil et ses relations.
+      similarities: La recherche et la lecture complètent l’intégration des données.
+      differences: Présentation d’une extension Informatica ; ni agent IA, ni relations familiales, ni maîtrise MDM introduits
+        dans FLOW.
+      relationship: Recouvrement partiel
+      flow_position: Savoir qui se trouve derrière une référence et à quel titre cette personne intervient. Party / Role Visibility
+        rend consultables les identités et rôles reçus des maîtres d’entreprise.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM507
+      - CMP204
+    market_inspiration:
+      choice: Savoir qui se trouve derrière une référence et à quel titre cette personne intervient. Party / Role Visibility
+        rend consultables les identités et rôles reçus des maîtres d’entreprise.
+      flow_scope: Personnes, identifiants, rôles et relations de référence contextualisés.
+      flow_approach: Retrouver la personne puis lire les rôles et contextes disponibles dans la référence locale.
+      synthesis:
+      - SAP documente la recherche et la consultation des partenaires et rôles ; Informatica expose la consultation de profils
+        et relations de personnes ou d’organisations.
+      - FLOW retient cette connaissance de référence, avec un périmètre centré sur les accords et processus Supply. Consulter
+        la qualité de fournisseur ne suffit pas à déterminer son engagement dans un accord précis.
+      examples:
+      - title: Illustration FLOW — Party / Role Visibility
+        situation: Alpha est référencée comme cliente et fournisseuse.
+        outcome: Sa même identité et les contextes de ses deux rôles sont consultables.
+        lesson: Le rôle s’interprète avec son contexte et l’accord concerné.
+        source_title: Creating Business Partners
+        source_url: https://learning.sap.com/courses/purchasing-in-sap-s-4hana/creating-business-partners
+        source_refs:
+        - U505
+        - ELM499
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM499
+  - ELM507
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+- id: D11.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Agreement Visibility
+    definition: Retrouver un [accord](glossary:TER048) et consulter les personnes engagées, les conditions, les périodes et
+      les engagements contractuels enregistrés pour comprendre ce qu’il prévoit.
+    finality: Donner aux décisions et opérations Supply une lecture partagée des accords de référence disponibles.
+    scope: |-
+      Rechercher un accord par numéro, partie ou attribut disponible ; lire les conditions, engagements en quantité ou valeur, dates et versions transmises, avec leur provenance. Les droits et obligations se lisent dans leur contexte contractuel.
+
+      Cette capacité ne négocie, ne modifie ni ne renouvelle le contrat. Elle ne calcule pas sa consommation ou son reliquat, ne décide pas de son application à une commande et ne produit pas une promesse opérationnelle.
+
+      Exemple fictif : retrouver l’accord d’Alpha et consulter la période et la quantité prévues, sans en déduire le restant à commander.
+    nature: knowledge
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Purchase agreements
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+      source_version: Mise à jour du 8 septembre 2026
+      source_locator: Introduction ; Commitment types ; Confirmations and version history for purchase agreements
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire relu. Les calculs de consommation et reliquat décrits ailleurs sur la page ne sont pas
+        repris dans Visibility.
+      element_name: Purchase agreements / Version history
+      concept_name: Purchase agreements / Version history
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Accords d’achat, périodes, engagements et versions.
+      approach_summary: Consulter le contrat et les versions conservées.
+      similarities: Même besoin de connaître ce que prévoit l’accord.
+      differences: Microsoft inclut des calculs de consommation ; FLOW les exclut de cette consultation de référence.
+      relationship: Recouvrement partiel
+      flow_position: Rendre les accords de référence retrouvables et compréhensibles. Agreement Visibility expose ce qui est
+        convenu avant que les capacités opérationnelles l’utilisent.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM426
+      - CMP204
+    - vendor: Oracle
+      product: Fusion Cloud — Enterprise Contracts
+      source_title: Contracts Search Options
+      source_url: https://docs.oracle.com/en/cloud/saas/sales/facup/contracts-search-options.html
+      source_version: Documentation évolutive ; édition non affichée
+      source_locator: Search by Enterprise Contract Attributes ; Search Contracts by Text ; Search Contracts with Global Search
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté. La recherche textuelle dépend de la configuration et des habilitations ; aucun
+        choix de moteur ou d’interface imposé.
+      element_name: Contracts Search
+      concept_name: Contracts Search
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Contrats retrouvés par attribut, partie ou contenu.
+      approach_summary: Rechercher puis ouvrir le contrat et ses documents.
+      similarities: Le contrat peut être retrouvé autrement que par son seul numéro.
+      differences: Les modalités de recherche et de sécurité Oracle ne sont pas imposées ; FLOW ne décrit pas la gestion du
+        cycle contractuel.
+      relationship: Recouvrement partiel
+      flow_position: Rendre les accords de référence retrouvables et compréhensibles. Agreement Visibility expose ce qui est
+        convenu avant que les capacités opérationnelles l’utilisent.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM509
+      - CMP204
+    market_inspiration:
+      choice: Rendre les accords de référence retrouvables et compréhensibles. Agreement Visibility expose ce qui est convenu
+        avant que les capacités opérationnelles l’utilisent.
+      flow_scope: Parties, conditions, périodes, engagements et versions contractuelles disponibles.
+      flow_approach: Rechercher l’accord et consulter la référence transmise, sans changer ses termes.
+      synthesis:
+      - Microsoft éclaire le contenu et les versions d’un accord d’achat ; Oracle documente les chemins pour retrouver un
+        contrat. Ces fonctions se situent dans des produits plus larges de gestion contractuelle.
+      - FLOW limite Visibility à la connaissance des accords reçus. Lire un engagement contractuel et calculer son utilisation
+        par les opérations sont des responsabilités distinctes.
+      examples:
+      - title: Illustration FLOW — Agreement Visibility
+        situation: Un approvisionneur veut comprendre l’engagement de quantité convenu avec Alpha.
+        outcome: Il retrouve l’accord, sa période et la version disponible.
+        lesson: La quantité contractuelle consultée n’est pas le reliquat calculé.
+        source_title: Purchase agreements
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+        source_refs:
+        - U505
+        - ELM426
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM426
+  - ELM509
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+- id: D12.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Catalog Visibility
+    definition: Retrouver un catalogue et consulter les offres, produits et conditions commerciales enregistrées pour comprendre
+      ce qui est proposé et dans quel périmètre.
+    finality: Partager la connaissance de l’offre de référence utilisée par les accords et demandes Supply.
+    scope: |-
+      Rechercher un catalogue et parcourir son contenu ; consulter ses références produit, conditions commerciales et critères d’applicabilité reçus, notamment périodes, clientèles ou zones lorsqu’ils sont renseignés. La même référence produit peut figurer dans plusieurs catalogues.
+
+      La consultation ne crée pas le produit, ne compose pas l’offre, ne calcule pas un prix contextualisé et ne choisit pas l’offre à appliquer à une commande. L’administration commerciale des catalogues demeure externe au domaine.
+
+      Exemple fictif : consulter deux catalogues contenant le même produit et lire leurs périodes et clientèles de référence, sans décider lequel appliquer.
+    nature: knowledge
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      source_title: Create Commerce catalogs for B2B sites
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+      source_version: Mise à jour du 21 janvier 2026 ; 10.0.27 et versions ultérieures
+      source_locator: Catalog configuration ; Set attribute metadata ; dates ; customer hierarchies ; price groups
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire relu ; consultation seule retenue, pas administration commerciale ni ouverture du chantier
+        Domain Commerce.
+      element_name: B2B catalogs / Searchable attributes
+      concept_name: B2B catalogs / Searchable attributes
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Contenu et attributs visibles, recherchables et filtrables.
+      approach_summary: Organiser les informations utiles à la consultation de l’offre.
+      similarities: Même besoin de comprendre les produits proposés et leur périmètre.
+      differences: Microsoft configure et publie le catalogue commercial ; FLOW en reçoit la référence.
+      relationship: Recouvrement partiel
+      flow_position: Rendre lisibles les offres et leurs conditions de référence. Catalog Visibility permet de retrouver un
+        catalogue et d’en comprendre le contenu et l’applicabilité renseignée.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM391
+      - CMP204
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      source_title: Catalog picker module
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalog-picker
+      source_version: Mise à jour du 21 janvier 2026
+      source_locator: Introduction ; accès depuis le compte client
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté. Illustration de consultation ; ne prescrit pas une interface ni une capacité
+        par composant. Deux documents Microsoft ne prouvent pas un consensus interéditeurs.
+      element_name: Catalog picker
+      concept_name: Catalog picker
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Liste des catalogues accessibles dans un site B2B.
+      approach_summary: Parcourir les catalogues puis accéder à leur contenu.
+      similarities: Plusieurs catalogues peuvent être retrouvés et distingués.
+      differences: Composant d’interface commerciale, sans équivalence de capacité ni prescription de portail FLOW.
+      relationship: Recouvrement partiel
+      flow_position: Rendre lisibles les offres et leurs conditions de référence. Catalog Visibility permet de retrouver un
+        catalogue et d’en comprendre le contenu et l’applicabilité renseignée.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM510
+      - CMP204
+    market_inspiration:
+      choice: Rendre lisibles les offres et leurs conditions de référence. Catalog Visibility permet de retrouver un catalogue
+        et d’en comprendre le contenu et l’applicabilité renseignée.
+      flow_scope: Catalogues, offres, références produit et conditions d’applicabilité enregistrées.
+      flow_approach: Rechercher et parcourir l’offre reçue, sans recalculer ni administrer ses conditions.
+      synthesis:
+      - 'Ces deux documents Microsoft se complètent : l’un décrit les informations consultables, l’autre l’accès à plusieurs
+        catalogues. Ils ne constituent pas une preuve de consensus interéditeurs.'
+      - FLOW transpose ce besoin à la référence locale utilisée par la Supply. Le rapprochement n’ouvre pas le chantier Commerce
+        et ne transfère pas l’administration de l’offre au domaine.
+      examples:
+      - title: Illustration FLOW — Catalog Visibility
+        situation: Le même produit figure dans deux catalogues reçus.
+        outcome: Leurs périodes et clientèles de référence permettent de comprendre la différence.
+        lesson: Lire l’applicabilité renseignée ne décide pas automatiquement du catalogue à appliquer.
+        source_title: Create Commerce catalogs for B2B sites
+        source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+        source_refs:
+        - U505
+        - ELM391
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM391
+  - ELM510
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+- id: D13.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Fulfillment Network Visibility
+    definition: Retrouver un point du réseau Supply et consulter ses caractéristiques, ses rattachements et ses relations
+      de référence pour comprendre sa place dans le réseau.
+    finality: Donner une représentation partagée des points utilisables et de leurs relations de référence, préalable aux
+      décisions opérationnelles.
+    scope: |-
+      Rechercher un point par identifiant, nom ou caractéristiques disponibles ; consulter ses relations de référence, ses parties responsables et ses conditions connues, avec leur provenance et leur validité lorsqu’elles sont reçues. Les liaisons sont celles décrites dans le référentiel, sans itinéraire inventé.
+
+      Cette lecture ne mesure ni stock ni charge, ne certifie pas la disponibilité réelle, ne réserve pas de ressource et ne choisit pas un itinéraire. Elle ne conçoit pas le réseau d’entreprise.
+
+      Exemple fictif : retrouver un point de préparation et consulter le partenaire qui en est responsable ainsi que ses rattachements de référence ; sa capacité disponible reste une information opérationnelle distincte.
+    nature: knowledge
+    market_comparisons:
+    - vendor: GS1 US
+      product: Data Hub — Location
+      source_title: Location View/Use Instructions
+      source_url: https://www.help.gs1us.org/location-view-use
+      source_version: Documentation évolutive ; édition non affichée
+      source_locator: View Shared GLNs ; filtres de recherche ; Search for Multiple GLNs at Once
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; accès soumis au partage et parfois à une option. Appui limité aux lieux,
+        sans identification GLN imposée ni topologie Supply complète démontrée.
+      element_name: Location View/Use
+      concept_name: Location View/Use
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Lieux partagés, identifiants et attributs.
+      approach_summary: Rechercher par identifiant ou nom puis consulter les lieux.
+      similarities: Même besoin de retrouver le lieu décrit par une référence.
+      differences: GS1 US ne prouve pas toute la topologie Supply ; aucun identifiant GLN obligatoire ajouté à FLOW.
+      relationship: Recouvrement partiel
+      flow_position: Comprendre les points du réseau et les relations de référence qui les relient. Fulfillment Network Visibility
+        expose la structure connue avant les décisions de stock, capacité ou acheminement.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM511
+      - CMP204
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Inventory locations
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-locations
+      source_version: Mise à jour du 1er juillet 2026
+      source_locator: Location properties ; Tree structure
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; module Inventory Management sans Warehouse Management. Échelle intrentrepôt
+        plus fine que le réseau FLOW ; aucune couverture complète de ses liaisons déduite.
+      element_name: Inventory locations / Tree structure
+      concept_name: Inventory locations / Tree structure
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Emplacements et organisation arborescente.
+      approach_summary: Lire les caractéristiques et naviguer dans la structure.
+      similarities: Consultation de points et de leurs rattachements.
+      differences: Échelle intrentrepôt et périmètre produit plus restreints ; les liaisons intersites FLOW constituent une
+        adaptation explicite.
+      relationship: Recouvrement partiel
+      flow_position: Comprendre les points du réseau et les relations de référence qui les relient. Fulfillment Network Visibility
+        expose la structure connue avant les décisions de stock, capacité ou acheminement.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM512
+      - CMP204
+    market_inspiration:
+      choice: Comprendre les points du réseau et les relations de référence qui les relient. Fulfillment Network Visibility
+        expose la structure connue avant les décisions de stock, capacité ou acheminement.
+      flow_scope: Points, caractéristiques, responsabilités et relations de référence du réseau.
+      flow_approach: Rechercher un point et consulter la structure locale reçue.
+      synthesis:
+      - GS1 US montre la recherche de lieux partagés ; Microsoft la lecture d’emplacements organisés en arborescence. Ces
+        deux échelles étayent la consultation, sans couvrir à elles seules toutes les relations d’un réseau Supply.
+      - FLOW étend cette lecture aux relations déjà définies dans Fulfillment Network. Cette adaptation ne crée ni nouveaux
+        flux ni connaissance de la charge ou du stock réel.
+      examples:
+      - title: Illustration FLOW — Fulfillment Network Visibility
+        situation: Une demande mentionne un point de préparation.
+        outcome: Ses caractéristiques et ses rattachements reçus sont retrouvés.
+        lesson: La place dans le réseau ne prouve pas sa disponibilité opérationnelle.
+        source_title: Location View/Use Instructions
+        source_url: https://www.help.gs1us.org/location-view-use
+        source_refs:
+        - U505
+        - ELM511
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM511
+  - ELM512
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+- id: D14.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  kind: capability
+  fields:
+    name: Service Catalog Visibility
+    definition: Retrouver un [Backing Service](glossary:TER075) et consulter son résultat attendu, son fournisseur et les
+      conditions de référence de sa réalisation pour comprendre ce que l’orchestration peut mobiliser.
+    finality: Permettre aux activités Supply de connaître les prestations de référence et leurs conditions avant de les mobiliser.
+    scope: |-
+      Rechercher et parcourir les Backing Services ; consulter résultats attendus, fournisseurs, éligibilité et engagements de service définis, avec leurs périodes de validité lorsqu’elles sont reçues. Il s’agit de l’offre de prestations mobilisables par l’orchestration.
+
+      La disponibilité réelle et la charge relèvent de Service Capacity Visibility. Cette consultation ne sélectionne pas l’exécutant, ne crée pas de Backing Service Order, ne fixe pas de promesse individuelle et n’exécute pas la prestation. Elle ne décrit pas le catalogue des demandes prises en charge par Service Requests.
+
+      Exemple fictif : consulter une prestation de préparation et son délai de référence ; confirmer qu’un exécutant peut la réaliser demain nécessite une autre connaissance et une décision.
+    nature: knowledge
+    market_comparisons:
+    - vendor: TM Forum
+      product: ODA — TMFC006
+      source_title: Service Catalog Management v1.2.0
+      source_url: https://oda-production.s3.eu-west-2.amazonaws.com/v1.0.0/TMFC006_Service_Catalog_Management_v1.2.0.pdf
+      source_version: 1.2.0, approuvé le 26 novembre 2024, Production/GA
+      source_locator: §1 Overview, p. 5
+      consulted_on: '2026-09-19'
+      evidence_limits: PDF primaire consulté. Composant télécom comprenant aussi conception et cycle de vie ; ces responsabilités
+        ne sont pas importées dans la consultation FLOW.
+      element_name: Service Catalog / Service Specification
+      concept_name: Service Catalog / Service Specification
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Services et spécifications organisés dans un catalogue.
+      approach_summary: Permettre la recherche et l’accès aux spécifications.
+      similarities: Même besoin de retrouver et comprendre une prestation avant de la mobiliser.
+      differences: Le composant TM Forum comprend conception et cycle de vie ; FLOW se limite ici à la consultation des Backing
+        Services.
+      relationship: Recouvrement partiel
+      flow_position: Rendre l’offre de Backing Services consultable par les activités d’orchestration. Service Catalog Visibility
+        explique ce que chaque prestation prévoit et sous quelles conditions de référence.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM513
+      - CMP204
+    - vendor: ServiceNow
+      product: Service Portal
+      source_title: Catalog Homepage Search widget
+      source_url: https://www.servicenow.com/docs/r/platform-user-interface/service-portal/cat-homepage-search-widget.html
+      source_version: Australia ; mise à jour du 12 mars 2026
+      source_locator: Using the widget
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire consulté ; analogie de consultation uniquement. Le catalogue de demandes ServiceNow
+        n’est pas assimilé aux Backing Services de FLOW, ni au périmètre de D14.
+      element_name: Catalog search / Categories
+      concept_name: Catalog search / Categories
+      element_type: Fonction documentée par la source primaire
+      scope_summary: Offres retrouvées par mots-clés et catégories.
+      approach_summary: Faciliter la recherche et le parcours d’un catalogue.
+      similarities: Analogie du besoin de retrouver une offre intelligible.
+      differences: Le catalogue de demandes ServiceNow a une autre finalité ; son contenu n’est pas assimilé aux Backing Services
+        de FLOW.
+      relationship: Recouvrement partiel
+      flow_position: Rendre l’offre de Backing Services consultable par les activités d’orchestration. Service Catalog Visibility
+        explique ce que chaque prestation prévoit et sous quelles conditions de référence.
+      status: proposed
+      source_refs:
+      - U505
+      - ELM514
+      - CMP204
+    market_inspiration:
+      choice: Rendre l’offre de Backing Services consultable par les activités d’orchestration. Service Catalog Visibility
+        explique ce que chaque prestation prévoit et sous quelles conditions de référence.
+      flow_scope: Prestations, résultats, fournisseurs, éligibilité et engagements de service définis.
+      flow_approach: Retrouver une prestation dans le catalogue reçu et lire ses conditions.
+      synthesis:
+      - TM Forum décrit l’accès aux spécifications des services ; ServiceNow illustre la recherche dans un catalogue d’une
+        autre nature. Le rapprochement ServiceNow porte sur la consultation, pas sur l’objet métier catalogué.
+      - FLOW expose les Backing Services nécessaires à l’orchestration. Le catalogue décrit l’offre de référence ; il ne donne
+        pas la capacité disponible ni un engagement pris pour une demande précise.
+      examples:
+      - title: Illustration FLOW — Service Catalog Visibility
+        situation: Une orchestration envisage une prestation de préparation.
+        outcome: Elle retrouve son résultat attendu et son délai de référence.
+        lesson: Le délai de référence ne vaut pas engagement pour une réalisation demain.
+        source_title: Service Catalog Management v1.2.0
+        source_url: https://oda-production.s3.eu-west-2.amazonaws.com/v1.0.0/TMFC006_Service_Catalog_Management_v1.2.0.pdf
+        source_refs:
+        - U505
+        - ELM513
+        - CMP204
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  - ELM513
+  - ELM514
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u505
+  review:
+    state: proposed
+    note: Complément de consultation en lecture seule ; proposition U505.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+  proposed_fields:
+  - name
+  - definition
+  - finality
+  - scope
+  - nature
+  - market_comparisons
+  - market_inspiration
+relations:
+- id: REL-GROUP-D08
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D08
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 9e3c86800ef8915e0498fcfcfbf385c0d575ac8c4901e0d1bd09319272d46649
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-MEMBER-D09.d
+  revision: 1
+  type: contains
+  source_id: D09
+  target_id: D09.d
+  source_refs:
+  - P81
+  - U97
+  - U103
+  - C64
+  - P85
+  review:
+    state: accepted
+    note: Une ingestion pour ce référentiel ; détails et maître par attribut ouverts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717
+      target_id: fb5a7d6c9cfbf8e55603c6fb1382b544192c30c47012df317f512af951e6defc
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D09
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D09
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 87456b7f17806f9b5386cacda27a9059ad9f35d09fef5fd6c288dbd2e8521717
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D12
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D12
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 7d25f9c6f907e64ec1bd992bffa53fa42f41db0a9ab22495b3a669f825ca5711
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D11
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D11
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 730537331e56c94b2f53a912667fd9bb3ce637bbda1b3ddf348fab55b09a932f
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-GROUP-D13
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D13
+  source_refs:
+  - U103
+  review:
+    state: accepted
+    note: Groupe de présentation distinct d’un domaine fusionné.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 04de8ebf690088973924edcbf7dd36fe2245a618cf13e700d9b4425941312acf
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: REL-UNIVERSE-SUPPLY-business-references
+  revision: 1
+  type: presents
+  source_id: universe-supply
+  target_id: business-references
+  source_refs:
+  - U141
+  - C78
+  - CMP066
+  review:
+    state: proposed
+    note: Rattachement ou contribution explicite selon U141 ; détails proposés.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-13T17:32:42.257717Z'
+    recorded_by: Codex
+    source_refs:
+    - U141
+    - C78
+    - CMP066
+    validated_fields: []
+    value_sha256: {}
+    note: Détail de mise en œuvre proposé par Codex selon U141 ; non validé individuellement.
+- id: REL-GROUP-D14
+  revision: 1
+  type: presents
+  source_id: business-references
+  target_id: D14
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  review:
+    state: accepted
+    note: Regroupement ou nouveau référentiel demandé en U244.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-16T09:04:53.281745Z'
+    recorded_by: Codex
+    source_refs:
+    - U244
+    validated_fields:
+    - type
+    - source_id
+    - target_id
+    value_sha256:
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: ace6ded8e52413f7d896e74b5c917206850718402c7bcf8e0d3e9f62d9fd0f2d
+    note: Compléments proposés pour appliquer U244 ; aucune validation de détail déduite.
+- id: REL-MEMBER-D08.e
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D08
+  target_id: D08.e
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+- id: REL-MEMBER-D09.e
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D09
+  target_id: D09.e
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+- id: REL-MEMBER-D11.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D11
+  target_id: D11.b
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+- id: REL-MEMBER-D12.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D12
+  target_id: D12.b
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+- id: REL-MEMBER-D13.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D13
+  target_id: D13.b
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []
+- id: REL-MEMBER-D14.b
+  revision: 1
+  last_modified: '2026-09-19T17:22:35.945608Z'
+  type: contains
+  source_id: D14
+  target_id: D14.b
+  source_refs:
+  - U134
+  - U505
+  - CMP204
+  review:
+    state: proposed
+    note: Rattachement proposé au référentiel concerné ; aucune fusion des six sujets.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T17:22:35.945608Z'
+    recorded_by: Codex
+    source_refs:
+    - U505
+    - CMP204
+    validated_fields: []
+    value_sha256: {}
+    note: Proposition détaillée répondant à la demande de visibilité U505 ; nom et périmètre non encore adoptés.
+  adoption_ids: []

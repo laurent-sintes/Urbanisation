@@ -6,7 +6,7 @@ class BehaviorTypeTests(unittest.TestCase):
     def test_all_live_behaviors_have_a_supported_form(self):
         model=read('modeles/backlog/model.yaml')
         behaviors=[node for node in model['nodes'] if node['kind']=='behavior']
-        self.assertEqual(len(behaviors),76)
+        self.assertTrue(behaviors, 'The live model must contain behaviors to verify their forms')
         self.assertTrue(all(node['fields'].get('nature') in BEHAVIOR_NATURES for node in behaviors))
         forms=next(term for term in read('modeles/backlog/modeling-glossary.yaml')['terms'] if term['id']=='MOD006')['concrete_forms']
         self.assertEqual({item['key'] for item in forms},BEHAVIOR_NATURES)

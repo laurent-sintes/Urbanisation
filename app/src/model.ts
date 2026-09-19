@@ -153,7 +153,7 @@ export function structuralRelations(model: PublishedModel, type?: StructuralRela
 
 export function childrenOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
   const children = structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
-  return ['domain', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? decisionsLast(children) : children;
+  return ['domain', 'area', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? decisionsLast(children) : children;
 }
 
 export function parentsOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
@@ -169,11 +169,39 @@ export function rootsOf(model: PublishedModel): AtlasNode[] {
   return model.nodes.filter(node => !children.has(node.id));
 }
 
-/** Domain/reference cards expose their capabilities without changing the navigation hierarchy. */
+/** A publication opts into Domain / Area through its own explicit node kinds. */
+export function hasAreaLevels(model: PublishedModel): boolean {
+  return model.nodes.some(node => node.kind === 'area');
+}
+
+export function isCapabilityContainer(model: PublishedModel, node: AtlasNode): boolean {
+  return node.kind === 'area' || node.kind === 'reference' || (node.kind === 'domain' && !hasAreaLevels(model));
+}
+
+export interface CardChildList {
+  kind: 'capability' | 'reference' | 'behavior';
+  items: AtlasNode[];
+}
+
+/** Preserve explicit reference boundaries inside an Area or a historical presentation group. */
+export function cardChildListOf(model: PublishedModel, node: AtlasNode): CardChildList | undefined {
+  const children = childrenOf(model, node.id);
+  const references = children.filter(child => child.kind === 'reference');
+  if (references.length && (node.kind === 'area' || (node.kind === 'group' && node.groupRole !== 'urbanism_level'))) {
+    return { kind: 'reference', items: references };
+  }
+  if (isCapabilityContainer(model, node)) {
+    return { kind: 'capability', items: children.filter(child => child.kind === 'capability') };
+  }
+  const behaviors = children.filter(child => child.kind === 'behavior');
+  if (node.kind === 'capability' && behaviors.length) return { kind: 'behavior', items: behaviors };
+  return undefined;
+}
+
+/** Cards expose their explicit references, capabilities or terminal behaviors. */
 export function hasCapabilityCards(model: PublishedModel, scopeId?: string): boolean {
   const visible = scopeId ? childrenOf(model, scopeId) : rootsOf(model);
-  return visible.some(node => node.kind === 'domain' || node.kind === 'reference'
-    || (node.kind === 'capability' && childrenOf(model, node.id).some(child => child.kind === 'behavior')));
+  return visible.some(node => cardChildListOf(model, node) !== undefined);
 }
 
 /** Returns explicit ancestors followed by the selected node. A presentation group stays a group. */

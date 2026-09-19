@@ -16,6 +16,7 @@ import shutil
 import sys
 import uuid
 from collections import Counter
+from hashlib import sha256
 
 try:
     from .element_versions import assign_versions
@@ -25,6 +26,9 @@ try:
     from .release_catalog import resolve_release, register
     from . import publish_release as publisher
     from . import decision_review
+    from .decision_carry import classify_context
+    from .record_decision import compile_intents
+    from . import guide_candidate
     from .json_contract import validate as validate_contract
     from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 except ImportError:
@@ -35,6 +39,9 @@ except ImportError:
     from release_catalog import resolve_release, register
     import publish_release as publisher
     import decision_review
+    from decision_carry import classify_context
+    from record_decision import compile_intents
+    import guide_candidate
     from json_contract import validate as validate_contract
     from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 
@@ -143,10 +150,11 @@ def suggested_version(models):
 
 
 def reconcile_decisions(old_document, snapshot, additional=None, previous_snapshot=None):
-    """Retain exact revision AND approved values; never carry across a revision."""
+    """Preserve exact approvals; carry across revisions only with proven stable context."""
     targets = {c: {item['id']: item for item in snapshot[c]} for c in ('nodes', 'relations')}
     previous_targets = {c: {item['id']: item for item in (previous_snapshot or {}).get(c, [])} for c in targets}
     kept, deferred = [], []
+    context_cache = {}
     for original in old_document['decisions']:
         target = original['target']
         item = targets[target['collection']].get(target['id'])
@@ -157,6 +165,23 @@ def reconcile_decisions(old_document, snapshot, additional=None, previous_snapsh
         elif any(field not in values or canonical_sha256(values[field]) != target['value_sha256'][field]
                  for field in target['approved_fields']):
             reason = 'approved_value_changed'
+        elif original['decision_state'] == 'accepted' and previous_snapshot is not None:
+            key = canonical_sha256(target)
+            context = context_cache.setdefault(key, None)
+            if context is None:
+                context = classify_context(original, previous_snapshot, snapshot)
+                context_cache[key] = context
+            if not context['safe']:
+                reason = 'context_changed_requires_explicit_reassessment'
+            elif item['revision'] != target['revision']:
+                decision = copy.deepcopy(original)
+                decision['id'] = 'ADOPT-CARRY-' + sha256((snapshot['version'] + ':' + original['id']).encode()).hexdigest()[:24]
+                decision['recorded_at'] = snapshot['as_of']
+                decision['target'].update(revision=item['revision'], import_version=snapshot['version'])
+                decision['note'] += (' Report de ' + original['id'] +
+                    ' : valeurs approuvées et contexte métier vérifiés identiques ; seules des métadonnées ou références éditoriales évoluent. Aucune extension de portée.')
+                kept.append(decision)
+                continue
         elif item['revision'] != target['revision']:
             old = previous_targets[target['collection']].get(target['id'])
             ignored = PUBLICATION_FIELDS | {'revision', 'last_modified', 'content_sha256', 'lifecycle'}
@@ -177,7 +202,8 @@ def reconcile_decisions(old_document, snapshot, additional=None, previous_snapsh
             reason = 'revision_changed_requires_explicit_reassessment'
         if reason:
             deferred.append({'id': original['id'], 'target': target['id'], 'reason': reason,
-                             'approved_fields': target['approved_fields']})
+                             'approved_fields': target['approved_fields'],
+                             **({'context_reasons': context['reasons']} if reason == 'context_changed_requires_explicit_reassessment' else {})})
         else:
             decision = copy.deepcopy(original)
             decision['target']['import_version'] = snapshot['version']
@@ -307,6 +333,23 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
                 item.pop(key, None)
     element_changes = assign_versions(snapshot, inputs['input_revision'], published=previous)
     additional = read(additional_path) if additional_path else None
+    if additional is not None and additional.get('version') != version:
+        raise ValueError('Additional decisions must target the prepared version')
+    intent_errors = []
+    intent_path = models / 'backlog/decision-intents.yaml'
+    consumed_path = models / 'revisions' / pointer['version'] / 'deferred/decision-intents.yaml'
+    if consumed_path.exists() and not intent_path.exists():
+        intent_errors.append('decision-intents: previously published registry was removed')
+    if intent_path.exists():
+        try:
+            recorded = compile_intents(read(intent_path), snapshot, inputs['decisions'],
+                                       read(models / 'provenance/source-records.json'),
+                                       consumed_document=read(consumed_path) if consumed_path.exists() else None)
+            if additional:
+                recorded['decisions'].extend(additional['decisions'])
+            additional = recorded
+        except ValueError as exc:
+            intent_errors.append('decision-intents: ' + str(exc))
     decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'])
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
     review, review_evidence = None, {}
@@ -338,6 +381,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
             raise ValueError('\n'.join(fatal))
     candidate = publisher.compile_snapshot(snapshot, decisions, version, publication_refs)
     errors += validate_release(candidate, decisions, snapshot, sources, urbanism_schema)
+    errors += intent_errors
     deferred_artifacts = []
     for path in deferred_paths:
         previous_path = working_path(models / 'revisions' / pointer['version'] / 'deferred', path.stem)
@@ -354,6 +398,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
               'retained_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] in {o['id'] for o in inputs['decisions']['decisions']}],
               'deferred_decisions': deferred_decisions,
               'new_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'] not in {o['id'] for o in inputs['decisions']['decisions']}],
+              'automatically_carried_decision_ids': [d['id'] for d in decisions['decisions'] if d['id'].startswith('ADOPT-CARRY-') and d['id'] not in {o['id'] for o in inputs['decisions']['decisions']}],
               'deferred_artifacts': deferred_artifacts,
               'backlog_only': {'alternatives': [r['id'] for r in snapshot.get('alternatives', [])],
                                'relations_to_illustrations': sorted(publisher.relations_to_illustrations(snapshot)),
@@ -369,8 +414,17 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
             'review': review, 'review_evidence': review_evidence}
 
 
-def prepare(root, version, source_refs, additional_path=None, *, review_path=None):
+def prepare(root, version, source_refs, additional_path=None, *, review_path=None, guide_path=None):
     bundle = build_candidate(root, version, source_refs, additional_path, review_path=review_path)
+    return stage_candidate(root, bundle, guide_path=guide_path)
+
+
+def stage_candidate(root, bundle, *, guide_path=None):
+    """Freeze an already checked in-memory candidate without rebuilding it."""
+    version = bundle['snapshot']['version']
+    source_refs = bundle['publication_refs']
+    if bundle['input_state'] != decision_review.input_state(root):
+        raise ValueError('Inputs changed since candidate construction; rebuild before staging')
     models = bundle['models']
     if bundle['report']['validation_errors']:
         raise ValueError('\n'.join(bundle['report']['validation_errors']))
@@ -406,7 +460,10 @@ def prepare(root, version, source_refs, additional_path=None, *, review_path=Non
                     'files': {name: digest(temporary / name) for name in ('backlog.yaml', 'decisions.json', 'source-records.json', 'candidate.yaml', 'report.json')},
                     'schemas': {name: digest(models / 'schemas' / name) for name in ('urbanism.schema.json', 'decisions.schema.json')},
                     'deferred': deferred,
+                    'input_state': bundle['input_state'],
                     'modeling_guide': capture_association(root, bundle['pointer']['version'])}
+        if guide_path is not None:
+            manifest['new_modeling_guide'] = guide_candidate.stage(root, guide_path, temporary)
         if review_files:
             manifest['decision_review'] = review_files
         write(temporary / 'manifest.json', manifest)
@@ -432,8 +489,23 @@ def publish_prepared(root, version, activate=False):
         raise ValueError('Invalid prepared manifest')
     if manifest['base_pointer'] != pointer or digest(current_manifest_path) != manifest['base_manifest_sha256']:
         raise ValueError('Current release changed since preparation; prepare a fresh candidate')
+    if 'input_state' in manifest and manifest['input_state'] != decision_review.input_state(root):
+        # Keep the established specific diagnostics below for ordinary data edits.
+        current_state = decision_review.input_state(root)
+        if manifest['input_state']['tool_code'] != current_state['tool_code']:
+            raise ValueError('Publication code changed since preparation; prepare a fresh candidate')
+        if manifest['input_state']['python'] != current_state['python']:
+            raise ValueError('Python runtime changed since preparation')
+        before_paths, after_paths = set(manifest['input_state']['files']), set(current_state['files'])
+        if before_paths != after_paths:
+            raise ValueError('Backlog context inventory changed since preparation')
+        source_path = 'modeles/provenance/source-records.json'
+        if manifest['input_state']['files'].get(source_path) != current_state['files'].get(source_path):
+            raise ValueError('Publication source registry changed since preparation')
     if 'modeling_guide' in manifest:
         verify_association(root, pointer['version'], manifest['modeling_guide'])
+    if 'new_modeling_guide' in manifest:
+        guide_candidate.verify(root, stage, manifest['new_modeling_guide'])
     if digest(working_path(models / 'backlog')) != manifest['live_backlog_sha256']:
         raise ValueError('Backlog changed since preparation; prepare a fresh candidate')
     glossary_path = working_path(models / 'backlog', 'glossary')
@@ -519,6 +591,7 @@ def publish_prepared(root, version, activate=False):
             notes.append(f"{label.capitalize()} : {len(delta.get('added', []))} ajouts, {len(delta.get('modified', []))} modifications, {len(delta.get('removed', []))} retraits.")
     notes+=['', '## Validations et points ouverts', '',
             f"{len(report['retained_decision_ids'])} décisions antérieures conservées ; {len(report['deferred_decisions'])} suspendues pour les révisions modifiées.",
+            f"{len(report.get('automatically_carried_decision_ids', []))} accords reportés après vérification de valeurs et contexte métier inchangés.",
             f"{sum('-LIFECYCLE-r' in key for key in report['new_decision_ids'])} accords transcrits à portée identique pour le cycle U131 ; {sum('-LIFECYCLE-r' not in key for key in report['new_decision_ids'])} autres décisions nouvelles sourcées.",
             'Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.', '']
     notes += [f"- {d['id']} ({d['target']}) : conservée dans l’historique, reprise suspendue pour cette révision." for d in report['deferred_decisions']]
@@ -537,8 +610,15 @@ def publish_prepared(root, version, activate=False):
     if review_files:
         output['decision_review'] = {f'../../revisions/{version}/{name}': digest(revision_dir / name)
                                      for name in review_files}
+    if 'new_modeling_guide' in manifest:
+        new_guide = manifest['new_modeling_guide']
+        output['published_modeling_guide'] = {
+            'path': '../../modeling-guides/versions/' + new_guide['version'] + '.yaml',
+            'sha256': new_guide['sha256']}
     write(release_dir / 'manifest.json', output)
-    if 'modeling_guide' in manifest:
+    if 'new_modeling_guide' in manifest:
+        guide_candidate.publish(root, stage, version, manifest['new_modeling_guide'])
+    elif 'modeling_guide' in manifest:
         carry_association(root, pointer['version'], version, manifest['modeling_guide'])
     if activate:
         register(models/'release',release,version+'/release-notes.md',write,publisher.activate_pointer)
@@ -559,6 +639,7 @@ def summarize_report(report):
         'retained_decisions': len(report['retained_decision_ids']),
         'deferred_decisions': len(report['deferred_decisions']),
         'new_decisions': len(report['new_decision_ids']),
+        'automatically_carried_decisions': len(report.get('automatically_carried_decision_ids', [])),
         'glossary_reference_impacts': report['glossary_reference_impacts'],
         'deferred_artifacts': dict(Counter(a['comparison'] for a in report['deferred_artifacts'])),
         'backlog_only': report['backlog_only'],
@@ -636,6 +717,7 @@ def main():
             child.add_argument('--review-output', type=Path, help='Create a reassessment dossier and pending assessment; requires version/source')
         else:
             child.add_argument('--review', type=Path, help='Dossier with explicitly completed assessment.yaml')
+            child.add_argument('--guide', type=Path, help='Explicit new methodology edition to freeze with this publication')
     child = commands.add_parser('inspect', help='Read saved evidence without rebuilding a candidate')
     child.add_argument('path', type=Path)
     child.add_argument('--section', choices=['changes', 'decisions', 'errors', 'context', 'review', 'review-context'])
@@ -666,7 +748,7 @@ def main():
         if review_result:
             result['reassessment'] = review_result
     elif args.command == 'prepare':
-        result = prepare(args.root, args.version, args.source, args.decisions, review_path=args.review)
+        result = prepare(args.root, args.version, args.source, args.decisions, review_path=args.review, guide_path=args.guide)
     elif args.command == 'inspect':
         result = inspect_artifact(args.path, args.section, args.identifier, args.offset, args.limit, args.full)
     else:

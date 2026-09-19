@@ -1,0 +1,3322 @@
+batch: references
+source: U477
+nodes:
+- id: business-references
+  kind: group
+  parent: null
+  family: business-references
+  fields:
+    name: Business References
+  source_refs:
+  - U103
+  - U455
+  - U458
+  review:
+    state: accepted
+    note: Groupe de présentation, pas une capacité mère.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    validated_fields:
+    - name
+    value_sha256:
+      name: 8e1e0dcb3563032dd2cdb03345b09ed48cc7642f479a61a9c40a76115a788fad
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D08
+  kind: reference
+  parent: null
+  family: D08
+  fields:
+    name: Product Reference
+    definition: Recevoir les références Product et leurs Product Variants depuis leurs maîtres externes, indépendamment des
+      catalogues qui les proposent. Product porte un rôle Article ou Container. Distinguer ces références des Product Units,
+      exemplaires physiques suivis dans les opérations ; les identifiants commerciaux ne constituent pas à eux seuls leur
+      identité individuelle.
+    finality: Disposer de références produit communes aux catalogues et aux opérations de la Supply, pour les biens jouant
+      un rôle Article ou Container.
+    independence: Références produit autonomes des catalogues ; une même variante peut être proposée dans plusieurs catalogues.
+      Correspondances avec SKU et conditionnements à préciser.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Product information overview
+      element_type: Concepts et fonctions produit
+      relationship: Recouvrement partiel
+      similarities: Références communes et variantes ; informations produit pouvant provenir de sources externes.
+      differences: Microsoft couvre aussi la création des maîtres ; FLOW limite ce référentiel à leur projection.
+      flow_position: 'Appui sur un vocabulaire établi, avec une frontière FLOW explicite : recevoir les références sans administrer
+        leurs maîtres.'
+      source_title: Product information overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+      source_version: Documentation évolutive ; mise à jour affichée le 1er juillet 2026
+      source_locator: Product definition ; Distribution, export, and import of product data ; Product masters and product
+        variants
+      consulted_on: '2026-09-19'
+      evidence_limits: Aucune équivalence de maille, liste de dimensions obligatoire ou conformité produit déduite.
+      status: proposed
+      source_refs:
+      - U460
+      - ELM280
+      - CMP175
+      - U134
+      - U191
+      - U193
+      - U202
+      - U462
+      term_choice: Product Reference met l’accent sur des références partagées, distinctes des offres de catalogue et des
+        exemplaires physiques.
+      definition_choice: Le choix FLOW est une projection des maîtres externes. Le vocabulaire produit/variante est éclairé
+        par Microsoft ; l’administration des maîtres reste hors de cette responsabilité.
+    - vendor: Oracle
+      product: Fusion Cloud Product Hub
+      element_name: Overview of Item Batches
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Import de références produit depuis plusieurs sources.
+      differences: Le Product Hub peut gouverner les maîtres ; le référentiel FLOW reste leur projection.
+      flow_position: Product Reference exprime la référence utilisable par la Supply, indépendante du catalogue.
+      term_choice: Product Reference exprime la référence utilisable par la Supply, indépendante du catalogue.
+      definition_choice: La réception est incluse ; créer, modifier ou supprimer les maîtres dans leurs applications reste
+        externe.
+      source_title: Overview of Item Batches
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+      source_version: 26A
+      source_locator: Introduction et options des lots d’import
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM295
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    examples:
+    - title: Une variante, plusieurs offres et plusieurs exemplaires
+      situation: Un tee-shirt bleu taille M est proposé dans deux catalogues ; deux pièces physiques de cette variante sont
+        présentes.
+      outcome: Les catalogues peuvent partager la référence de variante. Les deux pièces restent deux Product Units.
+      lesson: La référence, l’offre et l’exemplaire physique ne sont pas la même chose.
+      source_refs:
+      - U191
+      - U193
+      - U202
+      - U460
+      - U462
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C66
+  - C69
+  - INF21
+  - CMP058
+  - U202
+  - U455
+  - U458
+  - U460
+  - ELM280
+  - CMP175
+  - U462
+  - U470
+  - U471
+  - ELM295
+  - CMP186
+  review:
+    state: proposed
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-14T13:53:25.091242Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U100
+    - U202
+    validated_fields: []
+    value_sha256: {}
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+- id: D09
+  kind: reference
+  parent: null
+  family: D09
+  fields:
+    name: Party / Role
+    definition: Recevoir les références des parties et leurs rôles métier, distincts des habilitations RBAC. L’identité sans
+      doublon relève du maître externe ; les modèles se relient par identifiants.
+    finality: Disposer des identités et rôles de référence nécessaires pour relier les opérations aux bonnes parties.
+    mastership: external
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - C69
+  - INF18
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Maîtrise externe et ingestion seule imposées en U97 ; groupe Business References retenu en U103. Les sources et
+      autorités par attribut restent à documenter ; aucun rang autonome universel adopté.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 5f6904197651fbd8b14b37d6c6017a8de09525a325b6fb5de8d36395d01bfa02
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D12
+  kind: reference
+  parent: null
+  family: D12
+  fields:
+    name: Catalog
+    definition: Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence
+      de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.
+    finality: Disposer des catalogues applicables, avec les prix et zones géographiques nécessaires aux opérations.
+    mastership: external
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U100
+  - U103
+  - C64
+  - C69
+  - INF20
+  - U202
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-14T13:53:25.091242Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    - U202
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 4a8dfce3f278257b51eb13d39404013980a0b0959023c773586e8d45623a5178
+    note: 'Audit U202 : seuls les champs inchangés indiqués conservent leur accord antérieur. Reformulations du présent audit
+      proposées par Codex, sans validation métier nouvelle.'
+- id: D11
+  kind: reference
+  parent: null
+  family: D11
+  fields:
+    name: Agreement
+    definition: 'Recevoir et consulter la projection du contrat complet : cadre, conditions particulières, périodes de validité
+      et engagements en quantité ou en valeur, avec identifiants Party et Catalog. Les commandes restent distinctes et consomment
+      les conditions reçues ; administration du contrat maître externe.'
+    finality: Disposer des conditions contractuelles applicables aux Orders et à la promesse sans administrer leur source
+      de vérité.
+    mastership: external
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - C69
+  - INF19
+  - U141
+  - C78
+  - CMP066
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Précision selon U141 ; noms et accords antérieurs conservés dans leur portée. Nouvelles formulations détaillées
+      proposées ; Q077 et Q072 ouvertes.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T17:32:42.257717Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U98
+    - U141
+    - C78
+    - CMP066
+    validated_fields:
+    - mastership
+    - name
+    value_sha256:
+      mastership: ee080af1a91e2ac0b1a3e90232b58afc809221288b8b3555033d4deb77dcf3f9
+      name: 45797799d3db17de1ba297aaa964be20c3e6160ade58398d009edcf78eb4d824
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D13
+  kind: reference
+  parent: null
+  family: D13
+  fields:
+    name: Fulfillment Network
+    definition: Recevoir les points du réseau, leurs caractéristiques et relations de référence et leurs liens aux parties
+      responsables. Les lieux restent distincts des parties ; stocks, charge et acheminement choisi appartiennent aux domaines
+      consommateurs.
+    finality: Disposer d’une représentation de référence des lieux et des relations du réseau nécessaires à la réalisation
+      des mouvements de marchandises.
+    independence: Party et lieu distincts ; référentiel Fulfillment Network demandé.
+  source_refs:
+  - P81
+  - U97
+  - U102
+  - U103
+  - C68
+  - C69
+  - INF22
+  - Q076
+  - CMP060
+  - U455
+  - U458
+  review:
+    state: partial
+    note: Référentiel demandé en U102 ; Business References retenu en U103. Repère, définition et contenu détaillé proposés
+      ; ingestion seule dans la continuité U97. Maîtres et topologie ouverts en Q076 ; aucune autorité FLOW ou C-Log déduite.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-13T16:33:38.266961Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U102
+    validated_fields:
+    - independence
+    - name
+    value_sha256:
+      independence: 2093ef74bde62d6235e327806ee878c1051c56192d9f9633ff7f029b0bce0981
+      name: 088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31
+    note: Reprise des accords sourcés sur les seuls champs indiqués ; les autres champs et réserves restent ouverts. Date
+      de reprise du cycle, pas date historique de l’accord.
+- id: D14
+  kind: reference
+  parent: null
+  family: D14
+  fields:
+    name: Service Catalog
+    definition: Le référentiel contient la liste des services et leurs SLA globaux en configuration.
+    finality: Partager une description des services exécutants, de leurs conditions et de leurs accès pour les mobiliser dans
+      la Supply.
+    scope: |-
+      Offre de préparation, réception, transport et autres services tels que la production de documents. Décrire le résultat rendu, le prestataire, les conditions d’éligibilité et le SLA de réalisation applicable, ainsi que les accès informatiques de sollicitation et de feedback.
+
+      Exemple : un service de préparation à délai configuré, un transport et une génération de document ont des résultats et engagements différents. Le SLA exprime le service rendu, notamment lorsqu’il dépend du physique ; il reste distinct du temps de réponse informatique. L’identité métier d’un service est distincte de ses accès techniques ; un exécutant partiellement manuel peut être sollicité via une adaptation.
+
+      Charge actuelle, capacité contextuelle, demandes, engagements individuels, estimations et résultats relèvent de D06. Fulfillment Network décrit les lieux et relations, Party les parties, Agreement les accords maîtres et Catalog les offres commerciales. Aucun protocole ni endpoint unique imposé.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    mastership: Projection de sources maîtresses externes, suivant le principe courant des référentiels Supply. Maître de
+      configuration et articulation avec Agreement à préciser ; aucune administration locale présumée.
+    market_comparisons:
+    - vendor: Camunda
+      product: Process Orchestration Handbook, page web courante
+      element_name: Process orchestration
+      element_type: Concept et offre logicielle
+      relationship: Recouvrement partiel
+      similarities: Coordination des tâches manuelles et automatisées, des personnes, systèmes et dispositifs participant
+        au processus.
+      differences: Camunda décrit une plateforme et des mécanismes transverses. FLOW cartographie des responsabilités métier
+        et sépare explicitement décision d’adaptation, orchestration et suivi.
+      flow_position: Le Process orchestre des Services ; Process Orchestration reprend le vocabulaire établi. Les autres intitulés
+        FLOW ne constituent pas une taxonomie Camunda.
+      source_title: Process Orchestration Handbook
+      source_url: https://camunda.com/process-orchestration/
+      source_version: Page web consultée le 19 septembre 2026
+      source_locator: What is process orchestration? ; Processes with diverse endpoints
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; présentation éditeur, sans preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Orchestration flows and providers
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Parcours de commande coordonné par actions, événements, politiques et communications avec les providers.
+      differences: Le parcours IOM est contextualisé à la commande ; son périmètre produit ne se transpose pas directement
+        au domaine FLOW. Séparer Service et Process ne présume ni provider unique ni cardinalité Task/appel.
+      flow_position: Appui à la distinction entre progression du processus et contributions des services ; aucune taxonomie
+        complète adoptée.
+      source_title: Intelligent Order Management overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+      source_version: Documentation web, mise à jour 2026-01-30
+      source_locator: Providers ; Orchestration
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; pas de preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U240
+    - U244
+    - U409
+    validated_fields:
+    - definition
+    - name
+    value_sha256:
+      definition: 0dc475d55b06a58e12b44e19fce07aae6e7e40a7ce6788bc6a779c31a8d0f54a
+      name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
+    note: 'Compléments proposés pour appliquer U244 ; aucune validation de détail déduite. U409 : nouveau nom adopté ; validations
+      des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D06.b
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Service Capacity Visibility
+    definition: Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période et
+      sa fraîcheur, pour alimenter les décisions Supply.
+    finality: Donner à D03, à D15 et aux décisions d’exécution une connaissance exploitable des capacités annoncées par les
+      exécutants.
+    nature: knowledge
+    scope: |-
+      Rendre accessible la capacité logistique dans son contexte, par exemple le nombre maximal de préparations communiqué pour un site et un créneau. Expliciter le service, l’unité, la période, l’origine et la fraîcheur des informations disponibles.
+
+      Exemple : l’entrepôt annonce un plafond de 1 000 préparations sur un créneau ; si une charge ou un disponible sont également communiqués, les présenter avec leur sens et leur date de connaissance. Ne pas transformer sans règle connue ce plafond en capacité encore disponible.
+
+      Cette visibilité ne décide pas d’augmenter les ressources de l’exécutant, ne calcule pas implicitement un disponible à partir d’une formule non convenue et ne réserve pas la capacité. D15 l’utilise pour la promesse Supply ; Service Selection Decision et Process Adaptation Decision peuvent la mobiliser. Le nom est adopté U246 ; les détails de représentation et contrats restent proposés.
+
+      Précision éditoriale U435 : contextualiser les créneaux et dates communiqués avec leur calendrier applicable, fuseau et éventuelle heure limite. Une fermeture ou une information périmée doit rester visible aux décisions consommatrices ; aucun disponible ni engagement de capacité n’est déduit d’un plafond communiqué.
+    market_comparisons:
+    - vendor: Oracle
+      product: Oracle Fusion Cloud SCM / Order Management / Global Order Promising
+      element_name: Database Promising
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Les données de capacité fournisseur peuvent être collectées et utilisées par la promesse avec une hypothèse
+        de capacité explicitée.
+      differences: Oracle décrit la capacité fournisseur dans Promising ; FLOW expose plus largement la capacité communiquée
+        par les exécutants, sans présumer une capacité infinie.
+      flow_position: D06.b restitue plafond, charge ou disponible avec sens, origine et date ; il ne réserve pas lui-même
+        la capacité. Comparaison proposée au titre de U435, sans validation ni réalisation installée déduites.
+      source_title: Database Promising
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/overview-of-database-centric-order-promising.html
+      source_version: Oracle Cloud SCM 26A
+      source_locator: Promising Horizon and Other Order Promising Options ; Suppliers and Supplier Capacity
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Schedule workload capacity
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Charge et capacité d’entrepôt peuvent être projetées par période.
+      differences: Exemple limité à l’entrepôt, pas preuve d’une capacité communiquée par tout exécutant.
+      flow_position: Service Capacity Visibility étend ce besoin de lecture aux services admissibles.
+      term_choice: Service Capacity Visibility étend ce besoin de lecture aux services admissibles.
+      definition_choice: FLOW utilise une capacité contextualisée reçue des exécutants ; il ne reprend pas l’administration
+        de leurs moyens.
+      source_title: Schedule workload capacity
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity
+      source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+      source_locator: Warehouse workload capacity ; volume, weight, inbound/outbound workload
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM304
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - P81
+  - U04
+  - U06
+  - U07
+  - U102
+  - C68
+  - Q015
+  - Q016
+  - Q017
+  - Q018
+  - Q019
+  - Q063
+  - U118
+  - C72
+  - P86
+  - U99
+  - U202
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM304
+  - CMP186
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U246
+    - U290
+    - U409
+    validated_fields:
+    - name
+    value_sha256:
+      name: ba754539fb8b05eaf3b83c0247a709e0712e1ba4bd868b2e4633e3da81bcd541
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D07.a
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Service Requirements Decision
+    definition: Déterminer les prestations nécessaires.
+    finality: Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply.
+    nature: decision
+    scope: |-
+      Déterminer, à partir du besoin Supply et de ses contraintes, les prestations et résultats requis : préparation, réception, transport ou production de documents. Préciser biens ou documents concernés, quantités, destinataires, lieux et échéances utiles.
+
+      Exemple : réaliser la livraison requiert une préparation, un document et un transport. La décision explicite ces besoins ; Service Order Management tient ensuite les demandes adressées aux exécutants et leurs évolutions. La décision de service choisit les moyens de service pour y répondre.
+
+      La capacité ne se limite plus à formuler un message ou à exprimer un Service Order. Elle ne recrée ni l’autorisation de la commande D04, ni sa promesse D15, ni un Agreement ou un Case. D07.a conserve son identité pour la responsabilité de détermination des prestations, précisée par U245/U247.
+
+      Frontière : Ne choisit pas encore l’exécutant et ne pilote pas ses opérations internes.
+  source_refs:
+  - P81
+  - U03
+  - U04
+  - U05
+  - U06
+  - U07
+  - U10
+  - U30
+  - U48
+  - U100
+  - C66
+  - Q074
+  - U118
+  - C72
+  - P86
+  - U99
+  - U141
+  - C78
+  - CMP066
+  - U202
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U438
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U247
+    - U290
+    - U409
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 7a3214271bd81ca9480d569371666b8a678b5ec93c4dac5c93fe4cd4fb79294b
+      definition: de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D07.b
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Service Order Management
+    definition: 'Gérer les demandes de prestation adressées aux exécutants et leur cycle de vie : émission, acceptation ou
+      refus, modification, annulation et clôture, selon le service.'
+    finality: Tenir les demandes de prestation, leur prise en charge et leurs évolutions de façon explicite et traçable.
+    nature: management
+    scope: |-
+      Tenir ce qui est demandé à un exécutant, ce qu’il accepte de réaliser et les évolutions de cette prise en charge. L’émission d’une demande, son acceptation et sa réalisation restent distinctes. Les opérations possibles dépendent du service et de son état ; aucun cycle universel ni acceptation systématiquement différée n’est imposé.
+
+      Exemple : demander à l’entrepôt de préparer 100 colis avant 16 h ; enregistrer l’acceptation, le refus ou une autre échéance proposée ; tenir ensuite une demande de modification ou d’annulation et la réponse correspondante. Le tracking renseigne en parallèle la préparation commencée, les 60 colis prêts ou le retard annoncé.
+
+      Requirements Decision détermine les prestations nécessaires ; Orchestration coordonne les prestations et leurs dépendances ; Adaptation Decision détermine la variation du plan. Cette gestion met à jour transactionnellement les demandes et leurs états, unitairement ou en groupe selon les interfaces disponibles ; ces modalités ne créent pas de capacités supplémentaires.
+
+      Conserver la distinction entre SLA configuré, engagement individuel, estimation et résultat. Les exécutants gardent leurs opérations internes et D15 la promesse Supply. D07.b conserve la gestion des prises en charge et engagements, désormais explicitée dans le cycle du Service Order.
+    market_comparisons:
+    - vendor: Oracle
+      product: Oracle Fusion Cloud SCM / Order Management / Global Order Promising
+      element_name: Compensate Sales Orders That Change
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Une demande de service engagée peut devoir être mise à jour, annulée ou refaite quand la commande change.
+      differences: Les patterns Oracle portent des étapes d’orchestration logicielles ; un appel technique n’est pas à lui
+        seul le Service Order métier FLOW.
+      flow_position: D07.b tient demandes et réponses des prestations ; D06.f détermine la variation et D06.d la coordonne.
+        Correspondance de mécanisme limitée. Comparaison proposée au titre de U435, sans validation ni réalisation installée
+        déduites.
+      source_title: Compensate Sales Orders That Change
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/compensate-sales-orders-that-change.html
+      source_version: Oracle Cloud SCM 26B
+      source_locator: Introduction ; example Create Shipment Redo ; compensation pattern
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: TM Forum
+      product: Service Ordering
+      element_name: TMF641 Service Ordering API REST Specification R18.5.1
+      element_type: Concept documenté par un contrat sectoriel
+      relationship: Recouvrement partiel
+      similarities: Une commande de service peut être créée, modifiée et suivie.
+      differences: TMF641 est un contrat sectoriel télécom ; le texte public ne démontre pas tous les états de FLOW.
+      flow_position: Service Order Management dispose d’un appui lexical hors ERP.
+      term_choice: Service Order Management dispose d’un appui lexical hors ERP.
+      definition_choice: FLOW garde le cycle métier des prestations demandées aux exécutants, sans importer API, états télécom
+        ou catalogue technique.
+      source_title: TMF641 Service Ordering API REST Specification R18.5.1
+      source_url: https://www.tmforum.org/resources/specification/tmf641-service-ordering-api-rest-specification-r18-5-0/
+      source_version: R18.5.1 ; document 4.0.1, 2019 ; version archivée
+      source_locator: 'Présentation publique : create, update, retrieve ; service order items'
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM305
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - P81
+  - U03
+  - U04
+  - U05
+  - U06
+  - U07
+  - U10
+  - U30
+  - U48
+  - U100
+  - C66
+  - Q074
+  - U118
+  - C72
+  - P86
+  - U99
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM305
+  - CMP186
+  review:
+    state: partial
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U247
+    - U290
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910
+      definition: 51bc5d1bb09c9c649dfdd1781ffc6b822701b027c2b1051d5aa15240f1bcbc4e
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D07.c
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Service Reconciliation
+    definition: Rapprocher les résultats constatés des prestations attendues, qualifier les écarts et fournir les faits utiles
+      aux domaines consommateurs.
+    finality: Expliquer les écarts de réalisation et alimenter le rapprochement des Orders sans confondre leurs reliquats.
+    nature: action
+    scope: |-
+      Rapprocher production, préparation, expédition, réception, consommation et résultats documentaires des prestations demandées et engagées. Les quantités manquantes, écarts et résultats partiels sont qualifiés à la maille pertinente.
+
+      Exemple : 80 unités sont reçues sur les 100 attendues ; qualifier l’écart de prestation et en transmettre les faits à la commande concernée. D04 conserve le reliquat de l’Order et D01 la représentation des mouvements de stock. Les cinq contributions existantes vers les capacités par type d’Order sont conservées, avec leur statut proposé. Le tracking rend visible l’avancement ; le rapprochement explique le réalisé au regard de l’attendu.
+
+      Frontière : Reliquat prestation différent du reliquat Order ; aucun rapprochement financier.
+  source_refs:
+  - P81
+  - U03
+  - U04
+  - U05
+  - U06
+  - U07
+  - U10
+  - U30
+  - U48
+  - U100
+  - C66
+  - Q074
+  - U118
+  - C72
+  - P86
+  - U99
+  - U141
+  - C78
+  - CMP066
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:33:45.906642Z'
+    recorded_by: Codex
+    source_refs:
+    - U237
+    - U238
+    - U240
+    - U242
+    - U243
+    - U244
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D07.d
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Operations Tracking
+    definition: Suivre les faits, jalons, estimations et résultats encore attendus des prestations pendant leur réalisation.
+    finality: Donner une connaissance actualisée de l’exécution pour anticiper les écarts et permettre l’adaptation.
+    nature: knowledge
+    scope: |-
+      Conserver la responsabilité d’Expected Supply Tracking : quantités, dates, provenance et fermeté des ressources encore attendues. Étendre explicitement le suivi aux opérations et résultats des services, y compris documentaires, sans créer un cycle identique pour tous.
+
+      Exemple : préparation commencée, retard annoncé, expédition partielle, transport en cours ou document en échec. Identifier le fait, la prestation et sa fraîcheur ; distinguer estimation, engagement et constat. Le feedback continu signifie un suivi pendant la prestation, sans télémétrie temps réel uniforme imposée.
+
+      Le tracking alimente l’orchestration pour la coordination des prestations et Adaptation Decision pour la recherche d’une variation du plan ; D15 conserve le réexamen de la promesse lorsque nécessaire. Il ne décide pas seul d’une variante et ne tient pas le stock à la place de D01.
+
+      Frontière : Batch/streaming sont modalités ; distinguer faits et estimations.
+
+      U406 : [Warehouse Visibility](model:BHV079), [Transportation Visibility](model:BHV080), [Store Visibility](model:BHV081), [Process Tracking](model:BHV082). Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés. Process Tracking conserve la visibilité explicite des prestations numériques, de leurs résultats et de leurs contributions aux Tasks.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    decomposition_rationale: Les trois périmètres physiques rendent lisibles les situations et opérations propres à l’entrepôt,
+      au transport et au magasin ; livré ne signifie pas mis en rayon. Le suivi transversal des processus explique les résultats,
+      attentes et blocages métier en reliant Tasks et appels sous-jacents. Ce sont des perspectives combinables aux bénéfices
+      distincts, sans sous-comportements ni découpage par bouton, interface ou fournisseur.
+    market_comparisons:
+    - vendor: SAP
+      product: EWM for SAP S/4HANA Cloud Private Edition, extra stack ; cours sans numéro de release
+      element_name: Learning about the SAP EWM Solution
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: 'EWM distingue les opérations entrantes, internes et sortantes : déchargement, rangement, préparation
+        et chargement, avec suivi des unités logistiques et intégration TM.'
+      differences: Appui au périmètre sur site ; ne prescrit pas deux ou trois comportements FLOW ni un libellé canonique
+        Warehouse Visibility.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Learning about the SAP EWM Solution
+      source_url: https://learning.sap.com/courses/cloud-onboarding-for-sap-ewm-for-sap-s-4hana-cloud-private-edition-extra-stack/learning-about-the-sap-ewm-solution
+      source_version: EWM for SAP S/4HANA Cloud Private Edition, extra stack ; cours sans numéro de release
+      source_locator: Introduction ; Goods Receipt ; Storage & Operations ; Conclusion
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: project44
+      product: Article éditeur du 22 août 2023 ; édition logicielle non indiquée
+      element_name: Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+      element_type: article éditeur
+      relationship: Recouvrement partiel
+      similarities: Le terme Transportation Visibility accompagne localisation, progression multimodale, ETA et notifications
+        ; exemple automobile au niveau véhicule.
+      differences: Appui lexical et de périmètre, pas import du contexte automobile ni garantie de temps réel pour FLOW.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+      source_url: https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/
+      source_version: Article éditeur du 22 août 2023 ; édition logicielle non indiquée
+      source_locator: Real-time transportation visibility / multimodal tracking
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Blue Yonder
+      product: Page produit évolutive sans édition figée
+      element_name: What is Blue Yonder Store Execution Inventory Management?
+      element_type: présentation produit
+      relationship: Recouvrement partiel
+      similarities: Store Execution désigne notamment les opérations de réception et de fiabilisation du stock en magasin
+        ; la page décrit une réception directe en rayon et le résultat de disponibilité en rayon.
+      differences: 'Présentation produit : réception et disponibilité en rayon documentées ; Store Visibility est le nom FLOW
+        adopté par cohérence, pas une taxonomie éditeur démontrée.'
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: What is Blue Yonder Store Execution Inventory Management?
+      source_url: https://info.blueyonder.com/order-management-commerce/what-is-blue-yonder-store-execution-inventory-management
+      source_version: Page produit évolutive sans édition figée
+      source_locator: Présentation et processus magasin
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Microsoft
+      product: Azure Business Process Tracking ; page mise à jour 2025-09-11
+      element_name: Azure Business Process Tracking overview
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: Corrélation des étapes et de leurs propriétés métier par identifiant de transaction, par exemple commande
+        ou case.
+      differences: Le produit documenté mappe des étapes métier sur les opérations des workflows Standard stateful Logic Apps.
+        FLOW retient le concept de suivi métier ; le lien Task/appels est sa convention, sans équivalence un pour un ni obligation
+        Azure.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Azure Business Process Tracking overview
+      source_url: https://learn.microsoft.com/en-us/azure/business-process-tracking/overview
+      source_version: Azure Business Process Tracking ; page mise à jour 2025-09-11
+      source_locator: Business process design and tracking ; Limitations and known issues
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Microsoft
+      product: Azure Logic Apps ; documentation évolutive sans édition figée
+      element_name: View Workflow Status and Run History
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: Consultation des exécutions et de leurs actions, de leur statut et de leurs entrées/sorties pour suivre
+        les traitements.
+      differences: Suivi d’un produit configuré ; un statut technique ne définit pas le résultat métier du service.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: View Workflow Status and Run History
+      source_url: https://learn.microsoft.com/en-us/azure/logic-apps/view-workflow-status-run-history
+      source_version: Azure Logic Apps ; documentation évolutive sans édition figée
+      source_locator: Workflow run history ; action status and inputs/outputs
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Camunda
+      product: Présentation produit évolutive sans version figée
+      element_name: Process Observability & AI Agent Monitoring
+      element_type: présentation produit
+      relationship: Recouvrement partiel
+      similarities: Visibilité des instances de processus en cours, de leurs variables et incidents, reliée au contexte du
+        processus.
+      differences: Présentation commerciale de Process Observability, incluant des moyens d’intervention et d’analyse plus
+        larges que le tracking FLOW. Ne prouve pas une collecte exhaustive de tout service externe.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Process Observability & AI Agent Monitoring
+      source_url: https://camunda.com/platform/observability/
+      source_version: Présentation produit évolutive sans version figée
+      source_locator: Process instances, incidents and distinction from APM/log monitoring
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+  source_refs:
+  - P81
+  - U03
+  - U04
+  - U05
+  - U06
+  - U07
+  - U10
+  - U30
+  - U48
+  - U100
+  - C66
+  - Q074
+  - U118
+  - C72
+  - P86
+  - U99
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U305
+  - U308
+  - U404
+  - U405
+  - U406
+  - ELM243
+  - CMP154
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U438
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U247
+    - U290
+    - U409
+    validated_fields:
+    - name
+    value_sha256:
+      name: 9131d6fda562bd126262226ca451d29a633d8edcf5394002ae7d119c9a905dc1
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D09.d
+  kind: capability
+  parent: D09
+  family: D09
+  fields:
+    name: Party / Role Ingestion
+    definition: recevoir les parties, leurs identifiants, rôles et relations de référence ainsi que leurs évolutions, en conservant
+      les références du maître externe.
+    finality: Utiliser une identité de référence commune dans les opérations.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Exemple fictif : Recevoir un rôle destinataire avec identifiant et provenance du partenaire.
+    nature: action
+  source_refs:
+  - P81
+  - U97
+  - U103
+  - C64
+  - P85
+  - U290
+  - U449
+  - U455
+  - U458
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D11.a
+  kind: capability
+  parent: D11
+  family: D11
+  fields:
+    name: Agreement Ingestion
+    definition: Recevoir les contrats clients ou fournisseurs et leurs évolutions, y compris cadre, conditions particulières,
+      périodes et engagements en quantité ou valeur, avec références Party et Catalog et provenance du maître externe.
+    finality: Mettre les conditions contractuelles de référence à disposition des décisions et engagements transactionnels.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Frontière : Aucune négociation locale de l’Agreement.
+
+      Exemple fictif : Recevoir validité et conditions de livraison applicables.
+    nature: action
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U103
+  - C64
+  - P85
+  - U141
+  - C78
+  - CMP066
+  - U290
+  - U449
+  - U455
+  - U458
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U141
+    - C78
+    - CMP066
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D06
+  kind: domain
+  parent: null
+  family: D06
+  fields:
+    name: Process Management
+    definition: Orchestrer l’exécution Supply en coordonnant les prestations, en suivant leur réalisation et en adaptant le
+      plan aux aléas, en articulation avec la promesse Supply.
+    finality: Maintenir une exécution cohérente et adaptable, depuis les possibilités de réalisation jusqu’aux résultats constatés.
+    scope: |-
+      Connaître les services admissibles et la capacité logistique contextualisée ; exprimer les prestations, gérer leurs engagements, coordonner leurs dépendances, suivre leur avancement et adapter le plan aux aléas. Les services couvrent entrepôt, transport et prestations telles que la production de documents.
+
+      Un SLA configuré compatible ne garantit pas la réussite opérationnelle. Exemple : la préparation prend du retard et menace la collecte ; rechercher une autre collecte, un autre service ou une réalisation partielle selon les contraintes, puis mobiliser D15 si la promesse doit être réexaminée.
+
+      Le référentiel D14 décrit l’offre et les SLA globaux ; D06 traite le contexte opérationnel. D15 conserve les décisions et engagements de promesse Supply, D04 les Orders et leurs reliquats, D01 la représentation du stock et de ses mouvements. Les exécutants conservent leurs opérations internes. La latitude d’adaptation est une règle de fonctionnement, sans effet sur le catalogue des capacités.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    market_comparisons:
+    - vendor: Camunda
+      product: Process Orchestration Handbook, page web courante
+      element_name: Process orchestration
+      element_type: Concept et offre logicielle
+      relationship: Recouvrement partiel
+      similarities: Coordination des tâches manuelles et automatisées, des personnes, systèmes et dispositifs participant
+        au processus.
+      differences: Camunda décrit une plateforme et des mécanismes transverses. FLOW cartographie des responsabilités métier
+        et sépare explicitement décision d’adaptation, orchestration et suivi.
+      flow_position: Le Process orchestre des Services ; Process Orchestration reprend le vocabulaire établi. Les autres intitulés
+        FLOW ne constituent pas une taxonomie Camunda.
+      source_title: Process Orchestration Handbook
+      source_url: https://camunda.com/process-orchestration/
+      source_version: Page web consultée le 19 septembre 2026
+      source_locator: What is process orchestration? ; Processes with diverse endpoints
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; présentation éditeur, sans preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Orchestration flows and providers
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Parcours de commande coordonné par actions, événements, politiques et communications avec les providers.
+      differences: Le parcours IOM est contextualisé à la commande ; son périmètre produit ne se transpose pas directement
+        au domaine FLOW. Séparer Service et Process ne présume ni provider unique ni cardinalité Task/appel.
+      flow_position: Appui à la distinction entre progression du processus et contributions des services ; aucune taxonomie
+        complète adoptée.
+      source_title: Intelligent Order Management overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+      source_version: Documentation web, mise à jour 2026-01-30
+      source_locator: Providers ; Orchestration
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; pas de preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+  source_refs:
+  - P81
+  - U04
+  - U06
+  - U07
+  - U102
+  - C68
+  - Q015
+  - Q016
+  - Q017
+  - Q018
+  - Q019
+  - Q063
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U438
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U242
+    - U244
+    - U409
+    validated_fields:
+    - definition
+    - name
+    value_sha256:
+      definition: 93419c8a7b45922b9c39181381116ebd702350b5aef3cb96710edf38552ded2d
+      name: f2f87647f08544a56e38ac6fdae9987ef91ed1b539abddc7dcf7c49558b7546c
+    note: 'Compléments proposés pour appliquer U244 ; aucune validation de détail déduite. U409 : nouveau nom adopté ; validations
+      des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D08.d
+  kind: capability
+  parent: D08
+  family: D08
+  fields:
+    name: Product Reference Ingestion
+    definition: Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que
+      leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues.
+    finality: Reconnaître les mêmes références produit dans les différents catalogues et opérations, sans les confondre avec
+      les exemplaires physiques.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Exemple fictif : Recevoir taille/couleur avant intégration dans une offre.
+    nature: action
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management — Warehouse management only mode
+      element_name: Exchange data between systems
+      element_type: Fonctions de réception de données de référence
+      relationship: Recouvrement partiel
+      similarities: Réception de références produit et de variantes, avec identification de leur origine.
+      differences: La source de maintien configurée dans ce produit ne détermine pas l’autorité métier de FLOW.
+      flow_position: Appui sur un mécanisme documenté ; distinguer autorité, émetteur et projection. Aucun flux installé supposé.
+      source_title: Exchange data between systems
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+      source_version: Documentation évolutive du mode Warehouse management only ; édition non figée
+      source_locator: Master and reference data
+      consulted_on: '2026-09-19'
+      evidence_limits: Contexte produit spécifique ; pas de transposition des entités techniques ni de maître unique imposé
+        à l’entreprise.
+      status: proposed
+      source_refs:
+      - U460
+      - ELM281
+      - CMP176
+      - U134
+      - U290
+      - U462
+      term_choice: 'Ingestion précise l’action attendue : recevoir les informations de référence et leurs évolutions.'
+      definition_choice: Recevoir une information et l’administrer comme maître sont deux responsabilités différentes. L’autorité
+        métier ne se déduit pas du seul émetteur.
+    - vendor: Oracle
+      product: Fusion Cloud Product Hub
+      element_name: Overview of Item Batches
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Des références et leurs éléments associés sont importés depuis des sources produit.
+      differences: Le lot d’import est un mécanisme produit ; FLOW ne prescrit ni lot ni gouvernance de maître.
+      flow_position: Product Reference Ingestion nomme la responsabilité de réception.
+      term_choice: Product Reference Ingestion nomme la responsabilité de réception.
+      definition_choice: L’ingestion rend les références externes utilisables ; elle ne devient pas leur administration.
+      source_title: Overview of Item Batches
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+      source_version: 26A
+      source_locator: Introduction et options des lots d’import
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM295
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    examples:
+    - title: Recevoir une variante avant sa mise au catalogue
+      situation: Les caractéristiques taille et couleur d’une variante sont reçues depuis leur source externe.
+      outcome: Supply actualise sa projection, même si la variante n’est pas encore proposée dans un catalogue.
+      lesson: Recevoir l’information ne transfère pas à Supply l’administration du maître produit.
+      source_refs:
+      - U202
+      - U290
+      - U460
+      - U462
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C66
+  - INF21
+  - U202
+  - U290
+  - U449
+  - U455
+  - U458
+  - U460
+  - ELM281
+  - CMP176
+  - U462
+  - U470
+  - U471
+  - ELM295
+  - CMP186
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:35:54.129136Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    - U202
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D12.a
+  kind: capability
+  parent: D12
+  family: D12
+  fields:
+    name: Catalog Ingestion
+    definition: recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques
+      d’application et évolutions.
+    finality: Permettre de commander et d’utiliser les informations commerciales reçues.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Frontière : Aucune gouvernance locale du prix ou du catalogue.
+
+      Exemple fictif : Recevoir offre et zone d’application avec références produit.
+    nature: action
+  source_refs:
+  - P81
+  - U97
+  - U100
+  - U103
+  - C64
+  - P85
+  - U290
+  - U449
+  - U455
+  - U458
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U97
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D13.a
+  kind: capability
+  parent: D13
+  family: D13
+  fields:
+    name: Fulfillment Network Ingestion
+    definition: recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties
+      responsables, ainsi que leurs évolutions depuis les sources maîtresses externes.
+    finality: Donner aux opérations et décisions une connaissance commune du réseau de réalisation.
+    scope: |-
+      Recevoir les informations de référence et leurs évolutions ; aucune administration ou validation des données maîtresses dans la plateforme.
+
+      Frontière : Ne décide pas implantation du réseau ni charge opérationnelle.
+
+      Exemple fictif : Recevoir darkstore et liens de desserte.
+    nature: action
+  source_refs:
+  - P81
+  - U97
+  - U102
+  - U103
+  - C68
+  - INF22
+  - Q076
+  - U290
+  - U449
+  - U455
+  - U458
+  review:
+    state: under_review
+    note: Intégration U290 ; détails éditoriaux proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U103
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D06.d
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Process Orchestration
+    definition: Coordonner les prestations et leurs dépendances.
+    finality: Coordonner la réalisation du plan retenu entre les exécutants.
+    nature: orchestration
+    scope: |-
+      Coordonner le déclenchement et l’enchaînement des prestations du plan retenu, en tenant compte de leurs dépendances, des prises en charge et des faits d’exécution. Mobiliser Service Order Management pour tenir les demandes et leurs évolutions.
+
+      Exemple : coordonner la préparation, la disponibilité du document et la collecte. Si la décision d’adaptation retient un autre transporteur, coordonner la modification des prestations concernées et leur nouvel enchaînement.
+
+      La détermination de la variation du plan appartient à Process Adaptation Decision. L’orchestration peut lui transmettre un aléa, mais ne porte plus cette décision dans sa propre définition. Les exécutants conservent l’organisation de leurs opérations internes. Aucun moteur de workflow, contrôle humain systématique ou rollback physique universel n’est présumé.
+
+      Frontière : Décision D06.f séparée ; pas de rollback physique ni seconde promesse.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    market_comparisons:
+    - vendor: Camunda
+      product: Process Orchestration Handbook, page web courante
+      element_name: Process orchestration
+      element_type: Concept et offre logicielle
+      relationship: Recouvrement partiel
+      similarities: Coordination des tâches manuelles et automatisées, des personnes, systèmes et dispositifs participant
+        au processus.
+      differences: Camunda décrit une plateforme et des mécanismes transverses. FLOW cartographie des responsabilités métier
+        et sépare explicitement décision d’adaptation, orchestration et suivi.
+      flow_position: Le Process orchestre des Services ; Process Orchestration reprend le vocabulaire établi. Les autres intitulés
+        FLOW ne constituent pas une taxonomie Camunda.
+      source_title: Process Orchestration Handbook
+      source_url: https://camunda.com/process-orchestration/
+      source_version: Page web consultée le 19 septembre 2026
+      source_locator: What is process orchestration? ; Processes with diverse endpoints
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; présentation éditeur, sans preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Orchestration flows and providers
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Parcours de commande coordonné par actions, événements, politiques et communications avec les providers.
+      differences: Le parcours IOM est contextualisé à la commande ; son périmètre produit ne se transpose pas directement
+        au domaine FLOW. Séparer Service et Process ne présume ni provider unique ni cardinalité Task/appel.
+      flow_position: Appui à la distinction entre progression du processus et contributions des services ; aucune taxonomie
+        complète adoptée.
+      source_title: Intelligent Order Management overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+      source_version: Documentation web, mise à jour 2026-01-30
+      source_locator: Providers ; Orchestration
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; pas de preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U247
+    - U290
+    - U409
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 1fa13792cf41f7ea721310c3e7825f2a923c79cc4da176a36c4e808653fc9ae7
+      definition: 37986dcc6a0f8277ea2a08ef87dc93778177143e4f7a835ed3ad6639af97ccb7
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D14.a
+  kind: capability
+  parent: D14
+  family: D14
+  fields:
+    name: Service Catalog Ingestion
+    definition: Recevoir l’offre des services exécutants, leurs SLA configurés, conditions et accès, ainsi que leurs évolutions
+      depuis les sources maîtresses externes.
+    finality: Mettre à disposition une projection de référence exploitable par la qualification, la promesse et l’orchestration.
+    nature: action
+    scope: |-
+      Ingestion du référentiel, dans la continuité du principe des projections Supply. Recevoir les évolutions des services et de leurs accès sans reprendre la maîtrise des données. Consultation et recherche restent en lecture seule pour les consommateurs.
+
+      L’ingestion du catalogue ne reçoit pas à sa place le tracking des opérations et ne transforme pas une évolution du SLA en révision automatique des engagements déjà pris. Maîtres et contrats d’échange seront définis dans les règles de fonctionnement.
+
+      Frontière : SLA, engagement individuel, estimation et résultat distincts ; pas de maître local.
+
+      Exemple fictif : Recevoir service documentaire et accès sollicitation/feedback.
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  - CMP078
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-17T13:29:45.653508Z'
+    recorded_by: Codex
+    source_refs:
+    - U237
+    - U238
+    - U240
+    - U242
+    - U243
+    - U244
+    - U290
+    validated_fields: []
+    value_sha256: {}
+    note: Intégration U290 ; détails éditoriaux proposés.
+- id: D06.e
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Service Selection Decision
+    definition: Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte de leur
+      admissibilité et des contraintes.
+    finality: Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable.
+    nature: decision
+    scope: |-
+      Regrouper les responsabilités d’admissibilité et de comparaison d’options auparavant portées par D06.a et D06.c. Exploiter le catalogue des services, les lieux et relations du réseau, les conditions applicables et la visibilité sur la capacité. Déterminer les services utilisables, puis les moyens à mobiliser.
+
+      Exemple : identifier les transporteurs desservant une destination, compatibles avec les marchandises et les horaires, puis déterminer le service à solliciter. La qualification désignait ce contrôle d’admissibilité ; elle n’est plus une capacité distincte dans cette proposition.
+
+      La décision reste dans le besoin Supply et les contraintes issus des choix de satisfaction D03 et des possibilités et engagements de promesse D15. Elle ne reprend pas la décision de couverture de l’Order ou la révision de sa promesse. Elle peut être mobilisée pour le plan initial ou par Adaptation Decision. Le regroupement et cette formulation sont appliqués comme proposition ; aucune validation antérieure de D06.a/c n’est transférée.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM / Commerce / Intelligent Order Management
+      element_name: Set up a fulfillment source working calendar
+      element_type: fonction ou mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: L’admissibilité d’une source de fulfillment dépend de son ouverture et de la possibilité de collecte.
+      differences: La documentation filtre des sources selon calendrier ; elle ne prouve pas un catalogue complet de sélection
+        de prestataires ou de services métier.
+      flow_position: D06.e détermine les services/exécutants admissibles ; le calendrier externe est une contrainte consommée,
+        pas une nouvelle capacité interne. Comparaison proposée au titre de U435, sans validation ni réalisation installée
+        déduites.
+      source_title: Set up a fulfillment source working calendar
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/setup-fulfillment-source-calendar
+      source_version: Documentation mise à jour 2026-01-30
+      source_locator: Working hours ; time zone ; Using a calendar for Fulfillment optimization ; carrier pickup times
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation officielle consultée ; aucune preuve de déploiement Beaumanoir ni équivalence de taxonomie.
+      status: proposed
+      source_refs:
+      - U435
+    - vendor: Microsoft
+      product: Dynamics AX Transportation Management
+      element_name: Transportation scenario – Manual rating
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Le choix porte explicitement sur un transporteur et son service.
+      differences: Cas transport et choix manuel dans un produit historique ; toutes les prestations ne sont pas documentées.
+      flow_position: Service Selection Decision désigne le choix de l’exécutant et du service.
+      term_choice: Service Selection Decision désigne le choix de l’exécutant et du service.
+      definition_choice: FLOW conserve les contraintes d’admissibilité ; le produit illustre ce résultat sans imposer l’outil
+        ou la méthode.
+      source_title: Transportation scenario – Manual rating
+      source_url: https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/
+      source_version: Publication officielle du 16 février 2016 ; exemple historique
+      source_locator: 'Load planning workbench : Shipping carrier et Carrier service ; Manual rating'
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM306
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+  source_refs:
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U435
+  - U438
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM306
+  - CMP186
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U245
+    - U246
+    - U247
+    - U290
+    - U409
+    validated_fields:
+    - name
+    value_sha256:
+      name: 04adccab2575a7d626900ba0233a0ef18e41d9b2b540fa7eba381a8ca2b64300
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: D06.f
+  kind: capability
+  parent: D06
+  family: D06
+  fields:
+    name: Process Adaptation Decision
+    definition: Déterminer les variations du plan.
+    finality: Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply.
+    nature: decision
+    scope: |-
+      Déterminer la variation à retenir lorsqu’un fait, un retard ou un échec remet en cause le plan d’exécution. Mobiliser les décisions de service, les capacités communiquées et les informations sur les demandes et réalisations.
+
+      Exemple : un SLA était compatible avec la collecte, mais une panne retarde la préparation. Déterminer une autre collecte, un autre transporteur ou une réalisation partielle selon les possibilités ; Orchestration coordonne ensuite les prestations du plan retenu.
+
+      Si la variation remet la promesse Supply en cause, fournir à D15 les faits et variantes utiles à son réexamen. Cette capacité ne décide pas seule d’une nouvelle promesse. La latitude d’adaptation relève des règles de fonctionnement et ne conditionne pas le catalogue.
+
+      Decision détermine une réponse métier ; Planning conserve le sens reconfigurer, simuler et valider en mobilisant des décisions. La séparation demandée n’ajoute pas automatiquement une capacité Planning ou un contrôle humain obligatoire.
+
+      Frontière : Remonter effet promesse à D15 ; D05 peut revoir son scénario sans décider le transporteur.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    market_comparisons:
+    - vendor: Camunda
+      product: Process Orchestration Handbook, page web courante
+      element_name: Process orchestration
+      element_type: Concept et offre logicielle
+      relationship: Recouvrement partiel
+      similarities: Coordination des tâches manuelles et automatisées, des personnes, systèmes et dispositifs participant
+        au processus.
+      differences: Camunda décrit une plateforme et des mécanismes transverses. FLOW cartographie des responsabilités métier
+        et sépare explicitement décision d’adaptation, orchestration et suivi.
+      flow_position: Le Process orchestre des Services ; Process Orchestration reprend le vocabulaire établi. Les autres intitulés
+        FLOW ne constituent pas une taxonomie Camunda.
+      source_title: Process Orchestration Handbook
+      source_url: https://camunda.com/process-orchestration/
+      source_version: Page web consultée le 19 septembre 2026
+      source_locator: What is process orchestration? ; Processes with diverse endpoints
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; présentation éditeur, sans preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Orchestration flows and providers
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Parcours de commande coordonné par actions, événements, politiques et communications avec les providers.
+      differences: Le parcours IOM est contextualisé à la commande ; son périmètre produit ne se transpose pas directement
+        au domaine FLOW. Séparer Service et Process ne présume ni provider unique ni cardinalité Task/appel.
+      flow_position: Appui à la distinction entre progression du processus et contributions des services ; aucune taxonomie
+        complète adoptée.
+      source_title: Intelligent Order Management overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+      source_version: Documentation web, mise à jour 2026-01-30
+      source_locator: Providers ; Orchestration
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; pas de preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+  source_refs:
+  - U245
+  - U246
+  - U247
+  - CMP079
+  - U290
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U438
+  - U455
+  - U458
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U247
+    - U290
+    - U409
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 1c816af7ac818734e584c9f010e73f6624fefc197aff474ef1a04f6ab555638f
+      definition: e129ebf0182da8ad279c6967bd8c32c9ca7a589082953d79ac78563c5628c00a
+    note: 'Intégration U290 ; détails éditoriaux proposés. U409 : nouveau nom adopté ; validations des autres champs inchangées,
+      ancien nom et empreintes conservés dans history/process-services-U409.'
+- id: BHV079
+  kind: behavior
+  parent: D07.d
+  family: D06
+  fields:
+    name: Warehouse Visibility
+    definition: Réception, manutention, préparation et expédition dans les entrepôts et plateformes.
+    finality: Comprendre la situation des marchandises et l’avancement de leur traitement dans les entrepôts et plateformes.
+    scope: |-
+      Suivre réception, manutention, rangement, préparation et expédition à partir des faits communiqués par l’exécutant. Relier biens ou unités logistiques, opérations et prestations concernées. Les traces numériques d’une opération physique peuvent alimenter cette vue sans transformer l’opération en prestation numérique.
+
+      Exemple fictif : sur 100 pièces attendues, 80 sont préparées et 20 restent à traiter ; la préparation partielle ne signifie pas que les 80 pièces ont déjà quitté le site. Les retards et anomalies sont visibles avec la progression normale.
+
+      Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés.
+    market_comparisons:
+    - vendor: SAP
+      product: EWM for SAP S/4HANA Cloud Private Edition, extra stack ; cours sans numéro de release
+      element_name: Learning about the SAP EWM Solution
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: 'EWM distingue les opérations entrantes, internes et sortantes : déchargement, rangement, préparation
+        et chargement, avec suivi des unités logistiques et intégration TM.'
+      differences: Appui au périmètre sur site ; ne prescrit pas deux ou trois comportements FLOW ni un libellé canonique
+        Warehouse Visibility.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Learning about the SAP EWM Solution
+      source_url: https://learning.sap.com/courses/cloud-onboarding-for-sap-ewm-for-sap-s-4hana-cloud-private-edition-extra-stack/learning-about-the-sap-ewm-solution
+      source_version: EWM for SAP S/4HANA Cloud Private Edition, extra stack ; cours sans numéro de release
+      source_locator: Introduction ; Goods Receipt ; Storage & Operations ; Conclusion
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      element_name: Outbound workload visualization
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Le travail d’entrepôt en cours et restant peut être suivi.
+      differences: Cette page illustre les sorties ; elle ne documente pas à elle seule les réceptions.
+      flow_position: Warehouse Visibility indique le périmètre de visibilité.
+      term_choice: Warehouse Visibility indique le périmètre de visibilité.
+      definition_choice: FLOW reçoit les faits d’avancement ; afficher le travail ne signifie pas l’exécuter.
+      source_title: Outbound workload visualization
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/outbound-workload-visualization
+      source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+      source_locator: 'Introduction : suivi du travail en cours et restant'
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM318
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: business_scope
+  source_refs:
+  - U305
+  - U308
+  - U404
+  - U405
+  - U406
+  - ELM243
+  - CMP154
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM318
+  - CMP186
+  review:
+    state: partial
+    note: Nom, responsabilité présentée et parent adoptés ; détails éditoriaux distincts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:12:15.256084Z'
+    recorded_by: Codex
+    source_refs:
+    - U305
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: a442e0d72da60b89186ac60632146dd478e19e5960014d2e83f16165d83c0fa2
+      definition: 35595911e232c1865ac06ff1a1b38ead86f18803128d6748cd34fbeb803c9314
+    note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+      Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+- id: BHV080
+  kind: behavior
+  parent: D07.d
+  family: D06
+  fields:
+    name: Transportation Visibility
+    definition: Acheminements, progression, arrivées estimées et remise au destinataire.
+    finality: Connaître la progression des acheminements et les arrivées attendues, en distinguant estimation et remise constatée.
+    scope: |-
+      Suivre départs, étapes d’acheminement, localisation connue, retards, estimations d’arrivée et remise au destinataire. Conserver la continuité entre segments utiles, sans présumer une localisation continue ou une précision uniforme.
+
+      Exemple fictif : un camion est en route avec une arrivée estimée à 14 h ; cette estimation n’est ni une preuve de livraison ni une réception magasin réalisée. La suite des opérations au magasin est visible dans Store Visibility.
+
+      Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés.
+    market_comparisons:
+    - vendor: project44
+      product: Article éditeur du 22 août 2023 ; édition logicielle non indiquée
+      element_name: Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+      element_type: article éditeur
+      relationship: Recouvrement partiel
+      similarities: Le terme Transportation Visibility accompagne localisation, progression multimodale, ETA et notifications
+        ; exemple automobile au niveau véhicule.
+      differences: Appui lexical et de périmètre, pas import du contexte automobile ni garantie de temps réel pour FLOW.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+      source_url: https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/
+      source_version: Article éditeur du 22 août 2023 ; édition logicielle non indiquée
+      source_locator: Real-time transportation visibility / multimodal tracking
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: OASIS
+      product: Universal Business Language
+      element_name: Universal Business Language Version 2.4
+      element_type: Scénarios métier illustrant un standard documentaire
+      relationship: Recouvrement partiel
+      similarities: Les partenaires se transmettent les états d’acheminement.
+      differences: Le scénario ne garantit ni temps réel ni calcul prédictif d’arrivée.
+      flow_position: Transportation Visibility est éclairé par ces échanges de progression.
+      term_choice: Transportation Visibility est éclairé par ces échanges de progression.
+      definition_choice: FLOW rend visibles les faits et estimations disponibles, sans réaliser le transport.
+      source_title: Universal Business Language Version 2.4
+      source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+      source_version: OASIS Standard 2.4, 2024
+      source_locator: §2.3.5.4 Freight Status Reporting
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM311
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: business_scope
+  source_refs:
+  - U305
+  - U308
+  - U404
+  - U405
+  - U406
+  - ELM243
+  - CMP154
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM311
+  - CMP186
+  review:
+    state: partial
+    note: Nom, responsabilité présentée et parent adoptés ; détails éditoriaux distincts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:12:15.256084Z'
+    recorded_by: Codex
+    source_refs:
+    - U305
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: b6d56892456c27c5b826710e38c25a37e01957adce2559d7de6489b31acd476c
+      definition: 4139df7a797acc0d8fbc758998fe951e874e35eba05feaf69680db6a6fe01ee8
+    note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+      Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+- id: BHV081
+  kind: behavior
+  parent: D07.d
+  family: D06
+  fields:
+    name: Store Visibility
+    definition: Réception magasin, passage en réserve, mise en rayon et réassort de la surface de vente.
+    finality: Distinguer marchandise livrée, reçue, en réserve et rendue accessible au client, afin d’expliquer les attentes
+      de mise en rayon.
+    scope: |-
+      Rendre visibles réception magasin, passage en réserve, mise en rayon et réassort de la surface de vente. Le périmètre adopté ne s’étend pas à toutes les ventes ou à l’ensemble de l’activité du magasin.
+
+      Exemple fictif : 100 pièces sont reçues, 60 restent en réserve et 40 sont mises en rayon. Livré au magasin ne signifie pas accessible au client ; une rupture en rayon peut coexister avec du stock en réserve. La vue décrit les opérations et leur progression, sans remplacer Inventory Visibility ni décider les seuils de réassort.
+
+      Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés.
+    market_comparisons:
+    - vendor: Blue Yonder
+      product: Page produit évolutive sans édition figée
+      element_name: What is Blue Yonder Store Execution Inventory Management?
+      element_type: présentation produit
+      relationship: Recouvrement partiel
+      similarities: Store Execution désigne notamment les opérations de réception et de fiabilisation du stock en magasin
+        ; la page décrit une réception directe en rayon et le résultat de disponibilité en rayon.
+      differences: 'Présentation produit : réception et disponibilité en rayon documentées ; Store Visibility est le nom FLOW
+        adopté par cohérence, pas une taxonomie éditeur démontrée.'
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: What is Blue Yonder Store Execution Inventory Management?
+      source_url: https://info.blueyonder.com/order-management-commerce/what-is-blue-yonder-store-execution-inventory-management
+      source_version: Page produit évolutive sans édition figée
+      source_locator: Présentation et processus magasin
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      element_name: Store inventory management
+      element_type: Fonction produit documentée
+      relationship: Recouvrement partiel
+      similarities: Des opérations et états de stock magasin sont suivis.
+      differences: La page ne documente pas toute la mise en rayon et ses remontées.
+      flow_position: Store Visibility délimite le contexte magasin.
+      term_choice: Store Visibility délimite le contexte magasin.
+      definition_choice: FLOW conserve une lecture des faits reçus ; il ne reprend pas l’exécution des tâches magasin.
+      source_title: Store inventory management
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory
+      source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+      source_locator: Store inventory management operations ; inventory dimensions
+      consulted_on: '2026-09-19'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM319
+      - CMP186
+      evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+        choix de solution ni réalisation Beaumanoir déduite.
+    nature: business_scope
+  source_refs:
+  - U305
+  - U308
+  - U404
+  - U405
+  - U406
+  - ELM243
+  - CMP154
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U450
+  - U451
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM319
+  - CMP186
+  review:
+    state: partial
+    note: Nom, responsabilité présentée et parent adoptés ; détails éditoriaux distincts.
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:12:15.256084Z'
+    recorded_by: Codex
+    source_refs:
+    - U305
+    - U308
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 93aa42130e2a4d754ce2d432ec1feaab6174801ad26cfbd0b96fc8b8d1add812
+      definition: 63a1fa639f74647d39e258d7ccd17079e2ca1559aa7316ff7350a88be3b26b21
+    note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+      Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+- id: BHV082
+  kind: behavior
+  parent: D07.d
+  family: D06
+  fields:
+    name: Process Tracking
+    definition: Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux
+      prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les
+      attentes, les échecs et leurs conséquences sur la progression.
+    finality: Comprendre où en est un traitement métier, les résultats acquis et ce qui conditionne sa progression, jusqu’aux
+      appels de services associés aux Tasks.
+    scope: |-
+      **Point d’entrée métier.** Suivre le processus d’exécution Supply et ses Tasks métier, en les reliant aux commandes, documents et prestations concernés. Une Task peut mobiliser plusieurs services ; la corrélation ne suppose ni un appel unique ni une correspondance un pour un. Les actions humaines peuvent contribuer au résultat de la Task sans être assimilées à des appels informatiques.
+
+      **Exemple : produire les documents d’expédition.** La Task mobilise des services pour récupérer les données, produire le document, le déposer et notifier sa disponibilité. Le tracking relie sollicitations, prises en charge connues, réponses, résultats et tentatives à cette Task. Si la production du document a abouti mais que son dépôt reste en attente, il devient possible de comprendre ce qui manque au résultat attendu, selon les conditions de fin définies pour la Task. Cet exemple ne prescrit pas un workflow universel.
+
+      **Trois distinctions essentielles.** Un appel accepté ne signifie pas que la prestation est terminée. Des appels techniquement réussis ne garantissent pas le résultat métier attendu. Une Task terminée ne signifie pas que le processus complet est terminé. Une nouvelle tentative reste reliée à la demande d’origine ; absence de réponse ne vaut pas refus. Le suivi expose les faits et les résultats connus, sans inventer l’état d’un service externe.
+
+      **Exemple : contrôle antifraude.** Le contrôle a répondu avec une suspicion : la prestation numérique peut être terminée alors que la commande reste en attente d’une décision. Le tracking rend explicite cette différence ; il ne décide pas d’accepter le risque. De même, la vérification d’identité ou de code-barres et la production documentaire restent visibles dans leur contexte métier, sans comportement autonome par service.
+
+      **Lecture transversale.** Pour une commande, on peut constater le contrôle terminé, une décision attendue, le document non encore produit et la préparation physique terminée. Les vues Warehouse, Transportation et Store éclairent les opérations physiques ; Process Tracking explique leur articulation avec les Tasks et conditions connues de progression. Les faits peuvent être partagés sans duplication de responsabilité.
+
+      **Frontières de modèle.** Les Tasks, prestations et appels de services sont des objets suivis ; ils ne créent aucun niveau sous Comportement. Aucun nouvel objet de catalogue, cardinalité ou relation de possession n’est imposé par cette description. Le périmètre est celui des processus d’exécution Supply ; le suivi de l’ensemble des processus de l’entreprise reste hors de cette responsabilité. Le nom Digital Service Visibility est remplacé : son besoin de visibilité explicite demeure inclus ici, sans conserver un cinquième comportement. Les exemples sont fictifs et ne prouvent aucun existant Beaumanoir.
+
+      Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés.
+
+      Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Azure Business Process Tracking ; page mise à jour 2025-09-11
+      element_name: Azure Business Process Tracking overview
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: Corrélation des étapes et de leurs propriétés métier par identifiant de transaction, par exemple commande
+        ou case.
+      differences: Le produit documenté mappe des étapes métier sur les opérations des workflows Standard stateful Logic Apps.
+        FLOW retient le concept de suivi métier ; le lien Task/appels est sa convention, sans équivalence un pour un ni obligation
+        Azure.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Azure Business Process Tracking overview
+      source_url: https://learn.microsoft.com/en-us/azure/business-process-tracking/overview
+      source_version: Azure Business Process Tracking ; page mise à jour 2025-09-11
+      source_locator: Business process design and tracking ; Limitations and known issues
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Microsoft
+      product: Azure Logic Apps ; documentation évolutive sans édition figée
+      element_name: View Workflow Status and Run History
+      element_type: documentation produit
+      relationship: Recouvrement partiel
+      similarities: Consultation des exécutions et de leurs actions, de leur statut et de leurs entrées/sorties pour suivre
+        les traitements.
+      differences: Suivi d’un produit configuré ; un statut technique ne définit pas le résultat métier du service.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: View Workflow Status and Run History
+      source_url: https://learn.microsoft.com/en-us/azure/logic-apps/view-workflow-status-run-history
+      source_version: Azure Logic Apps ; documentation évolutive sans édition figée
+      source_locator: Workflow run history ; action status and inputs/outputs
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Camunda
+      product: Présentation produit évolutive sans version figée
+      element_name: Process Observability & AI Agent Monitoring
+      element_type: présentation produit
+      relationship: Recouvrement partiel
+      similarities: Visibilité des instances de processus en cours, de leurs variables et incidents, reliée au contexte du
+        processus.
+      differences: Présentation commerciale de Process Observability, incluant des moyens d’intervention et d’analyse plus
+        larges que le tracking FLOW. Ne prouve pas une collecte exhaustive de tout service externe.
+      flow_position: Quatre perspectives de tracking complémentaires sous Operations Tracking ; visibilité physique et suivi
+        métier jusqu’aux appels des Tasks. Suivre reste distinct de décider et d’orchestrer.
+      source_title: Process Observability & AI Agent Monitoring
+      source_url: https://camunda.com/platform/observability/
+      source_version: Présentation produit évolutive sans version figée
+      source_locator: Process instances, incidents and distinction from APM/log monitoring
+      consulted_on: '2026-09-19'
+      evidence_limits: Texte primaire ouvert et consulté ; synthèse sélective. Aucune couverture installée Beaumanoir déduite.
+      status: proposed
+      source_refs:
+      - U305
+      - U308
+      - U404
+      - U405
+      - U406
+      - ELM243
+      - CMP154
+    - vendor: Camunda
+      product: Process Orchestration Handbook, page web courante
+      element_name: Process orchestration
+      element_type: Concept et offre logicielle
+      relationship: Recouvrement partiel
+      similarities: Coordination des tâches manuelles et automatisées, des personnes, systèmes et dispositifs participant
+        au processus.
+      differences: Camunda décrit une plateforme et des mécanismes transverses. FLOW cartographie des responsabilités métier
+        et sépare explicitement décision d’adaptation, orchestration et suivi.
+      flow_position: Le Process orchestre des Services ; Process Orchestration reprend le vocabulaire établi. Les autres intitulés
+        FLOW ne constituent pas une taxonomie Camunda.
+      source_title: Process Orchestration Handbook
+      source_url: https://camunda.com/process-orchestration/
+      source_version: Page web consultée le 19 septembre 2026
+      source_locator: What is process orchestration? ; Processes with diverse endpoints
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; présentation éditeur, sans preuve de déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    - vendor: Microsoft
+      product: Dynamics 365 Intelligent Order Management
+      element_name: Orchestration flows and providers
+      element_type: Mécanisme produit
+      relationship: Recouvrement partiel
+      similarities: Parcours de commande coordonné par actions, événements, politiques et communications avec les providers.
+      differences: Le parcours IOM est contextualisé à la commande ; son périmètre produit ne se transpose pas directement
+        au domaine FLOW. Séparer Service et Process ne présume ni provider unique ni cardinalité Task/appel.
+      flow_position: Appui à la distinction entre progression du processus et contributions des services ; aucune taxonomie
+        complète adoptée.
+      source_title: Intelligent Order Management overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+      source_version: Documentation web, mise à jour 2026-01-30
+      source_locator: Providers ; Orchestration
+      consulted_on: '2026-09-19'
+      evidence_limits: Source primaire effectivement consultée ; pas de preuve installée Beaumanoir.
+      status: proposed
+      source_refs:
+      - U407
+      - U408
+      - U409
+      - ELM244
+      - CMP155
+    nature: business_scope
+  source_refs:
+  - U305
+  - U308
+  - U404
+  - U405
+  - U406
+  - ELM243
+  - CMP154
+  - U407
+  - U408
+  - U409
+  - ELM244
+  - CMP155
+  - U450
+  - U451
+  - U455
+  - U458
+  - U472
+  review:
+    state: partial
+    note: 'U409 : nom adopté sauf D14.a et D07.c, intitulés dérivés proposés. Autres champs gardent leur qualification propre
+      ; historique capturé avant renommage. U472 retire la référence à l’univers Business Services dans le périmètre ; responsabilité,
+      nom, définition et accords antérieurs inchangés.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-18T22:24:15.706931Z'
+    recorded_by: Codex
+    source_refs:
+    - U406
+    - U409
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: bd394b42c8c26047542ed4f1ac0821ccefbf82248a5acc4a368d2d9d69e1e270
+      definition: 14ffda3e667c2fb93262d98f1121d2c5e6e37b80d8a2c29f650de124ab465720
+    note: 'Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+      Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales. U409 : nouveau nom adopté
+      ; validations des autres champs inchangées, ancien nom et empreintes conservés dans history/process-services-U409.'
+terms:
+- id: TER004
+  name: Article / unité de gestion
+  short_description: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
+  definition: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Sens historique Article / unité de gestion. Le rôle Article du modèle actuel est TER060 ; ne pas confondre les identités
+    de notion.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  historical: true
+- id: TER031
+  name: Orchestration
+  short_description: Coordination du déroulement d’activités et d’événements selon des dépendances et des règles de conduite
+    explicites.
+  definition: 'Coordonner les activités nécessaires pour obtenir un résultat : déterminer ce qui doit se passer, solliciter
+    les intervenants, suivre leur avancement et adapter la suite en cas d’écart.'
+  context: 'Exemple Supply : demander la préparation de 100 tee-shirts, coordonner leur transport puis suivre leur remise
+    au magasin. L’orchestration s’appuie sur les faits transmis par les exécutants ; elle ne réalise pas elle-même la préparation
+    ou le transport.'
+  notes: Dans Atlas, les univers et domaines coopèrent selon leurs responsabilités métier. Le terme ne prescrit ni hiérarchie
+    entre eux, ni produit, ni moyen logiciel.
+  source_refs:
+  - U203
+  - U470
+  - CMP185
+  - ELM294
+  - ELM292
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  market_comparisons:
+  - vendor: Oracle
+    product: Fusion Cloud Supply Chain Orchestration
+    element_name: Overview of Supply Chain Orchestration
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Des demandes et leurs changements sont coordonnés entre intervenants.
+    differences: Le module Oracle est une réalisation particulière ; ce terme décrit ici une responsabilité métier.
+    flow_position: Orchestration conserve le sens de coordination.
+    term_choice: Orchestration conserve le sens de coordination.
+    definition_choice: Aucune technologie, couche ou hiérarchie entre univers n’est prescrite.
+    source_title: Overview of Supply Chain Orchestration
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html
+    source_version: 26B
+    source_locator: Introduction ; receive requests, create supply orders, manage changes ; drop shipment
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM294
+    - CMP185
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Définition professionnelle
+    relationship: Recouvrement partiel
+    similarities: La coordination entre partenaires contribue à la gestion de la chaîne.
+    differences: CSCMP définit le SCM, pas une capacité universelle nommée Orchestration.
+    flow_position: Le terme met l’accent sur la conduite coordonnée des activités.
+    term_choice: Le terme met l’accent sur la conduite coordonnée des activités.
+    definition_choice: FLOW délimite cette responsabilité selon son périmètre ; réaliser physiquement reste distinct.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page sans édition affichée
+    source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM292
+    - CMP185
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+- id: TER034
+  name: OMS — sens fonctionnel du projet
+  short_description: Prise en charge des parcours liés à la vente, en coopération avec la Supply.
+  definition: Dans le vocabulaire fonctionnel FLOW, prise en charge des parcours liés à la vente et coordination des contributions
+    de la Supply pour satisfaire les demandes.
+  context: Sens fonctionnel local, distinct de la catégorie de produits OMS. Il ne désigne pas un univers supérieur à [Supply
+    Chain Orchestration](model:universe-supply).
+  notes: U54/U55 décrivaient les parcours et leur articulation avec la Supply selon l’ancien découpage. U373 distingue le
+    nom de l’univers de la catégorie de produits OMS ; U455/U463 remplacent la hiérarchie par la coopération de responsabilités.
+    La définition reste une convention locale, sans équivalence avec tout produit OMS ni adoption de nouveaux domaines.
+  source_refs:
+  - U203
+  - U54
+  - U55
+  - U373
+  - U455
+  - U463
+  - C108
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: 'Reprise documentaire ; aucune validation supplémentaire par la migration. U463 : reformulation proposée sans couche
+      supérieure ; formulation antérieure préservée dans les sources, publications et la capture avant modification.'
+- id: TER035
+  name: Supply — sens fonctionnel du projet
+  short_description: Coordination et optimisation métier de la satisfaction des demandes Supply.
+  definition: Périmètre métier qui coordonne et optimise la satisfaction des demandes en mobilisant commandes, stocks, engagements
+    et services exécutants.
+  context: Sens fonctionnel local porté par [Supply Chain Orchestration](model:universe-supply), distinct du côté ressources
+    [Supply](glossary:TER083) et du système étendu [Supply Chain](glossary:TER084).
+  notes: Les formulations U56–U58 et U367 sont conservées dans les sources et les publications historiques. U455/U463 remplacent
+    la lecture en couches par des domaines et univers en interaction. Le périmètre fonctionnel FLOW ne couvre pas par déduction
+    toute la Supply Chain ; les services exécutants conservent la responsabilité de leurs opérations. [Fulfillment](glossary:TER085)
+    désigne la satisfaction des commandes.
+  source_refs:
+  - U203
+  - U56
+  - U57
+  - U58
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+  - U373
+  - U455
+  - U456
+  - U463
+  - C108
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration. U367 précise le contexte et les renvois
+      sans réécrire la définition historique. U463 remplace la formulation héritée après U455 ; reformulation proposée à périmètre
+      constant. La clarification historique U367 est préservée dans la capture avant modification.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le sens fonctionnel FLOW est une convention locale ; Microsoft emploie ici supply au sens ressources. Aucune
+      équivalence.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment
+      figure parmi les activités logistiques.
+    differences: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie
+      de capacités FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page de référence sans édition affichée
+    source_locator: Definitions of Supply Chain Management ; Logistics Management
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Le périmètre fonctionnel FLOW est plus limité que celui de SCM ; aucune extension de responsabilité par
+      le vocabulaire.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: VER008
+  name: Demander
+  short_description: Exprimer un résultat souhaité à un destinataire, avec les conditions pertinentes.
+  definition: Exprimer un résultat souhaité à un destinataire, avec les conditions pertinentes.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Distinguer demande, acceptation et engagement de fourniture.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER022
+  name: Rapprocher
+  short_description: Comparer des faits ou représentations pour établir leur concordance ou leurs écarts.
+  definition: Comparer des faits ou représentations pour établir leur concordance ou leurs écarts.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Constater un écart ne signifie pas autoriser sa correction.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER023
+  name: Exécuter
+  short_description: Accomplir la prestation ou l’action métier demandée.
+  definition: Accomplir la prestation ou l’action métier demandée.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Préciser le résultat ; distinguer l’intention, l’exécution et l’enregistrement de son constat.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: VER024
+  name: Gérer
+  short_description: Couvrir un ensemble d’aptitudes ou d’actions relatives à un objet.
+  definition: Couvrir un ensemble d’aptitudes ou d’actions relatives à un objet.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Acceptable si le périmètre est défini ; ne suffit pas seul à préciser les effets.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER046
+  name: Party
+  short_description: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations
+    utiles aux opérations.
+  definition: Partie identifiée dans le référentiel externe, à laquelle sont rattachées les responsabilités et relations utiles
+    aux opérations.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: U97 cite les personnes juridiquement responsables et une identité sans doublon ; types détaillés et autorités par
+    attribut non arrêtés. D09 reçoit cette référence.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER047
+  name: Role
+  short_description: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  definition: Rôle métier d’une Party dans une relation ou une opération, notamment client ou fournisseur.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Synthèse U97 : référentiel Party / Role distinct des habilitations RBAC de la couche processus ; aucun catalogue
+    complet de rôles adopté.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER048
+  name: Agreement
+  short_description: Contrat complet applicable, comprenant cadre, conditions particulières, périodes et engagements.
+  definition: 'Contrat complet applicable entre parties : cadre, conditions particulières, périodes et engagements en quantité
+    ou en valeur. Sa projection dans la plateforme conserve les identifiants Party et Catalog ; les commandes restent distinctes
+    et en consomment les conditions.'
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U140
+  - U141
+  - U202
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Contrat de référence client ou fournisseur indiquant le ou les catalogues permettant de commander,
+    le Party concerné et les conditions particulières utiles pour honorer la promesse d’une commande.
+- id: TER049
+  name: Catalog
+  short_description: Catalogue de référence construit à l’extérieur, portant les références proposées à la commande, les prix
+    et les zones géographiques d’application.
+  definition: Catalogue de référence construit à l’extérieur, portant les références proposées à la commande, les prix et
+    les zones géographiques d’application.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'U97 : ingestion D12 ; distinguer le catalogue commercial de la totalité des caractéristiques du modèle produit.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER050
+  name: Reference Ingestion
+  short_description: Aptitude à recevoir les informations de référence et leurs évolutions pour les rendre utilisables dans
+    les opérations, en conservant les liens et identifiants du maître externe.
+  definition: Aptitude à recevoir les informations de référence et leurs évolutions pour les rendre utilisables dans les opérations,
+    en conservant les liens et identifiants du maître externe.
+  context: 'Exemple : recevoir une variante de produit créée dans le référentiel maître, avec son identifiant, sa taille et
+    sa couleur. Une correction est reçue depuis cette même autorité ; la Supply ne modifie pas le maître à sa place.'
+  notes: L’autorité sur les références reste externe à Supply. Recevoir leurs évolutions ne transfère pas la responsabilité
+    de créer, corriger ou supprimer les maîtres.
+  source_refs:
+  - U203
+  - U470
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER051
+  name: Movement Authorization
+  short_description: Autorisation métier de déplacer une marchandise dans un périmètre et sous des conditions, dont un document
+    porte la preuve.
+  definition: Autorisation métier de déplacer une marchandise dans un périmètre et sous des conditions, dont un document porte
+    la preuve.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Sens fondé sur U100 ; nom anglais proposé. Ne vaut pas preuve de départ ou réception, ni habilitation RBAC. Cycle
+    et autorité ouverts Q074.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER052
+  name: Product Reference
+  short_description: Référentiel projeté des Product et Product Variants, distinct des catalogues et des exemplaires physiques.
+  definition: Référentiel projeté des Product et Product Variants, indépendant des catalogues qui les proposent. Product porte
+    un rôle Article ou Container ; les Product Units sont des exemplaires physiques distincts de ces références.
+  context: 'Supply reçoit ces références depuis leurs autorités externes. La source qui les transmet peut être un relais :
+    elle ne devient pas pour autant l’autorité sur leur contenu. Exemple fictif : une même variante de tee-shirt, bleu taille
+    M, est proposée dans deux catalogues ; elle reste une seule référence de variante et ne désigne pas les exemplaires physiques
+    détenus.'
+  notes: Actualisé selon le modèle courant ; formulation détaillée proposée et périmètre local, pas une définition éditeur
+    universelle.
+  source_refs:
+  - U191
+  - U193
+  - U195
+  - U202
+  - U203
+  - U460
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+  previous_definition: Référence de l’article indépendante des catalogues qui peuvent proposer le même SKU.
+  revision: 2
+- id: TER053
+  name: Location
+  short_description: Lieu pouvant servir d’origine, destination ou étape d’un mouvement ; un point du réseau peut offrir un
+    espace de stockage, sans que ce soit systématique.
+  definition: Lieu pouvant servir d’origine, destination ou étape d’un mouvement ; un point du réseau peut offrir un espace
+    de stockage, sans que ce soit systématique.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: 'Raffinement proposé à partir des points U100 : le lieu est à relier aux Party responsables. U102 confirme depuis
+    Party ≠ lieu et demande Fulfillment Network ; détail et rang de domaine ouverts.'
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER054
+  name: Fulfillment Network
+  short_description: Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises
+    ; référentiel distinct des Party auxquelles les lieux sont reliés.
+  definition: Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises ;
+    référentiel distinct des Party auxquelles les lieux sont reliés.
+  context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
+  notes: Nom demandé en U102, orthographe normalisée hors verbatim ; définition proposée. D13.a reçoit les références ; nœuds,
+    liaisons et attributs à préciser Q076. Ni quantité de stock, ni charge courante, ni parcours déjà choisi.
+  source_refs:
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: under_review
+    note: Reprise documentaire ; aucune validation supplémentaire par la migration.
+- id: TER057
+  name: Product
+  short_description: Référence commune d’un produit, portant un rôle Article ou Container.
+  definition: Référence commune d’un produit, portant un rôle [Article](glossary:TER060) ou [Container](glossary:TER061).
+  context: 'Exemple fictif : un modèle de tee-shirt constitue la référence commune ; bleu taille M en est une déclinaison.
+    Cette référence ne désigne ni une offre de catalogue, ni une pièce physique particulière. Le rôle Article ou Container
+    exprime l’usage métier retenu dans FLOW.'
+  source_refs:
+  - U195
+  - U203
+  - U460
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+  revision: 2
+- id: TER058
+  name: Product Variant
+  short_description: Déclinaison précise d’un Product, commune à plusieurs exemplaires physiques.
+  definition: Déclinaison précise d’un [Product](glossary:TER057), commune à plusieurs [Product Units](glossary:TER059).
+  context: 'Exemple fictif : bleu taille M est une déclinaison d’un modèle de tee-shirt. Cent pièces de cette déclinaison
+    peuvent partager la même référence de variante ; elles ne deviennent pas une seule Product Unit. Taille et couleur illustrent
+    ce cas, sans imposer ces dimensions à tous les produits.'
+  source_refs:
+  - U193
+  - U203
+  - U460
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+  revision: 2
+- id: TER059
+  name: Product Unit
+  short_description: Exemplaire physique individuel d’un produit, avec son identité propre.
+  definition: Exemplaire physique individuel d’un produit, avec son identité propre. Il peut porter un [Serial Number](glossary:TER063),
+    indépendant de son support de lecture.
+  context: 'Exemple fictif : deux tee-shirts bleus taille M sont deux exemplaires physiques de la même variante. Un identifiant
+    de référence partagé ne suffit donc pas à les distinguer individuellement. L’identité de l’exemplaire reste distincte
+    du code-barres ou du support RFID qui permet de la lire.'
+  source_refs:
+  - U191
+  - U192
+  - U203
+  - U460
+  - ELM282
+  - CMP177
+  - U470
+  - U471
+  - ELM321
+  - CMP186
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+  revision: 2
+  market_comparisons:
+  - vendor: GS1
+    product: GS1 System — aide à l’identification
+    element_name: How does serialisation differ from unique identification in the GS1 System?
+    element_type: Distinction d’identification
+    relationship: Appui sémantique
+    similarities: La combinaison GTIN et numéro de série distingue une instance individuelle.
+    differences: Product Unit décrit un exemplaire métier ; elle n’impose pas cette convention d’identification.
+    flow_position: Appui sémantique sur GS1, sans GTIN obligatoire ni affirmation de conformité au standard.
+    source_title: How does serialisation differ from unique identification in the GS1 System?
+    source_url: https://support.gs1.org/support/solutions/articles/43000734238-how-does-serialisation-differ-from-unique-identification-in-the-gs1-system-
+    source_version: FAQ GS1 GO évolutive ; pas une édition complète des spécifications GS1
+    source_locator: Différence entre identification et sérialisation
+    consulted_on: '2026-09-19'
+    evidence_limits: Page explicative consultée, pas audit des règles normatives GS1 ni de tous les rôles Article/Container
+      FLOW.
+    status: proposed
+    source_refs:
+    - U460
+    - ELM282
+    - CMP177
+  - vendor: GS1
+    product: Global Traceability Standard
+    element_name: GS1 Global Traceability Standard
+    element_type: Standard d’identification et de traçabilité
+    relationship: Appui sémantique
+    similarities: L’identification à l’instance distingue les exemplaires physiques.
+    differences: GS1 illustre GTIN et numéro de série ; FLOW ne rend pas ce marquage universel.
+    flow_position: Product Unit désigne l’exemplaire, distinct de Product et Product Variant.
+    term_choice: Product Unit désigne l’exemplaire, distinct de Product et Product Variant.
+    definition_choice: L’identité physique ne se confond ni avec une référence commerciale ni avec son support de lecture.
+    source_title: GS1 Global Traceability Standard
+    source_url: https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard
+    source_version: Version en ligne ; édition non figée par cette consultation
+    source_locator: 'Identification : Class-level, Batch/Lot-level, Instance-level'
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM321
+    - CMP186
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+- id: TER060
+  name: Article
+  short_description: Rôle porté par Product pour les biens constituant le contenu à stocker ou déplacer.
+  definition: Rôle porté par Product pour les biens constituant le contenu à stocker ou déplacer.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U195
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: article-et-container-roles-de-product-u195
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER061
+  name: Container
+  short_description: Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles
+    de composition.
+  definition: Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles de composition.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U194
+  - U195
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: article-et-container-roles-de-product-u195
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER062
+  name: GTIN
+  short_description: Identifiant d’une référence commerciale, distinguant les variantes et conditionnements pertinents ; il
+    n’identifie pas à lui seul un exemplaire.
+  definition: Identifiant d’une référence commerciale, distinguant les variantes et conditionnements pertinents ; il n’identifie
+    pas à lui seul un exemplaire.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U193
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER063
+  name: Serial Number
+  short_description: Identifiant éventuel d’un exemplaire dans un périmètre d’unicité à préciser, indépendant de son support
+    de lecture.
+  definition: Identifiant éventuel d’un exemplaire dans un périmètre d’unicité à préciser, indépendant de son support de lecture.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U193
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER066
+  name: Service Order
+  short_description: Commande de prestations confiées à un exécutant, dans le contexte Services.
+  definition: Commande de prestations confiées à un exécutant, dans le contexte Services.
+  context: Vocabulaire local FLOW.
+  source_refs:
+  - U169
+  - U203
+  source_locator:
+    path: connaissance/19-glossaire-metier.md
+    anchor: ''
+  review:
+    state: proposed
+    note: Définition de fiche proposée à partir des accords cités ; ne vaut pas validation de tous ses mots et attributs.
+- id: TER075
+  name: Execution Service
+  short_description: Prestation proposée par un exécutant avec un résultat et des conditions définis.
+  definition: Service rendu par un exécutant, notamment entrepôt, transport ou production de documents, décrit par son résultat,
+    ses conditions et ses engagements de service.
+  context: Définition métier proposée pour la refonte U244 ; pas de nouveau type d’objet instancié.
+  notes: L’offre est décrite dans [Execution Service Catalog](model:D14) ; une demande de prestation utilise un [Service Order](glossary:TER066).
+    Le service métier est distinct de son accès informatique et de chacune de ses réalisations.
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  source_locator:
+    path: connaissance/32-execution-orchestration.md
+    anchor: vocabulaire
+  review:
+    state: proposed
+    note: Formulation proposée ; les principes adoptés ne valident pas le terme entier.
+- id: TER076
+  name: Service Level Agreement (SLA)
+  short_description: Engagement de niveau de service applicable sous des conditions définies.
+  definition: Engagement de niveau de service décrivant les conditions et résultats de service attendus, notamment les délais
+    de réalisation applicables.
+  context: Définition métier proposée pour la refonte U244 ; pas de nouveau type d’objet instancié.
+  notes: Dans cette refonte, le référentiel D14 contient les SLA globaux configurés. Ils restent distincts de l’engagement
+    individuel de prestation, de l’estimation actualisée et du résultat observé. Un SLA compatible ne garantit pas la réussite
+    opérationnelle ; le maître de configuration et le lien à Agreement restent à préciser.
+  source_refs:
+  - U237
+  - U238
+  - U240
+  - U242
+  - U243
+  - U244
+  source_locator:
+    path: connaissance/32-execution-orchestration.md
+    anchor: vocabulaire
+  review:
+    state: proposed
+    note: Formulation proposée ; les principes adoptés ne valident pas le terme entier.
+- id: TER080
+  name: Réassort
+  short_description: Alimentation continue des stocks magasin guidée par des seuils.
+  definition: Alimentation continue des stocks magasin guidée par des seuils.
+  context: Terme métier Beaumanoir défini par Laurent U310.
+  notes: Le sens local est plus précis que Replenishment pris génériquement. Le réassort magasin ne désigne pas ici la seule
+    mise en rayon depuis la réserve. Les seuils ne permettent pas de déduire une formule min/max exacte, une cadence fixe
+    ou une validation humaine systématique. Le calcul des apports relève de Replenishment Decision ; l’application aux Orders
+    et la livraison gardent leurs responsabilités.
+  source_refs:
+  - U310
+  - CMP106
+  - U311
+  - U316
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u310
+  review:
+    state: partial
+    note: Nom et sens directement exprimés U310 ; notes de comparaison et frontières éditoriales proposées.
+  market_comparisons:
+  - vendor: SAP
+    product: Allocation Management
+    element_name: In-Season Fill-In
+    element_type: Scénarios métier d’un produit
+    relationship: Recouvrement partiel
+    similarities: Alimenter les stocks magasins pendant la commercialisation après la mise en place initiale ; rapprochement
+      avec le Réassort décrit par Laurent.
+    differences: SAP décrit un produit qui couvre planification et traitement de la distribution. FLOW sépare décision des
+      apports, gestion des Orders et exécution. Le réassort décrit par Laurent est guidé par des seuils ; cette documentation
+      SAP ne démontre pas une formule identique. La notion SAP de collection ou thème ne prouve pas un usage de capsules chez
+      Beaumanoir.
+    flow_position: Initial Stocking Decision est le nom FLOW adopté U316 pour l’implantation ; Replenishment Decision reste
+      distincte pour les apports continus. Initial Stocking est attesté dans UBL, Initial Distribution dans les sources retail.
+      Les intitulés éditeurs sont conservés pour comparaison, sans équivalence de hiérarchie ni déploiement Beaumanoir déduit.
+      Les rapprochements restent proposés.
+    source_title: SAP Allocation Management — Business Overview
+    source_url: https://help.sap.com/docs/CARAB/00197153997746b4bec2020d00e66ea9/e99798c39a3f4956bd5ce509b39382f7.html?locale=en-US&state=PRODUCTION&version=5.0.2
+    source_version: 5.0 FPS02 — version de la documentation consultée
+    consulted_on: '2026-09-18'
+    source_locator: 'Business Scenarios : Initial Allocation ; In-Season Fill-In'
+    evidence_limits: Texte primaire indexé consulté ; ouverture de la page sans corps exploitable. Pas de preuve de déploiement
+      Beaumanoir, ni d’équivalence de hiérarchie Capacité → Comportement.
+    status: proposed
+    source_refs:
+    - ELM198
+    - CMP106
+    - U310
+    - U311
+    - U313
+    - U314
+    - CMP107
+    - U316
+  - vendor: RELEX
+    product: Replenishment and allocation
+    element_name: In-season replenishment
+    element_type: Fonctions présentées par l’éditeur
+    relationship: Recouvrement partiel
+    similarities: Alimenter les stocks magasins pendant la commercialisation après la mise en place initiale ; rapprochement
+      avec le Réassort décrit par Laurent.
+    differences: La présentation RELEX associe aussi commandes présaison et gestion de fin de saison. Ces fonctions ne sont
+      pas ajoutées implicitement à FLOW. Le réassort produit utilise notamment des prévisions ; une identité avec les seuils
+      et règles Beaumanoir n’est pas établie.
+    flow_position: Initial Stocking Decision est le nom FLOW adopté U316 pour l’implantation ; Replenishment Decision reste
+      distincte pour les apports continus. Initial Stocking est attesté dans UBL, Initial Distribution dans les sources retail.
+      Les intitulés éditeurs sont conservés pour comparaison, sans équivalence de hiérarchie ni déploiement Beaumanoir déduit.
+      Les rapprochements restent proposés.
+    source_title: RELEX — Replenishment and allocation
+    source_url: https://www.relexsolutions.com/solutions/automatic-replenishment-system/
+    source_version: Présentation produit évolutive, sans édition figée
+    consulted_on: '2026-09-18'
+    source_locator: Manage the full cycle for your seasonal items ; Manage seasons effectively
+    evidence_limits: Présentation commerciale primaire consultée. Aucun contrat fonctionnel exhaustif, aucune formule de seuil
+      équivalente ni déploiement Beaumanoir démontré.
+    status: proposed
+    source_refs:
+    - ELM198
+    - CMP106
+    - U310
+    - U311
+    - U313
+    - U314
+    - CMP107
+    - U316
+- id: TER081
+  name: Split
+  short_description: Scission d’une commande ou de ses éléments en parties distinctes, avec préservation de leur filiation.
+  definition: Scission d’une commande ou de ses éléments en parties distinctes, avec préservation de leur filiation.
+  context: Convention U362 intégrée U363 ; formulations développées éditoriales.
+  notes: 'U362 : « coupe des commandes ». Ne crée pas une demande supplémentaire ; contrôler les quantités et préciser le
+    devenir de l’original. Les réalisations déjà acquises sont conservées. Le nom du comportement est Order Splitting.'
+  source_refs:
+  - U362
+  - U363
+  - CMP133
+  - U470
+  - U471
+  - ELM302
+  - CMP186
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u362
+  review:
+    state: partial
+    note: Distinction validée ; définition développée et notes proposées.
+  market_comparisons:
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: What’s a Split Order Line
+    element_type: Fonction produit, verbe descriptif ou stratégie de répartition
+    relationship: Appui sémantique
+    similarities: Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches
+      de fulfillment.
+    differences: Ne signifie pas toujours création de plusieurs commandes autonomes ; la fonction produit combine décisions
+      et effets que FLOW sépare.
+    source_title: What’s a Split Order Line
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+    source_version: 26B
+    source_locator: How Order Management Determines Availability
+    consulted_on: '2026-09-18'
+    evidence_limits: Oracle ouvert ; passages Microsoft et SAP indexés consultés, page SAP dynamique sans texte à l’ouverture.
+      Aucune implémentation Beaumanoir déduite.
+    flow_position: Split comme mutation avec filiation ; composition persistante distincte. U363 applique la structure ; les
+      correspondances marché restent proposées.
+    status: proposed
+    source_refs:
+    - U360
+    - ELM222
+    - CMP131
+    - U363
+    - CMP133
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Delivery schedules
+    element_type: Fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Une ligne peut être scindée en livraisons rattachées à son origine.
+    differences: Une scission de livraison est un cas particulier, pas toutes les formes de Split.
+    flow_position: Split conserve le sens de scission.
+    term_choice: Split conserve le sens de scission.
+    definition_choice: La filiation distingue la scission d’une redistribution des ressources ou d’une fusion.
+    source_title: Delivery schedules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+    source_version: Documentation évolutive ; état consulté le 19 septembre 2026
+    source_locator: Create delivery schedules ; Manage delivery lines
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM302
+    - CMP186
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+- id: TER082
+  name: Spread
+  short_description: Répartition de ressources entre plusieurs commandes, dans le sens de la logique ARun discutée.
+  definition: Répartition de ressources entre plusieurs commandes, dans le sens de la logique ARun discutée.
+  context: Convention U362 intégrée U363 ; formulations développées éditoriales.
+  notes: 'U362 : « on répartit entre les commandes ». SAP Spread logic peut utiliser une répartition proportionnelle ; cette
+    formule n’est pas imposée à tout mécanisme FLOW. Ce terme qualifié ne désigne ni split ni étalement générique des échéances.'
+  source_refs:
+  - U362
+  - U363
+  - CMP133
+  - U470
+  - U471
+  - ELM308
+  - CMP186
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u362
+  review:
+    state: partial
+    note: Distinction validée ; définition développée et notes proposées.
+  market_comparisons:
+  - vendor: SAP
+    product: ERP Fashion Management
+    element_name: Steps in Order Allocation Run — Allocation
+    element_type: Stratégie de répartition dans un processus produit
+    relationship: Recouvrement partiel
+    similarities: ARun peut affecter le stock selon FIFO ou une répartition proportionnelle fondée sur les quantités demandées
+      (spread logic). Le regroupement des besoins est un prérequis au Spread.
+    differences: Référence ERP Fashion, sans garantie pour toute édition aATP. ARun est le processus intégré ; Spread une
+      de ses stratégies. La répartition ne nécessite pas la création de nouvelles commandes.
+    source_title: Steps in Order Allocation Run
+    source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+    source_version: Édition non relevée dans le passage indexé ; SAP ERP Fashion Management
+    source_locator: Requirement Grouping ; Allocation ; Release Rules
+    consulted_on: '2026-09-18'
+    evidence_limits: Passage primaire indexé consulté, complété par Allocation déjà documenté ELM222. Aucune preuve de configuration
+      ou version Beaumanoir.
+    flow_position: Spread est une politique de répartition des ressources entre commandes. Les décisions déterminent les parts
+      ; Supply Assignment applique les liens. Aucun agrégat décisionnel ou comportement automatique ajouté. U363 applique
+      la structure ; les correspondances marché restent proposées.
+    status: proposed
+    source_refs:
+    - U361
+    - ELM223
+    - CMP132
+    - U363
+    - CMP133
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Keep supply for confirmed demand in Planning Optimization
+    element_type: Fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Le pegging relie les ressources disponibles à des demandes.
+    differences: Microsoft n’emploie pas ici Spread ; l’appui porte sur le mécanisme, pas sur un terme universel.
+    flow_position: Spread reste le terme local du raisonnement ARun discuté.
+    term_choice: Spread reste le terme local du raisonnement ARun discuté.
+    definition_choice: La répartition ressource–commande ne change pas l’identité des commandes et ne vaut pas réservation
+      FLOW.
+    source_title: Keep supply for confirmed demand in Planning Optimization
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+    source_version: SCM 10.0.48 build 10.0.2645.33+ selon la page
+    source_locator: What data is preserved ; Control how on-hand inventory is pegged to confirmed demand
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM308
+    - CMP186
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+- id: TER083
+  name: Supply
+  short_description: Ressources présentes ou attendues qui peuvent répondre à une demande.
+  definition: 'Dans les mécanismes de disponibilité, de planification et d’affectation, côté ressources du bilan offre-demande
+    : stock présent et apports attendus, considérés selon leurs quantités, dates et conditions d’admissibilité.'
+  context: Sens métier ressources, illustré par Microsoft Business Central et SAP ARun ; ce n’est pas un synonyme universel
+    d’approvisionnement ni de Supply Chain.
+  notes: 'Exemple fictif : 80 pièces en stock et une réception de 40 constituent des ressources à examiner ; elles ne sont
+    pas nécessairement toutes libres, fiables ou mobilisables à la date voulue. Un même transfert est sortant pour le lieu
+    donneur et entrant pour le receveur : la perspective compte. À distinguer du [sens fonctionnel local FLOW](glossary:TER035),
+    de la [Supply Chain](glossary:TER084) et du [Fulfillment](glossary:TER085).'
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u367
+  review:
+    state: proposed
+    note: Définition ajoutée à la demande U367 ; formulation et correspondances éditoriales, sans adoption implicite de noms
+      ou de périmètres.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Business Central
+    element_name: Balancing supply and demand
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: 'Supply désigne le côté ressources : stock et apports entrants, notamment achats, production, transferts
+      entrants et retours clients. Supply orders alimente ce côté du bilan.'
+    differences: Sémantique de planification Business Central, pas définition d’un périmètre organisationnel FLOW.
+    source_title: Balancing supply and demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+    source_version: Documentation évolutive
+    source_locator: Supply and demand ; Process orders ; Priorities on the supply side
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Sens métier ressources, illustré par Microsoft Business Central et SAP ARun ; ce n’est pas un synonyme
+      universel d’approvisionnement ni de Supply Chain.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: SAP
+    product: S/4HANA aATP
+    element_name: Backorder Processing — Supply Assignment
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: Supply Assignment relie besoins, stocks et réceptions futures ; réaffectation paramétrable.
+    differences: Fonction intégrée SAP ; FLOW sépare décision, affectation, réservation et promesse.
+    source_title: Backorder Processing — Supply Assignment
+    source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_version: 2025 FPS01 (Feb 2026)
+    source_locator: Supply Selection ; Assignment ; Reassignment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Sens métier ressources, illustré par Microsoft Business Central et SAP ARun ; ce n’est pas un synonyme
+      universel d’approvisionnement ni de Supply Chain.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+- id: TER084
+  name: Supply Chain
+  short_description: Réseau de parties, activités et flux reliant les sources d’approvisionnement aux destinataires.
+  definition: 'Chaîne d’approvisionnement : ensemble des acteurs et des activités qui permettent d’amener un produit depuis
+    ses fournisseurs jusqu’à ses destinataires. Elle comprend notamment approvisionnement, transformation éventuelle, stockage,
+    transport et distribution, ainsi que les retours.'
+  context: 'Exemple : un fournisseur livre des tee-shirts à un entrepôt, qui les répartit entre magasins ; un transporteur
+    les achemine, puis les magasins les remettent aux clients. Supply Chain désigne cette chaîne ; Supply Chain Management
+    sa gestion et sa coordination.'
+  notes: 'Le [Fulfillment](glossary:TER085) est une finalité et un ensemble d’activités au sein de ce système. [Supply](glossary:TER083)
+    désigne le côté ressources dans les calculs. Exemple fictif : fournisseurs, entrepôts, transporteurs, magasins et clients
+    reliés par des flux. Le modèle FLOW n’absorbe pas toutes les responsabilités de cette chaîne : gouvernance des fournisseurs,
+    conception, finance et autres fonctions ne deviennent pas des domaines par cette définition. Les retours et flux inverses
+    existent dans la chaîne ; leur périmètre opérationnel reste explicite.'
+  source_refs:
+  - U366
+  - U367
+  - ELM225
+  - CMP136
+  - U470
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u367
+  review:
+    state: proposed
+    note: Définition ajoutée à la demande U367 ; formulation et correspondances éditoriales, sans adoption implicite de noms
+      ou de périmètres.
+  market_comparisons:
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: SCM couvre approvisionnement, transformation, logistique et coordination entre partenaires. Le fulfillment
+      figure parmi les activités logistiques.
+    differences: Définition de Supply Chain Management, utilisée pour délimiter le périmètre ; ce n’est pas une taxonomie
+      de capacités FLOW.
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page de référence sans édition affichée
+    source_locator: Definitions of Supply Chain Management ; Logistics Management
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Définition éditoriale appuyée sur ASCM et sur le périmètre de Supply Chain Management défini par CSCMP.
+      Supply Chain désigne le système ; Supply Chain Management sa gestion.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136
+  - vendor: ASCM
+    product: Ressource professionnelle
+    element_name: What is supply chain logistics?
+    element_type: Notion métier ou fonction produit documentée
+    relationship: Appui sémantique
+    similarities: La supply chain est décrite comme un réseau amont-aval ; le fulfillment est orienté vers la réalisation
+      des commandes.
+    differences: Présentation pédagogique centrée sur les biens ; ne tranche pas tous les cas de retours ou services numériques
+      FLOW.
+    source_title: What is supply chain logistics?
+    source_url: https://www.ascm.org/topics/logistics/
+    source_version: Page évolutive
+    source_locator: Supply chain vs logistics ; Order processing and fulfillment
+    consulted_on: '2026-09-18'
+    evidence_limits: Documentation primaire ouverte ou passage primaire indexé consulté ; synthèse sélective, aucune réalisation
+      Beaumanoir déduite.
+    flow_position: Définition éditoriale appuyée sur ASCM et sur le périmètre de Supply Chain Management défini par CSCMP.
+      Supply Chain désigne le système ; Supply Chain Management sa gestion.
+    status: proposed
+    source_refs:
+    - U366
+    - U367
+    - ELM225
+    - CMP136

@@ -44,7 +44,7 @@ function applyStyles(cy: Core, colors: Palette, labels: CytoscapeCanvasProps['la
       'background-color': colors.paper, 'background-opacity': 1,
       'border-width': 1.2, 'border-color': colors.line, 'overlay-opacity': 0,
     } },
-    { selector: 'node[kind="domain"]', style: { width: 206, height: 82, 'border-width': 2 } },
+    { selector: 'node[kind="domain"], node[kind="area"]', style: { width: 206, height: 82, 'border-width': 2 } },
     { selector: 'node[universe]', style: { width: 228, height: 90, 'border-width': 2 } },
     { selector: 'edge', style: {
       label: labels === 'all' ? 'data(displayLabel)' : '', color: colors.ink,

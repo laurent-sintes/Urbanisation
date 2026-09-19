@@ -1,0 +1,3574 @@
+source: U477
+documents:
+- id: ELM327
+  market_refs:
+  - MKT61
+  source_url: https://arxiv.org/abs/2306.10961
+  titles:
+  - Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization
+  editions:
+  - Prépublication du 19 juin 2023
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Multi-echelon inventory optimization
+  locators:
+  - Résumé des auteurs
+  evidence_limits:
+  - Résumé primaire seul consulté ; aucune reproduction de l’algorithme ni transférabilité quantitative au textile affirmée.
+  targets:
+  - BHV028
+  - D05
+  batches:
+  - inventory
+- id: ELM328
+  market_refs:
+  - MKT27
+  source_url: https://blueyonder.com/solutions/returns-management/smart-disposition
+  titles:
+  - Smart Disposition
+  editions:
+  - Page solution sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Smart Disposition
+  locators:
+  - Intelligent routing ; Configure and enforce policy ; Recover revenue
+  evidence_limits:
+  - Page commerciale de l’éditeur ; ne livre pas l’algorithme et inclut aussi remboursement et admissibilité hors périmètre
+    FLOW.
+  targets:
+  - BHV048
+  - BHV049
+  - D05.i
+  - VER003
+  batches:
+  - inventory
+- id: ELM329
+  market_refs:
+  - MKT36
+  source_url: https://camunda.com/platform/observability/
+  titles:
+  - Process Observability & AI Agent Monitoring
+  editions:
+  - Page web évolutive
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Process observability
+  locators:
+  - Observability for orchestration ; Real-time runtime visibility
+  evidence_limits:
+  - Présentation produit ; capacités de reprise et fonctions IA ne sont pas importées dans le comportement de suivi FLOW.
+  targets:
+  - BHV082
+  batches:
+  - references
+- id: ELM330
+  market_refs:
+  - MKT36
+  source_url: https://camunda.com/process-orchestration/
+  titles:
+  - The Process Orchestration Handbook
+  editions:
+  - Guide web évolutif
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Exception handling
+  - Process orchestration
+  - Service task / Human task
+  - Task execution
+  locators:
+  - What is process orchestration? ; Processes with diverse endpoints ; Complexity
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D06
+  - D06.d
+  - D06.f
+  - TER031
+  - TER075
+  - VER023
+  batches:
+  - references
+- id: ELM331
+  market_refs:
+  - MKT41
+  source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  titles:
+  - SCM Definitions and Glossary of Terms
+  editions:
+  - Page web sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Supply Chain Management
+  locators:
+  - Definitions ; Boundaries and Relationships
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - TER035
+  - TER084
+  batches:
+  - references
+- id: ELM332
+  market_refs:
+  - MKT64
+  source_url: https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+  titles:
+  - Fulfillment by Amazon (FBA) Reports
+  editions:
+  - Documentation en ligne consultée le 2026-09-19
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory Ledger Report
+  locators:
+  - Inventory Ledger Report — Summary View / Detailed View
+  evidence_limits:
+  - Rapports du réseau Amazon ; ne définit ni une capacité FLOW ni un registre comptable universel.
+  targets:
+  - TER056
+  batches:
+  - inventory
+- id: ELM333
+  market_refs:
+  - MKT58
+  source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+  titles:
+  - Business capabilities
+  editions:
+  - Page institutionnelle évolutive, édition non indiquée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Business / organisational capability
+  - Capability implementation
+  - Categorised capabilities
+  locators:
+  - Definition ; Principles 1–4 ; exemple Pay staff
+  evidence_limits:
+  - Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne sont pas transposés
+    à FLOW.
+  targets:
+  - TER001
+  - TER026
+  - TER029
+  batches:
+  - foundations
+- id: ELM334
+  market_refs:
+  - MKT62
+  source_url: https://docs.commercetools.com/api/inventory-overview
+  titles:
+  - Inventory overview
+  editions:
+  - Documentation en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - ReserveOnCart / ReserveOnOrder
+  locators:
+  - Inventory modes ; Reservations ; expiration ; Release a reservation
+  evidence_limits:
+  - Modes d’un moteur de commerce ; ne démontre pas un calcul autonome de politique selon le risque.
+  targets:
+  - BHV032
+  - BHV035
+  - D05.h
+  - VER011
+  - VER019
+  batches:
+  - inventory
+- id: ELM335
+  market_refs:
+  - MKT65
+  source_url: https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html
+  titles:
+  - Commingling purchase orders
+  editions:
+  - Infor LN 10.7
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Commingling
+  locators:
+  - Commingling purchase orders ; Conditions ; Results
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV087
+  - D04.n
+  batches:
+  - orders
+- id: ELM336
+  market_refs:
+  - MKT54
+  source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+  titles:
+  - Universal Business Language Version 2.4
+  editions:
+  - OASIS Standard 2.4, 2024
+  - UBL 2.4
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Despatch Advice / Receipt Advice
+  - Order
+  - Order / response
+  - Order Response
+  - Order document
+  - Receipt Advice
+  locators:
+  - 3.2.47 Order ; 3.2.48 Order Cancellation ; 3.2.49 Order Change ; 3.2.50 Order Response
+  - §2.3.5.1.1–2.3.5.1.4 Fulfilment ; surtout Receipt Advice Business Rules
+  evidence_limits:
+  - Standard de documents d’échange ; les exemples ne définissent ni tous les documents ni la convention obligatoire fait-document
+    de FLOW.
+  - Standard d’échange documentaire ; ne normalise ni toutes les responsabilités FLOW ni les termes français locaux.
+  targets:
+  - BHV078
+  - TER011
+  - TER012
+  - TER036
+  - TER037
+  - TER086
+  batches:
+  - foundations
+  - orders
+- id: ELM337
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+  titles:
+  - Promising and Reserving Inventory
+  editions:
+  - PeopleSoft Enterprise Inventory 9.0
+  - PeopleSoft FSCM 9.0
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Cumulative ATP
+  - Cumulative ATP demand
+  - Inventory priority rank
+  - Priority rank
+  - Promise stock
+  - Soft reservation / Reservation lead days
+  locators:
+  - Soft Reserve Items ; reservation lead days ; pegged supply
+  - Understanding Inventory Reservations ; Understanding the Order Line Processing Sequence ; Calculating ATP
+  evidence_limits:
+  - Documentation d’une version historique de PeopleSoft ; les termes ATP reservation et Release ont des sens propres au produit.
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV001
+  - BHV033
+  - BHV034
+  - BHV035
+  - D03.i
+  - D03.m
+  - TER022
+  - TER044
+  - VER013
+  - VER015
+  - VER019
+  batches:
+  - inventory
+  - promising
+- id: ELM338
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E18727-01/doc.121/e13338/T515331T515340.htm
+  titles:
+  - Service Planning Concepts
+  editions:
+  - Oracle E-Business Suite 12.1
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Repair return
+  locators:
+  - Repair Return Pull ; Repair Return Push ; Repair delays
+  evidence_limits:
+  - Source de planification des pièces ; ne démontre pas à elle seule le suivi opérationnel de chaque bien sérialisé.
+  targets:
+  - BHV057
+  batches:
+  - orders
+- id: ELM339
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm
+  titles:
+  - Consuming Material
+  editions:
+  - E-Business Suite 12.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Consumption / Aging Based Ownership Transfer
+  locators:
+  - Transferring Ownership ; Aging Based Ownership Transfer
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV063
+  - BHV064
+  batches:
+  - inventory
+- id: ELM340
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm
+  titles:
+  - Mobile Materials Management
+  editions:
+  - E-Business Suite 12.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Physical inventory / Cycle counting
+  locators:
+  - Counting ; Cycle Counting ; Physical Inventory
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV029
+  - BHV030
+  - D01.d
+  - TER040
+  batches:
+  - inventory
+- id: ELM341
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T430466.htm
+  titles:
+  - Task Management — Opportunistic Cycle Counting
+  editions:
+  - E-Business Suite 12.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Opportunistic cycle counting
+  locators:
+  - Opportunistic Cycle Counting
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV031
+  batches:
+  - inventory
+- id: ELM342
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48842/T373258T377249.htm
+  titles:
+  - Order Management Implementation Manual — Scheduling
+  editions:
+  - E-Business Suite 12.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Reservation Time Fence
+  locators:
+  - Reservation Time Fence ; Reserve Orders ; Unreserving
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV033
+  - D05.h
+  batches:
+  - inventory
+- id: ELM343
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48931/T446883T443953.htm
+  titles:
+  - Purchase Orders
+  editions:
+  - Oracle E-Business Suite 12.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Planned Purchase Order
+  - Standard purchase order
+  locators:
+  - Standard Purchase Orders ; Planned Purchase Orders ; Scheduled Releases ; Shipments
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV058
+  - TER033
+  batches:
+  - orders
+- id: ELM344
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html
+  titles:
+  - Customer Import
+  editions:
+  - 25D
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Trading Community Data Import
+  locators:
+  - File Links ; Import Trading Community Data in Bulk
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D09.d
+  batches:
+  - references
+- id: ELM345
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/procurement/26a/oaprc/Chunk145966296.html
+  titles:
+  - What’s the difference between a purchase order, a purchase agreement, and a contract agreement?
+  editions:
+  - Oracle Fusion Cloud Procurement 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Purchase order
+  locators:
+  - Purchase Order ; Blanket Purchase Agreement ; Contract Purchase Agreement
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - D04.j
+  - TER070
+  batches:
+  - orders
+- id: ELM346
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/readiness/scm/25a/inv25a/25A-inventory-wn-f35542.htm
+  titles:
+  - Return to Supplier for Credit Only
+  editions:
+  - Oracle Cloud Readiness 25A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Return for credit only
+  locators:
+  - Business Benefits ; Steps to Enable ; Tips and Considerations
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV055
+  - D04.m
+  batches:
+  - orders
+- id: ELM347
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html
+  titles:
+  - Create and Monitor Agreements in Oracle Fusion Purchasing
+  editions:
+  - Documentation évolutive sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Contract / Purchasing agreement
+  - Import Purchasing Agreements
+  locators:
+  - Track Purchasing Activity ; Import Blanket Agreements ; Import Contract Agreements
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D11
+  - D11.a
+  - TER048
+  batches:
+  - references
+- id: ELM348
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/service-logistics/26b/fasul/manage-repair-orders-from-the-depot-repair-page.html
+  titles:
+  - Manage Repair Orders from the Depot Repair Page
+  editions:
+  - Oracle Fusion Cloud Service Logistics 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Depot repair
+  locators:
+  - Create repair work orders ; Return to customer ; Serialized assets
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV051
+  - BHV053
+  batches:
+  - orders
+- id: ELM349
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html
+  titles:
+  - Reservations
+  editions:
+  - 25C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Reservation
+  locators:
+  - Reservation types ; Supply and demand source types
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D02.c
+  - TER016
+  - TER021
+  - VER011
+  batches:
+  - inventory
+- id: ELM350
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html
+  titles:
+  - Check Availability
+  editions:
+  - Oracle Fusion Cloud SCM 25C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Availability result
+  - Check Availability
+  - Commit a promising result
+  - Promising result
+  - Schedule an availability result
+  - Schedule the order line
+  - Scheduled ship and arrival dates
+  locators:
+  - Examine the Attributes ; Schedule the Order Line
+  evidence_limits:
+  - Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  targets:
+  - BHV021
+  - BHV022
+  - D03.l
+  - D03.n
+  - D15
+  - TER014
+  - VER005
+  - VER013
+  batches:
+  - promising
+- id: ELM351
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html
+  titles:
+  - Database Promising
+  editions:
+  - Oracle Fusion Cloud SCM 25C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Postprocessing lead time
+  locators:
+  - Back-to-Back ; Bill of Resources ; Profitable to Promise ; Consume Transfers at the Same Time
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV003
+  batches:
+  - promising
+- id: ELM352
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+  titles:
+  - Overview of Global Order Promising
+  editions:
+  - 25C
+  - Oracle Fusion Cloud SCM 25C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Create new supply with CTP
+  - Fulfillment locations
+  - Global Order Promising
+  - Split order line
+  - Supply sources
+  locators:
+  - Introduction ; Principles 2 and 6
+  - Introduction ; Principles of Promising ; Examples
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV002
+  - BHV075
+  - D15
+  - TER081
+  - TER083
+  batches:
+  - promising
+  - references
+- id: ELM353
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+  titles:
+  - Order Management Statuses
+  editions:
+  - Oracle Fusion Cloud SCM 25C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order management status
+  locators:
+  - Order ; Order line ; Fulfillment line ; Task ; Orchestration process
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - D04.o
+  - TER038
+  - VER002
+  batches:
+  - orders
+- id: ELM354
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/consigned-inventory.html
+  titles:
+  - Consigned Inventory
+  editions:
+  - Oracle Fusion Cloud SCM 25D
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Consignment order
+  locators:
+  - Consignment agreements ; Orders ; Consumption advice
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV061
+  - BHV062
+  - D04.r
+  batches:
+  - orders
+- id: ELM355
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html
+  titles:
+  - Examples of Consigned Inventory Returns
+  editions:
+  - 25D
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Consigned inventory return
+  locators:
+  - Material received ; Material consumed ; Transfer to Consigned
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV065
+  batches:
+  - inventory
+- id: ELM356
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html
+  titles:
+  - How You Review Item Supply and Demand
+  editions:
+  - 25D
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Item supply and demand
+  locators:
+  - Quantities to Include ; Supply Types ; Demand Types
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D01.c
+  - TER006
+  - TER008
+  - TER022
+  - TER042
+  - TER043
+  batches:
+  - inventory
+- id: ELM357
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+  titles:
+  - Key Actions on Orders
+  editions:
+  - Oracle Fusion Cloud SCM 25D
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Current commit
+  - Enforce Current Commit simulation
+  - Interactive backlog planning
+  - Planned values
+  locators:
+  - Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV077
+  - D03.p
+  - TER013
+  - TER078
+  batches:
+  - promising
+- id: ELM358
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html
+  titles:
+  - Guidelines for Managing Shipment Sets
+  editions:
+  - Oracle Fusion Cloud SCM 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Shipment set
+  locators:
+  - Shipment set attributes ; Shippable and nonshippable lines
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV039
+  batches:
+  - orders
+- id: ELM359
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html
+  titles:
+  - Consigned Inventory Aging
+  editions:
+  - 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Consigned inventory aging
+  locators:
+  - Aging Process ; Aging period ; Transfer to Owned
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV064
+  - D01.h
+  batches:
+  - inventory
+- id: ELM360
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+  titles:
+  - Overview of Item Batches
+  editions:
+  - 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Item / Item batch
+  - Item batch
+  - Item import
+  - Item master data
+  locators:
+  - Overview of Item Batches
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D08
+  - D08.d
+  - TER050
+  - TER052
+  batches:
+  - references
+- id: ELM361
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/keep-availability-in-global-order-promising-and-inventory-management-synchronized.html
+  titles:
+  - Keep Global Order Promising and Inventory Management Synchronized
+  editions:
+  - Oracle Fusion Cloud SCM 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Future available-to-promise supply
+  - Item availability / on-hand availability
+  locators:
+  - Back-to-Back Orders ; Set up Your Material Status and Subinventory
+  evidence_limits:
+  - Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  targets:
+  - BHV004
+  - TER009
+  batches:
+  - promising
+- id: ELM362
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html#s20054853
+  titles:
+  - Ship Order Lines in Shipment Sets
+  editions:
+  - Oracle Fusion Cloud SCM 26A
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Shipment set
+  locators:
+  - Shipment sets ; Examples ; Guidelines
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV086
+  - D04.n
+  batches:
+  - orders
+- id: ELM363
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  titles:
+  - Start Backlog Planning
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Backlog Management
+  - Backlog plan
+  locators:
+  - Introduction ; When to Use
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - D03
+  - D03.o
+  batches:
+  - promising
+- id: ELM364
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/how-orchestration-processes-back-to-back-flows.html
+  titles:
+  - Use Supply Chain Orchestration in Your Back-to-Back Flows
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Back-to-back flow
+  - Contract manufacturing
+  - Returned stock
+  locators:
+  - Buy ; Transfer ; Return Sales Orders ; Contract Manufacturing
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV050
+  - BHV074
+  - TER032
+  - TER065
+  batches:
+  - orders
+- id: ELM365
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html
+  titles:
+  - Overview of Supply Chain Orchestration
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Drop ship sales fulfillment
+  - Drop ship supply
+  - Supply order
+  - Supply request
+  locators:
+  - Supply requests ; Supply orders ; Drop Ship ; Changes
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV059
+  - BHV068
+  - D04
+  - TER010
+  - TER011
+  - TER065
+  batches:
+  - orders
+- id: ELM366
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+  titles:
+  - Cancel Sales Orders
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order cancellation
+  locators:
+  - Cancel an order ; Partially shipped lines ; Closed orders
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV043
+  - VER021
+  batches:
+  - orders
+- id: ELM367
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+  titles:
+  - Fulfillment Line Splits
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Fulfillment line split
+  locators:
+  - Split manually ; Split automatically ; Examples
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV044
+  batches:
+  - orders
+- id: ELM368
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+  titles:
+  - Hold Your Sales Orders
+  editions:
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Task hold
+  locators:
+  - Hold tasks ; Multiple holds ; Release a hold
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV040
+  - D04.o
+  batches:
+  - orders
+- id: ELM369
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+  titles:
+  - Overview of Inventory Rebalancing
+  editions:
+  - 26B
+  - Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory rebalancing
+  locators:
+  - Introduction ; Planned orders ; Release
+  - Salient Features ; sweep location ; Additional Points
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  - Recommandations Oracle calculées à la date initiale du plan ; aucune évaluation temporelle continue n’est revendiquée.
+  targets:
+  - BHV024
+  - BHV025
+  - BHV072
+  - BHV073
+  - D05.c
+  batches:
+  - inventory
+  - orders
+- id: ELM370
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
+  titles:
+  - Overview of Simulations for Replenishment Plans
+  editions:
+  - 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - What-if simulation
+  locators:
+  - Types of simulations ; policy values ; supply and demand
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV005
+  - BHV006
+  - D05.f
+  batches:
+  - inventory
+- id: ELM371
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  titles:
+  - Policy Assignment Sets
+  editions:
+  - 26B
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Replenishment policy
+  locators:
+  - Policy Parameters — fixed cycle, min-max, ROP/EOQ, PAR
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV019
+  - BHV020
+  - BHV084
+  - D05.a
+  - TER077
+  - VER004
+  batches:
+  - inventory
+- id: ELM372
+  market_refs:
+  - MKT20
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+  titles:
+  - Create Alternative Fulfillment Scenarios to Reduce Cost
+  editions:
+  - Oracle Fusion Cloud SCM 26C
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Profitable to Promise
+  - Profitable to promise
+  - Select an alternative fulfillment scenario
+  locators:
+  - Prioritize ; Promise According to Arrival Date ; exemple Denver/Seattle
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - D03.k
+  - TER068
+  - VER016
+  batches:
+  - promising
+- id: ELM373
+  market_refs:
+  - MKT59
+  source_url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
+  titles:
+  - CloudEvents Specification
+  editions:
+  - Version 1.0.2
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Event / Occurrence
+  locators:
+  - 'Terminology : Occurrence, Event, Producer, Consumer'
+  evidence_limits:
+  - Spécification d’interopérabilité des messages ; ni contrat métier exhaustif ni protocole imposé pour FLOW.
+  targets:
+  - TER039
+  batches:
+  - foundations
+- id: ELM374
+  market_refs:
+  - MKT01
+  source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+  titles:
+  - Business Capabilities
+  editions:
+  - Guide G189, 2018
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Business capability
+  - Capability components
+  - Organizational function
+  - Processes enabling a capability
+  - Stratification / leveling
+  locators:
+  - §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+  evidence_limits:
+  - Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture et copyright
+    vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+  targets:
+  - TER001
+  - TER024
+  - TER026
+  - TER027
+  - TER029
+  batches:
+  - foundations
+- id: ELM375
+  market_refs:
+  - MKT60
+  source_url: https://help.nextail.co/en/solution-specifications
+  titles:
+  - Solution specifications
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  - Page en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - First Allocation
+  - First Allocation / Replenishment / Store Transfers
+  - Replenishment
+  - Store Transfers
+  locators:
+  - First Allocation ; Replenishment ; Store Transfers
+  evidence_limits:
+  - Description fonctionnelle de l’éditeur ; ne donne pas les algorithmes ni les gains d’un déploiement FLOW.
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV024
+  - BHV070
+  - BHV071
+  - BHV072
+  - D05.g
+  - TER074
+  - TER079
+  batches:
+  - inventory
+  - orders
+- id: ELM376
+  market_refs:
+  - MKT24
+  source_url: https://help.sap.com/doc/99c15843d16f46beba19fb8ed09169ab/2505/en-US/0adce9e356974d9790cae131bbedee30.pdf
+  titles:
+  - Using Order-Based Planning with Flexible Master Data
+  editions:
+  - SAP IBP 2505 ; document 1.4, 2025-07-04
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Days of Supply / Target Days of Supply
+  locators:
+  - Pages 58–60 ; Stock and Buffer Stock Key Figures ; Days of Supply
+  evidence_limits:
+  - Passages ciblés du guide consultés ; les conventions SAP de calendrier et de demande ne sont pas une formule universelle
+    FLOW.
+  targets:
+  - TER077
+  batches:
+  - inventory
+- id: ELM377
+  market_refs:
+  - MKT13
+  source_url: https://help.sap.com/docs/CARAB/00197153997746b4bec2020d00e66ea9/e99798c39a3f4956bd5ce509b39382f7.html?locale=en-US&state=PRODUCTION&version=5.0.2
+  titles:
+  - Business Overview
+  editions:
+  - 5.0 FPS02
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - In-Season Fill-In
+  locators:
+  - 'Business Scenarios : Initial Allocation ; In-Season Fill-In'
+  evidence_limits:
+  - Passage primaire indexé consulté ; ouverture SAP Help non exploitable. Aucune formule de seuil Beaumanoir déduite.
+  targets:
+  - TER080
+  batches:
+  - references
+- id: ELM378
+  market_refs:
+  - MKT13
+  source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  titles:
+  - Backorder Processing — Reassignment
+  editions:
+  - SAP S/4HANA 2025 FPS01 (février 2026)
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Assignment without Reassignment
+  - Reassignment
+  locators:
+  - Reassignment ; Handling of BOP Confirmation Strategies
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV046
+  - BHV047
+  - VER018
+  batches:
+  - promising
+- id: ELM379
+  market_refs:
+  - MKT16
+  source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+  titles:
+  - Steps in Order Allocation Run
+  editions:
+  - 6.0 EHP8 SP25
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Spread logic
+  locators:
+  - Requirement Grouping ; Allocation ; Release Rules
+  evidence_limits:
+  - Passage primaire indexé consulté par le lot Promising ; page directe sans texte exploitable. Pas de généralisation à toute
+    édition aATP.
+  targets:
+  - TER082
+  batches:
+  - references
+- id: ELM380
+  market_refs:
+  - MKT16
+  source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/b9262a5341b1e578e10000000a441470.html
+  titles:
+  - Requirement Grouping
+  editions:
+  - 1.0 SP13
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Requirement grouping
+  locators:
+  - Requirement Grouping ; exemple sold-to party
+  evidence_limits:
+  - Passage primaire indexé consulté par le lot Promising ; deux documents SAP ne prouvent pas un consensus interéditeurs.
+  targets:
+  - TER082
+  batches:
+  - references
+- id: ELM381
+  market_refs:
+  - MKT13
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html
+  titles:
+  - Supply Assignment Run Workflow using Apps
+  editions:
+  - SAP S/4HANA 2025 FPS01 (février 2026)
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Compare simulated assignment runs
+  - Executed and simulated assignment runs
+  locators:
+  - Monitor Supply Assignment Runs ; Compare Supply Assignment Simulated Runs
+  evidence_limits:
+  - Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  targets:
+  - BHV045
+  - D03.p
+  batches:
+  - promising
+- id: ELM382
+  market_refs:
+  - MKT13
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+  titles:
+  - Supply Assignment (ARun)
+  editions:
+  - SAP S/4HANA 2025 FPS01 (février 2026)
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Supply Assignment
+  locators:
+  - Supply Assignment (ARun), introduction et accès
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV045
+  batches:
+  - promising
+- id: ELM383
+  market_refs:
+  - MKT13
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html
+  titles:
+  - Integration into Other Processes
+  editions:
+  - SAP S/4HANA 2025 FPS01 (février 2026)
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Supply Protection in Product Availability Check
+  locators:
+  - Product Availability Check ; Alternative-Based Confirmation
+  evidence_limits:
+  - Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  targets:
+  - BHV001
+  batches:
+  - promising
+- id: ELM384
+  market_refs:
+  - MKT63
+  source_url: https://help.shopify.com/en/manual/checkout-settings
+  titles:
+  - Shopify Checkout
+  editions:
+  - Aide en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory hold at payment
+  locators:
+  - Introduction — inventory checks and payment information
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV032
+  batches:
+  - inventory
+- id: ELM385
+  market_refs:
+  - MKT27
+  source_url: https://info.blueyonder.com/order-management-commerce/what-is-blue-yonder-store-execution-inventory-management
+  titles:
+  - What is Blue Yonder Store Execution Inventory Management?
+  editions:
+  - Page web sans édition figée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Store Execution Inventory Management
+  locators:
+  - Mobile-Led Workflows ; Accuracy Gap
+  evidence_limits:
+  - Présentation commerciale primaire ; pas de garantie d’exactitude ou de temps réel retenue comme fait établi.
+  targets:
+  - BHV081
+  batches:
+  - references
+- id: ELM386
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/azure/business-process-tracking/overview
+  titles:
+  - What is Azure Business Process Tracking?
+  editions:
+  - Mise à jour du 11 septembre 2025
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Business Process Tracking
+  locators:
+  - Business process design and tracking ; exemple du ticket de panne électrique
+  evidence_limits:
+  - Appui sur la corrélation métier ; produit limité aux ressources Azure décrites, sans exigence d’architecture pour FLOW.
+  targets:
+  - BHV082
+  - D07.d
+  batches:
+  - references
+- id: ELM387
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement
+  titles:
+  - Returns Management
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - RMA scrap
+  - Return Material Authorization
+  - Return to Vendor
+  - Return to Vendor from customer return
+  - Return to Vendor — Repair and Return
+  - Return to Vendor — Replacement
+  locators:
+  - RMA types ; RTV types ; Repair and return ; Creating an RTV from an RMA
+  evidence_limits:
+  - Documentation d’un produit différent de Dynamics 365 ; nommage et mécanismes propres, sans équivalence de couverture supposée.
+  targets:
+  - BHV052
+  - BHV054
+  - BHV056
+  - BHV057
+  - D04.m
+  - TER072
+  - TER073
+  batches:
+  - orders
+- id: ELM388
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+  titles:
+  - Archive documents
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Document archive
+  locators:
+  - Archive sales and purchase documents ; Restore ; Retention policies
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - D04.q
+  - TER086
+  batches:
+  - orders
+- id: ELM389
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  titles:
+  - Design details — Balancing supply and demand
+  editions:
+  - Documentation évolutive
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Supply
+  locators:
+  - Supply and demand ; Priorities on the supply side
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - TER083
+  batches:
+  - references
+- id: ELM390
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/purchasing-how-process-purchase-returns-cancellations
+  titles:
+  - Process purchase returns or cancellations
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Purchase return order
+  locators:
+  - Purchase return orders ; Create a replacement purchase order ; Credit memos
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV055
+  - BHV056
+  - D04.m
+  - TER073
+  batches:
+  - orders
+- id: ELM391
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+  titles:
+  - Create Commerce catalogs for B2B sites
+  editions:
+  - Mise à jour du 21 janvier 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Catalog publication
+  - Commerce catalog
+  locators:
+  - Catalog configuration ; customer hierarchies ; price groups
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D12
+  - D12.a
+  - TER049
+  batches:
+  - references
+- id: ELM392
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/customer-orders-overview
+  titles:
+  - Customer orders in point of sale (POS)
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Customer order
+  locators:
+  - Typical scenarios ; Order fulfillment ; Editing customer orders
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV067
+  - D04.i
+  - TER069
+  batches:
+  - orders
+- id: ELM393
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+  titles:
+  - Distributed order management (DOM)
+  editions:
+  - Documentation évolutive, mise à jour affichée le 3 juin 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Balance conflicting fulfillment needs
+  - Cost-based fulfillment optimization
+  - Fulfillment cost objectives
+  - Fulfillment optimization
+  locators:
+  - Introduction, objectifs et contraintes
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - D03
+  - D03.k
+  - TER068
+  - VER016
+  batches:
+  - promising
+- id: ELM394
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+  titles:
+  - DOM rules
+  editions:
+  - Documentation évolutive, mise à jour du 22 janvier 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - DOM rule
+  - Partial orders rule
+  locators:
+  - Common attributes ; Minimum inventory rule ; Partial orders rule
+  evidence_limits:
+  - Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni ses priorités à
+    FLOW.
+  targets:
+  - TER023
+  - TER028
+  batches:
+  - foundations
+- id: ELM395
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/order-fulfillment-overview
+  titles:
+  - Store order fulfillment
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order fulfillment
+  locators:
+  - Accepting orders ; Shipping orders ; Picking up orders
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV066
+  - BHV067
+  - TER085
+  batches:
+  - orders
+- id: ELM396
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory
+  titles:
+  - Commerce inventory management
+  editions:
+  - Mise à jour du 30 janvier 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Store inventory operations
+  locators:
+  - Purchase orders ; Transfer orders ; Stock counts ; Inventory lookup
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - BHV081
+  batches:
+  - references
+- id: ELM397
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+  titles:
+  - Work order architecture
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Perform the work order
+  - Product Catalog / Work Order
+  - Product catalog / Service
+  - Resource requirement / Scheduling
+  - Service / Work performed
+  - Work Order
+  - Work Order / Resource Requirement
+  locators:
+  - A work order is created ; scheduled ; performed ; reviewed and completed
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D06.b
+  - D06.e
+  - D07.a
+  - D14
+  - D14.a
+  - TER066
+  - TER075
+  - VER023
+  batches:
+  - references
+- id: ELM398
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/sla-work-orders
+  titles:
+  - Define service-level agreements (SLAs) for work orders
+  editions:
+  - Mise à jour du 30 mars 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Service-level agreement
+  locators:
+  - Introduction ; Create an SLA ; Schedule a work order to meet an SLA
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - TER076
+  batches:
+  - references
+- id: ELM399
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/cases
+  titles:
+  - Case management overview
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Case management
+  locators:
+  - 'Examples: City Power & Light ; Fabrikam employees'
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - TER064
+  batches:
+  - orders
+- id: ELM400
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+  titles:
+  - Global address book overview
+  editions:
+  - Mise à jour du 18 mars 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Party
+  - Party / Party role
+  - Party role
+  locators:
+  - Party roles ; Example
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D09
+  - D09.d
+  - TER046
+  - TER047
+  batches:
+  - references
+- id: ELM401
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+  titles:
+  - Archive sales orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Sales order archive
+  locators:
+  - Prerequisites ; Long term retention ; History
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - D04.q
+  batches:
+  - orders
+- id: ELM402
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization
+  titles:
+  - Fulfillment and Returns Optimization provider overview
+  editions:
+  - Documentation évolutive ; édition non précisée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Respect warehouse timings
+  locators:
+  - Sources ; Respect warehouse timings ; Restrict partial fulfillment ; Limit number of warehouses
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV003
+  batches:
+  - promising
+- id: ELM403
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  titles:
+  - Intelligent Fulfillment Optimization architecture
+  editions:
+  - Documentation évolutive, mise à jour affichée le 30 janvier 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Fulfillment plan
+  - Fulfillment sources
+  locators:
+  - Fulfillment sources ; Business constraints ; Fulfillment strategies ; Fulfillment optimization in order orchestration
+    flows
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV002
+  - D03.o
+  - TER078
+  batches:
+  - promising
+- id: ELM404
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/integrate-transfer-orders
+  titles:
+  - Integrate transfer orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Transfer order
+  locators:
+  - Transfer order information ; Inbound and outbound transfer orders
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV070
+  - BHV074
+  - D04.k
+  - TER012
+  - TER071
+  batches:
+  - orders
+- id: ELM405
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+  titles:
+  - Intelligent Order Management overview
+  editions:
+  - Mise à jour du 30 janvier 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Fulfillment network
+  - Intelligent Order Management
+  - Orchestration
+  - Order fulfillment orchestration
+  - Order orchestration
+  locators:
+  - Orchestration ; Providers ; Fulfillment optimization
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D06
+  - D06.f
+  - TER031
+  - TER034
+  - TER035
+  - TER054
+  batches:
+  - references
+- id: ELM406
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  titles:
+  - Set up consignment
+  editions:
+  - '2026-05-06'
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Consignment inventory
+  - Consignment replenishment order
+  locators:
+  - Consignment replenishment orders ; Ownership change journals
+  - Overview ; Inventory ownership change journal
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV061
+  - BHV062
+  - BHV063
+  - D01
+  - D01.g
+  - D01.h
+  - D04.r
+  - VER020
+  batches:
+  - inventory
+  - orders
+- id: ELM407
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals
+  titles:
+  - Inventory journals
+  editions:
+  - '2025-08-29'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory journals
+  locators:
+  - Types of inventory journals ; Transfer ; Counting
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV029
+  - D01.f
+  - TER007
+  - TER055
+  - TER056
+  batches:
+  - inventory
+- id: ELM408
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list
+  titles:
+  - Inventory on-hand list
+  editions:
+  - '2026-06-15'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - On-hand inventory
+  locators:
+  - Query your on-hand inventory ; tableau des quantités ; Examples
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D01
+  - D01.c
+  - D01.f
+  - TER005
+  - TER006
+  - TER040
+  - TER042
+  batches:
+  - inventory
+- id: ELM409
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-statuses
+  titles:
+  - Inventory statuses
+  editions:
+  - '2026-07-01'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory status
+  locators:
+  - Set up and use inventory statuses
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - TER041
+  batches:
+  - inventory
+- id: ELM410
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  titles:
+  - Inventory Visibility inventory allocation
+  editions:
+  - Documentation en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory allocation
+  locators:
+  - Business background and purpose ; virtual pool ; Terminology
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV017
+  - BHV018
+  - D02.b
+  - D05.d
+  - TER018
+  - TER019
+  - TER020
+  - TER021
+  - VER009
+  - VER010
+  - VER020
+  batches:
+  - inventory
+- id: ELM411
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  titles:
+  - Inventory Visibility reservations
+  editions:
+  - Documentation en ligne ; SCM 10.0.33+ pour les sales orders
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Soft reservation
+  locators:
+  - Sample use case for soft reservation ; offsets
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D02.c
+  - TER016
+  batches:
+  - inventory
+- id: ELM412
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+  titles:
+  - Reserve inventory quantities
+  editions:
+  - '2025-08-29'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory reservation policies
+  locators:
+  - Reasons for reserving ; reservation policies ; production parameters
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV034
+  - D05.h
+  - TER008
+  batches:
+  - inventory
+- id: ELM413
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  titles:
+  - Action messages
+  editions:
+  - Documentation en ligne consultée le 2026-09-19
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Action messages
+  locators:
+  - Action types ; Increase and decrease ; safety stock
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV006
+  - BHV016
+  - BHV085
+  batches:
+  - inventory
+- id: ELM414
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings
+  titles:
+  - Coverage settings
+  editions:
+  - '2026-03-25'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Requirement / Period / Min-Max
+  locators:
+  - Coverage codes
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV020
+  - BHV083
+  - D02.b
+  batches:
+  - inventory
+- id: ELM415
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  titles:
+  - Master plans
+  - Master plans overview
+  editions:
+  - Documentation en ligne consultée le 2026-09-19
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Freeze / firming time fence
+  - Master plan
+  - Time fence settings
+  locators:
+  - Freeze time fence ; Firming time fence
+  - Using master plans ; Freeze ; Action message ; positive and negative days
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV005
+  - BHV016
+  - BHV036
+  - BHV037
+  - BHV085
+  - D05.f
+  - TER003
+  - TER043
+  - VER001
+  batches:
+  - inventory
+  - orders
+- id: ELM416
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+  titles:
+  - Approve planned orders
+  - View, manage, and approve planned orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  - Documentation évolutive, mise à jour affichée le 2 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Approved for firming
+  - Approved planned order
+  locators:
+  - View and edit status ; Approve planned orders
+  - View and edit the status of planned orders ; Approve planned orders
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - VER006
+  - VER025
+  batches:
+  - orders
+  - promising
+- id: ELM417
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+  titles:
+  - Calculate delivery dates using CTP
+  editions:
+  - Documentation évolutive, mise à jour affichée le 27 juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - CTP material and capacity check
+  - Capable-to-promise
+  locators:
+  - How CTP compares to ATP ; exemple Item A composé de B et C ; View confirmed delivery dates
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV075
+  - D03.j
+  - TER045
+  batches:
+  - promising
+- id: ELM418
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  titles:
+  - Keep supply for confirmed demand
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  - 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Customer commitments
+  - Keep supply for confirmed demand
+  - Peg demand to supply
+  - Pegging for confirmed demand
+  - Pegging information
+  - Preservation of pegged supply
+  - Reallocate received inventory
+  locators:
+  - What data is preserved ; Confirmed demand ; Examples
+  - What data is preserved ; Control how on-hand inventory is pegged ; Example scenario 1
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  - Fonction conditionnée à la version et à la configuration documentées ; n’établit pas un gel universel de tous les champs.
+  targets:
+  - BHV037
+  - BHV046
+  - BHV047
+  - D02.e
+  - TER013
+  - TER017
+  - VER012
+  - VER018
+  batches:
+  - orders
+  - promising
+- id: ELM419
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  titles:
+  - Firm planned orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Planned order firming
+  - Planned purchase order
+  locators:
+  - Manual firming ; Automatic firming ; Grouping
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV036
+  - BHV087
+  - TER033
+  batches:
+  - orders
+- id: ELM420
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification
+  titles:
+  - Replenishment methods and quantity modification
+  editions:
+  - '2026-07-01'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Replenishment methods
+  locators:
+  - Coverage codes ; order quantity ; examples 1–3
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV083
+  - BHV084
+  - D05.e
+  - VER004
+  batches:
+  - inventory
+- id: ELM421
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal
+  titles:
+  - Use the safety stock journal to update minimum coverage for items
+  editions:
+  - '2025-08-22'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Safety stock calculation
+  locators:
+  - Calculate minimum coverage ; Calculate a proposal ; Update minimum
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV026
+  - BHV027
+  - D05.a
+  - VER003
+  batches:
+  - inventory
+- id: ELM422
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment
+  titles:
+  - Safety stock fulfillment for items
+  editions:
+  - '2026-03-26'
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Safety stock
+  - Safety stock level
+  - Safety stock requirement
+  locators:
+  - Introduction ; Example Safety stock ; Min/max coverage code
+  - Safety stock ; strict safety stock pegging ; minimum keys
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV019
+  - D02.b
+  - TER010
+  - VER001
+  batches:
+  - inventory
+  - orders
+- id: ELM423
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+  titles:
+  - Product information overview
+  editions:
+  - Mise à jour du 1er juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Item
+  - Product / Product variant
+  - Product information
+  - Product master
+  - Product master / Product variant
+  - Product variant
+  locators:
+  - Product definition ; Distribution, export, and import ; Product masters and product variants
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D08
+  - TER004
+  - TER052
+  - TER057
+  - TER058
+  - TER060
+  batches:
+  - references
+- id: ELM424
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs
+  titles:
+  - Procurement catalogs overview
+  editions:
+  - Mise à jour du 1er juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Catalog updates
+  - Procurement catalog
+  locators:
+  - Set up a catalog ; publication and updates
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D12
+  - D12.a
+  - TER049
+  batches:
+  - references
+- id: ELM425
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/product-receipt-against-purchase-orders
+  titles:
+  - Product receipt against purchase orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Cancel product receipt
+  - Record product receipt
+  locators:
+  - Preregistration ; Registration ; Product receipt ; Correction
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - VER007
+  - VER021
+  batches:
+  - orders
+- id: ELM426
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+  titles:
+  - Purchase agreements
+  editions:
+  - Mise à jour du 8 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Purchase agreement
+  locators:
+  - Commitment types ; Purchase agreement fulfillment
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D11
+  - D11.a
+  - TER048
+  batches:
+  - references
+- id: ELM427
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+  titles:
+  - Approve and confirm purchase orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Approval / confirmation
+  - Purchase order confirmation
+  - Request change
+  locators:
+  - Approval statuses ; Confirming ; Changes ; Finalized
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV038
+  - BHV043
+  - D04.o
+  - VER014
+  - VER017
+  batches:
+  - orders
+- id: ELM428
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-changes-after-confirmation
+  titles:
+  - Review and accept changes to confirmed purchase orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Confirmed purchase order changes
+  - Review purchase order changes
+  locators:
+  - Assess changes ; Review impacted demand ; Accept changes
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV038
+  - VER002
+  - VER017
+  batches:
+  - orders
+- id: ELM429
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+  titles:
+  - Create purchase orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Purchase order
+  locators:
+  - Create a purchase order ; Purchase order lines
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV058
+  - BHV060
+  - D04.j
+  - TER070
+  batches:
+  - orders
+- id: ELM430
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-overview
+  titles:
+  - Purchase order overview
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Purchase order
+  locators:
+  - Purchase order types ; Purchase order statuses
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - D04
+  - TER038
+  batches:
+  - orders
+- id: ELM431
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+  titles:
+  - Record the receipt of goods on the purchase order
+  editions:
+  - Documentation évolutive, mise à jour du 1er juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Product receipt and receipt journal
+  - Product receipt journal
+  - Record receipt of goods
+  locators:
+  - Record receipt of goods, étapes 4–7 ; Review the product receipt journal
+  evidence_limits:
+  - Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction n’en est déduite.
+  targets:
+  - TER025
+  - TER036
+  - TER037
+  batches:
+  - foundations
+- id: ELM432
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/vendor-collaboration-work-external-vendors
+  titles:
+  - Vendor collaboration with external vendors
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Vendor purchase order response
+  locators:
+  - Purchase order responses ; Accept with changes ; Confirmation
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV078
+  - D04.j
+  - VER014
+  batches:
+  - orders
+- id: ELM433
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives
+  titles:
+  - Delivery alternatives
+  editions:
+  - Documentation évolutive ; édition non précisée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Available today / Future availability
+  - Delivery alternatives
+  locators:
+  - Delivery date control methods ; Delivery alternatives ; Availability information
+  evidence_limits:
+  - Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  targets:
+  - BHV021
+  - BHV076
+  - TER009
+  batches:
+  - promising
+- id: ELM434
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+  titles:
+  - Order promising
+  editions:
+  - Documentation évolutive, mise à jour affichée le 21 avril 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Available-to-promise
+  - Available-to-promise quantity
+  - Order promising
+  - Order promising update
+  - Planned receipts in ATP
+  locators:
+  - Order promising ; ATP calculations ; Example ; CTP calculations
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV004
+  - BHV023
+  - D03.i
+  - D15
+  - TER014
+  - TER044
+  batches:
+  - promising
+- id: ELM435
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  titles:
+  - Delivery schedules
+  editions:
+  - Documentation évolutive ; édition non précisée
+  - Documentation évolutive consultée le 19 septembre 2026
+  - Mise à jour du 7 mai 2025
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Delivery schedule
+  - Delivery schedule / Delivery line
+  - Delivery schedules
+  locators:
+  - Create delivery schedules ; Manage delivery lines ; Example
+  - Create delivery schedules ; exemple 600 chairs
+  - Introduction ; Create delivery schedules ; Manage delivery lines
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV044
+  - D03.l
+  - D04.n
+  - TER081
+  batches:
+  - orders
+  - promising
+  - references
+- id: ELM436
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/direct-deliveries
+  titles:
+  - Direct deliveries
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Direct delivery
+  locators:
+  - Introduction ; Deliver a sales order directly ; Update delivery dates
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV059
+  - BHV068
+  - D04.i
+  batches:
+  - orders
+- id: ELM437
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+  titles:
+  - Intercompany orders and return orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Intercompany order
+  locators:
+  - Introduction ; two-legged and three-legged intercompany order chains
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV069
+  - D04.i
+  batches:
+  - orders
+- id: ELM438
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+  titles:
+  - Specify how to dispose of returned items
+  editions:
+  - Documentation en ligne consultée le 2026-09-19
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Disposition
+  - Return disposition
+  - Return to customer
+  - Scrap
+  locators:
+  - Disposition codes ; Disposition actions
+  - Disposition codes and actions
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV048
+  - BHV049
+  - BHV050
+  - BHV053
+  - BHV054
+  - BHV065
+  - D04.l
+  - D05.i
+  batches:
+  - inventory
+  - orders
+- id: ELM439
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders
+  titles:
+  - Confirm sales orders
+  editions:
+  - Documentation évolutive, mise à jour affichée le 1er juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Sales order confirmation
+  locators:
+  - Confirm a single sales order, étapes 5 à 15
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - TER015
+  batches:
+  - promising
+- id: ELM440
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+  titles:
+  - Manage order holds
+  editions:
+  - Documentation évolutive
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order hold
+  - Order hold / Release hold
+  locators:
+  - Apply and remove order holds
+  - Create a hold code ; Apply ; Remove
+  evidence_limits:
+  - Document primaire consulté par le lot Orders ; lever un empêchement ne suffit pas à prouver une autorisation de tout mouvement.
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV040
+  - TER051
+  batches:
+  - orders
+  - references
+- id: ELM441
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+  titles:
+  - Cycle counting
+  editions:
+  - '2025-11-20'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Cycle counting / Spot cycle counting
+  locators:
+  - Create cycle counting work ; Spot cycle counting ; Resolve differences
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV030
+  - BHV031
+  - D01.d
+  batches:
+  - inventory
+- id: ELM442
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+  titles:
+  - Release to warehouse
+  - Release to warehouse process
+  editions:
+  - Documentation évolutive
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Release to warehouse
+  locators:
+  - Introduction ; Manual and automatic release ; Partial release
+  - Release orders to warehouse
+  evidence_limits:
+  - Document primaire consulté par le lot Orders ; appui limité au lancement logistique, sans autorisation universelle de
+    mouvement.
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV039
+  - BHV086
+  - TER051
+  batches:
+  - orders
+  - references
+- id: ELM443
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity
+  titles:
+  - Schedule workload capacity
+  editions:
+  - Mise à jour du 7 mai 2025
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Workload capacity
+  locators:
+  - Warehouse workload capacity ; seasonal workforce example
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - D06.b
+  batches:
+  - references
+- id: ELM444
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/transfer-orders-warehouse
+  titles:
+  - Set up warehouses for transfer orders
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Planned transfer order
+  locators:
+  - Plan replenishment for warehouses ; Transport days
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV071
+  - D04.k
+  - TER071
+  batches:
+  - orders
+- id: ELM445
+  market_refs:
+  - MKT14
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+  titles:
+  - Exchange data between systems
+  editions:
+  - Mise à jour du 27 juillet 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inbound / Outbound shipment order
+  - Master and reference data
+  - Order and receipt feedback
+  - Product master data
+  - Progress data and business events
+  - Shipment order
+  - Shipment order / Receiving and shipping feedback
+  - Site / Warehouse
+  - Site / Warehouse / Location
+  locators:
+  - Master and reference data ; Shipment orders ; Progress data and business events
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - BHV079
+  - D07.b
+  - D07.c
+  - D08.d
+  - D13
+  - D13.a
+  - TER050
+  - TER053
+  - VER008
+  - VER022
+  - business-references
+  batches:
+  - references
+- id: ELM446
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/business-processes-in-sap-s-4hana-sourcing-and-procurement/processing-a-service-entry-sheet_e42ab0b6-291a-4dad-9f5c-7f508d21ae5c
+  titles:
+  - Processing a Service Entry Sheet
+  editions:
+  - Cours SAP Learning ; édition non indiquée dans le passage
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Service entry
+  - Service entry approval
+  - Service entry sheet
+  locators:
+  - Service Entry and Approval ; Create and Approve a Service Entry Sheet
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV060
+  - VER007
+  - VER025
+  batches:
+  - orders
+- id: ELM447
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/detailing-subcontracting-and-supplier-consignment/outlining-subcontracting_af403e3e-188d-4dbb-bde1-632253739fa6
+  titles:
+  - Outlining Subcontracting
+  editions:
+  - Cours SAP Learning ; édition non indiquée dans le passage
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Subcontracting
+  locators:
+  - Subcontracting process ; Components ; Ownership
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - TER032
+  batches:
+  - orders
+- id: ELM448
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58
+  titles:
+  - Explaining aATP Product Allocation (PAL)
+  editions:
+  - Cours en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Product Allocation (PAL)
+  locators:
+  - PAL Concept ; Product Allocation Examples ; time series
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV017
+  - BHV018
+  - D05.d
+  - TER003
+  - TER018
+  - TER019
+  - TER020
+  - VER009
+  - VER010
+  batches:
+  - inventory
+- id: ELM449
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-inventory-management_d2aad6e6-a57e-4f64-9ac0-3b27f613776a
+  titles:
+  - Explaining Inventory Management
+  editions:
+  - Cours en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory Management
+  locators:
+  - Scenario ; Stock Overview ; Special stock types
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D01
+  - TER005
+  - TER041
+  - TER055
+  batches:
+  - inventory
+- id: ELM450
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-replenishment_e87c10d4-3590-45a7-ad87-b04ed6e34bd7
+  titles:
+  - Explaining Replenishment
+  editions:
+  - Cours en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Replenishment
+  locators:
+  - Scenario ; Re-Order Point and Target Stock Settings
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D05.e
+  - TER074
+  batches:
+  - inventory
+- id: ELM451
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca
+  titles:
+  - Explaining Retail Allocation Management
+  editions:
+  - Cours en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Retail allocation
+  locators:
+  - Merchandise Distribution Concept — Scenario
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - D05.g
+  batches:
+  - inventory
+- id: ELM452
+  market_refs:
+  - MKT16
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  titles:
+  - Explaining Supply Assignment
+  editions:
+  - Cours SAP S/4HANA for Fashion and Vertical Business ; édition non précisée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Assign
+  - Manual release
+  - Release check
+  - Supply Assignment (ARun)
+  - Supply-demand assignment
+  locators:
+  - Supply Assignment Scenarios ; ARun Statuses ; Online Features ; Cross Settings
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - D02.e
+  - TER017
+  - VER005
+  - VER006
+  - VER012
+  batches:
+  - promising
+- id: ELM453
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-a-standard-sales-from-stock-process_f4aacaf6-1a5c-4f30-8d32-fd3e8e691252
+  titles:
+  - Executing a Standard Sales from Stock Process
+  editions:
+  - Cours SAP Learning ; édition non indiquée dans le passage
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Sales from stock
+  locators:
+  - Sales order ; Outbound delivery ; Goods issue ; Billing
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV066
+  - D04
+  - TER069
+  batches:
+  - orders
+- id: ELM454
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/executing-the-advanced-intercompany-sales-and-stock-transfer-process_c5f8e409-c8e3-4e0a-b736-6d1d93d0f2bc
+  titles:
+  - Executing the Advanced Intercompany Sales and Stock Transfer Process
+  editions:
+  - Cours SAP Learning ; édition non indiquée dans le passage
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Advanced intercompany sales
+  locators:
+  - Classic versus advanced intercompany sales ; Process
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV069
+  batches:
+  - orders
+- id: ELM455
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc
+  titles:
+  - Managing Customer Returns
+  editions:
+  - Cours SAP Learning ; édition non indiquée dans le passage
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Customer returns
+  locators:
+  - Customer Returns ; Refund ; In-house Repair ; Send back to customer
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - BHV051
+  - BHV052
+  - D04.l
+  - TER072
+  batches:
+  - orders
+- id: ELM456
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+  titles:
+  - Alternative-Based Confirmation
+  - Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+  editions:
+  - Cours SAP S/4HANA, édition non précisée dans le passage
+  - Cours en ligne, édition non précisée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Alternative-Based Confirmation
+  - aATP functions
+  locators:
+  - 'Advanced ATP Scenario: Alternative-Based Confirmation ; Release for Delivery'
+  - Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+  evidence_limits:
+  - Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une couverture installée.
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV076
+  - D03.j
+  - TER027
+  - TER028
+  - TER045
+  batches:
+  - foundations
+  - promising
+- id: ELM457
+  market_refs:
+  - MKT24
+  source_url: https://learning.sap.com/courses/mastering-sap-ibp-for-inventory-planning-and-optimization/global-multi-stage-inventory-optimization_c360cea7-b52e-45cb-9436-5ea0c79451a9
+  titles:
+  - Global (Multi-stage) Inventory Optimization
+  editions:
+  - Cours SAP IBP en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Multi-stage inventory optimization
+  locators:
+  - Global operator ; Multi-stage dilemma ; Interactions between stages
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  targets:
+  - BHV028
+  batches:
+  - inventory
+- id: ELM458
+  market_refs:
+  - MKT13
+  source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+  titles:
+  - Exploring Backorder Processing
+  editions:
+  - Cours SAP S/4HANA Cloud Public Edition ; édition non précisée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Backorder Processing
+  - Order confirmations
+  - Reconfirmation
+  - Redistribution of confirmations
+  - Reprioritization
+  - Reprioritize requirements
+  locators:
+  - Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
+  evidence_limits:
+  - Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  targets:
+  - BHV022
+  - BHV023
+  - BHV077
+  - D03.j
+  - D03.m
+  - D03.n
+  - TER015
+  - VER015
+  batches:
+  - promising
+- id: ELM459
+  market_refs:
+  - MKT57
+  source_url: https://martinfowler.com/articles/201701-event-driven.html
+  titles:
+  - What do you mean by Event-Driven?
+  editions:
+  - 7 février 2017
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Event Notification
+  locators:
+  - Event Notification
+  evidence_limits:
+  - Article de clarification par son auteur ; décrit plusieurs styles, sans faire de la notification un stockage du fait ni
+    garantir sa livraison.
+  targets:
+  - TER039
+  batches:
+  - foundations
+- id: ELM460
+  market_refs:
+  - MKT57
+  source_url: https://martinfowler.com/bliki/BoundedContext.html
+  titles:
+  - Bounded Context
+  editions:
+  - 15 janvier 2014
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Bounded Context
+  locators:
+  - Paragraphes sur le vocabulaire et l’exemple meter
+  evidence_limits:
+  - Retour d’auteur sur les modèles logiciels dans l’approche DDD ; document distinct d’Evans mais même école de pensée, pas
+    preuve de consensus entre cadres.
+  targets:
+  - TER030
+  batches:
+  - foundations
+- id: ELM461
+  market_refs:
+  - MKT57
+  source_url: https://martinfowler.com/eaaCatalog/domainModel.html
+  titles:
+  - Domain Model
+  editions:
+  - 5 mars 2003
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Domain Model object
+  locators:
+  - Définition et paragraphe explicatif de la fiche
+  evidence_limits:
+  - Fiche courte du patron par son auteur, pas consultation du chapitre complet ni définition normative de tout objet métier.
+  targets:
+  - TER002
+  batches:
+  - foundations
+- id: ELM462
+  market_refs:
+  - MKT60
+  source_url: https://nextail.co/customer/merkal-footwear-inventory-planning/
+  titles:
+  - Merkal Implements AI to Streamline Inventory Planning
+  - Merkal footwear inventory planning
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  - Étude de cas en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory rebalancing / Consolidation
+  - Store transfers
+  locators:
+  - End-of-season transfers ; consolidation and size availability
+  - Impact — store transfers ; size availability through consolidation
+  evidence_limits:
+  - Cas client publié par Nextail ; résultat rapporté, sans garantie de gain ni preuve Beaumanoir.
+  - Témoignage publié par le fournisseur ; mécanisme illustré, aucun résultat chiffré ni causalité indépendante retenus.
+  targets:
+  - BHV025
+  - BHV073
+  - D05.c
+  batches:
+  - inventory
+  - orders
+- id: ELM463
+  market_refs:
+  - MKT42
+  source_url: https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/
+  titles:
+  - EPCIS and CBV Implementation Guideline
+  editions:
+  - Release 2.0, mars 2023
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Visibility event
+  locators:
+  - 3.3 dimensions de visibilité ; 5.9 erreurs et corrections
+  evidence_limits:
+  - Guide de standard de visibilité ; ne calcule ni position de stock ni disponibilité FLOW et n’impose aucune architecture.
+  targets:
+  - D01.g
+  - TER007
+  batches:
+  - inventory
+- id: ELM464
+  market_refs:
+  - MKT19
+  source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
+  titles:
+  - TMF641 Service Ordering Management API REST Specification
+  editions:
+  - Version 3.0.0, Release 18.5.0, janvier 2019
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - RelatedParty role
+  - Requested / Expected / Completion date
+  - Requested service / Requested date
+  - Service Order
+  - Service Order Management
+  - Service order dependency
+  - Service order item / Action
+  locators:
+  - 'Pages 5, 8–15 : Service Order ; dates ; dépendances ; états'
+  evidence_limits:
+  - PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés par FLOW.
+  targets:
+  - D06.d
+  - D07.a
+  - D07.b
+  - TER047
+  - TER066
+  - TER076
+  - VER008
+  - VER024
+  batches:
+  - references
+- id: ELM465
+  market_refs:
+  - MKT56
+  source_url: https://www.ascm.org/globalassets/documents--files/corporate-transformation/scor-ds-digital-guide_final.pdf
+  titles:
+  - SCOR DS Quick Reference Guide
+  editions:
+  - Guide public SCOR DS ; édition non relevée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - SCOR DS processes
+  locators:
+  - SCOR Processes ; Level 0 and Level 1
+  evidence_limits:
+  - Extrait primaire indexé consulté ; aucune transposition de hiérarchie processus vers capacités.
+  targets:
+  - TER084
+  batches:
+  - references
+- id: ELM466
+  market_refs:
+  - MKT56
+  source_url: https://www.ascm.org/topics/logistics/
+  titles:
+  - What Is Logistics?
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order processing and fulfillment
+  locators:
+  - Order processing and fulfillment ; Outbound ; Reverse logistics
+  evidence_limits:
+  - Texte primaire indexé consulté après erreur à l’ouverture ; page logistique générale, pas définition universelle de toutes
+    les commandes FLOW.
+  targets:
+  - TER085
+  batches:
+  - orders
+- id: ELM467
+  market_refs:
+  - MKT17
+  source_url: https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+  titles:
+  - 'Domain-Driven Design Reference: Definitions and Pattern Summaries'
+  editions:
+  - Mars 2015
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Domain
+  - Entity / Value Object
+  locators:
+  - Definitions ; Entities p.11 ; Value Objects p.12 ; Domain Events p.13 ; Services p.14
+  evidence_limits:
+  - Résumé de patrons par leur auteur, orienté conception logicielle. Les concepts éclairent le sens métier sans imposer objets
+    de code, services ni bounded contexts au modèle FLOW.
+  targets:
+  - TER002
+  - TER030
+  batches:
+  - foundations
+- id: ELM468
+  market_refs:
+  - MKT42
+  source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+  titles:
+  - GS1 GLN Allocation Rules Standard
+  editions:
+  - Release 3.0.2, août 2022
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Location
+  - Location / Party
+  - Location identification
+  - Locations and parties
+  - Party
+  - Party / Location
+  locators:
+  - §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
+  evidence_limits:
+  - Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite pour FLOW.
+  targets:
+  - D09
+  - D13
+  - D13.a
+  - TER046
+  - TER053
+  - TER054
+  batches:
+  - references
+- id: ELM469
+  market_refs:
+  - MKT42
+  source_url: https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard
+  titles:
+  - GS1 Global Traceability Standard
+  editions:
+  - Release 2.0, 2017
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Critical Tracking Events
+  - Despatch advice / Receiving advice
+  - Instance-level identification
+  - Receiving / Packing / Shipping events
+  - Transporting / Shipping / Receiving events
+  locators:
+  - Identification levels ; Data recording and sharing ; R21
+  evidence_limits:
+  - Passages primaires indexés consultés ; ouverture directe non exploitable. Les exigences GS1 ne sont pas imposées au modèle.
+  targets:
+  - BHV079
+  - BHV080
+  - D07.c
+  - D07.d
+  - TER059
+  - TER063
+  - VER022
+  batches:
+  - references
+- id: ELM470
+  market_refs:
+  - MKT42
+  source_url: https://www.gs1.org/standards/gs1-logistic-label-guideline/1-3
+  titles:
+  - GS1 Logistic Label Guideline
+  editions:
+  - '1.3'
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - GTIN / SSCC
+  - Logistic unit
+  - Trade item
+  locators:
+  - §1.2 ; §3 ; §4.1 ; §10.5
+  evidence_limits:
+  - Passages primaires indexés consultés ; ouverture directe bloquée. Les règles d’étiquetage ne définissent pas à elles seules
+    les objets FLOW.
+  targets:
+  - TER060
+  - TER061
+  - TER062
+  batches:
+  - references
+- id: ELM471
+  market_refs:
+  - MKT42
+  source_url: https://www.gs1.org/standards/gs1-system-architecture-document/current-standard
+  titles:
+  - GS1 System Architecture Document
+  editions:
+  - Page courante ; édition non vérifiée dans le passage disponible
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - GTIN
+  - Logistic unit / Asset
+  - Master data
+  - Serial number / GTIN + serial
+  - Trade item
+  - Trade item / Trade item instance
+  - Trade item class
+  - Trade item instance
+  locators:
+  - Table 4-1 ; Identification of objects ; Communication of business data
+  evidence_limits:
+  - Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de reprise exhaustive du standard.
+  targets:
+  - TER004
+  - TER057
+  - TER058
+  - TER059
+  - TER061
+  - TER062
+  - TER063
+  - business-references
+  batches:
+  - references
+- id: ELM472
+  market_refs:
+  - MKT23
+  source_url: https://www.ibm.com/think/topics/order-management
+  titles:
+  - What is order management?
+  editions:
+  - Page web évolutive
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Order Management System
+  - Order management
+  locators:
+  - What is an order management system? ; Distributed order management
+  evidence_limits:
+  - Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  targets:
+  - TER034
+  - VER024
+  batches:
+  - references
+- id: ELM473
+  market_refs:
+  - MKT66
+  source_url: https://www.logility.com/webcast/retail-optimization-gives-groupe-dynamite-an-edge/
+  titles:
+  - Retail Optimization Gives Groupe Dynamite an Edge
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Initial distribution
+  locators:
+  - Présentation écrite du webcast ; initial distribution and replenishment
+  evidence_limits:
+  - Présentation écrite primaire consultée ; vidéo non visionnée. Témoignage fournisseur, sans gains chiffrés ni preuve locale.
+  targets:
+  - TER079
+  batches:
+  - orders
+- id: ELM474
+  market_refs:
+  - MKT14
+  source_url: https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/
+  titles:
+  - Transportation scenario – Manual rating
+  editions:
+  - 16 février 2016
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Carrier and carrier service selection
+  locators:
+  - Scenario ; Walkthrough étapes 1–3
+  evidence_limits:
+  - Exemple éditeur historique, limité au transport et au tarif ; pas une recommandation de produit actuel.
+  targets:
+  - D06.e
+  batches:
+  - references
+- id: ELM475
+  market_refs:
+  - MKT10
+  source_url: https://www.omg.org/cmmn/
+  titles:
+  - Case Management Model and Notation
+  editions:
+  - Page de présentation CMMN consultée le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Case
+  locators:
+  - What is case management ; Case file ; Human judgment
+  evidence_limits:
+  - Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+  targets:
+  - TER064
+  batches:
+  - orders
+- id: ELM476
+  market_refs:
+  - MKT10
+  source_url: https://www.omg.org/spec/BPMN/2.0.2/PDF
+  titles:
+  - Business Process Model and Notation, Version 2.0.2
+  editions:
+  - BPMN 2.0.2, décembre 2013
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Process
+  - Task
+  locators:
+  - §10.1 Process, p.143 ; §10.3.3 Tasks, p.154 ; Manual Task p.161–163
+  evidence_limits:
+  - Standard de notation et de déroulement ; ni carte de capacités ni règle d’équivalence entre une tâche et une opération
+    FLOW.
+  targets:
+  - TER024
+  - TER025
+  batches:
+  - foundations
+- id: ELM477
+  market_refs:
+  - MKT52
+  source_url: https://www.omg.org/spec/SBVR/1.5/PDF
+  titles:
+  - Semantics of Business Vocabulary and Business Rules, Version 1.5
+  editions:
+  - SBVR 1.5, mai 2019
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Business rule
+  locators:
+  - §16.1.2–16.1.3 p.98–100 ; §18.1.2 exemple EU-Rent p.118
+  evidence_limits:
+  - La juridiction métier et les catégories de SBVR sont plus précises que le terme générique FLOW ; pas d’importation de
+    son métamodèle.
+  targets:
+  - TER023
+  batches:
+  - foundations
+- id: ELM478
+  market_refs:
+  - MKT38
+  source_url: https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/
+  titles:
+  - Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+  editions:
+  - 22 août 2023
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Transportation visibility / ETA
+  locators:
+  - The Complexities of Outbound Finished Vehicle Logistics
+  evidence_limits:
+  - Présentation commerciale primaire ; bénéfices annoncés non évalués, pas de précision ou couverture uniforme déduite.
+  targets:
+  - BHV080
+  batches:
+  - references
+- id: ELM479
+  market_refs:
+  - MKT29
+  source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+  titles:
+  - 'Inventory optimization: Keys to a successful strategy'
+  editions:
+  - Article daté du 12 avril 2024, état consulté le 19 septembre 2026
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Inventory optimization
+  locators:
+  - Inventory management vs optimization ; Multi-echelon inventory optimization
+  evidence_limits:
+  - Présentation pédagogique et commerciale ; Tori est explicitement fictive et les résultats ne sont pas garantis.
+  targets:
+  - D05
+  batches:
+  - inventory
+- id: ELM480
+  market_refs:
+  - MKT29
+  source_url: https://www.relexsolutions.com/resources/inventory-planning-software/
+  titles:
+  - 'The best inventory planning software: AI-powered, planner-driven'
+  editions:
+  - Article en ligne sans édition affichée
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Distribution center inventory planning
+  locators:
+  - Distribution center forecasts ; safety stocks ; Diagnostics
+  evidence_limits:
+  - Présentation de fonctionnalités RELEX ; pas de modèle de capacités ni méthode intégralement exposée.
+  targets:
+  - BHV027
+  batches:
+  - inventory
+- id: ELM481
+  market_refs:
+  - MKT29
+  source_url: https://www.relexsolutions.com/solutions/automatic-replenishment-system/
+  titles:
+  - Automatic Replenishment System
+  - Replenishment and allocation
+  editions:
+  - Documentation évolutive consultée le 19 septembre 2026
+  - Page solution sans édition affichée
+  - Page web évolutive
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Automatic replenishment
+  - In-season replenishment
+  - Initial allocation
+  locators:
+  - Manage seasons ; Sync with store space ; DC replenishment
+  - Manage the full cycle for seasonal items ; Manage seasons effectively
+  - Manage the full cycle for your seasonal items ; Manage seasons effectively
+  evidence_limits:
+  - Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+  - Présentation commerciale consultée ; ni résultats annoncés ni mécanisme identique aux seuils FLOW établis.
+  - Présentation commerciale primaire ; aucune performance chiffrée ni installation locale déduite.
+  targets:
+  - BHV026
+  - TER079
+  - TER080
+  batches:
+  - inventory
+  - orders
+  - references
+- id: ELM482
+  market_refs:
+  - MKT19
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+  titles:
+  - TMF633 Service Catalog API REST Specification R18.5.1
+  editions:
+  - Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019
+  consulted_on: '2026-09-19'
+  native_concepts:
+  - Service Catalog
+  - Service catalog
+  locators:
+  - Description de la spécification
+  evidence_limits:
+  - Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition courante ni norme
+    Supply.
+  targets:
+  - D14
+  - D14.a
+  batches:
+  - references

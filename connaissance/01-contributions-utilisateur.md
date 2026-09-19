@@ -11865,3 +11865,928 @@ Lance une release
 **contexte et portée**
 
 Autorise la préparation, le contrôle et la publication locale du backlog courant dans Atlas : contenu Supply clarifié, compléments de références marché U470/U471 et retrait Business Services U472. Les ajustements de présentation, bandeau fixe et barre haute compacte, sont déjà compilés ; le catalogue Informations métier reste masqué selon U470. Ne pas développer le commerce ni le volet data/information. Cette demande de release ne valide pas globalement les rédactions ni les comparaisons ; conserver les accords à leur portée démontrée et les propositions avec leur qualification. Aucun commit, push Git ou déploiement distant demandé.
+
+## U474
+
+**id**
+
+U474
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Repenser Marché & choix en Sources d’inspiration pour les lecteurs métier
+
+**texte**
+
+Revoir "marché & choix".
+
+J'aimerais que ce soit renommé en "Sources d'inspiration".
+
+En termes de contenu, cles blocs sont très techniques. On ne va pas droit au but.
+
+Quand on en parlait, certains éditeurs donnait des exemples. C'est une documentation pour les métiers, les domain expert, les PO, pas des ingénieurs. Ca fait trop fiche technique.
+
+Les questions auxquelles cette page doit répondre est :
+
+- y a t il des concepts similaires traités par la science, les consortiums ou le marché logiciel
+- Si oui, explication des différences & similitudes sur :
+  - Naming
+  - Périmètre
+  - Approche
+- Diff et similitude des sources d'inspiration entre elles et des sources d'inspiration avec notre modèle
+- En entete : un phrase ou deux pour affirmer notre choix
+
+Pour le formalisme, est-ce qu'un tableau suffit ? Ou faut il produire un paragraphe ?
+
+Je veux ton avis et des alternives de choix en prenant comme exemple l'univers Supply Chain Orchestration
+
+**contexte et portée**
+
+Demande un avis argumenté et plusieurs alternatives éditoriales illustrées sur l’univers Supply Chain Orchestration, avec le titre souhaité « Sources d’inspiration ». Le contenu doit rendre lisibles le choix FLOW, les concepts proches dans les références scientifiques, professionnelles ou logicielles, les similitudes et différences de nom, de périmètre et d’approche, ainsi que les comparaisons entre sources. Rechercher les exemples effectivement documentés et distinguer leur reformulation des illustrations FLOW. La proposition de format et les nouvelles rédactions restent à discuter ; cette demande ne choisit pas encore une alternative de présentation et ne valide pas de nouvelles correspondances ni un changement de périmètre du modèle.
+
+## U475
+
+**id**
+
+U475
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Retenir le format C des Sources d’inspiration et son exemple Supply
+
+**question présentée**
+
+Recommandation du format C : choix FLOW en deux phrases, tableau comparatif court des noms, périmètres et approches, lecture transversale des sources, puis exemple concret attribué. Exemple rédigé pour Supply Chain Orchestration : comparaison de Zacharia et al., SCOR, CSCMP, Microsoft et Oracle ; cas Oracle des 75 pièces livrables sur 100 attendues et lecture des responsabilités FLOW. Le renommage est déjà appliqué, la refonte du contenu est proposée à choisir.
+
+**texte**
+
+C'est parfait !
+
+**contexte et portée**
+
+Accord sur le format C recommandé et le contenu présenté pour Supply Chain Orchestration en réponse à U474. Appliquer ce format à la présentation et cette rédaction à la fiche de l’univers dans le backlog, avec attribution des sources et distinction des rapprochements. L’accord ne s’étend pas aux textes techniques détaillés non présentés, aux autres fiches, à une conformité SCOR, à une réalisation installée ou à un changement des responsabilités. Les publications historiques restent figées ; une nouvelle publication, un commit et un push restent des opérations distinctes.
+
+## U476
+
+**id**
+
+U476
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier Sources d’inspiration pour consulter le résultat dans Atlas
+
+**texte**
+
+Lance une release que je voie dans le site
+
+**contexte et portée**
+
+Autorise la préparation, les contrôles et la publication locale du backlog courant dans FLOW Atlas, avec la nouvelle rubrique Sources d’inspiration de Supply Chain Orchestration retenue en U475. Vérifier la version et le contenu effectivement servis par Atlas. Préserver les publications historiques et la portée des accords ; la publication n’étend pas leur validation. Aucun commit, push Git ni déploiement distant demandé.
+
+## U477
+
+**id**
+
+U477
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Reprendre toutes les Sources d’inspiration sur le format Supply validé
+
+**texte**
+
+Le résultat est parfait !
+
+Il faut revoir toutes les sources d'inspiration de tous les objets. Ca risque d'être long mais le jeu en vaut la chandelle.
+
+**contexte et portée**
+
+Confirme le résultat publié U476 et demande la reprise complète des rubriques Sources d’inspiration des objets du modèle consultables dans Atlas, y compris les termes du glossaire métier. Appliquer le format C et l’exigence de lecture métier validés sur Supply Chain Orchestration : choix explicite, comparaisons de noms/périmètres/approches, lecture entre sources et avec FLOW, exemple concret attribué, détails documentaires accessibles. Revoir la pertinence et la fidélité des références à la maille de chaque fiche. La portée ne se réduit pas à une conversion automatique de mise en forme. Conserver les responsabilités et accords antérieurs ; les nouvelles rédactions et rapprochements restent proposés tant qu’ils ne sont pas discutés. Le catalogue Informations métier demeure interne et masqué selon U470, sans extension, et les publications historiques restent figées. Aucun lancement d’audit des comportements, modification du commerce, commit, push ou nouvelle release implicites.
+
+**précision de périmètre**
+
+Question présentée : « L’inventaire trouve 120 fiches avec des références et 127 sans référence (modèle et glossaire métier). Veux-tu aussi documenter celles qui n’en ont pas encore ? Je poursuis dès maintenant la reprise des références existantes. »
+
+Réponse : « Oui, couvrir aussi les fiches sans référence »
+
+La reprise couvre donc les 137 fiches non illustratives du modèle et les 110 termes du glossaire métier, y compris les 127 fiches initialement sans comparaison. Supply Chain Orchestration conserve la rédaction déjà retenue. Les liens ne constituent pas une nouvelle population de fiches et leurs qualifications sont préservées.
+
+## U478
+
+**id**
+
+U478
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Revoir Business References par sa fonction et explorer Authoritative Data Domain
+
+**texte**
+
+Concernant le domaine Business References, je souhaite revoir le nom.
+
+Business est de trop, on est dans une carto business.
+
+Ce domaine possède les données à peu près stable sur lesquelles va s'appuyer le domaine.
+
+Ce ne sont pas que des données de nomenclature, ni des données de configuration (par exemple les seuils de réassort), ni même de la master data (données métier stable qui sert de référence). C'est un peu de tout ça. Je ne veux pas désigner ce domaine comme dans les ERP en découpant les données par nature mais plutot définir ce domaine par sa fonction, son utilité dans l'univers.
+
+J'aime beaucoup l'approche :
+
+**EDM Council / Data Governance**
+→ Authoritative Data Source, Authoritative Data Domain
+
+Data serait un nom trop simpliste car les domaines de l'univers gèrent des données transactionnelles.
+Mais Authoritative Data Domain est pas mal du tout.
+
+Pour les inspirations, regarde le marché mais aussi les authorités de gouvernance data.
+
+**contexte et portée**
+
+Demande de réexamen du nom et de sa justification fonctionnelle, avec préférence exprimée pour Authoritative Data Domain et recherche auprès des autorités de gouvernance data autant que des éditeurs. Vérifier l'attribution et le sens des termes cités ; distinguer source faisant autorité, domaine de responsabilité et nature des données. Cette préférence ne constitue pas encore un renommage adopté ni une décision de transformer le groupe de présentation courant `business-references` en domaine unique. Les conséquences sur les références externes, les projections Supply et les paramètres métier doivent être explicitées avant toute évolution de responsabilités. Consigner les options et rapprochements comme propositions ; préserver les accords et publications historiques.
+
+## U479
+
+**id**
+
+U479
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Préciser l’autorité locale des références dans Supply Chain Orchestration
+
+**texte**
+
+Ce sont les source de vérité dans une scope entreprise qui sont en dehors de la Supply Chain Orchestration. Mais pour cet univers, sa source de vérité locale est gérée / portée par le domaine des données de référence.
+
+**contexte et portée**
+
+Précise U478 : les sources de vérité à l’échelle de l’entreprise sont externes à Supply Chain Orchestration ; le périmètre des données de référence gère et porte la source de vérité locale de cet univers. Ne pas opposer l’origine externe des données à leur autorité locale ni réduire ce périmètre à une simple copie passive. Cette clarification ne transfère pas la maîtrise d’entreprise dans FLOW et ne définit pas encore les règles détaillées de priorité, de divergence ou de correction entre autorités. Le nom final et la forme de regroupement des domaines restent à arbitrer dans la proposition U478.
+
+## U480
+
+**id**
+
+U480
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Questionner le périmètre d’une source faisant autorité
+
+**texte**
+
+Peut on dire que la source d'autorité est une source de vérité maximum locale ?
+
+**contexte et portée**
+
+Question de clarification, pas définition déjà adoptée. Réponse proposée : une source faisant autorité est reconnue comme faisant foi pour des données, des usages et un périmètre définis ; ce périmètre peut être local, d’entreprise ou partagé. Pour FLOW, U479 fixe l’autorité locale sur les références de Supply Chain Orchestration. Le terme ne borne pas par lui-même l’autorité au niveau local et ne garantit pas l’infaillibilité des données. Appui EDM Council/CDMC ELM485 ; ni remplacement automatique des autorités amont ni nouvelle responsabilité transactionnelle.
+
+## U481
+
+**id**
+
+U481
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Réexaminer les noms des niveaux univers, domaine, capacité et comportement
+
+**texte**
+
+D'ailleurs, je me demande si le naming univers/domaine/capacité/comportement est si bon que ça.
+Je me demande, d'après notre découpage de la supply chain orchestration si on n'a pas plutot : domaine/\<zone/space/area/truc qui regroupe des machins\>/capacité/comportement.
+
+Regarde les découpages du marché. Et donne moi des idées.
+
+**contexte et portée**
+
+Demande de recherche et d’alternatives de vocabulaire pour les niveaux du modèle, à partir du découpage Supply Chain Orchestration existant. Comparer les référentiels d’architecture métier, Supply Chain et domaines métier ; distinguer regroupement, domaine de responsabilité, aptitude et manière d’agir. Aucun renommage ni changement de hiérarchie adopté par cette question. Préserver le catalogue, ses identifiants, accords et publications ; consigner les propositions à part. L’examen de la terminologie ne rouvre pas l’audit des comportements clos U431.
+
+## U482
+
+**id**
+
+U482
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Authoritative Data et les niveaux Domain, Area, Capability, Behavior
+
+**texte**
+
+Ok pour "Authoritative Data"
+Ok pour Domain Area et remonter Domaine d'un niveau
+
+**contexte et portée**
+
+Adopte le nom Authoritative Data en remplacement de Business References et l’option Domain → Area → Capability → Behavior présentée en U481. Supply Chain Orchestration devient le Domain ; les six domaines métier actuels deviennent des Areas. Les capacités et comportements conservent leurs niveaux, identifiants et responsabilités. L’accord porte sur les noms et la montée du niveau Domain ; il ne transforme pas automatiquement le groupe de présentation des référentiels en domaine unique et ne fusionne pas les six référentiels. L’autorité locale précisée U479 demeure. Actualiser le backlog, le vocabulaire méthodologique, les guides courants et la prise en charge Atlas, en conservant la lecture des publications historiques. Les nouvelles définitions explicatives et comparaisons restent proposées hors du vocabulaire adopté. Aucune nouvelle release, commit ou push demandés.
+
+## U483
+
+**id**
+
+U483
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier les Sources d’inspiration complètes et les niveaux Domain / Area
+
+**texte**
+
+Lance une release
+
+**contexte et portée**
+
+Autorise la préparation, les contrôles et la publication locale du backlog courant dans FLOW Atlas, après U477–U482 : reprise complète des Sources d’inspiration, autorité locale des références, Authoritative Data et hiérarchie Domain → Area → Capability → Behavior. Actualiser et associer le guide méthodologique compatible avec les nouveaux noms. La publication ne valide pas les rapprochements ni les rédactions proposés ; préserver les portées des accords et les publications antérieures. Vérifier la version et le contenu effectivement servis par Atlas. Aucun commit ni push Git demandé.
+
+
+## U484
+
+**id**
+
+U484
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Compléter la fiche métier Authoritative Data omise dans la release
+
+**texte**
+
+Tu as oublié de remplir la fiche pour Authoritative Data
+
+**contexte et portée**
+
+Signale une omission dans la publication U483 : la rubrique Sources d’inspiration est renseignée mais la fiche métier ne contient ni définition, ni finalité, ni périmètre. Compléter ces rubriques et un exemple métier selon la responsabilité locale U479 et le nom adopté U482, avec les références de gouvernance déjà documentées. Conserver le groupe de présentation, les six référentiels distincts, leurs responsabilités et les sources maîtresses d’entreprise externes. La correction s’inscrit dans l’achèvement de la publication locale demandée U483 ; produire une nouvelle version sans modifier v015. Les formulations ajoutées restent proposées ; l’accord sur le nom n’est pas étendu. Aucun commit ni push demandé.
+
+
+## U485
+
+**id**
+
+U485
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Questionner Order Management comme dossiers métier et lecture de l’offre du domaine
+
+**texte**
+
+Area Order Management.
+
+J'ai l'impression que dans le marché, cette zone, qui consiste à représenter les objets métier en support des processus du coeur du domaine (les Cases en somme), n'est jamais vraiment définie. Pourtant, pour moi, ça représente un peut la liste des processus, l'offre de service du domaine. Je pensais que c'était bien de l'isoler. Qu'en penses-tu ?
+
+**contexte et portée**
+
+Demande un avis argumenté sur l’intérêt d’isoler Order Management : objets ou dossiers métier porteurs des demandes et supports des processus, donnant à lire les familles de prises en charge du domaine. Comparer l’intuition aux références réellement consultées et distinguer les notions de dossier, processus, capacité et offre de service. La discussion ne décide pas un renommage, une nouvelle couche, un workflow universel ni une extension des responsabilités. Conserver le modèle courant et tracer les propositions séparément ; aucune release, aucun commit ou push demandé.
+
+
+## U486
+
+**id**
+
+U486
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Les Orders activent le domaine et rendent lisible son offre de services
+
+**texte**
+
+Ce que je veux dire c'est que les Orders (les demandes, les commandes, les cases, tout ça c'est le même esprit), ça sert à activer le domaine. C'est pratiquement son offre de services.
+
+**contexte et portée**
+
+Précise U485 : le point central est l’activation du domaine par les demandes, commandes ou dossiers qu’il prend en charge. Les familles d’Orders rendent lisible ce que l’on peut demander au domaine ; chaque demande concrète sollicite une prise en charge selon son cycle de vie. L’analogie avec une offre de services porte sur cette fonction métier, sans assimiler chaque type de demande à un unique processus ni au catalogue des prestations d’exécutants. Mémoriser cette intention ; les formulations et conséquences de découpage restent à présenter, sans renommage ou modification du modèle implicites.
+
+
+## U487
+
+**id**
+
+U487
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Remettre en question Management dans le nom Order Management
+
+**texte**
+
+En fait, pour tout te dire, c'est le terme management qui me gène. Tout est en interaction avec tout et tout a des impacts sur le "management" des demandes. Je trouve ce mot un peu flou et on peut être surpris en découvrant l'area. Ce mot ne fixe pas assez le périmètre et l'intention
+
+**contexte et portée**
+
+Précise U485/U486 : le défaut porte sur le mot Management, jugé trop large pour faire comprendre le rôle de l’Area. Chercher un nom anglais exprimant sa responsabilité propre autour des demandes qui activent le domaine et rendent lisible son offre, en conservant les frontières avec promesse, optimisation et exécution. Comparer les termes établis et les formulations locales, sans déduire un renommage adopté ni modifier les capacités ou leurs rattachements. Aucune publication demandée.
+
+
+## U488
+
+**id**
+
+U488
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Service Catalog décrit les Backing Services appelés par l’orchestration
+
+**texte**
+
+Oui, Service Catalog, ce sont les Backing Services appelés par l'orchestration
+
+**contexte et portée**
+
+Confirme le rôle de Service Catalog comme catalogue des Backing Services mobilisés par l’orchestration pour réaliser les demandes. Cette offre de prestations reste distincte de l’offre de prises en charge du Domain exprimée par les familles d’Orders (U486). Confirmation sémantique du rôle existant ; aucun renommage de Service Catalog ni déplacement de capacité, aucune restriction aux seuls services logiciels. La recherche de nom de D04 sous U487 reste ouverte.
+
+
+## U489
+
+**id**
+
+U489
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Préférer Service Order inspiré de TM Forum, sans Management
+
+**texte**
+
+J'aime bien l'approche TM : "Service Order". Mais management après c'est moche
+
+**contexte et portée**
+
+Exprime une préférence pour l’approche Service Order de TM Forum et confirme le rejet du suffixe Management pour nommer l’Area actuelle D04. Examiner Service Orders comme nom collectif des demandes qui activent le Domain, selon U486, en tenant compte de l’usage actuel de Service Order Management D07.b et de TER066 pour les demandes aux exécutants. U488 distingue l’offre du Domain des Backing Services de Service Catalog. Ne pas déduire de cette préférence l’adoption d’un renommage complet, le déplacement de D07.b, une fusion des demandes ou un nouveau catalogue. Aucune release demandée.
+
+
+## U490
+
+**id**
+
+U490
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Étendre la réflexion aux sollicitations internes d’optimisation orchestrée
+
+**texte**
+
+On pourrait aller plus loin : les orders actuels sont les organes de sollicitation externe du domaine. Mais il peut exister des demandes internes (backoffice) qui mettent en oeuvre des operations orchestrées d'optimisation. Par exemple la Supply Assignment qui porte un processus d'analyse, simulation, validation, activation.
+
+**contexte et portée**
+
+Propose de distinguer les sollicitations externes matérialisées par les Orders actuels et des demandes internes, notamment de backoffice, mettant en œuvre des opérations orchestrées d’optimisation. Supply Assignment sert d’exemple pour un parcours analyse, simulation, validation et activation. Comparer ce parcours au modèle courant et au marché, en distinguant demande, capacité, décision, scénario, validation et application. La proposition ne crée pas automatiquement un Order interne, un workflow universel, une nouvelle couche ni un changement de parent ; les libellés Service Orders/Backing Service Orders restent des pistes. Conserver les réserves sur le sens des flux externes et internes selon le contexte métier ; aucune release demandée.
+
+
+## U491
+
+**id**
+
+U491
+
+**date**
+
+2026-09-19
+
+**titre**
+
+L’optimisation du carnet réagit à sa situation ou à une promesse devenue intenable
+
+**texte**
+
+Optimiser le carnet de commande, n'est pas une sollicitation du commerce. C'est une forme de réaction à un état particulier du carnet ou à un événement de promesse non tenable.
+
+**contexte et portée**
+
+Corrige l’interprétation de U490 : l’exemple d’optimisation du carnet ne part pas d’une demande du commerce. Il peut naître d’un état du domaine ou d’un événement affectant la tenue d’une promesse. Distinguer sollicitation explicite et réaction à une situation, sans fabriquer une demande humaine ou un Order interne obligatoire comme origine de toute opération. Un éventuel dossier de traitement porte la réaction ; il n’est pas nécessairement son déclencheur. Cette clarification ne définit ni politique automatique, ni moteur, ni nouveau type canonique ou capacité. Aucun renommage ni publication demandé.
+
+
+## U492
+
+**id**
+
+U492
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Reconnaître les origines interne et externe d’un Transfer Order
+
+**texte**
+
+Je suis d'accord qu'un transfer peut être initié en interne ou en externe
+
+**contexte et portée**
+
+Confirme que l’origine interne ou externe ne définit pas à elle seule la nature Transfer Order. Préserver les intentions métier distinctes et la clarification U491 sur les opérations réactives. Aucun rattachement ou nom modifié.
+
+
+## U493
+
+**id**
+
+U493
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Vérifier les exemples marché de réactions internes et de déclenchements multiples
+
+**texte**
+
+Est-ce que le marché prévoit ces cas de figure ?
+
+**contexte et portée**
+
+Demande des preuves marché des cas discutés U490–U492 : initiatives internes ou externes, réactions à un état du carnet ou à un événement rendant une promesse intenable, analyse/simulation et application des changements. Distinguer déclenchement manuel, planifié ou événementiel, alertes, décisions et automatisation réellement documentée. Aucune évolution du modèle ou publication demandée.
+
+
+## U494
+
+**id**
+
+U494
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Salesforce illustre des demandes distinctes de frontoffice et de backoffice
+
+**texte**
+
+Factuellement, avec Salesforce, on a des demandes différentes selon si elles sont backoffice ou frontoffice par exemple
+
+**contexte et portée**
+
+Apport utilisateur à la discussion U490–U493 : des demandes différentes peuvent porter le travail de frontoffice et de backoffice. Ne pas réduire une demande à une sollicitation commerciale ou externe. Le produit Salesforce, sa configuration et le déploiement concernés ne sont pas précisés ; rapprocher cette observation de documents primaires sans inventer de réalisation installée. Aucune taxonomie, scission organisationnelle de capacités ou modification canonique adoptée par cette seule remarque.
+
+
+## U495
+
+**id**
+
+U495
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Une détection de fraude peut engendrer une demande backoffice de vérification d’identité
+
+**texte**
+
+Une demande de vérification d'identité suite à une détection de fraude est purement une demande backoffice
+
+**contexte et portée**
+
+Exemple utilisateur précisant U494 : une réaction à une détection peut donner naissance à une demande interne dotée de son objectif et de son suivi, sans demande commerciale préalable. Corrige l’opposition trop forte entre demande et réaction dans l’interprétation U491 : la détection est le déclencheur, la vérification d’identité le travail demandé. Cet exemple est attribué à Laurent ; il n’est pas présenté comme une fonctionnalité Salesforce précise vérifiée, ni comme un déploiement Beaumanoir. L’analogie Supply et le choix d’un nom ou d’un rattachement restent à proposer.
+
+
+## U496
+
+**id**
+
+U496
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Service Requests et les demandes internes issues de réactions du Domain
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement précédente : Service Requests remplace Order Management pour l’Area D04, avec l’intention « Porter les demandes de travail que le Domain reçoit ou fait naître, préciser le résultat attendu et suivre leur prise en charge. » Le périmètre comprend les demandes internes nées d’une réaction, sans sollicitation commerciale préalable ; les familles se distinguent par leur finalité, puis par leur origine et leur déclencheur. L’accord ne crée pas de liste de nouvelles capacités, n’en déplace aucune, ne renomme pas les Orders spécifiques ou les demandes de prestations aux Backing Services, et ne valide pas par extension les rédactions complémentaires ou toutes les correspondances marché. Aucune release demandée.
+
+
+## U497
+
+**id**
+
+U497
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Inclure aussi les Backing Services dans l’application de l’accord
+
+**texte**
+
+Il n'y avait pas que ça comme modif. Il y avait aussi les backing services
+
+**contexte et portée**
+
+Corrige la portée trop étroite annoncée après U496 : reprendre aussi le volet U488/U489 sur les Backing Services décrits par Service Catalog et les Backing Service Orders adressés aux exécutants. Actualiser les fiches et le glossaire correspondants pour distinguer ces prestations des demandes métier Service Requests. La restriction de U496 aux seules modifications de D04 ne s’applique donc plus à ce volet. Les identifiants, rattachements, responsabilités et noms natifs des sources restent préservés ; aucune nouvelle Area, release ou capacité dérivée automatiquement.
+
+
+## U498
+
+**id**
+
+U498
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Simplifier la lecture du Périmètre et expliciter le rôle des frontières
+
+**texte**
+
+Je suis en train de regarder la fiche de Inventory Management.
+
+## Périmètre et limites propose un résumé et un détail qui se déplie.
+
+Trop compliqué. Je souhaite un encart coloré pour le résumé court et le texte qui suit simplement sans possibilité de dépliage
+
+Renommer en Périmètre, ça suffit. Le principe d'un périmètre est d'expliquer ce qu'il y a dedans et ce qu'il n'y a pas afin de bien voir les frontières. Les frontières s'expriment aussi avec des principes.
+
+**contexte et portée**
+
+Demande de présentation des fiches Atlas illustrée sur Inventory Management : titre Périmètre, résumé d’ouverture dans un encart coloré, puis détail directement visible, sans dépliage ni répétition du résumé. Le contenu du périmètre explicite inclusions, exclusions, frontières et principes qui les fondent. Appliquer la règle au composant partagé des fiches et aux conventions éditoriales ; aucune réécriture des publications ou modification de responsabilité métier déduite.
+
+
+## U499
+
+**id**
+
+U499
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Étudier les demandes internes et leurs comportements de déclenchement et d’activité
+
+**texte**
+
+Reprenons l'area "Service requests". Du coup, ce serait bien d'imaginer des demandes internes. Le cas d'optimisation du carnet de commande est évident.
+
+On pourrait décrire des comportements de déclenchement et des comportements d'activité comme je l'avais expliqué.
+
+Qu'en penses-tu ?
+
+**contexte et portée**
+
+Demande d’avis et de proposition concrète après U496/U497 : étudier des familles de demandes internes dans Service Requests, avec l’optimisation du carnet comme premier cas, en distinguant leurs comportements de déclenchement et d’activité. Confronter la proposition à la convention Capacité → Comportement et aux responsabilités déjà portées par Order Backlog Planning, Fulfillment Plan Decision et Supply Assignment. Aucune liste de nouveaux comportements, capacité ou modification canonique encore adoptée par cette question.
+
+
+## U500
+
+**id**
+
+U500
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Qualifier les demandes par leur origine frontoffice ou backoffice relativement au Domain
+
+**texte**
+
+Pour les capacités de type "Demande" ce serait bien d'avoir un indicateur pour dire si c'est une demande frontoffice (sollicitation externe au domaine) ou backoffice (sollicitation interne au domaine)
+
+**contexte et portée**
+
+Complète U499 : proposer un indicateur métier d’origine sur les capacités qui portent des demandes. Frontoffice signifie une sollicitation externe au Domain, backoffice une sollicitation interne au Domain ; ces mots ne désignent pas ici des équipes ou des interfaces. Tenir compte de U492, qui admet les deux origines pour Transfer Order. Distinguer l’origine de la demande de la provenance de l’événement qui la motive ; un événement fournisseur externe peut faire naître une demande interne de réoptimisation. Les valeurs possibles par famille et leur représentation sont à expliciter ; aucun classement global des capacités ou renommage des types de capacité existants n’est déduit.
+
+
+## U501
+
+**id**
+
+U501
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter la demande d’optimisation du carnet, ses six comportements et les indicateurs d’origine
+
+**texte**
+
+Je valide cette excellente idée !
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement précédente : Order Backlog Optimization Request dans Service Requests ; origine Backoffice pour ce cas ; Frontoffice et Backoffice non exclusifs pour Transfer Order. L’origine est relative au Domain et distincte de la provenance de l’événement, du mode de déclenchement et de l’activité. Les six comportements présentés sont retenus, regroupés au même niveau terminal : réexamen réactif, revue périodique et étude demandée pour le déclenchement ; Simulation & Analysis, autorisation du scénario et activation suivie pour l’activité. Order Backlog Planning construit les scénarios, Fulfillment Plan Decision détermine un plan cohérent et Supply Assignment applique les affectations. Les comportements peuvent se combiner ; étude sans application et autorisation par politique sont possibles. L’accord couvre les sens et rattachements présentés ; les traductions anglaises non montrées, rédactions complémentaires, exemples, qualifications détaillées des liens et correspondances marché restent identifiés comme compléments éditoriaux. Aucun classement automatique des autres demandes, autre famille, nouvelle nature de capacité ou release adopté par extension.
+
+
+## U502
+
+**id**
+
+U502
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier les évolutions Service Requests et les demandes internes dans FLOW Atlas
+
+**texte**
+
+lance une release
+
+**contexte et portée**
+
+Demande explicite de publication du backlog courant après U501 : Service Requests et Backing Services, demande d’optimisation du carnet et ses six comportements, indicateurs Frontoffice/Backoffice. Inclure les contenus et précisions méthodologiques associés ; le nouveau rendu Périmètre est déjà construit. Publier localement dans FLOW Atlas selon les contrats de préparation et d’intégrité. La publication ne vaut pas accord supplémentaire sur les rédactions, traductions, exemples ou comparaisons proposés ; elle n’autorise ni commit ni push Git.
+
+
+## U503
+
+**id**
+
+U503
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Comprendre la lenteur des releases
+
+**texte**
+
+Je trouve la release très très lente à opérer. Pourquoi ?
+
+**contexte et portée**
+
+Demande d’explication sur la durée de publication après v017. Diagnostic : réexamens trop larges lors de changements de révision, transcription tardive des accords, accords composites difficiles à reprendre partiellement et opérations annexes manuelles. La durée comprend le travail de l’agent et les commandes ; aucune lenteur générale d’Atlas n’est établie.
+
+## U504
+
+**id**
+
+U504
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Refactorer le parcours de release et la préparation des accords
+
+**texte**
+
+Tu saurais refactorer tout ça ?
+
+**contexte et portée**
+
+Autorise le refactoring proposé après U503 : enregistrer les accords explicites en amont, limiter les réexamens aux changements affectant potentiellement leur sens, conserver nativement une partie intacte d’un accord composite et regrouper les opérations de publication et de vérification. Le report automatique exige des valeurs et un contexte métier inchangés ; une révision seule ne suffit plus à le suspendre. Aucun nouvel accord métier, publication réelle, commit, push ou redémarrage n’est demandé. Tester le parcours et mesurer sur des copies isolées en préservant les publications et preuves existantes.
+
+## U505
+
+**id**
+
+U505
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Recentrer Party / Role sur les personnes et leurs rôles contractuels, étudier la visibilité des référentiels et le statut d’Authoritative Data
+
+**texte**
+
+Reprenons le domaine Authoritative Data.
+
+Party / Role m'étonne.
+
+Party ce sont des "tiers", au sens juridique du terme. En effet on a besoin d'avoir des contrats (Agreement) associés à des personnes physiques ou morales juridiquement responsable sans quoi l'activité de commerce est impossible.
+
+Cote inspiration, GS1 avec le modèle Party / Location est hors scope pour nous.
+Ce Modèle Party / Role est universellement connu, c'est ce qu'on appelle le référentiel Personne (morale & physique). Effectivement, l'objectif n'est pas de consigner des droit applicatifs mais d'identifier les parties prenantes aux contrats et donc aux processus qui vont lier client et fournisseur par exemple.
+
+Il doit y avoir de la théorie là dessous. J'aimerais que tu peaufines la description et les références de marché.
+On peut aussi se poser la question de renommer en "Person". Je ne sais pas si ça se fait.
+
+Dans Client360 dans Informatica MDM, il y a au coeur le modèle Party / Role.
+
+Et aujourd'hui, dans les référentiels, on n'a qu'une capacité d'ingestion. Il faudrait une capacité de "Visibility" ou qq chose comme ça.
+
+Dans l'atlas, Authoritative Data est présenté comme un "groupe de présentation". Pourquoi ce n'est pas un domaine comme les autres ?
+
+**contexte et portée**
+
+Demande de reprise des descriptions et inspirations de Party / Role : personnes physiques et morales identifiées, rôles métier dans les accords et processus associés ; retirer GS1 Party / Location de cette comparaison. Examiner la théorie et Informatica, sans assimiler ces rôles aux habilitations. La piste Person reste une question, pas un renommage adopté. La demande de visibilité prolonge U134 sur la consultation des projections en lecture seule ; ses noms et détails sont à proposer. Examiner et expliquer le statut de groupe hérité d’U103 et conservé lors d’U482 ; aucune transformation structurelle ni fusion des six référentiels encore adoptée. Aucun accord global sur les rédactions nouvelles, publication, commit ou push.
+
+## U506
+
+**id**
+
+U506
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Inclure SAP dans l’étude Party / Role
+
+**texte**
+
+Et regarde aussi chez SAP, j'ai été surpris qu'il n' y ait aucune ref
+
+**contexte et portée**
+
+Complète U505 : consulter les références SAP pertinentes, notamment Business Partner et ses rôles, et restituer leurs similitudes et différences dans la fiche. L’absence de citation antérieure ne signifie pas absence du concept chez SAP ; aucune solution SAP ni architecture de produit adoptée.
+
+## U507
+
+**id**
+
+U507
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Valider Party / Role, les six capacités Visibility et Authoritative Data comme Area
+
+**texte**
+
+Go, je valide
+
+**contexte et portée**
+
+Accord contextuel sur la proposition restituée après U505/U506 : conserver le nom Party / Role et sa définition centrée sur les personnes physiques et morales et leurs rôles métier dans les accords et opérations ; ajouter une capacité Visibility de recherche, consultation et compréhension à chacun des six référentiels ; faire d’Authoritative Data une Area de Supply Chain Orchestration, au même niveau que les autres Areas, portant la mise à disposition de la source de vérité locale. Les six référentiels restent distincts. La consultation des accords ne calcule pas leur reliquat ; celle des services ne confirme pas leur disponibilité réelle.
+
+Appliquer les rattachements cohérents avec cette portée, conserver les identifiants et enregistrer les accords sur les champs présentés. La définition de Party / Role a été restituée avec l’exemple d’une même personne cliente et fournisseuse selon l’accord. Le nom des capacités est décliné par référentiel selon la proposition Visibility. Les descriptions détaillées, exemples, comparaisons documentaires et traductions éditoriales non présentés ne reçoivent pas de validation globale. Aucun nouveau comportement, transfert de maîtrise d’entreprise, release, commit ou push n’est demandé.
+
+## U508
+
+**id**
+
+U508
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Clarifier Catalog et la place d’Assortment par rapport à Agreement
+
+**texte**
+
+Dans Authoritative Data, Il y a Catalog. Je suppose que c'est pour Product Catalog ?
+Je me pose la question de la localisation de l'entité "Assortiment". Je pense que c'est dans Agreement qui compose Contract & Assortiment ?
+
+Qu'en penses-tu ?
+
+**contexte et portée**
+
+Question de modélisation : préciser si Catalog désigne un catalogue de produits et examiner l’hypothèse Agreement composant Contract et Assortment. Comparer le sens d’assortiment commercial, d’affectation à des sites/canaux/périodes et de sélection convenue entre parties. Aucun renommage ni rattachement adopté. Conserver la maîtrise externe de l’offre et des assortiments ; ne pas étendre le chantier Commerce ni le catalogue Informations métier. La discussion est consignée en annexe sans changer le modèle canonique, le glossaire ou les accords U507.
+
+## U509
+
+**id**
+
+U509
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Adopter Product Catalog et Assortment distinct d’Agreement
+
+**texte**
+
+Go
+
+**contexte et portée**
+
+Accord contextuel sur la recommandation U508 : Catalog devient Product Catalog ; Assortment constitue un référentiel distinct au sein d’Authoritative Data, décrivant une sélection de produits affectée à des magasins, canaux ou clients et à une période. Agreement référence ou fige cette sélection lorsqu’elle fait partie de ce qui est convenu, sans composition universelle Contract + Assortment. Un assortiment interne ne nécessite pas automatiquement un nouvel accord fournisseur ; appartenir à l’assortiment ne prouve ni stock ni réservation ni promesse.
+
+La Supply reçoit la référence applicable ; conception commerciale et maîtrise d’entreprise restent externes. Décliner le nom Product Catalog dans ses capacités et son glossaire sans changer leur périmètre. Compléter Assortment selon la convention des référentiels (ingestion et visibilité), en laissant les intitulés et détails nouveaux proposés hors du nom, du sens et du rattachement présentés. Les formulations détaillées et correspondances marché ne sont pas globalement adoptées. Aucun Behavior, Domain Commerce, catalogue Information, release, commit ou push demandé. Les accords antérieurs sont conservés comme preuves ; les reprises rendues nécessaires par le nouveau contexte doivent être explicites et limitées à leurs champs.
+
+## U510
+
+**id**
+
+U510
+
+**date**
+
+2026-09-19
+
+**titre**
+
+Publier la release, committer et pousser les changements
+
+**texte**
+
+- Lance une release
+- Commit
+- Push
+
+**contexte et portée**
+
+Publier le backlog courant dans FLOW Atlas avec ses accords et propositions distincts, notamment Authoritative Data, Party / Role, Product Catalog et Assortment. Inclure le guide de travail actualisé. Puis enregistrer les changements accumulés de ce travail dans un commit et les envoyer au dépôt Urbanisation, sur la branche courante. Cette demande opérationnelle ne constitue pas une validation métier supplémentaire.

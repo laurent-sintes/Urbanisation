@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.10",
+  "model_path": "model.yaml",
+  "model_sha256": "523e49061f083500a848b7366481c97511e98257d864133be2281f6d79bf6bd0",
+  "input_revision_path": "../../revisions/2026-09-19.10/backlog.yaml",
+  "input_revision_sha256": "0cb5f2b4b186f627a470b210939cc77ee88f0d13366f514cd22a434eb7e46294",
+  "decisions_path": "../../decisions/2026-09-19.10.json",
+  "decisions_sha256": "f19ab4ec911995b38bf3de3801063e8af36ecc555b6d83bd363dd90eeb1a818c",
+  "provenance_path": "../../provenance/2026-09-19.10/source-records.json",
+  "provenance_sha256": "1257249a4bd660865541638379c2d3c7201372dad42b616363e8c943dc1f40b6",
+  "source_files": [
+    {
+      "path": "connaissance/25-domaines-coeur-et-epreuve-recits.md",
+      "sha256": "f97059898b77d92f1a860ef73d7142557888b4bea8904b3f264f17b4f855ad05"
+    },
+    {
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "sha256": "358c358187f0dc2e3bc6c5aa681ff67c7fbef667f77809c19a518b7037c62ee9"
+    },
+    {
+      "path": "connaissance/04-corrections.md",
+      "sha256": "e3e3ec1c7be319d29af82bcbad4beab3c59d746c5e7b17ee20cc870fc09bf188"
+    },
+    {
+      "path": "connaissance/05-propositions.md",
+      "sha256": "4ec2a903af2c14744ba8b2e83ba18acf8a7042126dcc480121774f28ab6c6a16"
+    },
+    {
+      "path": "app/model-metadata.json",
+      "sha256": "89ffdbf46ce58660b9e167863ea9f474976bb8f048fb9c52b53e612a5d5a6c11"
+    },
+    {
+      "path": "app/exploration.json",
+      "sha256": "0bbedd273956ff6de141ea22055d62466330fea26e6efe6b27b718e121e784a6"
+    },
+    {
+      "path": "connaissance/32-execution-orchestration.md",
+      "sha256": "1411d217c2d7fe648a5120fdaddf949b2124706bbcb7d4dafd1517864f65b20f"
+    },
+    {
+      "path": "connaissance/33-frontieres-ctp.md",
+      "sha256": "f59fd90ca23c929accbd8cb4f8d9342e5e71662274cb81f84d6ad5b06111c35d"
+    },
+    {
+      "path": "connaissance/34-comportements-atp.md",
+      "sha256": "aabc8b95eee8215a65b9229e83d2002c57061798ea60cf342262f7948fbe80e9"
+    }
+  ],
+  "node_count": 144,
+  "capability_count": 48,
+  "complete_capability_count": 0,
+  "changes_path": "changes.json",
+  "changes_sha256": "d3bd2fc0805e3298bbb090de5cd0245a6573138668334905c563606cf8632b9b",
+  "prepared_manifest_sha256": "dcc82c967dae1a2d237974aa84ae9e531ccdf9b61e9e749ddc9d330209281c2c",
+  "note": "Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques.",
+  "decision_review": {
+    "../../revisions/2026-09-19.10/decision-review/review.json": "a37ecd1ff1e15ea47888c39c9b1e3a212ec0db558c7ff9df8fd3bcaec7dcecac",
+    "../../revisions/2026-09-19.10/decision-review/assessment.yaml": "aa662e01a9fe2c35c5e0ed523713355117d9b89df83ea564effb922f83aa80bb",
+    "../../revisions/2026-09-19.10/decision-review/transcriptions.json": "20a86e2766ee4aed66e35f48654f9941f01d208866fcecefce88ea35d2d65096"
+  }
+}

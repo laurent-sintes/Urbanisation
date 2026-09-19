@@ -1,0 +1,15 @@
+source_refs:
+- U496
+- U497
+checks:
+  refresh_sources: '1956 sources ; publications figées inchangées'
+  validate_models: '0 erreur'
+  market_inspiration_tests: '10 tests réussis'
+  render_backlog: 'Vue backlog générée'
+  canonical_names: 'D04 Service Requests ; D07.b Backing Service Orders ; TER066 Backing Service Order ; TER075 Backing Service'
+  catalog_names: 'D14 Service Catalog ; D14.a Service Catalog Ingestion'
+  relation_structure: '346 identifiants, types et extrémités conservés ; deux libellés de qualification actualisés'
+  new_capabilities: 0
+  new_glossary_terms: 0
+  historical_names: 'Repères U438 de D04.n et D04.q conservés dans leur contexte historique'
+publication: 'Backlog uniquement ; index de release préservé'

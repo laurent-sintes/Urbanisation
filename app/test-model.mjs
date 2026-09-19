@@ -2,11 +2,13 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
-  adaptPublication, childrenOf, descendantsOf, focusGraph, isStructural,
+  adaptPublication, cardChildListOf, childrenOf, descendantsOf, focusGraph, hasCapabilityCards, isStructural,
   lineageOf, neighborhood, parentRelationOf, parentsOf, rootsOf, searchModel,
 } from './src/model.ts';
 
 import { loadPublication } from '../scripts/load-publication.mjs';
+import { readRoute, routeHash } from './src/navigation.ts';
+import { kindLabel } from './src/presentation.ts';
 
 const current = await loadPublication({ version: '2026-09-13.5' });
 const model = adaptPublication(current.raw);
@@ -94,6 +96,56 @@ test('presentation groups remain distinct from semantic urbanism levels', () => 
   assert.equal(model.nodeById.get('universe-supply').levelRef, 'universe');
   assert.equal(childrenOf(model, 'business-references', 'presents').length, 5);
   assert.equal(childrenOf(model, 'business-references', 'contains').length, 0);
+});
+
+for (const kind of ['area', 'group']) test(`${kind} preserves six reference cards, twelve capabilities and their direct links`, () => {
+  const referenceNames = ['Product Reference', 'Party / Role', 'Agreement', 'Catalog', 'Fulfillment Network', 'Service Catalog'];
+  const raw = {
+    space: 'release', version: `reference-cards-${kind}`,
+    nodes: [
+      { id: 'supply', kind: 'domain', fields: { name: 'Supply Chain Orchestration' } },
+      { id: 'reference-scope', kind, fields: { name: 'Authoritative Data' } },
+    ],
+    relations: [{ id: 'scope-parent', type: 'presents', source_id: 'supply', target_id: 'reference-scope' }],
+  };
+  referenceNames.forEach((name, index) => {
+    const id = `reference-${index}`;
+    raw.nodes.push({ id, kind: 'reference', fields: { name } });
+    raw.relations.push({ id: `presents-${index}`, type: 'presents', source_id: 'reference-scope', target_id: id });
+    for (const [suffix, nature] of [['Ingestion', 'action'], ['Visibility', 'knowledge']]) {
+      const capabilityId = `${id}-${suffix}`;
+      raw.nodes.push({ id: capabilityId, kind: 'capability', fields: { name: `${name} ${suffix}`, nature } });
+      raw.relations.push({ id: `contains-${capabilityId}`, type: 'contains', source_id: id, target_id: capabilityId });
+    }
+  });
+  const publication = adaptPublication(raw);
+  const scope = publication.nodeById.get('reference-scope');
+  assert.equal(kindLabel(scope), kind === 'area' ? 'Area' : 'Groupe de présentation');
+  assert.equal(parentRelationOf(publication, scope.id).type, 'presents');
+  assert.equal(hasCapabilityCards(publication, 'supply'), true);
+  assert.equal(hasCapabilityCards(publication, scope.id), true);
+  const references = cardChildListOf(publication, scope);
+  assert.equal(references.kind, 'reference', 'An Area presenting references must not show an empty capability list.');
+  assert.deepEqual(references.items.map(item => item.name), referenceNames);
+  const capabilities = references.items.flatMap(reference => {
+    assert.equal(parentRelationOf(publication, reference.id).type, 'presents');
+    const list = cardChildListOf(publication, reference);
+    assert.equal(list.kind, 'capability');
+    assert.equal(list.items.length, 2);
+    for (const capability of list.items) {
+      assert.equal(capability.referenceParentName, reference.name);
+      assert.deepEqual(ids(lineageOf(publication, capability.id)), ['supply', scope.id, reference.id, capability.id]);
+      const directLink = readRoute(routeHash({ ...readRoute(''), version: publication.version, node: capability.id, view: 'sheet' }));
+      assert.equal(directLink.version, publication.version);
+      assert.equal(publication.nodeById.get(directLink.node), capability);
+      assert.equal(cardChildListOf(publication, capability), undefined);
+    }
+    return list.items;
+  });
+  assert.equal(new Set(ids(capabilities)).size, 12);
+  assert.deepEqual(ids(focusGraph(publication, scope.id).nodes), [scope.id, ...ids(references.items)]);
+  assert.equal(descendantsOf(publication, scope.id).length, 18);
+  assert.deepEqual(publication.raw, raw, 'Rendering must preserve historical types and relation kinds.');
 });
 
 test('relation qualification, sources and partial validations survive projection intact', () => {

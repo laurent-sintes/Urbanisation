@@ -11,6 +11,8 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = {'accepted':'Validé','partial':'Partiellement validé','proposed':'Non validé','under_review':'En réexamen','illustration':'Illustration'}
+REQUEST_ORIGIN_LABELS = {'frontoffice': 'Frontoffice', 'backoffice': 'Backoffice'}
+BEHAVIOR_ASPECT_LABELS = {'trigger': 'Déclenchement', 'activity': 'Activité'}
 
 
 def status(item):
@@ -31,10 +33,10 @@ def cell(value):
     return str(value).replace('|','\\|').replace('\n',' ')
 
 
-def market_lines(entries):
+def market_lines(entries, heading='###'):
     lines = []
     for entry in entries:
-        lines += [f"### {entry['vendor']} — {entry['element_name']}", '',
+        lines += [f"{heading} {entry['vendor']} — {entry['element_name']}", '',
                   f"{entry['product']} · {entry['element_type']} · {entry['relationship']} · statut : {entry['status']}", '']
         for key, label in [('term_choice', 'Pourquoi ce terme'), ('definition_choice', 'Pourquoi cette définition')]:
             if entry.get(key):
@@ -49,25 +51,68 @@ def market_lines(entries):
     return lines
 
 
+def inspiration_lines(inspiration, entries, name):
+    """Render authored comparisons, with their original supporting detail intact."""
+    lines = [inspiration['choice'], '',
+             '| Source et nom employé | Périmètre | Approche |',
+             '| --- | --- | --- |']
+    for entry in entries:
+        source = f"[{entry['vendor']}]({entry['source_url']}) — {entry['concept_name']}"
+        lines.append('| ' + ' | '.join(cell(v) for v in [source, entry['scope_summary'], entry['approach_summary']]) + ' |')
+    lines.append('| ' + ' | '.join(cell(v) for v in ['Notre modèle — ' + name, inspiration['flow_scope'], inspiration['flow_approach']]) + ' |')
+    lines += ['', '### Ce que nous en retenons', '']
+    lines += ['- ' + value for value in inspiration['synthesis']]
+    lines += ['']
+    for example in inspiration['examples']:
+        lines += ['### ' + example['title'], '', example['situation'], '']
+        for key, label in [('outcome', 'Ce qui se passe'), ('lesson', 'Ce que cela illustre dans FLOW')]:
+            if example.get(key):
+                lines += ['**' + label + '.** ' + example[key], '']
+        lines += [f"Source : [{example['source_title']}]({example['source_url']}).", '',
+                  'Références : ' + ', '.join(example['source_refs']) + '.', '']
+    lines += ['### Détails des références', ''] + market_lines(entries, heading='####')
+    return lines
+
+
 def render(model, label):
     lines = [f'# {label} — {model["version"]}', '', f'Restitution générée depuis le modèle structuré, connaissance au {model["as_of"]}. Ne pas éditer cette vue pour modifier le modèle.', '', 'Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.', '']
+    if any(node['fields'].get('request_origins') for node in model['nodes']):
+        lines += ['Origine des demandes : **Frontoffice** désigne une sollicitation externe au Domain ; **Backoffice**, une sollicitation interne. Une famille peut porter les deux origines. La provenance de l’événement déclencheur est distincte.', '']
     nodes = {n['id']:n for n in model['nodes']}
-    universes = [n for n in model['nodes'] if n.get('group_role') == 'urbanism_level']
-    if universes:
+    levels = [n for n in model['nodes'] if n.get('group_role') == 'urbanism_level'
+              or (n.get('kind') == 'domain' and any(
+                  r['type'] == 'presents' and r['source_id'] == n['id'] for r in model['relations']))]
+    if levels:
         lines += ['## Niveaux d’urbanisation', '', '| Repère | Nom | Niveau | Contenu direct | Statut |', '| --- | --- | --- | --- | --- |']
-        for universe in universes:
-            children = [nodes[r['target_id']]['fields'].get('name', r['target_id']) for r in model['relations'] if r['type'] == 'presents' and r['source_id'] == universe['id']]
-            lines.append('| ' + ' | '.join(cell(v) for v in [universe['id'], universe['fields'].get('name', ''), universe['level_ref'], ', '.join(children) or 'Exploration différée', status(universe)]) + ' |')
-        lines += ['', 'Les groupes de présentation, dont Business References, conservent leur rôle distinct.', '']
+        for level in levels:
+            children = [nodes[r['target_id']]['fields'].get('name', r['target_id']) for r in model['relations'] if r['type'] == 'presents' and r['source_id'] == level['id']]
+            level_name = level['level_ref'] if level.get('group_role') == 'urbanism_level' else 'Domain'
+            lines.append('| ' + ' | '.join(cell(v) for v in [level['id'], level['fields'].get('name', ''), level_name, ', '.join(children) or 'Exploration différée', status(level)]) + ' |')
+        lines += ['', 'Les groupes de présentation conservent leur rôle distinct des niveaux de décomposition métier.', '']
     for domain in model['nodes']:
-        if domain['kind'] not in ('domain','reference'):
+        if domain['kind'] not in ('domain', 'area', 'reference'):
             continue
-        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '', '| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |', '| --- | --- | --- | --- | --- | --- | --- |']
-        for relation in model['relations']:
-            if relation['type'] != 'contains' or relation['source_id'] != domain['id']:
-                continue
+        lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '']
+        presented = [nodes[r['target_id']] for r in model['relations']
+                     if r['type'] == 'presents' and r['source_id'] == domain['id']]
+        if presented:
+            labels = {'domain': 'Domain', 'area': 'Area', 'reference': 'Référentiel', 'group': 'Groupe de présentation'}
+            lines += ['| Repère | Nom | Type | Statut |', '| --- | --- | --- | --- |']
+            for child in presented:
+                lines.append('| ' + ' | '.join(cell(v) for v in [child['id'], child['fields'].get('name', child['id']), labels.get(child['kind'], child['kind']), status(child)]) + ' |')
+            lines += ['']
+        contains = [r for r in model['relations'] if r['type'] == 'contains' and r['source_id'] == domain['id']]
+        show_origins = any(nodes[r['target_id']]['fields'].get('request_origins') for r in contains)
+        if contains or not presented:
+            columns = ['Repère', 'Capacité', 'Type'] + (['Origine des demandes'] if show_origins else []) + ['Statut', 'Définition', 'Finalité', 'Rattachement']
+            lines += ['| ' + ' | '.join(columns) + ' |', '| ' + ' | '.join('---' for _ in columns) + ' |']
+        for relation in contains:
             n=nodes[relation['target_id']]; f=n['fields']
-            lines.append('| '+ ' | '.join(cell(v) for v in [n['id'], f.get('name','Libellé à préciser'), f.get('nature', 'Non renseigné'), status(n),f.get('definition','À préciser'),f.get('finality','À préciser'),status(relation)])+' |')
+            values = [n['id'], f.get('name','Libellé à préciser'), f.get('nature', 'Non renseigné')]
+            if show_origins:
+                values.append(', '.join(REQUEST_ORIGIN_LABELS[value] for value in f.get('request_origins', [])) or '—')
+            values += [status(n), f.get('definition','À préciser'), f.get('finality','À préciser'), status(relation)]
+            lines.append('| '+ ' | '.join(cell(v) for v in values)+' |')
         lines += ['']
     for capability in model['nodes']:
         behaviors = [nodes[r['target_id']] for r in model['relations']
@@ -78,11 +123,17 @@ def render(model, label):
         rationale = capability['fields'].get('decomposition_rationale')
         if rationale:
             lines += [f'**Justification de la décomposition — {capability["id"]} :** {rationale}', '']
+        show_aspects = any(behavior['fields'].get('behavior_aspect') for behavior in behaviors)
+        columns = ['Repère', 'Comportement'] + (['Angle de lecture'] if show_aspects else []) + ['Statut', 'Définition']
         lines += [f'## Comportements — {capability["fields"].get("name", capability["id"])}', '',
                   'Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.', '',
-                  '| Repère | Comportement | Statut | Définition |', '| --- | --- | --- | --- |']
+                  '| ' + ' | '.join(columns) + ' |', '| ' + ' | '.join('---' for _ in columns) + ' |']
         for behavior in behaviors:
-            lines.append('| ' + ' | '.join(cell(v) for v in [behavior['id'], behavior['fields']['name'], status(behavior), behavior['fields']['definition']]) + ' |')
+            values = [behavior['id'], behavior['fields']['name']]
+            if show_aspects:
+                values.append(BEHAVIOR_ASPECT_LABELS.get(behavior['fields'].get('behavior_aspect'), '—'))
+            values += [status(behavior), behavior['fields']['definition']]
+            lines.append('| ' + ' | '.join(cell(v) for v in values) + ' |')
         lines += ['']
     for node in model['nodes']:
         if node['fields'].get('examples'):
@@ -95,10 +146,16 @@ def render(model, label):
                 lines += ['Références : ' + ', '.join(example['source_refs']) + '.', '']
         entries = node['fields'].get('market_comparisons', [])
         if entries:
-            lines += [f"## Comparaison par rapport au marché — {node['id']} {node['fields'].get('name', '')}", ''] + market_lines(entries)
+            name = node['fields'].get('name', '')
+            inspiration = node['fields'].get('market_inspiration')
+            lines += [f"## Sources d’inspiration — {node['id']} {name}", '']
+            lines += inspiration_lines(inspiration, entries, name) if inspiration else market_lines(entries)
     for term in model.get('glossary', {}).get('terms', []):
         if term.get('market_comparisons'):
-            lines += [f"## Comparaison par rapport au marché — {term['name']}", ''] + market_lines(term['market_comparisons'])
+            entries = term['market_comparisons']
+            inspiration = term.get('market_inspiration')
+            lines += [f"## Sources d’inspiration — {term['name']}", '']
+            lines += inspiration_lines(inspiration, entries, term['name']) if inspiration else market_lines(entries)
     catalogue = model.get('information_catalog')
     if catalogue:
         lines += ['## Informations métier', '', 'Vue transversale des informations utiles aux capacités ; aucune structure de données implémentable prescrite.', '']

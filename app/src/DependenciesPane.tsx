@@ -1,12 +1,12 @@
 import { useMemo, useRef, useState } from 'react';
 import { ArrowRight, ArrowUpRight, Maximize2, Network } from 'lucide-react';
 import { CytoscapeCanvas } from './CytoscapeCanvas';
-import { projectDependencies, type DependencyOptions } from './dependencyGraph';
+import { dependencyLevel, dependencyLevels, projectDependencies, type DependencyOptions } from './dependencyGraph';
 import { RelationDetails } from './components/BusinessSheet';
 import { ReferenceLink } from './components/ModelLinks';
 import { NodeIcon } from './icons';
 import { kindLabel } from './presentation';
-import { parentRelationOf } from './model';
+import { hasAreaLevels, parentRelationOf } from './model';
 import { publicText } from './publicText';
 import type { GraphRoute } from './navigation';
 import type { PublishedModel, SourceLocator } from './types';
@@ -23,12 +23,12 @@ type Selection = { kind: 'node' | 'edge'; id: string };
 
 export function DependenciesPane({ model, focusId, relationId, settings, onSettings, onSelectRelation, onFocus, onRead }: Props) {
   const focus = focusId ? model.nodeById.get(focusId) : undefined;
-  const defaultLevel = !focus || focus.levelRef === 'universe' || ['domain', 'reference'].includes(focus.kind) ? 'domain' : 'capability';
+  const defaultLevel = !focus || focus.levelRef === 'universe' || ['domain', 'area', 'reference'].includes(focus.kind) ? (hasAreaLevels(model) ? 'area' : 'domain') : 'capability';
   const options = useMemo<DependencyOptions>(() => ({
-    focusId, level: settings.graphLevel || defaultLevel,
+    focusId, level: dependencyLevel(model, settings.graphLevel || defaultLevel),
     depth: settings.graphDepth ?? (focusId ? 1 : 0), direction: settings.graphDirection || 'both', family: settings.graphFamily || 'all',
     includeNeighborLinks: settings.graphNeighbors ?? false,
-  }), [focusId, defaultLevel, settings.graphLevel, settings.graphDepth, settings.graphDirection, settings.graphFamily, settings.graphNeighbors]);
+  }), [model, focusId, defaultLevel, settings.graphLevel, settings.graphDepth, settings.graphDirection, settings.graphFamily, settings.graphNeighbors]);
   const projection = useMemo(() => projectDependencies(model, options), [model, options]);
   const [selection, setSelection] = useState<Selection | null>(null);
   const [fullscreenError, setFullscreenError] = useState('');
@@ -59,7 +59,7 @@ export function DependenciesPane({ model, focusId, relationId, settings, onSetti
     </div>
     {fullscreenError && <p role="status" className="dependency-help">{fullscreenError}</p>}
     <div className="dependency-controls">
-      <label>Niveau de lecture<select aria-label="Niveau de lecture" value={options.level} onChange={e => changes({ graphLevel: e.target.value as GraphRoute['graphLevel'] })}><option value="capability">Capacités</option><option value="domain">Domaines et référentiels</option><option value="universe">Univers</option></select></label>
+      <label>Niveau de lecture<select aria-label="Niveau de lecture" value={options.level} onChange={e => changes({ graphLevel: e.target.value as GraphRoute['graphLevel'] })}>{dependencyLevels(model).map(level => <option key={level.value} value={level.value}>{level.label}</option>)}</select></label>
       <label>Profondeur<select aria-label="Profondeur" value={options.depth} onChange={e => changes({ graphDepth: Number(e.target.value) as GraphRoute['graphDepth'] })}><option value="1">Voisins directs</option><option value="2">À deux pas</option><option value="3">À trois pas</option><option value="0">Toute la publication</option></select></label>
     </div>
     <details className="dependency-options"><summary>Affiner l’exploration</summary><div className="dependency-controls">

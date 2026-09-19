@@ -15,7 +15,8 @@ try {
   page.on('pageerror', error => errors.push(error.message));
   const model = await (await page.request.get(base + '/api/model')).json();
   const lookup = new Map(model.nodes.map(n => [n.id, n]));
-  const domains = model.nodes.filter(n => n.kind === 'domain');
+  const hasAreas = model.nodes.some(n => n.kind === 'area');
+  const domains = model.nodes.filter(n => n.kind === (hasAreas ? 'area' : 'domain'));
   const isDecision = n => n.kind === 'capability' && n.fields.nature === 'decision';
   const children = id => {
     const list = model.relations.filter(r => r.source_id === id && r.type === 'contains').map(r => lookup.get(r.target_id));
@@ -32,7 +33,7 @@ try {
     assert.deepEqual(await linkedIds(card.locator('.capacity-link')), ids(expected));
     assert.equal(await card.locator('.decision-section-start').count(), Number(mixed(expected)));
   }
-  checks.push('All six domain lists: stable ordering and exactly one separator only in mixed lists.');
+  checks.push(`All ${domains.length} ${hasAreas ? 'area' : 'domain'} lists: stable ordering and exactly one separator only in mixed lists.`);
   const expectedIcons = { action: 'lucide-zap', management: 'lucide-sliders-horizontal', knowledge: 'lucide-eye', orchestration: 'lucide-workflow', planning: 'lucide-calendar-check', decision: 'lucide-git-branch' };
   for (const [type, cssClass] of Object.entries(expectedIcons)) {
     const icons = page.locator(`.card-child-list [data-capability-type="${type}"] svg`);

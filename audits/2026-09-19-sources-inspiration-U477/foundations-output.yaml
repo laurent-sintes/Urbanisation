@@ -1,0 +1,858 @@
+source: U477
+nodes: []
+terms:
+- id: TER001
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Business capability
+    concept_name: Business capability
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Aptitude de l’entreprise, actuelle ou nécessaire.
+    approach_summary: Séparer aptitude et moyens.
+    similarities: Le besoin survit aux changements d’organisation.
+    differences: Le guide propose sa propre structuration de carte.
+    flow_position: FLOW reprend le principe, avec sa décomposition propre.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Business / organisational capability
+    concept_name: Business / organisational capability
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Ce qui permet de réaliser stratégie et résultats.
+    approach_summary: Relier besoin et raison d’être.
+    similarities: La capacité ne prescrit pas le logiciel.
+    differences: GEA-NZ vise des administrations et leur modèle de fonctionnement.
+    flow_position: FLOW l’applique à ses responsabilités métier.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Décrire ce que l’entreprise sait faire permet de conserver un repère quand ses équipes ou ses outils changent.
+      Capacité métier désigne cette aptitude durable.
+    flow_scope: Aptitude de l’entreprise à produire un résultat métier.
+    flow_approach: Définir le service attendu avant les moyens employés.
+    synthesis:
+    - Le guide TOGAF sépare le « quoi » des rôles, processus et outils qui le rendent possible. GEA-NZ reprend cette distinction
+      en rattachant plus explicitement chaque capacité à sa raison d’être. Les deux partent du besoin de l’entreprise.
+    - 'FLOW conserve cette indépendance : un changement d’application ne suffit pas à créer une nouvelle capacité. L’étape
+      d’un parcours ou la fonction d’un produit n’en devient une que si elle correspond à une aptitude métier justifiée.'
+    examples:
+    - title: GEA-NZ — payer les salariés
+      situation: GEA-NZ compare un petit employeur qui paie directement son personnel à un employeur utilisant un logiciel
+        de paie et des virements.
+      outcome: Les moyens changent ; le besoin de payer les salariés demeure.
+      lesson: La même distinction permet de parler de la capacité avant de choisir sa réalisation.
+      source_title: Business capabilities
+      source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+      source_refs:
+      - U477
+- id: TER002
+  market_comparisons:
+  - vendor: Martin Fowler
+    product: Patterns of Enterprise Application Architecture
+    element_name: Domain Model object
+    concept_name: Domain Model object
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Informations et comportements d’une notion du domaine.
+    approach_summary: Modéliser des objets significatifs pour le métier.
+    similarities: Les notions doivent avoir un sens partagé.
+    differences: Le patron vise leur conception logicielle.
+    flow_position: FLOW retient le sens avant toute mise en œuvre.
+    source_title: Domain Model
+    source_url: https://martinfowler.com/eaaCatalog/domainModel.html
+    source_version: 5 mars 2003
+    source_locator: Définition et paragraphe explicatif de la fiche
+    consulted_on: '2026-09-19'
+    evidence_limits: Fiche courte du patron par son auteur, pas consultation du chapitre complet ni définition normative de
+      tout objet métier.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Eric Evans
+    product: Domain-Driven Design Reference
+    element_name: Entity / Value Object
+    concept_name: Entity / Value Object
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Objets identifiés ou caractérisés par leur valeur.
+    approach_summary: Préciser ce qui fait reconnaître la même chose.
+    similarities: Identité et caractéristiques éclairent les faits suivis.
+    differences: Ces patrons ne classent pas tous les objets FLOW.
+    flow_position: La convention reste plus large qu’un type d’objet logiciel.
+    source_title: 'Domain-Driven Design Reference: Definitions and Pattern Summaries'
+    source_url: https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+    source_version: Mars 2015
+    source_locator: Definitions ; Entities p.11 ; Value Objects p.12 ; Domain Events p.13 ; Services p.14
+    consulted_on: '2026-09-19'
+    evidence_limits: Résumé de patrons par leur auteur, orienté conception logicielle. Les concepts éclairent le sens métier
+      sans imposer objets de code, services ni bounded contexts au modèle FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Nommer ce sur quoi l’entreprise raisonne permet de partager les mêmes faits et décisions. Objet métier désigne
+      cette notion, indépendamment de son stockage ou de sa représentation.
+    flow_scope: Commandes, ressources et autres notions utiles au raisonnement métier.
+    flow_approach: Distinguer le sens métier des documents et outils qui le portent.
+    synthesis:
+    - Fowler décrit un Domain Model composé d’objets qui portent des informations et des comportements. Evans distingue notamment
+      les objets suivis par leur identité de ceux caractérisés par leur valeur. Ils cherchent tous deux à représenter le métier
+      dans un logiciel.
+    - 'FLOW emploie Objet métier à une maille plus générale : reconnaître une commande ou une ressource ne choisit pas encore
+      sa forme informatique. Ni une table ni un message ne deviennent un objet métier par leur seule existence.'
+    examples:
+    - title: Fowler — la ligne de commande
+      situation: Fowler cite la ligne d’un bon de commande parmi les objets qui peuvent avoir un sens dans un modèle de domaine.
+      outcome: L’objet peut représenter une notion plus fine qu’une entreprise entière, également citée dans le texte.
+      lesson: Dans FLOW, la pertinence vient du raisonnement métier ; cet exemple ne fixe pas une structure de données.
+      source_title: Domain Model
+      source_url: https://martinfowler.com/eaaCatalog/domainModel.html
+      source_refs:
+      - U477
+- id: TER023
+  market_comparisons:
+  - vendor: OMG
+    product: Semantics of Business Vocabulary and Business Rules
+    element_name: Business rule
+    concept_name: Business rule
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Prescription métier applicable à une situation.
+    approach_summary: Rendre l’acceptabilité appréciable.
+    similarities: Une condition explicite encadre les effets permis.
+    differences: SBVR distingue la portée et plusieurs catégories de règles.
+    flow_position: FLOW conserve un terme général sans importer ces catégories.
+    source_title: Semantics of Business Vocabulary and Business Rules, Version 1.5
+    source_url: https://www.omg.org/spec/SBVR/1.5/PDF
+    source_version: SBVR 1.5, mai 2019
+    source_locator: §16.1.2–16.1.3 p.98–100 ; §18.1.2 exemple EU-Rent p.118
+    consulted_on: '2026-09-19'
+    evidence_limits: La juridiction métier et les catégories de SBVR sont plus précises que le terme générique FLOW ; pas
+      d’importation de son métamodèle.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Microsoft
+    product: Dynamics 365 Commerce
+    element_name: DOM rule
+    concept_name: DOM rule
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Contraintes du choix de site et de satisfaction.
+    approach_summary: Appliquer des règles impératives ou relâchables.
+    similarities: Les choix doivent respecter des conditions définies.
+    differences: Les niveaux de contrainte sont propres à DOM.
+    flow_position: FLOW indique les règles du cas, sans présumer ce moteur.
+    source_title: DOM rules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    source_version: Documentation évolutive, mise à jour du 22 janvier 2026
+    source_locator: Common attributes ; Minimum inventory rule ; Partial orders rule
+    consulted_on: '2026-09-19'
+    evidence_limits: Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni
+      ses priorités à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Dire ce qui est admissible et ce qui doit en découler rend les décisions explicables. Règle métier désigne la
+      condition ou le principe appliqué, distinct du moyen qui l’exécute.
+    flow_scope: Conditions de validité, d’admissibilité et d’effet des décisions ou faits.
+    flow_approach: Expliciter la règle, son contexte et ses conséquences.
+    synthesis:
+    - SBVR insiste sur une règle assez précise pour juger un comportement acceptable ; il distingue la prescription de l’action
+      qui la fait respecter. Microsoft DOM montre des règles appliquées au choix de satisfaction, comme conserver du stock
+      pour les visiteurs d’un magasin.
+    - Le standard explique le sens de la règle ; l’éditeur montre un usage concret, avec ses propres paramètres et possibilités
+      de relâchement. FLOW garde la règle métier lisible sans reprendre automatiquement le fonctionnement du moteur.
+    examples:
+    - title: Microsoft — garder du stock pour les visiteurs
+      situation: La règle Minimum inventory de DOM permet d’écarter une partie du stock magasin de la satisfaction des commandes.
+      outcome: Lorsque la règle est maintenue, cette quantité est préservée pour d’autres usages, notamment les clients présents
+        en magasin.
+      lesson: Le caractère impératif ou relâchable de la règle doit être explicite ; elle ne crée pas à elle seule une nouvelle
+        capacité.
+      source_title: DOM rules
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+      source_refs:
+      - U477
+- id: TER024
+  market_comparisons:
+  - vendor: OMG
+    product: Business Process Model and Notation
+    element_name: Process
+    concept_name: Process
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Déroulement d’activités et d’événements.
+    approach_summary: Montrer les passages et leurs conditions.
+    similarities: Le résultat dépend d’un déroulement contextualisé.
+    differences: BPMN fournit une notation détaillée, y compris exécutable.
+    flow_position: FLOW ne prescrit pas cette notation pour reconnaître un processus.
+    source_title: Business Process Model and Notation, Version 2.0.2
+    source_url: https://www.omg.org/spec/BPMN/2.0.2/PDF
+    source_version: BPMN 2.0.2, décembre 2013
+    source_locator: §10.1 Process, p.143 ; §10.3.3 Tasks, p.154 ; Manual Task p.161–163
+    consulted_on: '2026-09-19'
+    evidence_limits: Standard de notation et de déroulement ; ni carte de capacités ni règle d’équivalence entre une tâche
+      et une opération FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Processes enabling a capability
+    concept_name: Processes enabling a capability
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Moyens d’exercer une aptitude.
+    approach_summary: Relier déroulement et capacité.
+    similarities: Une capacité peut mobiliser plusieurs processus.
+    differences: Le guide organise ces liens pour l’architecture d’entreprise.
+    flow_position: FLOW garde des parcours transverses aux domaines.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Expliquer comment un résultat est obtenu rend visibles les étapes et les passages entre acteurs. Processus désigne
+      ce déroulement, qui peut mobiliser plusieurs capacités.
+    flow_scope: Activités, événements et décisions enchaînés dans un contexte.
+    flow_approach: Décrire le parcours vers un résultat.
+    synthesis:
+    - BPMN représente l’enchaînement des activités et événements, avec leurs conditions de passage. Le guide TOGAF regarde
+      le processus comme l’un des moyens qui permettent d’exercer une capacité. Le premier décrit le déroulement ; le second
+      le situe par rapport à l’aptitude.
+    - 'FLOW conserve les deux lectures : la carte dit ce que l’entreprise sait faire, le processus raconte comment elle le
+      fait dans un cas. Un parcours peut traverser plusieurs domaines sans leur imposer un nouveau découpage.'
+    examples:
+    - title: TOGAF — recruter une personne
+      situation: L’exemple Recruitment Management cite notamment l’évaluation du besoin, la recherche de candidats et leur
+        sélection.
+      outcome: Plusieurs processus concourent au recrutement.
+      lesson: Une étape ou un parcours de recrutement ne se confond pas avec l’aptitude durable à recruter.
+      source_title: Business Capabilities
+      source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+      source_refs:
+      - U477
+- id: TER025
+  market_comparisons:
+  - vendor: OMG
+    product: Business Process Model and Notation
+    element_name: Task
+    concept_name: Task
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Travail élémentaire au sein d’un processus.
+    approach_summary: Représenter une étape sans détail inférieur dans ce parcours.
+    similarities: Une action possède une place et un résultat attendus.
+    differences: L’atomicité BPMN dépend du niveau de description.
+    flow_position: FLOW définit l’opération par ses objets, conditions et effets.
+    source_title: Business Process Model and Notation, Version 2.0.2
+    source_url: https://www.omg.org/spec/BPMN/2.0.2/PDF
+    source_version: BPMN 2.0.2, décembre 2013
+    source_locator: §10.1 Process, p.143 ; §10.3.3 Tasks, p.154 ; Manual Task p.161–163
+    consulted_on: '2026-09-19'
+    evidence_limits: Standard de notation et de déroulement ; ni carte de capacités ni règle d’équivalence entre une tâche
+      et une opération FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Record receipt of goods
+    concept_name: Record receipt of goods
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Enregistrement d’une réception d’achat.
+    approach_summary: Saisir les quantités puis produire leur trace.
+    similarities: L’action a un effet métier identifiable.
+    differences: Le parcours correspond à un produit et un écran précis.
+    flow_position: FLOW garde l’action indépendante de cet écran.
+    source_title: Record the receipt of goods on the purchase order
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+    source_version: Documentation évolutive, mise à jour du 1er juillet 2026
+    source_locator: Record receipt of goods, étapes 4–7 ; Review the product receipt journal
+    consulted_on: '2026-09-19'
+    evidence_limits: Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction
+      n’en est déduite.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Préciser l’action accomplie et ce qu’elle change rend son résultat vérifiable. Opération métier désigne une action
+      sur des objets, avec des conditions et des effets définis.
+    flow_scope: Action telle qu’enregistrer une réception ou confirmer une promesse.
+    flow_approach: Décrire ce qui doit être vrai avant et après l’action.
+    synthesis:
+    - BPMN appelle Task un travail élémentaire à la maille du processus décrit. Microsoft montre une opération concrète d’enregistrement
+      de réception, qui produit un journal identifiable. Le standard fixe une place dans le déroulement ; l’éditeur expose
+      l’action et sa trace.
+    - FLOW se concentre sur le sens de l’action et ses effets métier. Une opération peut contribuer à une capacité sans en
+      constituer une à elle seule ; un bouton ou une opération informatique ne fixe pas cette maille.
+    examples:
+    - title: Microsoft — enregistrer quatre pièces reçues
+      situation: Le parcours Microsoft part d’une commande de cinq pièces et enregistre la réception de quatre.
+      outcome: Le journal conserve la réception effectivement enregistrée, avec sa référence.
+      lesson: L’opération change les faits tenus sur la commande ; elle reste distincte de la réception physique des pièces.
+      source_title: Record the receipt of goods on the purchase order
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+      source_refs:
+      - U477
+- id: TER026
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Capability components
+    concept_name: Capability components
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Moyens humains, pratiques, informations et ressources.
+    approach_summary: Relier la capacité à ce qui la rend possible.
+    similarities: La réalisation repose sur plusieurs moyens.
+    differences: Le guide nomme des composants, pas un objet unique équivalent.
+    flow_position: FLOW regroupe ces moyens sous Réalisation.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Capability implementation
+    concept_name: Capability implementation
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Manière concrète de satisfaire le besoin.
+    approach_summary: Comparer plusieurs mises en œuvre.
+    similarities: Changer le comment ne change pas nécessairement le quoi.
+    differences: Le cadre gouvernemental ne décrit pas les moyens de FLOW.
+    flow_position: Aucune réalisation locale n’est déduite de l’exemple.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Montrer avec quels moyens une capacité est exercée permet de comprendre ce qui peut changer sans changer le besoin.
+      Réalisation d’une capacité désigne ces moyens concrets.
+    flow_scope: Acteurs, pratiques, outils et échanges mobilisés.
+    flow_approach: Distinguer l’aptitude de sa mise en œuvre dans un contexte.
+    synthesis:
+    - 'TOGAF décrit les rôles, processus, informations et ressources qui rendent une capacité possible. GEA-NZ donne une illustration
+      simple : payer les salariés peut se faire avec des moyens très différents. Les deux relient le besoin à une combinaison
+      de moyens.'
+    - FLOW utilise Réalisation pour cette combinaison, sans réduire le mot au logiciel. La présente comparaison n’établit
+      ni une solution choisie ni une réalisation installée chez Beaumanoir ; Atlas conserve sa présentation métier.
+    examples:
+    - title: GEA-NZ — changer le moyen de paiement des salaires
+      situation: L’employeur de l’exemple peut payer son personnel directement ou utiliser un logiciel de paie.
+      outcome: Le moyen concret évolue sans supprimer le besoin de payer.
+      lesson: C’est le sens de réalisation retenu par FLOW ; chaque situation réelle demanderait ses propres preuves.
+      source_title: Business capabilities
+      source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+      source_refs:
+      - U477
+- id: TER027
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Organizational function
+    concept_name: Organizational function
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Partie ou rôle de l’organisation.
+    approach_summary: Examiner où les capacités sont exercées.
+    similarities: Le contexte donne son sens au mot fonction.
+    differences: Ce sens organisationnel ne désigne pas une aptitude autonome.
+    flow_position: FLOW exige le qualificatif utile avant toute équivalence.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: SAP
+    product: S/4HANA Sales
+    element_name: aATP functions
+    concept_name: aATP functions
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Possibilités offertes par S/4HANA.
+    approach_summary: Décrire confirmation, alternatives et réexamen.
+    similarities: Fonction peut aussi désigner ce que fait le produit.
+    differences: Le périmètre dépend du produit et de son édition.
+    flow_position: FLOW utilise Fonctionnalité de produit pour ce sens précis.
+    source_title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+    source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    source_version: Cours en ligne, édition non précisée
+    source_locator: Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+    consulted_on: '2026-09-19'
+    evidence_limits: Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une
+      couverture installée.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Préciser ce que l’on entend par « fonction » évite de mélanger un rôle dans l’entreprise et une possibilité offerte
+      par un outil. FLOW ne donne pas à ce mot un niveau unique dans la carte.
+    flow_scope: Mot à qualifier selon le contexte de son emploi.
+    flow_approach: Demander le sens et le périmètre avant de rapprocher les notions.
+    synthesis:
+    - Le guide TOGAF emploie des noms de fonctions pour parler d’unités ou de périmètres d’organisation, en les distinguant
+      des capacités. SAP présente des fonctions aATP comme des possibilités de son produit. Le même mot renvoie ainsi à des
+      angles différents.
+    - 'FLOW garde cette ambiguïté visible : fonction métier, fonction d’organisation et fonctionnalité de produit doivent
+      être précisées. Aucun de ces usages ne crée automatiquement un étage entre domaine et capacité.'
+    examples:
+    - title: TOGAF — une capacité dans plusieurs fonctions
+      situation: Le guide rapproche Project Management et Learning Management de plusieurs unités, dont les ressources humaines
+        et l’informatique.
+      outcome: Une même capacité peut être exercée dans plusieurs parties de l’organisation.
+      lesson: Le nom d’une fonction ou d’un service ne suffit donc pas à définir une capacité distincte.
+      source_title: Business Capabilities
+      source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+      source_refs:
+      - U477
+- id: TER028
+  market_comparisons:
+  - vendor: SAP
+    product: S/4HANA Sales
+    element_name: Alternative-Based Confirmation
+    concept_name: Alternative-Based Confirmation
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Confirmation possible depuis d’autres sites ou produits.
+    approach_summary: Proposer les variantes prises en charge par SAP.
+    similarities: Une fonctionnalité apporte un service concret.
+    differences: Son regroupement aATP dépasse une seule responsabilité FLOW.
+    flow_position: La correspondance se fait sur les effets documentés.
+    source_title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+    source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    source_version: Cours en ligne, édition non précisée
+    source_locator: Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+    consulted_on: '2026-09-19'
+    evidence_limits: Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une
+      couverture installée.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Microsoft
+    product: Dynamics 365 Commerce
+    element_name: Partial orders rule
+    concept_name: Partial orders rule
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Possibilités de découpage proposées par DOM.
+    approach_summary: Activer et paramétrer selon la version.
+    similarities: L’édition et la configuration conditionnent le comportement.
+    differences: La règle ne décrit pas toute la capacité de satisfaction.
+    flow_position: La couverture FLOW reste à examiner au bon périmètre.
+    source_title: DOM rules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    source_version: Documentation évolutive, mise à jour du 22 janvier 2026
+    source_locator: Common attributes ; Minimum inventory rule ; Partial orders rule
+    consulted_on: '2026-09-19'
+    evidence_limits: Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni
+      ses priorités à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Décrire ce qu’un produit permet effectivement de faire aide à comparer son apport au besoin métier. Fonctionnalité
+      de produit désigne un comportement offert dans une édition et une configuration données.
+    flow_scope: Possibilités documentées d’un produit.
+    flow_approach: Vérifier l’édition, les conditions et les effets avant de conclure sur la couverture.
+    synthesis:
+    - SAP rassemble dans aATP des possibilités de confirmation, d’alternative et de réexamen du carnet. Microsoft détaille
+      les règles DOM et précise les versions qui modifient le découpage des commandes. Les deux montrent qu’une fonctionnalité
+      possède des conditions concrètes d’usage.
+    - Le nom commercial ne suffit donc pas à mesurer la couverture d’une capacité FLOW. Une fonction peut n’en couvrir qu’une
+      partie ou contribuer à plusieurs responsabilités ; la documentation ne prouve pas son installation.
+    examples:
+    - title: Microsoft — le nombre de lieux de satisfaction
+      situation: Microsoft explique que le réglage de satisfaction depuis un seul lieu a évolué vers un nombre maximal de
+        lieux.
+      outcome: Les possibilités de découpage varient selon la version, la règle et les options activées.
+      lesson: Comparer une fonctionnalité exige ce contexte ; on ne peut conclure à partir de « DOM » seul.
+      source_title: DOM rules
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+      source_refs:
+      - U477
+- id: TER029
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Stratification / leveling
+    concept_name: Stratification / leveling
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Classement de lecture et détail d’une aptitude.
+    approach_summary: Distinguer les deux objectifs.
+    similarities: Regrouper n’est pas nécessairement décomposer.
+    differences: Les catégories et niveaux du guide lui sont propres.
+    flow_position: FLOW choisit des critères métier explicites.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Categorised capabilities
+    concept_name: Categorised capabilities
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Classement des capacités d’une organisation.
+    approach_summary: Repérer lacunes, chevauchements et doublons.
+    similarities: Le classement aide à comprendre la carte.
+    differences: GEA-NZ renvoie à des taxonomies gouvernementales.
+    flow_position: FLOW ne reprend pas une taxonomie externe par défaut.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Rapprocher les capacités selon un critère métier rend la carte plus facile à lire. Regroupement de capacités désigne
+      cette organisation de lecture, sans présumer une capacité parente.
+    flow_scope: Ensemble de capacités réunies pour une raison explicite.
+    flow_approach: Indiquer le critère commun et distinguer regroupement et décomposition.
+    synthesis:
+    - TOGAF distingue la classification des capacités pour lire une carte et leur décomposition pour détailler une aptitude.
+      GEA-NZ recommande également de les classer afin de repérer lacunes et recouvrements. Les deux donnent un but à l’organisation
+      de la carte.
+    - 'FLOW conserve cette distinction : partager un thème ne signifie pas être les parties d’une même capacité. Un domaine
+      peut apporter ce cadre de lecture quand ses problèmes métier sont cohérents ; le regroupement ne crée pas un niveau
+      « fonction ».'
+    examples:
+    - title: TOGAF — catégories et décomposition
+      situation: Le guide présente des catégories Strategic, Core et Supporting puis, séparément, la décomposition de Human
+        Resource Management.
+      outcome: Le premier classement facilite une lecture ; le second détaille une aptitude.
+      lesson: FLOW reprend la différence entre les deux opérations, sans adopter ces catégories comme niveaux du modèle.
+      source_title: Business Capabilities
+      source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+      source_refs:
+      - U477
+- id: TER030
+  market_comparisons:
+  - vendor: Eric Evans
+    product: Domain-Driven Design Reference
+    element_name: Domain
+    concept_name: Domain
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Champ de connaissance ou d’activité.
+    approach_summary: Construire un modèle utile à ses problèmes.
+    similarities: Le périmètre part d’un sens métier cohérent.
+    differences: Evans l’aborde dans la conception de logiciel.
+    flow_position: FLOW emploie cette cohérence pour sa carte métier.
+    source_title: 'Domain-Driven Design Reference: Definitions and Pattern Summaries'
+    source_url: https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+    source_version: Mars 2015
+    source_locator: Definitions ; Entities p.11 ; Value Objects p.12 ; Domain Events p.13 ; Services p.14
+    consulted_on: '2026-09-19'
+    evidence_limits: Résumé de patrons par leur auteur, orienté conception logicielle. Les concepts éclairent le sens métier
+      sans imposer objets de code, services ni bounded contexts au modèle FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Martin Fowler
+    product: Domain-Driven Design
+    element_name: Bounded Context
+    concept_name: Bounded Context
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Périmètre où un modèle et son langage restent cohérents.
+    approach_summary: Expliciter les différences de sens et leurs relations.
+    similarities: La cohérence du vocabulaire aide à comprendre les frontières.
+    differences: Un contexte DDD n’est pas un domaine FLOW par équivalence.
+    flow_position: Aucune architecture applicative n’est déduite du regroupement.
+    source_title: Bounded Context
+    source_url: https://martinfowler.com/bliki/BoundedContext.html
+    source_version: 15 janvier 2014
+    source_locator: Paragraphes sur le vocabulaire et l’exemple meter
+    consulted_on: '2026-09-19'
+    evidence_limits: Retour d’auteur sur les modèles logiciels dans l’approche DDD ; document distinct d’Evans mais même école
+      de pensée, pas preuve de consensus entre cadres.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Traiter ensemble des problèmes métier liés permet d’en comprendre la logique commune. Domaine désigne cet espace
+      cohérent, sans imposer une organisation ni une frontière logicielle.
+    flow_scope: Problèmes, notions et responsabilités qui gagnent à être compris ensemble.
+    flow_approach: Justifier le regroupement par le métier et préciser ses relations avec les autres domaines.
+    synthesis:
+    - Evans emploie domain pour le champ de connaissance ou d’activité auquel s’applique le modèle. Fowler explique ensuite
+      pourquoi un même vocabulaire peut prendre des sens différents dans plusieurs contextes. Les deux invitent à regarder
+      le sens des problèmes avant leur représentation.
+    - FLOW retient le domaine comme périmètre de cohérence métier. Il ne le confond pas avec le bounded context de DDD, qui
+      délimite un modèle utilisé pour concevoir du logiciel ; les frontières applicatives ne sont pas arrêtées par ce terme.
+    examples:
+    - title: Fowler — les différents sens du compteur
+      situation: Dans son exemple d’un fournisseur d’électricité, « compteur » peut désigner l’équipement ou une relation
+        du réseau avec un lieu ou un client.
+      outcome: Le vocabulaire doit être précisé pour éviter des modèles contradictoires.
+      lesson: L’illustration aide FLOW à expliciter les problèmes et notions de chaque domaine ; elle ne prescrit pas ses
+        frontières.
+      source_title: Bounded Context
+      source_url: https://martinfowler.com/bliki/BoundedContext.html
+      source_refs:
+      - U477
+  editorial_notes: TER030 garde sa définition métier courante. Les repères historiques MKT017 / ELM041 / CMP027 sont conservés
+    dans l’entrée et la capture ; les deux documents sont des appuis nouveaux U477, pas une adoption des bounded contexts.
+- id: TER036
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Product receipt and receipt journal
+    concept_name: Product receipt and receipt journal
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Réception enregistrée et trace associée.
+    approach_summary: Enregistrer la quantité et sa référence.
+    similarities: Un événement peut être relié à un document identifiable.
+    differences: Le cas ne généralise pas à tous les événements métier.
+    flow_position: L’obligation fait-document reste une convention FLOW.
+    source_title: Record the receipt of goods on the purchase order
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+    source_version: Documentation évolutive, mise à jour du 1er juillet 2026
+    source_locator: Record receipt of goods, étapes 4–7 ; Review the product receipt journal
+    consulted_on: '2026-09-19'
+    evidence_limits: Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction
+      n’en est déduite.
+    status: proposed
+    source_refs:
+    - U461
+    - ELM285
+    - CMP178
+    - U477
+  - vendor: OASIS
+    product: Universal Business Language
+    element_name: Receipt Advice
+    concept_name: Receipt Advice
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Compte rendu de réception entre partenaires.
+    approach_summary: Rapporter quantités reçues et écarts.
+    similarities: Le document donne une représentation du fait de réception.
+    differences: UBL porte l’échange documentaire, pas le sens plateforme complet.
+    flow_position: FLOW distingue le fait, sa trace et sa notification.
+    source_title: Universal Business Language Version 2.4
+    source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+    source_version: OASIS Standard 2.4, 2024
+    source_locator: §2.3.5.1.1–2.3.5.1.4 Fulfilment ; surtout Receipt Advice Business Rules
+    consulted_on: '2026-09-19'
+    evidence_limits: Standard de documents d’échange ; les exemples ne définissent ni tous les documents ni la convention
+      obligatoire fait-document de FLOW.
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM311
+    - CMP186
+    - U477
+  market_inspiration:
+    choice: Savoir ce qui s’est produit et sur quelle trace s’appuyer rend le suivi métier explicable. Dans le sens plateforme
+      retenu par FLOW, un fait de gestion est toujours associé à un document identifié.
+    flow_scope: Événement métier et document qui en porte la trace.
+    flow_approach: Conserver le lien entre occurrence et représentation, même sans document PDF.
+    synthesis:
+    - Microsoft illustre le couple réception enregistrée et journal de réception. UBL décrit un Receipt Advice qui rapporte
+      au partenaire ce qui a été reçu et les écarts éventuels. Le premier montre une trace dans un produit ; le second un
+      document d’échange.
+    - Ils appuient concrètement le lien entre un événement et un document, sans établir que tout événement du marché suit
+      cette règle. Son caractère obligatoire est le choix FLOW pour le sens plateforme du terme ; notification et fait restent
+      distincts.
+    examples:
+    - title: Microsoft — quatre pièces reçues sur cinq
+      situation: Le scénario Microsoft enregistre quatre pièces reçues sur une commande de cinq.
+      outcome: Le journal de réception matérialise les quantités enregistrées avec une référence documentaire.
+      lesson: FLOW reconnaît le fait « quatre pièces reçues » et le document qui le porte ; leur rôle n’est pas celui du message
+        qui avertit un tiers.
+      source_title: Record the receipt of goods on the purchase order
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+      source_refs:
+      - U477
+- id: TER037
+  market_comparisons:
+  - vendor: OASIS
+    product: Universal Business Language
+    element_name: Despatch Advice / Receipt Advice
+    concept_name: Despatch Advice / Receipt Advice
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Documents structurés d’expédition et de réception.
+    approach_summary: Communiquer un état ou un constat identifié.
+    similarities: Un document n’est pas nécessairement un PDF.
+    differences: UBL définit des échanges particuliers, pas tout objet documentaire.
+    flow_position: FLOW précise le fait ou l’état représenté.
+    source_title: Universal Business Language Version 2.4
+    source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+    source_version: OASIS Standard 2.4, 2024
+    source_locator: §2.3.5.1.1–2.3.5.1.4 Fulfilment ; surtout Receipt Advice Business Rules
+    consulted_on: '2026-09-19'
+    evidence_limits: Standard de documents d’échange ; les exemples ne définissent ni tous les documents ni la convention
+      obligatoire fait-document de FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Product receipt journal
+    concept_name: Product receipt journal
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Trace consultable d’une réception enregistrée.
+    approach_summary: Conserver les détails et leur référence.
+    similarities: L’enregistrement peut porter un document métier.
+    differences: La page ne démontre pas une immutabilité générale.
+    flow_position: Les règles de correction restent celles du type de document.
+    source_title: Record the receipt of goods on the purchase order
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+    source_version: Documentation évolutive, mise à jour du 1er juillet 2026
+    source_locator: Record receipt of goods, étapes 4–7 ; Review the product receipt journal
+    consulted_on: '2026-09-19'
+    evidence_limits: Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction
+      n’en est déduite.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Conserver une représentation compréhensible d’un état ou d’un fait permet de s’y référer. Document, au sens plateforme,
+      peut être un enregistrement structuré ; il ne suppose pas un fichier à lire ou à imprimer.
+    flow_scope: Représentation d’état ou objet non modifiable produit ou capté, selon le cas défini.
+    flow_approach: Identifier ce que le document représente et le distinguer de l’occurrence métier.
+    synthesis:
+    - UBL donne des documents d’échange différents pour l’expédition et la réception. Microsoft produit un journal lors de
+      l’enregistrement des marchandises reçues. UBL insiste sur ce qui est communiqué au partenaire ; Microsoft sur la trace
+      tenue dans le produit.
+    - FLOW retient cette possibilité d’un document structuré, tout en gardant sa définition propre. Ces exemples ne suffisent
+      pas à décider des règles de version, de correction ou d’immutabilité de tous les documents FLOW.
+    examples:
+    - title: UBL — distinguer expédié et reçu
+      situation: UBL sépare Despatch Advice, émis pour l’expédition, et Receipt Advice, émis à la réception.
+      outcome: Le réceptionnaire peut signaler des manquants, des dommages ou des refus.
+      lesson: Les documents représentent des faits différents ; recevoir un avis d’expédition ne prouve pas que les biens
+        ont été reçus.
+      source_title: Universal Business Language Version 2.4
+      source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+      source_refs:
+      - U477
+  editorial_notes: Les règles de correction/version restent à préciser selon l’historique courant ; cette rubrique n’en crée
+    aucune et n’étend pas le catalogue Informations métier.
+- id: TER039
+  market_comparisons:
+  - vendor: Martin Fowler
+    product: Event-driven architecture
+    element_name: Event Notification
+    concept_name: Event Notification
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Message signalant un changement.
+    approach_summary: Informer sans exiger implicitement une réponse précise.
+    similarities: La notification porte une intention d’information.
+    differences: L’article décrit un style d’architecture, pas un processus FLOW.
+    flow_position: La réaction du destinataire garde ses propres règles.
+    source_title: What do you mean by Event-Driven?
+    source_url: https://martinfowler.com/articles/201701-event-driven.html
+    source_version: 7 février 2017
+    source_locator: Event Notification
+    consulted_on: '2026-09-19'
+    evidence_limits: Article de clarification par son auteur ; décrit plusieurs styles, sans faire de la notification un stockage
+      du fait ni garantir sa livraison.
+    status: proposed
+    source_refs:
+    - U477
+  - vendor: CNCF
+    product: CloudEvents
+    element_name: Event / Occurrence
+    concept_name: Event / Occurrence
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Fait signalé et contexte transmis.
+    approach_summary: Décrire le fait dans un format commun.
+    similarities: Plusieurs messages peuvent représenter un même fait.
+    differences: La représentation technique ne définit pas le sens métier du fait FLOW.
+    flow_position: FLOW ne prescrit pas son format pour définir le terme.
+    source_title: CloudEvents Specification
+    source_url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
+    source_version: Version 1.0.2
+    source_locator: 'Terminology : Occurrence, Event, Producer, Consumer'
+    consulted_on: '2026-09-19'
+    evidence_limits: Spécification d’interopérabilité des messages ; ni contrat métier exhaustif ni protocole imposé pour
+      FLOW.
+    status: proposed
+    source_refs:
+    - U477
+  market_inspiration:
+    choice: Prévenir un destinataire de ce qui vient de se produire lui permet de réagir avec les bonnes références. Notification
+      d’événement désigne ce message, distinct du fait lui-même.
+    flow_scope: Message qui signale un fait à un destinataire.
+    flow_approach: Transmettre le contexte utile sans confondre informer et demander une action.
+    synthesis:
+    - Fowler distingue la notification d’événement d’une demande d’action déguisée ; le message peut ne contenir que les références
+      utiles pour consulter les détails. CloudEvents distingue le fait capté par un système de sa représentation transmise
+      et admet plusieurs événements pour ce même fait.
+    - Le premier explique l’intention du message ; le second facilite son échange entre systèmes. FLOW retient l’intention
+      métier et les références nécessaires, sans prescrire de format, de protocole ou de mode de conservation.
+    examples:
+    - title: Illustration FLOW — signaler une réception
+      situation: Une réception a été enregistrée avec son document ; un message avertit le responsable d’une commande concernée.
+      outcome: Le destinataire dispose des références pour consulter le fait et décider de la suite.
+      lesson: 'Le message informe : son émission ne constitue ni une nouvelle réception ni, à elle seule, un ordre de poursuivre.'
+      source_title: What do you mean by Event-Driven?
+      source_url: https://martinfowler.com/articles/201701-event-driven.html
+      source_refs:
+      - U477

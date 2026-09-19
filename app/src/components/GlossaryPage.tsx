@@ -18,7 +18,7 @@ export function GlossaryPage({ model, selected, mode, guideState, onSelect, onRe
   const modelTerms = model.glossary.filter(term => mode === 'meta' ? methodIds.has(term.id) : !methodIds.has(term.id));
   const terms = [
     ...modelTerms.map(term => ({ ...term, label_fr: '', role: '', examples: [] as readonly string[] })),
-    ...(mode === 'meta' ? (glossary?.terms ?? []).map(term => ({ ...term, short_description: term.role ?? '', context: '', notes: '', historical: false, market_comparisons: undefined })) : []),
+    ...(mode === 'meta' ? (glossary?.terms ?? []).map(term => ({ ...term, short_description: term.role ?? '', context: '', notes: '', historical: false, market_comparisons: undefined, market_inspiration: undefined })) : []),
   ].sort((a, b) => (a.label_fr || a.name).localeCompare(b.label_fr || b.name, 'fr'));
   const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('fr');
   const matches = terms.filter(term => normalize(`${term.label_fr} ${plainInlineText(term.name)} ${plainInlineText(term.definition)}`).includes(normalize(query)));
@@ -46,7 +46,7 @@ export function GlossaryPage({ model, selected, mode, guideState, onSelect, onRe
       <section id={`term-${term.id}-definition`}><h3>Définition</h3><p><ModelText text={term.definition}/></p></section>
       {publicText(term.context) && <section><h3>Contexte</h3><p><ModelText text={publicText(term.context)}/></p></section>}
       {term.examples && term.examples.length > 0 && <section><h3>Exemples</h3><ul>{term.examples.map(example => <li key={example}><ModelText text={example}/></li>)}</ul></section>}
-      {(mode === 'model' || term.market_comparisons?.length) && <MarketComparisons id={`term-${term.id}-market_comparisons`} entries={term.market_comparisons}/>}
+      {(mode === 'model' || term.market_comparisons?.length) && <MarketComparisons id={`term-${term.id}-market_comparisons`} entries={term.market_comparisons} inspiration={term.market_inspiration} modelName={term.name}/>}
     </article> : <section className="glossary-empty"><h2>{selected ? 'Terme absent de ce glossaire' : 'Aucun résultat'}</h2><p>Choisis un terme dans la liste.</p></section>}
   </div>;
 }

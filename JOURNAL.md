@@ -1929,3 +1929,162 @@ Benchmark maintenu sur une modification éditoriale de Purchase Order, dans des 
 ## 19 septembre 2026 — contrôle du commit des optimisations et de la navigation
 
 Suite complète de 162 tests Python réussie ; contrôle du lecteur réussi et 40 tests exécutés, dont 37 réussis et trois ignorés pour les liens symboliques Windows. Les 83 tests frontend, le build et la recette sur cinq tailles restent valables sur le code inchangé depuis leur réussite. Validation du modèle sans erreur déjà réalisée sur cet état ; skill release validé et copies projet/personnelle identiques. Sur les 777 fichiers suivis par l’audit initial, 776 restent identiques et seul `modeles/README.md` porte l’ajout documentaire attendu du nouveau parcours. Aucun modèle, accord ou historique de publication modifié.
+
+## 19 septembre 2026 — Sources d’inspiration publié dans Atlas, U474–U476
+
+Release **v014 / 2026-09-19.7** préparée puis activée sur demande U476. Une seule fiche enrichie : Supply Chain Orchestration, avec choix d’ouverture, tableau de cinq sources, synthèse et exemple Oracle des 75 pièces livrables sur 100 attendues. Format C et rédaction retenus en U475 ; accord sur le nom repris après réexamen explicite, nouvelle décision limitée à `market_inspiration`. Les comparaisons détaillées gardent leur statut proposé. Relations, autres fiches et glossaire conservés ; publications antérieures inchangées.
+
+Les 84 tests frontend, 39 tests de contrats concernés et le build avaient réussi sur le code inchangé depuis U475. Préparation et validation après publication : zéro erreur ; vues générées et contrôle serveur réussis. API `/api/status`, `/api/model` et `/api/releases` vérifiées : FLOW Atlas, dépôt attendu, espace release, version .7 / révision 14 et chemin du snapshot correspondant. Les cinq références, trois synthèses, l’exemple attribué et les 110 termes du glossaire sont servis ; les liens de glossaire de la fiche résolvent dans cette même publication. L’index HTTP sert le JavaScript compilé du nouveau format. Pas de redémarrage ni de navigateur lancé ; une page déjà ouverte doit être rechargée pour installer le nouveau code de présentation.
+
+[Note de release](modeles/release/2026-09-19.7/release-notes.md), [rapport figé](modeles/release/2026-09-19.7/changes.json), [réexamen de portée](modeles/revisions/2026-09-19.7/decision-review/assessment.yaml). Aucun commit ni push effectué.
+
+## 19 septembre 2026 — reprise complète des Sources d’inspiration, U477
+
+Format métier retenu sur Supply étendu aux 247 fiches visibles du périmètre : 137 objets du modèle et 110 termes. La fiche Supply déjà validée est conservée ; 246 fiches sont rédigées, dont 127 auparavant sans référence. Chaque fiche présente un choix, les noms/périmètres/approches des sources, une comparaison entre elles et avec FLOW, puis un exemple attribué ou une illustration FLOW explicite. 502 comparaisons nouvelles ou réexaminées mobilisent 156 documents primaires distincts ; références trop générales remplacées, limites d’accès consignées, conventions locales et recouvrements partiels expliqués.
+
+Relecture croisée et intégration unique dans les YAML d’autorité ; noms, définitions, responsabilités, relations, accords et univers Supply inchangés. Les rapprochements restent proposés. Index de 1 906 sources actualisé ; validation sans erreur, 10 tests des contrats Sources d’inspiration réussis et restitution backlog régénérée avec 247 rubriques. 613 fichiers protégés conservés octet par octet. Aucun build nécessaire sur le code applicatif inchangé, aucune release, aucun commit ni push ; Atlas reste sur v014 / 2026-09-19.7.
+
+[Rapport et preuves](audits/2026-09-19-sources-inspiration-U477/rapport.md), [documents consultés](audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). MKT57–MKT66, ELM327–ELM482, CMP189–CMP193. Catalogue Informations métier masqué et audit des comportements conservés sans extension ni réouverture.
+
+## 19 septembre 2026 — autorité locale des références et proposition de nom, U478–U480
+
+Laurent souhaite nommer le périmètre par sa fonction et précise que les référentiels portent la source de vérité locale de Supply Chain Orchestration, les sources de vérité d’entreprise restant externes. Clarification inscrite dans les conventions et la rubrique Sources d’inspiration de `business-references`. Recherche primaire auprès d’EDM Council et d’Oracle : MKT67–68, ELM483–485, CMP194 ; trois documents avec éditions et passages identifiés.
+
+Authoritative Data Domain recommandé, avec alternatives et définition fonctionnelle dans [la proposition](modeles/backlog/authoritative-data-review-U478.yaml). L’autorité est attachée à un périmètre défini, pas nécessairement bornée au local. L’exemple du seuil distingue porter la valeur applicable et décider de cette valeur. Nom canonique, groupe de présentation, référentiels distincts, rattachements et accords préservés ; aucune conversion de groupe en domaine ni déplacement de capacité. [Fiche précédente](audits/2026-09-19-authoritative-data-U478/before-business-references.yaml) conservée ; publications inchangées.
+
+Index actualisé à 1 915 sources, validation zéro erreur, dix tests Sources d’inspiration réussis, restitution backlog régénérée et contrôles de portée/liens réussis. Aucune release, aucun build, commit, push ni intervention serveur.
+
+## 19 septembre 2026 — propositions de noms des niveaux, U481
+
+Comparaison du découpage courant avec SAP Reference Business Architecture, l’analyse de domaine Microsoft, EDGY, le glossaire BIZBOK 15.0 et le catalogue de processus Dynamics 365. Domain → Area → Capability → Behavior recommandé pour la proximité avec les regroupements Supply SAP ; Domain → Subdomain constitue l’alternative principale. Capability Group / Capability Area, Space / Zone et maintien de Behavior sont explicités dans [la proposition](modeles/backlog/model-level-naming-U481.yaml).
+
+Exemple constant : Supply Chain Orchestration → Inventory Optimization → Replenishment Decision → Target-based Replenishment. Les noms des niveaux ne changent ni la responsabilité locale des références U479 ni automatiquement le groupe Business References ; Authoritative Data proposé comme nom indépendant du rang. Cinq comparaisons méthodologiques documentées, MKT69–70 et ELM486–490 / CMP195. Modèle et glossaires conservés octet par octet, propositions séparées ; index à 1 924 sources et validation zéro erreur. Aucun changement d’interface, release, commit ou push ; audit des comportements non rouvert.
+
+## 19 septembre 2026 — Domain, Area et Authoritative Data adoptés, U482
+
+Backlog et lecture Atlas adaptés à Domain → Area → Capability → Behavior : Supply Chain Orchestration devient le Domain ; six anciens domaines deviennent Areas. Business References renommé Authoritative Data, groupe et six référentiels conservés. Identifiants et responsabilités inchangés, 346 relations du backlog de mêmes types et extrémités, exemples illustratifs compris ; une qualification reformulée à sens constant. Guide, glossaires, feuille de route et instructions courantes actualisés, avec sources historiques et exemples pédagogiques conservés.
+
+Contrats et rendu compatibles avec les anciennes publications. Tests ciblés backend, guide, glossaire et frontend réussis ; validation finale sans erreur et build réussi. Projection du backlog vérifiée : six Areas et 210 liens métier conservés aux trois niveaux. Empreintes et portées des deux champs approuvés actualisés explicitement pour U482, anciennes valeurs capturées. Les publications restent inchangées ; aucun navigateur, release, commit ou push.
+
+[Rapport, portée et vérifications](audits/2026-09-19-domain-area-U482/rapport.md). Atlas affiche toujours v014 / 2026-09-19.7 ; la nouvelle nomenclature du backlog sera visible à la prochaine release.
+
+
+## 19 septembre 2026 — publication des inspirations et niveaux Domain / Area, U483
+
+Release **v015 / 2026-09-19.8** préparée et activée sur demande U483. Les Sources d’inspiration couvrent désormais les 247 fiches visibles (137 objets et 110 termes), y compris celles sans référence auparavant. Authoritative Data et Domain → Area → Capability → Behavior sont publiés selon U482, avec le guide méthodologique 2026-09-19.3. Les six référentiels restent distincts ; les 47 capacités, 76 comportements et 338 relations sont préservés, avec une qualification reformulée à sens constant.
+
+123 accords repris automatiquement ; 120 après réexamen explicite des champs, frontières, relations et termes liés. Deux décisions nouvelles portent uniquement sur les valeurs modifiées explicitement adoptées U475/U482. Les autres inspirations restent proposées. La projection du guide a été corrigée pour conserver les références contextuelles utiles sans embarquer les métadonnées internes du glossaire méthodologique ; sa version antérieure est capturée.
+
+Préparation et validation finale sans erreur, restitutions générées et contrôle serveur réussi. Atlas sert le snapshot .8 / révision 15, ses 247 inspirations et son guide .3 ; nœuds, relations et glossaire API identiques à la publication. Le guide de .7 reste .2. 558 fichiers historiques vérifiés sans changement. HTML et JavaScript servis conformes au build U482. Aucun redémarrage nécessaire ; recharger une page déjà ouverte pour installer ce nouveau code frontend.
+
+[Rapport et vérifications](audits/2026-09-19-release-U483/rapport.md), [note figée](modeles/release/2026-09-19.8/release-notes.md), [réexamen archivé](modeles/revisions/2026-09-19.8/decision-review/assessment.yaml). Aucun navigateur lancé, commit ou push effectué.
+
+
+## 19 septembre 2026 — fiche Authoritative Data complétée et publiée, U484
+
+Omission signalée après v015 : les Sources d’inspiration étaient présentes mais la fiche métier restait vide. Ajout de la finalité, de la définition, du périmètre et des limites, de la distinction autorité locale / maîtrise d’entreprise et d’un exemple de conditionnement. Les six référentiels restent distincts ; aucune nouvelle responsabilité ni modification des rapprochements marché. Passages EDM Council CDMC et Oracle ORA revérifiés, appuis ELM484/ELM485/CMP194 conservés.
+
+Correction publiée en **v016 / 2026-09-19.9** dans le prolongement de la demande U483. Un seul nœud modifié, nom repris après réexamen explicite, rédaction ajoutée proposée. Validation zéro erreur, vues générées et serveur contrôlé. API Atlas vérifiée : fiche complète, snapshot .9 / révision 16, guide .3 et autres nœuds, relations et glossaire inchangés. 614 fichiers historiques préservés. Pas de modification frontend, build, navigateur, redémarrage, commit ou push.
+
+[Rapport et preuves](audits/2026-09-19-authoritative-data-U484/rapport.md) ; [note figée](modeles/release/2026-09-19.9/release-notes.md).
+
+
+## 19 septembre 2026 — Orders comme activation et offre du domaine, U485/U486
+
+Laurent relie l’Area Order Management aux demandes, commandes et dossiers qui activent Supply Chain Orchestration et expriment son offre de services. Recommandation proposée : conserver cette responsabilité pour rendre explicites les prises en charge offertes, leur contenu et leur progression. Comparaisons consultées : séparation capture/orchestration et point d’entrée Production de TM Forum, Case et CaseFile/CasePlanModel CMMN, business artifacts IBM et processus centrés sur les objets. MKT71–72, ELM491–494, CMP196 ; ELM011 réexaminé sans réactiver les anciennes couches.
+
+[Proposition structurée et précision U486](modeles/backlog/order-management-positioning-U485.yaml). Aucun changement du modèle, des glossaires ou de la publication v016 ; aucun renommage, déplacement, release ou build.
+
+
+## 19 septembre 2026 — nom de l’Area des demandes et Backing Services, U487/U488
+
+Management est jugé trop vague par Laurent pour délimiter D04. Recommandation précédente révisée : étudier Supply Requests (intention d’activation) ou Orders (nom sobre), sans renommage appliqué. Appuis Oracle et TM Forum comparés, différences de périmètre explicites dans CMP197. Laurent confirme que Service Catalog décrit les Backing Services appelés par l’orchestration, distincts de l’offre de prises en charge du Domain. Proposition U485 enrichie avec options, limites et portée U488 ; modèle, glossaires et publication v016 inchangés.
+
+
+## 19 septembre 2026 — piste Service Orders sans Management, U489
+
+Laurent préfère l’approche Service Order de TM Forum. Proposition : Service Orders pour l’Area D04, avec distinction explicite des Backing Service Orders confiés aux exécutants. Collision D07.b / TER066 / TER075 identifiée ; aucune substitution automatique. Notices primaires TMFC007 et TMF641 relues, rapprochement et limites ajoutés à CMP197 et à l’annexe U485. Modèle, glossaires, rattachements et publication courante inchangés.
+
+
+## 19 septembre 2026 — demandes internes d’optimisation, U490
+
+Laurent propose des demandes internes activant des opérations orchestrées, illustrées par analyse, simulation, validation et activation d’affectations. Proposition tracée dans l’annexe U485 ; notion commune de prise en charge, types spécifiques et origine distincte de l’intention. Parcours rapproché de D03.p, D03.o et D02.e ; autorisation et dossier restent à définir. Comparaison primaire SAP/Oracle CMP198. Une éventuelle extension de Service Orders dépasse un renommage neutre ; aucun changement du modèle, des parents ou de la release, aucun audit rouvert.
+
+
+## 19 septembre 2026 — réactions du domaine, clarification U491
+
+Laurent précise que l’optimisation du carnet peut réagir à sa situation ou à une promesse devenue intenable, sans sollicitation du commerce. L’analyse U490 est corrigée : distinguer déclencheur, dossier éventuel et processus ; ne pas imposer un Order interne préalable. Annexe U485 et CMP198 complétés, précédents échanges conservés. Aucun changement du modèle ou de la publication.
+
+
+## 19 septembre 2026 — demandes internes et réactions, U492–U495
+
+Origine interne/externe des transferts confirmée par Laurent ; vérification primaire SAP, Oracle et Salesforce des traitements réactifs et demandes internes. U494/U495 corrigent une opposition trop forte entre demande et réaction : une détection peut engendrer une demande backoffice, illustrée par la vérification d’identité après détection de fraude. Cet exemple reste attribué à Laurent. Sources MKT73, ELM495–498, CMP199 et annexe U485 enrichis ; les conditions d’automatisation et limites interproduits sont explicites. Proposition de périmètre à instruire ; aucun renommage, changement de modèle canonique, de glossaire ou de publication.
+
+
+## 19 septembre 2026 — Service Requests et Backing Services, U496/U497
+
+Accord appliqué à D04 : Service Requests et intention présentée, avec demandes internes issues de réactions. U497 corrige la reprise initialement trop étroite : Service Catalog explicite l’offre de Backing Services ; D07.b devient Backing Service Orders ; TER066 et TER075 distinguent demande de prestation et prestation. Fiches, inspirations, liens canoniques, glossaire méthodologique et conventions actualisés. Noms et responsabilités des autres capacités, identifiants et relations préservés ; aucune nouvelle capacité, release ou publication. Les valeurs antérieures et portées d’accord sont conservées dans audits/2026-09-19-service-requests-U496/.
+
+
+## 19 septembre 2026 — lecture directe du Périmètre, U498
+
+La rubrique partagée des fiches Atlas devient Périmètre. Le paragraphe d’ouverture apparaît dans un encart menthe FLOW, puis les paragraphes suivants sont visibles sans dépliage ni répétition du résumé. Liens, texte public et contenu de la publication consultée conservés. Convention éditoriale ajoutée : le périmètre expose inclusions, exclusions, frontières et principes. Changement de présentation ; aucune release métier nécessaire.
+
+
+## 19 septembre 2026 — demandes internes, comportements et origine, U499/U500
+
+Proposition documentée d’Order Backlog Optimization Request dans Service Requests : deux angles de comportements, déclenchement et activité, sans hiérarchie supplémentaire ni cycle obligatoire. Références Oracle/SAP reconsultées et U397/U398 réappliquées pour expliciter le métier de chaque demande. Deux indicateurs d’origine Frontoffice/Backoffice proposés relativement au Domain, non exclusifs pour les familles telles que Transfer Order. Événement externe et initiative interne restent distincts. Annexe internal-service-requests-U499.yaml et CMP201 ; aucune modification canonique ou publication.
+
+
+## 19 septembre 2026 — demande d’optimisation et indicateurs adoptés, U501
+
+Création de D04.s Order Backlog Optimization Request et de ses six comportements BHV088–093 ; deux angles de lecture Déclenchement et Activité, sans niveau supplémentaire. Origines explicitement renseignées : Backoffice pour la nouvelle demande, Frontoffice et Backoffice pour Transfer Order. Trois liens qualifient les coopérations avec Planning, Decision et Supply Assignment ; anciennes relations préservées. Chaque nouvelle fiche dispose de deux références primaires et d’une illustration FLOW.
+
+Schéma, validation Python, restitution Markdown et frontend prennent en charge les métadonnées facultatives sans inférence sur les anciennes publications. Les accords restent qualifiés champ par champ ; détails non présentés et traductions anglaises gardent leur statut éditorial. Captures dans audits/2026-09-19-internal-request-U501/ ; aucune release, aucun changement au catalogue Information ni réouverture d’audit.
+
+
+## 19 septembre 2026 — publication U502, Urbanisation v017
+
+Release 2026-09-19.10 activée : Service Requests, Backing Services, Order Backlog Optimization Request et ses six comportements, indicateurs d’origine explicites. Snapshot de 144 objets, 48 capacités, 82 comportements, 348 relations et 110 termes ; guide .4 associé. Périmètre sans dépliage et nouveau frontend servis.
+
+232 accords conservés automatiquement, dix repris après réexamen, vingt nouvelles décisions sourcées et deux reprises historiques à portée réduite. Compléments éditoriaux toujours proposés. Préparation, publication, validation et contrôle serveur sans erreur ; API et assets vérifiés, 700 fichiers historiques inchangés. Aucun redémarrage, navigateur, commit ou push. Rapport : audits/2026-09-19-release-U502/rapport.md.
+
+
+## 19 septembre 2026 — refactoring du parcours de release, U504
+
+Ajout de release.py pour une préparation en une passe puis publication, contrôle Atlas et compte rendu chronométré. Accords explicites enregistrables en amont ; report conservateur à contexte métier identique ; réexamen partiel natif des accords composites. Guide explicite figé dans la préparation, reprises sans republication et signalement des écritures incomplètes. Instructions et skill personnel synchronisés.
+
+101 tests distincts réussis et validation sans erreur. Mesure ponctuelle sur copies isolées : préparation 37,40 → 22,80 s, deux calculs de candidat → un, un réexamen → aucun ; mêmes valeurs métier et portées adoptées. 772 fichiers historiques inchangés ; Atlas reste sur v017. Aucun accord réel, release, commit, push ou redémarrage. Détail : audits/2026-09-19-release-workflow-U504/rapport.md.
+
+## 19 septembre 2026 — personnes, rôles et visibilité des référentiels, U505/U506
+
+Party / Role et son ingestion commencent désormais par les personnes physiques et morales et leur participation aux accords et opérations ; Party et Role sont alignés dans le glossaire. SAP Business Partner est documenté, avec Informatica Customer 360, OMG Commons et FIBO. GS1 est retiré des inspirations actives de Party, sans effacer les preuves antérieures. Les limites des guides Informatica indexés et la différence entre Party au sens large et le périmètre juridique FLOW sont explicites. Noms et accords antérieurs préservés.
+
+Six capacités de connaissance Visibility ajoutées comme propositions au backlog, chacune avec deux documents primaires, un exemple et un rattachement explicite à son référentiel. Consultation distincte de maîtrise externe, de calcul de disponibilité, de consommation contractuelle et d’exécution. Aucun comportement ajouté. Les options de nom et l’évolution d’Authoritative Data vers une Area sont documentées ; la structure de groupe reste inchangée en attente de décision. Capture antérieure et relevé documentaire : audits/2026-09-19-party-reference-U505/. Aucune publication, modification frontend, commit ou push.
+
+
+## 19 septembre 2026 — Authoritative Data devient une Area, U507
+
+Accord appliqué : Authoritative Data est une Area sœur des six autres Areas de Supply Chain Orchestration ; ses six référentiels restent distincts. Le contrat de présentation accepte explicitement Area → Reference sans autoriser une Area imbriquée ; les capacités gardent leur référentiel parent. Les six Visibility sont adoptées sur name/nature avec leurs rattachements. Party / Role conserve son nom et sa définition restituée est adoptée. Rédactions détaillées et rapprochements marché restent qualifiés séparément.
+
+Le registre amont des accords capture les valeurs et leur contexte final ; l’accord structurel kind est tracé dans l’annexe adoption_U507. Conventions, vocabulaire méthodologique et guide de travail sont alignés. Atlas préserve la présentation des références sous une Area et la lecture du groupe historique. Capture : audits/2026-09-19-authoritative-area-U507/. Aucun nouvel identifiant métier, Behavior, release, commit ou push.
+
+
+## 19 septembre 2026 — Catalog, Assortment et Agreement, U508
+
+Discussion documentée : D12 désigne une offre produits ; Product Catalog proposé comme nom plus explicite. SAP/Microsoft éclairent un assortiment affecté à des destinataires et périodes ; Oracle montre des accords avec ou sans détail des produits. Un assortiment convenu peut être relié à Agreement, sans faire de tout assortiment un composant contractuel. Annexe catalog-assortment-review-U508.yaml, CMP205. Aucun changement au modèle, au glossaire, aux accords U507 ou aux publications ; aucune extension du chantier Commerce ni du catalogue Information.
+
+
+## 19 septembre 2026 — Product Catalog et Assortment, U509
+
+Catalog devient Product Catalog, avec déclinaison des noms de ses capacités et de son terme de glossaire. Assortment D16 / TER087 est ajouté comme référence distincte sous Authoritative Data. Agreement peut le référencer ou en figer la sélection convenue ; lien métier qualifié, sans composition universelle. Ingestion et Visibility sont décrites comme capacités proposées selon la convention des référentiels ; conception commerciale et maîtrise d’entreprise restent externes. Aucun Behavior créé.
+
+Les accords U507 restent conservés comme preuves. Le changement de contexte exige un réexamen explicite : le registre permet désormais un remplacement append-only des intentions non publiées, à cible identique et sans extension de champs, ainsi qu’une écriture groupée atomique. Aucune intention périmée n’est reprise automatiquement. Capture : audits/2026-09-19-assortment-U509/. Aucune release, commit ou push.
+
+
+<!-- release-run:2026-09-19.11 -->
+## Publication 2026-09-19.11
+
+Sources : U510. État : published_checks_failed. Atlas vérifié : True. Détail : `.runtime/release-runs/2026-09-19.11/completion.md`.
+
+Reprise des contrôles de cette même version : état final `published`, aucune erreur et Atlas vérifié. Le validateur renvoyait un dictionnaire que le parcours regroupé déstructurait comme un tuple ; correction du lecteur de résultat et ajout de deux tests de régression. Aucune seconde publication. Les sources embarquées U507/U509 du guide ont été complétées avant figement. Deux fixtures de tests anciens ont également été ajustées au format Sources d’inspiration. Suite Python : 242 tests couverts avec rejeu des modules corrigés ; Atlas : 93 tests réussis, build déjà vérifié sur le même code frontend. Guide publié : 2026-09-19.5.

@@ -1778,3 +1778,192 @@ U472 — Codex, 19 septembre 2026. Cibles : retrait de universe-case et TER067, 
 Constats : ELM323 (MKT02) décrit la notion de service exposé ; ELM324 (MKT14) décrit le dossier de traitement client. Interprétation : ni un service ni un dossier ne justifient à eux seuls un univers réunissant les grands processus transverses de l’entreprise. Les deux sources éclairent des concepts différents, pas deux taxonomies concordantes. Appuis méthodologique et sémantique partiels ; aucune équivalence Business Services/Commerce.
 
 Choix local demandé par Laurent : retirer l’univers vide et différer le commerce après la Supply Chain. Le terme Case est conservé sans rattachement à cet univers ; son périmètre générique dépasse l’exemple Microsoft. Bénéfice : supprimer une structure sans contenu et concentrer la revue. Compromis : les autres responsabilités de l’entreprise restent hors du périmètre étudié. Le retrait est adopté par U472 ; les reformulations et rapprochements restent éditoriaux, sans validation globale ni publication.
+
+### CMP188
+
+U474/U475 — Codex, 19 septembre 2026. Cible : `universe-supply`, backlog courant comparé à la publication 2026-09-19.6 ; état antérieur du modèle couvert par Git avant ce lot. Appuis ELM292/ELM293/ELM294 (CSCMP, Microsoft, Oracle), ELM325 (recherche, MKT55) et ELM326 (SCOR, MKT56).
+
+Constats : les sources documentent une discipline, une suite logicielle, un module, un rôle de prestataire et un processus de référence. Interprétation : elles éclairent une idée de coordination avec des frontières différentes. CSCMP et Microsoft couvrent un ensemble large ; SCOR et la recherche éclairent l’organisation entre acteurs ; le module Oracle partage le nom FLOW sans reprendre son regroupement de responsabilités.
+
+Recommandation retenue par Laurent en U475 : format C, choix FLOW en deux phrases, tableau nom/périmètre/approche, synthèse entre sources et avec FLOW, puis exemple Oracle des 75 pièces livrables sur 100 attendues avec lecture FLOW distincte. Bénéfice : compréhension immédiate pour métiers et PO ; compromis : synthèse courte et références détaillées consultables. Le champ `market_inspiration` et les résumés de lecture portent le contenu présenté. L’accord reste borné à celui-ci ; les qualifications bibliographiques et descriptions détaillées non présentées restent proposées. Aucun consensus, conformité, changement de responsabilité ou déploiement déduit ; aucune extension aux autres fiches. [Discussion et passages consultés](sources-inspiration-universe-supply-U474.md).
+
+
+### CMP189
+
+U477 — Codex, 19 septembre 2026. Lot orders, 65 fiches du backlog courant ; état avant intervention conservé dans [before/](../audits/2026-09-19-sources-inspiration-U477/before/). Les [correspondances détaillées](../audits/2026-09-19-sources-inspiration-U477/orders-output.yaml) donnent pour chaque cible le nom natif, la relation, les similitudes, différences, choix FLOW, éditions, passages et limites. Le [relevé de consultation](../audits/2026-09-19-sources-inspiration-U477/orders-sources.yaml) distingue constats et exemples attribués des illustrations FLOW.
+
+Interprétation et adaptation éditoriale proposées : choix d’ouverture, tableau nom/périmètre/approche, comparaison entre sources et avec FLOW, cas concret. Bénéfice : permettre aux métiers et PO de comprendre le choix sans connaître les produits. Compromis : synthèse courte, détails et limites de preuve accessibles dans les références. Aucun changement de nom, de responsabilité, de parent, de réalisation installée ou d’accord antérieur ; aucune nouvelle validation de ces correspondances. U477 autorise leur rédaction, pas leur adoption globale. Les anciennes valeurs sont préservées dans la capture antérieure.
+
+
+### CMP190
+
+U477 — Codex, 19 septembre 2026. Lot inventory, 70 fiches du backlog courant ; état avant intervention conservé dans [before/](../audits/2026-09-19-sources-inspiration-U477/before/). Les [correspondances détaillées](../audits/2026-09-19-sources-inspiration-U477/inventory-output.yaml) donnent pour chaque cible le nom natif, la relation, les similitudes, différences, choix FLOW, éditions, passages et limites. Le [relevé de consultation](../audits/2026-09-19-sources-inspiration-U477/inventory-sources.yaml) distingue constats et exemples attribués des illustrations FLOW.
+
+Interprétation et adaptation éditoriale proposées : choix d’ouverture, tableau nom/périmètre/approche, comparaison entre sources et avec FLOW, cas concret. Bénéfice : permettre aux métiers et PO de comprendre le choix sans connaître les produits. Compromis : synthèse courte, détails et limites de preuve accessibles dans les références. Aucun changement de nom, de responsabilité, de parent, de réalisation installée ou d’accord antérieur ; aucune nouvelle validation de ces correspondances. U477 autorise leur rédaction, pas leur adoption globale. Les anciennes valeurs sont préservées dans la capture antérieure.
+
+
+### CMP191
+
+U477 — Codex, 19 septembre 2026. Lot promising, 40 fiches du backlog courant ; état avant intervention conservé dans [before/](../audits/2026-09-19-sources-inspiration-U477/before/). Les [correspondances détaillées](../audits/2026-09-19-sources-inspiration-U477/promising-output.yaml) donnent pour chaque cible le nom natif, la relation, les similitudes, différences, choix FLOW, éditions, passages et limites. Le [relevé de consultation](../audits/2026-09-19-sources-inspiration-U477/promising-sources.yaml) distingue constats et exemples attribués des illustrations FLOW.
+
+Interprétation et adaptation éditoriale proposées : choix d’ouverture, tableau nom/périmètre/approche, comparaison entre sources et avec FLOW, cas concret. Bénéfice : permettre aux métiers et PO de comprendre le choix sans connaître les produits. Compromis : synthèse courte, détails et limites de preuve accessibles dans les références. Aucun changement de nom, de responsabilité, de parent, de réalisation installée ou d’accord antérieur ; aucune nouvelle validation de ces correspondances. U477 autorise leur rédaction, pas leur adoption globale. Les anciennes valeurs sont préservées dans la capture antérieure.
+
+
+### CMP192
+
+U477 — Codex, 19 septembre 2026. Lot foundations, 13 fiches du backlog courant ; état avant intervention conservé dans [before/](../audits/2026-09-19-sources-inspiration-U477/before/). Les [correspondances détaillées](../audits/2026-09-19-sources-inspiration-U477/foundations-output.yaml) donnent pour chaque cible le nom natif, la relation, les similitudes, différences, choix FLOW, éditions, passages et limites. Le [relevé de consultation](../audits/2026-09-19-sources-inspiration-U477/foundations-sources.yaml) distingue constats et exemples attribués des illustrations FLOW.
+
+Interprétation et adaptation éditoriale proposées : choix d’ouverture, tableau nom/périmètre/approche, comparaison entre sources et avec FLOW, cas concret. Bénéfice : permettre aux métiers et PO de comprendre le choix sans connaître les produits. Compromis : synthèse courte, détails et limites de preuve accessibles dans les références. Aucun changement de nom, de responsabilité, de parent, de réalisation installée ou d’accord antérieur ; aucune nouvelle validation de ces correspondances. U477 autorise leur rédaction, pas leur adoption globale. Les anciennes valeurs sont préservées dans la capture antérieure.
+
+
+### CMP193
+
+U477 — Codex, 19 septembre 2026. Lot references, 58 fiches du backlog courant ; état avant intervention conservé dans [before/](../audits/2026-09-19-sources-inspiration-U477/before/). Les [correspondances détaillées](../audits/2026-09-19-sources-inspiration-U477/references-output.yaml) donnent pour chaque cible le nom natif, la relation, les similitudes, différences, choix FLOW, éditions, passages et limites. Le [relevé de consultation](../audits/2026-09-19-sources-inspiration-U477/references-sources.yaml) distingue constats et exemples attribués des illustrations FLOW.
+
+Interprétation et adaptation éditoriale proposées : choix d’ouverture, tableau nom/périmètre/approche, comparaison entre sources et avec FLOW, cas concret. Bénéfice : permettre aux métiers et PO de comprendre le choix sans connaître les produits. Compromis : synthèse courte, détails et limites de preuve accessibles dans les références. Aucun changement de nom, de responsabilité, de parent, de réalisation installée ou d’accord antérieur ; aucune nouvelle validation de ces correspondances. U477 autorise leur rédaction, pas leur adoption globale. Les anciennes valeurs sont préservées dans la capture antérieure.
+
+### CMP194
+
+U478/U479 — Codex, 19 septembre 2026. `business-references`, backlog courant : ELM483–485 apportent un appui sémantique et de gouvernance au nom proposé Authoritative Data Domain. [Proposition structurée](../modeles/backlog/authoritative-data-review-U478.yaml) : recommandation, alternatives, frontière et exemple du seuil de réassort. Trois comparaisons consignées sur la fiche ; [état précédent](../audits/2026-09-19-authoritative-data-U478/before-business-references.yaml) conservé.
+
+U479 précise la responsabilité locale : les sources d’entreprise restent externes et les référentiels portent ce qui fait foi dans l’univers. Le bénéfice du nom proposé est d’exprimer cette utilité sans classer uniquement les données par nature. Compromis : expliquer Authoritative et préciser l’exclusion des transactions courantes. Le nom n’est pas encore adopté ; nature de groupe, références distinctes, capacités, rattachements et accords inchangés. Porter un paramètre applicable et décider de sa valeur restent deux responsabilités différentes ; l’exemple du seuil propose une frontière sans déplacer sa gestion. Aucun consensus de découpage ni conformité aux référentiels cités affirmé. Les comparaisons antérieures GS1/Microsoft restent documentées dans CMP193 et la capture, mais les inspirations présentées privilégient désormais l’autorité locale.
+
+
+### CMP195
+
+U481 — Codex, 19 septembre 2026. Cibles : noms des niveaux du modèle courant, MOD008 Universe, MOD006 Capability Behavior et exemple universe-supply → D05 → D05.e → BHV084. ELM486–490 : appuis méthodologiques distincts, sans équivalence globale de catalogue. [Proposition YAML](../modeles/backlog/model-level-naming-U481.yaml) : Domain → Area → Capability → Behavior recommandé ; Domain → Subdomain comme alternative principale, puis Capability Group / Capability Area et limites de Space / Zone.
+
+Bénéfice : nommer les périmètres selon leur responsabilité et rendre les niveaux lisibles. Compromis : Area exige une définition locale ; un comportement n’est pas une sous-capacité automatique. Le nom propre Authoritative Data peut être séparé de son type. Proposition uniquement : aucun nom canonique, identifiant, rattachement, responsabilité, accord ou publication modifié. Groupes de présentation et périmètres de responsabilité restent distingués ; la discussion ne rouvre pas l’audit U431.
+
+Complément U482 — Laurent adopte Authoritative Data et Domain → Area → Capability → Behavior. La montée de Domain et le passage des six anciens domaines en Areas sont appliqués à responsabilités constantes. Cet accord adopte le vocabulaire proposé en CMP195, pas l’ensemble des correspondances externes ni toutes les définitions explicatives. Historique du choix et valeurs antérieures conservés dans [la réalisation U482](../audits/2026-09-19-domain-area-U482/rapport.md).
+
+
+## CMP196
+
+**Objet :** Order Management D04 comme responsabilité de prise en charge des demandes, distincte des parcours qui les satisfont ; discussion U485, 19 septembre 2026. **Éléments :** ELM011 (MKT10), ELM491–492 (MKT19), ELM493 (MKT71), ELM494 (MKT72). **Relations :** recouvrement partiel TM Forum ; appuis conceptuels CMMN, artifacts et processus centrés sur les objets.
+
+TMFC002/TMFC003 documentent une séparation proche entre capture/validation et orchestration ; elle réfute une absence générale de distinction dans le marché sans démontrer un équivalent exact à D04. CMMN éclaire le dossier mais inclut son plan de traitement. Les business artifacts éclairent données et cycle de vie ; l’approche object-centric explique les correspondances multiples entre dossiers et parcours. Catalogues, types de demandes et dossiers concrets restent distincts.
+
+**Recommandation proposée par Codex :** conserver l’Area pour la responsabilité métier de tenir le sens, les règles d’évolution et le reste à satisfaire des demandes. La liste des familles d’Orders donne une lecture des prises en charge offertes, pas la liste exhaustive des processus ou de tous les services. D07.b reste dans D06 ; D14 décrit l’offre des exécutants. **Limites :** références télécom, notation et travaux scientifiques ; aucune équivalence globale, conformité, adoption de moteur ou couverture installée déduite. Aucune absence de marché ou innovation revendiquée.
+
+[Proposition structurée, différences et sources](../modeles/backlog/order-management-positioning-U485.yaml). Statut proposé ; aucun changement du nom, des parents, des capacités ni de la publication courante.
+
+
+**Précision U486 de CMP196 :** Laurent met l’accent sur la fonction d’activation du domaine : les familles d’Orders expriment ce que l’on peut lui demander, donc une lecture de son offre de services. TMFC007, décrit comme point d’entrée du domaine Production, constitue un appui direct à cette intuition. L’interprétation proposée distingue type de prise en charge, demande concrète et parcours de réalisation ; elle conserve le sens de l’offre rendu par le Domain, distinct des prestations d’exécutants D14. Ce point enrichit la recommandation U485 sans adopter les frontières télécom ni modifier D04.
+
+
+## CMP197
+
+**Objet :** nom de D04 après objection U487 au terme Management et clarification U488 des Backing Services. **Sources :** ELM364/MKT20 (lecture complémentaire Oracle 25C) et ELM491/MKT19 (TMFC002 relu) ; URL, éditions et localisateurs dans [la proposition](../modeles/backlog/order-management-positioning-U485.yaml). Consultation : 19 septembre 2026. Auteur : Codex. Statut : proposé.
+
+**Comparaison :** Supply Request nomme chez Oracle une sollicitation de création d’approvisionnement ; D04 couvre un ensemble plus large de demandes, dont ventes et retours. TMFC002 distingue la responsabilité de capture/validation de la livraison, mais conserve aussi une clôture commerciale : un titre de composant ne décrit pas toute sa frontière. Ces appuis lexicaux et fonctionnels ne prouvent aucun nom de marché exactement équivalent aux neuf capacités de D04.
+
+**Recommandation :** nommer l’Area par les demandes qu’elle porte. Supply Requests privilégie leur fonction d’activation ; Orders conserve plus simplement le vocabulaire courant. Book évoque surtout le carnet ; Intake/Capture met trop l’accent sur l’entrée. Lifecycle/Governance ne résout pas complètement l’intention recherchée. L’emploi proposé de Supply Requests pour cette Area reste un choix local explicité, sans revendication de standard ou d’innovation. Aucun renommage appliqué. U488 confirme séparément Service Catalog comme catalogue des Backing Services mobilisés par l’orchestration.
+
+
+**Précision U489 de CMP197 :** préférence utilisateur pour Service Order inspiré de TM Forum, sans Management. Service Orders au pluriel devient la recommandation de nom pour D04. Le rôle d’entrée du domaine TMFC007 et la notion de demande de service TMF641 sont proches de l’intention FLOW, tandis que l’orchestration incluse dans TMFC007 reste distincte dans notre modèle. TER066 et D07.b utilisent déjà Service Order pour les demandes aux exécutants ; Backing Service Orders est proposé pour qualifier ce second usage, sans assimilation à une appellation TM Forum. Aucun renommage, transfert de responsabilité ni objet universel adopté. D14 conserve le rôle de catalogue des Backing Services confirmé U488.
+
+
+## CMP198
+
+**Objet :** U490, demandes internes de pilotage et parcours d’optimisation Supply ; hypothèse d’extension de la piste Service Orders. Auteur : Codex, 19 septembre 2026 ; statut proposé. **Sources primaires reconsultées :** ELM287/MKT13, [SAP Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4), scénarios, statuts, modes Normal/Preview/Simulation ; ELM357/MKT20, [Oracle Key Actions on Orders 25D](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html), Plan Run, Review, Simulation, Release Actions. SAP Help Compare Supply Assignment Runs a aussi été trouvé par index, mais son ouverture directe ne renvoie aucun texte ; la preuve principale SAP reste le cours ouvert.
+
+**Points communs :** analyser la situation, comparer des résultats et distinguer simulation et mise en application. **Différences :** fonctions produit et modes d’exécution ; aucune preuve qu’un dossier universel de demande interne soit imposé. Les effets de blocage de l’ARun SAP ne sont pas transférés à Supply Assignment FLOW (U436) ; la release Oracle transmet des résultats à Order Management, sans identité avec l’activation d’affectations.
+
+**Interprétation proposée :** une opération d’optimisation durable peut justifier sa propre demande traçable : objectif, périmètre, alternatives, autorisation et résultat. Dans FLOW, Order Backlog Planning construit les scénarios, Fulfillment Plan Decision arbitre et Supply Assignment matérialise. Origine interne/externe et intention métier restent deux axes. Le dossier, son rattachement et la coordination éventuelle sont à définir ; aucun déplacement dans D04/D06 ni quatre comportements créés automatiquement. [Portée, exemple, options et limites](../modeles/backlog/order-management-positioning-U485.yaml).
+
+
+**Correction de lecture U491 de CMP198 :** l’optimisation du carnet évoquée par Laurent est une réaction à son état ou à un événement de promesse non tenable, pas une sollicitation du commerce. Le déclencheur doit rester distinct du dossier éventuel de traitement. SAP/Oracle étayent les parcours d’analyse, simulation et mise en application ; ils ne sont pas invoqués comme preuve d’un Order interne obligatoire ni d’un mécanisme universel événement → Case. La distinction métier sollicitations explicites / réactions du domaine est consignée comme direction locale, sans changement canonique.
+
+
+## CMP199
+
+U492–U495 — Codex, 19 septembre 2026. Cibles : proposition de périmètre de D04 et parcours d’optimisation D03.p / D03.o / D02.e, backlog courant non modifié. Éléments ELM495–498 ; appuis fonctionnels et sémantiques, recouvrements partiels. Statut proposé ; aucun accord global ou rattachement adopté.
+
+**Constats consultés :** SAP/Oracle réévaluent des engagements ou affectations lorsque la disponibilité change ; l’événementiel est explicite dans SAP APO EDQA, à distinguer des modes manuels/planifiés aATP et Backlog Management. Oracle documente une réaction automatique back-to-back, avec exception et arbitrage manuel si nécessaire. Salesforce documente des demandes internes suivies, et distingue la demande de son traitement. Le parcours backoffice du changement d’adresse n’est pas la preuve du cas exact de fraude.
+
+**Correction de l’interprétation CMP198 :** U494/U495 montrent qu’une réaction peut donner naissance à une demande interne. Une demande ne suppose ni client ni commerce initiateur. L’exemple détection de fraude → vérification d’identité est attribué à Laurent. Origine, déclencheur, finalité, dossier et traitement restent distincts ; l’absence d’Order obligatoire dans un produit n’interdit pas une prise en charge structurée dans FLOW.
+
+**Recommandation :** étudier une Area portant les familles de demandes de travail du Domain, y compris celles issues de réactions internes ; ne pas la découper selon l’organisation frontoffice/backoffice. Bénéfice : rendre visibles offre, résultat attendu et progression. Compromis : justifier les types supplémentaires, leur cycle propre et leurs liens, sans déplacer les responsabilités d’optimisation ni imposer un dossier pour chaque calcul. Service Orders reste la préférence U489 à éprouver ; Service Requests est une alternative de marché, pas un renommage décidé. [Sources, éditions, limites et analogie Supply](../modeles/backlog/order-management-positioning-U485.yaml).
+
+
+## CMP200
+
+U496/U497 — Codex, 19 septembre 2026. Cibles : D04, D14, D14.a, D07.b, TER066 et TER075 du backlog courant. Accord sur Service Requests et les demandes internes réactives, complété explicitement par le volet Backing Services. Les comparaisons gardent leur statut proposé ; l’accord porte sur le vocabulaire et l’intention présentés.
+
+D04 expose Salesforce Service Request (ELM498), TM Forum Service Order (ELM131) et Oracle Backlog Management (ELM496) : appui lexical, fonction d’activation et parcours de traitement distincts. Ces sources ne constituent pas un découpage commun obligatoire. Les anciennes inspirations limitées aux familles de commandes sont conservées dans la capture antérieure et remplacées sur la fiche par la comparaison au nouveau périmètre.
+
+D14 et D14.a gardent Service Catalog et Service Catalog Ingestion et explicitent l’offre de Backing Services. D07.b devient Backing Service Orders, TER066 Backing Service Order et TER075 Backing Service ; le qualificatif Backing est un choix local pour préciser le rôle auprès de l’orchestration, sans l’attribuer à TM Forum, Microsoft ou Camunda. Les sources métier déjà consultées restent pertinentes pour le périmètre de prestation, inchangé ; noms natifs, limites et distinction catalogue/demande/réalisation sont conservés.
+
+Bénéfice : distinguer le travail pris en charge par le Domain des prestations nécessaires à sa réalisation, y compris lorsqu’il réagit à une situation interne. Compromis : définir ultérieurement les types supplémentaires de demandes internes et leurs règles propres, sans inventer un cycle universel. [Accord et limites](../modeles/backlog/order-management-positioning-U485.yaml), [état précédent](../audits/2026-09-19-service-requests-U496/before-records.yaml).
+
+
+## CMP201
+
+U499/U500 — Codex, 19 septembre 2026. Proposition de capacité Order Backlog Optimization Request sous Service Requests, avec comportements de déclenchement et d’activité, et indicateurs d’origine. Comparaison fonctionnelle partielle aux éléments ELM246/495/496 ; appui des demandes internes Salesforce ELM498 déjà consulté. Cible : proposition uniquement ; modèle canonique et publication inchangés.
+
+Oracle distingue le lancement manuel ou programmé et les activités de planification, examen, simulation puis publication. SAP APO EDQA documente une réaction événementielle avec sélection et règles métier. Ces textes étayent les deux angles proposés, sans prescrire une demande universelle, une taxonomie de comportements ou une approbation humaine systématique. Le nom Order Backlog Optimization Request reste une construction locale à partir du vocabulaire du domaine.
+
+U397/U398 imposent de rendre les comportements métier de la demande lisibles même lorsqu’ils mobilisent d’autres capacités : ne pas les rejeter pour cause de mutualisation. Les candidats distinguent réexamen réactif, récurrent ou demandé ; simulation et analyse ; autorisation ; activation suivie. Ils restent à arbitrer au regard de MOD006/U265, au même niveau terminal, avec justification individuelle ; aucune étape ou opération ne devient automatiquement un comportement. Planning, décision et application des affectations conservent leurs responsabilités.
+
+U500 définit Frontoffice par rapport à l’extérieur du Domain et Backoffice par rapport à son intérieur. Proposition de deux indicateurs non exclusifs, conformément à U492 sur Transfer Order ; distinguer origine de la demande, provenance de l’événement, mode de déclenchement et activité. Une demande interne peut être créée en réponse à un événement fournisseur externe. Bénéfice : lire l’offre de prise en charge sans la confondre avec l’organisation ou l’interface ; limite : qualification famille par famille, sans inventer les origines non étudiées.
+
+[Proposition, justifications, exemples et sources](../modeles/backlog/internal-service-requests-U499.yaml). Aucun nouvel identifiant canonique, comportement, type ou classement global adopté par cette étude.
+
+
+## CMP202
+
+U501 — Codex, 19 septembre 2026. Accord appliqué : D04.s Order Backlog Optimization Request, Backoffice, sous Service Requests ; six comportements terminaux BHV088–093 avec angles de lecture Déclenchement et Activité. Transfer Order D04.k porte Frontoffice et Backoffice conformément à U492/U501. Les origines ne reclassent pas la nature des capacités et ne se déduisent pas de l’origine de l’événement.
+
+Les inspirations de chaque nouvelle fiche sont exposées dans le modèle avec deux documents primaires distincts. ELM498/496 étayent la demande interne et le réexamen du carnet ; ELM495/496 la réaction à une situation Supply ; ELM246/496 les revues programmées ; ELM246/357 les études demandées ; ELM357/287 la simulation et son examen ; ELM498/496 l’autorisation et la séparation proposition/application ; ELM357/497 la mise en application et son suivi. Les rapprochements restent partiels et proposés, même lorsque le sens du comportement est adopté.
+
+Le bénéfice du découpage est de rendre visibles le motif de prise en charge, l’exploration, l’autorisation et le résultat. Les modes Oracle, les effets SAP et les parcours Salesforce éclairent ces choix, sans fournir une taxonomie universelle ni une preuve de réalisation Beaumanoir. Les exemples construits sont attribués à FLOW. L’autorisation ne présume pas de décision humaine obligatoire ; la release Oracle n’équivaut pas à une affectation ni à une réservation. Les noms anglais non présentés et les descriptions développées gardent une qualification éditoriale.
+
+Trois relations racontent les coopérations avec Order Backlog Planning, Fulfillment Plan Decision et Supply Assignment ; leurs extrémités sont adoptées U501, leurs conditions et effets détaillés sont rédigés comme compléments. [Portée de l’accord](../modeles/backlog/internal-service-requests-U499.yaml), [capture et changements](../audits/2026-09-19-internal-request-U501/changes.yaml). Aucun autre type de demande créé, aucune classification globale, publication ou réouverture de l’audit U431.
+
+
+## CMP203
+
+U505/U506 — Party / Role D09, ingestion D09.d et termes Party/Role TER046/047. Rédaction et correspondances proposées, noms et accords antérieurs conservés. Sources ELM499–507, MKT13/57/67/74/75 ; Oracle Customer Import 25D ELM344 reconsulté pour l’ingestion. Éditions, passages et limites : [relevé U505](../audits/2026-09-19-party-reference-U505/consulted-documents.yaml).
+
+SAP Business Partner et ses rôles client/fournisseur donnent un appui métier direct. Informatica documente historiquement Party Role puis Party, personne ou organisation : passages primaires indexés, pas affirmation du schéma SaaS actuel. OMG Party/PartyRole et FIBO ContractParty expliquent identité, rôle et contexte contractuel. Fowler confirme le patron, mais Party y inclut aussi des équipes informelles. Le périmètre FLOW des personnes physiques et morales est donc une frontière locale explicite, pas le sens universel du mot Party. LegalPerson chez FIBO n’équivaut pas automatiquement à personne morale.
+
+La fiche commence par le service rendu : savoir qui participe aux accords et opérations et à quel titre. Agreement conserve conditions et engagements ; les maîtres externes portent l’identité d’entreprise. GS1 Party/Location est retiré des inspirations actives de D09 et TER046, conformément à U505 ; preuves et comparaisons historiques conservées. Pas de contrôle juridique, IAM ou maîtrise MDM ajouté. La lecture des rôles de référence reste distincte de leur attribution à un accord particulier.
+
+Nom recommandé à ce stade : conserver Party / Role ; Party est une alternative plus courte, Business Partner un terme SAP établi, Person seul ambigu en anglais. Aucun renommage adopté. Le passage d’Authoritative Data de groupe à Area est proposé pour exprimer sa responsabilité locale, sans fusion des six sujets ni modification structurelle appliquée. [Analyse et options](../modeles/backlog/party-reference-review-U505.yaml).
+
+
+## CMP204
+
+U505, dans la continuité d’U134 — six propositions de capacités de connaissance : D08.e Product Reference Visibility, D09.e Party / Role Visibility, D11.b Agreement Visibility, D12.b Catalog Visibility, D13.b Fulfillment Network Visibility, D14.b Service Catalog Visibility. Statut ai_proposed, aucun champ adopté ; chaque capacité est reliée explicitement à son référentiel actuel.
+
+La responsabilité commune est de rendre la référence locale retrouvable et compréhensible. La recherche, les filtres et la navigation sont des modalités de consultation, pas des comportements créés mécaniquement. Visibility est un nom FLOW cohérent avec ses capacités de connaissance existantes ; les éditeurs emploient surtout Search, Display, Profile ou accès au catalogue. Leur fonction de consultation soutient la proposition, sans imposer un catalogue de capacités.
+
+Paires primaires : ELM423/508 pour les produits ; ELM499/507 pour les personnes et rôles ; ELM426/509 pour les accords ; ELM391/510 pour les catalogues ; ELM511/512 pour les lieux et structures ; ELM513/514 pour les services. Deux documents Microsoft ne constituent pas un consensus pour Catalog. Les sources de lieux ne prouvent pas la couverture de toutes les liaisons Supply : celle-ci est une adaptation à D13. ServiceNow ne fournit qu’une analogie de consultation ; le périmètre Backing Services est rapproché de TM Forum et reste distinct des Service Requests.
+
+L’ingestion intègre les évolutions ; Visibility permet de connaître la référence disponible. Origine et validité ne sont exposées que lorsqu’elles sont connues ; aucune disponibilité temps réel ni administration du maître n’est ajoutée. Lecture des contrats distincte du calcul de consommation, lecture du réseau distincte du stock et de la charge, lecture des services distincte de la disponibilité ou de la promesse individuelle. Aucun nouveau comportement, flux métier, système maître ni donnée installée inventé.
+
+[Sources et limites](../audits/2026-09-19-party-reference-U505/consulted-documents.yaml), [proposition et portée](../modeles/backlog/party-reference-review-U505.yaml).
+
+
+**Adoption U507 de la proposition CMP203/CMP204 — 19 septembre 2026 :** Laurent confirme Party / Role et sa définition restituée, les six capacités Visibility de connaissance ainsi qu’Authoritative Data comme Area de Supply Chain Orchestration. L’Area présente les six référentiels distincts, dont les capacités gardent leur parent. Les sources et différences documentées restent les appuis de la proposition ; l’accord n’en fait pas un consensus ni une équivalence de taxonomies. Les descriptions détaillées et comparaisons non présentées restent éditoriales. Les accords de champs sont enregistrés dans decision-intents.yaml ; kind group → area est tracé dans l’annexe U505, adoption_U507, sans champ artificiel ni mutation des preuves historiques.
+
+
+## CMP205
+
+U508 — Codex, 19 septembre 2026. Clarification proposée de Catalog D12, Agreement D11 et de la notion Assortment ; pas de modification canonique. Sources primaires SAP ELM515 (complément d’ELM094), Microsoft ELM516/391 et Oracle ELM345, effectivement consultées ; [éditions, passages et limites](../modeles/backlog/catalog-assortment-review-U508.yaml).
+
+D12 porte aujourd’hui une offre de produits, distincte de l’identité produit D08 et des Backing Services D14 ; Product Catalog est une piste de nom plus explicite, non adoptée. SAP et Microsoft définissent l’assortiment par la sélection de produits, ses destinataires et sa validité. Microsoft distingue catalogue et assortiment, tout en ciblant aussi les catalogues B2B par clientèle et période : leur frontière ne repose pas sur un seul attribut.
+
+L’intuition de Laurent convient à un assortiment négocié : Agreement peut en conserver la référence ou la version convenue avec les conditions contractuelles. Elle ne justifie pas de composer tout Agreement par Contract et Assortment. Les accords Oracle peuvent détailler les articles ou porter seulement des conditions ; leurs lignes ne sont pas pour autant un Assortment natif. L’assortiment interne de magasins peut avoir une existence indépendante.
+
+Recommandation : notion Assortment distincte dans Authoritative Data si le besoin porte aussi sur les sélections par réseau/canal ; rattachement à Agreement pour le périmètre effectivement convenu. Alternative compacte Catalog and Assortment à discuter, sans fusion implicite. Bénéfice : préserver l’applicabilité et les évolutions de la sélection sans inventer de contrat pour chaque choix interne. Compromis : identité, version et responsabilité exactes à décider. Supply reçoit et consulte la référence externe ; ni conception commerciale, ni disponibilité physique, ni entité Information ou capacité ajoutées.
+
+
+## CMP206
+
+U509 — Codex, 19 septembre 2026. Accord appliqué sur Product Catalog (D12), Assortment distinct (D16, TER087) dans Authoritative Data et relation qualifiée Agreement → Assortment quand la sélection est convenue. Aucun lien de composition, contrat automatique ou promesse de disponibilité déduit. Les identifiants D12/D12.a/D12.b sont conservés ; le qualificatif Product est répercuté dans les intitulés et TER049.
+
+D16 est rapproché de SAP ELM515 et Microsoft ELM516 : sélection, destinataires et périodes. D16.a, proposition d’ingestion, s’appuie sur la diffusion complète/différentielle SAP ELM517 et la préparation/réplication Microsoft ELM516 ; les mécanismes natifs et l’administration restent exclus. D16.b, proposition de visibilité, s’appuie sur l’affichage des articles listés SAP ELM515 et des versions de listes ELM517 ; même éditeur, pas consensus revendiqué. L’exemple 100/30/12 reste une illustration FLOW.
+
+Agreement ajoute la frontière éclairée par Oracle ELM345 : accord avec ou sans détail des produits ; aucun Assortment natif Oracle déduit des lignes contractuelles. Les sources de D12 sur l’offre demeurent pertinentes ; son nom devient explicite sans devenir un référentiel maître produit. Relation et sélection conservées distinctes dans le glossaire. Les capacités et détails nouveaux non présentés restent proposés ; pas d’extension au Domain Commerce ni au catalogue Information. [Portée de l’accord et sources](../modeles/backlog/catalog-assortment-review-U508.yaml).

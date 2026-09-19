@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "version": "2026-09-19.8",
+  "decisions": [
+    {
+      "id": "ADOPT-U482-AUTHORITATIVE-DATA-NAME",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U482"
+      ],
+      "note": "U482 adopte explicitement Authoritative Data. Portée limitée au nom ; groupe de présentation et référentiels distincts conservés.",
+      "target": {
+        "collection": "nodes",
+        "id": "business-references",
+        "revision": 4,
+        "approved_fields": [
+          "name"
+        ],
+        "value_sha256": {
+          "name": "0bb2b596fb0822d0f2a3d8c07207798d200f7f5ad14be4cca21f6839cda2e947"
+        },
+        "import_version": "2026-09-19.8"
+      }
+    },
+    {
+      "id": "ADOPT-U482-SUPPLY-INSPIRATION-LEVEL",
+      "decision_state": "accepted",
+      "author": "Laurent",
+      "decided_at": "2026-09-19",
+      "recorded_at": "2026-09-19",
+      "interpretation": "explicit",
+      "source_refs": [
+        "U475",
+        "U482"
+      ],
+      "note": "Texte retenu en U475, avec seule substitution du niveau Universe par Domain et accord grammatical correspondant, adoptés en U482. Aucun nouveau rapprochement, exemple ou responsabilité adopté ; détails de market_comparisons hors portée.",
+      "target": {
+        "collection": "nodes",
+        "id": "universe-supply",
+        "revision": 6,
+        "approved_fields": [
+          "market_inspiration"
+        ],
+        "value_sha256": {
+          "market_inspiration": "6232933b4b7e4f50e7cebb856d3d0be18d0c385de770a2d01937f907b48165d2"
+        },
+        "import_version": "2026-09-19.8"
+      }
+    }
+  ]
+}

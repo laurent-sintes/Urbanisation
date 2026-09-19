@@ -9,6 +9,15 @@ guides:
 - version: 2026-09-19.2
   path: versions/2026-09-19.2.yaml
   sha256: 5c43053a82840a9f8a05105933f01263696f7cccf98862a1fda0422f5b7da18d
+- version: 2026-09-19.3
+  path: versions/2026-09-19.3.yaml
+  sha256: 278fb78a61ee4030ce6b566cc2579ae69e9856b0a3c0a7150f727b28e0a9d520
+- version: 2026-09-19.4
+  path: versions/2026-09-19.4.yaml
+  sha256: 0d6a1dcb3ae780f2c0d6a19e70efcbd3f090d77591d630eda8e415ae4f8b9af7
+- version: 2026-09-19.5
+  path: versions/2026-09-19.5.yaml
+  sha256: 0f6b50644cf0018861a3d24334143ae25e2bf1674a134eb6d146707f40a4c7ce
 associations:
 - publication_version: 2026-09-16.2
   guide_version: 2026-09-18.1
@@ -37,3 +46,26 @@ associations:
   guide_version: 2026-09-19.2
   scope: carried_frozen_methodology
   note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.5 ; aucune lecture du backlog.
+- publication_version: 2026-09-19.7
+  guide_version: 2026-09-19.2
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.6 ; aucune lecture du backlog.
+- publication_version: 2026-09-19.8
+  guide_version: 2026-09-19.3
+  scope: explicit_methodology_U483
+  note: 'Édition publiée avec U483 : Domain → Area → Capability → Behavior et Authoritative Data adoptés U482 ; autorité locale
+    des références U479. Les formulations pédagogiques proposées gardent leur portée ; aucune validation globale ni fusion
+    des référentiels.'
+- publication_version: 2026-09-19.9
+  guide_version: 2026-09-19.3
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.8 ; aucune lecture du backlog.
+- publication_version: 2026-09-19.10
+  guide_version: 2026-09-19.4
+  scope: explicit_methodology_U502
+  note: 'Édition publiée avec U502 : Service Requests, origines des demandes et angles Déclenchement/Activité. Les rédactions
+    pédagogiques gardent leur portée ; aucun niveau ni accord global supplémentaire.'
+- publication_version: 2026-09-19.11
+  guide_version: 2026-09-19.5
+  scope: explicit_prepared_methodology
+  note: Édition méthodologique explicitement préparée et contrôlée avec cette publication ; aucune validation métier supplémentaire.

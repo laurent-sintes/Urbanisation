@@ -1,8 +1,28 @@
 {
   "schema_version": "1.0.0",
   "model_id": "flow-urbanism",
-  "current": "urbanisation-v013-2026-09-19-122848.yaml",
+  "current": "urbanisation-v018-2026-09-19-181323.yaml",
   "publications": [
+    {
+      "descriptor": "urbanisation-v018-2026-09-19-181323.yaml",
+      "sha256": "5cacf62fa5d3b8b582be805c099e8c6a602ba8139c5cce68babb7c4f05f40528"
+    },
+    {
+      "descriptor": "urbanisation-v017-2026-09-19-164521.yaml",
+      "sha256": "08d2622cc25d128827e36d2a444bd0c3d0e637ba5e22bef41c13676a8019300c"
+    },
+    {
+      "descriptor": "urbanisation-v016-2026-09-19-153719.yaml",
+      "sha256": "21c9e0b88ab692c2fc6fe63902b007351fa4cf06b52fced2193e1bf514f3a65c"
+    },
+    {
+      "descriptor": "urbanisation-v015-2026-09-19-152922.yaml",
+      "sha256": "b7e4c93a529583aa14401eb71c653e82ca5ef85e1b270cd81f887537745fe02f"
+    },
+    {
+      "descriptor": "urbanisation-v014-2026-09-19-135331.yaml",
+      "sha256": "9ed14eeb89677a81c4dd73064030b50f023e86cd134fe37571d0db2f345fc188"
+    },
     {
       "descriptor": "urbanisation-v013-2026-09-19-122848.yaml",
       "sha256": "19dcf60b2fbd778d846aecbfcde49c3f303785e04d936fae4dfd0fd884842c1d"

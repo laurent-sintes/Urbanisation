@@ -292,7 +292,15 @@
         "terms": {
           "type": "array",
           "items": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "market_comparisons": {
+                "$ref": "#/$defs/marketComparisons"
+              },
+              "market_inspiration": {
+                "$ref": "#/$defs/marketInspiration"
+              }
+            }
           }
         }
       },
@@ -333,6 +341,7 @@
         "kind": {
           "enum": [
             "domain",
+            "area",
             "reference",
             "group",
             "capability",
@@ -376,8 +385,30 @@
             "decomposition_rationale": {
               "type": "string"
             },
+            "request_origins": {
+              "description": "Origines possibles de la famille de demandes portée par une capacité. Frontoffice est externe au Domain ; Backoffice est interne. Les deux valeurs peuvent se combiner et restent distinctes de la nature de capacité et de la provenance d'un événement.",
+              "type": "array",
+              "items": {
+                "enum": [
+                  "frontoffice",
+                  "backoffice"
+                ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "behavior_aspect": {
+              "description": "Angle de lecture facultatif d'un comportement : déclenchement ou activité. Il ne remplace pas sa nature et ne crée pas un niveau hiérarchique.",
+              "enum": [
+                "trigger",
+                "activity"
+              ]
+            },
             "market_comparisons": {
               "$ref": "#/$defs/marketComparisons"
+            },
+            "market_inspiration": {
+              "$ref": "#/$defs/marketInspiration"
             },
             "examples": {
               "$ref": "#/$defs/businessExamples"
@@ -501,6 +532,30 @@
         "source_refs",
         "source_locator",
         "review"
+      ],
+      "anyOf": [
+        {
+          "properties": {
+            "kind": { "const": "capability" },
+            "fields": { "properties": { "behavior_aspect": false } }
+          }
+        },
+        {
+          "properties": {
+            "kind": { "const": "behavior" },
+            "fields": { "properties": { "request_origins": false } }
+          }
+        },
+        {
+          "properties": {
+            "kind": {
+              "enum": ["domain", "area", "reference", "group", "object", "document", "event"]
+            },
+            "fields": {
+              "properties": { "request_origins": false, "behavior_aspect": false }
+            }
+          }
+        }
       ],
       "additionalProperties": false
     },
@@ -780,6 +835,21 @@
           "definition_choice": {
             "type": "string",
             "minLength": 1
+          },
+          "concept_name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "scope_summary": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "approach_summary": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
           }
         },
         "required": [
@@ -802,6 +872,87 @@
         ],
         "additionalProperties": false
       }
+    },
+    "marketInspiration": {
+      "type": "object",
+      "properties": {
+        "choice": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "flow_scope": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "flow_approach": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "synthesis": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "situation": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "outcome": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "lesson": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "source_title": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "source_url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              }
+            },
+            "required": ["title", "situation", "source_refs", "source_title", "source_url"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["choice", "flow_scope", "flow_approach", "synthesis", "examples"],
+      "additionalProperties": false
     },
     "businessExamples": {
       "type": "array",

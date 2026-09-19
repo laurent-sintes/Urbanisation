@@ -1,0 +1,765 @@
+items:
+- decision_id: ADOPT-U467-UNCHANGED-053
+  action: retain
+  rationale: 'BHV001 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Établir les quantités admissibles pour la demande en tenant compte des allocations, protections
+    et réservations, sans double décompte. ». Le décompte des quantités admissibles conserve la distinction allocation, protection
+    et réservation. Les exemples SAP/Oracle explicitent le risque de double compte sans changer les droits ni leur responsable.
+    Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont
+    préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-054
+  action: retain
+  rationale: 'BHV002 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins,
+    darkstores ou autres espaces de stockage. ». La recherche reste limitée aux lieux admissibles ; les nouveaux exemples
+    distinguent cette possibilité ATP du choix de source et de son éventuelle adaptation CTP. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-055
+  action: retain
+  rationale: 'BHV003 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité
+    opérationnelle. ». Le moment de mobilisation opérationnelle reste une condition de possibilité. Les heures limites, délais
+    de préparation et après réception illustrent ce même service sans transférer la tenue des calendriers ni le choix du service.
+    Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont
+    préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-056
+  action: retain
+  rationale: 'BHV004 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements
+    concurrents, pour une promesse ou un ensemble. ». Les ressources attendues sont rapprochées des engagements concurrents
+    sur un horizon. Le nouvel exemple distingue explicitement arrivage futur, réception, réservation et apport nouveau ; la
+    définition approuvée reste applicable. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé
+    ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-057
+  action: retain
+  rationale: 'BHV005 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Scenario Construction ». Le nom continue de désigner la construction de scénarios alternatifs avant simulation
+    et choix. Les plans parallèles et variations de couverture expliquent cette intention sans faire adopter une méthode ou
+    une définition supplémentaire. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ;
+    les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-059
+  action: retain
+  rationale: 'BHV016 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Scenario Execution Adaptation ». L’adaptation du scénario en cours conserve les faits déjà acquis et mobilise
+    les responsables opérationnels. L’exemple de livraison décalée ne transfère pas le pilotage des prestations ni ne réécrit
+    les transferts expédiés. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-060
+  action: retain
+  rationale: 'BHV017 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Group Supply Protection ». La protection d’un groupe avant l’arrivée de ses demandes reste distincte du calcul
+    des quantités à protéger et de la réservation individuelle. Les comparaisons conservent cette frontière. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-061
+  action: retain
+  rationale: 'BHV018 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Consumption Capping ». Le plafond de consommation reste un maximum autorisé, sans minimum garanti. L’exemple
+    480 sur 500 maintient le contrôle séparé des ressources réellement disponibles. Aucun changement de relation. Aucun impact
+    de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales
+    de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability
+    → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses,
+    exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-062
+  action: retain
+  rationale: 'BHV019 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Safety Stock Policy ». La politique porte les conditions d’usage et de reconstitution du tampon ; Inventory
+    Target Decision continue de déterminer le niveau. L’autorité locale des référentiels U479 ne déplace pas cette responsabilité
+    dans Authoritative Data. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-063
+  action: retain
+  rationale: 'BHV020 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Replenishment Regulation ». La tenue des règles de réassort reste séparée du calcul des apports et de la modification
+    des commandes. L’exemple 60/100 maintient Supply Protection et Replenishment Decision dans leurs responsabilités ; U479
+    n’adopte pas un transfert de ces règles au groupe Authoritative Data. Aucun changement de relation. Aucun impact de glossaire
+    lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area
+    ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior
+    ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples
+    et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-064
+  action: retain
+  rationale: 'BHV021 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Promise Proposal ». La proposition formalise une possibilité lisible encore non confirmée. Les rapprochements
+    produits ne lui attribuent ni recalcul de faisabilité ni affectation ni réservation. Aucun changement de relation. Aucun
+    impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-065
+  action: retain
+  rationale: 'BHV022 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Promise Confirmation ». Le nom continue de qualifier le passage de proposition à engagement autorisé, avec
+    part non confirmée explicite et sans réservation automatique. TER013 a été relu avant/après : définition et notes sur
+    les différentes natures d’engagement sont identiques ; les nouvelles inspirations précisent leur distinction et ne créent
+    aucune fermeté universelle. Aucun changement de relation. Les incidences de glossaire signalées sont traitées ci-dessus.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-066
+  action: retain
+  rationale: 'BHV023 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Promise Revision ». Le réexamen de la promesse conserve le caractère autorisé des changements de quantité/date
+    et sa distinction avec les possibilités recalculées ou la ressource affectée. Aucun déclencheur automatique éditeur n’est
+    adopté. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-067
+  action: retain
+  rationale: 'BHV024 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Déplacer du stock vers les lieux qui en ont davantage besoin, en préservant les besoins des
+    donneurs. ». La définition conserve le déplacement vers les lieux qui en ont davantage besoin avec protection du donneur.
+    Le texte nouveau explicite que la décision recommande le transfert et ne le réalise pas physiquement, conformément à sa
+    responsabilité de décision existante. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé
+    ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-068
+  action: retain
+  rationale: 'BHV025 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Regrouper des quantités fragmentées pour leur redonner une utilité ou libérer des sites. ».
+    La définition conserve le regroupement de quantités fragmentées pour leur utilité ou la libération de sites. Les exemples
+    de tailles et reliquats n’ajoutent ni conception d’assortiment ni liquidation ni destruction. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-069
+  action: retain
+  rationale: 'BHV026 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Store Inventory Optimization ». Le nom reste celui de l’optimisation des cibles et seuils du magasin. Les exemples
+    conservent assortiment et présentation comme entrées et n’y rattachent ni commande d’apport ni arbitrage multi-échelon
+    implicite. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-070
+  action: retain
+  rationale: 'BHV027 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Distribution Center Inventory Optimization ». Le nom conserve la cible du centre de distribution face aux besoins
+    aval et risques amont. Les nouveaux appuis excluent l’organisation de manutention et distinguent ce calcul local d’une
+    optimisation conjointe de tous les échelons. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est
+    signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas
+    son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources
+    de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs
+    éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-071
+  action: retain
+  rationale: 'BHV028 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau,
+    en tenant compte de leurs dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque.
+    » ; name = « Multi-Echelon Inventory Optimization ». Nom et définition désignent toujours des objectifs de stock décidés
+    conjointement entre échelons interdépendants. L’illustration SAP éclaire la répartition du tampon sans importer pondérations,
+    centralisation systématique ni gain garanti. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est
+    signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas
+    son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources
+    de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs
+    éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-072
+  action: retain
+  rationale: 'BHV029 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Vérifier l’ensemble du stock d’un périmètre lors d’une campagne, pour établir une
+    référence fiable. » ; name = « Periodic Physical Inventory ». Nom et définition conservent la campagne de vérification
+    exhaustive d’un périmètre. La comparaison explicite que fréquence annuelle et immobilisation des mouvements ne sont pas
+    des obligations nouvelles. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les
+    définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les
+    principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-073
+  action: retain
+  rationale: 'BHV030 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Vérifier régulièrement des sélections d’articles ou d’emplacements, avec une fréquence
+    adaptée aux enjeux. » ; name = « Cycle Counting ». Nom et définition conservent les vérifications récurrentes de sélections
+    selon les enjeux. Le seuil de comptage est explicitement distingué du réassort et ne vaut ni anomalie établie ni correction
+    autorisée. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-075
+  action: retain
+  rationale: 'BHV032 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Milestone-Based Reservation Policy ». Le nom continue de qualifier le jalon de déclenchement et la continuité
+    de réservation. Panier, paiement et commande restent des choix de politique ; le comportement ne réalise pas le paiement.
+    Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont
+    préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-077
+  action: retain
+  rationale: 'BHV034 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Demand-Differentiated Reservation Policy ». Le nom conserve la différenciation selon le service convenu. Les
+    exemples distinguent cette politique d’une priorité absolue de commandes et d’une enveloppe protégée pour un groupe. Aucun
+    changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées,
+    et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-078
+  action: retain
+  rationale: 'BHV035 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Risk-Adaptive Reservation Policy ». Le nom conserve une adaptation motivée de la politique selon les risques
+    et tensions. Les sources ne sont pas présentées comme la preuve d’un moteur automatique standard ; aucune révocation implicite
+    des garanties existantes n’est ajoutée. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé
+    ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-080
+  action: retain
+  rationale: 'BHV037 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Order Freezing ». Le nom continue de désigner la protection d’éléments contre un recalcul, avec portée explicite.
+    Les exemples distinguent le gel d’une suspension du traitement et ne figent pas implicitement tous les champs. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-081
+  action: retain
+  rationale: 'BHV039 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Autoriser la prise en charge de tout ou partie d’un Order, ou d’un ensemble d’Orders
+    liés, lorsque les conditions de lancement individuelles et collectives sont satisfaites. » ; name = « Order Release ».
+    Nom et définition conservent l’autorisation de lancement individuelle ou collective. Les exemples warehouse/shipment set
+    maintiennent la distinction entre autorisation, transmission et exécution et n’imposent pas la complétude à tous les groupes.
+    Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont
+    préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-082
+  action: retain
+  rationale: 'BHV040 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Order Hold & Resume ». Le nom continue de qualifier une suspension motivée puis sa reprise autorisée. Les nouvelles
+    explications conservent les portées distinctes des blocages et leurs effets séparés sur engagements et ressources. Aucun
+    changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées,
+    et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-083
+  action: retain
+  rationale: 'BHV046 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Compléter les besoins non affectés tout en préservant les affectations existantes. ». La définition
+    conserve les affectations existantes pendant le complément du reliquat. Le cas SAP 70/100 est présenté comme illustration
+    sans transformer cette préservation de traitement en gel permanent. Aucun changement de relation. Aucun impact de glossaire
+    lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area
+    ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior
+    ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples
+    et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-085
+  action: retain
+  rationale: 'BHV048 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Déterminer l’orientation selon une politique établie, en fonction de l’état du produit,
+    de sa catégorie et des conditions applicables. » ; name = « Policy-based Disposition ». Nom et définition conservent une
+    orientation selon politique, état et catégorie connus. Les codes de disposition illustrent les issues sans remplacer le
+    constat ni transférer au comportement l’inspection, la réparation ou l’administration générale des règles. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-086
+  action: retain
+  rationale: 'BHV049 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les
+    délais et les risques. » ; name = « Value Recovery Optimization ». Nom et définition conservent la comparaison de devenirs
+    autorisés selon valeur, coût, délai et risque. Les nouveaux exemples ne permettent pas d’outrepasser une filière interdite
+    et séparent choix, remboursement et réalisation. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-087
+  action: retain
+  rationale: 'BHV050 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la remise en disponibilité du produit. » ; name = « Return to Stock
+    ». Nom et définition conservent la prise en charge de remise en disponibilité d’un retour admissible. Les nouvelles explications
+    distinguent arrivée physique, état utilisable et preuve de fin de contrôle. Aucun changement de relation. Aucun impact
+    de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales
+    de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability
+    → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses,
+    exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-088
+  action: retain
+  rationale: 'BHV051 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge une remise en état, suivre son résultat et la suite attendue. »
+    ; name = « Repair and Refurbishment ». Nom et définition conservent le suivi de remise en état, de son résultat et de
+    la suite attendue. Les exemples maintiennent distincts réparation, retour au stock et restitution, sans imposer la sérialisation
+    générale. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-089
+  action: retain
+  rationale: 'BHV052 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Relier le retour client à sa prise en charge par Supplier Return. » ; name = « Return
+    to Supplier ». Nom et définition conservent le lien entre le retour client et Supplier Return. Les nouvelles explications
+    maintiennent deux commandes distinctes, leurs attentes respectives et l’absence de preuve de départ par la seule création
+    du document. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du
+    glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-090
+  action: retain
+  rationale: 'BHV053 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la restitution du produit au client, après réparation ou décision
+    de non-reprise. » ; name = « Return to Customer ». Nom et définition conservent la restitution au client après réparation
+    ou non-reprise. L’identité du bien est préservée lorsque nécessaire et la restitution n’est assimilée ni à un remplacement
+    ni à une vente nouvelle. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-091
+  action: retain
+  rationale: 'BHV054 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la mise au rebut retenue : conserver l’autorisation, suivre la
+    réalisation et rapprocher la preuve avec la sortie de stock. » ; name = « Scrapping ». Nom et définition conservent l’autorisation
+    de rebut, le suivi de réalisation et le rapprochement de preuve avec la sortie de stock. Les codes éditeur sont explicitement
+    insuffisants pour établir une destruction réalisée. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-092
+  action: retain
+  rationale: 'BHV055 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge un retour fournisseur donnant lieu à un avoir ou remboursement
+    attendu, sans remplacement des marchandises retournées. » ; name = « Return for Credit ». Nom et définition conservent
+    le retour fournisseur avec contrepartie financière sans remplacement. L’exemple ne recrée pas un besoin d’apport et distingue
+    départ du produit et crédit effectivement obtenu. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-093
+  action: retain
+  rationale: 'BHV056 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge un retour associé à un remplacement attendu, en conservant les
+    liens entre marchandises renvoyées et apports de remplacement. » ; name = « Return for Replacement ». Nom et définition
+    conservent l’attendu de remplacement relié au renvoi. Les exemples distinguent les deux mouvements sans double compter
+    l’apport ni confondre remplacement et réparation du bien d’origine. Aucun changement de relation. Aucun impact de glossaire
+    lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area
+    ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior
+    ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples
+    et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-097
+  action: retain
+  rationale: 'BHV060 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Acheter une prestation ; suivre ce qui est attendu puis reconnu réalisé. » ; name
+    = « Service Procurement ». Nom et définition conservent l’achat de prestation et le suivi de ce qui est attendu puis reconnu
+    réalisé. Les nouveaux exemples distinguent service commandé, déclaré et accepté sans imposer la feuille SAP. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-100
+  action: retain
+  rationale: 'BHV063 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Appliquer le transfert de propriété lors de la vente ou consommation prévue par l’accord.
+    » ; name = « Consumption-Based Ownership Transfer ». Nom et définition conservent le transfert de propriété déclenché
+    par la consommation ou vente prévue à l’accord. L’exemple conditionne cet effet à la clause et ne confond ni mouvement
+    physique ni règlement financier. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé
+    ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-108
+  action: retain
+  rationale: 'BHV071 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Porter les transferts alimentant régulièrement un lieu pendant l’activité. » ; name
+    = « Continuous Replenishment ». Nom et définition conservent les transferts alimentant régulièrement un lieu. Les nouvelles
+    explications gardent distincts besoin de réassort, décision de quantité et suivi des apports en cours de période. Aucun
+    changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées,
+    et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-109
+  action: retain
+  rationale: 'BHV072 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Porter les transferts corrigeant un déséquilibre entre lieux, par exemple d’un magasin
+    disposant d’un excédent vers un magasin qui manque de stock. » ; name = « Inventory Rebalancing ». Nom et définition conservent
+    les transferts de correction d’un déséquilibre entre lieux. Les nouvelles comparaisons distinguent la décision de rééquilibrage
+    du suivi de son déplacement et des intentions de consolidation ou implantation. Aucun changement de relation. Aucun impact
+    de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales
+    de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability
+    → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses,
+    exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-110
+  action: retain
+  rationale: 'BHV073 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Porter les transferts regroupant des stocks dispersés : reconstitution de tailles,
+    concentration ou rapatriement de reliquats. » ; name = « Stock Consolidation ». Nom et définition conservent les transferts
+    de concentration de stocks dispersés. L’exemple de séries de tailles reste une illustration de bénéfice, sans résultat
+    chiffré ni installation Beaumanoir et sans réduction au réassort d’un site déficitaire. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U467-UNCHANGED-115
+  action: retain
+  rationale: 'BHV078 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge l’établissement et les révisions de l’engagement fournisseur sur
+    une commande d’achat, en distinguant la demande, la réponse fournisseur et les conditions finalement acceptées. » ; name
+    = « Supplier Confirmation ». Nom et définition conservent demandé, répondu par le fournisseur et finalement accepté. L’exemple
+    d’écart 80/100 ne transforme ni réception du message en accord ni date fournisseur en promesse client. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-013
+  action: retain
+  rationale: 'BHV006 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Simulation & Analysis ». Le nom désigne toujours la projection et l’interprétation de résultats de scénario.
+    L’exemple sur service et immobilisation maintient la séparation avec engagement et réalisation. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-014
+  action: retain
+  rationale: 'BHV031 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Vérifier ponctuellement un stock ciblé lorsqu’une situation le justifie. » ; name
+    = « Spot Counting ». Nom et définition conservent la vérification ponctuelle motivée d’un stock ciblé. Les exemples de
+    comptage opportuniste ajoutent des déclencheurs possibles sans imposer leur règle ou présumer le résultat. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-015
+  action: retain
+  rationale: 'BHV033 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Time-Fenced Reservation Policy ». Le nom porte toujours la fenêtre de réservation avant besoin, distinguée
+    du délai d’expiration et de la date promise. Les paramètres Oracle restent des exemples sans adoption de valeur d’horizon.
+    Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont
+    préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-016
+  action: retain
+  rationale: 'BHV036 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Transformer une intention planifiée en ordre ferme, avec les engagements et restrictions
+    de révision associés. » ; name = « Order Firming ». Nom et définition conservent la transformation de l’intention planifiée
+    en ordre ferme. Les nouvelles explications distinguent l’affermissement du gel, de la confirmation fournisseur, de la
+    réservation et de l’autorisation de lancement. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-017
+  action: retain
+  rationale: 'BHV047 : reprise limitée à definition. Valeurs exactes avant/après inchangées et empreintes identiques à celles
+    approuvées : definition = « Réviser les affectations modifiables pour appliquer de nouveaux arbitrages entre commandes.
+    ». La définition reste la révision des seuls liens modifiables pour appliquer de nouveaux arbitrages. VER018 a été relu
+    avant/après : définition et note distinguant réaffectation et modification de promesse sont identiques ; ses inspirations
+    préservent gels, réservations et engagements et n’autorisent aucune remise en jeu générale. Aucun changement de relation.
+    Les incidences de glossaire signalées sont traitées ci-dessus. Les principes U479/U482 maintiennent les responsables et
+    le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-018
+  action: retain
+  rationale: 'BHV057 : reprise limitée à name. Valeurs exactes avant/après inchangées et empreintes identiques à celles approuvées
+    : name = « Return for Repair ». Le nom continue de qualifier l’attendu de réparation et restitution du même bien. Les
+    nouveaux exemples distinguent cette attente de l’échange et ne supposent pas qu’un autre bien reçu la solde sans modification
+    d’accord. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-019
+  action: retain
+  rationale: 'BHV058 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Acheter des marchandises destinées au stock du réseau ; suivre les quantités et dates
+    restant à recevoir. » ; name = « Stock Procurement ». Nom et définition conservent l’achat destiné au stock du réseau
+    et son reste à recevoir. Le nouvel exemple sépare quantité reçue et apport encore attendu sans étendre ce comportement
+    à tous les achats. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-020
+  action: retain
+  rationale: 'BHV059 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Acheter des marchandises livrées directement par le fournisseur au client ; coordonner
+    les attentes des commandes d’achat et de vente. » ; name = « Direct Delivery ». Nom et définition conservent le côté achat
+    d’une livraison directe fournisseur-client. Les attentes achat/vente restent coordonnées sans passage fictif en stock
+    propre ni absorption du point de vue Sales Order. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-021
+  action: retain
+  rationale: 'BHV061 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge l’apport initial de stock consigné pour une saison, une capsule
+    ou un lancement, et suivre sa satisfaction avant l’échéance de démarrage. » ; name = « Initial Stocking ». Nom et définition
+    conservent l’apport initial consigné pour lancement avec échéance. Les sources n’inventent pas un consensus sur ce nom
+    ; la propriété fournisseur et l’absence d’achat automatique à l’arrivée restent explicites. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-022
+  action: retain
+  rationale: 'BHV062 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge les apports successifs de stock consigné pendant l’activité, selon
+    l’évolution du besoin, et suivre leur satisfaction. » ; name = « Continuous Replenishment ». Nom et définition conservent
+    les apports successifs consignés pendant l’activité. Les illustrations ne fixent ni rythme universel ni propriété acquise
+    à chaque réception et ne transfèrent pas le calcul des quantités à la gestion de commande. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-023
+  action: retain
+  rationale: 'BHV064 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Appliquer l’acquisition à l’échéance d’une durée contractuelle. » ; name = « Aging-Based
+    Ownership Transfer ». Nom et définition conservent l’acquisition à échéance contractuelle. Le cas des 90 jours est explicite
+    comme illustration, sans règle Beaumanoir, automatisme universel ou sortie physique présumée. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-024
+  action: retain
+  rationale: 'BHV065 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise
+    fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. » ; name
+    = « Consignment Exit ». Nom et définition conservent la sortie autorisée de consignation ou détention selon accord et
+    devenir retenu. Les appuis éditeur ne sont pas présentés comme couvrant toutes les filières ; choix, autorisation et exécution
+    restent séparés. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-025
+  action: retain
+  rationale: 'BHV066 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la commande à livrer au client depuis le réseau : entrepôt, magasin
+    ou autre lieu admissible. » ; name = « Ship to Customer ». Nom et définition conservent la commande client à livrer depuis
+    le réseau admissible. Le nouvel exemple distingue acceptation, départ et livraison, et laisse préparation/transport/remise
+    à leurs responsables. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-026
+  action: retain
+  rationale: 'BHV067 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la mise à disposition et le retrait au lieu convenu. Une commande
+    prête reste distincte d’une commande effectivement retirée. » ; name = « Customer Pickup ». Nom et définition conservent
+    mise à disposition et retrait au lieu convenu. Le cas partiel renforce la distinction déjà adoptée entre commande prête
+    et quantité effectivement retirée sans solder toute la commande. Aucun changement de relation. Aucun impact de glossaire
+    lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area
+    ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior
+    ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples
+    et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-027
+  action: retain
+  rationale: 'BHV068 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge la commande dont le fournisseur livre directement le client, en
+    coordonnant les attendus de vente et d’achat. » ; name = « Direct Delivery ». Nom et définition conservent le côté client
+    de la livraison directe fournisseur-client. Les nouveaux appuis relient achat et vente sans doubler la réalisation et
+    sans transformer automatiquement la date fournisseur en promesse client. Aucun changement de relation. Aucun impact de
+    glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales
+    de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability
+    → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses,
+    exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-028
+  action: retain
+  rationale: 'BHV069 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Prendre en charge une vente entre entités juridiques du groupe, avec cohérence entre
+    engagements de vente et d’achat. » ; name = « Intercompany Sales ». Nom et définition conservent la vente entre entités
+    juridiques avec cohérence achat/vente. Les exemples séparent relation commerciale et flux physique ; ils ne rendent pas
+    ce comportement exclusif de Direct Delivery. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est
+    signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas
+    son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources
+    de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs
+    éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-029
+  action: retain
+  rationale: 'BHV070 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Porter les transferts constituant le stock de départ : implantation d’une saison,
+    d’une capsule ou d’un nouveau lieu. » ; name = « Initial Stocking ». Nom et définition conservent les transferts constituant
+    le stock initial. Les nouveaux appuis distinguent décision des quantités et suivi du déplacement, sans faire de l’intention
+    d’ouverture une preuve de disponibilité. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est
+    signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas
+    son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources
+    de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs
+    éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-030
+  action: retain
+  rationale: 'BHV074 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Porter un transfert nécessaire à une commande identifiée, en conservant son lien
+    et son échéance. » ; name = « Order-Driven Transfer ». Nom et définition conservent le transfert nécessaire à une commande
+    identifiée, son lien et son échéance. Le rapprochement back-to-back n’impose pas les règles Oracle et ne transforme pas
+    une réception future en livraison acquise. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est
+    signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas
+    son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources
+    de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs
+    éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-031
+  action: retain
+  rationale: 'BHV075 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires,
+    avec quantités, dates et conditions de disponibilité. » ; name = « Additional Supply Feasibility ». Nom et définition
+    conservent la faisabilité d’un apport supplémentaire hors référence avec conditions. Les exemples maintiennent l’arrivage
+    déjà prévu dans ATP et ne créent automatiquement ni achat ni fabrication ni cible de stock. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-032
+  action: retain
+  rationale: 'BHV076 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Les possibilités obtenues en modifiant les modalités de satisfaction par rapport
+    à la situation de référence. » ; name = « Fulfillment Alternative Feasibility ». Nom et définition conservent les possibilités
+    exigeant une modification des modalités de référence. Les exemples distinguent admissibilité existante ATP et adaptation
+    CTP, sans autoriser un substitut par sa seule ressemblance ni absorber le choix du service. Aucun changement de relation.
+    Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-033
+  action: retain
+  rationale: 'BHV077 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Les possibilités obtenues en révisant des engagements modifiables, en explicitant
+    les conséquences sur les commandes concernées. » ; name = « Commitment Rebalancing Feasibility ». Nom et définition conservent
+    l’examen conditionnel de révision d’engagements modifiables et ses effets sur les autres commandes. Les exemples ne présument
+    aucune autorisation client et distinguent faisabilité, arbitrage, révision de promesse et réaffectation. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-034
+  action: retain
+  rationale: 'BHV079 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Réception, manutention, préparation et expédition dans les entrepôts et plateformes.
+    » ; name = « Warehouse Visibility ». Nom et définition conservent la visibilité des opérations d’entrepôt. Les nouveaux
+    appuis séparent préparation, départ et effets de stock et ne transfèrent ni le fonctionnement interne du WMS ni une exigence
+    de télémétrie uniforme. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions
+    du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482
+    maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent
+    pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent
+    proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-035
+  action: retain
+  rationale: 'BHV080 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Acheminements, progression, arrivées estimées et remise au destinataire. » ; name
+    = « Transportation Visibility ». Nom et définition conservent acheminement, progression, estimation et remise. Les nouvelles
+    explications distinguent estimation et preuve de livraison sans absorber rangement ou disponibilité magasin. Aucun changement
+    de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et
+    les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables
+    et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions.
+    Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas
+    accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-036
+  action: retain
+  rationale: 'BHV081 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Réception magasin, passage en réserve, mise en rayon et réassort de la surface de
+    vente. » ; name = « Store Visibility ». Nom et définition conservent réception, réserve, rayon et réassort de surface
+    de vente. Les sources plus larges sont limitées à cette visibilité ; écritures de stock et décisions de réassort restent
+    séparées. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire
+    sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent
+    les responsables et le niveau terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions
+    ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note
+    historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-037
+  action: retain
+  rationale: 'BHV082 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en
+    reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les
+    résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. » ; name = « Process Tracking ».
+    Nom et définition conservent le suivi des Tasks et processus Supply, contributions humaines/physiques/numériques et résultats
+    acquis/attendus. Le scope change exclusivement « responsabilités des domaines » en « responsabilités des areas » (U482)
+    : mêmes responsables et aucun nouveau niveau ou moteur. L’exemple document produit mais non déposé maintient appel, prestation,
+    résultat métier et processus distincts. Aucun changement de relation. Aucun impact de glossaire lié à la fiche n’est signalé
+    ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent pas son sens.
+    Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les sources de vérité
+    locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et autres champs éditoriaux
+    U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-038
+  action: retain
+  rationale: 'BHV083 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources
+    utilisables et des apports attendus. » ; name = « Requirement-based Replenishment ». Nom et définition conservent le calcul
+    d’apports pour besoins datés nets des ressources et arrivages admissibles. L’exemple vérifie lots et délais après le manque
+    arithmétique sans valoir réservation ni promesse. Aucun changement de relation. Aucun impact de glossaire lié à la fiche
+    n’est signalé ; les définitions du glossaire sont préservées, et les actualisations générales de Domain/Area ne changent
+    pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau terminal Capability → Behavior ; les
+    sources de vérité locales n’absorbent pas les décisions ni les transactions. Les comparaisons, synthèses, exemples et
+    autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-039
+  action: retain
+  rationale: 'BHV084 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Déterminer les apports pour retrouver une cible de stock selon les seuils applicables,
+    sans nécessiter une commande identifiée pour chaque apport. » ; name = « Target-based Replenishment ». Nom et définition
+    conservent le retour vers une cible selon seuils applicables sans commande identifiée obligatoire. Les règles d’arrondi
+    restent explicites ; le comportement utilise les cibles retenues sans les redéfinir. Aucun changement de relation. Aucun
+    impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'
+- decision_id: ADOPT-U473-UNCHANGED-040
+  action: retain
+  rationale: 'BHV085 : reprise limitée à definition, name. Valeurs exactes avant/après inchangées et empreintes identiques
+    à celles approuvées : definition = « Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents
+    ou décalages, en respectant les engagements. » ; name = « Replenishment Adjustment ». Nom et définition conservent la
+    modification admissible des apports prévus selon besoin et engagements. Les exemples séparent recommandation, acceptation
+    fournisseur et application par D04, sans modifier les quantités fermes implicitement. Aucun changement de relation. Aucun
+    impact de glossaire lié à la fiche n’est signalé ; les définitions du glossaire sont préservées, et les actualisations
+    générales de Domain/Area ne changent pas son sens. Les principes U479/U482 maintiennent les responsables et le niveau
+    terminal Capability → Behavior ; les sources de vérité locales n’absorbent pas les décisions ni les transactions. Les
+    comparaisons, synthèses, exemples et autres champs éditoriaux U477 restent proposés ; la note historique ne vaut pas accord
+    élargi.'

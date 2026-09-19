@@ -1,0 +1,82 @@
+{
+  "version": "2026-09-19.10",
+  "items": [
+    {
+      "decision_id": "ADOPT-REASSESS-47c6ac230b1d85258963165f",
+      "prior_decision_id": "ADOPT-REASSESS-452dc83c9e3e8201498817d1",
+      "approved_fields": [
+        "definition",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-f2e95f211883f53f6ba202d2",
+      "prior_decision_id": "ADOPT-REASSESS-2aa5f8824d1dc1cad1995db5",
+      "approved_fields": [
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-ea3d693804bc6edb8b2df947",
+      "prior_decision_id": "ADOPT-REASSESS-93b2a88abfde3bbd2dc9a4a4",
+      "approved_fields": [
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-76946a3561f8da0443728a6f",
+      "prior_decision_id": "ADOPT-REASSESS-f83c95b92c8a134913fe92f4",
+      "approved_fields": [
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-96e20fd42b70a544549e9e69",
+      "prior_decision_id": "ADOPT-REASSESS-9b6c27a2bac49b3c09b47243",
+      "approved_fields": [
+        "definition",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-a32a0f439363e56e46d92dd8",
+      "prior_decision_id": "ADOPT-REASSESS-e2c1ff184f2ed7241f6a5aca",
+      "approved_fields": [
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-34efd6a177b67b52fb496407",
+      "prior_decision_id": "ADOPT-REASSESS-cf7d38f168c7a8aaf0e5dcfc",
+      "approved_fields": [
+        "definition",
+        "finality",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-c94f4960b313e130ce74c772",
+      "prior_decision_id": "ADOPT-REASSESS-e6d578d41440b7b28dcc2018",
+      "approved_fields": [
+        "definition",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-6f402fe866f4891301dd1d6d",
+      "prior_decision_id": "ADOPT-REASSESS-488182a8c4fd4436dc20be46",
+      "approved_fields": [
+        "definition",
+        "name"
+      ]
+    },
+    {
+      "decision_id": "ADOPT-REASSESS-b2177464d8aeb6d1f400aa40",
+      "prior_decision_id": "ADOPT-REASSESS-a7c0f303183761753fe674b3",
+      "approved_fields": [
+        "name"
+      ]
+    }
+  ]
+}

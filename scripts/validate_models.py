@@ -29,18 +29,21 @@ ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
 CAPABILITY_NATURES = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'decision'}
 BEHAVIOR_NATURES = {'policy_strategy', 'process_variant', 'intervention_mechanism', 'business_scope', 'decision_dimension', 'business_effect', 'planning_practice'}
+REQUEST_ORIGINS = {'frontoffice', 'backoffice'}
+BEHAVIOR_ASPECTS = {'trigger', 'activity'}
 RELATION_KINDS = {
-    "contains": ({"domain", "reference", "capability"}, {"capability", "behavior"}),
-    "presents": ({"group"}, {"domain", "reference", "group", "capability"}),
+    # The former lower-level domain remains supported in frozen publications.
+    "contains": ({"domain", "area", "reference", "capability"}, {"capability", "behavior"}),
+    "presents": ({"group", "domain", "area"}, {"domain", "area", "reference", "group", "capability"}),
     "confirms": ({"capability"}, {"object"}),
     "associated-document": ({"capability"}, {"document"}),
     "observed-result": ({"capability"}, {"event"}),
     "represents": ({"document"}, {"object"}),
     "records": ({"document"}, {"event"}),
-    "provides-knowledge": ({"domain"}, {"domain"}),
-    "provides-conditions": ({"reference"}, {"domain"}),
-    "describes-network": ({"reference"}, {"domain"}),
-    "relates-to": ({"capability", "behavior"}, {"capability", "behavior", "object", "document", "event"}),
+    "provides-knowledge": ({"domain", "area"}, {"domain", "area"}),
+    "provides-conditions": ({"reference"}, {"domain", "area"}),
+    "describes-network": ({"reference"}, {"domain", "area"}),
+    "relates-to": ({"capability", "behavior", "reference"}, {"capability", "behavior", "object", "document", "event", "reference"}),
 }
 
 
@@ -109,9 +112,9 @@ def validate_urbanism(model, sources, schema=None):
     except ImportError:
         from information_catalog import validate_information, versioned_items
     try:
-        from .market_comparison import validate_comparisons, validate_reference_policy
+        from .market_comparison import validate_comparisons, validate_inspiration, validate_reference_policy
     except ImportError:
-        from market_comparison import validate_comparisons, validate_reference_policy
+        from market_comparison import validate_comparisons, validate_inspiration, validate_reference_policy
     try:
         from .lifecycle import validate_lifecycle
     except ImportError:
@@ -137,6 +140,25 @@ def validate_urbanism(model, sources, schema=None):
     for identifier in set(nodes) & set(relations):
         errors.append(f"model/{identifier}: id shared by node and relation")
     for identifier, node in nodes.items():
+        fields = node.get('fields', {})
+        if 'request_origins' in fields:
+            origins = fields['request_origins']
+            if node.get('kind') != 'capability':
+                errors.append(f'nodes/{identifier}: request_origins belongs to a capability')
+            if (not isinstance(origins, list) or not 1 <= len(origins) <= 2
+                    or any(not isinstance(origin, str) or origin not in REQUEST_ORIGINS for origin in origins)
+                    or len(set(origins)) != len(origins)):
+                errors.append(f'nodes/{identifier}: request_origins must be a nonempty unique list of frontoffice/backoffice')
+        if 'behavior_aspect' in fields:
+            aspect = fields['behavior_aspect']
+            if node.get('kind') != 'behavior':
+                errors.append(f'nodes/{identifier}: behavior_aspect belongs to a behavior')
+            if not isinstance(aspect, str) or aspect not in BEHAVIOR_ASPECTS:
+                errors.append(f'nodes/{identifier}: behavior_aspect must be trigger or activity')
+        if 'market_inspiration' in node.get('fields', {}):
+            errors.extend(validate_inspiration(node['fields']['market_inspiration'],
+                                              node['fields'].get('market_comparisons'),
+                                              identifier + '/market_inspiration'))
         role, level = node.get("group_role"), node.get("level_ref")
         if role is not None and (node.get("kind") != "group" or role not in ("presentation", "urbanism_level")):
             errors.append(f"nodes/{identifier}: group_role requires a group and a supported role")
@@ -165,7 +187,15 @@ def validate_urbanism(model, sources, schema=None):
             errors.append(f"relations/{identifier}: unsupported relation type")
         elif source.get("kind") not in rule[0] or target.get("kind") not in rule[1]:
             errors.append(f"relations/{identifier}: incompatible endpoint kinds for {rel.get('type')}")
+        if (rel.get("type") == "presents" and source.get("kind") == "domain"
+                and target.get("kind") not in {"area", "reference", "group"}):
+            errors.append(f"relations/{identifier}: domain presents only areas, references or presentation groups")
+        if (rel.get("type") == "presents" and source.get("kind") == "area"
+                and target.get("kind") != "reference"):
+            errors.append(f"relations/{identifier}: area presents only references; capabilities use contains")
         if rel.get("type") == "relates-to":
+            if ((source.get("kind") == "reference") != (target.get("kind") == "reference")):
+                errors.append(f"relations/{identifier}: a reference relates-to another reference; mixed endpoint kinds are not supported")
             qualification = rel.get("qualification")
             if not isinstance(qualification, dict):
                 errors.append(f"relations/{identifier}: relates-to requires qualification")
@@ -458,8 +488,8 @@ def validate_applicability(document, sources, models, realizations, schema=None)
             errors.append(f"applicability/{identifier}: assessment/context perspective mismatch")
         nodes = {n["id"]: n for n in model.get("nodes", [])} if model else {}
         node = nodes.get(subject.get("node_id"))
-        if node is None or node.get("kind") not in ("domain", "capability"):
-            errors.append(f"applicability/{identifier}: subject is not a domain/capability in the referenced model version")
+        if node is None or node.get("kind") not in ("domain", "area", "capability"):
+            errors.append(f"applicability/{identifier}: subject is not a domain/area/capability in the referenced model version")
         key = (*model_key, subject.get("node_id"), context_id)
         if key in assessed_keys:
             errors.append(f"applicability/{identifier}: duplicate assessment for subject/version/context")
@@ -529,6 +559,8 @@ def validate_project(root=ROOT):
         release_path, release = _pointer(root, root / "modeles/release", pointer, errors)
         manifest = _load(release_path.parent / "manifest.json")
         errors.extend(validate_decision_review(root, release_path.parent / 'manifest.json', manifest))
+        if 'published_modeling_guide' in manifest:
+            _pointer(root, release_path.parent, manifest['published_modeling_guide'], errors)
         if manifest.get("model_sha256") != pointer.get("sha256") or manifest.get("version") != release.get("version") or pointer.get("version") != release.get("version"):
             errors.append("release: pointer/manifest/model version or hash mismatch")
         _, snapshot = _pointer(root, release_path.parent, {"path": manifest["input_revision_path"], "sha256": manifest.get("input_revision_sha256")}, errors)

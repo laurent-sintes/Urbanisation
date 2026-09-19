@@ -62,3 +62,10 @@ test('graph exploration links preserve level, complete depth, filters and fixed 
   for (const key of Object.keys(route).filter(k => k.startsWith('graph'))) assert.equal(invalid[key], undefined);
   assert.ok(!routeHash({ ...route, view: 'map' }).includes('depth='));
 });
+
+test('area links round-trip without changing historical domain and universe levels', () => {
+  for (const graphLevel of ['area', 'domain', 'universe']) {
+    const route = { ...readRoute(''), view: 'relations', node: 'D04', version: 'fixed-publication', graphLevel };
+    assert.deepEqual(readRoute(routeHash(route)), route);
+  }
+});

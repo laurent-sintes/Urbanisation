@@ -1,0 +1,61 @@
+schema_version: 1.0.0
+version: 2026-09-19.10
+review_sha256: 94d4c6151bd30f4240d031df088807088acc8fc47a7c1795bb5d4e6d9aee71dd
+reviewer: Codex — réexamen explicite de portée pour U502
+items:
+- decision_id: ADOPT-REASSESS-452dc83c9e3e8201498817d1
+  action: retain
+  rationale: Nom et définition de coordination inchangés. Backing Services précise les prestations déjà orchestrées ; sélection,
+    adaptation et opérations internes restent distinctes. Les deux termes renommés ne transfèrent aucune responsabilité à
+    Process Orchestration.
+- decision_id: ADOPT-REASSESS-7d991a1476b1520419f3d3ff
+  action: defer
+  rationale: La définition du catalogue est reformulée ; la décision composite ne peut être reprise entière. Son seul nom
+    Service Catalog est conservé dans une décision séparée à portée réduite, avec auteur et sources historiques ; la nouvelle
+    définition reste proposée.
+- decision_id: ADOPT-REASSESS-2aa5f8824d1dc1cad1995db5
+  action: retain
+  rationale: Purchase Order conserve son intention d’achat. Seul le nom lié Backing Service Orders évolue dans le périmètre
+    ; ni achat, ni finance, ni exécution physique ne sont déplacés. Reprise du nom seul.
+- decision_id: ADOPT-REASSESS-93b2a88abfde3bbd2dc9a4a4
+  action: retain
+  rationale: Transfer Order garde le même sens. L’indicateur des origines possibles ne crée pas un autre objet ; sa validation
+    U501 est distincte. Reprise du seul nom historique.
+- decision_id: ADOPT-REASSESS-f83c95b92c8a134913fe92f4
+  action: retain
+  rationale: La recommandation de réassort conserve son périmètre et ses frontières avec application et promesse. Service
+    Requests remplace uniquement le libellé du lien existant. Reprise du nom seul.
+- decision_id: ADOPT-REASSESS-9b6c27a2bac49b3c09b47243
+  action: retain
+  rationale: Nom et définition conservent la détermination des prestations nécessaires ; Backing Service Orders reste le porteur
+    de leurs demandes. Aucune extension vers prise en charge, sélection ou promesse.
+- decision_id: ADOPT-REASSESS-33a9ffba188c24e7eceb652d
+  action: defer
+  rationale: Order Management est remplacé par Service Requests avec prise en compte des demandes internes. L’ancien nom ne
+    peut être transcrit ; les seuls nom et définition présentés et adoptés U496 font l’objet d’une nouvelle décision.
+- decision_id: ADOPT-REASSESS-e2c1ff184f2ed7241f6a5aca
+  action: retain
+  rationale: Nom et finalité de satisfaction des Orders inchangés. Le nouveau dossier d’optimisation sollicite les capacités
+    existantes sans reprendre leur raisonnement ni leurs décisions ; le périmètre remplace uniquement le nom du porteur des
+    demandes.
+- decision_id: ADOPT-REASSESS-cf7d38f168c7a8aaf0e5dcfc
+  action: retain
+  rationale: Nom, définition et finalité conservent le compromis de stock souhaitable. Le lien vers Service Requests ne modifie
+    ni cet objectif ni la séparation de la satisfaction des commandes et de l’exécution.
+- decision_id: ADOPT-REASSESS-e6d578d41440b7b28dcc2018
+  action: retain
+  rationale: Nom et définition maintiennent une demande d’apport sans engagement d’achat. Le renommage de l’Area liée ne change
+    ni propriété, ni contrat, ni responsabilités du réassort consigné.
+- decision_id: ADOPT-REASSESS-488182a8c4fd4436dc20be46
+  action: retain
+  rationale: Nom et définition conservent l’application du régime de consignation au stock. Le lien vers Service Requests
+    ne transfère ni la gestion de la demande ni les décisions d’implantation à cette capacité.
+- decision_id: ADOPT-REASSESS-9586b06d6371c8597d9e7fbd
+  action: defer
+  rationale: Le nom change vers Backing Service Orders ; l’accord composite ne peut être repris entier. Définition strictement
+    inchangée conservée séparément avec sources et auteur historiques ; nouveau nom adopté par U497. TER066 précise le même
+    cycle de demandes aux exécutants.
+- decision_id: ADOPT-REASSESS-a7c0f303183761753fe674b3
+  action: retain
+  rationale: Service Selection Decision continue de choisir les prestations et exécutants admissibles. Le nom Backing Service
+    clarifie l’objet du choix sans absorber catalogue, demande, orchestration ou promesse. Reprise du nom seul.

@@ -623,3 +623,122 @@ Le [registre des 31 documents consultés](../audits/2026-09-19-base-U470/sources
 ## Complément U472 — MKT02 et MKT14
 
 Relecture du tutoriel communautaire [ArchiMate 101](https://archimate-community.pages.opengroup.org/workgroups/archimate-101/) et consultation de [Microsoft Customer Service — Overview of case management](https://learn.microsoft.com/en-gb/dynamics365/customer-service/administer/overview-cases), le 19 septembre 2026. Passages, nature, éditions et limites consignés dans ELM323/ELM324 ; rapprochement local CMP187. Deux organismes, aucun standard de découpage FLOW déduit. Liens et synthèses courtes, sans import de catalogue.
+
+## MKT55
+
+Zacharia, Sanders et Nix — *The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator*, Journal of Business Logistics, 2011, 32(1), 40–54, DOI 10.1111/j.2158-1592.2011.01004.x. [Article primaire hébergé par Lehigh University](https://bpb-us-w2.wpmucdn.com/wordpress.lehigh.edu/dist/e/653/files/2018/01/Zacharia-JBL-3PL-Orchestrator-Role-2011-27dqkbl.pdf), consulté le 19 septembre 2026 : introduction, modèle, exemples et limites. Recherche sur le rôle d’un prestataire ; appui sémantique ELM325/CMP188. Limites : entretiens chez un seul prestataire spécialisé transport, sans définition universelle ni organisation prescrite pour FLOW. Synthèse sélective et lien, aucun article reproduit.
+
+## MKT56
+
+ASCM — SCOR Digital Standard. [Présentation et définitions officielles](https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/), sans numéro d’édition affiché, consultées le 19 septembre 2026 par le texte primaire restitué dans l’index de recherche. Référentiel professionnel de processus ; appui ELM326/CMP188 pour comparer le périmètre d’Orchestrate à l’univers Supply. Passages : présentation et définitions des sept processus. Limites : ouverture directe HTTP 403, standard complet non audité ; aucune conformité revendiquée. Synthèse originale, aucun catalogue importé.
+
+
+## MKT57
+
+Martin Fowler — articles originaux sur Domain Model, Bounded Context et Event Notification. Auteur ; concepts de conception utilisés comme appuis sémantiques, pas modèle de capacités. Sources : [Domain Model](https://martinfowler.com/eaaCatalog/domainModel.html), [Bounded Context](https://martinfowler.com/bliki/BoundedContext.html), [What do you mean by Event-Driven?](https://martinfowler.com/articles/201701-event-driven.html). Éditions : 15 janvier 2014 ; 5 mars 2003 ; 7 février 2017. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT58
+
+New Zealand Digital Government — GEA-NZ Business Capabilities. Référentiel public d’architecture gouvernementale ; appui méthodologique sans taxonomie Supply imposée. Sources : [Business capabilities](https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities). Éditions : Page institutionnelle évolutive, édition non indiquée. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT59
+
+CNCF — CloudEvents Specification 1.0.2. Spécification du consortium sur les événements échangés ; distinction occurrence/représentation sans protocole imposé à FLOW. Sources : [CloudEvents Specification](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md). Éditions : Version 1.0.2. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT60
+
+Nextail — Solution specifications et cas Merkal. Documentation produit et cas client publiés par l’éditeur ; capacités annoncées, sans preuve de réalisation Beaumanoir. Sources : [Solution specifications](https://help.nextail.co/en/solution-specifications), [Merkal Implements AI to Streamline Inventory Planning](https://nextail.co/customer/merkal-footwear-inventory-planning/). Éditions : Documentation évolutive consultée le 19 septembre 2026 ; Page en ligne sans édition affichée ; Étude de cas en ligne sans édition affichée. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT61
+
+Achkar et coauteurs — Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization. Article de recherche original accessible sur arXiv ; modèle sous hypothèses, sans règle d’optimisation universelle. Sources : [Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization](https://arxiv.org/abs/2306.10961). Éditions : Prépublication du 19 juin 2023. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT62
+
+commercetools — Composable Commerce, Inventory overview. Documentation produit sur les réservations ; mécanismes de panier/commande comparés sans extension du chantier commerce FLOW. Sources : [Inventory overview](https://docs.commercetools.com/api/inventory-overview). Éditions : Documentation en ligne sans édition affichée. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT63
+
+Shopify — Shopify Checkout. Documentation produit sur la retenue du stock au paiement ; exemple circonscrit, sans choix de solution. Sources : [Shopify Checkout](https://help.shopify.com/en/manual/checkout-settings). Éditions : Aide en ligne sans édition affichée. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT64
+
+Amazon — Fulfillment by Amazon / Selling Partner Reports. Documentation primaire des rapports Inventory Ledger ; appui lexical et fonctionnel limité au registre de stock. Sources : [Fulfillment by Amazon (FBA) Reports](https://developer-docs.amazon/sp-api/docs/report-type-values-fba). Éditions : Documentation en ligne consultée le 2026-09-19. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT65
+
+Infor LN 10.7 — Commingling purchase orders. Documentation primaire sur la fusion d’achats compatibles ; conditions propres à LN et traçabilité des origines, sans règle universelle ni réalisation Beaumanoir déduite. Sources : [Commingling purchase orders](https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html). Éditions : Infor LN 10.7. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## MKT66
+
+Logility — Retail Optimization Gives Groupe Dynamite an Edge. Présentation écrite du cas Groupe Dynamite : initial distribution, réassort et courbes style/couleur/taille ; vidéo non visionnée, témoignage fournisseur sans gain chiffré ni preuve locale retenus. Sources : [Retail Optimization Gives Groupe Dynamite an Edge](https://www.logility.com/webcast/retail-optimization-gives-groupe-dynamite-an-edge/). Éditions : Documentation évolutive consultée le 19 septembre 2026. Passages primaires effectivement consultés le 19 septembre 2026, selon les modalités et limites du [relevé U477](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml). Synthèses originales et liens uniquement ; pas de reproduction substantielle ni conformité revendiquée.
+
+
+## Compléments U477 — références existantes
+
+Réexamen éditorial sur toutes les fiches visibles, y compris celles sans référence. Les produits, éditions, passages, restrictions d’accès et exemples effectivement consultés sont consignés dans [le relevé documentaire](../audits/2026-09-19-sources-inspiration-U477/consulted-documents.yaml) et les cinq relevés de lots. Une page de présentation, une notice indexée, une documentation de produit et un article de recherche gardent leur nature ; deux documents d’un même organisme ne démontrent pas un consensus. Les familles Microsoft, Oracle, SAP, Blue Yonder et GS1 sont précisées par produit et document dans chaque fiche, sans équivalence automatique entre leurs éditions.
+
+## MKT67
+
+EDM Council — gouvernance et gestion des données. Documents primaires consultés le 19 septembre 2026 : [Prioritizing Data Based on Criticality: Critical Data Elements (CDEs) in Context](https://ortecha.com/wp-content/uploads/2023/07/EDM-Council-Prioritizing-Data-Based-on-Criticality-Critical-Data-Elements-CDEs-in-Context.pdf), novembre 2018 vF1.1, exemplaire hébergé par Ortecha, co-auteur ; [CDMC Information Model: Controls, Tests and Mappings](https://edmcouncil.org/wp-content/uploads/2023/02/CDMC-Information-Model-Controls-Tests-Mappings-V1.1.pdf), version 1.1, octobre 2022. Appuis lexicaux et de responsabilité pour U478/U479 ; aucun alignement ou conformité DCAM/CDMC revendiqué. Passages sélectifs et limites : ELM483/485 et [proposition](../modeles/backlog/authoritative-data-review-U478.yaml). DCAM actuel réservé aux membres non consulté ; pas de reproduction substantielle des documents protégés.
+
+## MKT68
+
+Oracle — [Oracle Reference Architecture, Information Management](https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf), Release 3.1, juillet 2013, E26368-03. Architecture de référence historique, distincte des produits Fusion documentés sous MKT20. Passages §2.3.4 et §6.3.3.4.3 consultés le 19 septembre 2026 pour le nom Authoritative Data Domain et l’articulation avec des sources externes. Synthèse sélective, aucun choix de produit ni découpage métier adopté ; configurations métier non explicitement comprises dans cette définition. ELM484 et [proposition](../modeles/backlog/authoritative-data-review-U478.yaml). Document protégé : liens et reformulations, sans importation substantielle.
+
+
+## MKT69
+
+Microsoft Azure Architecture Center — [Use Domain Analysis to Model Microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Guide public de conception, page évolutive consultée le 19 septembre 2026. Appui aux termes Domain, Subdomain et Bounded Context ; aucun découpage logiciel FLOW adopté. Document distinct du catalogue Dynamics 365 MKT14. ELM487 / CMP195 ; sections, différences et limites dans [la proposition U481](../modeles/backlog/model-level-naming-U481.yaml). Synthèses et liens uniquement.
+
+## MKT70
+
+Intersection Group / EDGY — [Capability Modeling Guidelines: Capability Hierarchy](https://enterprise.design/wiki/Capability_Modeling_Guidelines:_Capability_Hierarchy). Guide public, modification affichée le 2 mars 2026, consulté le 19 septembre 2026. Vocabulaire de regroupement des capacités ; ni modèle Supply ni obligation de nombre de niveaux. ELM488 / CMP195 ; [comparaison U481](../modeles/backlog/model-level-naming-U481.yaml). Synthèses et liens uniquement.
+
+## Complément U481 — MKT03, MKT04 et MKT14
+
+Reconsultation primaire ciblée le 19 septembre 2026 : glossaire BIZBOK 15.0 (Capability Behavior et Capability Level), leçon SAP sur les niveaux et l’exemple Supply Chain Execution, niveaux du catalogue de processus Microsoft. Éditions, URL, passages, rapprochements et limites dans [la proposition U481](../modeles/backlog/model-level-naming-U481.yaml), ELM486/489/490. Aucun guide propriétaire complet importé ni équivalence de hiérarchie présumée.
+
+
+## MKT71
+
+**Référence :** IBM Research, travaux sur les processus centrés sur les business artifacts. **Nature :** recherche scientifique ; appui conceptuel aux entités métier dotées de données et d’un cycle de vie. **Source primaire consultée le 19 septembre 2026 :** [Automatic verification of data-centric business processes](https://research.ibm.com/publications/automatic-verification-of-data-centric-business-processes), Deutsch, Hull, Patrizi et Vianu, ICDT 2009 ; résumé de la notice IBM lu, article complet non consulté. **Limites :** ne prescrit pas une Area autonome ; synthèse sélective sans import du papier. ELM493 / CMP196, [analyse U485](../modeles/backlog/order-management-positioning-U485.yaml).
+
+## MKT72
+
+**Référence :** Wil M. P. van der Aalst, recherche Object-Centric Process Mining. **Organismes indiqués :** RWTH Aachen / Fraunhofer FIT. **Source primaire consultée le 19 septembre 2026 :** [Object-Centric Process Mining: Dealing With Divergence and Convergence in Event Data](https://www.vdaalst.com/publications/p1056.pdf), copie auteur ; date d’édition non explicitée dans les passages utilisés. Introduction et §3, notamment pp.8–10, lus. **Rôle :** distinguer cycles de vie d’objets et vues de processus ; aucune équivalence à un catalogue de capacités. Reformulations sélectives et lien, pas d’import substantiel du texte. ELM494 / CMP196.
+
+
+## MKT73
+
+Salesforce — documentation produit Salesforce Help et formations officielles Trailhead. Nature : fonctions et objets de produits, appui aux notions de demandes, dossiers et traitements internes. Sources primaires consultées le 19 septembre 2026 : [Service Process Studio Fulfillment Flows](https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5), [Explore Service Requests and Resolutions](https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions), [Case Fields](https://help.salesforce.com/s/articleView?id=service.cases_fields.htm&language=en_US&type=5). Pages évolutives sans édition identifiée ; produits et passages distingués dans [U485, complément U493–U495](../modeles/backlog/order-management-positioning-U485.yaml). Synthèses sélectives et liens uniquement. Ni taxonomie universelle frontoffice/backoffice, ni fonctionnalité fraude précise, ni déploiement Beaumanoir déduits. ELM497–498 / CMP199.
+
+
+## MKT74
+
+Informatica — MDM Customer 360, documentation historique et présentation MDM 2026. Sources ELM501/502 : guides 10.4 HF1 et 10.3 HF2, passages primaires indexés sur Party et Party Role, accès intégral indisponible. ELM507 : présentation officielle Connecting Master Data to Agentforce, 10 mars 2026, consultation des personnes, organisations, profils et relations. URLs, localisateurs et limites dans [le relevé U505](../audits/2026-09-19-party-reference-U505/consulted-documents.yaml). Modèle produit et fonctions de consultation ; ni modèle SaaS actuel intégralement vérifié, ni réalisation Beaumanoir. Synthèses sélectives et liens uniquement.
+
+## MKT75
+
+OMG — Commons Ontology Library 1.2, février 2025, formal/25-02-03. [Document primaire](https://www.omg.org/spec/Commons/1.2/PDF), §§8.13–8.14, tableaux 8.26 et 8.28, pp.71–72 et 80–82 imprimées, consultés le 19 septembre 2026. Party, PartyRole, situations et personnes juridiques : appui sémantique, pas carte de capacités ni conseil juridique. ELM503 / CMP203. Pas d’import substantiel de la spécification.
+
+**Compléments U505/U506 aux références existantes :** MKT13, cours SAP Creating Business Partners et Managing Business Partners, ELM499/500 ; MKT67, ontologies FIBO Contracts et Legal Persons, ELM504/505 ; MKT57, Fowler Organization Structures / Party, ELM506. Textes primaires consultés le 19 septembre 2026 ; éditions, URLs et limites dans le relevé U505. Ces rapprochements ne remplacent pas les anciennes preuves et ne démontrent aucun consensus universel de périmètre.
+
+
+## MKT76
+
+ServiceNow — Service Portal, documentation du Catalog Homepage Search widget, release Australia, mise à jour du 12 mars 2026. [Source primaire](https://www.servicenow.com/docs/r/platform-user-interface/service-portal/cat-homepage-search-widget.html), section Using the widget, consultée le 19 septembre 2026. ELM514 : recherche et parcours d’un catalogue, analogie de consultation seulement. Le catalogue de demandes ServiceNow n’est pas le catalogue des Backing Services FLOW ; aucune équivalence de périmètre ni réalisation locale. Reformulation courte et lien uniquement.
+
+**Compléments U505 aux références MKT14/20/42/19 :** consultation de produits, contrats, catalogues, lieux et services dans les documents ELM508–513 et relecture ciblée d’ELM423/426/391. Sources primaires, éditions et limites dans [le relevé U505](../audits/2026-09-19-party-reference-U505/consulted-documents.yaml). GS1 US Location View/Use étaye uniquement la recherche de lieux pour D13.b ; aucun retour de GS1 Party/Location dans D09. Le PDF TMFC006 complète la notice déjà référencée, sans remplacer son historique.
+
+
+**Réexamen U508 — MKT13/14/20 :** SAP Retail Assortment (Private Edition), Microsoft Commerce Assortment management et catalogues B2B, Oracle Procurement 26A types d’accords d’achat, consultés le 19 septembre 2026. ELM515/516 complètent les appuis antérieurs ELM094/391/345. [Sources, éditions et limites](../modeles/backlog/catalog-assortment-review-U508.yaml). Rapprochements métier sélectifs ; aucune taxonomy commune, maîtrise locale ou réalisation Beaumanoir déduite.

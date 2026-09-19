@@ -1,0 +1,18 @@
+source_ref: U507
+areas: 7
+references: 6
+reference_capabilities: 12
+adoption_scope: Party / Role name/definition ; six Visibility name/nature ; parent relations ; Area structure in adoption_U507
+preserved: Existing identifiers, endpoints, relation types and publication index
+checks:
+  validation: 0 error
+  python_tests: 47
+  frontend_tests: 46
+  corrected_fixture_tests: 17
+  build: passed
+  diff_check: passed
+guide_for_next_requested_release: modeles/backlog/modeling-guide-U458.yaml (2026-09-19.5), to pass explicitly through --guide
+publication: Not requested
+decision_intents:
+  count: 21
+  compile_check: All values, contexts and lifecycle hashes match the final backlog; no release created

@@ -19,8 +19,10 @@ source_refs:
 - U263
 - U264
 - U472
+- U482
 current_focus:
 - domain
+- area
 - capability
 - object
 extensions:
@@ -28,7 +30,7 @@ extensions:
   subject: grouping_above_domains
   state: structure_prepared
   candidate_terms:
-  - Universe
+  - Domain
   name_state: decided
   semantic_definition_state: partly_defined
   instantiate_now: true
@@ -37,7 +39,10 @@ extensions:
     : la frontière Supply/Services ne crée pas automatiquement un niveau ou un univers Services. U173 renomme universe-case
     en Business Services et valide sa définition ; domaines de cet univers différés, identifiant conservé. U472 remplace le
     maintien de Business Services : universe-case est retiré sans réutilisation d’identifiant. Seul Supply Chain Orchestration
-    demeure instancié comme univers ; commerce différé après la Supply Chain, sans remplacement automatique.'
+    demeure instancié comme univers ; commerce différé après la Supply Chain, sans remplacement automatique. U482 remplace
+    le vocabulaire courant : Supply Chain Orchestration est un Domain ; les six anciens domaines sont des Areas. Les identifiants
+    et responsabilités restent stables. Authoritative Data est le nom du groupe de présentation business-references ; les
+    six référentiels restent distincts. Les mentions précédentes conservent les décisions historiques.'
 - id: EXT-BUSINESS-ENTITIES
   subject: business_objects_documents_events
   state: in_progress

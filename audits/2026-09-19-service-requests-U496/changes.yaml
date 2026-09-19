@@ -1,0 +1,33 @@
+source_refs:
+- U496
+- U497
+changed_nodes:
+- D04.j
+- D05.e
+- D14
+- D07.a
+- D07.b
+- D04
+- D03
+- D06.d
+- D05
+- D14.a
+- D06.e
+- D04.r
+- D01.h
+changed_terms:
+- TER066
+- TER075
+changed_method_terms:
+- MOD013
+relation_structure_preserved: 346
+relation_labels_updated:
+- REL-EXECUTION-ORCHESTRATION-COMMITMENTS
+- REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
+new_nodes: 0
+new_terms: 0
+release_index_preserved: true
+approved_D04_fields:
+- name
+- definition
+publication_requested: false

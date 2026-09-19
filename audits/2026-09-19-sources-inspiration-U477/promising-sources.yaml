@@ -1,0 +1,918 @@
+source: U477
+batch: promising
+sources:
+- local_key: atp
+  vendor: Microsoft
+  product: Dynamics 365 SCM / Commerce / Intelligent Order Management
+  source_title: Order promising
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+  source_version: Documentation évolutive, mise à jour affichée le 21 avril 2026
+  source_locator: Order promising ; ATP calculations ; Example ; CTP calculations
+  consulted_on: '2026-09-19'
+  finding: ATP combine ressources présentes, réceptions et consommations dans le temps ; le délai de préparation fait l’objet
+    d’une option distincte.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.i
+  - D15
+  - BHV004
+  - BHV023
+  - TER014
+  - TER044
+  previous_correspondences:
+  - id: D03.i
+    source_refs:
+    - U435
+    status: proposed
+  - id: D15
+    source_refs:
+    - U437
+    - U438
+    - U462
+    status: proposed
+  - id: D03
+    source_refs:
+    - U437
+    - U438
+    status: proposed
+  examples:
+  - id: D03.i
+    title: Microsoft — deux arrivages pour honorer 150 pièces
+    kind: Exemple effectivement présent dans la source
+  - id: BHV023
+    title: Microsoft — une date devenue intenable
+    kind: Exemple effectivement présent dans la source
+  - id: TER044
+    title: Illustration FLOW — l’arrivage compte dans ATP
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: ps
+  vendor: Oracle
+  product: PeopleSoft Inventory
+  source_title: Promising and Reserving Inventory
+  source_url: https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm
+  source_version: PeopleSoft Enterprise Inventory 9.0
+  source_locator: Understanding Inventory Reservations ; Understanding the Order Line Processing Sequence ; Calculating ATP
+  consulted_on: '2026-09-19'
+  finding: PeopleSoft distingue quantité promise et stock réservé, avec règles de priorité et calcul cumulatif ; le traitement
+    peut regrouper plusieurs effets.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.i
+  - D03.m
+  - BHV001
+  - TER044
+  - VER013
+  - VER015
+  previous_correspondences:
+  - id: D03.i
+    source_refs:
+    - U470
+    - U471
+    - ELM300
+    - CMP186
+    status: proposed
+  - id: D03.m
+    source_refs:
+    - U470
+    - U471
+    - ELM300
+    - CMP186
+    status: proposed
+  - id: BHV077
+    source_refs:
+    - U470
+    - U471
+    - ELM300
+    - CMP186
+    status: proposed
+  examples:
+  - id: VER015
+    title: PeopleSoft — plusieurs règles, un rang
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: ctp
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management / Planning Optimization
+  source_title: Calculate delivery dates using CTP
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+  source_version: Documentation évolutive, mise à jour affichée le 27 juillet 2026
+  source_locator: How CTP compares to ATP ; exemple Item A composé de B et C ; View confirmed delivery dates
+  consulted_on: '2026-09-19'
+  finding: Le CTP de Microsoft évalue matières et capacité nécessaires à la fabrication ; le produit renseigne ensuite des
+    dates confirmées.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.j
+  - BHV075
+  - TER045
+  previous_correspondences:
+  - id: D03.j
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  - id: BHV075
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  examples:
+  - id: D03.j
+    title: Microsoft — fabriquer ce qui manque
+    kind: Exemple effectivement présent dans la source
+  - id: BHV075
+    title: Microsoft — un produit sans stock, des composants disponibles
+    kind: Exemple effectivement présent dans la source
+  - id: TER045
+    title: Microsoft — composants et capacité pour un article absent
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: abc
+  vendor: SAP
+  product: SAP S/4HANA aATP
+  source_title: Alternative-Based Confirmation
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+  source_version: Cours SAP S/4HANA, édition non précisée dans le passage
+  source_locator: 'Advanced ATP Scenario: Alternative-Based Confirmation ; Release for Delivery'
+  consulted_on: '2026-09-19'
+  finding: ABC examine des sites et produits de substitution ; RefDy compare des confirmations avant la livraison.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.j
+  - BHV076
+  - TER045
+  previous_correspondences:
+  - id: D03.j
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  - id: BHV076
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  examples: []
+  presentation_status: retained
+- local_key: bop
+  vendor: SAP
+  product: SAP S/4HANA Cloud Public Edition / Backorder Processing
+  source_title: Exploring Backorder Processing
+  source_url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+  source_version: Cours SAP S/4HANA Cloud Public Edition ; édition non précisée
+  source_locator: Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
+  consulted_on: '2026-09-19'
+  finding: BOP réexamine les quantités confirmées après changement de disponibilité ou de priorité.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.j
+  - D03.m
+  - D03.n
+  - BHV022
+  - BHV023
+  - BHV077
+  - TER015
+  - VER015
+  previous_correspondences:
+  - id: D03.j
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  - id: D03.l
+    source_refs:
+    - U435
+    status: proposed
+  - id: D03.m
+    source_refs:
+    - U435
+    status: proposed
+  - id: D15
+    source_refs:
+    - U437
+    - U438
+    status: proposed
+  - id: D03
+    source_refs:
+    - U437
+    - U438
+    status: proposed
+  - id: D03.n
+    source_refs:
+    - U435
+    - U460
+    status: proposed
+  - id: BHV077
+    source_refs:
+    - U402
+    - ELM241
+    - CMP152
+    status: proposed
+  examples:
+  - id: D03.m
+    title: SAP — une commande prioritaire arrive en pénurie
+    kind: Exemple effectivement présent dans la source
+  - id: BHV022
+    title: Illustration FLOW — 60 confirmées sur 100
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: ptp
+  vendor: Oracle
+  product: Oracle Fusion Cloud SCM / Order Management / Global Order Promising
+  source_title: Create Alternative Fulfillment Scenarios to Reduce Cost
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+  source_version: Oracle Fusion Cloud SCM 26C
+  source_locator: Prioritize ; Promise According to Arrival Date ; exemple Denver/Seattle
+  consulted_on: '2026-09-19'
+  finding: L’exemple départage deux lieux au même délai par le coût total ; la date reste prioritaire dans cette configuration.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.k
+  - TER068
+  - VER016
+  previous_correspondences:
+  - id: D03.k
+    source_refs:
+    - U435
+    status: proposed
+  examples:
+  - id: D03.k
+    title: Oracle — Seattle plutôt que Denver
+    kind: Exemple effectivement présent dans la source
+  - id: TER068
+    title: Illustration FLOW — économie sous condition de service
+    kind: Illustration FLOW
+  - id: VER016
+    title: Illustration FLOW — une économie ne lève pas une obligation
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: database
+  vendor: Oracle
+  product: Fusion Cloud Global Order Promising
+  source_title: Database Promising
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html
+  source_version: Oracle Fusion Cloud SCM 25C
+  source_locator: Back-to-Back ; Bill of Resources ; Profitable to Promise ; Consume Transfers at the Same Time
+  consulted_on: '2026-09-19'
+  finding: Prise en compte des délais après réception, des ressources critiques et des coûts en fonction du flux.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV003
+  previous_correspondences:
+  - id: D03.k
+    source_refs:
+    - U470
+    - U471
+    - ELM301
+    - CMP186
+    status: proposed
+  examples: []
+  presentation_status: retained
+- local_key: schedule
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Delivery schedules
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  source_version: Documentation évolutive ; édition non précisée
+  source_locator: Introduction ; Create delivery schedules ; Manage delivery lines
+  consulted_on: '2026-09-19'
+  finding: Un échéancier porte plusieurs dates et quantités pour une commande ; le produit le représente par des lignes de
+    livraison.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.l
+  previous_correspondences:
+  - id: D03.l
+    source_refs:
+    - U470
+    - U471
+    - ELM302
+    - CMP186
+    status: proposed
+  examples:
+  - id: D03.l
+    title: Illustration FLOW — une commande, deux dates
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: arun
+  vendor: SAP
+  product: S/4HANA aATP
+  source_title: Supply Assignment (ARun)
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+  source_version: SAP S/4HANA 2025 FPS01 (février 2026)
+  source_locator: Supply Assignment (ARun), introduction et accès
+  consulted_on: '2026-09-19'
+  finding: SAP nomme Supply Assignment le lien des ressources aux commandes, y compris en situation de pénurie.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Page ouverte vide ; texte primaire SAP indexé recherché et lu
+  supported_ids:
+  - BHV045
+  previous_correspondences:
+  - id: D02.e
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    status: proposed
+  - id: BHV045
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    status: proposed
+  examples:
+  - id: BHV045
+    title: Illustration FLOW — un plan partiellement applicable
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: reassign
+  vendor: SAP
+  product: S/4HANA aATP
+  source_title: Backorder Processing — Reassignment
+  source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  source_version: SAP S/4HANA 2025 FPS01 (février 2026)
+  source_locator: Reassignment ; Handling of BOP Confirmation Strategies
+  consulted_on: '2026-09-19'
+  finding: Sans Reassignment, l’exemple conserve 70 affectées et traite 30 ; avec Reassignment, il réexamine les 100.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Page ouverte vide ; texte primaire SAP indexé recherché et lu
+  supported_ids:
+  - BHV046
+  - BHV047
+  - VER018
+  previous_correspondences:
+  - id: D02.e
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    status: proposed
+  - id: BHV045
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    status: proposed
+  - id: BHV046
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    status: proposed
+  - id: BHV047
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    status: proposed
+  examples:
+  - id: BHV046
+    title: SAP — conserver 70 et compléter 30
+    kind: Exemple effectivement présent dans la source
+  - id: BHV047
+    title: SAP — réexaminer les 100 pièces
+    kind: Exemple effectivement présent dans la source
+  - id: VER018
+    title: Illustration FLOW — autre arrivage, même promesse
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: spread
+  vendor: SAP
+  product: ERP Fashion Management
+  source_title: Steps in Order Allocation Run
+  source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+  source_version: SAP ERP Fashion Management 6.0 EHP8 SP25
+  source_locator: Stock and Requirement Sorting ; Allocation ; Release Rules
+  consulted_on: '2026-09-19'
+  finding: ARun Fashion répartit selon FIFO ou prorata après regroupement et applique un contrôle de libération.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Page ouverte vide ; texte primaire SAP indexé recherché et lu
+  supported_ids: []
+  previous_correspondences:
+  - id: D02.e
+    source_refs:
+    - U361
+    - ELM223
+    - CMP132
+    - U363
+    - CMP133
+    status: proposed
+  examples: []
+  presentation_status: reviewed_not_retained
+- local_key: keep
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  source_title: Keep supply for confirmed demand
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  source_version: 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+  source_locator: What data is preserved ; Control how on-hand inventory is pegged ; Example scenario 1
+  consulted_on: '2026-09-19'
+  finding: La préservation des chaînes de demandes confirmées conserve notamment les liens de couverture ; le stock reçu dépend
+    d’une règle complémentaire.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D02.e
+  - BHV046
+  - BHV047
+  - TER013
+  - TER017
+  - VER012
+  - VER018
+  previous_correspondences:
+  - id: D02.e
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    status: proposed
+  - id: BHV046
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    - U364
+    - CMP134
+    status: proposed
+  - id: BHV047
+    source_refs:
+    - U470
+    - U471
+    - ELM308
+    - CMP186
+    status: proposed
+  examples:
+  - id: TER013
+    title: Illustration FLOW — conserver ce qui soutient la date promise
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: assign
+  vendor: SAP
+  product: S/4HANA Fashion — Supply Assignment (ARun)
+  source_title: Explaining Supply Assignment
+  source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  source_version: Cours SAP S/4HANA for Fashion and Vertical Business ; édition non précisée
+  source_locator: Supply Assignment Scenarios ; ARun Statuses ; Online Features ; Cross Settings
+  consulted_on: '2026-09-19'
+  finding: ARun associe demande et ressource ; ses effets de protection et libération dépassent le seul lien retenu dans FLOW.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D02.e
+  - TER017
+  - VER005
+  - VER006
+  - VER012
+  previous_correspondences:
+  - id: D02.e
+    source_refs:
+    - U289
+    - U290
+    - U436
+    - ELM287
+    - CMP180
+    - U462
+    - U275
+    status: proposed
+  examples:
+  - id: D02.e
+    title: SAP — un arrivage lié à une commande
+    kind: Exemple effectivement présent dans la source
+  - id: TER017
+    title: Illustration FLOW — 40 pièces sur un arrivage
+    kind: Illustration FLOW
+  - id: VER005
+    title: SAP — vérifier avant de rendre livrable
+    kind: Exemple effectivement présent dans la source
+  - id: VER012
+    title: SAP — choisir une ressource future
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: backlog
+  vendor: Oracle
+  product: Fusion Cloud SCM 26B
+  source_title: Start Backlog Planning
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  source_version: Oracle Fusion Cloud SCM 26B
+  source_locator: Introduction ; When to Use
+  consulted_on: '2026-09-19'
+  finding: Le plan du carnet redistribue l’offre collectée selon les priorités ; les demandes partageant une ressource doivent
+    rester cohérentes.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03
+  - D03.o
+  previous_correspondences:
+  - id: D03
+    source_refs:
+    - U411
+    - U412
+    - U413
+    - ELM246
+    - CMP157
+    - U435
+    - U438
+    status: proposed
+  - id: D03.p
+    source_refs:
+    - U414
+    - ELM247
+    - CMP158
+    status: proposed
+  examples:
+  - id: D03
+    title: Illustration FLOW — deux commandes pour le même stock
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: actions
+  vendor: Oracle
+  product: Fusion Cloud SCM 25D
+  source_title: Key Actions on Orders
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+  source_version: Oracle Fusion Cloud SCM 25D
+  source_locator: Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions
+  consulted_on: '2026-09-19'
+  finding: Oracle distingue simulation, enregistrement des résultats et transmission des résultats retenus à la gestion des
+    commandes.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV077
+  - D03.p
+  - TER013
+  - TER078
+  previous_correspondences:
+  - id: D03
+    source_refs:
+    - U411
+    - U412
+    - U413
+    - ELM246
+    - CMP157
+    - U435
+    - U438
+    status: proposed
+  - id: D03.p
+    source_refs:
+    - U414
+    - ELM247
+    - CMP158
+    status: proposed
+  examples:
+  - id: BHV077
+    title: Illustration FLOW — décaler une commande pour en servir une autre
+    kind: Illustration FLOW
+  - id: D03.p
+    title: Oracle — comparer avant de transmettre
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: approved
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: View, manage, and approve planned orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+  source_version: Documentation évolutive, mise à jour affichée le 2 septembre 2026
+  source_locator: View and edit the status of planned orders ; Approve planned orders
+  consulted_on: '2026-09-19'
+  finding: Approved conserve des ordres planifiés pour affermissement ; ce n’est pas un plan d’affectation du carnet.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - VER006
+  previous_correspondences:
+  - id: D03
+    source_refs:
+    - U411
+    - U412
+    - U413
+    - ELM246
+    - CMP157
+    - U435
+    - U438
+    status: proposed
+  examples:
+  - id: VER006
+    title: Microsoft — approuvé pour affermissement
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: dom
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Distributed order management (DOM)
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+  source_version: Documentation évolutive, mise à jour affichée le 3 juin 2026
+  source_locator: Introduction, objectifs et contraintes
+  consulted_on: '2026-09-19'
+  finding: DOM optimise la satisfaction d’une commande ou d’un lot selon sources, coûts et règles.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.k
+  - D03
+  - TER068
+  - VER016
+  previous_correspondences:
+  - id: D03
+    source_refs:
+    - U437
+    - U438
+    - U462
+    status: proposed
+  examples: []
+  presentation_status: retained
+- local_key: confirm
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Confirm sales orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/confirm-sales-orders
+  source_version: Documentation évolutive, mise à jour affichée le 1er juillet 2026
+  source_locator: Confirm a single sales order, étapes 5 à 15
+  consulted_on: '2026-09-19'
+  finding: La confirmation produit un statut documentaire et peut appliquer un contrôle de crédit ; elle ne définit pas seule
+    la promesse de satisfaction.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - TER015
+  previous_correspondences:
+  - id: D03.n
+    source_refs:
+    - U444
+    - U445
+    - ELM286
+    - CMP179
+    - U462
+    - U441
+    - U443
+    status: proposed
+  examples:
+  - id: TER015
+    title: Microsoft — un document confirmé
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: ifo
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  source_title: Intelligent Fulfillment Optimization architecture
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch
+  source_version: Documentation évolutive, mise à jour affichée le 30 janvier 2026
+  source_locator: Fulfillment sources ; Business constraints ; Fulfillment strategies ; Fulfillment optimization in order
+    orchestration flows
+  consulted_on: '2026-09-19'
+  finding: IFO produit un plan de sources et quantités par ligne ; la stratégie documentée privilégie la proximité.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV002
+  - D03.o
+  - TER078
+  previous_correspondences:
+  - id: D03.o
+    source_refs:
+    - U377
+    - ELM228
+    - CMP139
+    - U378
+    status: proposed
+  - id: BHV076
+    source_refs:
+    - U470
+    - U471
+    - ELM317
+    - CMP186
+    status: proposed
+  examples:
+  - id: BHV002
+    title: Microsoft — des sources différentes selon les commandes
+    kind: Exemple effectivement présent dans la source
+  - id: D03.o
+    title: Illustration FLOW — éviter deux réponses incompatibles
+    kind: Illustration FLOW
+  - id: TER078
+    title: Illustration FLOW — un plan avant application
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: returns
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  source_title: Fulfillment and Returns Optimization provider overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization
+  source_version: Documentation évolutive ; édition non précisée
+  source_locator: Sources ; Respect warehouse timings ; Restrict partial fulfillment ; Limit number of warehouses
+  consulted_on: '2026-09-19'
+  finding: Le choix des sources tient compte des heures limites, quantités, nombre de sites et contraintes de service.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV003
+  previous_correspondences:
+  - id: D03.o
+    source_refs:
+    - U377
+    - U378
+    status: proposed
+  examples:
+  - id: BHV003
+    title: Microsoft — le camion du jour est déjà parti
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: gop
+  vendor: Oracle
+  product: Fusion Cloud Global Order Promising
+  source_title: Overview of Global Order Promising
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+  source_version: Oracle Fusion Cloud SCM 25C
+  source_locator: Introduction ; Principles of Promising ; Examples
+  consulted_on: '2026-09-19'
+  finding: Oracle distingue offre déjà existante et offre à créer, tout en combinant priorités, substitution et coût dans
+    le même ensemble produit.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D15
+  - BHV002
+  - BHV075
+  previous_correspondences:
+  - id: BHV075
+    source_refs:
+    - U470
+    - U471
+    - ELM316
+    - CMP186
+    status: proposed
+  examples: []
+  presentation_status: retained
+- local_key: simple
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Planned orders simplified
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-orders-simplified
+  source_version: Documentation évolutive ; édition non précisée
+  source_locator: Introduction ; Planned orders simplified
+  consulted_on: '2026-09-19'
+  finding: Écran de revue, approbation et affermissement d’ordres planifiés ; comparaison indirecte avec le carnet.
+  evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids: []
+  previous_correspondences:
+  - id: D03.p
+    source_refs:
+    - U414
+    - ELM247
+    - CMP158
+    status: proposed
+  examples: []
+  presentation_status: reviewed_not_retained
+- local_key: alternatives
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  source_title: Delivery alternatives
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives
+  source_version: Documentation évolutive ; édition non précisée
+  source_locator: Delivery date control methods ; Delivery alternatives ; Availability information
+  consulted_on: '2026-09-19'
+  finding: Des options partielles, dates et transports peuvent être comparés en tenant compte des calendriers.
+  evidence_limits: Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV021
+  - BHV076
+  - TER009
+  previous_correspondences: []
+  examples:
+  - id: BHV076
+    title: Illustration FLOW — envisager une livraison express
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: check
+  vendor: Oracle
+  product: Global Order Promising
+  source_title: Check Availability
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html
+  source_version: Oracle Fusion Cloud SCM 25C
+  source_locator: Examine the Attributes ; Schedule the Order Line
+  consulted_on: '2026-09-19'
+  finding: Les résultats restent exploratoires tant que la ligne n’est pas planifiée ; demandé, planifié et résultat sont
+    séparés.
+  evidence_limits: Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - D03.l
+  - D15
+  - D03.n
+  - BHV021
+  - BHV022
+  - TER014
+  - VER005
+  - VER013
+  previous_correspondences: []
+  examples:
+  - id: D15
+    title: Oracle — examiner avant d’engager
+    kind: Exemple effectivement présent dans la source
+  - id: D03.n
+    title: Illustration FLOW — confirmer une part de la proposition
+    kind: Illustration FLOW
+  - id: BHV021
+    title: Oracle — comparer avant de planifier
+    kind: Exemple effectivement présent dans la source
+  - id: TER014
+    title: Illustration FLOW — proposer n’est pas encore promettre
+    kind: Illustration FLOW
+  - id: VER013
+    title: Illustration FLOW — engager vendredi
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: sync
+  vendor: Oracle
+  product: Global Order Promising
+  source_title: Keep Global Order Promising and Inventory Management Synchronized
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/keep-availability-in-global-order-promising-and-inventory-management-synchronized.html
+  source_version: Oracle Fusion Cloud SCM 26A
+  source_locator: Back-to-Back Orders ; Set up Your Material Status and Subinventory
+  consulted_on: '2026-09-19'
+  finding: Une réception future peut soutenir la promesse alors que la réservation de stock présent échoue ; importance des
+    statuts admissibles.
+  evidence_limits: Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  consultation_method: Texte de la page primaire ouvert et lu
+  supported_ids:
+  - BHV004
+  - TER009
+  previous_correspondences: []
+  examples:
+  - id: BHV004
+    title: Oracle — promettable au jour 30, absent au jour 1
+    kind: Exemple effectivement présent dans la source
+  - id: TER009
+    title: Oracle — disponible pour plus tard
+    kind: Exemple effectivement présent dans la source
+  presentation_status: retained
+- local_key: sup
+  vendor: SAP
+  product: S/4HANA aATP
+  source_title: Integration into Other Processes
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html
+  source_version: SAP S/4HANA 2025 FPS01 (février 2026)
+  source_locator: Product Availability Check ; Alternative-Based Confirmation
+  consulted_on: '2026-09-19'
+  finding: Le contrôle de disponibilité prend en compte les protections applicables au couple article/site.
+  evidence_limits: Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  consultation_method: Texte primaire SAP indexé recherché et lu
+  supported_ids:
+  - BHV001
+  previous_correspondences: []
+  examples:
+  - id: BHV001
+    title: Illustration FLOW — protéger sans retrancher deux fois
+    kind: Illustration FLOW
+  presentation_status: retained
+- local_key: workflow
+  vendor: SAP
+  product: S/4HANA aATP
+  source_title: Supply Assignment Run Workflow using Apps
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html
+  source_version: SAP S/4HANA 2025 FPS01 (février 2026)
+  source_locator: Monitor Supply Assignment Runs ; Compare Supply Assignment Simulated Runs
+  consulted_on: '2026-09-19'
+  finding: SAP distingue résultats simulés, exécutés et incomplets et permet de comparer des simulations.
+  evidence_limits: Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+  consultation_method: Texte primaire SAP indexé recherché et lu
+  supported_ids:
+  - BHV045
+  - D03.p
+  previous_correspondences: []
+  examples: []
+  presentation_status: retained
+limits: Synthèses ciblées et reformulées ; pas de reproduction intégrale des documents, pas de consensus ni réalisation installée
+  déduits.

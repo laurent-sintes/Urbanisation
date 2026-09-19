@@ -1,0 +1,161 @@
+source_refs:
+- U508
+- CMP205
+- ELM094
+- ELM515
+- ELM516
+- ELM391
+- ELM345
+- U509
+- ELM517
+- CMP206
+status: adopted_scope_U509
+canonical_changes:
+- D12 renamed Product Catalog
+- D16 Assortment reference
+- D16.a/D16.b proposed ingestion and visibility
+- Agreement references Assortment
+- TER049 renamed; TER087 added
+context:
+  catalog: D12 reçoit des catalogues de produits et les informations commerciales applicables ; Product Reference D08 conserve
+    l’identité des produits et variantes.
+  agreement: D11 reçoit les contrats complets, conditions, périodes et engagements entre parties ; les commandes restent distinctes.
+  assortment: Aucun référentiel Assortment ni terme autonome n’est actuellement créé dans le modèle courant. ELM094 avait
+    déjà documenté le listing temporel SAP, sans adoption d’une nouvelle structure.
+recommendation:
+  naming: Product Catalog clarifierait D12 face à Product Reference et Service Catalog ; piste proposée, sans renommage automatique.
+  product_catalog: Offre de produits présentée dans un contexte commercial, avec ses informations et conditions de référence.
+  assortment: Sélection de produits ou variantes affectée à un périmètre de magasins, canaux ou clients et à une période.
+    Sa composition et son affectation restent distinguables.
+  agreement: Conditions et engagements convenus entre parties ; peut référencer ou figer une sélection de produits convenue.
+  location: Distinguer Assortment comme référence propre dans Authoritative Data si le besoin couvre les assortiments du réseau
+    et pas seulement une annexe contractuelle. Liens logiques avec les produits, destinataires et périmètres concernés ; aucune
+    entité du catalogue Information ni relation canonique ajoutée.
+  user_hypothesis: Agreement peut réunir un cadre contractuel et un assortiment convenu pour une relation commerciale. Cette
+    lecture est pertinente pour l’assortiment négocié ; elle ne fait pas de tout assortiment un composant d’un accord.
+  composition_limit: Ne pas imposer Agreement = Contract + Assortment. Certains accords ne détaillent aucun produit ; certains
+    assortiments résultent d’un choix commercial interne sans accord distinct entre parties. La composition stricte dépendrait
+    aussi de leurs cycles de vie et de leur réutilisation, encore non arbitrés.
+  naming_limit: Catalogue et assortiment se recouvrent partiellement selon les produits du marché. La distinction proposée
+    porte sur leur fonction, pas sur une séparation physique universelle des systèmes.
+  supply_boundary: Recevoir et consulter la référence applicable ; la conception commerciale de l’assortiment et son optimisation
+    restent hors du périmètre Supply étudié. Un article dans l’assortiment n’est ni une quantité en stock, ni une réservation,
+    ni une promesse de fourniture.
+options:
+- choice: Assortment distinct, lié à Agreement quand il est convenu
+  benefit: Couvre à la fois magasins internes, canaux et assortiments négociés entre partenaires, avec réutilisation et validité
+    propres.
+  tradeoff: Ajoute une notion de référence à qualifier ; identité, version et rattachement précis restent à décider.
+- choice: Assortiment convenu décrit dans Agreement
+  benefit: Suffisant si le seul besoin concerne la liste de produits négociée dans un accord donné.
+  tradeoff: Ne couvre pas à lui seul les assortiments commerciaux internes ou partagés ; ne pas généraliser ce placement.
+- choice: Catalog and Assortment comme périmètre commun
+  benefit: Garde un regroupement compact autour de l’offre produits tout en distinguant deux objets.
+  tradeoff: Risque de masquer leurs fonctions et cycles différents ; aucun renommage ou fusion adopté.
+example:
+  status: fictional_FLOW_illustration
+  catalogue: Un fournisseur présente 100 références dans son catalogue.
+  negotiated_selection: Un distributeur en retient 30 pour une saison ; l’accord commercial peut figer cette sélection et
+    les conditions convenues.
+  store_selection: Le distributeur affecte 12 de ces références à ses petits magasins ; ce choix interne ne nécessite pas
+    automatiquement un nouvel accord fournisseur.
+  lesson: Les sélections commerciale, contractuelle et par point de vente peuvent se croiser sans être un même objet ni un
+    même engagement.
+sources:
+- element: ELM515
+  reference: MKT13
+  vendor: SAP
+  title: Assortment
+  url: https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-1-1
+  edition: Cours S/4HANA Cloud Private Edition Retail ; numéro de release non affiché
+  locator: Assortment Management and Maintenance ; Local/General Assortments ; Assortment Management
+  consulted_on: '2026-09-19'
+  finding: Sélection d’articles affectée à des magasins, centres de distribution ou clients pendant une période ; listing
+    et affectations multiples documentés.
+  similarity: Référence d’applicabilité utile aux commandes et approvisionnements.
+  difference: SAP décrit aussi la conception et la maintenance de l’assortiment, qui restent externes au périmètre Supply
+    FLOW.
+  limits: Texte primaire ouvert ; ne pas imposer les catégories techniques, cardinalités ou règles de blocage SAP. Complète
+    ELM094 sans remplacer son édition publique.
+- element: ELM516
+  reference: MKT14
+  vendor: Microsoft
+  title: Assortment management
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/assortments
+  edition: Page mise à jour le 16 janvier 2026
+  locator: Introduction ; Basic assortment setup ; Dynamic and static assortments ; Date effectivity
+  consulted_on: '2026-09-19'
+  finding: Un assortiment associe produits ou catégories et canaux ou groupes de canaux, avec dates de validité. Plusieurs
+    assortiments peuvent contribuer à l’offre d’un canal.
+  similarity: La sélection, le destinataire et le temps donnent le contexte d’applicabilité.
+  difference: Documentation Commerce couvrant la préparation et la diffusion vers les canaux ; FLOW ne reprend que la référence
+    consommée par la Supply.
+  limits: Texte primaire ouvert ; available désigne ici l’offre du canal, sans preuve de disponibilité physique ni de promesse.
+- element: ELM391
+  reference: MKT14
+  vendor: Microsoft
+  title: Create Commerce catalogs for B2B sites
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+  edition: Mise à jour du 21 janvier 2026 ; Commerce 10.0.27 et versions ultérieures
+  locator: Commerce product catalogs ; B2B catalog process flow ; Configure the catalog
+  consulted_on: '2026-09-19'
+  finding: Les catalogues B2B organisent produits, clients cibles et conditions tarifaires ; leurs articles doivent appartenir
+    aux assortiments des canaux sélectionnés.
+  similarity: Catalogue et assortiment sont reliés mais remplissent des fonctions distinctes.
+  difference: La dépendance entre ces objets est propre au produit Microsoft ; elle ne prescrit pas l’ordre de construction
+    des références FLOW.
+  limits: Texte primaire relu. Un catalogue peut déjà être ciblé par clientèle et période ; ces attributs ne distinguent donc
+    pas à eux seuls les deux notions.
+- element: ELM345
+  reference: MKT20
+  vendor: Oracle
+  title: What’s the difference between a purchase order, a purchase agreement, and a contract agreement?
+  url: https://docs.oracle.com/en/cloud/saas/procurement/26a/oaprc/Chunk145966296.html
+  edition: Fusion Cloud Procurement 26A
+  locator: Blanket Purchase Agreement ; Contract Purchase Agreement
+  consulted_on: '2026-09-19'
+  finding: Blanket Purchase Agreement détaille biens ou services et prix négociés ; Contract Purchase Agreement peut porter
+    des conditions sans liste de biens ou services.
+  similarity: Un accord peut porter un périmètre produit convenu, mais ce détail n’est pas universel.
+  difference: Oracle distingue des types de documents d’achat ; leurs lignes ne constituent pas pour autant un Assortment
+    nommé comme tel.
+  limits: Texte primaire relu ; pas d’équivalence entre lignes d’accord et Assortment, ni affirmation juridique générale sur
+    tous les contrats.
+- element: ELM517
+  reference: MKT13
+  vendor: SAP
+  title: Assortment List
+  url: https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-list-1-1
+  edition: Cours S/4HANA Cloud Private Edition Retail ; numéro de release non affiché
+  locator: Attributes of the Assortment List ; Full/Change/Mixed Version ; affichage des versions et diffusion électronique
+  consulted_on: '2026-09-19'
+  finding: Liste des articles applicables, consultation des versions et transmission des évolutions vers les magasins.
+  limits: Texte primaire consulté. Le cycle et les formats SAP ne sont pas imposés ; les informations transactionnelles optionnelles
+    ne sont pas reprises dans la référence FLOW.
+preservation:
+  published_data: inchangées
+  U507_decision_intents: Preuves conservées ; réexamen explicite append-only requis après changement du contexte. Aucun champ
+    supplémentaire validé par cette reprise.
+adoption_U509:
+  source_ref: U509
+  scope: Product Catalog ; Assortment distinct dans Authoritative Data ; lien facultatif Agreement vers la sélection convenue
+    ; maîtrise externe.
+  new_reference: D16
+  new_term: TER087
+  approved_node_fields:
+    D12:
+    - name
+    D12.a:
+    - name
+    D12.b:
+    - name
+    D16:
+    - name
+    - definition
+    - mastership
+  approved_relations:
+  - REL-GROUP-D16
+  - REL-AGREEMENT-ASSORTMENT
+  proposed: Capacités Assortment Ingestion/Visibility et leurs détails ; qualifications du lien ; descriptions détaillées
+    non présentées.
+  before: ../../audits/2026-09-19-assortment-U509/before-records.yaml

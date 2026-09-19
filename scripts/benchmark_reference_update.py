@@ -39,6 +39,11 @@ def source_files(root):
         if not path.is_relative_to(models):
             raise ValueError('Frozen input outside model directory')
         files.add(path)
+    for relative in manifest.get('decision_review', {}):
+        path = (manifest_path.parent / relative).resolve()
+        if not path.is_relative_to(models):
+            raise ValueError('Frozen review outside model directory')
+        files.add(path)
     deferred = models / 'revisions' / pointer['version'] / 'deferred'
     if deferred.exists():
         files.update(p for p in deferred.iterdir() if p.is_file())

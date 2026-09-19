@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
     "build": "tsc --noEmit && vite build",
-    "test": "node --test --test-isolation=none test-model.mjs test-publication.mjs test-navigation.mjs test-glossary.mjs test-modeling-guide.mjs test-dependency-graph.mjs test-capability-types.mjs test-behavior-types.mjs test-public-text.mjs test-reader-search.mjs test-examples.mjs test-information.mjs",
+    "test": "node --test --test-isolation=none test-model.mjs test-publication.mjs test-navigation.mjs test-glossary.mjs test-modeling-guide.mjs test-dependency-graph.mjs test-capability-types.mjs test-behavior-types.mjs test-request-metadata.mjs test-public-text.mjs test-reader-search.mjs test-examples.mjs test-information.mjs",
     "verify": "node verify-browser.mjs && node verify-tree.mjs && node verify-glossary.mjs && node verify-universe.mjs && node verify-references.mjs",
     "verify:behaviors": "node verify-behaviors.mjs",
     "verify:market": "node verify-market.mjs",

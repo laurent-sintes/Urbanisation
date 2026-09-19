@@ -27,6 +27,9 @@ source_refs:
 - U450
 - U451
 - U464
+- U482
+- U507
+- U509
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
@@ -185,6 +188,9 @@ terms:
   - 'U398 : la mutualisation peut se lire dans les liens. Décrire le comportement mobilisé et sa différence métier selon le
     contexte ; aucun comportement automatique par appelant et aucun sous-comportement. U399 : règles consignées pour le prochain
     audit et/ou les prochaines améliorations, sans déclencher de nouvelle revue. Convention : modeles/backlog/business-interactions.yaml.'
+  - 'U501 : pour Order Backlog Optimization Request, Déclenchement et Activité regroupent visuellement des comportements au
+    même niveau terminal. L’angle de lecture est explicite ; il ne crée ni parent intermédiaire, ni séquence obligatoire,
+    ni requalification des comportements historiques.'
   source_refs:
   - U262
   - U263
@@ -204,6 +210,8 @@ terms:
   - U435
   - U438
   - U445
+  - U499
+  - U501
   review:
     state: partial
     adopted_scope: 'Comportement comme niveau complémentaire sous la capacité ; arrêt de la décomposition à ce niveau. U263
@@ -312,34 +320,82 @@ terms:
   - La grille détaillée et les dix compléments proposés sont consignés dans capability-types-U449.yaml ; la nature propre
     de chaque capacité reste portée par son fields.nature.
   - OMG DMN éclaire la distinction décision/processus sans prescrire ces six types ni leurs icônes.
+  - 'U500/U501 : une capacité qui porte une demande peut préciser Frontoffice (sollicitation externe au Domain), Backoffice
+    (sollicitation interne) ou les deux. Ce qualificatif d’origine est distinct de sa nature, du déclencheur et de la provenance
+    de l’événement ; aucune valeur n’est inférée du nom ou du parent.'
   analysis_ref: modeles/backlog/capability-types-U449.yaml
   source_refs:
   - U449
   - CMP169
   - ELM259
+  - U500
+  - U501
   review:
     state: partial
     adopted_scope: Typage exhaustif, icônes associées, décisions en fin de liste et séparation légère U449.
     proposed_scope: Formulation méthodologique, grille détaillée et compléments individuels rédigés par Codex.
 - id: MOD008
-  name: Universe
-  label_fr: Univers
-  definition: Grand périmètre d’urbanisation qui présente des domaines et des groupes de référentiels.
-  role: Situer les domaines sans les imbriquer.
+  name: Domain
+  label_fr: Domaine
+  definition: Grand périmètre cohérent de problèmes métier qui organise des Areas et des référentiels en interaction. Supply
+    Chain Orchestration est le Domain actuellement travaillé.
+  role: Situer les périmètres de responsabilité sans les confondre avec leurs capacités ni avec les groupes de présentation.
   source_refs:
   - U141
   - U446
+  - U482
+  - CMP195
   review:
-    state: proposed
-    proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
+    state: partial
+    adopted_scope: 'U482 : nom Domain et position au-dessus des Areas.'
+    proposed_scope: Formulation pédagogique de la définition et du rôle ; aucune fusion ni responsabilité nouvelle.
+  notes:
+  - U482 remplace Universe par Domain à ce niveau. L’identifiant MOD008 est conservé ; les publications historiques gardent
+    leur vocabulaire.
+- id: MOD013
+  name: Area
+  label_fr: Area
+  definition: Périmètre cohérent de responsabilités métier au sein d’un Domain. Il regroupe les capacités qui permettent de
+    traiter ces problèmes et coopère avec les autres Areas.
+  role: Distinguer les périmètres tels qu’Service Requests, Inventory Management ou Inventory Optimization des capacités qu’ils
+    regroupent.
+  notes:
+  - U482 adopte Area au niveau auparavant nommé Domaine. Une Area n’est ni un service d’organisation ni une application.
+  - U507 fait d’Authoritative Data une Area ; U509 lui ajoute Assortment. Les sept référentiels distincts organisent la lecture
+    des capacités sans créer un niveau supplémentaire d’Area.
+  source_refs:
+  - U481
+  - U482
+  - ELM486
+  - ELM487
+  - CMP195
+  - U496
+  - U507
+  - U509
+  review:
+    state: partial
+    adopted_scope: 'U482 : nom Area et place entre Domain et Capability. U507 : Authoritative Data devient une Area, avec
+      ses six référentiels distincts.'
+    proposed_scope: Définition explicative et exemples ; aucun nouveau périmètre métier.
+  market_comparison:
+    comparison_ref: CMP195
+    common: SAP place des Business Areas sous les Business Domains ; l’analyse par sous-domaines aide à expliciter les responsabilités.
+    difference: FLOW adopte les noms Domain et Area pour son découpage propre ; ni profondeur complète SAP ni frontière logicielle
+      imposée.
+    sources:
+    - ELM486
+    - ELM487
+    consulted_on: '2026-09-19'
 - id: MOD009
   name: Business Reference
   label_fr: Référentiel métier
-  definition: Ensemble cohérent de données de référence nécessaires aux capacités métier ; dans Supply, projection de sources
-    maîtresses externes.
+  definition: Ensemble cohérent de données de référence nécessaires aux capacités métier. Dans la Supply, ces références portent
+    la source de vérité locale du Domain, en articulation avec les maîtres d’entreprise externes.
   role: Distinguer les références des commandes, décisions et réalisations.
   source_refs:
   - U450
+  - U479
+  - U482
   review:
     state: proposed
     proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.

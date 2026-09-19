@@ -1,0 +1,12 @@
+{
+  "version": "2026-09-19.9",
+  "items": [
+    {
+      "decision_id": "ADOPT-REASSESS-ad2c7a93f5aceff1d8887aac",
+      "prior_decision_id": "ADOPT-U482-AUTHORITATIVE-DATA-NAME",
+      "approved_fields": [
+        "name"
+      ]
+    }
+  ]
+}

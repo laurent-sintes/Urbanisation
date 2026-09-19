@@ -1,0 +1,371 @@
+source: U477
+sources:
+- local_key: togaf
+  vendor: The Open Group
+  product: TOGAF Series Guide
+  source_title: Business Capabilities
+  source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+  source_version: Guide G189, 2018
+  source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+  consulted_on: '2026-09-19'
+  finding: Le guide distingue aptitude, composants mobilisés, catégories de lecture et décomposition ; exemple Recruitment
+    Management.
+  evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+    et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER001
+  - TER024
+  - TER026
+  - TER027
+  - TER029
+  examples:
+  - fiche_id: TER024
+    title: TOGAF — recruter une personne
+    situation: L’exemple Recruitment Management cite notamment l’évaluation du besoin, la recherche de candidats et leur sélection.
+    outcome: Plusieurs processus concourent au recrutement.
+    lesson: Une étape ou un parcours de recrutement ne se confond pas avec l’aptitude durable à recruter.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_refs:
+    - U477
+  - fiche_id: TER027
+    title: TOGAF — une capacité dans plusieurs fonctions
+    situation: Le guide rapproche Project Management et Learning Management de plusieurs unités, dont les ressources humaines
+      et l’informatique.
+    outcome: Une même capacité peut être exercée dans plusieurs parties de l’organisation.
+    lesson: Le nom d’une fonction ou d’un service ne suffit donc pas à définir une capacité distincte.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_refs:
+    - U477
+  - fiche_id: TER029
+    title: TOGAF — catégories et décomposition
+    situation: Le guide présente des catégories Strategic, Core et Supporting puis, séparément, la décomposition de Human
+      Resource Management.
+    outcome: Le premier classement facilite une lecture ; le second détaille une aptitude.
+    lesson: FLOW reprend la différence entre les deux opérations, sans adopter ces catégories comme niveaux du modèle.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_refs:
+    - U477
+  previous_provenance: []
+- local_key: nz
+  vendor: New Zealand Digital Government
+  product: GEA-NZ
+  source_title: Business capabilities
+  source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+  source_version: Page institutionnelle évolutive, édition non indiquée
+  source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+  consulted_on: '2026-09-19'
+  finding: GEA-NZ distingue le besoin, son pourquoi et les moyens ; classe les capacités pour éclairer lacunes et recouvrements.
+  evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+    sont pas transposés à FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER001
+  - TER026
+  - TER029
+  examples:
+  - fiche_id: TER001
+    title: GEA-NZ — payer les salariés
+    situation: GEA-NZ compare un petit employeur qui paie directement son personnel à un employeur utilisant un logiciel de
+      paie et des virements.
+    outcome: Les moyens changent ; le besoin de payer les salariés demeure.
+    lesson: La même distinction permet de parler de la capacité avant de choisir sa réalisation.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_refs:
+    - U477
+  - fiche_id: TER026
+    title: GEA-NZ — changer le moyen de paiement des salaires
+    situation: L’employeur de l’exemple peut payer son personnel directement ou utiliser un logiciel de paie.
+    outcome: Le moyen concret évolue sans supprimer le besoin de payer.
+    lesson: C’est le sens de réalisation retenu par FLOW ; chaque situation réelle demanderait ses propres preuves.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_refs:
+    - U477
+  previous_provenance: []
+- local_key: ddd
+  vendor: Eric Evans
+  product: Domain-Driven Design Reference
+  source_title: 'Domain-Driven Design Reference: Definitions and Pattern Summaries'
+  source_url: https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+  source_version: Mars 2015
+  source_locator: Definitions ; Entities p.11 ; Value Objects p.12 ; Domain Events p.13 ; Services p.14
+  consulted_on: '2026-09-19'
+  finding: Le domaine est un champ de connaissance ou d’activité ; les objets peuvent être reconnus par leur identité ou leurs
+    valeurs ; un service peut porter une opération qui ne revient naturellement à aucun objet.
+  evidence_limits: Résumé de patrons par leur auteur, orienté conception logicielle. Les concepts éclairent le sens métier
+    sans imposer objets de code, services ni bounded contexts au modèle FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER002
+  - TER030
+  examples: []
+  previous_provenance: []
+- local_key: fowler
+  vendor: Martin Fowler
+  product: Patterns of Enterprise Application Architecture
+  source_title: Domain Model
+  source_url: https://martinfowler.com/eaaCatalog/domainModel.html
+  source_version: 5 mars 2003
+  source_locator: Définition et paragraphe explicatif de la fiche
+  consulted_on: '2026-09-19'
+  finding: Le Domain Model associe informations et comportements dans des objets ayant un sens pour le domaine ; exemple de
+    la ligne de commande.
+  evidence_limits: Fiche courte du patron par son auteur, pas consultation du chapitre complet ni définition normative de
+    tout objet métier.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER002
+  examples:
+  - fiche_id: TER002
+    title: Fowler — la ligne de commande
+    situation: Fowler cite la ligne d’un bon de commande parmi les objets qui peuvent avoir un sens dans un modèle de domaine.
+    outcome: L’objet peut représenter une notion plus fine qu’une entreprise entière, également citée dans le texte.
+    lesson: Dans FLOW, la pertinence vient du raisonnement métier ; cet exemple ne fixe pas une structure de données.
+    source_title: Domain Model
+    source_url: https://martinfowler.com/eaaCatalog/domainModel.html
+    source_refs:
+    - U477
+  previous_provenance: []
+- local_key: bpmn
+  vendor: OMG
+  product: Business Process Model and Notation
+  source_title: Business Process Model and Notation, Version 2.0.2
+  source_url: https://www.omg.org/spec/BPMN/2.0.2/PDF
+  source_version: BPMN 2.0.2, décembre 2013
+  source_locator: §10.1 Process, p.143 ; §10.3.3 Tasks, p.154 ; Manual Task p.161–163
+  consulted_on: '2026-09-19'
+  finding: Un processus décrit des activités, événements et passages ; une tâche constitue un travail élémentaire à la maille
+    retenue, humain ou automatisé.
+  evidence_limits: Standard de notation et de déroulement ; ni carte de capacités ni règle d’équivalence entre une tâche et
+    une opération FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER024
+  - TER025
+  examples: []
+  previous_provenance: []
+- local_key: sbvr
+  vendor: OMG
+  product: Semantics of Business Vocabulary and Business Rules
+  source_title: Semantics of Business Vocabulary and Business Rules, Version 1.5
+  source_url: https://www.omg.org/spec/SBVR/1.5/PDF
+  source_version: SBVR 1.5, mai 2019
+  source_locator: §16.1.2–16.1.3 p.98–100 ; §18.1.2 exemple EU-Rent p.118
+  consulted_on: '2026-09-19'
+  finding: Une règle praticable permet d’apprécier ce qui est acceptable ; l’exemple EU-Rent distingue obligation d’annulation
+    et action qui l’exécute.
+  evidence_limits: La juridiction métier et les catégories de SBVR sont plus précises que le terme générique FLOW ; pas d’importation
+    de son métamodèle.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER023
+  examples: []
+  previous_provenance: []
+- local_key: rules
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: DOM rules
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+  source_version: Documentation évolutive, mise à jour du 22 janvier 2026
+  source_locator: Common attributes ; Minimum inventory rule ; Partial orders rule
+  consulted_on: '2026-09-19'
+  finding: DOM utilise des contraintes de sourcing et distingue règles impératives ou relâchables ; du stock peut rester disponible
+    pour les clients du magasin.
+  evidence_limits: Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni ses
+    priorités à FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER023
+  - TER028
+  examples:
+  - fiche_id: TER023
+    title: Microsoft — garder du stock pour les visiteurs
+    situation: La règle Minimum inventory de DOM permet d’écarter une partie du stock magasin de la satisfaction des commandes.
+    outcome: Cette quantité reste destinée à d’autres usages, notamment les clients présents en magasin.
+    lesson: La règle exprime une priorité d’usage ; elle ne crée pas à elle seule une nouvelle capacité.
+    source_title: DOM rules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    source_refs:
+    - U477
+  - fiche_id: TER028
+    title: Microsoft — le nombre de lieux de satisfaction
+    situation: Microsoft explique que le réglage de satisfaction depuis un seul lieu a évolué vers un nombre maximal de lieux.
+    outcome: Les possibilités de découpage varient selon la version, la règle et les options activées.
+    lesson: Comparer une fonctionnalité exige ce contexte ; on ne peut conclure à partir de « DOM » seul.
+    source_title: DOM rules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    source_refs:
+    - U477
+  previous_provenance: []
+- local_key: abc
+  vendor: SAP
+  product: S/4HANA Sales
+  source_title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+  source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+  source_version: Cours en ligne, édition non précisée
+  source_locator: Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+  consulted_on: '2026-09-19'
+  finding: Le cours décrit plusieurs fonctions aATP, dont la confirmation depuis un autre site et le réexamen des commandes.
+  evidence_limits: Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une
+    couverture installée.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER027
+  - TER028
+  examples: []
+  previous_provenance: []
+- local_key: context
+  vendor: Martin Fowler
+  product: Domain-Driven Design
+  source_title: Bounded Context
+  source_url: https://martinfowler.com/bliki/BoundedContext.html
+  source_version: 15 janvier 2014
+  source_locator: Paragraphes sur le vocabulaire et l’exemple meter
+  consulted_on: '2026-09-19'
+  finding: Un même mot peut changer de sens selon le contexte ; le cas du compteur distingue équipement et relation au réseau
+    ou au client.
+  evidence_limits: Retour d’auteur sur les modèles logiciels dans l’approche DDD ; document distinct d’Evans mais même école
+    de pensée, pas preuve de consensus entre cadres.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER030
+  examples:
+  - fiche_id: TER030
+    title: Fowler — les différents sens du compteur
+    situation: Dans son exemple d’un fournisseur d’électricité, « compteur » peut désigner l’équipement ou une relation du
+      réseau avec un lieu ou un client.
+    outcome: Le vocabulaire doit être précisé pour éviter des modèles contradictoires.
+    lesson: L’illustration aide FLOW à expliciter les problèmes et notions de chaque domaine ; elle ne prescrit pas ses frontières.
+    source_title: Bounded Context
+    source_url: https://martinfowler.com/bliki/BoundedContext.html
+    source_refs:
+    - U477
+  previous_provenance: []
+- local_key: receipt
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Record the receipt of goods on the purchase order
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+  source_version: Documentation évolutive, mise à jour du 1er juillet 2026
+  source_locator: Record receipt of goods, étapes 4–7 ; Review the product receipt journal
+  consulted_on: '2026-09-19'
+  finding: Le parcours reçoit quatre pièces sur cinq commandées ; l’enregistrement produit un journal de réception avec une
+    référence documentaire.
+  evidence_limits: Exemple de réception de biens ; aucune universalité fait-document, immutabilité ou règle de correction
+    n’en est déduite.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER025
+  - TER036
+  - TER037
+  examples:
+  - fiche_id: TER025
+    title: Microsoft — enregistrer quatre pièces reçues
+    situation: Le parcours Microsoft part d’une commande de cinq pièces et enregistre la réception de quatre.
+    outcome: Le journal conserve la réception effectivement enregistrée, avec sa référence.
+    lesson: L’opération change les faits tenus sur la commande ; elle reste distincte de la réception physique des pièces.
+    source_title: Record the receipt of goods on the purchase order
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+    source_refs:
+    - U477
+  - fiche_id: TER036
+    title: Microsoft — quatre pièces reçues sur cinq
+    situation: Le scénario Microsoft enregistre quatre pièces reçues sur une commande de cinq.
+    outcome: Le journal de réception matérialise les quantités enregistrées avec une référence documentaire.
+    lesson: FLOW reconnaît le fait « quatre pièces reçues » et le document qui le porte ; leur rôle n’est pas celui du message
+      qui avertit un tiers.
+    source_title: Record the receipt of goods on the purchase order
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/tasks/record-receipt-goods-purchase-order
+    source_refs:
+    - U477
+  previous_provenance:
+  - fiche_id: TER036
+    source_refs:
+    - U461
+    - ELM285
+    - CMP178
+- local_key: ubl
+  vendor: OASIS
+  product: Universal Business Language
+  source_title: Universal Business Language Version 2.4
+  source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+  source_version: OASIS Standard 2.4, 2024
+  source_locator: §2.3.5.1.1–2.3.5.1.4 Fulfilment ; surtout Receipt Advice Business Rules
+  consulted_on: '2026-09-19'
+  finding: Receipt Advice rapporte la réception, ses quantités et les écarts ; Despatch Advice rapporte l’expédition.
+  evidence_limits: Standard de documents d’échange ; les exemples ne définissent ni tous les documents ni la convention obligatoire
+    fait-document de FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER036
+  - TER037
+  examples:
+  - fiche_id: TER037
+    title: UBL — distinguer expédié et reçu
+    situation: UBL sépare Despatch Advice, émis pour l’expédition, et Receipt Advice, émis à la réception.
+    outcome: Le réceptionnaire peut signaler des manquants, des dommages ou des refus.
+    lesson: Les documents représentent des faits différents ; recevoir un avis d’expédition ne prouve pas que les biens ont
+      été reçus.
+    source_title: Universal Business Language Version 2.4
+    source_url: https://docs.oasis-open.org/ubl/UBL-2.4.html
+    source_refs:
+    - U477
+  previous_provenance:
+  - fiche_id: TER036
+    source_refs:
+    - U470
+    - U471
+    - ELM311
+    - CMP186
+- local_key: cloud
+  vendor: CNCF
+  product: CloudEvents
+  source_title: CloudEvents Specification
+  source_url: https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
+  source_version: Version 1.0.2
+  source_locator: 'Terminology : Occurrence, Event, Producer, Consumer'
+  consulted_on: '2026-09-19'
+  finding: Une occurrence peut donner lieu à plusieurs événements contenant son contexte ; la représentation peut être transmise
+    à des consommateurs.
+  evidence_limits: Spécification d’interopérabilité des messages ; ni contrat métier exhaustif ni protocole imposé pour FLOW.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER039
+  examples: []
+  previous_provenance: []
+- local_key: notification
+  vendor: Martin Fowler
+  product: Event-driven architecture
+  source_title: What do you mean by Event-Driven?
+  source_url: https://martinfowler.com/articles/201701-event-driven.html
+  source_version: 7 février 2017
+  source_locator: Event Notification
+  consulted_on: '2026-09-19'
+  finding: La notification signale un changement et peut fournir des références pour obtenir les détails ; elle se distingue
+    d’une demande d’action déguisée.
+  evidence_limits: Article de clarification par son auteur ; décrit plusieurs styles, sans faire de la notification un stockage
+    du fait ni garantir sa livraison.
+  consultation_method: Document primaire ouvert ; passages indiqués effectivement lus
+  supported_ids:
+  - TER039
+  examples:
+  - fiche_id: TER039
+    title: Illustration FLOW — signaler une réception
+    situation: Une réception a été enregistrée avec son document ; un message avertit le responsable d’une commande concernée.
+    outcome: Le destinataire dispose des références pour consulter le fait et décider de la suite.
+    lesson: 'Le message informe : son émission ne constitue ni une nouvelle réception ni, à elle seule, un ordre de poursuivre.'
+    source_title: What do you mean by Event-Driven?
+    source_url: https://martinfowler.com/articles/201701-event-driven.html
+    source_refs:
+    - U477
+  previous_provenance: []
+unavailable_documents:
+- title: ArchiMate 3.2 — Strategy Layer / Business Layer
+  url: https://pubs.opengroup.org/architecture/archimate32-doc/ch-Strategy-Layer.html
+  result: Redirection vers une connexion ; contenu non lu et non utilisé comme preuve
+notes: Aucun déplacement des termes entre glossaires ; définitions et accords inchangés.

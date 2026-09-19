@@ -27,7 +27,7 @@ class CapabilityTypeTests(unittest.TestCase):
         for node in nodes.values():
             if node['kind'] == 'capability':
                 self.assertIn(node['fields'].get('nature'), CAPABILITY_NATURES)
-            if node['kind'] in ('domain', 'reference'):
+            if node['kind'] in ('domain', 'area', 'reference'):
                 decisions = [nodes[r['target_id']]['fields']['nature'] == 'decision' for r in model['relations']
                              if r['source_id'] == node['id'] and r['type'] == 'contains']
                 self.assertEqual(decisions, sorted(decisions))

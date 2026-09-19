@@ -29,6 +29,7 @@
       "items": {
         "enum": [
           "domain",
+          "area",
           "capability",
           "group",
           "object",

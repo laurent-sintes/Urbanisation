@@ -1,0 +1,33 @@
+{
+  "scenario": "One editorial review-note change on D04.j, isolated copies; preparation only, no publication or human review time.",
+  "samples": {
+    "previous_process": {
+      "seconds": 37.3969,
+      "steps": {
+        "diagnostic": 12.1471,
+        "prepare": 22.3509
+      },
+      "candidate_builds": 2,
+      "decisions_to_review": 1,
+      "automatic_carries": 0,
+      "validation_errors": 0
+    },
+    "streamlined_process": {
+      "seconds": 22.7986,
+      "steps": {
+        "candidate": 5.3523,
+        "freeze": 14.6457
+      },
+      "candidate_builds": 1,
+      "decisions_to_review": 0,
+      "automatic_carries": 1,
+      "validation_errors": 0
+    }
+  },
+  "iterations": 1,
+  "limits": "Single sequential sample, shared warm parser cache; not a statistical benchmark or a total real-release duration.",
+  "same_business_values_and_approval_scopes": true,
+  "live_inputs_unchanged": true,
+  "frozen_files_unchanged": 772,
+  "reduction_percent": 39.0
+}

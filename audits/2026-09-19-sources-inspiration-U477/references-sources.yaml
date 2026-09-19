@@ -1,0 +1,650 @@
+source: U477
+batch: references
+documents:
+- key: product
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Product information overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/pim/product-information
+  source_version: Mise à jour du 1er juillet 2026
+  source_locator: Product definition ; Distribution, export, and import ; Product masters and product variants
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Définition produit partagée, variantes et import depuis PLM/PDM/PIM ; administration également couverte.
+  target_ids:
+  - D08
+  - TER004
+  - TER052
+  - TER057
+  - TER058
+  - TER060
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: items
+  vendor: Oracle
+  product: Fusion Cloud Product Hub
+  source_title: Overview of Item Batches
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html
+  source_version: 26A
+  source_locator: Overview of Item Batches
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Réception par lots de références et structures depuis plusieurs sources, avec fonctions de rapprochement
+    et gouvernance.
+  target_ids:
+  - D08
+  - D08.d
+  - TER050
+  - TER052
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: party
+  vendor: Microsoft
+  product: Dynamics 365 Finance and Operations
+  source_title: Global address book overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book
+  source_version: Mise à jour du 18 mars 2026
+  source_locator: Party roles ; Example
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Une personne ou organisation peut porter plusieurs rôles. Exemple First Up Consultants, client et fournisseur
+    ; gestion centrale des coordonnées.
+  target_ids:
+  - D09
+  - D09.d
+  - TER046
+  - TER047
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: partyimport
+  vendor: Oracle
+  product: Fusion Cloud Financials
+  source_title: Customer Import
+  source_url: https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html
+  source_version: 25D
+  source_locator: File Links ; Import Trading Community Data in Bulk
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Imports distincts des parties, sites, relations et responsabilités ; documentation des données importables,
+    pas catalogue de capacités.
+  target_ids:
+  - D09.d
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: catalog
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Create Commerce catalogs for B2B sites
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+  source_version: Mise à jour du 21 janvier 2026
+  source_locator: Catalog configuration ; customer hierarchies ; price groups
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Catalogues ciblant des clients et produits, avec prix et validité ; création et publication locales.
+  target_ids:
+  - D12
+  - D12.a
+  - TER049
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: procatalog
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Procurement catalogs overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs
+  source_version: Mise à jour du 1er juillet 2026
+  source_locator: Set up a catalog ; publication and updates
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Catalogue des biens et services commandables en interne, politiques d’accès et publication des évolutions.
+  target_ids:
+  - D12
+  - D12.a
+  - TER049
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: agreement
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Purchase agreements
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements
+  source_version: Mise à jour du 8 septembre 2026
+  source_locator: Commitment types ; Purchase agreement fulfillment
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Accords en quantité ou valeur, conditions et périodes, consommés par plusieurs commandes.
+  target_ids:
+  - D11
+  - D11.a
+  - TER048
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: agreementimport
+  vendor: Oracle
+  product: Fusion Cloud Enterprise Contracts / Purchasing
+  source_title: Create and Monitor Agreements in Oracle Fusion Purchasing
+  source_url: https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html
+  source_version: Documentation évolutive sans édition affichée
+  source_locator: Track Purchasing Activity ; Import Blanket Agreements ; Import Contract Agreements
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Transfert des contrats vers les accords d’achat et suivi de leur état ; processus d’import et approbation.
+  target_ids:
+  - D11
+  - D11.a
+  - TER048
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: wms
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Exchange data between systems
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data
+  source_version: Mise à jour du 27 juillet 2026
+  source_locator: Master and reference data ; Shipment orders ; Progress data and business events
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Références importées et identifiants de source, demandes de réception/expédition et faits d’exécution
+    séparés.
+  target_ids:
+  - business-references
+  - D13
+  - D07.b
+  - D07.c
+  - D08.d
+  - D13.a
+  - BHV079
+  - VER008
+  - VER022
+  - TER050
+  - TER053
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: gln
+  vendor: GS1
+  product: GLN Allocation Rules
+  source_title: GS1 GLN Allocation Rules Standard
+  source_url: https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard
+  source_version: Release 3.0.2, août 2022
+  source_locator: §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
+  consulted_on: '2026-09-19'
+  evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite pour
+    FLOW.
+  consulted_content: Qui et où sont distingués. Dal Giardino est explicitement fictif ; une même clé peut désigner partie
+    et lieu si leur distinction n’est pas nécessaire.
+  target_ids:
+  - D09
+  - D13
+  - D13.a
+  - TER046
+  - TER053
+  - TER054
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: architecture
+  vendor: GS1
+  product: GS1 System Architecture
+  source_title: GS1 System Architecture Document
+  source_url: https://www.gs1.org/standards/gs1-system-architecture-document/current-standard
+  source_version: Page courante ; édition non vérifiée dans le passage disponible
+  source_locator: Table 4-1 ; Identification of objects ; Communication of business data
+  consulted_on: '2026-09-19'
+  evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de reprise exhaustive du standard.
+  consulted_content: Clés d’identification par classe, lot ou exemplaire ; GTIN, GTIN et numéro de série, SSCC, GLN ; échange
+    des références.
+  target_ids:
+  - business-references
+  - TER004
+  - TER057
+  - TER058
+  - TER059
+  - TER061
+  - TER062
+  - TER063
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: trace
+  vendor: GS1
+  product: Global Traceability Standard
+  source_title: GS1 Global Traceability Standard
+  source_url: https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard
+  source_version: Release 2.0, 2017
+  source_locator: Identification levels ; Data recording and sharing ; R21
+  consulted_on: '2026-09-19'
+  evidence_limits: Passages primaires indexés consultés ; ouverture directe non exploitable. Les exigences GS1 ne sont pas
+    imposées au modèle.
+  consulted_content: Distinguer classe, lot, exemplaire ; relier événements d’expédition/réception aux objets, parties et
+    lieux.
+  target_ids:
+  - D07.c
+  - D07.d
+  - BHV079
+  - BHV080
+  - VER022
+  - TER059
+  - TER063
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: label
+  vendor: GS1
+  product: Logistic Label Guideline
+  source_title: GS1 Logistic Label Guideline
+  source_url: https://www.gs1.org/standards/gs1-logistic-label-guideline/1-3
+  source_version: '1.3'
+  source_locator: §1.2 ; §3 ; §4.1 ; §10.5
+  consulted_on: '2026-09-19'
+  evidence_limits: Passages primaires indexés consultés ; ouverture directe bloquée. Les règles d’étiquetage ne définissent
+    pas à elles seules les objets FLOW.
+  consulted_content: SSCC d’unité logistique et GTIN de référence commerciale. Exemple palette homogène de 50 groupements
+    X, ou mixte de 30 X et 20 Y.
+  target_ids:
+  - TER060
+  - TER061
+  - TER062
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: orchestration
+  vendor: Camunda
+  product: Process Orchestration
+  source_title: The Process Orchestration Handbook
+  source_url: https://camunda.com/process-orchestration/
+  source_version: Guide web évolutif
+  source_locator: What is process orchestration? ; Processes with diverse endpoints ; Complexity
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Coordination d’intervenants humains et logiciels et de leurs tâches ; dépendances et gestion des exceptions.
+  target_ids:
+  - D06
+  - D06.d
+  - D06.f
+  - TER031
+  - VER023
+  - TER075
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: iom
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  source_title: Intelligent Order Management overview
+  source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+  source_version: Mise à jour du 30 janvier 2026
+  source_locator: Orchestration ; Providers ; Fulfillment optimization
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Orchestration des commandes à travers partenaires et systèmes, règles de parcours, optimisation de la
+    satisfaction et visibilité.
+  target_ids:
+  - D06
+  - D06.f
+  - TER031
+  - TER034
+  - TER035
+  - TER054
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: capacity
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Schedule workload capacity
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/schedule-workload-capacity
+  source_version: Mise à jour du 7 mai 2025
+  source_locator: Warehouse workload capacity ; seasonal workforce example
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Charge d’entrepôt projetée et plafonds configurés en poids/volume ; exemple d’ajustement saisonnier des
+    ressources.
+  target_ids:
+  - D06.b
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: tmfcat
+  vendor: TM Forum
+  product: Service Catalog Management
+  source_title: TMF633 Service Catalog API REST Specification R18.5.1
+  source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+  source_version: Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019
+  source_locator: Description de la spécification
+  consulted_on: '2026-09-19'
+  evidence_limits: Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition
+    courante ni norme Supply.
+  consulted_content: Catalogue de services consultable pour la commande ; cycle de conception, mise en service et retrait.
+  target_ids:
+  - D14
+  - D14.a
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: tmforder
+  vendor: TM Forum
+  product: Service Ordering Management
+  source_title: TMF641 Service Ordering Management API REST Specification
+  source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
+  source_version: Version 3.0.0, Release 18.5.0, janvier 2019
+  source_locator: 'Pages 5, 8–15 : Service Order ; dates ; dépendances ; états'
+  consulted_on: '2026-09-19'
+  evidence_limits: PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés
+    par FLOW.
+  consulted_content: Ordre de services avec actions, dates demandées/prévues/réalisées, rôles et dépendances. Qualification
+    de faisabilité séparée.
+  target_ids:
+  - D07.a
+  - D07.b
+  - D06.d
+  - VER008
+  - VER024
+  - TER047
+  - TER066
+  - TER076
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: field
+  vendor: Microsoft
+  product: Dynamics 365 Field Service
+  source_title: Work order architecture
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+  source_version: Documentation évolutive consultée le 19 septembre 2026
+  source_locator: A work order is created ; scheduled ; performed ; reviewed and completed
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Description des prestations et besoins, affectation à une ressource, réalisation terrain, revue de fin
+    ; produits et services issus d’un catalogue.
+  target_ids:
+  - D14
+  - D06.b
+  - D07.a
+  - D14.a
+  - D06.e
+  - VER023
+  - TER066
+  - TER075
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: sla
+  vendor: Microsoft
+  product: Dynamics 365 Field Service
+  source_title: Define service-level agreements (SLAs) for work orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/sla-work-orders
+  source_version: Mise à jour du 30 mars 2026
+  source_locator: Introduction ; Create an SLA ; Schedule a work order to meet an SLA
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Attentes d’arrivée/résolution et conditions de succès. Exemple arrivée sous quatre heures, alerte après
+    deux ; calendrier applicable.
+  target_ids:
+  - TER076
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: rating
+  vendor: Microsoft
+  product: Dynamics AX Transportation Management
+  source_title: Transportation scenario – Manual rating
+  source_url: https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2016/02/16/transportation-charges-scenario-manual-rating-2/
+  source_version: 16 février 2016
+  source_locator: Scenario ; Walkthrough étapes 1–3
+  consulted_on: '2026-09-19'
+  evidence_limits: Exemple éditeur historique, limité au transport et au tarif ; pas une recommandation de produit actuel.
+  consulted_content: Si les tarifs proposés ne conviennent pas, choisir un transporteur et un service et saisir un tarif convenu.
+  target_ids:
+  - D06.e
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: p44
+  vendor: project44
+  product: Transportation Visibility
+  source_title: Enhancing Automotive Finished Vehicle Logistics with Real Time Visibility
+  source_url: https://www.project44.com/blog/enhancing-automotive-finished-vehicle-logistics-with-real-time-visibility/
+  source_version: 22 août 2023
+  source_locator: The Complexities of Outbound Finished Vehicle Logistics
+  consulted_on: '2026-09-19'
+  evidence_limits: Présentation commerciale primaire ; bénéfices annoncés non évalués, pas de précision ou couverture uniforme
+    déduite.
+  consulted_content: 'Cas automobile : suivi des véhicules identifiés à travers mer, route et rail, étapes portuaires et arrivées
+    estimées.'
+  target_ids:
+  - BHV080
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: store
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  source_title: Commerce inventory management
+  source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/work-with-store-inventory
+  source_version: Mise à jour du 30 janvier 2026
+  source_locator: Purchase orders ; Transfer orders ; Stock counts ; Inventory lookup
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Réception/expédition de commandes et transferts magasin, comptage et consultation des stocks ; prise
+    en charge des dimensions limitée selon l’opération.
+  target_ids:
+  - BHV081
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: by
+  vendor: Blue Yonder
+  product: Store Execution Inventory Management
+  source_title: What is Blue Yonder Store Execution Inventory Management?
+  source_url: https://info.blueyonder.com/order-management-commerce/what-is-blue-yonder-store-execution-inventory-management
+  source_version: Page web sans édition figée
+  source_locator: Mobile-Led Workflows ; Accuracy Gap
+  consulted_on: '2026-09-19'
+  evidence_limits: Présentation commerciale primaire ; pas de garantie d’exactitude ou de temps réel retenue comme fait établi.
+  consulted_content: Réception, comptages et corrections guidés en magasin ; exemple d’article endommagé signalé par un employé.
+  target_ids:
+  - BHV081
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: bpt
+  vendor: Microsoft
+  product: Azure Business Process Tracking
+  source_title: What is Azure Business Process Tracking?
+  source_url: https://learn.microsoft.com/en-us/azure/business-process-tracking/overview
+  source_version: Mise à jour du 11 septembre 2025
+  source_locator: Business process design and tracking ; exemple du ticket de panne électrique
+  consulted_on: '2026-09-19'
+  evidence_limits: Appui sur la corrélation métier ; produit limité aux ressources Azure décrites, sans exigence d’architecture
+    pour FLOW.
+  consulted_content: Suivi des étapes métier reliées par un identifiant commun et associées aux résultats des services informatiques.
+  target_ids:
+  - D07.d
+  - BHV082
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: observe
+  vendor: Camunda
+  product: Operate / Process Observability
+  source_title: Process Observability & AI Agent Monitoring
+  source_url: https://camunda.com/platform/observability/
+  source_version: Page web évolutive
+  source_locator: Observability for orchestration ; Real-time runtime visibility
+  consulted_on: '2026-09-19'
+  evidence_limits: Présentation produit ; capacités de reprise et fonctions IA ne sont pas importées dans le comportement
+    de suivi FLOW.
+  consulted_content: Voir l’étape active, ce qui est achevé et ce qui bloque une instance de processus.
+  target_ids:
+  - BHV082
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: cscmp
+  vendor: CSCMP
+  product: Supply Chain Management definitions
+  source_title: SCM Definitions and Glossary of Terms
+  source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+  source_version: Page web sans édition affichée
+  source_locator: Definitions ; Boundaries and Relationships
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: SCM inclut achats, transformation, logistique et coopération entre entreprises ; logistique couvre flux
+    aller/retour et stockage.
+  target_ids:
+  - TER035
+  - TER084
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: ibmoms
+  vendor: IBM
+  product: Order Management
+  source_title: What is order management?
+  source_url: https://www.ibm.com/think/topics/order-management
+  source_version: Page web évolutive
+  source_locator: What is an order management system? ; Distributed order management
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: OMS comme catégorie logicielle couvrant cycle de commande, visibilité, satisfaction et après-vente ;
+    DOM pour orienter la satisfaction.
+  target_ids:
+  - TER034
+  - VER024
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: scor
+  vendor: ASCM
+  product: SCOR Digital Standard
+  source_title: SCOR DS Quick Reference Guide
+  source_url: https://www.ascm.org/globalassets/documents--files/corporate-transformation/scor-ds-digital-guide_final.pdf
+  source_version: Guide public SCOR DS ; édition non relevée
+  source_locator: SCOR Processes ; Level 0 and Level 1
+  consulted_on: '2026-09-19'
+  evidence_limits: Extrait primaire indexé consulté ; aucune transposition de hiérarchie processus vers capacités.
+  consulted_content: 'Modèle de processus Supply : Orchestrate, Plan, Order, Source, Transform, Fulfill, Return.'
+  target_ids:
+  - TER084
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: bcsupply
+  vendor: Microsoft
+  product: Dynamics 365 Business Central
+  source_title: Design details — Balancing supply and demand
+  source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  source_version: Documentation évolutive
+  source_locator: Supply and demand ; Priorities on the supply side
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Bilan ressources et besoins ; stock, achats, production, transferts entrants et retours clients côté
+    ressources.
+  target_ids:
+  - TER083
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: gop
+  vendor: Oracle
+  product: Fusion Cloud Global Order Promising
+  source_title: Overview of Global Order Promising
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+  source_version: 25C
+  source_locator: Introduction ; Principles 2 and 6
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Ressources présentes ou attendues mobilisées pour la promesse ; possibilité de scinder une ligne pour
+    limiter le retard.
+  target_ids:
+  - TER081
+  - TER083
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: delivery
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Delivery schedules
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  source_version: Mise à jour du 7 mai 2025
+  source_locator: Create delivery schedules ; exemple 600 chairs
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+  consulted_content: Ligne commerciale divisée en lignes de livraison ; exemple 600 chaises livrées par 100 pendant six mois.
+  target_ids:
+  - TER081
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: spread
+  vendor: SAP
+  product: ERP Fashion Management
+  source_title: Steps in Order Allocation Run
+  source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+  source_version: 6.0 EHP8 SP25
+  source_locator: Requirement Grouping ; Allocation ; Release Rules
+  consulted_on: '2026-09-19'
+  evidence_limits: Passage primaire indexé consulté par le lot Promising ; page directe sans texte exploitable. Pas de généralisation
+    à toute édition aATP.
+  consulted_content: FIFO ou distribution proportionnelle aux quantités demandées, appelée spread logic ; regroupement préalable
+    requis.
+  target_ids:
+  - TER082
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: grouping
+  vendor: SAP
+  product: Fashion Management
+  source_title: Requirement Grouping
+  source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/b9262a5341b1e578e10000000a441470.html
+  source_version: 1.0 SP13
+  source_locator: Requirement Grouping ; exemple sold-to party
+  consulted_on: '2026-09-19'
+  evidence_limits: Passage primaire indexé consulté par le lot Promising ; deux documents SAP ne prouvent pas un consensus
+    interéditeurs.
+  consulted_content: Former un groupe de besoins, par exemple par donneur d’ordre, avant application du spread.
+  target_ids:
+  - TER082
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: fillin
+  vendor: SAP
+  product: Allocation Management
+  source_title: Business Overview
+  source_url: https://help.sap.com/docs/CARAB/00197153997746b4bec2020d00e66ea9/e99798c39a3f4956bd5ce509b39382f7.html?locale=en-US&state=PRODUCTION&version=5.0.2
+  source_version: 5.0 FPS02
+  source_locator: 'Business Scenarios : Initial Allocation ; In-Season Fill-In'
+  consulted_on: '2026-09-19'
+  evidence_limits: Passage primaire indexé consulté ; ouverture SAP Help non exploitable. Aucune formule de seuil Beaumanoir
+    déduite.
+  consulted_content: Apports magasins après les premières ventes, distingués de la mise en place initiale ; prévision possible.
+  target_ids:
+  - TER080
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: relex
+  vendor: RELEX
+  product: Replenishment and allocation
+  source_title: Replenishment and allocation
+  source_url: https://www.relexsolutions.com/solutions/automatic-replenishment-system/
+  source_version: Page web évolutive
+  source_locator: Manage the full cycle for your seasonal items ; Manage seasons effectively
+  consulted_on: '2026-09-19'
+  evidence_limits: Présentation commerciale consultée ; ni résultats annoncés ni mécanisme identique aux seuils FLOW établis.
+  consulted_content: Réassort en saison intégré au cycle saisonnier, avec prévisions, allocation initiale et fin de saison.
+  target_ids:
+  - TER080
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: releasewh
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Release to warehouse
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+  source_version: Documentation évolutive
+  source_locator: Release orders to warehouse
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté par le lot Orders ; appui limité au lancement logistique, sans autorisation
+    universelle de mouvement.
+  consulted_content: Transmettre tout ou partie d’une commande au traitement entrepôt.
+  target_ids:
+  - TER051
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+- key: holds
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  source_title: Manage order holds
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+  source_version: Documentation évolutive
+  source_locator: Apply and remove order holds
+  consulted_on: '2026-09-19'
+  evidence_limits: Document primaire consulté par le lot Orders ; lever un empêchement ne suffit pas à prouver une autorisation
+    de tout mouvement.
+  consulted_content: Bloquer et lever un blocage de commande selon un motif métier.
+  target_ids:
+  - TER051
+  examples: Les exemples construits portent explicitement Illustration FLOW. Les exemples attribués sont reformulés du passage
+    indiqué, sans observation Beaumanoir déduite.
+notes:
+- Pour les notices indexées, la limite de consultation est explicite dans chaque comparaison.
+- Les anciennes correspondances restent préservées dans before/. Les mêmes documents conservés gardent leurs références antérieures
+  ; les autres appuis sont réexaminés à la maille de chaque fiche.

@@ -227,6 +227,12 @@ class ApplicabilityTests(unittest.TestCase):
         item["coverage"] = "gap_identified"
         self.assertTrue(any("unknown applicability/coverage" in e for e in self.verify()))
 
+    def test_area_is_a_valid_subject_without_changing_its_assessment(self):
+        item = self.add_assessment()
+        model = next(iter(self.models.values()))
+        next(n for n in model['nodes'] if n['id'] == item['subject']['node_id'])['kind'] = 'area'
+        self.assertEqual(self.verify(), [])
+
     def test_context_perspective_and_version_are_checked(self):
         item = self.add_assessment()
         item["perspective"] = "target"
