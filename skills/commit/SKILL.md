@@ -11,7 +11,7 @@ Une demande de commit autorise sa création locale. Ne pas ajouter une confirmat
 
 ## Déterminer le contenu
 
-Lire `git status --short --branch`, `git diff --stat`, `git diff` et `git diff --cached`. Examiner aussi les nouveaux fichiers pertinents. Respecter le périmètre demandé et les changements déjà indexés ; ne pas embarquer des changements étrangers à ce périmètre. Ne pas désindexer le travail de Laurent pour recomposer arbitrairement l’index. Si l’index contient des changements étrangers qui ne peuvent pas être séparés avec certitude, présenter le conflit concret avant de committer.
+Lire `git status --short --branch` et `git diff --stat`, puis examiner les différences et nouveaux fichiers utiles au périmètre. Réutiliser la revue déjà effectuée dans la tâche tant que le contenu n’a pas changé ; approfondir seulement les écarts nouveaux ou non examinés. Pour les captures historiques et registres volumineux, vérifier le périmètre et l’intégrité sans relancer un audit métier ni reparcourir tout le YAML. Respecter les changements déjà indexés ; ne pas embarquer des changements étrangers ni désindexer le travail de Laurent pour recomposer arbitrairement l’index. Si l’index contient des changements étrangers qui ne peuvent pas être séparés avec certitude, présenter le conflit concret avant de committer.
 
 Vérifier l’identité locale avec `git var GIT_AUTHOR_IDENT`. Utiliser la configuration existante ; ne pas modifier l’identité globale. L’identité GitHub connectée et son adresse GitHub sans réponse peuvent être configurées localement lors de l’initialisation du dépôt. Ne pas inventer une adresse personnelle ni ajouter de coauteur sans demande.
 
@@ -19,15 +19,17 @@ Exclure les fichiers locaux désignés par `.gitignore` : état/logs/captures du
 
 ## Vérifier et enregistrer
 
-Adapter les contrôles aux fichiers modifiés :
+Le commit clôt le travail vérifié. Réutiliser les validations, tests et rendus réussis dans la tâche lorsque leurs entrées, leur code et leur contexte sont inchangés. S’appuyer sur les résultats disponibles, sans créer un nouveau rapport ou checkpoint pour le seul commit. Rejouer uniquement après un changement pertinent, un échec ou un doute restant ; la date d’un rapport seule ne prouve pas sa validité.
 
-- Modèles, décisions, provenance ou scripts associés : `python scripts/validate_models.py`. Après nouvelles sources, actualiser l’index courant avec `python scripts/refresh_sources.py` si nécessaire ; après modèle modifié, régénérer les vues avec `python scripts/render_models.py`.
-- Scripts Python du modèle modifiés : `python -m unittest discover -s scripts -p "test_*.py"`.
+Pour les contrôles restant nécessaires, adapter leur portée aux fichiers modifiés :
+
+- Modèles, décisions, provenance ou scripts associés : `python scripts/validate_models.py`. Après nouvelles sources, actualiser l’index courant avec `python scripts/refresh_sources.py` si nécessaire ; après modèle modifié, régénérer uniquement l’espace concerné, par exemple `python scripts/render_models.py --space backlog`.
+- Python : exécuter les tests des contrats et parcours touchés. Une attente de test adaptée à une évolution métier ne déclenche pas à elle seule la suite complète ; utiliser le module concerné si son résultat n’est pas déjà acquis. Réserver `python -m unittest discover -s scripts -p "test_*.py"` aux changements transversaux pour lesquels les tests ciblés ne couvrent pas suffisamment les impacts, ou à une demande explicite.
 - Lecteur ou application modifiés : `python app/server.py --check`, puis les tests pertinents décrits dans `app/README.md`.
 - Skills modifiés : valider leur structure avec le validateur `skill-creator` disponible, et vérifier les instructions et leurs copies personnelles si leur installation est demandée ou fait partie de la modification.
 - Documentation seule : vérifier liens et cohérence ; ne pas lancer toutes les suites sans motif.
 
-Indexer les chemins explicites avec `git add -- <chemins>`, puis relire `git diff --cached --stat` et le contenu indexé. `git diff --cached --check` signale notamment les erreurs de conflit et d’espace ; distinguer les contenus historiques conservés à l’identique d’une erreur nouvelle. Ne pas reformater les preuves gelées pour supprimer un avertissement de style. Ne pas utiliser `git add -f` pour contourner les exclusions sans motif autorisé.
+Indexer les chemins explicites avec `git add -- <chemins>`, puis vérifier avec `git diff --cached --stat` que le contenu indexé correspond au périmètre examiné ; relire seulement les écarts éventuels. `git diff --cached --check` signale notamment les erreurs de conflit et d’espace ; distinguer les contenus historiques conservés à l’identique d’une erreur nouvelle. Ne pas reformater les preuves gelées pour supprimer un avertissement de style. Ne pas utiliser `git add -f` pour contourner les exclusions sans motif autorisé.
 
 Choisir un message concis en français décrivant le changement effectif. Utiliser `git commit -m` pour une ligne ou un fichier UTF-8 avec `git commit -F` pour un message multilignes. Ne pas contourner les hooks ni les contrôles en échec. Ne pas amender ou réécrire un ancien commit sauf demande explicite.
 
