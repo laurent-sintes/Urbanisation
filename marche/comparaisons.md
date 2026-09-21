@@ -1967,3 +1967,388 @@ U509 — Codex, 19 septembre 2026. Accord appliqué sur Product Catalog (D12), A
 D16 est rapproché de SAP ELM515 et Microsoft ELM516 : sélection, destinataires et périodes. D16.a, proposition d’ingestion, s’appuie sur la diffusion complète/différentielle SAP ELM517 et la préparation/réplication Microsoft ELM516 ; les mécanismes natifs et l’administration restent exclus. D16.b, proposition de visibilité, s’appuie sur l’affichage des articles listés SAP ELM515 et des versions de listes ELM517 ; même éditeur, pas consensus revendiqué. L’exemple 100/30/12 reste une illustration FLOW.
 
 Agreement ajoute la frontière éclairée par Oracle ELM345 : accord avec ou sans détail des produits ; aucun Assortment natif Oracle déduit des lignes contractuelles. Les sources de D12 sur l’offre demeurent pertinentes ; son nom devient explicite sans devenir un référentiel maître produit. Relation et sélection conservées distinctes dans le glossaire. Les capacités et détails nouveaux non présentés restent proposés ; pas d’extension au Domain Commerce ni au catalogue Information. [Portée de l’accord et sources](../modeles/backlog/catalog-assortment-review-U508.yaml).
+
+
+## CMP207
+
+U511–U513 — Codex, 21 septembre 2026. Audit landscape de l’Area Authoritative Data `business-references`, sept sujets et quatorze capacités du backlog au commit 5957a17756d7def41be9a599e7de293245cceebc. [Rapport](../audits/2026-09-21-authoritative-data-landscape-U512/rapport.md), [options](../modeles/backlog/authoritative-data-landscape-U512.yaml), relevés ELM518–527 et relectures ELM484/485/259/515/391/513.
+
+Recouvrements partiels avec Microsoft IOM, Fluent Order Management et IBM Sterling : références reçues et données d’orchestration distinguées, avec des possibilités d’administration locale. Microsoft étaye certains parcours sans catalogue maître local obligatoire. Les sources ne prescrivent pas sept référentiels ni quatorze capacités. Catalogue produit d’un OMS, offre commerciale FLOW et assortiment ne sont pas automatiquement équivalents. Les exemples de services transporteurs ne démontrent pas un catalogue générique de Backing Services.
+
+Interprétation FLOW : préserver les différences de sens ; justifier la granularité par résultat métier et responsabilité, pas seulement cycle de vie amont ou format de données. Deux responsabilités communes et sept sujets constituent une option de lecture landscape, sans fusion ni déplacement adopté. Les 28 liens ciblant les Ingestion demandent une requalification de leur service rendu avant modification.
+
+Authoritative Data reste étayé par Oracle/EDM Council ; U513 questionne sa lisibilité client. Supply Reference Data est une alternative éditoriale contextualisée, non un standard OMS établi ; le sens étroit de Reference Data reste une réserve. Backing Service Catalog précise FLOW, sans antériorité d’adoption retrouvée ni consensus de marché inventé. DMN sépare entrées et logique de décision ; il ne dicte ni stockage ni taxonomie. Aucun nouvel accord, choix logiciel, extension au catalogue Information ou publication.
+
+
+## CMP208
+
+U514 — Codex, 21 septembre 2026. Proposition de trois capacités Ingestion, Visibility et Core Data, avec décomposition par datasource/vue/storage. [Analyse](../modeles/backlog/authoritative-data-structure-U514.yaml). Appuis méthodologiques ELM528 (Microsoft CQRS, lecture/écriture indépendantes du nombre de stockages) et ELM484 (Oracle Consolidated Hub, sources amont conservant leur maîtrise). Ni carte de capacités ni nom Core Data standard déduits.
+
+Interprétation FLOW : trois résultats distincts peuvent justifier trois capacités. Une source métier peut différencier la réception ; une vue peut différencier la connaissance fournie. Les Behaviors exigent un bénéfice ou une complexité propre U265/MOD006, pas une application, un écran ou une base par défaut. Core Data a un sens métier s’il maintient la référence locale applicable ; son chevauchement avec les Ingestion actuelles doit être résolu. Une vue peut croiser les sept sujets, sans symétrie 7 × 3. Options, exemples et noms restent proposés ; aucune restructuration, administration des maîtres ou adoption de mécanisme de qualité.
+
+
+## CMP209
+
+U515 — Codex, 21 septembre 2026. Précision de la structure Ingestion / Core Data / Visibility : domaines sources, stockage, besoins des capacités consommatrices Supply. C110 corrige l’élargissement antérieur des axes. [Analyse actualisée](../modeles/backlog/authoritative-data-structure-U514.yaml).
+
+ELM529 (Microsoft Materialized View) étaye la combinaison de données de plusieurs stockages selon les besoins de requête ; ELM528 (Microsoft CQRS) étaye la séparation logique de lecture/écriture indépendamment des stockages physiques. Deux documents du même organisme, pas consensus interéditeurs. Ces patrons n’imposent ni la tripartition métier FLOW ni des vues matérialisées.
+
+Lecture proposée : sources, ensembles stockés et vues peuvent avoir des correspondances plusieurs-à-plusieurs ; les sept sujets actuels ne fixent aucun nombre par axe. Core Data conserve le sens de stockage donné par Laurent ; son assimilation à des Behaviors métier reste une question de représentation, sans lui ajouter une gouvernance ou un cycle de vie maître.
+
+
+## CMP210
+
+U516 — Codex, 21 septembre 2026. [Analyse Core Data, Price Book et domaines sources](../modeles/backlog/core-data-price-books-sources-U516.yaml). Les sept sujets actuels constituent un point de départ plausible pour les ensembles conservés par Core Data ; aucun déplacement canonique ni stockage physique imposé.
+
+Salesforce B2C Commerce ELM530 distingue Price Books et prix applicable ; Microsoft Sales ELM531/532 distingue Price Lists, leurs lignes et le calcul transactionnel. Price Book / Price List : noms attestés de produits, sans terme universel imposé. Proposition FLOW : sujet tarifaire autonome si identité et réutilisation propres ; préciser les prix déjà portés par D12/TER049 et les conditions D11/TER048. Offre, tarif, accord et prix appliqué demeurent distincts ; Q072 reste ouverte. Aucune administration de promotions, hiérarchie de tarifs ou obligation d’une liste dans tous les parcours déduite.
+
+Oracle Product Development ELM533 étaye Design comme source de caractéristiques de conception, sans maître produit exclusif. SAP ELM534 et Microsoft ELM535 étayent une responsabilité Procurement/Sourcing pour références fournisseurs et conditions d’achat, si elle est externe et distincte de Commerce dans le découpage retenu. Les trois sources proposées par Laurent (Commerce, Design, Logistics) ne sont pas assimilées aux produits qui les réalisent. Party/Role, points du réseau et services peuvent recevoir des apports de plusieurs domaines ; sources exactes ouvertes. Finance demeure une piste conditionnelle sans preuve de besoin supplémentaire ni création d’un sujet de données. Aucun flux Beaumanoir, Domain Commerce, Behavior ou nouvelle capacité créé.
+
+
+## CMP211
+
+U517 — Codex, 21 septembre 2026. Contrôle de gestion ajouté aux sources possibles indiquées par Laurent, pour des règles de blacklist client/fournisseur. [Analyse](../modeles/backlog/core-data-price-books-sources-U516.yaml), complément U517. L’apport identifie une responsabilité possible ; il ne prouve pas un flux existant ni une propriété organisationnelle universelle.
+
+Microsoft Finance ELM536 distingue règles/exclusions et mise en attente d’une commande ; Microsoft SCM ELM537 distingue les restrictions fournisseur par opérations. Recouvrements partiels : ces mécanismes éclairent la portée d’une restriction, sans ramener toute blacklist au crédit ni importer leurs effets dans FLOW. Deux documents du même éditeur ne démontrent pas de consensus.
+
+Proposition Core Data ciblée : restrictions associées aux tiers, reliées à Party / Role et distinctes de l’identité. Règle reçue, liste/statut déjà évalué et application par les capacités Supply restent séparés. Visibilité de la portée reçue ; autorité d’évaluation et conséquences à préciser. Aucun catalogue général de politiques, moteur de décision ou Behavior ajouté automatiquement.
+
+
+**Accord U518 — 21 septembre 2026 :** Party Restrictions est retenu comme ressource de Core Data dans la structure de travail. Le nom et le rattachement sont tracés champ par champ dans adoption_U518 de l’annexe, avec empreintes. Les rapprochements ELM536/537 restent proposés à leur portée ; leurs règles et effets natifs ne sont pas adoptés. Définition détaillée, stockage, application Supply et autres ressources ne reçoivent pas de validation globale.
+
+
+## CMP212
+
+U519–U520 — Codex, 21 septembre 2026. [Analyse marché de Visibility au niveau capacité](../audits/2026-09-21-authoritative-views-U519/rapport.md) ; [proposition](../modeles/backlog/authoritative-data-views-U519.yaml). État comparé : backlog inchangé, empreinte dans l’annexe. Analyse proposée, aucun accord canonique nouveau.
+
+Dix-huit documents primaires de cinq éditeurs consultés ; dix nouveaux éléments et huit éléments réexaminés, détaillés dans [l’index](../audits/2026-09-21-authoritative-views-U519/source-index.yaml). Fluent, Microsoft IOM, IBM Sterling, Oracle et SAP documentent des consommations croisant plusieurs sujets de référence pour l’orchestration, la promesse, l’approvisionnement, la planification et les retours. Recouvrement partiel de besoins consommateurs ; aucune taxonomie de vues commune ni équivalence de capacités démontrée.
+
+Proposition FLOW : Visibility rend les références consultables sous une forme adaptée aux capacités Supply. Elle est distincte d’Ingestion par domaines sources et de Core Data par ensembles conservés. Elle peut rapprocher plusieurs sujets ; les états opérationnels, décisions et actions restent portés par les capacités responsables. Bénéfice : indépendance entre sources, stockage et lectures utiles. Compromis : expliciter les besoins consommateurs sans faire de chaque donnée ou fonction produit une capacité.
+
+U520 recentre la restitution sur le service rendu, les frontières et les grands besoins des Areas consommatrices. Les regroupements exploratoires de vues restent des matériaux internes, sans catalogue détaillé, nouveaux Behaviors, champs ou règles à adopter. Les preuves logistiques sont plus complètes que celles des services humains/numériques ; aucune installation Beaumanoir inférée. Modèle canonique, catalogue Information et accord U518 préservés.
+
+
+**Complément U521 :** la synthèse au niveau capacité et les appuis ELM538/ELM542 sont portés sur la fiche canonique Authoritative Data, dans market_inspiration et market_comparisons. Les liens, versions, passages, similarités et différences sont ainsi embarquables dans une prochaine publication. Aucun découpage ou accord supplémentaire adopté.
+
+
+## CMP213
+
+U522–U524 — Codex, 21 septembre 2026. [Comparaison Oracle/Fluent portée par Visibility](../audits/2026-09-21-authoritative-views-U519/comparaison-oracle-fluent-U522.md), [preuves et matrice](../modeles/backlog/visibility-oracle-fluent-U522.yaml). Les correspondances sont proposées à la maille du besoin consommateur ; fonctions natives et vues FLOW ne sont pas équivalentes.
+
+Oracle Order Management et Global Order Promising 26B étayent les contextes de demande, approvisionnement, réseau, retour et bases économiques. ELM548–550 complètent les preuves. Fluent ELM541/542/543/545 étaye demande, réseau/fulfillment et qualification du retour ; un contexte de coûts comparable n’est pas établi. Cela ne prouve pas l’absence de fonction du produit.
+
+U523 exige le rattachement à la capacité Visibility : sa fiche de travail porte market_inspiration, market_comparisons et la matrice de lecture. U524 retient Fluent Sourcing → FLOW Network. La couverture ERP complète d’Oracle explique des vues supplémentaires ; PLAN est exclu. Inventory Planning Context est retiré de la proposition active et ELM371 ne sert plus à le justifier. Ancienne matrice conservée en historique ; C111 précise la correction. La portée sur les capacités canoniques de planification et décisions de réassort reste à clarifier.
+
+Aucun nouveau Behavior, détail de règle, nom de vue ou refonte adopté. Consignation champ par champ du rattachement et du cadrage U523/U524 dans l’annexe ; aucun identifiant canonique artificiel. Modèle canonique inchangé à cette étape, aucune publication.
+
+
+**Précision U525 / Q078 :** Laurent laisse la frontière PLAN/orchestration ouverte. Inventory Planning Context demeure en attente, sans exclusion définitive ni suppression de capacités. Les correspondances Fluent Sourcing → Network FLOW, cible Visibility et couverture ERP plus large d’Oracle restent conservées ; les champs de périmètre U524 sont qualifiés par cette réserve, avec historique intact.
+
+
+## CMP214
+
+U526–U527 — Codex, 21 septembre 2026. [Area Supply Planning et nom du Domain](../modeles/backlog/supply-planning-area-review-U526.yaml). État comparé : backlog dont l'empreinte est conservée dans l'annexe ; proposition landscape, non adoptée. Cibles : proposition d'Area et nom/périmètre de Supply Chain Orchestration, pas refonte automatique des capacités.
+
+SAP ELM552 étaye construction de plans, scénarios et réponse aux impondérables ; Oracle ELM294 distingue un émetteur Supply Planning et un composant d'orchestration gérant les changements. Recouvrements partiels et appuis méthodologiques : distinguer responsabilités sans isoler la planification des faits opérationnels. ASCM ELM326/465 apporte un appui de processus à Plan ; extraits indexés seulement, et hiérarchie propre à SCOR conservée.
+
+Kinaxis ELM551 emploie orchestration de la planification stratégique à l'exécution, tandis qu'Oracle ELM294 nomme ainsi un composant plus étroit. Appuis sémantiques au niveau du Domain : le nom Supply Chain Orchestration reste défendable avec une portée explicitée, sans consensus universel de périmètre ni importation du périmètre complet des offres.
+
+Recommandation Codex : examiner une Area Supply Planning pour la cohérence des plans et conserver adaptation, décisions et engagements dans les Areas opérationnelles responsables. La planification adapte également ses plans si les équilibres changent. Inventory Planning est un candidat ; Order Backlog Planning reste à arbitrer. Aucun transfert fondé sur le seul mot Planning/Plan, aucun regroupement systématique de l'analytics. Bénéfice : responsabilité lisible des plans ; compromis : éviter doublons de décisions et centralisation des ajustements.
+
+U527 demande le terme impondérable pour la formulation FLOW. Q078 reste ouverte ; Inventory Planning Context dans Visibility demeure en attente. La proposition conserve des market_comparisons distinctes aux niveaux Area et Domain pour une éventuelle intégration après arbitrage. Aucun changement canonique, adoption globale ou publication.
+
+
+**Précision U528 à CMP214 :** Order Backlog Planning est clairement opérationnel selon Laurent ; cette capacité reste dans Fulfillment Optimization et sort des candidates à Supply Planning. Inventory Planning demeure à examiner. L'hypothèse antérieure est conservée dans l'annexe sans rester une alternative active pour Order Backlog Planning. Les appuis SAP/Oracle conservent leur portée : plans, scénarios et adaptation ne définissent pas à eux seuls une frontière d'Area. Aucun éditeur n'est invoqué pour imposer un déplacement ; contenu de l'Area envisagée et nom du Domain restent proposés.
+
+
+**Précision U529 à CMP214 :** Laurent retient l'approche du plan d'ensemble régulièrement mis à jour, sans le définir par le début de saison, et propose le réassort dans l'opérationnel. SAP ELM552 étaye une planification liée aux faits et changements à court terme ; Oracle ELM294 illustre l'adaptation des approvisionnements en cours. Ces sources soutiennent la coopération, sans prescrire le rattachement FLOW de Replenishment Decision. Cohérence interne : Inventory Target Decision détermine les objectifs ; Replenishment Decision détermine les apports et leurs ajustements ; Planning les mobilise. La portée du résultat, plutôt que la cadence, constitue le critère proposé. Inventory Planning reste à examiner et l'Area n'est pas créée.
+
+
+## CMP215
+
+U530 — Codex, 21 septembre 2026. Laurent retient la planification comme Area dans Supply Chain Orchestration et qualifie l'émission de demandes d'achat planifiées par MAP de plan d'ensemble. Cibles comparées : Domain universe-supply, nouvelle Area D17 au libellé de travail Supply Planning, et hypothèses Camunda/PLM. [Analyse et état antérieur](../modeles/backlog/supply-planning-area-review-U526.yaml). Accord structurel limité à la relation, descriptions et rapprochements proposés.
+
+SAP ELM552 et Oracle ELM294 étayent planification adaptable et coopération avec les opérations ; comparaisons portées sur D17. Kinaxis ELM551 et Oracle ELM294 éclairent le nom et les différences de portée au niveau du Domain. Nom du Domain conservé. Reprise de CMP214 avec le nouveau périmètre, sans déplacement de capacités ni intégration de tous les processus de planification des éditeurs.
+
+Camunda ELM553/554 : appui de réalisation à une orchestration événementielle mobilisant des décisions ; la logique métier doit être fournie pour planifier et replanifier. Aucune preuve d'un optimiseur Supply natif ou d'un recalcul permanent automatique, aucune équivalence avec une Area métier. Proposition FLOW : plans régulièrement révisés et adaptation opérationnelle aux impondérables coopèrent.
+
+Oracle ELM555 distingue innovation/conception, développement et référentiel produit dans une offre plus large. Recouvrement partiel avec la piste PLM : examiner les responsabilités utiles aux lancements et approvisionnements, sans absorber automatiquement conception et cycle de vie produit. La piste n'est pas adoptée. MAP reste une preuve utilisateur U530 ; aucun usage Camunda, PLM précis ou déploiement des offres étudiées n'est inféré chez Beaumanoir.
+
+Order Backlog Planning reste opérationnel selon U528 ; Inventory Planning reste à examiner ; réassort opérationnel proposé selon U529. Les besoins de Visibility liés à l'Area de planification restent à préciser. Aucun détail de Behavior, micro-règle ou extension du catalogue Information.
+
+
+## CMP216
+
+U531 — Codex, 21 septembre 2026. Cible : étude des responsabilités de D17 et qualification de l'exemple MAP, sans changement des capacités canoniques. [Analyse](../modeles/backlog/supply-planning-area-review-U526.yaml). État : Area de planification retenue U530, capacités à préciser ; statut du rapprochement proposé, pas réalisation éditeur démontrée.
+
+Fait utilisateur : MAP produit des indicateurs de prévision des ventes pour la saison et les saisons à venir, s'alimente des ventes et prépare des demandes d'achat planifiées. Les autres responsabilités U10 ne sont pas retirées. SAP ELM556/ELM552 distingue prévision de demande et plans Supply, avec coopération et signaux opérationnels. Recouvrement partiel : distinguer les résultats prévision, plan et demande d'achat. Limite : l'ajustement court terme SAP ne démontre ni les méthodes ni les horizons de MAP.
+
+Proposition : étudier ces responsabilités dans la planification sans découper les Areas selon les outils. Bénéfice : rendre lisible le passage des ventes observées aux besoins anticipés puis à la préparation des apports. Ce schéma explique les responsabilités, sans inventer une chaîne d'interfaces ou une application automatique chez Beaumanoir. Les prévisions ne deviennent pas des référentiels Core Data. Aucun Behavior, capacité, donnée détaillée ou rattachement PLM adopté.
+
+
+## CMP217
+
+U532 — Codex, 21 septembre 2026. [Comparaison des deux structures Planning](../modeles/backlog/planning-options-U532.yaml). État comparé : D17 Supply Planning sous Supply Chain Orchestration, empreinte dans l'annexe ; analyse et recommandation proposées, aucun changement canonique ni nouvel accord.
+
+Oracle ELM557 distingue Demand Plan, Supply Plan et plan intégré ; SAP ELM556/552 distingue également les deux responsabilités dans IBP. Appui fonctionnel à une Area Planning avec deux capacités candidates, sans déduire une hiérarchie métier d'une nomenclature produit. Deux capacités constituent une base de travail, pas une couverture exhaustive. Bénéfice : cohérence du plan d'ensemble et coopération des besoins anticipés avec leur couverture ; compromis : préciser responsabilités et décisions mobilisées sans dupliquer les capacités existantes.
+
+SAP ELM559 décrit un S&OP intégrant équilibres demande/Supply et plans financiers avec plusieurs métiers. Appui à l'option d'un pilotage transverse si sa finalité est visée ; ne démontre pas un Domain PLAN standard hébergeant seulement Demand Planning. La participation du commerce ou de la finance à une prévision ne suffit pas à déplacer la capacité hors de Supply. La seconde option exige une responsabilité de plan d'entreprise explicitement définie ; ne pas l'ouvrir automatiquement dans la consolidation Supply actuelle.
+
+Fait U532 : MAP utilise les précommandes B2B reçues tôt dans le processus d'allocation. Oracle ELM558 documente un rapprochement prévisions/commandes ouvertes dans le traitement destiné à Supply Planning. Appui partiel à la cohérence entre anticipation et demandes connues, sans assimiler les précommandes MAP à des commandes fermes ni adopter une règle de consommation. Le terme allocation dans ce fait utilisateur n'est pas requalifié automatiquement en Supply Assignment.
+
+Recommandation Codex : option A à ce stade ; nom d'Area Planning, capacités Demand Planning et Supply Planning proposés uniquement. Order Backlog Planning reste opérationnel, Inventory Planning reste ouvert, aucune capacité ou décision spécialisée transférée. Comparaisons portées dans l'annexe sur les options pertinentes, à reprendre dans les fiches canoniques après arbitrage.
+
+
+## CMP218
+
+U533 — Codex, 21 septembre 2026. [Audit du modèle avec Planning](../audits/2026-09-21-planning-U533/rapport.md), [matrice et conclusions](../modeles/backlog/planning-model-audit-U533.yaml). Baseline : 56 capacités, dont 16 décisions, 367 relations ; intégration de Planning et de ses deux capacités validée par Laurent. Les recommandations d’audit restent proposées.
+
+Oracle ELM557 et SAP ELM552/556 soutiennent les responsabilités Demand Planning et Supply Planning et leur coopération. Comparaisons consignées dans D17, D17.a et D17.b. Les niveaux Area/Capability ne sont pas déduits des espaces de travail des produits ; l’accord U533 porte sur noms, responsabilités courtes et composition présentés, pas sur les sources ou descriptions développées.
+
+SAP ELM560 étaye des cibles de stock spécialisées utilisées par Supply Planning. Cela soutient la coopération avec Inventory Optimization ; un transfert des décisions vers Planning n’en découle pas. Le cas Inventory Planning demande une frontière explicite entre scénario de stock et plan d’ensemble. Oracle ELM562 distingue entrées, méthodes et résultat de prévision : la responsabilité du choix de demande à retenir reste à expliciter dans FLOW, sans créer une capacité par algorithme.
+
+Oracle ELM561 illustre l’utilisation de ressources planifiées par Promising et leur passage vers des Orders. FLOW n’adopte pas son hypothèse d’admissibilité automatique : scénario, demande planifiée, engagement et ressource réalisée restent distincts. ELM558 rappelle la cohérence entre prévisions et demandes connues, sans fixer les règles des précommandes MAP.
+
+Recommandation : conserver les 16 décisions existantes dans leurs Areas spécialisées ; qualifier les décisions propres au plan de demande et à la couverture d’ensemble avant une éventuelle création dans Planning. Portée du plan, responsabilité du résultat et réutilisation guident le parent ; nom, horizon, cadence ou outil ne suffisent pas. Aucune décision déplacée, pas de réouverture de l’audit des comportements U431, pas de réalisation Beaumanoir inférée.
+
+
+## CMP219
+
+U534–U536 — Codex, 21 septembre 2026. Complément à [l’audit Planning](../audits/2026-09-21-planning-U533/rapport.md). Cibles : D17.b en réexamen nominal/de périmètre ; rapprochement Assignment Planning avec D03.p/D03.o/D02.e ; aucun déplacement adopté.
+
+ELM564 confirme le sens large de Supply Planning : achats, production et distribution dans SAP. ELM565 atteste Procurement Planning avec une portée propre aux activités et investissements d’achat ; ELM561 documente les planned buy orders Oracle. Cela justifie d’examiner un nom plus ciblé si la responsabilité FLOW se limite aux apports fournisseurs, sans adopter un intitulé sur sa seule ressemblance.
+
+Oracle ELM496/ELM563 documente planification du carnet, simulation avant release et mesures de dates/marges. SAP ELM381 décrit priorisation des ressources limitées et comparaison de simulations d’affectation. Recouvrement fonctionnel fort avec la proposition Assignment Planning ; le libellé exact n’est pas établi comme nom commun du marché. D03.p prépare les scénarios, D03.o détermine le plan collectif, D02.e applique les affectations. Recommandation : clarifier ou éventuellement renommer D03.p après arbitrage, sans créer un doublon ni déplacer ce planning hors de l’opérationnel confirmé U528. U535 vise les ventes, le périmètre actuel couvre le carnet d’Orders ; aucune restriction silencieuse.
+
+Promesse, marge et optimisation du stock ont des appuis partiels (ELM563/381/560). Les sources ne démontrent pas leur optimisation conjointe complète. FLOW porte déjà une valeur multidimensionnelle ; rendre les critères et responsabilités explicites, sans pondération implicite ni revendication d’innovation non prouvée. U536 exige cette qualification pour tous les choix ; la matrice de justification distingue usages établis, adaptations FLOW et points non démontrés. Les noms des décisions propres à Planning restent des propositions méthodologiques à instruire, pas des équivalents éditeurs affirmés.
+
+
+## CMP220
+
+U537–U538 — Codex, 21 septembre 2026. [Réexamen du principe Planning](../modeles/backlog/plan-application-review-U537.yaml). État comparé : backlog après U533–U536, empreinte dans l’annexe. Principes utilisateur enregistrés ; correspondance proposée et application structurelle ciblée à instruire.
+
+ELM496 relu en 26B et ELM566 documentent la release des résultats dans le parcours de planification Oracle. ELM567 documente configuration des protections et nouvelle planification après leur modification. Appui fonctionnel à la distinction entre application du résultat et configuration consommée. Ni une capacité de configuration indépendante du module Oracle ni une hiérarchie Capability/Behavior ne sont prescrites par ces pages.
+
+Adaptation FLOW : application du plan comme comportement du Planning selon U537 ; Supply Protection extérieure selon U538. Bénéfice : conserver une responsabilité complète du résultat du plan, sans absorber la gouvernance des règles utilisées par plusieurs consommateurs. Compromis : expliciter les coopérations et réexaminer Supply Assignment si sa seule finalité est l’application du plan. Aucun reparentage, renommage ou retrait automatique, aucun consensus interéditeurs ni innovation revendiqué. La généralisation à tous les comportements reste à qualifier. Cette précision remplace toute lecture de CMP219 imposant trois capacités par principe.
+
+
+## CMP221
+
+U539–U541 — Codex, 21 septembre 2026. [Audit du principe](../modeles/backlog/planning-principle-audit-U540.yaml). État antérieur figé dans la baseline U540 ; changement D02.e capability → behavior, parent D03 → D03.p, et consolidation descriptive de BHV045–047. Niveau comportement demandé U539, parent interprété dans la clarification U541 ; correspondances et détails éditoriaux proposés.
+
+ELM496/566 Oracle documentent planning, simulation et mise en application ; ELM452 SAP étaye le terme Supply Assignment et l’affectation aux ressources présentes ou futures. Recouvrement fonctionnel, pas identité de catalogue : SAP combine notamment des effets sur les usages concurrents que FLOW réserve à Reservation. FLOW place la mise en effet des affectations sous le planning du carnet tout en maintenant décisions, configuration et engagements partenaires. Bénéfice : un responsable lisible du plan et de son application, sans troisième capacité imposée par un triptyque abstrait. Compromis : les trois mécanismes historiques deviennent des modalités descriptives d’un comportement terminal ; preuves et identifiants retirés conservés, sans sous-comportements.
+
+ELM567 distingue protection configurée et calcul ; ELM411 la réservation ; ELM353, relu en 26B, les états d’Order ; ELM330 la coordination continue. Ces appuis justifient de ne pas absorber toute gestion ou orchestration dans Planning. La séparation en capacités FLOW reste une interprétation métier, ni consensus universel ni innovation revendiquée. Les autres Plannings demandent un résultat applicable propre ; aucune décomposition automatique ni requalification générale adoptée.
+
+
+## CMP222
+
+U542 — Codex, 21 septembre 2026. [Application propre aux autres Plannings](../modeles/backlog/planning-application-options-U542.yaml). État comparé : backlog après U541, empreinte dans l’annexe. Responsabilités et libellés candidats proposés ; aucun comportement créé ni accord déduit de « Premier point ».
+
+Demand Planning : ELM568 documente l’export des données de plan et ELM569 leur consommation comme demande dans un plan Supply. Appui partiel à une publication du résultat. FLOW propose de distinguer demande applicable et scénarios exploratoires ; cette autorité métier ne résulte pas automatiquement d’un export CSV. Demand Plan Publication est un nom proposé, pas un standard prouvé.
+
+Inventory Planning et capacité de couverture : ELM566/570 documentent mise en application manuelle/automatique, nouvelles demandes et révisions. FLOW propose de porter la cohérence de la mise en effet et ses écarts sous le Planning concerné, en laissant la gestion des Orders, la configuration Supply Protection et la coordination aux partenaires. Inventory Plan Application et Supply Plan Application sont des libellés descriptifs proposés. L’application du plan ne prouve ni engagement ferme ni réalisation physique.
+
+Bénéfice : rendre explicite le résultat applicable propre à chaque plan. Compromis : les deux plans de stock/couverture peuvent mobiliser les mêmes Orders ; préciser qui porte chaque action, sans découpage par horizon, fournisseur ou interface ni double demande. Tous les documents sont Oracle : aucun consensus interéditeurs ou innovation revendiqué. Les correspondances sont portées dans l’annexe de proposition et devront accompagner toute intégration dans les fiches canoniques.
+
+
+## CMP223
+
+U543 — Codex, 21 septembre 2026. [Réexamen d’Inventory Planning par intentions](../modeles/backlog/inventory-planning-intentions-U543.yaml). État comparé : D05.f et décisions D05.a/c/e/g après U542 ; fiche antérieure conservée dans l’annexe. Réserve utilisateur sur nom et agrégation, propositions de remplacement non adoptées.
+
+ELM375 Nextail distingue First Allocation, Replenishment et Store Transfers. ELM450 SAP décrit le planning de réassort ; ELM451 illustre implantation, distributions et rappel de reliquats. ELM369 Oracle documente Inventory Rebalancing, mais l’intègre dans Replenishment Planning. Ces sources étayent plusieurs intentions et leurs interactions ; elles ne donnent pas une hiérarchie commune de capacités.
+
+Proposition : Replenishment Planning, Inventory Rebalancing qualifié Planning, et Initial Stocking Planning comme candidats à examiner à la place de l’agrégat. Le dernier libellé est FLOW, cohérent avec la décision existante ; First/Initial Allocation est le vocabulaire de distribution magasin des sources, distinct de Supply Assignment. Consolidation : appuis seulement partiels, autonomie de Planning à éprouver. Aucun parent, nombre de capacités ou descendants adopté par extension.
+
+Bénéfice : rendre lisible l’intention, le résultat du plan et son application. Compromis : rééquilibrage et réassort peuvent couvrir le même manque ; maintenir leur coordination et éviter deux demandes. Décisions existantes réutilisées, configuration extérieure, pas de capacité générique de coordination recréée sans justification. Ni consensus structurel ni innovation revendiqué. Les comparaisons des candidats sont conservées dans l’annexe pour accompagner une éventuelle intégration.
+
+
+## CMP224
+
+U544 — Codex, 21 septembre 2026. [Alternative Inventory Optimization Planning](../modeles/backlog/inventory-optimization-planning-option-U544.yaml). D05.f reste en réexamen ; nom et définition candidats non adoptés.
+
+ELM560 SAP et ELM479 RELEX, textes primaires relus, étayent l’équilibre entre service, niveau/positionnement du stock, incertitude et coûts/capital. Cela soutient l’intention d’un stock adapté, sans objectif systématique de remplissage ou de vidage. Le stock peut augmenter ou diminuer selon les choix ; aucune cible constante ou pondération implicite.
+
+Limite : SAP insiste sur les cibles alimentant la planification opérationnelle, déjà couvertes en partie par Inventory Target Decision. Le Planning FLOW proposé coordonne les scénarios et leur application en mobilisant les décisions, sans absorber leurs résultats ou Supply Protection. Inventory Optimization est attesté ; le libellé complet Inventory Optimization Planning n’est pas établi comme standard par ces sources.
+
+Recommandation : retenir cette piste si le résultat est un plan cohérent arbitrant plusieurs ajustements, et non une simple juxtaposition de tâches. Bénéfice : rendre le compromis commun explicite et coordonner réassort et redistribution. Compromis : clarifier ses frontières avec le plan de couverture et les décisions. L’option de capacités par intentions U543 reste pertinente si leurs plans sont autonomes. Aucun renommage, fusion, nouveau parent ou comportement adopté ; ni innovation revendiquée.
+
+
+**Suite CMP224 — U545 :** nom et définition présentés d’Inventory Optimization Planning intégrés dans D05.f. Comparaisons SAP/RELEX portées dans sa fiche avec les différences et limites ; les appuis Oracle/Microsoft à la pratique des scénarios sont conservés. L’accord contextuel ne transforme pas les rapprochements en équivalences validées ni le libellé complet en standard du marché.
+
+
+## CMP225
+
+U546 — Codex, 21 septembre 2026. [Frontière demande / Planning](../modeles/backlog/backlog-request-planning-boundary-U546.yaml), état comparé après U545, empreinte dans l’annexe. Relecture U501, D04.s/D03.p et six comportements de la demande ; propositions éditoriales non adoptées.
+
+Oracle ELM496 réunit planification, revue, simulation et mise en application dans Backlog Management. Salesforce ELM498 distingue demande, qualification et suivi, autorisations et activités de résolution. Appui fonctionnel au Planning et analogie de gestion de demande ; cette dernière source concerne les services IT, pas une capacité standard Supply d’optimisation du carnet. Aucune absence universelle ni innovation déduite.
+
+Recommandation : préserver les deux responsabilités retenues U501 et préciser les définitions courtes. D04.s cadre et suit le travail ; D03.p construit et applique le plan, D03.o détermine les arbitrages, D02.e applique les affectations comme comportement de Planning. L’autorisation de suites dans la demande demeure distincte de la décision de plan et d’Order Release. Bénéfice : supprimer l’impression de double simulation ou application. Compromis : référencer un même résultat sans multiplier les autorités ni imposer un dossier manuel par recalcul. Aucun nom, parent, comportement ou accord modifié.
+
+
+## CMP226
+
+U547 — Codex, 21 septembre 2026. [Gestion de demande comme comportement du Planning](../modeles/backlog/planning-request-behavior-option-U547.yaml). Sources ELM496 Oracle 26B et ELM498 Salesforce directement relues, titres/localisateurs conservés dans l’annexe. Niveau comportement, nom et redistribution détaillée restent proposés ; aucun accord de migration déduit de « pourrait ».
+
+Oracle situe étude, simulation et mise en application dans le parcours de backlog. Salesforce distingue le besoin et son suivi des activités de résolution, dans un contexte ITSM. Ces appuis ne prescrivent ni une capacité Request indépendante ni son rattachement à Planning. L’option FLOW conserve une demande suivie comme les Orders et place sa gestion au sein du Planning responsable du travail.
+
+Bénéfice : une responsabilité de Planning lisible, depuis le travail demandé jusqu’à son résultat, avec demande et plan toujours distincts. Compromis : réexaminer les six comportements U501 pour éviter des sous-comportements et une double simulation/application ; préserver les modes de sollicitation et l’origine Backoffice. Le premier comportement n’impose pas une séquence linéaire ou manuelle. Ni standard de marché ni innovation revendiqué. Cette recommandation fait évoluer celle de CMP225 sans modifier les preuves ou accords historiques.
+
+
+## CMP227
+
+U548 — Codex, 21 septembre 2026. [Frontière offre de service / sollicitations internes](../modeles/backlog/service-requests-offer-boundary-U548.yaml). D04 et ses dix capacités relus ; proposition non intégrée au catalogue. Sources primaires ELM131 TMF641 v4.2 et ELM369 Oracle 26B directement reconsultées, titres et localisateurs dans l’annexe.
+
+TM Forum décrit la prise en charge de commandes de service ; Oracle produit des planned orders depuis un plan de rééquilibrage. Aucun ne prescrit une Area limitée aux seules demandes d’origine externe. Les planned orders Oracle ne prouvent pas ici la création de Transfer Orders exécutoires.
+
+Recommandation FLOW : offre de service comme principe de lecture de D04, demande propre au Planning gérée par celui-ci ; une famille de services exposée peut aussi être mobilisée par le Domain. Cette nuance préserve Transfer Order Frontoffice/Backoffice acquis U501 et évite deux cycles de vie pour la même finalité. Une restriction stricte aux seules occurrences externes exigerait un arbitrage supplémentaire sur les Orders internes. Les capacités communes de structuration, cycle de vie et archivage ne sont pas automatiquement des services exposés autonomes. Service Catalog des Backing Services reste distinct. Aucun consensus ni innovation revendiqué.
+
+
+## CMP228
+
+U550 — Codex, 21 septembre 2026. [Décisions de redistribution : définitions courtes](../modeles/backlog/stock-redistribution-wording-U550.yaml). BHV024/025, leur parent D05.c et les variantes distinctes de Transfer Order BHV072/073 relus. Oracle ELM369 (26B) et Nextail ELM462 reconsultés directement ; localisateurs et limites dans l’annexe. Oracle recommande des déplacements et permet la collecte d’excédents ; Nextail rapporte des scénarios de rééquilibrage et un bénéfice de consolidation des tailles chez Merkal. Appuis fonctionnels partiels, sans prescription de la hiérarchie FLOW. Recommandation : remplacer les verbes Déplacer/Regrouper par Déterminer les transferts/regroupements pour expliciter la décision, déjà définie par les scopes. Conserver noms et parents, distinguer Planning et gestion des Orders. Proposition seulement ; aucun consensus structurel ni innovation revendiqué.
+
+
+**Suite CMP228 — U551 :** les deux définitions décisionnelles présentées sont explicitement adoptées et intégrées. Les noms et parents restent inchangés ; correspondances et limites de preuve restent qualifiées séparément.
+
+
+## CMP229
+
+U552 — Codex, 21 septembre 2026. [Refacto des Plannings](../modeles/backlog/planning-refactor-U552.yaml). État antérieur ciblé conservé ; sources ELM496/357 (Oracle backlog), ELM498 (Salesforce demandes), ELM566/570 (Oracle release), ELM568/569 (Oracle publication/consommation de demande) directement reconsultées le 21 septembre. Localisateurs, versions et limites conservés dans le manifest et comparaisons portées dans les fiches concernées.
+
+Oracle relie étude, simulation et transmission des résultats ; Salesforce illustre qualification, suivi et autorisations de demandes IT. FLOW rattache la gestion du travail de réoptimisation au Planning et conserve simulation, autorisation et application comme résultats distincts. Les modes de déclenchement deviennent des modalités ; aucune demande manuelle universelle, aucun cycle imposé. La séparation Capability/Behavior et les noms composés sont des choix FLOW, pas un consensus éditeur ou une innovation démontrée.
+
+La release manuelle/automatique Oracle étaye l’application des ajustements de stock, distincte de la gestion des Orders et de l’exécution physique. Publish Plan décrit un export technique ; Demand Schedules montre la consommation d’un plan de demande. Leur rapprochement soutient partiellement la publication métier FLOW sans prouver son autorisation universelle. Deux documents Oracle ne prouvent pas un consensus interéditeurs. D17.b reste réservé : aucun nom ou périmètre de couverture arbitré par ces références.
+
+Bénéfice : éliminer les doubles responsabilités de simulation et d’application et rendre visibles les résultats effectivement pris en compte. Compromis : préserver les modes de sollicitation, l’origine Backoffice et les responsabilités des partenaires ; ne pas appliquer une décomposition identique à tous les Plannings. Refacto autorisé U552, descriptions et comparaisons détaillées proposées.
+
+
+## CMP230
+
+U553 — Codex, 21 septembre 2026. D17 renommé Supply Planning à la suite de la correction explicite de Laurent. [État antérieur](../audits/2026-09-21-planning-refactor-U552/area-before-U553.yaml). Sources ELM557 Oracle Overview of Supply Chain Planning Plan Types (26B, tableau des plans) et ELM552 SAP Response and supply planning (page évolutive, sections scénarios, contraintes et capacités voisines) directement reconsultées le 21 septembre.
+
+Oracle distingue demande, Supply et plan intégré ; SAP présente Demand planning séparément de Response and supply planning. L’articulation du plan d’ensemble est étayée ; le nom Supply Planning couvrant la demande ET sa couverture est le choix FLOW de Laurent, pas une équivalence stricte ou un consensus revendiqué. Bénéfice : nommer la finalité Supply de l’Area. Compromis : expliquer son périmètre plus large que certaines fonctions produit homonymes et distinguer la capacité de couverture, encore à nommer. Aucun déplacement des Plannings opérationnels. Comparaisons au niveau de l’Area réécrites dans sa fiche ; nom seul adopté.
+
+
+**Suite CMP230 — U554 :** D17.b est mise en attente, sans suppression : les scopes de D17.a, D05.f, D03.p et D04.j ne reprennent pas explicitement toute la couverture d’ensemble des besoins futurs. Oracle/SAP étayent l’existence fonctionnelle de ce travail, pas son autonomie comme capacité FLOW. La décision de maintien provisoire repose sur ce reste de responsabilité et sur le fait MAP U530, sans attribuer à un outil un périmètre non constaté.
+
+
+**Correction de portée CMP230 — U555 :** Laurent attribue explicitement à MAP le planning qui produit les Planned Orders. D17.b est donc retirée pour éviter une seconde responsabilité ; U554 devient historique. La séparation entre planification amont et prise en charge des suites est compatible avec les documents Oracle de planification et release (ELM557/566), sans que le marché décide de la frontière FLOW ou du déploiement MAP. L’Area Supply Planning conserve Demand Planning ; sa fiche explicite désormais ce périmètre local plus restreint que les modules éditeurs. Aucun ajout de capacité ou de contrat d’intégration.
+
+
+**Restitution U556 — CMP229/CMP230 :** les frontières sont maintenant décrites dans les périmètres des quatre Areas concernées, sans citer la solution installée. Sources Oracle/SAP/Salesforce déjà consultées conservées ; positions FLOW actualisées. La réception ou l’émission d’un Planned Order ne démontre ni fermeté, ni réservation, ni reconstruction du plan amont. Aucun élargissement de couverture marché revendiqué.
+
+
+## CMP231
+
+U557 — Codex, 21 septembre 2026. [Audit du modèle hors référentiels](../audits/2026-09-21-model-coherence-U557/rapport.md) et [annexe structurée](../modeles/backlog/model-coherence-audit-U557.yaml). État comparé : backlog d’empreinte 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46 ; publication 2026-09-19.11 et baselines de refactoring pour les retraits.
+
+Dix documents primaires directement consultés : ELM419/566 (plan et Orders), ELM568/569 (publication et consommation de demande), ELM334/412 (politiques et réservation), ELM372/393 (compromis de satisfaction), ELM452/496 (affectation et carnet). Titres, éditions, URLs, passages et limites conservés dans l’annexe. Recouvrements fonctionnels partiels et appuis de frontière ; aucune équivalence de taxonomie ou preuve de réalisation installée. Deux documents Oracle ne prouvent pas un consensus interéditeurs. Les fonctions natives firm/release, publication technique et affectation SAP ne remplacent pas les distinctions FLOW.
+
+Recommandation : préciser les responsabilités existantes à la réception des Planned Orders, les relations de Demand Planning, le porteur de mise en vigueur des politiques de réservation, l’autorité des décisions de satisfaction et le périmètre résiduel d’affectation aux besoins sans commande. Bénéfice : rendre les coopérations lisibles sans recréer de capacités. Compromis : conserver les responsabilités des partenaires, le retrait volontaire U555 et les réserves non arbitrées. Diagnostic proposé, sans adoption ni modification du catalogue ; aucune innovation revendiquée.
+
+
+## CMP232
+
+U558 — Codex, 21 septembre 2026. [Audit des inspirations hors référentiels](../audits/2026-09-21-model-coherence-U557/inspirations-U558.md) ; [inventaire, filiation et constats](../modeles/backlog/market-inspiration-audit-U558.yaml). Même état du backlog que CMP231. Contrôle documentaire sur 128 fiches, relecture ciblée des 21 fiches modifiées et des inspirations des sept comportements regroupés depuis la publication 2026-09-19.11.
+
+ELM556 (SAP Demand planning, page évolutive) et ELM557 (Oracle Plan Types 26B, ligne Demand Plan) directement relus : ils étayent prévisions, collaboration, signaux de demande et consommation des prévisions. La confrontation aux apports planifiés et les distinctions d’engagement FLOW doivent être séparées de l’approche attribuée à ces sources. ELM452 reconsulté ; tentatives directes SAP Reassignment/EDQA sans texte exploitable, limites conservées. Les lectures primaires de CMP231 restent utilisables dans ce complément sans les présenter comme un audit complet de 131 URLs.
+
+Quatre constats proposés : transmission incomplète de certains appuis/exemples aux successeurs, deux synthèses d’inspiration manquantes malgré les comparaisons présentes, attribution et synthèse de Demand Planning à reprendre, répétitions d’éditions et de colonnes. Aucune source supprimée des fiches conservées ; cinq URLs propres à des comportements retirés absentes des comparaisons courantes, sans destruction des preuves ni assimilation automatique à cinq fonctions non étayées. Recommandation de consolidation éditoriale, aucune nouvelle capacité ou innovation revendiquée, aucune correction appliquée ou adoptée.
+
+
+## CMP233
+
+U559 — Codex, 21 septembre 2026. [Plan de consolidation après audits U557/U558](../modeles/backlog/model-consolidation-plan-U559.yaml). Quatre lots couvrent les dix constats, sans modification du catalogue. Les appuis et limites de CMP231/CMP232 sont repris ; ELM412 (politiques de réservation Microsoft), ELM496 (backlog Oracle 26B) et ELM566 (release des recommandations Oracle 26B) directement reconsultés. URLs et passages dans le plan.
+
+Recommandations de cohérence FLOW : mise en vigueur des politiques dans Supply Protection ; compatibilité collective portée par Fulfillment Plan Decision lorsqu’un plan collectif est construit ; affectation aux commandes identifiées avec qualification des besoins prévisionnels historiques ; prise en charge des demandes planifiées par famille d’Order avec cycle de vie transverse. Les références étayent les distinctions fonctionnelles mais ne prescrivent pas ces propriétaires. Compromis : pas de parcours collectif obligatoire pour toute promesse, pas de forecast automatiquement converti en Order, pas de plan amont dupliqué. Bénéfice : responsabilités explicites et maintien de leurs inspirations. Arbitrages proposés, aucun accord ou innovation inféré.
+
+
+## CMP234
+
+U560 — Codex, 21 septembre 2026. [Consolidation autonome du modèle et des inspirations](../modeles/backlog/model-consolidation-U560.yaml), réalisation du plan U559 hors référentiels. Baseline complète conservée dans audits/2026-09-21-model-consolidation-U560/model-before.yaml. Les attributions sont des choix de travail explicites de Codex, pas des accords champ par champ attribués à Laurent.
+
+Appuis de CMP231–233 réutilisés à périmètre contrôlé ; ELM419 (Microsoft Firm planned orders) et ELM334 (commercetools Inventory overview) directement reconsultés dans cette mise en œuvre. ELM412/496/566 relus lors du plan dans la même session, ELM556/557 lors du complément d’audit. La planification amont, les propositions reçues, les Orders et leurs engagements gardent leurs frontières. Supply Protection met en vigueur les politiques dont Reservation Policy Decision détermine les conditions ; les décisions de satisfaction restent spécialisées et composées lorsqu’un plan collectif est nécessaire. Les produits étayent les mécanismes, pas les propriétaires du modèle FLOW.
+
+Les appuis des sept comportements retirés sont repris sur D02.e/D04.s avec leurs exemples et limites. Les passages SAP Reassignment/EDQA restent issus des lectures historiques : ouvertures sans texte et nouvelle recherche primaire ciblée sans résultat exploitable, aucune fraîcheur inventée. Quatorze occurrences documentaires ont une destination explicite ; les éditions antérieures restent dans la baseline et le manifest de consolidation. La conservation n’est pas une équivalence de périmètre : complément, réaffectation, traitement du carnet et demandes IT gardent leurs différences.
+
+Les deux synthèses d’application/publication sont complétées ; Demand Planning distingue approche des sources et choix FLOW ; éditions et colonnes répétitives sont consolidées. Bénéfice : responsabilités et coopérations lisibles, appuis transmis sans multiplier les capacités. Compromis : besoins prévisionnels historiques non identifiés maintenus ouverts ; aucune transformation automatique en Order ni déclaration de réalisation installée. Aucune innovation ou taxonomie universelle revendiquée.
+
+
+## CMP235
+
+U562–U564 — Codex, 21 septembre 2026. [Cas et responsabilités de Supply Assignment](../modeles/backlog/supply-assignment-cases-U562.yaml). Backlog courant après U560 ; état antérieur ciblé conservé dans audits/2026-09-21-supply-assignment-U562/model-before.yaml. ELM571 Oracle 26B, directement consulté, et ELM572 SAP PP/DS, texte primaire indexé consulté avec limite d’ouverture consignée, étayent le lien entre ressources et besoins avant commande. ELM496 Oracle backlog reconsulté pour la frontière aux commandes.
+
+Recouvrement partiel : le pegging Oracle relie ressources, commandes et prévisions ; SAP relie les besoins aux stocks et réceptions, avec un mécanisme dynamique de calcul. FLOW sépare décision et application et ne déduit aucune réservation d’une affectation. Ces appuis ne justifient pas une équivalence avec ARun, un parent unique nommé Order Backlog Planning ou une réalisation installée. Le mécanisme général est documenté ; aucune innovation ou taxonomie commune revendiquée.
+
+U562 valide l’attribution du cas sans commande à Supply Assignment. La restriction U560 est corrigée ; les développements rédactionnels et les comparaisons restent proposés. Sept exemples distinguent demande, protection, affectation aux prévisions, carnet, réassort, redistribution et réservation. Le bénéfice est de qualifier le résultat attendu avant de choisir un parent. Le compromis restant : Supply Assignment couvre désormais explicitement plus que le seul carnet, alors que son parent actuel conserve ce périmètre. Le Planning et la décision qui préparent l’affectation avant commande restent à qualifier ; aucun renommage, duplication ou déplacement automatique.
+
+
+## CMP236
+
+U565/U566 — Codex, 21 septembre 2026. [Cas concrets actualisés](../modeles/backlog/supply-assignment-cases-U562.yaml) et [comparaison Microsoft](../audits/2026-09-21-supply-assignment-U562/comparaison-microsoft.md). ELM573 et ELM574 directement consultés, ELM403 directement relu ; titres, versions, passages et limites enregistrés. Correspondances de D03, D03.o, D03.p, D02.e et TER078 actualisées ; conséquences éditoriales sur les comportements du Planning explicitées comme adaptations FLOW.
+
+Constat : Microsoft documente la coexistence de commandes et prévisions dans le master planning SCM et dans le profil de demande Business Central. La consommation des prévisions permet de ne pas additionner deux représentations du même besoin. IFO documente en revanche l’optimisation de commandes reçues ; son extension aux forecasts n’est pas établie. Business Central distingue les liens de calcul des liens contraignants order-to-order et ne donne donc pas une équivalence automatique à l’application FLOW.
+
+Choix FLOW : U565 confirme un Planning commun pour affecter des ressources présentes ou attendues aux commandes et prévisions restantes. D03.p porte ce périmètre, mobilise Fulfillment Plan Decision et applique avec Supply Assignment ; les autres comportements suivent le même périmètre. Le plan amont producteur de Planned Orders n’est pas dupliqué. Bénéfice : un arbitrage cohérent des demandes concurrentes ; compromis : nom Order Backlog Planning devenu trop étroit, à qualifier séparément. La prise en compte conjointe est étayée par le marché ; aucune préférence universelle SAP/Microsoft ni innovation du mécanisme général revendiquée. Descriptions développées, lien de coopération et comparaisons proposés ; aucune priorité automatique commandes/prévisions.
+
+
+## CMP237
+
+U567 — Codex, 21 septembre 2026. [Vérification CTP, ARun et plan Supply intégré](../modeles/backlog/integrated-supply-plan-U567.yaml). État antérieur conservé dans audits/2026-09-21-integrated-supply-plan-U567/model-before.yaml. Neuf documents primaires retenus, passages et limites d’accès détaillés ; cinq inspirations du modèle actualisées à leur niveau.
+
+Microsoft : Batch CTP est déclenché par le plan dynamique ; le master planning peut affecter un apport existant et proposer un nouvel achat dans le même scénario, avec prise en compte du stock de sécurité. SAP : ARun/BOP réaffecte les ressources et considère les protections configurées, mais la matrice SBC 2025 FPS01 précise que BOP ne déclenche pas la création d’apports. SBC/PP/DS produit ces apports dans un autre parcours ; IBP documente l’optimisation conjointe achats, mouvements, production et stock. L’optimiseur IBP reste distinct d’ARun et de l’affectation transactionnelle aux commandes.
+
+La faisabilité d’un plan intégré est étayée ; l’hypothèse « ARun fait tout » n’est pas confirmée. Le choix de Laurent d’un plan Supply de référence unique est retenu comme direction métier, avec des scénarios, révisions et décisions spécialisés possibles. Un seul batch ne garantit pas un optimum global ; les politiques consommées ne sont pas automatiquement recalculées. Bénéfice : limiter les arbitrages locaux incompatibles. Compromis : expliciter le périmètre commun, les ressources partagées, les objectifs et les modalités de convergence.
+
+Le cadrage U555 doit être réexaminé : éviter de dupliquer un plan amont reste juste, mais l’existence d’un outil produisant les Planned Orders ne retire pas cette responsabilité du modèle métier. Aucun nom, parent ou fusion adopté automatiquement ; la structure D03.p/D05.f et le scénario D03.o restent à refondre concrètement. Les définitions, relations et publications restent intactes dans cette vérification ; les correspondances sont des propositions argumentées, pas des réalisations installées.
+
+
+## CMP238
+
+U568–U570 — Codex, 21 septembre 2026. [Structure proposée de Master Planning](../modeles/backlog/master-planning-structure-U568.yaml) et [restitution](../audits/2026-09-21-integrated-supply-plan-U567/proposition-master-planning.md). ELM303/579 réutilisés à leur portée, ELM580/581 directement consultés et ELM413/496 directement relus le 21 septembre.
+
+Le nom Master Planning est établi chez Microsoft pour un périmètre de planification intégrant aussi achats et réassort retail. SAP IBP étaye l’intégration sous un autre nom : pas de consensus sur une Area homonyme. Les fonctions de lancement, comparaison et transmission sont documentées ; la proposition Master Plan Management les regroupe comme une responsabilité durable avec comportements terminaux. Bénéfice : gouverner un plan commun sans recréer de petits plannings par objectif ou bouton. Compromis : conserver explicitement construction des scénarios, adaptation aux impondérables et application des ajustements issus des capacités consolidées.
+
+Les décisions peuvent contribuer à un plan commun en restant distribuées ; leur regroupement dans l’Area fait l’objet d’une clarification à Laurent. Supply Protection configure et maintient les politiques, alors que des décisions peuvent en proposer une évolution. Les Orders et leurs engagements gardent leur gestion propre ; l’annulation proposée ne vaut pas annulation effective. Proposition de noms, décomposition et placements, sans migration ou adoption de champs non présentés.
+
+
+**Recommandation de placement U571 — CMP238 :** regrouper les décisions qui déterminent le contenu du plan dans Master Planning ; garder faisabilités réutilisables, politiques en vigueur et engagements à leurs responsables. Microsoft regroupe la couverture et ses recommandations dans Master Planning ; SAP IBP intègre les choix de réseau. Ces périmètres étayent la cohérence du regroupement, sans prescrire les Areas FLOW. Examen des responsabilités résiduelles D03/D05 nécessaire avant migration. Avis Codex, aucun placement adopté par la demande d’avis.
+
+
+**Accord U572 — CMP238 :** Laurent valide le regroupement des décisions de construction du plan dans Master Planning et le maintien des responsabilités propres de faisabilité, politiques et engagements. Les listes de déplacement, noms détaillés et successions des comportements restent proposés. Cet accord ne change pas les limites documentaires concernant ARun, SBC, CTP ou l’optimum global.
+
+## CMP239
+
+U573 — Codex, 21 septembre 2026. [Étude structurée](../modeles/backlog/master-plan-management-market-study-U573.yaml), [restitution](../audits/2026-09-21-master-plan-management-U573/rapport.md). Backlog courant après U572 ; proposition non migrée. ELM582–587, ELM416, ELM566/570 et appuis complémentaires documentent le contrôle des calculs, les variantes, l’autorisation, la transmission et le suivi. Microsoft et Oracle directement consultés ; SAP IBP 2605 consulté par texte primaire indexé, avec limite d’ouverture directe conservée.
+
+Relation : recouvrement partiel et appui méthodologique. Les mécanismes convergent, mais ne démontrent ni taxonomie exhaustive universelle, ni workflow humain obligatoire, ni pause/reprise ou retour arrière global. La promotion SAP, l’approbation d’un Planned Order Microsoft et la release Oracle ne sont pas équivalentes à un engagement effectif.
+
+Proposition : une capacité Master Plan Management, de nature Planning, avec cinq comportements de gestion et six d’application, tous terminaux. Lancer, arrêter et relancer sont des modalités du pilotage de la demande de planification ; Simulation & Analysis reste combiné. Les versions, résultats partiels et adaptations sont explicites. Bénéfice : continuité du plan commun ; compromis : capacité large, décomposée selon ses pratiques et effets métier. Aucune adoption de détail ni réalisation installée déduite.
+
+## CMP240
+
+U574 — Codex, 21 septembre 2026. Même [étude](../modeles/backlog/master-plan-management-market-study-U573.yaml), onze catégories d’action examinées avec les capacités existantes. ELM588–592 complètent ELM363/369/371/410/413/418/421/435/496/566/570, directement consultés ; ELM571/574 sont réutilisés à partir des lectures du même jour. Chaque comportement proposé porte au moins deux documents primaires pertinents, avec limites explicites. Les appuis fonctionnels n’imposent pas leur maille Capability/Behavior.
+
+Microsoft distingue liens ressources-besoins, propositions de changements et transformation des Planned Orders. Oracle documente révision du carnet, fractionnement, transmission des recommandations, rééquilibrage et calcul de paramètres. Un seuil produit-lieu et un quota protégé de canal sont distincts ; le calcul optimal conjoint des protections de groupes n’est pas démontré par ces sources.
+
+Proposition de noms : Order Allocation & Reallocation pour la couverture des commandes ; Forecast Supply Allocation pour ne pas perdre l’affectation avant commande. Ce sont des intitulés descriptifs FLOW, pas des synonymes universels. Inventory Allocation seul reste ambigu avec les enveloppes Microsoft ; une affectation FLOW ne vaut pas réservation. Les autres suites sont portées par Fulfillment Scheduling, Planned Order Release, Supply Order Adjustment et Supply Policy Adjustment, mobilisant les responsables existants.
+
+Supply Procurement Decision est proposée pour expliciter les choix d’achats du plan commun, au-delà de la tenue des Purchase Orders et de l’entretien de disponibilité en cours de commercialisation. La définition actuelle de D03.o doit être réexaminée pour la cohérence de toutes les contributions ; aucun optimiseur local indépendant ajouté. Bénéfice : rendre lisibles les actions et leurs propriétaires ; compromis : qualifier les frontières achat/réassort et les successions avant refacto. Noms, création, fusion et déplacements restent proposés ; accord U572 préservé dans sa portée.
+
+
+## CMP241
+
+U575 — Codex, 21 septembre 2026. [Application du Master Plan](../modeles/backlog/master-plan-application-U575.yaml), [restitution](../audits/2026-09-21-master-plan-management-U573/revision-U575.md). Backlog canonique inchangé ; structure proposée U573/U574 révisée. ELM566 Oracle 26B et ELM588 Microsoft directement relus : transmission des recommandations avec suivi des exceptions, transformation des Planned Orders et historique. Recouvrement partiel : aucun des documents ne démontre l’application de toutes les catégories FLOW dans un mécanisme unique.
+
+Planning Management est le nom explicitement demandé. Proposition Codex : un comportement Master Plan Application regroupe les effets sur affectations, échéanciers, Orders et politiques ; leurs responsables et les décisions restent distincts. Les catégories restent descriptives, sans sous-comportements. Bénéfice : une frontière claire entre résultat autorisé et effets appliqués, à la maille landscape. Compromis : garder les catégories, coopérations et limites dans la description pour éviter un comportement opaque. Les termes Allocation proposés sont abandonnés dans cette décomposition ; couverture des prévisions et onze cas préservés. Seul le nom Planning Management est adopté ; regroupement, définition et six comportements détaillés restent proposés.
+
+
+## CMP242
+
+U576 — Codex, 21 septembre 2026. [Proposition de nom](../modeles/backlog/master-plan-application-U575.yaml), section naming_review_U576. Laurent accepte le regroupement sous réserve du nom, retire Master de celui-ci et refuse Application pour éviter une lecture informatique. Plan Implementation, mise en œuvre du plan, est proposé. ELM593 apporte un appui lexical historique Oracle ; ELM594 un rapprochement fonctionnel Microsoft. Aucun des deux ne prouve un consensus sur cet intitulé de capacité. ELM566 conserve l’appui fonctionnel à la transmission et au suivi des recommandations.
+
+Bénéfice : expliciter le passage des recommandations autorisées aux effets pris en compte. Plan Execution pourrait englober les opérations physiques ; Plan Release pourrait être lu comme la seule transmission. Ces comparaisons sémantiques sont une appréciation FLOW. Périmètre et familles d’effets conservés ; aucun changement canonique, nouveau nom adopté ou validation étendue aux autres champs.
+
+
+**Accord U577 — CMP242 :** Laurent valide le nom Plan Implementation, dans le périmètre du comportement de mise en œuvre discuté. Les rapprochements documentaires gardent leurs limites ; l’accord de nom ne crée ni consensus marché ni validation globale des champs.

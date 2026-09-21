@@ -1,0 +1,195 @@
+source_refs:
+- U560
+method: Relecture des responsabilités de chaque parcours, comparaison à la baseline et contrôle des frontières modifiées ;
+  pas de test d’exécution des SI.
+scenarios:
+- id: S01
+  scenario: Plan amont, demande planifiée, affermissement et lancement
+  responsibility_ids:
+  - D04.j
+  - D04.k
+  - D04.o
+  - BHV036
+  changed_responsibility_ids:
+  - D04.j
+  - D04.k
+  - D04.o
+  - BHV036
+  assessment: Propositions prises en charge par famille, transitions explicites et aucun effacement d’engagement à la révision
+    amont.
+- id: S02
+  scenario: Réception, correction de mouvement et connaissance du stock
+  responsibility_ids:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D01.d
+  changed_responsibility_ids: []
+  assessment: Tenue, correction, visibilité et inventaire du stock inchangés.
+- id: S03
+  scenario: Promesse partielle, affectation et réservation distinctes
+  responsibility_ids:
+  - D04.i
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  - D03.n
+  - D02.e
+  - D02.c
+  changed_responsibility_ids:
+  - D04.i
+  - D03.k
+  - D03.l
+  - D03.n
+  - D02.e
+  - D02.c
+  assessment: Décisions spécialisées, compatibilité collective et engagement distincts ; affectation et réservation ne sont
+    pas fusionnées.
+- id: S04
+  scenario: Carnet sous pénurie, priorités et engagements existants
+  responsibility_ids:
+  - D03.p
+  - D03.m
+  - D03.o
+  - D02.e
+  - D02.b
+  - D02.c
+  changed_responsibility_ids:
+  - D03.p
+  - D03.o
+  - D02.e
+  - D02.b
+  - D02.c
+  assessment: Commandes identifiées et protections préservées ; la réserve sur les besoins sans commande est isolée dans AUD557-05.
+- id: S05
+  scenario: Impondérable, adaptation des prestations et suivi des suites
+  responsibility_ids:
+  - D07.d
+  - D06.f
+  - D06.d
+  - D03.p
+  - D04.s
+  changed_responsibility_ids:
+  - D03.p
+  - D04.s
+  assessment: Modes de sollicitation et suivi de la demande conservés ; exemples et appuis propres repris.
+- id: S06
+  scenario: Préparation, report, annulation et réalisation partielle d’un Order
+  responsibility_ids:
+  - D04.o
+  - BHV038
+  - BHV043
+  - D07.b
+  - D07.d
+  changed_responsibility_ids:
+  - D04.o
+  assessment: Préparation, report et terminaison conservés ; les réalisations acquises ne sont pas effacées par une révision.
+- id: S07
+  scenario: Implantation et réassort en tenant compte des apports connus
+  responsibility_ids:
+  - D05.f
+  - D05.g
+  - D05.e
+  - D04.j
+  - D04.k
+  - BHV094
+  changed_responsibility_ids:
+  - D05.f
+  - D04.j
+  - D04.k
+  - BHV094
+  assessment: Décisions d’apport et plan de stock conservent leurs rôles ; propositions amont et suites engagées distinguées.
+- id: S08
+  scenario: Rééquilibrage ou consolidation du stock
+  responsibility_ids:
+  - D05.c
+  - D05.f
+  - D04.k
+  - BHV094
+  changed_responsibility_ids:
+  - D05.c
+  - D05.f
+  - D04.k
+  - BHV094
+  assessment: Redistribution décrite comme décision ; le déplacement reste chez les Orders et exécutants.
+- id: S09
+  scenario: Prévisions, ventes et précommandes B2B, publication aux consommateurs
+  responsibility_ids:
+  - D17.a
+  - BHV095
+  - D04.i
+  - D05.f
+  changed_responsibility_ids:
+  - D17.a
+  - BHV095
+  - D04.i
+  - D05.f
+  assessment: Demandes connues et consommateurs du plan désormais reliés ; publication distincte du recalcul et de l’engagement.
+- id: S10
+  scenario: Retour client et détermination de la suite du produit
+  responsibility_ids:
+  - D04.l
+  - D05.i
+  - D07.b
+  - D07.c
+  changed_responsibility_ids: []
+  assessment: Retour client et disposition inchangés.
+- id: S11
+  scenario: Retour fournisseur, remplacement ou réparation
+  responsibility_ids:
+  - D04.m
+  - D05.i
+  - D07.b
+  - D07.c
+  changed_responsibility_ids: []
+  assessment: Retour fournisseur et suites inchangés.
+- id: S12
+  scenario: Apport et tenue d’un stock consigné
+  responsibility_ids:
+  - D04.r
+  - D01.h
+  - D04.o
+  - D01.f
+  changed_responsibility_ids:
+  - D04.o
+  assessment: Apport et tenue de consignation inchangés ; règles transverses de cycle de vie préservées.
+- id: S13
+  scenario: Choix, engagement, coordination et rapprochement des services
+  responsibility_ids:
+  - D06.b
+  - D07.a
+  - D06.e
+  - D07.b
+  - D06.d
+  - D07.d
+  - D07.c
+  changed_responsibility_ids: []
+  assessment: Choix, coordination, suivi et rapprochement des prestations inchangés.
+- id: S14
+  scenario: Structuration, variantes directes/interentreprises et archivage des Orders
+  responsibility_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.n
+  - D04.q
+  changed_responsibility_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  assessment: Familles, variantes, structuration et archivage conservés ; origine des propositions et filiation explicitées.
+- id: S15
+  scenario: Politique de réservation, protection des groupes et engagement individuel
+  responsibility_ids:
+  - D05.h
+  - D05.d
+  - D02.b
+  - D02.c
+  changed_responsibility_ids:
+  - D05.h
+  - D02.b
+  - D02.c
+  assessment: Chaîne décision des conditions, mise en vigueur et réservation explicite ; protections de groupes distinctes.
+remaining_open:
+- 'AUD557-05 : besoins prévisionnels historiques non identifiés.'

@@ -1,0 +1,150 @@
+contribution: U519
+consulted_on: '2026-09-21'
+documents:
+- id: LOC1
+  existing_elm: ELM228
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Global Order Promising
+  title: Assignments and Rules
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/how-order-promising-rules-work-together.html
+  version: 26B
+  locator: Introduction ; rôles des quatre règles ; exemple Item and Customer, lignes 3–42.
+  observation: Les ensembles d’affectation croisent produit, client, organisation ou région pour choisir des règles de sourcing
+    et de promesse.
+  interpretation: Appui au contexte croisant les sujets ; références, politiques choisies et résultat de promesse se distinguent.
+  limits: Configuration locale chez Oracle ; aucune origine externe universelle des politiques ni placement automatique dans
+    Core Data FLOW.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC2
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Order Management / Global Order Promising
+  title: How the Order Orchestration and Order Promising Processes Use the Collected Planning Data
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html
+  version: 26B
+  locator: Data Collections ; Order Orchestration ; Order Promising, lignes 4–15.
+  observation: Le dépôt reçoit des données Oracle ou externes ; orchestration et moteur de promesse les utilisent selon des
+    accès différents.
+  interpretation: Une même collecte peut alimenter plusieurs lectures adaptées aux consommateurs.
+  limits: Architecture de produit documentée pour ce parcours ; pas exigence de mémoire séparée, matérialisation ou unique
+    mode de fonctionnement FLOW.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC3
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Global Order Promising
+  title: Collect Data for Global Order Promising
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/refresh-the-global-order-promising-server.html
+  version: 26B
+  locator: Collect Data ; liste d’entités, lignes 4–26.
+  observation: La collecte distingue paramètres, supply et demand ; elle mobilise notamment articles, structures, organisations,
+    ressources, méthodes d’expédition et fournisseurs.
+  interpretation: Le contexte consommé est plus large que les seules références ; le dépôt produit ne fixe pas la frontière
+    de l’Area FLOW.
+  limits: Les nomenclatures et gammes de fabrication ne sont pas ajoutées au périmètre FLOW par cette comparaison.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC4
+  mkt: MKT13
+  vendor: SAP
+  product: S/4HANA — aATP
+  title: Outlining Alternative-based Confirmation
+  url: https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-alternative-based-confirmation
+  version: Cours sans édition globale affichée ; historique explicite 1809, 1909, 2020 et 2021.
+  locator: Alternative-based Confirmation ; Configure Alternative Control ; résultats ; caractéristiques et substitutions,
+    lignes 70–104 et 130–138.
+  observation: Des caractéristiques de la commande et des données maîtres, notamment client et produit, déterminent la stratégie
+    de substitution de lieux.
+  interpretation: Le choix d’alternatives utilise un contexte croisant références et demande ; confirmer quantité/date reste
+    un calcul.
+  limits: Cours mêlant versions historiques ; ne démontre ni couverture actuelle exhaustive ni service de vue séparé ; paramètres
+    de priorité natifs non adoptés.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC5
+  existing_elm: ELM414
+  mkt: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  title: Coverage settings
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings
+  version: Documentation en ligne ; version générale non précisée ; prérequis distincts 10.0.38/10.0.43 pour options BOM.
+  source_updated_at: '2026-03-25'
+  locator: Introduction et réglages par groupe, produit, site, entrepôt ou dimension ; Coverage codes, lignes 31–56.
+  observation: Les paramètres de couverture sont associés au produit et au contexte de lieu ou de dimension, puis servent
+    au calcul des besoins.
+  interpretation: Appui à une lecture produit-lieu-contexte pour les consommateurs de planification.
+  limits: Paramètres administrés dans l’ERP ; ne démontre pas qu’ils viennent d’un domaine externe dans FLOW. Les seuils produits
+    par D05 ne sont pas déplacés.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC6
+  existing_elm: ELM371
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Replenishment Planning
+  title: Policy Assignment Sets
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  version: 26B
+  locator: Introduction ; Policy Parameters ; Default Policy Values ; Item-Location Level, lignes 3–16, 44–53 et 66–80.
+  observation: Les paramètres et exceptions s’appliquent à des segments et couples article-lieu ; les valeurs de politique
+    peuvent être calculées.
+  interpretation: Appui au contexte de planification et à la séparation entre données d’entrée et cibles calculées.
+  limits: Ne transforme pas les résultats Inventory Target Decision en données maîtres externes ; les règles de calcul natives
+    ne sont pas adoptées.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC7
+  existing_elm: ELM531
+  mkt: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Sales
+  title: Define product pricing with price lists and price list items
+  url: https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products
+  version: Documentation en ligne, version produit non précisée
+  source_updated_at: '2025-08-08'
+  locator: What is a price list? ; Create a price list and price list items, lignes 37–98.
+  observation: Tarifs rattachant produit, unité, devise et conditions tarifaires ; plusieurs contextes commerciaux possibles.
+  interpretation: Appui partiel aux bases économiques reçues et réutilisables.
+  limits: Sales et pas moteur Supply ; prix de vente, coût standard et coût d’un scénario ne sont pas équivalents. Pas preuve
+    du besoin de centraliser tous les coûts.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+- id: LOC8
+  existing_elm: ELM536
+  mkt: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Finance
+  title: Credit holds for sales orders
+  url: https://learn.microsoft.com/en-us/dynamics365/finance/accounts-receivable/cm-sales-order-credit-holds
+  version: Documentation en ligne ; références aux versions 10.0.21 et 10.0.35.
+  locator: Introduction ; Set up blocking rules and exclusion rules, lignes 31–49.
+  observation: Règles et exclusions client/groupe sont évaluées dans le contexte d’une commande pour produire un blocage.
+  interpretation: Restrictions reçues et résultat de l’évaluation ou mise en attente se distinguent.
+  limits: Exemple crédit ; ni contrôle financier créé en FLOW ni propriété universelle du contrôle de gestion ; le blocage
+    final n’est pas la vue.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  nature: Documentation produit, pas catalogue de capacités
+  reuse_limits: Synthèse sélective et liens ; aucun contenu intégral reproduit.
+access_limits:
+- url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/4671c10e26b145869dd35f5628a07ea3.html
+  title: Rating Attributes and Hard Constraints
+  status: Ouverture sans texte ; extrait de recherche repéré mais non retenu comme preuve du rapport.

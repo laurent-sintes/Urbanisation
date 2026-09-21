@@ -1,0 +1,275 @@
+id: universe-supply
+revision: 4
+kind: domain
+fields:
+  name: Supply Chain Orchestration
+  definition: 'Décider quels produits fournir, en quelle quantité, depuis quel lieu et à quelle date, puis coordonner les
+    prestations nécessaires jusqu’à leur réalisation. La [Supply Chain](glossary:TER084), ou chaîne d’approvisionnement, relie
+    les fournisseurs, les entrepôts, les transporteurs, les magasins et les clients. Ce domaine en assure l’[orchestration](glossary:TER031)
+    : il suit les [commandes](glossary:TER012) et les [stocks](glossary:TER005), établit les engagements et adapte les choix
+    lorsque la situation change.'
+  market_comparisons:
+  - vendor: Zacharia, Sanders et Nix
+    product: Recherche — Journal of Business Logistics
+    element_name: The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator
+    element_type: Article scientifique
+    relationship: Appui sémantique et recouvrement partiel
+    similarities: L’orchestration coordonne un réseau de partenaires et facilite leur coopération par le partage de l’information.
+    differences: L’article étudie le rôle d’un prestataire logistique coordonnant plusieurs entreprises. FLOW décrit des responsabilités
+      métier sans imposer ce prestataire ni cette organisation.
+    flow_position: La finalité de coordination éclaire notre choix de vocabulaire ; le périmètre FLOW reste défini par ses
+      responsabilités propres.
+    term_choice: Orchestrator atteste un usage scientifique de la notion d’orchestration, distinct d’un nom de logiciel.
+    definition_choice: Décrire les responsabilités et leur coopération sans présupposer l’acteur qui les réalisera.
+    concept_name: Orchestrator
+    scope_summary: Un prestataire logistique coordonne plusieurs entreprises.
+    approach_summary: Partager l’information et organiser la coopération entre partenaires. L’article étudie un rôle d’acteur.
+    source_title: The Emerging Role of the Third-Party Logistics Provider (3PL) as an Orchestrator
+    source_url: https://bpb-us-w2.wpmucdn.com/wordpress.lehigh.edu/dist/e/653/files/2018/01/Zacharia-JBL-3PL-Orchestrator-Role-2011-27dqkbl.pdf
+    source_version: Journal of Business Logistics, 2011, 32(1), 40–54 ; DOI 10.1111/j.2158-1592.2011.01004.x
+    source_locator: Introduction p. 40 ; modèle p. 45 ; exemples p. 48–49 ; limites p. 50.
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U474
+    - U475
+    - MKT55
+    - ELM325
+    - CMP188
+    evidence_limits: Entretiens dans un seul prestataire spécialisé transport. Cet appui ne définit pas un consensus scientifique
+      ni un catalogue équivalent à FLOW ; aucune réalisation installée déduite.
+  - vendor: ASCM
+    product: SCOR Digital Standard — référentiel professionnel
+    element_name: Orchestrate
+    element_type: Processus de référence
+    relationship: Appui sémantique et recouvrement partiel
+    similarities: Le référentiel relie la coordination des acteurs, les règles et la performance de la chaîne.
+    differences: Orchestrate dans SCOR comprend notamment stratégie, risques et ressources. FLOW se concentre sur commandes,
+      stocks, engagements, optimisation et coordination de la réalisation.
+    flow_position: SCOR éclaire la coopération entre acteurs sans imposer à FLOW son découpage en processus ni toute sa gouvernance.
+    term_choice: Orchestrate est un usage professionnel du vocabulaire d’orchestration ; ce nom ne suffit pas à établir une
+      équivalence.
+    definition_choice: Conserver la responsabilité de coordination au périmètre FLOW sans reprendre l’ensemble de la stratégie
+      et de la gouvernance décrites par SCOR.
+    concept_name: Orchestrate
+    scope_summary: Inclut stratégie, règles, risques, ressources et performance.
+    approach_summary: Structurer et améliorer le fonctionnement de la chaîne.
+    source_title: The SCOR Digital Standard (SCOR DS)
+    source_url: https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/
+    source_version: Page sans numéro d’édition affiché
+    source_locator: Présentation du référentiel et définitions Orchestrate, Plan, Order, Source, Transform, Fulfill et Return,
+      texte primaire restitué par l’index de recherche.
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U474
+    - U475
+    - MKT56
+    - ELM326
+    - CMP188
+    evidence_limits: L’ouverture directe a renvoyé 403 ; lecture limitée au texte de la page primaire restitué par l’index
+      de recherche. Le standard complet n’a pas été audité. Aucune conformité SCOR, équivalence de catalogue ou réalisation
+      installée déduite.
+  - vendor: CSCMP
+    product: Définitions professionnelles
+    element_name: SCM Definitions and Glossary of Terms
+    element_type: Définition professionnelle
+    relationship: Recouvrement partiel
+    similarities: Le SCM inclut coordination des partenaires, approvisionnement, transformation et logistique.
+    differences: Ce périmètre professionnel est plus large que le domaine FLOW ; SCM ne désigne pas seulement son noyau d’orchestration.
+    flow_position: Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.
+    term_choice: Supply Chain Orchestration précise la responsabilité retenue dans FLOW, au sein d’une chaîne plus large.
+    definition_choice: 'Le choix répond au périmètre client : référentiels maîtres externes et réalisation physique confiée
+      aux exécutants. Ce découpage est local, pas imposé par CSCMP.'
+    source_title: SCM Definitions and Glossary of Terms
+    source_url: https://cscmp.org/CSCMP/Educate/SCM_Definitions_and_Glossary_of_Terms.aspx
+    source_version: Page sans édition affichée
+    source_locator: Definition of Supply Chain Management ; Boundaries and Relationships
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM292
+    - CMP185
+    - U474
+    - U475
+    - CMP188
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+    concept_name: Supply Chain Management
+    scope_summary: Approvisionnement, transformation, logistique et coordination des partenaires.
+    approach_summary: Définir la discipline dans son ensemble.
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Welcome to Dynamics 365 Supply Chain Management
+    element_type: Périmètre de produit
+    relationship: Recouvrement partiel
+    similarities: La suite couvre notamment produits, stocks, planification, achats, production et entrepôts.
+    differences: 'FLOW ne reprend pas le périmètre complet d’une suite SCM : administration des maîtres et opérations physiques
+      restent à l’extérieur.'
+    flow_position: Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.
+    term_choice: Le nom Orchestration rend cette frontière plus explicite que Supply Chain Management seul.
+    definition_choice: Les référentiels Supply sont des projections reçues par ingestion ; ce choix concentre le domaine sur
+      la coordination sans nier ses responsabilités de commandes et de stocks.
+    source_title: Welcome to Dynamics 365 Supply Chain Management
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/supply-chain-management-welcome
+    source_version: Page mise à jour le 10 septembre 2025
+    source_locator: Core concepts and tasks
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM293
+    - CMP185
+    - U474
+    - U475
+    - CMP188
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+    concept_name: Supply Chain Management
+    scope_summary: Produits, stocks, achats, planification, production, entrepôts et transport.
+    approach_summary: Réunir ces fonctions dans une suite logicielle.
+  - vendor: Oracle
+    product: Fusion Cloud Supply Chain Orchestration
+    element_name: Overview of Supply Chain Orchestration
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Le produit reçoit des demandes et coordonne leur approvisionnement et leurs changements.
+    differences: Le module Oracle coopère avec Promising, Inventory et Order Management ; le domaine FLOW regroupe aussi des
+      responsabilités que ces produits portent séparément.
+    flow_position: Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.
+    term_choice: Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.
+    definition_choice: Le nom met l’accent sur la coordination des engagements et des moyens de les satisfaire ; il ne signifie
+      ni adoption du module Oracle ni équivalence de catalogue.
+    source_title: Overview of Supply Chain Orchestration
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html
+    source_version: 26B
+    source_locator: Introduction ; receive requests, create supply orders, manage changes ; drop shipment
+    consulted_on: '2026-09-19'
+    status: proposed
+    source_refs:
+    - U470
+    - U471
+    - ELM294
+    - CMP185
+    - U474
+    - U475
+    - CMP188
+    evidence_limits: Passage primaire consulté ; rapprochement limité au périmètre décrit, sans équivalence de catalogue,
+      choix de solution ni réalisation Beaumanoir déduite.
+    concept_name: Supply Chain Orchestration
+    scope_summary: Coordonner les approvisionnements et leurs changements en réponse aux demandes.
+    approach_summary: Faire coopérer plusieurs applications pour satisfaire les demandes.
+  examples:
+  - title: Livrer 100 tee-shirts à un magasin vendredi
+    situation: Le magasin attend 100 tee-shirts pour vendredi. Un entrepôt en détient 60 et un fournisseur doit en livrer
+      40 jeudi.
+    outcome: La Supply vérifie si les 100 peuvent être livrés à temps, établit la quantité et la date promises, puis coordonne
+      préparation et transport. Si les 40 sont retardés, elle examine les alternatives et les conséquences sur la commande.
+    lesson: La Supply organise et suit la satisfaction de la demande ; les exécutants réalisent les opérations physiques.
+      La promesse ne réserve pas implicitement le stock.
+    source_refs:
+    - U470
+    - U436
+  - title: Recevoir une nouvelle référence produit
+    situation: Une nouvelle variante de tee-shirt, bleu taille M, est créée dans l’application qui fait autorité sur les produits.
+    outcome: Son identifiant et ses caractéristiques utiles sont reçus dans [Product Reference](glossary:TER052). La Supply
+      peut alors utiliser cette référence dans ses commandes et ses stocks.
+    lesson: La projection sert aux opérations Supply. La création et les corrections de la référence restent dans la source
+      de vérité externe.
+    source_refs:
+    - U470
+    - U97
+    - U460
+  finality: Organiser l’approvisionnement, la répartition et la livraison des produits pour tenir les quantités et les dates
+    promises.
+  scope: |-
+    Les applications externes restent les sources de vérité des référentiels : c’est là que leurs données sont créées, modifiées ou supprimées. La Supply en reçoit des projections, c’est-à-dire les références utiles à ses opérations, par [Reference Ingestion](glossary:TER050). Elle ne les administre pas à leur place.
+
+    Le périmètre se concentre ainsi sur l’orchestration : commandes, stocks, promesses, optimisation et coordination des services. Les exécutants préparent, transportent et remettent les produits ; la Supply reçoit leurs faits de réalisation pour suivre les engagements et traiter les écarts.
+  market_inspiration:
+    choice: 'Nous appelons ce domaine Supply Chain Orchestration parce qu’il organise comment satisfaire les demandes : quelles
+      quantités fournir, depuis où, à quelle date et avec quels moyens. Il coordonne les [commandes](glossary:TER012), les
+      [stocks](glossary:TER005), les engagements et les prestations, tandis que les applications de référence gèrent les données
+      produit et partenaires, et que les entrepôts et transporteurs réalisent les opérations physiques.'
+    flow_scope: Commandes, stocks, engagements, optimisation et coordination de la réalisation.
+    flow_approach: Décrire les responsabilités métier et leur coopération, indépendamment des outils.
+    synthesis:
+    - CSCMP et Microsoft utilisent un nom large, pour une discipline et une suite logicielle respectivement. Notre périmètre
+      est plus ciblé, notamment parce que la gestion des données de référence et la réalisation physique restent chez les
+      responsables concernés.
+    - 'La recherche et SCOR éclairent la coopération entre acteurs, avec des angles différents : rôle du prestataire pour
+      l’article, stratégie et organisation de la chaîne pour SCOR. FLOW décrit les responsabilités à assurer sans imposer
+      cette organisation.'
+    - Oracle utilise exactement notre nom, avec d’autres frontières. Son module coopère avec des applications distinctes pour
+      les commandes, les stocks et les promesses ; notre domaine réunit aussi ces responsabilités.
+    examples:
+    - title: 75 pièces livrables sur les 100 attendues
+      situation: Un fournisseur ne peut livrer que 75 pièces sur les 100 attendues.
+      outcome: Oracle décrit une orchestration qui recherche une autre source pour les 25 manquantes et, si elle n’en trouve
+        pas, signale l’écart au responsable de la commande.
+      lesson: Dans FLOW, ce cas permet d’expliquer comment relier les approvisionnements attendus, les solutions alternatives
+        et les conséquences sur la quantité ou la date promises. La préparation et le transport sont ensuite réalisés par
+        les exécutants.
+      source_title: Oracle — Overview of Supply Chain Orchestration, exemple de réduction de 100 à 75 unités (26B)
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html
+      source_refs:
+      - U474
+      - U475
+      - ELM294
+      - CMP188
+source_refs:
+- U141
+- C78
+- CMP066
+- U373
+- U455
+- U458
+- U463
+- C108
+- ELM019
+- ELM279
+- CMP182
+- U470
+- CMP185
+- ELM292
+- ELM293
+- ELM294
+- U474
+- U475
+- ELM325
+- ELM326
+- CMP188
+- U482
+source_locator:
+  path: connaissance/01-contributions-utilisateur.md
+  anchor: u373
+review:
+  state: partial
+  note: 'U373 adopte le nom Supply Chain Orchestration ; périmètre conservé, autres champs non adoptés par cet accord. U463
+    corrige la définition héritée du découpage en couches ; reformulation, rapprochements et exemple éditoriaux proposés.
+    Le nom adopté U373 reste inchangé. U470 : entrée concrète, périmètre des projections, exemples et comparaisons au niveau
+    de l’univers ; reformulations éditoriales proposées, nom adopté inchangé. U475 retient le format C, la synthèse, le tableau
+    et l’exemple présentés pour Sources d’inspiration. Les qualifications détaillées des sources non présentées restent proposées
+    ; aucun changement de responsabilité ni validation étendue aux autres fiches.'
+adoption_ids: []
+lifecycle:
+  state: urbanist_validated
+  recorded_at: '2026-09-19T15:16:17Z'
+  recorded_by: Codex
+  source_refs:
+  - U373
+  - U475
+  - U482
+  validated_fields:
+  - name
+  - market_inspiration
+  value_sha256:
+    name: 9925b1127336fae5e805d2ed6df17bfb9944ae49acb73799038f3f8e433cd6f7
+    market_inspiration: 6232933b4b7e4f50e7cebb856d3d0be18d0c385de770a2d01937f907b48165d2
+  note: 'U373 : nom uniquement. Accord U141 et valeur antérieure conservés dans audits/2026-09-18-universe-U373/model-before.yaml.
+    U475 : ajout de la rédaction Sources d’inspiration présentée, champ market_inspiration ; les détails complets de market_comparisons
+    restent hors de cette adoption globale. U482 : vocabulaire des niveaux actualisé à portée constante. Champs concernés
+    : market_inspiration. Empreintes et accords antérieurs conservés dans audits/2026-09-19-domain-area-U482/before-model.yaml.'

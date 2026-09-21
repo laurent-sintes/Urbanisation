@@ -1,0 +1,162 @@
+id: supply-assignment-cases-U562
+date: '2026-09-21'
+source_refs:
+- U562
+- U563
+- U564
+- CMP235
+status: scope_confirmed_structure_open
+baseline: audits/2026-09-21-supply-assignment-U562/model-before.yaml
+explicit_agreement: L’affectation de ressources à un besoin prévisionnel identifié sans commande appartient à Supply Assignment.
+not_inferred:
+- Un nouveau nom ou parent de Planning.
+- L’élargissement de Fulfillment Plan Decision aux prévisions.
+- Une conversion automatique de forecast en Order.
+- Une réalisation installée chez Beaumanoir.
+changed_fields:
+  D02.e:
+  - definition
+  - finality
+  - scope
+  - market_comparisons
+  - examples
+  - market_inspiration
+  D05.c:
+  - scope
+  D03.p:
+  - scope
+cases:
+- id: CASE01
+  situation: Prévoir 1 000 ventes web en novembre à partir des ventes et précommandes.
+  result: Un plan de demande actualisé.
+  coverage:
+  - id: D17.a
+    role: Demand Planning construit la demande attendue.
+  status: covered
+- id: CASE02
+  situation: Protéger une enveloppe de 300 pièces pour le web sans désigner un arrivage.
+  result: Des conditions d’accès aux ressources pour un groupe.
+  coverage:
+  - id: D05.d
+    role: Group Protection Decision détermine la protection.
+  - id: D02.b
+    role: Supply Protection configure et maintient la politique applicable.
+  status: covered
+- id: CASE03
+  situation: Affecter 300 pièces de l’arrivage A aux ventes web prévues en novembre, sans commande.
+  result: Un lien entre une ressource et un besoin prévisionnel identifié.
+  coverage:
+  - id: D02.e
+    role: Supply Assignment matérialise l’affectation retenue.
+  status: application_confirmed_planning_owner_open
+  qualification: U562 valide l’application. Le Planning qui compare et actualise ces affectations et la décision qui les choisit
+    ne sont pas attribués par cet accord.
+- id: CASE04
+  situation: Deux commandes demandent 100 et 200 pièces ; seules 150 sont disponibles.
+  result: Un scénario retenu, puis des liens d’affectation appliqués.
+  coverage:
+  - id: D03.p
+    role: Order Backlog Planning construit et suit les scénarios.
+  - id: D03.o
+    role: Fulfillment Plan Decision choisit le scénario avec les décisions spécialisées.
+  - id: D02.e
+    role: Supply Assignment applique les affectations.
+  status: covered
+- id: CASE05
+  situation: Réapprovisionner un magasin avec 40 pièces pour éviter une rupture.
+  result: Un ajustement de stock retenu puis pris en charge.
+  coverage:
+  - id: D05.f
+    role: Inventory Optimization Planning prépare et applique le plan.
+  - id: D05.e
+    role: Replenishment Decision détermine le réassort.
+  - id: BHV094
+    role: Inventory Plan Application applique les suites avec les capacités partenaires.
+  status: covered
+  boundary: Gestion des Orders et réalisation physique distinctes.
+- id: CASE06
+  situation: Déplacer 40 pièces d’un magasin surstocké vers un autre qui en manque.
+  result: Un plan de redistribution retenu puis pris en charge.
+  coverage:
+  - id: D05.f
+    role: Inventory Optimization Planning porte le plan.
+  - id: D05.c
+    role: Stock Redistribution Decision détermine les transferts.
+  - id: BHV094
+    role: Inventory Plan Application applique les suites avec les capacités partenaires.
+  status: covered
+  boundary: Supply Assignment peut affecter la ressource à l’Order de transfert ; il ne déplace pas physiquement le stock.
+- id: CASE07
+  situation: Empêcher que 40 pièces engagées pour un besoin soient consommées par un autre.
+  result: Un engagement dont les usages concurrents doivent tenir compte.
+  coverage:
+  - id: D02.c
+    role: Reservation établit cet engagement.
+  status: covered
+  boundary: Une affectation seule ne produit pas cet effet, U436.
+market_documents:
+- vendor: Oracle
+  product: Fusion Cloud Supply Planning — Project-specific planning
+  element_name: Project pegging to sales orders and forecasts
+  concept_name: Pegging
+  element_type: Mécanisme de planification documenté dans un produit
+  relationship: Recouvrement partiel
+  scope_summary: Ressources reliées à des commandes et des prévisions dans un plan par projet.
+  approach_summary: Examiner les quantités reliées aux différentes demandes et les exceptions de couverture.
+  similarities: Un besoin prévisionnel peut être la cible d’un lien avec une ressource.
+  differences: Planification par projet ; la page ne démontre pas une application transactionnelle autonome ni le contexte
+    retail du cas FLOW.
+  flow_position: Supply Assignment applique les liens retenus aux commandes et aux besoins prévisionnels identifiés. Planning
+    et décision restent distincts de cette application.
+  source_title: Review Supplies and Demands with Project Pegging
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/review-supplies-and-demands-with-project-pegging.html
+  source_version: 26B
+  source_locator: Review Plan Details — Pegging relationships between supplies and demands of the item
+  consulted_on: '2026-09-21'
+  evidence_limits: Document primaire directement consulté. Appui fonctionnel partiel ; aucune hiérarchie FLOW ni réalisation
+    installée déduite.
+  status: proposed
+  source_refs:
+  - U562
+  - ELM571
+  - CMP235
+- vendor: SAP
+  product: S/4HANA PP/DS
+  element_name: Dynamic Pegging
+  concept_name: Dynamic pegging
+  element_type: Mécanisme de planification documenté dans un produit
+  relationship: Recouvrement partiel
+  scope_summary: Besoins d’un produit-lieu liés aux stocks ou réceptions admissibles ; besoins indépendants sans commande
+    également traités.
+  approach_summary: Recalculer les liens quand les besoins ou ressources changent, pour analyse et planification.
+  similarities: Le lien ressource-besoin n’exige pas toujours une commande de vente.
+  differences: Les liens dynamiques SAP servent au calcul et ne sont généralement pas durables ; la granularité n’est pas
+    spécifique au lot. FLOW décrit l’application des affectations retenues.
+  flow_position: L’affectation à un besoin prévisionnel est couverte, sans assimiler toute projection de calcul à une affectation
+    appliquée ou réservée.
+  source_title: Dynamic Pegging
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/862ac95360267614e10000000a174cb4.html
+  source_version: Page évolutive ; édition non établie pour le passage consulté
+  source_locator: Use — PP/DS heuristics ; Features
+  consulted_on: '2026-09-21'
+  evidence_limits: Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Appui au mécanisme, pas équivalence
+    avec une application durable FLOW.
+  status: proposed
+  source_refs:
+  - U562
+  - ELM572
+  - CMP235
+- source_ref: ELM496
+  title: Overview of Backlog Management Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  version: 26B
+  consulted_on: '2026-09-21'
+  access: Document primaire directement relu
+  finding: Étude, simulation et transmission des résultats sur des commandes ; cette preuve ne couvre pas la planification
+    d’une prévision sans commande.
+finding_followup:
+  id: AUD557-05
+  scope_qualification: resolved_by_U562
+  structural_consequence: open
+  question: Quel Planning porte le choix et l’actualisation des affectations aux besoins prévisionnels avant commande ?
+  constraint: Supply Assignment conserve un seul parent ; aucune capacité retirée réintroduite et aucun renommage automatique.

@@ -1,0 +1,322 @@
+schema_version: '1.0'
+review_id: ORACLE-FLUENT-VISIBILITY-U522-U524
+as_of: '2026-09-21'
+status: capability_comparison_with_open_plan_boundary_U525
+source_refs:
+- U522
+- U520
+- U521
+- CMP213
+- U523
+- U524
+- C111
+- U525
+- Q078
+baseline:
+  canonical_model_sha256: 9e046b9ab49609ff27a9ff6cad38a49f3e3e8dc54e0ec1df8134518490e49160
+  previous_review: authoritative-data-views-U519.yaml
+scope: Comparaison de cinq familles de lecture à discuter et d’Inventory Planning Context en attente d’arbitrage Q078. Maille
+  capacité U520, sans nouveaux Behaviors ni détail de règles.
+product_scope:
+  oracle: Oracle possède une couverture ERP/SCM plus large que l’orchestration FLOW. Order Management, Global Order Promising
+    et Replenishment Planning sont distingués ; les fonctions de PLAN ne sont pas transférées automatiquement au périmètre
+    FLOW.
+  fluent: Fluent Order Management et fonctions Inventory/Returns documentées ; dates et versions dans les relevés U519.
+  comparison_limit: Comparer les finalités et responsabilités ; la séparation analytics/production ne suffit pas à trancher
+    la frontière. Le périmètre exact de PLAN demeure ouvert en U525/Q078.
+rows:
+- view: Order Context
+  oracle: 'Recouvrement partiel : les données collectées et Assignments and Rules rapprochent produit, client et organisation
+    pour l’orchestration et la promesse.'
+  oracle_refs:
+  - ELM228
+  - ELM538
+  fluent: 'Recouvrement partiel : Sourcing Context rapproche les caractéristiques produit/client et le contexte de demande.'
+  fluent_refs:
+  - ELM542
+  interpretation: Besoin transversal documenté chez les deux ; pas de vue de références pure portant ce nom.
+- view: Sourcing Context
+  oracle: 'Rapprochement fonctionnel avec Source Your Supply Chain : achat, fabrication ou transfert.'
+  oracle_refs:
+  - ELM550
+  fluent: Le sourcing Fluent correspond au Network FLOW (U524), pas au contexte d’achat/apport fournisseur proposé sous ce
+    nom.
+  fluent_refs:
+  - ELM541
+  interpretation: Séparer la lecture du Network et le contexte d’approvisionnement ; la proximité du mot sourcing ne fonde
+    pas une équivalence.
+- view: Fulfillment & Service Context
+  oracle: Rapprochement pour le réseau de satisfaction et les informations utilisées par Global Order Promising.
+  oracle_refs:
+  - ELM228
+  - ELM550
+  - ELM549
+  fluent: Fluent Sourcing se rapproche du Network FLOW ; les options de fulfillment illustrent la préparation de livraison/retrait.
+  fluent_refs:
+  - ELM541
+  - ELM543
+  interpretation: Correspondance Network retenue U524 ; les décisions de sélection Fluent ne deviennent pas pour autant des
+    données de référence.
+- view: Return Context
+  oracle: 'Rapprochement partiel : qualification du produit pour retour, lieu de retour et dossier d’origine.'
+  oracle_refs:
+  - ELM548
+  fluent: 'Rapprochement partiel : Returns Component associe références de qualification et dossier de retour.'
+  fluent_refs:
+  - ELM545
+  interpretation: Besoin de contexte étayé, sans prouver une vue autonome ni toute la politique de retour/disposition FLOW.
+- view: Economic Context
+  oracle: 'Appui explicite avec Profitable to Promise : coûts utilisés pour comparer les possibilités de satisfaction.'
+  oracle_refs:
+  - ELM549
+  fluent: 'Non établi pour une vue de coûts comparable : valeur commerciale prise en compte dans les critères et montants
+    du retour ne démontrent pas les coûts d’achat, de possession ou d’exécution.'
+  fluent_refs:
+  - ELM541
+  - ELM545
+  interpretation: La famille FLOW reste une proposition transversale ; bases économiques et décision optimisée doivent rester
+    distinctes.
+key_findings:
+- Fluent Sourcing correspond au Network FLOW (U524), sans assimiler les décisions natives aux références du réseau.
+- Oracle possède une couverture ERP/SCM plus large, qui explique des fonctions supplémentaires.
+- La frontière PLAN/orchestration est à arbitrer U525/Q078 ; l’analytics ne constitue pas à lui seul un critère d’exclusion.
+- Cinq familles restent proposées et Inventory Planning Context reste en attente ; aucun découpage de vues adopté.
+new_primary_documents:
+- id: ELM548
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Order Management
+  title: Guidelines for Processing Return Orders
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/guidelines-for-processing-return-orders.html
+  version: 26B
+  locator: Manually Reference the Original Order ; Set Up the Item So It's Returnable ; Specify the Return-to Location, lignes
+    9–30 et 59–61.
+  observation: Le traitement des retours mobilise une qualification de référence du produit, une destination de retour et,
+    selon le parcours, la commande d’origine.
+  similarities: Réunir les références utiles à l’instruction d’un retour.
+  differences: La fonction produit gère aussi la transaction et l’orchestration ; elle n’est pas une vue de références autonome.
+    Retours fournisseurs et disposition complète non démontrés par cette page.
+  consulted_on: '2026-09-21'
+  nature: Fonctionnalité documentée d’un produit ; pas vue ou capacité FLOW native.
+  evidence_status: consulted_primary
+  reuse_limits: Synthèse sélective et liens, sans reproduction intégrale.
+- id: ELM549
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Global Order Promising
+  title: Set Attributes on Your Supply Chain Search
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/promising-attributes-for-supply-chain-availability-searches.html
+  version: 26B
+  locator: Profitable to Promise, lignes 13–46 ; Search Components and Resources, lignes 5–12.
+  observation: Profitable to Promise utilise des coûts de référence pour comparer les possibilités de satisfaction ; le moteur
+    produit ensuite le choix.
+  similarities: Appui fonctionnel à la consommation de bases économiques pour la promesse.
+  differences: Calcul et choix font partie du moteur Oracle, pas d’une vue Economic Context distincte. Sa logique de coût
+    sous contrainte de date n’est pas adoptée dans FLOW ; ni prix de vente ni comptabilité complète.
+  consulted_on: '2026-09-21'
+  nature: Fonctionnalité documentée d’un produit ; pas vue ou capacité FLOW native.
+  evidence_status: consulted_primary
+  reuse_limits: Synthèse sélective et liens, sans reproduction intégrale.
+- id: ELM550
+  mkt: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM — Global Order Promising
+  title: Source Your Supply Chain
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/overview-of-sourcing-rules-and-bills-of-distribution.html
+  version: 26B
+  locator: Introduction et Source Type ; Global Rule ; Local Rule, lignes 3–17 et 44–60.
+  observation: Le sourcing Oracle couvre des sources d’achat, de fabrication et de transfert, à une portée globale ou locale.
+  similarities: Rapprochement du besoin de connaître les possibilités d’approvisionnement.
+  differences: Règles et choix opérationnels plus larges qu’une vue de références ; périmètre de fabrication non ajouté à
+    FLOW. Le seul mot sourcing ne vaut pas équivalence avec Responsive Sourcing de Fluent.
+  consulted_on: '2026-09-21'
+  nature: Fonctionnalité documentée d’un produit ; pas vue ou capacité FLOW native.
+  evidence_status: consulted_primary
+  reuse_limits: Synthèse sélective et liens, sans reproduction intégrale.
+reconsulted_primary_sources:
+- ref: ELM228
+  scope: Assignments and Rules, Oracle 26B
+- ref: ELM371
+  scope: Policy Assignment Sets, Oracle 26B
+- ref: ELM538
+  scope: Données collectées pour orchestration/promesse, Oracle 26B
+- ref: ELM541
+  scope: Reference Sourcing Criteria, Fluent
+- ref: ELM542
+  scope: Reference Sourcing Conditions, Fluent
+- ref: ELM544
+  scope: Future Inventory, Fluent
+reused_evidence:
+- ref: ELM543
+  path: ../../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml
+  scope: Note Fulfilment Options, ancienne et illustrative, consultation primaire U519 du même jour.
+- ref: ELM545
+  path: ../../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml
+  scope: Returns Component, consultation primaire U519 du même jour.
+access_limits:
+- url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/source-your-supply-chain.html
+  result: Chemin inaccessible ; vrai document retrouvé via le lien Source Your Supply Chain du document Assignments and Rules
+    et consulté sous ELM550.
+release_use: Les champs Sources d’inspiration sont consignés dans la fiche de travail de Visibility selon U523, prêts à être
+  repris sur la cible canonique lors de l’intégration du découpage. La matrice y est reliée. Les appuis présents sur l’Area
+  ne remplacent pas ce rattachement. Aucune publication ni sixième vue PLAN anticipée.
+decision: U523 rattache la comparaison à Visibility ; U524 retient Fluent Sourcing → FLOW Network et la couverture ERP plus
+  large d’Oracle ; U525 laisse la frontière PLAN/orchestration ouverte Q078. Aucune suppression ou adoption des vues/capacités.
+report: ../../audits/2026-09-21-authoritative-views-U519/comparaison-oracle-fluent-U522.md
+history_before_U524:
+  rows:
+  - view: Order Context
+    oracle: 'Recouvrement partiel : les données collectées et Assignments and Rules rapprochent produit, client et organisation
+      pour l’orchestration et la promesse.'
+    oracle_refs:
+    - ELM228
+    - ELM538
+    fluent: 'Recouvrement partiel : Sourcing Context rapproche les caractéristiques produit/client et le contexte de demande.'
+    fluent_refs:
+    - ELM542
+    interpretation: Besoin transversal documenté chez les deux ; pas de vue de références pure portant ce nom.
+  - view: Sourcing Context
+    oracle: 'Rapprochement fonctionnel avec Source Your Supply Chain : achat, fabrication ou transfert.'
+    oracle_refs:
+    - ELM550
+    fluent: Le sourcing Fluent correspond au Network FLOW (U524), pas au contexte d’achat/apport fournisseur proposé sous
+      ce nom.
+    fluent_refs:
+    - ELM541
+    interpretation: Séparer la lecture du Network et le contexte d’approvisionnement ; la proximité du mot sourcing ne fonde
+      pas une équivalence.
+  - view: Fulfillment & Service Context
+    oracle: Rapprochement pour le réseau de satisfaction et les informations utilisées par Global Order Promising.
+    oracle_refs:
+    - ELM228
+    - ELM550
+    - ELM549
+    fluent: Fluent Sourcing se rapproche du Network FLOW ; les options de fulfillment illustrent la préparation de livraison/retrait.
+    fluent_refs:
+    - ELM541
+    - ELM543
+    interpretation: Correspondance Network retenue U524 ; les décisions de sélection Fluent ne deviennent pas pour autant
+      des données de référence.
+  - view: Inventory Planning Context
+    oracle: 'Rapprochement via Replenishment Planning : paramètres par segment et couple produit-lieu.'
+    oracle_refs:
+    - ELM371
+    fluent: 'Non établi dans le corpus : Future Inventory décrit stock et disponibilité datée ; cela ne suffit pas à prouver
+      la planification du réassort.'
+    fluent_refs:
+    - ELM544
+    interpretation: Oracle est ici comparé sur un module de planification, pas le seul OMS. Aucune absence générale de fonction
+      Fluent affirmée.
+  - view: Return Context
+    oracle: 'Rapprochement partiel : qualification du produit pour retour, lieu de retour et dossier d’origine.'
+    oracle_refs:
+    - ELM548
+    fluent: 'Rapprochement partiel : Returns Component associe références de qualification et dossier de retour.'
+    fluent_refs:
+    - ELM545
+    interpretation: Besoin de contexte étayé, sans prouver une vue autonome ni toute la politique de retour/disposition FLOW.
+  - view: Economic Context
+    oracle: 'Appui explicite avec Profitable to Promise : coûts utilisés pour comparer les possibilités de satisfaction.'
+    oracle_refs:
+    - ELM549
+    fluent: 'Non établi pour une vue de coûts comparable : valeur commerciale prise en compte dans les critères et montants
+      du retour ne démontrent pas les coûts d’achat, de possession ou d’exécution.'
+    fluent_refs:
+    - ELM541
+    - ELM545
+    interpretation: La famille FLOW reste une proposition transversale ; bases économiques et décision optimisée doivent rester
+      distinctes.
+  key_findings:
+  - Les deux éditeurs étayent des consommations croisant plusieurs sujets selon l’usage ; aucune taxonomie commune à six vues
+    n’est établie.
+  - Les appuis Fluent sont les plus directs pour le contexte de demande et le fulfillment, avec un appui partiel sur les retours.
+  - Les modules Oracle consultés étayent en plus l’approvisionnement, la planification et les coûts mobilisés dans la promesse.
+  - Sourcing Context FLOW vise achats/apports ; Sourcing Context Fluent n’est pas une preuve équivalente. Les six noms restent
+    des formulations proposées FLOW.
+  scope: Comparaison exploratoire de six familles de besoins, avant l’exclusion de PLAN exprimée en U524.
+  note: La première matrice exploratoire comptait six familles, dont Inventory Planning Context ; U524 retire cette dernière
+    du périmètre de comparaison.
+target_capability:
+  name: Visibility
+  proposal_path: authoritative-data-views-U519.yaml#capability_proposal
+  instruction: 'U523 : porter la comparaison sur cette capacité elle-même ; market_inspiration et market_comparisons préparés
+    dans sa fiche de travail.'
+  canonical_id: null
+scoped_directions_U523_U524:
+  author: Laurent
+  decided_at: '2026-09-21'
+  source_refs:
+  - U523
+  - U524
+  approved_fields:
+  - comparison_owner
+  - terminology_mapping
+  - comparison_scope
+  values:
+    comparison_owner: Visibility
+    terminology_mapping:
+      vendor: Fluent
+      vendor_concept: Sourcing
+      flow_concept: Network
+    comparison_scope:
+      oracle: Couverture ERP complète, plus large que l’orchestration étudiée
+      excluded: PLAN
+  value_sha256:
+    comparison_owner: 2cefbb554eadbb6ec17c2267e4f12fb447e4b4ff44002d1d58a6f2f986619ac3
+    terminology_mapping: 7a75b2d646aae0ab089954b9c3a7d2944fd82b615bce91b42b5373eaadff9c73
+    comparison_scope: 1f64b9b59b078d5cea0764e37457602978bbbc2512d5672efc2e894ab84271d7
+  limits: Rattachement éditorial et cadrage de comparaison uniquement ; ni adoption des cinq noms de vues, ni validation des
+    descriptions nouvelles, ni suppression des capacités canoniques de planification.
+  canonical_capture: Les cibles sont des champs d’une fiche de travail ; reprise champ par champ sur la cible canonique lors
+    de l’intégration, sans créer une cible artificielle.
+history_U524_scope:
+  scope: Comparer les grands besoins de lecture de Visibility à la maille capacité, selon U520. U524 exclut PLAN ; la matrice
+    courante compte cinq familles proposées, sans nouveaux Behaviors ni règles détaillées.
+  product_scope:
+    oracle: 'Oracle possède une couverture ERP/SCM complète, plus large que l’orchestration Supply FLOW. Comparaison active
+      : Order Management et Global Order Promising 26B ; Replenishment Planning est un repère hors périmètre PLAN.'
+    fluent: Fluent Order Management et fonctions Inventory/Returns documentées ; dates et versions dans les relevés U519.
+    comparison_limit: Évaluer à périmètre comparable ; ne pas présenter les vues PLAN supplémentaires d’Oracle comme une lacune
+      à combler dans FLOW ou chez Fluent.
+  excluded_from_active_comparison:
+    view: Inventory Planning Context
+    reference: ELM371
+    reason: PLAN hors orchestration Supply selon U524 ; preuve conservée pour expliquer le périmètre plus large d’Oracle.
+    canonical_impact: Question de clarification en cours sur Inventory Planning et les décisions opérationnelles de réassort
+      déjà canoniques ; aucun retrait automatique.
+  decision: U523 retient la cible Visibility pour la comparaison. U524 retient le rapprochement Fluent Sourcing → FLOW Network
+    et l’exclusion PLAN. Les cinq familles, leurs noms et les autres correspondances restent proposés ; la portée sur les
+    capacités canoniques de planification attend clarification.
+  key_findings:
+  - Fluent Sourcing correspond au Network FLOW dans la lecture retenue par Laurent (U524).
+  - Oracle a une couverture ERP/SCM plus large qui explique des vues supplémentaires ; PLAN est exclu de l’orchestration étudiée.
+  - Order Context, Sourcing Context au sens approvisionnement, Fulfillment & Service Context, Return Context et Economic Context
+    restent cinq familles de besoins proposées ; leur découpage n’est pas une nomenclature éditeur.
+  - Le contexte économique est étayé dans Oracle Global Order Promising ; la preuve d’un contexte de coûts comparable n’est
+    pas établie dans le corpus Fluent.
+pending_scope_U525:
+  view: Inventory Planning Context
+  status: pending_arbitration
+  source_refs:
+  - U524
+  - U525
+  - Q078
+  oracle: Oracle Replenishment Planning documente des contextes produit-lieu/segment.
+  oracle_refs:
+  - ELM371
+  fluent: Le corpus Future Inventory ne démontre pas un contexte équivalent de planification du réassort.
+  fluent_refs:
+  - ELM544
+  decision: Ni intégration ni exclusion définitive ; conserver les capacités et preuves existantes.
+  proposed_reasoning_axis: Finalité de décision opérationnelle ou préparation d’équilibres futurs ; proposition Codex à discuter,
+    sans réduire la frontière à l’horizon temporel ou à l’outil.
+current_directions_U525:
+  instruction: U525 qualifie la portée du cadrage U524 ; ne pas appliquer une exclusion définitive de capacités sur cette
+    base.
+  preserved_fields:
+  - comparison_owner
+  - terminology_mapping
+  oracle_broader_coverage: retained
+  comparison_scope_excluded_PLAN: pending_definition_Q078
+  historical_record: scoped_directions_U523_U524 conservé avec ses valeurs et empreintes, mais son champ comparison_scope
+    ne fixe pas une frontière opérationnelle validée.

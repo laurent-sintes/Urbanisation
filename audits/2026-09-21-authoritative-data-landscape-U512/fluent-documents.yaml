@@ -1,0 +1,90 @@
+contribution: U512
+purpose: 'Relevé documentaire ciblé : références externes et administration locale dans Fluent Order Management.'
+documents:
+- id: ELM518
+  mkt: MKT77
+  vendor: Fluent Commerce
+  product: Fluent Order Management
+  title: Order Workflow Templates Overview
+  url: https://docs.fluentcommerce.com/essential-knowledge/order-workflow-templates-overview
+  version: Non indiquée dans le document consulté.
+  source_updated_at: '2026-02-04'
+  consulted_on: '2026-09-21'
+  locator: Plan your Workflow — Master data planning questions, lignes 58–66 de la consultation web.
+  finding: La préparation des workflows distingue lieux et réseaux, catalogues virtuels, catalogues de stock et catalogue
+    produit. Elle interroge explicitement une origine PIM, ERP ou Commerce pour les données du catalogue produit, ainsi que
+    les réseaux et catalogues utilisés pour le sourcing.
+  interpretation: Le découpage de données peut répondre aux besoins de décision et d’orchestration, même si leur création
+    métier est externe.
+  similarities: Données de référence organisées par sujets et consommées par l’orchestration ; articulation possible avec
+    des maîtres externes.
+  differences: La liste Fluent inclut des catalogues de stock et de disponibilité ; elle ne correspond pas aux sept référentiels
+    FLOW.
+  evidence_limits: Guide de conception, sans preuve de déploiement particulier ni taxonomie de capacités. Virtual Catalogue
+    ne démontre pas une équivalence avec Assortment.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: ELM519
+  mkt: MKT77
+  vendor: Fluent Commerce
+  product: Fluent Order Management — Adobe Commerce Connector
+  title: Product Sync - Adobe Commerce Connector
+  url: https://docs.fluentcommerce.com/essential-knowledge/product-sync-adobe-commerce-connector
+  version: Non indiquée dans le document consulté.
+  source_updated_at: '2026-06-30'
+  consulted_on: '2026-09-21'
+  locator: Overview ; Application Triggers (Observers/Cron) ; API Delivery, lignes 43–84 de la consultation web.
+  finding: Le connecteur transmet les données produit d’Adobe Commerce vers Fluent OMS. Il prévoit un chargement initial complet,
+    un export manuel depuis une date et des deltas automatiques ; seuls les types Simple et Configurable sont pris en charge
+    dans ce parcours.
+  interpretation: Ce parcours illustre un OMS recevant une représentation de produits entretenus dans un système externe.
+  similarities: Alimentation externe et synchronisation de la représentation utilisée localement par l’orchestration.
+  differences: Le document décrit un connecteur produit particulier, sans exposer les sept sujets FLOW ni une organisation
+    en capacités Ingestion et Visibility.
+  evidence_limits: Ne prouve ni l’absence d’administration locale dans Fluent, ni l’externalisation de tous les cycles de
+    vie, ni un déploiement Beaumanoir.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: ELM520
+  mkt: MKT77
+  vendor: Fluent Commerce
+  product: Fluent Order Management ; Fluent Big Inventory
+  title: Manage Locations via UI
+  url: https://docs.fluentcommerce.com/by-type/manage-locations-via-ui
+  version: Non indiquée dans le document consulté.
+  source_updated_at: '2026-03-09'
+  consulted_on: '2026-09-21'
+  locator: Key Points ; Prerequisites ; Create a New Location ; Edit an Existing Location, lignes 39–77 de la consultation
+    web.
+  finding: Fluent OMS et Fluent Big Inventory permettent de créer et modifier des lieux directement dans leur interface, sous
+    réserve des permissions requises. Le système contrôle les valeurs soumises.
+  interpretation: Fluent ne peut pas être présenté comme un produit dépourvu de fonctions d’administration locale des références.
+  similarities: Les lieux constituent un sujet identifiable, rapprochable du périmètre Fulfillment Network de FLOW.
+  differences: Le parcours documente une création et une modification locales, au-delà de la réception de données externes
+    et de leur visibilité.
+  evidence_limits: Disponibilité d’une fonction produit ; ne prouve pas sa mise en œuvre, la maîtrise du cycle de vie d’entreprise
+    des magasins, ni l’équivalence complète avec Fulfillment Network.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: ELM521
+  mkt: MKT77
+  vendor: Fluent Commerce
+  product: Fluent Order Management
+  title: Creating and Editing Product Catalogues
+  url: https://docs.fluentcommerce.com/by-type/creating-and-editing-product-catalogues
+  version: Non indiquée dans le document consulté.
+  source_updated_at: '2024-02-08'
+  consulted_on: '2026-09-21'
+  locator: Key Points ; Prerequisites ; Creating a Product Catalogue ; Editing an existing Product Catalogue, lignes 35–53
+    de la consultation web.
+  finding: L’interface permet la création et la modification de catalogues produit, avec attributs facultatifs. Les opérations
+    correspondantes doivent être activées dans le manifeste et accessibles au rôle de l’utilisateur.
+  interpretation: L’alimentation externe des produits peut coexister avec des fonctions d’administration locale des catalogues
+    dans le produit OMS.
+  similarities: Organisation des données produit au sein de catalogues identifiés et consultables.
+  differences: Le document décrit des opérations locales de création et modification, sans prescrire leur responsabilité dans
+    une architecture d’entreprise.
+  evidence_limits: Administrer le contenant catalogue ne démontre pas la maîtrise du cycle de vie des produits. Aucune équivalence
+    complète établie avec le Product Catalog commercial de FLOW.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.

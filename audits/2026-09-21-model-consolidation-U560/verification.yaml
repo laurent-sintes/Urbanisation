@@ -1,0 +1,32 @@
+source_refs:
+- U560
+model_sha256: ef5389e38c2e598ab38bc0a941954a684ed10aedab353689b563979e7a433baf
+baseline_sha256: 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46
+validation_errors: 0
+tests:
+  command: python -m unittest scripts.test_market_inspiration scripts.test_market_comparisons scripts.test_market_reference_policy
+    scripts.test_behaviors scripts.test_relation_labels
+  exit_code: 0
+  count: 30
+  result: OK
+  runtime_seconds: 8.237
+render:
+  command: python scripts/render_models.py --space backlog
+  exit_code: 0
+  result: 'Views checked/generated: backlog'
+targeted_checks:
+  nodes: 154
+  relations: 365
+  hierarchy_unchanged: true
+  node_ids_names_and_kinds_unchanged: true
+  excluded_reference_nodes_and_incident_relations_unchanged: true
+  information_catalog_unchanged: true
+  inspiration_syntheses_in_audit_scope: 128
+  source_dispositions_checked: 14
+  identical_scope_approach_rows_in_audit_scope: 0
+scenario_count: 15
+release_snapshot_sha256: ac1d74dd0502ba9e1843f43d99d471d2b3ccbd0c8185f0344630835a9d73def1
+protected_git_paths_unchanged: true
+findings:
+  resolved_in_working_model: 9
+  partially_resolved: 1

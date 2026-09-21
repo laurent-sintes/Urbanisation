@@ -1,0 +1,107 @@
+source_refs:
+- U511
+- U512
+- U513
+- CMP207
+documents:
+- id: ELM484
+  mkt: MKT68
+  vendor: Oracle
+  product: Oracle Reference Architecture — Information Management
+  title: ORA Information Management
+  url: https://www.oracle.com/technetwork/topics/entarch/oracle-ra-info-mgmt-r3-1-1980395.pdf
+  version: Release 3.1, juillet 2013, E26368-03
+  locator: §2.3.4, pages imprimées 2-3/2-4 ; §6.3.3.4.3, pages 6-49/6-50
+  finding: Authoritative Data réunit master et reference data ; le Consolidated Hub reçoit les données et laisse les sources
+    en contrôle.
+  interpretation: Appui au concept, pas prescription de sept références Supply. Reference Data seul possède ici le sens étroit
+    de classifications.
+  evidence_limits: Architecture historique ; aucune offre OMS actuelle ni compréhension du nom par des clients démontrée.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM485
+  mkt: MKT67
+  vendor: EDM Council
+  product: CDMC
+  title: 'CDMC Information Model: Controls, Tests and Mappings'
+  url: https://edmcouncil.org/wp-content/uploads/2023/02/CDMC-Information-Model-Controls-Tests-Mappings-V1.1.pdf
+  version: Version 1.1, octobre 2022
+  locator: 'Contrôle 3, pages 13–14 : Authoritative Indication, Authority'
+  finding: Qualification explicite des sources et points de fourniture faisant autorité.
+  interpretation: L’autorité locale se qualifie ; elle ne découle pas automatiquement de la réception d’une copie.
+  evidence_limits: Modèle de contrôle de gouvernance ; ni taxonomie Supply ni conformité FLOW revendiquée.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM259
+  mkt: MKT43
+  vendor: OMG
+  product: Decision Model and Notation
+  title: Decision Model and Notation (DMN)
+  url: https://www.omg.org/dmn/
+  version: Présentation publique évolutive, sans édition normative utilisée
+  locator: Precise specification of business decisions and business rules
+  finding: DMN spécifie les décisions et règles métier et complète BPMN/CMMN.
+  interpretation: Une approche par décisions est compatible avec des références communes ; elle ne fixe pas leur découpage.
+  evidence_limits: Aucun moteur choisi ; aucune structure de stockage ou catalogue de données prescrit.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM527
+  mkt: MKT36
+  vendor: Camunda
+  product: Camunda 8
+  title: Decision requirements graph
+  url: https://docs.camunda.io/docs/components/modeler/dmn/decision-requirements-graph/
+  version: Version 8.9 affichée
+  locator: Introduction ; Decision ; Input data ; Knowledge source
+  finding: Le graphe distingue décisions, données d’entrée et sources de connaissance ; la logique est portée par la décision.
+  interpretation: Les données de référence peuvent alimenter les décisions ; leur gestion ne se confond pas avec la définition
+    de toute règle.
+  evidence_limits: Documentation d’un moteur, distincte de la norme OMG ; ni sept référentiels ni adoption DMN déduits.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM515
+  mkt: MKT13
+  vendor: SAP
+  product: S/4HANA Cloud Private Edition Retail
+  title: Assortment
+  url: https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-1-1
+  version: Cours public, numéro de release non affiché
+  locator: Assortment Management and Maintenance ; Assortment Management
+  finding: Sélection d’articles par destinataire et période ; usage possible dans le contrôle de commandes.
+  interpretation: Appui à l’utilité Supply du sujet Assortment, au-delà de sa création commerciale.
+  evidence_limits: Administration et règles SAP hors périmètre FLOW ; aucune règle de blocage automatiquement adoptée.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM391
+  mkt: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Commerce
+  title: Create Commerce catalogs for B2B sites
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites
+  version: Documentation évolutive ; fonction depuis Commerce 10.0.27
+  locator: Commerce product catalogs ; B2B catalog process flow ; Configure the catalog
+  finding: Catalogues avec destinataires, prix et produits liés aux assortiments des canaux.
+  interpretation: Les rôles catalogue commercial et assortiment restent distinguables même avec des attributs partagés.
+  evidence_limits: Produit Commerce, pas preuve d’un catalogue commercial autonome dans les OMS examinés.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.
+- id: ELM513
+  mkt: MKT19
+  vendor: TM Forum
+  product: ODA TMFC006
+  title: Service Catalog Management v1.2.0
+  url: https://oda-production.s3.eu-west-2.amazonaws.com/v1.0.0/TMFC006_Service_Catalog_Management_v1.2.0.pdf
+  version: 1.2.0, approuvé le 26 novembre 2024, Production/GA
+  locator: §1 Overview, page 5 ; §2.1 eTOM business activities, pages 7–8
+  finding: Catalogue et spécifications de services ; responsabilités couvrant aussi planification et cycle de vie.
+  interpretation: Service Catalog est attesté ; le qualificatif Backing précise le contenu FLOW.
+  evidence_limits: Télécom et administration plus larges que FLOW ; aucun nom OMS standard Backing Service Catalog démontré.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective et liens ; aucune reproduction substantielle.

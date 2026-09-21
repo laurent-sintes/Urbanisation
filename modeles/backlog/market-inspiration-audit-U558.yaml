@@ -1,0 +1,1638 @@
+id: market-inspiration-audit-U558
+date: '2026-09-21'
+source_refs:
+- U557
+- U558
+- CMP232
+status: diagnostic terminé ; aucune correction du modèle appliquée
+model_sha256: 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46
+baseline: audits/2026-09-21-model-coherence-U557/baseline.yaml
+scope: 128 fiches du backlog hors Authoritative Data ; présence et conservation des inspirations, cohérence ciblée des 21
+  fiches modifiées depuis la publication.
+counts:
+  nodes: 128
+  comparison_entries: 283
+  unique_document_urls: 131
+  nodes_with_inspiration: 126
+  nodes_with_at_least_two_distinct_documents: 128
+  modified_nodes_reviewed: 21
+  retired_source_urls_absent_from_current_comparisons: 5
+conclusion: Documentation largement conservée mais restitution des inspirations incomplète après regroupement ; deux synthèses
+  manquantes, attribution et synthèse de Demand Planning à reprendre, doublons à nettoyer.
+limits:
+- Aucune reconsultation intégrale des 131 URLs ; les contrôles de présence ne prouvent pas seuls la qualité des sources.
+- Revue sémantique ciblée sur les évolutions et leurs successeurs ; aucune certification de toutes les affirmations inchangées.
+- SAP Reassignment et EDQA tentés directement le 21 septembre mais portail sans texte exploitable ; leur contenu historique
+  est conservé, pas présenté comme nouvellement vérifié.
+- 'L’absence d’une URL de comparaison ne signifie pas disparition du sujet : variantes d’édition et recouvrements doivent
+  être qualifiés.'
+- Aucune inspection des inspirations du glossaire métier ou des référentiels dans ce complément ; les nombres concernent les
+  128 fiches du modèle.
+node_checks:
+- id: BHV001
+  name: Existing Commitment Consideration
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV002
+  name: Network Stock Availability
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV003
+  name: Operational Availability Timing
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV004
+  name: Future Supply Projection
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV005
+  name: Scenario Construction
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV006
+  name: Simulation & Analysis
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV016
+  name: Scenario Execution Adaptation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV017
+  name: Group Supply Protection
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV018
+  name: Consumption Capping
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV019
+  name: Safety Stock Policy
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV020
+  name: Replenishment Regulation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV021
+  name: Promise Proposal
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV022
+  name: Promise Confirmation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV023
+  name: Promise Revision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV024
+  name: Inventory Rebalancing
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV025
+  name: Stock Consolidation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV026
+  name: Store Inventory Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV027
+  name: Distribution Center Inventory Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV028
+  name: Multi-Echelon Inventory Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV029
+  name: Periodic Physical Inventory
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV030
+  name: Cycle Counting
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV031
+  name: Spot Counting
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV032
+  name: Milestone-Based Reservation Policy
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV033
+  name: Time-Fenced Reservation Policy
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV034
+  name: Demand-Differentiated Reservation Policy
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV035
+  name: Risk-Adaptive Reservation Policy
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV036
+  name: Order Firming
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV037
+  name: Order Freezing
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV038
+  name: Order Preparation & Revision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV039
+  name: Order Release
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV040
+  name: Order Hold & Resume
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV043
+  name: Order Termination
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV044
+  name: Order Splitting
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV048
+  name: Policy-based Disposition
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV049
+  name: Value Recovery Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV050
+  name: Return to Stock
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV051
+  name: Repair and Refurbishment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV052
+  name: Return to Supplier
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV053
+  name: Return to Customer
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV054
+  name: Scrapping
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV055
+  name: Return for Credit
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV056
+  name: Return for Replacement
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV057
+  name: Return for Repair
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV058
+  name: Stock Procurement
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV059
+  name: Direct Delivery
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV060
+  name: Service Procurement
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV061
+  name: Initial Stocking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV062
+  name: Continuous Replenishment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV063
+  name: Consumption-Based Ownership Transfer
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV064
+  name: Aging-Based Ownership Transfer
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV065
+  name: Consignment Exit
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV066
+  name: Ship to Customer
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV067
+  name: Customer Pickup
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV068
+  name: Direct Delivery
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV069
+  name: Intercompany Sales
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV070
+  name: Initial Stocking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV071
+  name: Continuous Replenishment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV072
+  name: Inventory Rebalancing
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV073
+  name: Stock Consolidation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV074
+  name: Order-Driven Transfer
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV075
+  name: Additional Supply Feasibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV076
+  name: Fulfillment Alternative Feasibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV077
+  name: Commitment Rebalancing Feasibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV078
+  name: Supplier Confirmation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV079
+  name: Warehouse Visibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV080
+  name: Transportation Visibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV081
+  name: Store Visibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV082
+  name: Process Tracking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV083
+  name: Requirement-based Replenishment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV084
+  name: Target-based Replenishment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV085
+  name: Replenishment Adjustment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV086
+  name: Order Grouping
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV087
+  name: Order Merging
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: BHV091
+  name: Simulation & Analysis
+  comparison_count: 4
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/{edition}/faubm/key-actions-on-orders.html
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV092
+  name: Scenario Authorization
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/{edition}/faubm/overview-of-backlog-management-processes.html
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV094
+  name: Inventory Plan Application
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: false
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: BHV095
+  name: Demand Plan Publication
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: false
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D01
+  name: Inventory Management
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D01.c
+  name: Inventory Visibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D01.d
+  name: Stocktaking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D01.f
+  name: Inventory Tracking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D01.g
+  name: Record Inventory Movements
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D01.h
+  name: Consigned Inventory Management
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D02.b
+  name: Supply Protection
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D02.c
+  name: Reservation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D02.e
+  name: Supply Assignment
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D03
+  name: Fulfillment Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D03.i
+  name: Available-to-Promise (ATP)
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.j
+  name: Capable-to-Promise (CTP)
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.k
+  name: Profitable-to-Promise (PTP)
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.l
+  name: Delivery Schedule Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.m
+  name: Order Prioritization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.n
+  name: Fulfillment Commitment
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.o
+  name: Fulfillment Plan Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D03.p
+  name: Order Backlog Planning
+  comparison_count: 5
+  distinct_document_count_edition_normalized: 4
+  has_inspiration_synthesis: true
+  same_document_multiple_editions:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/{edition}/faubm/key-actions-on-orders.html
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D04
+  name: Service Requests
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D04.i
+  name: Sales Order
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.j
+  name: Purchase Order
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.k
+  name: Transfer Order
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.l
+  name: Customer Return
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.m
+  name: Supplier Return
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.n
+  name: Order Structuring
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.o
+  name: Order Lifecycle Management
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.q
+  name: Order Archiving
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.r
+  name: Consignment Replenishment Order
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D04.s
+  name: Optimization Request Management
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D05
+  name: Inventory Optimization
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D05.a
+  name: Inventory Target Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D05.c
+  name: Stock Redistribution Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D05.d
+  name: Group Protection Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D05.e
+  name: Replenishment Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D05.f
+  name: Inventory Optimization Planning
+  comparison_count: 6
+  distinct_document_count_edition_normalized: 6
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D05.g
+  name: Initial Stocking Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D05.h
+  name: Reservation Policy Decision
+  comparison_count: 3
+  distinct_document_count_edition_normalized: 3
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D05.i
+  name: Return Disposition Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D06
+  name: Process Management
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D06.b
+  name: Service Capacity Visibility
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D06.d
+  name: Process Orchestration
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D06.e
+  name: Service Selection Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D06.f
+  name: Process Adaptation Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D07.a
+  name: Service Requirements Decision
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D07.b
+  name: Backing Service Orders
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D07.c
+  name: Service Reconciliation
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D07.d
+  name: Operations Tracking
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D15
+  name: Order Promising
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: false
+- id: D17
+  name: Supply Planning
+  comparison_count: 2
+  distinct_document_count_edition_normalized: 2
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: D17.a
+  name: Demand Planning
+  comparison_count: 4
+  distinct_document_count_edition_normalized: 4
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 2
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+- id: universe-supply
+  name: Supply Chain Orchestration
+  comparison_count: 6
+  distinct_document_count_edition_normalized: 6
+  has_inspiration_synthesis: true
+  same_document_multiple_editions: []
+  identical_scope_approach_count: 0
+  sources_lost_on_surviving_node: []
+  name_definition_scope_or_inspiration_changed_since_release: true
+retired_inspiration_trace:
+- retired_id: BHV045
+  successor_ids:
+  - D02.e
+  previous_inspiration:
+    choice: Mettre en place les liens prévus dans un plan permet de concrétiser le choix retenu. Supply Assignment Plan Application
+      contrôle ce qui reste applicable et rend visibles les écarts, sans remplacer silencieusement le plan.
+    flow_scope: Affectations d’un plan retenu aux commandes concernées.
+    flow_approach: Appliquer les liens et signaler les impossibilités aux décisions responsables.
+    synthesis:
+    - SAP Supply Assignment matérialise des liens de ressources aux commandes. Son parcours distingue aussi résultats simulés
+      et exécutés. Ces deux documents montrent un passage du scénario à l’action, mais ne prouvent pas l’importation de tout
+      plan externe.
+    - FLOW explicite ce passage comme une responsabilité. Préserver des liens ou en réviser certains peut faire partie de
+      l’application ; le plan n’autorise ni réservation implicite ni modification d’Order par défaut.
+    examples:
+    - title: Illustration FLOW — un plan partiellement applicable
+      situation: Le plan retient 60 pièces présentes et 40 sur un arrivage ; au moment de l’application, 10 de cet arrivage
+        ne sont plus admissibles.
+      outcome: Les liens applicables et l’écart de 10 sont rendus visibles pour un nouvel arbitrage.
+      lesson: SAP documente l’affectation et ses résultats ; le traitement exact de cet écart est une illustration FLOW.
+      source_title: Supply Assignment (ARun)
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+      source_refs:
+      - U477
+      - ELM382
+      - CMP191
+  source_trace:
+  - title: Supply Assignment (ARun)
+    url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    - U477
+    - ELM382
+    - CMP191
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+  - title: Supply Assignment Run Workflow using Apps
+    url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html
+    source_refs:
+    - U477
+    - ELM381
+    - CMP191
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: false
+- retired_id: BHV046
+  successor_ids:
+  - D02.e
+  previous_inspiration:
+    choice: Compléter le manque sans défaire ce qui est déjà affecté stabilise la préparation des commandes. Incremental Supply
+      Assignment préserve les liens existants et traite le reliquat, sans créer un gel durable.
+    flow_scope: Besoins restant sans affectation.
+    flow_approach: Compléter les liens en conservant ceux du périmètre préservé.
+    synthesis:
+    - 'SAP fournit un exemple direct : sans réaffectation, 70 pièces déjà affectées sont conservées et les 30 manquantes sont
+      examinées. Microsoft préserve également des liens pour les demandes confirmées, mais dans une chaîne de planification
+      plus large.'
+    - FLOW nomme le bénéfice métier de stabilité. Incremental ne prescrit pas un algorithme ; si un lien conservé devient
+      irréalisable, l’exception appelle un arbitrage plutôt qu’une révision silencieuse.
+    examples:
+    - title: SAP — conserver 70 et compléter 30
+      situation: Une ligne demande 100 pièces ; 70 sont déjà affectées.
+      outcome: Sans option Reassignment, SAP conserve les 70 et recherche les 30 supplémentaires.
+      lesson: FLOW retient la politique de conservation pendant ce traitement, sans en déduire un gel permanent.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_refs:
+      - U477
+      - ELM378
+      - CMP191
+  source_trace:
+  - title: Backorder Processing — Reassignment
+    url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    - U477
+    - ELM378
+    - CMP191
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+  - title: Keep supply for confirmed demand
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    - U364
+    - CMP134
+    - U477
+    - ELM418
+    - CMP191
+    on_successor: true
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+- retired_id: BHV047
+  successor_ids:
+  - D02.e
+  previous_inspiration:
+    choice: Changer les ressources liées aux commandes permet d’appliquer un nouvel arbitrage sans réécrire leur demande.
+      Supply Reassignment révise seulement les affectations modifiables et respecte les engagements, réservations et gels.
+    flow_scope: Liens de ressources dont la révision est autorisée.
+    flow_approach: Appliquer les nouveaux liens en préservant les restrictions.
+    synthesis:
+    - 'SAP Reassignment peut remettre en jeu toutes les quantités d’une ligne. Microsoft Keep supply for confirmed demand
+      montre le choix inverse : préserver la couverture de demandes confirmées, avec des règles particulières au stock reçu.
+      Les sources éclairent la frontière entre révisable et protégé.'
+    - FLOW reprend Reassignment sans imposer une suppression et reconstruction complète. La [réaffectation](glossary:VER018)
+      applique le choix ; elle ne donne pas à elle seule le droit de dégrader une promesse.
+    examples:
+    - title: SAP — réexaminer les 100 pièces
+      situation: Une ligne de 100 pièces possède déjà 70 pièces affectées.
+      outcome: Avec Reassignment, SAP remet en jeu l’affectation de la ligne entière.
+      lesson: FLOW peut réviser seulement les liens utiles ; le périmètre révisable doit rester explicite.
+      source_title: Backorder Processing — Reassignment
+      source_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+      source_refs:
+      - U477
+      - ELM378
+      - CMP191
+  source_trace:
+  - title: Backorder Processing — Reassignment
+    url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+    source_refs:
+    - U345
+    - C99
+    - ELM215
+    - CMP123
+    - U364
+    - CMP134
+    - U477
+    - ELM378
+    - CMP191
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+  - title: Keep supply for confirmed demand
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+    source_refs:
+    - U470
+    - U471
+    - ELM308
+    - CMP186
+    - U477
+    - ELM418
+    - CMP191
+    on_successor: true
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+- retired_id: BHV088
+  successor_ids:
+  - D04.s
+  previous_inspiration:
+    choice: Engager une étude lorsque la situation le justifie, en explicitant les commandes concernées.
+    flow_scope: Qualifier le changement détecté, son effet sur les engagements et les commandes concernées, puis engager ou
+      compléter la demande de réexamen. Le comportement porte la réponse de la Supply ; il ne transforme pas chaque notification
+      en nouvelle demande.
+    flow_approach: Cibler les commandes dont la satisfaction doit être réexaminée après une situation préoccupante.
+    synthesis:
+    - Les sources éclairent le motif et la façon d’engager le travail.
+    - FLOW retient ce comportement pour rendre la demande d’optimisation lisible. Les fonctions de produit apportent des exemples
+      ; elles n’imposent ni le nom, ni un cycle commun, ni une réalisation informatique.
+    examples:
+    - title: Illustration FLOW — Une pénurie apparaît sur un arrivage
+      situation: Une pénurie apparaît sur un arrivage.
+      outcome: La demande cible les commandes affectées et précise le problème à résoudre.
+      lesson: Le périmètre découle de l’effet métier du changement ; une notification seule ne fixe pas la réponse.
+      source_title: EDQA Event-Driven Quantity Assignment
+      source_url: https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+      source_refs:
+      - ELM495
+      - U501
+      - CMP202
+  source_trace:
+  - title: EDQA Event-Driven Quantity Assignment
+    url: https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+    source_refs:
+    - ELM495
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+  - title: Overview of Supply Chain Orchestration
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauco/overview-of-supply-orchestration.html
+    source_refs:
+    - ELM496
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+- retired_id: BHV089
+  successor_ids:
+  - D04.s
+  previous_inspiration:
+    choice: Réexaminer régulièrement les possibilités de satisfaction avec une situation actualisée.
+    flow_scope: Prendre en charge une revue à l’échéance retenue, avec les besoins, ressources et priorités actualisés. Délimiter
+      le carnet examiné et les dépendances utiles pour construire une vision cohérente.
+    flow_approach: Réexaminer régulièrement la cohérence du carnet au-delà des seules alertes ponctuelles.
+    synthesis:
+    - Les deux documents Oracle éclairent des aspects complémentaires du même produit ; ils ne constituent pas un consensus
+      entre éditeurs.
+    - FLOW retient ce comportement pour rendre la demande d’optimisation lisible. Les fonctions de produit apportent des exemples
+      ; elles n’imposent ni le nom, ni un cycle commun, ni une réalisation informatique.
+    examples:
+    - title: Illustration FLOW — La revue du matin commence
+      situation: La revue du matin commence.
+      outcome: Le périmètre et les données de référence de l’étude sont identifiés.
+      lesson: Une échéance engage la revue ; elle ne vaut pas autorisation de changer les affectations.
+      source_title: Start Backlog Planning
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+      source_refs:
+      - ELM246
+      - U501
+      - CMP202
+  source_trace:
+  - title: Start Backlog Planning
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+    source_refs:
+    - ELM246
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+  - title: Overview of Backlog Management Processes
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/overview-of-backlog-management-processes.html
+    source_refs:
+    - ELM496
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: false
+- retired_id: BHV090
+  successor_ids:
+  - D04.s
+  previous_inspiration:
+    choice: Prendre en charge une question explicite et ses hypothèses, même sans anomalie préalable.
+    flow_scope: Recueillir l’objectif de l’étude, le périmètre demandé et les hypothèses à comparer. Préciser les contraintes
+      à conserver et la forme du résultat attendu, puis faire instruire la demande.
+    flow_approach: Permettre une étude volontaire sur une question précise sans attendre un incident ou une échéance.
+    synthesis:
+    - Les deux documents Oracle éclairent des aspects complémentaires du même produit ; ils ne constituent pas un consensus
+      entre éditeurs.
+    - FLOW retient ce comportement pour rendre la demande d’optimisation lisible. Les fonctions de produit apportent des exemples
+      ; elles n’imposent ni le nom, ni un cycle commun, ni une réalisation informatique.
+    examples:
+    - title: Illustration FLOW — Une priorité temporaire est envisagée
+      situation: Une priorité temporaire est envisagée.
+      outcome: L’étude compare ses conséquences avant toute décision de l’appliquer.
+      lesson: L’initiative volontaire et le résultat attendu caractérisent ce déclenchement.
+      source_title: Start Backlog Planning
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+      source_refs:
+      - ELM246
+      - U501
+      - CMP202
+  source_trace:
+  - title: Start Backlog Planning
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+    source_refs:
+    - ELM246
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+  - title: Key Actions on Orders
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+    source_refs:
+    - ELM357
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+- retired_id: BHV093
+  successor_ids:
+  - D04.s
+  - D02.e
+  previous_inspiration:
+    choice: Relier l’autorisation à la prise en compte constatée et rendre les écarts exploitables dans la demande.
+    flow_scope: Solliciter l’application du résultat dans la portée autorisée, puis recueillir sa prise en compte, ses écarts
+      ou son impossibilité. Faire progresser la demande en conséquence ; une application partielle ou devenue irréalisable
+      appelle une suite explicite, sans relance ou réoptimisation automatique présumée.
+    flow_approach: Savoir si le résultat autorisé a été pris en compte et traiter les écarts constatés.
+    synthesis:
+    - Les sources éclairent la distinction entre proposition, décision et résultat de la prise en charge.
+    - FLOW retient ce comportement pour rendre la demande d’optimisation lisible. Les fonctions de produit apportent des exemples
+      ; elles n’imposent ni le nom, ni un cycle commun, ni une réalisation informatique.
+    examples:
+    - title: Illustration FLOW — Le plan est autorisé mais une ressource a changé
+      situation: Le plan est autorisé mais une ressource a changé.
+      outcome: La demande distingue les affectations appliquées de la part à réexaminer.
+      lesson: Sollicitation, acceptation et application constatée conservent des sens différents.
+      source_title: Key Actions on Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+      source_refs:
+      - ELM357
+      - U501
+      - CMP202
+  source_trace:
+  - title: Key Actions on Orders
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+    source_refs:
+    - ELM357
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: true
+    elsewhere_in_current_examples: true
+  - title: Service Process Studio Fulfillment Flows
+    url: https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5
+    source_refs:
+    - ELM497
+    - U501
+    - CMP202
+    on_successor: false
+    elsewhere_in_current_comparisons: false
+    elsewhere_in_current_examples: false
+absent_comparison_urls:
+- https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauco/overview-of-supply-orchestration.html
+- https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5
+- https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+- https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+- https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+findings:
+- id: INS558-01
+  priority: à traiter en premier
+  title: Transmission incomplète des inspirations des comportements regroupés
+  node_ids:
+  - D02.e
+  - D04.s
+  - D03.p
+  observation: Les URLs des sources de toutes les fiches conservées sont préservées. En revanche, cinq URLs des comportements
+    retirés ne figurent plus dans les comparaisons du périmètre courant. Les autres appuis des comportements retirés ne sont
+    pas tous rattachés au successeur ; plusieurs sont ailleurs dans le modèle.
+  examples:
+  - L’exemple SAP de conservation de 70 pièces et complément de 30, opposé au réexamen des 100 pièces, n’est plus présenté
+    dans Supply Assignment.
+  - L’appui SAP EDQA au déclenchement par impondérable reste dans les preuves historiques ; le successeur n’en restitue pas
+    la comparaison.
+  - Le suivi de réalisation issu de Salesforce Service Process Studio n’est plus repris dans les comparaisons courantes.
+  interpretation: 'Perte de restitution de certains appuis et exemples ; aucune destruction des sources historiques. Une URL
+    absente ne suffit pas à conclure à une fonction non étayée : certaines références se recouvrent ou ont une autre édition.'
+  recommendation: Rattacher aux successeurs les apports toujours utiles avec leur limite et leur provenance, ou justifier
+    explicitement leur remplacement. Fusionner les comparaisons, pas seulement les descriptions métier ; ne pas recréer les
+    comportements retirés.
+  source_refs:
+  - U558
+  - U541
+  - U552
+  - ELM378
+  - ELM381
+  - ELM382
+  - ELM495
+  - ELM496
+  - ELM497
+- id: INS558-02
+  priority: complément éditorial
+  title: Deux nouveaux comportements sans synthèse d’inspiration illustrée
+  node_ids:
+  - BHV094
+  - BHV095
+  observation: Inventory Plan Application et Demand Plan Publication disposent chacun de deux documents de comparaison, mais
+    pas de market_inspiration (choix, périmètre/approche FLOW, synthèse et exemple). Les 126 autres fiches examinées en disposent.
+  interpretation: Les sources ne manquent pas ; la présentation est moins complète. Le composant Atlas affiche dans ce cas
+    des cartes de comparaison, sans le tableau de synthèse illustré. Ce constat porte sur le rendu possible du backlog lors
+    d’une future publication, pas sur un changement déjà publié.
+  recommendation: Compléter la synthèse et un exemple clairement qualifié, sans inventer une équivalence éditeur. Conserver
+    la distinction export technique / publication métier et transmission / application effective.
+  source_refs:
+  - U558
+  - U552
+  - ELM566
+  - ELM568
+  - ELM569
+  - ELM570
+  evidence:
+  - app/src/components/MarketComparisons.tsx
+  - modeles/schemas/urbanism.schema.json
+- id: INS558-03
+  priority: à corriger avant restitution
+  title: Demand Planning mêle approche FLOW et description des sources dans le tableau
+  node_ids:
+  - D17.a
+  observation: Dans la ligne Oracle Demand Plan, approach_summary parle de prise en compte des possibilités et apports planifiés.
+    Le passage primaire cité décrit la prévision collaborative/statistique et sa consommation par un plan Supply ou Replenishment
+    ; il ne démontre pas cette formulation. La ligne SAP décrit la distinction entre plan, demande connue et engagement, qui
+    est surtout notre frontière FLOW.
+  interpretation: Proximité fonctionnelle recevable, mais attribution trop large dans la colonne Approche des éditeurs. La
+    synthèse actuelle de D17.a ne restitue par ailleurs que les appuis Oracle de publication, alors que SAP reste un appui
+    important au cœur de Demand Planning.
+  recommendation: Décrire Oracle par prévision collaborative/statistique et alimentation des plans ; SAP par signaux, prévision,
+    collaboration et demand sensing. Placer les frontières et adaptations propres à FLOW dans la ligne FLOW et la synthèse
+    ; rétablir cette synthèse au niveau de la capacité entière.
+  source_refs:
+  - U558
+  - ELM556
+  - ELM557
+  primary_evidence:
+  - url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+    consulted_on: '2026-09-21'
+    version: 26B
+    locator: Tableau, ligne Demand Plan
+  - url: https://www.sap.com/products/scm/integrated-business-planning/features/demand-planning.html
+    consulted_on: '2026-09-21'
+    version: page évolutive
+    locator: Forecast ; collaboration ; demand sensing
+- id: INS558-04
+  priority: qualité de lecture
+  title: Éditions en doublon et colonnes répétitives après enrichissement
+  node_ids:
+  - BHV091
+  - BHV092
+  - BHV094
+  - BHV095
+  - D03.p
+  - D04.s
+  - D05.f
+  - D17.a
+  observation: BHV091, BHV092 et D03.p présentent un même document Oracle en plusieurs éditions. Seize lignes sur huit fiches
+    ont des textes Périmètre et Approche identiques. Même après normalisation des éditions, chaque fiche conserve au moins
+    deux documents distincts.
+  interpretation: Pas de manque numérique de sources. Ces répétitions allongent le tableau sans expliciter ce que chaque référence
+    apporte au choix du modèle.
+  recommendation: Présenter l’édition pertinente au premier plan, garder les précédentes en provenance et distinguer couverture
+    et manière d’agir dans les colonnes. Préserver les apports spécifiques au lieu d’accumuler les lignes.
+  source_refs:
+  - U558
+  - U552
+follow_up_U560:
+  source_refs:
+  - U560
+  implementation: modeles/backlog/model-consolidation-U560.yaml
+  status: mise en œuvre autonome ; constat initial conservé ; résultats détaillés dans le manifest
+  remaining_open: Cas historiques non identifiés de besoins prévisionnels sans commande, AUD557-05.

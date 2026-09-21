@@ -2417,3 +2417,83 @@ Business Services restait un univers vide adopté en U173, accompagné du terme 
 **correction**
 
 Retirer universe-case et TER067 du backlog courant, sans univers de remplacement ni déplacement de capacités. Neutraliser le rattachement du terme Case (TER064), corriger les deux principes qui citaient cet univers et la frontière de Process Tracking (BHV082). Conserver les responsabilités Supply, les 346 relations du backlog, les définitions validées des capacités/comportements et leurs accords. Consigner la priorité dans PRINCIPLE-SUPPLY-FIRST, les conventions et la feuille de route. L’accord U173 est remplacé dans cette portée, sans suppression des preuves antérieures ; identifiants non réutilisables. Les annexes datées et publications demeurent historiques. État avant correction : audits/2026-09-19-business-services-U472/before/. Aucun catalogue Commerce ni publication implicite.
+
+
+## C110
+
+**id**
+
+C110
+
+**sources**
+
+U514, U515, CMP208, CMP209
+
+**constat**
+
+La réponse à U514 élargissait les sources aux familles de données et proposait de définir Core Data par le maintien métier de cohérence, validité et version. U515 précise un autre axe : domaines sources pour Ingestion, besoins des capacités Supply pour les Vues, stockage pour Core Data.
+
+**correction**
+
+Reprendre exactement ces trois axes dans l’analyse courante. Le stockage peut être organisé logiquement sans technologie imposée ; il n’est pas renommé en gestion métier. Les interprétations précédentes restent dans history_U514 de l’annexe. Les correspondances plusieurs-à-plusieurs sont une lecture proposée, pas des cardinalités adoptées. La qualification des sous-éléments comme Behaviors reste distincte de leur utilité architecturale. Aucun changement du modèle canonique.
+
+
+## C111
+
+**id**
+
+C111
+
+**sources**
+
+U519, U522, U523, U524, CMP213
+
+**constat**
+
+La proposition exploratoire comptait Inventory Planning Context en mobilisant Oracle Replenishment Planning. Le terme sourcing pouvait également faire confondre les lieux d’exécution de Fluent avec le contexte d’approvisionnement achat FLOW. U524 précise que Fluent Sourcing correspond au Network FLOW et que PLAN est hors orchestration.
+
+**correction**
+
+Retirer Inventory Planning Context de la matrice active et conserver les documents PLAN comme preuve de la couverture ERP supplémentaire d’Oracle. Rattacher la comparaison corrigée à Visibility selon U523, avec Oracle et Fluent situés à leurs périmètres respectifs. Les anciennes propositions restent des preuves datées. La portée sur les capacités canoniques déjà nommées Inventory Planning et les décisions de réassort est clarifiée séparément ; aucune suppression automatique.
+
+
+**Précision U525 :** la frontière PLAN/orchestration reste à arbitrer (Q078). Le retrait de la matrice active U524 ne devient pas un rejet définitif d’Inventory Planning Context ; ce regroupement reste en attente. L’analytics ne suffit pas à exclure une capacité de l’orchestration. Aucun retrait canonique.
+
+## C112
+
+**id**
+
+C112
+
+**sources**
+
+U147, U562, U563, U564, CMP235
+
+**constat**
+
+La consolidation autonome U560 avait restreint Supply Assignment aux commandes identifiées et orienté les prévisions sans commande vers d’autres responsabilités. U562 confirme explicitement que lier une ressource précise à un besoin prévisionnel avant commande relève de Supply Assignment.
+
+**correction**
+
+Retirer cette restriction de la définition, du périmètre, des exemples et des inspirations du comportement, ainsi que des renvois concernés d’Order Backlog Planning et Stock Redistribution Decision. Distinguer calcul de la demande, protection d’une enveloppe, choix du plan et application du lien ressource-besoin. Sept cas concrets sont conservés dans modeles/backlog/supply-assignment-cases-U562.yaml. La question de périmètre AUD557-05 est qualifiée ; celle du Planning parent et de la décision du cas sans commande reste ouverte. Aucun renommage, déplacement ou élargissement automatique des capacités de décision ; baseline et conclusions historiques U560 conservées. Oracle et SAP étayent le pegging vers des besoins sans commande, avec des contextes et effets propres.
+
+
+**Suite C112 — U565 :** Laurent retient un même Planning pour les commandes et les prévisions. La responsabilité du Planning est donc attribuée à D03.p par extension de son périmètre, sans nouveau parent de Supply Assignment. La décision du plan existante et ses comportements sont mis en cohérence selon les principes retenus. Le nom Order Backlog Planning reste à qualifier ; la responsabilité de couverture amont U555 n’est pas réintroduite. CMP236 distingue les appuis ERP et OMS de Microsoft.
+
+## C113
+
+**id**
+
+C113
+
+**sources**
+
+U537, U573, U574, U575, CMP239, CMP240, CMP241
+
+**constat**
+
+La proposition U573/U574 réintroduisait Allocation dans deux noms, alors que son ambiguïté avait motivé Supply Assignment. Elle transformait six familles de suites du plan en comportements distincts, sans démontrer que leurs effets différents exigeaient cette décomposition à la maille landscape. U575 recentre la question sur l’application du Master Plan validé.
+
+**correction**
+
+Planning Management est le nom explicitement retenu pour le pilotage du travail. Recommander un seul comportement Master Plan Application, en conservant affectations commandes/prévisions, échéanciers, Orders et politiques comme catégories d’effets et coopérations décrites. Les décisions restent distinctes et les capacités responsables gardent leurs engagements. Cette consolidation est proposée, pas réputée adoptée par la question de Laurent. La structure antérieure, les preuves et les onze cas sont conservés ; aucun changement canonique anticipé. Voir modeles/backlog/master-plan-application-U575.yaml.

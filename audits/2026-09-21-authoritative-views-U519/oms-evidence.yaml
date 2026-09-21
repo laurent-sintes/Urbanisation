@@ -1,0 +1,217 @@
+audit: Vues nécessaires à Supply Chain Orchestration — U519
+status: proposed_analysis
+consulted_on: '2026-09-21'
+scope: 'Cinq documents primaires effectivement ouverts : Microsoft IOM/SCM et IBM Sterling. IDS OMS provisoires ; aucun registre
+  ni modèle modifié.'
+method: Les inputs et regroupements natifs éclairent les besoins des consommateurs. Leur classement en références, politiques,
+  états opérationnels et résultats constitue une interprétation FLOW, pas une taxonomie éditeur.
+documents:
+- id: OMS1
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  title: Call the Intelligent Order Management Fulfillment optimization engine (DOM) via API
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/calling-intelligent-fulfillmen-optimization-engine
+  version: Fonction annoncée depuis avril 2023 ; prérequis documentaire 1.0.0.6035
+  source_updated_at: '2026-01-30'
+  locator: Introduction ; Prerequisites ; Functionality description ; API reference guide / Model
+  actually_consulted: Entrées minimales de l'appel, configuration transport nécessaire, champs de contexte et résultat renvoyé.
+  findings: L'appel reçoit produits, quantités et adresse. L'option transport mobilise calendriers, ramasses, poids/dimensions
+    et paramètres tarifaires, puis une API transporteur. La réponse associe plan de fulfillment et résultat transport.
+  reference_inputs:
+  - Identité et dimensions de variante ; poids et dimensions physiques
+  - Correspondance source-entrepôt ; calendriers et ramasses ; paramètres tarifaires transport
+  policy_inputs:
+  - Stratégie et contraintes préconfigurées
+  operational_inputs:
+  - Demande et quantité ; destination de commande ; disponibilité via Inventory Visibility
+  decision_results:
+  - Source retenue par ligne ; tarif et date estimés produits par le service
+  proposed_correspondence: Appui partiel à une vue de contexte de fulfillment réunissant Product Reference, Fulfillment Network
+    et Backing Service Catalog.
+  limits: API de calcul, pas API de référence pure. L'adresse transactionnelle n'est pas automatiquement une donnée maître.
+    L'option transport documentée cible FedEx.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective des passages nommés ; pas de reproduction intégrale ni de payload. Aucune preuve de déploiement
+    Beaumanoir.
+- id: OMS2
+  vendor: Microsoft
+  product: Dynamics 365 Intelligent Order Management
+  title: Fulfillment and Returns Optimization provider overview
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization
+  version: Documentation en ligne ; version produit non précisée
+  source_updated_at: '2026-01-28'
+  locator: Sources ; Source lists ; Maximum number of order lines constraint ; Maintaining safety stock ; Strategies ; Fulfillment
+    plans
+  actually_consulted: Données des lieux, regroupements, limites de traitement, mesures de stock et plan calculé.
+  findings: Les sources portent localisation, fuseau, délai de traitement et heure limite. Les listes regroupent les sources.
+    Le moteur distingue configurations, mesures Onhand/ATP Onhand et résultat d'affectation ; un plafond journalier de lignes
+    est confronté à son utilisation.
+  reference_inputs:
+  - Lieux, type, localisation, fuseau ; délai de traitement et heure limite
+  - Listes de sources et mapping d'entrepôt
+  policy_inputs:
+  - Stratégies ; limites de fractionnement ; seuil de sécurité ; plafond de lignes
+  operational_inputs:
+  - Stock mesuré ; quantités demandées ; consommation du plafond journalier
+  decision_results:
+  - 'Fulfillment plan : affectation, quantités et résultat par ligne'
+  proposed_correspondence: Appui à une vue de références de réseau, complétée par des entrées opérationnelles et des politiques
+    distinctes pour Supply Assignment.
+  limits: Inventaire et capacité disponible ne deviennent pas des références par leur consommation dans le même moteur. Le
+    rattachement FLOW des politiques reste à arbitrer. Le nom du produit ne prouve pas ici la couverture des retours.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective des passages nommés ; pas de reproduction intégrale ni de payload. Aucune preuve de déploiement
+    Beaumanoir.
+- id: OMS3
+  vendor: IBM
+  product: Sterling Order Management System Software
+  title: Defining a node's sourcing and scheduling
+  url: https://www.ibm.com/docs/en/order-management-sw/10.0.0?topic=attributes-defining-nodes-sourcing-scheduling
+  version: 10.0.0
+  source_updated_at: non affiché
+  locator: Table 1. Node sourcing/scheduling tab
+  actually_consulted: Procure To Ship Allowed ; Requires Transfer Acceptance ; Work Order Creation Is Allowed ; Shipping/Receiving
+    Calendar ; Receipt Processing Time ; Node Can Ship To.
+  findings: Le paramétrage associe lieux, relations organisationnelles, possibilités d'approvisionnement/transfert, services,
+    calendriers et temps de traitement. Une acceptation de transfert peut confirmer la disponibilité avant poursuite de la
+    commande.
+  reference_inputs:
+  - Nœud, types de destinations desservies ; adresses et entité juridique
+  - Calendriers de réception/expédition ; temps de traitement ; services réalisables
+  policy_inputs:
+  - Permissions de substitution et d'allocation ; exigence d'acceptation du transfert
+  operational_inputs:
+  - Commande et approvisionnement chaîné ; acceptation confirmant la disponibilité
+  decision_results:
+  - Dates calculées d'expédition ou de disponibilité
+  proposed_correspondence: Appui à une composition réseau-parties-services pour qualifier les possibilités de fulfillment
+    et le contexte temporel.
+  limits: Paramètres d'un produit, pas catalogue de vues standard. Calendrier configuré et disponibilité effectivement confirmée
+    restent différents ; un délai de référence n'est pas une promesse.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective des passages nommés ; pas de reproduction intégrale ni de payload. Aucune preuve de déploiement
+    Beaumanoir.
+- id: OMS4
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management — Planning Optimization
+  title: Master planning with purchase trade agreements
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/purchase-trade-agreement
+  version: Documentation en ligne ; version produit non précisée
+  source_updated_at: '2026-05-29'
+  locator: Prepare your system... ; Prepare a released product... ; Examples of how master planning finds vendor and lead
+    times
+  actually_consulted: Données et priorités qui déterminent fournisseur et délai pour l'ordre d'achat planifié, y compris conversion
+    des devises.
+  findings: La sélection mobilise produit, fournisseur, prix et délai des purchase trade agreements, paramètres par défaut
+    et dérogations. Les prix peuvent être comparés entre devises lorsque le taux nécessaire existe.
+  reference_inputs:
+  - Produit, fournisseur, dimensions pertinentes
+  - Prix, devise, délai fournisseur et taux de change
+  policy_inputs:
+  - Priorité au prix ou au délai ; dérogations de couverture ; fournisseur imposé
+  operational_inputs:
+  - Besoin de l'ordre planifié ; fournisseur éventuellement porté par une prévision d'approvisionnement
+  decision_results:
+  - Fournisseur et délai retenus pour l'ordre d'achat planifié
+  proposed_correspondence: Appui partiel à une vue de contexte d'approvisionnement réunissant produit, fournisseur et conditions
+    tarifaires/de délai.
+  limits: Purchase trade agreement est le terme produit ; ce document ne prouve pas un Agreement FLOW complet ni un engagement
+    fournisseur vivant. La priorité mono-critère du produit n'est pas adoptée pour FLOW.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective des passages nommés ; pas de reproduction intégrale ni de payload. Aucune preuve de déploiement
+    Beaumanoir.
+- id: OMS5
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management
+  title: Sales returns
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+  version: Documentation en ligne ; version produit non précisée
+  source_updated_at: '2026-04-20'
+  locator: Create a return order header ; Create return order lines ; Return reason codes ; Disposition codes and disposition
+    actions ; Return order process
+  actually_consulted: Références d'en-tête, reprise de la vente facturée, motifs/configuration de disposition et décision
+    après inspection.
+  findings: Le retour mobilise client, site de réception et nomenclatures de motifs. La ligne de vente facturée apporte produit,
+    quantité, prix, remise et coût historiques. L'inspection précède la décision de disposition.
+  reference_inputs:
+  - Identité client et produit ; lieu de retour
+  - Nomenclatures de motifs et actions possibles
+  policy_inputs:
+  - Durée de validité configurée ; correspondances disposition/frais
+  operational_inputs:
+  - Vente et facture d'origine ; quantité vendue ; demande de retour ; inspection
+  decision_results:
+  - Autorisation, disposition et suites de remplacement ou crédit
+  proposed_correspondence: Appui à une vue de références du retour, à joindre au dossier transactionnel et aux constats de
+    contrôle.
+  limits: Le prix historique de vente n'est pas le Price Book courant. Un code configuré et la disposition décidée pour un
+    exemplaire sont distincts. Cette source unique ne suffit pas à consacrer une famille marché standard.
+  consulted_on: '2026-09-21'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective des passages nommés ; pas de reproduction intégrale ni de payload. Aucune preuve de déploiement
+    Beaumanoir.
+candidate_view_families:
+- id: OV1
+  proposed_name: Fulfillment Reference Context
+  question: Quelles sources et prestations sont compatibles avec ce produit, ce destinataire et cette date ?
+  references:
+  - Product Reference
+  - Party / Role
+  - Fulfillment Network
+  - Backing Service Catalog
+  content: Caractéristiques logistiques, relations et destinations desservies, services réalisables, horaires et délais de
+    référence.
+  support:
+  - OMS1
+  - OMS2
+  - OMS3
+  live_inputs_outside_view: Stocks, disponibilité et consommation de capacité, demande courante, acceptation d'un transfert.
+  decisions_outside_view: Affectation retenue et promesse calculée.
+  limit: Contexte candidat, pas liste d'options déjà faisables. Les tests sur stock, capacité et politiques appartiennent
+    aux consommateurs.
+- id: OV2
+  proposed_name: Procurement Reference Context
+  question: Auprès de qui ce produit peut-il être approvisionné et selon quelles conditions de référence ?
+  references:
+  - Product Reference
+  - Party / Role
+  - Price Book
+  - Agreement
+  - Fulfillment Network
+  content: Identité fournisseur, relations d'approvisionnement et de destination, données tarifaires et délais reçus.
+  support:
+  - OMS3
+  - OMS4
+  live_inputs_outside_view: Besoin, ordres ouverts, acceptations et engagements effectivement disponibles.
+  decisions_outside_view: Fournisseur, quantité et date retenus ; commande d'achat émise.
+  limit: Agreement figure comme rapprochement FLOW conditionnel ; le purchase trade agreement Microsoft ne prouve pas son
+    périmètre complet. Le corpus ne prouve pas une liste exhaustive des fournisseurs autorisés.
+- id: OV3
+  proposed_name: Return Reference Context
+  question: Quelles références de produit, de partie, de lieu et de traitement sont nécessaires pour instruire ce retour ?
+  references:
+  - Product Reference
+  - Party / Role
+  - Fulfillment Network
+  content: Identités, lieu de réception et valeurs de référence utiles pour qualifier le retour.
+  support:
+  - OMS5
+  live_inputs_outside_view: Vente/facture d'origine, quantités déjà vendues/retournées, demande, examen de l'exemplaire.
+  decisions_outside_view: Éligibilité, autorisation, disposition, remplacement ou crédit.
+  limit: 'Famille à instruire : un seul document primaire de ce corpus. Aucune gestion des retours ni règle de disposition
+    nouvelle n''est rattachée implicitement à Authoritative Data.'
+cross_cutting_interpretation: Les mêmes sujets peuvent contribuer à plusieurs vues adaptées aux consommateurs. Les délais/calendriers
+  forment une composante transverse du contexte de fulfillment et d'approvisionnement ; les séparer en vue autonome n'est
+  pas imposé par le corpus. Une jointure de consultation ne transfère pas l'autorité sur stock, capacité, états ou décisions
+  à Authoritative Data.
+access_limits:
+- url: https://www.ibm.com/docs/en/order-management?topic=components-inventory-availability-promising
+  result: Ouverture HTTP 403 ; variante Software 10.0.0 inaccessible. Exclu des preuves.
+- url: https://www.ibm.com/docs/en/order-management?topic=attributes-defining-nodes-sourcing-scheduling
+  result: Ouverture HTTP 403 ; version Software 10.0.0 ouverte avec succès et retenue sous OMS3.
+- url: https://www.ibm.com/docs/en/sip?topic=promising-managing-rules
+  result: Ouverture HTTP 403 ; exclu des preuves.

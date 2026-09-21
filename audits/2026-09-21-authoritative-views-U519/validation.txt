@@ -1,0 +1,12 @@
+U519–U521 — contrôles sur l’état final du 21 septembre 2026
+
+Sources réindexées : 2046 ; fichiers figés inchangés.
+validate_models.py : 0 erreur, 157 nœuds backlog, 56 capacités.
+Tests market_inspiration et market_reference_policy : 15 réussis.
+Vue backlog régénérée.
+git diff --check : réussi.
+Liens locaux du rapport : vérifiés.
+18 documents primaires indexés ; 2 comparaisons CMP212 présentes dans la fiche canonique avec URLs, versions, passages, similitudes, différences et position FLOW.
+Intégrité : empreinte finale du modèle vérifiée contre l’annexe ; changement métier limité aux champs éditoriaux de comparaison de l’Area et à leurs métadonnées. Capture de la fiche antérieure conservée.
+Aucune release, modification de snapshot, commit ou push.
+

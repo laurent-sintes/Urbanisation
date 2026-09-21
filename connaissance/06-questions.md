@@ -2355,3 +2355,100 @@ Ouverte. La distinction Case/Order et le domaine Order Management commun sont ac
 **Évolution Q077 — U212–U215, 15 septembre 2026**
 
 Partiellement répondue : U214 adopte le découpage par cinq types d’ordres, Order Structuring et Order Lifecycle Management, en remplacement de D04.e–h. Fractionnement, regroupement et répartition sont explicités dans Structuring ; affermissement, lancement, attente/reprise, report, annulation et clôture dans Lifecycle. Les descriptions détaillées U215 sont proposées. La question demeure ouverte sur les règles par type, autorités, effets sur promesses/réservations/prestations, grain d’imputation, cardinalités et volumétrie. Voir `modeles/backlog/d04-refactoring.yaml`.
+
+
+## Q078
+
+**id**
+
+Q078
+
+**theme**
+
+Frontière PLAN, analytics et Supply Chain Orchestration
+
+**question**
+
+Quelles responsabilités de planification relèvent de l’orchestration Supply opérationnelle et lesquelles relèvent de la planification amont, notamment pour Inventory Planning et les décisions de réassort déjà présentes dans FLOW ? Quels grands besoins de Visibility en découlent ?
+
+**enjeu**
+
+Définir la frontière par la finalité et la responsabilité métier, sans déduire un retrait du seul recours à l’analytics ni recopier le périmètre complet de l’ERP Oracle. La finalité opérationnelle ou de préparation des équilibres futurs est un axe proposé à discuter, pas un critère validé.
+
+**source**
+
+U524, U525 ; CMP213 ; 21 septembre 2026.
+
+**statut**
+
+Ouverte — arbitrage explicitement différé par Laurent en U525. Aucun retrait de capacité ni frontière définitive adoptés.
+
+**reponse**
+
+Sourcing Fluent → Network FLOW et la couverture ERP plus large d’Oracle restent retenus. Inventory Planning Context demeure en attente dans la comparaison Visibility ; les capacités canoniques restent conservées.
+
+
+**Évolution Q078 — U526–U527, 21 septembre 2026 :** Laurent propose d'examiner une Area de planification en conservant l'adaptabilité dans les Areas opérationnelles, et précise le terme impondérable. CMP214 compare SAP, Oracle, Kinaxis et les extraits primaires accessibles de SCOR DS. Proposition Codex : Supply Planning porte la cohérence et la révision des plans ; les Areas opérationnelles adaptent leurs décisions et opérations. Le nom Supply Chain Orchestration peut être conservé avec une définition explicite. Périmètre exact, capacités et impacts Visibility restent à arbitrer ; aucune création ou migration adoptée. Voir [l'annexe U526](../modeles/backlog/supply-planning-area-review-U526.yaml).
+
+
+**Précision Q078 — U528 :** Order Backlog Planning relève de l'opérationnel ; son rattachement à Fulfillment Optimization est conservé et n'est plus en arbitrage pour Supply Planning. Inventory Planning reste à examiner. Q078 demeure ouverte sur le contenu d'une éventuelle Area de planification et les besoins Visibility associés, sans déplacement automatique ni extension à la planification de saison.
+
+
+**Précision Q078 — U529 :** approche du plan d'ensemble retenue, actualisation régulière explicite et aucune assimilation au début de saison. Le réassort dans l'opérationnel est une piste de Laurent, à conserver comme telle. Reste à préciser la responsabilité propre de l'Area envisagée et l'articulation d'Inventory Planning, sans migration automatique. Les besoins Visibility en découleront.
+
+
+**Évolution Q078 — U530 :** le principe de la planification comme Area dans Supply Chain Orchestration est désormais retenu. D17 Supply Planning est intégrée au backlog avec un libellé de travail et des descriptions proposées. L'exemple MAP précise le plan d'ensemble ; la piste PLM reste ouverte. Restent à arbitrer les capacités de l'Area, Inventory Planning, le réassort et les besoins Visibility. Order Backlog Planning reste opérationnel. Le retrait global de PLAN évoqué en U524 n'est plus le cadrage courant.
+
+
+**Complément Q078 — U531 :** MAP produit aussi des indicateurs de prévision de ventes saisonnières et plurisaisonnières, alimentés par les ventes. La définition du plan d'ensemble doit permettre ces horizons et l'actualisation régulière. La distinction entre prévision de demande, planification des apports et demandes opérationnelles est à préciser au niveau capacité, sans dupliquer automatiquement tout MAP dans D17.
+
+
+**Comparaison Q078 — U532 :** prise en compte des précommandes B2B précoces par MAP ajoutée aux faits. Deux options instruites : Area Planning avec Demand Planning et Supply Planning, ou Domain PLAN distinct pour Demand Planning. CMP217 recommande la première au périmètre établi ; la seconde demande une finalité transverse explicite et ne résulte ni de l'outil MAP ni des horizons saisonniers. Aucun choix nouveau adopté ; D17 et son rattachement U530 restent courants. Voir [planning-options-U532.yaml](../modeles/backlog/planning-options-U532.yaml).
+
+
+**Évolution Q078 — U533 :** option A adoptée : Area Planning avec Demand Planning et Supply Planning dans Supply Chain Orchestration. Audit des 56 capacités antérieures, dont les 16 décisions ; deux capacités ajoutées, aucune déplacée. L’audit recommande de conserver les décisions spécialisées dans leurs Areas et de qualifier les décisions propres au plan de demande et au plan de couverture. Inventory Planning reste le principal chevauchement à préciser, avec recommandation de le conserver comme planification spécialisée du stock. Q078 reste partiellement ouverte sur ces responsabilités et les coopérations ; le choix Area/Domain est tranché à ce stade. [Audit](../audits/2026-09-21-planning-U533/rapport.md).
+
+
+**Précisions Q078 — U534–U536 :** Supply Planning est peut-être trop large ; D17.b reste en réexamen. Assignment Planning décrit par Laurent est rapproché des responsabilités existantes D03.p/D03.o/D02.e, avec distinction ventes seules/tous Orders. Aucun doublon ou déplacement créé. CMP219 distingue termes établis, couvertures partielles, adaptations FLOW et absence de preuve d’une optimisation conjointe promesse/profit/stock ; aucune innovation revendiquée par défaut.
+
+
+**Précision Q078 — U537–U538 :** appliquer le plan relève du Planning comme comportement ; définir, maintenir et fournir sa configuration reste extérieur, notamment Supply Protection. Réexaminer Supply Assignment et BHV045–047 au regard de ce principe, sans déplacement automatique. [Réexamen](../modeles/backlog/plan-application-review-U537.yaml). Les capacités partenaires ne deviennent pas des comportements du seul fait de leur mobilisation.
+
+
+**Suite Q078 — U539–U541 :** après clarification, Supply Assignment devient comportement de Order Backlog Planning, nom conservé. Les configurations restent extérieures. [Audit transversal](../audits/2026-09-21-planning-principle-U540/rapport.md) des capacités et comportements ; restent ouverts le nom/périmètre de D17.b, l’application des autres plans et la lisibilité demande de réexamen/Planning. Aucune nouvelle Area Supply Planning créée.
+
+
+**Approfondissement Q078 — U542 :** application propre à Demand Planning, Inventory Planning et au plan de couverture décrite dans [planning-application-options-U542.yaml](../modeles/backlog/planning-application-options-U542.yaml), CMP222. Trois résultats : demande applicable, actions de stock, apports à engager/réviser. La frontière d’autorité entre plan de stock et plan de couverture reste à arbitrer pour éviter deux applications sur la même action. Aucun nom candidat ni nouveau comportement adopté.
+
+
+**Réorientation Q078 — U543 :** Inventory Planning est jugé trop agrégé : le stock est la cible, les intentions diffèrent. Étude [par intentions](../modeles/backlog/inventory-planning-intentions-U543.yaml), CMP223. Réassort, rééquilibrage et implantation candidats ; consolidation à éprouver. Nom/agrégation de D05.f en réserve ; parent et capacités de remplacement non adoptés. La proposition générique Inventory Plan Application U542 est suspendue dans cette portée.
+
+
+**Alternative Q078 — U544 :** Inventory Optimization Planning proposé par Laurent pour exprimer un stock adapté, sans visée systématique de remplissage ou de vidage. [Étude](../modeles/backlog/inventory-optimization-planning-option-U544.yaml), CMP224. Maintien d’un plan arbitrant plusieurs ajustements à comparer avec les plans autonomes par intention U543 ; pas de renommage encore adopté.
+
+
+**Accord partiel Q078 — U545 :** D05.f devient Inventory Optimization Planning ; nom et définition présentés retenus. La branche stock du premier point est cadrée ; le comportement détaillé d’application et les propositions Demand Planning / plan de couverture restent à préciser. Aucun accord global sur les trois formes d’application déduit.
+
+
+**Deuxième point — U546 :** distinction entre demande de réexamen et Planning étudiée dans [backlog-request-planning-boundary-U546.yaml](../modeles/backlog/backlog-request-planning-boundary-U546.yaml), CMP225. Recommandation de conserver cadrage/suivi de demande et étude/application du plan comme responsabilités distinctes ; noms et définitions courtes à clarifier. Aucune modification des six comportements U501 adoptée.
+
+
+**Évolution du deuxième point — U547 :** Request est une demande d’optimisation traitée comme les Orders. Sa prise en charge comme premier comportement de Planning est proposée ; [option](../modeles/backlog/planning-request-behavior-option-U547.yaml), CMP226. Conserver le suivi jusqu’à conclusion ; réexaminer les six comportements U501 sans sous-niveau ni double simulation/application. Aucun déplacement adopté.
+
+
+**Évolution Q078 — U567–U570, 21 septembre 2026 :** la planification intégrée est étayée par Microsoft Master Planning et SAP IBP, avec une limite explicite sur ARun/BOP et création d’apports. Laurent propose Master Planning comme Area et souhaite un seul plan Supply, avec des capacités de gestion du plan. La proposition Master Plan Management consolide les responsabilités actuelles de scénario, adaptation et application ; le nombre de capacités n’est pas arrêté par les exemples simuler/valider/démarrer. Question ciblée posée : coordonner les décisions dans leurs Areas actuelles ou les regrouper dans Master Planning ? [Proposition et filiation](../modeles/backlog/master-planning-structure-U568.yaml). Aucun déplacement anticipé.
+
+
+**Suite U571 :** Laurent demande un avis marché et logique générale. Recommandation Codex : Master Planning regroupe les décisions qui construisent le plan ; faisabilité réutilisable, configuration et engagements gardent leurs responsables. Le placement reste proposé ; aucune migration effectuée.
+
+
+**Accord U572 :** principe de regroupement retenu. La question du placement de principe est close ; formalisation des capacités de gestion, périmètre de la décision de plan et filiation des responsabilités restent à réaliser, sans réouvrir cet accord.
+
+
+**Q078 — Étude U573/U574 :** proposition de gestion et de catégories d’action consignée dans [master-plan-management-market-study-U573.yaml](../modeles/backlog/master-plan-management-market-study-U573.yaml), CMP239/CMP240. Le principe de regroupement U572 reste acquis. Les noms des comportements, la succession de Supply Assignment, la décision d’achat et l’élargissement de l’arbitrage commun restent des propositions à examiner sur ce contenu concret ; aucune nouvelle demande d’accord global ni migration anticipée.
+
+
+**Q078 — Révision U575 :** le nom Planning Management est retenu. [Proposition courante](../modeles/backlog/master-plan-application-U575.yaml) : regrouper les applications dans Master Plan Application ; catégories d’effets et décisions conservées, sans sous-comportement. Les deux intitulés contenant Allocation de U573/U574 sont abandonnés dans la proposition. La consolidation précise reste proposée ; l’accord U572 conserve sa portée.
+
+
+**Q078 — Accord U577 :** le nom Plan Implementation est validé ; la question de nom U576 est close. Le principe de regroupement U576 et Planning Management U575 restent acquis. Les autres détails du refacto ne sont pas validés par extension.

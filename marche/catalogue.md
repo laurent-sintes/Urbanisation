@@ -742,3 +742,55 @@ ServiceNow — Service Portal, documentation du Catalog Homepage Search widget, 
 
 
 **Réexamen U508 — MKT13/14/20 :** SAP Retail Assortment (Private Edition), Microsoft Commerce Assortment management et catalogues B2B, Oracle Procurement 26A types d’accords d’achat, consultés le 19 septembre 2026. ELM515/516 complètent les appuis antérieurs ELM094/391/345. [Sources, éditions et limites](../modeles/backlog/catalog-assortment-review-U508.yaml). Rapprochements métier sélectifs ; aucune taxonomy commune, maîtrise locale ou réalisation Beaumanoir déduite.
+
+
+## MKT77
+
+Fluent Commerce — Fluent Order Management. Documentation officielle de workflows, synchronisation produit Adobe Commerce, lieux et catalogues ; ELM518–521 consultés le 21 septembre 2026. [Relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml) : titres, URLs, dates et passages. Produit OMS ; ni taxonomie universelle de capacités ni preuve de déploiement Beaumanoir. Synthèses sélectives et liens, sans reproduction substantielle.
+
+**Réexamen U511–U513 — MKT14/23/36/43/67/68/13/19 :** Microsoft IOM et IBM Sterling complètent la comparaison de l’orchestration alimentée par des sources externes (ELM522–526). Camunda DMN 8.9 précise données d’entrée et décisions (ELM527) ; OMG ELM259, Oracle ELM484, EDM Council ELM485, SAP ELM515, Microsoft Commerce ELM391 et TM Forum ELM513 sont reconsultés dans leurs passages ciblés le 21 septembre 2026. Anciennes consultations préservées. [Audit landscape](../audits/2026-09-21-authoritative-data-landscape-U512/rapport.md), limites documentaires explicites ; aucun changement de produit ou de technologie adopté.
+
+
+**Complément U514 — MKT69 :** Microsoft Azure Architecture Center, patron CQRS, ELM528. [Document primaire](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs), mise à jour du 21 février 2025, consulté le 21 septembre 2026. Distinction logique des lectures/écritures et choix de stockage ; appui de réalisation, pas carte de capacités métier. Synthèse sélective, pas d’adoption CQRS ou event sourcing.
+
+
+**Complément U515 — MKT69 :** patron Materialized View, ELM529, consulté le 21 septembre 2026. [Source primaire](https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view). Appui à l’indépendance des besoins de lecture et de l’organisation du stockage ; aucune adoption de vue matérialisée ou structure logicielle. Synthèse sélective.
+
+
+**Complément U516 — MKT73/14/20/13 :** Salesforce B2C Commerce ProductPriceModel, Microsoft Dynamics 365 Sales Price Lists et calcul des prix, Oracle Product Development 26B, SAP Purchasing Info Records et Microsoft SCM Purchase agreements. Six documents primaires ELM530–535 consultés le 21 septembre 2026 ; [URLs, versions, passages et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml). Produits distingués ; pas taxonomie commune, choix de solution ou maîtrise Beaumanoir déduits. Synthèses sélectives et liens.
+
+
+**Complément U517 — MKT14 :** Dynamics 365 Finance, Credit holds for sales orders (ELM536), et Dynamics 365 Supply Chain Management, Set up vendor accounts (ELM537), consultés le 21 septembre 2026. [Relevé primaire](../modeles/backlog/core-data-price-books-sources-U516.yaml). Deux documents Microsoft, pas consensus interéditeurs ; règles et restrictions ciblées, sans attribution universelle au contrôle de gestion. Reformulations sélectives et liens.
+
+
+**Complément U526 — MKT28/MKT24 et réexamen MKT20/MKT56 :** extension documentaire ciblée de Kinaxis à son positionnement Supply Chain Orchestration (ELM551) et de SAP IBP à Response and supply planning (ELM552). Oracle 26B Supply Chain Orchestration et extraits primaires indexés ASCM SCOR DS complètent l'étude. Consultations du 21 septembre 2026 ; éditions, passages et limites d'accès dans [l'annexe U526](../modeles/backlog/supply-planning-area-review-U526.yaml). Reformulations sélectives et liens ; aucune reproduction substantielle, taxonomie universelle ou installation locale inférée.
+
+
+**Complément U530 — MKT36/MKT20 :** Camunda 8.9 Event subprocess et Business rule tasks (ELM553/554), Oracle PLM and Product Hub 26B (ELM555), passages primaires consultés le 21 septembre 2026. Sources et limites dans [l'annexe de planification](../modeles/backlog/supply-planning-area-review-U526.yaml). Appuis à l'adaptation et à la qualification de la piste PLM, sans technologie ni périmètre produit adoptés. Synthèses sélectives et liens.
+
+
+**Complément U531 — MKT24 :** SAP IBP Demand planning (ELM556), page primaire consultée le 21 septembre 2026 ; distingue prévision de demande, ajustement par signaux opérationnels et coopération avec Response and supply planning (ELM552). Édition non indiquée, limites et passages dans l'annexe de planification. Aucune équivalence ou installation SAP inférée pour MAP.
+
+
+**Complément U532 — MKT20/MKT24 :** Oracle 26B Overview of Supply Chain Planning Plan Types et Forecast Processing (ELM557/558), SAP IBP Sales and operations planning (ELM559). Passages primaires consultés le 21 septembre 2026 ; titres, éditions et limites dans [planning-options-U532.yaml](../modeles/backlog/planning-options-U532.yaml). Types de plans et périmètres fonctionnels comparés, sans équivalence de hiérarchie métier. Les appuis Demand planning ELM556 et Response and supply planning ELM552 complètent cette lecture à leurs portées déjà documentées.
+
+
+**Complément U533 — MKT24/MKT20 :** SAP Inventory optimisation, Oracle 26B Import Planned Orders et Create a Forecasting Profile (ELM560–562), passages primaires consultés le 21 septembre 2026. [Preuves et audit](../modeles/backlog/planning-model-audit-U533.yaml). Réexamen des appuis ELM552/556/557/558 à la portée des deux nouvelles capacités. Fonctions produit distinguées des décisions FLOW, sans technologie ni réalisation locale adoptée.
+
+
+**Complément U534–U536 — MKT20/MKT24/MKT13 :** Oracle Backlog Management 26B (ELM563 et réexamen ELM496), SAP IBP Supply Planning (ELM564), SAP Ariba Procurement Planning (ELM565) et SAP ARun 2025 FPS01 (ELM381 réexaminé). Lecture directe Oracle, passages primaires indexés SAP lorsque le portail ne restitue pas de texte. [Sources et limites](../modeles/backlog/planning-model-audit-U533.yaml). Aucun nouveau produit adopté ni innovation présumée à partir d’un nom.
+
+
+**Complément U537–U538 — MKT20 :** Oracle 26B Manually Release Plan Recommendations et Overview of Supply Allocation Rules (ELM566/567), réexamen Overview of Backlog Management Processes (ELM496), textes primaires directement consultés le 21 septembre 2026. [Correspondance et limites](../modeles/backlog/plan-application-review-U537.yaml), CMP220. Application du résultat et règles consommées distinguées ; aucune hiérarchie FLOW déduite du produit.
+
+
+**Réexamen U540 — MKT13/MKT36/MKT14/MKT20 :** sources ELM452/330/411/353 et Oracle ELM496/566/567 réexaminées sur application du résultat, configuration consommée et responsabilités partenaires. [Audit documenté](../modeles/backlog/planning-principle-audit-U540.yaml), CMP221. Sources évolutives ou Oracle 26B datées du 21 septembre 2026 ; synthèses sélectives et liens, sans reproduction substantielle.
+
+
+**Complément U542 — MKT20 :** Oracle 26B Publish Plan, Supply Plan Options for Organizations and Schedules, Automatic Release Options (ELM568–570), et réexamen Manually Release Plan Recommendations (ELM566). Sources primaires directement consultées le 21 septembre 2026 ; [localisateurs et limites](../modeles/backlog/planning-application-options-U542.yaml), CMP222. Publication technique distinguée de mise en vigueur métier ; aucune hiérarchie FLOW ni réalisation MAP déduite.
+
+
+**Réexamen U543 — Oracle, SAP, Nextail :** documents ELM369/375/450/451 relus sur implantation, réassort, rééquilibrage et interactions. [Étude par intention](../modeles/backlog/inventory-planning-intentions-U543.yaml), CMP223. Les différences de regroupement entre éditeurs sont explicites ; aucune nomenclature universelle adoptée.
+
+
+**Réexamen U544 — MKT24/MKT29 :** SAP et RELEX sur Inventory Optimization, ELM560/479. Appui au compromis de stock, sans preuve du libellé exact Inventory Optimization Planning ni de la hiérarchie FLOW. [Étude](../modeles/backlog/inventory-optimization-planning-option-U544.yaml), CMP224.

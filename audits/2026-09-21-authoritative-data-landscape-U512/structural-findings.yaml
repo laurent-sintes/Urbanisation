@@ -1,0 +1,334 @@
+purpose: Preuve bornée du diagnostic structurel Authoritative Data avant enrichissement U512/U513 ; constats distincts des
+  interprétations, sans changement canonique.
+captured_at_utc: '2026-09-21T07:34:46.785523+00:00'
+baseline:
+  git_head: 5957a17756d7def41be9a599e7de293245cceebc
+  model_path: modeles/backlog/model.yaml
+  model_sha256: 73f132795d0e635a7dccb73f38ce1fa63b509bc71418e0b88825ab24b5117148
+  model_size_bytes: 1659461
+  model_version: 2026-09-13.3
+  read_method: scripts.structured_io.loads sur les octets utilisés pour calculer model_sha256 ; aucun instantané concurrent
+    du modèle.
+scope:
+  area_id: business-references
+  reference_count: 7
+  reference_ids:
+  - D08
+  - D09
+  - D12
+  - D16
+  - D11
+  - D13
+  - D14
+  capability_count: 14
+  ingestion_count: 7
+  ingestion_ids:
+  - D09.d
+  - D11.a
+  - D08.d
+  - D12.a
+  - D13.a
+  - D14.a
+  - D16.a
+  visibility_count: 7
+  visibility_ids:
+  - D08.e
+  - D09.e
+  - D11.b
+  - D12.b
+  - D13.b
+  - D14.b
+  - D16.b
+external_needs_targeting_ingestion:
+  count: 28
+  selection: Relations hors contains/presents, source hors des sept références et de leurs quatorze capacités, cible parmi
+    leurs Ingestion et qualification.role = needs. Les relations D14 vers D06/D15, les dépendances internes entre ingestions
+    et Agreement vers Assortment sont exclues.
+  relations:
+  - id: REL-NEEDS-U290-032
+    source_id: D03.i
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-040
+    source_id: D03.k
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-044
+    source_id: D03.l
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-045
+    source_id: D03.m
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-050
+    source_id: D04.i
+    target_id: D08.d
+    type: relates-to
+    meaning: A besoin de produits/variantes et caractéristiques utiles.
+    target_name: Product Reference Ingestion
+  - id: REL-NEEDS-U290-051
+    source_id: D04.i
+    target_id: D09.d
+    type: relates-to
+    meaning: A besoin de parties et rôles externes.
+    target_name: Party / Role Ingestion
+  - id: REL-NEEDS-U290-052
+    source_id: D04.i
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-053
+    source_id: D04.i
+    target_id: D12.a
+    type: relates-to
+    meaning: A besoin de offre commerciale externe.
+    target_name: Product Catalog Ingestion
+  - id: REL-NEEDS-U290-057
+    source_id: D04.j
+    target_id: D08.d
+    type: relates-to
+    meaning: A besoin de produits/variantes et caractéristiques utiles.
+    target_name: Product Reference Ingestion
+  - id: REL-NEEDS-U290-058
+    source_id: D04.j
+    target_id: D09.d
+    type: relates-to
+    meaning: A besoin de parties et rôles externes.
+    target_name: Party / Role Ingestion
+  - id: REL-NEEDS-U290-059
+    source_id: D04.j
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-063
+    source_id: D04.k
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-064
+    source_id: D04.k
+    target_id: D08.d
+    type: relates-to
+    meaning: A besoin de produits/variantes et caractéristiques utiles.
+    target_name: Product Reference Ingestion
+  - id: REL-NEEDS-U290-069
+    source_id: D04.l
+    target_id: D08.d
+    type: relates-to
+    meaning: A besoin de produits/variantes et caractéristiques utiles.
+    target_name: Product Reference Ingestion
+  - id: REL-NEEDS-U290-074
+    source_id: D04.m
+    target_id: D09.d
+    type: relates-to
+    meaning: A besoin de parties et rôles externes.
+    target_name: Party / Role Ingestion
+  - id: REL-NEEDS-U290-075
+    source_id: D04.m
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin de conditions contractuelles et validité.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U290-080
+    source_id: D05.a
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-081
+    source_id: D05.a
+    target_id: D08.d
+    type: relates-to
+    meaning: A besoin de produits/variantes et caractéristiques utiles.
+    target_name: Product Reference Ingestion
+  - id: REL-NEEDS-U290-093
+    source_id: D05.c
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-105
+    source_id: D06.b
+    target_id: D14.a
+    type: relates-to
+    meaning: A besoin de services, SLA et accès configurés.
+    target_name: Service Catalog Ingestion
+  - id: REL-NEEDS-U290-106
+    source_id: D07.a
+    target_id: D14.a
+    type: relates-to
+    meaning: A besoin de services, SLA et accès configurés.
+    target_name: Service Catalog Ingestion
+  - id: REL-NEEDS-U290-107
+    source_id: D07.a
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-110
+    source_id: D06.e
+    target_id: D14.a
+    type: relates-to
+    meaning: A besoin de services, SLA et accès configurés.
+    target_name: Service Catalog Ingestion
+  - id: REL-NEEDS-U290-111
+    source_id: D06.e
+    target_id: D13.a
+    type: relates-to
+    meaning: A besoin de lieux et liens du réseau.
+    target_name: Fulfillment Network Ingestion
+  - id: REL-NEEDS-U290-124
+    source_id: D07.b
+    target_id: D14.a
+    type: relates-to
+    meaning: A besoin de services, SLA et accès configurés.
+    target_name: Service Catalog Ingestion
+  - id: REL-RESERVATION-POLICY-AGREEMENT
+    source_id: D05.h
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin des conditions de service disponibles dans la projection des Agreements lorsqu’elles encadrent les régimes
+      de réservation.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U395-01
+    source_id: D01.h
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin des conditions de l’accord ingérées depuis le maître externe pour appliquer au stock les droits, obligations
+      et échéances.
+    target_name: Agreement Ingestion
+  - id: REL-NEEDS-U395-02
+    source_id: D04.r
+    target_id: D11.a
+    type: relates-to
+    meaning: A besoin des conditions de l’accord ingérées depuis le maître externe pour formuler et suivre la demande d’apport
+      consigné.
+    target_name: Agreement Ingestion
+  interpretation: Ces formulations portent sur la consommation des références disponibles. Les extrémités conservent les Ingestion
+    après l’ajout des Visibility. Clarifier le résultat fourni avant tout changement de relation ; aucun appel d’ingestion
+    systématique ni déplacement automatique déduit.
+  adoption_limit: Les contrats détaillés restent proposés ou under_review. Les frontières de la consignation U395 ne valent
+    pas adoption globale de ces qualifications.
+visibility_transverse_relations:
+  count: 0
+  selection: Toute relation hors contains/presents dont au moins une extrémité est une des sept Visibility.
+  by_capability:
+  - id: D08.e
+    name: Product Reference Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D09.e
+    name: Party / Role Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D11.b
+    name: Agreement Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D12.b
+    name: Product Catalog Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D13.b
+    name: Fulfillment Network Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D14.b
+    name: Service Catalog Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  - id: D16.b
+    name: Assortment Visibility
+    incoming_count: 0
+    outgoing_count: 0
+  limit: Absence de lien canonique explicite, pas preuve d’absence de besoin métier ni proposition automatique de nouveaux
+    liens.
+assortment_transverse_relations:
+  count: 1
+  selection: Toute relation hors contains/presents dont au moins une extrémité est D16, D16.a ou D16.b.
+  relations:
+  - id: REL-AGREEMENT-ASSORTMENT
+    source_id: D11
+    target_id: D16
+    type: relates-to
+    qualification:
+      meaning: Référence ou fige l’assortiment convenu entre les parties
+      conditions:
+      - La sélection fait partie de ce qui est convenu dans cet accord.
+      - Le lien et, si nécessaire, la version convenue sont reçus de la source ; pas de contrat déduit d’un assortiment interne.
+      effects:
+      - Les activités Supply peuvent retrouver le périmètre produit convenu.
+      - Un changement de l’assortiment ne réécrit pas implicitement un accord ou sa version figée.
+    review:
+      state: partial
+      note: 'U509 : lien présenté appliqué ; qualification détaillée proposée.'
+  operational_consumer_count: 0
+  adoption_limit: U509 adopte le lien facultatif présenté Agreement vers Assortment ; qualifications détaillées et capacités
+    D16.a/D16.b restent proposées.
+editorial_overlap:
+  ingestion_id: D14.a
+  ingestion_name: Service Catalog Ingestion
+  field: scope
+  exact_excerpt: Consultation et recherche restent en lecture seule pour les consommateurs.
+  visibility_id: D14.b
+  visibility_name: Service Catalog Visibility
+  visibility_definition: Retrouver un [Backing Service](glossary:TER075) et consulter son résultat attendu, son fournisseur
+    et les conditions de référence de sa réalisation pour comprendre ce que l’orchestration peut mobiliser.
+  interpretation: La fiche Ingestion énonce aussi la consultation/recherche désormais portée par Visibility. Recouvrement
+    rédactionnel à clarifier, sans conclure à une duplication des deux responsabilités.
+service_catalog_name_history:
+  current_node_id: D14
+  current_name: Service Catalog
+  U488:
+    source: connaissance/01-contributions-utilisateur.md#U488
+    verbatim: Oui, Service Catalog, ce sont les Backing Services appelés par l'orchestration
+    recorded_scope: Confirme le rôle de Service Catalog comme catalogue des Backing Services mobilisés par l’orchestration
+      pour réaliser les demandes. Cette offre de prestations reste distincte de l’offre de prises en charge du Domain exprimée
+      par les familles d’Orders (U486). Confirmation sémantique du rôle existant ; aucun renommage de Service Catalog ni déplacement
+      de capacité, aucune restriction aux seuls services logiciels. La recherche de nom de D04 sous U487 reste ouverte.
+  U497:
+    source: connaissance/01-contributions-utilisateur.md#U497
+    verbatim: Il n'y avait pas que ça comme modif. Il y avait aussi les backing services
+    recorded_scope: 'Corrige la portée trop étroite annoncée après U496 : reprendre aussi le volet U488/U489 sur les Backing
+      Services décrits par Service Catalog et les Backing Service Orders adressés aux exécutants. Actualiser les fiches et
+      le glossaire correspondants pour distinguer ces prestations des demandes métier Service Requests. La restriction de
+      U496 aux seules modifications de D04 ne s’applique donc plus à ce volet. Les identifiants, rattachements, responsabilités
+      et noms natifs des sources restent préservés ; aucune nouvelle Area, release ou capacité dérivée automatiquement.'
+  adoption_annex:
+    source: modeles/backlog/order-management-positioning-U485.yaml
+    section: adoption_U496_U497.backing_services
+    values:
+      D14: 'Service Catalog : offre de Backing Services'
+      D07.b: Backing Service Orders
+      TER066: Backing Service Order
+      TER075: Backing Service
+  finding: U488 confirme Service Catalog comme offre de Backing Services sans renommage. U497 applique cette qualification
+    ; l’annexe d’adoption conserve D14 = Service Catalog. Ces éléments ne contiennent pas d’accord sur un renommage Backing
+    Service Catalog.
+  limit: Constat sur les preuves ciblées consultées ; le nom évoqué dans la discussion U512/U513 reste à distinguer de ces
+    accords historiques.
+reproduction:
+  parser: scripts.structured_io.loads / dumps
+  tree_selection: Area presents reference ; reference contains capability, types et identifiants explicites.
+  transverse_definition: Toutes relations sauf contains et presents.
+  assertions:
+  - 7 références
+  - 14 capacités
+  - 7 Ingestion
+  - 7 Visibility
+  - 28 besoins externes vers les Ingestion
+  - 0 relation transversale concernant les Visibility
+  - 1 relation transversale concernant Assortment et ses capacités
+  scope_limit: Lecture structurelle ciblée ; aucune validation du modèle, recherche marché ou réouverture de l’audit des comportements.

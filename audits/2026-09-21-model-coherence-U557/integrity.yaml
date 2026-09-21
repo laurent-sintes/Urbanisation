@@ -1,0 +1,10 @@
+source_refs:
+- U557
+- U558
+model_sha256: 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46
+model_unchanged_during_audit: true
+release_model_sha256: ac1d74dd0502ba9e1843f43d99d471d2b3ccbd0c8185f0344630835a9d73def1
+validation_error_count: 0
+local_report_links_and_retirement_proof_paths: checked
+release_or_build_performed: false
+corrections_applied: false

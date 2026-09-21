@@ -2088,3 +2088,274 @@ Les accords U507 restent conservés comme preuves. Le changement de contexte exi
 Sources : U510. État : published_checks_failed. Atlas vérifié : True. Détail : `.runtime/release-runs/2026-09-19.11/completion.md`.
 
 Reprise des contrôles de cette même version : état final `published`, aucune erreur et Atlas vérifié. Le validateur renvoyait un dictionnaire que le parcours regroupé déstructurait comme un tuple ; correction du lecteur de résultat et ajout de deux tests de régression. Aucune seconde publication. Les sources embarquées U507/U509 du guide ont été complétées avant figement. Deux fixtures de tests anciens ont également été ajustées au format Sources d’inspiration. Suite Python : 242 tests couverts avec rejeu des modules corrigés ; Atlas : 93 tests réussis, build déjà vérifié sur le même code frontend. Guide publié : 2026-09-19.5.
+
+
+## 21 septembre 2026 — Audit landscape Authoritative Data, U511–U513
+
+Questions et réserve client enregistrées avant interprétation. [Audit landscape](audits/2026-09-21-authoritative-data-landscape-U512/rapport.md) des sept références, quatorze capacités et relations, avec trois OMS et appuis conceptuels. Seize documents primaires consultés, éditions et limites conservées ; dix nouveaux éléments ELM518–527, Fluent Commerce MKT77 et comparaison CMP207.
+
+Les sujets restent pertinents comme distinctions métier, sans taxonomie OMS commune démontrée. Option de lecture en deux responsabilités communes et sept sujets ; granularité canonique non modifiée. Diagnostic : 28 liens de consommation ciblent les Ingestion, aucune Visibility reliée transversalement ; Assortment sans consommateur opérationnel explicite ; chevauchement rédactionnel D14.a/D14.b. Les autorités déjà ouvertes restent des questions, pas des capacités inventées.
+
+La fiche backlog de l’Area expose désormais la comparaison OMS et la limite du rapprochement DMN ; noms, définitions, périmètres, relations et accords restent inchangés. Backing Service Catalog et Supply Reference Data sont discutés comme options de lisibilité, sans renommage adopté. Sources réindexées, modèle et contrats éditoriaux contrôlés, vue backlog régénérée ; résultats dans audits/2026-09-21-authoritative-data-landscape-U512/validation.txt. Aucune release, commit ou push.
+
+
+## 21 septembre 2026 — Trois responsabilités pour les références, U514
+
+Proposition consignée avant analyse : Ingestion par datasource, Visibility par vue, Core Data par storage. Discussion dans modeles/backlog/authoritative-data-structure-U514.yaml et CMP208, avec Microsoft CQRS ELM528 et l’appui Oracle ELM484. Trois capacités possibles si leurs résultats sont distincts ; datasource/vue/storage ne deviennent pas automatiquement des axes de comportements métier. Core Data doit préciser son service et son partage de responsabilité avec l’ingestion existante. Aucun changement du modèle canonique ni accord enregistré. Provenance rafraîchie et validation du modèle exécutée sur ce lot de discussion.
+
+
+## 21 septembre 2026 — Axes amont, stockage et consommation, U515
+
+Clarification enregistrée : Ingestion par domaines sources, Core Data par stockage, Vues selon les besoins des capacités Supply. C110 corrige l’interprétation précédente, conservée dans history_U514. L’annexe reprend les axes exacts sans imposer technologie, cardinalité ou fonction de gestion métier à Core Data. Microsoft Materialized View ELM529 et CQRS ELM528 étayent l’indépendance des structures de stockage et de lecture (CMP209). Modèle canonique inchangé ; sources réindexées et validation contrôlée.
+
+
+## 21 septembre 2026 — Sujets Core Data, Price Book et domaines fournisseurs, U516
+
+Contribution enregistrée avant analyse. Sept références relues comme candidats au découpage Core Data ; Price Book proposé comme sujet autonome aujourd’hui partiellement couvert par Product Catalog et Agreement. Comparaison Salesforce/Microsoft documentée, prix appliqué maintenu distinct (Q072). Commerce, Design et Logistics constituent les sources candidates indiquées par Laurent ; Procurement/Sourcing est proposé en complément conditionnel, étayé par SAP/Microsoft. Maîtres réels, apports de Party et services non logistiques restent à qualifier. Analyse structurée dans modeles/backlog/core-data-price-books-sources-U516.yaml, ELM530–535/CMP210. Modèle canonique inchangé ; sources réindexées et validation contrôlée.
+
+
+## 21 septembre 2026 — Contrôle de gestion, source de règles de restriction, U517
+
+Source possible et exemple de blacklist enregistrés. L’annexe U516 ajoute Contrôle de gestion aux candidats d’ingestion, sans flux constaté. Proposition de restrictions associées aux tiers dans Core Data ; règle, statut évalué et application opérationnelle distingués. Appuis Microsoft ELM536–537/CMP211, sans réduction au crédit ni reprise des effets natifs. Modèle canonique inchangé ; sources réindexées et validation contrôlée.
+
+
+## 21 septembre 2026 — Party Restrictions retenu dans Core Data, U518
+
+Ajout effectif de la ressource dans core_data.party_restrictions de modeles/backlog/core-data-price-books-sources-U516.yaml. Accord contextuel limité aux champs name et placement, valeurs et empreintes conservées via les fonctions de scripts/record_decision.py ; définition détaillée et autres champs restent proposés. Core Data n’ayant pas encore de cible canonique, aucune cible artificielle ni refonte globale créée pour le registre d’intentions. Le statut candidat U517 et la décision précédente sont préservés dans l’historique de l’annexe. Provenance réindexée, validation et intégrité de l’accord contrôlées ; modèle canonique inchangé.
+
+
+## 21 septembre 2026 — Analyse marché de Visibility, U519–U520
+
+U519 enregistré avant recherche ; U520 recadre en cours d’analyse au niveau capacité, y compris pour les référentiels. Dix-huit documents primaires consultés auprès de cinq éditeurs et lecture des 42 capacités opérationnelles. Dix nouveaux éléments ELM538–547, huit éléments réexaminés, CMP212 ; éditions, passages et limites dans audits/2026-09-21-authoritative-views-U519/.
+
+Restitution centrée sur le service de Visibility, ses frontières et les grands besoins consommateurs. Les familles de vues exploratoires restent des preuves internes ; nombre, noms, champs, Behaviors et micro-règles différés selon U520. Proposition dans modeles/backlog/authoritative-data-views-U519.yaml. Aucun changement canonique, déplacement de relation, ajout Core Data, extension du catalogue Information, release, commit ou push. Accord U518 préservé.
+
+
+Complément U521 : contribution enregistrée et synthèse marché reportée dans Sources d’inspiration de la fiche canonique Authoritative Data, avec deux comparaisons primaires datées ELM538/ELM542. Capture ciblée de la fiche avant modification dans le dossier d’analyse. Noms, définitions, structure, relations et accords inchangés ; aucun transfert automatique des annexes en catalogue publié. Aucune release exécutée.
+
+
+## 21 septembre 2026 — Comparaison Oracle/Fluent dans Visibility, U522–U524
+
+Demandes enregistrées avant interprétation. Comparaison à la maille capacité, avec trois compléments primaires Oracle ELM548–550 et relecture ciblée Fluent. U523 rattache la comparaison à Visibility : synthèse, comparaisons au format Sources d’inspiration et matrice sont consignées dans sa fiche de travail U519.
+
+U524/C111 retient Sourcing Fluent → Network FLOW et exclut PLAN de l’orchestration étudiée. Inventory Planning Context est retiré des familles proposées ; preuves ERP Oracle conservées hors périmètre. Portée sur les capacités canoniques de planification et réassort en clarification, aucun retrait automatique. CMP213 et annexe visibility-oracle-fluent-U522.yaml conservent sources, limites et portée des instructions. Canonique inchangé ; aucune release, commit ou push.
+
+
+Précision U525 : Q078 ouverte pour arbitrer PLAN, analytics et orchestration. Inventory Planning Context reste en attente ; aucune exclusion définitive ni capacité supprimée. Fiche de travail Visibility, comparaison et C111 actualisés ; empreintes historiques U523/U524 conservées et portée courante explicitée.
+
+
+## 21 septembre 2026 — Area de planification et nom du Domain, U526–U527
+
+Apports enregistrés avant interprétation. Étude landscape de Supply Planning, de la conservation de l'adaptation opérationnelle et du nom Supply Chain Orchestration ; vocabulaire impondérable repris selon U527. SAP et Kinaxis complètent les appuis ELM551/552 ; Oracle reconsulté, SCOR DS limité aux extraits primaires indexés effectivement accessibles. CMP214 et annexe supply-planning-area-review-U526.yaml conservent frontières proposées, candidats à examiner, limites et comparaisons distinctes Area/Domain.
+
+Q078 reste ouverte. Aucun déplacement de capacité, ajout de Behavior, extension du catalogue Information ou changement canonique. Les besoins de Visibility liés à la planification restent en attente du périmètre retenu. Aucune release, commit ou push.
+
+
+Précision U528 : Order Backlog Planning confirmé opérationnel, retiré des candidates au regroupement proposé ; Inventory Planning reste ouvert. Contribution, annexe, CMP214 et Q078 actualisés, hypothèse précédente archivée dans l'annexe. Aucun changement canonique.
+
+
+Précision U529 : plan d'ensemble régulièrement actualisé et piste de réassort opérationnel consignés. L'annexe distingue direction exprimée et interprétation, relie le réassort aux objectifs et décisions spécialisés existants, et garde Inventory Planning ouvert. CMP214 réutilise les passages SAP et Oracle déjà consultés à cette portée. Canonique inchangé ; contrôles de provenance et de validation rejoués sur cet état final.
+
+
+## 21 septembre 2026 — Planification intégrée comme Area, U530
+
+Contribution enregistrée avant interprétation : MAP émet des demandes d'achat planifiées, classées plan d'ensemble par Laurent ; planification retenue comme Area du Domain, PLM hypothétique. Ajout D17 Supply Planning et relation presents depuis Supply Chain Orchestration. Libellé et descriptions restent proposés, accord de rattachement limité à source_id/target_id/type via record_decision.py ; aucune capacité transférée.
+
+Définition et périmètre du Domain explicitent le plan d'ensemble, avec ancienne fiche capturée avant modification. Comparaisons SAP/Oracle portées sur l'Area et Kinaxis/Oracle sur le Domain ; Camunda ELM553/554 et PLM ELM555 documentés dans CMP215 et l'annexe, avec limites. Q078 et conventions actualisées. Les preuves As Is figées sont préservées ; apport MAP consigné comme preuve utilisateur. Aucune release, commit ou push.
+
+
+Complément U531 : rôle MAP enrichi par les indicateurs de prévision de ventes saisonnières/plurisaisonnières et leur alimentation par les ventes ; responsabilités U10 préservées. ELM556/CMP216 compare Demand planning SAP à Response and supply planning, sans équivalence MAP ni adoption de méthodes. Conventions de portée saisonnière précisées pour éviter une exclusion devenue trop générale ; aucune capacité ajoutée ou transférée. Sources d'existant et réserves conservées dans l'annexe, snapshots As Is inchangés.
+
+Qualification finale U530 : retrait de l’accord courant sur market_inspiration du Domain modifié, avec conservation de la valeur et de la preuve antérieures dans la capture ciblée ; accord nominal inchangé. Relation D17 qualifiée sur les seuls champs enregistrés dans INT-U530-planning-area-parent.
+
+
+## 21 septembre 2026 — Comparaison Area Planning / Domain PLAN, U532
+
+Fait utilisateur sur les précommandes B2B enregistré avant interprétation. Trois documents primaires Oracle/SAP complètent l'étude (ELM557–559, CMP217). Deux structures comparées dans planning-options-U532.yaml ; option A recommandée, responsabilités des deux capacités proposées au niveau demandé et réserves conservées. Aucun renommage de D17, nouvelle capacité, changement d'accord ou déplacement ; modèle canonique, registre d'intentions et publications préservés. L'annexe U526 et Q078 renvoient à l'étude et au fait MAP complémentaire.
+
+
+## 21 septembre 2026 — Planning adopté et audit des capacités/décisions, U533
+
+Accord U533 enregistré avant interprétation. D17 renommée Planning, D17.a Demand Planning et D17.b Supply Planning ajoutées avec leurs responsabilités courtes et deux relations contains. Le lien du Domain est aligné sur le nom courant. Aucun déplacement ni modification de responsabilité des 56 capacités existantes, aucune décomposition en Behaviors. Preuve antérieure capturée dans audits/2026-09-21-planning-U533/baseline.yaml.
+
+Audit des 56 capacités antérieures, dont 16 décisions, et examen de structure des 367 relations. Sept constats avec recommandations distinctes des accords, matrice exhaustive et liens métier candidats dans planning-model-audit-U533.yaml. Appuis marché ciblés ELM560–562/CMP218 ; comparaisons pertinentes dans les trois fiches Planning. Maintien des décisions spécialisées recommandé, Inventory Planning et les décisions propres au plan à qualifier. Q078 et conventions actualisées. Aucune release, commit, push ni extension du catalogue Information.
+
+
+Compléments U534–U536 : réserve sur Supply Planning enregistrée après l’accord U533, valeurs historiques conservées et qualification courante mise en instruction. Assignment Planning étudié comme chevauchement/clarification du planning du carnet existant ; ni nouvelle capacité ni déplacement. Trois sources ELM563–565 et réexamen ELM496/381, CMP219 ; matrice de justification et trois constats supplémentaires dans l’audit. Aucune innovation ni équivalence complète inventée.
+
+Contrôles finaux U533–U536 : 56 capacités antérieures identiques, 16 décisions conservées, 58 capacités au total ; cinq intentions enregistrées en lot via record_decision.py, dont reprise explicite du rattachement U530. Réserve U534 exclue des nouvelles intentions nominales. Provenance 2088 sources, validation 0 erreur, 15 tests de contrats marché réussis, restitution backlog générée et liens du rapport contrôlés. Rapport ouvert dans le panneau fichier.
+
+
+## 21 septembre 2026 — Application du plan et configuration, U537–U538
+
+Apports utilisateur enregistrés avant intégration. MOD002/003/006 et conventions précisés : application comme comportement du Planning ; configuration consommée maintenue à l’extérieur, exemple Supply Protection. L’ancienne exclusion générale de Scenario Application est remplacée dans cette portée. Valeurs méthodologiques antérieures conservées dans plan-application-review-U537.yaml.
+
+Oracle 26B : ELM496 relu, ELM566/567 et CMP220 ajoutés ; distinction entre appui fonctionnel documenté et choix de hiérarchie FLOW. Audit U533 complété par PA11 : Supply Assignment autonome à réexaminer, Supply Protection extérieure. Catalogue métier, identifiants, accords de capacités et publications inchangés ; aucune décomposition systématique ni réouverture U431.
+
+
+## 21 septembre 2026 — Audit transversal et Supply Assignment comportement, U539–U541
+
+Apports et clarification enregistrés avant modification. Audit des 58 capacités, définitions des comportements et structure des relations ; approfondissement des frontières Planning/décision/configuration/engagement/coordination. Sources et limites dans planning-principle-audit-U540.yaml, CMP221. État antérieur intégral des nœuds, relations et principes conservé.
+
+D02.e conserve son identifiant et devient comportement de D03.p Order Backlog Planning, parent interprété selon la réponse U541. Ses trois comportements historiques BHV045–047 sont consolidés comme modalités descriptives ; leurs identifiants et relations retirés ne sont pas réutilisés et leur succession est explicite. Tous les liens métier vers D02.e sont conservés. D03.p et D05.f sont alignés sur U537/U538 ; Supply Protection reste extérieure. Ni nouvelle Area, ni renommage de D17.b, ni adoption des détails par extension. Propositions ouvertes distinguées des changements intégrés ; aucune publication Atlas.
+
+
+Contrôles U537–U541 : provenance actualisée (2097 sources), modèle validé sans erreur, 23 tests des contrats marché et des références d’information réussis, restitution backlog générée. Trois intentions enregistrées par record_decision.py : rattachement contextualisé et noms Supply Assignment / Order Backlog Planning. Les 16 décisions, Supply Protection, D17.b et tous les liens métier sont préservés. Deux rôles internes d’information sont alignés sur la capacité parente sans extension du catalogue. Rapport disponible dans audits/2026-09-21-planning-principle-U540/rapport.md.
+
+
+## 21 septembre 2026 — Application propre aux autres Plannings, U542
+
+Sélection du premier point enregistrée avant interprétation. Lecture des quatre Plannings et des frontières U537/U538. Trois documents Oracle 26B ajoutés (ELM568–570), ELM566 relu ; CMP222. Propositions dans planning-application-options-U542.yaml : demande applicable, actions du scénario de stock, apports du plan de couverture. Publication technique et autorité métier distinguées ; applications manuelles ou automatiques, sans assimiler demande et engagement.
+
+Frontière Inventory Planning / couverture explicitement conservée comme arbitrage : pas de découpage par horizon, fournisseur ou type d’Order et pas de double demande. Aucun nœud, relation, comportement, nom ou accord du modèle canonique modifié ; aucune publication. Audit U540 et Q078 renvoient à ce complément.
+
+
+## 21 septembre 2026 — Inventory Planning remis en cause par intention, U543
+
+Verbatim enregistré avant interprétation. Lecture D05.f et décisions d’implantation, réassort et redistribution ; réexamen de quatre sources Oracle/SAP/Nextail, CMP223. Étude structurée des candidats et de leurs frontières dans inventory-planning-intentions-U543.yaml. La coopération rééquilibrage/réassort est explicitée ; aucune séparation de produits transformée en standard de capacités.
+
+D05.f conservé avec réserve courante sur nom et agrégation, accord nominal historique et fiche antérieure préservés dans l’annexe. Aucun candidat créé ni mécanisme déplacé, aucun changement des champs métier ou de l’Area Inventory Optimization. Proposition Inventory Plan Application U542 suspendue dans cette portée. Principes Planning/Decision/application/configuration maintenus.
+
+
+## 21 septembre 2026 — Alternative Inventory Optimization Planning, U544
+
+Proposition utilisateur enregistrée avant interprétation. Réexamen primaire SAP/RELEX ELM560/479, CMP224. Option distinguée d’une adoption : plan d’ajustement cohérent, stock adapté sans objectif systématique de remplissage/vidage. Décisions, configuration et gestions partenaires préservées ; le libellé exact n’est pas présenté comme standard du marché. L’alternative par intentions U543 reste ouverte. Revue D05.f actualisée, aucun champ métier ni structure changé. Correction du rattachement documentaire Nextail ELM375 vers MKT60 dans l’annexe U543.
+
+
+## 21 septembre 2026 — Inventory Optimization Planning adopté, U545
+
+Accord contextuel et portée enregistrés avant intégration. D05.f conserve son identifiant, son parent et ses comportements ; nom et définition présentés remplacent Inventory Planning. État antérieur et empreintes d’accord conservés dans l’annexe U544. Libellés des références courantes alignés, sans changer les titres éditeurs ou preuves historiques. Comparaisons SAP/RELEX U544 reprises dans la fiche, appuis de scénarios Oracle/Microsoft conservés.
+
+Accord limité au nom et à la définition ; scope développé et décomposition restent proposés. Le premier point est partiellement traité : cadrage stock retenu, application détaillée et propositions sur Demand Planning / couverture ouvertes. Aucune publication.
+
+
+## 21 septembre 2026 — Deuxième point : demande de réexamen et Planning, U546
+
+Sélection du sujet enregistrée. Lecture des scopes et des accords U500/U501 avant analyse, comparaison primaire Oracle/Salesforce ELM496/498, CMP225. Six propositions de champs consignées dans backlog-request-planning-boundary-U546.yaml : demande de travail et suivi distingués de l’étude et application du plan. Autorisation bornée conservée, pas de double arbitrage ni de dossier manuel obligatoire. Aucun champ canonique, nom, comportement ou accord modifié ; validation du sujet ne vaut pas adoption des propositions.
+
+
+## 21 septembre 2026 — Demande d’optimisation comme comportement de Planning, U547
+
+Clarification utilisateur enregistrée : véritable demande traitée comme les Orders, rattachement comme premier comportement proposé. Lecture D04.s, six enfants et liens de D03.p ; sources Oracle/Salesforce relues, CMP226. Option documentée avec effet métier, portée du premier comportement, préservation des origines et scénario de redistribution sans sous-comportements. La demande reste distincte du plan et de son résultat ; son suivi se poursuit jusqu’à conclusion. Recommandation U546 réorientée sans effacer l’accord U501. Aucun champ canonique, parent, comportement ou accord modifié.
+
+
+## 21 septembre 2026 — Offre de service du Domain et origine des demandes, U548
+
+Apport utilisateur enregistré avant analyse. D04 et capacités enfants relus ; comparaison primaire TM Forum / Oracle, CMP227. Offre de service proposée comme frontière, avec réserve explicite sur l’exclusivité d’origine : Transfer Order porte les deux origines U501. Proposition de définition et impacts consignés dans service-requests-offer-boundary-U548.yaml ; lien depuis U547. Aucun champ du modèle ni accord modifié.
+
+
+## 21 septembre 2026 — Point suivant : redistribution du stock, U550
+
+Clarification U549 et passage au point suivant U550 enregistrés sans adoption implicite. Propositions éditoriales BHV024/025 consignées ; décision, Planning, Orders et prestations distingués. Comparaison primaire Oracle/Nextail CMP228. Aucun nom, parent ni définition canonique modifié.
+
+
+## 21 septembre 2026 — Définitions de redistribution adoptées, U551
+
+Accord explicite enregistré avant modification. Définitions BHV024/BHV025 remplacées par les formulations présentées U550 ; état antérieur complet conservé dans l’annexe. Noms et parents inchangés, explication éditoriale du verbe Déplacer retirée car caduque. Intentions limitées au champ definition de chaque comportement ; aucune publication.
+
+
+## 21 septembre 2026 — Refacto Planning, U552
+
+Contribution enregistrée avant mutation et baseline ciblée conservée. Demande d’optimisation intégrée comme comportement du Planning du carnet ; simulation et autorisation reparentées ; trois déclenchements regroupés comme modalités ; suivi d’application réparti sans perte entre demande et Supply Assignment. Application du plan de stock et publication du plan de demande explicitées par deux comportements. Deux liens redondants de la demande consolidés avec les relations du Planning. Décisions et capacités partenaires préservées, D17.b laissé en arbitrage. Origine Backoffice maintenue dans le périmètre de D04.s sans étendre le contrat de métadonnées.
+
+Sources primaires reconsultées, CMP229 et comparaisons des fiches actualisées. Demande de refacto distinguée des accords champ par champ ; aucune publication, modification de snapshot ou création de catalogue Information.
+
+
+## 21 septembre 2026 — Supply Planning au niveau Area, U553
+
+Correction explicite appliquée à D17.name ; état antérieur conservé. Comparaisons Oracle/SAP relues et reformulées au niveau de l’Area, avec différence de périmètre explicite, CMP230. Intention limitée au nom de l’Area. Aucun déplacement des Plannings opérationnels ni arbitrage du nom D17.b ; refacto U552 poursuivi.
+
+
+## 21 septembre 2026 — Capacité de couverture en attente, U554
+
+Instruction conditionnelle consignée. Revue des scopes Demand Planning, Inventory Optimization Planning, Order Backlog Planning et Purchase Order : reste de responsabilité de couverture d’ensemble des apports futurs non explicitement repris. D17.b mise en attente, sans nouvel enfant ni suppression injustifiée. Nom de l’Area D17 conservé Supply Planning ; matrice et condition de reprise dans le manifest U552.
+
+
+## 21 septembre 2026 — Retrait du planning de couverture dupliqué, U555
+
+Fait utilisateur enregistré : MAP porte le planning et crée les Planned Orders. D17.b et REL-MEMBER-D17.b retirés, état antérieur et accord historique conservés. La précision remplace la mise en attente U554 ; aucun successeur ajouté, aucun identifiant réutilisé. Fiches Area, Demand Planning et publication alignées sans lien mort. Area Supply Planning et Plannings opérationnels conservés. Deux défauts de contrat du premier contrôle du refacto corrigés : exemple de Service Requests et métadonnées de relations. Aucun changement de publication.
+
+
+## 21 septembre 2026 — Frontières métier dans les descriptions des Areas, U556
+
+Instruction enregistrée puis appliquée aux périmètres de Supply Planning, Service Requests, Fulfillment Optimization et Inventory Optimization. Explication sans nom de solution : plan amont, demandes issues du plan, gestion et adaptation opérationnelle distincts. Descriptions et positions FLOW mises en cohérence ; ancien compte de trois comportements stock corrigé à quatre après le refacto. États antérieurs conservés, aucun flux ou engagement technique ajouté.
+
+
+## 21 septembre 2026 — Audit du modèle hors référentiels, U557
+
+Demande enregistrée avant analyse ; baseline du backlog conservée. Relecture de 41 capacités et 79 comportements dans sept Areas, épreuve sur 15 parcours et comparaison des retraits avec la publication courante 2026-09-19.11, les baselines U540/U552 et les migrations antérieures documentées. Sept comportements retirés depuis la publication retrouvés dans les responsabilités consolidées ; deux changements de niveau tracés ; retrait D17.b explicitement volontaire U555. Aucune disparition accidentelle de responsabilité établie dans les retraits examinés.
+
+Cinq frontières ou intégrations incomplètes et quatre décalages rédactionnels consignés : Planned Orders, relations de Demand Planning, mise en vigueur des politiques de réservation, articulation des décisions de satisfaction, besoins prévisionnels dans Supply Assignment ; noms/comptes et anciennes formulations. Dix documents primaires consultés, CMP231. Annexe model-coherence-audit-U557.yaml et rapport dans audits/2026-09-21-model-coherence-U557. Diagnostic uniquement, aucune modification du modèle ni reprise d’accord ; audit U431, référentiels et publications préservés. Contrôles structurels enregistrés ; index des sources actualisé et résultat final du validateur conservé dans le dossier d’audit.
+
+
+## 21 septembre 2026 — Complément sur les inspirations, U558
+
+Contribution enregistrée ; audit prolongé sans modifier le modèle. 128 fiches possèdent au moins deux documents distincts ; 283 comparaisons, 131 URLs, 126 synthèses illustrées. Aucune URL perdue sur les fiches conservées. Les sept comportements regroupés révèlent cependant une transmission incomplète des appuis et exemples aux successeurs ; cinq URLs absentes des comparaisons courantes restent dans les preuves historiques. Deux synthèses manquent sur les nouveaux comportements ; Demand Planning mêle par endroits approche source et choix FLOW ; doublons d’éditions et répétitions signalés.
+
+Revue ciblée de 21 fiches modifiées, ELM556/557 et ELM452 reconsultés, accès SAP Reassignment/EDQA limité et déclaré. CMP232, annexe market-inspiration-audit-U558.yaml et complément de rapport enregistrés. Aucune certification de toutes les affirmations inchangées, aucune correction ni publication ; validation finale commune U557/U558 conservée dans le dossier d’audit.
+
+
+## 21 septembre 2026 — Plan de refacto proposé, U559
+
+Demande enregistrée puis plan structuré en quatre lots : acquis et inspirations regroupées ; interfaces de planification ; trois frontières métier ; harmonisation et contrôles. Les dix constats U557/U558 sont couverts. Recommandations explicites pour Supply Protection, compatibilité collective du plan et besoins prévisionnels sans commande ; prise en charge des Planned Orders selon leur famille proposée. CMP233, appuis primaires ciblés reconsultés.
+
+Plan enregistré dans modeles/backlog/model-consolidation-plan-U559.yaml, restitution dans audits/2026-09-21-model-coherence-U557/plan-refacto-U559.md. Aucun arbitrage adopté ni modification du modèle, des référentiels ou des publications. Source index actualisé ; validation de l’annexe et du projet enregistrée séparément des preuves de l’audit initial.
+
+
+## 21 septembre 2026 — Consolidation autonome du modèle, U560
+
+Instruction d’autonomie enregistrée puis baseline complète capturée avant mutation. Plan U559 appliqué hors référentiels : 26 fiches modifiées, six relations qualifiées et quatre nouvelles coopérations. Noms, identifiants et décomposition conservés. Prise en charge des propositions planifiées précisée par famille ; Demand Planning reliée aux demandes connues et à la consommation du plan ; gouvernance des politiques de réservation dans Supply Protection ; compatibilité collective et engagements distingués. Besoins prévisionnels historiques sans cas identifié maintenus ouverts.
+
+Quatorze occurrences documentaires des comportements regroupés tracées vers leurs successeurs, exemples repris, deux synthèses complétées, attribution Demand Planning et répétitions corrigées. CMP234 et limites d’accès SAP consignés. Choix de travail appliqués comme tels ; aucun accord nouveau attribué automatiquement à Laurent. Neuf constats résolus dans le modèle de travail, un partiellement résolu ; contrôles structurels ciblés réussis. Validation finale, tests concernés et restitution backlog consignés dans le rapport U560. Aucune release, modification de publication, build frontend ou opération serveur.
+
+
+## 21 septembre 2026 — Cas d’affectation avant commande, U562–U564
+
+Contributions enregistrées avant interprétation. U562 corrige la restriction de travail U560 : Supply Assignment couvre aussi les ressources affectées à un besoin prévisionnel identifié avant toute commande. Trois fiches corrigées, sept cas concrets documentés, C112 et CMP235. Appuis Oracle/SAP au pegging distingués de l’application FLOW et de l’optimisation du carnet. Le périmètre fonctionnel est qualifié ; son Planning parent et sa décision restent à préciser. Aucun changement de hiérarchie ou de nom ; preuves et publications préservées.
+
+
+## 21 septembre 2026 — Planning commun et comparaison Microsoft, U565/U566
+
+U565 tranche le cas de concurrence entre commandes et prévisions : un même Planning. Périmètre de D03.p étendu, avec mise en cohérence de l’Area, de Fulfillment Plan Decision, des quatre comportements et du terme Supply Assignment Plan. Lien de consommation vers Demand Planning proposé ; pas de double compte de la demande, de priorité universelle ou de nouvelle couverture amont. Noms et décomposition conservés ; nom du Planning à qualifier.
+
+Microsoft SCM et Business Central documentent un calcul commun commandes/prévisions ; IFO reste documenté sur les commandes. Différence entre forecast source, prévision restante et liens d’affectation consignée, sans importer les règles produit. CMP236, ELM573/574 et réexamen ELM403. Cas d’un arrivage de 500 face à 300 commandées et 300 encore prévues enregistré ; le besoin résiduel est explicite.
+
+Contrôles finaux U562–U566 : validation sans erreur, 30 tests concernés réussis, restitution backlog régénérée. Huit fiches et un terme ajustés, une coopération ajoutée ; noms, décomposition, référentiels et publication courante inchangés. Accords de portée capturés dans INT-U562-D02E-DEFINITION puis INT-U565-D02E-DEFINITION et INT-U565-D03P-DEFINITION, avec interprétation contextuelle limitée à la définition ; autres champs proposés. Vérification et résultats dans audits/2026-09-21-supply-assignment-U562.
+
+
+## 21 septembre 2026 — Vérification d’un plan Supply intégré et proposition Master Planning, U567–U570
+
+Contributions enregistrées avant interprétation. Vérification documentaire : Microsoft Master Planning combine affectation aux commandes et propositions de nouveaux achats ; Batch CTP s’appuie sur le plan dynamique. SAP ARun/BOP considère les protections et apports existants ou attendus ; la matrice SBC 2025 FPS01 exclut la création d’apports lors du BOP. SBC/PP/DS et SAP IBP portent d’autres mécanismes de création et d’optimisation intégrée. Les neuf appuis, versions et limites d’accès sont consignés dans integrated-supply-plan-U567.yaml, CMP237.
+
+Cinq fiches enrichies uniquement sur les inspirations et correspondances ; définitions, noms, parents et relations inchangés. Laurent propose ensuite l’Area Master Planning, un plan Supply commun et des capacités de gestion du plan. Proposition d’une capacité Master Plan Management avec comportements de cadrage/lancement, simulation/analyse, autorisation et applications ; filiation des responsabilités actuelles préservée dans master-planning-structure-U568.yaml, CMP238. Placement des décisions demandé explicitement ; pas de fusion ou renommage anticipé. La responsabilité de couverture exclue en U555 doit être réexaminée sans restaurer l’identifiant retiré D17.b.
+
+U571 demande une recommandation de placement. Proposition : regrouper les décisions contributrices au contenu du plan dans Master Planning, conserver les faisabilités réutilisables, la configuration et les engagements distincts. Les responsabilités résiduelles de D03/D05 sont à auditer avant migration ; aucun choix de placement attribué à Laurent.
+
+U572 valide le principe de regroupement dans Master Planning, avec responsabilités de faisabilité, configuration et engagements distinctes. Accord enregistré dans l’annexe d’arbitrage avant toute migration ; noms et successions non présentés restent proposés, sans adoption de champs canoniques par extension.
+
+Contrôles U567–U572 : validation sans erreur, 26 tests concernés réussis, vue backlog régénérée, publication courante inchangée. Les cinq modifications de fiches portent sur les inspirations et leurs preuves ; aucun nom, définition, périmètre ou parent canonique modifié. Rapports et propositions conservés dans audits/2026-09-21-integrated-supply-plan-U567.
+
+## 21 septembre 2026 — Gestion et catégories d’action du master plan, U573/U574
+
+Contributions enregistrées avant interprétation. Étude de 26 documents primaires, dont trois lectures réutilisées du même jour, sur Microsoft SCM, Oracle Fusion 26B et SAP IBP 2605. Onze nouvelles notices ELM582–592 ; CMP239 pour la gestion, CMP240 pour les catégories d’action et le nom de l’affectation. Limites d’accès SAP et différences entre calcul, scénario, proposition, autorisation et engagement conservées.
+
+Proposition structurée : une capacité Master Plan Management, onze comportements terminaux, onze familles d’actions et huit cas de gestion ; continuité des responsabilités existantes explicitée. Order Allocation & Reallocation et Forecast Supply Allocation proposés pour remplacer le libellé contesté sans perdre les prévisions. Supply Procurement Decision proposée pour clarifier les choix d’achat du plan d’ensemble ; arbitrage commun D03.o à réexaminer en même temps. Calcul conjoint des quotas de protection non établi par les sources ; aucun standard exhaustif revendiqué.
+
+Annexe et restitution dans modeles/backlog/master-plan-management-market-study-U573.yaml et audits/2026-09-21-master-plan-management-U573. Noms, hiérarchie, accords et publications inchangés ; pas de migration, release, build ni opération serveur dans cette étude. Les contrôles finaux et empreintes sont consignés dans le dossier de l’étude.
+
+
+## 21 septembre 2026 — Planning Management et application du Master Plan, U575
+
+Contribution enregistrée avant interprétation. Nom Planning Management adopté dans la proposition. C113 corrige le retour au terme Allocation et la décomposition des familles d’effets en comportements. Proposition de six comportements directs, avec un Master Plan Application reprenant les six applications U573/U574 ; onze cas conservés, y compris affectation aux prévisions. Sources Oracle ELM566 et Microsoft ELM588 relues ; CMP241 qualifie leurs recouvrements partiels.
+
+Annexe courante master-plan-application-U575.yaml ; étude précédente conservée avec renvoi de succession, nouvelle restitution revision-U575.md. Les décisions, responsables d’engagements et politiques gardent leur périmètre. Pas de migration canonique, nouveau comportement adopté, release, build ou opération serveur. Contrôles et empreintes dans scope-U575.yaml et validation-U575.json.
+
+
+## 21 septembre 2026 — Nom métier de la mise en œuvre du plan, U576
+
+Contribution enregistrée ; principe de regroupement accepté avec réserve sur le nom. Plan Implementation proposé dans l’annexe courante, sans changement de périmètre ni migration canonique. Appui lexical historique Oracle et fonctionnel Microsoft consultés, ELM593/594 et CMP242 ; aucun consensus de nomenclature revendiqué. Rapports antérieurs conservés, note naming-U576.md. Index des sources actualisé et validation consignée dans validation-U576.json.
+
+
+## 21 septembre 2026 — Validation de Plan Implementation, U577
+
+Verbatim enregistré puis accord explicite sur le champ name = Plan Implementation conservé dans l’annexe courante, avec contexte et limites. Réserve de nom U576 levée ; portée du regroupement et autres champs inchangés. Aucun nœud canonique correspondant au comportement consolidé n’existe encore : l’accord exact reste en annexe en attendant sa matérialisation, sans enregistrer un accord erroné sur le nom ou périmètre actuel de D02.e. Sources déjà documentées inchangées ; provenance actualisée, validation dans validation-U577.json.

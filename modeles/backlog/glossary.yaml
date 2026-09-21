@@ -8974,9 +8974,9 @@ terms:
       - CMP190
 - id: TER078
   name: Supply Assignment Plan
-  short_description: Plan d’affectation des ressources aux commandes.
+  short_description: Plan d’affectation des ressources aux commandes et besoins prévisionnels identifiés.
   definition: Ensemble cohérent d’affectations proposées ou retenues précisant les ressources, quantités et dates destinées
-    aux commandes d’un périmètre, avec les hypothèses et contraintes applicables.
+    aux commandes et besoins prévisionnels identifiés d’un périmètre, avec les hypothèses et contraintes applicables.
   context: Objet métier descriptif de résultat, pas un niveau supplémentaire de comportement ; convention de vocabulaire U289.
   notes: |-
     Préciser statut proposé/retenu/appliqué, périmètre, version et hypothèses. Exemple fictif : ressource de 100 pièces affectée à deux commandes pour 60 et 40 selon les règles. Il ne s’agit ni d’une enveloppe par canal ni nécessairement d’un transfert entre sites. Décider les affectations, les enregistrer, confirmer la promesse et modifier les Orders ont des effets distincts.
@@ -8991,14 +8991,17 @@ terms:
   - U436
   - U477
   - CMP191
+  - U565
+  - U566
+  - ELM573
+  - CMP236
   source_locator:
     path: marche/assignment-allocation-convention.md
     anchor: convention-flow
   review:
     state: partial
-    note: Définition éditoriale sous mandat U289 ; aucune validation détaillée auto-attribuée. U436 adopte uniquement la frontière
-      réservation / affectation sur le blocage concurrent. Définitions et autres compléments conservent leur portée antérieure
-      ; aucun accord global sur le terme.
+    note: Mise en cohérence rédactionnelle avec le Planning commun U565 ; aucune validation détaillée du terme ou des comparaisons
+      déduite.
   market_comparisons:
   - vendor: Microsoft
     product: Dynamics 365 Intelligent Order Management
@@ -9045,9 +9048,35 @@ terms:
     - U477
     - ELM357
     - CMP191
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management — Master planning / Planning Optimization
+    element_name: Master planning with demand forecasts
+    concept_name: Plan commun intégrant demande connue et prévisions
+    element_type: Processus de planification documenté dans un produit
+    relationship: Recouvrement partiel
+    scope_summary: Un master plan peut intégrer commandes et prévisions de demande.
+    approach_summary: Inclure les prévisions et, selon le paramétrage, consommer leur part déjà représentée par les commandes.
+    similarities: Les demandes connues et la prévision restante sont considérées ensemble pour préparer leur couverture.
+    differences: Le master planning Microsoft génère aussi des Planned Orders ; FLOW conserve la frontière de couverture amont
+      et décrit ici le plan d’affectation. La source ne démontre pas un optimiseur économique identique.
+    flow_position: Un même Planning compare les affectations aux commandes et aux prévisions identifiées, avec décisions spécialisées
+      et application distinctes.
+    source_title: Master planning with demand forecasts
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/demand-forecast
+    source_version: Documentation évolutive ; mise à jour affichée 27 juillet 2026
+    source_locator: Introduction ; Set up a master plan to include a demand forecast ; Methods to reduce forecast requirements
+    consulted_on: '2026-09-21'
+    evidence_limits: Document primaire directement consulté. Coexistence et consommation documentées, pas équivalence de taxonomie
+      ni preuve de réalisation installée.
+    status: proposed
+    source_refs:
+    - U565
+    - U566
+    - ELM573
+    - CMP236
   market_inspiration:
-    choice: Un Supply Assignment Plan décrit les ressources, quantités et dates proposées ou retenues pour les commandes.
-      Son statut doit dire s’il est seulement envisagé, choisi ou déjà appliqué.
+    choice: Un Supply Assignment Plan décrit les ressources, quantités et dates proposées ou retenues pour les commandes et
+      besoins prévisionnels identifiés. Son statut doit dire s’il est seulement envisagé, choisi ou déjà appliqué.
     flow_scope: Ensemble cohérent d’affectations avec hypothèses et contraintes.
     flow_approach: Rendre visibles les liens proposés et le reste sans couverture.
     synthesis:
@@ -9055,6 +9084,8 @@ terms:
       résultats planifiés et résultats transmis. Les deux aident à séparer contenu d’un plan et effet de son application.
     - FLOW précise « Assignment » pour nommer un plan de liens aux ressources. Cet objet n’est pas un comportement supplémentaire
       et ne réserve pas par sa seule existence.
+    - Microsoft Supply Chain Management documente un plan intégrant commandes et prévisions ; son périmètre inclut la création
+      de Planned Orders. FLOW décrit ici les affectations, avec réservation et couverture amont distinctes.
     examples:
     - title: Illustration FLOW — un plan avant application
       situation: Un stock de 100 pièces est proposé pour deux commandes à hauteur de 60 et 40.

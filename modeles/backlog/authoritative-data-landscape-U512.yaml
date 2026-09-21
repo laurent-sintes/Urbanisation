@@ -1,0 +1,99 @@
+schema_version: '1.0'
+review_id: AUTHORITATIVE-DATA-LANDSCAPE-U512
+as_of: '2026-09-21'
+status: proposed_audit
+target_id: business-references
+source_refs:
+- U511
+- U512
+- U513
+- CMP207
+baseline:
+  git_head: 5957a17756d7def41be9a599e7de293245cceebc
+  model_path: modeles/backlog/model.yaml
+  model_sha256: 73f132795d0e635a7dccb73f38ce1fa63b509bc71418e0b88825ab24b5117148
+  model_size_bytes: 1659461
+  model_version: 2026-09-13.3
+  read_method: scripts.structured_io.loads sur les octets utilisés pour calculer model_sha256 ; aucun instantané concurrent
+    du modèle.
+scope: Responsabilité de l’Area, sept sujets, quatorze capacités et relations transversales ; aucun audit historique des comportements.
+report: ../../audits/2026-09-21-authoritative-data-landscape-U512/rapport.md
+conclusions:
+- id: LAND01
+  status: interpretation
+  finding: Sept sujets sémantiquement distincts ; taxonomie OMS commune non démontrée.
+  evidence:
+  - ELM518
+  - ELM522
+  - ELM523
+  - ELM526
+- id: LAND02
+  status: recommendation
+  finding: Présenter deux responsabilités communes et sept sujets au niveau landscape ; ne pas en déduire deux capacités canoniques
+    adoptées.
+  tradeoff: Spécialités à conserver ; granularité détaillée à justifier par les résultats et responsabilités.
+- id: LAND03
+  status: observed_backlog
+  finding: 28 liens externes ciblent les Ingestion ; aucun lien métier transversal sur les Visibility.
+  evidence: ../../audits/2026-09-21-authoritative-data-landscape-U512/structural-findings.yaml
+  recommendation: Qualifier le service fourni avant tout changement d’extrémité.
+- id: LAND04
+  status: observed_backlog
+  finding: Assortment sans consommateur opérationnel explicite ; D14.a chevauche la consultation D14.b.
+  recommendation: Éprouver les usages puis corriger le lot retenu ; aucun lien ou Behavior créé automatiquement.
+- id: LAND05
+  status: interpretation
+  finding: Projection reçue et autorité locale compatibles ; garanties et règles d’applicabilité détaillées non adoptées.
+  evidence:
+  - U479
+  - ELM484
+  - ELM485
+- id: LAND06
+  status: editorial_recommendation
+  finding: Supply Reference Data est une alternative client possible ; Authoritative Data reste le concept documenté.
+  tradeoff: Libellé contextualisé proposé, non standard OMS. Reference Data a aussi un sens étroit de nomenclatures.
+- id: LAND07
+  status: editorial_recommendation
+  finding: Backing Service Catalog clarifie le contenu FLOW ; aucun accord antérieur de renommage retrouvé.
+  evidence:
+  - U488
+  - U497
+  - ELM513
+  tradeoff: Backing demande une explication ; nom exact non démontré comme standard OMS.
+- id: LAND08
+  status: interpretation
+  finding: DMN sépare entrées et logique, sans dicter le découpage des références ni leur stockage.
+  evidence:
+  - ELM259
+  - ELM527
+options:
+- id: retain_seven_pairs
+  status: discuss
+  description: Conserver la maille 7 × 2 en justifiant ses résultats propres.
+- id: common_responsibilities
+  status: recommended_landscape_only
+  description: Intégrer les références reçues ; fournir/comprendre la référence applicable ; sept sujets de lecture conservés.
+- id: undifferentiated_block
+  status: not_recommended
+  description: Perd les frontières sémantiques entre sujets.
+open_questions:
+- Q072 prix appliqué et reliquat contractuel
+- Q076 réseau, sources et validité
+- Maître de configuration des services et lien avec Agreement
+- Versions et identité des assortiments
+- Responsabilité des paramètres partagés et règles de décision
+applied:
+  editorial_only:
+  - business-references.fields.market_inspiration
+  - business-references.fields.market_comparisons
+  unchanged:
+  - name
+  - definition
+  - scope
+  - kind
+  - all_relations
+  - all_other_nodes
+  - glossaries
+  - decision_intents
+  - published_snapshots
+approval: 'Aucun nouvel accord enregistré : appréciation U511 nuancée par U513 ; options et conclusions proposées.'

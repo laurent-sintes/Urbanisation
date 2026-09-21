@@ -4306,3 +4306,535 @@ MKT14 — [Assortment management](https://learn.microsoft.com/en-us/dynamics365/
 ### ELM517
 
 MKT13 — [SAP Assortment List](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-list-1-1), cours S/4HANA Cloud Private Edition Retail, numéro de release non affiché. Attributes of the Assortment List ; Full/Change/Mixed Version ; affichage et diffusion électronique, texte primaire lu le 19 septembre 2026. Appui à la transmission des évolutions et à la consultation des sélections applicables. Les formats, fréquences et enrichissements transactionnels SAP ne sont pas adoptés. Complète ELM515 pour D16.a/D16.b ; deux documents SAP ne constituent pas un consensus interéditeurs. CMP206.
+
+
+### ELM518
+
+MKT77 — [Order Workflow Templates Overview](https://docs.fluentcommerce.com/essential-knowledge/order-workflow-templates-overview), Fluent Order Management. Non indiquée dans le document consulté. ; consulté le 21 septembre 2026. La préparation des workflows distingue lieux et réseaux, catalogues virtuels, catalogues de stock et catalogue produit. Elle interroge explicitement une origine PIM, ERP ou Commerce pour les données du catalogue produit, ainsi que les réseaux et catalogues utilisés pour le sourcing. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM519
+
+MKT77 — [Product Sync - Adobe Commerce Connector](https://docs.fluentcommerce.com/essential-knowledge/product-sync-adobe-commerce-connector), Fluent Order Management — Adobe Commerce Connector. Non indiquée dans le document consulté. ; consulté le 21 septembre 2026. Le connecteur transmet les données produit d’Adobe Commerce vers Fluent OMS. Il prévoit un chargement initial complet, un export manuel depuis une date et des deltas automatiques ; seuls les types Simple et Configurable sont pris en charge dans ce parcours. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM520
+
+MKT77 — [Manage Locations via UI](https://docs.fluentcommerce.com/by-type/manage-locations-via-ui), Fluent Order Management ; Fluent Big Inventory. Non indiquée dans le document consulté. ; consulté le 21 septembre 2026. Fluent OMS et Fluent Big Inventory permettent de créer et modifier des lieux directement dans leur interface, sous réserve des permissions requises. Le système contrôle les valeurs soumises. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM521
+
+MKT77 — [Creating and Editing Product Catalogues](https://docs.fluentcommerce.com/by-type/creating-and-editing-product-catalogues), Fluent Order Management. Non indiquée dans le document consulté. ; consulté le 21 septembre 2026. L’interface permet la création et la modification de catalogues produit, avec attributs facultatifs. Les opérations correspondantes doivent être activées dans le manifeste et accessibles au rôle de l’utilisateur. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM522
+
+MKT14 — [Data management](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/data-management), Dynamics 365 Intelligent Order Management. Documentation en ligne ; version produit non précisée ; consulté le 21 septembre 2026. IOM peut fonctionner avec ou sans master data locale. Un ERP peut être maître des produits ou comptes ; certaines commandes portent assez d'informations client et peuvent utiliser des produits saisis dans les lignes sans catalogue local. Des écrans et imports permettent aussi d'administrer ces données. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/oms-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM523
+
+MKT14 — [Fulfillment and Returns Optimization provider overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization), Dynamics 365 Intelligent Order Management — Fulfillment and Returns Optimization. Documentation en ligne ; version produit non précisée ; consulté le 21 septembre 2026. Le moteur lit dans Dataverse des sources de fulfillment, listes, contraintes et stratégies. Les sources représentent notamment entrepôts, magasins, fournisseurs livrant directement et sites virtuels ; elles peuvent être créées, modifiées, enrichies d'horaires et activées ou désactivées localement. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/oms-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM524
+
+MKT14 — [Call the Intelligent Order Management Fulfillment optimization engine (DOM) via API](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/calling-intelligent-fulfillmen-optimization-engine), Dynamics 365 Intelligent Order Management — fulfillment optimization engine. Fonction annoncée depuis avril 2023 ; prérequis de la page : version 1.0.0.6035 ; consulté le 21 septembre 2026. Une application externe peut appeler le moteur avec adresse, produits et quantités pour obtenir un plan de fulfillment. Les options de transport associent paramètres locaux, calendriers et ramasses, données produit et appel à l'API FedEx. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/oms-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM525
+
+MKT23 — [External system integration overview](https://www.ibm.com/docs/en/order-management-sw/10.0.0?topic=systems-external-system-integration-overview), Sterling Order Management System Software. 10.0.0 ; consulté le 21 septembre 2026. Sterling échange avec les systèmes externes des informations de commandes, disponibilités, produits et clients. La synchronisation peut être quasi immédiate, à la demande ou par lot. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/oms-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM526
+
+MKT23 — [The organization's roles and participant associations](https://www.ibm.com/docs/en/order-management-sw/10.0.0?topic=organization-organizations-roles-participant-associations), Sterling Order Management System Software. 10.0.0 ; consulté le 21 septembre 2026. Une organisation peut porter plusieurs rôles ; les nœuds représentent des lieux physiques. Les transporteurs configurent leurs services ; les entreprises configurent règles et préférences de fulfillment ; les vendeurs configurent notamment paiement et prix. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/oms-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+### ELM527
+
+MKT36 — [Decision requirements graph](https://docs.camunda.io/docs/components/modeler/dmn/decision-requirements-graph/), Camunda 8. Version 8.9 affichée ; consulté le 21 septembre 2026. Le graphe distingue décisions, données d’entrée et sources de connaissance ; la logique est portée par la décision. Localisation, différences et limites dans [le relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/concept-documents.yaml). Appui partiel CMP207 ; aucun découpage FLOW ni déploiement adopté.
+
+**Réexamen U511–U513, 21 septembre 2026 :** ELM484/485/259/515/391/513 reconsultés ; passages et limites dans [concept-documents.yaml](../audits/2026-09-21-authoritative-data-landscape-U512/concept-documents.yaml). Les preuves et dates antérieures demeurent historiques.
+
+
+### ELM528
+
+MKT69 — [Command Query Responsibility Segregation (CQRS) pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs), Azure Architecture Center, mise à jour du 21 février 2025. Sections Solution et Separate read models and write models, texte consulté le 21 septembre 2026. La séparation des modèles de lecture/écriture ne prescrit pas des stockages séparés. Appui architectural CMP208, aucune capacité métier ni technologie adoptée. [Passages et limites](../modeles/backlog/authoritative-data-structure-U514.yaml).
+
+
+### ELM529
+
+MKT69 — [Materialized View pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view), Azure Architecture Center, page évolutive sans date affichée dans le texte consulté le 21 septembre 2026. Sections Context and problem, Solution, Issues and considerations et When to use this pattern. Une vue peut combiner plusieurs stockages selon les besoins de lecture. Appui architectural à U515, sans imposer de matérialisation ni de Behavior métier. [Localisateurs et limites](../modeles/backlog/authoritative-data-structure-U514.yaml), CMP209.
+
+
+### ELM530
+
+MKT73 — [Script API — Class ProductPriceModel](https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-script-api/dw.catalog.ProductPriceModel.html), B2C Commerce. Documentation en ligne ; version et date de mise à jour non affichées. Consulté le 21 septembre 2026. Définitions tarifaires regroupées en Price Books ; prix applicables selon contexte, activité, période, devise et quantité. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM531
+
+MKT14 — [Define product pricing with price lists and price list items](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products), Dynamics 365 Sales. Page mise à jour le 8 août 2025. Consulté le 21 septembre 2026. Price Lists par contexte avec devise et dates ; lignes produit/unité portant montant ou méthode tarifaire et lien vers des remises. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM532
+
+MKT14 — [Price calculation for opportunity, quote, order, and invoice records](https://learn.microsoft.com/en-us/dynamics365/sales/price-calculation-opportunity-quote-order-invoice-records), Dynamics 365 Sales. Page mise à jour le 22 août 2025. Consulté le 21 septembre 2026. Le calcul transactionnel utilise les lignes tarifaires, méthodes, arrondis et remises de volume ; liste obligatoire ou optionnelle selon configuration. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM533
+
+MKT20 — [Overview of Product Development Business Objects](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupd/overview-of-product-development-business-objects.html), Fusion Cloud Product Development. 26B. Consulté le 21 septembre 2026. Objets produit, documents, structures et changements portent notamment les informations techniques et de conception. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM534
+
+MKT13 — [Working With Purchasing Info Records](https://learning.sap.com/courses/sourcing-in-sap-s4hana/working-with-purchasing-info-records), S/4HANA Sourcing. Cours public ; numéro de release et date de mise à jour non affichés. Consulté le 21 septembre 2026. Référence fournisseur/article avec conditions, prix et délais au niveau achats ; prix de référence distinct du prix de commande. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM535
+
+MKT14 — [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements), Dynamics 365 Supply Chain Management. Documentation en ligne ; édition produit et date non relevées. Consulté le 21 septembre 2026. Accords fournisseurs avec engagements de quantité ou valeur, conditions tarifaires et période de validité. [Passages, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), CMP210 ; aucune responsabilité installée ni fonction FLOW déduite automatiquement.
+
+
+### ELM536
+
+MKT14 — [Credit holds for sales orders](https://learn.microsoft.com/en-us/dynamics365/finance/accounts-receivable/cm-sales-order-credit-holds), Dynamics 365 Finance. Texte primaire consulté le 21 septembre 2026, sections Introduction ; Set up blocking rules and exclusion rules ; Account status. Des règles et exclusions par client ou groupe conduisent à mettre des commandes en attente selon leur contexte. [Versions, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), complément U517 / CMP211.
+
+
+### ELM537
+
+MKT14 — [Set up vendor accounts](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/set-up-vendor-accounts), Dynamics 365 Supply Chain Management. Texte primaire consulté le 21 septembre 2026, sections Vendors in different legal entities ; Putting a vendor on hold. Restrictions fournisseur par type de transaction, avec motif et fin éventuelle ; bloquer de nouvelles commandes peut laisser factures et paiements ouverts. [Versions, rapprochements et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml), complément U517 / CMP211.
+
+
+### ELM538
+
+MKT20 — [How the Order Orchestration and Order Promising Processes Use the Collected Planning Data](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html). Fusion Cloud SCM — Order Management / Global Order Promising. Édition : 26B Consultation primaire le 21 septembre 2026. Passage : Data Collections ; Order Orchestration ; Order Promising, lignes 4–15.
+
+Le dépôt reçoit des données Oracle ou externes ; orchestration et moteur de promesse les utilisent selon des accès différents. Limite : Architecture de produit documentée pour ce parcours ; pas exigence de mémoire séparée, matérialisation ou unique mode de fonctionnement FLOW. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/oracle-sap-planning-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM539
+
+MKT20 — [Collect Data for Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/refresh-the-global-order-promising-server.html). Fusion Cloud SCM — Global Order Promising. Édition : 26B Consultation primaire le 21 septembre 2026. Passage : Collect Data ; liste d’entités, lignes 4–26.
+
+La collecte distingue paramètres, supply et demand ; elle mobilise notamment articles, structures, organisations, ressources, méthodes d’expédition et fournisseurs. Limite : Les nomenclatures et gammes de fabrication ne sont pas ajoutées au périmètre FLOW par cette comparaison. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/oracle-sap-planning-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM540
+
+MKT13 — [Outlining Alternative-based Confirmation](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-alternative-based-confirmation). S/4HANA — aATP. Édition : Cours sans édition globale affichée ; historique explicite 1809, 1909, 2020 et 2021. Consultation primaire le 21 septembre 2026. Passage : Alternative-based Confirmation ; Configure Alternative Control ; résultats ; caractéristiques et substitutions, lignes 70–104 et 130–138.
+
+Des caractéristiques de la commande et des données maîtres, notamment client et produit, déterminent la stratégie de substitution de lieux. Limite : Cours mêlant versions historiques ; ne démontre ni couverture actuelle exhaustive ni service de vue séparé ; paramètres de priorité natifs non adoptés. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/oracle-sap-planning-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM541
+
+MKT77 — [Getting Started with Reference Sourcing Criteria](https://docs.fluentcommerce.com/by-type/getting-started-with-reference-sourcing-criteria). Fluent Order Management — Responsive Sourcing. Édition : Version générale non indiquée ; une limite mentionne Order Reference Module v2.2.0. Consultation primaire le 21 septembre 2026. Passage : Reference Sourcing Criterion Functions ; Core Concept ; FAQ distance ; lignes 51–130 et 245–247 de la consultation.
+
+Les critères combinent caractéristiques des lieux, disponibilité, demande et historique de rejet pour classer ou exclure des candidats. Limite : Critères configurables et extensibles ; aucune vue universelle imposée. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM542
+
+MKT77 — [Getting Started with Reference Sourcing Conditions](https://docs.fluentcommerce.com/by-type/getting-started-with-reference-sourcing-conditions). Fluent Order Management — Responsive Sourcing. Édition : Non indiquée. Consultation primaire le 21 septembre 2026. Passage : Core Concept ; Applying Path Conditions to Real Scenarios ; Practical Examples ; exemple allProductSizeIn ; lignes 54–109 et 413–424.
+
+Les conditions évaluent un contexte de sourcing comportant notamment niveau client, références ou propriétés produit, destination et date de commande. Limite : Exemples extensibles, sans inventaire exhaustif des données ni prescription de stockage. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM543
+
+MKT77 — [Tailor Fulfilment Plans to Any Scenario - Fulfilment Options Orchestration](https://docs.fluentcommerce.com/release-notes/tailor-fulfilment-plans-to-any-scenario-fulfilment-options-orchestration). Fluent Order Management — Fulfilment Options. Édition : Numéro non indiqué ; note Initial Release, statut Released. Consultation primaire le 21 septembre 2026. Passage : Description — Use case scenarios ; lignes 38–45.
+
+Les exemples adaptent les options aux attributs produit, au panier, à la destination et à la proximité des lieux, puis aux changements de disponibilité ou de délai de préparation estimé. Limite : Note ancienne illustrative ; ne décrit pas un catalogue exhaustif de services ni les contrats actuels de calcul des délais. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM544
+
+MKT77 — [Future Inventory - Data Model and API Overview](https://docs.fluentcommerce.com/essential-knowledge/future-inventory-data-model-and-api-overview). Fluent Commerce — Inventory / Virtual Catalog / Future Inventory. Édition : Non indiquée. Consultation primaire le 21 septembre 2026. Passage : Entities ; Relationship Details ; Queries ; Key Insights ; lignes 64–85, 155–225 et 294–316.
+
+Le document sépare quantités opérationnelles et disponibilité calculée ; les requêtes temporelles de disponibilité servent notamment le sourcing et la promesse. Limite : Arrivages attendus avec dates, pas prévisions. Ne justifie pas seul une vue de références dédiée à la promesse. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM545
+
+MKT77 — [Returns Component](https://docs.fluentcommerce.com/building-blocks/returns-component). Fluent Order Management / Fluent Store — Returns Component. Édition : Historique : v1.0.0 ; date du changelog non exploitable (0000-00-00). Consultation primaire le 21 septembre 2026. Passage : Return Item Details ; Data Dictionary ; Configuring columns using the orderItem state ; Customizing the summary ; lignes 50–100 et 134–170.
+
+Le composant de retour associe données produit, vente initiale et saisie du retour. Les listes de motifs et d’états de l’article sont configurables. Limite : Composant de saisie : ne démontre ni inspection physique, ni décision d’acceptation, ni politique complète, destination ou prestataire de retour. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/fluent-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM546
+
+MKT23 — [Defining a node's sourcing and scheduling](https://www.ibm.com/docs/en/order-management-sw/10.0.0?topic=attributes-defining-nodes-sourcing-scheduling). Sterling Order Management System Software. Édition : 10.0.0 Consultation primaire le 21 septembre 2026. Passage : Table 1. Node sourcing/scheduling tab
+
+Le paramétrage associe lieux, relations organisationnelles, possibilités d'approvisionnement/transfert, services, calendriers et temps de traitement. Une acceptation de transfert peut confirmer la disponibilité avant poursuite de la commande. Limite : Paramètres d'un produit, pas catalogue de vues standard. Calendrier configuré et disponibilité effectivement confirmée restent différents ; un délai de référence n'est pas une promesse. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/oms-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM547
+
+MKT14 — [Master planning with purchase trade agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/purchase-trade-agreement). Dynamics 365 Supply Chain Management — Planning Optimization. Édition : Documentation en ligne ; version produit non précisée Consultation primaire le 21 septembre 2026. Passage : Prepare your system... ; Prepare a released product... ; Examples of how master planning finds vendor and lead times
+
+La sélection mobilise produit, fournisseur, prix et délai des purchase trade agreements, paramètres par défaut et dérogations. Les prix peuvent être comparés entre devises lorsque le taux nécessaire existe. Limite : Purchase trade agreement est le terme produit ; ce document ne prouve pas un Agreement FLOW complet ni un engagement fournisseur vivant. La priorité mono-critère du produit n'est pas adoptée pour FLOW. [Relevé primaire](../audits/2026-09-21-authoritative-views-U519/oms-evidence.yaml), U519/CMP212. Restitution au niveau capacité selon U520 ; aucun détail produit adopté.
+
+
+### ELM548
+
+MKT20 — [Guidelines for Processing Return Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/guidelines-for-processing-return-orders.html). Fusion Cloud SCM — Order Management, 26B. Consulté le 21 septembre 2026. Passage : Manually Reference the Original Order ; Set Up the Item So It's Returnable ; Specify the Return-to Location, lignes 9–30 et 59–61.
+
+Le traitement des retours mobilise une qualification de référence du produit, une destination de retour et, selon le parcours, la commande d’origine. Limite : La fonction produit gère aussi la transaction et l’orchestration ; elle n’est pas une vue de références autonome. Retours fournisseurs et disposition complète non démontrés par cette page. [Relevé U522](../modeles/backlog/visibility-oracle-fluent-U522.yaml), CMP213.
+
+
+### ELM549
+
+MKT20 — [Set Attributes on Your Supply Chain Search](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/promising-attributes-for-supply-chain-availability-searches.html). Fusion Cloud SCM — Global Order Promising, 26B. Consulté le 21 septembre 2026. Passage : Profitable to Promise, lignes 13–46 ; Search Components and Resources, lignes 5–12.
+
+Profitable to Promise utilise des coûts de référence pour comparer les possibilités de satisfaction ; le moteur produit ensuite le choix. Limite : Calcul et choix font partie du moteur Oracle, pas d’une vue Economic Context distincte. Sa logique de coût sous contrainte de date n’est pas adoptée dans FLOW ; ni prix de vente ni comptabilité complète. [Relevé U522](../modeles/backlog/visibility-oracle-fluent-U522.yaml), CMP213.
+
+
+### ELM550
+
+MKT20 — [Source Your Supply Chain](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/overview-of-sourcing-rules-and-bills-of-distribution.html). Fusion Cloud SCM — Global Order Promising, 26B. Consulté le 21 septembre 2026. Passage : Introduction et Source Type ; Global Rule ; Local Rule, lignes 3–17 et 44–60.
+
+Le sourcing Oracle couvre des sources d’achat, de fabrication et de transfert, à une portée globale ou locale. Limite : Règles et choix opérationnels plus larges qu’une vue de références ; périmètre de fabrication non ajouté à FLOW. Le seul mot sourcing ne vaut pas équivalence avec Responsive Sourcing de Fluent. [Relevé U522](../modeles/backlog/visibility-oracle-fluent-U522.yaml), CMP213.
+
+
+### ELM551
+
+MKT28 — [Supply Chain Orchestration](https://www.kinaxis.com/en/solutions/supply-chain-orchestration), Kinaxis Maestro. Page évolutive, édition et date de mise à jour non indiquées ; consultée le 21 septembre 2026. Nature : positionnement d'offre ; identifiant natif non indiqué. Passages : périmètre de la planification pluriannuelle à la livraison ; The value of orchestration.
+
+Reformulation : Kinaxis emploie orchestration pour relier planification, décisions et exécution, avec scénarios et coordination opérationnelle. Appui sémantique au nom du Domain FLOW incluant éventuellement une Area Supply Planning. Limites : positionnement commercial, pas taxonomie normative, preuve de performance ou réalisation Beaumanoir ; périmètre Kinaxis plus large que FLOW. [Analyse U526](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP214.
+
+### ELM552
+
+MKT24 — [Response and supply planning](https://www.sap.com/sea/products/scm/integrated-business-planning/features/response-and-supply-planning.html), SAP Integrated Business Planning. Page évolutive, édition non indiquée ; consultée le 21 septembre 2026. Nature : présentation fonctionnelle de produit ; identifiant natif non indiqué. Passages : Supply planning ; Empower planners with collaboration and simulations ; Empower planners with executional alignment ; Synchronised planning.
+
+Reformulation : plans Supply sous contraintes, comparaison de scénarios, réponse aux changements à court terme et coordination avec l'exécution via S/4HANA. Appui à une planification elle-même adaptable, en coopération avec les opérations. Limites : pas contrat détaillé d'intégration ni carte de capacités FLOW ; aucune performance ou réalisation locale inférée. [Analyse U526](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP214. Dans la formulation FLOW, U527 retient impondérable ; les titres natifs SAP restent conservés.
+
+**Réexamen U526 — ELM294, ELM326, ELM465 :** Oracle Overview of Supply Chain Orchestration, 26B, reconsulté le 21 septembre 2026 dans les passages sur les demandes de Supply Planning et le change management. ASCM SCOR DS : extraits primaires indexés de la page de présentation et du Quick Reference Guide consultés pour Plan et la hiérarchie Orchestrate niveau 0 / processus niveau 1 ; accès direct page/PDF indisponible, aucune lecture intégrale revendiquée. URLs, passages et limites dans l'annexe U526. Le modèle de processus SCOR n'est pas assimilé à une carte de capacités ni au Domain FLOW.
+
+
+### ELM553
+
+MKT36 — [Event subprocess](https://docs.camunda.io/docs/components/modeler/bpmn/event-subprocesses/), Camunda 8.9. Consulté le 21 septembre 2026. Passages : Introduction ; événements de démarrage ; interrupting/non-interrupting ; Variables. Identifiant natif non indiqué.
+
+Reformulation : Un sous-processus peut être déclenché par événement ; un déclenchement non interruptif peut se répéter. Limite : Mécanisme de processus, pas calcul métier natif de plan Supply. [Étude U530](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP215. Synthèse sélective, aucune réalisation Beaumanoir inférée.
+
+
+### ELM554
+
+MKT36 — [Business rule tasks](https://docs.camunda.io/docs/components/modeler/bpmn/business-rule-tasks/), Camunda 8.9. Consulté le 21 septembre 2026. Passages : Introduction ; Defining a called decision ; Variable mappings. Identifiant natif non indiqué.
+
+Reformulation : Une tâche évalue une décision DMN et le processus poursuit son exécution ; une implémentation spécifique par worker est aussi possible. Limite : La logique appelée doit être définie ; aucune replanification métier permanente garantie par le moteur seul. [Étude U530](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP215. Synthèse sélective, aucune réalisation Beaumanoir inférée.
+
+
+### ELM555
+
+MKT20 — [Overview of Product Lifecycle Management and Product Hub](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faipr/overview-of-product-lifecycle-management-and-product-hub.html), 26B. Consulté le 21 septembre 2026. Passages : Introduction ; Innovation Management ; Product Development ; Product Hub. Identifiant natif non indiqué.
+
+Reformulation : Le périmètre distingue innovation/conception, données et modifications produit, et centralisation des données produit pour les processus aval. Limite : Suite Oracle plus large que FLOW ; regroupement commercial ne vaut pas adoption de la conception produit dans le Domain Supply. [Étude U530](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP215. Synthèse sélective, aucune réalisation Beaumanoir inférée.
+
+
+### ELM556
+
+MKT24 — [Demand planning](https://www.sap.com/products/scm/integrated-business-planning/features/demand-planning.html), SAP Integrated Business Planning. Page évolutive sans édition indiquée, consultée le 21 septembre 2026. Passages : Increase forecast accuracy through collaboration ; Refine short-term forecasts ; Explore all capabilities — Response and supply planning. Identifiant natif non indiqué.
+
+Reformulation : SAP décrit la prévision de demande et ses liens avec la Supply ; les signaux de commandes et de ventes peuvent ajuster les prévisions à court terme. Limites : présentation fonctionnelle ; le demand sensing court terme ne vaut pas équivalence avec les indicateurs saisonniers de MAP. Aucune méthode, cadence ou réalisation locale déduite. [Analyse U531](../modeles/backlog/supply-planning-area-review-U526.yaml), CMP216. Synthèse sélective et lien.
+
+
+### ELM557
+
+MKT20 — [Overview of Supply Chain Planning Plan Types](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html), 26B. Consulté le 21 septembre 2026. Passages : Tableau des types de plans : Demand Plan, Supply Plan, Demand and Supply Plan, Sales and Operations Plan, Backlog Plan, Replenishment Plan. Identifiant natif non indiqué.
+
+Reformulation : Oracle distingue prévision collaborative/statistique, plan Supply et plan intégré demande/Supply. Des plans de backlog et de réassort sont aussi distingués. Limite : Types de plans et espaces fonctionnels du produit, pas hiérarchie de capacités ou de Domains FLOW. Ne prescrit ni le nombre de capacités ni leurs parents. [Comparaison U532](../modeles/backlog/planning-options-U532.yaml), CMP217. Synthèse sélective et lien, aucune réalisation locale inférée.
+
+
+### ELM558
+
+MKT20 — [Forecast Processing](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/forecast-processing.html), 26B. Consulté le 21 septembre 2026. Passages : Introduction ; étape Forecast Consumption ; configuration dans Supply tab. Identifiant natif non indiqué.
+
+Reformulation : Le traitement destiné au plan Supply rapproche les prévisions et les quantités de commandes de vente ouvertes pour produire une prévision nette. Limite : Dans cette page Oracle, ce traitement relève de la préparation pour Supply Planning. Ni équivalence avec les précommandes B2B MAP ni mécanisme identique chez Beaumanoir ; ne fixe pas le placement de la responsabilité FLOW. [Comparaison U532](../modeles/backlog/planning-options-U532.yaml), CMP217. Synthèse sélective et lien, aucune réalisation locale inférée.
+
+
+### ELM559
+
+MKT24 — [Sales and operations planning](https://www.sap.com/products/scm/integrated-business-planning/features/sales-and-operations-planning.html), Page évolutive ; édition non indiquée. Consulté le 21 septembre 2026. Passages : Process orchestration ; Improved internal and external collaboration ; Planning for disruptions ; Explore all capabilities. Identifiant natif non indiqué.
+
+Reformulation : SAP relie demande, Supply et plans financiers, avec contributions commerciales, marketing, développement, fabrication et finance, et comparaison de scénarios. Limite : Présentation fonctionnelle S&OP, pas preuve d’un Domain PLAN standard séparant Demand Planning et Supply Planning ; n’établit aucune responsabilité installée chez Beaumanoir. [Comparaison U532](../modeles/backlog/planning-options-U532.yaml), CMP217. Synthèse sélective et lien, aucune réalisation locale inférée.
+
+
+### ELM560
+
+MKT24 — [Inventory optimisation](https://www.sap.com/uk/products/scm/integrated-business-planning/features/inventory-optimization.html), Page évolutive ; édition non indiquée. Consulté le 21 septembre 2026. Passages : Develop item-level inventory targets ; Monitor all types of variabilities ; Multistage optimisation ; Response and supply planning. Identifiant natif non indiqué.
+
+Reformulation : SAP distingue le calcul de cibles de stock dans le réseau et leur utilisation par Supply Planning ; les horizons couvrent court, moyen et long terme. Limite : Fonctions d’une offre intégrée, pas prescription du parent FLOW d’Inventory Target Decision ou d’Inventory Planning. [Audit U533](../audits/2026-09-21-planning-U533/rapport.md), CMP218. Synthèse sélective et lien ; aucune réalisation installée inférée.
+
+
+### ELM561
+
+MKT20 — [Import Planned Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fascp/import-planned-orders.html), 26B. Consulté le 21 septembre 2026. Passages : Introduction ; utilisation par Promising ; planned buy/make/transfer orders ; avertissement sur import de plusieurs plans. Identifiant natif non indiqué.
+
+Reformulation : Oracle décrit des recommandations de plans utilisées par Promising avant la création effective de certains approvisionnements, puis leur articulation avec commandes et demandes d’achat. Limite : Oracle suppose certaines ressources planifiées admissibles à la promesse ; cette convention n’est pas adoptée pour FLOW. Planifié, engagé, attendu et réalisé doivent être qualifiés séparément. [Audit U533](../audits/2026-09-21-planning-U533/rapport.md), CMP218. Synthèse sélective et lien ; aucune réalisation installée inférée.
+
+
+### ELM562
+
+MKT20 — [Create a Forecasting Profile](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/create-a-forecasting-profile.html), 26B. Consulté le 21 septembre 2026. Passages : Introduction ; Predefined Forecasting Profiles ; Input Measure et Output Measure. Identifiant natif non indiqué.
+
+Reformulation : Les profils distinguent données historiques d’entrée, méthodes et résultats de prévision, avec des usages de bookings et de shipments. Limite : Configuration de produit et génération de prévisions ; ne prouve ni une capacité nommée Demand Plan Decision ni une méthode installée dans MAP. [Audit U533](../audits/2026-09-21-planning-U533/rapport.md), CMP218. Synthèse sélective et lien ; aucune réalisation installée inférée.
+
+
+### ELM563
+
+MKT20 — [Key Order Attributes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/key-order-attributes.html), 26B. Consulté le 21 septembre 2026. Passages : Planned Attributes ; Calculated Attributes ; Backlog Planning Control Attributes.
+
+Reformulation : Backlog Management compare notamment dates prévues, retards, revenus et marges ; les dates planifiées se distinguent des dates programmées. Limite : Mesures disponibles et paramètres de planification ; ne démontre pas un solveur optimisant conjointement promesse, profit et équilibre de stock. [Audit U533–U536](../modeles/backlog/planning-model-audit-U533.yaml), CMP219. Synthèse sélective et lien.
+
+
+### ELM564
+
+MKT24 — [Supply Planning](https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/c1fb60cb1e9c49d99ada277ae57e9e6c/66a038fcf40f4f779c6b4696aede83a6.html), SAP IBP ; édition non restituée. Consulté le 21 septembre 2026. Passages : Présentation du supply planning order-based : purchasing, production and distribution plan.
+
+Reformulation : SAP attribue à Supply Planning la construction d’un plan réalisable d’achats, de production et de distribution. Limite : Passage primaire indexé consulté ; ouverture directe sans texte exploitable. Périmètre produit, pas définition universelle d’une capacité. [Audit U533–U536](../modeles/backlog/planning-model-audit-U533.yaml), CMP219. Synthèse sélective et lien.
+
+
+### ELM565
+
+MKT13 — [Overview — SAP Ariba Procurement Planning](https://help.sap.com/docs/SAP_PROCUREMENT_PLANNING/aad8ff6e4e0c404591864a751c877d34/a728566dc02e4f4b91745878c3a40e05.html), Page évolutive ; édition non restituée. Consulté le 21 septembre 2026. Passages : About SAP Ariba Procurement Planning.
+
+Reformulation : L’offre prépare les activités de procurement et leurs échéances, ainsi que les investissements à partir d’une nomenclature. Limite : Passage primaire indexé consulté ; ouverture directe sans texte exploitable. Atteste le terme Procurement Planning, avec un périmètre plus large et différent d’un simple plan de quantités d’achat textile ; pas équivalence FLOW. [Audit U533–U536](../modeles/backlog/planning-model-audit-U533.yaml), CMP219. Synthèse sélective et lien.
+
+
+**Réexamen U535 — ELM496/ELM381 :** Oracle Overview of Backlog Management Processes 26B relu directement pour planification, revue, simulation et release ; édition antérieure conservée. SAP Supply Assignment Run Workflow using Apps, 2025 FPS01 (Feb 2026), passage primaire indexé consulté sur distribution sous contrainte et comparaison de simulations ; ouverture directe initiale sans texte exploitable. URLs et limites dans l’audit U533–U536. Pas de preuve d’un optimum conjoint promesse/profit/stock.
+
+
+### ELM566
+
+MKT20 — [Manually Release Plan Recommendations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html), Oracle 26B. Consulté directement le 21 septembre 2026. Nature : Processus ou fonction produit documenté. Identifiant natif non indiqué. Passage : Introduction ; release process ; submission to Supply Chain Orchestration.
+
+Reformulation : Le plan peut donner lieu à de nouveaux Orders ou à leur replanification ; les demandes transmises et exceptions sont suivies. Limite : fonction produit, pas prescription de la hiérarchie de capacités FLOW ni preuve de réalisation Beaumanoir. Synthèse sélective et lien ; aucune reproduction substantielle. [Réexamen U537–U538](../modeles/backlog/plan-application-review-U537.yaml), CMP220.
+
+
+### ELM567
+
+MKT20 — [Overview of Supply Allocation Rules](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-supply-allocation-rules.html), Oracle 26B. Consulté directement le 21 septembre 2026. Nature : Processus ou fonction produit documenté. Identifiant natif non indiqué. Passage : Rules ; stealing protection ; Refresh and Plan after rule changes.
+
+Reformulation : Des règles de priorité et de protection sont configurées et utilisées par le calcul du backlog ; les modifications requièrent une nouvelle planification. Limite : fonction produit, pas prescription de la hiérarchie de capacités FLOW ni preuve de réalisation Beaumanoir. Synthèse sélective et lien ; aucune reproduction substantielle. [Réexamen U537–U538](../modeles/backlog/plan-application-review-U537.yaml), CMP220.
+
+
+**Réexamen U539–U541 :** ELM452 SAP Explaining Supply Assignment (Basics, Scenarios, Copying Assignments), ELM330 Camunda The Process Orchestration Handbook (coordination et dépendances), ELM411 Microsoft Inventory Visibility reservations (soft reservation et offsets) et ELM353 Oracle Order Management Statuses relu en **26B** ; éditions antérieures préservées. Sources primaires directement consultées le 21 septembre 2026. [Localisateurs, synthèses et limites](../modeles/backlog/planning-principle-audit-U540.yaml). CMP221 ; aucune preuve de réalisation installée ni hiérarchie FLOW déduite des produits.
+
+
+### ELM568
+
+MKT20 — [Publish Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/publish-plan-data.html), Oracle 26B. Source primaire directement consultée le 21 septembre 2026. Nature : fonction/processus produit ; identifiant natif non indiqué. Passage : When to Use ; Specifications.
+
+Reformulation : Oracle permet de publier des données de plusieurs types de plans, dont Demand Management, vers des applications consommatrices. Limite : Le mécanisme documenté est un export technique. Il ne démontre pas, à lui seul, une autorisation métier ou la mise en vigueur d’une demande retenue. Synthèse sélective et lien. [Analyse U542](../modeles/backlog/planning-application-options-U542.yaml), CMP222.
+
+
+### ELM569
+
+MKT20 — [Supply Plan Options for Organizations and Schedules](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspf/supply-plan-options-for-organizations-and-schedules.html), Oracle 26B. Source primaire directement consultée le 21 septembre 2026. Nature : fonction/processus produit ; identifiant natif non indiqué. Passage : Demand Schedules.
+
+Reformulation : Un plan Supply peut utiliser un demand plan ou une prévision externe comme demande à couvrir. Limite : Le choix d’une entrée de plan étaye sa consommation, sans prouver un processus universel de publication ou une capacité séparée de gouvernance du forecast. Synthèse sélective et lien. [Analyse U542](../modeles/backlog/planning-application-options-U542.yaml), CMP222.
+
+
+### ELM570
+
+MKT20 — [Automatic Release Options](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/automatic-release-options.html), Oracle 26B. Source primaire directement consultée le 21 septembre 2026. Nature : fonction/processus produit ; identifiant natif non indiqué. Passage : Release Planned Orders Automatically ; Include Rescheduled Supplies.
+
+Reformulation : La mise en application peut suivre automatiquement le calcul ; le plan de réassort peut transmettre des révisions de commandes d’achat et de transfert non fermes. Limite : Les options diffèrent selon le type de plan ; leur paramétrage et leurs règles ne sont pas importés dans FLOW. Une copie de simulation n’hérite pas de la mise en application automatique. Synthèse sélective et lien. [Analyse U542](../modeles/backlog/planning-application-options-U542.yaml), CMP222.
+
+
+**Réexamen U543 :** ELM375 Nextail Solution specifications (First Allocation, Replenishment, Store Transfers), ELM369 Oracle Overview of Inventory Rebalancing relu en 26B, ELM450 SAP Explaining Replenishment, ELM451 SAP Explaining Retail Allocation Management. Textes primaires directement consultés le 21 septembre 2026 ; éditions antérieures conservées. [Passages, synthèses et limites](../modeles/backlog/inventory-planning-intentions-U543.yaml), CMP223. Distinction des intentions documentée ; séparation en capacités Planning et consolidation autonome non déduites des produits.
+
+
+**Réexamen U544 — ELM560/ELM479 :** SAP Inventory optimisation et RELEX Inventory optimization, sources primaires directement relues le 21 septembre 2026 sur équilibre service/stock/capital/coûts et cibles de réseau. Le titre RELEX actuellement affiché est « Inventory optimization: The key to improving your bottom line » ; date affichée 12 avril 2024, titre historique du registre conservé. [Passages et limites](../modeles/backlog/inventory-optimization-planning-option-U544.yaml), CMP224.
+
+
+**Réexamen U546 — ELM496/ELM498 :** Oracle Overview of Backlog Management Processes 26B et Salesforce Explore Service Requests and Resolutions, cours évolutif Agentforce IT Service, directement relus le 21 septembre 2026. Passages : quatre activités de backlog ; Service Requests, Request Tracking, Resolving Requests. [Synthèses et limites](../modeles/backlog/backlog-request-planning-boundary-U546.yaml), CMP225. L’appui Salesforce reste une analogie ITSM, pas une preuve de taxonomie Supply.
+
+
+**Réexamen U547 — ELM496/ELM498 :** mêmes documents Oracle 26B et Salesforce Agentforce IT Service directement relus sur parcours de Planning et gestion/suivi de demande. [Nouvelle option de rattachement et limites](../modeles/backlog/planning-request-behavior-option-U547.yaml), CMP226. Les sources étayent les fonctions métier, pas la hiérarchie Capability/Behavior proposée.
+
+
+**Réexamen U557 — ELM419/566, ELM568/569, ELM334/412, ELM372/393 et ELM452/496 :** dix documents primaires directement consultés le 21 septembre 2026 pour l’audit de cohérence hors référentiels. Les éditions Oracle utilisées sont 26B, sauf ELM372 en 26C ; Microsoft, SAP Learning et commercetools sont des pages évolutives. Titres, localisateurs, URLs et synthèses sélectives dans [l’annexe U557](../modeles/backlog/model-coherence-audit-U557.yaml), CMP231. Les notices et consultations antérieures sont conservées. Comparaison ciblée des frontières et responsabilités, pas benchmark exhaustif du marché ni preuve de déploiement Beaumanoir.
+
+
+**Réexamen U558 — ELM556/557 et ELM452 :** SAP Demand planning, Oracle Overview of Supply Chain Planning Plan Types 26B et SAP Learning Explaining Supply Assignment directement reconsultés le 21 septembre 2026. CMP232 distingue les apports des sources et les frontières FLOW. Les ouvertures directes de SAP Backorder Processing — Reassignment (ELM378) et EDQA (ELM495) ne fournissent pas de texte exploitable ; la preuve antérieure est conservée, sans nouvelle vérification intégrale revendiquée. [Constats et limites](../modeles/backlog/market-inspiration-audit-U558.yaml).
+
+
+**Réexamen U560 — ELM419/334 ; reprise des appuis des comportements regroupés :** Microsoft Firm planned orders et commercetools Inventory overview directement reconsultés le 21 septembre 2026 pour distinguer proposition, engagement, politique configurée et réservation. Appuis antérieurs de CMP231–233 conservés. Recherche officielle complémentaire SAP sur les identifiants Reassignment (ELM378) et EDQA (ELM495) sans résultat exploitable ; les lectures historiques demeurent qualifiées comme telles. [Filiation des quatorze occurrences documentaires et éditions consolidées](../modeles/backlog/model-consolidation-U560.yaml), CMP234. Les sources, exemples et limites des anciens comportements BHV045–047/BHV088–090/BHV093 sont repris par leurs successeurs, sans recréer de comportements.
+
+
+### ELM571
+
+MKT20 — [Review Supplies and Demands with Project Pegging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/review-supplies-and-demands-with-project-pegging.html), Oracle 26B. Document primaire directement consulté le 21 septembre 2026. Nature : mécanisme de planification ; identifiant natif non indiqué. Passage : Review Plan Details, Pegging relationships between supplies and demands of the item.
+
+Reformulation : les ressources du plan peuvent être reliées aux commandes et aux prévisions ; les quantités ainsi reliées sont consultables. Limite : planification par projet ; ce passage ne prouve ni une application transactionnelle séparée, ni le processus retail FLOW, ni le parent d’un comportement. Synthèse sélective et lien ; CMP235.
+
+### ELM572
+
+MKT13 — [Dynamic Pegging](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/862ac95360267614e10000000a174cb4.html), SAP S/4HANA PP/DS. Page évolutive ; édition non établie pour le passage. Texte primaire indexé consulté le 21 septembre 2026 ; ouverture directe sans texte exploitable. Nature : mécanisme de planification ; identifiant natif non indiqué. Passages : Use, PP/DS heuristics et Features.
+
+Reformulation : les besoins sont reliés aux stocks et réceptions du produit-lieu ; des besoins indépendants sans commande sont également traités. Limite : liens dynamiques de calcul, généralement non durables et sans précision propre au lot. Pas équivalence avec l’application d’une affectation retenue dans FLOW. Synthèse sélective et lien ; CMP235.
+
+**Réexamen U562–U564 :** ELM496, Oracle Overview of Backlog Management Processes 26B, directement relu le 21 septembre 2026 : les activités documentées portent sur les commandes. La couverture de prévisions par un autre document de Supply Planning n’élargit pas automatiquement Backlog Management.
+
+
+### ELM573
+
+MKT14 — [Master planning with demand forecasts](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/demand-forecast), Microsoft Dynamics 365 Supply Chain Management. Documentation évolutive, mise à jour affichée 27 juillet 2026. Document primaire directement consulté le 21 septembre 2026 ; contenu accessible malgré un bandeau générique de connexion. Nature : processus de planification ; identifiant natif non indiqué. Passages : Introduction ; Set up a master plan to include a demand forecast ; Methods to reduce forecast requirements.
+
+Reformulation : un master plan peut inclure les commandes et la prévision ; des méthodes permettent de consommer celle-ci par la demande réelle. Planning Optimization ne prend pas en charge un forecast planning séparé, ce qui ne supprime pas la responsabilité distincte de production des prévisions. Limite : master planning ERP produisant aussi des Planned Orders ; ne démontre ni le même optimiseur économique que FLOW ni la hiérarchie Planning/Decision/Behavior. Synthèse sélective et lien, CMP236.
+
+### ELM574
+
+MKT14 — [Design details - Balancing supply and demand](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply), Microsoft Dynamics 365 Business Central. Documentation évolutive, édition produit non fixée ; document primaire directement consulté le 21 septembre 2026. Nature : mécanismes de planification, identifiant natif non indiqué. Passages : Order-to-order links ; Forecast demand is reduced by sales orders ; Priorities on the demand side.
+
+Reformulation : commandes et prévisions restantes participent au profil de demande. Les ventes consomment les quantités prévisionnelles utilisées par le calcul, sans modifier nécessairement la prévision source. Limite : Business Central écarte des prévisions la création de liens contraignants order-to-order ; calcul commun ne signifie pas affectation persistante identique à FLOW. Les priorités documentées sont propres au produit et ne sont pas importées. Synthèse sélective et lien, CMP236.
+
+**Réexamen U566 — ELM403 :** Microsoft Intelligent Fulfillment Optimization architecture, page mise à jour le 30 janvier 2026, directement relue le 21 septembre. Passages Fulfillment strategies et Fulfillment optimization in order orchestration flows : optimisation par lots de commandes et résultat par ligne. Aucun traitement des forecasts comme demandes dans ce même optimiseur démontré par ce document. La page Forecast reduction keys a également été consultée comme contexte, sans compter son contenu repris dans ELM573 comme une seconde preuve indépendante.
+
+
+### ELM575
+
+MKT14 — [Dynamic positive days for last-minute orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/dynamic-positive-days). Documentation évolutive ; mise à jour affichée 17 juin 2025. Consultation : 2026-09-21. Document primaire directement consulté. Nature : mécanisme ou processus produit ; identifiant natif non indiqué. Passage : Introduction ; Example scenario 2.
+
+Reformulation : Dans un même scénario, SO1 est liée à PO1 existant et SO2 à un nouvel achat planifié créé par le calcul. Limite : Politique de couverture fondée sur délais et paramètres ; ne prouve pas un optimum conjoint service-profit-stock. Synthèse sélective et lien ; CMP237.
+
+
+### ELM576
+
+MKT13 — [Supply Creation-Based Confirmation (SBC) in PP/DS](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/4c56297de7c33a0de10000000a42189c.html). 2025 FPS01 (Feb 2026). Consultation : 2026-09-21. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : mécanisme ou processus produit ; identifiant natif non indiqué. Passage : Use ; Features ; Implementation Hints.
+
+Reformulation : SBC peut déclencher PP/DS pour créer planned orders, purchase requisitions ou stock transfer requisitions pour le manque. Limite : Le processus décrit traite le besoin reçu ; ce n’est pas la preuve d’un recalcul global du carnet ni d’un appel SBC depuis ARun. Synthèse sélective et lien ; CMP237.
+
+
+### ELM577
+
+MKT13 — [Scenarios and Supported Features of PPAC and PAC with Supply Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html). 2025 FPS01 (Feb 2026). Consultation : 2026-09-21. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : mécanisme ou processus produit ; identifiant natif non indiqué. Passage : Scenarios and Supported Features — Supported features in aATP.
+
+Reformulation : Pour PAC avec supply creation, BOP ne déclenche pas la création d’apports ; seul PAC est exécuté. Limite : Restriction de la version et du parcours documentés ; aucune exclusion universelle de toute intégration ou extension SAP. Synthèse sélective et lien ; CMP237.
+
+
+### ELM578
+
+MKT13 — [Supply Protection during Supply Assignment Run](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/0d49c4e5eb7e41c5b0f41e769728ddef.html?locale=en-US&state=PRODUCTION&version=2025.001). 2025 FPS01 (Feb 2026). Consultation : 2026-09-21. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : mécanisme ou processus produit ; identifiant natif non indiqué. Passage : Introduction ; Execution Modes and example.
+
+Reformulation : Le run peut tenir compte des quantités de protection non consommées selon son mode configuré. Limite : Le document ne démontre pas que le run recalcule les seuils ou optimise automatiquement la politique de protection. Synthèse sélective et lien ; CMP237.
+
+
+### ELM579
+
+MKT13 — [Time-Series-Based Supply Planning Optimizer](https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/c1fb60cb1e9c49d99ada277ae57e9e6c/deb28978d5ba4c64bad78edcab913228.html). IBP 2605 — I_SAPIBP2. Consultation : 2026-09-21. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : mécanisme ou processus produit ; identifiant natif non indiqué. Passage : Introduction ; Supply distribution ; Optimization ; Planning constraints.
+
+Reformulation : Optimisation conjointe de production, distribution, achats et stock, sous contraintes et coûts du réseau modélisé. Limite : Planification par périodes, pas ARun ni preuve d’affectation transactionnelle à chaque commande. Les coûts du modèle ne valent pas toutes les dimensions de valeur FLOW. Synthèse sélective et lien ; CMP237.
+
+
+**Réexamen U567 — ELM417, ELM303, ELM422, ELM378 :** CTP Microsoft, master plans et safety stock directement relus le 21 septembre 2026 ; documentation SAP BOP 2025 FPS01 consultée sous forme de texte primaire indexé, ouverture directe sans texte exploitable. Batch CTP, apports nouveaux, protection et modes preview sont distingués. Les anciennes éditions et preuves restent conservées. Les pages historiques SAP APO CTP ont servi de contexte ; leurs restrictions ne sont pas généralisées à S/4HANA. Détails dans modeles/backlog/integrated-supply-plan-U567.yaml.
+
+
+### ELM580
+
+MKT14 — [Master planning setup wizard](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-planning-setup-wizard), Microsoft Dynamics 365 Supply Chain Management. Documentation évolutive ; édition produit non fixée. Document primaire directement consulté le 21 septembre 2026. Nature : périmètre et exemple produit ; identifiant natif non indiqué. Passage : Example 2, Contoso Retailer.
+
+Reformulation : un distributeur de mode utilise le master planning pour préparer ses achats selon les prévisions et les réassorts magasins. Limite : exemple fictif éditeur, pas déploiement Beaumanoir ni obligation d’affermissement automatique. Appui au nom Master Planning au-delà de la production, sans prescrire une Area FLOW. Synthèse sélective et lien ; CMP238.
+
+### ELM581
+
+MKT14 — [Design details: central concepts of the planning system](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-central-concepts-of-the-planning-system), Microsoft Dynamics 365 Business Central. Documentation évolutive ; édition produit non fixée. Document primaire directement consulté le 21 septembre 2026. Nature : processus et mécanismes de planification ; identifiant natif non indiqué. Passages : Introduction ; Dynamic order tracking versus the planning system ; Sequence and priority in planning.
+
+Reformulation : le planning rapproche demandes et ressources et propose création, révision ou annulation d’apports. Il reprend les liens locaux pour traiter les besoins du périmètre ensemble. Limite : calcul avec sous-systèmes et ordre de traitement ; ordonnancement fin séparé, aucun optimum global universel ou fonctionnement en un seul calcul atomique démontré. Synthèse sélective et lien ; CMP238.
+
+**Réexamen U568–U570 — ELM413/496 :** Microsoft Action messages, page mise à jour le 26 mars 2026, directement relue pour les propositions d’avancement, report et variation de quantité. Oracle Overview of Backlog Management Processes 26B directement relu pour étude, simulation et transmission des résultats. Les propositions ne sont pas confondues avec l’autorisation ou l’application ; la maille Capability/Behavior reste propre à FLOW.
+
+
+### ELM582
+
+MKT14 — [Cancel a planning job](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/cancel-planning-job). Documentation évolutive ; 2025-12-30. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Cancel an active planning job.
+
+Reformulation : Annulation d’un calcul actif, avec état intermédiaire avant confirmation de l’arrêt. Limite : Fermer ou annuler le dialogue initial ne suffit pas. Aucune preuve de pause/reprise du calcul à son point d’arrêt. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM583
+
+MKT14 — [View plan history and planning logs](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-history-logs). Documentation évolutive ; 2026-02-26. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : History ; logs ; auto-firming errors.
+
+Reformulation : Historique des calculs, états et messages ; les erreurs de transformation automatique en Orders ont un journal distinct. Limite : Historique de traitements et durée de conservation des logs ne valent pas archivage métier complet des versions. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM584
+
+MKT20 — [Actions to Manage Your Plans](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspf/actions-to-manage-your-plans.html). 26B. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Create ; Duplicate ; Compare ; Approve ; Archive ; Release ; View Status Details.
+
+Reformulation : Gestion des plans, variantes, comparaison, archivage et transmission des recommandations. Limite : Actions variables selon le type de plan ; Request Approval est propre au S&OP. Publication de données et application sont distinctes. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM585
+
+MKT20 — [Batch Run Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/batch-run-plan.html). 26B. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Specifications ; Parameters for Supply Plan ; Troubleshooting Information.
+
+Reformulation : Calcul ponctuel ou programmé, rafraîchissement choisi, contrôle du traitement, annulation et relance ; messages d’échec consultables. Limite : Fonctions de traitement ; ni arrêt des engagements déjà pris ni atomicité du plan. Approve Plan concerne la prévision dans le cas documenté. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM586
+
+MKT13 — [Managing Your Scenarios](https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/b28ffdd739bf45678ef36c44e64652d7/3b510369251041b9a3c888854bd60195.html). IBP 2605, édition affichée par le texte indexé. Consultation : 21 septembre 2026. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Manage Scenarios ; Copy ; Sync ; Reset ; Delete ; Share.
+
+Reformulation : Scénarios copiables, partageables, synchronisables et supprimables ; réinitialisation depuis la référence. Limite : La synchronisation peut invalider des modifications. Reset du scénario ne défait pas des engagements externes. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM587
+
+MKT13 — [Enhancements to Scenario Management](https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/a1759a7d2a544eecbfeb4bc6887211c5/2873fce3d74b4224a69bd20accd12551.html). IBP 2605 ; Excel add-in 2605.2.0 ; publication 2026-04-30. Consultation : 21 septembre 2026. Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Scenario Promotion ; OBP Planning Runs ; Change Summary.
+
+Reformulation : Calculs OBP et simulations dans les scénarios harmonisés ; promotion de changements vers la référence avec suivi et justification possibles. Limite : Promotion conditionnée par la concurrence des calculs ; pas une preuve d’approbation humaine obligatoire ni de réalisation dans les systèmes d’exécution. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM588
+
+MKT14 — [Maintain planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders). Documentation évolutive ; 2025-08-05. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Planned order status ; Firming planned orders.
+
+Reformulation : La transformation de Planned Orders crée de vrais Orders ; historique de cette transformation disponible. Limite : Le statut d’une proposition ne suffit pas à prouver un engagement fournisseur ni sa réalisation. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM589
+
+MKT14 — [Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation). Documentation évolutive ; édition produit non fixée. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Apply a single level of marking ; Control the pegging sequence.
+
+Reformulation : Pegging décrit comment le calcul couvre les besoins ; marking établit un lien plus durable. La séquence peut garder les ressources proches pour les demandes tardives. Limite : Marking a des effets propres au produit ; aucune équivalence générale avec réservation FLOW. Pas un nom lisible unique couvrant toutes les actions du plan. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM590
+
+MKT20 — [Split Order Lines Based on Date](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/split-order-lines-based-on-date.html). 26B. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Exemple 100 unités en deux disponibilités ; restrictions.
+
+Reformulation : Backlog Management peut prévoir une première livraison partielle, puis le complément à disponibilité. Limite : Sous conditions de fractionnement et de date acceptable ; découpage planifié ne prouve ni réservation ni livraison physique. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM591
+
+MKT20 — [Source Items from Different Warehouses](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/source-items-from-different-warehouses.html). 26B. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Choose a Warehouse ; Split the Fulfillment Line.
+
+Reformulation : Changement d’entrepôt et découpage d’une ligne pour satisfaire la demande depuis plusieurs sites. Limite : Parcours Order Management documenté ; pas preuve d’une optimisation automatique de ces choix par tout master plan. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+### ELM592
+
+MKT20 — [Define a Supply Allocation Rule](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/define-a-supply-allocation-rule.html). 26B. Consultation : 21 septembre 2026. Document primaire directement consulté. Nature : fonction ou processus produit ; identifiant natif non indiqué. Passage : Allocation targets ; stealing protection ; Upload Quantity-Based Supply Allocations.
+
+Reformulation : Quotas par groupes et périodes, rangs et protection contre la reprise de quantités ; prise en compte dans le backlog. Limite : Paramètres saisis/importés et consommation documentés ; optimisation automatique des seuils de groupe non démontrée. Synthèse sélective et lien ; CMP239/CMP240, [étude U573/U574](../modeles/backlog/master-plan-management-market-study-U573.yaml).
+
+
+**Réexamen U573/U574 :** ELM416/418/435/421/371/410/369/363/496/566/570/413 directement relus le 21 septembre 2026. ELM303/571/574 réutilisés à partir des lectures directes documentées le même jour en U562–U567, sans nouvelle consultation revendiquée. Versions, passages et limites dans [l’annexe](../modeles/backlog/master-plan-management-market-study-U573.yaml). Le pegging, la réservation, les quotas de groupe, la promesse et la transmission de recommandations restent distincts.
+
+
+**Réexamen U575 — ELM566/ELM588 :** Oracle Manually Release Plan Recommendations 26B et Microsoft Maintain planned orders (mise à jour 5 août 2025) directement relus le 21 septembre 2026. Passages : transmission et suivi des recommandations, firming et historique. Appuis partiels au regroupement Master Plan Application ; aucun des deux ne couvre à lui seul toutes les familles FLOW. CMP241, modeles/backlog/master-plan-application-U575.yaml.
+
+
+### ELM593
+
+MKT20 — [Understanding Oracle Value Chain Planning Integration Base Pack](https://docs.oracle.com/cd/E26401_01/doc.122/e96000/T669624T669627.htm). Documentation historique Oracle AIA / Value Chain Planning, contexte AIA 11.3 ; archive EBS 12.2. Document primaire directement consulté le 21 septembre 2026. Passage : Business Processes > Revise and Implement Plan Recommendations. Nature : Libellé de processus métier documenté dans un guide produit ; identifiant natif non indiqué.
+
+Reformulation : Le processus métier nomme la mise en œuvre des recommandations du plan ; les suites comprennent la transmission de plans de production et distribution. Limite : Appui lexical historique, pas preuve du nom exact Plan Implementation ni de couverture Fusion actuelle ou de taxonomie universelle. Synthèse sélective et lien ; CMP242.
+
+
+### ELM594
+
+MKT14 — [About planning functionality](https://learn.microsoft.com/en-us/dynamics365/business-central/production-about-planning-functionality). Documentation évolutive ; mise à jour 2026-06-03. Document primaire directement consulté le 21 septembre 2026. Passage : Planning worksheets and requisition worksheets > Requisition worksheet ; Working with multilevel orders. Nature : Mécanisme produit de mise en œuvre des propositions ; identifiant natif non indiqué.
+
+Reformulation : Les propositions de planification sont prises en charge par Carry Out Action Message, avec suites de création ou transmission selon le type de demande. Limite : Appui fonctionnel ; Microsoft ne nomme pas cette fonction Plan Implementation et le périmètre ne couvre pas toutes les familles FLOW. Synthèse sélective et lien ; CMP242.

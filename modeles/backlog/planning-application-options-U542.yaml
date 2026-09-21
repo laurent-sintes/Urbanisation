@@ -1,0 +1,196 @@
+id: planning-application-options-U542
+date: '2026-09-21'
+author: Codex
+status: documented_proposals_not_adopted
+source_refs:
+- U542
+- U537
+- U538
+- U530
+- U532
+- CMP222
+- ELM568
+- ELM569
+- ELM570
+- ELM566
+- U543
+- U544
+- CMP224
+- U545
+scope: 'Premier point de la synthèse U541 : résultat applicable des autres Plannings. Discussion au niveau des responsabilités
+  ; aucun détail de règle de gestion ni création canonique.'
+baseline_model_sha256: 5f47c73aa5d483ecc71f94fae884dcf5b17c2b89071065cd4fa24ca7693d1c6e
+market_sources:
+- id: ELM568
+  reference: MKT20
+  vendor: Oracle
+  title: Publish Plan
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/publish-plan-data.html
+  edition: 26B
+  native_id: Non indiqué
+  nature: Fonction ou processus de produit
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  passage: When to Use ; Specifications
+  finding: Oracle permet de publier des données de plusieurs types de plans, dont Demand Management, vers des applications
+    consommatrices.
+  evidence_limits: Le mécanisme documenté est un export technique. Il ne démontre pas, à lui seul, une autorisation métier
+    ou la mise en vigueur d’une demande retenue.
+  reuse: Synthèse sélective et lien, sans reproduction substantielle ni droit de redistribution présumé.
+- id: ELM569
+  reference: MKT20
+  vendor: Oracle
+  title: Supply Plan Options for Organizations and Schedules
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspf/supply-plan-options-for-organizations-and-schedules.html
+  edition: 26B
+  native_id: Non indiqué
+  nature: Fonction ou processus de produit
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  passage: Demand Schedules
+  finding: Un plan Supply peut utiliser un demand plan ou une prévision externe comme demande à couvrir.
+  evidence_limits: Le choix d’une entrée de plan étaye sa consommation, sans prouver un processus universel de publication
+    ou une capacité séparée de gouvernance du forecast.
+  reuse: Synthèse sélective et lien, sans reproduction substantielle ni droit de redistribution présumé.
+- id: ELM570
+  reference: MKT20
+  vendor: Oracle
+  title: Automatic Release Options
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/automatic-release-options.html
+  edition: 26B
+  native_id: Non indiqué
+  nature: Fonction ou processus de produit
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  passage: Release Planned Orders Automatically ; Include Rescheduled Supplies
+  finding: La mise en application peut suivre automatiquement le calcul ; le plan de réassort peut transmettre des révisions
+    de commandes d’achat et de transfert non fermes.
+  evidence_limits: Les options diffèrent selon le type de plan ; leur paramétrage et leurs règles ne sont pas importés dans
+    FLOW. Une copie de simulation n’hérite pas de la mise en application automatique.
+  reuse: Synthèse sélective et lien, sans reproduction substantielle ni droit de redistribution présumé.
+- id: ELM566
+  reference: MKT20
+  vendor: Oracle
+  title: Manually Release Plan Recommendations
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  edition: 26B
+  native_id: Non indiqué
+  nature: Fonction ou processus de produit
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  passage: Introduction ; release process ; exceptions
+  finding: Les recommandations peuvent produire de nouveaux Orders ou des révisions ; les demandes et exceptions de prise
+    en compte restent distinguées.
+  evidence_limits: Le passage à l’exécution Oracle est un appui fonctionnel ; il ne prouve ni une commande ferme automatique,
+    ni une hiérarchie de capacités FLOW, ni une pratique MAP installée.
+  reuse: Synthèse sélective et lien, sans reproduction substantielle ni droit de redistribution présumé.
+proposals:
+- capability_id: D17.a
+  capability_name: Demand Planning
+  proposed_behavior_name: Demand Plan Publication
+  status: proposed_not_adopted
+  service: Mettre à disposition des capacités consommatrices la demande retenue comme base de travail applicable, avec sa
+    portée et son horizon.
+  result: Les consommateurs savent quelle demande couvrir ; un scénario exploratoire reste distinct de cette référence applicable.
+  application_boundary: Le résultat appliqué est une base de demande à couvrir. Publier ne crée pas des commandes de vente
+    et ne modifie pas les engagements des précommandes B2B ; la demande reste un résultat de Planning, pas de la master data.
+  partners: Supply Planning et Inventory Planning consomment cette demande selon leur périmètre. Sales Order reste responsable
+    des commandes connues.
+  decomposition_rationale: Distinguer les alternatives étudiées de la demande rendue applicable évite que les capacités aval
+    pilotent leurs choix sur des hypothèses différentes ou une simulation non retenue. Un simple export de fichier ne justifie
+    pas ce comportement.
+  example: 'Exemple fictif : une prévision de saison révisée avec les ventes et les précommandes B2B devient la demande à
+    couvrir pour le périmètre retenu ; les commandes B2B ne changent pas du seul fait de cette publication.'
+  market_refs:
+  - ELM568
+  - ELM569
+  market_position: Publication et consommation de données de demande sont documentées. La mise en vigueur métier et le libellé
+    complet Demand Plan Publication sont une proposition FLOW ; pas un standard établi par ces pages.
+- capability_id: D05.f
+  capability_name: Inventory Planning
+  proposed_behavior_name: Inventory Plan Application
+  status: proposed_not_adopted
+  service: 'Rendre effectives les actions retenues dans le scénario de stock et établir leur prise en compte : apports, transferts
+    ou révisions autorisées.'
+  result: Les changements retenus du scénario se traduisent en demandes ou évolutions effectivement prises en compte, avec
+    visibilité sur les écarts ; le plan n’est pas réputé appliqué par sa seule validation.
+  application_boundary: Planning porte la cohérence de la mise en application du scénario. Purchase Order, Transfer Order,
+    Consignment Replenishment Order et Lifecycle portent les demandes et leurs changements ; Process Orchestration coordonne
+    les prestations. Aucun mouvement physique ou engagement fournisseur n’est inféré d’une recommandation.
+  partners: Supply Protection reste extérieure. Si le scénario propose une évolution des protections, leur validité et mise
+    en vigueur restent gouvernées par cette capacité partenaire.
+  decomposition_rationale: Le passage du scénario aux actions effectivement prises en compte possède un résultat et des écarts
+    propres, distincts de la simulation et de l’adaptation ultérieure. Il ne se réduit pas à une interface technique.
+  example: 'Exemple fictif : le scénario retient un apport magasin et une redistribution ; les demandes correspondantes sont
+    prises en compte, tandis qu’un transfert devenu impossible reste à réexaminer.'
+  market_refs:
+  - ELM566
+  - ELM570
+  market_position: Oracle documente la release manuelle ou automatique et les révisions de réassort. FLOW généralise la responsabilité
+    métier au scénario de stock ; Inventory Plan Application est un libellé proposé, pas une équivalence de catalogue.
+- capability_id: D17.b
+  capability_name: Supply Planning
+  name_reservation: Nom et largeur restent en réexamen U534/U541 ; aucune nouvelle Area créée.
+  proposed_behavior_name: Supply Plan Application
+  status: proposed_not_adopted_pending_parent_scope
+  service: Mettre en œuvre la part retenue du plan de couverture en portant les apports à engager ou à réviser auprès des
+    capacités responsables.
+  result: Les apports retenus deviennent des demandes opérationnelles ou des évolutions prises en compte ; les apports encore
+    hypothétiques restent distingués.
+  application_boundary: La mise en application peut porter une demande d’achat planifiée ; elle n’implique pas une commande
+    ferme, l’accord du fournisseur ou une réception. Purchase Order et les autres capacités d’Orders gardent la tenue des
+    demandes et engagements.
+  partners: La frontière avec Inventory Planning doit désigner quel plan porte chaque action retenue. Le plan d’ensemble peut
+    donner un cadrage au plan de stock ; tous deux ne doivent pas produire indépendamment la même demande d’apport.
+  decomposition_rationale: Distinguer les apports envisagés des demandes effectivement prises en charge permet de réviser
+    le plan sur une situation fiable sans confondre prévision, demande et engagement.
+  example: 'Illustration à partir de l’apport U530 : MAP transmet des demandes d’achat planifiées. Cela éclaire l’effet métier
+    attendu ; les modalités concrètes de MAP et l’affermissement ne sont pas déduits.'
+  market_refs:
+  - ELM566
+  - ELM570
+  market_position: Le marché documente la release des planned orders et recommandations. Le périmètre FLOW de la capacité
+    de couverture reste à préciser ; pas de nouvelle équivalence ni adoption de nom.
+common_contract:
+  rule: Rendre applicable le résultat retenu dans une portée explicite, puis connaître sa prise en compte et les écarts utiles
+    à la révision.
+  partners: Une capacité mobilisée reste extérieure lorsqu’elle porte une configuration, une demande, un engagement ou une
+    réalisation propre.
+  cadence: Mise en application humaine, déléguée ou automatisée possible ; aucun cycle saisonnier figé ni passage manuel systématique.
+  decision: Le choix du résultat relève des décisions mobilisées ; le comportement d’application ne substitue pas silencieusement
+    un autre plan.
+overlap_to_resolve:
+  targets:
+  - D05.f
+  - D17.b
+  issue: Les deux plans peuvent concerner des apports et utiliser les mêmes Orders. La différence ne se déduit ni de l’horizon,
+    ni du fournisseur, ni d’une interface.
+  recommendation: 'Distinguer leurs résultats de plan et désigner, dans chaque coopération, le plan responsable d’une action
+    donnée. Plan de couverture : apports d’ensemble ; plan de stock : scénario d’équilibre des stocks. Cette frontière reste
+    proposée et n’interdit pas à Inventory Planning de recommander des apports fournisseurs.'
+  no_implicit_decision: Ne pas rendre D17.b propriétaire de tous les achats ni D05.f propriétaire de tous les transferts par
+    simple type d’Order.
+market_conclusion: Le marché Oracle documente publication, consommation de demande et release de recommandations. Le comportement
+  décrit par son effet métier et son placement sous la capacité sont des choix FLOW ; ni consensus interéditeurs ni innovation
+  revendiqués.
+canonical_changes: Aucun nœud, relation, comportement, nom, accord ou publication modifié. Noms candidats proposés pour rendre
+  la discussion concrète.
+followup_U543:
+  analysis_ref: modeles/backlog/inventory-planning-intentions-U543.yaml
+  direction: Inventory Planning trop agrégé selon Laurent. Étudier les capacités par intention ; Inventory Plan Application
+    générique suspendu, aucune capacité de remplacement adoptée.
+followup_U544:
+  analysis_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml
+  direction: 'Alternative à la scission : Inventory Optimization Planning pour arbitrer plusieurs ajustements vers un stock
+    adapté. Option proposée, aucun renommage adopté ; les candidats par intention restent une alternative.'
+followup_U545:
+  result: D05.f renommé Inventory Optimization Planning ; nom et définition présentés adoptés contextuellement. Maintien d’un
+    plan arbitrant plusieurs ajustements, pas de scission U543 intégrée.
+  remaining: Comportement détaillé d’application et propositions sur Demand Planning / plan de couverture encore à instruire.
+  adoption_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml#adoption_U545
+implementation_U552:
+  manifest: modeles/backlog/planning-refactor-U552.yaml
+  status: implemented_with_U553_U556_corrections
+  note: Gestion de demande intégrée sous Order Backlog Planning ; application stock et publication de demande explicitées.
+    Supply Planning nomme l’Area U553 ; capacité de couverture D17.b retirée U555. Frontières décrites sans solution U556
+    ; détails de mise en œuvre qualifiés séparément.

@@ -1,0 +1,29 @@
+status: passed
+changed_nodes:
+- BHV091
+- BHV092
+- D02.e
+- D03
+- D03.p
+- D04
+- D04.s
+- D05
+- D05.f
+- D17
+- D17.a
+retired_nodes:
+- BHV088
+- BHV089
+- BHV090
+- BHV093
+- D17.b
+new_nodes:
+- BHV094
+- BHV095
+preserved_decision_count: 16
+all_behaviors_have_one_capability_parent: true
+no_retired_node_links: true
+area_name_unique: true
+business_descriptions_without_solution_name: true
+relations_before: 366
+relations_after: 361

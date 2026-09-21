@@ -1,6 +1,6 @@
 id: flow-modeling-glossary
 kind: modeling_glossary
-as_of: '2026-09-19'
+as_of: '2026-09-21'
 source_refs:
 - U229
 - U230
@@ -30,6 +30,8 @@ source_refs:
 - U482
 - U507
 - U509
+- U537
+- U538
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
@@ -58,8 +60,8 @@ terms:
 - id: MOD002
   name: Planning
   label_fr: Planification
-  definition: Construire des scénarios alternatifs, simuler et analyser leurs conséquences, puis adapter le scénario en cours
-    en mobilisant les décisions spécialisées et les capacités responsables de sa mise en action.
+  definition: Construire et actualiser des plans, simuler et analyser leurs conséquences, puis appliquer le plan retenu et
+    adapter sa mise en œuvre, en mobilisant les décisions spécialisées et les capacités partenaires.
   role: Qualifier les responsabilités de planification qui utilisent les décisions.
   notes:
   - Planning mobilise les décisions spécialisées ; elles restent des capacités distinctes.
@@ -71,6 +73,18 @@ terms:
     ; D05 adapte son scénario de stock.
   - Les accords U269/U271 remplacés sont conservés dans d05-refactoring.yaml et audits/2026-09-17-refonte-appliquee/modeling-glossary-before.yaml.
     La généralisation détaillée à toute capacité Planning reste proposée.
+  - 'U537 : l’application du plan relève d’un comportement du Planning concerné. Elle porte la mise en effet du résultat retenu
+    et la connaissance de sa prise en compte ; elle ne se réduit pas à un appel technique. Le libellé Plan Application reste
+    proposé.'
+  - 'U538 : définir, maintenir et fournir une configuration utilisée par le Planning reste une responsabilité extérieure.
+    Supply Protection (Stock Protection dans l’exemple utilisateur) gouverne les protections consommées par le Planning ;
+    sa mise à jour ne devient pas un comportement de Planning.'
+  - Le Planning peut mobiliser une capacité partenaire pour rendre son résultat effectif sans absorber sa responsabilité métier.
+    Distinguer application du résultat, maintien de la configuration et réalisation physique ; aucune couche transactionnelle
+    générique ni capacité Application systématique.
+  - U537 remplace l’exclusion antérieure d’un comportement d’application. Les trois comportements Inventory Planning de U290
+    restent historiques et courants tant que leur décomposition précise n’est pas révisée. Aucun ajout automatique identique
+    à tous les Plannings.
   source_refs:
   - U229
   - U232
@@ -80,12 +94,16 @@ terms:
   - U283
   - U284
   - U290
+  - U537
+  - U538
+  - CMP220
   review:
     state: partial
-    adopted_scope: Mobilisation des décisions U229 et trois directions de comportements Inventory Planning U283/U284, appliquées
-      U290.
-    proposed_scope: Formulation générale et détails de mise en œuvre ; pas de décomposition automatique de toute capacité
-      Planning.
+    adopted_scope: 'Mobilisation des décisions U229 et trois directions de comportements Inventory Planning U283/U284, appliquées
+      U290. U537 : application du plan comme comportement du Planning. U538 : configuration apportée au Planning maintenue
+      à l’extérieur.'
+    proposed_scope: Définition synthétique, libellé Plan Application et détails des effets rédigés par Codex ; décomposition
+      de chaque Planning et reparentage éventuel à instruire.
 - id: MOD003
   name: Management
   label_fr: Gestion / gouvernance
@@ -96,13 +114,18 @@ terms:
   - Cette formulation générale est proposée à partir du cas Stock Protection ; elle n’impose pas la même définition à toute
     capacité nommée Management.
   - Le sens d’application transactionnelle est défini par MOD004.
+  - 'U538 : la responsabilité de configuration illustrée par Stock Protection reste extérieure au Planning qui la consomme,
+    y compris lorsque ce Planning comporte un comportement d’application du plan. Nom canonique de la capacité actuelle :
+    Supply Protection, D02.b.'
   source_refs:
   - U230
   - U231
   - U232
+  - U538
   review:
     state: partial
-    adopted_scope: Qualification et application transactionnelle dans le cas Stock Protection.
+    adopted_scope: 'Qualification et application transactionnelle dans le cas Stock Protection. U538 : configuration apportée
+      au Planning maintenue à l’extérieur, exemple Stock Protection.'
     proposed_scope: Généralisation à Management et formulation hors de ce cas.
 - id: MOD004
   name: Application transactionnelle
@@ -190,7 +213,9 @@ terms:
     audit et/ou les prochaines améliorations, sans déclencher de nouvelle revue. Convention : modeles/backlog/business-interactions.yaml.'
   - 'U501 : pour Order Backlog Optimization Request, Déclenchement et Activité regroupent visuellement des comportements au
     même niveau terminal. L’angle de lecture est explicite ; il ne crée ni parent intermédiaire, ni séquence obligatoire,
-    ni requalification des comportements historiques.'
+    ni requalification des comportements historiques. Cette décomposition est historique depuis U552 : les modes de sollicitation
+    sont des modalités de la gestion de demande, tandis que simulation et autorisation relèvent directement de Order Backlog
+    Planning ; aucun sous-comportement.'
   source_refs:
   - U262
   - U263
@@ -212,6 +237,8 @@ terms:
   - U445
   - U499
   - U501
+  - U537
+  - U538
   review:
     state: partial
     adopted_scope: 'Comportement comme niveau complémentaire sous la capacité ; arrêt de la décomposition à ce niveau. U263
@@ -289,8 +316,9 @@ terms:
       les interactions avec l’exécution.
     examples:
     - 'Inventory Planning : Scenario Construction, Simulation & Analysis, Scenario Execution Adaptation (BHV005, BHV006, BHV016).'
-    boundary: Évaluation, validation et application restent des fonctions utiles sans comportement autonome justifié à ce
-      stade ; ne pas déplacer la responsabilité d’adaptation opérationnelle de D06.
+    boundary: 'U537 : l’application du plan est un comportement du Planning concerné ; l’ancienne exclusion est remplacée.
+      U538 : les configurations qu’il consomme restent portées à l’extérieur. Pas de décomposition automatique de tous les
+      Plannings, ni de transfert implicite de l’adaptation opérationnelle de D06.'
   decomposition_rule: Pour définir ou réexaminer un comportement, partir d’exemples du modèle, expliciter sa forme concrète,
     ce qui le distingue des autres comportements de la capacité et son effet métier. Justifier la décomposition par une complexité
     ou un bénéfice ciblé ; ne pas imposer une catégorie exclusive par nature de capacité, une décomposition systématique ou

@@ -1,0 +1,167 @@
+contribution: U519
+purpose: 'Étude bornée Fluent : besoins consommateurs pour les vues de Visibility, sans imposer de taxonomie ni de réalisation
+  technique.'
+consulted_on: '2026-09-21'
+scope_limits:
+- Cinq documents primaires ouverts ; aucune preuve de déploiement Beaumanoir.
+- Les regroupements proposés sont des interprétations FLOW, pas des noms de vues standard Fluent.
+- Retours évalués seulement pour la qualification et la saisie ; calendriers détaillés, délais transporteurs et engagements
+  contractuels non évalués.
+- Les dates ci-dessous sont celles affichées par les pages ouvertes ; les extraits de recherche peuvent présenter des dates
+  différentes.
+documents:
+- id: FLU1
+  vendor: Fluent Commerce
+  product: Fluent Order Management — Responsive Sourcing
+  title: Getting Started with Reference Sourcing Criteria
+  url: https://docs.fluentcommerce.com/by-type/getting-started-with-reference-sourcing-criteria
+  version: Version générale non indiquée ; une limite mentionne Order Reference Module v2.2.0.
+  source_updated_at: '2026-07-06'
+  consulted_on: '2026-09-21'
+  locator: Reference Sourcing Criterion Functions ; Core Concept ; FAQ distance ; lignes 51–130 et 245–247 de la consultation.
+  observations: Les critères combinent caractéristiques des lieux, disponibilité, demande et historique de rejet pour classer
+    ou exclure des candidats.
+  data_distinction:
+    reference_context:
+    - Coordonnées et type du lieu ; réseaux associés et priorités configurées.
+    - Plafond DAILY_MAX_ORDER_CAPACITY.
+    live_operational_context:
+    - Disponibilité, quantités et prix demandés ; lieux ayant rejeté des articles.
+    calculated_results:
+    - Distance, scores, classement et exclusions.
+  interpretation: Une vue de références pour le sourcing est utile, à composer avec des états opérationnels détenus ailleurs.
+  counterexample: Le plafond journalier ne démontre pas une mesure de charge consommée ou résiduelle.
+  evidence_limits: Critères configurables et extensibles ; aucune vue universelle imposée.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: FLU2
+  vendor: Fluent Commerce
+  product: Fluent Order Management — Responsive Sourcing
+  title: Getting Started with Reference Sourcing Conditions
+  url: https://docs.fluentcommerce.com/by-type/getting-started-with-reference-sourcing-conditions
+  version: Non indiquée.
+  source_updated_at: '2025-09-26'
+  consulted_on: '2026-09-21'
+  locator: Core Concept ; Applying Path Conditions to Real Scenarios ; Practical Examples ; exemple allProductSizeIn ; lignes
+    54–109 et 413–424.
+  observations: Les conditions évaluent un contexte de sourcing comportant notamment niveau client, références ou propriétés
+    produit, destination et date de commande.
+  data_distinction:
+    reference_context:
+    - Attributs client et produit, dont la taille dans un exemple.
+    live_operational_context:
+    - Date de commande, destination demandée, lignes restant à satisfaire.
+    calculated_results:
+    - Résultat booléen permettant de sélectionner une stratégie.
+    policy:
+    - Opérateurs, seuils, valeurs et portée des conditions configurées.
+  interpretation: Un besoin consommateur traverse plusieurs sujets sources ; une vue par domaine source serait insuffisante
+    à elle seule.
+  counterexample: La condition métier et son résultat ne se confondent pas avec les références qu’elle consulte.
+  evidence_limits: Exemples extensibles, sans inventaire exhaustif des données ni prescription de stockage.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: FLU3
+  vendor: Fluent Commerce
+  product: Fluent Order Management — Fulfilment Options
+  title: Tailor Fulfilment Plans to Any Scenario - Fulfilment Options Orchestration
+  url: https://docs.fluentcommerce.com/release-notes/tailor-fulfilment-plans-to-any-scenario-fulfilment-options-orchestration
+  version: Numéro non indiqué ; note Initial Release, statut Released.
+  source_updated_at: '2024-04-08'
+  target_release_date: '2017-04-30'
+  consulted_on: '2026-09-21'
+  locator: Description — Use case scenarios ; lignes 38–45.
+  observations: Les exemples adaptent les options aux attributs produit, au panier, à la destination et à la proximité des
+    lieux, puis aux changements de disponibilité ou de délai de préparation estimé.
+  data_distinction:
+    reference_context:
+    - Caractère encombrant du produit ; localisation des lieux.
+    live_operational_context:
+    - Panier, adresse demandée, disponibilité et estimation opérationnelle du délai.
+    calculated_results:
+    - Plans et options de livraison ou de retrait proposés.
+  interpretation: 'Des références communes peuvent soutenir plusieurs besoins consommateurs : sourcing et élaboration des
+    options.'
+  counterexample: Les options résultent de règles et workflows personnalisés ; elles ne sont pas de simples références exposées.
+  evidence_limits: Note ancienne illustrative ; ne décrit pas un catalogue exhaustif de services ni les contrats actuels de
+    calcul des délais.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: FLU4
+  vendor: Fluent Commerce
+  product: Fluent Commerce — Inventory / Virtual Catalog / Future Inventory
+  title: Future Inventory - Data Model and API Overview
+  url: https://docs.fluentcommerce.com/essential-knowledge/future-inventory-data-model-and-api-overview
+  version: Non indiquée.
+  source_updated_at: '2026-05-21'
+  consulted_on: '2026-09-21'
+  locator: Entities ; Relationship Details ; Queries ; Key Insights ; lignes 64–85, 155–225 et 294–316.
+  observations: Le document sépare quantités opérationnelles et disponibilité calculée ; les requêtes temporelles de disponibilité
+    servent notamment le sourcing et la promesse.
+  data_distinction:
+    reference_context:
+    - Identité du produit et du lieu pour rattacher les positions.
+    live_operational_context:
+    - Stock présent, arrivages datés, transit, réservations et liens vers commandes ou fulfillments.
+    calculated_results:
+    - ATS courant et ATP daté, éventuellement segmenté.
+  interpretation: La promesse consomme un contexte plus large que les références ; exposer ce contexte ne transfère pas son
+    calcul à Authoritative Data.
+  counterexample: Une projection de disponibilité reste un résultat calculé sur des stocks et engagements vivants ; le mot
+    projection ne suffit pas à la classer comme référentiel.
+  evidence_limits: Arrivages attendus avec dates, pas prévisions. Ne justifie pas seul une vue de références dédiée à la promesse.
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+- id: FLU5
+  vendor: Fluent Commerce
+  product: Fluent Order Management / Fluent Store — Returns Component
+  title: Returns Component
+  url: https://docs.fluentcommerce.com/building-blocks/returns-component
+  version: 'Historique : v1.0.0 ; date du changelog non exploitable (0000-00-00).'
+  source_updated_at: '2025-09-05'
+  consulted_on: '2026-09-21'
+  locator: Return Item Details ; Data Dictionary ; Configuring columns using the orderItem state ; Customizing the summary
+    ; lignes 50–100 et 134–170.
+  observations: Le composant de retour associe données produit, vente initiale et saisie du retour. Les listes de motifs et
+    d’états de l’article sont configurables.
+  data_distinction:
+    reference_context:
+    - Identification produit ; vocabulaires des motifs et états possibles.
+    live_operational_context:
+    - Quantités commandées ou servies, retours antérieurs, prix de vente ; motif et état déclarés pour le retour.
+    calculated_results:
+    - Quantité encore retournable et montant de remboursement affiché.
+  interpretation: Une vue Return Context peut exposer des références de qualification sans porter la vente ni les constats
+    du retour.
+  counterexample: La liste des états possibles est une référence ; l’état saisi pour un article est un fait du dossier.
+  evidence_limits: 'Composant de saisie : ne démontre ni inspection physique, ni décision d’acceptation, ni politique complète,
+    destination ou prestataire de retour.'
+  status: consulted_primary
+  reuse_limits: Synthèse sélective sans reproduction.
+proposed_usage_groupings:
+- name: Sourcing Reference Context
+  status: proposal_not_market_standard
+  basis:
+  - FLU1
+  - FLU2
+  consumer_need: Fournir les références utiles pour comprendre la demande et les lieux candidats.
+  boundary: Règles, évaluation des stratégies, disponibilité, charge réelle et choix d’affectation restent distincts.
+- name: Fulfillment Options Reference Context
+  status: proposal_not_market_standard
+  basis:
+  - FLU3
+  consumer_need: Rassembler les caractéristiques nécessaires à l’élaboration des options proposées.
+  boundary: Une vue distincte reste à justifier par les consommateurs ; elle peut partager ses références avec le sourcing.
+- name: Return Reference Context
+  status: proposal_not_market_standard
+  basis:
+  - FLU5
+  consumer_need: Identifier et qualifier les articles faisant l’objet d’un retour.
+  boundary: La preuve Fluent reste partielle ; compléter avec un autre éditeur avant de justifier un périmètre plus large.
+design_conclusion:
+  status: interpretation
+  statement: Définir les vues par besoins consommateurs est cohérent avec ce corpus ; conserver les distinctions entre références,
+    politiques, états opérationnels et décisions. Aucun nombre fixe de vues, stockage dupliqué ou nouvelle capacité par vue
+    ne découle de ces preuves.
+  unresolved: Le regroupement final exige la lecture des responsabilités Supply de FLOW et leur comparaison avec d’autres
+    éditeurs.

@@ -1,0 +1,720 @@
+source_ref: U556
+nodes:
+- id: D17
+  revision: 4
+  kind: area
+  fields:
+    name: Supply Planning
+    definition: Établir et actualiser la demande à couvrir pour orienter les plans et décisions Supply, en rapprochant besoins
+      anticipés, demandes connues et faits observés.
+    finality: Maintenir une trajectoire cohérente entre besoins à couvrir et ressources mobilisables, à partir des faits et
+      des hypothèses actualisés.
+    scope: |-
+      L’Area regroupe les responsabilités de planification d’ensemble retenues dans Supply Chain Orchestration. [Demand Planning](model:D17.a) construit et actualise la demande à couvrir, puis rend le résultat retenu applicable aux consommateurs. Le plan est régulièrement mis à jour ; la date ou la cadence de calcul ne définit pas sa frontière.
+
+      La construction du plan amont qui produit les Planned Orders n’est pas reproduite dans une seconde capacité de couverture. Les demandes issues de ce plan sont prises en charge selon leur nature et leur qualification ; une demande planifiée ne vaut pas automatiquement commande ferme, réception ou engagement de ressources. La création du plan reste distincte de la gestion et de l’orchestration de ses suites.
+
+      Les Areas opérationnelles gardent leur adaptabilité aux impondérables. [Order Backlog Planning](model:D03.p) demeure dans Fulfillment Optimization ; [Inventory Optimization Planning](model:D05.f) garde les ajustements opérationnels du stock. Les décisions spécialisées conservent leurs responsabilités et peuvent être mobilisées par les plans. Le nom Supply Planning ne justifie pas de déplacer toute activité de simulation ou de décision dans cette Area.
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud Supply Chain Planning
+      element_name: Supply Chain Planning plan types
+      element_type: Responsabilité fonctionnelle documentée dans un produit
+      relationship: Recouvrement partiel
+      similarities: Oracle organise des plans de demande, de couverture et un plan intégré rapprochant les deux.
+      differences: Les sources éditeur décrivent une planification plus large. FLOW conserve Demand Planning dans cette Area
+        et ne reproduit pas le plan amont de couverture déjà producteur des Planned Orders. Le périmètre local ne se déduit
+        pas d’un module produit.
+      flow_position: Supply Planning est le nom de l’Area FLOW, centrée dans le périmètre courant sur la demande à couvrir.
+        Le planning amont producteur de Planned Orders n’est pas dupliqué ; les Plannings opérationnels gardent leurs parents.
+      source_title: Overview of Supply Chain Planning Plan Types
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+      source_version: 26B
+      consulted_on: '2026-09-21'
+      source_locator: 'Tableau : Demand Plan et Demand and Supply Plan.'
+      evidence_limits: Le document distingue aussi backlog et réassort ; il ne prescrit pas de les déplacer dans cette Area
+        FLOW.
+      status: proposed
+      source_refs:
+      - U533
+      - CMP218
+      - ELM557
+      - U553
+      - CMP230
+      - U555
+      concept_name: Demand, Supply and integrated plans
+      scope_summary: Plans de demande, de couverture et plan intégré au sein de Supply Chain Planning.
+      approach_summary: Articuler prévision, besoins à couvrir et couverture, avec possibilités de plans séparés ou intégrés.
+    - vendor: SAP
+      product: Integrated Business Planning
+      element_name: Response and supply planning
+      element_type: Responsabilité fonctionnelle documentée dans un produit
+      relationship: Recouvrement partiel
+      similarities: SAP documente un plan de couverture sous contraintes, des scénarios, une collaboration et un lien vers
+        les suites opérationnelles.
+      differences: Les sources éditeur décrivent une planification plus large. FLOW conserve Demand Planning dans cette Area
+        et ne reproduit pas le plan amont de couverture déjà producteur des Planned Orders. Le périmètre local ne se déduit
+        pas d’un module produit.
+      flow_position: Supply Planning est le nom de l’Area FLOW, centrée dans le périmètre courant sur la demande à couvrir.
+        Le planning amont producteur de Planned Orders n’est pas dupliqué ; les Plannings opérationnels gardent leurs parents.
+      source_title: Response and supply planning
+      source_url: https://www.sap.com/sea/products/scm/integrated-business-planning/features/response-and-supply-planning.html
+      source_version: Page évolutive ; édition non indiquée
+      consulted_on: '2026-09-21'
+      source_locator: Supply planning ; collaboration and simulations ; executional alignment.
+      evidence_limits: Page fonctionnelle produit, pas référentiel d’Areas ; elle ne démontre pas que Supply Planning inclut
+        universellement Demand Planning.
+      status: proposed
+      source_refs:
+      - U533
+      - CMP218
+      - ELM552
+      - U553
+      - CMP230
+      - U555
+      concept_name: Response and supply planning
+      scope_summary: Planification de couverture sous contraintes, simulation et articulation avec les suites opérationnelles.
+      approach_summary: Comparer les possibilités de couverture et actualiser le plan à partir des contraintes et faits.
+    market_inspiration:
+      choice: Conserver Supply Planning comme Area du plan d’ensemble retenu dans FLOW, avec Demand Planning, sans recréer
+        le planning amont qui produit déjà les Planned Orders.
+      flow_scope: Construction et actualisation de la demande à couvrir, rendue applicable aux consommateurs.
+      flow_approach: Confronter prévisions, demandes connues et faits observés ; distinguer leur planification de la gestion
+        des demandes issues d’un plan amont.
+      synthesis:
+      - Oracle distingue plans de demande, de couverture et plan intégré ; SAP documente la couverture sous contraintes et
+        présente Demand planning séparément. Ces références éclairent les responsabilités, sans imposer le périmètre du Domain
+        FLOW.
+      - FLOW conserve Demand Planning dans Supply Planning, nom d’Area retenu par Laurent. Le planning amont qui produit les
+        Planned Orders est déjà pris en charge et n’est pas reproduit. L’Area courante ne correspond donc pas au module Supply
+        Planning complet d’un éditeur.
+      - Order Backlog Planning et Inventory Optimization Planning gardent leurs périmètres opérationnels. La qualification
+        des demandes planifiées et leur transformation éventuelle en commandes fermes ne sont pas inférées de leur seule réception.
+      examples:
+      - title: Illustration FLOW — Actualiser la demande sans reconstruire le plan amont
+        situation: Les ventes et précommandes font évoluer la demande anticipée ; des apports sont déjà planifiés en amont.
+        outcome: Demand Planning révise la demande à couvrir ; la prise en charge des demandes planifiées reste distincte
+          de la construction de leur plan d’origine.
+        lesson: Distinguer demande, plan d’apports et gestion des demandes issues du plan évite une double responsabilité.
+        source_title: Overview of Supply Chain Planning Plan Types
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+        source_refs:
+        - ELM557
+        - U555
+        - CMP230
+  source_refs:
+  - U526
+  - U527
+  - U528
+  - U529
+  - U530
+  - CMP214
+  - CMP215
+  - ELM294
+  - ELM552
+  - U532
+  - U533
+  - CMP218
+  - ELM556
+  - ELM557
+  - U553
+  - CMP230
+  - U555
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u533
+  review:
+    state: partial
+    note: U553 confirme Supply Planning comme nom de l’Area ; remplace le nom Planning U533. Composition et périmètres non
+      élargis ; le nom de D17.b reste en réexamen. U555 retire la capacité de couverture redondante avec le planning amont
+      ; définition et périmètre rédigés en conséquence, proposés. Nom adopté U553 conservé.
+  adoption_ids: []
+  last_modified: '2026-09-21T11:57:27.825908Z'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-21T11:54:06.096353Z'
+    recorded_by: Codex
+    source_refs:
+    - U553
+    validated_fields:
+    - name
+    value_sha256:
+      name: 84991bd499e967d9f67820a1bbc76dca52a7877d30cd30f5c0d4b6e774226082
+    note: 'U553 : correction explicite du nom de l’Area. Aucun nom ou périmètre nouveau adopté pour sa capacité de couverture.'
+- id: D04
+  revision: 13
+  kind: area
+  fields:
+    name: Service Requests
+    definition: Porter les demandes de travail que le Domain reçoit ou fait naître, préciser le résultat attendu et suivre
+      leur prise en charge.
+    finality: Rendre lisible ce que la Supply Chain prend en charge, pourquoi elle agit et ce qui reste à accomplir jusqu’au
+      résultat ou à la clôture de chaque demande.
+    scope: |-
+      L’Area porte les familles d’Orders prises en charge par Supply Chain Orchestration : ventes, achats, transferts, retours client, retours fournisseur et apports sous consignation. Elle rend explicites leur résultat attendu et leur progression jusqu’à leur conclusion. La finalité distingue les familles ; l’origine interne ou externe et le déclencheur ne créent pas deux capacités pour la même demande.
+
+      Une demande peut naître d’une sollicitation, d’un événement ou d’une situation détectée. [Transfer Order](model:D04.k) prend en charge les origines Frontoffice et Backoffice : un transfert demandé depuis l’extérieur du Domain et un transfert issu de son propre Planning relèvent de la même gestion. Les autres familles conservent leur qualification propre ; leur origine n’est pas déduite du destinataire de la commande.
+
+      Les demandes propres au travail d’une capacité peuvent être gérées dans celle-ci. [Optimization Request Management](model:D04.s) cadre et suit ainsi le réexamen du carnet comme comportement de [Order Backlog Planning](model:D03.p). Cette demande reste suivie comme les Orders selon les mécanismes pertinents ; elle ne forme plus une capacité distincte dans Service Requests.
+
+      Order Structuring, Order Lifecycle Management et Order Archiving gardent leurs responsabilités de gestion des Orders. [Fulfillment Optimization](model:D03) optimise leur satisfaction, [Inventory Optimization](model:D05) les ajustements du stock et [Order Promising](model:D15) les engagements Supply. L’offre du Domain ne se réduit pas à une liste de demandes exclusivement externes.
+
+      [Process Management](model:D06) coordonne les prestations des [Backing Services](glossary:TER075), décrites dans [Service Catalog](model:D14) et sollicitées par des [Backing Service Orders](glossary:TER066). Demande au Domain et demande de prestation à un exécutant restent distinctes.
+
+      Exemple fictif : un plan d’ajustement des stocks retient un déplacement entre deux magasins. Transfer Order gère la demande et les quantités restant à transférer, comme pour un transfert sollicité depuis un autre domaine. Le Planning détermine et applique son scénario ; les exécutants réalisent le déplacement.
+    market_comparisons:
+    - vendor: Salesforce
+      product: Agentforce IT Service
+      element_name: Service Request / Case / Incident
+      element_type: Concept et fonctionnement documentés
+      relationship: Recouvrement partiel
+      similarities: Une demande de travail possède une finalité et un suivi, même lorsqu’elle est interne.
+      differences: L’exemple concerne les services aux employés ; FLOW couvre les demandes Supply et leurs réactions internes,
+        sans reprendre les types de dossiers Salesforce.
+      flow_position: Service Requests porte les familles d’Orders et leur gestion, avec origine interne ou externe selon la
+        famille. La demande de réoptimisation est gérée au sein de Order Backlog Planning.
+      source_title: Salesforce Explore Service Requests and Resolutions
+      source_url: https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions
+      source_version: Agentforce IT Service, cours évolutif sans édition précisée
+      source_locator: Service Requests ; Request Tracking ; Resolving Requests
+      consulted_on: '2026-09-19'
+      evidence_limits: Exemple de service aux employés ; pas de réaction autonome Supply ou de fraude établie par cette source.
+      status: proposed
+      source_refs:
+      - ELM498
+      - CMP200
+      - U496
+      concept_name: Service Request / Case / Incident
+      scope_summary: Demandes internes de services, suivies jusqu’à leur résultat.
+      approach_summary: Qualifier la demande, la suivre, obtenir les accords nécessaires et coordonner les tâches.
+    - vendor: TM Forum
+      product: Service Ordering Management
+      element_name: Service Order
+      element_type: Concept et fonctionnement documentés
+      relationship: Recouvrement partiel
+      similarities: Les demandes rendent explicites les prises en charge offertes par un domaine de services.
+      differences: La notice télécom ne prescrit pas la frontière FLOW ni une origine exclusivement externe. Les demandes
+        propres au Planning ne sont pas toutes des familles autonomes dans cette Area.
+      flow_position: Service Requests porte les familles d’Orders et leur gestion, avec origine interne ou externe selon la
+        famille. La demande de réoptimisation est gérée au sein de Order Backlog Planning.
+      source_title: Service Ordering Management API — TMF641
+      source_url: https://www.tmforum.org/open-digital-architecture/open-apis/service-ordering-management-api-TMF641/v4.2
+      source_version: v4.2, page affichant publication stable 14 août 2026
+      source_locator: 'Overview : placing a service order ; create/update/retrieve et notifications'
+      consulted_on: '2026-09-19'
+      evidence_limits: Notice publique consultée ; aucune lecture intégrale du guide ou de la spécification API déduite.
+      status: proposed
+      source_refs:
+      - ELM131
+      - CMP200
+      - U496
+      concept_name: Service Order
+      scope_summary: Demandes portant sur un service avec ses paramètres et son suivi.
+      approach_summary: Décrire ce qui est demandé et suivre les évolutions de la commande de service.
+    - vendor: Oracle
+      product: Backlog Management
+      element_name: Backlog planning / Simulation / Release
+      element_type: Concept et fonctionnement documentés
+      relationship: Recouvrement partiel
+      similarities: Le travail interne peut réexaminer des commandes existantes sans nouvelle demande du commerce.
+      differences: Oracle décrit le traitement du backlog ; FLOW rattache désormais sa demande de travail au Planning, sans
+        en déduire une famille autonome de Service Requests.
+      flow_position: Service Requests porte les familles d’Orders et leur gestion, avec origine interne ou externe selon la
+        famille. La demande de réoptimisation est gérée au sein de Order Backlog Planning.
+      source_title: Oracle Overview of Backlog Management Processes
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/faubm/overview-of-backlog-management-processes.html
+      source_version: 25C
+      source_locator: Les quatre activités et distinction Planned / Release
+      consulted_on: '2026-09-19'
+      evidence_limits: Lancement manuel ou planifié ; pas preuve événementielle automatique ni obligation d’un dossier appelé
+        Order.
+      status: proposed
+      source_refs:
+      - ELM496
+      - CMP200
+      - U496
+      concept_name: Backlog planning / Simulation / Release
+      scope_summary: Réexamen de la satisfaction d’un carnet de commandes existant.
+      approach_summary: Planifier, comparer et simuler, puis appliquer les résultats retenus.
+    market_inspiration:
+      choice: Rendre lisibles les familles d’Orders et leur suivi, quelle que soit leur origine applicable ; rattacher la
+        demande propre au Planning à celui-ci.
+      flow_scope: 'L’Area porte les familles d’Orders prises en charge par Supply Chain Orchestration : ventes, achats, transferts,
+        retours client, retours fournisseur et apports sous consignation. Elle rend explicites leur résultat attendu et leur
+        progression jusqu’à leur conclusion. La finalité distingue les familles ; l’origine interne ou externe et le déclencheur
+        ne créent pas deux capacités pour la même demande.'
+      flow_approach: Préciser et suivre les demandes, maintenir leurs évolutions autorisées et distinguer les responsabilités
+        partenaires.
+      synthesis:
+      - TM Forum illustre les commandes de service et Salesforce le suivi de demandes internes ; ces références ne fixent
+        pas la frontière d’une Area Supply.
+      - Oracle éclaire le travail de réexamen du carnet. FLOW en porte désormais la demande au sein du Planning, tout en conservant
+        les Orders internes et externes dans une même famille de gestion.
+      examples:
+      - title: Illustration FLOW — Une demande de transfert interne
+        situation: Un plan de stock retient un transfert entre deux magasins.
+        outcome: Transfer Order porte la demande et suit le reste à transférer, selon les mêmes responsabilités que pour une
+          sollicitation externe.
+        lesson: La famille de demande se distingue par sa finalité ; l’origine n’impose pas une seconde capacité. Exemple
+          FLOW ; la source Oracle éclaire la séparation entre plan et transmission vers la gestion des commandes, pas ce scénario
+          de transfert.
+        source_title: Overview of Backlog Management Processes
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+        source_refs:
+        - U501
+        - U549
+        - ELM496
+        - CMP229
+  source_refs:
+  - P81
+  - U97
+  - U98
+  - U100
+  - C66
+  - Q074
+  - U140
+  - C77
+  - CMP065
+  - U141
+  - C78
+  - CMP066
+  - U212
+  - U213
+  - U214
+  - U215
+  - U363
+  - CMP133
+  - U383
+  - CMP142
+  - U384
+  - CMP143
+  - U395
+  - U416
+  - U417
+  - U418
+  - ELM248
+  - CMP159
+  - U420
+  - U438
+  - U455
+  - U458
+  - U477
+  - CMP189
+  - U482
+  - U485
+  - U488
+  - U489
+  - U490
+  - U491
+  - U492
+  - U494
+  - U495
+  - U496
+  - U497
+  - CMP199
+  - CMP200
+  - ELM131
+  - ELM496
+  - ELM498
+  - U501
+  - U552
+  - CMP229
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u214
+  review:
+    state: partial
+    note: 'Refacto U552 : principes appliqués ; descriptions développées et comparaisons éditoriales. Les accords historiques
+      et valeurs remplacées sont préservés dans la baseline.'
+  editorial_basis: Accords U496/U497 ; valeurs et accords précédents conservés dans audits/2026-09-19-service-requests-U496/before-records.yaml.
+    Les anciennes discussions de l’annexe U485 restent historiques.
+  adoption_ids: []
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T16:05:23.261608Z'
+    recorded_by: Codex
+    source_refs:
+    - U496
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 0d558d1a7477a48802c31efafc39666607a4163a89911a545ccc990df1a30a3b
+      definition: 59a27513a962a709db454e22f61846c5a5ece07a3891784567b9e470768d47bf
+    note: Accord limité au nom Service Requests et à la définition présentée. L’inclusion des demandes internes réactives
+      est explicitement adoptée ; les rédactions complémentaires et les descendants ne sont pas validés par extension.
+  last_modified: '2026-09-21T11:53:16.381574Z'
+  proposed_fields:
+  - scope
+  - market_comparisons
+  - market_inspiration
+- id: D03
+  revision: 15
+  kind: area
+  fields:
+    name: Fulfillment Optimization
+    definition: Arbitrer la satisfaction des Orders sous contraintes et objectifs concurrents, déterminer un plan cohérent
+      et matérialiser les affectations de ressources retenues.
+    finality: Décider comment satisfaire les Orders avec les ressources disponibles ou adaptables.
+    scope: |-
+      Order Prioritization établit les priorités ; Fulfillment Plan Decision détermine un plan cohérent de satisfaction ; Order Backlog Planning organise le travail des hypothèses et scénarios ; Supply Assignment matérialise les affectations retenues. La valeur reste multidimensionnelle, sans pondération universelle.
+
+      [Order Promising](model:D15) établit les possibilités ATP/CTP, porte les arbitrages économiques et d’échéancier, puis tient les propositions et engagements de promesse. D03 mobilise ces résultats ; les échanges peuvent conduire à réexaminer possibilités, plan et promesses. Les autorités respectives de PTP, de Delivery Schedule Decision et de Fulfillment Plan Decision restent à préciser sans second plan final implicite.
+
+      [Service Requests](model:D04) conserve la demande selon son intention, sa structure et sa conservation. Order Lifecycle Management autorise la prise en charge ; [Process Management](model:D06) coordonne les services et leurs adaptations. D03 peut demander les mutations utiles mais ne reprend pas leur application ni la réalisation physique.
+
+      Exemple fictif : deux commandes sollicitent 120 pièces pour 80 admissibles. L’area arbitre un plan compatible avec les priorités, possibilités et engagements, puis matérialise ses affectations. Une priorité ne lève pas une réservation et le plan ne confirme pas automatiquement une promesse. Selon U436, seule Reservation bloque les usages concurrents.
+
+      Le carnet reste une vue de travail, comprenant aussi le reste à satisfaire de commandes déjà engagées. La séparation D03/D15 repose sur les responsabilités de choix et de promesse, pas sur individuel/collectif : une optimisation peut concerner une seule commande et ATP plusieurs demandes. Inventory Optimization D05 conserve les objectifs et ajustements de stock.
+
+      U438 remplace le nom Order Backlog Management adopté U413 et les rattachements concernés U417/U420. D03 conserve quatre capacités ; D15 reçoit ATP, CTP, PTP, Delivery Schedule Decision et Fulfillment Commitment ; Structuring et Archiving rejoignent D04. Les identifiants de capacités et leurs comportements restent stables. Les descriptions développées restent éditoriales.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Commerce
+      element_name: Fulfillment optimization
+      concept_name: Fulfillment optimization
+      element_type: Concept ou mécanisme métier documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Satisfaction d’une commande ou d’un lot.
+      approach_summary: Combiner sources, règles et objectifs.
+      similarities: Rechercher un compromis entre besoins concurrents.
+      differences: Le produit fournit un solveur et des stratégies déterminées.
+      flow_position: FLOW ne prescrit ni algorithme ni objectif unique.
+      source_title: Distributed order management (DOM)
+      source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+      source_version: Documentation évolutive, mise à jour affichée le 3 juin 2026
+      source_locator: Introduction, objectifs et contraintes
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+      - U462
+      - U477
+      - ELM393
+      - CMP191
+    - vendor: Oracle
+      product: Fusion Cloud SCM 26B
+      element_name: Backlog Management
+      concept_name: Backlog Management
+      element_type: Concept ou mécanisme métier documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Carnet à replanifier avec l’offre récente.
+      approach_summary: Répartir selon des priorités explicites.
+      similarities: Préserver la cohérence des demandes partageant une ressource.
+      differences: La fonction Oracle associe calcul et tenue de résultats planifiés.
+      flow_position: FLOW distingue décision, travail des scénarios et affectation.
+      source_title: Start Backlog Planning
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+      source_version: Oracle Fusion Cloud SCM 26B
+      source_locator: Introduction ; When to Use
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+      status: proposed
+      source_refs:
+      - U411
+      - U412
+      - U413
+      - ELM246
+      - CMP157
+      - U435
+      - U438
+      - U477
+      - ELM363
+      - CMP191
+    market_inspiration:
+      choice: Construire un plan de satisfaction cohérent évite que plusieurs commandes comptent sur les mêmes ressources.
+        Fulfillment Optimization rapproche priorités, scénarios et affectations pour rechercher le meilleur compromis métier.
+      flow_scope: Arbitrage des commandes et mise en place des affectations retenues.
+      flow_approach: Composer service, engagements, coûts et risques sans pondération implicite.
+      synthesis:
+      - Microsoft DOM présente l’optimisation de satisfaction par commande ou par lot. Oracle Backlog Management travaille
+        le carnet et les priorités ; son plan utilise les ressources connues sur le périmètre considéré. Tous deux dépassent
+        une réponse isolée de disponibilité.
+      - 'FLOW regroupe les responsabilités de priorité, plan, travail des scénarios et affectation. Les promesses restent
+        coordonnées avec Order Promising : leur distinction repose sur l’effet métier, sans frontière artificielle entre individuel
+        et collectif.'
+      examples:
+      - title: Illustration FLOW — deux commandes pour le même stock
+        situation: Deux commandes demandent chacune 60 pièces alors que 80 sont admissibles.
+        outcome: Un plan commun rend les parts compatibles et explicite les 40 pièces non couvertes.
+        lesson: Oracle souligne le besoin de considérer ensemble les demandes partageant une offre ; les quantités illustrées
+          et la politique restent propres au cas FLOW.
+        source_title: Start Backlog Planning
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+        source_refs:
+        - U477
+        - ELM363
+        - CMP191
+  source_refs:
+  - P81
+  - P83
+  - U52
+  - U75
+  - U80
+  - U81
+  - U95
+  - F201
+  - C63
+  - CMP052
+  - U147
+  - U154
+  - U163
+  - U202
+  - U218
+  - U219
+  - U220
+  - U290
+  - U369
+  - U378
+  - U411
+  - U412
+  - U413
+  - ELM246
+  - CMP157
+  - U414
+  - ELM247
+  - CMP158
+  - U416
+  - U417
+  - U418
+  - ELM248
+  - CMP159
+  - U420
+  - U435
+  - U437
+  - U438
+  - U445
+  - U455
+  - U458
+  - U462
+  - U477
+  - CMP191
+  - U482
+  - U496
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u219
+  review:
+    state: partial
+    note: 'U496/U497 : vocabulaire Service Requests / Backing Services appliqué ; responsabilités conservées. Les détails
+      rédactionnels et correspondances gardent leur statut proposé. Accords antérieurs conservés uniquement sur les valeurs
+      inchangées ou les libellés canoniques actualisés.'
+  editorial_basis: Clarification U218 et accord U219 ; finalités des domaines reprises de l’explication acceptée, nouvelles
+    descriptions et noms proposés. État antérieur dans history/pre-U219.yaml.
+  adoption_ids:
+  - ADOPT-002
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T16:05:23.261608Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - U52
+    - U95
+    - U147
+    - U154
+    - U202
+    - U218
+    - U219
+    - U290
+    - U369
+    - U413
+    - U438
+    - U496
+    validated_fields:
+    - name
+    - finality
+    value_sha256:
+      name: 1c8c94b182f415d6e8be856646b3c1e8b95a9cc8cf782f58ec8f9ff209a6e062
+      finality: 27cded8dd5990ee7bdf6ab5879da6d43727187f762da6dde2f7af44f2d48251e
+    note: 'U438 adopte noms et rattachements explicitement présentés ; autres champs non validés par extension. Accord antérieur
+      conservé dans history/order-domains-U438/. U496/U497 : noms et libellés liés actualisés ; aucun accord étendu aux compléments
+      rédactionnels. Valeurs antérieures capturées avant changement.'
+  approved_fields:
+  - name
+  - finality
+  proposed_fields:
+  - definition
+  - scope
+  - market_comparisons
+  last_modified: '2026-09-19T16:05:23.261608Z'
+- id: D05
+  revision: 8
+  kind: area
+  fields:
+    name: Inventory Optimization
+    definition: Optimiser le stock consiste à choisir un compromis entre disponibilité, immobilisation et risque, puis à décider
+      des ajustements nécessaires.
+    finality: Décider du stock souhaitable et des ajustements nécessaires.
+    scope: |-
+      L’area produit les paramètres et ajustements de stock à retenir selon le compromis entre disponibilité, immobilisation et risque. Les décisions spécialisées portent les cibles de couverture, les droits de protection des groupes, les apports initiaux de lancement, le réassort continu et la redistribution du stock existant. [Inventory Optimization Planning](model:D05.f) les mobilise pour construire, simuler, évaluer et valider un scénario cohérent, puis en déclencher l’application via les capacités responsables ; cette mobilisation n’est pas une décomposition en sous-capacités.
+
+      Les calculs font partie des décisions. [Initial Stocking Decision](model:D05.g) détermine les apports du lancement ; [Replenishment Decision](model:D05.e) détermine les apports continus. Chacune intègre les besoins nets, contraintes, quantités et dates utiles à sa finalité. La redistribution et le réapprovisionnement demeurent distincts et coordonnés : leurs effets sur les stocks et manques sont pris en compte sans doublon. Les horizons restent opérationnels ; les prévisions et coûts peuvent être des entrées sans ajouter la planification de saison.
+
+      Exemple fictif : retenir une cible magasin de 100 pièces et un seuil de réassort de 60 ; protéger une enveloppe pour un canal ; puis arbitrer entre apports et transfert depuis un site excédentaire. Une reconfiguration du service attendu peut conduire Inventory Optimization Planning à mobiliser de nouveau plusieurs décisions et comparer leurs effets ensemble.
+
+      Stock Protection désigne la gouvernance/management discutée en U230/U231 ; la capacité courante reste [Supply Protection](model:D02.b), sans renommage implicite. Son application signifie mettre à jour transactionnellement les données correspondantes, à l’unité, par groupe ou en masse, par écrans, batch, flux ou streaming. Décider les paramètres ou valider un scénario ne réalise pas ces mises à jour à lui seul.
+
+      La mise en action du réapprovisionnement engage les Orders ; [Service Requests](model:D04) les gère, [Fulfillment Optimization](model:D03) travaille leur satisfaction, les exécutants réalisent les prestations et [Inventory Management](model:D01) tient la connaissance des stocks et mouvements. La fonction de mise en action d’Inventory Optimization Planning déclenche les actions retenues et connaît leur prise en compte via ces capacités responsables ; aucune nouvelle capacité autonome de déclenchement n’est ajoutée dans D05. D03 cherche à satisfaire les Orders ; D05 cherche le stock souhaitable et ses ajustements. La distinction ne repose ni sur l’absence de commandes dans les entrées ni sur un partage global/individuel. La portée actuelle de Supply Assignment, incluant les besoins prévisionnels, est conservée.
+
+      La mise en application peut être automatique selon les règles et autorités ; aucun contrôle humain systématique, séquencement fixe ou découpage logiciel imposé. Les notions transversales soutenant la définition des objets du modèle restent dans le glossaire de modélisation séparé.
+
+      Inventory Optimization Planning est décrit par trois comportements : Scenario Construction, Simulation & Analysis et Scenario Execution Adaptation. Comparaison, validation et déclenchement restent dans son périmètre ; aucune nouvelle capacité de décision ni application transactionnelle absorbée.
+
+      [Return Disposition Decision](model:D05.i) détermine le devenir logistique des produits retournés selon leur état, les politiques et la récupération de valeur. Inspection, décision et réalisation restent distinctes ; aucun remboursement ou remplacement client absorbé. Rattachement adopté U380.
+    market_comparisons:
+    - vendor: RELEX
+      product: RELEX Solutions
+      source_title: 'Inventory optimization: Keys to a successful strategy'
+      source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+      source_version: Article daté du 12 avril 2024, état consulté le 19 septembre 2026
+      source_locator: Inventory management vs optimization ; Multi-echelon inventory optimization
+      consulted_on: '2026-09-19'
+      concept_name: Inventory optimization
+      scope_summary: Compromis de stock dans le réseau.
+      approach_summary: Placer les marges selon demande et risque.
+      evidence_limits: Présentation pédagogique et commerciale ; Tori est explicitement fictive et les résultats ne sont pas
+        garantis.
+      element_name: Inventory optimization
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Le stock est positionné pour répondre à la demande sans excès inutile.
+      differences: RELEX décrit une offre plus large, avec prévision et mise en action intégrées.
+      flow_position: 'Choisir le stock souhaitable et les ajustements nécessaires : Inventory Optimization recherche un compromis
+        entre disponibilité, immobilisation et risque. Les calculs éclairent les décisions sans rendre les marchandises physiquement
+        disponibles.'
+      status: proposed
+      source_refs:
+      - U477
+      - ELM479
+      - CMP190
+    - vendor: Achkar et al.
+      product: Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization
+      source_title: Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization
+      source_url: https://arxiv.org/abs/2306.10961
+      source_version: Prépublication du 19 juin 2023
+      source_locator: Résumé des auteurs
+      consulted_on: '2026-09-19'
+      concept_name: Multi-echelon inventory optimization
+      scope_summary: Stocks de sécurité d’un réseau sous contraintes.
+      approach_summary: Minimiser le coût en respectant un service.
+      evidence_limits: Résumé primaire seul consulté ; aucune reproduction de l’algorithme ni transférabilité quantitative
+        au textile affirmée.
+      element_name: Multi-echelon inventory optimization
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: La recherche relie niveau de service et coût du stock dans le réseau.
+      differences: Ce modèle scientifique étudie surtout les stocks de sécurité ; FLOW inclut plusieurs décisions d’ajustement.
+      flow_position: 'Choisir le stock souhaitable et les ajustements nécessaires : Inventory Optimization recherche un compromis
+        entre disponibilité, immobilisation et risque. Les calculs éclairent les décisions sans rendre les marchandises physiquement
+        disponibles.'
+      status: proposed
+      source_refs:
+      - U477
+      - ELM327
+      - CMP190
+    market_inspiration:
+      choice: 'Choisir le stock souhaitable et les ajustements nécessaires : Inventory Optimization recherche un compromis
+        entre disponibilité, immobilisation et risque. Les calculs éclairent les décisions sans rendre les marchandises physiquement
+        disponibles.'
+      flow_scope: Objectifs de stock, protections et ajustements dans le réseau.
+      flow_approach: Comparer des résultats métier et préparer un scénario cohérent.
+      synthesis:
+      - RELEX emploie Inventory Optimization pour une démarche large de positionnement ; Achkar et ses coauteurs formalisent
+        un problème plus précis de sécurité dans plusieurs échelons. Tous deux mettent en regard service et stock immobilisé.
+      - FLOW conserve ce nom à la maille de l’area et explicite les responsabilités de décision. Ses objectifs peuvent être
+        multiples ; aucune pondération ni minimisation monétaire unique n’est imposée.
+      examples:
+      - title: Exemple pédagogique RELEX — les marges s’additionnent
+        situation: Tori optimise séparément les stocks des centres et magasins.
+        outcome: L’article explique que des marges locales peuvent couvrir plusieurs fois le même risque.
+        lesson: Un meilleur compromis se cherche dans le réseau ; cela ne garantit pas une baisse de stock dans chaque lieu.
+        source_title: 'Inventory optimization: Keys to a successful strategy'
+        source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+        source_refs:
+        - U477
+        - ELM479
+        - CMP190
+  source_refs:
+  - P81
+  - U06
+  - U53
+  - U57
+  - U58
+  - CAP011
+  - CAP012
+  - CAP013
+  - U218
+  - U219
+  - U220
+  - U221
+  - U223
+  - U224
+  - U229
+  - U230
+  - U231
+  - U232
+  - U233
+  - U234
+  - U235
+  - U269
+  - U290
+  - U313
+  - U316
+  - U380
+  - U435
+  - U438
+  - U455
+  - U458
+  - U477
+  - CMP190
+  - U482
+  - U496
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u223
+  review:
+    state: partial
+    note: 'U496/U497 : vocabulaire Service Requests / Backing Services appliqué ; responsabilités conservées. Les détails
+      rédactionnels et correspondances gardent leur statut proposé. Accords antérieurs conservés uniquement sur les valeurs
+      inchangées ou les libellés canoniques actualisés.'
+  editorial_basis: 'Clarification U218 et accord U219 ; finalités des domaines reprises de l’explication acceptée, nouvelles
+    descriptions et noms proposés. État antérieur dans history/pre-U219.yaml. U220 remplace le nom proposé Inventory Balancing
+    ; U221 ouvre le réapprovisionnement automatique comme piste de périmètre. U223 adopte la définition issue de la synthèse
+    U222 ; ancienne définition conservée dans history/pre-U223.yaml et stock-order-boundary.yaml. Périmètre aligné sur le
+    découpage U235, sans modifier les trois champs validés du domaine. U316 : distinction implantation/réassort intégrée ;
+    compléments éditoriaux proposés. État antérieur : audits/2026-09-18-initial-stocking/model-before.yaml.'
+  adoption_ids: []
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T16:05:23.261608Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - P81
+    - U06
+    - U53
+    - U57
+    - U58
+    - CAP011
+    - CAP012
+    - CAP013
+    - U218
+    - U219
+    - U220
+    - U223
+    - U290
+    - U496
+    validated_fields:
+    - name
+    - finality
+    - definition
+    value_sha256:
+      name: 6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3
+      finality: 86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c
+      definition: 3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0
+    note: 'Intégration U290 ; détails éditoriaux proposés. U496/U497 : noms et libellés liés actualisés ; aucun accord étendu
+      aux compléments rédactionnels. Valeurs antérieures capturées avant changement.'
+  last_modified: '2026-09-19T16:05:23.261608Z'

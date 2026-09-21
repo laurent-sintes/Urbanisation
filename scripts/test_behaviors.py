@@ -83,7 +83,7 @@ class BehaviorTests(unittest.TestCase):
 
     def test_refactored_behaviors_keep_one_parent_and_concrete_responsibilities(self):
         nodes = {n['id']: n for n in self.model['nodes']}
-        for parent, expected in {'D05.f': ['BHV005','BHV006','BHV016'],
+        for parent, expected in {'D05.f': ['BHV005','BHV006','BHV016','BHV094'],
                                  'D02.b': ['BHV017','BHV018','BHV019','BHV020'],
                                  'D03.n': ['BHV021','BHV022','BHV023']}.items():
             children = [r['target_id'] for r in self.model['relations'] if r['type']=='contains' and r['source_id']==parent]

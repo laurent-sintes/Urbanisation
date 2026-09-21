@@ -1,0 +1,1189 @@
+id: planning-principle-audit-U540
+date: '2026-09-21'
+source_refs:
+- U537
+- U538
+- U539
+- U540
+- U541
+- CMP220
+- CMP221
+- U542
+- CMP222
+- U543
+- U544
+- CMP224
+- U545
+- U546
+- CMP225
+- U547
+- CMP226
+status: completed_landscape_review_with_open_editorial_recommendations
+scope:
+  capabilities_reviewed: 58
+  behaviors_scanned: 82
+  relations_structurally_reviewed: 369
+  method: Lecture de toutes les définitions de capacités et comportements ; scopes, preuves et liens approfondis pour les
+    frontières affectées. Revue structurelle des relations et conservation des coopérations incidentes. Ne constitue pas une
+    nouvelle expertise de marché exhaustive de chaque fiche ni un rejeu U431.
+principle: Application du résultat comme comportement du Planning ; décisions distinctes ; configuration consommée et responsabilités
+  métier autonomes extérieures.
+findings:
+- id: PP01
+  title: Application portée par le Planning
+  targets:
+  - D03.p
+  - D05.f
+  - D17.a
+  - D17.b
+  conclusion: 'Principe cohérent pour les quatre Plannings, avec résultats différents : affectations du carnet, actions du
+    scénario de stock, demande de référence applicable, couverture/apports à mettre en œuvre. Aucun comportement générique
+    identique imposé.'
+  action: D03.p intègre Supply Assignment. D05.f est clarifié ; les applications détaillées des autres plans restent à décrire
+    au niveau pertinent.
+  evidence:
+  - U537
+  - ELM496
+  - ELM566
+  status: partially_integrated_remaining_details_proposed
+- id: PP02
+  title: Supply Assignment devient un comportement du planning du carnet
+  targets:
+  - D02.e
+  - D03.p
+  - BHV045
+  - BHV046
+  - BHV047
+  conclusion: U539 suivi de la clarification U541 vise le planning opérationnel conservé sous le nom Order Backlog Planning.
+  action: D02.e conserve son identifiant et devient comportement sous D03.p. BHV045–047 sont consolidés comme modalités descriptives,
+    avec conservation intégrale dans la baseline et succession explicite ; aucun sous-comportement.
+  evidence:
+  - U539
+  - U541
+  - ELM452
+  - ELM496
+  status: integrated_parent_contextual_interpretation
+- id: PP03
+  title: Configuration extérieure et décision distincte
+  targets:
+  - D02.b
+  - D05.d
+  - D05.a
+  - D05.h
+  conclusion: Déterminer une protection, en gouverner la validité et l’utiliser dans un plan sont des responsabilités différentes.
+    Les quatre comportements de Supply Protection restent extérieurs au Planning.
+  action: Maintenir décisions et Supply Protection ; la consommation ou la sollicitation de changements est une coopération,
+    pas une décomposition.
+  evidence:
+  - U538
+  - ELM567
+  - ELM496
+  status: boundary_confirmed
+- id: PP04
+  title: Engagements et gestion durable ne se réduisent pas à appliquer un plan
+  targets:
+  - D02.c
+  - D03.n
+  - D04.o
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.r
+  - D07.b
+  - D01.h
+  conclusion: Reservation produit un engagement opposable, Fulfillment Commitment une promesse, les Orders et la consignation
+    conservent demandes, engagements et suites au-delà d’une application de plan.
+  action: Conserver ces capacités partenaires ; leur mobilisation par Planning ne justifie pas leur absorption. La frontière
+    repose sur les résultats métier, pas une couche transactionnelle.
+  evidence:
+  - U436
+  - U443
+  - ELM411
+  - ELM353
+  - ELM566
+  status: retention_recommended
+- id: PP05
+  title: Process Orchestration dépasse le déclenchement du plan
+  targets:
+  - D06.d
+  - D06.f
+  - D07.a
+  - D06.e
+  - D07.d
+  conclusion: Coordonner la progression, les dépendances, les attentes et les impondérables pendant les prestations est une
+    responsabilité durable. La décision d’adaptation reste distincte.
+  action: Conserver Process Orchestration ; ne pas créer Process Planning ni reléguer l’orchestration à un comportement de
+    l’Area Planning par simple analogie.
+  evidence:
+  - ELM330
+  - ELM353
+  status: retention_recommended
+- id: PP06
+  title: 'Demande de réexamen et Planning : risque de doublon de lecture'
+  targets:
+  - D04.s
+  - BHV091
+  - BHV092
+  - BHV093
+  - D03.p
+  conclusion: Les scopes distinguent déjà faire étudier et suivre une demande de l’étude et application du plan. Les intitulés
+    et définitions Simulation & Analysis et Plan Activation Follow-up peuvent toutefois laisser lire une seconde autorité.
+  action: 'Proposer une clarification éditoriale : demande porte motif, portée, autorisation et suivi ; Planning porte étude
+    du plan et application. Aucun retrait des comportements U501 ou fusion de capacités décidé dans cet audit.'
+  evidence:
+  - U501
+  - ELM496
+  - ELM566
+  status: editorial_boundary_proposed
+- id: PP07
+  title: Supply Planning trop large pour la capacité de couverture envisagée
+  targets:
+  - D17
+  - D17.b
+  - D03.p
+  - D05.f
+  conclusion: Supply Planning peut désigner un ensemble de fonctions chez les éditeurs. Le contenu actuel de D17.b vise surtout
+    le plan d’ensemble de couverture et les apports ; son nom ne doit pas aspirer le planning du carnet et celui du stock.
+  action: Conserver l’Area Planning et le nom Order Backlog Planning. Laisser D17.b en réexamen nominal/de périmètre ; documenter
+    ses résultats avant de proposer un nom plus précis. Pas de nouvelle Area déduite de U541.
+  evidence:
+  - U534
+  - U541
+  - ELM557
+  - ELM564
+  status: name_and_scope_open
+- id: PP08
+  title: 'Décisions : corriger les verbes qui suggèrent une exécution'
+  targets:
+  - BHV024
+  - BHV025
+  - D05.c
+  conclusion: Les définitions courtes Déplacer/Regrouper semblent réaliser les transferts alors que les scopes précisent une
+    recommandation de redistribution. Ce décalage ne justifie pas un déplacement de parent.
+  action: Proposer Déterminer les transferts / Déterminer les regroupements pour aligner les fiches sur leurs scopes ; pas
+    de nouvelle capacité ni réalisation physique transférée.
+  evidence:
+  - U318
+  - U537
+  status: editorial_correction_proposed
+capability_matrix:
+- id: D01.f
+  name: Inventory Tracking
+  nature_before: knowledge
+  definition_examined: Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus,
+    par référence de produit, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; suivre distinctement
+    les ressources futures connues et leurs caractéristiques attendues.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D01.g
+  name: Record Inventory Movements
+  nature_before: action
+  definition_examined: 'Enregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions,
+    sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées,
+    les dates et les références explicatives, y compris sans déplacement physique.'
+  classification: independent_operational_facts
+  finding_ref: PP04
+  reason: Établir mouvements, comptages ou rapprochements produit des faits métier indépendants de l’application d’un plan.
+  behavior_ids_examined: []
+- id: D01.c
+  name: Inventory Visibility
+  nature_before: knowledge
+  definition_examined: Fournir une lecture cohérente des stocks physiques, de leurs états logiques et des ressources futures
+    dans les différents lieux et périmètres, avec provenance et fraîcheur, sans double compte.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D01.d
+  name: Stocktaking
+  nature_before: action
+  definition_examined: établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier
+    les écarts et établir les corrections justifiées.
+  classification: independent_operational_facts
+  finding_ref: PP04
+  reason: Établir mouvements, comptages ou rapprochements produit des faits métier indépendants de l’application d’un plan.
+  behavior_ids_examined:
+  - BHV029
+  - BHV030
+  - BHV031
+- id: D02.b
+  name: Supply Protection
+  nature_before: management
+  definition_examined: Configurer et maintenir les politiques, règles et quantités qui encadrent l’usage et le renouvellement
+    des ressources pour maîtriser pénurie, surstock et déséquilibre.
+  classification: external_configuration
+  finding_ref: PP03
+  reason: Gouverner politiques et paramètres consommés reste extérieur au Planning.
+  behavior_ids_examined:
+  - BHV017
+  - BHV018
+  - BHV019
+  - BHV020
+- id: D02.c
+  name: Reservation
+  nature_before: action
+  definition_examined: établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir
+    compte.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined: []
+- id: D02.e
+  name: Supply Assignment
+  nature_before: action
+  definition_examined: Matérialiser et maintenir les affectations des ressources Supply présentes ou futures aux commandes
+    identifiées, en mobilisant les décisions responsables des choix retenus et en respectant les priorités, les engagements
+    et les contraintes applicables.
+  classification: becomes_planning_behavior
+  finding_ref: PP02
+  reason: Application des affectations du plan ; absorbée descriptivement dans le Planning du carnet.
+  behavior_ids_examined:
+  - BHV045
+  - BHV046
+  - BHV047
+- id: D03.i
+  name: Available-to-Promise (ATP)
+  nature_before: decision
+  definition_examined: Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait
+    par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend
+    ces engagements possibles.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV001
+  - BHV002
+  - BHV003
+  - BHV004
+- id: D03.j
+  name: Capable-to-Promise (CTP)
+  nature_before: decision
+  definition_examined: Déterminer les possibilités de satisfaction d’un Order nécessitant une adaptation des ressources ou
+    des engagements, en mobilisant les décisions spécialisées et en explicitant les conditions de faisabilité et les impacts.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV075
+  - BHV076
+  - BHV077
+- id: D03.k
+  name: Profitable-to-Promise (PTP)
+  nature_before: decision
+  definition_examined: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans
+    les contraintes de service applicables.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D03.l
+  name: Delivery Schedule Decision
+  nature_before: decision
+  definition_examined: Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les
+    possibilités réalisables et selon les conditions de la commande.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D03.m
+  name: Order Prioritization
+  nature_before: decision
+  definition_examined: Établir et réviser les priorités relatives des commandes.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D04.i
+  name: Sales Order
+  nature_before: action
+  definition_examined: 'Gérer les commandes clients à satisfaire : enregistrer ce qui est demandé, maintenir les quantités,
+    destinations et échéances applicables, suivre les évolutions autorisées et déterminer ce qui reste à servir.'
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV066
+  - BHV067
+  - BHV068
+  - BHV069
+- id: D04.j
+  name: Purchase Order
+  nature_before: action
+  definition_examined: Prendre en charge les commandes d’achat de biens ou de prestations adressées aux fournisseurs, maintenir
+    les attentes et les évolutions autorisées et rapprocher les réalisations pour connaître le reste à satisfaire.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV058
+  - BHV059
+  - BHV060
+  - BHV078
+- id: D04.k
+  name: Transfer Order
+  nature_before: action
+  definition_examined: 'Gérer les ordres de déplacement de marchandises entre sites : maintenir origine, destination, quantités
+    et échéances, suivre les modifications et rapprocher départs et arrivées pour connaître le transfert restant à satisfaire.'
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV070
+  - BHV071
+  - BHV072
+  - BHV073
+  - BHV074
+- id: D04.l
+  name: Customer Return
+  nature_before: action
+  definition_examined: Prendre en charge les retours clients, leurs commandes et leurs suites logistiques, jusqu’au résultat
+    attendu selon les décisions et autorisations applicables.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV050
+  - BHV051
+  - BHV052
+  - BHV053
+  - BHV054
+- id: D04.m
+  name: Supplier Return
+  nature_before: action
+  definition_examined: Prendre en charge les retours de marchandises aux fournisseurs et suivre leurs suites attendues, selon
+    les accords applicables, en distinguant renvoi sans remplacement, remplacement et réparation avec restitution du bien.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV055
+  - BHV056
+  - BHV057
+- id: D04.n
+  name: Order Structuring
+  nature_before: action
+  definition_examined: Scinder, regrouper ou fusionner des commandes et leurs éléments, en préservant la traçabilité des demandes,
+    les quantités et les engagements.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV044
+  - BHV086
+  - BHV087
+- id: D04.o
+  name: Order Lifecycle Management
+  nature_before: management
+  definition_examined: Gouverner les évolutions autorisées des Orders selon leurs différentes dimensions métier, en préservant
+    la cohérence entre engagements, modifications en préparation et réalisations acquises.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV043
+- id: D05.a
+  name: Inventory Target Decision
+  nature_before: decision
+  definition_examined: Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins,
+    le niveau de service recherché, les délais et les risques.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV026
+  - BHV027
+  - BHV028
+- id: D05.d
+  name: Group Protection Decision
+  nature_before: decision
+  definition_examined: Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D05.g
+  name: Initial Stocking Decision
+  nature_before: decision
+  definition_examined: Déterminer les quantités à apporter à chaque magasin et leurs dates pour constituer le stock initial
+    nécessaire au lancement, à partir de l’assortiment retenu, des objectifs de stock et des contraintes applicables.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D05.e
+  name: Replenishment Decision
+  nature_before: decision
+  definition_examined: Déterminer les apports successifs et leurs ajustements en quantité et en date pour entretenir la disponibilité
+    pendant la commercialisation, selon les besoins, les objectifs de stock, les apports engagés et les contraintes applicables.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV083
+  - BHV084
+  - BHV085
+- id: D05.c
+  name: Stock Redistribution Decision
+  nature_before: decision
+  definition_examined: Déterminer les transferts de stock existant entre sites pour mieux répondre aux besoins, reconstituer
+    des assortiments utiles ou regrouper des stocks dispersés, en tenant compte des coûts et risques.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV024
+  - BHV025
+- id: D05.f
+  name: Inventory Planning
+  nature_before: planning
+  definition_examined: Construire des scénarios alternatifs de stock, simuler et analyser leurs conséquences, puis adapter
+    le scénario en cours à partir des faits, en mobilisant les décisions spécialisées et les capacités responsables de sa
+    mise en action.
+  classification: planning_application
+  finding_ref: PP01
+  reason: L’application relève du plan ; résultat et coopérations à préciser selon le cas.
+  behavior_ids_examined:
+  - BHV005
+  - BHV006
+  - BHV016
+- id: D06.b
+  name: Service Capacity Visibility
+  nature_before: knowledge
+  definition_examined: Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période
+    et sa fraîcheur, pour alimenter les décisions Supply.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D07.a
+  name: Service Requirements Decision
+  nature_before: decision
+  definition_examined: Déterminer les prestations nécessaires.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D07.b
+  name: Backing Service Orders
+  nature_before: management
+  definition_examined: 'Gérer les demandes de prestation adressées aux exécutants et leur cycle de vie : émission, acceptation
+    ou refus, modification, annulation et clôture, selon le service.'
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined: []
+- id: D07.c
+  name: Service Reconciliation
+  nature_before: action
+  definition_examined: Rapprocher les résultats constatés des prestations attendues, qualifier les écarts et fournir les faits
+    utiles aux areas consommatrices.
+  classification: independent_operational_facts
+  finding_ref: PP04
+  reason: Établir mouvements, comptages ou rapprochements produit des faits métier indépendants de l’application d’un plan.
+  behavior_ids_examined: []
+- id: D07.d
+  name: Operations Tracking
+  nature_before: knowledge
+  definition_examined: Suivre les faits, jalons, estimations et résultats encore attendus des prestations pendant leur réalisation.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined:
+  - BHV079
+  - BHV080
+  - BHV081
+  - BHV082
+- id: D09.d
+  name: Party / Role Ingestion
+  nature_before: action
+  definition_examined: Recevoir les [personnes](glossary:TER046), leurs identifiants et leurs [rôles métier](glossary:TER047),
+    puis intégrer les évolutions transmises par les maîtres externes pour maintenir une référence locale utilisable par les
+    accords et opérations Supply.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D11.a
+  name: Agreement Ingestion
+  nature_before: action
+  definition_examined: Recevoir les contrats clients ou fournisseurs et leurs évolutions, y compris cadre, conditions particulières,
+    périodes et engagements en quantité ou valeur, avec références Party et Catalog et provenance du maître externe.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D08.d
+  name: Product Reference Ingestion
+  nature_before: action
+  definition_examined: Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi
+    que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D12.a
+  name: Product Catalog Ingestion
+  nature_before: action
+  definition_examined: recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques
+    d’application et évolutions.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D13.a
+  name: Fulfillment Network Ingestion
+  nature_before: action
+  definition_examined: recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les
+    parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D06.d
+  name: Process Orchestration
+  nature_before: orchestration
+  definition_examined: Coordonner les prestations et leurs dépendances.
+  classification: continuous_coordination
+  finding_ref: PP05
+  reason: La coordination se poursuit pendant les prestations et gère leurs dépendances.
+  behavior_ids_examined: []
+- id: D14.a
+  name: Service Catalog Ingestion
+  nature_before: action
+  definition_examined: Recevoir l’offre des Backing Services, leurs niveaux de service configurés, conditions et accès, ainsi
+    que leurs évolutions depuis les sources maîtresses externes.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D06.e
+  name: Service Selection Decision
+  nature_before: decision
+  definition_examined: Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte
+    de leur admissibilité et des contraintes.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D06.f
+  name: Process Adaptation Decision
+  nature_before: decision
+  definition_examined: Déterminer les variations du plan.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D03.n
+  name: Fulfillment Commitment
+  nature_before: management
+  definition_examined: Proposer, confirmer et réviser les engagements de satisfaction d’une commande, en quantités, dates
+    et conditions.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV021
+  - BHV022
+  - BHV023
+- id: D05.h
+  name: Reservation Policy Decision
+  nature_before: decision
+  definition_examined: Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin
+    de sécuriser la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV032
+  - BHV033
+  - BHV034
+  - BHV035
+- id: D04.q
+  name: Order Archiving
+  nature_before: management
+  definition_examined: Organiser la conservation historique des Orders éligibles en dehors de leur usage opérationnel courant,
+    tout en préservant leur consultation, leurs versions utiles et leurs liens.
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined: []
+- id: D03.o
+  name: Fulfillment Plan Decision
+  nature_before: decision
+  definition_examined: Déterminer un scénario cohérent d’affectation des ressources Supply aux commandes, en mobilisant les
+    décisions spécialisées et les politiques applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined: []
+- id: D05.i
+  name: Return Disposition Decision
+  nature_before: decision
+  definition_examined: Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables
+    et les possibilités de récupération de valeur.
+  classification: separate_decision
+  finding_ref: PP03
+  reason: Le résultat détermine une réponse métier ; calculs inclus, application distincte.
+  behavior_ids_examined:
+  - BHV048
+  - BHV049
+- id: D04.r
+  name: Consignment Replenishment Order
+  nature_before: management
+  definition_examined: 'Demander et suivre un apport fournisseur : produits, quantités, destinations, dates et reste à recevoir,
+    sans engagement d’achat des marchandises.'
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV061
+  - BHV062
+- id: D01.h
+  name: Consigned Inventory Management
+  nature_before: management
+  definition_examined: 'Appliquer au stock consigné les conditions de l’accord : propriété, droits d’usage, échéances et suites
+    autorisées ; mobiliser les capacités responsables lorsqu’une acquisition, un retour ou une autre issue devient nécessaire.'
+  classification: independent_business_management
+  finding_ref: PP04
+  reason: Tenir demandes, engagements, structures ou régimes possède une responsabilité propre qui se poursuit après l’application
+    du plan.
+  behavior_ids_examined:
+  - BHV063
+  - BHV064
+  - BHV065
+- id: D03.p
+  name: Order Backlog Planning
+  nature_before: planning
+  definition_examined: Construire, comparer et maintenir les scénarios de satisfaction du carnet d’Orders, en mobilisant les
+    décisions spécialisées, puis préparer la prise en charge de la part retenue par les processus.
+  classification: planning_application
+  finding_ref: PP01
+  reason: L’application relève du plan ; résultat et coopérations à préciser selon le cas.
+  behavior_ids_examined: []
+- id: D04.s
+  name: Order Backlog Optimization Request
+  nature_before: action
+  definition_examined: Prendre en charge une demande de réexamen du carnet, préciser son objectif, son périmètre et ses contraintes,
+    et suivre les scénarios étudiés, les décisions prises et les suites autorisées.
+  classification: request_scope_review
+  finding_ref: PP06
+  reason: La demande porte motif, portée et suivi ; préciser la délégation de l’étude et application au Planning.
+  behavior_ids_examined:
+  - BHV088
+  - BHV089
+  - BHV090
+  - BHV091
+  - BHV092
+  - BHV093
+- id: D08.e
+  name: Product Reference Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un produit ou une variante et consulter les caractéristiques de référence nécessaires pour
+    comprendre de quel produit parlent une offre, un accord ou une commande.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D09.e
+  name: Party / Role Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver une [personne physique ou morale](glossary:TER046) et consulter son identité, ses relations
+    et les [rôles](glossary:TER047) sous lesquels elle participe aux accords et opérations Supply.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D11.b
+  name: Agreement Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un [accord](glossary:TER048) et consulter les personnes engagées, les conditions, les périodes
+    et les engagements contractuels enregistrés pour comprendre ce qu’il prévoit.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D12.b
+  name: Product Catalog Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un catalogue et consulter les offres, produits et conditions commerciales enregistrées pour
+    comprendre ce qui est proposé et dans quel périmètre.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D13.b
+  name: Fulfillment Network Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un point du réseau Supply et consulter ses caractéristiques, ses rattachements et ses relations
+    de référence pour comprendre sa place dans le réseau.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D14.b
+  name: Service Catalog Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un [Backing Service](glossary:TER075) et consulter son résultat attendu, son fournisseur
+    et les conditions de référence de sa réalisation pour comprendre ce que l’orchestration peut mobiliser.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D16.a
+  name: Assortment Ingestion
+  nature_before: action
+  definition_examined: Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir
+    la référence locale des assortiments utilisée par la Supply.
+  classification: external_reference_ingestion
+  finding_ref: PP03
+  reason: Maintenir une référence locale depuis les sources fait autorité pour plusieurs usages, sans appliquer un plan.
+  behavior_ids_examined: []
+- id: D16.b
+  name: Assortment Visibility
+  nature_before: knowledge
+  definition_examined: Retrouver un assortiment et consulter quels produits sont retenus pour quels magasins, canaux ou clients
+    et pendant quelle période.
+  classification: external_information
+  finding_ref: PP04
+  reason: Établir les faits et rendre la situation lisible sert plusieurs consommateurs et ne met pas un plan en effet.
+  behavior_ids_examined: []
+- id: D17.a
+  name: Demand Planning
+  nature_before: planning
+  definition_examined: Construire et actualiser le plan de demande à couvrir, en rapprochant prévisions, ventes observées
+    et demandes connues, dont les précommandes B2B.
+  classification: planning_application
+  finding_ref: PP01
+  reason: L’application relève du plan ; résultat et coopérations à préciser selon le cas.
+  behavior_ids_examined: []
+- id: D17.b
+  name: Supply Planning
+  nature_before: planning
+  definition_examined: Construire et actualiser le plan de couverture de ces besoins, compte tenu des approvisionnements possibles,
+    des ressources et des contraintes.
+  classification: planning_application
+  finding_ref: PP01
+  reason: L’application relève du plan ; résultat et coopérations à préciser selon le cas.
+  behavior_ids_examined: []
+market_sources:
+- id: ELM496
+  title: Overview of Backlog Management Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  passage: Activities 1–4 ; simulation until release
+  finding: La release des résultats figure dans le parcours de planification du carnet ; avant release, les résultats restent
+    simulés.
+  vendor: Oracle
+  reference: MKT20
+  edition: 26B
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+  native_id: Non indiqué
+  nature: Processus ou fonction produit documenté
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni droit de redistribution inféré
+- id: ELM566
+  title: Manually Release Plan Recommendations
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  passage: Introduction ; release process ; submission to Supply Chain Orchestration
+  finding: Le plan peut donner lieu à de nouveaux Orders ou à leur replanification ; les demandes transmises et exceptions
+    sont suivies.
+  vendor: Oracle
+  reference: MKT20
+  edition: 26B
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+  native_id: Non indiqué
+  nature: Processus ou fonction produit documenté
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni droit de redistribution inféré
+- id: ELM567
+  title: Overview of Supply Allocation Rules
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-supply-allocation-rules.html
+  passage: Rules ; stealing protection ; Refresh and Plan after rule changes
+  finding: Des règles de priorité et de protection sont configurées et utilisées par le calcul du backlog ; les modifications
+    requièrent une nouvelle planification.
+  vendor: Oracle
+  reference: MKT20
+  edition: 26B
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+  native_id: Non indiqué
+  nature: Processus ou fonction produit documenté
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni droit de redistribution inféré
+- id: ELM452
+  reference: MKT13
+  title: Explaining Supply Assignment
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  edition: Cours évolutif SAP S/4HANA Fashion ; édition non indiquée
+  passage: Supply Assignment Basics ; Scenarios ; Copying Assignments
+  finding: SAP relie ressources présentes ou futures et commandes, avec variantes de traitement ; ses effets sur les usages
+    concurrents dépassent ceux de FLOW.
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+- id: ELM330
+  reference: MKT36
+  title: The Process Orchestration Handbook
+  url: https://camunda.com/process-orchestration/
+  edition: Guide web évolutif
+  passage: What is process orchestration? ; deterministic and dynamic orchestration ; complex processes
+  finding: Coordonner activités, dépendances, attentes et exceptions constitue une responsabilité continue ; le guide ne prescrit
+    pas un Process Planning métier.
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+- id: ELM411
+  reference: MKT14
+  title: Inventory Visibility reservations
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  edition: Documentation évolutive
+  passage: Sample use case for soft reservation ; offsets
+  finding: Réserver réduit la quantité disponible à réserver ; les canaux peuvent imposer ou contourner le refus selon configuration.
+    Pas de garantie absolue ni assimilation à la simple affectation.
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+- id: ELM353
+  reference: MKT20
+  title: Order Management Statuses
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/order-management-statuses.html
+  edition: 26B ; édition antérieure 25C conservée au registre
+  passage: Order ; Order Line ; Orchestration Process ; Fulfillment Task
+  finding: La commande et son exécution possèdent des états et un suivi distincts de la seule recommandation du plan.
+  consulted_on: '2026-09-21'
+  access: Source primaire directement consultée ; synthèse sélective et lien
+market_limits: 'Documents produit : appuis fonctionnels, pas catalogue normatif de capacités. Aucun consensus universel ni
+  innovation établi. ELM557/564 restent les appuis antérieurs de la réserve nominale ; les sources de cette revue effectivement
+  relues sont listées ci-dessus.'
+structural_change:
+  node_id: D02.e
+  kind_before: capability
+  kind_after: behavior
+  parent_before: D03
+  parent_after: D03.p
+  sources:
+  - U539
+  - U541
+  interpretation: contextual_for_parent_explicit_for_behavior_level
+  retired_nodes:
+  - id: BHV045
+    successor_id: D02.e
+    disposition: Mécanisme conservé comme modalité descriptive, sans réutilisation de l’identifiant.
+  - id: BHV046
+    successor_id: D02.e
+    disposition: Mécanisme conservé comme modalité descriptive, sans réutilisation de l’identifiant.
+  - id: BHV047
+    successor_id: D02.e
+    disposition: Mécanisme conservé comme modalité descriptive, sans réutilisation de l’identifiant.
+  retired_relations:
+  - id: REL-BEHAVIOR-BHV045
+    revision: 1
+    type: contains
+    source_id: D02.e
+    target_id: BHV045
+    source_refs:
+    - U345
+    - U364
+    review:
+      state: accepted
+      note: Décomposition visible de Supply Assignment, U364.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T16:10:14.810983Z'
+      recorded_by: Codex
+      source_refs:
+      - U364
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d
+        target_id: 0ddc16e66d909224228a9e7fd927734fd4f4a5cd78f57d6949e9f631a931437a
+      note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+  - id: REL-BEHAVIOR-BHV046
+    revision: 1
+    type: contains
+    source_id: D02.e
+    target_id: BHV046
+    source_refs:
+    - U345
+    - U364
+    review:
+      state: accepted
+      note: Décomposition visible de Supply Assignment, U364.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T16:10:14.810983Z'
+      recorded_by: Codex
+      source_refs:
+      - U364
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d
+        target_id: 1edb5d2396fd97b6e5a90b073c0ccc069a1ca7fe0b7b4c3e8465e9b21823f291
+      note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+  - id: REL-BEHAVIOR-BHV047
+    revision: 1
+    type: contains
+    source_id: D02.e
+    target_id: BHV047
+    source_refs:
+    - U345
+    - U364
+    review:
+      state: accepted
+      note: Décomposition visible de Supply Assignment, U364.
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T16:10:14.810983Z'
+      recorded_by: Codex
+      source_refs:
+      - U364
+      validated_fields:
+      - type
+      - source_id
+      - target_id
+      value_sha256:
+        type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+        source_id: 31362943f0e17747847ae8264ea29890b2e9faf21b81ce606b83b5fed3c7ff5d
+        target_id: d39acba54e1614de1c36c72f32547d2a096b4dee7ae8b3cc77938f51fc47ac2b
+      note: Distinction et rattachements U364 ; libellés et détails éditoriaux sans validation globale.
+  before_ref: audits/2026-09-21-planning-principle-U540/baseline.yaml
+  remaining_business_links: Tous les liens métier vers D02.e sont conservés avec leurs identifiants.
+  proposed_editorial_details: Définition, nature intervention_mechanism, prose consolidée et justification de décomposition
+    ne sont pas adoptées par extension.
+final_counts:
+  domain: 1
+  area: 8
+  reference: 7
+  capability: 57
+  behavior: 80
+  object: 2
+  document: 1
+  event: 1
+final_relations: 366
+information_reference_maintenance:
+  scope: Correction de deux rôles internes après changement de niveau, sans extension du catalogue Informations ni changement
+    de sa visibilité.
+  before:
+  - id: PINFO-013
+    name: Supply Assignment
+    label_fr: Affectation de ressources
+    question: Quelle ressource est affectée à quelle demande, pour quelle part ?
+    definition: Lien retenu entre une ressource et une partie de demande à satisfaire, avec la quantité et les conditions
+      d’application de cette affectation.
+    context: Une affectation identifiée par son sens ressource–demande, distincte du plan qui l’a choisie, de la promesse
+      et du droit de réservation.
+    essential_elements:
+    - Ressource concernée et demande bénéficiaire.
+    - Quantité avec unité et contexte d’application.
+    - Conditions particulières de maintien, par exemple un gel, seulement lorsqu’elles sont explicites.
+    granularity_rationale: Ressource seule ou quantité seule ne dit pas à quelle demande elle est affectée. Plusieurs liens
+      peuvent composer un plan sans fusionner leur sens.
+    document_and_fact_boundary: Cette information n’est pas, à elle seule, un fait de gestion. Tout fait de gestion s’appuie
+      sur un document métier identifié ; chaque propriété descriptive n’exige pas son propre document.
+    boundaries:
+    - Un gel limite la modification de l’affectation ; il ne réserve pas automatiquement.
+    - L’affectation peut changer sans modifier la promesse si les conditions restent compatibles.
+    capability_roles:
+    - capability_ref: D02.e
+      role: établit et fait évoluer
+      meaning: Applique et maintient les liens choisis ; ne décide pas à nouveau le plan.
+      source_refs:
+      - U345
+      - U364
+      - U436
+    - capability_ref: D03.o
+      role: détermine le choix utilisé
+      meaning: Fulfillment Plan Decision choisit le scénario dont découlent les affectations à appliquer.
+      source_refs:
+      - U378
+      - U460
+    examples:
+    - title: Exemple illustratif
+      situation: 40 pièces affectées depuis A à la demande L sont réaffectées depuis B. Si la même date et les mêmes conditions
+        sont possibles, la promesse reste inchangée. Sans réservation, ce lien ne bloque pas les usages concurrents.
+      source_refs:
+      - U345
+      - U364
+      - U436
+      - U443
+      - U460
+      - ELM284
+    source_refs:
+    - U464
+    - U465
+    - U345
+    - U364
+    - U436
+    - U443
+    - U460
+    - ELM284
+    - CMP184
+    - U468
+    review:
+      state: proposed
+      note: Fiche issue du pilote U465. Définition, granularité, rôles et rapprochements proposés ; exemple illustratif, pas
+        une observation installée.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Planning Optimization
+      element_name: Microsoft — Keep supply for confirmed demand
+      element_type: Concept ou exemple documentaire
+      relationship: Appui sémantique
+      similarities: Un lien ressource–demande peut être maintenu ou réexaminé lors de la planification.
+      differences: Le mécanisme produit recoupe plusieurs capacités FLOW. Il ne prouve ni équivalence complète avec Supply
+        Assignment ni réservation par une affectation FLOW.
+      flow_position: La préservation de liens pour une demande confirmée chez Microsoft éclaire le maintien d’une affectation.
+        Son paramétrage ne prescrit ni le gel FLOW ni un blocage implicite.
+      term_choice: Supply Assignment conserve le vocabulaire FLOW d’affectation. Pegging est un terme produit de rapprochement
+        offre–demande ; Allocation peut désigner d’autres droits ou protections.
+      definition_choice: La préservation de liens pour une demande confirmée chez Microsoft éclaire le maintien d’une affectation.
+        Son paramétrage ne prescrit ni le gel FLOW ni un blocage implicite.
+      source_title: Microsoft — Keep supply for confirmed demand
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+      source_version: Document et passages datés dans le localisateur
+      consulted_on: '2026-09-19'
+      source_locator: What data is preserved ; Control how on-hand inventory is pegged ; documentation indiquée le 27 juillet
+        2026
+      evidence_limits: Page officielle consultée ; synthèse sans reproduction du contenu.
+      status: proposed
+      source_refs:
+      - ELM284
+      - CMP184
+      - U468
+  - id: PINFO-014
+    name: Reservation
+    label_fr: Réservation de ressources
+    question: Quelle part de ressource est rendue indisponible aux demandes concurrentes, au bénéfice de qui ?
+    definition: Droit établi pour un besoin bénéficiaire sur une quantité de ressources définies par un périmètre, qui bloque
+      les usages concurrents selon les conditions de réservation applicables.
+    context: Périmètre de ressources suffisamment défini pour comprendre ce qui est réservé ; pas nécessairement un lot ou
+      exemplaire déjà affecté.
+    essential_elements:
+    - Besoin bénéficiaire et périmètre de ressources concerné.
+    - Quantité avec unité.
+    - Conditions métier de l’opposabilité ; limites de durée seulement lorsqu’elles sont établies.
+    granularity_rationale: Quantité, périmètre et bénéficiaire forment le sens du droit. Un lot précis n’est pas indispensable
+      à toute réservation ; son attribution répond à une autre question.
+    document_and_fact_boundary: Cette information n’est pas, à elle seule, un fait de gestion. Tout fait de gestion s’appuie
+      sur un document métier identifié ; chaque propriété descriptive n’exige pas son propre document.
+    boundaries:
+    - Réservation n’est ni mouvement physique ni simple affectation.
+    - Expiration, libération, consommation et effets d’une annulation ne sont pas automatisés par la définition.
+    capability_roles:
+    - capability_ref: D02.c
+      role: établit et fait évoluer
+      meaning: Maintient le droit opposable selon les règles métier de réservation.
+      source_refs:
+      - U436
+      - U460
+    - capability_ref: D02.e
+      role: utilise
+      meaning: Tient compte des droits de réservation lors de l’application d’une affectation.
+      source_refs:
+      - U436
+      - U460
+    examples:
+    - title: Exemple illustratif
+      situation: 40 pièces de V sur le périmètre P sont réservées au besoin L, sans lot choisi. Les demandes concurrentes
+        doivent tenir compte de ce droit ; l’annulation de L ne prouve pas à elle seule une règle de libération automatique.
+      source_refs:
+      - U436
+      - U460
+      - ELM283
+    source_refs:
+    - U464
+    - U465
+    - U436
+    - U460
+    - ELM283
+    - CMP184
+    - U468
+    review:
+      state: proposed
+      note: Fiche issue du pilote U465. Définition, granularité, rôles et rapprochements proposés ; exemple illustratif, pas
+        une observation installée.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 Inventory Visibility
+      element_name: Microsoft — Inventory Visibility reservations
+      element_type: Concept ou exemple documentaire
+      relationship: Appui sémantique
+      similarities: Le droit de réservation et le mouvement physique restent distincts.
+      differences: Dans FLOW, seule la réservation bloque les usages concurrents. Les options d’overselling, de libération
+        et de consommation du produit ne définissent pas les règles métier de l’entreprise.
+      flow_position: Microsoft illustre la diminution de la quantité disponible à réserver sans mouvement de stock. La portée
+        exclusive du blocage est une convention FLOW ; les options produit d’overselling ou de libération ne sont pas importées.
+      term_choice: Reservation est un terme établi ; FLOW conserve le nom de la capacité et précise son effet métier. Soft
+        reservation est un mécanisme particulier, pas le nom imposé à toute réservation.
+      definition_choice: Microsoft illustre la diminution de la quantité disponible à réserver sans mouvement de stock. La
+        portée exclusive du blocage est une convention FLOW ; les options produit d’overselling ou de libération ne sont pas
+        importées.
+      source_title: Microsoft — Inventory Visibility reservations
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+      source_version: Document et passages datés dans le localisateur
+      consulted_on: '2026-09-19'
+      source_locator: Introduction ; Sample use case
+      evidence_limits: Page officielle consultée ; synthèse sans reproduction du contenu.
+      status: proposed
+      source_refs:
+      - ELM283
+      - U436
+      - CMP184
+      - U468
+followup_U542:
+  analysis_ref: modeles/backlog/planning-application-options-U542.yaml
+  status: responsibilities_and_candidate_names_proposed
+  result: 'Trois formes d’application distinguées : demande applicable, actions du scénario de stock, apports du plan de couverture.
+    Frontière D05.f/D17.b explicitement ouverte ; aucune décomposition canonique ni validation par extension.'
+followup_U543:
+  analysis_ref: modeles/backlog/inventory-planning-intentions-U543.yaml
+  direction: Inventory Planning trop agrégé selon Laurent. Étudier les capacités par intention ; Inventory Plan Application
+    générique suspendu, aucune capacité de remplacement adoptée.
+followup_U544:
+  analysis_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml
+  direction: 'Alternative à la scission : Inventory Optimization Planning pour arbitrer plusieurs ajustements vers un stock
+    adapté. Option proposée, aucun renommage adopté ; les candidats par intention restent une alternative.'
+followup_U545:
+  result: D05.f renommé Inventory Optimization Planning ; nom et définition présentés adoptés contextuellement. Maintien d’un
+    plan arbitrant plusieurs ajustements, pas de scission U543 intégrée.
+  remaining: Comportement détaillé d’application et propositions sur Demand Planning / plan de couverture encore à instruire.
+  adoption_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml#adoption_U545
+followup_U546:
+  analysis_ref: modeles/backlog/backlog-request-planning-boundary-U546.yaml
+  result: Scopes complémentaires, ambiguïté des noms et définitions courtes. Proposition de conserver les deux capacités et
+    clarifier cadrage/suivi de demande versus étude/application du plan. Aucun changement adopté.
+followup_U547:
+  analysis_ref: modeles/backlog/planning-request-behavior-option-U547.yaml
+  direction: La demande est traitée comme les Orders ; sa prise en charge comme premier comportement de Planning devient l’option
+    à privilégier. La recommandation U546 de maintenir deux capacités n’est plus la seule piste. Migration et noms proposés,
+    sans modification canonique.
+implementation_U552:
+  manifest: modeles/backlog/planning-refactor-U552.yaml
+  status: implemented_with_U553_U556_corrections
+  note: Gestion de demande intégrée sous Order Backlog Planning ; application stock et publication de demande explicitées.
+    Supply Planning nomme l’Area U553 ; capacité de couverture D17.b retirée U555. Frontières décrites sans solution U556
+    ; détails de mise en œuvre qualifiés séparément.

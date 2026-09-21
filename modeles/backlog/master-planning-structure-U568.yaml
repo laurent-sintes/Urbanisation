@@ -1,0 +1,124 @@
+id: master-planning-structure-U568
+date: '2026-09-21'
+source_refs:
+- U568
+- U569
+- U570
+- CMP238
+- U571
+- U572
+status: placement_principle_validated_detailed_structure_proposed
+proposed_area:
+  current_id: D17
+  current_name: Supply Planning
+  proposed_name: Master Planning
+  scope: Construire et actualiser un plan Supply commun associant satisfaction des demandes et ajustements de ressources ;
+    mobiliser les décisions et faire appliquer les suites retenues.
+  name_status: proposed_by_user_not_yet_renamed
+proposed_management_capability:
+  name: Master Plan Management
+  definition: Construire, comparer, retenir, actualiser et faire appliquer le plan Supply commun, en mobilisant les décisions
+    spécialisées et en suivant les résultats réellement pris en compte.
+  status: codex_proposal
+  rationale: Une responsabilité durable de gestion du plan commun ; simulation, autorisation et lancement ne justifient pas
+    chacun une capacité autonome.
+  candidate_behavior_successions:
+  - from:
+    - D04.s
+    result: Optimization Request Management
+  - from:
+    - BHV005
+    - BHV006
+    - BHV091
+    result: Simulation & Analysis avec construction des scénarios et analyse de leurs conséquences
+  - from:
+    - BHV092
+    result: Scenario Authorization
+  - from:
+    - D02.e
+    result: Supply Assignment
+  - from:
+    - BHV094
+    result: Supply Adjustment Application, nom proposé
+  - from:
+    - BHV016
+    result: Adaptation aux écarts à reprendre dans l’actualisation et le suivi du plan ; pas de disparition implicite.
+planning_consolidation:
+  candidates:
+  - D03.p
+  - D05.f
+  direction: Un plan retenu commun ; carnet, stock, apports et protections deviennent des contributions et angles d’étude,
+    sans sous-plans finaux autonomes.
+  retired_identifier_constraint: Ne pas restaurer D17.b ni réutiliser un identifiant retiré.
+specialized_contributions:
+- D03.j
+- D03.o
+- D03.m
+- D05.a
+- D05.d
+- D05.e
+- D05.c
+input_responsibility:
+  id: D17.a
+  role: Demand Planning qualifie la demande attendue et restante ; ne crée pas un plan Supply concurrent.
+placement_question:
+  status: resolved_by_U572_on_principle
+  question: Master Planning coordonne-t-elle les décisions dans leurs Areas actuelles ou les regroupe-t-elle ?
+  configuration_and_orders: Configuration, autorisation des engagements et tenue effective des Orders restent distinctes.
+market_refs:
+- ELM303
+- ELM579
+- ELM580
+- ELM581
+- ELM413
+- ELM496
+market_position: Master Planning est établi chez Microsoft au-delà de la production. SAP IBP étaye le périmètre intégré sous
+  un autre nom. La maille Area et la capacité Master Plan Management restent des choix FLOW, pas une taxonomie universelle.
+canonical_hierarchy_changed: false
+report: audits/2026-09-21-integrated-supply-plan-U567/proposition-master-planning.md
+placement_recommendation:
+  author: Codex
+  status: principle_validated_U572_detailed_mapping_proposed
+  choice: Regrouper dans Master Planning les décisions qui construisent le contenu du plan, en conservant les autres responsabilités
+    à leurs propriétaires.
+  candidates_inside:
+  - D03.o
+  - D03.m
+  - D05.a
+  - D05.d
+  - D05.g
+  - D05.e
+  - D05.c
+  candidate_meaning: Cohérence du plan, priorités, cibles et protections proposées, implantation, réassort et redistribution
+    ; la liste guide une revue de placement, sans adoption de déplacement.
+  reusable_feasibility:
+  - D03.i
+  - D03.j
+  configuration_owner: D02.b
+  orders_and_commitments: D04 et D15 conservent leurs responsabilités ; application autorisée mobilise ces capacités.
+  area_residuals_to_audit:
+  - D03
+  - D05
+  preserve_and_relocate_only_after_review:
+  - D05.h
+  - D05.i
+  market_basis:
+  - ELM303
+  - ELM579
+  - ELM580
+  - ELM581
+  - ELM413
+  tradeoff: Une Area plus large, mais un propriétaire clair des arbitrages du plan ; ne pas absorber configuration, opérations
+    ni toutes les décisions du Domain.
+user_agreement_U572:
+  verbatim: Je valide, je suis d'accord
+  approved_statements:
+  - Regrouper dans Master Planning les décisions qui déterminent le contenu du plan Supply commun.
+  - Conserver les responsables propres des faisabilités réutilisables, des politiques et des engagements.
+  not_approved_by_extension:
+  - Liste précise des capacités transférées.
+  - Nom Master Plan Management et définition détaillée.
+  - Noms et fusions des comportements proposés.
+  - Suppression des Areas D03 et D05.
+  scope: Accord de principe sur la recommandation présentée ; pas de capture de champs canoniques non présentés.
+  implementation_status: Arbitrage enregistré ; hiérarchie actuelle préservée jusqu’à formalisation du refacto.
