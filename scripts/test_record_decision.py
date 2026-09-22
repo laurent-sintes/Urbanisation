@@ -70,6 +70,34 @@ class DecisionIntentTests(unittest.TestCase):
     def document(self):
         return read(self.root / recorder.REGISTRY_PATH)
 
+    def test_explicit_suspension_preserves_proof_without_creating_approval(self):
+        original = deepcopy(self.record()['intent'])
+        document = self.document()
+        document['suspensions'] = [{'intent_id': original['id'], 'reviewer': 'Codex',
+            'reviewed_at': '2026-09-22', 'source_refs': ['U2'],
+            'rationale': 'Scope changed; preserve the historical proof without carrying approval.'}]
+        snapshot = self.snapshot()
+        snapshot['nodes'][1]['fields']['name'] = 'Changed'
+        self.assertEqual(recorder.compile_intents(document, snapshot, [], self.sources)['decisions'], [])
+        self.assertEqual(document['intents'][0], original)
+        with self.assertRaisesRegex(ValueError, 'Published intents'):
+            recorder.compile_intents(document, snapshot, [], self.sources, self.document())
+        changed = deepcopy(document)
+        changed['suspensions'][0]['rationale'] = 'Rewritten'
+        with self.assertRaisesRegex(ValueError, 'suspension was removed or changed'):
+            recorder.compile_intents(changed, snapshot, [], self.sources, document)
+        self.assertEqual(recorder.compile_intents(document, snapshot, [], self.sources, document)['decisions'], [])
+
+    def test_suspension_requires_known_source_target_and_unique_entry(self):
+        self.record()
+        document = self.document()
+        entry = {'intent_id': 'ADOPT-TEST-1', 'reviewer': 'Codex', 'reviewed_at': '2026-09-22',
+                 'source_refs': ['U2'], 'rationale': 'Scope changed.'}
+        for entries in ([entry, entry], [entry | {'intent_id': 'missing'}],
+                        [entry | {'source_refs': ['unknown']}], [entry | {'rationale': ''}]):
+            with self.assertRaises(ValueError):
+                recorder.validate_document(document | {'suspensions': entries}, self.sources)
+
     def test_explicit_replacement_retains_old_proof_and_requires_a_fresh_context(self):
         old = deepcopy(self.record()['intent'])
         self.model['nodes'][1]['fields']['name'] = 'Renamed Request'

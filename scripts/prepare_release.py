@@ -446,8 +446,8 @@ def stage_candidate(root, bundle, *, guide_path=None):
         for record in bundle['report']['deferred_artifacts']:
             source_path = checked_path(models, record['path'])
             path = temporary / 'deferred' / source_path.name
-            write(path, read(source_path))
-            deferred.append({'path': path.relative_to(temporary).as_posix(), 'sha256': digest(path),
+            publisher.copy_verified(source_path, path, record['sha256'])
+            deferred.append({'path': path.relative_to(temporary).as_posix(), 'sha256': record['sha256'],
                              'source_path': record['path'], 'source_sha256': record['sha256']})
         review_files = {}
         for name, document in bundle['review_evidence'].items():
@@ -545,7 +545,8 @@ def publish_prepared(root, version, activate=False):
     errors = validate_sources(provenance)
     errors += validate_contract(decisions, read(models / 'schemas/decisions.schema.json'))
     errors += validate_release(release, decisions, snapshot, {r['id']: r for r in provenance['records']}, read(models / 'schemas/urbanism.schema.json'))
-    errors += read(stage / 'report.json')['validation_errors']
+    report = read(stage / 'report.json')
+    errors += report['validation_errors']
     if errors:
         raise ValueError('\n'.join(errors))
     release_dir, revision_dir, proof_dir = (models / folder / version for folder in ('release', 'revisions', 'provenance'))
@@ -557,16 +558,15 @@ def publish_prepared(root, version, activate=False):
     release_dir.mkdir()
     revision_dir.mkdir()
     proof_dir.mkdir()
-    write(revision_dir / 'backlog.yaml', snapshot)
-    write(decision_path, decisions)
-    write(proof_dir / 'source-records.json', provenance)
+    publisher.copy_verified(stage / 'backlog.yaml', revision_dir / 'backlog.yaml', manifest['files']['backlog.yaml'])
+    publisher.copy_verified(stage / 'decisions.json', decision_path, manifest['files']['decisions.json'])
+    publisher.copy_verified(stage / 'source-records.json', proof_dir / 'source-records.json', manifest['files']['source-records.json'])
     for name in review_files:
-        write(checked_path(revision_dir, name), read(checked_path(stage, name)))
+        publisher.copy_verified(checked_path(stage, name), checked_path(revision_dir, name), review_files[name])
     for item in manifest['deferred']:
-        write(checked_path(revision_dir, item['path']), read(checked_path(stage, item['path'])))
-    write(release_dir / 'model.yaml', release)
-    write(release_dir / 'changes.json', read(stage / 'report.json'))
-    report=read(stage / 'report.json')
+        publisher.copy_verified(checked_path(stage, item['path']), checked_path(revision_dir, item['path']), item['sha256'])
+    publisher.copy_verified(stage / 'candidate.yaml', release_dir / 'model.yaml', manifest['files']['candidate.yaml'])
+    publisher.copy_verified(stage / 'report.json', release_dir / 'changes.json', manifest['files']['report.json'])
     notes=[f"# Urbanisation — version {release['revision']}", '', f"Publication {version} · modèle modifié le {release['last_modified']}.", '',
            f"{sum(n['kind']=='capability' for n in release['nodes'])} capacités ; les statuts et réserves sont conservés.", '', '## Changements', '']
     changed_ids={e['id'] for e in report['element_version_changes'] if e['collection']=='nodes' and e['reason'] in ('new','changed')}

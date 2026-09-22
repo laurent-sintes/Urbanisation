@@ -1,0 +1,365 @@
+# Urbanisation — version 19
+
+Publication 2026-09-22.4 · modèle modifié le 2026-09-22T07:38:31.477913Z.
+
+55 capacités ; les statuts et réserves sont conservés.
+
+## Changements
+
+- added : BHV094 — Inventory Plan Application
+- added : BHV095 — Demand Plan Publication
+- added : D17 — Supply Planning
+- added : D17.a — Demand Planning
+- removed : BHV045 — Supply Assignment Plan Application
+- removed : BHV046 — Incremental Supply Assignment
+- removed : BHV047 — Supply Reassignment
+- removed : BHV088 — Exception-Driven Backlog Review
+- removed : BHV089 — Periodic Backlog Review
+- removed : BHV090 — Requested Backlog Study
+- removed : BHV093 — Plan Activation Follow-up
+- modified : BHV024 — contenu ou notice actualisé
+- modified : BHV025 — contenu ou notice actualisé
+- modified : BHV026 — contenu ou notice actualisé
+- modified : BHV027 — contenu ou notice actualisé
+- modified : BHV028 — contenu ou notice actualisé
+- modified : BHV036 — contenu ou notice actualisé
+- modified : BHV077 — contenu ou notice actualisé
+- modified : BHV091 — contenu ou notice actualisé
+- modified : BHV092 — contenu ou notice actualisé
+- modified : D02.b — contenu ou notice actualisé
+- modified : D02.c — contenu ou notice actualisé
+- modified : D02.e — contenu ou notice actualisé
+- modified : D03 — contenu ou notice actualisé
+- modified : D03.j — contenu ou notice actualisé
+- modified : D03.k — contenu ou notice actualisé
+- modified : D03.l — contenu ou notice actualisé
+- modified : D03.n — contenu ou notice actualisé
+- modified : D03.o — contenu ou notice actualisé
+- modified : D03.p — contenu ou notice actualisé
+- modified : D04 — contenu ou notice actualisé
+- modified : D04.i — contenu ou notice actualisé
+- modified : D04.j — contenu ou notice actualisé
+- modified : D04.k — contenu ou notice actualisé
+- modified : D04.o — contenu ou notice actualisé
+- modified : D04.s — Order Backlog Optimization Request → Optimization Request Management
+- modified : D05 — contenu ou notice actualisé
+- modified : D05.a — contenu ou notice actualisé
+- modified : D05.c — contenu ou notice actualisé
+- modified : D05.f — Inventory Planning → Inventory Optimization Planning
+- modified : D05.g — contenu ou notice actualisé
+- modified : D05.h — contenu ou notice actualisé
+- modified : D15 — contenu ou notice actualisé
+- modified : business-references — contenu ou notice actualisé
+- modified : universe-supply — contenu ou notice actualisé
+
+## Glossaire
+
+111 termes figés dans cette publication. Les liens sont résolus dans cette même version.
+0 termes introduits ; 1 révisés. Détail des changements, y compris retraits éventuels, dans changes.json.
+- Sens à réexaminer : D03.o (fields) référence TER078.
+
+## Informations métier
+
+14 informations et 15 liens figés dans cette publication ; usages des capacités, exemples et sources marché inclus.
+Informations : 0 ajouts, 2 modifications, 0 retraits.
+Liens : 0 ajouts, 0 modifications, 0 retraits.
+
+## Validations et points ouverts
+
+0 décisions antérieures conservées ; 290 suspendues pour les révisions modifiées.
+0 accords reportés après vérification de valeurs et contexte métier inchangés.
+0 accords transcrits à portée identique pour le cycle U131 ; 236 autres décisions nouvelles sourcées.
+Aucune publication ne vaut validation métier. Les champs proposés, réserves et alternatives du rapport restent à instruire.
+
+- ADOPT-022-LIFECYCLE-r2 (REL-MEMBER-D01.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-024-LIFECYCLE-r2 (REL-MEMBER-D02.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-026-LIFECYCLE-r2 (REL-MEMBER-D02.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-MEMBER-D05.d-r1 (REL-MEMBER-D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-MEMBER-D05.e-r1 (REL-MEMBER-D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U235-REL-MEMBER-D05.f-r1 (REL-MEMBER-D05.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.d-r2 (REL-INVENTORY-PLANNING-D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-INVENTORY-PLANNING-D05.e-r2 (REL-INVENTORY-PLANNING-D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-PLANNING-BHV005-r1 (REL-PLANNING-BHV005) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-PLANNING-BHV006-r1 (REL-PLANNING-BHV006) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV016-r1 (REL-MEMBER-BHV016) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV017-r1 (REL-MEMBER-BHV017) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV018-r1 (REL-MEMBER-BHV018) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV019-r1 (REL-MEMBER-BHV019) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV020-r1 (REL-MEMBER-BHV020) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV021-r1 (REL-MEMBER-BHV021) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV022-r1 (REL-MEMBER-BHV022) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-BHV023-r1 (REL-MEMBER-BHV023) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV029-r1 (REL-BEHAVIOR-BHV029) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV030-r1 (REL-BEHAVIOR-BHV030) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV031-r1 (REL-BEHAVIOR-BHV031) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV036-r1 (REL-BEHAVIOR-BHV036) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV037-r1 (REL-BEHAVIOR-BHV037) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV038-r1 (REL-BEHAVIOR-BHV038) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV039-r1 (REL-BEHAVIOR-BHV039) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV040-r1 (REL-BEHAVIOR-BHV040) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV043-r1 (REL-BEHAVIOR-BHV043) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV044-r1 (REL-BEHAVIOR-BHV044) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV045-r1 (REL-BEHAVIOR-BHV045) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV046-r1 (REL-BEHAVIOR-BHV046) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV047-r1 (REL-BEHAVIOR-BHV047) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-MEMBER-D05.i-r1 (REL-MEMBER-D05.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV048-r1 (REL-BEHAVIOR-BHV048) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV049-r1 (REL-BEHAVIOR-BHV049) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV075-r1 (REL-BEHAVIOR-BHV075) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV076-r1 (REL-BEHAVIOR-BHV076) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV077-r1 (REL-BEHAVIOR-BHV077) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV079-r1 (REL-BEHAVIOR-BHV079) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV080-r1 (REL-BEHAVIOR-BHV080) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV081-r1 (REL-BEHAVIOR-BHV081) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV082-r1 (REL-BEHAVIOR-BHV082) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV083-r1 (REL-BEHAVIOR-BHV083) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV084-r1 (REL-BEHAVIOR-BHV084) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U433-TRANSCRIPTION-REL-BEHAVIOR-BHV085-r1 (REL-BEHAVIOR-BHV085) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7b78df274fa7f8a04102234a (D05.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-bbb2b7c21fe0279ecd782073 (D05.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5bed80d51afea3c34a963834 (D02.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a6f318985035233f6abd148b (D03.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-66c26b8bef09821b9f73e257 (D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ba61b5a6629dbe75fc18782f (D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-030794185c556fd07a41621a (D07.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-8584e11b6821affc0c2a4e7b (D01) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4cee0394d0c420702ce003bb (D06.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4c58325b9e0e1fd208495d7e (D03.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3c40f3684859aed2094a8e01 (D04.q) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-74e425b5cc6ba02bb7a8670c (D03.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5b69f94ac67ab042cc3f7eb8 (D03.p) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-607de3bd944bf1243e0ef5e0 (D01.g) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c1ca61b4716fd0ab2c0ed261 (D01.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d7800a218dcbb2b6f792d1fc (BHV001) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-9fb55a315116b414483421e0 (BHV002) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c6d63506262005d79e094b3f (BHV003) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-507bdd0fa3768219958028ca (BHV004) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-8081a15d8eff188f29a6992f (BHV005) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b5b44bca2c400430978fb1b0 (BHV016) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b563f9a0944faad16f0d804c (BHV017) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-af21f0acd2dc7b5341e7d18e (BHV018) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-05201b7b69b3671f511d465f (BHV019) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-55e57b8835e5bccf18b2d9d7 (BHV020) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-07736ea58353ff281ec8129a (BHV021) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-6b808e5fb7dcbca0a7c0920b (BHV022) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-9971c61aaca5c6f669a1aac8 (BHV023) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-bc6c74271c6174bd7067d0e5 (BHV024) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-35b1141780a94fb94d45c19a (BHV025) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c36c5f619ed8afeaee495fb9 (BHV026) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fc7db95339f137f8c817f258 (BHV027) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fe80ed6f0c14aa4945556bef (BHV028) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3c48ffccc7b4299257fcaf5a (BHV029) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-76c20add09dfc26ba29de6b5 (BHV030) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c7829304210ceb3d64d2d58e (BHV032) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4e04c4e5c5477fd343f486df (BHV034) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-dc187e0aa2d2e4e86e394417 (BHV035) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-18a1e1880c160e9e3f3b1668 (BHV037) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-23e13d2bb7192447fa22315e (BHV039) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-f742f5840342c6734e302aac (BHV040) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4315cae2588765c02e740457 (BHV046) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7cd6f62b4727dee05c3aecf9 (BHV048) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1270f0156140ca4d14298198 (BHV049) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b6188915477e4a3c8d88f7b2 (BHV050) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-36dff90002f606d41a71d466 (BHV051) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1a420d91c1183e84e987b19b (BHV052) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a5a91a594284a58f293c67f8 (BHV053) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d578bae47b1ca027495c1875 (BHV054) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7397050afe683762022be52f (BHV055) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ed762b9cebe8ea51537bc12f (BHV056) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-26022cfd65adf37e5628aee1 (BHV060) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-15630e9090e3e4ba8b1ffe11 (BHV063) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-744c74f71acdc17f81bc18e6 (BHV071) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b022e98f44cc7ba9546b9887 (BHV072) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c81464281fd3c23a3f79e391 (BHV073) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-524fff624b79f55583a55f39 (BHV078) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-2d29ddbc96fbad62cd46de27 (D02.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-33782472e16856f2e8e0272d (D05.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-46fcac62a0b0c6316db8864b (D05.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5865d7b70eb07d9c99e2a308 (D02.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-accb3c8a6ef663147c1a464f (BHV006) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fe88de1778c1a738deec41f4 (BHV031) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d64fb115d837e5c26e294688 (BHV033) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-85cea58c18e9256f6413df6c (BHV036) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1a5f9cf3c2802afcbc82dea7 (BHV047) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5a99793b6bdcbd83d8cf943c (BHV057) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-535e4ba9c480598dd3e85ce9 (BHV058) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d13b234a0bde955fa4805cc4 (BHV059) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a9b3175d8a31d0e98210c573 (BHV061) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ce5eb7e43f68c51c24fd2de7 (BHV062) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-78d7cabbfd3212fa37b2c6b6 (BHV064) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a19c163b45f4698c5e98bd58 (BHV065) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4d2b4d16a9bce48d92f39794 (BHV066) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-bd7960922ac4be6625bc0efd (BHV067) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-f69c3fd9ceb18449ad4406d9 (BHV068) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-67a04963b856ad4ad4ad188b (BHV069) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-738458d03aa429cf667c67d2 (BHV070) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3ba41515cab693f8c1569e25 (BHV074) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fb80935ad452dfa8394555f2 (BHV075) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fef85ddc9f49d584875c07cf (BHV076) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-960b4582457d771a51bad559 (BHV077) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1d412f24864002bffe7eef3e (BHV079) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-dfe1aac7f30e1bec5cbce30d (BHV080) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b925ac9224505ec3956a5a09 (BHV081) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-eec1409fb2d6dcf767c9369d (BHV082) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-0f0311ebc16431021092ad04 (BHV083) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-9c6f3dd4022e9b6ef107afea (BHV084) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b2c13665d6e64780618cf92a (BHV085) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-47c6ac230b1d85258963165f (D06.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-76946a3561f8da0443728a6f (D05.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-34efd6a177b67b52fb496407 (D05) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BACKLOG-REQUEST (D04.s) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV088 (BHV088) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV089 (BHV089) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV090 (BHV090) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV091 (BHV091) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV092 (BHV092) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-BHV093 (BHV093) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV088 (REL-MEMBER-BHV088) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV089 (REL-MEMBER-BHV089) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV090 (REL-MEMBER-BHV090) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV091 (REL-MEMBER-BHV091) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV092 (REL-MEMBER-BHV092) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-MEMBER-BHV093 (REL-MEMBER-BHV093) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-BACKLOG-REQUEST-PLANNING (REL-BACKLOG-REQUEST-PLANNING) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-BACKLOG-REQUEST-DECISION (REL-BACKLOG-REQUEST-DECISION) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U501-REL-BACKLOG-REQUEST-ASSIGNMENT (REL-BACKLOG-REQUEST-ASSIGNMENT) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-53916b8a849889e7a9bc0e20 (REL-MEMBER-D09.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5ea6622d27bd6daa5e159204 (REL-MEMBER-D11.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-6dea9dad3ecab3d48c9ce551 (REL-MEMBER-D12.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7434a7dcd423f7af9faf9fb3 (REL-MEMBER-D08.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b865939513bb7156f3135f1e (REL-MEMBER-D13.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-49ea33fa0b87a5efd880cfb7 (REL-GROUP-D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1d6da0762504cadbbef24235 (REL-GROUP-D11) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c5c7251c5fc4c9cb6e5ecd77 (REL-GROUP-D08) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fc240187751777853df7cf83 (REL-GROUP-D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7f039aed558ae1e651f1460a (REL-GROUP-D13) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ef1f8ebce02b22864a6e30ee (REL-MEMBER-D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-0a61e11fe20813eb0298d576 (REL-MEMBER-D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5c4ffcf4a44f69dfa2cacf98 (REL-MEMBER-D07.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-9ff5b327d677f856c94d9d05 (REL-MEMBER-D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-891a9fbf6f57e3335c50f4eb (REL-MEMBER-D07.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1ca7ab0cdc38e301d5510318 (REL-MEMBER-D07.d) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-eddd1259045b2737f1e7794a (REL-GROUP-D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-56d05fa2dc99e323beda6f12 (REL-MEMBER-D06.f) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-6de8d749c95d7b61eaf3f542 (REL-MEMBER-D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b1df61ae4e7a04a0103f7c18 (REL-MEMBER-D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7772baa574ac088a0d840f6d (REL-MEMBER-D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-77bdd2e8efcc7702e3fb8125 (REL-MEMBER-D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7dea32dfa318dba907c085e4 (REL-MEMBER-D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7f01f323f993596fca246a32 (REL-MEMBER-D04.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-51416186f2bd0818ee4f6ab0 (REL-INVENTORY-PLANNING-D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-265e692913dbaa76370b2a87 (REL-INVENTORY-PLANNING-D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-e150cc858a56553672c29eb5 (REL-ATP-BHV001) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-dfe3311f39c81cb9a1580252 (REL-ATP-BHV002) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b9733e1f2630d1cf2387bedb (REL-ATP-BHV003) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-2f869f8e06574ebfcaf69924 (REL-ATP-BHV004) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-6cf454e69d10ad292f45aa57 (REL-BEHAVIOR-BHV024) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-565c36ff743b8ffd26ef1083 (REL-BEHAVIOR-BHV025) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-517387ac1dc792d6ca9da0d3 (REL-BEHAVIOR-BHV026) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-64b938c664f20adf027105e5 (REL-BEHAVIOR-BHV027) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-445afbc1488bffe0b52380d4 (REL-BEHAVIOR-BHV028) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-586c109bd172fe24cdc0d84f (REL-MEMBER-D05.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-8705e0a5c9b4f24e1eb901ee (REL-BEHAVIOR-BHV032) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-254f9607c6d54292275e79cb (REL-BEHAVIOR-BHV033) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-713f25b352efdf4960e0fded (REL-BEHAVIOR-BHV034) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-11fd01969394415e2dbd9163 (REL-BEHAVIOR-BHV035) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d1b8d2bffb3be2c64ff8189c (REL-BEHAVIOR-BHV050) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-eae423838861cb2f2ecab35c (REL-BEHAVIOR-BHV051) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b67d5e9615a03a38a1131129 (REL-BEHAVIOR-BHV052) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-0286d5faaca96a8097e845bd (REL-BEHAVIOR-BHV053) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-6150205efbec403a9f9a5b66 (REL-BEHAVIOR-BHV054) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-708a2006281b8ebab9d882a1 (REL-BEHAVIOR-BHV055) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7c95edfc86c69880f462eff7 (REL-BEHAVIOR-BHV056) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-928a827a42a382bbe061fba3 (REL-BEHAVIOR-BHV057) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-f4bd5932b86dd2c5ff8dcea1 (REL-BEHAVIOR-BHV058) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d8f560a5b7198d23bc692df1 (REL-BEHAVIOR-BHV059) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ac940d07c2c20ff51a32186d (REL-BEHAVIOR-BHV060) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3fd840eb4c4a199e70ab374f (REL-MEMBER-D04.r) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b225f69cbb408aa54641edb8 (REL-MEMBER-D01.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-995e3c854fdc03abf90815ad (REL-BEHAVIOR-BHV061) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1c4ac355e7fc59b031a4e019 (REL-BEHAVIOR-BHV062) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-015abc6246eebf518c8fb720 (REL-BEHAVIOR-BHV063) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ff15454bff9506fa425b3113 (REL-BEHAVIOR-BHV064) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4bcf0ec2066320161820566e (REL-BEHAVIOR-BHV065) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a6b1c8cb95c8c363a20d614b (REL-BEHAVIOR-BHV066) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5c69a7fe5df4b28c1270a910 (REL-BEHAVIOR-BHV067) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-cc6f7e5c07b0a3ae01de84b2 (REL-BEHAVIOR-BHV068) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-8039e172d74417130c0f80aa (REL-BEHAVIOR-BHV069) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-2126069c054c97a98f69a44f (REL-BEHAVIOR-BHV070) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-958a7fd07a647b62aea2a624 (REL-BEHAVIOR-BHV071) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-2a07284489b3b0b34c59fd69 (REL-BEHAVIOR-BHV072) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5cae9b570d0e6bb4b626aae7 (REL-BEHAVIOR-BHV073) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-eb44eef928c4c4bf402c8edc (REL-BEHAVIOR-BHV074) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-65a774881ecdf4ddae5fcf96 (REL-BEHAVIOR-BHV078) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-869380a8b45abcd8cb9208af (REL-MEMBER-D02.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-99aa4ae125eb6a19a65dbb4a (REL-MEMBER-D03.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d2f53b851c8d9005ea143293 (REL-MEMBER-D03.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c26e0ce0c61458d193a819c5 (REL-MEMBER-D03.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d35fc82288cfe3d22b7a3631 (REL-MEMBER-D03.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d232e6c34933648e3c58ba19 (REL-MEMBER-D03.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5baa8af9959ac7a37e2eb595 (REL-MEMBER-D04.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-09b05aed9c750b32db649861 (REL-MEMBER-D03.n) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-113f93974478ba3fdaf49efc (REL-MEMBER-D04.q) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-96656cd26c24aa43371c74eb (REL-MEMBER-D03.o) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-e77c9377fc963cea74c5d85c (REL-MEMBER-D03.p) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ba4c288a3c07378bf701a91c (D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-5d9e2b11255aff1a9d0923e3 (D13) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a420d09572d9a86bd3c3dabd (D11) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-fadf1f91a83e468ab877f681 (D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-b7563fb8afd04f9e69b2472a (D04.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ce5a04680e8cd4cba14eeca6 (D04.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-32d267e2af7219c6397c6b8e (D05.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-20bf7b5c48fdf627900b6296 (D05.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-1a8477fb66ab4c7b4dbde91c (D04.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7d1e83517109bbd419dd2263 (D05.c) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-feefdf041971730111a588ee (D06) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-a7df3031759a7fd4f5fb72db (D15) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3bc77679bf2c19270bace250 (D03.i) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-4d4aff09c249c3b8b05e68cd (D03.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-3778be049149ab195632d781 (D03.l) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-9fa31ef2a3852c1907e3ddae (D03.m) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-cb02b2c2d69739f9dec9b173 (D06.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-f6fd355823a78dc7a0f4c353 (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d3b9a998001d4369fb71cc70 (universe-supply) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7d0533bd55c9128f5e4a756b (business-references) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-e550fe1018c349e47fd84f01 (D04.j) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7a17dbee78dac5d737acec8c (D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-7cae1e6bd69523a268be2447 (D07.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-f92c17b1cfdc7ee3c36e126b (D03) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ee8edf6a26b0c12a69b9be7e (D04.r) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-306f47341c73990e89f20fcd (D01.h) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-d34920133fc14209ad721b88 (D06.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-8b62831290370f72e4a791e5 (D04) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-29bf31509524780f49b276df (D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-25f2f7f5d3828b2e3400f346 (D04.k) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-ca09893ad36e71a4e18a53bf (REL-MEMBER-D04.s) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-c8449c2eb6d1f23756bb02db (D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-REASSESS-753292482e62742a6a5cffd8 (D07.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-business-references (business-references) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D09 (D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D08.e (D08.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D09.e (D09.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D11.b (D11.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D12.b (D12.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D13.b (D13.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-D14.b (D14.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-UNIVERSE-SUPPLY-business-references (REL-UNIVERSE-SUPPLY-business-references) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D08 (REL-GROUP-D08) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D09 (REL-GROUP-D09) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D12 (REL-GROUP-D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D11 (REL-GROUP-D11) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D13 (REL-GROUP-D13) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-GROUP-D14 (REL-GROUP-D14) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D08.e (REL-MEMBER-D08.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D09.e (REL-MEMBER-D09.e) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D11.b (REL-MEMBER-D11.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D12.b (REL-MEMBER-D12.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D13.b (REL-MEMBER-D13.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REVIEW-REL-MEMBER-D14.b (REL-MEMBER-D14.b) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-D12 (D12) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-D12.a (D12.a) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-D16 (D16) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REL-GROUP-D16 (REL-GROUP-D16) : conservée dans l’historique, reprise suspendue pour cette révision.
+- ADOPT-U509-REL-AGREEMENT-ASSORTMENT (REL-AGREEMENT-ASSORTMENT) : conservée dans l’historique, reprise suspendue pour cette révision.
+
+Les éléments inchangés conservent leurs révisions. L’initialisation de last_modified marque le début du suivi lorsque la date antérieure est inconnue.

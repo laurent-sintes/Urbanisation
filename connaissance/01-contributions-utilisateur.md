@@ -14349,3 +14349,121 @@ C'est mieux. Pas folichon. Mais je valide
 **contexte et portée**
 
 Validation explicite du nom Plan Implementation proposé en réponse à U576, pour le comportement de mise en œuvre du plan. Le principe de regroupement conserve l’accord U576. L’appréciation réservée du nom ne suspend pas cette validation. Aucun accord supplémentaire sur les descriptions développées, les autres comportements ou les capacités de décision n’est déduit.
+
+## U578
+
+**id**
+
+U578
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Affiner les comportements de gestion du plan et retenir Apply Plan
+
+**texte**
+
+Je souhaite que Planning Management soit décomposé en Cadrer, programmer, lancer, arrêter, relancer
+Plan Version Management : je veux le retirer. Je considère que c'est au niveau fonctionnalité
+Plan Monitoring & Replanning, j'ai l'impression que c'est 2 comportements séparés : monitoring & ajustement
+Plan Implementation : je préfère Apply Plan
+
+**contexte et portée**
+
+Retour sur la proposition synthétique de Master Planning présentée dans cette discussion. Demande explicite de distinguer cinq actions de pilotage, de retirer Plan Version Management comme comportement et de remplacer le nom Plan Implementation par Apply Plan. Laurent suggère de distinguer monitoring et ajustement. La traduction anglaise des nouveaux libellés, leurs descriptions et leur placement terminal restent à expliciter ; aucun accord global sur les autres éléments du modèle n'est déduit.
+
+## U579
+
+**id**
+
+U579
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Rendre visible le contenu décisionnel de la réconciliation demande et supply
+
+**texte**
+
+Par contre, ce que je ne comprends pas et ce que je ne retrouve pas, c'est le détail des capacités d'un plan : ce que sait faire plan de réconciliation de la demande et de la supply.
+=> Backorder Processing (langage SAP)
+=> Allouer les ressources disponibles (spread)
+
+**contexte et portée**
+
+Laurent signale que la présentation des comportements de gestion ne rend pas visibles les capacités de réconciliation de la demande et des ressources. Il cite Backorder Processing SAP et la répartition des ressources disponibles (spread). Demande d’explicitation du contenu métier du plan ; aucun nom de remplacement ni déplacement canonique supplémentaire adopté.
+
+## U580
+
+**id**
+
+U580
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Comparer Demand/Supply Reconciliation et Demand/Supply Optimization pour le nom de l’Area
+
+**texte**
+
+JE me demande si l'area ne devrait pas s'appeler Demand/Supply Reconciliation. La gestion du plan n'est qu'une capacité. Ou Demand/supply Optimization. => Que dit le marché ?
+
+**contexte et portée**
+
+Demande de comparaison marché de deux noms d’Area, en distinguant la finalité métier de réconciliation ou d’optimisation de la capacité de gestion du plan. Alternatives soumises à examen ; aucun renommage adopté ni changement automatique du périmètre de Demand Planning.
+
+## U581
+
+**id**
+
+U581
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Retenir Demand & Supply Optimization et préciser CTP et nouveaux achats
+
+**texte**
+
+Ok pour Optimization.
+
+Comment activer la CTP ? Le plan propose t il des nouveaux ordres d'achat afin de rendre toutes les promesses valides ?
+
+**contexte et portée**
+
+Accord contextualisé sur Demand & Supply Optimization, nom d’Area recommandé dans U580. Question sur le recours à CTP et la proposition de nouveaux achats pour soutenir les promesses ; ne constitue pas une affirmation que toutes les promesses peuvent être rendues réalisables ni une autorisation de création de commandes réelles. Descriptions et déplacements détaillés non adoptés par extension.
+
+
+## U582
+
+**id**
+
+U582
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Publier une release complète pour clarifier l’état du modèle
+
+**texte**
+
+lance une release complete, je ne comprends plus où on en est.
+
+**contexte et portée**
+
+Demande de production et activation locale d’une release complète du backlog courant dans FLOW Atlas, avec restitution claire de son contenu et des propositions encore en annexe. La publication ne vaut pas adoption globale des propositions ni des champs détaillés.

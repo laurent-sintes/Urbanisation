@@ -4838,3 +4838,38 @@ Reformulation : Le processus métier nomme la mise en œuvre des recommandations
 MKT14 — [About planning functionality](https://learn.microsoft.com/en-us/dynamics365/business-central/production-about-planning-functionality). Documentation évolutive ; mise à jour 2026-06-03. Document primaire directement consulté le 21 septembre 2026. Passage : Planning worksheets and requisition worksheets > Requisition worksheet ; Working with multilevel orders. Nature : Mécanisme produit de mise en œuvre des propositions ; identifiant natif non indiqué.
 
 Reformulation : Les propositions de planification sont prises en charge par Carry Out Action Message, avec suites de création ou transmission selon le type de demande. Limite : Appui fonctionnel ; Microsoft ne nomme pas cette fonction Plan Implementation et le périmètre ne couvre pas toutes les familles FLOW. Synthèse sélective et lien ; CMP242.
+
+
+### ELM595
+
+MKT14 — [Run planning for a subset of items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters). Microsoft Dynamics 365 SCM, Planning Optimization ; documentation évolutive, mise à jour affichée 2023-09-29. Document primaire indexé consulté le 22 septembre 2026. Passages : Apply a plan filter ; Apply a runtime filter and set the BOM levels to include ; Combine plan filters and runtime filters. Identifiant natif non indiqué.
+
+Reformulation : filtre de périmètre, calcul immédiat ou récurrent et exemples de calculs successifs. Limite : fonctions produit ; ni décomposition métier identique ni reprise au point d’arrêt démontrées. Synthèse et lien ; CMP243.
+
+
+### ELM596
+
+MKT14 — [Master planning home page](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-planning-home-page). Microsoft ; Documentation évolutive ; mise à jour affichée 2026-03-26. Consulté le 22 septembre 2026. Passage : Introduction ; main planning processes. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.
+
+Reformulation : Master Planning détermine les besoins nets et les apports à préparer ; sa portée dépasse le pilotage du calcul. Limite : Vocabulaire de module ERP, avec contexte industriel ; pas une équivalence exacte de périmètre FLOW. Synthèse et lien ; CMP245.
+
+
+### ELM597
+
+MKT24 — [What is sales and operations planning (S&OP)?](https://www.sap.com/india/resources/sop-sales-and-operations-planning). SAP ; Page évolutive ; édition non indiquée. Consulté le 22 septembre 2026. Passage : How does the S&OP process work? ; Plan review and reconciliation. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.
+
+Reformulation : Reconciliation apparaît dans une étape de revue, simulation et convergence entre plans de demande et de supply. Limite : Contexte S&OP ; ne démontre pas un intitulé transversal unique pour BOP, répartition et achats. Synthèse et lien ; CMP245.
+
+
+### ELM598
+
+MKT20 — [Oracle Supply Planning](https://www.oracle.com/scm/supply-chain-planning/supply-planning/). Oracle ; Page produit évolutive ; édition non indiquée. Consulté le 22 septembre 2026. Passage : Balance global demand and supply ; Honor customer commitments ; Respond to changing business conditions. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.
+
+Reformulation : Supply Planning couvre équilibre demande-ressources, arbitrages du carnet, scénarios et recommandations d’approvisionnement. Limite : Périmètre produit plus large, incluant production et capacité ; pas une taxonomie de capacités FLOW. Synthèse et lien ; CMP245.
+
+
+### ELM599
+
+MKT20 — [Run a Supply Plan or an Integrated Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/run-a-supply-plan-or-an-integrated-plan.html). Oracle ; 26B. Consulté le 22 septembre 2026. Passage : Introduction ; Scope Options. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.
+
+Reformulation : Demand and Supply Plan désigne un plan intégré combinant prévisions et planification de supply. Limite : Appui au terme Planning et à un périmètre intégré, pas au nom exact Demand & Supply Optimization. Synthèse et lien ; CMP245.

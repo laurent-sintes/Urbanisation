@@ -382,7 +382,7 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
                 errors.append(f"release/{identifier}: no frozen input record")
                 continue
             metadata = ("revision", "last_modified", "content_sha256", "kind", "layer", "group_role", "level_ref", "source_refs", "source_locator") if collection == "nodes" else ("revision", "last_modified", "content_sha256", "source_refs")
-            for field in metadata + ('lifecycle',):
+            for field in metadata:
                 if item.get(field) != original.get(field):
                     errors.append(f"release/{identifier}/{field}: differs from frozen metadata")
             adoption_ids = item.get("adoption_ids", [])
@@ -408,6 +408,16 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
                     expected[field] = digest
             actual = item.get("fields", {}) if collection == "nodes" else _relation_values(item)
             lifecycle = item.get('lifecycle', {})
+            original_cycle = original.get('lifecycle')
+            expected_cycle = original_cycle
+            if published_snapshot and original_cycle and set(original_cycle.get('validated_fields', [])) - set(expected):
+                expected_cycle = dict(original_cycle)
+                expected_cycle['validated_fields'] = [f for f in original_cycle['validated_fields'] if f in expected]
+                expected_cycle['value_sha256'] = {f: v for f, v in original_cycle.get('value_sha256', {}).items() if f in expected}
+                if not expected_cycle['validated_fields'] and expected_cycle.get('state') == 'urbanist_validated':
+                    expected_cycle['state'] = 'under_instruction'
+            if item.get('lifecycle') != expected_cycle:
+                errors.append(f'release/{identifier}/lifecycle: differs from frozen metadata qualified by adoption evidence')
             for field in lifecycle.get('validated_fields', []):
                 if field not in expected or lifecycle.get('value_sha256', {}).get(field) != expected[field]:
                     errors.append(f'release/{identifier}: lifecycle approval lacks a matching decision: {field}')

@@ -89,6 +89,17 @@ class BacklogPublicationTests(unittest.TestCase):
     def prepare(self):
         return workflow.prepare(self.root, self.version, ['PUB-TEST-NEW'])
 
+    def test_annex_bytes_survive_preparation_and_publication(self):
+        annex = self.models/'backlog/exact-evidence.yaml'
+        content = b'# Preserve this comment and CRLF\r\nvalue: "00123"\r\n'
+        annex.write_bytes(content)
+        self.prepare()
+        staged = self.models/'staging'/self.version/'deferred/exact-evidence.yaml'
+        self.assertEqual(staged.read_bytes(), content)
+        workflow.publish_prepared(self.root, self.version)
+        self.assertEqual((self.models/'revisions'/self.version/'deferred/exact-evidence.yaml').read_bytes(), content)
+
+
     def test_information_catalogue_is_frozen_published_and_stale_edits_rejected(self):
         catalogue = deepcopy(workflow.read(ROOT/'modeles/backlog/model.yaml')['information_catalog'])
         # The legacy fixture keeps its own capabilities; use two existing roles.

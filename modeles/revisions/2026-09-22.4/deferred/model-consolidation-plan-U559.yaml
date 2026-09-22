@@ -1,0 +1,257 @@
+id: model-consolidation-plan-U559
+date: '2026-09-21'
+source_refs:
+- U559
+- U557
+- U558
+- CMP233
+status: proposé ; refacto non exécuté ; aucun arbitrage adopté
+objective: Consolider les responsabilités, leurs coopérations et leurs inspirations à partir des dix constats U557/U558, au
+  niveau capacité et comportement existant.
+scope: Backlog Supply Chain Orchestration hors Authoritative Data et descendants ; aucune extension au Commerce, au catalogue
+  Information ou aux réalisations installées.
+audit_input_sha256: 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46
+audit_sources:
+- modeles/backlog/model-coherence-audit-U557.yaml
+- modeles/backlog/market-inspiration-audit-U558.yaml
+structural_intent: Conserver les capacités, comportements et identifiants courants. Aucun nouveau nœud ni restauration de
+  D17.b ou de comportements retirés proposé. Modifier descriptions, relations qualifiées et inspirations selon les responsabilités
+  retenues.
+lots:
+- id: L1
+  title: Consolider les acquis et récupérer les inspirations regroupées
+  findings:
+  - AUD557-06
+  - INS558-01
+  node_ids:
+  - universe-supply
+  - D03
+  - BHV077
+  - D05.c
+  - D02.e
+  - D04.s
+  - D03.p
+  actions:
+  - 'Corriger les quatre décalages rédactionnels identifiés : nom Supply Planning, compte des capacités D03, Supply Reassignment
+    et verbes de réalisation dans une décision.'
+  - Reporter sur les successeurs les apports et exemples spécifiques des sept comportements regroupés ; notamment conservation/complément
+    et réaffectation, impondérables, initiative ou périodicité, suivi des suites.
+  - Pour chaque référence absente, consigner reprise, remplacement argumenté ou maintien historique justifié ; préserver éditions,
+    limites d’accès et preuves.
+  rationale: Le refacto doit conserver la justification du service rendu autant que sa description. Les références déjà consultées
+    sont réutilisables avec leur portée ; une source inaccessible ne devient pas une preuve fraîche.
+  acceptance:
+  - Chaque responsabilité regroupée reste retrouvable sur son successeur.
+  - Chaque appui particulier des anciens comportements reçoit un sort explicite ; aucun historique écrasé.
+  - Les noms et descriptions courants ne suggèrent plus des capacités ou comportements autonomes retirés.
+  business_arbitration: Pas de nouveau choix de périmètre dans ce lot ; les cas sensibles restent distingués des corrections
+    rédactionnelles.
+- id: L2
+  title: Achever les interfaces de planification
+  findings:
+  - AUD557-01
+  - AUD557-02
+  - INS558-02
+  - INS558-03
+  node_ids:
+  - D17.a
+  - BHV095
+  - D05.f
+  - BHV094
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.o
+  - BHV036
+  - D17
+  - D04
+  - D03
+  - D05
+  actions:
+  - 'Qualifier les relations déjà décrites entre Demand Planning, Sales Order et Inventory Optimization Planning : demandes
+    connues, demande retenue publiée, conditions d’utilisation et suites distinctes.'
+  - Proposer la prise en charge des demandes planifiées selon leur nature par Purchase Order ou Transfer Order ; Order Lifecycle
+    Management porte les états et transitions transverses, notamment l’affermissement.
+  - Préciser réception, révision et retrait d’une proposition issue d’un plan amont ainsi que sa continuité avec la commande,
+    sans recréer le plan ni déduire fermeté, réservation ou lancement de sa réception.
+  - Compléter les inspirations illustrées de Inventory Plan Application et Demand Plan Publication ; réécrire la synthèse
+    de Demand Planning à la portée de toute la capacité et distinguer approche éditeur/choix FLOW.
+  rationale: Oracle et Microsoft documentent le passage des résultats de plan aux Orders gérés ; Oracle documente publication
+    et consommation de demande. Le choix des propriétaires FLOW repose sur les familles d’Orders et le cycle de vie déjà présents.
+  source_refs:
+  - ELM419
+  - ELM566
+  - ELM568
+  - ELM569
+  - ELM556
+  - ELM557
+  acceptance:
+  - Demand Planning n’est plus isolée dans le graphe métier.
+  - Une demande planifiée reçue, révisée puis affermie peut être expliquée par les capacités existantes ; un retrait ne supprime
+    pas implicitement un engagement aval.
+  - Les deux nouveaux comportements ont choix, synthèse, exemple et sources ; les approches produit ne reprennent pas sans
+    qualification les choix FLOW.
+  business_arbitration: La responsabilité proposée avant affermissement reste une clarification métier à adopter ; aucune
+    nouvelle famille d’Orders ni contrat technique déduit.
+- id: L3
+  title: Résoudre les trois frontières métier restantes
+  findings:
+  - AUD557-03
+  - AUD557-04
+  - AUD557-05
+  depends_on:
+  - L2
+  actions:
+  - Présenter et retenir explicitement les responsabilités proposées dans DEC1, DEC2 et DEC3.
+  - Après arbitrage, aligner dans le même lot définitions/périmètres concernés, liens, exemples et comparaisons marché. Ne
+    pas étendre un accord à des formulations non présentées.
+  acceptance:
+  - La mise en vigueur des politiques a un porteur explicite.
+  - Le résultat retenu collectivement reste compatible avec les décisions spécialisées et les engagements autorisés.
+  - Les besoins sans commande ont un traitement explicite ou un point ouvert conservé ; aucun besoin historique supprimé par
+    un simple changement de nom.
+  business_arbitration: Trois recommandations explicites ci-dessous ; elles ne sont pas réputées validées par la demande de
+    plan.
+- id: L4
+  title: Harmoniser et vérifier le résultat consolidé
+  findings:
+  - INS558-04
+  depends_on:
+  - L1
+  - L2
+  - L3
+  actions:
+  - Distinguer les colonnes Périmètre et Approche et placer l’édition pertinente au premier plan ; conserver les anciennes
+    éditions et apports en provenance.
+  - Vérifier la correspondance responsabilité → successeur → comparaison → exemple sur les éléments touchés, puis la cohérence
+    de la hiérarchie et des liens.
+  - Éprouver les 15 parcours de l’audit, avec priorité aux parcours affectés par les arbitrages ; consigner les limites non
+    résolues.
+  - Rendre la vue backlog et exécuter une fois les contrôles proportionnés sur l’état final ; clôturer individuellement les
+    dix constats avec preuve.
+  acceptance:
+  - Les dix constats sont corrigés ou restent explicitement ouverts avec motif ; aucune clôture globale déduite d’un validateur
+    sans erreur.
+  - Au moins deux documents primaires pertinents par fiche touchée avec comparaison marché, sans compter deux éditions comme
+    deux appuis indépendants.
+  - Aucune perte de responsabilité, aucun sous-comportement, aucun lien orphelin ; identifiants retirés non réutilisés.
+  - Rapport avant/après et liste des arbitrages effectivement retenus disponibles.
+  checks:
+  - python scripts/refresh_sources.py
+  - python scripts/validate_models.py
+  - python -m unittest scripts.test_market_inspiration scripts.test_market_comparisons scripts.test_market_reference_policy
+    scripts.test_behaviors scripts.test_relation_labels
+  - python scripts/render_models.py --space backlog
+  operational_boundary: Aucun build frontend ou audit historique systématique ; publication, commit et push sont des demandes
+    distinctes.
+proposed_decisions:
+- id: DEC1
+  topic: Gouvernance de la politique de réservation
+  recommendation: Reservation Policy Decision détermine les conditions ; Supply Protection les configure, les maintient et
+    les rend applicables ; Reservation applique la politique active aux engagements individuels.
+  node_ids:
+  - D05.h
+  - D02.b
+  - D02.c
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Réutilise le management des politiques déjà présent, à l’extérieur des Plannings.
+  tradeoff: La couverture de Supply Protection doit expliciter ces politiques sans les confondre avec les protections de groupe
+    ; aucun nouveau comportement imposé par la présence d’un paramètre.
+  market_position: Microsoft et commercetools étayent politiques configurées et application ; le propriétaire Supply Protection
+    est une recommandation de cohérence FLOW, pas une organisation imposée par ces éditeurs.
+  source_refs:
+  - U538
+  - ELM334
+  - ELM412
+  status: proposé
+- id: DEC2
+  topic: Autorité des décisions de satisfaction
+  recommendation: PTP conserve l’arbitrage économique, Delivery Schedule Decision le choix d’échéancier ; lorsqu’un plan collectif
+    est construit, Fulfillment Plan Decision porte la compatibilité du scénario d’ensemble et appelle le réexamen des résultats
+    incompatibles. Fulfillment Commitment conserve l’autorité de proposer, confirmer ou réviser les engagements selon les
+    conditions applicables.
+  node_ids:
+  - D03.k
+  - D03.l
+  - D03.o
+  - D03.n
+  - D15
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Évite des choix localement valides mais collectivement incompatibles en conservant les décisions spécialisées.
+  tradeoff: Aucune fusion, pondération universelle ou obligation de construire un plan collectif pour toute réponse de promesse
+    ; l’application et les engagements restent distincts du résultat calculé.
+  market_position: Oracle et Microsoft illustrent les compromis et le travail collectif, sans prescrire cette répartition
+    de responsabilités FLOW.
+  source_refs:
+  - ELM372
+  - ELM393
+  - ELM496
+  status: proposé
+- id: DEC3
+  topic: Affectations aux besoins sans commande
+  recommendation: Confirmer Supply Assignment sur les commandes identifiées. Pour chaque besoin prévisionnel historique, distinguer
+    anticipation de demande (Demand Planning), ajustement de stock (Inventory Optimization Planning), protection d’accès (Supply
+    Protection) ou demande déjà gérée. Ne convertir aucun forecast automatiquement en Order.
+  node_ids:
+  - D02.e
+  - D03.p
+  - D17.a
+  - D05.f
+  - D02.b
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Aligne Supply Assignment et son parent Order Backlog Planning tout en conservant les besoins métier.
+  tradeoff: Les besoins historiques insuffisamment décrits restent explicitement ouverts ; ne pas leur inventer une destination
+    pour fermer l’audit.
+  market_position: Les sources SAP et Oracle consultées étayent l’affectation et le travail du carnet d’Orders ; elles ne
+    suffisent pas à attribuer tous les besoins prévisionnels à un même mécanisme.
+  source_refs:
+  - ELM452
+  - ELM496
+  status: proposé
+execution_principle: Les inspirations accompagnent les changements métier dans chaque lot ; le dernier lot vérifie et harmonise
+  leur restitution. L1 peut avancer indépendamment des trois arbitrages de L3.
+traceability: Conserver les audits d’origine ; enregistrer les accords explicites avec des champs nommés avant leur application.
+  Le plan proposé ne crée aucun accord. Réutiliser la baseline U557 si l’empreinte est identique, sinon capturer seulement
+  les changements concernés.
+market_evidence_reused:
+- CMP231
+- CMP232
+primary_reconsultations_U559:
+- source_ref: ELM412
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+  version: page évolutive
+  consulted_on: '2026-09-21'
+  locator: Inventory reservation policies
+  finding: Politiques configurées et modalités de réservation ; ne détermine pas leur propriétaire FLOW.
+- source_ref: ELM496
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  version: 26B
+  consulted_on: '2026-09-21'
+  locator: Planning, simulation, release
+  finding: Les résultats simulés sont distincts des suites publiées au système de commandes ; ne prescrit pas la hiérarchie
+    FLOW.
+- source_ref: ELM566
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  version: 26B
+  consulted_on: '2026-09-21'
+  locator: Introduction ; transmission à Supply Chain Orchestration
+  finding: Nouveaux planned orders et changements de supplies existantes sont transmis ; appui à une interface sans duplication
+    du plan.
+follow_up_U560:
+  source_refs:
+  - U560
+  implementation: modeles/backlog/model-consolidation-U560.yaml
+  status: mise en œuvre autonome ; constat initial conservé ; résultats détaillés dans le manifest
+  remaining_open: Cas historiques non identifiés de besoins prévisionnels sans commande, AUD557-05.

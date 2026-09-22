@@ -11,6 +11,14 @@ from scripts.test_publish_release import isolated_project
 
 
 class ParsedCacheTests(unittest.TestCase):
+    def test_oversized_disk_entry_cannot_evict_existing_working_set(self):
+        with isolated_project() as root, patch.object(parsed_cache, 'DIRECTORY', root), patch.object(parsed_cache, 'MAX_ENTRY_BYTES', 256):
+            key = sha256(b'small').hexdigest()
+            parsed_cache.put(key, {'a':'small'})
+            parsed_cache.put(sha256(b'large').hexdigest(), {'a':'x'*400})
+            self.assertEqual(parsed_cache.get(key), {'a':'small'})
+            self.assertEqual(len(list(root.glob('*.json'))), 1)
+
     def setUp(self):
         structured_io.clear_read_cache()
         self.addCleanup(structured_io.clear_read_cache)

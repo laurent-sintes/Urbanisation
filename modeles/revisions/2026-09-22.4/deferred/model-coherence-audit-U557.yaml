@@ -1,0 +1,2250 @@
+id: model-coherence-audit-U557
+date: '2026-09-21'
+source_refs:
+- U557
+- CMP231
+status: audit terminé ; recommandations non appliquées et non adoptées
+scope: Backlog hors Authoritative Data et ses descendants ; audit de cohérence et couverture à maille capacité, sans micro-règles
+  ni preuve de réalisation installée.
+baseline: audits/2026-09-21-model-coherence-U557/baseline.yaml
+technical_checks: audits/2026-09-21-model-coherence-U557/structural-checks.yaml
+conclusion: Structure cohérente ; aucune disparition accidentelle de responsabilité établie dans les retraits comparés. Cinq
+  frontières ou intégrations incomplètes et un lot de quatre décalages éditoriaux empêchent de qualifier le modèle de complètement
+  consolidé.
+limitations:
+- Couverture évaluée sur 15 parcours et les descriptions de 41 capacités/79 comportements ; aucune garantie d’exhaustivité
+  de toute la Supply Chain.
+- Référentiels exclus, dépendances contrôlées seulement en frontière.
+- Audit U431 non rouvert ; précisions futures et réserves antérieures conservées.
+- Les sources marché étayent les recommandations ciblées ; aucun nouvel audit exhaustif de toutes les comparaisons éditeurs.
+- Absence de preuve de disparition distincte de preuve de réalisation installée ; Sarenza reste non évalué.
+- Les états du 17 et du 19 septembre, le baseline U540 et les manifestes de migration couvrent les retraits examinés ; pas
+  de rejeu exhaustif de chaque état historique.
+reviewed_nodes:
+- id: BHV001
+  name: Existing Commitment Consideration
+  kind: behavior
+  parent_ids:
+  - D03.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV002
+  name: Network Stock Availability
+  kind: behavior
+  parent_ids:
+  - D03.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV003
+  name: Operational Availability Timing
+  kind: behavior
+  parent_ids:
+  - D03.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV004
+  name: Future Supply Projection
+  kind: behavior
+  parent_ids:
+  - D03.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV005
+  name: Scenario Construction
+  kind: behavior
+  parent_ids:
+  - D05.f
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV006
+  name: Simulation & Analysis
+  kind: behavior
+  parent_ids:
+  - D05.f
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV016
+  name: Scenario Execution Adaptation
+  kind: behavior
+  parent_ids:
+  - D05.f
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV017
+  name: Group Supply Protection
+  kind: behavior
+  parent_ids:
+  - D02.b
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV018
+  name: Consumption Capping
+  kind: behavior
+  parent_ids:
+  - D02.b
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV019
+  name: Safety Stock Policy
+  kind: behavior
+  parent_ids:
+  - D02.b
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV020
+  name: Replenishment Regulation
+  kind: behavior
+  parent_ids:
+  - D02.b
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV021
+  name: Promise Proposal
+  kind: behavior
+  parent_ids:
+  - D03.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV022
+  name: Promise Confirmation
+  kind: behavior
+  parent_ids:
+  - D03.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV023
+  name: Promise Revision
+  kind: behavior
+  parent_ids:
+  - D03.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV024
+  name: Inventory Rebalancing
+  kind: behavior
+  parent_ids:
+  - D05.c
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV025
+  name: Stock Consolidation
+  kind: behavior
+  parent_ids:
+  - D05.c
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV026
+  name: Store Inventory Optimization
+  kind: behavior
+  parent_ids:
+  - D05.a
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV027
+  name: Distribution Center Inventory Optimization
+  kind: behavior
+  parent_ids:
+  - D05.a
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV028
+  name: Multi-Echelon Inventory Optimization
+  kind: behavior
+  parent_ids:
+  - D05.a
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV029
+  name: Periodic Physical Inventory
+  kind: behavior
+  parent_ids:
+  - D01.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV030
+  name: Cycle Counting
+  kind: behavior
+  parent_ids:
+  - D01.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV031
+  name: Spot Counting
+  kind: behavior
+  parent_ids:
+  - D01.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV032
+  name: Milestone-Based Reservation Policy
+  kind: behavior
+  parent_ids:
+  - D05.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV033
+  name: Time-Fenced Reservation Policy
+  kind: behavior
+  parent_ids:
+  - D05.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV034
+  name: Demand-Differentiated Reservation Policy
+  kind: behavior
+  parent_ids:
+  - D05.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV035
+  name: Risk-Adaptive Reservation Policy
+  kind: behavior
+  parent_ids:
+  - D05.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV036
+  name: Order Firming
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: BHV037
+  name: Order Freezing
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV038
+  name: Order Preparation & Revision
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV039
+  name: Order Release
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV040
+  name: Order Hold & Resume
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV043
+  name: Order Termination
+  kind: behavior
+  parent_ids:
+  - D04.o
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV044
+  name: Order Splitting
+  kind: behavior
+  parent_ids:
+  - D04.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV048
+  name: Policy-based Disposition
+  kind: behavior
+  parent_ids:
+  - D05.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV049
+  name: Value Recovery Optimization
+  kind: behavior
+  parent_ids:
+  - D05.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV050
+  name: Return to Stock
+  kind: behavior
+  parent_ids:
+  - D04.l
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV051
+  name: Repair and Refurbishment
+  kind: behavior
+  parent_ids:
+  - D04.l
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV052
+  name: Return to Supplier
+  kind: behavior
+  parent_ids:
+  - D04.l
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV053
+  name: Return to Customer
+  kind: behavior
+  parent_ids:
+  - D04.l
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV054
+  name: Scrapping
+  kind: behavior
+  parent_ids:
+  - D04.l
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV055
+  name: Return for Credit
+  kind: behavior
+  parent_ids:
+  - D04.m
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV056
+  name: Return for Replacement
+  kind: behavior
+  parent_ids:
+  - D04.m
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV057
+  name: Return for Repair
+  kind: behavior
+  parent_ids:
+  - D04.m
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV058
+  name: Stock Procurement
+  kind: behavior
+  parent_ids:
+  - D04.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV059
+  name: Direct Delivery
+  kind: behavior
+  parent_ids:
+  - D04.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV060
+  name: Service Procurement
+  kind: behavior
+  parent_ids:
+  - D04.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV061
+  name: Initial Stocking
+  kind: behavior
+  parent_ids:
+  - D04.r
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV062
+  name: Continuous Replenishment
+  kind: behavior
+  parent_ids:
+  - D04.r
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV063
+  name: Consumption-Based Ownership Transfer
+  kind: behavior
+  parent_ids:
+  - D01.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV064
+  name: Aging-Based Ownership Transfer
+  kind: behavior
+  parent_ids:
+  - D01.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV065
+  name: Consignment Exit
+  kind: behavior
+  parent_ids:
+  - D01.h
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV066
+  name: Ship to Customer
+  kind: behavior
+  parent_ids:
+  - D04.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV067
+  name: Customer Pickup
+  kind: behavior
+  parent_ids:
+  - D04.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV068
+  name: Direct Delivery
+  kind: behavior
+  parent_ids:
+  - D04.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV069
+  name: Intercompany Sales
+  kind: behavior
+  parent_ids:
+  - D04.i
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV070
+  name: Initial Stocking
+  kind: behavior
+  parent_ids:
+  - D04.k
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV071
+  name: Continuous Replenishment
+  kind: behavior
+  parent_ids:
+  - D04.k
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV072
+  name: Inventory Rebalancing
+  kind: behavior
+  parent_ids:
+  - D04.k
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV073
+  name: Stock Consolidation
+  kind: behavior
+  parent_ids:
+  - D04.k
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV074
+  name: Order-Driven Transfer
+  kind: behavior
+  parent_ids:
+  - D04.k
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV075
+  name: Additional Supply Feasibility
+  kind: behavior
+  parent_ids:
+  - D03.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV076
+  name: Fulfillment Alternative Feasibility
+  kind: behavior
+  parent_ids:
+  - D03.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV077
+  name: Commitment Rebalancing Feasibility
+  kind: behavior
+  parent_ids:
+  - D03.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-06
+- id: BHV078
+  name: Supplier Confirmation
+  kind: behavior
+  parent_ids:
+  - D04.j
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV079
+  name: Warehouse Visibility
+  kind: behavior
+  parent_ids:
+  - D07.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV080
+  name: Transportation Visibility
+  kind: behavior
+  parent_ids:
+  - D07.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV081
+  name: Store Visibility
+  kind: behavior
+  parent_ids:
+  - D07.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV082
+  name: Process Tracking
+  kind: behavior
+  parent_ids:
+  - D07.d
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV083
+  name: Requirement-based Replenishment
+  kind: behavior
+  parent_ids:
+  - D05.e
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV084
+  name: Target-based Replenishment
+  kind: behavior
+  parent_ids:
+  - D05.e
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV085
+  name: Replenishment Adjustment
+  kind: behavior
+  parent_ids:
+  - D05.e
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV086
+  name: Order Grouping
+  kind: behavior
+  parent_ids:
+  - D04.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV087
+  name: Order Merging
+  kind: behavior
+  parent_ids:
+  - D04.n
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV091
+  name: Simulation & Analysis
+  kind: behavior
+  parent_ids:
+  - D03.p
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV092
+  name: Scenario Authorization
+  kind: behavior
+  parent_ids:
+  - D03.p
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV094
+  name: Inventory Plan Application
+  kind: behavior
+  parent_ids:
+  - D05.f
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: BHV095
+  name: Demand Plan Publication
+  kind: behavior
+  parent_ids:
+  - D17.a
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-02
+- id: D01
+  name: Inventory Management
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D01.c
+  name: Inventory Visibility
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D01.d
+  name: Stocktaking
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D01.f
+  name: Inventory Tracking
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D01.g
+  name: Record Inventory Movements
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D01.h
+  name: Consigned Inventory Management
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D02.b
+  name: Supply Protection
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-03
+- id: D02.c
+  name: Reservation
+  kind: capability
+  parent_ids:
+  - D01
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-03
+- id: D02.e
+  name: Supply Assignment
+  kind: behavior
+  parent_ids:
+  - D03.p
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-05
+- id: D03
+  name: Fulfillment Optimization
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+  - AUD557-06
+- id: D03.i
+  name: Available-to-Promise (ATP)
+  kind: capability
+  parent_ids:
+  - D15
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D03.j
+  name: Capable-to-Promise (CTP)
+  kind: capability
+  parent_ids:
+  - D15
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D03.k
+  name: Profitable-to-Promise (PTP)
+  kind: capability
+  parent_ids:
+  - D15
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-04
+- id: D03.l
+  name: Delivery Schedule Decision
+  kind: capability
+  parent_ids:
+  - D15
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-04
+- id: D03.m
+  name: Order Prioritization
+  kind: capability
+  parent_ids:
+  - D03
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D03.n
+  name: Fulfillment Commitment
+  kind: capability
+  parent_ids:
+  - D15
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-04
+- id: D03.o
+  name: Fulfillment Plan Decision
+  kind: capability
+  parent_ids:
+  - D03
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-04
+- id: D03.p
+  name: Order Backlog Planning
+  kind: capability
+  parent_ids:
+  - D03
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-05
+- id: D04
+  name: Service Requests
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D04.i
+  name: Sales Order
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-02
+- id: D04.j
+  name: Purchase Order
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D04.k
+  name: Transfer Order
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D04.l
+  name: Customer Return
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D04.m
+  name: Supplier Return
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D04.n
+  name: Order Structuring
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D04.o
+  name: Order Lifecycle Management
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D04.q
+  name: Order Archiving
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D04.r
+  name: Consignment Replenishment Order
+  kind: capability
+  parent_ids:
+  - D04
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D04.s
+  name: Optimization Request Management
+  kind: behavior
+  parent_ids:
+  - D03.p
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D05
+  name: Inventory Optimization
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D05.a
+  name: Inventory Target Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D05.c
+  name: Stock Redistribution Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-06
+- id: D05.d
+  name: Group Protection Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D05.e
+  name: Replenishment Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D05.f
+  name: Inventory Optimization Planning
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-02
+- id: D05.g
+  name: Initial Stocking Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D05.h
+  name: Reservation Policy Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-03
+- id: D05.i
+  name: Return Disposition Decision
+  kind: capability
+  parent_ids:
+  - D05
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D06
+  name: Process Management
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D06.b
+  name: Service Capacity Visibility
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D06.d
+  name: Process Orchestration
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D06.e
+  name: Service Selection Decision
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D06.f
+  name: Process Adaptation Decision
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D07.a
+  name: Service Requirements Decision
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D07.b
+  name: Backing Service Orders
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D07.c
+  name: Service Reconciliation
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D07.d
+  name: Operations Tracking
+  kind: capability
+  parent_ids:
+  - D06
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids: []
+- id: D15
+  name: Order Promising
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-04
+- id: D17
+  name: Supply Planning
+  kind: area
+  parent_ids:
+  - universe-supply
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-01
+- id: D17.a
+  name: Demand Planning
+  kind: capability
+  parent_ids:
+  - D17
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-02
+- id: universe-supply
+  name: Supply Chain Orchestration
+  kind: domain
+  parent_ids: []
+  reviewed_fields:
+  - name
+  - definition
+  - scope
+  finding_ids:
+  - AUD557-06
+findings:
+- id: AUD557-01
+  priority: à traiter en premier
+  title: Prise en charge des Planned Orders à préciser au niveau capacité
+  node_ids:
+  - D17
+  - D04
+  - D03
+  - D05
+  - D04.j
+  - D04.k
+  - D04.o
+  - BHV036
+  classification: frontière incomplète
+  observation: Les quatre Areas expliquent la frontière avec le plan amont. Purchase Order, Transfer Order et Order Lifecycle
+    Management sont présents ; Order Firming traite déjà Planned vers Firm, y compris partiellement. Leur description ne désigne
+    pas aussi explicitement le porteur de la proposition reçue avant affermissement, de sa révision ou de son retrait par
+    la source.
+  consequence: La capacité de couverture retirée volontairement en U555 pourrait être recréée à tort pour combler une interface
+    de gestion insuffisamment attribuée.
+  recommendation: Attribuer dans les capacités existantes la prise en charge selon la nature de la demande et les suites de
+    ses changements ; expliciter la continuité avec l’Order et la prise en compte sans doublon. Conserver la maîtrise du plan
+    à son origine. Ne pas réintroduire D17.b ni inventer une capacité par état.
+  source_refs:
+  - U557
+  - U555
+  - U556
+  - ELM419
+  - ELM566
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: D17
+    field: fields.scope
+    value: |-
+      L’Area regroupe les responsabilités de planification d’ensemble retenues dans Supply Chain Orchestration. [Demand Planning](model:D17.a) construit et actualise la demande à couvrir, puis rend le résultat retenu applicable aux consommateurs. Le plan est régulièrement mis à jour ; la date ou la cadence de calcul ne définit pas sa frontière.
+
+      Le plan amont détermine les apports à préparer et produit des demandes planifiées, ou Planned Orders. Ce travail de planification n’est pas reconstruit lors de leur prise en charge. [Service Requests](model:D04) porte les demandes selon leur nature et leur qualification ; une demande planifiée ne vaut pas automatiquement commande ferme, réception ou engagement de ressources. Les Areas opérationnelles organisent les suites et leurs adaptations. Produire le plan, prendre en charge ses demandes et adapter leur satisfaction constituent donc des responsabilités distinctes.
+
+      Les Areas opérationnelles gardent leur adaptabilité aux impondérables. [Order Backlog Planning](model:D03.p) demeure dans Fulfillment Optimization ; [Inventory Optimization Planning](model:D05.f) garde les ajustements opérationnels du stock. Les décisions spécialisées conservent leurs responsabilités et peuvent être mobilisées par les plans. Le nom Supply Planning ne justifie pas de déplacer toute activité de simulation ou de décision dans cette Area.
+
+      Exemple fictif : un plan amont prévoit des apports pour une période future. Les demandes correspondantes sont prises en charge avec leur qualification ; un retard peut conduire à adapter les affectations ou les ajustements de stock, sans reconstruire pour autant le plan d’origine.
+  - node_id: D04
+    field: fields.scope
+    value: |-
+      L’Area porte les familles d’Orders prises en charge par Supply Chain Orchestration : ventes, achats, transferts, retours client, retours fournisseur et apports sous consignation. Elle rend explicites leur résultat attendu et leur progression jusqu’à leur conclusion. La finalité distingue les familles ; l’origine interne ou externe et le déclencheur ne créent pas deux capacités pour la même demande.
+
+      Une demande peut naître d’une sollicitation, d’un événement ou d’une situation détectée. [Transfer Order](model:D04.k) prend en charge les origines Frontoffice et Backoffice : un transfert demandé depuis l’extérieur du Domain et un transfert issu de son propre Planning relèvent de la même gestion. Les autres familles conservent leur qualification propre ; leur origine n’est pas déduite du destinataire de la commande.
+
+      Les demandes peuvent provenir d’un plan amont déjà construit. L’Area en porte la prise en charge, les évolutions autorisées et le suivi ; elle ne recalcule pas le plan qui les a produites. Le caractère planifié d’une demande reste distinct de sa fermeté et des engagements pris : recevoir un Planned Order ne suffit pas à créer une commande ferme. Les adaptations de satisfaction et de stock relèvent respectivement de [Fulfillment Optimization](model:D03) et [Inventory Optimization](model:D05).
+
+      Les demandes propres au travail d’une capacité peuvent être gérées dans celle-ci. [Optimization Request Management](model:D04.s) cadre et suit ainsi le réexamen du carnet comme comportement de [Order Backlog Planning](model:D03.p). Cette demande reste suivie comme les Orders selon les mécanismes pertinents ; elle ne forme plus une capacité distincte dans Service Requests.
+
+      Order Structuring, Order Lifecycle Management et Order Archiving gardent leurs responsabilités de gestion des Orders. [Fulfillment Optimization](model:D03) optimise leur satisfaction, [Inventory Optimization](model:D05) les ajustements du stock et [Order Promising](model:D15) les engagements Supply. L’offre du Domain ne se réduit pas à une liste de demandes exclusivement externes.
+
+      [Process Management](model:D06) coordonne les prestations des [Backing Services](glossary:TER075), décrites dans [Service Catalog](model:D14) et sollicitées par des [Backing Service Orders](glossary:TER066). Demande au Domain et demande de prestation à un exécutant restent distinctes.
+
+      Exemple fictif : un plan d’ajustement des stocks retient un déplacement entre deux magasins. Transfer Order gère la demande et les quantités restant à transférer, comme pour un transfert sollicité depuis un autre domaine. Le Planning détermine et applique son scénario ; les exécutants réalisent le déplacement.
+  - node_id: D03
+    field: fields.scope
+    value: |-
+      Order Prioritization établit les priorités ; Fulfillment Plan Decision détermine un plan cohérent de satisfaction ; Order Backlog Planning prend en charge le travail d’optimisation, compare et actualise les scénarios, puis applique les affectations retenues par son comportement Supply Assignment. La valeur reste multidimensionnelle, sans pondération universelle.
+
+      [Order Promising](model:D15) établit les possibilités ATP/CTP, porte les arbitrages économiques et d’échéancier, puis tient les propositions et engagements de promesse. D03 mobilise ces résultats ; les échanges peuvent conduire à réexaminer possibilités, plan et promesses. Les autorités respectives de PTP, de Delivery Schedule Decision et de Fulfillment Plan Decision restent à préciser sans second plan final implicite.
+
+      [Service Requests](model:D04) conserve la demande selon son intention, sa structure et sa conservation. Order Lifecycle Management autorise la prise en charge ; [Process Management](model:D06) coordonne les services et leurs adaptations. L’Area peut demander les évolutions utiles des Orders ; leur gestion reste portée par Service Requests, et leur réalisation physique par les exécutants. Cela reste distinct de l’application des affectations dans Order Backlog Planning.
+
+      Exemple fictif : deux commandes sollicitent 120 pièces pour 80 admissibles. L’area arbitre un plan compatible avec les priorités, possibilités et engagements, puis matérialise ses affectations. Une priorité ne lève pas une réservation et le plan ne confirme pas automatiquement une promesse. Selon U436, seule Reservation bloque les usages concurrents.
+
+      Le carnet reste une vue de travail, comprenant aussi le reste à satisfaire de commandes déjà engagées. La séparation D03/D15 repose sur les responsabilités de choix et de promesse, pas sur individuel/collectif : une optimisation peut concerner une seule commande et ATP plusieurs demandes. Inventory Optimization D05 conserve les objectifs et ajustements de stock.
+
+      U438 remplace le nom Order Backlog Management adopté U413 et les rattachements concernés U417/U420. D03 conserve quatre capacités ; D15 reçoit ATP, CTP, PTP, Delivery Schedule Decision et Fulfillment Commitment ; Structuring et Archiving rejoignent D04. Les identifiants de capacités et leurs comportements restent stables. Les descriptions développées restent éditoriales.
+
+      Les Orders à satisfaire peuvent résulter d’un plan amont. L’Area utilise les demandes, ressources et engagements disponibles pour organiser leur satisfaction ; elle ne reconstruit pas le plan d’apports qui a produit ces demandes. Adapter le carnet à un impondérable peut conduire à revoir les affectations ou les suites des Orders, sans créer un second planning amont. La présence d’une demande planifiée ne la rend pas automatiquement ferme, réservable ou promise.
+  - node_id: D05
+    field: fields.scope
+    value: |-
+      L’Area détermine les ajustements de stock à retenir selon le compromis entre disponibilité, immobilisation, coûts et risques. Les décisions spécialisées portent les cibles de couverture, les droits de protection des groupes, les apports initiaux, le réassort et la redistribution. [Inventory Optimization Planning](model:D05.f) les mobilise pour construire, comparer, actualiser et appliquer un plan cohérent. Le stock peut augmenter, diminuer ou rester stable ; aucune direction ou pondération universelle n’est imposée.
+
+      Les besoins, ressources et apports déjà planifiés sont des entrées pour l’ajustement opérationnel. L’Area ne reconstruit pas le plan amont qui produit les demandes planifiées. Elle adapte les apports, réassorts et transferts à la situation effective et aux impondérables, en tenant compte de ce qui est déjà demandé ou engagé pour ne pas couvrir deux fois le même besoin. Les prévisions peuvent éclairer ces choix sans ajouter un second planning de saison.
+
+      Les calculs font partie des décisions. [Initial Stocking Decision](model:D05.g) détermine les apports du lancement ; [Replenishment Decision](model:D05.e) les apports continus ; [Stock Redistribution Decision](model:D05.c) les transferts du stock existant, dont rééquilibrage et consolidation. Les décisions restent distinctes du Planning qui les mobilise et de l’application des résultats retenus.
+
+      Inventory Optimization Planning distingue Scenario Construction, Simulation & Analysis, Scenario Execution Adaptation et [Inventory Plan Application](model:BHV094). Ce dernier porte la mise en effet du plan et le constat de prise en compte ; les écarts peuvent conduire à adapter le scénario. Aucun contrôle humain systématique ni séquence fixe n’est imposé.
+
+      [Service Requests](model:D04) gère les Orders issus des actions retenues et leurs évolutions autorisées ; [Fulfillment Optimization](model:D03) organise leur satisfaction. Les exécutants réalisent les prestations et [Inventory Management](model:D01) tient la connaissance des stocks et mouvements. [Supply Protection](model:D02.b) maintient les politiques consommées : le Planning ne les modifie pas silencieusement du seul fait qu’un scénario recommande leur évolution.
+
+      Exemple fictif : un apport déjà planifié est retardé. Le Planning compare un réassort alternatif et un transfert depuis un site admissible, en intégrant les demandes et ressources déjà engagées. La réponse opérationnelle corrige la disponibilité locale ; elle ne recrée pas le plan amont et ne compte pas deux fois l’apport attendu.
+
+      [Return Disposition Decision](model:D05.i) détermine le devenir logistique des produits retournés selon leur état, les politiques et la récupération de valeur. Inspection, décision et réalisation restent distinctes ; aucun remboursement ou remplacement client n’est absorbé.
+  - node_id: D04.j
+    field: fields.scope
+    value: |-
+      Purchase Order porte les commandes d’achat de biens ou de prestations, en référence aux conditions applicables. Le libellé désigne une capacité d’action ; [Purchase Order](glossary:TER070) reste également un objet métier distinct.
+
+      Trois parcours sont adoptés U391 : Stock Procurement pour les apports au stock du réseau, Direct Delivery pour une livraison fournisseur directement au client, Service Procurement pour une prestation attendue puis reconnue réalisée. Une commande peut combiner plusieurs lignes ou attendus ; aucun parcours exclusif au niveau du document imposé.
+
+      Maintenir produits ou prestations, quantités ou unités applicables, destinations, échéances, conditions référencées et évolutions autorisées. Rapprocher les réalisations et conserver les écarts pour expliquer ce qui reste à satisfaire, sans prendre une date annoncée pour un résultat acquis. Une livraison fournisseur directement à un magasin du réseau relève de Stock Procurement lorsqu’elle alimente son stock ; Direct Delivery vise ici le client de la commande de vente.
+
+      Exemples fictifs : 60 pièces reçues sur 100 laissent 40 à recevoir ; une prestation reconnue réalisée pour 30 pièces sur 50 laisse 20 à traiter. Un report proposé par le fournisseur ne modifie pas automatiquement la promesse client.
+
+      [Order Lifecycle Management](model:D04.o), dans D04, conserve brouillon, affermissement, gel, lancement, attente, report, annulation et clôture. [Order Structuring](model:D04.n), dans D04, porte split et composition et [Order Archiving](model:D04.q) la conservation. Aucune recopie de ces responsabilités sous les trois parcours.
+
+      [Fulfillment Optimization](model:D03) et [Inventory Optimization](model:D05) déterminent les réponses et besoins selon leur finalité. [Backing Service Orders](model:D07.b) et [Process Orchestration](model:D06.d) conservent sollicitation et pilotage des prestations ; un appel de service ne nécessite pas systématiquement une commande d’achat. [Inventory Management](model:D01) enregistre les états et mouvements. La finance traite facturation et règlement ; la négociation contractuelle et l’exécution physique fournisseur ne sont pas absorbées.
+
+      U391 : la consignation est instruite comme responsabilité de gestion du stock, pas comme quatrième comportement de Purchase Order. Un transfert de propriété peut mobiliser l’achat selon l’accord sans déplacer toute la consignation dans cette capacité. La reprise fournisseur et le remplacement demeurent liés à [Supplier Return](model:D04.m), sans comportement par origine du besoin.
+
+      U403 : [Supplier Confirmation](model:BHV078) explicite l’établissement et les révisions de l’engagement reçu du fournisseur, en complément des trois parcours. La demande, la réponse et les conditions acceptées restent distinctes. Refuser un report ne restaure pas la capacité fournisseur ; accepter un nouvel engagement ne modifie pas automatiquement notre promesse client. La fiche du comportement détaille le cas de 100 pièces demandées vendredi, puis de 60 vendredi et 40 mardi proposés.
+  - node_id: D04.k
+    field: fields.scope
+    value: |-
+      Type de commande : [Transfer Order](glossary:TER071).
+
+      Enregistrer l’origine et le contenu applicable, intégrer les modifications autorisées avec leur historique, rendre la situation consultable et rapprocher les réalisations pour déterminer le reste à satisfaire. La progression et les engagements mobilisent [Order Lifecycle Management](model:D04.o) dans D04. Le split avec filiation et la composition des ensembles mobilisent [Order Structuring](model:D04.n), dans D04. La conservation historique mobilise [Order Archiving](model:D04.q). Ces responsabilités restent distinctes du contenu propre au type.
+
+      Exemple discuté : sur un transfert de 100 pièces, 60 peuvent être autorisées pour traitement et 40 mises en attente. Reporter les 40 à lundi ne lève pas leur blocage. Les quantités autorisées, expédiées et reçues expriment des situations différentes ; une expédition ne prouve pas la réception. Scinder le transfert conserve les liens à la demande initiale et évite le double comptage. Préparer, transporter et réceptionner physiquement relèvent des exécutants.
+
+      Les conditions contractuelles restent des références ; cette capacité ne confère pas l’autorité de négocier ou de modifier un Agreement. Les priorités et le plan de satisfaction relèvent de Fulfillment Optimization ; les possibilités et engagements de promesse relèvent d’Order Promising ; prestations, engagements et faits d’exécution dans [Process Management](model:D06) et chez les exécutants. Les règles d’imputation, tolérances, autorisations et effets sur les réservations sont à instruire. Les exemples sont fictifs et ne prouvent aucun déploiement.
+
+      Frontière : Même type pour réassort ou redistribution ; finalités de décision distinctes.
+
+      U383 : capacité explicite propre au type d’Order, avec son identifiant historique. Les comportements spécifiques peuvent être décrits lorsqu’un mécanisme ou un bénéfice le justifie ; Lifecycle, Structuring et Archiving restent transverses. Consultation, création, modification, suppression admissible et copie de contenu restent possibles selon les règles du type d’Order. La suppression d’un brouillon, l’annulation d’une demande engagée et la purge d’une archive sont distinctes.
+
+      Nommage U384 : le libellé court désigne ici une capacité d’action, définie par « gérer les commandes » ; le document ou objet Order reste distinct dans le glossaire. Cette convention ne renomme pas les capacités transverses.
+
+      U401 : comportements adoptés — [Initial Stocking](model:BHV070), [Continuous Replenishment](model:BHV071), [Inventory Rebalancing](model:BHV072), [Stock Consolidation](model:BHV073), [Order-Driven Transfer](model:BHV074). Les comportements ne sont ni une séquence obligatoire ni tous exclusifs. Les comportements distinguent les intentions du transfert : constituer le stock initial, l’alimenter pendant l’activité, rééquilibrer les lieux, regrouper des stocks dispersés ou satisfaire une commande identifiée. Identifier les quantités concernées et ne pas additionner des stocks ou attendus deux fois.
+
+      D04 porte les demandes, leur résultat attendu, Lifecycle, Structuring et Archiving ; D03 optimise leur satisfaction et D15 porte possibilités et engagements de promesse ; D05 optimise le stock, D01 conserve ses faits/régimes et D06 orchestre les services. Ces capacités restent mobilisables et les opérations utiles doivent être expliquées dans chaque contexte métier.
+  - node_id: D04.o
+    field: fields.scope
+    value: |-
+      Gouverner six dimensions combinables : préparation et révision du contenu, engagement ferme, protection contre la réoptimisation, autorisation de prise en charge, suspension de progression et fin de la demande. Les comportements gouvernent les transitions ; les statuts décrivent la situation à une portée explicite. Aucun statut global ni séquence unique ne résume ces dimensions.
+
+      Une version applicable peut rester engagée et partiellement libérée pendant qu’une modification se prépare. Cela n’autorise pas toutes les modifications ni la poursuite systématique des traitements : les impacts et contraintes doivent être examinés, et une suspension peut être requise. Les réalisations acquises ne sont jamais réécrites par une révision.
+
+      Pour chaque comportement, les états possibles et leurs significations sont listés dans sa fiche. Ce vocabulaire de référence éditorial ne prescrit pas un enum logiciel universel, une étape manuelle ni la présence de chaque état pour chaque type d’Order. Distinguer valeur d’état, motif, portée, version et quantités ; les états partiels sont des lectures agrégées et non un niveau supplémentaire du modèle.
+
+      D04 conserve cette capacité transverse aux intentions des Orders. D03 mobilise ses mécanismes pour engager, protéger ou libérer les commandes du carnet ; les décisions et Planning restent distincts. D06 orchestre les services et rapporte démarrages, réalisations et échecs. Lifecycle applique les transitions selon les faits et autorisations ; il ne prend pas la place de Process Orchestration ou de Process Adaptation.
+
+      U424 : six comportements remplacent les huit mécanismes antérieurs. Le changement d’échéance du besoin est intégré à Order Preparation & Revision ; annulation et clôture restent distinguées dans Order Termination. Identifiants des comportements conservés ou retirés avec succession explicite. Depuis U438, Order Structuring et Order Archiving appartiennent à D04 ; aucune décomposition inférieure aux comportements.
+  - node_id: BHV036
+    field: fields.scope
+    value: |-
+      **Dimension gouvernée : Engagement.**
+
+      **Portée des statuts.** Order, ligne ou quantité selon le type et le mécanisme de firming. Le statut partiel résume des portées distinctes ; il n’est pas obligatoire sur chaque type.
+
+      **États possibles — vocabulaire de référence FLOW.**
+
+      - **Planned — Planifié** : Intention susceptible d’être révisée selon les règles de planification, non encore affermie.
+      - **Firm — Ferme** : Intention transformée en ordre ferme avec ses engagements propres au type d’Order.
+      - **Partially Firm — Partiellement ferme** : Lecture agrégée lorsque seules certaines lignes ou quantités désignées sont affermies.
+
+      **Combinaisons et transitions.** Une demande déjà ferme peut faire l’objet d’une révision en préparation. Affermir n’approuve pas automatiquement une nouvelle version, ne gèle pas toutes les données, ne réserve pas implicitement le stock et n’autorise pas à lui seul la prise en charge. Une dérogation ou un retour au planifié exige des règles métier explicites ; aucune réversibilité universelle.
+
+      **Exemple métier fictif.** Sur un besoin de transfert planifié de 100 pièces, engager 60 pièces dans un transfert ferme et maintenir 40 pièces à l’état planifié, si ce type d’Order permet cette portée.
+
+      **Précisions métier conservées.**
+
+      Passer d’une intention encore planifiée à un Order ferme selon les règles de son type, en conservant l’origine et les engagements associés. Ce changement engage les pratiques de préparation et de coordination de l’entreprise ; il ne s’agit pas seulement de changer un statut informatique. L’affermissement peut être automatique ou décidé par un acteur autorisé ; aucun contrôle manuel systématique imposé.
+
+      Exemple fictif : une proposition de transfert de 100 pièces destinée à une implantation magasin devient un ordre de transfert ferme, exploitable par les responsables de sa mise en œuvre. Son affermissement ne prouve ni lancement, ni préparation physique, ni réservation de 100 pièces.
+
+      Les restrictions résultent de règles explicites : devenir ferme ne fige pas automatiquement toutes les dates, les quantités, la promesse ou la source. Order Freezing porte le mécanisme distinct de protection contre les réoptimisations ; les deux peuvent se combiner. La capacité de gestion du type d’Order conserve son contenu ; Fulfillment Commitment garde la promesse et Supply Assignment les liens ressources-commandes. L’existence de la distinction planifié/ferme s’apprécie par type d’Order ; aucun cycle universel imposé.
+
+      U424 : les états listés explicitent la dimension ; les valeurs, règles détaillées et libellés sont des précisions éditoriales à adapter au type d’Order. Aucun nouveau comportement par état et aucune séquence imposée.
+- id: AUD557-02
+  priority: à traiter en premier
+  title: Demand Planning est isolée dans les relations métier
+  node_ids:
+  - D17.a
+  - BHV095
+  - D04.i
+  - D05.f
+  classification: lacune des relations explicites
+  observation: D17.a est la seule des 41 capacités examinées sans relation métier entrante ou sortante. BHV095 n’en a pas
+    non plus. Les descriptions citent pourtant les commandes connues et Inventory Optimization Planning comme consommateur
+    de la demande publiée.
+  consequence: La lecture du graphe ne restitue pas les coopérations déjà décrites ; l’intégration de la nouvelle Area reste
+    incomplète.
+  recommendation: Qualifier les relations avec Sales Order pour les demandes connues et avec les Plannings consommateurs pour
+    la demande retenue. Décrire conditions et effets sans présumer un flux installé, un recalcul automatique ou une nouvelle
+    structure des référentiels.
+  source_refs:
+  - U557
+  - U533
+  - U552
+  - ELM568
+  - ELM569
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: D17.a
+    field: fields.scope
+    value: |-
+      Le plan rapproche les besoins anticipés et les demandes déjà connues, selon leurs horizons et leur qualification. Les faits de vente et les précommandes B2B peuvent alimenter son actualisation ; la prise en compte d’une précommande ne la transforme pas en engagement ferme.
+
+      Construire des scénarios, en comparer les effets et réviser le plan demeure distinct de la tenue des commandes dans [Sales Order](model:D04.i), de leur priorité dans [Order Prioritization](model:D03.m) et de leur promesse dans [Order Promising](model:D15). Les résultats de prévision et les références produit sont de natures différentes.
+
+      Le plan est confronté aux possibilités, contraintes et apports déjà planifiés. Il ne reconstruit pas le plan amont à l’origine des Planned Orders. Les décisions spécialisées déterminent leurs résultats propres ; les arbitrages portant sur la demande à retenir restent à expliciter sans les attribuer aux décisions de stock ou de satisfaction.
+
+      Exemple fictif : des précommandes professionnelles reçues tôt éclairent la demande d’une future saison, avec les ventes observées et les autres prévisions. Le plan est révisé sans modifier à lui seul le contenu ni les engagements de ces commandes.
+
+      [Demand Plan Publication](model:BHV095) rend la demande retenue applicable et identifiable par les consommateurs. Cette application du résultat du Planning ne crée ni ventes futures ni commandes fermes ; elle ne transforme pas non plus le forecast en référentiel maître.
+  - node_id: BHV095
+    field: fields.scope
+    value: |-
+      Mettre à disposition la demande retenue comme base de travail applicable pour le périmètre et l’horizon concernés. Distinguer la version applicable des hypothèses encore exploratoires, et rendre sa révision identifiable par les consommateurs. Un export technique ne suffit pas à définir cette responsabilité métier.
+
+      La publication ne crée pas des commandes de vente et ne modifie pas les engagements des précommandes B2B. [Sales Order](model:D04.i) conserve la tenue des demandes connues. Les résultats de Demand Planning restent des résultats de planification ; ils ne deviennent pas des référentiels de données maîtres.
+
+      Les capacités consommatrices, dont [Inventory Optimization Planning](model:D05.f), peuvent utiliser la demande retenue selon leur périmètre. La mise à disposition ne prouve pas leur recalcul ni l’application de leurs propres plans ; une hypothèse publiée ne devient pas automatiquement un approvisionnement engagé.
+
+      Exemple fictif : la prévision de saison révisée avec les ventes et les précommandes B2B devient la demande à couvrir pour le périmètre retenu. Les consommateurs identifient cette base révisée ; les commandes B2B conservent leurs règles et engagements.
+  - node_id: D04.i
+    field: fields.scope
+    value: |-
+      Type de commande : [Sales Order](glossary:TER069).
+
+      Enregistrer l’origine et le contenu applicable, intégrer les modifications autorisées avec leur historique, rendre la situation consultable et rapprocher les réalisations pour déterminer le reste à satisfaire. La progression et les engagements mobilisent [Order Lifecycle Management](model:D04.o) dans D04. Le split avec filiation et la composition des ensembles mobilisent [Order Structuring](model:D04.n), dans D04. La conservation historique mobilise [Order Archiving](model:D04.q). Ces responsabilités restent distinctes du contenu propre au type.
+
+      Une commande client peut comporter plusieurs lignes et échéances. Exemple fictif : sur 100 pièces commandées, 60 sont livrées et 40 restent à servir, avant prise en compte des annulations ou ajustements autorisés. Une demande de report des 40 pièces doit préciser la date demandée ; elle ne change pas automatiquement la promesse confirmée. Un retour ultérieur donne lieu à une commande de retour distincte, reliée à l’origine lorsque connue, et non à l’effacement de la livraison.
+
+      Les conditions contractuelles restent des références ; cette capacité ne confère pas l’autorité de négocier ou de modifier un Agreement. Les priorités et le plan de satisfaction relèvent de Fulfillment Optimization ; les possibilités et engagements de promesse relèvent d’Order Promising ; prestations, engagements et faits d’exécution dans [Process Management](model:D06) et chez les exécutants. Les règles d’imputation, tolérances, autorisations et effets sur les réservations sont à instruire. Les exemples sont fictifs et ne prouvent aucun déploiement.
+
+      U383 : capacité explicite propre au type d’Order, avec son identifiant historique. Les comportements spécifiques peuvent être décrits lorsqu’un mécanisme ou un bénéfice le justifie ; Lifecycle, Structuring et Archiving restent transverses. Consultation, création, modification, suppression admissible et copie de contenu restent possibles selon les règles du type d’Order. La suppression d’un brouillon, l’annulation d’une demande engagée et la purge d’une archive sont distinctes.
+
+      Nommage U384 : le libellé court désigne ici une capacité d’action, définie par « gérer les commandes » ; le document ou objet Order reste distinct dans le glossaire. Cette convention ne renomme pas les capacités transverses.
+
+      U401 : comportements adoptés — [Ship to Customer](model:BHV066), [Customer Pickup](model:BHV067), [Direct Delivery](model:BHV068), [Intercompany Sales](model:BHV069). Les comportements ne sont ni une séquence obligatoire ni tous exclusifs. Intercompany est un axe de relation commerciale ; les autres parcours décrivent principalement le mode de satisfaction. Identifier les quantités concernées et ne pas additionner des stocks ou attendus deux fois.
+
+      D04 porte les demandes, leur résultat attendu, Lifecycle, Structuring et Archiving ; D03 optimise leur satisfaction et D15 porte possibilités et engagements de promesse ; D05 optimise le stock, D01 conserve ses faits/régimes et D06 orchestre les services. Ces capacités restent mobilisables et les opérations utiles doivent être expliquées dans chaque contexte métier.
+  - node_id: D05.f
+    field: fields.scope
+    value: |-
+      Construire des scénarios alternatifs de stock, puis simuler et analyser leurs effets en mobilisant Inventory Target Decision, Group Protection Decision, Initial Stocking Decision, Replenishment Decision et Stock Redistribution Decision. Ces décisions restent des capacités distinctes. Adapter ensuite le scénario aux faits et aux actions déjà engagées, sans imposer une séquence technique universelle.
+
+      Comparer et apprécier les options, autoriser le scénario avec conditions, appliquer le scénario retenu et suivre sa prise en compte appartiennent au Planning. Le comportement [Inventory Plan Application](model:BHV094) porte cette mise en effet ; les capacités partenaires conservent leurs responsabilités. Distinguer actions acceptées, refusées ou partiellement appliquées ; une validation du scénario ne prouve pas son application. Supply Protection met à jour les politiques, D04 les Orders et D06 coordonne les prestations et conserve la décision d’adaptation opérationnelle.
+
+      Exemple fictif : construire deux scénarios de couverture magasin à 10 et 15 jours avant une promotion, simuler leurs apports et transferts, analyser les effets sur service, immobilisation et risque, retenir un scénario puis demander les actions nécessaires. Après un retard fournisseur, réviser ce scénario en tenant compte des quantités déjà expédiées. Les horizons restent opérationnels ; prévisions et coûts peuvent être des entrées sans ajouter la planification de saison.
+
+      Les protections utilisées par ce Planning restent configurées et maintenues par Supply Protection. Même lorsqu’un scénario propose de faire évoluer une protection, cette capacité partenaire conserve sa mise en vigueur ; sa mobilisation ne constitue pas une décomposition de Planning.
+
+      Le plan arbitre entre plusieurs ajustements pour un résultat commun : disponibilité, immobilisation, coûts et risques. Il peut combiner apports, réduction ou report d’apports et redistribution. Le stock total peut augmenter, diminuer ou rester stable ; aucun objectif systématique de remplissage ou de vidage ni pondération universelle. Les décisions spécialisées déterminent leurs résultats propres et la configuration Supply Protection reste extérieure.
+- id: AUD557-03
+  priority: à traiter en premier
+  title: Mise en vigueur des politiques de réservation sans porteur désigné
+  node_ids:
+  - D05.h
+  - D02.c
+  - D02.b
+  classification: frontière incomplète
+  observation: D05.h laisse explicitement à arbitrer le porteur de la gouvernance et de la mise en vigueur. REL-RESERVATION-POLICY-APPLICATION
+    suppose des politiques déjà mises en vigueur par le management responsable. La décision des conditions et l’application
+    des réservations sont couvertes.
+  consequence: Entre décider une politique et réserver, la responsabilité qui rend la politique applicable reste indéterminée.
+  recommendation: Attribuer cette responsabilité de management à une capacité existante après arbitrage du périmètre. La garder
+    extérieure aux Plannings conformément à U538. Ne pas attribuer automatiquement cette gouvernance à la décision ni créer
+    une capacité de paramétrage.
+  source_refs:
+  - U557
+  - U538
+  - ELM334
+  - ELM412
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: D05.h
+    field: fields.scope
+    value: |-
+      La décision produit les conditions dans lesquelles réserver : événements déclencheurs, horizon avant le besoin, durée de protection, conditions de maintien et de réexamen. Une politique peut être définie à l’avance et contenir des règles conditionnelles ; sa sélection contextuelle et la révision de ses paramètres ne sont pas confondues.
+
+      Les quatre comportements adoptés U343 se combinent sans constituer une séquence. Les variables de sortie sont communes : elles ne donnent pas lieu à un comportement par seuil, durée, écran ou opération. Les règles doivent expliciter le résultat lorsque les conditions se contredisent ou que les données sont insuffisantes ; aucun ordre de priorité universel n’est imposé.
+
+      [Inventory Visibility](model:D01.c) fournit les états de stock ; [ATP](model:D03.i) établit les possibilités en tenant compte des engagements. Les flux de demandes et de réservations sont distincts des sorties physiques. Les estimations de conversion peuvent être utilisées si elles existent ; aucune capacité de scoring client ou architecture IA n’est présumée.
+
+      [Reservation](model:D02.c) réalise et maintient les engagements individuels. [Supply Assignment](model:D02.e) garde les liens ressources-commandes, [Order Prioritization](model:D03.m) les priorités, [Group Protection Decision](model:D05.d) les enveloppes et [Inventory Target Decision](model:D05.a) les cibles de stock. La gouvernance et la mise en vigueur des politiques restent une responsabilité de management ; leur porteur précis est à arbitrer. Aucun transfert implicite de cette gouvernance vers Reservation Policy Decision.
+
+      Exemple fictif : conserver une réservation au paiement en fonctionnement normal, puis examiner une protection plus précoce et plus courte pour une capsule sous tension. La décision compare aussi le risque de paniers abandonnés ; elle ne suppose pas que tout stock rare doit être réservé plus tôt. Les garanties existantes restent applicables selon leurs conditions.
+
+      Rattachement adopté U343 à Inventory Optimization : optimiser le compromis entre disponibilité pour les ventes, immobilisation et risque. Le résultat peut être mobilisé lors d’une promesse ou d’un parcours de vente sans transférer à D05 la satisfaction des Orders. Ce parent proposé après U342 est adopté U343 ; les contrats détaillés restent proposés.
+  - node_id: D02.c
+    field: fields.scope
+    value: |-
+      Exemple fictif : Un droit exclusif sur 40 peut précéder l’affectation du lot précis.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+  - node_id: D02.b
+    field: fields.scope
+    value: |-
+      Quatre mécanismes combinables : préserver l’accès des groupes, plafonner leur consommation, définir le rôle d’un stock tampon et réguler le réassort. Les décisions spécialisées D05 déterminent les valeurs ; Supply Protection en gouverne la validité et les applique transactionnellement ; les consommateurs respectent les règles actives.
+
+      Les opérations de création d’enveloppes, réallocation entre groupes, libération des droits inutilisés, imputation ou correction de consommation et consultation des quantités allouées, consommées et restantes restent des fonctions utiles. Les règles ont une validité, une portée et des conditions de dérogation. Leur application transactionnelle est possible à l’unité, par groupe ou en masse, via écran, batch, flux ou streaming ; ces modalités ne créent pas de comportement supplémentaire.
+
+      Exemple fictif : protéger 200 pièces pour le web face à d’autres demandes, plafonner la consommation d’un groupe à 500, prévoir une sécurité de 40 et déclencher le réassort sous 60 vers 100. Ces paramètres ont des rôles distincts et ne s’additionnent pas automatiquement ; une même valeur peut contribuer à la sécurité et au seuil sans double décompte. Prévenir le surstock futur par les règles reste distinct de redistribuer un excès déjà présent.
+- id: AUD557-04
+  priority: à arbitrer
+  title: Articulation entre arbitrage économique, échéancier et plan collectif
+  node_ids:
+  - D15
+  - D03.k
+  - D03.l
+  - D03.o
+  - D03.n
+  classification: frontière incomplète
+  observation: D15 indique que le partage précis d’autorité entre PTP, échéancier et plan demeure à instruire. D03.o porte
+    déjà la cohérence collective et D03.n les engagements ; ces responsabilités ne manquent pas. La résolution des résultats
+    incompatibles entre décisions reste insuffisamment qualifiée.
+  consequence: Des fiches cohérentes séparément peuvent encore laisser deux résultats faisant autorité sur les mêmes quantités
+    et dates.
+  recommendation: Préciser le résultat et le pouvoir d’arbitrage de chaque décision, ainsi que le réexamen en cas d’incompatibilité,
+    en s’appuyant sur la cohérence collective déjà portée par D03.o. Aucun ordre universel de calcul ni pondération implicite
+    à ajouter.
+  source_refs:
+  - U557
+  - ELM372
+  - ELM393
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: D15
+    field: fields.scope
+    value: |-
+      ATP établit les possibilités dans la situation de référence ; CTP examine la faisabilité sous adaptation ; PTP porte l’arbitrage économique ; Delivery Schedule Decision retient l’échéancier ; Fulfillment Commitment tient propositions, confirmations et révisions autorisées.
+
+      [Fulfillment Optimization](model:D03) porte les priorités, le plan de satisfaction, le travail des scénarios et l’application des affectations. Les choix de promesse et de plan doivent rester compatibles ; le partage précis d’autorité entre PTP, échéancier et plan demeure à instruire. Cette séparation ne définit ni une séquence logicielle ni une frontière individuel/collectif.
+
+      Exemple fictif : 100 pièces demandées vendredi, 60 proposées vendredi et 40 lundi. Possibilités, proposition et engagement confirmé restent distincts ; un recalcul ne modifie pas silencieusement la promesse. Les dates de demande, de proposition, d’engagement et de réalisation ne sont pas interchangeables.
+
+      D01 apporte connaissance des ressources, protections et réservations ; D06 apporte conditions et possibilités des services ainsi que les faits d’exécution. D04 conserve intention, contenu, structure et cycle des Orders. D15 ne réalise pas les prestations et ne réserve pas implicitement des ressources : U436 demeure applicable.
+
+      Le nom et la composition sont adoptés U438 ; les descriptions développées et comparaisons sont proposées. U441/U443 précisent sa distinction d’avec l’affectation ; U445 adopte son nom Fulfillment Commitment.
+  - node_id: D03.k
+    field: fields.scope
+    value: |-
+      Comparer les conséquences économiques des scénarios de promesse réalisables : coûts pertinents de transport, de préparation, de fractionnement ou d'adaptation et effets économiques connus. Les valeurs, leur provenance, leur période de validité et les hypothèses sont des entrées à identifier ; cette capacité n'administre ni tarifs, ni comptabilité, ni politique de prix.
+
+      Prendre en compte les quantités et échéances possibles, les conditions contractuelles et les contraintes de service. Distinguer les contraintes impératives des préférences économiques. Une information de coût manquante ou incertaine doit rester visible ; elle ne vaut pas un coût nul. Aucun critère ni pondération universelle n'est imposé.
+
+      Le résultat explique les scénarios retenus ou écartés et leurs conséquences économiques, avec les hypothèses utilisées. Si aucun scénario admissible n'existe, expliciter cette limite. ATP et CTP conservent l'établissement des possibilités ; Order Prioritization détermine les priorités ; Delivery Schedule Decision choisit l'échéancier. Fulfillment Plan Decision compose un compromis collectif multidimensionnel. La sélection économique ne confirme pas à elle seule une promesse et ne déclenche pas une prestation.
+
+      Exemple fictif : comparer une livraison accélérée coûtant 120 et deux livraisons coûtant 80, si les deux respectent les conditions du client. Un scénario moins cher mais hors délai contractuel ne devient pas admissible par son seul gain. Les montants illustrent le raisonnement ; ils ne définissent aucun seuil métier.
+  - node_id: D03.l
+    field: fields.scope
+    value: |-
+      Choisir la répartition des quantités promises entre les échéances réalisables, en tenant compte des possibilités fournies par ATP/CTP, des conditions de la commande et des décisions économiques et de priorité utiles au cas. Distinguer date demandée, date proposée, date engagée, expédition et réception.
+
+      Les possibilités temporelles doivent expliciter les calendriers applicables, jours d'ouverture, heures limites et fuseaux pertinents, ainsi que les délais et dates de connaissance des informations. Ces références proviennent des responsables externes ou des projections applicables ; leur maître précis reste à identifier. Aucun calcul universel par simple ajout de jours ni calendrier administré implicitement par cette capacité.
+
+      Le résultat indique quantités et échéances retenues, conditions, hypothèses et reste non couvert. Une préférence pour une livraison unique ou des livraisons fractionnées s'applique selon les conditions connues ; elle n'est pas présumée universelle. Si l'échéance demandée est impossible, exposer les options et la partie non satisfaite sans modifier silencieusement la demande.
+
+      Exemple fictif : retenir 60 vendredi et 40 lundi parmi les options autorisées. Si la collecte de vendredi est fermée ou si lundi est non ouvré, réexaminer les options avant de les annoncer. Deux échéances ne signifient pas deux Sales Orders : Order Structuring conserve le découpage, Fulfillment Commitment la proposition/confirmation/révision et Order Lifecycle Management les changements autorisés.
+  - node_id: D03.o
+    field: fields.scope
+    value: |-
+      Le résultat est un scénario de [Supply Assignment Plan](glossary:TER078) : ressources présentes ou futures, quantités et dates proposées pour les commandes du périmètre, avec hypothèses et contraintes. La stratégie et le paramétrage sont des entrées ; choisir leur cadre ne suffit pas à produire le plan.
+
+      La vision globale porte sur les ressources admissibles et les demandes de l’horizon examiné. Elle n’impose ni un recalcul intégral à chaque événement, ni un algorithme, ni une garantie d’optimum mathématique. Le plan doit rendre explicites les besoins non satisfaits et les conditions de faisabilité.
+
+      Mobiliser les résultats d’[ATP](model:D03.i), de [CTP](model:D03.j), de [PTP](model:D03.k), d’[Order Prioritization](model:D03.m) et de [Delivery Schedule Decision](model:D03.l) selon le cas. Ces capacités gardent leurs responsabilités ; leur composition n’introduit aucune sous-capacité ni séquence universelle. Respecter protections, réservations et gels applicables ; aucune levée implicite par l’optimisation. Les politiques référentielles sont consommées sans administration implicite des maîtres.
+
+      [Supply Assignment](model:D02.e) applique les affectations du plan retenu ; [Fulfillment Commitment](model:D03.n) conserve proposition, confirmation et révision de promesse. Produire ce scénario ne réserve pas les ressources, ne modifie pas les Orders et ne déclenche pas à lui seul l’exécution. Cette décision opérationnelle collective ne reprend pas la planification globale externe.
+
+      Exemple fictif : deux commandes demandent chacune 80 pièces alors que 100 pièces sont admissibles. Les considérer séparément peut donner deux possibilités incompatibles. La décision établit une proposition commune selon les priorités et contraintes, explicite les 60 pièces restant sans ressource et les éventuels apports futurs nécessaires. Le chiffrage illustre la cohérence collective ; il ne prescrit aucune politique de répartition.
+  - node_id: D03.n
+    field: fields.scope
+    value: |-
+      Trois comportements : proposition sans engagement confirmé, confirmation des quantités et dates, révision lorsque la situation évolue. Les décisions ATP/CTP/PTP, priorités et échéancier restent distinctes, ainsi que Supply Assignment et Reservation. Exemple fictif : proposer 60 vendredi et 40 lundi, confirmer la première part puis réexaminer la seconde après retard fournisseur. Aucune confirmation n’est assimilée à un mouvement physique ni à une réservation automatique.
+
+      U441/U443 : une demande de 100 pièces vendredi peut recevoir une promesse de 60 vendredi et 40 lundi ; la demande et l’engagement de satisfaction restent lisibles séparément. ATP/CTP établissent les possibilités, Delivery Schedule Decision choisit l’échéancier et Fulfillment Plan Decision la cohérence du plan. Promise Proposal formalise les résultats pertinents sans refaire ces arbitrages ; Promise Confirmation établit l’engagement ; Promise Revision tient ses modifications autorisées.
+
+      Supply Assignment maintient les liens entre ressources et commandes. Exemple fictif : remplacer l’affectation à l’arrivage A par B, avec mêmes quantités et mêmes conditions de satisfaction, peut préserver la promesse. Inversement, un retard de transport peut imposer de réexaminer la date promise sans changer les ressources affectées. Aucun de ces constats n’autorise à modifier automatiquement l’engagement ; selon U436, seul Reservation bloque les usages concurrents.
+
+      Order Firming rend une intention ferme ; il ne confirme pas automatiquement les quantités et dates de satisfaction. Order Preparation & Revision tient le contenu demandé et ses versions ; la présente capacité tient la proposition et l’engagement de satisfaction. Elle ne possède ni un second choix d’échéancier ni l’autorité générale de modifier les Orders. Les conditions d’autorisation et de synchronisation restent à préciser.
+
+      U445 adopte le nom Fulfillment Commitment, en remplacement de Promise Management. La définition développée et les contrats restent proposés ; aucun effet de réservation ni réalisation physique déduit du mot Commitment.
+- id: AUD557-05
+  priority: à arbitrer
+  title: Périmètre résiduel de Supply Assignment au-delà des commandes
+  node_ids:
+  - D02.e
+  - D03.p
+  classification: frontière incomplète
+  observation: Le nom, la définition et le parent ciblent les commandes identifiées. Le scope conserve aussi les engagements
+    et besoins prévisionnels historiques, avec articulation à préciser. La réserve a été préservée, pas résolue par le changement
+    de parent.
+  consequence: Le lecteur ne sait pas si affecter à un besoin prévisionnel est un service actuel du Planning du carnet ou
+    une responsabilité à traiter ailleurs.
+  recommendation: 'Arbitrer explicitement le traitement des besoins sans commande : qualification en demande gérée, protection
+    de ressources ou autre responsabilité, selon le sens métier. Ne pas supprimer le besoin historique et ne pas déduire une
+    affectation des forecasts de l’affectation aux Orders documentée par le marché.'
+  source_refs:
+  - U557
+  - U541
+  - ELM452
+  - ELM496
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: D02.e
+    field: fields.scope
+    value: |-
+      Frontière : Affectations aux commandes identifiées ; autres besoins historiques conservés à préciser. Décisions spécialisées, engagement de réservation, promesse et modification des Orders restent distincts.
+
+      Exemple fictif : Affecter 40 d’un arrivage à une commande puis changer leur provenance admissible.
+
+      La valeur peut combiner service, respect des engagements, coûts, contribution économique et risques ; ces dimensions sont des exemples, sans pondération ni formule universelle adoptée. Les décisions spécialisées conservent leurs responsabilités : priorité des Orders, faisabilité ATP/CTP, arbitrage économique PTP et échéancier. Affecter, réaffecter et libérer maintiennent les liens aux ressources ; affecté, réservé, promis et réalisé restent distincts. Le périmètre historique des engagements et besoins prévisionnels est conservé, avec articulation à préciser.
+
+      L’application d’un plan d’affectation relève de Supply Assignment : matérialiser les liens entre ressources et commandes retenus dans le plan. Ce comportement peut mobiliser les capacités Supply partenaires sans absorber leurs responsabilités. Le fait qu’un traitement logiciel tel qu’ARun traverse plusieurs capacités ne remet pas en cause le parent métier de ce mécanisme.
+
+      U362/U363 : Spread (sens SAP ARun) répartit les ressources entre commandes existantes ; il ne coupe pas les commandes. La règle de répartition détermine les parts dans les décisions spécialisées, puis Supply Assignment matérialise leurs affectations. Exemple simplifié : besoins de 100 et 200, stock de 150, prorata donnant 50 et 100 ; les demandes restent de 100 et 200. Quotas, priorités et engagements peuvent changer le résultat. Aucun nouvel optimiseur ou parent de décision Spread adopté.
+
+      L’application contrôle que les affectations du plan restent applicables et rend visibles les écarts entre résultat retenu et résultat effectivement pris en compte. Elle peut compléter les besoins non affectés en préservant les liens existants, ou réviser les affectations modifiables selon les nouveaux arbitrages. Ces modalités sont combinables ; elles ne constituent pas des sous-comportements. Préserver un lien pendant un traitement ne crée pas un gel durable et aucune reconstruction complète des affectations n’est imposée. Une application partielle ou impossible peut appeler une nouvelle décision ; le résultat n’est pas remplacé silencieusement.
+
+      La décision collective relève de [Fulfillment Plan Decision](model:D03.o). [Order Backlog Planning](model:D03.p) porte la construction, l’examen, l’actualisation et l’application du plan du carnet ; Supply Assignment en décrit la mise en effet des affectations. [Supply Protection](model:D02.b) reste extérieure et gouverne les politiques consommées. Ni transaction atomique de tout le plan ni validation humaine systématique ne sont imposées. Les contrats détaillés d’engagement et d’application restent à préciser.
+
+      U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+
+      U443 : l’affectation répond à « quelles ressources sont retenues pour cette commande ? » ; Fulfillment Commitment répond à « quelles quantités et dates sont proposées ou engagées ? ». Une réaffectation peut conserver la promesse, et une révision de date promise peut conserver l’affectation. La compatibilité des deux résultats reste nécessaire, sans identité de responsabilité ni réservation implicite.
+
+      Le résultat d’application et les écarts alimentent [Optimization Request Management](model:D04.s), qui tient la progression et la conclusion de la demande. Une sollicitation acceptée ne prouve pas que toutes les affectations sont appliquées ; l’application partielle ne se transforme pas silencieusement en nouveau plan.
+  - node_id: D03.p
+    field: fields.scope
+    value: |-
+      Prendre en charge le travail d’optimisation du carnet, construire et comparer ses scénarios de satisfaction, les actualiser et appliquer les affectations du résultat retenu. Le Planning mobilise [Fulfillment Plan Decision](model:D03.o) et les décisions spécialisées ; il peut être humain, automatisé ou mixte.
+
+      [Optimization Request Management](model:D04.s) cadre et suit la demande, y compris après un impondérable, lors d’une revue périodique ou pour une étude volontaire. [Simulation & Analysis](model:BHV091) conduit l’étude des scénarios. [Scenario Authorization](model:BHV092) précise les suites retenues et leurs conditions, puis [Supply Assignment](model:D02.e) matérialise les affectations et constate leur prise en compte. Ces comportements peuvent être repris et combinés ; ils ne constituent pas une séquence rigide ou une validation humaine obligatoire.
+
+      Les décisions déterminent les arbitrages. [Supply Protection](model:D02.b) définit et maintient les politiques consommées. L’application respecte les responsabilités de [Reservation](model:D02.c), de [Fulfillment Commitment](model:D03.n) et des Orders : elle ne modifie pas silencieusement les réservations, les promesses, les protections ou les restrictions des commandes.
+
+      [Order Lifecycle Management](model:D04.o) conserve Order Release, qui autorise la prise en charge des Orders selon leurs règles ; l’autorisation d’un scénario ne le remplace pas. Order Structuring porte leurs découpages et compositions. [Process Orchestration](model:D06.d) coordonne les prestations ; le maintien du plan du carnet reste distinct de l’adaptation des processus opérationnels.
+
+      Exemple fictif : comparer une option privilégiant les ouvertures de magasins à une autre préservant davantage les dates promises. Les décisions produisent les propositions cohérentes ; le Planning en apprécie les effets, retient les suites autorisées et rend visibles les affectations prises en compte. La demande peut conclure sans changement, ou garder une part à réexaminer si les ressources ont évolué.
+- id: AUD557-06
+  priority: correction rédactionnelle
+  title: Traces de structures remplacées dans les descriptions courantes
+  node_ids:
+  - universe-supply
+  - D03
+  - BHV077
+  - D05.c
+  classification: décalage éditorial
+  observation: Le Domain emploie encore Planning comme libellé de D17 ; D03 conserve dans un paragraphe U438 un compte de
+    quatre capacités alors qu’il en contient trois ; BHV077 mentionne encore Supply Reassignment comme responsabilité autonome
+    puis cite correctement Supply Assignment ; D05.c conserve des verbes de réalisation dans un passage historique de redistribution.
+  consequence: Ces traces peuvent donner l’impression d’une disparition, d’un doublon ou d’une contradiction avec les définitions
+    et parents courants.
+  recommendation: Aligner la description actuelle sur les noms, comptes et responsabilités présents ; conserver les formulations
+    historiques dans les preuves. Aucun changement de périmètre nécessaire pour ces quatre corrections.
+  source_refs:
+  - U557
+  - U438
+  - U541
+  - U551
+  - U553
+  status: diagnostic et recommandation proposés ; aucune mutation adoptée
+  evidence:
+  - node_id: universe-supply
+    field: fields.scope
+    value: |-
+      Les applications externes restent les sources de vérité des référentiels : c’est là que leurs données sont créées, modifiées ou supprimées. La Supply en reçoit des projections, c’est-à-dire les références utiles à ses opérations, par [Reference Ingestion](glossary:TER050). Elle ne les administre pas à leur place.
+
+      Le périmètre se concentre ainsi sur l’orchestration : commandes, stocks, promesses, optimisation et coordination des services. Les exécutants préparent, transportent et remettent les produits ; la Supply reçoit leurs faits de réalisation pour suivre les engagements et traiter les écarts.
+
+      [Planning](model:D17) porte le plan d'ensemble régulièrement actualisé. Les Areas opérationnelles conservent l'adaptation aux impondérables ; la planification mobilise leurs décisions et reçoit les faits utiles à la révision des plans.
+  - node_id: D03
+    field: fields.scope
+    value: |-
+      Order Prioritization établit les priorités ; Fulfillment Plan Decision détermine un plan cohérent de satisfaction ; Order Backlog Planning prend en charge le travail d’optimisation, compare et actualise les scénarios, puis applique les affectations retenues par son comportement Supply Assignment. La valeur reste multidimensionnelle, sans pondération universelle.
+
+      [Order Promising](model:D15) établit les possibilités ATP/CTP, porte les arbitrages économiques et d’échéancier, puis tient les propositions et engagements de promesse. D03 mobilise ces résultats ; les échanges peuvent conduire à réexaminer possibilités, plan et promesses. Les autorités respectives de PTP, de Delivery Schedule Decision et de Fulfillment Plan Decision restent à préciser sans second plan final implicite.
+
+      [Service Requests](model:D04) conserve la demande selon son intention, sa structure et sa conservation. Order Lifecycle Management autorise la prise en charge ; [Process Management](model:D06) coordonne les services et leurs adaptations. L’Area peut demander les évolutions utiles des Orders ; leur gestion reste portée par Service Requests, et leur réalisation physique par les exécutants. Cela reste distinct de l’application des affectations dans Order Backlog Planning.
+
+      Exemple fictif : deux commandes sollicitent 120 pièces pour 80 admissibles. L’area arbitre un plan compatible avec les priorités, possibilités et engagements, puis matérialise ses affectations. Une priorité ne lève pas une réservation et le plan ne confirme pas automatiquement une promesse. Selon U436, seule Reservation bloque les usages concurrents.
+
+      Le carnet reste une vue de travail, comprenant aussi le reste à satisfaire de commandes déjà engagées. La séparation D03/D15 repose sur les responsabilités de choix et de promesse, pas sur individuel/collectif : une optimisation peut concerner une seule commande et ATP plusieurs demandes. Inventory Optimization D05 conserve les objectifs et ajustements de stock.
+
+      U438 remplace le nom Order Backlog Management adopté U413 et les rattachements concernés U417/U420. D03 conserve quatre capacités ; D15 reçoit ATP, CTP, PTP, Delivery Schedule Decision et Fulfillment Commitment ; Structuring et Archiving rejoignent D04. Les identifiants de capacités et leurs comportements restent stables. Les descriptions développées restent éditoriales.
+
+      Les Orders à satisfaire peuvent résulter d’un plan amont. L’Area utilise les demandes, ressources et engagements disponibles pour organiser leur satisfaction ; elle ne reconstruit pas le plan d’apports qui a produit ces demandes. Adapter le carnet à un impondérable peut conduire à revoir les affectations ou les suites des Orders, sans créer un second planning amont. La présence d’une demande planifiée ne la rend pas automatiquement ferme, réservable ou promise.
+  - node_id: BHV077
+    field: fields.scope
+    value: |-
+      CTP ne choisit pas seul quelle commande sacrifier. Il explicite les possibilités et impacts permettant à Fulfillment Plan Decision d’arbitrer, avec Order Prioritization, PTP et les autres décisions utiles. La modifiabilité est une condition à établir, non une autorisation déduite de l’urgence. Une même ressource ne peut soutenir des possibilités collectivement incompatibles. Réservation opposable et gel restent respectés ; aucune libération ou révision implicite. Promise Revision conserve la modification autorisée de l’engagement et Supply Reassignment l’application des liens révisés.
+
+      Exemple fictif : Une commande urgente pourrait être satisfaite si une autre accepte un décalage de deux jours ; les engagements gelés restent préservés.
+
+      [CTP](model:D03.j) établit les possibilités sous adaptation et leurs conséquences. [Fulfillment Plan Decision](model:D03.o) détermine le scénario collectif cohérent maximisant la valeur multidimensionnelle, en mobilisant les décisions spécialisées. [Supply Assignment](model:D02.e) applique les affectations retenues ; [Fulfillment Commitment](model:D03.n) porte les modifications autorisées de promesse. Le résultat de faisabilité ne réserve pas, ne modifie pas un Order ou une politique et ne déclenche pas l’exécution. Les trois comportements peuvent se combiner sans séquence imposée. Aucune pratique installée chez Beaumanoir déduite de cet exemple.
+  - node_id: D05.c
+    field: fields.scope
+    value: |-
+      Examiner les excédents et insuffisances entre sites puis déterminer les quantités, origines, destinations et dates pertinentes pour rééquilibrer le stock déjà présent. Les calculs de disponibilité admissible, de couverture et de conséquences sur les sites font partie de cette décision. Les critères économiques, tolérances et autorités détaillées restent à préciser.
+
+      Exemple fictif : transférer 50 pièces d’un site en excédent vers un autre site en manque, sous réserve de préserver les besoins et engagements du site donneur. La responsabilité reste distincte de [Replenishment Decision](model:D05.e), qui prévoit les apports ; leurs résultats doivent être coordonnés pour éviter le double comptage d’un même manque ou d’un même stock.
+
+      [Fulfillment Optimization](model:D03) peut proposer un transfert pour satisfaire des Orders. Ici le résultat recherché est une meilleure répartition du stock ; le partage éventuel de données ou de moyens de calcul ne supprime pas cette distinction. Supply Assignment affecte des ressources à des besoins ou engagements sans réaliser à lui seul une redistribution physique.
+
+      La mise en action peut mobiliser des Orders gérés par D04, dont D03 travaille la satisfaction, puis des prestations suivies par [Process Management](model:D06) et réalisées par les exécutants. Décider d’un transfert ne modifie pas transactionnellement les stocks et ne réalise pas le transport ; aucun développement de logistique dans FLOW n’est déduit.
+
+      Frontière : Coordonner Replenishment sans corriger deux fois le manque ; aucun transport réalisé ici.
+
+      U318 : [Inventory Rebalancing](model:BHV024) déplace le stock vers les lieux qui en ont davantage besoin, en préservant les donneurs ; [Stock Consolidation](model:BHV025) concentre des stocks dispersés pour reconstituer des assortiments de tailles ou regrouper des reliquats vers des lieux adaptés. Les deux mécanismes peuvent se combiner, sans séquence imposée ni niveau inférieur. La consolidation n’exige pas un manque immédiat à destination et ne concerne pas exclusivement des excédents. Ces exemples décrivent la cible, pas une pratique Beaumanoir démontrée.
+
+      La valeur recherchée intègre disponibilité, immobilisation et risque. Les coûts et contraintes de transfert peuvent conduire à ne rien déplacer. [Initial Stocking Decision](model:D05.g) et Replenishment Decision restent les décisions d’apports de lancement et d’apports continus ; coordonner leurs résultats avec la redistribution du stock existant.
+retirement_trace:
+- retired_ids:
+  - BHV045
+  - BHV046
+  - BHV047
+  successor_ids:
+  - D02.e
+  conclusion: Application, complément préservant les liens et réaffectation conservés comme modalités du comportement Supply
+    Assignment.
+  evidence: modeles/backlog/planning-principle-audit-U540.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV088
+  - BHV089
+  - BHV090
+  successor_ids:
+  - D04.s
+  conclusion: Impondérable, périodicité et demande explicite conservés comme modes de sollicitation.
+  evidence: modeles/backlog/planning-refactor-U552.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV093
+  successor_ids:
+  - D04.s
+  - D02.e
+  conclusion: Suivi de la demande et constat d’application répartis ; application partielle ou refus conservés.
+  evidence: modeles/backlog/planning-refactor-U552.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - D17.b
+  successor_ids: []
+  conclusion: Retrait volontaire U555 du planning produisant les Planned Orders à l’amont ; absence de successeur local voulue.
+    L’interface restante est AUD557-01.
+  evidence: audits/2026-09-21-planning-refactor-U552/coverage-before-removal-U555.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - D03.a
+  - D03.b
+  - D03.c
+  successor_ids:
+  - D03.n
+  - BHV021
+  - BHV022
+  - BHV023
+  conclusion: Proposition, confirmation et révision conservées comme comportements de Fulfillment Commitment.
+  evidence: modeles/backlog/refactoring-implementation.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV007
+  - BHV008
+  successor_ids:
+  - D05.f
+  conclusion: Évaluation et autorisation toujours décrites dans le Planning ; le nombre de comportements n’est pas une mesure
+    de couverture.
+  evidence: audits/2026-09-17-refonte-appliquee/model-before.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV009
+  successor_ids:
+  - D05.f
+  - BHV094
+  conclusion: Application du plan de stock conservée puis explicitée par BHV094 après U537/U552.
+  evidence: modeles/backlog/planning-refactor-U552.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV010
+  successor_ids:
+  - BHV006
+  conclusion: Analyse des impacts intégrée à Simulation & Analysis.
+  evidence: modeles/backlog/refactoring-implementation.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV011
+  - BHV012
+  - BHV013
+  - BHV014
+  - BHV015
+  successor_ids:
+  - D02.b
+  conclusion: Création des enveloppes, réallocation, libération, consommation et visibilité explicitement conservées dans
+    Supply Protection.
+  evidence: modeles/backlog/refactoring-implementation.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - BHV041
+  - BHV042
+  successor_ids:
+  - BHV038
+  - BHV043
+  conclusion: Report conservé dans préparation/révision ; annulation dans terminaison.
+  evidence: modeles/backlog/history/lifecycle-dimensions-U424/implementation.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - D04.p
+  successor_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  conclusion: Regroupement générique retiré au profit des familles d’Orders ; succession un-vers-plusieurs.
+  evidence: audits/2026-09-18-orders-disposition-U383/implementation.yaml
+  accidental_loss_established: false
+- retired_ids:
+  - universe-case
+  successor_ids: []
+  conclusion: Retrait explicite Business Services U472 ; Commerce différé et hors périmètre de cet audit Supply.
+  evidence: CONVENTIONS-MODELE.md
+  accidental_loss_established: false
+retired_relation_trace:
+- retired_ids:
+  - REL-BEHAVIOR-BHV045
+  - REL-BEHAVIOR-BHV046
+  - REL-BEHAVIOR-BHV047
+  - REL-MEMBER-BHV088
+  - REL-MEMBER-BHV089
+  - REL-MEMBER-BHV090
+  - REL-MEMBER-BHV093
+  reason: Suppression des sept relations de décomposition vers les sept comportements consolidés ; aucun sous-comportement
+    autorisé sous D02.e ou D04.s.
+- retired_ids:
+  - REL-BACKLOG-REQUEST-PLANNING
+  successor_ids:
+  - REL-MEMBER-D04.s
+  reason: Le lien de mobilisation devient une appartenance explicite au Planning.
+- retired_ids:
+  - REL-BACKLOG-REQUEST-DECISION
+  successor_ids:
+  - REL-AUDIT-U435-PLNK-01
+  reason: La mobilisation de Fulfillment Plan Decision est portée par le Planning parent.
+scenario_coverage:
+- id: S01
+  scenario: Plan amont, demande planifiée, affermissement et lancement
+  responsibility_ids:
+  - D04.j
+  - D04.k
+  - D04.o
+  - BHV036
+  finding_ids:
+  - AUD557-01
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S02
+  scenario: Réception, correction de mouvement et connaissance du stock
+  responsibility_ids:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D01.d
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S03
+  scenario: Promesse partielle, affectation et réservation distinctes
+  responsibility_ids:
+  - D04.i
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  - D03.n
+  - D02.e
+  - D02.c
+  finding_ids:
+  - AUD557-04
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S04
+  scenario: Carnet sous pénurie, priorités et engagements existants
+  responsibility_ids:
+  - D03.p
+  - D03.m
+  - D03.o
+  - D02.e
+  - D02.b
+  - D02.c
+  finding_ids:
+  - AUD557-05
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S05
+  scenario: Impondérable, adaptation des prestations et suivi des suites
+  responsibility_ids:
+  - D07.d
+  - D06.f
+  - D06.d
+  - D03.p
+  - D04.s
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S06
+  scenario: Préparation, report, annulation et réalisation partielle d’un Order
+  responsibility_ids:
+  - D04.o
+  - BHV038
+  - BHV043
+  - D07.b
+  - D07.d
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S07
+  scenario: Implantation et réassort en tenant compte des apports connus
+  responsibility_ids:
+  - D05.f
+  - D05.g
+  - D05.e
+  - D04.j
+  - D04.k
+  - BHV094
+  finding_ids:
+  - AUD557-01
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S08
+  scenario: Rééquilibrage ou consolidation du stock
+  responsibility_ids:
+  - D05.c
+  - D05.f
+  - D04.k
+  - BHV094
+  finding_ids:
+  - AUD557-06
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S09
+  scenario: Prévisions, ventes et précommandes B2B, publication aux consommateurs
+  responsibility_ids:
+  - D17.a
+  - BHV095
+  - D04.i
+  - D05.f
+  finding_ids:
+  - AUD557-02
+  assessment: responsabilités présentes ; frontière à préciser
+- id: S10
+  scenario: Retour client et détermination de la suite du produit
+  responsibility_ids:
+  - D04.l
+  - D05.i
+  - D07.b
+  - D07.c
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S11
+  scenario: Retour fournisseur, remplacement ou réparation
+  responsibility_ids:
+  - D04.m
+  - D05.i
+  - D07.b
+  - D07.c
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S12
+  scenario: Apport et tenue d’un stock consigné
+  responsibility_ids:
+  - D04.r
+  - D01.h
+  - D04.o
+  - D01.f
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S13
+  scenario: Choix, engagement, coordination et rapprochement des services
+  responsibility_ids:
+  - D06.b
+  - D07.a
+  - D06.e
+  - D07.b
+  - D06.d
+  - D07.d
+  - D07.c
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S14
+  scenario: Structuration, variantes directes/interentreprises et archivage des Orders
+  responsibility_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.n
+  - D04.q
+  finding_ids: []
+  assessment: responsabilités retrouvées à maille capacité ; pas de perte établie
+- id: S15
+  scenario: Politique de réservation, protection des groupes et engagement individuel
+  responsibility_ids:
+  - D05.h
+  - D05.d
+  - D02.b
+  - D02.c
+  finding_ids:
+  - AUD557-03
+  assessment: responsabilités présentes ; frontière à préciser
+market_evidence:
+- source_ref: ELM419
+  publisher: Microsoft
+  title: Firm planned orders
+  version: page évolutive
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Affermissement des planned orders
+  comparison: La proposition planifiée devient un Order géré. Le vocabulaire firm/release de Microsoft ne remplace pas la
+    distinction FLOW entre affermissement et lancement.
+- source_ref: ELM566
+  publisher: Oracle
+  title: Manually Release Plan Recommendations
+  version: 26B
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Recommandations nouvelles et replanification de supplies existantes
+  comparison: La transmission du résultat de planification à la gestion opérationnelle appuie une frontière ; elle ne désigne
+    pas son propriétaire dans FLOW.
+- source_ref: ELM568
+  publisher: Oracle
+  title: Publish Plan
+  version: 26B
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/publish-plan-data.html
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: When to Use ; Specifications
+  comparison: Un export de données de plan vers des consommateurs est documenté ; il ne démontre pas une autorisation métier
+    ou un recalcul automatique.
+- source_ref: ELM569
+  publisher: Oracle
+  title: Supply Plan Options for Organizations and Schedules
+  version: 26B
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspf/supply-plan-options-for-organizations-and-schedules.html
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Demand Schedules
+  comparison: Consommation d’un plan de demande ou d’une prévision externe. Appui fonctionnel partiel aux coopérations ; deux
+    documents Oracle ne prouvent pas un consensus interéditeurs.
+- source_ref: ELM334
+  publisher: commercetools
+  title: Inventory overview
+  version: page évolutive
+  url: https://docs.commercetools.com/api/inventory-overview
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: ReserveOnCart ; durée de réservation
+  comparison: Paramétrage de durée et application de réservation sont distinguables. Cette fonction produit ne détermine pas
+    la capacité FLOW propriétaire de la gouvernance.
+- source_ref: ELM412
+  publisher: Microsoft
+  title: Reserve inventory quantities
+  version: page évolutive
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Inventory reservation policies
+  comparison: Les politiques configurées déterminent les modalités des réservations. Ne prouve ni un management autonome ni
+    le bon parent dans FLOW.
+- source_ref: ELM372
+  publisher: Oracle
+  title: Create Alternative Fulfillment Scenarios to Reduce Cost
+  version: 26C
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Prioritize ; scénarios alternatifs
+  comparison: Le produit combine options de satisfaction, dates et coûts avec priorité au délai. Cette hiérarchie Oracle ne
+    doit pas devenir une pondération FLOW implicite.
+- source_ref: ELM393
+  publisher: Microsoft
+  title: Distributed order management (DOM)
+  version: page évolutive
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Présentation ; contraintes et objectifs
+  comparison: Optimisation par lot ou Order combinant sources, quantités, temps, coûts et service. Ne prescrit pas le partage
+    d’autorité entre les décisions FLOW.
+- source_ref: ELM452
+  publisher: SAP
+  title: Explaining Supply Assignment
+  version: cours évolutif
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Sales Orders et Stock Transport Orders
+  comparison: Affectation des ressources à des commandes. Une ressource future ne prouve pas une affectation à un besoin prévisionnel
+    sans Order ; les effets natifs SAP ne sont pas ceux de Reservation FLOW.
+- source_ref: ELM496
+  publisher: Oracle
+  title: Overview of Backlog Management Processes
+  version: 26B
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  consulted_on: '2026-09-21'
+  access: document primaire consulté directement ; synthèse sélective, aucune reproduction intégrale
+  locator: Planning ; review ; simulation ; release
+  comparison: Étude et simulation du carnet puis transmission des résultats. Le mot planned dans ce contexte ne doit pas être
+    assimilé aux Planned Orders d’approvisionnement.
+preserved_choices:
+- Décision distincte du Planning ; application portée par le Planning et réalisée avec les capacités partenaires.
+- Configuration des protections extérieure au Planning.
+- Affermissement, promesse, affectation, réservation et réalisation distincts.
+- D17.b retirée volontairement U555 ; aucune restauration.
+- Service Requests conserve les familles d’Orders, y compris leurs sollicitations internes ; demande propre à l’optimisation
+  intégrée au Planning.
+next_step: Traiter AUD557-01 à 03 puis arbitrer AUD557-04 et 05 ; nettoyer AUD557-06 dans le même lot. Aucune création de
+  capacité recommandée à ce stade.
+follow_up_U560:
+  source_refs:
+  - U560
+  implementation: modeles/backlog/model-consolidation-U560.yaml
+  status: mise en œuvre autonome ; constat initial conservé ; résultats détaillés dans le manifest
+  remaining_open: Cas historiques non identifiés de besoins prévisionnels sans commande, AUD557-05.
+follow_up_U562:
+  source_refs:
+  - U562
+  - U563
+  - U564
+  - CMP235
+  scope_qualification: 'AUD557-05 : affectation aux prévisions avant commande explicitement attribuée à Supply Assignment.
+    La restriction U560 est remplacée.'
+  remaining_open: Porteur de planification et de décision pour ce cas sans commande ; parent courant non modifié.
+  cases: modeles/backlog/supply-assignment-cases-U562.yaml
+follow_up_U565:
+  source_refs:
+  - U565
+  - U566
+  - CMP236
+  scope_and_planning: 'AUD557-05 qualifié : Supply Assignment couvre les prévisions avant commande et un même Planning D03.p
+    arbitre commandes et prévisions.'
+  remaining_open: Nom du Planning, sans impact sur la responsabilité désormais attribuée.
+  evidence: modeles/backlog/supply-assignment-cases-U562.yaml

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-21",
+  "captured_at": "2026-09-22",
   "records": [
     {
       "id": "U01",
@@ -4617,6 +4617,46 @@
       "line": 14331,
       "content_sha256": "8fa4744fab7e9d2ccf08e37259c246ca787f8970c97bef83bfa20f686b189732",
       "captured_text": "## U577\n\n**id**\n\nU577\n\n**date**\n\n2026-09-21\n\n**titre**\n\nValider le nom Plan Implementation\n\n**texte**\n\nC'est mieux. Pas folichon. Mais je valide\n\n**contexte et portée**\n\nValidation explicite du nom Plan Implementation proposé en réponse à U576, pour le comportement de mise en œuvre du plan. Le principe de regroupement conserve l’accord U576. L’appréciation réservée du nom ne suspend pas cette validation. Aucun accord supplémentaire sur les descriptions développées, les autres comportements ou les capacités de décision n’est déduit."
+    },
+    {
+      "id": "U578",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u578",
+      "line": 14353,
+      "content_sha256": "1d069da8c3d0433805c41064177b20e243c185854dbd5c29121763d75a0670b0",
+      "captured_text": "## U578\n\n**id**\n\nU578\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAffiner les comportements de gestion du plan et retenir Apply Plan\n\n**texte**\n\nJe souhaite que Planning Management soit décomposé en Cadrer, programmer, lancer, arrêter, relancer\nPlan Version Management : je veux le retirer. Je considère que c'est au niveau fonctionnalité\nPlan Monitoring & Replanning, j'ai l'impression que c'est 2 comportements séparés : monitoring & ajustement\nPlan Implementation : je préfère Apply Plan\n\n**contexte et portée**\n\nRetour sur la proposition synthétique de Master Planning présentée dans cette discussion. Demande explicite de distinguer cinq actions de pilotage, de retirer Plan Version Management comme comportement et de remplacer le nom Plan Implementation par Apply Plan. Laurent suggère de distinguer monitoring et ajustement. La traduction anglaise des nouveaux libellés, leurs descriptions et leur placement terminal restent à expliciter ; aucun accord global sur les autres éléments du modèle n'est déduit."
+    },
+    {
+      "id": "U579",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u579",
+      "line": 14378,
+      "content_sha256": "b4082d518e2faf9178ba7a93e66c6ff64e602577a68e800cd625677a8210cda2",
+      "captured_text": "## U579\n\n**id**\n\nU579\n\n**date**\n\n2026-09-22\n\n**titre**\n\nRendre visible le contenu décisionnel de la réconciliation demande et supply\n\n**texte**\n\nPar contre, ce que je ne comprends pas et ce que je ne retrouve pas, c'est le détail des capacités d'un plan : ce que sait faire plan de réconciliation de la demande et de la supply.\n=> Backorder Processing (langage SAP)\n=> Allouer les ressources disponibles (spread)\n\n**contexte et portée**\n\nLaurent signale que la présentation des comportements de gestion ne rend pas visibles les capacités de réconciliation de la demande et des ressources. Il cite Backorder Processing SAP et la répartition des ressources disponibles (spread). Demande d’explicitation du contenu métier du plan ; aucun nom de remplacement ni déplacement canonique supplémentaire adopté."
+    },
+    {
+      "id": "U580",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u580",
+      "line": 14402,
+      "content_sha256": "0ae81453bc5ac78b1f06f5edc1e55eb4e1c7a5008c9f37d7d1a23b427d081c7f",
+      "captured_text": "## U580\n\n**id**\n\nU580\n\n**date**\n\n2026-09-22\n\n**titre**\n\nComparer Demand/Supply Reconciliation et Demand/Supply Optimization pour le nom de l’Area\n\n**texte**\n\nJE me demande si l'area ne devrait pas s'appeler Demand/Supply Reconciliation. La gestion du plan n'est qu'une capacité. Ou Demand/supply Optimization. => Que dit le marché ?\n\n**contexte et portée**\n\nDemande de comparaison marché de deux noms d’Area, en distinguant la finalité métier de réconciliation ou d’optimisation de la capacité de gestion du plan. Alternatives soumises à examen ; aucun renommage adopté ni changement automatique du périmètre de Demand Planning."
+    },
+    {
+      "id": "U581",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u581",
+      "line": 14424,
+      "content_sha256": "1b293e21742e760bfc40d938de0ad8876fcb94161eab3725fc7cc1ec6dfc85a8",
+      "captured_text": "## U581\n\n**id**\n\nU581\n\n**date**\n\n2026-09-22\n\n**titre**\n\nRetenir Demand & Supply Optimization et préciser CTP et nouveaux achats\n\n**texte**\n\nOk pour Optimization.\n\nComment activer la CTP ? Le plan propose t il des nouveaux ordres d'achat afin de rendre toutes les promesses valides ?\n\n**contexte et portée**\n\nAccord contextualisé sur Demand & Supply Optimization, nom d’Area recommandé dans U580. Question sur le recours à CTP et la proposition de nouveaux achats pour soutenir les promesses ; ne constitue pas une affirmation que toutes les promesses peuvent être rendues réalisables ni une autorisation de création de commandes réelles. Descriptions et déplacements détaillés non adoptés par extension."
+    },
+    {
+      "id": "U582",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u582",
+      "line": 14449,
+      "content_sha256": "f19e23bc3169cda936d80ff25bd713bb5b77e9007d05faf5612bf5237627482a",
+      "captured_text": "## U582\n\n**id**\n\nU582\n\n**date**\n\n2026-09-22\n\n**titre**\n\nPublier une release complète pour clarifier l’état du modèle\n\n**texte**\n\nlance une release complete, je ne comprends plus où on en est.\n\n**contexte et portée**\n\nDemande de production et activation locale d’une release complète du backlog courant dans FLOW Atlas, avec restitution claire de son contenu et des propositions encore en annexe. La publication ne vaut pas adoption globale des propositions ni des champs détaillés."
     },
     {
       "id": "F001",
@@ -12667,6 +12707,38 @@
       "captured_text": "## CMP242\n\nU576 — Codex, 21 septembre 2026. [Proposition de nom](../modeles/backlog/master-plan-application-U575.yaml), section naming_review_U576. Laurent accepte le regroupement sous réserve du nom, retire Master de celui-ci et refuse Application pour éviter une lecture informatique. Plan Implementation, mise en œuvre du plan, est proposé. ELM593 apporte un appui lexical historique Oracle ; ELM594 un rapprochement fonctionnel Microsoft. Aucun des deux ne prouve un consensus sur cet intitulé de capacité. ELM566 conserve l’appui fonctionnel à la transmission et au suivi des recommandations.\n\nBénéfice : expliciter le passage des recommandations autorisées aux effets pris en compte. Plan Execution pourrait englober les opérations physiques ; Plan Release pourrait être lu comme la seule transmission. Ces comparaisons sémantiques sont une appréciation FLOW. Périmètre et familles d’effets conservés ; aucun changement canonique, nouveau nom adopté ou validation étendue aux autres champs.\n\n\n**Accord U577 — CMP242 :** Laurent valide le nom Plan Implementation, dans le périmètre du comportement de mise en œuvre discuté. Les rapprochements documentaires gardent leurs limites ; l’accord de nom ne crée ni consensus marché ni validation globale des champs."
     },
     {
+      "id": "CMP243",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp243",
+      "line": 2357,
+      "content_sha256": "fb615c36051e13698d4787ed9d100a3b02c46b2ba26813d0f86c6540542a1c09",
+      "captured_text": "## CMP243\n\nU578 — Codex, 22 septembre 2026. Révision de la [proposition Master Plan Management](../modeles/backlog/master-plan-application-U575.yaml), section revision_U578 ; modèle canonique inchangé. ELM585 Oracle Batch Run Plan 26B et ELM582 Microsoft Cancel a planning job relus : cadrage, programmation, lancement, arrêt et nouveau calcul documentés à maille fonctionnelle. ELM595 apporte les filtres de périmètre et les calculs immédiats, récurrents ou successifs Microsoft. ELM566 Oracle et ELM413 Microsoft relus : observation des suites non prises en compte et recommandations face aux changements ; recouvrement partiel avec suivi et ajustement métier. Les sources ne prouvent pas une reprise au point exact d’interruption.\n\nChoix FLOW : remplacer le comportement agrégé Planning Management par cinq comportements directs, sur instruction explicite de Laurent. Bénéfice : distinguer leurs résultats et frontières ; compromis : pilotage plus fin au niveau landscape. La règle générale contre un comportement par bouton subsiste ; cette décomposition locale ne constitue pas une taxonomie marché. Monitor Plan observe ; Adjust Plan prépare une révision ; Rerun Planning démarre un nouveau calcul. L’ajustement conserve autorisation et application distinctes.\n\nPlan Version Management sort de la liste des comportements par instruction U578 ; gestion des variantes et historique restent fonctionnels. Apply Plan remplace le nom Plan Implementation par instruction explicite. Ces choix de granularité et de nom ne sont ni un standard universel ni une innovation revendiquée. Les nouvelles traductions anglaises et définitions restent proposées ; le nom Apply Plan et le retrait ont leur portée explicite. Les onze familles d’effets et les responsables opérationnels sont conservés."
+    },
+    {
+      "id": "CMP244",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp244",
+      "line": 2366,
+      "content_sha256": "02bb8f3b668e494ff780a8efc2033acd9e3634a979f428db6be2caeb49b2dfc4",
+      "captured_text": "## CMP244\n\nU579 — Codex, 22 septembre 2026. [Contenu des décisions de Master Planning](../modeles/backlog/master-planning-structure-U568.yaml), section decision_content_U579. Proposition de décomposition de Fulfillment Plan Decision D03.o ; aucune mutation canonique. La précédente synthèse développait surtout la gestion du plan ; les responsabilités décisionnelles existaient mais leur lecture détaillée restait insuffisante.\n\nELM458 SAP Exploring Backorder Processing et ELM363 Oracle Start Backlog Planning 26B directement relus : réexamen du carnet, disponibilités et priorités. BOP modifie aussi les confirmations ; son périmètre traverse décision, application et engagement FLOW. ELM222 Allocation et ELM223 Steps in Order Allocation Run relus dans le texte primaire indexé SAP ERP Fashion ; ouverture directe sans texte exploitable. Spread répartit les ressources entre besoins ; FIFO est une autre politique, ARun le processus plus large. Ne pas confondre ce sens avec le fractionnement d’Orders ou la redistribution physique entre sites.\n\nProposition : Demand Coverage, Scarce Supply Distribution et Backlog Reconciliation, trois comportements combinables sous D03.o. Le premier établit la couverture, le second traite le partage en cas de rareté, le troisième réexamine les couvertures du carnet. Appuis fonctionnels partiels, libellés et maille FLOW proposés ; le fait d’avoir deux documents SAP sur spread ne démontre pas un consensus. Les prévisions restent dans le plan selon U565, sans leur attribuer une prise en charge dans le BOP cité.\n\nLes autres capacités contribuent au même plan : priorités, cibles, protections proposées, implantation, réassort, redistribution, achats (décision proposée U573/U574). Bénéfice : montrer les arbitrages concrets sans recréer des plans autonomes. Compromis : comportements combinables plutôt que phases exclusives ; conserver leur articulation. Apply Plan fait appliquer les résultats autorisés ; son regroupement ne retire pas les décisions de répartition. Aucun nouveau nom ou placement adopté par extension."
+    },
+    {
+      "id": "CMP245",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp245",
+      "line": 2377,
+      "content_sha256": "83bc76cb654758f8756bee842c268b75a21dfd415a4e9fa2e6ab1a3472e8e5c1",
+      "captured_text": "## CMP245\n\nU580 — Codex, 22 septembre 2026. [Comparaison des noms d’Area](../modeles/backlog/master-planning-structure-U568.yaml), section area_naming_review_U580. Comparaison au niveau du périmètre métier entier, sans déduire le nom de la somme des comportements de gestion. ELM596–599 et relecture ELM552 : Microsoft Master Planning, SAP Response and supply planning, Oracle Supply Planning et Demand and Supply Plan. Ces intitulés couvrent déjà la construction et l’adaptation de réponses demande-ressources, au-delà de l’administration d’un plan.\n\nELM597 situe Plan review and reconciliation dans le processus S&OP ; interprétation FLOW : Reconciliation peut évoquer une étape de convergence plus qu’un ensemble d’arbitrages opérationnels. ELM552/598 étayent les arbitrages sous contraintes et les objectifs de service, stock et économie ; le nom exact Demand & Supply Optimization n’est pas établi comme catégorie commune dans ce corpus. Recommandation Codex entre les deux options de Laurent : Demand & Supply Optimization, pour exprimer la finalité multidimensionnelle. Demand & Supply Planning reste une alternative lexicalement plus directement étayée, notamment chez Oracle.\n\nBénéfice : distinguer finalité de l’Area et capacité de gestion du plan. Compromis : intitulé FLOW assumé ; définition excluant garantie d’optimum et extension implicite au pilotage commercial de la demande. Demand Planning, configurations et responsabilités opérationnelles ne changent pas par le nom. Demande exploratoire, aucun renommage adopté ni modification canonique ; marché et recommandation distingués."
+    },
+    {
+      "id": "CMP246",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp246",
+      "line": 2386,
+      "content_sha256": "cc352f19b5b5118d2bc5115678b1bd991dd74f0ae3309b4f23e2bf91b2a95f09",
+      "captured_text": "## CMP246\n\nU581 — Codex, 22 septembre 2026. [CTP et achats du plan commun](../modeles/backlog/master-planning-structure-U568.yaml), section ctp_and_procurement_U581. ELM417/588 Microsoft et ELM566 Oracle relus directement. Batch CTP s’appuie sur le plan dynamique pour les dates ; master planning produit des Planned Orders, transformés en Orders par firming. Oracle transmet les recommandations nouvelles ou révisées et expose les exceptions aval. Aucun de ces documents ne garantit de rendre toutes les promesses existantes réalisables.\n\nInterprétation FLOW : autoriser au cadrage les adaptations prévues par les politiques externes, mobiliser CTP pour leur faisabilité, puis coordonner leur choix dans le plan commun. La décision d’achat proposée reste distincte de CTP ; Apply Plan mobilise les responsables des Orders et engagements. Les achats pour prévisions ou stocks ne nécessitent pas chacun un contrôle CTP de commande client. Limites : délais et ressources peuvent rendre une date intenable ; proposition d’achat, engagement fournisseur et couverture effective distincts. Recommandation de fonctionnement proposée, pas activation logicielle ni adoption globale."
+    },
+    {
       "id": "CMP003",
       "path": "marche/comparaisons.md",
       "anchor": "",
@@ -17417,6 +17489,46 @@
       "line": 4836,
       "content_sha256": "6605978246dbffaf24a7f19e84f77c9f48dd75ea0893a231f0aebf6f35a40cd3",
       "captured_text": "### ELM594\n\nMKT14 — [About planning functionality](https://learn.microsoft.com/en-us/dynamics365/business-central/production-about-planning-functionality). Documentation évolutive ; mise à jour 2026-06-03. Document primaire directement consulté le 21 septembre 2026. Passage : Planning worksheets and requisition worksheets > Requisition worksheet ; Working with multilevel orders. Nature : Mécanisme produit de mise en œuvre des propositions ; identifiant natif non indiqué.\n\nReformulation : Les propositions de planification sont prises en charge par Carry Out Action Message, avec suites de création ou transmission selon le type de demande. Limite : Appui fonctionnel ; Microsoft ne nomme pas cette fonction Plan Implementation et le périmètre ne couvre pas toutes les familles FLOW. Synthèse sélective et lien ; CMP242."
+    },
+    {
+      "id": "ELM595",
+      "path": "marche/elements.md",
+      "anchor": "elm595",
+      "line": 4843,
+      "content_sha256": "5bcea097276ce8690cc1e80c6fe527ae48f4fa79e72acfe50eac2bd8de651e27",
+      "captured_text": "### ELM595\n\nMKT14 — [Run planning for a subset of items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters). Microsoft Dynamics 365 SCM, Planning Optimization ; documentation évolutive, mise à jour affichée 2023-09-29. Document primaire indexé consulté le 22 septembre 2026. Passages : Apply a plan filter ; Apply a runtime filter and set the BOM levels to include ; Combine plan filters and runtime filters. Identifiant natif non indiqué.\n\nReformulation : filtre de périmètre, calcul immédiat ou récurrent et exemples de calculs successifs. Limite : fonctions produit ; ni décomposition métier identique ni reprise au point d’arrêt démontrées. Synthèse et lien ; CMP243."
+    },
+    {
+      "id": "ELM596",
+      "path": "marche/elements.md",
+      "anchor": "elm596",
+      "line": 4850,
+      "content_sha256": "eed5b2e7c14447ec0677bbf954564dd312a5c67988eb8819559544e7302f19ac",
+      "captured_text": "### ELM596\n\nMKT14 — [Master planning home page](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-planning-home-page). Microsoft ; Documentation évolutive ; mise à jour affichée 2026-03-26. Consulté le 22 septembre 2026. Passage : Introduction ; main planning processes. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.\n\nReformulation : Master Planning détermine les besoins nets et les apports à préparer ; sa portée dépasse le pilotage du calcul. Limite : Vocabulaire de module ERP, avec contexte industriel ; pas une équivalence exacte de périmètre FLOW. Synthèse et lien ; CMP245."
+    },
+    {
+      "id": "ELM597",
+      "path": "marche/elements.md",
+      "anchor": "elm597",
+      "line": 4857,
+      "content_sha256": "380d7386caa061c5d9e8e192707f9abdcd269d4181d079fc15ed2fd1eb97cf6b",
+      "captured_text": "### ELM597\n\nMKT24 — [What is sales and operations planning (S&OP)?](https://www.sap.com/india/resources/sop-sales-and-operations-planning). SAP ; Page évolutive ; édition non indiquée. Consulté le 22 septembre 2026. Passage : How does the S&OP process work? ; Plan review and reconciliation. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.\n\nReformulation : Reconciliation apparaît dans une étape de revue, simulation et convergence entre plans de demande et de supply. Limite : Contexte S&OP ; ne démontre pas un intitulé transversal unique pour BOP, répartition et achats. Synthèse et lien ; CMP245."
+    },
+    {
+      "id": "ELM598",
+      "path": "marche/elements.md",
+      "anchor": "elm598",
+      "line": 4864,
+      "content_sha256": "47d64e225afd9febcd3b9a98002f6c5702c8bb826da35d91964b8672b35846b8",
+      "captured_text": "### ELM598\n\nMKT20 — [Oracle Supply Planning](https://www.oracle.com/scm/supply-chain-planning/supply-planning/). Oracle ; Page produit évolutive ; édition non indiquée. Consulté le 22 septembre 2026. Passage : Balance global demand and supply ; Honor customer commitments ; Respond to changing business conditions. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.\n\nReformulation : Supply Planning couvre équilibre demande-ressources, arbitrages du carnet, scénarios et recommandations d’approvisionnement. Limite : Périmètre produit plus large, incluant production et capacité ; pas une taxonomie de capacités FLOW. Synthèse et lien ; CMP245."
+    },
+    {
+      "id": "ELM599",
+      "path": "marche/elements.md",
+      "anchor": "elm599",
+      "line": 4871,
+      "content_sha256": "1353e30e238c089d0a427993cbedd51de054020574ce67067d9bfc3d77f1fe18",
+      "captured_text": "### ELM599\n\nMKT20 — [Run a Supply Plan or an Integrated Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/run-a-supply-plan-or-an-integrated-plan.html). Oracle ; 26B. Consulté le 22 septembre 2026. Passage : Introduction ; Scope Options. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.\n\nReformulation : Demand and Supply Plan désigne un plan intégré combinant prévisions et planification de supply. Limite : Appui au terme Planning et à un périmètre intégré, pas au nom exact Demand & Supply Optimization. Synthèse et lien ; CMP245."
     },
     {
       "id": "ELM003",

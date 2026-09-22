@@ -96,7 +96,7 @@ def loads(text, suffix='.yaml'):
 _cache = OrderedDict()
 _cache_bytes = 0
 _cache_lock = RLock()
-_CACHE_LIMIT = 32 * 1024 * 1024
+_CACHE_LIMIT = 128 * 1024 * 1024
 _CACHE_ENTRIES = 128
 # An implementation/runtime change invalidates persisted parses, including the
 # JSON-only contract and alias/duplicate rejection. Source bytes are always read.
@@ -135,7 +135,9 @@ def read(path):
             value = loads(content.decode('utf-8-sig'), path.suffix)
             if use_disk:
                 parsed_cache.put(disk_key, value)
-        if len(content) <= _CACHE_LIMIT:
+        # A single large context must not evict the working set of small models.
+        # Larger documents still benefit from the independent disk cache.
+        if len(content) <= _CACHE_LIMIT // 2:
             _cache[key] = (value, len(content))
             _cache_bytes += len(content)
             while _cache_bytes > _CACHE_LIMIT or len(_cache) > _CACHE_ENTRIES:

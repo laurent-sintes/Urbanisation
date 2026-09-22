@@ -1,0 +1,336 @@
+id: inventory-planning-intentions-U543
+date: '2026-09-21'
+author: Codex
+status: aggregate_challenged_replacement_candidates_proposed
+source_refs:
+- U543
+- U537
+- U538
+- U542
+- CMP223
+- ELM375
+- ELM369
+- ELM450
+- ELM451
+- U544
+- CMP224
+- U545
+user_direction: Partir des intentions plutôt que du seul objet Inventory pour la maille des capacités Planning.
+previous_node:
+  id: D05.f
+  revision: 6
+  kind: capability
+  fields:
+    name: Inventory Planning
+    definition: Construire des scénarios alternatifs de stock, simuler et analyser leurs conséquences, puis adapter le scénario
+      en cours à partir des faits, en mobilisant les décisions spécialisées et les capacités responsables de sa mise en action.
+    finality: Choisir et maintenir une trajectoire de stock cohérente, reliée à sa mise en action et aux faits observés.
+    nature: planning
+    scope: |-
+      Construire des scénarios alternatifs de stock, puis simuler et analyser leurs effets en mobilisant Inventory Target Decision, Group Protection Decision, Initial Stocking Decision, Replenishment Decision et Stock Redistribution Decision. Ces décisions restent des capacités distinctes. Adapter ensuite le scénario aux faits et aux actions déjà engagées, sans imposer une séquence technique universelle.
+
+      Comparer et apprécier les options, autoriser le scénario avec conditions, appliquer le scénario retenu et suivre sa prise en compte appartiennent au Planning. L’application relève d’un comportement à expliciter dans sa décomposition ; les capacités partenaires conservent leurs responsabilités. Distinguer actions acceptées, refusées ou partiellement appliquées ; une validation du scénario ne prouve pas son application. Supply Protection met à jour les politiques, D04 les Orders et D06 coordonne les prestations et conserve la décision d’adaptation opérationnelle.
+
+      Exemple fictif : construire deux scénarios de couverture magasin à 10 et 15 jours avant une promotion, simuler leurs apports et transferts, analyser les effets sur service, immobilisation et risque, retenir un scénario puis demander les actions nécessaires. Après un retard fournisseur, réviser ce scénario en tenant compte des quantités déjà expédiées. Les horizons restent opérationnels ; prévisions et coûts peuvent être des entrées sans ajouter la planification de saison.
+
+      Les protections utilisées par ce Planning restent configurées et maintenues par Supply Protection. Même lorsqu’un scénario propose de faire évoluer une protection, cette capacité partenaire conserve sa mise en vigueur ; sa mobilisation ne constitue pas une décomposition de Planning.
+    decomposition_rationale: Explorer des alternatives, comprendre leurs conséquences et adapter un scénario engagé changent
+      les pratiques de planification et leur articulation avec l’exécution.
+    market_comparisons:
+    - vendor: Oracle
+      product: Oracle Fusion Cloud SCM
+      source_title: Overview of Simulations for Replenishment Plans
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
+      source_version: 26B
+      source_locator: Types of simulations ; policy values ; supply and demand
+      consulted_on: '2026-09-19'
+      concept_name: What-if simulation
+      scope_summary: Variantes de politique, ressources et demandes.
+      approach_summary: Comparer le plan initial et les effets projetés.
+      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
+        de capacités.
+      element_name: What-if simulation
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Oracle permet de varier politiques, demandes et apports avant application.
+      differences: La page décrit une fonction de plan, pas l’ensemble des responsabilités FLOW.
+      flow_position: 'Préparer et maintenir un scénario de stock cohérent : Inventory Planning construit des alternatives,
+        en examine les effets et adapte le scénario retenu. Il mobilise les décisions spécialisées et les responsables de
+        leur mise en action.'
+      status: proposed
+      source_refs:
+      - U435
+      - U477
+      - ELM370
+      - CMP190
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Master plans overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+      source_version: Documentation en ligne consultée le 2026-09-19
+      source_locator: Using master plans ; Freeze ; Action message ; positive and negative days
+      consulted_on: '2026-09-19'
+      concept_name: Master plan
+      scope_summary: Plans alternatifs et adaptation aux besoins.
+      approach_summary: Comparer des hypothèses et encadrer les changements.
+      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
+        de capacités.
+      element_name: Master plan
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Microsoft distingue plans opérationnels et simulations.
+      differences: Un plan produit regroupe aussi des calculs spécialisés que FLOW garde identifiés.
+      flow_position: 'Préparer et maintenir un scénario de stock cohérent : Inventory Planning construit des alternatives,
+        en examine les effets et adapte le scénario retenu. Il mobilise les décisions spécialisées et les responsables de
+        leur mise en action.'
+      status: proposed
+      source_refs:
+      - U470
+      - U471
+      - ELM303
+      - CMP186
+      - U477
+      - ELM415
+      - CMP190
+    - vendor: Oracle
+      product: Fusion Cloud Supply Chain Planning
+      source_title: Manually Release Plan Recommendations
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+      source_version: 26B
+      source_locator: Introduction ; Release ; exceptions
+      consulted_on: '2026-09-21'
+      element_name: Release plan recommendations
+      element_type: Processus ou fonction produit
+      relationship: Appui fonctionnel et méthodologique
+      similarities: Distinguer recommandations, mise en application et exceptions de prise en compte.
+      differences: Le cas Oracle couvre surtout la création ou modification d’Orders Supply ; appui partiel au principe d’application,
+        pas équivalence des affectations FLOW.
+      flow_position: FLOW porte l’application du résultat comme comportement du Planning ; les décisions et configurations
+        consommées restent des responsabilités partenaires. Le catalogue de capacités ne reproduit pas la structure produit.
+      status: proposed
+      source_refs:
+      - U537
+      - ELM566
+      - CMP220
+      - CMP221
+      evidence_limits: Fonctions et parcours produit ; aucune hiérarchie de capacités FLOW ni réalisation Beaumanoir démontrée.
+        Deux pages Oracle ne constituent pas un consensus interéditeurs.
+      concept_name: Release plan recommendations
+      scope_summary: Distinguer recommandations, mise en application et exceptions de prise en compte.
+      approach_summary: Préparer le résultat retenu, le mettre en application et distinguer les écarts de prise en compte.
+    market_inspiration:
+      choice: 'Préparer et maintenir un scénario de stock cohérent : Inventory Planning construit des alternatives, en examine
+        les effets et adapte le scénario retenu. Il mobilise les décisions spécialisées et les responsables de leur mise en
+        action.'
+      flow_scope: Scénarios alternatifs et trajectoire de stock en cours.
+      flow_approach: Articuler hypothèses, résultats, choix et suites opérationnelles.
+      synthesis:
+      - Oracle détaille les variantes à simuler ; Microsoft décrit la coexistence de plans et leurs horizons. Tous deux rendent
+        possible une préparation avant mise en action.
+      - FLOW nomme Inventory Planning la construction et le maintien de cette cohérence. Planning mobilise des décisions ;
+        il n’en devient pas la décomposition hiérarchique.
+      examples:
+      - title: Illustration FLOW — deux niveaux de service
+        situation: Le métier compare un scénario prudent avec davantage de sécurité et un scénario moins immobilisant.
+        outcome: Les effets sur disponibilité, stock et besoins d’apport sont projetés avant le choix.
+        lesson: Retenir un scénario déclenche les responsables utiles ; cela ne signifie pas que toutes les opérations sont
+          déjà réalisées.
+        source_title: Overview of Simulations for Replenishment Plans
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
+        source_refs:
+        - U477
+        - ELM370
+        - CMP190
+  source_refs:
+  - U229
+  - U230
+  - U231
+  - U232
+  - U233
+  - U234
+  - U235
+  - U267
+  - U269
+  - CMP090
+  - U270
+  - U271
+  - CMP091
+  - U283
+  - U284
+  - U290
+  - U313
+  - U316
+  - U435
+  - U455
+  - U458
+  - U470
+  - U471
+  - ELM303
+  - CMP186
+  - U477
+  - CMP190
+  - U537
+  - U538
+  - CMP220
+  source_locator:
+    path: connaissance/35-comportements-inventory-planning.md
+    anchor: inventory-planning
+  review:
+    state: partial
+    note: 'Intégration U290 ; détails éditoriaux proposés. U537/U538 : principe d’application et configuration extérieure
+      explicité ; aucun nouveau comportement détaillé créé automatiquement.'
+  adoption_ids: []
+  editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
+    antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.
+    U316 : distinction implantation/réassort intégrée ; compléments éditoriaux proposés. État antérieur : audits/2026-09-18-initial-stocking/model-before.yaml.'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-17T13:33:45.906642Z'
+    recorded_by: Codex
+    source_refs:
+    - U235
+    - U269
+    - U290
+    validated_fields:
+    - name
+    value_sha256:
+      name: 33ef0de57eb8aa9f0238723c77317ddb150848881542e8cf2cca0cbbfddb3128
+    note: Intégration U290 ; détails éditoriaux proposés.
+  last_modified: '2026-09-21T11:17:10.629494Z'
+market_sources:
+- id: ELM375
+  reference: MKT60
+  title: Solution specifications
+  url: https://help.nextail.co/en/solution-specifications
+  edition: Page évolutive, sans édition indiquée
+  passage: First Allocation ; Replenishment ; Store Transfers
+  finding: Trois familles fonctionnelles distinguent distribution initiale, alimentation continue et transferts entre magasins.
+  limit: Structure de solutions Nextail, pas hiérarchie universelle de capacités ; les fonctions mêlent prévision, décision
+    et application.
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Famille fonctionnelle ou processus produit
+  reuse: Synthèse sélective et liens ; pas de reproduction substantielle.
+- id: ELM369
+  reference: MKT20
+  title: Overview of Inventory Rebalancing
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+  edition: Oracle 26B
+  passage: Introduction ; planned orders ; interaction with replenishment
+  finding: Oracle rééquilibre des excédents vers des manques dans un replenishment plan, avant le calcul des apports ; les
+    résultats sont pris en compte par le réassort.
+  limit: Le regroupement produit Oracle diffère de Nextail. Ne prouve pas des capacités séparées, une séquence universelle
+    ou une absence de recouvrement métier.
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Famille fonctionnelle ou processus produit
+  reuse: Synthèse sélective et liens ; pas de reproduction substantielle.
+- id: ELM450
+  reference: MKT13
+  title: Explaining Replenishment
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-replenishment_e87c10d4-3590-45a7-ad87-b04ed6e34bd7
+  edition: Cours évolutif SAP S/4HANA Fashion, sans édition indiquée
+  passage: Replenishment scenario ; Replenishment Monitor and Follow-on Document Generation
+  finding: Le réassort détermine des besoins à partir de la situation de stock et peut produire des demandes ou commandes
+    selon la source d’approvisionnement.
+  limit: Le périmètre inclut magasins et autres destinataires ; pas de limitation automatique de Replenishment Decision FLOW
+    aux seuls magasins.
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Famille fonctionnelle ou processus produit
+  reuse: Synthèse sélective et liens ; pas de reproduction substantielle.
+- id: ELM451
+  reference: MKT13
+  title: Explaining Retail Allocation Management
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca
+  edition: Cours évolutif SAP S/4HANA Fashion, sans édition indiquée
+  passage: Merchandise Distribution Concept ; Scenario ; Store Distribution
+  finding: SAP illustre une implantation initiale de collection, des allocations pendant la vente puis un rappel de reliquats
+    ; quantités et dates sont planifiées.
+  limit: Retail Allocation couvre plusieurs intentions ; le sens est distribution commerciale vers les magasins, pas identité
+    avec Supply Assignment FLOW. Le rappel ne prouve pas seul une capacité autonome de consolidation.
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Famille fonctionnelle ou processus produit
+  reuse: Synthèse sélective et liens ; pas de reproduction substantielle.
+candidate_capabilities:
+- name: Replenishment Planning
+  intention: Entretenir la disponibilité pendant la commercialisation, notamment le réassort des magasins.
+  result: Plan des apports successifs et de leurs ajustements, puis mise en application de la part retenue.
+  decision_refs:
+  - D05.e
+  - D05.a
+  market_refs:
+  - ELM375
+  - ELM450
+  - ELM369
+  name_position: Replenishment Planning est attesté chez Oracle et SAP ; périmètre exact de la capacité FLOW proposé.
+  boundary: 'Ne pas réduire silencieusement D05.e au magasin : sa portée actuelle inclut d’autres stocks du réseau et des
+    compléments fournisseur. Le destinataire ou la source ne suffit pas à créer une capacité par variante.'
+- name: Inventory Rebalancing
+  intention: Corriger les déséquilibres entre lieux en réutilisant le stock existant.
+  result: Plan des transferts retenus entre sites et application des changements autorisés.
+  decision_refs:
+  - D05.c
+  market_refs:
+  - ELM375
+  - ELM369
+  name_position: Inventory Rebalancing est employé par Oracle et rapproché de Store Transfers par Nextail. Sa qualification
+    Planning et son autonomie dans FLOW restent proposées.
+  boundary: Un transfert peut servir le réassort ; le rééquilibrage vise l’arbitrage collectif donneurs/bénéficiaires. Les
+    effets retenus doivent alimenter le plan de réassort pour éviter des apports redondants.
+- name: Initial Stocking Planning
+  intention: Constituer le stock de départ requis pour un lancement.
+  result: Plan des apports initiaux par magasin et échéance, puis mise en application de la part retenue.
+  decision_refs:
+  - D05.g
+  - D05.a
+  market_refs:
+  - ELM375
+  - ELM451
+  name_position: 'Marché : First Allocation ou Initial Allocation. Initial Stocking Planning est une formulation candidate
+    cohérente avec Initial Stocking Decision déjà adoptée, pas un intitulé standard démontré.'
+  boundary: L’implantation reste distincte des apports continus ; le résultat porte la mise en place initiale, pas l’assortiment
+    commercial ni la promesse des commandes.
+consolidation_question:
+  intent: Regrouper des stocks dispersés, reconstituer des assortiments utiles ou concentrer des reliquats.
+  current_location: Stock Redistribution Decision D05.c, comportement Stock Consolidation BHV025.
+  status: Intention supplémentaire à éprouver avant de créer une capacité Planning autonome.
+  evidence_refs:
+  - ELM451
+  - ELM369
+  evidence_limits: 'Rappel de reliquats chez SAP et possibilité de sweep location chez Oracle : appuis partiels à des opérations,
+    pas preuve suffisante d’un planning autonome couvrant tout le périmètre FLOW.'
+  criterion: Un plan propre, un résultat recherché distinct et un bénéfice de pilotage justifieraient une capacité ; une simple
+    modalité de redistribution ne suffit pas.
+recommended_structure:
+  direction: Remplacer à terme l’agrégat D05.f par des capacités explicites selon les intentions retenues, sans maintenir
+    Inventory Planning comme parent obligatoire ou capacité générique doublon.
+  parent: Le parent des capacités candidates reste à décider ; le rejet du nom Inventory Planning ne déplace pas automatiquement
+    les activités vers l’Area Planning et ne renomme pas Inventory Optimization.
+  planning_decision: Les capacités Planning mobilisent les décisions existantes. Pas de copie de décision, ni de Planning
+    systématique pour chaque Decision.
+  application: Chaque Planning porte l’application de son résultat comme comportement selon U537 ; configurations, gestion
+    des Orders et coordination restent partenaires selon U538.
+  coordination: Prendre en compte rééquilibrage, apports initiaux et apports continus déjà retenus ; un besoin ou une ressource
+    ne doit pas être engagé deux fois. Cette coopération ne nécessite pas automatiquement une nouvelle capacité Inventory
+    Planning.
+canonical_status: D05.f reste présent pour préserver les identifiants et mécanismes. Réserve courante sur son nom et son agrégation
+  ; accord nominal historique conservé dans previous_node. Aucun candidat créé, aucun mécanisme déplacé ou supprimé.
+supersedes_in_scope: La proposition Inventory Plan Application U542 est suspendue tant que son parent agrégé est en réexamen
+  ; le principe d’application sous Planning reste retenu.
+market_conclusion: 'La distinction des intentions est documentée ; leur séparation en capacités Planning autonomes relève
+  d’une proposition FLOW. Les éditeurs les regroupent différemment : aucun consensus de structure ou innovation revendiqué.'
+followup_U544:
+  analysis_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml
+  direction: 'Alternative à la scission : Inventory Optimization Planning pour arbitrer plusieurs ajustements vers un stock
+    adapté. Option proposée, aucun renommage adopté ; les candidats par intention restent une alternative.'
+followup_U545:
+  result: D05.f renommé Inventory Optimization Planning ; nom et définition présentés adoptés contextuellement. Maintien d’un
+    plan arbitrant plusieurs ajustements, pas de scission U543 intégrée.
+  remaining: Comportement détaillé d’application et propositions sur Demand Planning / plan de couverture encore à instruire.
+  adoption_ref: modeles/backlog/inventory-optimization-planning-option-U544.yaml#adoption_U545

@@ -1,0 +1,553 @@
+id: model-consolidation-U560
+date: '2026-09-21'
+source_refs:
+- U560
+- U559
+- CMP234
+status: mise en œuvre terminée et contrôlée ; neuf constats résolus dans le modèle de travail, un partiellement résolu
+authority: Exécution autonome de la proposition U559 ; choix de travail Codex. Aucun accord champ par champ nouvellement attribué
+  à Laurent.
+baseline: audits/2026-09-21-model-consolidation-U560/model-before.yaml
+model_before_sha256: 95967519172f1946b23bd371f877df127d22b6a591ddbaa5ad509b133e9e6f46
+changed_nodes:
+- id: universe-supply
+  fields:
+  - scope
+- id: D02.b
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D02.c
+  fields:
+  - market_inspiration
+  - scope
+- id: D02.e
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D03.k
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D03.l
+  fields:
+  - market_inspiration
+  - scope
+- id: D04.i
+  fields:
+  - scope
+- id: D04.j
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D04.k
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D04.o
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D05.c
+  fields:
+  - scope
+- id: D05.f
+  fields:
+  - market_comparisons
+  - scope
+- id: D15
+  fields:
+  - market_inspiration
+  - scope
+- id: D03
+  fields:
+  - market_inspiration
+  - scope
+- id: D03.n
+  fields:
+  - market_inspiration
+  - scope
+- id: D05.h
+  fields:
+  - market_inspiration
+  - scope
+- id: BHV036
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: D03.o
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: BHV077
+  fields:
+  - scope
+- id: D03.p
+  fields:
+  - market_comparisons
+  - scope
+- id: D04.s
+  fields:
+  - market_comparisons
+  - market_inspiration
+- id: BHV091
+  fields:
+  - market_comparisons
+- id: BHV092
+  fields:
+  - market_comparisons
+- id: D17.a
+  fields:
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: BHV094
+  fields:
+  - market_comparisons
+  - market_inspiration
+- id: BHV095
+  fields:
+  - market_comparisons
+  - market_inspiration
+changed_relations:
+- id: REL-NEEDS-U290-011
+  operation: qualified
+  source_id: D02.c
+  target_id: D02.b
+- id: REL-NEEDS-U290-055
+  operation: qualified
+  source_id: D04.j
+  target_id: D04.o
+- id: REL-NEEDS-U290-061
+  operation: qualified
+  source_id: D04.k
+  target_id: D04.o
+- id: REL-RESERVATION-POLICY-APPLICATION
+  operation: qualified
+  source_id: D02.c
+  target_id: D05.h
+- id: REL-NEEDS-U378-03
+  operation: qualified
+  source_id: D03.o
+  target_id: D03.k
+- id: REL-NEEDS-U378-05
+  operation: qualified
+  source_id: D03.o
+  target_id: D03.l
+- id: REL-U560-DEMAND-KNOWN-ORDERS
+  operation: added
+  source_id: D17.a
+  target_id: D04.i
+- id: REL-U560-INVENTORY-DEMAND-PLAN
+  operation: added
+  source_id: D05.f
+  target_id: D17.a
+- id: REL-U560-PROTECTION-RESERVATION-POLICY
+  operation: added
+  source_id: D02.b
+  target_id: D05.h
+- id: REL-U560-COMMITMENT-COLLECTIVE-PLAN
+  operation: added
+  source_id: D03.n
+  target_id: D03.o
+source_dispositions:
+- origin: BHV045
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html
+- origin: BHV045
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html
+- origin: BHV046
+  url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+- origin: BHV046
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- origin: BHV047
+  url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://help.sap.com/docs/PRODUCT_ID/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html
+- origin: BHV047
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  destination: D02.e
+  outcome: comparaison conservée ou reprise avec portée adaptée ; lecture historique qualifiée pour SAP
+  current_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+- origin: BHV088
+  url: https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://help.sap.com/docs/SUPPORT_CONTENT/sapo/3354622357.html
+- origin: BHV088
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauco/overview-of-supply-orchestration.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauco/overview-of-supply-orchestration.html
+- origin: BHV089
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+- origin: BHV089
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/overview-of-backlog-management-processes.html
+  destination: D04.s
+  outcome: Édition actuelle présentée dans le successeur ; ancienne édition et apport conservés en baseline et dans edition_consolidations.
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+- origin: BHV090
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+- origin: BHV090
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+- origin: BHV093
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+- origin: BHV093
+  url: https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5
+  destination: D04.s
+  outcome: comparaison conservée ou reprise ; modes de sollicitation et suivi expliqués à la maille du successeur
+  current_url: https://help.salesforce.com/s/articleView?id=ind.spd_fulfillment_flows.htm&language=en_US&type=5
+edition_consolidations:
+- node_id: BHV091
+  historical_entry:
+    source_title: Key Actions on Orders
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+    source_version: Oracle Fusion Cloud SCM 25D
+    source_locator: Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions
+    consulted_on: '2026-09-19'
+    evidence_limits: Documentation primaire consultée. Actions de produit, sans adoption des boutons, d’une séquence obligatoire
+      ou d’une définition universelle du comportement.
+    source_refs:
+    - ELM357
+    - U501
+    - CMP202
+    vendor: Oracle
+    product: Backlog Management
+    element_name: Simulation / Review Actions
+    element_type: Concept et fonctionnement documentés
+    relationship: Recouvrement partiel
+    similarities: L’étude peut rester sans application.
+    differences: Les attributs Oracle ne définissent pas tous les critères FLOW.
+    flow_position: Simulation & Analysis conduit l’étude des scénarios comme comportement de Order Backlog Planning ; les
+      décisions spécialisées en calculent les résultats, sans double simulation dans la gestion de demande.
+    status: proposed
+    concept_name: Simulation / Review Actions
+    scope_summary: Comparaison de résultats de planification.
+    approach_summary: Examiner des hypothèses sans modifier les échéances effectives.
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/key-actions-on-orders.html
+  rationale: Même document, édition actuelle au premier plan ; preuve antérieure conservée.
+- node_id: BHV092
+  historical_entry:
+    source_title: Overview of Backlog Management Processes
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/overview-of-backlog-management-processes.html
+    source_version: Oracle Fusion Cloud SCM 25D
+    source_locator: Planning ; Reviewing ; Simulating ; Releasing
+    consulted_on: '2026-09-19'
+    evidence_limits: Documentation primaire consultée. Publication de résultats vers Order Management ; pas équivalence avec
+      une approbation humaine ou l’application des affectations FLOW.
+    source_refs:
+    - ELM496
+    - U501
+    - CMP202
+    vendor: Oracle
+    product: Backlog Management
+    element_name: Release of planning results
+    element_type: Concept et fonctionnement documentés
+    relationship: Recouvrement partiel
+    similarities: Une proposition n’a pas immédiatement d’effet opérationnel.
+    differences: Une release Oracle ne prouve pas une approbation humaine.
+    flow_position: Scenario Authorization porte le choix d’appliquer, faire revoir ou abandonner le scénario dans Order Backlog
+      Planning. Il reste distinct du calcul de Fulfillment Plan Decision et de l’Order Release porté par Lifecycle.
+    status: proposed
+    concept_name: Release of planning results
+    scope_summary: Passage du résultat étudié à son utilisation.
+    approach_summary: Garder la simulation distincte de la publication.
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  rationale: Même document, édition actuelle au premier plan ; preuve antérieure conservée.
+- node_id: D03.p
+  historical_entry:
+    vendor: Oracle
+    product: Fusion Cloud SCM 25D
+    element_name: Interactive backlog planning
+    concept_name: Interactive backlog planning
+    element_type: Concept ou mécanisme métier documenté dans un produit
+    relationship: Recouvrement partiel
+    scope_summary: Hypothèses et résultats du carnet.
+    approach_summary: Simuler, comparer et préparer la transmission.
+    similarities: Préparer un scénario avant sa prise en charge.
+    differences: Le parcours Oracle possède ses propres actions de release.
+    flow_position: Order Backlog Planning porte le travail demandé, l’étude et l’actualisation des scénarios, leurs suites
+      autorisées et l’application des affectations. Décisions, configuration et engagements partenaires gardent leurs responsabilités.
+    source_title: Key Actions on Orders
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+    source_version: Oracle Fusion Cloud SCM 25D
+    source_locator: Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions
+    consulted_on: '2026-09-19'
+    evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+    status: proposed
+    source_refs:
+    - U414
+    - ELM247
+    - CMP158
+    - U477
+    - ELM357
+    - CMP191
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/key-actions-on-orders.html
+  rationale: Même document, édition actuelle au premier plan ; preuve antérieure conservée.
+- node_id: D04.s
+  historical_entry:
+    source_title: Overview of Backlog Management Processes
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/overview-of-backlog-management-processes.html
+    source_version: Oracle Fusion Cloud SCM 25D
+    source_locator: Planning ; Reviewing ; Simulating ; Releasing
+    consulted_on: '2026-09-19'
+    evidence_limits: Documentation primaire consultée. Publication de résultats vers Order Management ; pas équivalence avec
+      une approbation humaine ou l’application des affectations FLOW.
+    source_refs:
+    - ELM496
+    - U501
+    - CMP202
+    - U560
+    - CMP234
+    vendor: Oracle
+    product: Backlog Management
+    element_name: Planning the backlog
+    element_type: Concept et fonctionnement documentés
+    relationship: Recouvrement partiel
+    similarities: Une échéance ou une initiative explicite peut engager l’étude du carnet sans autoriser automatiquement les
+      changements.
+    differences: Le parcours Oracle ne prescrit pas nos comportements.
+    flow_position: FLOW suit le travail demandé à Order Backlog Planning, depuis son motif et son périmètre jusqu’à sa conclusion.
+      Impondérable, revue périodique et initiative sont des modalités ; les activités d’étude et d’application conservent
+      leurs comportements propres.
+    status: proposed
+    concept_name: Planning the backlog
+    scope_summary: Planification et examen des résultats.
+    approach_summary: Séparer étude et publication.
+  current_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  rationale: Même document, édition actuelle au premier plan ; preuve antérieure conservée.
+preserved:
+- Tous les identifiants, noms et parents courants.
+- Référentiels, catalogue Information, glossaires et principes.
+- Publications historiques et accords antérieurs.
+working_decisions:
+- id: DEC1
+  topic: Gouvernance de la politique de réservation
+  recommendation: Reservation Policy Decision détermine les conditions ; Supply Protection les configure, les maintient et
+    les rend applicables ; Reservation applique la politique active aux engagements individuels.
+  node_ids:
+  - D05.h
+  - D02.b
+  - D02.c
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Réutilise le management des politiques déjà présent, à l’extérieur des Plannings.
+  tradeoff: La couverture de Supply Protection doit expliciter ces politiques sans les confondre avec les protections de groupe
+    ; aucun nouveau comportement imposé par la présence d’un paramètre.
+  market_position: Microsoft et commercetools étayent politiques configurées et application ; le propriétaire Supply Protection
+    est une recommandation de cohérence FLOW, pas une organisation imposée par ces éditeurs.
+  source_refs:
+  - U538
+  - ELM334
+  - ELM412
+  status: appliqué comme choix de travail Codex sous U560 ; pas de validation de Laurent inférée
+- id: DEC2
+  topic: Autorité des décisions de satisfaction
+  recommendation: PTP conserve l’arbitrage économique, Delivery Schedule Decision le choix d’échéancier ; lorsqu’un plan collectif
+    est construit, Fulfillment Plan Decision porte la compatibilité du scénario d’ensemble et appelle le réexamen des résultats
+    incompatibles. Fulfillment Commitment conserve l’autorité de proposer, confirmer ou réviser les engagements selon les
+    conditions applicables.
+  node_ids:
+  - D03.k
+  - D03.l
+  - D03.o
+  - D03.n
+  - D15
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Évite des choix localement valides mais collectivement incompatibles en conservant les décisions spécialisées.
+  tradeoff: Aucune fusion, pondération universelle ou obligation de construire un plan collectif pour toute réponse de promesse
+    ; l’application et les engagements restent distincts du résultat calculé.
+  market_position: Oracle et Microsoft illustrent les compromis et le travail collectif, sans prescrire cette répartition
+    de responsabilités FLOW.
+  source_refs:
+  - ELM372
+  - ELM393
+  - ELM496
+  status: appliqué comme choix de travail Codex sous U560 ; pas de validation de Laurent inférée
+- id: DEC3
+  topic: Affectations aux besoins sans commande
+  recommendation: Confirmer Supply Assignment sur les commandes identifiées. Pour chaque besoin prévisionnel historique, distinguer
+    anticipation de demande (Demand Planning), ajustement de stock (Inventory Optimization Planning), protection d’accès (Supply
+    Protection) ou demande déjà gérée. Ne convertir aucun forecast automatiquement en Order.
+  node_ids:
+  - D02.e
+  - D03.p
+  - D17.a
+  - D05.f
+  - D02.b
+  affected_fields:
+  - fields.scope
+  - fields.market_comparisons
+  - fields.market_inspiration
+  - relations
+  benefit: Aligne Supply Assignment et son parent Order Backlog Planning tout en conservant les besoins métier.
+  tradeoff: Les besoins historiques insuffisamment décrits restent explicitement ouverts ; ne pas leur inventer une destination
+    pour fermer l’audit.
+  market_position: Les sources SAP et Oracle consultées étayent l’affectation et le travail du carnet d’Orders ; elles ne
+    suffisent pas à attribuer tous les besoins prévisionnels à un même mécanisme.
+  source_refs:
+  - ELM452
+  - ELM496
+  status: appliqué comme choix de travail Codex sous U560 ; pas de validation de Laurent inférée ; cas historiques non identifiés
+    laissés ouverts
+remaining_open:
+- finding: AUD557-05
+  scope: Cas historiques de besoins prévisionnels non identifiés
+  reason: La frontière cible est précisée ; aucune liste de cas métier suffisamment qualifiée ne permet de garantir leur redistribution
+    exhaustive. Aucun forecast transformé en Order par hypothèse.
+market_access_limits:
+- 'SAP Reassignment et EDQA : ouverture sans texte et recherche primaire ciblée sans résultat exploitable ; passages historiques
+  repris avec leur date et leur limite, sans nouvelle vérification revendiquée.'
+- 'Supply Assignment (ARun) et Supply Assignment Run Workflow using Apps : ouverture directe complémentaire sans texte exploitable,
+  lecture historique et date conservées.'
+checks:
+- audits/2026-09-21-model-consolidation-U560/validation.json
+- audits/2026-09-21-model-consolidation-U560/verification.yaml
+- audits/2026-09-21-model-consolidation-U560/scenario-review.yaml
+model_after_sha256: ef5389e38c2e598ab38bc0a941954a684ed10aedab353689b563979e7a433baf
+finding_outcomes:
+- id: AUD557-01
+  state: resolved_in_working_model
+  evidence:
+  - D04.j.scope
+  - D04.k.scope
+  - D04.o.scope
+  - BHV036.scope
+  - REL-NEEDS-U290-055
+  - REL-NEEDS-U290-061
+  result: Propositions et suites gérées selon leur famille ; retrait ou révision amont sans effacement implicite des engagements.
+- id: AUD557-02
+  state: resolved_in_working_model
+  evidence:
+  - REL-U560-DEMAND-KNOWN-ORDERS
+  - REL-U560-INVENTORY-DEMAND-PLAN
+  result: Entrées connues et consommation de demande publiée reliées explicitement.
+- id: AUD557-03
+  state: resolved_in_working_model
+  evidence:
+  - D02.b.scope
+  - D05.h.scope
+  - D02.c.scope
+  - REL-U560-PROTECTION-RESERVATION-POLICY
+  result: Décision, mise en vigueur et réservation individuelles distinguées ; Supply Protection porte la gouvernance.
+- id: AUD557-04
+  state: resolved_in_working_model
+  evidence:
+  - D03.k.scope
+  - D03.l.scope
+  - D03.o.scope
+  - D15.scope
+  - D03.n.scope
+  - REL-U560-COMMITMENT-COLLECTIVE-PLAN
+  result: Résultats spécialisés, cohérence collective et engagements distingués sans parcours collectif obligatoire.
+- id: AUD557-05
+  state: partially_resolved
+  evidence:
+  - D02.e.scope
+  - D03.p.scope
+  result: Frontière aux commandes identifiées clarifiée ; qualification exhaustive des besoins historiques non identifiés
+    reste ouverte.
+- id: AUD557-06
+  state: resolved_in_working_model
+  evidence:
+  - universe-supply.scope
+  - D03.scope
+  - D05.c.scope
+  - BHV077.scope
+  result: Quatre traces de structures ou formulations remplacées corrigées.
+- id: INS558-01
+  state: resolved_in_working_model
+  evidence:
+  - D02.e.market_comparisons
+  - D02.e.market_inspiration
+  - D04.s.market_comparisons
+  - D04.s.market_inspiration
+  result: Quatorze occurrences documentaires des sept anciens comportements tracées vers leurs successeurs, exemples repris
+    et limites d’accès préservées.
+- id: INS558-02
+  state: resolved_in_working_model
+  evidence:
+  - BHV094.market_inspiration
+  - BHV095.market_inspiration
+  result: Deux synthèses illustrées complètes ajoutées.
+- id: INS558-03
+  state: resolved_in_working_model
+  evidence:
+  - D17.a.market_comparisons
+  - D17.a.market_inspiration
+  result: Approches Oracle/SAP distinguées du choix FLOW ; synthèse au niveau de Demand Planning.
+- id: INS558-04
+  state: resolved_in_working_model
+  evidence:
+  - edition_consolidations
+  result: Éditions regroupées et colonnes Périmètre/Approche différenciées sur les huit fiches concernées et le successeur
+    enrichi.
+structural_checks:
+  nodes: 154
+  relations: 365
+  hierarchy_unchanged: true
+  node_ids_names_and_kinds_unchanged: true
+  excluded_reference_nodes_and_incident_relations_unchanged: true
+  information_catalog_unchanged: true
+  inspiration_syntheses_in_audit_scope: 128
+  source_dispositions_checked: 14
+  identical_scope_approach_rows_in_audit_scope: 0
+report: audits/2026-09-21-model-consolidation-U560/rapport.md
+follow_up_U562:
+  source_refs:
+  - U562
+  - U563
+  - U564
+  - CMP235
+  scope_qualification: 'AUD557-05 : affectation aux prévisions avant commande explicitement attribuée à Supply Assignment.
+    La restriction U560 est remplacée.'
+  remaining_open: Porteur de planification et de décision pour ce cas sans commande ; parent courant non modifié.
+  cases: modeles/backlog/supply-assignment-cases-U562.yaml
+follow_up_U565:
+  source_refs:
+  - U565
+  - U566
+  - CMP236
+  scope_and_planning: 'AUD557-05 qualifié : Supply Assignment couvre les prévisions avant commande et un même Planning D03.p
+    arbitre commandes et prévisions.'
+  remaining_open: Nom du Planning, sans impact sur la responsabilité désormais attribuée.
+  evidence: modeles/backlog/supply-assignment-cases-U562.yaml

@@ -31,6 +31,31 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def copy_verified(source, destination, expected_sha256):
+    """Copy frozen bytes exclusively, checking both the stream and destination.
+
+    No parser/serializer can normalize evidence. A changing source or damaged
+    destination fails before activation; only our newly created file is removed.
+    """
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    created = False
+    try:
+        fingerprint = hashlib.sha256()
+        with source.open('rb') as incoming, destination.open('xb') as outgoing:
+            created = True
+            for chunk in iter(lambda: incoming.read(1024 * 1024), b''):
+                fingerprint.update(chunk)
+                outgoing.write(chunk)
+            outgoing.flush()
+            os.fsync(outgoing.fileno())
+        if fingerprint.hexdigest() != expected_sha256 or digest(destination) != expected_sha256:
+            raise ValueError('Copied artifact hash mismatch: ' + str(source))
+    except BaseException:
+        if created:
+            destination.unlink(missing_ok=True)
+        raise
+
+
 def write(path, document):
     """Create a new artifact exclusively; never replace a released file."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -106,6 +131,14 @@ def compile_snapshot(snapshot, decisions, version, publication_refs):
             adoptions = [d for d in decisions['decisions'] if d['decision_state'] == 'accepted' and d['target']['collection'] == collection and d['target']['id'] == item['id'] and d['target']['revision'] == item['revision']]
             item['adoption_ids'] = [d['id'] for d in adoptions]
             approved = {f for d in adoptions for f in d['target']['approved_fields']}
+            # A deferred agreement must not survive through copied lifecycle
+            # metadata. Preserve the input proof, narrow only the new publication.
+            cycle = item.get('lifecycle')
+            if cycle and set(cycle.get('validated_fields', [])) - approved:
+                cycle['validated_fields'] = [f for f in cycle['validated_fields'] if f in approved]
+                cycle['value_sha256'] = {f: v for f, v in cycle.get('value_sha256', {}).items() if f in approved}
+                if not cycle['validated_fields'] and cycle.get('state') == 'urbanist_validated':
+                    cycle['state'] = 'under_instruction'
             if collection == 'nodes':
                 item['approved_fields'] = sorted(approved)
                 item['proposed_fields'] = sorted(set(item['fields']) - approved)

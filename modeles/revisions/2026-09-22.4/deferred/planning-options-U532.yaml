@@ -1,0 +1,300 @@
+id: planning-options-U532
+date: '2026-09-21'
+author: Codex
+status: option_A_adopted_U533_details_and_audit_open
+source_refs:
+- U532
+- U530
+- U531
+- U528
+- U529
+- Q078
+- CMP217
+- ELM557
+- ELM558
+- ELM559
+- ELM556
+- ELM552
+- U533
+- CMP218
+baseline:
+  path: modeles/backlog/model.yaml
+  sha256: 8f16ec1d83dbaadf5ac693b7693d293af3cc9c290af481e20e547a0d79547074
+  area_id: D17
+  area_name: Supply Planning
+  parent_id: universe-supply
+  canonical_change: false
+as_is_fact:
+  application: MAP
+  statement: Demand Planning dans MAP prend également en compte les précommandes B2B reçues tôt dans le processus d’allocation.
+  source_refs:
+  - U532
+  limits: Statut ferme ou provisoire, sens exact d’allocation, interfaces et effets de consommation des prévisions non établis.
+recommendation:
+  option: A
+  summary: Une Area Planning dans Supply Chain Orchestration, regroupant deux capacités candidates Demand Planning et Supply
+    Planning.
+  rationale: Les deux responsabilités participent au même plan d’ensemble régulièrement actualisé. Les besoins et les possibilités
+    de couverture doivent se confronter sans imposer un Domain transverse non encore défini.
+  benefit: Lisibilité des responsabilités et coopération rapprochée, continuité avec le rattachement U530, sans duplication
+    du même Planning dans plusieurs périmètres.
+  tradeoff: Expliciter ce qui relève de la prévision/du plan de demande, des objectifs commerciaux ou financiers, et du plan
+    de couverture. Deux capacités constituent un point de départ, pas une exhaustivité démontrée.
+option_A:
+  domain: Supply Chain Orchestration
+  area_name_proposed: Planning
+  existing_area_id_if_adopted: D17
+  capabilities_proposed:
+  - name: Demand Planning
+    definition: Construire, comparer et actualiser le plan de demande à couvrir en rapprochant les prévisions, les ventes
+      observées et les demandes déjà connues, dont les précommandes B2B.
+    question: Quels besoins anticipe-t-on, pour quels produits et à quelles échéances ?
+    boundary: Le plan de demande ne crée pas l’engagement client, ne suit pas le cycle de vie de sa commande et ne réalise
+      pas l’affectation Supply. Les statuts des demandes reçues sont conservés.
+    source_refs:
+    - U532
+    - U531
+    - ELM557
+    - ELM556
+  - name: Supply Planning
+    definition: Construire, comparer et actualiser le plan de couverture des besoins par les approvisionnements et ressources
+      mobilisables, en coordonnant les décisions spécialisées.
+    question: Comment couvrir ces besoins, avec quels apports et à quelles échéances ?
+    boundary: Le plan prépare la mise en action par les capacités responsables ; il ne reprend pas automatiquement leurs décisions,
+      l’émission ou le cycle de vie des Orders, les affectations ni les engagements.
+    source_refs:
+    - U530
+    - U529
+    - ELM557
+    - ELM552
+  cooperation: Le plan de demande éclaire la couverture ; les possibilités et écarts Supply alimentent le réexamen des scénarios.
+    Pas de chaîne strictement à sens unique ni de logiciel imposé.
+  name_rationale: Planning est lisible dans le contexte du Domain Supply. Le nom de travail D17 Supply Planning pourrait alors
+    être réservé à la capacité ; aucun renommage automatique.
+  market_comparisons:
+  - vendor: Oracle
+    product: Fusion Cloud Supply Chain Planning
+    element_name: Overview of Supply Chain Planning Plan Types
+    element_type: Périmètre fonctionnel ou type de plan de produit
+    relationship: Recouvrement partiel
+    similarities: Distinguer la demande à anticiper et les moyens Supply pour la couvrir, tout en permettant un plan intégré.
+    differences: Oracle catalogue des types de plans ; les niveaux Area et Capability sont propres à FLOW.
+    flow_position: Proposer une Area Planning contenant Demand Planning et Supply Planning ; conserver les responsabilités
+      opérationnelles spécialisées.
+    source_title: Overview of Supply Chain Planning Plan Types
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+    source_version: 26B
+    consulted_on: '2026-09-21'
+    source_locator: 'Tableau des types de plans : Demand Plan, Supply Plan, Demand and Supply Plan, Sales and Operations Plan,
+      Backlog Plan, Replenishment Plan.'
+    evidence_limits: Types de plans et espaces fonctionnels du produit, pas hiérarchie de capacités ou de Domains FLOW. Ne
+      prescrit ni le nombre de capacités ni leurs parents.
+    status: proposed
+    source_refs:
+    - U532
+    - CMP217
+    - ELM557
+    concept_name: Overview of Supply Chain Planning Plan Types
+    scope_summary: Distinguer la demande à anticiper et les moyens Supply pour la couvrir, tout en permettant un plan intégré.
+    approach_summary: Proposer une Area Planning contenant Demand Planning et Supply Planning ; conserver les responsabilités
+      opérationnelles spécialisées.
+  - vendor: SAP
+    product: Integrated Business Planning — S&OP
+    element_name: Sales and operations planning
+    element_type: Périmètre fonctionnel ou type de plan de produit
+    relationship: Recouvrement partiel
+    similarities: Faire coopérer les plans et comparer leurs conséquences.
+    differences: SAP couvre une coordination commerciale, financière et opérationnelle plus large que le besoin Supply établi
+      ; ce périmètre n’est pas intégré automatiquement.
+    flow_position: Réserver l’hypothèse d’un Domain transverse à une responsabilité explicite de pilotage des plans d’entreprise.
+      La collaboration avec commerce/finance ne suffit pas à imposer ce Domain.
+    source_title: Sales and operations planning
+    source_url: https://www.sap.com/products/scm/integrated-business-planning/features/sales-and-operations-planning.html
+    source_version: Page évolutive ; édition non indiquée
+    consulted_on: '2026-09-21'
+    source_locator: Process orchestration ; Improved internal and external collaboration ; Planning for disruptions ; Explore
+      all capabilities.
+    evidence_limits: Présentation fonctionnelle S&OP, pas preuve d’un Domain PLAN standard séparant Demand Planning et Supply
+      Planning ; n’établit aucune responsabilité installée chez Beaumanoir.
+    status: proposed
+    source_refs:
+    - U532
+    - CMP217
+    - ELM559
+    concept_name: Sales and operations planning
+    scope_summary: Faire coopérer les plans et comparer leurs conséquences.
+    approach_summary: Réserver l’hypothèse d’un Domain transverse à une responsabilité explicite de pilotage des plans d’entreprise.
+      La collaboration avec commerce/finance ne suffit pas à imposer ce Domain.
+option_B:
+  user_proposal: Un Domain PLAN portant Demand Planning et une Area de planification Supply dans Supply Chain Orchestration.
+  when_relevant: Si un périmètre autonome est responsable d’un plan de demande de référence et d’arbitrages d’entreprise partagés
+    entre commerce, finance et Supply, au-delà des besoins d’orchestration étudiés.
+  benefit: Rendre explicite une responsabilité transverse de planification si elle existe ou constitue une cible choisie.
+  tradeoff: Définir une frontière inter-Domains entre prévision, objectifs, plans et engagements, ainsi que leurs révisions.
+    Un seul outil, un horizon long ou une contribution commerciale ne suffit pas.
+  market_limit: Les appuis S&OP/IBP consultés réunissent les équilibres demande, Supply et finance. Ils ne prescrivent pas
+    l’asymétrie consistant à placer seulement Demand Planning dans PLAN.
+  name_position: PLAN est un intitulé large, qui demande une finalité métier précise. Integrated Business Planning pourrait
+    être étudié uniquement si son périmètre transverse est réellement visé ; ce n’est pas un renommage recommandé à ce stade.
+  hierarchy: Si B était retenue, préciser une Area d’accueil de Demand Planning dans le nouveau Domain ; ne pas sauter le
+    niveau Area.
+  market_comparisons:
+  - vendor: SAP
+    product: Integrated Business Planning — S&OP
+    element_name: Sales and operations planning
+    element_type: Périmètre fonctionnel ou type de plan de produit
+    relationship: Recouvrement partiel
+    similarities: Faire coopérer les plans et comparer leurs conséquences.
+    differences: SAP couvre une coordination commerciale, financière et opérationnelle plus large que le besoin Supply établi
+      ; ce périmètre n’est pas intégré automatiquement.
+    flow_position: Réserver l’hypothèse d’un Domain transverse à une responsabilité explicite de pilotage des plans d’entreprise.
+      La collaboration avec commerce/finance ne suffit pas à imposer ce Domain.
+    source_title: Sales and operations planning
+    source_url: https://www.sap.com/products/scm/integrated-business-planning/features/sales-and-operations-planning.html
+    source_version: Page évolutive ; édition non indiquée
+    consulted_on: '2026-09-21'
+    source_locator: Process orchestration ; Improved internal and external collaboration ; Planning for disruptions ; Explore
+      all capabilities.
+    evidence_limits: Présentation fonctionnelle S&OP, pas preuve d’un Domain PLAN standard séparant Demand Planning et Supply
+      Planning ; n’établit aucune responsabilité installée chez Beaumanoir.
+    status: proposed
+    source_refs:
+    - U532
+    - CMP217
+    - ELM559
+    concept_name: Sales and operations planning
+    scope_summary: Faire coopérer les plans et comparer leurs conséquences.
+    approach_summary: Réserver l’hypothèse d’un Domain transverse à une responsabilité explicite de pilotage des plans d’entreprise.
+      La collaboration avec commerce/finance ne suffit pas à imposer ce Domain.
+  - vendor: Oracle
+    product: Fusion Cloud Supply Chain Planning
+    element_name: Overview of Supply Chain Planning Plan Types
+    element_type: Périmètre fonctionnel ou type de plan de produit
+    relationship: Recouvrement partiel
+    similarities: Distinguer la demande à anticiper et les moyens Supply pour la couvrir, tout en permettant un plan intégré.
+    differences: Oracle catalogue des types de plans ; les niveaux Area et Capability sont propres à FLOW.
+    flow_position: Proposer une Area Planning contenant Demand Planning et Supply Planning ; conserver les responsabilités
+      opérationnelles spécialisées.
+    source_title: Overview of Supply Chain Planning Plan Types
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+    source_version: 26B
+    consulted_on: '2026-09-21'
+    source_locator: 'Tableau des types de plans : Demand Plan, Supply Plan, Demand and Supply Plan, Sales and Operations Plan,
+      Backlog Plan, Replenishment Plan.'
+    evidence_limits: Types de plans et espaces fonctionnels du produit, pas hiérarchie de capacités ou de Domains FLOW. Ne
+      prescrit ni le nombre de capacités ni leurs parents.
+    status: proposed
+    source_refs:
+    - U532
+    - CMP217
+    - ELM557
+    concept_name: Overview of Supply Chain Planning Plan Types
+    scope_summary: Distinguer la demande à anticiper et les moyens Supply pour la couvrir, tout en permettant un plan intégré.
+    approach_summary: Proposer une Area Planning contenant Demand Planning et Supply Planning ; conserver les responsabilités
+      opérationnelles spécialisées.
+b2b_interpretation:
+  meaning: Le plan de demande combine anticipation et demandes connues ; Demand Planning ne se réduit pas à une extrapolation
+    statistique des ventes.
+  market_support: Oracle Forecast Processing illustre le rapprochement de prévisions et commandes ouvertes, situé dans le
+    traitement pour Supply Planning. Cela confirme le besoin de cohérence, pas le même mécanisme dans MAP.
+  open: Aucune règle de consommation, de pondération ou d’affermissement des précommandes définie ici.
+  source_refs:
+  - U532
+  - ELM558
+preserved_boundaries:
+- Order Backlog Planning reste dans l’opérationnel (U528).
+- Inventory Planning reste à examiner ; aucune assimilation automatique à Supply Planning.
+- 'Réassort opérationnel : piste U529, sans transfert implicite.'
+- Les décisions spécialisées demeurent distinctes ; les deux capacités de Planning peuvent les mobiliser.
+- La piste PLM reste ouverte ; un produit logiciel ne définit pas un Domain.
+- Aucun chantier commerce anticipé ni extension du catalogue Information.
+market_documents:
+- id: ELM557
+  reference: MKT20
+  title: Overview of Supply Chain Planning Plan Types
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+  version: 26B
+  locator: 'Tableau des types de plans : Demand Plan, Supply Plan, Demand and Supply Plan, Sales and Operations Plan, Backlog
+    Plan, Replenishment Plan.'
+  observation: Oracle distingue prévision collaborative/statistique, plan Supply et plan intégré demande/Supply. Des plans
+    de backlog et de réassort sont aussi distingués.
+  limit: Types de plans et espaces fonctionnels du produit, pas hiérarchie de capacités ou de Domains FLOW. Ne prescrit ni
+    le nombre de capacités ni leurs parents.
+  consulted_on: '2026-09-21'
+  native_id: null
+  evidence_level: primary_passage_consulted
+- id: ELM558
+  reference: MKT20
+  title: Forecast Processing
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/forecast-processing.html
+  version: 26B
+  locator: Introduction ; étape Forecast Consumption ; configuration dans Supply tab.
+  observation: Le traitement destiné au plan Supply rapproche les prévisions et les quantités de commandes de vente ouvertes
+    pour produire une prévision nette.
+  limit: Dans cette page Oracle, ce traitement relève de la préparation pour Supply Planning. Ni équivalence avec les précommandes
+    B2B MAP ni mécanisme identique chez Beaumanoir ; ne fixe pas le placement de la responsabilité FLOW.
+  consulted_on: '2026-09-21'
+  native_id: null
+  evidence_level: primary_passage_consulted
+- id: ELM559
+  reference: MKT24
+  title: Sales and operations planning
+  url: https://www.sap.com/products/scm/integrated-business-planning/features/sales-and-operations-planning.html
+  version: Page évolutive ; édition non indiquée
+  locator: Process orchestration ; Improved internal and external collaboration ; Planning for disruptions ; Explore all capabilities.
+  observation: SAP relie demande, Supply et plans financiers, avec contributions commerciales, marketing, développement, fabrication
+    et finance, et comparaison de scénarios.
+  limit: Présentation fonctionnelle S&OP, pas preuve d’un Domain PLAN standard séparant Demand Planning et Supply Planning
+    ; n’établit aucune responsabilité installée chez Beaumanoir.
+  consulted_on: '2026-09-21'
+  native_id: null
+  evidence_level: primary_passage_consulted
+traceability:
+  status: Option A intégrée U533 au backlog ; option B conservée comme historique non retenu.
+  audit: modeles/backlog/planning-model-audit-U533.yaml
+  release: Aucune publication exécutée ; accords enregistrés champ par champ.
+history_before_U533:
+  status: comparison_and_recommendation_not_adopted
+  recommendation:
+    option: A
+    summary: Une Area Planning dans Supply Chain Orchestration, regroupant deux capacités candidates Demand Planning et Supply
+      Planning.
+    rationale: Les deux responsabilités participent au même plan d’ensemble régulièrement actualisé. Les besoins et les possibilités
+      de couverture doivent se confronter sans imposer un Domain transverse non encore défini.
+    benefit: Lisibilité des responsabilités et coopération rapprochée, continuité avec le rattachement U530, sans duplication
+      du même Planning dans plusieurs périmètres.
+    tradeoff: Expliciter ce qui relève de la prévision/du plan de demande, des objectifs commerciaux ou financiers, et du
+      plan de couverture. Deux capacités constituent un point de départ, pas une exhaustivité démontrée.
+  traceability:
+    status: Propositions conservées dans cette annexe ; D17 et son rattachement U530 restent inchangés.
+    release: Les comparaisons sont portées par les options au niveau Area/Domain ; après arbitrage, reporter les champs pertinents
+      sur les fiches canoniques et réexaminer la portée des accords. Aucun contenu publié par cette étude.
+adoption_U533:
+  option: A
+  area_id: D17
+  area_name: Planning
+  capabilities:
+    D17.a:
+      name: Demand Planning
+      definition: Construire et actualiser le plan de demande à couvrir, en rapprochant prévisions, ventes observées et demandes
+        connues, dont les précommandes B2B.
+    D17.b:
+      name: Supply Planning
+      definition: Construire et actualiser le plan de couverture de ces besoins, compte tenu des approvisionnements possibles,
+        des ressources et des contraintes.
+  scope: Noms, responsabilités courtes effectivement présentées et rattachements. Détails de scope, comparaisons et recommandations
+    d’audit non adoptés globalement.
+  intent_ids:
+  - INT-U533-planning-name
+  - INT-U533-demand-planning
+  - INT-U533-demand-parent
+  - INT-U533-supply-parent
+  - INT-U533-planning-parent
+later_reserve_U534:
+  target_id: D17.b
+  fields:
+  - name
+  - definition
+  status: under_review
+  history: Accord U533 conservé dans l’audit ; pas de confirmation active de ces champs tant que la réserve de nom/périmètre
+    reste ouverte.

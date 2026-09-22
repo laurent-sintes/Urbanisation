@@ -52,6 +52,43 @@ def source(identifier, text):
 
 
 class IllustrationBoundaryTests(unittest.TestCase):
+    def test_verified_copy_preserves_bytes_and_never_overwrites(self):
+        with isolated_project() as root:
+            source_path, target = root/'source.yaml', root/'frozen.yaml'
+            content = b'\xef\xbb\xbf# Evidence comment\r\nvalue: "00123"\r\n'
+            source_path.write_bytes(content)
+            publisher.copy_verified(source_path, target, publisher.digest(source_path))
+            self.assertEqual(target.read_bytes(), content)
+            with self.assertRaises(FileExistsError):
+                publisher.copy_verified(source_path, target, publisher.digest(source_path))
+            self.assertEqual(target.read_bytes(), content)
+
+    def test_verified_copy_rejects_stale_source_and_corrupt_destination(self):
+        with isolated_project() as root:
+            source_path, target = root/'source.yaml', root/'frozen.yaml'
+            source_path.write_bytes(b'original')
+            expected = publisher.digest(source_path)
+            source_path.write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                publisher.copy_verified(source_path, target, expected)
+            self.assertFalse(target.exists())
+            with patch.object(publisher, 'digest', return_value='corrupted'):
+                with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                    publisher.copy_verified(source_path, target, hashlib.sha256(b'changed').hexdigest())
+            self.assertFalse(target.exists())
+
+    def test_deferred_approval_does_not_survive_in_lifecycle(self):
+        snapshot = self.snapshot()
+        snapshot['nodes'][0]['lifecycle'] = {'state': 'urbanist_validated',
+            'validated_fields': ['name'], 'value_sha256': {'name': 'historical'}}
+        before = deepcopy(snapshot)
+        result = publisher.compile_snapshot(snapshot, {'decisions': []}, '2099-01-01.1', ['U1'])
+        cycle = result['nodes'][0]['lifecycle']
+        self.assertEqual(cycle['state'], 'under_instruction')
+        self.assertEqual(cycle['validated_fields'], [])
+        self.assertEqual(cycle['value_sha256'], {})
+        self.assertEqual(snapshot, before)
+
     def snapshot(self):
         def node(identifier, state):
             return {'id': identifier, 'revision': 1, 'kind': 'capability',

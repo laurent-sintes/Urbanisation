@@ -1,0 +1,1160 @@
+id: master-plan-application-U575
+date: '2026-09-21'
+source_refs:
+- U575
+- C113
+- CMP241
+- U576
+- CMP242
+- U577
+- U578
+- CMP243
+- ELM595
+- U581
+status: user_revision_U578_integrated_detailed_fields_proposed
+supersedes:
+  annex: modeles/backlog/master-plan-management-market-study-U573.yaml
+  scope: Structure proposée de onze comportements et renommage de Supply Assignment en deux comportements contenant Allocation
+    ; constats marché et cas conservés.
+user_instruction:
+  field: proposed_capability.behaviors[proposal_key=request].name
+  value: Planning Management
+  source_ref: U575
+  interpretation: explicit
+  not_extended_to:
+  - Définition ou périmètre nouveau
+  - Nom et regroupement Master Plan Application
+  - Autres comportements
+  - Nouvelle capacité de décision achat
+  historical_status: Nom U575 conservé comme accord historique ; regroupement remplacé par U578.
+proposed_capability:
+  proposal_key: master-plan-management
+  name: Master Plan Management
+  kind: capability
+  nature: planning
+  parent: proposal:Demand & Supply Optimization
+  definition: Construire et maintenir un plan Supply de référence pour satisfaire les demandes, arbitrer les ressources et
+    faire appliquer les recommandations retenues en suivant leurs résultats.
+  market_refs:
+  - ELM584
+  - ELM585
+  - ELM587
+  - ELM588
+  source_refs:
+  - U570
+  - U572
+  - U573
+  - U574
+  - CMP239
+  - CMP240
+  - U575
+  - CMP241
+  - U578
+  - CMP243
+  decomposition_rationale: 'Dix comportements directs : cinq actes de pilotage explicitement distingués par U578, simulation/analyse,
+    autorisation, suivi, ajustement et mise en œuvre. Aucun sous-comportement. Le suivi et l’ajustement ont des résultats
+    distincts ; le versionnement reste une fonctionnalité.'
+  tradeoff: Pilotage plus fin à la demande de Laurent ; cette granularité locale ne prescrit pas un comportement par bouton
+    dans le reste du modèle.
+  status: proposed
+  behaviors:
+  - proposal_key: scope
+    name: Scope Planning
+    label_fr: Cadrer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Définir la question à traiter, le périmètre, l’horizon et les hypothèses du travail de planification.
+    boundary: Choisir les politiques applicables sans en administrer la configuration.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Délimiter le problème et les objectifs avant de mobiliser les décisions.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: schedule
+    name: Schedule Planning
+    label_fr: Programmer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Déterminer quand lancer le travail de planification, ponctuellement ou selon une récurrence.
+    boundary: Programme le calcul ; ne définit pas les dates de livraison ou la séquence des opérations physiques.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Distinguer le calendrier des calculs du contenu du plan.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: start
+    name: Run Planning
+    label_fr: Lancer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Démarrer le calcul cadré pour construire un résultat de planification.
+    boundary: Le résultat calculé ne vaut ni autorisation ni application du plan.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Distinguer la demande de calcul de la mise en effet de son résultat.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: stop
+    name: Stop Planning
+    label_fr: Arrêter
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Demander et constater l’arrêt d’un calcul de planification devenu inutile ou inapproprié.
+    boundary: Arrêter le calcul ne défait pas les recommandations déjà appliquées et ne suspend pas les Orders.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM582
+    - ELM585
+    market_refs:
+    - ELM582
+    - ELM585
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Maîtriser un travail devenu inutile et connaître son arrêt effectif.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: rerun
+    name: Rerun Planning
+    label_fr: Relancer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Engager un nouveau calcul après une interruption, un échec ou une demande de réexamen.
+    boundary: Relancer ne garantit pas une reprise au point d’arrêt ; la révision du contenu relève de Adjust Plan.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Rendre explicite la reprise du travail, avec réexamen du cadrage si nécessaire.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: simulation
+    name: Simulation & Analysis
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Construire des alternatives et comparer leurs conséquences sur service, promesse, économie, stock et risques
+      pour le même problème Supply.
+    source_refs:
+    - U573
+    - U574
+    - ELM584
+    - ELM587
+    market_refs:
+    - ELM584
+    - ELM587
+    predecessor_ids:
+    - BHV005
+    - BHV006
+    - BHV091
+    decomposition_rationale: Garder ensemble construction des alternatives et lecture de leurs conséquences ; ne pas créer
+      une capacité par simulation.
+    boundary: Les décisions spécialisées calculent les options ; une simulation ne rend pas ses résultats applicables.
+    status: proposed
+  - proposal_key: authorization
+    name: Plan Authorization
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Retenir, refuser ou demander la révision d’un scénario et préciser quelles recommandations sont autorisées
+      à être appliquées.
+    source_refs:
+    - U573
+    - U574
+    - ELM416
+    - ELM566
+    - ELM587
+    market_refs:
+    - ELM416
+    - ELM566
+    - ELM587
+    predecessor_ids:
+    - BHV092
+    decomposition_rationale: Distinguer résultat calculé, référence retenue et autorisation de ses effets ; autorisation humaine
+      ou déléguée.
+    boundary: 'Appuis marché partiels : approbation de Planned Orders, promotion de scénario et release ; aucun workflow humain
+      universel.'
+    status: proposed
+  - proposal_key: monitoring
+    name: Monitor Plan
+    label_fr: Suivre
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour signaler
+      écarts et impondérables.
+    boundary: Le suivi constate et alerte ; il ne modifie ni le plan ni les Orders. Le suivi technique d’un calcul reste une
+      fonctionnalité de pilotage.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM566
+    - ELM413
+    market_refs:
+    - ELM566
+    - ELM413
+    predecessor_ids: []
+    decomposition_rationale: Distinguer le constat des écarts de la décision de réviser le plan.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: adjustment
+    name: Adjust Plan
+    label_fr: Ajuster
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Réviser le contenu du plan face aux écarts et aux impondérables, en mobilisant les décisions spécialisées
+      et, si nécessaire, un nouveau calcul.
+    boundary: La révision respecte protections et engagements ; ses recommandations suivent Plan Authorization puis Apply
+      Plan selon les autorisations applicables.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM413
+    - ELM585
+    market_refs:
+    - ELM413
+    - ELM585
+    predecessor_ids:
+    - BHV016
+    decomposition_rationale: Préparer une réponse cohérente aux changements sans confondre recalcul, autorisation et application.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: application
+    name: Apply Plan
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Faire appliquer les recommandations autorisées du Master Plan retenu, en mobilisant les capacités responsables
+      et en établissant les effets effectivement pris en compte ainsi que les écarts.
+    source_refs:
+    - U537
+    - U572
+    - U574
+    - U575
+    - CMP241
+    - ELM589
+    - ELM363
+    - ELM418
+    - ELM571
+    - ELM574
+    - ELM590
+    - ELM435
+    - ELM496
+    - ELM591
+    - ELM588
+    - ELM566
+    - ELM570
+    - ELM413
+    - ELM421
+    - ELM371
+    - ELM410
+    - ELM592
+    - U576
+    - CMP242
+    - ELM593
+    - ELM594
+    - U577
+    - U578
+    - CMP243
+    market_refs:
+    - ELM589
+    - ELM363
+    - ELM418
+    - ELM571
+    - ELM574
+    - ELM590
+    - ELM435
+    - ELM496
+    - ELM591
+    - ELM588
+    - ELM566
+    - ELM570
+    - ELM413
+    - ELM421
+    - ELM371
+    - ELM410
+    - ELM592
+    - ELM593
+    - ELM594
+    predecessor_ids:
+    - D02.e
+    - BHV094
+    decomposition_rationale: Distinguer le contenu retenu du plan de ses effets effectifs. Les familles d’effets expliquent
+      le périmètre sans devenir des sous-comportements ou des plannings autonomes.
+    boundary: L’application respecte les autorisations et vérifie que les recommandations restent applicables. Les commandes,
+      engagements, réservations et politiques gardent leurs responsables ; une application partielle peut conduire à un réexamen
+      du plan. Aucun retour arrière global ni transaction atomique n’est supposé.
+    status: name_validated_details_proposed
+    market_comparisons:
+    - vendor: Oracle
+      element_name: Release plan recommendations
+      relationship: Recouvrement partiel
+      similarity: Un même processus transmet des recommandations de création, replanification et annulation et permet de suivre
+        les exceptions.
+      difference: Le passage porte sur les Orders ; il ne démontre pas l’application globale de toutes les protections et
+        affectations FLOW.
+      flow_position: Appui au regroupement par application du plan, avec capacités responsables distinctes.
+      source_ref: ELM566
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+      source_version: 26B
+      source_locator: Release process ; results ; requests not processed
+      consulted_on: '2026-09-21'
+      status: proposed
+    - vendor: Microsoft
+      element_name: Firming planned orders
+      relationship: Recouvrement partiel
+      similarity: Transformation des propositions retenues en Orders et suivi de cette transformation.
+      difference: Mécanisme plus étroit que toute l’application du Master Plan ; aucune équivalence avec changements de politiques
+        ou réalisation physique.
+      flow_position: Confirme la frontière entre proposition et prise en charge ; le regroupement de toutes les familles reste
+        une proposition FLOW.
+      source_ref: ELM588
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders
+      source_version: Documentation évolutive ; mise à jour 2025-08-05
+      source_locator: Firming planned orders ; Firming history
+      consulted_on: '2026-09-21'
+      status: proposed
+    name_agreement_history:
+    - source_ref: U577
+      status: explicit_user_instruction
+      field: name
+      value: Plan Implementation
+      verbatim: C'est mieux. Pas folichon. Mais je valide
+      scope: Nom du comportement de mise en œuvre du plan ; principe de regroupement déjà accepté en U576, sans adoption des
+        descriptions développées.
+    name_agreement:
+      source_ref: U578
+      status: explicit_user_instruction
+      field: name
+      value: Apply Plan
+      verbatim: 'Plan Implementation : je préfère Apply Plan'
+      scope: Nom du comportement dans la proposition ; les autres champs conservent leur qualification.
+  functional_support:
+  - name: Plan versioning
+    former_behavior: versions
+    reason: Retiré comme comportement par U578 ; fonctionnalité transverse de gestion des variantes et révisions.
+    responsibilities_preserved: Identifier la référence, ses variantes et leurs hypothèses ; conserver l’historique utile
+      pour simuler, autoriser et suivre le plan.
+    source_refs:
+    - U578
+    - ELM584
+    - ELM586
+application_effects:
+- key: allocate
+  intent: Répartir le stock disponible ou futur entre commandes non couvertes
+  decision:
+  - D03.o
+  - D03.m
+  example: Affecter 80 pièces disponibles à une commande de 100 ; le solde reste à couvrir.
+  market_refs:
+  - ELM589
+  - ELM363
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: reallocate
+  intent: Libérer des affectations modifiables et les attribuer à d’autres commandes
+  decision:
+  - D03.o
+  - D03.m
+  example: Déplacer 20 pièces de A vers B après examen des conséquences sur les deux commandes.
+  market_refs:
+  - ELM418
+  - ELM496
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: forecast
+  intent: Couvrir les prévisions restantes dans le même arbitrage
+  decision:
+  - D03.o
+  example: Partager 500 pièces entre 300 commandées et 300 encore prévues ; aucune double consommation.
+  market_refs:
+  - ELM571
+  - ELM574
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: partial
+  intent: Servir une partie plus tôt, fractionner ou réviser l’échéancier
+  decision:
+  - D03.l
+  - D03.o
+  effect_owners:
+  - D04.n
+  - BHV044
+  - D03.n
+  example: Confirmer 60 pièces vendredi et les 40 restantes ensuite si cette solution est admissible.
+  market_refs:
+  - ELM590
+  - ELM435
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: alternate
+  intent: Changer de site d’expédition ou de mode pour tenir un meilleur échéancier
+  decision:
+  - D03.o
+  - D03.l
+  effect_owners:
+  - D03.n
+  - D04.i
+  example: Retenir un second entrepôt pour une partie de la demande, sans prétendre qu’un déplacement physique a déjà eu lieu.
+  market_refs:
+  - ELM496
+  - ELM591
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: targets
+  intent: Proposer une révision des minima et objectifs de stock
+  decision:
+  - D05.a
+  effect_owners:
+  - D02.b
+  example: Proposer de passer le minimum produit-lieu de 40 à 55, puis appliquer uniquement la valeur retenue.
+  market_refs:
+  - ELM421
+  - ELM371
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: protection
+  intent: Proposer une nouvelle répartition des protections entre groupes
+  decision:
+  - D05.d
+  effect_owners:
+  - D02.b
+  example: Proposer une protection web de 120 au lieu de 150 pour améliorer la satisfaction d’autres demandes.
+  market_refs:
+  - ELM410
+  - ELM592
+  evidence_limit: Les protections et leur modification sont documentées ; leur optimisation conjointe dans le même master
+    plan reste un choix FLOW à spécifier, pas un standard prouvé.
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: buy
+  intent: Proposer puis lancer un nouvel achat
+  decision:
+  - proposal:supply-procurement-decision
+  effect_owners:
+  - D04.j
+  example: Calculer le manque résiduel de 100 pièces, retenir l’achat puis obtenir la prise en charge de la demande correspondante.
+  market_refs:
+  - ELM588
+  - ELM566
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: revise_supply
+  intent: Avancer, reporter, augmenter, réduire ou annuler un approvisionnement
+  decision:
+  - proposal:supply-procurement-decision
+  - D05.e
+  - D05.c
+  effect_owners:
+  - D04.j
+  - D04.k
+  example: Réduire un achat de 300 à 180 après baisse de besoin ; enregistrer un refus fournisseur éventuel.
+  market_refs:
+  - ELM413
+  - ELM570
+  - ELM418
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: replenish
+  intent: Réapprovisionner les magasins ou constituer leur stock initial
+  decision:
+  - D05.e
+  - D05.g
+  effect_owners:
+  - D04.k
+  - D04.j
+  example: Faire partir 25 pièces de la plateforme pour reconstituer la disponibilité d’un magasin.
+  market_refs:
+  - ELM588
+  - ELM566
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+- key: rebalance
+  intent: Rééquilibrer ou regrouper des stocks existants entre sites
+  decision:
+  - D05.c
+  effect_owners:
+  - D04.k
+  example: Transférer 15 pièces d’un magasin en excédent vers un magasin en manque.
+  market_refs:
+  - ELM369
+  - ELM566
+  application_behavior: application
+  modeling_role: Exemple de résultat ou catégorie d’effet ; aucun nœud, niveau ou comportement supplémentaire.
+effect_families:
+- result: Liens ressources-besoins
+  examples:
+  - Affectation initiale aux commandes ou prévisions identifiées
+  - Complément, libération et réaffectation admissibles
+  continuity: D02.e est repris comme contenu de l’application ; la couverture des prévisions U562/U565 est conservée.
+- result: Structure et engagements de satisfaction
+  examples:
+  - Fractionnement
+  - Dates et quantités confirmées ou révisées
+  responsible_ids:
+  - D04.n
+  - BHV044
+  - D03.n
+- result: Demandes d’approvisionnement et Orders
+  examples:
+  - Création
+  - Avancement, report, variation de quantité ou annulation autorisée
+  responsible_ids:
+  - D04.j
+  - D04.k
+  - D04.o
+- result: Politiques applicables
+  examples:
+  - Objectifs/minima de stock retenus
+  - Protections de groupes retenues
+  responsible_ids:
+  - D02.b
+  limit: Le plan propose et fait appliquer les changements autorisés ; administration des politiques extérieure. Calcul optimal
+    conjoint des quotas toujours non démontré.
+clarifications:
+- Supply Assignment était un cas d’application limité aux liens de ressources ; Apply Plan reprend cette responsabilité dans
+  un ensemble plus large. Ce n’est pas un simple synonyme.
+- Les décisions définissant le contenu restent distinctes ; leur regroupement de principe U572 n’est pas remis en cause.
+- Les onze catégories U574 restent documentées comme exemples et couverture fonctionnelle, sans onze capacités ni sous-comportements.
+- La simulation peut conclure sans application ; un arrêt de calcul ne défait pas les effets déjà engagés.
+- U578 remplace Planning Management par cinq comportements directs de Master Plan Management, sans parent intermédiaire.
+- Rerun Planning relance un travail de calcul ; Adjust Plan révise le résultat métier, éventuellement en mobilisant ce recalcul.
+- Plan Version Management est retiré comme comportement ; ses fonctions restent descriptibles sans nouveau niveau hiérarchique.
+market_documents:
+- id: ELM582
+  reference: MKT14
+  vendor: Microsoft
+  title: Cancel a planning job
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/cancel-planning-job
+  version: Documentation évolutive ; 2025-12-30
+  locator: Cancel an active planning job
+  finding: Annulation d’un calcul actif, avec état intermédiaire avant confirmation de l’arrêt.
+  limit: Fermer ou annuler le dialogue initial ne suffit pas. Aucune preuve de pause/reprise du calcul à son point d’arrêt.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM583
+  reference: MKT14
+  vendor: Microsoft
+  title: View plan history and planning logs
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-history-logs
+  version: Documentation évolutive ; 2026-02-26
+  locator: History ; logs ; auto-firming errors
+  finding: Historique des calculs, états et messages ; les erreurs de transformation automatique en Orders ont un journal
+    distinct.
+  limit: Historique de traitements et durée de conservation des logs ne valent pas archivage métier complet des versions.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM584
+  reference: MKT20
+  vendor: Oracle
+  title: Actions to Manage Your Plans
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspf/actions-to-manage-your-plans.html
+  version: 26B
+  locator: Create ; Duplicate ; Compare ; Approve ; Archive ; Release ; View Status Details
+  finding: Gestion des plans, variantes, comparaison, archivage et transmission des recommandations.
+  limit: Actions variables selon le type de plan ; Request Approval est propre au S&OP. Publication de données et application
+    sont distinctes.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM585
+  reference: MKT20
+  vendor: Oracle
+  title: Batch Run Plan
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/batch-run-plan.html
+  version: 26B
+  locator: Specifications ; Parameters for Supply Plan ; Troubleshooting Information
+  finding: Calcul ponctuel ou programmé, rafraîchissement choisi, contrôle du traitement, annulation et relance ; messages
+    d’échec consultables.
+  limit: Fonctions de traitement ; ni arrêt des engagements déjà pris ni atomicité du plan. Approve Plan concerne la prévision
+    dans le cas documenté.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM586
+  reference: MKT13
+  vendor: SAP
+  title: Managing Your Scenarios
+  url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/b28ffdd739bf45678ef36c44e64652d7/3b510369251041b9a3c888854bd60195.html
+  version: IBP 2605, édition affichée par le texte indexé
+  locator: Manage Scenarios ; Copy ; Sync ; Reset ; Delete ; Share
+  finding: Scénarios copiables, partageables, synchronisables et supprimables ; réinitialisation depuis la référence.
+  limit: La synchronisation peut invalider des modifications. Reset du scénario ne défait pas des engagements externes.
+  access: Texte primaire indexé consulté ; ouverture directe sans texte exploitable
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM587
+  reference: MKT13
+  vendor: SAP
+  title: Enhancements to Scenario Management
+  url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/a1759a7d2a544eecbfeb4bc6887211c5/2873fce3d74b4224a69bd20accd12551.html
+  version: IBP 2605 ; Excel add-in 2605.2.0 ; publication 2026-04-30
+  locator: Scenario Promotion ; OBP Planning Runs ; Change Summary
+  finding: Calculs OBP et simulations dans les scénarios harmonisés ; promotion de changements vers la référence avec suivi
+    et justification possibles.
+  limit: Promotion conditionnée par la concurrence des calculs ; pas une preuve d’approbation humaine obligatoire ni de réalisation
+    dans les systèmes d’exécution.
+  access: Texte primaire indexé consulté ; ouverture directe sans texte exploitable
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM588
+  reference: MKT14
+  vendor: Microsoft
+  title: Maintain planned orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders
+  version: Documentation évolutive ; 2025-08-05
+  locator: Planned order status ; Firming planned orders
+  finding: La transformation de Planned Orders crée de vrais Orders ; historique de cette transformation disponible.
+  limit: Le statut d’une proposition ne suffit pas à prouver un engagement fournisseur ni sa réalisation.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM589
+  reference: MKT14
+  vendor: Microsoft
+  title: Make-to-order supply automation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation
+  version: Documentation évolutive ; édition produit non fixée
+  locator: Apply a single level of marking ; Control the pegging sequence
+  finding: Pegging décrit comment le calcul couvre les besoins ; marking établit un lien plus durable. La séquence peut garder
+    les ressources proches pour les demandes tardives.
+  limit: Marking a des effets propres au produit ; aucune équivalence générale avec réservation FLOW. Pas un nom lisible unique
+    couvrant toutes les actions du plan.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM590
+  reference: MKT20
+  vendor: Oracle
+  title: Split Order Lines Based on Date
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/split-order-lines-based-on-date.html
+  version: 26B
+  locator: Exemple 100 unités en deux disponibilités ; restrictions
+  finding: Backlog Management peut prévoir une première livraison partielle, puis le complément à disponibilité.
+  limit: Sous conditions de fractionnement et de date acceptable ; découpage planifié ne prouve ni réservation ni livraison
+    physique.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM591
+  reference: MKT20
+  vendor: Oracle
+  title: Source Items from Different Warehouses
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/source-items-from-different-warehouses.html
+  version: 26B
+  locator: Choose a Warehouse ; Split the Fulfillment Line
+  finding: Changement d’entrepôt et découpage d’une ligne pour satisfaire la demande depuis plusieurs sites.
+  limit: Parcours Order Management documenté ; pas preuve d’une optimisation automatique de ces choix par tout master plan.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM592
+  reference: MKT20
+  vendor: Oracle
+  title: Define a Supply Allocation Rule
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/define-a-supply-allocation-rule.html
+  version: 26B
+  locator: Allocation targets ; stealing protection ; Upload Quantity-Based Supply Allocations
+  finding: Quotas par groupes et périodes, rangs et protection contre la reprise de quantités ; prise en compte dans le backlog.
+  limit: Paramètres saisis/importés et consommation documentés ; optimisation automatique des seuils de groupe non démontrée.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: false
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM416
+  reference: MKT14
+  vendor: Microsoft
+  title: View, manage, and approve planned orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+  version: Documentation évolutive ; 2026-09-02
+  locator: View and edit status ; Approve planned orders ; Avoid approving during a run
+  finding: Approbation facultative d’un Planned Order avant transformation ; préservation lors de calculs ultérieurs, hors
+    modifications concurrentes au calcul.
+  limit: Approbation d’une proposition, pas workflow universel d’autorisation du plan entier.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM418
+  reference: MKT14
+  vendor: Microsoft
+  title: Keep supply for confirmed demand
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  version: 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+  locator: What data is preserved ; Control how on-hand inventory is pegged ; Example scenario 1
+  finding: Préservation configurable des liens aux commandes confirmées ; réaffectation permise dans d’autres cas. Un achat
+    ferme sans besoin peut recevoir une suggestion Cancel.
+  limit: SCM 10.0.48 build 10.0.2645.33+ ; un achat ferme n’est pas supprimé par la disparition de sa demande.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM435
+  reference: MKT14
+  vendor: Microsoft
+  title: Delivery schedules
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  version: Documentation évolutive ; édition non précisée
+  locator: Introduction ; Create delivery schedules ; Manage delivery lines
+  finding: Échéanciers comportant plusieurs quantités, dates et sites sous une ligne commerciale.
+  limit: Mécanisme de tenue des Orders ; le document ne prouve pas son calcul automatique par le master planning.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM421
+  reference: MKT14
+  vendor: Microsoft
+  title: Use the safety stock journal to update minimum coverage for items
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal
+  version: '2025-08-22'
+  locator: Calculate minimum coverage ; Calculate a proposal ; Update minimum
+  finding: Calcul de minima proposés, examen des effets puis mise à jour distincte des minima applicables.
+  limit: Stock de sécurité par produit-lieu ; pas protection d’un canal ni optimisation conjointe de tous les paramètres.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM371
+  reference: MKT20
+  vendor: Oracle
+  title: Policy Assignment Sets
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html
+  version: 26B
+  locator: Policy Parameters — fixed cycle, min-max, ROP/EOQ, PAR
+  finding: Paramètres de politiques servant au calcul de valeurs par produit-lieu dans le réassort.
+  limit: Calcul de politiques de réassort ; pas quotas de protection des clients ou canaux.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM410
+  reference: MKT14
+  vendor: Microsoft
+  title: Inventory Visibility inventory allocation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  version: Documentation en ligne sans édition affichée
+  locator: Business background and purpose ; virtual pool ; Terminology
+  finding: Enveloppes de stock par groupes avant les ventes, avec consommation et réallocation ; distinction de la réservation.
+  limit: Inventory allocation ne désigne pas ici un lien stock-commande ; calcul optimal des quotas non établi.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM369
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Inventory Rebalancing
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html
+  version: 26B
+  locator: Salient Features ; sweep location ; Additional Points
+  finding: Recommandations de mouvements entre lieux en excédent et en manque, avec possibilité de regroupement vers un lieu
+    de collecte.
+  limit: Calcul à la date initiale du plan ; pas adaptation temporelle continue ni déplacement physique réalisé.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM363
+  reference: MKT20
+  vendor: Oracle
+  title: Start Backlog Planning
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  version: Oracle Fusion Cloud SCM 26B
+  locator: Introduction ; When to Use
+  finding: Répartition du disponible sur le carnet ; un sous-ensemble ne doit pas ignorer d’autres demandes partageant les
+    mêmes ressources.
+  limit: Backlog de commandes, pas preuve de génération d’achats ni de traitement de prévisions dans ce même processus.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM496
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Backlog Management Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  version: 26B
+  locator: Planning ; Reviewing ; Simulating ; Releasing
+  finding: Simulation de changements de sites, modes, priorités et désengagements ; les résultats ne modifient le scheduling
+    qu’après transmission.
+  limit: Oracle Backlog Management, distinct de Supply Planning ; aucune règle FLOW de priorité importée.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM566
+  reference: MKT20
+  vendor: Oracle
+  title: Manually Release Plan Recommendations
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  version: 26B
+  locator: Introduction ; release process ; exceptions
+  finding: Sélection puis transmission de recommandations nouvelles ou modifiées ; suivi des traitements et des demandes non
+    prises en compte.
+  limit: Transmission réussie et engagement effectif restent distingués ; peut conduire à une demande d’achat selon le parcours.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM570
+  reference: MKT20
+  vendor: Oracle
+  title: Automatic Release Options
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/automatic-release-options.html
+  version: 26B
+  locator: Release Planned Orders Automatically ; Include Rescheduled Supplies
+  finding: Application automatique possible de créations et, selon le type de plan, de replanifications ou annulations.
+  limit: Les options ne se transmettent pas aux copies de simulation ; différences entre Supply et Replenishment Planning.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM303
+  reference: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 Supply Chain Management — Master planning
+  title: Master plans overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  version: Documentation évolutive ; mise à jour affichée 25 mars 2026
+  locator: Using master plans ; Firming ; Negative days
+  access: Réutilisation de la lecture directe du 21 septembre consignée en U567
+  finding: Le master planning peut utiliser un achat existant retardé ou proposer un nouvel achat planifié ; le plan dynamique
+    est lié au CTP.
+  limit: Plusieurs plans et simulations sont possibles ; le document n’impose ni plan technique unique ni optimum mathématique.
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  native_identifier: null
+- id: ELM571
+  reference: MKT20
+  vendor: Oracle
+  title: Review Supplies and Demands with Project Pegging
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/review-supplies-and-demands-with-project-pegging.html
+  version: 26B
+  locator: Review Plan Details — Pegging relationships between supplies and demands of the item
+  finding: Le pegging d’un plan relie des ressources à des commandes et à des prévisions.
+  limit: 'Appui partiel : planification par projet ; pas preuve d’application persistante identique à FLOW.'
+  access: Réutilisation de la lecture directe du 21 septembre consignée en U562
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM574
+  reference: MKT14
+  vendor: Microsoft
+  title: Design details - Balancing supply and demand
+  url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply
+  version: Documentation évolutive ; édition produit non fixée
+  locator: Order-to-order links ; Forecast demand is reduced by sales orders ; Priorities on the demand side
+  finding: Commandes et prévisions restantes participent au besoin ; le lien de calcul se distingue du lien contraignant entre
+    Orders.
+  limit: Business Central ; pas transfert automatique de ses règles de lien vers FLOW.
+  access: Réutilisation de la lecture directe du 21 septembre consignée en U566
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM413
+  reference: MKT14
+  vendor: Microsoft
+  title: Action messages
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  version: Documentation évolutive ; 2026-03-26
+  locator: Select action messages ; BOM example
+  finding: Recommandations d’avancement, report, augmentation ou réduction des apports existants face aux nouveaux besoins.
+  limit: Suggestion et modification sont distinctes ; certaines suites exigent application puis nouveau calcul.
+  access: Document primaire directement consulté
+  consulted_on: '2026-09-21'
+  registry_existing: true
+  nature: Fonction ou processus produit ; aucune taxonomie de capacités déduite
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; pas de reproduction intégrale
+- id: ELM593
+  reference: MKT20
+  vendor: Oracle
+  title: Understanding Oracle Value Chain Planning Integration Base Pack
+  url: https://docs.oracle.com/cd/E26401_01/doc.122/e96000/T669624T669627.htm
+  version: Documentation historique Oracle AIA / Value Chain Planning, contexte AIA 11.3 ; archive EBS 12.2
+  locator: Business Processes > Revise and Implement Plan Recommendations
+  consulted_on: '2026-09-21'
+  access: Document primaire directement consulté
+  finding: Le processus métier nomme la mise en œuvre des recommandations du plan ; les suites comprennent la transmission
+    de plans de production et distribution.
+  limit: Appui lexical historique, pas preuve du nom exact Plan Implementation ni de couverture Fusion actuelle ou de taxonomie
+    universelle.
+  nature: Libellé de processus métier documenté dans un guide produit
+  native_identifier: null
+- id: ELM594
+  reference: MKT14
+  vendor: Microsoft
+  title: About planning functionality
+  url: https://learn.microsoft.com/en-us/dynamics365/business-central/production-about-planning-functionality
+  version: Documentation évolutive ; mise à jour 2026-06-03
+  locator: Planning worksheets and requisition worksheets > Requisition worksheet ; Working with multilevel orders
+  consulted_on: '2026-09-21'
+  access: Document primaire directement consulté
+  finding: Les propositions de planification sont prises en charge par Carry Out Action Message, avec suites de création ou
+    transmission selon le type de demande.
+  limit: Appui fonctionnel ; Microsoft ne nomme pas cette fonction Plan Implementation et le périmètre ne couvre pas toutes
+    les familles FLOW.
+  nature: Mécanisme produit de mise en œuvre des propositions
+  native_identifier: null
+- id: ELM595
+  reference: MKT14
+  vendor: Microsoft
+  title: Run planning for a subset of items
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters
+  version: Documentation évolutive ; mise à jour affichée 2023-09-29
+  locator: Apply a plan filter ; Apply a runtime filter and set the BOM levels to include ; Combine plan filters and runtime
+    filters
+  consulted_on: '2026-09-22'
+  access: Document primaire indexé consulté
+  finding: Périmètre de calcul filtré ; exécution immédiate ou récurrente ; plusieurs calculs successifs illustrés.
+  limit: Fonctions produit, pas une taxonomie de comportements ; aucune reprise au point exact d’interruption démontrée.
+  nature: Fonctions documentées de Planning Optimization
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+market_position: Les mécanismes sont étayés par Oracle et Microsoft ; leur séparation en dix comportements est une adaptation
+  FLOW demandée en U578. Apply Plan est le nom choisi par Laurent, sans consensus lexical revendiqué.
+canonical_hierarchy_changed: false
+agreement_recording: Accords de la proposition conservés avec champs exacts et historique. Aucun nœud canonique de cette décomposition
+  n’existe encore ; record_decision.py sera utilisé sur les valeurs correspondantes lors de leur matérialisation, sans attribuer
+  ces accords aux anciens nœuds.
+report: audits/2026-09-21-master-plan-management-U573/revision-U575.md
+naming_review_U576:
+  source_ref: U576
+  previous_name: Master Plan Application
+  proposed_name: Plan Implementation
+  french_meaning: Mise en œuvre du plan
+  rationale: Désigne le passage des recommandations autorisées aux effets pris en compte, sans répéter Master ni employer
+    Application.
+  definition: Mettre en œuvre les recommandations autorisées du plan en mobilisant les capacités responsables et en vérifiant
+    les effets effectivement pris en compte.
+  alternatives:
+  - name: Plan Execution
+    assessment: Compréhensible, mais peut inclure la réalisation physique des livraisons ou opérations ; moins précis pour
+      la frontière retenue.
+  - name: Plan Release
+    assessment: Établi chez Oracle, mais peut évoquer seulement la transmission des recommandations ; plus étroit que le résultat
+      attendu FLOW.
+  - name: Plan Activation
+    assessment: Peut évoquer une simple mise en service ou un changement de statut ; ne décrit pas suffisamment les effets.
+  market_refs:
+  - ELM593
+  - ELM594
+  - ELM566
+  market_position: Appui lexical historique Oracle et rapprochement fonctionnel Microsoft ; aucun consensus sur un nom de
+    capacité identique revendiqué.
+  name_status: historical_U577_superseded_by_U578
+  approved_principle:
+    interpretation: contextual
+    source_ref: U576
+    statement: Regrouper la mise en œuvre du plan en un comportement, en conservant les catégories d’effets et les responsables
+      distincts.
+    verbatim: C'est top. Sauf "Master Plan Application".
+    exclusions:
+    - Nom de remplacement
+    - Descriptions complètes des annexes
+    - Autres noms et nouvelle décision achat
+  canonical_recording: Accord de principe en annexe ; aucun champ canonique correspondant à ce comportement consolidé ne peut
+    encore être capturé avec record_decision.py. Ne pas enregistrer la définition plus étroite de D02.e comme accord sur le
+    plan complet.
+  name_agreement_source: U577
+naming_note: audits/2026-09-21-master-plan-management-U573/naming-U576.md
+last_updated: '2026-09-22'
+revision_U578:
+  source_ref: U578
+  date: '2026-09-22'
+  previous_state:
+    git_commit: a373ce3262bd693ff6e49336edf65c9aaf37a766
+    path: modeles/backlog/master-plan-application-U575.yaml
+  explicit_instructions:
+  - field: planning_management_decomposition
+    value:
+    - Cadrer
+    - programmer
+    - lancer
+    - arrêter
+    - relancer
+  - field: remove_behavior
+    value: Plan Version Management
+  - field: application.name
+    value: Apply Plan
+  user_suggestion: Distinguer monitoring et ajustement.
+  working_interpretation: Cinq remplaçants directs de Planning Management ; Monitor Plan et Adjust Plan proposés séparément.
+    Libellés anglais sauf Apply Plan et descriptions non adoptés par extension.
+  superseded_behaviors:
+  - proposal_key: request
+    name: Planning Management
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Cadrer la demande de planification, choisir le périmètre et les données de référence, lancer ou programmer
+      le calcul, suivre son avancement, l’arrêter ou le relancer.
+    source_refs:
+    - U573
+    - U574
+    - ELM582
+    - ELM585
+    - ELM583
+    - U575
+    market_refs:
+    - ELM582
+    - ELM585
+    - ELM583
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Piloter un travail pouvant durer, échouer ou devenir inutile ; lancement et arrêt sont des modalités
+      de ce comportement.
+    boundary: Choisit les politiques applicables et leurs versions ; ne les administre pas. Une annulation du calcul ne défait
+      aucune action déjà appliquée.
+    status: proposed
+    name_agreement:
+      source_ref: U575
+      status: explicit_user_instruction
+      field: name
+      value: Planning Management
+      scope: Nom de ce comportement dans la proposition ; pas validation des autres champs ou de la capacité parente.
+  - proposal_key: versions
+    name: Plan Version Management
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Identifier la référence retenue, les scénarios et révisions qui en dérivent, partager leurs hypothèses et
+      conserver ou clôturer leur historique utile.
+    source_refs:
+    - U573
+    - U574
+    - ELM584
+    - ELM586
+    market_refs:
+    - ELM584
+    - ELM586
+    predecessor_ids: []
+    decomposition_rationale: Plusieurs variantes peuvent coexister sans plusieurs références contradictoires.
+    boundary: Pas une version complète immuable garantie par chaque éditeur ; archivage métier à distinguer du journal technique.
+    status: proposed
+  - proposal_key: monitoring
+    name: Plan Monitoring & Replanning
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Comparer le plan retenu aux suites effectivement prises en compte et aux nouvelles conditions, puis préparer
+      sa révision face aux écarts et aux impondérables.
+    source_refs:
+    - U573
+    - U574
+    - ELM566
+    - ELM418
+    - ELM583
+    market_refs:
+    - ELM566
+    - ELM418
+    - ELM583
+    predecessor_ids:
+    - BHV016
+    decomposition_rationale: Conserver le bénéfice d’adaptation, y compris quand l’application est partielle.
+    boundary: Les événements opérationnels et la réalisation physique gardent leurs responsables ; le recalcul mobilise les
+      autres comportements sans sous-comportement.
+    status: proposed
+  preserved_application_effects: 11
+  canonical_hierarchy_changed: false
+  market_review:
+    comparison: CMP243
+    consulted_on: '2026-09-22'
+    rechecked_documents:
+    - ELM582
+    - ELM585
+    - ELM413
+    - ELM566
+    new_document: ELM595
+    limits: Appuis aux mécanismes ; ni catalogue standard de dix comportements ni reprise d’un calcul interrompu garantie.
+      Monitoring ne se réduit pas au statut technique du calcul.
+decision_content_reference:
+  path: modeles/backlog/master-planning-structure-U568.yaml
+  section: decision_content_U579
+  reason: Rendre visible ce que le plan détermine, séparément de la gestion du travail et de Apply Plan.
+  source_refs:
+  - U579
+  - CMP244

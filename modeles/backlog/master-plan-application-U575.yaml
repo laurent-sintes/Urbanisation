@@ -7,7 +7,11 @@ source_refs:
 - U576
 - CMP242
 - U577
-status: implementation_grouping_principle_and_name_validated_detailed_model_proposed
+- U578
+- CMP243
+- ELM595
+- U581
+status: user_revision_U578_integrated_detailed_fields_proposed
 supersedes:
   annex: modeles/backlog/master-plan-management-market-study-U573.yaml
   scope: Structure proposée de onze comportements et renommage de Supply Assignment en deux comportements contenant Allocation
@@ -22,12 +26,13 @@ user_instruction:
   - Nom et regroupement Master Plan Application
   - Autres comportements
   - Nouvelle capacité de décision achat
+  historical_status: Nom U575 conservé comme accord historique ; regroupement remplacé par U578.
 proposed_capability:
   proposal_key: master-plan-management
   name: Master Plan Management
   kind: capability
   nature: planning
-  parent: proposal:Master Planning
+  parent: proposal:Demand & Supply Optimization
   definition: Construire et maintenir un plan Supply de référence pour satisfaire les demandes, arbitrer les ressources et
     faire appliquer les recommandations retenues en suivant leurs résultats.
   market_refs:
@@ -44,42 +49,115 @@ proposed_capability:
   - CMP240
   - U575
   - CMP241
-  decomposition_rationale: Six comportements directs distinguent pilotage du calcul, simulation/analyse, autorisation, versions,
-    suivi/révision et application. Les catégories d’effets du plan ne sont pas une décomposition en sous-comportements.
-  tradeoff: Application regroupée, plus lisible au niveau landscape ; sa description conserve les différents effets, responsables
-    et limites afin de ne pas devenir une boîte noire.
+  - U578
+  - CMP243
+  decomposition_rationale: 'Dix comportements directs : cinq actes de pilotage explicitement distingués par U578, simulation/analyse,
+    autorisation, suivi, ajustement et mise en œuvre. Aucun sous-comportement. Le suivi et l’ajustement ont des résultats
+    distincts ; le versionnement reste une fonctionnalité.'
+  tradeoff: Pilotage plus fin à la demande de Laurent ; cette granularité locale ne prescrit pas un comportement par bouton
+    dans le reste du modèle.
   status: proposed
   behaviors:
-  - proposal_key: request
-    name: Planning Management
+  - proposal_key: scope
+    name: Scope Planning
+    label_fr: Cadrer
     kind: behavior
     parent: proposal:master-plan-management
-    definition: Cadrer la demande de planification, choisir le périmètre et les données de référence, lancer ou programmer
-      le calcul, suivre son avancement, l’arrêter ou le relancer.
+    definition: Définir la question à traiter, le périmètre, l’horizon et les hypothèses du travail de planification.
+    boundary: Choisir les politiques applicables sans en administrer la configuration.
     source_refs:
-    - U573
-    - U574
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Délimiter le problème et les objectifs avant de mobiliser les décisions.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: schedule
+    name: Schedule Planning
+    label_fr: Programmer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Déterminer quand lancer le travail de planification, ponctuellement ou selon une récurrence.
+    boundary: Programme le calcul ; ne définit pas les dates de livraison ou la séquence des opérations physiques.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Distinguer le calendrier des calculs du contenu du plan.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: start
+    name: Run Planning
+    label_fr: Lancer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Démarrer le calcul cadré pour construire un résultat de planification.
+    boundary: Le résultat calculé ne vaut ni autorisation ni application du plan.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Distinguer la demande de calcul de la mise en effet de son résultat.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: stop
+    name: Stop Planning
+    label_fr: Arrêter
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Demander et constater l’arrêt d’un calcul de planification devenu inutile ou inapproprié.
+    boundary: Arrêter le calcul ne défait pas les recommandations déjà appliquées et ne suspend pas les Orders.
+    source_refs:
+    - U578
+    - CMP243
     - ELM582
     - ELM585
-    - ELM583
-    - U575
     market_refs:
     - ELM582
     - ELM585
-    - ELM583
     predecessor_ids:
     - D04.s
-    decomposition_rationale: Piloter un travail pouvant durer, échouer ou devenir inutile ; lancement et arrêt sont des modalités
-      de ce comportement.
-    boundary: Choisit les politiques applicables et leurs versions ; ne les administre pas. Une annulation du calcul ne défait
-      aucune action déjà appliquée.
-    status: proposed
-    name_agreement:
-      source_ref: U575
-      status: explicit_user_instruction
-      field: name
-      value: Planning Management
-      scope: Nom de ce comportement dans la proposition ; pas validation des autres champs ou de la capacité parente.
+    decomposition_rationale: Maîtriser un travail devenu inutile et connaître son arrêt effectif.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: rerun
+    name: Rerun Planning
+    label_fr: Relancer
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Engager un nouveau calcul après une interruption, un échec ou une demande de réexamen.
+    boundary: Relancer ne garantit pas une reprise au point d’arrêt ; la révision du contenu relève de Adjust Plan.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM585
+    - ELM595
+    market_refs:
+    - ELM585
+    - ELM595
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Rendre explicite la reprise du travail, avec réexamen du cadrage si nécessaire.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
   - proposal_key: simulation
     name: Simulation & Analysis
     kind: behavior
@@ -125,48 +203,51 @@ proposed_capability:
     boundary: 'Appuis marché partiels : approbation de Planned Orders, promotion de scénario et release ; aucun workflow humain
       universel.'
     status: proposed
-  - proposal_key: versions
-    name: Plan Version Management
-    kind: behavior
-    parent: proposal:master-plan-management
-    definition: Identifier la référence retenue, les scénarios et révisions qui en dérivent, partager leurs hypothèses et
-      conserver ou clôturer leur historique utile.
-    source_refs:
-    - U573
-    - U574
-    - ELM584
-    - ELM586
-    market_refs:
-    - ELM584
-    - ELM586
-    predecessor_ids: []
-    decomposition_rationale: Plusieurs variantes peuvent coexister sans plusieurs références contradictoires.
-    boundary: Pas une version complète immuable garantie par chaque éditeur ; archivage métier à distinguer du journal technique.
-    status: proposed
   - proposal_key: monitoring
-    name: Plan Monitoring & Replanning
+    name: Monitor Plan
+    label_fr: Suivre
     kind: behavior
     parent: proposal:master-plan-management
-    definition: Comparer le plan retenu aux suites effectivement prises en compte et aux nouvelles conditions, puis préparer
-      sa révision face aux écarts et aux impondérables.
+    definition: Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour signaler
+      écarts et impondérables.
+    boundary: Le suivi constate et alerte ; il ne modifie ni le plan ni les Orders. Le suivi technique d’un calcul reste une
+      fonctionnalité de pilotage.
     source_refs:
-    - U573
-    - U574
+    - U578
+    - CMP243
     - ELM566
-    - ELM418
-    - ELM583
+    - ELM413
     market_refs:
     - ELM566
-    - ELM418
-    - ELM583
+    - ELM413
+    predecessor_ids: []
+    decomposition_rationale: Distinguer le constat des écarts de la décision de réviser le plan.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
+  - proposal_key: adjustment
+    name: Adjust Plan
+    label_fr: Ajuster
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Réviser le contenu du plan face aux écarts et aux impondérables, en mobilisant les décisions spécialisées
+      et, si nécessaire, un nouveau calcul.
+    boundary: La révision respecte protections et engagements ; ses recommandations suivent Plan Authorization puis Apply
+      Plan selon les autorisations applicables.
+    source_refs:
+    - U578
+    - CMP243
+    - ELM413
+    - ELM585
+    market_refs:
+    - ELM413
+    - ELM585
     predecessor_ids:
     - BHV016
-    decomposition_rationale: Conserver le bénéfice d’adaptation, y compris quand l’application est partielle.
-    boundary: Les événements opérationnels et la réalisation physique gardent leurs responsables ; le recalcul mobilise les
-      autres comportements sans sous-comportement.
-    status: proposed
+    decomposition_rationale: Préparer une réponse cohérente aux changements sans confondre recalcul, autorisation et application.
+    status: english_name_and_details_proposed
+    market_position: Recouvrement fonctionnel partiel ; libellé et maille FLOW, sans taxonomie éditeur identique revendiquée.
   - proposal_key: application
-    name: Plan Implementation
+    name: Apply Plan
     kind: behavior
     parent: proposal:master-plan-management
     definition: Faire appliquer les recommandations autorisées du Master Plan retenu, en mobilisant les capacités responsables
@@ -199,6 +280,8 @@ proposed_capability:
     - ELM593
     - ELM594
     - U577
+    - U578
+    - CMP243
     market_refs:
     - ELM589
     - ELM363
@@ -257,14 +340,31 @@ proposed_capability:
       source_locator: Firming planned orders ; Firming history
       consulted_on: '2026-09-21'
       status: proposed
-    name_agreement:
-      source_ref: U577
+    name_agreement_history:
+    - source_ref: U577
       status: explicit_user_instruction
       field: name
       value: Plan Implementation
       verbatim: C'est mieux. Pas folichon. Mais je valide
       scope: Nom du comportement de mise en œuvre du plan ; principe de regroupement déjà accepté en U576, sans adoption des
         descriptions développées.
+    name_agreement:
+      source_ref: U578
+      status: explicit_user_instruction
+      field: name
+      value: Apply Plan
+      verbatim: 'Plan Implementation : je préfère Apply Plan'
+      scope: Nom du comportement dans la proposition ; les autres champs conservent leur qualification.
+  functional_support:
+  - name: Plan versioning
+    former_behavior: versions
+    reason: Retiré comme comportement par U578 ; fonctionnalité transverse de gestion des variantes et révisions.
+    responsibilities_preserved: Identifier la référence, ses variantes et leurs hypothèses ; conserver l’historique utile
+      pour simuler, autoriser et suivre le plan.
+    source_refs:
+    - U578
+    - ELM584
+    - ELM586
 application_effects:
 - key: allocate
   intent: Répartir le stock disponible ou futur entre commandes non couvertes
@@ -438,13 +538,14 @@ effect_families:
   limit: Le plan propose et fait appliquer les changements autorisés ; administration des politiques extérieure. Calcul optimal
     conjoint des quotas toujours non démontré.
 clarifications:
-- Supply Assignment était un cas d’application limité aux liens de ressources ; Master Plan Application reprend cette responsabilité
-  dans un ensemble plus large. Ce n’est pas un simple synonyme.
+- Supply Assignment était un cas d’application limité aux liens de ressources ; Apply Plan reprend cette responsabilité dans
+  un ensemble plus large. Ce n’est pas un simple synonyme.
 - Les décisions définissant le contenu restent distinctes ; leur regroupement de principe U572 n’est pas remis en cause.
 - Les onze catégories U574 restent documentées comme exemples et couverture fonctionnelle, sans onze capacités ni sous-comportements.
-- Planning Management conserve ici le pilotage du travail de planification ; son nouveau nom ne lui attribue pas implicitement
-  tous les autres comportements.
 - La simulation peut conclure sans application ; un arrêt de calcul ne défait pas les effets déjà engagés.
+- U578 remplace Planning Management par cinq comportements directs de Master Plan Management, sans parent intermédiaire.
+- Rerun Planning relance un travail de calcul ; Adjust Plan révise le résultat métier, éventuellement en mobilisant ce recalcul.
+- Plan Version Management est retiré comme comportement ; ses fonctions restent descriptibles sans nouveau niveau hiérarchique.
 market_documents:
 - id: ELM582
   reference: MKT14
@@ -882,12 +983,27 @@ market_documents:
     les familles FLOW.
   nature: Mécanisme produit de mise en œuvre des propositions
   native_identifier: null
-market_position: Regroupement étayé partiellement par release et firming ; maille du comportement et nom Master Plan Application
-  proposés par cohérence FLOW, sans standard universel revendiqué.
+- id: ELM595
+  reference: MKT14
+  vendor: Microsoft
+  title: Run planning for a subset of items
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters
+  version: Documentation évolutive ; mise à jour affichée 2023-09-29
+  locator: Apply a plan filter ; Apply a runtime filter and set the BOM levels to include ; Combine plan filters and runtime
+    filters
+  consulted_on: '2026-09-22'
+  access: Document primaire indexé consulté
+  finding: Périmètre de calcul filtré ; exécution immédiate ou récurrente ; plusieurs calculs successifs illustrés.
+  limit: Fonctions produit, pas une taxonomie de comportements ; aucune reprise au point exact d’interruption démontrée.
+  nature: Fonctions documentées de Planning Optimization
+  native_identifier: null
+  reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+market_position: Les mécanismes sont étayés par Oracle et Microsoft ; leur séparation en dix comportements est une adaptation
+  FLOW demandée en U578. Apply Plan est le nom choisi par Laurent, sans consensus lexical revendiqué.
 canonical_hierarchy_changed: false
-agreement_recording: 'Le nom est adopté dans cette proposition. record_decision.py ne cible que des nœuds ou relations canoniques
-  : ne pas enregistrer le nom courant différent de D04.s comme si Laurent le validait. Transcrire le champ exact lors de la
-  matérialisation de la succession canonique.'
+agreement_recording: Accords de la proposition conservés avec champs exacts et historique. Aucun nœud canonique de cette décomposition
+  n’existe encore ; record_decision.py sera utilisé sur les valeurs correspondantes lors de leur matérialisation, sans attribuer
+  ces accords aux anciens nœuds.
 report: audits/2026-09-21-master-plan-management-U573/revision-U575.md
 naming_review_U576:
   source_ref: U576
@@ -913,7 +1029,7 @@ naming_review_U576:
   - ELM566
   market_position: Appui lexical historique Oracle et rapprochement fonctionnel Microsoft ; aucun consensus sur un nom de
     capacité identique revendiqué.
-  name_status: adopted_U577
+  name_status: historical_U577_superseded_by_U578
   approved_principle:
     interpretation: contextual
     source_ref: U576
@@ -929,3 +1045,116 @@ naming_review_U576:
     plan complet.
   name_agreement_source: U577
 naming_note: audits/2026-09-21-master-plan-management-U573/naming-U576.md
+last_updated: '2026-09-22'
+revision_U578:
+  source_ref: U578
+  date: '2026-09-22'
+  previous_state:
+    git_commit: a373ce3262bd693ff6e49336edf65c9aaf37a766
+    path: modeles/backlog/master-plan-application-U575.yaml
+  explicit_instructions:
+  - field: planning_management_decomposition
+    value:
+    - Cadrer
+    - programmer
+    - lancer
+    - arrêter
+    - relancer
+  - field: remove_behavior
+    value: Plan Version Management
+  - field: application.name
+    value: Apply Plan
+  user_suggestion: Distinguer monitoring et ajustement.
+  working_interpretation: Cinq remplaçants directs de Planning Management ; Monitor Plan et Adjust Plan proposés séparément.
+    Libellés anglais sauf Apply Plan et descriptions non adoptés par extension.
+  superseded_behaviors:
+  - proposal_key: request
+    name: Planning Management
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Cadrer la demande de planification, choisir le périmètre et les données de référence, lancer ou programmer
+      le calcul, suivre son avancement, l’arrêter ou le relancer.
+    source_refs:
+    - U573
+    - U574
+    - ELM582
+    - ELM585
+    - ELM583
+    - U575
+    market_refs:
+    - ELM582
+    - ELM585
+    - ELM583
+    predecessor_ids:
+    - D04.s
+    decomposition_rationale: Piloter un travail pouvant durer, échouer ou devenir inutile ; lancement et arrêt sont des modalités
+      de ce comportement.
+    boundary: Choisit les politiques applicables et leurs versions ; ne les administre pas. Une annulation du calcul ne défait
+      aucune action déjà appliquée.
+    status: proposed
+    name_agreement:
+      source_ref: U575
+      status: explicit_user_instruction
+      field: name
+      value: Planning Management
+      scope: Nom de ce comportement dans la proposition ; pas validation des autres champs ou de la capacité parente.
+  - proposal_key: versions
+    name: Plan Version Management
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Identifier la référence retenue, les scénarios et révisions qui en dérivent, partager leurs hypothèses et
+      conserver ou clôturer leur historique utile.
+    source_refs:
+    - U573
+    - U574
+    - ELM584
+    - ELM586
+    market_refs:
+    - ELM584
+    - ELM586
+    predecessor_ids: []
+    decomposition_rationale: Plusieurs variantes peuvent coexister sans plusieurs références contradictoires.
+    boundary: Pas une version complète immuable garantie par chaque éditeur ; archivage métier à distinguer du journal technique.
+    status: proposed
+  - proposal_key: monitoring
+    name: Plan Monitoring & Replanning
+    kind: behavior
+    parent: proposal:master-plan-management
+    definition: Comparer le plan retenu aux suites effectivement prises en compte et aux nouvelles conditions, puis préparer
+      sa révision face aux écarts et aux impondérables.
+    source_refs:
+    - U573
+    - U574
+    - ELM566
+    - ELM418
+    - ELM583
+    market_refs:
+    - ELM566
+    - ELM418
+    - ELM583
+    predecessor_ids:
+    - BHV016
+    decomposition_rationale: Conserver le bénéfice d’adaptation, y compris quand l’application est partielle.
+    boundary: Les événements opérationnels et la réalisation physique gardent leurs responsables ; le recalcul mobilise les
+      autres comportements sans sous-comportement.
+    status: proposed
+  preserved_application_effects: 11
+  canonical_hierarchy_changed: false
+  market_review:
+    comparison: CMP243
+    consulted_on: '2026-09-22'
+    rechecked_documents:
+    - ELM582
+    - ELM585
+    - ELM413
+    - ELM566
+    new_document: ELM595
+    limits: Appuis aux mécanismes ; ni catalogue standard de dix comportements ni reprise d’un calcul interrompu garantie.
+      Monitoring ne se réduit pas au statut technique du calcul.
+decision_content_reference:
+  path: modeles/backlog/master-planning-structure-U568.yaml
+  section: decision_content_U579
+  reason: Rendre visible ce que le plan détermine, séparément de la gestion du travail et de Apply Plan.
+  source_refs:
+  - U579
+  - CMP244

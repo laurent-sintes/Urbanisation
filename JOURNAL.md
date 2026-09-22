@@ -2359,3 +2359,31 @@ Contribution enregistrée ; principe de regroupement accepté avec réserve sur 
 ## 21 septembre 2026 — Validation de Plan Implementation, U577
 
 Verbatim enregistré puis accord explicite sur le champ name = Plan Implementation conservé dans l’annexe courante, avec contexte et limites. Réserve de nom U576 levée ; portée du regroupement et autres champs inchangés. Aucun nœud canonique correspondant au comportement consolidé n’existe encore : l’accord exact reste en annexe en attendant sa matérialisation, sans enregistrer un accord erroné sur le nom ou périmètre actuel de D02.e. Sources déjà documentées inchangées ; provenance actualisée, validation dans validation-U577.json.
+
+
+## 22 septembre 2026 — Révision des comportements de Master Planning, U578
+
+Contribution enregistrée avant interprétation. Proposition courante actualisée : cinq comportements directs remplacent Planning Management ; suivi et ajustement séparés ; Plan Version Management retiré comme comportement, fonctions conservées ; Apply Plan remplace Plan Implementation. Les accords antérieurs et les comportements remplacés restent tracés ; onze familles d’effets intactes. Libellés anglais hors Apply Plan et descriptions proposés, sans nouvelle hiérarchie canonique.
+
+CMP243 conserve les appuis Oracle/Microsoft relus et leurs limites ; ELM595 ajoute le périmètre filtré et la programmation de calculs Microsoft. Granularité FLOW explicitement distinguée des fonctions éditeurs. Mise à jour des sources puis validation du modèle ; aucun rendu canonique ni test Python requis pour cette révision d’annexe.
+
+
+## 22 septembre 2026 — Rendre visibles les arbitrages du plan, U579
+
+Contribution enregistrée avant interprétation. D03.o couvre déjà le scénario collectif ; sa présentation ne rendait pas visibles couverture, partage des ressources limitées et réexamen du carnet. Proposition de trois comportements dans l’annexe Master Planning, avec capacités contributrices et frontières. CMP244 conserve les relectures SAP BOP, SAP ERP Fashion Spread et Oracle Backlog Planning, leurs recouvrements et différences. Le regroupement Apply Plan conserve les effets, sans absorber les décisions. Noms et décomposition proposés, modèle canonique inchangé.
+
+
+## 22 septembre 2026 — Nom de l’Area de réconciliation et d’optimisation, U580
+
+Contribution enregistrée avant interprétation. Comparaison ciblée SAP/Microsoft/Oracle, cinq documents primaires consignés dans area_naming_review_U580 et CMP245. Master Planning chez Microsoft dépasse la gestion du plan ; reconciliation est notamment une étape S&OP chez SAP. Préférence proposée entre les deux noms de Laurent : Demand & Supply Optimization, avec réserve explicite sur l’absence de titre commun et sans promesse d’optimum. Demand & Supply Planning constitue l’alternative plus directement attestée. Aucun renommage adopté ni changement du modèle canonique ; index actualisé et validation ciblée sur l’état final.
+
+
+## 22 septembre 2026 — Demand & Supply Optimization adopté ; rôle de CTP, U581
+
+Nom d’Area validé dans la proposition et parents harmonisés, sans adoption des autres champs ni migration canonique anticipée. CMP246 documente la distinction entre faisabilité CTP, propositions d’achat, firming/release et engagements sur trois documents Microsoft/Oracle relus. Recommandation de mobilisation selon adaptations autorisées, avec exemple 100 demandées/60 couvertes et limites explicites de date. Ni couverture certaine de toutes les promesses, ni paramétrage ERP réalisé. Accord exact conservé en annexe jusqu’à matérialisation canonique ; sources actualisées et validation de l’état final.
+
+
+<!-- release-run:2026-09-22.4 -->
+## Publication 2026-09-22.4
+
+Sources : U582. État : published. Atlas vérifié : True. Détail : `.runtime/release-runs/2026-09-22.4/completion.md`.

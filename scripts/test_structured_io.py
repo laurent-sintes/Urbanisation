@@ -12,6 +12,17 @@ from scripts.test_publish_release import isolated_project
 
 
 class StructuredIOTests(unittest.TestCase):
+    def test_oversized_entry_does_not_flush_smaller_working_set(self):
+        with isolated_project() as folder, patch.object(structured_io, '_CACHE_LIMIT', 100):
+            structured_io.clear_read_cache()
+            small = folder/'small.yaml'; small.write_text('a: small', encoding='utf-8')
+            large = folder/'large.yaml'; large.write_text('a: ' + 'x'*80, encoding='utf-8')
+            read(small); read(large)
+            with patch.object(structured_io, 'loads', side_effect=AssertionError('Small entry evicted')):
+                self.assertEqual(read(small), {'a':'small'})
+            self.assertLessEqual(structured_io._cache_bytes, 100)
+        structured_io.clear_read_cache()
+
     def test_cache_is_content_based_and_does_not_share_mutations(self):
         with isolated_project() as folder:
             path = folder/'cached.yaml'

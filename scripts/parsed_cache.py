@@ -12,7 +12,8 @@ import re
 import uuid
 
 DIRECTORY = Path(__file__).resolve().parents[1] / '.runtime/parsed-models'
-MAX_BYTES = 64 * 1024 * 1024
+MAX_BYTES = 256 * 1024 * 1024
+MAX_ENTRY_BYTES = 64 * 1024 * 1024
 MAX_ENTRIES = 128
 MISSING = object()
 
@@ -22,7 +23,7 @@ def get(key):
         if DIRECTORY.resolve() != DIRECTORY:
             return MISSING
         path = DIRECTORY / (key + '.json')
-        if path.resolve() != path or path.stat().st_size > MAX_BYTES:
+        if path.resolve() != path or path.stat().st_size > min(MAX_BYTES, MAX_ENTRY_BYTES):
             return MISSING
         header, payload = path.read_bytes().split(b'\n', 1)
         if json.loads(header) != {'key': key, 'sha256': sha256(payload).hexdigest()}:
@@ -40,7 +41,7 @@ def put(key, value):
         payload = json.dumps(value, ensure_ascii=False, allow_nan=False, separators=(',', ':')).encode('utf-8')
         header = json.dumps({'key': key, 'sha256': sha256(payload).hexdigest()}).encode('ascii')
         content = header + b'\n' + payload
-        if len(content) > MAX_BYTES:
+        if len(content) > min(MAX_BYTES, MAX_ENTRY_BYTES):
             return
         DIRECTORY.mkdir(parents=True, exist_ok=True)
         temporary = DIRECTORY / (uuid.uuid4().hex + '.tmp')

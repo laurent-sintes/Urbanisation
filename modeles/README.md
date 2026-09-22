@@ -1,5 +1,7 @@
 # Modèles structurés
 
+Les intentions d’accord non encore publiées peuvent être suspendues explicitement dans `decision-intents.yaml`, sans modifier leur capture historique : `suspensions` précise l’identifiant, le responsable et la date du réexamen, ses sources et sa justification. Une suspension ne crée aucun accord. Les intentions déjà publiées relèvent toujours du parcours de réexamen des décisions ; une suspension figée ne peut pas être effacée ou réécrite.
+
 **Publication courante :** [index](release/index.json) et [restitution générée](../restitutions/release.md). Le [parcours regroupé](#parcours-de-release-regroupé--u504) évite de recopier les compteurs et de refaire les contrôles manuellement.
 
 **Publication U502 : v017 / `2026-09-19.10`.** Service Requests et Backing Services, demande d’optimisation du carnet et six comportements, indicateurs Frontoffice/Backoffice. 48 capacités, 82 comportements, 348 relations et 110 termes métier. Guide méthodologique `.4` associé ; Périmètre lisible sans dépliage. Accords repris dans leur portée, détails éditoriaux proposés. Atlas vérifié, zéro erreur. [Rapport](../audits/2026-09-19-release-U502/rapport.md).
@@ -321,7 +323,9 @@ Le benchmark copie seulement les entrées utiles dans des dossiers jetables sous
 
 `python -m scripts.render_behavior_gap_audit` réutilise un contrôle réussi uniquement si les empreintes des modèles, historiques, preuves protégées, vues et scripts sont identiques. Le checkpoint local est dans `.runtime/behavior-audit-checkpoint.json`, hors Git. Tout changement, disparition, ajout ou cache invalide impose le rejeu. `--full` force ce rejeu ; `--details` affiche toutes les vérifications. Un échec supprime le checkpoint précédent. Une modification d’entrée pendant le contrôle interdit de mémoriser sa réussite. Ce cache de vérification n’accorde aucune validation métier et n’est jamais utilisé par la publication. Python `-O` est refusé pour conserver les assertions.
 
-Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 32 Mio de fichiers sources (les objets Python peuvent occuper davantage). Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.
+Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 128 Mio de fichiers sources (les objets Python peuvent occuper davantage), avec un maximum de 64 Mio par entrée pour préserver les petits documents. Le cache disque est borné à 256 Mio, 128 entrées et 64 Mio par entrée. Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.
+
+La préparation copie les annexes octet pour octet après vérification de leur empreinte. La publication vérifie à nouveau le candidat et les contrats, puis copie les artefacts préparés sans décodage ni réencodage supplémentaire. Les copies sont exclusives, contrôlées à la lecture et après écriture ; l’activation reste la dernière opération. Les anciennes publications et le format des accords ne sont pas modifiés par cette optimisation.
 
 
 ## Améliorations de lecture U458

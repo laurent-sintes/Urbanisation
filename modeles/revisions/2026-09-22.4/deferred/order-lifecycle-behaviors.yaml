@@ -1,0 +1,1498 @@
+id: ORDER-LIFECYCLE-BEHAVIORS-U349
+source_refs:
+- U348
+- U349
+- ELM216
+- CMP125
+- U350
+- U351
+- ELM217
+- CMP126
+- U352
+- ELM218
+- CMP127
+- U353
+- U354
+- ELM219
+- CMP128
+- U355
+- ELM220
+- CMP129
+- U356
+- U357
+- ELM221
+- CMP130
+- U358
+- U359
+- U360
+- ELM222
+- CMP131
+- U361
+- ELM223
+- CMP132
+- U362
+- U363
+- CMP133
+- U383
+parent_id: D04.o
+status: order_types_restored_as_capabilities_U383
+decomposition_rationale: Le passage d’une intention à un ordre ferme change les engagements et la préparation opérationnelle
+  ; la protection contre les réoptimisations stabilise certains résultats tout en limitant les adaptations admissibles. Ces
+  effets distincts justifient deux mécanismes combinables, sans créer un comportement pour chaque transition ni une séquence
+  obligatoire. La complexité ciblée est de préserver ce qui est engagé sans figer inutilement la manière de satisfaire l’Order.
+adoption_U349:
+- node_id: BHV036
+  parent_id: D04.o
+  adopted_fields:
+  - name
+  - definition
+  value_sha256:
+    name: ee9f174c6e0475d74fd1fbb6808456f782ed121996fd59e31e84ce6e5055037b
+    definition: 9ddc650c348d5907af969ef969dac5d26f8a17ef60c7f9a4fed4a8f48ae4f933
+- node_id: BHV037
+  parent_id: D04.o
+  adopted_fields: []
+  value_sha256: {}
+  principle: Protéger les commandes que l’on veut rendre fermes contre les demandes de réoptimisation.
+  principle_source: U347 puis demande d’ajout U349
+  naming_status: editorial_proposal
+  principle_sha256: 33c6499e8f631b666a04ece1a29cc79d1ba8c81cf439c1e6b82997a54fd1a992
+behavior_ids:
+- BHV036
+- BHV037
+proposed_contract_ids:
+- REL-NEEDS-U349-D03.n
+- REL-NEEDS-U349-D02.e
+naming: Order Firming adopté U349 ; Order Freezing adopté U350. Aucune équivalence exacte de périmètre marché déduite.
+remaining_questions:
+- Conditions de levée et de révision par type d’Order.
+- 'Portées de gel selon les cas : résultat promis ou affectation également.'
+- P11 Coordinated Order Release reste à instruire séparément.
+market_comparisons:
+- vendor: SAP
+  product: S/4HANA aATP
+  element_name: Handling Requirements with Fixed Date and Quantity
+  element_type: Mécanisme ou transition métier réalisé par un produit
+  relationship: Recouvrement partiel
+  similarities: Par défaut BOP conserve les confirmations marquées Fixed Date and Quantity et leur attribue Skip.
+  differences: Un segment peut explicitement les inclure dans le contrôle ; ne prouve pas une immutabilité absolue ni le comportement
+    de toute API ARun.
+  source_title: Handling Requirements with Fixed Date and Quantity
+  source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/413e5cf1373142a784f6c04b2caf3fc0.html
+  source_version: 2025 FPS01 (Feb 2026)
+  source_locator: Page entière
+  consulted_on: '2026-09-18'
+  evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+    client démontrée.'
+  flow_position: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order
+    Lifecycle Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent
+    leurs responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+  status: proposed
+  source_refs:
+  - U346
+  - U347
+  - ELM216
+  - CMP124
+  - U349
+  - CMP125
+  - U350
+- vendor: Microsoft
+  product: Dynamics 365 SCM
+  element_name: Firm planned orders
+  element_type: Mécanisme ou transition métier réalisé par un produit
+  relationship: Recouvrement partiel
+  similarities: Affermir transforme des ordres planifiés en commandes effectives achat, transfert ou production.
+  differences: Transition de cycle de vie, pas synonyme de fixation de toutes les données d’une commande client.
+  source_title: Firm planned orders
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  source_version: Documentation évolutive
+  source_locator: Introduction
+  consulted_on: '2026-09-18'
+  evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+    client démontrée.'
+  flow_position: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order
+    Lifecycle Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent
+    leurs responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+  status: proposed
+  source_refs:
+  - U346
+  - U347
+  - ELM216
+  - CMP124
+  - U349
+  - CMP125
+  - U350
+- vendor: Microsoft
+  product: Dynamics 365 SCM
+  element_name: Keep supply for confirmed demand
+  element_type: Mécanisme ou transition métier réalisé par un produit
+  relationship: Recouvrement partiel
+  similarities: Préserve une chaîne liée à une demande confirmée, notamment ordres planifiés et liens de pegging, entre les
+    passages de planification.
+  differences: Comportement paramétré ; la conservation du stock reçu hors positive days exige un paramètre complémentaire.
+    Ne prouve aucun déploiement Beaumanoir.
+  source_title: Keep supply for confirmed demand
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand
+  source_version: 'Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur'
+  source_locator: What data is preserved ; Control how on-hand inventory is pegged ; Interaction with approved planned orders
+  consulted_on: '2026-09-18'
+  evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+    client démontrée.'
+  flow_position: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order
+    Lifecycle Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent
+    leurs responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+  status: proposed
+  source_refs:
+  - U346
+  - U347
+  - ELM216
+  - CMP124
+  - U349
+  - CMP125
+  - U350
+- vendor: Microsoft
+  product: Dynamics 365 SCM
+  element_name: Master plans — Freeze
+  element_type: Mécanisme ou transition métier réalisé par un produit
+  relationship: Recouvrement partiel
+  similarities: Le gel temporel conserve les ordres planifiés dans une fenêtre.
+  differences: Le gel empêche aussi la création de nouveaux ordres planifiés dans cette fenêtre ; différent de protéger une
+    commande individuelle.
+  source_title: Master plans — Freeze
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  source_version: Documentation évolutive
+  source_locator: Freeze ; Firming
+  consulted_on: '2026-09-18'
+  evidence_limits: 'Passages primaires consultés : pages indexées SAP, documentation Microsoft et Drools. Aucune installation
+    client démontrée.'
+  flow_position: 'U349 : affermissement et protection contre les réoptimisations sont deux comportements distincts sous Order
+    Lifecycle Management. Le gel porte sur les éléments explicitement protégés ; Promise Management et Supply Assignment gardent
+    leurs responsabilités. Order Freezing est le nom adopté U350 ; aucun consensus marché à ce périmètre exact n’est revendiqué.
+    Correspondance proposée.'
+  status: proposed
+  source_refs:
+  - U346
+  - U347
+  - ELM216
+  - CMP124
+  - U349
+  - CMP125
+  - U350
+adoption_U350:
+  node_id: BHV037
+  adopted_fields:
+  - name
+  value_sha256:
+    name: 59f75cf35f198bfcb3ff1b1a63162725a34aecfb76e13aaf74cf96e27196b8dd
+  scope: Validation du nom uniquement ; principe et parent conservés U349.
+coverage_review_U351:
+  status: integrated_U363
+  statement: Firming et Freezing sont un premier lot adopté, pas la décomposition complète du cycle de vie.
+  existing_behavior_ids:
+  - BHV036
+  - BHV037
+  proposals:
+  - id: OL-RELEASE
+    name: Order Release
+    parent_id: D04.o
+    status: integrated_U363
+    definition: Autoriser la prise en charge de tout ou partie d’un Order lorsque ses conditions de lancement sont satisfaites.
+    differentiating_criterion: Mécanisme métier avec effets distincts sur engagements, progression ou terminaison
+    decomposition_rationale: Séparer l’engagement ferme de l’autorisation de mobiliser les opérations ; permettre une libération
+      partielle ou conditionnelle.
+    example: 'Exemple fictif : Un transfert de 100 pièces devient ferme ; seules 60 sont autorisées à partir, les 40 autres
+      attendent.'
+    boundary: D06 orchestre les prestations autorisées ; le début physique est un fait d’exécution. Le lancement coordonné
+      P11 reste une variante à instruire, pas adopté par extension.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Release to warehouse
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: La libération de ventes et transferts vers l’entrepôt prépare les objets logistiques nécessaires au traitement.
+      differences: Mise en œuvre WMS spécifique ; FLOW distingue autorisation métier et orchestration/réalisation des prestations.
+      source_title: Release to warehouse
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+      source_version: Documentation évolutive
+      source_locator: Release to warehouse process
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+  - id: OL-HOLD
+    name: Order Hold & Resume
+    parent_id: D04.o
+    status: integrated_U363
+    definition: Suspendre une progression désignée pour un motif métier puis permettre sa reprise lorsque les conditions de
+      levée sont réunies.
+    differentiating_criterion: Mécanisme métier avec effets distincts sur engagements, progression ou terminaison
+    decomposition_rationale: Maintenir le besoin tout en évitant un traitement prématuré ; préserver la portée des autres
+      blocages.
+    example: 'Exemple fictif : Un magasin ne peut pas réceptionner : mettre le transfert en attente d’expédition, puis lever
+      ce motif lorsque le magasin est prêt.'
+    boundary: Une levée n’efface pas les autres blocages et ne constate pas un redémarrage physique. Hold bloque la progression
+      ; Freezing protège contre modification.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Manage order holds
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Mise en attente avec motifs, conditions de levée et effet configurable sur les réservations ; progression
+        logistique bloquée.
+      differences: Le checkout du hold est un verrou logiciel distinct. Les effets de réservation sont paramétrés, pas une
+        conséquence universelle du Hold.
+      source_title: Manage order holds
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds
+      source_version: Documentation évolutive
+      source_locator: Introduction ; Set up order hold codes ; Manage orders on hold
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+    - vendor: Oracle
+      product: Fusion Cloud Order Management
+      element_name: Hold Your Sales Orders
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: 'Un hold peut viser une étape de traitement : les autres étapes peuvent avancer jusqu’au point bloqué.'
+      differences: Le modèle FLOW décrit portée et effets métier ; il ne copie pas les tâches d’orchestration Oracle.
+      source_title: Hold Your Sales Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+      source_version: 26B
+      source_locator: Introduction ; How Holds Work
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+  - id: OL-RESCHEDULE
+    name: Order Rescheduling
+    parent_id: D04.o
+    status: integrated_U363
+    definition: Appliquer un changement autorisé d’échéance du besoin porté par l’Order et en rendre explicites les effets
+      à traiter.
+    differentiating_criterion: Mécanisme métier avec effets distincts sur engagements, progression ou terminaison
+    decomposition_rationale: Recaler dans le temps un besoin maintenu, sans annuler/recréer systématiquement la commande ni
+      confondre les différentes dates.
+    example: 'Exemple fictif : Reporter au lundi l’échéance demandée des 40 pièces restantes d’un transfert.'
+    boundary: Le choix du meilleur échéancier reste une décision spécialisée ; Promise Management révise la promesse et D06
+      adapte les prestations. Reporter ne lève pas une attente.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Action messages
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Suggestions Advance/Postpone de changement d’échéances sur des ordres existants.
+      differences: Suggestion et application distinctes. Ne prouve pas une capacité autonome de calcul d’échéancier sous Lifecycle.
+      source_title: Action messages
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+      source_version: Documentation évolutive
+      source_locator: Introduction ; Select action messages
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+  - id: OL-CANCEL
+    name: Order Cancellation
+    parent_id: D04.o
+    status: integrated_U363
+    definition: Retirer de manière autorisée tout ou partie du reste à satisfaire, en préservant les réalisations acquises
+      et en signalant les effets aval nécessaires.
+    differentiating_criterion: Mécanisme métier avec effets distincts sur engagements, progression ou terminaison
+    decomposition_rationale: Mettre fin à une demande devenue inutile sans effacer ce qui a déjà eu lieu ; maîtriser les conséquences
+      sur engagements et ressources.
+    example: 'Exemple fictif : Sur 100 pièces, 60 reçues restent acquises ; les 40 encore attendues sont annulées si les conditions
+      le permettent.'
+    boundary: Annuler ne vaut ni retour physique, ni libération automatique de toute réservation, ni compensation logicielle
+      sous D04.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Approve and confirm purchase orders
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Annulation encadrée des quantités restantes et Finalize pour empêcher de nouveaux traitements.
+      differences: Achat, pas cycle universel. Clôture opérationnelle FLOW ne reprend pas toute la finalisation financière
+        du produit.
+      source_title: Approve and confirm purchase orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+      source_version: Documentation évolutive
+      source_locator: Canceling purchase orders ; modification après confirmation
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+    - vendor: Oracle
+      product: Fusion Cloud Order Management
+      element_name: Cancel Sales Orders
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Annulation des quantités non expédiées selon états et conditions ; les quantités déjà réalisées ne sont
+        pas effacées.
+      differences: Cycle de commande de vente propre au produit ; compensation du processus reste dans la couche processus,
+        pas nouveau comportement de Lifecycle.
+      source_title: Cancel Sales Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+      source_version: 26B
+      source_locator: Cancel Remaining Quantity
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+  - id: OL-CLOSE
+    name: Order Closure
+    parent_id: D04.o
+    status: integrated_U363
+    definition: Constater et gouverner la fin du traitement opérationnel d’un Order en explicitant le devenir de tout reliquat.
+    differentiating_criterion: Mécanisme métier avec effets distincts sur engagements, progression ou terminaison
+    decomposition_rationale: Éviter les commandes durablement ouvertes et les quantités restantes ambiguës ; distinguer satisfaction,
+      annulation et écart accepté.
+    example: 'Exemple fictif : Sur une commande de 100, 98 sont reçues et l’abandon des 2 restantes est autorisé : terminer
+      le suivi opérationnel avec cette justification.'
+    boundary: Clôture opérationnelle distincte de clôture financière. Elle peut résulter de la satisfaction ou d’une annulation
+      ; elle ne masque pas un manque et ne remplace pas l’annulation. Réouverture selon règles du type à instruire.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Approve and confirm purchase orders
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Annulation encadrée des quantités restantes et Finalize pour empêcher de nouveaux traitements.
+      differences: Achat, pas cycle universel. Clôture opérationnelle FLOW ne reprend pas toute la finalisation financière
+        du produit.
+      source_title: Approve and confirm purchase orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+      source_version: Documentation évolutive
+      source_locator: Canceling purchase orders ; modification après confirmation
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+    - vendor: SAP
+      product: S/4HANA Cloud
+      element_name: 'Functional Details: Manage Sales Orders - Version 2'
+      element_type: Mécanisme métier réalisé par une fonction produit
+      relationship: Recouvrement partiel
+      similarities: Blocages par objet et rejet des lignes ; le rejet de toutes les lignes peut terminer le document sous
+        conditions.
+      differences: Restrictions si déjà livré ou achat lié. Rejection produit n’est pas équivalent à toute annulation ou clôture
+        FLOW ; facturation hors périmètre métier étudié.
+      source_title: 'Functional Details: Manage Sales Orders - Version 2'
+      source_url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/e7f14402cf5846b4b3d0d677c15414b1.html?locale=en-US
+      source_version: Édition non relevée dans le passage indexé
+      source_locator: Delivery Block and Billing Block ; Rejection of all Items
+      consulted_on: '2026-09-18'
+      evidence_limits: 'Passages primaires consultés : pages Microsoft ouvertes ou indexées, SAP et Oracle indexés. Aucune
+        réalisation Beaumanoir démontrée.'
+      flow_position: Candidats proposés U351 ; pas un cycle universel ni un alignement niveau par niveau avec les produits.
+      status: proposed
+      source_refs:
+      - U351
+      - ELM217
+      - CMP126
+  framing: 'Sept mécanismes au total proposés pour la lecture du cycle : deux intégrés et cinq candidats. Ce ne sont ni sept
+    états obligatoires ni une séquence universelle. Les mécanismes peuvent concerner une ligne ou une quantité selon le type.'
+  boundaries:
+  - Création et changements de contenu restent dans la gestion par type d’Order.
+  - Split, merge et spread restent sous Order Structuring.
+  - Confirmation/révision de la promesse restent sous Promise Management.
+  - Tracking, orchestration et adaptation de l’exécution restent sous D06 ; compensation du processus relève de Case Management.
+  - Calcul du nouvel échéancier distinct de l’application de l’échéance du besoin.
+  adoption_limit: U351 demande de compléter l’analyse ; n’adopte pas les cinq candidats. Aucun nouveau nœud actif ajouté.
+  rationale: Une action produit peut réaliser un mécanisme métier. La justification repose sur l’effet distinct et la complexité
+    des engagements, portées partielles, conditions et effets aval ; pas sur le nombre de boutons.
+crud_and_archiving_U352:
+  status: proposed
+  finding: Les capacités D04.i–m décrivent déjà enregistrement, modification et consultation. La suppression admissible et
+    l’archivage sont insuffisamment explicités.
+  crud_responsibilities:
+  - operation: Create
+    meaning: Enregistrer la commande, ses lignes, son origine et son identité, par saisie ou réception ; prévenir les doublons.
+    proposed_owner: Gestion par type D04.i–m
+  - operation: Read
+    meaning: Rechercher et consulter le contenu, les liens, les états et les versions accessibles.
+    proposed_owner: Gestion par type D04.i–m ; historique conservé via archivage
+  - operation: Update
+    meaning: Maintenir le contenu autorisé et son historique, en respectant le gel, les états et les conséquences métier.
+    proposed_owner: Gestion par type D04.i–m ; transitions Lifecycle, structure Structuring et promesse D03 restent distinctes
+  - operation: Delete
+    meaning: Retirer les enregistrements dont la suppression est admissible selon leur état et leurs liens, notamment les
+      brouillons ; ne pas effacer des réalisations passées.
+    proposed_owner: Gestion par type D04.i–m ; conditions gouvernées par Lifecycle
+  boundary: CRUD est une grille de complétude utile ; ne pas en faire automatiquement quatre comportements identiques copiés
+    sous chaque type. Cette proposition ne retire aucune responsabilité du modèle.
+  archiving_proposal:
+    id: OL-ARCHIVE
+    name: Order Archiving
+    parent_id: D04.o
+    status: integrated_as_capability_D04.q_U363
+    definition: Organiser la conservation historique des Orders éligibles en dehors de leur usage opérationnel courant, tout
+      en préservant leur consultation, leurs versions utiles et leurs liens.
+    decomposition_rationale: Permettre la recherche et l’explication d’anciens engagements sans maintenir indéfiniment les
+      commandes dans le traitement courant ; maîtriser ce qui reste consultable.
+    example: 'Exemple fictif : retrouver une commande d’implantation d’une saison antérieure, ses changements et ses réalisations
+      sans la réintroduire dans les commandes à satisfaire.'
+    boundary: Clôture et archivage sont distincts. Historisation des versions, restauration et réouverture ne sont pas synonymes.
+      Purge définitive soumise à ses règles de conservation et d’éligibilité ; aucun nouveau comportement Purge ni règle juridique
+      ajouté automatiquement.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM
+      element_name: Archive Dynamics 365 Supply Chain Management Sales orders data
+      element_type: Fonction produit ou mécanisme de conservation
+      relationship: Recouvrement partiel
+      similarities: Archivage des commandes avec consultation ultérieure des en-têtes, lignes et informations liées.
+      differences: Documentation de réalisation technique via Dataverse ; FLOW retient le résultat de conservation et de consultation,
+        sans imposer cette architecture.
+      source_title: Archive Dynamics 365 Supply Chain Management Sales orders data
+      source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+      source_version: '2026-01-14'
+      source_locator: Set up an archival job ; View historical data
+      consulted_on: '2026-09-18'
+      evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+      flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la
+        conservation et consultation historique. Définition et rattachement à valider.
+      status: proposed
+      source_refs:
+      - U352
+      - ELM218
+      - CMP127
+    - vendor: Oracle
+      product: E-Business Suite Order Management
+      element_name: Order Purge and Archive
+      element_type: Fonction produit ou mécanisme de conservation
+      relationship: Recouvrement partiel
+      similarities: Archivage sous conditions d’éligibilité et purge définitive des archives sont distincts.
+      differences: Référence EBS, pas Fusion ; aucune durée de conservation ou obligation légale FLOW déduite.
+      source_title: Order Purge and Archive
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T430137.htm
+      source_version: '12.2'
+      source_locator: Eligible Orders ; Purge Archive Program
+      consulted_on: '2026-09-18'
+      evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+      flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la
+        conservation et consultation historique. Définition et rattachement à valider.
+      status: proposed
+      source_refs:
+      - U352
+      - ELM218
+      - CMP127
+    - vendor: Microsoft
+      product: Business Central
+      element_name: Archive documents
+      element_type: Fonction produit ou mécanisme de conservation
+      relationship: Recouvrement partiel
+      similarities: Archive peut désigner des versions successives consultables, certaines restaurables sous conditions.
+      differences: Ne pas assimiler cette notion produit à la seule sortie des commandes du stock opérationnel ; restauration
+        de version ne signifie pas réouverture métier.
+      source_title: Archive documents
+      source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+      source_version: '2025-10-15'
+      source_locator: Introduction ; Restore ; Delete archived versions
+      consulted_on: '2026-09-18'
+      evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+      flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la
+        conservation et consultation historique. Définition et rattachement à valider.
+      status: proposed
+      source_refs:
+      - U352
+      - ELM218
+      - CMP127
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Archive Dynamics 365 Supply Chain Management Sales orders data
+    element_type: Fonction produit ou mécanisme de conservation
+    relationship: Recouvrement partiel
+    similarities: Archivage des commandes avec consultation ultérieure des en-têtes, lignes et informations liées.
+    differences: Documentation de réalisation technique via Dataverse ; FLOW retient le résultat de conservation et de consultation,
+      sans imposer cette architecture.
+    source_title: Archive Dynamics 365 Supply Chain Management Sales orders data
+    source_url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+    source_version: '2026-01-14'
+    source_locator: Set up an archival job ; View historical data
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+    flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la conservation
+      et consultation historique. Définition et rattachement à valider.
+    status: proposed
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: Cancel Sales Orders
+    element_type: Fonction produit ou mécanisme de conservation
+    relationship: Recouvrement partiel
+    similarities: Le produit distingue suppression d’un brouillon et annulation d’une commande en traitement.
+    differences: Conditions propres au produit ; ne pas prescrire automatiquement les mêmes règles aux cinq types FLOW.
+    source_title: Cancel Sales Orders
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html
+    source_version: 26B
+    source_locator: Restrictions par statut Draft et Processing
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+    flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la conservation
+      et consultation historique. Définition et rattachement à valider.
+    status: proposed
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+  - vendor: Oracle
+    product: E-Business Suite Order Management
+    element_name: Order Purge and Archive
+    element_type: Fonction produit ou mécanisme de conservation
+    relationship: Recouvrement partiel
+    similarities: Archivage sous conditions d’éligibilité et purge définitive des archives sont distincts.
+    differences: Référence EBS, pas Fusion ; aucune durée de conservation ou obligation légale FLOW déduite.
+    source_title: Order Purge and Archive
+    source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48843/T335476T430137.htm
+    source_version: '12.2'
+    source_locator: Eligible Orders ; Purge Archive Program
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+    flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la conservation
+      et consultation historique. Définition et rattachement à valider.
+    status: proposed
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+  - vendor: Microsoft
+    product: Business Central
+    element_name: Archive documents
+    element_type: Fonction produit ou mécanisme de conservation
+    relationship: Recouvrement partiel
+    similarities: Archive peut désigner des versions successives consultables, certaines restaurables sous conditions.
+    differences: Ne pas assimiler cette notion produit à la seule sortie des commandes du stock opérationnel ; restauration
+      de version ne signifie pas réouverture métier.
+    source_title: Archive documents
+    source_url: https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+    source_version: '2025-10-15'
+    source_locator: Introduction ; Restore ; Delete archived versions
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés effectivement consultés ; aucune preuve d’installation Beaumanoir.
+    flow_position: Rendre le CRUD explicite dans les gestions par type ; proposer Order Archiving sous Lifecycle pour la conservation
+      et consultation historique. Définition et rattachement à valider.
+    status: proposed
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+  coverage: Deux comportements intégrés U349/U350, cinq candidats U351 et Order Archiving proposé ici. Cette liste de travail
+    ne prétend pas à un cycle universel ni à une adoption des six nouveaux candidats.
+draft_and_structuring_U353_U354:
+  status: draft_principle_adopted_details_proposed
+  adoption_U354:
+    principle: Mode brouillon
+    principle_sha256: 991814e916767b546b407bd943e42002106bfe6feaed67781d47989aa0f7a52c
+    scope: Principe accepté ; pas de nom anglais ou définition détaillée adoptés.
+  draft_proposal:
+    parent_id: D04.o
+    status: proposed_details
+    definition: Permettre de préparer, sauvegarder et reprendre un Order avant sa soumission au traitement opérationnel, en
+      rendant explicites les effets autorisés dans cet état.
+    benefit: Préparer une demande incomplète ou à vérifier sans déclencher prématurément son traitement.
+    boundary: La saisie du contenu reste dans la gestion par type. Brouillon et ordre planifié ne sont pas synonymes ; soumettre
+      ne vaut pas toujours affermir ou lancer. Ne pas supposer absence de calcul de disponibilité ou de réservation sans politique
+      explicite.
+    example: Préparer une commande par copie, corriger quantités et dates, puis la soumettre selon les règles ; aucun nouvel
+      engagement repris implicitement de l’original.
+  placement_proposal:
+  - mechanism: Split / Spread / Merge
+    parent_id: D04.n
+    reason: Transformations de la structure de la demande ; rattachement déjà décrit dans le catalogue.
+  - mechanism: Copie ou clonage simple
+    parent_ids:
+    - D04.i
+    - D04.j
+    - D04.k
+    - D04.l
+    - D04.m
+    reason: Réutiliser un contenu pour une nouvelle demande ou de nouvelles lignes relève de la gestion par type ; aucun comportement
+      identique créé systématiquement.
+  quantity_boundary: Scinder 100 pièces en 60+40 conserve la demande transformée. Cloner une commande de 100 peut ajouter
+    une nouvelle demande de 100 ; ne pas compter la copie comme fragment de l’original. Copier une version de travail du même
+    Order est encore un autre cas.
+  complex_case: Créer plusieurs Orders à partir d’un contenu réutilisé et d’une répartition décidée peut mobiliser gestion
+    par type et Order Structuring. Aucun transfert implicite des décisions d’échéancier ou d’affectation.
+  adoption_limit: Pas de nouvelle création BHV ; principe brouillon enregistré dans l’annexe. Les nouveaux mécanismes Lifecycle
+    restent à consolider.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Delivery schedules
+    element_type: Fonction ou état produit
+    relationship: Recouvrement partiel
+    similarities: Décomposition d’une quantité en lignes de livraison avec dates et quantités distinctes.
+    differences: Appui à split/spread ; une ligne commerciale et plusieurs livraisons ne créent pas nécessairement plusieurs
+      commandes.
+    source_title: Delivery schedules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+    source_version: '2025-05-07'
+    source_locator: Introduction et lignes commerciales/de livraison
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; aucune réalisation client démontrée.
+    flow_position: Distinguer contenu, structure et états. Principe brouillon adopté U354 ; modalités et rattachements supplémentaires
+      proposés.
+    status: proposed
+    source_refs:
+    - U353
+    - U354
+    - ELM219
+    - CMP128
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Copy lines between sales orders
+    element_type: Fonction ou état produit
+    relationship: Recouvrement partiel
+    similarities: Réutiliser des lignes et éventuellement l’en-tête pour alimenter une commande nouvelle ou existante.
+    differences: Copie sélective avec recalculs possibles ; ni conservation globale de la demande ni copie des engagements
+      déduite.
+    source_title: Copy lines between sales orders
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/copy-lines-between-sales-orders
+    source_version: '2025-04-03'
+    source_locator: Introduction et paramètres de copie
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; aucune réalisation client démontrée.
+    flow_position: Distinguer contenu, structure et états. Principe brouillon adopté U354 ; modalités et rattachements supplémentaires
+      proposés.
+    status: proposed
+    source_refs:
+    - U353
+    - U354
+    - ELM219
+    - CMP128
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: Copy Sales Orders
+    element_type: Fonction ou état produit
+    relationship: Recouvrement partiel
+    similarities: Création d’une nouvelle commande par copie avec choix des données reprises.
+    differences: Fonction produit ; pas preuve d’un comportement transversal Order Cloning ni de duplication des réservations.
+    source_title: Copy Sales Orders
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/copy-sales-orders.html
+    source_version: 26B
+    source_locator: Order Details ; Order Line Details
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; aucune réalisation client démontrée.
+    flow_position: Distinguer contenu, structure et états. Principe brouillon adopté U354 ; modalités et rattachements supplémentaires
+      proposés.
+    status: proposed
+    source_refs:
+    - U353
+    - U354
+    - ELM219
+    - CMP128
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: Order Management Statuses
+    element_type: Fonction ou état produit
+    relationship: Recouvrement partiel
+    similarities: Une commande enregistrée mais non soumise au fulfillment reste Draft et peut être modifiée.
+    differences: Référence 25C ; distinction brouillon/soumission, pas équivalence automatique avec ordre planifié/affermissement
+      Microsoft.
+    source_title: Order Management Statuses
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+    source_version: 25C
+    source_locator: Draft
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; aucune réalisation client démontrée.
+    flow_position: Distinguer contenu, structure et états. Principe brouillon adopté U354 ; modalités et rattachements supplémentaires
+      proposés.
+    status: proposed
+    source_refs:
+    - U353
+    - U354
+    - ELM219
+    - CMP128
+  placement_review_U355: 'Rattachement antérieurement proposé du split/spread à Structuring remis à l’examen : distinguer
+    mutation avec filiation et composition durable ; catalogue adopté non modifié.'
+structuring_boundary_U355:
+  status: needs_joint_arbitration
+  current_position:
+    capability_id: D04.n
+    parent_id: D04
+    layer: transactional
+    peer_id: D04.o
+    adopted_U214: Organiser une demande en ordres, lignes, quantités et échéances liés.
+    limit: Ni Order chapeau défini, ni règles d’identité/persistance précisées. Le catalogue actuel ne permet pas de conclure
+      que Structuring gère une composition autonome.
+  criterion: Existence d’une responsabilité durable sur la cohérence de la composition, au-delà de la trace des mutations.
+    Ne pas déduire la capacité de la seule représentation parent-enfants.
+  cases:
+  - case: Mutation avec filiation
+    example: Un besoin de 100 devient deux Orders de 60 et 40 ; l’ancien identifiant sert à expliquer l’origine sans porter
+      une demande active supplémentaire.
+    proposed_position: Peut relever de Lifecycle élargi ; préciser effets sur états, identités, engagements et absence de
+      double comptage. Proposition, pas transfert adopté.
+  - case: Décomposition interne en lignes et échéances
+    example: Une ligne commerciale regroupe plusieurs livraisons ; le total est maintenu à partir des lignes.
+    proposed_position: Forme structurée ne justifiant pas à elle seule une capacité séparée ; frontière avec gestion par type
+      à qualifier.
+  - case: Composition métier persistante
+    example: Une demande d’ensemble demeure active et sa réalisation est suivie au travers d’Orders composants qui peuvent
+      être remplacés ou regroupés.
+    proposed_position: Justifie potentiellement Structuring séparé si cohérence de l’ensemble, rattachements, évolutions et
+      agrégation ont un bénéfice propre ; objet chapeau proposé, pas adopté.
+  responsibilities_if_separate:
+  - Maintenir la composition et les liens métier actifs.
+  - Assurer cohérence des quantités et suivi de satisfaction sans double comptage.
+  - Répercuter les changements autorisés de composition en préservant les engagements des composants.
+  boundaries:
+  - D03 conserve la décision de satisfaction, de priorité et d’échéancier.
+  - D06 conserve l’orchestration des prestations ; la composition d’Orders ne prescrit pas les tâches des exécutants.
+  - Un chapeau peut être un objet agrégateur ou une demande, pas automatiquement un Order transactionnel supplémentaire.
+  - La demande d’ensemble et ses composants ne s’ajoutent pas comme besoins indépendants lorsqu’ils représentent la même demande.
+  recommendation: Ne pas garder une capacité séparée pour la seule présence de liens. Examiner l’identité et l’engagement
+    persistants du parent ; si aucune composition autonome n’est utile, proposer d’intégrer les mutations à Lifecycle et réexaminer
+    D04.n sans renommer/retirer automatiquement.
+  open_questions:
+  - Le parent porte-t-il un besoin ou engagement encore actif après décomposition, ou seulement une origine historique ?
+  - Quels changements et résultats se gèrent au niveau de l’ensemble indépendamment des composants ?
+  - Les composants sont-ils des Orders, des lignes/échéances ou des Service Orders d’une autre responsabilité ?
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Delivery schedules
+    element_type: Structure métier ou fonction produit
+    relationship: Recouvrement partiel
+    similarities: Une ligne commerciale demeure comme en-tête de lignes de livraison ; sa quantité agrège celles des livraisons.
+    differences: Hiérarchie de lignes dans une commande, pas preuve d’un nouvel Order chapeau ni d’une capacité autonome.
+    source_title: Delivery schedules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+    source_version: '2025-05-07'
+    source_locator: Commercial line et delivery lines
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; niveaux et contextes éditeurs conservés.
+    flow_position: 'Arbitrage ouvert : mutation d’un besoin avec filiation versus gestion d’une composition durable. Une forme
+      parent-enfants seule ne suffit pas à justifier une capacité.'
+    status: proposed
+    source_refs:
+    - U355
+    - ELM220
+    - CMP129
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: Split Order Lines
+    element_type: Structure métier ou fonction produit
+    relationship: Recouvrement partiel
+    similarities: Une ligne de 50 peut être scindée en 30 et 20 selon l’entrepôt ; le produit conserve la quantité globale
+      et adapte les processus associés.
+    differences: Division de lignes/fulfillment et réalisation logicielle ; ni deux Orders commerciaux autonomes ni placement
+      sous une capacité FLOW démontrés.
+    source_title: Split Order Lines
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fauom/split-fulfillment-lines.html
+    source_version: 25D
+    source_locator: Exemple Seattle/Denver et effets du split
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; niveaux et contextes éditeurs conservés.
+    flow_position: 'Arbitrage ouvert : mutation d’un besoin avec filiation versus gestion d’une composition durable. Une forme
+      parent-enfants seule ne suffit pas à justifier une capacité.'
+    status: proposed
+    source_refs:
+    - U355
+    - ELM220
+    - CMP129
+  - vendor: SAP
+    product: ERP Orders CS-SE/PM-WOC-MO
+    element_name: Order Hierarchy
+    element_type: Structure métier ou fonction produit
+    relationship: Appui méthodologique
+    similarities: Hiérarchie d’ordres et sous-ordres avec responsabilité du leading order sur l’exécution des ordres inférieurs.
+    differences: Contexte maintenance/service, pas commandes Supply de vente/achat/transfert ; analogie de responsabilité
+      seulement, aucun objet FLOW prescrit.
+    source_title: Order Hierarchy
+    source_url: https://help.sap.com/docs/SAP_ERP/b4174aff4a234ed5be928a10c60997fb/45c8b65334e6b54ce10000000a174cb4.html
+    source_version: 6.0 EHP8 Latest
+    source_locator: Definition ; Structure
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés ; niveaux et contextes éditeurs conservés.
+    flow_position: 'Arbitrage ouvert : mutation d’un besoin avec filiation versus gestion d’une composition durable. Une forme
+      parent-enfants seule ne suffit pas à justifier une capacité.'
+    status: proposed
+    source_refs:
+    - U355
+    - ELM220
+    - CMP129
+architecture_direction_U357:
+  status: applied_U363_with_Type_instead_of_Handling
+  user_direction:
+    role_capability: Hypothèse de capacité générique avec achat/vente/retour comme comportements.
+    lifecycle: Mutations internes d’un Order ; accord de direction sur les mutations proposées.
+    structuring: Séparé de Lifecycle.
+    archiving: Séparé de Lifecycle.
+  proposed_target:
+  - name: Order Handling
+    kind: capability
+    naming_status: proposed_FLOW_label
+    definition: Gérer les Orders selon leur finalité métier en appliquant les règles et informations propres à la vente, à
+      l’achat, au transfert ou au retour.
+    candidate_behavior_existing_ids:
+    - D04.i
+    - D04.j
+    - D04.k
+    - D04.l
+    - D04.m
+    decomposition_rationale: 'Les cinq variantes diffèrent par l’engagement, les parties, les informations à maintenir et
+      le reste à satisfaire : à servir, recevoir, transférer ou retourner. Elles mobilisent des mutations communes sans dupliquer
+      Lifecycle.'
+    limit: Si ces variantes ne portaient qu’un attribut sans effet différenciant, une liste de types suffirait. La décomposition
+      doit conserver les différences métier décrites dans les cinq capacités actuelles.
+    naming_reason: Rôle seul désigne une propriété ambiguë, déjà utilisée pour Party. Order Type Management suggérerait l’administration
+      d’un référentiel de types ; ce n’est pas l’objectif.
+  - name: Order Lifecycle Management
+    kind: capability
+    existing_id: D04.o
+    scope: Préparation en brouillon, affermissement, gel, autorisation de traitement, attente/reprise, report, annulation
+      et clôture ; mutations structurelles avec simple filiation à examiner sous cette responsabilité élargie.
+    limit: CRUD de contenu propre au type reste cohérent avec Handling ; ne pas doubler les responsabilités. Aucun transfert
+      des décisions de promesse ou de l’exécution.
+  - name: Order Structuring
+    kind: capability
+    existing_id: D04.n
+    scope: Maintenir la composition durable d’un ensemble d’Orders et la cohérence entre ensemble et composants.
+    limit: Un objet chapeau n’est pas créé par cette proposition. Une simple trace d’un split ne suffit pas ; une structure
+      persistante et un bénéfice propre doivent être décrits.
+  - name: Order Archiving
+    kind: capability
+    scope: Organiser la conservation et la consultation historiques des Orders éligibles, hors de leur usage opérationnel
+      courant.
+    decomposition_rationale: Responsabilité durable avec éligibilité, conservation des liens et accès à l’historique distincts
+      de la terminaison opérationnelle ; pas simple transfert de tables.
+    limit: La proposition U352 sous Lifecycle est remplacée par la direction de séparation U357. Aucun sous-comportement systématique
+      et aucune durée légale inventée.
+  identity_boundary: Une variante achat/vente/retour n’est pas un état librement interchangeable. Des Orders liés peuvent
+    représenter les perspectives de parties différentes sans devenir un Order universel.
+  migration_if_confirmed: Réutiliser les identifiants des cinq gestions par type en les requalifiant en comportements ; préserver
+    leurs descriptions et validations à portée inchangée. Introduire les nouvelles capacités sans réutiliser un identifiant
+    retiré. Étudier les relations consommant des capacités devenues comportements. Aucune migration exécutée ici.
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Create purchase orders
+    element_type: Type de document et règles de traitement produit
+    relationship: Recouvrement partiel
+    similarities: Le type Purchase order est distingué du type Returned order ; le contenu conserve les particularités du
+      fournisseur.
+    differences: Taxonomie produit ; ne prouve pas une capacité nommée Role ni l’unification des modèles de vente et achat.
+    source_title: Create purchase orders
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+    source_version: Documentation évolutive
+    source_locator: Creating a purchase order header
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés. Aucune couverture installée Beaumanoir déduite.
+    flow_position: Types/finalités comme variantes de comportement proposés. Order Handling est un intitulé FLOW proposé,
+      sans consensus de capacité éditeur revendiqué. Role reste distinct du Role de Party.
+    status: proposed
+    source_refs:
+    - U357
+    - ELM221
+    - CMP130
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Sales returns
+    element_type: Type de document et règles de traitement produit
+    relationship: Recouvrement partiel
+    similarities: Un retour est représenté comme une commande de vente du type Returned order.
+    differences: FLOW distingue retours client et fournisseur par responsabilités ; aucune équivalence niveau par niveau.
+    source_title: Sales returns
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+    source_version: Documentation évolutive
+    source_locator: Introduction et types de commandes
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés. Aucune couverture installée Beaumanoir déduite.
+    flow_position: Types/finalités comme variantes de comportement proposés. Order Handling est un intitulé FLOW proposé,
+      sans consensus de capacité éditeur revendiqué. Role reste distinct du Role de Party.
+    status: proposed
+    source_refs:
+    - U357
+    - ELM221
+    - CMP130
+  - vendor: SAP
+    product: S/4HANA Sales
+    element_name: Sales Document Types
+    element_type: Type de document et règles de traitement produit
+    relationship: Recouvrement partiel
+    similarities: Les catégories/types de documents caractérisent traitements et règles, avec des variantes de vente et retour.
+    differences: Catalogue de documents commerciaux mêlant contrats et commandes ; ne pas l’importer comme catalogue FLOW.
+    source_title: Sales Document Types
+    source_url: https://help.sap.com/docs/PRODUCT_ID/7b24a64d9d0941bda1afa753263d9e39/c564b65334e6b54ce10000000a174cb4.html
+    source_version: 2025 FPS01 (Feb 2026)
+    source_locator: Types of Processing ; Control Elements in Sales Document Types
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés. Aucune couverture installée Beaumanoir déduite.
+    flow_position: Types/finalités comme variantes de comportement proposés. Order Handling est un intitulé FLOW proposé,
+      sans consensus de capacité éditeur revendiqué. Role reste distinct du Role de Party.
+    status: proposed
+    source_refs:
+    - U357
+    - ELM221
+    - CMP130
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Intercompany orders and return orders
+    element_type: Type de document et règles de traitement produit
+    relationship: Recouvrement partiel
+    similarities: Une commande de vente intersociétés peut créer une commande d’achat correspondante.
+    differences: Deux commandes liées et des perspectives distinctes ; pas preuve qu’un même enregistrement change librement
+      de rôle.
+    source_title: Intercompany orders and return orders
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+    source_version: Documentation évolutive
+    source_locator: Commandes de vente et achat correspondantes
+    consulted_on: '2026-09-18'
+    evidence_limits: Passages primaires indexés consultés. Aucune couverture installée Beaumanoir déduite.
+    flow_position: Types/finalités comme variantes de comportement proposés. Order Handling est un intitulé FLOW proposé,
+      sans consensus de capacité éditeur revendiqué. Role reste distinct du Role de Party.
+    status: proposed
+    source_refs:
+    - U357
+    - ELM221
+    - CMP130
+  prior_proposals: Le rattachement d’Archiving sous Lifecycle proposé U352 est remplacé dans la cible discutée. La séparation
+    Structuring/Lifecycle est confirmée en direction ; leur frontière dépend de la responsabilité de composition.
+  naming_update: U358/U359 remplace la proposition Handling par Type ; voir type_naming_U358_U359. La cible U357 ci-dessus
+    conserve sa formulation historique.
+type_naming_U358_U359:
+  adopted_term: Type
+  meaning: 'Rôle/finalité métier de l’Order : achat, vente, transfert, retour client ou fournisseur.'
+  replaces_proposed_label: Order Handling
+  target_label: Order Type
+  scope: Concept et préférence lexicale confirmés ; la migration du catalogue et la définition détaillée de capacité restent
+    à consolider. Ce n’est pas l’administration d’un référentiel de types.
+split_spread_U360:
+  status: proposed_terminology_and_boundaries
+  split: Scinder un Order, une ligne ou une quantité en éléments traitables distinctement, en explicitant identité, filiation,
+    quantités et effets. Le marché applique aussi Split aux dates ; Spread n’est pas sa contrepartie normalisée.
+  spread_senses:
+  - 'Répartir une demande entre des échéances : schedule lines / delivery schedules.'
+  - Répartir des quantités entre destinations ou autres axes, à qualifier.
+  - 'Distribuer un stock contraint entre demandes selon proportions : spread logic SAP ARun.'
+  recommendation: Garder Split avec l’objet explicite ; ne pas nommer un comportement Spread sans complément. Séparer choix
+    de la répartition et application de ses effets.
+  placement: Mutation de l’Order avec filiation sous Lifecycle élargi selon la direction U357 ; gestion persistante d’une
+    composition entre Orders sous Structuring ; affectation de ressources sous Supply Assignment après décisions spécialisées.
+    Ni le mot split ni la présence de liens ne suffisent à trancher.
+  example: '100 pièces scindées en 60 et 40 : mutation de demande. 150 pièces disponibles pour deux besoins de 100 et 200,
+    affectées proportionnellement à hauteur de 50 et 100 : répartition de ressources, sans nécessité de scinder les Orders.'
+  market_comparisons:
+  - vendor: Oracle
+    product: Fusion Cloud Order Management
+    element_name: What’s a Split Order Line
+    element_type: Fonction produit, verbe descriptif ou stratégie de répartition
+    relationship: Appui sémantique
+    similarities: Split couvre plusieurs entrepôts, dates ou articles substituts, et peut créer plusieurs lignes et tâches
+      de fulfillment.
+    differences: Ne signifie pas toujours création de plusieurs commandes autonomes ; la fonction produit combine décisions
+      et effets que FLOW sépare.
+    source_title: What’s a Split Order Line
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/fulfillment-line-splits.html
+    source_version: 26B
+    source_locator: How Order Management Determines Availability
+    consulted_on: '2026-09-18'
+    evidence_limits: Oracle ouvert ; passages Microsoft et SAP indexés consultés, page SAP dynamique sans texte à l’ouverture.
+      Aucune implémentation Beaumanoir déduite.
+    flow_position: 'Conserver Split en précisant l’objet et l’effet. Éviter Spread seul : distinguer échéancement de demande,
+      distribution vers destinations et affectation de stock contraint. Le terme ne tranche pas Lifecycle versus Structuring.'
+    status: proposed
+    source_refs:
+    - U360
+    - ELM222
+    - CMP131
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    element_name: Delivery schedules
+    element_type: Fonction produit, verbe descriptif ou stratégie de répartition
+    relationship: Appui sémantique
+    similarities: Quantité d’une ligne répartie sur plusieurs lignes de livraison, avec dates et quantités distinctes.
+    differences: 'Échelonnement de la demande : pas synonyme de répartition d’un stock contraint entre commandes.'
+    source_title: Delivery schedules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+    source_version: '2025-05-07'
+    source_locator: Create delivery schedules ; Manage delivery lines
+    consulted_on: '2026-09-18'
+    evidence_limits: Oracle ouvert ; passages Microsoft et SAP indexés consultés, page SAP dynamique sans texte à l’ouverture.
+      Aucune implémentation Beaumanoir déduite.
+    flow_position: 'Conserver Split en précisant l’objet et l’effet. Éviter Spread seul : distinguer échéancement de demande,
+      distribution vers destinations et affectation de stock contraint. Le terme ne tranche pas Lifecycle versus Structuring.'
+    status: proposed
+    source_refs:
+    - U360
+    - ELM222
+    - CMP131
+  - vendor: SAP
+    product: ERP Purchasing MM-PUR
+    element_name: Maintaining a Delivery Schedule for a PO
+    element_type: Fonction produit, verbe descriptif ou stratégie de répartition
+    relationship: Appui sémantique
+    similarities: Spread out décrit l’étalement temporel de la quantité dans des échéances de livraison.
+    differences: Verbe descriptif ; pas preuve d’une fonction ou capacité autonome nommée Spread.
+    source_title: Maintaining a Delivery Schedule for a PO
+    source_url: https://help.sap.com/docs/SAP_ERP_SPV/967e1c2a6a8c4183b7e07d28e7574445/c77eb65334e6b54ce10000000a174cb4.html
+    source_version: 6.0 EHP8 SP25
+    source_locator: Introduction et schedule lines
+    consulted_on: '2026-09-18'
+    evidence_limits: Oracle ouvert ; passages Microsoft et SAP indexés consultés, page SAP dynamique sans texte à l’ouverture.
+      Aucune implémentation Beaumanoir déduite.
+    flow_position: 'Conserver Split en précisant l’objet et l’effet. Éviter Spread seul : distinguer échéancement de demande,
+      distribution vers destinations et affectation de stock contraint. Le terme ne tranche pas Lifecycle versus Structuring.'
+    status: proposed
+    source_refs:
+    - U360
+    - ELM222
+    - CMP131
+  - vendor: SAP
+    product: ERP Fashion Management ARun
+    element_name: Allocation
+    element_type: Fonction produit, verbe descriptif ou stratégie de répartition
+    relationship: Appui sémantique
+    similarities: Spread logic distribue proportionnellement les stocks existants entre les besoins selon des règles, en alternative
+      à FIFO.
+    differences: Référence ERP, pas preuve d’identité avec toutes les éditions aATP récentes. Ce sens concerne arbitrage et
+      affectation ressources-demandes, pas nécessairement mutation des Orders.
+    source_title: Allocation
+    source_url: https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/f6a6f15562e37b43e10000000a4450e5.html
+    source_version: Édition non relevée ; contexte ERP Fashion Management
+    source_locator: Use ; Allocation Logic
+    consulted_on: '2026-09-18'
+    evidence_limits: Oracle ouvert ; passages Microsoft et SAP indexés consultés, page SAP dynamique sans texte à l’ouverture.
+      Aucune implémentation Beaumanoir déduite.
+    flow_position: 'Conserver Split en précisant l’objet et l’effet. Éviter Spread seul : distinguer échéancement de demande,
+      distribution vers destinations et affectation de stock contraint. Le terme ne tranche pas Lifecycle versus Structuring.'
+    status: proposed
+    source_refs:
+    - U360
+    - ELM222
+    - CMP131
+spread_arun_U361:
+  status: clarification_sourced_mapping_proposed
+  finding: Spread est une stratégie utilisable dans ARun, pas toute opération lancée depuis ARun. ARun peut aussi utiliser
+    FIFO.
+  distinction: Split transforme une demande en parties ; Spread ARun partage les ressources entre demandes existantes. Un
+    résultat peut ensuite conduire à un split, sans identité des deux mécanismes.
+  example: 'Illustration simplifiée, hors quotas, arrondis et règles de libération : demandes 100 et 200 ; stock 150 ; prorata
+    de 50 % donnant affectations 50 et 100. Les quantités demandées restent 100 et 200.'
+  market_comparisons:
+  - vendor: SAP
+    product: ERP Fashion Management
+    element_name: Steps in Order Allocation Run — Allocation
+    element_type: Stratégie de répartition dans un processus produit
+    relationship: Recouvrement partiel
+    similarities: ARun peut affecter le stock selon FIFO ou une répartition proportionnelle fondée sur les quantités demandées
+      (spread logic). Le regroupement des besoins est un prérequis au Spread.
+    differences: Référence ERP Fashion, sans garantie pour toute édition aATP. ARun est le processus intégré ; Spread une
+      de ses stratégies. La répartition ne nécessite pas la création de nouvelles commandes.
+    source_title: Steps in Order Allocation Run
+    source_url: https://help.sap.com/docs/SAP_ERP_SPV/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+    source_version: Édition non relevée dans le passage indexé ; SAP ERP Fashion Management
+    source_locator: Requirement Grouping ; Allocation ; Release Rules
+    consulted_on: '2026-09-18'
+    evidence_limits: Passage primaire indexé consulté, complété par Allocation déjà documenté ELM222. Aucune preuve de configuration
+      ou version Beaumanoir.
+    flow_position: La règle décide les parts de ressources destinées aux demandes ; Supply Assignment matérialise les liens.
+      Le parent précis de la décision FLOW reste à instruire. Ne pas confondre avec Lifecycle/Structuring ni créer une capacité
+      Spread.
+    status: proposed
+    source_refs:
+    - U361
+    - ELM223
+    - CMP132
+  correction_of_earlier_wording: Spread employé comme simple voisin de split sous Structuring était trop large ; réserver
+    ici spread logic à la citation SAP, et qualifier les répartitions par leur objet.
+split_spread_convention_U362:
+  status: distinction_adopted
+  source_refs:
+  - U362
+  - ELM223
+  - CMP132
+  adopted_values:
+    split: coupe des commandes
+    spread: on répartit entre les commandes
+  value_sha256:
+    split: caa89924a85e542e34cd3bd9ef85e8401426c0e2b395911c557a0330e93836ff
+    spread: f227bcf184ceb24927c2330216951557459149157997fc80556359702396d6e5
+  context: Spread dans le sens ARun de la discussion U360/U361.
+  editorial_explanation: Split transforme la demande en fragments ; Spread répartit des ressources entre demandes. La règle
+    proportionnelle est une réalisation SAP documentée, pas une règle universelle imposée par cette formulation.
+  boundary: Le choix des parts et leur application par Supply Assignment restent distincts. Le résultat peut conduire à un
+    split, sans identité des mécanismes.
+  migration_note: Ne plus utiliser Spread seul comme synonyme de split ou de transformation de structure dans la cible. Le
+    catalogue actif D04.n conserve son état antérieur jusqu’à la migration de D04 ; les répartitions entre échéances/destinations
+    doivent y être nommées explicitement.
+implementation_U363:
+  source_refs:
+  - U363
+  model_before: audits/2026-09-18-d04-U363/model-before.yaml
+  model_before_sha256: 0ee226068cd61aad1454636d72d59f5c64fc66bf1508fe510c56dd437fbfdd94
+  delta:
+    nodes:
+      added:
+        BHV038: e2878b8feb0cc53624af6dafd511252cc35e26b6cc1db6a815f205596bdf974b
+        BHV039: 340948d1faf570802943059a9ae9ed2bb38018527c2e85abcea45aae5476bfef
+        BHV040: adbc65d6ce170a22dca2ab81b6a2fdafdb75f6b1f7558ccdce8887fd4f6558eb
+        BHV041: de5009acf83dc3f98f217bef79a8559579e14072846df245ffa2d3c2130061c7
+        BHV042: f15299430090639eb30cb173cb1e51936f74012c62aa2e6f40b091735b64ab7f
+        BHV043: 63252bee40e5cc204801ce6615e87db28c1725753bc0d3c4b54bb2f553d9680d
+        BHV044: 4dda468312013c513d6e0339c60f6190f5378f80538e3579c775f281bf528812
+        D04.p: 8e3c7b83ce5b531fa4aed4d3761debf38783077e7bcf5914450d46317bb0b6fb
+        D04.q: 66d00aea124ed940291b137c8ba32b8c473144aa6043ddc25295a15a903f52aa
+      changed:
+        D02.e: 9bb395c2fd3bf6d8a3330c4af782ee9531627153b805b645dfc22f95bcbf4e44
+        D04: 81856420d78d690457bfee487d918fa5f22f1a1a9efb1f5fbf1580a8a0d2b254
+        D04.i: 75450f8f841515adcb7efd6f128dbb16341c25227b42cd7c15e09dead7a29ce2
+        D04.j: 13757f276622b37b94d782c88f49daa4eb43cbf0bcb36ae2aadb85bc29ac7587
+        D04.k: 095400a69a708ed0bcd523979c968b59a4435a9bbcfe766cfb9ca733bc443560
+        D04.l: ad6f81a389b3bed2bd9bda423967c9d021a04fe67c42f998d27cb17d24c93485
+        D04.m: fe95fe589b451468b6fc3e002871a48b61538c6db490324f1ea47f8db4ae8e8c
+        D04.n: c5ad8896fa40d5446b1ec1bc825722bf1f5f88bd3aadb2da83c5395224031e86
+        D04.o: 808c96b5682881b760126c94b54c0eddc9a4eed8b4918f3d41c77ed984388f2c
+      removed: []
+    relations:
+      added:
+        REL-BEHAVIOR-BHV038: 1e8e3fbd78c8510c4d5e5269501da4166d6504f26b22790c86ed97e94670b2fd
+        REL-BEHAVIOR-BHV039: a35c95418ed53f9071528f32bf7bc55c6d3677b72e398705365533cdc0b79b2b
+        REL-BEHAVIOR-BHV040: d57aeed6d25e388a3298a2eda2e82708ee1035238eda69e01211f5884ee7fb67
+        REL-BEHAVIOR-BHV041: 1329415f882a5040d53f6a722cbc447a4a09e1631931f53c8a72211bea14f077
+        REL-BEHAVIOR-BHV042: 6ec61d65d57f0b308e6efb418ebc0cd519b11c3dda0641346a83188d8bde6b3b
+        REL-BEHAVIOR-BHV043: d58c2df426b28e6edbcfbf06d77f01f9266d68ff595fbed5defb65223ba5a297
+        REL-BEHAVIOR-BHV044: ce6eca6f42ffc168458e6098685bcba7c9f902fd60060df28fb695332280dcb2
+        REL-MEMBER-D04.p: 4089a43ce81e7eec87309d1f4878c909e95c9921186be2c984960177e918ffc7
+        REL-MEMBER-D04.q: 9f8b602321f5b89be2a24ea0a4e2ff1ffba7dd40aac7cfa04e526d96750db5ff
+        REL-NEEDS-U363-D04.o-D04.n: 718601acea082f9c2a1cabc261becd37e2370277e31b0239b7e24fad22e71366
+        REL-NEEDS-U363-D04.q-D04.n: f519094d2ab2b0c8b59944232faef27770729d3cc181181513c3c01a35bb21f1
+        REL-NEEDS-U363-D04.q-D04.o: 1bea49ad65342351f6e0fb28f790bafc72bc4968094150afd7f090777113598f
+        REL-NEEDS-U363-D04.q-D04.p: c59bb349598bfbbe30947bbbf079fe2f08804bb18d14c008f94dce93d20895be
+      changed:
+        REL-MEMBER-D04.i: abaea73cc4168fa713d5d89f575e2971c69662e5959bf02b352eedc709b7116b
+        REL-MEMBER-D04.j: f72b4dd9093abba2c5e9d06789f7874c9d197cecae12492d1c65342a081fccee
+        REL-MEMBER-D04.k: 5287252b511d06e7cf600d1f82d2522a47a3780f8b36560790e6ffcfbb6b0a9c
+        REL-MEMBER-D04.l: 50a04b9e1d00265e49a7ccd2d132400f3894cfedd9a114b7ddef8155fe202424
+        REL-MEMBER-D04.m: abf33930d49f095d11d06eedb67a11e8e5646c532958fcb55e2da4da4674d427
+        REL-NEEDS-U290-046: 2d301c713a3eb99f7f54c724b7b569afc819a37cb769484c33d01e074e5d99c6
+        REL-NEEDS-U290-054: e481224393b0dd690e5d50c029fe90efd8d9c6a5b36736a751215e36b2ffebff
+        REL-NEEDS-U290-060: ba8dd02c084585ca2a930f1f797807e1fb38a4ea893dd0255f6d3d97b3ab27de
+        REL-NEEDS-U290-065: df942314366bc0b5e7e88728e315cf0972f0b6412d504e71ed50564d5a062346
+        REL-NEEDS-U290-070: b0527e7ac6c8718b64ec23813cee292a8e9bb99e1bc56f3ab169cfc1bddb339b
+      removed: []
+  behaviors: []
+  reclassified_types:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  type_parent: D04.p
+  domain_children:
+  - D04.p
+  - D04.o
+  - D04.n
+  - D04.q
+  lifecycle_children:
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV041
+  - BHV042
+  - BHV043
+  - BHV044
+  scope: 'U363 : quatre capacités D04 ; types reclassés, mutations intégrées, composition et archivage séparés, Spread hors
+    mutation. Compléments éditoriaux proposés.'
+current_structure_U363:
+  domain_id: D04
+  capability_ids:
+  - D04.p
+  - D04.o
+  - D04.n
+  - D04.q
+  type_behaviors:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  lifecycle_behaviors:
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV041
+  - BHV042
+  - BHV043
+  - BHV044
+  scope: Cette section remplace les propositions de structure antérieures ; les blocs datés conservent leurs statuts historiques.
+current_U383:
+  source_refs:
+  - U382
+  - U383
+  capability_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.o
+  - D04.q
+  restored_capabilities:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  retired_ids:
+  - D04.p
+  scope: 'Remplace la structure U363 : une capacité par type ; Lifecycle, Structuring et Archiving transverses. Identifiants
+    stables, aucun quatrième niveau.'
+  return_behaviors_direction: 'Remise en stock, réparation, renvoi : mécanismes demandés U382 ; définitions et rattachements
+    détaillés à instruire, sans absorption des décisions ni de l’exécution physique.'
+current_U384:
+  source_refs:
+  - U384
+  names:
+    D04.i: Sales Order
+    D04.j: Purchase Order
+    D04.k: Transfer Order
+    D04.l: Customer Return
+    D04.m: Supplier Return
+  naming_status: adopted
+  behavior_review: modeles/backlog/customer-return-behaviors.yaml
+  behavior_status: detailed_proposal_not_adopted
+customer_return_U385:
+  source_refs:
+  - U385
+  capability_id: D04.l
+  behavior_ids:
+  - BHV050
+  - BHV051
+  - BHV052
+  - BHV053
+  - BHV054
+  status: integrated
+  review_path: modeles/backlog/customer-return-behaviors.yaml
+  remaining: Remplacement client, règlement sans retour et autres filières à instruire ; contrats détaillés proposés.
+supplier_return_U387:
+  source_refs:
+  - U387
+  capability_id: D04.m
+  behavior_ids:
+  - BHV055
+  - BHV056
+  status: integrated
+  review_path: modeles/backlog/supplier-return-behaviors.yaml
+  remaining: Return for Repair reste conditionnel ; contrats détaillés proposés.
+supplier_return_U388:
+  source_refs:
+  - U388
+  capability_id: D04.m
+  behavior_ids:
+  - BHV055
+  - BHV056
+  - BHV057
+  status: integrated
+  review_path: modeles/backlog/supplier-return-behaviors.yaml
+order_release_U410:
+  status: integrated
+  source_refs:
+  - U410
+  - ELM245
+  - CMP156
+  behavior_id: BHV039
+  parent_id: D04.o
+  adopted_definition: Autoriser la prise en charge de tout ou partie d’un Order, ou d’un ensemble d’Orders liés, lorsque les
+    conditions de lancement individuelles et collectives sont satisfaites.
+  value_sha256: c863482f3cea7126b9883e3e5f53bd71ad428d9479fcd59301b0752bcfd83ed7
+  principles:
+  - Conditions individuelles et collectives de lancement.
+  - Complétude, éléments indispensables et traitement partiel ; seuils précis non prescrits.
+  - Autoriser ensemble ne signifie pas démarrer simultanément.
+  - P11 intégré au comportement existant ; pas de niveau supplémentaire.
+  editorial_scope: |-
+    Autoriser la prise en charge selon les conditions applicables à un Order, une ligne, une quantité ou un ensemble d’Orders liés. Les conditions collectives peuvent porter sur la complétude requise, la présence d’éléments indispensables et l’acceptation éventuelle d’un traitement partiel. Les valeurs, seuils, autorités et dérogations éventuelles sont des règles de gestion à préciser ; aucun seuil universel n’est prescrit.
+
+    Exemple fictif individuel : un transfert de 100 pièces devient ferme ; seules 60 sont autorisées à partir, les 40 autres attendent. Affermir ne libère pas automatiquement et affecter des ressources ne suffit pas à autoriser la prise en charge.
+
+    Exemple fictif collectif : une implantation magasin comprend vêtements et accessoires. Les vêtements sont disponibles, mais certains accessoires indispensables manquent. Selon la politique retenue, autoriser un départ partiel ou attendre un ensemble cohérent. L’intérêt est d’éviter que des Orders individuellement prêts produisent un résultat d’ensemble inutilisable. Aucun cas installé Beaumanoir n’est déduit de cet exemple.
+
+    Order Release autorise la prise en charge ; Process Orchestration coordonne ensuite les services nécessaires à la réalisation autorisée. Autoriser plusieurs Orders ensemble n’impose ni un démarrage simultané de leurs services ni une transaction technique atomique. Le début physique est un fait observé par Operations Tracking, pas un effet présumé de l’autorisation.
+
+    Order Structuring conserve la composition persistante de l’ensemble lorsqu’elle existe ; aucun Order chapeau obligatoire n’est introduit par le lancement collectif. Les décisions de satisfaction et Supply Assignment conservent leurs responsabilités sur les ressources, les échéances et leurs affectations. Hold & Resume reste distinct ; une autorisation n’efface pas silencieusement les autres blocages applicables.
+
+    P11 Coordinated Order Release est intégré à ce comportement existant (U410), sans comportement autonome ni sous-comportement. Les modalités écran, batch, API ou flux ne constituent pas des comportements supplémentaires.
+  market_comparisons:
+  - vendor: SAP
+    product: S/4HANA Fashion ; cours évolutif
+    element_name: Explaining Supply Assignment
+    element_type: Mécanisme produit
+    relationship: Recouvrement partiel
+    similarities: 'SAP distingue affectation et release check : les quantités affectées sont confrontées aux besoins pour
+      autoriser la création de livraison, selon les règles de satisfaction.'
+    differences: ARun et ITA sont des mécanismes produit mêlant des responsabilités séparées dans FLOW. Le statut SAP ou le
+      contrôle de livraison ne définit pas un cycle universel pour tous les Orders.
+    flow_position: Le besoin de cohérence collective enrichit Order Release existant. Affectation, autorisation et orchestration
+      restent distinctes ; aucun comportement Coordinated Order Release supplémentaire.
+    source_title: Explaining Supply Assignment
+    source_url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+    source_version: S/4HANA Fashion ; cours évolutif
+    source_locator: Supply Assignment / Release checks
+    consulted_on: '2026-09-19'
+    evidence_limits: Source primaire ouverte et consultée lors de la proposition ; aucune preuve installée Beaumanoir. Oracle
+      26A explicitement consulté, sans affirmation de dernière version.
+    status: proposed
+    source_refs:
+    - U410
+    - ELM245
+    - CMP156
+  - vendor: Oracle
+    product: Fusion Cloud SCM 26A ; édition explicitement consultée
+    element_name: Guidelines for Managing Shipment Sets
+    element_type: Mécanisme produit
+    relationship: Recouvrement partiel
+    similarities: Oracle documente les shipment sets pour des lignes destinées à être expédiées ensemble, avec des contraintes
+      collectives de progression et de mise en attente.
+    differences: Un shipment set de lignes ne prouve pas une composition persistante de plusieurs Orders ni une capacité autonome.
+      Ses contraintes produit ne sont pas imposées au modèle FLOW.
+    flow_position: Le besoin de cohérence collective enrichit Order Release existant. Affectation, autorisation et orchestration
+      restent distinctes ; aucun comportement Coordinated Order Release supplémentaire.
+    source_title: Guidelines for Managing Shipment Sets
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html
+    source_version: Fusion Cloud SCM 26A ; édition explicitement consultée
+    source_locator: Holds / splitting / scheduling
+    consulted_on: '2026-09-19'
+    evidence_limits: Source primaire ouverte et consultée lors de la proposition ; aucune preuve installée Beaumanoir. Oracle
+      26A explicitement consulté, sans affirmation de dernière version.
+    status: proposed
+    source_refs:
+    - U410
+    - ELM245
+    - CMP156
+  implementation_ref: modeles/backlog/history/order-release-U410/implementation.yaml
+release_placement_U414:
+  status: integrated
+  source_refs:
+  - U414
+  - ELM247
+  - CMP158
+  behavior_id: BHV039
+  previous_parent: D04.o
+  parent_id: D03.p
+  definition_unchanged: true
+  note: Les accords U363/U410 restent historiques. Lifecycle conserve huit comportements ; Split et Structuring restent inchangés.
+placement_U417:
+  status: integrated
+  source_refs:
+  - U416
+  - U417
+  - U418
+  - ELM248
+  - CMP159
+  lifecycle_domain: D03
+  structuring_domain: D03
+  release_parent: D04.o
+  split_parent: D04.n
+  note: 'Révise U414 : Planning prépare, Lifecycle autorise. Les huit comportements Lifecycle sont combinables, pas une succession
+    de colonnes obligatoires.'
+placement_U420:
+  status: integrated
+  source_refs:
+  - U420
+  lifecycle_domain: D04
+  archiving_domain: D03
+  structuring_domain: D03
+  release_parent: D04.o
+  split_parent: D04.n
+  note: 'U420 : Order Archiving appartient à D03 Order Backlog Management ; Order Lifecycle Management appartient à D04 Order
+    Management. Structuring reste dans D03. Les comportements restent sous leurs capacités : Order Release suit Lifecycle
+    dans D04 ; Split reste sous Structuring dans D03. Aucun identifiant ni définition de comportement modifié.'
+review_U422:
+  status: proposed
+  source_refs:
+  - U421
+  - U422
+  - ELM249
+  - CMP160
+  proposal_ref: modeles/backlog/order-backlog-review.yaml#lifecycle_redesign_U422
+  note: Réexamen ciblé dans l’audit existant. Huit comportements examinés ; aucun changement au catalogue adopté U420.
+review_U423:
+  status: proposed
+  source_refs:
+  - U423
+  proposal_ref: modeles/backlog/order-backlog-review.yaml#lifecycle_dimensions_U423
+  note: 'Piste préférée : Lifecycle unique et comportements gouvernant les dimensions métier. Option de scission U422 non
+    adoptée ; U420 reste le catalogue courant.'
+dimensions_U424:
+  status: integrated
+  source_refs:
+  - U424
+  - ELM251
+  - CMP162
+  definition: Gouverner les évolutions autorisées des Orders selon leurs différentes dimensions métier, en préservant la cohérence
+    entre engagements, modifications en préparation et réalisations acquises.
+  behavior_ids:
+  - BHV038
+  - BHV036
+  - BHV037
+  - BHV039
+  - BHV040
+  - BHV043
+  merged_behaviors:
+    BHV041: BHV038
+    BHV042: BHV043
+  scope: Principe, définition présentée, six dimensions et documentation des états adoptés ; nouveaux libellés, définitions
+    développées, états et contraintes restent éditoriaux.
+  evidence: modeles/backlog/history/lifecycle-dimensions-U424/implementation.yaml
+placement_U438:
+  status: integrated
+  source_refs:
+  - U438
+  lifecycle_domain: D04
+  archiving_domain: D04
+  structuring_domain: D04
+  release_parent: D04.o
+  split_parent: D04.n
+  note: U438 remplace uniquement les rattachements concernés de U417/U420 ; sections antérieures conservées pour provenance.

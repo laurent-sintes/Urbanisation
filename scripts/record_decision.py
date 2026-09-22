@@ -170,7 +170,7 @@ def _values(snapshot, collection, target_id, fields):
 
 def validate_document(document, sources=None):
     """Strict annex contract, including internal value/context integrity."""
-    if (not isinstance(document, dict) or set(document) != {'schema_version', 'intents'}
+    if (not isinstance(document, dict) or set(document) not in ({'schema_version', 'intents'}, {'schema_version', 'intents', 'suspensions'})
             or document.get('schema_version') != SCHEMA_VERSION):
         raise ValueError('Decision intent registry must use strict schema_version 1.0.0')
     intents = _records(document.get('intents'), 'intents')
@@ -211,6 +211,20 @@ def validate_document(document, sources=None):
                 {'target', 'incident_relations', 'related_nodes', 'principles', 'glossary'}
                 or canonical_sha256(context) != target['context_sha256']):
             raise ValueError('Intent context hash mismatch: ' + intent['id'])
+    seen = set()
+    for entry in document.get('suspensions', []):
+        if not isinstance(entry, dict) or set(entry) != {'intent_id', 'reviewer', 'reviewed_at', 'source_refs', 'rationale'}:
+            raise ValueError('Invalid intent suspension')
+        identifier = entry['intent_id']
+        if identifier not in intents or identifier in seen:
+            raise ValueError('Unknown or duplicate suspended intent: ' + str(identifier))
+        seen.add(identifier)
+        _text(entry['reviewer'], 'suspension reviewer')
+        _text(entry['rationale'], 'suspension rationale')
+        _date(entry['reviewed_at'], 'suspension reviewed_at')
+        refs = _strings(entry['source_refs'], 'suspension source_refs')
+        if known is not None and set(refs) - known:
+            raise ValueError('Unknown suspension sources')
     return document
 
 
@@ -287,6 +301,14 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
     version = _text(snapshot.get('version'), 'snapshot version')
     historical = _records(active_decisions.get('decisions') if isinstance(active_decisions, dict)
                           else active_decisions, 'active decisions')
+    suspended = {entry['intent_id']: entry for entry in document.get('suspensions', [])}
+    old_suspended = {entry['intent_id']: entry for entry in (consumed_document or {}).get('suspensions', [])}
+    for identifier, entry in old_suspended.items():
+        if suspended.get(identifier) != entry:
+            raise ValueError('Consumed intent suspension was removed or changed: ' + identifier)
+    for identifier in suspended.keys() - old_suspended.keys():
+        if identifier in consumed or identifier in historical:
+            raise ValueError('Published intents require the publication review workflow, not suspension')
     replaced = superseded_intents(document)
     for intent in document['intents']:
         if (intent.get('supersedes') in consumed or intent.get('supersedes') in historical):
@@ -301,7 +323,7 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
             continue
         if identifier in consumed:
             continue
-        if identifier in replaced:
+        if identifier in replaced or identifier in suspended:
             continue
         try:
             values = _values(snapshot, target['collection'], target['id'], target['approved_fields'])

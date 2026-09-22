@@ -2352,3 +2352,39 @@ Bénéfice : expliciter le passage des recommandations autorisées aux effets pr
 
 
 **Accord U577 — CMP242 :** Laurent valide le nom Plan Implementation, dans le périmètre du comportement de mise en œuvre discuté. Les rapprochements documentaires gardent leurs limites ; l’accord de nom ne crée ni consensus marché ni validation globale des champs.
+
+
+## CMP243
+
+U578 — Codex, 22 septembre 2026. Révision de la [proposition Master Plan Management](../modeles/backlog/master-plan-application-U575.yaml), section revision_U578 ; modèle canonique inchangé. ELM585 Oracle Batch Run Plan 26B et ELM582 Microsoft Cancel a planning job relus : cadrage, programmation, lancement, arrêt et nouveau calcul documentés à maille fonctionnelle. ELM595 apporte les filtres de périmètre et les calculs immédiats, récurrents ou successifs Microsoft. ELM566 Oracle et ELM413 Microsoft relus : observation des suites non prises en compte et recommandations face aux changements ; recouvrement partiel avec suivi et ajustement métier. Les sources ne prouvent pas une reprise au point exact d’interruption.
+
+Choix FLOW : remplacer le comportement agrégé Planning Management par cinq comportements directs, sur instruction explicite de Laurent. Bénéfice : distinguer leurs résultats et frontières ; compromis : pilotage plus fin au niveau landscape. La règle générale contre un comportement par bouton subsiste ; cette décomposition locale ne constitue pas une taxonomie marché. Monitor Plan observe ; Adjust Plan prépare une révision ; Rerun Planning démarre un nouveau calcul. L’ajustement conserve autorisation et application distinctes.
+
+Plan Version Management sort de la liste des comportements par instruction U578 ; gestion des variantes et historique restent fonctionnels. Apply Plan remplace le nom Plan Implementation par instruction explicite. Ces choix de granularité et de nom ne sont ni un standard universel ni une innovation revendiquée. Les nouvelles traductions anglaises et définitions restent proposées ; le nom Apply Plan et le retrait ont leur portée explicite. Les onze familles d’effets et les responsables opérationnels sont conservés.
+
+
+## CMP244
+
+U579 — Codex, 22 septembre 2026. [Contenu des décisions de Master Planning](../modeles/backlog/master-planning-structure-U568.yaml), section decision_content_U579. Proposition de décomposition de Fulfillment Plan Decision D03.o ; aucune mutation canonique. La précédente synthèse développait surtout la gestion du plan ; les responsabilités décisionnelles existaient mais leur lecture détaillée restait insuffisante.
+
+ELM458 SAP Exploring Backorder Processing et ELM363 Oracle Start Backlog Planning 26B directement relus : réexamen du carnet, disponibilités et priorités. BOP modifie aussi les confirmations ; son périmètre traverse décision, application et engagement FLOW. ELM222 Allocation et ELM223 Steps in Order Allocation Run relus dans le texte primaire indexé SAP ERP Fashion ; ouverture directe sans texte exploitable. Spread répartit les ressources entre besoins ; FIFO est une autre politique, ARun le processus plus large. Ne pas confondre ce sens avec le fractionnement d’Orders ou la redistribution physique entre sites.
+
+Proposition : Demand Coverage, Scarce Supply Distribution et Backlog Reconciliation, trois comportements combinables sous D03.o. Le premier établit la couverture, le second traite le partage en cas de rareté, le troisième réexamine les couvertures du carnet. Appuis fonctionnels partiels, libellés et maille FLOW proposés ; le fait d’avoir deux documents SAP sur spread ne démontre pas un consensus. Les prévisions restent dans le plan selon U565, sans leur attribuer une prise en charge dans le BOP cité.
+
+Les autres capacités contribuent au même plan : priorités, cibles, protections proposées, implantation, réassort, redistribution, achats (décision proposée U573/U574). Bénéfice : montrer les arbitrages concrets sans recréer des plans autonomes. Compromis : comportements combinables plutôt que phases exclusives ; conserver leur articulation. Apply Plan fait appliquer les résultats autorisés ; son regroupement ne retire pas les décisions de répartition. Aucun nouveau nom ou placement adopté par extension.
+
+
+## CMP245
+
+U580 — Codex, 22 septembre 2026. [Comparaison des noms d’Area](../modeles/backlog/master-planning-structure-U568.yaml), section area_naming_review_U580. Comparaison au niveau du périmètre métier entier, sans déduire le nom de la somme des comportements de gestion. ELM596–599 et relecture ELM552 : Microsoft Master Planning, SAP Response and supply planning, Oracle Supply Planning et Demand and Supply Plan. Ces intitulés couvrent déjà la construction et l’adaptation de réponses demande-ressources, au-delà de l’administration d’un plan.
+
+ELM597 situe Plan review and reconciliation dans le processus S&OP ; interprétation FLOW : Reconciliation peut évoquer une étape de convergence plus qu’un ensemble d’arbitrages opérationnels. ELM552/598 étayent les arbitrages sous contraintes et les objectifs de service, stock et économie ; le nom exact Demand & Supply Optimization n’est pas établi comme catégorie commune dans ce corpus. Recommandation Codex entre les deux options de Laurent : Demand & Supply Optimization, pour exprimer la finalité multidimensionnelle. Demand & Supply Planning reste une alternative lexicalement plus directement étayée, notamment chez Oracle.
+
+Bénéfice : distinguer finalité de l’Area et capacité de gestion du plan. Compromis : intitulé FLOW assumé ; définition excluant garantie d’optimum et extension implicite au pilotage commercial de la demande. Demand Planning, configurations et responsabilités opérationnelles ne changent pas par le nom. Demande exploratoire, aucun renommage adopté ni modification canonique ; marché et recommandation distingués.
+
+
+## CMP246
+
+U581 — Codex, 22 septembre 2026. [CTP et achats du plan commun](../modeles/backlog/master-planning-structure-U568.yaml), section ctp_and_procurement_U581. ELM417/588 Microsoft et ELM566 Oracle relus directement. Batch CTP s’appuie sur le plan dynamique pour les dates ; master planning produit des Planned Orders, transformés en Orders par firming. Oracle transmet les recommandations nouvelles ou révisées et expose les exceptions aval. Aucun de ces documents ne garantit de rendre toutes les promesses existantes réalisables.
+
+Interprétation FLOW : autoriser au cadrage les adaptations prévues par les politiques externes, mobiliser CTP pour leur faisabilité, puis coordonner leur choix dans le plan commun. La décision d’achat proposée reste distincte de CTP ; Apply Plan mobilise les responsables des Orders et engagements. Les achats pour prévisions ou stocks ne nécessitent pas chacun un contrôle CTP de commande client. Limites : délais et ressources peuvent rendre une date intenable ; proposition d’achat, engagement fournisseur et couverture effective distincts. Recommandation de fonctionnement proposée, pas activation logicielle ni adoption globale.

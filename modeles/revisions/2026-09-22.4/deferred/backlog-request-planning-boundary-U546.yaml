@@ -1,0 +1,126 @@
+id: backlog-request-planning-boundary-U546
+date: '2026-09-21'
+author: Codex
+status: boundary_and_editorial_revisions_proposed
+source_refs:
+- U546
+- U501
+- U537
+- U539
+- U541
+- CMP225
+- ELM496
+- ELM498
+- U547
+- CMP226
+baseline_model_sha256: a04bd6a13198897db87c1e1797b3fefad18e2ee5a99f18b67abb9bf6aa930f2d
+finding: Les scopes distinguent déjà la demande et le travail du Planning. Plusieurs noms et définitions courtes donnent toutefois
+  l’impression que la demande réalise elle-même l’étude ou l’application. Chevauchement surtout éditorial ; pas de doublon
+  structurel démontré par la seule lecture des intitulés.
+responsibilities:
+- id: D04.s
+  responsibility: Cadrer le travail demandé, suivre sa prise en charge, conserver l’autorisation applicable et constater le
+    résultat de la demande.
+- id: D03.p
+  responsibility: Construire, comparer et actualiser le plan du carnet ; porter l’application du résultat retenu.
+- id: D03.o
+  responsibility: Déterminer les arbitrages cohérents d’affectation en mobilisant les décisions spécialisées.
+- id: D02.e
+  responsibility: 'Comportement de D03.p : rendre effectives les affectations et signaler les écarts d’application.'
+authorization_boundary:
+  id: BHV092
+  recommendation: Conserver dans la demande le recueil et la tenue de l’autorisation de ses suites, de sa portée et de ses
+    conditions. Ne pas refaire Fulfillment Plan Decision, ne pas reprendre Order Release et ne pas lever implicitement les
+    engagements.
+  automation: Autorisation humaine ou déléguée selon U501 ; aucune étape manuelle obligatoire.
+  scope_limit: L’audit ne crée pas une nouvelle capacité Decision par opération d’approbation.
+example: 'Exemple fictif : après un retard fournisseur, la demande précise quelles commandes étudier et quels engagements
+  préserver. Planning compare les possibilités en mobilisant les décisions. Une fois les suites autorisées, son comportement
+  Supply Assignment applique les affectations ; la demande reçoit le bilan et garde visible ce qui reste à traiter. Une étude
+  peut se conclure sans application.'
+proposed_revisions:
+- id: D04.s
+  field: definition
+  proposed_value: 'Cadrer et suivre une demande de réexamen du carnet : préciser le travail attendu, sa portée, ses contraintes,
+    les suites autorisées et le résultat obtenu.'
+  reason: La demande porte la finalité du travail sollicité et son suivi ; Planning produit les scénarios et applique le plan
+    retenu.
+  current_value: Prendre en charge une demande de réexamen du carnet, préciser son objectif, son périmètre et ses contraintes,
+    et suivre les scénarios étudiés, les décisions prises et les suites autorisées.
+- id: BHV089
+  field: definition
+  proposed_value: Engager et cadrer une revue périodique du carnet avec les besoins, ressources et priorités actualisés.
+  reason: Réexaminer le carnet appartient au Planning ; ici le comportement ouvre et cadre le travail demandé.
+  current_value: Réexaminer le carnet avec les ressources, besoins et priorités actualisés.
+- id: BHV090
+  field: definition
+  proposed_value: Prendre en charge une demande d’étude volontaire en précisant son objectif, son périmètre et les hypothèses
+    à examiner.
+  reason: Explorer les hypothèses relève du Planning ; le scope actuel décrit déjà leur formulation dans la demande.
+  current_value: Explorer volontairement un périmètre ou une hypothèse.
+- id: BHV091
+  field: definition
+  proposed_value: Faire instruire les scénarios demandés et recueillir leurs hypothèses, leurs résultats comparés et les conclusions
+    utiles au traitement de la demande.
+  reason: Aligner la définition courte sur le scope qui attribue la construction et la comparaison à Order Backlog Planning.
+    Ne pas refaire les calculs ni une seconde simulation dans la demande.
+  current_value: Comparer les scénarios et leurs conséquences, avec possibilité de conclure sans appliquer.
+- id: BHV091
+  field: name
+  proposed_value: Scenario Study Follow-up
+  reason: Libellé candidat FLOW pour distinguer le suivi de l’étude de la Simulation & Analysis réalisée dans Planning ; pas
+    de terme standard revendiqué.
+  current_value: Simulation & Analysis
+- id: BHV093
+  field: definition
+  proposed_value: Suivre la prise en compte du résultat autorisé par le Planning, recueillir les écarts et déterminer les
+    suites à donner à la demande.
+  reason: Le suivi de la demande ne constitue pas un second mécanisme d’application ; Supply Assignment reste le comportement
+    d’application des affectations sous Planning.
+  current_value: Faire appliquer le résultat autorisé et connaître sa prise en compte ou ses écarts.
+market_sources:
+- id: ELM496
+  vendor: Oracle
+  title: Overview of Backlog Management Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  edition: 26B
+  passage: Planning ; Reviewing ; Simulating ; Releasing
+  finding: Oracle regroupe construction du plan, examen, simulation et mise en application dans le parcours du backlog. Les
+    valeurs restent simulées avant release.
+  limit: Ce document ne décrit pas une capacité métier distincte de demande d’optimisation et ne prouve pas qu’un dossier
+    de demande est obligatoire.
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Parcours fonctionnel de produit
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+- id: ELM498
+  vendor: Salesforce
+  title: Explore Service Requests and Resolutions
+  url: https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions
+  edition: Agentforce IT Service ; cours évolutif sans édition précisée
+  passage: Service Requests ; Request Tracking ; Resolving Requests
+  finding: La demande recueille les éléments du besoin et permet son suivi ; les activités de résolution et les autorisations
+    utiles sont articulées à cette demande.
+  limit: 'Exemple de services IT aux employés : appui par analogie à la gestion d’une demande, pas preuve d’une capacité standard
+    Order Backlog Optimization Request dans la Supply.'
+  consulted_on: '2026-09-21'
+  access: Texte primaire directement consulté
+  native_id: Non indiqué
+  nature: Parcours fonctionnel de produit
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+recommendation: 'Conserver les deux capacités en clarifiant les formulations : demande de travail et résultat du plan sont
+  distincts. Ne pas conserver une capacité Request uniquement pour faire un appel technique à Planning ; elle doit porter
+  le cadrage et le suivi métier retenus U501.'
+tradeoff: Le suivi de la demande et celui du plan doivent se référer au même résultat métier, sans deux autorités concurrentes
+  ni obligation d’un dossier manuel pour chaque recalcul. La documentation de marché consultée ne démontre pas un catalogue
+  OMS standard comportant cette capacité de demande.
+market_position: Oracle étaye le contenu du Planning ; Salesforce apporte une analogie de gestion de demande et de résolution.
+  Leur rapprochement est une adaptation FLOW, pas une équivalence ni une innovation démontrée.
+canonical_changes: Aucun champ du modèle, comportement, nom, parent ou accord modifié. Les formulations proposées sont consignées
+  pour examen ; U501 reste préservé.
+followup_U547:
+  analysis_ref: modeles/backlog/planning-request-behavior-option-U547.yaml
+  direction: La demande est traitée comme les Orders ; sa prise en charge comme premier comportement de Planning devient l’option
+    à privilégier. La recommandation U546 de maintenir deux capacités n’est plus la seule piste. Migration et noms proposés,
+    sans modification canonique.

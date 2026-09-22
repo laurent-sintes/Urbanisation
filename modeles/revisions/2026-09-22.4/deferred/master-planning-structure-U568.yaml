@@ -1,0 +1,489 @@
+id: master-planning-structure-U568
+date: '2026-09-21'
+source_refs:
+- U568
+- U569
+- U570
+- CMP238
+- U571
+- U572
+- U579
+- CMP244
+- U580
+- CMP245
+- U581
+- CMP246
+status: placement_principle_validated_detailed_structure_proposed
+proposed_area:
+  current_id: D17
+  current_name: Supply Planning
+  proposed_name: Demand & Supply Optimization
+  scope: Construire et actualiser un plan Supply commun associant satisfaction des demandes et ajustements de ressources ;
+    mobiliser les décisions et faire appliquer les suites retenues.
+  name_status: adopted_U581_pending_canonical_refactor
+  name_agreement:
+    source_ref: U581
+    interpretation: contextual
+    field: name
+    value: Demand & Supply Optimization
+    verbatim: Ok pour Optimization.
+    context: Nom recommandé entre les deux options U580 ; pas validation des descriptions ou de la migration détaillée.
+proposed_management_capability:
+  name: Master Plan Management
+  definition: Construire, comparer, retenir, actualiser et faire appliquer le plan Supply commun, en mobilisant les décisions
+    spécialisées et en suivant les résultats réellement pris en compte.
+  status: codex_proposal
+  rationale: Une responsabilité durable de gestion du plan commun ; simulation, autorisation et lancement ne justifient pas
+    chacun une capacité autonome.
+  candidate_behavior_successions:
+  - from:
+    - D04.s
+    result: Optimization Request Management
+  - from:
+    - BHV005
+    - BHV006
+    - BHV091
+    result: Simulation & Analysis avec construction des scénarios et analyse de leurs conséquences
+  - from:
+    - BHV092
+    result: Scenario Authorization
+  - from:
+    - D02.e
+    result: Supply Assignment
+  - from:
+    - BHV094
+    result: Supply Adjustment Application, nom proposé
+  - from:
+    - BHV016
+    result: Adaptation aux écarts à reprendre dans l’actualisation et le suivi du plan ; pas de disparition implicite.
+planning_consolidation:
+  candidates:
+  - D03.p
+  - D05.f
+  direction: Un plan retenu commun ; carnet, stock, apports et protections deviennent des contributions et angles d’étude,
+    sans sous-plans finaux autonomes.
+  retired_identifier_constraint: Ne pas restaurer D17.b ni réutiliser un identifiant retiré.
+specialized_contributions:
+- D03.j
+- D03.o
+- D03.m
+- D05.a
+- D05.d
+- D05.e
+- D05.c
+input_responsibility:
+  id: D17.a
+  role: Demand Planning qualifie la demande attendue et restante ; ne crée pas un plan Supply concurrent.
+placement_question:
+  status: resolved_by_U572_on_principle
+  question: Master Planning coordonne-t-elle les décisions dans leurs Areas actuelles ou les regroupe-t-elle ?
+  configuration_and_orders: Configuration, autorisation des engagements et tenue effective des Orders restent distinctes.
+market_refs:
+- ELM303
+- ELM579
+- ELM580
+- ELM581
+- ELM413
+- ELM496
+market_position: Master Planning est établi chez Microsoft au-delà de la production. SAP IBP étaye le périmètre intégré sous
+  un autre nom. La maille Area et la capacité Master Plan Management restent des choix FLOW, pas une taxonomie universelle.
+canonical_hierarchy_changed: false
+report: audits/2026-09-21-integrated-supply-plan-U567/proposition-master-planning.md
+placement_recommendation:
+  author: Codex
+  status: principle_validated_U572_detailed_mapping_proposed
+  choice: Regrouper dans Master Planning les décisions qui construisent le contenu du plan, en conservant les autres responsabilités
+    à leurs propriétaires.
+  candidates_inside:
+  - D03.o
+  - D03.m
+  - D05.a
+  - D05.d
+  - D05.g
+  - D05.e
+  - D05.c
+  candidate_meaning: Cohérence du plan, priorités, cibles et protections proposées, implantation, réassort et redistribution
+    ; la liste guide une revue de placement, sans adoption de déplacement.
+  reusable_feasibility:
+  - D03.i
+  - D03.j
+  configuration_owner: D02.b
+  orders_and_commitments: D04 et D15 conservent leurs responsabilités ; application autorisée mobilise ces capacités.
+  area_residuals_to_audit:
+  - D03
+  - D05
+  preserve_and_relocate_only_after_review:
+  - D05.h
+  - D05.i
+  market_basis:
+  - ELM303
+  - ELM579
+  - ELM580
+  - ELM581
+  - ELM413
+  tradeoff: Une Area plus large, mais un propriétaire clair des arbitrages du plan ; ne pas absorber configuration, opérations
+    ni toutes les décisions du Domain.
+user_agreement_U572:
+  verbatim: Je valide, je suis d'accord
+  approved_statements:
+  - Regrouper dans Master Planning les décisions qui déterminent le contenu du plan Supply commun.
+  - Conserver les responsables propres des faisabilités réutilisables, des politiques et des engagements.
+  not_approved_by_extension:
+  - Liste précise des capacités transférées.
+  - Nom Master Plan Management et définition détaillée.
+  - Noms et fusions des comportements proposés.
+  - Suppression des Areas D03 et D05.
+  scope: Accord de principe sur la recommandation présentée ; pas de capture de champs canoniques non présentés.
+  implementation_status: Arbitrage enregistré ; hiérarchie actuelle préservée jusqu’à formalisation du refacto.
+decision_content_U579:
+  date: '2026-09-22'
+  source_refs:
+  - U579
+  - CMP244
+  status: diagnosis_and_decomposition_proposed_not_adopted
+  finding: La présentation de Master Plan Management a masqué le contenu des arbitrages. D03.o couvre déjà le scénario collectif
+    mais ses mécanismes ne sont pas décomposés ; le regroupement Apply Plan porte les effets, pas le choix des affectations.
+  core_decision:
+    existing_id: D03.o
+    name: Fulfillment Plan Decision
+    kind: capability
+    nature: decision
+    proposed_parent: proposal:Demand & Supply Optimization
+    definition: Déterminer un scénario cohérent de couverture des commandes et prévisions restantes, en coordonnant ressources,
+      priorités et décisions contributrices.
+    definition_status: synthèse proposée ; définition canonique et autres champs non modifiés
+    decomposition_rationale: Trois comportements terminaux combinables rendent visibles couverture, partage de la rareté et
+      réexamen ; ils produisent un résultat commun, pas trois plans indépendants.
+    behaviors:
+    - proposal_key: demand-coverage
+      name: Demand Coverage
+      definition: Déterminer quelles ressources présentes ou futures couvrent quels besoins, avec quantités, dates et reste
+        non couvert.
+      example: Couvrir 80 pièces d’une demande de 100 et rendre explicites les 20 manquantes.
+      market_refs:
+      - ELM223
+      - ELM363
+      boundary: Les prévisions restantes sont incluses selon U565 ; les sources ARun et Backlog Management citées portent
+        ici sur des Orders, sans prouver à elles seules ce périmètre prévisionnel.
+      kind: behavior
+      parent: D03.o
+      status: proposed_not_created
+      source_refs:
+      - U579
+      - CMP244
+      - ELM223
+      - ELM363
+      decomposition_rationale: Rendre visible le résultat de couverture et les manques.
+    - proposal_key: scarce-supply-distribution
+      name: Scarce Supply Distribution
+      definition: Déterminer les parts de ressources limitées attribuables aux besoins concurrents selon priorités, protections
+        et critères de valeur.
+      example: Pour des besoins de 100 et 200 et une ressource de 150, un prorata peut proposer 50 et 100 ; ce résultat n’impose
+        pas le prorata comme politique générale.
+      market_refs:
+      - ELM222
+      - ELM223
+      boundary: Spread est une logique SAP ERP Fashion de répartition ; pas une découpe des Orders ni un synonyme du processus
+        ARun. Les politiques sont des entrées et leur administration reste extérieure.
+      kind: behavior
+      parent: D03.o
+      status: proposed_not_created
+      source_refs:
+      - U579
+      - CMP244
+      - ELM222
+      - ELM223
+      decomposition_rationale: Expliciter l’arbitrage de rareté, au-delà d’un simple classement des demandes.
+    - proposal_key: backlog-reconciliation
+      name: Backlog Reconciliation
+      definition: Réexaminer la couverture du carnet quand les ressources, besoins ou priorités changent, et déterminer les
+        réaffectations admissibles et leurs conséquences.
+      example: Après un retard d’arrivage, réexaminer la couverture de deux commandes et proposer le rééquilibrage compatible
+        avec les engagements.
+      market_refs:
+      - ELM458
+      - ELM363
+      boundary: 'Rapprochement partiel avec BOP : SAP couvre aussi des modifications de confirmations. La décision FLOW propose
+        ; Apply Plan et Fulfillment Commitment portent les suites autorisées.'
+      kind: behavior
+      parent: D03.o
+      status: proposed_not_created
+      source_refs:
+      - U579
+      - CMP244
+      - ELM458
+      - ELM363
+      decomposition_rationale: Distinguer le réexamen d’une couverture existante en préservant contraintes et engagements.
+  other_contributing_capabilities:
+  - id: D03.m
+    name: Order Prioritization
+    role: Établir les priorités relatives des commandes ; ne détermine pas seul les quantités attribuées.
+    placement_status: proposed_not_migrated
+  - id: D05.a
+    name: Inventory Target Decision
+    role: Déterminer les niveaux et seuils de stock recherchés.
+    placement_status: proposed_not_migrated
+  - id: D05.d
+    name: Group Protection Decision
+    role: Déterminer les protections proposées entre groupes de besoins.
+    placement_status: proposed_not_migrated
+  - id: D05.g
+    name: Initial Stocking Decision
+    role: Déterminer les apports de lancement.
+    placement_status: proposed_not_migrated
+  - id: D05.e
+    name: Replenishment Decision
+    role: Déterminer et ajuster les apports de réassort.
+    placement_status: proposed_not_migrated
+  - id: D05.c
+    name: Stock Redistribution Decision
+    role: Déterminer les transferts utiles entre sites et la consolidation des stocks.
+    placement_status: proposed_not_migrated
+  - id: proposal:supply-procurement-decision
+    name: Supply Procurement Decision
+    role: Déterminer les achats à proposer, maintenir, modifier ou annuler ; capacité encore proposée dans U573/U574.
+    placement_status: proposed_not_migrated
+  reusable_decisions_outside:
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  boundaries:
+  - Demand Planning fournit la demande attendue restante ; les prévisions ne deviennent pas des Orders.
+  - Le classement, les parts proposées, les liens appliqués et les engagements restent distincts.
+  - Monitor Plan détecte les écarts ; Adjust Plan pilote la révision ; Backlog Reconciliation en détermine le résultat pour
+    le carnet.
+  - Aucun plan final autonome par comportement ; les décisions se coordonnent dans le plan commun.
+  - Le placement précis, les noms proposés et la décomposition de D03.o ne sont pas validés par la seule demande d’explicitation.
+  market_documents:
+  - id: ELM458
+    title: Exploring Backorder Processing
+    url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+    vendor: SAP
+    version: S/4HANA Cloud Public Edition ; édition non précisée
+    locator: Backorder Processing Overview ; Reprioritization & Reallocation ; Order Confirmations
+    consulted_on: '2026-09-22'
+    access: Texte primaire directement consulté
+    finding: Réexamen des disponibilités, priorités, répartition et confirmations des commandes de vente et de transfert.
+    limit: BOP traverse décisions et application ; le document ne couvre pas les prévisions ni la génération de nouveaux achats.
+  - id: ELM363
+    title: Start Backlog Planning
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+    vendor: Oracle
+    version: 26B
+    locator: Introduction ; When to Use
+    consulted_on: '2026-09-22'
+    access: Texte primaire directement consulté
+    finding: Réexamen du carnet avec les données Supply/Demand actualisées et les règles de priorité.
+    limit: Un sous-périmètre ne doit pas ignorer des demandes concurrentes partageant ses ressources ; pas une preuve de planification
+      des achats.
+  - id: ELM222
+    title: Allocation
+    url: https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/f6a6f15562e37b43e10000000a4450e5.html
+    vendor: SAP
+    version: ERP Fashion Management ; édition exacte non relevée
+    locator: Use ; Allocation Logic
+    consulted_on: '2026-09-22'
+    access: Texte primaire indexé consulté ; ouverture directe sans texte exploitable
+    finding: FIFO et spread sont des logiques de distribution des ressources aux besoins.
+    limit: Pas de transfert implicite aux éditions aATP récentes ; deux documents SAP ne prouvent pas un consensus interéditeurs.
+  - id: ELM223
+    title: Steps in Order Allocation Run
+    url: https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3d1df055aa2a6d55e10000000a4450e5.html
+    vendor: SAP
+    version: ERP Fashion Management ; édition exacte non relevée
+    locator: Selection ; Requirement Grouping ; Allocation
+    consulted_on: '2026-09-22'
+    access: Texte primaire indexé consulté ; variante SAP_ERP du lien historique SAP_ERP_SPV
+    finding: ARun considère stocks et arrivages ; le regroupement des besoins prépare la répartition spread.
+    limit: Processus produit plus large qu’un comportement de décision ; aucune garantie d’optimum global ou génération de
+      nouvelles ressources déduite.
+  market_position: Mécanismes établis ; proposition FLOW de les exposer sous une décision commune. Aucun consensus sur les
+    trois libellés ni innovation algorithmique revendiqués.
+  canonical_hierarchy_changed: false
+area_naming_review_U580:
+  date: '2026-09-22'
+  source_refs:
+  - U580
+  - CMP245
+  status: recommended_name_adopted_U581_other_fields_not_adopted
+  scope: 'Nom et responsabilité de l’Area entière : rapprocher besoins, ressources et engagements, arbitrer leurs adaptations
+    et maintenir un résultat commun. La gestion du plan est une capacité contributrice.'
+  candidates:
+  - name: Demand & Supply Reconciliation
+    market_basis: SAP emploie reconciliation pour la revue et convergence S&OP ; pas de nom d’Area commun établi dans le corpus.
+    fit: Rend explicite la mise en cohérence des besoins et ressources.
+    tradeoff: Peut être compris comme une étape d’alignement de plans ; exprime moins directement le choix entre solutions
+      de valeurs différentes.
+    assessment_kind: Interprétation sémantique FLOW à partir de ELM597.
+  - name: Demand & Supply Optimization
+    market_basis: SAP et Oracle documentent optimisation, contraintes et arbitrages sous des titres comprenant Supply Planning.
+      Le nom exact n’est pas établi comme catégorie commune.
+    fit: Met au premier plan le compromis entre satisfaction, engagements, économie, stock et risque.
+    tradeoff: À définir comme optimisation de la couverture de la demande et des ressources ; ne pas déduire influence commerciale
+      sur la demande ni garantie d’optimum mathématique.
+    assessment_kind: Recommandation de vocabulaire FLOW, pas terme normalisé ni innovation démontrée.
+  - name: Demand & Supply Planning
+    market_basis: Oracle utilise Demand and Supply Planning et Demand and Supply Plan ; Microsoft et SAP utilisent d’autres
+      intitulés Planning.
+    fit: Option plus directement alignée sur les intitulés observés pour un périmètre intégré.
+    tradeoff: Met la planification au premier plan et peut faire attendre la prévision de demande ; ne décide pas à elle seule
+      le placement de Demand Planning.
+  - name: Master Planning
+    market_basis: Terme Microsoft établi pour calculer les besoins et préparer les apports, pas seulement administrer un plan.
+    fit: Couvre déjà un contenu métier d’équilibrage.
+    tradeoff: Sa lecture comme gestion du seul objet plan dans FLOW motive la recherche d’un nom exprimant davantage la finalité.
+  recommendation:
+    author: Codex
+    preferred_between_user_options: Demand & Supply Optimization
+    reason: 'La finalité FLOW dépasse la cohérence : choisir les adaptations de couverture et de ressources au regard de plusieurs
+      dimensions de valeur, sans pondération implicite.'
+    more_directly_market_aligned_alternative: Demand & Supply Planning
+    draft_definition: Déterminer et actualiser le meilleur compromis de couverture des demandes et d’emploi ou d’adaptation
+      des ressources Supply, dans le respect des engagements et contraintes applicables.
+    market_status: Adaptation terminologique FLOW fondée sur des responsabilités documentées ; aucun consensus sur le nom
+      exact revendiqué.
+    approval_status: name_adopted_U581_only
+  boundaries:
+  - Gestion du plan, décisions contributrices, configuration et réalisation conservent leurs distinctions.
+  - Demand Planning reste une responsabilité de prévision ; ni son déplacement ni la prise en charge de prix et promotions
+    ne sont déduits du nom.
+  - Réconciliation peut expliciter la responsabilité de cohérence au sein de l’optimisation, sans ajouter automatiquement
+    une nouvelle capacité.
+  - Un plan commun est maintenu ; aucun nouveau planning autonome.
+  market_documents:
+  - id: ELM596
+    reference: MKT14
+    vendor: Microsoft
+    title: Master planning home page
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-planning-home-page
+    version: Documentation évolutive ; mise à jour affichée 2026-03-26
+    locator: Introduction ; main planning processes
+    finding: Master Planning détermine les besoins nets et les apports à préparer ; sa portée dépasse le pilotage du calcul.
+    limit: Vocabulaire de module ERP, avec contexte industriel ; pas une équivalence exacte de périmètre FLOW.
+    consulted_on: '2026-09-22'
+    access: Document primaire consulté ; texte direct ou indexé
+    native_identifier: null
+    reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+  - id: ELM597
+    reference: MKT24
+    vendor: SAP
+    title: What is sales and operations planning (S&OP)?
+    url: https://www.sap.com/india/resources/sop-sales-and-operations-planning
+    version: Page évolutive ; édition non indiquée
+    locator: How does the S&OP process work? ; Plan review and reconciliation
+    finding: Reconciliation apparaît dans une étape de revue, simulation et convergence entre plans de demande et de supply.
+    limit: Contexte S&OP ; ne démontre pas un intitulé transversal unique pour BOP, répartition et achats.
+    consulted_on: '2026-09-22'
+    access: Document primaire consulté ; texte direct ou indexé
+    native_identifier: null
+    reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+  - id: ELM598
+    reference: MKT20
+    vendor: Oracle
+    title: Oracle Supply Planning
+    url: https://www.oracle.com/scm/supply-chain-planning/supply-planning/
+    version: Page produit évolutive ; édition non indiquée
+    locator: Balance global demand and supply ; Honor customer commitments ; Respond to changing business conditions
+    finding: Supply Planning couvre équilibre demande-ressources, arbitrages du carnet, scénarios et recommandations d’approvisionnement.
+    limit: Périmètre produit plus large, incluant production et capacité ; pas une taxonomie de capacités FLOW.
+    consulted_on: '2026-09-22'
+    access: Document primaire consulté ; texte direct ou indexé
+    native_identifier: null
+    reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+  - id: ELM599
+    reference: MKT20
+    vendor: Oracle
+    title: Run a Supply Plan or an Integrated Plan
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/run-a-supply-plan-or-an-integrated-plan.html
+    version: 26B
+    locator: Introduction ; Scope Options
+    finding: Demand and Supply Plan désigne un plan intégré combinant prévisions et planification de supply.
+    limit: Appui au terme Planning et à un périmètre intégré, pas au nom exact Demand & Supply Optimization.
+    consulted_on: '2026-09-22'
+    access: Document primaire consulté ; texte direct ou indexé
+    native_identifier: null
+    reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+  - id: ELM552
+    reference: MKT24
+    vendor: SAP
+    title: Response and supply planning
+    url: https://www.sap.com/products/scm/integrated-business-planning/features/response-and-supply-planning.html
+    version: Page produit évolutive ; édition non indiquée
+    locator: Empower planners with AI-driven supply planning ; algorithm options ; Scenario simulation
+    finding: Planification réseau sous contraintes, réponse aux changements et choix de méthodes heuristiques, de priorisation
+      ou d’optimisation.
+    limit: Le titre de l’offre reste Response and supply planning ; optimisation ne désigne pas toute sa taxonomie.
+    existing_record: true
+    consulted_on: '2026-09-22'
+    access: Document primaire consulté ; texte direct ou indexé
+    native_identifier: null
+    reuse: Synthèse sélective et lien ; aucune reproduction intégrale
+  canonical_hierarchy_changed: false
+ctp_and_procurement_U581:
+  date: '2026-09-22'
+  source_refs:
+  - U581
+  - CMP246
+  - ELM417
+  - ELM588
+  - ELM566
+  status: documented_answer_and_flow_recommendation_not_adopted
+  market_findings:
+  - Microsoft Batch CTP calcule les dates lorsque le plan dynamique est exécuté ; la méthode de contrôle des dates se choisit
+    globalement ou par produit/commande/ligne. Un mode proche du temps réel est aussi documenté.
+  - Microsoft master planning produit des Planned Orders ; leur firming crée les Orders réels. Proposer un achat est donc
+    distinct de calculer une date CTP.
+  - Oracle distingue recommandations nouvelles ou révisées, release et traitement aval des exceptions.
+  flow_recommendation:
+    activation: 'Le cadrage du calcul sélectionne les politiques autorisant les adaptations : achats, transferts, alternatives
+      ou modifications admissibles. Ces politiques restent configurées à l’extérieur du Planning.'
+    trigger: Mobiliser CTP lorsqu’il faut examiner une satisfaction sous adaptation, notamment après manque, retard ou changement
+      de demande ; pas de séquence ATP puis CTP obligatoire.
+    feasibility_owner: D03.j — CTP et ses comportements établissent les possibilités conditionnelles et impacts.
+    plan_owner: D03.o — coordination du scénario commun ; pas de décision isolée qui consommerait plusieurs fois une ressource.
+    procurement_owner: Supply Procurement Decision, capacité proposée dans U573/U574, détermine les suites d’achat à retenir
+      avec les autres décisions.
+    application: Plan Authorization puis Apply Plan selon les autorités applicables ; Purchase Order et Order Lifecycle Management
+      gardent la tenue et les transitions des demandes. Fulfillment Commitment porte les promesses autorisées.
+    forecast_boundary: Les achats destinés aux prévisions ou au stock peuvent être proposés par le plan sans CTP associé à
+      une commande client.
+  limits:
+  - 'Aucune garantie que toute promesse existante puisse être tenue : dates, capacités, disponibilités et engagements peuvent
+    rendre le problème infaisable.'
+  - Un achat planifié ne prouve ni acceptation fournisseur ni disponibilité effective ; hypothèses et conditions restent visibles.
+  - Si une date promise n’est pas tenable, le plan expose le manque, une alternative ou une révision à autoriser ; il ne rend
+    pas la promesse valide en changeant silencieusement sa date.
+  - Aucune activation réelle de paramètre ERP ni création de commande n’est effectuée.
+  example:
+    kind: illustration fictive FLOW
+    demand: 100 pièces promises vendredi, 60 couvertes.
+    candidate: Acheter 40 avec arrivée et mise à disposition compatibles.
+    if_feasible: Le plan propose cet achat et une couverture conditionnelle des 100 pièces.
+    if_not_feasible: Si l’achat arrive mardi suivant, le manque vendredi demeure ; examiner une autre source ou une livraison
+      partielle et une révision autorisée du solde.
+  market_documents:
+  - id: ELM417
+    title: Calculate sales order delivery dates using CTP
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp
+    version: Documentation évolutive, lue le 22 septembre 2026
+    locator: How CTP differs ; Set default delivery date control methods ; Schedule Batch CTP calculations
+    consulted_on: '2026-09-22'
+    access: Texte primaire directement consulté
+    limit: CTP Microsoft centré sur dates et faisabilité matériaux/capacités ; pas identité de toutes les adaptations FLOW.
+  - id: ELM588
+    title: Maintain planned orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders
+    version: Documentation évolutive ; 2025-08-05
+    locator: Planned order status ; Firming planned orders
+    consulted_on: '2026-09-22'
+    access: Texte primaire directement consulté
+    limit: Création d’un Order et acceptation ou réalisation fournisseur restent distinctes.
+  - id: ELM566
+    title: Manually Release Plan Recommendations
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+    version: 26B
+    locator: Introduction ; release results ; Release Planned Buy Orders
+    consulted_on: '2026-09-22'
+    access: Texte primaire directement consulté
+    limit: Transmission des recommandations et prise en compte aval non assimilées à satisfaction certaine.
