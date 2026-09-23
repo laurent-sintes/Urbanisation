@@ -47,6 +47,16 @@ class ModelLevelTests(unittest.TestCase):
         self.assertEqual(validate_urbanism(model, self.sources), [])
         self.assertIn('| business-references | Business References | Purpose |', render(model, 'Purpose'))
 
+    def test_subdomain_contract_preserves_unique_parent_and_historical_label(self):
+        model = self.purpose_model()
+        next(p for p in model['principles'] if p['id'] == 'PRINCIPLE-DOMAIN-PURPOSE')['id'] = 'PRINCIPLE-DOMAIN-SUBDOMAIN'
+        self.assertEqual(validate_urbanism(model, self.sources), [])
+        self.assertIn('| business-references | Business References | Sous-domaine |', render(model, 'Subdomain'))
+        capability = next(n for n in model['nodes'] if n['kind'] == 'capability')
+        model['relations'] = [r for r in model['relations'] if not (r['type'] == 'contains' and r['target_id'] == capability['id'])]
+        self.assertTrue(any('capability requires exactly one' in e for e in validate_urbanism(model, self.sources)))
+        self.assertIn('| business-references | Business References | Purpose |', render(self.purpose_model(), 'Historical Purpose'))
+
     def test_purpose_requires_a_nonempty_finality_without_retroactive_rule(self):
         model = self.purpose_model()
         node = next(n for n in model['nodes'] if n['kind'] == 'area')

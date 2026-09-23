@@ -22,12 +22,13 @@ source_refs:
 - U671
 - CMP272
 - U672
+- U673
 user_document:
   path: connaissance/sources/SRC-2026-09-23-FLOW-SUBDOMAINS/FLOW_Supply_Chain_Orchestration.pdf
   sha256: 11de812c4ee182a9b05756a39dd92d8efb9cc963c82eea22b0115a8a0623d718
   scope: Huit sous-domaines, modifiés par les frontières explicites U656/U657.
   current_authority: 'U661 : support jetable ; aucune maintenance du PDF. Les précisions et décisions de Laurent priment.'
-canonical_model_changed: false
+canonical_model_changed: true
 method:
   comparison_type: Recouvrements fonctionnels, appuis sémantiques et méthodologiques ; pas de copie des modules commerciaux.
   coverage: Huit sous-domaines ; au moins deux documents primaires distincts et pertinents par comparaison.
@@ -649,3 +650,7 @@ adoption_U672:
   capture: 'Accord conservé dans les annexes : le sous-domaine cible n’est pas encore un nœud canonique. record_decision.py
     cible les nœuds et relations existants ; ne pas reporter cet accord sur un autre périmètre canonique.'
   canonical_model_changed: false
+implementation_U673:
+  status: applied_to_backlog
+  audit: modeles/backlog/capability-subdomain-audit-U667.yaml
+  note: Huit sous-domaines matérialisés ; publications historiques inchangées.

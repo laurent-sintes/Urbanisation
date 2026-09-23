@@ -1,7 +1,7 @@
 id: capability-subdomain-audit-U667
 date: '2026-09-23'
 author: Codex
-status: placement_proposal_with_Order_Promising_agreement_U672
+status: applied_to_backlog_U673
 source_refs:
 - U655
 - U656
@@ -19,6 +19,7 @@ source_refs:
 - U670
 - CMP271
 - U672
+- U673
 baseline:
   path: modeles/backlog/model.yaml
   sha256: e00b8f5546fe4f5153894900ff0fe2a87cbd37201baed34dcad833f2e6cf93ef
@@ -28,9 +29,9 @@ baseline:
 authority:
   structure: Huit sous-domaines confirmés par U667 ; U668 distingue Supply Plan (prévisions de mouvements de stock hors achats)
     et master plan de matching (affectations internes). U672 adopte Order Promising en remplacement du nom Supply Availability.
-  placements: Le nom, la responsabilité et les usages présentés en U671 sont adoptés U672 ; les rattachements de capacités
-    et autres arbitrages conservent leurs statuts propres.
-  canonical_model_changed: false
+  placements: U673 applique les recommandations de rattachement de l’audit ; les nouvelles rédactions détaillées restent proposées.
+    Les accords U672 sur Order Promising sont matérialisés.
+  canonical_model_changed: true
   pdf: Support jetable U661 ; aucun rôle d’autorité dans cet audit.
   external_systems: 'U669 : aucun sous-domaine APS. Mention descriptive de la source externe alimentant Supply et Demand Plans
     par ingestion dans Plans.'
@@ -67,14 +68,14 @@ findings:
   les affectations et reste entièrement géré dans Matching. Aucun lien d’identité entre les deux objets ; les achats projetés
   APS évoqués en U656 ne sont pas reclassés en Supply Plan.'
 - 57 capacités existantes ont un rattachement proposé dans les huit sous-domaines ; Demand Planning est hors périmètre, sans
-  parent cible. Aucun sous-domaine externe ni retrait exécuté.
+  parent cible. Aucun sous-domaine externe ; retrait de D17.a et BHV095 appliqué U673.
 - 'Plans : responsabilité d’ingestion des Supply et Demand Plans confirmée U669 ; visibilité proposée séparément, non adoptée.
   Total cible envisagé : 59 capacités internes si toutes les propositions sont retenues.'
 - Les sept référentiels et leurs quatorze capacités restent distincts sous Master Data. Corriger les formulations de simple
   copie passive incompatibles avec U479, sans reprendre la maîtrise d’entreprise.
-- Les décisions Inventory Target, Initial Stocking et Replenishment sont conservées provisoirement dans Matching pour l’arbitrage
-  opérationnel. Leur périmètre doit être borné face aux calculs APS externes ; l’accord sur les sous-domaines ne tranche pas
-  ce détail.
+- Les décisions Inventory Target, Initial Stocking et Replenishment sont conservées dans le cadre opérationnel défini U673
+  ; elles étaient proposées dans Matching pour l’arbitrage opérationnel. Leur périmètre doit être borné face aux calculs APS
+  externes ; l’accord sur les sous-domaines ne tranche pas ce détail.
 - 'Return Disposition Decision est proposé dans Fulfilment : choisir le traitement du bien retourné ne constitue pas par nature
   un arbitrage de couverture. Une conséquence collective mobilise Matching. Ce déplacement reste à discuter.'
 - Reservation Policy Decision et Group Protection Decision restent dans Matching pour leur résultat calculé ; Policies porte
@@ -200,6 +201,8 @@ proposed_gaps:
   naming: Libellé descriptif proposé ; pas de consensus de marché revendiqué.
   source_refs:
   - U669
+  implemented_id: plans-ingestion
+  implementation_status: created_U673
 - proposal_key: plans-visibility
   name: Plan Visibility
   subdomain: Plans
@@ -215,6 +218,8 @@ proposed_gaps:
   - ELM649
   status: proposed_new_capability_no_canonical_id
   naming: Libellé descriptif proposé ; pas de consensus de marché revendiqué.
+  implemented_id: plans-visibility
+  implementation_status: created_U673
 capabilities:
 - id: D08.d
   current_name: Product Reference Ingestion
@@ -232,6 +237,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D08
 - id: D08.e
   current_name: Product Reference Visibility
   current_parent_id: D08
@@ -248,6 +255,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D08
 - id: D09.d
   current_name: Party / Role Ingestion
   current_parent_id: D09
@@ -264,6 +273,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D09
 - id: D09.e
   current_name: Party / Role Visibility
   current_parent_id: D09
@@ -280,6 +291,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D09
 - id: D11.a
   current_name: Agreement Ingestion
   current_parent_id: D11
@@ -296,6 +309,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D11
 - id: D11.b
   current_name: Agreement Visibility
   current_parent_id: D11
@@ -312,6 +327,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D11
 - id: D12.a
   current_name: Product Catalog Ingestion
   current_parent_id: D12
@@ -328,6 +345,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D12
 - id: D12.b
   current_name: Product Catalog Visibility
   current_parent_id: D12
@@ -344,6 +363,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D12
 - id: D13.a
   current_name: Fulfillment Network Ingestion
   current_parent_id: D13
@@ -360,6 +381,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D13
 - id: D13.b
   current_name: Fulfillment Network Visibility
   current_parent_id: D13
@@ -376,6 +399,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D13
 - id: D14.a
   current_name: Service Catalog Ingestion
   current_parent_id: D14
@@ -392,6 +417,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D14
 - id: D14.b
   current_name: Service Catalog Visibility
   current_parent_id: D14
@@ -408,6 +435,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D14
 - id: D16.a
   current_name: Assortment Ingestion
   current_parent_id: D16
@@ -424,6 +453,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D16
 - id: D16.b
   current_name: Assortment Visibility
   current_parent_id: D16
@@ -440,6 +471,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D16
 - id: D02.b
   current_name: Supply Protection
   current_parent_id: business-references
@@ -460,6 +493,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: subdomain-policies
 - id: D19.a
   current_name: Service Provider Policy
   current_parent_id: business-references
@@ -475,6 +510,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: subdomain-policies
 - id: D19.b
   current_name: Demand Protection Policy
   current_parent_id: business-references
@@ -490,6 +527,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: subdomain-policies
 - id: D04.i
   current_name: Sales Order
   current_parent_id: D04
@@ -510,6 +549,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.j
   current_name: Purchase Order
   current_parent_id: D04
@@ -530,6 +571,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.k
   current_name: Transfer Order
   current_parent_id: D04
@@ -551,6 +594,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.l
   current_name: Return Order
   current_parent_id: D04
@@ -572,6 +617,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.m
   current_name: Supplier Return
   current_parent_id: D04
@@ -591,6 +638,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.n
   current_name: Order Structuring
   current_parent_id: D04
@@ -610,6 +659,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.o
   current_name: Order Lifecycle Management
   current_parent_id: D04
@@ -632,6 +683,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.q
   current_name: Order Archiving
   current_parent_id: D04
@@ -647,6 +700,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.r
   current_name: Consignment Fill-up Order
   current_parent_id: D04
@@ -664,6 +719,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D04.t
   current_name: Consignment Pick-up Order
   current_parent_id: D04
@@ -679,6 +736,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D03.n
   current_name: Fulfillment Commitment
   current_parent_id: D04
@@ -698,6 +757,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D04
 - id: D01.f
   current_name: Inventory Tracking
   current_parent_id: D01
@@ -714,6 +775,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D01.g
   current_name: Record Inventory Movements
   current_parent_id: D01
@@ -729,6 +792,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D01.c
   current_name: Inventory Visibility
   current_parent_id: D01
@@ -744,6 +809,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D01.d
   current_name: Stocktaking
   current_parent_id: D01
@@ -763,6 +830,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D02.c
   current_name: Reservation
   current_parent_id: D01
@@ -779,6 +848,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D01.h
   current_name: Consigned Inventory Management
   current_parent_id: D01
@@ -797,6 +868,8 @@ capabilities:
   source_refs:
   - U667
   - U668
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D01
 - id: D18.a
   current_name: Supply Visibility
   current_parent_id: D18
@@ -814,6 +887,8 @@ capabilities:
   - U667
   - U668
   - U663
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D18
 - id: D03.i
   current_name: Available-to-Promise (ATP)
   current_parent_id: D03
@@ -834,6 +909,8 @@ capabilities:
   - U667
   - U668
   - U663
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D18
 - id: D03.j
   current_name: Capable-to-Promise (CTP)
   current_parent_id: D03
@@ -854,6 +931,8 @@ capabilities:
   - U667
   - U668
   - U663
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D18
 - id: D03.k
   current_name: Profitable-to-Promise (PTP)
   current_parent_id: D03
@@ -871,6 +950,8 @@ capabilities:
   - U667
   - U668
   - U663
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D18
 - id: D03.l
   current_name: Delivery Schedule Decision
   current_parent_id: D03
@@ -888,6 +969,8 @@ capabilities:
   - U667
   - U668
   - U663
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D18
 - id: D03.m
   current_name: Order Prioritization
   current_parent_id: D03
@@ -904,6 +987,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D03.o
   current_name: Fulfillment Plan Decision
   current_parent_id: D03
@@ -921,6 +1006,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.a
   current_name: Inventory Target Decision
   current_parent_id: D03
@@ -941,6 +1028,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.d
   current_name: Group Protection Decision
   current_parent_id: D03
@@ -958,6 +1047,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.g
   current_name: Initial Stocking Decision
   current_parent_id: D03
@@ -975,6 +1066,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.e
   current_name: Replenishment Decision
   current_parent_id: D03
@@ -995,6 +1088,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.c
   current_name: Stock Redistribution Decision
   current_parent_id: D03
@@ -1014,6 +1109,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.f
   current_name: Demand & Supply Optimization Planning
   current_parent_id: D03
@@ -1040,6 +1137,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D05.h
   current_name: Reservation Policy Decision
   current_parent_id: D03
@@ -1061,6 +1160,8 @@ capabilities:
   - U667
   - U668
   - U657
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D03
 - id: D06.b
   current_name: Service Capacity Visibility
   current_parent_id: D06
@@ -1079,6 +1180,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D07.a
   current_name: Service Requirements Decision
   current_parent_id: D06
@@ -1096,6 +1199,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D07.b
   current_name: Service Task Management
   current_parent_id: D06
@@ -1113,6 +1218,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D07.c
   current_name: Service Reconciliation
   current_parent_id: D06
@@ -1131,6 +1238,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D07.d
   current_name: Operations Tracking
   current_parent_id: D06
@@ -1153,6 +1262,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D06.d
   current_name: Process Orchestration
   current_parent_id: D06
@@ -1170,6 +1281,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D06.e
   current_name: Service Selection Decision
   current_parent_id: D06
@@ -1188,6 +1301,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D06.f
   current_name: Process Adaptation Decision
   current_parent_id: D06
@@ -1206,6 +1321,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D05.i
   current_name: Return Disposition Decision
   current_parent_id: D03
@@ -1227,6 +1344,8 @@ capabilities:
   - U668
   - U664
   - U666
+  implementation_status: placement_applied_U673
+  implemented_parent_id: D06
 - id: D17.a
   current_name: Demand Planning
   current_parent_id: D04
@@ -1246,6 +1365,8 @@ capabilities:
   - U668
   - U656
   - U669
+  implementation_status: retired_from_domain_U673
+  implemented_parent_id: null
 migration_conditions:
 - Matérialiser les nouveaux sous-domaines et parents seulement après examen de cette proposition ; ne pas recycler les identifiants
   retirés.
@@ -1352,3 +1473,161 @@ scoped_agreement_U672:
   capture: 'Accord conservé dans les annexes : le sous-domaine cible n’est pas encore un nœud canonique. record_decision.py
     cible les nœuds et relations existants ; ne pas reporter cet accord sur un autre périmètre canonique.'
   canonical_model_changed: false
+implementation_U673:
+  date: '2026-09-23'
+  status: applied_not_published
+  baseline_commit: 364d19a90d70159d37278317c7c8f47c46971e56
+  subdomains:
+    Master Data: business-references
+    Policies: subdomain-policies
+    Plans: subdomain-plans
+    Order Management: D04
+    Inventory Management: D01
+    Order Promising: D18
+    Demand & Supply Matching: D03
+    Fulfilment Orchestration: D06
+  created_ids:
+  - subdomain-policies
+  - subdomain-plans
+  - plans-ingestion
+  - plans-visibility
+  retired_ids:
+  - BHV095
+  - D17.a
+  retired_relation_ids:
+  - REL-MEMBER-D17.a
+  - REL-MEMBER-BHV095
+  - REL-U560-DEMAND-KNOWN-ORDERS
+  - REL-U560-INVENTORY-DEMAND-PLAN
+  - REL-U565-ASSIGNMENT-DEMAND-PLAN
+  retirement_reason: Calcul prévisionnel externe, hors catalogue du domaine ; aucune branche APS.
+  preservation: Identités, définitions et accords antérieurs des retraits conservés dans le commit de référence, aux chemins
+    modeles/backlog/model.yaml et modeles/decisions/2026-09-23.2.json.
+  counts:
+    subdomains: 8
+    capabilities: 59
+    retired_capabilities: 1
+    new_capabilities: 2
+    by_subdomain:
+      Master Data: 14
+      Policies: 3
+      Plans: 2
+      Order Management: 11
+      Inventory Management: 6
+      Order Promising: 5
+      Demand & Supply Matching: 9
+      Fulfilment Orchestration: 9
+  changed_nodes:
+  - universe-supply
+  - business-references
+  - D01.f
+  - D01.c
+  - D01.d
+  - D02.b
+  - D02.c
+  - D02.e
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  - D03.m
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.o
+  - D13
+  - D05.a
+  - D05.d
+  - D05.g
+  - D05.e
+  - D05.c
+  - D05.f
+  - D14
+  - D06.b
+  - D07.a
+  - D07.b
+  - D07.c
+  - D07.d
+  - D04
+  - D09.d
+  - D01
+  - D11.a
+  - D06
+  - D08.d
+  - D12.a
+  - D03
+  - D13.a
+  - D06.d
+  - D14.a
+  - D06.e
+  - D06.f
+  - BHV006
+  - D03.n
+  - BHV026
+  - BHV027
+  - BHV028
+  - D05.h
+  - D03.o
+  - D05.i
+  - BHV057
+  - D04.r
+  - D01.h
+  - BHV078
+  - BHV082
+  - D08.e
+  - D09.e
+  - D11.b
+  - D12.b
+  - D13.b
+  - D14.b
+  - D16.a
+  - D16.b
+  - D18
+  - D18.a
+  - D19.a
+  - D19.b
+  - D04.t
+  - subdomain-policies
+  - subdomain-plans
+  - plans-ingestion
+  - plans-visibility
+  changed_relations:
+  - REL-MEMBER-D02.b
+  - REL-MEMBER-D03.i
+  - REL-MEMBER-D03.j
+  - REL-MEMBER-D03.k
+  - REL-MEMBER-D03.l
+  - REL-MEMBER-D05.i
+  - REL-MEMBER-D19.a
+  - REL-MEMBER-D19.b
+  - REL-SUPPLY-INVENTORY-VISIBILITY
+  - REL-SUPPLY-PLAN-VISIBILITY
+  - REL-U673-PRESENTS-subdomain-policies
+  - REL-U673-PRESENTS-subdomain-plans
+  - REL-U673-CONTAINS-plans-ingestion
+  - REL-U673-CONTAINS-plans-visibility
+  - REL-U673-PROMISING-ORDER
+  - REL-U673-MATCHING-PROMISING
+  - REL-U673-ORDER-MATCHING
+  - REL-U673-PLANS-PROMISING
+  - REL-U673-PLANS-MATCHING
+  - REL-U673-POLICIES-PROMISING
+  - REL-U673-POLICIES-MATCHING
+  - REL-U673-FULFILMENT-MATCHING
+  - REL-U673-CAPACITY-PROMISING
+  - REL-U673-PLAN-COVERAGE
+  scope_arbitrations: 'Recommandations de l’audit appliquées : décisions de stock dans Matching bornées face au calcul externe
+    ; devenir des retours dans Fulfilment avec recours au Matching pour effets collectifs.'
+  remaining_proposals: Descriptions détaillées et qualification des coopérations ; la maille ATP/CTP/PTP reste conservée,
+    sans fusion.
+  preserved_behavior_count: 80
+  agreement_count: 84
+  agreement_scope: Noms des huit sous-domaines et des deux nouvelles capacités, définition exacte d’Order Promising U672,
+    extrémités et types des rattachements de capacités et présentations. Les autres rédactions restent proposées.
+  agreement_context_correction:
+    superseded_captures: 84
+    reason: Compléter les résumés marché requis et employer les types de coopération compatibles ; valeurs approuvées inchangées.
+    effective_agreements: 84

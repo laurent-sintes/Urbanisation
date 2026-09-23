@@ -245,7 +245,7 @@ def validate_urbanism(model, sources, schema=None):
     for identifier in graph:
         traverse(identifier)
     # U624/U626 is an opt-in contract; old snapshots keep their own hierarchy.
-    if any(p.get('id') == 'PRINCIPLE-DOMAIN-PURPOSE' for p in model.get('principles', [])):
+    if any(p.get('id') in ('PRINCIPLE-DOMAIN-PURPOSE', 'PRINCIPLE-DOMAIN-SUBDOMAIN') for p in model.get('principles', [])):
         structural_parents = {identifier: set() for identifier in nodes}
         for source, children in graph.items():
             for target in children:

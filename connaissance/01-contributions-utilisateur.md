@@ -16594,3 +16594,26 @@ Ok, je valide tout, mets à jour l'audit.
 **contexte et portée**
 
 Accord sur la proposition présentée en réponse à U671 : nom du sous-domaine Order Promising, raccourci Promising ; déterminer et recommander ce qu’on peut promettre en quantité, date et conditions ; Matching arbitre les affectations dans son master plan ; Order Management confirme, porte et révise l’engagement. Order Promising peut être sollicité avant la création ou confirmation d’une commande et par Matching pour examiner une possibilité de couverture. Actualiser l’audit et sa comparaison de sous-domaines. Cet accord porte sur le contenu présenté en U671, pas sur tous les rattachements encore à arbitrer de l’audit U667, ni sur la maille définitive ATP/CTP/PTP ou un SLA de 200 ms. Aucune publication demandée.
+
+
+## U673
+
+**id**
+
+U673
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Appliquer l’audit des capacités aux huit sous-domaines
+
+**texte**
+
+Tu peux appliquer l'audit ?
+
+**contexte et portée**
+
+Laurent demande la mise en œuvre dans le backlog de l’audit U667 actualisé jusqu’à U672 : huit sous-domaines, rattachements proposés, ingestion et visibilité des plans, sortie de Demand Planning du périmètre sans sous-domaine APS, corrections de frontières et nom Order Promising. Appliquer les recommandations de l’audit sur les décisions de stock et le devenir des retours en conservant leur qualification de portée. Les identifiants et comportements conservés restent stables ; les éléments retirés et leurs accords gardent leur histoire dans Git. Cette demande autorise les placements et la mise en cohérence ; elle n’adopte pas globalement les nouvelles rédactions détaillées, les seuils d’autonomie, une performance de 200 ms ou une fusion ATP/CTP/PTP non proposée de façon définitive. Aucune publication, commit ou push implicite.

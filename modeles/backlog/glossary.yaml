@@ -9093,6 +9093,8 @@ terms:
     U290 : la finalité de l’affectation est de maximiser une valeur multidimensionnelle sous contraintes. Service, engagements, coûts et risques sont des exemples éditoriaux ; leurs poids et modes d’arbitrage ne sont pas fixés.
 
     U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.
+
+    U668/U673 : cet objet porte le master plan de matching, construit et géré dans Matching. Il est distinct du Supply Plan, prévision d’entrées et sorties de stock hors achats reçue dans Plans.
   source_refs:
   - U289
   - CMP096
@@ -9104,6 +9106,8 @@ terms:
   - U566
   - ELM573
   - CMP236
+  - U668
+  - U673
   source_locator:
     path: marche/assignment-allocation-convention.md
     anchor: convention-flow

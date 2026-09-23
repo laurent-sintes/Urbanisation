@@ -42,13 +42,14 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   // Cloning prevents either renderer from altering the API response or another view.
   const raw = freezeDeep(structuredClone(input));
   const usesPurposes = Array.isArray(raw.principles) && raw.principles.some(p => p?.id === 'PRINCIPLE-DOMAIN-PURPOSE');
+  const usesSubdomains = Array.isArray(raw.principles) && raw.principles.some(p => p?.id === 'PRINCIPLE-DOMAIN-SUBDOMAIN');
   const referenceParents = new Map(raw.nodes.filter(node => node.kind === 'reference').map(node => [node.id, textField(node.fields?.name)]));
   const referenceByChild = new Map(raw.relations.filter(edge => edge.type === 'contains' && referenceParents.has(edge.source_id)).map(edge => [edge.target_id, referenceParents.get(edge.source_id)]));
   const nodes: AtlasNode[] = raw.nodes.map(node => {
     const fields = node.fields ?? {};
     return freezeDeep({
       id: node.id, name: plainInlineText(textField(fields.name)) || node.id, kind: node.kind,
-      hierarchyLabel: node.kind === 'area' ? (usesPurposes ? 'Purpose' : 'Area') : undefined,
+      hierarchyLabel: node.kind === 'area' ? (usesSubdomains ? 'Sous-domaine' : usesPurposes ? 'Purpose' : 'Area') : undefined,
       referenceParentName: node.kind === 'capability' ? referenceByChild.get(node.id) : undefined,
       groupRole: node.group_role, levelRef: node.level_ref,
       revision: node.revision, lastModified: node.last_modified,

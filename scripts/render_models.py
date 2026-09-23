@@ -98,7 +98,9 @@ def render(model, label):
         presented = [nodes[r['target_id']] for r in model['relations']
                      if r['type'] == 'presents' and r['source_id'] == domain['id']]
         if presented:
-            purpose_label = 'Purpose' if any(p.get('id') == 'PRINCIPLE-DOMAIN-PURPOSE' for p in model.get('principles', [])) else 'Area'
+            hierarchy_principles = {p.get('id') for p in model.get('principles', [])}
+            purpose_label = ('Sous-domaine' if 'PRINCIPLE-DOMAIN-SUBDOMAIN' in hierarchy_principles
+                             else 'Purpose' if 'PRINCIPLE-DOMAIN-PURPOSE' in hierarchy_principles else 'Area')
             labels = {'domain': 'Domain', 'area': purpose_label, 'reference': 'Référentiel', 'group': 'Groupe de présentation'}
             lines += ['| Repère | Nom | Type | Statut |', '| --- | --- | --- | --- |']
             for child in presented:

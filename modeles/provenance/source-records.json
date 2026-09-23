@@ -5379,6 +5379,14 @@
       "captured_text": "## U672\n\n**id**\n\nU672\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider Order Promising et actualiser l’audit\n\n**texte**\n\nOk, je valide tout, mets à jour l'audit.\n\n**contexte et portée**\n\nAccord sur la proposition présentée en réponse à U671 : nom du sous-domaine Order Promising, raccourci Promising ; déterminer et recommander ce qu’on peut promettre en quantité, date et conditions ; Matching arbitre les affectations dans son master plan ; Order Management confirme, porte et révise l’engagement. Order Promising peut être sollicité avant la création ou confirmation d’une commande et par Matching pour examiner une possibilité de couverture. Actualiser l’audit et sa comparaison de sous-domaines. Cet accord porte sur le contenu présenté en U671, pas sur tous les rattachements encore à arbitrer de l’audit U667, ni sur la maille définitive ATP/CTP/PTP ou un SLA de 200 ms. Aucune publication demandée."
     },
     {
+      "id": "U673",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u673",
+      "line": 16599,
+      "content_sha256": "5bf0c6c2590cb84b6d10c047974734c03a039675f6113093528672171e3731b4",
+      "captured_text": "## U673\n\n**id**\n\nU673\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAppliquer l’audit des capacités aux huit sous-domaines\n\n**texte**\n\nTu peux appliquer l'audit ?\n\n**contexte et portée**\n\nLaurent demande la mise en œuvre dans le backlog de l’audit U667 actualisé jusqu’à U672 : huit sous-domaines, rattachements proposés, ingestion et visibilité des plans, sortie de Demand Planning du périmètre sans sous-domaine APS, corrections de frontières et nom Order Promising. Appliquer les recommandations de l’audit sur les décisions de stock et le devenir des retours en conservant leur qualification de portée. Les identifiants et comportements conservés restent stables ; les éléments retirés et leurs accords gardent leur histoire dans Git. Cette demande autorise les placements et la mise en cohérence ; elle n’adopte pas globalement les nouvelles rédactions détaillées, les seuils d’autonomie, une performance de 200 ms ou une fusion ATP/CTP/PTP non proposée de façon définitive. Aucune publication, commit ou push implicite."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",

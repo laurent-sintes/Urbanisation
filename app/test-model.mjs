@@ -15,6 +15,19 @@ const model = adaptPublication(current.raw);
 const relationId = 'REL-EXECUTION-FACTS-ORDER-RECONCILIATION';
 const ids = nodes => nodes.map(node => node.id);
 
+test('subdomain naming is selected by the snapshot without changing historical labels', () => {
+  const raw = structuredClone(current.raw);
+  const area = raw.nodes.find(node => node.kind === 'domain');
+  area.kind = 'area';
+  raw.principles = (raw.principles || []).filter(p => !['PRINCIPLE-DOMAIN-PURPOSE', 'PRINCIPLE-DOMAIN-SUBDOMAIN'].includes(p.id));
+  assert.equal(adaptPublication(raw).nodeById.get(area.id).hierarchyLabel, 'Area');
+  raw.principles.push({ id: 'PRINCIPLE-DOMAIN-PURPOSE', statement: 'Historical fixture', source_refs: [] });
+  assert.equal(adaptPublication(raw).nodeById.get(area.id).hierarchyLabel, 'Purpose');
+  raw.principles.push({ id: 'PRINCIPLE-DOMAIN-SUBDOMAIN', statement: 'Current fixture', source_refs: [] });
+  assert.equal(adaptPublication(raw).nodeById.get(area.id).hierarchyLabel, 'Sous-domaine');
+  assert.equal(model.nodeById.get(area.id).kind, 'domain');
+});
+
 test('visible market comparisons are searchable only in their own immutable publication', () => {
   const raw = structuredClone(current.raw);
   const id = raw.nodes[0].id;

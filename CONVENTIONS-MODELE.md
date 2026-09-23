@@ -2,7 +2,15 @@
 
 Lire seulement les sections utiles lors d’un travail métier. AGENTS.md définit le workflow et les priorités. Ce document conserve les conventions détaillées transférées le 19 septembre 2026 ; il ne constitue pas un catalogue. Les noms, parents et états courants se lisent dans le YAML, qui prime sur les repères datés ci-dessous. Les étapes historiques ne réouvrent pas l’audit clos U431.
 
-## Consolidation courante — U626
+## Découpage courant — U673
+
+Le backlog applique **Domain → Subdomain → Capability → Behavior** et les huit sous-domaines de [l’audit des capacités](modeles/backlog/capability-subdomain-audit-U667.yaml). Les sections U626 et antérieures ci-dessous conservent le cadrage de leur date ; elles ne rétablissent pas les six Purposes dans le modèle courant.
+
+Order Promising calcule et recommande la promesse ; Matching construit et gère le master plan de matching ; Order Management porte les engagements ; Fulfilment adapte la réalisation en préservant promesse et grands équilibres. Les marges d’autonomie sont des règles, sans responsabilité supplémentaire. Plans reçoit les Supply et Demand Plans par ingestion depuis l’APS externe ; aucun sous-domaine APS. Supply Plan porte les prévisions d’entrées ou sorties de stock hors achats et reste distinct du master plan de matching.
+
+Les identifiants des capacités conservées restent stables. D17.a et BHV095 sortent du domaine avec leur histoire conservée dans Git. Plan Ingestion et Plan Visibility sont créées dans Plans. ATP/CTP/PTP restent à leur maille actuelle ; leurs frontières sont clarifiées sans fusion. Les placements appliqués n’adoptent pas globalement toutes les rédactions détaillées.
+
+## Consolidation historique — U626
 
 **Nom courant du Domain — U650 : Supply Chain Orchestration.** Organe de régulation qui organise et adapte les ressources et les prestations pour satisfaire la demande : arbitrages, changements aux commandes et engagements, coordination des prestations et suivi des résultats. Six Purposes conservés ; identifiant `universe-supply` inchangé. Remplace le nom et la définition U646. [Accord et portée](modeles/backlog/domain-regulation-U646.yaml).
 

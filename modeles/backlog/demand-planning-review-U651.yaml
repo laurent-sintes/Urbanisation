@@ -68,3 +68,10 @@ clarification_U652:
     observées et des précommandes connues ?
   market_context: ELM556 et ELM557, relus lors de U651, confortent cette distinction entre prévision de demande et planification
     de sa couverture. Ils ne prouvent aucune réalisation dans MAP.
+superseded_by_U673:
+  status: outside_domain
+  reason: Le calcul des Demand Plans est externe ; Plans porte ingestion et visibilité. Aucun parent APS créé.
+  source_refs:
+  - U656
+  - U669
+  - U673

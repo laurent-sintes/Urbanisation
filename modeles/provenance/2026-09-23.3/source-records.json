@@ -16241,6 +16241,126 @@
       "line": 16076,
       "content_sha256": "ac63be4915026457c7bc905b242b1307c135bbd38d757a37e085f6c9b947ad95",
       "captured_text": "## U650\n\n**id**\n\nU650\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAdopter le nom et la définition concrets du Domain\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la formulation immédiatement présentée : « La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats. » et le nom Supply Chain Orchestration qu’elle porte. Remplace le nom et la définition U646 après la correction U647. Les responsabilités existantes et les six Purposes sont conservés ; aucun accord étendu aux autres champs ni publication implicite."
+    },
+    {
+      "id": "CMP269",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp269",
+      "line": 2588,
+      "content_sha256": "43ce1ebe8805e6d702918c3f07aeaa9c574828fc11ee14fc5221622ac242c285",
+      "captured_text": "## CMP269\n\nU655–U660 — Codex, 23 septembre 2026. État comparé : huit sous-domaines du document de Laurent, plans APS externes U656 et plan de supply construit par Matching U657, puis piste Order Management U659/U660. [Étude structurée](../modeles/backlog/subdomains-market-review-U658.yaml). Avis demandé U658 ; aucune adoption globale, migration ou publication.\n\nDix-neuf documents primaires sont localisés dans l’étude, dont au moins deux distincts et pertinents pour chacun des huit sous-domaines. SAP, Oracle, Microsoft et IBM : ELM112, ELM352, ELM393–394, ELM405, ELM408, ELM415, ELM449, ELM452, ELM522 et ELM648–654 ; ELM634–635 éclairent le terme Subdomain. Les consultations antérieures valables de la session sont réutilisées. Relation : recouvrements fonctionnels partiels, appuis sémantiques et méthodologiques ; aucune équivalence de taxonomie ou de frontières produit.\n\nAvis : découpage défendable par les responsabilités ; conserver le plan de supply au cœur de Matching. Master Data / Policies / Plans sépare des responsabilités de contexte sans prouver trois sous-domaines standards. Inventory et Fulfilment ont des appuis directs. Les offres ATP/aATP/DOM combinent toutefois choix de sources, dates, fractionnements et affectations : la frontière Availability / Matching / Fulfilment exige un partage explicite de ces décisions. Bénéfice de la proposition : rendre les responsabilités visibles ; compromis : entretenir leurs échanges et les limites de leurs choix.\n\nDemand Management présente le principal écart terminologique : ELM648 et ELM649 le rattachent à la prévision ou aux besoins planifiés. U659/U660 distingue la demande face à l’offre et l’objet individuel. Recommandation Codex : Order Management pour gérer l’objet opérationnel durable ; conserver Demand dans les notions d’offre/demande, plans et Matching. ELM112 étaye la famille vente/achat/transfert/retour ; ELM652 montre un Order en brouillon avant soumission ; ELM522 confirme des entités Order dans l’orchestration. Ce choix conserve intention, cycle de vie et engagements ; il ne prouve ni un objet universel unique ni une architecture centrée sur les documents. Si retenu, l’engagement devient une dimension de l’Order et la formule du PDF Order = état doit être actualisée. Proposition de nom, pas accord acquis."
+    },
+    {
+      "id": "CMP270",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp270",
+      "line": 2599,
+      "content_sha256": "18a2a2c2d7be9a36b3fc6d9365e72c6beae168d25e317532f41c88ea9d19d712",
+      "captured_text": "## CMP270\n\nU667–U668 — Codex, 23 septembre 2026. Audit de rattachement des 58 capacités du backlog aux huit sous-domaines convenus. Proposition non appliquée : [annexe YAML](../modeles/backlog/capability-subdomain-audit-U667.yaml), [vue dérivée](../audits/2026-09-23-capacites-sous-domaines-U667.md). Les comparaisons de frontières de CMP269 sont réutilisées ; les correspondances détaillées des fiches existantes ne sont pas déclarées toutes revalidées. Aucune réalisation installée ni exhaustivité marché déduite.\n\nCorrection U668 applicable aussi aux formulations antérieures de CMP269 : **Supply Plan** désigne les prévisions d’entrées ou de sorties de stock hors achats. Le **master plan de matching** est le plan d’affectation construit et géré dans Matching. Les appellations produit Supply Planning / Master Planning ne démontrent aucune équivalence à ces deux objets FLOW. Les projections d’achat APS évoquées U656 ne sont pas assimilées à Supply Plan.\n\nProposition ciblée D05.i : rattacher Return Disposition Decision à Fulfilment Orchestration pour choisir le traitement logistique du bien retourné, en mobilisant Matching lorsque les conséquences affectent les ressources partagées. Recouvrement partiel avec ELM438 Microsoft (devenir du bien et actions) et ELM328 Blue Yonder (état, destination, valeur récupérable), deux documents primaires reconsultés le 23 septembre 2026. Différence : leurs offres portent aussi des effets commerciaux ou financiers hors de cette capacité FLOW. Elles ne prescrivent pas son sous-domaine. Bénéfice : ne pas attribuer au Matching toute décision économique ; compromis : transmettre les effets sur disponibilité et ressources. Statut : recommandation de Codex non adoptée.\n\nLes deux nouvelles capacités proposées de Plans couvrent réception et visibilité des données prévisionnelles, avec les natures Demand Plan / Supply Plan distinguées. ELM415/ELM649 et ELM352 éclairent la circulation et la consommation des plans, sans établir le libellé exact ni le périmètre hors achats de Supply Plan FLOW. Celui-ci provient de U668. Aucun calcul du master plan de matching n’est transféré à l’APS."
+    },
+    {
+      "id": "ELM112",
+      "path": "marche/elements.md",
+      "anchor": "elm112",
+      "line": 1055,
+      "content_sha256": "6a2063354c38b6b030b690867eff86fa7fa96c364248013353bda373860c4608",
+      "captured_text": "### ELM112\n\n- Référence : MKT23 IBM Sterling OMS, édition précise non indiquée. [Document types](https://www.ibm.com/docs/en/order-management?topic=configuration-document-types), table Order, texte lu le 2026-09-13.\n- Libellés : Sales Order 0001, Planned Order 0002, Return Order 0003, Template Order 0004, Purchase Order 0005, Transfer Order 0006, Master Order 0007.\n- Nature : types documentaires natifs de produit. Adaptation : appui à la famille générique locale des Orders, pas preuve d’un domaine autonome, d’un objet universel ou d’une carte de capacités. Distinct d’IBM CBM."
+    },
+    {
+      "id": "ELM649",
+      "path": "marche/elements.md",
+      "anchor": "elm649",
+      "line": 5210,
+      "content_sha256": "2891dd07d05f6797c4de97d3e9d20b10d26fe05fafd04243a7e4541bc578a714",
+      "captured_text": "### ELM649\n\nMKT13 — [Outlining Program Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a). Cours S/4HANA Cloud Public Edition, édition non affichée. Texte primaire consulté le 23 septembre 2026. Passage : Production Planning Overview ; Demand Management Overview.\n\nReformulation : Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. Limite : Exemple de production, pas modèle universel de retail ; ne démontre pas l’externalisation de toute décision de couverture. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml)."
+    },
+    {
+      "id": "ELM650",
+      "path": "marche/elements.md",
+      "anchor": "elm650",
+      "line": 5217,
+      "content_sha256": "149f528b2ed8f4a08219ba95ce32b996db514548e97621207eae5ecadc4b31f2",
+      "captured_text": "### ELM650\n\nMKT20 — [Overview of Backlog Management Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html). Fusion Cloud SCM 26B. Texte primaire consulté le 23 septembre 2026. Passage : Quatre activités : planning, review, simulation, release.\n\nReformulation : Prioriser un portefeuille, construire un plan, tester des ajustements et libérer les résultats vers Order Management ; les simulations ne modifient pas seules les commandes. Limite : Le portefeuille de commandes ne représente pas toutes les formes de demande FLOW ; pas de plan technique unique imposé. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml)."
+    },
+    {
+      "id": "ELM651",
+      "path": "marche/elements.md",
+      "anchor": "elm651",
+      "line": 5224,
+      "content_sha256": "1ee969289d10e5a104c30fb9c1241da5a262b3de59818847b814b92bdc43a879",
+      "captured_text": "### ELM651\n\nMKT20 — [Overview of Orchestration Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html). Fusion Cloud SCM 26B. Texte primaire consulté le 23 septembre 2026. Passage : Introduction ; Set up Steps ; Set Up Statuses.\n\nReformulation : Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations sont paramétrés. Limite : Exemple Sales Order incluant réservation et facturation ; ni périmètre identique FLOW ni workflow unique obligatoire. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml)."
+    },
+    {
+      "id": "ELM652",
+      "path": "marche/elements.md",
+      "anchor": "elm652",
+      "line": 5231,
+      "content_sha256": "da96fdccf7343bd78a96672005232fad3de38b8f26a036a63bd299bb4dd1e14a",
+      "captured_text": "### ELM652\n\nMKT20 — [How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html). Fusion Cloud SCM 26A. Texte primaire consulté le 23 septembre 2026. Passage : Étapes 1 à 4 : données produit, règles, promesse et interfaces.\n\nReformulation : Order Management utilise Product Management et Supply Chain Planning puis sollicite les systèmes de réalisation et reçoit leur progression. Limite : Parcours de vente plus large que FLOW, avec prix et finance ; ne généralise pas Sales Order à tous les besoins. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml)."
+    },
+    {
+      "id": "ELM653",
+      "path": "marche/elements.md",
+      "anchor": "elm653",
+      "line": 5238,
+      "content_sha256": "5ad0b32984961fbc2fcd0974afc467657d9203c5e2aa6762c68681eb15988c92",
+      "captured_text": "### ELM653\n\nMKT13 — [Explaining aATP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp_a1595e13-8923-4514-b889-ec4f63ef1ad5). Cours S/4HANA Fashion, édition non affichée. Texte primaire consulté le 23 septembre 2026. Passage : Product Availability Check ; ATP Concept ; Alternative-Based Confirmation.\n\nReformulation : Vérifier quantités et dates selon éléments de supply et promesses existantes ; examiner et choisir des sites alternatifs. Limite : aATP traverse les frontières Availability / Matching / Fulfilment proposées ; ce cours ne prouve pas une correspondance complète de CTP et PTP. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml)."
+    },
+    {
+      "id": "ELM654",
+      "path": "marche/elements.md",
+      "anchor": "elm654",
+      "line": 5245,
+      "content_sha256": "68352481a8fd2703e9f74278125d574fd7e43c5a75a9e645cd80ddc410279be9",
+      "captured_text": "### ELM654\n\nMKT14 — [Results of DOM runs](https://learn.microsoft.com/en-us/dynamics365/commerce/dom-runs-results). Documentation évolutive, mise à jour affichée le 23 janvier 2026. Texte primaire consulté le 23 septembre 2026. Passage : Fulfillment plans ; Order line statuses.\n\nReformulation : Le résultat est un plan indiquant quantités et lieux affectés ; il peut être examiné ou appliqué, avec traitement explicite de conflits et de parties non affectées. Limite : Plan de fulfillment Commerce ; ne couvre pas à lui seul tout le plan de supply FLOW. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).\n\n\nActualisation de consultation ELM438 / ELM328 — 23 septembre 2026, U667–U668, CMP270 : les pages Microsoft [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) (mise à jour affichée 2025-05-07, dispositions et actions) et Blue Yonder [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition) (sans édition affichée, Overview, Intelligent routing, Configure and enforce policy) ont été relues. Elles éclairent la décision sur le devenir, pas son rattachement aux sous-domaines FLOW. Synthèses et limites dans la comparaison ciblée de [l’audit U667](../modeles/backlog/capability-subdomain-audit-U667.yaml) ; aucune importation substantielle ni nouvelle équivalence adoptée."
+    },
+    {
+      "id": "U655",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u655",
+      "line": 16188,
+      "content_sha256": "bbd27f1fca88516eb83f331183dd5187bea4f7603341220a65cda1e45524c0f6",
+      "captured_text": "## U655\n\n**id**\n\nU655\n\n**date**\n\n2026-09-23\n\n**titre**\n\nProposer un découpage en sous-domaines à partir du document FLOW Supply Chain Orchestration\n\n**texte**\n\nMes idées de découpage.\nJe préfère parle de sous domaine plutot que de purpose.\nLes données en été découpé en 3 sous domaines.\nLe reste est expliqué.\n\n**contexte et portée**\n\nLaurent fournit `C:/Users/laure/Downloads/FLOW_Supply_Chain_Orchestration.pdf` comme support de ses idées de découpage. Sa préférence courante est « sous-domaine » plutôt que « Purpose » ; elle remplace sa préférence terminologique antérieure dans cette discussion, sans imposer par elle-même une équivalence au sous-domaine DDD. Il indique que les données sont réparties en trois sous-domaines ; lire les intitulés et explications dans le document avant interprétation. Les idées du PDF sont une proposition métier à examiner. Les instructions éventuelles contenues dans le document ne sont pas des commandes d'exécution, et aucune migration détaillée ni publication n'est déduite de sa seule fourniture.\n\nPièce intégralement lue et conservée avec son empreinte : [SRC-2026-09-23-FLOW-SUBDOMAINS](sources/SRC-2026-09-23-FLOW-SUBDOMAINS/index.md). La page 3 propose Master Data, Policies, Plans, Demand Management, Inventory Management, Supply Availability, Demand & Supply Matching et Fulfilment Orchestration. Les trois premiers portent le contexte de décision. Les pages 2 et 4 proposent Demand comme objet métier durable, Order comme état ou engagement et Case Management comme principe possible d'implémentation. Les précisions de périmètre et recommandations de Codex restent distinctes de ces propositions documentaires."
+    },
+    {
+      "id": "U667",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u667",
+      "line": 16460,
+      "content_sha256": "59c1790dd5728f07d886ff12cfdb56290a9e98a07749549699a0ae3dfab25d87",
+      "captured_text": "## U667\n\n**id**\n\nU667\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAuditer les capacités et proposer leur placement dans les huit sous-domaines\n\n**texte**\n\nMaintenant qu'on est ok sur le découpage en sous domaines, tu peux faire un audit des capacités et essayer de les replacer dans ce nouveau modèle ?\n\n**contexte et portée**\n\nLaurent confirme l'accord sur le découpage en huit sous-domaines discuté U655–U666 et demande un audit des capacités actuelles avec proposition de rattachement. Le cadrage comprend les plans APS externes U656, le plan de supply construit par Matching U657, Order Management U666, Availability recommandant une réponse U663 et Fulfilment adaptant localement la réalisation U664. Les marges d'autonomie restent des règles dont le détail n'est pas nécessaire à cet audit (U666). Examiner toutes les capacités actives, préserver les identifiants, les responsabilités et la traçabilité, signaler les écarts de périmètre et compléments nécessaires. L'accord sur les huit sous-domaines n'adopte pas automatiquement les placements, scissions, retraits ou nouvelles capacités proposés par l'audit. Aucune publication ni réouverture de l'audit historique des comportements U431 n'est demandée."
+    },
+    {
+      "id": "U668",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u668",
+      "line": 16482,
+      "content_sha256": "ac2de650b98082a6607508b79636f5e934b94ecf9dd9bf4e1af69f137ecca0b5",
+      "captured_text": "## U668\n\n**id**\n\nU668\n\n**date**\n\n2026-09-23\n\n**titre**\n\nSupply Plan distinct du master plan de matching\n\n**texte**\n\nPas du tout. Supply Plan c'est de la prévision de rentrée de stock ou de sortie de stock en dehors des achats.\nLe plan d'affectation du Matching, c'est le master plan de matching géré dans le sous domaine matching. Ca n'a rien à voir.\n\n**contexte et portée**\n\nCorrection explicite de la confusion introduite par Codex pendant l'audit U667 : Supply Plan désigne les prévisions d'entrées ou de sorties de stock hors achats, dans Plans. Le plan d'affectation est le master plan de matching, construit et géré dans Demand & Supply Matching ; il ne s'agit ni du même objet ni d'une variante de Supply Plan. Cette correction prime les formulations antérieures de Codex, notamment « plan de supply du Matching » et l'assimilation de Supply Plan aux achats projetés par l'APS. Elle ne transfère pas le calcul du master plan de matching à l'APS. Les projections d'achat évoquées en U656 restent distinctes ; leur support précis ne se déduit pas de cette clarification. Poursuivre l'audit avec ces frontières, sans adopter automatiquement ses propositions de placement."
+    },
+    {
+      "id": "U669",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u669",
+      "line": 16506,
+      "content_sha256": "0c34bdb33ded1828f7747a957bbdc69d3d95ffc4e961ade464ccbfcc90cf9870",
+      "captured_text": "## U669\n\n**id**\n\nU669\n\n**date**\n\n2026-09-23\n\n**titre**\n\nIngestion des Supply et Demand Plans sans sous-domaine APS\n\n**texte**\n\nL'APS externe alimentera les plan (Supply et Demand) par ingestion (capacité). Mais comme l'APS est externe, je ne veux pas qu'il apparaisse dans en tant que sous domaine. Une mention dans des descriptions du domaine tout au plus.\n\n**contexte et portée**\n\nLes Supply et Demand Plans sont alimentés par une capacité d'ingestion dans Plans. L'APS reste une source externe, mentionnable dans les descriptions ; aucun sous-domaine ni branche de capacités APS dans le modèle cible. Corriger la présentation de l'audit U667 qui affichait External APS au même niveau que les huit sous-domaines. La capacité actuelle D17.a Demand Planning demeure inventoriée pour tracer sa sortie du périmètre, sans lui créer de parent externe. Accord sur la responsabilité d'ingestion des deux types de plans, pas adoption implicite de Plan Visibility, du libellé anglais exact ni de toutes les formulations proposées. Le master plan de matching reste distinct, dans Matching (U668)."
+    },
+    {
+      "id": "U672",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u672",
+      "line": 16576,
+      "content_sha256": "29301b5962c4d4ab9bee3faa6c63c2727529f54bcb429ef14e1d905834f09f82",
+      "captured_text": "## U672\n\n**id**\n\nU672\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider Order Promising et actualiser l’audit\n\n**texte**\n\nOk, je valide tout, mets à jour l'audit.\n\n**contexte et portée**\n\nAccord sur la proposition présentée en réponse à U671 : nom du sous-domaine Order Promising, raccourci Promising ; déterminer et recommander ce qu’on peut promettre en quantité, date et conditions ; Matching arbitre les affectations dans son master plan ; Order Management confirme, porte et révise l’engagement. Order Promising peut être sollicité avant la création ou confirmation d’une commande et par Matching pour examiner une possibilité de couverture. Actualiser l’audit et sa comparaison de sous-domaines. Cet accord porte sur le contenu présenté en U671, pas sur tous les rattachements encore à arbitrer de l’audit U667, ni sur la maille définitive ATP/CTP/PTP ou un SLA de 200 ms. Aucune publication demandée."
+    },
+    {
+      "id": "U673",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u673",
+      "line": 16599,
+      "content_sha256": "5bf0c6c2590cb84b6d10c047974734c03a039675f6113093528672171e3731b4",
+      "captured_text": "## U673\n\n**id**\n\nU673\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAppliquer l’audit des capacités aux huit sous-domaines\n\n**texte**\n\nTu peux appliquer l'audit ?\n\n**contexte et portée**\n\nLaurent demande la mise en œuvre dans le backlog de l’audit U667 actualisé jusqu’à U672 : huit sous-domaines, rattachements proposés, ingestion et visibilité des plans, sortie de Demand Planning du périmètre sans sous-domaine APS, corrections de frontières et nom Order Promising. Appliquer les recommandations de l’audit sur les décisions de stock et le devenir des retours en conservant leur qualification de portée. Les identifiants et comportements conservés restent stables ; les éléments retirés et leurs accords gardent leur histoire dans Git. Cette demande autorise les placements et la mise en cohérence ; elle n’adopte pas globalement les nouvelles rédactions détaillées, les seuils d’autonomie, une performance de 200 ms ou une fusion ATP/CTP/PTP non proposée de façon définitive. Aucune publication, commit ou push implicite."
     }
   ]
 }
