@@ -69,3 +69,14 @@ Proposition de frontière pour le cross-docking : Matching arbitre quelles arriv
 L’accord U679 porte sur le sous-domaine Service Order Management, les frontières présentées, la maille capacité des familles et leur convention de nommage. Il ne valide pas toutes les descriptions de cet audit, les rattachements existants non présentés, une liste exhaustive des familles ou des pratiques installées.
 
 L’accord est enregistré avec ses valeurs et leur empreinte dans l’annexe YAML. Le modèle canonique et la release v022 restent inchangés à ce stade ; la redistribution des capacités constitue le lot d’application à préparer. Aucun commit, push ou nouvelle publication réalisé.
+
+
+## Complément U680/U681 — comportements de Value-Added Service Order
+
+Laurent valide le principe et les angles présentés : **Labeling / Relabeling** (exigences, version attendue, conformité), **Repacking** (modification du conditionnement, consignes, résultat attendu) et **Kitting / Dekitting** (assemblage ou séparation d’ensembles, composants et écarts), **si cette dernière prestation entre dans le périmètre retenu**.
+
+Ces comportements sont directement rattachés à Value-Added Service Order et restent terminaux. Ils décrivent les particularités de gestion de l’ordre, pas les gestes opérateur. Leur bénéfice est de distinguer la conformité de l’information appliquée, du conditionnement et de la composition d’un ensemble. Un paramètre de service seul ne crée pas un comportement.
+
+La section vas_behaviors_U681 de l’annexe précise des définitions, exemples et frontières proposés : ils ne sont pas implicitement adoptés par cet accord. La distinction Repacking / Packing Order reste à expliciter pour éviter de commander deux fois la même prestation. Les sources SAP ELM658 et Oracle ELM661 déjà consultées étayent les familles VAS, mais ne prescrivent pas cette décomposition en comportements de gestion ; le détail du dekitting n’est pas établi dans ces passages.
+
+Accord limité et empreinte enregistrés sous agreement_U681. Modèle canonique et publication inchangés ; aucune réouverture de l’audit historique des comportements.

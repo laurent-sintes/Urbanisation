@@ -16759,3 +16759,49 @@ JE valide
 **contexte et portée**
 
 Accord sur la réponse immédiatement présentée après U678 : sous-domaine Service Order Management, gestion des prestations confiées, de leurs exigences, engagements propres et évolutions ; Order Management conserve les demandes à satisfaire et leurs engagements ; Fulfilment Orchestration compose et coordonne les prestations, leurs dépendances et les adaptations préservant promesse et équilibres du Matching. Capacités de familles à la même maille que les Orders entrants, sans suffixe Management ; noms présentés Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, selon les familles retenues. Service Catalog décrit l’offre ; les exécutants gardent leurs opérations internes. Ne vaut pas adoption de descriptions détaillées nouvelles, d’une liste exhaustive, d’un cycle uniforme, de rattachements non présentés des capacités existantes ou d’un consensus marché. Accord de découpage enregistré dans l’audit ; aucune publication, commit ou push demandé.
+
+
+## U680
+
+**id**
+
+U680
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Demander la décomposition de Value-Added Service Order
+
+**texte**
+
+Le détail de Value-Added Service Order est décrit en termes de comportement ?
+
+**contexte et portée**
+
+Question sur la décomposition de la capacité adoptée U679. La réponse propose Labeling / Relabeling, Repacking et Kitting / Dekitting, ce dernier sous réserve que la prestation appartienne au périmètre retenu ; variantes de gestion de l’ordre, pas gestes physiques.
+
+
+## U681
+
+**id**
+
+U681
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider les comportements de Value-Added Service Order
+
+**texte**
+
+go
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement présentée après U680 : décrire les particularités de gestion de l’ordre par Labeling / Relabeling (exigences, version attendue, conformité), Repacking (modification du conditionnement, consignes, résultat) et Kitting / Dekitting (assemblage ou séparation d’ensembles, composants attendus, écarts), ce dernier conditionné à son inclusion dans le périmètre. Une différence significative de gestion justifie le comportement ; un simple paramètre reste au catalogue. Ne valide pas les gestes physiques, les détails ajoutés ensuite, un catalogue exhaustif ou l’inclusion inconditionnelle du kitting/dekitting. Complément de l’audit avant application du sous-domaine ; aucune release, commit ou push demandé.

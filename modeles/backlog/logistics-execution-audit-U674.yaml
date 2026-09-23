@@ -1,7 +1,7 @@
 id: logistics-execution-audit-U674
 date: '2026-09-23'
 author: Codex
-status: subdomain_and_boundaries_adopted_U679_application_pending
+status: subdomain_adopted_U679_vas_decomposition_agreed_U681_application_pending
 source_refs:
 - U674
 - U675
@@ -10,6 +10,8 @@ source_refs:
 - U677
 - U678
 - U679
+- U680
+- U681
 baseline:
   commit: 8816726d2132df5a300c4089476004a72c8ae3f8
   model: modeles/backlog/model.yaml
@@ -443,3 +445,86 @@ agreement_U679:
     les champs canoniques sur le lot final lors de l’application, à partir de cette portée explicite.
 superseded_recommendation: 'U674–U676 : conservation des ordres dans Fulfilment et seul renommage générique D07.b. Remplacée
   par la distinction des engagements de prestation et de la coordination U677–U679 ; preuves marché conservées.'
+vas_behaviors_U681:
+  parent_capability: Value-Added Service Order
+  parent_subdomain: Service Order Management
+  level: Behavior
+  terminal: true
+  method_refs:
+  - MOD006
+  - modeles/backlog/behavior-typology.yaml
+  fields:
+    decomposition_rationale: 'Distinguer les variantes de gestion selon la conformité attendue : information et version de
+      l’étiquette, transformation du conditionnement, composition de l’ensemble. Les exigences et écarts utiles à la gestion
+      de l’ordre diffèrent ; un bouton, un format d’étiquette ou un paramètre seul ne justifie pas un comportement.'
+  decomposition_rationale_status: Justification éditoriale proposée à partir du principe adopté ; pas nouveau champ canonique
+    approuvé.
+  behaviors:
+  - name: Labeling / Relabeling
+    agreed_scope: Exigences d’étiquetage, version attendue et conformité du résultat.
+    condition: null
+    proposed_definition: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+      attendue et la conformité du résultat communiqué.
+    proposed_example: Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement
+      ne suffit pas si elle concerne une autre version.
+    business_difference: La conformité porte sur l’information appliquée et sa version, pas seulement sur une quantité traitée.
+  - name: Repacking
+    agreed_scope: Modification du conditionnement, consignes et résultat attendu.
+    condition: null
+    proposed_definition: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+      du conditionnement et en traitant les écarts signalés.
+    proposed_example: Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité
+      conforme.
+    business_difference: Modifier un conditionnement existant ; clarifier la frontière avec Packing Order sans créer deux
+      demandes pour la même prestation.
+  - name: Kitting / Dekitting
+    agreed_scope: Assemblage ou séparation d’ensembles, composants attendus et écarts.
+    condition: Si cette prestation entre dans le périmètre retenu ; inclusion non acquise par le seul accord U681.
+    proposed_definition: Qualifier et suivre la prestation d’assemblage ou de séparation d’ensembles confiée, en explicitant
+      les composants attendus et les écarts de composition communiqués.
+    proposed_example: Un ensemble de trois articles reste incomplet si l’un des composants manque, même si deux opérations
+      ont été confirmées.
+    business_difference: La conformité porte sur la composition de l’ensemble et les composants ; ce n’est pas seulement un
+      changement d’emballage.
+  detail_status: Noms, angles présentés et condition adoptés U681 ; définitions, exemples et précisions de frontière rédigés
+    ensuite restent proposés.
+  boundary: Gestion des exigences et suites de l’ordre ; gestes physiques chez l’exécutant. Pas de sous-comportement. Références
+    des consignes au catalogue, engagements individuels dans l’ordre ; ne pas déplacer les responsabilités de tracking ou
+    rapprochement par simple décomposition.
+  market_comparison:
+    sources:
+    - ELM658
+    - ELM661
+    common: SAP VAS atteste notamment étiquetage et kitting ; Oracle documente repackaging et kitting.
+    difference: Ces sources décrivent des activités de réalisation. Leur transformation en comportements de gestion d’ordre
+      est un choix FLOW, pas une décomposition native attestée. Le détail du dekitting n’est pas établi par les passages retenus.
+    position: Réutiliser les preuves consultées pour étayer les familles de prestations, justifier la maille par les particularités
+      métier et maintenir la condition de périmètre.
+agreement_U681:
+  source: U681
+  author: Laurent
+  recorded_by: Codex
+  date: '2026-09-23'
+  status: accepted_scoped_with_condition
+  values:
+    parent: Value-Added Service Order
+    level: Behavior
+    behaviors:
+    - name: Labeling / Relabeling
+      agreed_scope: Exigences d’étiquetage, version attendue et conformité du résultat.
+      condition: null
+    - name: Repacking
+      agreed_scope: Modification du conditionnement, consignes et résultat attendu.
+      condition: null
+    - name: Kitting / Dekitting
+      agreed_scope: Assemblage ou séparation d’ensembles, composants attendus et écarts.
+      condition: Si cette prestation entre dans le périmètre retenu ; inclusion non acquise par le seul accord U681.
+    principle: Particularités de gestion de l’ordre, pas gestes physiques ; différence métier significative, paramètres simples
+      au catalogue.
+  values_sha256: 21cb5141faa3782c3fb6295d0c7f2c3260773e5c7365142c5203587480b98847
+  exclusions:
+  - Définitions et exemples détaillés ajoutés après accord.
+  - Inclusion inconditionnelle de Kitting / Dekitting.
+  - Application globale du découpage ou publication.
+  capture_note: Accord sur annexe ; capture canonique via record_decision sur le lot final lors de son application. Aucun
+    identifiant BHV réservé à ce stade.
