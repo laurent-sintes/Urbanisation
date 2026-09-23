@@ -1,0 +1,132 @@
+id: partial-order-revision-U642
+date: '2026-09-23'
+source_refs:
+- U642
+- CMP267
+- ELM644
+- ELM646
+status: applied_scoped_agreement
+approved_rule: La possibilité de modifier une commande s’évalue sur la partie concernée, selon son état réel, ses engagements
+  et ses dépendances. Le Planning propose les changements ; Apply Plan les fait prendre en compte auprès des responsables.
+  Fulfillment traite les conséquences sur les prestations déjà engagées.
+approved_rule_sha256: fead87d8e31df409247af64bf8ffc01000fa2d588161a60ea45cf35ad7ad1bcd
+scope_limit: 'Règle et répartition adoptées ; pas d’accord global sur les champs scope développés. Le registre record_decision
+  ne capture que des champs entiers : les passages adoptés restent qualifiés ici sans étendre l’accord.'
+changed_nodes:
+- D05.f
+- D02.e
+- D04.o
+- D06
+previous_changed_fields:
+  D05.f:
+    revision: 19
+    scope: |-
+      Construire le plan commun pour un périmètre et un horizon donnés, en confrontant commandes, prévisions restantes, ressources présentes et apports attendus. Les affectations, apports initiaux, réassorts, redistributions et révisions proposées de politiques contribuent au même résultat. Les scénarios ne maintiennent pas de plans finaux concurrents et ne comptent pas deux fois une commande comprise dans la prévision.
+
+      [Demand Planning](model:D17.a) fournit la demande retenue à couvrir. [Fulfillment Plan Decision](model:D03.o) et les décisions spécialisées déterminent les possibilités, affectations, cibles, protections, apports, priorités et échéanciers ainsi que leur compatibilité. Le Planning organise leur mobilisation, compare les scénarios et maintient la référence retenue. Plusieurs scénarios peuvent être étudiés ; hypothèses, conditions, effets interdépendants et reste non couvert doivent rester identifiables. Aucun ordre universel de calcul, moteur unique ou optimum mathématique garanti n'est imposé.
+
+      Le travail comprend cadrage et suivi de la demande de planification, construction d'alternatives, simulation et analyse, autorisation des suites, mise en œuvre et ajustement face aux écarts. [Apply Plan](model:D02.e) fait appliquer les recommandations autorisées et constate leur prise en compte. [Monitor Plan](model:BHV101) observe les effets, les nouvelles conditions et les besoins de réexamen. [Adjust Plan](model:BHV016) prépare une révision cohérente en tenant compte des effets acquis ; ses suites restent soumises aux autorisations et à Apply Plan. Les cinq actes de pilotage sont portés directement par [Scope Planning](model:D04.s), [Schedule Planning](model:BHV097), [Run Planning](model:BHV098), [Stop Planning](model:BHV099), [Rerun Planning](model:BHV100). Ils n’imposent ni séquence obligatoire ni intervention humaine. Le suivi du travail jusqu’à sa conclusion reste une responsabilité du Planning commun, distincte de son seul cadrage. Arrêter un calcul ne défait pas les effets déjà pris en compte.
+
+      Les capacités de Demand conservent les Orders, leurs évolutions et les propositions, confirmations et révisions de promesse. Inventory conserve faits de stock et réservations. Reference & Policy Management porte la mise en vigueur des règles ; une politique proposée par le plan ne devient pas automatiquement applicable. Fulfillment coordonne et adapte les prestations engagées. Les capacités partenaires restent responsables de leurs résultats, même lorsqu'elles sont mobilisées par Apply Plan. Une demande ferme peut être révisée selon les conditions applicables avant son début d'exécution ; la portée d'un début partiel reste à préciser.
+
+      Exemple fictif : un scénario prévoit un transfert de 30 pièces et un nouvel achat de 70. Le transfert est pris en compte ; l'achat est refusé. Le Planning conserve le résultat du transfert, rend visible le manque de couverture et mobilise les décisions pour réexaminer les possibilités. Il ne considère pas les 100 pièces comme acquises et n'efface pas le transfert. Une recommandation dépendant d'un autre effet doit être réexaminée avant sa propre application. Une simulation ou une autorisation ne prouve ni réservation, ni promesse confirmée, ni réception.
+
+      Les analyses de stock restent couvertes : comparer des cibles de couverture à 10 ou 15 jours, les apports de lancement ou de réassort, les redistributions, réductions et reports d'apports, puis apprécier service, immobilisation, coûts et risques. La valeur est multidimensionnelle sans pondération universelle. Les politiques consommées restent extérieures. Les analyses d'affectation comprennent les commandes et prévisions restantes, même avant commande, et peuvent conclure sans changement. Les horizons et hypothèses se choisissent selon le problème ; cette responsabilité ne duplique pas la construction de la demande dans Demand Planning.
+
+      Le travail de planification reste une sollicitation interne au Domain, dite Backoffice, qui peut répondre à un impondérable, une échéance de revue ou une étude volontaire. Ces origines peuvent se combiner sans imposer un dossier manuel ni un recalcul intégral à chaque événement. Le Planning conserve progression et conclusion du travail, y compris une étude abandonnée ou conclue sans application ; il ne suit pas à la place des exécutants leurs opérations.
+
+      Le plan porte l’échéancier des mises à jour à appliquer. [Apply Plan](model:D02.e) peut appliquer une partie des changements et distingue les changements appliqués, en attente ou refusés. Cette modalité progressive ou sélective reste dans Apply Plan, sans comportement supplémentaire.
+
+      Examiner, retenir, faire revoir ou abandonner une proposition relève du Planning commun ; pour une révision, ce travail relève d’Adjust Plan. Retenir le plan ne rend pas tous ses effets immédiatement applicables. [Apply Plan](model:D02.e) vérifie ou recueille les autorisations des changements sélectionnés. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques.
+  D02.e:
+    revision: 22
+    scope: |-
+      Le plan porte l’échéancier des mises à jour. Apply Plan peut appliquer une partie des changements. Il distingue les changements appliqués, en attente ou refusés.
+
+      L’application peut être progressive selon cet échéancier ou sélective sur une partie des changements. Cette sélection volontaire est distincte d’une application incomplète provoquée par un refus. L’échéancier concerne la mise en application des changements ; [Schedule Planning](model:BHV097) programme le travail de planification. Ces modalités restent décrites dans Apply Plan, sans sous-comportement.
+
+      Faire appliquer les recommandations autorisées du plan commun et établir les effets effectivement pris en compte, refusés ou partiels. Vérifier leurs conditions et interdépendances au moment de l'application ; une recommandation devenue inapplicable reste visible pour réexamen. Aucun retour arrière global ni transaction atomique du plan n'est supposé.
+
+      Les familles d'effets comprennent les liens ressources-besoins, les nouveaux apports et ajustements d'Orders, les changements autorisés d'échéanciers et de promesses et les politiques à rendre applicables. Elles décrivent le contenu de ce comportement terminal, sans sous-comportements. Les décisions gardent les arbitrages ; Demand, Inventory et Reference & Policy Management conservent commandes, engagements, réservations et politiques. Fulfillment orchestre les prestations.
+
+      Le mécanisme d'affectation conserve son sens métier Supply Assignment : matérialiser et maintenir les liens entre ressources présentes ou futures et commandes ou besoins prévisionnels identifiés, même avant toute commande. Compléter des liens existants, réaffecter ou libérer ceux qui sont modifiables restent des modalités combinables. Seule la réservation bloque les usages concurrents ; l'affectation ne crée ni réservation ni promesse. Une prévision ne devient pas une commande du seul fait d'un lien de couverture. Les protections de groupe et gels restent applicables ; préserver un lien pendant un traitement ne crée pas un gel durable.
+
+      Exemples fictifs : affecter 40 pièces d'un arrivage à une commande puis en changer la provenance admissible ; lier 300 pièces attendues aux ventes web encore prévues en novembre. Pour des besoins de 100 et 200 et une ressource de 150, un prorata illustratif de 50 et 100 serait choisi par les décisions, puis matérialisé ici ; il ne réduit pas les demandes ni ne prescrit une politique universelle.
+
+      [Purchase Order](model:D04.j), [Transfer Order](model:D04.k), [Consignment Fill-up Order](model:D04.r) et [Order Lifecycle Management](model:D04.o) portent les demandes et leurs changements autorisés. [Fulfillment Commitment](model:D03.n) porte les propositions et engagements de satisfaction ; une affectation peut changer sans modifier la promesse, et réciproquement. [Reservation](model:D02.c) tient les engagements de réservation. [Supply Protection](model:D02.b) et les autres capacités Policy mettent en vigueur les règles retenues. L'application les mobilise sans transférer leur responsabilité et sans créer un engagement fournisseur implicite.
+
+      Le résultat et les écarts alimentent [Monitor Plan](model:BHV101) et [Adjust Plan](model:BHV016). Une sollicitation acceptée n'établit pas l'application complète ; l'application partielle ne devient pas silencieusement un nouveau plan. La réalisation physique reste distincte. Exemple fictif : un transfert de 30 pièces est pris en compte mais un achat de 70 est refusé ; conserver le transfert et le refus, rendre visible le manque et faire réexaminer les possibilités. Une politique appliquée et un transfert partiel sont également deux résultats distincts ; le reliquat reste explicite.
+
+      Apply Plan vérifie ou recueille les autorisations nécessaires à l’application des changements sélectionnés, puis fait appliquer ceux qui sont autorisés. Une autorisation ne prouve pas leur prise en compte effective. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques. L’autorisation peut être humaine ou fondée sur des règles, et différer selon les changements et leurs échéances ; elle ne remplace pas les contrôles des partenaires.
+  D04.o:
+    revision: 15
+    scope: |-
+      Gouverner six dimensions combinables : préparation et révision du contenu, engagement ferme, protection contre la réoptimisation, autorisation de prise en charge, suspension de progression et fin de la demande. Les comportements gouvernent les transitions ; les statuts décrivent la situation à une portée explicite. Aucun statut global ni séquence unique ne résume ces dimensions.
+
+      Une version applicable peut rester engagée et partiellement libérée pendant qu’une modification se prépare. Cela n’autorise pas toutes les modifications ni la poursuite systématique des traitements : les impacts et contraintes doivent être examinés, et une suspension peut être requise. Les réalisations acquises ne sont jamais réécrites par une révision.
+
+      Pour chaque comportement, les états possibles et leurs significations sont listés dans sa fiche. Ce vocabulaire de référence éditorial ne prescrit pas un enum logiciel universel, une étape manuelle ni la présence de chaque état pour chaque type d’Order. Distinguer valeur d’état, motif, portée, version et quantités ; les états partiels sont des lectures agrégées et non un niveau supplémentaire du modèle.
+
+      D04 conserve cette capacité transverse aux intentions des Orders. D03 mobilise ses mécanismes pour engager, protéger ou libérer les commandes du carnet ; les décisions et Planning restent distincts. D06 orchestre les services et rapporte démarrages, réalisations et échecs. Lifecycle applique les transitions selon les faits et autorisations ; il ne prend pas la place de Process Orchestration ou de Process Adaptation.
+
+      U424 : six comportements remplacent les huit mécanismes antérieurs. Le changement d’échéance du besoin est intégré à Order Preparation & Revision ; annulation et clôture restent distinguées dans Order Termination. Identifiants des comportements conservés ou retirés avec succession explicite. Depuis U438, Order Structuring et Order Archiving appartiennent à D04 ; aucune décomposition inférieure aux comportements.
+
+      Pour les propositions reçues d’un plan amont, [Purchase Order](model:D04.j) ou [Transfer Order](model:D04.k) conserve la demande selon sa nature. Le cycle de vie gouverne sa préparation, ses révisions et son éventuel affermissement. La disparition d’une proposition du plan source n’efface ni un Order engagé ni les réalisations acquises ; la suite relève des transitions autorisées. La maîtrise du plan d’origine reste extérieure à cette capacité.
+  D06:
+    revision: 6
+    scope: |-
+      Les [Services](glossary:TER075) peuvent être physiques, humains ou numériques. Chaque sollicitation est pilotée par une [Task](glossary:TER089) : activation immédiate, différée ou événementielle, suivi, relance, recours de secours et vérification de fin. Elle peut produire un [Service Order](glossary:TER066), par exemple EDI ; ce document n’est pas obligatoire pour toute sollicitation.
+
+      Service Catalog fournit l’offre, Service Provider Policy les règles de recours, Service Capacity Visibility la situation opérationnelle. Le choix et l’adaptation des prestations restent distincts de leur coordination. Les exécutants réalisent les opérations physiques ; un acquittement ou un job technique terminé ne suffit pas à constater la fin d’une prestation.
+
+      Dès le début d’exécution, Fulfillment peut adapter le plan de réalisation. Si un article manque, le re-sourcing peut retenir un autre entrepôt pour ce seul article, répartir les Tasks et les Service Orders nécessaires et conserver le suivi commun de la demande initiale. Si l’engagement devient impossible, Demand gouverne la révision de promesse ; aucun retour automatique de toute adaptation locale au plan global.
+
+      Exemples fictifs : une Task sollicite une API documentaire sans commande formalisée ; une autre transmet un Service Order de préparation et suit la prestation jusqu’à sa fin vérifiée. Après un manque partiel, seules les quantités concernées font l’objet d’une nouvelle sollicitation.
+previous_relation:
+  id: REL-NEEDS-U424-D03.p-D04.o
+  revision: 3
+  type: relates-to
+  source_id: D05.f
+  target_id: D04.o
+  source_refs:
+  - U424
+  - ELM251
+  - CMP162
+  - U435
+  - U631
+  qualification:
+    role: needs
+    meaning: Mobilise les transitions autorisées des Orders pour mettre en action le scénario retenu.
+    conditions:
+    - Selon les engagements, protections et conditions de prise en charge du scénario ; aucun appel systématique.
+    effects:
+    - Obtenir l’engagement, la protection, l’autorisation ou la suspension applicable ; la réalisation demeure pilotée et
+      observée en D06.
+    scope: D03 prépare et mobilise ; Lifecycle gouverne les transitions en D04. Relation métier, sans composant logiciel partagé
+      imposé.
+  review:
+    state: proposed
+    note: Succession de rattachement ou rédaction après regroupement U631 ; qualification détaillée non adoptée par extension.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-23T10:40:15.075567Z'
+    recorded_by: Codex
+    source_refs:
+    - U631
+    validated_fields: []
+    value_sha256: {}
+    note: Relation adaptée au regroupement ; preuves antérieures conservées dans Git.
+  fields:
+    label: Mobilise les transitions autorisées des Orders
+  last_modified: '2026-09-23T10:40:15.075567Z'
+market:
+  microsoft:
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/work-line-details
+    passage: Part 3
+    finding: Réduction partielle du travail et ajustement nécessaire du chargement.
+  oracle:
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html
+    passage: Order Management Rejects a Change Order
+    finding: Modification refusée après expédition.
+  limit: Appuis fonctionnels partiels, pas de seuil de réversibilité universel.
+structure: Aucun comportement nouveau ; aucun sous-comportement.

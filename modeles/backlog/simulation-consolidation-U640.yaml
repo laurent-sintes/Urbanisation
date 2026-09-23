@@ -1,0 +1,93 @@
+id: simulation-consolidation-U640
+date: '2026-09-23'
+source_refs:
+- U640
+status: applied_scoped_agreement
+successors:
+  BHV005: BHV006
+removed_relations:
+- REL-PLANNING-BHV005
+previous_state:
+  git_commit: 4b11d8563446fadfe59f77cc7d2b087f5fda3717
+  path: modeles/backlog/model.yaml
+  note: BHV005 et sa relation conservés dans Git ; champs déjà modifiés depuis ce commit capturés ci-dessous.
+  changed_fields:
+    BHV006:
+      definition: Projeter les conséquences d’un scénario et analyser leurs impacts sur les indicateurs métier et les processus
+        pour éclairer les choix.
+      scope: |-
+        Critère différenciant : mécanisme. Bénéfice ciblé : Comprendre compromis et effets locaux.
+
+        La projection et son analyse forment un même résultat explicatif ; comparaison et autorisation restent des fonctions utiles, sans calcul dupliqué.
+
+        Exemple fictif : Service 94 à 97 %, stock +120 k€ ; identifier les magasins perdants.
+
+        Simulation & Analysis peut produire des recommandations : ajustements suggérés, raisons, hypothèses et impacts attendus sur les indicateurs ou les processus. Une recommandation n’est ni une décision adoptée ni une modification opérationnelle ; elle éclaire le choix du scénario et les décisions à mobiliser. Exemple fictif : recommander de reporter un apport en expliquant la réduction d’immobilisation et le risque de disponibilité associé. La validation et l’application restent des fonctions distinctes ; aucun comportement Recommendation autonome ajouté.
+
+        Construire et comparer les scénarios de satisfaction des commandes et besoins prévisionnels identifiés en mobilisant les décisions spécialisées, conserver les hypothèses et rendre les conséquences comparables : satisfaction, dates, coûts, risques et engagements selon le contexte. Les objectifs restent multidimensionnels, sans pondération implicite.
+
+        Au sein de [Demand & Supply Optimization Planning](model:D05.f), ce comportement conduit la simulation et l’analyse. [Fulfillment Plan Decision](model:D03.o) détermine les propositions cohérentes ; leurs règles de calcul ne sont pas reproduites ici. Les résultats éclairent [Scenario Authorization](model:BHV092) et la conclusion de [Demand & Supply Optimization Planning](model:D05.f).
+
+        Exemple fictif : comparer deux priorités et identifier les commandes mieux servies et celles pénalisées. Conserver la situation actuelle peut être une conclusion utile. Une simulation ne modifie pas les affectations, réservations ou promesses effectives.
+
+        Le périmètre étudié peut combiner commandes connues et prévisions restantes. Un impondérable touchant une ressource peut appeler leur réexamen commun, sans rendre obligatoires un recalcul intégral ou un nouveau dossier.
+      market_inspiration:
+        choice: Simulation & Analysis réunit l’étude des scénarios de stock et de satisfaction dans le Planning commun.
+        flow_scope: Conséquences comparées sur couverture des commandes et prévisions restantes, stocks, apports, coûts et
+          risques.
+        flow_approach: Mobiliser les décisions spécialisées et rendre leurs hypothèses et conséquences comparables avant autorisation
+          ou application.
+        synthesis:
+        - Oracle montre la comparaison de résultats avant libération ; Microsoft produit des suggestions sur les apports.
+          Leur point commun est une information pour agir, avec un statut encore distinct de l’action.
+        - FLOW réunit projection et interprétation dans un même comportement. Il faut expliquer les lieux qui gagnent ou perdent,
+          pas seulement afficher un indicateur global.
+        - Oracle documente simulation, comparaison et revue du carnet avant transmission de résultats.
+        - FLOW conserve simulation et analyse comme un comportement, distinct de l’autorisation et de l’application. Deux
+          documents Oracle étayent ces fonctions sans établir un consensus de hiérarchie.
+        - FLOW étend ce comportement au plan commun des commandes et prévisions identifié en U565. Les exemples de backlog
+          déjà cités étayent le mécanisme sur les commandes ; ils ne prouvent pas à eux seuls cette extension de périmètre.
+        examples:
+        - title: Illustration FLOW — plus de service, plus de stock
+          situation: Un scénario améliore le service estimé mais augmente le stock immobilisé.
+          outcome: L’analyse localise les magasins bénéficiaires et ceux dont le risque d’excédent augmente.
+          lesson: Le choix dépend des objectifs ; aucun gain simulé n’est présenté comme une réalisation acquise.
+          source_title: Overview of Simulations for Replenishment Plans
+          source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
+          source_refs:
+          - U477
+          - ELM370
+          - CMP190
+        - title: Illustration FLOW — Deux répartitions sont envisagées
+          situation: Deux répartitions sont envisagées.
+          outcome: La demande conserve leurs conséquences et les raisons du scénario retenu ou écarté.
+          lesson: L’analyse et la simulation forment un même comportement métier.
+          source_title: Key Actions on Orders
+          source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html
+          source_refs:
+          - ELM357
+          - U501
+          - CMP202
+    D05.f.decomposition_rationale: 'Le cadrage, la programmation, le lancement, l’arrêt confirmé et le nouveau calcul produisent
+      des résultats distincts : question délimitée, calendrier établi, travail engagé, arrêt effectif et travail réengagé.
+      Les distinguer évite de confondre lancement, autorisation et application, ou arrêt du calcul et annulation des effets.
+      Ces comportements sont directs et combinables sans cycle imposé. La construction des alternatives, leur analyse, leur
+      autorisation, leur application et leur ajustement restent distingués ; Monitor Plan rend les écarts visibles, tandis
+      qu’Adjust Plan prépare leur réponse cohérente. Ce bénéfice justifie deux comportements distincts sans séquence imposée
+      ni reprise du suivi opérationnel des partenaires.'
+agreement:
+  definition: Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les
+    engagements, les stocks, les coûts et les risques pour éclairer les choix.
+  nature: planning_practice
+  boundary: Les décisions spécialisées restent responsables des réponses métier et de leurs calculs. La simulation ne rend
+    pas ses résultats applicables. Elle peut aussi conclure que conserver le plan actuel est préférable.
+  relations_between_responsibilities: Simulation & Analysis explique les alternatives ; Plan Adjustment prépare la révision
+    proposée ; Apply Plan fait appliquer les changements.
+  scope_limit: Frontières adoptées, sans adoption du champ scope développé dans son intégralité.
+market:
+  documents:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  consulted_on: '2026-09-23'
+  finding: Variation des hypothèses et comparaison des plans documentées ; regroupement en un comportement choisi par FLOW.
+prior_agreements: Préserver les captures antérieures ; les changements de contexte ne réécrivent pas leurs preuves.

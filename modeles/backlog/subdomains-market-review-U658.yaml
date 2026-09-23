@@ -1,0 +1,651 @@
+id: subdomains-market-review-U658
+date: '2026-09-23'
+status: market_assessment_with_Order_Promising_agreement_U672
+author: Codex
+source_refs:
+- U655
+- U656
+- U657
+- U658
+- CMP269
+- U659
+- U660
+- U661
+- U662
+- U663
+- U664
+- U665
+- U666
+- U667
+- U668
+- U669
+- U671
+- CMP272
+- U672
+user_document:
+  path: connaissance/sources/SRC-2026-09-23-FLOW-SUBDOMAINS/FLOW_Supply_Chain_Orchestration.pdf
+  sha256: 11de812c4ee182a9b05756a39dd92d8efb9cc963c82eea22b0115a8a0623d718
+  scope: Huit sous-domaines, modifiés par les frontières explicites U656/U657.
+  current_authority: 'U661 : support jetable ; aucune maintenance du PDF. Les précisions et décisions de Laurent priment.'
+canonical_model_changed: false
+method:
+  comparison_type: Recouvrements fonctionnels, appuis sémantiques et méthodologiques ; pas de copie des modules commerciaux.
+  coverage: Huit sous-domaines ; au moins deux documents primaires distincts et pertinents par comparaison.
+  reused_evidence: Réutilisation des consultations valables du 23 septembre 2026 ; nouvelles lectures ciblées pour U658.
+  reuse_limits: Synthèses sélectives et liens ; aucune reproduction substantielle ou importation de taxonomie propriétaire.
+  vendor_scope: SAP, Oracle, Microsoft et IBM ; éclairage méthodologique Microsoft et Nick Tune. Aucune représentativité exhaustive
+    du marché revendiquée.
+sources:
+- id: ELM522
+  reference: MKT14
+  vendor: Microsoft
+  title: Data management
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/data-management
+  version: Documentation évolutive, mise à jour affichée le 30 janvier 2026
+  consulted_on: '2026-09-23'
+  locator: Master data ; Transactional data
+  finding: IOM distingue références, master data et transactions ; les données maîtres peuvent venir d’un ERP externe. Les
+    entités transactionnelles sont Sales Order et Fulfillment Order.
+  evidence_limit: Produit OMS, pas taxonomie métier universelle ; ne prescrit pas une Demand unique ni un Order réduit à un
+    état.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM352
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Global Order Promising
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+  version: Fusion Cloud SCM 25C
+  consulted_on: '2026-09-23'
+  locator: Introduction ; Principles of Promising
+  finding: La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources,
+    sources, coûts, substitutions et fractionnements.
+  evidence_limit: L’offre combine plusieurs responsabilités séparées par FLOW ; pas de frontière universelle entre disponibilité,
+    affectation et exécution.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM393
+  reference: MKT14
+  vendor: Microsoft
+  title: Distributed order management (DOM)
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom
+  version: Documentation évolutive, mise à jour affichée le 3 juin 2026
+  consulted_on: '2026-09-23'
+  locator: Introduction, objectifs et contraintes
+  finding: DOM optimise la satisfaction à la commande ou par lot, selon ressources, sources, règles et objectifs.
+  evidence_limit: Contexte Commerce ; ni prescription d’un optimum unique FLOW ni couverture de tous les besoins amont.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM394
+  reference: MKT14
+  vendor: Microsoft
+  title: DOM rules
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+  version: Documentation évolutive, mise à jour affichée le 22 janvier 2026
+  consulted_on: '2026-09-23'
+  locator: Common attributes ; Minimum inventory rule ; Fulfillment location priority ; Partial orders rule
+  finding: Règles distinctes avec validité, activation, contraintes, protection de stock, priorités de lieux et limites de
+    fractionnement.
+  evidence_limit: Règles propres au solveur DOM ; ne prouve pas un sous-domaine autonome réunissant toutes les policies Supply.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM405
+  reference: MKT14
+  vendor: Microsoft
+  title: Intelligent Order Management overview
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
+  version: Documentation évolutive, sans édition produit précise
+  consulted_on: '2026-09-23'
+  locator: Components ; Orchestration ; Providers ; Fulfillment optimization
+  finding: Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé du lieu
+    de satisfaction.
+  evidence_limit: La solution réunit plusieurs responsabilités FLOW et reste centrée sur les Orders.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM408
+  reference: MKT14
+  vendor: Microsoft
+  title: Inventory on-hand list
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list
+  version: Documentation évolutive, mise à jour affichée le 15 juin 2026
+  consulted_on: '2026-09-23'
+  locator: Query your on-hand inventory ; tableau des quantités
+  finding: Vue séparant physique, réservé, entrées attendues et disponibilité calculée.
+  evidence_limit: Vue produit, pas toute la gouvernance métier du stock ; la disponibilité calculée coexiste ici avec l’inventaire.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM415
+  reference: MKT14
+  vendor: Microsoft
+  title: Master plans overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  version: Documentation évolutive, mise à jour affichée le 25 mars 2026
+  consulted_on: '2026-09-23'
+  locator: Using master plans ; Firming ; Action message
+  finding: Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres.
+  evidence_limit: Le module calcule les plans ; FLOW sépare leur production APS et la fourniture de données planifiées.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM449
+  reference: MKT13
+  vendor: SAP
+  title: Explaining Inventory Management
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-inventory-management_d2aad6e6-a57e-4f64-9ac0-3b27f613776a
+  version: Cours S/4HANA Fashion, édition non affichée
+  consulted_on: '2026-09-23'
+  locator: Inventory Management ; Stock Overview ; Special Stock Types
+  finding: Stock, mouvements, transit et régimes de détention sont distingués ; les stocks consignés sont explicités.
+  evidence_limit: SAP inclut valorisation financière et opérations plus larges que le périmètre FLOW proposé.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM452
+  reference: MKT13
+  vendor: SAP
+  title: Explaining Supply Assignment
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  version: Cours S/4HANA Fashion, édition non affichée
+  consulted_on: '2026-09-23'
+  locator: Supply Assignment Basics ; Scenarios ; Copying Assignments ; Online Features
+  finding: ARun affecte des ressources présentes ou futures aux commandes selon priorités et pénuries ; affectations et contrôle
+    de release sont distingués.
+  evidence_limit: L’affectation SAP peut empêcher d’autres demandes de consommer la ressource ; cela ne prouve pas l’équivalence
+    avec l’affectation FLOW distincte de la réservation. ARun est intégré au portefeuille aATP.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM648
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Demand Management
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fasdm/overview-of-demand-management.html
+  version: Fusion Cloud SCM 25C
+  consulted_on: '2026-09-23'
+  locator: Introduction et liste des fonctions
+  finding: Demand Management couvre prévision, signaux et plans de demande.
+  evidence_limit: Ce sens diffère de la gestion d’une intention opérationnelle durable dans FLOW ; le titre commercial ne
+    définit pas tous les usages du terme.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM649
+  reference: MKT13
+  vendor: SAP
+  title: Outlining Program Planning
+  url: https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a
+  version: Cours S/4HANA Cloud Public Edition, édition non affichée
+  consulted_on: '2026-09-23'
+  locator: Production Planning Overview ; Demand Management Overview
+  finding: Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie.
+    Demand Management gère leur interaction pour alimenter MRP.
+  evidence_limit: Exemple de production, pas modèle universel de retail ; ne démontre pas l’externalisation de toute décision
+    de couverture.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM650
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Backlog Management Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
+  version: Fusion Cloud SCM 26B
+  consulted_on: '2026-09-23'
+  locator: 'Quatre activités : planning, review, simulation, release'
+  finding: Prioriser un portefeuille, construire un plan, tester des ajustements et libérer les résultats vers Order Management
+    ; les simulations ne modifient pas seules les commandes.
+  evidence_limit: Le portefeuille de commandes ne représente pas toutes les formes de demande FLOW ; pas de plan technique
+    unique imposé.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM651
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Orchestration Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html
+  version: Fusion Cloud SCM 26B
+  consulted_on: '2026-09-23'
+  locator: Introduction ; Set up Steps ; Set Up Statuses
+  finding: Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations
+    sont paramétrés.
+  evidence_limit: Exemple Sales Order incluant réservation et facturation ; ni périmètre identique FLOW ni workflow unique
+    obligatoire.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM652
+  reference: MKT20
+  vendor: Oracle
+  title: How Order-to-Cash Works in Order Management
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html
+  version: Fusion Cloud SCM 26A
+  consulted_on: '2026-09-23'
+  locator: 'Étapes 1 à 4 : données produit, règles, promesse et interfaces'
+  finding: Order Management utilise Product Management et Supply Chain Planning puis sollicite les systèmes de réalisation
+    et reçoit leur progression.
+  evidence_limit: Parcours de vente plus large que FLOW, avec prix et finance ; ne généralise pas Sales Order à tous les besoins.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM653
+  reference: MKT13
+  vendor: SAP
+  title: Explaining aATP
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp_a1595e13-8923-4514-b889-ec4f63ef1ad5
+  version: Cours S/4HANA Fashion, édition non affichée
+  consulted_on: '2026-09-23'
+  locator: Product Availability Check ; ATP Concept ; Alternative-Based Confirmation
+  finding: Vérifier quantités et dates selon éléments de supply et promesses existantes ; examiner et choisir des sites alternatifs.
+  evidence_limit: aATP traverse les frontières Availability / Matching / Fulfilment proposées ; ce cours ne prouve pas une
+    correspondance complète de CTP et PTP.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM654
+  reference: MKT14
+  vendor: Microsoft
+  title: Results of DOM runs
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-runs-results
+  version: Documentation évolutive, mise à jour affichée le 23 janvier 2026
+  consulted_on: '2026-09-23'
+  locator: Fulfillment plans ; Order line statuses
+  finding: Le résultat est un plan indiquant quantités et lieux affectés ; il peut être examiné ou appliqué, avec traitement
+    explicite de conflits et de parties non affectées.
+  evidence_limit: Plan de fulfillment Commerce ; appui partiel au master plan de matching FLOW, sans équivalence au Supply
+    Plan U668.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM635
+  reference: MKT69
+  vendor: Microsoft
+  title: Use Domain Analysis to Model Microservices
+  url: https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis
+  version: Documentation évolutive, édition non indiquée
+  consulted_on: '2026-09-23'
+  locator: Analyze the domain ; Define bounded contexts
+  finding: Sous-domaines repérés par fonctions proches, dépendances et rôle métier ; les choix techniques restent à effectuer.
+  evidence_limit: Guide orienté microservices ; ne fournit pas huit sous-domaines Supply et ne justifie pas une partition
+    par tables.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM634
+  reference: MKT85
+  vendor: Nick Tune
+  title: 'Domain, Subdomain, Bounded Context, Problem/Solution Space in DDD: Clearly Defined'
+  url: https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/
+  version: Article du 25 novembre 2020
+  consulted_on: '2026-09-23'
+  locator: Subdomains ; Subdomains vs Bounded Contexts
+  finding: Sous-domaine est relatif à un domaine parent ; plusieurs frontières peuvent être utiles selon les responsabilités.
+  evidence_limit: Point de vue original d’un praticien, pas une norme de découpage.
+  access: Texte primaire consulté ; synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM112
+  reference: MKT23
+  vendor: IBM
+  title: Document types
+  url: https://www.ibm.com/docs/en/order-management?topic=configuration-document-types
+  version: Documentation Sterling OMS évolutive ; édition précise non affichée
+  consulted_on: '2026-09-23'
+  locator: Table 1, famille Order
+  finding: La famille Order comporte Sales, Planned, Return, Purchase, Transfer et Master Order ; vente et achat couvrent
+    aussi des services.
+  evidence_limit: Types documentaires de produit, pas preuve d’un objet universel unique ni d’une représentation FLOW centrée
+    sur les documents.
+  access: Texte primaire consulté ; synthèse sélective et lien.
+comparisons:
+- key: master-data
+  name: Master Data
+  source_refs:
+  - ELM522
+  - ELM652
+  assessment: Responsabilité bien étayée ; autonomie et périmètre locaux FLOW.
+  similarities: Références produit, acteurs et contexte utilisés par l’orchestration, avec sources externes possibles.
+  differences: Les éditeurs répartissent ces objets entre plusieurs modules et n’imposent pas un sous-domaine commun unique.
+  recommendation: Conserver le regroupement en explicitant autorité locale, sources d’entreprise et maintien des références.
+  benefit: Contexte stable partagé par les décisions.
+  tradeoff: Le nom Master Data peut laisser entendre une maîtrise d’entreprise plus large ; l’autorité locale doit rester
+    explicite.
+- key: policies
+  name: Policies
+  source_refs:
+  - ELM394
+  - ELM352
+  assessment: Règles distinctes des décisions documentées ; sous-domaine commun = choix FLOW.
+  similarities: Priorités, protection, admissibilité, sources et fractionnement configurent les choix.
+  differences: Ces règles sont souvent distribuées entre les composants de promesse et de fulfillment ; aucune taxonomie unique
+    n’est démontrée.
+  recommendation: Conserver une responsabilité de définition, version, activation et fourniture des règles ; laisser les résultats
+    des décisions aux sous-domaines qui décident.
+  benefit: Règles explicites et applicables de façon cohérente.
+  tradeoff: Éviter un fourre-tout regroupant tout paramètre technique ou toute règle du système.
+- key: plans
+  name: Plans
+  source_refs:
+  - ELM352
+  - ELM649
+  - ELM415
+  assessment: La consommation de données prévisionnelles externes est étayée ; le sens exact de Supply Plan FLOW U668 est
+    une définition métier locale, sans équivalence de marché démontrée.
+  similarities: Résultats de planification reçus et utilisés par les décisions ; passage de prévisions à des besoins et apports
+    futurs.
+  differences: Les produits peuvent combiner production et consommation de prévisions. U668 distingue Supply Plan (entrées
+    et sorties de stock prévues hors achats) et master plan de matching (affectations internes). Le vocabulaire éditeur Supply
+    Planning ne constitue pas une équivalence au Supply Plan FLOW.
+  recommendation: Plans gère les données de plans externes ; Supply Plan porte les mouvements de stock prévus hors achats.
+    Matching construit et gère son master plan de matching, objet distinct.
+  benefit: Utiliser l’anticipation sans reconstruire l’APS dans l’orchestration.
+  tradeoff: Versions, fraîcheur et rapprochement prévision/engagement sont à expliciter ; aucun partage court terme/long terme
+    automatique.
+- key: demand-management
+  name: Order Management
+  source_refs:
+  - ELM648
+  - ELM649
+  - ELM522
+  - ELM652
+  - ELM112
+  assessment: Responsabilité de cycle de vie défendable ; principal écart terminologique.
+  similarities: Les systèmes OMS conservent les demandes opérationnelles, les lignes, les évolutions et les engagements.
+  differences: Oracle Demand Management porte la prévision ; SAP emploie le terme pour les besoins planifiés et leur interaction
+    avec les commandes. Les documents OMS étudiés gardent Order comme objet métier.
+  recommendation: Utiliser Order Management, adopté U666, pour les commandes individualisées, et conserver Demand pour la
+    demande face à l’offre. La rédaction et les frontières détaillées restent qualifiées séparément.
+  benefit: Continuité de l’intention et traçabilité des engagements malgré les documents et adaptations.
+  tradeoff: Le nom Order Management est étayé, mais la généralisation à un objet durable commun et ses spécialisations reste
+    un choix FLOW. Si Order devient cet objet, l’engagement devient un état ou une dimension de l’Order ; la formule du PDF
+    Order = état est alors remplacée.
+  candidate_name_U659: Order Management
+  original_name_reviewed: Demand Management
+  name_adoption:
+    source_refs:
+    - U666
+    approved_fields:
+    - name
+    value: Order Management
+- key: inventory-management
+  name: Inventory Management
+  source_refs:
+  - ELM449
+  - ELM408
+  assessment: Nom et noyau fonctionnel bien étayés.
+  similarities: Positions, mouvements, états, quantités réservées ou attendues et régimes de stock.
+  differences: SAP inclut aussi valorisation financière et transactions ; la vue Microsoft expose de la disponibilité calculée.
+    FLOW retient une représentation opérationnelle et sépare la promesse.
+  recommendation: Conserver le nom et rendre explicite la frontière entre faits de stock, réservations et possibilités de
+    promesse.
+  benefit: Connaissance cohérente des ressources détenues.
+  tradeoff: La représentation locale ne constitue pas à elle seule la preuve d’une réception ou la maîtrise des opérations
+    physiques.
+- key: supply-availability
+  name: Order Promising
+  source_refs:
+  - ELM352
+  - ELM653
+  assessment: Responsabilités étayées par ATP/aATP/GOP ; frontière avec les autres choix à expliciter.
+  similarities: Évaluer quantités, dates et alternatives en utilisant ressources présentes/futures, engagements et règles.
+  differences: Oracle et SAP incluent choix de sources, substitutions et fractionnements. La disponibilité promettable dépend
+    déjà de choix, notamment CTP/PTP chez Oracle.
+  recommendation: Décrire les possibilités conditionnelles de réponse et les décisions associées ; articuler avec le plan
+    collectif de Matching et la confirmation des engagements.
+  benefit: Distinguer ce qui peut être fourni de ce qui est retenu collectivement ou confirmé.
+  tradeoff: Une frontière qui reporterait tout sourcing à Fulfilment rendrait la promesse et le plan insuffisamment déterminés.
+- key: matching
+  name: Demand & Supply Matching
+  source_refs:
+  - ELM452
+  - ELM650
+  - ELM654
+  - ELM393
+  assessment: Planification et arbitrage au cœur du domaine fortement étayés ; nom et regroupement FLOW.
+  similarities: Priorisation, affectation de supply présente ou future, plan collectif, simulation, réaffectation et application
+    distincte.
+  differences: 'Noms natifs : Supply Assignment, Backlog Management, Distributed Order Management et Fulfillment Plan. Les
+    périmètres se chevauchent avec aATP et l’orchestration ; SAP donne à certaines affectations un effet de blocage non déduit
+    pour FLOW.'
+  recommendation: Expliciter la construction et la gestion du master plan de matching. Ne pas le nommer Supply Plan, objet
+    distinct défini par U668.
+  benefit: Cohérence entre demandes concurrentes et ressources partagées.
+  tradeoff: Qualifier affectation, réservation, promesse et application ; les termes Allocation et Supply Plan n’ont pas un
+    sens universel.
+- key: fulfilment-orchestration
+  name: Fulfilment Orchestration
+  source_refs:
+  - ELM651
+  - ELM405
+  assessment: Nom et responsabilité de coordination largement étayés dans les documents étudiés.
+  similarities: Coordination des systèmes et prestataires, dépendances, événements, changements et suivi de la réalisation.
+  differences: Les offres réelles ajoutent souvent optimisation du sourcing, réservation ou facturation. L’orchestration FLOW
+    conserve son périmètre métier et ses exécutants distincts.
+  recommendation: Conserver pilotage de la réalisation et adaptation ; distinguer les choix préparant le plan et la promesse
+    des adaptations de réalisation.
+  benefit: Suivre le résultat métier au-delà d’une simple émission de messages.
+  tradeoff: Définir comment un changement qui affecte la promesse ou d’autres demandes revient vers les responsabilités concernées.
+overall_assessment:
+  opinion: 'Conserver comme base de travail : les responsabilités sont documentées, les huit frontières constituent une composition
+    FLOW à préciser.'
+  strengths:
+  - Séparation références/règles/plans entrants cohérente pour clarifier le contexte des décisions.
+  - Distinction stock, possibilités de réponse, arbitrage collectif et coordination de réalisation.
+  - Matching construit son plan ; l’APS fournit l’anticipation sans remplacer les arbitrages du domaine.
+  critical_points:
+  - L’ambiguïté Demand Management est reconnue U659/U660 ; Order Management est recommandé, avec objet durable et engagements
+    évolutifs.
+  - Les choix de sourcing, de fractionnement et d’échéancier traversent Availability, Matching et Fulfilment ; éviter la frontière
+    tout sourcing dans Fulfilment.
+  - 'Le principe Order comme simple état du PDF est réexaminé : Order devient le candidat pour nommer l’objet durable ; le
+    marché documente des Orders brouillons et plusieurs familles, sans imposer une implémentation FLOW.'
+  - Les regroupements de données doivent porter une responsabilité de maintien et de fourniture métier, pas seulement nommer
+    des ensembles de tables.
+  terminology:
+    name: Subdomain / Sous-domaine
+    source_refs:
+    - ELM635
+    - ELM634
+    assessment: Terme intelligible pour un périmètre métier relatif au Domain ; pas de correspondance automatique à un service
+      logiciel ni de déduction d’un découpage DDD standard.
+    proposed_definition: Périmètre cohérent de responsabilités métier au sein du Domain, avec une finalité, des frontières
+      et des échanges explicites.
+boundary_example:
+  status: Exemple fictif proposé, non accord métier
+  situation: Deux demandes partagent des ressources limitées ; une partie de la réponse dépend d’un apport APS projeté.
+  availability: Évaluer les quantités et dates possibles selon les sources, contraintes et hypothèses.
+  matching: Construire un plan qui arbitre les quantités, ressources et échéances retenues pour les demandes concurrentes.
+  demand: Conserver les engagements effectivement confirmés, distincts des possibilités ou simulations.
+  fulfilment: Organiser les prestations du plan retenu et traiter les aléas ; une adaptation affectant les engagements ou
+    d’autres demandes appelle les responsabilités concernées.
+approval_boundary: Évaluation marché proposée U658 ; accords ciblés U663 sur Availability, U664 sur Fulfilment, U666 sur le
+  nom Order Management et la distinction règles/responsabilités. Aucun accord global sur les rédactions, capacités ou rattachements
+  ; aucune publication.
+naming_clarification_U659_U660:
+  user_position: U659/U660 distingue la demande face à l’offre et l’objet individuel ; U666 adopte Order Management pour le
+    sous-domaine de gestion des commandes.
+  recommended_subdomain_name: Order Management
+  proposed_definition: Gérer les commandes de mise à disposition ou de mouvement de produits, depuis leur préparation jusqu’à
+    leur clôture, en conservant leur intention, leurs exigences, leurs engagements et leur historique.
+  demand_meaning: Besoins à satisfaire, prévisionnels ou exprimés ; ce concept n’est pas réduit à une collection d’Orders.
+  order_meaning: Objet métier individualisé portant une intention opérationnelle et son cycle de vie ; son existence ne prouve
+    pas à elle seule un engagement ferme.
+  evidence:
+  - ELM112
+  - ELM522
+  - ELM652
+  draft_evidence: ELM652 décrit des draft order lines devenant submitted order lines ; appui explicite à un Order existant
+    avant soumission.
+  pdf_consequence: Order peut remplacer Demand comme nom de l’objet durable. L’engagement est alors une dimension de l’Order,
+    pas la définition de son existence. L’idée de continuité et les documents nécessaires restent conservés.
+  preserved_names: Demand Plan et Demand & Supply Matching restent intelligibles avec Demand au sens demande face à l’offre
+    ; aucun renommage mécanique de Demand en Order.
+  status: Nom Order Management adopté U666 ; définition développée et autres formulations proposées.
+  adopted_name: Order Management
+  adoption_source_refs:
+  - U666
+  name_capture_scope: Accord sur le nom du sous-domaine dans la reprise. Le D04 courant inclut encore Demand Planning ; ne
+    pas étendre cet accord à cette composition ou à ses champs. Capturer le nom avec record_decision.py lors de la matérialisation
+    du sous-domaine dans le contexte métier correspondant.
+boundary_work_U662:
+  status: Accords ciblés U663/U664/U666 ; distinction des responsabilités claire sans préciser les règles d’autonomie.
+  principle: Distinguer les responsabilités par le résultat porté et le droit de le réviser ; aucune séquence universelle
+    ni séparation individuel/collectif.
+  availability:
+    question: Quelles réponses sont possibles, sous quelles conditions ?
+    output: Quantités, dates et alternatives de sources faisables, hypothèses et conditions explicites.
+    decisions: Détermine les réponses possibles et sélectionne la réponse de promesse recommandée (U663). La recommandation
+      reste soumise aux arbitrages du plan lorsqu’elle affecte des ressources partagées. Les critères détaillés et modalités
+      demeurent proposés ; aucune confirmation d’engagement automatique.
+    source_refs:
+    - ELM352
+    - ELM653
+    - U663
+  matching:
+    question: Quel master plan de matching retenons-nous pour affecter les ressources et couvrir les demandes ?
+    output: Plan cohérent de couverture, priorités, affectations et échéances retenues, avec contraintes et latitude laissée
+      à la réalisation.
+    decisions: Arbitre les ressources partagées et conserve la cohérence des affectations ; peut intervenir sur une commande
+      ou un ensemble. Le périmètre utile dépend des impacts.
+    source_refs:
+    - ELM650
+    - ELM654
+    - ELM452
+  fulfilment:
+    question: Comment obtenir la réalisation attendue et traiter les aléas ?
+    output: Prestations coordonnées, choix de réalisation, suivi des résultats et adaptations.
+    decisions: 'U664 : rechercher des solutions locales pour réaliser la promesse portée par l’Order en préservant les grands
+      équilibres du Matching. Une adaptation locale peut modifier le détail de réalisation ; elle ne garantit pas de résoudre
+      tous les aléas. Les marges et critères précis restent à définir.'
+    source_refs:
+    - ELM651
+    - ELM405
+    - U664
+  sourcing: Availability examine une source possible ; Matching retient les contraintes d’affectation nécessaires au plan
+    ; Fulfilment choisit ou adapte la réalisation dans la latitude explicite. Il ne s’agit pas de trois moteurs de sourcing
+    indépendants imposés.
+  commitment: L’Order porte la promesse. Possibilité calculée, affectation et engagement confirmé restent distingués. Order
+    Management est le nom adopté U666 ; les descriptions détaillées ne sont pas adoptées globalement.
+  illustration:
+    type: Exemple fictif
+    resources: 80 pièces disponibles maintenant et un apport APS projeté de 30 pièces à J+3 ; nature projetée de cet apport
+      à considérer selon les policies.
+    orders: A demande 60 pièces et B demande 50 pièces.
+    availability: Établit les réponses faisables et leurs conditions, notamment la fiabilité de l’apport futur ; une étude
+      de faisabilité n’accorde pas deux fois les mêmes 80 pièces.
+    matching: À titre de scénario retenu, affecte 60 pièces à A maintenant, 20 à B maintenant et les 30 projetées à B à J+3
+      sous les conditions applicables.
+    commitment: Ces résultats alimentent la proposition de promesse ; la confirmation reste distincte du plan et respecte
+      ses conditions.
+    fulfilment: Coordonne les prestations ; un manque déclenche une adaptation. Un secours dans la latitude accordée peut
+      être traité localement ; prendre des ressources affectées à B exige un réarbitrage.
+  market_position: Oracle GOP et SAP aATP examinent déjà sources et alternatives ; Oracle Backlog Management et Microsoft
+    DOM distinguent plan et effets appliqués ; Oracle et Microsoft documentent la coordination des exécutants. La répartition
+    proposée est FLOW, sans équivalence aux frontières de produits.
+  benefit: Rendre explicite qui établit une possibilité, qui retient une répartition et qui pilote la réalisation, avec une
+    responsabilité identifiable sur les engagements.
+  tradeoff: Décrire la latitude laissée à la réalisation et les effets qui exigent un réarbitrage ; éviter trois décisions
+    incompatibles sur les mêmes ressources.
+  next_discussion: 'Aucune précision des marges d’autonomie à demander pour terminer le découpage : ce sont des règles (U666).
+    Le nom Order Management est adopté. Les travaux ultérieurs peuvent partir des responsabilités clarifiées.'
+  adoption_U663:
+    source_refs:
+    - U663
+    interpretation: explicit
+    adopted_responsibility: Availability détermine les réponses possibles et sélectionne la réponse de promesse qu’elle recommande.
+    adopted_condition: La recommandation reste soumise aux arbitrages du plan lorsqu’elle affecte des ressources partagées.
+    not_adopted_by_extension:
+    - Confirmation de la promesse
+    - Critères et pondérations de sélection
+    - Toutes les formulations de sous-domaines
+    - Latitude détaillée de Fulfilment
+    - Nom Order Management
+    - Exemples et rattachements de capacités
+    capture_scope: Accord sur une responsabilité dans la proposition ; Order Promising non matérialisé comme nœud canonique.
+    field_capture: record_decision.py ne cible que nodes/relations existants ; capture des champs exactement correspondants
+      à réaliser lors de la matérialisation, sans nouvelle validation globale présumée.
+  adoption_U664:
+    source_refs:
+    - U664
+    interpretation: explicit
+    adopted_responsibility: Fulfilment cherche des solutions locales pour préserver la promesse portée par l’Order et les
+      grands équilibres du Matching.
+    scope: Priorité d’adaptation locale ; aucune promesse de résolution systématique.
+    not_adopted_by_extension:
+    - Seuils de perturbation des grands équilibres
+    - Marges chiffrées de décision
+    - Frontière géographique de local
+    - Interdiction de tout changement d’affectation détaillée
+    - Modalités complètes de réarbitrage et de révision de promesse
+    - Définitions complètes ou rattachements de capacités
+    capture_scope: Accord de frontière conservé dans la proposition de sous-domaines ; aucune nouvelle rédaction de champ
+      canonique présentée comme adoptée.
+    field_capture: Capture via record_decision.py à la matérialisation de champs exactement conformes à l’accord ; ne pas
+      étendre cet accord à l’ensemble de D06 ni à ses descriptions existantes.
+  local_adaptation_interpretation_U664:
+    status: Précisions proposées par Codex
+    locality: Local qualifie les effets de l’adaptation sur la réalisation concernée et l’équilibre d’ensemble ; cela peut
+      concerner plusieurs sites ou prestataires.
+    fallback: Si la promesse ou les grands équilibres ne peuvent être préservés, expliciter l’écart et les alternatives pour
+      réarbitrage par Matching et, si nécessaire, révision de l’engagement par le responsable de l’Order.
+    scale: Réexaminer le périmètre affecté ; aucun recalcul global systématique.
+    open_question: 'Retirée comme préalable au découpage par U666 : les marges et critères d’autonomie relèvent de règles,
+      dont le détail n’est pas demandé.'
+  adoption_U666:
+    source_refs:
+    - U666
+    interpretation: explicit
+    adopted_name: Order Management
+    adopted_distinction: Les marges d’autonomie sont des règles, pas des responsabilités ; il n’est pas nécessaire de les
+      préciser pour définir le découpage.
+    not_adopted_by_extension:
+    - Valeurs de règles et seuils
+    - Définitions détaillées de tous les sous-domaines
+    - Composition du D04 courant
+    - Rattachements de capacités
+    consequence: Ne plus présenter le détail des marges d’autonomie comme un préalable ou une ambiguïté résiduelle du découpage.
+correction_U668:
+  source_refs:
+  - U668
+  supply_plan: Prévisions d’entrées ou de sorties de stock hors achats, dans Plans.
+  matching_master_plan: Plan d’affectation construit et géré dans Demand & Supply Matching.
+  supersedes: Toute assimilation antérieure du plan interne de Matching au Supply Plan, y compris dans les interprétations
+    U657/U667.
+  market_limit: Les termes éditeurs Supply Planning ou Master Planning ne démontrent pas une équivalence à ces deux objets
+    FLOW.
+  purchase_projections: Les achats projetés APS mentionnés en U656 restent distincts ; leur support précis n’est pas déduit
+    de U668.
+ingestion_agreement_U669:
+  responsibility: Ingérer les Supply et Demand Plans dans Plans.
+  external_source: L’APS est uniquement mentionné comme source externe dans les descriptions ; aucun sous-domaine APS.
+  not_adopted:
+  - Libellé exact Plan Ingestion
+  - Définition détaillée de la nouvelle capacité
+  - Plan Visibility
+  - Autres placements proposés
+  capture: Accord de responsabilité dans cette annexe ; aucune capacité canonique créée par cet audit.
+naming_discussion_U671:
+  status: recommendation_adopted_U672
+  recommended_name: Order Promising
+  short_name: Promising
+  definition_proposed: Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait, comparer les
+    réponses possibles et recommander une promesse compatible avec les ressources, les règles et les arbitrages applicables.
+  benefit: Le nom exprime la décision rendue au consommateur ; Availability peut être compris comme une simple connaissance
+    du disponible.
+  boundaries: Promising calcule et recommande ; Matching arbitre les affectations dans son master plan ; Order Management
+    confirme et conserve les engagements. Le calcul peut être mobilisé avant création d’un Order ou par Matching.
+  tradeoff: Le mot Order peut suggérer une commande déjà créée ; préciser que la demande de calcul peut la précéder. Les périmètres
+    produits Promising peuvent inclure confirmation ou réservation, sans imposer ces responsabilités à ce sous-domaine FLOW.
+  market_sources:
+  - element_ref: ELM352
+    title: Overview of Global Order Promising
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+    version: 25C
+    consulted_on: '2026-09-23'
+    locator: Introduction et échanges Order Management / Promising
+    finding: Promising reçoit une demande de l’application de commandes et renvoie les sources et dates possibles.
+  - element_ref: ELM434
+    title: Order promising
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+    version: Documentation évolutive, mise à jour affichée 2026-04-21
+    consulted_on: '2026-09-23'
+    locator: Introduction, ATP calculations, CTP calculations
+    finding: Order promising calcule des dates de fourniture ; ATP et CTP constituent des méthodes de contrôle.
+  market_position: Appui lexical interéditeurs pour Order Promising ; SAP emploie aussi aATP. Aucun consensus universel ni
+    taxonomie de sous-domaines imposée.
+  canonical_change: false
+  name_at_discussion: Supply Availability
+  current_name: Order Promising
+  adoption_scope: Nom, raccourci, responsabilité et usages présentés en réponse à U671 ; les formulations détaillées non présentées
+    ne sont pas adoptées par extension.
+adoption_U672:
+  source_refs:
+  - U671
+  - U672
+  status: adopted_for_audit
+  previous_name: Supply Availability
+  adopted_name: Order Promising
+  adopted_short_name: Promising
+  adopted_responsibility: Déterminer et recommander ce qu’on peut promettre, en quantité, date et conditions.
+  adopted_boundaries:
+    Order Promising: Déterminer et recommander ce qu’on peut promettre.
+    Demand & Supply Matching: Arbitrer les affectations dans le master plan de matching.
+    Order Management: Confirmer, porter et réviser l’engagement de la commande.
+  adopted_uses:
+  - Pendant la préparation d’un panier, avant création ou confirmation d’une commande.
+  - Depuis Matching pour examiner une possibilité de couverture.
+  scope: Accord sur la proposition présentée en réponse à U671 ; les autres arbitrages de capacités de l’audit restent identifiés
+    séparément.
+  capture: 'Accord conservé dans les annexes : le sous-domaine cible n’est pas encore un nœud canonique. record_decision.py
+    cible les nœuds et relations existants ; ne pas reporter cet accord sur un autre périmètre canonique.'
+  canonical_model_changed: false

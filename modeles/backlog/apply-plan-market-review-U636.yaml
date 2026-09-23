@@ -1,0 +1,262 @@
+id: apply-plan-market-review-U636
+date: '2026-09-23'
+author: Codex
+status: research_completed_progressive_application_adopted_U639
+source_refs:
+- U634
+- U635
+- U636
+- CMP266
+- ELM566
+- ELM419
+- ELM416
+- ELM413
+- ELM643
+- ELM644
+- ELM645
+- ELM551
+- U637
+- U638
+- U639
+target:
+  id: D02.e
+  current_kind: behavior
+  parent: D05.f
+  scope: Recherche sur Apply Plan ; aucune promotion en capacité ni adoption globale.
+sources:
+- id: ELM566
+  vendor: Oracle
+  reference: MKT20
+  title: Manually Release Plan Recommendations
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  version: 26B
+  locator: Introduction ; release results ; requests not processed
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Transmettre des recommandations nouvelles ou de replanification, puis examiner les demandes non traitées.
+  limits: Le passage des recommandations aux systèmes responsables est documenté ; notification client et atomicité globale
+    ne le sont pas.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM419
+  vendor: Microsoft
+  reference: MKT14
+  title: Firm planned orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+  version: Documentation évolutive ; mise à jour affichée 2026-03-25
+  locator: Manual firming ; Auto-firming ; Query-based firming ; Track firmed orders
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Transformer des ordres planifiés en commandes réelles, manuellement ou automatiquement, avec historique et gestion
+    des erreurs.
+  limits: Le firming concerne la création de commandes d’achat, transfert ou production ; il ne couvre pas seul la révision
+    des commandes client.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM416
+  vendor: Microsoft
+  reference: MKT14
+  title: View, manage, and approve planned orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+  version: Documentation évolutive ; mise à jour affichée 2026-09-02
+  locator: View and edit the status ; Approve planned orders
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Distinguer approbation optionnelle et firming ; préserver des propositions approuvées lors des calculs suivants.
+  limits: Approved reste un état du plan et ne prouve pas une commande réelle ; ne pas importer un workflow humain obligatoire.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM413
+  vendor: Microsoft
+  reference: MKT14
+  title: Action messages
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+  version: Documentation évolutive ; mise à jour affichée 2026-03-26
+  locator: Introduction ; Select action messages
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Proposer avances, reports et changements de quantité sur des ordres existants, dont l’application reste à décider.
+  limits: Une suggestion issue du calcul n’est pas sa réalisation ; la page ne démontre pas une application globale de plan.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM643
+  vendor: SAP
+  reference: MKT13
+  title: Describing Deployment Planning and Reasoning behind Execution
+  url: https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-deployment-planning-and-reasoning-behind-execution_ed054de6-f7e2-4928-89be-2dab21e6a043
+  version: Cours SAP Learning évolutif, sans édition affichée dans le passage
+  locator: Deployment Plan in SAP S/4HANA ; Deployment Status
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Intégrer les demandes de transfert du plan dans S/4HANA, puis les convertir en ordres de transfert avec statuts
+    cohérents.
+  limits: Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique ni cycle
+    complet des notifications client.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM644
+  vendor: Oracle
+  reference: MKT20
+  title: Examine Error Messages for Sales Orders
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html
+  version: 26A
+  locator: Order Management Rejects a Change Order
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Refuser et tracer une modification de commande lorsque l’expédition a déjà eu lieu.
+  limits: Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la frontière de
+    l’application.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM645
+  vendor: Oracle
+  reference: MKT20
+  title: Working with E-Mail Notification Templates (WEMT)
+  url: https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm
+  version: Oracle Retail OMS Suite Cloud 25.2.301.0
+  locator: Summary of Customer Correspondence ; Backorder Notification Email Sample and Contents
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Documentation fonctionnelle ou formation produit
+  finding: Générer des notifications client pour attentes de livraison, annulations et autres événements de commande.
+  limits: Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release du plan
+    et mail n’est démontré.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+- id: ELM551
+  vendor: Kinaxis
+  reference: MKT28
+  title: Supply Chain Orchestration
+  url: https://www.kinaxis.com/en/solutions/supply-chain-orchestration
+  version: Page produit évolutive, sans édition affichée
+  locator: The value of orchestration
+  consulted_on: '2026-09-23'
+  access: Texte primaire directement consulté
+  nature: Positionnement produit
+  finding: Relier planification, opérations et partenaires dans un périmètre allant jusqu’à la livraison.
+  limits: Positionnement commercial général, moins probant qu’un contrat fonctionnel ; aucun détail suffisant sur refus, autorisations
+    ou notifications.
+  reuse: Synthèse sélective, sans reproduction substantielle ; aucun droit de redistribution intégrale inféré.
+access_limits:
+- url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/68fa1e86fe6f41d98421d1ce13a08a9f/2e1b60161bea43dfb7c5ecc0285200cf.html
+  result: Ouverture vide ; extrait indexé seulement, non retenu comme appui principal.
+- url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/68fa1e86fe6f41d98421d1ce13a08a9f/b11a272f3c6e4c05b6ea47f0e2be6be0.html
+  result: Ouverture vide ; remplacé par le cours SAP Learning directement lisible.
+- url: https://www.ascm.org/globalassets/ascm_website_assets/docs/scor/intro-and-front-matter-scor-digital-standard-2025.pdf
+  result: 'Recherche ASCM/SCOR : extrait indexé de cadrage consulté, ouvertures du PDF et de la page générale en erreur. Aucun
+    élément détaillé Apply Plan retenu.'
+additional_readings:
+- url: https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-an-optimized-deployment-plan_b8c6db16-ab49-47c5-aae9-271722eb5435
+  result: Cours directement lu ; appui général, remplacé dans la comparaison par ELM643 plus précis.
+- url: https://www.kinaxis.com/en/news/press-releases/2018/kinaxis-showcases-digital-innovations-kinexions-18
+  result: 'Annonce historique 2018 directement lue : closed loop supply planning. Non utilisée comme preuve de disponibilité
+    ou de fonctionnement courant.'
+assessment:
+  supported:
+  - Passage distinct entre propositions du plan et changements opérationnels.
+  - Application sélectionnée, manuelle ou automatisée selon les règles.
+  - Création de commandes et recommandations de révision de commandes existantes.
+  - Suivi des résultats et traitement des refus ; pas de preuve de transaction globale atomique.
+  - Notifications client documentées en gestion des commandes, comme conséquences possibles.
+  not_demonstrated:
+  - Une capacité standard unique nommée Apply Plan couvrant tout le périmètre FLOW.
+  - Un mail systématique et directement émis par le moteur de planification.
+  - Une validation globale autorisant par elle-même tous les changements de commandes.
+  - Une couverture installée Beaumanoir, Boardriders ou Sarenza.
+  qualification: Convergence fonctionnelle partielle entre trois documentations éditeurs ; Kinaxis apporte un positionnement
+    plus général. Aucun consensus de taxonomie revendiqué.
+recommendation:
+  name: Apply Plan
+  alternative_name: Plan Application
+  name_rationale: Firming est trop centré sur la conversion des ordres planifiés ; Release Plan Recommendations est proche
+    du passage à l’action mais ne couvre pas seul le constat des suites. Apply Plan reste un libellé FLOW justifié par le
+    résultat métier.
+  definition: Faire appliquer les changements autorisés issus d’une version préparée du plan, coordonner leurs conséquences
+    auprès des responsables concernés et constater leur prise en compte effective.
+  boundary: Les responsables des commandes, engagements et prestations contrôlent et réalisent leurs changements. Les notifications
+    sont déclenchées selon les conséquences et règles applicables. Envoyé, accepté, appliqué, refusé et encore en attente
+    doivent pouvoir être distingués selon le contexte, sans imposer cette liste comme cycle universel.
+  placement: Conserver provisoirement le comportement direct du Planning commun. Les sources appuient sa responsabilité, pas
+    sa promotion automatique en capacité.
+  plan_adjustment: Prépare la révision proposée ; Apply Plan la fait prendre en compte. La même application sert aussi un
+    plan initial.
+  authorization: Séparer sémantiquement proposition, autorisation et effet réel ; cela ne démontre pas la nécessité d’un comportement
+    Plan Authorization autonome.
+  monitoring: Apply Plan constate les suites de son application ; Monitor Plan apprécie ensuite les effets et les écarts du
+    plan dans le temps.
+  benefit: Fermer la boucle entre proposition et résultat opérationnel sans perdre les refus ni les effets partiels.
+  tradeoff: Responsabilité transverse qui exige des liens explicites avec les partenaires, sans reprendre leur maîtrise métier.
+  progressive_application: Préciser la mise en application partielle et progressive selon l’échéancier porté par le plan (U637/U638),
+    sans confondre déclenchement d’un calcul et application de ses effets.
+evidence_preservation:
+  git_commit: 4b11d8563446fadfe59f77cc7d2b087f5fda3717
+  path: modeles/backlog/model.yaml
+  target_id: D02.e
+  note: État antérieur de D02.e conservé dans Git ; la recherche ne modifie que les champs documentaires.
+user_clarification_U637_U638:
+  source_refs:
+  - U637
+  - U638
+  agreed_principles:
+  - La progressivité est portée par le plan lui-même.
+  - Une partie des modifications peut être poussée.
+  - Le plan porte le calendrier des mises à jour.
+  interpretation_proposed: Le plan contient un échéancier de mise en application ; Apply Plan peut appliquer la partie sélectionnée
+    ou arrivée à échéance, sous réserve des règles et autorisations pertinentes.
+  distinctions:
+  - Schedule Planning programme le travail de calcul.
+  - L’échéancier du plan programme ses changements opérationnels.
+  - Les dates de livraison ou de transfert constituent le contenu métier des changements.
+  - Application partielle volontaire et application incomplète à la suite de refus sont distinctes.
+  behavior_to_instruct:
+    working_label: Application progressive ou sélective du plan
+    placement: 'U639 appliqué : modalité décrite dans Apply Plan, sans sous-comportement ni capacité nouvelle.'
+    open_points:
+    - Choix de la partie applicable et dépendances à préserver
+    - Autorisation et contrôle au moment de l’application
+    - Actualisation de l’échéancier quand le plan est révisé
+    open_points_note: Précisions éventuelles futures ; elles ne bloquent ni la modalité adoptée ni son rattachement.
+  market_alignment: ELM419 documente sélection, horizon de firming et traitements récurrents. Cela appuie l’application progressive
+    ; le choix de porter explicitement l’échéancier dans le plan est apporté par Laurent, pas une structure uniforme démontrée
+    chez tous les éditeurs.
+agreement_U639:
+  source_ref: U639
+  author: Laurent
+  decided_at: '2026-09-23'
+  status: applied_scoped_agreement
+  target_id: D02.e
+  approved_passage: Le plan porte l’échéancier des mises à jour. Apply Plan peut appliquer une partie des changements. Il
+    distingue les changements appliqués, en attente ou refusés.
+  approved_passage_sha256: a44e7f76f7b0dbdb06d935823686387a7c4ddd70aab73c742540e75edf605fb3
+  placement: Modalité décrite dans Apply Plan, sans comportement supplémentaire.
+  scope_limit: Accord sur ce passage et sa portée ; aucun accord global sur le champ scope, la nouvelle définition proposée
+    ou les comparaisons.
+  capture_note: 'record_decision accepte des champs entiers uniquement. Le champ scope contient aussi des développements non
+    adoptés : aucune capture de champ entier n’est créée par extension. Le passage adopté est conservé ici avec sa source
+    et son empreinte.'
+  previous_changed_fields:
+    D02.e.scope: |-
+      Faire appliquer les recommandations autorisées du plan commun et établir les effets effectivement pris en compte, refusés ou partiels. Vérifier leurs conditions et interdépendances au moment de l'application ; une recommandation devenue inapplicable reste visible pour réexamen. Aucun retour arrière global ni transaction atomique du plan n'est supposé.
+
+      Les familles d'effets comprennent les liens ressources-besoins, les nouveaux apports et ajustements d'Orders, les changements autorisés d'échéanciers et de promesses et les politiques à rendre applicables. Elles décrivent le contenu de ce comportement terminal, sans sous-comportements. Les décisions gardent les arbitrages ; Demand, Inventory et Reference & Policy Management conservent commandes, engagements, réservations et politiques. Fulfillment orchestre les prestations.
+
+      Le mécanisme d'affectation conserve son sens métier Supply Assignment : matérialiser et maintenir les liens entre ressources présentes ou futures et commandes ou besoins prévisionnels identifiés, même avant toute commande. Compléter des liens existants, réaffecter ou libérer ceux qui sont modifiables restent des modalités combinables. Seule la réservation bloque les usages concurrents ; l'affectation ne crée ni réservation ni promesse. Une prévision ne devient pas une commande du seul fait d'un lien de couverture. Les protections de groupe et gels restent applicables ; préserver un lien pendant un traitement ne crée pas un gel durable.
+
+      Exemples fictifs : affecter 40 pièces d'un arrivage à une commande puis en changer la provenance admissible ; lier 300 pièces attendues aux ventes web encore prévues en novembre. Pour des besoins de 100 et 200 et une ressource de 150, un prorata illustratif de 50 et 100 serait choisi par les décisions, puis matérialisé ici ; il ne réduit pas les demandes ni ne prescrit une politique universelle.
+
+      [Purchase Order](model:D04.j), [Transfer Order](model:D04.k), [Consignment Fill-up Order](model:D04.r) et [Order Lifecycle Management](model:D04.o) portent les demandes et leurs changements autorisés. [Fulfillment Commitment](model:D03.n) porte les propositions et engagements de satisfaction ; une affectation peut changer sans modifier la promesse, et réciproquement. [Reservation](model:D02.c) tient les engagements de réservation. [Supply Protection](model:D02.b) et les autres capacités Policy mettent en vigueur les règles retenues. L'application les mobilise sans transférer leur responsabilité et sans créer un engagement fournisseur implicite.
+
+      Le résultat et les écarts alimentent le suivi du Planning et [Scenario Execution Adaptation](model:BHV016). Une sollicitation acceptée n'établit pas l'application complète ; l'application partielle ne devient pas silencieusement un nouveau plan. La réalisation physique reste distincte. Exemple fictif : un transfert de 30 pièces est pris en compte mais un achat de 70 est refusé ; conserver le transfert et le refus, rendre visible le manque et faire réexaminer les possibilités. Une politique appliquée et un transfert partiel sont également deux résultats distincts ; le reliquat reste explicite.
+    D05.f.scope: |-
+      Construire le plan commun pour un périmètre et un horizon donnés, en confrontant commandes, prévisions restantes, ressources présentes et apports attendus. Les affectations, apports initiaux, réassorts, redistributions et révisions proposées de politiques contribuent au même résultat. Les scénarios ne maintiennent pas de plans finaux concurrents et ne comptent pas deux fois une commande comprise dans la prévision.
+
+      [Demand Planning](model:D17.a) fournit la demande retenue à couvrir. [Fulfillment Plan Decision](model:D03.o) et les décisions spécialisées déterminent les possibilités, affectations, cibles, protections, apports, priorités et échéanciers ainsi que leur compatibilité. Le Planning organise leur mobilisation, compare les scénarios et maintient la référence retenue. Plusieurs scénarios peuvent être étudiés ; hypothèses, conditions, effets interdépendants et reste non couvert doivent rester identifiables. Aucun ordre universel de calcul, moteur unique ou optimum mathématique garanti n'est imposé.
+
+      Le travail comprend cadrage et suivi de la demande de planification, construction d'alternatives, simulation et analyse, autorisation des suites, mise en œuvre et ajustement face aux écarts. [Apply Plan](model:D02.e) fait appliquer les recommandations autorisées et constate leur prise en compte. [Monitor Plan](model:BHV101) observe les effets, les nouvelles conditions et les besoins de réexamen. [Adjust Plan](model:BHV016) prépare une révision cohérente en tenant compte des effets acquis ; ses suites restent soumises aux autorisations et à Apply Plan. Les cinq actes de pilotage sont portés directement par [Scope Planning](model:D04.s), [Schedule Planning](model:BHV097), [Run Planning](model:BHV098), [Stop Planning](model:BHV099), [Rerun Planning](model:BHV100). Ils n’imposent ni séquence obligatoire ni intervention humaine. Le suivi du travail jusqu’à sa conclusion reste une responsabilité du Planning commun, distincte de son seul cadrage. Arrêter un calcul ne défait pas les effets déjà pris en compte.
+
+      Les capacités de Demand conservent les Orders, leurs évolutions et les propositions, confirmations et révisions de promesse. Inventory conserve faits de stock et réservations. Reference & Policy Management porte la mise en vigueur des règles ; une politique proposée par le plan ne devient pas automatiquement applicable. Fulfillment coordonne et adapte les prestations engagées. Les capacités partenaires restent responsables de leurs résultats, même lorsqu'elles sont mobilisées par Apply Plan. Une demande ferme peut être révisée selon les conditions applicables avant son début d'exécution ; la portée d'un début partiel reste à préciser.
+
+      Exemple fictif : un scénario prévoit un transfert de 30 pièces et un nouvel achat de 70. Le transfert est pris en compte ; l'achat est refusé. Le Planning conserve le résultat du transfert, rend visible le manque de couverture et mobilise les décisions pour réexaminer les possibilités. Il ne considère pas les 100 pièces comme acquises et n'efface pas le transfert. Une recommandation dépendant d'un autre effet doit être réexaminée avant sa propre application. Une simulation ou une autorisation ne prouve ni réservation, ni promesse confirmée, ni réception.
+
+      Les analyses de stock restent couvertes : comparer des cibles de couverture à 10 ou 15 jours, les apports de lancement ou de réassort, les redistributions, réductions et reports d'apports, puis apprécier service, immobilisation, coûts et risques. La valeur est multidimensionnelle sans pondération universelle. Les politiques consommées restent extérieures. Les analyses d'affectation comprennent les commandes et prévisions restantes, même avant commande, et peuvent conclure sans changement. Les horizons et hypothèses se choisissent selon le problème ; cette responsabilité ne duplique pas la construction de la demande dans Demand Planning.
+
+      Le travail de planification reste une sollicitation interne au Domain, dite Backoffice, qui peut répondre à un impondérable, une échéance de revue ou une étude volontaire. Ces origines peuvent se combiner sans imposer un dossier manuel ni un recalcul intégral à chaque événement. Le Planning conserve progression et conclusion du travail, y compris une étude abandonnée ou conclue sans application ; il ne suit pas à la place des exécutants leurs opérations.

@@ -16041,6 +16041,206 @@
       "line": 15524,
       "content_sha256": "b104c03e46acdc831e4e8510a05228aace482bb9aefa8a826aaefbb134468751",
       "captured_text": "## U627\n\n**id**\n\nU627\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPublier la consolidation du modèle dans Atlas\n\n**texte**\n\nlance une release\n\n**contexte et portée**\n\nPublication locale dans FLOW Atlas du backlog consolidé U626 et de son guide méthodologique actualisé. La demande autorise la préparation, le réexamen de portée des accords historiques et l'activation de la release ; elle ne vaut pas adoption globale des formulations et rattachements proposés, ni demande de commit ou push."
+    },
+    {
+      "id": "CMP266",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp266",
+      "line": 2558,
+      "content_sha256": "4cb84e6511e1c6af7c834b367a459f429e4700aa702f41cdb102e59fe51afa0b",
+      "captured_text": "## CMP266\n\nU634–U636 — Codex, 23 septembre 2026. État comparé : Apply Plan D02.e, comportement du Planning commun D05.f, et proposition d’élargissement U635. Relation : recouvrements fonctionnels partiels ; aucune équivalence de taxonomie. [Étude et passages](../modeles/backlog/apply-plan-market-review-U636.yaml).\n\nHuit documents principaux : ELM566, ELM419, ELM416, ELM413, ELM643, ELM644, ELM645 et ELM551. Les sources étayent passage du plan aux changements opérationnels, autorisations distinctes, suites et limites d’application. Les notifications sont documentées côté gestion des commandes ; leur déclenchement par Apply Plan est une articulation FLOW proposée, sans intégration native démontrée entre produits. Kinaxis apporte un positionnement général ; la recherche ASCM n’a pas établi d’équivalent détaillé.\n\nRecommandation proposée : faire appliquer les changements autorisés d’une version préparée, coordonner les conséquences et constater la prise en compte. Bénéfice : préserver effets partiels et refus ; compromis : coopération transverse avec les responsables des commandes et engagements. Aucun renommage, changement de définition, promotion en capacité ou accord nouveau appliqué au catalogue. Compléments documentaires de D02.e proposés ; anciennes preuves et accords conservés.\n\n\nPrécision U637/U638 — Laurent situe la progressivité et l’échéancier des mises à jour dans le plan et retient la possibilité d’en pousser une partie. ELM419 appuie sélection et temporalité du firming ; porter l’échéancier dans le plan reste le choix métier FLOW, sans équivalence universelle revendiquée. L’application sélective volontaire se distingue des refus partiels. Modalité à instruire dans Apply Plan ; aucun sous-comportement ajouté.\n\n\nU639 adopte la modalité progressive et sélective dans Apply Plan et la distinction appliqué/en attente/refusé, avec échéancier porté par le plan. Précision appliquée sans nouveau comportement ; la comparaison CMP266 et les autres compléments restent proposés."
+    },
+    {
+      "id": "CMP267",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp267",
+      "line": 2573,
+      "content_sha256": "a3003e44c3d17d22efadc5065b70bcd157086c29990ffb1dc19519f6ad5f8181",
+      "captured_text": "## CMP267\n\nU642 — Codex, 23 septembre 2026. Apply Plan D02.e, Planning D05.f, Order Lifecycle Management D04.o et Fulfillment D06 : apprécier la révision sur la partie concernée selon les faits, engagements et dépendances. ELM646 Microsoft étaye une modification partielle avec ajustements associés ; ELM644 Oracle montre un refus après expédition. Recouvrements partiels ; aucun seuil universel ni réalisation installée déduit. Règle adoptée U642, compléments éditoriaux proposés. Bénéfice : ne pas figer toute la commande ni ignorer les liens entre parties ; compromis : les faits opérationnels et conditions de réversibilité doivent être disponibles. [Portée](../modeles/backlog/partial-order-revision-U642.yaml)."
+    },
+    {
+      "id": "CMP268",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp268",
+      "line": 2578,
+      "content_sha256": "9a4fc6b5abc77486b13ea9af1121f332c7186562daddb0198b2ccd2417b4b8ea",
+      "captured_text": "## CMP268\n\nU644–U646 — Codex, 23 septembre 2026. Domain universe-supply renommé Demand & Supply Orchestration. ELM647 et ELM551 (deux documents Kinaxis distincts) étayent le sens large d’orchestration reliant planification et réalisation ; ils ne prouvent pas un consensus interéditeurs. Les autres appuis de la fiche sont conservés avec leurs limites propres. Nom et définition adoptés U646, rapprochement Kinaxis retenu dans la portée présentée.\n\nMatching & Balancing et orchestration de la réalisation constituent deux dimensions, sans nouvelle hiérarchie. Bénéfice : rendre visibles demande et ressources, choix et effets. Compromis : libellé exact FLOW et métaphore biologique à expliquer, sans centralisation ou IA obligatoire. Pas d’extension des responsabilités commerciales ou physiques. [Portée et renvois](../modeles/backlog/domain-regulation-U646.yaml).\n\n\nActualisation CMP268 — U650 : le nom courant est Supply Chain Orchestration. La définition adoptée précise arbitrages, application des changements aux commandes et engagements, coordination des prestations et suivi des résultats. Les deux documents Kinaxis ELM551 et ELM647 restent pertinents pour le lien planification/réalisation ; pas de consensus interéditeurs déduit. Le libellé Demand & Supply Orchestration cité ci-dessus reste historique (U646, rejet U647)."
+    },
+    {
+      "id": "ELM643",
+      "path": "marche/elements.md",
+      "anchor": "elm643",
+      "line": 5168,
+      "content_sha256": "dfa6346190fa04a08340426c38181a71d8e1982a5be4a4094dd0adf354f0eb31",
+      "captured_text": "### ELM643\n\nMKT13 — [Describing Deployment Planning and Reasoning behind Execution](https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-deployment-planning-and-reasoning-behind-execution_ed054de6-f7e2-4928-89be-2dab21e6a043). Cours SAP Learning évolutif, sans édition affichée dans le passage. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Deployment Plan in SAP S/4HANA ; Deployment Status.\n\nReformulation : Intégrer les demandes de transfert du plan dans S/4HANA, puis les convertir en ordres de transfert avec statuts cohérents. Limite : Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique ni cycle complet des notifications client. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml)."
+    },
+    {
+      "id": "ELM644",
+      "path": "marche/elements.md",
+      "anchor": "elm644",
+      "line": 5175,
+      "content_sha256": "4d7257cd28226487c4e9c8100e7c759535fdaa628f9effd7d2b6312f2734d5ed",
+      "captured_text": "### ELM644\n\nMKT20 — [Examine Error Messages for Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html). 26A. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Order Management Rejects a Change Order.\n\nReformulation : Refuser et tracer une modification de commande lorsque l’expédition a déjà eu lieu. Limite : Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la frontière de l’application. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml)."
+    },
+    {
+      "id": "ELM645",
+      "path": "marche/elements.md",
+      "anchor": "elm645",
+      "line": 5182,
+      "content_sha256": "992d7a985b78d04a30081cf2eea5d0b51891f4d6616aa3b0f24cd4a9650f74f5",
+      "captured_text": "### ELM645\n\nMKT20 — [Working with E-Mail Notification Templates (WEMT)](https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm). Oracle Retail OMS Suite Cloud 25.2.301.0. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Summary of Customer Correspondence ; Backorder Notification Email Sample and Contents.\n\nReformulation : Générer des notifications client pour attentes de livraison, annulations et autres événements de commande. Limite : Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release du plan et mail n’est démontré. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml)."
+    },
+    {
+      "id": "ELM646",
+      "path": "marche/elements.md",
+      "anchor": "elm646",
+      "line": 5189,
+      "content_sha256": "bcaa7c0cd72ba4f84d1313bf115e91dfdff7198c829e1477e327e6a1a68289fb",
+      "captured_text": "### ELM646\n\nMKT14 — [Work line details](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/work-line-details). Documentation évolutive Microsoft Dynamics 365 Supply Chain Management ; mise à jour affichée 2025-10-03. Texte primaire consulté le 23 septembre 2026. Passage : Part 3, Change the quantity of a work line or cancel a work line.\n\nReformulation : réduction partielle du travail de préparation et ajustement du chargement associé. Limite : fonction opérationnelle, pas droit général de modifier une commande ; aucune réalisation installée démontrée. Synthèse sélective, sans reproduction substantielle ni identifiant natif inventé. CMP267 ; [portée U642](../modeles/backlog/partial-order-revision-U642.yaml)."
+    },
+    {
+      "id": "ELM647",
+      "path": "marche/elements.md",
+      "anchor": "elm647",
+      "line": 5196,
+      "content_sha256": "8efb745c6e3e29966690fa4b655c03cc823bbd08f9930b62b1d571da4c5d0ada",
+      "captured_text": "### ELM647\n\nMKT28 — [What is transportation management?](https://www.kinaxis.com/en/transportation-management). Page Kinaxis évolutive, édition non affichée. Texte primaire consulté le 23 septembre 2026 ; passage : From integration to end-to-end supply chain orchestration.\n\nReformulation : planification et exécution dans une même boucle de décision, en conservant le lien avec les engagements. Appui au sens large d’Orchestration ; pas de preuve du nom exact FLOW ni d’un déploiement. Synthèse sélective sans reproduction substantielle ; identifiant natif non indiqué. CMP268, U646."
+    },
+    {
+      "id": "U631",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u631",
+      "line": 15622,
+      "content_sha256": "307c53156222e7279795663305fe4930ea32592d64d3a6c148428e7c78986587",
+      "captured_text": "## U631\n\n**id**\n\nU631\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider la capacité Planning commune et ses responsabilités\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée : réunir Order Backlog Planning D03.p et Demand & Supply Optimization Planning D05.f dans une seule capacité de type Planning sous Demand & Supply Optimization. Définition présentée et adoptée : « Construire, comparer et maintenir un plan cohérent de couverture des commandes et des besoins prévisionnels restants ; mobiliser les décisions spécialisées, faire appliquer les recommandations autorisées et suivre leurs effets. »\n\nLe Planning organise le travail, compare les scénarios, maintient et ajuste le plan retenu. Les capacités Decision déterminent les affectations, cibles, apports, priorités et autres arbitrages et assurent leur compatibilité. Apply Plan est un comportement direct : « Faire appliquer les recommandations autorisées et constater leur prise en compte. » Les partenaires conservent commandes, promesses, réservations, politiques et orchestration des prestations. L'exemple d'un transfert accepté et d'un achat refusé distingue effets pris en compte, manque visible et réexamen ; il ne présume aucune disponibilité acquise pour la part refusée.\n\nLes cinq actes de pilotage antérieurement distingués et Apply Plan sont conservés pour construire ensuite la décomposition. L'identifiant survivant, la succession détaillée des comportements, le nom final de la capacité et les rédactions complémentaires restent des choix de mise en œuvre ou propositions à qualifier, sans adoption globale. Aucun accord sur les autres constats de l'audit ni demande de release, commit ou push."
+    },
+    {
+      "id": "U632",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u632",
+      "line": 15648,
+      "content_sha256": "3105e5b7458dca6ffdfb160ff98fbd0b5725a48e7531ace388aacb02d758065f",
+      "captured_text": "## U632\n\n**id**\n\nU632\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider les cinq comportements de pilotage du Planning commun\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur les cinq comportements directement sous le Planning commun présentés après « next ». Noms, définitions, frontières et type « pratique de planification » adoptés :\n\n- Scope Planning : « Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail. » Frontière : « Sélectionner les politiques applicables ne signifie pas les modifier. »\n- Schedule Planning : « Fixer quand le travail sera lancé, ponctuellement ou selon une récurrence. » Frontière : « Il s’agit du calendrier de planification, pas des dates de livraison. »\n- Run Planning : « Engager le travail cadré pour produire un résultat de planification en mobilisant les décisions nécessaires. » Frontière : « Lancer le calcul n’autorise ni n’applique ses résultats. »\n- Stop Planning : « Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif. » Frontière : « Cela n’annule ni le plan déjà applicable ni les opérations engagées. »\n- Rerun Planning : « Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. » Frontière : « Relancer ne garantit pas une reprise au point d’arrêt. Ajuster le plan reste une responsabilité distincte. »\n\nCes actes distinguent des résultats utiles sans imposer une séquence ni une intervention humaine. Les rapprochements Oracle et Microsoft étayent des mécanismes fonctionnels ; les cinq libellés et leur classification restent une convention FLOW. Le choix des identifiants et les compléments éditoriaux ne constituent pas un accord global. Suivi et ajustement restent à détailler. Aucune publication, aucun commit ni push demandé."
+    },
+    {
+      "id": "U633",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u633",
+      "line": 15678,
+      "content_sha256": "3655ed2769e97fb7964c178a3f82f1ca7ea8ea5fb7c329072683fdee22191a9c",
+      "captured_text": "## U633\n\n**id**\n\nU633\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider Monitor Plan et Adjust Plan\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur les deux comportements directs du Planning commun présentés après « next », de type pratique de planification. Noms, définitions et frontières adoptés :\n\n- Monitor Plan : « Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. » Frontière : « Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires, sans reprendre leur suivi opérationnel. »\n- Adjust Plan : « Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. » Frontière : « Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées. »\n\nAdjust Plan reprend Scenario Execution Adaptation BHV016. Monitor Plan observe les effets et besoins de réexamen ; Adjust Plan prépare la révision métier ; Rerun Planning peut engager le nouveau calcul utile. Le cas fictif du transfert de 30 pièces confirmé et de l’achat de 70 pièces refusé préserve les effets acquis sans tenir la part refusée pour disponible. Les rapprochements Oracle et Microsoft sont partiels ; le découpage reste un choix FLOW. Les compléments éditoriaux et qualifications détaillées des liens ne sont pas adoptés globalement. Aucune release, aucun commit ni push demandé."
+    },
+    {
+      "id": "U636",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u636",
+      "line": 15751,
+      "content_sha256": "31193dd76c1089ac3f310923ab7475b67697f13f3b4d605f7daa3ea166ed751a",
+      "captured_text": "## U636\n\n**id**\n\nU636\n\n**date**\n\n2026-09-23\n\n**titre**\n\nÉlargir la recherche marché sur Apply Plan\n\n**texte**\n\nC'est pas mal, tu peux faire une recherche marché plus élargie pour appuyer cette capacité ?\n\n**contexte et portée**\n\nDemande de recherche élargie après la précision U635 et la proposition de faire appliquer une version préparée du plan, coordonner les changements et leurs conséquences puis constater leur prise en compte. Examiner les appuis et limites pour autorisations, passage à l’opérationnel, révision des commandes, notifications et application partielle. « C’est pas mal » exprime un intérêt pour la proposition, pas une adoption champ par champ. Le terme capacité dans la question ne décide pas à lui seul la promotion du comportement Apply Plan en capacité autonome. Aucune publication ni réorganisation du modèle autorisée implicitement."
+    },
+    {
+      "id": "U637",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u637",
+      "line": 15773,
+      "content_sha256": "9916600a7c4ffa55409467574df57454d2a3f0a4bca3c3ae64788b10fbedafb8",
+      "captured_text": "## U637\n\n**id**\n\nU637\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPorter la progressivité dans le plan et permettre l’application partielle\n\n**texte**\n\nOui, la progressivité du plan est dans le plan lui même. Et c'est vrai qu'un partie des modifs peuvent être poussées. C'est un comportement à noter.\n\n**contexte et portée**\n\nPrécision pendant la recherche U636 : le plan porte sa progressivité et une partie de ses modifications peut être appliquée. Distinguer cette sélection volontaire de la prise en compte partielle provoquée par un refus. Laurent demande de noter ce comportement ; aucune nouvelle hiérarchie ou sous-comportement n’est déduit. Consigner la modalité dans l’étude en cours avant de préciser son nom, ses frontières et son éventuel statut autonome."
+    },
+    {
+      "id": "U638",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u638",
+      "line": 15795,
+      "content_sha256": "200fcb145b23b89fae617a34f8200b46dfb80930b62054a2177c2235bc113138",
+      "captured_text": "## U638\n\n**id**\n\nU638\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPorter l’échéancier des mises à jour dans le plan\n\n**texte**\n\nIl y a donc un plan qui porte le schedule des updates\n\n**contexte et portée**\n\nÀ la suite d’U637, Laurent explicite que le plan porte le calendrier des mises à jour à appliquer. Interprétation de travail : échéancier de mise en application des changements, distinct du calendrier des calculs de Schedule Planning et des dates métier portées par les commandes. La précision n’impose pas un deuxième plan autonome, une copie technique du modèle, une application automatique ou des sous-comportements. Conditions d’application, dépendances entre changements et articulation des autorisations restent à détailler ; pas d’accord automatique sur ces compléments."
+    },
+    {
+      "id": "U639",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u639",
+      "line": 15817,
+      "content_sha256": "8f39a4f4b42c3648270421c2dba5d9e0ef0097b5f81bc680926c6d25b942f9c4",
+      "captured_text": "## U639\n\n**id**\n\nU639\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider l’application progressive et sélective dans Apply Plan\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la clarification immédiatement présentée : le plan porte l’échéancier des mises à jour ; Apply Plan peut appliquer une partie des changements et distingue ceux qui sont appliqués, en attente ou refusés. Décrire cette modalité dans Apply Plan, sans créer de comportement distinct ni de sous-comportement ; aucun arbitrage de découpage supplémentaire nécessaire pour cette précision. Cette validation n’adopte pas l’intégralité de l’étude U636, les autres descriptions développées de D02.e ou une nouvelle définition générale. Les accords antérieurs restent conservés. Aucun commit, push ou publication demandé."
+    },
+    {
+      "id": "U640",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u640",
+      "line": 15839,
+      "content_sha256": "57aca0b9331069c99dd8366a62523c290172f6403dc0cffe5731e12e48bb1ee1",
+      "captured_text": "## U640\n\n**id**\n\nU640\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRéunir Scenario Construction dans Simulation & Analysis\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée : réunir Scenario Construction BHV005 et Simulation & Analysis BHV006 dans Simulation & Analysis, comportement direct du Planning commun de type pratique de planification. Définition adoptée : « Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les engagements, les stocks, les coûts et les risques pour éclairer les choix. »\n\nFrontières présentées : Simulation & Analysis produit des alternatives et leurs conséquences expliquées ; Plan Adjustment prépare une révision proposée pouvant utiliser ces analyses ; Apply Plan met les changements en application, progressivement ou sélectivement. « Les décisions spécialisées restent responsables des réponses métier et de leurs calculs. La simulation ne rend pas ses résultats applicables. Elle peut aussi conclure que conserver le plan actuel est préférable. » L’exemple compare un transfert immédiat et un achat plus tardif selon disponibilité, coût et risque.\n\nLe regroupement, la définition, le type et ces frontières sont adoptés. Le tableau reprend le nom proposé Plan Adjustment, mais cette étape n’est pas un renommage séparé d’Adjust Plan BHV016. Aucune adoption globale des descriptions développées, des correspondances marché ou de Plan Authorization. Identifiant BHV006 conservé pour la mise en œuvre ; BHV005 retiré avec sa provenance. Aucune release, aucun commit ni push demandé."
+    },
+    {
+      "id": "U641",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u641",
+      "line": 15865,
+      "content_sha256": "bfc1f02d8acd1aa05397ab7be89102a96615eb185f43a843f38e8415bd2767f7",
+      "captured_text": "## U641\n\n**id**\n\nU641\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRépartir les autorisations et retirer Scenario Authorization\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la répartition immédiatement présentée et le retrait de Scenario Authorization BHV092 comme comportement distinct. Examiner, retenir, faire revoir ou abandonner une proposition relève du travail du Planning et de Plan Adjustment pour une révision. Vérifier ou recueillir les autorisations nécessaires aux changements sélectionnés relève d’Apply Plan. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques.\n\nFrontière adoptée : « Apply Plan vérifie ou recueille les autorisations nécessaires à l’application des changements sélectionnés, puis fait appliquer ceux qui sont autorisés. Une autorisation ne prouve pas leur prise en compte effective. » L’autorisation peut être humaine ou fondée sur des règles, éventuellement différente selon les changements et leurs échéances. Un plan retenu n’implique pas que tous ses effets soient immédiatement applicables. Les comparaisons marché et autres rédactions développées ne sont pas adoptées globalement. Le nom proposé Plan Adjustment désigne ici le comportement existant BHV016 ; pas de renommage indépendant déduit. Aucun commit, push ni publication demandé."
+    },
+    {
+      "id": "U642",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u642",
+      "line": 15889,
+      "content_sha256": "891b48a1928fc78e9aa7c4d13ae9f9058c06db43fc10e6eefd89a937655a645e",
+      "captured_text": "## U642\n\n**id**\n\nU642\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider la révision à la maille de la partie concernée\n\n**texte**\n\nJE suis d'accord\n\n**contexte et portée**\n\nAccord sur la règle présentée pour une commande partiellement engagée : « La possibilité de modifier une commande s’évalue sur la partie concernée, selon son état réel, ses engagements et ses dépendances. Le Planning propose les changements ; Apply Plan les fait prendre en compte auprès des responsables. Fulfillment traite les conséquences sur les prestations déjà engagées. »\n\nPartie non démarrée : révision possible selon les autorisations, protections et engagements. Partie engagée : modification conditionnée par les possibilités d’adaptation, d’arrêt ou de reprise. Effet réalisé : fait acquis conservé, éventuelle correction ou opération inverse explicite. La portée peut être une quantité, une ligne ou un ensemble lié ; une contrainte de livraison complète peut lier les quantités non démarrées à celles déjà préparées. Sur 100 pièces dont 40 en préparation, ni gel automatique des 100 ni libre révision des 60 restantes.\n\nRègle et coopérations à expliciter sans nouveau comportement. Les exemples Microsoft et Oracle apportent des appuis partiels, pas un seuil universel de réversibilité. Les compléments de rédaction des fiches et relations ne sont pas adoptés globalement. Aucun commit, push ou publication demandé."
+    },
+    {
+      "id": "U644",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u644",
+      "line": 15937,
+      "content_sha256": "94351ba69edfbfaeebd690266e6930a0fe61c143c16317bd0222df555fb66315",
+      "captured_text": "## U644\n\n**id**\n\nU644\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRecentrer le nom du Domain sur la régulation Demand/Supply\n\n**texte**\n\nLe nom du domaine est trop limitatif.\n\nEn fait c'est l'organe de régulation Demand/Supply sur les plans :\n\n- Orchestration de la supply\n- Demand/Supply Matching & Balancing\n\n**contexte et portée**\n\nLaurent juge le nom courant Supply Chain Orchestration trop limitatif et explicite le rôle du Domain : régulation Demand/Supply couvrant orchestration de la supply et Matching & Balancing. « Sur les plans » est lu comme deux dimensions de responsabilité, sans créer deux objets plan ni deux Purposes. Cette précision oriente le réexamen du nom et de la définition ; aucun nom anglais nouveau, changement d’arbre ou déplacement de Demand/Inventory n’est adopté par extension. Le mot organe n’impose pas une centralisation logicielle ou organisationnelle."
+    },
+    {
+      "id": "U645",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u645",
+      "line": 15964,
+      "content_sha256": "8a71ea045ae952a2fa6a78849a9e2b6dbc4ebe2da51b868d817d5cf9e4020575",
+      "captured_text": "## U645\n\n**id**\n\nU645\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRetenir la métaphore biologique de l’organe de régulation\n\n**texte**\n\nEt organe j'aime bien le côté biologique de l'informatique de plus en plus adaptable et empreinte d'IA\n\n**contexte et portée**\n\nLaurent confirme son intérêt pour le mot « organe », volontairement biologique, pour évoquer une informatique adaptable et marquée par l’IA. Cette préférence précise le récit du Domain comme organe de régulation Demand/Supply ; elle remplace la réserve rédactionnelle de Codex en faveur du seul mot « fonction ». Elle ne prescrit ni composant central unique, ni architecture autonome obligatoire, ni recours systématique à l’IA, ni réalisation installée. Le nom anglais proposé Demand & Supply Orchestration et la définition développée restent à qualifier séparément."
+    },
+    {
+      "id": "U646",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u646",
+      "line": 15986,
+      "content_sha256": "b988dedfc38bd141e2efbc193eaeecea7a557b7827b356aee0acbeee4b98492a",
+      "captured_text": "## U646\n\n**id**\n\nU646\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAdopter Demand & Supply Orchestration et l’organe de régulation\n\n**texte**\n\nJe valide définition, référence au marché, etc.\n\n**contexte et portée**\n\nAccord sur le nom proposé Demand & Supply Orchestration et la définition développée dans les réponses immédiatement précédentes : « Le domaine est l’organe de régulation entre la demande et les ressources présentes ou attendues. Il assure leur mise en correspondance et leur équilibre, orchestre la mise en œuvre des choix retenus et adapte ses réponses aux évolutions de la situation. » Conserver la métaphore biologique « organe », exprimant un fonctionnement adaptable plutôt qu’un composant central unique. Matching & Balancing et orchestration de la réalisation sont deux dimensions complémentaires, sans remplacement des six Purposes.\n\nLe rapprochement marché présenté est retenu : Kinaxis emploie orchestration pour relier planification et exécution dans une même boucle de décision. Le nom exact Demand & Supply Orchestration reste un libellé FLOW, sans standard universel revendiqué. « etc. » porte sur ces éléments présentés ; aucune adoption globale des comparaisons historiques, d’une architecture technique ou d’une réalisation installée à base d’IA. Identifiant universe-supply conservé. Aucun commit, push ou publication demandé."
+    },
+    {
+      "id": "U647",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u647",
+      "line": 16010,
+      "content_sha256": "80c3ad7aded2b6815880d63b2eebcae3009486f556ea4a5c6efa486e6a6a95a2",
+      "captured_text": "## U647\n\n**id**\n\nU647\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRejeter la lecture symétrique de Demand & Supply Orchestration\n\n**texte**\n\nLe nom ne me plait pas : en fait on orchestre la supply pour répondre la demande. Le nom fait penser qu'on orchestre 2 mondes\n\n**contexte et portée**\n\nCorrection du nom adopté U646 : Laurent rejette Demand & Supply Orchestration parce qu’il évoque l’orchestration de deux mondes. La supply est l’objet orchestré, la satisfaction de la demande sa finalité. Réexaminer le nom selon cette asymétrie ; préserver l’accord historique U646 sans le présenter comme le choix actuel de Laurent. Le nouveau nom reste à présenter ; aucune exclusion de Demand du Domain ni réorganisation de l’arbre n’est déduite. La métaphore de l’organe de régulation et les responsabilités ne sont pas annulées par ce seul rejet du nom."
+    },
+    {
+      "id": "U648",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u648",
+      "line": 16032,
+      "content_sha256": "e029fc436e97bf001fb9a5f878a2ccb3f590ec5610578ccbd8db5527d56cc6bc",
+      "captured_text": "## U648\n\n**id**\n\nU648\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPréciser le sens de Chain\n\n**texte**\n\nLe concept de \"chain\" est il interessant à préciser ? Avec Orchestration, ça appuie bien l'idée.\n\n**contexte et portée**\n\nQuestion sur l’intérêt de Chain pour exprimer les dépendances entre ressources, engagements, acteurs et prestations. La proposition qui suit revient au nom Supply Chain Orchestration ; aucune chaîne strictement linéaire ni réorganisation des Purposes n’est prescrite."
+    },
+    {
+      "id": "U649",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u649",
+      "line": 16054,
+      "content_sha256": "0aaf653cc74b9ae8108599929465a0a7fed6210fad465641e1a9f7718247099b",
+      "captured_text": "## U649\n\n**id**\n\nU649\n\n**date**\n\n2026-09-23\n\n**titre**\n\nRemplacer une formulation abstraite\n\n**texte**\n\n\"et la mise en œuvre des choix retenus\" : un peu vide de sens...\n\n**contexte et portée**\n\nDemande de rendre explicites les effets métier. La réponse proposée précise arbitrages, changements aux commandes et engagements, coordination des prestations et suivi des résultats."
+    },
+    {
+      "id": "U650",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u650",
+      "line": 16076,
+      "content_sha256": "ac63be4915026457c7bc905b242b1307c135bbd38d757a37e085f6c9b947ad95",
+      "captured_text": "## U650\n\n**id**\n\nU650\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAdopter le nom et la définition concrets du Domain\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la formulation immédiatement présentée : « La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats. » et le nom Supply Chain Orchestration qu’elle porte. Remplace le nom et la définition U646 après la correction U647. Les responsabilités existantes et les six Purposes sont conservés ; aucun accord étendu aux autres champs ni publication implicite."
     }
   ]
 }

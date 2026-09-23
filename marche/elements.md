@@ -5163,3 +5163,97 @@ Hiérarchie de capacités ; recommande généralement trois niveaux au plus et u
 MKT26 — [Ardoq: Business Capability récursive](https://help.ardoq.com/en/articles/44050-business-capability-modeling-and-realization-metamodel). Article du 19 novembre 2025. Consulté le 22 septembre 2026. Passage : Business Capability Workspace ; Component Level. Texte primaire indexé détaillé ; ouverture directe 401.
 
 Un même type Business Capability se décline en hiérarchie à profondeur libre ; le niveau sert notamment aux vues et filtres. Limite : Métamodèle d’outil ; la flexibilité ne prouve pas la pertinence métier d’un découpage. Contenu conservé après intégration de l’ancien bundle dans Foundation. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM643
+
+MKT13 — [Describing Deployment Planning and Reasoning behind Execution](https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-deployment-planning-and-reasoning-behind-execution_ed054de6-f7e2-4928-89be-2dab21e6a043). Cours SAP Learning évolutif, sans édition affichée dans le passage. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Deployment Plan in SAP S/4HANA ; Deployment Status.
+
+Reformulation : Intégrer les demandes de transfert du plan dans S/4HANA, puis les convertir en ordres de transfert avec statuts cohérents. Limite : Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique ni cycle complet des notifications client. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml).
+
+
+### ELM644
+
+MKT20 — [Examine Error Messages for Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html). 26A. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Order Management Rejects a Change Order.
+
+Reformulation : Refuser et tracer une modification de commande lorsque l’expédition a déjà eu lieu. Limite : Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la frontière de l’application. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml).
+
+
+### ELM645
+
+MKT20 — [Working with E-Mail Notification Templates (WEMT)](https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm). Oracle Retail OMS Suite Cloud 25.2.301.0. Consulté directement le 23 septembre 2026. Nature : Documentation fonctionnelle ou formation produit. Identifiant natif non indiqué. Passage : Summary of Customer Correspondence ; Backorder Notification Email Sample and Contents.
+
+Reformulation : Générer des notifications client pour attentes de livraison, annulations et autres événements de commande. Limite : Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release du plan et mail n’est démontré. Synthèse sélective et lien ; aucune reproduction substantielle. CMP266, U636 ; [étude](../modeles/backlog/apply-plan-market-review-U636.yaml).
+
+
+### ELM646
+
+MKT14 — [Work line details](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/work-line-details). Documentation évolutive Microsoft Dynamics 365 Supply Chain Management ; mise à jour affichée 2025-10-03. Texte primaire consulté le 23 septembre 2026. Passage : Part 3, Change the quantity of a work line or cancel a work line.
+
+Reformulation : réduction partielle du travail de préparation et ajustement du chargement associé. Limite : fonction opérationnelle, pas droit général de modifier une commande ; aucune réalisation installée démontrée. Synthèse sélective, sans reproduction substantielle ni identifiant natif inventé. CMP267 ; [portée U642](../modeles/backlog/partial-order-revision-U642.yaml).
+
+
+### ELM647
+
+MKT28 — [What is transportation management?](https://www.kinaxis.com/en/transportation-management). Page Kinaxis évolutive, édition non affichée. Texte primaire consulté le 23 septembre 2026 ; passage : From integration to end-to-end supply chain orchestration.
+
+Reformulation : planification et exécution dans une même boucle de décision, en conservant le lien avec les engagements. Appui au sens large d’Orchestration ; pas de preuve du nom exact FLOW ni d’un déploiement. Synthèse sélective sans reproduction substantielle ; identifiant natif non indiqué. CMP268, U646.
+
+
+### ELM648
+
+MKT20 — [Overview of Demand Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fasdm/overview-of-demand-management.html). Fusion Cloud SCM 25C. Texte primaire consulté le 23 septembre 2026. Passage : Introduction et liste des fonctions.
+
+Reformulation : Demand Management couvre prévision, signaux et plans de demande. Limite : Ce sens diffère de la gestion d’une intention opérationnelle durable dans FLOW ; le titre commercial ne définit pas tous les usages du terme. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM649
+
+MKT13 — [Outlining Program Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a). Cours S/4HANA Cloud Public Edition, édition non affichée. Texte primaire consulté le 23 septembre 2026. Passage : Production Planning Overview ; Demand Management Overview.
+
+Reformulation : Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. Limite : Exemple de production, pas modèle universel de retail ; ne démontre pas l’externalisation de toute décision de couverture. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM650
+
+MKT20 — [Overview of Backlog Management Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html). Fusion Cloud SCM 26B. Texte primaire consulté le 23 septembre 2026. Passage : Quatre activités : planning, review, simulation, release.
+
+Reformulation : Prioriser un portefeuille, construire un plan, tester des ajustements et libérer les résultats vers Order Management ; les simulations ne modifient pas seules les commandes. Limite : Le portefeuille de commandes ne représente pas toutes les formes de demande FLOW ; pas de plan technique unique imposé. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM651
+
+MKT20 — [Overview of Orchestration Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html). Fusion Cloud SCM 26B. Texte primaire consulté le 23 septembre 2026. Passage : Introduction ; Set up Steps ; Set Up Statuses.
+
+Reformulation : Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations sont paramétrés. Limite : Exemple Sales Order incluant réservation et facturation ; ni périmètre identique FLOW ni workflow unique obligatoire. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM652
+
+MKT20 — [How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html). Fusion Cloud SCM 26A. Texte primaire consulté le 23 septembre 2026. Passage : Étapes 1 à 4 : données produit, règles, promesse et interfaces.
+
+Reformulation : Order Management utilise Product Management et Supply Chain Planning puis sollicite les systèmes de réalisation et reçoit leur progression. Limite : Parcours de vente plus large que FLOW, avec prix et finance ; ne généralise pas Sales Order à tous les besoins. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM653
+
+MKT13 — [Explaining aATP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp_a1595e13-8923-4514-b889-ec4f63ef1ad5). Cours S/4HANA Fashion, édition non affichée. Texte primaire consulté le 23 septembre 2026. Passage : Product Availability Check ; ATP Concept ; Alternative-Based Confirmation.
+
+Reformulation : Vérifier quantités et dates selon éléments de supply et promesses existantes ; examiner et choisir des sites alternatifs. Limite : aATP traverse les frontières Availability / Matching / Fulfilment proposées ; ce cours ne prouve pas une correspondance complète de CTP et PTP. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+### ELM654
+
+MKT14 — [Results of DOM runs](https://learn.microsoft.com/en-us/dynamics365/commerce/dom-runs-results). Documentation évolutive, mise à jour affichée le 23 janvier 2026. Texte primaire consulté le 23 septembre 2026. Passage : Fulfillment plans ; Order line statuses.
+
+Reformulation : Le résultat est un plan indiquant quantités et lieux affectés ; il peut être examiné ou appliqué, avec traitement explicite de conflits et de parties non affectées. Limite : Plan de fulfillment Commerce ; ne couvre pas à lui seul tout le plan de supply FLOW. Synthèse sélective et lien ; aucun identifiant natif inventé ni déploiement déduit. CMP269, U658 ; [comparaison des sous-domaines](../modeles/backlog/subdomains-market-review-U658.yaml).
+
+
+Actualisation de consultation ELM438 / ELM328 — 23 septembre 2026, U667–U668, CMP270 : les pages Microsoft [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) (mise à jour affichée 2025-05-07, dispositions et actions) et Blue Yonder [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition) (sans édition affichée, Overview, Intelligent routing, Configure and enforce policy) ont été relues. Elles éclairent la décision sur le devenir, pas son rattachement aux sous-domaines FLOW. Synthèses et limites dans la comparaison ciblée de [l’audit U667](../modeles/backlog/capability-subdomain-audit-U667.yaml) ; aucune importation substantielle ni nouvelle équivalence adoptée.
+
+
+### ELM655
+
+IBM — [Promising service](https://www.ibm.com/docs/en/sip?topic=overview-promising-service), documentation évolutive, édition exacte non affichée. Consultation le 23 septembre 2026 : passage primaire indexé, ouverture directe refusée HTTP 403. Nature : service produit ; identifiant natif non relevé. Localisateur : présentation du service, données inventory/capacity et delivery timelines. Reformulation : le service consomme stocks et capacités pour déterminer une réponse de promesse et annonce des calculs sous la seconde. Limite : aucune preuve d’un seuil de 200 ms, d’un percentile sous charge ou d’une performance FLOW ; frontières produit non équivalentes aux sous-domaines. Synthèse sélective sans reproduction substantielle. U670, CMP271.
+
+Actualisation ELM352 / ELM653 / ELM411 — U670, 23 septembre 2026 : relecture des pages Oracle GOP 25C (échanges avec Order Management, ATP/CTP et coût), SAP Explaining aATP (PAC et alternatives), Microsoft Inventory Visibility reservations (Sample use case for soft reservation). Comparaison ciblée CMP271, sans revalidation globale des fiches.

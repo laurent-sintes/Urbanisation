@@ -1,0 +1,232 @@
+id: domain-regulation-U646
+date: '2026-09-23'
+source_refs:
+- U644
+- U645
+- U646
+- ELM647
+- CMP268
+status: applied_scoped_agreement
+target_id: universe-supply
+name: Demand & Supply Orchestration
+definition: Le domaine est l’organe de régulation entre la demande et les ressources présentes ou attendues. Il assure leur
+  mise en correspondance et leur équilibre, orchestre la mise en œuvre des choix retenus et adapte ses réponses aux évolutions
+  de la situation.
+agreed_market_position: Orchestration peut relier planification et exécution dans une même boucle de décision ; Kinaxis étaye
+  ce sens large. Le nom exact et la métaphore biologique sont FLOW.
+market_scope_limit: Le statut proposé de l’entrée développée ne retire pas l’accord sur le rapprochement présenté ; aucune
+  adoption de toutes ses métadonnées ni des autres comparaisons.
+previous_state:
+  git_commit: 4b11d8563446fadfe59f77cc7d2b087f5fda3717
+  path: modeles/backlog/model.yaml
+  target_id: universe-supply
+updated_references:
+- collection: nodes
+  id: D08
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D02.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D13
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D14
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D09.d
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D11.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D08.d
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D12.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D13.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D14.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D08.e
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D09.e
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D11.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D12.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D13.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D14.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D16.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D16.b
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: nodes
+  id: D19.a
+  fields:
+  - mastership
+  reason: Renvoi au nom courant, responsabilité inchangée.
+- collection: glossary.yaml
+  id: TER030
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER034
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER035
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER066
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER071
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER072
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER088
+  fields:
+  - definition
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER089
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER090
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER091
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER092
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER093
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER094
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER095
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: glossary.yaml
+  id: TER096
+  fields:
+  - context
+  reason: Nom du Domain courant, sens du terme conservé.
+- collection: modeling-glossary.yaml
+  id: MOD008
+  fields:
+  - definition
+  reason: Nom du Domain courant, sens du terme conservé.
+preserved:
+- Identifiant du Domain
+- Six Purposes et leurs relations
+- Frontières des responsabilités
+- Vocabulaire et octets des publications historiques
+- Termes natifs des sources de marché
+not_adopted_by_extension:
+- Réalisation IA installée
+- Composant central unique
+- Descriptions et comparaisons antérieures non présentées
+naming_review_U647:
+  source_ref: U647
+  status: resolved_by_U650
+  rejected_name: Demand & Supply Orchestration
+  principle: Orchestrer la supply pour répondre à la demande ; ne pas évoquer deux mondes orchestrés.
+  scope: Accord U646 conservé historiquement ; définition et responsabilités non annulées par extension. Aucun nouveau nom
+    appliqué.
+resolution_U650:
+  status: applied_scoped_agreement
+  source_refs:
+  - U647
+  - U648
+  - U649
+  - U650
+  name: Supply Chain Orchestration
+  definition: 'La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations
+    pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements
+    nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats.'
+  replaces: Nom et définition U646 ; l’accord antérieur reste une preuve historique.
+  market_comparison: ELM551 et ELM647, déjà consultés, étayent le nom et le lien entre planification et réalisation. Chain
+    exprime ici les dépendances entre ressources, engagements et prestations. La métaphore biologique est un choix FLOW, sans
+    architecture imposée.
+  boundary: Faire appliquer les changements auprès des responsables ; coordonner les prestations sans confondre application
+    transactionnelle et réalisation physique.

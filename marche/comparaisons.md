@@ -2553,3 +2553,70 @@ La préférence pour Microsoft exprime le choix FLOW de partir de l’intention,
 U620/U621 — Codex, 22 septembre 2026. État comparé : MOD013 et hiérarchie Domain → Area → Capability → Behavior du backlog courant. ELM633–642 : SAP RBA, DDD (Nick Tune et Microsoft), TOGAF, Guild, BIAN, APQC, IBM CBM, LeanIX et Ardoq. Relation : appuis méthodologiques et recouvrements partiels, sans équivalence des niveaux.
 
 Le regroupement intermédiaire répond selon les méthodes à une présentation, une décomposition de capacité ou une partition de responsabilités. Proposition FLOW : conserver Area comme périmètre cohérent de responsabilités, avec finalité, exclusions et échanges explicites. Bénéfice : éprouver la répartition avant les capacités. Compromis : définition locale à maintenir ; aucun bounded context, objet unique, processus, organe ou module imposé. U618 sur l’Area unique référentiels/policies reste acquis. Recommandation non adoptée, aucune modification canonique. [Sources, comparaison et tests](etudes/2026-09-22-area-level.md) ; [annexe structurée](../modeles/backlog/area-level-market-study-U620.yaml).
+
+
+## CMP266
+
+U634–U636 — Codex, 23 septembre 2026. État comparé : Apply Plan D02.e, comportement du Planning commun D05.f, et proposition d’élargissement U635. Relation : recouvrements fonctionnels partiels ; aucune équivalence de taxonomie. [Étude et passages](../modeles/backlog/apply-plan-market-review-U636.yaml).
+
+Huit documents principaux : ELM566, ELM419, ELM416, ELM413, ELM643, ELM644, ELM645 et ELM551. Les sources étayent passage du plan aux changements opérationnels, autorisations distinctes, suites et limites d’application. Les notifications sont documentées côté gestion des commandes ; leur déclenchement par Apply Plan est une articulation FLOW proposée, sans intégration native démontrée entre produits. Kinaxis apporte un positionnement général ; la recherche ASCM n’a pas établi d’équivalent détaillé.
+
+Recommandation proposée : faire appliquer les changements autorisés d’une version préparée, coordonner les conséquences et constater la prise en compte. Bénéfice : préserver effets partiels et refus ; compromis : coopération transverse avec les responsables des commandes et engagements. Aucun renommage, changement de définition, promotion en capacité ou accord nouveau appliqué au catalogue. Compléments documentaires de D02.e proposés ; anciennes preuves et accords conservés.
+
+
+Précision U637/U638 — Laurent situe la progressivité et l’échéancier des mises à jour dans le plan et retient la possibilité d’en pousser une partie. ELM419 appuie sélection et temporalité du firming ; porter l’échéancier dans le plan reste le choix métier FLOW, sans équivalence universelle revendiquée. L’application sélective volontaire se distingue des refus partiels. Modalité à instruire dans Apply Plan ; aucun sous-comportement ajouté.
+
+
+U639 adopte la modalité progressive et sélective dans Apply Plan et la distinction appliqué/en attente/refusé, avec échéancier porté par le plan. Précision appliquée sans nouveau comportement ; la comparaison CMP266 et les autres compléments restent proposés.
+
+
+## CMP267
+
+U642 — Codex, 23 septembre 2026. Apply Plan D02.e, Planning D05.f, Order Lifecycle Management D04.o et Fulfillment D06 : apprécier la révision sur la partie concernée selon les faits, engagements et dépendances. ELM646 Microsoft étaye une modification partielle avec ajustements associés ; ELM644 Oracle montre un refus après expédition. Recouvrements partiels ; aucun seuil universel ni réalisation installée déduit. Règle adoptée U642, compléments éditoriaux proposés. Bénéfice : ne pas figer toute la commande ni ignorer les liens entre parties ; compromis : les faits opérationnels et conditions de réversibilité doivent être disponibles. [Portée](../modeles/backlog/partial-order-revision-U642.yaml).
+
+
+## CMP268
+
+U644–U646 — Codex, 23 septembre 2026. Domain universe-supply renommé Demand & Supply Orchestration. ELM647 et ELM551 (deux documents Kinaxis distincts) étayent le sens large d’orchestration reliant planification et réalisation ; ils ne prouvent pas un consensus interéditeurs. Les autres appuis de la fiche sont conservés avec leurs limites propres. Nom et définition adoptés U646, rapprochement Kinaxis retenu dans la portée présentée.
+
+Matching & Balancing et orchestration de la réalisation constituent deux dimensions, sans nouvelle hiérarchie. Bénéfice : rendre visibles demande et ressources, choix et effets. Compromis : libellé exact FLOW et métaphore biologique à expliquer, sans centralisation ou IA obligatoire. Pas d’extension des responsabilités commerciales ou physiques. [Portée et renvois](../modeles/backlog/domain-regulation-U646.yaml).
+
+
+Actualisation CMP268 — U650 : le nom courant est Supply Chain Orchestration. La définition adoptée précise arbitrages, application des changements aux commandes et engagements, coordination des prestations et suivi des résultats. Les deux documents Kinaxis ELM551 et ELM647 restent pertinents pour le lien planification/réalisation ; pas de consensus interéditeurs déduit. Le libellé Demand & Supply Orchestration cité ci-dessus reste historique (U646, rejet U647).
+
+
+## CMP269
+
+U655–U660 — Codex, 23 septembre 2026. État comparé : huit sous-domaines du document de Laurent, plans APS externes U656 et plan de supply construit par Matching U657, puis piste Order Management U659/U660. [Étude structurée](../modeles/backlog/subdomains-market-review-U658.yaml). Avis demandé U658 ; aucune adoption globale, migration ou publication.
+
+Dix-neuf documents primaires sont localisés dans l’étude, dont au moins deux distincts et pertinents pour chacun des huit sous-domaines. SAP, Oracle, Microsoft et IBM : ELM112, ELM352, ELM393–394, ELM405, ELM408, ELM415, ELM449, ELM452, ELM522 et ELM648–654 ; ELM634–635 éclairent le terme Subdomain. Les consultations antérieures valables de la session sont réutilisées. Relation : recouvrements fonctionnels partiels, appuis sémantiques et méthodologiques ; aucune équivalence de taxonomie ou de frontières produit.
+
+Avis : découpage défendable par les responsabilités ; conserver le plan de supply au cœur de Matching. Master Data / Policies / Plans sépare des responsabilités de contexte sans prouver trois sous-domaines standards. Inventory et Fulfilment ont des appuis directs. Les offres ATP/aATP/DOM combinent toutefois choix de sources, dates, fractionnements et affectations : la frontière Availability / Matching / Fulfilment exige un partage explicite de ces décisions. Bénéfice de la proposition : rendre les responsabilités visibles ; compromis : entretenir leurs échanges et les limites de leurs choix.
+
+Demand Management présente le principal écart terminologique : ELM648 et ELM649 le rattachent à la prévision ou aux besoins planifiés. U659/U660 distingue la demande face à l’offre et l’objet individuel. Recommandation Codex : Order Management pour gérer l’objet opérationnel durable ; conserver Demand dans les notions d’offre/demande, plans et Matching. ELM112 étaye la famille vente/achat/transfert/retour ; ELM652 montre un Order en brouillon avant soumission ; ELM522 confirme des entités Order dans l’orchestration. Ce choix conserve intention, cycle de vie et engagements ; il ne prouve ni un objet universel unique ni une architecture centrée sur les documents. Si retenu, l’engagement devient une dimension de l’Order et la formule du PDF Order = état doit être actualisée. Proposition de nom, pas accord acquis.
+
+
+## CMP270
+
+U667–U668 — Codex, 23 septembre 2026. Audit de rattachement des 58 capacités du backlog aux huit sous-domaines convenus. Proposition non appliquée : [annexe YAML](../modeles/backlog/capability-subdomain-audit-U667.yaml), [vue dérivée](../audits/2026-09-23-capacites-sous-domaines-U667.md). Les comparaisons de frontières de CMP269 sont réutilisées ; les correspondances détaillées des fiches existantes ne sont pas déclarées toutes revalidées. Aucune réalisation installée ni exhaustivité marché déduite.
+
+Correction U668 applicable aussi aux formulations antérieures de CMP269 : **Supply Plan** désigne les prévisions d’entrées ou de sorties de stock hors achats. Le **master plan de matching** est le plan d’affectation construit et géré dans Matching. Les appellations produit Supply Planning / Master Planning ne démontrent aucune équivalence à ces deux objets FLOW. Les projections d’achat APS évoquées U656 ne sont pas assimilées à Supply Plan.
+
+Proposition ciblée D05.i : rattacher Return Disposition Decision à Fulfilment Orchestration pour choisir le traitement logistique du bien retourné, en mobilisant Matching lorsque les conséquences affectent les ressources partagées. Recouvrement partiel avec ELM438 Microsoft (devenir du bien et actions) et ELM328 Blue Yonder (état, destination, valeur récupérable), deux documents primaires reconsultés le 23 septembre 2026. Différence : leurs offres portent aussi des effets commerciaux ou financiers hors de cette capacité FLOW. Elles ne prescrivent pas son sous-domaine. Bénéfice : ne pas attribuer au Matching toute décision économique ; compromis : transmettre les effets sur disponibilité et ressources. Statut : recommandation de Codex non adoptée.
+
+Les deux nouvelles capacités proposées de Plans couvrent réception et visibilité des données prévisionnelles, avec les natures Demand Plan / Supply Plan distinguées. ELM415/ELM649 et ELM352 éclairent la circulation et la consommation des plans, sans établir le libellé exact ni le périmètre hors achats de Supply Plan FLOW. Celui-ci provient de U668. Aucun calcul du master plan de matching n’est transféré à l’APS.
+
+
+## CMP271
+
+U670 — Codex, 23 septembre 2026. État comparé : proposition de huit sous-domaines U667–U669 ; discussion ATP/CTP/PTP et double consommation de Supply Availability. Sources primaires relues : ELM352 Oracle GOP 25C, ELM653 SAP aATP, ELM411 Microsoft reservations ; ELM655 IBM, texte primaire indexé seulement. Recouvrements partiels : contrôle de disponibilité et alternatives pendant la commande, recommandation de dates/quantités, articulation des réservations. Oracle combine PTP avec les règles de disponibilité ; SAP recherche des sites alternatifs dans aATP. Ni trois cases exclusives ni attribution automatique de toute adaptation à CTP.
+
+Recommandation : Availability sert directement Order Management et Matching ; Matching reste propriétaire des arbitrages et du master plan, Order Management de ses engagements. Availability respecte les affectations et contraintes déjà retenues. Avantage : réponse interactive possible sans recalcul collectif obligatoire. Compromis : rendre les engagements concurrents opposables au moment de leur sécurisation ; une consultation ne réserve pas. Les 200 ms sont un objectif envisagé, non une performance prouvée ; l’annonce sub-seconde IBM ne suffit pas à le garantir. Pas de nouvelle capacité par temps de réponse. Statut : proposition non adoptée ; aucun changement canonique de capacité. [Analyse structurée](../modeles/backlog/capability-subdomain-audit-U667.yaml), section availability_discussion_U670.
+
+
+## CMP272
+
+U671 — Codex, 23 septembre 2026. Comparaison de nom et périmètre du sous-domaine actuellement proposé Supply Availability, après U670. Deux documents primaires relus : Oracle Global Order Promising 25C (ELM352, introduction et échanges avec Order Management) et Microsoft Order promising (ELM434, mise à jour affichée 2026-04-21, introduction et calculs ATP/CTP). Appui lexical et recouvrement partiel : déterminer des réponses de fourniture en quantités/dates, avec des méthodes de disponibilité. Recommandation **Order Promising**, abrégé Promising dans la discussion. Avantage : nommer le résultat rendu au lieu de suggérer la seule connaissance du disponible. Compromis : expliciter l’usage avant création d’une commande et par Matching ; les périmètres éditeurs peuvent inclure réservation ou confirmation, que FLOW attribue séparément. SAP conserve aussi aATP (ELM653) : pas de vocabulaire universel. Proposition non adoptée, aucun renommage exécuté. [Discussion structurée](../modeles/backlog/subdomains-market-review-U658.yaml), naming_discussion_U671.
+
+
+Actualisation CMP272 — U672, 23 septembre 2026 : Laurent adopte Order Promising, le raccourci Promising, sa responsabilité de déterminer et recommander la promesse, les frontières avec Matching et Order Management et l’usage avant commande ou depuis Matching présentés en réponse à U671. Appuis Oracle ELM352 et Microsoft ELM434 conservés, sans nouvelle recherche nécessaire. Nom et frontières actualisés dans l’audit ; pas d’adoption globale des placements de capacités ou de la maille ATP/CTP/PTP. Aucun changement du modèle canonique ni publication.

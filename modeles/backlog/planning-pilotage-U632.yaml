@@ -1532,3 +1532,7 @@ prior_agreements:
   U631: Les quatre captures et leurs valeurs sont conservées sans réécriture. Leur contexte sémantique a changé avec la décomposition
     U632 ; un réexamen ciblé sera nécessaire avant leur matérialisation dans une publication. U632 ne crée pas un nouvel accord
     global sur les compléments du Planning ou Apply Plan.
+implementation_U633:
+  status: monitor_and_adjust_applied
+  path: modeles/backlog/planning-monitor-adjust-U633.yaml
+  note: Les mentions en attente U631/U632 ci-dessus décrivent leur étape historique ; U633 adopte Monitor Plan et Adjust Plan.

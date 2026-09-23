@@ -13,7 +13,7 @@ type LinksContext = { model: PublishedModel | null; route: RouteState; onFollow:
 const Context = createContext<LinksContext | null>(null);
 export const ModelLinksProvider = Context.Provider;
 
-export function ReferenceLink({ kind = 'model', target, anchor, children, className, showBehaviors = false }: { kind?: Kind; target: string; anchor?: string; children: ReactNode; className?: string; showBehaviors?: boolean }) {
+export function ReferenceLink({ kind = 'model', target, anchor, children, className, showBehaviors = false, fullDefinition = false }: { kind?: Kind; target: string; anchor?: string; children: ReactNode; className?: string; showBehaviors?: boolean; fullDefinition?: boolean }) {
   const context = useContext(Context);
   const model = context?.model;
   const item = kind === 'model' ? model?.nodeById.get(target) : model?.glossaryById.get(target);
@@ -62,7 +62,7 @@ export function ReferenceLink({ kind = 'model', target, anchor, children, classN
   const term = kind === 'glossary' ? model.glossaryById.get(target) : undefined;
   const node = kind === 'model' ? model.nodeById.get(target) : undefined;
   const behaviors = showBehaviors && node?.kind === 'capability' ? childrenOf(model, node.id).filter(child => child.kind === 'behavior') : [];
-  const description = plainInlineText(publicText(showBehaviors && node ? node.definition : term?.definition || term?.short_description || String(node?.fields.short_description || node?.purpose || node?.definition || 'Description non renseignée.')));
+  const description = plainInlineText(publicText((showBehaviors || fullDefinition) && node ? node.definition : term?.definition || term?.short_description || String(node?.fields.short_description || node?.purpose || node?.definition || 'Description non renseignée.')));
   const href = routeHash({ ...context.route, version: model.version, node: kind === 'model' ? target : '',
     view: kind === 'model' ? 'sheet' : 'glossary', term: kind === 'glossary' ? target : '', section: anchor || '',
     scope: '', relation: '', source: '', anchor: '', sourceId: '', query: '', status: '' });

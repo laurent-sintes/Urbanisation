@@ -1,0 +1,38 @@
+id: planning-monitor-adjust-U633
+date: '2026-09-23'
+source_refs:
+- U633
+- U578
+- ELM413
+- ELM566
+status: applied_scoped_agreement
+parent: D05.f
+behaviors:
+- id: BHV101
+  name: Monitor Plan
+  approved_fields:
+  - name
+  - definition
+  - scope
+  - nature
+- id: BHV016
+  name: Adjust Plan
+  approved_fields:
+  - name
+  - definition
+  - scope
+  - nature
+previous_state:
+  git_commit: 4b11d8563446fadfe59f77cc7d2b087f5fda3717
+  path: modeles/backlog/model.yaml
+  sha256: afadd5c6b4fccc4310e4b2c26a0d529569bbefcd15f81cc2aea8cbddf80b3e61
+implementation_choices:
+- BHV016 conserve son identifiant ; BHV101 porte Monitor Plan.
+- Le lien de collecte des effets reste porté par le Planning commun, qui conserve aussi la conclusion du travail.
+not_globally_adopted:
+- Comparaisons et sources d’inspiration détaillées
+- Justification développée de décomposition
+- Qualification développée du lien de suivi
+prior_agreements: Les captures U631 et U632 sont conservées sans réécriture. Le changement de contexte du Planning nécessite
+  leur réexamen ciblé avant matérialisation dans une publication ; leurs valeurs inchangées ne reçoivent pas un nouvel accord
+  global.

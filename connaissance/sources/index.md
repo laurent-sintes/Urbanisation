@@ -5,3 +5,4 @@ Ces dossiers conservent les pièces reçues, leur lecture et les rapprochements 
 | Source | Reçue le | Contexte | Contenu et statut |
 | --- | --- | --- | --- |
 | [SRC-2026-09-18-BRD-FLUX](SRC-2026-09-18-BRD-FLUX/index.md) | 2026-09-18 | Boardriders, attribution U309 | Schéma PLM / SAP / Homerun / BRDS SFTP / Elastic / Salesforce / studio photo ; analysé, actualité et rapprochements à confirmer. |
+| [SRC-2026-09-23-FLOW-SUBDOMAINS](SRC-2026-09-23-FLOW-SUBDOMAINS/index.md) | 2026-09-23 | Proposition de Laurent, U655 | Huit sous-domaines, dont Master Data / Policies / Plans ; Demand durable et Order comme engagement. PDF conservé ; proposition discutée, modèle canonique inchangé. |

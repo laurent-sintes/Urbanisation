@@ -406,6 +406,8 @@ terms:
   - CMP195
   - U624
   - U626
+  - U646
+  - U650
   review:
     state: partial
     adopted_scope: 'U482 : nom Domain et position au-dessus des Areas.'

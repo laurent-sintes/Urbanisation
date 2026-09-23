@@ -159,3 +159,7 @@ implementation_U632:
   status: five_pilot_behaviors_applied
   path: modeles/backlog/planning-pilotage-U632.yaml
   remaining: Suivi et ajustement à détailler ; portées historiques U631 conservées.
+implementation_U633:
+  status: monitor_and_adjust_applied
+  path: modeles/backlog/planning-monitor-adjust-U633.yaml
+  note: Les mentions en attente U631/U632 ci-dessus décrivent leur étape historique ; U633 adopte Monitor Plan et Adjust Plan.

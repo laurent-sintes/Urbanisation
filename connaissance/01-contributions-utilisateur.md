@@ -15674,3 +15674,923 @@ Accord sur les cinq comportements directement sous le Planning commun présenté
 - Rerun Planning : « Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. » Frontière : « Relancer ne garantit pas une reprise au point d’arrêt. Ajuster le plan reste une responsabilité distincte. »
 
 Ces actes distinguent des résultats utiles sans imposer une séquence ni une intervention humaine. Les rapprochements Oracle et Microsoft étayent des mécanismes fonctionnels ; les cinq libellés et leur classification restent une convention FLOW. Le choix des identifiants et les compléments éditoriaux ne constituent pas un accord global. Suivi et ajustement restent à détailler. Aucune publication, aucun commit ni push demandé.
+
+## U633
+
+**id**
+
+U633
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider Monitor Plan et Adjust Plan
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur les deux comportements directs du Planning commun présentés après « next », de type pratique de planification. Noms, définitions et frontières adoptés :
+
+- Monitor Plan : « Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. » Frontière : « Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires, sans reprendre leur suivi opérationnel. »
+- Adjust Plan : « Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. » Frontière : « Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées. »
+
+Adjust Plan reprend Scenario Execution Adaptation BHV016. Monitor Plan observe les effets et besoins de réexamen ; Adjust Plan prépare la révision métier ; Rerun Planning peut engager le nouveau calcul utile. Le cas fictif du transfert de 30 pièces confirmé et de l’achat de 70 pièces refusé préserve les effets acquis sans tenir la part refusée pour disponible. Les rapprochements Oracle et Microsoft sont partiels ; le découpage reste un choix FLOW. Les compléments éditoriaux et qualifications détaillées des liens ne sont pas adoptés globalement. Aucune release, aucun commit ni push demandé.
+
+## U634
+
+**id**
+
+U634
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Réexaminer le nom et la décomposition de Plan Adjustment
+
+**texte**
+
+La capacité présentée par Microsoft, ça rentre dans Plan Adjust, non ?
+D'ailleurs, Plan Adjustment, ce ne serait pas mieux ?
+examen, transmission, validation, ce ne serait pas des comportements de Plan Adjustment ?
+
+**contexte et portée**
+
+Questions après la proposition de réunir Scenario Construction et Simulation & Analysis et de renommer Scenario Authorization en Plan Authorization. Laurent interroge le rattachement de la fonction Microsoft, propose le nom Plan Adjustment et examine un regroupement de l’examen, de la transmission et de la validation sous celui-ci. La référence Microsoft immédiatement présentée concerne notamment l’approbation des ordres planifiés ; distinguer cette fonction produit d’une capacité métier FLOW. Ce message ouvre un réexamen du périmètre et du niveau de décomposition, sans adopter automatiquement la proposition précédente, une nouvelle capacité ou des sous-comportements. L’accord U633 reste conservé dans sa portée historique ; aucune mutation du modèle appliquée à partir de ces seules questions.
+
+## U635
+
+**id**
+
+U635
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Préciser Apply Plan comme mise en œuvre opérationnelle du plan préparé
+
+**texte**
+
+Apply Plan c'est une sorte de "push" du plan brouillon et valider en production avec peut être les impacts sur la modification des commandes en cours (envoi de mail de notification au client par exemple)
+
+**contexte et portée**
+
+Précision métier après le réexamen U634 de Plan Adjustment et de sa frontière avec Apply Plan. Laurent emploie l’analogie du push pour le passage du plan préparé à sa mise en œuvre opérationnelle, avec des conséquences possibles sur les commandes en cours et les communications aux clients. L’expression « brouillon et valider en production » est conservée sans décider implicitement si l’autorisation précède ce passage ou intervient pendant celui-ci. L’exemple de mail est une conséquence possible, pas un envoi demandé, une réalisation installée ni une règle de notification systématique. Ne pas déduire un déploiement logiciel, une transaction globale atomique, la modification automatique de tout engagement ou le transfert au Planning des responsabilités des commandes. La définition développée et le découpage restent à préciser ; l’accord U633 et les accords Apply Plan antérieurs sont conservés dans leur portée historique.
+
+## U636
+
+**id**
+
+U636
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Élargir la recherche marché sur Apply Plan
+
+**texte**
+
+C'est pas mal, tu peux faire une recherche marché plus élargie pour appuyer cette capacité ?
+
+**contexte et portée**
+
+Demande de recherche élargie après la précision U635 et la proposition de faire appliquer une version préparée du plan, coordonner les changements et leurs conséquences puis constater leur prise en compte. Examiner les appuis et limites pour autorisations, passage à l’opérationnel, révision des commandes, notifications et application partielle. « C’est pas mal » exprime un intérêt pour la proposition, pas une adoption champ par champ. Le terme capacité dans la question ne décide pas à lui seul la promotion du comportement Apply Plan en capacité autonome. Aucune publication ni réorganisation du modèle autorisée implicitement.
+
+## U637
+
+**id**
+
+U637
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Porter la progressivité dans le plan et permettre l’application partielle
+
+**texte**
+
+Oui, la progressivité du plan est dans le plan lui même. Et c'est vrai qu'un partie des modifs peuvent être poussées. C'est un comportement à noter.
+
+**contexte et portée**
+
+Précision pendant la recherche U636 : le plan porte sa progressivité et une partie de ses modifications peut être appliquée. Distinguer cette sélection volontaire de la prise en compte partielle provoquée par un refus. Laurent demande de noter ce comportement ; aucune nouvelle hiérarchie ou sous-comportement n’est déduit. Consigner la modalité dans l’étude en cours avant de préciser son nom, ses frontières et son éventuel statut autonome.
+
+## U638
+
+**id**
+
+U638
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Porter l’échéancier des mises à jour dans le plan
+
+**texte**
+
+Il y a donc un plan qui porte le schedule des updates
+
+**contexte et portée**
+
+À la suite d’U637, Laurent explicite que le plan porte le calendrier des mises à jour à appliquer. Interprétation de travail : échéancier de mise en application des changements, distinct du calendrier des calculs de Schedule Planning et des dates métier portées par les commandes. La précision n’impose pas un deuxième plan autonome, une copie technique du modèle, une application automatique ou des sous-comportements. Conditions d’application, dépendances entre changements et articulation des autorisations restent à détailler ; pas d’accord automatique sur ces compléments.
+
+## U639
+
+**id**
+
+U639
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider l’application progressive et sélective dans Apply Plan
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la clarification immédiatement présentée : le plan porte l’échéancier des mises à jour ; Apply Plan peut appliquer une partie des changements et distingue ceux qui sont appliqués, en attente ou refusés. Décrire cette modalité dans Apply Plan, sans créer de comportement distinct ni de sous-comportement ; aucun arbitrage de découpage supplémentaire nécessaire pour cette précision. Cette validation n’adopte pas l’intégralité de l’étude U636, les autres descriptions développées de D02.e ou une nouvelle définition générale. Les accords antérieurs restent conservés. Aucun commit, push ou publication demandé.
+
+## U640
+
+**id**
+
+U640
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Réunir Scenario Construction dans Simulation & Analysis
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement présentée : réunir Scenario Construction BHV005 et Simulation & Analysis BHV006 dans Simulation & Analysis, comportement direct du Planning commun de type pratique de planification. Définition adoptée : « Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les engagements, les stocks, les coûts et les risques pour éclairer les choix. »
+
+Frontières présentées : Simulation & Analysis produit des alternatives et leurs conséquences expliquées ; Plan Adjustment prépare une révision proposée pouvant utiliser ces analyses ; Apply Plan met les changements en application, progressivement ou sélectivement. « Les décisions spécialisées restent responsables des réponses métier et de leurs calculs. La simulation ne rend pas ses résultats applicables. Elle peut aussi conclure que conserver le plan actuel est préférable. » L’exemple compare un transfert immédiat et un achat plus tardif selon disponibilité, coût et risque.
+
+Le regroupement, la définition, le type et ces frontières sont adoptés. Le tableau reprend le nom proposé Plan Adjustment, mais cette étape n’est pas un renommage séparé d’Adjust Plan BHV016. Aucune adoption globale des descriptions développées, des correspondances marché ou de Plan Authorization. Identifiant BHV006 conservé pour la mise en œuvre ; BHV005 retiré avec sa provenance. Aucune release, aucun commit ni push demandé.
+
+## U641
+
+**id**
+
+U641
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Répartir les autorisations et retirer Scenario Authorization
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la répartition immédiatement présentée et le retrait de Scenario Authorization BHV092 comme comportement distinct. Examiner, retenir, faire revoir ou abandonner une proposition relève du travail du Planning et de Plan Adjustment pour une révision. Vérifier ou recueillir les autorisations nécessaires aux changements sélectionnés relève d’Apply Plan. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques.
+
+Frontière adoptée : « Apply Plan vérifie ou recueille les autorisations nécessaires à l’application des changements sélectionnés, puis fait appliquer ceux qui sont autorisés. Une autorisation ne prouve pas leur prise en compte effective. » L’autorisation peut être humaine ou fondée sur des règles, éventuellement différente selon les changements et leurs échéances. Un plan retenu n’implique pas que tous ses effets soient immédiatement applicables. Les comparaisons marché et autres rédactions développées ne sont pas adoptées globalement. Le nom proposé Plan Adjustment désigne ici le comportement existant BHV016 ; pas de renommage indépendant déduit. Aucun commit, push ni publication demandé.
+
+## U642
+
+**id**
+
+U642
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider la révision à la maille de la partie concernée
+
+**texte**
+
+JE suis d'accord
+
+**contexte et portée**
+
+Accord sur la règle présentée pour une commande partiellement engagée : « La possibilité de modifier une commande s’évalue sur la partie concernée, selon son état réel, ses engagements et ses dépendances. Le Planning propose les changements ; Apply Plan les fait prendre en compte auprès des responsables. Fulfillment traite les conséquences sur les prestations déjà engagées. »
+
+Partie non démarrée : révision possible selon les autorisations, protections et engagements. Partie engagée : modification conditionnée par les possibilités d’adaptation, d’arrêt ou de reprise. Effet réalisé : fait acquis conservé, éventuelle correction ou opération inverse explicite. La portée peut être une quantité, une ligne ou un ensemble lié ; une contrainte de livraison complète peut lier les quantités non démarrées à celles déjà préparées. Sur 100 pièces dont 40 en préparation, ni gel automatique des 100 ni libre révision des 60 restantes.
+
+Règle et coopérations à expliciter sans nouveau comportement. Les exemples Microsoft et Oracle apportent des appuis partiels, pas un seuil universel de réversibilité. Les compléments de rédaction des fiches et relations ne sont pas adoptés globalement. Aucun commit, push ou publication demandé.
+
+## U643
+
+**id**
+
+U643
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Partager une conversation ChatGPT sur la régulation Demand–Supply
+
+**texte**
+
+Voici un conversation chatgpt :
+
+**contexte et portée**
+
+Laurent joint « Texte collé.txt », conversation commençant par « La "supply chain orchestration" est l'organe de régulation entre la demande et l'offre physique. » Les tours ne portent pas de métadonnées de rôle ; les deux questions et les réponses sont distinguées d’après la forme du texte, avec cette limite. Le partage n’adopte pas les conclusions de ChatGPT ni un nouveau périmètre du Domain. La proposition de placer Demand et Inventory hors de Supply Chain Orchestration contredit le cadre courant U626 ; aucune réorganisation implicite. Analyse ciblée : modeles/backlog/conversation-supply-regulation-U643.yaml. Source brute conservée dans la pièce jointe utilisateur, non publiée.
+
+## U644
+
+**id**
+
+U644
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Recentrer le nom du Domain sur la régulation Demand/Supply
+
+**texte**
+
+Le nom du domaine est trop limitatif.
+
+En fait c'est l'organe de régulation Demand/Supply sur les plans :
+
+- Orchestration de la supply
+- Demand/Supply Matching & Balancing
+
+**contexte et portée**
+
+Laurent juge le nom courant Supply Chain Orchestration trop limitatif et explicite le rôle du Domain : régulation Demand/Supply couvrant orchestration de la supply et Matching & Balancing. « Sur les plans » est lu comme deux dimensions de responsabilité, sans créer deux objets plan ni deux Purposes. Cette précision oriente le réexamen du nom et de la définition ; aucun nom anglais nouveau, changement d’arbre ou déplacement de Demand/Inventory n’est adopté par extension. Le mot organe n’impose pas une centralisation logicielle ou organisationnelle.
+
+## U645
+
+**id**
+
+U645
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Retenir la métaphore biologique de l’organe de régulation
+
+**texte**
+
+Et organe j'aime bien le côté biologique de l'informatique de plus en plus adaptable et empreinte d'IA
+
+**contexte et portée**
+
+Laurent confirme son intérêt pour le mot « organe », volontairement biologique, pour évoquer une informatique adaptable et marquée par l’IA. Cette préférence précise le récit du Domain comme organe de régulation Demand/Supply ; elle remplace la réserve rédactionnelle de Codex en faveur du seul mot « fonction ». Elle ne prescrit ni composant central unique, ni architecture autonome obligatoire, ni recours systématique à l’IA, ni réalisation installée. Le nom anglais proposé Demand & Supply Orchestration et la définition développée restent à qualifier séparément.
+
+## U646
+
+**id**
+
+U646
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Adopter Demand & Supply Orchestration et l’organe de régulation
+
+**texte**
+
+Je valide définition, référence au marché, etc.
+
+**contexte et portée**
+
+Accord sur le nom proposé Demand & Supply Orchestration et la définition développée dans les réponses immédiatement précédentes : « Le domaine est l’organe de régulation entre la demande et les ressources présentes ou attendues. Il assure leur mise en correspondance et leur équilibre, orchestre la mise en œuvre des choix retenus et adapte ses réponses aux évolutions de la situation. » Conserver la métaphore biologique « organe », exprimant un fonctionnement adaptable plutôt qu’un composant central unique. Matching & Balancing et orchestration de la réalisation sont deux dimensions complémentaires, sans remplacement des six Purposes.
+
+Le rapprochement marché présenté est retenu : Kinaxis emploie orchestration pour relier planification et exécution dans une même boucle de décision. Le nom exact Demand & Supply Orchestration reste un libellé FLOW, sans standard universel revendiqué. « etc. » porte sur ces éléments présentés ; aucune adoption globale des comparaisons historiques, d’une architecture technique ou d’une réalisation installée à base d’IA. Identifiant universe-supply conservé. Aucun commit, push ou publication demandé.
+
+## U647
+
+**id**
+
+U647
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Rejeter la lecture symétrique de Demand & Supply Orchestration
+
+**texte**
+
+Le nom ne me plait pas : en fait on orchestre la supply pour répondre la demande. Le nom fait penser qu'on orchestre 2 mondes
+
+**contexte et portée**
+
+Correction du nom adopté U646 : Laurent rejette Demand & Supply Orchestration parce qu’il évoque l’orchestration de deux mondes. La supply est l’objet orchestré, la satisfaction de la demande sa finalité. Réexaminer le nom selon cette asymétrie ; préserver l’accord historique U646 sans le présenter comme le choix actuel de Laurent. Le nouveau nom reste à présenter ; aucune exclusion de Demand du Domain ni réorganisation de l’arbre n’est déduite. La métaphore de l’organe de régulation et les responsabilités ne sont pas annulées par ce seul rejet du nom.
+
+## U648
+
+**id**
+
+U648
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Préciser le sens de Chain
+
+**texte**
+
+Le concept de "chain" est il interessant à préciser ? Avec Orchestration, ça appuie bien l'idée.
+
+**contexte et portée**
+
+Question sur l’intérêt de Chain pour exprimer les dépendances entre ressources, engagements, acteurs et prestations. La proposition qui suit revient au nom Supply Chain Orchestration ; aucune chaîne strictement linéaire ni réorganisation des Purposes n’est prescrite.
+
+## U649
+
+**id**
+
+U649
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Remplacer une formulation abstraite
+
+**texte**
+
+"et la mise en œuvre des choix retenus" : un peu vide de sens...
+
+**contexte et portée**
+
+Demande de rendre explicites les effets métier. La réponse proposée précise arbitrages, changements aux commandes et engagements, coordination des prestations et suivi des résultats.
+
+## U650
+
+**id**
+
+U650
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Adopter le nom et la définition concrets du Domain
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la formulation immédiatement présentée : « La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats. » et le nom Supply Chain Orchestration qu’elle porte. Remplace le nom et la définition U646 après la correction U647. Les responsabilités existantes et les six Purposes sont conservés ; aucun accord étendu aux autres champs ni publication implicite.
+
+## U651
+
+**id**
+
+U651
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Poursuivre l’audit après le cadrage du Domain
+
+**texte**
+
+next
+
+**contexte et portée**
+
+Demande de poursuivre l’audit. Codex reprend A06, Demand Planning, après les travaux sur le plan commun et la modification partielle des commandes. Cette poursuite ne vaut pas adoption des propositions qui suivent.
+
+## U652
+
+**id**
+
+U652
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Clarifier Demand Planning par le rôle de MAP
+
+**texte**
+
+Demand Planning, ce n'est pas très clair : c'est le rôle de l'outil MAP chez beaumanoir ?
+
+**contexte et portée**
+
+Question de clarification de la proposition U651 par rapprochement avec MAP. Ne vaut pas adoption de la définition. Réutiliser APP-MAP du panorama courant et les contributions U10, U530–U532 et U555 : prévisions et signaux de demande relèvent de Demand Planning, tandis que MAP porte aussi protections marque/canal, anticipation du stockage et demandes d’achat planifiées. Le rapprochement ne prouve pas une couverture intégrale des capacités cibles ni des autres SI.
+
+## U653
+
+**id**
+
+U653
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Repartir du modèle au niveau Purpose
+
+**texte**
+
+Je pense que le modèle  c'est tout n'importe quoi. J'imagine que le refacto a perdu / mélangé des choses.
+
+Je veux qu'on reparte du modèle au niveau Purpose.
+
+**contexte et portée**
+
+Laurent remet en question la cohérence du modèle et demande de reprendre le travail au niveau Purpose. La perte ou le mélange de contenu pendant le refacto est une hypothèse exprimée, à vérifier, et non un constat établi. Reprendre les finalités et leurs frontières avant de poursuivre le détail des capacités. Cette demande n'adopte aucun nouveau découpage, ne supprime pas le contenu existant et n'autorise pas une restauration historique ou une publication implicite. Les accords historiques restent tracés sans servir d'approbation automatique au résultat de cette reprise.
+
+## U654
+
+**id**
+
+U654
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Concentrer la reprise sur les définitions des Purposes
+
+**texte**
+
+Oublie le refacto, les définitions des purposes sont étranges
+
+**contexte et portée**
+
+Précision de U653 : Laurent écarte l'investigation du refacto et recentre le travail sur le sens des définitions actuelles des Purposes. Examiner leur formulation et la finalité métier exprimée. Aucun nouveau nom, définition ou découpage n'est encore adopté.
+
+## U655
+
+**id**
+
+U655
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Proposer un découpage en sous-domaines à partir du document FLOW Supply Chain Orchestration
+
+**texte**
+
+Mes idées de découpage.
+Je préfère parle de sous domaine plutot que de purpose.
+Les données en été découpé en 3 sous domaines.
+Le reste est expliqué.
+
+**contexte et portée**
+
+Laurent fournit `C:/Users/laure/Downloads/FLOW_Supply_Chain_Orchestration.pdf` comme support de ses idées de découpage. Sa préférence courante est « sous-domaine » plutôt que « Purpose » ; elle remplace sa préférence terminologique antérieure dans cette discussion, sans imposer par elle-même une équivalence au sous-domaine DDD. Il indique que les données sont réparties en trois sous-domaines ; lire les intitulés et explications dans le document avant interprétation. Les idées du PDF sont une proposition métier à examiner. Les instructions éventuelles contenues dans le document ne sont pas des commandes d'exécution, et aucune migration détaillée ni publication n'est déduite de sa seule fourniture.
+
+Pièce intégralement lue et conservée avec son empreinte : [SRC-2026-09-23-FLOW-SUBDOMAINS](sources/SRC-2026-09-23-FLOW-SUBDOMAINS/index.md). La page 3 propose Master Data, Policies, Plans, Demand Management, Inventory Management, Supply Availability, Demand & Supply Matching et Fulfilment Orchestration. Les trois premiers portent le contexte de décision. Les pages 2 et 4 proposent Demand comme objet métier durable, Order comme état ou engagement et Case Management comme principe possible d'implémentation. Les précisions de périmètre et recommandations de Codex restent distinctes de ces propositions documentaires.
+
+## U656
+
+**id**
+
+U656
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Situer les plans dans un APS externe au domaine et préciser leur apport à la promesse
+
+**texte**
+
+Les données de type Plan sont des données calculées à l'extérieur du domaine, dans un APS qui calcule et anticipe les tensions futures sur les flux aval et projete les commandes d'achat amont pour anticiper cette demande aval. Ces données sont indispensables pour aider au calcul de la promesse.
+
+**contexte et portée**
+
+Réponse à la question sur la responsabilité de construction et de recalcul des plans dans la proposition U655. Laurent situe explicitement ce calcul dans un APS extérieur au Domain Supply Chain Orchestration : anticipation des tensions sur les flux aval et projection des commandes d'achat amont nécessaires pour anticiper cette demande. Le sous-domaine Plans porte les données issues de ce calcul, indispensables pour éclairer le calcul de la promesse. « Extérieur au domaine » ne désigne pas nécessairement un prestataire ou un système extérieur à l'entreprise ; aucun produit APS ni déploiement dans un SI particulier n'est identifié. Cette précision remplace l'ouverture « Ne réalise pas nécessairement le Demand/Supply Planning » du PDF pour les plans APS décrits. Elle ne transforme pas une commande d'achat projetée en engagement fournisseur et ne retire pas par extension les arbitrages ou adaptations opérationnels de l'orchestration. La frontière est explicite ; la rédaction de la nouvelle définition et les rattachements détaillés restent à qualifier dans la reprise du modèle.
+
+## U657
+
+**id**
+
+U657
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Maintenir la construction du plan de supply au cœur de Demand & Supply Matching
+
+**texte**
+
+Par contre, le matching supply/demand est une activité coeur du domaine et s'appuie sur la contruction d'un plan de supply pour affecter les ressources etc.
+
+**contexte et portée**
+
+Précision immédiate de U656 : les plans anticipatifs calculés dans l'APS extérieur ne retirent pas la planification du Domain Supply Chain Orchestration. Demand & Supply Matching est une activité cœur du domaine qui construit un plan de supply, notamment pour affecter les ressources aux demandes. Distinguer les données des plans APS reçues par Plans et le plan construit par Matching pour porter les arbitrages de l'orchestration. Ne pas réduire Matching à l'application d'affectations calculées à l'extérieur ou à un calcul isolé demande par demande. Cette précision n'impose ni une séparation d'horizons fixe, ni un nouveau plan technique concurrent, ni l'adoption de responsabilités supplémentaires contenues implicitement dans « etc. ». Les noms, descriptions et rattachements détaillés restent à formaliser dans la reprise des sous-domaines.
+
+## U658
+
+**id**
+
+U658
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Évaluer le découpage proposé en sous-domaines par rapport au marché
+
+**texte**
+
+Que penses tu de ce découpage vis à vis du marché ?
+
+**contexte et portée**
+
+Demande d'avis argumenté sur les huit sous-domaines du PDF U655, en intégrant U656 (plans APS calculés à l'extérieur du Domain et utiles à la promesse) et U657 (Matching construit un plan de supply au cœur du Domain). Comparer responsabilités, frontières et vocabulaire aux sources primaires pertinentes ; distinguer appuis documentés, écarts et recommandations. Aucune adoption globale ni migration canonique déduite de cette demande d'évaluation.
+
+Évaluation de Codex : [comparaison structurée](../modeles/backlog/subdomains-market-review-U658.yaml), CMP269. Les précisions U659/U660 sont intégrées comme évolution de la discussion, sans adoption automatique de la recommandation Order Management.
+
+## U659
+
+**id**
+
+U659
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Envisager Order pour lever l'ambiguïté du mot Demand
+
+**texte**
+
+Oui, le terme Demand a plusieurs sens : Order ou "la demande". Il faut lever le flou. L'usage d'Order est peut être la solution meme si ça fait très "tradi" au sens ERP...
+
+**contexte et portée**
+
+Laurent confirme l'ambiguïté entre la demande au sens général et l'objet opérationnel individuel. Il demande de lever ce flou et envisage Order comme solution, avec une réserve sur sa connotation ERP. Il ne s'agit pas encore d'une adoption définitive du nom Order Management. Examiner le sens métier d'Order, sa continuité et ses états sans imposer un système centré sur les documents. La formule du PDF « Order comme état/engagement » est à réexaminer si Order devient le nom de l'objet durable ; aucune migration implicite.
+
+## U660
+
+**id**
+
+U660
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Préciser Demand au sens de la demande face à l'offre
+
+**texte**
+
+"La demande" dans le sens "la demande opposée à l'offre"
+
+**contexte et portée**
+
+Précision sémantique de U659 : « la demande » désigne le côté demande du couple offre/demande, et non nécessairement une commande individualisée. Préserver ce sens dans les plans et dans Demand & Supply Matching. Distinguer ce concept de l'objet métier durable susceptible d'être nommé Order, sans réduire toute demande à des Orders ni transformer les prévisions en commandes engagées.
+
+## U661
+
+**id**
+
+U661
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Traiter le PDF comme un support de discussion jetable
+
+**texte**
+
+Le pdf on s'en fout, c'est jetable.
+
+**contexte et portée**
+
+Le PDF fourni U655 est un support de discussion jetable. Ne pas l'entretenir, le réviser ou le traiter comme une autorité qui contraindrait les décisions ultérieures. Poursuivre le travail à partir des précisions de Laurent et des décisions explicites. Cette instruction ne demande pas la suppression physique de la pièce déjà conservée.
+
+## U662
+
+**id**
+
+U662
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Travailler la frontière entre Availability, Matching et Fulfilment
+
+**texte**
+
+Travaillons la frontière
+
+**contexte et portée**
+
+Dans la continuité de U658–U660, demande d'approfondir la frontière Supply Availability / Demand & Supply Matching / Fulfilment Orchestration identifiée dans la discussion marché. Examiner les responsabilités de choix de sources, quantités et dates, leur révision et leurs effets sur les engagements. U656 sur l'APS externe et U657 sur le plan de supply construit par Matching restent le cadrage. Les nouvelles formulations et répartitions détaillées qui suivent sont des propositions à discuter, pas des accords déduits de cette demande.
+
+## U663
+
+**id**
+
+U663
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Confier à Availability la sélection de la réponse de promesse recommandée
+
+**texte**
+
+Oui, seconde option
+
+**contexte et portée**
+
+Accord explicite sur la seconde option de la question immédiatement précédente : « Availability doit-elle seulement déterminer les réponses possibles, ou également sélectionner la réponse de promesse qu'elle recommande ? » Laurent retient qu'Availability détermine les réponses possibles et sélectionne la réponse de promesse recommandée. L'option présentée inclut la réserve : recommandation soumise aux arbitrages du plan lorsqu'elle affecte des ressources partagées. L'accord porte sur cette responsabilité et cette limite ; il ne confirme pas automatiquement la promesse et n'adopte pas globalement la frontière détaillée, les exemples, les critères de sélection, le nom Order Management ou les modalités de Fulfilment. Portée conservée dans boundary_work_U662.adoption_U663 de l'étude courante. Aucun nœud Supply Availability n'est encore matérialisé dans le modèle canonique ; la capture champ par champ via record_decision.py, limité aux nœuds et relations existants, sera applicable après cette matérialisation sans étendre l'accord aux nouvelles formulations.
+
+## U664
+
+**id**
+
+U664
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Privilégier les adaptations locales de Fulfilment qui préservent la promesse et les équilibres du Matching
+
+**texte**
+
+Oui, le fulfilment va chercher à ne pas modifier la promesse portée par l'order et se débrouiller pour trouver d'autres solutions locales sans perturber les grands équilibres du Matching.
+
+**contexte et portée**
+
+Laurent confirme et précise la frontière travaillée U662 : Fulfilment recherche des solutions locales pour réaliser la promesse portée par l'Order en préservant les grands équilibres du Matching. C'est une priorité d'adaptation, pas une garantie que tout aléa pourra être résolu localement. Le critère ne se réduit pas à l'absence de tout changement d'une affectation détaillée : l'enjeu exprimé est la préservation de la promesse et des grands équilibres. « Local » n'impose pas de frontière géographique ou applicative. L'accord n'établit pas encore les seuils, marges de décision, critères de perturbation ni modalités détaillées du réarbitrage. Les compléments proposés par Codex sur la remontée d'un écart lorsque ces conditions ne peuvent être préservées restent distincts de cet accord. Aucun accord global sur les définitions des huit sous-domaines ni publication implicite.
+
+## U665
+
+**id**
+
+U665
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Apprécier la clarté du découpage au niveau des responsabilités
+
+**texte**
+
+Est-ce que le découpage est clair maintenant ?
+
+**contexte et portée**
+
+Demande d'apprécier la clarté des huit sous-domaines après U663/U664. La réponse de Codex considère les responsabilités claires mais présente encore les marges d'autonomie comme un point à préciser et Order Management comme un nom à confirmer. U666 corrige le premier point et tranche le second.
+
+## U666
+
+**id**
+
+U666
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Distinguer les règles d'autonomie des responsabilités et adopter Order Management
+
+**texte**
+
+Les marges d'autonomie, ce sont des règles pas des responsabilités. Donc pas besoin de les préciser.
+Order Management est ok
+
+**contexte et portée**
+
+Laurent corrige la réserve de Codex : les marges d'autonomie sont des règles et leur détail n'est pas nécessaire pour définir les responsabilités ou considérer le découpage clair. Ne pas poursuivre leur précision comme préalable au découpage. L'accord U664 sur la responsabilité de Fulfilment reste applicable ; aucune valeur de règle, seuil ou délégation détaillée n'est adoptée par extension. Laurent adopte explicitement le nom Order Management pour le sous-domaine de gestion des commandes discuté U659/U660. L'accord sur le nom ne valide pas toutes les définitions détaillées, la composition du D04 courant ni les rattachements futurs. Le lot de reprise conserve ces accords ciblés avant sa matérialisation canonique.
+
+## U667
+
+**id**
+
+U667
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Auditer les capacités et proposer leur placement dans les huit sous-domaines
+
+**texte**
+
+Maintenant qu'on est ok sur le découpage en sous domaines, tu peux faire un audit des capacités et essayer de les replacer dans ce nouveau modèle ?
+
+**contexte et portée**
+
+Laurent confirme l'accord sur le découpage en huit sous-domaines discuté U655–U666 et demande un audit des capacités actuelles avec proposition de rattachement. Le cadrage comprend les plans APS externes U656, le plan de supply construit par Matching U657, Order Management U666, Availability recommandant une réponse U663 et Fulfilment adaptant localement la réalisation U664. Les marges d'autonomie restent des règles dont le détail n'est pas nécessaire à cet audit (U666). Examiner toutes les capacités actives, préserver les identifiants, les responsabilités et la traçabilité, signaler les écarts de périmètre et compléments nécessaires. L'accord sur les huit sous-domaines n'adopte pas automatiquement les placements, scissions, retraits ou nouvelles capacités proposés par l'audit. Aucune publication ni réouverture de l'audit historique des comportements U431 n'est demandée.
+
+## U668
+
+**id**
+
+U668
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Supply Plan distinct du master plan de matching
+
+**texte**
+
+Pas du tout. Supply Plan c'est de la prévision de rentrée de stock ou de sortie de stock en dehors des achats.
+Le plan d'affectation du Matching, c'est le master plan de matching géré dans le sous domaine matching. Ca n'a rien à voir.
+
+**contexte et portée**
+
+Correction explicite de la confusion introduite par Codex pendant l'audit U667 : Supply Plan désigne les prévisions d'entrées ou de sorties de stock hors achats, dans Plans. Le plan d'affectation est le master plan de matching, construit et géré dans Demand & Supply Matching ; il ne s'agit ni du même objet ni d'une variante de Supply Plan. Cette correction prime les formulations antérieures de Codex, notamment « plan de supply du Matching » et l'assimilation de Supply Plan aux achats projetés par l'APS. Elle ne transfère pas le calcul du master plan de matching à l'APS. Les projections d'achat évoquées en U656 restent distinctes ; leur support précis ne se déduit pas de cette clarification. Poursuivre l'audit avec ces frontières, sans adopter automatiquement ses propositions de placement.
+
+
+## U669
+
+**id**
+
+U669
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Ingestion des Supply et Demand Plans sans sous-domaine APS
+
+**texte**
+
+L'APS externe alimentera les plan (Supply et Demand) par ingestion (capacité). Mais comme l'APS est externe, je ne veux pas qu'il apparaisse dans en tant que sous domaine. Une mention dans des descriptions du domaine tout au plus.
+
+**contexte et portée**
+
+Les Supply et Demand Plans sont alimentés par une capacité d'ingestion dans Plans. L'APS reste une source externe, mentionnable dans les descriptions ; aucun sous-domaine ni branche de capacités APS dans le modèle cible. Corriger la présentation de l'audit U667 qui affichait External APS au même niveau que les huit sous-domaines. La capacité actuelle D17.a Demand Planning demeure inventoriée pour tracer sa sortie du périmètre, sans lui créer de parent externe. Accord sur la responsabilité d'ingestion des deux types de plans, pas adoption implicite de Plan Visibility, du libellé anglais exact ni de toutes les formulations proposées. Le master plan de matching reste distinct, dans Matching (U668).
+
+
+## U670
+
+**id**
+
+U670
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Réexaminer ATP, CTP, PTP et les usages de Supply Availability
+
+**texte**
+
+Autre point, je crois qu'on ne parlait plus de ATP, CTP, PTP car l'ancien modèle avait du mal à faire entrer ces notions. Qu'ne penses-tu maintenant ?
+Quel lien entre Supply Availability et Matching et Order Management ? Je pense que les capacité de la Supply Availability nourissent le matching mais aussi Order Management car on peut imaginer dans une commande B2C, répondre en moins de 200ms si on peut promettre la commande. Qu'ne penses-tu ?
+
+**contexte et portée**
+
+Laurent demande un avis sur la pertinence d'ATP, CTP et PTP dans le nouveau découpage et propose deux consommateurs de Supply Availability : Matching et Order Management. Le cas B2C envisage une réponse de promettabilité en moins de 200 ms ; il s'agit d'un objectif envisagé, pas d'une performance mesurée, d'un SLA adopté ni d'une confirmation automatiquement réservée. Examiner les liens avec le master plan de matching et l'engagement de l'Order, sans imposer une réoptimisation collective synchrone. Aucun renommage, retrait, décomposition ou nouveau contrat technique n'est adopté par cette question.
+
+
+## U671
+
+**id**
+
+U671
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Comparer Supply Availability et Promising pour le nom du sous-domaine
+
+**texte**
+
+Supply Availability c'est le bon nom ? Tout le monde parle de Promising ?
+
+**contexte et portée**
+
+Question sur le nom le plus pertinent pour la responsabilité de calcul et recommandation de promesse discutée U670. Comparer les usages effectivement documentés du marché, sans présumer un consensus universel ni un accord de renommage. Les frontières avec le master plan de matching et l'engagement porté par Order Management restent à préserver.
+
+
+## U672
+
+**id**
+
+U672
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider Order Promising et actualiser l’audit
+
+**texte**
+
+Ok, je valide tout, mets à jour l'audit.
+
+**contexte et portée**
+
+Accord sur la proposition présentée en réponse à U671 : nom du sous-domaine Order Promising, raccourci Promising ; déterminer et recommander ce qu’on peut promettre en quantité, date et conditions ; Matching arbitre les affectations dans son master plan ; Order Management confirme, porte et révise l’engagement. Order Promising peut être sollicité avant la création ou confirmation d’une commande et par Matching pour examiner une possibilité de couverture. Actualiser l’audit et sa comparaison de sous-domaines. Cet accord porte sur le contenu présenté en U671, pas sur tous les rattachements encore à arbitrer de l’audit U667, ni sur la maille définitive ATP/CTP/PTP ou un SLA de 200 ms. Aucune publication demandée.

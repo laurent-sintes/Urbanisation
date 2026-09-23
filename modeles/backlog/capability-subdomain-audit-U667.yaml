@@ -1,0 +1,1354 @@
+id: capability-subdomain-audit-U667
+date: '2026-09-23'
+author: Codex
+status: placement_proposal_with_Order_Promising_agreement_U672
+source_refs:
+- U655
+- U656
+- U657
+- U659
+- U660
+- U663
+- U664
+- U666
+- U667
+- U668
+- CMP269
+- CMP270
+- U669
+- U670
+- CMP271
+- U672
+baseline:
+  path: modeles/backlog/model.yaml
+  sha256: e00b8f5546fe4f5153894900ff0fe2a87cbd37201baed34dcad833f2e6cf93ef
+  capabilities: 58
+  note: Empreinte du modèle de travail audité, pas d’une publication. Le rafraîchissement ultérieur des sources peut changer
+    les métadonnées de provenance sans changer les nœuds.
+authority:
+  structure: Huit sous-domaines confirmés par U667 ; U668 distingue Supply Plan (prévisions de mouvements de stock hors achats)
+    et master plan de matching (affectations internes). U672 adopte Order Promising en remplacement du nom Supply Availability.
+  placements: Le nom, la responsabilité et les usages présentés en U671 sont adoptés U672 ; les rattachements de capacités
+    et autres arbitrages conservent leurs statuts propres.
+  canonical_model_changed: false
+  pdf: Support jetable U661 ; aucun rôle d’autorité dans cet audit.
+  external_systems: 'U669 : aucun sous-domaine APS. Mention descriptive de la source externe alimentant Supply et Demand Plans
+    par ingestion dans Plans.'
+method:
+  coverage: Définitions et périmètres des 58 capacités ; parents et comportements obtenus par contains. Référentiels présentés
+    distinctement conservés.
+  market: Réutilisation des documents effectivement consultés pour CMP269 ; réexamen ciblé Microsoft/Blue Yonder pour le retour.
+    Les comparaisons détaillées existantes des 58 fiches sont conservées, non réputées toutes revalidées.
+  no_behavior_reaudit: U431 reste clos ; seul le rattachement des enfants est inventorié.
+  no_rule_thresholds: Marges d’autonomie non détaillées conformément à U666.
+counts:
+  by_proposed_subdomain:
+    Master Data: 14
+    Policies: 3
+    Order Management: 11
+    Inventory Management: 6
+    Order Promising: 5
+    Demand & Supply Matching: 9
+    Fulfilment Orchestration: 9
+    Plans: 0
+  by_status:
+    direct_with_editorial_correction: 14
+    direct: 28
+    boundary_rewrite: 11
+    scope_to_arbitrate: 4
+    outside_domain_no_target_parent: 1
+  proposed_new_internal: 2
+  proposed_internal_total: 59
+  outside_domain: 1
+findings:
+- 'U672 : Order Promising adopté ; calcule et recommande une réponse de promesse, utilisable par Order Management avant engagement
+  et par Matching. Matching arbitre les affectations ; Order Management porte les engagements.'
+- 'U668 : Supply Plan porte les prévisions d’entrées ou de sorties de stock hors achats. Le master plan de matching porte
+  les affectations et reste entièrement géré dans Matching. Aucun lien d’identité entre les deux objets ; les achats projetés
+  APS évoqués en U656 ne sont pas reclassés en Supply Plan.'
+- 57 capacités existantes ont un rattachement proposé dans les huit sous-domaines ; Demand Planning est hors périmètre, sans
+  parent cible. Aucun sous-domaine externe ni retrait exécuté.
+- 'Plans : responsabilité d’ingestion des Supply et Demand Plans confirmée U669 ; visibilité proposée séparément, non adoptée.
+  Total cible envisagé : 59 capacités internes si toutes les propositions sont retenues.'
+- Les sept référentiels et leurs quatorze capacités restent distincts sous Master Data. Corriger les formulations de simple
+  copie passive incompatibles avec U479, sans reprendre la maîtrise d’entreprise.
+- Les décisions Inventory Target, Initial Stocking et Replenishment sont conservées provisoirement dans Matching pour l’arbitrage
+  opérationnel. Leur périmètre doit être borné face aux calculs APS externes ; l’accord sur les sous-domaines ne tranche pas
+  ce détail.
+- 'Return Disposition Decision est proposé dans Fulfilment : choisir le traitement du bien retourné ne constitue pas par nature
+  un arbitrage de couverture. Une conséquence collective mobilise Matching. Ce déplacement reste à discuter.'
+- Reservation Policy Decision et Group Protection Decision restent dans Matching pour leur résultat calculé ; Policies porte
+  les règles actives. Reservation reste dans Inventory. Aucun déplacement fondé uniquement sur le mot Policy.
+- Service Capacity Visibility reste chez Fulfilment ; Supply Visibility consolide les attendus dans Availability ; Inventory
+  Visibility expose les positions et projections de stock. Leurs consommateurs ne deviennent pas leurs propriétaires.
+- ATP, CTP, PTP et Delivery Schedule Decision couvrent déjà faisabilité et recommandation ; Fulfillment Commitment porte l’engagement
+  dans Order Management. Aucun ajout automatique d’une capacité générique de promesse.
+- Fulfillment Plan Decision désigne actuellement le choix du plan de couverture dans Matching ; Process Adaptation Decision
+  désigne les adaptations d’exécution dans Fulfilment. Leurs noms/définitions doivent éviter le même mot plan sans qualification.
+- Apply Plan, Simulation & Analysis et les commandes de planning sont déjà des comportements de D05.f. L’audit ne les recrée
+  pas en capacités, ne ressuscite aucun identifiant retiré et ne rouvre pas U431.
+- Le décompte porte sur la couverture du catalogue existant, pas sur une preuve d’exhaustivité de toutes les responsabilités
+  possibles du domaine ni sur des fonctionnalités installées chez Beaumanoir.
+group_comparisons:
+- subdomain: Master Data
+  responsibility: Tenir les références locales Supply sur les sept sujets existants.
+  market_refs:
+  - ELM522
+  - ELM652
+  position_and_limit: Les produits documentent des références consommées par les Orders ; les sept regroupements sont un choix
+    FLOW. La maîtrise locale U479 doit être distinguée de la maîtrise d’entreprise externe.
+  status: proposed_placement_justification
+- subdomain: Policies
+  responsibility: Gouverner les règles applicables, leur validité et leur activation.
+  market_refs:
+  - ELM394
+  - ELM452
+  position_and_limit: Les règles DOM et protections SAP étayent l’encadrement des décisions. Ces produits ne prescrivent pas
+    un sous-domaine autonome Policies.
+  status: proposed_placement_justification
+- subdomain: Plans
+  responsibility: Tenir et exposer les données prévisionnelles calculées hors du domaine.
+  market_refs:
+  - ELM415
+  - ELM649
+  position_and_limit: Les plans externes et besoins prévisionnels sont documentés ; leur ingestion dans un sous-domaine autonome
+    est une frontière FLOW. Le sens Supply Plan hors achats vient de U668 ; ces sources ne prouvent pas une équivalence avec
+    Supply Planning éditeur.
+  status: proposed_placement_justification
+- subdomain: Order Management
+  responsibility: Tenir les Orders, leurs évolutions et les engagements qu’ils portent.
+  market_refs:
+  - ELM112
+  - ELM652
+  position_and_limit: Les types d’Orders et leur traitement sont attestés ; FLOW sépare recommandation de promesse et orchestration
+    de réalisation, souvent réunies dans les offres OMS.
+  status: proposed_placement_justification
+- subdomain: Inventory Management
+  responsibility: Tenir faits, positions, régimes et réservations de stock.
+  market_refs:
+  - ELM408
+  - ELM449
+  position_and_limit: Les distinctions physiques, attendues et réservées sont étayées. La valorisation financière de certains
+    ERP est hors du périmètre retenu.
+  status: proposed_placement_justification
+- subdomain: Order Promising
+  responsibility: Établir les réponses possibles et sélectionner la promesse recommandée.
+  market_refs:
+  - ELM352
+  - ELM653
+  position_and_limit: GOP et aATP examinent des alternatives ; la séparation FLOW d’avec Matching et l’engagement confirmé
+    n’est pas une frontière uniforme du marché.
+  status: proposed_placement_justification
+- subdomain: Demand & Supply Matching
+  responsibility: Construire et maintenir un master plan de matching cohérent de couverture de la demande.
+  market_refs:
+  - ELM650
+  - ELM654
+  position_and_limit: Planifier, simuler et appliquer des affectations sont documentés. Le périmètre FLOW inclut aussi la
+    demande prévisionnelle résiduelle, au-delà des seuls portefeuilles de commandes de ces exemples.
+  status: proposed_placement_justification
+- subdomain: Fulfilment Orchestration
+  responsibility: Obtenir les prestations et adapter leur réalisation en préservant les engagements.
+  market_refs:
+  - ELM651
+  - ELM405
+  position_and_limit: La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching
+    est un choix explicite FLOW U664.
+  status: proposed_placement_justification
+market_source_registry: modeles/backlog/subdomains-market-review-U658.yaml#/sources
+focused_return_comparison:
+  capability_id: D05.i
+  relationship: Recouvrement partiel
+  sources:
+  - element_ref: ELM438
+    title: Specify how to dispose of returned items
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+    version: Documentation évolutive, mise à jour affichée 2025-05-07
+    consulted_on: '2026-09-23'
+    locator: Disposition codes and actions
+    finding: Le devenir du bien retourné est distingué de son motif ; les actions produit peuvent également porter des effets
+      financiers.
+  - element_ref: ELM328
+    title: Smart Disposition
+    url: https://blueyonder.com/solutions/returns-management/smart-disposition
+    version: Page solution sans édition affichée
+    consulted_on: '2026-09-23'
+    locator: Overview; Intelligent routing; Configure and enforce policy
+    finding: L’état, la destination et la valeur de revente contribuent au choix du devenir du retour.
+  similarities: Décider du traitement et de l’orientation du bien selon les faits et les règles.
+  differences: Les offres incluent des effets financiers ou commerciaux que FLOW garde distincts ; elles ne prouvent pas le
+    propriétaire Fulfilment plutôt que Matching.
+  recommendation: Proposer Fulfilment pour le choix du traitement du retour ; conserver le recours à Matching pour les effets
+    sur les ressources partagées.
+  benefit: Éviter de faire de Matching le propriétaire de toute décision comportant un critère économique.
+  tradeoff: Expliciter la transmission des effets de disponibilité au Matching et à Availability.
+  status: proposed_not_adopted
+proposed_gaps:
+- proposal_key: plans-ingestion
+  name: Plan Ingestion
+  subdomain: Plans
+  definition: Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version
+    et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+  boundary: Distinguer remplacement d’une projection et modification d’un Order déjà pris en charge ; conserver les liens
+    utiles au rapprochement prévision-commandes, sans calculer la prévision ni effacer un engagement.
+  example: 'Une prévision d’entrée de stock hors achat passe de 100 à 80 pièces : conserver sa révision sans la transformer
+    en réception constatée.'
+  market_refs:
+  - ELM415
+  - ELM649
+  status: responsibility_agreed_U669_name_and_detailed_definition_proposed
+  naming: Libellé descriptif proposé ; pas de consensus de marché revendiqué.
+  source_refs:
+  - U669
+- proposal_key: plans-visibility
+  name: Plan Visibility
+  subdomain: Plans
+  definition: Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates,
+    conditions et fraîcheur pour éclairer la promesse et le Matching.
+  boundary: Ne construit ni prévisions ni master plan de matching. Une projection consultable ne devient pas un approvisionnement
+    ferme. La consommation de prévision par les Orders doit être portée par le calcul de couverture du Matching en s’appuyant
+    sur ces liens.
+  example: Présenter une sortie de stock hors achat prévue à J+3 avec son origine et son incertitude, distincte d’un mouvement
+    réalisé.
+  market_refs:
+  - ELM352
+  - ELM649
+  status: proposed_new_capability_no_canonical_id
+  naming: Libellé descriptif proposé ; pas de consensus de marché revendiqué.
+capabilities:
+- id: D08.d
+  current_name: Product Reference Ingestion
+  current_parent_id: D08
+  current_parent_name: Product Reference
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Product Reference ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D08.e
+  current_name: Product Reference Visibility
+  current_parent_id: D08
+  current_parent_name: Product Reference
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Product Reference ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D09.d
+  current_name: Party / Role Ingestion
+  current_parent_id: D09
+  current_parent_name: Party / Role
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Party / Role ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D09.e
+  current_name: Party / Role Visibility
+  current_parent_id: D09
+  current_parent_name: Party / Role
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Party / Role ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D11.a
+  current_name: Agreement Ingestion
+  current_parent_id: D11
+  current_parent_name: Agreement
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Agreement ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D11.b
+  current_name: Agreement Visibility
+  current_parent_id: D11
+  current_parent_name: Agreement
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Agreement ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D12.a
+  current_name: Product Catalog Ingestion
+  current_parent_id: D12
+  current_parent_name: Product Catalog
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Product Catalog ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D12.b
+  current_name: Product Catalog Visibility
+  current_parent_id: D12
+  current_parent_name: Product Catalog
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Product Catalog ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D13.a
+  current_name: Fulfillment Network Ingestion
+  current_parent_id: D13
+  current_parent_name: Fulfillment Network
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Fulfillment Network ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D13.b
+  current_name: Fulfillment Network Visibility
+  current_parent_id: D13
+  current_parent_name: Fulfillment Network
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Fulfillment Network ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D14.a
+  current_name: Service Catalog Ingestion
+  current_parent_id: D14
+  current_parent_name: Service Catalog
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Service Catalog ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D14.b
+  current_name: Service Catalog Visibility
+  current_parent_id: D14
+  current_parent_name: Service Catalog
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Service Catalog ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D16.a
+  current_name: Assortment Ingestion
+  current_parent_id: D16
+  current_parent_name: Assortment
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Intégrer les références et leurs évolutions pour Assortment ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D16.b
+  current_name: Assortment Visibility
+  current_parent_id: D16
+  current_parent_name: Assortment
+  proposed_subdomain: Master Data
+  status: direct_with_editorial_correction
+  reason: Construire et exposer la vue de référence pour Assortment ; conserver ce sujet et son identité.
+  boundary: 'Harmoniser les formulations « pas de maître local » avec U479 : autorité locale Supply, maîtrise d’entreprise
+    externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D02.b
+  current_name: Supply Protection
+  current_parent_id: business-references
+  current_parent_name: Reference & Policy Management
+  proposed_subdomain: Policies
+  status: direct
+  reason: Règles actives de protection, réservation et renouvellement des ressources.
+  boundary: Conserver la gouvernance des paramètres applicables ; les recommandations de valeurs issues du Matching ne les
+    activent pas implicitement.
+  behavior_ids:
+  - BHV017
+  - BHV018
+  - BHV019
+  - BHV020
+  market_comparisons_preserved: 5
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D19.a
+  current_name: Service Provider Policy
+  current_parent_id: business-references
+  current_parent_name: Reference & Policy Management
+  proposed_subdomain: Policies
+  status: direct
+  reason: Règles actives d’admissibilité et de sollicitation des prestataires.
+  boundary: Ne pas confondre conditions de référence du service, capacité communiquée et choix effectif du prestataire.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D19.b
+  current_name: Demand Protection Policy
+  current_parent_id: business-references
+  current_parent_name: Reference & Policy Management
+  proposed_subdomain: Policies
+  status: direct
+  reason: Règles de protection et de priorité de la demande.
+  boundary: Demand garde ici son sens large ; Order Prioritization applique ces règles aux commandes en concurrence.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.i
+  current_name: Sales Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: boundary_rewrite
+  reason: Contenu, évolutions et reste à servir des commandes clients.
+  boundary: Corriger les renvois qui attribuent encore les possibilités de promesse à Demand Management.
+  behavior_ids:
+  - BHV066
+  - BHV067
+  - BHV068
+  - BHV069
+  - BHV096
+  market_comparisons_preserved: 3
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.j
+  current_name: Purchase Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: boundary_rewrite
+  reason: Commandes d’achat de biens ou prestations et propositions adressées au domaine.
+  boundary: L’APS conserve sa projection d’achat ; l’Order porte la proposition adressée au domaine puis son éventuel affermissement.
+    U668 exclut les achats de Supply Plan. Aucune création automatique ni double comptage.
+  behavior_ids:
+  - BHV058
+  - BHV059
+  - BHV060
+  - BHV078
+  market_comparisons_preserved: 5
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.k
+  current_name: Transfer Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: boundary_rewrite
+  reason: Ordres de transfert et suivi des départs et arrivées attendus.
+  boundary: Une proposition APS reste une donnée de plan avant sa prise en charge comme Order ; ne pas dupliquer les mêmes
+    quantités.
+  behavior_ids:
+  - BHV070
+  - BHV071
+  - BHV072
+  - BHV073
+  - BHV074
+  market_comparisons_preserved: 4
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.l
+  current_name: Return Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Demande de retour, quantités et suites attendues.
+  boundary: Conserver les parcours spécifiques ; le choix du devenir et les prestations sont mobilisés auprès de Fulfilment,
+    pas exécutés par l’Order.
+  behavior_ids:
+  - BHV050
+  - BHV051
+  - BHV052
+  - BHV053
+  - BHV054
+  market_comparisons_preserved: 3
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.m
+  current_name: Supplier Return
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Renvois fournisseur et attentes de crédit, remplacement ou réparation.
+  boundary: Préserver le lien avec les achats de remplacement ; ni comptabilité de l’avoir ni réalisation physique dans cette
+    capacité.
+  behavior_ids:
+  - BHV055
+  - BHV056
+  - BHV057
+  market_comparisons_preserved: 3
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.n
+  current_name: Order Structuring
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Structure, filiation et cohérence des commandes composées ou scindées.
+  boundary: Une scission des prestations ne provoque pas nécessairement une scission documentaire ; préserver les statuts
+    proposés de Grouping et Merging.
+  behavior_ids:
+  - BHV044
+  - BHV086
+  - BHV087
+  market_comparisons_preserved: 3
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.o
+  current_name: Order Lifecycle Management
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Transitions autorisées du contenu et des engagements des Orders.
+  boundary: Le retrait d’une projection APS ne supprime pas un Order engagé ; appliquer les suites autorisées en tenant compte
+    du réalisé.
+  behavior_ids:
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV043
+  market_comparisons_preserved: 4
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.q
+  current_name: Order Archiving
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Conservation et consultation historique des Orders.
+  boundary: ''
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.r
+  current_name: Consignment Fill-up Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Demandes d’apport de biens restant consignés.
+  boundary: Ne pas absorber la gestion durable du stock consigné ni la décision d’implantation.
+  behavior_ids:
+  - BHV061
+  - BHV062
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D04.t
+  current_name: Consignment Pick-up Order
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: direct
+  reason: Demandes de reprise de biens restés consignés.
+  boundary: Conserver l’intention distincte d’un retour après vente ou d’un transfert interne.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D03.n
+  current_name: Fulfillment Commitment
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: Order Management
+  status: boundary_rewrite
+  reason: Proposition, confirmation et révision de l’engagement porté par l’Order.
+  boundary: Distinguer formalisation de la proposition et choix de la réponse recommandée par Availability. Ne pas recalculer
+    ici le plan ou la promesse.
+  behavior_ids:
+  - BHV021
+  - BHV022
+  - BHV023
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D01.f
+  current_name: Inventory Tracking
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: boundary_rewrite
+  reason: Quantités et états de stock établis à partir des faits reconnus.
+  boundary: 'Resserrer la phrase sur le suivi des ressources futures : consommer Supply Visibility pour les projections, sans
+    reprendre la tenue des attendus.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D01.g
+  current_name: Record Inventory Movements
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: direct
+  reason: Faits de mouvements, corrections et justifications de stock.
+  boundary: ''
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D01.c
+  current_name: Inventory Visibility
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: direct
+  reason: Lecture des positions physiques, logiques et projetées.
+  boundary: Une projection de stock utilise Plans et Supply Visibility ; elle ne prouve pas qu’une quantité est promettable.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D01.d
+  current_name: Stocktaking
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: direct
+  reason: Comptages, écarts et corrections justifiées.
+  boundary: Le protocole de comptage reste partie de la capacité. Si une règle devient partagée, Policies la gouverne ; aucune
+    scission systématique par règle.
+  behavior_ids:
+  - BHV029
+  - BHV030
+  - BHV031
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D02.c
+  current_name: Reservation
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: direct
+  reason: Tenue des engagements de quantité opposables aux usages concurrents.
+  boundary: Matching demande une réservation mais ne la possède pas. Une affectation du plan ne réserve pas implicitement
+    la ressource (U436).
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D01.h
+  current_name: Consigned Inventory Management
+  current_parent_id: D01
+  current_parent_name: Inventory Management
+  proposed_subdomain: Inventory Management
+  status: direct
+  reason: Application du régime et des droits du stock consigné.
+  boundary: La fin de l’Order d’apport ne met pas fin à cette responsabilité.
+  behavior_ids:
+  - BHV063
+  - BHV064
+  - BHV065
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+- id: D18.a
+  current_name: Supply Visibility
+  current_parent_id: D18
+  current_parent_name: Supply Management
+  proposed_subdomain: Order Promising
+  status: boundary_rewrite
+  reason: Vue qualifiée des apports attendus, de leurs dates et de leur fermeté.
+  boundary: Consolider les attendus issus des Orders, des opérations et des Plans sans reprendre leurs autorités ni assimiler
+    projection APS, engagement et réception.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U663
+- id: D03.i
+  current_name: Available-to-Promise (ATP)
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Order Promising
+  status: direct
+  reason: Réponses quantité/date possibles sur les ressources admissibles.
+  boundary: Consommer les ressources futures qualifiées ; un calcul ATP ne confirme ni ne réserve.
+  behavior_ids:
+  - BHV001
+  - BHV002
+  - BHV003
+  - BHV004
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U663
+- id: D03.j
+  current_name: Capable-to-Promise (CTP)
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Order Promising
+  status: boundary_rewrite
+  reason: Réponses possibles nécessitant une adaptation et conditions associées.
+  boundary: Une alternative calculée ne vaut ni réaffectation de ressources partagées ni décision locale d’exécution. Mobiliser
+    Matching ou Fulfilment selon l’effet recherché.
+  behavior_ids:
+  - BHV075
+  - BHV076
+  - BHV077
+  market_comparisons_preserved: 5
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U663
+- id: D03.k
+  current_name: Profitable-to-Promise (PTP)
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Order Promising
+  status: direct
+  reason: Comparaison économique et choix recommandé parmi les réponses faisables.
+  boundary: Conserver la dimension économique sans en faire l’objectif unique ; sélection de promesse sous réserve des arbitrages
+    Matching.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U663
+- id: D03.l
+  current_name: Delivery Schedule Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Order Promising
+  status: direct
+  reason: Sélection des quantités et dates de la réponse recommandée.
+  boundary: Conserver la décision de calendrier dans Availability ; confirmation et révision de l’engagement restent dans
+    Order Management.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U663
+- id: D03.m
+  current_name: Order Prioritization
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: direct
+  reason: Priorités relatives des commandes en concurrence pour les ressources.
+  boundary: Les règles sont dans Policies ; leur application contextualisée participe à l’arbitrage du plan.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D03.o
+  current_name: Fulfillment Plan Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: boundary_rewrite
+  reason: Choix du scénario de couverture et des affectations de ressources.
+  boundary: Le résultat est le master plan de matching, pas le plan des prestations malgré le mot Fulfillment du nom actuel.
+    Inclure commandes et prévision résiduelle sans double compte.
+  behavior_ids: []
+  market_comparisons_preserved: 4
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.a
+  current_name: Inventory Target Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: scope_to_arbitrate
+  reason: Décision sur les cibles de stock utiles aux scénarios de couverture.
+  boundary: 'Proposition à borner : conserver les arbitrages de cibles nécessaires au Matching ; consommer les cibles APS
+    reçues sans reconstruire sa planification. Policies gouverne les valeurs activées.'
+  behavior_ids:
+  - BHV026
+  - BHV027
+  - BHV028
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.d
+  current_name: Group Protection Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: direct
+  reason: Arbitrage des quantités protégées ou plafonnées par groupe.
+  boundary: Le calcul est une décision du Matching ; la règle active et ses périodes sont gouvernées par Policies. Ce n’est
+    pas une réservation individuelle.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.g
+  current_name: Initial Stocking Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: scope_to_arbitrate
+  reason: Choix des apports opérationnels pour constituer le stock initial.
+  boundary: 'Conserver sous réserve de borner la frontière APS : exécuter et ajuster la couverture du lancement, sans recalculer
+    l’assortiment ni le plan prévisionnel amont.'
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.e
+  current_name: Replenishment Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: scope_to_arbitrate
+  reason: Choix des apports et ajustements nécessaires à la couverture courante.
+  boundary: 'Le périmètre actuel inclut des compléments fournisseur : à resserrer pour ne pas dupliquer les achats projetés
+    par l’APS. Garder les arbitrages opérationnels de couverture et remonter les besoins de révision du plan externe.'
+  behavior_ids:
+  - BHV083
+  - BHV084
+  - BHV085
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.c
+  current_name: Stock Redistribution Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: direct
+  reason: Rééquilibrage du stock existant entre lieux.
+  boundary: Coordonner les effets avec le réassort ; les Orders matérialisent les demandes de transfert et Fulfilment les
+    réalise.
+  behavior_ids:
+  - BHV024
+  - BHV025
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.f
+  current_name: Demand & Supply Optimization Planning
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: boundary_rewrite
+  reason: Construction, comparaison, maintien et application du master plan de matching.
+  boundary: Remplacer la dépendance au calcul interne de Demand Planning par les données Plans. Maintenir les neuf comportements,
+    dont Apply Plan et Simulation & Analysis ; ne pas recréer Order Backlog Planning.
+  behavior_ids:
+  - D02.e
+  - BHV006
+  - BHV016
+  - D04.s
+  - BHV097
+  - BHV098
+  - BHV099
+  - BHV100
+  - BHV101
+  market_comparisons_preserved: 15
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D05.h
+  current_name: Reservation Policy Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Demand & Supply Matching
+  status: direct
+  reason: Décision contextualisée sur les conditions de réservation à recommander.
+  boundary: Conserver dans Matching car la fiche recommande des conditions selon les tensions ; Policies les active et Inventory
+    tient les réservations. Le mot Policy ne suffit pas à changer le propriétaire.
+  behavior_ids:
+  - BHV032
+  - BHV033
+  - BHV034
+  - BHV035
+  market_comparisons_preserved: 3
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U657
+- id: D06.b
+  current_name: Service Capacity Visibility
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Connaissance des capacités opérationnelles communiquées par les exécutants.
+  boundary: Conserver chez Fulfilment, responsable du dialogue avec les exécutants ; Availability et Matching la consomment.
+    Un plafond communiqué n’est pas un disponible calculé.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D07.a
+  current_name: Service Requirements Decision
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Détermination des prestations et résultats nécessaires.
+  boundary: Peut être mobilisée en préparation de la promesse ; la consommation par Availability ne change pas son propriétaire.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D07.b
+  current_name: Service Task Management
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Tenue des sollicitations de services, réponses et reprises.
+  boundary: Task et Order restent distincts ; un acquittement technique ne prouve pas l’achèvement physique.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D07.c
+  current_name: Service Reconciliation
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Rapprochement du réalisé et de l’attendu des prestations.
+  boundary: Fournir les écarts aux Orders et les faits à Inventory ; ne pas tenir à leur place le reliquat commande ou le
+    stock.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D07.d
+  current_name: Operations Tracking
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: boundary_rewrite
+  reason: Suivi des faits, jalons et estimations pendant les prestations.
+  boundary: Alimenter Supply Visibility pour les attendus consolidés ; supprimer toute lecture comme seconde tenue des mêmes
+    ressources futures.
+  behavior_ids:
+  - BHV079
+  - BHV080
+  - BHV081
+  - BHV082
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D06.d
+  current_name: Process Orchestration
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Coordination des prestations et de leurs dépendances.
+  boundary: Distinguer le plan d’exécution coordonné du master plan de matching arbitré dans Matching.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D06.e
+  current_name: Service Selection Decision
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: direct
+  reason: Choix des services et exécutants permettant la réalisation.
+  boundary: Choisir les moyens initiaux ou alternatifs en préservant promesse et grands équilibres. Consulter cette décision
+    pendant une étude de faisabilité reste possible.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D06.f
+  current_name: Process Adaptation Decision
+  current_parent_id: D06
+  current_parent_name: Fulfillment Orchestration
+  proposed_subdomain: Fulfilment Orchestration
+  status: boundary_rewrite
+  reason: Choix des adaptations locales de réalisation face aux aléas.
+  boundary: Réécrire « variations du plan » en « adaptations du plan d’exécution ». Préserver promesse et grands équilibres
+    ; transmettre les impacts non absorbables à Matching et Order Management, sans seuils à définir ici.
+  behavior_ids: []
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D05.i
+  current_name: Return Disposition Decision
+  current_parent_id: D03
+  current_parent_name: Demand & Supply Optimization
+  proposed_subdomain: Fulfilment Orchestration
+  status: scope_to_arbitrate
+  reason: Choix du devenir logistique des biens retournés selon leur état et la valeur récupérable.
+  boundary: 'Rattachement proposé à discuter : décision de traitement du retour dans Fulfilment ; demander l’arbitrage Matching
+    si l’orientation affecte les ressources partagées. Ne pas absorber remboursement, inspection physique ou mouvements de
+    stock.'
+  behavior_ids:
+  - BHV048
+  - BHV049
+  market_comparisons_preserved: 2
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U664
+  - U666
+- id: D17.a
+  current_name: Demand Planning
+  current_parent_id: D04
+  current_parent_name: Demand Management
+  proposed_subdomain: null
+  status: outside_domain_no_target_parent
+  reason: Calcul de prévision hors périmètre du domaine ; aucune branche cible à créer.
+  boundary: Conserver D17.a et BHV095 dans la traçabilité du retrait à préparer, sans les rattacher à un sous-domaine externe
+    ni les renommer en ingestion.
+  behavior_ids:
+  - BHV095
+  market_comparisons_preserved: 4
+  market_review: Existing capability comparisons retained; placement justified by FLOW responsibilities and group-level comparison,
+    not a fresh full revalidation of this fiche.
+  source_refs:
+  - U667
+  - U668
+  - U656
+  - U669
+migration_conditions:
+- Matérialiser les nouveaux sous-domaines et parents seulement après examen de cette proposition ; ne pas recycler les identifiants
+  retirés.
+- Conserver identités, comportements et provenance des capacités ; le déplacement d’une fiche n’adopte pas ses champs proposés.
+- Borner les trois décisions de stock face à l’APS et examiner le rattachement du devenir des retours.
+- Réviser les renvois Demand/Order, plan APS/plan Matching/plan d’exécution et l’autorité locale Master Data.
+- Capturer les accords sur les valeurs finales exactement présentées ; une publication reste une opération distincte.
+scoped_agreement_U669:
+  responsibility: Ingérer les Supply et Demand Plans dans Plans.
+  external_source: L’APS est uniquement mentionné comme source externe dans les descriptions ; aucun sous-domaine APS.
+  not_adopted:
+  - Libellé exact Plan Ingestion
+  - Définition détaillée de la nouvelle capacité
+  - Plan Visibility
+  - Autres placements proposés
+  capture: Accord de responsabilité dans cette annexe ; aucune capacité canonique créée par cet audit.
+availability_discussion_U670:
+  status: recommendation_not_adopted
+  baseline: Le YAML actuel conserve D03.i ATP, D03.j CTP, D03.k PTP ; cet état ne prouve pas leur réadoption dans le nouveau
+    découpage.
+  recommendation: Order Promising évalue les réponses faisables et recommande une promesse à Order Management comme au Matching.
+    Pas de passage obligatoire par un recalcul du master plan pour chaque demande.
+  concepts:
+  - name: ATP
+    meaning: Quantités et dates promettables à partir des ressources présentes et futures admissibles, compte tenu des engagements
+      et contraintes.
+    position: Rôle clair dans Order Promising.
+  - name: CTP
+    meaning: Faisabilité de mobiliser une ressource supplémentaire ou une capacité pour satisfaire le besoin.
+    position: Évaluer la possibilité dans Availability ; ne pas y transférer les décisions de réaffectation entre commandes,
+      de modification de politiques ou de réalisation.
+    current_gap: D03.j étend actuellement CTP à toute adaptation des ressources ou engagements ; ce périmètre dépasse le sens
+      démontré par Oracle. Une source alternative existante peut relever de l’ATP avancé SAP.
+  - name: PTP
+    meaning: Comparaison économique des réponses faisables.
+    position: Dimension de sélection pouvant se combiner avec ATP/CTP ; pas un troisième état de disponibilité ni une optimisation
+      générale du master plan.
+  capability_granularity: Conserver les notions pour expliquer les responsabilités ; réexaminer la maille des capacités avant
+    d’entériner trois feuilles parallèles. Aucun renommage, fusion ou retrait exécuté.
+  relationships:
+  - from: Order Promising
+    to: Order Management
+    information: Réponse recommandée en quantités, dates et conditions pour l’Order.
+    effect: L’Order porte la confirmation ou la révision de l’engagement ; une consultation seule ne constitue pas une réservation.
+  - from: Order Promising
+    to: Demand & Supply Matching
+    information: Possibilités de couverture, alternatives, coûts, délais et conditions.
+    effect: Matching utilise ces résultats pour construire et arbitrer son master plan.
+  - from: Demand & Supply Matching
+    to: Order Promising
+    information: Affectations et contraintes applicables issues du master plan.
+    effect: Une réponse rapide respecte les arbitrages existants sans devoir tous les recalculer.
+  - from: Order Management
+    to: Demand & Supply Matching
+    information: Commandes et engagements nouveaux ou révisés.
+    effect: Le master plan tient compte des engagements constitués ; il ne les ignore pas en attendant une optimisation ultérieure.
+  b2c:
+    target: Moins de 200 ms envisagés par Laurent pour une réponse de promettabilité, non mesurés ni garantis.
+    fast_response: 'Proposition : examiner les données déjà disponibles et les contraintes applicables, choisir une réponse
+      sans nouvel arbitrage collectif si le cas le permet.'
+    contention: Si la réponse exige de reprendre une ressource affectée à une autre demande, solliciter Matching ; ne pas
+      annoncer une promesse inconditionnelle avant arbitrage.
+    commitment: Distinguer consultation et confirmation ; traiter la concurrence au moment de sécuriser l’engagement. Reservation
+      reste dans Inventory Management selon U436. Aucun mécanisme technique imposé.
+    performance_scope: Objectif de réalisation à tester sous charge ; ne définit pas une nouvelle capacité et n’exige pas
+      que toute recherche CTP complexe tienne dans le même délai.
+    example: 'Exemple fictif : une pièce promettable et deux achats simultanés. Deux lectures favorables ne donnent pas deux
+      droits exclusifs sur la même pièce.'
+  market:
+    source_refs:
+    - ELM352
+    - ELM653
+    - ELM411
+    - ELM655
+    common_points: Oracle relie directement Order Management et Promising ; SAP vérifie la disponibilité pendant la création
+      de commande ; Microsoft distingue contrôle et réservation.
+    differences: Les modules éditeurs recouvrent plusieurs responsabilités FLOW ; PTP est une option combinable, les alternatives
+      ne relèvent pas toutes de CTP.
+    benefit: Servir la promesse interactive sans imposer une réoptimisation collective à chaque requête.
+    tradeoff: Les réponses doivent respecter les affectations et engagements concurrents ; latence et cohérence doivent être
+      vérifiées ensemble.
+    performance_evidence: IBM décrit une réponse sub-seconde dans un passage primaire indexé ; cela ne prouve pas un délai
+      de 200 ms pour FLOW.
+  subsequent_agreement_U672: Nom Order Promising, responsabilité et usages présentés en U671 adoptés ; analyse ATP/CTP/PTP
+    et détails techniques non adoptés par extension.
+scoped_agreement_U672:
+  source_refs:
+  - U671
+  - U672
+  status: adopted_for_audit
+  previous_name: Supply Availability
+  adopted_name: Order Promising
+  adopted_short_name: Promising
+  adopted_responsibility: Déterminer et recommander ce qu’on peut promettre, en quantité, date et conditions.
+  adopted_boundaries:
+    Order Promising: Déterminer et recommander ce qu’on peut promettre.
+    Demand & Supply Matching: Arbitrer les affectations dans le master plan de matching.
+    Order Management: Confirmer, porter et réviser l’engagement de la commande.
+  adopted_uses:
+  - Pendant la préparation d’un panier, avant création ou confirmation d’une commande.
+  - Depuis Matching pour examiner une possibilité de couverture.
+  scope: Accord sur la proposition présentée en réponse à U671 ; les autres arbitrages de capacités de l’audit restent identifiés
+    séparément.
+  capture: 'Accord conservé dans les annexes : le sous-domaine cible n’est pas encore un nœud canonique. record_decision.py
+    cible les nœuds et relations existants ; ne pas reporter cet accord sur un autre périmètre canonique.'
+  canonical_model_changed: false

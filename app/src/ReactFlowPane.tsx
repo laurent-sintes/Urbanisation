@@ -11,6 +11,10 @@ import '@xyflow/react/dist/style.css';
 
 type Card = Node<{ item: AtlasNode; count: number; childList?: CardChildList; onHeight: (id: string, height: number) => void; onExplore: (id: string) => void; onRead: (id: string) => void; highlighted: boolean; muted: boolean }, 'business'>;
 type Container = Node<{ item: AtlasNode }, 'container'>;
+function OverviewName({ item }: { item: AtlasNode }) {
+  if (item.kind !== 'domain' && item.kind !== 'area' && item.groupRole !== 'urbanism_level') return <>{item.name}</>;
+  return <span className="nodrag nopan" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}><ReferenceLink target={item.id} fullDefinition className="overview-name-link">{item.name}</ReferenceLink></span>;
+}
 function BusinessCard({ data, selected }: NodeProps<Card>) {
   const presentation = data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level';
   const card = useRef<HTMLElement>(null);
@@ -27,7 +31,7 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
   }, [expanded, data.item.id, data.onHeight]);
   return <article ref={card} className={`business-card ${expanded ? 'has-child-list' : ''} ${selected ? 'is-selected' : ''} ${presentation ? 'is-presentation' : ''} ${data.highlighted ? 'is-highlighted' : ''} ${data.muted ? 'is-muted' : ''}`} data-node-id={data.item.id}>
     <div className="card-eyebrow"><NodeIcon node={data.item} size={22}/><span>{kindLabel(data.item)}</span><span className="card-id">{data.item.id}</span></div>
-    <h3 title={data.item.name}>{data.item.name}</h3>
+    <h3><OverviewName item={data.item}/></h3>
     <p>{shortText(data.item.purpose || data.item.definition || 'Description non renseignée dans cette publication.', 115)}</p>
     {data.childList && <div className="card-child-list nodrag nopan nowheel" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}>
       <div className="child-list-heading">{listLabel} <span>{data.childList.items.length}</span></div>
@@ -39,7 +43,7 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
   </article>;
 }
 function GroupCard({ data }: NodeProps<Container>) {
-  return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong>{data.item.name}</strong><span>{kindLabel(data.item)}</span></div></div>;
+  return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong><OverviewName item={data.item}/></strong><span>{kindLabel(data.item)}</span></div></div>;
 }
 function CapabilityTypeDivider() { return <div className="map-capability-type-divider" role="separator" aria-label="Changement de type de capacité"/>; }
 const nodeTypes = { business: BusinessCard, container: GroupCard, capabilityTypeDivider: CapabilityTypeDivider };

@@ -4,7 +4,7 @@
 
 **Diagnostic : la consolidation de la hiérarchie est plus avancée que celle des contenus.** L'arbre et les types sont renseignés et cohérents avec les contrats techniques. Les reprises prioritaires concernent le plan commun, la propagation des nouvelles frontières dans les fiches et les liens, puis la précision des justifications marché. Le volume de références est conséquent ; il ne garantit pas leur adéquation au périmètre actuel.
 
-Ce document est le dossier de travail courant de cet audit, destiné à préparer les arbitrages. Il ne remplace pas le catalogue YAML et ne constitue pas un nouvel accord. Le diagnostic initial n’a modifié ni modèle canonique ni publication. Depuis l’accord U631, le regroupement du Planning et la responsabilité Apply Plan sont appliqués au backlog ; les publications restent inchangées. L’accord U632 applique ensuite les cinq comportements de pilotage, avec leurs noms, définitions, frontières et type ; [portée et mise en œuvre](../../modeles/backlog/planning-pilotage-U632.yaml). Le suivi et l’ajustement restent à détailler. L'audit historique U431 conserve sa clôture.
+Ce document est le dossier de travail courant de cet audit, destiné à préparer les arbitrages. Il ne remplace pas le catalogue YAML et ne constitue pas un nouvel accord. Le diagnostic initial n’a modifié ni modèle canonique ni publication. Depuis l’accord U631, le regroupement du Planning et la responsabilité Apply Plan sont appliqués au backlog ; les publications restent inchangées. L’accord U632 applique ensuite les cinq comportements de pilotage, avec leurs noms, définitions, frontières et type ; [portée et mise en œuvre](../../modeles/backlog/planning-pilotage-U632.yaml). U633 applique ensuite Monitor Plan et Adjust Plan avec leurs frontières ; [portée](../../modeles/backlog/planning-monitor-adjust-U633.yaml). L'audit historique U431 conserve sa clôture.
 
 ## Périmètre et méthode
 
@@ -75,6 +75,8 @@ Les deux fiches précisent qu'elles contribuent à un même plan et se réconcil
 **Recommandation.** Qualifier les coopérations utiles à la lecture des fiches : apports attendus et projections ; restrictions de recours et sélection du prestataire ; protections de demandes et classement/révision ; reprise de consignation et régime de stock/prestations. Choisir explicitement la maille des liens pour éviter de recopier mécaniquement ceux des Purposes. Huit autres capacités sans lien métier concernent les référentiels ; leur présentation par sujet ne suffit pas à établir une anomalie individuelle.
 
 ### A05 — La frontière du début d'exécution partielle reste à rendre opérante
+
+**Statut courant : règle adoptée et appliquée U642.** Révision à la maille de la partie concernée selon état réel, engagements et dépendances ; [portée](../../modeles/backlog/partial-order-revision-U642.yaml). Le constat ci-dessous décrit l’état initial.
 
 **Constat, priorité haute.** U626 pose la révision possible d'une demande ferme avant exécution et l'adaptation des prestations engagées par Fulfillment. [Order Release BHV039](<C:/Dev/Beaumanoir Cartographie/modeles/backlog/model.yaml:14653>) distingue correctement autorisation et début physique observé. La maille du début partiel et son effet sur les éléments encore révisables restent ouverts, comme le signale déjà l'annexe U626.
 
@@ -200,3 +202,9 @@ Le type Planning convient parce que la capacité organise et actualise un plan e
 Demande, précision et ouverture de la reprise enregistrées dans [les contributions U628–U631](<C:/Dev/Beaumanoir Cartographie/connaissance/01-contributions-utilisateur.md>). Lecture structurée par `scripts/structured_io.py` et inspections ciblées par `scripts/inspect_model.py`. Contrôle du backlog courant par `validate_urbanism` avec le schéma et le glossaire : zéro erreur. Index des sources actualisé par `python scripts/refresh_sources.py` : 2 320 enregistrements ; sources figées inchangées. Après application U631 : `python scripts/validate_models.py` sans erreur, 36 tests des modèles/niveaux réussis, vue backlog actualisée. Quatre captures d’accord portent uniquement les champs et rattachements présentés. Aucun rejeu de l’audit U431 ni publication déclenchée.
 
 Les mesures reproductibles et le script de lecture de cet audit sont temporaires sous `.runtime/audit-capacites-comportements-U628/` ; ils ne dupliquent pas le modèle et ne constituent pas une source métier concurrente.
+
+
+Mise à jour U640 : Scenario Construction BHV005 est réuni dans Simulation & Analysis BHV006 ; [portée et succession](../../modeles/backlog/simulation-consolidation-U640.yaml). Aucun accord nouveau sur Plan Authorization.
+
+
+Mise à jour U641 : Scenario Authorization BHV092 est retiré ; examen et choix sont décrits dans le Planning et son ajustement, recueil des autorisations dans Apply Plan, autorisations métier chez les partenaires. [Portée et preuves](../../modeles/backlog/authorization-distribution-U641.yaml).

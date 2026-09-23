@@ -1,0 +1,70 @@
+id: demand-planning-review-U651
+date: '2026-09-23'
+status: proposed
+author: Codex
+source_refs:
+- U651
+- ELM556
+- ELM557
+- CMP218
+target_id: D17.a
+finding: Classement sous Demand Management et type planning cohérents. Le scope laisse explicitement ouverts les arbitrages
+  de la demande retenue ; BHV095 est le seul comportement nommé.
+proposal:
+  name: Demand Planning
+  parent_id: D04
+  nature: planning
+  definition: Construire, comparer et actualiser un plan de demande à couvrir, en rapprochant prévisions, ventes observées
+    et commandes connues ; expliciter les hypothèses et l’incertitude, puis rendre la demande retenue utilisable par les plans
+    de couverture.
+  responsibilities:
+  - Concilier les prévisions et contributions métier en conservant leurs hypothèses.
+  - Distinguer les commandes connues des prévisions restantes pour éviter le double comptage.
+  - Retenir une référence de demande avec son horizon, sa granularité et son incertitude.
+  boundary: Une insuffisance de supply ne réduit pas silencieusement la demande estimée. Le plan de couverture expose ce qui
+    peut être satisfait et les écarts. Un scénario de demande révisé reste explicite. Demand Planning ne promet pas les commandes
+    et ne décide pas les apports.
+  example: 'Prévision totale de 1 000 pièces incluant les 300 pièces déjà commandées : besoin restant de 700, sous cette hypothèse
+    de recouvrement. Une couverture de 800 laisse un écart de 200 ; elle ne transforme pas automatiquement la demande en 800.'
+  decomposition_next: Préciser les résultats décisionnels avant de créer des capacités Decision distinctes. Conserver Demand
+    Plan Publication ; comparer ensuite ses modalités avec Apply Plan et instruire les comportements de simulation et ajustement
+    sans dupliquer automatiquement ceux du plan de couverture.
+market_comparisons:
+- source_ref: ELM556
+  source_url: https://www.sap.com/products/scm/integrated-business-planning/features/demand-planning.html
+  consulted_on: '2026-09-23'
+  source_version: Page évolutive, édition non indiquée
+  locator: Increase forecast accuracy through collaboration ; Refine short-term forecasts
+  similarities: Prévision combinant contributions métier et signaux de commandes, utilisable pour préparer la supply.
+  limits: Présentation produit ; ne démontre pas les règles locales de consommation ni une taxonomie de décisions FLOW.
+- source_ref: ELM557
+  source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+  consulted_on: '2026-09-23'
+  source_version: 26B
+  locator: Demand Plan ; Supply Plan ; Demand and Supply Plan
+  similarities: Prévision collaborative et statistique, utilisable en entrée du plan Supply ou Replenishment.
+  limits: Types de plans produit ; ne prescrit pas la hiérarchie FLOW ni les règles de rapprochement commande/prévision.
+rationale: Conserver nom et responsabilité documentés, préciser le résultat métier avant de décomposer. La séparation entre
+  estimation de demande et couverture évite de masquer les besoins non couverts.
+approval_scope_if_accepted:
+- Nom, type et parent conservés
+- Définition proposée
+- Responsabilités et frontière présentées
+not_approved:
+- Nouvelles capacités de décision
+- Nouveaux comportements ou renommage de BHV095
+clarification_U652:
+  source_refs:
+  - U652
+  - U10
+  - U530
+  - U531
+  - U532
+  - U555
+  status: clarification_not_approval
+  answer: 'Demand Planning correspond à la partie de MAP qui prévoit les ventes et construit la demande à couvrir. Le périmètre
+    déclaré de MAP dépasse cette capacité : protections, stockage et achats planifiés.'
+  plain_language: Quelles ventes anticipons-nous, pour quels produits, quels canaux et quelles périodes, compte tenu des ventes
+    observées et des précommandes connues ?
+  market_context: ELM556 et ELM557, relus lors de U651, confortent cette distinction entre prévision de demande et planification
+    de sa couverture. Ils ne prouvent aucune réalisation dans MAP.

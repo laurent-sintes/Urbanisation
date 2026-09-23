@@ -37,13 +37,13 @@ source_files:
 space: backlog
 nodes:
 - id: universe-supply
-  revision: 8
+  revision: 10
   kind: domain
   fields:
     name: Supply Chain Orchestration
-    definition: Organiser la satisfaction des demandes Supply en rapprochant besoins, ressources présentes ou attendues et
-      règles applicables, puis piloter les services nécessaires à leur réalisation et adapter les choix lorsque la situation
-      change.
+    definition: 'La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations
+      pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements
+      nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats.'
     market_comparisons:
     - vendor: Zacharia, Sanders et Nix
       product: Recherche — Journal of Business Logistics
@@ -232,6 +232,32 @@ nodes:
       concept_name: Supply Chain Orchestration
       scope_summary: De la planification à l’exécution dans le positionnement Kinaxis.
       approach_summary: Coordonner plans, décisions et opérations.
+    - vendor: Kinaxis
+      product: Supply chain orchestration / transportation management
+      source_title: What is transportation management?
+      source_url: https://www.kinaxis.com/en/transportation-management
+      source_version: Page évolutive ; aucune édition affichée
+      source_locator: From integration to end-to-end supply chain orchestration
+      consulted_on: '2026-09-23'
+      concept_name: Supply chain orchestration
+      element_name: Supply chain orchestration
+      element_type: Explication et positionnement éditeur
+      relationship: Appui sémantique et recouvrement partiel
+      scope_summary: Planification et exécution reliées dans une même boucle de décision.
+      approach_summary: Maintenir le lien entre décisions de ressources et engagements lorsque les conditions changent.
+      similarities: Orchestration englobe décision, réalisation et adaptation.
+      differences: FLOW retient le nom Supply Chain Orchestration, également employé par Kinaxis. Sa définition décrit les
+        responsabilités métier du Domain sans reprendre le périmètre entier de l’offre produit.
+      evidence_limits: Appui au vocabulaire et au lien entre planification et réalisation ; ni consensus interéditeurs établi
+        par ces deux documents Kinaxis, ni architecture obligatoire, ni réalisation installée prouvés.
+      flow_position: 'U650 retient Supply Chain Orchestration : orchestrer la supply pour satisfaire la demande, avec la métaphore
+        de l’organe de régulation.'
+      status: proposed
+      source_refs:
+      - ELM647
+      - CMP268
+      - U646
+      - U650
     examples:
     - title: Livrer 100 tee-shirts à un magasin vendredi
       situation: Le magasin attend 100 tee-shirts pour vendredi. Un entrepôt en détient 60 et un fournisseur doit en livrer
@@ -257,6 +283,8 @@ nodes:
     finality: Satisfaire les besoins de la chaîne d’approvisionnement avec des engagements explicites et une utilisation cohérente
       des ressources.
     scope: |-
+      Le rôle d’organe de régulation couvre deux dimensions complémentaires : Demand/Supply Matching & Balancing, pour déterminer les équilibres et réponses recherchés ; orchestration de la supply, pour faire prendre en compte ces choix, coordonner leur réalisation et les réexaminer à partir des résultats.
+
       Le Domain articule six finalités : références et policies, demandes, apports attendus, stock, arbitrage du plan et réalisation. Elles coopèrent ; elles ne forment pas six étapes rigides.
 
       Demand porte besoins, exigences et promesses ; Supply connaît les apports à venir ; Inventory représente le stock et ses projections ; Demand & Supply Optimization construit le plan commun ; Fulfillment sollicite et suit les Services au moyen de Tasks. Références et policies partagent un Purpose tout en distinguant vérité externe, CRUD local et vues construites.
@@ -264,15 +292,20 @@ nodes:
       Le Domain orchestre les prestations physiques, humaines ou numériques utiles à la Supply ; il ne devient pas un domaine générique de tous les services de l’entreprise. Les exécutants conservent leurs opérations internes, les maîtres externes leurs références d’entreprise et les fonctions commerciales leur périmètre propre. Les processus peuvent traverser ces frontières sans créer de nouveaux niveaux.
 
       Exemple fictif : une campagne augmente les demandes. Le domaine compare les ressources et ajustements possibles, fait porter les engagements par les demandes, puis suit leur réalisation, y compris une reprise depuis un autre site pour les seules quantités manquantes.
+
+      « Organe » exprime une cohérence de rôle dans un ensemble adaptable. Cette responsabilité peut être portée par plusieurs systèmes, des règles, de l’IA et des interventions humaines ; aucune centralisation ni autonomie technique obligatoire n’est imposée.
     market_inspiration:
-      choice: Satisfaire les besoins de la chaîne d’approvisionnement avec des engagements explicites et une utilisation cohérente
-        des ressources.
-      flow_scope: Organiser la satisfaction des demandes Supply en rapprochant besoins, ressources présentes ou attendues
-        et règles applicables, puis piloter les services nécessaires à leur réalisation et adapter les choix lorsque la situation
-        change.
-      flow_approach: FLOW retient la coordination de besoins, ressources, engagements et partenaires au sein du périmètre
-        Supply, sans absorber leurs opérations internes ni imposer le découpage d’un produit.
+      choice: Supply Chain Orchestration orchestre les ressources et prestations pour satisfaire la demande, en reliant Matching
+        & Balancing, application des changements et coordination de leur réalisation.
+      flow_scope: 'La Supply Chain Orchestration est l’organe de régulation qui organise et adapte les ressources et les prestations
+        pour satisfaire la demande : elle arbitre les priorités, les affectations et les apports, fait appliquer les changements
+        nécessaires aux commandes et aux engagements, puis coordonne les prestations et suit leurs résultats.'
+      flow_approach: Le domaine réunit Matching & Balancing et orchestration de la mise en œuvre dans un fonctionnement adaptable,
+        sans imposer un système central unique ou un recours systématique à l’IA.
       synthesis:
+      - U646–U650 — Kinaxis emploie Supply Chain Orchestration pour relier planification et exécution dans une même boucle
+        de décision. FLOW retient ce nom, la satisfaction de la demande comme finalité et la métaphore d’un organe de régulation.
+        Les autres rapprochements gardent leur portée propre.
       - L’orchestration coordonne un réseau de partenaires et facilite leur coopération par le partage de l’information. L’article
         étudie le rôle d’un prestataire logistique coordonnant plusieurs entreprises. FLOW décrit des responsabilités métier
         sans imposer ce prestataire ni cette organisation.
@@ -326,35 +359,45 @@ nodes:
   - U618
   - U624
   - U626
+  - U646
+  - U644
+  - U645
+  - ELM647
+  - CMP268
+  - U647
+  - U648
+  - U649
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u373
   review:
     state: partial
-    note: Décisions antérieures transcrites ; nouvelles formulations et contextes proposés U626, sans accord global.
+    note: 'U650 : nom et définition adoptés ; autres champs non adoptés par extension.'
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-23T15:00:46.992417Z'
     recorded_by: Codex
     source_refs:
-    - U373
-    - U475
-    - U482
-    - U626
+    - U650
     validated_fields:
     - name
+    - definition
     value_sha256:
       name: 9925b1127336fae5e805d2ed6df17bfb9944ae49acb73799038f3f8e433cd6f7
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+      definition: 99f600cb9b5838c914b14fd1ecfdbb305d20d12be44b5534dbc5ad24839275ca
+    note: Nom et définition adoptés U650 ; remplace U646 sur ces deux champs.
+  last_modified: '2026-09-23T15:00:46.992417Z'
   proposed_fields:
-  - scope
-  - definition
-  - finality
   - market_comparisons
+  - examples
+  - finality
+  - scope
   - market_inspiration
+  approved_fields:
+  - name
+  - definition
 - id: business-references
   revision: 8
   kind: area
@@ -652,7 +695,7 @@ nodes:
   - name
   - scope
 - id: D08
-  revision: 6
+  revision: 8
   kind: reference
   fields:
     name: Product Reference
@@ -786,6 +829,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d08-produits-opérationnels
@@ -816,6 +861,8 @@ nodes:
   - independence
   - market_comparisons
   - examples
+  - mastership
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: D01.f
   revision: 4
   kind: capability
@@ -1383,7 +1430,7 @@ nodes:
   proposed_fields:
   - nature
 - id: D02.b
-  revision: 6
+  revision: 8
   kind: capability
   fields:
     name: Supply Protection
@@ -1616,6 +1663,8 @@ nodes:
   - U614
   - U615
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d01-stocks
@@ -1642,12 +1691,13 @@ nodes:
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T15:00:46.992417Z'
   proposed_fields:
   - market_comparisons
   - market_inspiration
   - scope
   - nature
+  - mastership
 - id: D02.c
   revision: 5
   kind: capability
@@ -2290,7 +2340,7 @@ nodes:
     note: 'U509 : seuls les champs indiqués et le sens présenté sont adoptés ; détails éditoriaux et nouvelles capacités proposés.'
   adoption_ids: []
 - id: D02.e
-  revision: 19
+  revision: 23
   kind: behavior
   fields:
     name: Apply Plan
@@ -2298,6 +2348,10 @@ nodes:
     finality: Distinguer le plan retenu des effets effectivement pris en compte et rendre visibles les écarts.
     nature: planning_practice
     scope: |-
+      Le plan porte l’échéancier des mises à jour. Apply Plan peut appliquer une partie des changements. Il distingue les changements appliqués, en attente ou refusés.
+
+      L’application peut être progressive selon cet échéancier ou sélective sur une partie des changements. Cette sélection volontaire est distincte d’une application incomplète provoquée par un refus. L’échéancier concerne la mise en application des changements ; [Schedule Planning](model:BHV097) programme le travail de planification. Ces modalités restent décrites dans Apply Plan, sans sous-comportement.
+
       Faire appliquer les recommandations autorisées du plan commun et établir les effets effectivement pris en compte, refusés ou partiels. Vérifier leurs conditions et interdépendances au moment de l'application ; une recommandation devenue inapplicable reste visible pour réexamen. Aucun retour arrière global ni transaction atomique du plan n'est supposé.
 
       Les familles d'effets comprennent les liens ressources-besoins, les nouveaux apports et ajustements d'Orders, les changements autorisés d'échéanciers et de promesses et les politiques à rendre applicables. Elles décrivent le contenu de ce comportement terminal, sans sous-comportements. Les décisions gardent les arbitrages ; Demand, Inventory et Reference & Policy Management conservent commandes, engagements, réservations et politiques. Fulfillment orchestre les prestations.
@@ -2308,7 +2362,11 @@ nodes:
 
       [Purchase Order](model:D04.j), [Transfer Order](model:D04.k), [Consignment Fill-up Order](model:D04.r) et [Order Lifecycle Management](model:D04.o) portent les demandes et leurs changements autorisés. [Fulfillment Commitment](model:D03.n) porte les propositions et engagements de satisfaction ; une affectation peut changer sans modifier la promesse, et réciproquement. [Reservation](model:D02.c) tient les engagements de réservation. [Supply Protection](model:D02.b) et les autres capacités Policy mettent en vigueur les règles retenues. L'application les mobilise sans transférer leur responsabilité et sans créer un engagement fournisseur implicite.
 
-      Le résultat et les écarts alimentent le suivi du Planning et [Scenario Execution Adaptation](model:BHV016). Une sollicitation acceptée n'établit pas l'application complète ; l'application partielle ne devient pas silencieusement un nouveau plan. La réalisation physique reste distincte. Exemple fictif : un transfert de 30 pièces est pris en compte mais un achat de 70 est refusé ; conserver le transfert et le refus, rendre visible le manque et faire réexaminer les possibilités. Une politique appliquée et un transfert partiel sont également deux résultats distincts ; le reliquat reste explicite.
+      Le résultat et les écarts alimentent [Monitor Plan](model:BHV101) et [Adjust Plan](model:BHV016). Une sollicitation acceptée n'établit pas l'application complète ; l'application partielle ne devient pas silencieusement un nouveau plan. La réalisation physique reste distincte. Exemple fictif : un transfert de 30 pièces est pris en compte mais un achat de 70 est refusé ; conserver le transfert et le refus, rendre visible le manque et faire réexaminer les possibilités. Une politique appliquée et un transfert partiel sont également deux résultats distincts ; le reliquat reste explicite.
+
+      Apply Plan vérifie ou recueille les autorisations nécessaires à l’application des changements sélectionnés, puis fait appliquer ceux qui sont autorisés. Une autorisation ne prouve pas leur prise en compte effective. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques. L’autorisation peut être humaine ou fondée sur des règles, et différer selon les changements et leurs échéances ; elle ne remplace pas les contrôles des partenaires.
+
+      Pour une commande partiellement engagée, faire examiner chaque changement à la maille de la partie concernée, selon son état réel, ses engagements, protections et dépendances. Une partie non démarrée peut être révisée sous ces conditions ; une partie engagée exige d’examiner les possibilités d’adaptation, d’arrêt ou de reprise avec Fulfillment. Conserver les effets réalisés et traiter explicitement toute correction ou opération inverse. Une livraison complète peut lier les quantités non démarrées aux quantités déjà préparées.
     market_comparisons:
     - vendor: SAP
       product: S/4HANA Fashion — Supply Assignment (ARun)
@@ -2610,25 +2668,25 @@ nodes:
       - ELM578
       - CMP237
     - vendor: Oracle
-      product: Fusion Cloud Supply Chain Planning
+      product: Oracle Fusion Cloud SCM
       source_title: Manually Release Plan Recommendations
       source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
       source_version: 26B
-      source_locator: Introduction ; release process ; exceptions
+      source_locator: Introduction ; release results ; requests not processed
       consulted_on: '2026-09-23'
+      concept_name: Manually Release Plan Recommendations
       element_name: Manually Release Plan Recommendations
-      element_type: Fonctions et parcours produit documentés
-      relationship: Appui fonctionnel partiel
-      similarities: Les recommandations peuvent produire de nouveaux Orders ou des révisions ; les demandes et exceptions
-        de prise en compte restent distinguées.
-      differences: Le passage à l’exécution Oracle est un appui fonctionnel ; il ne prouve ni une commande ferme automatique,
-        ni une hiérarchie de capacités FLOW, ni une pratique MAP installée.
-      evidence_limits: Le passage à l’exécution Oracle est un appui fonctionnel ; il ne prouve ni une commande ferme automatique,
-        ni une hiérarchie de capacités FLOW, ni une pratique MAP installée.
-      flow_position: 'Appui partiel à une famille d’effets de Apply Plan : FLOW porte l’application des ajustements de stock
-        comme comportement du Planning, en conservant la gestion des Orders et des politiques chez leurs responsables. Le
-        libellé complet est une formulation FLOW ; deux documents Oracle étayent les fonctions, pas un consensus de découpage.
-        Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.'
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Transmettre des recommandations nouvelles ou de replanification, puis examiner les demandes non traitées.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Transmettre des recommandations nouvelles ou de replanification, puis examiner les demandes non traitées.
+      differences: Le passage des recommandations aux systèmes responsables est documenté ; notification client et atomicité
+        globale ne le sont pas.
+      evidence_limits: Le passage des recommandations aux systèmes responsables est documenté ; notification client et atomicité
+        globale ne le sont pas. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
       status: proposed
       source_refs:
       - ELM566
@@ -2636,9 +2694,8 @@ nodes:
       - CMP229
       - U560
       - CMP234
-      concept_name: Manually Release Plan Recommendations
-      scope_summary: Recommandations nouvelles ou révisées et suites sur les Orders.
-      approach_summary: Sélectionner les recommandations, les transmettre et examiner les exceptions.
+      - CMP266
+      - U636
     - vendor: Oracle
       product: Fusion Cloud Supply Chain Planning
       source_title: Automatic Release Options
@@ -2693,6 +2750,213 @@ nodes:
       source_refs:
       - ELM588
       - U631
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Firm planned orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+      source_version: Documentation évolutive ; mise à jour affichée 2026-03-25
+      source_locator: Manual firming ; Auto-firming ; Query-based firming ; Track firmed orders
+      consulted_on: '2026-09-23'
+      concept_name: Firm planned orders
+      element_name: Firm planned orders
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Transformer des ordres planifiés en commandes réelles, manuellement ou automatiquement, avec historique
+        et gestion des erreurs.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Transformer des ordres planifiés en commandes réelles, manuellement ou automatiquement, avec historique
+        et gestion des erreurs.
+      differences: Le firming concerne la création de commandes d’achat, transfert ou production ; il ne couvre pas seul la
+        révision des commandes client.
+      evidence_limits: Le firming concerne la création de commandes d’achat, transfert ou production ; il ne couvre pas seul
+        la révision des commandes client. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM419
+      - CMP266
+      - U636
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: View, manage, and approve planned orders
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order
+      source_version: Documentation évolutive ; mise à jour affichée 2026-09-02
+      source_locator: View and edit the status ; Approve planned orders
+      consulted_on: '2026-09-23'
+      concept_name: View, manage, and approve planned orders
+      element_name: View, manage, and approve planned orders
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Distinguer approbation optionnelle et firming ; préserver des propositions approuvées lors des calculs
+        suivants.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Distinguer approbation optionnelle et firming ; préserver des propositions approuvées lors des calculs
+        suivants.
+      differences: Approved reste un état du plan et ne prouve pas une commande réelle ; ne pas importer un workflow humain
+        obligatoire.
+      evidence_limits: Approved reste un état du plan et ne prouve pas une commande réelle ; ne pas importer un workflow humain
+        obligatoire. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM416
+      - CMP266
+      - U636
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Action messages
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+      source_version: Documentation évolutive ; mise à jour affichée 2026-03-26
+      source_locator: Introduction ; Select action messages
+      consulted_on: '2026-09-23'
+      concept_name: Action messages
+      element_name: Action messages
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Proposer avances, reports et changements de quantité sur des ordres existants, dont l’application reste
+        à décider.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Proposer avances, reports et changements de quantité sur des ordres existants, dont l’application reste
+        à décider.
+      differences: Une suggestion issue du calcul n’est pas sa réalisation ; la page ne démontre pas une application globale
+        de plan.
+      evidence_limits: Une suggestion issue du calcul n’est pas sa réalisation ; la page ne démontre pas une application globale
+        de plan. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM413
+      - CMP266
+      - U636
+    - vendor: SAP
+      product: SAP IBP / S/4HANA
+      source_title: Describing Deployment Planning and Reasoning behind Execution
+      source_url: https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-deployment-planning-and-reasoning-behind-execution_ed054de6-f7e2-4928-89be-2dab21e6a043
+      source_version: Cours SAP Learning évolutif, sans édition affichée dans le passage
+      source_locator: Deployment Plan in SAP S/4HANA ; Deployment Status
+      consulted_on: '2026-09-23'
+      concept_name: Describing Deployment Planning and Reasoning behind Execution
+      element_name: Describing Deployment Planning and Reasoning behind Execution
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Intégrer les demandes de transfert du plan dans S/4HANA, puis les convertir en ordres de transfert avec
+        statuts cohérents.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Intégrer les demandes de transfert du plan dans S/4HANA, puis les convertir en ordres de transfert avec
+        statuts cohérents.
+      differences: Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique
+        ni cycle complet des notifications client.
+      evidence_limits: Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique
+        ni cycle complet des notifications client. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM643
+      - CMP266
+      - U636
+    - vendor: Oracle
+      product: Oracle Fusion Cloud SCM
+      source_title: Examine Error Messages for Sales Orders
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html
+      source_version: 26A
+      source_locator: Order Management Rejects a Change Order
+      consulted_on: '2026-09-23'
+      concept_name: Examine Error Messages for Sales Orders
+      element_name: Examine Error Messages for Sales Orders
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Refuser et tracer une modification de commande lorsque l’expédition a déjà eu lieu.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Refuser et tracer une modification de commande lorsque l’expédition a déjà eu lieu.
+      differences: Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la frontière
+        de l’application.
+      evidence_limits: Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la
+        frontière de l’application. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM644
+      - CMP266
+      - U636
+    - vendor: Oracle
+      product: Oracle Retail Order Administration
+      source_title: Working with E-Mail Notification Templates (WEMT)
+      source_url: https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm
+      source_version: Oracle Retail OMS Suite Cloud 25.2.301.0
+      source_locator: Summary of Customer Correspondence ; Backorder Notification Email Sample and Contents
+      consulted_on: '2026-09-23'
+      concept_name: Working with E-Mail Notification Templates (WEMT)
+      element_name: Working with E-Mail Notification Templates (WEMT)
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Générer des notifications client pour attentes de livraison, annulations et autres événements de commande.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Générer des notifications client pour attentes de livraison, annulations et autres événements de commande.
+      differences: Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release
+        du plan et mail n’est démontré.
+      evidence_limits: Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release
+        du plan et mail n’est démontré. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM645
+      - CMP266
+      - U636
+    - vendor: Kinaxis
+      product: Maestro
+      source_title: Supply Chain Orchestration
+      source_url: https://www.kinaxis.com/en/solutions/supply-chain-orchestration
+      source_version: Page produit évolutive, sans édition affichée
+      source_locator: The value of orchestration
+      consulted_on: '2026-09-23'
+      concept_name: Supply Chain Orchestration
+      element_name: Supply Chain Orchestration
+      element_type: Positionnement produit
+      relationship: Appui de positionnement général
+      scope_summary: Relier planification, opérations et partenaires dans un périmètre allant jusqu’à la livraison.
+      approach_summary: Passer des résultats préparés aux opérations selon les mécanismes propres au produit.
+      similarities: Relier planification, opérations et partenaires dans un périmètre allant jusqu’à la livraison.
+      differences: Positionnement commercial général, moins probant qu’un contrat fonctionnel ; aucun détail suffisant sur
+        refus, autorisations ou notifications.
+      evidence_limits: Positionnement commercial général, moins probant qu’un contrat fonctionnel ; aucun détail suffisant
+        sur refus, autorisations ou notifications. Aucune réalisation installée démontrée.
+      flow_position: Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636
+        proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+      status: proposed
+      source_refs:
+      - ELM551
+      - CMP266
+      - U636
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Work line details
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/work-line-details
+      source_version: Documentation évolutive ; mise à jour affichée 2025-10-03
+      source_locator: 'Part 3: Change the quantity of a work line or cancel a work line'
+      consulted_on: '2026-09-23'
+      concept_name: Partial work quantity cancellation
+      element_name: Work line details
+      element_type: Documentation fonctionnelle ou formation produit
+      relationship: Recouvrement fonctionnel partiel
+      scope_summary: Réduction partielle de quantité de travail de préparation et correction associée du chargement.
+      approach_summary: Mettre en cohérence travail et chargement après réduction partielle.
+      similarities: Une partie peut être modifiée avec des conséquences à propager sur le chargement.
+      differences: Fonction de gestion du travail d’entrepôt ; ne définit pas un droit général de révision des commandes ou
+        un seuil universel de réversibilité.
+      evidence_limits: Appui spécialisé, sans preuve de réalisation installée.
+      flow_position: U642 apprécie la modification à la maille de la partie concernée, avec ses engagements et dépendances
+        ; les responsables conservent leur autorité.
+      status: proposed
+      source_refs:
+      - ELM646
+      - CMP267
+      - U642
     examples:
     - title: Répartir une pénurie sans scinder les commandes
       situation: Deux commandes demandent 100 et 200 pièces ; 150 pièces sont disponibles.
@@ -2756,6 +3020,11 @@ nodes:
         Les deux documents décrivent des mécanismes du même éditeur, pas un consensus de taxonomie.
       - FLOW fait de cette application un comportement du Planning ; Supply Protection, les familles d’Orders et Process Orchestration
         gardent leurs responsabilités. Appliquer le plan n’équivaut pas à réaliser les prestations physiques.
+      - U636 — Microsoft précise conversion, approbation, suggestions de révision et historique ; SAP relie déploiement et
+        ordres de transfert ; Oracle documente release, refus et notifications côté commandes. Kinaxis situe la continuité
+        planning-opérations sans en détailler les contrats.
+      - Le passage à l’opérationnel est étayé ; la coordination des notifications et autres conséquences est une précision
+        FLOW proposée. Aucune bascule atomique du plan ni autonomie d’une capacité Apply Plan ne sont démontrées.
       examples:
       - title: SAP — un arrivage lié à une commande
         situation: Le cours SAP décrit une commande déjà affectée à un achat attendu.
@@ -2890,13 +3159,29 @@ nodes:
   - ELM570
   - U626
   - U631
+  - U636
+  - CMP266
+  - ELM419
+  - ELM416
+  - ELM413
+  - ELM643
+  - ELM644
+  - ELM645
+  - ELM551
+  - U637
+  - U638
+  - U639
+  - U641
+  - U642
+  - CMP267
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d03-promesse-de-fourniture
     line: 176
   review:
     state: partial
-    note: Regroupement U631 appliqué ; détails de décomposition et compléments éditoriaux non adoptés globalement.
+    note: U641 adopte le retrait de Scenario Authorization et la répartition présentée ; portées antérieures conservées, champs
+      développés non adoptés en bloc.
   adoption_ids:
   - ADOPT-007
   lifecycle:
@@ -2929,7 +3214,7 @@ nodes:
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.
     U345 : principe d’application de plan sous Supply Assignment et explication des recommandations intégrés ; formulation
     détaillée éditoriale.'
-  last_modified: '2026-09-23T10:40:15.075567Z'
+  last_modified: '2026-09-23T14:24:43.303897Z'
 - id: D03.i
   revision: 4
   kind: capability
@@ -5322,7 +5607,7 @@ nodes:
   proposed_fields:
   - scope
 - id: D04.o
-  revision: 15
+  revision: 16
   kind: capability
   fields:
     name: Order Lifecycle Management
@@ -5343,6 +5628,10 @@ nodes:
       U424 : six comportements remplacent les huit mécanismes antérieurs. Le changement d’échéance du besoin est intégré à Order Preparation & Revision ; annulation et clôture restent distinguées dans Order Termination. Identifiants des comportements conservés ou retirés avec succession explicite. Depuis U438, Order Structuring et Order Archiving appartiennent à D04 ; aucune décomposition inférieure aux comportements.
 
       Pour les propositions reçues d’un plan amont, [Purchase Order](model:D04.j) ou [Transfer Order](model:D04.k) conserve la demande selon sa nature. Le cycle de vie gouverne sa préparation, ses révisions et son éventuel affermissement. La disparition d’une proposition du plan source n’efface ni un Order engagé ni les réalisations acquises ; la suite relève des transitions autorisées. La maîtrise du plan d’origine reste extérieure à cette capacité.
+
+      La possibilité de modifier une commande s’évalue sur la partie concernée, selon son état réel, ses engagements et ses dépendances. Le Planning propose les changements ; Apply Plan les fait prendre en compte auprès des responsables. Fulfillment traite les conséquences sur les prestations déjà engagées.
+
+      La portée est une quantité, une ligne ou un ensemble lié. Réviser une partie non démarrée reste soumis aux autorisations, protections et engagements ; pour une partie engagée, examiner les possibilités d’adaptation, d’arrêt ou de reprise. Un effet réalisé reste acquis : sa correction ou une opération inverse doit être explicite. Exemple fictif : sur 100 pièces, 40 sont en préparation ; les 60 restantes ne sont pas automatiquement figées ni librement modifiables, notamment si la livraison complète est requise.
     decomposition_rationale: Une commande peut être ferme, partiellement libérée, gelée sur certains éléments et suspendue
       sur une progression, tandis qu’une modification reste en brouillon. Ces effets distincts et leurs contraintes de combinaison
       justifient six mécanismes métier, sans comportement par état ni cycle linéaire universel. Préparation/révision distingue
@@ -5555,6 +5844,8 @@ nodes:
   - CMP189
   - U560
   - CMP234
+  - U642
+  - CMP267
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u214
@@ -5583,13 +5874,13 @@ nodes:
       definition: 9f053fbcb745d2cf70709d9ec7161f2f6581100dcc03d7f0014911e4834dc76b
     note: 'Intégration U290 ; détails éditoriaux proposés. U424 : définition présentée adoptée ; six dimensions et listing
       des états demandés. Détails rédigés éditoriaux.'
-  last_modified: '2026-09-21T12:36:42.783025Z'
+  last_modified: '2026-09-23T14:24:43.303897Z'
   proposed_fields:
   - market_comparisons
   - market_inspiration
   - scope
 - id: D13
-  revision: 4
+  revision: 6
   kind: reference
   fields:
     name: Fulfillment Network
@@ -5691,6 +5982,8 @@ nodes:
   - U614
   - U615
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d13-fulfillment-network
@@ -5717,9 +6010,10 @@ nodes:
       name: 088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31
     note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T15:00:46.992417Z'
   proposed_fields:
   - definition
+  - mastership
 - id: D05.a
   revision: 9
   kind: capability
@@ -6505,7 +6799,7 @@ nodes:
   approved_fields:
   - name
 - id: D05.f
-  revision: 15
+  revision: 20
   kind: capability
   fields:
     name: Demand & Supply Optimization Planning
@@ -6518,20 +6812,29 @@ nodes:
 
       [Demand Planning](model:D17.a) fournit la demande retenue à couvrir. [Fulfillment Plan Decision](model:D03.o) et les décisions spécialisées déterminent les possibilités, affectations, cibles, protections, apports, priorités et échéanciers ainsi que leur compatibilité. Le Planning organise leur mobilisation, compare les scénarios et maintient la référence retenue. Plusieurs scénarios peuvent être étudiés ; hypothèses, conditions, effets interdépendants et reste non couvert doivent rester identifiables. Aucun ordre universel de calcul, moteur unique ou optimum mathématique garanti n'est imposé.
 
-      Le travail comprend cadrage et suivi de la demande de planification, construction d'alternatives, simulation et analyse, autorisation des suites, mise en œuvre et ajustement face aux écarts. [Apply Plan](model:D02.e) fait appliquer les recommandations autorisées et constate leur prise en compte. [Scenario Execution Adaptation](model:BHV016) ajuste le plan commun en tenant compte des effets acquis et des nouvelles conditions. Les cinq actes de pilotage sont portés directement par [Scope Planning](model:D04.s), [Schedule Planning](model:BHV097), [Run Planning](model:BHV098), [Stop Planning](model:BHV099), [Rerun Planning](model:BHV100). Ils n’imposent ni séquence obligatoire ni intervention humaine. Le suivi du travail jusqu’à sa conclusion reste une responsabilité du Planning commun, distincte de son seul cadrage. Arrêter un calcul ne défait pas les effets déjà pris en compte.
+      Le travail comprend cadrage et suivi de la demande de planification, construction d'alternatives, simulation et analyse, autorisation des suites, mise en œuvre et ajustement face aux écarts. [Apply Plan](model:D02.e) fait appliquer les recommandations autorisées et constate leur prise en compte. [Monitor Plan](model:BHV101) observe les effets, les nouvelles conditions et les besoins de réexamen. [Adjust Plan](model:BHV016) prépare une révision cohérente en tenant compte des effets acquis ; ses suites restent soumises aux autorisations et à Apply Plan. Les cinq actes de pilotage sont portés directement par [Scope Planning](model:D04.s), [Schedule Planning](model:BHV097), [Run Planning](model:BHV098), [Stop Planning](model:BHV099), [Rerun Planning](model:BHV100). Ils n’imposent ni séquence obligatoire ni intervention humaine. Le suivi du travail jusqu’à sa conclusion reste une responsabilité du Planning commun, distincte de son seul cadrage. Arrêter un calcul ne défait pas les effets déjà pris en compte.
 
-      Les capacités de Demand conservent les Orders, leurs évolutions et les propositions, confirmations et révisions de promesse. Inventory conserve faits de stock et réservations. Reference & Policy Management porte la mise en vigueur des règles ; une politique proposée par le plan ne devient pas automatiquement applicable. Fulfillment coordonne et adapte les prestations engagées. Les capacités partenaires restent responsables de leurs résultats, même lorsqu'elles sont mobilisées par Apply Plan. Une demande ferme peut être révisée selon les conditions applicables avant son début d'exécution ; la portée d'un début partiel reste à préciser.
+      Les capacités de Demand conservent les Orders, leurs évolutions et les propositions, confirmations et révisions de promesse. Inventory conserve faits de stock et réservations. Reference & Policy Management porte la mise en vigueur des règles ; une politique proposée par le plan ne devient pas automatiquement applicable. Fulfillment coordonne et adapte les prestations engagées. Les capacités partenaires restent responsables de leurs résultats, même lorsqu'elles sont mobilisées par Apply Plan. Une demande ferme peut être révisée selon les conditions applicables avant son début d'exécution ; la portée d’un début partiel s’apprécie sur la partie concernée selon les engagements et dépendances (U642).
 
       Exemple fictif : un scénario prévoit un transfert de 30 pièces et un nouvel achat de 70. Le transfert est pris en compte ; l'achat est refusé. Le Planning conserve le résultat du transfert, rend visible le manque de couverture et mobilise les décisions pour réexaminer les possibilités. Il ne considère pas les 100 pièces comme acquises et n'efface pas le transfert. Une recommandation dépendant d'un autre effet doit être réexaminée avant sa propre application. Une simulation ou une autorisation ne prouve ni réservation, ni promesse confirmée, ni réception.
 
       Les analyses de stock restent couvertes : comparer des cibles de couverture à 10 ou 15 jours, les apports de lancement ou de réassort, les redistributions, réductions et reports d'apports, puis apprécier service, immobilisation, coûts et risques. La valeur est multidimensionnelle sans pondération universelle. Les politiques consommées restent extérieures. Les analyses d'affectation comprennent les commandes et prévisions restantes, même avant commande, et peuvent conclure sans changement. Les horizons et hypothèses se choisissent selon le problème ; cette responsabilité ne duplique pas la construction de la demande dans Demand Planning.
 
       Le travail de planification reste une sollicitation interne au Domain, dite Backoffice, qui peut répondre à un impondérable, une échéance de revue ou une étude volontaire. Ces origines peuvent se combiner sans imposer un dossier manuel ni un recalcul intégral à chaque événement. Le Planning conserve progression et conclusion du travail, y compris une étude abandonnée ou conclue sans application ; il ne suit pas à la place des exécutants leurs opérations.
+
+      Le plan porte l’échéancier des mises à jour à appliquer. [Apply Plan](model:D02.e) peut appliquer une partie des changements et distingue les changements appliqués, en attente ou refusés. Cette modalité progressive ou sélective reste dans Apply Plan, sans comportement supplémentaire.
+
+      Examiner, retenir, faire revoir ou abandonner une proposition relève du Planning commun ; pour une révision, ce travail relève d’Adjust Plan. Retenir le plan ne rend pas tous ses effets immédiatement applicables. [Apply Plan](model:D02.e) vérifie ou recueille les autorisations des changements sélectionnés. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques.
+
+      La proposition de révision s’évalue à la maille de la partie concernée : quantité, ligne ou ensemble lié, selon l’état réel, les engagements et les dépendances. Un début partiel ne fige pas automatiquement toute la commande et ne rend pas librement modifiable le reste. [Apply Plan](model:D02.e) fait prendre en compte les changements admissibles ; Fulfillment traite les conséquences sur les prestations engagées.
     decomposition_rationale: 'Le cadrage, la programmation, le lancement, l’arrêt confirmé et le nouveau calcul produisent
       des résultats distincts : question délimitée, calendrier établi, travail engagé, arrêt effectif et travail réengagé.
       Les distinguer évite de confondre lancement, autorisation et application, ou arrêt du calcul et annulation des effets.
-      Ces comportements sont directs et combinables sans cycle imposé. La construction des alternatives, leur analyse, leur
-      autorisation, leur application et leur ajustement restent distingués ; le détail suivi/ajustement reste à instruire.'
+      Ces comportements sont directs et combinables sans cycle imposé. La construction des alternatives, leur projection et
+      leur analyse forment Simulation & Analysis ; application et ajustement conservent leurs résultats distincts, et les
+      autorisations sont décrites dans ces travaux selon leur portée, sans comportement autonome ; Monitor Plan rend les écarts
+      visibles, tandis qu’Adjust Plan prépare leur réponse cohérente. Ce bénéfice justifie deux comportements distincts sans
+      séquence imposée ni reprise du suivi opérationnel des partenaires.'
     market_comparisons:
     - vendor: Oracle
       product: Oracle Fusion Cloud SCM
@@ -7097,12 +7400,21 @@ nodes:
   - ELM575
   - U631
   - U632
+  - U633
+  - U637
+  - U638
+  - U639
+  - U640
+  - U641
+  - U642
+  - CMP267
   source_locator:
     path: connaissance/35-comportements-inventory-planning.md
     anchor: inventory-planning
   review:
     state: partial
-    note: Regroupement U631 appliqué ; détails de décomposition et compléments éditoriaux non adoptés globalement.
+    note: U641 adopte le retrait de Scenario Authorization et la répartition présentée ; portées antérieures conservées, champs
+      développés non adoptés en bloc.
   adoption_ids: []
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.
@@ -7123,7 +7435,7 @@ nodes:
       nature: cb1e58d9479430bc60841495f8150f2534895ef34e547cc1fdf0739455c3f438
     note: 'U631 : seuls les champs explicitement présentés sont nouvellement adoptés. Rattachements nécessaires au regroupement
       et détails complémentaires qualifiés séparément ; preuves antérieures dans Git et les publications.'
-  last_modified: '2026-09-23T11:02:03.547057Z'
+  last_modified: '2026-09-23T14:24:43.303897Z'
   approved_fields:
   - definition
   - nature
@@ -7135,7 +7447,7 @@ nodes:
   - market_inspiration
   - name
 - id: D14
-  revision: 6
+  revision: 8
   kind: reference
   fields:
     name: Service Catalog
@@ -7258,6 +7570,8 @@ nodes:
   - U614
   - U615
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d14
@@ -7281,11 +7595,12 @@ nodes:
       name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
     note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T15:00:46.992417Z'
   proposed_fields:
   - market_comparisons
   - market_inspiration
   - scope
+  - mastership
 - id: D06.b
   revision: 10
   kind: capability
@@ -8341,7 +8656,7 @@ nodes:
   - finality
   - name
 - id: D09.d
-  revision: 4
+  revision: 6
   kind: capability
   fields:
     name: Party / Role Ingestion
@@ -8450,6 +8765,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d09-parties-et-relations
@@ -8477,7 +8794,8 @@ nodes:
     inchangés.'
   proposed_fields:
   - nature
-  last_modified: '2026-09-19T17:16:10.389042Z'
+  - mastership
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: D01
   revision: 8
   kind: area
@@ -8650,7 +8968,7 @@ nodes:
   - market_inspiration
   - scope
 - id: D11.a
-  revision: 4
+  revision: 6
   kind: capability
   fields:
     name: Agreement Ingestion
@@ -8759,6 +9077,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/27-order-management-et-univers.md
     anchor: ''
@@ -8785,9 +9105,10 @@ nodes:
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
   proposed_fields:
   - nature
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  - mastership
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: D06
-  revision: 6
+  revision: 7
   kind: area
   fields:
     name: Fulfillment Orchestration
@@ -8802,6 +9123,8 @@ nodes:
       Dès le début d’exécution, Fulfillment peut adapter le plan de réalisation. Si un article manque, le re-sourcing peut retenir un autre entrepôt pour ce seul article, répartir les Tasks et les Service Orders nécessaires et conserver le suivi commun de la demande initiale. Si l’engagement devient impossible, Demand gouverne la révision de promesse ; aucun retour automatique de toute adaptation locale au plan global.
 
       Exemples fictifs : une Task sollicite une API documentaire sans commande formalisée ; une autre transmet un Service Order de préparation et suit la prestation jusqu’à sa fin vérifiée. Après un manque partiel, seules les quantités concernées font l’objet d’une nouvelle sollicitation.
+
+      Sur une modification proposée d’une commande partiellement engagée, traiter les conséquences pour les seules prestations concernées en tenant compte des liens avec le reste. Examiner les possibilités d’adaptation, d’arrêt ou de reprise et rapporter les faits utiles aux responsables des commandes. Un effet déjà réalisé n’est pas effacé par une révision du plan ; une correction ou opération inverse reste explicite.
     market_comparisons:
     - vendor: Camunda
       product: Process Orchestration
@@ -8978,6 +9301,8 @@ nodes:
   - U619
   - U624
   - U626
+  - U642
+  - CMP267
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d06
@@ -8999,7 +9324,7 @@ nodes:
     value_sha256: {}
     note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T14:24:43.303897Z'
   proposed_fields:
   - definition
   - finality
@@ -9008,7 +9333,7 @@ nodes:
   - name
   - scope
 - id: D08.d
-  revision: 6
+  revision: 8
   kind: capability
   fields:
     name: Product Reference Ingestion
@@ -9138,6 +9463,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d08-produits-opérationnels
@@ -9168,10 +9495,12 @@ nodes:
   - nature
   - market_comparisons
   - examples
+  - mastership
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: D12.a
-  revision: 4
+  revision: 6
   kind: capability
   fields:
     name: Product Catalog Ingestion
@@ -9276,6 +9605,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d12-catalog
@@ -9305,7 +9636,8 @@ nodes:
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
   proposed_fields:
   - nature
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  - mastership
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: D03
   revision: 20
   kind: area
@@ -9603,7 +9935,7 @@ nodes:
   - name
   last_modified: '2026-09-23T10:40:15.075567Z'
 - id: D13.a
-  revision: 3
+  revision: 5
   kind: capability
   fields:
     name: Fulfillment Network Ingestion
@@ -9707,6 +10039,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/25-domaines-coeur-et-epreuve-recits.md
     anchor: d13-fulfillment-network
@@ -9731,6 +10065,8 @@ nodes:
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
   proposed_fields:
   - nature
+  - mastership
+  last_modified: '2026-09-23T15:00:46.992417Z'
 - id: ILL-OBJ-01
   revision: 2
   kind: object
@@ -10021,7 +10357,7 @@ nodes:
   proposed_fields:
   - scope
 - id: D14.a
-  revision: 6
+  revision: 8
   kind: capability
   fields:
     name: Service Catalog Ingestion
@@ -10140,6 +10476,8 @@ nodes:
   - U614
   - U615
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d14-a
@@ -10167,9 +10505,10 @@ nodes:
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T15:00:46.992417Z'
   proposed_fields:
   - scope
+  - mastership
 - id: D06.e
   revision: 7
   kind: capability
@@ -10915,135 +11254,17 @@ nodes:
     note: Définition française adoptée U263 ; nom anglais, finalité et périmètre éditoriaux proposés.
   proposed_fields:
   - nature
-- id: BHV005
-  revision: 2
-  kind: behavior
-  fields:
-    name: Scenario Construction
-    definition: Construire plusieurs réponses possibles en explicitant leurs hypothèses, objectifs et contraintes.
-    scope: |-
-      Critère différenciant : variante. Bénéfice ciblé : Explorer des alternatives avant engagement.
-
-      Copier est une fonction ; décisions spécialisées distinctes.
-
-      Exemple fictif : Couvertures à 10 ou 15 jours pour les mêmes demandes.
-    nature: planning_practice
-    market_comparisons:
-    - vendor: Oracle
-      product: Oracle Fusion Cloud SCM
-      source_title: Overview of Simulations for Replenishment Plans
-      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
-      source_version: 26B
-      source_locator: Types of simulations ; policy values ; supply and demand
-      consulted_on: '2026-09-19'
-      concept_name: What-if simulation
-      scope_summary: Variantes de politique, ressources et demandes.
-      approach_summary: Comparer le plan initial et les effets projetés.
-      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
-        de capacités.
-      element_name: What-if simulation
-      element_type: Concept documenté par la source primaire
-      relationship: Recouvrement partiel
-      similarities: Oracle propose de faire varier politiques, ressources ou demandes.
-      differences: Les variantes de paramètres ne sont pas automatiquement des choix métier pertinents.
-      flow_position: 'Préparer plusieurs réponses possibles avant de choisir : Scenario Construction explicite leurs hypothèses,
-        objectifs et contraintes. Créer une alternative métier dépasse la simple copie d’un plan.'
-      status: proposed
-      source_refs:
-      - U477
-      - ELM370
-      - CMP190
-    - vendor: Microsoft
-      product: Dynamics 365 Supply Chain Management
-      source_title: Master plans overview
-      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
-      source_version: Documentation en ligne consultée le 2026-09-19
-      source_locator: Using master plans ; Freeze ; Action message ; positive and negative days
-      consulted_on: '2026-09-19'
-      concept_name: Master plan
-      scope_summary: Plans alternatifs et adaptation aux besoins.
-      approach_summary: Comparer des hypothèses et encadrer les changements.
-      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
-        de capacités.
-      element_name: Master plan
-      element_type: Concept documenté par la source primaire
-      relationship: Recouvrement partiel
-      similarities: Microsoft permet des plans pour plusieurs prévisions ou stratégies.
-      differences: FLOW ne prescrit ni nombre de plans ni outil pour les porter.
-      flow_position: 'Préparer plusieurs réponses possibles avant de choisir : Scenario Construction explicite leurs hypothèses,
-        objectifs et contraintes. Créer une alternative métier dépasse la simple copie d’un plan.'
-      status: proposed
-      source_refs:
-      - U477
-      - ELM415
-      - CMP190
-    market_inspiration:
-      choice: 'Préparer plusieurs réponses possibles avant de choisir : Scenario Construction explicite leurs hypothèses,
-        objectifs et contraintes. Créer une alternative métier dépasse la simple copie d’un plan.'
-      flow_scope: Variantes de scénario de stock cohérentes.
-      flow_approach: Faire varier les hypothèses sans masquer ce qui reste commun.
-      synthesis:
-      - Oracle fournit des leviers de variation ; Microsoft donne le cadre de plans parallèles. Les deux permettent d’explorer
-        des réponses sans remplacer immédiatement le plan de référence.
-      - 'FLOW retient le travail de construction : nommer ce qui change et pourquoi, puis mobiliser les décisions nécessaires.
-        Les résultats devront encore être simulés et analysés.'
-      examples:
-      - title: Illustration FLOW — dix ou quinze jours de couverture
-        situation: Les mêmes besoins et contraintes sont conservés dans deux alternatives.
-        outcome: L’une vise dix jours de couverture, l’autre quinze ; leurs conséquences restent à calculer.
-        lesson: Le scénario décrit une hypothèse compréhensible, pas un simple fichier dupliqué.
-        source_title: Overview of Simulations for Replenishment Plans
-        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
-        source_refs:
-        - U477
-        - ELM370
-        - CMP190
-  source_refs:
-  - U267
-  - U269
-  - CMP090
-  - U283
-  - U290
-  - U450
-  - U451
-  - U455
-  - U458
-  - U477
-  - CMP190
-  source_locator:
-    path: connaissance/35-comportements-inventory-planning.md
-    anchor: bhv005
-  review:
-    state: partial
-    note: Intégration U290 ; détails éditoriaux proposés.
-  adoption_ids: []
-  lifecycle:
-    state: urbanist_validated
-    recorded_at: '2026-09-17T13:29:45.653508Z'
-    recorded_by: Codex
-    source_refs:
-    - U269
-    - U290
-    validated_fields:
-    - name
-    value_sha256:
-      name: 54947870268de8a9c3439fb00cba1aeefd4ded089012eb82009b479c6c2a0260
-    note: Intégration U290 ; détails éditoriaux proposés.
-  editorial_basis: 'Comportement de la cible U286–U289 appliqué U290 ; définition détaillée, exemple et périmètre éditoriaux.
-    Marché et justification : modeles/backlog/refactoring-target.yaml, PLAN-CONSTRUCT.'
-  proposed_fields:
-  - nature
 - id: BHV006
-  revision: 5
+  revision: 7
   kind: behavior
   fields:
     name: Simulation & Analysis
-    definition: Projeter les conséquences d’un scénario et analyser leurs impacts sur les indicateurs métier et les processus
-      pour éclairer les choix.
+    definition: Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service,
+      les engagements, les stocks, les coûts et les risques pour éclairer les choix.
     scope: |-
-      Critère différenciant : mécanisme. Bénéfice ciblé : Comprendre compromis et effets locaux.
+      Construire les alternatives et expliquer leurs conséquences constituent une même pratique de planification. Les hypothèses, objectifs et contraintes restent explicites pour comparer des réponses au même problème.
 
-      La projection et son analyse forment un même résultat explicatif ; comparaison et autorisation restent des fonctions utiles, sans calcul dupliqué.
+      Les décisions spécialisées restent responsables des réponses métier et de leurs calculs. La simulation ne rend pas ses résultats applicables. Elle peut aussi conclure que conserver le plan actuel est préférable.
 
       Exemple fictif : Service 94 à 97 %, stock +120 k€ ; identifier les magasins perdants.
 
@@ -11051,11 +11272,13 @@ nodes:
 
       Construire et comparer les scénarios de satisfaction des commandes et besoins prévisionnels identifiés en mobilisant les décisions spécialisées, conserver les hypothèses et rendre les conséquences comparables : satisfaction, dates, coûts, risques et engagements selon le contexte. Les objectifs restent multidimensionnels, sans pondération implicite.
 
-      Au sein de [Demand & Supply Optimization Planning](model:D05.f), ce comportement conduit la simulation et l’analyse. [Fulfillment Plan Decision](model:D03.o) détermine les propositions cohérentes ; leurs règles de calcul ne sont pas reproduites ici. Les résultats éclairent [Scenario Authorization](model:BHV092) et la conclusion de [Demand & Supply Optimization Planning](model:D05.f).
+      Au sein de [Demand & Supply Optimization Planning](model:D05.f), ce comportement conduit la simulation et l’analyse. [Fulfillment Plan Decision](model:D03.o) détermine les propositions cohérentes ; leurs règles de calcul ne sont pas reproduites ici. Les résultats éclairent l’examen et le choix de la proposition par [Demand & Supply Optimization Planning](model:D05.f), ou par [Adjust Plan](model:BHV016) pour une révision. [Apply Plan](model:D02.e) vérifie ou recueille ensuite les autorisations nécessaires aux changements sélectionnés, sans imposer un cycle universel.
 
       Exemple fictif : comparer deux priorités et identifier les commandes mieux servies et celles pénalisées. Conserver la situation actuelle peut être une conclusion utile. Une simulation ne modifie pas les affectations, réservations ou promesses effectives.
 
       Le périmètre étudié peut combiner commandes connues et prévisions restantes. Un impondérable touchant une ressource peut appeler leur réexamen commun, sans rendre obligatoires un recalcul intégral ou un nouveau dossier.
+
+      La construction des alternatives est intégrée à ce comportement ; copier un scénario reste une fonction, sans comportement autonome. [Adjust Plan](model:BHV016) prépare la révision proposée et peut mobiliser ces analyses ; [Apply Plan](model:D02.e) fait appliquer les changements autorisés. Exemple fictif : comparer un transfert immédiat avec un achat plus tardif selon disponibilité, coût et risque.
     market_comparisons:
     - vendor: Oracle
       product: Oracle Fusion Cloud SCM
@@ -11063,7 +11286,7 @@ nodes:
       source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html
       source_version: 26B
       source_locator: Types of simulations ; policy values ; supply and demand
-      consulted_on: '2026-09-19'
+      consulted_on: '2026-09-23'
       concept_name: What-if simulation
       scope_summary: Variantes de politique, ressources et demandes.
       approach_summary: Comparer le plan initial et les effets projetés.
@@ -11074,13 +11297,15 @@ nodes:
       relationship: Recouvrement partiel
       similarities: Oracle compare situation de référence et variantes simulées.
       differences: Un résultat simulé ne prouve pas que le fournisseur ou l’exécutant pourra l’appliquer.
-      flow_position: 'Comprendre les conséquences d’un scénario avant de l’adopter : Simulation & Analysis projette les résultats
-        et explique les compromis. Les recommandations produites éclairent le choix sans devenir des engagements.'
+      flow_position: Simulation & Analysis regroupe construction des alternatives, projection et comparaison des conséquences.
+        Le regroupement est adopté U640 ; les sources apportent des appuis fonctionnels partiels, sans prescrire cette maille
+        de comportement.
       status: proposed
       source_refs:
       - U477
       - ELM370
       - CMP190
+      - U640
     - vendor: Microsoft
       product: Dynamics 365 Supply Chain Management
       source_title: Action messages
@@ -11189,10 +11414,38 @@ nodes:
       concept_name: Overview of Backlog Management Processes
       scope_summary: Planification, étude et transmission des résultats du carnet.
       approach_summary: Prioriser le carnet, simuler des variantes puis transmettre les résultats retenus.
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Master plans overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+      source_version: Documentation en ligne consultée le 2026-09-19
+      source_locator: Using master plans ; Freeze ; Action message ; positive and negative days
+      consulted_on: '2026-09-23'
+      concept_name: Master plan
+      scope_summary: Plans alternatifs et adaptation aux besoins.
+      approach_summary: Comparer des hypothèses et encadrer les changements.
+      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
+        de capacités.
+      element_name: Master plan
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Microsoft permet des plans pour plusieurs prévisions ou stratégies.
+      differences: FLOW ne prescrit ni nombre de plans ni outil pour les porter.
+      flow_position: Simulation & Analysis regroupe construction des alternatives, projection et comparaison des conséquences.
+        Le regroupement est adopté U640 ; les sources apportent des appuis fonctionnels partiels, sans prescrire cette maille
+        de comportement.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM415
+      - CMP190
+      - U640
     nature: planning_practice
     market_inspiration:
-      choice: Simulation & Analysis réunit l’étude des scénarios de stock et de satisfaction dans le Planning commun.
-      flow_scope: Conséquences comparées sur couverture des commandes et prévisions restantes, stocks, apports, coûts et risques.
+      choice: Simulation & Analysis réunit la construction des alternatives de plan, la projection et la comparaison de leurs
+        conséquences dans le Planning commun.
+      flow_scope: Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service,
+        les engagements, les stocks, les coûts et les risques pour éclairer les choix.
       flow_approach: Mobiliser les décisions spécialisées et rendre leurs hypothèses et conséquences comparables avant autorisation
         ou application.
       synthesis:
@@ -11205,6 +11458,9 @@ nodes:
         Oracle étayent ces fonctions sans établir un consensus de hiérarchie.
       - FLOW étend ce comportement au plan commun des commandes et prévisions identifié en U565. Les exemples de backlog déjà
         cités étayent le mécanisme sur les commandes ; ils ne prouvent pas à eux seuls cette extension de périmètre.
+      - U640 — Oracle associe variation des hypothèses et comparaison avec le plan de référence ; Microsoft utilise plusieurs
+        plans pour explorer des stratégies. FLOW regroupe ces activités afin de supprimer le chevauchement entre construction
+        et simulation, sans reprendre une taxonomie éditeur.
       examples:
       - title: Illustration FLOW — plus de service, plus de stock
         situation: Un scénario améliore le service estimé mais augmente le stock immobilisé.
@@ -11263,39 +11519,44 @@ nodes:
   - CMP236
   - U631
   - U632
+  - U640
+  - U641
   source_locator:
     path: connaissance/35-comportements-inventory-planning.md
     anchor: bhv006
   review:
     state: partial
-    note: Regroupement U631 appliqué ; détails de décomposition et compléments éditoriaux non adoptés globalement.
+    note: U641 adopte le retrait de Scenario Authorization et la répartition présentée ; portées antérieures conservées, champs
+      développés non adoptés en bloc.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-23T10:40:15.075567Z'
+    recorded_at: '2026-09-23T14:13:07.714327Z'
     recorded_by: Codex
     source_refs:
-    - U269
-    - U271
-    - U290
-    - U631
+    - U640
     validated_fields:
     - name
+    - definition
+    - nature
     value_sha256:
       name: 3eee4a28b45b7d7cb7114ebf1fcdd032a202b38d74ffe4028f9cef137fad57e0
-    note: 'U631 : seuls les champs explicitement présentés sont nouvellement adoptés. Rattachements nécessaires au regroupement
-      et détails complémentaires qualifiés séparément ; preuves antérieures dans Git et les publications.'
+      definition: cb9515831e36eb573aa958a7e92e0fbee643021aff465f66af01e0afe9a53481
+      nature: 905f92dab1d33d45960324e6bcbf301ab74f663f056668f3aa733dbe2c6edf64
+    note: U640 adopte regroupement, définition, type et frontières présentés. Les développements du scope et comparaisons
+      ne sont pas adoptés globalement.
   editorial_basis: 'Comportement de la cible U286–U289 appliqué U290 ; définition détaillée, exemple et périmètre éditoriaux.
     Marché et justification : modeles/backlog/refactoring-target.yaml, PLAN-SIMULATE. U345 : principe d’application de plan
     sous Supply Assignment et explication des recommandations intégrés ; formulation détaillée éditoriale.'
   proposed_fields:
-  - nature
   - scope
   - market_comparisons
   - market_inspiration
-  last_modified: '2026-09-23T11:02:03.547057Z'
+  last_modified: '2026-09-23T14:18:47.042621Z'
   approved_fields:
   - name
+  - definition
+  - nature
 - id: D03.n
   revision: 9
   kind: capability
@@ -11454,93 +11715,90 @@ nodes:
   - market_inspiration
   - scope
 - id: BHV016
-  revision: 4
+  revision: 6
   kind: behavior
   fields:
-    name: Scenario Execution Adaptation
-    definition: Adapter le plan commun aux écarts observés, compte tenu des effets pris en compte et des décisions spécialisées.
+    name: Adjust Plan
+    definition: Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et
+      en tenant compte des effets déjà acquis.
     scope: |-
-      Critère différenciant : mécanisme. Bénéfice ciblé : Maintenir une trajectoire cohérente malgré les aléas.
+      Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées.
 
-      D06 décide la variation opérationnelle ; D04/D02.b appliquent leurs changements.
-
-      Exemple fictif : Réviser apports et transferts après report fournisseur sans oublier les quantités expédiées.
-
-      L’adaptation porte sur le plan commun : affectations, apports et ajustements de stock sont réexaminés ensemble lorsque nécessaire. Le Planning constate les écarts et mobilise les décisions pour réviser le plan ; Fulfillment conserve l’adaptation des prestations engagées. Une nouvelle version proposée ne modifie pas seule les engagements partenaires. Le nom hérité et la séparation détaillée entre suivi et ajustement restent à revoir dans la décomposition.
+      Pour une révision du plan, examiner, retenir, faire revoir ou abandonner la proposition fait partie du travail d’ajustement.
     nature: planning_practice
     market_comparisons:
-    - vendor: Microsoft
-      product: Dynamics 365 Supply Chain Management
-      source_title: Master plans overview
-      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
-      source_version: Documentation en ligne consultée le 2026-09-19
-      source_locator: Using master plans ; Freeze ; Action message ; positive and negative days
-      consulted_on: '2026-09-19'
-      concept_name: Master plan
-      scope_summary: Plans alternatifs et adaptation aux besoins.
-      approach_summary: Comparer des hypothèses et encadrer les changements.
-      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
-        de capacités.
-      element_name: Master plan
-      element_type: Concept documenté par la source primaire
-      relationship: Recouvrement partiel
-      similarities: Un plan peut être recalculé avec les besoins et ressources actualisés.
-      differences: Le recalcul ne remplace pas les autorisations de modifier un engagement.
-      flow_position: 'Garder le scénario de stock cohérent malgré les écarts : Scenario Execution Adaptation réexamine sa
-        trajectoire avec les faits et les actions engagées. Les responsables opérationnels gardent leurs décisions et mises
-        à jour.'
+    - vendor: Oracle
+      product: Fusion Cloud Supply Chain Planning
+      source_title: Manually Release Plan Recommendations
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+      source_version: 26B
+      source_locator: Introduction ; release results ; exceptions
+      consulted_on: '2026-09-23'
+      concept_name: Manually Release Plan Recommendations
+      element_name: Manually Release Plan Recommendations
+      element_type: Fonctions produit documentées
+      relationship: Appui fonctionnel partiel
+      scope_summary: Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte.
+      approach_summary: Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte.
+      similarities: Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte.
+      differences: La page décrit la transmission de révisions, sans définir toute la préparation d’un plan commun cohérent.
+        Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      evidence_limits: La page décrit la transmission de révisions, sans définir toute la préparation d’un plan commun cohérent.
+        Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      flow_position: 'Adjust Plan distingue la préparation d’une révision cohérente du lancement de calcul, de l’autorisation
+        et de l’application. Nom et maille : convention FLOW.'
       status: proposed
       source_refs:
-      - U477
-      - ELM415
-      - CMP190
+      - ELM566
+      - U633
     - vendor: Microsoft
       product: Dynamics 365 Supply Chain Management
       source_title: Action messages
       source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
-      source_version: Documentation en ligne consultée le 2026-09-19
-      source_locator: Action types ; Increase and decrease ; safety stock
-      consulted_on: '2026-09-19'
+      source_version: Documentation évolutive ; mise à jour affichée 2026-03-26
+      source_locator: Introduction ; Select action messages ; Increase and decrease actions
+      consulted_on: '2026-09-23'
       concept_name: Action messages
-      scope_summary: Recommandations de date et quantité.
-      approach_summary: Adapter les apports existants.
-      evidence_limits: Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue
-        de capacités.
       element_name: Action messages
-      element_type: Concept documenté par la source primaire
-      relationship: Recouvrement partiel
-      similarities: Les messages proposent avances, reports ou ajustements de quantité.
-      differences: FLOW doit aussi conserver les suites déjà réalisées, au-delà des suggestions de l’outil.
-      flow_position: 'Garder le scénario de stock cohérent malgré les écarts : Scenario Execution Adaptation réexamine sa
-        trajectoire avec les faits et les actions engagées. Les responsables opérationnels gardent leurs décisions et mises
-        à jour.'
+      element_type: Fonctions produit documentées
+      relationship: Appui fonctionnel partiel
+      scope_summary: Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à décider.
+      approach_summary: Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à
+        décider.
+      similarities: Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à décider.
+      differences: Les suggestions de calcul ne constituent pas à elles seules la révision cohérente du plan et de tous ses
+        effets interdépendants. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      evidence_limits: Les suggestions de calcul ne constituent pas à elles seules la révision cohérente du plan et de tous
+        ses effets interdépendants. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      flow_position: 'Adjust Plan distingue la préparation d’une révision cohérente du lancement de calcul, de l’autorisation
+        et de l’application. Nom et maille : convention FLOW.'
       status: proposed
       source_refs:
-      - U477
       - ELM413
-      - CMP190
+      - U633
     market_inspiration:
-      choice: Le comportement adapte le plan commun face aux écarts, en conservant les effets acquis ; le nom hérité reste
-        à revoir.
-      flow_scope: Révision du plan commun, dont les apports et ajustements de stock ; adaptation des prestations engagées
-        conservée par Fulfillment.
-      flow_approach: Coordonner les révisions sans oublier les réalisations acquises.
+      choice: 'Adjust Plan distingue la préparation d’une révision cohérente du lancement de calcul, de l’autorisation et
+        de l’application. Nom et maille : convention FLOW.'
+      flow_scope: Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et
+        en tenant compte des effets déjà acquis.
+      flow_approach: Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations
+        nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées.
       synthesis:
-      - Microsoft relie plans actualisés et recommandations d’ajustement. Un nouveau calcul peut révéler ce qu’il faudrait
-        changer, sans rendre tous les changements possibles.
-      - 'FLOW retient l’adaptation de la trajectoire : mobiliser les décisions spécialisées, connaître leur prise en compte
-        et préserver les faits acquis. Le pilotage des prestations reste dans Fulfillment Orchestration.'
+      - Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte.
+      - Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à décider.
+      - Oracle éclaire les suites de transmission ; Microsoft éclaire les réponses proposées aux changements. Leur rapprochement
+        soutient partiellement la séparation FLOW, sans en établir une taxonomie commune.
       examples:
-      - title: Illustration FLOW — le fournisseur décale une livraison
-        situation: Une livraison est reportée alors que certains transferts sont déjà expédiés.
-        outcome: Le scénario réexamine les apports et redistributions possibles sans annuler fictivement les quantités parties.
-        lesson: Les recommandations tiennent compte de l’exécution ; elles ne la réécrivent pas.
-        source_title: Action messages
-        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+      - title: Illustration FLOW — transfert confirmé et achat refusé
+        situation: Un transfert de 30 pièces est confirmé, mais un achat de 70 pièces est refusé.
+        outcome: Préparer une autre couverture en conservant les 30 pièces acquises ; un nouveau calcul peut être mobilisé.
+        lesson: Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations
+          nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées.
+        source_title: Manually Release Plan Recommendations
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
         source_refs:
-        - U477
-        - ELM413
-        - CMP190
+        - U633
+        - ELM566
   source_refs:
   - U290
   - U450
@@ -11551,37 +11809,42 @@ nodes:
   - CMP190
   - U626
   - U631
+  - U633
+  - U641
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
-    anchor: u290
+    anchor: u633
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-23T10:40:15.075567Z'
+    recorded_at: '2026-09-23T12:36:53.055461Z'
     recorded_by: Codex
     source_refs:
-    - U290
-    - U626
-    - U631
+    - U633
     validated_fields:
     - name
+    - definition
+    - nature
     value_sha256:
-      name: ac1bcefdded23e2beba01784b96ac3b2548690bf4319993703fe7124ab470f0e
-    note: 'U631 : seuls les champs explicitement présentés sont nouvellement adoptés. Rattachements nécessaires au regroupement
-      et détails complémentaires qualifiés séparément ; preuves antérieures dans Git et les publications.'
+      name: 2b3a345d22fbdf818d3ff040cb4a75830930810169141597b94097c173408f7a
+      definition: fb5227465b86bd80c7ae9bfbd4fcb00ae04a589f789edc8ccc2d7bd510d409b5
+      nature: 905f92dab1d33d45960324e6bcbf301ab74f663f056668f3aa733dbe2c6edf64
+    note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
   review:
     state: partial
-    note: Regroupement U631 appliqué ; détails de décomposition et compléments éditoriaux non adoptés globalement.
+    note: U641 adopte le retrait de Scenario Authorization et la répartition présentée ; portées antérieures conservées, champs
+      développés non adoptés en bloc.
   editorial_basis: 'Comportement de la cible U286–U289 appliqué U290 ; définition détaillée, exemple et périmètre éditoriaux.
     Marché et justification : modeles/backlog/refactoring-target.yaml, PLAN-ADAPT.'
   proposed_fields:
-  - nature
+  - market_comparisons
   - market_inspiration
-  - definition
   - scope
-  last_modified: '2026-09-23T10:40:15.075567Z'
+  last_modified: '2026-09-23T14:18:47.042621Z'
   approved_fields:
   - name
+  - definition
+  - nature
 - id: BHV017
   revision: 2
   kind: behavior
@@ -21644,151 +21907,9 @@ nodes:
   proposed_fields:
   - market_comparisons
   - market_inspiration
-- id: BHV092
-  revision: 6
-  kind: behavior
-  fields:
-    name: Scenario Authorization
-    definition: Retenir, faire revoir ou abandonner une proposition et préciser ses conditions d’application.
-    finality: Rendre explicites les conditions auxquelles un scénario peut être appliqué ou doit être revu.
-    scope: |-
-      Recueillir le scénario proposé et les conséquences exposées, puis déterminer s’il peut être appliqué, doit être modifié ou doit être abandonné. Conserver la décision, sa portée et ses conditions. Une personne peut intervenir, ou une politique déléguée peut autoriser les suites selon le contexte.
-
-      [Fulfillment Plan Decision](model:D03.o) établit la cohérence du plan ; ce comportement de [Demand & Supply Optimization Planning](model:D05.f) porte l’autorisation des suites du scénario. [Demand & Supply Optimization Planning](model:D05.f) en conserve le résultat utile au suivi de la demande. Les règles de délégation et les contraintes applicables restent explicites. Il ne reprend pas automatiquement l’Order Release des commandes concernées et ne lève aucune réservation, protection ou engagement.
-
-      Exemple fictif : autoriser une nouvelle répartition uniquement si les commandes déjà engagées sont préservées ; sinon demander une nouvelle simulation. Une autorisation ne prouve pas l’application effective.
-
-      Les suites autorisées peuvent concerner le même scénario d’affectation aux commandes et aux besoins prévisionnels identifiés. Autoriser une affectation à la prévision ne crée ni commande ni promesse client.
-    nature: intervention_mechanism
-    behavior_aspect: activity
-    market_comparisons:
-    - source_title: Explore Service Requests and Resolutions
-      source_url: https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions
-      source_version: Agentforce IT Service ; cours évolutif sans édition précisée
-      source_locator: Service Requests ; Request Tracking ; Resolving Requests
-      consulted_on: '2026-09-21'
-      evidence_limits: 'Exemple de services IT aux employés : appui par analogie à la gestion d’une demande, pas preuve d’une
-        capacité standard Optimization Request Management dans la Supply.'
-      source_refs:
-      - ELM498
-      - U552
-      - CMP229
-      - U560
-      - CMP234
-      vendor: Salesforce
-      product: Agentforce IT Service
-      element_name: Explore Service Requests and Resolutions
-      element_type: Fonctions et parcours produit documentés
-      relationship: Appui fonctionnel partiel
-      similarities: La demande recueille les éléments du besoin et permet son suivi ; les activités de résolution et les autorisations
-        utiles sont articulées à cette demande.
-      differences: 'Exemple de services IT aux employés : appui par analogie à la gestion d’une demande, pas preuve d’une
-        capacité standard Optimization Request Management dans la Supply.'
-      flow_position: Scenario Authorization porte le choix d’appliquer, faire revoir ou abandonner le scénario dans Demand
-        & Supply Optimization Planning. Il reste distinct du calcul de Fulfillment Plan Decision et de l’Order Release porté
-        par Lifecycle.
-      status: proposed
-      concept_name: Explore Service Requests and Resolutions
-      scope_summary: Demandes de services IT, qualification et suivi de leurs suites.
-      approach_summary: Recueillir le besoin, articuler les autorisations utiles et suivre sa résolution.
-    - vendor: Oracle
-      product: Fusion Cloud Supply Chain Planning
-      source_title: Overview of Backlog Management Processes
-      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html
-      source_version: 26B
-      source_locator: Planning ; Reviewing ; Simulating ; Releasing
-      consulted_on: '2026-09-21'
-      element_name: Overview of Backlog Management Processes
-      element_type: Fonctions et parcours produit documentés
-      relationship: Appui fonctionnel partiel
-      similarities: Oracle regroupe construction du plan, examen, simulation et mise en application dans le parcours du backlog.
-        Les valeurs restent simulées avant release.
-      differences: Ce document ne décrit pas une capacité métier distincte de demande d’optimisation et ne prouve pas qu’un
-        dossier de demande est obligatoire.
-      evidence_limits: Ce document ne décrit pas une capacité métier distincte de demande d’optimisation et ne prouve pas
-        qu’un dossier de demande est obligatoire.
-      flow_position: Scenario Authorization porte le choix d’appliquer, faire revoir ou abandonner le scénario dans Demand
-        & Supply Optimization Planning. Il reste distinct du calcul de Fulfillment Plan Decision et de l’Order Release porté
-        par Lifecycle.
-      status: proposed
-      source_refs:
-      - ELM496
-      - U501
-      - CMP202
-      - U552
-      - CMP229
-      - U560
-      - CMP234
-      concept_name: Overview of Backlog Management Processes
-      scope_summary: Planification, étude et transmission des résultats du carnet.
-      approach_summary: Prioriser le carnet, simuler des variantes puis transmettre les résultats retenus.
-    market_inspiration:
-      choice: Scenario Authorization porte le choix d’appliquer, faire revoir ou abandonner le scénario dans Demand & Supply
-        Optimization Planning. Il reste distinct du calcul de Fulfillment Plan Decision et de l’Order Release porté par Lifecycle.
-      flow_scope: Recueillir le scénario proposé et les conséquences exposées, puis déterminer s’il peut être appliqué, doit
-        être modifié ou doit être abandonné. Conserver la décision, sa portée et ses conditions. Une personne peut intervenir,
-        ou une politique déléguée peut autoriser les suites selon le contexte.
-      flow_approach: Retenir, faire revoir ou abandonner une proposition et préciser ses conditions d’application.
-      synthesis:
-      - Oracle sépare simulation et transmission des résultats, sans imposer une approbation humaine.
-      - Salesforce illustre les autorisations nécessaires au traitement de certaines demandes IT ; FLOW conserve l’autorisation
-        humaine ou déléguée selon le contexte, sans importer un workflow IT.
-      - FLOW étend ce comportement au plan commun des commandes et prévisions identifié en U565. Les exemples de backlog déjà
-        cités étayent le mécanisme sur les commandes ; ils ne prouvent pas à eux seuls cette extension de périmètre.
-      examples:
-      - title: Illustration FLOW — Un scénario améliore certaines dates mais en dégrade d’autres
-        situation: Un scénario améliore certaines dates mais en dégrade d’autres.
-        outcome: La demande conserve l’autorisation conditionnelle ou les raisons de demander une révision.
-        lesson: La décision d’autoriser et le constat d’application sont distincts.
-        source_title: Explore Service Requests and Resolutions
-        source_url: https://trailhead.salesforce.com/content/learn/modules/request-management-for-agentforce-it-service/explore-service-requests-and-resolutions
-        source_refs:
-        - ELM498
-        - U501
-        - CMP202
-  source_refs:
-  - U499
-  - U500
-  - U501
-  - CMP202
-  - ELM498
-  - ELM496
-  - U552
-  - CMP229
-  - U560
-  - CMP234
-  - U565
-  - U566
-  - CMP236
-  - U631
-  - U632
-  source_locator:
-    path: connaissance/01-contributions-utilisateur.md
-    anchor: u501
-  review:
-    state: partial
-    note: Regroupement U631 appliqué ; détails de décomposition et compléments éditoriaux non adoptés globalement.
-  adoption_ids: []
-  lifecycle:
-    state: under_instruction
-    recorded_at: '2026-09-23T10:40:15.075567Z'
-    recorded_by: Codex
-    source_refs:
-    - U552
-    - U631
-    validated_fields: []
-    value_sha256: {}
-    note: 'U631 : seuls les champs explicitement présentés sont nouvellement adoptés. Rattachements nécessaires au regroupement
-      et détails complémentaires qualifiés séparément ; preuves antérieures dans Git et les publications.'
-  last_modified: '2026-09-23T11:02:03.547057Z'
-  proposed_fields:
-  - scope
-  - market_comparisons
-  - market_inspiration
-  approved_fields: []
 - id: D08.e
-  revision: 2
-  last_modified: '2026-09-19T17:22:35.945608Z'
+  revision: 4
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Product Reference Visibility
@@ -21888,6 +22009,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -21920,9 +22043,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D09.e
-  revision: 2
-  last_modified: '2026-09-19T17:22:35.945608Z'
+  revision: 4
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Party / Role Visibility
@@ -22021,6 +22145,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -22053,9 +22179,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D11.b
-  revision: 3
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  revision: 5
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Agreement Visibility
@@ -22159,6 +22286,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -22191,9 +22320,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D12.b
-  revision: 3
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  revision: 5
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Product Catalog Visibility
@@ -22293,6 +22423,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -22324,9 +22456,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D13.b
-  revision: 2
-  last_modified: '2026-09-19T17:22:35.945608Z'
+  revision: 4
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Fulfillment Network Visibility
@@ -22427,6 +22560,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -22459,9 +22594,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D14.b
-  revision: 3
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  revision: 5
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Service Catalog Visibility
@@ -22563,6 +22699,8 @@ nodes:
   - U614
   - U615
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u505
@@ -22593,9 +22731,10 @@ nodes:
   - scope
   - market_comparisons
   - market_inspiration
+  - mastership
 - id: D16.a
-  revision: 2
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  revision: 4
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Assortment Ingestion
@@ -22700,6 +22839,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u509
@@ -22716,9 +22857,11 @@ nodes:
     value_sha256: {}
     note: 'U509 : seuls les champs indiqués et le sens présenté sont adoptés ; détails éditoriaux et nouvelles capacités proposés.'
   adoption_ids: []
+  proposed_fields:
+  - mastership
 - id: D16.b
-  revision: 2
-  last_modified: '2026-09-19T17:56:52.747857Z'
+  revision: 4
+  last_modified: '2026-09-23T15:00:46.992417Z'
   kind: capability
   fields:
     name: Assortment Visibility
@@ -22822,6 +22965,8 @@ nodes:
   - U613
   - U614
   - U615
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u509
@@ -22838,6 +22983,8 @@ nodes:
     value_sha256: {}
     note: 'U509 : seuls les champs indiqués et le sens présenté sont adoptés ; détails éditoriaux et nouvelles capacités proposés.'
   adoption_ids: []
+  proposed_fields:
+  - mastership
 - id: D17.a
   revision: 5
   kind: capability
@@ -23484,7 +23631,7 @@ nodes:
   last_modified: '2026-09-22T17:16:21.472666Z'
   adoption_ids: []
 - id: D19.a
-  revision: 1
+  revision: 3
   kind: capability
   fields:
     name: Service Provider Policy
@@ -23553,6 +23700,8 @@ nodes:
   - U590
   - U618
   - U626
+  - U646
+  - U650
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u626
@@ -23568,8 +23717,10 @@ nodes:
     validated_fields: []
     value_sha256: {}
     note: Proposition U626 ; aucune validation globale des nouveaux champs ou rattachements.
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-23T15:00:46.992417Z'
   adoption_ids: []
+  proposed_fields:
+  - mastership
 - id: D19.b
   revision: 1
   kind: capability
@@ -24218,6 +24369,124 @@ nodes:
       name: c0464663d0bacecad46f2e3096281dbd42186bd21548ac6579ba35f685796857
       definition: f33fdd2a622cafc01064fe960cd45b1c6953d7afb64f951d9dfc86f49f7cc503
       scope: 38120c3143ac3ef3e682ca79e258c2a331680c67255403c26d532973585f6e4f
+      nature: 905f92dab1d33d45960324e6bcbf301ab74f663f056668f3aa733dbe2c6edf64
+    note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
+  approved_fields:
+  - name
+  - definition
+  - scope
+  - nature
+  proposed_fields:
+  - market_comparisons
+  - market_inspiration
+- id: BHV101
+  kind: behavior
+  revision: 1
+  source_refs:
+  - U578
+  - U633
+  adoption_ids: []
+  fields:
+    name: Monitor Plan
+    definition: Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre
+      visibles les écarts et les besoins de réexamen.
+    scope: Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires, sans
+      reprendre leur suivi opérationnel.
+    nature: planning_practice
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud Supply Chain Planning
+      source_title: Manually Release Plan Recommendations
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+      source_version: 26B
+      source_locator: Introduction ; release results ; exceptions
+      consulted_on: '2026-09-23'
+      concept_name: Manually Release Plan Recommendations
+      element_name: Manually Release Plan Recommendations
+      element_type: Fonctions produit documentées
+      relationship: Appui fonctionnel partiel
+      scope_summary: Les résultats de transmission et les demandes non traitées sont consultables.
+      approach_summary: Les résultats de transmission et les demandes non traitées sont consultables.
+      similarities: Les résultats de transmission et les demandes non traitées sont consultables.
+      differences: La page Oracle étaye le suivi des transmissions et exceptions, sans démontrer tout le suivi des résultats
+        métier du plan. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      evidence_limits: La page Oracle étaye le suivi des transmissions et exceptions, sans démontrer tout le suivi des résultats
+        métier du plan. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      flow_position: 'Monitor Plan distingue le constat des effets et besoins de réexamen de la révision du plan. Nom et maille
+        : convention FLOW.'
+      status: proposed
+      source_refs:
+      - ELM566
+      - U633
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management
+      source_title: Action messages
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages
+      source_version: Documentation évolutive ; mise à jour affichée 2026-03-26
+      source_locator: Introduction ; Select action messages ; Increase and decrease actions
+      consulted_on: '2026-09-23'
+      concept_name: Action messages
+      element_name: Action messages
+      element_type: Fonctions produit documentées
+      relationship: Appui fonctionnel partiel
+      scope_summary: Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen.
+      approach_summary: Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen.
+      similarities: Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen.
+      differences: Les messages Microsoft incluent déjà des recommandations ; FLOW sépare le constat du besoin de réexamen
+        de la préparation de sa réponse. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      evidence_limits: Les messages Microsoft incluent déjà des recommandations ; FLOW sépare le constat du besoin de réexamen
+        de la préparation de sa réponse. Aucun libellé FLOW, catalogue identique ou déploiement Beaumanoir n’est prouvé.
+      flow_position: 'Monitor Plan distingue le constat des effets et besoins de réexamen de la révision du plan. Nom et maille
+        : convention FLOW.'
+      status: proposed
+      source_refs:
+      - ELM413
+      - U633
+    market_inspiration:
+      choice: 'Monitor Plan distingue le constat des effets et besoins de réexamen de la révision du plan. Nom et maille :
+        convention FLOW.'
+      flow_scope: Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre
+        visibles les écarts et les besoins de réexamen.
+      flow_approach: Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires,
+        sans reprendre leur suivi opérationnel.
+      synthesis:
+      - Les résultats de transmission et les demandes non traitées sont consultables.
+      - Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen.
+      - Oracle éclaire les suites de transmission ; Microsoft éclaire les réponses proposées aux changements. Leur rapprochement
+        soutient partiellement la séparation FLOW, sans en établir une taxonomie commune.
+      examples:
+      - title: Illustration FLOW — transfert confirmé et achat refusé
+        situation: Un transfert de 30 pièces est confirmé, mais un achat de 70 pièces est refusé.
+        outcome: Rendre visible le manque restant sans compter l’achat refusé comme acquis.
+        lesson: Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires,
+          sans reprendre leur suivi opérationnel.
+        source_title: Manually Release Plan Recommendations
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+        source_refs:
+        - U633
+        - ELM566
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u633
+  last_modified: '2026-09-23T12:36:53.055461Z'
+  review:
+    state: partial
+    note: 'U633 : noms, définitions, frontières, type et parents adoptés ; compléments éditoriaux proposés.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-23T12:36:53.055461Z'
+    recorded_by: Codex
+    source_refs:
+    - U633
+    validated_fields:
+    - name
+    - definition
+    - scope
+    - nature
+    value_sha256:
+      name: 1d5684c21b1a32c73aed89e19e46a797c8d338981d0ef6021df4070899c6206c
+      definition: 1903d04b000d7a3140f01be949149eca65117a31f7892aae1a987b1c31210a0d
+      scope: 082f2704688febc9d29494009728594b3d442e55dd4261db7d860d5f91f3cf7c
       nature: 905f92dab1d33d45960324e6bcbf301ab74f663f056668f3aa733dbe2c6edf64
     note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
   approved_fields:
@@ -26898,32 +27167,6 @@ relations:
       source_id: 5949ed29a0923017ec50e7ed96ef50f9df9a0005ecca2fd5b0db77c50ee231b6
       target_id: bd4f1b9dc90af054ef435a2e0a9fc52be7dd644d08f58ca93a58ba30e1c8cde8
     note: Comportement terminal d’ATP adopté U262/U263 et instancié sur demande U264.
-- id: REL-PLANNING-BHV005
-  revision: 1
-  type: contains
-  source_id: D05.f
-  target_id: BHV005
-  source_refs:
-  - U267
-  - U269
-  review:
-    state: accepted
-    note: Comportement terminal d’Inventory Planning adopté U269.
-  lifecycle:
-    state: urbanist_validated
-    recorded_at: '2026-09-17T07:54:46.215614Z'
-    recorded_by: Codex
-    source_refs:
-    - U269
-    validated_fields:
-    - type
-    - source_id
-    - target_id
-    value_sha256:
-      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
-      source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
-      target_id: 22885a9cd5e06de7a74c9e3d6ea813e76f3fb81a32b23dbd4fa005518c49d446
-    note: Rattachement adopté avec le découpage présenté.
 - id: REL-PLANNING-BHV006
   revision: 1
   type: contains
@@ -26978,18 +27221,19 @@ relations:
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
   last_modified: '2026-09-22T17:16:21.472666Z'
 - id: REL-MEMBER-BHV016
-  revision: 1
+  revision: 2
   type: contains
   source_id: D05.f
   target_id: BHV016
   source_refs:
   - U290
+  - U633
   lifecycle:
-    state: urbanist_validated
-    recorded_at: '2026-09-17T13:29:45.653508Z'
+    state: under_instruction
+    recorded_at: '2026-09-23T12:36:53.055461Z'
     recorded_by: Codex
     source_refs:
-    - U290
+    - U633
     validated_fields:
     - type
     - source_id
@@ -26998,10 +27242,11 @@ relations:
       type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
       source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
       target_id: 0a7c722f9ca1d01fb4a476ad3811688e1677aa9962956cf13f654769b2000231
-    note: Structure de la refonte demandée U290 ; formulations détaillées qualifiées sur chaque nœud.
+    note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
   review:
     state: partial
-    note: Structure de la refonte demandée U290 ; formulations détaillées qualifiées sur chaque nœud.
+    note: 'U633 : noms, définitions, frontières, type et parents adoptés ; compléments éditoriaux proposés.'
+  last_modified: '2026-09-23T12:36:53.055461Z'
 - id: REL-MEMBER-BHV017
   revision: 1
   type: contains
@@ -33829,7 +34074,7 @@ relations:
       conservé dans history/order-domains-U438/.
   last_modified: '2026-09-19T01:13:35.882622Z'
 - id: REL-NEEDS-U424-D03.p-D04.o
-  revision: 3
+  revision: 4
   type: relates-to
   source_id: D05.f
   target_id: D04.o
@@ -33839,16 +34084,21 @@ relations:
   - CMP162
   - U435
   - U631
+  - U642
+  - CMP267
   qualification:
     role: needs
     meaning: Mobilise les transitions autorisées des Orders pour mettre en action le scénario retenu.
     conditions:
     - Selon les engagements, protections et conditions de prise en charge du scénario ; aucun appel systématique.
+    - En cas de début partiel, examiner l’état réel de la partie concernée et ses dépendances avec les autres lignes ou quantités.
     effects:
     - Obtenir l’engagement, la protection, l’autorisation ou la suspension applicable ; la réalisation demeure pilotée et
       observée en D06.
-    scope: D03 prépare et mobilise ; Lifecycle gouverne les transitions en D04. Relation métier, sans composant logiciel partagé
-      imposé.
+    - Une transition reste conditionnée par les possibilités de traitement des prestations engagées ; les réalisations acquises
+      restent conservées.
+    scope: Le Planning propose ; Lifecycle gouverne les transitions des Orders selon les autorisations ; Fulfillment traite
+      les prestations engagées. Coopération métier, sans transfert de responsabilité ni composant logiciel imposé.
   review:
     state: proposed
     note: Succession de rattachement ou rédaction après regroupement U631 ; qualification détaillée non adoptée par extension.
@@ -33863,7 +34113,7 @@ relations:
     note: Relation adaptée au regroupement ; preuves antérieures conservées dans Git.
   fields:
     label: Mobilise les transitions autorisées des Orders
-  last_modified: '2026-09-23T10:40:15.075567Z'
+  last_modified: '2026-09-23T14:24:43.303897Z'
 - id: REL-BEHAVIOR-BHV083
   revision: 1
   type: contains
@@ -34488,39 +34738,16 @@ relations:
       source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
       target_id: 60d8bf7184cdab58bce0b555fabe201d77948afe0d117774eadc619d6a9f3e41
     note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
-- id: REL-MEMBER-BHV092
-  revision: 3
-  type: contains
-  source_id: D05.f
-  target_id: BHV092
-  source_refs:
-  - U501
-  - U552
-  - CMP229
-  - U631
-  review:
-    state: proposed
-    note: Succession de rattachement ou rédaction après regroupement U631 ; qualification détaillée non adoptée par extension.
-  last_modified: '2026-09-23T10:40:15.075567Z'
-  lifecycle:
-    state: under_instruction
-    recorded_at: '2026-09-23T10:40:15.075567Z'
-    recorded_by: Codex
-    source_refs:
-    - U631
-    validated_fields: []
-    value_sha256: {}
-    note: Relation adaptée au regroupement ; preuves antérieures conservées dans Git.
 - id: REL-BACKLOG-REQUEST-ASSIGNMENT
-  revision: 3
+  revision: 4
   type: relates-to
   source_id: D05.f
   target_id: D02.e
   fields:
     label: Suit les recommandations prises en compte
   qualification:
-    meaning: Le Planning commun recueille les recommandations prises en compte et les écarts constatés par Apply Plan pour
-      suivre les effets du plan et conclure le travail de planification.
+    meaning: Le Planning commun recueille les recommandations prises en compte et les écarts constatés par Apply Plan. Monitor
+      Plan utilise ces constats pour suivre les effets du plan ; le Planning conserve la conclusion du travail de planification.
     role: needs
     conditions:
     - Lorsqu’une recommandation autorisée donne lieu à une application.
@@ -34534,16 +34761,17 @@ relations:
   - U552
   - CMP229
   - U632
+  - U633
   review:
     state: partial
-    note: 'U632 : noms, définitions, frontières, nature et parents adoptés ; compléments éditoriaux proposés.'
-  last_modified: '2026-09-23T11:02:03.547057Z'
+    note: 'U633 : noms, définitions, frontières, type et parents adoptés ; compléments éditoriaux proposés.'
+  last_modified: '2026-09-23T12:36:53.055461Z'
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-23T11:02:03.547057Z'
+    recorded_at: '2026-09-23T12:36:53.055461Z'
     recorded_by: Codex
     source_refs:
-    - U632
+    - U633
     validated_fields: []
     value_sha256: {}
     note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
@@ -35337,6 +35565,32 @@ relations:
       type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
       source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
       target_id: 58abeec54c85f8caa63afd02812421ed4773b03d705134513b76d2aab9104f88
+    note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
+- id: REL-MEMBER-BHV101
+  revision: 1
+  type: contains
+  source_id: D05.f
+  target_id: BHV101
+  source_refs:
+  - U633
+  last_modified: '2026-09-23T12:36:53.055461Z'
+  review:
+    state: partial
+    note: 'U633 : noms, définitions, frontières, type et parents adoptés ; compléments éditoriaux proposés.'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-23T12:36:53.055461Z'
+    recorded_by: Codex
+    source_refs:
+    - U633
+    validated_fields:
+    - type
+    - source_id
+    - target_id
+    value_sha256:
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+      source_id: 9a63bb93ecbc83e3ef50a43e9f717a8877f9be0e6ebb6045c5d90934c5145dd0
+      target_id: 842c8ef9e8dd65dce8b43910f60f6e18d4a8e43f74b27ae0bb18274a5929fb99
     note: Accord limité aux valeurs présentées ; aucune adoption globale des comparaisons.
 alternatives: []
 principles:

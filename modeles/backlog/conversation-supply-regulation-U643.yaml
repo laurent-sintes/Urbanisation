@@ -1,0 +1,85 @@
+id: conversation-supply-regulation-U643
+source_id: SRC-2026-09-23-CHATGPT-SUPPLY-REGULATION
+date: '2026-09-23'
+source_refs:
+- U643
+status: analyzed_not_adopted
+source:
+  path: C:\Users\laure\.codex\attachments\f8e7fcd3-c72e-4a48-b763-5825108263bc\Texte collé.txt
+  sha256: c7633f1ef89e3bc47e4a0431a1cbd558b6069b8bda00d33628cbec2265c44e67
+  type: Conversation ChatGPT fournie par Laurent
+  completeness: Texte collé sans rôles structurés, horodatage, liens de citations ou historique antérieur.
+  viewpoints: Questions attribuables au demandeur et réponses ChatGPT déduites de la mise en forme ; attribution non certifiée
+    par métadonnées.
+  publication: Source brute non publiée ; le partage ne valide pas les réponses.
+workflow: Le skill integrate-flow-transcript fournit les principes de qualification ; ses chemins FLOW-Program docs/administration
+  et docs/as-is sont absents de ce dépôt. Application des autorités locales Urbanisation, sans créer une seconde arborescence
+  de connaissance.
+reconciliation:
+- unit: Q1
+  anchor: 'Début : question sur organe de régulation'
+  nature: Question et proposition de formulation
+  relation: Enrichit
+  target: universe-supply
+  confidence: probable
+  finding: La régulation résume une partie du service rendu ; fonction évite de présumer un composant central.
+  proposal: Formulation introductive possible, à compléter par le pilotage de la réalisation et de ses adaptations.
+- unit: A1
+  anchor: Inventory Management et Demand Management sont distincts de Supply Chain Orchestration
+  nature: Proposition ChatGPT
+  relation: Contredit
+  target: universe-supply / D04 / D02
+  confidence: confirmed
+  finding: Le Domain courant contient les finalités Demand et Inventory. Aucune exclusion de ces finalités ne découle de leur
+    séparation de responsabilités.
+  proposal: Ne pas reprendre cette conclusion dans FLOW.
+- unit: A2
+  anchor: Supply ne se limite pas à ce qui existe physiquement maintenant
+  nature: Explication ChatGPT
+  relation: Confirme
+  target: TER083
+  confidence: confirmed
+  finding: Le glossaire courant distingue déjà ressources présentes et attendues, avec conditions d’admissibilité.
+  proposal: Réutiliser TER083 ; distinguer ce sens large du Purpose Supply qui porte les apports attendus.
+- unit: A3
+  anchor: Supply ≠ Available Supply ; exemple 1 000 et 420
+  nature: Distinction conceptuelle et exemple fictif
+  relation: Nuance
+  target: TER083 / D02.e / D02.c
+  confidence: probable
+  finding: La mobilisabilité dépend de la demande, de la date et des règles. Les chiffres ne sont pas des observations. Une
+    affectation n’est pas universellement un blocage dans FLOW.
+  proposal: Parler de ressources mobilisables pour une demande et une échéance, selon les contraintes.
+- unit: A4
+  anchor: ASCM définit Supply ; synchronisation supply et demand
+  nature: Attribution externe à vérifier
+  relation: Nuance
+  target: Vocabulaire marché
+  confidence: probable
+  finding: Les extraits primaires ASCM consultés appuient la synchronisation dans SCM ; ils ne définissent pas le Domain FLOW
+    ni une capacité SCO de périmètre identique. Le libellé produit/composant/service est retrouvé dans un programme CPIM 6.0,
+    tandis que le dictionnaire 18 donne deux sens différents de supply.
+  proposal: Distinguer édition et nature du document ; ne pas présenter la paraphrase comme une citation exacte du dictionnaire.
+market_checks:
+- title: Explaining Supply Assignment
+  url: https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4
+  consulted_on: '2026-09-23'
+  access: Texte directement consulté
+  locator: Supply Assignment Scenarios ; Copying Assignments During Processing ; Normal, Preview and Simulation
+  finding: Stock présent et futur mobilisé selon le mode ; normal et preview ne couvrent pas exactement les mêmes apports.
+  limit: SAP ARun combine affectation et effets de protection ; la convention FLOW distingue affectation et réservation.
+- title: Supply Chain Management — ASCM
+  url: https://www.ascm.org/topics/supply-chain-management/
+  consulted_on: '2026-09-23'
+  access: Extrait indexé détaillé ; ouverture directe 403
+  finding: Synchroniser ressources et demande contribue au SCM, avec planification, exécution, contrôle et suivi.
+  limit: Ne définit pas à lui seul Supply Chain Orchestration.
+- title: ASCM Supply Chain Dictionary, 18th edition
+  url: https://learn.ascm.org/sfc/servlet.shepherd/document/download/069R3000006PlDHIA0?operationContext=S1
+  consulted_on: '2026-09-23'
+  access: Extrait indexé de la page 190
+  finding: 'Supply : quantités de biens disponibles pour usage ou réapprovisionnement réel/planifié de produits ou composants.'
+  limit: Aucune lecture complète du dictionnaire.
+wording_proposed: La Supply Chain Orchestration régule la satisfaction des demandes en coordonnant les ressources présentes
+  ou attendues, les engagements et la réalisation des prestations, selon les priorités et contraintes métier.
+decision: Aucun changement du modèle ou du glossaire ; proposition de formulation et corrections soumises à la discussion.
