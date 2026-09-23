@@ -31,6 +31,46 @@ class ModelLevelTests(unittest.TestCase):
                 node.pop('level_ref')
         return model
 
+    def purpose_model(self):
+        model = self.modern()
+        next(n for n in model['nodes'] if n['id'] == 'business-references')['kind'] = 'area'
+        model['principles'].append({'id': 'PRINCIPLE-DOMAIN-PURPOSE', 'statement': 'Purpose fixture', 'source_refs': []})
+        for node in model['nodes']:
+            if node['kind'] in ('domain', 'area'):
+                for field in ('name', 'definition', 'finality', 'scope'):
+                    node['fields'].setdefault(field, 'Meaningful fixture value')
+        assign_versions(model, {}, now='2026-09-23T00:00:00Z')
+        return model
+
+    def test_purpose_contract_accepts_reference_children_and_renders_new_label(self):
+        model = self.purpose_model()
+        self.assertEqual(validate_urbanism(model, self.sources), [])
+        self.assertIn('| business-references | Business References | Purpose |', render(model, 'Purpose'))
+
+    def test_purpose_requires_a_nonempty_finality_without_retroactive_rule(self):
+        model = self.purpose_model()
+        node = next(n for n in model['nodes'] if n['kind'] == 'area')
+        node['fields']['finality'] = '  '
+        self.assertIn(f"purpose/{node['id']}: finality must be nonempty", validate_urbanism(model, self.sources))
+        model['principles'] = [p for p in model['principles'] if p['id'] != 'PRINCIPLE-DOMAIN-PURPOSE']
+        self.assertFalse(any(e.startswith('purpose/') for e in validate_urbanism(model, self.sources)))
+
+    def test_purpose_detects_orphan_and_ambiguous_capabilities(self):
+        for mode in ('orphan', 'ambiguous'):
+            with self.subTest(mode=mode):
+                model = self.purpose_model()
+                capability = next(n for n in model['nodes'] if n['kind'] == 'capability')
+                edge = next(r for r in model['relations'] if r['target_id'] == capability['id'] and r['type'] == 'contains')
+                if mode == 'orphan':
+                    model['relations'].remove(edge)
+                else:
+                    other = next(n for n in model['nodes'] if n['kind'] == 'area' and n['id'] != edge['source_id'])
+                    duplicate = deepcopy(edge)
+                    duplicate.update(id='PURPOSE-AMBIGUITY', source_id=other['id'])
+                    duplicate['lifecycle'] = {'state': 'ai_proposed', 'recorded_at': '2026-09-22T00:00:00Z', 'source_refs': []}
+                    model['relations'].append(duplicate)
+                self.assertIn(f"purpose/{capability['id']}: capability requires exactly one Purpose ancestor", validate_urbanism(model, self.sources))
+
     def test_historical_schema_and_rendering_keep_the_published_levels(self):
         self.assertEqual(validate_urbanism(self.legacy, self.sources, self.schema), [])
         universe = next(n for n in self.legacy['nodes'] if n['id'] == 'universe-supply')

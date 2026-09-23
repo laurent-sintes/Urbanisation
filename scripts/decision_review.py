@@ -28,6 +28,7 @@ def input_state(root):
     for folder in ('modeles/backlog', 'modeles/schemas'):
         paths.extend(p for p in (root / folder).iterdir()
                      if p.is_file() and p.suffix in ('.yaml', '.yml', '.json'))
+    paths.extend((root / 'modeles/backlog/decision-intents').rglob('*.yaml'))
     paths.extend(root / p for p in ('modeles/provenance/source-records.json',
                                    'modeles/release/index.json', 'modeles/modeling-guides/index.yaml')
                  if (root / p).exists())

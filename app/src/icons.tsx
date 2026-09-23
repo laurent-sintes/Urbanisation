@@ -9,7 +9,7 @@ import {
   Download, ListFilter, Settings2, Compass, type LucideIcon,
 } from 'lucide-react';
 import type { AtlasNode } from './types';
-import { capabilityNature, capabilityTypes } from './capabilityTypes';
+import { capabilityNature, capabilityTypes, type CapabilityNature } from './capabilityTypes';
 import { behaviorNature, behaviorTypes } from './behaviorTypes';
 
 // Presentation only: exact published names, never inferred parents or business semantics.
@@ -56,7 +56,9 @@ export function iconFor(node: AtlasNode): LucideIcon {
     if (node.referenceParentName) return ({ 'Product Reference': Package, 'Party / Role': Users,
       Catalog: BookOpen, 'Product Catalog': BookOpen, Assortment: ListFilter, Agreement: FileSignature, 'Fulfillment Network': Network, 'Service Catalog': ClipboardList } as Record<string, LucideIcon>)[node.referenceParentName] ?? BookOpen;
     const nature = capabilityNature(node);
-    const icons: Record<string, LucideIcon> = { Zap, SlidersHorizontal, Eye, Workflow, CalendarCheck, GitBranch };
+    const icons: Record<(typeof capabilityTypes)[CapabilityNature]['icon'], LucideIcon> = {
+      Zap, SlidersHorizontal, Eye, Workflow, CalendarCheck, ShieldCheck, GitBranch,
+    };
     return nature ? icons[capabilityTypes[nature].icon] : Box;
   }
   return namedIcons[node.name] ?? (node.groupRole === 'urbanism_level' ? Layers : typeIcons[node.kind]) ?? Box;

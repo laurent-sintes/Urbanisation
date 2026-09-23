@@ -1,0 +1,987 @@
+id: consignment-orders-market-review-U595
+date: '2026-09-22'
+status: market_study_recommendations_pending_decision
+source_refs:
+- U595
+- U596
+- U597
+- CMP256
+- CMP257
+- ELM406
+- ELM601
+- ELM611
+- ELM612
+- ELM613
+- ELM614
+- ELM615
+- ELM616
+- ELM617
+- ELM618
+- ELM619
+- U598
+- U599
+- CMP258
+- U600
+- U601
+- CMP259
+- ELM620
+- ELM621
+- ELM622
+- ELM623
+- ELM624
+- U602
+- CMP260
+- C116
+- U603
+- CMP261
+- ELM625
+- ELM626
+- ELM627
+- U604
+- U605
+- U606
+- C117
+- CMP262
+- ELM628
+- ELM629
+- ELM630
+- U607
+- U611
+- CMP263
+- ELM631
+- ELM632
+- U612
+- CMP264
+user_clarifications:
+  demand: Transfer Order et les retours sont des demandes ; elles portent besoins/exigences et pilotent la promesse, qu’elles
+    viennent du commerce ou du plan.
+  scope: Couvrir nos biens chez un client et les biens de notre client chez nous ; le second cas est l’exemple prioritaire.
+  study: Éviter l’Order à tout faire et comparer AFS / Fashion avant décision de découpage.
+  qualified_name_U601: Fill-up qualifie la mise en consignation ; corrige Pick-up écrit en U600. Comparaison requise avant
+    validation.
+  sales_mandate_U602: Dans le cas U596, le stock client détenu chez nous est accompagné d’un mandat pour vendre ; Issue est
+    important.
+sources:
+- id: ELM611
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA Best Practices
+  title: Customer Consignment
+  url: https://help.sap.com/docs/s4hana-cloud-best-practices/extended-intercompany-processes-for-sales-1wo-qa/customer-consignment
+  edition: Scope item 1WO_QA ; édition non affichée dans le texte indexé
+  locator: Customer Consignment
+  access: Texte primaire indexé lu ; ouverture directe du portail sans corps de texte
+  finding: Distingue fill-up sans transfert de propriété, issue à la consommation/vente, pick-up des invendus et return après
+    issue.
+  limit: Consignation de nos marchandises chez un client ; ne décrit pas la détention du stock de notre client dans notre
+    entrepôt.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM612
+  market_ref: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: Consigned Inventory
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faims/consigned-inventory.html
+  edition: 26A
+  locator: Consignment Agreement ; Consignment Order ; Ship and Receive Items ; Consumption Advice
+  access: Page primaire directement lue
+  finding: Le demandeur appelle les marchandises sous accord de consignation ; réception et propriété fournisseur restent
+    distinctes, puis avis de consommation et règlement.
+  limit: Point de vue acheteur/fournisseur ; ne démontre pas une prestation de garde du stock d’un client.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM613
+  market_ref: MKT32
+  vendor: Oracle
+  product: Retail Merchandising Foundation Cloud Service
+  title: Item Types
+  url: https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/21.0/rmsim/item-types.htm
+  edition: 21.0, édition historique consultée
+  locator: Consignment and Concession Items
+  access: Page primaire directement lue
+  finding: Les articles consignés peuvent participer aux achats et transferts ; le régime de propriété est distinct de la
+    transaction de déplacement. Consignation et concession sont également différenciées.
+  limit: Ne prouve ni une stratégie unique actuelle ni qu’un Transfer Order doit porter toute demande B2B.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM614
+  market_ref: MKT80
+  vendor: SAP
+  product: Apparel and Footwear Solution
+  title: Release Notes for SAP Apparel and Footwear 6.5
+  url: https://help.sap.com/doc/29d6d66f79a142b18a2014c7e54ff392/6.5/en-US/Release_Notes_SAP_AFS_65E.PDF
+  edition: AFS 6.5 / ECC 6.0 EHP5 ; copyright 2011
+  locator: §4.5.4, page imprimée 18, page PDF 22 (index 21)
+  access: PDF primaire directement lu, passage textuel ciblé
+  finding: À partir d’AFS 6.5, le stock en consignation fournisseur peut être vendu directement et pris en compte par AFS
+    ATP, Allocation Run et les livraisons sortantes.
+  limit: Ne décrit pas le paramétrage installé ni l’ensemble des parcours de consignation client. Pas de reproduction du document,
+    protégé par copyright.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM615
+  market_ref: MKT81
+  vendor: SAP
+  product: Fashion Management
+  title: Consignment Orders
+  url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+  edition: 1.0 SP13
+  locator: Use ; Process ; Consignment fill-up / issue / pick-up / return
+  access: Texte primaire indexé lu ; ouverture directe du portail sans corps de texte
+  finding: Les articles pertinents pour ARun mobilisent l’affectation dans la consignation client. Fill-up, issue et pick-up
+    sont documentés ; return ne nécessite pas ARun. Le choix des stocks admissibles et le lancement immédiat dépendent du
+    paramétrage.
+  limit: Fonctions FMS 1.0 SP13 ; ne pas les attribuer automatiquement à S/4HANA ni déduire quatre capacités de quatre documents.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM616
+  market_ref: MKT81
+  vendor: SAP
+  product: Fashion Management sur ERP
+  title: Vendor Consignment
+  url: https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3daaa256c9006f15e10000000a441470.html?version=6.18.latest
+  edition: ERP 6.0 EHP8, pointeur 6.18.latest ; prérequis FASHION_04
+  locator: Use ; Prerequisites ; Features
+  access: Texte primaire indexé lu
+  finding: Consignation fournisseur enrichie par saisons, segmentation et ARun ; affectation possible aux ventes/transferts
+    et désaffectation automatique lors des retours de consignation fournisseur.
+  limit: Enrichissements attestés de Fashion ; le document ne prouve pas que toutes les dimensions étaient absentes d’AFS.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM617
+  market_ref: MKT81
+  vendor: SAP
+  product: Fashion / Retail sur ERP
+  title: Vendor Consignment and Order Allocation Run
+  url: https://help.sap.com/docs/SAP_ERP/39615c43587c4405aba2de8ebf33cd66/3d06ece43a61456db4b9bcd2ca1b167e.html
+  edition: ERP 6.0 EHP8 SPS02 ; EA-RETAIL 618 SP2 ; FASHION_04
+  locator: Use ; Technical Details ; Additional Details
+  access: Texte primaire indexé lu ; ouverture directe du portail sans corps de texte
+  finding: Le stock consigné est mobilisable pour l’affectation ; des déplacements entre sites et sociétés peuvent conserver
+    la catégorie consignée et la propriété fournisseur jusqu’à la vente.
+  limit: Scénario de consignation fournisseur Retail ; ni toute circulation entre sociétés ni tout contrat de consignation
+    ne suit nécessairement ce paramétrage.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM618
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA aATP Supply Assignment
+  title: Customer Consignment Process
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/02084c34785749309d9dd5368b6a613a.html?locale=en-US
+  edition: 2025 FPS01, février 2026
+  locator: Customer Consignment Process with Supply Assignment (ARun) Relevant Materials
+  access: Texte primaire indexé lu ; ouverture directe du portail sans corps de texte
+  finding: Pour les articles concernés, seul le document de fill-up KB entre dans Supply Assignment ; KE, KA et KR en sont
+    exclus dans cette documentation.
+  limit: Différence documentaire avec FMS 1.0 SP13 ; ne démontre pas seule toutes les règles de migration ni une incapacité
+    à exécuter les autres parcours.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM619
+  market_ref: MKT80
+  vendor: SAP
+  product: AFS Enterprise Services, IS-AFS-ARUN
+  title: Check Material Supply And Demand Allocation Creation
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/1dad2180e6f34b75ac77afce5cb5eda1/626fd75a5f8811dc2b8d000f20fcb6a9.html
+  edition: Composant P3A V605 ; documentation hébergée dans Enterprise Services 2025 FPS01
+  locator: Technical Data ; SupplyReference ; InventorySpecialStockTypeCode
+  access: Texte primaire indexé lu
+  finding: L’interface AFS d’affectation simulée distingue notamment le stock consigné chez le client et les catégories de
+    stock/besoins.
+  limit: Contrat d’interface AFS identifié par composant et namespace ; son hébergement documentaire S/4HANA ne prouve pas
+    un moteur AFS version 2025 ni le comportement complet de chaque Order.
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien primaire ; aucune reproduction substantielle ni preuve de déploiement Beaumanoir.
+- id: ELM620
+  market_ref: MKT82
+  vendor: Infor
+  product: M3 Business Engine
+  title: Consignment Stock
+  edition: 16.x
+  url: https://docs.infor.com/m3udi/16.x/en-us/m3beud/scexechs/mws020.html
+  locator: Terms used ; Replenishment ; Consumption ; Sell-back ; Claim of consignment goods
+  finding: 'Consignment replenishment order : apport fournisseur sans acquisition. Usage PO : achat à la consommation. Sell-back
+    order : retour de propriété de notre stock au fournisseur ; ne pas confondre avec une reprise physique de biens non consommés.'
+  limit: Consignation fournisseur entrante ; aucun processus complet de consignation client établi par cette page.
+  access: Page primaire directement lue
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni réalisation installée déduite.
+- id: ELM621
+  market_ref: MKT83
+  vendor: IFS
+  product: IFS Cloud
+  title: Create Refill Order
+  edition: 25R2
+  url: https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityCreateRefillOrder.htm
+  locator: Explanation ; System Effects
+  finding: Refill Order désigne une Customer Order alimentant le stock consigné chez le client.
+  limit: Documente le réapprovisionnement ; ne prouve pas que la première mise en place porte le même libellé.
+  access: Page primaire directement lue
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni réalisation installée déduite.
+- id: ELM622
+  market_ref: MKT83
+  vendor: IFS
+  product: IFS Cloud
+  title: Return or Scrap Customer Consignment Stock
+  edition: 25R2
+  url: https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityReturnorScrapCustomerConsignmentStock.htm
+  locator: Explanation ; Prerequisites ; System Effects
+  finding: RMA de consignation pour retour de biens défectueux avant consommation ; crédit désactivé. Return peut donc désigner
+    un retour de biens encore consignés.
+  limit: 'Cas documenté de défaut avant consommation, pas preuve de toutes les reprises commerciales. Titre retenu : H1 réel
+    ; la métadonnée de page affiche Report Quantity Consumed.'
+  access: Page primaire directement lue
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni réalisation installée déduite.
+- id: ELM623
+  market_ref: MKT83
+  vendor: IFS
+  product: IFS Cloud
+  title: Create Purchase Order from Arrival
+  edition: 25R2
+  url: https://docs.ifs.com/ifsclouddocs/25r2/Receipt/ActivityPOArrivalCreate.htm
+  locator: Explanation ; note customer-owned parts
+  finding: Une Purchase Order peut enregistrer après arrivée des biens appartenant au client ; le propriétaire est porté sur
+    la ligne.
+  limit: Réemploi documentaire produit, sans assimilation de la détention pour compte client à un achat effectif. Ne définit
+    pas une famille universelle d’Orders de garde.
+  access: Page primaire directement lue
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni réalisation installée déduite.
+- id: ELM624
+  market_ref: MKT20
+  vendor: Oracle
+  product: Fusion Cloud SCM
+  title: Examples of Consigned Inventory Returns
+  edition: 25D
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html
+  locator: Material Received and Put Away ; Material Consumed, advice generated or not
+  finding: Return to supplier couvre des situations avant et après consommation ; état de propriété et avis de consommation
+    déterminent les opérations et suites financières.
+  limit: Consignation fournisseur ; la page ne définit pas les quatre types d’Orders SAP. Édition 25D distincte de la présentation
+    Oracle 26A ELM612.
+  access: Page primaire directement lue
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle ni réalisation installée déduite.
+- id: ELM625
+  title: Consignment Stock Processing
+  edition: S/4HANA Sales 2025 FPS01 (février 2026)
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/da65b65334e6b54ce10000000a174cb4.html
+  locator: Use ; Consignment Issue
+  finding: Le client détenteur peut utiliser ou revendre les biens. Issue lui en transfère la propriété et devient facturable.
+  limit: Point de vue du propriétaire fournisseur ; le client SAP correspond ici au détenteur, pas au client propriétaire
+    décrit par Laurent.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  access: Texte primaire indexé consulté
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM626
+  title: Special Features for Consignment Processing
+  edition: S/4HANA Sales 2025 FPS01 (février 2026)
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/c020bf53d25ab64ce10000000a174cb4.html
+  locator: Introduction ; sales document type ED
+  finding: Des agents déclarent les livraisons réalisées au client pour le compte du propriétaire ; ED est nommé Delivery
+    by external agent (consignment issue).
+  limit: Livraison pour compte documentée ; pas preuve d’un mandat commercial complet ni de sa réalisation dans le SI du mandataire.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  access: Texte primaire indexé consulté
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM627
+  title: Create Consignment Issue Order with Reference to Scheduling Agreement Manually (non-JIT)
+  edition: S/4HANA Cloud Best Practices 2608 ; Automotive Supply to Customer – Inventory Management 55F_RO
+  url: https://help.sap.com/docs/s4hana-cloud-best-practices/automotive-supply-to-customer-inventory-management-55f-ro/create-consignment-issue-order-with-reference-to-scheduling-agreement-manually-non-jit?locale=en-US&state=PRODUCTION&version=2608
+  locator: Note ; Purpose
+  finding: Issue est normalement généré depuis un avis de livraison de l’agent ou du client ; la création manuelle présentée
+    sert aux tests.
+  limit: Scénario automobile à accord de livraison ; ne prouve ni processus Fashion identique ni demande indépendante émise
+    avant exécution.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  access: Texte primaire indexé consulté
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien, sans reproduction substantielle.
+- id: ELM628
+  title: Sales Documents
+  edition: S/4HANA Cloud Public Edition, Sales 2608 Latest
+  url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/aa64b65334e6b54ce10000000a174cb4.html
+  locator: Concepts / Sales Document Types
+  finding: Consignment Issue et Fill-up sont des exemples de types de Sales Order ; le type détermine données, contrôles et
+    suites.
+  limit: Taxonomie documentaire SAP ; ne détermine pas la maille des capacités FLOW.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  consulted_on: '2026-09-22'
+  access: Texte primaire indexé lu ; portail direct Sales Documents sans corps de texte
+  reuse: Synthèse sélective et lien.
+- id: ELM629
+  title: Creating a Consignment Issue
+  edition: S/4HANA Sales 2025 FPS01 (février 2026)
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/e665b65334e6b54ce10000000a174cb4.html
+  locator: Étapes 1, 4–6
+  finding: Création d’une Sales Order de consignation, suivie d’une livraison, d’une sortie de stock puis d’une facturation.
+  limit: Pas uniquement un document juridique ; ne prescrit pas deux demandes initiales concurrentes.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  consulted_on: '2026-09-22'
+  access: Texte primaire indexé lu ; portail direct Sales Documents sans corps de texte
+  reuse: Synthèse sélective et lien.
+- id: ELM630
+  title: Create Consignment Issue Order
+  edition: S/4HANA Cloud Best Practices 2608, Sales from Distribution Center 3HS_HU
+  url: https://help.sap.com/docs/SAP_S4HANA_CLOUD_BEST_PRACTICES/9f5a580825ded5ac1ab823cac86b9f51/01da39ad1a084dd4939b361dacd11006.html?locale=en-US&state=PRODUCTION&version=2608
+  locator: Purpose ; Procedure 2–7
+  finding: Après déclaration périodique des quantités vendues ou consommées, création d’une Sales Order de type CCIS pour
+    documenter Issue et permettre la facturation.
+  limit: Perspective du consignateur ; la vente au client final et la relation consignateur/détenteur restent distinctes.
+    CCIS propre à cette édition/scénario, pas renommage universel de KE.
+  market_ref: MKT13
+  vendor: SAP
+  product: S/4HANA
+  consulted_on: '2026-09-22'
+  access: Texte primaire indexé lu ; portail direct Sales Documents sans corps de texte
+  reuse: Synthèse sélective et lien.
+- id: ELM631
+  market_ref: MKT84
+  vendor: SAP
+  product: Business One
+  title: 'Goods Return Request: Contents Tab'
+  edition: '10.0'
+  url: https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/b3b60a16edfc4bafacc0fc7a1fd0766a.html
+  locator: Introduction ; Quantity ; Return Reason
+  finding: Goods Return Request concerne les articles achetés et retournés au fournisseur.
+  limit: Usage lexical SAP Business One, pas SAP S/4HANA ni une taxonomie générale de capacités.
+  access: Texte primaire indexé lu
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien.
+- id: ELM632
+  market_ref: MKT14
+  vendor: Microsoft
+  product: Dynamics 365 SCM
+  title: Sales returns
+  edition: Documentation évolutive consultée le 22 septembre 2026
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+  locator: Return order process ; Return material authorization
+  finding: La demande de retour client déclenche une Return Order/RMA. Les parcours physiques et Credit only sont distingués
+    ; retour autorisé ne signifie pas acceptation ou crédit acquis.
+  limit: Appui à l’intention de retour après vente ; ne documente pas la famille exacte Goods Return / Customer Return / Consignment
+    Return.
+  access: Texte primaire indexé lu
+  consulted_on: '2026-09-22'
+  reuse: Synthèse sélective et lien.
+reused_sources:
+- id: ELM406
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Documentation datée du 6 mai 2026
+  consulted_on: '2026-09-22'
+  locator: Overview ; Consignment replenishment orders ; Inventory ownership change journal
+  finding: Demande d’apport distincte de l’acquisition ultérieure ; point de vue consignation fournisseur entrante.
+- id: ELM601
+  title: Setup of Interorganization Parameters for Transfer Orders
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/faims/setup-of-interorganization-parameters-for-transfer-orders.html
+  edition: 25C
+  consulted_on: '2026-09-22'
+  finding: Un même transfert a des effets demande/apport ; cela ne prescrit pas le responsable de la demande FLOW.
+business_regimes:
+- case: Notre stock chez le client B2B
+  ownership: Nous restons propriétaires jusqu’au fait contractuel applicable.
+  purpose: Alimenter le stock consigné, reprendre les invendus, constater consommation/vente ou retour après consommation.
+  market_examples:
+  - Consignment Fill-Up
+  - Consignment Pick-Up
+  - Consignment Issue
+  - Consignment Return
+  source_refs:
+  - ELM611
+  - ELM615
+  recommendation: Conserver ces intentions et effets distincts ; la nomenclature documentaire SAP ne suffit pas à créer quatre
+    capacités.
+- case: Stock fournisseur chez nous destiné à une acquisition/consommation
+  ownership: Fournisseur propriétaire puis éventuel transfert selon accord.
+  purpose: Demander l’apport, suivre la réception, puis distinguer acquisition et retour.
+  existing_anchor: D04.r Consignment Replenishment Order
+  source_refs:
+  - ELM406
+  - ELM612
+  recommendation: Conserver le périmètre actuel ; ne pas renommer toute entrée de stock tiers en achat.
+- case: Stock du client donneur d’ordre chez nous
+  ownership: Le client reste propriétaire ; lieu de détention et propriété sont deux dimensions.
+  purpose: Détenir les biens du client avec mandat de les vendre ; suivre alimentation, vente, reprise des invendus et suites
+    de retour.
+  user_sources:
+  - U595
+  - U596
+  - U602
+  qualification: Mandat de vente confirmé U602. Une acquisition intermédiaire par nous et les modalités exactes de propriété
+    ou de facturation ne sont pas établies.
+  recommendation: Inclure Issue dans le cycle étudié. Relier la demande de vente, les effets sur le stock consigné et l’exécution
+    logistique sans dupliquer la demande commerciale.
+afs_fashion_comparison:
+- axis: Mobiliser le stock en consignation fournisseur pour satisfaire des demandes
+  afs: AFS 6.5 l’intègre déjà à ATP, ARun et livraisons sortantes.
+  fashion: Fashion documente aussi son utilisation par ARun et les affectations aux ventes/transferts.
+  finding: Continuité du principe ; ce n’est pas une invention de Fashion.
+  source_refs:
+  - ELM614
+  - ELM616
+  - ELM617
+- axis: Dimensions du stock et réseau
+  afs: Le contrat AFS consulté porte catégories de stock et stock consigné client ; le détail complet des déplacements et
+    saisons n’est pas établi par ce corpus.
+  fashion: Saisons, segmentation, ARun et circulation multisite avec maintien de consignation sont documentés.
+  finding: Fashion expose un traitement Retail/Fashion enrichi ; aucune absence de ces fonctions dans AFS n’est déduite du
+    silence des sources.
+  source_refs:
+  - ELM619
+  - ELM616
+  - ELM617
+- axis: Affectation de la consignation chez le client
+  afs: L’interface documente le stock consigné client ; les quatre parcours et leur éligibilité complète à ARun restent non
+    établis dans les sources AFS consultées.
+  fashion: FMS 1.0 SP13 décrit ARun pour fill-up, issue et pick-up selon article/règles ; return ne requiert pas ARun.
+  s4hana: La page aATP 2025 FPS01 réserve Supply Assignment au fill-up KB, en excluant KE, KA et KR.
+  finding: Écart fonctionnel documenté FMS / S/4HANA, à conserver avec ses versions. Pas de règle de migration universelle
+    ni de comportement AFS extrapolé.
+  source_refs:
+  - ELM615
+  - ELM618
+  - ELM619
+flow_options:
+- option: Transfer Order pour toute entrée/sortie de stock tiers
+  assessment: Non recommandé
+  benefit: Un mécanisme de déplacement commun.
+  tradeoff: Masque les obligations de garde/restitution, la nature de la demande et les différences avec acquisition ou vente.
+- option: Une capacité par type de document SAP
+  assessment: Non recommandé sans examen de maille
+  benefit: Lecture produit directe.
+  tradeoff: Importe une taxonomie logicielle ; multiplie les capacités sans démontrer de responsabilité durable distincte.
+- option: Demandes qualifiées par résultat métier, régime du stock et exécution séparés
+  assessment: Recommandé, décision de maille encore à prendre
+  benefit: Préserve promesse et cycle de vie de la demande ; le régime de propriété reste Inventory, les prestations restent
+    Fulfillment.
+  tradeoff: Expliciter la filiation entre demande métier et réalisations, ainsi que les variantes qui justifient un type ou
+    un comportement.
+recommended_decision:
+  transfer: Conserver Transfer Order pour une demande de déplacement entre sites du réseau ; le stock peut appartenir à un
+    tiers si les droits/accords le permettent. La frontière ne se réduit ni au propriétaire du bâtiment ni au propriétaire
+    des biens.
+  consignment: Décrire séparément les intentions de mise en consignation, reprise, consommation et retour après consommation
+    ; examiner leur maille sans transformer chaque document SAP en capacité.
+  client_owned: 'U602 confirme le mandat de vente : inclure Issue dans le périmètre étudié avec Fill-up, Pick-up et les suites
+    Return. Ne pas présumer un achat préalable de notre part.'
+  existing: D04.r et D01.h ont aujourd’hui un périmètre fournisseur propriétaire/distributeur détenteur. Leur élargissement
+    au stock du client donneur d’ordre serait un changement de périmètre à décider, pas un simple renommage.
+  needs_business_decision:
+  - Le mandat de vente est établi U602 ; préciser le fait générateur d’Issue et ses effets de propriété, ainsi que son articulation
+    avec Sales Order.
+  - Faut-il un type de demande de consignation client et des comportements, ou des types distincts selon obligations et cycles
+    de vie ?
+  issue_granularity_U606: 'Résolu U607 : Consignment Issue, comportement BHV096 de Sales Order D04.i. Description détaillée
+    encore proposée.'
+limitations:
+- Comparaison de documentation produit, pas audit des versions et paramétrages Beaumanoir.
+- Deux sens de consignation couverts ; la prestation sur stock client n’est pas transformée implicitement en achat fournisseur.
+- AFS, FMS et S/4HANA distingués ; ne pas qualifier Fashion sans édition.
+- Noms et responsabilités proposés restent à décider ; aucun Domain Commerce créé.
+canonical_hierarchy_changed: false
+clarification_U598:
+  status: understanding_checked_no_new_adoption
+  source_refs:
+  - U598
+  - CMP256
+  - ELM406
+  - ELM611
+  - ELM612
+  - ELM613
+  - ELM615
+  - ELM617
+  transfer:
+    finding: Transfer Order porte le déplacement entre sites ; Inventory Rebalancing est une intention parmi celles déjà décrites.
+    existing_behaviors:
+    - BHV070 Initial Stocking
+    - BHV071 Continuous Replenishment
+    - BHV072 Inventory Rebalancing
+    - BHV073 Stock Consolidation
+    - BHV074 Order-Driven Transfer
+    recommendation: Exprimer pour chaque demande le résultat de déplacement, son motif et ses contraintes ; ne pas confondre
+      une intention identifiable par demande avec une capacité distincte par déclencheur. Propriété et droits applicables
+      restent explicites.
+  consignment:
+    finding: La demande spécifique porte son obligation métier ; les déplacements et prestations servent sa réalisation.
+    recommendation: Distinguer alimentation, reprise des invendus et retour après consommation. Reprise et restitution peuvent
+      désigner la même opération depuis deux points de vue, sans imposer deux Orders.
+  existing_coverage:
+    D04.r: Demande d’apport fournisseur consigné entrant, y compris implantation et réassort ; pas toute mise en consignation
+      dans les deux sens.
+    BHV065: Consignment Exit applique déjà les issues autorisées et mobilise les Orders pertinents.
+    D04.m: Supplier Return porte les retours fournisseur, avec suites selon accord ; ne représente pas automatiquement la
+      restitution à un client propriétaire.
+  actual_gap: Clarifier et, si nécessaire, compléter les demandes explicites de consignation ou détention de stock client
+    ; ne pas qualifier toutes les suites de responsabilités absentes.
+  canonical_hierarchy_changed: false
+naming_proposal_U599:
+  status: proposed_names_not_adopted
+  source_refs:
+  - U599
+  - CMP258
+  - ELM612
+  - ELM615
+  recommended_replacement:
+    current_id: D04.r
+    current_name: Consignment Replenishment Order
+    proposed_name: Consignment Order
+    scope: Apport initial ou complémentaire sous accord de consignation ; le périmètre fournisseur entrant courant ne change
+      pas par le seul nom.
+    market: Nom attesté Oracle ; SAP utilise Consignment Fill-Up pour l’intention d’alimentation du stock chez le client.
+  order_names:
+  - name: Consignment Order
+    intent: Apporter des biens sous accord de consignation, initialement ou en complément.
+    origin: Oracle, consignation fournisseur ; rapprochement partiel de Fill-Up SAP.
+  - name: Consignment Pick-up Order
+    intent: Reprendre ou restituer au propriétaire les biens restés consignés et non consommés.
+    origin: SAP, consignation client ; extension aux autres perspectives à qualifier.
+  - name: Consignment Issue Order
+    intent: Porter la consommation/cession du stock consigné avec les effets de propriété applicables.
+    origin: SAP, consignation client ; ne signifie pas simplement expédier.
+  - name: Consignment Return Order
+    intent: Porter un retour après une consommation/cession déjà enregistrée.
+    origin: SAP, consignation client ; distinct de la reprise des invendus.
+  market_limit: Sélection FLOW de noms attestés, pas une famille universelle commune aux éditeurs. Deux documents primaires
+    distincts ELM612/615 étayent les rapprochements à leur portée.
+  client_owned_case: Lorsque nous gardons et restituons le stock du client sans le consommer ou l’acquérir, ne pas imposer
+    Issue et Return ; le rattachement de cette prestation à une famille de consignation reste à qualifier.
+  modeling_limit: Nom proposé et intentions explicites, sans quatre capacités automatiques ni transformation de toute consommation
+    en demande autonome.
+  canonical_hierarchy_changed: false
+  subsequent_review: U600/U601 écartent le nom non qualifié Consignment Order ; voir competitor_review_U600. Proposition historique
+    conservée, non adoptée.
+  subsequent_scope_clarification_U602: 'La réserve de simple garde de client_owned_case est historique et ne décrit plus le
+    cas U596 : mandat de vente confirmé, Issue pertinent.'
+competitor_review_U600:
+  status: comparison_completed_names_pending_validation
+  source_refs:
+  - U600
+  - U601
+  - CMP259
+  - ELM406
+  - ELM612
+  - ELM615
+  - ELM620
+  - ELM621
+  - ELM622
+  - ELM623
+  - ELM624
+  comparison:
+  - vendor: SAP FMS 1.0 SP13
+    perspective: Nos biens chez le client
+    names: Consignment Fill-up / Issue / Pick-up / Return
+    refs:
+    - ELM615
+  - vendor: Microsoft Dynamics 365 SCM
+    perspective: Biens fournisseur chez nous
+    names: Consignment Replenishment Order ; Inventory Ownership Change Journal
+    refs:
+    - ELM406
+  - vendor: Oracle Fusion Cloud SCM 26A / retours 25D
+    perspective: Biens fournisseur chez nous
+    names: Consignment Order ; Consumption Advice ; Return to supplier
+    refs:
+    - ELM612
+    - ELM624
+  - vendor: Infor M3 16.x
+    perspective: Biens fournisseur chez nous
+    names: Voir les libellés et effets distincts ELM620
+    refs:
+    - ELM620
+  - vendor: IFS Cloud 25R2
+    perspective: Nos biens chez le client ; réception de biens du client distincte
+    names: Voir Refill Order, RMA et Purchase Order contextualisée ELM621–623
+    refs:
+    - ELM621
+    - ELM622
+    - ELM623
+  findings:
+  - Aucun nom ni découpage documentaire unique commun aux cinq produits consultés.
+  - Le nom courant D04.r est attesté chez Microsoft et Infor ; son remplacement repose sur la clarté recherchée par Laurent,
+    pas sur son absence du marché.
+  - La séparation Pick-up / Return selon la consommation est un appui SAP, pas une règle lexicale universelle (IFS et Oracle).
+  - Les produits réemploient parfois les Orders commerciaux avec un contexte de consignation ; FLOW peut distinguer les intentions
+    sans recopier ces documents.
+  recommendation:
+    placement: 'Consignment Fill-up Order : mise en consignation initiale ou complémentaire, sans acquisition par le détenteur
+      du seul fait de la réception.'
+    retrieval: 'Consignment Pick-up Order : reprise ou restitution des biens restés consignés.'
+    other_names: Consignment Issue Order et Consignment Return Order restent les candidats U599 pour consommation/cession
+      et retour après cession ; leur nécessité comme demandes autonomes reste à qualifier.
+    benefit: Noms qualifiés, intentions distinctes, vocabulaire SAP attesté ; cohérent avec U601.
+    tradeoff: Fill-up reste un terme à expliquer en français ; aucun consensus interéditeurs. Le sens SAP client ne vaut pas
+      extension automatique du périmètre fournisseur D04.r.
+    client_owned: ELM623 éclaire le stock du client détenu chez nous. Ne pas lui imposer un cycle de consommation ou une acquisition
+      ; prise en charge et restitution restent à qualifier.
+  canonical_hierarchy_changed: false
+  canonical_names_changed: false
+  subsequent_scope_clarification_U602: 'U602 complète recommendation.client_owned : mandat de vente confirmé ; Issue fait
+    partie du périmètre étudié, sans acquisition préalable supposée.'
+history_before_U602:
+  client_owned_regime:
+    case: Stock du client donneur d’ordre chez nous
+    ownership: Le client reste propriétaire ; lieu de détention et propriété sont deux dimensions.
+    purpose: Recevoir, conserver, déplacer, mettre à disposition, livrer ou restituer selon ses demandes et l’accord applicable.
+    user_sources:
+    - U595
+    - U596
+    qualification: L’existence d’un droit ou projet d’acquisition n’est pas fournie. Une simple prestation de détention/distribution
+      n’est pas automatiquement la consignation fournisseur des documentations étudiées.
+    recommendation: Étudier les demandes de prise en charge et restitution de stock tiers comme intentions métier explicites
+      sous Demand ; ne pas les rabattre sur un achat, une vente de marchandises ou un Transfer Order universel. Noms anglais
+      et maille à décider.
+  recommended_decision:
+    transfer: Conserver Transfer Order pour une demande de déplacement entre sites du réseau ; le stock peut appartenir à
+      un tiers si les droits/accords le permettent. La frontière ne se réduit ni au propriétaire du bâtiment ni au propriétaire
+      des biens.
+    consignment: Décrire séparément les intentions de mise en consignation, reprise, consommation et retour après consommation
+      ; examiner leur maille sans transformer chaque document SAP en capacité.
+    client_owned: Pour U596, qualifier une demande de prise en charge, livraison ou restitution pour compte du client. Un
+      transfert peut être une réalisation liée ; il ne remplace pas nécessairement l’obligation initiale.
+    existing: D04.r et D01.h ont aujourd’hui un périmètre fournisseur propriétaire/distributeur détenteur. Leur élargissement
+      au stock du client donneur d’ordre serait un changement de périmètre à décider, pas un simple renommage.
+    needs_business_decision:
+    - Le client propriétaire nous confie-t-il uniquement une prestation ou aussi un droit de vendre/acquérir ses biens ?
+    - Faut-il un type de demande de consignation client et des comportements, ou des types distincts selon obligations et
+      cycles de vie ?
+  reason: U602 résout la question du mandat de vente ; conserver l’état antérieur sans le maintenir comme hypothèse courante.
+sales_mandate_U602:
+  status: user_scope_clarification_recorded
+  source_refs:
+  - U602
+  - C116
+  - CMP260
+  - ELM613
+  - ELM615
+  confirmed: Mandat de vendre les biens du client détenus chez nous ; importance d’Issue.
+  proposed_issue_definition: Porter la sortie du régime consigné liée à la vente des marchandises sous mandat, et suivre les
+    effets de propriété et obligations envers le propriétaire prévus par l’accord.
+  boundaries:
+    sales_order: Besoin et engagement envers l’acheteur final ; articulation avec Issue à préciser, sans deux demandes concurrentes
+      pour une même vente.
+    issue: Dimension de consignation de la vente ; aucun achat préalable par le détenteur imposé par cette définition proposée.
+    inventory: Application des effets de quantité, régime et propriété au fait générateur défini.
+    fulfillment: Préparation, expédition et adaptation de l’exécution ; le seul mouvement physique ne définit pas Issue.
+  market: SAP FMS documente Issue dans le processus de vente (ELM615). Oracle Retail distingue des régimes de vente de stock
+    tiers avec des effets différents pour le détaillant (ELM613). Appuis partiels, sans qualification juridique du mandat
+    ni équivalence complète.
+  not_inferred:
+  - Acquisition préalable par nous
+  - Moment exact du transfert de propriété
+  - Adoption globale des quatre noms
+  - Nécessité de quatre capacités autonomes
+  canonical_hierarchy_changed: false
+  subsequent_review_U606: Importance métier maintenue ; autonomie de Consignment Issue Order remise en question. Voir sales_order_issue_review_U606.
+sap_use_case_U603:
+  status: documented_partial_match_contractual_mapping_open
+  source_refs:
+  - U603
+  - U602
+  - CMP261
+  - ELM625
+  - ELM626
+  - ELM627
+  standard_customer_consignment:
+    mapping: Client propriétaire de Laurent = fournisseur/consignor SAP ; nous = client détenteur/consignee SAP ; acheteur
+      final distinct.
+    match: Stock tiers détenu pour utilisation ou revente ; Issue pertinent.
+    condition: Dans ce scénario SAP, Issue transfère la propriété au détenteur et le rend facturable. U602 ne confirme pas
+      cette acquisition par nous.
+  external_agent:
+    mapping: Client propriétaire = entreprise SAP ; nous = agent externe ; acheteur final = client livré.
+    match: Livraison pour compte depuis un stock consigné ; document ED qualifié de consignment issue.
+    limit: Les sources établissent la délégation logistique, pas la négociation ou conclusion de ventes par mandat ; rapprochement
+      partiel, pas équivalence complète.
+  recommendation: Conserver Issue pour la sortie du stock consigné liée à la vente. Définir les parties et effets de propriété
+    ; ne pas déduire une acquisition du seul mandat de vente.
+  modeling_implication: ELM627 montre un Issue généré après avis de livraison. Un document SAP appelé Order ne prouve donc
+    pas à lui seul une demande métier autonome avant exécution. Articulation avec Sales Order à définir.
+  canonical_hierarchy_changed: false
+sales_order_issue_review_U606:
+  status: revised_recommendation_pending_decision
+  source_refs:
+  - U604
+  - U606
+  - C117
+  - CMP262
+  - ELM628
+  - ELM629
+  - ELM630
+  - ELM625
+  - ELM627
+  history_U604: Deux variantes d’un même Order selon Laurent ; noms anglais et capacité autonome non adoptés. U606 interroge
+    désormais la maille par rapport à Sales Order.
+  sap_finding: Consignment Issue est un type de Sales Order. Il peut suivre une déclaration de ventes/consommations et porte
+    effets de stock et facturation, au-delà du seul juridique.
+  perspective: La Sales Order de l’acheteur final ne doit pas être assimilée automatiquement au document Issue du consignateur
+    envers le détenteur. Parties et engagements peuvent différer.
+  recommendation: Conserver Sales Order pour l’intention de vente ; décrire son comportement de vente sur stock consigné,
+    avec variantes acquisition pour revente ou vente pour compte. Ne pas créer une capacité de demande Consignment Issue Order
+    distincte sur la seule base du document SAP.
+  decomposition_limit: Si les deux variantes deviennent des comportements, les rattacher directement à la capacité retenue
+    ; pas de sous-comportements sous un comportement Consignment Sale.
+  inventory: Consigned Inventory Management applique les effets sur le régime de stock et la propriété conformément à l’accord
+    et au fait générateur.
+  document: Un document Issue peut subsister comme trace ou support d’une obligation envers le propriétaire sans devenir une
+    deuxième demande de satisfaction du client final.
+  other_orders: Fill-up et Pick-up conservent des intentions d’apport et de reprise distinctes ; la maille de Return est également
+    à examiner par rapport à Customer Return, sans fusion automatique.
+  canonical_hierarchy_changed: false
+  subsequent_decision: U607 adopte un comportement Consignment Issue directement sous Sales Order, enregistré dans le canon
+    BHV096.
+adoption_U607:
+  status: adopted_name_kind_parent
+  behavior_id: BHV096
+  name: Consignment Issue
+  kind: behavior
+  parent_id: D04.i
+  parent_name: Sales Order
+  source_refs:
+  - U607
+  - CMP262
+  scope: Nom, nature comportement et rattachement explicites ; définition détaillée non adoptée.
+  supersedes: Proposition de capacité autonome Consignment Issue Order ; aucune création de sous-comportements.
+  canonical_hierarchy_changed: true
+goods_return_review_U611:
+  status: market_review_proposal_not_adopted
+  source_refs:
+  - U611
+  - CMP263
+  - ELM631
+  - ELM632
+  - ELM615
+  - ELM625
+  - ELM622
+  proposal:
+    capability: Goods Return
+    behaviors:
+    - Customer Return
+    - Consignment Return
+    distinct: Consignment Pick-up
+  findings:
+  - SAP FMS et S/4 distinguent Return après Issue et Pick-up de biens restés consignés. Return peut rétablir stock consigné
+    et propriété sans renvoi au dépôt du propriétaire.
+  - 'Customer Return et Consignment Return ne forment pas deux catégories exclusives par nature : le retour de consignation
+    SAP vient aussi d’un client.'
+  - Goods Return est attesté chez SAP Business One dans le sens retour fournisseur ; le nom ne porte pas une frontière client
+    universelle.
+  - Microsoft conserve les retours après vente sous Return Order/RMA, avec variantes et suites ; IFS utilise une RMA de consignation
+    même avant consommation dans le cas de défaut ELM622. La frontière lexicale SAP n’est pas universelle.
+  assessment: Intention commune de retour après vente cohérente avec le regroupement proposé ; nomenclature exacte non établie
+    comme consensus marché.
+  recommended_scope: Si Goods Return est retenu ici, expliciter les demandes de retour liées à une vente antérieure et les
+    effets du régime applicable. Supplier Return reste distinct à ce stade ; ne pas faire du nom un retour universel.
+  behavior_reading: Customer Return doit être défini comme parcours général de retour après vente ; Consignment Return précise
+    la variante avec rétablissement du régime consigné selon accord. Ne pas traiter les deux comme des populations nécessairement
+    disjointes.
+  pickup: Reprise de biens restés consignés, distincte du retour après Issue. Le déclencheur peut être le détenteur ou le
+    propriétaire ; ne pas définir la séparation par le seul auteur du message.
+  existing_model:
+    capability: D04.l Customer Return
+    behaviors:
+    - BHV050 Return to Stock
+    - BHV051 Repair and Refurbishment
+    - BHV052 Return to Supplier
+    - BHV053 Return to Customer
+    - BHV054 Scrapping
+    other_capability: D04.m Supplier Return
+    constraint: 'Ne pas imbriquer ces comportements sous le nouveau comportement Customer Return : comportement terminal.
+      Préserver leurs responsabilités et qualifier leur rattachement ou représentation avant migration.'
+  tradeoff: Goods Return est général et peut évoquer un déplacement physique ou un retour fournisseur ; expliciter le périmètre
+    et préserver les parcours sans retour physique déjà étudiés.
+  canonical_hierarchy_changed: false
+  subsequent_decision: U612 conserve les comportements existants et retient Return Order. Proposition de subdivision Customer
+    Return / Consignment Return abandonnée.
+return_order_U612:
+  status: name_selected_existing_behaviors_retained
+  source_refs:
+  - U612
+  - CMP264
+  - ELM632
+  capability_id: D04.l
+  name: Return Order
+  preserved_behaviors:
+  - BHV050
+  - BHV051
+  - BHV052
+  - BHV053
+  - BHV054
+  intent: Prendre en charge la demande de retour et suivre ses suites selon les décisions et accords applicables.
+  contract: Réparation et autres suites possibles en consignation selon mandat ; pas de nouvelle règle de gestion ni comportement
+    par contrat.
+  market: Préférence FLOW pour l’approche Microsoft ; ne démontre pas une supériorité universelle ni une restriction du mot
+    Customer au B2C.
+  prior_node:
+    id: D04.l
+    revision: 8
+    kind: capability
+    fields:
+      name: Customer Return
+      definition: Prendre en charge les retours clients, leurs commandes et leurs suites logistiques, jusqu’au résultat attendu
+        selon les décisions et autorisations applicables.
+      finality: Connaître le retour client attendu, suivre ses suites logistiques et expliquer le résultat obtenu pour chaque
+        produit ou quantité.
+      scope: |-
+        La capacité couvre les commandes de retour et leurs suites logistiques selon les décisions et autorisations applicables. Le libellé Customer Return désigne une capacité d’action ; [Customer Return Order](glossary:TER072) reste l’objet métier associé.
+
+        Enregistrer origine, motif et références utiles. Rapprocher quantités attendues et reçues ; exploiter constats et écarts. Conserver liens entre retour et suites, avancement et résultats. Mobiliser Lifecycle, Structuring et Archiving pour leurs responsabilités communes.
+
+        Les cinq comportements adoptés U385 sont des parcours métier combinables : Return to Stock, Repair and Refurbishment, Return to Supplier, Return to Customer et Scrapping. Une réparation peut précéder remise en stock ou restitution au client. Les différents produits ou quantités d’un même retour peuvent suivre des parcours différents, sans créer un quatrième niveau.
+
+        [Return Disposition Decision](model:D05.i) choisit le devenir. Customer Return prépare et suit sa prise en charge via les capacités responsables : [Supplier Return](model:D04.m) porte l’Order fournisseur, [Process Management](model:D06) coordonne les prestations et en trace les résultats, [Inventory Management](model:D01) enregistre mouvements et états. La réception physique et la réparation restent chez les exécutants. Décider, solliciter une prestation et constater sa réalisation ne se confondent pas ; reçu, accepté et disponible sont des situations distinctes.
+
+        [Order Lifecycle Management](model:D04.o) gouverne les mutations, [Order Structuring](model:D04.n) les compositions et [Order Archiving](model:D04.q) la conservation historique. Ces fonctions communes ne sont pas recopiées sous chaque comportement. L’Order de retour n’efface pas la vente d’origine.
+
+        Exemple fictif : sur dix pièces attendues, six sont reçues et quatre restent attendues. Parmi les six reçues, certaines peuvent être remises en stock et d’autres nécessiter une réparation. Conserver origine, motif, quantités, décisions applicables et preuves de résultat ; aucune réception ou remise en disponibilité ne se déduit du seul état de la commande.
+
+        L’autorisation commerciale du retour, le remboursement et le remplacement client restent à délimiter. Restituer le bien n’est pas envoyer un autre produit ; un règlement sans retour physique ne crée aucune réception fictive. Donation, recyclage et revente secondaire ne sont pas assimilés au rebut. Les règles détaillées, le porteur des décisions commerciales et ces autres axes restent à instruire. Aucun déploiement Beaumanoir présumé.
+      market_comparisons:
+      - vendor: SAP
+        product: S/4HANA Sales
+        source_title: Managing Customer Returns
+        source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc
+        source_version: Cours SAP Learning ; édition non indiquée dans le passage
+        source_locator: Customer Returns ; Refund ; In-house Repair ; Send back to customer
+        consulted_on: '2026-09-19'
+        evidence_limits: Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+        element_name: Customer returns
+        element_type: Concept et usage documentés
+        relationship: Recouvrement partiel
+        similarities: Le retour ouvre plusieurs suites possibles après inspection.
+        differences: Le parcours SAP inclut la compensation financière ; FLOW distingue les responsabilités concernées.
+        flow_position: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la
+          vente.
+        status: proposed
+        source_refs:
+        - U477
+        - ELM455
+        - CMP189
+        concept_name: Customer returns
+        scope_summary: Retour, inspection et suite choisie pour le client.
+        approach_summary: Relier commande de retour, compensation et documents de suivi.
+      - vendor: Microsoft
+        product: Dynamics 365 SCM
+        source_title: Specify how to dispose of returned items
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+        source_version: Documentation évolutive consultée le 19 septembre 2026
+        source_locator: Disposition codes ; Disposition actions
+        consulted_on: '2026-09-19'
+        evidence_limits: Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+        element_name: Return disposition
+        element_type: Concept et usage documentés
+        relationship: Recouvrement partiel
+        similarities: Le sort du produit est différent du motif de retour.
+        differences: Un code de disposition n’est pas la preuve de l’exécution complète de la suite.
+        flow_position: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la
+          vente.
+        status: proposed
+        source_refs:
+        - U384
+        - ELM232
+        - CMP143
+        - U385
+        - U477
+        - ELM438
+        - CMP189
+        concept_name: Return disposition
+        scope_summary: Sort du produit retourné et compensation.
+        approach_summary: Associer un résultat de traitement au retour.
+      nature: action
+      decomposition_rationale: Les parcours diffèrent par le devenir attendu, les responsabilités sollicitées, les immobilisations
+        et les preuves nécessaires pour considérer le retour traité. Cette complexité justifie des comportements métier ;
+        les étapes de saisie, inspection, validation et clôture ne constituent pas chacune un comportement.
+      market_inspiration:
+        choice: 'Prendre en charge ce que devient un produit retourné par un client. Customer Return relie le retour aux suites
+          retenues : stock, remise en état, fournisseur, restitution ou rebut.'
+        flow_scope: Retour client et résultat logistique attendu après examen.
+        flow_approach: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la
+          vente.
+        synthesis:
+        - SAP présente un parcours lié de retour et de suivi ; Microsoft détaille les choix de disposition et leurs effets.
+          Tous deux évitent de réduire le retour à une simple quantité négative.
+        - FLOW retient une demande de retour distincte de la vente et explicite le résultat attendu pour chaque quantité.
+          Un remboursement et une remise en stock ne désignent pas le même résultat.
+        examples:
+        - title: Illustration FLOW — Deux états dans un même retour
+          situation: Sur deux articles rendus, l’un est revendable et l’autre doit être expertisé.
+          outcome: Les deux quantités suivent des suites différentes.
+          lesson: Le retour reste traçable même si son traitement est réparti.
+          source_title: Specify how to dispose of returned items
+          source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+          source_refs:
+          - U384
+          - ELM232
+          - CMP143
+          - U385
+          - U477
+          - ELM438
+          - CMP189
+    source_refs:
+    - U212
+    - U213
+    - U214
+    - U215
+    - U244
+    - U265
+    - U290
+    - U363
+    - CMP133
+    - U380
+    - U383
+    - CMP142
+    - U384
+    - CMP143
+    - U385
+    - U407
+    - U408
+    - U409
+    - ELM244
+    - CMP155
+    - U455
+    - U458
+    - U477
+    - CMP189
+    source_locator:
+      path: connaissance/01-contributions-utilisateur.md
+      anchor: u214
+    review:
+      state: partial
+      note: Nom, définition et cinq comportements adoptés ; scope développé et comparaisons proposés dans leur formulation
+        détaillée.
+    editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
+      antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
+    adoption_ids: []
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T18:02:26.169229Z'
+      recorded_by: Codex
+      source_refs:
+      - U214
+      - U290
+      - U384
+      - U385
+      validated_fields:
+      - name
+      - definition
+      value_sha256:
+        name: c6cb8f390aecc8ddd28e41248142f920b7e3013554cfd7011ac47ce82e08230d
+        definition: 88d95cc957621d758ff267d1ab0f28405b14d5c547755d66cd99b79b6d08c46d
+      note: Nom adopté U384 conservé ; définition élargie et décomposition adoptées U385. Détails éditoriaux qualifiés séparément.
+  scope_limit: Pas de fusion de D04.m ou de renommage global du glossaire déduit.
+  canonical_name_changed: true

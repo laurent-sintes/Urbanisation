@@ -3,6 +3,8 @@ from contextlib import redirect_stdout, redirect_stderr
 from copy import deepcopy
 from io import StringIO
 import json
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -69,6 +71,36 @@ class DecisionIntentTests(unittest.TestCase):
 
     def document(self):
         return read(self.root / recorder.REGISTRY_PATH)
+
+    def test_legacy_full_context_still_compiles_and_is_idempotent(self):
+        intent = recorder.make_intent(self.snapshot(), self.sources, **self.params, legacy_context=True)
+        # Use the live model's revision-neutral semantic context.
+        document = {'schema_version': '1.0.0', 'intents': [intent]}
+        (self.root / recorder.REGISTRY_PATH).write_text(dumps(document), encoding='utf-8')
+        self.assertFalse(self.record()['recorded'])
+        recorder.compile_intents(document, self.snapshot(), [], self.sources)
+
+    def test_reports_all_stale_intents_in_one_pass(self):
+        self.record(intent_id='FIRST')
+        self.record(intent_id='SECOND', fields=['definition'])
+        snapshot = self.snapshot()
+        snapshot['nodes'][1]['fields']['scope'] = 'Changed context'
+        with self.assertRaises(ValueError) as raised:
+            recorder.compile_intents(self.document(), snapshot, [], self.sources)
+        self.assertIn('FIRST', str(raised.exception))
+        self.assertIn('SECOND', str(raised.exception))
+
+    def test_compact_context_does_not_copy_research_and_detects_changes(self):
+        self.glossary['large_market_dossier'] = 'market research ' * 10000
+        (self.backlog / 'glossary.yaml').write_text(dumps(self.glossary), encoding='utf-8')
+        self.record()
+        intent = self.document()['intents'][0]
+        self.assertLess(len(json.dumps(intent)), 5000)
+        recorder.compile_intents(self.document(), self.snapshot(), [], self.sources)
+        changed = self.snapshot()
+        changed['glossary']['large_market_dossier'] += 'changed'
+        with self.assertRaisesRegex(ValueError, 'semantic context changed'):
+            recorder.compile_intents(self.document(), changed, [], self.sources)
 
     def test_explicit_suspension_preserves_proof_without_creating_approval(self):
         original = deepcopy(self.record()['intent'])
@@ -166,7 +198,76 @@ class DecisionIntentTests(unittest.TestCase):
         for path, content in before.items():
             self.assertEqual(path.read_bytes(), content, str(path))
         self.assertEqual(set(path for path in self.root.rglob('*') if path.is_file()) - before.keys(),
-                         {self.root / recorder.REGISTRY_PATH})
+                         {self.root / recorder.REGISTRY_PATH, self.backlog / '.decision-intents.lock'})
+
+    def test_append_preserves_historical_bytes_and_suspensions(self):
+        self.record()
+        path = self.root / recorder.REGISTRY_PATH
+        document = self.document()
+        document['suspensions'] = [{'intent_id': self.params['intent_id'], 'reviewer': 'Codex',
+            'reviewed_at': '2026-09-22', 'source_refs': ['U2'], 'rationale': 'Changed scope.'}]
+        original = ('# Historical comment\n' + dumps(document)).encode('utf-8')
+        path.write_bytes(original)
+        split = original.index(b'suspensions:')
+        self.record(intent_id='SECOND', fields=['scope'])
+        result = path.read_bytes()
+        self.assertTrue(result.startswith(original[:split]))
+        self.assertTrue(result.endswith(original[split:]))
+        updated = self.document()
+        self.assertEqual(updated['intents'][:-1], document['intents'])
+        self.assertEqual(updated['suspensions'], document['suspensions'])
+
+    def test_second_writer_fails_without_overwriting_and_lock_is_reusable(self):
+        self.record()
+        path = self.root / recorder.REGISTRY_PATH
+        before = path.read_bytes()
+        program = ('from pathlib import Path; import sys; '
+                   'from scripts.record_decision import _registry_lock; '
+                   'lock = _registry_lock(Path(sys.argv[1])); lock.__enter__()')
+        with recorder._registry_lock(path):
+            child = subprocess.run([sys.executable, '-c', program, str(path)],
+                                   capture_output=True, text=True, timeout=30)
+            self.assertNotEqual(child.returncode, 0)
+            self.assertIn('registry is being written', child.stderr)
+        self.assertEqual(path.read_bytes(), before)
+        self.assertTrue(self.record(intent_id='SECOND')['recorded'])
+
+    def test_external_edit_during_capture_is_not_overwritten(self):
+        self.record()
+        path = self.root / recorder.REGISTRY_PATH
+        changed = path.read_bytes() + b'# external change\n'
+        original_dump = recorder.dump_sequence_append
+        def edit(*args, **kwargs):
+            result = original_dump(*args, **kwargs)
+            path.write_bytes(changed)
+            return result
+        with patch.object(recorder, 'dump_sequence_append', side_effect=edit):
+            with self.assertRaisesRegex(ValueError, 'changed concurrently'):
+                self.record(intent_id='SECOND')
+        self.assertEqual(path.read_bytes(), changed)
+        self.assertEqual(list(self.backlog.glob('.decision-intents-*')), [])
+
+    def test_cached_registry_still_checks_historical_hashes_on_every_write(self):
+        self.record()
+        path = self.root / recorder.REGISTRY_PATH
+        # A warm cache is not an agreement/integrity cache. Editing the source
+        # bytes must invalidate the parse and expose the broken historical hash.
+        self.record(intent_id='SECOND')
+        broken = path.read_bytes().replace(b'Backlog Request', b'Changed Request', 1)
+        path.write_bytes(broken)
+        with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+            self.record(intent_id='THIRD')
+        self.assertEqual(path.read_bytes(), broken)
+
+    def test_lock_is_released_after_writer_process_exits(self):
+        path = self.root / recorder.REGISTRY_PATH
+        program = ('from pathlib import Path; import os,sys; '
+                   'from scripts.record_decision import _registry_lock; '
+                   'lock=_registry_lock(Path(sys.argv[1])); lock.__enter__(); os._exit(0)')
+        child = subprocess.run([sys.executable, '-c', program, str(path)],
+                               capture_output=True, text=True, timeout=30)
+        self.assertEqual(child.returncode, 0, child.stderr)
+        self.assertTrue(self.record()['recorded'])
 
     def test_id_collision_and_missing_approval_data_leave_registry_untouched(self):
         self.record()
@@ -288,7 +389,7 @@ class DecisionIntentTests(unittest.TestCase):
             lambda d: d['intents'][0].update(automatic=True),
             lambda d: d['intents'][0]['target'].update(revision=2),
             lambda d: d['intents'][0]['target']['values'].update(name='Tampered'),
-            lambda d: d['intents'][0]['target']['context']['target']['fields'].update(scope='Tampered'),
+            lambda d: d['intents'][0]['target']['context'].update(target='0' * 64),
         ]
         for mutate in mutations:
             document = self.document()

@@ -2387,3 +2387,168 @@ Nom d’Area validé dans la proposition et parents harmonisés, sans adoption d
 ## Publication 2026-09-22.4
 
 Sources : U582. État : published. Atlas vérifié : True. Détail : `.runtime/release-runs/2026-09-22.4/completion.md`.
+
+## 22 septembre 2026 — Clarification des Areas du cœur d'orchestration, U583/U584
+
+Verbatims enregistrés avant interprétation : Domain et périmètre conservés comme cadre de travail ; six Areas proposées pour clarifier le découpage métier. Analyse ciblée des responsabilités actuelles et de neuf documents primaires Microsoft, Oracle et Fluent, avec quatre nouvelles notices ELM600–603 et CMP247. Proposition et limites dans `modeles/backlog/orchestration-areas-review-U584.yaml`.
+
+Frontières examinées : demande et apport du même transfert ; réservation et absence de double demande ; propriété, présence et projection de stock ; adaptation des ressources au-delà du matching ; coordination de réalisation et réarbitrage ; place explicite de la promesse, des prévisions, des capacités de prestations et des responsabilités communes des Orders. Les six axes restent proposés ; aucun changement des nœuds, parents, accords ou publications. Actualisation de l'index des sources et contrôle de validation sur l'état final ; aucun rendu de vue canonique ni build requis pour cette analyse d'annexe.
+
+## 22 septembre 2026 — Politiques maîtrisées et nouveau type Policy, U585/U586
+
+Apports enregistrés avant interprétation. U585 distingue les politiques maîtrisées des projections externes, précise les effets du plan sur achats, ventes et règles, remet en question la maille ATP/CTP/PTP et rapproche l'orchestration adaptative du case management. Annexe U584 révisée avec conservation de son état précédent ; CMP248–250 et ELM604/605 documentent les appuis, recouvrements et limites.
+
+U586 crée Policy comme septième type de capacité : grille, MOD007, clarification de Management, guide courant et conventions mis en cohérence. `policy` est accepté par les contrôles et présenté dans Atlas avec le libellé Politique et une icône propre ; distinction conservée avec `policy_strategy` des comportements. Définition détaillée proposée, aucun reclassement des nœuds ni nouvel accord sur leurs champs. Sources actualisées ; tests Python/Node concernés et build frontend, puis validation du modèle sur l'état final. Les éditions méthodologiques et publications figées restent inchangées.
+
+## 22 septembre 2026 — Offre de prestations et Backing Service Policy, U587
+
+Apport enregistré avant interprétation. Backing Service Policy ajouté à la proposition de refonte comme capacité de type Policy : exclusion des fournisseurs et limitation des sollicitations selon les difficultés, distinctes de l'offre de référence, des capacités observées, de la sélection et des engagements. Prestations essentiellement logistiques mais pas exclusivement, conformément au périmètre déjà porté par D14/TER075. ELM606/607 et CMP251 rapprochent les exclusions et plafonds Oracle OTM avec leurs limites de version et de portée.
+
+Définition, coopérations et exemple détaillés proposés ; aucune mutation canonique ni publication. Exemple Policy et conventions précisés. Index des sources actualisé et validation sur l'état final ; aucun test technique ou build supplémentaire requis pour cette précision métier.
+
+## 22 septembre 2026 — Vérification des noms Backing Service et Backing Service Policy, U588
+
+Question enregistrée puis sens lexical vérifié : Twelve-Factor et Microsoft .NET attestent Backing Service comme dépendance applicative ; Oracle OTM documente Service Provider et des restrictions fonctionnelles, sans le composé Backing Service Policy. MKT79, ELM608–610 et CMP252 distinguent noms attestés, correspondances fonctionnelles et recommandation FLOW Service / Service Provider Policy. Aucun renommage réalisé. Réexamen conservé dans l'annexe courante ; sources actualisées et contrôle groupé avec U587 sur l'état final.
+
+## 22 septembre 2026 — Diagnostic des frontières du Domain et des Areas, U589
+
+Demande enregistrée puis analyse ciblée du Domain, des sept axes proposés et des points déjà ouverts. Finalité métier claire ; descriptions de maîtrise à aligner avec les politiques locales. Frontières les plus ouvertes : décisions du plan et adaptation du fulfillment, Orders à plusieurs effets et responsabilités communes, promesse et réservation. Références/Policy et apports/stock disposent d'une distinction de principe, avec contrats d'échange à préciser. CMP253 réutilise les appuis Oracle et Fluent à leur portée exacte.
+
+Diagnostic et recommandations conservés dans boundary_assessment_U589 de l'annexe courante ; aucune mutation canonique ni nouvelle validation métier. Index des sources actualisé et contrôle final du modèle ; aucun audit historique, rendu, test technique ou build supplémentaire.
+
+## 22 septembre 2026 — Nommage des prestations et fournisseurs adopté, U590
+
+Accord enregistré avant interprétation sur la table présentée : Service (TER075), Service Provider (TER088, rôle de partie), Service Catalog (D14 déjà ainsi nommé), Service Provider Policy (proposition de capacité Policy). La prestation ne devient pas son fournisseur. Six fiches canoniques mises en cohérence lexicalement, définition de la prestation conservée. Glossaire, conventions et proposition actualisés ; états antérieurs du terme et de la politique conservés dans l'annexe. Backing Service Order / Orders conserve son nom, absent de la table soumise.
+
+Seuls les noms et leurs rôles sont adoptés ; descriptions détaillées, correspondances et hiérarchie restent sous leur qualification précédente. CMP252 complété ; appuis Oracle ELM606/610 et Microsoft ELM397 relus. Accord D14 limité au champ name enregistré par record_decision ; les accords des termes et de la proposition restent explicitement consignés avec leurs valeurs, sans cible canonique fictive. Sources actualisées, validation et rendu backlog ; aucune publication.
+
+## 22 septembre 2026 — Frontière plan / Fulfillment et correction du seuil, U591/U592
+
+Apports enregistrés avant interprétation. U591 précise adaptation du plan d'exécution, reprise du seul article manquant depuis un autre entrepôt, split de Logistic Order et suivi des deux suites par la demande initiale. U592 corrige la limite de modification du contenu : début d'exécution, distinct de la fermeté ; désaffermissement possible avant ce début. C114 conserve la correction et les formulations successives. Deux Areas proposées actualisées, contrat courant pointé vers U592 ; aucune modification canonique ni accord artificiel sur des champs non présentés.
+
+CMP254 compare le short-pick Fluent ELM602 et les splits de promesse Oracle ELM604, avec leurs limites d'accès et de portée. Critères de début, maille d'exécution partielle, définition de Logistic Order et conséquences d'un engagement devenu impossible restent à préciser. Sources actualisées et validation de l'état final ; aucun audit historique, build, rendu de vue canonique ni publication requis pour cette annexe.
+
+## 22 septembre 2026 — Terme Re-sourcing adopté, U593
+
+Accord lexical explicite enregistré dans la proposition Fulfillment : rechercher une autre source pour la réalisation restant à accomplir, notamment l'article manquant du cas U591. Valeur adoptée Re-sourcing et contexte conservés dans terminology_adoption_U593 ; définition détaillée et maille Capability/Behavior non déduites. CMP254 complété à partir des sources déjà consultées. Sources actualisées et validation ; aucune mutation canonique ni publication.
+
+## 22 septembre 2026 — Diagnostic des flous restants, U594
+
+Diagnostic actualisé sans rouvrir la frontière de principe plan / Fulfillment. Trois responsabilités à préciser : cycle de vie des Orders ayant plusieurs effets, tenue/révision de l'engagement et portée de Logistic Order. Début d'exécution partielle, marges d'adaptation, activation des politiques et rapprochement des apports/mouvements distingués comme modalités opérationnelles. Relecture canonique : Reservation est déjà sous Inventory Management ; maintien recommandé, avec Service Capacity Visibility dans la future Fulfillment. CMP255 conserve les appuis Oracle ELM601 et Microsoft ELM410 relus et leurs limites. Sources actualisées et validation finale ; aucune mutation canonique ni publication.
+
+## 22 septembre 2026 — Demandes de consignation, AFS et Fashion, U595–U597
+
+Demand confirmé pour Transfer Order, retours, besoins/exigences et pilotage de promesse. Proposition corrigée, diagnostic daté conservé et C115 enregistré. U596 couvre les deux sens de consignation mais cible le stock du client dans nos entrepôts ; relation de prestation distincte d'un achat fournisseur présumé. Étude structurée U595 créée : régimes métier, périmètres existants D04.r/D01.h, options et recommandations sans nouveau type canonique.
+
+MKT80/81, ELM611–619 et CMP256/257 documentent SAP AFS 6.5, FMS 1.0 SP13, fonctions Fashion ERP EHP8 et S/4HANA aATP 2025 FPS01, avec appuis Oracle/Microsoft. AFS mobilisait déjà la consignation fournisseur ; Fashion documente des enrichissements ; différence d'éligibilité à l'affectation des documents client entre FMS et S/4HANA consignée sans extrapolation aux installations. Portails SAP : textes primaires indexés, accès direct vide ; PDF AFS et pages Oracle/Microsoft lus directement. Sources actualisées et validation finale ; aucune migration canonique, publication ou audit historique.
+
+## 22 septembre 2026 — Précisions Transfer Order et couverture consignation, U598
+
+Reformulation enregistrée comme question de compréhension. Périmètre canonique vérifié : Transfer Order dépasse le rééquilibrage ; D04.r couvre l'apport fournisseur consigné entrant ; Consignment Exit et Supplier Return portent déjà des suites. L'étude U595 distingue la clarification des demandes spécifiques de la création de fonctions supposées absentes. Reprise/restitution ne créent pas deux types par simple différence de point de vue. CMP256 complété avec les appuis déjà consultés ; sources actualisées et validation finale, aucun changement canonique ni publication.
+
+## 22 septembre 2026 — Proposition de noms d'Orders de consignation, U599
+
+Consignment Order proposé pour remplacer Consignment Replenishment Order, avec portée limitée à l'apport/mise en consignation ; Pick-up, Issue et Return explicités selon les intentions documentées SAP. Oracle et FMS relus, CMP258 consigné. Liste FLOW proposée, pas consensus de taxonomie, quatre capacités automatiques ou extension implicite au stock client détenu. Étude structurée enrichie ; sources actualisées et validation finale. Aucun renommage canonique ni publication.
+
+
+## 22 septembre 2026 — Concurrence et clarification Fill-up, U600/U601
+
+U600 conservé puis correction U601 enregistrée avant interprétation : Fill-up visait la mise en consignation. Étude étendue à Infor M3 et IFS Cloud, avec retour Oracle ; MKT82/83, ELM620–624, CMP259. Noms, perspectives et limites documentés. La proposition générique U599 reste historique ; recommandation courante Consignment Fill-up Order en attente de validation après comparaison. Aucun renommage canonique ni extension implicite de périmètre. Sources et validation contrôlées sur l’état final ; aucun rendu, build ou publication requis.
+
+
+## 22 septembre 2026 — Mandat de vente et Issue, U602
+
+Apport enregistré avant interprétation. Mandat de vente confirmé pour le cas de stock client détenu chez nous ; hypothèse de simple garde retirée du cadrage courant, état antérieur conservé. C116 et CMP260 explicitent correction et appuis SAP FMS / Oracle Retail relus. Issue inclus dans le périmètre étudié, sans achat préalable, fait générateur ou adoption globale inférés. Sources actualisées et validation sur l’état final ; aucun renommage canonique ni publication.
+
+
+## 22 septembre 2026 — Vérification du cas SAP, U603
+
+Demande enregistrée puis étude enrichie : consignation client standard avec acquisition par le détenteur, et agent externe livrant pour compte du propriétaire distingués. ELM625–627 et CMP261 documentent S/4HANA Sales et Best Practices avec leurs versions. Correspondance partielle du mandat de vente, aucune acquisition ni équivalence complète déduite. Sources actualisées et validation finale ; aucun changement canonique ni publication.
+
+
+## 22 septembre 2026 — Sales Order et Issue, U604–U606
+
+Échanges U604/U605 enregistrés rétrospectivement avec leur portée, puis objection U606 consignée. SAP distingue catégorie et type de document ; ELM628–630 et CMP262 étayent la révision de maille. C117 corrige l’affirmation trop rapide d’une capacité autonome Issue. Recommandation de comportements liés à la consignation sous Sales Order et effets de propriété via Inventory, sans migration canonique. Sources actualisées et validation finale ; aucune publication.
+
+
+## 22 septembre 2026 — Consignment Issue sous Sales Order, U607
+
+Accord explicite enregistré avant interprétation. Comportement BHV096 ajouté directement sous Sales Order D04.i ; proposition d’Order autonome abandonnée. Nom, nature comportement et rattachement font l’objet d’intentions d’accord via record_decision ; descriptions et comparaisons restent proposées. Justification de décomposition complétée, appuis ELM628/629 visibles dans la fiche. Sources, validation et rendu backlog actualisés ; aucune publication.
+
+
+## 22 septembre 2026 — Intention de l’acteur déclencheur, U608
+
+Principe U393/U394 rendu explicite pour Demand dans CONVENTIONS-MODELE.md et order-intent-principles.yaml : acteur, intention, résultat et engagements précèdent documents et effets induits. U607 fournit l’exemple Sales Order / Consignment Issue. Aucun nouveau type de demande ni publication.
+
+
+## 22 septembre 2026 — Libellé Demandes par intention, U609
+
+Précision « lisibilité métier » retirée du libellé Demand ; exigence générale rappelée. Paragraphe courant simplifié, intention de l’acteur déclencheur maintenue. Historique et appuis documentaires conservés dans l’annexe ; aucun nouvel arbitrage métier déduit.
+
+
+## 22 septembre 2026 — Principe Demandes par intention validé, U610
+
+Validation explicite du libellé et du principe centrés sur l’acteur déclencheur ; lisibilité générale confirmée. Valeurs et portée enregistrées dans order-intent-principles.yaml, sans cible canonique artificielle. Accord U607 sur Consignment Issue conservé ; aucune extension aux descriptions ni publication. Sources actualisées et validation contrôlée.
+
+
+## 22 septembre 2026 — Goods Return étudié, U611
+
+Proposition enregistrée puis comparée à SAP FMS/S/4, SAP Business One, Microsoft et IFS. MKT84, ELM631/632 et CMP263 ajoutés ; sources antérieures relues. Regroupement cohérent par intention, sans nomenclature universelle ; ambiguïté fournisseur de Goods Return et recouvrement Customer/Consignment explicités. Pick-up distinct par régime, pas par seul acteur déclencheur. Cinq comportements actuels de D04.l conservés ; aucun changement canonique. Sources actualisées et validation finale.
+
+
+## 22 septembre 2026 — Return Order et comportements conservés, U612
+
+Apport enregistré puis D04.l renommé Return Order, cinq comportements conservés. U611 dépassé ; contexte consignation/wholesale et applicabilité contractuelle précisés sans règles détaillées. CMP264 et fiche comparent le choix à Microsoft. État antérieur conservé dans l’étude, accord de nom enregistré par record_decision. Sources, validation et rendu backlog contrôlés ; aucune publication.
+
+## 22 septembre 2026 — Réduire le coût des petits changements
+
+À la demande de Laurent, procédure inscrite dans AGENTS.md : finaliser le lot avant capture, enregistrer les accords en une écriture sur le même état, éviter les écritures concurrentes et contrôler une fois après achèvement. Pièges d’arguments documentés pour éviter les reprises. Cette amélioration du traitement est une consigne opératoire ; le code et les performances intrinsèques du registre n’ont pas été modifiés. Relecture et contrôle de diff uniquement pour ce changement documentaire.
+
+## 22 septembre 2026 — Revue d’optimisation d’AGENTS.md
+
+Parcours court placé en tête : lecture ciblée, apport avant interprétation, lot finalisé, sources puis capture unique des accords, contrôles proportionnés. Réutilisation explicite des sources déjà pertinentes ; aucun nouveau dossier métier pour une intervention documentaire seule. Doublons sur Business Services, catalogue Informations et références marché regroupés. Attente d’une écriture longue avant toute relance précisée. Invariants et contrôles obligatoires conservés ; code du registre inchangé. Capture exacte préalable dans audits/2026-09-22-instructions/AGENTS-before-optimization.md. Liens locaux et diff vérifiés ; ni validation métier ni build requis.
+
+## 22 septembre 2026 — Optimisation du code du registre
+
+Ajout incrémental déterminé par le parseur, cache lié aux octets et au code, verrou système et remplacement atomique. Empreintes contrôlées et preuves historiques conservées. Sur copie isolée du registre de 41,8 Mo : ajouts à chaud en 3,5–5 s, premier ajout en 59 s et répétition idempotente en 1,1 s ; anciennes étapes de lecture et sérialisation seules proches de 119 s. 120 tests concernés réussis et relecture indépendante du résultat. Aucun accord réel ajouté par la mesure, aucune publication. Découpage et archivage étudiés à la demande de Laurent : 64 des 69 entrées déjà figées, sans les confondre avec des accords adoptés. Analyse, limites et évolution proposée dans audits/2026-09-22-registry-performance/README.md.
+
+## 22 septembre 2026 — Capacités regroupées par type dans Atlas
+
+À la demande de Laurent, tri de présentation par type dans l’arbre, les listes des cartes, les fiches et la grille des capacités. Ordre : Action, Gestion, Connaissance / visibilité, Orchestration, Planification, Politique, Décision, puis types non renseignés. Trait entre chaque groupe et nouvelle rangée dans la grille. Ordre publié conservé au sein de chaque type, comportements et publications inchangés. 24 tests concernés réussis et build frontend réussi ; recette navigateur non exécutée.
+
+## 22 septembre 2026 — Découpage du registre terminé
+
+Sur demande explicite, migration du registre vers un index de 29 Ko et 69 captures YAML immuables, dont 64 archivées et 5 actives. Valeurs, octets des captures et suspensions conservés ; aucune adoption ni publication nouvelle. Les ajouts vérifient les empreintes sans parser tout l’historique ; la publication contrôle le registre logique complet et fige ses fragments référencés. Compatibilité avec les anciens registres, reprise après interruption et détection de corruption testées. 127 tests concernés réussis, validation générale sans erreur ; procédure et consignes mises à jour. Mesures et preuves dans audits/2026-09-22-registry-performance/README.md.
+
+
+## 22 septembre 2026 — Gouvernance des référentiels appliquée, U615
+
+Dimension fields.data_governance ajoutée indépendamment de la nature : sept référentiels et leurs ingestions en Projection, sept Visibility en Domain-View, Supply Protection en Domain-managed. Construction/rafraîchissement des vues explicités ; maîtrise externe approuvée conservée. Types de capacités, parents et relations inchangés. Notion méthodologique MOD014, conventions, schéma, validation et rendu backlog actualisés ; affichage distinct préparé dans les fiches Atlas. Demande enregistrée avant application, correspondances détaillées attribuées à Codex sans accord individuel implicite. Appuis ELM528/ELM529 déjà consultés réutilisés, sans nouvelle taxonomie marché inférée. Capture ciblée dans audits/2026-09-22-data-governance/before.yaml. Sources actualisées, validation sans erreur, 16 tests Python et 7 tests frontend réussis, build réussi. Aucune publication.
+
+
+## 22 septembre 2026 — Couverture de validation du registre renforcée
+
+À la demande de Laurent, validate_models.py intègre la lecture exhaustive du registre découpé : sources, inventaire référencé, empreintes et noms de fichiers, résumés, valeurs/contextes capturés et préservation des accords/suspensions du snapshot courant. Contrôle historique partagé avec la compilation de release ; aucun accord sur un contexte modifié n’est repris par cette validation. Fragments non référencés comptés sans adoption ni suppression. Diagnostics durcis sur index malformé et lecture concurrente ; tests de corruption avec empreinte externe recalculée, disparition d’accord/index, suspension retirée, sources inconnues et intégration au point d’entrée général. 80 tests concernés réussis. Validation réelle : 69 accords, 14 suspensions, 69 fragments, zéro fragment non référencé et zéro erreur. AGENTS.md et documentation actualisés ; aucune donnée métier ni publication modifiée.
+
+
+## 22 septembre 2026 — Correctifs des quatre défauts de l’audit
+
+F1 : inventaire et empreintes du registre figé vérifiés avant lecture ; nouvelles publications autonomes du staging, anciennes préparations vérifiées par leur empreinte conservée. F2 : portée du remplacement contrôlée sur la capture immuable du prédécesseur. F3 : recherche de sources extraite, terminaison après normalisation garantie et offsets Unicode préservés. F4 : CLI d’inspection en UTF-8 explicite. Tests de régression ajoutés ; fixtures historiques complétées et assertion de lecture seule adaptée. 114 tests Python concernés réussis après deux reprises ciblées, 97 tests JS et build réussis ; validation générale sans erreur. Détails et limites dans audits/2026-09-22-code-quality/FIXES.md. Aucun accord ni publication réelle modifié.
+
+
+## 22 septembre 2026 — Étude élargie du niveau Area
+
+U620/U621 : neuf approches confrontées sur regroupement, décomposition et responsabilité. ELM633–642/CMP265, lectures et limites dans marche/etudes/2026-09-22-area-level.md. Proposition de définition et tests dans modeles/backlog/area-level-market-study-U620.yaml ; statut proposé. Aucune migration du catalogue ni publication.
+
+
+<!-- release-run:2026-09-23.1 -->
+## Publication 2026-09-23.1
+
+Sources : U627. État : published. Atlas vérifié : True. Détail : `.runtime/release-runs/2026-09-23.1/completion.md`.
+
+
+## Publication allégée — 23 septembre 2026
+
+À la demande de Laurent : conservation de la connaissance marché et des accords, retrait des copies d’annexes de réflexion des nouvelles releases. Le rapport compare désormais les éléments par identifiant et les accords par métadonnées/empreintes ; les nouvelles captures utilisent un contexte condensé en empreintes. Toutes les intentions périmées sont signalées ensemble.
+
+V020 corrigée avec autorisation explicite : `changes.json` passe de 108 950 758 à 1 713 483 octets ; 94 annexes de travail retirées de la publication, conservées dans le projet. Modèle et fichier des décisions inchangés. 93 tests réussis, validation de v020 incluse. Calcul du candidat v019 → v020 avec 236 accords : 56,338 s, cache chaud, contre 188–249 s observées avant ; cette mesure n’inclut pas tout le cycle de publication. Suppression du recours à Git LFS pour ce rapport et réécriture du seul commit non envoyé autorisées par Laurent.

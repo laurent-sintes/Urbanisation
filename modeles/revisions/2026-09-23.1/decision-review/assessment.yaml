@@ -1,0 +1,1483 @@
+schema_version: 1.0.0
+version: 2026-09-23.1
+review_sha256: eabe1d8518798acec37769009016a39145e08a15cf21e02fc3c6f22e38d9e853
+reviewer: Codex — réexamen de portée U627
+items:
+- decision_id: ADOPT-REASSESS-c77ca48751b4453c78769f53
+  action: retain
+  rationale: 'Relation D01 → D01.d (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-20e10a7c6c9ec739bda6a09d
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-b59caa20b17c38fa1c300762
+  action: retain
+  rationale: 'Relation D01 → D02.c (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-abbdc8b496ddbb40a6463d58
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-a7f7453df2c64c450a0d67ee
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-2e6d98baa6f4b2d56f719a8b
+  action: retain
+  rationale: 'Relation D02.b → BHV017 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-6ee145d3e04d8e4411e117b7
+  action: retain
+  rationale: 'Relation D02.b → BHV018 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-ff0b3c533e28cd2617ec7214
+  action: retain
+  rationale: 'Relation D02.b → BHV019 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-190adb2288c5debf18f1e2ce
+  action: retain
+  rationale: 'Relation D02.b → BHV020 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-eff579a1e0022b8f45268881
+  action: retain
+  rationale: 'Relation D03.n → BHV021 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-43037595f8f776eaf4dcf342
+  action: retain
+  rationale: 'Relation D03.n → BHV022 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-02fbbd1a91655d127b3d079c
+  action: retain
+  rationale: 'Relation D03.n → BHV023 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-1eb397c7eaef5d29a3197eae
+  action: retain
+  rationale: 'Relation D01.d → BHV029 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-5dc8ec9cb7e64cdf774b531e
+  action: retain
+  rationale: 'Relation D01.d → BHV030 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-19931a2ab31ee8e84cb81767
+  action: retain
+  rationale: 'Relation D01.d → BHV031 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-20944499e83f6db3a5167d39
+  action: retain
+  rationale: 'Relation D04.o → BHV036 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-812af454caabfa3f127dee09
+  action: retain
+  rationale: 'Relation D04.o → BHV037 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-ac0d2e64b4a2d69da720de50
+  action: retain
+  rationale: 'Relation D04.o → BHV038 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-c78ae048354c9aec73343d47
+  action: retain
+  rationale: 'Relation D04.o → BHV039 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e54270288f6a1742974860b6
+  action: retain
+  rationale: 'Relation D04.o → BHV040 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-97e340b3f302203ce4d1fdf5
+  action: retain
+  rationale: 'Relation D04.o → BHV043 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-b57a240a87aaef91c912446b
+  action: retain
+  rationale: 'Relation D04.n → BHV044 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-82754a8863ee872c2c230c20
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-8c99c0fa8ea5095379c6265e
+  action: retain
+  rationale: 'Relation D05.i → BHV048 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-2db4f09d0bfbf6f53612dd61
+  action: retain
+  rationale: 'Relation D05.i → BHV049 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-14b3589079bfffb2fe0bbaf1
+  action: retain
+  rationale: 'Relation D03.j → BHV075 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-93834896835c7c7b05ff6e3a
+  action: retain
+  rationale: 'Relation D03.j → BHV076 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-a790a1fbdcbf12e256ef4cfc
+  action: retain
+  rationale: 'Relation D03.j → BHV077 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-fb8aa05d2ffd2ebecb995da6
+  action: retain
+  rationale: 'Relation D07.d → BHV079 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e79efd37d390a75b0aa5253b
+  action: retain
+  rationale: 'Relation D07.d → BHV080 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e703abfc91084750c3588964
+  action: retain
+  rationale: 'Relation D07.d → BHV081 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-99fe5ebfff4dfe79e36f81c0
+  action: retain
+  rationale: 'Relation D07.d → BHV082 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-eb7168d924774cc8a90f14a3
+  action: retain
+  rationale: 'Relation D05.e → BHV083 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-7e76197d63fa3cfeef53e8b1
+  action: retain
+  rationale: 'Relation D05.e → BHV084 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e4e2d25014bad8bdc50a25c4
+  action: retain
+  rationale: 'Relation D05.e → BHV085 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-4c9e5f3c4fc6e04e697f550f
+  action: retain
+  rationale: 'D05.g : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-650622ebbc944c7e2ec22feb
+  action: retain
+  rationale: 'D05.i : valeurs historiques relues (definition, name, nature). L’intention et le service décrit par ces champs
+    restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock
+    distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-52474c3340ad871cf1e33d30
+  action: retain
+  rationale: 'D03.j : valeurs historiques relues (definition, finality, name, nature). L’intention et le service décrit par
+    ces champs restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait
+    de stock distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-8295046dfba77a91f34b11cc
+  action: retain
+  rationale: 'D04.n : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-d9c7c21554fb20b3e3190416
+  action: retain
+  rationale: 'D04.o : valeurs historiques relues (definition, name, nature). L’intention et le service décrit par ces champs
+    restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock
+    distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-f969baad1d0865e7f39097a3
+  action: retain
+  rationale: 'D07.d : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-705c7e343ef3d0f31aa9144c
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-b847d0469be69995a69c8223
+  action: retain_partial
+  rationale: 'D06.f : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté. Seul le nom reste adopté ; la définition trop générale du plan nécessite une portée nouvelle.'
+  approved_fields:
+  - name
+- decision_id: ADOPT-REASSESS-ba263bf10cf9dd47c1a6ecaf
+  action: retain
+  rationale: 'D03.n : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-5b34e7e926507406f51c0ceb
+  action: retain
+  rationale: 'D04.q : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-c12822630d92e5a8151a977c
+  action: retain
+  rationale: 'D01.g : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-1b3d6b47357b9e69f73e933a
+  action: retain
+  rationale: 'D01.d : valeurs historiques relues (definition, finality, name). L’intention et le service décrit par ces champs
+    restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock
+    distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-af1701819864bc7eafc8c385
+  action: retain
+  rationale: 'BHV001 : valeurs historiques relues (definition). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-e9cb87c8c2a79860eb932779
+  action: retain
+  rationale: 'BHV002 : valeurs historiques relues (definition). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-460153ddd334f94a94024ba9
+  action: retain
+  rationale: 'BHV003 : valeurs historiques relues (definition). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-6ae13529e033891b2e2f19ff
+  action: retain
+  rationale: 'BHV004 : valeurs historiques relues (definition). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-9310274026b6a56c62cf1e39
+  action: retain
+  rationale: 'BHV005 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0f8dea5ab77bbb28f4f6d9c3
+  action: retain
+  rationale: 'BHV016 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-af6776dad4f78176645232ed
+  action: retain
+  rationale: 'BHV017 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-80b97142194604baa4e68b29
+  action: retain
+  rationale: 'BHV018 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0a95d2485d5638a9c80ed894
+  action: retain
+  rationale: 'BHV019 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-5a38cc14738d9387b8a0bfa1
+  action: retain
+  rationale: 'BHV020 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-d00d2611d555dc481a4d72e8
+  action: retain
+  rationale: 'BHV021 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-c859cbc7493b17898579edd0
+  action: retain
+  rationale: 'BHV022 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-212031e0646c6d08afeb0e52
+  action: retain
+  rationale: 'BHV023 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-494864e683d56ae8b50aba43
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-6eefad233ea0e5cbaca298a1
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-49a555378d974d266969907f
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-1f433aa6c0d99ec0d6d7f50d
+  action: retain
+  rationale: 'BHV029 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-c980f135ce8be9f1cbae9a1c
+  action: retain
+  rationale: 'BHV030 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-e4ef45d9fa0eec26274e1037
+  action: retain
+  rationale: 'BHV032 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-77527460c4ad9924d2564d25
+  action: retain
+  rationale: 'BHV034 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-771d68679be8b1edde9891fc
+  action: retain
+  rationale: 'BHV035 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-9e812f9c33f5f8bbc9a9ce4e
+  action: retain
+  rationale: 'BHV037 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-cb66e3ba19f30f7f2791d51f
+  action: retain
+  rationale: 'BHV039 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-b17a3acb92d4c3403f3ab222
+  action: retain
+  rationale: 'BHV040 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-46ee4085c556902a7820556c
+  action: retain
+  rationale: 'BHV048 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-7a62bc8195af45c48f9c6117
+  action: retain
+  rationale: 'BHV049 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0722b208575352df353f1ca6
+  action: retain
+  rationale: 'BHV050 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-e73ebc9499cd6d5356b43049
+  action: retain
+  rationale: 'BHV051 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-03e165b1b46d783cf5d91534
+  action: retain
+  rationale: 'BHV052 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-ff608e83c90982d75cd12b0c
+  action: retain
+  rationale: 'BHV053 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-f9d7d1f7d64bb6f65bb2f6b8
+  action: retain
+  rationale: 'BHV054 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-49a400469b4250542a59b28d
+  action: retain
+  rationale: 'BHV055 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-10499c5922905aace73fceae
+  action: retain
+  rationale: 'BHV056 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-dbf1267628c6644088e8f3e4
+  action: retain
+  rationale: 'BHV060 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0da110f77632fc6798442df6
+  action: retain
+  rationale: 'BHV063 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-298071d436c299799c6c9ead
+  action: retain
+  rationale: 'BHV071 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-20237f9057a6c7878c4bdf37
+  action: retain
+  rationale: 'BHV072 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-112f2ec5ad6e5fb0ff3dc1be
+  action: retain
+  rationale: 'BHV073 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-e1ec2be27ed4a67c3791fea5
+  action: retain
+  rationale: 'BHV078 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-aa86fc180a247d0c31cb65d9
+  action: retain
+  rationale: 'D02.b : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-4012b2b897b3871325d7d17e
+  action: retain
+  rationale: 'D05.d : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-4d30a56cc16dbdbd5a0c9363
+  action: retain
+  rationale: 'D02.c : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-71dbe25ea181e36c0d742c3e
+  action: retain
+  rationale: 'BHV006 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-2e6487bfde877794b96e3070
+  action: retain
+  rationale: 'BHV031 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-b59161ebe92f266d33849afd
+  action: retain
+  rationale: 'BHV033 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-e814dda357c1dbb635c160fd
+  action: retain
+  rationale: 'BHV036 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-332741291e1a5812d14d87b2
+  action: retain
+  rationale: 'BHV057 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-10105ccad3c1d6becff8ef26
+  action: retain
+  rationale: 'BHV058 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-a018723341089ce3d3d78c13
+  action: retain
+  rationale: 'BHV059 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-6327222f1a75263e8d1d8d8d
+  action: retain_partial
+  rationale: 'BHV061 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté. Seul le nom est repris ; l’extension aux deux sens de consignation ne reprend pas l’accord
+    sur la définition.'
+  approved_fields:
+  - name
+- decision_id: ADOPT-REASSESS-135f254e73b11bbf6a268c29
+  action: retain_partial
+  rationale: 'BHV062 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté. Seul le nom est repris ; l’extension aux deux sens de consignation ne reprend pas l’accord
+    sur la définition.'
+  approved_fields:
+  - name
+- decision_id: ADOPT-REASSESS-629e840ee897e31e96e2686b
+  action: retain
+  rationale: 'BHV064 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-79d0209c4675a3811f8cb3f4
+  action: retain
+  rationale: 'BHV065 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-3b446a51a7684193d7bbaa5f
+  action: retain
+  rationale: 'BHV066 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-d44b1775c02dddc142594892
+  action: retain
+  rationale: 'BHV067 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-1ecce84195b01c5221a4f1c0
+  action: retain
+  rationale: 'BHV068 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-b866e818bc7468d701e5464c
+  action: retain
+  rationale: 'BHV069 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-3c70a6bc79b7dfee6a550cd7
+  action: retain
+  rationale: 'BHV070 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-57b69d192638aceca1c76a2c
+  action: retain
+  rationale: 'BHV074 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-fe3a2bfd0f162f38790d81eb
+  action: retain
+  rationale: 'BHV075 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-9af816261f33e9f68369911f
+  action: retain
+  rationale: 'BHV076 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-29ef663fdbe94b4563522a26
+  action: retain
+  rationale: 'BHV077 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-9b71db091bd5e836361c5ce9
+  action: retain
+  rationale: 'BHV079 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-1a845ebf1fa9fd8476beeced
+  action: retain
+  rationale: 'BHV080 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-c0bd6aa32e5176a3ee7e8eeb
+  action: retain
+  rationale: 'BHV081 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-007cae4d0e77b3a54e239383
+  action: retain
+  rationale: 'BHV082 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-cd80505c8cbe129fe9d4ac67
+  action: retain
+  rationale: 'BHV083 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0a3effdfe6a04defce74ca1a
+  action: retain
+  rationale: 'BHV084 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-7b80ca256799132bdcadfd12
+  action: retain
+  rationale: 'BHV085 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-623a988392ee5f294412c588
+  action: retain
+  rationale: 'D06.d : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-a3d6f02c669bf50e0e5fcdc3
+  action: retain
+  rationale: 'D05.e : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-5cceb557887e774474729eab
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-04328bc913e63b285f5a8dcd
+  action: retain
+  rationale: 'Relation D09 → D09.d (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-75e943a07000187f09ab523b
+  action: retain
+  rationale: 'Relation D11 → D11.a (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-30e6f624fe8825aa9986d47a
+  action: retain
+  rationale: 'Relation D12 → D12.a (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-8935c9397b07a261bbea69a3
+  action: retain
+  rationale: 'Relation D08 → D08.d (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-304668000143e7d63dc826bb
+  action: retain
+  rationale: 'Relation D13 → D13.a (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-cf230afc0ee053d93e290a97
+  action: retain
+  rationale: 'Relation business-references → D09 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-24f9416790fc0ebe3f36947d
+  action: retain
+  rationale: 'Relation business-references → D11 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-00f50c7704055c471850cd97
+  action: retain
+  rationale: 'Relation business-references → D08 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-c51c3d5d2c16fa02a24ef1af
+  action: retain
+  rationale: 'Relation business-references → D12 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-3bacd0a90e5e32ad726fd068
+  action: retain
+  rationale: 'Relation business-references → D13 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-5262eca1f387e8e5dbcabb16
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-bcff80c7375e858dceaac5ec
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-fcf3760e698383df2d07baa2
+  action: retain
+  rationale: 'Relation D06 → D07.a (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e67a034a2fdc6dcbed90183e
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-eb7dbf880c45bb077c024eac
+  action: retain
+  rationale: 'Relation D06 → D07.c (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-2d9e5035bd1dc01445a6a302
+  action: retain
+  rationale: 'Relation D06 → D07.d (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-625480ec38c70d7462881e14
+  action: retain
+  rationale: 'Relation business-references → D14 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-0c07a5d18f466f70d4a230c6
+  action: retain
+  rationale: 'Relation D06 → D06.f (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-a2ba071d33e41b1e8aefb81b
+  action: retain
+  rationale: 'Relation D03.i → BHV001 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-151073ae7646588c5a9a4583
+  action: retain
+  rationale: 'Relation D03.i → BHV002 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-271dcc35438c91217eda4fee
+  action: retain
+  rationale: 'Relation D03.i → BHV003 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-a5d76e68871160b7a23c6a9b
+  action: retain
+  rationale: 'Relation D03.i → BHV004 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-c75e1e94d9704c1e6eaf2ba6
+  action: retain
+  rationale: 'Relation D05.c → BHV024 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-7bcc7cfa213b4f50e3679f0c
+  action: retain
+  rationale: 'Relation D05.c → BHV025 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-b93d3df36c8021931986b5ca
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-0413ff3d61c8249e583f663b
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-b37bd510d8d1e5311ca0c780
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-d0258000d0fa7f9ecbc8e684
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-e77eb092c2000b7a6ff65904
+  action: retain
+  rationale: 'Relation D05.h → BHV032 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e33b3ac4843c99e5c7ff0ed9
+  action: retain
+  rationale: 'Relation D05.h → BHV033 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-b17c4c724aaa46a620e2e56c
+  action: retain
+  rationale: 'Relation D05.h → BHV034 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-88d937f6d294a4be1cf0642f
+  action: retain
+  rationale: 'Relation D05.h → BHV035 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-69838dd34352bfd10b321a92
+  action: retain
+  rationale: 'Relation D04.l → BHV050 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-24c796d8245c73505de12844
+  action: retain
+  rationale: 'Relation D04.l → BHV051 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-d01d05edc1566ef2668ea0c6
+  action: retain
+  rationale: 'Relation D04.l → BHV052 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-521f8f4e182f8222cc4f3242
+  action: retain
+  rationale: 'Relation D04.l → BHV053 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-f169a7c1982f960b00b6ae87
+  action: retain
+  rationale: 'Relation D04.l → BHV054 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-3d7f22459cd0a7cc41f1931b
+  action: retain
+  rationale: 'Relation D04.m → BHV055 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-cbc88be3d7103d11340c39ff
+  action: retain
+  rationale: 'Relation D04.m → BHV056 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-083056b328c6f1b9fcafdefd
+  action: retain
+  rationale: 'Relation D04.m → BHV057 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-269e232f0759d61b2e136e78
+  action: retain
+  rationale: 'Relation D04.j → BHV058 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-834ac9855105fcf73479448d
+  action: retain
+  rationale: 'Relation D04.j → BHV059 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-e5c1a8ef0fe433814ac45b9e
+  action: retain
+  rationale: 'Relation D04.j → BHV060 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-b0ea05197dd4c09a701aee4a
+  action: retain
+  rationale: 'Relation D01 → D01.h (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-5d23795a1990627081a44e49
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-34efd2b938804387892eeada
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-d52666337e424437dcd9b1d0
+  action: retain
+  rationale: 'Relation D01.h → BHV063 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-1f72df9b2a1788d80a1afbcb
+  action: retain
+  rationale: 'Relation D01.h → BHV064 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-55dd2fc771d6cd93be61681b
+  action: retain
+  rationale: 'Relation D01.h → BHV065 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-7543ad71bbb3c6b0dcecf19e
+  action: retain
+  rationale: 'Relation D04.i → BHV066 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-98e150a949cc623e75633249
+  action: retain
+  rationale: 'Relation D04.i → BHV067 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-8ff492cb9b8620b29e76120e
+  action: retain
+  rationale: 'Relation D04.i → BHV068 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-cabddb3dddd057717113fe2b
+  action: retain
+  rationale: 'Relation D04.i → BHV069 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-1aa8e225ad506f83506cf68a
+  action: retain
+  rationale: 'Relation D04.k → BHV070 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-70fcc6980b4782bc013e2fd9
+  action: retain
+  rationale: 'Relation D04.k → BHV071 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-30c7e9275734266900cb2e67
+  action: retain
+  rationale: 'Relation D04.k → BHV072 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-4cac5ea3a97153e4f88393f7
+  action: retain
+  rationale: 'Relation D04.k → BHV073 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-2d03ec20e9b1afe200ea66ac
+  action: retain
+  rationale: 'Relation D04.k → BHV074 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-760de4e69a3c3747c6fd3bc4
+  action: retain
+  rationale: 'Relation D04.j → BHV078 (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-3f2b76af0dfd7273ee966a9b
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-e191262224968aba5fe00578
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-482c376bcfc1ec5631089583
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-1cccb67f65257d9e0cb9a120
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-602c0061f7c7c0c7ce75cac9
+  action: defer
+  rationale: 'Rattachement déplacé ou responsabilité de son extrémité refondue (plan commun, Task ou consignation bidirectionnelle)
+    : conserver la preuve historique sans approuver la relation dans ce nouveau contexte.'
+- decision_id: ADOPT-REASSESS-39a8cef3ea169eeb18d31d40
+  action: retain
+  rationale: 'D09 : valeurs historiques relues (name, mastership). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité
+    locale ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-25ad41105a6f03d71ee3247b
+  action: retain
+  rationale: 'D13 : valeurs historiques relues (name, independence). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-506901adf097b0550b24a8e0
+  action: retain
+  rationale: 'D11 : valeurs historiques relues (mastership, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité
+    locale ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-214e26be0c3583b7fa867af7
+  action: retain
+  rationale: 'D12 : valeurs historiques relues (mastership). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité locale
+    ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-083ea965e424690ee35d5d19
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-75b93477c7d8aab819a22141
+  action: retain
+  rationale: 'D04.m : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-7ab68ba0aaea65c9747c0bac
+  action: retain
+  rationale: 'D05.a : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-f94bb03beb2b53c9d15d2394
+  action: retain
+  rationale: 'D05.h : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-4163de266472b9be38ac5d45
+  action: retain
+  rationale: 'D04.i : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-88b6f17032e0d4014f319a96
+  action: retain
+  rationale: 'D05.c : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-8698bdd6c984fb78fa2dc79a
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-79fda2a4045c555204fe5e63
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-842e65445dadd25b167fee43
+  action: retain
+  rationale: 'D03.i : valeurs historiques relues (finality, name, nature). L’intention et le service décrit par ces champs
+    restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock
+    distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-071d3e9a55b55d2f69eaa7bf
+  action: retain
+  rationale: 'D03.k : valeurs historiques relues (definition, finality, name, nature). L’intention et le service décrit par
+    ces champs restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait
+    de stock distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-871ca0c9db4b3c7d5a2ee570
+  action: retain
+  rationale: 'D03.l : valeurs historiques relues (definition, finality, name, nature). L’intention et le service décrit par
+    ces champs restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait
+    de stock distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-6d0b126cfd51d7215cef02c2
+  action: retain
+  rationale: 'D03.m : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-8c2c1eb9334c86b679ce116f
+  action: retain
+  rationale: 'D06.b : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-0a44fc6d7309da27d11bd307
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-adc404c59a6d2f40665ecfa7
+  action: retain
+  rationale: 'D04.j : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-9d5895c41c1f311790125169
+  action: retain
+  rationale: 'D04.k : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-80c420ceb797fcab6588574a
+  action: retain
+  rationale: 'D07.a : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-8d8498db5dd10cabed9fba02
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-19182df7334ea136a1af7e1d
+  action: retain
+  rationale: 'D01.h : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-adf4ac047c116039a335e80b
+  action: retain
+  rationale: 'D06.e : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-a81322b6a26a03d964637d52
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-3e86e80b0ce425a9816bd2d4
+  action: retain
+  rationale: 'D04.k : valeurs historiques relues (request_origins). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-a7e05a4a8c7b36492624bec6
+  action: retain
+  rationale: 'D14 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-ad8dc2424e3f516c7ed5a075
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-e43cefbd7da10915abff4650
+  action: defer
+  rationale: 'Champ approuvé modifié, objet retiré ou périmètre élargi non couvert par l’accord historique (notamment retour
+    générique et plan commun) : accord maintenu dans les preuves, non repris sur cette révision.'
+- decision_id: ADOPT-REASSESS-6aa46224859295ee6736d135
+  action: retain
+  rationale: 'D09 : valeurs historiques relues (definition, name). L’intention et le service décrit par ces champs restent
+    identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct
+    de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service
+    Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché
+    ou champ de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité
+    locale ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-e20c2371aa439a9a65d607d7
+  action: retain
+  rationale: 'D08.e : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-28fc1616c40beb789f485561
+  action: retain
+  rationale: 'D09.e : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-2c21ddd394613f20d77c4cd4
+  action: retain
+  rationale: 'D11.b : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-fd111116441ad56aa186b8e6
+  action: retain
+  rationale: 'D12.b : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-c33ce042bcd142f5dce3943f
+  action: retain
+  rationale: 'D13.b : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-6ca095aa7146d8a295a063f4
+  action: retain
+  rationale: 'D14.b : valeurs historiques relues (name, nature). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-a1ef26f267746fae054860c8
+  action: retain
+  rationale: 'Relation business-references → D08 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-4b0eaaf036471c4130f22165
+  action: retain
+  rationale: 'Relation business-references → D09 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-3bb27b443e46663141057eff
+  action: retain
+  rationale: 'Relation business-references → D12 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-4f06b0a0db5084d6952c3a5f
+  action: retain
+  rationale: 'Relation business-references → D11 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-a6d428f60447c948424e769c
+  action: retain
+  rationale: 'Relation business-references → D13 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-948603291868614d42e43608
+  action: retain
+  rationale: 'Relation business-references → D14 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-8f7abffc1f2737a979e85911
+  action: retain
+  rationale: 'Relation D08 → D08.e (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-9ed34e96554fbfec21961748
+  action: retain
+  rationale: 'Relation D09 → D09.e (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-ace874ad7c0009e447721d38
+  action: retain
+  rationale: 'Relation D11 → D11.b (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-77cef3b18e829d7672e8e72a
+  action: retain
+  rationale: 'Relation D12 → D12.b (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-5c6bea983722c9b1967f7d00
+  action: retain
+  rationale: 'Relation D13 → D13.b (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-d7821fab3741b2f16d32c676
+  action: retain
+  rationale: 'Relation D14 → D14.b (contains) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'
+- decision_id: ADOPT-REASSESS-7cf111865c283c98a22ef341
+  action: retain
+  rationale: 'D12 : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité locale
+    ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-42caa637ea83e68df9c71eb6
+  action: retain
+  rationale: 'D12.a : valeurs historiques relues (name). L’intention et le service décrit par ces champs restent identiques
+    : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock distinct de propriété,
+    catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire Task/Service Order ne
+    changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison marché ou champ
+    de gouvernance n’est adopté.'
+- decision_id: ADOPT-REASSESS-315be0c11e48a05b2b87edb6
+  action: retain
+  rationale: 'D16 : valeurs historiques relues (definition, mastership, name). L’intention et le service décrit par ces champs
+    restent identiques : décision distincte de l’application, gestion de la demande distincte de l’exécution, fait de stock
+    distinct de propriété, catalogue distinct des sollicitations. Les principes Purpose/type/gouvernance et le vocabulaire
+    Task/Service Order ne changent pas cette portée limitée. Aucun nouveau scope, parent, règle contractuelle, exemple, comparaison
+    marché ou champ de gouvernance n’est adopté. La maîtrise external conservée qualifie la vérité source, sans nier la responsabilité
+    locale ni adopter un nouveau champ de gouvernance.'
+- decision_id: ADOPT-REASSESS-59276272d3b8ae1d07b7b970
+  action: retain
+  rationale: 'Relation business-references → D16 (presents) examinée : responsabilité immédiate conservée. Les référentiels
+    restent distincts, leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés
+    précisent la même capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications
+    ou périmètres enrichis U626.'
+- decision_id: ADOPT-REASSESS-4d65244db4855282ad11b332
+  action: retain
+  rationale: 'Relation D11 → D16 (relates-to) examinée : responsabilité immédiate conservée. Les référentiels restent distincts,
+    leurs capacités d’ingestion/visibilité demeurent attachées au même sujet ; les comportements conservés précisent la même
+    capacité. La reprise de ces seules extrémités et du type n’adopte ni nouveaux ancêtres ni qualifications ou périmètres
+    enrichis U626.'

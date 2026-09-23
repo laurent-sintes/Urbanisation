@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeft, ExternalLink, Search, X } from 'lucide-react';
 import type { PublishedModel, SourceLocator } from '../types';
+import { normalizeSourceText as normalize, sourceMatches } from '../sourceSearch';
 import './details.css';
 
 type Source = { id: string; locator?: SourceLocator };
 type DocumentData = { path: string; title: string; content: string; anchor?: string };
 type LocalSource = { id: string; locator: SourceLocator };
-const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const slug = (text: string) => normalize(text).replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
 function highlight(text: string, query: string): ReactNode {
-  if (!query.trim()) return text;
-  const match = normalize(query.trim()), flat = normalize(text), parts: ReactNode[] = [];
-  let position = 0, index = flat.indexOf(match);
-  while (index >= 0) { parts.push(text.slice(position, index), <mark key={index}>{text.slice(index, index + match.length)}</mark>); position = index + match.length; index = flat.indexOf(match, position); }
+  const matches = sourceMatches(text, query), parts: ReactNode[] = [];
+  if (!matches.length) return text;
+  let position = 0;
+  for (const { start, end } of matches) {
+    parts.push(text.slice(position, start), <mark key={start}>{text.slice(start, end)}</mark>);
+    position = end;
+  }
   parts.push(text.slice(position)); return parts;
 }
 function inline(text: string, path: string, query: string, onFollow: (source: LocalSource) => void): ReactNode[] {
@@ -122,7 +125,7 @@ export function SourceDialog({ model, source, onClose }: { model: PublishedModel
     return () => cancelAnimationFrame(frame);
   }, [data, anchor, line, query]);
   const rendered = useMemo(() => data ? renderDocument(data, query, next => { setTrail(previous => [...previous, next]); }) : null, [data, query]);
-  const count = data && query.trim() ? normalize(data.content).split(normalize(query.trim())).length - 1 : 0;
+  const count = data ? sourceMatches(data.content, query).length : 0;
   return <dialog ref={dialog} className="source-dialog" aria-labelledby="source-document-title" onCancel={event => { event.preventDefault(); event.stopPropagation(); onClose(); }} onKeyDown={event => { if (event.key === 'Escape') event.stopPropagation(); }}>
     <header><div><span className="section-kicker">Source documentaire · texte complet</span><h2 id="source-document-title">{data?.title || (error ? 'Source indisponible' : current?.id || 'Source')}</h2></div><button type="button" className="source-close" aria-label="Fermer la source" onClick={onClose} autoFocus><X size={22}/></button></header>
     <div className="source-toolbar">{trail.length > 0 && <button type="button" className="source-return" onClick={() => setTrail(previous => previous.slice(0, -1))}><ArrowLeft size={15}/>Source précédente</button>}<label className="source-search"><Search size={16} aria-hidden="true"/><input aria-label="Rechercher dans la source" placeholder="Rechercher dans ce document…" value={query} disabled={!data} onChange={event => setQuery(event.target.value)}/>{query && <button type="button" aria-label="Effacer la recherche dans la source" onClick={() => setQuery('')}><X size={15}/></button>}</label>{query.trim() && <span role="status">{count} correspondance{count > 1 ? 's' : ''}</span>}</div>

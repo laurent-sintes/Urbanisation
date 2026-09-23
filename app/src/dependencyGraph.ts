@@ -55,8 +55,10 @@ const isGrouping = (node: AtlasNode): boolean => ['group', 'domain', 'area', 're
 const familyOf = (relation: AtlasRelation): DependencyFamily => relation.qualification.role === 'needs' ? 'needs' : 'other';
 
 export function dependencyLevels(model: PublishedModel): { value: DependencyLevel; label: string }[] {
+  const purposeLabel = model.nodes.some(node => node.kind === 'area' && node.hierarchyLabel === 'Purpose')
+    ? 'Purposes et référentiels' : 'Areas et référentiels';
   return hasAreaLevels(model)
-    ? [{ value: 'capability', label: 'Capacités' }, { value: 'area', label: 'Areas et référentiels' }, { value: 'domain', label: 'Domaines' }]
+    ? [{ value: 'capability', label: 'Capacités' }, { value: 'area', label: purposeLabel }, { value: 'domain', label: 'Domaines' }]
     : [{ value: 'capability', label: 'Capacités' }, { value: 'domain', label: 'Domaines et référentiels' }, { value: 'universe', label: 'Univers' }];
 }
 

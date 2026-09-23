@@ -1,0 +1,29 @@
+{
+  "command": "python scripts/validate_models.py",
+  "exit_code": 0,
+  "duration_seconds": 4.71,
+  "log": "validation.log",
+  "scope": "Validation technique ; ne constitue pas un accord métier ni une certification de pertinence marché.",
+  "input_hashes_unchanged": {
+    "modeles/backlog/model.yaml": true,
+    "modeles/backlog/glossary.yaml": true,
+    "modeles/backlog/modeling-glossary.yaml": true,
+    "modeles/backlog/modeling-guide-U458.yaml": true,
+    "modeles/backlog/orchestration-areas-review-U584.yaml": true,
+    "modeles/backlog/area-level-market-study-U620.yaml": true,
+    "modeles/backlog/reference-data-governance-U614.yaml": true,
+    "modeles/schemas/urbanism.schema.json": true,
+    "AGENTS.md": true,
+    "CONVENTIONS-MODELE.md": true
+  },
+  "audit_local_links_missing": [],
+  "audit_replacement_character_files": [],
+  "internal_markdown_links_count": 418,
+  "source_refresh": {
+    "exit_code": 0,
+    "records": 2314,
+    "frozen_files_unchanged": true
+  },
+  "source_model_edited": false,
+  "release_run": false
+}

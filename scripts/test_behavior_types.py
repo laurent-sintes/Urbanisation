@@ -17,6 +17,10 @@ class BehaviorTypeTests(unittest.TestCase):
                'relations':[{'id':'edge','type':'contains','source_id':'cap','target_id':'behavior'}],
                'principles':[{'id':'PRINCIPLE-BEHAVIOR-NATURE'}]}
         self.assertTrue(any('behavior nature' in error for error in validate_urbanism(model,{})))
+        model['nodes'][1]['fields']['nature']='policy'
+        self.assertTrue(any('behavior nature' in error for error in validate_urbanism(model,{})))
+        model['nodes'][1]['fields']['nature']='policy_strategy'
+        self.assertEqual(validate_urbanism(model,{}),[])
         model['nodes'][1]['fields']['nature']='process_variant'
         self.assertEqual(validate_urbanism(model,{}),[])
         model['principles']=[];model['nodes'][1]['fields'].pop('nature')

@@ -19,6 +19,7 @@ htmlcov/
 
 # Prepared candidates are local; published snapshots remain tracked
 /modeles/staging/
+/modeles/backlog/.decision-intents.lock
 
 # Local credentials and operating-system files
 .env

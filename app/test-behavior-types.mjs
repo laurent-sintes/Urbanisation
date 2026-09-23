@@ -7,6 +7,8 @@ test('seven behavior forms have distinct icons and never inherit a capacity type
   assert.equal(Object.keys(behaviorTypes).length,7);
   assert.equal(new Set(Object.values(behaviorTypes).map(item => item.icon)).size,7);
   assert.equal(behaviorNature({ kind:'behavior', fields:{nature:'decision'} }), undefined);
+  assert.equal(behaviorNature({ kind:'behavior', fields:{nature:'policy'} }), undefined);
+  assert.equal(behaviorNature({ kind:'capability', fields:{nature:'policy'} }), undefined);
   assert.equal(behaviorNature({ kind:'capability', fields:{nature:'business_scope'} }), undefined);
   assert.equal(behaviorNature({ kind:'behavior', fields:{nature:'policy_strategy'} }), 'policy_strategy');
   assert.equal(behaviorNature({ kind:'behavior', fields:{nature:'toString'} }), undefined);

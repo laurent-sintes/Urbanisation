@@ -5,6 +5,7 @@ import unittest
 import os
 from unittest.mock import patch
 from scripts import structured_io
+from scripts import parsed_cache
 
 from scripts.structured_io import loads, dumps, read, working_path
 from scripts.element_versions import assign_versions
@@ -12,6 +13,63 @@ from scripts.test_publish_release import isolated_project
 
 
 class StructuredIOTests(unittest.TestCase):
+    def test_sequence_append_keeps_exact_old_bytes_and_root_fields(self):
+        fixtures = [
+            '# kept\nschema_version: 1.0.0\nintents:\n- text: café\nsuspensions: []\n',
+            'schema_version: 1.0.0\nintents:\n- text: |\n    suspensions:\n    Unicode é\n# kept\nsuspensions: []\n',
+            'suspensions: []\nintents:\n- text: "quoted\\nintents:"\n...\n',
+            'intents:\n- text: last\n',
+        ]
+        with isolated_project() as root, patch.object(parsed_cache, 'DIRECTORY', root/'cache'):
+            for fixture in fixtures:
+                for newline, bom in [('\n', b''), ('\r\n', b'\xef\xbb\xbf')]:
+                    before = bom + fixture.replace('\n', newline).encode('utf-8')
+                    document, offset = structured_io.load_for_sequence_append(before, 'intents')
+                    self.assertIsNotNone(offset)
+                    expected = copy.deepcopy(document)
+                    items = [{'text': 'new\nsuspensions:\nfin', 'code': '00123'}]
+                    expected['intents'].extend(items)
+                    result = structured_io.dump_sequence_append(before, expected, 'intents', items, offset)
+                    prefix = bom + before.decode('utf-8-sig')[:offset].encode('utf-8')
+                    suffix = before.decode('utf-8-sig')[offset:].encode('utf-8')
+                    self.assertTrue(result.startswith(prefix))
+                    self.assertTrue(result.endswith(suffix))
+                    self.assertEqual(loads(result.decode('utf-8-sig')), expected)
+                    # The next append reads from the cache seeded by serialization.
+                    with patch.object(structured_io, 'ModelLoader', side_effect=AssertionError('Reparsed')):
+                        cached, next_offset = structured_io.load_for_sequence_append(result, 'intents')
+                    self.assertEqual(cached, expected)
+                    more = [{'text': 'third'}]
+                    cached['intents'].extend(more)
+                    third = structured_io.dump_sequence_append(result, cached, 'intents', more, next_offset)
+                    self.assertEqual(loads(third.decode('utf-8-sig')), cached)
+
+    def test_sequence_append_fallback_for_non_block_layouts(self):
+        for text in ('intents: []\n', 'intents: [{name: first}]\n',
+                     'intents:\n  - name: first\n', 'intents:\n- name: first'):
+            before = text.encode()
+            doc, offset = structured_io.load_for_sequence_append(before, 'intents')
+            self.assertIsNone(offset)
+            new = [{'name': 'second'}]
+            doc['intents'].extend(new)
+            result = structured_io.dump_sequence_append(before, doc, 'intents', new, offset)
+            self.assertEqual(loads(result.decode()), doc)
+
+    def test_sequence_append_rejects_invalid_yaml_and_corrupt_cache(self):
+        with isolated_project() as root, patch.object(parsed_cache, 'DIRECTORY', root/'cache'):
+            before = b'intents:\n- name: valid\n'
+            expected = structured_io.load_for_sequence_append(before, 'intents')
+            entry = next((root/'cache').glob('*.json'))
+            entry.write_bytes(entry.read_bytes().replace(b'valid', b'wrong'))
+            self.assertEqual(structured_io.load_for_sequence_append(before, 'intents'), expected)
+            changed = before.replace(b'valid', b'other')
+            self.assertEqual(structured_io.load_for_sequence_append(changed, 'intents')[0],
+                             {'intents': [{'name': 'other'}]})
+            for text in ('intents: []\nintents: []', 'intents: &x [*x]',
+                         'intents: [!!float .nan]', '1: []', 'intents: []\n---\nintents: []'):
+                with self.subTest(text=text), self.assertRaises(ValueError):
+                    structured_io.load_for_sequence_append(text.encode(), 'intents')
+
     def test_oversized_entry_does_not_flush_smaller_working_set(self):
         with isolated_project() as folder, patch.object(structured_io, '_CACHE_LIMIT', 100):
             structured_io.clear_read_cache()

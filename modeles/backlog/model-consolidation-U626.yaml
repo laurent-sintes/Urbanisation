@@ -1,0 +1,1218 @@
+id: model-consolidation-U626
+date: '2026-09-22'
+source_refs:
+- U625
+- U626
+status: canonical_draft_updated_detailed_wording_and_context_not_globally_adopted
+authorization: U626 autorise les corrections et compléments ; pas de release ni d’accord sur tous les champs.
+applied_principles:
+- U581 nom Demand & Supply Optimization
+- U592 frontière début exécution
+- U595 Demand porte promesse
+- U616 Service Order document optionnel
+- U617 Task gouvernance
+- U618 références/policies ensemble
+- U619 achat fournisseur
+- U624 Purpose
+proposed_materializations:
+- Six Purposes et rattachements détaillés
+- Supply Visibility
+- 'Service Provider Policy : rédaction et rattachement'
+- Demand Protection Policy
+- 'Service Task Management : nom de capacité et rédaction'
+- Policy pour Supply Protection
+- Nouvelles définitions de glossaire
+- 'Consignment Fill-up Order : nom qualifié et couverture des deux perspectives'
+- 'Consignment Pick-up Order : capacité distincte proposée'
+preserved_open_points:
+- 'Formulations et rattachements nouveaux : qualification champ par champ avant publication'
+- Évolution détaillée des capacités et comportements de gestion du plan commun
+- Signal et maille du début d’exécution partielle
+retired_purpose_successors:
+  D05: D03
+  D15: D04
+  D17: D04
+retired_nodes:
+- id: D05
+  revision: 9
+  kind: area
+  fields:
+    name: Inventory Optimization
+    definition: Optimiser le stock consiste à choisir un compromis entre disponibilité, immobilisation et risque, puis à décider
+      des ajustements nécessaires.
+    finality: Décider du stock souhaitable et des ajustements nécessaires.
+    scope: |-
+      L’Area détermine les ajustements de stock à retenir selon le compromis entre disponibilité, immobilisation, coûts et risques. Les décisions spécialisées portent les cibles de couverture, les droits de protection des groupes, les apports initiaux, le réassort et la redistribution. [Inventory Optimization Planning](model:D05.f) les mobilise pour construire, comparer, actualiser et appliquer un plan cohérent. Le stock peut augmenter, diminuer ou rester stable ; aucune direction ou pondération universelle n’est imposée.
+
+      Les besoins, ressources et apports déjà planifiés sont des entrées pour l’ajustement opérationnel. L’Area ne reconstruit pas le plan amont qui produit les demandes planifiées. Elle adapte les apports, réassorts et transferts à la situation effective et aux impondérables, en tenant compte de ce qui est déjà demandé ou engagé pour ne pas couvrir deux fois le même besoin. Les prévisions peuvent éclairer ces choix sans ajouter un second planning de saison.
+
+      Les calculs font partie des décisions. [Initial Stocking Decision](model:D05.g) détermine les apports du lancement ; [Replenishment Decision](model:D05.e) les apports continus ; [Stock Redistribution Decision](model:D05.c) les transferts du stock existant, dont rééquilibrage et consolidation. Les décisions restent distinctes du Planning qui les mobilise et de l’application des résultats retenus.
+
+      Inventory Optimization Planning distingue Scenario Construction, Simulation & Analysis, Scenario Execution Adaptation et [Inventory Plan Application](model:BHV094). Ce dernier porte la mise en effet du plan et le constat de prise en compte ; les écarts peuvent conduire à adapter le scénario. Aucun contrôle humain systématique ni séquence fixe n’est imposé.
+
+      [Service Requests](model:D04) gère les Orders issus des actions retenues et leurs évolutions autorisées ; [Fulfillment Optimization](model:D03) organise leur satisfaction. Les exécutants réalisent les prestations et [Inventory Management](model:D01) tient la connaissance des stocks et mouvements. [Supply Protection](model:D02.b) maintient les politiques consommées : le Planning ne les modifie pas silencieusement du seul fait qu’un scénario recommande leur évolution.
+
+      Exemple fictif : un apport déjà planifié est retardé. Le Planning compare un réassort alternatif et un transfert depuis un site admissible, en intégrant les demandes et ressources déjà engagées. La réponse opérationnelle corrige la disponibilité locale ; elle ne recrée pas le plan amont et ne compte pas deux fois l’apport attendu.
+
+      [Return Disposition Decision](model:D05.i) détermine le devenir logistique des produits retournés selon leur état, les politiques et la récupération de valeur. Inspection, décision et réalisation restent distinctes ; aucun remboursement ou remplacement client n’est absorbé.
+    market_comparisons:
+    - vendor: RELEX
+      product: RELEX Solutions
+      source_title: 'Inventory optimization: Keys to a successful strategy'
+      source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+      source_version: Article daté du 12 avril 2024, état consulté le 19 septembre 2026
+      source_locator: Inventory management vs optimization ; Multi-echelon inventory optimization
+      consulted_on: '2026-09-19'
+      concept_name: Inventory optimization
+      scope_summary: Compromis de stock dans le réseau.
+      approach_summary: Placer les marges selon demande et risque.
+      evidence_limits: Présentation pédagogique et commerciale ; Tori est explicitement fictive et les résultats ne sont pas
+        garantis.
+      element_name: Inventory optimization
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: Le stock est positionné pour répondre à la demande sans excès inutile.
+      differences: RELEX décrit une offre plus large, avec prévision et mise en action intégrées.
+      flow_position: Inventory Optimization décide et applique les ajustements opérationnels du stock en tenant compte des
+        apports déjà planifiés, sans reconstruire leur plan amont.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM479
+      - CMP190
+    - vendor: Achkar et al.
+      product: Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization
+      source_title: Extensions to the Guaranteed Service Model for Industrial Applications of Multi-Echelon Inventory Optimization
+      source_url: https://arxiv.org/abs/2306.10961
+      source_version: Prépublication du 19 juin 2023
+      source_locator: Résumé des auteurs
+      consulted_on: '2026-09-19'
+      concept_name: Multi-echelon inventory optimization
+      scope_summary: Stocks de sécurité d’un réseau sous contraintes.
+      approach_summary: Minimiser le coût en respectant un service.
+      evidence_limits: Résumé primaire seul consulté ; aucune reproduction de l’algorithme ni transférabilité quantitative
+        au textile affirmée.
+      element_name: Multi-echelon inventory optimization
+      element_type: Concept documenté par la source primaire
+      relationship: Recouvrement partiel
+      similarities: La recherche relie niveau de service et coût du stock dans le réseau.
+      differences: Ce modèle scientifique étudie surtout les stocks de sécurité ; FLOW inclut plusieurs décisions d’ajustement.
+      flow_position: Inventory Optimization décide et applique les ajustements opérationnels du stock en tenant compte des
+        apports déjà planifiés, sans reconstruire leur plan amont.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM327
+      - CMP190
+    market_inspiration:
+      choice: Inventory Optimization décide et applique les ajustements opérationnels du stock en tenant compte des apports
+        déjà planifiés, sans reconstruire leur plan amont.
+      flow_scope: L’Area détermine les ajustements de stock à retenir selon le compromis entre disponibilité, immobilisation,
+        coûts et risques. Les décisions spécialisées portent les cibles de couverture, les droits de protection des groupes,
+        les apports initiaux, le réassort et la redistribution. [Inventory Optimization Planning](model:D05.f) les mobilise
+        pour construire, comparer, actualiser et appliquer un plan cohérent. Le stock peut augmenter, diminuer ou rester stable
+        ; aucune direction ou pondération universelle n’est imposée.
+      flow_approach: Comparer des résultats métier et préparer un scénario cohérent.
+      synthesis:
+      - RELEX emploie Inventory Optimization pour une démarche large de positionnement ; Achkar et ses coauteurs formalisent
+        un problème plus précis de sécurité dans plusieurs échelons. Tous deux mettent en regard service et stock immobilisé.
+      - FLOW conserve ce nom à la maille de l’area et explicite les responsabilités de décision. Ses objectifs peuvent être
+        multiples ; aucune pondération ni minimisation monétaire unique n’est imposée.
+      - 'La frontière entre plan amont et gestion/adaptation de ses suites est un choix métier FLOW : les documents produit
+        éclairent les mécanismes, sans prouver un flux installé ni imposer les Areas.'
+      examples:
+      - title: Exemple pédagogique RELEX — les marges s’additionnent
+        situation: Tori optimise séparément les stocks des centres et magasins.
+        outcome: L’article explique que des marges locales peuvent couvrir plusieurs fois le même risque.
+        lesson: Un meilleur compromis se cherche dans le réseau ; cela ne garantit pas une baisse de stock dans chaque lieu.
+        source_title: 'Inventory optimization: Keys to a successful strategy'
+        source_url: https://www.relexsolutions.com/resources/inventory-optimization/
+        source_refs:
+        - U477
+        - ELM479
+        - CMP190
+  source_refs:
+  - P81
+  - U06
+  - U53
+  - U57
+  - U58
+  - CAP011
+  - CAP012
+  - CAP013
+  - U218
+  - U219
+  - U220
+  - U221
+  - U223
+  - U224
+  - U229
+  - U230
+  - U231
+  - U232
+  - U233
+  - U234
+  - U235
+  - U269
+  - U290
+  - U313
+  - U316
+  - U380
+  - U435
+  - U438
+  - U455
+  - U458
+  - U477
+  - CMP190
+  - U482
+  - U496
+  - U552
+  - U555
+  - U556
+  - CMP229
+  - CMP230
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u223
+  review:
+    state: partial
+    note: 'U496/U497 : vocabulaire Service Requests / Backing Services appliqué ; responsabilités conservées. Les détails
+      rédactionnels et correspondances gardent leur statut proposé. Accords antérieurs conservés uniquement sur les valeurs
+      inchangées ou les libellés canoniques actualisés. U556 : frontières de planification amont, gestion des demandes et
+      adaptation opérationnelle explicitées sans nom de solution ; descriptions éditoriales.'
+  editorial_basis: 'Clarification U218 et accord U219 ; finalités des domaines reprises de l’explication acceptée, nouvelles
+    descriptions et noms proposés. État antérieur dans history/pre-U219.yaml. U220 remplace le nom proposé Inventory Balancing
+    ; U221 ouvre le réapprovisionnement automatique comme piste de périmètre. U223 adopte la définition issue de la synthèse
+    U222 ; ancienne définition conservée dans history/pre-U223.yaml et stock-order-boundary.yaml. Périmètre aligné sur le
+    découpage U235, sans modifier les trois champs validés du domaine. U316 : distinction implantation/réassort intégrée ;
+    compléments éditoriaux proposés. État antérieur : audits/2026-09-18-initial-stocking/model-before.yaml.'
+  adoption_ids: []
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T16:05:23.261608Z'
+    recorded_by: Codex
+    source_refs:
+    - U131
+    - P81
+    - U06
+    - U53
+    - U57
+    - U58
+    - CAP011
+    - CAP012
+    - CAP013
+    - U218
+    - U219
+    - U220
+    - U223
+    - U290
+    - U496
+    validated_fields:
+    - name
+    - finality
+    - definition
+    value_sha256:
+      name: 6babfb12a7e0ca8742f66a33a4c1dc24a6707f6ef4f277c6f29e1ef2b8f642b3
+      finality: 86ef65235582daafa50d6d3f08a4166fc2eb6f8b5ac73dfba3616f07ec46bc8c
+      definition: 3a3ed146d64c56630fafa061f965592863c1d88cc1c296363e52a9aa5fc679a0
+    note: 'Intégration U290 ; détails éditoriaux proposés. U496/U497 : noms et libellés liés actualisés ; aucun accord étendu
+      aux compléments rédactionnels. Valeurs antérieures capturées avant changement.'
+  last_modified: '2026-09-21T11:58:49.254346Z'
+  proposed_fields:
+  - scope
+  - market_comparisons
+  - market_inspiration
+- id: D15
+  revision: 5
+  kind: area
+  fields:
+    name: Order Promising
+    definition: Établir ce qui peut être promis pour satisfaire les Orders, sous quelles conditions, puis maintenir les propositions
+      et engagements de quantités et de dates.
+    finality: Rendre les engagements de satisfaction explicites et compatibles avec les possibilités et arbitrages applicables.
+    scope: |-
+      ATP établit les possibilités dans la situation de référence ; CTP examine la faisabilité sous adaptation ; PTP porte l’arbitrage économique ; Delivery Schedule Decision retient l’échéancier ; Fulfillment Commitment tient propositions, confirmations et révisions autorisées.
+
+      [Fulfillment Optimization](model:D03) porte les priorités, le plan de satisfaction, le travail des scénarios et l’application des affectations. Les choix de promesse et de plan doivent rester compatibles : les décisions spécialisées portent leurs résultats et Fulfillment Plan Decision leur compatibilité lorsqu’un plan collectif est construit. Cette séparation ne définit ni une séquence logicielle ni une frontière individuel/collectif.
+
+      Exemple fictif : 100 pièces demandées vendredi, 60 proposées vendredi et 40 lundi. Possibilités, proposition et engagement confirmé restent distincts ; un recalcul ne modifie pas silencieusement la promesse. Les dates de demande, de proposition, d’engagement et de réalisation ne sont pas interchangeables.
+
+      D01 apporte connaissance des ressources, protections et réservations ; D06 apporte conditions et possibilités des services ainsi que les faits d’exécution. D04 conserve intention, contenu, structure et cycle des Orders. D15 ne réalise pas les prestations et ne réserve pas implicitement des ressources : U436 demeure applicable.
+
+      Le nom et la composition sont adoptés U438 ; les descriptions développées et comparaisons sont proposées. U441/U443 précisent sa distinction d’avec l’affectation ; U445 adopte son nom Fulfillment Commitment.
+
+      Lorsqu’un plan collectif est construit, [Fulfillment Plan Decision](model:D03.o) porte la compatibilité du scénario d’ensemble. PTP conserve l’arbitrage économique et Delivery Schedule Decision le choix d’échéancier ; si leurs résultats ne sont pas compatibles avec les ressources, priorités ou engagements du périmètre, la décision du plan fait réexaminer les résultats concernés et explicite le reste non couvert. Aucun second plan concurrent, ordre universel de calcul ou priorité économique implicite n’est instauré. [Fulfillment Commitment](model:D03.n) conserve les propositions, confirmations et révisions autorisées ; un résultat calculé ne modifie pas seul les engagements. Toute réponse de promesse n’exige pas un plan collectif.
+    market_comparisons:
+    - vendor: Microsoft
+      product: Dynamics 365 SCM / Commerce / Intelligent Order Management
+      element_name: Order promising
+      concept_name: Order promising
+      element_type: Concept ou mécanisme métier documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Dates de départ et d’arrivée.
+      approach_summary: Calculer selon la méthode choisie.
+      similarities: Répondre à la demande avec une date réalisable.
+      differences: Le document est centré sur le calcul des dates.
+      flow_position: FLOW couvre aussi proposition, confirmation et révision.
+      source_title: Order promising
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+      source_version: Documentation évolutive, mise à jour affichée le 21 avril 2026
+      source_locator: Order promising ; ATP calculations ; Example ; CTP calculations
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+      status: proposed
+      source_refs:
+      - U437
+      - U438
+      - U462
+      - U477
+      - ELM434
+      - CMP191
+    - vendor: Oracle
+      product: Fusion Cloud Global Order Promising
+      element_name: Global Order Promising
+      concept_name: Global Order Promising
+      element_type: Concept ou mécanisme métier documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Choix d’une solution de satisfaction.
+      approach_summary: Combiner disponibilité, alternatives et coût.
+      similarities: Relier promesse et ressources mobilisables.
+      differences: Oracle intègre des choix répartis dans plusieurs responsabilités FLOW.
+      flow_position: L’area FLOW reste indépendante du produit.
+      source_title: Overview of Global Order Promising
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html
+      source_version: Oracle Fusion Cloud SCM 25C
+      source_locator: Introduction ; Principles of Promising ; Examples
+      consulted_on: '2026-09-19'
+      evidence_limits: Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+      status: proposed
+      source_refs:
+      - U477
+      - ELM352
+      - CMP191
+    market_inspiration:
+      choice: Dire ce qui pourra être fourni, quand et sous quelles conditions rend la réponse aux commandes fiable. Order
+        Promising réunit l’étude des possibilités, les choix de promesse et le maintien des propositions et engagements.
+      flow_scope: Possibilités, coûts, échéancier et engagement de satisfaction.
+      flow_approach: Séparer ce qui est possible, proposé puis confirmé.
+      synthesis:
+      - Microsoft utilise Order promising pour les dates de livraison calculées. Oracle Global Order Promising ajoute une
+        recherche de sources, des alternatives et des règles de coût. Le même vocabulaire recouvre donc des périmètres produits
+        différents.
+      - FLOW retient une area métier centrée sur la réponse faite à la demande. Le plan global d’affectation reste coordonné
+        avec Fulfillment Optimization, et la [promesse](glossary:TER014) n’est ni un mouvement physique ni une réservation
+        automatique.
+      - FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en
+        assure la compatibilité et appelle les réexamens nécessaires. Fulfillment Commitment garde les engagements autorisés.
+        Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+      examples:
+      - title: Oracle — examiner avant d’engager
+        situation: Dans Check Availability, une ligne dispose d’un résultat de disponibilité que l’utilisateur peut faire
+          évoluer.
+        outcome: Oracle indique que les changements ne sont appliqués qu’au moment de Schedule.
+        lesson: Cette séparation illustre le passage d’une possibilité à une réponse retenue ; FLOW garde ses propres conditions
+          de confirmation.
+        source_title: Check Availability
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html
+        source_refs:
+        - U477
+        - ELM350
+        - CMP191
+  source_refs:
+  - U438
+  - U437
+  - U436
+  - U445
+  - U455
+  - U458
+  - U462
+  - U477
+  - CMP191
+  - U482
+  - U560
+  - CMP234
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u438
+  review:
+    state: partial
+    note: Consolidation autonome U560 ; responsabilités et comparaisons rédigées comme choix de travail. Les accords antérieurs
+      restent limités à leurs valeurs et contextes documentés.
+  editorial_basis: Description développée à partir du découpage présenté en U438 ; responsabilités antérieures des capacités
+    préservées.
+  adoption_ids: []
+  last_modified: '2026-09-21T12:36:42.783025Z'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-19T01:13:35.882622Z'
+    recorded_by: Codex
+    source_refs:
+    - U438
+    validated_fields:
+    - name
+    value_sha256:
+      name: a54bb727083ce286be1b577dff4ebe28f6c105712cc8cc24e25ebf285e6dee88
+    note: U438 adopte noms et rattachements explicitement présentés ; autres champs non validés par extension. Accord antérieur
+      conservé dans history/order-domains-U438/.
+  proposed_fields:
+  - market_inspiration
+  - scope
+- id: D17
+  revision: 6
+  kind: area
+  fields:
+    name: Supply Planning
+    definition: Établir et actualiser la demande à couvrir pour orienter les plans et décisions Supply, en rapprochant besoins
+      anticipés, demandes connues et faits observés.
+    finality: Maintenir une trajectoire cohérente entre besoins à couvrir et ressources mobilisables, à partir des faits et
+      des hypothèses actualisés.
+    scope: |-
+      L’Area regroupe les responsabilités de planification d’ensemble retenues dans Supply Chain Orchestration. [Demand Planning](model:D17.a) construit et actualise la demande à couvrir, puis rend le résultat retenu applicable aux consommateurs. Le plan est régulièrement mis à jour ; la date ou la cadence de calcul ne définit pas sa frontière.
+
+      Le plan amont détermine les apports à préparer et produit des demandes planifiées, ou Planned Orders. Ce travail de planification n’est pas reconstruit lors de leur prise en charge. [Service Requests](model:D04) porte les demandes selon leur nature et leur qualification ; une demande planifiée ne vaut pas automatiquement commande ferme, réception ou engagement de ressources. Les Areas opérationnelles organisent les suites et leurs adaptations. Produire le plan, prendre en charge ses demandes et adapter leur satisfaction constituent donc des responsabilités distinctes.
+
+      Les Areas opérationnelles gardent leur adaptabilité aux impondérables. [Order Backlog Planning](model:D03.p) demeure dans Fulfillment Optimization ; [Inventory Optimization Planning](model:D05.f) garde les ajustements opérationnels du stock. Les décisions spécialisées conservent leurs responsabilités et peuvent être mobilisées par les plans. Le nom Supply Planning ne justifie pas de déplacer toute activité de simulation ou de décision dans cette Area.
+
+      Exemple fictif : un plan amont prévoit des apports pour une période future. Les demandes correspondantes sont prises en charge avec leur qualification ; un retard peut conduire à adapter les affectations ou les ajustements de stock, sans reconstruire pour autant le plan d’origine.
+    market_comparisons:
+    - vendor: Oracle
+      product: Fusion Cloud Supply Chain Planning
+      element_name: Supply Chain Planning plan types
+      element_type: Responsabilité fonctionnelle documentée dans un produit
+      relationship: Recouvrement partiel
+      similarities: Oracle organise des plans de demande, de couverture et un plan intégré rapprochant les deux.
+      differences: Les sources éditeur décrivent une planification plus large. FLOW conserve Demand Planning dans cette Area
+        et ne reproduit pas le plan amont de couverture déjà producteur des Planned Orders. Le périmètre local ne se déduit
+        pas d’un module produit.
+      flow_position: Supply Planning porte la demande à couvrir dans le périmètre FLOW ; le planning amont producteur de demandes
+        planifiées n’est pas dupliqué.
+      source_title: Overview of Supply Chain Planning Plan Types
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+      source_version: 26B
+      consulted_on: '2026-09-21'
+      source_locator: 'Tableau : Demand Plan et Demand and Supply Plan.'
+      evidence_limits: Le document distingue aussi backlog et réassort ; il ne prescrit pas de les déplacer dans cette Area
+        FLOW.
+      status: proposed
+      source_refs:
+      - U533
+      - CMP218
+      - ELM557
+      - U553
+      - CMP230
+      - U555
+      concept_name: Demand, Supply and integrated plans
+      scope_summary: Plans de demande, de couverture et plan intégré au sein de Supply Chain Planning.
+      approach_summary: Articuler prévision, besoins à couvrir et couverture, avec possibilités de plans séparés ou intégrés.
+    - vendor: SAP
+      product: Integrated Business Planning
+      element_name: Response and supply planning
+      element_type: Responsabilité fonctionnelle documentée dans un produit
+      relationship: Recouvrement partiel
+      similarities: SAP documente un plan de couverture sous contraintes, des scénarios, une collaboration et un lien vers
+        les suites opérationnelles.
+      differences: Les sources éditeur décrivent une planification plus large. FLOW conserve Demand Planning dans cette Area
+        et ne reproduit pas le plan amont de couverture déjà producteur des Planned Orders. Le périmètre local ne se déduit
+        pas d’un module produit.
+      flow_position: Supply Planning porte la demande à couvrir dans le périmètre FLOW ; le planning amont producteur de demandes
+        planifiées n’est pas dupliqué.
+      source_title: Response and supply planning
+      source_url: https://www.sap.com/sea/products/scm/integrated-business-planning/features/response-and-supply-planning.html
+      source_version: Page évolutive ; édition non indiquée
+      consulted_on: '2026-09-21'
+      source_locator: Supply planning ; collaboration and simulations ; executional alignment.
+      evidence_limits: Page fonctionnelle produit, pas référentiel d’Areas ; elle ne démontre pas que Supply Planning inclut
+        universellement Demand Planning.
+      status: proposed
+      source_refs:
+      - U533
+      - CMP218
+      - ELM552
+      - U553
+      - CMP230
+      - U555
+      concept_name: Response and supply planning
+      scope_summary: Planification de couverture sous contraintes, simulation et articulation avec les suites opérationnelles.
+      approach_summary: Comparer les possibilités de couverture et actualiser le plan à partir des contraintes et faits.
+    - vendor: Microsoft
+      product: Dynamics 365 Supply Chain Management — Master planning
+      element_name: Master plans overview
+      concept_name: Master plans overview
+      element_type: Mécanisme ou processus de planification documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Le master planning peut utiliser un achat existant retardé ou proposer un nouvel achat planifié ; le
+        plan dynamique est lié au CTP.
+      approach_summary: Arbitrer la couverture en fonction de l’horizon et des délais.
+      similarities: Éclaire la coordination entre besoins, ressources, propositions et contraintes.
+      differences: Plusieurs plans et simulations sont possibles ; le document n’impose ni plan technique unique ni optimum
+        mathématique.
+      flow_position: Le plan Supply de référence peut regrouper satisfaction des demandes et propositions d’apports. Les différentes
+        simulations restent possibles ; un plan retenu commun est un choix de gouvernance FLOW.
+      source_title: Master plans overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+      source_version: Documentation évolutive ; mise à jour affichée 25 mars 2026
+      source_locator: Using master plans ; Firming ; Negative days
+      consulted_on: '2026-09-21'
+      evidence_limits: Document primaire directement consulté. Aucun déploiement Beaumanoir ou optimum universel déduit.
+      status: proposed
+      source_refs:
+      - U567
+      - ELM303
+      - CMP237
+    - vendor: SAP
+      product: Integrated Business Planning — Time-Series-Based Supply Planning
+      element_name: Time-Series-Based Supply Planning Optimizer
+      concept_name: Time-Series-Based Supply Planning Optimizer
+      element_type: Mécanisme ou processus de planification documenté dans un produit
+      relationship: Recouvrement partiel
+      scope_summary: Optimisation conjointe de production, distribution, achats et stock, sous contraintes et coûts du réseau
+        modélisé.
+      approach_summary: Minimiser les coûts du réseau modélisé sous contraintes.
+      similarities: Éclaire la coordination entre besoins, ressources, propositions et contraintes.
+      differences: Planification par périodes, pas ARun ni preuve d’affectation transactionnelle à chaque commande. Les coûts
+        du modèle ne valent pas toutes les dimensions de valeur FLOW.
+      flow_position: Une planification intégrée peut éviter des arbitrages locaux incompatibles. Le nom, les propriétaires
+        et la décomposition FLOW restent à reconsidérer à partir de cette responsabilité commune.
+      source_title: Time-Series-Based Supply Planning Optimizer
+      source_url: https://help.sap.com/docs/SAP_INTEGRATED_BUSINESS_PLANNING/c1fb60cb1e9c49d99ada277ae57e9e6c/deb28978d5ba4c64bad78edcab913228.html
+      source_version: IBP 2605 — I_SAPIBP2
+      source_locator: Introduction ; Supply distribution ; Optimization ; Planning constraints
+      consulted_on: '2026-09-21'
+      evidence_limits: Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Aucun déploiement Beaumanoir
+        ou optimum universel déduit.
+      status: proposed
+      source_refs:
+      - U567
+      - ELM579
+      - CMP237
+    market_inspiration:
+      choice: Supply Planning porte la demande à couvrir dans le périmètre FLOW ; le planning amont producteur de demandes
+        planifiées n’est pas dupliqué.
+      flow_scope: L’Area regroupe les responsabilités de planification d’ensemble retenues dans Supply Chain Orchestration.
+        [Demand Planning](model:D17.a) construit et actualise la demande à couvrir, puis rend le résultat retenu applicable
+        aux consommateurs. Le plan est régulièrement mis à jour ; la date ou la cadence de calcul ne définit pas sa frontière.
+      flow_approach: Confronter prévisions, demandes connues et faits observés ; distinguer leur planification de la gestion
+        des demandes issues d’un plan amont.
+      synthesis:
+      - Oracle distingue plans de demande, de couverture et plan intégré ; SAP documente la couverture sous contraintes et
+        présente Demand planning séparément. Ces références éclairent les responsabilités, sans imposer le périmètre du Domain
+        FLOW.
+      - FLOW conserve Demand Planning dans Supply Planning, nom d’Area retenu par Laurent. Le planning amont qui produit les
+        Planned Orders est déjà pris en charge et n’est pas reproduit. L’Area courante ne correspond donc pas au module Supply
+        Planning complet d’un éditeur.
+      - Order Backlog Planning et Inventory Optimization Planning gardent leurs périmètres opérationnels. La qualification
+        des demandes planifiées et leur transformation éventuelle en commandes fermes ne sont pas inférées de leur seule réception.
+      - 'La frontière entre plan amont et gestion/adaptation de ses suites est un choix métier FLOW : les documents produit
+        éclairent les mécanismes, sans prouver un flux installé ni imposer les Areas.'
+      - Microsoft Master Planning et SAP IBP étayent une planification intégrant ressources existantes, nouveaux apports et
+        ajustements de stock. Le plan de référence unique exprime la cohérence recherchée par FLOW ; plusieurs scénarios,
+        révisions et moteurs coordonnés restent possibles.
+      examples:
+      - title: Illustration FLOW — Actualiser la demande sans reconstruire le plan amont
+        situation: Les ventes et précommandes font évoluer la demande anticipée ; des apports sont déjà planifiés en amont.
+        outcome: Demand Planning révise la demande à couvrir ; la prise en charge des demandes planifiées reste distincte
+          de la construction de leur plan d’origine.
+        lesson: Distinguer demande, plan d’apports et gestion des demandes issues du plan évite une double responsabilité.
+        source_title: Overview of Supply Chain Planning Plan Types
+        source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/overview-of-supply-chain-planning-plan-types.html
+        source_refs:
+        - ELM557
+        - U555
+        - CMP230
+  source_refs:
+  - U526
+  - U527
+  - U528
+  - U529
+  - U530
+  - CMP214
+  - CMP215
+  - ELM294
+  - ELM552
+  - U532
+  - U533
+  - CMP218
+  - ELM556
+  - ELM557
+  - U553
+  - CMP230
+  - U555
+  - U552
+  - U556
+  - CMP229
+  - U567
+  - CMP237
+  - ELM303
+  - ELM579
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u533
+  review:
+    state: partial
+    note: 'Vérification marché U567 : intégration possible côté Microsoft, limite explicite du BOP SAP. Inspirations actualisées
+      ; structure et descriptions de responsabilité non refondues dans cette étude.'
+  adoption_ids: []
+  last_modified: '2026-09-21T16:16:01.418809Z'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-21T11:54:06.096353Z'
+    recorded_by: Codex
+    source_refs:
+    - U553
+    validated_fields:
+    - name
+    value_sha256:
+      name: 84991bd499e967d9f67820a1bbc76dca52a7877d30cd30f5c0d4b6e774226082
+    note: 'U553 : correction explicite du nom de l’Area. Aucun nom ou périmètre nouveau adopté pour sa capacité de couverture.'
+  proposed_fields:
+  - scope
+  - market_comparisons
+  - market_inspiration
+retired_relations:
+- id: REL-UNIVERSE-SUPPLY-D15
+  revision: 2
+  type: presents
+  source_id: universe-supply
+  target_id: D15
+  source_refs:
+  - U438
+  - U455
+  - U458
+  review:
+    state: proposed
+    note: Présentation du domaine Order Promising dans Supply ; le domaine reste une partition métier de l’univers Supply.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-19T01:13:35.882622Z'
+    recorded_by: Codex
+    source_refs:
+    - U438
+    validated_fields: []
+    value_sha256: {}
+    note: Relation de présentation proposée ; distincte des rattachements métier adoptés.
+  last_modified: '2026-09-19T01:13:35.882622Z'
+- id: REL-UNIVERSE-SUPPLY-D05
+  revision: 1
+  type: presents
+  source_id: universe-supply
+  target_id: D05
+  source_refs:
+  - U141
+  - C78
+  - CMP066
+  review:
+    state: proposed
+    note: Rattachement ou contribution explicite selon U141 ; détails proposés.
+  lifecycle:
+    state: ai_proposed
+    recorded_at: '2026-09-13T17:32:42.257717Z'
+    recorded_by: Codex
+    source_refs:
+    - U141
+    - C78
+    - CMP066
+    validated_fields: []
+    value_sha256: {}
+    note: Détail de mise en œuvre proposé par Codex selon U141 ; non validé individuellement.
+- id: REL-UNIVERSE-SUPPLY-D17
+  revision: 1
+  type: presents
+  source_id: universe-supply
+  target_id: D17
+  source_refs:
+  - U530
+  - U533
+  review:
+    state: accepted
+    note: U530 retient la planification comme Area dans Supply Chain Orchestration. Accord limité au rattachement ; aucune
+      capacité déplacée. U533 confirme le rattachement de Planning avec Demand Planning et Supply Planning ; le nouvel accord
+      remplace l’intention non publiée U530 dans ce contexte.
+  last_modified: '2026-09-21T10:30:00.601330Z'
+  lifecycle:
+    state: urbanist_validated
+    recorded_at: '2026-09-21T10:30:00.601330Z'
+    recorded_by: Codex
+    source_refs:
+    - U533
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 8fce95e6cb23820ec5381094b850bb38115f1375fd18e259986cd2bd60aea415
+      target_id: 24cbb666272dbdc2c4123fba085423daa439e2f6ade25ab0a6797b1506468953
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: U533 confirme le rattachement dans le nouveau contexte de composition. INT-U533-planning-parent remplace INT-U530-planning-area-parent
+      sans altérer sa preuve.
+changes:
+  nodes:
+  - id: universe-supply
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - scope
+  - id: business-references
+    status: updated
+    changed_fields:
+    - definition
+    - examples
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D01.c
+    status: updated
+    changed_fields:
+    - definition
+    - scope
+  - id: D02.b
+    status: updated
+    changed_fields:
+    - nature
+    - scope
+  - id: D03.j
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.i
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.j
+    status: updated
+    changed_fields:
+    - market_inspiration
+    - scope
+  - id: D04.k
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.l
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.m
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.n
+    status: updated
+    changed_fields:
+    - scope
+  - id: D13
+    status: updated
+    changed_fields:
+    - definition
+  - id: D05.a
+    status: updated
+    changed_fields:
+    - scope
+  - id: D05.g
+    status: updated
+    changed_fields:
+    - scope
+  - id: D05.e
+    status: updated
+    changed_fields:
+    - scope
+  - id: D05.c
+    status: updated
+    changed_fields:
+    - scope
+  - id: D05.f
+    status: updated
+    changed_fields:
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D14
+    status: updated
+    changed_fields:
+    - market_comparisons
+    - market_inspiration
+    - scope
+  - id: D06.b
+    status: updated
+    changed_fields:
+    - finality
+    - scope
+  - id: D07.a
+    status: updated
+    changed_fields:
+    - scope
+  - id: D07.b
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D07.c
+    status: updated
+    changed_fields:
+    - definition
+    - market_comparisons
+    - market_inspiration
+  - id: D07.d
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D01
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - scope
+  - id: D06
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D03
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D06.d
+    status: updated
+    changed_fields:
+    - scope
+  - id: D14.a
+    status: updated
+    changed_fields:
+    - scope
+  - id: D06.e
+    status: updated
+    changed_fields:
+    - scope
+  - id: D06.f
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV002
+    status: updated
+    changed_fields:
+    - market_inspiration
+  - id: BHV016
+    status: updated
+    changed_fields:
+    - market_inspiration
+  - id: BHV024
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV026
+    status: updated
+    changed_fields:
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: BHV027
+    status: updated
+    changed_fields:
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: BHV028
+    status: updated
+    changed_fields:
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D05.h
+    status: updated
+    changed_fields:
+    - scope
+  - id: D03.o
+    status: updated
+    changed_fields:
+    - scope
+  - id: D05.i
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV050
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV051
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV052
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV053
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV054
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV057
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV058
+    status: updated
+    changed_fields:
+    - scope
+  - id: D04.r
+    status: updated
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D01.h
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV061
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV063
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV064
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV065
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV066
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV067
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV068
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV069
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV070
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV071
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV072
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV073
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV074
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV075
+    status: updated
+    changed_fields:
+    - market_inspiration
+    - scope
+  - id: BHV076
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV077
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV078
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV082
+    status: updated
+    changed_fields:
+    - scope
+  - id: D03.p
+    status: updated
+    changed_fields:
+    - scope
+  - id: D14.b
+    status: updated
+    changed_fields:
+    - scope
+  - id: D17.a
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV094
+    status: updated
+    changed_fields:
+    - scope
+  - id: BHV095
+    status: updated
+    changed_fields:
+    - scope
+  - id: D18
+    status: created
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - scope
+  - id: D18.a
+    status: created
+    changed_fields:
+    - data_governance
+    - definition
+    - finality
+    - market_comparisons
+    - name
+    - nature
+    - scope
+  - id: D19.a
+    status: created
+    changed_fields:
+    - data_governance
+    - definition
+    - finality
+    - market_comparisons
+    - mastership
+    - name
+    - nature
+    - scope
+  - id: D19.b
+    status: created
+    changed_fields:
+    - data_governance
+    - definition
+    - finality
+    - market_comparisons
+    - name
+    - nature
+    - scope
+  - id: D04.t
+    status: created
+    changed_fields:
+    - definition
+    - finality
+    - market_comparisons
+    - market_inspiration
+    - name
+    - nature
+    - scope
+  relations:
+  - id: REL-MEMBER-D02.b
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D03.n
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D03.i
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D03.j
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D03.k
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.f
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.a
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.d
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.e
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.c
+    status: updated
+    changed_fields: []
+  - id: REL-EXECUTION-FACTS-D04.l
+    status: updated
+    changed_fields: []
+  - id: REL-SERVICE-CATALOG-EXECUTION
+    status: updated
+    changed_fields: []
+  - id: REL-SERVICE-CATALOG-PROMISING
+    status: updated
+    changed_fields: []
+  - id: REL-EXECUTION-PROMISING
+    status: updated
+    changed_fields: []
+  - id: REL-EXECUTION-ORCHESTRATION-COMMITMENTS
+    status: updated
+    changed_fields: []
+  - id: REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+    status: updated
+    changed_fields: []
+  - id: REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D03.l
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.g
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.h
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D05.i
+    status: updated
+    changed_fields: []
+  - id: REL-MEMBER-D17.a
+    status: updated
+    changed_fields: []
+  - id: REL-UNIVERSE-SUPPLY-D18
+    status: created
+    changed_fields: []
+  - id: REL-MEMBER-D18.a
+    status: created
+    changed_fields: []
+  - id: REL-MEMBER-D19.a
+    status: created
+    changed_fields: []
+  - id: REL-MEMBER-D19.b
+    status: created
+    changed_fields: []
+  - id: REL-SUPPLY-INVENTORY-VISIBILITY
+    status: created
+    changed_fields: []
+  - id: REL-SUPPLY-PLAN-VISIBILITY
+    status: created
+    changed_fields: []
+  - id: REL-MEMBER-D04.t
+    status: created
+    changed_fields: []
+  terms:
+  - id: TER001
+    status: updated
+  - id: TER004
+    status: updated
+  - id: TER007
+    status: updated
+  - id: TER024
+    status: updated
+  - id: TER026
+    status: updated
+  - id: TER027
+    status: updated
+  - id: TER028
+    status: updated
+  - id: TER029
+    status: updated
+  - id: TER030
+    status: updated
+  - id: TER031
+    status: updated
+  - id: TER055
+    status: updated
+  - id: TER060
+    status: updated
+  - id: TER066
+    status: updated
+  - id: TER070
+    status: updated
+  - id: TER071
+    status: updated
+  - id: TER072
+    status: updated
+  - id: TER074
+    status: updated
+  - id: TER075
+    status: updated
+  - id: TER081
+    status: updated
+  - id: TER083
+    status: updated
+  - id: TER085
+    status: updated
+  - id: TER088
+    status: updated
+  - id: TER089
+    status: created
+  - id: TER090
+    status: created
+  - id: TER091
+    status: created
+  - id: TER092
+    status: created
+  - id: TER093
+    status: created
+  - id: TER094
+    status: created
+  - id: TER095
+    status: created
+  - id: TER096
+    status: created
+  metamodel_terms:
+  - id: MOD007
+    status: updated
+  - id: MOD008
+    status: updated
+  - id: MOD013
+    status: updated
+  - id: MOD015
+    status: created
+  - id: MOD016
+    status: created
+  - id: MOD017
+    status: created
+  - id: MOD018
+    status: created
+  - id: MOD019
+    status: created
+before_evidence: audits/2026-09-22-model-update-U626/before/
+market_basis:
+- audits/2026-09-22-model-scope-U625/marche.md
+- modeles/backlog/orchestration-areas-review-U584.yaml
+- modeles/backlog/consignment-orders-market-review-U595.yaml
+- modeles/backlog/area-level-market-study-U620.yaml

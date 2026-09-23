@@ -2388,3 +2388,168 @@ Bénéfice : distinguer finalité de l’Area et capacité de gestion du plan. C
 U581 — Codex, 22 septembre 2026. [CTP et achats du plan commun](../modeles/backlog/master-planning-structure-U568.yaml), section ctp_and_procurement_U581. ELM417/588 Microsoft et ELM566 Oracle relus directement. Batch CTP s’appuie sur le plan dynamique pour les dates ; master planning produit des Planned Orders, transformés en Orders par firming. Oracle transmet les recommandations nouvelles ou révisées et expose les exceptions aval. Aucun de ces documents ne garantit de rendre toutes les promesses existantes réalisables.
 
 Interprétation FLOW : autoriser au cadrage les adaptations prévues par les politiques externes, mobiliser CTP pour leur faisabilité, puis coordonner leur choix dans le plan commun. La décision d’achat proposée reste distincte de CTP ; Apply Plan mobilise les responsables des Orders et engagements. Les achats pour prévisions ou stocks ne nécessitent pas chacun un contrôle CTP de commande client. Limites : délais et ressources peuvent rendre une date intenable ; proposition d’achat, engagement fournisseur et couverture effective distincts. Recommandation de fonctionnement proposée, pas activation logicielle ni adoption globale.
+
+## CMP247
+
+U583/U584 — Codex, 22 septembre 2026. [Examen des six Areas du cœur d'orchestration](../modeles/backlog/orchestration-areas-review-U584.yaml). Neuf documents primaires consultés : ELM600–603 et relectures ELM363/406/411/415/596. Périmètre comparé : proposition de Laurent et responsabilités du backlog courant ; aucune modification canonique.
+
+Microsoft distingue prévision de demande, apports et projection de stock ; réservation et consignation étayent les distinctions entre besoin, engagement, présence et propriété. Oracle Transfer Orders 25C porte demande et apport dans une même opération. Recouvrements fonctionnels, sans preuve d'une taxonomie commune à six Areas. Le regroupement FLOW proposé conserve une tenue unique des Orders et une position de stock sans double compte.
+
+Microsoft Master Planning comprend la proposition d'apports ; Oracle Backlog Planning réarbitre la couverture du carnet. Matching serait trop restrictif s'il désignait seulement le partage des ressources données. Recommandation Codex : expliciter la couverture et les ajustements, en gardant le nom cible Demand & Supply Optimization U581 comme option préférée. U584 rouvre le vocabulaire sans adopter automatiquement un remplacement.
+
+Fluent distingue gestion des profils et utilisation en sourcing ; Source Order Items combine choix de sites, limites de fractionnement et réaffectation après manque. Deux documents du même éditeur ne prouvent pas un consensus. Interprétation FLOW : Fulfillment coordonne et adapte la réalisation dans ses marges ; les effets sur la couverture ou la promesse mobilisent leurs responsables. Une fonction éditeur ne détermine pas à elle seule un parent métier.
+
+Bénéfice des six axes : besoins, apports, état du stock, arbitrages et réalisation mieux distingués. Compromis à traiter : les exemples mêlent objets et capacités ; promesse, prévisions, capacités de prestations et responsabilités communes des Orders doivent rester explicites. Toutes les propositions de frontières et de placements sont en examen ; aucun accord, fusion, suppression ni couverture installée déduit.
+
+## CMP248
+
+U585/U586 — Codex, 22 septembre 2026. [Policy et projections de référence](../modeles/backlog/orchestration-areas-review-U584.yaml), [grille des types](../modeles/backlog/capability-types-U449.yaml). Relecture ELM410 Microsoft, Business background and purpose / Difference between inventory allocation and soft reservation, et réutilisation de la consultation ELM603 Fluent du même jour. Microsoft expose protections par groupe/canal et événements promotionnels ; Fluent maintient les configurations utilisées par l'orchestration.
+
+Appui fonctionnel à un cadre de règles applicable, distinct du calcul d'une réponse. Le type de capacité Policy est demandé U586 ; ces sources n'en font pas un standard taxonomique. Définition proposée : définir, maintenir et rendre applicables les règles maîtrisées par le Domain. Bénéfice : séparer projections externes et règles internes, puis distinguer leur gouvernance des décisions et plans consommateurs. Compromis : préciser les propriétaires et les délégations de modification, sans une capacité par paramètre. Protéger les Backing Services signifie encadrer leur charge et leur sollicitation dans cette proposition, pas administrer techniquement WMS/TMS ni inventer leur capacité. Aucun reclassement automatique de Supply Protection, aucune perte d'autorité locale U479.
+
+## CMP249
+
+U585 — Codex, 22 septembre 2026. [Effets du plan](../modeles/backlog/orchestration-areas-review-U584.yaml). ELM434 Microsoft Order promising relu (méthodes, ATP calculations, CTP calculations) et ELM604 Oracle 26A consulté. Microsoft distingue disponibilité et capacité mobilisée ; Oracle fractionne la couverture entre lieux, dates et substitutions autorisées. Ce sont des distinctions fonctionnelles utiles, pas une obligation d'urbaniser en trois capacités ATP/CTP/PTP.
+
+Recommandation FLOW : rendre les capacités lisibles par leurs résultats métier, conserver couverture réalisable, adaptations et arbitrage économique dans les décisions mobilisées par le plan, sans supprimer leurs différences. Achats, révisions des demandes et des protections deviennent des effets explicitement étudiés. Le cas B2B/eCommerce est cohérent avec les protections ELM410, mais un calcul conjoint universel des quotas n'est pas démontré. Proposition, quantité couverte, obligation de vente et engagement restent distincts. Aucun nom détaillé, déplacement ou fusion canonique adopté.
+
+## CMP250
+
+U585 — Codex, 22 septembre 2026. Rapprochement de Fulfillment Orchestration avec le case management. ELM011 / MKT10 : [OMG CMMN 1.1](https://www.omg.org/spec/CMMN/1.1/PDF), décembre 2016, formal/2016-12-01, §4.1 pages imprimées 5–6 et §5.4.9.2 page 41, relus ; ELM605 Flowable consulté. Dossier orienté résultat, contexte et évolution des activités selon événements, tâches prévues et discrétionnaires ; Flowable illustre l'articulation humain, service, décision et processus.
+
+Appui méthodologique aux principes établis du case management pour l'adaptation des prestations ; le dossier ne se limite pas aux seules exceptions. Interprétation FLOW : conduire la réalisation selon son contexte, mobiliser décisions et activités utiles, réexaminer couverture ou engagement quand l'effet l'exige. Bénéfice : adaptation lisible sans workflow figé. Limites : toute orchestration n'est pas automatiquement du case management ; ni conformité CMMN, ni moteur, ni supériorité universelle ou couverture installée démontrée. Le Domain courant et U472 sont conservés.
+
+## CMP251
+
+U587 — Codex, 22 septembre 2026. [Backing Service Policy dans la proposition courante](../modeles/backlog/orchestration-areas-review-U584.yaml), capacité de type Policy sous l'Area proposée Policy Management. D14 et TER075 décrivent déjà une offre physique, humaine ou numérique ; Laurent précise que ses fournisseurs sont principalement logistiques, sans exclusivité, et demande des règles propres à Supply d'exclusion et de limitation des commandes face aux difficultés.
+
+ELM606 Oracle OTM 24A étaye l'exclusion de prestataires inactifs des choix de planification concernés, selon une option explicite de cette édition. ELM607 Oracle OTM 26B étaye les plafonds d'expéditions par prestataire, équipement, trajet et période. Deux documents primaires distincts du même éditeur : recouvrements partiels du cas transport, sans consensus de nom ou de type de capacité. Le déclenchement par difficultés observées est l'intention FLOW ; les sources n'établissent pas une décision automatique depuis des KPI ni la suppression d'engagements existants.
+
+Bénéfice : séparer l'offre disponible au catalogue et notre autorisation de l'utiliser. La politique gouverne le recours, la visibilité expose les faits, la décision de sélection applique les restrictions et les Backing Service Orders tiennent les engagements. Exemple proposé : plafond Supply de 200 préparations malgré une capacité annoncée de 1 000, après difficultés constatées. Compromis : expliciter portée, période, unité de limitation et règle de révision ; ne pas confondre capacité physique, capacité restante et plafond local. Aucun prestataire réel, incident Beaumanoir, nouveau niveau hiérarchique ou reclassement canonique inventé.
+
+## CMP252
+
+U588 — Codex, 22 septembre 2026. [Réexamen lexical](../modeles/backlog/orchestration-areas-review-U584.yaml), section naming_review_U588. ELM608/609 attestent Backing Service en architecture applicative Twelve-Factor, repris par Microsoft .NET. Sa portée FLOW physique, humaine ou numérique est une adaptation ; les comparaisons actuelles TER075 avec Field Service/Camunda étayent des responsabilités, pas ce nom exact comme vocabulaire logistique.
+
+ELM606/607/610 OTM étayent exclusions, plafonds et terme Service Provider. Ils n'attestent pas le composé Backing Service Policy ; ce constat borné n'établit pas une absence sur tout le marché. Recommandation Codex : Service pour la prestation, Service Provider pour le fournisseur, Service Catalog pour le référentiel et Service Provider Policy pour les règles de recours. Le dernier nom est une composition FLOW proposée, pas un intitulé standard démontré.
+
+Bénéfice : vocabulaire plus directement métier et moindre ambiguïté IT. Compromis : Service demeure générique ; la définition doit conserver prestation, résultat et engagements. La politique doit couvrir fournisseur et prestations contextualisées, sans se réduire au blocage global du fournisseur. Aucun remplacement des noms courants, nouvelle maîtrise d'entreprise ou nouvelle capacité canonique déduit de la question.
+
+Suite U590 — Laurent adopte les noms présentés : Service, Service Provider, Service Catalog et Service Provider Policy. Application au backlog et à la proposition de politique le 22 septembre 2026 ; aucune extension de l'accord aux descriptions ou aux rapprochements marché. ELM606 et ELM610 Oracle relus, ainsi que ELM397 Microsoft : fournisseur et prestation restent distincts ; Service Provider Policy demeure une composition FLOW. Service Provider est explicité comme rôle dans le glossaire, sans nouvelle capacité ni changement de maîtrise. La commande de prestation conserve son nom antérieur, absent de la table soumise. Le constat U588 ci-dessus reste historique.
+
+## CMP253
+
+U589 — Codex, 22 septembre 2026. [Diagnostic ciblé des frontières](../modeles/backlog/orchestration-areas-review-U584.yaml), boundary_assessment_U589. ELM601 Oracle Transfer Orders 25C relu directement : demande et apport sont portés par le même document. ELM602 Fluent Source Order Items réutilisé depuis le texte primaire indexé consulté dans cette discussion ; nouvelle ouverture directe en échec. La fonction produit combine sourcing et réaffectation après manque au prélèvement. Ces constats justifient d'examiner les interactions, sans adopter les frontières des modules logiciels.
+
+Interprétation FLOW : la finalité du Domain reste claire, mais les maîtres externes ne couvrent pas ses politiques propres U585. Les axes d'Areas sont cohérents ; propriétaires des Orders à plusieurs effets, décisions de couverture/réalisation, promesse et réservation restent à préciser. Références/Policy et apports/position de stock disposent d'une distinction de principe lisible. La fréquence et l'ordre temporel ne déterminent pas à eux seuls le parent d'une décision réutilisée.
+
+Bénéfice recommandé : attribuer chaque résultat à une responsabilité unique et décrire les coopérations. Compromis : des Areas interdépendantes, sans prétendre supprimer leurs interactions ou les isoler techniquement. Aucune hiérarchie en sept Areas imposée par les sources ; aucune migration ni réouverture de l'audit des comportements. La proposition et le catalogue canonique conservent des maturités différentes, explicitement signalées.
+
+## CMP254
+
+U591/U592, C114 — Codex, 22 septembre 2026. [Frontière courante plan / Fulfillment](../modeles/backlog/orchestration-areas-review-U584.yaml), plan_fulfillment_boundary_U592. Laurent fixe le début d'exécution comme limite de la modification du contenu par l'arbitrage ; la fermeté n'empêche pas une révision, voire un désaffermissement. U591 demeure pour l'adaptation du plan d'exécution, le split de la Logistic Order et le suivi des deux suites par la demande initiale.
+
+ELM602 Fluent Source Order Items : texte primaire indexé relu, édition modifiée le 17 juin 2026, How it Works / Short-Pick Reallocation ; ouverture directe en échec. Appui fonctionnel à la reprise des articles manquants depuis un autre lieu et aux limites de split. ELM604 Oracle Split or Substitute Fulfillment Lines, 26A, directement relu : Introduction, Split a Warehouse, Consider Dates. Appui au fractionnement avant réalisation dans Promising, selon permissions. Deux documents primaires distincts : le même mécanisme de split peut servir plusieurs responsabilités ; il ne détermine pas seul l'Area.
+
+Interprétation FLOW : distinguer retouche du contenu de la demande et adaptation de sa réalisation. Bénéfice : un manque partiel ne renvoie pas systématiquement tout le dossier à l'arbitrage ; une demande ferme non exécutée reste révisable. Compromis : définir le début d'exécution, la maille en cas de réalisation partielle, les marges et conséquences d'une révision. Les sources ne démontrent ni une règle universelle de désaffermissement, ni le nom Logistic Order, ni une filiation documentaire imposée. Le critère de frontière vient de Laurent ; les rédactions et modalités détaillées restent proposées. Aucune nouvelle capacité, réalisation installée ou migration canonique déduite.
+
+Suite U593 — Laurent adopte le terme Re-sourcing présenté pour la reprise depuis une autre source. ELM602 Fluent documente la réaffectation après manque et mentionne Partial Fulfillments and Re-Sourcing dans son cadre fonctionnel ; ELM604 Oracle reste un appui au split, sans équivalence de nom revendiquée. Bénéfice lexical : rendre lisible la recherche d'une source de remplacement, distincte du fractionnement et du suivi. Accord consigné dans terminology_adoption_U593 de l'annexe ; aucune nouvelle capacité ou maille de comportement déduite du nom.
+
+## CMP255
+
+U594 — Codex, 22 septembre 2026. Diagnostic actualisé après U590–U593 dans [remaining_boundaries_U594](../modeles/backlog/orchestration-areas-review-U584.yaml). ELM601 Oracle Transfer Orders 25C relu : Introduction, document unique représentant demande et apport. ELM410 Microsoft Inventory Visibility inventory allocation relu : Business background and purpose, Difference between inventory allocation and soft reservation. Ce dernier distingue protection par groupe et réservation liée à une transaction ; il ne détermine pas une Area FLOW.
+
+Les deux documents primaires étayent des interactions différentes, sans fournir un découpage commun de capacités. Interprétation : la frontière de principe plan / Fulfillment est clarifiée ; restent à attribuer les Orders à plusieurs effets, la tenue des engagements et la responsabilité détaillée de Logistic Order. La réservation a déjà Inventory Management pour parent canonique (D02.c → D01) ; recommander de le conserver, avec coopérations explicites, au lieu de présenter ce placement comme absent. Service Capacity Visibility conserve aussi un ancrage existant D06.b dans Process Management, candidat à préserver dans Fulfillment.
+
+Bénéfice : réduire le diagnostic aux responsabilités réellement non attribuées dans la proposition ; séparer critères opérationnels et choix de structure. Compromis : préciser les effets partagés sans dupliquer les cycles de vie. Demand pour la tenue d'engagement et Fulfillment pour la mission logistique restent des recommandations FLOW, non des conventions imposées par les sources ou des accords nouveaux. Aucun changement canonique ni migration déduit de la demande.
+
+## CMP256
+
+U595/U596 — Codex, 22 septembre 2026. [Étude des Orders de consignation](../modeles/backlog/consignment-orders-market-review-U595.yaml). Laurent clarifie que Transfer Order et retours sont des demandes ; elles portent besoins, exigences et promesse indépendamment de leur origine. Le point de responsabilité est résolu dans la proposition, sans migration canonique. L'étude porte sur les types et périmètres des demandes.
+
+ELM611/615 SAP distinguent fill-up, issue, pick-up et return de consignation client. ELM406 Microsoft et ELM612 Oracle décrivent l'appel de stock fournisseur consigné, distinct d'un transfert immédiat de propriété. ELM613 Oracle Retail et ELM617 Fashion montrent que le régime consigné peut coexister avec des transferts : ni lieu externe ni propriété tierce ne suffisent à imposer un nouveau type de mouvement. Éditions et limites d'accès sont consignées dans l'étude ; aucun consensus documentaire unique déduit.
+
+U596 vise prioritairement le stock du client donneur d'ordre détenu chez nous. Les pages de consignation fournisseur ne suffisent pas à assimiler ce client à notre fournisseur de marchandises. Interprétation proposée : séparer demande de prise en charge/livraison/restitution, régime de stock et prestations de réalisation. D04.r/D01.h couvrent aujourd'hui fournisseur propriétaire et distributeur détenteur ; leur extension serait un changement de périmètre. Recommandation : garder Transfer Order pour son intention de déplacement et examiner les obligations propres de consignation ou de garde ; ni Order universel ni quatre capacités copiées des types SAP. Noms et maille restent à décider ; aucun nouveau Domain Commerce.
+
+Précision U598 — Relecture canonique : Transfer Order porte déjà Initial Stocking, Continuous Replenishment, Inventory Rebalancing, Stock Consolidation et Order-Driven Transfer. Rééquilibrage n'est donc pas son unique intention décrite. Le régime consigné peut accompagner un déplacement (ELM613/617) sans transformer le transfert en demande universelle. D04.r couvre l'apport fournisseur consigné entrant, pas toute mise en consignation dans les deux sens ; ELM406/612 étayent ce point de vue. BHV065 Consignment Exit mobilise déjà Supplier Return, Sales Order ou Transfer Order selon l'issue ; les suites ne sont pas entièrement absentes, mais la demande spécifique de restitution du stock client U596 n'est pas explicitement établie. ELM611/615 distinguent reprise des invendus et retour après consommation ; ils ne justifient pas deux Orders pour « reprise » et « restitution » lorsqu'il s'agit de la même obligation vue par deux parties. Clarification de lecture et recommandation de cohérence, sans nouvelle adoption.
+
+## CMP257
+
+U597 — Codex, 22 septembre 2026. Comparaison AFS/Fashion dans [l'étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). ELM614 AFS 6.5 atteste déjà la prise en compte de la consignation fournisseur dans ATP, ARun et les livraisons. ELM619 complète par un contrat d'interface AFS identifiant le stock consigné client. ELM616/617 Fashion documentent saisons, segmentation, affectation et circulation multisite du stock fournisseur consigné. Constat : continuité de la possibilité de mobiliser ce stock ; enrichissements Fashion documentés, sans déduire l'absence de leurs équivalents dans AFS.
+
+Différence explicite entre éditions : ELM615 FMS 1.0 SP13 décrit l'usage d'ARun dans fill-up, issue et pick-up selon pertinence article/règles, tandis qu'ELM618 S/4HANA aATP 2025 FPS01 réserve Supply Assignment au fill-up KB. KE, KA et KR en sont exclus dans ce dernier passage. Cet écart exige une qualification de produit/version ; il ne prouve ni impossibilité d'exécuter les autres parcours ni règle universelle de migration.
+
+Interprétation pour FLOW : conserver les intentions et effets de propriété indépendamment du produit ; appliquer les règles d'admissibilité et d'affectation selon contexte. Pour le stock du client chez nous, qualifier la relation de prestation et les droits sur le stock avant de choisir une famille d'Order. Aucune différence de stratégie commerciale universelle AFS/Fashion ni couverture installée Beaumanoir établie. Recommandations de modèle en attente de décision ; aucune création automatique de capacité.
+
+## CMP258
+
+U599 — Codex, 22 septembre 2026. Noms d'Orders de consignation, proposition dans naming_proposal_U599 de [l'étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). ELM612 Oracle Consigned Inventory 26A relu directement, section Consignment Order : nom court pour la demande de livraison sous accord, distinct de l'accord et de la consommation. ELM615 FMS Consignment Orders 1.0 SP13 relu par texte primaire indexé : fill-up, issue, pick-up et return ont des résultats distincts. Aucun vocabulaire unique interéditeurs démontré.
+
+Recommandation de nommage : Consignment Order pour l'apport/mise en consignation (nom Oracle, correspondant à l'intention fill-up SAP), Consignment Pick-up Order pour la reprise du stock resté consigné, Consignment Issue Order pour la consommation/cession, Consignment Return Order pour le retour après issue. La liste est une sélection FLOW de termes attestés dans deux contextes ; ce n'est ni une taxonomie commune ni une équivalence complète entre les processus fournisseur Oracle et client SAP. Consignment Order ne doit pas devenir le nom d'un Order universel portant les quatre intentions.
+
+Bénéfice : retirer Replenishment évite de suggérer uniquement le réassort, alors que D04.r couvre aussi l'implantation ; conserver Pick-up distinct de Return préserve l'effet de propriété. Compromis : Issue doit être expliqué en français, et les perspectives fournisseur/client contextualisées. Pour la seule détention du stock d'un client, consommation/cession et retour après cession ne sont pas obligatoires. L'élargissement de D04.r au-delà de son périmètre fournisseur reste une décision distincte du nom. Aucun renommage canonique ni création de quatre capacités.
+
+
+## CMP259
+
+U600/U601 — Codex, 22 septembre 2026. Comparaison étendue dans competitor_review_U600 de [l’étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). État comparé : D04.r conserve son nom et son périmètre fournisseur entrant ; les noms U599 sont des propositions. Relation : appui sémantique et recouvrement partiel, aucune équivalence globale de capacités. ELM406/612/615 relus ; ELM620–624 ajoutés, éditions et localisateurs conservés.
+
+Constat : le vocabulaire de mise en consignation varie entre SAP, Oracle, Microsoft, Infor M3 et IFS. Le nom actuel est attesté chez deux éditeurs. Les mots Return et Pick-up ne partagent pas partout la frontière SAP entre avant et après consommation. Les perspectives client et fournisseur sont explicites dans l’étude ; leur rapprochement n’en fait pas des processus identiques.
+
+Recommandation : Consignment Fill-up Order pour préciser l’intention d’alimentation, Consignment Pick-up Order pour la reprise des biens restés consignés ; Issue et Return demeurent candidats pour les autres intentions. Bénéfice : noms qualifiés et distinction d’effets ; compromis : vocabulaire SAP à expliquer, sans consensus interéditeurs. U601 corrige le mot d’U600, sans adopter la famille ni créer quatre capacités. La garde du stock client reste un périmètre à traiter explicitement. Aucune mutation canonique ; validation des noms encore attendue après comparaison.
+
+
+## CMP260
+
+U602 — Codex, 22 septembre 2026. Mandat de vente et importance d’Issue dans [l’étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sales_mandate_U602. État comparé : proposition des Orders et cas client propriétaire U596 ; aucune mutation de D04.r. Appui sémantique et recouvrement partiel, pas équivalence documentaire.
+
+ELM615 SAP FMS 1.0 SP13, Consignment Orders, section Consignment issue, texte primaire indexé relu : Issue documente le prélèvement du stock consigné dans le processus de vente. ELM613 Oracle Retail 21.0, Item Types, section Consignment and Concession Items, page primaire relue : vente de biens tiers selon des régimes aux effets distincts de propriété et de facturation. Cela appuie la distinction entre vente, possession et acquisition ; aucun régime Oracle n’est attribué au mandat de Laurent.
+
+U602 établit le mandat de vente ; la réserve de simple garde ne décrit plus son exemple. Recommandation FLOW : inclure Issue dans le périmètre, l’articuler avec Sales Order et appliquer ses effets via Inventory ; Fulfillment porte l’exécution. Bénéfice : suivre la vente du stock confié et les obligations envers le propriétaire sans confondre expédition et sortie du régime consigné. Limite : fait générateur et organisation des documents encore à définir ; définition proposée non réputée adoptée. Pas de chantier Commerce anticipé ni de quatre capacités automatiques.
+
+
+## CMP261
+
+U603 — Codex, 22 septembre 2026. Vérification SAP du cas U596/U602 ; [étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sap_use_case_U603. État comparé : proposition de famille et mandat de vente confirmé, aucun changement canonique. Relation : recouvrement partiel et appui sémantique ; pas équivalence de capacité ni validation contractuelle.
+
+ELM625 décrit la consignation client standard avec transfert de propriété au détenteur lors d’Issue. ELM626 documente un agent externe livrant pour compte du propriétaire, avec document ED qualifié d’Issue. ELM627 confirme une génération depuis l’avis de livraison dans un scénario automobile. Versions et limites restent propres à chaque document ; aucune extension à AFS/Fashion installés.
+
+Le mandat de vendre justifie la pertinence d’Issue mais ne suffit pas à choisir le montage : acquisition par nous versus vente pour compte sans acquisition. Le scénario agent éclaire la séparation propriétaire/détenteur/acheteur ; il ne démontre pas la délégation commerciale complète. Recommandation : retenir l’intention d’Issue et qualifier ses effets et sa filiation à la demande commerciale. Bénéfice : préserver le sens métier sans assimiler Issue à une expédition ni créer un deuxième besoin. Limite : une génération documentaire après exécution ne justifie pas automatiquement une capacité de demande autonome. Correspondance proposée, non validée.
+
+
+## CMP262
+
+U604/U606 — Codex, 22 septembre 2026. [Étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sales_order_issue_review_U606. État comparé : Sales Order D04.i existant et Consignment Issue Order proposé ; relation d’appui sémantique, pas équivalence documentaire/capacité.
+
+ELM628 situe Issue dans les types de Sales Order ; ELM629 montre ses suites de livraison, stock et facturation ; ELM630 sa création sur déclaration de ventes/consommations. Versions et passages propres conservés. Le document ne se limite pas au juridique, et la vente finale ne se confond pas avec l’obligation entre consignateur et détenteur.
+
+Recommandation : garder l’intention de vente sous Sales Order, distinguer ses variantes de consignation et faire appliquer les effets de propriété par Inventory. Un document Issue peut matérialiser une obligation sans justifier une deuxième capacité de demande. Bénéfice : éviter le doublon de besoin et préserver les responsabilités ; compromis : parties, faits générateurs et liens documentaires doivent être explicites. Deux variantes U604 conservées sans sous-comportements ni noms automatiquement validés. C117 corrige la conclusion antérieure ; recommandation en attente de décision, aucun changement canonique.
+
+
+Précision CMP262 — U607 adopte Consignment Issue comme comportement de Sales Order. BHV096 et REL-BEHAVIOR-BHV096 portent le nom, la nature et le parent ; les descriptions et comparaisons restent proposées. ELM628/629 effectivement relus lors d’U606 sont exposés sur la fiche. Deux documents SAP étayent ce choix sans consensus interéditeurs présumé. Les modalités acquisition pour revente et vente pour compte restent décrites sans sous-comportements.
+
+
+Précision U608 — Le critère FLOW part de l’intention de l’acteur déclencheur et du résultat attendu. ELM628/629 montrent pourquoi catégorie/type documentaire et capacité métier ne se confondent pas. Cette règle de modélisation ne prétend pas être une prescription SAP ; elle justifie le comportement U607 sans générer une seconde demande à partir d’un effet juridique.
+
+
+## CMP263
+
+U611 — Codex, 22 septembre 2026. [Étude des Orders](../modeles/backlog/consignment-orders-market-review-U595.yaml), goods_return_review_U611. État comparé : D04.l Customer Return et ses cinq comportements ; D04.m Supplier Return distinct. Proposition Goods Return avec Customer Return / Consignment Return, Pick-up distinct. Relation : appui sémantique et recouvrement partiel ; pas équivalence de taxonomie.
+
+ELM615/625 SAP FMS/S/4 distinguent retour après Issue et reprise sans Issue. ELM631 SAP Business One emploie Goods Return côté fournisseur. ELM632 Microsoft rattache les retours après vente aux RMA avec plusieurs parcours ; ELM622 IFS atteste une RMA de consignation avant consommation pour défaut. Éditions et passages conservés ; aucune nomenclature universelle démontrée.
+
+Recommandation : regroupement par intention de retour après vente défendable ; qualifier Goods Return pour éviter son extension implicite aux fournisseurs. Consignment Return est aussi un retour client au sens large : préciser les variantes plutôt que présumer leur exclusivité. Pick-up reste une reprise de biens restés consignés, quel que soit l’acteur qui la demande. Bénéfice : intention commune et effets distincts ; compromis : nom général et réorganisation des cinq comportements existants, sans sous-comportements. Aucun renommage, suppression de comportement ni fusion de Supplier Return effectué. Proposition en attente de décision après comparaison.
+
+
+## CMP264
+
+U612 — Codex, 22 septembre 2026. D04.l renommé Return Order, comportements BHV050–054 conservés. ELM632 Microsoft Sales returns directement relu : demande initiale, suites possibles et distinctions entre autorisation, crédit et traitement. Les appuis SAP ELM455 et Microsoft ELM438 de la fiche restent conservés ; nouvelle correspondance Microsoft ajoutée sur la fiche. Relation : appui sémantique, pas équivalence de modèle de capacités.
+
+La préférence pour Microsoft exprime le choix FLOW de partir de l’intention, non une supériorité universelle prouvée. Return Order évite l’évocation B2C ressentie par Laurent, bien que Customer ne soit pas limité au B2C chez les éditeurs. Bénéfice : stabilité des comportements dans les contextes B2C, wholesale et consignation. Contrat et autorisations déterminent les suites applicables, dont réparation pour compte du fournisseur ; aucune règle ni déploiement inféré. U611 est dépassé : pas de subdivision Customer Return / Consignment Return. Pas de fusion implicite de Supplier Return. Nom retenu U612 ; prose détaillée éditoriale.
+
+
+## CMP265
+
+U620/U621 — Codex, 22 septembre 2026. État comparé : MOD013 et hiérarchie Domain → Area → Capability → Behavior du backlog courant. ELM633–642 : SAP RBA, DDD (Nick Tune et Microsoft), TOGAF, Guild, BIAN, APQC, IBM CBM, LeanIX et Ardoq. Relation : appuis méthodologiques et recouvrements partiels, sans équivalence des niveaux.
+
+Le regroupement intermédiaire répond selon les méthodes à une présentation, une décomposition de capacité ou une partition de responsabilités. Proposition FLOW : conserver Area comme périmètre cohérent de responsabilités, avec finalité, exclusions et échanges explicites. Bénéfice : éprouver la répartition avant les capacités. Compromis : définition locale à maintenir ; aucun bounded context, objet unique, processus, organe ou module imposé. U618 sur l’Area unique référentiels/policies reste acquis. Recommandation non adoptée, aucune modification canonique. [Sources, comparaison et tests](etudes/2026-09-22-area-level.md) ; [annexe structurée](../modeles/backlog/area-level-market-study-U620.yaml).

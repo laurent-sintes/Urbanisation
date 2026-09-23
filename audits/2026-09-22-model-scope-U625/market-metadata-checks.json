@@ -1,0 +1,1341 @@
+{
+  "entries": [
+    {
+      "kind": "node",
+      "id": "universe-supply",
+      "name": "Supply Chain Orchestration",
+      "comparisons": 6,
+      "distinct_urls": 6,
+      "vendors": [
+        "ASCM",
+        "CSCMP",
+        "Kinaxis",
+        "Microsoft",
+        "Oracle",
+        "Zacharia, Sanders et Nix"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "business-references",
+      "name": "Authoritative Data",
+      "comparisons": 11,
+      "distinct_urls": 11,
+      "vendors": [
+        "Camunda",
+        "EDM Council",
+        "Fluent Commerce",
+        "IBM",
+        "Microsoft",
+        "OMG",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D04",
+      "name": "Service Requests",
+      "comparisons": 3,
+      "distinct_urls": 3,
+      "vendors": [
+        "Oracle",
+        "Salesforce",
+        "TM Forum"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D01",
+      "name": "Inventory Management",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D06",
+      "name": "Process Management",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Camunda",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D15",
+      "name": "Order Promising",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D03",
+      "name": "Fulfillment Optimization",
+      "comparisons": 3,
+      "distinct_urls": 3,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D05",
+      "name": "Inventory Optimization",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Achkar et al.",
+        "RELEX"
+      ]
+    },
+    {
+      "kind": "node",
+      "id": "D17",
+      "name": "Supply Planning",
+      "comparisons": 4,
+      "distinct_urls": 4,
+      "vendors": [
+        "Microsoft",
+        "Oracle",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER001",
+      "name": "Capacité métier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "New Zealand Digital Government",
+        "The Open Group"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER002",
+      "name": "Objet métier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Eric Evans",
+        "Martin Fowler"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER003",
+      "name": "Ressource",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER004",
+      "name": "Article / unité de gestion",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER005",
+      "name": "Stock",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER006",
+      "name": "Position de stock",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER007",
+      "name": "Mouvement de stock",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER008",
+      "name": "Ressource attendue",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER009",
+      "name": "Disponibilité",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER010",
+      "name": "Besoin",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER011",
+      "name": "Demande",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "OASIS",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER012",
+      "name": "Commande",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER013",
+      "name": "Engagement",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER014",
+      "name": "Promesse",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER015",
+      "name": "Confirmation de promesse",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER016",
+      "name": "Réservation de ressource",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER017",
+      "name": "Affectation de ressource",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER018",
+      "name": "Allocation de groupe",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER019",
+      "name": "Protection de ressource",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER020",
+      "name": "Plafond de confirmation",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER021",
+      "name": "Pool de ressources",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER022",
+      "name": "Couverture d’une demande",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER023",
+      "name": "Règle métier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OMG"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER024",
+      "name": "Processus",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "OMG",
+        "The Open Group"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER025",
+      "name": "Opération métier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OMG"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER026",
+      "name": "Réalisation d’une capacité",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "New Zealand Digital Government",
+        "The Open Group"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER027",
+      "name": "Fonction",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "SAP",
+        "The Open Group"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER028",
+      "name": "Fonctionnalité de produit",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER029",
+      "name": "Regroupement de capacités",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "New Zealand Digital Government",
+        "The Open Group"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER030",
+      "name": "Domaine",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Eric Evans",
+        "Martin Fowler"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER031",
+      "name": "Orchestration",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Camunda",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER032",
+      "name": "Fabrication à façon",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER033",
+      "name": "Planned Purchase Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER034",
+      "name": "OMS — sens fonctionnel du projet",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "IBM",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER035",
+      "name": "Supply — sens fonctionnel du projet",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "CSCMP",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER036",
+      "name": "Fait de gestion — sens plateforme",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER037",
+      "name": "Document — sens plateforme",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER038",
+      "name": "État d’objet métier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER039",
+      "name": "Notification d’événement",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "CNCF",
+        "Martin Fowler"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER040",
+      "name": "Stock physique",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER041",
+      "name": "Stock logique",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER042",
+      "name": "Stock virtuel",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER043",
+      "name": "Stock futur",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER001",
+      "name": "Définir",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER002",
+      "name": "Tenir — en réexamen",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER003",
+      "name": "Déterminer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Blue Yonder",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER004",
+      "name": "Calculer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER005",
+      "name": "Vérifier",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER006",
+      "name": "Autoriser",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER007",
+      "name": "Enregistrer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER008",
+      "name": "Demander",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "TM Forum"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER009",
+      "name": "Protéger",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER010",
+      "name": "Allouer à un groupe",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER011",
+      "name": "Réserver",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "commercetools"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER012",
+      "name": "Affecter",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER013",
+      "name": "Promettre",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER014",
+      "name": "Confirmer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER015",
+      "name": "Prioriser",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER016",
+      "name": "Arbitrer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER017",
+      "name": "Réviser",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER018",
+      "name": "Réaffecter",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER019",
+      "name": "Libérer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "commercetools"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER020",
+      "name": "Consommer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER021",
+      "name": "Annuler",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER022",
+      "name": "Rapprocher",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER023",
+      "name": "Exécuter",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Camunda",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER024",
+      "name": "Gérer",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "IBM",
+        "TM Forum"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "VER025",
+      "name": "Valider",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER044",
+      "name": "Available-to-Promise — ATP",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER045",
+      "name": "Capable-to-Promise — CTP",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER046",
+      "name": "Party",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "OMG",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER047",
+      "name": "Role",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "EDM Council",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER048",
+      "name": "Agreement",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER049",
+      "name": "Product Catalog",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER050",
+      "name": "Reference Ingestion",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER051",
+      "name": "Movement Authorization",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER052",
+      "name": "Product Reference",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER053",
+      "name": "Location",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER054",
+      "name": "Fulfillment Network",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER055",
+      "name": "Stock movement / Inventory movement ; Goods movement chez SAP",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER056",
+      "name": "Ledger / Inventory Ledger",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Amazon",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER057",
+      "name": "Product",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER058",
+      "name": "Product Variant",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER059",
+      "name": "Product Unit",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER060",
+      "name": "Article",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER061",
+      "name": "Container",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER062",
+      "name": "GTIN",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER063",
+      "name": "Serial Number",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "GS1"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER064",
+      "name": "Case",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OMG"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER065",
+      "name": "Supply Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER066",
+      "name": "Backing Service Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "TM Forum"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER068",
+      "name": "Profitable-to-Promise (PTP)",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER069",
+      "name": "Sales Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER070",
+      "name": "Purchase Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER071",
+      "name": "Transfer Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER072",
+      "name": "Customer Return Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER073",
+      "name": "Supplier Return Order",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER074",
+      "name": "Replenishment",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Nextail",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER075",
+      "name": "Service",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Camunda",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER076",
+      "name": "Service Level Agreement (SLA)",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "TM Forum"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER077",
+      "name": "Couverture de stock",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER078",
+      "name": "Supply Assignment Plan",
+      "comparisons": 3,
+      "distinct_urls": 3,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER079",
+      "name": "Implantation",
+      "comparisons": 3,
+      "distinct_urls": 3,
+      "vendors": [
+        "Logility",
+        "Nextail",
+        "RELEX"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER080",
+      "name": "Réassort",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "RELEX",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER081",
+      "name": "Split",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER082",
+      "name": "Spread",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER083",
+      "name": "Supply",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER084",
+      "name": "Supply Chain",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "ASCM",
+        "CSCMP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER085",
+      "name": "Fulfillment",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "ASCM",
+        "Microsoft"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER086",
+      "name": "Purchase Order Document",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "OASIS"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER087",
+      "name": "Assortment",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ]
+    },
+    {
+      "kind": "term",
+      "id": "TER088",
+      "name": "Service Provider",
+      "comparisons": 2,
+      "distinct_urls": 2,
+      "vendors": [
+        "Oracle"
+      ]
+    }
+  ],
+  "missing_metadata": [],
+  "duplicate_documents": [],
+  "summary": {
+    "nodes": 9,
+    "terms": 112,
+    "node_comparisons": 35,
+    "term_comparisons": 226,
+    "under_two_distinct_urls": [],
+    "missing_metadata_count": 0,
+    "duplicate_documents_count": 0
+  }
+}

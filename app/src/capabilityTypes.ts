@@ -7,6 +7,7 @@ export const capabilityTypes = {
   knowledge: { label: 'Connaissance / visibilité', icon: 'Eye' },
   orchestration: { label: 'Orchestration', icon: 'Workflow' },
   planning: { label: 'Planification', icon: 'CalendarCheck' },
+  policy: { label: 'Politique', icon: 'ShieldCheck' },
   decision: { label: 'Décision', icon: 'GitBranch' },
 } as const;
 export type CapabilityNature = keyof typeof capabilityTypes;
@@ -24,13 +25,16 @@ export function capabilityTypeLabel(node: AtlasNode): string {
 
 export const isDecision = (node: AtlasNode): boolean => capabilityNature(node) === 'decision';
 
-/** Stable partition: keep the relative order inside both parts and preserve the input. */
-export function decisionsLast(nodes: readonly AtlasNode[]): AtlasNode[] {
-  return [...nodes.filter(node => !isDecision(node)), ...nodes.filter(isDecision)];
+/** Display order only: keep published order within each type and never mutate it. */
+export function sortCapabilitiesByType(nodes: readonly AtlasNode[]): AtlasNode[] {
+  const types = Object.keys(capabilityTypes) as CapabilityNature[];
+  const rank = (node: AtlasNode) => node.kind !== 'capability' ? -1
+    : capabilityNature(node) ? types.indexOf(capabilityNature(node)!) : types.length;
+  return [...nodes].sort((a, b) => rank(a) - rank(b));
 }
 
-/** One boundary only, and only if both capability groups exist. */
-export function startsDecisionSection(nodes: readonly AtlasNode[], index: number): boolean {
-  return index > 0 && isDecision(nodes[index]) && !isDecision(nodes[index - 1])
-    && nodes.slice(0, index).some(node => node.kind === 'capability' && !isDecision(node));
+/** Separate adjacent capability types, including the historical untyped group. */
+export function startsCapabilityTypeSection(nodes: readonly AtlasNode[], index: number): boolean {
+  return index > 0 && nodes[index]?.kind === 'capability' && nodes[index - 1]?.kind === 'capability'
+    && capabilityNature(nodes[index]) !== capabilityNature(nodes[index - 1]);
 }

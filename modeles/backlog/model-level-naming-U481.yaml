@@ -217,3 +217,29 @@ adoption_U482:
   historical_proposal: Les options et recommandations précédentes restent le relevé de la discussion ; cette adoption précise
     le choix final.
   replaces: Universe devient Domain ; les six anciens Domains deviennent Areas. Les identifiants sont conservés.
+
+adoption_U624:
+  source_refs:
+  - U624
+  status: explicit_user_adoption
+  target: MOD013
+  approved_fields:
+  - name
+  - label_fr
+  - definition
+  - hierarchy
+  values:
+    name: Purpose
+    label_fr: Finalité
+    definition: Finalité métier durable au sein d’un Domain, autour de laquelle sont regroupées les responsabilités et capacités
+      qui concourent à sa réalisation.
+    hierarchy:
+    - Domain
+    - Purpose
+    - Capability
+    - Behavior
+  supersedes: Nom Area U482 et propositions de noms U622/U623 ; historique conservé.
+  boundary: Convention méthodologique FLOW ; aucun déplacement ni renommage individuel des capacités. Le registre record_decision.py
+    cible nodes/relations et ne capture pas les entrées méthodologiques ; accord champ par champ conservé dans cette annexe.
+  technical_alignment: Les codes techniques area et les restitutions publiées restent ceux de leur schéma/snapshot ; leur
+    migration sera traitée lors de la mise en cohérence du catalogue.

@@ -116,6 +116,7 @@ export interface RawPublication extends JsonRecord {
   published_at?: string;
 }
 export interface AtlasNode {
+  readonly hierarchyLabel?: string;
   readonly referenceParentName?: string;
   readonly id: string;
   readonly name: string;

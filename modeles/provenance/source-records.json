@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-22",
+  "captured_at": "2026-09-23",
   "records": [
     {
       "id": "U01",
@@ -4659,6 +4659,366 @@
       "captured_text": "## U582\n\n**id**\n\nU582\n\n**date**\n\n2026-09-22\n\n**titre**\n\nPublier une release complète pour clarifier l’état du modèle\n\n**texte**\n\nlance une release complete, je ne comprends plus où on en est.\n\n**contexte et portée**\n\nDemande de production et activation locale d’une release complète du backlog courant dans FLOW Atlas, avec restitution claire de son contenu et des propositions encore en annexe. La publication ne vaut pas adoption globale des propositions ni des champs détaillés."
     },
     {
+      "id": "U583",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u583",
+      "line": 14471,
+      "content_sha256": "9b6d70118f022c3919585042540ddaaf0955ac9d6e3ef88cb6e0b58c6fabf7cb",
+      "captured_text": "## U583\n\n**id**\n\nU583\n\n**date**\n\n2026-09-22\n\n**titre**\n\nClarifier le découpage métier en Areas et capacités\n\n**texte**\n\nOn va améliorer définitivement le modèle.\n\nLe domaine et son périmètre c'est bon. C'est le découpage en Area / Capacités qui est entre la solution et le métier. Il faut que ce soit plus clair. Mais j'ai une proposition...\n\n**contexte et portée**\n\nLaurent conserve le Domain et son périmètre comme cadre de travail et concentre l’amélioration sur la clarté métier du découpage en Areas et capacités. Cette appréciation ne constitue pas une validation nouvelle de tous les champs du Domain ni des descendants. Sa proposition est enregistrée séparément en U584, avant analyse."
+    },
+    {
+      "id": "U584",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u584",
+      "line": 14495,
+      "content_sha256": "6ac6b93b79d5125f954796c8db9277d2320e1bafb00bfc48597737ab37670b6f",
+      "captured_text": "## U584\n\n**id**\n\nU584\n\n**date**\n\n2026-09-22\n\n**titre**\n\nProposer six Areas pour le cœur d’orchestration\n\n**texte**\n\nJe structurerais le cœur d’orchestration ainsi :\n\n| Domain Area                       |                                                    |                                                                                                |\n| --------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |\n| **Reference & Policy Management** | Avec quelles données/règles travaille-t-on ?       | articles, lieux, canaux, calendriers, classifications, règles/policies                         |\n| **Demand Management**             | Qu’est-ce qui demande de la ressource ?            | Sales Orders, STO demand, réservations métier, demandes B2B/B2C, dates attendues               |\n| **Supply Management**             | Quelles ressources vais-je avoir ?                 | stock entrant, PO, transferts entrants, retours, supply attendue, dates d’échéance             |\n| **Inventory Management**          | Qu’est-ce que je possède / où / quand ?            | mouvements, ledger, stock physique, stock en transit, inventory position, projected stock      |\n| **Supply & Demand Matching**      | Comment répartir la ressource entre les demandes ? | Master Plan, allocation, BOP, réallocation, assignment                                         |\n| **Fulfillment Orchestration**     | Comment exécuter la demande retenue ?              | sourcing, split, choix site, orchestration entrepôt/magasin, shipment, substitution, rerouting |\n\n**contexte et portée**\n\nProposition de découpage du cœur d’orchestration à examiner à responsabilités métier constantes, dans le cadre U583. Les exemples mélangent données, documents, décisions et activités ; leur présence dans une ligne ne les transforme pas en capacités ni en comportements. Comparer les frontières et les usages de marché, puis expliciter les conséquences pour le modèle courant. Aucun déplacement, fusion, suppression ou nouveau nom canonique adopté par anticipation ; les accords antérieurs, dont le nom cible U581, restent tracés pendant ce réexamen. Aucun changement du Domain, publication ou audit global des comportements demandé."
+    },
+    {
+      "id": "U585",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u585",
+      "line": 14526,
+      "content_sha256": "e7c4c2e71206d8accad69c8fbeee0564fab2cce7aaaa0f45607b58fb2031db08",
+      "captured_text": "## U585\n\n**id**\n\nU585\n\n**date**\n\n2026-09-22\n\n**titre**\n\nSéparer les politiques maîtrisées, décrire les effets du plan et retenir la logique de case management\n\n**texte**\n\nCe que j'entends dans Policy Management, ce sont les référentiels pour lesquels le domaine Supply Chain Orchestration est maître : les différents réglages, règles, politiques, configurations qui vont :&#x20;\n\n- protéger le stock\n- protéger les demandes (certaines doivent passer avant d'autres par exemple)\n- protéger les backing services (WMS / TMS)\n\nJe pense qu'il faut séparer ces référentiels des référentiels importés (projection)\n\n\n\nPour le 1. : oui, la CTP doit s'activer dans cet area pour proposer un plan qui peut toucher à :&#x20;\n\n- demandes d'achat\n- demandes de ventes : modifier les dates, les quantites, split etc.\n- supply policy : par exemple allouer du stock B2B pour l'eCommerce pour répondre à une campagne de pub de la marque et qui fait s'envoler ses ventes\n\n\n\n\\=> D'ailleurs ce découpage ATP / CTP / PTP est très \"commercial\", très \"éditeur\". En termes de capacités, la manière dont je le présente, c'est plus clair.\n\n\n\n3. oui, c'est du case management à l'état de l'art.\n\n**contexte et portée**\n\nPrécision sur U584 et réaction à l'analyse CMP247. Policy Management désigne les références de règles et configurations dont Supply Chain Orchestration porte la maîtrise, à distinguer des projections de référentiels maîtres externes. Les protections concernent stock, demandes et Backing Services ; WMS/TMS sont les exemples cités, sans les transformer en capacités ou nœuds de solution.\n\nLaurent confirme une Area d'arbitrage pouvant mobiliser CTP et proposer des changements d'achats, de demandes de vente et de politiques de ressources. Il conteste ATP/CTP/PTP comme découpage de capacités et privilégie les résultats métier du plan ; aucun libellé de remplacement détaillé ni suppression de résultat métier n'est déduit. L'exemple B2B/eCommerce est un cas cible, sans réalisation Beaumanoir affirmée ni autorisation d'altérer automatiquement des engagements clients. Le nom de l'Area n'est pas tranché par le « oui » de portée.\n\nL'assimilation de l'adaptation de Fulfillment à du case management précise l'intention métier. La qualification « à l'état de l'art » est le verbatim de Laurent, à confronter aux sources ; elle ne vaut ni conformité CMMN démontrée ni choix de moteur. La séparation en deux Areas, leurs noms exacts et les capacités restent à présenter comme proposition de mise en œuvre. Aucun accord global sur les autres éléments, migration canonique ou publication déduit."
+    },
+    {
+      "id": "U586",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u586",
+      "line": 14574,
+      "content_sha256": "c24057037aee3c056fe0172909301388e0c34d12038f2e6f4df74cf51fbc8ed3",
+      "captured_text": "## U586\n\n**id**\n\nU586\n\n**date**\n\n2026-09-22\n\n**titre**\n\nCréer le type de capacité Policy\n\n**texte**\n\nJe souhaite créer un nouveau type de capacité : la policy.\n\n**contexte et portée**\n\nInstruction explicite d'ajouter Policy aux types de capacités, dans le contexte des politiques maîtrisées par Supply Chain Orchestration décrit U585. Mise en œuvre dans la nature des capacités (`fields.nature: policy`), à côté des types existants, sans nouveau niveau hiérarchique. La définition méthodologique détaillée et les exemples de Codex restent proposés ; aucun reclassement global des capacités actuelles ni nouvelle Area adopté par extension. Les publications figées sont préservées."
+    },
+    {
+      "id": "U587",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u587",
+      "line": 14596,
+      "content_sha256": "b6c2cfee6e77ccba1553b91c9562f17e7f7a0c9c28d8c2c792e71a4f14d32c04",
+      "captured_text": "## U587\n\n**id**\n\nU587\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDistinguer offre de Backing Services et politiques de recours aux fournisseurs\n\n**texte**\n\nDans les référentiels, on a bien les backing service que nous proposent les fournisseurs logistiques essentiellement mais d'autres pourquoi pas. Mais on doit avoir aussi des Backing Service Policy qui permettent d'exclure un fournisseur, limiter les commandes si on remarques des difficultés etc.\n\n**contexte et portée**\n\nLaurent confirme que le référentiel décrit les prestations proposées par les fournisseurs, surtout logistiques mais sans restriction à ceux-ci. Il demande Backing Service Policy pour les règles Supply de recours aux fournisseurs, dont exclusion et limitation des commandes face aux difficultés observées. Le nom et les deux effets demandés sont conservés dans la proposition de capacité de type Policy, distincte du catalogue des offres, de la capacité opérationnelle observée, de la sélection d'un service et des engagements déjà pris. La définition détaillée, les seuils, déclencheurs, modalités de rétablissement et liens proposés par Codex restent à qualifier. Aucun incident fournisseur ni automatisme installé Beaumanoir n'est affirmé ; aucune annulation implicite des prestations engagées ni migration globale des Areas déduite."
+    },
+    {
+      "id": "U588",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u588",
+      "line": 14618,
+      "content_sha256": "92fa64e68e9286ebc47dc2303355f7c4546f9b018f88ca3e9117a00e025d72f8",
+      "captured_text": "## U588\n\n**id**\n\nU588\n\n**date**\n\n2026-09-22\n\n**titre**\n\nVérifier les noms Backing Service et Backing Service Policy sur le marché\n\n**texte**\n\nCoté marché, backing service et backing service policy c'est ok ?\n\n**contexte et portée**\n\nDemande de comparaison des intitulés eux-mêmes, après les appuis fonctionnels U587/CMP251. Distinguer vocabulaire attesté, adaptation FLOW et proximité de fonction. Aucun renommage automatique des termes courants ni validation anticipée d'une alternative."
+    },
+    {
+      "id": "U589",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u589",
+      "line": 14640,
+      "content_sha256": "c17517f9a2b06cc0c3d08774bfd976d3fa30fbef7db4318f854d32b88f745db3",
+      "captured_text": "## U589\n\n**id**\n\nU589\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉvaluer la clarté des frontières du Domain et des Areas\n\n**texte**\n\nEst-ce que les frontières du domaine et des areas sont claires ou il y a un flou ?\n\n**contexte et portée**\n\nDemande de diagnostic de clarté de la proposition courante U584–U588, confrontée aux responsabilités canoniques. Distinguer finalité du Domain, frontière avec les exécutants et maîtres externes, partage entre Areas et décalage entre proposition et modèle actuel. Aucun accord nouveau, changement de périmètre, renommage ni déplacement déduit ; examen ciblé des frontières, sans réouverture de l'audit historique des comportements."
+    },
+    {
+      "id": "U590",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u590",
+      "line": 14662,
+      "content_sha256": "8c73356fb22ac0f5450fbf583f857c404aa6624f36db54a20d06b35c045099ae",
+      "captured_text": "## U590\n\n**id**\n\nU590\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAdopter la distinction Service, Service Provider, Service Catalog et Service Provider Policy\n\n**texte**\n\nDans un premier temps, je valide ta proposition de changement de nom \"Backing Service\" en Service Provider, Service Catalog etc.\n\n**contexte et portée**\n\nAccord sur la proposition de nommage présentée en U588/CMP252 : Service désigne la prestation, Service Provider son fournisseur, Service Catalog le catalogue et Service Provider Policy les règles de recours. Interprétation contextuelle : cet accord ne transforme pas la prestation en fournisseur. Il porte sur ces noms et leurs rôles distincts ; il ne vaut ni adoption de toutes les descriptions détaillées, ni migration des Areas, ni publication. Le nom dérivé des Orders n'était pas compris dans la table présentée et conserve sa qualification antérieure. Les accords et formulations historiques restent conservés."
+    },
+    {
+      "id": "U591",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u591",
+      "line": 14684,
+      "content_sha256": "5b9caebcae1a451d8e17c7bf4dc48f424c5f1e8c7a21cb53bf4b6b6b8e71ce54",
+      "captured_text": "## U591\n\n**id**\n\nU591\n\n**date**\n\n2026-09-22\n\n**titre**\n\nFrontière entre arbitrage du plan et réalisation avec adaptation des Logistic Orders\n\n**texte**\n\nFlou sur les frontières : Arbitrage du plan ↔ Fulfillment\n\nL'arbitrage du plan va permettre de retoucher les demandes jusqu'à ce qu'elles soient fermes et exécutable.\n\nFulfillment, c'est l'exécution proprement dite d'une demande et l'orchestration des services de logistique essentiellement. Evidemment, si le plan d'exécution echoue, le plan peut s'adapter et retenter un shipment depuis un autre entrepot pour un article seulement manquant. Dans ce cas la demande initiale splitte la logistic Order en deux et suis le déroulement des deux.\n\n**contexte et portée**\n\nClarification explicite du passage à l'exécution et du traitement d'un manque partiel : l'arbitrage retouche les demandes jusqu'à leur caractère ferme et exécutable ; Fulfillment conduit la réalisation et adapte le plan d'exécution, principalement par orchestration de prestations logistiques. La demande initiale porte le lien et le suivi des deux Logistic Orders résultant du split. Conserver ce terme dans la proposition, sans créer automatiquement une capacité ni le confondre avec Shipment ou Backing Service Order. Les critères précis de fermeté et les conditions de retour à l'arbitrage restent à formaliser ; ne pas déduire l'immutabilité de toute demande ferme, une nouvelle promesse automatique ou l'exécution physique interne au Domain."
+    },
+    {
+      "id": "U592",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u592",
+      "line": 14710,
+      "content_sha256": "61794882967eef9eb6b19a2a6427488319f7c8786e25f9b0d50f608fab393af1",
+      "captured_text": "## U592\n\n**id**\n\nU592\n\n**date**\n\n2026-09-22\n\n**titre**\n\nCorriger la frontière : début d'exécution, distinct de la fermeté\n\n**texte**\n\nJe dirais plutot que l'arbitrage modifie le contenu des demandes (en plus du reste) tant qu'une demande n'est pas en cours d'exécution. On peut imaginer qu'une commande ferme soit \"désaffermie\" même si c'est pas très sympa pour le client.\n\n**contexte et portée**\n\nCette précision remplace le critère de fermeté employé dans la formulation U591 : l'arbitrage peut modifier le contenu de la demande tant qu'elle n'est pas en cours d'exécution, même si elle est ferme. Le désaffermissement est une possibilité explicite ; il n'est ni une action automatique ni une absence de conséquence sur l'engagement client. U591 reste applicable à l'adaptation du plan d'exécution et au split des Logistic Orders suivis par la demande initiale. La granularité du début d'exécution en cas de réalisation partielle, ses faits déclencheurs et les responsabilités de traitement d'un engagement devenu impossible restent à préciser. Aucun changement canonique de capacité ou autorisation universelle de modifier une demande déjà en cours d'exécution déduit."
+    },
+    {
+      "id": "U593",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u593",
+      "line": 14732,
+      "content_sha256": "642057c87d2081b2675ebe54095438644d6bd5b24b7d01389bca0d96b3e93917",
+      "captured_text": "## U593\n\n**id**\n\nU593\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAdopter le terme Re-sourcing pour la reprise depuis une autre source\n\n**texte**\n\n*re-sourcing*  : très bon, j'achète\n\n**contexte et portée**\n\nAccord explicite sur le terme présenté dans le cas U591/U592 : rechercher une autre source de réalisation, notamment un autre entrepôt pour le seul article manquant pendant l'exécution. Re-sourcing est retenu dans la proposition Fulfillment ; cet accord lexical ne choisit pas à lui seul sa maille Capability ou Behavior, ne renomme pas toute l'adaptation de processus et n'adopte pas de description détaillée par extension. Le split des Logistic Orders et leur suivi restent des effets et responsabilités distincts."
+    },
+    {
+      "id": "U594",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u594",
+      "line": 14754,
+      "content_sha256": "d8fe36791ca2d034c10988225bd6b8e4ac09b8ec3129ee91600bd290b85ce879",
+      "captured_text": "## U594\n\n**id**\n\nU594\n\n**date**\n\n2026-09-22\n\n**titre**\n\nRéexaminer les flous restants après clarification plan / Fulfillment et adoption de Re-sourcing\n\n**texte**\n\nQue reste t il de flou ?\n\n**contexte et portée**\n\nDemande de diagnostic actualisé après U590–U593. Ne pas présenter comme toujours ouverte la frontière de principe entre modification de la demande avant exécution et adaptation de sa réalisation. Distinguer arbitrages structurants restants, modalités à préciser et application future de la proposition au modèle canonique. Aucun accord supplémentaire ni migration de la hiérarchie déduit de cette question."
+    },
+    {
+      "id": "U595",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u595",
+      "line": 14776,
+      "content_sha256": "a7f3ef2148ce0ebce69bd9a0ae4ad3cd18e6b3076643a37d39bd66eb77021e16",
+      "captured_text": "## U595\n\n**id**\n\nU595\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDemand porte les transferts et retours ; étudier les Orders de consignation sur le marché\n\n**texte**\n\nDemand ↔ Supply  :\n\n- TransferOrder et les retours  sont des Demandes. C'est vrai qu'un indicateur de détection de seuil de stock pourrait entrainer des demandes de transfert et on pourrait se dire sémantiquement que la supply se fait sa propre demande. Mais ce n'est pas comme ça que c'est découpé. Les demandes portent des besoins et exigences et pilotent la promesse de satisfaction de la demande. Les demandes peuvent venir du commerce ou du plan d'optimisation de la supply. TransferOrder pourrait être utilisé pour un client B2B pour livrer ou récupérer du stock de nos entrepots en cas de consignement. Mais a priori, j'aime pas avoir un Order à tout faire => je souhaite qu'on étudie le marché pour aider à y voir clair et prendre une décision.\n\n**contexte et portée**\n\nClarification de responsabilité : Transfer Order et les retours relèvent de Demand ; les demandes portent besoins et exigences et pilotent leur promesse, quelle que soit leur origine commerce ou plan d'optimisation Supply. Un effet d'apport ne change pas cette attribution. Demande d'étude marché pour distinguer transfert et demandes liées à une consignation B2B, avant décision sur leur découpage. Le sens de propriété et le rôle des entrepôts dans l'exemple ne sont pas entièrement précisés : examiner la consignation chez un client et le stock appartenant à un tiers accueilli chez nous sans les confondre. Aucune adoption d'un Order universel ni création/scission de capacités par anticipation."
+    },
+    {
+      "id": "U596",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u596",
+      "line": 14800,
+      "content_sha256": "bb888274c156f8d6b5d3dc5f561ef03dc538bafd908a7150d8d9af305c5f78c9",
+      "captured_text": "## U596\n\n**id**\n\nU596\n\n**date**\n\n2026-09-22\n\n**titre**\n\nConsignation B2B : couvrir les deux sens, exemple centré sur le stock client chez nous\n\n**texte**\n\nLes deux cas doivent être couverts mais mon exemple ciblait le point 2\n\n**contexte et portée**\n\nRéponse à la question : « Dans ton exemple B2B de consignation, qui possède le stock et où est-il détenu ? J’étudie les deux cas, car ils peuvent conduire à des demandes différentes. » Les options étaient 1. Notre stock est placé chez le client B2B ; 2. Le stock du client B2B est détenu dans nos entrepôts ; 3. Les deux cas doivent être couverts. Laurent retient les deux cas et précise que son exemple U595 cible le second. Ne pas assimiler automatiquement le client propriétaire à un fournisseur de marchandises ni supposer un achat à la consommation ; distinguer régime de propriété et relation de prestation."
+    },
+    {
+      "id": "U597",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u597",
+      "line": 14822,
+      "content_sha256": "8672c0b79ec94f9b3589b49c74322e310a625f8450d34928e188b814ee8793d7",
+      "captured_text": "## U597\n\n**id**\n\nU597\n\n**date**\n\n2026-09-22\n\n**titre**\n\nComparer les stratégies de gestion des consignations entre SAP AFS et Fashion\n\n**texte**\n\nSur la gestion des consignations, j'aimerais voir s'il y a une diff de stratégie entre AFS et Fashion\n\n**contexte et portée**\n\nExtension de l'étude U595/U596 à la comparaison SAP AFS et SAP Fashion Management, en distinguant les éditions et la continuité éventuelle S/4HANA Fashion. Rechercher différences de modèle métier, de gestion de propriété/stock, d'affectation et de traitement documentaire, sans extrapoler une couverture installée Beaumanoir ni confondre consignation client, consignation fournisseur et détention du stock d'un client donneur d'ordre."
+    },
+    {
+      "id": "U598",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u598",
+      "line": 14844,
+      "content_sha256": "3716e35be0ea2dd7504effe3fa490f6a23e2665d2f10c4ac0fc055ef34b28675",
+      "captured_text": "## U598\n\n**id**\n\nU598\n\n**date**\n\n2026-09-22\n\n**titre**\n\nVérifier la compréhension des frontières Transfer Order et demandes de consignation\n\n**texte**\n\nSi je comprends bien :\n\n- Transfer Order est uniquement lié à l'équilibrage entre sites, quelle que soit le propriétaire du stock, pour rester sur une logique une demande = un intention\n- Le processus de consignation doit être porté par ses propres Order : mise en consignation, reprise ou restitution au propriétaire\n- Consignment Replenishment Order actuellement présent couvre la mise en consignation mais il manque les autres.\n\n**contexte et portée**\n\nReformulation à vérifier, sans accord implicite de réduction de Transfer Order à Inventory Rebalancing ni création immédiate de nouveaux Orders. Confronter aux intentions déjà décrites du transfert, au périmètre fournisseur entrant de D04.r et à la couverture existante Consignment Exit / Supplier Return. Distinguer manque de demande explicite et absence de responsabilité ; reprise et restitution peuvent nommer une même opération depuis deux points de vue. Les nouvelles familles et leur maille restent à décider."
+    },
+    {
+      "id": "U599",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u599",
+      "line": 14870,
+      "content_sha256": "fcf9a3059421ceed71cb1484c46d7f47fa201ae9cf7840b2e3fb0a65993b4bfc",
+      "captured_text": "## U599\n\n**id**\n\nU599\n\n**date**\n\n2026-09-22\n\n**titre**\n\nProposer des noms d'Orders de consignation fondés sur le marché\n\n**texte**\n\nL'expression \"Consignment Replenishment Order\" est moche. Que proposes-tu comme nom d'order pour lister ceux qui gèrent le processus de consignation ? Que dit le marché ?\n\n**contexte et portée**\n\nDemande de propositions de noms et de vérification des usages éditeurs pour les demandes du processus de consignation. Le rejet du libellé actuel ne valide pas automatiquement un nom alternatif ni une liste de capacités nouvelles. Distinguer alimentation initiale/réassort, reprise des biens restés consignés et retour après consommation/cession ; conserver le cas du client propriétaire dont nous détenons le stock U596, sans acquisition ou vente implicite."
+    },
+    {
+      "id": "U600",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u600",
+      "line": 14892,
+      "content_sha256": "a69dd6d8135df9df4e3a7dbc2a48ec2e861a4d6651a25a64c03134edd15865eb",
+      "captured_text": "## U600\n\n**id**\n\nU600\n\n**date**\n\n2026-09-22\n\n**titre**\n\nQualifier les noms d'Orders et élargir la comparaison à la concurrence avant validation\n\n**texte**\n\nConsignment Order  seul, ça fait penser à un truc généric. JE préfère rajouter \"Pick-up\".\n\nC'est une bonne proposition mais avant de valider j'aimerais savoir ce que propose la concurrentce\n\n**contexte et portée**\n\nLaurent refuse de valider à ce stade et demande d'étudier davantage les usages concurrents. Consignment Order seul est jugé trop générique. Le sens de « rajouter Pick-up » est à préciser : chez SAP Pick-up désigne la reprise du stock non consommé, tandis que Fill-up désigne son alimentation. Ne pas inverser ces intentions ni déduire une adoption avant la réponse et la comparaison. Étendre l'étude au-delà de SAP/Oracle/Microsoft, en conservant la distinction entre consignation client, fournisseur et détention pour compte d'un client propriétaire."
+    },
+    {
+      "id": "U601",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u601",
+      "line": 14917,
+      "content_sha256": "5da1e6d0779ec9722f9efada87ee6aeec24104dc4221dd0fd0f73ae573811db0",
+      "captured_text": "## U601\n\n**id**\n\nU601\n\n**date**\n\n2026-09-22\n\n**titre**\n\nCorrection Fill-up pour qualifier la mise en consignation\n\n**texte**\n\nRéponse à la question « Quand tu proposes d’ajouter “Pick-up”, vises-tu l’Order de reprise du stock, ou souhaites-tu surtout qualifier le nom de l’Order de mise en consignation — nommé “Fill-up” chez SAP ? » :\n\nQualifier l’Order de mise en consignation, avec Fill-up ou un autre terme.\n\nPuis précision spontanée :\n\nAh zut non, je parlais de Fill-up pour préciser la mise en consignation\n\n**contexte et portée**\n\nCorrige le mot Pick-up d’U600 en Fill-up pour l’intention de mise en consignation. La demande de comparaison à la concurrence avant validation reste active. Aucune adoption globale des quatre noms proposés ni extension du périmètre canonique D04.r déduite."
+    },
+    {
+      "id": "U602",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u602",
+      "line": 14946,
+      "content_sha256": "686b913f51a7438c192a075895a14808b73f7aa256ff8297c91d2d358f138f9f",
+      "captured_text": "## U602\n\n**id**\n\nU602\n\n**date**\n\n2026-09-22\n\n**titre**\n\nMandat de vente du stock client détenu dans nos entrepôts et importance d’Issue\n\n**texte**\n\nIssue c'est important car quand on stocke dans un de nos entrepots c'est qu'on a le mandat pour vendre la marchandise\n\n**contexte et portée**\n\nDans le cas de consignation discuté, Laurent précise le mandat de vente accompagnant la détention du stock appartenant au client. La simple garde sans mandat n’est donc pas le scénario à retenir pour cet exemple. Importance métier d’Issue explicitement confirmée ; aucun achat préalable par le détenteur, déclencheur exact du transfert de propriété, validation de toute la nomenclature ou création automatique de capacités déduits. Ne pas étendre cette déclaration à tous les stocks de tous les entrepôts hors de ce contexte."
+    },
+    {
+      "id": "U603",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u603",
+      "line": 14969,
+      "content_sha256": "a156f5f730c170f5972f03ed189235c6a837f121bab6113bbfb713c099333b19",
+      "captured_text": "## U603\n\n**id**\n\nU603\n\n**date**\n\n2026-09-22\n\n**titre**\n\nVérifier la correspondance du mandat de vente avec le cas SAP\n\n**texte**\n\nRegarde si ça correspond au cas d'usage SAP\n\n**contexte et portée**\n\nVérifier le stock appartenant au client, détenu dans nos entrepôts avec mandat de vente (U596/U602), et le rôle de Consignment Issue. Demande de recherche, sans validation implicite d’un achat-revente, du montage contractuel ou d’une nomenclature."
+    },
+    {
+      "id": "U604",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u604",
+      "line": 14992,
+      "content_sha256": "6fcebf10195766aaa45860b3f054988af5bc59e2ddd94f90fca8681e0b55c1a5",
+      "captured_text": "## U604\n\n**id**\n\nU604\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDeux comportements pour un même Order\n\n**texte**\n\nTu viens de décrire 2 comportements d'un même order\n\n**contexte et portée**\n\nLaurent regroupe les variantes acquisition pour revente et vente pour compte sous un même Order. Ne valide pas par cette phrase les noms anglais proposés ensuite par Codex ni une capacité canonique autonome. L’articulation avec Sales Order est réinterrogée en U606."
+    },
+    {
+      "id": "U605",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u605",
+      "line": 15015,
+      "content_sha256": "aac04f2e01a6658dc964fcc6410c37e65a449d0a953e5269dfbe4094bcf7c71b",
+      "captured_text": "## U605\n\n**id**\n\nU605\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉtat de la consolidation\n\n**texte**\n\nOn en est où ?\n\n**contexte et portée**\n\nDemande de statut ; aucun accord supplémentaire. Le point U604 restait alors non enregistré dans les fichiers."
+    },
+    {
+      "id": "U606",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u606",
+      "line": 15038,
+      "content_sha256": "74c67bd0cf527ea8db8a8b925dd291606f904235dc66d20e4cab8fd9329e7731",
+      "captured_text": "## U606\n\n**id**\n\nU606\n\n**date**\n\n2026-09-22\n\n**titre**\n\nIntention Sales Order et dimension juridique de Consignment Issue\n\n**texte**\n\nCa pose problème : Sales Order est l'intention première et Consignment Issue Order porte la problématique juridique. Que dit SAP ?\n\n**contexte et portée**\n\nLaurent remet en question la séparation des capacités Sales Order et Consignment Issue Order. Vérifier le découpage SAP ; ne pas transformer la question en accord sur une nouvelle hiérarchie."
+    },
+    {
+      "id": "U607",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u607",
+      "line": 15061,
+      "content_sha256": "11b09245a1003cc81dacee74e1a39d3f8d93935cc5ff6a8324abb92105d901cb",
+      "captured_text": "## U607\n\n**id**\n\nU607\n\n**date**\n\n2026-09-22\n\n**titre**\n\nConsignment Issue adopté comme comportement de Sales Order\n\n**texte**\n\nOui, absolument, Consignment Issue est un comportement de Sales Order\n\n**contexte et portée**\n\nAccord explicite sur le nom Consignment Issue, la nature comportement et son parent Sales Order D04.i. Remplace la proposition de capacité autonome Consignment Issue Order. Les descriptions détaillées, faits générateurs et modalités contractuelles restent proposés ; aucun sous-comportement ni accord sur les autres Orders de consignation déduit."
+    },
+    {
+      "id": "U608",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u608",
+      "line": 15084,
+      "content_sha256": "baeed4999cd943c0ec63aa48cc90994605da48fca702a7930603517f58d595ac",
+      "captured_text": "## U608\n\n**id**\n\nU608\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDemand : intention de l’acteur déclencheur\n\n**texte**\n\nTu as bien noté quelque part que le modèle Demand implique de réfléchir par rapport à l'intention de l'acteur qui déclenche la demande ?\n\n**contexte et portée**\n\nLaurent rappelle le principe de construction de Demand depuis l’intention de l’acteur déclencheur. Précise U393/U394 ; ni document ERP, ni effet juridique, ni origine technique ne suffisent à définir une nouvelle demande. Ne change pas à lui seul les accords ou le périmètre de chaque Order."
+    },
+    {
+      "id": "U609",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u609",
+      "line": 15107,
+      "content_sha256": "af38c816a5ee6ed814538bf8aff2df63de85a9287fb420efd3f0787673f78685",
+      "captured_text": "## U609\n\n**id**\n\nU609\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDemandes par intention ; lisibilité commune à tout le modèle\n\n**texte**\n\nOui, lisibilité métier est une précision inutile. Tout le modèle a vocation d'être lisible.\n\n**contexte et portée**\n\nRetirer la précision du libellé de la règle Demand. Conserver l’intention de l’acteur déclencheur comme principe spécifique ; la lisibilité est une exigence générale. Les comparaisons et justifications historiques restent conservées, sans réécriture des preuves ni remise en cause des règles de description des comportements."
+    },
+    {
+      "id": "U610",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u610",
+      "line": 15130,
+      "content_sha256": "f06a9c0d9f5680fd3cc06630a687733ee79970874f6ed922838d948a315228cc",
+      "captured_text": "## U610\n\n**id**\n\nU610\n\n**date**\n\n2026-09-22\n\n**titre**\n\nValidation du principe Demandes par intention\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nValidation de la restitution précédente : libellé « Demandes par intention », principe de partir de l’intention de l’acteur qui déclenche la demande et lisibilité commune à tout le modèle. Le rattachement Consignment Issue sous Sales Order était déjà adopté U607 et reste confirmé dans ce contexte. Aucun accord étendu aux descriptions détaillées, aux autres Orders ou à une publication."
+    },
+    {
+      "id": "U611",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u611",
+      "line": 15153,
+      "content_sha256": "0d4c1f907845cc9c0ebf38ddb37a9929211cdb1447bd3050f08d0ef719ff0718",
+      "captured_text": "## U611\n\n**id**\n\nU611\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉtudier Goods Return avec Customer Return et Consignment Return\n\n**texte**\n\nCapacité Goods Return avec Customer Return et Consignment Return en comportement\n**Consignment Pick-up** reste distinct\n\nTu peux vérifier le marché ?\n\n**contexte et portée**\n\nProposition de regroupement soumise à comparaison marché. Examiner nom, intention commune, distinction Pick-up et incidence sur Customer Return D04.l et ses comportements actuels. Ne pas déduire une fusion de Supplier Return D04.m ni une migration canonique avant restitution de l’étude."
+    },
+    {
+      "id": "U612",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u612",
+      "line": 15179,
+      "content_sha256": "a5b619ea6174d4bdee11451744766d29dd6a6f784160c4a465aab62589c9698b",
+      "captured_text": "## U612\n\n**id**\n\nU612\n\n**date**\n\n2026-09-22\n\n**titre**\n\nReturn Order : conserver le modèle par intention et ses comportements\n\n**texte**\n\nLe meilleur modèle c'est microsoft : conception par l'intention. C'est ce qui nous avait guidé.\nEt finalement, les comportements conviennent pour un retour fournisseur du fait de la consignation. De plus, selon le contrat signé avec le fournisseur, il peut aussi nous confier la réparation éventuellement. On peut tout imaginer. Comme il ne s'agit de faire des règles de gestion mais présenter des capacités, notre modèle actuel est satisfaisant. En termes de nommage, Return Order est meilleur car Customer laisse penser à du B2C. Si on gère de la consignation pour un fournisseur et qu'on vend à un client business (wholesale), \"Return Order\" est plus englobant.\n\nOk ?\n\n**contexte et portée**\n\nLaurent retient l’approche Microsoft comme référence pour son modèle par intention, conserve les comportements actuels et choisit Return Order à la place de Customer Return. Applicabilité B2C, wholesale et consignation ; réparation possible selon contrat, sans règle automatique ni pratique installée inférée. La proposition U611 de comportements Customer Return / Consignment Return n’est plus retenue. Aucun accord de fusion ou suppression de Supplier Return D04.m déduit. Customer n’est pas techniquement limité au B2C dans les sources éditeur ; le choix vise l’évocation du nom dans FLOW."
+    },
+    {
+      "id": "U613",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u613",
+      "line": 15205,
+      "content_sha256": "bfd5bfb814fdd1fc2d72ce9937f94f7dcfb1a2d04efb2e652dee0cdf2181be32",
+      "captured_text": "## U613\n\n**id**\n\nU613\n\n**date**\n\n2026-09-22\n\n**titre**\n\nDistinguer type des capacités et gouvernance des référentiels\n\n**texte**\n\nPour les référentiels de données, je pense qu'on a deux dimensions. Le type des capacités (policy, autre etc.) et la gouvernance (projection, domain-managed)\n\n**contexte et portée**\n\nProposition de deux dimensions indépendantes. Aucun classement automatique des référentiels existants ni modification de leur hiérarchie déduit."
+    },
+    {
+      "id": "U614",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u614",
+      "line": 15227,
+      "content_sha256": "c8d40d88ba4cb52eb36789bcda37b38b0a3a96f02c42fdd943183d87cbae6f00",
+      "captured_text": "## U614\n\n**id**\n\nU614\n\n**date**\n\n2026-09-22\n\n**titre**\n\nPréciser Domain-managed, Projection et Domain-View\n\n**texte**\n\nDomain-managed : domain=CRUD\nProjection : la vérité vient d'une source externe\nDomain-View : vue contruite et rafraichie par le domaine. Quel que soit l'origine des données.\n\n**contexte et portée**\n\nDéfinitions explicites de Laurent précisant U613. Domain-managed attribue au domaine les opérations CRUD ; Projection situe la vérité hors du domaine ; Domain-View attribue au domaine la construction et le rafraîchissement de la vue, indépendamment de l'origine des données. Ne pas déduire des catégories exclusives, un choix de stockage ou la reclassification des capacités existantes."
+    },
+    {
+      "id": "U615",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u615",
+      "line": 15252,
+      "content_sha256": "95e9a2379d34d487281f2908a4d221bf1dee9d735d607cc95b22fd5934f2b95a",
+      "captured_text": "## U615\n\n**id**\n\nU615\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAppliquer au modèle courant la gouvernance des données\n\n**texte**\n\nJe pense qu'il faut prendre en compte ce modèle et l'appliquer au modèle actuel\n\n**contexte et portée**\n\nDemande d’application des définitions U613/U614 : type des capacités distinct de la gouvernance, Domain-managed pour le CRUD porté par le domaine, Projection pour la vérité externe, Domain-View pour les vues construites et rafraîchies par le domaine. L’application aux éléments existants est un travail de modélisation ; aucun accord détaillé par élément ni publication n’est implicite."
+    },
+    {
+      "id": "U616",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u616",
+      "line": 15274,
+      "content_sha256": "3546a3672cb9872f35b8b904d9dbbeca1490bfb2a36d934eb7e4f2b8112514cb",
+      "captured_text": "## U616\n\n**id**\n\nU616\n\n**date**\n\n2026-09-22\n\n**titre**\n\nService, tâche et Service Order dans Fulfillment Orchestration\n\n**texte**\n\n\"Logistic Order et demandes de services\" : le problème est qu'on a changé de modèle en cours de route. Le modèle tourne autour de la notion générique de service. Ces services peuvent être purement numériques (api de construction documentaire par exemple), physiques (Logistique, douane) ou service (expertise, conseil). A chaque fois qu'on appelle un service, il sera encapsulé dans une \"tâche\" dans \"Fulfillment Orchestration\", tâche qui pourra générer un document de type \"Service Order\" (doc EDI par exemple) pour officialiser, qualifier la demande de service et sera envoyé (l'order) au provider de service. Donc un Logistic Order devient un Service Order (pattern plus générique).\n\n**contexte et portée**\n\nClarification explicite du périmètre d’exécution : services numériques, physiques et d’expertise/conseil, appels encapsulés dans des tâches de Fulfillment Orchestration. Le Service Order est un document éventuellement généré par la tâche, qualifiant et officialisant la demande envoyée au Service Provider. Logistic Order est remplacé par ce pattern générique ; ne plus instruire une mission logistique autonome par défaut. Aucun document obligatoire pour chaque appel, aucune nouvelle couche de capacités ni réouverture du Domain Business Services déduits. Les adaptations détaillées du catalogue restent à appliquer sur cette base."
+    },
+    {
+      "id": "U617",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u617",
+      "line": 15296,
+      "content_sha256": "03cc38538861df95760f199a03b8f790f707993101815dd408c0376b7bf76b7d",
+      "captured_text": "## U617\n\n**id**\n\nU617\n\n**date**\n\n2026-09-22\n\n**titre**\n\nLa tâche gouverne la sollicitation et le suivi du service\n\n**texte**\n\nPrécision sur le concept de Tâche : c'est un objet de gouvernance qui pilote la sollicitation du service. La tâche peut appeler un service immédiatement, au bout d'un moment, sur captation d'un événement. Il suit l'exécution du service et peut relancer si nécessaire afin d'apporter plus de robustesse, appeler un service de secours etc. De plus la tâche a la charge de s'assurer tu tracking du service et de vérifier s'il est terminé. Dans ce cas la tâche se termine. C'est un concept Case Management / BPMN.\n\n**contexte et portée**\n\nPrécision explicite de U616 : la tâche gouverne la sollicitation et le suivi, avec déclenchement immédiat, différé ou événementiel, relance et recours possible à un service de secours. Elle assure le tracking et vérifie la terminaison du service pour se terminer. Laurent rapproche ce concept du Case Management / BPMN ; aucune équivalence à une primitive normative unique ni règle détaillée de reprise n’est déduite."
+    },
+    {
+      "id": "U618",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u618",
+      "line": 15318,
+      "content_sha256": "7598737f9f1866254cf4833e0cebd3401692df5966bdd74eae9399d7b01c8f03",
+      "captured_text": "## U618\n\n**id**\n\nU618\n\n**date**\n\n2026-09-22\n\n**titre**\n\nConserver une seule Area pour les référentiels et les policies\n\n**texte**\n\n\"Organisation des référentiels et policies\" => Ca reste une seule area\n\n**contexte et portée**\n\nDécision explicite sur le regroupement : référentiels et policies restent dans une seule Area. Remplace la proposition Codex de deux Areas Reference Management et Policy Management. Les dimensions type de capacité et gouvernance définies U613–U615 restent distinctes à l’intérieur de cette Area. Aucun accord supplémentaire sur un nom, une description ou un déplacement individuel de capacité n’est déduit."
+    },
+    {
+      "id": "U619",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u619",
+      "line": 15340,
+      "content_sha256": "d5f43de80b2adf70480b77b81e7d92e2fe5aaad920e7f86f5642f37460951582",
+      "captured_text": "## U619\n\n**id**\n\nU619\n\n**date**\n\n2026-09-22\n\n**titre**\n\nPurchase Order reste un acte d’achat à un fournisseur\n\n**texte**\n\n\"Familles de demandes restantes\" => Purchase Order doit rester un acte d'achat à un fournisseur.\n\n**contexte et portée**\n\nConfirmation explicite de l’intention portée par Purchase Order : acheter à un fournisseur. Cohérent avec U391 et le périmètre courant D04.j couvrant biens et prestations. Cette clarification ne transforme ni tout apport attendu en achat ni toute sollicitation de service en Purchase Order. Elle ne vaut pas adoption globale de la description détaillée ou décision explicite sur le parent Area."
+    },
+    {
+      "id": "U620",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u620",
+      "line": 15362,
+      "content_sha256": "2c1674a71b76d15f7126e59e819f9280b1be7208a6c512e5a745934bbebdcd3d",
+      "captured_text": "## U620\n\n**id**\n\nU620\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉtudier la justification et la définition du niveau Area\n\n**texte**\n\nAvant de faire ça, je souhaite qu'on réfléchisse au niveau Area. Il semble nécessaire. Chez SAP il existe. dans DDD on parle de domaine et sous domaine. La notion de domaine est claire mais la définition d'un sous domaine est un peu floue.\nJe souhaite une étude du marché pour savoir sur ce point comment il raisonne et définit ce niveau.\n\n**contexte et portée**\n\nÉtude méthodologique demandée avant la mise en cohérence du catalogue. Comparer le rôle, la définition et les critères de frontière du niveau intermédiaire ; aucune nouvelle définition ni migration adoptée par cette demande."
+    },
+    {
+      "id": "U621",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u621",
+      "line": 15385,
+      "content_sha256": "6eb84af3074479d6e87a32d51b75e1690025ce487c8f6a420f29e0a9aeef5625",
+      "captured_text": "## U621\n\n**id**\n\nU621\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉlargir la recherche au-delà de SAP et DDD\n\n**texte**\n\nPas que SAP et DDD. Il faut élargir la recherche\n\n**contexte et portée**\n\nÉtendre U620 à plusieurs écoles d’architecture, cadres sectoriels et pratiques d’outillage ; ne pas limiter la comparaison à SAP et DDD."
+    },
+    {
+      "id": "U622",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u622",
+      "line": 15407,
+      "content_sha256": "81971b92b38550b3df098a002f7a533240e2833c8df094e65418ec67cc6d0202",
+      "captured_text": "## U622\n\n**id**\n\nU622\n\n**date**\n\n2026-09-22\n\n**titre**\n\nValider la finalité du niveau Area et rechercher un nom neutre\n\n**texte**\n\nJe valide Area associé à une finalité.\n\nMais Area est très marqué SAP. J'aimais neutraliser le nom. Si possible.\n\n**contexte et portée**\n\nAccord explicite sur l’association du niveau Area à une finalité. Recherche d’un nom moins marqué SAP, sans choix de remplacement déjà adopté. L’accord ne s’étend pas automatiquement à tous les critères ou exemples proposés dans l’étude U620/U621."
+    },
+    {
+      "id": "U623",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u623",
+      "line": 15431,
+      "content_sha256": "ba4f86f9444d2944b4e50b3e5515d880a54539951a5b0e6733f9f842b2a1a020",
+      "captured_text": "## U623\n\n**id**\n\nU623\n\n**date**\n\n2026-09-22\n\n**titre**\n\nÉcarter Subdomain et comparer Purpose, End Goal, Outcome et Intent\n\n**texte**\n\nLe problème c'est que ça surcharge la définition DDD, ça ne me plait pas.\n\nPurpose ?\nEnd Goal ?\nOutcome ?\nIntent ?\n\n**contexte et portée**\n\nSubdomain est écarté comme remplacement proposé d’Area pour éviter de surcharger le concept DDD. Quatre candidats sont soumis à réflexion ; aucun n’est adopté. L’association à une finalité validée U622 reste acquise."
+    },
+    {
+      "id": "U624",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u624",
+      "line": 15458,
+      "content_sha256": "dd51af9538a5ebb2f9cf04e2aca21ac6411cbedab6d1aed86ccc14853b8867f6",
+      "captured_text": "## U624\n\n**id**\n\nU624\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAdopter Purpose / Finalité à la place d’Area\n\n**texte**\n\nOk, je valide\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée : nom anglais Purpose, français Finalité ; hiérarchie Domain → Purpose → Capability → Behavior ; définition « Finalité métier durable au sein d’un Domain, autour de laquelle sont regroupées les responsabilités et capacités qui concourent à sa réalisation. » Convention FLOW assumée, sans prétention de standard marché. Remplace le nom Area adopté U482, conserve l’identifiant méthodologique MOD013 et les responsabilités existantes. Aucun renommage individuel, déplacement de capacité ou accord global sur les critères de l’étude n’est déduit."
+    },
+    {
+      "id": "U625",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u625",
+      "line": 15480,
+      "content_sha256": "c55744b8330109927ddf88ef6d3985c806687a1dafa042c488f7e3fbd5800e85",
+      "captured_text": "## U625\n\n**id**\n\nU625\n\n**date**\n\n2026-09-22\n\n**titre**\n\nAuditer glossaire, métamodèle, Domain et Purpose avant release\n\n**texte**\n\nAvant de faire une release, audite le modèle sur me périmètre glossaire, metamodele, domaine et purpose. Cohérence, complétude, dossier de marché riche.\n\n**contexte et portée**\n\nAudit du backlog avant publication, portant sur glossaires, métamodèle et niveaux Domain/Purpose : cohérence, complétude et richesse des appuis marché. La demande ne déclenche pas la release ni la migration du catalogue ; les constats et corrections proposées doivent être traçables et distinguer décisions acquises et points restant à arbitrer."
+    },
+    {
+      "id": "U626",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u626",
+      "line": 15502,
+      "content_sha256": "38c627c2278e100734b50fcbe76369c4f0928c29fc65c5f7e48165a587e522a9",
+      "captured_text": "## U626\n\n**id**\n\nU626\n\n**date**\n\n2026-09-22\n\n**titre**\n\nMettre à jour les notions à la suite de l'audit U625\n\n**texte**\n\nTu peux mettre à jour un maximum de notions ?\n\n**contexte et portée**\n\nAutorisation de corriger et enrichir le backlog à partir de l'audit U625 : glossaire, métamodèle, Domain/Purpose, frontières et comparaisons marché. Appliquer les décisions antérieures dans leur portée, produire les compléments et rattachements nécessaires comme propositions lorsqu'ils ne sont pas explicitement adoptés. Cette instruction de travail ne constitue pas un accord global sur les nouvelles formulations ni une demande de release. Préserver identifiants, accords et publications historiques."
+    },
+    {
+      "id": "U627",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u627",
+      "line": 15524,
+      "content_sha256": "b104c03e46acdc831e4e8510a05228aace482bb9aefa8a826aaefbb134468751",
+      "captured_text": "## U627\n\n**id**\n\nU627\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPublier la consolidation du modèle dans Atlas\n\n**texte**\n\nlance une release\n\n**contexte et portée**\n\nPublication locale dans FLOW Atlas du backlog consolidé U626 et de son guide méthodologique actualisé. La demande autorise la préparation, le réexamen de portée des accords historiques et l'activation de la release ; elle ne vaut pas adoption globale des formulations et rattachements proposés, ni demande de commit ou push."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -7915,6 +8275,38 @@
       "captured_text": "## C113\n\n**id**\n\nC113\n\n**sources**\n\nU537, U573, U574, U575, CMP239, CMP240, CMP241\n\n**constat**\n\nLa proposition U573/U574 réintroduisait Allocation dans deux noms, alors que son ambiguïté avait motivé Supply Assignment. Elle transformait six familles de suites du plan en comportements distincts, sans démontrer que leurs effets différents exigeaient cette décomposition à la maille landscape. U575 recentre la question sur l’application du Master Plan validé.\n\n**correction**\n\nPlanning Management est le nom explicitement retenu pour le pilotage du travail. Recommander un seul comportement Master Plan Application, en conservant affectations commandes/prévisions, échéanciers, Orders et politiques comme catégories d’effets et coopérations décrites. Les décisions restent distinctes et les capacités responsables gardent leurs engagements. Cette consolidation est proposée, pas réputée adoptée par la question de Laurent. La structure antérieure, les preuves et les onze cas sont conservés ; aucun changement canonique anticipé. Voir modeles/backlog/master-plan-application-U575.yaml."
     },
     {
+      "id": "C114",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c114",
+      "line": 2501,
+      "content_sha256": "2a444061d3ddfcb2e94ba73ba6f5c2d5bb6593beef74f327ae36ece3cd34f091",
+      "captured_text": "## C114\n\n**id**\n\nC114\n\n**sources**\n\nU591, U592, CMP254\n\n**constat**\n\nLa première formulation de la frontière plan / Fulfillment utilisait la demande ferme et exécutable comme seuil. Laurent précise que la fermeté n'interdit pas la retouche du contenu ni le désaffermissement : c'est le début d'exécution qui borne cette responsabilité de l'arbitrage.\n\n**correction**\n\nRetenir la règle U592 dans les deux Areas proposées : avant début d'exécution, l'arbitrage peut modifier le contenu, y compris d'une commande ferme ; Fulfillment adapte le plan de réalisation lorsqu'il est engagé. Préserver le split de Logistic Order et le suivi des deux suites par la demande initiale U591. Ne pas transformer l'ancienne recommandation de retour à l'arbitrage en permission de réécrire une demande déjà en cours. Critères de début, réalisation partielle et traitement d'un engagement devenu impossible restent à formaliser. Historique et état courant distincts dans plan_fulfillment_boundary_U591/U592 de l'annexe U584 ; aucune migration canonique."
+    },
+    {
+      "id": "C115",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c115",
+      "line": 2519,
+      "content_sha256": "95e978e68655cd530e0a1ef74ce1c0734b684e20c564678b03bb2a7207425735",
+      "captured_text": "## C115\n\n**id**\n\nC115\n\n**sources**\n\nU594, U595, U596, CMP256\n\n**constat**\n\nLe diagnostic U594 maintenait le responsable de Transfer Order et des retours ouvert au motif de leurs effets demande/apport ; il proposait encore le rattachement du pilotage de la promesse à Demand. La discussion de consignation pouvait aussi faire confondre stock fournisseur chez nous et stock du client donneur d'ordre chez nous.\n\n**correction**\n\nU595 clarifie que Transfer Order et retours sont des demandes portant besoins, exigences et promesse, quelle que soit l'origine commerce ou plan. Supply exploite leurs effets attendus sans devenir responsable d'une seconde commande. U596 confirme les deux sens de consignation, avec priorité au client propriétaire du stock détenu chez nous ; aucun rôle fournisseur ni achat implicite. Proposition Demand/Supply actualisée et état antérieur conservé. Étude des familles d'Orders et des stratégies AFS/Fashion demandée avant décision de découpage, sans migration canonique."
+    },
+    {
+      "id": "C116",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c116",
+      "line": 2538,
+      "content_sha256": "30f91c908133a2da1a2cdeedb6c39a2da1298044e99671c9ca933ae33899b910",
+      "captured_text": "## C116\n\n**id**\n\nC116\n\n**sources**\n\nU596, U600, U602, CMP260\n\n**constat**\n\nLa réponse précédente gardait ouverte une simple détention du stock client sans vente, pour laquelle Issue pouvait ne pas être pertinent. Cette réserve ne décrit pas le cas précisé par Laurent.\n\n**correction**\n\nU602 confirme un mandat de vente pour les biens du client détenus dans nos entrepôts dans le scénario discuté. Inclure Issue dans l’étude de ce cycle ; ne pas assimiler mandat de vente et acquisition préalable par nous. La question du droit de vendre est résolue ; restent le fait générateur, les effets de propriété et l’articulation documentaire. Historique conservé, pas d’adoption globale ni de migration canonique déduite."
+    },
+    {
+      "id": "C117",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c117",
+      "line": 2557,
+      "content_sha256": "f7c79cb05fd9c3f009628a1904f7c4b6e37849672667bfb63102f94d5cc8ad54",
+      "captured_text": "## C117\n\n**id**\n\nC117\n\n**sources**\n\nU604, U606, CMP262, ELM628, ELM629, ELM630\n\n**constat**\n\nCodex avait conclu trop vite « une capacité, deux comportements » sous Consignment Issue Order. Cela conservait une capacité de demande distincte sans justifier l’intention par rapport à Sales Order.\n\n**correction**\n\nSAP classe Issue comme type de Sales Order et peut le créer sur déclaration de consommation. U604 regroupe les variantes mais n’adopte pas une capacité canonique autonome ; U606 réinterroge précisément cette maille. Recommandation révisée : intention de vente portée par Sales Order, variantes métier de consignation explicites, effets de propriété appliqués par Inventory. Les documents et obligations envers le propriétaire restent traçables sans deuxième besoin client artificiel. Il ne s’agit pas uniquement d’un document juridique chez SAP. Aucune mutation canonique automatique."
+    },
+    {
       "id": "P01",
       "path": "connaissance/05-propositions.md",
       "anchor": "p01",
@@ -10819,6 +11211,70 @@
       "captured_text": "## MKT77\n\nFluent Commerce — Fluent Order Management. Documentation officielle de workflows, synchronisation produit Adobe Commerce, lieux et catalogues ; ELM518–521 consultés le 21 septembre 2026. [Relevé primaire](../audits/2026-09-21-authoritative-data-landscape-U512/fluent-documents.yaml) : titres, URLs, dates et passages. Produit OMS ; ni taxonomie universelle de capacités ni preuve de déploiement Beaumanoir. Synthèses sélectives et liens, sans reproduction substantielle.\n\n**Réexamen U511–U513 — MKT14/23/36/43/67/68/13/19 :** Microsoft IOM et IBM Sterling complètent la comparaison de l’orchestration alimentée par des sources externes (ELM522–526). Camunda DMN 8.9 précise données d’entrée et décisions (ELM527) ; OMG ELM259, Oracle ELM484, EDM Council ELM485, SAP ELM515, Microsoft Commerce ELM391 et TM Forum ELM513 sont reconsultés dans leurs passages ciblés le 21 septembre 2026. Anciennes consultations préservées. [Audit landscape](../audits/2026-09-21-authoritative-data-landscape-U512/rapport.md), limites documentaires explicites ; aucun changement de produit ou de technologie adopté.\n\n\n**Complément U514 — MKT69 :** Microsoft Azure Architecture Center, patron CQRS, ELM528. [Document primaire](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs), mise à jour du 21 février 2025, consulté le 21 septembre 2026. Distinction logique des lectures/écritures et choix de stockage ; appui de réalisation, pas carte de capacités métier. Synthèse sélective, pas d’adoption CQRS ou event sourcing.\n\n\n**Complément U515 — MKT69 :** patron Materialized View, ELM529, consulté le 21 septembre 2026. [Source primaire](https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view). Appui à l’indépendance des besoins de lecture et de l’organisation du stockage ; aucune adoption de vue matérialisée ou structure logicielle. Synthèse sélective.\n\n\n**Complément U516 — MKT73/14/20/13 :** Salesforce B2C Commerce ProductPriceModel, Microsoft Dynamics 365 Sales Price Lists et calcul des prix, Oracle Product Development 26B, SAP Purchasing Info Records et Microsoft SCM Purchase agreements. Six documents primaires ELM530–535 consultés le 21 septembre 2026 ; [URLs, versions, passages et limites](../modeles/backlog/core-data-price-books-sources-U516.yaml). Produits distingués ; pas taxonomie commune, choix de solution ou maîtrise Beaumanoir déduits. Synthèses sélectives et liens.\n\n\n**Complément U517 — MKT14 :** Dynamics 365 Finance, Credit holds for sales orders (ELM536), et Dynamics 365 Supply Chain Management, Set up vendor accounts (ELM537), consultés le 21 septembre 2026. [Relevé primaire](../modeles/backlog/core-data-price-books-sources-U516.yaml). Deux documents Microsoft, pas consensus interéditeurs ; règles et restrictions ciblées, sans attribution universelle au contrôle de gestion. Reformulations sélectives et liens.\n\n\n**Complément U526 — MKT28/MKT24 et réexamen MKT20/MKT56 :** extension documentaire ciblée de Kinaxis à son positionnement Supply Chain Orchestration (ELM551) et de SAP IBP à Response and supply planning (ELM552). Oracle 26B Supply Chain Orchestration et extraits primaires indexés ASCM SCOR DS complètent l'étude. Consultations du 21 septembre 2026 ; éditions, passages et limites d'accès dans [l'annexe U526](../modeles/backlog/supply-planning-area-review-U526.yaml). Reformulations sélectives et liens ; aucune reproduction substantielle, taxonomie universelle ou installation locale inférée.\n\n\n**Complément U530 — MKT36/MKT20 :** Camunda 8.9 Event subprocess et Business rule tasks (ELM553/554), Oracle PLM and Product Hub 26B (ELM555), passages primaires consultés le 21 septembre 2026. Sources et limites dans [l'annexe de planification](../modeles/backlog/supply-planning-area-review-U526.yaml). Appuis à l'adaptation et à la qualification de la piste PLM, sans technologie ni périmètre produit adoptés. Synthèses sélectives et liens.\n\n\n**Complément U531 — MKT24 :** SAP IBP Demand planning (ELM556), page primaire consultée le 21 septembre 2026 ; distingue prévision de demande, ajustement par signaux opérationnels et coopération avec Response and supply planning (ELM552). Édition non indiquée, limites et passages dans l'annexe de planification. Aucune équivalence ou installation SAP inférée pour MAP.\n\n\n**Complément U532 — MKT20/MKT24 :** Oracle 26B Overview of Supply Chain Planning Plan Types et Forecast Processing (ELM557/558), SAP IBP Sales and operations planning (ELM559). Passages primaires consultés le 21 septembre 2026 ; titres, éditions et limites dans [planning-options-U532.yaml](../modeles/backlog/planning-options-U532.yaml). Types de plans et périmètres fonctionnels comparés, sans équivalence de hiérarchie métier. Les appuis Demand planning ELM556 et Response and supply planning ELM552 complètent cette lecture à leurs portées déjà documentées.\n\n\n**Complément U533 — MKT24/MKT20 :** SAP Inventory optimisation, Oracle 26B Import Planned Orders et Create a Forecasting Profile (ELM560–562), passages primaires consultés le 21 septembre 2026. [Preuves et audit](../modeles/backlog/planning-model-audit-U533.yaml). Réexamen des appuis ELM552/556/557/558 à la portée des deux nouvelles capacités. Fonctions produit distinguées des décisions FLOW, sans technologie ni réalisation locale adoptée.\n\n\n**Complément U534–U536 — MKT20/MKT24/MKT13 :** Oracle Backlog Management 26B (ELM563 et réexamen ELM496), SAP IBP Supply Planning (ELM564), SAP Ariba Procurement Planning (ELM565) et SAP ARun 2025 FPS01 (ELM381 réexaminé). Lecture directe Oracle, passages primaires indexés SAP lorsque le portail ne restitue pas de texte. [Sources et limites](../modeles/backlog/planning-model-audit-U533.yaml). Aucun nouveau produit adopté ni innovation présumée à partir d’un nom.\n\n\n**Complément U537–U538 — MKT20 :** Oracle 26B Manually Release Plan Recommendations et Overview of Supply Allocation Rules (ELM566/567), réexamen Overview of Backlog Management Processes (ELM496), textes primaires directement consultés le 21 septembre 2026. [Correspondance et limites](../modeles/backlog/plan-application-review-U537.yaml), CMP220. Application du résultat et règles consommées distinguées ; aucune hiérarchie FLOW déduite du produit.\n\n\n**Réexamen U540 — MKT13/MKT36/MKT14/MKT20 :** sources ELM452/330/411/353 et Oracle ELM496/566/567 réexaminées sur application du résultat, configuration consommée et responsabilités partenaires. [Audit documenté](../modeles/backlog/planning-principle-audit-U540.yaml), CMP221. Sources évolutives ou Oracle 26B datées du 21 septembre 2026 ; synthèses sélectives et liens, sans reproduction substantielle.\n\n\n**Complément U542 — MKT20 :** Oracle 26B Publish Plan, Supply Plan Options for Organizations and Schedules, Automatic Release Options (ELM568–570), et réexamen Manually Release Plan Recommendations (ELM566). Sources primaires directement consultées le 21 septembre 2026 ; [localisateurs et limites](../modeles/backlog/planning-application-options-U542.yaml), CMP222. Publication technique distinguée de mise en vigueur métier ; aucune hiérarchie FLOW ni réalisation MAP déduite.\n\n\n**Réexamen U543 — Oracle, SAP, Nextail :** documents ELM369/375/450/451 relus sur implantation, réassort, rééquilibrage et interactions. [Étude par intention](../modeles/backlog/inventory-planning-intentions-U543.yaml), CMP223. Les différences de regroupement entre éditeurs sont explicites ; aucune nomenclature universelle adoptée.\n\n\n**Réexamen U544 — MKT24/MKT29 :** SAP et RELEX sur Inventory Optimization, ELM560/479. Appui au compromis de stock, sans preuve du libellé exact Inventory Optimization Planning ni de la hiérarchie FLOW. [Étude](../modeles/backlog/inventory-optimization-planning-option-U544.yaml), CMP224."
     },
     {
+      "id": "MKT78",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt78",
+      "line": 798,
+      "content_sha256": "e76f82dea7fec4ccf3d0a1f42823c667f140557eb389f4a25ae4985a730f0548",
+      "captured_text": "## MKT78\n\n**Référence :** Flowable — documentation open source CMMN. **Organisme :** Flowable. **Nature :** documentation d'un moteur et de son langage de cas. **Rôle :** appui fonctionnel au case management adaptatif, sans sélection de solution.\n\n**Source et consultation :** [CMMN 1.1](https://www.flowable.com/open-source/docs/cmmn/ch06-cmmn), consulté le 22 septembre 2026. Documentation évolutive, version du moteur non fixée par la page. Passages Human task, Java Service task, Decision task, Process task, Criteria, Sentry evaluation. Texte primaire consulté ; résumé sélectif et lien, aucune reproduction substantielle.\n\n**Limites :** le document combine constructions CMMN et extensions Flowable ; aucune conformité FLOW, obligation de moteur ou réalisation Beaumanoir déduite. ELM605, CMP250."
+    },
+    {
+      "id": "MKT79",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt79",
+      "line": 806,
+      "content_sha256": "3c6420f1713005f67bda665fc6fa5617d32d5e4c36bf571c710be36be776ad47",
+      "captured_text": "## MKT79\n\n**Référence :** The Twelve-Factor App — Adam Wiggins, chapitre IV Backing services. **Nature :** méthode d'architecture applicative. **Rôle :** vérifier le sens attesté du terme, sans l'adopter comme classification métier Supply.\n\n**Sources consultées le 22 septembre 2026 :** [chapitre original](https://www.12factor.net/backing-services), page affichant Last updated 2017, définition et exemples ; [reprise Microsoft .NET](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition), documentation évolutive, table The Twelve-Factor Application, facteurs 4 et 6. Textes primaires ouverts ; reformulations sélectives et liens.\n\n**Limites :** Microsoft reprend cette méthode, ce n'est pas une origine indépendante. Services consommés par une application sur le réseau ; ni catalogue logistique ni taxonomie de capacités métier. ELM608/609, CMP252."
+    },
+    {
+      "id": "MKT80",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt80",
+      "line": 814,
+      "content_sha256": "44a088ab6011eb1908d76719c0b9f92083ceb34dafaf74f95b400d3dea2d4da7",
+      "captured_text": "## MKT80\n\n**Référence :** SAP Apparel and Footwear Solution (AFS). **Nature :** produit ERP sectoriel, distinct de Fashion Management et S/4HANA. **Rôle :** comparer la gestion du stock consigné et sa mobilisation pour satisfaire les demandes.\n\n**Sources consultées le 22 septembre 2026 :** [Release Notes AFS 6.5](https://help.sap.com/doc/29d6d66f79a142b18a2014c7e54ff392/6.5/en-US/Release_Notes_SAP_AFS_65E.PDF), ECC 6.0 EHP5, §4.5.4 page imprimée 18, PDF lu ; [Check Material Supply And Demand Allocation Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/1dad2180e6f34b75ac77afce5cb5eda1/626fd75a5f8811dc2b8d000f20fcb6a9.html), composant P3A V605 / IS-AFS-ARUN, texte primaire indexé. ELM614/619, CMP257.\n\n**Limites :** la page d'interface hébergée dans une documentation S/4HANA n'est pas une preuve d'un moteur AFS 2025. Le corpus ne décrit pas tout le paramétrage de chaque Order. Aucune réalisation Beaumanoir déduite. PDF protégé par copyright ; synthèses sélectives et liens, sans reproduction substantielle."
+    },
+    {
+      "id": "MKT81",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt81",
+      "line": 822,
+      "content_sha256": "3765d52a894e9280f405eeb56419792419df5e22b52dce82408f988d3ea9c9de",
+      "captured_text": "## MKT81\n\n**Référence :** SAP Fashion Management, FMS et fonctions Fashion sur ERP. **Nature :** documentation de produit. **Rôle :** distinguer traitement documentaire de la consignation et effets des fonctions d'affectation, de saison et de segmentation.\n\n**Sources consultées le 22 septembre 2026 :** [Consignment Orders](https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html), FMS 1.0 SP13 ; [Vendor Consignment](https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3daaa256c9006f15e10000000a441470.html?version=6.18.latest), ERP EHP8 ; [Vendor Consignment and Order Allocation Run](https://help.sap.com/docs/SAP_ERP/39615c43587c4405aba2de8ebf33cd66/3d06ece43a61456db4b9bcd2ca1b167e.html), ERP EHP8 SPS02 / FASHION_04. Textes primaires indexés consultés, portail direct sans corps de texte pour les ouvertures réalisées. ELM615–617, CMP256/CMP257.\n\n**Limites :** éditions distinctes, aucune supériorité globale ni absence de fonction AFS déduite. L'évolution S/4HANA aATP est documentée séparément par MKT13/ELM618, avec un périmètre d'affectation différent. Pas de copie du catalogue SAP en capacités FLOW ni de réalisation installée présumée ; synthèses et liens."
+    },
+    {
+      "id": "MKT82",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt82",
+      "line": 831,
+      "content_sha256": "9a13946a25396a60d4a854b823296f8087efcdb3151a0014df08ff4038084220",
+      "captured_text": "## MKT82\n\n**Référence :** Infor M3 Business Engine. **Organisme :** Infor. **Nature :** ERP. **Rôle :** comparer le vocabulaire des documents de consignation fournisseur, sans reprendre sa structure comme modèle de capacités.\n\n**Source consultée le 22 septembre 2026 :** [Consignment Stock](https://docs.infor.com/m3udi/16.x/en-us/m3beud/scexechs/mws020.html), documentation 16.x, texte primaire directement lu, définitions et étapes documentaires. ELM620, CMP259.\n\n**Limites :** perspective fournisseur ; pas d’équivalence établie avec la garde du stock d’un client. Synthèse sélective et lien, sans droits de redistribution intégrale présumés."
+    },
+    {
+      "id": "MKT83",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt83",
+      "line": 839,
+      "content_sha256": "573930e807aaa6d8d30aab031adc00012eea0e818d64dbacd49a7f9e5ebf3479",
+      "captured_text": "## MKT83\n\n**Référence :** IFS Cloud. **Organisme :** IFS. **Nature :** ERP. **Rôle :** comparer les documents de consignation client et la réception de biens appartenant au client.\n\n**Sources consultées le 22 septembre 2026 :** [Create Refill Order](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityCreateRefillOrder.htm), [Return or Scrap Customer Consignment Stock](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityReturnorScrapCustomerConsignmentStock.htm), [Create Purchase Order from Arrival](https://docs.ifs.com/ifsclouddocs/25r2/Receipt/ActivityPOArrivalCreate.htm), documentation 25R2, pages directement lues. ELM621–623, CMP259.\n\n**Limites :** cas documentaires ciblés ; ni couverture exhaustive ni réalisation Beaumanoir. Synthèses sélectives et liens, sans droits de redistribution intégrale présumés."
+    },
+    {
+      "id": "MKT84",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt84",
+      "line": 848,
+      "content_sha256": "43bde4f43d97712fbab53e8d98e33aabdff53a109a0ddd454ea5d167f00b222e",
+      "captured_text": "## MKT84\n\n**Référence :** SAP Business One. **Organisme :** SAP. **Nature :** ERP, distinct de S/4HANA et Fashion. **Rôle :** vérifier l’usage du nom Goods Return.\n\n**Source consultée le 22 septembre 2026 :** [Goods Return Request: Contents Tab](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/b3b60a16edfc4bafacc0fc7a1fd0766a.html), version 10.0, introduction et champs de retour fournisseur, texte primaire indexé lu. ELM631, CMP263.\n\n**Limites :** preuve lexicale produit, aucune équivalence de capacité ou réalisation Beaumanoir. Synthèse sélective et lien ; aucun droit de redistribution intégrale présumé."
+    },
+    {
+      "id": "MKT85",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt85",
+      "line": 857,
+      "content_sha256": "f1891429f8fbbb2795f058def8446d9375db2a51442a05e6d24b9957f081fca1",
+      "captured_text": "## MKT85\n\n**Référence :** Nick Tune, réflexion DDD sur Domain/Subdomain/Bounded Context. **Nature :** publication originale de praticien ; point de vue attribué, pas standard. [Article du 25 novembre 2020](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/), texte ouvert le 22 septembre 2026, sections Subdomains et frontières problème/solution. ELM634 / CMP265. Rôle : éprouver le caractère relatif du niveau sous-domaine. Synthèse et lien, pas de redistribution intégrale.\n\n**Réexamen U620/U621 — 22 septembre 2026 :** MKT01/03/04/06/07/18/25/26/69/85. Niveaux de regroupement, décomposition et responsabilités comparés dans [l’étude Area](etudes/2026-09-22-area-level.md). ELM633–642 documentent éditions, passages et limites ; TOGAF historique, extraits primaires indexés IBM/LeanIX/Ardoq, autres lectures directes. Pas de nouvelle taxonomie adoptée."
+    },
+    {
       "id": "CMP001",
       "path": "marche/comparaisons.md",
       "anchor": "cmp001",
@@ -12737,6 +13193,158 @@
       "line": 2386,
       "content_sha256": "cc352f19b5b5118d2bc5115678b1bd991dd74f0ae3309b4f23e2bf91b2a95f09",
       "captured_text": "## CMP246\n\nU581 — Codex, 22 septembre 2026. [CTP et achats du plan commun](../modeles/backlog/master-planning-structure-U568.yaml), section ctp_and_procurement_U581. ELM417/588 Microsoft et ELM566 Oracle relus directement. Batch CTP s’appuie sur le plan dynamique pour les dates ; master planning produit des Planned Orders, transformés en Orders par firming. Oracle transmet les recommandations nouvelles ou révisées et expose les exceptions aval. Aucun de ces documents ne garantit de rendre toutes les promesses existantes réalisables.\n\nInterprétation FLOW : autoriser au cadrage les adaptations prévues par les politiques externes, mobiliser CTP pour leur faisabilité, puis coordonner leur choix dans le plan commun. La décision d’achat proposée reste distincte de CTP ; Apply Plan mobilise les responsables des Orders et engagements. Les achats pour prévisions ou stocks ne nécessitent pas chacun un contrôle CTP de commande client. Limites : délais et ressources peuvent rendre une date intenable ; proposition d’achat, engagement fournisseur et couverture effective distincts. Recommandation de fonctionnement proposée, pas activation logicielle ni adoption globale."
+    },
+    {
+      "id": "CMP247",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp247",
+      "line": 2392,
+      "content_sha256": "ca64136c0050938055d2048d77db1d01a12c66522d4cad72b371e11e684f3eec",
+      "captured_text": "## CMP247\n\nU583/U584 — Codex, 22 septembre 2026. [Examen des six Areas du cœur d'orchestration](../modeles/backlog/orchestration-areas-review-U584.yaml). Neuf documents primaires consultés : ELM600–603 et relectures ELM363/406/411/415/596. Périmètre comparé : proposition de Laurent et responsabilités du backlog courant ; aucune modification canonique.\n\nMicrosoft distingue prévision de demande, apports et projection de stock ; réservation et consignation étayent les distinctions entre besoin, engagement, présence et propriété. Oracle Transfer Orders 25C porte demande et apport dans une même opération. Recouvrements fonctionnels, sans preuve d'une taxonomie commune à six Areas. Le regroupement FLOW proposé conserve une tenue unique des Orders et une position de stock sans double compte.\n\nMicrosoft Master Planning comprend la proposition d'apports ; Oracle Backlog Planning réarbitre la couverture du carnet. Matching serait trop restrictif s'il désignait seulement le partage des ressources données. Recommandation Codex : expliciter la couverture et les ajustements, en gardant le nom cible Demand & Supply Optimization U581 comme option préférée. U584 rouvre le vocabulaire sans adopter automatiquement un remplacement.\n\nFluent distingue gestion des profils et utilisation en sourcing ; Source Order Items combine choix de sites, limites de fractionnement et réaffectation après manque. Deux documents du même éditeur ne prouvent pas un consensus. Interprétation FLOW : Fulfillment coordonne et adapte la réalisation dans ses marges ; les effets sur la couverture ou la promesse mobilisent leurs responsables. Une fonction éditeur ne détermine pas à elle seule un parent métier.\n\nBénéfice des six axes : besoins, apports, état du stock, arbitrages et réalisation mieux distingués. Compromis à traiter : les exemples mêlent objets et capacités ; promesse, prévisions, capacités de prestations et responsabilités communes des Orders doivent rester explicites. Toutes les propositions de frontières et de placements sont en examen ; aucun accord, fusion, suppression ni couverture installée déduit."
+    },
+    {
+      "id": "CMP248",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp248",
+      "line": 2404,
+      "content_sha256": "5e77c5d71688e597d3a5fa4a2096ad252970da8b4903956ffc623a0538ac5e79",
+      "captured_text": "## CMP248\n\nU585/U586 — Codex, 22 septembre 2026. [Policy et projections de référence](../modeles/backlog/orchestration-areas-review-U584.yaml), [grille des types](../modeles/backlog/capability-types-U449.yaml). Relecture ELM410 Microsoft, Business background and purpose / Difference between inventory allocation and soft reservation, et réutilisation de la consultation ELM603 Fluent du même jour. Microsoft expose protections par groupe/canal et événements promotionnels ; Fluent maintient les configurations utilisées par l'orchestration.\n\nAppui fonctionnel à un cadre de règles applicable, distinct du calcul d'une réponse. Le type de capacité Policy est demandé U586 ; ces sources n'en font pas un standard taxonomique. Définition proposée : définir, maintenir et rendre applicables les règles maîtrisées par le Domain. Bénéfice : séparer projections externes et règles internes, puis distinguer leur gouvernance des décisions et plans consommateurs. Compromis : préciser les propriétaires et les délégations de modification, sans une capacité par paramètre. Protéger les Backing Services signifie encadrer leur charge et leur sollicitation dans cette proposition, pas administrer techniquement WMS/TMS ni inventer leur capacité. Aucun reclassement automatique de Supply Protection, aucune perte d'autorité locale U479."
+    },
+    {
+      "id": "CMP249",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp249",
+      "line": 2410,
+      "content_sha256": "a85c600b33fb71c94ff95e8e27522efd305e49c186f969dcc06251c0063c7bb1",
+      "captured_text": "## CMP249\n\nU585 — Codex, 22 septembre 2026. [Effets du plan](../modeles/backlog/orchestration-areas-review-U584.yaml). ELM434 Microsoft Order promising relu (méthodes, ATP calculations, CTP calculations) et ELM604 Oracle 26A consulté. Microsoft distingue disponibilité et capacité mobilisée ; Oracle fractionne la couverture entre lieux, dates et substitutions autorisées. Ce sont des distinctions fonctionnelles utiles, pas une obligation d'urbaniser en trois capacités ATP/CTP/PTP.\n\nRecommandation FLOW : rendre les capacités lisibles par leurs résultats métier, conserver couverture réalisable, adaptations et arbitrage économique dans les décisions mobilisées par le plan, sans supprimer leurs différences. Achats, révisions des demandes et des protections deviennent des effets explicitement étudiés. Le cas B2B/eCommerce est cohérent avec les protections ELM410, mais un calcul conjoint universel des quotas n'est pas démontré. Proposition, quantité couverte, obligation de vente et engagement restent distincts. Aucun nom détaillé, déplacement ou fusion canonique adopté."
+    },
+    {
+      "id": "CMP250",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp250",
+      "line": 2416,
+      "content_sha256": "5075905c8852bc4136778002dcbf3a9a1a9b569fc5e79ec1b51854cac42983e2",
+      "captured_text": "## CMP250\n\nU585 — Codex, 22 septembre 2026. Rapprochement de Fulfillment Orchestration avec le case management. ELM011 / MKT10 : [OMG CMMN 1.1](https://www.omg.org/spec/CMMN/1.1/PDF), décembre 2016, formal/2016-12-01, §4.1 pages imprimées 5–6 et §5.4.9.2 page 41, relus ; ELM605 Flowable consulté. Dossier orienté résultat, contexte et évolution des activités selon événements, tâches prévues et discrétionnaires ; Flowable illustre l'articulation humain, service, décision et processus.\n\nAppui méthodologique aux principes établis du case management pour l'adaptation des prestations ; le dossier ne se limite pas aux seules exceptions. Interprétation FLOW : conduire la réalisation selon son contexte, mobiliser décisions et activités utiles, réexaminer couverture ou engagement quand l'effet l'exige. Bénéfice : adaptation lisible sans workflow figé. Limites : toute orchestration n'est pas automatiquement du case management ; ni conformité CMMN, ni moteur, ni supériorité universelle ou couverture installée démontrée. Le Domain courant et U472 sont conservés."
+    },
+    {
+      "id": "CMP251",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp251",
+      "line": 2422,
+      "content_sha256": "824a5090d4c45b4cb089620254982c5fa1eead593bee80b4b0d7e4fe454fcf64",
+      "captured_text": "## CMP251\n\nU587 — Codex, 22 septembre 2026. [Backing Service Policy dans la proposition courante](../modeles/backlog/orchestration-areas-review-U584.yaml), capacité de type Policy sous l'Area proposée Policy Management. D14 et TER075 décrivent déjà une offre physique, humaine ou numérique ; Laurent précise que ses fournisseurs sont principalement logistiques, sans exclusivité, et demande des règles propres à Supply d'exclusion et de limitation des commandes face aux difficultés.\n\nELM606 Oracle OTM 24A étaye l'exclusion de prestataires inactifs des choix de planification concernés, selon une option explicite de cette édition. ELM607 Oracle OTM 26B étaye les plafonds d'expéditions par prestataire, équipement, trajet et période. Deux documents primaires distincts du même éditeur : recouvrements partiels du cas transport, sans consensus de nom ou de type de capacité. Le déclenchement par difficultés observées est l'intention FLOW ; les sources n'établissent pas une décision automatique depuis des KPI ni la suppression d'engagements existants.\n\nBénéfice : séparer l'offre disponible au catalogue et notre autorisation de l'utiliser. La politique gouverne le recours, la visibilité expose les faits, la décision de sélection applique les restrictions et les Backing Service Orders tiennent les engagements. Exemple proposé : plafond Supply de 200 préparations malgré une capacité annoncée de 1 000, après difficultés constatées. Compromis : expliciter portée, période, unité de limitation et règle de révision ; ne pas confondre capacité physique, capacité restante et plafond local. Aucun prestataire réel, incident Beaumanoir, nouveau niveau hiérarchique ou reclassement canonique inventé."
+    },
+    {
+      "id": "CMP252",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp252",
+      "line": 2430,
+      "content_sha256": "14163c820747f2559eafc9634b91c0d88684a23804ed1dcae1dc7f0eb8f1f5dd",
+      "captured_text": "## CMP252\n\nU588 — Codex, 22 septembre 2026. [Réexamen lexical](../modeles/backlog/orchestration-areas-review-U584.yaml), section naming_review_U588. ELM608/609 attestent Backing Service en architecture applicative Twelve-Factor, repris par Microsoft .NET. Sa portée FLOW physique, humaine ou numérique est une adaptation ; les comparaisons actuelles TER075 avec Field Service/Camunda étayent des responsabilités, pas ce nom exact comme vocabulaire logistique.\n\nELM606/607/610 OTM étayent exclusions, plafonds et terme Service Provider. Ils n'attestent pas le composé Backing Service Policy ; ce constat borné n'établit pas une absence sur tout le marché. Recommandation Codex : Service pour la prestation, Service Provider pour le fournisseur, Service Catalog pour le référentiel et Service Provider Policy pour les règles de recours. Le dernier nom est une composition FLOW proposée, pas un intitulé standard démontré.\n\nBénéfice : vocabulaire plus directement métier et moindre ambiguïté IT. Compromis : Service demeure générique ; la définition doit conserver prestation, résultat et engagements. La politique doit couvrir fournisseur et prestations contextualisées, sans se réduire au blocage global du fournisseur. Aucun remplacement des noms courants, nouvelle maîtrise d'entreprise ou nouvelle capacité canonique déduit de la question.\n\nSuite U590 — Laurent adopte les noms présentés : Service, Service Provider, Service Catalog et Service Provider Policy. Application au backlog et à la proposition de politique le 22 septembre 2026 ; aucune extension de l'accord aux descriptions ou aux rapprochements marché. ELM606 et ELM610 Oracle relus, ainsi que ELM397 Microsoft : fournisseur et prestation restent distincts ; Service Provider Policy demeure une composition FLOW. Service Provider est explicité comme rôle dans le glossaire, sans nouvelle capacité ni changement de maîtrise. La commande de prestation conserve son nom antérieur, absent de la table soumise. Le constat U588 ci-dessus reste historique."
+    },
+    {
+      "id": "CMP253",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp253",
+      "line": 2440,
+      "content_sha256": "c0ed07acc547de12160ec410d17341078d3bd8b6e56ad47302aba2c8f494fdaf",
+      "captured_text": "## CMP253\n\nU589 — Codex, 22 septembre 2026. [Diagnostic ciblé des frontières](../modeles/backlog/orchestration-areas-review-U584.yaml), boundary_assessment_U589. ELM601 Oracle Transfer Orders 25C relu directement : demande et apport sont portés par le même document. ELM602 Fluent Source Order Items réutilisé depuis le texte primaire indexé consulté dans cette discussion ; nouvelle ouverture directe en échec. La fonction produit combine sourcing et réaffectation après manque au prélèvement. Ces constats justifient d'examiner les interactions, sans adopter les frontières des modules logiciels.\n\nInterprétation FLOW : la finalité du Domain reste claire, mais les maîtres externes ne couvrent pas ses politiques propres U585. Les axes d'Areas sont cohérents ; propriétaires des Orders à plusieurs effets, décisions de couverture/réalisation, promesse et réservation restent à préciser. Références/Policy et apports/position de stock disposent d'une distinction de principe lisible. La fréquence et l'ordre temporel ne déterminent pas à eux seuls le parent d'une décision réutilisée.\n\nBénéfice recommandé : attribuer chaque résultat à une responsabilité unique et décrire les coopérations. Compromis : des Areas interdépendantes, sans prétendre supprimer leurs interactions ou les isoler techniquement. Aucune hiérarchie en sept Areas imposée par les sources ; aucune migration ni réouverture de l'audit des comportements. La proposition et le catalogue canonique conservent des maturités différentes, explicitement signalées."
+    },
+    {
+      "id": "CMP254",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp254",
+      "line": 2448,
+      "content_sha256": "c530af03dccc09e15ff5fe67c2bd22c710f9a9698812fd219d1335ec5c143442",
+      "captured_text": "## CMP254\n\nU591/U592, C114 — Codex, 22 septembre 2026. [Frontière courante plan / Fulfillment](../modeles/backlog/orchestration-areas-review-U584.yaml), plan_fulfillment_boundary_U592. Laurent fixe le début d'exécution comme limite de la modification du contenu par l'arbitrage ; la fermeté n'empêche pas une révision, voire un désaffermissement. U591 demeure pour l'adaptation du plan d'exécution, le split de la Logistic Order et le suivi des deux suites par la demande initiale.\n\nELM602 Fluent Source Order Items : texte primaire indexé relu, édition modifiée le 17 juin 2026, How it Works / Short-Pick Reallocation ; ouverture directe en échec. Appui fonctionnel à la reprise des articles manquants depuis un autre lieu et aux limites de split. ELM604 Oracle Split or Substitute Fulfillment Lines, 26A, directement relu : Introduction, Split a Warehouse, Consider Dates. Appui au fractionnement avant réalisation dans Promising, selon permissions. Deux documents primaires distincts : le même mécanisme de split peut servir plusieurs responsabilités ; il ne détermine pas seul l'Area.\n\nInterprétation FLOW : distinguer retouche du contenu de la demande et adaptation de sa réalisation. Bénéfice : un manque partiel ne renvoie pas systématiquement tout le dossier à l'arbitrage ; une demande ferme non exécutée reste révisable. Compromis : définir le début d'exécution, la maille en cas de réalisation partielle, les marges et conséquences d'une révision. Les sources ne démontrent ni une règle universelle de désaffermissement, ni le nom Logistic Order, ni une filiation documentaire imposée. Le critère de frontière vient de Laurent ; les rédactions et modalités détaillées restent proposées. Aucune nouvelle capacité, réalisation installée ou migration canonique déduite.\n\nSuite U593 — Laurent adopte le terme Re-sourcing présenté pour la reprise depuis une autre source. ELM602 Fluent documente la réaffectation après manque et mentionne Partial Fulfillments and Re-Sourcing dans son cadre fonctionnel ; ELM604 Oracle reste un appui au split, sans équivalence de nom revendiquée. Bénéfice lexical : rendre lisible la recherche d'une source de remplacement, distincte du fractionnement et du suivi. Accord consigné dans terminology_adoption_U593 de l'annexe ; aucune nouvelle capacité ou maille de comportement déduite du nom."
+    },
+    {
+      "id": "CMP255",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp255",
+      "line": 2458,
+      "content_sha256": "78a3dc0dc3a7951433153779d65a4e5edf34186e0dd7e0dc79dc8e5a082356c6",
+      "captured_text": "## CMP255\n\nU594 — Codex, 22 septembre 2026. Diagnostic actualisé après U590–U593 dans [remaining_boundaries_U594](../modeles/backlog/orchestration-areas-review-U584.yaml). ELM601 Oracle Transfer Orders 25C relu : Introduction, document unique représentant demande et apport. ELM410 Microsoft Inventory Visibility inventory allocation relu : Business background and purpose, Difference between inventory allocation and soft reservation. Ce dernier distingue protection par groupe et réservation liée à une transaction ; il ne détermine pas une Area FLOW.\n\nLes deux documents primaires étayent des interactions différentes, sans fournir un découpage commun de capacités. Interprétation : la frontière de principe plan / Fulfillment est clarifiée ; restent à attribuer les Orders à plusieurs effets, la tenue des engagements et la responsabilité détaillée de Logistic Order. La réservation a déjà Inventory Management pour parent canonique (D02.c → D01) ; recommander de le conserver, avec coopérations explicites, au lieu de présenter ce placement comme absent. Service Capacity Visibility conserve aussi un ancrage existant D06.b dans Process Management, candidat à préserver dans Fulfillment.\n\nBénéfice : réduire le diagnostic aux responsabilités réellement non attribuées dans la proposition ; séparer critères opérationnels et choix de structure. Compromis : préciser les effets partagés sans dupliquer les cycles de vie. Demand pour la tenue d'engagement et Fulfillment pour la mission logistique restent des recommandations FLOW, non des conventions imposées par les sources ou des accords nouveaux. Aucun changement canonique ni migration déduit de la demande."
+    },
+    {
+      "id": "CMP256",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp256",
+      "line": 2466,
+      "content_sha256": "26085f1fd024deb9c06bac45449a67fc66a5cebf5bf45871d10c461e9385e9d3",
+      "captured_text": "## CMP256\n\nU595/U596 — Codex, 22 septembre 2026. [Étude des Orders de consignation](../modeles/backlog/consignment-orders-market-review-U595.yaml). Laurent clarifie que Transfer Order et retours sont des demandes ; elles portent besoins, exigences et promesse indépendamment de leur origine. Le point de responsabilité est résolu dans la proposition, sans migration canonique. L'étude porte sur les types et périmètres des demandes.\n\nELM611/615 SAP distinguent fill-up, issue, pick-up et return de consignation client. ELM406 Microsoft et ELM612 Oracle décrivent l'appel de stock fournisseur consigné, distinct d'un transfert immédiat de propriété. ELM613 Oracle Retail et ELM617 Fashion montrent que le régime consigné peut coexister avec des transferts : ni lieu externe ni propriété tierce ne suffisent à imposer un nouveau type de mouvement. Éditions et limites d'accès sont consignées dans l'étude ; aucun consensus documentaire unique déduit.\n\nU596 vise prioritairement le stock du client donneur d'ordre détenu chez nous. Les pages de consignation fournisseur ne suffisent pas à assimiler ce client à notre fournisseur de marchandises. Interprétation proposée : séparer demande de prise en charge/livraison/restitution, régime de stock et prestations de réalisation. D04.r/D01.h couvrent aujourd'hui fournisseur propriétaire et distributeur détenteur ; leur extension serait un changement de périmètre. Recommandation : garder Transfer Order pour son intention de déplacement et examiner les obligations propres de consignation ou de garde ; ni Order universel ni quatre capacités copiées des types SAP. Noms et maille restent à décider ; aucun nouveau Domain Commerce.\n\nPrécision U598 — Relecture canonique : Transfer Order porte déjà Initial Stocking, Continuous Replenishment, Inventory Rebalancing, Stock Consolidation et Order-Driven Transfer. Rééquilibrage n'est donc pas son unique intention décrite. Le régime consigné peut accompagner un déplacement (ELM613/617) sans transformer le transfert en demande universelle. D04.r couvre l'apport fournisseur consigné entrant, pas toute mise en consignation dans les deux sens ; ELM406/612 étayent ce point de vue. BHV065 Consignment Exit mobilise déjà Supplier Return, Sales Order ou Transfer Order selon l'issue ; les suites ne sont pas entièrement absentes, mais la demande spécifique de restitution du stock client U596 n'est pas explicitement établie. ELM611/615 distinguent reprise des invendus et retour après consommation ; ils ne justifient pas deux Orders pour « reprise » et « restitution » lorsqu'il s'agit de la même obligation vue par deux parties. Clarification de lecture et recommandation de cohérence, sans nouvelle adoption."
+    },
+    {
+      "id": "CMP257",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp257",
+      "line": 2476,
+      "content_sha256": "113357541cb7e31b8c692db5a5731306c5242549bcc30908cf184e794e963515",
+      "captured_text": "## CMP257\n\nU597 — Codex, 22 septembre 2026. Comparaison AFS/Fashion dans [l'étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). ELM614 AFS 6.5 atteste déjà la prise en compte de la consignation fournisseur dans ATP, ARun et les livraisons. ELM619 complète par un contrat d'interface AFS identifiant le stock consigné client. ELM616/617 Fashion documentent saisons, segmentation, affectation et circulation multisite du stock fournisseur consigné. Constat : continuité de la possibilité de mobiliser ce stock ; enrichissements Fashion documentés, sans déduire l'absence de leurs équivalents dans AFS.\n\nDifférence explicite entre éditions : ELM615 FMS 1.0 SP13 décrit l'usage d'ARun dans fill-up, issue et pick-up selon pertinence article/règles, tandis qu'ELM618 S/4HANA aATP 2025 FPS01 réserve Supply Assignment au fill-up KB. KE, KA et KR en sont exclus dans ce dernier passage. Cet écart exige une qualification de produit/version ; il ne prouve ni impossibilité d'exécuter les autres parcours ni règle universelle de migration.\n\nInterprétation pour FLOW : conserver les intentions et effets de propriété indépendamment du produit ; appliquer les règles d'admissibilité et d'affectation selon contexte. Pour le stock du client chez nous, qualifier la relation de prestation et les droits sur le stock avant de choisir une famille d'Order. Aucune différence de stratégie commerciale universelle AFS/Fashion ni couverture installée Beaumanoir établie. Recommandations de modèle en attente de décision ; aucune création automatique de capacité."
+    },
+    {
+      "id": "CMP258",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp258",
+      "line": 2484,
+      "content_sha256": "699f6f187be2664fd5e30439a8de75ec219069af7fa7a29a440ec9cb0948db0d",
+      "captured_text": "## CMP258\n\nU599 — Codex, 22 septembre 2026. Noms d'Orders de consignation, proposition dans naming_proposal_U599 de [l'étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). ELM612 Oracle Consigned Inventory 26A relu directement, section Consignment Order : nom court pour la demande de livraison sous accord, distinct de l'accord et de la consommation. ELM615 FMS Consignment Orders 1.0 SP13 relu par texte primaire indexé : fill-up, issue, pick-up et return ont des résultats distincts. Aucun vocabulaire unique interéditeurs démontré.\n\nRecommandation de nommage : Consignment Order pour l'apport/mise en consignation (nom Oracle, correspondant à l'intention fill-up SAP), Consignment Pick-up Order pour la reprise du stock resté consigné, Consignment Issue Order pour la consommation/cession, Consignment Return Order pour le retour après issue. La liste est une sélection FLOW de termes attestés dans deux contextes ; ce n'est ni une taxonomie commune ni une équivalence complète entre les processus fournisseur Oracle et client SAP. Consignment Order ne doit pas devenir le nom d'un Order universel portant les quatre intentions.\n\nBénéfice : retirer Replenishment évite de suggérer uniquement le réassort, alors que D04.r couvre aussi l'implantation ; conserver Pick-up distinct de Return préserve l'effet de propriété. Compromis : Issue doit être expliqué en français, et les perspectives fournisseur/client contextualisées. Pour la seule détention du stock d'un client, consommation/cession et retour après cession ne sont pas obligatoires. L'élargissement de D04.r au-delà de son périmètre fournisseur reste une décision distincte du nom. Aucun renommage canonique ni création de quatre capacités."
+    },
+    {
+      "id": "CMP259",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp259",
+      "line": 2493,
+      "content_sha256": "7e4e48284348f63472c35e2a0e6d94577ecf1cc4342410e071868b5b119ab285",
+      "captured_text": "## CMP259\n\nU600/U601 — Codex, 22 septembre 2026. Comparaison étendue dans competitor_review_U600 de [l’étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml). État comparé : D04.r conserve son nom et son périmètre fournisseur entrant ; les noms U599 sont des propositions. Relation : appui sémantique et recouvrement partiel, aucune équivalence globale de capacités. ELM406/612/615 relus ; ELM620–624 ajoutés, éditions et localisateurs conservés.\n\nConstat : le vocabulaire de mise en consignation varie entre SAP, Oracle, Microsoft, Infor M3 et IFS. Le nom actuel est attesté chez deux éditeurs. Les mots Return et Pick-up ne partagent pas partout la frontière SAP entre avant et après consommation. Les perspectives client et fournisseur sont explicites dans l’étude ; leur rapprochement n’en fait pas des processus identiques.\n\nRecommandation : Consignment Fill-up Order pour préciser l’intention d’alimentation, Consignment Pick-up Order pour la reprise des biens restés consignés ; Issue et Return demeurent candidats pour les autres intentions. Bénéfice : noms qualifiés et distinction d’effets ; compromis : vocabulaire SAP à expliquer, sans consensus interéditeurs. U601 corrige le mot d’U600, sans adopter la famille ni créer quatre capacités. La garde du stock client reste un périmètre à traiter explicitement. Aucune mutation canonique ; validation des noms encore attendue après comparaison."
+    },
+    {
+      "id": "CMP260",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp260",
+      "line": 2502,
+      "content_sha256": "fe48cd35948f381a995eacfc07cb256a810b1a8d4f96a2d110554386552f9f3d",
+      "captured_text": "## CMP260\n\nU602 — Codex, 22 septembre 2026. Mandat de vente et importance d’Issue dans [l’étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sales_mandate_U602. État comparé : proposition des Orders et cas client propriétaire U596 ; aucune mutation de D04.r. Appui sémantique et recouvrement partiel, pas équivalence documentaire.\n\nELM615 SAP FMS 1.0 SP13, Consignment Orders, section Consignment issue, texte primaire indexé relu : Issue documente le prélèvement du stock consigné dans le processus de vente. ELM613 Oracle Retail 21.0, Item Types, section Consignment and Concession Items, page primaire relue : vente de biens tiers selon des régimes aux effets distincts de propriété et de facturation. Cela appuie la distinction entre vente, possession et acquisition ; aucun régime Oracle n’est attribué au mandat de Laurent.\n\nU602 établit le mandat de vente ; la réserve de simple garde ne décrit plus son exemple. Recommandation FLOW : inclure Issue dans le périmètre, l’articuler avec Sales Order et appliquer ses effets via Inventory ; Fulfillment porte l’exécution. Bénéfice : suivre la vente du stock confié et les obligations envers le propriétaire sans confondre expédition et sortie du régime consigné. Limite : fait générateur et organisation des documents encore à définir ; définition proposée non réputée adoptée. Pas de chantier Commerce anticipé ni de quatre capacités automatiques."
+    },
+    {
+      "id": "CMP261",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp261",
+      "line": 2511,
+      "content_sha256": "26108940f4187474d70984fe98c4a695a62ea73d3ad1f2497fa4d8c0b400ad13",
+      "captured_text": "## CMP261\n\nU603 — Codex, 22 septembre 2026. Vérification SAP du cas U596/U602 ; [étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sap_use_case_U603. État comparé : proposition de famille et mandat de vente confirmé, aucun changement canonique. Relation : recouvrement partiel et appui sémantique ; pas équivalence de capacité ni validation contractuelle.\n\nELM625 décrit la consignation client standard avec transfert de propriété au détenteur lors d’Issue. ELM626 documente un agent externe livrant pour compte du propriétaire, avec document ED qualifié d’Issue. ELM627 confirme une génération depuis l’avis de livraison dans un scénario automobile. Versions et limites restent propres à chaque document ; aucune extension à AFS/Fashion installés.\n\nLe mandat de vendre justifie la pertinence d’Issue mais ne suffit pas à choisir le montage : acquisition par nous versus vente pour compte sans acquisition. Le scénario agent éclaire la séparation propriétaire/détenteur/acheteur ; il ne démontre pas la délégation commerciale complète. Recommandation : retenir l’intention d’Issue et qualifier ses effets et sa filiation à la demande commerciale. Bénéfice : préserver le sens métier sans assimiler Issue à une expédition ni créer un deuxième besoin. Limite : une génération documentaire après exécution ne justifie pas automatiquement une capacité de demande autonome. Correspondance proposée, non validée."
+    },
+    {
+      "id": "CMP262",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp262",
+      "line": 2520,
+      "content_sha256": "49d823c32c4d8769bd38f75b21081ef0018ca3f5d3b3788cc2022fada7e1b1b6",
+      "captured_text": "## CMP262\n\nU604/U606 — Codex, 22 septembre 2026. [Étude U595](../modeles/backlog/consignment-orders-market-review-U595.yaml), sales_order_issue_review_U606. État comparé : Sales Order D04.i existant et Consignment Issue Order proposé ; relation d’appui sémantique, pas équivalence documentaire/capacité.\n\nELM628 situe Issue dans les types de Sales Order ; ELM629 montre ses suites de livraison, stock et facturation ; ELM630 sa création sur déclaration de ventes/consommations. Versions et passages propres conservés. Le document ne se limite pas au juridique, et la vente finale ne se confond pas avec l’obligation entre consignateur et détenteur.\n\nRecommandation : garder l’intention de vente sous Sales Order, distinguer ses variantes de consignation et faire appliquer les effets de propriété par Inventory. Un document Issue peut matérialiser une obligation sans justifier une deuxième capacité de demande. Bénéfice : éviter le doublon de besoin et préserver les responsabilités ; compromis : parties, faits générateurs et liens documentaires doivent être explicites. Deux variantes U604 conservées sans sous-comportements ni noms automatiquement validés. C117 corrige la conclusion antérieure ; recommandation en attente de décision, aucun changement canonique.\n\n\nPrécision CMP262 — U607 adopte Consignment Issue comme comportement de Sales Order. BHV096 et REL-BEHAVIOR-BHV096 portent le nom, la nature et le parent ; les descriptions et comparaisons restent proposées. ELM628/629 effectivement relus lors d’U606 sont exposés sur la fiche. Deux documents SAP étayent ce choix sans consensus interéditeurs présumé. Les modalités acquisition pour revente et vente pour compte restent décrites sans sous-comportements.\n\n\nPrécision U608 — Le critère FLOW part de l’intention de l’acteur déclencheur et du résultat attendu. ELM628/629 montrent pourquoi catégorie/type documentaire et capacité métier ne se confondent pas. Cette règle de modélisation ne prétend pas être une prescription SAP ; elle justifie le comportement U607 sans générer une seconde demande à partir d’un effet juridique."
+    },
+    {
+      "id": "CMP263",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp263",
+      "line": 2535,
+      "content_sha256": "5730c89d928013d52ae30142f0336ef9cc37e5e6d742aa8a7fed63f64647db98",
+      "captured_text": "## CMP263\n\nU611 — Codex, 22 septembre 2026. [Étude des Orders](../modeles/backlog/consignment-orders-market-review-U595.yaml), goods_return_review_U611. État comparé : D04.l Customer Return et ses cinq comportements ; D04.m Supplier Return distinct. Proposition Goods Return avec Customer Return / Consignment Return, Pick-up distinct. Relation : appui sémantique et recouvrement partiel ; pas équivalence de taxonomie.\n\nELM615/625 SAP FMS/S/4 distinguent retour après Issue et reprise sans Issue. ELM631 SAP Business One emploie Goods Return côté fournisseur. ELM632 Microsoft rattache les retours après vente aux RMA avec plusieurs parcours ; ELM622 IFS atteste une RMA de consignation avant consommation pour défaut. Éditions et passages conservés ; aucune nomenclature universelle démontrée.\n\nRecommandation : regroupement par intention de retour après vente défendable ; qualifier Goods Return pour éviter son extension implicite aux fournisseurs. Consignment Return est aussi un retour client au sens large : préciser les variantes plutôt que présumer leur exclusivité. Pick-up reste une reprise de biens restés consignés, quel que soit l’acteur qui la demande. Bénéfice : intention commune et effets distincts ; compromis : nom général et réorganisation des cinq comportements existants, sans sous-comportements. Aucun renommage, suppression de comportement ni fusion de Supplier Return effectué. Proposition en attente de décision après comparaison."
+    },
+    {
+      "id": "CMP264",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp264",
+      "line": 2544,
+      "content_sha256": "dbf5cdc362918ca2e09e9f189fe8e30aa941a169381a6d15b98a434c93308032",
+      "captured_text": "## CMP264\n\nU612 — Codex, 22 septembre 2026. D04.l renommé Return Order, comportements BHV050–054 conservés. ELM632 Microsoft Sales returns directement relu : demande initiale, suites possibles et distinctions entre autorisation, crédit et traitement. Les appuis SAP ELM455 et Microsoft ELM438 de la fiche restent conservés ; nouvelle correspondance Microsoft ajoutée sur la fiche. Relation : appui sémantique, pas équivalence de modèle de capacités.\n\nLa préférence pour Microsoft exprime le choix FLOW de partir de l’intention, non une supériorité universelle prouvée. Return Order évite l’évocation B2C ressentie par Laurent, bien que Customer ne soit pas limité au B2C chez les éditeurs. Bénéfice : stabilité des comportements dans les contextes B2C, wholesale et consignation. Contrat et autorisations déterminent les suites applicables, dont réparation pour compte du fournisseur ; aucune règle ni déploiement inféré. U611 est dépassé : pas de subdivision Customer Return / Consignment Return. Pas de fusion implicite de Supplier Return. Nom retenu U612 ; prose détaillée éditoriale."
+    },
+    {
+      "id": "CMP265",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp265",
+      "line": 2551,
+      "content_sha256": "d9665c6250507e183d290642bc1abee6ce214777bab1d43a2eec8545c4543f4e",
+      "captured_text": "## CMP265\n\nU620/U621 — Codex, 22 septembre 2026. État comparé : MOD013 et hiérarchie Domain → Area → Capability → Behavior du backlog courant. ELM633–642 : SAP RBA, DDD (Nick Tune et Microsoft), TOGAF, Guild, BIAN, APQC, IBM CBM, LeanIX et Ardoq. Relation : appuis méthodologiques et recouvrements partiels, sans équivalence des niveaux.\n\nLe regroupement intermédiaire répond selon les méthodes à une présentation, une décomposition de capacité ou une partition de responsabilités. Proposition FLOW : conserver Area comme périmètre cohérent de responsabilités, avec finalité, exclusions et échanges explicites. Bénéfice : éprouver la répartition avant les capacités. Compromis : définition locale à maintenir ; aucun bounded context, objet unique, processus, organe ou module imposé. U618 sur l’Area unique référentiels/policies reste acquis. Recommandation non adoptée, aucune modification canonique. [Sources, comparaison et tests](etudes/2026-09-22-area-level.md) ; [annexe structurée](../modeles/backlog/area-level-market-study-U620.yaml)."
     },
     {
       "id": "CMP003",
@@ -17529,6 +18137,350 @@
       "line": 4871,
       "content_sha256": "1353e30e238c089d0a427993cbedd51de054020574ce67067d9bfc3d77f1fe18",
       "captured_text": "### ELM599\n\nMKT20 — [Run a Supply Plan or an Integrated Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/run-a-supply-plan-or-an-integrated-plan.html). Oracle ; 26B. Consulté le 22 septembre 2026. Passage : Introduction ; Scope Options. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.\n\nReformulation : Demand and Supply Plan désigne un plan intégré combinant prévisions et planification de supply. Limite : Appui au terme Planning et à un périmètre intégré, pas au nom exact Demand & Supply Optimization. Synthèse et lien ; CMP245."
+    },
+    {
+      "id": "ELM600",
+      "path": "marche/elements.md",
+      "anchor": "elm600",
+      "line": 4877,
+      "content_sha256": "cbbd52d205ea7e216c97a091f450ecb5ac4b24c93a6774e2ca9f0ad326e67b5e",
+      "captured_text": "### ELM600\n\nMKT14 — [Inventory forecasts](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/inventory-forecast). Microsoft Dynamics 365 SCM ; documentation évolutive, édition non indiquée. Consulté le 22 septembre 2026. Passages : introduction, Supply forecast lines, Demand forecast lines, Inventory forecast. Nature : fonctions produit ; identifiant natif non indiqué.\n\nReformulation : distinguer besoins prévisionnels, apports prévisionnels et position de stock résultante. Appui partiel aux frontières Demand/Supply/Inventory ; aucun découpage métier universel ni ajout canonique. CMP247 ; localisateurs et limites dans l'annexe U584."
+    },
+    {
+      "id": "ELM601",
+      "path": "marche/elements.md",
+      "anchor": "elm601",
+      "line": 4883,
+      "content_sha256": "aa24cfb9191d6601271f2e9a1d0ac20ba1855737cd18aa9f1672913fb49c667a",
+      "captured_text": "### ELM601\n\nMKT20 — [Setup of Interorganization Parameters for Transfer Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/faims/setup-of-interorganization-parameters-for-transfer-orders.html). Oracle Fusion Cloud SCM 25C ; consulté le 22 septembre 2026. Passages : introduction et paramètres interorganisations. Nature : document métier dans un produit ; identifiant natif non indiqué.\n\nReformulation : un Transfer Order porte demande et apport dans un même document entre origine et destination. Appui à deux lectures liées d'une opération ; aucune duplication de capacité ni organisation logicielle imposée. Version consultée sans prétention de dernière édition. CMP247."
+    },
+    {
+      "id": "ELM602",
+      "path": "marche/elements.md",
+      "anchor": "elm602",
+      "line": 4889,
+      "content_sha256": "d5f4d119e99141b63d444add31c13f5270204d0619f0e5ecca069f899e4bb154",
+      "captured_text": "### ELM602\n\nMKT77 — [Source Order Items](https://docs.fluentcommerce.com/by-type/source-order-items). Fluent Commerce ; documentation évolutive, Changed on 17 June 2026. Texte primaire indexé consulté le 22 septembre 2026 ; ouverture directe échouée. Passages : Overview, How it Works, Multi-Location Sourcing, Split Limit Constraints, Short-Pick Reallocation. Nature : fonctionnalité de produit ; identifiant natif non indiqué.\n\nReformulation : sélectionner des lieux, limiter le fractionnement et réaffecter après manque au prélèvement. La fonction combine choix et adaptation ; elle ne prescrit pas le parent FLOW de chaque décision. CMP247."
+    },
+    {
+      "id": "ELM603",
+      "path": "marche/elements.md",
+      "anchor": "elm603",
+      "line": 4895,
+      "content_sha256": "4faac1e58a7abda41ecc785aebc194673f008cdbd551355773682a4d867bcfff",
+      "captured_text": "### ELM603\n\nMKT77 — [Manage Sourcing Profiles](https://docs.fluentcommerce.com/by-type/manage-sourcing-profiles). Fluent Commerce ; documentation évolutive, Changed on 17 June 2026. Texte primaire directement consulté le 22 septembre 2026. Passages : Overview, How it Works, Default Parameter Controls, Workflow Automation Integration. Nature : configuration produit ; identifiant natif non indiqué.\n\nReformulation : maintenir et activer les configurations de réseaux, catalogues et limites utilisées par l'orchestration. Appui partiel à la distinction politique/décision ; aucune preuve d'un regroupement universel avec tous les référentiels. CMP247."
+    },
+    {
+      "id": "ELM604",
+      "path": "marche/elements.md",
+      "anchor": "elm604",
+      "line": 4901,
+      "content_sha256": "1f38bd18b35cdcf2922876cda3600484c91aa04c2e6432267a923ff07991fbe8",
+      "captured_text": "### ELM604\n\nMKT20 — [Split or Substitute Fulfillment Lines](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html), Oracle Fusion Cloud SCM 26A, consulté le 22 septembre 2026. Passages : introduction, Split a Warehouse, Substitute the Item, Consider Dates. Nature : fonction produit ; identifiant natif non indiqué.\n\nReformulation : fractionner la couverture entre lieux, articles ou dates selon les permissions applicables à la ligne. Appui aux effets métier présentés U585 ; ne démontre pas une réduction de l'obligation de vente initiale ni une capacité autonome par fonction. CMP249."
+    },
+    {
+      "id": "ELM605",
+      "path": "marche/elements.md",
+      "anchor": "elm605",
+      "line": 4907,
+      "content_sha256": "4362a75a05ef22d265ec052d218ca799a16449c9aa4d425f6ab5a20c9b5f59bf",
+      "captured_text": "### ELM605\n\nMKT78 — [CMMN 1.1](https://www.flowable.com/open-source/docs/cmmn/ch06-cmmn), Flowable open source documentation, consulté le 22 septembre 2026 ; version du moteur non fixée par la page. Passages : Human task, Java Service task, Decision task, Process task, Criteria, Sentry evaluation. Nature : langage et mécanismes d'un moteur ; identifiant natif de capacité non indiqué.\n\nReformulation : les tâches humaines, automatiques, décisionnelles et processus appelés sont mobilisés selon critères et événements du cas. Limite : constructions CMMN et extensions Flowable distinguées ; ni technologie imposée ni preuve d'état de l'art global. CMP250."
+    },
+    {
+      "id": "ELM606",
+      "path": "marche/elements.md",
+      "anchor": "elm606",
+      "line": 4913,
+      "content_sha256": "b59987c159be948d526ef8b825fa1a45f116890cafb81c53308291a5632d4930",
+      "captured_text": "### ELM606\n\nMKT40 — [Active/Inactive Flag Added to Service Provider](https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm), Oracle Transportation Management 24A. Consulté le 22 septembre 2026, introduction, Business Benefit, Steps to Enable. Nature : règle de recours à un prestataire dans un produit ; identifiant natif non indiqué.\n\nReformulation : exclure les prestataires inactifs des opérations de planification et recherche/recalcul tarifaire concernées, avec l'option FIND RATES OF ACTIVE SERVPROV ONLY en 24A. Limites : ni automatisme depuis des difficultés observées, ni annulation d'engagements établis démontrés. Appui partiel à Backing Service Policy, CMP251."
+    },
+    {
+      "id": "ELM607",
+      "path": "marche/elements.md",
+      "anchor": "elm607",
+      "line": 4919,
+      "content_sha256": "7e71dfd2355cd15e38c12245cb852cfa5270b35ea4837e9d3f0d0a6ffe6d06ab",
+      "captured_text": "### ELM607\n\nMKT40 — [Capacity Limit](https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm), Oracle Transportation Management 26B. Consulté le 22 septembre 2026, Using A Capacity Limit, Recurring Capacity. Nature : contrainte de planification transport ; identifiant natif non indiqué.\n\nReformulation : limiter les expéditions pour un prestataire, un type d'équipement, éventuellement un trajet et une période. L'exemple limite à cinq expéditions et empêche la sixième faute de capacité. Limites : ne démontre pas la maîtrise Supply d'une politique ni la dérivation automatique d'un plafond depuis des incidents. CMP251."
+    },
+    {
+      "id": "ELM608",
+      "path": "marche/elements.md",
+      "anchor": "elm608",
+      "line": 4925,
+      "content_sha256": "6a9cb31f953ad1b02525fb8d73fffa352058475277ccf7044863e476242c8c43",
+      "captured_text": "### ELM608\n\nMKT79 — [The Twelve-Factor App — IV. Backing services](https://www.12factor.net/backing-services), Adam Wiggins ; page affichant Last updated 2017. Consulté le 22 septembre 2026, définition, exemples et ressources attachées. Nature : concept d'architecture applicative ; identifiant natif IV.\n\nReformulation : service consommé par une application sur le réseau ; exemples de stockage, files de messages et caches. Limite : ne définit pas les prestations logistiques physiques du Domain. Appui lexical et différence de portée, CMP252."
+    },
+    {
+      "id": "ELM609",
+      "path": "marche/elements.md",
+      "anchor": "elm609",
+      "line": 4931,
+      "content_sha256": "4d6526859912196e069e9430977804b248d4321e2a423a37f0d72d6bd1fdbb7f",
+      "captured_text": "### ELM609\n\nMKT79 — [What is Cloud Native?](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition), Microsoft .NET, documentation évolutive. Consulté le 22 septembre 2026, The Twelve-Factor Application, table facteurs 4 et 6. Nature : reprise documentaire d'une méthode ; identifiant natif non indiqué.\n\nReformulation : Backing Services désigne des ressources applicatives externes et adressables. Limite : reprise explicite de Twelve-Factor, sans preuve indépendante d'un sens métier logistique ni nomenclature de Policy. CMP252."
+    },
+    {
+      "id": "ELM610",
+      "path": "marche/elements.md",
+      "anchor": "elm610",
+      "line": 4937,
+      "content_sha256": "853a4d38cfaa8428803707e03f0b751f7e9861cb46de106c67095a79c5bef4ac",
+      "captured_text": "### ELM610\n\nMKT40 — [Service Provider Assignment and Resource Management](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/capacity_manager/carrier_assignment_and_resource_management.htm), Oracle Transportation Management 25C. Consulté le 22 septembre 2026, Assigning Carrier and Equipment, Service Provider Assignment, Capacity Limits. Nature : décision et contraintes de planification transport ; identifiant natif non indiqué.\n\nReformulation : choix de prestataire et d'équipement selon contraintes de coût, délais, disponibilité et engagements ; noms Service Provider, Capacity Limits et Carrier Commitment attestés. Limite : la source ne nomme pas la capacité Service Provider Policy ; ce composé reste une adaptation FLOW proposée. CMP252."
+    },
+    {
+      "id": "ELM611",
+      "path": "marche/elements.md",
+      "anchor": "elm611",
+      "line": 4944,
+      "content_sha256": "81223bc3cfb964f470ec633f374f27981f68162e1394a6a2ef8923d10d609fef",
+      "captured_text": "### ELM611\n\nMKT13 — [Customer Consignment](https://help.sap.com/docs/s4hana-cloud-best-practices/extended-intercompany-processes-for-sales-1wo-qa/customer-consignment). SAP S/4HANA Best Practices ; Scope item 1WO_QA ; édition non affichée dans le texte indexé. Consulté le 22 septembre 2026. Passages : Customer Consignment. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.\n\nReformulation : Distingue fill-up sans transfert de propriété, issue à la consommation/vente, pick-up des invendus et return après issue. Limites : Consignation de nos marchandises chez un client ; ne décrit pas la détention du stock de notre client dans notre entrepôt. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM612",
+      "path": "marche/elements.md",
+      "anchor": "elm612",
+      "line": 4951,
+      "content_sha256": "18887d2a182c794455f054fd4de7b0c6c1a1f90443fbee46f16a2b0a37b31726",
+      "captured_text": "### ELM612\n\nMKT20 — [Consigned Inventory](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faims/consigned-inventory.html). Oracle Fusion Cloud SCM ; 26A. Consulté le 22 septembre 2026. Passages : Consignment Agreement ; Consignment Order ; Ship and Receive Items ; Consumption Advice. Accès : Page primaire directement lue.\n\nReformulation : Le demandeur appelle les marchandises sous accord de consignation ; réception et propriété fournisseur restent distinctes, puis avis de consommation et règlement. Limites : Point de vue acheteur/fournisseur ; ne démontre pas une prestation de garde du stock d’un client. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM613",
+      "path": "marche/elements.md",
+      "anchor": "elm613",
+      "line": 4958,
+      "content_sha256": "f7492411de80447b4ad474f31554c476d67a72586e6a1775a04fc0cc2c316bb7",
+      "captured_text": "### ELM613\n\nMKT32 — [Item Types](https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/21.0/rmsim/item-types.htm). Oracle Retail Merchandising Foundation Cloud Service ; 21.0, édition historique consultée. Consulté le 22 septembre 2026. Passages : Consignment and Concession Items. Accès : Page primaire directement lue.\n\nReformulation : Les articles consignés peuvent participer aux achats et transferts ; le régime de propriété est distinct de la transaction de déplacement. Consignation et concession sont également différenciées. Limites : Ne prouve ni une stratégie unique actuelle ni qu’un Transfer Order doit porter toute demande B2B. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM614",
+      "path": "marche/elements.md",
+      "anchor": "elm614",
+      "line": 4965,
+      "content_sha256": "47cff5d682f984bbac33b74f9e28d26a40302b2ffd28c34a4e0371e221166a44",
+      "captured_text": "### ELM614\n\nMKT80 — [Release Notes for SAP Apparel and Footwear 6.5](https://help.sap.com/doc/29d6d66f79a142b18a2014c7e54ff392/6.5/en-US/Release_Notes_SAP_AFS_65E.PDF). SAP Apparel and Footwear Solution ; AFS 6.5 / ECC 6.0 EHP5 ; copyright 2011. Consulté le 22 septembre 2026. Passages : §4.5.4, page imprimée 18, page PDF 22 (index 21). Accès : PDF primaire directement lu, passage textuel ciblé.\n\nReformulation : À partir d’AFS 6.5, le stock en consignation fournisseur peut être vendu directement et pris en compte par AFS ATP, Allocation Run et les livraisons sortantes. Limites : Ne décrit pas le paramétrage installé ni l’ensemble des parcours de consignation client. Pas de reproduction du document, protégé par copyright. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM615",
+      "path": "marche/elements.md",
+      "anchor": "elm615",
+      "line": 4972,
+      "content_sha256": "10403eadb24417e6d2a57408a474c8e5a1e0c145b79ee40da05190c41c998c82",
+      "captured_text": "### ELM615\n\nMKT81 — [Consignment Orders](https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html). SAP Fashion Management ; 1.0 SP13. Consulté le 22 septembre 2026. Passages : Use ; Process ; Consignment fill-up / issue / pick-up / return. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.\n\nReformulation : Les articles pertinents pour ARun mobilisent l’affectation dans la consignation client. Fill-up, issue et pick-up sont documentés ; return ne nécessite pas ARun. Le choix des stocks admissibles et le lancement immédiat dépendent du paramétrage. Limites : Fonctions FMS 1.0 SP13 ; ne pas les attribuer automatiquement à S/4HANA ni déduire quatre capacités de quatre documents. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM616",
+      "path": "marche/elements.md",
+      "anchor": "elm616",
+      "line": 4979,
+      "content_sha256": "7b2622c63ccab3d1c9ba3af6aec5f0dd12075fe84e78795de7e97c90fecaf7e7",
+      "captured_text": "### ELM616\n\nMKT81 — [Vendor Consignment](https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3daaa256c9006f15e10000000a441470.html?version=6.18.latest). SAP Fashion Management sur ERP ; ERP 6.0 EHP8, pointeur 6.18.latest ; prérequis FASHION_04. Consulté le 22 septembre 2026. Passages : Use ; Prerequisites ; Features. Accès : Texte primaire indexé lu.\n\nReformulation : Consignation fournisseur enrichie par saisons, segmentation et ARun ; affectation possible aux ventes/transferts et désaffectation automatique lors des retours de consignation fournisseur. Limites : Enrichissements attestés de Fashion ; le document ne prouve pas que toutes les dimensions étaient absentes d’AFS. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM617",
+      "path": "marche/elements.md",
+      "anchor": "elm617",
+      "line": 4986,
+      "content_sha256": "e1812468ceb3683560ec5caebd07523a249ce098a36f6a4380bbb507bf36fa5a",
+      "captured_text": "### ELM617\n\nMKT81 — [Vendor Consignment and Order Allocation Run](https://help.sap.com/docs/SAP_ERP/39615c43587c4405aba2de8ebf33cd66/3d06ece43a61456db4b9bcd2ca1b167e.html). SAP Fashion / Retail sur ERP ; ERP 6.0 EHP8 SPS02 ; EA-RETAIL 618 SP2 ; FASHION_04. Consulté le 22 septembre 2026. Passages : Use ; Technical Details ; Additional Details. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.\n\nReformulation : Le stock consigné est mobilisable pour l’affectation ; des déplacements entre sites et sociétés peuvent conserver la catégorie consignée et la propriété fournisseur jusqu’à la vente. Limites : Scénario de consignation fournisseur Retail ; ni toute circulation entre sociétés ni tout contrat de consignation ne suit nécessairement ce paramétrage. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM618",
+      "path": "marche/elements.md",
+      "anchor": "elm618",
+      "line": 4993,
+      "content_sha256": "b1265a20098da294d772697b64dbe25c7f4168e0f7cb3c494281fd9b2098380b",
+      "captured_text": "### ELM618\n\nMKT13 — [Customer Consignment Process](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/02084c34785749309d9dd5368b6a613a.html?locale=en-US). SAP S/4HANA aATP Supply Assignment ; 2025 FPS01, février 2026. Consulté le 22 septembre 2026. Passages : Customer Consignment Process with Supply Assignment (ARun) Relevant Materials. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.\n\nReformulation : Pour les articles concernés, seul le document de fill-up KB entre dans Supply Assignment ; KE, KA et KR en sont exclus dans cette documentation. Limites : Différence documentaire avec FMS 1.0 SP13 ; ne démontre pas seule toutes les règles de migration ni une incapacité à exécuter les autres parcours. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM619",
+      "path": "marche/elements.md",
+      "anchor": "elm619",
+      "line": 5000,
+      "content_sha256": "49e2ae4a8ba99655825135e7b7ddbf10d65315d8c3cc5fdaeef15f2547adbf9f",
+      "captured_text": "### ELM619\n\nMKT80 — [Check Material Supply And Demand Allocation Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/1dad2180e6f34b75ac77afce5cb5eda1/626fd75a5f8811dc2b8d000f20fcb6a9.html). SAP AFS Enterprise Services, IS-AFS-ARUN ; Composant P3A V605 ; documentation hébergée dans Enterprise Services 2025 FPS01. Consulté le 22 septembre 2026. Passages : Technical Data ; SupplyReference ; InventorySpecialStockTypeCode. Accès : Texte primaire indexé lu.\n\nReformulation : L’interface AFS d’affectation simulée distingue notamment le stock consigné chez le client et les catégories de stock/besoins. Limites : Contrat d’interface AFS identifié par composant et namespace ; son hébergement documentaire S/4HANA ne prouve pas un moteur AFS version 2025 ni le comportement complet de chaque Order. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM620",
+      "path": "marche/elements.md",
+      "anchor": "elm620",
+      "line": 5007,
+      "content_sha256": "69ee975167a0a39c7a817d742e987fb1b69ce3e8be93cf28d6a8fb5310405962",
+      "captured_text": "### ELM620\n\nMKT82 — [Consignment Stock](https://docs.infor.com/m3udi/16.x/en-us/m3beud/scexechs/mws020.html). M3 Business Engine, 16.x. Consulté le 22 septembre 2026. Passages : Terms used ; Replenishment ; Consumption ; Sell-back ; Claim of consignment goods. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.\n\nReformulation : Consignment replenishment order : apport fournisseur sans acquisition. Usage PO : achat à la consommation. Sell-back order : retour de propriété de notre stock au fournisseur ; ne pas confondre avec une reprise physique de biens non consommés. Limites : Consignation fournisseur entrante ; aucun processus complet de consignation client établi par cette page. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM621",
+      "path": "marche/elements.md",
+      "anchor": "elm621",
+      "line": 5014,
+      "content_sha256": "c707600234e0b6292d2bc1b94401684c7f8d93710edb4cd0b7e6a9a80a249dd5",
+      "captured_text": "### ELM621\n\nMKT83 — [Create Refill Order](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityCreateRefillOrder.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; System Effects. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.\n\nReformulation : Refill Order désigne une Customer Order alimentant le stock consigné chez le client. Limites : Documente le réapprovisionnement ; ne prouve pas que la première mise en place porte le même libellé. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM622",
+      "path": "marche/elements.md",
+      "anchor": "elm622",
+      "line": 5021,
+      "content_sha256": "592b3e3de80fc42e9aafc571a1e1cfc278637354ee673cc49ac860279562610c",
+      "captured_text": "### ELM622\n\nMKT83 — [Return or Scrap Customer Consignment Stock](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityReturnorScrapCustomerConsignmentStock.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; Prerequisites ; System Effects. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.\n\nReformulation : RMA de consignation pour retour de biens défectueux avant consommation ; crédit désactivé. Return peut donc désigner un retour de biens encore consignés. Limites : Cas documenté de défaut avant consommation, pas preuve de toutes les reprises commerciales. Titre retenu : H1 réel ; la métadonnée de page affiche Report Quantity Consumed. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM623",
+      "path": "marche/elements.md",
+      "anchor": "elm623",
+      "line": 5028,
+      "content_sha256": "4e5fedf3bd5766478acbc281df8fad342147fb230fd7fe7bdb96f6337d1660c8",
+      "captured_text": "### ELM623\n\nMKT83 — [Create Purchase Order from Arrival](https://docs.ifs.com/ifsclouddocs/25r2/Receipt/ActivityPOArrivalCreate.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; note customer-owned parts. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.\n\nReformulation : Une Purchase Order peut enregistrer après arrivée des biens appartenant au client ; le propriétaire est porté sur la ligne. Limites : Réemploi documentaire produit, sans assimilation de la détention pour compte client à un achat effectif. Ne définit pas une famille universelle d’Orders de garde. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM624",
+      "path": "marche/elements.md",
+      "anchor": "elm624",
+      "line": 5035,
+      "content_sha256": "32d930bcd3d88277eeb0a65fc99398743580c0f3214a646c821680103ed30baf",
+      "captured_text": "### ELM624\n\nMKT20 — [Examples of Consigned Inventory Returns](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html). Fusion Cloud SCM, 25D. Consulté le 22 septembre 2026. Passages : Material Received and Put Away ; Material Consumed, advice generated or not. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.\n\nReformulation : Return to supplier couvre des situations avant et après consommation ; état de propriété et avis de consommation déterminent les opérations et suites financières. Limites : Consignation fournisseur ; la page ne définit pas les quatre types d’Orders SAP. Édition 25D distincte de la présentation Oracle 26A ELM612. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM625",
+      "path": "marche/elements.md",
+      "anchor": "elm625",
+      "line": 5042,
+      "content_sha256": "f29601177573a4d4ab4fa9c62734cd4831c7abccfac91148fb8f2eadb3844327",
+      "captured_text": "### ELM625\n\nMKT13 — [Consignment Stock Processing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/da65b65334e6b54ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passages : Use ; Consignment Issue. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.\n\nReformulation : Le client détenteur peut utiliser ou revendre les biens. Issue lui en transfère la propriété et devient facturable. Limite : Point de vue du propriétaire fournisseur ; le client SAP correspond ici au détenteur, pas au client propriétaire décrit par Laurent. CMP261 et étude U595 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM626",
+      "path": "marche/elements.md",
+      "anchor": "elm626",
+      "line": 5049,
+      "content_sha256": "eb1d9851561cdcf34923671e8522625711c072c09128e38209db0cb1cfc8c305",
+      "captured_text": "### ELM626\n\nMKT13 — [Special Features for Consignment Processing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/c020bf53d25ab64ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passages : Introduction ; sales document type ED. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.\n\nReformulation : Des agents déclarent les livraisons réalisées au client pour le compte du propriétaire ; ED est nommé Delivery by external agent (consignment issue). Limite : Livraison pour compte documentée ; pas preuve d’un mandat commercial complet ni de sa réalisation dans le SI du mandataire. CMP261 et étude U595 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM627",
+      "path": "marche/elements.md",
+      "anchor": "elm627",
+      "line": 5056,
+      "content_sha256": "fd94fa7d90c808e530dbb21c1e67d7185f330d764a4e3fd3ed2c9f02412c6837",
+      "captured_text": "### ELM627\n\nMKT13 — [Create Consignment Issue Order with Reference to Scheduling Agreement Manually (non-JIT)](https://help.sap.com/docs/s4hana-cloud-best-practices/automotive-supply-to-customer-inventory-management-55f-ro/create-consignment-issue-order-with-reference-to-scheduling-agreement-manually-non-jit?locale=en-US&state=PRODUCTION&version=2608). S/4HANA Cloud Best Practices 2608 ; Automotive Supply to Customer – Inventory Management 55F_RO. Consulté le 22 septembre 2026. Passages : Note ; Purpose. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.\n\nReformulation : Issue est normalement généré depuis un avis de livraison de l’agent ou du client ; la création manuelle présentée sert aux tests. Limite : Scénario automobile à accord de livraison ; ne prouve ni processus Fashion identique ni demande indépendante émise avant exécution. CMP261 et étude U595 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM628",
+      "path": "marche/elements.md",
+      "anchor": "elm628",
+      "line": 5063,
+      "content_sha256": "b15ad8f0cbb1dd4cdcac4d054252f0bf7050c41b8905771deb344942aeb2be4c",
+      "captured_text": "### ELM628\n\nMKT13 — [Sales Documents](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/aa64b65334e6b54ce10000000a174cb4.html). S/4HANA Cloud Public Edition, Sales 2608 Latest. Consulté le 22 septembre 2026. Passage : Concepts / Sales Document Types. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.\n\nReformulation : Consignment Issue et Fill-up sont des exemples de types de Sales Order ; le type détermine données, contrôles et suites. Limite : Taxonomie documentaire SAP ; ne détermine pas la maille des capacités FLOW. CMP262 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM629",
+      "path": "marche/elements.md",
+      "anchor": "elm629",
+      "line": 5070,
+      "content_sha256": "bc6750e3adf9267b6e38d5c8b34575dc9876005b2978db98e6cccf498836445d",
+      "captured_text": "### ELM629\n\nMKT13 — [Creating a Consignment Issue](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/e665b65334e6b54ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passage : Étapes 1, 4–6. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.\n\nReformulation : Création d’une Sales Order de consignation, suivie d’une livraison, d’une sortie de stock puis d’une facturation. Limite : Pas uniquement un document juridique ; ne prescrit pas deux demandes initiales concurrentes. CMP262 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM630",
+      "path": "marche/elements.md",
+      "anchor": "elm630",
+      "line": 5077,
+      "content_sha256": "b1056e92663acfb5fd4870a568abb54b1e71b308178c6f9bdc30874ad6288ff6",
+      "captured_text": "### ELM630\n\nMKT13 — [Create Consignment Issue Order](https://help.sap.com/docs/SAP_S4HANA_CLOUD_BEST_PRACTICES/9f5a580825ded5ac1ab823cac86b9f51/01da39ad1a084dd4939b361dacd11006.html?locale=en-US&state=PRODUCTION&version=2608). S/4HANA Cloud Best Practices 2608, Sales from Distribution Center 3HS_HU. Consulté le 22 septembre 2026. Passage : Purpose ; Procedure 2–7. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.\n\nReformulation : Après déclaration périodique des quantités vendues ou consommées, création d’une Sales Order de type CCIS pour documenter Issue et permettre la facturation. Limite : Perspective du consignateur ; la vente au client final et la relation consignateur/détenteur restent distinctes. CCIS propre à cette édition/scénario, pas renommage universel de KE. CMP262 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM631",
+      "path": "marche/elements.md",
+      "anchor": "elm631",
+      "line": 5084,
+      "content_sha256": "85cd6340aea65277f53edb66448dc4ee5b1a31680fd78c806ee08b830ef91cd9",
+      "captured_text": "### ELM631\n\nMKT84 — [Goods Return Request: Contents Tab](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/b3b60a16edfc4bafacc0fc7a1fd0766a.html). Business One, 10.0. Consulté le 22 septembre 2026. Passages : Introduction ; Quantity ; Return Reason. Texte primaire indexé lu. Nature : documents et processus produit ; aucun identifiant natif supplémentaire relevé.\n\nReformulation : Goods Return Request concerne les articles achetés et retournés au fournisseur. Limite : Usage lexical SAP Business One, pas SAP S/4HANA ni une taxonomie générale de capacités. CMP263 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM632",
+      "path": "marche/elements.md",
+      "anchor": "elm632",
+      "line": 5091,
+      "content_sha256": "0c771d0e1e8dfbbe3a13df71f591f987d9d36c39c6cae8bb149b89d5c81e2aac",
+      "captured_text": "### ELM632\n\nMKT14 — [Sales returns](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns). Dynamics 365 SCM, Documentation évolutive consultée le 22 septembre 2026. Consulté le 22 septembre 2026. Passages : Return order process ; Return material authorization. Texte primaire indexé lu. Nature : documents et processus produit ; aucun identifiant natif supplémentaire relevé.\n\nReformulation : La demande de retour client déclenche une Return Order/RMA. Les parcours physiques et Credit only sont distingués ; retour autorisé ne signifie pas acceptation ou crédit acquis. Limite : Appui à l’intention de retour après vente ; ne documente pas la famille exacte Goods Return / Customer Return / Consignment Return. CMP263 ; synthèse sélective et lien."
+    },
+    {
+      "id": "ELM633",
+      "path": "marche/elements.md",
+      "anchor": "elm633",
+      "line": 5098,
+      "content_sha256": "5e978aee8a27306c484cf9ea7fe83a1c56271f9fde248c4d1fe6e367eb9bedb6",
+      "captured_text": "### ELM633\n\nMKT04 — [SAP Reference Business Architecture: Business Domain → Business Area → Business Capability](https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/defining-business-architecture). Cours évolutif ; consulté le 22 septembre 2026. Consulté le 22 septembre 2026. Passage : Business Capability Model, niveaux 1–3 ; distinction avec Business Process Segment. Texte primaire ouvert.\n\nArea regroupe les capacités ; chaque capacité appartient à une Area puis à un Domain. SAP fixe trois niveaux de granularité. Limite : La structure est explicite ; elle ne fournit pas un test universel pour décider où couper une Area. Le Business Process Segment est un objet différent, même si son nom peut coïncider. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM634",
+      "path": "marche/elements.md",
+      "anchor": "elm634",
+      "line": 5105,
+      "content_sha256": "5ac24e2ba08a4985a13aadecea36ed1fe8dff7e9461422eafcf05038f46bfcf2",
+      "captured_text": "### ELM634\n\nMKT85 — [DDD — Nick Tune: Domain et Subdomain](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/). Article du 25 novembre 2020. Consulté le 22 septembre 2026. Passage : Subdomains ; Subdomains vs Bounded Contexts ; Problem Space vs Solution Space. Texte original de l’auteur ouvert.\n\nSubdomain est relatif : un domaine est qualifié de sous-domaine par rapport à son parent. Plusieurs découpages restent possibles. Limite : Point de vue argumenté d’un praticien, pas norme DDD. L’auteur conteste lui-même la séparation trop simple entre espaces du problème et de la solution. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM635",
+      "path": "marche/elements.md",
+      "anchor": "elm635",
+      "line": 5112,
+      "content_sha256": "a76e5172a2cdaf721c27822e7912077d3fbb48cfa801d78053968a2d8941d60e",
+      "captured_text": "### ELM635\n\nMKT69 — [Microsoft — analyse DDD: Subdomain / Bounded Context](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Documentation évolutive. Consulté le 22 septembre 2026. Passage : Analyze the domain ; Define bounded contexts. Texte primaire ouvert.\n\nIdentifier fonctions proches et dépendances pour dégager les sous-domaines. Le bounded context délimite l’application d’un modèle particulier. Limite : Guide orienté conception de microservices ; aucune obligation de convertir une Area FLOW en service logiciel. Core/supporting/generic qualifie l’importance stratégique, pas la profondeur. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM636",
+      "path": "marche/elements.md",
+      "anchor": "elm636",
+      "line": 5119,
+      "content_sha256": "652c5642ecfe8edb53ceb9b314f0be9d70930338ff71b671bf7b125fdd8aad85",
+      "captured_text": "### ELM636\n\nMKT01 — [The Open Group — TOGAF: Stratification / Leveling](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf). G189, juin 2018. Consulté le 22 septembre 2026. Passage : §§3.2.1–3.2.2, pages imprimées 9–10. Document primaire historique ouvert sur hébergement tiers.\n\nSépare classement en catégories et décomposition des capacités. La profondeur répond aux besoins des lecteurs et des décisions. Limite : Guide V2 sur le site officiel inaccessible pendant cette étude. Aucun détail de 2018 attribué automatiquement à une édition actuelle ; aucune classe Area imposée par ces passages. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM637",
+      "path": "marche/elements.md",
+      "anchor": "elm637",
+      "line": 5126,
+      "content_sha256": "d3f4bfe6740261353952c219ce92b8d4b3cd2caf104ce7618a00bff39520ec95",
+      "captured_text": "### ELM637\n\nMKT03 — [Business Architecture Guild: Capability decomposes into capability](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf). Metamodel Guide v3.0, septembre 2024. Consulté le 22 septembre 2026. Passage : §5.2, pages imprimées 17–18 ; §6.3, page 45. PDF primaire ouvert.\n\nDécomposition récursive de capacités centrées sur un objet métier. Les enfants restent dans le périmètre de l’objet parent. Limite : Livre blanc public, pas lecture intégrale du BIZBOK. FLOW distingue déjà Area et Capability ; une Area réunissant plusieurs objets ne doit pas être déclarée équivalente à cette décomposition. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM638",
+      "path": "marche/elements.md",
+      "anchor": "elm638",
+      "line": 5133,
+      "content_sha256": "49b46cf9afc61bc62a3e2aa4689e6ea10c7f573f001076005fe3f68ea47d7222",
+      "captured_text": "### ELM638\n\nMKT18 — [BIAN / Van Haren: Business Area → Business Domain → Service Domain](https://www.vanharen.net/wp-content/uploads/2026/02/syllabus-BIAN-Foundation-v3.8.pdf). Syllabus BIAN Foundation v3.8. Consulté le 22 septembre 2026. Passage : Key terms and concepts, pages imprimées 24–26. Syllabus primaire de certification ouvert.\n\nArea et Domain organisent la présentation du Service Landscape. Le Service Domain porte une responsabilité fonctionnelle élémentaire. Limite : Ordre Area/Domain inverse de SAP ; cadre bancaire. La structure de présentation ne suffit pas à attribuer une responsabilité opérationnelle au regroupement. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM639",
+      "path": "marche/elements.md",
+      "anchor": "elm639",
+      "line": 5140,
+      "content_sha256": "5fda45b7a1ae77fdaec7ab6dfee7a53f27fb3c52b3fbf1a884180e7a2961db66",
+      "captured_text": "### ELM639\n\nMKT07 — [APQC: Category → Process group → Process → Activity → Task](https://www.apqc.org/How-Can-Organizations-Classify-and-Organize-Their-Processes-Using-a-Common-Framework). Page créée septembre 2026 ; PCF 8.0 cité. Consulté le 22 septembre 2026. Passage : Common hierarchy ; paragraphes sur management, accountability, measurement et improvement. Texte primaire ouvert.\n\nLa catégorie regroupe les processus au plus haut niveau ; le groupe de processus contribue à cette catégorie. Le détail sert pilotage, mesure et amélioration. Limite : Taxonomie de processus ; Process Group ne devient pas automatiquement une Area de capacités. La page générale ne constitue pas une lecture du catalogue Retail complet. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM640",
+      "path": "marche/elements.md",
+      "anchor": "elm640",
+      "line": 5147,
+      "content_sha256": "9ae18dde3e0d7e59f6fca1cfa1d05bd5f646c9cda38b633b73542caf65f3e306",
+      "captured_text": "### ELM640\n\nMKT06 — [IBM Component Business Model: Business Competency × Accountability Level](https://public.dhe.ibm.com/software/emea/dk/frontlines/g510-6163-component-business-models.pdf). Publication historique, ©2005. Consulté le 22 septembre 2026. Passage : The CBM framework ; figure 5, page imprimée 7. Passage primaire indexé consulté ; ouverture directe en échec 502.\n\nLes compétences regroupent l’activité ; un axe distinct distingue Direct, Control et Execute. Les composants coopèrent selon des niveaux de service convenus. Limite : Matrice de conception et réalisation métier ; pas une hiérarchie Domain/Area/Capability. N’impose pas de réintroduire des couches dans FLOW. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM641",
+      "path": "marche/elements.md",
+      "anchor": "elm641",
+      "line": 5154,
+      "content_sha256": "316d64b29b134e6b71f771f796cde705adb0bebb995e732e8ee1183c12eef78e",
+      "captured_text": "### ELM641\n\nMKT25 — [SAP LeanIX: Business Capability L1 / L2 / L3](https://help.sap.com/docs/leanix/ea/business-capability-modeling-guidelines?locale=en-US). Métamodèle v4 ; documentation évolutive. Consulté le 22 septembre 2026. Passage : Guidelines and Best Practices ; Antipatterns. Texte primaire indexé détaillé ; ouverture directe vide.\n\nHiérarchie de capacités ; recommande généralement trois niveaux au plus et une affectation non ambiguë des enfants. Distingue organisation, processus et technologie. Limite : Conseil d’usage produit, pas contrainte ontologique universelle. Même groupe SAP que RBA, donc pas une preuve indépendante de consensus. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
+    },
+    {
+      "id": "ELM642",
+      "path": "marche/elements.md",
+      "anchor": "elm642",
+      "line": 5161,
+      "content_sha256": "3068f7f96d4810ddcc0987c0bfb807a5c43701b08afb209167ccbd9bae0b8640",
+      "captured_text": "### ELM642\n\nMKT26 — [Ardoq: Business Capability récursive](https://help.ardoq.com/en/articles/44050-business-capability-modeling-and-realization-metamodel). Article du 19 novembre 2025. Consulté le 22 septembre 2026. Passage : Business Capability Workspace ; Component Level. Texte primaire indexé détaillé ; ouverture directe 401.\n\nUn même type Business Capability se décline en hiérarchie à profondeur libre ; le niveau sert notamment aux vues et filtres. Limite : Métamodèle d’outil ; la flexibilité ne prouve pas la pertinence métier d’un découpage. Contenu conservé après intégration de l’ancien bundle dans Foundation. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md)."
     },
     {
       "id": "ELM003",

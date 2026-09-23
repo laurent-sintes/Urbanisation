@@ -1,11 +1,37 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { adaptPublication, childrenOf, hasCapabilityCards, isCapabilityContainer, isStructural } from './src/model.ts';
+import { adaptPublication, cardChildListOf, childrenOf, hasCapabilityCards, isCapabilityContainer, isStructural } from './src/model.ts';
 import { dependencyLevel, dependencyLevels, projectDependencies } from './src/dependencyGraph.ts';
 import { kindLabel } from './src/presentation.ts';
 import { loadPublication } from '../scripts/load-publication.mjs';
 
 const options = { level: 'capability', depth: 0, direction: 'both', family: 'all' };
+test('a shared reference and policy Purpose keeps both kinds of children visible', () => {
+  const raw = { space: 'release', version: 'mixed-purpose', nodes: [
+    { id: 'purpose', kind: 'area', fields: { name: 'Reference & Policy' } },
+    { id: 'reference', kind: 'reference', fields: { name: 'Catalog' } },
+    { id: 'policy', kind: 'capability', fields: { name: 'Policy', nature: 'policy' } },
+  ], relations: [
+    { id: 'ref', type: 'presents', source_id: 'purpose', target_id: 'reference' },
+    { id: 'cap', type: 'contains', source_id: 'purpose', target_id: 'policy' },
+  ] };
+  const model = adaptPublication(raw);
+  const list = cardChildListOf(model, model.nodeById.get('purpose'));
+  assert.equal(list.kind, 'mixed');
+  assert.deepEqual(list.items.map(item => item.id), ['reference', 'policy']);
+});
+test('Purpose labels follow the selected snapshot without relabeling historical Areas', () => {
+  const old = { space: 'release', version: 'old-area', nodes: [{ id: 'a', kind: 'area', fields: { name: 'A' } }], relations: [] };
+  const next = structuredClone(old);
+  next.version = 'new-purpose';
+  next.principles = [{ id: 'PRINCIPLE-DOMAIN-PURPOSE' }];
+  const historical = adaptPublication(old), current = adaptPublication(next);
+  assert.equal(kindLabel(historical.nodeById.get('a')), 'Area');
+  assert.equal(kindLabel(current.nodeById.get('a')), 'Purpose');
+  assert.equal(dependencyLevels(historical)[1].label, 'Areas et référentiels');
+  assert.equal(dependencyLevels(current)[1].label, 'Purposes et référentiels');
+  assert.equal(kindLabel(adaptPublication(old).nodeById.get('a')), 'Area');
+});
 const n = (id, kind, extra = {}) => ({ id, kind, layer: 'transactional', fields: { name: id }, ...extra });
 const parent = (source_id, target_id, type = 'contains') => ({ id: `parent:${target_id}`, type, source_id, target_id });
 const r = (id, source_id, target_id, extra = {}) => ({

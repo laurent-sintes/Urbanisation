@@ -4873,3 +4873,293 @@ Reformulation : Supply Planning couvre équilibre demande-ressources, arbitrages
 MKT20 — [Run a Supply Plan or an Integrated Plan](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/run-a-supply-plan-or-an-integrated-plan.html). Oracle ; 26B. Consulté le 22 septembre 2026. Passage : Introduction ; Scope Options. Nature : définition de processus ou présentation de périmètre produit ; identifiant natif non indiqué.
 
 Reformulation : Demand and Supply Plan désigne un plan intégré combinant prévisions et planification de supply. Limite : Appui au terme Planning et à un périmètre intégré, pas au nom exact Demand & Supply Optimization. Synthèse et lien ; CMP245.
+
+### ELM600
+
+MKT14 — [Inventory forecasts](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/inventory-forecast). Microsoft Dynamics 365 SCM ; documentation évolutive, édition non indiquée. Consulté le 22 septembre 2026. Passages : introduction, Supply forecast lines, Demand forecast lines, Inventory forecast. Nature : fonctions produit ; identifiant natif non indiqué.
+
+Reformulation : distinguer besoins prévisionnels, apports prévisionnels et position de stock résultante. Appui partiel aux frontières Demand/Supply/Inventory ; aucun découpage métier universel ni ajout canonique. CMP247 ; localisateurs et limites dans l'annexe U584.
+
+### ELM601
+
+MKT20 — [Setup of Interorganization Parameters for Transfer Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/faims/setup-of-interorganization-parameters-for-transfer-orders.html). Oracle Fusion Cloud SCM 25C ; consulté le 22 septembre 2026. Passages : introduction et paramètres interorganisations. Nature : document métier dans un produit ; identifiant natif non indiqué.
+
+Reformulation : un Transfer Order porte demande et apport dans un même document entre origine et destination. Appui à deux lectures liées d'une opération ; aucune duplication de capacité ni organisation logicielle imposée. Version consultée sans prétention de dernière édition. CMP247.
+
+### ELM602
+
+MKT77 — [Source Order Items](https://docs.fluentcommerce.com/by-type/source-order-items). Fluent Commerce ; documentation évolutive, Changed on 17 June 2026. Texte primaire indexé consulté le 22 septembre 2026 ; ouverture directe échouée. Passages : Overview, How it Works, Multi-Location Sourcing, Split Limit Constraints, Short-Pick Reallocation. Nature : fonctionnalité de produit ; identifiant natif non indiqué.
+
+Reformulation : sélectionner des lieux, limiter le fractionnement et réaffecter après manque au prélèvement. La fonction combine choix et adaptation ; elle ne prescrit pas le parent FLOW de chaque décision. CMP247.
+
+### ELM603
+
+MKT77 — [Manage Sourcing Profiles](https://docs.fluentcommerce.com/by-type/manage-sourcing-profiles). Fluent Commerce ; documentation évolutive, Changed on 17 June 2026. Texte primaire directement consulté le 22 septembre 2026. Passages : Overview, How it Works, Default Parameter Controls, Workflow Automation Integration. Nature : configuration produit ; identifiant natif non indiqué.
+
+Reformulation : maintenir et activer les configurations de réseaux, catalogues et limites utilisées par l'orchestration. Appui partiel à la distinction politique/décision ; aucune preuve d'un regroupement universel avec tous les référentiels. CMP247.
+
+### ELM604
+
+MKT20 — [Split or Substitute Fulfillment Lines](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html), Oracle Fusion Cloud SCM 26A, consulté le 22 septembre 2026. Passages : introduction, Split a Warehouse, Substitute the Item, Consider Dates. Nature : fonction produit ; identifiant natif non indiqué.
+
+Reformulation : fractionner la couverture entre lieux, articles ou dates selon les permissions applicables à la ligne. Appui aux effets métier présentés U585 ; ne démontre pas une réduction de l'obligation de vente initiale ni une capacité autonome par fonction. CMP249.
+
+### ELM605
+
+MKT78 — [CMMN 1.1](https://www.flowable.com/open-source/docs/cmmn/ch06-cmmn), Flowable open source documentation, consulté le 22 septembre 2026 ; version du moteur non fixée par la page. Passages : Human task, Java Service task, Decision task, Process task, Criteria, Sentry evaluation. Nature : langage et mécanismes d'un moteur ; identifiant natif de capacité non indiqué.
+
+Reformulation : les tâches humaines, automatiques, décisionnelles et processus appelés sont mobilisés selon critères et événements du cas. Limite : constructions CMMN et extensions Flowable distinguées ; ni technologie imposée ni preuve d'état de l'art global. CMP250.
+
+### ELM606
+
+MKT40 — [Active/Inactive Flag Added to Service Provider](https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm), Oracle Transportation Management 24A. Consulté le 22 septembre 2026, introduction, Business Benefit, Steps to Enable. Nature : règle de recours à un prestataire dans un produit ; identifiant natif non indiqué.
+
+Reformulation : exclure les prestataires inactifs des opérations de planification et recherche/recalcul tarifaire concernées, avec l'option FIND RATES OF ACTIVE SERVPROV ONLY en 24A. Limites : ni automatisme depuis des difficultés observées, ni annulation d'engagements établis démontrés. Appui partiel à Backing Service Policy, CMP251.
+
+### ELM607
+
+MKT40 — [Capacity Limit](https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm), Oracle Transportation Management 26B. Consulté le 22 septembre 2026, Using A Capacity Limit, Recurring Capacity. Nature : contrainte de planification transport ; identifiant natif non indiqué.
+
+Reformulation : limiter les expéditions pour un prestataire, un type d'équipement, éventuellement un trajet et une période. L'exemple limite à cinq expéditions et empêche la sixième faute de capacité. Limites : ne démontre pas la maîtrise Supply d'une politique ni la dérivation automatique d'un plafond depuis des incidents. CMP251.
+
+### ELM608
+
+MKT79 — [The Twelve-Factor App — IV. Backing services](https://www.12factor.net/backing-services), Adam Wiggins ; page affichant Last updated 2017. Consulté le 22 septembre 2026, définition, exemples et ressources attachées. Nature : concept d'architecture applicative ; identifiant natif IV.
+
+Reformulation : service consommé par une application sur le réseau ; exemples de stockage, files de messages et caches. Limite : ne définit pas les prestations logistiques physiques du Domain. Appui lexical et différence de portée, CMP252.
+
+### ELM609
+
+MKT79 — [What is Cloud Native?](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition), Microsoft .NET, documentation évolutive. Consulté le 22 septembre 2026, The Twelve-Factor Application, table facteurs 4 et 6. Nature : reprise documentaire d'une méthode ; identifiant natif non indiqué.
+
+Reformulation : Backing Services désigne des ressources applicatives externes et adressables. Limite : reprise explicite de Twelve-Factor, sans preuve indépendante d'un sens métier logistique ni nomenclature de Policy. CMP252.
+
+### ELM610
+
+MKT40 — [Service Provider Assignment and Resource Management](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/capacity_manager/carrier_assignment_and_resource_management.htm), Oracle Transportation Management 25C. Consulté le 22 septembre 2026, Assigning Carrier and Equipment, Service Provider Assignment, Capacity Limits. Nature : décision et contraintes de planification transport ; identifiant natif non indiqué.
+
+Reformulation : choix de prestataire et d'équipement selon contraintes de coût, délais, disponibilité et engagements ; noms Service Provider, Capacity Limits et Carrier Commitment attestés. Limite : la source ne nomme pas la capacité Service Provider Policy ; ce composé reste une adaptation FLOW proposée. CMP252.
+
+
+### ELM611
+
+MKT13 — [Customer Consignment](https://help.sap.com/docs/s4hana-cloud-best-practices/extended-intercompany-processes-for-sales-1wo-qa/customer-consignment). SAP S/4HANA Best Practices ; Scope item 1WO_QA ; édition non affichée dans le texte indexé. Consulté le 22 septembre 2026. Passages : Customer Consignment. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.
+
+Reformulation : Distingue fill-up sans transfert de propriété, issue à la consommation/vente, pick-up des invendus et return après issue. Limites : Consignation de nos marchandises chez un client ; ne décrit pas la détention du stock de notre client dans notre entrepôt. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM612
+
+MKT20 — [Consigned Inventory](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faims/consigned-inventory.html). Oracle Fusion Cloud SCM ; 26A. Consulté le 22 septembre 2026. Passages : Consignment Agreement ; Consignment Order ; Ship and Receive Items ; Consumption Advice. Accès : Page primaire directement lue.
+
+Reformulation : Le demandeur appelle les marchandises sous accord de consignation ; réception et propriété fournisseur restent distinctes, puis avis de consommation et règlement. Limites : Point de vue acheteur/fournisseur ; ne démontre pas une prestation de garde du stock d’un client. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM613
+
+MKT32 — [Item Types](https://docs.oracle.com/en/industries/retail/retail-merchandising-foundation-cloud/21.0/rmsim/item-types.htm). Oracle Retail Merchandising Foundation Cloud Service ; 21.0, édition historique consultée. Consulté le 22 septembre 2026. Passages : Consignment and Concession Items. Accès : Page primaire directement lue.
+
+Reformulation : Les articles consignés peuvent participer aux achats et transferts ; le régime de propriété est distinct de la transaction de déplacement. Consignation et concession sont également différenciées. Limites : Ne prouve ni une stratégie unique actuelle ni qu’un Transfer Order doit porter toute demande B2B. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM614
+
+MKT80 — [Release Notes for SAP Apparel and Footwear 6.5](https://help.sap.com/doc/29d6d66f79a142b18a2014c7e54ff392/6.5/en-US/Release_Notes_SAP_AFS_65E.PDF). SAP Apparel and Footwear Solution ; AFS 6.5 / ECC 6.0 EHP5 ; copyright 2011. Consulté le 22 septembre 2026. Passages : §4.5.4, page imprimée 18, page PDF 22 (index 21). Accès : PDF primaire directement lu, passage textuel ciblé.
+
+Reformulation : À partir d’AFS 6.5, le stock en consignation fournisseur peut être vendu directement et pris en compte par AFS ATP, Allocation Run et les livraisons sortantes. Limites : Ne décrit pas le paramétrage installé ni l’ensemble des parcours de consignation client. Pas de reproduction du document, protégé par copyright. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM615
+
+MKT81 — [Consignment Orders](https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html). SAP Fashion Management ; 1.0 SP13. Consulté le 22 septembre 2026. Passages : Use ; Process ; Consignment fill-up / issue / pick-up / return. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.
+
+Reformulation : Les articles pertinents pour ARun mobilisent l’affectation dans la consignation client. Fill-up, issue et pick-up sont documentés ; return ne nécessite pas ARun. Le choix des stocks admissibles et le lancement immédiat dépendent du paramétrage. Limites : Fonctions FMS 1.0 SP13 ; ne pas les attribuer automatiquement à S/4HANA ni déduire quatre capacités de quatre documents. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM616
+
+MKT81 — [Vendor Consignment](https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3daaa256c9006f15e10000000a441470.html?version=6.18.latest). SAP Fashion Management sur ERP ; ERP 6.0 EHP8, pointeur 6.18.latest ; prérequis FASHION_04. Consulté le 22 septembre 2026. Passages : Use ; Prerequisites ; Features. Accès : Texte primaire indexé lu.
+
+Reformulation : Consignation fournisseur enrichie par saisons, segmentation et ARun ; affectation possible aux ventes/transferts et désaffectation automatique lors des retours de consignation fournisseur. Limites : Enrichissements attestés de Fashion ; le document ne prouve pas que toutes les dimensions étaient absentes d’AFS. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM617
+
+MKT81 — [Vendor Consignment and Order Allocation Run](https://help.sap.com/docs/SAP_ERP/39615c43587c4405aba2de8ebf33cd66/3d06ece43a61456db4b9bcd2ca1b167e.html). SAP Fashion / Retail sur ERP ; ERP 6.0 EHP8 SPS02 ; EA-RETAIL 618 SP2 ; FASHION_04. Consulté le 22 septembre 2026. Passages : Use ; Technical Details ; Additional Details. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.
+
+Reformulation : Le stock consigné est mobilisable pour l’affectation ; des déplacements entre sites et sociétés peuvent conserver la catégorie consignée et la propriété fournisseur jusqu’à la vente. Limites : Scénario de consignation fournisseur Retail ; ni toute circulation entre sociétés ni tout contrat de consignation ne suit nécessairement ce paramétrage. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM618
+
+MKT13 — [Customer Consignment Process](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/02084c34785749309d9dd5368b6a613a.html?locale=en-US). SAP S/4HANA aATP Supply Assignment ; 2025 FPS01, février 2026. Consulté le 22 septembre 2026. Passages : Customer Consignment Process with Supply Assignment (ARun) Relevant Materials. Accès : Texte primaire indexé lu ; ouverture directe du portail sans corps de texte.
+
+Reformulation : Pour les articles concernés, seul le document de fill-up KB entre dans Supply Assignment ; KE, KA et KR en sont exclus dans cette documentation. Limites : Différence documentaire avec FMS 1.0 SP13 ; ne démontre pas seule toutes les règles de migration ni une incapacité à exécuter les autres parcours. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM619
+
+MKT80 — [Check Material Supply And Demand Allocation Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/1dad2180e6f34b75ac77afce5cb5eda1/626fd75a5f8811dc2b8d000f20fcb6a9.html). SAP AFS Enterprise Services, IS-AFS-ARUN ; Composant P3A V605 ; documentation hébergée dans Enterprise Services 2025 FPS01. Consulté le 22 septembre 2026. Passages : Technical Data ; SupplyReference ; InventorySpecialStockTypeCode. Accès : Texte primaire indexé lu.
+
+Reformulation : L’interface AFS d’affectation simulée distingue notamment le stock consigné chez le client et les catégories de stock/besoins. Limites : Contrat d’interface AFS identifié par composant et namespace ; son hébergement documentaire S/4HANA ne prouve pas un moteur AFS version 2025 ni le comportement complet de chaque Order. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP256/CMP257 ; synthèse sélective et lien.
+
+
+### ELM620
+
+MKT82 — [Consignment Stock](https://docs.infor.com/m3udi/16.x/en-us/m3beud/scexechs/mws020.html). M3 Business Engine, 16.x. Consulté le 22 septembre 2026. Passages : Terms used ; Replenishment ; Consumption ; Sell-back ; Claim of consignment goods. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.
+
+Reformulation : Consignment replenishment order : apport fournisseur sans acquisition. Usage PO : achat à la consommation. Sell-back order : retour de propriété de notre stock au fournisseur ; ne pas confondre avec une reprise physique de biens non consommés. Limites : Consignation fournisseur entrante ; aucun processus complet de consignation client établi par cette page. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien.
+
+
+### ELM621
+
+MKT83 — [Create Refill Order](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityCreateRefillOrder.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; System Effects. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.
+
+Reformulation : Refill Order désigne une Customer Order alimentant le stock consigné chez le client. Limites : Documente le réapprovisionnement ; ne prouve pas que la première mise en place porte le même libellé. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien.
+
+
+### ELM622
+
+MKT83 — [Return or Scrap Customer Consignment Stock](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityReturnorScrapCustomerConsignmentStock.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; Prerequisites ; System Effects. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.
+
+Reformulation : RMA de consignation pour retour de biens défectueux avant consommation ; crédit désactivé. Return peut donc désigner un retour de biens encore consignés. Limites : Cas documenté de défaut avant consommation, pas preuve de toutes les reprises commerciales. Titre retenu : H1 réel ; la métadonnée de page affiche Report Quantity Consumed. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien.
+
+
+### ELM623
+
+MKT83 — [Create Purchase Order from Arrival](https://docs.ifs.com/ifsclouddocs/25r2/Receipt/ActivityPOArrivalCreate.htm). IFS Cloud, 25R2. Consulté le 22 septembre 2026. Passages : Explanation ; note customer-owned parts. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.
+
+Reformulation : Une Purchase Order peut enregistrer après arrivée des biens appartenant au client ; le propriétaire est porté sur la ligne. Limites : Réemploi documentaire produit, sans assimilation de la détention pour compte client à un achat effectif. Ne définit pas une famille universelle d’Orders de garde. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien.
+
+
+### ELM624
+
+MKT20 — [Examples of Consigned Inventory Returns](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html). Fusion Cloud SCM, 25D. Consulté le 22 septembre 2026. Passages : Material Received and Put Away ; Material Consumed, advice generated or not. Accès : Page primaire directement lue. Nature : documents et opérations produit ; libellés natifs dans le passage cité, aucun identifiant natif supplémentaire relevé.
+
+Reformulation : Return to supplier couvre des situations avant et après consommation ; état de propriété et avis de consommation déterminent les opérations et suites financières. Limites : Consignation fournisseur ; la page ne définit pas les quatre types d’Orders SAP. Édition 25D distincte de la présentation Oracle 26A ELM612. Étude `modeles/backlog/consignment-orders-market-review-U595.yaml`, CMP259 ; synthèse sélective et lien.
+
+
+### ELM625
+
+MKT13 — [Consignment Stock Processing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/da65b65334e6b54ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passages : Use ; Consignment Issue. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.
+
+Reformulation : Le client détenteur peut utiliser ou revendre les biens. Issue lui en transfère la propriété et devient facturable. Limite : Point de vue du propriétaire fournisseur ; le client SAP correspond ici au détenteur, pas au client propriétaire décrit par Laurent. CMP261 et étude U595 ; synthèse sélective et lien.
+
+
+### ELM626
+
+MKT13 — [Special Features for Consignment Processing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/c020bf53d25ab64ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passages : Introduction ; sales document type ED. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.
+
+Reformulation : Des agents déclarent les livraisons réalisées au client pour le compte du propriétaire ; ED est nommé Delivery by external agent (consignment issue). Limite : Livraison pour compte documentée ; pas preuve d’un mandat commercial complet ni de sa réalisation dans le SI du mandataire. CMP261 et étude U595 ; synthèse sélective et lien.
+
+
+### ELM627
+
+MKT13 — [Create Consignment Issue Order with Reference to Scheduling Agreement Manually (non-JIT)](https://help.sap.com/docs/s4hana-cloud-best-practices/automotive-supply-to-customer-inventory-management-55f-ro/create-consignment-issue-order-with-reference-to-scheduling-agreement-manually-non-jit?locale=en-US&state=PRODUCTION&version=2608). S/4HANA Cloud Best Practices 2608 ; Automotive Supply to Customer – Inventory Management 55F_RO. Consulté le 22 septembre 2026. Passages : Note ; Purpose. Accès : Texte primaire indexé consulté. Nature : processus et documents produit, identifiants natifs conservés lorsqu’indiqués.
+
+Reformulation : Issue est normalement généré depuis un avis de livraison de l’agent ou du client ; la création manuelle présentée sert aux tests. Limite : Scénario automobile à accord de livraison ; ne prouve ni processus Fashion identique ni demande indépendante émise avant exécution. CMP261 et étude U595 ; synthèse sélective et lien.
+
+
+### ELM628
+
+MKT13 — [Sales Documents](https://help.sap.com/docs/SAP_S4HANA_CLOUD/a376cd9ea00d476b96f18dea1247e6a5/aa64b65334e6b54ce10000000a174cb4.html). S/4HANA Cloud Public Edition, Sales 2608 Latest. Consulté le 22 septembre 2026. Passage : Concepts / Sales Document Types. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.
+
+Reformulation : Consignment Issue et Fill-up sont des exemples de types de Sales Order ; le type détermine données, contrôles et suites. Limite : Taxonomie documentaire SAP ; ne détermine pas la maille des capacités FLOW. CMP262 ; synthèse sélective et lien.
+
+
+### ELM629
+
+MKT13 — [Creating a Consignment Issue](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/e665b65334e6b54ce10000000a174cb4.html). S/4HANA Sales 2025 FPS01 (février 2026). Consulté le 22 septembre 2026. Passage : Étapes 1, 4–6. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.
+
+Reformulation : Création d’une Sales Order de consignation, suivie d’une livraison, d’une sortie de stock puis d’une facturation. Limite : Pas uniquement un document juridique ; ne prescrit pas deux demandes initiales concurrentes. CMP262 ; synthèse sélective et lien.
+
+
+### ELM630
+
+MKT13 — [Create Consignment Issue Order](https://help.sap.com/docs/SAP_S4HANA_CLOUD_BEST_PRACTICES/9f5a580825ded5ac1ab823cac86b9f51/01da39ad1a084dd4939b361dacd11006.html?locale=en-US&state=PRODUCTION&version=2608). S/4HANA Cloud Best Practices 2608, Sales from Distribution Center 3HS_HU. Consulté le 22 septembre 2026. Passage : Purpose ; Procedure 2–7. Texte primaire indexé lu. Nature : document et processus produit. Identifiant natif lorsqu’indiqué dans le constat.
+
+Reformulation : Après déclaration périodique des quantités vendues ou consommées, création d’une Sales Order de type CCIS pour documenter Issue et permettre la facturation. Limite : Perspective du consignateur ; la vente au client final et la relation consignateur/détenteur restent distinctes. CCIS propre à cette édition/scénario, pas renommage universel de KE. CMP262 ; synthèse sélective et lien.
+
+
+### ELM631
+
+MKT84 — [Goods Return Request: Contents Tab](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/b3b60a16edfc4bafacc0fc7a1fd0766a.html). Business One, 10.0. Consulté le 22 septembre 2026. Passages : Introduction ; Quantity ; Return Reason. Texte primaire indexé lu. Nature : documents et processus produit ; aucun identifiant natif supplémentaire relevé.
+
+Reformulation : Goods Return Request concerne les articles achetés et retournés au fournisseur. Limite : Usage lexical SAP Business One, pas SAP S/4HANA ni une taxonomie générale de capacités. CMP263 ; synthèse sélective et lien.
+
+
+### ELM632
+
+MKT14 — [Sales returns](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns). Dynamics 365 SCM, Documentation évolutive consultée le 22 septembre 2026. Consulté le 22 septembre 2026. Passages : Return order process ; Return material authorization. Texte primaire indexé lu. Nature : documents et processus produit ; aucun identifiant natif supplémentaire relevé.
+
+Reformulation : La demande de retour client déclenche une Return Order/RMA. Les parcours physiques et Credit only sont distingués ; retour autorisé ne signifie pas acceptation ou crédit acquis. Limite : Appui à l’intention de retour après vente ; ne documente pas la famille exacte Goods Return / Customer Return / Consignment Return. CMP263 ; synthèse sélective et lien.
+
+
+### ELM633
+
+MKT04 — [SAP Reference Business Architecture: Business Domain → Business Area → Business Capability](https://learning.sap.com/courses/intelligent-enterprise-architecture-fundamentals/defining-business-architecture). Cours évolutif ; consulté le 22 septembre 2026. Consulté le 22 septembre 2026. Passage : Business Capability Model, niveaux 1–3 ; distinction avec Business Process Segment. Texte primaire ouvert.
+
+Area regroupe les capacités ; chaque capacité appartient à une Area puis à un Domain. SAP fixe trois niveaux de granularité. Limite : La structure est explicite ; elle ne fournit pas un test universel pour décider où couper une Area. Le Business Process Segment est un objet différent, même si son nom peut coïncider. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM634
+
+MKT85 — [DDD — Nick Tune: Domain et Subdomain](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/). Article du 25 novembre 2020. Consulté le 22 septembre 2026. Passage : Subdomains ; Subdomains vs Bounded Contexts ; Problem Space vs Solution Space. Texte original de l’auteur ouvert.
+
+Subdomain est relatif : un domaine est qualifié de sous-domaine par rapport à son parent. Plusieurs découpages restent possibles. Limite : Point de vue argumenté d’un praticien, pas norme DDD. L’auteur conteste lui-même la séparation trop simple entre espaces du problème et de la solution. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM635
+
+MKT69 — [Microsoft — analyse DDD: Subdomain / Bounded Context](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Documentation évolutive. Consulté le 22 septembre 2026. Passage : Analyze the domain ; Define bounded contexts. Texte primaire ouvert.
+
+Identifier fonctions proches et dépendances pour dégager les sous-domaines. Le bounded context délimite l’application d’un modèle particulier. Limite : Guide orienté conception de microservices ; aucune obligation de convertir une Area FLOW en service logiciel. Core/supporting/generic qualifie l’importance stratégique, pas la profondeur. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM636
+
+MKT01 — [The Open Group — TOGAF: Stratification / Leveling](https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf). G189, juin 2018. Consulté le 22 septembre 2026. Passage : §§3.2.1–3.2.2, pages imprimées 9–10. Document primaire historique ouvert sur hébergement tiers.
+
+Sépare classement en catégories et décomposition des capacités. La profondeur répond aux besoins des lecteurs et des décisions. Limite : Guide V2 sur le site officiel inaccessible pendant cette étude. Aucun détail de 2018 attribué automatiquement à une édition actuelle ; aucune classe Area imposée par ces passages. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM637
+
+MKT03 — [Business Architecture Guild: Capability decomposes into capability](https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf). Metamodel Guide v3.0, septembre 2024. Consulté le 22 septembre 2026. Passage : §5.2, pages imprimées 17–18 ; §6.3, page 45. PDF primaire ouvert.
+
+Décomposition récursive de capacités centrées sur un objet métier. Les enfants restent dans le périmètre de l’objet parent. Limite : Livre blanc public, pas lecture intégrale du BIZBOK. FLOW distingue déjà Area et Capability ; une Area réunissant plusieurs objets ne doit pas être déclarée équivalente à cette décomposition. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM638
+
+MKT18 — [BIAN / Van Haren: Business Area → Business Domain → Service Domain](https://www.vanharen.net/wp-content/uploads/2026/02/syllabus-BIAN-Foundation-v3.8.pdf). Syllabus BIAN Foundation v3.8. Consulté le 22 septembre 2026. Passage : Key terms and concepts, pages imprimées 24–26. Syllabus primaire de certification ouvert.
+
+Area et Domain organisent la présentation du Service Landscape. Le Service Domain porte une responsabilité fonctionnelle élémentaire. Limite : Ordre Area/Domain inverse de SAP ; cadre bancaire. La structure de présentation ne suffit pas à attribuer une responsabilité opérationnelle au regroupement. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM639
+
+MKT07 — [APQC: Category → Process group → Process → Activity → Task](https://www.apqc.org/How-Can-Organizations-Classify-and-Organize-Their-Processes-Using-a-Common-Framework). Page créée septembre 2026 ; PCF 8.0 cité. Consulté le 22 septembre 2026. Passage : Common hierarchy ; paragraphes sur management, accountability, measurement et improvement. Texte primaire ouvert.
+
+La catégorie regroupe les processus au plus haut niveau ; le groupe de processus contribue à cette catégorie. Le détail sert pilotage, mesure et amélioration. Limite : Taxonomie de processus ; Process Group ne devient pas automatiquement une Area de capacités. La page générale ne constitue pas une lecture du catalogue Retail complet. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM640
+
+MKT06 — [IBM Component Business Model: Business Competency × Accountability Level](https://public.dhe.ibm.com/software/emea/dk/frontlines/g510-6163-component-business-models.pdf). Publication historique, ©2005. Consulté le 22 septembre 2026. Passage : The CBM framework ; figure 5, page imprimée 7. Passage primaire indexé consulté ; ouverture directe en échec 502.
+
+Les compétences regroupent l’activité ; un axe distinct distingue Direct, Control et Execute. Les composants coopèrent selon des niveaux de service convenus. Limite : Matrice de conception et réalisation métier ; pas une hiérarchie Domain/Area/Capability. N’impose pas de réintroduire des couches dans FLOW. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM641
+
+MKT25 — [SAP LeanIX: Business Capability L1 / L2 / L3](https://help.sap.com/docs/leanix/ea/business-capability-modeling-guidelines?locale=en-US). Métamodèle v4 ; documentation évolutive. Consulté le 22 septembre 2026. Passage : Guidelines and Best Practices ; Antipatterns. Texte primaire indexé détaillé ; ouverture directe vide.
+
+Hiérarchie de capacités ; recommande généralement trois niveaux au plus et une affectation non ambiguë des enfants. Distingue organisation, processus et technologie. Limite : Conseil d’usage produit, pas contrainte ontologique universelle. Même groupe SAP que RBA, donc pas une preuve indépendante de consensus. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).
+
+
+### ELM642
+
+MKT26 — [Ardoq: Business Capability récursive](https://help.ardoq.com/en/articles/44050-business-capability-modeling-and-realization-metamodel). Article du 19 novembre 2025. Consulté le 22 septembre 2026. Passage : Business Capability Workspace ; Component Level. Texte primaire indexé détaillé ; ouverture directe 401.
+
+Un même type Business Capability se décline en hiérarchie à profondeur libre ; le niveau sert notamment aux vues et filtres. Limite : Métamodèle d’outil ; la flexibilité ne prouve pas la pertinence métier d’un découpage. Contenu conservé après intégration de l’ancien bundle dans Foundation. Correspondance proposée CMP265 ; U620/U621. [Étude](etudes/2026-09-22-area-level.md).

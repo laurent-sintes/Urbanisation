@@ -162,12 +162,12 @@ select { border: 1px solid var(--line); background: white; border-radius: 6px; p
 .child-list-heading > span { background: #edf3ee; border-radius: 4px; padding: 1px 5px; }
 .card-child-list ul { list-style: none; padding: 0; }
 .card-child-list li + li { margin-top: 2px; }
-.model-tree .decision-section-start, .card-child-list li.decision-section-start {
+.model-tree .capability-type-section-start, .card-child-list li.capability-type-section-start {
   border-top: 1px solid #dfe7e2;
   margin-top: 8px;
   padding-top: 8px;
 }
-.map-decision-divider { width: 100%; border-top: 1px solid #dfe7e2; }
+.map-capability-type-divider { width: 100%; border-top: 1px solid #dfe7e2; }
 .card-child-list .card-child-link { display: flex; align-items: flex-start; gap: 8px; padding: 6px 5px; margin: 0 -5px; font-size: 13px; line-height: 1.45; text-decoration: none; border-radius: 5px; }
 .card-child-link > .node-icon { margin-top: 2px; }
 .card-child-link > span:not(.node-icon) { flex: 1; min-width: 0; overflow-wrap: anywhere; }

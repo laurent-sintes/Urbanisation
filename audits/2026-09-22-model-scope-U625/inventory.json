@@ -1,0 +1,974 @@
+{
+  "nodes": [
+    {
+      "id": "universe-supply",
+      "name": "Supply Chain Orchestration",
+      "finality": "Organiser l’approvisionnement, la répartition et la livraison des produits pour tenir les quantités et les dates promises.",
+      "sources": 6,
+      "documents": 6,
+      "vendors": [
+        "ASCM",
+        "CSCMP",
+        "Kinaxis",
+        "Microsoft",
+        "Oracle",
+        "Zacharia, Sanders et Nix"
+      ],
+      "children": [
+        "business-references",
+        "D04",
+        "D01",
+        "D06",
+        "D15",
+        "D03",
+        "D05",
+        "D17"
+      ]
+    },
+    {
+      "id": "business-references",
+      "name": "Authoritative Data",
+      "finality": "Permettre aux activités de Supply Chain Orchestration de s’appuyer sur les mêmes références pour savoir de quel produit on parle, avec quel partenaire, dans quel lieu et sous quelles conditions.",
+      "sources": 11,
+      "documents": 11,
+      "vendors": [
+        "Camunda",
+        "EDM Council",
+        "Fluent Commerce",
+        "IBM",
+        "Microsoft",
+        "OMG",
+        "Oracle"
+      ],
+      "children": [
+        "D08",
+        "D09",
+        "D12",
+        "D16",
+        "D11",
+        "D13",
+        "D14"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Service Requests",
+      "finality": "Rendre lisible ce que la Supply Chain prend en charge, pourquoi elle agit et ce qui reste à accomplir jusqu’au résultat ou à la clôture de chaque demande.",
+      "sources": 3,
+      "documents": 3,
+      "vendors": [
+        "Oracle",
+        "Salesforce",
+        "TM Forum"
+      ],
+      "children": [
+        "D04.i",
+        "D04.j",
+        "D04.k",
+        "D04.l",
+        "D04.m",
+        "D04.n",
+        "D04.o",
+        "D04.q",
+        "D04.r"
+      ]
+    },
+    {
+      "id": "D01",
+      "name": "Inventory Management",
+      "finality": "Connaître et fiabiliser le stock, enregistrer ses mouvements, le protéger et le réserver.",
+      "sources": 2,
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "SAP"
+      ],
+      "children": [
+        "D01.f",
+        "D01.g",
+        "D01.c",
+        "D01.d",
+        "D02.b",
+        "D02.c",
+        "D01.h"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Process Management",
+      "finality": "Maintenir une exécution cohérente et adaptable, depuis les possibilités de réalisation jusqu’aux résultats constatés.",
+      "sources": 2,
+      "documents": 2,
+      "vendors": [
+        "Camunda",
+        "Microsoft"
+      ],
+      "children": [
+        "D06.b",
+        "D07.b",
+        "D07.c",
+        "D07.d",
+        "D06.d",
+        "D07.a",
+        "D06.e",
+        "D06.f"
+      ]
+    },
+    {
+      "id": "D15",
+      "name": "Order Promising",
+      "finality": "Rendre les engagements de satisfaction explicites et compatibles avec les possibilités et arbitrages applicables.",
+      "sources": 2,
+      "documents": 2,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "children": [
+        "D03.n",
+        "D03.i",
+        "D03.j",
+        "D03.k",
+        "D03.l"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Fulfillment Optimization",
+      "finality": "Décider comment satisfaire les Orders et les besoins prévisionnels identifiés avec les ressources disponibles ou adaptables.",
+      "sources": 3,
+      "documents": 3,
+      "vendors": [
+        "Microsoft",
+        "Oracle"
+      ],
+      "children": [
+        "D03.p",
+        "D03.m",
+        "D03.o"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Inventory Optimization",
+      "finality": "Décider du stock souhaitable et des ajustements nécessaires.",
+      "sources": 2,
+      "documents": 2,
+      "vendors": [
+        "Achkar et al.",
+        "RELEX"
+      ],
+      "children": [
+        "D05.f",
+        "D05.a",
+        "D05.d",
+        "D05.e",
+        "D05.c",
+        "D05.g",
+        "D05.h",
+        "D05.i"
+      ]
+    },
+    {
+      "id": "D17",
+      "name": "Supply Planning",
+      "finality": "Maintenir une trajectoire cohérente entre besoins à couvrir et ressources mobilisables, à partir des faits et des hypothèses actualisés.",
+      "sources": 4,
+      "documents": 4,
+      "vendors": [
+        "Microsoft",
+        "Oracle",
+        "SAP"
+      ],
+      "children": [
+        "D17.a"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "id": "TER001",
+      "name": "Capacité métier",
+      "definition": "Ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER002",
+      "name": "Objet métier",
+      "definition": "Notion sur laquelle l’entreprise raisonne, tient des faits ou prend des décisions.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER003",
+      "name": "Ressource",
+      "definition": "Moyen, bien ou droit mobilisable pour obtenir un résultat métier, sous des conditions à préciser.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER004",
+      "name": "Article / unité de gestion",
+      "definition": "Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER005",
+      "name": "Stock",
+      "definition": "Ensemble de biens matériels considéré dans un périmètre et à une date ; ici, principalement les marchandises du commerce.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER006",
+      "name": "Position de stock",
+      "definition": "Quantité de stock décrite à une date, pour une maille et des dimensions métier explicites.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER007",
+      "name": "Mouvement de stock",
+      "definition": "Fait de changement d’une position de stock, par exemple une réception, une sortie ou un transfert entre positions.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER008",
+      "name": "Ressource attendue",
+      "definition": "Ressource dont la mise à disposition est attendue à une date et sous des conditions identifiées.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER009",
+      "name": "Disponibilité",
+      "definition": "Quantité mobilisable pour un usage et un horizon donnés, compte tenu des faits, engagements et règles applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER010",
+      "name": "Besoin",
+      "definition": "Résultat recherché ou manque à satisfaire, avant ou après sa formalisation.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER011",
+      "name": "Demande",
+      "definition": "Expression identifiable d’un résultat souhaité, avec objet, quantité, échéance et bénéficiaire lorsque ces précisions sont pertinentes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER012",
+      "name": "Commande",
+      "definition": "Acte ou document métier formalisant une instruction commerciale ou opérationnelle et ses conditions.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER013",
+      "name": "Engagement",
+      "definition": "Décision tenue envers une demande ou un usage, avec résultat attendu, bénéficiaire et conditions explicites.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER014",
+      "name": "Promesse",
+      "definition": "Engagement sur ce qui pourra être fourni à une demande, notamment une quantité et une date.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER015",
+      "name": "Confirmation de promesse",
+      "definition": "Acte ou résultat établissant la quantité et la date promises à une demande dans le contexte défini.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER016",
+      "name": "Réservation de ressource",
+      "definition": "Engagement quantitatif enregistré pour une demande identifiée, avec des effets définis sur les possibilités d’engagement pour les demandes concurrentes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER017",
+      "name": "Affectation de ressource",
+      "definition": "Lien entre une demande et une ressource identifiée au degré de précision utile.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER018",
+      "name": "Allocation de groupe",
+      "definition": "Attribution d’une enveloppe à un usage ou une population, avec des règles d’horizon et de consommation.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER019",
+      "name": "Protection de ressource",
+      "definition": "Restriction qui préserve une ressource ou une quantité face à certaines demandes concurrentes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER020",
+      "name": "Plafond de confirmation",
+      "definition": "Limite de quantité confirmable pour des critères et une période définis.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER021",
+      "name": "Pool de ressources",
+      "definition": "Regroupement de ressources selon des critères et des règles explicites, pouvant porter une enveloppe et sa consommation.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER022",
+      "name": "Couverture d’une demande",
+      "definition": "Relation qualifiée entre une demande et les éléments qui permettent ou sont prévus pour la satisfaire, pour des quantités, dates et conditions définies.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER023",
+      "name": "Règle métier",
+      "definition": "Condition ou principe qui détermine la validité, l’admissibilité ou les effets d’une décision ou d’un fait métier.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER024",
+      "name": "Processus",
+      "definition": "Déroulement d’activités, d’événements et de décisions mobilisant des capacités pour atteindre un résultat dans un contexte.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER025",
+      "name": "Opération métier",
+      "definition": "Action exercée sur des objets métier avec des conditions et des effets déterminés.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER026",
+      "name": "Réalisation d’une capacité",
+      "definition": "Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER027",
+      "name": "Fonction",
+      "definition": "Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER028",
+      "name": "Fonctionnalité de produit",
+      "definition": "Comportement ou ensemble de comportements offert par un produit dans une édition et une configuration données.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER029",
+      "name": "Regroupement de capacités",
+      "definition": "Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER030",
+      "name": "Domaine",
+      "definition": "Espace cohérent de problèmes métier liés entre eux, que l’on gagne à comprendre et à traiter ensemble.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER031",
+      "name": "Orchestration",
+      "definition": "Coordonner les activités nécessaires pour obtenir un résultat : déterminer ce qui doit se passer, solliciter les intervenants, suivre leur avancement et adapter la suite en cas d’écart.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER032",
+      "name": "Fabrication à façon",
+      "definition": "Mode d’achat dans lequel le donneur d’ordre acquiert des composants et confie leur transformation en produit à un façonnier.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER033",
+      "name": "Planned Purchase Order",
+      "definition": "Nom rapporté pour le document que MAP émet dans le premier cas d’achat décrit en U48, après planification en volumes et délais.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER034",
+      "name": "OMS — sens fonctionnel du projet",
+      "definition": "Dans le vocabulaire fonctionnel FLOW, prise en charge des parcours liés à la vente et coordination des contributions de la Supply pour satisfaire les demandes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER035",
+      "name": "Supply — sens fonctionnel du projet",
+      "definition": "Périmètre métier qui coordonne et optimise la satisfaction des demandes en mobilisant commandes, stocks, engagements et services exécutants.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER036",
+      "name": "Fait de gestion — sens plateforme",
+      "definition": "Événement métier associé à un document, selon la distinction exprimée par Laurent.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER037",
+      "name": "Document — sens plateforme",
+      "definition": "Représentation d’un état d’objet métier, ou objet non modifiable produit ou capté.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER038",
+      "name": "État d’objet métier",
+      "definition": "Situation et valeurs pertinentes d’un objet à un instant donné.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER039",
+      "name": "Notification d’événement",
+      "definition": "Message qui informe un destinataire d’une occurrence avec les références nécessaires à sa compréhension.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER040",
+      "name": "Stock physique",
+      "definition": "Biens qui existent réellement quelque part dans le périmètre considéré.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER041",
+      "name": "Stock logique",
+      "definition": "Description des états métier du stock physique considéré.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER042",
+      "name": "Stock virtuel",
+      "definition": "Quantité considérée comme disponible selon un calcul.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER043",
+      "name": "Stock futur",
+      "definition": "Expression de travail pour les ressources dont la mise à disposition est envisagée ou attendue à un lieu et pour un usage futurs.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER001",
+      "name": "Définir",
+      "definition": "Établir la signification, les règles ou les caractéristiques d’un objet ou d’une politique.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER002",
+      "name": "Tenir — en réexamen",
+      "definition": "Terme proposé par l’assistant pour conserver des informations métier cohérentes et à jour.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER003",
+      "name": "Déterminer",
+      "definition": "Établir un résultat à partir de faits et de règles.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER004",
+      "name": "Calculer",
+      "definition": "Produire une valeur par des opérations quantitatives définies.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER005",
+      "name": "Vérifier",
+      "definition": "Établir si des conditions sont respectées et produire un constat.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER006",
+      "name": "Autoriser",
+      "definition": "Rendre une action admissible dans un périmètre et sous des conditions définis.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER007",
+      "name": "Enregistrer",
+      "definition": "Prendre en compte durablement un fait ou une décision dans la connaissance métier.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER008",
+      "name": "Demander",
+      "definition": "Exprimer un résultat souhaité à un destinataire, avec les conditions pertinentes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER009",
+      "name": "Protéger",
+      "definition": "Rendre une ressource ou quantité indisponible à certaines demandes pour préserver un usage.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER010",
+      "name": "Allouer à un groupe",
+      "definition": "Attribuer une enveloppe à un usage ou une population.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER011",
+      "name": "Réserver",
+      "definition": "Engager une quantité de ressource pour une demande identifiée.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER012",
+      "name": "Affecter",
+      "definition": "Établir un lien entre une ressource et une demande ou un bénéficiaire précis.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER013",
+      "name": "Promettre",
+      "definition": "Prendre un engagement sur le résultat qui pourra être fourni à une demande.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER014",
+      "name": "Confirmer",
+      "definition": "Établir ou attester un résultat, un fait ou un engagement, en précisant la portée et l’effet de cette confirmation.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER015",
+      "name": "Prioriser",
+      "definition": "Établir un ordre relatif de traitement ou de satisfaction entre des demandes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER016",
+      "name": "Arbitrer",
+      "definition": "Choisir entre des possibilités ou demandes concurrentes selon des règles et contraintes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER017",
+      "name": "Réviser",
+      "definition": "Réexaminer puis modifier, si nécessaire, une règle, décision ou engagement existant.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER018",
+      "name": "Réaffecter",
+      "definition": "Modifier une affectation existante de ressource.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER019",
+      "name": "Libérer",
+      "definition": "Lever tout ou partie d’une restriction ou d’un engagement sur une ressource.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER020",
+      "name": "Consommer",
+      "definition": "Imputer une utilisation sur un droit, une enveloppe, une quantité ou un engagement.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER021",
+      "name": "Annuler",
+      "definition": "Retirer l’effet encore applicable d’une demande, décision ou engagement identifié, selon ses règles.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER022",
+      "name": "Rapprocher",
+      "definition": "Comparer des faits ou représentations pour établir leur concordance ou leurs écarts.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER023",
+      "name": "Exécuter",
+      "definition": "Accomplir la prestation ou l’action métier demandée.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER024",
+      "name": "Gérer",
+      "definition": "Couvrir un ensemble d’aptitudes ou d’actions relatives à un objet.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "VER025",
+      "name": "Valider",
+      "definition": "Terme courant dont le sens doit être explicité avant emploi canonique.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER044",
+      "name": "Available-to-Promise — ATP",
+      "definition": "Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER045",
+      "name": "Capable-to-Promise — CTP",
+      "definition": "Déterminer les possibilités de satisfaction d’un Order nécessitant une adaptation des ressources ou des engagements, en mobilisant les décisions spécialisées et en explicitant les conditions de faisabilité et les impacts.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER046",
+      "name": "Party",
+      "definition": "Personne physique ou morale identifiée, à laquelle les accords et opérations Supply rattachent des rôles, des droits ou des obligations métier.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER047",
+      "name": "Role",
+      "definition": "Qualité dans laquelle une personne intervient dans une relation, un accord ou une opération, par exemple client ou fournisseur.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER048",
+      "name": "Agreement",
+      "definition": "Contrat complet applicable entre parties : cadre, conditions particulières, périodes et engagements en quantité ou en valeur. Sa projection dans la plateforme conserve les identifiants Party et Product Catalog ; les commandes restent distinctes et en consomment les conditions. Il peut référencer ou figer un [assortiment](glossary:TER087) convenu, sans que tout assortiment dépende d’un accord.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER049",
+      "name": "Product Catalog",
+      "definition": "Catalogue de référence construit à l’extérieur, portant les références proposées à la commande, les prix et les zones géographiques d’application.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER050",
+      "name": "Reference Ingestion",
+      "definition": "Aptitude à recevoir les informations de référence et leurs évolutions pour les rendre utilisables dans les opérations, en conservant les liens et identifiants du maître externe.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER051",
+      "name": "Movement Authorization",
+      "definition": "Autorisation métier de déplacer une marchandise dans un périmètre et sous des conditions, dont un document porte la preuve.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER052",
+      "name": "Product Reference",
+      "definition": "Référentiel projeté des Product et Product Variants, indépendant des catalogues qui les proposent. Product porte un rôle Article ou Container ; les Product Units sont des exemplaires physiques distincts de ces références.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER053",
+      "name": "Location",
+      "definition": "Lieu pouvant servir d’origine, destination ou étape d’un mouvement ; un point du réseau peut offrir un espace de stockage, sans que ce soit systématique.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER054",
+      "name": "Fulfillment Network",
+      "definition": "Réseau de points et de relations décrivant les possibilités de réalisation des mouvements de marchandises ; référentiel distinct des Party auxquelles les lieux sont reliés.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER055",
+      "name": "Stock movement / Inventory movement ; Goods movement chez SAP",
+      "definition": "Mouvement de stock : fait de variation de quantité, localisation ou qualification du stock. Inclut notamment réceptions, sorties, transferts et changements d’état sans déplacement physique. Les écritures et justificatifs qui le représentent restent à distinguer du fait.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER056",
+      "name": "Ledger / Inventory Ledger",
+      "definition": "Registre ; grand livre dans un contexte comptable. Pour notre exploration : registre des écritures justifiant les variations du stock. Le terme ne désigne pas le mouvement lui-même et n’impose ni valorisation financière ni technologie de persistance. Inventory Ledger Management est un candidat de nom de capacité, non adopté.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER057",
+      "name": "Product",
+      "definition": "Référence commune d’un produit, portant un rôle [Article](glossary:TER060) ou [Container](glossary:TER061).",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER058",
+      "name": "Product Variant",
+      "definition": "Déclinaison précise d’un [Product](glossary:TER057), commune à plusieurs [Product Units](glossary:TER059).",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER059",
+      "name": "Product Unit",
+      "definition": "Exemplaire physique individuel d’un produit, avec son identité propre. Il peut porter un [Serial Number](glossary:TER063), indépendant de son support de lecture.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER060",
+      "name": "Article",
+      "definition": "Rôle porté par Product pour les biens constituant le contenu à stocker ou déplacer.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER061",
+      "name": "Container",
+      "definition": "Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles de composition.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER062",
+      "name": "GTIN",
+      "definition": "Identifiant d’une référence commerciale, distinguant les variantes et conditionnements pertinents ; il n’identifie pas à lui seul un exemplaire.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER063",
+      "name": "Serial Number",
+      "definition": "Identifiant éventuel d’un exemplaire dans un périmètre d’unicité à préciser, indépendant de son support de lecture.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER064",
+      "name": "Case",
+      "definition": "Dossier de traitement d’une situation, d’une demande ou d’un problème.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER065",
+      "name": "Supply Order",
+      "definition": "Commande dont la Supply travaille la couverture, les priorités et la promesse.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER066",
+      "name": "Backing Service Order",
+      "definition": "Demande de prestation adressée à un exécutant, avec le résultat attendu et les conditions applicables, puis suivie dans sa prise en charge et ses évolutions.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER068",
+      "name": "Profitable-to-Promise (PTP)",
+      "definition": "Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes de service applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER069",
+      "name": "Sales Order",
+      "definition": "Commande portant les biens et quantités demandés par un client et leurs conditions applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER070",
+      "name": "Purchase Order",
+      "definition": "Commande d’achat portant les biens ou prestations attendus d’un fournisseur, leurs quantités ou périmètres et leurs conditions applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER071",
+      "name": "Transfer Order",
+      "definition": "Ordre portant un déplacement de marchandises entre une origine et une destination, avec quantités et échéances.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER072",
+      "name": "Customer Return Order",
+      "definition": "Commande portant un retour de marchandises provenant d’un client, distincte de la vente d’origine.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER073",
+      "name": "Supplier Return Order",
+      "definition": "Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER074",
+      "name": "Replenishment",
+      "definition": "Réapprovisionner un stock en fonction des besoins et objectifs applicables. Inventory Optimization détermine les apports nécessaires ; les capacités opérationnelles appliquent les décisions, déclenchent les Orders utiles et organisent leur mise en action selon les règles et autorisations applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER075",
+      "name": "Service",
+      "definition": "Prestation rendue par un exécutant et mobilisée par l’orchestration pour réaliser une demande du Domain. Elle est décrite par son résultat, ses conditions et ses engagements de service ; elle peut être physique, humaine ou numérique.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER076",
+      "name": "Service Level Agreement (SLA)",
+      "definition": "Engagement de niveau de service décrivant les conditions et résultats de service attendus, notamment les délais de réalisation applicables.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER077",
+      "name": "Couverture de stock",
+      "definition": "Mesure de la capacité d’un stock à satisfaire une demande de référence, exprimée notamment en durée de consommation, selon un périmètre et des hypothèses explicites.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER078",
+      "name": "Supply Assignment Plan",
+      "definition": "Ensemble cohérent d’affectations proposées ou retenues précisant les ressources, quantités et dates destinées aux commandes et besoins prévisionnels identifiés d’un périmètre, avec les hypothèses et contraintes applicables.",
+      "comparisons": 3,
+      "documents": 3
+    },
+    {
+      "id": "TER079",
+      "name": "Implantation",
+      "definition": "Livraison initiale pour remplir les stocks en début de saison.",
+      "comparisons": 3,
+      "documents": 3
+    },
+    {
+      "id": "TER080",
+      "name": "Réassort",
+      "definition": "Alimentation continue des stocks magasin guidée par des seuils.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER081",
+      "name": "Split",
+      "definition": "Scission d’une commande ou de ses éléments en parties distinctes, avec préservation de leur filiation.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER082",
+      "name": "Spread",
+      "definition": "Répartition de ressources entre plusieurs commandes, dans le sens de la logique ARun discutée.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER083",
+      "name": "Supply",
+      "definition": "Dans les mécanismes de disponibilité, de planification et d’affectation, côté ressources du bilan offre-demande : stock présent et apports attendus, considérés selon leurs quantités, dates et conditions d’admissibilité.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER084",
+      "name": "Supply Chain",
+      "definition": "Chaîne d’approvisionnement : ensemble des acteurs et des activités qui permettent d’amener un produit depuis ses fournisseurs jusqu’à ses destinataires. Elle comprend notamment approvisionnement, transformation éventuelle, stockage, transport et distribution, ainsi que les retours.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER085",
+      "name": "Fulfillment",
+      "definition": "Ensemble des activités qui organisent et réalisent la satisfaction d’une commande : mobiliser les ressources et services nécessaires, coordonner leur mise à disposition et accomplir le résultat attendu selon les quantités, délais et conditions retenus.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER086",
+      "name": "Purchase Order Document",
+      "definition": "Bon de commande : document exprimant le contenu d’une commande d’achat à un moment donné. Le document, la commande métier et la capacité qui la prend en charge sont des notions distinctes.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER087",
+      "name": "Assortment",
+      "definition": "Sélection de produits ou variantes affectée à un périmètre de magasins, canaux ou clients et à une période.",
+      "comparisons": 2,
+      "documents": 2
+    },
+    {
+      "id": "TER088",
+      "name": "Service Provider",
+      "definition": "Fournisseur qui propose ou réalise un Service mobilisable par Supply Chain Orchestration, principalement logistique mais sans restriction à ce secteur.",
+      "comparisons": 2,
+      "documents": 2
+    }
+  ]
+}

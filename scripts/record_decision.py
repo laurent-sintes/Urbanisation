@@ -4,6 +4,7 @@ The live annex is append-only. Neither lifecycle metadata nor a release operatio
 creates an agreement. Semantic changes make an unmaterialized intent stale.
 """
 import argparse
+from contextlib import contextmanager
 from copy import deepcopy
 from datetime import date
 from hashlib import sha256
@@ -14,9 +15,11 @@ import re
 import tempfile
 
 try:
-    from .structured_io import read, loads, dumps, working_path
+    from . import decision_registry
+    from .structured_io import read, dumps, working_path, load_for_sequence_append, dump_sequence_append
 except ImportError:
-    from structured_io import read, loads, dumps, working_path
+    import decision_registry
+    from structured_io import read, dumps, working_path, load_for_sequence_append, dump_sequence_append
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -151,6 +154,14 @@ def semantic_context(snapshot, collection, target_id):
     }
 
 
+def compact_context(context):
+    """Keep semantic fingerprints, not duplicate the glossary and neighbors per approval."""
+    return {'format': 'semantic-sha256-v1',
+            **{key: canonical_sha256(context[key]) for key in ('target', 'principles', 'glossary')},
+            **{key: {identifier: canonical_sha256(value) for identifier, value in context[key].items()}
+               for key in ('incident_relations', 'related_nodes')}}
+
+
 def _values(snapshot, collection, target_id, fields):
     if collection not in ('nodes', 'relations'):
         raise ValueError('collection must be nodes or relations')
@@ -207,12 +218,28 @@ def validate_document(document, sources=None):
                canonical_sha256(target['values'][field]) != target['value_sha256'][field] for field in fields):
             raise ValueError('Intent value hash mismatch: ' + intent['id'])
         context = target['context']
-        if (not isinstance(context, dict) or set(context) !=
-                {'target', 'incident_relations', 'related_nodes', 'principles', 'glossary'}
+        context_keys = {'target', 'incident_relations', 'related_nodes', 'principles', 'glossary'}
+        compact = isinstance(context, dict) and context.get('format') == 'semantic-sha256-v1'
+        if compact:
+            fingerprints = [context.get(k) for k in ('target', 'principles', 'glossary')]
+            for key in ('incident_relations', 'related_nodes'):
+                if not isinstance(context.get(key), dict):
+                    raise ValueError('Invalid compact context')
+                fingerprints.extend(context[key].values())
+            if any(not isinstance(v, str) or not re.fullmatch('[a-f0-9]{64}', v) for v in fingerprints):
+                raise ValueError('Invalid compact context fingerprint')
+        if (not isinstance(context, dict) or set(context) != (context_keys | {'format'} if compact else context_keys)
                 or canonical_sha256(context) != target['context_sha256']):
             raise ValueError('Intent context hash mismatch: ' + intent['id'])
+    validate_suspensions(document.get('suspensions', []), intents, known)
+    return document
+
+
+def validate_suspensions(suspensions, intents, known=None):
+    if not isinstance(suspensions, list):
+        raise ValueError('Suspensions must be a list')
     seen = set()
-    for entry in document.get('suspensions', []):
+    for entry in suspensions:
         if not isinstance(entry, dict) or set(entry) != {'intent_id', 'reviewer', 'reviewed_at', 'source_refs', 'rationale'}:
             raise ValueError('Invalid intent suspension')
         identifier = entry['intent_id']
@@ -225,18 +252,19 @@ def validate_document(document, sources=None):
         refs = _strings(entry['source_refs'], 'suspension source_refs')
         if known is not None and set(refs) - known:
             raise ValueError('Unknown suspension sources')
-    return document
 
 
 def make_intent(snapshot, sources, *, intent_id, collection, target_id, fields,
                 source_refs, author, decided_at, interpretation, note, reviewer,
-                recorded_at=None, supersedes=None):
+                recorded_at=None, supersedes=None, legacy_context=False):
     _text(intent_id, 'id')
     _text(target_id, 'target id')
     fields = sorted(_strings(fields, 'fields'))
     source_refs = sorted(_strings(source_refs, 'source_refs'))
     values = _values(snapshot, collection, target_id, fields)
     context = semantic_context(snapshot, collection, target_id)
+    if not legacy_context:
+        context = compact_context(context)
     intent = {
         'id': intent_id, 'author': author, 'decided_at': decided_at,
         'recorded_at': recorded_at or date.today().isoformat(),
@@ -282,6 +310,27 @@ def _historical_match(intent, decision):
             and sorted(target['approved_fields']) == sorted(historical.get('approved_fields', [])))
 
 
+def validate_consumed_intents(document, consumed_document):
+    """Preserve frozen approvals and suspensions without evaluating current context."""
+    current = {intent['id']: intent for intent in document['intents']}
+    consumed = {intent['id']: intent for intent in (consumed_document or {}).get('intents', [])}
+    for identifier, intent in consumed.items():
+        if current.get(identifier) != intent:
+            raise ValueError('Consumed decision intent was removed or changed: ' + identifier)
+    suspended = {entry['intent_id']: entry for entry in document.get('suspensions', [])}
+    old_suspended = {entry['intent_id']: entry for entry in (consumed_document or {}).get('suspensions', [])}
+    for identifier, entry in old_suspended.items():
+        if suspended.get(identifier) != entry:
+            raise ValueError('Consumed intent suspension was removed or changed: ' + identifier)
+    for identifier in suspended.keys() - old_suspended.keys():
+        if identifier in consumed:
+            raise ValueError('Published intents require the publication review workflow, not suspension')
+    for intent in document['intents']:
+        if intent.get('supersedes') in consumed and intent['id'] not in consumed:
+            raise ValueError('Published intents require the publication review workflow, not supersedes')
+    return consumed
+
+
 def compile_intents(document, snapshot, active_decisions, sources, consumed_document=None):
     """Return only new decisions; known IDs never reapprove a later revision.
 
@@ -290,22 +339,14 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
     has replaced the original decision ID in subsequent publication cycles.
     """
     validate_document(document, sources)
-    current_intents = {intent['id']: intent for intent in document['intents']}
-    consumed = {}
     if consumed_document is not None:
         validate_document(consumed_document, sources)
-        consumed = {intent['id']: intent for intent in consumed_document['intents']}
-        for identifier, intent in consumed.items():
-            if current_intents.get(identifier) != intent:
-                raise ValueError('Consumed decision intent was removed or changed: ' + identifier)
+    consumed = validate_consumed_intents(document, consumed_document)
     version = _text(snapshot.get('version'), 'snapshot version')
     historical = _records(active_decisions.get('decisions') if isinstance(active_decisions, dict)
                           else active_decisions, 'active decisions')
     suspended = {entry['intent_id']: entry for entry in document.get('suspensions', [])}
     old_suspended = {entry['intent_id']: entry for entry in (consumed_document or {}).get('suspensions', [])}
-    for identifier, entry in old_suspended.items():
-        if suspended.get(identifier) != entry:
-            raise ValueError('Consumed intent suspension was removed or changed: ' + identifier)
     for identifier in suspended.keys() - old_suspended.keys():
         if identifier in consumed or identifier in historical:
             raise ValueError('Published intents require the publication review workflow, not suspension')
@@ -314,7 +355,7 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
         if (intent.get('supersedes') in consumed or intent.get('supersedes') in historical):
             if intent['id'] not in consumed and intent['id'] not in historical:
                 raise ValueError('Published intents require the publication review workflow, not supersedes')
-    decisions = []
+    decisions, stale = [], []
     for intent in document['intents']:
         identifier, target = intent['id'], intent['target']
         if identifier in historical:
@@ -328,12 +369,17 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
         try:
             values = _values(snapshot, target['collection'], target['id'], target['approved_fields'])
             context = semantic_context(snapshot, target['collection'], target['id'])
+            if target['context'].get('format') == 'semantic-sha256-v1':
+                context = compact_context(context)
         except ValueError as error:
-            raise ValueError('Stale decision intent ' + identifier + ': ' + str(error)) from error
+            stale.append('Stale decision intent ' + identifier + ': ' + str(error))
+            continue
         if any(canonical_sha256(value) != target['value_sha256'][field] for field, value in values.items()):
-            raise ValueError('Stale decision intent ' + identifier + ': approved values changed')
+            stale.append('Stale decision intent ' + identifier + ': approved values changed')
+            continue
         if canonical_sha256(context) != target['context_sha256']:
-            raise ValueError('Stale decision intent ' + identifier + ': semantic context changed')
+            stale.append('Stale decision intent ' + identifier + ': semantic context changed')
+            continue
         item = _records(snapshot[target['collection']], target['collection'])[target['id']]
         revision = item.get('revision')
         if type(revision) is not int or revision < 1:
@@ -345,6 +391,8 @@ def compile_intents(document, snapshot, active_decisions, sources, consumed_docu
                               'approved_fields': deepcopy(target['approved_fields']),
                               'value_sha256': deepcopy(target['value_sha256']), 'import_version': version}
         decisions.append(decision)
+    if stale:
+        raise ValueError('\n'.join(stale))
     return {'schema_version': SCHEMA_VERSION, 'version': version, 'decisions': decisions}
 
 
@@ -361,28 +409,71 @@ def record_intents(root, parameters):
     path = root / REGISTRY_PATH
     if not path.parent.is_dir():
         raise ValueError('Missing backlog directory: ' + str(path.parent))
+    with _registry_lock(path):
+        return _record_intents(root, path, parameters)
+
+
+@contextmanager
+def _registry_lock(path):
+    """Serialize writers, including the check/replace window; crash releases lock.
+
+    Keep the sidecar inode: unlinking it could let a third process lock a different
+    file while another writer still holds the old one. No polling or stale PID.
+    """
+    with path.with_name('.decision-intents.lock').open('a+b') as stream:
+        if stream.seek(0, os.SEEK_END) == 0:
+            stream.write(b'\0')
+            stream.flush()
+        stream.seek(0)
+        try:
+            if os.name == 'nt':
+                import msvcrt
+                msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)
+            else:
+                import fcntl
+                fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError as error:
+            raise ValueError('Decision intent registry is being written; retry after the other writer finishes') from error
+        try:
+            yield
+        finally:
+            stream.seek(0)
+            if os.name == 'nt':
+                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+
+def _record_intents(root, path, parameters):
     snapshot = read(working_path(path.parent))
     glossary_path = working_path(path.parent, 'glossary')
     if glossary_path.exists():
         snapshot['glossary'] = read(glossary_path)
     sources = read(root / 'modeles/provenance/source-records.json')
     before = path.read_bytes() if path.exists() else None
-    document = loads(before.decode('utf-8-sig')) if before is not None else {'schema_version': SCHEMA_VERSION, 'intents': []}
+    document, offset = (load_for_sequence_append(before, 'intents') if before is not None
+                        else ({'schema_version': SCHEMA_VERSION, 'intents': []}, None))
+    if decision_registry.is_index(document):
+        return decision_registry.record_sharded(root, path, before, document, parameters, snapshot, sources)
     validate_document(document, sources)
+    appended = []
     results = []
     for params in parameters:
         existing = next((item for item in document['intents'] if item['id'] == params.get('intent_id')), None)
         intent = make_intent(snapshot, sources, **params,
-                             recorded_at=existing['recorded_at'] if existing else None)
+                             recorded_at=existing['recorded_at'] if existing else None,
+                             legacy_context=bool(existing and 'format' not in existing['target']['context']))
         if existing and existing != intent:
             raise ValueError('Decision intent ID already exists with different content: ' + intent['id'])
         results.append({'recorded': existing is None, 'path': str(path), 'intent': intent})
         if existing is None:
             document['intents'].append(intent)
+            appended.append(intent)
     superseded_intents(document)
     if not any(result['recorded'] for result in results):
         return results
-    content = dumps(document).encode('utf-8')
+    content = (dump_sequence_append(before, document, 'intents', appended, offset)
+               if before is not None else dumps(document).encode('utf-8'))
     temp_path = None
     try:
         with tempfile.NamedTemporaryFile(mode='wb', dir=path.parent, prefix='.decision-intents-', suffix='.tmp', delete=False) as stream:

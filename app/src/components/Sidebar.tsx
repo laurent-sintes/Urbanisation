@@ -5,7 +5,7 @@ import { childrenOf, lineageOf, parentRelationOf, rootsOf } from '../model';
 import { searchPublication } from '../search';
 import { kindLabel } from '../presentation';
 import { NodeIcon } from '../icons';
-import { startsDecisionSection } from '../capabilityTypes';
+import { startsCapabilityTypeSection } from '../capabilityTypes';
 import { preference, savePreference, type RouteState } from '../navigation';
 
 interface Props {
@@ -89,10 +89,10 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     if (event.key === 'ArrowLeft') expanded.has(node.id) && ids.length ? toggle(node.id, false) : focus(parentRelationOf(model, node.id)?.sourceId);
     if (event.key === 'Enter' || event.key === ' ') onNavigate(node.id, mobile);
   };
-  const renderNode = (node: AtlasNode, depth: number, decisionStart = false) => {
+  const renderNode = (node: AtlasNode, depth: number, typeStart = false) => {
     const children = childrenOf(model, node.id);
     const isExpanded = expanded.has(node.id);
-    return <li key={node.id} role="treeitem" data-tree-id={node.id} className={decisionStart ? 'decision-section-start' : undefined} aria-label={`${node.name} · ${kindLabel(node)}`}
+    return <li key={node.id} role="treeitem" data-tree-id={node.id} className={typeStart ? 'capability-type-section-start' : undefined} aria-label={`${node.name} · ${kindLabel(node)}`}
       aria-level={depth} aria-expanded={children.length ? isExpanded : undefined} aria-selected={route.node === node.id}
       tabIndex={tabStop === node.id ? 0 : -1}
       onFocus={e => e.target === e.currentTarget && setFocused(node.id)} onKeyDown={e => keydown(e, node)}>
@@ -104,7 +104,7 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
         <span className="tree-label" title={`${node.id} · ${kindLabel(node)}`}>{node.name}</span>
         {children.length > 0 && <small>{children.length}</small>}
       </div>
-      {children.length > 0 && isExpanded && <ul role="group">{children.map((child, index) => renderNode(child, depth + 1, startsDecisionSection(children, index)))}</ul>}
+      {children.length > 0 && isExpanded && <ul role="group">{children.map((child, index) => renderNode(child, depth + 1, startsCapabilityTypeSection(children, index)))}</ul>}
     </li>;
   };
   const matches = searching ? searchPublication(model, route.query) : [];

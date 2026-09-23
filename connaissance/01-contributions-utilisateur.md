@@ -14467,3 +14467,1078 @@ lance une release complete, je ne comprends plus où on en est.
 **contexte et portée**
 
 Demande de production et activation locale d’une release complète du backlog courant dans FLOW Atlas, avec restitution claire de son contenu et des propositions encore en annexe. La publication ne vaut pas adoption globale des propositions ni des champs détaillés.
+
+## U583
+
+**id**
+
+U583
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Clarifier le découpage métier en Areas et capacités
+
+**texte**
+
+On va améliorer définitivement le modèle.
+
+Le domaine et son périmètre c'est bon. C'est le découpage en Area / Capacités qui est entre la solution et le métier. Il faut que ce soit plus clair. Mais j'ai une proposition...
+
+**contexte et portée**
+
+Laurent conserve le Domain et son périmètre comme cadre de travail et concentre l’amélioration sur la clarté métier du découpage en Areas et capacités. Cette appréciation ne constitue pas une validation nouvelle de tous les champs du Domain ni des descendants. Sa proposition est enregistrée séparément en U584, avant analyse.
+
+## U584
+
+**id**
+
+U584
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Proposer six Areas pour le cœur d’orchestration
+
+**texte**
+
+Je structurerais le cœur d’orchestration ainsi :
+
+| Domain Area                       |                                                    |                                                                                                |
+| --------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Reference & Policy Management** | Avec quelles données/règles travaille-t-on ?       | articles, lieux, canaux, calendriers, classifications, règles/policies                         |
+| **Demand Management**             | Qu’est-ce qui demande de la ressource ?            | Sales Orders, STO demand, réservations métier, demandes B2B/B2C, dates attendues               |
+| **Supply Management**             | Quelles ressources vais-je avoir ?                 | stock entrant, PO, transferts entrants, retours, supply attendue, dates d’échéance             |
+| **Inventory Management**          | Qu’est-ce que je possède / où / quand ?            | mouvements, ledger, stock physique, stock en transit, inventory position, projected stock      |
+| **Supply & Demand Matching**      | Comment répartir la ressource entre les demandes ? | Master Plan, allocation, BOP, réallocation, assignment                                         |
+| **Fulfillment Orchestration**     | Comment exécuter la demande retenue ?              | sourcing, split, choix site, orchestration entrepôt/magasin, shipment, substitution, rerouting |
+
+**contexte et portée**
+
+Proposition de découpage du cœur d’orchestration à examiner à responsabilités métier constantes, dans le cadre U583. Les exemples mélangent données, documents, décisions et activités ; leur présence dans une ligne ne les transforme pas en capacités ni en comportements. Comparer les frontières et les usages de marché, puis expliciter les conséquences pour le modèle courant. Aucun déplacement, fusion, suppression ou nouveau nom canonique adopté par anticipation ; les accords antérieurs, dont le nom cible U581, restent tracés pendant ce réexamen. Aucun changement du Domain, publication ou audit global des comportements demandé.
+
+## U585
+
+**id**
+
+U585
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Séparer les politiques maîtrisées, décrire les effets du plan et retenir la logique de case management
+
+**texte**
+
+Ce que j'entends dans Policy Management, ce sont les référentiels pour lesquels le domaine Supply Chain Orchestration est maître : les différents réglages, règles, politiques, configurations qui vont :&#x20;
+
+- protéger le stock
+- protéger les demandes (certaines doivent passer avant d'autres par exemple)
+- protéger les backing services (WMS / TMS)
+
+Je pense qu'il faut séparer ces référentiels des référentiels importés (projection)
+
+
+
+Pour le 1. : oui, la CTP doit s'activer dans cet area pour proposer un plan qui peut toucher à :&#x20;
+
+- demandes d'achat
+- demandes de ventes : modifier les dates, les quantites, split etc.
+- supply policy : par exemple allouer du stock B2B pour l'eCommerce pour répondre à une campagne de pub de la marque et qui fait s'envoler ses ventes
+
+
+
+\=> D'ailleurs ce découpage ATP / CTP / PTP est très "commercial", très "éditeur". En termes de capacités, la manière dont je le présente, c'est plus clair.
+
+
+
+3. oui, c'est du case management à l'état de l'art.
+
+**contexte et portée**
+
+Précision sur U584 et réaction à l'analyse CMP247. Policy Management désigne les références de règles et configurations dont Supply Chain Orchestration porte la maîtrise, à distinguer des projections de référentiels maîtres externes. Les protections concernent stock, demandes et Backing Services ; WMS/TMS sont les exemples cités, sans les transformer en capacités ou nœuds de solution.
+
+Laurent confirme une Area d'arbitrage pouvant mobiliser CTP et proposer des changements d'achats, de demandes de vente et de politiques de ressources. Il conteste ATP/CTP/PTP comme découpage de capacités et privilégie les résultats métier du plan ; aucun libellé de remplacement détaillé ni suppression de résultat métier n'est déduit. L'exemple B2B/eCommerce est un cas cible, sans réalisation Beaumanoir affirmée ni autorisation d'altérer automatiquement des engagements clients. Le nom de l'Area n'est pas tranché par le « oui » de portée.
+
+L'assimilation de l'adaptation de Fulfillment à du case management précise l'intention métier. La qualification « à l'état de l'art » est le verbatim de Laurent, à confronter aux sources ; elle ne vaut ni conformité CMMN démontrée ni choix de moteur. La séparation en deux Areas, leurs noms exacts et les capacités restent à présenter comme proposition de mise en œuvre. Aucun accord global sur les autres éléments, migration canonique ou publication déduit.
+
+## U586
+
+**id**
+
+U586
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Créer le type de capacité Policy
+
+**texte**
+
+Je souhaite créer un nouveau type de capacité : la policy.
+
+**contexte et portée**
+
+Instruction explicite d'ajouter Policy aux types de capacités, dans le contexte des politiques maîtrisées par Supply Chain Orchestration décrit U585. Mise en œuvre dans la nature des capacités (`fields.nature: policy`), à côté des types existants, sans nouveau niveau hiérarchique. La définition méthodologique détaillée et les exemples de Codex restent proposés ; aucun reclassement global des capacités actuelles ni nouvelle Area adopté par extension. Les publications figées sont préservées.
+
+## U587
+
+**id**
+
+U587
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Distinguer offre de Backing Services et politiques de recours aux fournisseurs
+
+**texte**
+
+Dans les référentiels, on a bien les backing service que nous proposent les fournisseurs logistiques essentiellement mais d'autres pourquoi pas. Mais on doit avoir aussi des Backing Service Policy qui permettent d'exclure un fournisseur, limiter les commandes si on remarques des difficultés etc.
+
+**contexte et portée**
+
+Laurent confirme que le référentiel décrit les prestations proposées par les fournisseurs, surtout logistiques mais sans restriction à ceux-ci. Il demande Backing Service Policy pour les règles Supply de recours aux fournisseurs, dont exclusion et limitation des commandes face aux difficultés observées. Le nom et les deux effets demandés sont conservés dans la proposition de capacité de type Policy, distincte du catalogue des offres, de la capacité opérationnelle observée, de la sélection d'un service et des engagements déjà pris. La définition détaillée, les seuils, déclencheurs, modalités de rétablissement et liens proposés par Codex restent à qualifier. Aucun incident fournisseur ni automatisme installé Beaumanoir n'est affirmé ; aucune annulation implicite des prestations engagées ni migration globale des Areas déduite.
+
+## U588
+
+**id**
+
+U588
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Vérifier les noms Backing Service et Backing Service Policy sur le marché
+
+**texte**
+
+Coté marché, backing service et backing service policy c'est ok ?
+
+**contexte et portée**
+
+Demande de comparaison des intitulés eux-mêmes, après les appuis fonctionnels U587/CMP251. Distinguer vocabulaire attesté, adaptation FLOW et proximité de fonction. Aucun renommage automatique des termes courants ni validation anticipée d'une alternative.
+
+## U589
+
+**id**
+
+U589
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Évaluer la clarté des frontières du Domain et des Areas
+
+**texte**
+
+Est-ce que les frontières du domaine et des areas sont claires ou il y a un flou ?
+
+**contexte et portée**
+
+Demande de diagnostic de clarté de la proposition courante U584–U588, confrontée aux responsabilités canoniques. Distinguer finalité du Domain, frontière avec les exécutants et maîtres externes, partage entre Areas et décalage entre proposition et modèle actuel. Aucun accord nouveau, changement de périmètre, renommage ni déplacement déduit ; examen ciblé des frontières, sans réouverture de l'audit historique des comportements.
+
+## U590
+
+**id**
+
+U590
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Adopter la distinction Service, Service Provider, Service Catalog et Service Provider Policy
+
+**texte**
+
+Dans un premier temps, je valide ta proposition de changement de nom "Backing Service" en Service Provider, Service Catalog etc.
+
+**contexte et portée**
+
+Accord sur la proposition de nommage présentée en U588/CMP252 : Service désigne la prestation, Service Provider son fournisseur, Service Catalog le catalogue et Service Provider Policy les règles de recours. Interprétation contextuelle : cet accord ne transforme pas la prestation en fournisseur. Il porte sur ces noms et leurs rôles distincts ; il ne vaut ni adoption de toutes les descriptions détaillées, ni migration des Areas, ni publication. Le nom dérivé des Orders n'était pas compris dans la table présentée et conserve sa qualification antérieure. Les accords et formulations historiques restent conservés.
+
+## U591
+
+**id**
+
+U591
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Frontière entre arbitrage du plan et réalisation avec adaptation des Logistic Orders
+
+**texte**
+
+Flou sur les frontières : Arbitrage du plan ↔ Fulfillment
+
+L'arbitrage du plan va permettre de retoucher les demandes jusqu'à ce qu'elles soient fermes et exécutable.
+
+Fulfillment, c'est l'exécution proprement dite d'une demande et l'orchestration des services de logistique essentiellement. Evidemment, si le plan d'exécution echoue, le plan peut s'adapter et retenter un shipment depuis un autre entrepot pour un article seulement manquant. Dans ce cas la demande initiale splitte la logistic Order en deux et suis le déroulement des deux.
+
+**contexte et portée**
+
+Clarification explicite du passage à l'exécution et du traitement d'un manque partiel : l'arbitrage retouche les demandes jusqu'à leur caractère ferme et exécutable ; Fulfillment conduit la réalisation et adapte le plan d'exécution, principalement par orchestration de prestations logistiques. La demande initiale porte le lien et le suivi des deux Logistic Orders résultant du split. Conserver ce terme dans la proposition, sans créer automatiquement une capacité ni le confondre avec Shipment ou Backing Service Order. Les critères précis de fermeté et les conditions de retour à l'arbitrage restent à formaliser ; ne pas déduire l'immutabilité de toute demande ferme, une nouvelle promesse automatique ou l'exécution physique interne au Domain.
+
+## U592
+
+**id**
+
+U592
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Corriger la frontière : début d'exécution, distinct de la fermeté
+
+**texte**
+
+Je dirais plutot que l'arbitrage modifie le contenu des demandes (en plus du reste) tant qu'une demande n'est pas en cours d'exécution. On peut imaginer qu'une commande ferme soit "désaffermie" même si c'est pas très sympa pour le client.
+
+**contexte et portée**
+
+Cette précision remplace le critère de fermeté employé dans la formulation U591 : l'arbitrage peut modifier le contenu de la demande tant qu'elle n'est pas en cours d'exécution, même si elle est ferme. Le désaffermissement est une possibilité explicite ; il n'est ni une action automatique ni une absence de conséquence sur l'engagement client. U591 reste applicable à l'adaptation du plan d'exécution et au split des Logistic Orders suivis par la demande initiale. La granularité du début d'exécution en cas de réalisation partielle, ses faits déclencheurs et les responsabilités de traitement d'un engagement devenu impossible restent à préciser. Aucun changement canonique de capacité ou autorisation universelle de modifier une demande déjà en cours d'exécution déduit.
+
+## U593
+
+**id**
+
+U593
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Adopter le terme Re-sourcing pour la reprise depuis une autre source
+
+**texte**
+
+*re-sourcing*  : très bon, j'achète
+
+**contexte et portée**
+
+Accord explicite sur le terme présenté dans le cas U591/U592 : rechercher une autre source de réalisation, notamment un autre entrepôt pour le seul article manquant pendant l'exécution. Re-sourcing est retenu dans la proposition Fulfillment ; cet accord lexical ne choisit pas à lui seul sa maille Capability ou Behavior, ne renomme pas toute l'adaptation de processus et n'adopte pas de description détaillée par extension. Le split des Logistic Orders et leur suivi restent des effets et responsabilités distincts.
+
+## U594
+
+**id**
+
+U594
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Réexaminer les flous restants après clarification plan / Fulfillment et adoption de Re-sourcing
+
+**texte**
+
+Que reste t il de flou ?
+
+**contexte et portée**
+
+Demande de diagnostic actualisé après U590–U593. Ne pas présenter comme toujours ouverte la frontière de principe entre modification de la demande avant exécution et adaptation de sa réalisation. Distinguer arbitrages structurants restants, modalités à préciser et application future de la proposition au modèle canonique. Aucun accord supplémentaire ni migration de la hiérarchie déduit de cette question.
+
+## U595
+
+**id**
+
+U595
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Demand porte les transferts et retours ; étudier les Orders de consignation sur le marché
+
+**texte**
+
+Demand ↔ Supply  :
+
+- TransferOrder et les retours  sont des Demandes. C'est vrai qu'un indicateur de détection de seuil de stock pourrait entrainer des demandes de transfert et on pourrait se dire sémantiquement que la supply se fait sa propre demande. Mais ce n'est pas comme ça que c'est découpé. Les demandes portent des besoins et exigences et pilotent la promesse de satisfaction de la demande. Les demandes peuvent venir du commerce ou du plan d'optimisation de la supply. TransferOrder pourrait être utilisé pour un client B2B pour livrer ou récupérer du stock de nos entrepots en cas de consignement. Mais a priori, j'aime pas avoir un Order à tout faire => je souhaite qu'on étudie le marché pour aider à y voir clair et prendre une décision.
+
+**contexte et portée**
+
+Clarification de responsabilité : Transfer Order et les retours relèvent de Demand ; les demandes portent besoins et exigences et pilotent leur promesse, quelle que soit leur origine commerce ou plan d'optimisation Supply. Un effet d'apport ne change pas cette attribution. Demande d'étude marché pour distinguer transfert et demandes liées à une consignation B2B, avant décision sur leur découpage. Le sens de propriété et le rôle des entrepôts dans l'exemple ne sont pas entièrement précisés : examiner la consignation chez un client et le stock appartenant à un tiers accueilli chez nous sans les confondre. Aucune adoption d'un Order universel ni création/scission de capacités par anticipation.
+
+## U596
+
+**id**
+
+U596
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Consignation B2B : couvrir les deux sens, exemple centré sur le stock client chez nous
+
+**texte**
+
+Les deux cas doivent être couverts mais mon exemple ciblait le point 2
+
+**contexte et portée**
+
+Réponse à la question : « Dans ton exemple B2B de consignation, qui possède le stock et où est-il détenu ? J’étudie les deux cas, car ils peuvent conduire à des demandes différentes. » Les options étaient 1. Notre stock est placé chez le client B2B ; 2. Le stock du client B2B est détenu dans nos entrepôts ; 3. Les deux cas doivent être couverts. Laurent retient les deux cas et précise que son exemple U595 cible le second. Ne pas assimiler automatiquement le client propriétaire à un fournisseur de marchandises ni supposer un achat à la consommation ; distinguer régime de propriété et relation de prestation.
+
+## U597
+
+**id**
+
+U597
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Comparer les stratégies de gestion des consignations entre SAP AFS et Fashion
+
+**texte**
+
+Sur la gestion des consignations, j'aimerais voir s'il y a une diff de stratégie entre AFS et Fashion
+
+**contexte et portée**
+
+Extension de l'étude U595/U596 à la comparaison SAP AFS et SAP Fashion Management, en distinguant les éditions et la continuité éventuelle S/4HANA Fashion. Rechercher différences de modèle métier, de gestion de propriété/stock, d'affectation et de traitement documentaire, sans extrapoler une couverture installée Beaumanoir ni confondre consignation client, consignation fournisseur et détention du stock d'un client donneur d'ordre.
+
+## U598
+
+**id**
+
+U598
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Vérifier la compréhension des frontières Transfer Order et demandes de consignation
+
+**texte**
+
+Si je comprends bien :
+
+- Transfer Order est uniquement lié à l'équilibrage entre sites, quelle que soit le propriétaire du stock, pour rester sur une logique une demande = un intention
+- Le processus de consignation doit être porté par ses propres Order : mise en consignation, reprise ou restitution au propriétaire
+- Consignment Replenishment Order actuellement présent couvre la mise en consignation mais il manque les autres.
+
+**contexte et portée**
+
+Reformulation à vérifier, sans accord implicite de réduction de Transfer Order à Inventory Rebalancing ni création immédiate de nouveaux Orders. Confronter aux intentions déjà décrites du transfert, au périmètre fournisseur entrant de D04.r et à la couverture existante Consignment Exit / Supplier Return. Distinguer manque de demande explicite et absence de responsabilité ; reprise et restitution peuvent nommer une même opération depuis deux points de vue. Les nouvelles familles et leur maille restent à décider.
+
+## U599
+
+**id**
+
+U599
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Proposer des noms d'Orders de consignation fondés sur le marché
+
+**texte**
+
+L'expression "Consignment Replenishment Order" est moche. Que proposes-tu comme nom d'order pour lister ceux qui gèrent le processus de consignation ? Que dit le marché ?
+
+**contexte et portée**
+
+Demande de propositions de noms et de vérification des usages éditeurs pour les demandes du processus de consignation. Le rejet du libellé actuel ne valide pas automatiquement un nom alternatif ni une liste de capacités nouvelles. Distinguer alimentation initiale/réassort, reprise des biens restés consignés et retour après consommation/cession ; conserver le cas du client propriétaire dont nous détenons le stock U596, sans acquisition ou vente implicite.
+
+## U600
+
+**id**
+
+U600
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Qualifier les noms d'Orders et élargir la comparaison à la concurrence avant validation
+
+**texte**
+
+Consignment Order  seul, ça fait penser à un truc généric. JE préfère rajouter "Pick-up".
+
+C'est une bonne proposition mais avant de valider j'aimerais savoir ce que propose la concurrentce
+
+**contexte et portée**
+
+Laurent refuse de valider à ce stade et demande d'étudier davantage les usages concurrents. Consignment Order seul est jugé trop générique. Le sens de « rajouter Pick-up » est à préciser : chez SAP Pick-up désigne la reprise du stock non consommé, tandis que Fill-up désigne son alimentation. Ne pas inverser ces intentions ni déduire une adoption avant la réponse et la comparaison. Étendre l'étude au-delà de SAP/Oracle/Microsoft, en conservant la distinction entre consignation client, fournisseur et détention pour compte d'un client propriétaire.
+
+
+## U601
+
+**id**
+
+U601
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Correction Fill-up pour qualifier la mise en consignation
+
+**texte**
+
+Réponse à la question « Quand tu proposes d’ajouter “Pick-up”, vises-tu l’Order de reprise du stock, ou souhaites-tu surtout qualifier le nom de l’Order de mise en consignation — nommé “Fill-up” chez SAP ? » :
+
+Qualifier l’Order de mise en consignation, avec Fill-up ou un autre terme.
+
+Puis précision spontanée :
+
+Ah zut non, je parlais de Fill-up pour préciser la mise en consignation
+
+**contexte et portée**
+
+Corrige le mot Pick-up d’U600 en Fill-up pour l’intention de mise en consignation. La demande de comparaison à la concurrence avant validation reste active. Aucune adoption globale des quatre noms proposés ni extension du périmètre canonique D04.r déduite.
+
+
+## U602
+
+**id**
+
+U602
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Mandat de vente du stock client détenu dans nos entrepôts et importance d’Issue
+
+**texte**
+
+Issue c'est important car quand on stocke dans un de nos entrepots c'est qu'on a le mandat pour vendre la marchandise
+
+**contexte et portée**
+
+Dans le cas de consignation discuté, Laurent précise le mandat de vente accompagnant la détention du stock appartenant au client. La simple garde sans mandat n’est donc pas le scénario à retenir pour cet exemple. Importance métier d’Issue explicitement confirmée ; aucun achat préalable par le détenteur, déclencheur exact du transfert de propriété, validation de toute la nomenclature ou création automatique de capacités déduits. Ne pas étendre cette déclaration à tous les stocks de tous les entrepôts hors de ce contexte.
+
+
+## U603
+
+**id**
+
+U603
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Vérifier la correspondance du mandat de vente avec le cas SAP
+
+**texte**
+
+Regarde si ça correspond au cas d'usage SAP
+
+**contexte et portée**
+
+Vérifier le stock appartenant au client, détenu dans nos entrepôts avec mandat de vente (U596/U602), et le rôle de Consignment Issue. Demande de recherche, sans validation implicite d’un achat-revente, du montage contractuel ou d’une nomenclature.
+
+
+## U604
+
+**id**
+
+U604
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Deux comportements pour un même Order
+
+**texte**
+
+Tu viens de décrire 2 comportements d'un même order
+
+**contexte et portée**
+
+Laurent regroupe les variantes acquisition pour revente et vente pour compte sous un même Order. Ne valide pas par cette phrase les noms anglais proposés ensuite par Codex ni une capacité canonique autonome. L’articulation avec Sales Order est réinterrogée en U606.
+
+
+## U605
+
+**id**
+
+U605
+
+**date**
+
+2026-09-22
+
+**titre**
+
+État de la consolidation
+
+**texte**
+
+On en est où ?
+
+**contexte et portée**
+
+Demande de statut ; aucun accord supplémentaire. Le point U604 restait alors non enregistré dans les fichiers.
+
+
+## U606
+
+**id**
+
+U606
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Intention Sales Order et dimension juridique de Consignment Issue
+
+**texte**
+
+Ca pose problème : Sales Order est l'intention première et Consignment Issue Order porte la problématique juridique. Que dit SAP ?
+
+**contexte et portée**
+
+Laurent remet en question la séparation des capacités Sales Order et Consignment Issue Order. Vérifier le découpage SAP ; ne pas transformer la question en accord sur une nouvelle hiérarchie.
+
+
+## U607
+
+**id**
+
+U607
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Consignment Issue adopté comme comportement de Sales Order
+
+**texte**
+
+Oui, absolument, Consignment Issue est un comportement de Sales Order
+
+**contexte et portée**
+
+Accord explicite sur le nom Consignment Issue, la nature comportement et son parent Sales Order D04.i. Remplace la proposition de capacité autonome Consignment Issue Order. Les descriptions détaillées, faits générateurs et modalités contractuelles restent proposés ; aucun sous-comportement ni accord sur les autres Orders de consignation déduit.
+
+
+## U608
+
+**id**
+
+U608
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Demand : intention de l’acteur déclencheur
+
+**texte**
+
+Tu as bien noté quelque part que le modèle Demand implique de réfléchir par rapport à l'intention de l'acteur qui déclenche la demande ?
+
+**contexte et portée**
+
+Laurent rappelle le principe de construction de Demand depuis l’intention de l’acteur déclencheur. Précise U393/U394 ; ni document ERP, ni effet juridique, ni origine technique ne suffisent à définir une nouvelle demande. Ne change pas à lui seul les accords ou le périmètre de chaque Order.
+
+
+## U609
+
+**id**
+
+U609
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Demandes par intention ; lisibilité commune à tout le modèle
+
+**texte**
+
+Oui, lisibilité métier est une précision inutile. Tout le modèle a vocation d'être lisible.
+
+**contexte et portée**
+
+Retirer la précision du libellé de la règle Demand. Conserver l’intention de l’acteur déclencheur comme principe spécifique ; la lisibilité est une exigence générale. Les comparaisons et justifications historiques restent conservées, sans réécriture des preuves ni remise en cause des règles de description des comportements.
+
+
+## U610
+
+**id**
+
+U610
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Validation du principe Demandes par intention
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Validation de la restitution précédente : libellé « Demandes par intention », principe de partir de l’intention de l’acteur qui déclenche la demande et lisibilité commune à tout le modèle. Le rattachement Consignment Issue sous Sales Order était déjà adopté U607 et reste confirmé dans ce contexte. Aucun accord étendu aux descriptions détaillées, aux autres Orders ou à une publication.
+
+
+## U611
+
+**id**
+
+U611
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Étudier Goods Return avec Customer Return et Consignment Return
+
+**texte**
+
+Capacité Goods Return avec Customer Return et Consignment Return en comportement
+**Consignment Pick-up** reste distinct
+
+Tu peux vérifier le marché ?
+
+**contexte et portée**
+
+Proposition de regroupement soumise à comparaison marché. Examiner nom, intention commune, distinction Pick-up et incidence sur Customer Return D04.l et ses comportements actuels. Ne pas déduire une fusion de Supplier Return D04.m ni une migration canonique avant restitution de l’étude.
+
+
+## U612
+
+**id**
+
+U612
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Return Order : conserver le modèle par intention et ses comportements
+
+**texte**
+
+Le meilleur modèle c'est microsoft : conception par l'intention. C'est ce qui nous avait guidé.
+Et finalement, les comportements conviennent pour un retour fournisseur du fait de la consignation. De plus, selon le contrat signé avec le fournisseur, il peut aussi nous confier la réparation éventuellement. On peut tout imaginer. Comme il ne s'agit de faire des règles de gestion mais présenter des capacités, notre modèle actuel est satisfaisant. En termes de nommage, Return Order est meilleur car Customer laisse penser à du B2C. Si on gère de la consignation pour un fournisseur et qu'on vend à un client business (wholesale), "Return Order" est plus englobant.
+
+Ok ?
+
+**contexte et portée**
+
+Laurent retient l’approche Microsoft comme référence pour son modèle par intention, conserve les comportements actuels et choisit Return Order à la place de Customer Return. Applicabilité B2C, wholesale et consignation ; réparation possible selon contrat, sans règle automatique ni pratique installée inférée. La proposition U611 de comportements Customer Return / Consignment Return n’est plus retenue. Aucun accord de fusion ou suppression de Supplier Return D04.m déduit. Customer n’est pas techniquement limité au B2C dans les sources éditeur ; le choix vise l’évocation du nom dans FLOW.
+
+
+## U613
+
+**id**
+
+U613
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Distinguer type des capacités et gouvernance des référentiels
+
+**texte**
+
+Pour les référentiels de données, je pense qu'on a deux dimensions. Le type des capacités (policy, autre etc.) et la gouvernance (projection, domain-managed)
+
+**contexte et portée**
+
+Proposition de deux dimensions indépendantes. Aucun classement automatique des référentiels existants ni modification de leur hiérarchie déduit.
+
+## U614
+
+**id**
+
+U614
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Préciser Domain-managed, Projection et Domain-View
+
+**texte**
+
+Domain-managed : domain=CRUD
+Projection : la vérité vient d'une source externe
+Domain-View : vue contruite et rafraichie par le domaine. Quel que soit l'origine des données.
+
+**contexte et portée**
+
+Définitions explicites de Laurent précisant U613. Domain-managed attribue au domaine les opérations CRUD ; Projection situe la vérité hors du domaine ; Domain-View attribue au domaine la construction et le rafraîchissement de la vue, indépendamment de l'origine des données. Ne pas déduire des catégories exclusives, un choix de stockage ou la reclassification des capacités existantes.
+
+
+## U615
+
+**id**
+
+U615
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Appliquer au modèle courant la gouvernance des données
+
+**texte**
+
+Je pense qu'il faut prendre en compte ce modèle et l'appliquer au modèle actuel
+
+**contexte et portée**
+
+Demande d’application des définitions U613/U614 : type des capacités distinct de la gouvernance, Domain-managed pour le CRUD porté par le domaine, Projection pour la vérité externe, Domain-View pour les vues construites et rafraîchies par le domaine. L’application aux éléments existants est un travail de modélisation ; aucun accord détaillé par élément ni publication n’est implicite.
+
+## U616
+
+**id**
+
+U616
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Service, tâche et Service Order dans Fulfillment Orchestration
+
+**texte**
+
+"Logistic Order et demandes de services" : le problème est qu'on a changé de modèle en cours de route. Le modèle tourne autour de la notion générique de service. Ces services peuvent être purement numériques (api de construction documentaire par exemple), physiques (Logistique, douane) ou service (expertise, conseil). A chaque fois qu'on appelle un service, il sera encapsulé dans une "tâche" dans "Fulfillment Orchestration", tâche qui pourra générer un document de type "Service Order" (doc EDI par exemple) pour officialiser, qualifier la demande de service et sera envoyé (l'order) au provider de service. Donc un Logistic Order devient un Service Order (pattern plus générique).
+
+**contexte et portée**
+
+Clarification explicite du périmètre d’exécution : services numériques, physiques et d’expertise/conseil, appels encapsulés dans des tâches de Fulfillment Orchestration. Le Service Order est un document éventuellement généré par la tâche, qualifiant et officialisant la demande envoyée au Service Provider. Logistic Order est remplacé par ce pattern générique ; ne plus instruire une mission logistique autonome par défaut. Aucun document obligatoire pour chaque appel, aucune nouvelle couche de capacités ni réouverture du Domain Business Services déduits. Les adaptations détaillées du catalogue restent à appliquer sur cette base.
+
+## U617
+
+**id**
+
+U617
+
+**date**
+
+2026-09-22
+
+**titre**
+
+La tâche gouverne la sollicitation et le suivi du service
+
+**texte**
+
+Précision sur le concept de Tâche : c'est un objet de gouvernance qui pilote la sollicitation du service. La tâche peut appeler un service immédiatement, au bout d'un moment, sur captation d'un événement. Il suit l'exécution du service et peut relancer si nécessaire afin d'apporter plus de robustesse, appeler un service de secours etc. De plus la tâche a la charge de s'assurer tu tracking du service et de vérifier s'il est terminé. Dans ce cas la tâche se termine. C'est un concept Case Management / BPMN.
+
+**contexte et portée**
+
+Précision explicite de U616 : la tâche gouverne la sollicitation et le suivi, avec déclenchement immédiat, différé ou événementiel, relance et recours possible à un service de secours. Elle assure le tracking et vérifie la terminaison du service pour se terminer. Laurent rapproche ce concept du Case Management / BPMN ; aucune équivalence à une primitive normative unique ni règle détaillée de reprise n’est déduite.
+
+## U618
+
+**id**
+
+U618
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Conserver une seule Area pour les référentiels et les policies
+
+**texte**
+
+"Organisation des référentiels et policies" => Ca reste une seule area
+
+**contexte et portée**
+
+Décision explicite sur le regroupement : référentiels et policies restent dans une seule Area. Remplace la proposition Codex de deux Areas Reference Management et Policy Management. Les dimensions type de capacité et gouvernance définies U613–U615 restent distinctes à l’intérieur de cette Area. Aucun accord supplémentaire sur un nom, une description ou un déplacement individuel de capacité n’est déduit.
+
+## U619
+
+**id**
+
+U619
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Purchase Order reste un acte d’achat à un fournisseur
+
+**texte**
+
+"Familles de demandes restantes" => Purchase Order doit rester un acte d'achat à un fournisseur.
+
+**contexte et portée**
+
+Confirmation explicite de l’intention portée par Purchase Order : acheter à un fournisseur. Cohérent avec U391 et le périmètre courant D04.j couvrant biens et prestations. Cette clarification ne transforme ni tout apport attendu en achat ni toute sollicitation de service en Purchase Order. Elle ne vaut pas adoption globale de la description détaillée ou décision explicite sur le parent Area.
+
+## U620
+
+**id**
+
+U620
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Étudier la justification et la définition du niveau Area
+
+**texte**
+
+Avant de faire ça, je souhaite qu'on réfléchisse au niveau Area. Il semble nécessaire. Chez SAP il existe. dans DDD on parle de domaine et sous domaine. La notion de domaine est claire mais la définition d'un sous domaine est un peu floue.
+Je souhaite une étude du marché pour savoir sur ce point comment il raisonne et définit ce niveau.
+
+**contexte et portée**
+
+Étude méthodologique demandée avant la mise en cohérence du catalogue. Comparer le rôle, la définition et les critères de frontière du niveau intermédiaire ; aucune nouvelle définition ni migration adoptée par cette demande.
+
+## U621
+
+**id**
+
+U621
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Élargir la recherche au-delà de SAP et DDD
+
+**texte**
+
+Pas que SAP et DDD. Il faut élargir la recherche
+
+**contexte et portée**
+
+Étendre U620 à plusieurs écoles d’architecture, cadres sectoriels et pratiques d’outillage ; ne pas limiter la comparaison à SAP et DDD.
+
+## U622
+
+**id**
+
+U622
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Valider la finalité du niveau Area et rechercher un nom neutre
+
+**texte**
+
+Je valide Area associé à une finalité.
+
+Mais Area est très marqué SAP. J'aimais neutraliser le nom. Si possible.
+
+**contexte et portée**
+
+Accord explicite sur l’association du niveau Area à une finalité. Recherche d’un nom moins marqué SAP, sans choix de remplacement déjà adopté. L’accord ne s’étend pas automatiquement à tous les critères ou exemples proposés dans l’étude U620/U621.
+
+## U623
+
+**id**
+
+U623
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Écarter Subdomain et comparer Purpose, End Goal, Outcome et Intent
+
+**texte**
+
+Le problème c'est que ça surcharge la définition DDD, ça ne me plait pas.
+
+Purpose ?
+End Goal ?
+Outcome ?
+Intent ?
+
+**contexte et portée**
+
+Subdomain est écarté comme remplacement proposé d’Area pour éviter de surcharger le concept DDD. Quatre candidats sont soumis à réflexion ; aucun n’est adopté. L’association à une finalité validée U622 reste acquise.
+
+## U624
+
+**id**
+
+U624
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Adopter Purpose / Finalité à la place d’Area
+
+**texte**
+
+Ok, je valide
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement présentée : nom anglais Purpose, français Finalité ; hiérarchie Domain → Purpose → Capability → Behavior ; définition « Finalité métier durable au sein d’un Domain, autour de laquelle sont regroupées les responsabilités et capacités qui concourent à sa réalisation. » Convention FLOW assumée, sans prétention de standard marché. Remplace le nom Area adopté U482, conserve l’identifiant méthodologique MOD013 et les responsabilités existantes. Aucun renommage individuel, déplacement de capacité ou accord global sur les critères de l’étude n’est déduit.
+
+## U625
+
+**id**
+
+U625
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Auditer glossaire, métamodèle, Domain et Purpose avant release
+
+**texte**
+
+Avant de faire une release, audite le modèle sur me périmètre glossaire, metamodele, domaine et purpose. Cohérence, complétude, dossier de marché riche.
+
+**contexte et portée**
+
+Audit du backlog avant publication, portant sur glossaires, métamodèle et niveaux Domain/Purpose : cohérence, complétude et richesse des appuis marché. La demande ne déclenche pas la release ni la migration du catalogue ; les constats et corrections proposées doivent être traçables et distinguer décisions acquises et points restant à arbitrer.
+
+## U626
+
+**id**
+
+U626
+
+**date**
+
+2026-09-22
+
+**titre**
+
+Mettre à jour les notions à la suite de l'audit U625
+
+**texte**
+
+Tu peux mettre à jour un maximum de notions ?
+
+**contexte et portée**
+
+Autorisation de corriger et enrichir le backlog à partir de l'audit U625 : glossaire, métamodèle, Domain/Purpose, frontières et comparaisons marché. Appliquer les décisions antérieures dans leur portée, produire les compléments et rattachements nécessaires comme propositions lorsqu'ils ne sont pas explicitement adoptés. Cette instruction de travail ne constitue pas un accord global sur les nouvelles formulations ni une demande de release. Préserver identifiants, accords et publications historiques.
+
+## U627
+
+**id**
+
+U627
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Publier la consolidation du modèle dans Atlas
+
+**texte**
+
+lance une release
+
+**contexte et portée**
+
+Publication locale dans FLOW Atlas du backlog consolidé U626 et de son guide méthodologique actualisé. La demande autorise la préparation, le réexamen de portée des accords historiques et l'activation de la release ; elle ne vaut pas adoption globale des formulations et rattachements proposés, ni demande de commit ou push.

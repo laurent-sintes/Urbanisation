@@ -1,0 +1,76 @@
+id: reference-data-governance-U614
+date: '2026-09-22'
+source_refs:
+- U613
+- U614
+- ELM528
+- ELM529
+- U615
+canonical_model_changed: true
+user_definitions:
+  Domain-managed: Le domaine porte les opérations de création, lecture, modification et suppression (CRUD).
+  Projection: La vérité vient d’une source externe au domaine.
+  Domain-View: Vue construite et rafraîchie par le domaine, quelle que soit l’origine des données.
+dimensions:
+  capability_type: Nature de ce que sait faire la capacité, dont Policy.
+  data_governance: Responsabilité sur les données ou sur la construction et le rafraîchissement de leur vue.
+interpretation_proposed:
+  author: Codex
+  boundary: Domain-View porte la construction de la vue, sans transférer la maîtrise de ses données sources. Les sources peuvent
+    être externes, gérées par le domaine ou mixtes.
+  exclusivity: Aucune exclusivité déduite à l’échelle d’un sujet de référentiel ; qualifier séparément les données et les
+    vues concernées.
+  implementation: Aucun CRUD libre, stockage distinct, matérialisation, ni technologie CQRS imposés.
+market_comparison:
+  status: documented_methodological_support_not_taxonomy_equivalence
+  consulted_at: '2026-09-22'
+  sources:
+  - ref: ELM528
+    title: Microsoft Azure Architecture Center — CQRS pattern
+    url: https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
+    sections:
+    - Context and problem
+    - Solution
+    - Separate read models and write models
+    support: Séparation des responsabilités de lecture et d’écriture ; CRUD décrit les opérations usuelles, sans imposer le
+      domaine maître.
+  - ref: ELM529
+    title: Microsoft Azure Architecture Center — Materialized View pattern
+    url: https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view
+    sections:
+    - Solution
+    - Issues and considerations
+    support: Construction et rafraîchissement de vues issues d’un ou plusieurs stockages, avec combinaisons et calculs.
+  difference: Les patrons techniques ne prescrivent pas les trois libellés FLOW ni leur taxonomie de gouvernance. Domain-View
+    ne rend pas obligatoire une vue matérialisée. Deux documents Microsoft ne prouvent pas un consensus interéditeurs.
+application:
+  requested_by: U615
+  status: applied_to_backlog_classification_by_Codex
+  field: fields.data_governance
+  Projection:
+  - D08
+  - D09
+  - D11
+  - D12
+  - D13
+  - D14
+  - D16
+  - D08.d
+  - D09.d
+  - D11.a
+  - D12.a
+  - D13.a
+  - D14.a
+  - D16.a
+  Domain-View:
+  - D08.e
+  - D09.e
+  - D11.b
+  - D12.b
+  - D13.b
+  - D14.b
+  - D16.b
+  Domain-managed:
+  - D02.b
+  unchanged: Types des capacités et relations de l’arbre conservés. Aucune publication.
+  market_basis: Appuis ELM528/ELM529 déjà consultés et pertinents ; les catégories FLOW ne sont pas une taxonomie éditeur.

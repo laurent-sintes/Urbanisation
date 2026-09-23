@@ -1,0 +1,936 @@
+{
+  "nodes": [
+    {
+      "id": "universe-supply",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "scope"
+      ]
+    },
+    {
+      "id": "business-references",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "examples",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D01.c",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "scope"
+      ]
+    },
+    {
+      "id": "D02.b",
+      "status": "updated",
+      "changed_fields": [
+        "nature",
+        "scope"
+      ]
+    },
+    {
+      "id": "D03.j",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.i",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.j",
+      "status": "updated",
+      "changed_fields": [
+        "market_inspiration",
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.k",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.l",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.m",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.n",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D13",
+      "status": "updated",
+      "changed_fields": [
+        "definition"
+      ]
+    },
+    {
+      "id": "D05.a",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.g",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.e",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.c",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.f",
+      "status": "updated",
+      "changed_fields": [
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D14",
+      "status": "updated",
+      "changed_fields": [
+        "market_comparisons",
+        "market_inspiration",
+        "scope"
+      ]
+    },
+    {
+      "id": "D06.b",
+      "status": "updated",
+      "changed_fields": [
+        "finality",
+        "scope"
+      ]
+    },
+    {
+      "id": "D07.a",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D07.b",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D07.c",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "market_comparisons",
+        "market_inspiration"
+      ]
+    },
+    {
+      "id": "D07.d",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D01",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "scope"
+      ]
+    },
+    {
+      "id": "D06",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D03",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D06.d",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D14.a",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D06.e",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D06.f",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV002",
+      "status": "updated",
+      "changed_fields": [
+        "market_inspiration"
+      ]
+    },
+    {
+      "id": "BHV016",
+      "status": "updated",
+      "changed_fields": [
+        "market_inspiration"
+      ]
+    },
+    {
+      "id": "BHV024",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV026",
+      "status": "updated",
+      "changed_fields": [
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV027",
+      "status": "updated",
+      "changed_fields": [
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV028",
+      "status": "updated",
+      "changed_fields": [
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.h",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D03.o",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D05.i",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV050",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV051",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV052",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV053",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV054",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV057",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV058",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.r",
+      "status": "updated",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D01.h",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV061",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV063",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV064",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV065",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV066",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV067",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV068",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV069",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV070",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV071",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV072",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV073",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV074",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV075",
+      "status": "updated",
+      "changed_fields": [
+        "market_inspiration",
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV076",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV077",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV078",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV082",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D03.p",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D14.b",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D17.a",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV094",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "BHV095",
+      "status": "updated",
+      "changed_fields": [
+        "scope"
+      ]
+    },
+    {
+      "id": "D18",
+      "status": "created",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "scope"
+      ]
+    },
+    {
+      "id": "D18.a",
+      "status": "created",
+      "changed_fields": [
+        "data_governance",
+        "definition",
+        "finality",
+        "market_comparisons",
+        "name",
+        "nature",
+        "scope"
+      ]
+    },
+    {
+      "id": "D19.a",
+      "status": "created",
+      "changed_fields": [
+        "data_governance",
+        "definition",
+        "finality",
+        "market_comparisons",
+        "mastership",
+        "name",
+        "nature",
+        "scope"
+      ]
+    },
+    {
+      "id": "D19.b",
+      "status": "created",
+      "changed_fields": [
+        "data_governance",
+        "definition",
+        "finality",
+        "market_comparisons",
+        "name",
+        "nature",
+        "scope"
+      ]
+    },
+    {
+      "id": "D04.t",
+      "status": "created",
+      "changed_fields": [
+        "definition",
+        "finality",
+        "market_comparisons",
+        "market_inspiration",
+        "name",
+        "nature",
+        "scope"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "REL-MEMBER-D02.b",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D03.n",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D03.i",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D03.j",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D03.k",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.f",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.a",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.d",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.e",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.c",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-EXECUTION-FACTS-D04.l",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-SERVICE-CATALOG-EXECUTION",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-SERVICE-CATALOG-PROMISING",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-EXECUTION-PROMISING",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-EXECUTION-ORCHESTRATION-COMMITMENTS",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-EXECUTION-ADAPTATION-PROMISE-REVISION",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D03.l",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.g",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.h",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D05.i",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D17.a",
+      "status": "updated",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-UNIVERSE-SUPPLY-D18",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D18.a",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D19.a",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D19.b",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-SUPPLY-INVENTORY-VISIBILITY",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-SUPPLY-PLAN-VISIBILITY",
+      "status": "created",
+      "changed_fields": []
+    },
+    {
+      "id": "REL-MEMBER-D04.t",
+      "status": "created",
+      "changed_fields": []
+    }
+  ],
+  "terms": [
+    {
+      "id": "TER001",
+      "status": "updated"
+    },
+    {
+      "id": "TER004",
+      "status": "updated"
+    },
+    {
+      "id": "TER007",
+      "status": "updated"
+    },
+    {
+      "id": "TER024",
+      "status": "updated"
+    },
+    {
+      "id": "TER026",
+      "status": "updated"
+    },
+    {
+      "id": "TER027",
+      "status": "updated"
+    },
+    {
+      "id": "TER028",
+      "status": "updated"
+    },
+    {
+      "id": "TER029",
+      "status": "updated"
+    },
+    {
+      "id": "TER030",
+      "status": "updated"
+    },
+    {
+      "id": "TER031",
+      "status": "updated"
+    },
+    {
+      "id": "TER055",
+      "status": "updated"
+    },
+    {
+      "id": "TER060",
+      "status": "updated"
+    },
+    {
+      "id": "TER066",
+      "status": "updated"
+    },
+    {
+      "id": "TER070",
+      "status": "updated"
+    },
+    {
+      "id": "TER071",
+      "status": "updated"
+    },
+    {
+      "id": "TER072",
+      "status": "updated"
+    },
+    {
+      "id": "TER074",
+      "status": "updated"
+    },
+    {
+      "id": "TER075",
+      "status": "updated"
+    },
+    {
+      "id": "TER081",
+      "status": "updated"
+    },
+    {
+      "id": "TER083",
+      "status": "updated"
+    },
+    {
+      "id": "TER085",
+      "status": "updated"
+    },
+    {
+      "id": "TER088",
+      "status": "updated"
+    },
+    {
+      "id": "TER089",
+      "status": "created"
+    },
+    {
+      "id": "TER090",
+      "status": "created"
+    },
+    {
+      "id": "TER091",
+      "status": "created"
+    },
+    {
+      "id": "TER092",
+      "status": "created"
+    },
+    {
+      "id": "TER093",
+      "status": "created"
+    },
+    {
+      "id": "TER094",
+      "status": "created"
+    },
+    {
+      "id": "TER095",
+      "status": "created"
+    },
+    {
+      "id": "TER096",
+      "status": "created"
+    }
+  ],
+  "metamodel_terms": [
+    {
+      "id": "MOD007",
+      "status": "updated"
+    },
+    {
+      "id": "MOD008",
+      "status": "updated"
+    },
+    {
+      "id": "MOD013",
+      "status": "updated"
+    },
+    {
+      "id": "MOD015",
+      "status": "created"
+    },
+    {
+      "id": "MOD016",
+      "status": "created"
+    },
+    {
+      "id": "MOD017",
+      "status": "created"
+    },
+    {
+      "id": "MOD018",
+      "status": "created"
+    },
+    {
+      "id": "MOD019",
+      "status": "created"
+    }
+  ]
+}

@@ -93,22 +93,28 @@ def render(model, label):
         if domain['kind'] not in ('domain', 'area', 'reference'):
             continue
         lines += [f'## {domain["id"]} — {domain["fields"].get("name", "Libellé à préciser")}', '', f'Statut : **{status(domain)}**.', '', domain['fields'].get('definition','Définition à préciser.'), '']
+        if domain['fields'].get('data_governance'):
+            lines += ['Gouvernance des données : **' + domain['fields']['data_governance'] + '**.', '']
         presented = [nodes[r['target_id']] for r in model['relations']
                      if r['type'] == 'presents' and r['source_id'] == domain['id']]
         if presented:
-            labels = {'domain': 'Domain', 'area': 'Area', 'reference': 'Référentiel', 'group': 'Groupe de présentation'}
+            purpose_label = 'Purpose' if any(p.get('id') == 'PRINCIPLE-DOMAIN-PURPOSE' for p in model.get('principles', [])) else 'Area'
+            labels = {'domain': 'Domain', 'area': purpose_label, 'reference': 'Référentiel', 'group': 'Groupe de présentation'}
             lines += ['| Repère | Nom | Type | Statut |', '| --- | --- | --- | --- |']
             for child in presented:
                 lines.append('| ' + ' | '.join(cell(v) for v in [child['id'], child['fields'].get('name', child['id']), labels.get(child['kind'], child['kind']), status(child)]) + ' |')
             lines += ['']
         contains = [r for r in model['relations'] if r['type'] == 'contains' and r['source_id'] == domain['id']]
         show_origins = any(nodes[r['target_id']]['fields'].get('request_origins') for r in contains)
+        show_governance = any(nodes[r['target_id']]['fields'].get('data_governance') for r in contains)
         if contains or not presented:
-            columns = ['Repère', 'Capacité', 'Type'] + (['Origine des demandes'] if show_origins else []) + ['Statut', 'Définition', 'Finalité', 'Rattachement']
+            columns = ['Repère', 'Capacité', 'Type'] + (['Gouvernance des données'] if show_governance else []) + (['Origine des demandes'] if show_origins else []) + ['Statut', 'Définition', 'Finalité', 'Rattachement']
             lines += ['| ' + ' | '.join(columns) + ' |', '| ' + ' | '.join('---' for _ in columns) + ' |']
         for relation in contains:
             n=nodes[relation['target_id']]; f=n['fields']
             values = [n['id'], f.get('name','Libellé à préciser'), f.get('nature', 'Non renseigné')]
+            if show_governance:
+                values.append(f.get('data_governance', '—'))
             if show_origins:
                 values.append(', '.join(REQUEST_ORIGIN_LABELS[value] for value in f.get('request_origins', [])) or '—')
             values += [status(n), f.get('definition','À préciser'), f.get('finality','À préciser'), status(relation)]

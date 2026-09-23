@@ -373,6 +373,10 @@
             "scope": {
               "type": "string"
             },
+            "data_governance": {
+              "description": "Responsabilité sur les données ou leur vue, indépendante de la nature de capacité (U613–U615).",
+              "enum": ["Domain-managed", "Projection", "Domain-View"]
+            },
             "nature": {
               "type": "string"
             },

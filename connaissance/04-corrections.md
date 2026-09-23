@@ -2497,3 +2497,77 @@ La proposition U573/U574 réintroduisait Allocation dans deux noms, alors que so
 **correction**
 
 Planning Management est le nom explicitement retenu pour le pilotage du travail. Recommander un seul comportement Master Plan Application, en conservant affectations commandes/prévisions, échéanciers, Orders et politiques comme catégories d’effets et coopérations décrites. Les décisions restent distinctes et les capacités responsables gardent leurs engagements. Cette consolidation est proposée, pas réputée adoptée par la question de Laurent. La structure antérieure, les preuves et les onze cas sont conservés ; aucun changement canonique anticipé. Voir modeles/backlog/master-plan-application-U575.yaml.
+
+## C114
+
+**id**
+
+C114
+
+**sources**
+
+U591, U592, CMP254
+
+**constat**
+
+La première formulation de la frontière plan / Fulfillment utilisait la demande ferme et exécutable comme seuil. Laurent précise que la fermeté n'interdit pas la retouche du contenu ni le désaffermissement : c'est le début d'exécution qui borne cette responsabilité de l'arbitrage.
+
+**correction**
+
+Retenir la règle U592 dans les deux Areas proposées : avant début d'exécution, l'arbitrage peut modifier le contenu, y compris d'une commande ferme ; Fulfillment adapte le plan de réalisation lorsqu'il est engagé. Préserver le split de Logistic Order et le suivi des deux suites par la demande initiale U591. Ne pas transformer l'ancienne recommandation de retour à l'arbitrage en permission de réécrire une demande déjà en cours. Critères de début, réalisation partielle et traitement d'un engagement devenu impossible restent à formaliser. Historique et état courant distincts dans plan_fulfillment_boundary_U591/U592 de l'annexe U584 ; aucune migration canonique.
+
+## C115
+
+**id**
+
+C115
+
+**sources**
+
+U594, U595, U596, CMP256
+
+**constat**
+
+Le diagnostic U594 maintenait le responsable de Transfer Order et des retours ouvert au motif de leurs effets demande/apport ; il proposait encore le rattachement du pilotage de la promesse à Demand. La discussion de consignation pouvait aussi faire confondre stock fournisseur chez nous et stock du client donneur d'ordre chez nous.
+
+**correction**
+
+U595 clarifie que Transfer Order et retours sont des demandes portant besoins, exigences et promesse, quelle que soit l'origine commerce ou plan. Supply exploite leurs effets attendus sans devenir responsable d'une seconde commande. U596 confirme les deux sens de consignation, avec priorité au client propriétaire du stock détenu chez nous ; aucun rôle fournisseur ni achat implicite. Proposition Demand/Supply actualisée et état antérieur conservé. Étude des familles d'Orders et des stratégies AFS/Fashion demandée avant décision de découpage, sans migration canonique.
+
+
+## C116
+
+**id**
+
+C116
+
+**sources**
+
+U596, U600, U602, CMP260
+
+**constat**
+
+La réponse précédente gardait ouverte une simple détention du stock client sans vente, pour laquelle Issue pouvait ne pas être pertinent. Cette réserve ne décrit pas le cas précisé par Laurent.
+
+**correction**
+
+U602 confirme un mandat de vente pour les biens du client détenus dans nos entrepôts dans le scénario discuté. Inclure Issue dans l’étude de ce cycle ; ne pas assimiler mandat de vente et acquisition préalable par nous. La question du droit de vendre est résolue ; restent le fait générateur, les effets de propriété et l’articulation documentaire. Historique conservé, pas d’adoption globale ni de migration canonique déduite.
+
+
+## C117
+
+**id**
+
+C117
+
+**sources**
+
+U604, U606, CMP262, ELM628, ELM629, ELM630
+
+**constat**
+
+Codex avait conclu trop vite « une capacité, deux comportements » sous Consignment Issue Order. Cela conservait une capacité de demande distincte sans justifier l’intention par rapport à Sales Order.
+
+**correction**
+
+SAP classe Issue comme type de Sales Order et peut le créer sur déclaration de consommation. U604 regroupe les variantes mais n’adopte pas une capacité canonique autonome ; U606 réinterroge précisément cette maille. Recommandation révisée : intention de vente portée par Sales Order, variantes métier de consignation explicites, effets de propriété appliqués par Inventory. Les documents et obligations envers le propriétaire restent traçables sans deuxième besoin client artificiel. Il ne s’agit pas uniquement d’un document juridique chez SAP. Aucune mutation canonique automatique.

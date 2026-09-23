@@ -1,6 +1,25 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { publicText } from './src/publicText.ts';
+import { businessFields } from './src/businessContent.ts';
+import { sourceMatches } from './src/sourceSearch.ts';
+
+test('source search terminates for queries empty after normalization', () => {
+  for (const query of ['', '  ', '\u0301', '\u0300\u0301']) assert.deepEqual(sourceMatches('Texte accentué', query), []);
+});
+test('source highlighting preserves decomposed accents, emoji and nonoverlapping matches', () => {
+  const text = '😀 E\u0301te\u0301, été';
+  const matches = sourceMatches(text, 'été');
+  assert.deepEqual(matches.map(({ start, end }) => text.slice(start, end)), ['E\u0301te\u0301', 'été']);
+  assert.equal(sourceMatches('aaaa', 'aa').length, 2);
+  assert.deepEqual(sourceMatches('absent', 'été'), []);
+});
+
+test('data governance and capability type remain independent explicit public fields', () => {
+  assert.deepEqual(businessFields({ nature: 'knowledge', data_governance: 'Domain-View', internal: 'hidden' }),
+    { nature: 'knowledge', data_governance: 'Domain-View' });
+  assert.deepEqual(businessFields({ nature: 'policy' }), { nature: 'policy' });
+});
 
 test('Internal annotations are hidden without erasing business conditions', () => {
   assert.equal(publicText('Notion locale en cours de consolidation ; consulter les sources et les réserves.'), '');

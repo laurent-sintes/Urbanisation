@@ -179,6 +179,73 @@ def dumps(document, suffix='.yaml'):
     return json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False) + '\n'
 
 
+def _sequence_cache_key(content, key):
+    return sha256(_PARSER_SIGNATURE + b'block-sequence-append-v1\0' +
+                  key.encode('utf-8') + b'\0' + sha256(content).digest()).hexdigest()
+
+
+def load_for_sequence_append(content, key):
+    """Read exact YAML bytes and locate a root block sequence using parser marks.
+
+    The disposable cache stores both values and the character offset, bound to
+    source bytes and parser code. No regex guesses at keys inside quoted text.
+    Unsupported layouts remain valid but use the full round-trip writer.
+    """
+    cache_key = _sequence_cache_key(content, key)
+    cached = parsed_cache.get(cache_key)
+    text = content.decode('utf-8-sig')
+    if isinstance(cached, dict) and set(cached) == {'document', 'offset'}:
+        offset = cached['offset']
+        if offset is None or (type(offset) is int and 0 <= offset <= len(text)):
+            try:
+                check_values(cached['document'])
+                return cached['document'], offset
+            except ValueError:
+                pass
+    loader = ModelLoader(text)
+    try:
+        root = loader.get_single_node()
+        document = loader.construct_document(root) if root is not None else None
+        check_values(document)
+        offset = None
+        if isinstance(root, yaml.MappingNode):
+            for name, value in root.value:
+                if (name.value == key and isinstance(value, yaml.SequenceNode)
+                        and not value.flow_style and value.start_mark.column == 0
+                        and value.end_mark.column == 0):
+                    offset = value.end_mark.index
+    except yaml.YAMLError as exc:
+        raise ValueError('Invalid model YAML: ' + str(exc)) from exc
+    finally:
+        loader.dispose()
+    parsed_cache.put(cache_key, {'document': document, 'offset': offset})
+    return document, offset
+
+
+def dump_sequence_append(content, document, key, items, offset):
+    """Serialize only new items in a previously loaded root block sequence.
+
+    Caller has appended exactly ``items`` to the parsed document and validated
+    its business contract. Parser-derived boundaries keep old bytes intact;
+    dumps still checks every newly serialized value by a strict round trip.
+    """
+    if offset is None:
+        return dumps(document).encode('utf-8')
+    text = content.decode('utf-8-sig')
+    fragment = dumps(items)
+    if '\r\n' in text:
+        fragment = fragment.replace('\n', '\r\n')
+    newline = '\r\n' if '\r\n' in text else '\n'
+    if offset and text[offset - 1] not in '\r\n':
+        fragment = newline + fragment
+    result = (text[:offset] + fragment + text[offset:]).encode('utf-8')
+    if content.startswith(b'\xef\xbb\xbf'):
+        result = b'\xef\xbb\xbf' + result
+    parsed_cache.put(_sequence_cache_key(result, key),
+                     {'document': document, 'offset': offset + len(fragment)})
+    return result
+
+
 def working_path(folder, stem='model'):
     """One live authority; JSON is supported for legacy fixtures/migrations only."""
     folder = Path(folder)

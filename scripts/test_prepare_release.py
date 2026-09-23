@@ -33,6 +33,7 @@ class BacklogPublicationTests(unittest.TestCase):
             else:
                 shutil.copy2(src/relative, target)
         for relative in ('schemas', 'release/2026-09-13.2', 'release/2026-09-13.4',
+                         'staging/2026-09-13.4/manifest.json',
                          'revisions/2026-09-13.4', 'decisions/2026-09-13.4.json',
                          'provenance/2026-09-13.4', 'provenance/source-records.json',
                          'backlog/applicability.yaml', 'backlog/modeling-roadmap.yaml'):
@@ -89,15 +90,60 @@ class BacklogPublicationTests(unittest.TestCase):
     def prepare(self):
         return workflow.prepare(self.root, self.version, ['PUB-TEST-NEW'])
 
-    def test_annex_bytes_survive_preparation_and_publication(self):
+    def test_working_annexes_stay_in_knowledge_base(self):
         annex = self.models/'backlog/exact-evidence.yaml'
-        content = b'# Preserve this comment and CRLF\r\nvalue: "00123"\r\n'
+        content = b'# Research retained in knowledge base\r\nvalue: "00123"\r\n'
         annex.write_bytes(content)
         self.prepare()
-        staged = self.models/'staging'/self.version/'deferred/exact-evidence.yaml'
-        self.assertEqual(staged.read_bytes(), content)
+        self.assertFalse((self.models/'staging'/self.version/'deferred/exact-evidence.yaml').exists())
         workflow.publish_prepared(self.root, self.version)
-        self.assertEqual((self.models/'revisions'/self.version/'deferred/exact-evidence.yaml').read_bytes(), content)
+        self.assertFalse((self.models/'revisions'/self.version/'deferred/exact-evidence.yaml').exists())
+        self.assertEqual(annex.read_bytes(), content)
+
+    def test_sharded_registry_is_frozen_and_reused_without_backlog(self):
+        from scripts import record_decision, decision_registry, decision_review
+        record_decision.record_intent(self.root, intent_id='SPLIT-TEST', collection='nodes',
+            target_id='D03.a', fields=['name'], source_refs=['PUB-TEST-NEW'], author='Laurent',
+            decided_at='2026-09-22', interpretation='explicit', note='Test agreement', reviewer='Codex')
+        decision_registry.migrate(self.root)
+        path = self.models/'backlog/decision-intents.yaml'
+        original = decision_registry.read_registry(path)
+        index = workflow.read(path)
+        shard = index['entries'][0]['path']
+        orphan = path.parent / 'decision-intents/active' / ('0' * 64 + '.yaml')
+        orphan.write_text('- ignored: interrupted unreferenced write\n', encoding='utf-8')
+        self.assertIn('modeles/backlog/' + shard, decision_review.input_state(self.root)['files'])
+        self.prepare()
+        staged = self.models/'staging'/self.version/'deferred'
+        self.assertEqual(decision_registry.read_registry(staged/'decision-intents.yaml'), original)
+        self.assertEqual((staged/shard).read_bytes(), (path.parent/shard).read_bytes())
+        self.assertFalse((staged/orphan.relative_to(path.parent)).exists())
+        workflow.publish_prepared(self.root, self.version, activate=True)
+        frozen = self.models/'revisions'/self.version/'deferred/decision-intents.yaml'
+        self.assertEqual(decision_registry.read_registry(frozen), original)
+        # New publications carry their inventory without relying on staging.
+        (self.models/'staging'/self.version/'manifest.json').unlink()
+        frozen_bytes = frozen.read_bytes()
+        frozen.unlink()
+        with self.assertRaisesRegex(ValueError, 'Frozen registry artifact missing'):
+            workflow.build_candidate(self.root, '2099-09-13.100', ['PUB-TEST-NEW'])
+        frozen.write_bytes(frozen_bytes)
+        frozen_shard = frozen.parent / shard
+        shard_bytes = frozen_shard.read_bytes()
+        frozen_shard.write_bytes(shard_bytes + b'# altered proof\n')
+        with self.assertRaisesRegex(ValueError, 'Frozen registry artifact missing or changed'):
+            workflow.build_candidate(self.root, '2099-09-13.100', ['PUB-TEST-NEW'])
+        frozen_shard.write_bytes(shard_bytes)
+        next_bundle = workflow.build_candidate(self.root, '2099-09-13.100', ['PUB-TEST-NEW'])
+        self.assertFalse(next_bundle['report']['validation_errors'])
+        # The frozen proof is independent of the live index and fragments.
+        (path.parent/shard).write_bytes(b'corrupt\n')
+        self.assertEqual(decision_registry.read_registry(frozen), original)
+        with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+            decision_registry.read_registry(path)
+        from scripts.validate_models import validate_project
+        report = validate_project(self.root)
+        self.assertTrue(any('decision-intents:' in e and 'hash mismatch' in e for e in report['errors']), report['errors'])
 
 
     def test_information_catalogue_is_frozen_published_and_stale_edits_rejected(self):
@@ -160,6 +206,8 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertFalse((self.models / 'release' / self.version).exists())
 
     def test_read_only_report_identifies_live_changed_field_and_lost_validation(self):
+        staged_before = {p.relative_to(self.models/'staging'): p.read_bytes()
+                         for p in (self.models/'staging').rglob('*') if p.is_file()}
         self.mutate_capability()
         before = (self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes()
         bundle = workflow.build_candidate(self.root, self.version)
@@ -179,7 +227,8 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertIn(original_note, released['review']['note'])
         self.assertTrue(any(d['target'] == 'D03.a' for d in report['deferred_decisions']))
         self.assertEqual((self.models / 'release' / ('index.json' if (self.models/'release/index.json').exists() else 'current.json')).read_bytes(), before)
-        self.assertFalse((self.models / 'staging').exists())
+        self.assertEqual({p.relative_to(self.models/'staging'): p.read_bytes()
+                          for p in (self.models/'staging').rglob('*') if p.is_file()}, staged_before)
 
     def test_changed_value_without_manual_revision_is_automatically_versioned(self):
         self.mutate_capability(revision=False)
@@ -202,7 +251,7 @@ class BacklogPublicationTests(unittest.TestCase):
         cap = next(n for n in candidate['nodes'] if n['id'] == 'D03.a')
         self.assertIn('New proposed precision.', cap['fields']['definition'])
         self.assertEqual(sum(n['kind'] == 'capability' for n in candidate['nodes']), 36)
-        self.assertTrue((self.models / 'staging' / self.version / 'deferred/applicability.yaml').exists())
+        self.assertFalse((self.models / 'staging' / self.version / 'deferred/applicability.yaml').exists())
 
     def test_publish_prepared_activates_verified_live_backlog_and_preserves_old_release(self):
         self.mutate_capability()
@@ -432,3 +481,26 @@ class EmbeddedMethodologySourcesTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class CompactReportTests(unittest.TestCase):
+    def test_identified_list_reports_only_changed_record(self):
+        before = [{'id': str(i), 'definition': 'x' * 1000} for i in range(100)]
+        after = deepcopy(before)
+        after[10]['definition'] = 'new'
+        delta = workflow.changes(before, after)
+        self.assertEqual(delta, [{'path': '/10/definition', 'before': 'x' * 1000, 'after': 'new'}])
+        self.assertLess(len(json.dumps(delta)), 2000)
+
+    def test_registry_report_excludes_captured_context_and_values(self):
+        document = {'schema_version': '1.0.0', 'intents': [
+            {'id': 'A', 'target': {'id': 'N', 'context': {'glossary': 'x' * 1000000},
+             'context_sha256': 'digest', 'values': {'name': 'A'}, 'value_sha256': {'name': 'hash'}}}]}
+        summary = workflow.registry_report(document)
+        self.assertLess(len(json.dumps(summary)), 1000)
+        self.assertEqual(summary['intents'][0]['target']['context_sha256'], 'digest')
+
+    def test_list_order_and_empty_list_remain_explicit(self):
+        before = [{'id': 'A'}, {'id': 'B'}]
+        self.assertEqual(workflow.changes(before, list(reversed(before)))[0]['path'], '/@order')
+        self.assertTrue(workflow.changes(before, []))

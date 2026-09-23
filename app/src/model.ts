@@ -4,7 +4,7 @@ import type {
 } from './types.ts';
 
 import { plainInlineText } from './inlineLinks.ts';
-import { decisionsLast } from './capabilityTypes.ts';
+import { sortCapabilitiesByType } from './capabilityTypes.ts';
 import { searchPublication } from './search.ts';
 const structuralTypes = new Set<string>(['contains', 'presents']);
 export const isStructural = (relation: AtlasRelation): boolean => structuralTypes.has(relation.type);
@@ -41,12 +41,14 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   }
   // Cloning prevents either renderer from altering the API response or another view.
   const raw = freezeDeep(structuredClone(input));
+  const usesPurposes = Array.isArray(raw.principles) && raw.principles.some(p => p?.id === 'PRINCIPLE-DOMAIN-PURPOSE');
   const referenceParents = new Map(raw.nodes.filter(node => node.kind === 'reference').map(node => [node.id, textField(node.fields?.name)]));
   const referenceByChild = new Map(raw.relations.filter(edge => edge.type === 'contains' && referenceParents.has(edge.source_id)).map(edge => [edge.target_id, referenceParents.get(edge.source_id)]));
   const nodes: AtlasNode[] = raw.nodes.map(node => {
     const fields = node.fields ?? {};
     return freezeDeep({
       id: node.id, name: plainInlineText(textField(fields.name)) || node.id, kind: node.kind,
+      hierarchyLabel: node.kind === 'area' ? (usesPurposes ? 'Purpose' : 'Area') : undefined,
       referenceParentName: node.kind === 'capability' ? referenceByChild.get(node.id) : undefined,
       groupRole: node.group_role, levelRef: node.level_ref,
       revision: node.revision, lastModified: node.last_modified,
@@ -153,7 +155,7 @@ export function structuralRelations(model: PublishedModel, type?: StructuralRela
 
 export function childrenOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
   const children = structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
-  return ['domain', 'area', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? decisionsLast(children) : children;
+  return ['domain', 'area', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? sortCapabilitiesByType(children) : children;
 }
 
 export function parentsOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
@@ -179,7 +181,7 @@ export function isCapabilityContainer(model: PublishedModel, node: AtlasNode): b
 }
 
 export interface CardChildList {
-  kind: 'capability' | 'reference' | 'behavior';
+  kind: 'capability' | 'reference' | 'behavior' | 'mixed';
   items: AtlasNode[];
 }
 
@@ -188,6 +190,8 @@ export function cardChildListOf(model: PublishedModel, node: AtlasNode): CardChi
   const children = childrenOf(model, node.id);
   const references = children.filter(child => child.kind === 'reference');
   if (references.length && (node.kind === 'area' || (node.kind === 'group' && node.groupRole !== 'urbanism_level'))) {
+    const capabilities = children.filter(child => child.kind === 'capability');
+    if (capabilities.length) return { kind: 'mixed', items: [...references, ...capabilities] };
     return { kind: 'reference', items: references };
   }
   if (isCapabilityContainer(model, node)) {

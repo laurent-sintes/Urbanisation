@@ -286,6 +286,20 @@ python scripts/record_decision.py --id ADOPT-SOURCE-OBJET --collection nodes --t
 
 Répéter `--fields` et `--source` pour une portée multiple. L’annexe YAML `backlog/decision-intents.yaml` conserve les valeurs explicitement sélectionnées, leurs empreintes, l’auteur, les sources et le contexte. Elle ne déduit aucun accord depuis `lifecycle` et n’est pas un second modèle. L’enregistrement intervient après les modifications correspondant à l’accord ; il ne modifie pas les champs ni leur lifecycle.
 
+Le registre courant est découpé : `backlog/decision-intents.yaml` contient un index, les suspensions et les empreintes ; `backlog/decision-intents/active/` contient les captures nouvelles et `archive/` celles déjà figées lors de la migration. Chaque accord est un fichier YAML immuable nommé par son empreinte. « Archivé » décrit le stockage, pas un statut d’adoption : les suspensions et remplacements gardent leur portée.
+
+L’enregistrement contrôle les empreintes de tous les fragments, les sources et les liens de remplacement, puis lit seulement les captures directement concernées. Il valide intégralement les nouveaux accords et remplace atomiquement le petit index après écriture des fragments. Un verrou système `.decision-intents.lock` empêche les écritures concurrentes et est libéré même si le processus s’arrête ; conserver ce fichier local, ignoré par Git. Une interruption peut laisser un fragment non référencé, qui ne vaut jamais accord.
+
+Utiliser `scripts.decision_registry.read_registry` pour lire le registre logique complet : ce lecteur vérifie aussi les résumés de l’index, les valeurs et les contextes de tous les accords. La publication emploie ce contrôle exhaustif, fige l’index et les fragments avec leurs empreintes et vérifie les historiques consommés. Les anciens registres monolithiques restent lisibles sans réécrire les publications. Le cache reste jetable ; il ne remplace aucun contrôle d’intégrité.
+
+Le point d’entrée `python scripts/validate_models.py` inclut ce contrôle exhaustif, la validité des sources et la conservation des accords et suspensions du snapshot courant. Il vérifie aussi la concordance du nom de chaque fragment avec son empreinte. Les fragments non référencés sont comptés dans `decision_unreferenced_shards`, sans accord implicite ni suppression automatique. Les nouveaux accords dont le contexte diffère du backlog courant restent examinés lors de la préparation de release ; la validation générale n’exige pas que tous les accords historiques s’appliquent encore au modèle en construction. Une lecture exhaustive sans cache reste plus coûteuse qu’un ajout ciblé.
+
+Les nouvelles publications inscrivent l’inventaire et les empreintes du registre figé dans leur manifeste (`decision_registry_files`) : une annexe déclarée manquante ou modifiée bloque la validation et la préparation suivante. Pour les publications préparées antérieures, l’inventaire est lu dans le manifeste de préparation après vérification de son empreinte déjà conservée ; garder ce manifeste historique. Les anciennes publications qui ne déclaraient aucun registre restent compatibles. Les remplacements d’accord relisent la capture du prédécesseur pour contrôler leur portée, même lorsque l’index est disponible.
+
+La migration technique `python scripts/decision_registry.py` conserve les octets des captures, vérifie l’équivalence du registre reconstitué avant de basculer et range les identifiants du snapshot courant sous `archive/`. Elle ne publie rien. Une migration répétée contrôle le registre existant sans le réécrire. Pour un ancien registre monolithique, l’ajout incrémental reste disponible.
+
+Mesure reproductible sans modifier les accords réels : `python scripts/benchmark_record_decision.py --target ID --source SOURCE`. Le script utilise une copie isolée sous `.runtime/decision-benchmark/`, compare les ajouts à froid et à chaud, vérifie l’historique par une lecture indépendante, puis supprime sa copie. Le dernier rapport reste dans `.runtime/decision-benchmark/latest.json`. Employer des identifiants existants ; les accords de mesure restent exclusivement dans la copie.
+
 La préparation matérialise ces accords sur les révisions finales. Un changement des valeurs ou du contexte bloque les intentions inédites devenues périmées. Les intentions déjà figées restent historiques, même si leur décision a ensuite été remplacée, suspendue ou reportée. Leur retrait ou leur réécriture ne peut pas réactiver un accord. Les décisions JSON historiques et l’option `--decisions` restent compatibles.
 
 ### Parcours maintenu de réexamen des accords
@@ -348,3 +362,11 @@ Les champs facultatifs `fields.request_origins` (capacité uniquement) et `field
 
 
 **Réexamen des intentions inédites — U509.** `record_decision.py --supersedes ID_ANTERIEUR` ajoute une nouvelle preuve explicitement réexaminée sans modifier l’ancienne. Même cible et champs identiques ou réduits ; aucun report automatique du contexte. Les preuves déjà publiées passent par le parcours de réexamen de publication. L’API `record_intents(root, parameters)` enregistre un lot relu sur un seul état final et une seule écriture atomique ; chaque accord garde sa source, ses champs et sa note.
+
+## Publication sobre (23 septembre 2026)
+
+Le paquet publié conserve le modèle, le glossaire, les décisions applicables, leurs preuves nécessaires et le guide associé. Les études marché et dossiers de travail restent dans la base de connaissance ; les annexes de réflexion du backlog ne sont plus recopiées dans chaque publication. Cette règle remplace les descriptions historiques ci-dessus de gel systématique des annexes.
+
+`changes.json` décrit les différences par identifiant. Pour le registre d’accords, il expose les métadonnées et empreintes des champs/contexte ; les captures référencées portent les preuves, sans seconde copie dans le rapport. Les captures nouvelles utilisent `semantic-sha256-v1` : valeurs approuvées explicites et empreintes du contexte. Les anciens contextes complets restent contrôlés et lisibles. Les diagnostics regroupent toutes les intentions périmées avant la préparation finale.
+
+La v020 a été allégée sur autorisation explicite de Laurent : rapport ramené de 108 950 758 à 1 713 483 octets et retrait de 94 annexes de travail du paquet. Le modèle publié et le fichier des décisions conservent leurs empreintes.

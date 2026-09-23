@@ -27,7 +27,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
-CAPABILITY_NATURES = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'decision'}
+CAPABILITY_NATURES = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
 BEHAVIOR_NATURES = {'policy_strategy', 'process_variant', 'intervention_mechanism', 'business_scope', 'decision_dimension', 'business_effect', 'planning_practice'}
 REQUEST_ORIGINS = {'frontoffice', 'backoffice'}
 BEHAVIOR_ASPECTS = {'trigger', 'activity'}
@@ -141,6 +141,11 @@ def validate_urbanism(model, sources, schema=None):
         errors.append(f"model/{identifier}: id shared by node and relation")
     for identifier, node in nodes.items():
         fields = node.get('fields', {})
+        if 'data_governance' in fields:
+            if node.get('kind') not in ('reference', 'capability'):
+                errors.append(f'nodes/{identifier}: data_governance belongs to a reference or capability')
+            if fields['data_governance'] not in ('Domain-managed', 'Projection', 'Domain-View'):
+                errors.append(f'nodes/{identifier}: invalid data_governance')
         if 'request_origins' in fields:
             origins = fields['request_origins']
             if node.get('kind') != 'capability':
@@ -237,6 +242,32 @@ def validate_urbanism(model, sources, schema=None):
 
     for identifier in graph:
         traverse(identifier)
+    # U624/U626 is an opt-in contract; old snapshots keep their own hierarchy.
+    if any(p.get('id') == 'PRINCIPLE-DOMAIN-PURPOSE' for p in model.get('principles', [])):
+        structural_parents = {identifier: set() for identifier in nodes}
+        for source, children in graph.items():
+            for target in children:
+                structural_parents[target].add(source)
+        for identifier, node in nodes.items():
+            if node.get('kind') in ('domain', 'area'):
+                for field in ('name', 'definition', 'finality', 'scope'):
+                    value = node.get('fields', {}).get(field)
+                    if not isinstance(value, str) or not value.strip():
+                        errors.append(f'purpose/{identifier}: {field} must be nonempty')
+            if node.get('kind') != 'capability':
+                continue
+            pending = list(structural_parents[identifier])
+            seen, purposes = set(), set()
+            while pending:
+                parent = pending.pop()
+                if parent in seen:
+                    continue
+                seen.add(parent)
+                if nodes[parent].get('kind') == 'area':
+                    purposes.add(parent)
+                pending.extend(structural_parents[parent])
+            if len(purposes) != 1:
+                errors.append(f'purpose/{identifier}: capability requires exactly one Purpose ancestor')
     # Justification is required only for models that adopt this convention;
     # historical immutable snapshots retain their original contract.
     justified_behaviors = any(p.get('id') == 'PRINCIPLE-JUSTIFIED-BEHAVIOR'
@@ -566,6 +597,13 @@ def validate_project(root=ROOT):
         counters["backlog_nodes"] = len(backlog["nodes"])
         counters["backlog_capabilities"] = sum(n["kind"] == "capability" for n in backlog["nodes"])
         pointer = resolve_release(root / "modeles/release")
+        try:
+            from .decision_registry import validate_project_registry
+        except ImportError:
+            from decision_registry import validate_project_registry
+        registry_errors, registry_counters = validate_project_registry(root, sources, pointer['version'])
+        errors.extend(registry_errors)
+        counters.update(registry_counters)
         release_path, release = _pointer(root, root / "modeles/release", pointer, errors)
         manifest = _load(release_path.parent / "manifest.json")
         errors.extend(validate_decision_review(root, release_path.parent / 'manifest.json', manifest))

@@ -1,11 +1,22 @@
 id: flow-capability-types-U449
-source_refs: [U449, U435, CMP169, ELM259]
+source_refs:
+- U449
+- U435
+- CMP169
+- ELM259
+- U585
+- U586
+- CMP248
+- U587
 field: fields.nature
-scope: Une nature principale explicite par capacité, selon le résultat métier dominant. Aucun nouveau niveau ni reclassement des couches.
+scope: Une nature principale explicite par capacité, selon le résultat métier dominant. Aucun nouveau niveau ni reclassement
+  des couches.
 review:
   state: partial
-  adopted_scope: Typage exhaustif, icônes par type, décisions à la fin et séparation visuelle U449.
-  proposed_scope: Définitions de la grille et dix qualifications complétées par Codex ; les 37 natures antérieures gardent leur statut propre.
+  adopted_scope: 'Typage exhaustif, icônes par type, décisions à la fin et séparation visuelle U449. U586 : ajout du type
+    Policy.'
+  proposed_scope: 'Définitions de la grille et dix qualifications complétées par Codex ; les 37 natures antérieures gardent
+    leur statut propre. U586 : définition Policy et clarification de sa frontière avec Management.'
 types:
 - id: action
   name: Action
@@ -15,8 +26,37 @@ types:
 - id: management
   name: Management
   label_fr: Gestion
-  definition: Maintenir dans la durée un ensemble cohérent de règles, états, engagements ou obligations et gouverner ses évolutions.
-  boundary: Recoupe des actions ; la nature dominante est la tenue cohérente dans le temps. Ne pas l’inférer du mot Management dans un nom.
+  definition: Maintenir dans la durée un ensemble cohérent d’états, engagements ou obligations et gouverner ses évolutions.
+  boundary: 'Recoupe des actions ; la nature dominante est la tenue cohérente dans le temps. Ne pas l’inférer du mot Management
+    dans un nom. U586 : lorsque le résultat dominant est le cadre de règles applicable, le type Policy est disponible ; aucune
+    qualification existante ne change automatiquement.'
+- id: policy
+  name: Policy
+  label_fr: Politique
+  definition: Définir, maintenir et rendre applicables les règles, politiques et configurations métier dont le Domain porte
+    la maîtrise, avec leur portée, leur validité et leurs conditions d’usage.
+  boundary: La capacité porte le cadre applicable ; une règle ou un seuil est son contenu. Une Decision détermine une réponse
+    ou une recommandation, Planning compose le plan, et leurs propositions de changement passent par la responsabilité Policy.
+    Ne pas confondre ce type avec la forme de comportement policy_strategy.
+  source_refs:
+  - U585
+  - U586
+  - CMP248
+  - U587
+  review:
+    state: partial
+    adopted_scope: Existence du type Policy, instruction explicite U586 ; clé technique policy.
+    proposed_scope: Définition, frontières et exemples détaillés rédigés par Codex.
+  examples:
+  - 'Stock : maintenir les protections par canal et les conditions de leur révision.'
+  - 'Demandes : maintenir les critères de priorité, protections contre les révisions et dérogations autorisées.'
+  - 'Backing Service Policy : maintenir les exclusions de fournisseurs et limites de sollicitation face aux difficultés ;
+    l’offre, les faits observés et les engagements restent distincts (U587).'
+  market_refs:
+  - ELM410
+  - ELM603
+  market_position: Microsoft illustre les protections de groupes et Fluent les configurations utilisées par l’orchestration.
+    Appuis fonctionnels ; le type de capacité Policy est un choix FLOW demandé par Laurent, sans taxonomie universelle revendiquée.
 - id: knowledge
   name: Knowledge
   label_fr: Connaissance / visibilité
@@ -35,12 +75,16 @@ types:
 - id: decision
   name: Decision
   label_fr: Décision
-  definition: Déterminer une réponse métier à partir des faits, règles, objectifs et contraintes applicables, en incluant les calculs nécessaires.
+  definition: Déterminer une réponse métier à partir des faits, règles, objectifs et contraintes applicables, en incluant
+    les calculs nécessaires.
   boundary: Aucune assimilation à un nom contenant Decision ni à un traitement automatisé ; application transactionnelle distincte.
 presentation:
-  order: Partition stable des capacités de chaque domaine ou référentiel ; non-décisions puis décisions, ordre relatif conservé dans chaque partie.
-  separator: Une ligne horizontale légère seulement quand les deux parties sont présentes ; aucun séparateur devant un groupe vide.
-  legacy: Un type absent dans une ancienne publication reste non renseigné. Aucune déduction du nom, de l’identifiant ou du backlog.
+  order: Partition stable des capacités de chaque domaine ou référentiel ; non-décisions puis décisions, ordre relatif conservé
+    dans chaque partie.
+  separator: Une ligne horizontale légère seulement quand les deux parties sont présentes ; aucun séparateur devant un groupe
+    vide.
+  legacy: Un type absent dans une ancienne publication reste non renseigné. Aucune déduction du nom, de l’identifiant ou du
+    backlog.
   publication: Les dix compléments du backlog attendent une prochaine release ; Atlas utilise uniquement la publication sélectionnée.
 market_comparisons:
 - vendor: OMG
@@ -49,13 +93,123 @@ market_comparisons:
   element_type: Principe méthodologique
   relationship: Appui méthodologique
   similarities: Distinguer la décision métier de la coordination du processus qui la mobilise.
-  differences: DMN décrit les décisions et règles ; il ne prescrit ni ces six types de capacités ni les icônes et l’ordre de lecture FLOW.
-  flow_position: Conserver les six natures déjà présentes et compléter les absences ; grille principale de lecture, sans taxonomie universelle revendiquée.
+  differences: DMN décrit les décisions et règles ; il ne prescrit ni ces six types de capacités ni les icônes et l’ordre
+    de lecture FLOW.
+  flow_position: Conserver les six natures déjà présentes et compléter les absences ; grille principale de lecture, sans taxonomie
+    universelle revendiquée.
   source_title: Decision Model and Notation — OMG
   source_url: https://www.omg.org/dmn/
   source_version: Page de présentation évolutive, aucune version précise de spécification utilisée.
   consulted_on: '2026-09-19'
   source_locator: Présentation, complémentarité avec BPMN et CMMN.
-  evidence_limits: Texte primaire ouvert ; appui méthodologique, pas preuve de classification individuelle ni de réalisation installée. Synthèse originale sans reproduction.
-  source_refs: [MKT43, ELM259, CMP169]
+  evidence_limits: Texte primaire ouvert ; appui méthodologique, pas preuve de classification individuelle ni de réalisation
+    installée. Synthèse originale sans reproduction.
+  source_refs:
+  - MKT43
+  - ELM259
+  - CMP169
   status: proposed
+- vendor: Microsoft
+  product: Documentation produit
+  element_name: Inventory Visibility inventory allocation
+  element_type: Fonctionnalité de produit
+  relationship: Appui fonctionnel partiel
+  similarities: Maintenir des protections et droits d’usage de groupes, distincts de réservations individuelles.
+  differences: Fonction produit centrée stock ; ne prescrit pas la nature de capacité Policy.
+  flow_position: Policy est un choix de typage demandé U586 ; la définition et les frontières rédigées restent proposées.
+  source_title: Inventory Visibility inventory allocation
+  source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  source_version: Documentation évolutive consultée le 22 septembre 2026
+  consulted_on: '2026-09-22'
+  source_locator: Business background and purpose ; Difference between inventory allocation and soft reservation
+  evidence_limits: Pas de taxonomie universelle ni preuve de réalisation installée.
+  source_refs:
+  - ELM410
+  - CMP248
+  - U585
+  - U586
+  status: proposed
+- vendor: Fluent Commerce
+  product: Documentation produit
+  element_name: Manage Sourcing Profiles
+  element_type: Fonctionnalité de produit
+  relationship: Appui fonctionnel partiel
+  similarities: Maintenir et activer les configurations qui encadrent les décisions de réalisation.
+  differences: Deux dimensions métier, configuration et utilisation, sans classification normative de capacités.
+  flow_position: Policy est un choix de typage demandé U586 ; la définition et les frontières rédigées restent proposées.
+  source_title: Manage Sourcing Profiles
+  source_url: https://docs.fluentcommerce.com/by-type/manage-sourcing-profiles
+  source_version: Documentation évolutive consultée le 22 septembre 2026
+  consulted_on: '2026-09-22'
+  source_locator: Overview ; How it Works
+  evidence_limits: Pas de taxonomie universelle ni preuve de réalisation installée.
+  source_refs:
+  - ELM603
+  - CMP248
+  - U585
+  - U586
+  status: proposed
+history_before_U586:
+  types:
+  - id: action
+    name: Action
+    label_fr: Action
+    definition: Effectuer une opération métier ou matérialiser une évolution autorisée des données et engagements.
+    boundary: Mobiliser les décisions nécessaires sans s’approprier leur choix ; aucune réalisation physique systématique.
+  - id: management
+    name: Management
+    label_fr: Gestion
+    definition: Maintenir dans la durée un ensemble cohérent de règles, états, engagements ou obligations et gouverner ses
+      évolutions.
+    boundary: Recoupe des actions ; la nature dominante est la tenue cohérente dans le temps. Ne pas l’inférer du mot Management
+      dans un nom.
+  - id: knowledge
+    name: Knowledge
+    label_fr: Connaissance / visibilité
+    definition: Établir, actualiser et rendre accessible une connaissance fiable des états, faits et résultats attendus.
+    boundary: La connaissance peut être calculée ; choisir une réponse métier relève d’une décision distincte.
+  - id: orchestration
+    name: Orchestration
+    label_fr: Orchestration
+    definition: Coordonner les prestations, leurs dépendances et leur progression dans un processus.
+    boundary: Distinguer coordination, choix d’adaptation et réalisation des prestations.
+  - id: planning
+    name: Planning
+    label_fr: Planification
+    definition: Construire, comparer et maintenir des scénarios en mobilisant les décisions spécialisées.
+    boundary: Les décisions gardent leur résultat propre ; planifier ne signifie pas appliquer toutes les opérations du scénario.
+  - id: decision
+    name: Decision
+    label_fr: Décision
+    definition: Déterminer une réponse métier à partir des faits, règles, objectifs et contraintes applicables, en incluant
+      les calculs nécessaires.
+    boundary: Aucune assimilation à un nom contenant Decision ni à un traitement automatisé ; application transactionnelle
+      distincte.
+  management_term:
+    id: MOD003
+    name: Management
+    label_fr: Gestion / gouvernance
+    definition: Gérer les règles et leur validité, et tenir transactionnellement les données qui les matérialisent.
+    role: Qualifier une responsabilité de gestion, à préciser selon l’objet concerné.
+    notes:
+    - U230 qualifie Stock Protection de gouvernance/management ; U231 précise sa mise à jour transactionnelle.
+    - Cette formulation générale est proposée à partir du cas Stock Protection ; elle n’impose pas la même définition à toute
+      capacité nommée Management.
+    - Le sens d’application transactionnelle est défini par MOD004.
+    - 'U538 : la responsabilité de configuration illustrée par Stock Protection reste extérieure au Planning qui la consomme,
+      y compris lorsque ce Planning comporte un comportement d’application du plan. Nom canonique de la capacité actuelle
+      : Supply Protection, D02.b.'
+    source_refs:
+    - U230
+    - U231
+    - U232
+    - U538
+    review:
+      state: partial
+      adopted_scope: 'Qualification et application transactionnelle dans le cas Stock Protection. U538 : configuration apportée
+        au Planning maintenue à l’extérieur, exemple Stock Protection.'
+      proposed_scope: Généralisation à Management et formulation hors de ce cas.
+  source: État courant avant ajout Policy ; qualification historique de Supply Protection conservée, aucun reclassement de
+    nœud.
+current_type_scope_U586: Sept natures ; aucune requalification des capacités du modèle ni modification des publications historiques.
+  Les six natures citées dans la comparaison U449 ci-dessous décrivent son état daté.

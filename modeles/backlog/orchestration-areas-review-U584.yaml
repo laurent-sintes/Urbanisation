@@ -1,0 +1,1841 @@
+id: orchestration-areas-review-U584
+date: '2026-09-22'
+status: area_boundaries_refined_policy_type_adopted_detailed_migration_pending
+source_refs:
+- U583
+- U584
+- CMP247
+- U585
+- U586
+- CMP248
+- CMP249
+- CMP250
+- U587
+- CMP251
+- U588
+- CMP252
+- U589
+- CMP253
+- U590
+- U591
+- CMP254
+- U592
+- C114
+- U593
+- U594
+- CMP255
+- U595
+- U596
+- U597
+- C115
+- CMP256
+- CMP257
+canonical_hierarchy_changed: false
+scope: Clarifier les Areas et leurs responsabilités métier, en conservant le Domain et son périmètre.
+user_proposal_source: connaissance/01-contributions-utilisateur.md#U584
+assessment:
+  author: Codex
+  conclusion: U618 maintient une seule Area pour les référentiels et les policies. La proposition de sept Areas avec séparation
+    Reference Management / Policy Management est remplacée ; les deux rubriques ci-dessous conservent les responsabilités
+    étudiées, sans constituer deux Areas cibles. Type de capacité et gouvernance restent deux dimensions distinctes.
+  benefit: Séparer besoins, apports attendus, position de stock, arbitrages de couverture et coordination de réalisation.
+  tradeoff: Demand et Supply sont aussi deux rôles d'un même transfert ; une carte de responsabilités doit conserver une tenue
+    unique des Orders et de leurs engagements.
+  market_position: Appuis fonctionnels et sémantiques partiels ; aucun document consulté ne prescrit ces six Areas comme taxonomie
+    universelle.
+  agreement_boundary: U584 est une proposition. Le nom cible Demand & Supply Optimization retenu U581 reste tracé ; Supply
+    & Demand Matching est une alternative en examen, sans remplacement automatique.
+  modeling_boundary: Les exemples de documents et fonctions ne deviennent pas chacun une capacité ; ni couches transactionnelle/processus,
+    ni séquence rigide de six étapes.
+areas:
+- proposed_name: Reference Management
+  question_proposed: Quelles références externes rendent les opérations Supply interprétables ?
+  responsibility_proposed: Intégrer et maintenir les projections des références dont la maîtrise d’entreprise reste externe,
+    et fournir leur version de référence locale au Domain.
+  current_anchors:
+  - business-references
+  - D08
+  - D09
+  - D12
+  - D16
+  - D11
+  - D13
+  - D14
+  boundary: U585 distingue ces projections des règles propres au Domain. Leur autorité locale U479 subsiste ; projection ne
+    signifie pas cache passif. Les caractéristiques externes d’un service diffèrent de la politique locale de sa sollicitation.
+  preserve: Les sept référentiels distincts, leur autorité locale U479 et les sources de vérité d'entreprise externes ; ni
+    nouveau catalogue Information ni transfert de maîtrise globale.
+  market_refs: []
+  market_interpretation: Les appuis précédents documentent la configuration, pas le nom de cette Area de projections. La séparation
+    par maîtrise vient de U585 ; aucune maîtrise produit ou entreprise nouvelle n’est déduite.
+  naming_status: Nom Reference Management proposé par Codex ; séparation demandée U585, niveau de deux Areas proposé.
+- proposed_name: Policy Management
+  question_proposed: Quelles règles Supply maîtrisons-nous pour protéger stocks, demandes et prestations ?
+  responsibility_proposed: Définir, maintenir et rendre applicables les règles, politiques et configurations métier dont le
+    Domain porte la maîtrise, avec leur portée, leur validité et leurs conditions d’usage.
+  current_anchors:
+  - D02.b
+  boundary: La maîtrise des politiques locales n’étend pas celle des référentiels externes ni la capacité physique des exécutants.
+    Les décisions peuvent recommander une révision ; Policy rend le cadre retenu applicable.
+  proposed_capability_nature: policy
+  policy_families:
+  - protection et droits d’usage du stock
+  - priorité et protection des demandes
+  - admissibilité des fournisseurs et de leurs Services, exclusions et limites de sollicitation
+  market_refs:
+  - ELM410
+  - ELM603
+  market_interpretation: Protections par groupes Microsoft et profils Fluent appuient la gestion de règles ; les trois familles
+    et leur type de capacité restent une structuration FLOW. Ni une capacité par valeur ni une protection technique de WMS/TMS.
+  naming_status: Policy Management est le terme de Laurent ; sa matérialisation comme Area distincte et les noms de capacités
+    sont proposés.
+  proposed_capabilities:
+  - name: Service Provider Policy
+    nature: policy
+    proposed_parent: Policy Management
+    status: name_adopted_detailed_wording_proposed
+    user_requested_fields:
+      name: Backing Service Policy
+      nature: policy
+    source_refs:
+    - U587
+    - U586
+    - CMP251
+    - U590
+    - CMP252
+    definition: Définir, maintenir et rendre applicables les règles de recours aux fournisseurs et à leurs Services, notamment
+      les exclusions et les limites de sollicitation, afin de tenir compte de leur fiabilité et de leur situation opérationnelle.
+    mastership: Supply Chain Orchestration maîtrise ces règles locales de recours ; l’offre de référence et les capacités
+      opérationnelles communiquées restent distinctes.
+    scope: Porter les autorisations, restrictions et exclusions applicables à un fournisseur ou une prestation, avec leur
+      contexte, leur période et les conditions de révision. Des difficultés observées peuvent conduire à limiter les nouvelles
+      sollicitations ou à suspendre le recours à un fournisseur selon les règles applicables. Les prestations sont surtout
+      logistiques, sans restriction à ce secteur dans le Domain courant.
+    example: 'Exemple fictif : un fournisseur annonce 1 000 préparations par jour. Des retards constatés conduisent Supply
+      à plafonner ses nouvelles sollicitations à 200 sur une période. Le catalogue conserve l’offre et la visibilité conserve
+      la capacité annoncée ; la règle locale limite les demandes admissibles.'
+    boundaries:
+    - Le catalogue décrit ce que le fournisseur propose ; une présence au catalogue ne vaut pas autorisation de recours.
+    - Les observations de difficulté et de capacité sont des faits contextualisés ; elles ne deviennent une interdiction ou
+      un plafond que selon une règle ou une décision autorisée, humaine ou automatisée.
+    - Une limite de sollicitation Supply ne modifie pas la capacité physique du fournisseur et ne suffit pas à calculer une
+      capacité restante.
+    - L’exclusion peut concerner un fournisseur entier ou un périmètre de prestation à préciser ; ni suppression du fournisseur
+      du référentiel ni interdiction d’entreprise globale implicite.
+    - Les prestations déjà acceptées gardent leurs engagements ; leur modification ou annulation passe par les responsables
+      concernés. Bloquer les nouvelles sollicitations ne les annule pas.
+    - 'Les noms WMS/TMS ne deviennent pas des capacités : la politique concerne le recours aux prestations, non l’administration
+      technique des outils.'
+    field_qualification:
+      requested_by_user:
+      - name
+      - nature
+      - principe d’exclusion fournisseur
+      - principe de limitation des commandes face aux difficultés
+      proposed_by_codex:
+      - definition
+      - mastership détaillée
+      - scope détaillé
+      - example
+      - boundaries
+      - liens de coopération détaillés
+      canonical_materialization: Dans la proposition de refonte ; aucun identifiant canonique attribué ni accord lié à un
+        nœud inexistant.
+      adopted_fields_U590:
+        name: Service Provider Policy
+    collaborations:
+    - current_id: D14
+      role: Fournit l’offre de prestations et les conditions de référence ; ne porte pas les interdictions locales Supply.
+    - current_id: D06.b
+      role: Fournit la capacité opérationnelle contextualisée, distincte du plafond de sollicitation décidé.
+    - current_id: D07.d
+      role: Rend visibles les faits de réalisation qui peuvent justifier une révision de la politique ; aucun indicateur disponible
+        supposé.
+    - current_id: D06.e
+      role: Respecte les règles applicables pour déterminer les prestataires admissibles et sélectionner une prestation.
+    - current_id: D06.d
+      role: Coordonne les sollicitations dans les conditions de recours applicables.
+    - current_id: D07.b
+      role: Tient les demandes adressées et les engagements acceptés ; distingue restriction future et révision des engagements
+        existants.
+    - current_id: D06.f
+      role: Détermine les adaptations de réalisation nécessaires face à une restriction ou un aléa.
+    decomposition: Aucun comportement créé par type de restriction, seuil ou fournisseur ; décomposition à justifier si un
+      bénéfice métier apparaît.
+    market_comparisons:
+    - vendor: Oracle
+      product: Oracle Transportation Management 24A
+      element_name: Active/Inactive Flag Added to Service Provider
+      element_type: Fonction de produit
+      relationship: Recouvrement partiel
+      similarities: Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire
+        concernées, avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition.
+      differences: Cas transport, effet dépendant du paramétrage et de la version ; aucune exclusion automatique depuis un
+        indicateur ni annulation des engagements démontrée.
+      flow_position: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+        ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+      source_title: Active/Inactive Flag Added to Service Provider
+      source_url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+      source_version: Oracle Transportation Management 24A
+      source_locator: Introduction ; Business Benefit ; Steps to Enable
+      consulted_on: '2026-09-22'
+      evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+      source_refs:
+      - U587
+      - CMP251
+      - ELM606
+      - MKT40
+      status: proposed
+    - vendor: Oracle
+      product: Oracle Transportation Management 26B
+      element_name: Capacity Limit
+      element_type: Fonction de produit
+      relationship: Recouvrement partiel
+      similarities: Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple de
+        cinq expéditions autorisées puis impossibilité de créer la sixième faute de capacité.
+      differences: Contrainte de transport ; ne démontre pas l’origine gouvernance Supply du plafond ni un calcul automatique
+        depuis des difficultés observées.
+      flow_position: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+        ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+      source_title: Capacity Limit
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm
+      source_version: Oracle Transportation Management 26B
+      source_locator: Using A Capacity Limit ; Recurring Capacity
+      consulted_on: '2026-09-22'
+      evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+      source_refs:
+      - U587
+      - CMP251
+      - ELM607
+      - MKT40
+      status: proposed
+    naming_review_ref: naming_review_U588
+    naming_status: 'U590 : Service Provider Policy adopté ; définition détaillée et matérialisation canonique toujours proposées.'
+- proposed_name: Demand Management
+  question_proposed: Quels besoins devons-nous satisfaire, avec quelles contraintes et quels engagements ?
+  responsibility_proposed: Porter les besoins et exigences des demandes, en suivre le contenu et le cycle de vie, et piloter
+    leur promesse de satisfaction. Les demandes peuvent provenir du commerce ou du plan d’optimisation Supply ; Transfer Order
+    et les retours en font partie. Relier commandes, demandes avant commande et prévision restante sans double compte.
+  current_anchors:
+  - D04.i
+  - D17.a
+  - D04.k
+  - D04.l
+  - D04.m
+  boundary: 'Une réservation liée à une commande est un engagement sur une ressource, pas un besoin supplémentaire à additionner.
+    Une demande avant commande exige une identité et une règle de succession explicites. U595 : origine Supply et effet d’apport
+    ne changent pas la responsabilité Demand du Transfer Order et des retours.'
+  open_issue: Le pilotage de la promesse par les demandes est précisé U595 ; décrire encore les coopérations avec calcul de
+    faisabilité, échéancier et exécution. L’étude des demandes de consignation est distincte de ce principe.
+  market_refs:
+  - ELM600
+  - ELM411
+  - ELM601
+  market_interpretation: Microsoft distingue demande prévue et disponibilité après réservation ; Oracle montre qu'un transfert
+    porte aussi une demande. Demand Management dépasse donc potentiellement les seules commandes ; l'intégration des prévisions
+    est cohérente avec D17.a déjà existante.
+- proposed_name: Supply Management
+  question_proposed: Quels apports attendons-nous, à quel endroit, à quelle date et avec quel niveau d'engagement ?
+  responsibility_proposed: Prendre en charge et suivre les apports attendus, leurs évolutions et leurs engagements, issus
+    notamment d'achats, de transferts et de retours clients admissibles.
+  current_anchors:
+  - D04.j
+  - D04.r
+  boundary: 'Distinguer proposition du plan, Order engagé et apport reçu. L''arbitrage du besoin d''un achat relève du plan
+    ; la tenue de l''achat et de ses confirmations relève de la gestion de l''apport. U595 : les Transfer Orders et retours
+    sont tenus par Demand ; Supply en exploite les effets attendus sans tenir une seconde commande. La responsabilité exacte
+    des autres familles n’est pas déduite par extension.'
+  preserve: Un retour fournisseur sort de la ressource ; il n'est pas un apport entrant par nature. Un retour client attendu
+    n'est pas automatiquement disponible avant qualification. Les achats de prestations ne sont pas du stock.
+  open_issue: Les capacités communes D04.n, D04.o et D04.q servent plusieurs familles d'Orders ; leurs propriétaires restent
+    à déterminer sans duplication entre Demand et Supply.
+  market_refs:
+  - ELM601
+  - ELM600
+  - ELM596
+  market_interpretation: Oracle distingue les deux effets du même transfert ; Microsoft sépare apports prévus et propositions
+    du plan. Le regroupement métier FLOW est une interprétation, pas l'adoption d'un module logiciel.
+  consumed_demand_effects_U595:
+  - D04.k
+  - D04.l
+  - D04.m
+- proposed_name: Inventory Management
+  question_proposed: Quels stocks sont présents ou en transit, où, dans quel état, sous quelle propriété et avec quelle disponibilité
+    projetée ?
+  responsibility_proposed: Établir et fiabiliser la position du stock, tracer les mouvements et restituer les positions présentes
+    et projetées à partir des besoins, apports et engagements identifiés.
+  current_anchors:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D01.d
+  - D01.h
+  - D02.c
+  boundary: Le stock projeté est une vue calculée des effets attendus ; il ne recrée pas les Orders et ne décide pas un plan
+    concurrent. Propriété, présence physique et disponibilité restent distinctes.
+  open_issue: 'Placement de Reservation D02.c à examiner en conservant U436 : réserver bloque les usages concurrents ; affecter
+    seul ne les bloque pas.'
+  market_refs:
+  - ELM406
+  - ELM600
+  - ELM411
+  market_interpretation: Consignation, projection de stock et réservation étayent trois distinctions ; aucune formule produit
+    n'est imposée à FLOW.
+- proposed_name: Supply & Demand Matching
+  question_proposed: Comment couvrir les besoins et arbitrer les ressources, les priorités et les ajustements nécessaires
+    ?
+  responsibility_proposed: Construire et actualiser le plan de satisfaction et de ressources, et faire appliquer les ajustements
+    autorisés, notamment au contenu des demandes tant qu’elles ne sont pas en cours d’exécution. Une demande ferme peut encore
+    être révisée et désaffermie. Mobiliser les décisions nécessaires aux achats, dates, quantités, fractionnements et révisions
+    de politiques Supply.
+  current_anchors:
+  - D03.p
+  - D03.m
+  - D03.o
+  - D02.e
+  - D05.f
+  - D05.a
+  - D05.d
+  - D05.e
+  - D05.c
+  - D05.g
+  - D05.h
+  - D05.i
+  boundary: 'U592 : le début effectif d’exécution borne la retouche du contenu de la demande par l’arbitrage ; la fermeté
+    seule ne la soustrait pas à ce travail. Firming, protection contre réoptimisation, autorisation de prise en charge et
+    exécution sont distincts. L’arbitrage ne conduit pas les prestations ; les responsables de tenue des demandes et engagements
+    appliquent les conséquences qui les concernent. Le critère ferme et exécutable formulé U591 est remplacé sur ce point.
+    Les repères ATP/CTP/PTP ne prescrivent pas le découpage des capacités de la proposition.'
+  naming_recommendation: Garder Demand & Supply Optimization comme option préférée pour le périmètre large déjà discuté ;
+    Matching exprime directement le rapprochement mais doit être défini assez largement si ce nom est retenu.
+  market_refs:
+  - ELM596
+  - ELM363
+  - ELM434
+  - ELM604
+  market_interpretation: Microsoft Master Planning calcule des besoins et génère des propositions d'apports ; Oracle Backlog
+    Planning réexamine le carnet et répartit les apports selon les priorités. Les périmètres diffèrent ; ni Matching ni Optimization
+    n'est établi ici comme nom universel d'Area.
+  preserve: Les responsabilités de gestion du plan, décisions, Apply Plan, configuration et engagements restent distinctes.
+    Le caractère collectif ou la fréquence ne créent pas une frontière rigide avec l'exécution. Les nouveaux apports restent
+    des propositions tant qu’ils ne sont pas engagés ; une quantité partiellement couverte ne signifie pas réduction unilatérale
+    de la demande initiale.
+  boundary_source_refs:
+  - U585
+  - U591
+  - U592
+  - C114
+  - CMP254
+- proposed_name: Fulfillment Orchestration
+  question_proposed: Comment organiser, suivre et adapter la réalisation des demandes dans les engagements retenus ?
+  responsibility_proposed: Conduire l’exécution d’une demande et orchestrer les Services, principalement logistiques, jusqu’au
+    résultat attendu. Adapter le plan d’exécution aux aléas, y compris pour traiter un article manquant depuis un autre entrepôt
+    ; conserver le lien à la demande initiale et le suivi des Logistic Orders issus du split.
+  current_anchors:
+  - D06.b
+  - D06.d
+  - D06.e
+  - D06.f
+  - D07.a
+  - D07.b
+  - D07.c
+  - D07.d
+  boundary: 'U592 sépare la modification du contenu d’une demande avant son début d’exécution de l’adaptation de sa réalisation.
+    U591 reste applicable : un manque partiel peut être traité dans Fulfillment par split de la Logistic Order et reprise
+    du seul article manquant depuis un autre entrepôt ; la demande initiale porte le lien et le suivi des deux suites. Une
+    adaptation du plan d’exécution n’est pas un désaffermissement implicite de la demande initiale. Si l’engagement devient
+    impossible à tenir, les conséquences et responsables doivent être explicités ; ne pas en déduire que l’arbitrage peut
+    réécrire une demande déjà en cours d’exécution.'
+  preserve: La visibilité de capacité des prestations D06.b ne disparaît pas dans la visibilité de stock. Les exécutants réalisent
+    les opérations physiques ; l'orchestration les coordonne.
+  market_refs:
+  - ELM602
+  - ELM603
+  - ELM363
+  - ELM011
+  - ELM605
+  market_interpretation: 'ELM602 Fluent étaye la reprise des articles manquants depuis un autre lieu pendant la réalisation.
+    ELM604 Oracle traite le split lors de la promesse : le mécanisme existe aussi avant exécution. Ces fonctions appuient
+    les deux usages sans imposer la frontière FLOW. Le critère de début d’exécution et la possibilité de désaffermissement
+    proviennent de Laurent U592, pas d’un consensus des éditeurs.'
+  case_management_U585: 'Orientation de Laurent rapprochée des principes établis du case management : contexte, résultat attendu,
+    événements, critères, activités prévues ou discrétionnaires et décisions. Humain et automatique possibles ; ni notation
+    ni moteur imposé.'
+  boundary_source_refs:
+  - U591
+  - U592
+  - C114
+  - CMP254
+  adopted_terminology:
+    Re-sourcing:
+      source_ref: U593
+      scope: Reprise depuis une autre source, illustrée par le seul article manquant depuis un autre entrepôt.
+      qualification: Nom adopté ; description détaillée et maille de modélisation à préciser.
+cross_area_issues:
+- id: promise
+  current_ids:
+  - D15
+  - D03.n
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  question: Où calculer la faisabilité, choisir l'échéancier puis confirmer ou réviser une promesse ?
+  recommendation: Rendre ces résultats visibles avant toute migration ; étudier Demand pour la tenue des engagements et l'articulation
+    avec les décisions de couverture, sans fusion implicite.
+- id: shared_order_responsibilities
+  current_ids:
+  - D04.n
+  - D04.o
+  - D04.q
+  - D04.k
+  - D04.m
+  question: Quel propriétaire unique pour la structuration, le cycle de vie et l'archivage communs, et pour les Orders ayant
+    plusieurs effets ?
+  recommendation: Un parent explicite par capacité ; coopérations qualifiées et lectures Demand/Supply liées à la même opération.
+    Les préfixes des identifiants n'imposent pas les parents futurs.
+- id: non_inventory_resources
+  current_ids:
+  - D06.b
+  - D14
+  - D07.c
+  question: Où restent les capacités opérationnelles et prestations nécessaires au respect des engagements ?
+  recommendation: Conserver leur visibilité et leur mobilisation dans Fulfillment ; les ressources du Domain ne sont pas limitées
+    aux quantités de produits.
+illustrative_cases:
+- case: Transférer vingt unités entre deux sites
+  interpretation: Le même transfert porte une sortie attendue au départ et une entrée attendue à destination. Le transit est
+    suivi sans créer deux apports indépendants ; la réception transforme l'attendu en constaté.
+  evidence:
+  - ELM601
+  status: illustration_FLOW_no_installed_system_claim
+- case: Cent unités demandées et soixante disponibles
+  interpretation: Demand qualifie les cent ; Inventory établit les soixante ; le plan arbitre leur couverture et peut proposer
+    un apport complémentaire ; Supply suit l'Order autorisé ; la promesse tient compte des dates réalisables ; Fulfillment
+    coordonne la réalisation. Cette lecture ne prescrit pas un ordre d'appels ou une réussite garantie.
+  evidence:
+  - ELM596
+  - ELM363
+  status: illustration_FLOW_no_installed_system_claim
+- case: Réservation d'une commande puis prélèvement partiel
+  interpretation: La réservation ne crée pas une seconde demande. La disponibilité suit les engagements et leur consommation
+    ; un manque peut déclencher une adaptation de réalisation ou un réarbitrage de couverture et de promesse selon ses effets.
+  evidence:
+  - ELM411
+  - ELM602
+  status: illustration_FLOW_no_installed_system_claim
+consulted_documents:
+- element_ref: ELM600
+  market_ref: MKT14
+  title: Inventory forecasts
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/inventory-forecast
+  edition: Documentation évolutive ; édition non indiquée
+  consulted_on: '2026-09-22'
+  locator: Introduction ; Supply forecast lines ; Demand forecast lines ; Inventory forecast
+  observed: Prévisions de demande et d'apports distinctes ; position de stock prévisionnelle calculée à partir de leurs effets.
+  limit: Fonction produit ; ni Area FLOW prescrite ni nouvelle responsabilité adoptée.
+- element_ref: ELM411
+  market_ref: MKT14
+  title: Inventory Visibility reservations
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  edition: Documentation évolutive ; mise à jour affichée 2026-07-27
+  consulted_on: '2026-09-22'
+  locator: Typical use case for soft reservations ; Integrate soft reservations and offsets with Supply Chain Management
+  observed: Réservation associée à commande, réduction du disponible sans mouvement physique et compensation au passage à
+    la réservation ferme ou consommation.
+  limit: Mécanisme logiciel conditionné par l'intégration ; pas une définition universelle de toute réservation métier.
+- element_ref: ELM406
+  market_ref: MKT14
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Documentation évolutive ; pas de release homogène déduite
+  consulted_on: '2026-09-22'
+  locator: Introduction
+  observed: Stock appartenant au fournisseur mais physiquement présent ; propriété distincte de la présence et de la réservation.
+  limit: Appui à une frontière sémantique ; aucune réalisation Beaumanoir déduite.
+- element_ref: ELM601
+  market_ref: MKT20
+  title: Setup of Interorganization Parameters for Transfer Orders
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/faims/setup-of-interorganization-parameters-for-transfer-orders.html
+  edition: Oracle Fusion Cloud SCM 25C
+  consulted_on: '2026-09-22'
+  locator: Introduction ; paramètres interorganisations
+  observed: Un Transfer Order représente demande et apport dans le même document entre organisations source et destination.
+  limit: Version 25C consultée ; portée interorganisations, sans adoption de son organisation technique ni prétention de dernière
+    version.
+- element_ref: ELM596
+  market_ref: MKT14
+  title: Master planning home page
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-planning-home-page
+  edition: Documentation évolutive ; mise à jour affichée 2026-03-26
+  consulted_on: '2026-09-22'
+  locator: Introduction ; main planning processes
+  observed: Équilibre des besoins et ressources, calcul de besoins nets et génération de Planned Orders.
+  limit: Périmètre ERP incluant production ; pas une taxonomie de capacités métier FLOW.
+- element_ref: ELM415
+  market_ref: MKT14
+  title: Master plans overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+  edition: Documentation évolutive ; pas de release homogène déduite
+  consulted_on: '2026-09-22'
+  locator: Introduction ; Using master plans ; Time fences in days ; Coverage ; Freeze ; Firming ; Forecast plan
+  observed: Les stratégies et paramètres encadrent les plans et influencent les propositions ; certains horizons peuvent être
+    ajustés par plan.
+  limit: Les paramètres de calcul ne deviennent pas chacun une policy métier ni une capacité ; ne prouve pas une Area réunissant
+    tous les référentiels.
+- element_ref: ELM363
+  market_ref: MKT20
+  title: Start Backlog Planning
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html
+  edition: Oracle Fusion Cloud SCM 26B
+  consulted_on: '2026-09-22'
+  locator: Introduction ; When to Use
+  observed: Replanifier la satisfaction du carnet avec les dernières données de demande et d'apports et des priorités de demande.
+  limit: Plan de carnet ; ne démontre pas à lui seul la création de nouveaux apports ni toute la portée du plan commun FLOW.
+- element_ref: ELM602
+  market_ref: MKT77
+  title: Source Order Items
+  url: https://docs.fluentcommerce.com/by-type/source-order-items
+  edition: Documentation évolutive ; Changed on 17 June 2026
+  consulted_on: '2026-09-22'
+  locator: Overview ; How it Works ; Multi-Location Sourcing ; Split Limit Constraints ; Short-Pick Reallocation
+  access: Texte primaire indexé consulté ; ouverture directe échouée.
+  observed: Sélection de lieux, limitation du nombre de fractionnements et réaffectation après manque au prélèvement.
+  limit: Fonction produit combinant choix et adaptation ; ne justifie pas de classer tous les arbitrages dans une seule Area.
+- element_ref: ELM603
+  market_ref: MKT77
+  title: Manage Sourcing Profiles
+  url: https://docs.fluentcommerce.com/by-type/manage-sourcing-profiles
+  edition: Documentation évolutive ; Changed on 17 June 2026
+  consulted_on: '2026-09-22'
+  locator: Overview ; How it Works ; Default Parameter Controls ; Workflow Automation Integration
+  observed: Gestion et activation de configurations de réseaux, catalogues et limites de fractionnement utilisées dans les
+    workflows de réalisation.
+  limit: Appui partiel à la distinction configuration/utilisation ; pas un regroupement universel des références et politiques.
+- element_ref: ELM410
+  market_ref: MKT14
+  title: Inventory Visibility inventory allocation
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation
+  edition: Documentation évolutive
+  locator: Business background and purpose ; Difference between inventory allocation and soft reservation
+  observed: Protections par groupes et canaux, plafonnement des usages, ajustements lors de promotions ; protection distincte
+    de réservation individuelle.
+  limit: Ne démontre pas un calcul conjoint optimal de toutes les protections ni un type de capacité universel.
+  consulted_on: '2026-09-22'
+- element_ref: ELM434
+  market_ref: MKT14
+  title: Order promising
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+  edition: Documentation évolutive ; mise à jour affichée 2026-04-21
+  locator: Delivery date control methods ; ATP calculations ; CTP calculations
+  observed: Méthodes de calcul des dates, disponibilité et prise en compte des capacités ; différences selon moteur.
+  limit: Distinctions fonctionnelles et restrictions produit ; pas une taxonomie obligatoire de capacités métier.
+  consulted_on: '2026-09-22'
+- element_ref: ELM604
+  market_ref: MKT20
+  title: Split or Substitute Fulfillment Lines
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html
+  edition: Oracle Fusion Cloud SCM 26A
+  locator: Introduction ; Split a Warehouse ; Substitute the Item ; Consider Dates
+  observed: Couverture fractionnée entre lieux, articles et dates, avec permissions au niveau de la ligne.
+  limit: Pas une autorisation universelle de diminuer une obligation de vente ou de changer une promesse sans les règles applicables.
+  consulted_on: '2026-09-22'
+- element_ref: ELM011
+  market_ref: MKT10
+  title: Case Management Model and Notation 1.1
+  url: https://www.omg.org/spec/CMMN/1.1/PDF
+  edition: Décembre 2016 ; formal/2016-12-01
+  locator: §4.1 pages imprimées 5–6 ; §5.4.9.2 page 41
+  observed: Dossier orienté résultat et contexte ; activités prévues et discrétionnaires ; adaptation du plan de cas.
+  limit: Référence méthodologique ; aucune conformité FLOW ni adoption de notation déduite.
+  consulted_on: '2026-09-22'
+- element_ref: ELM605
+  market_ref: MKT78
+  title: CMMN 1.1 — Flowable open source documentation
+  url: https://www.flowable.com/open-source/docs/cmmn/ch06-cmmn
+  edition: Documentation évolutive ; version du moteur non fixée par la page
+  locator: Human task ; Java Service task ; Decision task ; Process task ; Criteria ; Sentry evaluation
+  observed: Tâches humaines, automatiques et décisions activées selon critères et événements du dossier.
+  limit: Distingue norme CMMN et extensions Flowable ; aucun moteur imposé ni réalisation installée déduite.
+  consulted_on: '2026-09-22'
+- element_ref: ELM606
+  market_ref: MKT40
+  title: Active/Inactive Flag Added to Service Provider
+  url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+  edition: Oracle Transportation Management 24A
+  consulted_on: '2026-09-22'
+  locator: Introduction ; Business Benefit ; Steps to Enable
+  observed: Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire concernées,
+    avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition.
+  limit: Cas transport, effet dépendant du paramétrage et de la version ; aucune exclusion automatique depuis un indicateur
+    ni annulation des engagements démontrée.
+- element_ref: ELM607
+  market_ref: MKT40
+  title: Capacity Limit
+  url: https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm
+  edition: Oracle Transportation Management 26B
+  consulted_on: '2026-09-22'
+  locator: Using A Capacity Limit ; Recurring Capacity
+  observed: Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple de cinq expéditions
+    autorisées puis impossibilité de créer la sixième faute de capacité.
+  limit: Contrainte de transport ; ne démontre pas l’origine gouvernance Supply du plafond ni un calcul automatique depuis
+    des difficultés observées.
+- element_ref: ELM608
+  market_ref: MKT79
+  title: The Twelve-Factor App — IV. Backing services
+  url: https://www.12factor.net/backing-services
+  edition: Adam Wiggins ; page affichant Last updated 2017
+  locator: Définition initiale et exemples ; ressources attachées
+  observed: Backing service désigne un service consommé par une application sur le réseau, avec exemples de bases, files,
+    messagerie, caches et services tiers.
+  limit: Architecture applicative ; ne définit pas une prestation logistique métier ni une politique de recours fournisseur.
+  consulted_on: '2026-09-22'
+- element_ref: ELM609
+  market_ref: MKT79
+  title: What is Cloud Native?
+  url: https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition
+  edition: Microsoft .NET ; documentation évolutive
+  locator: The Twelve-Factor Application ; table facteurs 4 et 6
+  observed: Microsoft reprend Backing Services pour les ressources applicatives adressables et le stockage externe d’état.
+  limit: Reprise explicite de Twelve-Factor ; deux documents ne constituent pas deux origines indépendantes ni un consensus
+    métier Supply.
+  consulted_on: '2026-09-22'
+- element_ref: ELM610
+  market_ref: MKT40
+  title: Service Provider Assignment and Resource Management
+  url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/capacity_manager/carrier_assignment_and_resource_management.htm
+  edition: Oracle Transportation Management 25C
+  locator: Assigning Carrier and Equipment ; Service Provider Assignment ; Capacity Limits
+  observed: Service Provider, Capacity Limits et Carrier Commitment désignent prestataire, limites et engagements du choix
+    transport.
+  limit: La décision d’affectation et les contraintes transport ne constituent pas le nom exact Service Provider Policy ni
+    toute la portée des prestations FLOW.
+  consulted_on: '2026-09-22'
+history_U584:
+  assessment:
+    author: Codex
+    conclusion: Les six questions donnent une lecture métier utile ; leur adoption exige de préciser les responsabilités transversales
+      et les frontières ci-dessous.
+    benefit: Séparer besoins, apports attendus, position de stock, arbitrages de couverture et coordination de réalisation.
+    tradeoff: Demand et Supply sont aussi deux rôles d'un même transfert ; une carte de responsabilités doit conserver une
+      tenue unique des Orders et de leurs engagements.
+    market_position: Appuis fonctionnels et sémantiques partiels ; aucun document consulté ne prescrit ces six Areas comme
+      taxonomie universelle.
+    agreement_boundary: U584 est une proposition. Le nom cible Demand & Supply Optimization retenu U581 reste tracé ; Supply
+      & Demand Matching est une alternative en examen, sans remplacement automatique.
+    modeling_boundary: Les exemples de documents et fonctions ne deviennent pas chacun une capacité ; ni couches transactionnelle/processus,
+      ni séquence rigide de six étapes.
+  areas:
+  - proposed_name: Reference & Policy Management
+    question_proposed: Quelles références et règles rendent nos décisions et opérations cohérentes ?
+    responsibility_proposed: Maintenir les références locales du Domain et rendre les politiques applicables avec leurs conditions
+      et dates de validité.
+    current_anchors:
+    - business-references
+    - D08
+    - D09
+    - D12
+    - D16
+    - D11
+    - D13
+    - D14
+    - D02.b
+    boundary: Administrer et activer une politique se distingue du calcul qui recommande une cible, un seuil ou une protection.
+      D05.a, D05.d et D05.h gardent des résultats décisionnels à placer explicitement.
+    preserve: Les sept référentiels distincts, leur autorité locale U479 et les sources de vérité d'entreprise externes ;
+      ni nouveau catalogue Information ni transfert de maîtrise globale.
+    market_refs:
+    - ELM603
+    - ELM415
+    market_interpretation: Fluent distingue configuration des profils et utilisation en orchestration ; Microsoft décrit les
+      paramètres qui influencent le plan. Ces documents éclairent la frontière politiques/décisions, sans prouver le regroupement
+      complet avec tous les référentiels.
+  - proposed_name: Demand Management
+    question_proposed: Quels besoins devons-nous satisfaire, avec quelles contraintes et quels engagements ?
+    responsibility_proposed: Qualifier et suivre les besoins connus ou prévisionnels, leur échéance et leurs contraintes,
+      en reliant commandes, demandes avant commande et prévision restante.
+    current_anchors:
+    - D04.i
+    - D17.a
+    - D04.k
+    boundary: Une réservation liée à une commande est un engagement sur une ressource, pas un besoin supplémentaire à additionner.
+      Une demande avant commande exige une identité et une règle de succession explicites.
+    open_issue: Examiner ici la responsabilité de confirmer et réviser les engagements aujourd'hui dans D15 ; le parent d'ATP/CTP/PTP
+      et du choix d'échéancier reste à préciser, sans tout absorber dans une capacité unique.
+    market_refs:
+    - ELM600
+    - ELM411
+    - ELM601
+    market_interpretation: Microsoft distingue demande prévue et disponibilité après réservation ; Oracle montre qu'un transfert
+      porte aussi une demande. Demand Management dépasse donc potentiellement les seules commandes ; l'intégration des prévisions
+      est cohérente avec D17.a déjà existante.
+  - proposed_name: Supply Management
+    question_proposed: Quels apports attendons-nous, à quel endroit, à quelle date et avec quel niveau d'engagement ?
+    responsibility_proposed: Prendre en charge et suivre les apports attendus, leurs évolutions et leurs engagements, issus
+      notamment d'achats, de transferts et de retours clients admissibles.
+    current_anchors:
+    - D04.j
+    - D04.k
+    - D04.l
+    - D04.r
+    boundary: Distinguer proposition du plan, Order engagé et apport reçu. L'arbitrage du besoin d'un achat relève du plan
+      ; la tenue de l'achat et de ses confirmations relève de la gestion de l'apport.
+    preserve: Un retour fournisseur sort de la ressource ; il n'est pas un apport entrant par nature. Un retour client attendu
+      n'est pas automatiquement disponible avant qualification. Les achats de prestations ne sont pas du stock.
+    open_issue: Les capacités communes D04.n, D04.o et D04.q servent plusieurs familles d'Orders ; leurs propriétaires restent
+      à déterminer sans duplication entre Demand et Supply.
+    market_refs:
+    - ELM601
+    - ELM600
+    - ELM596
+    market_interpretation: Oracle distingue les deux effets du même transfert ; Microsoft sépare apports prévus et propositions
+      du plan. Le regroupement métier FLOW est une interprétation, pas l'adoption d'un module logiciel.
+  - proposed_name: Inventory Management
+    question_proposed: Quels stocks sont présents ou en transit, où, dans quel état, sous quelle propriété et avec quelle
+      disponibilité projetée ?
+    responsibility_proposed: Établir et fiabiliser la position du stock, tracer les mouvements et restituer les positions
+      présentes et projetées à partir des besoins, apports et engagements identifiés.
+    current_anchors:
+    - D01.f
+    - D01.g
+    - D01.c
+    - D01.d
+    - D01.h
+    - D02.c
+    boundary: Le stock projeté est une vue calculée des effets attendus ; il ne recrée pas les Orders et ne décide pas un
+      plan concurrent. Propriété, présence physique et disponibilité restent distinctes.
+    open_issue: 'Placement de Reservation D02.c à examiner en conservant U436 : réserver bloque les usages concurrents ; affecter
+      seul ne les bloque pas.'
+    market_refs:
+    - ELM406
+    - ELM600
+    - ELM411
+    market_interpretation: Consignation, projection de stock et réservation étayent trois distinctions ; aucune formule produit
+      n'est imposée à FLOW.
+  - proposed_name: Supply & Demand Matching
+    question_proposed: Comment couvrir les besoins et arbitrer les ressources, les priorités et les ajustements nécessaires
+      ?
+    responsibility_proposed: Construire et actualiser le plan commun de couverture, arbitrer les ressources existantes ou
+      attendues et proposer les adaptations nécessaires.
+    current_anchors:
+    - D03.p
+    - D03.m
+    - D03.o
+    - D02.e
+    - D05.f
+    - D05.a
+    - D05.d
+    - D05.e
+    - D05.c
+    - D05.g
+    - D05.h
+    - D05.i
+    boundary: Une portée limitée à répartir une ressource déjà donnée laisserait sans propriétaire les nouveaux achats, cibles,
+      réassorts et redistributions. Conserver des décisions distinctes au sein du plan commun et l'application autorisée de
+      ses suites.
+    naming_recommendation: Garder Demand & Supply Optimization comme option préférée pour le périmètre large déjà discuté
+      ; Matching exprime directement le rapprochement mais doit être défini assez largement si ce nom est retenu.
+    market_refs:
+    - ELM596
+    - ELM363
+    market_interpretation: Microsoft Master Planning calcule des besoins et génère des propositions d'apports ; Oracle Backlog
+      Planning réexamine le carnet et répartit les apports selon les priorités. Les périmètres diffèrent ; ni Matching ni
+      Optimization n'est établi ici comme nom universel d'Area.
+    preserve: Les responsabilités de gestion du plan, décisions, Apply Plan, configuration et engagements restent distinctes.
+      Le caractère collectif ou la fréquence ne créent pas une frontière rigide avec l'exécution.
+  - proposed_name: Fulfillment Orchestration
+    question_proposed: Comment organiser, suivre et adapter la réalisation des demandes dans les engagements retenus ?
+    responsibility_proposed: Déterminer les prestations nécessaires, coordonner leur réalisation, suivre les résultats et
+      traiter les écarts dans les marges autorisées.
+    current_anchors:
+    - D06.b
+    - D06.d
+    - D06.e
+    - D06.f
+    - D07.a
+    - D07.b
+    - D07.c
+    - D07.d
+    boundary: Un choix local de site ou un reroutage peut relever de l'adaptation de réalisation ; s'il modifie le partage
+      des ressources ou une promesse, il mobilise aussi les responsables de couverture et d'engagement. Décider un split,
+      modifier l'Order et réaliser plusieurs expéditions sont trois responsabilités différentes.
+    preserve: La visibilité de capacité des prestations D06.b ne disparaît pas dans la visibilité de stock. Les exécutants
+      réalisent les opérations physiques ; l'orchestration les coordonne.
+    market_refs:
+    - ELM602
+    - ELM603
+    - ELM363
+    market_interpretation: Fluent réunit sourcing, limite de fractionnement et réaffectation après manque ; Oracle traite
+      aussi le fulfillment lors du réexamen du carnet. Le mot fulfillment ne suffit donc pas à séparer décision et réalisation.
+      Les documents Fluent sont deux documents distincts du même éditeur, sans preuve de consensus.
+  cross_area_issues:
+  - id: promise
+    current_ids:
+    - D15
+    - D03.n
+    - D03.i
+    - D03.j
+    - D03.k
+    - D03.l
+    question: Où calculer la faisabilité, choisir l'échéancier puis confirmer ou réviser une promesse ?
+    recommendation: Rendre ces résultats visibles avant toute migration ; étudier Demand pour la tenue des engagements et
+      l'articulation avec les décisions de couverture, sans fusion implicite.
+  - id: shared_order_responsibilities
+    current_ids:
+    - D04.n
+    - D04.o
+    - D04.q
+    - D04.k
+    - D04.m
+    question: Quel propriétaire unique pour la structuration, le cycle de vie et l'archivage communs, et pour les Orders ayant
+      plusieurs effets ?
+    recommendation: Un parent explicite par capacité ; coopérations qualifiées et lectures Demand/Supply liées à la même opération.
+      Les préfixes des identifiants n'imposent pas les parents futurs.
+  - id: non_inventory_resources
+    current_ids:
+    - D06.b
+    - D14
+    - D07.c
+    question: Où restent les capacités opérationnelles et prestations nécessaires au respect des engagements ?
+    recommendation: Conserver leur visibilité et leur mobilisation dans Fulfillment ; les ressources du Domain ne sont pas
+      limitées aux quantités de produits.
+clarifications_U585_U586:
+  user_choices:
+  - Séparer références importées et politiques dont Supply est maître.
+  - Faire porter par le plan les adaptations d’achats, ventes et politiques, avec mobilisation CTP.
+  - Revoir la maille de capacités ATP/CTP/PTP au profit des résultats métier.
+  - Comprendre l’orchestration adaptative comme du case management.
+  - Créer le type de capacité Policy.
+  canonical_agreement_recording: 'Pas de nœud ou relation canonique ajouté ou requalifié : les accords de principe et de type
+    sont consignés ici et dans MOD007 ; ne pas lier record_decision.py à des valeurs canoniques non présentées.'
+  campaign_example: Lors d’une hausse eCommerce, le plan peut proposer de réviser une protection B2B, de compléter un achat
+    et d’étaler une couverture. Les obligations de vente initiales restent traçables ; les réservations, engagements et règles
+    d’autorisation déterminent les changements applicables. Policy porte la règle active ; les Orders et engagements sont
+    mis à jour par leurs responsables.
+  limits: Aucun mécanisme universel d’optimisation conjointe de tous les seuils démontré. Aucune auto-autorisation implicite
+    du plan, aucun moteur CMMN ni déploiement Beaumanoir déduit.
+  follow_up: Préciser les capacités par résultat métier et leurs parents, dont les responsables de priorité, admission des
+    prestations et engagements ; classifier individuellement après présentation.
+clarification_U587:
+  catalog_scope: Prestations proposées par les fournisseurs, principalement logistiques mais aussi humaines ou numériques
+    si elles concourent au Domain.
+  policy_scope: Règles propres à Supply encadrant le recours aux fournisseurs et services, dont exclusions et plafonds en
+    cas de difficultés.
+  scope_boundary: D14 et TER075 couvrent déjà les prestations physiques, humaines ou numériques ; leur extension à un nouveau
+    Domain n’est pas demandée.
+  market_comparison_ref: CMP251
+naming_review_U588:
+  status: market_names_reviewed_no_rename_adopted
+  question: Backing Service et Backing Service Policy sont-ils des noms de marché adaptés ?
+  backing_service:
+    observed_usage: Usage attesté Twelve-Factor et Microsoft en architecture applicative.
+    flow_difference: TER075 étend le rôle à une prestation physique, humaine ou numérique concourant à une demande Supply
+      ; les sources actuelles Field Service/Camunda rapprochent les fonctions sans attester le nom exact dans ce sens.
+    assessment: Nom compréhensible dans notre convention, mais risque de lecture IT contraire à la clarification métier recherchée
+      U583.
+    source_refs:
+    - ELM608
+    - ELM609
+  backing_service_policy:
+    observed_usage: Les sources OTM attestent exclusions, Capacity Limits et Service Provider, pas le libellé composé Backing
+      Service Policy.
+    assessment: Fonctions documentées, intitulé de capacité FLOW non établi par ce corpus. Ne pas déduire une absence universelle
+      d’usage.
+    source_refs:
+    - ELM606
+    - ELM607
+    - ELM610
+  recommendation:
+    service_object: Service
+    provider_object: Service Provider
+    catalog: Service Catalog
+    policy_capability: Service Provider Policy
+    qualification: Service Provider est attesté ; Service Provider Policy est un nom composé proposé pour FLOW, sans standard
+      taxonomique revendiqué. Service désigne ici une prestation ; ne crée aucun nouveau nœud fournisseur ou catalogue de
+      Commerce.
+    benefit: Retirer Backing réduit l’ambiguïté logicielle ; Provider rend lisible le recours, l’exclusion et la limitation
+      du prestataire.
+    boundary: Préciser dans la définition les restrictions par prestation autant que par fournisseur, pour éviter une lecture
+      limitée au blocage global du fournisseur.
+    tradeoff: Service seul est générique ; le contexte Service Catalog et la définition de prestation doivent rester explicites.
+  preservation: Le nom actuel Backing Service et la demande U587 restent tracés ; aucune mutation canonique ni remplacement
+    de libellé dans la proposition avant nouvel arbitrage.
+  comparison_ref: CMP252
+boundary_assessment_U589:
+  status: targeted_diagnostic_recommendations_not_adopted
+  source_refs:
+  - U589
+  - U583
+  - U585
+  - U586
+  - U587
+  - U588
+  - CMP253
+  summary: Finalité du Domain claire ; sept axes d’Areas cohérents, mais attribution des décisions, des engagements et des
+    Orders à plusieurs effets encore incomplète. Le découpage n’est pas stabilisé.
+  domain:
+    clear_intent: Maîtriser la satisfaction des besoins Supply, les ressources, les engagements et les politiques locales,
+      puis coordonner les prestations jusqu’à leur résultat.
+    external_boundaries: Les exécutants conservent la réalisation des prestations et leur fonctionnement interne. Les maîtres
+      d’entreprise conservent leurs références ; le Domain en porte les projections de référence locales et maîtrise ses politiques
+      propres.
+    current_wording_gap:
+      node: universe-supply
+      field: scope
+      finding: L’énoncé général sur les sources de vérité des référentiels toutes externes est trop large après U585 ; le
+        borner aux références importées et rendre explicite la maîtrise des politiques locales. Ce point demande un alignement
+        de description, pas une extension automatique du Domain.
+    additional_known_gap:
+      node: D14.a
+      field: scope
+      finding: La formule « pas de maître local » doit être clarifiée au regard d’U479, indépendamment des politiques maîtrisées
+        par Supply.
+  boundaries:
+  - between:
+    - Reference Management
+    - Policy Management
+    assessment: clear_in_principle
+    finding: L’origine et la maîtrise séparent les références projetées de règles Supply propres. Une projection garde une
+      autorité locale explicite.
+    example: Le fournisseur propose une prestation ; Supply peut en interdire temporairement l’usage.
+  - between:
+    - Supply Management
+    - Inventory Management
+    assessment: clear_principle_operating_contract_to_specify
+    finding: Supply tient l’apport attendu et son engagement ; Inventory établit les conséquences présentes et projetées sur
+      le stock.
+    example: Une réception attendue devient du stock constaté sans rester comptée deux fois.
+    remaining: Définir quel fait transforme l’attendu en constaté et préserver transit, propriété et admissibilité.
+  - between:
+    - Demand Management
+    - Supply Management
+    assessment: open_structural_boundary
+    finding: Demand et Supply sont deux rôles possibles du même Order ; une classification exclusive par type de document
+      ne suffit pas.
+    example: Un transfert crée une sortie au départ et une entrée à destination ; les retours ont aussi plusieurs effets.
+    current_ids:
+    - D04.k
+    - D04.l
+    - D04.m
+    - D04.n
+    - D04.o
+    - D04.q
+    recommendation: Définir un propriétaire de chaque responsabilité de tenue et de cycle de vie, avec des effets liés côté
+      besoins et apports ; pas deux copies indépendantes ni duplication automatique des capacités communes.
+  - between:
+    - Policy Management
+    - Supply & Demand Matching
+    assessment: clear_principle_authority_contract_to_specify
+    finding: Le plan peut recommander de changer une règle qu’il consomme ; son hypothèse ne devient pas immédiatement une
+      politique active.
+    example: Réviser l’enveloppe B2B au bénéfice d’une campagne eCommerce.
+    recommendation: Préciser le champ de modifications autorisées et les conditions de mise en vigueur ; l’autorisation peut
+      être humaine ou déléguée, sans nouveau passage manuel systématique.
+  - between:
+    - Supply & Demand Matching
+    - Fulfillment Orchestration
+    assessment: highest_remaining_ambiguity
+    finding: Sourcing, choix de site, split et réaffectation apparaissent dans les deux périmètres. Planification contre temps
+      réel ou avant contre après ne suffit pas à les attribuer.
+    recommendation: Définir les décisions par leur résultat propre. Le plan compose la couverture ; le cas coordonne et adapte
+      la réalisation, en mobilisant les décisions concernées lorsqu’il faut réarbitrer. Une décision réutilisée garde un propriétaire
+      unique.
+    current_ids:
+    - D03.o
+    - D06.d
+    - D06.e
+    - D06.f
+    - D04.n
+    remaining: Délimiter choix de couverture, choix de prestation et révision d’engagement sur des cas concrets avant de placer
+      toutes les décisions.
+  - between:
+    - Demand Management
+    - Supply & Demand Matching
+    - Fulfillment Orchestration
+    assessment: promise_ownership_unresolved
+    finding: Quantité et date demandées, couverture jugée possible et engagement confirmé sont des résultats différents. La
+      proposition n’a pas encore attribué tous les résultats aujourd’hui portés par D15.
+    current_ids:
+    - D15
+    - D03.n
+    - D03.i
+    - D03.j
+    - D03.k
+    - D03.l
+    recommendation: Examiner Demand pour la tenue de l’engagement et préserver les décisions de faisabilité et d’échéancier
+      ; supprimer une maille ATP/CTP/PTP ne supprime pas ces responsabilités. Ce placement reste proposé.
+  - between:
+    - Inventory Management
+    - Demand Management
+    - Supply & Demand Matching
+    assessment: reservation_placement_unresolved
+    finding: La réservation bloque les usages concurrents d’une ressource ; elle est distincte du besoin, de l’affectation
+      et de la promesse.
+    current_ids:
+    - D02.c
+    - D02.e
+    - D03.n
+    recommendation: Attribuer sa tenue à un propriétaire et définir ses liens aux besoins et ressources ; ne pas la recréer
+      dans chacune des Areas.
+  cross_cutting_preservation:
+  - Demand Planning D17.a et la prévision restante conservent un propriétaire à préciser dans Demand, sans double compte avec
+    les commandes.
+  - La capacité opérationnelle des prestations D06.b reste distincte du stock, de l’offre et des plafonds Policy.
+  market_context:
+    oracle_transfer: 'ELM601 relu le 22 septembre 2026 : le même Transfer Order porte demande et apport.'
+    fluent_sourcing: 'ELM602 : lecture primaire indexée conservée du même jour ; nouvelle ouverture directe échouée. Sourcing
+      et réaffectation après manque sont réunis dans une fonction produit, sans prescrire la frontière FLOW.'
+    conclusion: Les sources confirment les interactions à traiter ; elles ne désignent pas une taxonomie commune de sept Areas.
+      Les règles d’attribution proposées sont un choix de cohérence FLOW.
+  state_gap: La grille de sept Areas reste en annexe. Le modèle canonique conserve son découpage antérieur ; les deux niveaux
+    de maturité doivent rester visibles dans le diagnostic.
+  next_step_recommended: 'Fixer les propriétaires des résultats métier sur trois cas : transfert entre sites, manque au prélèvement
+    nécessitant réallocation, campagne exigeant révision de politique et de couverture. Les éprouver avant migration, sans
+    recréer une liste de fonctions produit.'
+  canonical_hierarchy_changed: false
+naming_adoption_U590:
+  source_refs:
+  - U590
+  - CMP252
+  date: '2026-09-22'
+  author: Laurent
+  interpretation: contextual
+  approved_names:
+    service_object: Service
+    provider_object: Service Provider
+    catalog: Service Catalog
+    policy_capability: Service Provider Policy
+  targets:
+    service_object: TER075
+    provider_object: TER088
+    catalog: D14
+    policy_capability: areas[Policy Management].proposed_capabilities
+  scope: Noms présentés U588 et distinction de leurs rôles ; descriptions détaillées, correspondances et migration des Areas
+    non adoptées par cet accord.
+  supersedes: Nom Backing Service de TER075 et nom Backing Service Policy de la proposition U587. Service Catalog déjà courant
+    est confirmé.
+  order_naming: 'Backing Service Order / Orders conservé : le nom dérivé de la commande ne figurait pas dans la table soumise.
+    Aucun accord de renommage de D07.b ou TER066 déduit.'
+  history:
+    term_before:
+      id: TER075
+      name: Backing Service
+      short_description: Prestation d’un exécutant que l’orchestration mobilise pour réaliser une demande du Domain.
+      definition: Prestation rendue par un exécutant et mobilisée par l’orchestration pour réaliser une demande du Domain.
+        Elle est décrite par son résultat, ses conditions et ses engagements de service ; elle peut être physique, humaine
+        ou numérique.
+      context: Qualification métier locale FLOW du rôle des prestations mobilisées par l’orchestration ; elle ne se limite
+        pas aux services logiciels.
+      notes: L’offre est décrite dans [Service Catalog](model:D14) ; une prestation précise est sollicitée par un [Backing
+        Service Order](glossary:TER066). [Service Requests](model:D04) porte les demandes de travail du Domain. Le service
+        métier est distinct de son accès informatique et de chacune de ses réalisations.
+      source_refs:
+      - U237
+      - U238
+      - U240
+      - U242
+      - U243
+      - U244
+      - U477
+      - CMP193
+      - U488
+      - U489
+      - U497
+      - CMP200
+      - U496
+      source_locator:
+        path: connaissance/32-execution-orchestration.md
+        anchor: vocabulaire
+      review:
+        state: partial
+        adopted_scope: 'U497 : qualification Backing Service / Backing Service Order pour distinguer les prestations et leurs
+          demandes de Service Requests.'
+        proposed_scope: Rédactions explicatives, exemples et correspondances marché ; aucune nouvelle responsabilité.
+      market_comparisons:
+      - vendor: Microsoft
+        product: Dynamics 365 Field Service
+        source_title: Work order architecture
+        source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+        source_version: Documentation évolutive consultée le 19 septembre 2026
+        source_locator: A work order is created ; scheduled ; performed ; reviewed and completed
+        consulted_on: '2026-09-19'
+        evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+        element_name: Service / Work performed
+        element_type: Concept documenté par la source primaire
+        relationship: Recouvrement partiel
+        similarities: Prestation nécessaire à une intervention.
+        differences: Le terrain est un exemple, pas tout le périmètre des services FLOW.
+        flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service
+          désigne le rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+        status: proposed
+        source_refs:
+        - U477
+        - ELM397
+        - CMP193
+        concept_name: Service / Work performed
+        scope_summary: Prestation nécessaire à une intervention.
+        approach_summary: Faire accomplir un travail identifiable.
+      - vendor: Camunda
+        product: Process Orchestration
+        source_title: The Process Orchestration Handbook
+        source_url: https://camunda.com/process-orchestration/
+        source_version: Guide web évolutif
+        source_locator: What is process orchestration? ; Processes with diverse endpoints ; Complexity
+        consulted_on: '2026-09-19'
+        evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+        element_name: Service task / Human task
+        element_type: Concept documenté par la source primaire
+        relationship: Recouvrement partiel
+        similarities: Contributions de personnes et systèmes au processus.
+        differences: Le découpage technique des tâches n’impose pas une identité métier de service.
+        flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service
+          désigne le rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+        status: proposed
+        source_refs:
+        - U477
+        - ELM330
+        - CMP193
+        concept_name: Service task / Human task
+        scope_summary: Contributions de personnes et systèmes au processus.
+        approach_summary: Coordonner les intervenants nécessaires.
+      market_inspiration:
+        choice: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service désigne
+          le rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+        flow_scope: Préparation, transport, réception, documents et autres résultats rendus par les exécutants.
+        flow_approach: Définir résultat, conditions et engagements de la prestation mobilisable.
+        synthesis:
+        - Microsoft Field Service décrit des prestations de travail réalisées par un intervenant. Camunda coordonne des tâches
+          humaines et des services informatiques. Le mot service couvre ainsi des réalités différentes selon la source.
+        - FLOW retient Backing Service pour désigner les prestations sur lesquelles s’appuie l’orchestration du Domain. Cette
+          qualification locale exprime leur rôle ; elle ne désigne pas une catégorie logicielle commune aux deux sources.
+        - L’appel informatique est un moyen de solliciter ou de suivre la prestation. Il ne se confond ni avec le service
+          rendu ni avec sa réalisation.
+        examples:
+        - title: Illustration FLOW — deux modes de réalisation
+          situation: Une préparation est accomplie dans un entrepôt ; un bordereau est produit par un service numérique.
+          outcome: Les deux rendent un résultat utile au même parcours.
+          lesson: Leur forme technique diffère, mais chacun doit être décrit par le service rendu.
+          source_title: Work order architecture
+          source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+          source_refs:
+          - U477
+          - ELM397
+          - CMP193
+    policy_before:
+      name: Backing Service Policy
+      nature: policy
+      proposed_parent: Policy Management
+      status: user_requested_capability_detailed_wording_proposed
+      user_requested_fields:
+        name: Backing Service Policy
+        nature: policy
+      source_refs:
+      - U587
+      - U586
+      - CMP251
+      definition: Définir, maintenir et rendre applicables les règles de recours aux fournisseurs et à leurs Backing Services,
+        notamment les exclusions et les limites de sollicitation, afin de tenir compte de leur fiabilité et de leur situation
+        opérationnelle.
+      mastership: Supply Chain Orchestration maîtrise ces règles locales de recours ; l’offre de référence et les capacités
+        opérationnelles communiquées restent distinctes.
+      scope: Porter les autorisations, restrictions et exclusions applicables à un fournisseur ou une prestation, avec leur
+        contexte, leur période et les conditions de révision. Des difficultés observées peuvent conduire à limiter les nouvelles
+        sollicitations ou à suspendre le recours à un fournisseur selon les règles applicables. Les prestations sont surtout
+        logistiques, sans restriction à ce secteur dans le Domain courant.
+      example: 'Exemple fictif : un fournisseur annonce 1 000 préparations par jour. Des retards constatés conduisent Supply
+        à plafonner ses nouvelles sollicitations à 200 sur une période. Le catalogue conserve l’offre et la visibilité conserve
+        la capacité annoncée ; la règle locale limite les demandes admissibles.'
+      boundaries:
+      - Le catalogue décrit ce que le fournisseur propose ; une présence au catalogue ne vaut pas autorisation de recours.
+      - Les observations de difficulté et de capacité sont des faits contextualisés ; elles ne deviennent une interdiction
+        ou un plafond que selon une règle ou une décision autorisée, humaine ou automatisée.
+      - Une limite de sollicitation Supply ne modifie pas la capacité physique du fournisseur et ne suffit pas à calculer
+        une capacité restante.
+      - L’exclusion peut concerner un fournisseur entier ou un périmètre de prestation à préciser ; ni suppression du fournisseur
+        du référentiel ni interdiction d’entreprise globale implicite.
+      - Les prestations déjà acceptées gardent leurs engagements ; leur modification ou annulation passe par les responsables
+        concernés. Bloquer les nouvelles sollicitations ne les annule pas.
+      - 'Les noms WMS/TMS ne deviennent pas des capacités : la politique concerne le recours aux prestations, non l’administration
+        technique des outils.'
+      field_qualification:
+        requested_by_user:
+        - name
+        - nature
+        - principe d’exclusion fournisseur
+        - principe de limitation des commandes face aux difficultés
+        proposed_by_codex:
+        - definition
+        - mastership détaillée
+        - scope détaillé
+        - example
+        - boundaries
+        - liens de coopération détaillés
+        canonical_materialization: Dans la proposition de refonte ; aucun identifiant canonique attribué ni accord lié à un
+          nœud inexistant.
+      collaborations:
+      - current_id: D14
+        role: Fournit l’offre de prestations et les conditions de référence ; ne porte pas les interdictions locales Supply.
+      - current_id: D06.b
+        role: Fournit la capacité opérationnelle contextualisée, distincte du plafond de sollicitation décidé.
+      - current_id: D07.d
+        role: Rend visibles les faits de réalisation qui peuvent justifier une révision de la politique ; aucun indicateur
+          disponible supposé.
+      - current_id: D06.e
+        role: Respecte les règles applicables pour déterminer les prestataires admissibles et sélectionner une prestation.
+      - current_id: D06.d
+        role: Coordonne les sollicitations dans les conditions de recours applicables.
+      - current_id: D07.b
+        role: Tient les demandes adressées et les engagements acceptés ; distingue restriction future et révision des engagements
+          existants.
+      - current_id: D06.f
+        role: Détermine les adaptations de réalisation nécessaires face à une restriction ou un aléa.
+      decomposition: Aucun comportement créé par type de restriction, seuil ou fournisseur ; décomposition à justifier si
+        un bénéfice métier apparaît.
+      market_comparisons:
+      - vendor: Oracle
+        product: Oracle Transportation Management 24A
+        element_name: Active/Inactive Flag Added to Service Provider
+        element_type: Fonction de produit
+        relationship: Recouvrement partiel
+        similarities: Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire
+          concernées, avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition.
+        differences: Cas transport, effet dépendant du paramétrage et de la version ; aucune exclusion automatique depuis
+          un indicateur ni annulation des engagements démontrée.
+        flow_position: Backing Service Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+          ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+        source_title: Active/Inactive Flag Added to Service Provider
+        source_url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+        source_version: Oracle Transportation Management 24A
+        source_locator: Introduction ; Business Benefit ; Steps to Enable
+        consulted_on: '2026-09-22'
+        evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+        source_refs:
+        - U587
+        - CMP251
+        - ELM606
+        - MKT40
+        status: proposed
+      - vendor: Oracle
+        product: Oracle Transportation Management 26B
+        element_name: Capacity Limit
+        element_type: Fonction de produit
+        relationship: Recouvrement partiel
+        similarities: Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple
+          de cinq expéditions autorisées puis impossibilité de créer la sixième faute de capacité.
+        differences: Contrainte de transport ; ne démontre pas l’origine gouvernance Supply du plafond ni un calcul automatique
+          depuis des difficultés observées.
+        flow_position: Backing Service Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+          ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+        source_title: Capacity Limit
+        source_url: https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm
+        source_version: Oracle Transportation Management 26B
+        source_locator: Using A Capacity Limit ; Recurring Capacity
+        consulted_on: '2026-09-22'
+        evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+        source_refs:
+        - U587
+        - CMP251
+        - ELM607
+        - MKT40
+        status: proposed
+      naming_review_ref: naming_review_U588
+      naming_status: Nom demandé U587, soumis à réexamen marché U588 ; aucune alternative adoptée.
+  canonical_hierarchy_changed: false
+  changed_node_wording:
+  - D14
+  - D04
+  - D06.d
+  - D14.a
+  - D06.e
+  - D14.b
+  market_qualification: Service Provider attesté chez Oracle ; Service Provider Policy reste une composition FLOW, sans consensus
+    de nom revendiqué.
+plan_fulfillment_boundary_U591:
+  status: user_boundary_clarified_detailed_contract_proposed
+  source_refs:
+  - U591
+  - CMP254
+  - ELM602
+  - ELM604
+  history_before_U591:
+    plan_area:
+      proposed_name: Supply & Demand Matching
+      question_proposed: Comment couvrir les besoins et arbitrer les ressources, les priorités et les ajustements nécessaires
+        ?
+      responsibility_proposed: Construire et actualiser un plan commun de satisfaction et de ressources pouvant proposer des
+        achats, des révisions de dates, quantités ou fractionnement des demandes de vente, et des révisions de politiques
+        Supply.
+      current_anchors:
+      - D03.p
+      - D03.m
+      - D03.o
+      - D02.e
+      - D05.f
+      - D05.a
+      - D05.d
+      - D05.e
+      - D05.c
+      - D05.g
+      - D05.h
+      - D05.i
+      boundary: U585 retient la mobilisation de CTP dans ce travail. ATP/CTP/PTP restent des repères marché pour couverture,
+        adaptation et arbitrage économique ; leur découpage n’est plus imposé à la proposition de capacités. Préserver ces
+        résultats et les décisions spécialisées mobilisées par le plan.
+      naming_recommendation: Garder Demand & Supply Optimization comme option préférée pour le périmètre large déjà discuté
+        ; Matching exprime directement le rapprochement mais doit être défini assez largement si ce nom est retenu.
+      market_refs:
+      - ELM596
+      - ELM363
+      - ELM434
+      - ELM604
+      market_interpretation: Microsoft Master Planning calcule des besoins et génère des propositions d'apports ; Oracle Backlog
+        Planning réexamine le carnet et répartit les apports selon les priorités. Les périmètres diffèrent ; ni Matching ni
+        Optimization n'est établi ici comme nom universel d'Area.
+      preserve: Les responsabilités de gestion du plan, décisions, Apply Plan, configuration et engagements restent distinctes.
+        Le caractère collectif ou la fréquence ne créent pas une frontière rigide avec l'exécution. Les nouveaux apports restent
+        des propositions tant qu’ils ne sont pas engagés ; une quantité partiellement couverte ne signifie pas réduction unilatérale
+        de la demande initiale.
+    fulfillment_area:
+      proposed_name: Fulfillment Orchestration
+      question_proposed: Comment organiser, suivre et adapter la réalisation des demandes dans les engagements retenus ?
+      responsibility_proposed: Conduire la réalisation d’une demande vers son résultat, en tenant le contexte du dossier,
+        ses engagements et événements, et en adaptant les activités et prestations permises.
+      current_anchors:
+      - D06.b
+      - D06.d
+      - D06.e
+      - D06.f
+      - D07.a
+      - D07.b
+      - D07.c
+      - D07.d
+      boundary: Un choix local de site ou un reroutage peut relever de l'adaptation de réalisation ; s'il modifie le partage
+        des ressources ou une promesse, il mobilise aussi les responsables de couverture et d'engagement. Décider un split,
+        modifier l'Order et réaliser plusieurs expéditions sont trois responsabilités différentes.
+      preserve: La visibilité de capacité des prestations D06.b ne disparaît pas dans la visibilité de stock. Les exécutants
+        réalisent les opérations physiques ; l'orchestration les coordonne.
+      market_refs:
+      - ELM602
+      - ELM603
+      - ELM363
+      - ELM011
+      - ELM605
+      market_interpretation: Fluent réunit sourcing, limite de fractionnement et réaffectation après manque ; Oracle traite
+        aussi le fulfillment lors du réexamen du carnet. Le mot fulfillment ne suffit donc pas à séparer décision et réalisation.
+        Les documents Fluent sont deux documents distincts du même éditeur, sans preuve de consensus.
+      case_management_U585: 'Orientation de Laurent rapprochée des principes établis du case management : contexte, résultat
+        attendu, événements, critères, activités prévues ou discrétionnaires et décisions. Humain et automatique possibles
+        ; ni notation ni moteur imposé.'
+  user_statements:
+    plan_result: Retoucher les demandes jusqu’à ce qu’elles soient fermes et exécutables.
+    fulfillment_result: Exécuter la demande et orchestrer les services, essentiellement logistiques.
+    execution_adaptation: Adapter le plan d’exécution et retenter un shipment depuis un autre entrepôt pour le seul article
+      manquant.
+    split_and_tracking: La demande initiale splitte la Logistic Order en deux et suit le déroulement des deux.
+  interpretation:
+    two_plans: Le plan de satisfaction prépare les demandes à l’exécution ; le plan d’exécution organise et adapte les prestations
+      qui réalisent une demande.
+    firmness: Une demande ferme n’impose pas un parcours logistique immuable. Les règles précises de modification de la demande
+      et de son engagement restent distinctes de son adaptation opérationnelle.
+    ownership: La demande initiale reste le point de rattachement et de consolidation. La décision d’adaptation, la structuration
+      des Orders et le suivi coopèrent ; leur parent canonique détaillé n’est pas déduit automatiquement.
+    external_execution: Fulfillment conduit la réalisation ; les exécutants réalisent les opérations physiques et conservent
+      leur fonctionnement interne.
+  example:
+    qualification: Illustration Codex du cas donné par Laurent, sans observation Beaumanoir.
+    initial: La demande D porte les articles A et B, à réaliser depuis l’entrepôt E1.
+    event: A peut partir ; B manque lors de la préparation.
+    adaptation: 'La Logistic Order est répartie en deux suites liées à D : A depuis E1 et B depuis E2 selon les possibilités
+      et règles applicables.'
+    tracking: D conserve le suivi de chaque suite et du reste à réaliser ; la réussite du premier shipment ne suffit pas à
+      déclarer toute la demande satisfaite.
+    invariants_proposed:
+    - Ne pas redemander les quantités déjà réalisées.
+    - Ne pas compter deux fois la quantité reprise.
+    - Conserver la filiation et les engagements applicables aux deux suites.
+  return_to_arbitration_proposed:
+    criterion: L’adaptation dépasse les marges autorisées de réalisation.
+    examples:
+    - Révision nécessaire de la quantité ou de la date engagée.
+    - Ressource indisponible sans réarbitrage de priorité entre demandes.
+    - Modification nécessaire d’une protection ou d’une politique hors délégation.
+    qualification: Recommandation Codex à préciser ; aucun seuil, contrôle humain systématique ou règle universelle adopté.
+  remaining_questions:
+  - Quels critères rendent une demande ferme et exécutable, et comment se rattachent-ils à Order Release ?
+  - Quelles marges d’adaptation sont autorisées et quels effets nécessitent un réarbitrage ?
+  - Quelle définition et quelle filiation précises pour Logistic Order, distincte de Shipment et à rapprocher des commandes
+    de prestation existantes ?
+  canonical_anchors:
+    plan:
+    - D03.p
+    - D03.o
+    demand_state_and_structure:
+    - D04.o
+    - D04.n
+    execution:
+    - D06.d
+    - D06.e
+    - D06.f
+    - D07.b
+    - D07.c
+    commitment:
+    - D03.n
+  market_comparisons:
+  - element_ref: ELM602
+    source_title: Source Order Items
+    source_url: https://docs.fluentcommerce.com/by-type/source-order-items
+    consulted_on: '2026-09-22'
+    source_version: Changed on 17 June 2026
+    source_locator: How it Works ; Short-Pick Reallocation
+    relationship: Recouvrement partiel
+    similarities: Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split.
+    differences: Fonction de produit ; ne démontre pas le seuil ferme/exécutable ni le modèle Logistic Order proposé par Laurent.
+    evidence_limits: Texte primaire indexé consulté ; ouverture directe en échec.
+  - element_ref: ELM604
+    source_title: Split or Substitute Fulfillment Lines
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html
+    consulted_on: '2026-09-22'
+    source_version: Oracle Fusion Cloud SCM 26A
+    source_locator: Introduction ; Split a Warehouse ; Consider Dates
+    relationship: Recouvrement partiel
+    similarities: Fractionner les quantités entre entrepôts ou dates selon les permissions.
+    differences: La page traite Promising, pas une reprise après échec ; le split peut servir plusieurs responsabilités.
+    evidence_limits: Document primaire directement relu ; aucun consensus de frontière des Areas déduit.
+  supersedes_assessment: La frontière plan / Fulfillment du diagnostic U589 est clarifiée en principe par U591 ; le diagnostic
+    daté est conservé. Les autres frontières ouvertes restent à traiter.
+  canonical_hierarchy_changed: false
+  subsequent_correction: U592/C114 remplace le seuil ferme et exécutable par le début d’exécution. La condition de retour
+    à l’arbitrage pour réécrire une demande déjà en cours reste une ancienne proposition, non adoptée. Cas de reprise logistique
+    et suivi conservés.
+current_plan_fulfillment_boundary_ref: plan_fulfillment_boundary_U592
+plan_fulfillment_boundary_U592:
+  status: user_clarification_current_detailed_wording_proposed
+  source_refs:
+  - U591
+  - U592
+  - C114
+  - CMP254
+  user_rule: L’arbitrage modifie notamment le contenu des demandes tant qu’elles ne sont pas en cours d’exécution ; une commande
+    ferme peut être désaffermie.
+  supersedes: Le seuil de fermeté de la rédaction U591 et l’interprétation d’un retour automatique à l’arbitrage pour modifier
+    une demande déjà en cours d’exécution.
+  dimensions_distinguished:
+  - Fermeté de la demande et engagement envers le client.
+  - Protection contre réoptimisation.
+  - Autorisation de prise en charge.
+  - Début effectif de l’exécution.
+  cases:
+  - situation: Demande non ferme, pas en cours d’exécution
+    responsibility: L’arbitrage peut en modifier le contenu dans les règles applicables.
+  - situation: Demande ferme, pas en cours d’exécution
+    responsibility: L’arbitrage peut encore en modifier le contenu et la désaffermir ; expliciter les conséquences sur l’engagement.
+  - situation: Demande en cours d’exécution, article manquant
+    responsibility: Fulfillment adapte le plan d’exécution. Le split des Logistic Orders et le suivi par la demande initiale
+      restent le cas U591.
+  preserved_case_ref: plan_fulfillment_boundary_U591.example
+  guardrail: Possibilité de désaffermissement ne signifie ni automatisme ni absence de conséquence client. Ne pas rendre la
+    demande immuable au seul motif qu’elle est ferme.
+  remaining_details:
+  - Le fait qui matérialise le début d’exécution et son lien à Order Release.
+  - La maille pertinente lorsque seule une partie de la demande a commencé à être exécutée.
+  - Les marges de reprise logistique et le traitement d’un engagement devenu impossible après début d’exécution.
+  - La définition de Logistic Order et sa filiation avec la demande initiale et les commandes de prestation existantes.
+  market_comparisons:
+  - element_ref: ELM602
+    source_title: Source Order Items
+    source_url: https://docs.fluentcommerce.com/by-type/source-order-items
+    consulted_on: '2026-09-22'
+    source_version: Changed on 17 June 2026
+    source_locator: How it Works ; Short-Pick Reallocation
+    relationship: Recouvrement partiel
+    similarities: Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split.
+    differences: Fonction de produit ; ne démontre pas le seuil ferme/exécutable ni le modèle Logistic Order proposé par Laurent.
+    evidence_limits: Texte primaire indexé consulté ; ouverture directe en échec.
+  - element_ref: ELM604
+    source_title: Split or Substitute Fulfillment Lines
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html
+    consulted_on: '2026-09-22'
+    source_version: Oracle Fusion Cloud SCM 26A
+    source_locator: Introduction ; Split a Warehouse ; Consider Dates
+    relationship: Recouvrement partiel
+    similarities: Fractionner les quantités entre entrepôts ou dates selon les permissions.
+    differences: La page traite Promising, pas une reprise après échec ; le split peut servir plusieurs responsabilités.
+    evidence_limits: Document primaire directement relu ; aucun consensus de frontière des Areas déduit.
+  market_limit: Les deux documents primaires étayent split et re-sourcing ; ils ne démontrent ni cette règle universelle de
+    frontière ni un droit inconditionnel de désaffermir.
+  history_before_U592:
+    plan_area:
+      proposed_name: Supply & Demand Matching
+      question_proposed: Comment couvrir les besoins et arbitrer les ressources, les priorités et les ajustements nécessaires
+        ?
+      responsibility_proposed: Construire et actualiser le plan de satisfaction et de ressources, et faire appliquer les ajustements
+        autorisés aux demandes jusqu’à ce qu’elles soient fermes et exécutables. Mobiliser les décisions nécessaires aux achats,
+        dates, quantités, fractionnements et révisions de politiques Supply.
+      current_anchors:
+      - D03.p
+      - D03.m
+      - D03.o
+      - D02.e
+      - D05.f
+      - D05.a
+      - D05.d
+      - D05.e
+      - D05.c
+      - D05.g
+      - D05.h
+      - D05.i
+      boundary: 'U585 retient la mobilisation de CTP dans ce travail. ATP/CTP/PTP restent des repères marché pour couverture,
+        adaptation et arbitrage économique ; leur découpage n’est plus imposé à la proposition de capacités. Préserver ces
+        résultats et les décisions spécialisées mobilisées par le plan. U591 précise la sortie vers Fulfillment : une demande
+        ferme et exécutable. L’arbitrage ne conduit pas les prestations de son exécution ; la gestion durable des demandes
+        et engagements garde ses responsabilités.'
+      naming_recommendation: Garder Demand & Supply Optimization comme option préférée pour le périmètre large déjà discuté
+        ; Matching exprime directement le rapprochement mais doit être défini assez largement si ce nom est retenu.
+      market_refs:
+      - ELM596
+      - ELM363
+      - ELM434
+      - ELM604
+      market_interpretation: Microsoft Master Planning calcule des besoins et génère des propositions d'apports ; Oracle Backlog
+        Planning réexamine le carnet et répartit les apports selon les priorités. Les périmètres diffèrent ; ni Matching ni
+        Optimization n'est établi ici comme nom universel d'Area.
+      preserve: Les responsabilités de gestion du plan, décisions, Apply Plan, configuration et engagements restent distinctes.
+        Le caractère collectif ou la fréquence ne créent pas une frontière rigide avec l'exécution. Les nouveaux apports restent
+        des propositions tant qu’ils ne sont pas engagés ; une quantité partiellement couverte ne signifie pas réduction unilatérale
+        de la demande initiale.
+      boundary_source_refs:
+      - U585
+      - U591
+      - CMP254
+    fulfillment_area:
+      proposed_name: Fulfillment Orchestration
+      question_proposed: Comment organiser, suivre et adapter la réalisation des demandes dans les engagements retenus ?
+      responsibility_proposed: Conduire l’exécution d’une demande ferme et exécutable et orchestrer les Services, principalement
+        logistiques, jusqu’au résultat attendu. Adapter le plan d’exécution aux aléas, y compris pour traiter un article manquant
+        depuis un autre entrepôt ; conserver le lien à la demande initiale et le suivi des Logistic Orders issus du split.
+      current_anchors:
+      - D06.b
+      - D06.d
+      - D06.e
+      - D06.f
+      - D07.a
+      - D07.b
+      - D07.c
+      - D07.d
+      boundary: 'U591 distingue l’arbitrage qui rend la demande ferme et exécutable de l’adaptation de son exécution. Un manque
+        partiel peut être traité dans Fulfillment par split de la Logistic Order et reprise du seul article manquant depuis
+        un autre entrepôt. La demande initiale porte le lien et le suivi des deux Logistic Orders. Proposition Codex : mobiliser
+        à nouveau les responsables d’arbitrage ou d’engagement quand l’adaptation dépasse les marges autorisées ; préciser
+        ces conditions, sans renvoyer automatiquement tout changement de site au plan.'
+      preserve: La visibilité de capacité des prestations D06.b ne disparaît pas dans la visibilité de stock. Les exécutants
+        réalisent les opérations physiques ; l'orchestration les coordonne.
+      market_refs:
+      - ELM602
+      - ELM603
+      - ELM363
+      - ELM011
+      - ELM605
+      market_interpretation: Fluent réunit sourcing, limite de fractionnement et réaffectation après manque ; Oracle traite
+        aussi le fulfillment lors du réexamen du carnet. Le mot fulfillment ne suffit donc pas à séparer décision et réalisation.
+        Les documents Fluent sont deux documents distincts du même éditeur, sans preuve de consensus. U591 précise la frontière
+        FLOW par la demande ferme et exécutable, tout en conservant l’adaptation de réalisation ; ELM602 étaye la reprise
+        après manque et ELM604 montre que le split existe aussi lors de la promesse. Le split seul ne détermine donc pas l’Area
+        responsable.
+      case_management_U585: 'Orientation de Laurent rapprochée des principes établis du case management : contexte, résultat
+        attendu, événements, critères, activités prévues ou discrétionnaires et décisions. Humain et automatique possibles
+        ; ni notation ni moteur imposé.'
+      boundary_source_refs:
+      - U591
+      - CMP254
+  canonical_hierarchy_changed: false
+terminology_adoption_U593:
+  source_refs:
+  - U593
+  - U591
+  - U592
+  - CMP254
+  - ELM602
+  - ELM604
+  author: Laurent
+  date: '2026-09-22'
+  interpretation: explicit
+  approved_fields:
+    name: Re-sourcing
+  context: Reprise de la réalisation depuis une autre source, notamment un autre entrepôt pour le seul article manquant en
+    cours d’exécution.
+  definition_proposed: Rechercher et retenir une autre source pour réaliser ce qui reste à accomplir après un manque ou une
+    impossibilité de la source initiale, selon les règles applicables.
+  area_context: Fulfillment Orchestration
+  boundary: Le choix d’une autre source, le split des Logistic Orders et le suivi des deux suites sont distincts. La demande
+    initiale conserve leur rattachement.
+  modeling_level: Capability ou Behavior à déterminer ; accord sur le terme sans création de nœud ni renommage de Process
+    Adaptation Decision.
+  canonical_hierarchy_changed: false
+current_boundary_assessment_ref: remaining_boundaries_U594
+remaining_boundaries_U594:
+  status: updated_diagnostic_recommendations_not_adopted
+  source_refs:
+  - U594
+  - U590
+  - U591
+  - U592
+  - U593
+  - CMP255
+  summary: Frontière plan / Fulfillment clarifiée en principe ; responsabilités à attribuer pour les Orders à plusieurs effets,
+    les engagements et la Logistic Order. Modalités opérationnelles à distinguer de ces choix structurants.
+  clear_principles:
+  - Références externes projetées et politiques maîtrisées par le Domain sont distinctes.
+  - Service, Service Provider, Service Catalog et Service Provider Policy ont des rôles distincts.
+  - L’arbitrage peut modifier le contenu avant début d’exécution, même pour une demande ferme.
+  - Fulfillment conduit et adapte la réalisation ; Re-sourcing est le terme retenu pour une autre source.
+  - Supply tient les apports attendus ; Inventory établit les états et mouvements, ainsi que leurs projections.
+  structural_questions:
+  - id: order_ownership
+    boundary: Demand Management / Supply Management
+    question: Quelle Area porte le cycle de vie de chaque famille d’Orders, notamment un Transfer Order qui représente demande
+      au départ et apport à destination ?
+    existing_ids:
+    - D04.k
+    - D04.n
+    - D04.o
+    - D04.q
+    recommendation: Un responsable par cycle de vie et des effets partagés ; conserver une opération cohérente. Attribuer
+      aussi structuration et archivage sans dupliquer automatiquement leurs capacités.
+    evidence: ELM601 Oracle explicite les deux rôles dans un document ; cette donnée ne prescrit pas le parent FLOW.
+  - id: commitment_ownership
+    boundary: Demand Management / arbitrage / Fulfillment
+    question: Quelle responsabilité maintient et révise l’engagement de quantité/date, en particulier si la réalisation ne
+      peut plus le tenir ?
+    existing_ids:
+    - D03.n
+    - D03.l
+    - D15
+    recommendation: Étudier Demand pour la tenue de l’engagement ; le plan prépare les ajustements avant exécution et Fulfillment
+      fournit progression, prévisions et écarts. Une prévision de retard ne devient pas seule une nouvelle promesse. Ne pas
+      autoriser implicitement l’arbitrage à réécrire une demande en cours.
+    qualification: Attribution proposée, non adoptée ; la suppression de la maille commerciale ATP/CTP/PTP ne supprime pas
+      les résultats métier.
+  - id: logistic_order_responsibility
+    boundary: Demande initiale / Fulfillment / commandes de prestation
+    question: Quel périmètre exact pour Logistic Order, quelle responsabilité la tient, et quel lien avec les commandes de
+      prestation existantes ?
+    existing_ids:
+    - D07.b
+    - D04.n
+    - D07.c
+    established: La demande initiale porte le split et suit les deux suites U591 ; ne pas rouvrir ce principe.
+    recommendation: Expliciter une mission logistique issue de la demande, orchestrée dans Fulfillment et reliée aux Services
+      sollicités. Valider cette définition avant de fusionner ou créer une capacité ; Shipment ne vaut pas automatiquement
+      Logistic Order.
+    qualification: Définition détaillée et placement proposés ; aucun nouveau catalogue Informations.
+  operating_details:
+  - Quel fait marque le début d’exécution, à quelle maille en cas de réalisation partielle ?
+  - Quelles marges autorisent re-sourcing, split et changement de prestataire ; quelle suite en cas d’impossibilité de tenir
+    l’engagement ?
+  - Comment une modification de Policy proposée par le plan devient-elle applicable, selon une autorisation humaine ou déléguée
+    ?
+  - Quels faits rapprochent les apports attendus des mouvements constatés, en préservant transit, propriété et disponibilité
+    ?
+  preserve_existing_placements_recommended:
+  - id: D02.c
+    name: Reservation
+    current_parent: D01
+    recommendation: Conserver Inventory Management ; préciser les coopérations avec demande et plan sans recréer la réservation
+      dans chaque Area.
+    correction_to_previous_diagnostic: U589 présentait son placement comme ouvert dans la proposition ; le parent canonique
+      courant est déjà D01. Ce point ne justifie pas de nouveau blocage structurel.
+    market_limit: ELM410 distingue protection de groupe et réservation liée à la transaction, sans prescrire ce parent de
+      capacité.
+  - id: D06.b
+    name: Service Capacity Visibility
+    current_parent: D06
+    recommendation: Conserver sa responsabilité dans Fulfillment lors de la refonte ; le plan consomme cette visibilité. Offre
+      de catalogue, capacité communiquée et plafond de Policy restent distincts.
+  priority_recommended: Clarifier d’abord Demand / Supply sur le Transfer Order, car ce cas éprouve le partage des responsabilités
+    de plusieurs familles.
+  migration_status: Les sept Areas demeurent une proposition en annexe ; la migration du modèle canonique est un travail distinct
+    du diagnostic, pas une preuve de flou métier.
+  canonical_hierarchy_changed: false
+  subsequent_clarification: U595 clarifie Demand pour Transfer Order et retours, ainsi que le pilotage de la promesse par
+    les demandes. U596/U597 ouvrent l’étude de consignation stock client et AFS/Fashion ; ne pas présenter les deux premiers
+    principes comme toujours indécis.
+demand_supply_clarification_U595:
+  source_refs:
+  - U595
+  - U596
+  - U597
+  - C115
+  - CMP256
+  - CMP257
+  status: user_responsibility_clarified_order_taxonomy_under_study
+  demand_rule: Demand porte besoins, exigences et promesse ; Transfer Order et retours sont des demandes, quelle que soit
+    leur origine.
+  clarified_previous_points:
+  - remaining_boundaries_U594.structural_questions.order_ownership pour les transferts/retours
+  - remaining_boundaries_U594.structural_questions.commitment_ownership dans son principe
+  remaining: Découpage des demandes de consignation, autres familles non explicitement arbitrées et coopérations fines.
+  study_ref: consignment-orders-market-review-U595.yaml
+  history_before_U595:
+    demand:
+      proposed_name: Demand Management
+      question_proposed: Quels besoins devons-nous satisfaire, avec quelles contraintes et quels engagements ?
+      responsibility_proposed: Qualifier et suivre les besoins connus ou prévisionnels, leur échéance et leurs contraintes,
+        en reliant commandes, demandes avant commande et prévision restante.
+      current_anchors:
+      - D04.i
+      - D17.a
+      - D04.k
+      boundary: Une réservation liée à une commande est un engagement sur une ressource, pas un besoin supplémentaire à additionner.
+        Une demande avant commande exige une identité et une règle de succession explicites.
+      open_issue: Examiner ici la responsabilité de confirmer et réviser les engagements aujourd'hui dans D15 ; le parent
+        d'ATP/CTP/PTP et du choix d'échéancier reste à préciser, sans tout absorber dans une capacité unique.
+      market_refs:
+      - ELM600
+      - ELM411
+      - ELM601
+      market_interpretation: Microsoft distingue demande prévue et disponibilité après réservation ; Oracle montre qu'un transfert
+        porte aussi une demande. Demand Management dépasse donc potentiellement les seules commandes ; l'intégration des prévisions
+        est cohérente avec D17.a déjà existante.
+    supply:
+      proposed_name: Supply Management
+      question_proposed: Quels apports attendons-nous, à quel endroit, à quelle date et avec quel niveau d'engagement ?
+      responsibility_proposed: Prendre en charge et suivre les apports attendus, leurs évolutions et leurs engagements, issus
+        notamment d'achats, de transferts et de retours clients admissibles.
+      current_anchors:
+      - D04.j
+      - D04.k
+      - D04.l
+      - D04.r
+      boundary: Distinguer proposition du plan, Order engagé et apport reçu. L'arbitrage du besoin d'un achat relève du plan
+        ; la tenue de l'achat et de ses confirmations relève de la gestion de l'apport.
+      preserve: Un retour fournisseur sort de la ressource ; il n'est pas un apport entrant par nature. Un retour client attendu
+        n'est pas automatiquement disponible avant qualification. Les achats de prestations ne sont pas du stock.
+      open_issue: Les capacités communes D04.n, D04.o et D04.q servent plusieurs familles d'Orders ; leurs propriétaires restent
+        à déterminer sans duplication entre Demand et Supply.
+      market_refs:
+      - ELM601
+      - ELM600
+      - ELM596
+      market_interpretation: Oracle distingue les deux effets du même transfert ; Microsoft sépare apports prévus et propositions
+        du plan. Le regroupement métier FLOW est une interprétation, pas l'adoption d'un module logiciel.
+  canonical_hierarchy_changed: false
+
+service_task_order_clarification_U616:
+  source_refs:
+  - U616
+  status: user_clarification_recorded_canonical_alignment_pending
+  supersedes: 'remaining_boundaries_U594.structural_questions.logistic_order_responsibility : la mission logistique autonome
+    proposée est remplacée par le pattern Service Order.'
+  service_scope:
+  - numérique, par exemple construction documentaire par API
+  - physique, par exemple logistique ou douane
+  - expertise et conseil
+  task: Chaque appel de service est encapsulé dans une tâche de Fulfillment Orchestration.
+  service_order: Document que la tâche peut générer pour qualifier et officialiser la demande de service, puis envoyer au
+    Service Provider ; EDI est un exemple de support.
+  logistic_order: Cas logistique du pattern générique Service Order ; aucune mission documentaire parallèle à créer par défaut.
+  scope_resolution: La frontière Logistic Order / demandes de services est clarifiée en principe. Reste la mise en cohérence
+    des capacités et descriptions existantes, notamment D07.b.
+  limits:
+  - La tâche et le document ne constituent pas de nouveaux niveaux de la hiérarchie des capacités.
+  - Le Service Order reste facultatif ; aucun cycle universel, cardinalité documentaire ou protocole imposé.
+  - La variété des services mobilisés ne rouvre pas le Domain Business Services retiré U472.
+  market_comparison:
+    status: existing_support_partial_no_new_market_consensus_claim
+    source_refs:
+    - CMP193
+    - ELM397
+    - ELM330
+    support: Les comparaisons déjà consignées rapprochent les prestations de travail de Microsoft Field Service et la coordination
+      des contributions humaines et informatiques de Camunda.
+    limit: Elles appuient la diversité des contributions orchestrées, sans établir comme standard universel le document facultatif
+      Service Order ni son articulation exacte avec la tâche. Ce pattern est ici la décision FLOW de Laurent.
+  canonical_model_changed: false
+
+task_governance_clarification_U617:
+  source_refs:
+  - U617
+  - U616
+  status: user_clarification_recorded_canonical_alignment_pending
+  refines: service_task_order_clarification_U616.task
+  definition: La tâche est un objet de gouvernance de Fulfillment Orchestration qui pilote la sollicitation et le suivi du
+    service jusqu’à sa terminaison vérifiée.
+  responsibilities:
+  - Déclencher la sollicitation immédiatement, après un délai ou sur captation d’un événement.
+  - Suivre l’exécution du service et assurer son tracking.
+  - Relancer si nécessaire pour renforcer la robustesse ; pouvoir appeler un service de secours.
+  - Vérifier la terminaison du service et terminer alors la tâche.
+  document: Le Service Order reste le document éventuel de formalisation de la demande au Service Provider, conformément à
+    U616.
+  modeling_limits:
+  - Objet gouverné par les capacités de Fulfillment Orchestration, sans nouveau niveau sous Behavior.
+  - Aucun nombre de relances, délai, règle de secours ou protocole imposé.
+  - La terminaison du service ne signifie pas implicitement que la demande métier entière est satisfaite.
+  market_comparison:
+    relationship: Appui méthodologique et recouvrement partiel ; aucune équivalence à une primitive normative unique.
+    consulted_on: '2026-09-22'
+    author: Codex
+    status: documented_interpretation
+    sources:
+    - title: OMG — Case Management Model and Notation 1.1
+      url: https://www.omg.org/spec/CMMN/1.1/PDF
+      version: '1.1'
+      locator: 'Table 5.39 (isBlocking), chapitre 8 : cycle de vie des tâches, entry criteria et ManualActivationRule'
+      support: Conditions d’activation et cycle de vie ; une tâche bloquante attend la fin du travail associé.
+      limit: CMMN permet aussi des tâches non bloquantes. Le suivi jusqu’à terminaison est le choix FLOW ; les sentries et
+        règles entourent la tâche.
+    - title: Camunda — Service tasks
+      url: https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/
+      version: 8.9, documentation évolutive
+      locator: Introduction ; Task definition
+      support: La tâche attend la complétion du job ; nombre de reprises configurable.
+      limit: Sémantique produit des jobs ; le succès technique ne démontre pas seul la réalisation d’une prestation physique.
+    - title: Camunda — Job workers
+      url: https://docs.camunda.io/docs/components/concepts/job-workers/
+      version: 8.9, documentation évolutive
+      locator: Requesting jobs ; Failing jobs, retry back off
+      support: Compte rendu de complétion ou échec, relances et délai entre tentatives.
+      limit: Le service de secours et le tracking métier ne sont pas automatiquement fournis par une simple Service Task.
+    flow_position: FLOW rassemble ces responsabilités dans un objet de gouvernance ; un modèle BPMN/CMMN peut les répartir
+      entre tâches, événements, règles et chemins de reprise. Le périmètre métier ne prescrit pas leur réalisation technique.
+  canonical_model_changed: false
+
+reference_policy_single_area_U618:
+  source_refs:
+  - U618
+  - U613
+  - U614
+  - U615
+  status: explicit_user_decision
+  decision: Référentiels et policies restent regroupés dans une seule Area.
+  supersedes: Proposition Codex de deux Areas distinctes Reference Management et Policy Management ; question de regroupement
+    désormais close.
+  preserve: Type de capacité et gouvernance restent indépendants ; Projection, Domain-managed et Domain-View ne créent pas
+    des Areas distinctes.
+  scope: Regroupement uniquement ; aucun nouveau nom ni accord détaillé par capacité déduit.
+  market_position: Choix de structuration FLOW. Les appuis marché déjà consignés pour les responsabilités restent partiels
+    et ne prescrivent pas un nombre d’Areas ; aucune équivalence de taxonomie revendiquée.
+  canonical_hierarchy_changed: false
+
+purchase_order_intent_U619:
+  source_refs:
+  - U619
+  - U391
+  - U616
+  status: explicit_user_clarification
+  target: D04.j
+  decision: Purchase Order reste un acte d’achat à un fournisseur.
+  preserved_scope: Achat de biens ou de prestations, conformément au périmètre courant et à U391.
+  boundary: L’apport attendu relève de Supply ; le Service Order formalise éventuellement une sollicitation pilotée par Fulfillment.
+    Ni un apport ni un appel de service ne constituent automatiquement un achat.
+  scope_resolution: L’intention de Purchase Order est confirmée ; ne plus la présenter comme une famille à redéfinir. Aucun
+    accord global sur les champs détaillés ni parent Area explicitement adopté par U619.
+  model_alignment: D04.j exprime déjà l’achat de biens ou prestations à des fournisseurs ; aucune réécriture canonique nécessaire
+    pour cette précision.
+  market_comparison:
+    source_refs:
+    - CMP146
+    status: existing_comparison_reused
+    limit: Les rapprochements existants éclairent l’achat de biens et prestations ; ils ne prescrivent pas le rattachement
+      aux Areas FLOW.
+  canonical_model_changed: false

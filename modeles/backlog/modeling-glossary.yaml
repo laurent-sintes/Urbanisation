@@ -1,6 +1,6 @@
 id: flow-modeling-glossary
 kind: modeling_glossary
-as_of: '2026-09-21'
+as_of: '2026-09-22'
 source_refs:
 - U229
 - U230
@@ -32,6 +32,14 @@ source_refs:
 - U509
 - U537
 - U538
+- U585
+- U586
+- CMP248
+- U613
+- U614
+- U615
+- U624
+- U626
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
@@ -107,7 +115,7 @@ terms:
 - id: MOD003
   name: Management
   label_fr: Gestion / gouvernance
-  definition: Gérer les règles et leur validité, et tenir transactionnellement les données qui les matérialisent.
+  definition: Maintenir dans la durée un ensemble cohérent d’états, engagements ou obligations et gouverner ses évolutions.
   role: Qualifier une responsabilité de gestion, à préciser selon l’objet concerné.
   notes:
   - U230 qualifie Stock Protection de gouvernance/management ; U231 précise sa mise à jour transactionnelle.
@@ -117,16 +125,21 @@ terms:
   - 'U538 : la responsabilité de configuration illustrée par Stock Protection reste extérieure au Planning qui la consomme,
     y compris lorsque ce Planning comporte un comportement d’application du plan. Nom canonique de la capacité actuelle :
     Supply Protection, D02.b.'
+  - U586 ajoute Policy comme type dédié au cadre de règles applicable. La définition générale de Management est clarifiée
+    ; le cas Stock Protection U230/U231 et ses accords restent historiques, sans reclassement automatique de Supply Protection.
+    État antérieur conservé dans capability-types-U449.yaml#history_before_U586.
   source_refs:
   - U230
   - U231
   - U232
   - U538
+  - U586
   review:
     state: partial
     adopted_scope: 'Qualification et application transactionnelle dans le cas Stock Protection. U538 : configuration apportée
       au Planning maintenue à l’extérieur, exemple Stock Protection.'
-    proposed_scope: Généralisation à Management et formulation hors de ce cas.
+    proposed_scope: Généralisation à Management et formulation hors de ce cas. Définition générale clarifiée après U586 ;
+      les nœuds existants gardent leur nature.
 - id: MOD004
   name: Application transactionnelle
   definition: Mettre à jour transactionnellement les données, unitairement, en groupe ou en masse, par plusieurs types d’interfaces
@@ -341,16 +354,26 @@ terms:
     de sa réalisation technique.
   role: Fournir une grille de lecture explicite et stable pour les icônes et la présentation des capacités.
   notes:
-  - Les six valeurs présentes dans FLOW sont action, management, knowledge, orchestration, planning et decision.
+  - Les sept valeurs présentes dans FLOW sont action, management, policy, knowledge, orchestration, planning et decision.
+    Policy est ajouté par instruction U586.
   - Decision, Planning et Management gardent leurs conventions MOD001–MOD003. Les types peuvent partager des opérations ;
     la responsabilité dominante porte la classification.
   - Les décisions sont présentées après les autres capacités ; cet ordre de lecture ne représente pas un enchaînement.
   - La grille détaillée et les dix compléments proposés sont consignés dans capability-types-U449.yaml ; la nature propre
     de chaque capacité reste portée par son fields.nature.
-  - OMG DMN éclaire la distinction décision/processus sans prescrire ces six types ni leurs icônes.
+  - OMG DMN éclaire la distinction décision/processus sans prescrire cette grille de types ni leurs icônes.
   - 'U500/U501 : une capacité qui porte une demande peut préciser Frontoffice (sollicitation externe au Domain), Backoffice
     (sollicitation interne) ou les deux. Ce qualificatif d’origine est distinct de sa nature, du déclencheur et de la provenance
     de l’événement ; aucune valeur n’est inférée du nom ou du parent.'
+  - 'Policy : Définir, maintenir et rendre applicables les règles, politiques et configurations métier dont le Domain porte
+    la maîtrise, avec leur portée, leur validité et leurs conditions d’usage.'
+  - Le type policy qualifie une capacité ; une politique particulière est un contenu qu’elle gouverne. policy_strategy reste
+    une forme de comportement, indépendante du type de sa capacité parente.
+  - Un même Purpose réunit références et policies U618 ; le type Policy qualifie des capacités distinctes des projections
+    et des vues. Purpose, type de capacité et gouvernance des données sont des dimensions distinctes. Aucun comportement par
+    paramètre ni nouveau niveau hiérarchique.
+  - Un plan peut proposer une révision de politique et faire appliquer sa version autorisée, y compris automatiquement selon
+    une délégation ; une hypothèse de simulation ne modifie pas le cadre actif.
   analysis_ref: modeles/backlog/capability-types-U449.yaml
   source_refs:
   - U449
@@ -358,14 +381,22 @@ terms:
   - ELM259
   - U500
   - U501
+  - U585
+  - U586
+  - CMP248
+  - U618
+  - U624
+  - U626
   review:
     state: partial
-    adopted_scope: Typage exhaustif, icônes associées, décisions en fin de liste et séparation légère U449.
-    proposed_scope: Formulation méthodologique, grille détaillée et compléments individuels rédigés par Codex.
+    adopted_scope: 'Typage exhaustif, icônes associées, décisions en fin de liste et séparation légère U449. U586 : nouveau
+      type de capacité Policy.'
+    proposed_scope: Formulation méthodologique, grille détaillée et compléments individuels rédigés par Codex. Définition
+      et frontières détaillées du type Policy.
 - id: MOD008
   name: Domain
   label_fr: Domaine
-  definition: Grand périmètre cohérent de problèmes métier qui organise des Areas et des référentiels en interaction. Supply
+  definition: Grand périmètre cohérent de problèmes métier qui organise des Purposes et des référentiels en interaction. Supply
     Chain Orchestration est le Domain actuellement travaillé.
   role: Situer les périmètres de responsabilité sans les confondre avec leurs capacités ni avec les groupes de présentation.
   source_refs:
@@ -373,6 +404,8 @@ terms:
   - U446
   - U482
   - CMP195
+  - U624
+  - U626
   review:
     state: partial
     adopted_scope: 'U482 : nom Domain et position au-dessus des Areas.'
@@ -381,16 +414,20 @@ terms:
   - U482 remplace Universe par Domain à ce niveau. L’identifiant MOD008 est conservé ; les publications historiques gardent
     leur vocabulaire.
 - id: MOD013
-  name: Area
-  label_fr: Area
-  definition: Périmètre cohérent de responsabilités métier au sein d’un Domain. Il regroupe les capacités qui permettent de
-    traiter ces problèmes et coopère avec les autres Areas.
+  name: Purpose
+  label_fr: Finalité
+  definition: Finalité métier durable au sein d’un Domain, autour de laquelle sont regroupées les responsabilités et capacités
+    qui concourent à sa réalisation.
   role: Distinguer les périmètres tels qu’Service Requests, Inventory Management ou Inventory Optimization des capacités qu’ils
     regroupent.
   notes:
-  - U482 adopte Area au niveau auparavant nommé Domaine. Une Area n’est ni un service d’organisation ni une application.
-  - U507 fait d’Authoritative Data une Area ; U509 lui ajoute Assortment. Les sept référentiels distincts organisent la lecture
-    des capacités sans créer un niveau supplémentaire d’Area.
+  - U482 adopte Purpose au niveau auparavant nommé Domaine. Une Purpose n’est ni un service d’organisation ni une application.
+  - U507 fait d’Authoritative Data une Purpose ; U509 lui ajoute Assortment. Les sept référentiels distincts organisent la
+    lecture des capacités sans créer un niveau supplémentaire d’Purpose.
+  - U622 valide l’association à une finalité. U624 adopte Purpose / Finalité à la place d’Purpose, avec la définition proposée.
+  - Purpose est une convention FLOW ; aucune équivalence à un sous-domaine DDD, un bounded context ou un Outcome n’est revendiquée.
+  - Purpose est un niveau de regroupement ; finality est le champ exprimant le service ou bénéfice attendu d’un élément, y
+    compris à un autre niveau. Une même capacité peut contribuer à plusieurs résultats sans avoir plusieurs parents.
   source_refs:
   - U481
   - U482
@@ -400,30 +437,61 @@ terms:
   - U496
   - U507
   - U509
+  - U622
+  - U624
+  - U620
+  - U621
+  - CMP265
+  - U626
   review:
     state: partial
     adopted_scope: 'U482 : nom Area et place entre Domain et Capability. U507 : Authoritative Data devient une Area, avec
-      ses six référentiels distincts.'
-    proposed_scope: Définition explicative et exemples ; aucun nouveau périmètre métier.
+      ses six référentiels distincts. U622 : association du niveau à une finalité. U624 remplace Area par Purpose / Finalité,
+      adopte la définition et conserve la position entre Domain et Capability.'
+    proposed_scope: Rôle, exemples et correspondances explicatives ; aucun nouveau périmètre métier adopté par extension.
   market_comparison:
-    comparison_ref: CMP195
-    common: SAP place des Business Areas sous les Business Domains ; l’analyse par sous-domaines aide à expliciter les responsabilités.
-    difference: FLOW adopte les noms Domain et Area pour son découpage propre ; ni profondeur complète SAP ni frontière logicielle
-      imposée.
+    comparison_ref: CMP265
+    common: Les approches étudiées distinguent périmètres, capacités et contribution à des résultats.
+    difference: Les neuf approches ne prescrivent pas une même hiérarchie. BMM distingue Goal/Objective, Guild distingue Outcome
+      et Capability ; aucun ne définit le niveau Purpose FLOW.
+    flow_position: Purpose / Finalité est la convention FLOW explicitement adoptée U624, sans surcharge de Subdomain DDD.
     sources:
-    - ELM486
-    - ELM487
-    consulted_on: '2026-09-19'
+    - title: OMG Business Motivation Model 1.3
+      url: https://www.omg.org/spec/BMM/1.3/PDF
+      consulted_on: '2026-09-22'
+      locator: '§§8.2.3–8.2.5 : Desired Result, Goal, Objective'
+      support: Goal et Objective qualifient des résultats souhaités ; appui à la distinction entre motivation et regroupement
+        de capacités.
+      limit: Ne définit pas Purpose comme niveau de la hiérarchie FLOW.
+    - ref: ELM637
+      url: https://cdn.ymaws.com/www.businessarchitectureguild.org/resource/resmgr/whitepapers/Business_Architecture_Metamo.pdf
+      version: 3.0, septembre 2024
+      consulted_on: '2026-09-22'
+      locator: '§5.2 : Outcome'
+      support: Outcome désigne un résultat ou produit final conséquent à une action ou un événement ; pas une Area.
+    source_refs:
+    - U620
+    - U621
+    - U622
+    - U623
+    - U624
+    - CMP265
+    - U626
+  analysis_ref: modeles/backlog/area-level-market-study-U620.yaml
 - id: MOD009
   name: Business Reference
   label_fr: Référentiel métier
-  definition: Ensemble cohérent de données de référence nécessaires aux capacités métier. Dans la Supply, ces références portent
-    la source de vérité locale du Domain, en articulation avec les maîtres d’entreprise externes.
+  definition: Ensemble cohérent de données de référence nécessaires aux capacités métier. Sa gouvernance précise si le domaine
+    porte leur CRUD (Domain-managed), reçoit une vérité externe (Projection), ou construit et rafraîchit une vue (Domain-View).
+    Les responsabilités peuvent porter sur des ensembles distincts autour du même sujet.
   role: Distinguer les références des commandes, décisions et réalisations.
   source_refs:
   - U450
   - U479
   - U482
+  - U613
+  - U614
+  - U615
   review:
     state: proposed
     proposed_scope: Formulation méthodologique de présentation ; aucun accord individuel déduit.
@@ -514,3 +582,324 @@ terms:
     adopted_scope_U466: 'Distinct de la définition générale encore proposée : proposition et engagement de satisfaction sont
       deux informations métier reliées, pouvant coexister.'
   pilot_catalogue_ref: modeles/backlog/information-cards-U465.yaml
+- id: MOD014
+  name: Data Governance
+  label_fr: Gouvernance des données
+  definition: Responsabilité du domaine sur les données ou sur la construction et le rafraîchissement de leur vue, indépendante
+    du type de capacité.
+  values:
+    Domain-managed: 'Le domaine porte le CRUD : création, lecture, modification et suppression.'
+    Projection: La vérité vient d’une source externe au domaine.
+    Domain-View: Vue construite et rafraîchie par le domaine, quelle que soit l’origine des données.
+  boundary: Un sujet peut associer données projetées et vue construite. Qualifier les responsabilités concernées séparément
+    ; aucune technologie ni nouveau niveau hiérarchique imposé.
+  source_refs:
+  - U613
+  - U614
+  - U615
+  - ELM528
+  - ELM529
+  review:
+    state: partial
+    adopted_scope: Distinction des dimensions et définitions explicites U613/U614, application demandée U615.
+    proposed_scope: Choix du champ technique et rattachements détaillés réalisés par Codex ; aucun accord individuel implicite.
+- id: MOD015
+  name: Capability
+  label_fr: Capacité
+  definition: Ce que sait faire durablement l’entreprise, indépendamment de son organisation et de ses outils.
+  role: Décrire une aptitude métier au sein d’un Purpose ; ses comportements en précisent les manières d’agir.
+  notes:
+  - Un produit peut contribuer à plusieurs capacités ; une fonctionnalité ne suffit pas à définir une capacité.
+  - Le glossaire métier TER001 conserve un renvoi historique vers cette autorité méthodologique.
+  source_refs:
+  - U33
+  - U624
+  - U626
+  review:
+    state: partial
+    note: Définition U33 conservée ; matérialisation méthodologique et renvois U626 proposés.
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Business capability
+    concept_name: Business capability
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Aptitude de l’entreprise, actuelle ou nécessaire.
+    approach_summary: Séparer aptitude et moyens.
+    similarities: Le besoin survit aux changements d’organisation.
+    differences: Le guide propose sa propre structuration de carte.
+    flow_position: FLOW reprend le principe, avec sa décomposition propre.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM374
+    - CMP192
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Business / organisational capability
+    concept_name: Business / organisational capability
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Ce qui permet de réaliser stratégie et résultats.
+    approach_summary: Relier besoin et raison d’être.
+    similarities: La capacité ne prescrit pas le logiciel.
+    differences: GEA-NZ vise des administrations et leur modèle de fonctionnement.
+    flow_position: FLOW l’applique à ses responsabilités métier.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM333
+    - CMP192
+- id: MOD016
+  name: Capability Realization
+  definition: 'Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.'
+  role: Autorité méthodologique de la notion ; le terme métier historique conserve son identifiant et un renvoi.
+  source_refs:
+  - U203
+  - U477
+  - CMP192
+  - U626
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Capability components
+    concept_name: Capability components
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Moyens humains, pratiques, informations et ressources.
+    approach_summary: Relier la capacité à ce qui la rend possible.
+    similarities: La réalisation repose sur plusieurs moyens.
+    differences: Le guide nomme des composants, pas un objet unique équivalent.
+    flow_position: FLOW regroupe ces moyens sous Réalisation.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM374
+    - CMP192
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Capability implementation
+    concept_name: Capability implementation
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Manière concrète de satisfaire le besoin.
+    approach_summary: Comparer plusieurs mises en œuvre.
+    similarities: Changer le comment ne change pas nécessairement le quoi.
+    differences: Le cadre gouvernemental ne décrit pas les moyens de FLOW.
+    flow_position: Aucune réalisation locale n’est déduite de l’exemple.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM333
+    - CMP192
+  review:
+    state: proposed
+    note: Organisation méthodologique U626 ; sens antérieur conservé.
+- id: MOD017
+  name: Function
+  definition: 'Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.'
+  role: Autorité méthodologique de la notion ; le terme métier historique conserve son identifiant et un renvoi.
+  source_refs:
+  - U203
+  - U477
+  - CMP192
+  - U482
+  - U626
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Organizational function
+    concept_name: Organizational function
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Partie ou rôle de l’organisation.
+    approach_summary: Examiner où les capacités sont exercées.
+    similarities: Le contexte donne son sens au mot fonction.
+    differences: Ce sens organisationnel ne désigne pas une aptitude autonome.
+    flow_position: FLOW exige le qualificatif utile avant toute équivalence.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM374
+    - CMP192
+  - vendor: SAP
+    product: S/4HANA Sales
+    element_name: aATP functions
+    concept_name: aATP functions
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Possibilités offertes par S/4HANA.
+    approach_summary: Décrire confirmation, alternatives et réexamen.
+    similarities: Fonction peut aussi désigner ce que fait le produit.
+    differences: Le périmètre dépend du produit et de son édition.
+    flow_position: FLOW utilise Fonctionnalité de produit pour ce sens précis.
+    source_title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+    source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    source_version: Cours en ligne, édition non précisée
+    source_locator: Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+    consulted_on: '2026-09-19'
+    evidence_limits: Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une
+      couverture installée.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM456
+    - CMP192
+  review:
+    state: proposed
+    note: Organisation méthodologique U626 ; sens antérieur conservé.
+- id: MOD018
+  name: Product Functionality
+  definition: Comportement ou ensemble de comportements offert par un produit dans une édition et une configuration données.
+  role: Autorité méthodologique de la notion ; le terme métier historique conserve son identifiant et un renvoi.
+  source_refs:
+  - U203
+  - U477
+  - CMP192
+  - U626
+  market_comparisons:
+  - vendor: SAP
+    product: S/4HANA Sales
+    element_name: Alternative-Based Confirmation
+    concept_name: Alternative-Based Confirmation
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Confirmation possible depuis d’autres sites ou produits.
+    approach_summary: Proposer les variantes prises en charge par SAP.
+    similarities: Une fonctionnalité apporte un service concret.
+    differences: Son regroupement aATP dépasse une seule responsabilité FLOW.
+    flow_position: La correspondance se fait sur les effets documentés.
+    source_title: Using Advanced Available-To-Promise (aATP) in SAP S/4HANA
+    source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5
+    source_version: Cours en ligne, édition non précisée
+    source_locator: Alternative-Based Confirmation ; Backorder Processing ; Release for Delivery
+    consulted_on: '2026-09-19'
+    evidence_limits: Description de fonctions produit ; leur regroupement commercial ne définit pas une capacité FLOW ni une
+      couverture installée.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM456
+    - CMP192
+  - vendor: Microsoft
+    product: Dynamics 365 Commerce
+    element_name: Partial orders rule
+    concept_name: Partial orders rule
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Possibilités de découpage proposées par DOM.
+    approach_summary: Activer et paramétrer selon la version.
+    similarities: L’édition et la configuration conditionnent le comportement.
+    differences: La règle ne décrit pas toute la capacité de satisfaction.
+    flow_position: La couverture FLOW reste à examiner au bon périmètre.
+    source_title: DOM rules
+    source_url: https://learn.microsoft.com/en-us/dynamics365/commerce/dom-rules
+    source_version: Documentation évolutive, mise à jour du 22 janvier 2026
+    source_locator: Common attributes ; Minimum inventory rule ; Partial orders rule
+    consulted_on: '2026-09-19'
+    evidence_limits: Comportements propres à DOM et à ses versions ; ils illustrent des règles, sans imposer ce solveur ni
+      ses priorités à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM394
+    - CMP192
+  review:
+    state: proposed
+    note: Organisation méthodologique U626 ; sens antérieur conservé.
+- id: MOD019
+  name: Capability Grouping
+  definition: Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.
+  role: Autorité méthodologique de la notion ; le terme métier historique conserve son identifiant et un renvoi.
+  source_refs:
+  - U203
+  - U477
+  - CMP192
+  - U482
+  - U626
+  market_comparisons:
+  - vendor: The Open Group
+    product: TOGAF Series Guide
+    element_name: Stratification / leveling
+    concept_name: Stratification / leveling
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Classement de lecture et détail d’une aptitude.
+    approach_summary: Distinguer les deux objectifs.
+    similarities: Regrouper n’est pas nécessairement décomposer.
+    differences: Les catégories et niveaux du guide lui sont propres.
+    flow_position: FLOW choisit des critères métier explicites.
+    source_title: Business Capabilities
+    source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
+    source_version: Guide G189, 2018
+    source_locator: §2.1–2.3 ; §3.1.1 ; §3.2 ; §4.2.1
+    consulted_on: '2026-09-19'
+    evidence_limits: Publication originale The Open Group consultée dans une copie hébergée par Governance Foundation, couverture
+      et copyright vérifiés. Guide de méthode de 2018 ; aucune adoption de toute sa hiérarchie par FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM374
+    - CMP192
+  - vendor: New Zealand Digital Government
+    product: GEA-NZ
+    element_name: Categorised capabilities
+    concept_name: Categorised capabilities
+    element_type: Notion ou usage documenté
+    relationship: Rapprochement de sens
+    scope_summary: Classement des capacités d’une organisation.
+    approach_summary: Repérer lacunes, chevauchements et doublons.
+    similarities: Le classement aide à comprendre la carte.
+    differences: GEA-NZ renvoie à des taxonomies gouvernementales.
+    flow_position: FLOW ne reprend pas une taxonomie externe par défaut.
+    source_title: Business capabilities
+    source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
+    source_version: Page institutionnelle évolutive, édition non indiquée
+    source_locator: Definition ; Principles 1–4 ; exemple Pay staff
+    consulted_on: '2026-09-19'
+    evidence_limits: Cadre propre aux administrations néo-zélandaises ; le vocabulaire organisationnel et les taxonomies ne
+      sont pas transposés à FLOW.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM333
+    - CMP192
+  review:
+    state: proposed
+    note: Organisation méthodologique U626 ; sens antérieur conservé.

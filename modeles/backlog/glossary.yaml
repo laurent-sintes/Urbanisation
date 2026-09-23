@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 id: flow-glossary
-as_of: '2026-09-19'
+as_of: '2026-09-22'
 source_refs:
 - U203
 - U214
@@ -27,18 +27,25 @@ source_refs:
 - U482
 - U496
 - U497
+- U590
+- U624
+- U626
 terms:
 - id: TER001
   name: Capacité métier
   short_description: Ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.
   definition: Ce que sait faire l’entreprise indépendamment de son organisation et de ses outils.
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: 'Définition réaffirmée par Laurent, U33. Précision de lecture proposée : une opération ou une étape ne constitue
-    pas automatiquement une capacité ; examiner l’aptitude exprimée et sa maille.'
+  notes: |-
+    Définition réaffirmée par Laurent, U33. Précision de lecture proposée : une opération ou une étape ne constitue pas automatiquement une capacité ; examiner l’aptitude exprimée et sa maille.
+
+    Repère méthodologique : [MOD015](modeling:MOD015). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -292,12 +299,15 @@ terms:
   short_description: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
   definition: Bien décrit à la maille nécessaire à son identification et à sa gestion commerciale ou opérationnelle.
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: Sens historique Article / unité de gestion. Le rôle Article du modèle actuel est TER060 ; ne pas confondre les identités
-    de notion.
+  notes: |-
+    Sens historique Article / unité de gestion. Le rôle Article du modèle actuel est TER060 ; ne pas confondre les identités de notion.
+
+    Repère associé : [Article](glossary:TER060). Le premier libellé conserve son contexte ; ce renvoi ne fusionne pas les notions ni leurs unités.
   source_refs:
   - U203
   - U477
   - CMP193
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -557,12 +567,15 @@ terms:
     positions.
   definition: Fait de changement d’une position de stock, par exemple une réception, une sortie ou un transfert entre positions.
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: Une intention de déplacement et son exécution sont distinctes. Une réservation ne signifie pas un mouvement physique.
-    N2.
+  notes: |-
+    Une intention de déplacement et son exécution sont distinctes. Une réservation ne signifie pas un mouvement physique. N2.
+
+    Repère associé : [Stock movement / Inventory movement ; Goods movement chez SAP](glossary:TER055). Le premier libellé conserve son contexte ; ce renvoi ne fusionne pas les notions ni leurs unités.
   source_refs:
   - U203
   - U477
   - CMP190
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2101,7 +2114,7 @@ terms:
     approach_summary: Relier déroulement et capacité.
     similarities: Une capacité peut mobiliser plusieurs processus.
     differences: Le guide organise ces liens pour l’architecture d’entreprise.
-    flow_position: FLOW garde des parcours transverses aux areas.
+    flow_position: FLOW garde des parcours transverses aux purposes.
     source_title: Business Capabilities
     source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
     source_version: Guide G189, 2018
@@ -2124,7 +2137,7 @@ terms:
       le processus comme l’un des moyens qui permettent d’exercer une capacité. Le premier décrit le déroulement ; le second
       le situe par rapport à l’aptitude.
     - 'FLOW conserve les deux lectures : la carte dit ce que l’entreprise sait faire, le processus raconte comment elle le
-      fait dans un cas. Un parcours peut traverser plusieurs areas sans leur imposer un nouveau découpage.'
+      fait dans un cas. Un parcours peut traverser plusieurs purposes sans leur imposer un nouveau découpage.'
     examples:
     - title: TOGAF — recruter une personne
       situation: L’exemple Recruitment Management cite notamment l’évaluation du besoin, la recherche de candidats et leur
@@ -2228,11 +2241,16 @@ terms:
   short_description: 'Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.'
   definition: 'Moyens concrets mobilisés pour exercer une capacité : acteurs, pratiques, outils et échanges.'
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: Une réalisation peut évoluer sans changer l’aptitude métier. N1/N5/N6.
+  notes: |-
+    Une réalisation peut évoluer sans changer l’aptitude métier. N1/N5/N6.
+
+    Repère méthodologique : [MOD016](modeling:MOD016). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2313,13 +2331,17 @@ terms:
   short_description: 'Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.'
   definition: 'Mot à qualifier avant emploi : il ne désigne pas un niveau unique adopté dans notre modèle.'
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: Dans les réponses A19–A21 sur les produits, l’assistant désignait surtout une fonctionnalité de produit. « Fonction
-    métier » pourrait recevoir un autre sens explicite, sans le présumer. U34, C34.
+  notes: |-
+    Dans les réponses A19–A21 sur les produits, l’assistant désignait surtout une fonctionnalité de produit. « Fonction métier » pourrait recevoir un autre sens explicite, sans le présumer. U34, C34.
+
+    Repère méthodologique : [MOD017](modeling:MOD017). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
   - U482
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2383,7 +2405,7 @@ terms:
       des capacités. SAP présente des fonctions aATP comme des possibilités de son produit. Le même mot renvoie ainsi à des
       angles différents.
     - 'FLOW garde cette ambiguïté visible : fonction métier, fonction d’organisation et fonctionnalité de produit doivent
-      être précisées. Aucun de ces usages ne crée automatiquement un étage entre area et capacité.'
+      être précisées. Aucun de ces usages ne crée automatiquement un étage entre purpose et capacité.'
     examples:
     - title: TOGAF — une capacité dans plusieurs fonctions
       situation: Le guide rapproche Project Management et Learning Management de plusieurs unités, dont les ressources humaines
@@ -2402,12 +2424,16 @@ terms:
     données.
   definition: Comportement ou ensemble de comportements offert par un produit dans une édition et une configuration données.
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: 'Peut contribuer à une ou plusieurs capacités, ou à une partie de capacité. Exemple : BOP comme fonctionnalité SAP
-    ; aucune équivalence automatique avec une boîte métier. N5/N6.'
+  notes: |-
+    Peut contribuer à une ou plusieurs capacités, ou à une partie de capacité. Exemple : BOP comme fonctionnalité SAP ; aucune équivalence automatique avec une boîte métier. N5/N6.
+
+    Repère méthodologique : [MOD018](modeling:MOD018). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2489,13 +2515,17 @@ terms:
   short_description: Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.
   definition: Ensemble de capacités rapprochées selon un critère métier explicite pour faciliter la lecture de la carte.
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: Le nom, la maille et le critère sont à préciser ; une catégorie de regroupement n’est pas automatiquement une capacité
-    mère. Aucun étage nommé Fonction n’est adopté. U34, N6.
+  notes: |-
+    Le nom, la maille et le critère sont à préciser ; une catégorie de regroupement n’est pas automatiquement une capacité mère. Aucun étage nommé Fonction n’est adopté. U34, N6.
+
+    Repère méthodologique : [MOD019](modeling:MOD019). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
   - U482
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2558,7 +2588,7 @@ terms:
     - TOGAF distingue la classification des capacités pour lire une carte et leur décomposition pour détailler une aptitude.
       GEA-NZ recommande également de les classer afin de repérer lacunes et recouvrements. Les deux donnent un but à l’organisation
       de la carte.
-    - 'FLOW conserve cette distinction : partager un thème ne signifie pas être les parties d’une même capacité. Une area
+    - 'FLOW conserve cette distinction : partager un thème ne signifie pas être les parties d’une même capacité. Une purpose
       peut apporter ce cadre de lecture quand ses problèmes métier sont cohérents ; le regroupement ne crée pas un niveau
       « fonction ».'
     examples:
@@ -2577,16 +2607,19 @@ terms:
   name: Domaine
   short_description: Espace cohérent de problèmes métier liés entre eux, que l’on gagne à comprendre et à traiter ensemble.
   definition: Espace cohérent de problèmes métier liés entre eux, que l’on gagne à comprendre et à traiter ensemble.
-  context: 'U482 : dans la hiérarchie FLOW, Domain désigne désormais le niveau de Supply Chain Orchestration ; Area nomme
+  context: 'U482 : dans la hiérarchie FLOW, Domain désigne désormais le niveau de Supply Chain Orchestration ; Purpose nomme
     ses périmètres de responsabilité. Le sens général de domaine reste un espace cohérent de problèmes métier.'
-  notes: 'Définition rédactionnelle proposée à partir de U45/U46 : expliciter les liens et limites avant de classer les capacités.
-    Des relations entre domaines n’imposent pas leur fusion. Conception des bounded contexts hors de cette étape ; souvenir
-    du livre et textes vérifiés distingués dans MKT17/ELM041/CMP027.'
+  notes: |-
+    Définition rédactionnelle proposée à partir de U45/U46 : expliciter les liens et limites avant de classer les capacités. Des relations entre domaines n’imposent pas leur fusion. Conception des bounded contexts hors de cette étape ; souvenir du livre et textes vérifiés distingués dans MKT17/ELM041/CMP027.
+
+    Repère méthodologique : [MOD008](modeling:MOD008). Cette entrée conserve le vocabulaire historique ; les règles de construction du modèle font autorité dans le glossaire méthodologique.
   source_refs:
   - U203
   - U477
   - CMP192
   - U482
+  - U624
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -2673,7 +2706,7 @@ terms:
   context: 'Exemple Supply : demander la préparation de 100 tee-shirts, coordonner leur transport puis suivre leur remise
     au magasin. L’orchestration s’appuie sur les faits transmis par les exécutants ; elle ne réalise pas elle-même la préparation
     ou le transport.'
-  notes: Dans Atlas, les domaines et areas coopèrent selon leurs responsabilités métier. Le terme ne prescrit ni hiérarchie
+  notes: Dans Atlas, les domaines et purposes coopèrent selon leurs responsabilités métier. Le terme ne prescrit ni hiérarchie
     entre eux, ni produit, ni moyen logiciel.
   source_refs:
   - U203
@@ -6985,11 +7018,15 @@ terms:
     réceptions, sorties, transferts et changements d’état sans déplacement physique. Les écritures et justificatifs qui le
     représentent restent à distinguer du fait.'
   context: Notion locale en cours de consolidation ; consulter les sources et les réserves.
-  notes: ''
+  notes: |2-
+
+
+    Repère associé : [Mouvement de stock](glossary:TER007). Le premier libellé conserve son contexte ; ce renvoi ne fusionne pas les notions ni leurs unités.
   source_refs:
   - U203
   - U477
   - CMP190
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
@@ -7451,6 +7488,7 @@ terms:
   - U203
   - U477
   - CMP193
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: article-et-container-roles-de-product-u195
@@ -7526,6 +7564,10 @@ terms:
       - U477
       - ELM470
       - CMP193
+  notes: |2-
+
+
+    Repère associé : [Article / unité de gestion](glossary:TER004). Le premier libellé conserve son contexte ; ce renvoi ne fusionne pas les notions ni leurs unités.
 - id: TER061
   name: Container
   short_description: Rôle porté par Product pour les biens destinés à contenir ou supporter d’autres unités, sous des règles
@@ -7962,12 +8004,12 @@ terms:
       - ELM364
       - CMP189
 - id: TER066
-  name: Backing Service Order
-  short_description: Demande de prestation adressée à un exécutant pour contribuer à la réalisation d’une demande du Domain.
-  definition: Demande de prestation adressée à un exécutant, avec le résultat attendu et les conditions applicables, puis
-    suivie dans sa prise en charge et ses évolutions.
-  context: Qualification métier locale FLOW de la demande d’un Backing Service ; le terme ne désigne pas toutes les demandes
-    de travail du Domain.
+  name: Service Order
+  short_description: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
+    Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire.
+  definition: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service Provider](glossary:TER088),
+    lorsqu’une telle formalisation est nécessaire.
+  context: Supply Chain Orchestration ; distinguer intention, engagement, pilotage, résultat et document.
   source_refs:
   - U169
   - U203
@@ -7978,14 +8020,15 @@ terms:
   - U497
   - CMP200
   - U496
+  - U616
+  - U617
+  - U626
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
   review:
     state: partial
-    adopted_scope: 'U497 : qualification Backing Service / Backing Service Order pour distinguer les prestations et leurs
-      demandes de Service Requests.'
-    proposed_scope: Rédactions explicatives, exemples et correspondances marché ; aucune nouvelle responsabilité.
+    note: Principes issus des décisions citées ; rédaction et comparaisons consolidées U626, sans accord global supplémentaire.
   market_comparisons:
   - vendor: TM Forum
     product: Service Ordering Management
@@ -8000,9 +8043,10 @@ terms:
     element_type: Concept documenté par la source primaire
     relationship: Recouvrement partiel
     similarities: Actions demandées sur des services.
-    differences: La référence télécom ne définit pas le cycle de chaque prestation Supply.
-    flow_position: Nommer la demande de prestation adressée à un exécutant. Backing Service Order conserve ce qui est demandé
-      et sa prise en charge, distincts des résultats réalisés et des demandes de travail portées par le Domain.
+    differences: La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint ici Service Order
+      au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+    flow_position: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
+      ; le cycle complet de Task ne se déduit pas du document.
     status: proposed
     source_refs:
     - U477
@@ -8023,9 +8067,10 @@ terms:
     element_type: Concept documenté par la source primaire
     relationship: Recouvrement partiel
     similarities: Travail à réaliser par un intervenant.
-    differences: Work Order vise surtout le terrain et inclut des fonctions plus larges.
-    flow_position: Nommer la demande de prestation adressée à un exécutant. Backing Service Order conserve ce qui est demandé
-      et sa prise en charge, distincts des résultats réalisés et des demandes de travail portées par le Domain.
+    differences: Work Order vise surtout le terrain et inclut des fonctions plus larges. U616 restreint ici Service Order
+      au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+    flow_position: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
+      ; le cycle complet de Task ne se déduit pas du document.
     status: proposed
     source_refs:
     - U477
@@ -8035,31 +8080,34 @@ terms:
     scope_summary: Travail à réaliser par un intervenant.
     approach_summary: Décrire puis planifier et suivre l’intervention.
   market_inspiration:
-    choice: Nommer la demande de prestation adressée à un exécutant. Backing Service Order conserve ce qui est demandé et
-      sa prise en charge, distincts des résultats réalisés et des demandes de travail portées par le Domain.
-    flow_scope: Prestations demandées aux exécutants et évolutions de leur prise en charge.
-    flow_approach: Relier besoin, prestation, destinataire, réponse et état connu.
+    choice: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service Provider](glossary:TER088),
+      lorsqu’une telle formalisation est nécessaire.
+    flow_scope: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
+      Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire.
+    flow_approach: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
+      ; le cycle complet de Task ne se déduit pas du document.
     synthesis:
-    - TM Forum utilise Service Order pour des actions demandées sur des services télécom. Microsoft Field Service utilise
-      Work Order pour le travail à réaliser sur le terrain. Les deux portent une demande de travail, avec des objets et cycles
-      différents.
-    - FLOW ajoute Backing pour désigner les prestations sollicitées auprès des exécutants, du transport au document. Cette
-      qualification locale distingue leur demande des Service Requests du Domain ; elle n’impose ni les étapes Field Service
-      ni une machine à états télécom universelle.
+    - Actions demandées sur des services. La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint
+      ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+    - Travail à réaliser par un intervenant. Work Order vise surtout le terrain et inclut des fonctions plus larges. U616
+      restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
     examples:
-    - title: Illustration FLOW — demander un document
-      situation: Une prestation est sollicitée pour produire un document d’expédition.
-      outcome: La demande reste identifiable jusqu’au résultat et à sa clôture selon les règles du service.
-      lesson: Son acceptation ne prouve pas encore que le document est disponible.
+    - title: Illustration FLOW
+      situation: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
+        Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire.
+      outcome: La [Task](glossary:TER089) peut produire et transmettre ce document, par exemple un message EDI. Elle porte
+        le pilotage, les reprises et la vérification de fin. Une sollicitation numérique peut être gouvernée sans Service
+        Order. [Purchase Order](glossary:TER070) porte un acte d’achat ; tout Service Order n’en est pas un. Logistic Order
+        est un cas logistique de Service Order.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
       source_title: TMF641 Service Ordering Management API REST Specification
       source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
       source_refs:
-      - U477
-      - ELM464
-      - CMP193
-  notes: '[Service Requests](model:D04) porte les demandes de travail reçues ou nées dans le Domain. Un Backing Service Order
-    sollicite un exécutant pour contribuer à leur réalisation. [Backing Service Orders](model:D07.b) en tient la demande et
-    la prise en charge ; [Service Catalog](model:D14) décrit l’offre des prestations mobilisables.'
+      - U626
+  notes: La [Task](glossary:TER089) peut produire et transmettre ce document, par exemple un message EDI. Elle porte le pilotage,
+    les reprises et la vérification de fin. Une sollicitation numérique peut être gouvernée sans Service Order. [Purchase
+    Order](glossary:TER070) porte un acte d’achat ; tout Service Order n’en est pas un. Logistic Order est un cas logistique
+    de Service Order.
 - id: TER068
   name: Profitable-to-Promise (PTP)
   short_description: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans
@@ -8241,7 +8289,7 @@ terms:
   notes: 'Famille gérée par [Purchase Order](model:D04.j). Aucune création de nœud objet ni de schéma détaillé ; cycle distinct
     des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale. U391 : inclut l’achat
     de prestations, conformément à Service Procurement ; un apport en consignation sans engagement d’achat relève de Consignment
-    Replenishment Order. Précision lexicale éditoriale, sans validation nouvelle de cette définition.'
+    Fill-up Order. Précision lexicale éditoriale, sans validation nouvelle de cette définition.'
   source_refs:
   - U212
   - U214
@@ -8325,12 +8373,14 @@ terms:
       - CMP189
 - id: TER071
   name: Transfer Order
-  short_description: Ordre portant un déplacement de marchandises entre une origine et une destination, avec quantités et
-    échéances.
-  definition: Ordre portant un déplacement de marchandises entre une origine et une destination, avec quantités et échéances.
-  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
-  notes: Famille gérée par [Transfer Order](model:D04.k). Aucune création de nœud objet ni de schéma détaillé ; cycle distinct
-    des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  short_description: Demande de déplacement de marchandises entre sites pour rééquilibrer leur répartition, avec quantités,
+    échéances et contraintes, sans que la propriété du stock détermine à elle seule son type.
+  definition: Demande de déplacement de marchandises entre sites pour rééquilibrer leur répartition, avec quantités, échéances
+    et contraintes, sans que la propriété du stock détermine à elle seule son type.
+  context: Supply Chain Orchestration ; distinguer intention, engagement, pilotage, résultat et document.
+  notes: 'L’intention prime : mettre en consignation, reprendre du stock encore consigné ou traiter un retour ne deviennent
+    pas Transfer Order du seul fait d’un déplacement. Frontoffice et Backoffice désignent les origines de la demande. Le sens
+    natif de Transfer Order peut être plus large dans les produits.'
   source_refs:
   - U212
   - U214
@@ -8338,12 +8388,16 @@ terms:
   - U384
   - U477
   - CMP189
+  - U595
+  - U608
+  - U610
+  - U626
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u214
   review:
-    state: proposed
-    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+    state: partial
+    note: Principes issus des décisions citées ; rédaction et comparaisons consolidées U626, sans accord global supplémentaire.
   market_comparisons:
   - vendor: Microsoft
     product: Intelligent Order Management
@@ -8411,12 +8465,16 @@ terms:
       - ELM404
       - CMP189
 - id: TER072
-  name: Customer Return Order
-  short_description: Commande portant un retour de marchandises provenant d’un client, distincte de la vente d’origine.
-  definition: Commande portant un retour de marchandises provenant d’un client, distincte de la vente d’origine.
-  context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
-  notes: Famille gérée par [Customer Return](model:D04.l). Aucune création de nœud objet ni de schéma détaillé ; cycle distinct
-    des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  name: Return Order
+  short_description: Demande portant le retour de marchandises et le résultat attendu de leur prise en charge, avec leurs
+    quantités et conditions, indépendamment d’un contexte B2C ou B2B.
+  definition: Demande portant le retour de marchandises et le résultat attendu de leur prise en charge, avec leurs quantités
+    et conditions, indépendamment d’un contexte B2C ou B2B.
+  context: Supply Chain Orchestration ; distinguer intention, engagement, pilotage, résultat et document.
+  notes: L’intention de retour peut conduire à remise en stock, réparation, renvoi fournisseur, restitution ou rebut selon
+    l’accord. Un retour après cession de biens consignés peut être pris en charge ici ; la reprise de biens encore consignés
+    relève de [Consignment Pick-up](glossary:TER092). Les parcours ne deviennent pas des familles d’Orders par seul effet
+    juridique.
   source_refs:
   - U212
   - U214
@@ -8424,12 +8482,14 @@ terms:
   - U384
   - U477
   - CMP189
+  - U612
+  - U626
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u214
   review:
-    state: proposed
-    note: Définition lexicale rédigée par Codex ; pas de validation anticipée.
+    state: partial
+    note: Principes issus des décisions citées ; rédaction et comparaisons consolidées U626, sans accord global supplémentaire.
   market_comparisons:
   - vendor: SAP
     product: S/4HANA Sales
@@ -8442,9 +8502,9 @@ terms:
     element_name: Customer returns
     element_type: Concept et usage documentés
     relationship: Recouvrement partiel
-    similarities: Le retour a ses propres documents et suites.
-    differences: Crédit, remplacement et logistique ne se résument pas au nom du document.
-    flow_position: Conserver le retour et son lien d’origine sans effacer la vente réalisée.
+    similarities: Le retour ouvre plusieurs suites possibles après inspection.
+    differences: Le parcours SAP inclut la compensation financière ; FLOW distingue les responsabilités concernées.
+    flow_position: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la vente.
     status: proposed
     source_refs:
     - U477
@@ -8454,49 +8514,82 @@ terms:
     scope_summary: Retour, inspection et suite choisie pour le client.
     approach_summary: Relier commande de retour, compensation et documents de suivi.
   - vendor: Microsoft
-    product: Dynamics GP
-    source_title: Returns Management
-    source_url: https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement
+    product: Dynamics 365 SCM
+    source_title: Specify how to dispose of returned items
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
     source_version: Documentation évolutive consultée le 19 septembre 2026
-    source_locator: RMA types ; RTV types ; Repair and return ; Creating an RTV from an RMA
+    source_locator: Disposition codes ; Disposition actions
     consulted_on: '2026-09-19'
-    evidence_limits: Documentation d’un produit différent de Dynamics 365 ; nommage et mécanismes propres, sans équivalence
-      de couverture supposée.
-    element_name: Return Material Authorization
+    evidence_limits: Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
+    element_name: Return disposition
     element_type: Concept et usage documentés
     relationship: Recouvrement partiel
-    similarities: Le RMA organise une prise en charge de retour client.
-    differences: RMA peut insister sur l’autorisation et le parcours ; ce n’est pas un synonyme exact dans tout produit.
-    flow_position: Conserver le retour et son lien d’origine sans effacer la vente réalisée.
+    similarities: Le sort du produit est différent du motif de retour.
+    differences: Un code de disposition n’est pas la preuve de l’exécution complète de la suite.
+    flow_position: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la vente.
     status: proposed
     source_refs:
+    - U384
+    - ELM232
+    - CMP143
+    - U385
     - U477
-    - ELM387
+    - ELM438
     - CMP189
-    concept_name: Return Material Authorization
-    scope_summary: Retour client identifié avec son résultat.
-    approach_summary: Suivre le retour et les documents associés.
+    concept_name: Return disposition
+    scope_summary: Sort du produit retourné et compensation.
+    approach_summary: Associer un résultat de traitement au retour.
+  - vendor: Microsoft
+    product: Dynamics 365 SCM
+    source_title: Sales returns
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+    source_version: Documentation évolutive consultée le 22 septembre 2026
+    source_locator: Return order process ; Return material authorization ; Disposition codes and disposition actions
+    consulted_on: '2026-09-22'
+    element_name: Return order
+    element_type: Document et processus produit
+    relationship: Appui sémantique
+    similarities: La demande de retour ouvre une Return Order et plusieurs suites ; intention, autorisation et réalisation
+      se distinguent.
+    differences: FLOW décrit une capacité et ses comportements ; le contrat précise leur applicabilité en consignation. Customer
+      dans la source ne signifie pas uniquement B2C.
+    evidence_limits: Source primaire directement relue ; ni architecture universelle supérieure ni couverture installée établie.
+    flow_position: U612 conserve les comportements existants et retient Return Order comme nom plus englobant.
+    status: proposed
+    source_refs:
+    - U612
+    - ELM632
+    - CMP264
+    concept_name: Return order
+    scope_summary: Demande de retour et suites selon les autorisations.
+    approach_summary: Relier intention de retour, choix de traitement et resultats.
   market_inspiration:
-    choice: Nommer la commande qui porte le retour du client. Customer Return Order conserve une identité distincte de la
-      vente d’origine, tout en pouvant lui être reliée.
-    flow_scope: Marchandises que le client retourne et suite attendue.
-    flow_approach: Conserver le retour et son lien d’origine sans effacer la vente réalisée.
+    choice: Demande portant le retour de marchandises et le résultat attendu de leur prise en charge, avec leurs quantités
+      et conditions, indépendamment d’un contexte B2C ou B2B.
+    flow_scope: Demande portant le retour de marchandises et le résultat attendu de leur prise en charge, avec leurs quantités
+      et conditions, indépendamment d’un contexte B2C ou B2B.
+    flow_approach: Conserver le retour, la décision et la suite attendue ; rapprocher les réalisations sans effacer la vente.
     synthesis:
-    - SAP parle de commande de retour ; Dynamics GP organise un RMA. Les noms diffèrent et leurs effets dépendent du parcours,
-      mais les deux conservent un traitement distinct de la vente.
-    - FLOW retient Customer Return Order pour l’objet demandé. Le nom n’impose ni remboursement immédiat ni remise en stock
-      automatique.
+    - Le retour ouvre plusieurs suites possibles après inspection. Le parcours SAP inclut la compensation financière ; FLOW
+      distingue les responsabilités concernées.
+    - Le sort du produit est différent du motif de retour. Un code de disposition n’est pas la preuve de l’exécution complète
+      de la suite.
+    - La demande de retour ouvre une Return Order et plusieurs suites ; intention, autorisation et réalisation se distinguent.
+      FLOW décrit une capacité et ses comportements ; le contrat précise leur applicabilité en consignation. Customer dans
+      la source ne signifie pas uniquement B2C.
     examples:
-    - title: Illustration FLOW — La vente reste dans l’histoire
-      situation: Après livraison, le client retourne une pièce pour examen.
-      outcome: Une commande de retour la prend en charge et peut référencer la vente.
-      lesson: La pièce livrée ne devient pas rétroactivement une pièce jamais livrée.
+    - title: Illustration FLOW
+      situation: Demande portant le retour de marchandises et le résultat attendu de leur prise en charge, avec leurs quantités
+        et conditions, indépendamment d’un contexte B2C ou B2B.
+      outcome: L’intention de retour peut conduire à remise en stock, réparation, renvoi fournisseur, restitution ou rebut
+        selon l’accord. Un retour après cession de biens consignés peut être pris en charge ici ; la reprise de biens encore
+        consignés relève de [Consignment Pick-up](glossary:TER092). Les parcours ne deviennent pas des familles d’Orders par
+        seul effet juridique.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
       source_title: Managing Customer Returns
       source_url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc
       source_refs:
-      - U477
-      - ELM455
-      - CMP189
+      - U626
 - id: TER073
   name: Supplier Return Order
   short_description: Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.
@@ -8587,10 +8680,10 @@ terms:
 - id: TER074
   name: Replenishment
   short_description: Réapprovisionnement visant à compléter un stock selon les besoins et objectifs applicables.
-  definition: Réapprovisionner un stock en fonction des besoins et objectifs applicables. Inventory Optimization détermine
+  definition: Réapprovisionner un stock en fonction des besoins et objectifs applicables. Demand & Supply Optimization détermine
     les apports nécessaires ; les capacités opérationnelles appliquent les décisions, déclenchent les Orders utiles et organisent
     leur mise en action selon les règles et autorisations applicables.
-  context: Sens de travail proposé, aligné sur la frontière analytique/opérationnelle U224 et la refonte D05 U235.
+  context: Sens de travail proposé, aligné sur la frontière analytique/opérationnelle U224 et la refonte D03 U235.
   notes: |-
     [Replenishment Decision](model:D05.e) intègre les calculs des besoins nets et détermine les quantités et dates à retenir. La décision, la mise à jour transactionnelle, les Orders nécessaires, leurs promesses et les mouvements physiques restent distincts. Une application automatique est possible ; aucune création directe de Purchase Order ni validation humaine systématique n’est présumée.
 
@@ -8683,15 +8776,16 @@ terms:
       - ELM450
       - CMP190
 - id: TER075
-  name: Backing Service
+  name: Service
   short_description: Prestation d’un exécutant que l’orchestration mobilise pour réaliser une demande du Domain.
   definition: Prestation rendue par un exécutant et mobilisée par l’orchestration pour réaliser une demande du Domain. Elle
     est décrite par son résultat, ses conditions et ses engagements de service ; elle peut être physique, humaine ou numérique.
   context: Qualification métier locale FLOW du rôle des prestations mobilisées par l’orchestration ; elle ne se limite pas
     aux services logiciels.
-  notes: L’offre est décrite dans [Service Catalog](model:D14) ; une prestation précise est sollicitée par un [Backing Service
-    Order](glossary:TER066). [Service Requests](model:D04) porte les demandes de travail du Domain. Le service métier est
-    distinct de son accès informatique et de chacune de ses réalisations.
+  notes: L’offre est décrite dans [Service Catalog](model:D14) ; une prestation précise est sollicitée par un [Service Order](glossary:TER066).
+    [Demand Management](model:D04) porte les demandes de travail du Domain. Le service métier est distinct de son accès informatique
+    et de chacune de ses réalisations. Le fournisseur de la prestation est un [Service Provider](glossary:TER088), distinct
+    du Service rendu.
   source_refs:
   - U237
   - U238
@@ -8706,13 +8800,15 @@ terms:
   - U497
   - CMP200
   - U496
+  - U590
+  - CMP252
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: vocabulaire
   review:
     state: partial
     adopted_scope: 'U497 : qualification Backing Service / Backing Service Order pour distinguer les prestations et leurs
-      demandes de Service Requests.'
+      demandes de Service Requests. U590 remplace le nom Backing Service par Service, sans changer la notion de prestation.'
     proposed_scope: Rédactions explicatives, exemples et correspondances marché ; aucune nouvelle responsabilité.
   market_comparisons:
   - vendor: Microsoft
@@ -8728,8 +8824,8 @@ terms:
     relationship: Recouvrement partiel
     similarities: Prestation nécessaire à une intervention.
     differences: Le terrain est un exemple, pas tout le périmètre des services FLOW.
-    flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service désigne
-      le rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+    flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Service désigne le
+      rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
     status: proposed
     source_refs:
     - U477
@@ -8751,8 +8847,8 @@ terms:
     relationship: Recouvrement partiel
     similarities: Contributions de personnes et systèmes au processus.
     differences: Le découpage technique des tâches n’impose pas une identité métier de service.
-    flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service désigne
-      le rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+    flow_position: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Service désigne le
+      rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
     status: proposed
     source_refs:
     - U477
@@ -8762,15 +8858,16 @@ terms:
     scope_summary: Contributions de personnes et systèmes au processus.
     approach_summary: Coordonner les intervenants nécessaires.
   market_inspiration:
-    choice: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Backing Service désigne le
-      rôle de cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
+    choice: Décrire la prestation qu’un exécutant rend pour contribuer à une demande du Domain. Service désigne le rôle de
+      cette prestation dans l’orchestration, qu’elle soit physique, humaine ou numérique.
     flow_scope: Préparation, transport, réception, documents et autres résultats rendus par les exécutants.
     flow_approach: Définir résultat, conditions et engagements de la prestation mobilisable.
     synthesis:
     - Microsoft Field Service décrit des prestations de travail réalisées par un intervenant. Camunda coordonne des tâches
       humaines et des services informatiques. Le mot service couvre ainsi des réalités différentes selon la source.
-    - FLOW retient Backing Service pour désigner les prestations sur lesquelles s’appuie l’orchestration du Domain. Cette
-      qualification locale exprime leur rôle ; elle ne désigne pas une catégorie logicielle commune aux deux sources.
+    - FLOW retient Service pour la prestation mobilisée par l’orchestration, et Service Provider pour son fournisseur. Le
+      périmètre physique, humain ou numérique reste un choix FLOW ; les rapprochements ne démontrent pas une taxonomie Supply
+      commune.
     - L’appel informatique est un moyen de solliciter ou de suivre la prestation. Il ne se confond ni avec le service rendu
       ni avec sa réalisation.
     examples:
@@ -9420,7 +9517,7 @@ terms:
     flow_scope: Scission de commandes, lignes ou livraisons selon le contexte.
     flow_approach: Préserver origine, quantités et réalisations acquises.
     synthesis:
-    - Microsoft Delivery schedules divise une ligne commerciale en lignes de livraison. Oracle Global Order Promising peut
+    - Microsoft Delivery schedules divise une ligne commerciale en lignes de livraison. Oracle Global Demand Management peut
       scinder la satisfaction d’une ligne pour limiter le retard. Les deux utilisent une scission, à des moments et avec des
       finalités différents.
     - FLOW retient ce sens de découpage sans supposer que chaque split crée plusieurs commandes autonomes. Il le distingue
@@ -9617,7 +9714,7 @@ terms:
     flow_scope: Stock et apports examinés selon quantité, date et admissibilité.
     flow_approach: Distinguer ressource connue, ressource mobilisable et engagement.
     synthesis:
-    - Business Central oppose Supply et Demand pour équilibrer la planification. Oracle Global Order Promising examine le
+    - Business Central oppose Supply et Demand pour équilibrer la planification. Oracle Global Demand Management examine le
       stock et les apports pour répondre à une date demandée. L’un raisonne sur le bilan planifié, l’autre sur la promesse.
     - FLOW retient le sens ressources commun à ces usages. Un apport attendu n’est pas automatiquement libre, fiable ou utilisable
       à la date voulue ; la perspective du lieu compte aussi pour un transfert.
@@ -9742,8 +9839,8 @@ terms:
     et conditions retenus.'
   context: La documentation Microsoft distingue optimisation de la satisfaction et opérations effectives de fulfillment. Formulation
     FLOW proposée ; aucune nouvelle capacité agrégée n’est créée par le terme.
-  notes: 'Un calcul ATP, une promesse confirmée ou une affectation seule ne prouve pas la réalisation. Fulfillment Optimization
-    recherche comment satisfaire au mieux ; Order Promising établit les possibilités et tient les engagements de promesse
+  notes: 'Un calcul ATP, une promesse confirmée ou une affectation seule ne prouve pas la réalisation. Demand & Supply Optimization
+    recherche comment satisfaire au mieux ; Demand Management établit les possibilités et tient les engagements de promesse
     ; Fulfillment Strategy fixe le cadre ; les exécutants réalisent les prestations. Exemple fictif : choisir un stock et
     un service puis préparer et livrer les pièces attendues. Le marché décrit souvent les commandes clients ; l’application
     aux transferts, achats, retours ou services numériques de FLOW doit préciser le résultat et le point de vue, sans prétendre
@@ -10034,5 +10131,878 @@ terms:
       - U509
       - ELM515
       - CMP206
+- id: TER088
+  name: Service Provider
+  short_description: Fournisseur d’une prestation mobilisable par l’orchestration.
+  definition: Fournisseur qui propose ou réalise un Service mobilisable par Supply Chain Orchestration, principalement logistique
+    mais sans restriction à ce secteur.
+  context: Rôle d’une partie, distinct de la prestation fournie et des outils utilisés pour la réaliser.
+  notes: L’identité et les rôles relèvent de [Party / Role](model:D09). Les [Services](glossary:TER075) proposés sont décrits
+    dans [Service Catalog](model:D14). Service Provider Policy porte les règles locales de recours, notamment exclusions et
+    limites de sollicitation ; sa matérialisation dans la refonte des Purposes reste proposée.
+  source_refs:
+  - U587
+  - U590
+  - CMP251
+  - CMP252
+  - ELM606
+  - ELM607
+  - ELM610
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u590
+  review:
+    state: partial
+    adopted_scope: 'U590 : nom Service Provider et distinction fournisseur / prestation.'
+    proposed_scope: Rédaction détaillée de la fiche et correspondances marché.
+  market_comparisons:
+  - vendor: Oracle
+    product: Oracle Transportation Management 24A
+    element_name: Active/Inactive Flag Added to Service Provider
+    element_type: Fonction de produit
+    relationship: Recouvrement partiel
+    similarities: Le fournisseur d’une prestation de transport est désigné Service Provider.
+    differences: La source traite le transport ; FLOW emploie ce rôle pour les fournisseurs de prestations mobilisées par
+      le Domain, principalement logistiques mais sans exclusivité.
+    flow_position: Service Provider désigne le fournisseur ; Service désigne sa prestation. Ce rôle relève de Party / Role
+      et ne constitue pas une capacité supplémentaire.
+    source_title: Active/Inactive Flag Added to Service Provider
+    source_url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+    source_version: Oracle Transportation Management 24A
+    source_locator: Introduction ; Service Provider Active/Inactive Flag
+    consulted_on: '2026-09-22'
+    evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+    source_refs:
+    - U587
+    - CMP251
+    - ELM606
+    - MKT40
+    - U590
+    - CMP252
+    status: proposed
+  - vendor: Oracle
+    product: Oracle Transportation Management 25C
+    element_name: Service Provider Assignment
+    element_type: Fonction de produit
+    relationship: Recouvrement partiel
+    similarities: Le fournisseur d’une prestation de transport est désigné Service Provider.
+    differences: La source traite le transport ; FLOW emploie ce rôle pour les fournisseurs de prestations mobilisées par
+      le Domain, principalement logistiques mais sans exclusivité.
+    flow_position: Service Provider désigne le fournisseur ; Service désigne sa prestation. Ce rôle relève de Party / Role
+      et ne constitue pas une capacité supplémentaire.
+    source_title: Service Provider Assignment and Resource Management
+    source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/capacity_manager/carrier_assignment_and_resource_management.htm
+    source_version: Oracle Transportation Management 25C
+    source_locator: Assigning Carrier and Equipment ; Service Provider Assignment
+    consulted_on: '2026-09-22'
+    evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+    source_refs:
+    - U590
+    - CMP252
+    - ELM610
+    - MKT40
+    status: proposed
+- id: TER089
+  name: Task
+  short_description: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
+    de son achèvement.
+  definition: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
+    de son achèvement.
+  context: Supply Chain Orchestration
+  notes: La Task déclenche la sollicitation immédiatement, à une échéance ou sur événement ; elle peut relancer ou mobiliser
+    un service de secours selon les conditions applicables. Elle se termine lorsque la fin du service est vérifiée. Un acquittement
+    technique ne prouve pas cette fin. Elle peut émettre un [Service Order](glossary:TER066) et reste distincte de la demande
+    initiale, du service et de son document.
+  source_refs:
+  - U616
+  - U617
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - source_url: https://www.omg.org/spec/CMMN/1.1/PDF
+    similarities: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
+    differences: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
+    flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
+      optionnel.
+    relationship: Recouvrement partiel
+    status: proposed
+    vendor: OMG
+    product: Case Management Model and Notation 1.1
+    source_title: Case Management Model and Notation 1.1
+    source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
+    source_locator: §5.4.10 ; table 5.39, isBlocking
+    consulted_on: '2026-09-22'
+    element_name: Case Management Model and Notation 1.1
+    element_type: Concept documenté par une source primaire
+    concept_name: Case Management Model and Notation 1.1
+    scope_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
+    approach_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
+    evidence_limits: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage
+      FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+    source_refs:
+    - U617
+    - U625
+    - U626
+  - source_url: https://docs.camunda.io/docs/components/concepts/job-workers/
+    similarities: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
+    differences: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner
+      explicitement.
+    flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
+      optionnel.
+    relationship: Recouvrement partiel
+    status: proposed
+    vendor: Camunda
+    product: Job workers
+    source_title: Job workers
+    source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
+    source_locator: Completing or failing jobs ; retry back off
+    consulted_on: '2026-09-22'
+    element_name: Job workers
+    element_type: Concept documenté par une source primaire
+    concept_name: Job workers
+    scope_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
+    approach_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
+    evidence_limits: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours
+      à gouverner explicitement. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+    source_refs:
+    - U617
+    - U625
+    - U626
+  market_inspiration:
+    choice: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
+      de son achèvement.
+    flow_scope: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
+      de son achèvement.
+    flow_approach: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
+      optionnel.
+    synthesis:
+    - CMMN distingue le travail associé et la Task qui peut attendre sa fin. Le standard autorise aussi des Tasks non bloquantes
+      ; il ne prescrit pas tout le contrat de pilotage FLOW.
+    - Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. Fin du job et fin de la prestation
+      métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+    examples:
+    - title: Illustration FLOW
+      situation: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
+        de son achèvement.
+      outcome: La Task déclenche la sollicitation immédiatement, à une échéance ou sur événement ; elle peut relancer ou mobiliser
+        un service de secours selon les conditions applicables. Elle se termine lorsque la fin du service est vérifiée. Un
+        acquittement technique ne prouve pas cette fin. Elle peut émettre un [Service Order](glossary:TER066) et reste distincte
+        de la demande initiale, du service et de son document.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Case Management Model and Notation 1.1
+      source_url: https://www.omg.org/spec/CMMN/1.1/PDF
+      source_refs:
+      - U626
+- id: TER090
+  name: Consignment
+  short_description: Régime dans lequel des marchandises sont détenues chez une autre partie tandis que leur propriété et
+    les droits de vente ou de consommation restent déterminés par l’accord applicable.
+  definition: Régime dans lequel des marchandises sont détenues chez une autre partie tandis que leur propriété et les droits
+    de vente ou de consommation restent déterminés par l’accord applicable.
+  context: Supply Chain Orchestration
+  notes: Distinguer propriétaire et détenteur. Le modèle couvre nos biens chez un tiers et des biens appartenant à un tiers
+    dans nos entrepôts, avec mandat de vente lorsque l’accord le prévoit. Mise en place, vente, consommation, reprise et retour
+    après cession ne portent pas la même intention ; aucune règle contractuelle universelle n’est déduite.
+  source_refs:
+  - U595
+  - U596
+  - U602
+  - U607
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: SAP
+    product: Fashion Management
+    source_title: Consignment Orders
+    source_version: 1.0 SP13
+    source_locator: Use ; Process ; Consignment fill-up / issue / pick-up / return
+    consulted_on: '2026-09-22'
+    element_name: Consignment Orders
+    element_type: Fonctions de produit
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U601
+    - U625
+    - U626
+    source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    similarities: SAP documente la mise à disposition, la cession et la reprise du stock en consignation.
+    differences: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées.
+    flow_position: Décrire propriété, détention et mandat sans déduire la famille de demande du seul mouvement.
+    relationship: Recouvrement partiel
+    status: proposed
+    concept_name: Consignment Orders
+    scope_summary: SAP documente la mise à disposition, la cession et la reprise du stock en consignation.
+    approach_summary: SAP documente la mise à disposition, la cession et la reprise du stock en consignation.
+    evidence_limits: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées. Aucune réalisation installée Beaumanoir ni équivalence universelle
+      déduite.
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    source_title: Set up consignment
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    source_version: '2026-05-06'
+    source_locator: Overview ; Inventory ownership change journal
+    consulted_on: '2026-09-19'
+    concept_name: Consignment inventory
+    scope_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    approach_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    evidence_limits: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas
+      communs à tous les produits. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+    element_name: Consignment inventory
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    differences: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs
+      à tous les produits.
+    flow_position: Décrire propriété, détention et mandat sans déduire la famille de demande du seul mouvement.
+    status: proposed
+    source_refs:
+    - U435
+    - U477
+    - ELM406
+    - CMP190
+    - U595
+    - U600
+    - U625
+    - U626
+  market_inspiration:
+    choice: Régime dans lequel des marchandises sont détenues chez une autre partie tandis que leur propriété et les droits
+      de vente ou de consommation restent déterminés par l’accord applicable.
+    flow_scope: Régime dans lequel des marchandises sont détenues chez une autre partie tandis que leur propriété et les droits
+      de vente ou de consommation restent déterminés par l’accord applicable.
+    flow_approach: Décrire propriété, détention et mandat sans déduire la famille de demande du seul mouvement.
+    synthesis:
+    - SAP documente la mise à disposition, la cession et la reprise du stock en consignation. SAP décrit la consignation client
+      et ses documents. Lecture primaire indexée U600 ; pas de correspondance universelle ni de quatre capacités FLOW imposées.
+    - Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété. Perspective fournisseur chez
+      le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs à tous les produits.
+    examples:
+    - title: Illustration FLOW
+      situation: Régime dans lequel des marchandises sont détenues chez une autre partie tandis que leur propriété et les
+        droits de vente ou de consommation restent déterminés par l’accord applicable.
+      outcome: Distinguer propriétaire et détenteur. Le modèle couvre nos biens chez un tiers et des biens appartenant à un
+        tiers dans nos entrepôts, avec mandat de vente lorsque l’accord le prévoit. Mise en place, vente, consommation, reprise
+        et retour après cession ne portent pas la même intention ; aucune règle contractuelle universelle n’est déduite.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Consignment Orders
+      source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+      source_refs:
+      - U626
+- id: TER091
+  name: Consignment Fill-up
+  short_description: Mise en consignation initiale ou complémentaire de marchandises conformément à un accord, sans acquisition
+    par le détenteur du seul fait de leur réception.
+  definition: Mise en consignation initiale ou complémentaire de marchandises conformément à un accord, sans acquisition par
+    le détenteur du seul fait de leur réception.
+  context: Supply Chain Orchestration
+  notes: '[Consignment Fill-up Order](model:D04.r) porte la mise en consignation initiale ou complémentaire. Le sens SAP de
+    consignation client et l’apport fournisseur Microsoft éclairent deux perspectives du régime. Le nom et l’extension détaillée
+    de la capacité sont proposés U626 ; aucun achat par le détenteur ne découle de la seule réception.'
+  source_refs:
+  - U600
+  - U601
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: SAP
+    product: Fashion Management
+    source_title: Consignment Orders
+    source_version: 1.0 SP13
+    source_locator: Use ; Process ; Consignment fill-up / issue / pick-up / return
+    consulted_on: '2026-09-22'
+    element_name: Consignment Orders
+    element_type: Fonctions de produit
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U601
+    - U625
+    - U626
+    source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    similarities: SAP utilise Consignment Fill-up pour constituer ou compléter le stock consigné chez le client.
+    differences: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées.
+    flow_position: Fill-up qualifie la mise en consignation ; ni achat ni simple transfert par défaut.
+    relationship: Recouvrement partiel
+    status: proposed
+    concept_name: Consignment Orders
+    scope_summary: SAP utilise Consignment Fill-up pour constituer ou compléter le stock consigné chez le client.
+    approach_summary: SAP utilise Consignment Fill-up pour constituer ou compléter le stock consigné chez le client.
+    evidence_limits: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées. Aucune réalisation installée Beaumanoir ni équivalence universelle
+      déduite.
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    source_title: Set up consignment
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    source_version: '2026-05-06'
+    source_locator: Overview ; Inventory ownership change journal
+    consulted_on: '2026-09-19'
+    concept_name: Consignment inventory
+    scope_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    approach_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    evidence_limits: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas
+      communs à tous les produits. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+    element_name: Consignment inventory
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    differences: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs
+      à tous les produits.
+    flow_position: Fill-up qualifie la mise en consignation ; ni achat ni simple transfert par défaut.
+    status: proposed
+    source_refs:
+    - U435
+    - U477
+    - ELM406
+    - CMP190
+    - U595
+    - U600
+    - U625
+    - U626
+  market_inspiration:
+    choice: Mise en consignation initiale ou complémentaire de marchandises conformément à un accord, sans acquisition par
+      le détenteur du seul fait de leur réception.
+    flow_scope: Mise en consignation initiale ou complémentaire de marchandises conformément à un accord, sans acquisition
+      par le détenteur du seul fait de leur réception.
+    flow_approach: Fill-up qualifie la mise en consignation ; ni achat ni simple transfert par défaut.
+    synthesis:
+    - SAP utilise Consignment Fill-up pour constituer ou compléter le stock consigné chez le client. SAP décrit la consignation
+      client et ses documents. Lecture primaire indexée U600 ; pas de correspondance universelle ni de quatre capacités FLOW
+      imposées.
+    - Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété. Perspective fournisseur chez
+      le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs à tous les produits.
+    examples:
+    - title: Illustration FLOW
+      situation: Mise en consignation initiale ou complémentaire de marchandises conformément à un accord, sans acquisition
+        par le détenteur du seul fait de leur réception.
+      outcome: '[Consignment Fill-up Order](model:D04.r) porte la mise en consignation initiale ou complémentaire. Le sens
+        SAP de consignation client et l’apport fournisseur Microsoft éclairent deux perspectives du régime. Le nom et l’extension
+        détaillée de la capacité sont proposés U626 ; aucun achat par le détenteur ne découle de la seule réception.'
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Consignment Orders
+      source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+      source_refs:
+      - U626
+- id: TER092
+  name: Consignment Pick-up
+  short_description: Reprise ou restitution au propriétaire de marchandises restées sous régime de consignation, sans l’assimiler
+    au retour après une vente ou consommation déjà reconnue.
+  definition: Reprise ou restitution au propriétaire de marchandises restées sous régime de consignation, sans l’assimiler
+    au retour après une vente ou consommation déjà reconnue.
+  context: Supply Chain Orchestration
+  notes: L’intention reste distincte de [Return Order](glossary:TER072) et de [Transfer Order](glossary:TER071). Les prestations
+    de collecte ou de transport passent par les Tasks ; ce terme ne crée pas à lui seul une nouvelle capacité ou un achat
+    de stock.
+  source_refs:
+  - U600
+  - U611
+  - U612
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: SAP
+    product: Fashion Management
+    source_title: Consignment Orders
+    source_version: 1.0 SP13
+    source_locator: Use ; Process ; Consignment fill-up / issue / pick-up / return
+    consulted_on: '2026-09-22'
+    element_name: Consignment Orders
+    element_type: Fonctions de produit
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U611
+    - U625
+    - U626
+    source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    similarities: SAP distingue Consignment Pick-up de Consignment Return.
+    differences: Le parcours SAP est celui de la consignation client ; ne pas généraliser ses types de documents à tous les
+      contrats.
+    flow_position: Distinguer reprise de biens restés consignés et retour après cession.
+    relationship: Recouvrement partiel
+    status: proposed
+    concept_name: Consignment Orders
+    scope_summary: SAP distingue Consignment Pick-up de Consignment Return.
+    approach_summary: SAP distingue Consignment Pick-up de Consignment Return.
+    evidence_limits: Le parcours SAP est celui de la consignation client ; ne pas généraliser ses types de documents à tous
+      les contrats. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+  - vendor: Oracle
+    product: Fusion Cloud SCM
+    source_title: Examples of Consigned Inventory Returns
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html
+    source_version: 25D
+    source_locator: Material Received and Put Away ; Material Consumed
+    consulted_on: '2026-09-22'
+    evidence_limits: Perspective de consignation fournisseur ; les effets documentés dépendent du statut de consommation.
+      Aucun consensus de terminologie ni installation Beaumanoir déduit.
+    element_name: Consigned inventory returns
+    element_type: Concept et usage documentés
+    relationship: Recouvrement partiel
+    similarities: La reprise est possible pour des biens reçus non consommés ; les suites diffèrent après consommation et
+      selon l’état de propriété.
+    differences: Oracle regroupe plusieurs cas sous return to supplier ; il ne prescrit pas le nom Pick-up ni les familles
+      de demandes FLOW.
+    flow_position: Distinguer l’intention de reprise de biens restés consignés du traitement d’un retour après cession.
+    status: proposed
+    source_refs:
+    - ELM624
+    - U600
+    - U611
+    - U626
+    concept_name: Consigned inventory returns
+    scope_summary: Reprise de stock consigné avant ou après consommation, selon son état.
+    approach_summary: Identifier la situation de propriété avant de déterminer les suites du retour.
+  market_inspiration:
+    choice: Reprise ou restitution au propriétaire de marchandises restées sous régime de consignation, sans l’assimiler au
+      retour après une vente ou consommation déjà reconnue.
+    flow_scope: Reprise ou restitution au propriétaire de marchandises restées sous régime de consignation, sans l’assimiler
+      au retour après une vente ou consommation déjà reconnue.
+    flow_approach: Distinguer reprise de biens restés consignés et retour après cession.
+    synthesis:
+    - SAP distingue Consignment Pick-up de Consignment Return. Le parcours SAP est celui de la consignation client ; ne pas
+      généraliser ses types de documents à tous les contrats.
+    - La reprise est possible pour des biens reçus non consommés ; les suites diffèrent après consommation et selon l’état
+      de propriété. Oracle regroupe plusieurs cas sous return to supplier ; il ne prescrit pas le nom Pick-up ni les familles
+      de demandes FLOW.
+    examples:
+    - title: Illustration FLOW
+      situation: Reprise ou restitution au propriétaire de marchandises restées sous régime de consignation, sans l’assimiler
+        au retour après une vente ou consommation déjà reconnue.
+      outcome: L’intention reste distincte de [Return Order](glossary:TER072) et de [Transfer Order](glossary:TER071). Les
+        prestations de collecte ou de transport passent par les Tasks ; ce terme ne crée pas à lui seul une nouvelle capacité
+        ou un achat de stock.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Consignment Orders
+      source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+      source_refs:
+      - U626
+- id: TER093
+  name: Consignment Issue
+  short_description: Manière de satisfaire une vente en mobilisant du stock consigné avec les effets de cession ou de consommation
+    prévus par l’accord.
+  definition: Manière de satisfaire une vente en mobilisant du stock consigné avec les effets de cession ou de consommation
+    prévus par l’accord.
+  context: Supply Chain Orchestration
+  notes: Dans FLOW, c’est un comportement de [Sales Order](model:D04.i), identifié par BHV096. L’intention première reste
+    vendre ; l’effet de propriété ne crée pas un Order autonome. Un mandat de vente sur des biens de tiers peut rendre ce
+    comportement pertinent sans achat automatique par le détenteur.
+  source_refs:
+  - U602
+  - U606
+  - U607
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: SAP
+    product: Fashion Management
+    source_title: Consignment Orders
+    source_version: 1.0 SP13
+    source_locator: Use ; Process ; Consignment fill-up / issue / pick-up / return
+    consulted_on: '2026-09-22'
+    element_name: Consignment Orders
+    element_type: Fonctions de produit
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U601
+    - U625
+    - U626
+    source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    similarities: SAP distingue l’Issue qui constate la cession/consommation de la mise à disposition du stock.
+    differences: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées.
+    flow_position: Consignment Issue précise Sales Order ; aucun Consignment Issue Order autonome.
+    relationship: Recouvrement partiel
+    status: proposed
+    concept_name: Consignment Orders
+    scope_summary: SAP distingue l’Issue qui constate la cession/consommation de la mise à disposition du stock.
+    approach_summary: SAP distingue l’Issue qui constate la cession/consommation de la mise à disposition du stock.
+    evidence_limits: SAP décrit la consignation client et ses documents. Lecture primaire indexée U600 ; pas de correspondance
+      universelle ni de quatre capacités FLOW imposées. Aucune réalisation installée Beaumanoir ni équivalence universelle
+      déduite.
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    source_title: Set up consignment
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    source_version: '2026-05-06'
+    source_locator: Overview ; Inventory ownership change journal
+    consulted_on: '2026-09-19'
+    concept_name: Consignment inventory
+    scope_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    approach_summary: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    evidence_limits: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas
+      communs à tous les produits. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+    element_name: Consignment inventory
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété.
+    differences: Perspective fournisseur chez le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs
+      à tous les produits.
+    flow_position: Consignment Issue précise Sales Order ; aucun Consignment Issue Order autonome.
+    status: proposed
+    source_refs:
+    - U435
+    - U477
+    - ELM406
+    - CMP190
+    - U595
+    - U600
+    - U625
+    - U626
+  market_inspiration:
+    choice: Manière de satisfaire une vente en mobilisant du stock consigné avec les effets de cession ou de consommation
+      prévus par l’accord.
+    flow_scope: Manière de satisfaire une vente en mobilisant du stock consigné avec les effets de cession ou de consommation
+      prévus par l’accord.
+    flow_approach: Consignment Issue précise Sales Order ; aucun Consignment Issue Order autonome.
+    synthesis:
+    - SAP distingue l’Issue qui constate la cession/consommation de la mise à disposition du stock. SAP décrit la consignation
+      client et ses documents. Lecture primaire indexée U600 ; pas de correspondance universelle ni de quatre capacités FLOW
+      imposées.
+    - Microsoft distingue l’apport de stock fournisseur consigné et le changement de propriété. Perspective fournisseur chez
+      le détenteur ; le nom Fill-up ou Pick-up et les effets exacts ne sont pas communs à tous les produits.
+    examples:
+    - title: Illustration FLOW
+      situation: Manière de satisfaire une vente en mobilisant du stock consigné avec les effets de cession ou de consommation
+        prévus par l’accord.
+      outcome: Dans FLOW, c’est un comportement de [Sales Order](model:D04.i), identifié par BHV096. L’intention première
+        reste vendre ; l’effet de propriété ne crée pas un Order autonome. Un mandat de vente sur des biens de tiers peut
+        rendre ce comportement pertinent sans achat automatique par le détenteur.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Consignment Orders
+      source_url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+      source_refs:
+      - U626
+- id: TER094
+  name: Service Catalog
+  short_description: 'Référentiel de l’offre de services mobilisables : prestations proposées, fournisseurs, conditions et
+    engagements de service de référence.'
+  definition: 'Référentiel de l’offre de services mobilisables : prestations proposées, fournisseurs, conditions et engagements
+    de service de référence.'
+  context: Supply Chain Orchestration
+  notes: Le catalogue décrit l’offre. La [Service Provider Policy](glossary:TER095) précise les règles locales de recours.
+    La capacité opérationnelle contextualisée et les engagements d’une prestation particulière restent distincts des conditions
+    générales annoncées.
+  source_refs:
+  - U590
+  - U616
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: TM Forum
+    product: Service Catalog Management
+    source_title: TMF633 Service Catalog API REST Specification R18.5.1
+    source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+    source_version: Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019
+    source_locator: Description de la spécification
+    consulted_on: '2026-09-19'
+    evidence_limits: Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition
+      courante ni norme Supply.
+    element_name: Service catalog
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Offres et descriptions de services.
+    differences: La référence télécom couvre aussi le cycle de création et de retrait du catalogue.
+    flow_position: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service
+      Catalog décrit les Services et leurs conditions ; les demandes de prestation et leur prise en charge restent dans Fulfillment
+      Orchestration.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM482
+    - CMP193
+    concept_name: Service catalog
+    scope_summary: Offres et descriptions de services.
+    approach_summary: Consulter un catalogue pour préparer une commande.
+  - vendor: Microsoft
+    product: Dynamics 365 Field Service
+    source_title: Work order architecture
+    source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
+    source_version: Documentation évolutive consultée le 19 septembre 2026
+    source_locator: A work order is created ; scheduled ; performed ; reviewed and completed
+    consulted_on: '2026-09-19'
+    evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+    element_name: Product catalog / Service
+    element_type: Concept documenté par la source primaire
+    relationship: Recouvrement partiel
+    similarities: Prestations et produits utiles à une intervention.
+    differences: Field Service vise l’intervention terrain ; FLOW inclut aussi transport et prestations documentaires.
+    flow_position: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service
+      Catalog décrit les Services et leurs conditions ; les demandes de prestation et leur prise en charge restent dans Fulfillment
+      Orchestration.
+    status: proposed
+    source_refs:
+    - U477
+    - ELM397
+    - CMP193
+    concept_name: Product catalog / Service
+    scope_summary: Prestations et produits utiles à une intervention.
+    approach_summary: Décrire le travail attendu à partir du catalogue.
+  market_inspiration:
+    choice: 'Référentiel de l’offre de services mobilisables : prestations proposées, fournisseurs, conditions et engagements
+      de service de référence.'
+    flow_scope: 'Référentiel de l’offre de services mobilisables : prestations proposées, fournisseurs, conditions et engagements
+      de service de référence.'
+    flow_approach: Savoir quelles prestations l’orchestration peut mobiliser pour répondre aux demandes du Domain. Service
+      Catalog décrit les Services et leurs conditions ; les demandes de prestation et leur prise en charge restent dans Fulfillment
+      Orchestration.
+    synthesis:
+    - Offres et descriptions de services. La référence télécom couvre aussi le cycle de création et de retrait du catalogue.
+    - Prestations et produits utiles à une intervention. Field Service vise l’intervention terrain ; FLOW inclut aussi transport
+      et prestations documentaires.
+    examples:
+    - title: Illustration FLOW
+      situation: 'Référentiel de l’offre de services mobilisables : prestations proposées, fournisseurs, conditions et engagements
+        de service de référence.'
+      outcome: Le catalogue décrit l’offre. La [Service Provider Policy](glossary:TER095) précise les règles locales de recours.
+        La capacité opérationnelle contextualisée et les engagements d’une prestation particulière restent distincts des conditions
+        générales annoncées.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: TMF633 Service Catalog API REST Specification R18.5.1
+      source_url: https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/
+      source_refs:
+      - U626
+- id: TER095
+  name: Service Provider Policy
+  short_description: Cadre de règles dont le domaine porte la maîtrise pour autoriser, exclure ou limiter le recours à des
+    fournisseurs de services selon le contexte et leur situation opérationnelle.
+  definition: Cadre de règles dont le domaine porte la maîtrise pour autoriser, exclure ou limiter le recours à des fournisseurs
+    de services selon le contexte et leur situation opérationnelle.
+  context: Supply Chain Orchestration
+  notes: Exclure un fournisseur ou plafonner de nouvelles sollicitations ne supprime ni son offre au catalogue ni ses engagements
+    déjà acceptés. Une difficulté observée peut justifier une révision selon les autorités prévues ; elle ne constitue pas
+    automatiquement une interdiction. La policy ne modifie pas la capacité physique du fournisseur.
+  source_refs:
+  - U585
+  - U587
+  - U590
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - vendor: Oracle
+    product: Oracle Transportation Management 24A
+    element_name: Active/Inactive Flag Added to Service Provider
+    element_type: Fonction de produit
+    relationship: Recouvrement partiel
+    similarities: Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire
+      concernées, avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition.
+    differences: Cas transport, effet dépendant du paramétrage et de la version ; aucune exclusion automatique depuis un indicateur
+      ni annulation des engagements démontrée.
+    flow_position: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+      ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+    source_title: Active/Inactive Flag Added to Service Provider
+    source_url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+    source_version: Oracle Transportation Management 24A
+    source_locator: Introduction ; Business Benefit ; Steps to Enable
+    consulted_on: '2026-09-22'
+    evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+    source_refs:
+    - U587
+    - CMP251
+    - ELM606
+    - MKT40
+    status: proposed
+    concept_name: Active/Inactive Flag Added to Service Provider
+    scope_summary: Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire
+      concernées, avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition.
+    approach_summary: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+      ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+  - vendor: Oracle
+    product: Oracle Transportation Management 26B
+    element_name: Capacity Limit
+    element_type: Fonction de produit
+    relationship: Recouvrement partiel
+    similarities: Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple de
+      cinq expéditions autorisées puis impossibilité de créer la sixième faute de capacité.
+    differences: Contrainte de transport ; ne démontre pas l’origine gouvernance Supply du plafond ni un calcul automatique
+      depuis des difficultés observées.
+    flow_position: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+      ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+    source_title: Capacity Limit
+    source_url: https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/planning/capacity_manager/create_new_limit_data.htm
+    source_version: Oracle Transportation Management 26B
+    source_locator: Using A Capacity Limit ; Recurring Capacity
+    consulted_on: '2026-09-22'
+    evidence_limits: Deux documents du même éditeur ; aucun consensus de nom ni réalisation Beaumanoir déduit.
+    source_refs:
+    - U587
+    - CMP251
+    - ELM607
+    - MKT40
+    status: proposed
+    concept_name: Capacity Limit
+    scope_summary: Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple de
+      cinq expéditions autorisées puis impossibilité de créer la sixième faute de capacité.
+    approach_summary: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+      ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+  market_inspiration:
+    choice: Cadre de règles dont le domaine porte la maîtrise pour autoriser, exclure ou limiter le recours à des fournisseurs
+      de services selon le contexte et leur situation opérationnelle.
+    flow_scope: Cadre de règles dont le domaine porte la maîtrise pour autoriser, exclure ou limiter le recours à des fournisseurs
+      de services selon le contexte et leur situation opérationnelle.
+    flow_approach: Service Provider Policy porte les règles de recours maîtrisées par Supply, pour des prestations logistiques
+      ou autres. Le transport est un appui partiel ; le type et le périmètre de capacité restent FLOW.
+    synthesis:
+    - Le statut inactif exclut le prestataire des opérations de planification et recherche/recalcul tarifaire concernées,
+      avec option FIND RATES OF ACTIVE SERVPROV ONLY dans cette édition. Cas transport, effet dépendant du paramétrage et
+      de la version ; aucune exclusion automatique depuis un indicateur ni annulation des engagements démontrée.
+    - Plafond d’expéditions par prestataire, type d’équipement, éventuellement trajet et période ; exemple de cinq expéditions
+      autorisées puis impossibilité de créer la sixième faute de capacité. Contrainte de transport ; ne démontre pas l’origine
+      gouvernance Supply du plafond ni un calcul automatique depuis des difficultés observées.
+    examples:
+    - title: Illustration FLOW
+      situation: Cadre de règles dont le domaine porte la maîtrise pour autoriser, exclure ou limiter le recours à des fournisseurs
+        de services selon le contexte et leur situation opérationnelle.
+      outcome: Exclure un fournisseur ou plafonner de nouvelles sollicitations ne supprime ni son offre au catalogue ni ses
+        engagements déjà acceptés. Une difficulté observée peut justifier une révision selon les autorités prévues ; elle
+        ne constitue pas automatiquement une interdiction. La policy ne modifie pas la capacité physique du fournisseur.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Active/Inactive Flag Added to Service Provider
+      source_url: https://docs.oracle.com/en/cloud/saas/readiness/logistics/24a/otm24a/24A-otm-wn-f29771.htm
+      source_refs:
+      - U626
+- id: TER096
+  name: Re-sourcing
+  short_description: Recherche d’une autre source de réalisation pour tout ou partie d’un besoin, notamment lorsqu’un site
+    ou un service ne peut plus assurer ce qui était prévu.
+  definition: Recherche d’une autre source de réalisation pour tout ou partie d’un besoin, notamment lorsqu’un site ou un
+    service ne peut plus assurer ce qui était prévu.
+  context: Supply Chain Orchestration
+  notes: En cours d’exécution, Fulfillment peut reprendre le seul article manquant depuis un autre entrepôt et suivre les
+    prestations issues du split en lien avec la demande initiale. Le mot ne désigne pas à lui seul une capacité autonome et
+    n’impose pas de recommencer la totalité du plan.
+  source_refs:
+  - U592
+  - U593
+  - U626
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u626
+  review:
+    state: proposed
+    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+  market_comparisons:
+  - source_url: https://docs.fluentcommerce.com/by-type/source-order-items
+    similarities: Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split.
+    differences: Fonction de produit ; ne démontre pas le seuil ferme/exécutable ni le modèle Logistic Order proposé par Laurent.
+      Texte primaire indexé consulté ; ouverture directe en échec.
+    flow_position: Rechercher une autre source de réalisation pour tout ou partie du besoin ; le contexte distingue arbitrage
+      et reprise en exécution.
+    relationship: Recouvrement partiel
+    status: proposed
+    vendor: Fluent Commerce
+    product: Source Order Items
+    source_title: Source Order Items
+    source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
+    source_locator: How it Works ; Short-Pick Reallocation
+    consulted_on: '2026-09-22'
+    element_name: Source Order Items
+    element_type: Concept documenté par une source primaire
+    concept_name: Source Order Items
+    scope_summary: Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split.
+    approach_summary: Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split.
+    evidence_limits: Fonction de produit ; ne démontre pas le seuil ferme/exécutable ni le modèle Logistic Order proposé par
+      Laurent. Texte primaire indexé consulté ; ouverture directe en échec. Aucune réalisation installée Beaumanoir ni équivalence
+      universelle déduite.
+    source_refs:
+    - U592
+    - U593
+    - U625
+    - U626
+  - source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/fulfillment-line-splits-and-substitutions.html
+    similarities: Fractionner les quantités entre entrepôts ou dates selon les permissions.
+    differences: La page traite Promising, pas une reprise après échec ; le split peut servir plusieurs responsabilités. Document
+      primaire directement relu ; aucun consensus de frontière des Areas déduit.
+    flow_position: Rechercher une autre source de réalisation pour tout ou partie du besoin ; le contexte distingue arbitrage
+      et reprise en exécution.
+    relationship: Recouvrement partiel
+    status: proposed
+    vendor: Oracle
+    product: Split or Substitute Fulfillment Lines
+    source_title: Split or Substitute Fulfillment Lines
+    source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
+    source_locator: Introduction ; Split a Warehouse ; Consider Dates
+    consulted_on: '2026-09-22'
+    element_name: Split or Substitute Fulfillment Lines
+    element_type: Concept documenté par une source primaire
+    concept_name: Split or Substitute Fulfillment Lines
+    scope_summary: Fractionner les quantités entre entrepôts ou dates selon les permissions.
+    approach_summary: Fractionner les quantités entre entrepôts ou dates selon les permissions.
+    evidence_limits: La page traite Promising, pas une reprise après échec ; le split peut servir plusieurs responsabilités.
+      Document primaire directement relu ; aucun consensus de frontière des Areas déduit. Aucune réalisation installée Beaumanoir
+      ni équivalence universelle déduite.
+    source_refs:
+    - U592
+    - U593
+    - U625
+    - U626
+  market_inspiration:
+    choice: Recherche d’une autre source de réalisation pour tout ou partie d’un besoin, notamment lorsqu’un site ou un service
+      ne peut plus assurer ce qui était prévu.
+    flow_scope: Recherche d’une autre source de réalisation pour tout ou partie d’un besoin, notamment lorsqu’un site ou un
+      service ne peut plus assurer ce qui était prévu.
+    flow_approach: Rechercher une autre source de réalisation pour tout ou partie du besoin ; le contexte distingue arbitrage
+      et reprise en exécution.
+    synthesis:
+    - Reprendre les seuls articles manquants depuis un autre lieu, avec limites de split. Fonction de produit ; ne démontre
+      pas le seuil ferme/exécutable ni le modèle Logistic Order proposé par Laurent. Texte primaire indexé consulté ; ouverture
+      directe en échec.
+    - Fractionner les quantités entre entrepôts ou dates selon les permissions. La page traite Promising, pas une reprise
+      après échec ; le split peut servir plusieurs responsabilités. Document primaire directement relu ; aucun consensus de
+      frontière des Purposes déduit.
+    examples:
+    - title: Illustration FLOW
+      situation: Recherche d’une autre source de réalisation pour tout ou partie d’un besoin, notamment lorsqu’un site ou
+        un service ne peut plus assurer ce qui était prévu.
+      outcome: En cours d’exécution, Fulfillment peut reprendre le seul article manquant depuis un autre entrepôt et suivre
+        les prestations issues du split en lien avec la demande initiale. Le mot ne désigne pas à lui seul une capacité autonome
+        et n’impose pas de recommencer la totalité du plan.
+      lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+      source_title: Source Order Items
+      source_url: https://docs.fluentcommerce.com/by-type/source-order-items
+      source_refs:
+      - U626
 note: Catalogue structuré du backlog. Les tableaux narratifs sont conservés comme sources historiques ; ce catalogue est figé
   avec chaque nouvelle publication. Les reformulations restent proposées.

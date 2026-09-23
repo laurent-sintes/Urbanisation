@@ -794,3 +794,68 @@ Fluent Commerce — Fluent Order Management. Documentation officielle de workflo
 
 
 **Réexamen U544 — MKT24/MKT29 :** SAP et RELEX sur Inventory Optimization, ELM560/479. Appui au compromis de stock, sans preuve du libellé exact Inventory Optimization Planning ni de la hiérarchie FLOW. [Étude](../modeles/backlog/inventory-optimization-planning-option-U544.yaml), CMP224.
+
+## MKT78
+
+**Référence :** Flowable — documentation open source CMMN. **Organisme :** Flowable. **Nature :** documentation d'un moteur et de son langage de cas. **Rôle :** appui fonctionnel au case management adaptatif, sans sélection de solution.
+
+**Source et consultation :** [CMMN 1.1](https://www.flowable.com/open-source/docs/cmmn/ch06-cmmn), consulté le 22 septembre 2026. Documentation évolutive, version du moteur non fixée par la page. Passages Human task, Java Service task, Decision task, Process task, Criteria, Sentry evaluation. Texte primaire consulté ; résumé sélectif et lien, aucune reproduction substantielle.
+
+**Limites :** le document combine constructions CMMN et extensions Flowable ; aucune conformité FLOW, obligation de moteur ou réalisation Beaumanoir déduite. ELM605, CMP250.
+
+## MKT79
+
+**Référence :** The Twelve-Factor App — Adam Wiggins, chapitre IV Backing services. **Nature :** méthode d'architecture applicative. **Rôle :** vérifier le sens attesté du terme, sans l'adopter comme classification métier Supply.
+
+**Sources consultées le 22 septembre 2026 :** [chapitre original](https://www.12factor.net/backing-services), page affichant Last updated 2017, définition et exemples ; [reprise Microsoft .NET](https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition), documentation évolutive, table The Twelve-Factor Application, facteurs 4 et 6. Textes primaires ouverts ; reformulations sélectives et liens.
+
+**Limites :** Microsoft reprend cette méthode, ce n'est pas une origine indépendante. Services consommés par une application sur le réseau ; ni catalogue logistique ni taxonomie de capacités métier. ELM608/609, CMP252.
+
+## MKT80
+
+**Référence :** SAP Apparel and Footwear Solution (AFS). **Nature :** produit ERP sectoriel, distinct de Fashion Management et S/4HANA. **Rôle :** comparer la gestion du stock consigné et sa mobilisation pour satisfaire les demandes.
+
+**Sources consultées le 22 septembre 2026 :** [Release Notes AFS 6.5](https://help.sap.com/doc/29d6d66f79a142b18a2014c7e54ff392/6.5/en-US/Release_Notes_SAP_AFS_65E.PDF), ECC 6.0 EHP5, §4.5.4 page imprimée 18, PDF lu ; [Check Material Supply And Demand Allocation Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/1dad2180e6f34b75ac77afce5cb5eda1/626fd75a5f8811dc2b8d000f20fcb6a9.html), composant P3A V605 / IS-AFS-ARUN, texte primaire indexé. ELM614/619, CMP257.
+
+**Limites :** la page d'interface hébergée dans une documentation S/4HANA n'est pas une preuve d'un moteur AFS 2025. Le corpus ne décrit pas tout le paramétrage de chaque Order. Aucune réalisation Beaumanoir déduite. PDF protégé par copyright ; synthèses sélectives et liens, sans reproduction substantielle.
+
+## MKT81
+
+**Référence :** SAP Fashion Management, FMS et fonctions Fashion sur ERP. **Nature :** documentation de produit. **Rôle :** distinguer traitement documentaire de la consignation et effets des fonctions d'affectation, de saison et de segmentation.
+
+**Sources consultées le 22 septembre 2026 :** [Consignment Orders](https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html), FMS 1.0 SP13 ; [Vendor Consignment](https://help.sap.com/docs/SAP_ERP/f48e74ad3b3740bc8c9eaade394a3c1e/3daaa256c9006f15e10000000a441470.html?version=6.18.latest), ERP EHP8 ; [Vendor Consignment and Order Allocation Run](https://help.sap.com/docs/SAP_ERP/39615c43587c4405aba2de8ebf33cd66/3d06ece43a61456db4b9bcd2ca1b167e.html), ERP EHP8 SPS02 / FASHION_04. Textes primaires indexés consultés, portail direct sans corps de texte pour les ouvertures réalisées. ELM615–617, CMP256/CMP257.
+
+**Limites :** éditions distinctes, aucune supériorité globale ni absence de fonction AFS déduite. L'évolution S/4HANA aATP est documentée séparément par MKT13/ELM618, avec un périmètre d'affectation différent. Pas de copie du catalogue SAP en capacités FLOW ni de réalisation installée présumée ; synthèses et liens.
+
+
+## MKT82
+
+**Référence :** Infor M3 Business Engine. **Organisme :** Infor. **Nature :** ERP. **Rôle :** comparer le vocabulaire des documents de consignation fournisseur, sans reprendre sa structure comme modèle de capacités.
+
+**Source consultée le 22 septembre 2026 :** [Consignment Stock](https://docs.infor.com/m3udi/16.x/en-us/m3beud/scexechs/mws020.html), documentation 16.x, texte primaire directement lu, définitions et étapes documentaires. ELM620, CMP259.
+
+**Limites :** perspective fournisseur ; pas d’équivalence établie avec la garde du stock d’un client. Synthèse sélective et lien, sans droits de redistribution intégrale présumés.
+
+## MKT83
+
+**Référence :** IFS Cloud. **Organisme :** IFS. **Nature :** ERP. **Rôle :** comparer les documents de consignation client et la réception de biens appartenant au client.
+
+**Sources consultées le 22 septembre 2026 :** [Create Refill Order](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityCreateRefillOrder.htm), [Return or Scrap Customer Consignment Stock](https://docs.ifs.com/ifsclouddocs/25r2/Sales/ActivityReturnorScrapCustomerConsignmentStock.htm), [Create Purchase Order from Arrival](https://docs.ifs.com/ifsclouddocs/25r2/Receipt/ActivityPOArrivalCreate.htm), documentation 25R2, pages directement lues. ELM621–623, CMP259.
+
+**Limites :** cas documentaires ciblés ; ni couverture exhaustive ni réalisation Beaumanoir. Synthèses sélectives et liens, sans droits de redistribution intégrale présumés.
+
+
+## MKT84
+
+**Référence :** SAP Business One. **Organisme :** SAP. **Nature :** ERP, distinct de S/4HANA et Fashion. **Rôle :** vérifier l’usage du nom Goods Return.
+
+**Source consultée le 22 septembre 2026 :** [Goods Return Request: Contents Tab](https://help.sap.com/docs/PRODUCT_ID/68a2e87fb29941b5bf959a184d9c6727/b3b60a16edfc4bafacc0fc7a1fd0766a.html), version 10.0, introduction et champs de retour fournisseur, texte primaire indexé lu. ELM631, CMP263.
+
+**Limites :** preuve lexicale produit, aucune équivalence de capacité ou réalisation Beaumanoir. Synthèse sélective et lien ; aucun droit de redistribution intégrale présumé.
+
+
+## MKT85
+
+**Référence :** Nick Tune, réflexion DDD sur Domain/Subdomain/Bounded Context. **Nature :** publication originale de praticien ; point de vue attribué, pas standard. [Article du 25 novembre 2020](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/), texte ouvert le 22 septembre 2026, sections Subdomains et frontières problème/solution. ELM634 / CMP265. Rôle : éprouver le caractère relatif du niveau sous-domaine. Synthèse et lien, pas de redistribution intégrale.
+
+**Réexamen U620/U621 — 22 septembre 2026 :** MKT01/03/04/06/07/18/25/26/69/85. Niveaux de regroupement, décomposition et responsabilités comparés dans [l’étude Area](etudes/2026-09-22-area-level.md). ELM633–642 documentent éditions, passages et limites ; TOGAF historique, extraits primaires indexés IBM/LeanIX/Ardoq, autres lectures directes. Pas de nouvelle taxonomie adoptée.

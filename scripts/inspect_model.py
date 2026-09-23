@@ -1,6 +1,7 @@
 """Read exact model records/fields without flooding the agent with whole files."""
 import argparse
 import json
+import sys
 from pathlib import Path
 try:
     from .structured_io import read, working_path
@@ -69,6 +70,9 @@ def inspect(root=ROOT, *, space='backlog', version=None, collection='nodes', ids
 
 
 def main():
+    # The documented CLI must emit Unicode even through a Windows redirected pipe.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('ids', nargs='*')
     parser.add_argument('--space', choices=('backlog', 'release'), default='backlog')

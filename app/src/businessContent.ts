@@ -2,7 +2,7 @@ import type { JsonRecord, Qualification } from './types.ts';
 import { publicText } from './publicText.ts';
 
 /** Explicit reader-facing contract. New metadata is private until deliberately added. */
-export const BUSINESS_FIELDS = ['name', 'definition', 'finality', 'scope', 'nature', 'independence', 'mastership'] as const;
+export const BUSINESS_FIELDS = ['name', 'definition', 'finality', 'scope', 'nature', 'data_governance', 'independence', 'mastership'] as const;
 export function businessFields(fields: Readonly<JsonRecord>): Record<string, string> {
   return Object.fromEntries(BUSINESS_FIELDS.flatMap(key => typeof fields[key] === 'string'
     ? [[key, publicText(fields[key] as string)]] : []));

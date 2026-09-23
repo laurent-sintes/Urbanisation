@@ -1,25 +1,34 @@
-"""U449 typing contract: mandatory in opted-in models, historical snapshots preserved."""
+"""U449/U586 typing contract: opted-in models, historical snapshots preserved."""
+from copy import deepcopy
 import unittest
 from scripts.validate_models import validate_urbanism, CAPABILITY_NATURES
 from scripts.structured_io import read
 
 
 class CapabilityTypeTests(unittest.TestCase):
-    def model(self, nature='action', policy=True):
+    def model(self, nature='action', typing_required=True):
         # This fixture keeps the historical layer contract while isolating typing.
         return {'nodes': [{'id': 'cap', 'kind': 'capability', 'layer': 'transactional', 'fields': {'nature': nature}}],
-                'relations': [], 'principles': [{'id': 'PRINCIPLE-CAPABILITY-NATURE'}] if policy else []}
+                'relations': [], 'principles': [{'id': 'PRINCIPLE-CAPABILITY-NATURE'}] if typing_required else []}
 
-    def test_six_supported_types(self):
-        for nature in CAPABILITY_NATURES:
-            self.assertEqual(validate_urbanism(self.model(nature), {}), [])
+    def test_seven_supported_types_include_policy(self):
+        expected = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
+        self.assertEqual(CAPABILITY_NATURES, expected)
+        for nature in expected:
+            with self.subTest(nature=nature):
+                self.assertEqual(validate_urbanism(self.model(nature), {}), [])
 
     def test_missing_or_invalid_type_rejected(self):
-        for nature in (None, '', 'calculation', 'Decision'):
+        for nature in (None, '', 'calculation', 'Decision', 'Policy', 'policy_strategy'):
             self.assertTrue(any('capability nature' in e for e in validate_urbanism(self.model(nature), {})))
 
     def test_legacy_models_do_not_gain_a_typing_requirement(self):
         self.assertEqual(validate_urbanism(self.model(None, False), {}), [])
+        model = self.model(typing_required=False)
+        model['nodes'][0]['fields'] = {'name': 'Supply Policy'}
+        before = deepcopy(model)
+        self.assertEqual(validate_urbanism(model, {}), [])
+        self.assertEqual(model, before)
 
     def test_live_completeness_order_and_typology(self):
         model = read('modeles/backlog/model.yaml')

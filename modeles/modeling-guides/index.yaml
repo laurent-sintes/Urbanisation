@@ -18,6 +18,9 @@ guides:
 - version: 2026-09-19.5
   path: versions/2026-09-19.5.yaml
   sha256: 0f6b50644cf0018861a3d24334143ae25e2bf1674a134eb6d146707f40a4c7ce
+- version: 2026-09-22.2
+  path: versions/2026-09-22.2.yaml
+  sha256: 4ab43144eba55e93ce67728021cec878e70a7e1915e83f6e987793c679df842e
 associations:
 - publication_version: 2026-09-16.2
   guide_version: 2026-09-18.1
@@ -73,3 +76,7 @@ associations:
   guide_version: 2026-09-19.5
   scope: carried_frozen_methodology
   note: Édition méthodologique figée reprise explicitement depuis 2026-09-19.11 ; aucune lecture du backlog.
+- publication_version: 2026-09-23.1
+  guide_version: 2026-09-22.2
+  scope: explicit_prepared_methodology
+  note: Édition méthodologique explicitement préparée et contrôlée avec cette publication ; aucune validation métier supplémentaire.

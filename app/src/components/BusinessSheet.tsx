@@ -9,7 +9,7 @@ import './details.css';
 import { ModelText, ReferenceLink } from './ModelLinks';
 import { NodeIcon } from '../icons';
 import { childrenOf, relatedTo } from '../model';
-import { capabilityTypeLabel, startsDecisionSection } from '../capabilityTypes';
+import { capabilityTypeLabel, startsCapabilityTypeSection } from '../capabilityTypes';
 import { businessExamples } from '../examples';
 import { BusinessExamples } from './BusinessExamples';
 import { behaviorAspect, behaviorAspectLabels, behaviorReadingGroups, requestOrigins, requestOriginLabels } from '../requestMetadata';
@@ -77,7 +77,8 @@ export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedM
         <div className="business-copy sheet-scope-summary"><Value value={scopeSummary}/></div>
         {scopeDetails.length > 0 && <div className="business-copy"><Value value={scopeDetails.join('\n\n')}/></div>}
       </section>}
-      {(fields.nature || fields.mastership || fields.independence || aspect) && <dl className="sheet-facts">
+      {(fields.nature || fields.data_governance || fields.mastership || fields.independence || aspect) && <dl className="sheet-facts">
+        {fields.data_governance && <div><dt>Gouvernance des données</dt><dd>{fields.data_governance}</dd></div>}
         {fields.nature && <div><dt>{node.kind === 'behavior' ? 'Type de comportement' : 'Type de capacité'}</dt><dd>{node.kind === 'behavior' ? behaviorTypeLabel(node) : capabilityTypeLabel(node)}</dd></div>}
         {aspect && <div><dt>Angle de lecture</dt><dd>{behaviorAspectLabels[aspect]}</dd></div>}
         {fields.mastership && <div><dt>Autorité sur les informations</dt><dd><Value value={fields.mastership === 'external' ? 'Informations de référence maîtrisées à l’extérieur de Supply.' : fields.mastership}/></dd></div>}
@@ -99,7 +100,7 @@ export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedM
       </section>}
     </div>
     <div className="sheet-market-entry"><p>{marketCount ? `${marketCount} rapprochement${marketCount > 1 ? 's' : ''} documenté${marketCount > 1 ? 's' : ''} : vocabulaire, périmètre retenu et sources.` : 'Le positionnement marché de cet élément reste à documenter dans cette publication.'}</p><button className="secondary-button" onClick={onShowMarket}>Sources d’inspiration <ArrowUpRight size={16}/></button></div>
-    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map((child, index) => <Fragment key={child.id}>{startsDecisionSection(otherChildren, index) && <hr className="decision-divider" aria-label="Capacités de décision"/>}<ReferenceLink target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink></Fragment>)}</div></section>}
+    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map((child, index) => <Fragment key={child.id}>{startsCapabilityTypeSection(otherChildren, index) && <hr className="capability-type-divider" aria-label="Changement de type de capacité"/>}<ReferenceLink target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink></Fragment>)}</div></section>}
   </article>;
 }
 

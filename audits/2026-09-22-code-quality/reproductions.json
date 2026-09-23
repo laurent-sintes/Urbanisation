@@ -1,0 +1,20 @@
+{
+  "missing_frozen_registry": {
+    "before": [
+      "decision-intents: Consumed decision intent was removed or changed: ADOPT-TEST-1"
+    ],
+    "after_removing_frozen_file": [],
+    "counts": {
+      "decision_intents": 0,
+      "decision_suspensions": 0,
+      "decision_shards": 0,
+      "decision_unreferenced_shards": 1
+    }
+  },
+  "replacement_using_unverified_summary": {
+    "recorded": true,
+    "validation_errors": [
+      "decision-intents: Registry shard summary mismatch: ADOPT-TEST-1"
+    ]
+  }
+}

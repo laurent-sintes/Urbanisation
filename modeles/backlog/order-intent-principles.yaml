@@ -12,6 +12,9 @@ source_refs:
 - U395
 - U397
 - C104
+- U608
+- U609
+- U610
 principle: Modéliser une demande par son intention métier, les parties et leurs rôles, la relation ou l’accord applicable,
   les engagements attendus et le résultat à obtenir. Décrire ensuite son traitement et ses adaptations ; les documents ERP,
   mouvements logistiques et écritures sont des réalisations ou effets à relier, pas l’autorité qui fixe la sémantique de la
@@ -140,3 +143,42 @@ business_visibility_U397:
   benefit: La lisibilité des intentions, parcours et résultats constitue un bénéfice ciblé recevable pour la décomposition.
   boundary: Conserver les responsabilités métier distinctes et la maille des comportements ; ni duplication automatique du
     cycle transversal ni catalogue de boutons. Listes nouvelles à qualifier séparément.
+clarification_U608:
+  source_refs:
+  - U608
+  - U393
+  - U394
+  - U607
+  - CMP262
+  principle: 'Construire Demand depuis l’intention de l’acteur qui déclenche la demande : résultat attendu, destinataire,
+    droits et engagements.'
+  consequence: Un effet de propriété ou document induit ne crée pas automatiquement une nouvelle intention. Consignment Issue
+    est un comportement de Sales Order selon U607.
+  automation: L’origine commerce ou plan, humaine ou automatique, ne remplace pas l’identification de l’intention métier.
+  historical_limit: Les mentions historiques de couches ou Business Services dans cette annexe ne sont pas réactivées ; U455/U472
+    et le cadrage courant priment.
+clarification_U609:
+  source_refs:
+  - U609
+  label: Demandes par intention
+  general_requirement: Tout le modèle a vocation à être lisible ; cette exigence ne qualifie pas spécifiquement Demand.
+  scope: Retrait de la précision dans le libellé courant ; conservation des comparaisons et justifications historiques.
+adoption_U610:
+  status: explicitly_adopted
+  author: Laurent
+  decided_at: '2026-09-22'
+  source_refs:
+  - U610
+  - U608
+  - U609
+  approved_fields:
+  - label
+  - principle
+  - general_requirement
+  values:
+    label: Demandes par intention
+    principle: Partir de l’intention de l’acteur qui déclenche la demande.
+    general_requirement: La lisibilité concerne tout le modèle.
+  context: Validation de la formulation présentée après U609 ; Consignment Issue sous Sales Order déjà adopté U607.
+  limit: Accord de principe méthodologique dans cette annexe ; aucune cible canonique fictive pour record_decision, aucun
+    accord global sur les descriptions ni publication.

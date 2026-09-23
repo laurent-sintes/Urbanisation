@@ -5,6 +5,15 @@ from scripts.test_publish_release import isolated_project
 
 
 class InspectModelTests(unittest.TestCase):
+    def test_cli_emits_utf8_under_restrictive_windows_pipe_encoding(self):
+        import os
+        import subprocess
+        import sys
+        code = "from scripts import inspect_model as m; m.inspect = lambda **kw: {'text': '\\u2192 \\u00e9'}; m.main()"
+        result = subprocess.run([sys.executable, '-c', code], env=os.environ | {'PYTHONIOENCODING': 'ascii:strict'}, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout.decode('utf-8')), {'text': '→ é'})
+
     def fixture(self, root):
         folder=root/'modeles/backlog'; folder.mkdir(parents=True)
         model={'version':'work', 'nodes':[

@@ -28,6 +28,7 @@ try:
     from . import decision_review
     from .decision_carry import classify_context
     from .record_decision import compile_intents
+    from .decision_registry import read_registry, read_consumed_registry, is_index, shard_path
     from . import guide_candidate
     from .json_contract import validate as validate_contract
     from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
@@ -41,6 +42,7 @@ except ImportError:
     import decision_review
     from decision_carry import classify_context
     from record_decision import compile_intents
+    from decision_registry import read_registry, read_consumed_registry, is_index, shard_path
     import guide_candidate
     from json_contract import validate as validate_contract
     from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
@@ -265,9 +267,29 @@ def changes(before, after, path=''):
                                'before': before.get(key), 'after': after.get(key)})
             else:
                 result.extend(changes(before[key], after[key], here))
+    elif (isinstance(before, list) and isinstance(after, list) and (before or after)
+          and all(isinstance(x, dict) and isinstance(x.get('id'), str) for x in before + after)
+          and len({x['id'] for x in before}) == len(before)
+          and len({x['id'] for x in after}) == len(after)):
+        # Stable identifiers avoid copying an entire glossary or registry for one edit.
+        result.extend(changes({x['id']: x for x in before}, {x['id']: x for x in after}, path))
+        old_order, new_order = [x['id'] for x in before], [x['id'] for x in after]
+        if old_order != new_order:
+            result.append({'path': path + '/@order', 'before': old_order, 'after': new_order})
     elif before != after:
         result.append({'path': path, 'before': before, 'after': after})
     return result
+
+
+def registry_report(document):
+    """Describe approval changes without copying their already preserved evidence."""
+    if document is None:
+        return None
+    return {'schema_version': document['schema_version'],
+            'intents': [{k: copy.deepcopy(v) for k, v in intent.items() if k != 'target'} | {
+                'target': {k: copy.deepcopy(v) for k, v in intent['target'].items()
+                           if k not in ('values', 'context')}} for intent in document['intents']],
+            'suspensions': document.get('suspensions', [])}
 
 
 def model_diff(previous, candidate):
@@ -338,13 +360,16 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     intent_errors = []
     intent_path = models / 'backlog/decision-intents.yaml'
     consumed_path = models / 'revisions' / pointer['version'] / 'deferred/decision-intents.yaml'
+    consumed_registry = read_consumed_registry(root, pointer['version'])
+    live_registry = None
     if consumed_path.exists() and not intent_path.exists():
         intent_errors.append('decision-intents: previously published registry was removed')
     if intent_path.exists():
         try:
-            recorded = compile_intents(read(intent_path), snapshot, inputs['decisions'],
+            live_registry = read_registry(intent_path)
+            recorded = compile_intents(live_registry, snapshot, inputs['decisions'],
                                        read(models / 'provenance/source-records.json'),
-                                       consumed_document=read(consumed_path) if consumed_path.exists() else None)
+                                       consumed_document=consumed_registry)
             if additional:
                 recorded['decisions'].extend(additional['decisions'])
             additional = recorded
@@ -363,9 +388,22 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
             transcribed['decisions'].extend(additional['decisions'])
         decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, transcribed, inputs['input_revision'])
     explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
-    deferred_paths = [working_path(models / 'backlog', stem) for stem in sorted({p.stem for p in (models / 'backlog').iterdir() if p.suffix in ('.json', '.yaml', '.yml') and p.stem not in ('model', 'glossary')})]
+    # Working proposals and research remain in the knowledge base, not in every release.
+    deferred_paths = [intent_path] if intent_path.exists() else []
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
-    deferred_documents = {path: read(path) for path in deferred_paths}
+    registry_index = read(intent_path) if intent_path.exists() else None
+    if is_index(registry_index):
+        deferred_paths.extend(shard_path(intent_path, entry) for entry in registry_index['entries'])
+    # Reuse the fully validated logical registry; never parse each capture twice.
+    deferred_documents = {path: read(path) for path in deferred_paths if path != intent_path
+                          and not path.is_relative_to(intent_path.parent / 'decision-intents')}
+    if intent_path.exists():
+        live_registry = live_registry if live_registry is not None else read_registry(intent_path)
+        deferred_documents[intent_path] = live_registry
+        if is_index(registry_index):
+            intents_by_id = {i['id']: i for i in live_registry['intents']}
+            deferred_documents.update({shard_path(intent_path, e): [intents_by_id[e['id']]]
+                                       for e in registry_index['entries']})
     for path in deferred_paths:
         all_refs.update(context_source_references(deferred_documents[path]))
     provenance = publisher.publication_sources(inputs['provenance'], read(models / 'provenance/source-records.json'), sorted(all_refs))
@@ -384,9 +422,16 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     errors += intent_errors
     deferred_artifacts = []
     for path in deferred_paths:
-        previous_path = working_path(models / 'revisions' / pointer['version'] / 'deferred', path.stem)
-        previous_document = read(previous_path) if previous_path.exists() else None
+        previous_path = models / 'revisions' / pointer['version'] / 'deferred' / path.relative_to(models / 'backlog')
+        if path.parent == models / 'backlog':
+            previous_path = working_path(previous_path.parent, path.stem)
         current_document = deferred_documents[path]
+        same_bytes = previous_path.exists() and digest(previous_path) == digest(path)
+        previous_document = (current_document if same_bytes else
+                             consumed_registry if path == intent_path else
+                             read(previous_path) if previous_path.exists() else None)
+        if path == intent_path:
+            previous_document, current_document = registry_report(previous_document), registry_report(current_document)
         deferred_artifacts.append({'path': path.relative_to(models).as_posix(), 'sha256': digest(path),
                                    'comparison': 'changed' if previous_path.exists() and previous_document != current_document else 'unchanged' if previous_path.exists() else 'baseline_not_captured',
                                    'changes': changes(previous_document, current_document) if previous_path.exists() else [],
@@ -445,7 +490,7 @@ def stage_candidate(root, bundle, *, guide_path=None):
         deferred = []
         for record in bundle['report']['deferred_artifacts']:
             source_path = checked_path(models, record['path'])
-            path = temporary / 'deferred' / source_path.name
+            path = temporary / 'deferred' / source_path.relative_to(models / 'backlog')
             publisher.copy_verified(source_path, path, record['sha256'])
             deferred.append({'path': path.relative_to(temporary).as_posix(), 'sha256': record['sha256'],
                              'source_path': record['path'], 'source_sha256': record['sha256']})
@@ -512,6 +557,8 @@ def publish_prepared(root, version, activate=False):
     glossary_hash = digest(glossary_path) if glossary_path.exists() else None
     if glossary_hash != manifest.get('live_glossary_sha256'):
         raise ValueError('Glossary changed since preparation; prepare a fresh candidate')
+    if 'input_state' in manifest and manifest['input_state']['files'] != decision_review.input_state(root)['files']:
+        raise ValueError('Backlog context changed since preparation; prepare a fresh candidate')
     required_files = {'backlog.yaml', 'decisions.json', 'source-records.json', 'candidate.yaml', 'report.json'}
     if set(manifest['files']) != required_files:
         raise ValueError('Prepared manifest file inventory mismatch')
@@ -606,6 +653,8 @@ def publish_prepared(root, version, activate=False):
               'complete_capability_count': sum(n['kind'] == 'capability' and n['review']['state'] == 'accepted' for n in release['nodes']),
               'changes_path': 'changes.json', 'changes_sha256': digest(release_dir / 'changes.json'),
               'prepared_manifest_sha256': digest(stage / 'manifest.json'),
+              'decision_registry_files': {e['path']: e['sha256'] for e in manifest['deferred']
+                  if e['path'] == 'deferred/decision-intents.yaml' or e['path'].startswith('deferred/decision-intents/')},
               'note': 'Publication du backlog préparé ; validations conservées seulement à révision et valeurs identiques.'}
     if review_files:
         output['decision_review'] = {f'../../revisions/{version}/{name}': digest(revision_dir / name)

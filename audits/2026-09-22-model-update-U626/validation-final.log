@@ -1,0 +1,17 @@
+source_records: 2315
+backlog_nodes: 157
+backlog_capabilities: 59
+decision_intents: 71
+decision_suspensions: 14
+decision_shards: 71
+decision_unreferenced_shards: 0
+release_node_count: 150
+release_capability_count: 55
+release_complete_capability_count: 0
+adoptions: 236
+panorama_source_records: 85
+panorama_assessed_records: 74
+panorama_pending_records: 11
+applicability_contexts: 4
+applicability_assessments: 0
+OK: 0 error(s)
