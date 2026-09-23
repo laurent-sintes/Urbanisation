@@ -15,6 +15,7 @@ SCHEMA_VERSION = 2
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 if str(REPOSITORY_ROOT) not in sys.path:
     sys.path.insert(0, str(REPOSITORY_ROOT))
+from scripts.git_history import read_bytes as artifact_bytes
 from scripts.release_catalog import resolve_release, catalog
 from scripts.structured_io import read as read_document, working_path
 MAP_PATH = "connaissance/25-domaines-coeur-et-epreuve-recits.md"
@@ -147,7 +148,7 @@ def get_revision(root: Path = REPOSITORY_ROOT, space: str = DEFAULT_SPACE, versi
     # and presentation configuration affect this view; no cross-space fallback.
     for relative in [*paths, "app/exploration.json"]:
         target = (root / relative) if relative == "app/exploration.json" else _safe_model_path(root, relative)
-        digest.update(relative.encode() + b"\0" + (target.read_bytes() if target.is_file() else b"missing"))
+        digest.update(relative.encode() + b"\0" + (artifact_bytes(target) if relative != "app/exploration.json" or target.is_file() else b"missing"))
     return digest.hexdigest()[:20]
 
 

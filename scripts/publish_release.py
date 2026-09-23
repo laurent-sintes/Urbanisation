@@ -27,8 +27,14 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 
 
+try:
+    from .git_history import read_bytes
+except ImportError:
+    from git_history import read_bytes
+
+
 def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(read_bytes(path)).hexdigest()
 
 
 def copy_verified(source, destination, expected_sha256):

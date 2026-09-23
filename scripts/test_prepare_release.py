@@ -26,18 +26,26 @@ class BacklogPublicationTests(unittest.TestCase):
         cls.root = cls.fixture
         src, dst = ROOT/'modeles', cls.fixture/'modeles'
         def copy(relative):
-            target = dst/relative
-            target.parent.mkdir(parents=True, exist_ok=True)
-            if (src/relative).is_dir():
-                shutil.copytree(src/relative, target)
-            else:
-                shutil.copy2(src/relative, target)
+            # Compatibility fixture pinned in Git; no ignored staging dependency.
+            from scripts.git_history import git, read_bytes
+            target = dst / relative
+            original = src / relative
+            paths = git(ROOT, 'ls-tree', '-r', '--name-only', '66b4d7a2fc796ea4d48fe7da0461a794fab1c345', '--', 'modeles/' + relative).decode().splitlines()
+            if original.is_file():
+                paths = ['modeles/' + relative]
+            for name in paths:
+                output = cls.fixture / name
+                output.parent.mkdir(parents=True, exist_ok=True)
+                output.write_bytes(read_bytes(ROOT / name))
         for relative in ('schemas', 'release/2026-09-13.2', 'release/2026-09-13.4',
-                         'staging/2026-09-13.4/manifest.json',
                          'revisions/2026-09-13.4', 'decisions/2026-09-13.4.json',
                          'provenance/2026-09-13.4', 'provenance/source-records.json',
                          'backlog/applicability.yaml', 'backlog/modeling-roadmap.yaml'):
             copy(relative)
+        manifest_path = dst / 'release/2026-09-13.4/manifest.json'
+        manifest = workflow.read(manifest_path)
+        manifest['decision_registry_files'] = {}
+        save(manifest_path, manifest)
         index = workflow.read(src/'release/index.json')
         wanted = {'urbanisation-v002-2026-09-13-162623.json', 'urbanisation-2026-09-13.2-legacy.json'}
         index['publications'] = [e for e in index['publications'] if e['descriptor'] in wanted]

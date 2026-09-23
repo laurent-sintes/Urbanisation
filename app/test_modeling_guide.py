@@ -20,6 +20,8 @@ from server import create_server
 from scripts.structured_io import dumps, read
 
 
+from scripts.git_history import read_bytes as artifact_bytes
+
 CURRENT = "2026-09-16.2"
 HISTORICAL = "2026-09-15.1"
 FUTURE = "2026-09-19.1"
@@ -36,7 +38,7 @@ class GuideFixture(unittest.TestCase):
         shutil.copytree(REPOSITORY_ROOT / "modeles/modeling-guides", self.folder)
         self.index_path = self.folder / "index.yaml"
         self.guide_path = self.folder / "versions/2026-09-18.1.yaml"
-        self.add_publication(CURRENT, (REPOSITORY_ROOT / "modeles/release" / CURRENT / "model.yaml").read_bytes())
+        self.add_publication(CURRENT, artifact_bytes(REPOSITORY_ROOT / "modeles/release" / CURRENT / "model.yaml"))
         self.add_publication(HISTORICAL)
 
     def cleanup_fixture(self):

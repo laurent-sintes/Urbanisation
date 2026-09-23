@@ -118,6 +118,15 @@ def _incomplete(root, version, error, timings):
 def run(root, version=None, source_refs=None, *, activate=False, review_path=None,
         decisions_path=None, guide_path=None, atlas_url='http://127.0.0.1:8765', verify_site=True):
     root = Path(root).resolve()
+    if (root / 'modeles/git-history.json').is_file():
+        if __package__:
+            from .lean_release import run as lean_run
+        else:
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+            from scripts.lean_release import run as lean_run
+        return lean_run(root, version, source_refs, activate=activate, review_path=review_path,
+                        decisions_path=decisions_path, guide_path=guide_path,
+                        atlas_url=atlas_url, verify_site=verify_site)
     if not source_refs:
         raise ValueError('An explicit publication source is required')
     timings = {}

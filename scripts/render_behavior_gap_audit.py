@@ -1194,6 +1194,15 @@ def main():
 
 
 def checked_run(full=False):
+    from scripts.git_history import enabled
+    if enabled(ROOT):
+        if full:
+            raise ValueError('Replay this closed historical audit in an isolated checkout of its Git archive; it is not a current-model validation.')
+        # U431 is closed. Read its result from Git instead of replaying the
+        # entire discussion and recreating historical report directories.
+        checks = read(OUT / 'checks.json')
+        checks['scope'] = 'Archived U431 result read from Git; no validation of the current model.'
+        return checks, False
     if not __debug__:
         raise RuntimeError('Historical assertions require Python without -O')
     from scripts.verification_checkpoint import run

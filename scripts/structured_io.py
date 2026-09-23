@@ -15,8 +15,10 @@ from hashlib import sha256
 from threading import RLock
 try:
     from . import parsed_cache
+    from .git_history import read_bytes
 except ImportError:
     import parsed_cache
+    from git_history import read_bytes
 
 DEPENDENCIES = Path(__file__).resolve().parents[1] / '.tools/yaml-runtime'
 if DEPENDENCIES.is_dir():
@@ -62,6 +64,18 @@ def construct_mapping(loader, node):
 ModelLoader.add_constructor('tag:yaml.org,2002:map', construct_mapping)
 
 
+# Keep the strict Python loader for parser marks used by append/migration tools.
+# LibYAML handles ordinary reads; its composer cannot override compose_node, so
+# reject alias events explicitly before constructing the document.
+if hasattr(yaml, 'CSafeLoader'):
+    class NativeModelLoader(yaml.CSafeLoader):
+        pass
+    NativeModelLoader.yaml_implicit_resolvers = ModelLoader.yaml_implicit_resolvers.copy()
+    NativeModelLoader.add_constructor('tag:yaml.org,2002:map', construct_mapping)
+else:
+    NativeModelLoader = None
+
+
 def check_values(value):
     if value is None or type(value) in (str, bool, int):
         return
@@ -81,7 +95,11 @@ def check_values(value):
 def loads(text, suffix='.yaml'):
     try:
         if suffix.lower() in ('.yaml', '.yml'):
-            value = yaml.load(text, Loader=ModelLoader)
+            if NativeModelLoader is not None:
+                for event in yaml.parse(text, Loader=NativeModelLoader):
+                    if isinstance(event, yaml.AliasEvent):
+                        raise ValueError('YAML aliases are not supported in models')
+            value = yaml.load(text, Loader=NativeModelLoader or ModelLoader)
         else:
             value = json.loads(text, object_pairs_hook=unique_pairs)
         check_values(value)
@@ -102,7 +120,7 @@ _CACHE_ENTRIES = 128
 # JSON-only contract and alias/duplicate rejection. Source bytes are always read.
 _PARSER_SIGNATURE = sha256(Path(__file__).read_bytes() +
                           Path(parsed_cache.__file__).read_bytes() +
-                          (sys.version + yaml.__version__).encode()).digest()
+                          (sys.version + yaml.__version__ + str(NativeModelLoader is not None)).encode()).digest()
 _DISK_MIN_BYTES = 4096
 
 
@@ -116,7 +134,7 @@ def clear_read_cache():
 def read(path):
     global _cache_bytes
     path = Path(path)
-    content = path.read_bytes()
+    content = read_bytes(path)
     key = (path.suffix.lower(), sha256(content).digest())
     with _cache_lock:
         cached = _cache.get(key)
@@ -155,7 +173,7 @@ def write_text_if_changed(path, text):
     return True
 
 
-class ModelDumper(yaml.SafeDumper):
+class ModelDumper(getattr(yaml, 'CSafeDumper', yaml.SafeDumper)):
     def ignore_aliases(self, data):
         return True
 

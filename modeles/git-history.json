@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0.0",
+  "archives": [
+    {
+      "path": "audits",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/backlog/decision-intents",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/backlog/history",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-13.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-13.3.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-13.4.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-13.5.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-14.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-15.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-16.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-16.2.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.10.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.11.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.2.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.3.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.4.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.5.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.6.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.7.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.8.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-19.9.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-22.4.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/decisions/2026-09-23.1.json",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-13.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-13.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-13.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-13.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-13.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-14.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-15.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-16.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-16.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.10",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.11",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.6",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.7",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.8",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-19.9",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-22.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/provenance/2026-09-23.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-13.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-13.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-13.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-13.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-13.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-14.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-15.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-16.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-16.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.10",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.11",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.6",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.7",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.8",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-19.9",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-22.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/release/2026-09-23.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-13.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-13.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-13.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-13.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-14.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-15.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-16.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-16.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.10",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.11",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.2",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.3",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.5",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.6",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.7",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.8",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-19.9",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-22.4",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    },
+    {
+      "path": "modeles/revisions/2026-09-23.1",
+      "commit": "66b4d7a2fc796ea4d48fe7da0461a794fab1c345"
+    }
+  ]
+}

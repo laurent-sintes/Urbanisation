@@ -1,0 +1,117 @@
+"""Publication contracts on isolated Git repositories; no real publication."""
+from pathlib import Path
+import unittest
+from unittest.mock import patch
+
+from scripts import git_history, lean_release, release, prepare_release as workflow
+from scripts import test_prepare_release as fixtures
+from scripts.test_publish_release import save
+
+
+class GitPublicationTests(unittest.TestCase):
+    setUpClass = classmethod(fixtures.BacklogPublicationTests.setUpClass.__func__)
+    mutate_capability = fixtures.BacklogPublicationTests.mutate_capability
+
+    def setUp(self):
+        fixtures.BacklogPublicationTests.setUp(self)
+        pointer = workflow.resolve_release(self.models / 'release')
+        self.base = pointer['version']
+        path = self.models / 'release' / self.base / 'manifest.json'
+        manifest = workflow.read(path)
+        manifest['kind'] = 'git_release'
+        save(path, manifest)
+        save(self.root / git_history.INDEX, {'schema_version': '1.0.0', 'archives': []})
+        save(self.models / 'backlog/decision-intents.yaml', {'schema_version': '1.0.0', 'intents': [], 'suspensions': []})
+        (self.root / '.gitattributes').write_text('* -text\n', encoding='utf-8')
+        git_history.git(self.root, 'init', '-q')
+        git_history.git(self.root, 'add', 'modeles')
+        git_history.git(self.root, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'Fixture baseline')
+
+    def editorial(self):
+        model = workflow.read(self.backlog_path)
+        next(n for n in model['nodes'] if n['id'] == 'D03.a')['review']['note'] += ' Précision éditoriale.'
+        save(self.backlog_path, model)
+
+    def run_release(self, **options):
+        return release.run(self.root, self.version, ['PUB-TEST-NEW'], verify_site=False, **options)
+
+    def test_one_gate_and_historical_read_after_retirement(self):
+        self.editorial()
+        before = workflow.read(self.models / 'release' / self.base / 'model.json')
+        with patch.object(workflow, 'validate_release', wraps=workflow.validate_release) as check:
+            result = self.run_release(activate=True)
+        self.assertEqual(result['status'], 'published')
+        self.assertEqual(check.call_count, 1)
+        self.assertFalse((self.models / 'release' / self.base).exists())
+        self.assertEqual(workflow.read(self.models / 'release' / self.base / 'model.json'), before)
+        self.assertEqual(workflow.resolve_release(self.models / 'release', self.base)['version'], self.base)
+        self.assertFalse((self.root / '.runtime/publication' / self.version).exists())
+        self.assertFalse((self.models / 'release' / self.version / 'changes.json').exists())
+        self.assertFalse((self.models / 'revisions' / self.version / 'deferred').exists())
+        self.assertEqual(workflow.read(self.models / 'backlog/decision-intents.yaml')['intents'], [])
+
+    def test_source_change_blocks_resume(self):
+        self.editorial()
+        self.assertEqual(self.run_release()['status'], 'prepared')
+        self.editorial()
+        with self.assertRaisesRegex(ValueError, 'Sources or publication code changed'):
+            self.run_release(activate=True)
+        self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], self.base)
+
+    def test_candidate_corruption_blocks_activation(self):
+        self.editorial()
+        result = self.run_release()
+        candidate = Path(result['prepared_manifest']).parent / 'model.yaml'
+        candidate.write_bytes(candidate.read_bytes() + b'\n# corrupted\n')
+        with self.assertRaisesRegex(ValueError, 'Prepared artifact changed'):
+            self.run_release(activate=True)
+
+    def test_business_change_needs_explicit_review(self):
+        self.mutate_capability()
+        self.assertEqual(self.run_release(activate=True)['status'], 'needs_review')
+        self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], self.base)
+
+    def test_uncommitted_publication_cannot_be_retired(self):
+        self.editorial()
+        path = self.models / 'release' / self.base / 'changes.json'
+        path.write_bytes(path.read_bytes() + b'\n')
+        with self.assertRaisesRegex(ValueError, 'Commit the current publication'):
+            self.run_release(activate=True)
+        self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], self.base)
+
+    def test_stable_approval_identity_on_editorial_revision(self):
+        self.editorial()
+        current = workflow.load_current(self.root)
+        bundle = workflow.build_candidate(self.root, self.version, ['PUB-TEST-NEW'], current=current, lightweight=True)
+        prior = {d['id']: d for d in current[3]['decisions']['decisions']}
+        for decision in bundle['decisions']['decisions']:
+            self.assertIn(decision['id'], prior)
+            self.assertEqual(decision['note'], prior[decision['id']]['note'])
+
+    def test_baseline_change_blocks_resume(self):
+        self.editorial()
+        self.run_release()
+        manifest = self.models / 'release' / self.base / 'manifest.json'
+        manifest.write_bytes(manifest.read_bytes() + b'\n')
+        with self.assertRaisesRegex(ValueError, 'Sources or publication code changed'):
+            self.run_release(activate=True)
+
+    def test_retirement_preserves_previously_archived_proofs(self):
+        folder = self.models / 'release' / self.base
+        proof = folder / 'old-proof.txt'
+        proof.write_bytes(b'Original evidence')
+        git_history.git(self.root, 'add', 'modeles')
+        git_history.git(self.root, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'Older proof')
+        original = git_history.git(self.root, 'rev-parse', 'HEAD').decode().strip()
+        save(self.root / git_history.INDEX, {'schema_version': '1.0.0', 'archives': [
+            {'path': folder.relative_to(self.root).as_posix(), 'commit': original}]})
+        proof.unlink()
+        git_history.git(self.root, 'add', 'modeles')
+        git_history.git(self.root, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'Retire old proof')
+        self.editorial()
+        self.assertEqual(self.run_release(activate=True)['status'], 'published')
+        self.assertEqual(git_history.read_bytes(proof), b'Original evidence')
+
+
+if __name__ == '__main__':
+    unittest.main()

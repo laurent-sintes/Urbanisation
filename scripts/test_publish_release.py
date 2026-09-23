@@ -7,6 +7,8 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import os
+import stat
 import unittest
 from unittest.mock import patch
 import uuid
@@ -34,7 +36,12 @@ def isolated_project():
         resolved = folder.resolve()
         if resolved.parent != base or len(resolved.name) != 32:
             raise ValueError('Refusing cleanup outside the isolated test directory')
-        shutil.rmtree(resolved)
+        def retry_readonly(operation, path, error):
+            if not Path(path).resolve().is_relative_to(resolved):
+                raise ValueError('Cleanup escaped the fixture')
+            os.chmod(path, stat.S_IWRITE | stat.S_IREAD)
+            operation(path)
+        shutil.rmtree(resolved, onexc=retry_readonly)
         try:
             base.rmdir()
         except OSError:

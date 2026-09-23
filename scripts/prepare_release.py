@@ -130,6 +130,8 @@ def load_current(root):
         if not path.is_relative_to(models) or digest(path) != manifest[key + '_sha256']:
             raise ValueError('Frozen input path or hash mismatch: ' + key)
         inputs[key] = read(path)
+    if manifest.get('kind') == 'git_release':
+        return models, pointer, release, inputs, manifest_path
     errors = validate_release(release, inputs['decisions'], inputs['input_revision'],
                               {r['id']: r for r in inputs['provenance']['records']},
                               read(models / 'schemas/urbanism.schema.json'))
@@ -140,7 +142,11 @@ def load_current(root):
 
 def suggested_version(models):
     prefix = date.today().isoformat() + '.'
-    used = set()
+    try:
+        from .release_catalog import descriptors
+    except ImportError:
+        from release_catalog import descriptors
+    used = {d['version'] for d in descriptors(models / 'release')}
     for folder in ('release', 'revisions', 'staging', 'provenance'):
         base = models / folder
         if base.exists():
@@ -151,7 +157,7 @@ def suggested_version(models):
     return prefix + str(number)
 
 
-def reconcile_decisions(old_document, snapshot, additional=None, previous_snapshot=None):
+def reconcile_decisions(old_document, snapshot, additional=None, previous_snapshot=None, *, stable_ids=False):
     """Preserve exact approvals; carry across revisions only with proven stable context."""
     targets = {c: {item['id']: item for item in snapshot[c]} for c in ('nodes', 'relations')}
     previous_targets = {c: {item['id']: item for item in (previous_snapshot or {}).get(c, [])} for c in targets}
@@ -177,6 +183,10 @@ def reconcile_decisions(old_document, snapshot, additional=None, previous_snapsh
                 reason = 'context_changed_requires_explicit_reassessment'
             elif item['revision'] != target['revision']:
                 decision = copy.deepcopy(original)
+                if stable_ids:
+                    decision['target'].update(revision=item['revision'], import_version=snapshot['version'])
+                    kept.append(decision)
+                    continue
                 decision['id'] = 'ADOPT-CARRY-' + sha256((snapshot['version'] + ':' + original['id']).encode()).hexdigest()[:24]
                 decision['recorded_at'] = snapshot['as_of']
                 decision['target'].update(revision=item['revision'], import_version=snapshot['version'])
@@ -338,9 +348,10 @@ def revision_errors(previous_snapshot, snapshot):
 
 
 def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=None, *,
-                    review_path=None, include_review=False):
+                    review_path=None, include_review=False, current=None, lightweight=False):
+    lightweight = lightweight or (Path(root) / 'modeles/git-history.json').is_file()
     state = decision_review.input_state(root)
-    models, pointer, previous, inputs, manifest_path = load_current(root)
+    models, pointer, previous, inputs, manifest_path = current or load_current(root)
     version = valid_version(version or suggested_version(models))
     live_path = working_path(models / 'backlog')
     live = read(live_path)
@@ -375,7 +386,7 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
             additional = recorded
         except ValueError as exc:
             intent_errors.append('decision-intents: ' + str(exc))
-    decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'])
+    decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, additional, inputs['input_revision'], stable_ids=lightweight)
     publication_refs = source_refs or previous.get('publication', {}).get('source_refs', [])
     review, review_evidence = None, {}
     if include_review or review_path:
@@ -386,13 +397,13 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
         transcribed, review_evidence = decision_review.apply_assessment(review_path, review)
         if additional:
             transcribed['decisions'].extend(additional['decisions'])
-        decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, transcribed, inputs['input_revision'])
+        decisions, deferred_decisions = reconcile_decisions(inputs['decisions'], snapshot, transcribed, inputs['input_revision'], stable_ids=lightweight)
     explain_deferred_validations(snapshot, decisions, deferred_decisions, previous)
     # Working proposals and research remain in the knowledge base, not in every release.
-    deferred_paths = [intent_path] if intent_path.exists() else []
+    deferred_paths = [intent_path] if intent_path.exists() and not lightweight else []
     all_refs = references(snapshot) | references(decisions) | set(publication_refs)
     registry_index = read(intent_path) if intent_path.exists() else None
-    if is_index(registry_index):
+    if is_index(registry_index) and not lightweight:
         deferred_paths.extend(shard_path(intent_path, entry) for entry in registry_index['entries'])
     # Reuse the fully validated logical registry; never parse each capture twice.
     deferred_documents = {path: read(path) for path in deferred_paths if path != intent_path
@@ -410,7 +421,9 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
     sources = {r['id']: r for r in provenance['records']}
     urbanism_schema = read(models / 'schemas/urbanism.schema.json')
     errors = validate_contract(decisions, read(models / 'schemas/decisions.schema.json'))
-    errors += validate_sources(provenance) + validate_urbanism(snapshot, sources, urbanism_schema)
+    errors += validate_sources(provenance)
+    if not lightweight:
+        errors += validate_urbanism(snapshot, sources, urbanism_schema)
     errors += revision_errors(inputs['input_revision'], snapshot)
     if errors:
         # Report still needs to explain edits even when their revisions need correction.
@@ -460,6 +473,8 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
 
 
 def prepare(root, version, source_refs, additional_path=None, *, review_path=None, guide_path=None):
+    if (Path(root) / 'modeles/git-history.json').is_file():
+        raise ValueError('Use release.py for the Git-backed publication workflow')
     bundle = build_candidate(root, version, source_refs, additional_path, review_path=review_path)
     return stage_candidate(root, bundle, guide_path=guide_path)
 
@@ -526,6 +541,8 @@ def stage_candidate(root, bundle, *, guide_path=None):
 
 
 def publish_prepared(root, version, activate=False):
+    if (Path(root) / 'modeles/git-history.json').is_file():
+        raise ValueError('Use release.py for the Git-backed publication workflow')
     models, pointer, _, _, current_manifest_path = load_current(root)
     valid_version(version)
     stage = checked_path(models / 'staging', version)

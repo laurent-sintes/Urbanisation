@@ -1,7 +1,0 @@
-{
-  "checks": [
-    "Les trois palettes et les deux vues sont fonctionnelles ; avertissement de maquette présent.",
-    "Pas de débordement horizontal des deux vues à 1440 et 390 px."
-  ],
-  "errors": []
-}

@@ -1,9 +1,0 @@
-{
-  "protected_file_count": 153,
-  "changed_protected_files": [],
-  "model_validation_errors": 0,
-  "source_records_after_refresh": 1186,
-  "git_diff_check": "passed",
-  "local_markdown_links": "6 files, no missing target",
-  "independent_review": "3 findings resolved: active vs candidate allocations; conditional pre-order/pre-promise dependencies; sixth D07 domain mention counted"
-}

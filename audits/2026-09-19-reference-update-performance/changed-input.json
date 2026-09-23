@@ -1,7 +1,0 @@
-{
-  "validation_with_uncached_backlog_seconds": 2.275,
-  "changed_input": "Comment injected into reads in this process only; business bytes on disk untouched. Forces an uncached YAML parse.",
-  "full_model_serialization_and_roundtrip_seconds": 2.556,
-  "unchanged_model_read_seconds": 0.025,
-  "serialized_bytes": 1292900
-}

@@ -14,11 +14,13 @@ from pathlib import Path
 import re
 
 try:
+    from .git_history import read_bytes
     from .glossary import validate as validate_glossary
     from .json_contract import validate as validate_contract
     from .release_catalog import resolve_release
     from .structured_io import read as read_document, working_path
 except ImportError:
+    from git_history import read_bytes
     from glossary import validate as validate_glossary
     from json_contract import validate as validate_contract
     from release_catalog import resolve_release
@@ -560,7 +562,7 @@ def _pointer(root, base, pointer, errors, hash_key="sha256"):
     target = (base / pointer["path"]).resolve()
     if not target.is_relative_to(root.resolve()):
         raise ValueError(f"pointer escapes project: {pointer['path']}")
-    if hashlib.sha256(target.read_bytes()).hexdigest() != pointer.get(hash_key):
+    if hashlib.sha256(read_bytes(target)).hexdigest() != pointer.get(hash_key):
         errors.append(f"{target.relative_to(root)}: pointer hash mismatch")
     return target, _load(target)
 

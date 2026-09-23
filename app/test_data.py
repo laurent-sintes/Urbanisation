@@ -20,6 +20,7 @@ from atlas_data import (
 )
 from server import create_server
 from scripts.release_catalog import resolve_release
+from scripts.git_history import read_bytes as artifact_bytes, git
 from scripts.structured_io import read as read_document, dumps
 
 def active_pointer(root):
@@ -52,8 +53,22 @@ class SourceFixture(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             if source.is_dir():
                 shutil.copytree(source, target)
-            else:
+            elif source.is_file():
                 shutil.copyfile(source, target)
+            else:
+                target.write_bytes(artifact_bytes(source))
+        # Only the legacy version exercised by these HTTP tests is materialized.
+        for prefix in ('release/2026-09-13.4', 'revisions/2026-09-13.4', 'provenance/2026-09-13.4'):
+            names = git(REPOSITORY_ROOT, 'ls-tree', '-r', '--name-only', '66b4d7a2fc796ea4d48fe7da0461a794fab1c345', '--', 'modeles/' + prefix).decode().splitlines()
+            for name in names:
+                destination = self.root / name
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(artifact_bytes(REPOSITORY_ROOT / name))
+
+        manifest_path = self.root / 'modeles/release/2026-09-13.4/manifest.json'
+        manifest = read_document(manifest_path)
+        manifest['decision_registry_files'] = {}
+        manifest_path.write_text(dumps(manifest, '.json'), encoding='utf-8')
 
     def cleanup_fixture(self):
         target = self.root.resolve()

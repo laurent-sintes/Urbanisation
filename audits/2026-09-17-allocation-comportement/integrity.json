@@ -1,9 +1,0 @@
-{
-  "protected_files_unchanged": 134,
-  "existing_relations_unchanged": 98,
-  "changed_existing_nodes": [
-    "D02.b"
-  ],
-  "added_node": "BHV011",
-  "added_relation": "REL-PROTECTION-BHV011"
-}

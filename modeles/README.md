@@ -86,38 +86,9 @@ La première extraction restreinte, `2026-09-13.1`, est conservée comme histori
 
 ## Organisation physique
 
-```text
-modeles/
-  backlog/
-    model.json                         # graphe de travail et alternatives
-    legacy-capabilities.json           # 36 CAP historiques, distinctes de P81
-    panorama-candidates.json            # besoins, cible ou mentions non instruits
-    modeling-roadmap.json                # extensions prévues, sans les instancier
-    applicability.json                  # épreuve distincte pour les quatre contextes
-  staging/<version>/                    # candidat et rapport contrôlables, non publiés
-  release/
-    current.json                       # version locale publiée et empreinte
-    <version>/model.json
-    <version>/manifest.json             # liens et empreintes des entrées gelées
-    <version>/changes.json              # bilan des nouvelles publications
-  panorama-as-is/
-    current.json
-    shared-2026-09-13.1.json             # contexte commun, notamment C-Log
-    beaumanoir-historique/versions/<version>/panorama.json
-    boardriders/versions/<version>/panorama.json
-    sarenza/versions/<version>/panorama.json
-  revisions/<version>/backlog.json      # état de travail gelé pour publication
-  decisions/<version>.json              # portées de validation et preuves
-  provenance/source-records.json        # index courant des sources capturées
-  provenance/<version>/source-records.json
-  schemas/
-    urbanism.schema.json
-    decisions.schema.json
-    panorama.schema.json
-    panorama-record.schema.json
-```
+Le backlog YAML, ses glossaires et les connaissances marché restent les sources courantes. `release/index.json` désigne la publication active et conserve le catalogue des versions. Seule la version courante garde ses fichiers complets dans l’arbre : modèle publié, snapshot source, décisions et provenance. `git-history.json` associe les chemins historiques retirés à des commits exacts ; le lecteur restitue leurs octets à la demande sans les recopier dans le projet.
 
-Les trois dossiers du panorama sont des périmètres SI. Le fichier partagé ne constitue pas un quatrième SI. La date de version exprime une consolidation de connaissance : elle ne prouve pas une observation récente de l’installation.
+`backlog/decision-intents.yaml` ne contient que les accords en attente. Les accords appliqués sont dans `decisions/VERSION.json`. Les états précédents de ces données sont conservés dans Git. `panorama-as-is/current.json` reste l’autorité de l’existant ; ses périmètres SI et son contexte partagé sont inchangés.
 
 ## Structure du modèle
 
@@ -179,15 +150,9 @@ Le [registre d’applicabilité](backlog/applicability.yaml) prépare quatre con
 2. Modifier le backlog JSON, conserver les identifiants et incrémenter la révision des éléments modifiés. Actualiser les liens marché ou signaler leur comparaison restant à faire dans les sources associées. Consigner l’analyse en Markdown.
 3. Pour une publication, figer une nouvelle révision JSON dans `revisions/`, les décisions applicables dans `decisions/` et les preuves dans `provenance/`. Une modification d’un champ adopté ne réutilise pas automatiquement la validation de sa valeur antérieure. Les décisions doivent cibler les révisions et empreintes réellement publiées.
 4. Utiliser le [skill release](../skills/release/SKILL.md) et [prepare_release.py](../scripts/prepare_release.py) pour comparer le backlog vivant, préparer le candidat et publier sa capture contrôlée. La préparation écrit seulement `modeles/staging/<version>/`. La publication refuse une entrée altérée ou un contexte modifié depuis la préparation, puis active le pointeur local en dernier. U504 : les décisions conservent leur portée. Un report sur une autre révision est automatique uniquement si valeurs et contexte métier restent identiques ; un changement métier exige un réexamen explicite. Le rapport distingue les validations suspendues et conserve leur historique.
-5. Exécuter les contrôles, actualiser les restitutions et le journal. Publier un contenu candidat ne constitue jamais une validation métier. Une publication externe reste une action différente de cette publication locale.
+5. Exécuter les contrôles, vérifier la publication servie par Atlas. Publier un contenu candidat ne constitue jamais une validation métier. Une publication externe reste une action différente de cette publication locale.
 
-Commande employée pour la publication complète initiale, conservée comme exemple **à ne pas rejouer avec cette version déjà créée** :
-
-```powershell
-python scripts/publish_release.py --from-manifest modeles/release/2026-09-13.1/manifest.json --version 2026-09-13.2 --source U111 --activate
-```
-
-Cet ancien appel republie une capture historique ; il n’intègre pas le backlog vivant. Pour le travail courant, employer `python scripts/prepare_release.py report`, puis `prepare --version VERSION --source SOURCE`, et `publish --version VERSION --activate`. La source doit autoriser cette publication, et non seulement la création du skill. Une nouvelle publication requiert une nouvelle version et des entrées gelées cohérentes. Les scripts ne fabriquent pas les validations métier. Les enveloppes versionnées et leurs sources gelées ne sont jamais éditées sur place ; seules les entrées courantes et les pointeurs évoluent. Le suivi Git a été ajouté après le refactoring, selon U114, avec le dépôt distant Urbanisation. Les captures figées restent des preuves distinctes des commits ; leur publication GitHub nécessite un push. `.gitattributes` préserve les octets utilisés pour leurs empreintes.
+Le parcours courant est `python scripts/release.py --source SOURCE --activate`. Il intègre le backlog vivant sans fabriquer d’accord métier. Les anciens scripts de migration et de publication restent des adaptateurs de compatibilité, pas des étapes supplémentaires à exécuter. `.gitattributes` préserve les octets utilisés pour les empreintes ; Git conserve les versions remplacées.
 
 Pour le panorama, enrichir les données structurées à partir de nouvelles preuves, puis créer une nouvelle version par SI et réviser l’index. Une nouvelle date de consolidation ne doit pas avancer artificiellement `observed_at`. Le fichier partagé reste lui aussi versionné.
 
@@ -264,19 +229,17 @@ Après une modification, utiliser la matrice de contrôles d’[AGENTS.md](../AG
 
 `prepare_release.py report` affiche une synthèse avec le nombre d’erreurs et l’aptitude à préparer une release. `--full` imprime tous les détails ; `--output chemin-nouveau.json` enregistre le rapport complet dans un nouveau fichier, sans écraser un fichier existant. Les vérifications et le rapport figé d’une préparation restent complets.
 
-### Parcours de release regroupé — U504
+### Parcours de publication léger
 
 ```powershell
 python scripts/release.py --source SOURCE --activate
 ```
 
-Une seule construction du candidat pour le cas courant, puis capture, publication, contrôle d’Atlas, restitution release et journal. Sans `--activate`, le parcours prépare seulement. Il affiche `prepared`, `published`, `unchanged`, `needs_review`, `blocked`, `published_checks_failed` ou `publication_incomplete`, avec durées par étape. Le compte rendu est dans `.runtime/release-runs/VERSION/`. Les publications historiques, leurs preuves et leurs associations restent immuables.
+Une construction et une validation du candidat, staging temporaire dans `.runtime/publication/VERSION/`, contrôle des empreintes, activation puis contrôle d’Atlas. Sans `--activate`, la commande prépare seulement. Aucun commit, push, build ni audit global n’est implicite. Aucun rapport cumulatif ou copie d’annexes n’est publié.
 
-La commande ne lance ni build, ni navigateur, ni redémarrage serveur. Les vérifications de données et d’intégrité sont maintenues ; les tests et le build du code sont réalisés au moment de sa modification. Les README renvoient à l’index et à la restitution générée plutôt que de multiplier les compteurs à actualiser.
+La publication précédente doit être committée avant son retrait des fichiers actifs. Le backlog peut être modifié : ses octets, les sources et le code sont liés à la préparation. Toute modification après préparation bloque l’activation. Une préparation existante se reprend avec la même version et les mêmes sources, sans nouvelles entrées. Après interruption d’écriture, inspecter les artefacts et le pointeur avant de reprendre.
 
-Une préparation figée se reprend avec `--version VERSION --source SOURCE --activate`, sans nouvelles entrées. Pour une version déjà active, cette même commande refait les contrôles sans republier ni dupliquer le journal. Un état `publication_incomplete` conserve les artefacts et demande un diagnostic ciblé ; il n’entraîne aucune réécriture ni nouvelle tentative aveugle d’activation.
-
-`--guide CHEMIN_YAML` intègre une nouvelle édition explicite du guide : sources, version, octets et association sont vérifiés et figés avant activation. Sans cette option, le guide précédent est conservé. Aucune génération automatique des formulations pédagogiques.
+`--guide CHEMIN_YAML` intègre une nouvelle édition explicite ; sinon l’association figée précédente est conservée. La publication courante est autonome. L’accès historique exige le dépôt Git et ses objets ; il ne requiert aucun téléchargement réseau ni arborescence restaurée.
 
 ### Enregistrer un accord explicite avant la release
 
@@ -284,63 +247,17 @@ Une préparation figée se reprend avec `--version VERSION --source SOURCE --act
 python scripts/record_decision.py --id ADOPT-SOURCE-OBJET --collection nodes --target ID --fields name --source SOURCE --author Laurent --decided-at YYYY-MM-DD --interpretation explicit --reviewer Codex --note "Portée exacte présentée et acceptée"
 ```
 
-Répéter `--fields` et `--source` pour une portée multiple. L’annexe YAML `backlog/decision-intents.yaml` conserve les valeurs explicitement sélectionnées, leurs empreintes, l’auteur, les sources et le contexte. Elle ne déduit aucun accord depuis `lifecycle` et n’est pas un second modèle. L’enregistrement intervient après les modifications correspondant à l’accord ; il ne modifie pas les champs ni leur lifecycle.
-
-Le registre courant est découpé : `backlog/decision-intents.yaml` contient un index, les suspensions et les empreintes ; `backlog/decision-intents/active/` contient les captures nouvelles et `archive/` celles déjà figées lors de la migration. Chaque accord est un fichier YAML immuable nommé par son empreinte. « Archivé » décrit le stockage, pas un statut d’adoption : les suspensions et remplacements gardent leur portée.
-
-L’enregistrement contrôle les empreintes de tous les fragments, les sources et les liens de remplacement, puis lit seulement les captures directement concernées. Il valide intégralement les nouveaux accords et remplace atomiquement le petit index après écriture des fragments. Un verrou système `.decision-intents.lock` empêche les écritures concurrentes et est libéré même si le processus s’arrête ; conserver ce fichier local, ignoré par Git. Une interruption peut laisser un fragment non référencé, qui ne vaut jamais accord.
-
-Utiliser `scripts.decision_registry.read_registry` pour lire le registre logique complet : ce lecteur vérifie aussi les résumés de l’index, les valeurs et les contextes de tous les accords. La publication emploie ce contrôle exhaustif, fige l’index et les fragments avec leurs empreintes et vérifie les historiques consommés. Les anciens registres monolithiques restent lisibles sans réécrire les publications. Le cache reste jetable ; il ne remplace aucun contrôle d’intégrité.
-
-Le point d’entrée `python scripts/validate_models.py` inclut ce contrôle exhaustif, la validité des sources et la conservation des accords et suspensions du snapshot courant. Il vérifie aussi la concordance du nom de chaque fragment avec son empreinte. Les fragments non référencés sont comptés dans `decision_unreferenced_shards`, sans accord implicite ni suppression automatique. Les nouveaux accords dont le contexte diffère du backlog courant restent examinés lors de la préparation de release ; la validation générale n’exige pas que tous les accords historiques s’appliquent encore au modèle en construction. Une lecture exhaustive sans cache reste plus coûteuse qu’un ajout ciblé.
-
-Les nouvelles publications inscrivent l’inventaire et les empreintes du registre figé dans leur manifeste (`decision_registry_files`) : une annexe déclarée manquante ou modifiée bloque la validation et la préparation suivante. Pour les publications préparées antérieures, l’inventaire est lu dans le manifeste de préparation après vérification de son empreinte déjà conservée ; garder ce manifeste historique. Les anciennes publications qui ne déclaraient aucun registre restent compatibles. Les remplacements d’accord relisent la capture du prédécesseur pour contrôler leur portée, même lorsque l’index est disponible.
-
-La migration technique `python scripts/decision_registry.py` conserve les octets des captures, vérifie l’équivalence du registre reconstitué avant de basculer et range les identifiants du snapshot courant sous `archive/`. Elle ne publie rien. Une migration répétée contrôle le registre existant sans le réécrire. Pour un ancien registre monolithique, l’ajout incrémental reste disponible.
-
-Mesure reproductible sans modifier les accords réels : `python scripts/benchmark_record_decision.py --target ID --source SOURCE`. Le script utilise une copie isolée sous `.runtime/decision-benchmark/`, compare les ajouts à froid et à chaud, vérifie l’historique par une lecture indépendante, puis supprime sa copie. Le dernier rapport reste dans `.runtime/decision-benchmark/latest.json`. Employer des identifiants existants ; les accords de mesure restent exclusivement dans la copie.
-
-La préparation matérialise ces accords sur les révisions finales. Un changement des valeurs ou du contexte bloque les intentions inédites devenues périmées. Les intentions déjà figées restent historiques, même si leur décision a ensuite été remplacée, suspendue ou reportée. Leur retrait ou leur réécriture ne peut pas réactiver un accord. Les décisions JSON historiques et l’option `--decisions` restent compatibles.
+Répéter `--fields` et `--source` au besoin ; `record_intents` enregistre un lot atomiquement. Les valeurs, auteur, sources et empreintes de contexte sont conservés dans le registre des intentions en attente. Après publication, les accords applicables sont portés par les décisions courantes ; Git conserve les captures antérieures. Un report sans changement de sens conserve l’identifiant d’accord et ne rallonge pas sa note.
 
 ### Parcours maintenu de réexamen des accords
 
-Un changement de révision seul ne suspend plus systématiquement un accord. Le report automatique vérifie les valeurs approuvées, les champs métier de la cible, les relations incidentes, les voisins, les ancêtres de rattachement, les principes et les termes de glossaire liés. Les seules différences ignorées sont les métadonnées et références éditoriales expressément reconnues. Les champs inconnus sont significatifs. Un changement de contexte peut nécessiter un examen même si le texte approuvé reste identique.
+`needs_review` fournit un dossier ciblé sous `.runtime/release-reviews/VERSION/`. Lire `prepare_release.py inspect DOSSIER --section review --id ID`, renseigner `assessment.yaml` selon la décision explicite, puis reprendre `release.py --review DOSSIER --source SOURCE --activate`. `retain_partial` conserve seulement les champs historiques inchangés explicitement retenus ; les nouvelles valeurs ne sont pas approuvées implicitement.
 
-`needs_review` fournit directement le dossier utile. Pour un diagnostic indépendant :
-
-```powershell
-python scripts/prepare_release.py report --version VERSION --source SOURCE --review-output DOSSIER
-python scripts/prepare_release.py inspect DOSSIER --section review --id IDENTIFIANT --full
-```
-
-Lire les valeurs et changements de contexte, puis compléter uniquement `assessment.yaml` avec `reviewer` et une justification explicite par décision :
-
-- `retain` reprend tous les champs historiques strictement inchangés.
-- `retain_partial` reprend la liste explicite non vide `approved_fields`, limitée aux champs historiques inchangés. Les autres champs restent hors de cette reprise.
-- `defer` ne reprend aucun champ.
-
-Aucune éligibilité n’est convertie en accord. Les anciens dossiers `retain`/`defer` restent lisibles ; leurs preuves ne sont pas modifiées. Après le réexamen :
-
-```powershell
-python scripts/release.py --version VERSION --source SOURCE --review DOSSIER --activate
-```
-
-Le parcours construit une seule préparation finale et fige le réexamen. Sources, inventaire du backlog, contrat, code Python, guide et entrées préparées sont vérifiés avant publication. Une modification significative rend la préparation périmée. `inspect` lit toujours les rapports enregistrés sans reconstruire ni publier.
+Les dossiers de revue sont locaux. Les décisions résultantes portent la portée et les sources de l’accord ; aucune copie du dossier n’est ajoutée à chaque publication.
 
 ### Mesurer le parcours sans toucher au modèle
 
-```powershell
-python scripts/benchmark_reference_update.py --iterations 3 --output CHEMIN_NEUF.json
-```
-
-Le benchmark copie seulement les entrées utiles dans des dossiers jetables sous `.runtime/reference-benchmark/`, y simule une précision de note éditoriale, puis compare quatre constructions successives au parcours diagnostic + préparation. Les décisions simulées sont propres à ces copies et ne valent aucun réexamen réel. Aucun appel de publication ; les fichiers sources sont contrôlés inchangés. Exécuter seul, sans suite de tests ou autre charge concurrente. Les temps couvrent le travail Python, pas les lectures et raisonnements du LLM ni le réexamen métier réel. Les copies préparatoires sont exclues des temps comparés.
-
-`python -m scripts.render_behavior_gap_audit` réutilise un contrôle réussi uniquement si les empreintes des modèles, historiques, preuves protégées, vues et scripts sont identiques. Le checkpoint local est dans `.runtime/behavior-audit-checkpoint.json`, hors Git. Tout changement, disparition, ajout ou cache invalide impose le rejeu. `--full` force ce rejeu ; `--details` affiche toutes les vérifications. Un échec supprime le checkpoint précédent. Une modification d’entrée pendant le contrôle interdit de mémoriser sa réussite. Ce cache de vérification n’accorde aucune validation métier et n’est jamais utilisé par la publication. Python `-O` est refusé pour conserver les assertions.
-
-Le lecteur YAML rejette les alias pendant l’unique analyse. Son cache en mémoire est borné à 128 entrées et 128 Mio de fichiers sources (les objets Python peuvent occuper davantage), avec un maximum de 64 Mio par entrée pour préserver les petits documents. Le cache disque est borné à 256 Mio, 128 entrées et 64 Mio par entrée. Chaque lecture relit et hache les octets ; taille et date ne suffisent jamais à déclarer un fichier inchangé. Chaque appel reçoit une copie indépendante. Les signatures des publications sont toujours contrôlées.
-
-La préparation copie les annexes octet pour octet après vérification de leur empreinte. La publication vérifie à nouveau le candidat et les contrats, puis copie les artefacts préparés sans décodage ni réencodage supplémentaire. Les copies sont exclusives, contrôlées à la lecture et après écriture ; l’activation reste la dernière opération. Les anciennes publications et le format des accords ne sont pas modifiés par cette optimisation.
-
+`python -m scripts.benchmark_lean_release` mesure une publication éditoriale complète sur copie isolée dotée de son propre Git, à froid puis à chaud. Les résultats sont indicatifs et la vérification HTTP est séparée. `validate_models.py` reste disponible pour un contrôle global explicite ; il ne fait plus partie de chaque publication.
 
 ## Améliorations de lecture U458
 
@@ -362,11 +279,3 @@ Les champs facultatifs `fields.request_origins` (capacité uniquement) et `field
 
 
 **Réexamen des intentions inédites — U509.** `record_decision.py --supersedes ID_ANTERIEUR` ajoute une nouvelle preuve explicitement réexaminée sans modifier l’ancienne. Même cible et champs identiques ou réduits ; aucun report automatique du contexte. Les preuves déjà publiées passent par le parcours de réexamen de publication. L’API `record_intents(root, parameters)` enregistre un lot relu sur un seul état final et une seule écriture atomique ; chaque accord garde sa source, ses champs et sa note.
-
-## Publication sobre (23 septembre 2026)
-
-Le paquet publié conserve le modèle, le glossaire, les décisions applicables, leurs preuves nécessaires et le guide associé. Les études marché et dossiers de travail restent dans la base de connaissance ; les annexes de réflexion du backlog ne sont plus recopiées dans chaque publication. Cette règle remplace les descriptions historiques ci-dessus de gel systématique des annexes.
-
-`changes.json` décrit les différences par identifiant. Pour le registre d’accords, il expose les métadonnées et empreintes des champs/contexte ; les captures référencées portent les preuves, sans seconde copie dans le rapport. Les captures nouvelles utilisent `semantic-sha256-v1` : valeurs approuvées explicites et empreintes du contexte. Les anciens contextes complets restent contrôlés et lisibles. Les diagnostics regroupent toutes les intentions périmées avant la préparation finale.
-
-La v020 a été allégée sur autorisation explicite de Laurent : rapport ramené de 108 950 758 à 1 713 483 octets et retrait de 94 annexes de travail du paquet. Le modèle publié et le fichier des décisions conservent leurs empreintes.

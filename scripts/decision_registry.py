@@ -7,8 +7,10 @@ import re
 import tempfile
 
 try:
+    from .git_history import enabled
     from .structured_io import read, loads, dumps, ModelLoader
 except ImportError:
+    from git_history import enabled
     from structured_io import read, loads, dumps, ModelLoader
 
 FORMAT = 'decision-intents-index-v1'
@@ -114,6 +116,8 @@ def read_consumed_registry(root, version, sources=None):
     root = Path(root)
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}\.[1-9]\d*', version):
         raise ValueError('Invalid consumed registry version')
+    if enabled(root):
+        return None  # Published approvals live in the current decisions, past states in Git.
     base = root / 'modeles/revisions' / version
     frozen = base / 'deferred/decision-intents.yaml'
     manifest_path = root / 'modeles/release' / version / 'manifest.json'

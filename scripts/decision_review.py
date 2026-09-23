@@ -30,8 +30,24 @@ def input_state(root):
                      if p.is_file() and p.suffix in ('.yaml', '.yml', '.json'))
     paths.extend((root / 'modeles/backlog/decision-intents').rglob('*.yaml'))
     paths.extend(root / p for p in ('modeles/provenance/source-records.json',
-                                   'modeles/release/index.json', 'modeles/modeling-guides/index.yaml')
+                                   'modeles/release/index.json', 'modeles/modeling-guides/index.yaml',
+                                   'modeles/git-history.json')
                  if (root / p).exists())
+    if (root / 'modeles/git-history.json').is_file():
+        # Bind the approved baseline as well as the working sources. This is a
+        # byte check, not another semantic validation of the previous release.
+        folder = root / 'modeles/release'
+        index = read(folder / 'index.json')
+        descriptor = folder / index['current']
+        model = folder / read(descriptor)['path']
+        manifest_path = model.parent / 'manifest.json'
+        manifest = read(manifest_path)
+        paths.extend((descriptor, model, manifest_path))
+        for key in ('input_revision', 'decisions', 'provenance'):
+            path = (model.parent / manifest[key + '_path']).resolve()
+            if not path.is_relative_to(root):
+                raise ValueError('Publication baseline escapes the project')
+            paths.append(path)
     return {
         'files': {p.relative_to(root).as_posix(): digest(p) for p in sorted(paths)},
         'tool_code': {p.name: digest(p) for p in sorted(Path(__file__).parent.glob('*.py'))},
