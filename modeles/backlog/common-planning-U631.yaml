@@ -1,0 +1,161 @@
+id: common-planning-U631
+date: '2026-09-23'
+source_refs:
+- U631
+- U630
+- U628
+- U572
+- U578
+status: applied_scoped_agreement_decomposition_pending
+agreement:
+  definition: Construire, comparer et maintenir un plan cohérent de couverture des commandes et des besoins prévisionnels
+    restants ; mobiliser les décisions spécialisées, faire appliquer les recommandations autorisées et suivre leurs effets.
+  type: planning
+  parent: D03
+  apply_plan_definition: Faire appliquer les recommandations autorisées et constater leur prise en compte.
+  not_globally_adopted:
+  - Nom final de la capacité
+  - Choix des identifiants survivants et successions techniques
+  - Descriptions développées et comparaisons adaptées
+  - Décomposition détaillée des cinq actes de pilotage et du suivi/ajustement
+successors:
+  D03.p: D05.f
+  BHV091: BHV006
+  BHV094: D02.e
+survivor_rationale:
+  D05.f: Capacité existante dont le nom courant porte déjà le périmètre du plan commun ; le maintien de cet identifiant est
+    un choix de mise en œuvre.
+  BHV006: Conserve la simulation historique et reprend les scénarios du carnet sans deuxième comportement homonyme.
+  D02.e: Conserve les liens d’affectation et reprend les ajustements dans Apply Plan ; aucun nouveau niveau.
+previous_state:
+  git_commit: a0d996210b3537a907f554481b0204dd5d2ec987
+  path: modeles/backlog/model.yaml
+  sha256: e2ecab9d8b5dfe6020180d67a37eb0d4ba1985ea8188912336ee1170ea8dd32a
+  retired_ids:
+  - D03.p
+  - BHV091
+  - BHV094
+  removed_member_relations:
+  - REL-MEMBER-D03.p
+  - REL-MEMBER-BHV091
+  - REL-MEMBER-BHV094
+changed_nodes:
+- id: D02.e
+  fields:
+  - name
+  - definition
+  - finality
+  - nature
+  - scope
+  - market_comparisons
+  - market_inspiration
+- id: D03.j
+  fields:
+  - scope
+- id: D05.d
+  fields:
+  - scope
+- id: D05.g
+  fields:
+  - scope
+- id: D05.c
+  fields:
+  - scope
+- id: D05.f
+  fields:
+  - definition
+  - finality
+  - scope
+  - decomposition_rationale
+  - market_comparisons
+  - market_inspiration
+- id: D03
+  fields:
+  - scope
+- id: BHV006
+  fields:
+  - scope
+  - market_comparisons
+  - market_inspiration
+- id: BHV016
+  fields:
+  - definition
+  - scope
+  - market_inspiration
+- id: D05.h
+  fields:
+  - scope
+- id: D03.o
+  fields:
+  - scope
+- id: BHV075
+  fields:
+  - scope
+- id: BHV076
+  fields:
+  - scope
+- id: BHV077
+  fields:
+  - scope
+- id: D04.s
+  fields:
+  - definition
+  - scope
+  - market_comparisons
+  - market_inspiration
+- id: BHV092
+  fields:
+  - scope
+  - market_comparisons
+  - market_inspiration
+changed_relations:
+- REL-MEMBER-D02.e
+- REL-NEEDS-U424-D03.p-D04.o
+- REL-AUDIT-U435-PLNK-01
+- REL-MEMBER-D04.s
+- REL-MEMBER-BHV092
+- REL-U565-ASSIGNMENT-DEMAND-PLAN
+preserved_behavior_ids:
+- BHV005
+- BHV006
+- BHV016
+- D04.s
+- BHV092
+- D02.e
+pending_decomposition:
+  source_refs:
+  - U578
+  - U631
+  pilotage:
+  - Cadrer
+  - Programmer
+  - Lancer
+  - Arrêter
+  - Relancer
+  monitoring_and_adjustment: Distinguer suivi des effets et révision du plan ; le suivi technique du calcul demeure distinct.
+  rule: Les noms hérités et les six comportements courants constituent une étape de consolidation ; pas la validation de la
+    décomposition finale.
+market_review:
+  reused: Audit U628 M01 et sources des deux capacités et comportements prédécesseurs, conservées dans les fiches fusionnées.
+  rechecked_on: '2026-09-23'
+  source_refs:
+  - ELM566
+  - ELM588
+  documents:
+  - https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+  - https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders
+  common: Mise en effet des recommandations et suivi de leur prise en compte.
+  differences: Release et firming sont des mécanismes de produit partiels ; ils ne démontrent ni toutes les politiques FLOW
+    ni une réalisation physique.
+  choice: Regrouper le Planning pour la cohérence du modèle, en conservant les responsabilités partenaires.
+checks:
+  validate_models: 'OK: 0 errors'
+  tests: python -m unittest scripts.test_models scripts.test_model_levels — 36 passed
+  render: python scripts/render_models.py --space backlog
+  source_records: 2320
+  decision_intents: 4
+  published: false
+implementation_U632:
+  status: five_pilot_behaviors_applied
+  path: modeles/backlog/planning-pilotage-U632.yaml
+  remaining: Suivi et ajustement à détailler ; portées historiques U631 conservées.

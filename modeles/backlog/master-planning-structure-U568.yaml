@@ -487,3 +487,12 @@ ctp_and_procurement_U581:
     consulted_on: '2026-09-22'
     access: Texte primaire directement consulté
     limit: Transmission des recommandations et prise en compte aval non assimilées à satisfaction certaine.
+implementation_U631:
+  source_refs:
+  - U631
+  current_manifest: modeles/backlog/common-planning-U631.yaml
+  status: Common Planning and Apply Plan applied; detailed decomposition pending
+  canonical_capability: D05.f
+  application_behavior: D02.e
+  boundary: Les propositions historiques ci-dessus conservent leur portée ; la présente étape ne valide pas tous les noms
+    ni les dix comportements proposés. Les cinq actes U578 restent à expliciter.

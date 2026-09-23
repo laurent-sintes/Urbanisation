@@ -5019,6 +5019,46 @@
       "captured_text": "## U627\n\n**id**\n\nU627\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPublier la consolidation du modèle dans Atlas\n\n**texte**\n\nlance une release\n\n**contexte et portée**\n\nPublication locale dans FLOW Atlas du backlog consolidé U626 et de son guide méthodologique actualisé. La demande autorise la préparation, le réexamen de portée des accords historiques et l'activation de la release ; elle ne vaut pas adoption globale des formulations et rattachements proposés, ni demande de commit ou push."
     },
     {
+      "id": "U628",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u628",
+      "line": 15546,
+      "content_sha256": "d790791aeea74f46059074138f28dda2e6af37f03e733bc2571d0654360f18cf",
+      "captured_text": "## U628\n\n**id**\n\nU628\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAuditer les capacités et comportements après la refonte du cadre\n\n**texte**\n\nOn a fait une refonte du cadre : Domaine / sous domaine.\nJ'aimerais revoir les contenus : capacité et comportement\n\nJ'aimerais un audit de l'existant sur :\nle classement\nles types\nles contenus\nla cohérence\nles manques\n\nComplément : « Les ref au marché »\n\n**contexte et portée**\n\nDemande d'audit du contenu courant des capacités et comportements après la consolidation U626, selon six axes : classement, types, contenus, cohérence, manques et références au marché. Le cadre canonique U624 demeure Domain → Purpose / Finalité → Capability → Behavior ; la formulation « sous domaine » situe la demande sans décision explicite de renommage. Examiner le backlog courant et distinguer constats, interprétations et recommandations, avec leurs preuves et limites. Ce nouvel audit demandé ne modifie pas la clôture historique U431. Aucune correction du modèle, adoption de proposition, release, commit ou push n'est déduite de cette demande."
+    },
+    {
+      "id": "U629",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u629",
+      "line": 15578,
+      "content_sha256": "5747ede7f931a7edea52e337252c2ad598514d8db3a70f8cefcbd70a46c33768",
+      "captured_text": "## U629\n\n**id**\n\nU629\n\n**date**\n\n2026-09-23\n\n**titre**\n\nPréciser l'origine SAP du terme Fill-up\n\n**texte**\n\nFill-Up vient de SAP\n\n**contexte et portée**\n\nPrécision pendant l'audit U628 : Fill-up est un terme SAP. Le constat d'audit vise l'attribution supplémentaire de « Consignment Fill-up Order » à Microsoft dans le périmètre de D04.r ; la page Microsoft consultée emploie « Consignment replenishment order ». Préserver l'origine SAP et distinguer appui au nom et correspondance fonctionnelle. Aucun rejet ni renommage de Consignment Fill-up Order n'est déduit de cette précision."
+    },
+    {
+      "id": "U630",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u630",
+      "line": 15600,
+      "content_sha256": "fd0ac944c703d0d2e226e62eb0506556035a36370f8f22b5c9b9599c3c41dba8",
+      "captured_text": "## U630\n\n**id**\n\nU630\n\n**date**\n\n2026-09-23\n\n**titre**\n\nCommencer la reprise par le plan commun\n\n**texte**\n\nOk, on commence par le début\n\n**contexte et portée**\n\nInstruction de commencer la reprise à partir de l'audit U628 et de l'ordre proposé : plan commun et responsabilités en premier. Préparer une proposition concrète pour A01 à partir des accords U572, U578 et du cadre U626. Cet acquiescement porte sur l'ouverture du travail ; il ne valide pas les quatorze recommandations, une fusion précise de capacités, les descriptions à venir ni une publication."
+    },
+    {
+      "id": "U631",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u631",
+      "line": 15622,
+      "content_sha256": "307c53156222e7279795663305fe4930ea32592d64d3a6c148428e7c78986587",
+      "captured_text": "## U631\n\n**id**\n\nU631\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider la capacité Planning commune et ses responsabilités\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée : réunir Order Backlog Planning D03.p et Demand & Supply Optimization Planning D05.f dans une seule capacité de type Planning sous Demand & Supply Optimization. Définition présentée et adoptée : « Construire, comparer et maintenir un plan cohérent de couverture des commandes et des besoins prévisionnels restants ; mobiliser les décisions spécialisées, faire appliquer les recommandations autorisées et suivre leurs effets. »\n\nLe Planning organise le travail, compare les scénarios, maintient et ajuste le plan retenu. Les capacités Decision déterminent les affectations, cibles, apports, priorités et autres arbitrages et assurent leur compatibilité. Apply Plan est un comportement direct : « Faire appliquer les recommandations autorisées et constater leur prise en compte. » Les partenaires conservent commandes, promesses, réservations, politiques et orchestration des prestations. L'exemple d'un transfert accepté et d'un achat refusé distingue effets pris en compte, manque visible et réexamen ; il ne présume aucune disponibilité acquise pour la part refusée.\n\nLes cinq actes de pilotage antérieurement distingués et Apply Plan sont conservés pour construire ensuite la décomposition. L'identifiant survivant, la succession détaillée des comportements, le nom final de la capacité et les rédactions complémentaires restent des choix de mise en œuvre ou propositions à qualifier, sans adoption globale. Aucun accord sur les autres constats de l'audit ni demande de release, commit ou push."
+    },
+    {
+      "id": "U632",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u632",
+      "line": 15648,
+      "content_sha256": "3105e5b7458dca6ffdfb160ff98fbd0b5725a48e7531ace388aacb02d758065f",
+      "captured_text": "## U632\n\n**id**\n\nU632\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider les cinq comportements de pilotage du Planning commun\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur les cinq comportements directement sous le Planning commun présentés après « next ». Noms, définitions, frontières et type « pratique de planification » adoptés :\n\n- Scope Planning : « Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail. » Frontière : « Sélectionner les politiques applicables ne signifie pas les modifier. »\n- Schedule Planning : « Fixer quand le travail sera lancé, ponctuellement ou selon une récurrence. » Frontière : « Il s’agit du calendrier de planification, pas des dates de livraison. »\n- Run Planning : « Engager le travail cadré pour produire un résultat de planification en mobilisant les décisions nécessaires. » Frontière : « Lancer le calcul n’autorise ni n’applique ses résultats. »\n- Stop Planning : « Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif. » Frontière : « Cela n’annule ni le plan déjà applicable ni les opérations engagées. »\n- Rerun Planning : « Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. » Frontière : « Relancer ne garantit pas une reprise au point d’arrêt. Ajuster le plan reste une responsabilité distincte. »\n\nCes actes distinguent des résultats utiles sans imposer une séquence ni une intervention humaine. Les rapprochements Oracle et Microsoft étayent des mécanismes fonctionnels ; les cinq libellés et leur classification restent une convention FLOW. Le choix des identifiants et les compléments éditoriaux ne constituent pas un accord global. Suivi et ajustement restent à détailler. Aucune publication, aucun commit ni push demandé."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",

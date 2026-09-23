@@ -15542,3 +15542,135 @@ lance une release
 **contexte et portée**
 
 Publication locale dans FLOW Atlas du backlog consolidé U626 et de son guide méthodologique actualisé. La demande autorise la préparation, le réexamen de portée des accords historiques et l'activation de la release ; elle ne vaut pas adoption globale des formulations et rattachements proposés, ni demande de commit ou push.
+
+## U628
+
+**id**
+
+U628
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Auditer les capacités et comportements après la refonte du cadre
+
+**texte**
+
+On a fait une refonte du cadre : Domaine / sous domaine.
+J'aimerais revoir les contenus : capacité et comportement
+
+J'aimerais un audit de l'existant sur :
+le classement
+les types
+les contenus
+la cohérence
+les manques
+
+Complément : « Les ref au marché »
+
+**contexte et portée**
+
+Demande d'audit du contenu courant des capacités et comportements après la consolidation U626, selon six axes : classement, types, contenus, cohérence, manques et références au marché. Le cadre canonique U624 demeure Domain → Purpose / Finalité → Capability → Behavior ; la formulation « sous domaine » situe la demande sans décision explicite de renommage. Examiner le backlog courant et distinguer constats, interprétations et recommandations, avec leurs preuves et limites. Ce nouvel audit demandé ne modifie pas la clôture historique U431. Aucune correction du modèle, adoption de proposition, release, commit ou push n'est déduite de cette demande.
+
+## U629
+
+**id**
+
+U629
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Préciser l'origine SAP du terme Fill-up
+
+**texte**
+
+Fill-Up vient de SAP
+
+**contexte et portée**
+
+Précision pendant l'audit U628 : Fill-up est un terme SAP. Le constat d'audit vise l'attribution supplémentaire de « Consignment Fill-up Order » à Microsoft dans le périmètre de D04.r ; la page Microsoft consultée emploie « Consignment replenishment order ». Préserver l'origine SAP et distinguer appui au nom et correspondance fonctionnelle. Aucun rejet ni renommage de Consignment Fill-up Order n'est déduit de cette précision.
+
+## U630
+
+**id**
+
+U630
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Commencer la reprise par le plan commun
+
+**texte**
+
+Ok, on commence par le début
+
+**contexte et portée**
+
+Instruction de commencer la reprise à partir de l'audit U628 et de l'ordre proposé : plan commun et responsabilités en premier. Préparer une proposition concrète pour A01 à partir des accords U572, U578 et du cadre U626. Cet acquiescement porte sur l'ouverture du travail ; il ne valide pas les quatorze recommandations, une fusion précise de capacités, les descriptions à venir ni une publication.
+
+## U631
+
+**id**
+
+U631
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider la capacité Planning commune et ses responsabilités
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la proposition immédiatement présentée : réunir Order Backlog Planning D03.p et Demand & Supply Optimization Planning D05.f dans une seule capacité de type Planning sous Demand & Supply Optimization. Définition présentée et adoptée : « Construire, comparer et maintenir un plan cohérent de couverture des commandes et des besoins prévisionnels restants ; mobiliser les décisions spécialisées, faire appliquer les recommandations autorisées et suivre leurs effets. »
+
+Le Planning organise le travail, compare les scénarios, maintient et ajuste le plan retenu. Les capacités Decision déterminent les affectations, cibles, apports, priorités et autres arbitrages et assurent leur compatibilité. Apply Plan est un comportement direct : « Faire appliquer les recommandations autorisées et constater leur prise en compte. » Les partenaires conservent commandes, promesses, réservations, politiques et orchestration des prestations. L'exemple d'un transfert accepté et d'un achat refusé distingue effets pris en compte, manque visible et réexamen ; il ne présume aucune disponibilité acquise pour la part refusée.
+
+Les cinq actes de pilotage antérieurement distingués et Apply Plan sont conservés pour construire ensuite la décomposition. L'identifiant survivant, la succession détaillée des comportements, le nom final de la capacité et les rédactions complémentaires restent des choix de mise en œuvre ou propositions à qualifier, sans adoption globale. Aucun accord sur les autres constats de l'audit ni demande de release, commit ou push.
+
+## U632
+
+**id**
+
+U632
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider les cinq comportements de pilotage du Planning commun
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur les cinq comportements directement sous le Planning commun présentés après « next ». Noms, définitions, frontières et type « pratique de planification » adoptés :
+
+- Scope Planning : « Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail. » Frontière : « Sélectionner les politiques applicables ne signifie pas les modifier. »
+- Schedule Planning : « Fixer quand le travail sera lancé, ponctuellement ou selon une récurrence. » Frontière : « Il s’agit du calendrier de planification, pas des dates de livraison. »
+- Run Planning : « Engager le travail cadré pour produire un résultat de planification en mobilisant les décisions nécessaires. » Frontière : « Lancer le calcul n’autorise ni n’applique ses résultats. »
+- Stop Planning : « Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif. » Frontière : « Cela n’annule ni le plan déjà applicable ni les opérations engagées. »
+- Rerun Planning : « Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. » Frontière : « Relancer ne garantit pas une reprise au point d’arrêt. Ajuster le plan reste une responsabilité distincte. »
+
+Ces actes distinguent des résultats utiles sans imposer une séquence ni une intervention humaine. Les rapprochements Oracle et Microsoft étayent des mécanismes fonctionnels ; les cinq libellés et leur classification restent une convention FLOW. Le choix des identifiants et les compléments éditoriaux ne constituent pas un accord global. Suivi et ajustement restent à détailler. Aucune publication, aucun commit ni push demandé.

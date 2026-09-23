@@ -1158,3 +1158,12 @@ decision_content_reference:
   source_refs:
   - U579
   - CMP244
+implementation_U631:
+  source_refs:
+  - U631
+  current_manifest: modeles/backlog/common-planning-U631.yaml
+  status: Common Planning and Apply Plan applied; detailed decomposition pending
+  canonical_capability: D05.f
+  application_behavior: D02.e
+  boundary: Les propositions historiques ci-dessus conservent leur portée ; la présente étape ne valide pas tous les noms
+    ni les dix comportements proposés. Les cinq actes U578 restent à expliciter.
