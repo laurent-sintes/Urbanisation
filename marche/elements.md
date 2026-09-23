@@ -5257,3 +5257,63 @@ Actualisation de consultation ELM438 / ELM328 — 23 septembre 2026, U667–U668
 IBM — [Promising service](https://www.ibm.com/docs/en/sip?topic=overview-promising-service), documentation évolutive, édition exacte non affichée. Consultation le 23 septembre 2026 : passage primaire indexé, ouverture directe refusée HTTP 403. Nature : service produit ; identifiant natif non relevé. Localisateur : présentation du service, données inventory/capacity et delivery timelines. Reformulation : le service consomme stocks et capacités pour déterminer une réponse de promesse et annonce des calculs sous la seconde. Limite : aucune preuve d’un seuil de 200 ms, d’un percentile sous charge ou d’une performance FLOW ; frontières produit non équivalentes aux sous-domaines. Synthèse sélective sans reproduction substantielle. U670, CMP271.
 
 Actualisation ELM352 / ELM653 / ELM411 — U670, 23 septembre 2026 : relecture des pages Oracle GOP 25C (échanges avec Order Management, ATP/CTP et coût), SAP Explaining aATP (PAC et alternatives), Microsoft Inventory Visibility reservations (Sample use case for soft reservation). Comparaison ciblée CMP271, sans revalidation globale des fiches.
+
+
+### ELM656
+
+MKT14 — [Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work). Documentation évolutive, version globale non figée. Nature : Travail interne WMS. Terme natif : Packing work ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Introduction ; Set up a location for packing work.
+
+Reformulation : Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles. Limite : Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM657
+
+MKT14 — [Planned cross docking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking). Documentation évolutive, version globale non figée. Nature : Processus et travail WMS. Terme natif : Cross docking ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Introduction ; Process the cross-docking ; note finale WMS only mode.
+
+Reformulation : Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock sont portées par les lignes des Shipment Orders en mode WMS autonome. Limite : Le produit combine marquage, affectation et exécution ; ne détermine pas la frontière Matching/Fulfilment de FLOW. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM658
+
+MKT13 — [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html). SAP EWM 9.5 FPS02. Nature : Ordre et activités WMS. Terme natif : VAS order ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire indexé lu ; corps direct inaccessible. Passage : Use.
+
+Reformulation : Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. Limite : Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM659
+
+MKT20 — [Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html). Fusion Cloud SCM 25D. Nature : Échanges amont-exécutant. Terme natif : Shipment Request / Shipment Confirmation ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Explanation of callouts, étapes 1 à 3.
+
+Reformulation : Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. Limite : Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM660
+
+MKT13 — [Warehouse Order](https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true). Documentation EWM 7.0 EHP2 ; preuve historique de sémantique. Nature : Lot de travail interne. Terme natif : Warehouse Order ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Definition ; Use ; Example.
+
+Reformulation : Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur. Limite : Maille interne WMS ; faux équivalent d’un ordre de prestation confié par FLOW. Pas de revendication de dernière version. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM661
+
+MKT20 — [Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm). E-Business Suite 12.2. Nature : Processus et tâches WMS. Terme natif : Picking ; Bulk Picking ; Value Added Services ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Overview of the Material Picking Process ; Bulk Picking / Value Added Services.
+
+Reformulation : Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. Limite : Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+Actualisation U674 — 23 septembre 2026 : ELM133 (WMS only mode, introduction et restrictions), ELM129 (TMF633 v4.0, Overview) et ELM492 (TMFC007 2.0.0, présentation et dépendances) reconsultés. Métadonnées, passages et limites dans [l’audit](../modeles/backlog/logistics-execution-audit-U674.yaml). CMP273 ; aucun accord nouveau ni transposition des composants en sous-domaines.
+
+
+### ELM662
+
+MKT13 — [Logistics Execution](https://help.sap.com/doc/a6a8c7536e8e2a4be10000000a174cb4/700_SFIN3E%20006/en-US/2f9cc7536e8e2a4be10000000a174cb4.html). Documentation historique, version produit précise non affichée dans le passage. Nature : Périmètre fonctionnel SAP. Libellé natif : Logistics Execution. Identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire ouvert et lu, passage Use. Reformulation : Couvre livraisons, picking, packing, sortie de stock et planification/suivi du transport. Limite : Appui de nom et de périmètre ; ne prouve ni consensus interéditeurs ni sous-domaine limité à la gestion des prestations confiées. Synthèse sélective et lien. CMP273 / U676 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM663
+
+MKT20 — [Oracle Value Chain Execution](https://www.oracle.com/us/products/applications/ebusiness/logistics/value-chain-execution-brief-068424.pdf). Brochure portant copyright 2009 ; preuve historique, pas présentation de l’offre actuelle. Nature : Suite logicielle. Libellé natif : Supply Chain Execution / Value Chain Execution. Identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire ouvert et lu, passage Page 1, introduction et liste des applications. Reformulation : Regroupe notamment entrepôt, transport, conformité du commerce international et coûts associés. Limite : Catégorie plus large que Fulfilment FLOW ; dénomination commerciale historique, pas taxonomie actuelle de sous-domaines. Synthèse sélective et lien. CMP273 / U676 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).
+
+
+### ELM664
+
+MKT13 — [VAS Execution](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/9609b5f9e9304ef6850945b359a1f5d4/3771b65334e6b54ce10000000a174cb4.html?locale=en-US&state=PRODUCTION&version=2025.001). S/4HANA 2025 FPS01 (Feb 2026). Nature : Activité d’exécution dans un périmètre produit. Libellé natif : VAS Execution. Identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire indexé, passage En-tête Logistics Execution (LE) ; Purpose ; Process Flow. Reformulation : L’exécution des VAS Orders est documentée sous Logistics Execution, avec travail aux postes et VAS supplémentaires pendant picking/putaway. Limite : Texte primaire indexé consulté. Confirme le rattachement documentaire actuel SAP, sans importer ses frontières dans FLOW. Synthèse sélective et lien. CMP273 / U676 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).

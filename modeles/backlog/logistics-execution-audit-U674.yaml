@@ -1,0 +1,445 @@
+id: logistics-execution-audit-U674
+date: '2026-09-23'
+author: Codex
+status: subdomain_and_boundaries_adopted_U679_application_pending
+source_refs:
+- U674
+- U675
+- CMP273
+- U676
+- U677
+- U678
+- U679
+baseline:
+  commit: 8816726d2132df5a300c4089476004a72c8ae3f8
+  model: modeles/backlog/model.yaml
+  model_sha256: 280ea8390cf732391c6559afe7bb09241a55f644d1cb4a64163ff6ab5b0df267
+  release: 2026-09-23.3
+canonical_model_changed: false
+scope: Audit ciblé de la visibilité des prestations logistiques, de leurs ordres et de la frontière de responsabilité ; pas
+  audit historique des comportements.
+sources:
+- id: ELM133
+  reference: MKT14
+  organization: Microsoft
+  title: Warehouse management only mode overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview
+  edition: Documentation évolutive ; mise à jour affichée 2025-11-20
+  locator: Introduction ; Unsupported processes
+  native_nature: Documents et frontière produit
+  native_label: Inbound Shipment Order / Outbound Shipment Order
+  finding: Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+  limits: Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine FLOW.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM656
+  reference: MKT14
+  organization: Microsoft
+  title: Packing work for packing outbound containers and processing shipments
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
+  edition: Documentation évolutive, version globale non figée
+  locator: Introduction ; Set up a location for packing work
+  native_nature: Travail interne WMS
+  native_label: Packing work
+  finding: Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles.
+  limits: Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM657
+  reference: MKT14
+  organization: Microsoft
+  title: Planned cross docking
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking
+  edition: Documentation évolutive, version globale non figée
+  locator: Introduction ; Process the cross-docking ; note finale WMS only mode
+  native_nature: Processus et travail WMS
+  native_label: Cross docking
+  finding: Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock sont portées
+    par les lignes des Shipment Orders en mode WMS autonome.
+  limits: Le produit combine marquage, affectation et exécution ; ne détermine pas la frontière Matching/Fulfilment de FLOW.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM658
+  reference: MKT13
+  organization: SAP
+  title: Value-Added Services (VAS)
+  url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+  edition: SAP EWM 9.5 FPS02
+  locator: Use
+  native_nature: Ordre et activités WMS
+  native_label: VAS order
+  finding: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+  limits: Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire indexé lu ; corps direct inaccessible
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM659
+  reference: MKT20
+  organization: Oracle
+  title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+  edition: Fusion Cloud SCM 25D
+  locator: Explanation of callouts, étapes 1 à 3
+  native_nature: Échanges amont-exécutant
+  native_label: Shipment Request / Shipment Confirmation
+  finding: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+  limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM660
+  reference: MKT13
+  organization: SAP
+  title: Warehouse Order
+  url: https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true
+  edition: Documentation EWM 7.0 EHP2 ; preuve historique de sémantique
+  locator: Definition ; Use ; Example
+  native_nature: Lot de travail interne
+  native_label: Warehouse Order
+  finding: Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur.
+  limits: Maille interne WMS ; faux équivalent d’un ordre de prestation confié par FLOW. Pas de revendication de dernière
+    version.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM661
+  reference: MKT20
+  organization: Oracle
+  title: Oracle Warehouse Management Outbound Logistics
+  url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm
+  edition: E-Business Suite 12.2
+  locator: Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+  native_nature: Processus et tâches WMS
+  native_label: Picking ; Bulk Picking ; Value Added Services
+  finding: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
+  limits: Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage
+    Supply imposé.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM129
+  reference: MKT19
+  organization: TM Forum
+  title: Service Catalog Management API TMF633-v4.0
+  url: https://www.tmforum.org/open-digital-architecture/open-apis/service-catalog-management-api-TMF633/v4.0
+  edition: TMF633 v4.0 ; notice avec mise à jour CTK au 2026-05-15
+  locator: Overview
+  native_nature: API de catalogue
+  native_label: TMF633
+  finding: Gère le cycle des éléments du catalogue de services.
+  limits: Notice publique seulement ; ni schéma complet examiné ni taxonomie logistique. IPR affiché Apache 2.0 sauf indication
+    contraire ; user guide indiqué RAND.
+  consulted_on: '2026-09-23'
+  native_identifier: TMF633
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM492
+  reference: MKT19
+  organization: TM Forum
+  title: Service Order Management
+  url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+  edition: TMFC007 2.0.0 ; date affichée 2024-02-23
+  locator: Présentation ; Exposed APIs ; Dependent APIs
+  native_nature: Composant ODA
+  native_label: TMFC007
+  finding: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+  limits: Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation nécessaire
+    entre gestion d’ordres et orchestration.
+  consulted_on: '2026-09-23'
+  native_identifier: TMFC007
+  definition_status: Reformulation du passage consulté, pas citation ni définition officielle FLOW.
+  access: Texte primaire lu
+  reuse: Synthèse et lien seulement ; aucun contenu propriétaire substantiel reproduit.
+- id: ELM662
+  reference: MKT13
+  organization: SAP
+  title: Logistics Execution
+  url: https://help.sap.com/doc/a6a8c7536e8e2a4be10000000a174cb4/700_SFIN3E%20006/en-US/2f9cc7536e8e2a4be10000000a174cb4.html
+  edition: Documentation historique, version produit précise non affichée dans le passage
+  locator: Use
+  native_nature: Périmètre fonctionnel SAP
+  native_label: Logistics Execution
+  finding: Couvre livraisons, picking, packing, sortie de stock et planification/suivi du transport.
+  limits: Appui de nom et de périmètre ; ne prouve ni consensus interéditeurs ni sous-domaine limité à la gestion des prestations
+    confiées.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage, pas citation.
+  access: Texte primaire ouvert et lu
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+- id: ELM663
+  reference: MKT20
+  organization: Oracle
+  title: Oracle Value Chain Execution
+  url: https://www.oracle.com/us/products/applications/ebusiness/logistics/value-chain-execution-brief-068424.pdf
+  edition: Brochure portant copyright 2009 ; preuve historique, pas présentation de l’offre actuelle
+  locator: Page 1, introduction et liste des applications
+  native_nature: Suite logicielle
+  native_label: Supply Chain Execution / Value Chain Execution
+  finding: Regroupe notamment entrepôt, transport, conformité du commerce international et coûts associés.
+  limits: Catégorie plus large que Fulfilment FLOW ; dénomination commerciale historique, pas taxonomie actuelle de sous-domaines.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage, pas citation.
+  access: Texte primaire ouvert et lu
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+- id: ELM664
+  reference: MKT13
+  organization: SAP
+  title: VAS Execution
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/9609b5f9e9304ef6850945b359a1f5d4/3771b65334e6b54ce10000000a174cb4.html?locale=en-US&state=PRODUCTION&version=2025.001
+  edition: S/4HANA 2025 FPS01 (Feb 2026)
+  locator: En-tête Logistics Execution (LE) ; Purpose ; Process Flow
+  native_nature: Activité d’exécution dans un périmètre produit
+  native_label: VAS Execution
+  finding: L’exécution des VAS Orders est documentée sous Logistics Execution, avec travail aux postes et VAS supplémentaires
+    pendant picking/putaway.
+  limits: Texte primaire indexé consulté. Confirme le rattachement documentaire actuel SAP, sans importer ses frontières dans
+    FLOW.
+  consulted_on: '2026-09-23'
+  native_identifier: null
+  definition_status: Reformulation du passage, pas citation.
+  access: Texte primaire indexé
+  reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+comparisons:
+- target: D04 / D07.b
+  sources:
+  - ELM133
+  - ELM659
+  relation: recouvrement partiel
+  common: Demande amont distincte de la prestation confiée et de son compte rendu.
+  difference: FLOW couvre aussi des prestations humaines et documentaires ; pas seulement des expéditions.
+  proposal: 'U679 : Service Orders dans Service Order Management, distinct d’Order Management et de Fulfilment Orchestration.'
+- target: D07.b / D06.d
+  sources:
+  - ELM492
+  - ELM659
+  relation: recouvrement partiel
+  common: Gestion d’une sollicitation concrète et coordination de sa réalisation.
+  difference: TMFC007 inclut son orchestration ; les composants logiciels ne prescrivent pas des sous-domaines FLOW.
+  proposal: 'U679 : Service Order Management distinct pour les engagements de prestation ; Fulfilment Orchestration pour leur
+    coordination. Répartition détaillée des capacités existantes à instruire.'
+- target: D14
+  sources:
+  - ELM129
+  - ELM492
+  relation: appui méthodologique
+  common: Offre de services séparée des instances commandées et de leur exécution.
+  difference: API et composant télécom, pas catalogue logistique.
+  proposal: Décrire les familles de prestations, résultats, conditions et niveaux de service ; ne pas y mettre les ordres,
+    engagements individuels ou réalisations.
+- target: D07.a / D07.b — picking et packing
+  sources:
+  - ELM656
+  - ELM659
+  - ELM660
+  - ELM661
+  relation: recouvrement partiel
+  common: Prestations et travaux explicites, avec résultats et suivi.
+  difference: La frontière fournisseur peut porter un ensemble pick-pack-ship alors que les tâches opérateur sont séparées.
+  proposal: 'U677–U679 : familles Picking Order et Packing Order au niveau capacité ; la maille des documents ne détermine
+    pas celle des responsabilités.'
+- target: D07.a / D07.b — light touch
+  sources:
+  - ELM658
+  - ELM661
+  relation: appui sémantique
+  common: Étiquetage, reconditionnement léger et opérations VAS.
+  difference: Périmètres VAS variables et parfois plus larges, incluant assemblage ; U675 ne les adopte pas tous.
+  proposal: Famille Value-Added Services ; nommer le résultat exigé de chaque prestation et suivre sa conformité.
+- target: D07.a / D07.b / D03 — cross-docking
+  sources:
+  - ELM657
+  - ELM133
+  relation: recouvrement partiel
+  common: Demande de transit articulant des entrées et des sorties sans stockage conventionnel.
+  difference: Deux documents Microsoft ne prouvent pas un consensus ; leurs affectations WMS ne se confondent pas avec le
+    master plan FLOW.
+  proposal: Matching arbitre la couverture et les affectations ; Fulfilment pilote le passage et ses aléas en respectant ces
+    choix.
+findings:
+- id: F1
+  target: D07.b
+  assessment: Couverture présente, lisibilité insuffisante
+  evidence: Service Task Management gère déjà activation, demandes, réponses, reprises et vérification de fin ; TER066 décrit
+    Service Order comme formalisation facultative. Le nom Task masque la responsabilité de prestation confiée.
+- id: F2
+  target: D14
+  assessment: Complément nécessaire, insuffisant seul
+  evidence: Le catalogue décrit préparation, réception, transport et documents, sans rendre les familles picking, packing,
+    VAS et cross-docking aussi visibles que demandé. Il exclut correctement les engagements et résultats individuels.
+- id: F3
+  target: D06 / D07.a / D07.d / D07.c
+  assessment: Responsabilités déjà distribuées
+  evidence: Déterminer les prestations, les coordonner, suivre les constats et rapprocher les résultats sont distincts. Ne
+    pas les recopier dans une nouvelle capacité générique par opération.
+- id: F4
+  target: REL-SERVICE-CATALOG-PROMISING / D06.b / D07.a / D07.b
+  assessment: Formulations héritées à corriger dans un lot ultérieur
+  evidence: Le lien D14 vers D04 attribue encore la construction de promesse à D04 ; des scopes utilisent Availability ou
+    Demand. Revoir les usages avec Order Promising D18 et Order Management D04, sans supposer que tout lien direct D14-D04
+    soit invalide.
+- id: F5
+  target: TER066 / D07.b
+  assessment: Ambiguïté objet métier et document
+  evidence: TER066 définit Service Order comme un document facultatif. Rendre la prestation commandée explicite impose de
+    distinguer son instance métier, sa formalisation, sa contribution au processus et les tâches internes ; un simple renommage
+    Task serait insuffisant.
+options:
+- option: Enrichir Service Catalog seul
+  recommendation: insuffisant
+  reason: Décrit l’offre, pas les engagements individuels de prestation.
+- option: Gestion générique des ordres conservée dans Fulfilment
+  recommendation: superseded_U677_U679
+  reason: La présence actuelle de D07.b ne justifie pas la frontière cible ; elle masque les familles à la maille des capacités
+    entrantes.
+- option: Service Order Management distinct de Fulfilment Orchestration
+  recommendation: adopted_U679
+  benefit: Distingue gestion des engagements de prestation et coordination d’ensemble ; maille cohérente avec Order Management.
+  tradeoff: Coopérations explicites entre ordres de service et orchestration ; pas de transfert implicite du pilotage interne
+    des exécutants.
+proposal:
+  subdomain: Service Order Management
+  status: adopted_U679
+  definition: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+  capability_families:
+  - service: Picking
+    result: Quantités et références prélevées, manquants identifiés.
+    split_condition: Prestation confiée et suivie séparément ; sinon composante explicite d’un ordre de préparation.
+    capability_name: Picking Order
+    name_status: Nom présenté dans l’accord U679 ; famille au niveau capacité, pas comportement.
+    detail_status: Résultat et critère de séparation proposés, non adoptés globalement.
+  - service: Packing
+    result: Unités logistiques constituées conformément au conditionnement demandé.
+    split_condition: Engagement autonome de conditionnement ; sinon composante de la préparation.
+    capability_name: Packing Order
+    name_status: Nom présenté dans l’accord U679 ; famille au niveau capacité, pas comportement.
+    detail_status: Résultat et critère de séparation proposés, non adoptés globalement.
+  - service: Value-Added Services
+    result: Étiquetage, reconditionnement ou autre transformation légère conforme à la spécification demandée.
+    split_condition: Traitement propre pouvant être accepté, suivi ou repris ; un ordre peut porter plusieurs activités.
+    capability_name: Value-Added Service Order
+    name_status: Nom présenté dans l’accord U679 ; famille au niveau capacité, pas comportement.
+    detail_status: Résultat et critère de séparation proposés, non adoptés globalement.
+  - service: Cross-Docking
+    result: Marchandises reçues dirigées vers les départs affectés dans la fenêtre attendue.
+    split_condition: Instruction de transit autonome ou exigences liées aux ordres entrants et sortants.
+    capability_name: Cross-Docking Order
+    name_status: Nom présenté dans l’accord U679 ; famille au niveau capacité, pas comportement.
+    detail_status: Résultat et critère de séparation proposés, non adoptés globalement.
+  naming: Familles au niveau Capability, noms sans suffixe Management comme les Orders entrants. Les objets Order ne constituent
+    pas un niveau supplémentaire.
+  boundaries:
+    Order Management: Gérer les demandes à satisfaire et porter les engagements correspondants.
+    Service Order Management: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et
+      leurs évolutions.
+    Fulfilment Orchestration: Composer et coordonner ces prestations, suivre leurs dépendances et rechercher les adaptations
+      qui préservent la promesse et les équilibres du Matching.
+    Service Catalog: Description de l’offre mobilisable.
+    Executants: Organisation de leurs opérations internes.
+  implementation_pending:
+  - Décomposer les responsabilités actuelles de D07.b sans perte ni duplication ; ne pas lui attribuer silencieusement le
+    nouveau nom de sous-domaine.
+  - Instruire les rattachements des capacités existantes de détermination des prestations, capacité, tracking et rapprochement
+    ; non présentés dans l’accord.
+  - Préciser les descriptions et comparaisons des capacités de familles ; aucune liste exhaustive adoptée.
+  - Clarifier TER066, instance métier et document, dans le lot d’application.
+  granularity_rule: Définir des ordres distincts quand les prestations se confient, acceptent, suivent ou reprennent indépendamment
+    ; ne pas imposer un ordre FLOW pour chaque tâche opérateur.
+  granularity_rule_status: Proposition de mise en œuvre ; non condition à la reconnaissance du sous-domaine validé.
+  example: 'Exemple fictif : une commande de 100 pièces exige un nouvel étiquetage et un conditionnement magasin. Fulfilment
+    peut confier une préparation composite avec ces exigences, ou des prestations distinctes si leurs prises en charge sont
+    autonomes. Un prélèvement confirmé ne prouve ni l’étiquetage ni le conditionnement. Aucun cardinalité un Order = un Execution
+    Order imposée.'
+  example_status: Illustration fictive proposée, non accord supplémentaire.
+limits:
+- Aucune preuve de pratiques installées chez Beaumanoir, C-Log, Boardriders ou Sarenza.
+- Étude ciblée SAP, Microsoft, Oracle et analogie TM Forum, pas classement exhaustif du marché.
+- Les gestes physiques et le dispatch opérateur restent chez les exécutants au périmètre FLOW courant. Leur cartographie en
+  capacités propres exigerait d’élargir explicitement le périmètre étudié.
+- Découpage et frontières adoptés U679 ; application au modèle canonique et publication non réalisées. Détails non présentés
+  encore proposés.
+naming_U676:
+  question: Le marché désigne-t-il un sous-domaine Execution Services ou un terme voisin ?
+  finding: Des périmètres voisins sont attestés, mais aucun sous-domaine transversal standard nommé Execution Services n’a
+    été établi dans le corpus consulté. Les sources décrivent des périmètres produit, une suite ou un composant ODA, pas une
+    même taxonomie de sous-domaines.
+  candidates:
+  - name: Logistics Execution
+    sources:
+    - ELM662
+    - ELM664
+    assessment: Nom attesté SAP ; le plus direct pour regrouper picking, packing, VAS et opérations logistiques. Comprend
+      une exécution opérationnelle au-delà des ordres de prestation. Deux documents SAP, pas consensus interéditeurs.
+  - name: Supply Chain Execution
+    sources:
+    - ELM663
+    - ELM662
+    assessment: Catégorie englobante dont une utilisation Oracle est documentée historiquement ; périmètre entrepôt/transport
+      et autres fonctions plus large que Fulfilment FLOW. SAP LE est un voisin de périmètre, pas preuve du libellé exact SCE.
+  - name: Service Order Management
+    sources:
+    - ELM492
+    - ELM129
+    assessment: Nom explicite TM Forum, composant distinct du catalogue et incluant une orchestration. Analogie de prestations
+      commandées, pas standard logistique ni preuve de nécessité d’un nouveau sous-domaine FLOW.
+  - name: Execution Services
+    sources:
+    - ELM662
+    - ELM492
+    assessment: Composition compréhensible, sans correspondance exacte suffisamment établie dans les sources étudiées. Peut
+      désigner l’offre des exécutants plus que le pilotage des engagements.
+  recommendation: U679 adopte Service Order Management pour les prestations confiées, distinct de Fulfilment Orchestration.
+    Appui lexical TM Forum ; frontière FLOW choisie localement, sans consensus logistique universel.
+  status: updated_by_agreement_U679
+agreement_U679:
+  source: U679
+  author: Laurent
+  recorded_by: Codex
+  date: '2026-09-23'
+  status: accepted_scoped
+  values:
+    subdomain_name: Service Order Management
+    boundaries:
+      Order Management: Gérer les demandes à satisfaire et porter les engagements correspondants.
+      Service Order Management: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres
+        et leurs évolutions.
+      Fulfilment Orchestration: Composer et coordonner ces prestations, suivre leurs dépendances et rechercher les adaptations
+        qui préservent la promesse et les équilibres du Matching.
+      Service Catalog: Description de l’offre mobilisable.
+      Executants: Organisation de leurs opérations internes.
+    capability_level: Capability
+    capability_names:
+    - Picking Order
+    - Packing Order
+    - Value-Added Service Order
+    - Cross-Docking Order
+    capability_naming: Sans suffixe Management ; familles citées selon les familles retenues, pas liste exhaustive.
+  values_sha256: 13e37c655c0907a2768fd1bdc64a6a9e83feadbf0dc5ef7bfbc71bed547c1f47
+  exclusions:
+  - Descriptions détaillées, cycles et comportements non présentés.
+  - Répartition des capacités existantes non présentée.
+  - Liste exhaustive des familles et preuve de réalisation installée.
+  - Application au YAML canonique ou publication déduite du seul accord.
+  capture_note: Accord sur proposition d’annexe. record_decision.py cible uniquement les nodes/relations existants ; capturer
+    les champs canoniques sur le lot final lors de l’application, à partir de cette portée explicite.
+superseded_recommendation: 'U674–U676 : conservation des ordres dans Fulfilment et seul renommage générique D07.b. Remplacée
+  par la distinction des engagements de prestation et de la coordination U677–U679 ; preuves marché conservées.'

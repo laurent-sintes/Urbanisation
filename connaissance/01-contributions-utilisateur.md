@@ -16617,3 +16617,145 @@ Tu peux appliquer l'audit ?
 **contexte et portée**
 
 Laurent demande la mise en œuvre dans le backlog de l’audit U667 actualisé jusqu’à U672 : huit sous-domaines, rattachements proposés, ingestion et visibilité des plans, sortie de Demand Planning du périmètre sans sous-domaine APS, corrections de frontières et nom Order Promising. Appliquer les recommandations de l’audit sur les décisions de stock et le devenir des retours en conservant leur qualification de portée. Les identifiants et comportements conservés restent stables ; les éléments retirés et leurs accords gardent leur histoire dans Git. Cette demande autorise les placements et la mise en cohérence ; elle n’adopte pas globalement les nouvelles rédactions détaillées, les seuils d’autonomie, une performance de 200 ms ou une fusion ATP/CTP/PTP non proposée de façon définitive. Aucune publication, commit ou push implicite.
+
+
+## U674
+
+**id**
+
+U674
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Auditer le pilotage des prestations logistiques et les ordres d’exécution
+
+**texte**
+
+Je voudrais qu'apparaisse plus clairement les capacités logistiques à piloter : picking, packing, light touch, cross dock, etc.
+A mon avis, il faut les distinguer par des logistic Orders spécifiques. Mais ces logistics order ne doivent pas être dans le sous domaine Order Management qui représente les demandes entrantes.
+Question : doit on avoir un sous domaine Execution Order Management ? doit on simplement avoir un détail plus important dans Service Catalog ? J'aimerais un audit de marché et savoir ce que tu en penses par rapport à notre modèle.
+
+**contexte et portée**
+
+Demande d’audit de marché et de recommandation sur la visibilité des prestations logistiques, leurs ordres spécifiques et la frontière entre demandes entrantes et exécution. La séparation avec Order Management est une orientation explicite ; un nouveau sous-domaine Execution Order Management ou un enrichissement du Service Catalog restent des hypothèses à comparer. Le sens exact de light touch n’est pas défini dans cet apport. Aucun nouveau découpage, nom de capacité, objet ou comportement n’est adopté par cette demande. Aucun changement du modèle publié, release, commit ou push demandé.
+
+
+## U675
+
+**id**
+
+U675
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Préciser le sens de light touch dans l’audit logistique
+
+**texte**
+
+éétiquetage, reconditionnement et autres prestations légère
+
+**contexte et portée**
+
+Réponse à la question distinguant prestations légères sur les produits et transit avec peu de manipulation. Light touch désigne ici l’étiquetage, le reconditionnement et les autres prestations légères sur les produits ; ne pas l’assimiler au cross-docking. Cette précision ne valide aucun découpage ou nom proposé par l’audit U674.
+
+
+## U676
+
+**id**
+
+U676
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Vérifier le nom de marché du périmètre des services d’exécution
+
+**texte**
+
+Est ce que le marché désigne un sous domaine "execution services" ou un truc du genre ?
+
+**contexte et portée**
+
+Question complémentaire à l’audit U674 : chercher les noms employés pour un périmètre métier d’exécution ou de services d’exécution, en distinguant catégorie de marché, module produit et sous-domaine FLOW. Aucune adoption de nom ni de séparation de sous-domaine.
+
+
+## U677
+
+**id**
+
+U677
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Même maille pour les familles d’Orders entrants et de services
+
+**texte**
+
+C'est bizarre que les logistic orders se retrouvent à un niveau comportement alors que les demandes entrantes sont à un niveau capacité (purchase order)
+
+**contexte et portée**
+
+Laurent conteste l’asymétrie de maille proposée. Comparer les responsabilités de gestion des ordres entrants et de prestation au niveau capacité ; ne pas déduire leur maille du caractère logistique ni du nombre de documents.
+
+
+## U678
+
+**id**
+
+U678
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Convention de nommage et sous-domaine propre aux Service Orders
+
+**texte**
+
+LEs orders entrants ne se terminent jamais par Management.
+
+Si les orders entrant on leur sous domaine, je ne vois pas pourquoi les orders de services n'auraient pas le leur.
+
+**contexte et portée**
+
+Correction : noms des capacités par famille sans suffixe Management, comme Purchase Order. Demande de cohérence du regroupement des ordres de services dans un sous-domaine propre. La réponse présentée propose Service Order Management, distinct d’Order Management et de Fulfilment Orchestration.
+
+
+## U679
+
+**id**
+
+U679
+
+**date**
+
+2026-09-23
+
+**titre**
+
+Valider Service Order Management et ses frontières
+
+**texte**
+
+JE valide
+
+**contexte et portée**
+
+Accord sur la réponse immédiatement présentée après U678 : sous-domaine Service Order Management, gestion des prestations confiées, de leurs exigences, engagements propres et évolutions ; Order Management conserve les demandes à satisfaire et leurs engagements ; Fulfilment Orchestration compose et coordonne les prestations, leurs dépendances et les adaptations préservant promesse et équilibres du Matching. Capacités de familles à la même maille que les Orders entrants, sans suffixe Management ; noms présentés Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, selon les familles retenues. Service Catalog décrit l’offre ; les exécutants gardent leurs opérations internes. Ne vaut pas adoption de descriptions détaillées nouvelles, d’une liste exhaustive, d’un cycle uniforme, de rattachements non présentés des capacités existantes ou d’un consensus marché. Accord de découpage enregistré dans l’audit ; aucune publication, commit ou push demandé.
