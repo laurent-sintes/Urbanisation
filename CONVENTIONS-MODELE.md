@@ -10,7 +10,7 @@ Order Promising calcule et recommande la promesse ; Matching construit et gère 
 
 Les identifiants des capacités conservées restent stables. D17.a et BHV095 sortent du domaine avec leur histoire conservée dans Git. Plan Ingestion et Plan Visibility sont créées dans Plans. ATP/CTP/PTP restent à leur maille actuelle ; leurs frontières sont clarifiées sans fusion. Les placements appliqués n’adoptent pas globalement toutes les rédactions détaillées.
 
-U679/U681 appliqués U682 : Service Order Management tient les exigences et engagements des prestations confiées ; Fulfilment Orchestration les compose, les coordonne et les adapte. Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order sont des capacités, comme les familles d’Orders entrants. D07.b conserve le cycle commun sous le nom proposé Service Order Lifecycle, sans absorber les particularités de ces familles. Détermination des prestations, visibilité des capacités, tracking et rapprochement restent dans Fulfilment ; ces choix d’application ne constituent pas de nouveaux accords détaillés. Correction U707 : Value-Added Service Order est retiré au profit des dix familles fashion. Labeling / Relabeling relève de Labeling Order, Repacking de Packing Order ; Kitting Order inclut Dekitting. Les identifiants des comportements sont conservés. Service Order est une demande métier suivie, distincte du document éventuel ; Task est une contribution au processus, distincte du porteur des engagements individuels.
+U679/U681 appliqués U682 : Service Order Management tient les exigences et engagements des prestations confiées ; Fulfilment Orchestration les compose, les coordonne et les adapte. Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order sont des capacités, comme les familles d’Orders entrants. D07.b conserve le cycle commun sous le nom proposé Service Order Lifecycle, sans absorber les particularités de ces familles. Détermination des prestations, visibilité des capacités, tracking et rapprochement restent dans Fulfilment ; ces choix d’application ne constituent pas de nouveaux accords détaillés. Correction U707 : Value-Added Service Order est retiré au profit des dix familles fashion. Labeling / Relabeling relève de Labeling Order, Repacking de Packing Order ; Kitting Order inclut Dekitting. U711 intègre les descriptions de Repacking et Labeling / Relabeling aux capacités et retire leurs nœuds isolés ; les identifiants restent historiques. Service Order est une demande métier suivie, distincte du document éventuel ; Task est une contribution au processus, distincte du porteur des engagements individuels.
 
 ## Consolidation historique — U626
 
@@ -302,3 +302,25 @@ U568–U570 proposent Master Planning comme nom d’Area, la fin des petits plan
 
 
 **Accord de nom U581 :** Demand & Supply Optimization est retenu pour l’Area cible précédemment proposée sous Master Planning. Nom exact et accord contextualisé dans proposed_area.name_agreement de master-planning-structure-U568.yaml ; parents de la proposition harmonisés, migration canonique encore distincte. L’accord porte sur le nom ; la réponse documentée sur CTP et les achats conserve son statut de recommandation. Le plan peut proposer de nouveaux apports sans garantir que toutes les dates promises soient tenables ; CTP, décision d’achat, application et engagement gardent leurs résultats propres.
+
+
+## Lisibilité — U711
+
+Service Order Lifecycle (D07.b) est retiré : les familles portent leurs cycles et le sous-domaine en décrit les invariants. Repacking et Labeling / Relabeling sont intégrés dans les scopes de Packing Order et Labeling Order, sans nœud Behavior isolé. Une capacité possède zéro ou au moins deux comportements différenciants. Ces règles courantes remplacent les repères U682/U707 antérieurs ; les publications historiques restent inchangées. Les rôles dominants et catégories sont des attributs de présentation, sans responsabilité exclusive ni niveau supplémentaire.
+
+
+## Plans et intégration — U713/U714
+
+Plans devient Plan Visibility : deux capacités de visibilité distinctes pour Supply Plan et Demand Plan, et une Plan Ingestion commune de type Integration depuis le domaine externe PLAN, porté par l’APS et non référencé dans la cartographie. La visibilité est Knowledge ; tout Tracking relève d’Integration (migration des autres capacités restant à appliquer). Le master plan du Matching reste interne au Matching. Les objets de plan ne deviennent pas des Behaviors.
+
+
+## Intégration — U717
+
+Integration qualifie ingestion et Tracking ; Knowledge qualifie Visibility. Chaque Tracking alimente au moins une Visibility identifiée ; plusieurs Tracking peuvent partager la même Visibility. Les liens métier portent cette correspondance, sans paire ni nouveau niveau imposés. Operations Visibility porte les perspectives Warehouse, Transportation, Store et Process ; Operations Tracking intègre leurs faits. Master Data Ingestion remplace les sept ingestions par sujet ; les sept référentiels et vues restent distincts. Les Behaviors par domaine fournisseur attendent l’identification de ces domaines. La catégorie Intégration est appliquée aux Tracking dans Inventory et Fulfilment ; aucune bande supplémentaire pour une ingestion commune isolée.
+
+U718 précise les trois domaines fournisseurs : Commerce, Finance et Design. Les trois Behaviors d’ingestion sont créés ; la répartition des référentiels et les contrats détaillés restent à qualifier.
+
+
+## Tarifs et noms des référentiels — U723
+
+Price Book est le huitième sujet Master Data : tarifs de produits et services, reçus par l’ingestion commune et exposés par Price Book Visibility. Product Catalog et Service Catalog organisent l’offre ; Assortment sélectionne les produits. Catalog n’est pas un suffixe générique de référentiel ; conserver Price Book. Les substitutions et trajets mobilisent les évaluations économiques sans transfert de maîtrise commerciale ni révision automatique du prix engagé. Le calcul tarifaire peut être externe ; Order Management porte les modifications autorisées des engagements.

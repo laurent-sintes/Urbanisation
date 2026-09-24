@@ -1,0 +1,147 @@
+id: PRICE-BOOK-BOUNDARY-U719
+status: applied_U723
+source_refs:
+- U719
+- U516
+- CMP210
+- CMP281
+- U720
+- U721
+- U722
+- CMP282
+- U723
+history: Price Book avait été proposé U516 ; non adopté. Product Catalog porte actuellement des prix de référence.
+sources:
+- id: ELM715
+  reference: MKT14
+  vendor: Microsoft
+  title: Retail sales price management
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/price-management
+  edition: Page évolutive
+  locator: Price groups ; Catalogs ; Differences between Commerce pricing and non-Commerce pricing
+  finding: Groupes de prix associés notamment aux canaux, catalogues et clientèles ; moteur de tarification Commerce et tarification
+    SCM existent. Les frontières produit ne définissent pas les responsabilités FLOW.
+  consulted_on: '2026-09-24'
+- id: ELM716
+  reference: MKT14
+  vendor: Microsoft
+  title: Assortment management
+  url: https://learn.microsoft.com/en-us/dynamics365/commerce/assortments
+  edition: Page évolutive
+  locator: Assortment overview
+  finding: Un assortiment détermine les produits proposés par canaux. Ne démontre pas une association un-à-un obligatoire
+    avec un tarif.
+  consulted_on: '2026-09-24'
+- id: ELM717
+  reference: MKT20
+  vendor: Oracle
+  title: Set Up Item Substitution in Order Management
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/set-up-item-substitution-in-order-management.html
+  edition: 26B
+  locator: Introduction ; Guidelines
+  finding: Global Order Promising peut recommander un substitut disponible en rupture si la commande autorise la substitution.
+    La page ne définit pas la règle tarifaire du remplacement.
+  consulted_on: '2026-09-24'
+- id: ELM718
+  reference: MKT20
+  vendor: Oracle
+  title: Work with Detail Information
+  url: https://docs.oracle.com/html/E21562_01/ww_detail_info.htm
+  edition: Documentation historique JD Edwards World, édition non établie sur la page
+  locator: 4.4.1 Before You Begin, processing option 42
+  finding: La configuration détermine si le prix provient de l’article original ou du substitut. Illustration historique des
+    politiques possibles, pas preuve du comportement Fusion 26B.
+  consulted_on: '2026-09-24'
+- id: ELM530
+  reconsulted_on: '2026-09-24'
+  url: https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-script-api/dw.catalog.ProductPriceModel.html
+- id: ELM719
+  reference: MKT20
+  vendor: Oracle
+  title: Rate Inquiry
+  url: https://docs.oracle.com/en/cloud/saas/transportation/26c/otmol/askglog/rate_inquiry.htm
+  edition: 26C
+  locator: Rate and route inquiry
+  finding: Comparer des itinéraires valides et leurs coûts ; appui à l’évaluation économique des alternatives de trajet.
+  consulted_on: '2026-09-24'
+- id: ELM720
+  reference: MKT14
+  vendor: Microsoft
+  title: Landed cost module overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview
+  edition: Page évolutive
+  locator: Overview / cost estimation
+  finding: Estimer les coûts logistiques et les affecter aux marchandises importées ; coût rendu ne signifie pas prix de vente
+    au client.
+  consulted_on: '2026-09-24'
+- id: ELM721
+  url: https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5
+  consulted_on: '2026-09-24'
+proposal:
+  reference: Price Book — tarifs de produits et de services
+  capability: Price Book Visibility
+  parent: business-references
+  nature: knowledge
+  ingestion: Master Data Ingestion reçoit les tarifs de produits et services depuis les domaines compétents ; leur attribution
+    à Commerce, Finance ou Design reste à qualifier, notamment pour les prestations logistiques.
+  distinctions:
+    Product Catalog: Offre de produits présentée.
+    Assortment: Sélection de produits pour un périmètre et une période.
+    Price Book: Tarifs de référence des produits et services, avec unités, devises, validité et conditions ; plusieurs livres
+      possibles.
+    Agreement: Conditions convenues entre parties.
+    order_price: Prix appliqué et engagement conservé avec la commande.
+  boundary: La Supply utilise les prix et obtient les évaluations tarifaires nécessaires à ses choix ; elle ne devient pas
+    propriétaire de la politique commerciale. Le calcul peut être réalisé par un service externe.
+  substitution: Évaluer le prix client résultant, le coût et les effets économiques selon les règles reçues avant d’accepter
+    une alternative ; ne pas déduire automatiquement le nouveau prix du Price Book. Order Management porte toute révision
+    autorisée.
+  example: 'Article commandé 50, substitut au tarif 60 : une règle peut conserver 50 au client ; évaluer séparément coût et
+    marge. Exemple fictif, aucune règle adoptée.'
+  benefit: Tarif réutilisable indépendamment du catalogue et évaluation économique des alternatives.
+  tradeoff: Maintenir la frontière entre tarif reçu, prix calculé et prix engagé ; éviter un moteur de pricing concurrent.
+  open_details:
+  - Répartition précise des données tarifaires Product Catalog / Price Book
+  - Contrat de consultation ou calcul tarifaire externe
+  - Règles de prix lors des substitutions et autorité de leur définition
+  transport:
+    distinctions:
+    - Coût de réalisation du transport
+    - Tarif de la prestation logistique
+    - Frais facturés au client
+    - Prix rendu commercial de l’article selon conditions convenues
+    rule: Évaluer les alternatives avec leur trajet, services, délais, coûts et éventuels effets tarifaires. Ne pas propager
+      automatiquement un surcoût au prix client engagé.
+    references: Un concept Price Book commun aux produits et services ; plusieurs livres selon contexte, prestataire ou autorité.
+      Product Catalog et Service Catalog décrivent leurs offres et référencent les tarifs. Aucun tarif unique ni fusion des
+      offres imposés.
+    boundary: Supply obtient ou calcule l’évaluation économique des options selon sa responsabilité ; le pricing commercial
+      reste sous l’autorité du domaine compétent. Order Management prend en compte les modifications autorisées.
+  naming:
+    status: adopted_U723
+    source_refs:
+    - U722
+    - CMP282
+    convention: Catalog pour une collection structurée de produits ou services proposés ; pas un suffixe générique de référentiel.
+    retain:
+    - Product Catalog
+    - Service Catalog
+    - Assortment
+    candidate: Price Book
+    avoid: 'Price Book Catalog pour désigner un ensemble de tarifs : pourrait signifier un catalogue de livres tarifaires.'
+    market_limit: Usage fréquent, pas règle universelle ni frontières identiques chez tous les éditeurs.
+publication_delivery:
+  state: applied
+  source_refs:
+  - U723
+  summary: Price Book produits/services, visibilité, ingestion commune et frontières économiques appliqués ; contrats et règles
+    détaillés restent à qualifier.
+  required_nodes:
+  - id: price-book
+    fields:
+      name: Price Book
+  - id: price-book-visibility
+    parent: price-book
+    fields:
+      name: Price Book Visibility
+      nature: knowledge

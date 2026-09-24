@@ -2,6 +2,7 @@ import type { AtlasNode } from './types.ts';
 
 /** Explicit published nature only; names and identifiers never determine the type. */
 export const capabilityTypes = {
+  integration: { label: 'Intégration', icon: 'ArrowLeftRight' },
   action: { label: 'Action', icon: 'Zap' },
   management: { label: 'Gestion', icon: 'SlidersHorizontal' },
   knowledge: { label: 'Connaissance / visibilité', icon: 'Eye' },

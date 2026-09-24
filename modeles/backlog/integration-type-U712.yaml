@@ -1,0 +1,225 @@
+id: INTEGRATION-TYPE-U712
+status: applied_U717
+source_refs:
+- U712
+- U514
+- U515
+- U509
+- U673
+- U713
+- U714
+- U715
+- U716
+- U717
+- U718
+sources:
+- id: ELM710
+  reference: MKT13
+  vendor: SAP
+  title: SAP Master Data Integration with SAP Field Service and Asset Management
+  url: https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html
+  locator: Overview / providers and consumers
+  reformulation: Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs.
+    Ne prescrit pas un Behavior FLOW par fournisseur.
+  consulted_on: '2026-09-24'
+  access: indexed
+  edition: Page évolutive, édition non indiquée
+  native_id: null
+  limits: Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+- id: ELM711
+  reference: MKT50
+  vendor: Microsoft
+  title: Use domain analysis to model microservices
+  url: https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis
+  locator: Context maps and integration patterns
+  reformulation: Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités.
+  consulted_on: '2026-09-24'
+  access: indexed
+  edition: Page évolutive, édition non indiquée
+  native_id: null
+  limits: Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+- id: ELM712
+  reference: MKT50
+  vendor: Microsoft
+  title: Anti-corruption Layer pattern
+  url: https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer
+  locator: Context / solution / when to use
+  reformulation: Adapter les sémantiques à la frontière protège le modèle consommateur. Pattern logiciel, appui à la frontière,
+    pas preuve d’un type universel de capacité métier.
+  consulted_on: '2026-09-24'
+  access: indexed
+  edition: Page évolutive, édition non indiquée
+  native_id: null
+  limits: Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+- id: ELM713
+  reference: MKT20
+  vendor: Oracle
+  title: 'Tracking Event Manager: Detail'
+  url: https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/asset_mgt/tracking/tracking_event_manager_detail.htm
+  locator: Introduction / adding manually
+  reformulation: Les événements sont principalement reçus par intégration ; la consultation sert au diagnostic et à l’analyse.
+    Distinguer réception et exploitation des faits.
+  consulted_on: '2026-09-24'
+  access: indexed
+  edition: 26B
+  native_id: null
+  limits: Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+- id: ELM714
+  reference: MKT20
+  vendor: Oracle
+  title: 'Tracking Event Manager: Identification'
+  url: https://docs.oracle.com/en/cloud/saas/transportation/26c/otmol/asset_mgt/tracking/tracking_event_manager.htm
+  locator: Introduction
+  reformulation: Les événements saisis ou intégrés sont corrélés aux actifs et expéditions ; captation et rapprochement sémantique
+    sont distincts d’un simple transport technique.
+  consulted_on: '2026-09-24'
+  access: indexed
+  edition: 26C
+  native_id: null
+  limits: Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+comparison_ref: CMP280
+type:
+  id: integration
+  name: Integration
+  label_fr: Intégration
+  definition: Acquérir ou transmettre des informations métier entre domaines ou exécutants, les reconnaître et les rapprocher
+    du contexte local pour les rendre utilisables avec leur provenance et leur résultat de prise en compte.
+  boundary: Le résultat dominant est la prise en compte fiable de l’échange métier. Protocoles, connecteurs et middleware
+    restent des moyens. Décider, coordonner le processus ou tenir l’état métier consolidé ne devient pas Integration du seul
+    fait de recevoir des événements.
+  source_refs:
+  - ELM710
+  - ELM711
+  - ELM712
+  candidates:
+  - D09.d
+  - D11.a
+  - D08.d
+  - D12.a
+  - D13.a
+  - D14.a
+  - D16.a
+  - plans-ingestion
+tracking:
+  source_refs:
+  - U713
+  - ELM713
+  - ELM714
+  rule: Tout Tracking est Integration ; toute Visibility est Knowledge.
+  inventory: 'D01.f : Integration ; recentrer la description sur la captation et l’intégration des faits de stock.'
+  operations: 'D07.d : Integration ; capter et rapprocher les retours d’exécution.'
+  boundary: La restitution des états et de l’avancement appartient aux capacités Visibility. La nature des Behaviors reste
+    distincte du type de capacité.
+  visibility_correspondence:
+    source_refs:
+    - U715
+    status: applied_U717
+    rule: Chaque Tracking alimente une Visibility identifiée ; plusieurs Tracking peuvent alimenter une même Visibility.
+    implementation: Réutiliser la Visibility existante qui porte le résultat métier ; qualifier le lien et les faits transmis.
+      Ne créer une Visibility que si une responsabilité de restitution manque. Aucune paire automatique et aucune nouvelle
+      hiérarchie.
+  mapping:
+  - tracking: D01.f
+    visibility:
+    - D01.c
+  - tracking: D07.d
+    visibility:
+    - operations-visibility
+    - D18.a
+master_data:
+  name: Master Data Ingestion
+  proposed_parent: business-references
+  proposed_type: integration
+  decomposition_axis: Domaine fournisseur avec son contrat métier.
+  source_refs:
+  - ELM710
+  - ELM711
+  - ELM712
+  continuity: Reprend l’axe de provenance par domaine source déjà clarifié U514/U515.
+  preserve: Les sept référentiels restent les sujets de référence locaux ; ils ne disparaissent pas avec le regroupement de
+    leur ingestion.
+  mapping: Un domaine peut fournir plusieurs référentiels et un référentiel peut recevoir plusieurs contributions. Aucun lien
+    un-à-un entre les sept sujets et les domaines sources.
+  behavior_criterion: Différences d’autorité, d’identification, de validité, de rapprochement et de traitement des corrections.
+    Une application ou un format différent ne suffit pas à lui seul.
+  migration: 'Appliquée U717/U718 : ingestion commune, sept sujets et vues conservés ; trois Behaviors par domaine fournisseur.
+    Contrats et répartition des sujets à qualifier.'
+  minimum: Zéro ou au moins deux comportements différenciants selon U711.
+  retired_ids:
+  - D09.d
+  - D11.a
+  - D08.d
+  - D12.a
+  - D13.a
+  - D14.a
+  - D16.a
+  source_domains:
+  - Commerce
+  - Finance
+  - Design
+category:
+  id: integration
+  display_name: Intégration
+  purpose: Regrouper localement les capacités dédiées aux échanges entrants ou sortants, si plusieurs capacités rendent ce
+    regroupement utile.
+  distinction: Integration est le type de capacité ; Intégration est le libellé de catégorie pour le regroupement visuel local.
+  recommendation: Pas de sous-domaine technique Integration ajouté. Ne pas créer un bandeau pour une unique ingestion consolidée
+    si cela alourdit la lecture.
+  source_refs:
+  - U716
+publication_delivery:
+  state: applied
+  source_refs:
+  - U717
+  - U718
+  summary: Integration, Tracking / Visibility, ingestion Master Data commune avec Commerce, Finance, Design et catégorie Intégration
+    appliqués.
+  absent_nodes:
+  - D09.d
+  - D11.a
+  - D08.d
+  - D12.a
+  - D13.a
+  - D14.a
+  - D16.a
+  required_nodes:
+  - id: master-data-ingestion
+    fields:
+      name: Master Data Ingestion
+      nature: integration
+  - id: operations-visibility
+    fields:
+      name: Operations Visibility
+      nature: knowledge
+  - id: D01.f
+    fields:
+      name: Inventory Tracking
+      nature: integration
+  - id: D07.d
+    fields:
+      name: Operations Tracking
+      nature: integration
+  - id: plans-ingestion
+    fields:
+      name: Plan Ingestion
+      nature: integration
+  - id: plans-visibility
+    fields:
+      name: Supply Plan Visibility
+      nature: knowledge
+  - id: demand-plan-visibility
+    fields:
+      name: Demand Plan Visibility
+      nature: knowledge
+  - id: master-data-ingestion-commerce
+    parent: master-data-ingestion
+    fields:
+      name: Commerce Ingestion
+  - id: master-data-ingestion-finance
+    parent: master-data-ingestion
+    fields:
+      name: Finance Ingestion
+  - id: master-data-ingestion-design
+    parent: master-data-ingestion
+    fields:
+      name: Design Ingestion

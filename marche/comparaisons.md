@@ -2681,3 +2681,33 @@ Complément CMP273 — U685 : ELM665 Advanced Supply Chain (Box to Hang) et ELM6
 ## CMP278
 
 Backlog corrigé U707/C118 le 24 septembre 2026 par Codex : dix familles fashion dans Service Order Management ; VAS retiré, Repacking sous Packing. Appuis primaires déjà consultés ELM667–680, deux documents pertinents par nouvelle fiche. Les sources décrivent les prestations ; les noms composés Order et la responsabilité de tenue de demandes sont une adaptation FLOW, pas un standard interéditeurs. Résultats distincts : conditionnement, composition, information appliquée, aspect, propreté, réparation, personnalisation et constat. Bénéfice : rendre les engagements visibles sans fourre-tout. Compromis : aucune capacité par technique opérateur ; pas de preuve installée Beaumanoir. Familles confirmées U707 ; descriptions et comparaisons proposées.
+
+
+## CMP279
+
+U710, backlog du 24 septembre 2026, proposition Codex. ELM706/707 étayent séparation entre attribut de classement, regroupement visuel et structure ; ni la taxonomie de rôles ni la règle zéro-ou-deux ne sont un standard marché. ELM708/709 documentent les interactions entre commandes, processus et services exécutants ; supprimer Service Order Lifecycle est un choix de cohérence FLOW, en conservant la tenue des engagements dans chaque famille et la coordination dans Fulfilment. Supply Protection Policy précise le rôle déjà décrit ; comparaisons primaires existantes de D02.b conservées, sans changement de périmètre. Bénéfice : moins de redondance et meilleur repérage. Compromis : rôle dominant simplificateur, catégories limitées aux sous-domaines chargés ; migration structurelle proposée dans model-readability-U710.yaml, non appliquée automatiquement.
+
+
+## CMP280
+
+U712, étude Codex du 24 septembre 2026. SAP MDI (ELM710) documente producteurs, consommateurs et objets ; Microsoft (ELM711/712) les frontières sémantiques et contrats de domaines. Appui au type Integration et à l’axe de provenance, pas preuve d’une taxonomie universelle de capacités. Oracle ELM713/714 distingue réception d’événements, corrélation et exploitation ; deux documents du même éditeur ne valent pas consensus. Proposer Integration pour les ingestions ; conserver la distinction avec les états métier produits par Inventory Tracking et Operations Tracking. Regrouper Master Data Ingestion par domaines sources est cohérent avec U514/U515, en conservant les sept sujets et sans inventer les fournisseurs. Échanges est une catégorie visuelle locale. Bénéfice : rendre les frontières et contrats visibles ; compromis : ne pas déplacer toutes les responsabilités alimentées par événements vers un type technique. Proposition dans integration-type-U712.yaml ; non appliquée.
+
+
+## CMP281
+
+U719 — Codex, 24 septembre 2026. Réexamen de U516/CMP210 sur le backlog courant. ELM530 Salesforce ProductPriceModel reconsulté : prix contextualisé selon site, client, date, devise et quantité ; ELM715/716 Microsoft distinguent tarification et assortiment. Le couple assortiment/tarif contribue au calcul sans suffire universellement. ELM717 Oracle Fusion étaye la substitution en pénurie ; ELM718 JD Edwards World illustre historiquement le choix du prix original ou substitut, sans extrapolation à Fusion. Deux documents par comparaison : ELM530/715 pour Price Book et calcul, ELM716/715 pour assortiment/prix, ELM717/718 pour substitution (un seul éditeur, pas consensus).
+
+Recommandation : référentiel Price Book et capacité Price Book Visibility dans Master Data, alimentation via l’ingestion commune depuis Commerce sous réserve du contrat réel ; séparer les tarifs des prix actuellement mélangés dans Product Catalog. L’autorité de pricing commercial reste extérieure ; Supply obtient une évaluation pour ses alternatives, arbitre les effets économiques et Order Management porte les changements autorisés des engagements. Prix payé, prix de référence, coût et marge restent distincts. Pas de nouvelle capacité Pricing générique ni de Policy autonome sans instruction complémentaire. Proposition, aucune modification canonique. [Proposition structurée](../modeles/backlog/price-book-boundary-U719.yaml).
+
+
+Complément CMP281 — U720 : Oracle Rate Inquiry (ELM719) expose itinéraires et coûts, Microsoft Landed Cost (ELM720) estime et affecte les coûts aux marchandises. Recouvrement partiel : évaluer économiquement les alternatives Supply. Limite : aucun de ces documents ne prouve qu’un surcoût de trajet augmente automatiquement le prix engagé avec le client. Recommandation : articuler tarifs produits et tarifs de prestations distincts, évaluation des options et autorité commerciale externe. Pas de Price Book unique imposé pour produits et transport.
+
+
+Complément CMP281 — U721 : ELM721 Salesforce et ELM531 Microsoft étayent un même concept de tarif pour produits et services. Réviser la proposition : Price Book est un sujet tarifaire commun, avec des livres distincts selon contexte et autorité ; Product Catalog et Service Catalog décrivent leurs offres respectives et référencent les tarifs. Distinguer tarifs produits/services reste utile, mais ne justifie pas automatiquement deux types de référentiels. Prix fixe, unité, tranche et contexte d’application ne constituent pas à eux seuls le prix final de la commande. Proposition non encore appliquée.
+
+
+## CMP282
+
+U722 — Codex, 24 septembre 2026. Comparaison des noms du backlog et du Price Book proposé U719–U721. ELM722 Microsoft et ELM723 Salesforce distinguent catalogue et composantes tarifaires ; ELM716 conserve Assortment, ELM721/531 attestent Price Book / Price List pour produits et services. Les vocabulaires se recouvrent parfois : Salesforce décrit aussi le Price Book comme un catalogue de produits et services tarifés. On ne peut en déduire une norme « toute offre doit porter Catalog ».
+
+Recommandation FLOW : Catalog nomme une collection structurée de produits ou services proposés, consultable pour identifier ce qui peut être demandé ; conserver Product Catalog et Service Catalog. Assortment nomme la sélection affectée à un périmètre ; Price Book nomme l’ensemble tarifaire. Ne pas ajouter Catalog à tous les référentiels ni employer Price Book Catalog pour un livre tarifaire : cela pourrait désigner une collection de livres, autre objet. Bénéfice : préciser le rôle sans uniformisation artificielle ; compromis : frontière offre/sélection/tarif à expliciter malgré les recouvrements éditeurs. Deux documents primaires pour catalogue/tarif ; appuis antérieurs pour les notions conservées. Proposition non appliquée.

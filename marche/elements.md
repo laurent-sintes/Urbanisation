@@ -5522,3 +5522,92 @@ MKT13 — [Creating Documents — Customs Management](https://help.sap.com/docs/
 ### ELM705
 
 MKT20 — [Overview of Setting Up Credit Cards](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/overview-of-setting-up-credit-cards.html). Édition : 26B. Consultation : 2026-09-24 ; accès direct. Passage : Overview and integration. Identifiant natif non établi. Reformulation : Order Management mobilise Oracle Payments pour le traitement carte ; l’autorisation peut venir du système amont avec Financials. Intégration explicite, pas propriété de toute la finance dans Order Management. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703.
+
+
+### ELM706
+
+MKT13 — SAP LeanIX, [Landscape Report](https://help.sap.com/docs/leanix/ea/landscape-report). Documentation évolutive sans édition affichée. Consultation 2026-09-24, accès indexé, passage : Introduction. Identifiant natif non établi. Reformulation : Regroupements selon différentes dimensions et vues colorées. Exemple de visualisation, pas taxonomie de finalités Supply. Limites : Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit. CMP279, U710.
+
+
+### ELM707
+
+MKT13 — SAP LeanIX, [Matrix Report](https://help.sap.com/docs/leanix/ea/matrix-report). Documentation évolutive sans édition affichée. Consultation 2026-09-24, accès indexé, passage : Views. Identifiant natif non établi. Reformulation : Les vues portent des attributs ou relations visualisés par couleur ; distinguer classification et hiérarchie. Limites : Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit. CMP279, U710.
+
+
+### ELM708
+
+MKT20 — Oracle, [Overview of Orchestration Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html). 26B. Consultation 2026-09-24, accès indexé, passage : Overview and task services. Identifiant natif non établi. Reformulation : Un processus orchestre des services qui exécutent les tâches ; ne prescrit pas une capacité de cycle de vie sœur de chaque famille. Limites : Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit. CMP279, U710.
+
+
+### ELM709
+
+MKT20 — Oracle, [How Supply Chain Orchestration Works](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauco/how-supply-orchestration-works.html). 25C. Consultation 2026-09-24, accès indexé, passage : Orchestrate supply order. Identifiant natif non établi. Reformulation : Demande, création/modification de commandes distantes et traitement des changements sont articulés ; le retrait d’une capacité générique ne doit pas retirer ces responsabilités. Limites : Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit. CMP279, U710.
+
+
+### ELM710
+
+MKT13 — SAP, [SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html). Page évolutive, édition non indiquée. Consulté le 2026-09-24, passage indexé : Overview / providers and consumers. Identifiant natif non établi. Reformulation : Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712.
+
+
+### ELM711
+
+MKT50 — Microsoft, [Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Page évolutive, édition non indiquée. Consulté le 2026-09-24, passage indexé : Context maps and integration patterns. Identifiant natif non établi. Reformulation : Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712.
+
+
+### ELM712
+
+MKT50 — Microsoft, [Anti-corruption Layer pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer). Page évolutive, édition non indiquée. Consulté le 2026-09-24, passage indexé : Context / solution / when to use. Identifiant natif non établi. Reformulation : Adapter les sémantiques à la frontière protège le modèle consommateur. Pattern logiciel, appui à la frontière, pas preuve d’un type universel de capacité métier. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712.
+
+
+### ELM713
+
+MKT20 — Oracle, [Tracking Event Manager: Detail](https://docs.oracle.com/en/cloud/saas/transportation/26b/otmol/asset_mgt/tracking/tracking_event_manager_detail.htm). 26B. Consulté le 2026-09-24, passage indexé : Introduction / adding manually. Identifiant natif non établi. Reformulation : Les événements sont principalement reçus par intégration ; la consultation sert au diagnostic et à l’analyse. Distinguer réception et exploitation des faits. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712.
+
+
+### ELM714
+
+MKT20 — Oracle, [Tracking Event Manager: Identification](https://docs.oracle.com/en/cloud/saas/transportation/26c/otmol/asset_mgt/tracking/tracking_event_manager.htm). 26C. Consulté le 2026-09-24, passage indexé : Introduction. Identifiant natif non établi. Reformulation : Les événements saisis ou intégrés sont corrélés aux actifs et expéditions ; captation et rapprochement sémantique sont distincts d’un simple transport technique. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712.
+
+
+### ELM715
+
+MKT14 — Microsoft, [Retail sales price management](https://learn.microsoft.com/en-us/dynamics365/commerce/price-management). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible. Passage : Price groups ; Catalogs ; Differences between Commerce pricing and non-Commerce pricing. Reformulation : Groupes de prix associés notamment aux canaux, catalogues et clientèles ; moteur de tarification Commerce et tarification SCM existent. Les frontières produit ne définissent pas les responsabilités FLOW. Aucune preuve de réalisation Beaumanoir. CMP281, U719.
+
+
+### ELM716
+
+MKT14 — Microsoft, [Assortment management](https://learn.microsoft.com/en-us/dynamics365/commerce/assortments). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible. Passage : Assortment overview. Reformulation : Un assortiment détermine les produits proposés par canaux. Ne démontre pas une association un-à-un obligatoire avec un tarif. Aucune preuve de réalisation Beaumanoir. CMP281, U719.
+
+
+### ELM717
+
+MKT20 — Oracle, [Set Up Item Substitution in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/set-up-item-substitution-in-order-management.html). 26B. Consulté le 24 septembre 2026, texte primaire accessible. Passage : Introduction ; Guidelines. Reformulation : Global Order Promising peut recommander un substitut disponible en rupture si la commande autorise la substitution. La page ne définit pas la règle tarifaire du remplacement. Aucune preuve de réalisation Beaumanoir. CMP281, U719.
+
+
+### ELM718
+
+MKT20 — Oracle, [Work with Detail Information](https://docs.oracle.com/html/E21562_01/ww_detail_info.htm). Documentation historique JD Edwards World, édition non établie sur la page. Consulté le 24 septembre 2026, texte primaire accessible. Passage : 4.4.1 Before You Begin, processing option 42. Reformulation : La configuration détermine si le prix provient de l’article original ou du substitut. Illustration historique des politiques possibles, pas preuve du comportement Fusion 26B. Aucune preuve de réalisation Beaumanoir. CMP281, U719.
+
+
+### ELM719
+
+MKT20 — Oracle, [Rate Inquiry](https://docs.oracle.com/en/cloud/saas/transportation/26c/otmol/askglog/rate_inquiry.htm). 26C. Consulté le 24 septembre 2026. Texte primaire ; passage : Rate and route inquiry. Reformulation : Comparer des itinéraires valides et leurs coûts ; appui à l’évaluation économique des alternatives de trajet. Ne démontre ni refacturation automatique ni responsabilité universelle de pricing commercial. CMP281, U720.
+
+
+### ELM720
+
+MKT14 — Microsoft, [Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview). Page évolutive. Consulté le 24 septembre 2026. Texte primaire ; passage : Overview / cost estimation. Reformulation : Estimer les coûts logistiques et les affecter aux marchandises importées ; coût rendu ne signifie pas prix de vente au client. Ne démontre ni refacturation automatique ni responsabilité universelle de pricing commercial. CMP281, U720.
+
+
+### ELM721
+
+MKT73 — Salesforce, [Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5). Page évolutive Revenue Management, consultée le 24 septembre 2026, introduction. Le Price Book porte des prix de vente de produits et services. Ne démontre pas la couverture de toutes les règles complexes de transport par une ligne de tarif simple. ELM531 Microsoft Define product pricing reconsulté le même jour : tarifs de produits et services, unités et méthodes. CMP281, U721.
+
+
+### ELM722
+
+MKT14 — Microsoft, [Create Commerce catalogs for B2B sites](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites). Dynamics 365 Commerce 10.0.27 et suivantes, page mise à jour le 21 janvier 2026, consultée le 24 septembre 2026. Introduction et configuration : catalogue de produits proposés, merchandising, canaux et clients ; groupes tarifaires associés ; produits issus des assortiments des canaux. Limite : frontières d’un produit logiciel, pas règle universelle de suffixe. CMP282, U722.
+
+### ELM723
+
+MKT73 — Salesforce, [Product Catalog Management Set Up](https://help.salesforce.com/s/articleView?id=sf.product_catalog_set_up_product_catalog_management.htm&language=en_US&type=5). Page évolutive, consultée le 24 septembre 2026. Price book filtering : catalogue et price book peuvent se recouper partiellement ; le filtre retient les produits associés au price book choisi. Appui à la distinction entre organisation de l’offre et tarifs. Aucun modèle universel ni équivalence stricte avec FLOW. CMP282, U722.

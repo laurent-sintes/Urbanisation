@@ -11067,5 +11067,115 @@ terms:
       source_url: https://docs.fluentcommerce.com/by-type/source-order-items
       source_refs:
       - U626
+- id: TER097
+  name: Price Book
+  short_description: Ensemble de tarifs de référence de produits et services.
+  definition: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions
+    d’application.
+  context: Supply Chain Orchestration / Master Data
+  notes: 'Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product
+    Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions
+    convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue
+    ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve
+    la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage,
+    chacun avec sa période et son unité.'
+  source_refs:
+  - U723
+  - ELM721
+  - ELM531
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u723
+  review:
+    state: partial
+    note: Concept adopté U723 ; formulation détaillée proposée.
+  market_comparisons:
+  - vendor: Salesforce
+    product: Define Prices in Price Books
+    source_title: Define Prices in Price Books
+    source_url: https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5
+    source_version: Documentation évolutive consultée le 24 septembre 2026
+    source_locator: Introduction ; définition du livre ou de la liste tarifaire
+    consulted_on: '2026-09-24'
+    evidence_limits: Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+    element_name: Define Prices in Price Books
+    concept_name: Define Prices in Price Books
+    element_type: Fonction documentée par la source primaire
+    scope_summary: Les Price Books portent les prix de vente de produits et de services.
+    approach_summary: 'Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les
+      fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte
+      les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de
+      référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale
+      reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et
+      un autre par prestation de réétiquetage, chacun avec sa période et son unité.'
+    similarities: Les Price Books portent les prix de vente de produits et de services.
+    differences: La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+    relationship: Appui sémantique
+    flow_position: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et
+      conditions d’application.
+    status: proposed
+    source_refs:
+    - ELM721
+    - CMP281
+    - U723
+    term_choice: Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+    definition_choice: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité
+      et conditions d’application.
+  - vendor: Microsoft
+    product: Define product pricing with price lists and price list items
+    source_title: Define product pricing with price lists and price list items
+    source_url: https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products
+    source_version: Documentation évolutive consultée le 24 septembre 2026
+    source_locator: Introduction ; définition du livre ou de la liste tarifaire
+    consulted_on: '2026-09-24'
+    evidence_limits: Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+    element_name: Define product pricing with price lists and price list items
+    concept_name: Define product pricing with price lists and price list items
+    element_type: Fonction documentée par la source primaire
+    scope_summary: Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent
+      selon le contexte.
+    approach_summary: 'Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les
+      fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte
+      les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de
+      référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale
+      reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et
+      un autre par prestation de réétiquetage, chacun avec sa période et son unité.'
+    similarities: Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon
+      le contexte.
+    differences: La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+    relationship: Appui sémantique
+    flow_position: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et
+      conditions d’application.
+    status: proposed
+    source_refs:
+    - ELM531
+    - CMP281
+    - U723
+    term_choice: Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+    definition_choice: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité
+      et conditions d’application.
+  market_inspiration:
+    choice: Price Book
+    flow_scope: Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions
+      d’application.
+    flow_approach: 'Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit.
+      Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les
+      conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence
+      ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe
+      ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par
+      prestation de réétiquetage, chacun avec sa période et son unité.'
+    synthesis:
+    - Tarifs produits et services sous un même concept ; distinguer référence tarifaire, calcul et engagement.
+    examples:
+    - title: Illustration FLOW — produits et prestations
+      situation: Une substitution et un nouveau trajet sont envisagés pour servir une commande.
+      outcome: Consulter les tarifs des articles et prestations ; obtenir les évaluations nécessaires avant décision, sans
+        modifier automatiquement le prix engagé.
+      lesson: Exemple fictif ; les règles commerciales restent sous leur autorité propre.
+      source_title: Define Prices in Price Books
+      source_url: https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5
+      source_refs:
+      - U723
+      - ELM721
 note: Catalogue structuré du backlog. Les tableaux narratifs sont conservés comme sources historiques ; ce catalogue est figé
   avec chaque nouvelle publication. Les reformulations restent proposées.

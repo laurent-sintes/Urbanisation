@@ -1,3 +1,2838 @@
 schema_version: 1.0.0
-intents: []
+intents:
+- id: INT-U714-subdomain-plans
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: explicit
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  note: U714 demande Plan Visibility, Supply / Demand distincts et ingestion depuis PLAN ; U713 fixe le type Knowledge pour
+    Visibility, U712 propose Integration pour ingestion. Aucune validation globale des descriptions.
+  target:
+    collection: nodes
+    id: subdomain-plans
+    approved_fields:
+    - name
+    values:
+      name: Plan Visibility
+    value_sha256:
+      name: 91da9b278b01a755f4c5f54f5ec76188c3e7297075ede12f5ef66ca8910af57a
+    context:
+      format: semantic-sha256-v1
+      target: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLANS-MATCHING: a88217ea336bf09c918861728de77ad69a61ba369a1343a4308a402aec6d6475
+        REL-U673-PLANS-PROMISING: 48b212a2ef89db9cdb500b7196c4de199a3e2b5fff77ad757a97c705c8f75984
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        demand-plan-visibility: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+        plans-ingestion: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+        plans-visibility: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: ea5c2cffb33c8086d57b3a927f9c8cb01cca5ef75f0234044385e207110bb33a
+- id: INT-U714-plans-ingestion
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  note: U714 demande Plan Visibility, Supply / Demand distincts et ingestion depuis PLAN ; U713 fixe le type Knowledge pour
+    Visibility, U712 propose Integration pour ingestion. Aucune validation globale des descriptions.
+  target:
+    collection: nodes
+    id: plans-ingestion
+    approved_fields:
+    - nature
+    values:
+      nature: integration
+    value_sha256:
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: fa6c23cda1d319eb6526e91d44287309ce97d80a8d2ebe52f69d6d928d097ced
+- id: INT-U714-plans-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: explicit
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  note: U714 demande Plan Visibility, Supply / Demand distincts et ingestion depuis PLAN ; U713 fixe le type Knowledge pour
+    Visibility, U712 propose Integration pour ingestion. Aucune validation globale des descriptions.
+  target:
+    collection: nodes
+    id: plans-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLAN-COVERAGE: 5a25d5720c431b2fe8f4e8a0aa8a511cf12b11fb990b7f6458337f8402a331e8
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+      related_nodes:
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D05.f: a15f05962e270de875db33cc01fca1339691022582ce20ae74b5719bc10095b2
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 16b03c543de7e9cb92dbf8e3b4c6429da30068ea02c791177d9625e74528f003
+- id: INT-U714-demand-plan-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: explicit
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  note: U714 demande Plan Visibility, Supply / Demand distincts et ingestion depuis PLAN ; U713 fixe le type Knowledge pour
+    Visibility, U712 propose Integration pour ingestion. Aucune validation globale des descriptions.
+  target:
+    collection: nodes
+    id: demand-plan-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: d805af5fc558b0d3fbc2053757c25a611aca4595a4e2256934119318a60c00b8
+- id: INT-U714-REL-U714-CONTAINS-DEMAND-PLAN
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  note: U714 demande Plan Visibility, Supply / Demand distincts et ingestion depuis PLAN ; U713 fixe le type Knowledge pour
+    Visibility, U712 propose Integration pour ingestion. Aucune validation globale des descriptions.
+  target:
+    collection: relations
+    id: REL-U714-CONTAINS-DEMAND-PLAN
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: subdomain-plans
+      target_id: demand-plan-visibility
+      type: contains
+    value_sha256:
+      source_id: 3e44a6e982b3806fa1c115f0b522ceaf9cffde4ecfddc514f5160d058e5753fa
+      target_id: 7b758fa5016d8d8132badeede97ba4637ec55802e495e68e9561fdf7c7c3e593
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLANS-MATCHING: a88217ea336bf09c918861728de77ad69a61ba369a1343a4308a402aec6d6475
+        REL-U673-PLANS-PROMISING: 48b212a2ef89db9cdb500b7196c4de199a3e2b5fff77ad757a97c705c8f75984
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        demand-plan-visibility: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+        plans-ingestion: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+        plans-visibility: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 72ab3c1c9e92beb127cad7c55942fbc2432b422b7231875b8a287d63e6af6aaf
+- id: INT-U717-master-data-ingestion
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: master-data-ingestion
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Master Data Ingestion
+      nature: integration
+    value_sha256:
+      name: ad50ab56d2bdec923960495290e32d0fba4403938146482109d0476710009acc
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 777ea748c7411a52136700ce5fd0f4fdfcf62e9781b0319f27bf8a5d4d8d06ed
+        D12.b: 5ec45ab32b070f3d157b5225eca8b4027dfc558e18d0d570f10523a33cde13df
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D14.b: 458d5ffa69cea0239f10098d3d2a65745492414a4a7e8b91e73834c1559d171c
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: da8a04e5ed34036654dae50011d501bbd3978ec690cc5297ecea0b1015e381a6
+- id: INT-U717-D01.f
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: D01.f
+    approved_fields:
+    - category
+    - nature
+    values:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+      nature: integration
+    value_sha256:
+      category: 30d65b65ff8d2df7cfff368c37fa041d9de46ec9ed47f47a33f595bee617d349
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: e416f17e742fe3e761a4f8c024394ea58e0643eb0f7b48341cc1e2c790ce413e
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-MEMBER-D01.c: 30772ebc8772bf65db3ff943856c414e71507ebb43d98ab2da99fef03d35b935
+        REL-MEMBER-D01.f: fc7d703eb78b511bdd6d46a5fd212d1a0e2e4c5a5fde434d43eabe0d5b84e165
+        REL-MEMBER-D01.g: ad96af1d4bb7d720ead3d47f568e7e91f4889503a60e4a7575fb5ddf6c7092be
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-NEEDS-U290-002: 13112242ba2b20cdbdcf84d7866a29f1f38879d63df5bbe34125e0d9141305d0
+        REL-NEEDS-U290-003: e6ed32768232b218144489eeeba74ba4820724a54831c9a8b49e72a00e6bc357
+        REL-NEEDS-U290-006: 920fc4cd81049aec9666739798eca7d60d4105a55451d06fc19a633bc9dcc8e8
+        REL-UNIVERSE-SUPPLY-D01: f744b9468827591222b4e3f8e2baf4e32c27dc4eb4517855144adbf8b702b087
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        D01: 2a667eef5645c2b4cb1dae6346a3e707ecbdf283a182015f6e771ea2c0ade57c
+        D01.c: 8a4976bca54b68aeca00a23136d99729506f3031239f71a71fdd6f022d125402
+        D01.g: 94cd85564dfe59c40177e4ba59688aad02e84d24826e9c4b26fe0561df2daa08
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 4363ea33e4e393d4ce27ba1e770144ba38fc82ec90a1946af860b9f8c34f7ff9
+- id: INT-U717-D07.d
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: D07.d
+    approved_fields:
+    - category
+    - nature
+    values:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+      nature: integration
+    value_sha256:
+      category: 30d65b65ff8d2df7cfff368c37fa041d9de46ec9ed47f47a33f595bee617d349
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-EXECUTION-TRACKING-ADAPTATION: ca37c6d40b3cb3aa67f2d6bf75acf1aa825b1d42f867038d65ece252a0f3b92b
+        REL-EXECUTION-TRACKING-ORCHESTRATION: 8892a4bbebbedb0782d137f3f6bb00ba92125ddf262b7c9374daccdbb7e38f7e
+        REL-INITIAL-STOCKING-TRACKING: 6191cf8df03e0e90549d4b1f3294709d7479e1c4c25df032e13b113b301eba71
+        REL-MEMBER-D01.f: fc7d703eb78b511bdd6d46a5fd212d1a0e2e4c5a5fde434d43eabe0d5b84e165
+        REL-MEMBER-D03.n: f1ed093124a2c888e3c9ea500a3683c11358da4498fb54a1a3154c77bb705804
+        REL-MEMBER-D04.o: fe4a53e112a595ad685789f521e04981126f607ac01175785ec1380b3bb201d1
+        REL-MEMBER-D05.e: e0b9edadf34cb3451a7ccf97bf8425f0758be5044a3d845f0bbb26ffa9611658
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-MEMBER-D05.g: 7147498a20c1d79f0bf1f8e188893a3bfa8b2f0ec00a686ee38a43125b6921c9
+        REL-MEMBER-D05.i: 4690bcb93b3df3fa0b895bff634821d76d3889d9445579169f01aebe7a760645
+        REL-MEMBER-D06.d: d851f81c0f843e98b4ffc55f50e7b4a0b57ee72ebc2fb98b0534f5b14525b187
+        REL-MEMBER-D06.f: 3c793e57c53993ff87fa6bc88c9d07ac38ed09569d3103db5ff32590cbb01549
+        REL-MEMBER-D07.c: 9bebc504a1dccaa90a1e335ea4061b4c40109d4ec322ecde4dcb18a87aad9e69
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-MEMBER-D18.a: 588393ff50dd450a1488af652a0ce777074ce66793f9568f8d209badab5da2eb
+        REL-NEEDS-U290-003: e6ed32768232b218144489eeeba74ba4820724a54831c9a8b49e72a00e6bc357
+        REL-NEEDS-U290-021: 1fda40e29b2d3191412dbfbf253b6458221de8a126c5e00502cde9f1fadec140
+        REL-NEEDS-U290-078: b3ce22f1bc9e8dd4cb456684cf863304efb63501888a61b9e5b24124a5e31624
+        REL-NEEDS-U290-088: 733687098d2ed8ffcad0b8bcb825e22c8e98b32d43c362b8fbcc6749598e543f
+        REL-NEEDS-U290-100: f69638eb2c981c32fe70bfc4d7d428b72228d5fb6a3ce09ca1181391a7421ba1
+        REL-NEEDS-U290-113: be1d53bb3b931f7a861d76466f35d3c3110b666098505820e5446a320e25e7c3
+        REL-NEEDS-U290-121: 331dceb2d9dd6252f5998826a2966d9ec26b6bfc0c2937512bf9b04e7a33c6af
+        REL-NEEDS-U290-127: 491e7e06c5c50ebf668e62540da5fbff09d493b1cac10bca7d2f41921c89466b
+        REL-NEEDS-U380-01: 42de9572807877b605db680d9fa9d21390ccb831445d00a4e6a8436220afb9dc
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-U717-SUPPLY-TRACKING-VISIBILITY: 8a87c5bd880ac6e6e1391c92089738986083dd07676aca50377e6ed56dc719fd
+        REL-UNIVERSE-SUPPLY-D01: f744b9468827591222b4e3f8e2baf4e32c27dc4eb4517855144adbf8b702b087
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D04: fd3e5ede613a0d038c76f55a8153cb01c9055bd68f058290559c318a9f25746d
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D01: 2a667eef5645c2b4cb1dae6346a3e707ecbdf283a182015f6e771ea2c0ade57c
+        D01.f: e416f17e742fe3e761a4f8c024394ea58e0643eb0f7b48341cc1e2c790ce413e
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D03.n: 7041ef3e05a47b929572f7a0874d64879145dbe203939995f3eee1047248c658
+        D04: a4a039ad52caf2e8eb8e87a8ce701ad5334b6850c83dc13ffa63ccfc425b5232
+        D04.o: 7afc1cc9f024f6575c2562a32f5fdf28ad2218ed719cdba8c9f6f53630897942
+        D05.e: da52b42271fef7adfb4b358519947b9ab750a0f3a3ed26502f491d158a51c740
+        D05.f: 2af3e1e2a6fc93bca1ed146853717da12fee0893fc25c9299105d568e9373e69
+        D05.g: 89554426d6b842f87f6b135cb9ec2ef6573bf17524ee4cddc80c8bb54cf10a72
+        D05.i: 2c3bfdd83f07edb12e83aada68b7c082770591cff730e518c9417ab2482fa2f0
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D06.d: fd80338c8f9b9033749c88f765d79273c9c6c84bfa7e3ab14698f8ecb3c6a1e8
+        D06.f: ba3106921231701b4cac6265254528d1e4c01f773c3c56839ed809b8a4aa7ac4
+        D07.c: e1706a24848b6703700d38a9c9613f9c448803a1c7c90382767fccd9651920fe
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        D18.a: b3491843f8e4b6ab85ac52b0bd9e1bd72e73cffc07adad616ad3bd5b487a3c9d
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 02bf5fff433920994b2d0ec3f21c6064637348dbd484ac3ab1c1c4c1f63d4cc6
+- id: INT-U717-operations-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: operations-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 99ab13e6284bd9be313e8f88405eb5b73f1ea299e5b191f0311d9d5c01300de8
+- id: INT-U717-plans-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: plans-visibility
+    approved_fields:
+    - name
+    values:
+      name: Supply Plan Visibility
+    value_sha256:
+      name: 7e7f030eff5beda1c7e79bdfde9ce130889cf96c2892567fcbee7719515c488e
+    context:
+      format: semantic-sha256-v1
+      target: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLAN-COVERAGE: 5a25d5720c431b2fe8f4e8a0aa8a511cf12b11fb990b7f6458337f8402a331e8
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+      related_nodes:
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D05.f: 2af3e1e2a6fc93bca1ed146853717da12fee0893fc25c9299105d568e9373e69
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 3d14dd0eaf21b503fc1520f74dc1d301cd715b68ce04d9bfb87b02ece4dc8c2b
+- id: INT-U717-demand-plan-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: demand-plan-visibility
+    approved_fields:
+    - name
+    values:
+      name: Demand Plan Visibility
+    value_sha256:
+      name: 6ebbe289751657c3fb56f0d3f60bdb52591793042c74f036cb3f2dced4decbdb
+    context:
+      format: semantic-sha256-v1
+      target: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: d805af5fc558b0d3fbc2053757c25a611aca4595a4e2256934119318a60c00b8
+- id: INT-U717-master-data-ingestion-commerce
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: master-data-ingestion-commerce
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Commerce Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 3d15fa3196663ad30bbdfed8e69635034d4ac9aacdc1283c8ba1ed2d8f17377d
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 1392eca5fcdf4bc3ef7ce6c99ea541358c854b54848dc57b5485c6e41ebc0a97
+- id: INT-U717-master-data-ingestion-finance
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: master-data-ingestion-finance
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Finance Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 4e82d0156097760d2fe77bad22a7ad1b64711362d36ec49ad2e8af7be213541c
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 85ba427e506d59d9c846f1563dfdf4fa4dd7edd18a15f7db83a0578ff0cd9ba0
+- id: INT-U717-master-data-ingestion-design
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Accord cumulatif U712–U717 ; U718 nomme Commerce, Finance et Design. N’adopte pas les descriptions écrites ensuite
+    ni les contrats détaillés.
+  target:
+    collection: nodes
+    id: master-data-ingestion-design
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Design Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 8dba8661792dcab2fe5ed23c305628e5a2708c6b4c0761cb424074578bfc0333
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 7d570a332df8c5f6076cbe4a7a92e3e31a26d2687be2e7b946fbc43ecae0ac3d
+- id: INT-U717-REL-BEHAVIOR-BHV079
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV079
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV079
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 27cd1b769ba5362498e6c5b8ac040955583888e8f59c67571e770ca0c5a448f3
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 0709b03d0f53774d105f4f439bada8233841b4bb3d8d8b83f9620b4082d9e614
+- id: INT-U717-REL-BEHAVIOR-BHV080
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV080
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV080
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 181c519c5efba1a53cf7819b8ac80ba1b5232659e359b14af08007fd4db03501
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 51b0ba4cf7cebbee28fb92566369291e87f9ed8bfeea8df9900898da8f2ffed7
+- id: INT-U717-REL-BEHAVIOR-BHV081
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV081
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV081
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 77edb5a081cc111c5cf26e24744458d61b751f3eccbbc592374b3e8960cf4633
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: ab9b83d66c0483709632827bbb4fe9a104a664bd1cf82f7f75701d5ca15e2524
+- id: INT-U717-REL-BEHAVIOR-BHV082
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV082
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV082
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 35dfb862b7e8cbda259f1c1daf78ab954fb7656c7003aa8750b6e76a3e536381
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 9dc95238ff9ef9db033d300cb29a8bdb89760ad59868f5410de9c45ce4ecc4af
+- id: INT-U717-REL-U717-MASTER-INGESTION
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-U717-MASTER-INGESTION
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: business-references
+      target_id: master-data-ingestion
+      type: contains
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 777ea748c7411a52136700ce5fd0f4fdfcf62e9781b0319f27bf8a5d4d8d06ed
+        D12.b: 5ec45ab32b070f3d157b5225eca8b4027dfc558e18d0d570f10523a33cde13df
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D14.b: 458d5ffa69cea0239f10098d3d2a65745492414a4a7e8b91e73834c1559d171c
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 35ec8514415fb15f0684c95ccaf41bfc0264f21580bc78f64889ffadd683a3f4
+- id: INT-U717-REL-U717-OPERATIONS-VISIBILITY
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-U717-OPERATIONS-VISIBILITY
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: D06
+      target_id: operations-visibility
+      type: contains
+    value_sha256:
+      source_id: 17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4
+      target_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-EXECUTION-PROMISING: 7eb019882103b48ca0656d228ed121b6145c05b771aae4f6cdd00b4ec2ac7f15
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-ILL-008: a96ab74d3dc83c697d7a0a23d66b0c3be35be847dee4f14c04a9c36986a11727
+        REL-MEMBER-D05.i: 4690bcb93b3df3fa0b895bff634821d76d3889d9445579169f01aebe7a760645
+        REL-MEMBER-D06.b: 80ecac711e34da9a0c627308a58e5a03218d169bf59dbcb56c280f6a5887aaad
+        REL-MEMBER-D06.d: d851f81c0f843e98b4ffc55f50e7b4a0b57ee72ebc2fb98b0534f5b14525b187
+        REL-MEMBER-D06.e: 7ead77ada0cdee9526dc2621c8e4563c3fc1ee5126ab0982d6a723050244049d
+        REL-MEMBER-D06.f: 3c793e57c53993ff87fa6bc88c9d07ac38ed09569d3103db5ff32590cbb01549
+        REL-MEMBER-D07.a: 58420a40df757ba93d23a1cf9d38e14f60437fbd3af6326f1dbd30a66d0a498f
+        REL-MEMBER-D07.c: 9bebc504a1dccaa90a1e335ea4061b4c40109d4ec322ecde4dcb18a87aad9e69
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-SERVICE-CATALOG-EXECUTION: 231f64471a9e97276b93f8cbe4b39d01f5d1dbfbcb7e53a2539a3778f152c0df
+        REL-U673-CAPACITY-PROMISING: 5ad513499af9dd12678a70c705bc5ca96be0d122fea7da0e10cf89cc2311d4f4
+        REL-U673-FULFILMENT-MATCHING: 537f4cde387fedddf92a962173a993fb9041e7aedfb8fe20c473711b23c1e1c3
+        REL-U682-ORCHESTRATION-SERVICE-ORDERS: ac96d55d7862468ee94503e95c6ab3f8a2082962a352ff3cd691b82c985eae65
+        REL-U682-PRESENTS-SERVICE-ORDERS: 7169390d4339c65c3ee49284dfc37be271db83fb977348a38cfa06dd0358fa67
+        REL-U711-SERVICE-ORDERS-FULFILMENT: 1925005f1c3b08a12ece6f8bd0438b3a01ce7e6b33d4c241f67d727f112ebf2b
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D04: fd3e5ede613a0d038c76f55a8153cb01c9055bd68f058290559c318a9f25746d
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D03: c8cbd18538a293d8a7179c02f9a8e3fc8893210735affc89a71e01d702d12421
+        D04: a4a039ad52caf2e8eb8e87a8ce701ad5334b6850c83dc13ffa63ccfc425b5232
+        D05.i: 2c3bfdd83f07edb12e83aada68b7c082770591cff730e518c9417ab2482fa2f0
+        D06: eae0bea52d784b7b9a01d5c7003b3cfaf9dbd9fe6ea1c654ade5de20bf0859ef
+        D06.b: cb2ede7801dfff90cf05fc7edabdcc97f224bc1ba468b1dc4c0a410b9715422c
+        D06.d: fd80338c8f9b9033749c88f765d79273c9c6c84bfa7e3ab14698f8ecb3c6a1e8
+        D06.e: 66ce1ca5218fda950c06eca29e0dc6cb2d836d866303905d1582ad57b5551216
+        D06.f: ba3106921231701b4cac6265254528d1e4c01f773c3c56839ed809b8a4aa7ac4
+        D07.a: 29c2b8ddf49e718e1faa82190689a112dc2ce5f7b7343161d077836530d2beab
+        D07.c: e1706a24848b6703700d38a9c9613f9c448803a1c7c90382767fccd9651920fe
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        subdomain-service-orders: c901570e097c45209335a7395edb4877b6d37b3bd3259e9393ff6149b7bdb64d
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 3da953fbddf52aff76f9918dfdc02574c8be7db32871e518a464a48095845538
+- id: INT-U717-REL-U718-COMMERCE
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-U718-COMMERCE
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-commerce
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: ef9eef5cd1ddc00955ee3149d88267ebcd06da89b71c4bec3b5edcea3a8f947b
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 777ea748c7411a52136700ce5fd0f4fdfcf62e9781b0319f27bf8a5d4d8d06ed
+        D12.b: 5ec45ab32b070f3d157b5225eca8b4027dfc558e18d0d570f10523a33cde13df
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D14.b: 458d5ffa69cea0239f10098d3d2a65745492414a4a7e8b91e73834c1559d171c
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 26a6941bdce5bd5773962be814576b7cfe71a5749fa38560531947246f4cde69
+- id: INT-U717-REL-U718-FINANCE
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-U718-FINANCE
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-finance
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: b0ba13b0cb85c04bbc83b4f3b8ccea05b22027f645ca5fb4bb04515f223b0e28
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 777ea748c7411a52136700ce5fd0f4fdfcf62e9781b0319f27bf8a5d4d8d06ed
+        D12.b: 5ec45ab32b070f3d157b5225eca8b4027dfc558e18d0d570f10523a33cde13df
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D14.b: 458d5ffa69cea0239f10098d3d2a65745492414a4a7e8b91e73834c1559d171c
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: b3d164cf3c82bcb9c746443bdd0b5b88d817a378f5e9c0b169a9bfa8d44677f4
+- id: INT-U717-REL-U718-DESIGN
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  note: Appliquer la séparation Tracking / Visibility et l’ingestion commune par domaines fournisseurs ; détails des liens
+    métier proposés.
+  target:
+    collection: relations
+    id: REL-U718-DESIGN
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-design
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: a53f13161f5f04016e2f78f57ee1049d80cc7ef778f49bda023bcb8c5d776c13
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 3815690c3acd5b250426c673168b84c6c3bf55bdb51704b7a87e4f770ba79584
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 777ea748c7411a52136700ce5fd0f4fdfcf62e9781b0319f27bf8a5d4d8d06ed
+        D12.b: 5ec45ab32b070f3d157b5225eca8b4027dfc558e18d0d570f10523a33cde13df
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: e9f24fdd078b6ca14f6f695f9574430fc0984e9a6ece8fbd73e9b6825a13328d
+        D14.b: 458d5ffa69cea0239f10098d3d2a65745492414a4a7e8b91e73834c1559d171c
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 370968ab1128ac2910c5aec9c4848fc93b6949ccc2d1f908b39bb36a0153dfd4
+        master-data-ingestion: 7ba8fec2c911639343c8f6e97deeb295dadb9c341f6ae074c1c8f77e0f3d0f52
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: b174e8be8f49ee51ba953afc2cec1b3de6045b941c8e728dfc740513117a27dd
+- id: INT-U723-price-book
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U723
+  note: 'Accord cumulatif U719–U723 : Price Book produits et services, visibilité dans Master Data et convention de nommage.
+    Détails rédigés ensuite non adoptés implicitement.'
+  target:
+    collection: nodes
+    id: price-book
+    approved_fields:
+    - name
+    values:
+      name: Price Book
+    value_sha256:
+      name: 69fe7b776f34fae412c82b56db96b8f5e31986c3bf1d1fb02b5bfe5094835e55
+    context:
+      format: semantic-sha256-v1
+      target: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-U723-REFERENCE-D11: 057b2e2cb73d3336f8b4d9fb035f993f724111bfe2fe7d97965628847703a381
+        REL-U723-REFERENCE-D12: b86603893473207a1cba89e1c4bd6e237748bfdbf1515f6db852fa22c977fc5f
+        REL-U723-REFERENCE-D14: 46afde69c4bfbd17a85769a86e3c167dbd1e0c73b8e73028d17f39b1df50999a
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 54ec7b969495e5fecdff2f11ba5ccc6cf6f15ca62e575e82203e74b20b408046
+- id: INT-U723-price-book-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U723
+  note: 'Accord cumulatif U719–U723 : Price Book produits et services, visibilité dans Master Data et convention de nommage.
+    Détails rédigés ensuite non adoptés implicitement.'
+  target:
+    collection: nodes
+    id: price-book-visibility
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Price Book Visibility
+      nature: knowledge
+    value_sha256:
+      name: 5153697922d427cad8fa0c1496a94b7d6c7840c05ca8af08972dcb5c057e4b22
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-MEMBER-D03.k: 5de44eafb600291a7b96a2110aae4a1c46fe62b0afc16836a7f835ce03544c36
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U723-CONSUMER-D03.k: 360633ab1d49d971d1885269186f6a2ae1402d5dfa35292fcdbd898c01e8ff15
+        REL-U723-CONSUMER-D12.b: 7fa5856598ab934b902cbc2c29cbfd8bd73feea2ad44fa21e44793b7600221bd
+        REL-U723-CONSUMER-D14.b: 6d5e0cb717042c6da8c5ca751b5efba51ba519ed97438fbd1f19776af16d27fb
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D03.k: c3f24e2a5890a494b61a88cae724a487359dc7104fbbcffad808964ed3b3ca50
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: ae820481a3e49fcffc3150868a4ba0cb145882ca7beefec5b6e848bd661aabaf
+- id: INT-U723-REL-U723-PRICE-BOOK
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U723
+  note: 'Accord cumulatif U719–U723 : Price Book produits et services, visibilité dans Master Data et convention de nommage.
+    Détails rédigés ensuite non adoptés implicitement.'
+  target:
+    collection: relations
+    id: REL-U723-PRICE-BOOK
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: business-references
+      target_id: price-book
+      type: presents
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 7693e23cd74332917dc2bdf24052e3726fea40ec04273ccdedd92103100d6b12
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    context:
+      format: semantic-sha256-v1
+      target: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-U723-REFERENCE-D11: 057b2e2cb73d3336f8b4d9fb035f993f724111bfe2fe7d97965628847703a381
+        REL-U723-REFERENCE-D12: b86603893473207a1cba89e1c4bd6e237748bfdbf1515f6db852fa22c977fc5f
+        REL-U723-REFERENCE-D14: 46afde69c4bfbd17a85769a86e3c167dbd1e0c73b8e73028d17f39b1df50999a
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 4fbfe30c600614d27075a08154d2498578dd30693bf2231145b868cc16180ee8
+- id: INT-U723-REL-U723-PRICE-VISIBILITY
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U723
+  note: 'Accord cumulatif U719–U723 : Price Book produits et services, visibilité dans Master Data et convention de nommage.
+    Détails rédigés ensuite non adoptés implicitement.'
+  target:
+    collection: relations
+    id: REL-U723-PRICE-VISIBILITY
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: price-book
+      target_id: price-book-visibility
+      type: contains
+    value_sha256:
+      source_id: 7693e23cd74332917dc2bdf24052e3726fea40ec04273ccdedd92103100d6b12
+      target_id: b79b847adb687ecad9b2c7816dc5171c5118d07d1f085eb26822c9fd0bed77a4
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-MEMBER-D03.k: 5de44eafb600291a7b96a2110aae4a1c46fe62b0afc16836a7f835ce03544c36
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U723-CONSUMER-D03.k: 360633ab1d49d971d1885269186f6a2ae1402d5dfa35292fcdbd898c01e8ff15
+        REL-U723-CONSUMER-D12.b: 7fa5856598ab934b902cbc2c29cbfd8bd73feea2ad44fa21e44793b7600221bd
+        REL-U723-CONSUMER-D14.b: 6d5e0cb717042c6da8c5ca751b5efba51ba519ed97438fbd1f19776af16d27fb
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-U723-REFERENCE-D11: 057b2e2cb73d3336f8b4d9fb035f993f724111bfe2fe7d97965628847703a381
+        REL-U723-REFERENCE-D12: b86603893473207a1cba89e1c4bd6e237748bfdbf1515f6db852fa22c977fc5f
+        REL-U723-REFERENCE-D14: 46afde69c4bfbd17a85769a86e3c167dbd1e0c73b8e73028d17f39b1df50999a
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D03.k: c3f24e2a5890a494b61a88cae724a487359dc7104fbbcffad808964ed3b3ca50
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 44139a8003dd347c0769961ab740763bdadc7843e35f413385d48f8f23f830ab
+- id: INT-U723-REVIEW-INT-U714-subdomain-plans
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  - U717
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: subdomain-plans
+    approved_fields:
+    - name
+    values:
+      name: Plan Visibility
+    value_sha256:
+      name: 91da9b278b01a755f4c5f54f5ec76188c3e7297075ede12f5ef66ca8910af57a
+    context:
+      format: semantic-sha256-v1
+      target: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLANS-MATCHING: a88217ea336bf09c918861728de77ad69a61ba369a1343a4308a402aec6d6475
+        REL-U673-PLANS-PROMISING: 48b212a2ef89db9cdb500b7196c4de199a3e2b5fff77ad757a97c705c8f75984
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        demand-plan-visibility: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+        plans-ingestion: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+        plans-visibility: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 48c24d1cee79c9e3f67102d2341d0ead884a842eb91ddad50828f36c3e706e68
+  supersedes: INT-U714-subdomain-plans
+- id: INT-U723-REVIEW-INT-U714-plans-ingestion
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  - U717
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: plans-ingestion
+    approved_fields:
+    - nature
+    values:
+      nature: integration
+    value_sha256:
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: e8029a402750460634f7751c21a1caf6cbbf8c77015337120d8f824a3524552b
+  supersedes: INT-U714-plans-ingestion
+- id: INT-U723-REVIEW-INT-U714-plans-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  - U717
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: plans-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLAN-COVERAGE: 5a25d5720c431b2fe8f4e8a0aa8a511cf12b11fb990b7f6458337f8402a331e8
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+      related_nodes:
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D05.f: 2af3e1e2a6fc93bca1ed146853717da12fee0893fc25c9299105d568e9373e69
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 69c63dc3e206162856b1d88dd872b4c7e3dfc53e54aa9bfe1c05f2510d49d48e
+  supersedes: INT-U714-plans-visibility
+- id: INT-U723-REVIEW-INT-U714-demand-plan-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  - U717
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: demand-plan-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: aaefd43dcf7615515fdeee9702c2d67fe8fcf8ec818286f81766966948ff3aec
+  supersedes: INT-U714-demand-plan-visibility
+- id: INT-U723-REVIEW-INT-U714-REL-U714-CONTAINS-DEMAND-PLAN
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U713
+  - U714
+  - U717
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U714-CONTAINS-DEMAND-PLAN
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: subdomain-plans
+      target_id: demand-plan-visibility
+      type: contains
+    value_sha256:
+      source_id: 3e44a6e982b3806fa1c115f0b522ceaf9cffde4ecfddc514f5160d058e5753fa
+      target_id: 7b758fa5016d8d8132badeede97ba4637ec55802e495e68e9561fdf7c7c3e593
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U673-CONTAINS-plans-ingestion: b96b366a9cccb6059b27b45438c113b9b411a37623e75ebea7f8f9401e0865e2
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLANS-MATCHING: a88217ea336bf09c918861728de77ad69a61ba369a1343a4308a402aec6d6475
+        REL-U673-PLANS-PROMISING: 48b212a2ef89db9cdb500b7196c4de199a3e2b5fff77ad757a97c705c8f75984
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        demand-plan-visibility: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+        plans-ingestion: ac6882d822b76fda708de521f2b09d28b50344ce3e501063703230f6616b264b
+        plans-visibility: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: c4c2a8fa0b791c57f8bbd2726355764312381caeec65987ea9c4063992b70c4d
+  supersedes: INT-U714-REL-U714-CONTAINS-DEMAND-PLAN
+- id: INT-U723-REVIEW-INT-U717-master-data-ingestion
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: master-data-ingestion
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Master Data Ingestion
+      nature: integration
+    value_sha256:
+      name: ad50ab56d2bdec923960495290e32d0fba4403938146482109d0476710009acc
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 622aa50a3a6f95a46fbf4c92f92885ab5befb4534d8ed8e7bd3f8c0f52230e8a
+  supersedes: INT-U717-master-data-ingestion
+- id: INT-U723-REVIEW-INT-U717-D01.f
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: D01.f
+    approved_fields:
+    - category
+    - nature
+    values:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+      nature: integration
+    value_sha256:
+      category: 30d65b65ff8d2df7cfff368c37fa041d9de46ec9ed47f47a33f595bee617d349
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: e416f17e742fe3e761a4f8c024394ea58e0643eb0f7b48341cc1e2c790ce413e
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-MEMBER-D01.c: 30772ebc8772bf65db3ff943856c414e71507ebb43d98ab2da99fef03d35b935
+        REL-MEMBER-D01.f: fc7d703eb78b511bdd6d46a5fd212d1a0e2e4c5a5fde434d43eabe0d5b84e165
+        REL-MEMBER-D01.g: ad96af1d4bb7d720ead3d47f568e7e91f4889503a60e4a7575fb5ddf6c7092be
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-NEEDS-U290-002: 13112242ba2b20cdbdcf84d7866a29f1f38879d63df5bbe34125e0d9141305d0
+        REL-NEEDS-U290-003: e6ed32768232b218144489eeeba74ba4820724a54831c9a8b49e72a00e6bc357
+        REL-NEEDS-U290-006: 920fc4cd81049aec9666739798eca7d60d4105a55451d06fc19a633bc9dcc8e8
+        REL-UNIVERSE-SUPPLY-D01: f744b9468827591222b4e3f8e2baf4e32c27dc4eb4517855144adbf8b702b087
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        D01: 2a667eef5645c2b4cb1dae6346a3e707ecbdf283a182015f6e771ea2c0ade57c
+        D01.c: 8a4976bca54b68aeca00a23136d99729506f3031239f71a71fdd6f022d125402
+        D01.g: 94cd85564dfe59c40177e4ba59688aad02e84d24826e9c4b26fe0561df2daa08
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 40c484116d77dea61c8c660c61d54defd7afc5197adcd30bc0641fa9f4b53cd4
+  supersedes: INT-U717-D01.f
+- id: INT-U723-REVIEW-INT-U717-D07.d
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: D07.d
+    approved_fields:
+    - category
+    - nature
+    values:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+      nature: integration
+    value_sha256:
+      category: 30d65b65ff8d2df7cfff368c37fa041d9de46ec9ed47f47a33f595bee617d349
+      nature: f2860eb54ca77635af70dd0361ee5450c2a482fc6341d958450d8d7f9054d0de
+    context:
+      format: semantic-sha256-v1
+      target: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-EXECUTION-TRACKING-ADAPTATION: ca37c6d40b3cb3aa67f2d6bf75acf1aa825b1d42f867038d65ece252a0f3b92b
+        REL-EXECUTION-TRACKING-ORCHESTRATION: 8892a4bbebbedb0782d137f3f6bb00ba92125ddf262b7c9374daccdbb7e38f7e
+        REL-INITIAL-STOCKING-TRACKING: 6191cf8df03e0e90549d4b1f3294709d7479e1c4c25df032e13b113b301eba71
+        REL-MEMBER-D01.f: fc7d703eb78b511bdd6d46a5fd212d1a0e2e4c5a5fde434d43eabe0d5b84e165
+        REL-MEMBER-D03.n: f1ed093124a2c888e3c9ea500a3683c11358da4498fb54a1a3154c77bb705804
+        REL-MEMBER-D04.o: fe4a53e112a595ad685789f521e04981126f607ac01175785ec1380b3bb201d1
+        REL-MEMBER-D05.e: e0b9edadf34cb3451a7ccf97bf8425f0758be5044a3d845f0bbb26ffa9611658
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-MEMBER-D05.g: 7147498a20c1d79f0bf1f8e188893a3bfa8b2f0ec00a686ee38a43125b6921c9
+        REL-MEMBER-D05.i: 4690bcb93b3df3fa0b895bff634821d76d3889d9445579169f01aebe7a760645
+        REL-MEMBER-D06.d: d851f81c0f843e98b4ffc55f50e7b4a0b57ee72ebc2fb98b0534f5b14525b187
+        REL-MEMBER-D06.f: 3c793e57c53993ff87fa6bc88c9d07ac38ed09569d3103db5ff32590cbb01549
+        REL-MEMBER-D07.c: 9bebc504a1dccaa90a1e335ea4061b4c40109d4ec322ecde4dcb18a87aad9e69
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-MEMBER-D18.a: 588393ff50dd450a1488af652a0ce777074ce66793f9568f8d209badab5da2eb
+        REL-NEEDS-U290-003: e6ed32768232b218144489eeeba74ba4820724a54831c9a8b49e72a00e6bc357
+        REL-NEEDS-U290-021: 1fda40e29b2d3191412dbfbf253b6458221de8a126c5e00502cde9f1fadec140
+        REL-NEEDS-U290-078: b3ce22f1bc9e8dd4cb456684cf863304efb63501888a61b9e5b24124a5e31624
+        REL-NEEDS-U290-088: 733687098d2ed8ffcad0b8bcb825e22c8e98b32d43c362b8fbcc6749598e543f
+        REL-NEEDS-U290-100: f69638eb2c981c32fe70bfc4d7d428b72228d5fb6a3ce09ca1181391a7421ba1
+        REL-NEEDS-U290-113: be1d53bb3b931f7a861d76466f35d3c3110b666098505820e5446a320e25e7c3
+        REL-NEEDS-U290-121: 331dceb2d9dd6252f5998826a2966d9ec26b6bfc0c2937512bf9b04e7a33c6af
+        REL-NEEDS-U290-127: 491e7e06c5c50ebf668e62540da5fbff09d493b1cac10bca7d2f41921c89466b
+        REL-NEEDS-U380-01: 42de9572807877b605db680d9fa9d21390ccb831445d00a4e6a8436220afb9dc
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-U717-SUPPLY-TRACKING-VISIBILITY: 8a87c5bd880ac6e6e1391c92089738986083dd07676aca50377e6ed56dc719fd
+        REL-UNIVERSE-SUPPLY-D01: f744b9468827591222b4e3f8e2baf4e32c27dc4eb4517855144adbf8b702b087
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D04: fd3e5ede613a0d038c76f55a8153cb01c9055bd68f058290559c318a9f25746d
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+      related_nodes:
+        D01: 2a667eef5645c2b4cb1dae6346a3e707ecbdf283a182015f6e771ea2c0ade57c
+        D01.f: e416f17e742fe3e761a4f8c024394ea58e0643eb0f7b48341cc1e2c790ce413e
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D03.n: 7041ef3e05a47b929572f7a0874d64879145dbe203939995f3eee1047248c658
+        D04: d5b44084046574ee6f45d7ac1b79e3f6b0223bc073cf61c920a079f71a752f0e
+        D04.o: 7afc1cc9f024f6575c2562a32f5fdf28ad2218ed719cdba8c9f6f53630897942
+        D05.e: da52b42271fef7adfb4b358519947b9ab750a0f3a3ed26502f491d158a51c740
+        D05.f: 2af3e1e2a6fc93bca1ed146853717da12fee0893fc25c9299105d568e9373e69
+        D05.g: 89554426d6b842f87f6b135cb9ec2ef6573bf17524ee4cddc80c8bb54cf10a72
+        D05.i: 2c3bfdd83f07edb12e83aada68b7c082770591cff730e518c9417ab2482fa2f0
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D06.d: fd80338c8f9b9033749c88f765d79273c9c6c84bfa7e3ab14698f8ecb3c6a1e8
+        D06.f: ba3106921231701b4cac6265254528d1e4c01f773c3c56839ed809b8a4aa7ac4
+        D07.c: e1706a24848b6703700d38a9c9613f9c448803a1c7c90382767fccd9651920fe
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        D18.a: b3491843f8e4b6ab85ac52b0bd9e1bd72e73cffc07adad616ad3bd5b487a3c9d
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: b13098f92eb1f90bc8d151aeb5a040d88d51a3da17d7e2776877917d43055e42
+  supersedes: INT-U717-D07.d
+- id: INT-U723-REVIEW-INT-U717-operations-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: operations-visibility
+    approved_fields:
+    - nature
+    values:
+      nature: knowledge
+    value_sha256:
+      nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+    context:
+      format: semantic-sha256-v1
+      target: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 249e5c82eeb946541695c59bba97d85bea2f8df253d0518ee897d045e3c37e6e
+  supersedes: INT-U717-operations-visibility
+- id: INT-U723-REVIEW-INT-U717-plans-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: plans-visibility
+    approved_fields:
+    - name
+    values:
+      name: Supply Plan Visibility
+    value_sha256:
+      name: 7e7f030eff5beda1c7e79bdfde9ce130889cf96c2892567fcbee7719515c488e
+    context:
+      format: semantic-sha256-v1
+      target: a0f5abe96508bfb3200b43eef4ccc4ff8f1564074aff25331a6175b7c870af6f
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-MEMBER-D05.f: a9b5e67334f641163ab38120a828694ffcf832c5e24e68481876539deca2d0d4
+        REL-U673-CONTAINS-plans-visibility: ea87a9db5977644f73f17fb70947c1791ee59d1068219e516b41f51962b06f4e
+        REL-U673-PLAN-COVERAGE: 5a25d5720c431b2fe8f4e8a0aa8a511cf12b11fb990b7f6458337f8402a331e8
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+      related_nodes:
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D05.f: 2af3e1e2a6fc93bca1ed146853717da12fee0893fc25c9299105d568e9373e69
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 69c63dc3e206162856b1d88dd872b4c7e3dfc53e54aa9bfe1c05f2510d49d48e
+  supersedes: INT-U717-plans-visibility
+- id: INT-U723-REVIEW-INT-U717-demand-plan-visibility
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: demand-plan-visibility
+    approved_fields:
+    - name
+    values:
+      name: Demand Plan Visibility
+    value_sha256:
+      name: 6ebbe289751657c3fb56f0d3f60bdb52591793042c74f036cb3f2dced4decbdb
+    context:
+      format: semantic-sha256-v1
+      target: a0b352ca0cc7f32cb6a7220acab03377f1a62464b4986a2afa8ddee9f52141b3
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U673-PRESENTS-subdomain-plans: a7101af8e614d6bdba90e0bd55578011e06bf5caddba7e93ebdfb3ac69c9299e
+        REL-U714-CONTAINS-DEMAND-PLAN: 3a083f3c2fe4ebc2565679e81ba4bf68b1b5c51319bbb647e401bf2933376151
+      related_nodes:
+        subdomain-plans: a4e34ae39cc61d4f99ef731bfbed7bdce36edb6ae00f5a364cb795a6856bf1b9
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: aaefd43dcf7615515fdeee9702c2d67fe8fcf8ec818286f81766966948ff3aec
+  supersedes: INT-U717-demand-plan-visibility
+- id: INT-U723-REVIEW-INT-U717-master-data-ingestion-commerce
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: master-data-ingestion-commerce
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Commerce Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 3d15fa3196663ad30bbdfed8e69635034d4ac9aacdc1283c8ba1ed2d8f17377d
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 91f44f1677b03dea605f2f1fa854c1136e05208bf59448fd78bd1b89fecb906f
+  supersedes: INT-U717-master-data-ingestion-commerce
+- id: INT-U723-REVIEW-INT-U717-master-data-ingestion-finance
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: master-data-ingestion-finance
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Finance Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 4e82d0156097760d2fe77bad22a7ad1b64711362d36ec49ad2e8af7be213541c
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 4158a9a5e6546359eeff782c2b86840837ec6258b0a97f2743914ab34eedced0
+  supersedes: INT-U717-master-data-ingestion-finance
+- id: INT-U723-REVIEW-INT-U717-master-data-ingestion-design
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: nodes
+    id: master-data-ingestion-design
+    approved_fields:
+    - name
+    - nature
+    values:
+      name: Design Ingestion
+      nature: business_scope
+    value_sha256:
+      name: 8dba8661792dcab2fe5ed23c305628e5a2708c6b4c0761cb424074578bfc0333
+      nature: 4515dbcebc0a026dfb3fb29ee8fd7749992a432b1d3dac99dc91e2e92fa2e742
+    context:
+      format: semantic-sha256-v1
+      target: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 5db5650d45446dba110a78308ddc23dd0f80fcf50f50c58b2ac4aa6420d8e7a4
+  supersedes: INT-U717-master-data-ingestion-design
+- id: INT-U723-REVIEW-INT-U717-REL-BEHAVIOR-BHV079
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV079
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV079
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 27cd1b769ba5362498e6c5b8ac040955583888e8f59c67571e770ca0c5a448f3
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 1e5bc5281b05a77983443ddd9226767994553a324e85e79b861885ead6c726d7
+  supersedes: INT-U717-REL-BEHAVIOR-BHV079
+- id: INT-U723-REVIEW-INT-U717-REL-BEHAVIOR-BHV080
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV080
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV080
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 181c519c5efba1a53cf7819b8ac80ba1b5232659e359b14af08007fd4db03501
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: eed5570c29caa3f2b5fd5e2678a53b058d1c22a3c65754ad9b8826fe4134d11e
+  supersedes: INT-U717-REL-BEHAVIOR-BHV080
+- id: INT-U723-REVIEW-INT-U717-REL-BEHAVIOR-BHV081
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV081
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV081
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 77edb5a081cc111c5cf26e24744458d61b751f3eccbbc592374b3e8960cf4633
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: f8153714e9d36db4e023465427d99c0d9484b366ad5feacf9998ed4ff45c9e9d
+  supersedes: INT-U717-REL-BEHAVIOR-BHV081
+- id: INT-U723-REVIEW-INT-U717-REL-BEHAVIOR-BHV082
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-BEHAVIOR-BHV082
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: operations-visibility
+      target_id: BHV082
+      type: contains
+    value_sha256:
+      source_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      target_id: 35dfb862b7e8cbda259f1c1daf78ab954fb7656c7003aa8750b6e76a3e536381
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 007a482aeaace8714609aa8e9635dc18556ce7be52b87ade31bb52245c20005e
+  supersedes: INT-U717-REL-BEHAVIOR-BHV082
+- id: INT-U723-REVIEW-INT-U717-REL-U717-MASTER-INGESTION
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U717-MASTER-INGESTION
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: business-references
+      target_id: master-data-ingestion
+      type: contains
+    value_sha256:
+      source_id: c9e934afa6b87f704decc8af0881066ff1228d8762c99cb68678666c409539a9
+      target_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 9d70c3f747ef546d8b5b9d38e99a8f222e706ddb16946047a0293016b5b42e3e
+  supersedes: INT-U717-REL-U717-MASTER-INGESTION
+- id: INT-U723-REVIEW-INT-U717-REL-U717-OPERATIONS-VISIBILITY
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U717-OPERATIONS-VISIBILITY
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: D06
+      target_id: operations-visibility
+      type: contains
+    value_sha256:
+      source_id: 17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4
+      target_id: 6697184fa17184f5a174f474ea57c8cc72ecc732ee50caaee275fa07d39078ee
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-BEHAVIOR-BHV079: 103cfd0033ef6eff06c22f85c33ebd2fbf67f10025831c3af07c8bb2e3e65852
+        REL-BEHAVIOR-BHV080: ee34f8c3d21e00481965b86991b3b2b487861a1c88dade4011dbb9e9232c6711
+        REL-BEHAVIOR-BHV081: f8fe8bea9b9457ef6a23b0152aae992aa3559ebae47be4154fef0e2d69af7403
+        REL-BEHAVIOR-BHV082: eac73f91cd1cc082693f2e89f6317816280ee3ed379d02a3cc6c97a4d862ae35
+        REL-EXECUTION-PROMISING: 7eb019882103b48ca0656d228ed121b6145c05b771aae4f6cdd00b4ec2ac7f15
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-ILL-008: a96ab74d3dc83c697d7a0a23d66b0c3be35be847dee4f14c04a9c36986a11727
+        REL-MEMBER-D05.i: 4690bcb93b3df3fa0b895bff634821d76d3889d9445579169f01aebe7a760645
+        REL-MEMBER-D06.b: 80ecac711e34da9a0c627308a58e5a03218d169bf59dbcb56c280f6a5887aaad
+        REL-MEMBER-D06.d: d851f81c0f843e98b4ffc55f50e7b4a0b57ee72ebc2fb98b0534f5b14525b187
+        REL-MEMBER-D06.e: 7ead77ada0cdee9526dc2621c8e4563c3fc1ee5126ab0982d6a723050244049d
+        REL-MEMBER-D06.f: 3c793e57c53993ff87fa6bc88c9d07ac38ed09569d3103db5ff32590cbb01549
+        REL-MEMBER-D07.a: 58420a40df757ba93d23a1cf9d38e14f60437fbd3af6326f1dbd30a66d0a498f
+        REL-MEMBER-D07.c: 9bebc504a1dccaa90a1e335ea4061b4c40109d4ec322ecde4dcb18a87aad9e69
+        REL-MEMBER-D07.d: 972ce4be9b845644b8be5ee4d433710a150004e837d1d4730ea890cd73d857e9
+        REL-SERVICE-CATALOG-EXECUTION: 231f64471a9e97276b93f8cbe4b39d01f5d1dbfbcb7e53a2539a3778f152c0df
+        REL-U673-CAPACITY-PROMISING: 5ad513499af9dd12678a70c705bc5ca96be0d122fea7da0e10cf89cc2311d4f4
+        REL-U673-FULFILMENT-MATCHING: 537f4cde387fedddf92a962173a993fb9041e7aedfb8fe20c473711b23c1e1c3
+        REL-U682-ORCHESTRATION-SERVICE-ORDERS: ac96d55d7862468ee94503e95c6ab3f8a2082962a352ff3cd691b82c985eae65
+        REL-U682-PRESENTS-SERVICE-ORDERS: 7169390d4339c65c3ee49284dfc37be271db83fb977348a38cfa06dd0358fa67
+        REL-U711-SERVICE-ORDERS-FULFILMENT: 1925005f1c3b08a12ece6f8bd0438b3a01ce7e6b33d4c241f67d727f112ebf2b
+        REL-U717-OPERATIONS-TRACKING-VISIBILITY: 3c287e2143d5b231b5c297817e1e886092ec4693c91b2683e4df5df0349ae4be
+        REL-U717-OPERATIONS-VISIBILITY: 4522f8a471a79c19eefa388acceed801cb07e6c42b36dfeb3046e2be8c365a4b
+        REL-UNIVERSE-SUPPLY-D03: 98765de7a5949670f0321e4eb836c871bd4dca2d57f80ac38041246b06c58d48
+        REL-UNIVERSE-SUPPLY-D04: fd3e5ede613a0d038c76f55a8153cb01c9055bd68f058290559c318a9f25746d
+        REL-UNIVERSE-SUPPLY-D06: 0e45a64548dc41ce26cb711e48ccda0c59e3b699bc4c442a95dc9d7495b75842
+        REL-UNIVERSE-SUPPLY-D18: 00aa1e2d76c66bf865eee98fcc6a37976e0eb23c8ee71fa7acb3a565e22fee03
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        BHV079: 71a4a06fb58050ac6fd5bc3ef67d7b6ca003ac286282abda7eab7e5b5e24896d
+        BHV080: 1762a3f9bdd70635370e1c7c0d61210e09ee23aa198d66f13634e5933b0c52ed
+        BHV081: f15e8a830f69a6fddedf268096d21dc79b1f2f3597c02bf9ff527ebe7114bfb7
+        BHV082: 13050b31bc2b10ca518676d9f2f9de21f1b1a7b3ed73db2ff3d2cd58ca1cea42
+        D03: ca9c7c1e1eea90aa27d6fe41c563515965ce6641bcd6267cc0b3065c461765e0
+        D04: d5b44084046574ee6f45d7ac1b79e3f6b0223bc073cf61c920a079f71a752f0e
+        D05.i: 2c3bfdd83f07edb12e83aada68b7c082770591cff730e518c9417ab2482fa2f0
+        D06: 8fc86a11773c578545926c5742a056c26234df92a4169f50cf800083f2406e2a
+        D06.b: cb2ede7801dfff90cf05fc7edabdcc97f224bc1ba468b1dc4c0a410b9715422c
+        D06.d: fd80338c8f9b9033749c88f765d79273c9c6c84bfa7e3ab14698f8ecb3c6a1e8
+        D06.e: 66ce1ca5218fda950c06eca29e0dc6cb2d836d866303905d1582ad57b5551216
+        D06.f: ba3106921231701b4cac6265254528d1e4c01f773c3c56839ed809b8a4aa7ac4
+        D07.a: 29c2b8ddf49e718e1faa82190689a112dc2ce5f7b7343161d077836530d2beab
+        D07.c: e1706a24848b6703700d38a9c9613f9c448803a1c7c90382767fccd9651920fe
+        D07.d: 373c2fddf72cb8e3011f767e290dad8ec1ba02f214d831f5748b2285da1009ed
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D18: 547361738eb524f1ca8fd59cacf600eb4572d9d2e01f54d2ec918c1b0522e109
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        operations-visibility: cc3314eb67789f0f949875fd0a5ee2594febc476e937d71a38a3da6a5a032d11
+        subdomain-service-orders: c901570e097c45209335a7395edb4877b6d37b3bd3259e9393ff6149b7bdb64d
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 608744a474f14e72a889e87be3d9c084081c5441475723a8a87848b7f64f716d
+  supersedes: INT-U717-REL-U717-OPERATIONS-VISIBILITY
+- id: INT-U723-REVIEW-INT-U717-REL-U718-COMMERCE
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U718-COMMERCE
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-commerce
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: ef9eef5cd1ddc00955ee3149d88267ebcd06da89b71c4bec3b5edcea3a8f947b
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 180d0ce4680ea2548af89358fb6b907bb71b2579e7e0b707c908dee61f032dd5
+  supersedes: INT-U717-REL-U718-COMMERCE
+- id: INT-U723-REVIEW-INT-U717-REL-U718-FINANCE
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U718-FINANCE
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-finance
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: b0ba13b0cb85c04bbc83b4f3b8ccea05b22027f645ca5fb4bb04515f223b0e28
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: aede847dd6230cbf1ad55b2ece65de190a0ccc3416d9595617bed508ff28e346
+  supersedes: INT-U717-REL-U718-FINANCE
+- id: INT-U723-REVIEW-INT-U717-REL-U718-DESIGN
+  author: Laurent
+  decided_at: '2026-09-24'
+  recorded_at: '2026-09-24'
+  interpretation: contextual
+  reviewer: Codex
+  source_refs:
+  - U717
+  - U718
+  - U723
+  note: 'Réexamen ciblé : les valeurs approuvées sont inchangées. U717 confirme le lot Integration/Plans ; U723 ajoute Price
+    Book sans remettre en cause noms, types et rattachements retenus. Le glossaire étendu et les nouveaux voisins expliquent
+    le changement de contexte. Aucune approbation des descriptions nouvelles.'
+  target:
+    collection: relations
+    id: REL-U718-DESIGN
+    approved_fields:
+    - source_id
+    - target_id
+    - type
+    values:
+      source_id: master-data-ingestion
+      target_id: master-data-ingestion-design
+      type: contains
+    value_sha256:
+      source_id: 0573493ec146152c6c1c0cd54e4495c85f822db6c67b1458e08b5f55a71037f9
+      target_id: a53f13161f5f04016e2f78f57ee1049d80cc7ef778f49bda023bcb8c5d776c13
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    context:
+      format: semantic-sha256-v1
+      target: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+      principles: a1cc72406e1dae4676642aa22883ec489d1b2450e3be5e95d3ad25d465826e6b
+      glossary: 4463a91c581662f610a097422b5e8a028fec4b353b1319c1368b7d3f129f3ea1
+      incident_relations:
+        REL-GROUP-D08: 656ef3b939a2e41e3a25662793ee9df9eb07094055ba18b7041c52caf24214ee
+        REL-GROUP-D09: 1b82d5202acaf3a41d63ea5216ee46b86d1b87d88332a217241c4b1820b9e6e4
+        REL-GROUP-D11: 80844bb143c4a45a03eb8d0c3ceff4f0846a7e724d2b5a12579ff358a50121e1
+        REL-GROUP-D12: 3358f09460cd9a097536842fc5c3e56f3d9ef49b60514bc80958e60507c23965
+        REL-GROUP-D13: 5eccd9131381304d1d89e3aaa7ffbcefb4afc6912b852e3f3374fea19943372c
+        REL-GROUP-D14: f1bffbba4c0aa4983a3cb08426295ecece181fa1c74b2c282db9b5c9b74f5b85
+        REL-GROUP-D16: 17a8b6dfc72fec10deb5b5764ce58235217938920e250b881d5bff6e4415b718
+        REL-MEMBER-D08.e: 53fd8d448037975c61e8a4e1c1472a4d8d1d1a515d50fc9bb7f7797aef67d8ef
+        REL-MEMBER-D09.e: 5eccf001873c7121b3b85e8e7835ef8a7b700daf7b48fad5f13465155a6adadf
+        REL-MEMBER-D11.b: f7049aced1308571613a754ad26dcc230fa53130b1ea635cfde8c2208fc29929
+        REL-MEMBER-D12.b: 68cadb9a4e64a1411e3ac78272f3798d7b9a7f12ec3c92f6c8bea2da1453a6fd
+        REL-MEMBER-D13.b: cf0b315ce12a70671364e7fc100e535e6e464b4d1c05f3d4250da65dc526accc
+        REL-MEMBER-D14.b: 773da33bb0dc887cdbc675f03c3223ea29517ff7367aeecaca196ced125baa6c
+        REL-MEMBER-D16.b: f882f440eb53fd8ba4e0b73894c8ada1c7623b19d0174c2713d2d2f39ab94ada
+        REL-NEEDS-U290-128: b242ef8ab609168537668464eb099d7a9bd4113211afb8c8e64865febf261913
+        REL-NEEDS-U290-129: f33a0a9b62ece3451b212e8f65fed975b68ecef0e5f22711316fe2956f770907
+        REL-NEEDS-U290-130: 142d9da8a18beedb3ee1911d51f5a8142266fc686692cd7d6f62af251bc4cdf0
+        REL-NEEDS-U290-131: 8a19b2c86e094baf2976c04ed809429cb0943ec6a95f278e9e849ae2926aa167
+        REL-NEEDS-U290-132: 4ab04d7cfc2272080b8035ac77509e828bdbb94d7506e44afc44cdbb6a972ae2
+        REL-NEEDS-U290-133: 946961e0bb60265151fe28844844c14e3a6aee0d14475fa6c49a3aed5d54a3a8
+        REL-U717-INGESTS-D08.e: ea5d355b3f18d193e411fa44a936bbf421a15b0cd6e0c3789ec8b19ff57f726f
+        REL-U717-INGESTS-D09.e: 92ce5209d14492848daaedbed108ec06b73485037bfe9ab98c4f8cac3e862d13
+        REL-U717-INGESTS-D11.b: e76387619d9be0a6c52bacc4e0d57b10885876a21f7b0d4cc9e1d9777ca5ba51
+        REL-U717-INGESTS-D12.b: 2be15be7b1827a491ea20127dd21fed39f1613db0208351bd30a43fd81e5440c
+        REL-U717-INGESTS-D13.b: 82a5dc07b6bb6f30c9e78128dafb089111572808b4d5a8cda2c6361bd125c735
+        REL-U717-INGESTS-D14.b: 985f6cf5e1f421555d7b8ecd5580402cc32505a761a9cf89ea99469a8d0a5ea7
+        REL-U717-INGESTS-D16.b: 61dabb3dd1140d0ce2f39fc3fed534846e6b445308633c571e21a901be7eaeb3
+        REL-U717-MASTER-INGESTION: 7dffe9d6e55f4ce8c74745e30e2c20e6bf6c7d74ae86faef4fd7a585ab9a77c4
+        REL-U718-COMMERCE: b089006268016a8ea7b233cb8eb40b24421cf9c8e00a16c484c470c8118a7560
+        REL-U718-DESIGN: 7d4bd10d7425954d3b000779039147f3bbfdc39729fef17d935980e7de732760
+        REL-U718-FINANCE: 769de27698c2bee1e91ee3f1482076adf80ab4ef41b5d9f80a73af37079cc0ff
+        REL-U723-PRICE-BOOK: 40ea7b87c09a12fdbe4e2071d9b17dfd6799701ba4094f19973bf980b448b7b1
+        REL-U723-PRICE-INGESTION: 6fa6c6b90e15569c129e91de9eee12d9f1cd66b20641c75147bcbb53355f7b42
+        REL-U723-PRICE-VISIBILITY: fc2cae8ceee618d6d7261f6d867e30a99f71e28ca9444a7c0b4522b064e8c399
+        REL-UNIVERSE-SUPPLY-business-references: 86e23f87aa5afa3513e8f73fcbd4e4296f54bf34505fdaac63d12d21f001dcee
+      related_nodes:
+        D08: e2f2e9b1e632ad2a1d35d2b0ff287add706d526043869b837e88fa7a89e3b513
+        D08.e: 3c2cc0de6a25664403ec2d70286efc597df5645e346dbe7bfc41ae86da2248b5
+        D09: 9b71e4f6f8efaa30ddd0c3cdf10b0c9dfb3b4fd56e77307814a37d4ccf361211
+        D09.e: acf07416b06f35ac37ded11670ad1ae128d822f73ac435323ba4adf0a9443141
+        D11: 0b5bc6d5341761ee9790b5155341eb7e1222aea26eadf7b2edba63f0c2339b0d
+        D11.b: a5d46ccf23337a0777f1bbfbfa25ef03c82e74f012108c265bd772d46f49b6eb
+        D12: 5b0df21253d9c4f15f4b28c3e4972789cb5c1440e67e885cb6a9d7b31101238e
+        D12.b: 3eb6d4565e0e635018dfa372f3368c20a4bc6abff1f9216b9f5e0a9d7d5c7c10
+        D13: ff463a2997b5261b4df0bba43b3f666ce9a6a6baa62be3965e763f0b08b98aa2
+        D13.b: 9a6ed17a134e66a3a92fbd6dd59aa5e123f8eec1bbe7e1e550f60a826b60c237
+        D14: ede887bc0cee2d8845b1aa6d85b3f3247a477d5067273026ae1ade349521d0df
+        D14.b: 7c2d825f2ec015320ee70614df5eab83ed3c7ac545cb81158fd0f164c72f46ad
+        D16: 99580d0c4ccb0b3e8f3bd2c4a5d820e1cfc6cb86207096740bf0e25c4231a440
+        D16.b: 9d410994378e582d6f5985e9ed57aadbcd5fa1bc5e1a0b6106142e51b5d9c1b3
+        business-references: 2cd42ef1efe113f5de9627c7fc4cb9402c60fe0d2bebf103398563313617ee45
+        master-data-ingestion: 56cbc45fadd6f5c2ac18b932da53bdd1ac10fed065f85f828764b019d83e8a4a
+        master-data-ingestion-commerce: 7ad25865e29248ad9a624f3c7505ac0730399f0e2039d1f6f9b26ef14d0e2eaa
+        master-data-ingestion-design: 11c888fceac7e3a58c92df5a24cdf4455ba0b67ffb888aedc2418c27e5d9f8f4
+        master-data-ingestion-finance: 2bfc16a981bb074229b8c5d7c826ef380603eb383c9aafd5d3071776a4180ff8
+        price-book: 190c73d3e8c91fb7ca6fb1baf34417e7b6b5b25fe030ee31c00145124396ee8e
+        price-book-visibility: 1184a8868a83a9d2b0eef569ee928da391c030c7a30dce9f9bd2478ead082d57
+        universe-supply: 54bdc033d2fc346682a11ddfda7c3a179ee9c48ac3de31910ccddb509910c8e3
+    context_sha256: 2ac7bc9d7d5eccdac3c11c627cfb5c201633063fa94b328ad70eab4d88e7de7d
+  supersedes: INT-U717-REL-U718-DESIGN
 suspensions: []

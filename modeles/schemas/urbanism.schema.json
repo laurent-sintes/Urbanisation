@@ -386,6 +386,16 @@
             "mastership": {
               "type": "string"
             },
+            "dominant_role": {
+              "description": "Finalité dominante facultative du sous-domaine, sans niveau ni frontière exclusive.",
+              "type": "object",
+              "required": ["id", "display_name"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+                "display_name": { "type": "string", "minLength": 1, "pattern": "\\S" }
+              },
+              "additionalProperties": false
+            },
             "category": {
               "description": "Classement visuel facultatif des capacités dans leur sous-domaine ; aucun niveau ni lien métier supplémentaire.",
               "type": "object",

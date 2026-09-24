@@ -728,6 +728,7 @@ publication_delivery:
   state: applied
   source_refs:
   - U709
+  - U711
   summary: Dix familles fashion ; remplacement de VAS et Repacking sous Packing.
   required_nodes:
   - id: service-order-labeling
@@ -770,9 +771,8 @@ publication_delivery:
     fields:
       name: Cross-Docking Order
     parent: subdomain-service-orders
-  - id: vas-repacking
-    parent: service-order-packing
-  - id: vas-labeling-relabeling
-    parent: service-order-labeling
   absent_nodes:
   - service-order-vas
+  - vas-repacking
+  - vas-labeling-relabeling
+application_U711: Descriptions des deux comportements isolés intégrées aux capacités ; identifiants retirés, historique conservé.

@@ -29,7 +29,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
-CAPABILITY_NATURES = {'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
+CAPABILITY_NATURES = {'integration', 'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
 BEHAVIOR_NATURES = {'policy_strategy', 'process_variant', 'intervention_mechanism', 'business_scope', 'decision_dimension', 'business_effect', 'planning_practice'}
 REQUEST_ORIGINS = {'frontoffice', 'backoffice'}
 BEHAVIOR_ASPECTS = {'trigger', 'activity'}
@@ -274,12 +274,18 @@ def validate_urbanism(model, sources, schema=None):
     # historical immutable snapshots retain their original contract.
     justified_behaviors = any(p.get('id') == 'PRINCIPLE-JUSTIFIED-BEHAVIOR'
                              for p in model.get('principles', []))
+    differentiating_behaviors = any(p.get('id') == 'PRINCIPLE-DIFFERENTIATING-BEHAVIORS'
+                                    for p in model.get('principles', []))
     for identifier, node in nodes.items():
         rationale = node.get('fields', {}).get('decomposition_rationale')
         if rationale is not None and node.get('kind') != 'capability':
             errors.append(f'behavior/{identifier}: decomposition rationale belongs to a capability')
         children = [child for child in graph[identifier]
                     if nodes.get(child, {}).get('kind') == 'behavior']
+        if differentiating_behaviors and node.get('kind') == 'capability' and len(children) == 1:
+            errors.append(f'behavior/{identifier}: requires zero or at least two differentiating behaviors')
+        if 'dominant_role' in node.get('fields', {}) and node.get('kind') != 'area':
+            errors.append(f'role/{identifier}: dominant role belongs to a subdomain')
         if justified_behaviors and children and (not isinstance(rationale, str) or not rationale.strip()):
             errors.append(f'behavior/{identifier}: decomposition requires a complexity or targeted benefit rationale')
     # U455 retires the layer axis. Historical snapshots keep their original contract.

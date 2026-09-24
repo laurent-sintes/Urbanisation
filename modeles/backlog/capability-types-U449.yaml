@@ -8,6 +8,10 @@ source_refs:
 - U586
 - CMP248
 - U587
+- U712
+- U713
+- U714
+- U717
 field: fields.nature
 scope: Une nature principale explicite par capacité, selon le résultat métier dominant. Aucun nouveau niveau ni reclassement
   des couches.
@@ -78,6 +82,21 @@ types:
   definition: Déterminer une réponse métier à partir des faits, règles, objectifs et contraintes applicables, en incluant
     les calculs nécessaires.
   boundary: Aucune assimilation à un nom contenant Decision ni à un traitement automatisé ; application transactionnelle distincte.
+- id: integration
+  name: Integration
+  label_fr: Intégration
+  definition: Acquérir ou transmettre des informations métier entre domaines ou exécutants, les reconnaître et les rapprocher
+    du contexte local pour les rendre utilisables avec leur provenance et leur résultat de prise en compte.
+  boundary: Le résultat dominant est la prise en compte fiable de l’échange métier. Protocoles, connecteurs et middleware
+    restent des moyens. Décider, coordonner le processus ou tenir l’état métier consolidé ne devient pas Integration du seul
+    fait de recevoir des événements.
+  source_refs:
+  - ELM710
+  - ELM711
+  - ELM712
+  review:
+    state: accepted
+    note: Type et frontière adoptés cumulativement U717.
 presentation:
   order: Partition stable des capacités de chaque domaine ou référentiel ; non-décisions puis décisions, ordre relatif conservé
     dans chaque partie.

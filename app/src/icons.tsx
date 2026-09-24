@@ -57,7 +57,7 @@ export function iconFor(node: AtlasNode): LucideIcon {
       Catalog: BookOpen, 'Product Catalog': BookOpen, Assortment: ListFilter, Agreement: FileSignature, 'Fulfillment Network': Network, 'Service Catalog': ClipboardList } as Record<string, LucideIcon>)[node.referenceParentName] ?? BookOpen;
     const nature = capabilityNature(node);
     const icons: Record<(typeof capabilityTypes)[CapabilityNature]['icon'], LucideIcon> = {
-      Zap, SlidersHorizontal, Eye, Workflow, CalendarCheck, ShieldCheck, GitBranch,
+      Zap, SlidersHorizontal, Eye, Workflow, CalendarCheck, ShieldCheck, GitBranch, ArrowLeftRight,
     };
     return nature ? icons[capabilityTypes[nature].icon] : Box;
   }

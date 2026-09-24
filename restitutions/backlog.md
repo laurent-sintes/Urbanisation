@@ -10,7 +10,7 @@ Origine des demandes : **Frontoffice** désigne une sollicitation externe au Dom
 
 | Repère | Nom | Niveau | Contenu direct | Statut |
 | --- | --- | --- | --- | --- |
-| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plans, Order Management, Inventory Management, Order Promising, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management | En cours d’instruction — portée : name, definition |
+| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plan Visibility, Order Management, Inventory Management, Order Promising, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management | En cours d’instruction — portée : name, definition |
 
 Les groupes de présentation conservent leur rôle distinct des niveaux de décomposition métier.
 
@@ -22,20 +22,20 @@ La Supply Chain Orchestration est l’organe de régulation qui organise et adap
 
 | Repère | Nom | Type | Statut |
 | --- | --- | --- | --- |
-| business-references | Master Data | Sous-domaine | En cours d’instruction — portée : name |
+| business-references | Master Data | Sous-domaine | Proposé par l’IA |
 | subdomain-policies | Policies | Sous-domaine | En cours d’instruction — portée : name |
-| subdomain-plans | Plans | Sous-domaine | En cours d’instruction — portée : name |
-| D04 | Order Management | Sous-domaine | En cours d’instruction — portée : name |
+| subdomain-plans | Plan Visibility | Sous-domaine | Proposé par l’IA |
+| D04 | Order Management | Sous-domaine | Proposé par l’IA |
 | D01 | Inventory Management | Sous-domaine | En cours d’instruction — portée : name |
 | D18 | Order Promising | Sous-domaine | En cours d’instruction — portée : definition, name |
-| D03 | Demand & Supply Matching | Sous-domaine | En cours d’instruction — portée : name |
-| D06 | Fulfilment Orchestration | Sous-domaine | En cours d’instruction — portée : name, definition |
+| D03 | Demand & Supply Matching | Sous-domaine | Proposé par l’IA |
+| D06 | Fulfilment Orchestration | Sous-domaine | Proposé par l’IA |
 | subdomain-service-orders | Service Order Management | Sous-domaine | En cours d’instruction — portée : name, definition |
 
 
 ## business-references — Master Data
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **Proposé par l’IA**.
 
 Fournir les références locales nécessaires pour comprendre les produits, les acteurs, les accords, les offres et le réseau mobilisés par la Supply.
 
@@ -43,12 +43,16 @@ Fournir les références locales nécessaires pour comprendre les produits, les 
 | --- | --- | --- | --- |
 | D08 | Product Reference | Référentiel | Proposé par l’IA |
 | D09 | Party / Role | Référentiel | Validé par l’urbaniste — portée : mastership, name, definition |
-| D12 | Product Catalog | Référentiel | Validé par l’urbaniste — portée : mastership, name |
+| D12 | Product Catalog | Référentiel | Proposé par l’IA |
 | D16 | Assortment | Référentiel | Validé par l’urbaniste — portée : name, definition, mastership |
 | D11 | Agreement | Référentiel | Validé par l’urbaniste — portée : mastership, name |
 | D13 | Fulfillment Network | Référentiel | En cours d’instruction — portée : independence, name |
-| D14 | Service Catalog | Référentiel | En cours d’instruction — portée : name |
+| D14 | Service Catalog | Référentiel | Proposé par l’IA |
+| price-book | Price Book | Référentiel | Proposé par l’IA |
 
+| Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| master-data-ingestion | Master Data Ingestion | integration | Projection | Proposé par l’IA | Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply. | Rendre utilisables les contributions des domaines fournisseurs dans les références locales Supply. | Proposé par l’IA |
 
 ## D08 — Product Reference
 
@@ -60,7 +64,6 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D08.d | Product Reference Ingestion | action | Projection | En cours d’instruction | Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues. | Reconnaître les mêmes références produit dans les différents catalogues et opérations, sans les confondre avec les exemplaires physiques. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D08.e | Product Reference Visibility | knowledge | Domain-View | Validé par l’urbaniste — portée : name, nature | Retrouver un produit ou une variante et consulter les caractéristiques de référence nécessaires pour comprendre de quel produit parlent une offre, un accord ou une commande. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Partager la même compréhension du produit et de ses variantes dans les décisions et opérations Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D09 — Party / Role
@@ -73,12 +76,11 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D09.d | Party / Role Ingestion | action | Projection | En cours d’instruction | Recevoir les [personnes](glossary:TER046), leurs identifiants et leurs [rôles métier](glossary:TER047), puis intégrer les évolutions transmises par les maîtres externes pour maintenir une référence locale utilisable par les accords et opérations Supply. | Conserver une continuité d’identité entre les référentiels d’entreprise et les accords et opérations Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D09.e | Party / Role Visibility | knowledge | Domain-View | Validé par l’urbaniste — portée : name, nature | Retrouver une [personne physique ou morale](glossary:TER046) et consulter son identité, ses relations et les [rôles](glossary:TER047) sous lesquels elle participe aux accords et opérations Supply. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Savoir qui intervient et à quel titre avant d’interpréter les accords et échanges qui le concernent. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D12 — Product Catalog
 
-Statut : **Validé par l’urbaniste — portée : mastership, name**.
+Statut : **Proposé par l’IA**.
 
 Recevoir les catalogues construits à l’extérieur et les informations commerciales applicables. Une même référence de produit ou de variante peut figurer dans plusieurs catalogues ; son identité maîtresse relève de Product Reference.
 
@@ -86,8 +88,7 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D12.a | Product Catalog Ingestion | action | Projection | Validé par l’urbaniste — portée : name | recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques d’application et évolutions. | Permettre de commander et d’utiliser les informations commerciales reçues. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D12.b | Product Catalog Visibility | knowledge | Domain-View | Validé par l’urbaniste — portée : name, nature | Retrouver un catalogue et consulter les offres, produits et conditions commerciales enregistrées pour comprendre ce qui est proposé et dans quel périmètre. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Partager la connaissance de l’offre de référence utilisée par les accords et demandes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D12.b | Product Catalog Visibility | knowledge | Domain-View | Proposé par l’IA | Retrouver un catalogue et consulter les offres, produits et conditions commerciales enregistrées pour comprendre ce qui est proposé et dans quel périmètre. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Partager la connaissance de l’offre de référence utilisée par les accords et demandes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D16 — Assortment
 
@@ -99,7 +100,6 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D16.a | Assortment Ingestion | action | Projection | Proposé par l’IA | Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir la référence locale des assortiments utilisée par la Supply. | Partager une référence d’assortiment applicable et compréhensible pour les activités Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D16.b | Assortment Visibility | knowledge | Domain-View | Proposé par l’IA | Retrouver un assortiment et consulter quels produits sont retenus pour quels magasins, canaux ou clients et pendant quelle période. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Partager une référence d’assortiment applicable et compréhensible pour les activités Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D11 — Agreement
@@ -112,7 +112,6 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D11.a | Agreement Ingestion | action | Projection | En cours d’instruction | Recevoir les contrats clients ou fournisseurs et leurs évolutions, y compris cadre, conditions particulières, périodes et engagements en quantité ou valeur, avec références Party et Catalog et provenance du maître externe. | Mettre les conditions contractuelles de référence à disposition des décisions et engagements transactionnels. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D11.b | Agreement Visibility | knowledge | Domain-View | Validé par l’urbaniste — portée : name, nature | Retrouver un [accord](glossary:TER048) et consulter les personnes engagées, les conditions, les périodes et les engagements contractuels enregistrés pour comprendre ce qu’il prévoit. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Donner aux décisions et opérations Supply une lecture partagée des accords de référence disponibles. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D13 — Fulfillment Network
@@ -125,12 +124,11 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D13.a | Fulfillment Network Ingestion | action | Projection | En cours d’instruction | recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes. | Donner aux opérations et décisions une connaissance commune du réseau de réalisation. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D13.b | Fulfillment Network Visibility | knowledge | Domain-View | Validé par l’urbaniste — portée : name, nature | Retrouver un point du réseau Supply et consulter ses caractéristiques, ses rattachements et ses relations de référence pour comprendre sa place dans le réseau. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Donner une représentation partagée des points utilisables et de leurs relations de référence, préalable aux décisions opérationnelles. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D14 — Service Catalog
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **Proposé par l’IA**.
 
 Décrire les Services mobilisables par l’orchestration : le résultat rendu par les exécutants, leurs conditions et leurs niveaux de service configurés.
 
@@ -138,12 +136,11 @@ Gouvernance des données : **Projection**.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D14.a | Service Catalog Ingestion | action | Projection | En cours d’instruction | Recevoir l’offre des Services, leurs niveaux de service configurés, conditions et accès, ainsi que leurs évolutions depuis les sources maîtresses externes. | Mettre à disposition une projection de référence exploitable par la qualification, la promesse et l’orchestration. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D14.b | Service Catalog Visibility | knowledge | Domain-View | En cours d’instruction — portée : name, nature | Retrouver un [Service](glossary:TER075) et consulter son résultat attendu, son fournisseur et les conditions de référence de sa réalisation pour comprendre ce que l’orchestration peut mobiliser. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Permettre aux activités Supply de connaître les prestations de référence et leurs conditions avant de les mobiliser. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D14.b | Service Catalog Visibility | knowledge | Domain-View | Proposé par l’IA | Retrouver un [Service](glossary:TER075) et consulter son résultat attendu, son fournisseur et les conditions de référence de sa réalisation pour comprendre ce que l’orchestration peut mobiliser. Construire et rafraîchir la vue de référence nécessaire à cette consultation. | Permettre aux activités Supply de connaître les prestations de référence et leurs conditions avant de les mobiliser. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D04 — Order Management
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **Proposé par l’IA**.
 
 Gérer les commandes, leurs exigences et leurs évolutions, et porter les engagements de satisfaction jusqu’à leur conclusion.
 
@@ -169,16 +166,16 @@ Statut : **En cours d’instruction — portée : name**.
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
-| D01.f | Inventory Tracking | knowledge | En cours d’instruction | Établir et actualiser les quantités physiques et leurs états logiques à partir des faits de stock reconnus, par référence de produit, lieu, détenteur et propriétaire lorsque ces dimensions sont pertinentes ; utiliser les ressources futures qualifiées par Supply Visibility pour les projections. | Disposer d’un état du stock à jour, expliqué par les faits reconnus, en distinguant présent et attendu. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.f | Inventory Tracking | integration | Proposé par l’IA | Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés. | Rendre les faits de stock reconnus et leurs corrections utilisables sans double compte. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.g | Record Inventory Movements | action | Validé par l’urbaniste — portée : name | Enregistrer, qualifier et conserver les mouvements de stock et leurs justifications : réceptions, sorties, transferts, changements d’état ou de propriété et ajustements justifiés ; identifier les quantités concernées, les dates et les références explicatives, y compris sans déplacement physique. | Disposer d’un historique traçable des faits qui expliquent les variations du stock. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D01.c | Inventory Visibility | knowledge | En cours d’instruction | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.c | Inventory Visibility | knowledge | Proposé par l’IA | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.d | Stocktaking | action | Validé par l’urbaniste — portée : definition, finality, name | établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D02.c | Reservation | action | Validé par l’urbaniste — portée : name | établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Donner effet à un engagement de ressource. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.h | Consigned Inventory Management | management | En cours d’instruction — portée : name, definition | Appliquer au stock consigné les conditions de l’accord : propriété, droits d’usage, échéances et suites autorisées ; mobiliser les capacités responsables lorsqu’une acquisition, un retour ou une autre issue devient nécessaire. | Respecter les droits et obligations sur le stock fournisseur détenu, pendant sa présence dans le réseau et lors de ses suites. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D06 — Fulfilment Orchestration
 
-Statut : **En cours d’instruction — portée : name, definition**.
+Statut : **Proposé par l’IA**.
 
 Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching.
 
@@ -186,16 +183,17 @@ Composer et coordonner les prestations, suivre leurs dépendances et rechercher 
 | --- | --- | --- | --- | --- | --- | --- |
 | D06.b | Service Capacity Visibility | knowledge | En cours d’instruction — portée : name | Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période et sa fraîcheur, pour alimenter les décisions Supply. | Donner à D03, à D04 et aux décisions d’exécution une connaissance exploitable des capacités annoncées par les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.c | Service Reconciliation | action | En cours d’instruction | Rapprocher les résultats constatés des prestations attendues, qualifier les écarts et fournir les faits utiles aux sous-domaines consommateurs. | Expliquer les écarts de réalisation et alimenter le rapprochement des Orders sans confondre leurs reliquats. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D07.d | Operations Tracking | knowledge | En cours d’instruction — portée : name | Suivre les faits, jalons, estimations et résultats encore attendus des prestations pendant leur réalisation. | Donner une connaissance actualisée de l’exécution pour anticiper les écarts et permettre l’adaptation. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D07.d | Operations Tracking | integration | Proposé par l’IA | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. | Rendre les retours d’exécution fiables et utilisables par les capacités consommatrices. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.d | Process Orchestration | orchestration | En cours d’instruction — portée : name, definition | Coordonner les prestations et leurs dépendances. | Coordonner la réalisation du plan retenu entre les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.a | Service Requirements Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les prestations nécessaires. | Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.e | Service Selection Decision | decision | En cours d’instruction — portée : name | Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte de leur admissibilité et des contraintes. | Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.f | Process Adaptation Decision | decision | En cours d’instruction — portée : name | Déterminer les adaptations du plan d’exécution permettant de préserver la promesse de l’Order et les grands équilibres du Matching face aux aléas. | Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.i | Return Disposition Decision | decision | En cours d’instruction — portée : name, definition, nature | Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables et les possibilités de récupération de valeur. | Retenir une orientation pertinente pour récupérer la valeur des produits retournés et maîtriser leurs coûts et risques. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| operations-visibility | Operations Visibility | knowledge | Proposé par l’IA | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Comprendre l’avancement et les résultats des prestations et processus Supply. | Proposé par l’IA |
 
 ## D03 — Demand & Supply Matching
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **Proposé par l’IA**.
 
 Construire et maintenir le master plan de matching qui arbitre la couverture de la demande et les affectations de ressources, en mobilisant les décisions spécialisées et en faisant appliquer les changements autorisés.
 
@@ -221,7 +219,7 @@ Déterminer et recommander ce qu’on peut promettre, en quantité, date et cond
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | D03.i | Available-to-Promise (ATP) | decision | — | Validé par l’urbaniste — portée : finality, name, nature | Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles. | Établir une solution de promesse réalisable dans la situation de référence. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.j | Capable-to-Promise (CTP) | decision | — | En cours d’instruction — portée : finality, name, nature | Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.k | Profitable-to-Promise (PTP) | decision | — | Validé par l’urbaniste — portée : definition, finality, name, nature | Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes de service applicables. | Retenir une solution économiquement pertinente parmi les possibilités examinées. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.k | Profitable-to-Promise (PTP) | decision | — | Proposé par l’IA | Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes de service applicables. | Retenir une solution économiquement pertinente parmi les possibilités examinées. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.l | Delivery Schedule Decision | decision | — | Validé par l’urbaniste — portée : definition, finality, name, nature | Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les possibilités réalisables et selon les conditions de la commande. | Retenir un échéancier acceptable pour honorer la commande. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D18.a | Supply Visibility | knowledge | Domain-View | Proposé par l’IA | Rendre visibles les ressources attendues, leurs quantités, lieux, échéances, engagements et incertitudes, en reliant chaque apport à son origine et à son avancement. | Permettre de planifier la couverture des besoins avec une connaissance fiable des apports à venir. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
@@ -233,20 +231,21 @@ Définir, maintenir et rendre applicables les règles qui encadrent les protecti
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D02.b | Supply Protection | policy | Domain-managed | En cours d’instruction — portée : name | Configurer et maintenir les politiques, règles et quantités qui encadrent l’usage et le renouvellement des ressources pour maîtriser pénurie, surstock et déséquilibre. | Encadrer l’usage et le renouvellement des ressources pour réduire pénurie, surstock et déséquilibre. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D02.b | Supply Protection Policy | policy | Domain-managed | En cours d’instruction — portée : name | Configurer et maintenir les politiques, règles et quantités qui encadrent l’usage et le renouvellement des ressources pour maîtriser pénurie, surstock et déséquilibre. | Encadrer l’usage et le renouvellement des ressources pour réduire pénurie, surstock et déséquilibre. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D19.a | Service Provider Policy | policy | Domain-managed | Proposé par l’IA | Définir, maintenir et rendre applicables les règles de recours aux fournisseurs et à leurs Services, notamment les exclusions et les limites de sollicitation, afin de tenir compte de leur fiabilité et de leur situation opérationnelle. | Protéger la réalisation des demandes contre des sollicitations de prestataires inadaptées à leur situation. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D19.b | Demand Protection Policy | policy | Domain-managed | Proposé par l’IA | Définir, maintenir et rendre applicables les règles qui protègent ou priorisent certaines demandes dans les arbitrages de couverture et de révision. | Préserver les exigences et engagements des demandes selon le cadre métier applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
-## subdomain-plans — Plans
+## subdomain-plans — Plan Visibility
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **Proposé par l’IA**.
 
 Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching.
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| plans-ingestion | Plan Ingestion | action | Projection | En cours d’instruction — portée : name | Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| plans-visibility | Plan Visibility | knowledge | Domain-View | En cours d’instruction — portée : name | Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| plans-ingestion | Plan Ingestion | integration | Projection | Proposé par l’IA | Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| plans-visibility | Supply Plan Visibility | knowledge | Domain-View | Proposé par l’IA | Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| demand-plan-visibility | Demand Plan Visibility | knowledge | Domain-View | Proposé par l’IA | Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. | Fournir des données prévisionnelles fiables aux décisions Supply. | Proposé par l’IA |
 
 ## subdomain-service-orders — Service Order Management
 
@@ -256,7 +255,6 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
-| D07.b | Service Order Lifecycle | management | En cours d’instruction | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. | Conserver des engagements de prestation traçables jusqu’à leur conclusion sans confondre activation, acceptation et réalisation. | En cours d’instruction |
 | service-order-picking | Picking Order | action | En cours d’instruction — portée : name | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-cross-docking | Cross-Docking Order | action | En cours d’instruction — portée : name | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
@@ -274,6 +272,18 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 | service-order-billing | Billing Order | action | En cours d’instruction — portée : name, definition | Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-payment-collection | Payment Collection Order | action | En cours d’instruction — portée : name, definition | Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
 
+## price-book — Price Book
+
+Statut : **Proposé par l’IA**.
+
+Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+Gouvernance des données : **Projection**.
+
+| Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| price-book-visibility | Price Book Visibility | knowledge | Domain-View | Proposé par l’IA | Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply. | Fournir les tarifs de référence utiles aux décisions et opérations Supply. | Proposé par l’IA |
+
 **Justification de la décomposition — D01.d :** Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils de comptage ne créent pas de comportement supplémentaire.
 
 ## Comportements — Stocktaking
@@ -288,7 +298,7 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 **Justification de la décomposition — D02.b :** Préserver un accès, limiter une consommation, absorber l’incertitude et réguler les apports répondent à des risques différents ; mécanismes combinables, pas étapes d’un cycle.
 
-## Comportements — Supply Protection
+## Comportements — Supply Protection Policy
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
@@ -471,19 +481,6 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV100 | Rerun Planning | En cours d’instruction — portée : name, definition, scope, nature | Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. |
 | BHV101 | Monitor Plan | En cours d’instruction — portée : name, definition, scope, nature | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. |
 
-**Justification de la décomposition — D07.d :** Les trois périmètres physiques rendent lisibles les situations et opérations propres à l’entrepôt, au transport et au magasin ; livré ne signifie pas mis en rayon. Le suivi transversal des processus explique les résultats, attentes et blocages métier en reliant Tasks et appels sous-jacents. Ce sont des perspectives combinables aux bénéfices distincts, sans sous-comportements ni découpage par bouton, interface ou fournisseur.
-
-## Comportements — Operations Tracking
-
-Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
-
-| Repère | Comportement | Statut | Définition |
-| --- | --- | --- | --- |
-| BHV079 | Warehouse Visibility | Validé par l’urbaniste — portée : name, definition | Réception, manutention, préparation et expédition dans les entrepôts et plateformes. |
-| BHV080 | Transportation Visibility | Validé par l’urbaniste — portée : name, definition | Acheminements, progression, arrivées estimées et remise au destinataire. |
-| BHV081 | Store Visibility | Validé par l’urbaniste — portée : name, definition | Réception magasin, passage en réserve, mise en rayon et réassort de la surface de vente. |
-| BHV082 | Process Tracking | En cours d’instruction — portée : name, definition | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. |
-
 **Justification de la décomposition — D03.n :** Distinguer proposition, établissement de l’engagement et réexamen de cet engagement : trois façons d’agir avec effets différents, sans multiplier les capacités d’action.
 
 ## Comportements — Fulfillment Commitment
@@ -543,16 +540,6 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV064 | Aging-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer l’acquisition à l’échéance d’une durée contractuelle. |
 | BHV065 | Consignment Exit | En cours d’instruction — portée : name, definition | Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. |
 
-**Justification de la décomposition — service-order-packing :** Distinguer la transformation d’un conditionnement existant du conditionnement initial, avec consignes de reprise et écarts propres ; aucun changement de composition des ensembles.
-
-## Comportements — Packing Order
-
-Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
-
-| Repère | Comportement | Statut | Définition |
-| --- | --- | --- | --- |
-| vas-repacking | Repacking | En cours d’instruction — portée : name | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
-
 **Justification de la décomposition — service-order-transport :** Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise. Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
 
 ## Comportements — Transport Order
@@ -567,15 +554,30 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | transport-appointments | Pickup & Delivery Appointments | En cours d’instruction — portée : name, definition | Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement. |
 | transport-rescheduling-redirection | Delivery Rescheduling & Redirection | En cours d’instruction — portée : name, definition | Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse. |
 
-**Justification de la décomposition — service-order-labeling :** Distinguer le remplacement d’informations et les consignes de version des autres formes de marquage, notamment RFID et antivol.
+**Justification de la décomposition — master-data-ingestion :** Distinguer les contrats d’ingestion et la provenance des trois domaines fournisseurs Commerce, Finance et Design, indépendamment des sujets référentiels ou des applications. Le contenu précis de chaque contrat reste à qualifier.
 
-## Comportements — Labeling Order
+## Comportements — Master Data Ingestion
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| vas-labeling-relabeling | Labeling / Relabeling | En cours d’instruction — portée : name | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
+| master-data-ingestion-commerce | Commerce Ingestion | Proposé par l’IA | Intégrer les données de référence fournies par le domaine Commerce selon son contrat métier et leur provenance. |
+| master-data-ingestion-finance | Finance Ingestion | Proposé par l’IA | Intégrer les données de référence fournies par le domaine Finance selon son contrat métier et leur provenance. |
+| master-data-ingestion-design | Design Ingestion | Proposé par l’IA | Intégrer les données de référence fournies par le domaine Design selon son contrat métier et leur provenance. |
+
+**Justification de la décomposition — operations-visibility :** Distinguer les perspectives entrepôt, transport, magasin et progression du processus : leurs jalons, résultats et usages métier diffèrent, même lorsque les faits sont communs.
+
+## Comportements — Operations Visibility
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| BHV079 | Warehouse Visibility | Validé par l’urbaniste — portée : name, definition | Réception, manutention, préparation et expédition dans les entrepôts et plateformes. |
+| BHV080 | Transportation Visibility | Validé par l’urbaniste — portée : name, definition | Acheminements, progression, arrivées estimées et remise au destinataire. |
+| BHV081 | Store Visibility | Validé par l’urbaniste — portée : name, definition | Réception magasin, passage en réserve, mise en rayon et réassort de la surface de vente. |
+| BHV082 | Process Visibility | Proposé par l’IA | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. |
 
 ## Exemples concrets — universe-supply Supply Chain Orchestration
 
@@ -932,30 +934,30 @@ Références : U470, U471, ELM295, CMP186, U477, ELM360, CMP193.
 
 ## Sources d’inspiration — D01.f Inventory Tracking
 
-Savoir combien de pièces sont présentes et dans quel état : Inventory Tracking tient cette situation à partir des faits reconnus. Les ressources attendues restent identifiées séparément.
+Inventory Tracking explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals) — Inventory journals | Réceptions, sorties, transferts et ajustements. | Enregistrer les variations et leurs justificatifs. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Quantités présentes, réservées et attendues. | Lire les quantités aux dimensions choisies. |
-| Notre modèle — Inventory Tracking | Quantités et états par produit, lieu et propriété utile. | Actualiser la situation sans compter deux fois le même fait. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals) — Inventory journals | Réceptions, sorties, transferts et ajustements. | Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Quantités présentes, réservées et attendues. | Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés. |
+| Notre modèle — Inventory Tracking | Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés. | Reconnaître les faits, leur provenance et leur date pertinente ; rapprocher les corrections et éviter de prendre plusieurs fois en compte le même effet. Record Inventory Movements conserve les mouvements et leurs justifications ; [Inventory Visibility](model:D01.c) établit les quantités et états à partir des faits reconnus. Un apport attendu reste distinct d’une réception constatée. Exemple fictif : une réception notifiée deux fois puis corrigée de 100 à 80 fournit un fait corrigé, pas 180 ou 200 unités. |
 
 ### Ce que nous en retenons
 
 - Microsoft documente deux faces complémentaires : les journaux portent les variations, la liste de stock en restitue le résultat. FLOW distingue explicitement l’enregistrement des faits et le maintien des quantités.
 - Le nom Tracking exprime cette continuité. Une réservation peut changer l’état logique sans sortie physique ; les futurs apports ne sont pas additionnés au présent.
 
-### Illustration FLOW — une réception corrigée
+### Illustration FLOW — Inventory Tracking
 
-Une réception déclarée à 100 pièces est corrigée à 80.
+Une information reçue est corrigée par son domaine source après une première prise en compte.
 
-**Ce qui se passe.** La situation retenue est 80 présentes ; les deux déclarations ne font pas deux réceptions.
+**Ce qui se passe.** Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés.
 
-**Ce que cela illustre dans FLOW.** Tracking établit la bonne quantité ; Record Inventory Movements conserve l’explication de la correction.
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
 
 Source : [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals).
 
-Références : U477, ELM407, CMP190.
+Références : U717, U470.
 
 ### Détails des références
 
@@ -963,11 +965,13 @@ Références : U477, ELM407, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés.
+
 **Points communs.** Les faits de réception, sortie et correction expliquent les quantités.
 
-**Différences.** Le journal Microsoft inclut des effets comptables ; FLOW sépare conservation des faits et établissement des quantités.
+**Différences.** Le journal Microsoft inclut des effets comptables ; FLOW sépare conservation des faits et établissement des quantités. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Savoir combien de pièces sont présentes et dans quel état : Inventory Tracking tient cette situation à partir des faits reconnus. Les ressources attendues restent identifiées séparément.
+**Position FLOW.** Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés.
 
 [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals) — 2025-08-29, consulté le 2026-09-19.
 
@@ -981,11 +985,13 @@ Références : U470, U471, ELM296, CMP186, U477, ELM407, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés.
+
 **Points communs.** La situation distingue présent, réservé et attendu.
 
-**Différences.** La liste Microsoft expose aussi des calculs de disponibilité ; Tracking fournit d’abord la situation de référence.
+**Différences.** La liste Microsoft expose aussi des calculs de disponibilité ; Tracking fournit d’abord la situation de référence. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Savoir combien de pièces sont présentes et dans quel état : Inventory Tracking tient cette situation à partir des faits reconnus. Les ressources attendues restent identifiées séparément.
+**Position FLOW.** Capter et intégrer les faits de stock et leurs corrections, en les rapprochant des produits, lieux, détenteurs et propriétaires concernés.
 
 [Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — 2026-06-15, consulté le 2026-09-19.
 
@@ -1062,30 +1068,30 @@ Références : U434, U435, U477, ELM463, CMP190.
 
 ## Sources d’inspiration — D01.c Inventory Visibility
 
-Voir une situation de stock compréhensible dans les différents lieux : Inventory Visibility rapproche les quantités présentes, leurs états et les ressources attendues. La vue indique ce qu’elle sait, sans inventer une disponibilité garantie.
+Inventory Visibility explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Quantités présentes, réservées et attendues. | Lire les quantités aux dimensions choisies. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — Item supply and demand | Stock présent, ressources entrantes et besoins datés. | Présenter un bilan chronologique. |
-| Notre modèle — Inventory Visibility | Lecture cohérente du présent et de l’attendu. | Restituer les quantités avec leur périmètre et leur fraîcheur. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Quantités présentes, réservées et attendues. | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — Item supply and demand | Stock présent, ressources entrantes et besoins datés. | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. |
+| Notre modèle — Inventory Visibility | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. | Exemple fictif : Afficher 70 présentes et 50 attendues à J+7 avec leur fraîcheur.  Précision éditoriale U435 : exposer les états corrigés et leur fraîcheur, avec la provenance permettant au consommateur de comprendre une variation. Une donnée absente ou périmée n’équivaut pas à une quantité nulle ou certaine. Les décisions de disponibilité ou de promesse doivent pouvoir identifier cette limite. Cette lecture ne corrige pas elle-même les mouvements et ne confirme pas une nouvelle promesse.  [Supply Visibility](model:D18.a) fournit les apports attendus et leur qualification. Inventory Visibility construit les positions et projections de stock ; les deux vues se relient sans dupliquer la tenue des demandes ni reconnaître une réception avant le fait correspondant.  Frontière U673 : Une projection de stock utilise Plans et Supply Visibility ; elle ne prouve pas qu’une quantité est promettable.  U717 : établir et actualiser les quantités physiques et états logiques à partir des faits reconnus intégrés par Inventory Tracking et des mouvements conservés. Distinguer quantité présente, état logique et ressource future ; une correction tardive actualise la représentation à la date pertinente. |
 
 ### Ce que nous en retenons
 
 - Microsoft insiste sur les dimensions de lecture ; Oracle ajoute une chronologie des entrées et des besoins. Les deux rendent visible un stock expliqué plutôt qu’un total isolé.
 - FLOW applique cette exigence aux différents périmètres. La vue de stock alimente la promesse mais ne prend pas à sa place l’engagement d’une quantité à une date.
 
-### Illustration FLOW — total et détail
+### Illustration FLOW — Inventory Visibility
 
-Deux magasins détiennent 15 et 25 pièces d’une référence.
+Une information reçue est corrigée par son domaine source après une première prise en compte.
 
-**Ce qui se passe.** La lecture réseau donne 40 ; le détail permet de retrouver les deux lieux.
+**Ce qui se passe.** Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte.
 
-**Ce que cela illustre dans FLOW.** Une seconde copie de ces informations n’ajoute pas 40 pièces au réseau.
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
 
 Source : [Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list).
 
-Références : U477, ELM408, CMP190.
+Références : U717, U477.
 
 ### Détails des références
 
@@ -1093,11 +1099,13 @@ Références : U477, ELM408, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte.
+
 **Points communs.** Les dimensions rendent le résultat compréhensible par lieu et produit.
 
-**Différences.** Une liste dans un ERP ne règle pas à elle seule la cohérence entre tous les systèmes.
+**Différences.** Une liste dans un ERP ne règle pas à elle seule la cohérence entre tous les systèmes. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Voir une situation de stock compréhensible dans les différents lieux : Inventory Visibility rapproche les quantités présentes, leurs états et les ressources attendues. La vue indique ce qu’elle sait, sans inventer une disponibilité garantie.
+**Position FLOW.** Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte.
 
 [Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — 2026-06-15, consulté le 2026-09-19.
 
@@ -1111,11 +1119,13 @@ Références : U477, ELM408, CMP190.
 
 Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte.
+
 **Points communs.** Le bilan sépare quantité actuelle et apports à venir.
 
-**Différences.** Oracle propose ses propres règles de disponibilité ; FLOW ne les impose pas à toute lecture.
+**Différences.** Oracle propose ses propres règles de disponibilité ; FLOW ne les impose pas à toute lecture. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Voir une situation de stock compréhensible dans les différents lieux : Inventory Visibility rapproche les quantités présentes, leurs états et les ressources attendues. La vue indique ce qu’elle sait, sans inventer une disponibilité garantie.
+**Position FLOW.** Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte.
 
 [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — 25D, consulté le 2026-09-19.
 
@@ -1190,7 +1200,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 Références : U333, ELM207, CMP115, U334, U477, ELM441, CMP190.
 
-## Sources d’inspiration — D02.b Supply Protection
+## Sources d’inspiration — D02.b Supply Protection Policy
 
 Supply Protection configure, maintient et rend applicables les politiques qui encadrent l’usage et le renouvellement des ressources, y compris les conditions de réservation. Les décisions spécialisées déterminent leurs valeurs ; les capacités consommatrices les appliquent dans leurs responsabilités propres.
 
@@ -1201,7 +1211,7 @@ Supply Protection configure, maintient et rend applicables les politiques qui en
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings) — Requirement / Period / Min-Max | Méthodes de réapprovisionnement. | Partir du besoin daté ou d’un seuil. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities) — Inventory reservation policies | Conditions et modalités applicables aux réservations. | Configurer une politique puis l’utiliser pour les engagements individuels. |
 | [commercetools](https://docs.commercetools.com/api/inventory-overview) — ReserveOnCart / ReserveOnOrder | Conditions et modalités applicables aux réservations. | Configurer une politique puis l’utiliser pour les engagements individuels. |
-| Notre modèle — Supply Protection | Protections de groupe, plafonds, sécurité, régulation du réassort et gouvernance des politiques de réservation. | Distinguer conditions recommandées et règles actives, en précisant validité, portée et effets sur les usages. |
+| Notre modèle — Supply Protection Policy | Protections de groupe, plafonds, sécurité, régulation du réassort et gouvernance des politiques de réservation. | Distinguer conditions recommandées et règles actives, en précisant validité, portée et effets sur les usages. |
 
 ### Ce que nous en retenons
 
@@ -1239,6 +1249,8 @@ Références : U341, ELM212, CMP120, U342, U343, U477, ELM412, CMP190, U560, CMP
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi ce terme.** Supply Protection Policy précise la responsabilité de politique portée par Policies ; les termes natifs des sources et le périmètre de protection restent inchangés.
+
 **Points communs.** Des enveloppes protègent les groupes et suivent leur consommation.
 
 **Différences.** Inventory allocation ne couvre pas toute la politique de renouvellement FLOW.
@@ -1256,6 +1268,8 @@ Références : U435, U477, ELM410, CMP190.
 #### Microsoft — Safety stock
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Supply Protection Policy précise la responsabilité de politique portée par Policies ; les termes natifs des sources et le périmètre de protection restent inchangés.
 
 **Points communs.** Le tampon et son droit d’utilisation sont explicités.
 
@@ -1275,6 +1289,8 @@ Références : U477, ELM422, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi ce terme.** Supply Protection Policy précise la responsabilité de politique portée par Policies ; les termes natifs des sources et le périmètre de protection restent inchangés.
+
 **Points communs.** Les seuils et modes encadrent le réassort.
 
 **Différences.** Microsoft regroupe configuration et calcul ; FLOW garde la décision d’apport distincte.
@@ -1293,6 +1309,8 @@ Références : U477, ELM414, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi ce terme.** Supply Protection Policy précise la responsabilité de politique portée par Policies ; les termes natifs des sources et le périmètre de protection restent inchangés.
+
 **Points communs.** Une politique applicable encadre les modalités des réservations.
 
 **Différences.** Le document produit ne prescrit pas le propriétaire de la gouvernance dans FLOW. Déterminer une condition, la configurer et établir une réservation restent des responsabilités distinctes.
@@ -1310,6 +1328,8 @@ Références : U341, ELM212, CMP120, U342, U343, U477, ELM412, CMP190, U560, CMP
 #### commercetools — ReserveOnCart / ReserveOnOrder
 
 Composable Commerce · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Supply Protection Policy précise la responsabilité de politique portée par Policies ; les termes natifs des sources et le périmètre de protection restent inchangés.
 
 **Points communs.** Une politique applicable encadre les modalités des réservations.
 
@@ -4353,78 +4373,6 @@ Service Ordering Management · Concept documenté par la source primaire · Reco
 
 Références : U477, ELM464, CMP193.
 
-## Sources d’inspiration — D07.b Service Order Lifecycle
-
-Service Order Lifecycle rend explicite la responsabilité FLOW.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [TM Forum](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 | Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
-| Notre modèle — Service Order Lifecycle | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
-
-### Ce que nous en retenons
-
-- Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
-
-### Exemple fictif
-
-Tenir une reprise de préparation partielle sans la confondre avec une nouvelle commande client.
-
-**Ce qui se passe.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
-
-**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
-
-Source : [Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007).
-
-Références : ELM492, U682.
-
-### Détails des références
-
-#### TM Forum — TMFC007
-
-Service Order Management · Composant ODA · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
-
-**Points communs.** Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
-
-**Différences.** Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
-
-**Position FLOW.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
-
-[Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 2.0.0 ; date affichée 2024-02-23, consulté le 2026-09-23.
-
-**Passage.** Présentation ; Exposed APIs ; Dependent APIs
-
-**Limite de preuve.** Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation nécessaire entre gestion d’ordres et orchestration.
-
-Références : ELM492, CMP273, U682.
-
-#### Oracle — Shipment Request / Shipment Confirmation
-
-Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
-
-**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
-
-**Différences.** Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
-
-**Position FLOW.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
-
-[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
-
-**Passage.** Explanation of callouts, étapes 1 à 3
-
-**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
-
-Références : ELM659, CMP273, U682.
-
 ## Sources d’inspiration — D07.c Service Reconciliation
 
 Expliquer les écarts entre la prestation attendue et le résultat constaté. Service Reconciliation fournit les faits utiles aux autres purposes sans reprendre le reliquat de la commande ni un rapprochement financier.
@@ -4492,30 +4440,30 @@ Références : U477, ELM469, CMP193.
 
 ## Sources d’inspiration — D07.d Operations Tracking
 
-Comprendre où en sont les prestations et ce qui reste attendu. Operations Tracking distingue les faits, les estimations et les engagements pour rendre la progression lisible.
+Operations Tracking explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [GS1](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Critical Tracking Events | Faits liés aux objets pendant leur parcours. | Identifier objets, étapes, parties et lieux concernés. |
-| [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier reliées aux résultats des services. | Corréler les faits autour d’un même parcours. |
-| Notre modèle — Operations Tracking | Opérations d’entrepôt, transport, magasin et contributions au processus, y compris documentaires. | Relier les retours connus aux prestations avec leur date et leur origine. |
+| [GS1](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Critical Tracking Events | Faits liés aux objets pendant leur parcours. | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. |
+| [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier reliées aux résultats des services. | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. |
+| Notre modèle — Operations Tracking | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. | Reconnaître origine, date, prestation, résultat métier et corrections ; distinguer estimation, engagement et constat. Capter les retours des opérations physiques et services distants, y compris documentaires et d’encaissement. Une fin technique ne prouve pas un résultat métier réussi. Alimenter [Operations Visibility](model:operations-visibility) pour l’avancement et les résultats et [Supply Visibility](model:D18.a) pour les ressources futures. Les doublons, retours tardifs, réalisations partielles et échecs restent identifiables. Exemple fictif : recevoir deux notifications identiques de fin de transport et n’intégrer qu’un fait métier. La restitution, la coordination, l’adaptation et la tenue des engagements restent distinctes. |
 
 ### Ce que nous en retenons
 
 - GS1 organise les événements de traçabilité autour des objets et des étapes physiques. Azure Business Process Tracking relie les résultats de services aux étapes d’un processus métier. Ces perspectives sont complémentaires, et non deux noms du même suivi.
 - FLOW les réunit dans une responsabilité de visibilité. Il n’en déduit ni instrumentation uniforme, ni temps réel garanti ; choisir une adaptation et l’appliquer restent des responsabilités distinctes.
 
-### Illustration FLOW — colis prêts, document attendu
+### Illustration FLOW — Operations Tracking
 
-La préparation est terminée, mais le document nécessaire à l’expédition n’est pas encore disponible.
+Une information reçue est corrigée par son domaine source après une première prise en compte.
 
-**Ce qui se passe.** Le suivi explique les deux états et leur contribution au parcours.
+**Ce qui se passe.** Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées.
 
-**Ce que cela illustre dans FLOW.** La progression physique ne suffit pas à conclure que tout est prêt à partir.
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
 
-Source : [What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview).
+Source : [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard).
 
-Références : U477, ELM386, CMP193.
+Références : U717, U477.
 
 ### Détails des références
 
@@ -4523,11 +4471,13 @@ Références : U477, ELM386, CMP193.
 
 Global Traceability Standard · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées.
+
 **Points communs.** Faits liés aux objets pendant leur parcours.
 
-**Différences.** Le suivi physique ne couvre pas seul les prestations documentaires FLOW.
+**Différences.** Le suivi physique ne couvre pas seul les prestations documentaires FLOW. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Comprendre où en sont les prestations et ce qui reste attendu. Operations Tracking distingue les faits, les estimations et les engagements pour rendre la progression lisible.
+**Position FLOW.** Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées.
 
 [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Release 2.0, 2017, consulté le 2026-09-19.
 
@@ -4541,11 +4491,13 @@ Références : U477, ELM469, CMP193.
 
 Azure Business Process Tracking · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées.
+
 **Points communs.** Étapes métier reliées aux résultats des services.
 
-**Différences.** Le produit vise des ressources Azure ; FLOW ne prescrit pas cette réalisation.
+**Différences.** Le produit vise des ressources Azure ; FLOW ne prescrit pas cette réalisation. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Comprendre où en sont les prestations et ce qui reste attendu. Operations Tracking distingue les faits, les estimations et les engagements pour rendre la progression lisible.
+**Position FLOW.** Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées.
 
 [What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Mise à jour du 11 septembre 2025, consulté le 2026-09-19.
 
@@ -4627,71 +4579,6 @@ How Order-to-Cash Works in Order Management · Concept ou fonction documenté da
 
 Références : ELM652, CMP269, CMP270, U673.
 
-## Sources d’inspiration — D09.d Party / Role Ingestion
-
-Recevoir les personnes et leurs rôles métier avec leurs identifiants d’origine, pour que les accords et opérations Supply désignent les mêmes personnes que les référentiels d’entreprise.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html) — Trading Community Data Import | Import de parties, contacts, relations et responsabilités de rôle. | Recevoir des ensembles de références liés. |
-| [SAP](https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners) — Business Partner / Business Partner Role | Identité commune et informations propres aux rôles. | Réutiliser la même identité entre contextes métier. |
-| Notre modèle — Party / Role Ingestion | Identités, identifiants, rôles et relations de référence reçus des maîtres externes. | Actualiser la projection locale avec sa provenance et ses contextes métier. |
-
-### Ce que nous en retenons
-
-- Oracle décrit l’import d’identités et de responsabilités ; SAP explique pourquoi plusieurs rôles restent liés à une même identité. Le premier éclaire la réception, le second le sens de ce qui est reçu.
-- FLOW conserve ces liens sans administrer les personnes au niveau de l’entreprise. La consultation est une aptitude complémentaire, distincte de l’arrivée des données.
-
-### Illustration FLOW — une personne, deux rôles
-
-La société fictive Alpha fournit des marchandises dans un accord et achète une prestation dans un autre.
-
-**Ce qui se passe.** La même identité est reliée à un rôle fournisseur puis à un rôle client, chacun dans son contexte.
-
-**Ce que cela illustre dans FLOW.** Party / Role indique qui intervient et à quel titre ; Agreement précise les engagements de chaque accord.
-
-Source : [Managing Business Partners](https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners).
-
-Références : U505, ELM500, CMP203.
-
-### Détails des références
-
-#### Oracle — Trading Community Data Import
-
-Fusion Cloud Financials · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Réception distincte des identités, relations et responsabilités de rôle.
-
-**Différences.** Le périmètre Oracle inclut des données financières et de gestion absentes du besoin Supply.
-
-**Position FLOW.** Recevoir les personnes et leurs rôles métier avec leurs identifiants d’origine, pour que les accords et opérations Supply désignent les mêmes personnes que les référentiels d’entreprise.
-
-[Customer Import](https://docs.oracle.com/en/cloud/saas/financials/25d/oefbf/customerimport-3032.html) — 25D, consulté le 2026-09-19.
-
-**Passage.** File Links ; Import Trading Community Data in Bulk
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM344, CMP193, U505, CMP203.
-
-#### SAP — Business Partner / Business Partner Role
-
-S/4HANA — Financial Accounting · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Le changement de rôle ne change pas la personne.
-
-**Différences.** Ce cours étaye le sens des données à préserver, pas une ingestion Supply. SAP administre aussi le maître, ce qui reste externe à FLOW.
-
-**Position FLOW.** Recevoir les personnes et leurs rôles métier avec leurs identifiants d’origine, pour que les accords et opérations Supply désignent les mêmes personnes que les référentiels d’entreprise.
-
-[Managing Business Partners](https://learning.sap.com/courses/customizing-core-settings-in-financial-accounting-in-sap-s4hana/managing-business-partners) — Cours web ; numéro de release non affiché, consulté le 2026-09-19.
-
-**Passage.** Business Partner Categories ; Business Partner Roles ; Customer/Vendor Integration
-
-**Limite de preuve.** Texte primaire consulté ; appui sélectif, sans conformité ni réalisation Beaumanoir déduite.
-
-Références : U505, U506, ELM500, CMP203.
-
 ## Sources d’inspiration — D01 Inventory Management
 
 Inventory Management exprime la responsabilité retenue dans le découpage U667–U673.
@@ -4763,71 +4650,6 @@ Explaining Inventory Management · Concept ou fonction documenté dans un produi
 **Limite de preuve.** SAP inclut valorisation financière et opérations plus larges que le périmètre FLOW proposé. Les distinctions physiques, attendues et réservées sont étayées. La valorisation financière de certains ERP est hors du périmètre retenu.
 
 Références : ELM449, CMP269, CMP270, U673.
-
-## Sources d’inspiration — D11.a Agreement Ingestion
-
-Recevoir les contrats et leurs évolutions pour appliquer les bonnes conditions. Agreement Ingestion conserve leur provenance et leurs liens sans négocier ni administrer le contrat maître.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html) — Import Purchasing Agreements | Conditions transmises depuis un contrat vers l’achat. | Importer et suivre l’accord créé. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements) — Purchase agreement | Conditions, validité et engagements quantité/valeur. | Relier l’accord aux commandes qui le consomment. |
-| Notre modèle — Agreement Ingestion | Cadre contractuel, validité, conditions et engagements reçus. | Mettre à disposition une projection fidèle à la source. |
-
-### Ce que nous en retenons
-
-- Oracle décrit un transfert de contrats vers les accords d’achat ; Microsoft précise les engagements et conditions que les commandes peuvent consommer. L’un éclaire la circulation du contrat, l’autre les informations à conserver.
-- FLOW s’arrête à la réception de cette projection. Les circuits de signature et d’approbation Oracle, comme l’activation locale d’un accord Microsoft, ne deviennent pas des aptitudes de cette capacité.
-
-### Illustration FLOW — nouvelle période de validité
-
-Le maître externe transmet une nouvelle période et des conditions de livraison modifiées.
-
-**Ce qui se passe.** La projection rend la version reçue disponible aux commandes concernées.
-
-**Ce que cela illustre dans FLOW.** Réception et application des conditions gardent leurs responsabilités distinctes.
-
-Source : [Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements).
-
-Références : U477, ELM426, CMP193.
-
-### Détails des références
-
-#### Oracle — Import Purchasing Agreements
-
-Fusion Cloud Enterprise Contracts / Purchasing · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Conditions transmises depuis un contrat vers l’achat.
-
-**Différences.** FLOW ne crée pas un second maître ni son circuit d’approbation.
-
-**Position FLOW.** Recevoir les contrats et leurs évolutions pour appliquer les bonnes conditions. Agreement Ingestion conserve leur provenance et leurs liens sans négocier ni administrer le contrat maître.
-
-[Create and Monitor Agreements in Oracle Fusion Purchasing](https://docs.oracle.com/en/cloud/saas/sales/fasca/create-and-monitor-agreements-in-oracle-fusion-purchasing.html) — Documentation évolutive sans édition affichée, consulté le 2026-09-19.
-
-**Passage.** Track Purchasing Activity ; Import Blanket Agreements ; Import Contract Agreements
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM347, CMP193.
-
-#### Microsoft — Purchase agreement
-
-Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Conditions, validité et engagements quantité/valeur.
-
-**Différences.** Ce document éclaire le contenu reçu, pas un contrat universel d’ingestion.
-
-**Position FLOW.** Recevoir les contrats et leurs évolutions pour appliquer les bonnes conditions. Agreement Ingestion conserve leur provenance et leurs liens sans négocier ni administrer le contrat maître.
-
-[Purchase agreements](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-agreements) — Mise à jour du 8 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Commitment types ; Purchase agreement fulfillment
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM426, CMP193.
 
 ## Sources d’inspiration — D06 Fulfilment Orchestration
 
@@ -4901,148 +4723,6 @@ Intelligent Order Management overview · Concept ou fonction documenté dans un 
 
 Références : ELM405, CMP269, CMP270, U673, U682.
 
-## Exemples concrets — D08.d Product Reference Ingestion
-
-### Recevoir une variante avant sa mise au catalogue
-
-Les caractéristiques taille et couleur d’une variante sont reçues depuis leur source externe.
-
-**Ce qui se passe.** Supply actualise sa projection, même si la variante n’est pas encore proposée dans un catalogue.
-
-**Ce que cela illustre.** Recevoir l’information ne transfère pas à Supply l’administration du maître produit.
-
-Références : U202, U290, U460, U462.
-
-## Sources d’inspiration — D08.d Product Reference Ingestion
-
-Recevoir les références produit et leurs variantes avant de les utiliser dans les opérations. Product Reference Ingestion conserve les identifiants et caractéristiques du maître externe, même sans catalogue associé.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html) — Item batch | Références et structures reçues de plusieurs sources. | Charger et traiter les données produit. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data) — Product master data | Références, variantes et identifiants nécessaires à l’entrepôt. | Recevoir les données avant les demandes logistiques. |
-| Notre modèle — Product Reference Ingestion | Produits, variantes, rôles et identifiants reçus. | Intégrer les évolutions de référence sans administrer le maître. |
-
-### Ce que nous en retenons
-
-- Oracle montre l’import par lots de références et structures ; Microsoft décrit les produits et variantes nécessaires aux échanges avec un entrepôt. L’un couvre la consolidation produit, l’autre une utilisation logistique.
-- FLOW retient la réception et le lien à la source. Les enrichissements, rapprochements de doublons ou changements de données maîtresses présents chez les éditeurs dépassent ce périmètre.
-
-### Illustration FLOW — taille et couleur reçues
-
-Une nouvelle taille/couleur est transmise par le maître produit.
-
-**Ce qui se passe.** La Supply peut reconnaître les prochaines demandes portant sur cette variante.
-
-**Ce que cela illustre dans FLOW.** L’arrivée de la référence ne crée ni offre catalogue ni stock physique.
-
-Source : [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data).
-
-Références : U477, ELM445, CMP193.
-
-### Détails des références
-
-#### Oracle — Item batch
-
-Fusion Cloud Product Hub · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Références et structures reçues de plusieurs sources.
-
-**Différences.** La gouvernance et la qualité du maître Oracle restent hors FLOW.
-
-**Position FLOW.** Recevoir les références produit et leurs variantes avant de les utiliser dans les opérations. Product Reference Ingestion conserve les identifiants et caractéristiques du maître externe, même sans catalogue associé.
-
-[Overview of Item Batches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fapim/overview-of-item-batches.html) — 26A, consulté le 2026-09-19.
-
-**Passage.** Overview of Item Batches
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U470, U471, ELM295, CMP186, U477, ELM360, CMP193.
-
-#### Microsoft — Product master data
-
-Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Références, variantes et identifiants nécessaires à l’entrepôt.
-
-**Différences.** Le schéma d’échange Microsoft ne devient pas un contrat imposé à tous les maîtres.
-
-**Position FLOW.** Recevoir les références produit et leurs variantes avant de les utiliser dans les opérations. Product Reference Ingestion conserve les identifiants et caractéristiques du maître externe, même sans catalogue associé.
-
-[Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data) — Mise à jour du 27 juillet 2026, consulté le 2026-09-19.
-
-**Passage.** Master and reference data ; Shipment orders ; Progress data and business events
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U460, ELM281, CMP176, U134, U290, U462, U477, ELM445, CMP193.
-
-## Sources d’inspiration — D12.a Product Catalog Ingestion
-
-Recevoir les offres de catalogue et leurs évolutions. Product Catalog Ingestion rend utilisables les références, prix et zones transmis, sans décider localement de la politique commerciale.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites) — Catalog publication | Offres commerciales et leur applicabilité. | Rendre un catalogue utilisable par le public concerné. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs) — Catalog updates | Évolutions d’une sélection commandable. | Publier les modifications selon le mode choisi. |
-| Notre modèle — Product Catalog Ingestion | Contenu et applicabilité des catalogues externes. | Conserver les liens produit et la provenance des offres. |
-
-### Ce que nous en retenons
-
-- Microsoft Commerce publie des catalogues orientés clients ; Microsoft Procurement publie des sélections utilisables par les acheteurs internes. Les deux distinguent le contenu préparé de celui rendu utilisable, malgré des destinataires différents.
-- Ces documents éclairent le contenu publié, pas une interface d’ingestion universelle. FLOW se place du côté récepteur : recevoir un prix ou une zone ne donne pas le pouvoir de les fixer.
-
-### Illustration FLOW — une offre limitée à une zone
-
-Un catalogue externe ajoute une variante à une offre applicable dans une zone donnée.
-
-**Ce qui se passe.** La projection conserve à la fois la référence produit et cette limite d’application.
-
-**Ce que cela illustre dans FLOW.** L’ingestion ne généralise pas l’offre à tous les lieux.
-
-Source : [Create Commerce catalogs for B2B sites](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites).
-
-Références : U477, ELM391, CMP193.
-
-### Détails des références
-
-#### Microsoft — Catalog publication
-
-Dynamics 365 Commerce · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Offres commerciales et leur applicabilité.
-
-**Différences.** FLOW reçoit la publication ; il ne gère pas son cycle commercial.
-
-**Position FLOW.** Recevoir les offres de catalogue et leurs évolutions. Product Catalog Ingestion rend utilisables les références, prix et zones transmis, sans décider localement de la politique commerciale.
-
-[Create Commerce catalogs for B2B sites](https://learn.microsoft.com/en-us/dynamics365/commerce/catalogs-b2b-sites) — Mise à jour du 21 janvier 2026, consulté le 2026-09-19.
-
-**Passage.** Catalog configuration ; customer hierarchies ; price groups
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM391, CMP193.
-
-#### Microsoft — Catalog updates
-
-Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Évolutions d’une sélection commandable.
-
-**Différences.** La publication d’achat interne est un appui partiel, pas le mécanisme d’intégration FLOW.
-
-**Position FLOW.** Recevoir les offres de catalogue et leurs évolutions. Product Catalog Ingestion rend utilisables les références, prix et zones transmis, sans décider localement de la politique commerciale.
-
-[Procurement catalogs overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-catalogs) — Mise à jour du 1er juillet 2026, consulté le 2026-09-19.
-
-**Passage.** Set up a catalog ; publication and updates
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM424, CMP193.
-
 ## Sources d’inspiration — D03 Demand & Supply Matching
 
 Demand & Supply Matching exprime la responsabilité retenue dans le découpage U667–U673.
@@ -5115,71 +4795,6 @@ Results of DOM runs · Concept ou fonction documenté dans un produit · Recouvr
 
 Références : ELM654, CMP269, CMP270, U673.
 
-## Sources d’inspiration — D13.a Fulfillment Network Ingestion
-
-Recevoir les lieux et relations de référence du réseau. Fulfillment Network Ingestion transmet leurs évolutions aux consommateurs sans décider de l’implantation ni de la charge des sites.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [GS1](https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard) — Location identification | Identité des lieux et liens avec les parties. | Distinguer le lieu concerné par une évolution. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data) — Site / Warehouse | Sites, entrepôts et emplacements échangés. | Faire correspondre les repères de plusieurs systèmes. |
-| Notre modèle — Fulfillment Network Ingestion | Points, caractéristiques, relations et liens aux parties responsables. | Préserver les identifiants et la provenance des changements. |
-
-### Ce que nous en retenons
-
-- GS1 explique comment identifier parties et lieux ; Microsoft montre comment échanger les références de sites et d’entrepôts. Le premier sécurise le sens de l’identification, le second illustre sa circulation.
-- FLOW reçoit aussi les relations de réseau fournies par ses sources. Les documents ne prouvent pas que toutes les relations de desserte suivent une norme unique : leur sens doit être conservé avec la référence reçue.
-
-### Illustration FLOW — une nouvelle plateforme référencée
-
-Une source externe transmet une plateforme, ses caractéristiques et ses relations de desserte.
-
-**Ce qui se passe.** Les décisions peuvent examiner ce point du réseau.
-
-**Ce que cela illustre dans FLOW.** La référence reçue ne vaut pas ouverture opérationnelle ou disponibilité immédiate.
-
-Source : [Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data).
-
-Références : U477, ELM445, CMP193.
-
-### Détails des références
-
-#### GS1 — Location identification
-
-GLN Allocation Rules · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Identité des lieux et liens avec les parties.
-
-**Différences.** GS1 ne décide pas de la structure du réseau FLOW.
-
-**Position FLOW.** Recevoir les lieux et relations de référence du réseau. Fulfillment Network Ingestion transmet leurs évolutions aux consommateurs sans décider de l’implantation ni de la charge des sites.
-
-[GS1 GLN Allocation Rules Standard](https://www.gs1.org/standards/gs1-gln-allocation-rules-standard/current-standard) — Release 3.0.2, août 2022, consulté le 2026-09-19.
-
-**Passage.** §2.1 Use of GLN ; parties and locations ; exemple Dal Giardino
-
-**Limite de preuve.** Passages primaires indexés consultés ; ouverture directe bloquée (403). Pas de conformité GS1 déduite pour FLOW.
-
-Références : U477, ELM468, CMP193.
-
-#### Microsoft — Site / Warehouse
-
-Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Sites, entrepôts et emplacements échangés.
-
-**Différences.** La réception d’une configuration ne prouve ni capacité ni stock disponible.
-
-**Position FLOW.** Recevoir les lieux et relations de référence du réseau. Fulfillment Network Ingestion transmet leurs évolutions aux consommateurs sans décider de l’implantation ni de la charge des sites.
-
-[Exchange data between systems](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data) — Mise à jour du 27 juillet 2026, consulté le 2026-09-19.
-
-**Passage.** Master and reference data ; Shipment orders ; Progress data and business events
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM445, CMP193.
-
 ## Sources d’inspiration — D06.d Process Orchestration
 
 Faire s’enchaîner les [Services](glossary:TER075) du plan retenu dans le bon ordre. Process Orchestration coordonne leurs dépendances et déclenchements ; le choix d’un autre plan relève de Process Adaptation Decision.
@@ -5244,71 +4859,6 @@ Service Ordering Management · Concept documenté par la source primaire · Reco
 **Limite de preuve.** PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés par FLOW.
 
 Références : U477, ELM464, CMP193.
-
-## Sources d’inspiration — D14.a Service Catalog Ingestion
-
-Recevoir les offres des Services et leurs conditions à jour. Service Catalog Ingestion conserve la référence de l’exécutant sans transformer une évolution de l’offre en révision automatique des engagements en cours.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [TM Forum](https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/) — Service Catalog | Offres de service et leurs évolutions. | Rendre leur description disponible à la commande. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture) — Product Catalog / Work Order | Service de référence et prestation mobilisée dans une intervention. | Réutiliser l’offre pour décrire un travail précis. |
-| Notre modèle — Service Catalog Ingestion | Descriptions des prestations exécutantes, résultats, niveaux de service configurés, conditions et moyens de contact reçus. | Maintenir la description de référence des offres externes mobilisables par l’orchestration. |
-
-### Ce que nous en retenons
-
-- TM Forum distingue le catalogue de la commande de service ; Microsoft Field Service utilise des prestations de catalogue dans les interventions. Tous deux séparent une description réutilisable du travail particulier demandé.
-- FLOW reçoit la description des Services et ses évolutions. Les documents illustrent les objets à distinguer, sans imposer un mécanisme d’échange ni transférer au Domain la maîtrise du catalogue d’entreprise.
-
-### Illustration FLOW — nouveau délai au catalogue
-
-Un prestataire transmet un nouveau délai configuré pour son service documentaire.
-
-**Ce qui se passe.** Le catalogue reçu expose cette condition pour les usages concernés.
-
-**Ce que cela illustre dans FLOW.** Les engagements déjà pris restent à examiner dans leur propre contexte.
-
-Source : [TMF633 Service Catalog API REST Specification R18.5.1](https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/).
-
-Références : U477, ELM482, CMP193.
-
-### Détails des références
-
-#### TM Forum — Service Catalog
-
-Service Catalog Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Offres de service et leurs évolutions.
-
-**Différences.** La conception et le retrait du maître catalogue restent externes à FLOW.
-
-**Position FLOW.** Recevoir les offres des Services et leurs conditions à jour. Service Catalog Ingestion conserve la référence de l’exécutant sans transformer une évolution de l’offre en révision automatique des engagements en cours.
-
-[TMF633 Service Catalog API REST Specification R18.5.1](https://www.tmforum.org/resources/specification/tmf633-service-catalog-api-rest-specification-r18-5-0/) — Archive R18.5.1 ; notice version 4.0.1, modifiée le 8 avril 2019, consulté le 2026-09-19.
-
-**Passage.** Description de la spécification
-
-**Limite de preuve.** Notice primaire indexée consultée ; corps de spécification non consulté. Archive historique, pas édition courante ni norme Supply.
-
-Références : U477, ELM482, CMP193.
-
-#### Microsoft — Product Catalog / Work Order
-
-Dynamics 365 Field Service · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Service de référence et prestation mobilisée dans une intervention.
-
-**Différences.** La source n’établit pas une ingestion standard de tout service Supply.
-
-**Position FLOW.** Recevoir les offres des Services et leurs conditions à jour. Service Catalog Ingestion conserve la référence de l’exécutant sans transformer une évolution de l’offre en révision automatique des engagements en cours.
-
-[Work order architecture](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** A work order is created ; scheduled ; performed ; reviewed and completed
-
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-
-Références : U477, ELM397, CMP193.
 
 ## Sources d’inspiration — D06.e Service Selection Decision
 
@@ -10362,32 +9912,32 @@ Store Execution Inventory Management · Concept documenté par la source primair
 
 Références : U305, U308, U404, U405, U406, ELM243, CMP154, U477, ELM385, CMP193.
 
-## Sources d’inspiration — BHV082 Process Tracking
+## Sources d’inspiration — BHV082 Process Visibility
 
-Comprendre ce qui est achevé, attendu ou bloqué dans un processus Supply. Process Tracking relie les résultats des prestations à leurs contributions métier, y compris lorsqu’un document ou un service numérique est en jeu.
+Process Visibility explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier corrélées aux résultats de services. | Relier les faits autour d’un identifiant de parcours. |
-| [Camunda](https://camunda.com/platform/observability/) — Process observability | Progression et blocages d’instances de processus. | Montrer ce qui est actif, achevé ou en attente. |
-| Notre modèle — Process Tracking | Progression des Tasks et du processus, contributions humaines, physiques et numériques. | Corréler les faits et résultats connus dans leur contexte métier. |
+| [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier corrélées aux résultats de services. | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. |
+| [Camunda](https://camunda.com/platform/observability/) — Process observability | Progression et blocages d’instances de processus. | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. |
+| Notre modèle — Process Visibility | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. | **Point d’entrée métier.** Suivre le processus d’exécution Supply et ses Tasks métier, en les reliant aux commandes, documents et prestations concernés. Une Task peut mobiliser plusieurs services ; la corrélation ne suppose ni un appel unique ni une correspondance un pour un. Les actions humaines peuvent contribuer au résultat de la Task sans être assimilées à des appels informatiques.  **Exemple : produire les documents d’expédition.** La Task mobilise des services pour récupérer les données, produire le document, le déposer et notifier sa disponibilité. Le tracking relie sollicitations, prises en charge connues, réponses, résultats et tentatives à cette Task. Si la production du document a abouti mais que son dépôt reste en attente, il devient possible de comprendre ce qui manque au résultat attendu, selon les conditions de fin définies pour la Task. Cet exemple ne prescrit pas un workflow universel.  **Trois distinctions essentielles.** Un appel accepté ne signifie pas que la prestation est terminée. Des appels techniquement réussis ne garantissent pas le résultat métier attendu. Une Task terminée ne signifie pas que le processus complet est terminé. Une nouvelle tentative reste reliée à la demande d’origine ; absence de réponse ne vaut pas refus. Le suivi expose les faits et les résultats connus, sans inventer l’état d’un service externe.  **Exemple : contrôle antifraude.** Le contrôle a répondu avec une suspicion : la prestation numérique peut être terminée alors que la commande reste en attente d’une décision. Le tracking rend explicite cette différence ; il ne décide pas d’accepter le risque. De même, la vérification d’identité ou de code-barres et la production documentaire restent visibles dans leur contexte métier, sans comportement autonome par service.  **Lecture transversale.** Pour une commande, on peut constater le contrôle terminé, une décision attendue, le document non encore produit et la préparation physique terminée. Les vues Warehouse, Transportation et Store éclairent les opérations physiques ; Process Visibility explique leur articulation avec les Tasks et conditions connues de progression. Les faits peuvent être partagés sans duplication de responsabilité.  **Frontières de modèle.** Les Tasks, prestations et appels de services sont des objets suivis ; ils ne créent aucun niveau sous Comportement. Aucun nouvel objet de catalogue, cardinalité ou relation de possession n’est imposé par cette description. Le périmètre est celui des processus d’exécution Supply ; le suivi de l’ensemble des processus de l’entreprise reste hors de cette responsabilité. Le nom Digital Service Visibility est remplacé : son besoin de visibilité explicite demeure inclus ici, sans conserver un cinquième comportement. Les exemples sont fictifs et ne prouvent aucun existant Beaumanoir.  Les quatre comportements sont directement rattachés à Operations Tracking. Les visibilités physiques et le suivi du processus sont des perspectives complémentaires et peuvent utiliser les mêmes faits. Logistics Visibility reste une notion englobante, sans niveau supplémentaire. Les faits, estimations et engagements restent distincts, avec origine et fraîcheur. Le suivi porte aussi sur la progression normale, pas seulement les exceptions. Une information manquante ne prouve pas qu’une opération n’a pas eu lieu. Les exécutants gardent leurs opérations internes ; Inventory Management enregistre les effets sur le stock. Orchestration coordonne la suite et Process Adaptation Decision détermine les adaptations ; le tracking ne les décide pas. Aucun temps réel uniforme ni architecture d’instrumentation imposés.  Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Visibility leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé. |
 
 ### Ce que nous en retenons
 
 - Azure Business Process Tracking relie des opérations informatiques à des étapes métier et à un identifiant commun. Camunda rend visibles les étapes actives, terminées ou bloquées d’un processus. Les deux donnent une lecture du parcours au-delà des traces isolées.
 - FLOW retient cette lecture, sans imposer un moteur ou une correspondance entre une Task et un seul appel. Un appel accepté, un service terminé et un résultat métier acquis sont trois constats à distinguer.
 
-### Illustration FLOW — document produit, dépôt attendu
+### Illustration FLOW — Process Visibility
 
-La production d’un document a réussi, mais son dépôt n’est pas terminé.
+Une information reçue est corrigée par son domaine source après une première prise en compte.
 
-**Ce qui se passe.** Le suivi montre ce qui manque au résultat attendu de la Task.
+**Ce qui se passe.** Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression.
 
-**Ce que cela illustre dans FLOW.** La réussite d’un appel ne suffit pas à déclarer la Task, puis le processus entier, terminés.
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
 
 Source : [What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview).
 
-Références : U477, ELM386, CMP193.
+Références : U717, U305.
 
 ### Détails des références
 
@@ -10395,11 +9945,13 @@ Références : U477, ELM386, CMP193.
 
 Azure Business Process Tracking · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression.
+
 **Points communs.** Étapes métier corrélées aux résultats de services.
 
-**Différences.** Le produit est lié à Azure ; FLOW conserve aussi les contributions humaines et physiques.
+**Différences.** Le produit est lié à Azure ; FLOW conserve aussi les contributions humaines et physiques. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Comprendre ce qui est achevé, attendu ou bloqué dans un processus Supply. Process Tracking relie les résultats des prestations à leurs contributions métier, y compris lorsqu’un document ou un service numérique est en jeu.
+**Position FLOW.** Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression.
 
 [What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Mise à jour du 11 septembre 2025, consulté le 2026-09-19.
 
@@ -10413,11 +9965,13 @@ Références : U305, U308, U404, U405, U406, ELM243, CMP154, U477, ELM386, CMP19
 
 Operate / Process Observability · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression.
+
 **Points communs.** Progression et blocages d’instances de processus.
 
-**Différences.** Les commandes de reprise de la plateforme ne sont pas des décisions du suivi FLOW.
+**Différences.** Les commandes de reprise de la plateforme ne sont pas des décisions du suivi FLOW. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
 
-**Position FLOW.** Comprendre ce qui est achevé, attendu ou bloqué dans un processus Supply. Process Tracking relie les résultats des prestations à leurs contributions métier, y compris lorsqu’un document ou un service numérique est en jeu.
+**Position FLOW.** Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression.
 
 [Process Observability & AI Agent Monitoring](https://camunda.com/platform/observability/) — Page web évolutive, consulté le 2026-09-19.
 
@@ -11208,71 +10762,6 @@ Service Portal · Fonction documentée par la source primaire · Recouvrement pa
 
 Références : U505, ELM514, CMP204.
 
-## Sources d’inspiration — D16.a Assortment Ingestion
-
-Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir la référence locale des assortiments utilisée par la Supply.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-list-1-1) — Assortment List / Change Version | Sélections applicables et évolutions transmises. | Diffuser une liste complète ou des changements vers les magasins. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/commerce/assortments) — Assortment processing / Data replication | Définitions d’assortiment rendues disponibles aux canaux. | Préparer et répliquer des références tenant compte des dates et groupes. |
-| Notre modèle — Assortment Ingestion | Sélections, affectations, périodes et évolutions de référence. | Intégrer la projection reçue. |
-
-### Ce que nous en retenons
-
-- Les sources documentent la diffusion et la consultation d’assortiments ; elles ne prescrivent pas notre découpage de capacités.
-- FLOW distingue recevoir les évolutions et connaître la référence. Conception et validation commerciales demeurent externes.
-
-### Illustration FLOW — sélection négociée et sélection magasin
-
-Un fournisseur propose 100 références. Un distributeur en retient 30 pour la saison, puis 12 pour ses petits magasins.
-
-**Ce qui se passe.** L’accord peut figer la sélection de 30 ; l’assortiment interne affecte les 12 aux magasins concernés.
-
-**Ce que cela illustre dans FLOW.** Le choix magasin ne nécessite pas automatiquement un nouvel accord fournisseur et ne dit rien des quantités en stock.
-
-Source : [Assortment](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-1-1).
-
-Références : U509, ELM515, CMP206.
-
-### Détails des références
-
-#### SAP — Assortment List / Change Version
-
-Retail / Assortment · Concept documenté par une source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Les consommateurs reçoivent les évolutions de la référence.
-
-**Différences.** SAP décrit notamment l’émission ; FLOW décrit la réception. Formats, fréquences et données transactionnelles restent hors de cette adaptation.
-
-**Position FLOW.** Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir la référence locale des assortiments utilisée par la Supply.
-
-[Assortment List](https://learning.sap.com/courses/configuring-master-data-in-sap-s-4hana-cloud-private-edition-retail/assortment-list-1-1) — Cours S/4HANA Cloud Private Edition Retail ; numéro de release non affiché, consulté le 2026-09-19.
-
-**Passage.** Attributes of the Assortment List ; Full/Change/Mixed Version ; affichage des versions et diffusion électronique
-
-**Limite de preuve.** Texte primaire consulté. Le cycle et les formats SAP ne sont pas imposés ; les informations transactionnelles optionnelles ne sont pas reprises dans la référence FLOW.
-
-Références : U508, U509, ELM517, CMP206.
-
-#### Microsoft — Assortment processing / Data replication
-
-Dynamics 365 Commerce · Concept documenté par une source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Conserver la sélection et son contexte dans les données consommées.
-
-**Différences.** Le traitement Microsoft inclut des décisions de publication Commerce ; FLOW ne reprend ici que l’intégration des références reçues.
-
-**Position FLOW.** Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir la référence locale des assortiments utilisée par la Supply.
-
-[Assortment management](https://learn.microsoft.com/en-us/dynamics365/commerce/assortments) — Page mise à jour le 16 janvier 2026, consulté le 2026-09-19.
-
-**Passage.** Introduction ; Basic assortment setup ; Dynamic and static assortments ; Date effectivity
-
-**Limite de preuve.** Texte primaire ouvert ; available désigne ici l’offre du canal, sans preuve de disponibilité physique ni de promesse.
-
-Références : U508, U509, ELM516, CMP206.
-
 ## Sources d’inspiration — D16.b Assortment Visibility
 
 Retrouver un assortiment et consulter quels produits sont retenus pour quels magasins, canaux ou clients et pendant quelle période.
@@ -12033,23 +11522,23 @@ Explaining Supply Assignment · Concept ou fonction documenté dans un produit �
 
 Références : ELM452, CMP269, CMP270, U673.
 
-## Sources d’inspiration — subdomain-plans Plans
+## Sources d’inspiration — subdomain-plans Plan Visibility
 
-Plans exprime la responsabilité retenue dans le découpage U667–U673.
+Plan Visibility explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Master plans overview | Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres. | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. |
 | [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. |
-| Notre modèle — Plans | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. | Tenir et exposer les données prévisionnelles calculées hors du domaine. |
+| Notre modèle — Plan Visibility | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. | Recevoir les plans du domaine externe PLAN, porté par l’APS, par [Plan Ingestion](model:plans-ingestion). Ce domaine source existe mais n’est pas référencé dans cette cartographie. [Supply Plan Visibility](model:plans-visibility) expose les prévisions d’entrées et de sorties de stock hors achats ; [Demand Plan Visibility](model:demand-plan-visibility) expose la demande prévisionnelle. Les deux vues rendent explicites versions, horizons, provenance et incertitudes pour Order Promising et Matching. Le calcul des prévisions reste externe. Le master plan d’affectation est construit et géré dans [Demand & Supply Matching](model:D03). Une projection ne crée ni Order ferme ni mouvement de stock. |
 
 ### Ce que nous en retenons
 
 - Les plans externes et besoins prévisionnels sont documentés ; leur ingestion dans un sous-domaine autonome est une frontière FLOW. Le sens Supply Plan hors achats vient de U668 ; ces sources ne prouvent pas une équivalence avec Supply Planning éditeur.
 
-### Illustration FLOW — Plans
+### Illustration FLOW — Plan Visibility
 
-une sortie prévue de vingt pièces réduit la couverture projetée, sans enregistrer une sortie physique.
+Recevoir les plans du domaine externe PLAN, porté par l’APS, par [Plan Ingestion](model:plans-ingestion). Ce domaine source existe mais n’est pas référencé dans cette cartographie. [Supply Plan Visibility](model:plans-visibility) expose les prévisions d’entrées et de sorties de stock hors achats ; [Demand Plan Visibility](model:demand-plan-visibility) expose la demande prévisionnelle. Les deux vues rendent explicites versions, horizons, provenance et incertitudes pour Order Promising et Matching. Le calcul des prévisions reste externe. Le master plan d’affectation est construit et géré dans [Demand & Supply Matching](model:D03). Une projection ne crée ni Order ferme ni mouvement de stock.
 
 **Ce qui se passe.** Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching.
 
@@ -12065,7 +11554,7 @@ Références : U673, ELM415.
 
 Master plans overview · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
 **Pourquoi cette définition.** Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching.
 
@@ -12087,7 +11576,7 @@ Références : ELM415, CMP269, CMP270, U673.
 
 Outlining Program Planning · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
 **Pourquoi cette définition.** Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching.
 
@@ -12107,13 +11596,13 @@ Références : ELM649, CMP269, CMP270, U673.
 
 ## Sources d’inspiration — plans-ingestion Plan Ingestion
 
-Plan Ingestion rend explicite la responsabilité de Plans.
+Plan Ingestion explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Master plans overview | Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres. | Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats. |
-| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats. |
-| Notre modèle — Plan Ingestion | Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats. | Distinguer remplacement d’une projection et modification d’un Order déjà pris en charge ; conserver les liens utiles au rapprochement prévision-commandes, sans calculer la prévision ni effacer un engagement. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Master plans overview | Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres. | Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut. |
+| Notre modèle — Plan Ingestion | Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut. | Une capacité commune reçoit les deux types de plans en conservant leur distinction. Reconnaître les nouvelles versions, corrections et rejets ; rapprocher les données de leurs références locales sans calculer les prévisions. Le domaine PLAN est externe et non référencé dans cette cartographie. Une projection révisée ne modifie ni un Order ni un mouvement constaté. Exemple fictif : une prévision d’entrée hors achat passe de 100 à 80 pièces ; intégrer la révision sans enregistrer une réception. |
 
 ### Ce que nous en retenons
 
@@ -12121,9 +11610,9 @@ Plan Ingestion rend explicite la responsabilité de Plans.
 
 ### Illustration FLOW — Plan Ingestion
 
-Une prévision d’entrée de stock hors achat passe de 100 à 80 pièces : conserver sa révision sans la transformer en réception constatée.
+Une capacité commune reçoit les deux types de plans en conservant leur distinction. Reconnaître les nouvelles versions, corrections et rejets ; rapprocher les données de leurs références locales sans calculer les prévisions. Le domaine PLAN est externe et non référencé dans cette cartographie. Une projection révisée ne modifie ni un Order ni un mouvement constaté. Exemple fictif : une prévision d’entrée hors achat passe de 100 à 80 pièces ; intégrer la révision sans enregistrer une réception.
 
-**Ce qui se passe.** Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+**Ce qui se passe.** Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut.
 
 **Ce que cela illustre dans FLOW.** Exemple fictif de la frontière FLOW ; la source apporte un recouvrement partiel et ne démontre pas une réalisation Beaumanoir.
 
@@ -12137,15 +11626,15 @@ Références : U673, ELM415.
 
 Master plans overview · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
-**Pourquoi cette définition.** Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+**Pourquoi cette définition.** Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut.
 
 **Points communs.** Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres.
 
 **Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
 
-**Position FLOW.** Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+**Position FLOW.** Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut.
 
 [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Documentation évolutive, mise à jour affichée le 25 mars 2026, consulté le 2026-09-23.
 
@@ -12159,15 +11648,15 @@ Références : ELM415, CMP269, CMP270, U673.
 
 Outlining Program Planning · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
-**Pourquoi cette définition.** Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+**Pourquoi cette définition.** Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut.
 
 **Points communs.** Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP.
 
 **Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
 
-**Position FLOW.** Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats.
+**Position FLOW.** Recevoir et intégrer les Supply Plans et Demand Plans du domaine externe PLAN, porté par l’APS, avec leur provenance, horizon, version et statut.
 
 [Outlining Program Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Cours S/4HANA Cloud Public Edition, édition non affichée, consulté le 2026-09-23.
 
@@ -12177,25 +11666,25 @@ Outlining Program Planning · Concept ou fonction documenté dans un produit · 
 
 Références : ELM649, CMP269, CMP270, U673.
 
-## Sources d’inspiration — plans-visibility Plan Visibility
+## Sources d’inspiration — plans-visibility Supply Plan Visibility
 
-Plan Visibility rend explicite la responsabilité de Plans.
+Supply Plan Visibility explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Overview of Global Order Promising | La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources, sources, coûts, substitutions et fractionnements. | Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching. |
-| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching. |
-| Notre modèle — Plan Visibility | Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching. | Ne construit ni prévisions ni master plan de matching. Une projection consultable ne devient pas un approvisionnement ferme. La consommation de prévision par les Orders doit être portée par le calcul de couverture du Matching en s’appuyant sur ces liens. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Overview of Global Order Promising | La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources, sources, coûts, substitutions et fractionnements. | Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. |
+| Notre modèle — Supply Plan Visibility | Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. | Ne construit ni prévisions ni master plan de matching. Une projection consultable ne devient pas un approvisionnement ferme. La consommation de prévision par les Orders doit être portée par le calcul de couverture du Matching en s’appuyant sur ces liens. Exemple fictif : Présenter une sortie de stock hors achat prévue à J+3 avec son origine et son incertitude, distincte d’un mouvement réalisé. |
 
 ### Ce que nous en retenons
 
 - Les documents de planification éclairent la circulation des données ; ils ne transfèrent pas le calcul externe au domaine.
 
-### Illustration FLOW — Plan Visibility
+### Illustration FLOW — Supply Plan Visibility
 
-Présenter une sortie de stock hors achat prévue à J+3 avec son origine et son incertitude, distincte d’un mouvement réalisé.
+Ne construit ni prévisions ni master plan de matching. Une projection consultable ne devient pas un approvisionnement ferme. La consommation de prévision par les Orders doit être portée par le calcul de couverture du Matching en s’appuyant sur ces liens. Exemple fictif : Présenter une sortie de stock hors achat prévue à J+3 avec son origine et son incertitude, distincte d’un mouvement réalisé.
 
-**Ce qui se passe.** Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching.
+**Ce qui se passe.** Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
 
 **Ce que cela illustre dans FLOW.** Exemple fictif de la frontière FLOW ; la source apporte un recouvrement partiel et ne démontre pas une réalisation Beaumanoir.
 
@@ -12209,15 +11698,15 @@ Références : U673, ELM352.
 
 Overview of Global Order Promising · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
-**Pourquoi cette définition.** Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching.
+**Pourquoi cette définition.** Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
 
 **Points communs.** La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources, sources, coûts, substitutions et fractionnements.
 
 **Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
 
-**Position FLOW.** Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching.
+**Position FLOW.** Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
 
 [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Fusion Cloud SCM 25C, consulté le 2026-09-23.
 
@@ -12231,15 +11720,15 @@ Références : ELM352, CMP269, CMP270, U673.
 
 Outlining Program Planning · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules éditeurs.
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
 
-**Pourquoi cette définition.** Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching.
+**Pourquoi cette définition.** Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
 
 **Points communs.** Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP.
 
 **Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
 
-**Position FLOW.** Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching.
+**Position FLOW.** Rendre consultables les prévisions d’entrées ou de sorties de stock hors achats, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
 
 [Outlining Program Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Cours S/4HANA Cloud Public Edition, édition non affichée, consulté le 2026-09-23.
 
@@ -12559,150 +12048,6 @@ Warehouse management only mode overview · Documents et frontière produit · Re
 **Limite de preuve.** Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine FLOW.
 
 Références : ELM133, CMP273, U682.
-
-## Sources d’inspiration — vas-labeling-relabeling Labeling / Relabeling
-
-Labeling / Relabeling rend explicite la responsabilité FLOW.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
-| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
-| Notre modèle — Labeling / Relabeling | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
-
-### Ce que nous en retenons
-
-- Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-### Exemple fictif
-
-Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement ne suffit pas si elle concerne une autre version.
-
-**Ce qui se passe.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
-
-**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
-
-Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
-
-Références : ELM658, U682.
-
-### Détails des références
-
-#### SAP — VAS order
-
-Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
-
-**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
-
-**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-**Position FLOW.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
-
-[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
-
-**Passage.** Use
-
-**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
-
-Références : ELM658, CMP273, U682.
-
-#### Oracle — Picking ; Bulk Picking ; Value Added Services
-
-Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
-
-**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
-
-**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-**Position FLOW.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
-
-[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
-
-**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
-
-**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
-
-Références : ELM661, CMP273, U682.
-
-## Sources d’inspiration — vas-repacking Repacking
-
-Repacking rend explicite la responsabilité FLOW.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
-| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
-| Notre modèle — Repacking | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
-
-### Ce que nous en retenons
-
-- Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-### Exemple fictif
-
-Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité conforme.
-
-**Ce qui se passe.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
-
-**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
-
-Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
-
-Références : ELM658, U682.
-
-### Détails des références
-
-#### SAP — VAS order
-
-Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
-
-**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
-
-**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-**Position FLOW.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
-
-[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
-
-**Passage.** Use
-
-**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
-
-Références : ELM658, CMP273, U682.
-
-#### Oracle — Picking ; Bulk Picking ; Value Added Services
-
-Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
-
-**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
-
-**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
-
-**Position FLOW.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
-
-[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
-
-**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
-
-**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
-
-Références : ELM661, CMP273, U682.
 
 ## Sources d’inspiration — service-order-transport Transport Order
 
@@ -13783,6 +13128,502 @@ Overview of Setting Up Credit Cards · Processus, service ou documentation produ
 **Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
 
 Références : ELM705, U709.
+
+## Sources d’inspiration — demand-plan-visibility Demand Plan Visibility
+
+Demand Plan Visibility explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Overview of Global Order Promising | La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources, sources, coûts, substitutions et fractionnements. | Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. |
+| Notre modèle — Demand Plan Visibility | Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching. | Présenter les besoins prévisionnels sans les confondre avec les Orders entrants. Le calcul de prévision reste dans PLAN ; le rapprochement des prévisions avec les Orders pour éviter leur double comptage relève du Matching. Ne construit ni prévisions ni master plan d’affectation. Exemple fictif : exposer une prévision de demande de 200 robes pour la semaine suivante, distincte des commandes déjà enregistrées. |
+
+### Ce que nous en retenons
+
+- Les documents de planification éclairent la circulation des données ; ils ne transfèrent pas le calcul externe au domaine.
+
+### Illustration FLOW — Demand Plan Visibility
+
+Présenter les besoins prévisionnels sans les confondre avec les Orders entrants. Le calcul de prévision reste dans PLAN ; le rapprochement des prévisions avec les Orders pour éviter leur double comptage relève du Matching. Ne construit ni prévisions ni master plan d’affectation. Exemple fictif : exposer une prévision de demande de 200 robes pour la semaine suivante, distincte des commandes déjà enregistrées.
+
+**Ce qui se passe.** Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
+
+**Ce que cela illustre dans FLOW.** Exemple fictif de la frontière FLOW ; la source apporte un recouvrement partiel et ne démontre pas une réalisation Beaumanoir.
+
+Source : [Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html).
+
+Références : U673, ELM352.
+
+### Détails des références
+
+#### Oracle — Overview of Global Order Promising
+
+Overview of Global Order Promising · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
+
+**Pourquoi cette définition.** Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
+
+**Points communs.** La promesse mobilise stock, apports attendus et planned orders de Supply Planning ; examine nouvelles ressources, sources, coûts, substitutions et fractionnements.
+
+**Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
+
+**Position FLOW.** Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
+
+[Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Fusion Cloud SCM 25C, consulté le 2026-09-23.
+
+**Passage.** Introduction ; Principles of Promising
+
+**Limite de preuve.** L’offre combine plusieurs responsabilités séparées par FLOW ; pas de frontière universelle entre disponibilité, affectation et exécution. Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
+
+Références : ELM352, CMP269, CMP270, U673.
+
+#### SAP — Outlining Program Planning
+
+Outlining Program Planning · Concept ou fonction documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom explicitant le sujet et la visibilité dans FLOW ; pas une nomenclature universelle des éditeurs.
+
+**Pourquoi cette définition.** Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
+
+**Points communs.** Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP.
+
+**Différences.** Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
+
+**Position FLOW.** Rendre consultable la demande prévisionnelle reçue du domaine PLAN, avec versions, horizons, provenance et incertitudes pour éclairer la promesse et le Matching.
+
+[Outlining Program Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Cours S/4HANA Cloud Public Edition, édition non affichée, consulté le 2026-09-23.
+
+**Passage.** Production Planning Overview ; Demand Management Overview
+
+**Limite de preuve.** Exemple de production, pas modèle universel de retail ; ne démontre pas l’externalisation de toute décision de couverture. Les sources étayent la réception ou la consommation de prévisions ; le périmètre Supply Plan hors achats et la séparation du master plan de matching sont propres à FLOW U668.
+
+Références : ELM649, CMP269, CMP270, U673.
+
+## Sources d’inspiration — master-data-ingestion Master Data Ingestion
+
+Master Data Ingestion explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html) — SAP Master Data Integration with SAP Field Service and Asset Management | Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur. | Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply. |
+| [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) — Use domain analysis to model microservices | Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités. | Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply. |
+| Notre modèle — Master Data Ingestion | Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply. | Une ingestion commune dessert les sept sujets de référence, sans les fusionner. Les domaines fournisseurs restent responsables de leur maîtrise d’entreprise ; Supply porte la source de vérité locale. Un domaine peut fournir plusieurs sujets et un sujet recevoir plusieurs contributions. Identifier provenance, validité, corrections et résultat de prise en compte. Les comportements seront distingués par domaine source et contrat métier lorsque ces domaines seront identifiés, sans les déduire des applications ou des sept sujets.  Master Data Ingestion — Recevoir les [personnes](glossary:TER046), leurs identifiants et leurs [rôles métier](glossary:TER047), puis intégrer les évolutions transmises par les maîtres externes pour maintenir une référence locale utilisable par les accords et opérations Supply. Intégrer les identités, relations et rôles de référence reçus, avec leur contexte, leur provenance et leur validité lorsqu’ils sont fournis. Une évolution de rôle se rattache à la personne identifiée par la source.  La réception ne crée pas une nouvelle identité d’entreprise, ne fusionne pas de sa propre initiative les personnes et ne certifie pas leur capacité juridique. Les conditions et engagements d’un accord restent dans Agreement ; les droits d’accès applicatifs sont hors de ce périmètre.  Exemple fictif : Alpha, déjà connue comme fournisseur, devient aussi cliente. Le rôle reçu enrichit sa référence locale avec son contexte, sans créer une deuxième personne.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — Recevoir les contrats clients ou fournisseurs et leurs évolutions, y compris cadre, conditions particulières, périodes et engagements en quantité ou valeur, avec références Party et Catalog et provenance du maître externe. Recevoir les informations de référence et leurs évolutions ; la maîtrise des références à l’échelle de l’entreprise reste externe ; le domaine tient leur source de vérité locale.  Frontière : Aucune négociation locale de l’Agreement.  Exemple fictif : Recevoir validité et conditions de livraison applicables.  Si l’accord comporte une sélection convenue, sa référence ou sa version d’[Assortment](model:D16) fait partie des informations reçues. Les autres assortiments conservent leur autonomie.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — Recevoir les références Product, leurs variantes, rôles, identifiants et caractéristiques utiles ainsi que leurs évolutions depuis les maîtres externes, indépendamment de leur présence dans les catalogues. Recevoir les informations de référence et leurs évolutions ; la maîtrise des références à l’échelle de l’entreprise reste externe ; le domaine tient leur source de vérité locale.  Exemple fictif : Recevoir taille/couleur avant intégration dans une offre.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — recevoir les catalogues construits à l’extérieur, leurs références de produits, prix, zones géographiques d’application et évolutions. Recevoir les informations de référence et leurs évolutions ; la maîtrise des références à l’échelle de l’entreprise reste externe ; le domaine tient leur source de vérité locale.  Frontière : Aucune gouvernance locale du prix ou du catalogue.  Exemple fictif : Recevoir offre et zone d’application avec références produit.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — recevoir les points du réseau, leurs caractéristiques de référence, leurs relations et liens vers les parties responsables, ainsi que leurs évolutions depuis les sources maîtresses externes. Recevoir les informations de référence et leurs évolutions ; la maîtrise des références à l’échelle de l’entreprise reste externe ; le domaine tient leur source de vérité locale.  Frontière : Ne décide pas implantation du réseau ni charge opérationnelle.  Exemple fictif : Recevoir darkstore et liens de desserte.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — Recevoir l’offre des Services, leurs niveaux de service configurés, conditions et accès, ainsi que leurs évolutions depuis les sources maîtresses externes. Recevoir les descriptions des [Services](glossary:TER075) pour tenir leur offre de référence dans [Service Catalog](model:D14). Cette capacité concerne les prestations mobilisables par l’orchestration ; elle ne reçoit pas les demandes de travail de [Order Management](model:D04).  Ingestion du référentiel, dans la continuité du principe des projections Supply. Recevoir les évolutions des services et de leurs accès sans reprendre la maîtrise d’entreprise des données. Consultation et recherche restent en lecture seule pour les consommateurs.  L’ingestion du catalogue ne reçoit pas à sa place le tracking des opérations et ne transforme pas une évolution du SLA en révision automatique des engagements déjà pris. Maîtres et contrats d’échange seront définis dans les règles de fonctionnement.  Frontière : SLA, engagement individuel, estimation et résultat distincts ; autorité locale Supply, maîtrise d’entreprise externe.  Exemple fictif : Recevoir service documentaire et accès sollicitation/feedback.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise.  Master Data Ingestion — Recevoir les sélections de produits, leurs affectations et leurs périodes de validité afin de maintenir la référence locale des assortiments utilisée par la Supply. Intégrer les références, inclusions, exclusions, destinataires, périodes et évolutions transmis par les maîtres externes, avec identifiants et provenance.  La réception ne choisit pas commercialement les produits et ne change pas un accord existant. Une version convenue peut rester figée selon cet accord ; aucune propagation automatique ni maîtrise d’entreprise locale n’est présumée.  Exemple fictif : recevoir le retrait d’une variante de l’assortiment d’un groupe de magasins à partir d’une date donnée.  Frontière U673 : U479 : autorité locale Supply, maîtrise d’entreprise externe. Ne pas transformer l’ingestion en conception du référentiel d’entreprise. |
+
+### Ce que nous en retenons
+
+- Oracle décrit l’import d’identités et de responsabilités ; SAP explique pourquoi plusieurs rôles restent liés à une même identité. Le premier éclaire la réception, le second le sens de ce qui est reçu.
+- FLOW conserve ces liens sans administrer les personnes au niveau de l’entreprise. La consultation est une aptitude complémentaire, distincte de l’arrivée des données.
+
+### Illustration FLOW — Master Data Ingestion
+
+Une information reçue est corrigée par son domaine source après une première prise en compte.
+
+**Ce qui se passe.** Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply.
+
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
+
+Source : [SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html).
+
+Références : U717, ELM710.
+
+### Détails des références
+
+#### SAP — SAP Master Data Integration with SAP Field Service and Asset Management
+
+SAP Master Data Integration with SAP Field Service and Asset Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply.
+
+**Points communs.** Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply.
+
+[SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Overview / providers and consumers
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM710, CMP280, U718.
+
+#### Microsoft — Use domain analysis to model microservices
+
+Use domain analysis to model microservices · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply.
+
+**Points communs.** Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Recevoir et intégrer les référentiels fournis par les domaines sources pour maintenir les références locales utilisées par la Supply.
+
+[Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Context maps and integration patterns
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM711, CMP280, U718.
+
+## Sources d’inspiration — operations-visibility Operations Visibility
+
+Operations Visibility explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [GS1](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Critical Tracking Events | Faits liés aux objets pendant leur parcours. | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. |
+| [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier reliées aux résultats des services. | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. |
+| Notre modèle — Operations Visibility | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Consolider les faits, jalons, estimations et résultats acquis, partiels ou en échec reçus par [Operations Tracking](model:D07.d). Distinguer fait, engagement et estimation, expliciter origine, fraîcheur et informations absentes. Présenter les perspectives entrepôt, transport, magasin et processus sans imposer un cycle commun aux services. Les exécutants conservent leurs opérations internes ; Orchestration coordonne, Adaptation Decision choisit les adaptations et Service Order Management tient les engagements. [Supply Visibility](model:D18.a) conserve la vue des ressources futures ; Inventory Visibility tient les positions de stock. Exemple fictif : une prestation documentaire est en échec tandis que le transport est achevé ; exposer séparément leurs résultats et les attentes du processus. |
+
+### Ce que nous en retenons
+
+- GS1 organise les événements de traçabilité autour des objets et des étapes physiques. Azure Business Process Tracking relie les résultats de services aux étapes d’un processus métier. Ces perspectives sont complémentaires, et non deux noms du même suivi.
+- FLOW les réunit dans une responsabilité de visibilité. Il n’en déduit ni instrumentation uniforme, ni temps réel garanti ; choisir une adaptation et l’appliquer restent des responsabilités distinctes.
+
+### Illustration FLOW — Operations Visibility
+
+Une information reçue est corrigée par son domaine source après une première prise en compte.
+
+**Ce qui se passe.** Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés.
+
+**Ce que cela illustre dans FLOW.** Distinguer réception du fait, restitution de son état et décision ; exemple fictif sans preuve de réalisation installée.
+
+Source : [GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard).
+
+Références : U717, U477.
+
+### Détails des références
+
+#### GS1 — Critical Tracking Events
+
+Global Traceability Standard · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi cette définition.** Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés.
+
+**Points communs.** Faits liés aux objets pendant leur parcours.
+
+**Différences.** Le suivi physique ne couvre pas seul les prestations documentaires FLOW. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
+
+**Position FLOW.** Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés.
+
+[GS1 Global Traceability Standard](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Release 2.0, 2017, consulté le 2026-09-19.
+
+**Passage.** Identification levels ; Data recording and sharing ; R21
+
+**Limite de preuve.** Passages primaires indexés consultés ; ouverture directe non exploitable. Les exigences GS1 ne sont pas imposées au modèle.
+
+Références : U477, ELM469, CMP193.
+
+#### Microsoft — Business Process Tracking
+
+Azure Business Process Tracking · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi cette définition.** Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés.
+
+**Points communs.** Étapes métier reliées aux résultats des services.
+
+**Différences.** Le produit vise des ressources Azure ; FLOW ne prescrit pas cette réalisation. U717 : Integration / Knowledge et leur frontière sont des conventions FLOW, pas une taxonomie universelle des éditeurs.
+
+**Position FLOW.** Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés.
+
+[What is Azure Business Process Tracking?](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Mise à jour du 11 septembre 2025, consulté le 2026-09-19.
+
+**Passage.** Business process design and tracking ; exemple du ticket de panne électrique
+
+**Limite de preuve.** Appui sur la corrélation métier ; produit limité aux ressources Azure décrites, sans exigence d’architecture pour FLOW.
+
+Références : U305, U308, U404, U405, U406, ELM243, CMP154, U477, ELM386, CMP193.
+
+## Sources d’inspiration — master-data-ingestion-commerce Commerce Ingestion
+
+### SAP — SAP Master Data Integration with SAP Field Service and Asset Management
+
+SAP Master Data Integration with SAP Field Service and Asset Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Commerce selon son contrat métier et leur provenance.
+
+**Points communs.** Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Commerce selon son contrat métier et leur provenance.
+
+[SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Overview / providers and consumers
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM710, CMP280, U718.
+
+### Microsoft — Use domain analysis to model microservices
+
+Use domain analysis to model microservices · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Commerce selon son contrat métier et leur provenance.
+
+**Points communs.** Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Commerce selon son contrat métier et leur provenance.
+
+[Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Context maps and integration patterns
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM711, CMP280, U718.
+
+## Sources d’inspiration — master-data-ingestion-finance Finance Ingestion
+
+### SAP — SAP Master Data Integration with SAP Field Service and Asset Management
+
+SAP Master Data Integration with SAP Field Service and Asset Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Finance selon son contrat métier et leur provenance.
+
+**Points communs.** Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Finance selon son contrat métier et leur provenance.
+
+[SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Overview / providers and consumers
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM710, CMP280, U718.
+
+### Microsoft — Use domain analysis to model microservices
+
+Use domain analysis to model microservices · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Finance selon son contrat métier et leur provenance.
+
+**Points communs.** Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Finance selon son contrat métier et leur provenance.
+
+[Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Context maps and integration patterns
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM711, CMP280, U718.
+
+## Sources d’inspiration — master-data-ingestion-design Design Ingestion
+
+### SAP — SAP Master Data Integration with SAP Field Service and Asset Management
+
+SAP Master Data Integration with SAP Field Service and Asset Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Design selon son contrat métier et leur provenance.
+
+**Points communs.** Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Design selon son contrat métier et leur provenance.
+
+[SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Overview / providers and consumers
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM710, CMP280, U718.
+
+### Microsoft — Use domain analysis to model microservices
+
+Use domain analysis to model microservices · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Master Data Ingestion décrit la responsabilité de réception ; les domaines fournisseurs sont définis par Laurent.
+
+**Pourquoi cette définition.** Intégrer les données de référence fournies par le domaine Design selon son contrat métier et leur provenance.
+
+**Points communs.** Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités.
+
+**Différences.** Appui à l’ingestion depuis des domaines fournisseurs distincts ; ne prescrit ni les trois domaines FLOW ni une correspondance aux sept sujets.
+
+**Position FLOW.** Intégrer les données de référence fournies par le domaine Design selon son contrat métier et leur provenance.
+
+[Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Context maps and integration patterns
+
+**Limite de preuve.** Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir.
+
+Références : ELM711, CMP280, U718.
+
+## Sources d’inspiration — price-book Price Book
+
+Price Book
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Salesforce](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Define Prices in Price Books | Les Price Books portent les prix de vente de produits et de services. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Define product pricing with price lists and price list items | Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+| Notre modèle — Price Book | Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+
+### Ce que nous en retenons
+
+- Tarifs produits et services sous un même concept ; distinguer référence tarifaire, calcul et engagement.
+
+### Illustration FLOW — produits et prestations
+
+Une substitution et un nouveau trajet sont envisagés pour servir une commande.
+
+**Ce qui se passe.** Consulter les tarifs des articles et prestations ; obtenir les évaluations nécessaires avant décision, sans modifier automatiquement le prix engagé.
+
+**Ce que cela illustre dans FLOW.** Exemple fictif ; les règles commerciales restent sous leur autorité propre.
+
+Source : [Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5).
+
+Références : U723, ELM721.
+
+### Détails des références
+
+#### Salesforce — Define Prices in Price Books
+
+Define Prices in Price Books · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+**Points communs.** Les Price Books portent les prix de vente de produits et de services.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+[Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM721, CMP281, U723.
+
+#### Microsoft — Define product pricing with price lists and price list items
+
+Define product pricing with price lists and price list items · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+**Points communs.** Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+[Define product pricing with price lists and price list items](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM531, CMP281, U723.
+
+## Sources d’inspiration — price-book-visibility Price Book Visibility
+
+Price Book Visibility
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Salesforce](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Define Prices in Price Books | Les Price Books portent les prix de vente de produits et de services. | Consulter les livres tarifaires reçus par [Master Data Ingestion](model:master-data-ingestion), avec origine, unité, devise, période et conditions disponibles. Identifier les données manquantes ou périmées. Relier les tarifs aux offres de produits ou de services et aux accords lorsqu’un lien est fourni. Un tarif par trajet, zone, quantité ou prestation peut nécessiter un calcul externe : cette visibilité ne calcule pas à elle seule le prix final et ne modifie aucun engagement. Exemple fictif : consulter les tarifs de deux services de transport, puis demander leur évaluation pour le trajet et les quantités de la commande. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Define product pricing with price lists and price list items | Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte. | Consulter les livres tarifaires reçus par [Master Data Ingestion](model:master-data-ingestion), avec origine, unité, devise, période et conditions disponibles. Identifier les données manquantes ou périmées. Relier les tarifs aux offres de produits ou de services et aux accords lorsqu’un lien est fourni. Un tarif par trajet, zone, quantité ou prestation peut nécessiter un calcul externe : cette visibilité ne calcule pas à elle seule le prix final et ne modifie aucun engagement. Exemple fictif : consulter les tarifs de deux services de transport, puis demander leur évaluation pour le trajet et les quantités de la commande. |
+| Notre modèle — Price Book Visibility | Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply. | Consulter les livres tarifaires reçus par [Master Data Ingestion](model:master-data-ingestion), avec origine, unité, devise, période et conditions disponibles. Identifier les données manquantes ou périmées. Relier les tarifs aux offres de produits ou de services et aux accords lorsqu’un lien est fourni. Un tarif par trajet, zone, quantité ou prestation peut nécessiter un calcul externe : cette visibilité ne calcule pas à elle seule le prix final et ne modifie aucun engagement. Exemple fictif : consulter les tarifs de deux services de transport, puis demander leur évaluation pour le trajet et les quantités de la commande. |
+
+### Ce que nous en retenons
+
+- Tarifs produits et services sous un même concept ; distinguer référence tarifaire, calcul et engagement.
+
+### Illustration FLOW — produits et prestations
+
+Une substitution et un nouveau trajet sont envisagés pour servir une commande.
+
+**Ce qui se passe.** Consulter les tarifs des articles et prestations ; obtenir les évaluations nécessaires avant décision, sans modifier automatiquement le prix engagé.
+
+**Ce que cela illustre dans FLOW.** Exemple fictif ; les règles commerciales restent sous leur autorité propre.
+
+Source : [Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5).
+
+Références : U723, ELM721.
+
+### Détails des références
+
+#### Salesforce — Define Prices in Price Books
+
+Define Prices in Price Books · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply.
+
+**Points communs.** Les Price Books portent les prix de vente de produits et de services.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply.
+
+[Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM721, CMP281, U723.
+
+#### Microsoft — Define product pricing with price lists and price list items
+
+Define product pricing with price lists and price list items · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply.
+
+**Points communs.** Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply.
+
+[Define product pricing with price lists and price list items](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM531, CMP281, U723.
 
 ## Sources d’inspiration — Capacité métier
 
@@ -21623,6 +21464,78 @@ Split or Substitute Fulfillment Lines · Concept documenté par une source prima
 
 Références : U592, U593, U625, U626.
 
+## Sources d’inspiration — Price Book
+
+Price Book
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Salesforce](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Define Prices in Price Books | Les Price Books portent les prix de vente de produits et de services. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Define product pricing with price lists and price list items | Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+| Notre modèle — Price Book | Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application. | Plusieurs livres tarifaires peuvent coexister selon le contexte, les parties et l’autorité qui les fournit. Product Catalog et Service Catalog décrivent les offres ; Assortment sélectionne les produits ; Agreement porte les conditions convenues. Un Price Book peut leur être associé sans correspondance un-à-un obligatoire. Le tarif de référence ne constitue ni le prix contextualisé calculé ni le prix engagé dans une commande. La maîtrise commerciale reste externe ; Supply conserve la référence locale reçue. Exemple fictif : un tarif porte un montant par vêtement et un autre par prestation de réétiquetage, chacun avec sa période et son unité. |
+
+### Ce que nous en retenons
+
+- Tarifs produits et services sous un même concept ; distinguer référence tarifaire, calcul et engagement.
+
+### Illustration FLOW — produits et prestations
+
+Une substitution et un nouveau trajet sont envisagés pour servir une commande.
+
+**Ce qui se passe.** Consulter les tarifs des articles et prestations ; obtenir les évaluations nécessaires avant décision, sans modifier automatiquement le prix engagé.
+
+**Ce que cela illustre dans FLOW.** Exemple fictif ; les règles commerciales restent sous leur autorité propre.
+
+Source : [Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5).
+
+Références : U723, ELM721.
+
+### Détails des références
+
+#### Salesforce — Define Prices in Price Books
+
+Define Prices in Price Books · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+**Points communs.** Les Price Books portent les prix de vente de produits et de services.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+[Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM721, CMP281, U723.
+
+#### Microsoft — Define product pricing with price lists and price list items
+
+Define product pricing with price lists and price list items · Fonction documentée par la source primaire · Appui sémantique · statut : proposed
+
+**Pourquoi ce terme.** Price Book nomme les tarifs de référence ; Visibility distingue leur consultation de leur administration.
+
+**Pourquoi cette définition.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+**Points communs.** Les Price Lists relient produits ou services, unités et détails tarifaires ; plusieurs listes existent selon le contexte.
+
+**Différences.** La lecture locale Supply ne reprend pas la maîtrise des prix ni tout le moteur commercial du produit.
+
+**Position FLOW.** Ensemble identifié de tarifs de référence de produits et de services, avec unités, devises, validité et conditions d’application.
+
+[Define product pricing with price lists and price list items](https://learn.microsoft.com/en-us/dynamics365/sales/create-price-lists-price-list-items-define-pricing-products) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction ; définition du livre ou de la liste tarifaire
+
+**Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
+
+Références : ELM531, CMP281, U723.
+
 ## Informations métier
 
 Vue transversale des informations utiles aux capacités ; aucune structure de données implémentable prescrite.
@@ -21863,7 +21776,7 @@ Identification métier du produit ou de la variante auxquels se rapportent les i
 
 **Usages par les capacités :**
 
-- Product Reference Ingestion — reçoit et projette : Reconnaît les références externes dans la projection Supply.
+- Master Data Ingestion — reçoit et projette : Reconnaît les références externes dans la projection Supply.
 - Purchase Order — utilise : Désigne la référence concernée par l’achat sans devenir maître de sa définition.
 
 **Exemples :**
@@ -21908,7 +21821,7 @@ Valeur d’une propriété d’un produit ou d’une variante, reliée à son su
 
 **Usages par les capacités :**
 
-- Product Reference Ingestion — reçoit et met à jour la projection : Conserve les caractéristiques reçues avec le contexte permettant de les interpréter.
+- Master Data Ingestion — reçoit et met à jour la projection : Conserve les caractéristiques reçues avec le contexte permettant de les interpréter.
 
 **Exemples :**
 
@@ -21951,7 +21864,7 @@ Correspondance entre un identifiant interprété dans son système ou contexte d
 
 **Usages par les capacités :**
 
-- Product Reference Ingestion — reçoit et projette : Conserve les correspondances reçues pour reconnaître les références.
+- Master Data Ingestion — reçoit et projette : Conserve les correspondances reçues pour reconnaître les références.
 
 **Exemples :**
 
@@ -21995,7 +21908,7 @@ Attribution d’une autorité métier sur un contenu de référence et un périm
 
 **Usages par les capacités :**
 
-- Product Reference Ingestion — utilise : Interprète la projection à la lumière des autorités établies ; ne les attribue pas par simple ingestion.
+- Master Data Ingestion — utilise : Interprète la projection à la lumière des autorités établies ; ne les attribue pas par simple ingestion.
 
 **Exemples :**
 
@@ -22039,7 +21952,7 @@ Contexte de réception d’un contenu de référence dans la projection Supply :
 
 **Usages par les capacités :**
 
-- Product Reference Ingestion — connaît : Conserve le contexte utile de l’information reçue pour expliquer la projection.
+- Master Data Ingestion — connaît : Conserve le contexte utile de l’information reçue pour expliquer la projection.
 
 **Exemples :**
 

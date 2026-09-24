@@ -1,0 +1,313 @@
+id: MODEL-READABILITY-U710
+source_refs:
+- U710
+- U711
+status: applied_U711
+date: '2026-09-24'
+sources:
+- id: ELM706
+  reference: MKT13
+  vendor: SAP LeanIX
+  title: Landscape Report
+  url: https://help.sap.com/docs/leanix/ea/landscape-report
+  locator: Introduction
+  finding: Regroupements selon différentes dimensions et vues colorées. Exemple de visualisation, pas taxonomie de finalités
+    Supply.
+  consulted_on: '2026-09-24'
+  access: indexed
+  native_id: null
+  limits: Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit.
+  edition: Documentation évolutive sans édition affichée
+- id: ELM707
+  reference: MKT13
+  vendor: SAP LeanIX
+  title: Matrix Report
+  url: https://help.sap.com/docs/leanix/ea/matrix-report
+  locator: Views
+  finding: Les vues portent des attributs ou relations visualisés par couleur ; distinguer classification et hiérarchie.
+  consulted_on: '2026-09-24'
+  access: indexed
+  native_id: null
+  limits: Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit.
+  edition: Documentation évolutive sans édition affichée
+- id: ELM708
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Orchestration Processes
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html
+  locator: Overview and task services
+  finding: Un processus orchestre des services qui exécutent les tâches ; ne prescrit pas une capacité de cycle de vie sœur
+    de chaque famille.
+  edition: 26B
+  consulted_on: '2026-09-24'
+  access: indexed
+  native_id: null
+  limits: Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit.
+- id: ELM709
+  reference: MKT20
+  vendor: Oracle
+  title: How Supply Chain Orchestration Works
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauco/how-supply-orchestration-works.html
+  locator: Orchestrate supply order
+  finding: Demande, création/modification de commandes distantes et traitement des changements sont articulés ; le retrait
+    d’une capacité générique ne doit pas retirer ces responsabilités.
+  edition: 25C
+  consulted_on: '2026-09-24'
+  access: indexed
+  native_id: null
+  limits: Synthèse primaire ; aucun consensus de découpage en capacités FLOW déduit.
+canonical_changes:
+- 'D02.b.name : Supply Protection Policy'
+rules:
+- rule: Une capacité possède zéro ou au moins deux comportements différenciants.
+  status: applied_U711
+  market_limit: Convention FLOW ; aucun standard marché ne prescrit ce cardinal précis.
+  implementation_proposal: Intégrer les deux descriptions isolées aux capacités parents, conserver leur provenance et retirer
+    les deux nœuds Behavior. Aucun second comportement artificiel.
+  affected:
+  - parent: service-order-packing
+    child: vas-repacking
+  - parent: service-order-labeling
+    child: vas-labeling-relabeling
+lifecycle:
+  id: D07.b
+  recommendation: Retirer la capacité Service Order Lifecycle.
+  rationale: Toutes les familles portent déjà leurs demandes, engagements, évolutions et résultats ; la capacité commune ajoute
+    une seconde responsabilité pour le même cycle.
+  preserve:
+  - Décrire les invariants communs dans Service Order Management, sans nouvelle capacité générique.
+  - Les familles portent activation, acceptation, modification, annulation et clôture de leur demande.
+  - Fulfilment coordonne le déclenchement et capte les résultats ; aucun transfert de propriété des engagements.
+  - Réception et autres prestations sans famille nommée restent dans le périmètre général du sous-domaine ; signaler ce besoin
+    sans inventer une famille.
+  migration: Supprimer les liens de mutualisation vers D07.b, qualifier les coopérations pertinentes vers le sous-domaine
+    ou les familles ; préserver leur sens et leurs preuves.
+  sources:
+  - ELM708
+  - ELM709
+  status: removed_U711
+  relation_migration:
+    retired_relation_ids:
+    - REL-EXECUTION-ORCHESTRATION-COMMITMENTS
+    - REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
+    - REL-NEEDS-U290-114
+    - REL-NEEDS-U290-122
+    - REL-NEEDS-U290-123
+    - REL-NEEDS-U290-124
+    - REL-NEEDS-U290-125
+    - REL-NEEDS-U290-126
+    - REL-NEEDS-U391-SERVICE-ORDER
+    replacement_relation_ids:
+    - REL-U682-ORCHESTRATION-SERVICE-ORDERS
+    - REL-U711-SERVICE-ORDERS-FULFILMENT
+    - REL-U711-SERVICE-ORDERS-ORDERS
+    - REL-U711-CATALOG-SERVICE-ORDERS
+    note: Coopérations regroupées par sous-domaines ; le besoin du rapprochement des achats et celui du catalogue restent
+      explicites.
+subdomain_role:
+  status: applied_U711
+  attribute: dominant_role
+  principle: Finalité dominante, facultative, descriptive, distincte du type de capacité ; aucun niveau hiérarchique ou frontière
+    étanche.
+  vocabulary: Préférer rôle ou finalité dominante à Purpose, ancien nom du niveau remplacé.
+  assignments:
+    Données et état:
+    - Master Data
+    - Plans
+    - Inventory Management
+    Politiques:
+    - Policies
+    Décision et planification:
+    - Order Promising
+    - Demand & Supply Matching
+    Gestion des engagements:
+    - Order Management
+    - Service Order Management
+    Orchestration:
+    - Fulfilment Orchestration
+  limit: Inventory Management tient aussi des opérations de stock ; Fulfilment comprend des décisions. Le rôle dominant ne
+    change pas ces responsabilités.
+  atlas: Badge texte et accent visuel discret sur le sous-domaine, avec légende et filtre ; couleurs redondantes au texte,
+    sans remplacer les types des capacités.
+  sources:
+  - ELM706
+  - ELM707
+categories:
+  status: applied_U711
+  principle: Regroupement local des capacités, distinct du rôle dominant du sous-domaine. Le code actuel accepte déjà les
+    catégories sur les capacités de tout sous-domaine.
+  candidates:
+    Demand & Supply Matching:
+    - Plan global
+    - Décisions de stock et de flux
+    - Priorités et couverture des commandes
+    Fulfilment Orchestration:
+    - Définir et choisir les prestations
+    - Coordonner et adapter
+    - Suivre et rapprocher
+  defer:
+  - 'Plans et Policies : peu de capacités, bandes peu utiles.'
+  - 'Order Promising : conserver la lecture directe ATP/CTP/PTP.'
+  - 'Master Data : ses référentiels structurent déjà la présentation.'
+  sources:
+  - ELM706
+  - ELM707
+publication_delivery:
+  state: applied
+  source_refs:
+  - U710
+  - U711
+  - U717
+  summary: Rôles dominants, catégories ciblées, retrait du cycle générique et des comportements isolés.
+  required_nodes:
+  - id: business-references
+    fields:
+      dominant_role:
+        id: data-state
+        display_name: Données et état
+  - id: D03.m
+    fields:
+      category:
+        id: order-coverage
+        display_name: Priorités et couverture des commandes
+        order: 30
+  - id: D05.a
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D05.d
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D05.g
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D05.e
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D05.c
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D05.f
+    fields:
+      category:
+        id: global-plan
+        display_name: Plan global
+        order: 10
+  - id: D06.b
+    fields:
+      category:
+        id: define-select
+        display_name: Définir et choisir les prestations
+        order: 10
+  - id: D07.a
+    fields:
+      category:
+        id: define-select
+        display_name: Définir et choisir les prestations
+        order: 10
+  - id: D07.c
+    fields:
+      category:
+        id: track-reconcile
+        display_name: Suivre et rapprocher
+        order: 30
+  - id: D07.d
+    fields:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+  - id: D04
+    fields:
+      dominant_role:
+        id: commitments
+        display_name: Gestion des engagements
+  - id: D01
+    fields:
+      dominant_role:
+        id: data-state
+        display_name: Données et état
+  - id: D06
+    fields:
+      dominant_role:
+        id: orchestration
+        display_name: Orchestration
+  - id: D03
+    fields:
+      dominant_role:
+        id: decision-planning
+        display_name: Décision et planification
+  - id: D06.d
+    fields:
+      category:
+        id: coordinate-adapt
+        display_name: Coordonner et adapter
+        order: 20
+  - id: D06.e
+    fields:
+      category:
+        id: define-select
+        display_name: Définir et choisir les prestations
+        order: 10
+  - id: D06.f
+    fields:
+      category:
+        id: coordinate-adapt
+        display_name: Coordonner et adapter
+        order: 20
+  - id: D05.h
+    fields:
+      category:
+        id: stock-flows
+        display_name: Décisions de stock et de flux
+        order: 20
+  - id: D03.o
+    fields:
+      category:
+        id: order-coverage
+        display_name: Priorités et couverture des commandes
+        order: 30
+  - id: D05.i
+    fields:
+      category:
+        id: coordinate-adapt
+        display_name: Coordonner et adapter
+        order: 20
+  - id: D18
+    fields:
+      dominant_role:
+        id: decision-planning
+        display_name: Décision et planification
+  - id: subdomain-policies
+    fields:
+      dominant_role:
+        id: policies
+        display_name: Politiques
+  - id: subdomain-plans
+    fields:
+      dominant_role:
+        id: data-state
+        display_name: Données et état
+  - id: subdomain-service-orders
+    fields:
+      dominant_role:
+        id: commitments
+        display_name: Gestion des engagements
+  absent_nodes:
+  - D07.b
+  - vas-repacking
+  - vas-labeling-relabeling

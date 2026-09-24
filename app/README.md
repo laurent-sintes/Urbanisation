@@ -279,3 +279,6 @@ Les fiches affichent Frontoffice et Backoffice à partir des seules valeurs publ
 ## Catégories de présentation — U701
 
 Les capacités peuvent porter `fields.category: { id, display_name, order? }`. Atlas regroupe les enfants d’un sous-domaine par catégorie, puis conserve le classement par nature dans chaque section. Les bandeaux apparaissent dans la carte du sous-domaine et dans ses listes de capacités sur les cartes d’ensemble. Les capacités non classées restent visibles sous « Autres capacités » lorsqu’un classement existe. Sans catégorie publiée, le rendu historique est conservé. Aucun nœud métier, parent, lien ou fil d’Ariane supplémentaire n’est créé ; les libellés sont lus exclusivement dans le snapshot affiché. `order` est un ordre visuel facultatif ; aucune priorité métier induite. Test : `node --test app/test-categories.mjs`.
+
+
+U711 : les sous-domaines peuvent porter `fields.dominant_role` (id et display_name). Atlas affiche un badge textuel avec accent coloré et un filtre de finalité sur les vues comportant des sous-domaines. Aucun rôle n’est inféré des noms dans les publications historiques. Les catégories de capacités restent un classement distinct, applicable aussi à Matching et Fulfilment.

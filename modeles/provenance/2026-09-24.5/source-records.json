@@ -16817,6 +16817,22 @@
       "line": 17439,
       "content_sha256": "bb977e7049b3ba9888449ad5c566ef143f3342574a5671b4581808f657fb416f",
       "captured_text": "## U709\n\n**id**\n\nU709\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPortée cumulative de la validation dans une discussion\n\n**texte**\n\nLe problème est quand on a une conservation qui fait évoluer le modèle et qu'il y a plusieurs step, lorsque je dit \"je valide\", je ne valide pas que le dernier échange, je valide l'idée complète.\n\n**contexte et portée**\n\nRègle explicite : un accord porte sur la proposition complète construite et précisée dans la discussion, pas seulement le dernier message. Les corrections récentes et conditions explicites restent applicables ; ni les pistes abandonnées ni les détails inventés ensuite ne sont adoptés. Réexaminer U692 (familles fashion et composition), U701 (transport et classement) et U706 (familles documentaires, douanières, financières et exécution distante) selon cette portée cumulative. Correction de l’interprétation restrictive de Codex, sans antidater les captures ni prétendre à une réalisation Beaumanoir."
+    },
+    {
+      "id": "U710",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u710",
+      "line": 17462,
+      "content_sha256": "68d962bb46706c508ae52805996b9f70bae6c00b0594823996314ee92061a941",
+      "captured_text": "## U710\n\n**id**\n\nU710\n\n**date**\n\n2026-09-24\n\n**titre**\n\nLisibilité des sous-domaines, catégories et décompositions utiles\n\n**texte**\n\nMon feedback rapide :\n\n- On peut imaginer dans le modèle qu'un sousdomaine soit typé par purpose ou finalité : décision, data, opérations etc... à étudier et voir comment on différencie visuellement dans ATLAS\n- Policies / Stock Protection => il manque le terme Policy à la fin\n- Pour les capacités, soit elles n'ont pas de comportements différenciant, soit elles en ont et il en faut au moins 2 sinon ça n'a pas de sens.\n- Service Order Management / Serivce Order Lifecycle n'a plus de sens car on a tout détaillé\n- voir si on a intéret à mettre des catégories autre part que dans les orders\n\n**contexte et portée**\n\nRenommage demandé de la capacité actuellement nommée Supply Protection en Supply Protection Policy, sans réduire Supply au seul stock. Règle de modélisation : zéro ou au moins deux comportements différenciants ; ne pas inventer un second comportement. Remise en cause de Service Order Lifecycle devenu transversal redondant. Étudier la finalité dominante des sous-domaines et l’usage sélectif de catégories ailleurs que dans les Orders. Proposition d’application groupée à présenter avec conservation des responsabilités, sans nouvelle publication implicite."
+    },
+    {
+      "id": "U711",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u711",
+      "line": 17491,
+      "content_sha256": "29e107f70e0ed49b13c11d127581a270f2a30af0fb8dfe3b0502a614070ba67c",
+      "captured_text": "## U711\n\n**id**\n\nU711\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète de lisibilité du modèle\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur les cinq points U710 : rôle dominant des sous-domaines et présentation Atlas, suffixe Policy, zéro ou au moins deux comportements différenciants, intégration de Repacking et Labeling / Relabeling aux capacités, retrait de Service Order Lifecycle avec préservation des responsabilités, catégories ciblées dans Matching et Fulfilment. N’adopte pas les détails éditoriaux rédigés ensuite ; aucune publication implicite."
     }
   ]
 }

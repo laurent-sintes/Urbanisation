@@ -4,6 +4,7 @@ import { ArrowUpRight, FileText, LayoutGrid } from 'lucide-react';
 import { NodeIcon } from './icons';
 import { startsCapabilityTypeSection } from './capabilityTypes';
 import { categoryCaption, categoryOf, startsCategorySection } from './categories';
+import { roleOf, roleOptions, matchesRole } from './subdomainRoles';
 import { ReferenceLink } from './components/ModelLinks';
 import { childrenOf, rootsOf, hasCapabilityCards, cardChildListOf, type CardChildList } from './model';
 import { kindLabel, shortText } from './presentation';
@@ -17,6 +18,7 @@ function OverviewName({ item }: { item: AtlasNode }) {
   return <span className="nodrag nopan" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}><ReferenceLink target={item.id} fullDefinition className="overview-name-link">{item.name}</ReferenceLink></span>;
 }
 function BusinessCard({ data, selected }: NodeProps<Card>) {
+  const dominantRole = roleOf(data.item);
   const presentation = data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level';
   const card = useRef<HTMLElement>(null);
   const expanded = data.childList !== undefined;
@@ -33,6 +35,7 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
   return <article ref={card} className={`business-card ${expanded ? 'has-child-list' : ''} ${selected ? 'is-selected' : ''} ${presentation ? 'is-presentation' : ''} ${data.highlighted ? 'is-highlighted' : ''} ${data.muted ? 'is-muted' : ''}`} data-node-id={data.item.id}>
     <div className="card-eyebrow"><NodeIcon node={data.item} size={22}/><span>{kindLabel(data.item)}</span><span className="card-id">{data.item.id}</span></div>
     <h3><OverviewName item={data.item}/></h3>
+    {dominantRole && <span className="subdomain-role" data-role={dominantRole.id} title="Finalité dominante ; les autres responsabilités du sous-domaine restent applicables.">{dominantRole.display_name}</span>}
     <p>{shortText(data.item.purpose || data.item.definition || 'Description non renseignée dans cette publication.', 115)}</p>
     {data.childList && <div className="card-child-list nodrag nopan nowheel" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}>
       <div className="child-list-heading">{listLabel} <span>{data.childList.items.length}</span></div>
@@ -44,7 +47,8 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
   </article>;
 }
 function GroupCard({ data }: NodeProps<Container>) {
-  return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong><OverviewName item={data.item}/></strong><span>{kindLabel(data.item)}</span></div></div>;
+  const role = roleOf(data.item);
+  return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong><OverviewName item={data.item}/></strong><span>{kindLabel(data.item)}</span>{role && <span className="subdomain-role" data-role={role.id}>{role.display_name}</span>}</div></div>;
 }
 function CapabilityTypeDivider() { return <div className="map-capability-type-divider" role="separator" aria-label="Changement de type de capacité"/>; }
 function CategoryBanner({ data }: NodeProps<Node<{ caption: string }, 'categoryBanner'>>) {
@@ -66,6 +70,8 @@ function Canvas(props: ReactFlowPaneProps) {
   const [fullscreen, setFullscreen] = useState(() => Boolean(document.fullscreenElement));
   const [error, setError] = useState('');
   const [arrangement, setArrangement] = useState(0);
+  const [roleFilter, setRoleFilter] = useState('');
+  useEffect(() => setRoleFilter(''), [scopeId, model]);
   const { fitView } = useReactFlow();
   const container = useRef<HTMLDivElement>(null);
   const capabilityOverview = hasCapabilityCards(model, scopeId);
@@ -94,7 +100,7 @@ function Canvas(props: ReactFlowPaneProps) {
     const start = performance.now();
     setError('');
     const group = graph.group;
-    const items = graph.nodes.filter(n => n.id !== group?.id);
+    const items = graph.nodes.filter(n => n.id !== group?.id && matchesRole(n, roleFilter));
     const childLists = new Map<string, CardChildList>();
     if (capabilityOverview) for (const item of items) {
       const list = cardChildListOf(model, item);
@@ -147,7 +153,7 @@ function Canvas(props: ReactFlowPaneProps) {
       setLayout({ nodes, ms: Math.round(performance.now() - start), width: (result.width || 380) + (group ? 28 : 0), height: (result.height || 250) + (group ? 70 : 0) });
     }).catch(e => current && setError(String(e)));
     return () => { current = false; };
-  }, [graph, model, scopeId, arrangement, capabilityOverview, cardHeights, capabilityOverview ? canvasWidth : 0]);
+  }, [graph, model, scopeId, arrangement, capabilityOverview, cardHeights, capabilityOverview ? canvasWidth : 0, roleFilter]);
   useEffect(() => { const id = setTimeout(() => fitView({ padding: 0.06, maxZoom: 1, duration: matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 220 }), 80); return () => clearTimeout(id); }, [layout, fitView]);
   useEffect(() => {
     if (!container.current) return;
@@ -170,6 +176,7 @@ function Canvas(props: ReactFlowPaneProps) {
       <Background gap={24} size={1} color="#d8e3df"/>
       <Controls showInteractive={false}/>
     </ReactFlow>
+    {roleOptions(graph.nodes.filter(n => n.id !== graph.group?.id)).length > 0 && <label className="subdomain-role-filter">Finalité dominante <select value={roleFilter} onChange={event => setRoleFilter(event.target.value)} aria-label="Filtrer les sous-domaines par finalité dominante"><option value="">Toutes les finalités</option>{roleOptions(graph.nodes.filter(n => n.id !== graph.group?.id)).map(role => <option key={role.id} value={role.id}>{role.display_name}</option>)}</select><span>Le badge indique un rôle dominant, sans exclure les autres responsabilités.</span></label>}
     <button className="arrange-button" onClick={() => setArrangement(v => v + 1)}><LayoutGrid size={14}/>Réorganiser</button>
     {!graph.nodes.length && <div className="empty-state"><FileText/>Ce périmètre est réservé.</div>}
   </div>;

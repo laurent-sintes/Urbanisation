@@ -17457,3 +17457,350 @@ Le problème est quand on a une conservation qui fait évoluer le modèle et qu'
 **contexte et portée**
 
 Règle explicite : un accord porte sur la proposition complète construite et précisée dans la discussion, pas seulement le dernier message. Les corrections récentes et conditions explicites restent applicables ; ni les pistes abandonnées ni les détails inventés ensuite ne sont adoptés. Réexaminer U692 (familles fashion et composition), U701 (transport et classement) et U706 (familles documentaires, douanières, financières et exécution distante) selon cette portée cumulative. Correction de l’interprétation restrictive de Codex, sans antidater les captures ni prétendre à une réalisation Beaumanoir.
+
+
+## U710
+
+**id**
+
+U710
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Lisibilité des sous-domaines, catégories et décompositions utiles
+
+**texte**
+
+Mon feedback rapide :
+
+- On peut imaginer dans le modèle qu'un sousdomaine soit typé par purpose ou finalité : décision, data, opérations etc... à étudier et voir comment on différencie visuellement dans ATLAS
+- Policies / Stock Protection => il manque le terme Policy à la fin
+- Pour les capacités, soit elles n'ont pas de comportements différenciant, soit elles en ont et il en faut au moins 2 sinon ça n'a pas de sens.
+- Service Order Management / Serivce Order Lifecycle n'a plus de sens car on a tout détaillé
+- voir si on a intéret à mettre des catégories autre part que dans les orders
+
+**contexte et portée**
+
+Renommage demandé de la capacité actuellement nommée Supply Protection en Supply Protection Policy, sans réduire Supply au seul stock. Règle de modélisation : zéro ou au moins deux comportements différenciants ; ne pas inventer un second comportement. Remise en cause de Service Order Lifecycle devenu transversal redondant. Étudier la finalité dominante des sous-domaines et l’usage sélectif de catégories ailleurs que dans les Orders. Proposition d’application groupée à présenter avec conservation des responsabilités, sans nouvelle publication implicite.
+
+
+## U711
+
+**id**
+
+U711
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la proposition complète de lisibilité du modèle
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif U709 sur les cinq points U710 : rôle dominant des sous-domaines et présentation Atlas, suffixe Policy, zéro ou au moins deux comportements différenciants, intégration de Repacking et Labeling / Relabeling aux capacités, retrait de Service Order Lifecycle avec préservation des responsabilités, catégories ciblées dans Matching et Fulfilment. N’adopte pas les détails éditoriaux rédigés ensuite ; aucune publication implicite.
+
+
+## U712
+
+**id**
+
+U712
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Étudier le type Integration, l’ingestion par domaine source et la catégorie Échanges
+
+**texte**
+
+Je souhaite intégrer un nouveau type de capacité : intégration
+
+Les capacité d'ingestion ou de tracking par exemple pourraient porter ce type.
+
+Pour la master data, on pourrait imaginer une capacité d'ingestion des référentiels avec autant de comportements que de domaines sources.
+
+Ca peut donner aussi l'idée de création d'une catégorie "échange"
+
+Qu'en penses tu ?
+
+**contexte et portée**
+
+Demande d’avis sur un type Integration, le regroupement de l’ingestion Master Data selon les domaines fournisseurs et une catégorie Échanges. Réexaminer les types selon le résultat dominant, sans retyper tout Tracking sur son seul nom ni confondre domaines sources, sujets référentiels et applications. U514/U515 avaient déjà distingué provenance par domaine, stockage et vues ; U509/U673 conservent sept référentiels. Proposition non encore appliquée.
+
+
+## U713
+
+**id**
+
+U713
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer Tracking et Visibility
+
+**texte**
+
+Tout ce qui est tracking doit être de type "intégration"
+Ce sont les capacités Visibility qui sont de type knowledge.
+
+**contexte et portée**
+
+Instruction explicite : Tracking de type Integration, Visibility de type Knowledge. Remplace la recommandation contraire de Codex dans la proposition U712. Les descriptions doivent respecter cette frontière.
+
+
+## U714
+
+**id**
+
+U714
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Plan Visibility et ingestion depuis PLAN
+
+**texte**
+
+Sous domaine Plans :
+
+- renommer Plans en Plan Visibility
+- séparer clairement les plan en Supply Plan et Demand Plan
+- avoir une capa d'ingestion sur le domaine PLAN (non référencé mais existant : l'APS)
+
+**contexte et portée**
+
+Renommage explicite du sous-domaine et séparation des deux sujets de visibilité ; une ingestion commune depuis le domaine externe PLAN, porté par l’APS, sans créer ce domaine dans la cartographie. Les noms détaillés des deux capacités de visibilité et leurs descriptions sont une mise en œuvre proposée de cette instruction.
+
+
+## U715
+
+**id**
+
+U715
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Relier Tracking et Visibility sans imposer une paire
+
+**texte**
+
+Peut être qu'a chaque fois qu'on a "tracking", il faut une visibility correspondante meme si plusieurs Tracking peuvent alimenter un visibility
+
+**contexte et portée**
+
+Proposition de cohérence : chaque Tracking alimente une Visibility identifiée ; plusieurs Tracking peuvent alimenter la même Visibility. Pas de création systématique d’une capacité par Tracking, ni de comportement par source. À intégrer à la proposition U712/U713 ; pas d’adoption implicite des liens détaillés à instruire.
+
+
+## U716
+
+**id**
+
+U716
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Nommer la catégorie Intégration
+
+**texte**
+
+Plutot que "echange", je pense que la catégorie "Intégration" est plus pro quand même
+
+**contexte et portée**
+
+Remplacer le libellé proposé Échanges par Intégration. La catégorie reste un regroupement visuel, distinct du type de capacité Integration. Ne préjuge pas de tous les rattachements à cette catégorie.
+
+
+## U717
+
+**id**
+
+U717
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la proposition complète Intégration et Plan Visibility
+
+**texte**
+
+je valide
+
+**contexte et portée**
+
+Accord cumulatif U709 sur U712–U716 : Integration pour ingestion et Tracking, Knowledge pour Visibility ; chaque Tracking alimente une Visibility identifiée, plusieurs Tracking pouvant partager une vue. Ingestion Master Data commune, comportements par domaines fournisseurs lorsqu’ils sont identifiés, sept sujets référentiels conservés. Catégorie Intégration remplaçant Échanges, employée sélectivement. Plan Visibility distingue Supply Plan et Demand Plan et reçoit les deux par Plan Ingestion depuis PLAN/APS externe. Les descriptions et migrations détaillées écrites après cet accord restent proposées ; aucune release implicite.
+
+
+## U718
+
+**id**
+
+U718
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Identifier les domaines sources Master Data
+
+**texte**
+
+On va partir simple : Commerce, Finance, Design.
+
+**contexte et portée**
+
+Réponse à la demande des domaines sources pour les comportements de Master Data Ingestion. Retenir Commerce, Finance et Design ; aucune répartition implicite des sept référentiels, des applications ou de leur autorité entre ces domaines.
+
+
+## U719
+
+**id**
+
+U719
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Réexaminer Price Book et la frontière du pricing pour les substitutions
+
+**texte**
+
+Dans la master data, on n'avait pas parlé de PriceBook Catalog à une époque ? Regarde la marché mais il me semble que l'association de l'assortiment à un pricebook permet à des capacités de calculer le prix d'un article d'une commande.
+
+Néanmoins, je me demande si c'est le de la supply chain management / orchestration de gérer les prix...
+
+Je pense que oui pour un cas : le remplacement d'un article par un autre en cas de pénurie.
+
+Qu'en penses-tu ?
+
+**contexte et portée**
+
+Demande de recherche marché et d’avis, en continuité U516/CMP210. Examiner tarif, assortiment, calcul du prix de commande et substitution en pénurie. Aucun nouveau référentiel ou transfert de maîtrise tarifaire adopté par cette question.
+
+
+## U720
+
+**id**
+
+U720
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Tenir compte du trajet de transport dans le prix
+
+**texte**
+
+Selon le trajet du transport, le prix peut évoluer également.
+
+**contexte et portée**
+
+Complète U719 : les variantes de trajet peuvent modifier le prix. Distinguer coût logistique, prix de prestation, frais facturés et prix rendu commercial ; aucun transfert implicite de maîtrise tarifaire ni changement automatique du prix engagé.
+
+
+## U721
+
+**id**
+
+U721
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Étendre Price Book aux produits et services
+
+**texte**
+
+Le price book gère les prix des produits mais aussi des services du coup, non ?
+
+**contexte et portée**
+
+Clarification U719/U720 : le concept Price Book peut couvrir produits et services, avec plusieurs livres tarifaires et conditions distinctes. Ne pas confondre un concept commun avec un tarif unique ni avec le calcul transactionnel ou la maîtrise commerciale.
+
+
+## U722
+
+**id**
+
+U722
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clarifier l’usage de Catalog dans les noms métier
+
+**texte**
+
+Parfois on met "Catalog", parfois non. Quand c'est une offre, on met catalog ou il n'y a pas de raison ? Que dit le marché ?
+
+**contexte et portée**
+
+Demande de comparaison lexicale et de convention pour Product Catalog, Service Catalog, Assortment et Price Book. Aucun renommage ni nouveau référentiel adopté implicitement.
+
+
+## U723
+
+**id**
+
+U723
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la proposition complète Price Book et sa frontière
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif U709 sur U719–U722 : Price Book pour les tarifs de produits et services, Price Book Visibility dans Master Data et ingestion commune ; utilisation pour évaluer substitutions et trajets, distinction tarif/prix calculé/prix engagé, maîtrise commerciale externe. Conserver Product Catalog, Service Catalog et Assortment ; Catalog qualifie une offre structurée sans devenir un suffixe systématique. Aucune règle particulière de refacturation ni attribution automatique à un domaine source ; détails rédigés après accord proposés.

@@ -1,0 +1,34 @@
+id: PLAN-VISIBILITY-U714
+status: applied
+source_refs:
+- U714
+- U713
+- CMP270
+boundary: PLAN est le domaine fournisseur externe, porté par l’APS ; aucun nœud externe ajouté. Supply Plan hors achats et
+  master plan de Matching restent distincts.
+market: 'Réutilisation de CMP270, ELM352 Oracle et ELM649 SAP : circulation et consommation des prévisions. La séparation
+  de visibilité est un choix FLOW ; ces documents ne prescrivent ni cette taxonomie ni le périmètre Supply Plan hors achats.'
+publication_delivery:
+  state: applied
+  source_refs:
+  - U714
+  summary: 'Plan Visibility : ingestion commune depuis PLAN et vues Supply / Demand distinctes.'
+  required_nodes:
+  - id: subdomain-plans
+    fields:
+      name: Plan Visibility
+  - id: plans-ingestion
+    parent: subdomain-plans
+    fields:
+      name: Plan Ingestion
+      nature: integration
+  - id: plans-visibility
+    parent: subdomain-plans
+    fields:
+      name: Supply Plan Visibility
+      nature: knowledge
+  - id: demand-plan-visibility
+    parent: subdomain-plans
+    fields:
+      name: Demand Plan Visibility
+      nature: knowledge
