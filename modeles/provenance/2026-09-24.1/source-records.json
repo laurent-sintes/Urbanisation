@@ -16361,6 +16361,118 @@
       "line": 16599,
       "content_sha256": "5bf0c6c2590cb84b6d10c047974734c03a039675f6113093528672171e3731b4",
       "captured_text": "## U673\n\n**id**\n\nU673\n\n**date**\n\n2026-09-23\n\n**titre**\n\nAppliquer l’audit des capacités aux huit sous-domaines\n\n**texte**\n\nTu peux appliquer l'audit ?\n\n**contexte et portée**\n\nLaurent demande la mise en œuvre dans le backlog de l’audit U667 actualisé jusqu’à U672 : huit sous-domaines, rattachements proposés, ingestion et visibilité des plans, sortie de Demand Planning du périmètre sans sous-domaine APS, corrections de frontières et nom Order Promising. Appliquer les recommandations de l’audit sur les décisions de stock et le devenir des retours en conservant leur qualification de portée. Les identifiants et comportements conservés restent stables ; les éléments retirés et leurs accords gardent leur histoire dans Git. Cette demande autorise les placements et la mise en cohérence ; elle n’adopte pas globalement les nouvelles rédactions détaillées, les seuils d’autonomie, une performance de 200 ms ou une fusion ATP/CTP/PTP non proposée de façon définitive. Aucune publication, commit ou push implicite."
+    },
+    {
+      "id": "CMP273",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp273",
+      "line": 2625,
+      "content_sha256": "460299dfb1af81208f5a96ab37c2d409d796d7b8063de98aeb719b48510b06d1",
+      "captured_text": "## CMP273\n\nU674/U675 — Codex, 23 septembre 2026. Audit proposé, non adopté. État comparé : backlog au commit 8816726, release 2026-09-23.3 ; empreinte exacte dans [l’audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml). Cibles D04, D06, D07.a–d, D14, D03 et TER066. Sources ELM129, ELM133, ELM492, ELM656–661 : documents natifs et processus logistiques, plus analogie ODA. Correspondances ciblées, différences et adaptations dans la section comparisons de l’annexe ; aucune équivalence globale ni couverture installée déduite.\n\nRecommandation : rendre explicite la gestion des ordres d’exécution dans Fulfilment Orchestration en clarifiant D07.b, enrichir Service Catalog et les descriptions de pilotage avec picking, packing, VAS (light touch précisé par U675) et cross-docking. Le catalogue seul ne tient pas les instances ; un neuvième sous-domaine n’est pas justifié par les seuls types de documents. Conserver les responsabilités existantes d’orchestration, adaptation, tracking et rapprochement ; éviter leur duplication par famille logistique. Les critères de séparation des ordres sont proposés, sans obligation d’un ordre par opération. Execution Order Management est un nom candidat FLOW, pas un consensus attesté. Bénéfice : lisibilité de la prestation confiée et de son résultat ; compromis : articulation explicite avec les tâches internes de l’exécutant. Aucun valideur ni date d’adoption ; modèle canonique inchangé.\n\n\nComplément CMP273 — U676 : comparaison lexicale et de périmètre du regroupement D06 avec ELM662/664 (Logistics Execution SAP) et ELM663 (Supply Chain Execution, brochure Oracle historique 2009), ainsi qu’ELM492/129 (Service Order Management et catalogue TM Forum). Ces preuves attestent des noms voisins, pas un sous-domaine standard Execution Services. Recommandation conservée : distinguer réalisation logistique et pilotage des prestations ; un renommage ou une séparation nécessite un choix de périmètre explicite. Aucun nom adopté.\n\n\nRéexamen CMP273 — U677/U678 et accord U679, 23 septembre 2026 : la recommandation de conserver tous les ordres sous Fulfilment est remplacée. Service Order Management est adopté comme sous-domaine distinct pour les exigences, engagements propres et évolutions des prestations confiées ; Fulfilment Orchestration conserve leur composition, coordination, dépendances et adaptation. Les familles sont au niveau capacité et sans suffixe Management, en cohérence avec Purchase Order et les autres Orders entrants. Les noms présentés sont Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, sans liste exhaustive adoptée. Appuis ELM492/129 (nom et distinction catalogue/ordres), ELM133/659 (demande amont/prestation confiée) réutilisés ; ils ne prescrivent pas le découpage FLOW. Bénéfice : même maille pour des responsabilités comparables ; compromis : expliciter les coopérations entre gestion d’engagements et orchestration. Les rattachements détaillés existants restent à instruire. Accord et empreinte dans agreement_U679 de l’annexe ; modèle canonique inchangé.\n\n\nComplément CMP273 — U680/U681 : décomposition descriptive de Value-Added Service Order en variantes de gestion Labeling / Relabeling, Repacking et Kitting / Dekitting, ce dernier conditionné au périmètre retenu. ELM658 (SAP VAS) et ELM661 (Oracle repackaging/kitting) réutilisés comme appuis sémantiques des prestations ; pas preuve de cette maille descriptive ni du détail dekitting. Bénéfice FLOW : distinguer exigences de version, conditionnement et composition, avec leurs écarts. Gestes physiques exclus ; paramètres simples au catalogue. Accord limité aux noms, angles et condition présentés ; nouvelles définitions et exemples proposés dans vas_behaviors_U681, sans application canonique.\n\n\nApplication CMP273 — U682, 24 septembre 2026 : Service Order Management et les quatre familles sont introduits dans le backlog ; D07.b conserve le cycle commun sous le nom proposé Service Order Lifecycle. Labeling / Relabeling et Repacking sont rattachés directement à Value-Added Service Order ; Kitting / Dekitting demeure conditionnel en annexe. Les preuves U674–U676 sont réutilisées, sans revendication de nouvelle consultation ; deux documents primaires au moins figurent sur chaque nouvelle fiche. Les comparaisons distinguent les tâches opérateur et les commandes confiées, et qualifient le découpage FLOW comme adaptation. Les placements détaillés de mise en œuvre, définitions et exemples ne sont pas globalement adoptés. La comparaison est maintenant portée dans les fiches ; aucun produit installé déduit et aucune publication déclenchée.\n\n\nComplément CMP273 — U685 : ELM665 Advanced Supply Chain (Box to Hang) et ELM666 Berry Services (Mise sur cintre, extrait indexé) attestent la prestation et apportent un appui sémantique à Value-Added Service Order / Repacking. Le passage à un conditionnement suspendu est une transformation de présentation, pas la constitution d’un ensemble de composants au sens Kitting discuté. Placement comme exemple de Repacking proposé par Codex, non adopté ; prestations composites des fournisseurs, pas taxonomie de comportements FLOW. Aucune modification canonique."
+    },
+    {
+      "id": "ELM133",
+      "path": "marche/elements.md",
+      "anchor": "elm133",
+      "line": 1210,
+      "content_sha256": "99da76e98d11a73a2bc212396ed441cb9e8433e4bbeaef2c904963275a156562",
+      "captured_text": "### ELM133\n\n- Référence : MKT14. Libellé natif : Carrier Services ; Inbound/Outbound Shipment Orders. Nature : Configuration et documents/fonctions de Dynamics 365 SCM. Édition : documentation en ligne, édition produit non figée.\n- Passages consultés, reformulation, identifiant natif lorsqu’indiqué, URL officielles, localisateurs et limites : [étude U239](execution-services-catalog-and-management.md#sources-versions-et-limites-daccès). Consultation : 2026-09-16.\n- Appui à la discussion D06/D07 ; aucune équivalence de capacité ou couverture SI déduite. Synthèse proposée par Codex, sans validation utilisateur."
+    },
+    {
+      "id": "ELM656",
+      "path": "marche/elements.md",
+      "anchor": "elm656",
+      "line": 5262,
+      "content_sha256": "f591024f0b26e49274c9c8cc7965501a2f103c7e1da5fcfbdbac05e3299dcaf0",
+      "captured_text": "### ELM656\n\nMKT14 — [Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work). Documentation évolutive, version globale non figée. Nature : Travail interne WMS. Terme natif : Packing work ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Introduction ; Set up a location for packing work.\n\nReformulation : Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles. Limite : Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM657",
+      "path": "marche/elements.md",
+      "anchor": "elm657",
+      "line": 5269,
+      "content_sha256": "791853bcb33feb0117e629f30881a3bd644d3b5ad5436722a814af45adb623f7",
+      "captured_text": "### ELM657\n\nMKT14 — [Planned cross docking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking). Documentation évolutive, version globale non figée. Nature : Processus et travail WMS. Terme natif : Cross docking ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Introduction ; Process the cross-docking ; note finale WMS only mode.\n\nReformulation : Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock sont portées par les lignes des Shipment Orders en mode WMS autonome. Limite : Le produit combine marquage, affectation et exécution ; ne détermine pas la frontière Matching/Fulfilment de FLOW. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM658",
+      "path": "marche/elements.md",
+      "anchor": "elm658",
+      "line": 5276,
+      "content_sha256": "4a8f9f3a0368cdce2aa94a1aa82f0ecabc4e7a60c54c709b5e2f0d394efbdb1d",
+      "captured_text": "### ELM658\n\nMKT13 — [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html). SAP EWM 9.5 FPS02. Nature : Ordre et activités WMS. Terme natif : VAS order ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire indexé lu ; corps direct inaccessible. Passage : Use.\n\nReformulation : Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. Limite : Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM659",
+      "path": "marche/elements.md",
+      "anchor": "elm659",
+      "line": 5283,
+      "content_sha256": "7457b67913d4c83879edf44e672352161f897f6abc36b4e15211a00b74c4965c",
+      "captured_text": "### ELM659\n\nMKT20 — [Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html). Fusion Cloud SCM 25D. Nature : Échanges amont-exécutant. Terme natif : Shipment Request / Shipment Confirmation ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Explanation of callouts, étapes 1 à 3.\n\nReformulation : Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. Limite : Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM660",
+      "path": "marche/elements.md",
+      "anchor": "elm660",
+      "line": 5290,
+      "content_sha256": "32a41cb3f1f89ca1898b7dac599558310588c0ed099178a3770148cf621d2a3a",
+      "captured_text": "### ELM660\n\nMKT13 — [Warehouse Order](https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true). Documentation EWM 7.0 EHP2 ; preuve historique de sémantique. Nature : Lot de travail interne. Terme natif : Warehouse Order ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Definition ; Use ; Example.\n\nReformulation : Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur. Limite : Maille interne WMS ; faux équivalent d’un ordre de prestation confié par FLOW. Pas de revendication de dernière version. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM661",
+      "path": "marche/elements.md",
+      "anchor": "elm661",
+      "line": 5297,
+      "content_sha256": "4b08f1e873fdc9577e850faca8b35209aeae93a08ecc70513aa61367c82ebd85",
+      "captured_text": "### ELM661\n\nMKT20 — [Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm). E-Business Suite 12.2. Nature : Processus et tâches WMS. Terme natif : Picking ; Bulk Picking ; Value Added Services ; identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire lu. Passage : Overview of the Material Picking Process ; Bulk Picking / Value Added Services.\n\nReformulation : Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. Limite : Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé. Synthèse sélective et lien, sans importation substantielle. CMP273, U674/U675 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml).\n\n\nActualisation U674 — 23 septembre 2026 : ELM133 (WMS only mode, introduction et restrictions), ELM129 (TMF633 v4.0, Overview) et ELM492 (TMFC007 2.0.0, présentation et dépendances) reconsultés. Métadonnées, passages et limites dans [l’audit](../modeles/backlog/logistics-execution-audit-U674.yaml). CMP273 ; aucun accord nouveau ni transposition des composants en sous-domaines."
+    },
+    {
+      "id": "U679",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u679",
+      "line": 16741,
+      "content_sha256": "da6a19d415acfee25616847a29aece9ad5978059fa242c5f41f76c5b8ef1193d",
+      "captured_text": "## U679\n\n**id**\n\nU679\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider Service Order Management et ses frontières\n\n**texte**\n\nJE valide\n\n**contexte et portée**\n\nAccord sur la réponse immédiatement présentée après U678 : sous-domaine Service Order Management, gestion des prestations confiées, de leurs exigences, engagements propres et évolutions ; Order Management conserve les demandes à satisfaire et leurs engagements ; Fulfilment Orchestration compose et coordonne les prestations, leurs dépendances et les adaptations préservant promesse et équilibres du Matching. Capacités de familles à la même maille que les Orders entrants, sans suffixe Management ; noms présentés Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, selon les familles retenues. Service Catalog décrit l’offre ; les exécutants gardent leurs opérations internes. Ne vaut pas adoption de descriptions détaillées nouvelles, d’une liste exhaustive, d’un cycle uniforme, de rattachements non présentés des capacités existantes ou d’un consensus marché. Accord de découpage enregistré dans l’audit ; aucune publication, commit ou push demandé."
+    },
+    {
+      "id": "U681",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u681",
+      "line": 16787,
+      "content_sha256": "2c2f0229b707b1f376e56c835c81f3ffe5092cc9a86b4a49c659a3c52cc829db",
+      "captured_text": "## U681\n\n**id**\n\nU681\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider les comportements de Value-Added Service Order\n\n**texte**\n\ngo\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée après U680 : décrire les particularités de gestion de l’ordre par Labeling / Relabeling (exigences, version attendue, conformité), Repacking (modification du conditionnement, consignes, résultat) et Kitting / Dekitting (assemblage ou séparation d’ensembles, composants attendus, écarts), ce dernier conditionné à son inclusion dans le périmètre. Une différence significative de gestion justifie le comportement ; un simple paramètre reste au catalogue. Ne valide pas les gestes physiques, les détails ajoutés ensuite, un catalogue exhaustif ou l’inclusion inconditionnelle du kitting/dekitting. Complément de l’audit avant application du sous-domaine ; aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U682",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u682",
+      "line": 16810,
+      "content_sha256": "9768026a61140cd84347f8df5d2ea350f0973af9d901087a1807f0628b28fda8",
+      "captured_text": "## U682\n\n**id**\n\nU682\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAppliquer les derniers changements de l’audit des ordres de services\n\n**texte**\n\nApplique les derniers changements de l'audit\n\n**contexte et portée**\n\nDemande d’application au backlog des accords U679 et U681 : Service Order Management distinct, familles d’ordres au niveau capacité sans suffixe Management, comportements VAS et frontières avec Order Management, Fulfilment et Service Catalog. Préparer la redistribution des responsabilités existantes sans perte ni duplication ; conserver la condition non levée sur l’inclusion de Kitting / Dekitting. Les noms et responsabilités présentés et validés gardent leur portée ; les définitions détaillées et choix éditoriaux nécessaires à l’application ne deviennent pas globalement approuvés. Aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U691",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u691",
+      "line": 17020,
+      "content_sha256": "a97ae204a1fa4601010d926c286a337ce9a7edc2a6f80fbf519128df054201fc",
+      "captured_text": "## U691\n\n**id**\n\nU691\n\n**date**\n\n2026-09-24\n\n**titre**\n\nExprimer une commande logistique comme liste ordonnée\n\n**texte**\n\nQuand on passe une commande de logistique, on peut passer une liste ordonnée d'order, on est ok ?\n\n**contexte et portée**\n\nProposition d’une demande d’ensemble portant plusieurs Orders et leur enchaînement. La réponse distingue séquence simple, dépendances, parallélisme et conditions ; gestion de la demande dans Service Order Management, réalisation coordonnée dans Fulfilment Orchestration."
+    },
+    {
+      "id": "U692",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u692",
+      "line": 17043,
+      "content_sha256": "80d820618c059fff627e8ed906760dbde7f8bdc62f4bfe65c6c5b8db20e9cbe6",
+      "captured_text": "## U692\n\n**id**\n\nU692\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider et décrire les commandes composées dans le sous-domaine\n\n**texte**\n\nCette information est importante à décrire dans le sous domaine.\n\nJe valide la proposition\n\n**contexte et portée**\n\nAccord explicite sur la proposition de commande composée discutée immédiatement avant, avec ses contraintes d’enchaînement et la répartition gestion de demande / orchestration. Demande de l’expliciter dans le sous-domaine. Ne vaut pas accord global sur les descriptions des dix familles ni sur tous les arbitrages de l’audit."
+    },
+    {
+      "id": "U696",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u696",
+      "line": 17137,
+      "content_sha256": "aca1fd4b77fe37fcabf95b8f7ff395aeb321ee6706cb1763c046d5f657c8bfc8",
+      "captured_text": "## U696\n\n**id**\n\nU696\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U696\n\n**texte**\n\nOk, cloture l'audit et appliquer une release\n\n**contexte et portée**\n\nAutorise la clôture de l’analyse et une release locale du backlog courant. Ne valide pas implicitement les familles proposées ni leurs descriptions. Pas de commit ou push demandé."
     }
   ]
 }
