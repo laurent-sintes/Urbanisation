@@ -158,6 +158,7 @@ publication_delivery:
   - U710
   - U711
   - U717
+  - U733
   summary: Rôles dominants, catégories ciblées, retrait du cycle générique et des comportements isolés.
   required_nodes:
   - id: business-references
@@ -287,11 +288,6 @@ publication_delivery:
         id: coordinate-adapt
         display_name: Coordonner et adapter
         order: 20
-  - id: D18
-    fields:
-      dominant_role:
-        id: decision-planning
-        display_name: Décision et planification
   - id: subdomain-policies
     fields:
       dominant_role:
@@ -311,3 +307,5 @@ publication_delivery:
   - D07.b
   - vas-repacking
   - vas-labeling-relabeling
+superseded_U733: D18 retiré et ses capacités réintégrées à D01 ; son rôle dominant historique ne devient pas une exigence
+  de présence.

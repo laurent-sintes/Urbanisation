@@ -1,0 +1,668 @@
+id: INVENTORY-MANAGEMENT-REVIEW-U726
+status: applied_U733
+source_refs:
+- U726
+- U727
+- CMP284
+- U728
+- U729
+- U730
+- U731
+- U732
+- U733
+- U735
+- U736
+- U737
+- U738
+- U739
+- U740
+scope:
+  model: modeles/backlog/model.yaml
+  publication_baseline: 2026-09-24.9
+  subdomain: D01
+  capabilities: 6
+  behaviors: 6
+sources:
+- id: ELM734
+  reference: MKT14
+  vendor: Microsoft
+  title: Inventory Visibility Add-in overview
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility
+  edition: Page évolutive, 2025-08-14
+  locator: Global view / Central adjustment / Soft reservation / ATP
+  finding: Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières
+    FLOW.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM735
+  reference: MKT14
+  vendor: Microsoft
+  title: Inventory journals
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals
+  edition: Page évolutive
+  locator: Movement / Transfer / Counting
+  finding: Les journaux enregistrent des effets de stock ; les ajustements de comptage suivent une instruction métier.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM736
+  reference: MKT20
+  vendor: Oracle
+  title: Item Ledger Information
+  url: https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html
+  edition: JD Edwards EnterpriseOne 9.2
+  locator: Item Ledger CARDEX
+  finding: Historique détaillé des transactions par article, distinct de leur simple réception technique.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM737
+  reference: MKT14
+  vendor: Microsoft
+  title: 'Design details: Inventory posting'
+  url: https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting
+  edition: Business Central, page évolutive
+  locator: Entry types
+  finding: Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont
+    des responsabilités distinctes.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM738
+  reference: MKT42
+  vendor: GS1
+  title: EPCIS and CBV Implementation Guideline
+  url: https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/
+  edition: 2.0 ratifiée mars 2023
+  locator: 5.2 / 5.9
+  finding: Propriété et possession distinguées dans les événements ; erreurs et corrections explicites. Standard de partage
+    de faits, pas catalogue de capacités.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM739
+  reference: MKT14
+  vendor: Microsoft
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Page évolutive, 2026-05-06
+  locator: Ownership change journal / Owner dimension
+  finding: Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant
+    de production, pas toutes les consignations fashion.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM740
+  reference: MKT20
+  vendor: Oracle
+  title: Consigned Inventory Aging
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html
+  edition: Fusion 25C
+  locator: Aging process / Transfer to Owned
+  finding: Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme
+    universel.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM741
+  reference: MKT14
+  vendor: Microsoft
+  title: Cycle counting
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+  edition: Page évolutive
+  locator: Create / Spot counting / Resolve differences
+  finding: Demande de comptage, résultat et revue des écarts distingués.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM742
+  reference: MKT20
+  vendor: Oracle
+  title: Mobile Supply Chain Applications User’s Guide
+  url: https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm
+  edition: EBS 12.2
+  locator: Cycle Counting / Physical Inventory
+  finding: Comptages cycliques et inventaire physique rapprochent quantités enregistrées et constatées ; réalisation produit
+    distincte de la responsabilité FLOW.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM743
+  reference: MKT14
+  vendor: Microsoft
+  title: Inventory Visibility reservations
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations
+  edition: Page évolutive
+  locator: Sample use case / offsets
+  finding: Réservation réduit les quantités disponibles pour réservation sans sortie physique ; consommation et libération
+    évitent le double compte.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM744
+  reference: MKT20
+  vendor: Oracle
+  title: Reservations
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html
+  edition: Fusion 25C
+  locator: Reservation types / Supply source types
+  finding: Réservations à maille haute ou détaillée, pouvant porter sur stock ou apports attendus ; aucun blocage physique
+    universel.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+- id: ELM745
+  reference: MKT20
+  vendor: Oracle
+  title: How You Review Item Supply and Demand
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html
+  edition: Fusion 25D
+  locator: Summary / Quantities / Supply and Demand types
+  finding: Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle
+    séparant les deux Visibility.
+  consulted_on: '2026-09-24'
+  limits: Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir.
+    Synthèse sélective sans copie du document.
+additional_sources_reconsulted:
+- ELM726
+- ELM727
+items:
+- id: D01
+  current_name: Inventory Management
+  current_nature: null
+  proposed_name: Inventory Management
+  proposed_nature: null
+  proposed_definition: Établir une connaissance fiable du stock, de ses évolutions et des engagements de quantité, en distinguant
+    position physique, propriété, détention et conditions d’usage.
+  recommendation: Conserver Inventory Management comme sous-domaine et y réintégrer Order Promising selon U730 ; deux catégories
+    proposées pour tenue de référence et exploitation/disponibilité.
+  market_sources:
+  - ELM734
+  - ELM745
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D01.d
+  - D02.c
+  - D01.h
+- id: D01.f
+  current_name: Inventory Tracking
+  current_nature: integration
+  proposed_name: Inventory Tracking
+  proposed_nature: integration
+  proposed_definition: Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date
+    et les corrections associées.
+  recommendation: Capter, rapprocher et intégrer faits, états reçus et corrections ; supprimer la responsabilité obsolète
+    de calcul de position. Operations Tracking peut être une source, sans passage obligatoire ni deuxième comptage du fait.
+  market_sources:
+  - ELM734
+  - ELM738
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors: []
+- id: D01.g
+  current_name: Record Inventory Movements
+  current_nature: action
+  proposed_name: Inventory Ledger
+  proposed_nature: knowledge
+  proposed_definition: Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et
+    de propriété, avec leurs dates, origines et justifications.
+  recommendation: Renommer et retyper. Tenir le registre métier des effets reconnus et leurs justifications, avec autorité
+    locale. Knowledge établit et actualise des faits, ne signifie pas lecture seule. Ledger ne décide pas de l’ajustement,
+    du transfert de propriété ou d’un droit de destruction. Ne pas confondre avec General Ledger ou journal technique.
+  market_sources:
+  - ELM736
+  - ELM737
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors: []
+- id: D01.c
+  current_name: Inventory Visibility
+  current_nature: knowledge
+  proposed_name: Inventory Visibility
+  proposed_nature: knowledge
+  proposed_definition: Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur,
+    avec les engagements de quantité, leur provenance et leur fraîcheur.
+  recommendation: Conserver les positions actuelles et projetées, clairement séparées ; consommer Ledger, réservations, besoins
+    et apports qualifiés. Les projections sont des soldes sous hypothèses, jamais une nouvelle promesse.
+  market_sources:
+  - ELM734
+  - ELM745
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors: []
+- id: D01.d
+  current_name: Stocktaking
+  current_nature: action
+  proposed_name: Stocktaking
+  proposed_nature: action
+  proposed_definition: Organiser les vérifications de stock, rapprocher les quantités constatées et enregistrées et établir
+    les corrections justifiées.
+  recommendation: Conserver les trois variantes Periodic Physical Inventory, Cycle Counting, Spot Counting. Contrôle et acceptation
+    des écarts restent ici, exécution physique chez les exécutants. Corriger les références à Tracking calculant l’état.
+  market_sources:
+  - ELM741
+  - ELM742
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors:
+  - BHV029
+  - BHV030
+  - BHV031
+- id: D02.c
+  current_name: Reservation
+  current_nature: action
+  proposed_name: Reservation
+  proposed_nature: action
+  proposed_definition: Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent
+    tenir compte.
+  recommendation: Conserver ; Matching affecte, Reservation rend un engagement opposable aux usages concurrents. Expliciter
+    création, révision, libération, consommation et expiration conditionnelles sans nouveaux Behaviors CRUD ni paramètres
+    imposés. Peut être sollicitée par le parcours de commande rapide sans recalcul global du Matching.
+  market_sources:
+  - ELM743
+  - ELM744
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors: []
+- id: D01.h
+  current_name: Consigned Inventory Management
+  current_nature: management
+  proposed_name: Inventory Ownership Transfer
+  proposed_nature: action
+  proposed_definition: Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait
+    déclencheur, en conservant les preuves et les liens aux actes associés.
+  recommendation: 'Remplacer le regroupement par régime par une responsabilité ciblée. Préserver BHV063 Consumption-Based
+    Ownership Transfer et BHV064 Aging-Based Ownership Transfer. Redistribution de BHV065 Consignment Exit : choix du devenir
+    dans Matching, demandes dans Orders, orchestration dans Fulfilment, faits et états dans Ledger/Visibility. Ne pas déplacer
+    ce Behavior entier sous une capacité sans en revoir la portée.'
+  market_sources:
+  - ELM739
+  - ELM740
+  market_relation: Recouvrement partiel ; nom et typage FLOW recommandés, non imposés par les éditeurs.
+  existing_behaviors:
+  - BHV063
+  - BHV064
+  - BHV065
+findings:
+- Tracking est déjà Integration mais REL-NEEDS-U290-002 va de Tracking consommateur vers Movements fournisseur ; le scope
+  Movements fournit encore à Tracking, et BHV029–031 lui attribuent l’état. Incohérence U717, pas doublon de responsabilité
+  nécessaire.
+- REL-NEEDS-U290-006 demande à Tracking un état et des ressources futures. Cibler Ledger pour les faits et Supply Visibility
+  pour les apports ; compléter le contrat Tracking → Ledger → Visibility sans imposer une architecture technique.
+- Consigned Inventory Management mélange régime de stock, application contractuelle, acquisition, sortie, devenir et coordination.
+  La fin de Fill-up ne termine pas les obligations liées au stock ; suppression sèche ferait perdre BHV063/064.
+- Propriétaire, détenteur, emplacement, état qualitatif, droit d’usage, réservation et affectation sont des dimensions distinctes.
+  Consignation entrante, stock propre chez un tiers et stock client détenu ne sont pas interchangeables ; un client déposant
+  ne devient pas fournisseur.
+- 'Un solde externe est aussi intégrable : fixer sa portée et sa date de référence sans fabriquer une suite de mouvements
+  inconnus ; une correction documentaire ne simule pas une sortie physique.'
+- Inspection Order porte actuellement la conformité/état, pas explicitement une prestation autonome de comptage. Stocktaking
+  reste la responsabilité métier ; une Counting Order dédiée est une piste séparée à instruire si la demande physique doit
+  être contractualisée comme service, non une création incluse.
+- 'MOD007 liste encore sept types alors qu’Integration est appliqué : dette de documentation méthodologique repérée, hors
+  modification automatique de cet audit.'
+visibility_and_promising:
+  current_overlap: Inventory Visibility inclut les positions projetées ; Supply Visibility porte les ressources attendues.
+    Le contraste présent/futur seul serait faux.
+  inventory_visibility: 'Question : combien et dans quel état, à quel endroit et à quelle date ? Solde consolidé sous dimensions
+    et hypothèses explicites.'
+  supply_visibility: 'Question : quels apports attendus, issus de quelles demandes ou plans, où, quand et avec quelle certitude
+    ? Provenance, confirmation, réalisation partielle et reliquat par apport. Le stock déjà présent reste dans Inventory Visibility
+    ; les apports transformés en faits ne subsistent pas comme attendus.'
+  promising: 'Question : quelle quantité/date/solution peut-on proposer à CET Order selon ses exigences, protections, ressources
+    et conditions économiques ? Consomme les deux vues, sans détenir les Orders ni les stocks.'
+  example: 70 pièces présentes, 20 réservées ; achat attendu de 30 vendredi. Ledger explique les 70, Inventory Visibility
+    expose 70 et 20 séparément ; Supply Visibility qualifie les 30, leur origine et leur ETA. Promising étudie la possibilité
+    de servir 60 vendredi avec le délai de préparation et de transport. 70+30-20=80 est une illustration simplifiée de position
+    nette, pas une garantie de livraison.
+  market: Microsoft Inventory Visibility regroupe ATP, réservations et états dans un produit (ELM734) ; Microsoft Order promising
+    distingue ATP et CTP avec capacités et transport (ELM727). Oracle Check Availability explore dates, substitutions et transport
+    dans Global Order Promising (ELM726). Ni regroupement unique ni frontière universelle.
+  recommendation: 'U730 remplace la recommandation antérieure de maintien de D18 : réintégrer Order Promising dans Inventory
+    Management. Deux catégories proposées U731/U732 : Inventory Foundation et Availability & Promising. Le choix de réponse,
+    les arbitrages et l’engagement restent à distribuer explicitement ; pas de perte des responsabilités lors du déplacement.'
+  evidence:
+  - ELM734
+  - ELM745
+  - ELM726
+  - ELM727
+  classification_reassessment_U728:
+    principle: Knowledge établit et actualise des faits ou possibilités, y compris calculés et conditionnels. Decision choisit
+      ou recommande une réponse en arbitrant. Une condition ou un seuil consommé ne transforme pas nécessairement un résultat
+      en arbitrage.
+    ATP: 'Le scope actuel ne réserve, n’affecte et ne confirme pas. Proposition : Knowledge pour la disponibilité promettable
+      par quantités et dates dans les contraintes données.'
+    CTP: 'Le scope actuel évalue les capacités supplémentaires et hypothèses sans les engager ni réviser Matching. Proposition
+      : Knowledge pour les possibilités conditionnelles. Si CTP est chargé de sélectionner et engager un nouveau scénario
+      de production/approvisionnement, ce périmètre dépasse cette visibilité.'
+    PTP: La définition actuelle dit comparer et sélectionner ; le type Decision est cohérent avec cette rédaction. Une variante
+      Knowledge évaluerait coût, marge ou admissibilité économique des possibilités, sans sélectionner. Le choix doit alors
+      être repris explicitement dans les décisions de promesse et de Matching ; aucun transfert silencieux.
+    decision_vs_commitment: Choisir une option et confirmer un engagement restent distincts. Une décision peut rester une
+      recommandation ; absence de réservation ou de confirmation ne suffit pas seule à démontrer Knowledge.
+    market_limits: Microsoft distingue ATP calcul de quantités/dates et CTP prenant en compte les capacités (ELM727) ; son
+      Inventory Visibility contient ATP (ELM734). Oracle Check Availability explore des options (ELM726). Ces documents appuient
+      les responsabilités, pas une classification universelle ATP/CTP/PTP comme Knowledge.
+    proposal_state: ATP/CTP Knowledge recommandés ; PTP Knowledge possible avec changement explicite de portée à discuter.
+      Le rôle dominant de D18 et son éventuel nom devront suivre la portée finalement retenue.
+boundaries:
+  Master Data: Identités, lieux, accords et tarifs ; conditions contractuelles de référence, sans transfert de maîtrise entreprise.
+  Policies: Conditions actives d’usage et de réservation ; règles de consignation issues des accords, sans une Policy par
+    régime imposée.
+  Plan Visibility: Plans reçus externes, séparés des faits ; passage prévision → Order → attente → réception sans double compte.
+  Order Management: Demandes entrantes, achats, transferts, consignation et retours ; engagements, dates et quantités confirmées.
+    Une demande ne vaut ni mouvement ni propriété.
+  Service Order Management: Demandes de prestations et leurs engagements ; ni registre de stock ni décision d’ajustement.
+  Demand & Supply Matching: Affectations et arbitrages globaux, décisions de devenir ; demande de réservation sans réservation
+    implicite.
+  Fulfilment Orchestration: Coordination et suivi des prestations externes. Service Reconciliation rapproche prestation attendue/réalisée
+    ; Stocktaking rapproche compté/enregistré. Notifications de fin et effets de stock distingués.
+  Order Promising: 'U730 : périmètre à réintégrer dans Inventory Management, non sous-domaine autonome cible ; calculer les
+    possibilités, sans confirmer la promesse de l’Order ni réarbitrer les affectations de Matching.'
+  Commerce et Finance externes: Autorité commerciale, acquisition selon accord, valorisation comptable, facture et règlement
+    ; Inventory fournit les faits sans absorber ces responsabilités. Le transfert autorisé peut être exécuté ailleurs puis
+    intégré ; aucun double transfert.
+preservation:
+  BHV029: Conserver
+  BHV030: Conserver
+  BHV031: Conserver
+  BHV063: Conserver sous responsabilité Ownership Transfer proposée
+  BHV064: Conserver sous responsabilité Ownership Transfer proposée
+  BHV065: Redistribuer les responsabilités avant retrait éventuel, accords U401 conservés dans historique
+publication_delivery:
+  state: applied
+  source_refs:
+  - U733
+  - U735
+  - U736
+  summary: Inventory Management absorbe Promising ; deux catégories, Ledger Knowledge, Ownership Transfer Action, ATP/CTP/PTP
+    Knowledge et choix préservés.
+  absent_nodes:
+  - BHV065
+  - D18
+  required_nodes:
+  - id: D01.f
+    parent: D01
+    fields:
+      name: Inventory Tracking
+      nature: integration
+      category:
+        id: inventory-foundation
+        display_name: Inventory Foundation
+        order: 10
+  - id: D01.g
+    parent: D01
+    fields:
+      name: Inventory Ledger
+      nature: knowledge
+      category:
+        id: inventory-foundation
+        display_name: Inventory Foundation
+        order: 10
+  - id: D01.d
+    parent: D01
+    fields:
+      name: Stocktaking
+      nature: action
+      category:
+        id: inventory-foundation
+        display_name: Inventory Foundation
+        order: 10
+  - id: D02.c
+    parent: D01
+    fields:
+      name: Reservation
+      nature: action
+      category:
+        id: inventory-foundation
+        display_name: Inventory Foundation
+        order: 10
+  - id: D01.h
+    parent: D01
+    fields:
+      name: Inventory Ownership Transfer
+      nature: action
+      category:
+        id: inventory-foundation
+        display_name: Inventory Foundation
+        order: 10
+  - id: D01.c
+    parent: D01
+    fields:
+      name: Inventory Visibility
+      nature: knowledge
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: D18.a
+    parent: D01
+    fields:
+      name: Supply Visibility
+      nature: knowledge
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: D03.i
+    parent: D01
+    fields:
+      name: Available-to-Promise (ATP)
+      nature: knowledge
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: D03.j
+    parent: D01
+    fields:
+      name: Capable-to-Promise (CTP)
+      nature: knowledge
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: D03.k
+    parent: D01
+    fields:
+      name: Profitable-to-Promise (PTP)
+      nature: knowledge
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: D03.l
+    parent: D01
+    fields:
+      name: Promise Selection
+      nature: decision
+      category:
+        id: availability-promising
+        display_name: Availability & Promising
+        order: 20
+  - id: BHV077
+    parent: D05.f
+    fields:
+      name: Order Rescheduling
+category_proposal_U732:
+  status: applied_U733
+  integration_direction: Réintégration appliquée U733.
+  categories:
+  - name: Inventory Foundation
+    meaning: Établir et fiabiliser la référence locale, ses mouvements, régimes et engagements de quantité.
+    capabilities:
+    - Inventory Tracking
+    - Inventory Ledger
+    - Stocktaking
+    - Reservation
+    - Inventory Ownership Transfer
+    naming_evidence: Libellé de classement FLOW ; pas une catégorie attestée universelle chez les éditeurs.
+  - name: Availability & Promising
+    meaning: Composer les vues du stock et des apports, puis calculer les possibilités de satisfaction et leurs conditions.
+    capabilities:
+    - Inventory Visibility
+    - Supply Visibility
+    - ATP
+    - CTP
+    - PTP
+    naming_evidence: Availability et Order Promising sont des termes attestés ; leur association en catégorie est un choix
+      FLOW.
+  market_comparison:
+    Microsoft: ELM734 réunit ingestion, positions, réservations et ATP ; ELM727 expose le prolongement aux capacités avec
+      CTP. Appui fort au rapprochement Visibility/ATP, pas preuve que CTP/PTP sont inclus dans ce produit.
+    Oracle: ELM736 documente le registre des transactions ; ELM726 situe exploration de disponibilité, substitutions et transport
+      dans Global Order Promising. Appui aux deux responsabilités, mais regroupement produit distinct de la cible FLOW.
+    conclusion: Regroupement en deux catégories plus lisible dans FLOW, compatible avec des périmètres du marché mais non
+      imposé par un consensus.
+  remaining_scope: 'PTP est actuellement une sélection : séparer évaluation Knowledge et choix. Delivery Schedule Decision
+    et toute sélection précédemment portée par D18 doivent avoir une destination explicite. La source de vérité centrale est
+    locale au domaine et ne remplace pas les autorités métier externes.'
+application_U733:
+  retired_nodes:
+  - BHV065
+  - D18
+  removed_relations:
+  - REL-BEHAVIOR-BHV065
+  - REL-UNIVERSE-SUPPLY-D18
+  decision_preservation: Delivery Schedule Decision reste Decision dans Availability & Promising ; PTP devient évaluation
+    Knowledge ; Fulfillment Plan Decision conserve l’arbitrage collectif.
+  consignment_exit: BHV065 retiré ; droits dans Agreement, choix dans Matching, demandes dans Orders, exécution dans Fulfilment,
+    faits/états dans Ledger/Visibility. BHV063/BHV064 conservés sous D01.h.
+ctp_boundary_U735:
+  status: applied_U736
+  sources:
+  - ELM746
+  - ELM747
+  - ELM748
+  finding: Le marché permet à CTP de calculer des scénarios buy/make ; Microsoft articule CTP et planning. Le calcul de faisabilité
+    et la construction de nouveaux apports peuvent cohabiter dans un produit, sans imposer un propriétaire unique dans FLOW.
+  recommendation: CTP Knowledge établit les quantités/dates conditionnelles à partir de possibilités fournisseurs et capacités
+    connues ou évaluées. Matching propose et arbitre les nouveaux apports opérationnels ; Purchase Order tient la demande
+    d’achat et ses suites autorisées. Les prévisions et plans externes restent dans PLAN/APS ; Matching ne devient pas un
+    APS complet.
+  example: 'CTP : 40 pièces pourraient être disponibles vendredi si un achat est lancé avant mardi, sous confirmation fournisseur.
+    Matching : retenir ou non cet achat, sa quantité et son articulation avec les autres besoins. Purchase Order : créer/tenir
+    la commande autorisée.'
+  behaviors:
+    BHV075: Conserver comme faisabilité conditionnelle, sans recommandation d’achat faisant autorité.
+    BHV076: Recentrer sur faisabilité sous capacités/conditions supplémentaires ; toute alternative de transport ou de produit
+      ne constitue pas CTP.
+    BHV077: Déplacé sous D05.f, Order Rescheduling ; description des décalages et impacts conservée, aucune confirmation implicite.
+  scope_unchanged: 'Frontière appliquée U736 ; BHV077 déplacé sous D05.f dans Matching. Nom proposé : Order Rescheduling.'
+sap_bop_U737:
+  status: comparison_only
+  sources:
+  - ELM749
+  - ELM750
+  relationship: Recouvrement partiel ; BOP plus large que BHV077 seul.
+  common: Réexaminer dates et quantités confirmées lorsque offre, demande ou priorités changent ; redistribuer la couverture
+    entre commandes.
+  difference: BOP SAP combine sélection/priorisation, contrôle de disponibilité, redistribution, simulation et mise à jour
+    des confirmations. FLOW répartit ces responsabilités entre Matching, Inventory et Order Management ; BHV077 évalue les
+    décalages sans confirmer seul.
+  naming: Order Rescheduling est plus simple mais suggère surtout les dates. Backorder Processing est pertinent si on explicite
+    le réexamen des quantités ET dates du carnet, y compris commandes déjà confirmées ; pas seulement les commandes en retard.
+    Pas de nouveau renommage appliqué.
+master_planning_U738:
+  status: proposal_pending
+  sources:
+  - ELM748
+  - ELM751
+  - ELM752
+  - ELM746
+  - ELM749
+  - ELM750
+  finding: Microsoft regroupe couverture, suggestions d’ajustement des apports et calculs de retard dans master planning ;
+    CTP dépend du mode. BOP SAP cible les confirmations des besoins, donc pas un équivalent exact.
+  recommendation: Absorber BHV077 dans Simulation & Analysis pour les possibilités et impacts, et Adjust Plan pour la révision
+    cohérente ; ces Behaviors existent déjà sous D05.f. Préserver quantités/dates, priorités, protections et autorisations.
+    Pas de nouveau renommage ni de retrait sans accord.
+  boundary: Master plan de matching interne distinct des Supply/Demand Plans APS externes ; Order Management porte la confirmation,
+    Matching l’arbitrage.
+policy_driven_matching_U739:
+  status: proposal_pending
+  sources:
+  - ELM748
+  - ELM751
+  - ELM753
+  - ELM754
+  - ELM755
+  - ELM749
+  - ELM750
+  finding: Microsoft configure un calcul commun au moyen du plan, horizons, filtres, règles de couverture et modèles de priorité.
+    Pas de preuve d’un unique argument policy=BOP ni d’équivalence fonctionnelle complète avec SAP BOP.
+  limits: SAP BOP est également configurable ; priority-based planning Microsoft et action messages ne se combinent pas dans
+    les codes concernés. Aucune supériorité universelle de flexibilité établie.
+  recommendation: Exprimer le calcul/réexamen du master plan de matching avec périmètre, objectifs, politiques et contraintes
+    ; utiliser les Behaviors existants Simulation & Analysis et Adjust Plan pour porter les cas de rééquilibrage au lieu de
+    multiplier les capacités ou variantes par paramètre.
+  boundary: Politiques gouvernées dans Policies ; Matching les consomme et décide ; leur changement ne révoque pas les engagements.
+    Autorisation/application et confirmation par Orders restent distinctes. APS externe non absorbé.
+confirmation_vs_assignment_U740:
+  status: clarification_recorded
+  source_refs:
+  - U740
+  - ELM749
+  - ELM750
+  - ELM756
+  distinction: 'Promesse : quantité/date pour une demande ; affectation : liens entre ressources identifiées et demandes.
+    Les résultats peuvent changer indépendamment dans les contraintes applicables.'
+  market: BOP peut utiliser ATP ou Supply Assignment comme méthode de contrôle selon les variantes SAP. L’opposition porte
+    donc sur les résultats métier, pas sur deux moteurs étanches.
+  flow: Availability & Promising établit et sélectionne les possibilités de réponse ; Order Management confirme/révise les
+    engagements. Matching décide et applique les affectations. Allocation ne vaut pas réservation au sens FLOW.
+  correction: La recommandation U738/U739 d’absorber le réexamen dans Simulation & Analysis / Adjust Plan ne concerne que
+    les révisions d’affectations et leur analyse collective ; elle ne doit pas absorber tout recalcul ou réexamen de promesse.
+    Le déplacement U736 de BHV077 reste cohérent pour les impacts inter-commandes ; aucune assimilation au BOP complet.
+  example: Changer la source affectée tout en conservant 100 vendredi ; ou réexaminer une date proposée sans avoir encore
+    fixé une source précise. Aucun engagement irréalisable ni double consommation permis.
+microsoft_reading_U744:
+  status: analysis_documented
+  source_refs:
+  - U741
+  - U742
+  - U743
+  - U744
+  - CMP290
+  - ELM746
+  - ELM748
+  - ELM757
+  - ELM758
+  - ELM759
+  - ELM760
+  finding: Microsoft articule visibilité/ATP, calcul de dates ATP/CTP, couverture et pegging par master planning, marking
+    plus durable et réservations. CTP mobilise le planning ; une option préserve les chaînes de couverture des lignes confirmées.
+    Le master plan Microsoft dépasse le seul matching FLOW.
+  correction: ARun affecte les ressources. Promising et Matching peuvent chacun prioriser et laisser une demande en attente
+    ; le caractère collectif ne suffit pas à placer une décision dans Matching. U743 situe BOP avec ATP.
+  flow_recommendation: 'Réexamen de promesses dans Availability & Promising ; affectation/réaffectation dans Matching ; confirmation
+    portée par Order Management. Réexaminer la portée de BHV077 avant toute absorption : le déplacement U736 ne vaut pas rattachement
+    du BOP complet à Matching.'
+  limit: Aucun mode policy=BOP ni équivalent Microsoft complet de SAP BOP démontré par ces sources. Pas de modification du
+    catalogue dans cette analyse.
+matching_strategies_U745:
+  status: target_structure_validated_U749
+  source_refs:
+  - U745
+  - CMP291
+  - ELM748
+  - ELM753
+  - ELM754
+  - ELM758
+  - ELM759
+  - U748
+  - U749
+  agreement: Master plan commun de Matching ; conserver les frontières avec Promising, Orders et APS.
+  proposal: U749 valide trois catégories et dix capacités ; stratégies décrites en comportements. La cible à trois capacités
+    U747 est remplacée.
+  candidates:
+    D03.o: Intégrer la responsabilité de choix du plan au calcul commun plutôt que maintenir une capacité doublon.
+    D03.m: Priorisation comme mécanisme ou stratégie du calcul commun.
+    D05.g: 'Implantation : cas d’usage/famille de résultat, pas automatiquement une stratégie.'
+    D05.e: 'Réassort : exploiter les distinctions besoins datés, cibles et ajustement des apports.'
+    D05.c: 'Redistribution : exploiter rééquilibrage et consolidation comme stratégies explicites.'
+    D05.a: Conserver le calcul des cibles si nécessaire ; distinguer cibles APS reçues et recommandations locales.
+    D05.d: Distinguer recommandation de protection et protection active gouvernée dans Policies.
+    D05.h: Distinguer calcul/recommandation contextuelle et règles actives ; Reservation applique les blocages.
+  limits: Ne pas absorber BOP dans Matching au motif qu’il est collectif. Pas de conversion automatique de toutes les décisions
+    en stratégies, pas de retrait canonique à ce stade.
+  proposal_ref: modeles/backlog/matching-refactoring-U747.yaml

@@ -17856,3 +17856,596 @@ Je valide
 **contexte et portée**
 
 Accord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite.
+
+
+## U726
+
+**id**
+
+U726
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Auditer Inventory Management et ses frontières
+
+**texte**
+
+Sous domaine Inventory Management :
+
+- Inventory Tracking et Record Inventory Movements semble très proche. On peut imaginer Tracking une capa d'intégration et Ledger pour le service data de knowledge.
+- Consigned Inventory Management me semble inapproprié : à la lecture globale du sous domaine je trouve que ça n'a pas de sens.
+
+Tu peux auditer Inventory Management par rapport aux autres domaines et aux marché ?
+
+**contexte et portée**
+
+Demande d’audit des six capacités, de leurs variantes et des frontières avec les autres sous-domaines et domaines externes. Tracking / Ledger et retrait ou redistribution de Consigned Inventory Management sont des hypothèses à instruire, sans modification métier adoptée implicitement.
+
+
+## U727
+
+**id**
+
+U727
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer Inventory Visibility, Supply Visibility et le périmètre de Promising
+
+**texte**
+
+Je souhaite avoir la différence entre inventory visibility et supply visibility.
+
+Je me demande si Order Promising n'est pas une catégory de Inventory Management.
+
+Me trompe peut être...
+
+**contexte et portée**
+
+Complément à l’audit U726 : étudier le recouvrement des vues de stock et d’apports, et l’hypothèse d’un rattachement de Promising comme catégorie d’Inventory Management. Hypothèse ouverte, sans accord de fusion.
+
+
+## U728
+
+**id**
+
+U728
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Interroger ATP, CTP et PTP comme capacités de visibilité
+
+**texte**
+
+Mais est ce que ATP, CTP et PTP ne sont pas intrinsèquement des capacités Visibility ?
+
+**contexte et portée**
+
+Précision de l’audit U726/U727 : distinguer connaissance calculée des possibilités, choix d’une réponse et engagement. Réexaminer l’argument du rôle décisionnel de Promising ; aucun retypage ou rattachement adopté implicitement.
+
+
+## U729
+
+**id**
+
+U729
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Questionner le contenu restant de Promising
+
+**texte**
+
+Si on suit microsoft,
+
+- Le sous domaine doit s’appeler Inventory Visibility
+- Il doit contenir ATP
+
+Mais que contient Order Promising ??
+
+**contexte et portée**
+
+Interroger le découpage ; pas de renommage adopté.
+
+
+## U730
+
+**id**
+
+U730
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Réintégrer Promising et catégoriser Inventory Management
+
+**texte**
+
+Je suis d'accord :
+
+Il faut réintégrer Order Promising dans Inventory Management.
+
+Par contre il faut catégoriser.
+
+Je pense qu'il y a
+
+- la catégorie qui permet d'agréger les données de stocks et composer un référentiel centraliser et le maintenir (source de vériter). Ajouter StockTaking
+- La catégorie qui exploite les données de stock (stock physique, stock logique, stock virtuel)
+- La catégorie qui produit des promesses
+
+Quoitenpenses ?
+
+**contexte et portée**
+
+Orientation explicite de réintégration dans Inventory Management ; trois catégories envisagées, noms et répartition détaillée à discuter. Ne pas maintenir l’ancienne recommandation de sous-domaine autonome.
+
+
+## U731
+
+**id**
+
+U731
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Rapprocher visibilité et promesse
+
+**texte**
+
+La deuxième catégorie est très proche du troisième, non ?
+
+**contexte et portée**
+
+Remise en question de la distinction entre deux catégories ; proposition assistant de deux catégories Inventory Foundation et Availability & Promising.
+
+
+## U732
+
+**id**
+
+U732
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Comparer le regroupement en deux catégories au marché
+
+**texte**
+
+C'est mieux, non ? Que dit le marché ?
+
+**contexte et portée**
+
+Comparer et recommander sans inventer une nomenclature universelle ; réintégration demandée U730, catégories encore discutées.
+
+
+## U733
+
+**id**
+
+U733
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la refonte Inventory Management en deux catégories
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif U726–U732 : réintégrer Order Promising dans Inventory Management ; catégories Inventory Foundation et Availability & Promising ; Tracking Integration, Ledger Knowledge, Stocktaking et Reservation conservés ; Ownership Transfer Action remplace le regroupement Consigned Inventory Management avec conservation des responsabilités. ATP/CTP Knowledge ; PTP évaluation économique Knowledge, sélection et échéancier explicitement préservés. Les précisions rédactionnelles de mise en œuvre restent proposées ; aucune release implicite.
+
+
+## U734
+
+**id**
+
+U734
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clarifier Delivery Schedule Decision
+
+**texte**
+
+Delivery Schedule Decision  : je ne comprends pas ce que c'est
+
+**contexte et portée**
+
+Demande d’explication de la capacité et de sa frontière avec ATP/CTP/PTP, Matching et confirmation dans Order Management. Aucun retrait ni renommage implicite.
+
+
+## U735
+
+**id**
+
+U735
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Adopter Promise Selection et réexaminer la frontière CTP / Matching
+
+**texte**
+
+Promise Selection : je valide.
+
+Le scope de CTP me parait trop large. Est-ce que la proposition de commandes d'achat supplémentaire, ça ne devrait pas être dans Matching ?
+
+Que dit le marché ?
+
+**contexte et portée**
+
+Accord explicite sur le nom Promise Selection et la responsabilité présentée de choix de réponse à proposer, sans confirmation de l’engagement. Question ouverte sur la frontière entre faisabilité CTP et proposition d’achats supplémentaires dans Matching ; comparer au marché avant modification de cette frontière.
+
+
+## U736
+
+**id**
+
+U736
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la frontière CTP et déplacer le rééchelonnement dans Matching
+
+**texte**
+
+Pour Commitment Rebalancing Feasibility  je suis d'accord pour le déplacer. Mais on ne peut pas avoir un nom qui fait moins peur ?
+
+à part ça, je valide.
+
+**contexte et portée**
+
+Accord cumulatif sur U735 : CTP évalue les apports possibles ; Matching propose et arbitre leur réalisation ; Purchase Order porte la commande autorisée ; APS reste externe. Déplacer BHV077 vers Matching et proposer un nom simple. Order Rescheduling est le nom de mise en œuvre proposé, pas un libellé présenté avant cet accord.
+
+
+## U737
+
+**id**
+
+U737
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Comparer Order Rescheduling au Backorder Processing SAP
+
+**texte**
+
+Order Rescheduling , c'est un peu le backorder processing de SAP ?
+
+**contexte et portée**
+
+Question de rapprochement marché et de portée ; aucun renommage supplémentaire ni adoption du périmètre complet SAP implicite.
+
+
+## U738
+
+**id**
+
+U738
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Comparer le réexamen des commandes au master planning Microsoft
+
+**texte**
+
+Backorder Processing c'est sympa mais ça fait très SAP. D'un autre côté, je me demande si côté microsoft tout ça n'est pas intégré dans la notion de master plan ?
+
+**contexte et portée**
+
+Étudier l’intégration de ces mécanismes au master planning et le besoin d’un comportement distinct. Préserver la distinction master plan de matching interne et plans APS externes ; aucun nouveau renommage ou retrait validé.
+
+
+## U739
+
+**id**
+
+U739
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Étudier un calcul de matching commun piloté par politiques
+
+**texte**
+
+Je pense que microsoft propose d'activer le master plan en passant en paramètre une policy qui peut couvrir le backorder processing ou autre. Ca m'a l'air plus souple. J'ai raison ou je raconte n'importe quoi ?
+
+**contexte et portée**
+
+Hypothèse à vérifier : calcul commun configuré par politiques, plutôt que capacité par cas d’usage. Distinguer configuration effective Dynamics 365 et abstraction proposée pour FLOW ; aucune équivalence BOP ni nouvelle API présumée.
+
+
+## U740
+
+**id**
+
+U740
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer les questions de confirmation et d’affectation
+
+**texte**
+
+Le pb de SAP c'est que BOP et ARun peuvent faire la même chose. Mais ce sont des outils qui répondent à des questions différentes :
+
+- BOP : Quelle quantité puis-je confirmer, à qui et quand ?  => On s'appuie sur le moteur ATP
+- ARun : Quelle supply j'assigne effectivement à quelle demande ?  => On s'appuie sur les décisions du matching.
+
+**contexte et portée**
+
+Clarification de Laurent : distinguer résultats métier confirmation et affectation malgré recouvrement ou moteur commun. Ne pas absorber tout réexamen de promesse dans Matching. Les comportements SAP effectifs restent à qualifier, notamment ARun comme méthode de contrôle dans BOP.
+
+
+## U741
+
+**id**
+
+U741
+
+**date**
+
+2026-09-24
+
+**titre**
+
+ARun affecte les ressources
+
+**texte**
+
+Non, ARun ne contrôle pas, il affecte la ressource disponible au carnet de commandes
+
+**contexte et portée**
+
+Correction de la formulation Codex : distinguer affectation et contrôle de disponibilité.
+
+
+## U742
+
+**id**
+
+U742
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Effets communs sans fusion des responsabilités
+
+**texte**
+
+BOP peut mettre en attente des demandes pour en privilégier d'autres.
+ARun peut le faire aussi au travers d'un autre processus qui se pose une autre question.
+
+**contexte et portée**
+
+La mise en attente ou la priorité ne suffit pas à déterminer la responsabilité : regarder la décision et son résultat.
+
+
+## U743
+
+**id**
+
+U743
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Positionner BOP avec ATP
+
+**texte**
+
+Oui, BOP est dans la meme zone que ATP
+
+**contexte et portée**
+
+Accord sur la zone Availability & Promising pour le réexamen des promesses ; ne pas confondre ce réexamen collectif avec une réaffectation des ressources.
+
+
+## U744
+
+**id**
+
+U744
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Reprendre la lecture Microsoft
+
+**texte**
+
+Reprends les sources microsoft et explique moi comment ils voient les choses.
+
+**contexte et portée**
+
+Demande de recherche et explication ; aucune publication ni modification implicite du catalogue.
+
+
+## U745
+
+**id**
+
+U745
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Master plan commun et stratégies de matching
+
+**texte**
+
+Ok pour rester sur un master plan dans matching qui fait tout mais il va falloir détailler les stratégies.
+Ce qu'on a appelé décision et qui est très (peut être trop détaillé), ne devrait pas être les stratégies de matching ?
+
+**contexte et portée**
+
+Accord sur le master plan commun dans Matching, dans la frontière établie avec promesse, Orders et APS. Demande de réexamen de la maille des capacités Decision et de description des stratégies ; pas de validation anticipée de la fusion de toutes les décisions, ni des stratégies précises à proposer.
+
+
+## U746
+
+**id**
+
+U746
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Évaluer la portée du refactoring Matching
+
+**texte**
+
+Ca fait un gros refacto ?
+
+**contexte et portée**
+
+Question sur l’ampleur ; aucun accord supplémentaire sur une cible.
+
+
+## U747
+
+**id**
+
+U747
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Préparer une cible Matching inspirée de Microsoft
+
+**texte**
+
+Notre inspiration pour ce sous domaine est clairement microsoft.
+
+Prépare un refacto à valider
+
+**contexte et portée**
+
+Microsoft devient la référence principale de conception de ce sous-domaine. Préparer une proposition complète et traçable, soumise à validation ; ne pas appliquer le refactoring au modèle canonique ni publier.
+
+
+## U748
+
+**id**
+
+U748
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer catégories et capacités dans Matching
+
+**texte**
+
+3 capacités seulement pour un sous domaine aussi complexe ?
+
+3 capacité ca fait penser à 3 catégories plutot.
+
+**contexte et portée**
+
+Correction de maille : les trois regroupements proposés ressemblent à des catégories. Revoir la cible plutôt que réduire artificiellement le nombre de capacités.
+
+
+## U749
+
+**id**
+
+U749
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la cible Matching à trois catégories et dix capacités
+
+**texte**
+
+C'est bcp mieux. Je valide
+
+**contexte et portée**
+
+Accord sur la proposition complète présentée après U748 : catégories Master Plan Management, Supply Matching, Policy Optimization ; dix capacités nommées ; stratégies comme comportements, exemples de Supply Assignment, Replenishment et Stock Redistribution ; master plan commun. Cet accord remplace la cible à trois capacités U747. Les descriptions et migrations nouvelles non présentées gardent leur qualification proposée. Préparation à valider : cet accord est enregistré dans le dossier, sans publication ni application immédiate implicite.

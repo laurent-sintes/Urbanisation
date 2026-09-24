@@ -16953,6 +16953,46 @@
       "line": 17786,
       "content_sha256": "498521fe419adfa347e2673f9618468144fc8874bf6f48d61c7e270f8f7eacdb",
       "captured_text": "## U723\n\n**id**\n\nU723\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète Price Book et sa frontière\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur U719–U722 : Price Book pour les tarifs de produits et services, Price Book Visibility dans Master Data et ingestion commune ; utilisation pour évaluer substitutions et trajets, distinction tarif/prix calculé/prix engagé, maîtrise commerciale externe. Conserver Product Catalog, Service Catalog et Assortment ; Catalog qualifie une offre structurée sans devenir un suffixe systématique. Aucune règle particulière de refacturation ni attribution automatique à un domaine source ; détails rédigés après accord proposés."
+    },
+    {
+      "id": "CMP283",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp283",
+      "line": 2716,
+      "content_sha256": "78ef712fa70d57a70323ffaa921414c3c483dee01d6ddef32df69abe50f4aeae",
+      "captured_text": "## CMP283\n\nU724 — Codex, 24 septembre 2026. Audit des onze capacités et trente-six Behaviors d’Order Management, backlog après U723. [Proposition et couverture des fiches](../modeles/backlog/order-management-review-U724.yaml). Les preuves des sept familles sont conservées ; recherches ciblées ELM724–733 sur les frontières remises en cause. Cycle de vie : Oracle actions d’Orders et Microsoft approbation/confirmation ; promesse : Oracle Check Availability et Microsoft Order promising ; consignation : Microsoft et SAP Business ByDesign ; structuration : Microsoft échéanciers et Oracle shipment sets ; archivage : Microsoft SCM et Business Central. Aucun document ne prescrit la taxonomie Action/Management de FLOW ni la suppression de ces capacités.\n\nRecommandation : sept familles Action, Order Structuring et Order Visibility Knowledge. Absorber Lifecycle, Fulfillment Commitment et Archiving en préservant leurs responsabilités explicites ; ne pas déplacer l’engagement dans le calcul Promising. Supplier Return devient Supplier Return Order. Corriger les liens obsolètes vers D15 et Apply Plan décrit comme Supply Assignment. Bénéfice : cohérence avec Service Order Management, ownership lisible et moins de doublons ; compromis : maintenir le contrat commun sans perdre les dimensions et contraintes spécifiques. Audit analytique terminé, proposition non appliquée ; la liste d’actions reste dans le backlog unique."
+    },
+    {
+      "id": "ELM724",
+      "path": "marche/elements.md",
+      "anchor": "elm724",
+      "line": 5616,
+      "content_sha256": "6122b0a5135f3e5590faf1edbf95b90f12bd5e9e5bf571dc4607fe1dd046ff39",
+      "captured_text": "### ELM724\n\nMKT20 — Oracle, [Create, Search, and Apply Actions on Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html). 26B. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Apply actions / Holds / Cancel / Schedule. Reformulation : Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande acceptée ne prouve pas son achèvement. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM725",
+      "path": "marche/elements.md",
+      "anchor": "elm725",
+      "line": 5621,
+      "content_sha256": "f396fa46abd73def5fc5a0f650ae8bbfa9f12fdb520cc28b6af535e3073c0833",
+      "captured_text": "### ELM725\n\nMKT14 — Microsoft, [Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Approval and confirmation. Reformulation : Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas à un statut universel. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "U724",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u724",
+      "line": 17809,
+      "content_sha256": "0e169f8ceb6659a1a3c981687502492ec8abadffaa73e2de11c836765d35463e",
+      "captured_text": "## U724\n\n**id**\n\nU724\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAuditer Order Management et ses responsabilités transverses\n\n**texte**\n\nSous domaine Order Management :\n\n- Order Lifecycle Management est inutile car on a listé tous les Orders, c'est largement suffisant, non ?\n- Fullfillment Commitment : je ne comprends pas ce que c'est. Ce n'est pas traité ailleurs ?\n- Les order de consignation sont bizarrement d'une autre type que les autres order.\n\nD'un point de vue général, auditer ce sous domaine.\n\n**contexte et portée**\n\nDemande d’audit général : utilité de Lifecycle, compréhension et recouvrements de Fulfillment Commitment, incohérence du type des Consignment Orders. Instruire une proposition cohérente avec les familles de Service Orders et préserver les responsabilités en cas de retrait. Aucun retrait ni retypage adopté implicitement."
+    },
+    {
+      "id": "U725",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u725",
+      "line": 17838,
+      "content_sha256": "f2a928e083d6556871271f46cad108b272eba8ad64843350fa6bbbf01d8c2861",
+      "captured_text": "## U725\n\n**id**\n\nU725\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la simplification complète d’Order Management\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite."
     }
   ]
 }

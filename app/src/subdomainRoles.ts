@@ -9,9 +9,3 @@ export function roleOf(node: AtlasNode): SubdomainRole | undefined {
     && typeof role.display_name === 'string' && role.display_name.trim()
     ? { id: role.id, display_name: role.display_name } : undefined;
 }
-export function roleOptions(nodes: readonly AtlasNode[]): SubdomainRole[] {
-  return [...new Map(nodes.flatMap(n => { const r = roleOf(n); return r ? [[r.id, r] as const] : []; })).values()];
-}
-export function matchesRole(node: AtlasNode, selected: string): boolean {
-  return !selected || node.kind !== 'area' || roleOf(node)?.id === selected;
-}

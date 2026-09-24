@@ -1,0 +1,1470 @@
+id: MATCHING-REFACTORING-U747
+status: target_structure_validated_U749_implementation_pending
+source_refs:
+- U745
+- U747
+- CMP292
+- U748
+- U749
+- CMP293
+canonical_model: modeles/backlog/model.yaml
+scope:
+  subdomain: D03
+  current_capabilities: 9
+  current_behaviors: 22
+  target_capabilities: 10
+  target_behaviors: 21
+  affected_relations: 98
+baseline:
+  model_sha256: dfe887d2cb507d2e05f9e1d398fa0b409bbe3fbcc3cfc2e7f991a2efde87d352
+  note: Empreinte de contrôle avant application ; aucune copie concurrente du modèle.
+inspiration:
+  primary: Microsoft Dynamics 365 Supply Chain Management / Master planning / Planning Optimization
+  complement: Conserver les preuves fashion et de redistribution Oracle/Nextail/SAP ; inspiration principale ne signifie pas
+    exclusivité ni équivalence produit.
+proposal:
+- id: D05.f
+  name: Master Planning
+  category:
+    id: master-plan-management
+    display_name: Master Plan Management
+    order: 10
+  definition: Cadrer, maintenir et réviser le master plan commun en mobilisant les capacités de matching, de simulation et
+    d’application.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: planning
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - id: D04.s
+    name: Scope Planning
+    definition: Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV097
+    name: Schedule Planning
+    definition: Fixer quand le travail sera lancé, ponctuellement ou selon une récurrence.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV098
+    name: Run Planning
+    definition: Engager le travail cadré pour produire un résultat de planification en mobilisant les décisions nécessaires.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV099
+    name: Stop Planning
+    definition: Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV100
+    name: Rerun Planning
+    definition: Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV101
+    name: Monitor Plan
+    definition: Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre
+      visibles les écarts et les besoins de réexamen.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV016
+    name: Adjust Plan
+    definition: Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et
+      en tenant compte des effets déjà acquis.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  source_refs:
+  - ELM748
+  - ELM751
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: BHV006
+  name: Simulation & Analysis
+  category:
+    id: master-plan-management
+    display_name: Master Plan Management
+    order: 10
+  definition: Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les
+    engagements, les stocks, les coûts et les risques pour éclairer les choix.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: planning
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors: []
+  source_refs:
+  - ELM748
+  - ELM370
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D02.e
+  name: Plan Application
+  category:
+    id: master-plan-management
+    display_name: Master Plan Management
+    order: 10
+  definition: Faire appliquer les recommandations autorisées et constater leur prise en compte.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: action
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors: []
+  source_refs:
+  - ELM751
+  - ELM566
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D03.m
+  name: Demand Prioritization
+  category:
+    id: supply-matching
+    display_name: Supply Matching
+    order: 20
+  definition: Établir et réviser les priorités relatives des besoins à couvrir, selon les engagements et les politiques applicables.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors: []
+  source_refs:
+  - ELM754
+  - ELM758
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D03.o
+  name: Supply Assignment
+  category:
+    id: supply-matching
+    display_name: Supply Matching
+    order: 20
+  definition: Déterminer les affectations cohérentes des ressources aux besoins et leurs révisions autorisées dans le master
+    plan commun.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - key: preserve
+    name: Commitment-Preserving Assignment
+    definition: Compléter le plan en préservant les affectations qui soutiennent les engagements protégés, dans le périmètre
+      fixé.
+    example: Une nouvelle commande consomme le solde ; les ressources protégées pour une commande confirmée restent attachées.
+    source_refs:
+    - ELM759
+    - ELM757
+    origin_ids: []
+    evidence_limits: Microsoft documente une fonction conditionnelle à la version et au paramétrage ; dans FLOW, protection
+      ne signifie ni réservation implicite ni garantie contre un aléa physique.
+    validation: Principe du comportement validé U749 ; nom anglais et description détaillée proposés.
+  - key: reassign
+    name: Supply Reassignment
+    definition: Revoir les liens ressources-besoins autorisés à évoluer afin de produire un plan cohérent lorsque la situation
+      change.
+    example: Remplacer une réception retardée par une autre ressource ; transmettre un impact de promesse s’il ne peut être
+      absorbé.
+    source_refs:
+    - ELM757
+    - ELM748
+    origin_ids: []
+    evidence_limits: Recalcul des affectations ; le réexamen des confirmations de type BOP reste dans Availability & Promising.
+      Adjust Plan pilote la révision ; ce comportement choisit les liens révisés.
+    validation: Principe du comportement validé U749 ; nom anglais et description détaillée proposés.
+  source_refs:
+  - ELM757
+  - ELM758
+  - ELM759
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D05.e
+  name: Replenishment
+  category:
+    id: supply-matching
+    display_name: Supply Matching
+    order: 20
+  definition: Déterminer les apports successifs et leurs ajustements en quantité et en date pour entretenir la disponibilité
+    pendant la commercialisation, selon les besoins, les objectifs de stock, les apports engagés et les contraintes applicables.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - id: BHV083
+    name: Requirement-based Replenishment
+    definition: Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des
+      apports attendus.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV084
+    name: Target-based Replenishment
+    definition: Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une
+      commande identifiée pour chaque apport.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV085
+    name: Replenishment Adjustment
+    definition: Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant
+      les engagements.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  source_refs:
+  - ELM414
+  - ELM420
+  - ELM751
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D05.c
+  name: Stock Redistribution
+  category:
+    id: supply-matching
+    display_name: Supply Matching
+    order: 20
+  definition: Déterminer les transferts de stock existant entre sites pour mieux répondre aux besoins, reconstituer des assortiments
+    utiles ou regrouper des stocks dispersés, en tenant compte des coûts et risques.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - id: BHV024
+    name: Inventory Rebalancing
+    definition: Déterminer les transferts de stock vers les sites où il répondra mieux aux besoins, en préservant ceux des
+      sites donneurs.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV025
+    name: Stock Consolidation
+    definition: Déterminer les regroupements de stocks dispersés pour reconstituer des assortiments utiles ou libérer des
+      sites.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  source_refs:
+  - ELM369
+  - ELM462
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D05.a
+  name: Inventory Target Optimization
+  category:
+    id: policy-optimization
+    display_name: Policy Optimization
+    order: 30
+  definition: Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins, le
+    niveau de service recherché, les délais et les risques.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - id: BHV026
+    name: Store Demand & Supply Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un magasin pour assurer la disponibilité client, selon la demande
+      locale, l’assortiment retenu, les contraintes de présentation et de capacité, les délais de réassort et le risque d’excédent.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV027
+    name: Distribution Center Demand & Supply Optimization
+    definition: Déterminer les objectifs et seuils de stock d’un centre de distribution pour servir les magasins ou canaux
+      desservis, selon leurs besoins prévus, les délais fournisseurs, les aléas d’approvisionnement et les contraintes de
+      stockage.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV028
+    name: Multi-Echelon Demand & Supply Optimization
+    definition: Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs
+      dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  source_refs:
+  - ELM421
+  - ELM371
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D05.d
+  name: Group Protection Optimization
+  category:
+    id: policy-optimization
+    display_name: Policy Optimization
+    order: 30
+  definition: Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors: []
+  source_refs:
+  - ELM410
+  - ELM448
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+- id: D05.h
+  name: Reservation Policy Optimization
+  category:
+    id: policy-optimization
+    display_name: Policy Optimization
+    order: 30
+  definition: Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin de sécuriser
+    la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes.
+  definition_status: proposed_or_preserved_not_globally_approved
+  nature: decision
+  nature_status: implementation_proposal_not_part_of_U749
+  behaviors:
+  - id: BHV032
+    name: Milestone-Based Reservation Policy
+    definition: Déterminer les événements du parcours métier à partir desquels la ressource doit être réservée, puis les conditions
+      de maintien de cette protection au fil du parcours.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV033
+    name: Time-Fenced Reservation Policy
+    definition: Déterminer à quelle distance de la date de besoin commencer à réserver, afin de sécuriser l’échéance sans
+      immobiliser trop tôt les ressources.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV034
+    name: Demand-Differentiated Reservation Policy
+    definition: Déterminer des conditions de réservation différentes selon les engagements de service attachés aux demandes,
+      aux clients ou aux canaux, en respectant les priorités et droits d’usage établis.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  - id: BHV035
+    name: Risk-Adaptive Reservation Policy
+    definition: Adapter les conditions de déclenchement et de durée de réservation à la tension sur les ressources et au risque
+      d’immobilisation inutile, dans les limites des engagements déjà accordés.
+    validation: Contenu existant conservé ; accord U749 sur les familles présentées, sans nouvelle validation globale des
+      descriptions.
+  source_refs:
+  - ELM412
+  - ELM342
+  market_position: Regroupement FLOW inspiré principalement du master planning Microsoft ; conserver les preuves complémentaires
+    des responsabilités fashion et des politiques. Aucune équivalence de catalogue Microsoft prétendue.
+migration:
+- source_id: D05.f
+  source_name: Demand & Supply Optimization Planning
+  target: D05.f
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Master Plan Management.
+  target_name: Master Planning
+- source_id: D05.a
+  source_name: Inventory Target Decision
+  target: D05.a
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Policy Optimization.
+  target_name: Inventory Target Optimization
+- source_id: D05.d
+  source_name: Group Protection Decision
+  target: D05.d
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Policy Optimization.
+  target_name: Group Protection Optimization
+- source_id: D05.e
+  source_name: Replenishment Decision
+  target: D05.e
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Supply Matching.
+  target_name: Replenishment
+- source_id: D05.c
+  source_name: Stock Redistribution Decision
+  target: D05.c
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Supply Matching.
+  target_name: Stock Redistribution
+- source_id: D05.g
+  source_name: Initial Stocking Decision
+  target: D05.e
+  action: proposed_case_absorption
+  preservation: 'Proposition de migration : conserver explicitement l’implantation, les assortiments, quantités par site et
+    dates de lancement dans Replenishment. Le détail de cette absorption n’a pas été présenté en U749.'
+- source_id: D05.h
+  source_name: Reservation Policy Decision
+  target: D05.h
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Policy Optimization.
+  target_name: Reservation Policy Optimization
+- source_id: D03.m
+  source_name: Order Prioritization
+  target: D03.m
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Supply Matching.
+  target_name: Demand Prioritization
+- source_id: D03.o
+  source_name: Fulfillment Plan Decision
+  target: D03.o
+  action: keep_or_rename_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Supply Matching.
+  target_name: Supply Assignment
+- source_id: D02.e
+  source_name: Apply Plan
+  source_parent: D05.f
+  target: D02.e
+  action: promote_to_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Master Plan Management.
+  target_name: Plan Application
+- source_id: BHV006
+  source_name: Simulation & Analysis
+  source_parent: D05.f
+  target: BHV006
+  action: promote_to_capability
+  preservation: Responsabilité conservée comme capacité autonome dans la catégorie Master Plan Management.
+  target_name: Simulation & Analysis
+- source_id: BHV016
+  source_name: Adjust Plan
+  source_parent: D05.f
+  target: BHV016
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV024
+  source_name: Inventory Rebalancing
+  source_parent: D05.c
+  target: BHV024
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.c
+- source_id: BHV025
+  source_name: Stock Consolidation
+  source_parent: D05.c
+  target: BHV025
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.c
+- source_id: BHV026
+  source_name: Store Demand & Supply Optimization
+  source_parent: D05.a
+  target: BHV026
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.a
+- source_id: BHV027
+  source_name: Distribution Center Demand & Supply Optimization
+  source_parent: D05.a
+  target: BHV027
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.a
+- source_id: BHV028
+  source_name: Multi-Echelon Demand & Supply Optimization
+  source_parent: D05.a
+  target: BHV028
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.a
+- source_id: BHV032
+  source_name: Milestone-Based Reservation Policy
+  source_parent: D05.h
+  target: BHV032
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.h
+- source_id: BHV033
+  source_name: Time-Fenced Reservation Policy
+  source_parent: D05.h
+  target: BHV033
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.h
+- source_id: BHV034
+  source_name: Demand-Differentiated Reservation Policy
+  source_parent: D05.h
+  target: BHV034
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.h
+- source_id: BHV035
+  source_name: Risk-Adaptive Reservation Policy
+  source_parent: D05.h
+  target: BHV035
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.h
+- source_id: BHV077
+  source_name: Order Rescheduling
+  source_parent: D05.f
+  target: BHV016
+  action: proposed_responsibility_distribution
+  preservation: Pilotage de révision dans Adjust Plan ; étude des impacts dans Simulation & Analysis ; choix de réaffectation
+    dans Supply Assignment. Aucun BOP absorbé. Répartition détaillée proposée.
+  additional_targets:
+  - BHV006
+  - D03.o/reassign
+- source_id: BHV083
+  source_name: Requirement-based Replenishment
+  source_parent: D05.e
+  target: BHV083
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.e
+- source_id: BHV084
+  source_name: Target-based Replenishment
+  source_parent: D05.e
+  target: BHV084
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.e
+- source_id: BHV085
+  source_name: Replenishment Adjustment
+  source_parent: D05.e
+  target: BHV085
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.e
+- source_id: D04.s
+  source_name: Scope Planning
+  source_parent: D05.f
+  target: D04.s
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV097
+  source_name: Schedule Planning
+  source_parent: D05.f
+  target: BHV097
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV098
+  source_name: Run Planning
+  source_parent: D05.f
+  target: BHV098
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV099
+  source_name: Stop Planning
+  source_parent: D05.f
+  target: BHV099
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV100
+  source_name: Rerun Planning
+  source_parent: D05.f
+  target: BHV100
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+- source_id: BHV101
+  source_name: Monitor Plan
+  source_parent: D05.f
+  target: BHV101
+  action: keep_behavior
+  preservation: Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées.
+  target_parent: D05.f
+relation_impact:
+- id: REL-MEMBER-D02.e
+  type: contains
+  source: D05.f
+  target: D02.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.f
+  type: contains
+  source: D03
+  target: D05.f
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.a
+  type: contains
+  source: D03
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.d
+  type: contains
+  source: D03
+  target: D05.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.e
+  type: contains
+  source: D03
+  target: D05.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.c
+  type: contains
+  source: D03
+  target: D05.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.a
+  type: relates-to
+  source: D05.f
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.d
+  type: relates-to
+  source: D05.f
+  target: D05.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.e
+  type: relates-to
+  source: D05.f
+  target: D05.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.c
+  type: relates-to
+  source: D05.f
+  target: D05.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-CTP-ORDER-PRIORITIZATION
+  type: relates-to
+  source: D03.j
+  target: D03.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-CTP-STOCK-ALLOCATION
+  type: relates-to
+  source: D03.j
+  target: D05.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-CTP-COVERAGE-TARGET
+  type: relates-to
+  source: D03.j
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-PLANNING-BHV006
+  type: contains
+  source: D05.f
+  target: BHV006
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV016
+  type: contains
+  source: D05.f
+  target: BHV016
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-008
+  type: relates-to
+  source: D02.b
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-009
+  type: relates-to
+  source: D02.b
+  target: D05.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-023
+  type: relates-to
+  source: D02.e
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-024
+  type: relates-to
+  source: D02.e
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-025
+  type: relates-to
+  source: D02.e
+  target: D02.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-026
+  type: relates-to
+  source: D02.e
+  target: D03.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-030
+  type: relates-to
+  source: D03.i
+  target: D02.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-045
+  type: relates-to
+  source: D03.m
+  target: D11.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-079
+  type: relates-to
+  source: D05.a
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-080
+  type: relates-to
+  source: D05.a
+  target: D13.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-081
+  type: relates-to
+  source: D05.a
+  target: D08.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-082
+  type: relates-to
+  source: D05.d
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-083
+  type: relates-to
+  source: D05.d
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-084
+  type: relates-to
+  source: D05.d
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-085
+  type: relates-to
+  source: D05.e
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-086
+  type: relates-to
+  source: D05.e
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-087
+  type: relates-to
+  source: D05.e
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-088
+  type: relates-to
+  source: D05.e
+  target: D07.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-089
+  type: relates-to
+  source: D05.e
+  target: D04.j
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-090
+  type: relates-to
+  source: D05.e
+  target: D04.k
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-091
+  type: relates-to
+  source: D05.c
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-092
+  type: relates-to
+  source: D05.c
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-093
+  type: relates-to
+  source: D05.c
+  target: D13.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-094
+  type: relates-to
+  source: D05.c
+  target: D05.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-099
+  type: relates-to
+  source: D05.f
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-100
+  type: relates-to
+  source: D05.f
+  target: D07.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-101
+  type: relates-to
+  source: D05.f
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-102
+  type: relates-to
+  source: D05.f
+  target: D04.j
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-103
+  type: relates-to
+  source: D05.f
+  target: D04.k
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U290-104
+  type: relates-to
+  source: D05.f
+  target: D06.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.g
+  type: contains
+  source: D03
+  target: D05.g
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.g
+  type: relates-to
+  source: D05.f
+  target: D05.g
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-INVENTORY
+  type: relates-to
+  source: D05.g
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-TARGET
+  type: relates-to
+  source: D05.g
+  target: D05.a
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-PROTECTION
+  type: relates-to
+  source: D05.g
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-PURCHASE
+  type: relates-to
+  source: D05.g
+  target: D04.j
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-TRANSFER
+  type: relates-to
+  source: D05.g
+  target: D04.k
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INITIAL-STOCKING-TRACKING
+  type: relates-to
+  source: D05.g
+  target: D07.d
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-REDISTRIBUTION-INITIAL-STOCKING
+  type: relates-to
+  source: D05.c
+  target: D05.g
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV024
+  type: contains
+  source: D05.c
+  target: BHV024
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV025
+  type: contains
+  source: D05.c
+  target: BHV025
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV026
+  type: contains
+  source: D05.a
+  target: BHV026
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV027
+  type: contains
+  source: D05.a
+  target: BHV027
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV028
+  type: contains
+  source: D05.a
+  target: BHV028
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D05.h
+  type: contains
+  source: D03
+  target: D05.h
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV032
+  type: contains
+  source: D05.h
+  target: BHV032
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV033
+  type: contains
+  source: D05.h
+  target: BHV033
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV034
+  type: contains
+  source: D05.h
+  target: BHV034
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV035
+  type: contains
+  source: D05.h
+  target: BHV035
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-INVENTORY
+  type: relates-to
+  source: D05.h
+  target: D01.c
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-ATP
+  type: relates-to
+  source: D05.h
+  target: D03.i
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-PRIORITY
+  type: relates-to
+  source: D05.h
+  target: D03.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-PROTECTION
+  type: relates-to
+  source: D05.h
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-AGREEMENT
+  type: relates-to
+  source: D05.h
+  target: D11.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-RESERVATION-POLICY-APPLICATION
+  type: relates-to
+  source: D02.c
+  target: D05.h
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-INVENTORY-PLANNING-D05.h
+  type: relates-to
+  source: D05.f
+  target: D05.h
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D03.m
+  type: contains
+  source: D03
+  target: D03.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-01
+  type: relates-to
+  source: D03.o
+  target: D03.i
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-02
+  type: relates-to
+  source: D03.o
+  target: D03.j
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-03
+  type: relates-to
+  source: D03.o
+  target: D03.k
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-04
+  type: relates-to
+  source: D03.o
+  target: D03.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-05
+  type: relates-to
+  source: D03.o
+  target: D03.l
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-06
+  type: relates-to
+  source: D03.o
+  target: D02.b
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U378-07
+  type: relates-to
+  source: D02.e
+  target: D03.o
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U395-03
+  type: relates-to
+  source: D04.r
+  target: D05.g
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-NEEDS-U395-04
+  type: relates-to
+  source: D04.r
+  target: D05.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV077
+  type: contains
+  source: D05.f
+  target: BHV077
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D03.o
+  type: contains
+  source: D03
+  target: D03.o
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV083
+  type: contains
+  source: D05.e
+  target: BHV083
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV084
+  type: contains
+  source: D05.e
+  target: BHV084
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BEHAVIOR-BHV085
+  type: contains
+  source: D05.e
+  target: BHV085
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-AUDIT-U435-PLNK-01
+  type: relates-to
+  source: D05.f
+  target: D03.o
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-AUDIT-U435-PLNK-06
+  type: relates-to
+  source: D05.f
+  target: D04.r
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-AUDIT-U435-CONSIGNED-SUPPLIER-RETURN
+  type: relates-to
+  source: D03.o
+  target: D04.m
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-D04.s
+  type: contains
+  source: D05.f
+  target: D04.s
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-BACKLOG-REQUEST-ASSIGNMENT
+  type: relates-to
+  source: D05.f
+  target: D02.e
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-U560-PROTECTION-RESERVATION-POLICY
+  type: relates-to
+  source: D02.b
+  target: D05.h
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV097
+  type: contains
+  source: D05.f
+  target: BHV097
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV098
+  type: contains
+  source: D05.f
+  target: BHV098
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV099
+  type: contains
+  source: D05.f
+  target: BHV099
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV100
+  type: contains
+  source: D05.f
+  target: BHV100
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-MEMBER-BHV101
+  type: contains
+  source: D05.f
+  target: BHV101
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+- id: REL-U673-PLAN-COVERAGE
+  type: relates-to
+  source: plans-visibility
+  target: D05.f
+  action: requalify_for_U749
+  reason: Relire selon la cible à dix capacités ; conserver les relations entre capacités spécialisées. Les anciennes consignes
+    d’internalisation à trois capacités sont remplacées. Promouvoir les liens de Simulation & Analysis et Plan Application
+    sans les confondre avec contains.
+boundaries:
+- Un master plan cohérent par périmètre opérationnel ; plusieurs simulations possibles, aucune affectation concurrente publiée
+  pour la même ressource.
+- Availability & Promising conserve ATP/CTP/PTP, sélection et réexamen des promesses de type BOP. Matching calcule les affectations
+  et leurs impacts ; Order Management tient les confirmations autorisées.
+- les capacités de Policy Optimization recommande ; Supply Protection Policy D02.b et Demand Protection Policy D19.b gouvernent
+  les règles actives. Les calculs courants consomment ces règles sans modification silencieuse.
+- 'Apply Plan fait appliquer les recommandations autorisées par les propriétaires : Orders, Reservation et Policies. Affectation
+  seule ne bloque pas les usages concurrents.'
+- Plans externes APS et master plan interne restent distincts ; ni prévision globale ni ordonnancement de production absorbés.
+  Les nouveaux achats opérationnels peuvent être proposés sans transformer Matching en APS.
+- Fulfilment conserve les adaptations locales qui préservent promesse et grands équilibres ; remonte les impacts non absorbables.
+- Initial Stocking, réassort et pénurie restent des cas explicites ; plusieurs stratégies peuvent y contribuer. Pas de capacité
+  par cas ou par paramètre.
+- Aucune formule de valeur, priorité économique implicite ou garantie d’optimum. Les incompatibilités et hypothèses non confirmées
+  restent explicites.
+composition_contract:
+  inputs:
+  - périmètre et horizon
+  - Orders et engagements
+  - prévision résiduelle sans double compte
+  - ressources présentes/futures et faisabilités
+  - politiques et protections actives
+  - stratégies autorisées et objectifs
+  output:
+  - liens ressources-besoins avec quantités et dates
+  - besoins non couverts et raisons
+  - apports/ajustements proposés et conditions
+  - effets sur les promesses à faire réexaminer
+  - recommandations de paramètres séparées des valeurs actives
+  rules:
+  - Les stratégies sont combinables par dimension, sans séquence universelle imposée.
+  - Un scénario qui compare de nouvelles politiques doit les identifier comme hypothèses, sans les activer.
+  - Préservation et réaffectation peuvent porter sur des périmètres distincts ; un même lien ne peut être simultanément gelé
+    et librement réaffecté.
+  - Requirement-Based et Target-Based partagent le calcul net ; ne pas additionner deux fois un besoin.
+  - 'Fair share et livraison complète ne sont pas ajoutés comme comportements ici : pas de validation antérieure ni d’appui
+    Microsoft suffisant dans le dossier.'
+acceptance_scenarios:
+- case: Pénurie sur deux commandes
+  expect: Priorités explicites ; total affecté inférieur ou égal à la ressource ; reste non couvert ; aucune confirmation
+    changée seule.
+- case: Implantation fashion
+  expect: Assortiment, tailles, sites et date de lancement conservés ; quantités initiales traçables même sans capacité Initial
+    Stocking Decision.
+- case: Réassort avec commandes et prévisions
+  expect: Consommation de prévision et calcul net ; pas de double approvisionnement par cible et besoin daté.
+- case: Ressource retardée, promesse préservée
+  expect: Réaffectation autorisée ; confirmation conservée si réalisable ; impact sinon transmis au réexamen de promesse.
+- case: Consolidation de tailles
+  expect: Assortiment utile reconstitué, coûts et besoins des donneurs pris en compte ; exécution de transfert via Orders/Fulfilment.
+- case: Révision de protections
+  expect: Recommandation comparée aux règles actives ; aucune nouvelle protection ou réservation appliquée par le calcul seul.
+- case: Cible réseau externe
+  expect: Pas de recalcul APS implicite ; recommandation locale identifiée et soumise à l’autorité appropriée.
+- case: Simulation interrompue puis reprise
+  expect: Cadrage, arrêt, relance, suivi et application restent disponibles ; aucun effet de la simulation sur les Orders.
+validation_package:
+  source: U749
+  status: recorded_on_proposal
+  approved:
+    categories:
+    - id: master-plan-management
+      display_name: Master Plan Management
+      order: 10
+    - id: supply-matching
+      display_name: Supply Matching
+      order: 20
+    - id: policy-optimization
+      display_name: Policy Optimization
+      order: 30
+    capabilities:
+    - name: Master Planning
+      category: master-plan-management
+    - name: Simulation & Analysis
+      category: master-plan-management
+    - name: Plan Application
+      category: master-plan-management
+    - name: Demand Prioritization
+      category: supply-matching
+    - name: Supply Assignment
+      category: supply-matching
+    - name: Replenishment
+      category: supply-matching
+    - name: Stock Redistribution
+      category: supply-matching
+    - name: Inventory Target Optimization
+      category: policy-optimization
+    - name: Group Protection Optimization
+      category: policy-optimization
+    - name: Reservation Policy Optimization
+      category: policy-optimization
+    principles:
+    - Un master plan commun mobilise plusieurs capacités métier autonomes.
+    - Les stratégies décrivent les comportements des capacités ; elles ne deviennent pas une catégorie de décisions indifférenciées.
+    behavior_families:
+      Supply Assignment:
+      - préservation des liens existants
+      - réaffectation autorisée
+      Replenishment:
+      - besoins datés
+      - cible de stock
+      - ajustement des apports
+      Stock Redistribution:
+      - rééquilibrage entre sites
+      - consolidation des stocks dispersés
+  approved_sha256: 7def2557a30670ff9ba68371b0ace555834a6dc4cbc4ee455493aadc98074819
+  not_implied:
+  - types ou descriptions détaillées nouvellement proposés
+  - élargissement exact de Demand Prioritization aux prévisions sans Order
+  - détail des successions de Initial Stocking et Order Rescheduling
+  - application canonique immédiate, release, commit ou push
+  capture_note: L’accord porte sur la cible préparée. record_intents capturera les champs correspondants sur l’état canonique
+    final lors de l’application ; ne pas capturer les anciennes valeurs du modèle actuel.
+  method: Conserver Planning mobilise des capacités Decision ; U749 remplace la proposition de réduction à trois capacités,
+    pas les frontières métier.
+implementation_sequence:
+- Après accord, vérifier les empreintes et relire toute évolution du périmètre.
+- Allouer des identifiants neufs seulement aux comportements nouveaux ou fusionnés ; préserver ceux déplacés sans changement
+  de responsabilité. Ne jamais réutiliser les identifiants retirés.
+- Appliquer noms, natures, définitions, parents, catégories et descriptions ; reporter exemples, réserves et sources utiles
+  des fiches fusionnées.
+- Requalifier les relations une par une selon relation_impact ; reprendre glossaires et liens internes concernés, puis les
+  gardes de publication qui dépendent de cette structure.
+- Tracer explicitement les successions et accords remplacés ; une ancienne validation ne valide pas automatiquement les champs
+  fusionnés.
+- Capturer l’accord sur les valeurs finales, actualiser sources et vues backlog, valider les modèles et tests concernés. Publier
+  seulement sur demande.
+categories:
+- id: master-plan-management
+  display_name: Master Plan Management
+  order: 10
+- id: supply-matching
+  display_name: Supply Matching
+  order: 20
+- id: policy-optimization
+  display_name: Policy Optimization
+  order: 30
+supersession:
+  source: U749
+  replaces: Proposition à trois capacités U747 et CMP292
+  reason: Les trois ensembles sont des catégories ; conserver des capacités métier autonomes qui contribuent au même plan.
+  history: État antérieur conservé par Git s’il est enregistré ; l’accord U749 et U748 tracent la correction. Aucun accord
+    sur la cible à trois capacités.

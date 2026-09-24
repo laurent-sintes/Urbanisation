@@ -4,7 +4,7 @@ import { ArrowUpRight, FileText, LayoutGrid } from 'lucide-react';
 import { NodeIcon } from './icons';
 import { startsCapabilityTypeSection } from './capabilityTypes';
 import { categoryCaption, categoryOf, startsCategorySection } from './categories';
-import { roleOf, roleOptions, matchesRole } from './subdomainRoles';
+import { roleOf } from './subdomainRoles';
 import { ReferenceLink } from './components/ModelLinks';
 import { childrenOf, rootsOf, hasCapabilityCards, cardChildListOf, type CardChildList } from './model';
 import { kindLabel, shortText } from './presentation';
@@ -70,8 +70,6 @@ function Canvas(props: ReactFlowPaneProps) {
   const [fullscreen, setFullscreen] = useState(() => Boolean(document.fullscreenElement));
   const [error, setError] = useState('');
   const [arrangement, setArrangement] = useState(0);
-  const [roleFilter, setRoleFilter] = useState('');
-  useEffect(() => setRoleFilter(''), [scopeId, model]);
   const { fitView } = useReactFlow();
   const container = useRef<HTMLDivElement>(null);
   const capabilityOverview = hasCapabilityCards(model, scopeId);
@@ -100,7 +98,7 @@ function Canvas(props: ReactFlowPaneProps) {
     const start = performance.now();
     setError('');
     const group = graph.group;
-    const items = graph.nodes.filter(n => n.id !== group?.id && matchesRole(n, roleFilter));
+    const items = graph.nodes.filter(n => n.id !== group?.id);
     const childLists = new Map<string, CardChildList>();
     if (capabilityOverview) for (const item of items) {
       const list = cardChildListOf(model, item);
@@ -153,7 +151,7 @@ function Canvas(props: ReactFlowPaneProps) {
       setLayout({ nodes, ms: Math.round(performance.now() - start), width: (result.width || 380) + (group ? 28 : 0), height: (result.height || 250) + (group ? 70 : 0) });
     }).catch(e => current && setError(String(e)));
     return () => { current = false; };
-  }, [graph, model, scopeId, arrangement, capabilityOverview, cardHeights, capabilityOverview ? canvasWidth : 0, roleFilter]);
+  }, [graph, model, scopeId, arrangement, capabilityOverview, cardHeights, capabilityOverview ? canvasWidth : 0]);
   useEffect(() => { const id = setTimeout(() => fitView({ padding: 0.06, maxZoom: 1, duration: matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 220 }), 80); return () => clearTimeout(id); }, [layout, fitView]);
   useEffect(() => {
     if (!container.current) return;
@@ -176,7 +174,6 @@ function Canvas(props: ReactFlowPaneProps) {
       <Background gap={24} size={1} color="#d8e3df"/>
       <Controls showInteractive={false}/>
     </ReactFlow>
-    {roleOptions(graph.nodes.filter(n => n.id !== graph.group?.id)).length > 0 && <label className="subdomain-role-filter">Finalité dominante <select value={roleFilter} onChange={event => setRoleFilter(event.target.value)} aria-label="Filtrer les sous-domaines par finalité dominante"><option value="">Toutes les finalités</option>{roleOptions(graph.nodes.filter(n => n.id !== graph.group?.id)).map(role => <option key={role.id} value={role.id}>{role.display_name}</option>)}</select><span>Le badge indique un rôle dominant, sans exclure les autres responsabilités.</span></label>}
     <button className="arrange-button" onClick={() => setArrangement(v => v + 1)}><LayoutGrid size={14}/>Réorganiser</button>
     {!graph.nodes.length && <div className="empty-state"><FileText/>Ce périmètre est réservé.</div>}
   </div>;

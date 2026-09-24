@@ -5803,6 +5803,198 @@
       "captured_text": "## U725\n\n**id**\n\nU725\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la simplification complète d’Order Management\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite."
     },
     {
+      "id": "U726",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u726",
+      "line": 17861,
+      "content_sha256": "487fee80c8b3bc72340c1b2ef522e1d6c5fc90d7516edaec5bc7e61cb1ba3d08",
+      "captured_text": "## U726\n\n**id**\n\nU726\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAuditer Inventory Management et ses frontières\n\n**texte**\n\nSous domaine Inventory Management :\n\n- Inventory Tracking et Record Inventory Movements semble très proche. On peut imaginer Tracking une capa d'intégration et Ledger pour le service data de knowledge.\n- Consigned Inventory Management me semble inapproprié : à la lecture globale du sous domaine je trouve que ça n'a pas de sens.\n\nTu peux auditer Inventory Management par rapport aux autres domaines et aux marché ?\n\n**contexte et portée**\n\nDemande d’audit des six capacités, de leurs variantes et des frontières avec les autres sous-domaines et domaines externes. Tracking / Ledger et retrait ou redistribution de Consigned Inventory Management sont des hypothèses à instruire, sans modification métier adoptée implicitement."
+    },
+    {
+      "id": "U727",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u727",
+      "line": 17889,
+      "content_sha256": "aa80bfb5045ba18b3f8d8227a9a0529363f34c778e4de30bb9667a32008752ed",
+      "captured_text": "## U727\n\n**id**\n\nU727\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer Inventory Visibility, Supply Visibility et le périmètre de Promising\n\n**texte**\n\nJe souhaite avoir la différence entre inventory visibility et supply visibility.\n\nJe me demande si Order Promising n'est pas une catégory de Inventory Management.\n\nMe trompe peut être...\n\n**contexte et portée**\n\nComplément à l’audit U726 : étudier le recouvrement des vues de stock et d’apports, et l’hypothèse d’un rattachement de Promising comme catégorie d’Inventory Management. Hypothèse ouverte, sans accord de fusion."
+    },
+    {
+      "id": "U728",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u728",
+      "line": 17916,
+      "content_sha256": "b968fee8aaafa00ab61d404f9b4881ff469261cb646e95f24df04392bf970893",
+      "captured_text": "## U728\n\n**id**\n\nU728\n\n**date**\n\n2026-09-24\n\n**titre**\n\nInterroger ATP, CTP et PTP comme capacités de visibilité\n\n**texte**\n\nMais est ce que ATP, CTP et PTP ne sont pas intrinsèquement des capacités Visibility ?\n\n**contexte et portée**\n\nPrécision de l’audit U726/U727 : distinguer connaissance calculée des possibilités, choix d’une réponse et engagement. Réexaminer l’argument du rôle décisionnel de Promising ; aucun retypage ou rattachement adopté implicitement."
+    },
+    {
+      "id": "U729",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u729",
+      "line": 17939,
+      "content_sha256": "f46063b59ff6a82a31f88ea38bbaeb470a1ada23ab4651d075ac09e89a0fe016",
+      "captured_text": "## U729\n\n**id**\n\nU729\n\n**date**\n\n2026-09-24\n\n**titre**\n\nQuestionner le contenu restant de Promising\n\n**texte**\n\nSi on suit microsoft,\n\n- Le sous domaine doit s’appeler Inventory Visibility\n- Il doit contenir ATP\n\nMais que contient Order Promising ??\n\n**contexte et portée**\n\nInterroger le découpage ; pas de renommage adopté."
+    },
+    {
+      "id": "U730",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u730",
+      "line": 17967,
+      "content_sha256": "30826ecf4444487a154022934c267d773dad0bb6cdcd371c87dd3e705006aa55",
+      "captured_text": "## U730\n\n**id**\n\nU730\n\n**date**\n\n2026-09-24\n\n**titre**\n\nRéintégrer Promising et catégoriser Inventory Management\n\n**texte**\n\nJe suis d'accord :\n\nIl faut réintégrer Order Promising dans Inventory Management.\n\nPar contre il faut catégoriser.\n\nJe pense qu'il y a\n\n- la catégorie qui permet d'agréger les données de stocks et composer un référentiel centraliser et le maintenir (source de vériter). Ajouter StockTaking\n- La catégorie qui exploite les données de stock (stock physique, stock logique, stock virtuel)\n- La catégorie qui produit des promesses\n\nQuoitenpenses ?\n\n**contexte et portée**\n\nOrientation explicite de réintégration dans Inventory Management ; trois catégories envisagées, noms et répartition détaillée à discuter. Ne pas maintenir l’ancienne recommandation de sous-domaine autonome."
+    },
+    {
+      "id": "U731",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u731",
+      "line": 18002,
+      "content_sha256": "a17df4fc2b2eac0134f503bd150cb3026fd7b8eb81415aae667d4f9ed8266684",
+      "captured_text": "## U731\n\n**id**\n\nU731\n\n**date**\n\n2026-09-24\n\n**titre**\n\nRapprocher visibilité et promesse\n\n**texte**\n\nLa deuxième catégorie est très proche du troisième, non ?\n\n**contexte et portée**\n\nRemise en question de la distinction entre deux catégories ; proposition assistant de deux catégories Inventory Foundation et Availability & Promising."
+    },
+    {
+      "id": "U732",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u732",
+      "line": 18025,
+      "content_sha256": "2ff704aaefdc351bf438062b83590b93676905fedd0c9354b8ceb9f535371254",
+      "captured_text": "## U732\n\n**id**\n\nU732\n\n**date**\n\n2026-09-24\n\n**titre**\n\nComparer le regroupement en deux catégories au marché\n\n**texte**\n\nC'est mieux, non ? Que dit le marché ?\n\n**contexte et portée**\n\nComparer et recommander sans inventer une nomenclature universelle ; réintégration demandée U730, catégories encore discutées."
+    },
+    {
+      "id": "U733",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u733",
+      "line": 18048,
+      "content_sha256": "5742f9fe90b03702a744123ccbe9c6cf8a26e475170b4ef948eb185c4443152e",
+      "captured_text": "## U733\n\n**id**\n\nU733\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la refonte Inventory Management en deux catégories\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U726–U732 : réintégrer Order Promising dans Inventory Management ; catégories Inventory Foundation et Availability & Promising ; Tracking Integration, Ledger Knowledge, Stocktaking et Reservation conservés ; Ownership Transfer Action remplace le regroupement Consigned Inventory Management avec conservation des responsabilités. ATP/CTP Knowledge ; PTP évaluation économique Knowledge, sélection et échéancier explicitement préservés. Les précisions rédactionnelles de mise en œuvre restent proposées ; aucune release implicite."
+    },
+    {
+      "id": "U734",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u734",
+      "line": 18071,
+      "content_sha256": "81942e76f65128a84b21ee71c4d591ba5b6a6c66a34a979b2583344530bc194c",
+      "captured_text": "## U734\n\n**id**\n\nU734\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClarifier Delivery Schedule Decision\n\n**texte**\n\nDelivery Schedule Decision  : je ne comprends pas ce que c'est\n\n**contexte et portée**\n\nDemande d’explication de la capacité et de sa frontière avec ATP/CTP/PTP, Matching et confirmation dans Order Management. Aucun retrait ni renommage implicite."
+    },
+    {
+      "id": "U735",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u735",
+      "line": 18094,
+      "content_sha256": "f58406e6130ac7626c10f440f8c52fed8fc4a06b074b00710ef46b70dda6ac5c",
+      "captured_text": "## U735\n\n**id**\n\nU735\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAdopter Promise Selection et réexaminer la frontière CTP / Matching\n\n**texte**\n\nPromise Selection : je valide.\n\nLe scope de CTP me parait trop large. Est-ce que la proposition de commandes d'achat supplémentaire, ça ne devrait pas être dans Matching ?\n\nQue dit le marché ?\n\n**contexte et portée**\n\nAccord explicite sur le nom Promise Selection et la responsabilité présentée de choix de réponse à proposer, sans confirmation de l’engagement. Question ouverte sur la frontière entre faisabilité CTP et proposition d’achats supplémentaires dans Matching ; comparer au marché avant modification de cette frontière."
+    },
+    {
+      "id": "U736",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u736",
+      "line": 18121,
+      "content_sha256": "b6dc86bbb8d69cf04ec6a33c3d077afdb4584dfec49ccfd51e06976f39b0baf0",
+      "captured_text": "## U736\n\n**id**\n\nU736\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la frontière CTP et déplacer le rééchelonnement dans Matching\n\n**texte**\n\nPour Commitment Rebalancing Feasibility  je suis d'accord pour le déplacer. Mais on ne peut pas avoir un nom qui fait moins peur ?\n\nà part ça, je valide.\n\n**contexte et portée**\n\nAccord cumulatif sur U735 : CTP évalue les apports possibles ; Matching propose et arbitre leur réalisation ; Purchase Order porte la commande autorisée ; APS reste externe. Déplacer BHV077 vers Matching et proposer un nom simple. Order Rescheduling est le nom de mise en œuvre proposé, pas un libellé présenté avant cet accord."
+    },
+    {
+      "id": "U737",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u737",
+      "line": 18146,
+      "content_sha256": "21bca2d2c406f35190c9ef6f7d111bf5bc7151c6864448cb8256b7f7191463cc",
+      "captured_text": "## U737\n\n**id**\n\nU737\n\n**date**\n\n2026-09-24\n\n**titre**\n\nComparer Order Rescheduling au Backorder Processing SAP\n\n**texte**\n\nOrder Rescheduling , c'est un peu le backorder processing de SAP ?\n\n**contexte et portée**\n\nQuestion de rapprochement marché et de portée ; aucun renommage supplémentaire ni adoption du périmètre complet SAP implicite."
+    },
+    {
+      "id": "U738",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u738",
+      "line": 18169,
+      "content_sha256": "3beb8d7b9aeadbf9e535f09cd2576e0ba7c9fce9f3de3659f7a66439e8277acd",
+      "captured_text": "## U738\n\n**id**\n\nU738\n\n**date**\n\n2026-09-24\n\n**titre**\n\nComparer le réexamen des commandes au master planning Microsoft\n\n**texte**\n\nBackorder Processing c'est sympa mais ça fait très SAP. D'un autre côté, je me demande si côté microsoft tout ça n'est pas intégré dans la notion de master plan ?\n\n**contexte et portée**\n\nÉtudier l’intégration de ces mécanismes au master planning et le besoin d’un comportement distinct. Préserver la distinction master plan de matching interne et plans APS externes ; aucun nouveau renommage ou retrait validé."
+    },
+    {
+      "id": "U739",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u739",
+      "line": 18192,
+      "content_sha256": "9631d55dcab36bff139814583c39b707f5a25492a33c20c79fe13d56c0cce7ea",
+      "captured_text": "## U739\n\n**id**\n\nU739\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉtudier un calcul de matching commun piloté par politiques\n\n**texte**\n\nJe pense que microsoft propose d'activer le master plan en passant en paramètre une policy qui peut couvrir le backorder processing ou autre. Ca m'a l'air plus souple. J'ai raison ou je raconte n'importe quoi ?\n\n**contexte et portée**\n\nHypothèse à vérifier : calcul commun configuré par politiques, plutôt que capacité par cas d’usage. Distinguer configuration effective Dynamics 365 et abstraction proposée pour FLOW ; aucune équivalence BOP ni nouvelle API présumée."
+    },
+    {
+      "id": "U740",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u740",
+      "line": 18215,
+      "content_sha256": "ddf782b7a920c20e904b21e85140406af295d1479577f82b99536e9de8baba50",
+      "captured_text": "## U740\n\n**id**\n\nU740\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer les questions de confirmation et d’affectation\n\n**texte**\n\nLe pb de SAP c'est que BOP et ARun peuvent faire la même chose. Mais ce sont des outils qui répondent à des questions différentes :\n\n- BOP : Quelle quantité puis-je confirmer, à qui et quand ?  => On s'appuie sur le moteur ATP\n- ARun : Quelle supply j'assigne effectivement à quelle demande ?  => On s'appuie sur les décisions du matching.\n\n**contexte et portée**\n\nClarification de Laurent : distinguer résultats métier confirmation et affectation malgré recouvrement ou moteur commun. Ne pas absorber tout réexamen de promesse dans Matching. Les comportements SAP effectifs restent à qualifier, notamment ARun comme méthode de contrôle dans BOP."
+    },
+    {
+      "id": "U741",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u741",
+      "line": 18241,
+      "content_sha256": "a8ed6147dd2b1665ea9e23f267a8ab15d004c5b8ca4537844836ca92de4c3ddd",
+      "captured_text": "## U741\n\n**id**\n\nU741\n\n**date**\n\n2026-09-24\n\n**titre**\n\nARun affecte les ressources\n\n**texte**\n\nNon, ARun ne contrôle pas, il affecte la ressource disponible au carnet de commandes\n\n**contexte et portée**\n\nCorrection de la formulation Codex : distinguer affectation et contrôle de disponibilité."
+    },
+    {
+      "id": "U742",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u742",
+      "line": 18264,
+      "content_sha256": "c4932218327862b52ebc599c93724c3ad683a9d724e0cf1c46595bd10e5c8236",
+      "captured_text": "## U742\n\n**id**\n\nU742\n\n**date**\n\n2026-09-24\n\n**titre**\n\nEffets communs sans fusion des responsabilités\n\n**texte**\n\nBOP peut mettre en attente des demandes pour en privilégier d'autres.\nARun peut le faire aussi au travers d'un autre processus qui se pose une autre question.\n\n**contexte et portée**\n\nLa mise en attente ou la priorité ne suffit pas à déterminer la responsabilité : regarder la décision et son résultat."
+    },
+    {
+      "id": "U743",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u743",
+      "line": 18288,
+      "content_sha256": "4bde834970e3448096e80206596b3c4e1d4421cbd5a71b4bf0c6c7b1e2f90d8c",
+      "captured_text": "## U743\n\n**id**\n\nU743\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPositionner BOP avec ATP\n\n**texte**\n\nOui, BOP est dans la meme zone que ATP\n\n**contexte et portée**\n\nAccord sur la zone Availability & Promising pour le réexamen des promesses ; ne pas confondre ce réexamen collectif avec une réaffectation des ressources."
+    },
+    {
+      "id": "U744",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u744",
+      "line": 18311,
+      "content_sha256": "20137ccb7fb450876152967e3829f24c6ecd7e59b5fe4176c6fb39f28e19af25",
+      "captured_text": "## U744\n\n**id**\n\nU744\n\n**date**\n\n2026-09-24\n\n**titre**\n\nReprendre la lecture Microsoft\n\n**texte**\n\nReprends les sources microsoft et explique moi comment ils voient les choses.\n\n**contexte et portée**\n\nDemande de recherche et explication ; aucune publication ni modification implicite du catalogue."
+    },
+    {
+      "id": "U745",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u745",
+      "line": 18334,
+      "content_sha256": "89d893075a311e7a6beb66a9670ddc732730ecf21d571b435527e3dd68a7fd62",
+      "captured_text": "## U745\n\n**id**\n\nU745\n\n**date**\n\n2026-09-24\n\n**titre**\n\nMaster plan commun et stratégies de matching\n\n**texte**\n\nOk pour rester sur un master plan dans matching qui fait tout mais il va falloir détailler les stratégies.\nCe qu'on a appelé décision et qui est très (peut être trop détaillé), ne devrait pas être les stratégies de matching ?\n\n**contexte et portée**\n\nAccord sur le master plan commun dans Matching, dans la frontière établie avec promesse, Orders et APS. Demande de réexamen de la maille des capacités Decision et de description des stratégies ; pas de validation anticipée de la fusion de toutes les décisions, ni des stratégies précises à proposer."
+    },
+    {
+      "id": "U746",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u746",
+      "line": 18358,
+      "content_sha256": "a63ee90475dad5ff875c09d77beae1e7a8a841a0f3c9164a0b0628f78e8d28e9",
+      "captured_text": "## U746\n\n**id**\n\nU746\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉvaluer la portée du refactoring Matching\n\n**texte**\n\nCa fait un gros refacto ?\n\n**contexte et portée**\n\nQuestion sur l’ampleur ; aucun accord supplémentaire sur une cible."
+    },
+    {
+      "id": "U747",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u747",
+      "line": 18381,
+      "content_sha256": "106e7326b6264a12a4e2df149bc0d904de654fa82866c8e5d4e0edffe34fbc11",
+      "captured_text": "## U747\n\n**id**\n\nU747\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPréparer une cible Matching inspirée de Microsoft\n\n**texte**\n\nNotre inspiration pour ce sous domaine est clairement microsoft.\n\nPrépare un refacto à valider\n\n**contexte et portée**\n\nMicrosoft devient la référence principale de conception de ce sous-domaine. Préparer une proposition complète et traçable, soumise à validation ; ne pas appliquer le refactoring au modèle canonique ni publier."
+    },
+    {
+      "id": "U748",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u748",
+      "line": 18406,
+      "content_sha256": "907ccf43c5a5bd7a6f80f8b720e052b1ef819a09e694957e2d90296992611106",
+      "captured_text": "## U748\n\n**id**\n\nU748\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer catégories et capacités dans Matching\n\n**texte**\n\n3 capacités seulement pour un sous domaine aussi complexe ?\n\n3 capacité ca fait penser à 3 catégories plutot.\n\n**contexte et portée**\n\nCorrection de maille : les trois regroupements proposés ressemblent à des catégories. Revoir la cible plutôt que réduire artificiellement le nombre de capacités."
+    },
+    {
+      "id": "U749",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u749",
+      "line": 18431,
+      "content_sha256": "c0d3f374a4ac7bc132b97c743b89a6002a6955cb2f75fb1cd700263a25c7cdbb",
+      "captured_text": "## U749\n\n**id**\n\nU749\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la cible Matching à trois catégories et dix capacités\n\n**texte**\n\nC'est bcp mieux. Je valide\n\n**contexte et portée**\n\nAccord sur la proposition complète présentée après U748 : catégories Master Plan Management, Supply Matching, Policy Optimization ; dix capacités nommées ; stratégies comme comportements, exemples de Supply Assignment, Replenishment et Stock Redistribution ; master plan commun. Cet accord remplace la cible à trois capacités U747. Les descriptions et migrations nouvelles non présentées gardent leur qualification proposée. Préparation à valider : cet accord est enregistré dans le dossier, sans publication ni application immédiate implicite."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -14363,6 +14555,86 @@
       "captured_text": "## CMP283\n\nU724 — Codex, 24 septembre 2026. Audit des onze capacités et trente-six Behaviors d’Order Management, backlog après U723. [Proposition et couverture des fiches](../modeles/backlog/order-management-review-U724.yaml). Les preuves des sept familles sont conservées ; recherches ciblées ELM724–733 sur les frontières remises en cause. Cycle de vie : Oracle actions d’Orders et Microsoft approbation/confirmation ; promesse : Oracle Check Availability et Microsoft Order promising ; consignation : Microsoft et SAP Business ByDesign ; structuration : Microsoft échéanciers et Oracle shipment sets ; archivage : Microsoft SCM et Business Central. Aucun document ne prescrit la taxonomie Action/Management de FLOW ni la suppression de ces capacités.\n\nRecommandation : sept familles Action, Order Structuring et Order Visibility Knowledge. Absorber Lifecycle, Fulfillment Commitment et Archiving en préservant leurs responsabilités explicites ; ne pas déplacer l’engagement dans le calcul Promising. Supplier Return devient Supplier Return Order. Corriger les liens obsolètes vers D15 et Apply Plan décrit comme Supply Assignment. Bénéfice : cohérence avec Service Order Management, ownership lisible et moins de doublons ; compromis : maintenir le contrat commun sans perdre les dimensions et contraintes spécifiques. Audit analytique terminé, proposition non appliquée ; la liste d’actions reste dans le backlog unique."
     },
     {
+      "id": "CMP284",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp284",
+      "line": 2723,
+      "content_sha256": "a0de79be03e6a405ed9432abee34bc9df5202199663066b6c166e84441a65d3b",
+      "captured_text": "## CMP284\n\nU726/U727 — Codex, 24 septembre 2026. Audit des six capacités et six comportements d’Inventory Management dans le backlog après U725 ; proposition détaillée et deux documents primaires par fiche dans [l’analyse](../modeles/backlog/inventory-management-review-U726.yaml). ELM734–745 consultés ; ELM726/727 relus pour Promising. Microsoft regroupe états, intégration, réservations et ATP dans Inventory Visibility ; Oracle distingue également transactions, vues et Promising. Les regroupements produits ne sont pas un consensus de capacités. Ledger est étayé par Oracle Item Ledger et Microsoft Item Ledger Entries ; le type Knowledge est un choix FLOW, qui inclut établir et actualiser des faits.\n\nRecommandation : distinguer Tracking, Ledger et Visibility ; conserver Stocktaking et Reservation ; remplacer le regroupement Consigned Inventory Management par Inventory Ownership Transfer avec ses deux déclencheurs contractuels existants. Répartir les autres suites dans les responsabilités déjà présentes. Inventory Visibility expose une position actuelle ou projetée, Supply Visibility les apports qualifiés, Promising une réponse calculée à une commande. Maintenir Promising autonome compte tenu des capacités, transports et contraintes économiques. Bénéfice : supprimer les doubles responsabilités et corriger les dépendances inversées ; compromis : documenter précisément l’autorisation des écritures et la provenance des projections. Propositions non appliquées, aucune équivalence de taxonomie ni réalisation Beaumanoir présumée.\n\n\n**Réexamen U728 de CMP284 :** le calcul ne suffit pas à classer Promising en Decision. Microsoft Inventory Visibility inclut ATP (ELM734), et Order promising décrit ATP/CTP comme calculs de quantités, dates et capacités (ELM727) ; Oracle Check Availability sépare exploration et mise en effet (ELM726). Le modèle actuel décrit ATP et CTP comme établissement de possibilités : Knowledge est recommandé. PTP dit explicitement sélectionner : il ne devient Knowledge qu’en limitant son périmètre à l’évaluation économique et en réattribuant la sélection. La séparation du sous-domaine repose sur l’étendue des ressources et le résultat rendu, non sur le seul type Decision. Hypothèses non appliquées ; ces sources ne prescrivent aucune taxonomie universelle des trois capacités.\n\n\n**Réexamen U730–U732 de CMP284 :** Laurent demande la réintégration de Promising dans Inventory Management. Deux catégories proposées : Inventory Foundation (tenue et fiabilité de la référence) et Availability & Promising (vues et possibilités de satisfaction). Relecture des documents ELM734 Microsoft Inventory Visibility, ELM727 Microsoft Order promising et ELM726 Oracle Check Availability le 24 septembre 2026 : Microsoft rassemble états/réservations/ATP ; CTP est documenté dans Order promising, pas prouvé comme fonctionnalité du produit Inventory Visibility. Oracle conserve un périmètre Global Order Promising pour explorer les possibilités. La séparation référence/exploitation est pertinente pour FLOW, pas une nomenclature standard du marché. Inventory Foundation est notre libellé ; Availability et Promising sont attestés, leur association en catégorie est locale. Le regroupement ne fusionne ni les capacités ni les responsabilités d’arbitrage et d’engagement. Répartition PTP et Delivery Schedule à finaliser ; ne pas perpétuer la recommandation précédente de D18 autonome."
+    },
+    {
+      "id": "CMP285",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp285",
+      "line": 2736,
+      "content_sha256": "b2aa2b9f281c27e74f72789b8d1daec1cac7a59c089ba390e410d3053eac0da4",
+      "captured_text": "## CMP285\n\nU735 — Codex, 24 septembre 2026. ELM746–748 : Microsoft relie CTP au calcul de dates tenant compte des matériaux et capacités, avec variantes immédiate et batch ; le planning génère/ajuste des commandes planifiées. Oracle Database Promising couvre make/buy en CTP selon paramètres. La présence de nouveaux achats dans un scénario CTP est donc attestée ; leur exclusion universelle serait infondée. Pour FLOW, recommandation de distinguer faisabilité Knowledge, proposition/arbitrage opérationnel Matching et tenue de Purchase Order. BHV075 reste un calcul conditionnel ; BHV077 de rééquilibrage des engagements mérite reprise par Matching. Bénéfice : éviter un second moteur d’arbitrage dans Inventory ; compromis : conserver dans CTP les hypothèses d’apports nouveaux et coopérer avec les autorités externes sans recréer un APS. Frontière non appliquée. Promise Selection remplace le nom Delivery Schedule Decision selon accord U735 ; terme FLOW, responsabilité de sélection appuyée par les sources existantes de la fiche, sans standard lexical revendiqué.\n\n\n**Application U736 de CMP285 :** frontière CTP / Matching appliquée ; BHV077 devient Order Rescheduling sous Demand & Supply Optimization Planning. Le terme simplifié est une proposition FLOW, éclairée par les actions de rescheduling Oracle (ELM726), sans prétendre que leur portée produit correspond exactement à l’étude de décalages entre commandes. L’accord porte sur le déplacement et la frontière, pas sur une adoption lexicale préalable du nom nouveau."
+    },
+    {
+      "id": "CMP286",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp286",
+      "line": 2744,
+      "content_sha256": "e4e5cfe680a52c795354ae97d4ec3bb5fb039df540e9c1fd58e89512c2c962bc",
+      "captured_text": "## CMP286\n\nU737 — Codex, 24 septembre 2026. ELM749/750, deux cours SAP primaires, rapprochés du BHV077 Order Rescheduling sous D05.f. Point commun : réexamen des commandes en concurrence et de leurs dates/quantités selon offre et priorités. BOP SAP est plus large : stratégies de confirmation, contrôles ATP, redistribution, simulation et mise à jour des documents. FLOW répartit ces responsabilités ; BHV077 seul ne représente pas tout BOP. Order Rescheduling est plus simple mais peut sous-représenter la dimension quantité ; Backorder Processing serait un nom de processus pertinent si sa portée est explicitée, sans le limiter aux retards ni déplacer tout BOP dans ce Behavior. Comparaison seulement, pas de nouveau renommage. SAP Help Portal a fourni un extrait de recherche mais son ouverture n’a pas renvoyé de corps ; les cours constituent la preuve effectivement lue."
+    },
+    {
+      "id": "CMP287",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp287",
+      "line": 2749,
+      "content_sha256": "ba65f6b52937296d9de7162f61aac376eec4d64ce3968707fa87406e11bcf4c0",
+      "captured_text": "## CMP287\n\nU738 — Codex, 24 septembre 2026. ELM748 relu, ELM751/752 consultés, ELM746 réutilisé. Microsoft intègre au master planning la couverture et les ajustements de dates/quantités des ordres d’approvisionnement ; CTP articule calcul des dates et planning selon sa modalité. SAP BOP (ELM749/750) met l’accent sur la redistribution des confirmations des besoins : recouvrement fonctionnel, pas équivalence complète. Pour FLOW, D05.f construit et ajuste déjà le master plan de matching ; BHV006 Simulation & Analysis étudie alternatives/impacts, BHV016 Adjust Plan prépare une révision cohérente. Recommandation : absorber l’étude des décalages BHV077 dans ces Behaviors existants plutôt que chercher un nom autonome ; conserver priorités, protections, quantités, dates et autorisations. Ne pas importer tout le MRP Microsoft ni absorber l’APS externe. Proposition seulement, aucun retrait appliqué."
+    },
+    {
+      "id": "CMP288",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp288",
+      "line": 2754,
+      "content_sha256": "f0f42e893b2c9ff12a5f8128759e60246d7dcf91adcd855a51e8fedd1940dea0",
+      "captured_text": "## CMP288\n\nU739 — Codex, 24 septembre 2026. ELM748/751 réutilisés et ELM753–755 consultés. Intuition d’un calcul commun gouverné par des règles étayée : choix du master plan, horizons et filtres, groupes de couverture et exceptions article, modèles de priorité. La configuration est distribuée, pas un unique paramètre policy attesté qui sélectionnerait un mode BOP. Priority-based planning n’émet pas d’action messages pour ses codes de couverture : ne pas déduire une combinabilité illimitée. SAP BOP est lui-même configurable par segments, variantes et stratégies (ELM749/750), donc aucune supériorité de souplesse Microsoft démontrée. Pour FLOW, recommander un calcul/réexamen du master plan de matching avec périmètre, objectifs, politiques et contraintes explicites ; cas de pénurie, réaffectation et réapprovisionnement décrits comme usages et règles, sans capacité autonome par scénario. Cela n’impose ni moteur logiciel unique ni API, et n’absorbe pas le planning APS externe. Proposition non appliquée."
+    },
+    {
+      "id": "CMP289",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp289",
+      "line": 2759,
+      "content_sha256": "9309bfd17e281484b92e3fc5bd2dc8d069170f0c4a9639af5d32241422dd9b37",
+      "captured_text": "## CMP289\n\nU740 — Codex, 24 septembre 2026. Clarification utilisateur : BOP répond à quantité/date de confirmation ; ARun à l’affectation supply/demand. ELM749/750 et ELM756 montrent des résultats distincts et une intégration : une variante BOP peut utiliser ATP ou Supply Assignment comme méthode de contrôle. Les mêmes fonctions de lancement/configuration ne suppriment pas la frontière métier. Pour FLOW : calcul/sélection de réponse dans Availability & Promising, confirmation dans Orders, choix et application des affectations dans Matching. Corrige la recommandation trop générale d’absorption du réexamen dans le master plan : seuls les arbitrages et changements d’affectation collectifs y relèvent ; réexaminer une promesse ne requiert pas systématiquement un nouvel arbitrage global. Aucune modification du modèle appliquée dans cette clarification."
+    },
+    {
+      "id": "CMP290",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp290",
+      "line": 2764,
+      "content_sha256": "e8a0e24ed3e3aa4d4667764a8faa03b7835209223720f553f10c14959bc45173",
+      "captured_text": "## CMP290\n\nU741–U744 — Codex, 24 septembre 2026. Relecture Microsoft : ELM734/743 (Inventory Visibility/réservation), ELM727 (Order promising), ELM746 (CTP), ELM748/751/753–755 (master planning, actions et paramètres), ELM757–760 (pegging, marking, séquence, protection des confirmations et pools). Microsoft articule disponibilité, calcul de dates de commande et planification de couverture ; CTP mobilise le planning, sans absorber ATP dans le master plan. Pegging rapproche les apports et les besoins ; marking stabilise certains liens ; les réservations restent explicitement prises en compte. Le master plan porte aussi la génération de nouveaux approvisionnements : il dépasse donc le master plan de matching FLOW. Des règles de séquencement et de préservation des confirmations gouvernent les recalculs, mais ces documents ne démontrent pas un mode universel policy=BOP ni un équivalent complet de SAP BOP. Pour FLOW, conserver la distinction réexamen de promesses (Availability & Promising), affectation/réaffectation (Matching) et tenue de la confirmation (Orders). Une priorisation collective ou une mise en attente peut résulter des deux premières responsabilités : ce seul effet ne suffit pas à les fusionner. Correction explicite de la portée trop large de CMP287/288 et de la formulation contrôle pour ARun. Analyse documentée, catalogue non modifié."
+    },
+    {
+      "id": "CMP291",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp291",
+      "line": 2769,
+      "content_sha256": "d1b03d8c50654adc38d31c995b03365e91dd65198dff91cfdc4112249f95b2ab",
+      "captured_text": "## CMP291\n\nU745 — Codex, 24 septembre 2026. Proposition de simplification des capacités Decision du Matching, comparée aux sources Microsoft déjà consultées ELM748/753/754/758/759 : calcul commun, règles de couverture, priorités, séquences de mobilisation et protection de la couverture confirmée. Ces fonctions justifient la distinction résultat du plan / stratégie de calcul / politique gouvernée, sans imposer une taxonomie de capacités FLOW. Fulfillment Plan Decision paraît redondant avec la production du master plan D05.f ; Order Prioritization peut devenir un mécanisme de ce calcul. Initial Stocking, Replenishment et Redistribution décrivent plutôt des finalités ou familles de décisions ; les variantes BHV083/084 (besoins datés/cible), BHV024/025 (rééquilibrage/consolidation) fournissent des points de départ concrets pour les comportements du calcul. Ne pas simplement renommer chaque Decision en Strategy. Les cibles calculées, protections recommandées et conditions de réservation restent des résultats distincts de leurs politiques actives : simplifier leur présentation ne doit pas supprimer leur calcul ni attribuer automatiquement à Policies les arbitrages contextuels. Proposition : une capacité responsable du calcul du plan avec des comportements de stratégie combinables, gouvernance/pilotage et application explicités ; aucune nouvelle hiérarchie ni fusion canonique appliquée. Bénéfice : supprimer les pseudo-autonomies décisionnelles ; compromis : rendre les résultats et contraintes de chaque stratégie lisibles et testables. Stratégies détaillées et répartition finale à valider."
+    },
+    {
+      "id": "CMP292",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp292",
+      "line": 2774,
+      "content_sha256": "9c3bc46a9fdad43de1f1e8386fc9df6ec37bc052f108f9398a7391033f945674",
+      "captured_text": "## CMP292\n\nU747 — Codex, 24 septembre 2026. Proposition Matching dans modeles/backlog/matching-refactoring-U747.yaml, comparée à ELM748/751/753/754/757–760, ELM421/412 relus et correspondances existantes des 9 capacités/22 comportements. Microsoft devient la référence principale de conception, conformément à Laurent. Recommandation de 3 capacités : Master Planning (pilotage du plan, appuis Master plans et Action messages), Matching Optimization (affectations et apports sous stratégies, appuis Coverage settings, pegging et séquence de couverture) et Supply Policy Optimization (recommandations de paramètres, appuis Safety stock journal, Coverage settings, allocation et réservation). Les deux derniers noms et leur regroupement sont des propositions FLOW, pas des modules Microsoft attestés. Microsoft ne démontre pas dans ces sources un optimiseur complet de protections/réservations ni une couverture fashion équivalente de consolidation ; les responsabilités existantes conservent leurs preuves complémentaires. La proposition maintient explicitement les cibles APS, la promesse et son réexamen, la tenue des Orders, la réservation et l’exécution dans leurs périmètres respectifs. Le master plan Microsoft demeure plus large que le périmètre FLOW. 31 successions explicites et 98 relations inventoriées ; aucune fusion canonique appliquée. La validation doit porter sur la cible complète et les frontières, non sur le dernier nom discuté seulement."
+    },
+    {
+      "id": "CMP293",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp293",
+      "line": 2779,
+      "content_sha256": "9e1cec77bae5d33f191ee88d3bad6c931eea47eddf3d62fb9fd561ba64debe3c",
+      "captured_text": "## CMP293\n\nU748/U749 — Codex, 24 septembre 2026. Correction validée de la cible CMP292 : les trois ensembles deviennent des catégories, avec dix capacités autonomes et un master plan commun. Réutilisation des sources Microsoft ELM748/751/753/757/758/759 et des comparaisons existantes. La documentation décrit les mécanismes de calcul, le pegging, les recommandations et le paramétrage ; elle ne prescrit pas une taxonomie métier à trois ni à dix capacités. FLOW retient la maille des responsabilités et place les stratégies en comportements. Master Plan Management regroupe Master Planning, Simulation & Analysis et Plan Application ; Supply Matching regroupe Demand Prioritization, Supply Assignment, Replenishment et Stock Redistribution ; Policy Optimization regroupe Inventory Target Optimization, Group Protection Optimization et Reservation Policy Optimization. Les preuves fashion complémentaires restent utiles. Accord U749 enregistré sur la structure et les familles de stratégies effectivement présentées ; descriptions, types et migrations non présentés restent proposés. La réduction à trois capacités de CMP292 est remplacée, sans rétablir une fragmentation par paramètre. Le modèle canonique n’est pas modifié par cet enregistrement de validation."
+    },
+    {
       "id": "CMP003",
       "path": "marche/comparaisons.md",
       "anchor": "",
@@ -20225,6 +20497,222 @@
       "line": 5661,
       "content_sha256": "47eac0f074e89aab932d94247c2da9a4576bc4ccc89decd5618a66401cbee559",
       "captured_text": "### ELM733\n\nMKT14 — Microsoft, [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents). Page mise à jour le 15 octobre 2025. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction / Archive / Restore. Reformulation : Versions archivées, consultation et restauration conditionnelle sont distinctes ; ne pas confondre archivage, clôture et réouverture. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM734",
+      "path": "marche/elements.md",
+      "anchor": "elm734",
+      "line": 5666,
+      "content_sha256": "c213a595a04f437cee7c24e02cce80c1c309ec75084691df11c7a4deea0f1217",
+      "captured_text": "### ELM734\n\nMKT14 — Microsoft, [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility). Page évolutive, 2025-08-14. Consulté le 24 septembre 2026 ; passages : Global view / Central adjustment / Soft reservation / ATP. Reformulation : Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM735",
+      "path": "marche/elements.md",
+      "anchor": "elm735",
+      "line": 5671,
+      "content_sha256": "109950ba6b17c74d2c4d7c6cec4d90b44fd9954dbcf00fd23b75f829df486f8b",
+      "captured_text": "### ELM735\n\nMKT14 — Microsoft, [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals). Page évolutive. Consulté le 24 septembre 2026 ; passages : Movement / Transfer / Counting. Reformulation : Les journaux enregistrent des effets de stock ; les ajustements de comptage suivent une instruction métier. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM736",
+      "path": "marche/elements.md",
+      "anchor": "elm736",
+      "line": 5676,
+      "content_sha256": "0f817f8ee35b97a0227cd4f488dc933469a2fd2a1e37bb6a13950c2352c0ea2d",
+      "captured_text": "### ELM736\n\nMKT20 — Oracle, [Item Ledger Information](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html). JD Edwards EnterpriseOne 9.2. Consulté le 24 septembre 2026 ; passages : Item Ledger CARDEX. Reformulation : Historique détaillé des transactions par article, distinct de leur simple réception technique. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM737",
+      "path": "marche/elements.md",
+      "anchor": "elm737",
+      "line": 5681,
+      "content_sha256": "b9957b46a2abbe80fc4b1a8d7a72fe94900ad9e7f8294d4dd6bf10a89755b997",
+      "captured_text": "### ELM737\n\nMKT14 — Microsoft, [Design details: Inventory posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting). Business Central, page évolutive. Consulté le 24 septembre 2026 ; passages : Entry types. Reformulation : Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM738",
+      "path": "marche/elements.md",
+      "anchor": "elm738",
+      "line": 5686,
+      "content_sha256": "5595ad9e1cce9392fb4052c4424d7a9e933ad70c00e86ae8c1e1df48b86fa59b",
+      "captured_text": "### ELM738\n\nMKT42 — GS1, [EPCIS and CBV Implementation Guideline](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/). 2.0 ratifiée mars 2023. Consulté le 24 septembre 2026 ; passages : 5.2 / 5.9. Reformulation : Propriété et possession distinguées dans les événements ; erreurs et corrections explicites. Standard de partage de faits, pas catalogue de capacités. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM739",
+      "path": "marche/elements.md",
+      "anchor": "elm739",
+      "line": 5691,
+      "content_sha256": "4813612dd1047302984dbe02d3c05580d11d466a33771e810d2b7e85aa7836a1",
+      "captured_text": "### ELM739\n\nMKT14 — Microsoft, [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Page évolutive, 2026-05-06. Consulté le 24 septembre 2026 ; passages : Ownership change journal / Owner dimension. Reformulation : Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant de production, pas toutes les consignations fashion. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM740",
+      "path": "marche/elements.md",
+      "anchor": "elm740",
+      "line": 5696,
+      "content_sha256": "b5ce816ffbff892d15777809aadeb484924bfe731873146e273f07294f75b2a0",
+      "captured_text": "### ELM740\n\nMKT20 — Oracle, [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Aging process / Transfer to Owned. Reformulation : Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM741",
+      "path": "marche/elements.md",
+      "anchor": "elm741",
+      "line": 5701,
+      "content_sha256": "144ecab1519867a883d35dce9136a0e581c0b9f7396b5efd4a22832e72f9aacd",
+      "captured_text": "### ELM741\n\nMKT14 — Microsoft, [Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting). Page évolutive. Consulté le 24 septembre 2026 ; passages : Create / Spot counting / Resolve differences. Reformulation : Demande de comptage, résultat et revue des écarts distingués. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM742",
+      "path": "marche/elements.md",
+      "anchor": "elm742",
+      "line": 5706,
+      "content_sha256": "e904454ff1e5ffe3295c5be48d9e0bc5b96374bab8d28017a36d64a992d85efc",
+      "captured_text": "### ELM742\n\nMKT20 — Oracle, [Mobile Supply Chain Applications User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm). EBS 12.2. Consulté le 24 septembre 2026 ; passages : Cycle Counting / Physical Inventory. Reformulation : Comptages cycliques et inventaire physique rapprochent quantités enregistrées et constatées ; réalisation produit distincte de la responsabilité FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM743",
+      "path": "marche/elements.md",
+      "anchor": "elm743",
+      "line": 5711,
+      "content_sha256": "b3447f82c0df11ab702aa0349d18f5bac740558e4100c4b771d052a966c0dfb9",
+      "captured_text": "### ELM743\n\nMKT14 — Microsoft, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations). Page évolutive. Consulté le 24 septembre 2026 ; passages : Sample use case / offsets. Reformulation : Réservation réduit les quantités disponibles pour réservation sans sortie physique ; consommation et libération évitent le double compte. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM744",
+      "path": "marche/elements.md",
+      "anchor": "elm744",
+      "line": 5716,
+      "content_sha256": "d8e1b1c6511d154fa5dff3700f3a7327449fdb21c0144076698a493cfea2448e",
+      "captured_text": "### ELM744\n\nMKT20 — Oracle, [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Reservation types / Supply source types. Reformulation : Réservations à maille haute ou détaillée, pouvant porter sur stock ou apports attendus ; aucun blocage physique universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM745",
+      "path": "marche/elements.md",
+      "anchor": "elm745",
+      "line": 5721,
+      "content_sha256": "dd1ed4818951c6dfb05c4bd4a178554b23ca561cba7b012a09c35ded3b3c7c93",
+      "captured_text": "### ELM745\n\nMKT20 — Oracle, [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). Fusion 25D. Consulté le 24 septembre 2026 ; passages : Summary / Quantities / Supply and Demand types. Reformulation : Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM746",
+      "path": "marche/elements.md",
+      "anchor": "elm746",
+      "line": 5726,
+      "content_sha256": "ad711aa386894519a4a3d1cebef6e21cccd576dbaa72c663cb193f58dedfe9ff",
+      "captured_text": "### ELM746\n\nMKT14 — Microsoft, [Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp). Page évolutive. Consulté le 24 septembre 2026 ; passages : Near real-time CTP / Comparison / Batch CTP. Reformulation : CTP prend en compte matériaux et capacités ; variantes immédiate et batch, celle-ci liée au plan dynamique. Ne pas assimiler dates confirmées du produit à l’autorité de confirmation FLOW. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735."
+    },
+    {
+      "id": "ELM747",
+      "path": "marche/elements.md",
+      "anchor": "elm747",
+      "line": 5731,
+      "content_sha256": "9660c449f5a528c07da9b774eedb819f3c1ec8683c59d650ad65ad17f23dd7c3",
+      "captured_text": "### ELM747\n\nMKT20 — Oracle, [Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/overview-of-database-centric-order-promising.html). Fusion 26A. Consulté le 24 septembre 2026 ; passages : Product Management / Create Supply. Reformulation : Le flux CTP peut utiliser des règles make/buy selon les paramètres ; appui à la possibilité d’approvisionnement nouveau, pas obligation de regrouper décision et connaissance. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735."
+    },
+    {
+      "id": "ELM748",
+      "path": "marche/elements.md",
+      "anchor": "elm748",
+      "line": 5736,
+      "content_sha256": "ad7f1703cf454468651e01e0d67c82307c5323b5706f39ff9cefcf7ec9122020",
+      "captured_text": "### ELM748\n\nMKT14 — Microsoft, [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans). Page évolutive. Consulté le 24 septembre 2026 ; passages : Master plans / Positive and negative days. Reformulation : Le planning peut générer ou ajuster des planned purchase orders pour couvrir les besoins ; ne pas confondre proposition planifiée et achat ferme. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735."
+    },
+    {
+      "id": "ELM749",
+      "path": "marche/elements.md",
+      "anchor": "elm749",
+      "line": 5741,
+      "content_sha256": "2188a00ee6bcd454e45496c1beff3f7cca4bb3d5f14f3b41d04525af8ae11460",
+      "captured_text": "### ELM749\n\nMKT13 — SAP, [Outlining Backorder Processing for Advanced ATP in SAP S/4HANA](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-backorder-processing-for-advanced-atp-in-sap-s-4hana). Cours évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Passages Configure BOP Segments, Confirmation Strategies, Configure BOP Variant. Reformulation : prioriser et redistribuer les confirmations de quantités et dates, avec stratégies et simulation ; fonctions ATP ou Supply Assignment selon configuration. Limite : périmètre produit SAP, pas équivalence de capacité FLOW ni preuve installée. CMP286, U737."
+    },
+    {
+      "id": "ELM750",
+      "path": "marche/elements.md",
+      "anchor": "elm750",
+      "line": 5745,
+      "content_sha256": "bab8eaa3a91d4db0b50d8f3f4c27d0565a7ea5fa0e0e29fba3be500809222355",
+      "captured_text": "### ELM750\n\nMKT13 — SAP, [Using Advanced Available-To-Promise (aATP) in SAP S/4HANA](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5). Cours évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Passage Backorder Processing / Confirmation strategies. Reformulation : les stratégies peuvent améliorer, dégrader ou retirer des confirmations en quantité/date. Limite : second document primaire SAP, sans constituer un consensus multiéditeur. CMP286, U737."
+    },
+    {
+      "id": "ELM751",
+      "path": "marche/elements.md",
+      "anchor": "elm751",
+      "line": 5750,
+      "content_sha256": "40a5d0c89f3e476991e9862bb15e449cb3669f37d3dfa670f90a7d820275ab27",
+      "captured_text": "### ELM751\n\nMKT14 — Microsoft, [Action messages](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages). Page mise à jour le 26 mars 2026, consultée le 24 septembre 2026 ; introduction et Select action messages. Reformulation : master planning propose avance, report, augmentation ou diminution d’ordres existants planifiés, approuvés ou affermis, notamment d’approvisionnement. L’utilisateur décide d’appliquer les changements. Limite : ne prouve pas une redistribution des confirmations de commandes clients équivalente à SAP BOP. CMP287, U738."
+    },
+    {
+      "id": "ELM752",
+      "path": "marche/elements.md",
+      "anchor": "elm752",
+      "line": 5754,
+      "content_sha256": "5a327a5f0435e96db953e070f009f293210b73b1d717c2f915ef2d77299b402e",
+      "captured_text": "### ELM752\n\nMKT14 — Microsoft, [Delays](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/delays). Page mise à jour le 25 août 2025, consultée le 24 septembre 2026 ; introduction et Limited delays. Reformulation : master planning calcule des dates réalisables selon délais, matériaux et capacités ; liens avec les ajustements d’ordres et limites de propagation. Limite : date calculée distincte de la confirmation commerciale FLOW ; fonction produit, pas capacité imposée. CMP287, U738."
+    },
+    {
+      "id": "ELM753",
+      "path": "marche/elements.md",
+      "anchor": "elm753",
+      "line": 5759,
+      "content_sha256": "40a631c300be50edd77bc88904df12d062c80b74bdfda44f5bc7dc948d424997",
+      "captured_text": "### ELM753\n\nMKT14 — Microsoft, [Coverage settings](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings). Documentation évolutive consultée le 24 septembre 2026 ; passages : Coverage groups / Item coverage. Reformulation : Règles de couverture par groupe et article, avec valeurs par défaut et dérogations. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739."
+    },
+    {
+      "id": "ELM754",
+      "path": "marche/elements.md",
+      "anchor": "elm754",
+      "line": 5764,
+      "content_sha256": "0aca22fd4b7fb92f4a8f4fc26a7b7817951e594fe1c36dc205e7c50bc8bed0dd",
+      "captured_text": "### ELM754\n\nMKT14 — Microsoft, [Priority-based planning](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/priority-based-planning). Documentation évolutive consultée le 24 septembre 2026 ; passages : Planning priority models / Coverage group / Action messages. Reformulation : Modèles de priorité affectés aux groupes de couverture ; les codes de couverture en priority-based planning ne génèrent pas d’action messages. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739."
+    },
+    {
+      "id": "ELM755",
+      "path": "marche/elements.md",
+      "anchor": "elm755",
+      "line": 5769,
+      "content_sha256": "a793bc41f58404ebdd9eca00b303f62dbafe2732569720f3991037b77d3676c9",
+      "captured_text": "### ELM755\n\nMKT14 — Microsoft, [Run planning for a subset of items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters). Documentation évolutive consultée le 24 septembre 2026 ; passages : Plan filters / Runtime filters. Reformulation : Le périmètre du calcul est restreint par filtres de plan et de lancement ; pas preuve d’un paramètre universel policy. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739."
+    },
+    {
+      "id": "ELM756",
+      "path": "marche/elements.md",
+      "anchor": "elm756",
+      "line": 5774,
+      "content_sha256": "79f7c48be9aa8ce667524179412a08d6b4f62f323db13cedb349b3c4fc2bbfc6",
+      "captured_text": "### ELM756\n\nMKT13 — SAP, [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4). Cours S/4HANA Fashion évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Reformulation : Supply Assignment affecte les apports aux besoins ; les contrôles de release examinent les quantités affectées face aux exigences. Limite : périmètre fonctionnel SAP, pas équivalence des protections ou réservations FLOW. CMP289, U740."
+    },
+    {
+      "id": "ELM757",
+      "path": "marche/elements.md",
+      "anchor": "elm757",
+      "line": 5779,
+      "content_sha256": "49938194c0412c15810e6f8c9c64635221eddae3bba4163ea86d5f2d27ba1556",
+      "captured_text": "### ELM757\n\nMKT14 — Microsoft, [Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et options de marquage. Reformulation : Le pegging est le lien de couverture recalculable par master planning ; le marking est plus durable, reste révocable et est respecté par le calcul. Les réservations existantes sont prises en compte. Ne pas assimiler tout lien de planification à une réservation. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM758",
+      "path": "marche/elements.md",
+      "anchor": "elm758",
+      "line": 5784,
+      "content_sha256": "83030e77e201da512d848c561fc061802ac49de176b3d31232e436029f7846c4",
+      "captured_text": "### ELM758\n\nMKT14 — Microsoft, [Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Control the pegging sequence used during master planning. Reformulation : La séquence de couverture peut privilégier des réceptions futures compatibles afin de préserver le stock pour les commandes proches. Paramètres au niveau plan, article ou groupe ; pas un unique argument universel policy. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM759",
+      "path": "marche/elements.md",
+      "anchor": "elm759",
+      "line": 5789,
+      "content_sha256": "7cd7da7760693b69a20094deb9e0ca685db250d0190a455e3e9918d3cde62f4b",
+      "captured_text": "### ELM759\n\nMKT14 — Microsoft, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction, configuration et Interaction with approved planned orders and the freezing time fence. Reformulation : Une fonctionnalité paramétrable protège les besoins, ordres planifiés et liens de couverture associés aux lignes confirmées entre calculs, jusqu’aux niveaux de nomenclature. Protection liée aux confirmations, distincte des seuls horizons de gel. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM760",
+      "path": "marche/elements.md",
+      "anchor": "elm760",
+      "line": 5794,
+      "content_sha256": "9983ba9aa5fd607b7421992c4cef991118baf746bdc670f4153e1437d6d55caa",
+      "captured_text": "### ELM760\n\nMKT14 — Microsoft, [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et concepts d’allocation. Reformulation : Protection de quantités pour des groupes, canaux ou clients, avec consommation du pool. Allocation ne signifie pas ici automatiquement affectation d’une réception identifiée à une ligne de commande. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
     },
     {
       "id": "ELM003",

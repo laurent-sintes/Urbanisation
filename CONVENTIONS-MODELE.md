@@ -329,3 +329,8 @@ Price Book est le huitième sujet Master Data : tarifs de produits et services, 
 ## Order Management — U725
 
 Sept familles Action : Sales Order, Purchase Order, Transfer Order, Return Order, Supplier Return Order, Consignment Fill-up Order et Consignment Pick-up Order. Order Structuring conserve filiation et ensembles ; Order Visibility Knowledge restitue la connaissance du carnet. Lifecycle, Fulfillment Commitment, Archiving et leurs neuf Behaviors transverses sont retirés comme nœuds ; leurs responsabilités restent dans le contrat du sous-domaine et les familles. Promising calcule, Matching arbitre, les Orders portent leurs engagements. Les identifiants retirés ne sont pas réutilisables.
+
+
+## Inventory Management — U733
+
+Order Promising (D18) est réintégré dans Inventory Management (D01). Deux catégories : Inventory Foundation et Availability & Promising. Tracking intègre ; Ledger tient les faits ; Visibility compose les positions ; ATP/CTP/PTP établissent la connaissance des possibilités et conditions. Delivery Schedule Decision recommande un échéancier ; Matching arbitre les ressources partagées ; les Orders confirment les engagements. Ownership Transfer remplace Consigned Inventory Management, avec variantes consommation/échéance ; les autres suites sont réparties entre responsabilités existantes. D18 et BHV065 sont retirés sans réutilisation des identifiants.

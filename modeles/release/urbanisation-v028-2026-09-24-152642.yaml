@@ -1,0 +1,11 @@
+schema_version: 1.0.0
+model_id: flow-urbanism
+space: release
+version: 2026-09-24.9
+revision: 28
+published_at: '2026-09-24T15:26:42.161887Z'
+last_modified: '2026-09-24T15:26:33.168603Z'
+path: 2026-09-24.9/model.yaml
+sha256: 6685ec6b34412b475a7eef64e4415f93a9c6244b7ed8f4467d6d4c2139c51394
+release_notes: 2026-09-24.9/release-notes.md
+release_notes_sha256: c66bc43fa7afe8c1dbc8d70e8f584109abead3641ee18a076e65d285b97c1100

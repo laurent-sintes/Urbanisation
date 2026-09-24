@@ -5661,3 +5661,136 @@ MKT14 — Microsoft, [Archive Dynamics 365 Supply Chain Management Sales orders 
 ### ELM733
 
 MKT14 — Microsoft, [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents). Page mise à jour le 15 octobre 2025. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction / Archive / Restore. Reformulation : Versions archivées, consultation et restauration conditionnelle sont distinctes ; ne pas confondre archivage, clôture et réouverture. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM734
+
+MKT14 — Microsoft, [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility). Page évolutive, 2025-08-14. Consulté le 24 septembre 2026 ; passages : Global view / Central adjustment / Soft reservation / ATP. Reformulation : Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM735
+
+MKT14 — Microsoft, [Inventory journals](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-journals). Page évolutive. Consulté le 24 septembre 2026 ; passages : Movement / Transfer / Counting. Reformulation : Les journaux enregistrent des effets de stock ; les ajustements de comptage suivent une instruction métier. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM736
+
+MKT20 — Oracle, [Item Ledger Information](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html). JD Edwards EnterpriseOne 9.2. Consulté le 24 septembre 2026 ; passages : Item Ledger CARDEX. Reformulation : Historique détaillé des transactions par article, distinct de leur simple réception technique. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM737
+
+MKT14 — Microsoft, [Design details: Inventory posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting). Business Central, page évolutive. Consulté le 24 septembre 2026 ; passages : Entry types. Reformulation : Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM738
+
+MKT42 — GS1, [EPCIS and CBV Implementation Guideline](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/). 2.0 ratifiée mars 2023. Consulté le 24 septembre 2026 ; passages : 5.2 / 5.9. Reformulation : Propriété et possession distinguées dans les événements ; erreurs et corrections explicites. Standard de partage de faits, pas catalogue de capacités. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM739
+
+MKT14 — Microsoft, [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Page évolutive, 2026-05-06. Consulté le 24 septembre 2026 ; passages : Ownership change journal / Owner dimension. Reformulation : Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant de production, pas toutes les consignations fashion. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM740
+
+MKT20 — Oracle, [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Aging process / Transfer to Owned. Reformulation : Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM741
+
+MKT14 — Microsoft, [Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting). Page évolutive. Consulté le 24 septembre 2026 ; passages : Create / Spot counting / Resolve differences. Reformulation : Demande de comptage, résultat et revue des écarts distingués. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM742
+
+MKT20 — Oracle, [Mobile Supply Chain Applications User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm). EBS 12.2. Consulté le 24 septembre 2026 ; passages : Cycle Counting / Physical Inventory. Reformulation : Comptages cycliques et inventaire physique rapprochent quantités enregistrées et constatées ; réalisation produit distincte de la responsabilité FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM743
+
+MKT14 — Microsoft, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations). Page évolutive. Consulté le 24 septembre 2026 ; passages : Sample use case / offsets. Reformulation : Réservation réduit les quantités disponibles pour réservation sans sortie physique ; consommation et libération évitent le double compte. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM744
+
+MKT20 — Oracle, [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Reservation types / Supply source types. Reformulation : Réservations à maille haute ou détaillée, pouvant porter sur stock ou apports attendus ; aucun blocage physique universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM745
+
+MKT20 — Oracle, [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). Fusion 25D. Consulté le 24 septembre 2026 ; passages : Summary / Quantities / Supply and Demand types. Reformulation : Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727.
+
+
+### ELM746
+
+MKT14 — Microsoft, [Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp). Page évolutive. Consulté le 24 septembre 2026 ; passages : Near real-time CTP / Comparison / Batch CTP. Reformulation : CTP prend en compte matériaux et capacités ; variantes immédiate et batch, celle-ci liée au plan dynamique. Ne pas assimiler dates confirmées du produit à l’autorité de confirmation FLOW. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735.
+
+
+### ELM747
+
+MKT20 — Oracle, [Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/overview-of-database-centric-order-promising.html). Fusion 26A. Consulté le 24 septembre 2026 ; passages : Product Management / Create Supply. Reformulation : Le flux CTP peut utiliser des règles make/buy selon les paramètres ; appui à la possibilité d’approvisionnement nouveau, pas obligation de regrouper décision et connaissance. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735.
+
+
+### ELM748
+
+MKT14 — Microsoft, [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans). Page évolutive. Consulté le 24 septembre 2026 ; passages : Master plans / Positive and negative days. Reformulation : Le planning peut générer ou ajuster des planned purchase orders pour couvrir les besoins ; ne pas confondre proposition planifiée et achat ferme. Limite : documentation produit, sans équivalence de capacités ni preuve de réalisation Beaumanoir. CMP285, U735.
+
+
+### ELM749
+
+MKT13 — SAP, [Outlining Backorder Processing for Advanced ATP in SAP S/4HANA](https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-backorder-processing-for-advanced-atp-in-sap-s-4hana). Cours évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Passages Configure BOP Segments, Confirmation Strategies, Configure BOP Variant. Reformulation : prioriser et redistribuer les confirmations de quantités et dates, avec stratégies et simulation ; fonctions ATP ou Supply Assignment selon configuration. Limite : périmètre produit SAP, pas équivalence de capacité FLOW ni preuve installée. CMP286, U737.
+
+### ELM750
+
+MKT13 — SAP, [Using Advanced Available-To-Promise (aATP) in SAP S/4HANA](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5). Cours évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Passage Backorder Processing / Confirmation strategies. Reformulation : les stratégies peuvent améliorer, dégrader ou retirer des confirmations en quantité/date. Limite : second document primaire SAP, sans constituer un consensus multiéditeur. CMP286, U737.
+
+
+### ELM751
+
+MKT14 — Microsoft, [Action messages](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages). Page mise à jour le 26 mars 2026, consultée le 24 septembre 2026 ; introduction et Select action messages. Reformulation : master planning propose avance, report, augmentation ou diminution d’ordres existants planifiés, approuvés ou affermis, notamment d’approvisionnement. L’utilisateur décide d’appliquer les changements. Limite : ne prouve pas une redistribution des confirmations de commandes clients équivalente à SAP BOP. CMP287, U738.
+
+### ELM752
+
+MKT14 — Microsoft, [Delays](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/delays). Page mise à jour le 25 août 2025, consultée le 24 septembre 2026 ; introduction et Limited delays. Reformulation : master planning calcule des dates réalisables selon délais, matériaux et capacités ; liens avec les ajustements d’ordres et limites de propagation. Limite : date calculée distincte de la confirmation commerciale FLOW ; fonction produit, pas capacité imposée. CMP287, U738.
+
+
+### ELM753
+
+MKT14 — Microsoft, [Coverage settings](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings). Documentation évolutive consultée le 24 septembre 2026 ; passages : Coverage groups / Item coverage. Reformulation : Règles de couverture par groupe et article, avec valeurs par défaut et dérogations. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739.
+
+
+### ELM754
+
+MKT14 — Microsoft, [Priority-based planning](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/priority-based-planning). Documentation évolutive consultée le 24 septembre 2026 ; passages : Planning priority models / Coverage group / Action messages. Reformulation : Modèles de priorité affectés aux groupes de couverture ; les codes de couverture en priority-based planning ne génèrent pas d’action messages. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739.
+
+
+### ELM755
+
+MKT14 — Microsoft, [Run planning for a subset of items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/plan-filters). Documentation évolutive consultée le 24 septembre 2026 ; passages : Plan filters / Runtime filters. Reformulation : Le périmètre du calcul est restreint par filtres de plan et de lancement ; pas preuve d’un paramètre universel policy. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739.
+
+
+### ELM756
+
+MKT13 — SAP, [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4). Cours S/4HANA Fashion évolutif, édition précise non indiquée ; consulté le 24 septembre 2026. Reformulation : Supply Assignment affecte les apports aux besoins ; les contrôles de release examinent les quantités affectées face aux exigences. Limite : périmètre fonctionnel SAP, pas équivalence des protections ou réservations FLOW. CMP289, U740.
+
+
+### ELM757
+
+MKT14 — Microsoft, [Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et options de marquage. Reformulation : Le pegging est le lien de couverture recalculable par master planning ; le marking est plus durable, reste révocable et est respecté par le calcul. Les réservations existantes sont prises en compte. Ne pas assimiler tout lien de planification à une réservation. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744.
+
+
+### ELM758
+
+MKT14 — Microsoft, [Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Control the pegging sequence used during master planning. Reformulation : La séquence de couverture peut privilégier des réceptions futures compatibles afin de préserver le stock pour les commandes proches. Paramètres au niveau plan, article ou groupe ; pas un unique argument universel policy. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744.
+
+
+### ELM759
+
+MKT14 — Microsoft, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction, configuration et Interaction with approved planned orders and the freezing time fence. Reformulation : Une fonctionnalité paramétrable protège les besoins, ordres planifiés et liens de couverture associés aux lignes confirmées entre calculs, jusqu’aux niveaux de nomenclature. Protection liée aux confirmations, distincte des seuls horizons de gel. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744.
+
+
+### ELM760
+
+MKT14 — Microsoft, [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et concepts d’allocation. Reformulation : Protection de quantités pour des groupes, canaux ou clients, avec consommation du pool. Allocation ne signifie pas ici automatiquement affectation d’une réception identifiée à une ligne de commande. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744.
