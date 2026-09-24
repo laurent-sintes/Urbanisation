@@ -2571,3 +2571,41 @@ Codex avait conclu trop vite « une capacité, deux comportements » sous Consig
 **correction**
 
 SAP classe Issue comme type de Sales Order et peut le créer sur déclaration de consommation. U604 regroupe les variantes mais n’adopte pas une capacité canonique autonome ; U606 réinterroge précisément cette maille. Recommandation révisée : intention de vente portée par Sales Order, variantes métier de consignation explicites, effets de propriété appliqués par Inventory. Les documents et obligations envers le propriétaire restent traçables sans deuxième besoin client artificiel. Il ne s’agit pas uniquement d’un document juridique chez SAP. Aucune mutation canonique automatique.
+
+
+## C118
+
+**id**
+
+C118
+
+**sources**
+
+U687, U689, U692, U695, U696, U707
+
+**constat**
+
+Codex a limité la portée de la validation à la composition des Orders, maintenu les dix familles et le retrait de VAS en proposition non appliquée dans une annexe, puis publié un modèle conservant VAS. L’annexe était appelée backlog unique mais son contenu validé ne figurait pas dans le modèle canonique.
+
+**correction**
+
+U707 rectifie cette interprétation. Appliquer le découpage dans model.yaml ; l’annexe conserve les preuves et pointe vers les éléments canoniques, sans liste concurrente de travaux en attente. Retirer Value-Added Service Order, reclasser les comportements existants et expliciter les dix familles fashion. Préserver les publications historiques et les verbatims ; ne pas antidater la correction ni étendre l’accord aux descriptions rédigées après validation.
+
+
+## C119
+
+**id**
+
+C119
+
+**sources**
+
+U708, U709, U692, U701, U706
+
+**constat**
+
+La release 2026-09-24.3 reproduit tous les nœuds publiables de sa source, sans différence des fields. Les omissions précèdent la publication : accords réduits au dernier échange et idées complètes laissées en annexes. Le bilan de release ne rendait pas visible leur non-application.
+
+**correction**
+
+U709 impose la portée cumulative des accords. Appliquer les lots entrepôt, transport et services documentaires/financiers dans le canonique, en conservant les conditions d’applicabilité et la distinction cible/réalisation. Capturer les champs présentés sur l’état final, sans adopter les descriptions ultérieures. Les annexes de ces lots portent des contrôles de livraison vers les identifiants et rattachements canoniques ; la préparation expose les lots et bloque un lot déclaré appliqué incomplet. Ce contrôle explicite ne prétend pas déduire automatiquement le sens d’une conversation ni couvrir rétroactivement toutes les anciennes études.

@@ -5651,6 +5651,30 @@
       "captured_text": "## U706\n\n**id**\n\nU706\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider le pilotage et le suivi des processus exécutés à distance\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la réponse à U705 : Process Orchestration coordonne déclenchement, attente et poursuite ; Operations Tracking avec Process Tracking capte avancement et résultats distants ; Service Order Management conserve demande et engagements et actualise le cycle. L’accusé de réception ne vaut pas réalisation ; le retour distingue réussite, résultat partiel et échec. Aucune nouvelle capacité de suivi nécessaire. Cet accord ne vaut pas adoption globale des quatre familles et noms proposés en U702, ni publication."
     },
     {
+      "id": "U707",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u707",
+      "line": 17392,
+      "content_sha256": "44e8b02cc407cddaa40f1cb2fea57cf60e1da8d25c0d26b55dd24e528c731e84",
+      "captured_text": "## U707\n\n**id**\n\nU707\n\n**date**\n\n2026-09-24\n\n**titre**\n\nCorriger la non-application des familles de prestations d’entrepôt validées\n\n**texte**\n\nJe pense qu'il y a un gros problème avec la gestion de la backlog.\nOn avait validé des prestations d'entrepots, la suppression de Value Added etc. Je ne retrouve rien...\n\n**contexte et portée**\n\nLaurent corrige la lecture antérieure des accords : les familles d’entrepôt et le remplacement de Value-Added Service Order devaient être appliqués. Corrige les réserves enregistrées par Codex en U692–U696 pour ce découpage. Application des dix familles fashion déjà présentées, intégration de Repacking dans Packing et retrait de light touch des descriptions structurantes. Préserver les identifiants des éléments conservés et l’historique des éléments retirés. Les descriptions nouvelles et correspondances détaillées restent des rédactions proposées ; aucune nouvelle release, commit ou push déduits."
+    },
+    {
+      "id": "U708",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u708",
+      "line": 17416,
+      "content_sha256": "83f9e53a8eebe2772a405e2753f397217e4d26111c7a8a89607c0352095b2751",
+      "captured_text": "## U708\n\n**id**\n\nU708\n\n**date**\n\n2026-09-24\n\n**titre**\n\nVérifier les omissions dans la chaîne de release\n\n**texte**\n\nJe crois qu'il n'y a pas que ça qui a été oublié. Je pense qu'il y a un bug dans le processus de release.\n\n**contexte et portée**\n\nÉlargit la correction U707 à la recherche des pertes entre accords, backlog canonique et publication. Ne demande pas de publier un état intermédiaire ni de transformer toutes les propositions en accords."
+    },
+    {
+      "id": "U709",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u709",
+      "line": 17439,
+      "content_sha256": "bb977e7049b3ba9888449ad5c566ef143f3342574a5671b4581808f657fb416f",
+      "captured_text": "## U709\n\n**id**\n\nU709\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPortée cumulative de la validation dans une discussion\n\n**texte**\n\nLe problème est quand on a une conservation qui fait évoluer le modèle et qu'il y a plusieurs step, lorsque je dit \"je valide\", je ne valide pas que le dernier échange, je valide l'idée complète.\n\n**contexte et portée**\n\nRègle explicite : un accord porte sur la proposition complète construite et précisée dans la discussion, pas seulement le dernier message. Les corrections récentes et conditions explicites restent applicables ; ni les pistes abandonnées ni les détails inventés ensuite ne sont adoptés. Réexaminer U692 (familles fashion et composition), U701 (transport et classement) et U706 (familles documentaires, douanières, financières et exécution distante) selon cette portée cumulative. Correction de l’interprétation restrictive de Codex, sans antidater les captures ni prétendre à une réalisation Beaumanoir."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -8937,6 +8961,22 @@
       "line": 2557,
       "content_sha256": "f7c79cb05fd9c3f009628a1904f7c4b6e37849672667bfb63102f94d5cc8ad54",
       "captured_text": "## C117\n\n**id**\n\nC117\n\n**sources**\n\nU604, U606, CMP262, ELM628, ELM629, ELM630\n\n**constat**\n\nCodex avait conclu trop vite « une capacité, deux comportements » sous Consignment Issue Order. Cela conservait une capacité de demande distincte sans justifier l’intention par rapport à Sales Order.\n\n**correction**\n\nSAP classe Issue comme type de Sales Order et peut le créer sur déclaration de consommation. U604 regroupe les variantes mais n’adopte pas une capacité canonique autonome ; U606 réinterroge précisément cette maille. Recommandation révisée : intention de vente portée par Sales Order, variantes métier de consignation explicites, effets de propriété appliqués par Inventory. Les documents et obligations envers le propriétaire restent traçables sans deuxième besoin client artificiel. Il ne s’agit pas uniquement d’un document juridique chez SAP. Aucune mutation canonique automatique."
+    },
+    {
+      "id": "C118",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c118",
+      "line": 2576,
+      "content_sha256": "e5114a2cfada4eb61ecb4bd3105edfc2e0a514a92f68261c0affd66c2c15ecb8",
+      "captured_text": "## C118\n\n**id**\n\nC118\n\n**sources**\n\nU687, U689, U692, U695, U696, U707\n\n**constat**\n\nCodex a limité la portée de la validation à la composition des Orders, maintenu les dix familles et le retrait de VAS en proposition non appliquée dans une annexe, puis publié un modèle conservant VAS. L’annexe était appelée backlog unique mais son contenu validé ne figurait pas dans le modèle canonique.\n\n**correction**\n\nU707 rectifie cette interprétation. Appliquer le découpage dans model.yaml ; l’annexe conserve les preuves et pointe vers les éléments canoniques, sans liste concurrente de travaux en attente. Retirer Value-Added Service Order, reclasser les comportements existants et expliciter les dix familles fashion. Préserver les publications historiques et les verbatims ; ne pas antidater la correction ni étendre l’accord aux descriptions rédigées après validation."
+    },
+    {
+      "id": "C119",
+      "path": "connaissance/04-corrections.md",
+      "anchor": "c119",
+      "line": 2595,
+      "content_sha256": "dd257f796a2c76b42f0cadacb1f896696de823b1d49547b8c73c18b7eaf926e6",
+      "captured_text": "## C119\n\n**id**\n\nC119\n\n**sources**\n\nU708, U709, U692, U701, U706\n\n**constat**\n\nLa release 2026-09-24.3 reproduit tous les nœuds publiables de sa source, sans différence des fields. Les omissions précèdent la publication : accords réduits au dernier échange et idées complètes laissées en annexes. Le bilan de release ne rendait pas visible leur non-application.\n\n**correction**\n\nU709 impose la portée cumulative des accords. Appliquer les lots entrepôt, transport et services documentaires/financiers dans le canonique, en conservant les conditions d’applicabilité et la distinction cible/réalisation. Capturer les champs présentés sur l’état final, sans adopter les descriptions ultérieures. Les annexes de ces lots portent des contrôles de livraison vers les identifiants et rattachements canoniques ; la préparation expose les lots et bloque un lot déclaré appliqué incomplet. Ce contrôle explicite ne prétend pas déduire automatiquement le sens d’une conversation ni couvrir rétroactivement toutes les anciennes études."
     },
     {
       "id": "P01",
@@ -14145,6 +14185,14 @@
       "line": 2674,
       "content_sha256": "aae74ed87d22597b3914d988f9ee17f0c5731bc13a7a153f79b16bb9963f5dd4",
       "captured_text": "## CMP277\n\n**État comparé :** backlog du 24 septembre 2026, D14 Service Catalog, D07.b Service Order Lifecycle, Service Order Management et Fulfilment Orchestration. **Sources :** ELM698–705, ASCM, SAP, Oracle et DHL. **Relation :** recouvrement partiel et appui sémantique. **Commun :** documents logistiques, procédures douanières et orchestration de la facturation/paiement contribuent au processus SCM. **Différence :** SCOR décrit le processus de bout en bout ; les éditeurs séparent traitement financier et orchestration. Aucune taxonomie universelle des Orders établie.\n\n**Proposition Codex :** étendre les services orchestrés aux documents, au dédouanement et à la facturation ; encaissement seulement pour une demande active confiée à FLOW. Deux documents primaires distincts au moins par proposition, portées et limites dans [l’annexe du backlog unique](../modeles/backlog/document-financial-services-U702.yaml). **Bénéfice :** rendre explicites résultats, engagements et dépendances au-delà des seuls mouvements physiques. **Compromis :** distinguer production documentaire, procédure et effet financier ; pas d’absorption de toute la Finance ni de création systématique d’Order pour une sortie automatique. **Statut :** proposé, non adopté ; Codex, 2026-09-24 ; aucune preuve de réalisation Beaumanoir. U703 autorise l’étude de l’élargissement, pas son adoption."
+    },
+    {
+      "id": "CMP278",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp278",
+      "line": 2681,
+      "content_sha256": "d3be2f092250498e62875ad02721387b144c1140d2b3ee5259b3c82848dad370",
+      "captured_text": "## CMP278\n\nBacklog corrigé U707/C118 le 24 septembre 2026 par Codex : dix familles fashion dans Service Order Management ; VAS retiré, Repacking sous Packing. Appuis primaires déjà consultés ELM667–680, deux documents pertinents par nouvelle fiche. Les sources décrivent les prestations ; les noms composés Order et la responsabilité de tenue de demandes sont une adaptation FLOW, pas un standard interéditeurs. Résultats distincts : conditionnement, composition, information appliquée, aspect, propreté, réparation, personnalisation et constat. Bénéfice : rendre les engagements visibles sans fourre-tout. Compromis : aucune capacité par technique opérateur ; pas de preuve installée Beaumanoir. Familles confirmées U707 ; descriptions et comparaisons proposées."
     },
     {
       "id": "CMP003",

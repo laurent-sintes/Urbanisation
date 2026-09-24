@@ -35,6 +35,16 @@ class GitPublicationTests(unittest.TestCase):
     def run_release(self, **options):
         return release.run(self.root, self.version, ['PUB-TEST-NEW'], verify_site=False, **options)
 
+    def test_incomplete_declared_delivery_blocks_publication(self):
+        self.editorial()
+        workflow.write(self.models / 'backlog/delivery.yaml', {'publication_delivery': {
+            'state': 'applied', 'summary': 'Approved family must be delivered',
+            'required_nodes': [{'id': 'missing-approved-order'}]}})
+        before = workflow.resolve_release(self.models / 'release')['version']
+        result = self.run_release(activate=True)
+        self.assertEqual(result['status'], 'blocked')
+        self.assertEqual(workflow.resolve_release(self.models / 'release')['version'], before)
+
     def test_one_gate_and_historical_read_after_retirement(self):
         self.editorial()
         before = workflow.read(self.models / 'release' / self.base / 'model.json')

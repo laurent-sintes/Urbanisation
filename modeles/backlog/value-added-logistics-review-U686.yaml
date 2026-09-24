@@ -1,8 +1,10 @@
 id: VAS-REVIEW-U686
 date: '2026-09-24'
-status: research_closed_U696_backlog_proposals_pending
+status: research_closed_U696_fashion_applied_U707
 source_refs:
 - U686
+- U707
+- U709
 scope: Inventaire approfondi textile, mode, chaussures, retail et e-commerce ; extensions techniques et services périphériques
   pour tester les frontières.
 exhaustiveness: Couverture étendue du corpus, pas exhaustivité universelle. Taxonomie analytique locale ; une variante peut
@@ -593,12 +595,12 @@ recommendations:
   - ELM674
   reason: Livrable de constat plutôt que transformation. Un contrôle intégré au VAS reste une condition de résultat ; ne pas
     créer systématiquement un ordre supplémentaire.
-canonical_changes: false
+canonical_changes: true
 release_changes: false
 fashion_refinement_U687:
   source: U687
   date: '2026-09-24'
-  status: proposal_not_adopted
+  status: applied_U707
   author: Codex
   accepted_direction: Maille famille et filtre fashion ; détails opérationnels conservés comme preuves et exemples.
   scope: Vêtements, chaussures et accessoires ; flux neufs et retours.
@@ -671,12 +673,20 @@ fashion_refinement_U687:
   - Refurbishment
   - Reconditioning
   - Postponement
-  canonical_changes: false
-  migration_note: Si validé, préserver les identifiants existants utiles, reparentages explicites et historique du retrait
-    de la capacité VAS ; ne pas dupliquer Packing Order. Aucun déplacement réalisé ici.
+  canonical_changes: true
+  migration_note: 'Correction U707 appliquée : VAS retiré ; familles et comportements conservés/reclassés dans model.yaml.'
+  canonical_ids:
+    Labeling Order: service-order-labeling
+    Packing Order: service-order-packing
+    Kitting Order: service-order-kitting
+    Garment Finishing Order: service-order-garment-finishing
+    Cleaning Order: service-order-cleaning
+    Repair & Alteration Order: service-order-repair-alteration
+    Personalization Order: service-order-personalization
+    Inspection Order: service-order-inspection
 light_touch_U688:
   source: U688
-  status: recommendation
+  status: applied_U707
   position: Dans le sens employé ici, light touch qualifie la légèreté d’une intervention ; ce n’est pas une responsabilité
     métier ni une famille homogène de résultats. Recommander de le retirer des définitions structurantes et de conserver les
     familles de prestations concrètes.
@@ -687,8 +697,8 @@ light_touch_U688:
     catégorie normalisée universelle light touch. La recherche ciblée complémentaire ne permet pas de poser cette équivalence
     universelle.
   model_occurrence: service-order-vas.fields.scope ; la définition emploie également traitements légers.
-  scope_limit: Proposition de vocabulaire uniquement ; pas d’application du découpage U687 ni de changement canonique. Les
-    verbatims historiques restent conservés.
+  scope_limit: Retiré des descriptions structurantes par retrait de la capacité VAS ; occurrences de sources et verbatims
+    historiques conservées.
 role: Annexe de preuves et propositions du backlog unique ; aucun pilotage de travail dans les rapports d’audit.
 closure_U696:
   source_refs:
@@ -704,8 +714,65 @@ backlog_pending:
   - U688
   - U689
   proposal_location: fashion_refinement_U687 et light_touch_U688 dans cette annexe
-  scope: Dix familles fashion avec Picking et Cross-Docking, remplacement de VAS, intégration de Repacking dans Packing, retrait
-    du vocabulaire light touch ; conserver Service Order Lifecycle.
-  status: proposed_not_applied
-  editorial_followup: Descriptions détaillées et nom Service Order Lifecycle restent proposés ; aucune extension automatique
-    aux services adjacents.
+  scope: Découpage fashion appliqué dans model.yaml ; cette annexe conserve les preuves.
+  status: resolved_U707
+  editorial_followup: Les descriptions détaillées restent proposées sans constituer un second catalogue de travail.
+application_U707:
+  correction: C118
+  date: '2026-09-24'
+  retired_ids:
+  - service-order-vas
+  release_status: not_published
+  agreement_scope: Familles et rattachements confirmés ; descriptions rédigées après correction proposées.
+publication_delivery:
+  state: applied
+  source_refs:
+  - U709
+  summary: Dix familles fashion ; remplacement de VAS et Repacking sous Packing.
+  required_nodes:
+  - id: service-order-labeling
+    fields:
+      name: Labeling Order
+    parent: subdomain-service-orders
+  - id: service-order-packing
+    fields:
+      name: Packing Order
+    parent: subdomain-service-orders
+  - id: service-order-kitting
+    fields:
+      name: Kitting Order
+    parent: subdomain-service-orders
+  - id: service-order-garment-finishing
+    fields:
+      name: Garment Finishing Order
+    parent: subdomain-service-orders
+  - id: service-order-cleaning
+    fields:
+      name: Cleaning Order
+    parent: subdomain-service-orders
+  - id: service-order-repair-alteration
+    fields:
+      name: Repair & Alteration Order
+    parent: subdomain-service-orders
+  - id: service-order-personalization
+    fields:
+      name: Personalization Order
+    parent: subdomain-service-orders
+  - id: service-order-inspection
+    fields:
+      name: Inspection Order
+    parent: subdomain-service-orders
+  - id: service-order-picking
+    fields:
+      name: Picking Order
+    parent: subdomain-service-orders
+  - id: service-order-cross-docking
+    fields:
+      name: Cross-Docking Order
+    parent: subdomain-service-orders
+  - id: vas-repacking
+    parent: service-order-packing
+  - id: vas-labeling-relabeling
+    parent: service-order-labeling
+  absent_nodes:
+  - service-order-vas

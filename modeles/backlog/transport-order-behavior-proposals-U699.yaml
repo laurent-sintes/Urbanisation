@@ -1,11 +1,12 @@
 id: TRANSPORT-VARIANTS-U699
-status: proposed_not_adopted
+status: applied_U709
 date: '2026-09-24'
 author: Codex
 source_refs:
 - U698
 - U699
 - U700
+- U709
 parent_capability: service-order-transport
 canonical_authority: modeles/backlog/model.yaml
 method_refs:
@@ -234,7 +235,7 @@ proposed_behaviors:
   - ELM693
 capacity_alternative:
   name: Transport Booking Order
-  status: conditional_proposal_not_adopted
+  status: adopted_U709_with_applicability_condition
   definition: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération,
     avant ou indépendamment des instructions détaillées de déplacement.
   decision: Recommander une capacité distincte si FLOW porte cet engagement de capacité pour lui-même. Si le booking est seulement
@@ -258,6 +259,7 @@ capacity_alternative:
   - Choix de l’offre et coordination des départs restent Fulfilment ; aucun lien un-à-un imposé entre booking et déplacements.
   open_business_fact: Le domaine FLOW commande-t-il de la capacité transport avant ou indépendamment des instructions détaillées
     de déplacement ? Aucun fait Beaumanoir déduit des sources marché.
+  canonical_id: service-order-transport-booking
 evaluated_other_splits:
 - candidate: Road / Ocean / Air / Rail Orders
   position: Pas de capacités distinctes au seul titre du mode ; exigences et variantes de service.
@@ -282,6 +284,37 @@ not_behaviors:
 - 'Tendering, carrier selection, route optimization : décisions et coordination existantes, pas variantes d’Order'
 - 'Tracking et preuve de livraison : informations mobilisées, sans recopier les capacités de suivi'
 - 'Création/modification/annulation seules : cycle commun, pas comportement par étape CRUD'
-canonical_behavior_changes: false
+canonical_behavior_changes: true
 audit_reopened: false
 release_changed: false
+publication_delivery:
+  state: applied
+  source_refs:
+  - U709
+  summary: 'Transport : cinq comportements et réservation autonome de capacité, avec conditions d’applicabilité.'
+  required_nodes:
+  - id: transport-multi-stop
+    fields:
+      name: Multi-Stop Transport
+    parent: service-order-transport
+  - id: transport-multi-leg
+    fields:
+      name: Multi-Leg Transport
+    parent: service-order-transport
+  - id: transport-scheduled
+    fields:
+      name: Scheduled Transport
+    parent: service-order-transport
+  - id: transport-appointments
+    fields:
+      name: Pickup & Delivery Appointments
+    parent: service-order-transport
+  - id: transport-rescheduling-redirection
+    fields:
+      name: Delivery Rescheduling & Redirection
+    parent: service-order-transport
+  - id: service-order-transport-booking
+    fields:
+      name: Transport Booking Order
+    parent: subdomain-service-orders
+  absent_nodes: []

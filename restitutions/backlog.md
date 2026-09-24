@@ -258,10 +258,21 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 | --- | --- | --- | --- | --- | --- | --- |
 | D07.b | Service Order Lifecycle | management | En cours d’instruction | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. | Conserver des engagements de prestation traçables jusqu’à leur conclusion sans confondre activation, acceptation et réalisation. | En cours d’instruction |
 | service-order-picking | Picking Order | action | En cours d’instruction — portée : name | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
-| service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
-| service-order-vas | Value-Added Service Order | action | En cours d’instruction — portée : name | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-cross-docking | Cross-Docking Order | action | En cours d’instruction — portée : name | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-transport | Transport Order | action | En cours d’instruction — portée : name, definition | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-labeling | Labeling Order | action | En cours d’instruction — portée : name | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-kitting | Kitting Order | action | En cours d’instruction — portée : name | Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-garment-finishing | Garment Finishing Order | action | En cours d’instruction — portée : name | Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-cleaning | Cleaning Order | action | En cours d’instruction — portée : name | Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-repair-alteration | Repair & Alteration Order | action | En cours d’instruction — portée : name | Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-personalization | Personalization Order | action | En cours d’instruction — portée : name | Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-inspection | Inspection Order | action | En cours d’instruction — portée : name | Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-transport-booking | Transport Booking Order | action | En cours d’instruction — portée : name, definition | Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-document-production | Document Production Order | action | En cours d’instruction — portée : name, definition | Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux destinataires attendus. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-customs-clearance | Customs Clearance Order | action | En cours d’instruction — portée : name, definition | Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la procédure et au traitement des écarts. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-billing | Billing Order | action | En cours d’instruction — portée : name, definition | Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-payment-collection | Payment Collection Order | action | En cours d’instruction — portée : name, definition | Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
 
 **Justification de la décomposition — D01.d :** Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils de comptage ne créent pas de comportement supplémentaire.
 
@@ -532,16 +543,39 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV064 | Aging-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer l’acquisition à l’échéance d’une durée contractuelle. |
 | BHV065 | Consignment Exit | En cours d’instruction — portée : name, definition | Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. |
 
-**Justification de la décomposition — service-order-vas :** Distinguer les variantes dont les exigences et écarts de conformité changent la gestion de l’ordre : information et version appliquées pour l’étiquetage, transformation du conditionnement existant pour le reconditionnement. Ce sont des variantes de prise en charge métier, pas des gestes opérateur ni des paramètres de catalogue.
+**Justification de la décomposition — service-order-packing :** Distinguer la transformation d’un conditionnement existant du conditionnement initial, avec consignes de reprise et écarts propres ; aucun changement de composition des ensembles.
 
-## Comportements — Value-Added Service Order
+## Comportements — Packing Order
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| vas-repacking | Repacking | En cours d’instruction — portée : name | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
+
+**Justification de la décomposition — service-order-transport :** Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise. Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
+
+## Comportements — Transport Order
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| transport-multi-stop | Multi-Stop Transport | En cours d’instruction — portée : name, definition | Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites d’un changement ou d’une réalisation partielle. |
+| transport-multi-leg | Multi-Leg Transport | En cours d’instruction — portée : name, definition | Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires et résultat final convenus. |
+| transport-scheduled | Scheduled Transport | En cours d’instruction — portée : name, definition | Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme ou d’un départ manqué. |
+| transport-appointments | Pickup & Delivery Appointments | En cours d’instruction — portée : name, definition | Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement. |
+| transport-rescheduling-redirection | Delivery Rescheduling & Redirection | En cours d’instruction — portée : name, definition | Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse. |
+
+**Justification de la décomposition — service-order-labeling :** Distinguer le remplacement d’informations et les consignes de version des autres formes de marquage, notamment RFID et antivol.
+
+## Comportements — Labeling Order
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
 | vas-labeling-relabeling | Labeling / Relabeling | En cours d’instruction — portée : name | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
-| vas-repacking | Repacking | En cours d’instruction — portée : name | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
 
 ## Exemples concrets — universe-supply Supply Chain Orchestration
 
@@ -12384,147 +12418,75 @@ Références : ELM659, CMP273, U682.
 
 ## Sources d’inspiration — service-order-packing Packing Order
 
-Packing Order rend explicite la responsabilité FLOW.
+Packing Order distingue le résultat de prestation confié.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work) — Packing work | Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
-| Notre modèle — Packing Order | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
+| [Ryder](https://www.ryder.com/en-us/e-commerce/value-added-services) — Packing Order | Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau. | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Bleckmann](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Packing Order | Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau. | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Packing Order | Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau. | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
 
 ### Ce que nous en retenons
 
-- Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+- Repacking est une variante descriptive de Packing Order ; son identifiant est conservé.
 
-### Exemple fictif
+### Exemple fictif fashion
 
-Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des colis.
+Passer un lot de vêtements pliés sur cintres, sans changer la composition des articles.
 
-**Ce qui se passe.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
 
-**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
 
-Source : [Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work).
+Source : [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services).
 
-Références : ELM656, U682.
-
-### Détails des références
-
-#### Microsoft — Packing work
-
-Packing work for packing outbound containers and processing shipments · Travail interne WMS · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
-
-**Points communs.** Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles.
-
-**Différences.** Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
-
-**Position FLOW.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
-
-[Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work) — Documentation évolutive, version globale non figée, consulté le 2026-09-23.
-
-**Passage.** Introduction ; Set up a location for packing work
-
-**Limite de preuve.** Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply.
-
-Références : ELM656, CMP273, U682.
-
-#### Oracle — Shipment Request / Shipment Confirmation
-
-Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
-
-**Pourquoi cette définition.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
-
-**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
-
-**Différences.** Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
-
-**Position FLOW.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
-
-[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
-
-**Passage.** Explanation of callouts, étapes 1 à 3
-
-**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
-
-Références : ELM659, CMP273, U682.
-
-## Sources d’inspiration — service-order-vas Value-Added Service Order
-
-Value-Added Service Order rend explicite la responsabilité FLOW.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
-| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
-| Notre modèle — Value-Added Service Order | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
-
-### Ce que nous en retenons
-
-- SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
-
-### Exemple fictif
-
-Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
-
-**Ce qui se passe.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
-
-**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
-
-Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
-
-Références : ELM658, U682.
+Références : ELM669, U707.
 
 ### Détails des références
 
-#### SAP — VAS order
+#### Ryder — E-Commerce Services — Value Added Services
 
-Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
+E-Commerce Services — Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+**Pourquoi ce terme.** Packing Order : composition de nom FLOW pour une famille documentée par le marché.
 
-**Pourquoi cette définition.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+**Pourquoi cette définition.** Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats.
 
-**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+**Points communs.** Liste détaillée des préparations textile et prestations e-commerce.
 
-**Différences.** SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
 
-**Position FLOW.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+**Position FLOW.** Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats.
 
-[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
+[E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
 
-**Passage.** Use
+**Passage.** E-commerce Value-Added Services; Apparel Value-Added Services
 
-**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
 
-Références : ELM658, CMP273, U682.
+Références : ELM669, CMP278, U707.
 
-#### Oracle — Picking ; Bulk Picking ; Value Added Services
+#### Bleckmann — Value Added Services
 
-Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
+Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+**Pourquoi ce terme.** Packing Order : composition de nom FLOW pour une famille documentée par le marché.
 
-**Pourquoi cette définition.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+**Pourquoi cette définition.** Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats.
 
-**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
+**Points communs.** Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
 
-**Différences.** SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
 
-**Position FLOW.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+**Position FLOW.** Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats.
 
-[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
+[Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
 
-**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+**Passage.** A complete range; Reconditioning; Personalisation; In-house photo studio
 
-**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
 
-Références : ELM661, CMP273, U682.
+Références : ELM670, CMP278, U707.
 
 ## Sources d’inspiration — service-order-cross-docking Cross-Docking Order
 
@@ -12813,6 +12775,1014 @@ Oracle Transportation Management · Objet ou interface de produit TMS · Recouvr
 **Limite de preuve.** Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ; ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments.
 
 Références : ELM684, CMP275, U698.
+
+## Sources d’inspiration — service-order-labeling Labeling Order
+
+Labeling Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Ryder](https://www.ryder.com/en-us/e-commerce/value-added-services) — Labeling Order | Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue. | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Advanced Supply Chain](https://advancedsupplychain.com/rfid/) — Labeling Order | Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue. | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Labeling Order | Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue. | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Regroupe des variantes ; pas un ordre distinct pour chaque technologie.
+
+### Exemple fictif fashion
+
+Réétiqueter 200 vestes selon le tarif accepté et vérifier la version appliquée.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services).
+
+Références : ELM669, U707.
+
+### Détails des références
+
+#### Ryder — E-Commerce Services — Value Added Services
+
+E-Commerce Services — Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Labeling Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Liste détaillée des préparations textile et prestations e-commerce.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** E-commerce Value-Added Services; Apparel Value-Added Services
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM669, CMP278, U707.
+
+#### Advanced Supply Chain — RFID
+
+RFID · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Labeling Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Pose, encodage, association des données et vérification de lecture des étiquettes.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[RFID](https://advancedsupplychain.com/rfid/) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Our Comprehensive RFID Labelling Solutions
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM676, CMP278, U707.
+
+## Sources d’inspiration — service-order-kitting Kitting Order
+
+Kitting Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Advanced Supply Chain](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/) — Kitting Order | Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés. | Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317761.htm) — Kitting Order | Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés. | Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Kitting Order | Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés. | Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Kitting / Dekitting regroupés ; ne décide pas des affectations de stock aux magasins.
+
+### Exemple fictif fashion
+
+Défaire des assortiments tailles/couleurs et constituer les ensembles spécifiés.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/).
+
+Références : ELM668, U707.
+
+### Détails des références
+
+#### Advanced Supply Chain — Value Added Services in Logistics & Warehousing
+
+Value Added Services in Logistics & Warehousing · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Kitting Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM668, CMP278, U707.
+
+#### Oracle — Oracle Warehouse Management User’s Guide — Overview
+
+Oracle Warehouse Management User’s Guide — Overview · Documentation WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Kitting Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** EBS 12.2 : kitting/dekitting et étiquetage ; reverse logistics séparée incluant remise en état et recyclage.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Oracle Warehouse Management User’s Guide — Overview](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317761.htm) — EBS 12.2, consulté le 2026-09-24.
+
+**Passage.** Oracle Warehouse Management Value Added Services; Reverse Logistics
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM680, CMP278, U707.
+
+## Sources d’inspiration — service-order-garment-finishing Garment Finishing Order
+
+Garment Finishing Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Advanced Supply Chain](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/) — Garment Finishing Order | Finition d’aspect textile : repassage, défroissage, remise en forme. | Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Bleckmann](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Garment Finishing Order | Finition d’aspect textile : repassage, défroissage, remise en forme. | Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Garment Finishing Order | Finition d’aspect textile : repassage, défroissage, remise en forme. | Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Se distingue du support de présentation et du nettoyage.
+
+### Exemple fictif fashion
+
+Défroisser des chemises et signaler les pièces dont l’aspect reste non conforme.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/).
+
+Références : ELM668, U707.
+
+### Détails des références
+
+#### Advanced Supply Chain — Value Added Services in Logistics & Warehousing
+
+Value Added Services in Logistics & Warehousing · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Garment Finishing Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM668, CMP278, U707.
+
+#### Bleckmann — Value Added Services
+
+Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Garment Finishing Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** A complete range; Reconditioning; Personalisation; In-house photo studio
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM670, CMP278, U707.
+
+## Sources d’inspiration — service-order-cleaning Cleaning Order
+
+Cleaning Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [CEVA](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns) — Cleaning Order | Nettoyage et détachage des vêtements, chaussures et accessoires. | Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Advanced Supply Chain](https://www.advancedsupplychain.com/value-added-services/garment-cleaning/) — Cleaning Order | Nettoyage et détachage des vêtements, chaussures et accessoires. | Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Cleaning Order | Nettoyage et détachage des vêtements, chaussures et accessoires. | Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Résultat de propreté ; techniques au catalogue.
+
+### Exemple fictif fashion
+
+Détacher des chaussures retournées et distinguer les résultats complets et partiels.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns).
+
+Références : ELM667, U707.
+
+### Détails des références
+
+#### CEVA — Logistics solutions for online returns
+
+Logistics solutions for online returns · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Cleaning Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Grading, remise en état, réparation et préparation des retours.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** OUR SERVICES; WHAT MAKES US DIFFERENT
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM667, CMP278, U707.
+
+#### Advanced Supply Chain — Garment Cleaning
+
+Garment Cleaning · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Cleaning Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Nettoyage ciblé, défroissage et traitement des odeurs proposés par le prestataire.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Garment Cleaning](https://www.advancedsupplychain.com/value-added-services/garment-cleaning/) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Spot Cleaning; Garment Finishing; Ozone Cleaning
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM675, CMP278, U707.
+
+## Sources d’inspiration — service-order-repair-alteration Repair & Alteration Order
+
+Repair & Alteration Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Ryder](https://www.ryder.com/en-us/e-commerce/value-added-services) — Repair & Alteration Order | Correction de défauts et retouches confiées sur articles fashion. | Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Bleckmann](https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme) — Repair & Alteration Order | Correction de défauts et retouches confiées sur articles fashion. | Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Repair & Alteration Order | Correction de défauts et retouches confiées sur articles fashion. | Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Distinguer restauration et modification demandée dans les exigences.
+
+### Exemple fictif fashion
+
+Remplacer des boutons sur un lot de manteaux selon les retouches autorisées.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services).
+
+Références : ELM669, U707.
+
+### Détails des références
+
+#### Ryder — E-Commerce Services — Value Added Services
+
+E-Commerce Services — Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Repair & Alteration Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Liste détaillée des préparations textile et prestations e-commerce.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** E-commerce Value-Added Services; Apparel Value-Added Services
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM669, CMP278, U707.
+
+#### Bleckmann — RESCUE: Circular Fashion Made Simple & Profitable
+
+RESCUE: Circular Fashion Made Simple & Profitable · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Repair & Alteration Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Réparations de couture, boutons et fermetures ; tri préalable selon réparabilité.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[RESCUE: Circular Fashion Made Simple & Profitable](https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** So, how does the process work in practice?
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM677, CMP278, U707.
+
+## Sources d’inspiration — service-order-personalization Personalization Order
+
+Personalization Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Bleckmann](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Personalization Order | Personnalisation du produit : broderie, monogramme, gravure sur accessoires. | Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [GXO](https://gxo.com/industries/fashion-apparel/) — Personalization Order | Personnalisation du produit : broderie, monogramme, gravure sur accessoires. | Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Personalization Order | Personnalisation du produit : broderie, monogramme, gravure sur accessoires. | Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- La carte cadeau jointe relève de la présentation, pas d’une transformation du produit.
+
+### Exemple fictif fashion
+
+Broder les initiales demandées sur les articles désignés.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services).
+
+Références : ELM670, U707.
+
+### Détails des références
+
+#### Bleckmann — Value Added Services
+
+Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Personalization Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** A complete range; Reconditioning; Personalisation; In-house photo studio
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM670, CMP278, U707.
+
+#### GXO — Fashion and apparel
+
+Fashion and apparel · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Personalization Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Broderie, cadeaux, kits et présentation de marque.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Fashion and apparel](https://gxo.com/industries/fashion-apparel/) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Value-added services; We make it personal
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM671, CMP278, U707.
+
+## Sources d’inspiration — service-order-inspection Inspection Order
+
+Inspection Order distingue le résultat de prestation confié.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [CEVA](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns) — Inspection Order | Inspection autonome, contrôle de conformité et classement d’état des articles. | Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| [Bleckmann](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Inspection Order | Inspection autonome, contrôle de conformité et classement d’état des articles. | Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+| Notre modèle — Inspection Order | Inspection autonome, contrôle de conformité et classement d’état des articles. | Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats. |
+
+### Ce que nous en retenons
+
+- Le contrôle intégré à une autre prestation reste dans cette prestation ; le constat ne décide pas du devenir du stock.
+
+### Exemple fictif fashion
+
+Examiner un lot retourné et livrer un constat d’état sans décider de sa destination.
+
+**Ce qui se passe.** Résultat et écarts conservés dans la demande.
+
+**Ce que cela illustre dans FLOW.** Illustration sans preuve installée.
+
+Source : [Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns).
+
+Références : ELM667, U707.
+
+### Détails des références
+
+#### CEVA — Logistics solutions for online returns
+
+Logistics solutions for online returns · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inspection Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Grading, remise en état, réparation et préparation des retours.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** OUR SERVICES; WHAT MAKES US DIFFERENT
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM667, CMP278, U707.
+
+#### Bleckmann — Value Added Services
+
+Value Added Services · Publication primaire de prestataire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inspection Order : composition de nom FLOW pour une famille documentée par le marché.
+
+**Pourquoi cette définition.** Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+**Points communs.** Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+
+**Différences.** Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie universelle des Orders ni preuve de réalisation Beaumanoir.
+
+**Position FLOW.** Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements et suites des résultats.
+
+[Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services) — Page évolutive ; édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** A complete range; Reconditioning; Personalisation; In-house photo studio
+
+**Limite de preuve.** Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement.
+
+Références : ELM670, CMP278, U707.
+
+## Sources d’inspiration — transport-multi-stop Multi-Stop Transport
+
+### Oracle — Order Release: Order Stops
+
+Order Release: Order Stops · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites d’un changement ou d’une réalisation partielle.
+
+**Points communs.** Arrêts intermédiaires, séquence, lieux et services associés à chaque arrêt.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites d’un changement ou d’une réalisation partielle.
+
+[Order Release: Order Stops](https://docs.oracle.com/en/cloud/saas/transportation/26a/otmol/planning/order_manager/or_stops.htm) — 26A, consulté le 2026-09-24.
+
+**Passage.** Creating a Shipment Stop
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM685, U709.
+
+### SAP — Multi-Pickup, Multi-Drop
+
+Multi-Pickup, Multi-Drop · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites d’un changement ou d’une réalisation partielle.
+
+**Points communs.** Un ordre routier peut comporter plusieurs arrêts ; modification et annulation dépendent de leur avancement.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites d’un changement ou d’une réalisation partielle.
+
+[Multi-Pickup, Multi-Drop](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/7194e95ee2e447b9954dc449d3a06971.html) — Version non établie dans le passage indexé, consulté le 2026-09-24.
+
+**Passage.** Canceling Freight Orders, Canceling Stops
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM686, U709.
+
+## Sources d’inspiration — transport-multi-leg Multi-Leg Transport
+
+### SAP — Transportation Stages and Dates/Times in the Freight Unit
+
+Transportation Stages and Dates/Times in the Freight Unit · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires et résultat final convenus.
+
+**Points communs.** Étapes prédéfinies dans la demande distinguées des transbordements ajoutés par la planification.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires et résultat final convenus.
+
+[Transportation Stages and Dates/Times in the Freight Unit](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/9c8fdae3f57b48bc9cf4d5cfae3f130c.html) — 2025 FPS01, consulté le 2026-09-24.
+
+**Passage.** Transportation Stages
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM687, U709.
+
+### Oracle — Order Movement
+
+Order Movement · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires et résultat final convenus.
+
+**Points communs.** Un déplacement demandé peut être réparti entre plusieurs expéditions sans scinder la demande initiale.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires et résultat final convenus.
+
+[Order Movement](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/order_movement/order_movement.htm) — 25C, consulté le 2026-09-24.
+
+**Passage.** Creating an order movement
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM688, U709.
+
+## Sources d’inspiration — transport-scheduled Scheduled Transport
+
+### SAP — Use of Schedules
+
+Use of Schedules · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme ou d’un départ manqué.
+
+**Points communs.** Ordres associés à un départ programmé ; données et capacités reprises, changements du programme signalés.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme ou d’un départ manqué.
+
+[Use of Schedules](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/65978154f98b46c2b77906547c880936.html) — Version non établie dans le passage indexé, consulté le 2026-09-24.
+
+**Passage.** Features
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM689, U709.
+
+### SAP — Ad Hoc Loading
+
+Ad Hoc Loading · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme ou d’un départ manqué.
+
+**Points communs.** Des ordres routiers peuvent être préparés avant l’affectation des marchandises, avec reprise des arrêts d’un programme.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme ou d’un départ manqué.
+
+[Ad Hoc Loading](https://help.sap.com/docs/PRODUCTS/f5d3e1005efd4e86acf9a65abf428082/df9df83274d04a79b186c38eb69e8d5b.html) — 2025 FPS01, consulté le 2026-09-24.
+
+**Passage.** Business Details
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM690, U709.
+
+## Sources d’inspiration — transport-appointments Pickup & Delivery Appointments
+
+### Oracle — Set Appointments
+
+Set Appointments · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement.
+
+**Points communs.** Le rendez-vous convenu avec le prestataire se distingue de l’horaire calculé ; vérification de compatibilité entre arrêts.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement.
+
+[Set Appointments](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/general/appointments.htm) — 25C, consulté le 2026-09-24.
+
+**Passage.** Introduction ; Order Appointments ; Shipment Stop Appointments
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM691, U709.
+
+### DHL — NZ Exporter’s Guide to Last Mile Delivery
+
+NZ Exporter’s Guide to Last Mile Delivery · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement.
+
+**Points communs.** Choix de fenêtres, report ou redirection et solutions après absence du destinataire.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et conséquences sur l’engagement.
+
+[NZ Exporter’s Guide to Last Mile Delivery](https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Can customers choose their delivery time? ; What happens if the customer isn’t home?
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM692, U709.
+
+## Sources d’inspiration — transport-rescheduling-redirection Delivery Rescheduling & Redirection
+
+### DHL — NZ Exporter’s Guide to Last Mile Delivery
+
+NZ Exporter’s Guide to Last Mile Delivery · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse.
+
+**Points communs.** Choix de fenêtres, report ou redirection et solutions après absence du destinataire.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse.
+
+[NZ Exporter’s Guide to Last Mile Delivery](https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** Can customers choose their delivery time? ; What happens if the customer isn’t home?
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM692, U709.
+
+### UPS — Help and Support Center
+
+Help and Support Center · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse.
+
+**Points communs.** Demande de changement de date ou lieu ; options pouvant être restreintes par l’expéditeur.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison infructueuse.
+
+[Help and Support Center](https://www.ups.com/us/en/business-solutions/grow-your-business-solutions) — Page évolutive, édition non indiquée, consulté le 2026-09-24.
+
+**Passage.** How do I change a delivery I’m receiving?
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM693, U709.
+
+## Sources d’inspiration — service-order-transport-booking Transport Booking Order
+
+### SAP — Sample Ocean Freight Process for Shippers (Outbound)
+
+Sample Ocean Freight Process for Shippers (Outbound) · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+**Points communs.** Le chargeur commence par une pré-réservation de capacité via un ocean freight booking.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+[Sample Ocean Freight Process for Shippers (Outbound)](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/ca69ceb75dad454bad9bbeb25613b198.html?version=latest) — Version non établie dans le passage indexé, consulté le 2026-09-24.
+
+**Passage.** Introduction du processus chargeur
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM694, U709.
+
+### DCSA — Booking standard
+
+Booking standard · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+**Points communs.** Échanges de données et suivi du booking d’espace maritime ; distinction avec les Shipping Instructions.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+[Booking standard](https://dcsa.org/standards/booking) — Présentation publique évolutive ; version du standard non établie, consulté le 2026-09-24.
+
+**Passage.** The problem ; The solution
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM695, U709.
+
+### SAP — Freight Booking – Confirm
+
+Freight Booking – Confirm · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+**Points communs.** Confirmation de capacité et de service dans les périodes convenues sous condition de remise à temps des marchandises.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+
+[Freight Booking – Confirm](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/2f36056ae9a044bba55bcbad204b7bc5/2ef80c370bc645c19fc266b746d3094f.html) — Version non établie dans le passage indexé, consulté le 2026-09-24.
+
+**Passage.** Service Nodes : TransportationOrderBooking ; BookingCapacity
+
+**Limite de preuve.** Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle.
+
+Références : ELM696, U709.
+
+## Sources d’inspiration — service-order-document-production Document Production Order
+
+### Oracle — Overview of Executing Shipping Documents
+
+Overview of Executing Shipping Documents · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux destinataires attendus.
+
+**Points communs.** Shipping génère des documents, dont packing slip et commercial invoice, liés à l’expédition.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux destinataires attendus.
+
+[Overview of Executing Shipping Documents](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famlo/overview-of-executing-shipping-documents.html) — 25D, consulté le 2026-09-24.
+
+**Passage.** Overview
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM699, U709.
+
+### SAP — Goods Receipt Slip (WE_SCHEINVERS2)
+
+Goods Receipt Slip (WE_SCHEINVERS2) · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux destinataires attendus.
+
+**Points communs.** Le bon de réception est imprimable lors de la comptabilisation du mouvement de réception ; il en constitue un justificatif.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux destinataires attendus.
+
+[Goods Receipt Slip (WE_SCHEINVERS2)](https://help.sap.com/docs/SAP_ERP/36ce973bca7242118fba2bee0511f4d6/8edae4535dd4414de10000000a174cb4.html) — ERP 6.0 EHP8, consulté le 2026-09-24.
+
+**Passage.** Purpose
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM700, U709.
+
+## Sources d’inspiration — service-order-customs-clearance Customs Clearance Order
+
+### DHL — Customs Services
+
+Customs Services · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la procédure et au traitement des écarts.
+
+**Points communs.** Le service douanier couvre dédouanement, documentation et conformité. Il dépasse la seule production documentaire ; les autorités décident du dédouanement.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la procédure et au traitement des écarts.
+
+[Customs Services](https://www.dhl.com/us-en/home/global-forwarding/products-and-solutions/customs-services.html) — Page évolutive sans édition, consulté le 2026-09-24.
+
+**Passage.** FAQ: customs services and customs broker
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM703, U709.
+
+### SAP — Creating Documents — Customs Management
+
+Creating Documents — Customs Management · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la procédure et au traitement des écarts.
+
+**Points communs.** Customs Management utilise les données logistiques du système source pour construire les documents des procédures douanières.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la procédure et au traitement des écarts.
+
+[Creating Documents — Customs Management](https://help.sap.com/docs/SAP_GLOBAL_TRADE_SERVICES/bdb1d2fb216941a69f6300006343e977/4c9ab10f125a0780e10000000a42189b.html) — Version non établie, consulté le 2026-09-24.
+
+**Passage.** Creating customs declarations and customs shipments
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM704, U709.
+
+## Sources d’inspiration — service-order-billing Billing Order
+
+### ASCM — Your Comprehensive Guide to Supply Chain Solutions for Improved Operations
+
+Your Comprehensive Guide to Supply Chain Solutions for Improved Operations · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction.
+
+**Points communs.** SCOR couvre les interactions depuis la commande jusqu’à la facture payée. Cadre de processus de bout en bout, sans prescription de frontières de domaines.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction.
+
+[Your Comprehensive Guide to Supply Chain Solutions for Improved Operations](https://www.ascm.org/ascm-insights/supply-chain-solutions-for-improved-operations/) — 2026-07-10, consulté le 2026-09-24.
+
+**Passage.** What is SCOR?
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM698, U709.
+
+### Oracle — How Order-to-Cash Works in Order Management
+
+How Order-to-Cash Works in Order Management · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction.
+
+**Points communs.** L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture et traite les paiements. Le processus traverse les responsabilités.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction.
+
+[How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html) — 26A, consulté le 2026-09-24.
+
+**Passage.** Steps 3–5
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM701, U709.
+
+## Sources d’inspiration — service-order-payment-collection Payment Collection Order
+
+### Oracle — How Order-to-Cash Works in Order Management
+
+How Order-to-Cash Works in Order Management · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+**Points communs.** L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture et traite les paiements. Le processus traverse les responsabilités.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+[How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html) — 26A, consulté le 2026-09-24.
+
+**Passage.** Steps 3–5
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM701, U709.
+
+### SAP — Manual Incoming Payments
+
+Manual Incoming Payments · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+**Points communs.** Les encaissements relèvent des comptes clients, de la gestion des paiements et de la liquidité ; le rapprochement avec les créances fait partie du traitement financier.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+[Manual Incoming Payments](https://help.sap.com/docs/SAP_BUSINESS_BYDESIGN/2754875d2d2a403f95e58a41a9c7d6de/2c25dd46722d1014880ed85ecdf0cc88.html?locale=en-US) — August 2026, consulté le 2026-09-24.
+
+**Passage.** Overview
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM702, U709.
+
+### Oracle — Overview of Setting Up Credit Cards
+
+Overview of Setting Up Credit Cards · Processus, service ou documentation produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+**Points communs.** Order Management mobilise Oracle Payments pour le traitement carte ; l’autorisation peut venir du système amont avec Financials. Intégration explicite, pas propriété de toute la finance dans Order Management.
+
+**Différences.** La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+
+**Position FLOW.** Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites.
+
+[Overview of Setting Up Credit Cards](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/overview-of-setting-up-credit-cards.html) — 26B, consulté le 2026-09-24.
+
+**Passage.** Overview and integration
+
+**Limite de preuve.** Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir.
+
+Références : ELM705, U709.
 
 ## Sources d’inspiration — Capacité métier
 

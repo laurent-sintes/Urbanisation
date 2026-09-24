@@ -30,6 +30,7 @@ try:
     from .record_decision import compile_intents
     from .decision_registry import read_registry, read_consumed_registry, is_index, shard_path
     from . import guide_candidate
+    from .backlog_delivery import check_delivery
     from .json_contract import validate as validate_contract
     from .validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 except ImportError:
@@ -44,6 +45,7 @@ except ImportError:
     from record_decision import compile_intents
     from decision_registry import read_registry, read_consumed_registry, is_index, shard_path
     import guide_candidate
+    from backlog_delivery import check_delivery
     from json_contract import validate as validate_contract
     from validate_models import canonical_sha256, validate_release, validate_sources, validate_urbanism, validate_decision_review
 
@@ -449,7 +451,10 @@ def build_candidate(root=ROOT, version=None, source_refs=None, additional_path=N
                                    'comparison': 'changed' if previous_path.exists() and previous_document != current_document else 'unchanged' if previous_path.exists() else 'baseline_not_captured',
                                    'changes': changes(previous_document, current_document) if previous_path.exists() else [],
                                    'disposition': 'frozen_as_context_only_not_published_as_model'})
+    delivery_rows, delivery_errors = check_delivery(root, candidate)
+    errors.extend(delivery_errors)
     report = {'schema_version': '1.0.0', 'base_version': pointer['version'], 'candidate_version': version,
+              'backlog_delivery': delivery_rows,
               'element_version_changes': element_changes,
               'glossary_reference_impacts': reference_impacts(previous, candidate),
               'publication_is_business_validation': False, 'glossary_changes': changes(previous.get('glossary'), candidate.get('glossary')), 'changes': model_diff(previous, candidate),
@@ -709,6 +714,7 @@ def summarize_report(report):
         'glossary_reference_impacts': report['glossary_reference_impacts'],
         'deferred_artifacts': dict(Counter(a['comparison'] for a in report['deferred_artifacts'])),
         'backlog_only': report['backlog_only'],
+        'backlog_delivery': report.get('backlog_delivery', []),
         'detail': 'Read saved results with inspect PATH --section SECTION --id ID. For a new diagnostic, report --output NEW_PATH saves all details.',
         'publication_is_business_validation': False,
     }

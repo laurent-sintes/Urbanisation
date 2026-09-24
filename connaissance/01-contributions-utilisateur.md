@@ -17387,3 +17387,73 @@ Je valide
 **contexte et portée**
 
 Accord sur la réponse à U705 : Process Orchestration coordonne déclenchement, attente et poursuite ; Operations Tracking avec Process Tracking capte avancement et résultats distants ; Service Order Management conserve demande et engagements et actualise le cycle. L’accusé de réception ne vaut pas réalisation ; le retour distingue réussite, résultat partiel et échec. Aucune nouvelle capacité de suivi nécessaire. Cet accord ne vaut pas adoption globale des quatre familles et noms proposés en U702, ni publication.
+
+
+## U707
+
+**id**
+
+U707
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Corriger la non-application des familles de prestations d’entrepôt validées
+
+**texte**
+
+Je pense qu'il y a un gros problème avec la gestion de la backlog.
+On avait validé des prestations d'entrepots, la suppression de Value Added etc. Je ne retrouve rien...
+
+**contexte et portée**
+
+Laurent corrige la lecture antérieure des accords : les familles d’entrepôt et le remplacement de Value-Added Service Order devaient être appliqués. Corrige les réserves enregistrées par Codex en U692–U696 pour ce découpage. Application des dix familles fashion déjà présentées, intégration de Repacking dans Packing et retrait de light touch des descriptions structurantes. Préserver les identifiants des éléments conservés et l’historique des éléments retirés. Les descriptions nouvelles et correspondances détaillées restent des rédactions proposées ; aucune nouvelle release, commit ou push déduits.
+
+
+## U708
+
+**id**
+
+U708
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Vérifier les omissions dans la chaîne de release
+
+**texte**
+
+Je crois qu'il n'y a pas que ça qui a été oublié. Je pense qu'il y a un bug dans le processus de release.
+
+**contexte et portée**
+
+Élargit la correction U707 à la recherche des pertes entre accords, backlog canonique et publication. Ne demande pas de publier un état intermédiaire ni de transformer toutes les propositions en accords.
+
+
+## U709
+
+**id**
+
+U709
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Portée cumulative de la validation dans une discussion
+
+**texte**
+
+Le problème est quand on a une conservation qui fait évoluer le modèle et qu'il y a plusieurs step, lorsque je dit "je valide", je ne valide pas que le dernier échange, je valide l'idée complète.
+
+**contexte et portée**
+
+Règle explicite : un accord porte sur la proposition complète construite et précisée dans la discussion, pas seulement le dernier message. Les corrections récentes et conditions explicites restent applicables ; ni les pistes abandonnées ni les détails inventés ensuite ne sont adoptés. Réexaminer U692 (familles fashion et composition), U701 (transport et classement) et U706 (familles documentaires, douanières, financières et exécution distante) selon cette portée cumulative. Correction de l’interprétation restrictive de Codex, sans antidater les captures ni prétendre à une réalisation Beaumanoir.

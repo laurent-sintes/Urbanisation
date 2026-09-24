@@ -7425,7 +7425,7 @@ nodes:
   - name
   - scope
 - id: D14
-  revision: 10
+  revision: 11
   kind: reference
   fields:
     name: Service Catalog
@@ -7446,6 +7446,8 @@ nodes:
       Familles explicites : Picking, Packing, Value-Added Services (étiquetage, réétiquetage, reconditionnement) et Cross-Docking. Décrire pour chacune le résultat offert, les conditions, unités, consignes et niveaux de service, sans stocker ici les instances commandées. Le catalogue ne fusionne pas les familles de capacités. Exemple fictif : proposer un réétiquetage selon une spécification ne prouve ni son acceptation pour un lot ni sa réalisation.
 
       L’offre de transport précise origine et destination desservies, conditions de collecte et de livraison et variantes pertinentes. [Transport Order](model:service-order-transport) porte les exigences et engagements individuels du déplacement, composable avec les autres prestations.
+
+      U707 : les prestations d’entrepôt sont distinguées par dix familles : Picking Order, Packing Order (dont Repacking), Cross-Docking Order, Labeling Order, Kitting Order (dont Dekitting), Garment Finishing Order, Cleaning Order, Repair & Alteration Order, Personalization Order et Inspection Order. Leurs résultats et contraintes peuvent être composés ; Transport Order reste une famille distincte. Les exécutants réalisent les opérations.
     mastership: La vérité des données de référence vient d’une source externe au Domain Supply Chain Orchestration. Le domaine
       intègre les évolutions reçues et maintient leur représentation locale avec provenance ; il ne reprend pas leur CRUD
       maître.
@@ -7557,6 +7559,7 @@ nodes:
   - U673
   - U682
   - U698
+  - U707
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d14
@@ -7578,7 +7581,7 @@ nodes:
     value_sha256:
       name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  last_modified: '2026-09-24T08:19:57.499780Z'
+  last_modified: '2026-09-24T12:14:48.125870Z'
   proposed_fields:
   - data_governance
   - definition
@@ -7936,7 +7939,7 @@ nodes:
   - name
   - definition
 - id: D07.b
-  revision: 11
+  revision: 12
   kind: capability
   fields:
     name: Service Order Lifecycle
@@ -7951,6 +7954,8 @@ nodes:
       Cette responsabilité commune et les capacités de familles sont sœurs sous Service Order Management, sans sous-capacité ni cycle uniforme imposé. Réception et prestations humaines ou documentaires restent couvertes même sans famille spécialisée dans ce lot. [Transport Order](model:service-order-transport) porte désormais les exigences propres au déplacement et mobilise ce cycle commun. [Process Orchestration](model:D06.d) coordonne les dépendances entre prestations ; [Process Adaptation Decision](model:D06.f) choisit le recours à une solution de secours, dont le cycle de prise en charge est tenu ici. La Task représente la contribution au processus, sans être un second propriétaire de l’engagement de prestation.
 
       Exemple fictif : une préparation partielle est constatée ; tenir le reste de prestation et la reprise autorisée, tandis qu’Order Management conserve le reste à satisfaire de la commande.
+
+      U706/U709 : Tenir aussi les demandes documentaires, douanières, de facturation et d’encaissement. L’exécutant peut être extérieur au domaine. Le retour de réalisation fourni par Fulfilment actualise le cycle sans dupliquer la captation des faits.
     market_comparisons:
     - vendor: TM Forum
       product: Service Order Management
@@ -8032,7 +8037,7 @@ nodes:
     category:
       id: common
       display_name: Gestion commune des ordres
-      order: 30
+      order: 90
   source_refs:
   - P81
   - U03
@@ -8083,6 +8088,8 @@ nodes:
   - U682
   - U698
   - U701
+  - U706
+  - U709
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-b
@@ -8104,7 +8111,7 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-24T08:19:57.499780Z'
+  last_modified: '2026-09-24T12:20:10.043782Z'
   proposed_fields:
   - definition
   - finality
@@ -8277,7 +8284,7 @@ nodes:
   - scope
   approved_fields: []
 - id: D07.d
-  revision: 11
+  revision: 12
   kind: capability
   fields:
     name: Operations Tracking
@@ -8300,6 +8307,8 @@ nodes:
       Frontière U673 : Alimenter Supply Visibility pour les attendus consolidés ; ne pas constituer une seconde tenue des mêmes ressources futures.
 
       Fournir les faits ou écarts qualifiés à Service Order Management pour les suites des ordres de prestation ; ne pas dupliquer la tenue de leurs engagements individuels.
+
+      U706/U709 : Capter les retours d’avancement et de fin des services distants, identifier la demande et le résultat métier réussi, partiel ou en échec. Fournir ces faits à Service Order Management ; ne pas déduire un encaissement réussi d’une seule fin technique.
     decomposition_rationale: Les trois périmètres physiques rendent lisibles les situations et opérations propres à l’entrepôt,
       au transport et au magasin ; livré ne signifie pas mis en rayon. Le suivi transversal des processus explique les résultats,
       attentes et blocages métier en reliant Tasks et appels sous-jacents. Ce sont des perspectives combinables aux bénéfices
@@ -8432,6 +8441,8 @@ nodes:
   - U626
   - U673
   - U682
+  - U706
+  - U709
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-d
@@ -8455,7 +8466,7 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  last_modified: '2026-09-24T12:20:10.043782Z'
   proposed_fields:
   - decomposition_rationale
   - definition
@@ -10149,7 +10160,7 @@ nodes:
     note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
       du cycle, pas date historique de l’accord.
 - id: D06.d
-  revision: 8
+  revision: 9
   kind: capability
   fields:
     name: Process Orchestration
@@ -10170,6 +10181,8 @@ nodes:
       Frontière U673 : Distinguer le plan d’exécution coordonné du master plan de matching arbitré dans Matching.
 
       Service Order Management tient le cycle et les engagements des ordres de prestation. L’orchestration utilise leurs réponses et coordonne les conditions d’activation et dépendances ; elle ne recrée pas leur cycle.
+
+      U706/U709 : Coordonner aussi les prestations exécutées à distance : solliciter le service, attendre son résultat métier et poursuivre le flux selon ce résultat. Une acceptation du déclenchement ne vaut pas réalisation.
     market_comparisons:
     - vendor: Camunda
       product: Process Orchestration
@@ -10273,6 +10286,8 @@ nodes:
   - U626
   - U673
   - U682
+  - U706
+  - U709
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d06-d
@@ -10298,7 +10313,7 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  last_modified: '2026-09-24T12:20:10.043782Z'
   proposed_fields:
   - finality
   - market_comparisons
@@ -24794,7 +24809,7 @@ nodes:
   approved_fields:
   - name
 - id: subdomain-service-orders
-  revision: 1
+  revision: 2
   kind: area
   fields:
     name: Service Order Management
@@ -24807,6 +24822,10 @@ nodes:
       Une commande de prestations logistiques peut porter plusieurs [Service Orders](glossary:TER066), avec l’enchaînement attendu. Une liste ordonnée exprime une séquence simple ; la demande peut aussi préciser des dépendances, des possibilités de réalisation en parallèle et des conditions. Service Order Management conserve la demande d’ensemble, les exigences de chaque ordre et les contraintes d’enchaînement demandées, acceptées ou modifiées. [Fulfilment Orchestration](model:D06) organise et pilote leur réalisation en respectant ces engagements. La composition ne crée pas automatiquement une nouvelle famille d’Order et n’impose pas un ordre distinct pour chaque opération interne.
 
       Exemple fictif : une commande demande une inspection, puis un réétiquetage et une mise sur cintre. Chaque prestation porte ses exigences ; l’enchaînement convenu est conservé avec la demande et son exécution est coordonnée par Fulfilment Orchestration. Une réparation peut être conditionnée au constat de réparabilité issu de l’inspection.
+
+      U707 : les prestations d’entrepôt sont distinguées par dix familles : Picking Order, Packing Order (dont Repacking), Cross-Docking Order, Labeling Order, Kitting Order (dont Dekitting), Garment Finishing Order, Cleaning Order, Repair & Alteration Order, Personalization Order et Inspection Order. Leurs résultats et contraintes peuvent être composés ; Transport Order reste une famille distincte. Les exécutants réalisent les opérations.
+
+      U709 : le sous-domaine porte aussi Transport Booking Order, Document Production Order, Customs Clearance Order, Billing Order et Payment Collection Order. Les demandes peuvent être composées avec les prestations physiques. Le domaine orchestre les services ; leur réalisation financière, documentaire ou douanière peut être confiée ailleurs.
     finality: Disposer de prestations confiées et d’engagements opérationnels explicites jusqu’à leur conclusion.
     market_comparisons:
     - vendor: TM Forum
@@ -24929,11 +24948,13 @@ nodes:
   - U691
   - U692
   - U698
+  - U707
+  - U709
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
   adoption_ids: []
-  last_modified: '2026-09-24T08:19:57.499780Z'
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
     note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
@@ -25101,288 +25122,141 @@ nodes:
   - scope
   - category
 - id: service-order-packing
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Packing Order
-    definition: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-      et la conformité attendue des unités constituées.
+    definition: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements
+      et suites des résultats.
     scope: |-
-      Porter les exigences d’emballage, de regroupement et d’échéance pertinentes et leurs modifications ; utiliser les faits communiqués pour tenir la prestation. L’exécutant choisit ses gestes et moyens. Le conditionnement initial relève de Packing Order ; la modification demandée d’un conditionnement existant peut relever de Repacking sous Value-Added Service Order. Cette frontière décrit le résultat requis et ne doit pas conduire à commander deux fois la même prestation.
+      Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau.
 
-      Exemple fictif : Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des colis.
+      Repacking est une variante descriptive de Packing Order ; son identifiant est conservé.
 
-      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Passer un lot de vêtements pliés sur cintres, sans changer la composition des articles.
     finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
     nature: action
     market_comparisons:
-    - vendor: Microsoft
-      product: Packing work for packing outbound containers and processing shipments
-      element_name: Packing work
-      element_type: Travail interne WMS
+    - vendor: Ryder
+      product: E-Commerce Services — Value Added Services
+      element_name: E-Commerce Services — Value Added Services
+      element_type: Publication primaire de prestataire
       relationship: Recouvrement partiel
-      similarities: Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions
-        partielles.
-      differences: Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité
-        FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
-      flow_position: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-      source_title: Packing work for packing outbound containers and processing shipments
-      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
-      source_version: Documentation évolutive, version globale non figée
-      source_locator: Introduction ; Set up a location for packing work
-      consulted_on: '2026-09-23'
-      evidence_limits: Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply.
+      similarities: Liste détaillée des préparations textile et prestations e-commerce.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: E-Commerce Services — Value Added Services
+      source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: E-commerce Value-Added Services; Apparel Value-Added Services
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
       status: proposed
       source_refs:
-      - ELM656
-      - CMP273
-      - U682
-      concept_name: Packing work
-      scope_summary: Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions
-        partielles.
-      approach_summary: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-      term_choice: 'Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
-      definition_choice: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-    - vendor: Oracle
-      product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
-      element_name: Shipment Request / Shipment Confirmation
-      element_type: Échanges amont-exécutant
+      - ELM669
+      - CMP278
+      - U707
+      concept_name: Packing Order
+      scope_summary: Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau.
+      approach_summary: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      term_choice: 'Packing Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+    - vendor: Bleckmann
+      product: Value Added Services
+      element_name: Value Added Services
+      element_type: Publication primaire de prestataire
       relationship: Recouvrement partiel
-      similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
-      differences: Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité
-        FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
-      flow_position: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-      source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
-      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
-      source_version: Fusion Cloud SCM 25D
-      source_locator: Explanation of callouts, étapes 1 à 3
-      consulted_on: '2026-09-23'
-      evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+      similarities: Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: Value Added Services
+      source_url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: A complete range; Reconditioning; Personalisation; In-house photo studio
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
       status: proposed
       source_refs:
-      - ELM659
-      - CMP273
-      - U682
-      concept_name: Shipment Request / Shipment Confirmation
-      scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
-      approach_summary: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-      term_choice: 'Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
-      definition_choice: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
+      - ELM670
+      - CMP278
+      - U707
+      concept_name: Packing Order
+      scope_summary: Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau.
+      approach_summary: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      term_choice: 'Packing Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
     market_inspiration:
-      choice: Packing Order rend explicite la responsabilité FLOW.
-      flow_scope: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
-      flow_approach: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-        et la conformité attendue des unités constituées.
+      choice: Packing Order distingue le résultat de prestation confié.
+      flow_scope: Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau.
+      flow_approach: Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
       synthesis:
-      - Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les
-        exigences de conditionnement et leurs suites, pas le travail opérateur.
+      - Repacking est une variante descriptive de Packing Order ; son identifiant est conservé.
       examples:
-      - title: Exemple fictif
-        situation: Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des
-          colis.
-        outcome: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
-          et la conformité attendue des unités constituées.
-        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+      - title: Exemple fictif fashion
+        situation: Passer un lot de vêtements pliés sur cintres, sans changer la composition des articles.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
         source_refs:
-        - ELM656
-        - U682
-        source_title: Packing work for packing outbound containers and processing shipments
-        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
+        - ELM669
+        - U707
+        source_title: E-Commerce Services — Value Added Services
+        source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
     category:
       id: warehouse
       display_name: Prestations d’entrepôt
       order: 10
+    decomposition_rationale: Distinguer la transformation d’un conditionnement existant du conditionnement initial, avec consignes
+      de reprise et écarts propres ; aucun changement de composition des ensembles.
   source_refs:
-  - U679
-  - U681
-  - U682
-  - CMP273
-  - ELM656
-  - ELM659
-  - U701
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM669
+  - ELM670
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
-    anchor: u682
+    anchor: u707
   adoption_ids: []
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_at: '2026-09-24T12:15:20.686819Z'
     recorded_by: Codex
     source_refs:
-    - U679
-    - U681
-    - U682
+    - U707
     validated_fields:
     - name
     value_sha256:
       name: 659965ce6ebf29dc1c17afbbfbf8820995bd4096791e19fd3de7948d7de8d9cb
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  approved_fields:
-  - name
-  proposed_fields:
-  - definition
-  - finality
-  - market_comparisons
-  - market_inspiration
-  - nature
-  - scope
-  - category
-- id: service-order-vas
-  revision: 1
-  kind: capability
-  fields:
-    name: Value-Added Service Order
-    definition: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-      et les suites des résultats conformes ou en écart.
-    scope: |-
-      Préciser le traitement attendu, les produits et quantités concernés, les consignes applicables et l’échéance. Tenir les évolutions et suites de l’ordre à partir des constats et du rapprochement ; ne pas réaliser le traitement physique. Le light touch recouvre ici notamment étiquetage, réétiquetage et reconditionnement. Les comportements détaillent les particularités de gestion de ces variantes. Kitting / Dekitting reste une proposition conditionnelle dans l’audit, hors de la décomposition appliquée tant que son inclusion dans le périmètre n’est pas retenue.
-
-      Exemple fictif : Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
-
-      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
-    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
-    nature: action
-    market_comparisons:
-    - vendor: SAP
-      product: Value-Added Services (VAS)
-      element_name: VAS order
-      element_type: Ordre et activités WMS
-      relationship: Recouvrement partiel
-      similarities: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
-      differences: SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels
-        plus larges des éditeurs ne sont pas tous inclus.
-      flow_position: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      source_title: Value-Added Services (VAS)
-      source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
-      source_version: SAP EWM 9.5 FPS02
-      source_locator: Use
-      consulted_on: '2026-09-23'
-      evidence_limits: Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel
-        FLOW.
-      status: proposed
-      source_refs:
-      - ELM658
-      - CMP273
-      - U682
-      concept_name: VAS order
-      scope_summary: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
-      approach_summary: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      term_choice: 'Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
-      definition_choice: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-    - vendor: Oracle
-      product: Oracle Warehouse Management Outbound Logistics
-      element_name: Picking ; Bulk Picking ; Value Added Services
-      element_type: Processus et tâches WMS
-      relationship: Recouvrement partiel
-      similarities: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
-        kitting.
-      differences: SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels
-        plus larges des éditeurs ne sont pas tous inclus.
-      flow_position: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      source_title: Oracle Warehouse Management Outbound Logistics
-      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm
-      source_version: E-Business Suite 12.2
-      source_locator: Overview of the Material Picking Process ; Bulk Picking / Value Added Services
-      consulted_on: '2026-09-23'
-      evidence_limits: Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch
-        ni découpage Supply imposé.
-      status: proposed
-      source_refs:
-      - ELM661
-      - CMP273
-      - U682
-      concept_name: Picking ; Bulk Picking ; Value Added Services
-      scope_summary: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
-        kitting.
-      approach_summary: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      term_choice: 'Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
-      definition_choice: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-    market_inspiration:
-      choice: Value-Added Service Order rend explicite la responsabilité FLOW.
-      flow_scope: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      flow_approach: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-        et les suites des résultats conformes ou en écart.
-      synthesis:
-      - SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus
-        larges des éditeurs ne sont pas tous inclus.
-      examples:
-      - title: Exemple fictif
-        situation: Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
-        outcome: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
-          et les suites des résultats conformes ou en écart.
-        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
-        source_refs:
-        - ELM658
-        - U682
-        source_title: Value-Added Services (VAS)
-        source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
-    decomposition_rationale: 'Distinguer les variantes dont les exigences et écarts de conformité changent la gestion de l’ordre
-      : information et version appliquées pour l’étiquetage, transformation du conditionnement existant pour le reconditionnement.
-      Ce sont des variantes de prise en charge métier, pas des gestes opérateur ni des paramètres de catalogue.'
-    category:
-      id: warehouse
-      display_name: Prestations d’entrepôt
-      order: 10
-  source_refs:
-  - U679
-  - U681
-  - U682
-  - CMP273
-  - ELM658
-  - ELM661
-  - U701
-  source_locator:
-    path: connaissance/01-contributions-utilisateur.md
-    anchor: u682
-  adoption_ids: []
-  last_modified: '2026-09-24T07:34:47.738310Z'
-  review:
-    state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
-  lifecycle:
-    state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
-    recorded_by: Codex
-    source_refs:
-    - U679
-    - U681
-    - U682
-    validated_fields:
-    - name
-    value_sha256:
-      name: ff33582d3ac10c6583e3d1e197f986da83186294907e85d31ca41fffcb3e90c5
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  approved_fields:
-  - name
-  proposed_fields:
-  - decomposition_rationale
-  - definition
-  - finality
-  - market_comparisons
-  - market_inspiration
-  - nature
-  - scope
-  - category
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
 - id: service-order-cross-docking
   revision: 1
   kind: capability
@@ -25527,7 +25401,7 @@ nodes:
   - scope
   - category
 - id: vas-labeling-relabeling
-  revision: 1
+  revision: 2
   kind: behavior
   fields:
     name: Labeling / Relabeling
@@ -25537,6 +25411,8 @@ nodes:
       La conformité porte sur l’information appliquée et sa version, pas seulement sur une quantité traitée. Les références des consignes relèvent du catalogue ; les exigences et engagements individuels sont tenus dans l’ordre. Le tracking et le rapprochement fournissent les constats et écarts ; l’exécutant réalise le geste physique.
 
       Exemple fictif : Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement ne suffit pas si elle concerne une autre version.
+
+      U707 : variante de Labeling Order ; identifiant historique conservé. La consigne distingue version précédente, version cible et conformité du réétiquetage.
     finality: Rendre explicables les exigences et suites propres à cette variante de prestation.
     nature: process_variant
     market_comparisons:
@@ -25628,11 +25504,12 @@ nodes:
   - CMP273
   - ELM658
   - ELM661
+  - U707
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
   adoption_ids: []
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
     note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
@@ -25660,7 +25537,7 @@ nodes:
   - nature
   - scope
 - id: vas-repacking
-  revision: 1
+  revision: 2
   kind: behavior
   fields:
     name: Repacking
@@ -25670,6 +25547,8 @@ nodes:
       Modifier un conditionnement existant ; clarifier la frontière avec Packing Order sans créer deux demandes pour la même prestation. Les références des consignes relèvent du catalogue ; les exigences et engagements individuels sont tenus dans l’ordre. Le tracking et le rapprochement fournissent les constats et écarts ; l’exécutant réalise le geste physique.
 
       Exemple fictif : Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité conforme.
+
+      U707 : variante de Packing Order ; identifiant historique conservé. La mise sur cintre, le changement de cintre et le retour à une présentation pliée relèvent du conditionnement, sans changer la composition d’un kit.
     finality: Rendre explicables les exigences et suites propres à cette variante de prestation.
     nature: process_variant
     market_comparisons:
@@ -25761,11 +25640,12 @@ nodes:
   - CMP273
   - ELM658
   - ELM661
+  - U707
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
   adoption_ids: []
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
     note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
@@ -25793,7 +25673,7 @@ nodes:
   - nature
   - scope
 - id: service-order-transport
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Transport Order
@@ -25896,6 +25776,9 @@ nodes:
       id: transport
       display_name: Transport
       order: 20
+    decomposition_rationale: Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise.
+      Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent
+      ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
   source_refs:
   - U697
   - U698
@@ -25903,6 +25786,7 @@ nodes:
   - ELM683
   - ELM684
   - U701
+  - U709
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u698
@@ -25935,6 +25819,2152 @@ nodes:
   - market_comparisons
   - market_inspiration
   - category
+- id: service-order-labeling
+  revision: 1
+  kind: capability
+  fields:
+    name: Labeling Order
+    definition: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites
+      des résultats.
+    scope: |-
+      Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue.
+
+      Regroupe des variantes ; pas un ordre distinct pour chaque technologie.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Réétiqueter 200 vestes selon le tarif accepté et vérifier la version appliquée.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Ryder
+      product: E-Commerce Services — Value Added Services
+      element_name: E-Commerce Services — Value Added Services
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Liste détaillée des préparations textile et prestations e-commerce.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: E-Commerce Services — Value Added Services
+      source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: E-commerce Value-Added Services; Apparel Value-Added Services
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM669
+      - CMP278
+      - U707
+      concept_name: Labeling Order
+      scope_summary: Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue.
+      approach_summary: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Labeling Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    - vendor: Advanced Supply Chain
+      product: RFID
+      element_name: RFID
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Pose, encodage, association des données et vérification de lecture des étiquettes.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: RFID
+      source_url: https://advancedsupplychain.com/rfid/
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: Our Comprehensive RFID Labelling Solutions
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM676
+      - CMP278
+      - U707
+      concept_name: Labeling Order
+      scope_summary: Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue.
+      approach_summary: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Labeling Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    market_inspiration:
+      choice: Labeling Order distingue le résultat de prestation confié.
+      flow_scope: Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue.
+      flow_approach: Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      synthesis:
+      - Regroupe des variantes ; pas un ordre distinct pour chaque technologie.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Réétiqueter 200 vestes selon le tarif accepté et vérifier la version appliquée.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM669
+        - U707
+        source_title: E-Commerce Services — Value Added Services
+        source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+    decomposition_rationale: Distinguer le remplacement d’informations et les consignes de version des autres formes de marquage,
+      notamment RFID et antivol.
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM669
+  - ELM676
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: 58e7e9c751535a962c028a4d5b4f2c380eccfcb5688963edaed073ecfa2e61f9
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-kitting
+  revision: 1
+  kind: capability
+  fields:
+    name: Kitting Order
+    definition: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs
+      exigences, engagements et suites des résultats.
+    scope: |-
+      Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés.
+
+      Kitting / Dekitting regroupés ; ne décide pas des affectations de stock aux magasins.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Défaire des assortiments tailles/couleurs et constituer les ensembles spécifiés.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Advanced Supply Chain
+      product: Value Added Services in Logistics & Warehousing
+      element_name: Value Added Services in Logistics & Warehousing
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+      source_title: Value Added Services in Logistics & Warehousing
+      source_url: https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM668
+      - CMP278
+      - U707
+      concept_name: Kitting Order
+      scope_summary: Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés.
+      approach_summary: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+      term_choice: 'Kitting Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+    - vendor: Oracle
+      product: Oracle Warehouse Management User’s Guide — Overview
+      element_name: Oracle Warehouse Management User’s Guide — Overview
+      element_type: Documentation WMS
+      relationship: Recouvrement partiel
+      similarities: 'EBS 12.2 : kitting/dekitting et étiquetage ; reverse logistics séparée incluant remise en état et recyclage.'
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+      source_title: Oracle Warehouse Management User’s Guide — Overview
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317761.htm
+      source_version: EBS 12.2
+      source_locator: Oracle Warehouse Management Value Added Services; Reverse Logistics
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM680
+      - CMP278
+      - U707
+      concept_name: Kitting Order
+      scope_summary: Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés.
+      approach_summary: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+      term_choice: 'Kitting Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+    market_inspiration:
+      choice: Kitting Order distingue le résultat de prestation confié.
+      flow_scope: Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés.
+      flow_approach: Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants,
+        leurs exigences, engagements et suites des résultats.
+      synthesis:
+      - Kitting / Dekitting regroupés ; ne décide pas des affectations de stock aux magasins.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Défaire des assortiments tailles/couleurs et constituer les ensembles spécifiés.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM668
+        - U707
+        source_title: Value Added Services in Logistics & Warehousing
+        source_url: https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM668
+  - ELM680
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: 5e0676629a5fe369eff8d8cb6c73dd4f389c191b6df439e6d8456bcda3741f8a
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-garment-finishing
+  revision: 1
+  kind: capability
+  fields:
+    name: Garment Finishing Order
+    definition: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+      et suites des résultats.
+    scope: |-
+      Finition d’aspect textile : repassage, défroissage, remise en forme.
+
+      Se distingue du support de présentation et du nettoyage.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Défroisser des chemises et signaler les pièces dont l’aspect reste non conforme.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Advanced Supply Chain
+      product: Value Added Services in Logistics & Warehousing
+      element_name: Value Added Services in Logistics & Warehousing
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Value Added Services in Logistics & Warehousing
+      source_url: https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM668
+      - CMP278
+      - U707
+      concept_name: Garment Finishing Order
+      scope_summary: 'Finition d’aspect textile : repassage, défroissage, remise en forme.'
+      approach_summary: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Garment Finishing Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    - vendor: Bleckmann
+      product: Value Added Services
+      element_name: Value Added Services
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Value Added Services
+      source_url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: A complete range; Reconditioning; Personalisation; In-house photo studio
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM670
+      - CMP278
+      - U707
+      concept_name: Garment Finishing Order
+      scope_summary: 'Finition d’aspect textile : repassage, défroissage, remise en forme.'
+      approach_summary: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Garment Finishing Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    market_inspiration:
+      choice: Garment Finishing Order distingue le résultat de prestation confié.
+      flow_scope: 'Finition d’aspect textile : repassage, défroissage, remise en forme.'
+      flow_approach: Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      synthesis:
+      - Se distingue du support de présentation et du nettoyage.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Défroisser des chemises et signaler les pièces dont l’aspect reste non conforme.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM668
+        - U707
+        source_title: Value Added Services in Logistics & Warehousing
+        source_url: https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM668
+  - ELM670
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: b630c0546ee524df7f71775570ad7a91b02a61d3e5f6ddceaba4cc7a0183c463
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-cleaning
+  revision: 1
+  kind: capability
+  fields:
+    name: Cleaning Order
+    definition: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+      et suites des résultats.
+    scope: |-
+      Nettoyage et détachage des vêtements, chaussures et accessoires.
+
+      Résultat de propreté ; techniques au catalogue.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Détacher des chaussures retournées et distinguer les résultats complets et partiels.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: CEVA
+      product: Logistics solutions for online returns
+      element_name: Logistics solutions for online returns
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Grading, remise en état, réparation et préparation des retours.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Logistics solutions for online returns
+      source_url: https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: OUR SERVICES; WHAT MAKES US DIFFERENT
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM667
+      - CMP278
+      - U707
+      concept_name: Cleaning Order
+      scope_summary: Nettoyage et détachage des vêtements, chaussures et accessoires.
+      approach_summary: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Cleaning Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    - vendor: Advanced Supply Chain
+      product: Garment Cleaning
+      element_name: Garment Cleaning
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Nettoyage ciblé, défroissage et traitement des odeurs proposés par le prestataire.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Garment Cleaning
+      source_url: https://www.advancedsupplychain.com/value-added-services/garment-cleaning/
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: Spot Cleaning; Garment Finishing; Ozone Cleaning
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM675
+      - CMP278
+      - U707
+      concept_name: Cleaning Order
+      scope_summary: Nettoyage et détachage des vêtements, chaussures et accessoires.
+      approach_summary: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Cleaning Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    market_inspiration:
+      choice: Cleaning Order distingue le résultat de prestation confié.
+      flow_scope: Nettoyage et détachage des vêtements, chaussures et accessoires.
+      flow_approach: Tenir les demandes de nettoyage des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      synthesis:
+      - Résultat de propreté ; techniques au catalogue.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Détacher des chaussures retournées et distinguer les résultats complets et partiels.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM667
+        - U707
+        source_title: Logistics solutions for online returns
+        source_url: https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM667
+  - ELM675
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: c1f208db41310cba4b67249a2ee6459c7dcecceae56202da1a5bc239052bc8bb
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-repair-alteration
+  revision: 1
+  kind: capability
+  fields:
+    name: Repair & Alteration Order
+    definition: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences,
+      engagements et suites des résultats.
+    scope: |-
+      Correction de défauts et retouches confiées sur articles fashion.
+
+      Distinguer restauration et modification demandée dans les exigences.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Remplacer des boutons sur un lot de manteaux selon les retouches autorisées.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Ryder
+      product: E-Commerce Services — Value Added Services
+      element_name: E-Commerce Services — Value Added Services
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Liste détaillée des préparations textile et prestations e-commerce.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: E-Commerce Services — Value Added Services
+      source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: E-commerce Value-Added Services; Apparel Value-Added Services
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM669
+      - CMP278
+      - U707
+      concept_name: Repair & Alteration Order
+      scope_summary: Correction de défauts et retouches confiées sur articles fashion.
+      approach_summary: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs
+        exigences, engagements et suites des résultats.
+      term_choice: 'Repair & Alteration Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs
+        exigences, engagements et suites des résultats.
+    - vendor: Bleckmann
+      product: 'RESCUE: Circular Fashion Made Simple & Profitable'
+      element_name: 'RESCUE: Circular Fashion Made Simple & Profitable'
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Réparations de couture, boutons et fermetures ; tri préalable selon réparabilité.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: 'RESCUE: Circular Fashion Made Simple & Profitable'
+      source_url: https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: So, how does the process work in practice?
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM677
+      - CMP278
+      - U707
+      concept_name: Repair & Alteration Order
+      scope_summary: Correction de défauts et retouches confiées sur articles fashion.
+      approach_summary: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs
+        exigences, engagements et suites des résultats.
+      term_choice: 'Repair & Alteration Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs
+        exigences, engagements et suites des résultats.
+    market_inspiration:
+      choice: Repair & Alteration Order distingue le résultat de prestation confié.
+      flow_scope: Correction de défauts et retouches confiées sur articles fashion.
+      flow_approach: Tenir les demandes de réparation et de retouche des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      synthesis:
+      - Distinguer restauration et modification demandée dans les exigences.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Remplacer des boutons sur un lot de manteaux selon les retouches autorisées.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM669
+        - U707
+        source_title: E-Commerce Services — Value Added Services
+        source_url: https://www.ryder.com/en-us/e-commerce/value-added-services
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM669
+  - ELM677
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: e2c07033865f46d8cd4756b737b7ce271a9c34cae94c942e7d8d42205060aef6
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-personalization
+  revision: 1
+  kind: capability
+  fields:
+    name: Personalization Order
+    definition: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences, engagements
+      et suites des résultats.
+    scope: |-
+      Personnalisation du produit : broderie, monogramme, gravure sur accessoires.
+
+      La carte cadeau jointe relève de la présentation, pas d’une transformation du produit.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Broder les initiales demandées sur les articles désignés.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Bleckmann
+      product: Value Added Services
+      element_name: Value Added Services
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: Value Added Services
+      source_url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: A complete range; Reconditioning; Personalisation; In-house photo studio
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM670
+      - CMP278
+      - U707
+      concept_name: Personalization Order
+      scope_summary: 'Personnalisation du produit : broderie, monogramme, gravure sur accessoires.'
+      approach_summary: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      term_choice: 'Personalization Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+    - vendor: GXO
+      product: Fashion and apparel
+      element_name: Fashion and apparel
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Broderie, cadeaux, kits et présentation de marque.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      source_title: Fashion and apparel
+      source_url: https://gxo.com/industries/fashion-apparel/
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: Value-added services; We make it personal
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM671
+      - CMP278
+      - U707
+      concept_name: Personalization Order
+      scope_summary: 'Personnalisation du produit : broderie, monogramme, gravure sur accessoires.'
+      approach_summary: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      term_choice: 'Personalization Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+    market_inspiration:
+      choice: Personalization Order distingue le résultat de prestation confié.
+      flow_scope: 'Personnalisation du produit : broderie, monogramme, gravure sur accessoires.'
+      flow_approach: Tenir les demandes de personnalisation des articles fashion confiées aux exécutants, leurs exigences,
+        engagements et suites des résultats.
+      synthesis:
+      - La carte cadeau jointe relève de la présentation, pas d’une transformation du produit.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Broder les initiales demandées sur les articles désignés.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM670
+        - U707
+        source_title: Value Added Services
+        source_url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM670
+  - ELM671
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: 4e4410a18c00482818726c84d9c0346a73fe5cb7702b5240b5aa7e038680b6d4
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: service-order-inspection
+  revision: 1
+  kind: capability
+  fields:
+    name: Inspection Order
+    definition: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+      et suites des résultats.
+    scope: |-
+      Inspection autonome, contrôle de conformité et classement d’état des articles.
+
+      Le contrôle intégré à une autre prestation reste dans cette prestation ; le constat ne décide pas du devenir du stock.
+
+      Préciser les articles, quantités, consignes, résultat attendu et échéance ; tenir acceptation, modifications et suites des écarts. Fulfilment Orchestration coordonne et capte les résultats ; l’exécutant réalise le travail. Le [Service Catalog](model:D14) décrit les offres ; le [Service Order](glossary:TER066) porte les engagements individuels.
+
+      Exemple fictif : Examiner un lot retourné et livrer un constat d’état sans décider de sa destination.
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: CEVA
+      product: Logistics solutions for online returns
+      element_name: Logistics solutions for online returns
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Grading, remise en état, réparation et préparation des retours.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Logistics solutions for online returns
+      source_url: https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: OUR SERVICES; WHAT MAKES US DIFFERENT
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM667
+      - CMP278
+      - U707
+      concept_name: Inspection Order
+      scope_summary: Inspection autonome, contrôle de conformité et classement d’état des articles.
+      approach_summary: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Inspection Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    - vendor: Bleckmann
+      product: Value Added Services
+      element_name: Value Added Services
+      element_type: Publication primaire de prestataire
+      relationship: Recouvrement partiel
+      similarities: Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+      differences: Le prestataire décrit des opérations ; FLOW tient la demande et les engagements de cette famille. Ni taxonomie
+        universelle des Orders ni preuve de réalisation Beaumanoir.
+      flow_position: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      source_title: Value Added Services
+      source_url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+      source_version: Page évolutive ; édition non indiquée
+      source_locator: A complete range; Reconditioning; Personalisation; In-house photo studio
+      consulted_on: '2026-09-24'
+      evidence_limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation
+        Beaumanoir. Synthèse et lien uniquement.
+      status: proposed
+      source_refs:
+      - ELM670
+      - CMP278
+      - U707
+      concept_name: Inspection Order
+      scope_summary: Inspection autonome, contrôle de conformité et classement d’état des articles.
+      approach_summary: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      term_choice: 'Inspection Order : composition de nom FLOW pour une famille documentée par le marché.'
+      definition_choice: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+    market_inspiration:
+      choice: Inspection Order distingue le résultat de prestation confié.
+      flow_scope: Inspection autonome, contrôle de conformité et classement d’état des articles.
+      flow_approach: Tenir les demandes de inspection des articles fashion confiées aux exécutants, leurs exigences, engagements
+        et suites des résultats.
+      synthesis:
+      - Le contrôle intégré à une autre prestation reste dans cette prestation ; le constat ne décide pas du devenir du stock.
+      examples:
+      - title: Exemple fictif fashion
+        situation: Examiner un lot retourné et livrer un constat d’état sans décider de sa destination.
+        outcome: Résultat et écarts conservés dans la demande.
+        lesson: Illustration sans preuve installée.
+        source_refs:
+        - ELM667
+        - U707
+        source_title: Logistics solutions for online returns
+        source_url: https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U687
+  - U689
+  - U707
+  - C118
+  - CMP278
+  - ELM667
+  - ELM670
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u707
+  adoption_ids: []
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Famille et rattachement corrigés U707. Rédactions détaillées et comparaisons proposées.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - name
+    value_sha256:
+      name: f42d3a82859b1b6cf690e34ae0909460f51fea2dbbbb3a27c7b3af30fc0cef15
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: transport-multi-stop
+  revision: 1
+  kind: behavior
+  fields:
+    name: Multi-Stop Transport
+    definition: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites
+      d’un changement ou d’une réalisation partielle.
+    scope: |-
+      Plusieurs points de résultat : une livraison effectuée ne clôture pas nécessairement l’ensemble de l’ordre.
+
+      L’ordre conserve les arrêts demandés et leurs contraintes. Optimiser la tournée ou décider de sa modification reste dans la coordination ; les tournées internes d’un transporteur ne créent pas ce comportement si FLOW ne les commande pas.
+
+      Exemple fictif : Une tournée dessert trois magasins ; deux sont livrés, le troisième reste à traiter.
+    nature: process_variant
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    market_comparisons:
+    - vendor: Oracle
+      product: 'Order Release: Order Stops'
+      element_name: 'Order Release: Order Stops'
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Arrêts intermédiaires, séquence, lieux et services associés à chaque arrêt.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les
+        suites d’un changement ou d’une réalisation partielle.
+      source_title: 'Order Release: Order Stops'
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/26a/otmol/planning/order_manager/or_stops.htm
+      source_version: 26A
+      source_locator: Creating a Shipment Stop
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM685
+      - U709
+      concept_name: Multi-Stop Transport
+      scope_summary: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les
+        suites d’un changement ou d’une réalisation partielle.
+      approach_summary: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et
+        les suites d’un changement ou d’une réalisation partielle.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et
+        les suites d’un changement ou d’une réalisation partielle.
+    - vendor: SAP
+      product: Multi-Pickup, Multi-Drop
+      element_name: Multi-Pickup, Multi-Drop
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Un ordre routier peut comporter plusieurs arrêts ; modification et annulation dépendent de leur avancement.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les
+        suites d’un changement ou d’une réalisation partielle.
+      source_title: Multi-Pickup, Multi-Drop
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/7194e95ee2e447b9954dc449d3a06971.html
+      source_version: Version non établie dans le passage indexé
+      source_locator: Canceling Freight Orders, Canceling Stops
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM686
+      - U709
+      concept_name: Multi-Stop Transport
+      scope_summary: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les
+        suites d’un changement ou d’une réalisation partielle.
+      approach_summary: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et
+        les suites d’un changement ou d’une réalisation partielle.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et
+        les suites d’un changement ou d’une réalisation partielle.
+  source_refs:
+  - U709
+  - C119
+  - ELM685
+  - ELM686
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 5fcb7e67a3f5f1807293ec0ed4aa8df16085ec80f3a1abb50f17527d42cf8059
+      definition: 29540ea8a81b26f0edd8569255a36b37b4c22fc257d3b7dac7914f74d3499146
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - market_comparisons
+- id: transport-multi-leg
+  revision: 1
+  kind: behavior
+  fields:
+    name: Multi-Leg Transport
+    definition: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+      et résultat final convenus.
+    scope: |-
+      La réalisation d’une étape ou d’un transbordement ne vaut pas livraison finale ; conditions et engagements intermédiaires à préserver.
+
+      Variante seulement si les étapes sont exposées dans la prestation confiée. Plusieurs Transport Orders confiés séparément sont une composition pilotée par Fulfilment, pas des sous-Orders obligatoires ni des sous-comportements.
+
+      Exemple fictif : Pré-acheminement, traversée maritime puis livraison à l’entrepôt ; exigences de remise précisées aux interfaces.
+    nature: process_variant
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    market_comparisons:
+    - vendor: SAP
+      product: Transportation Stages and Dates/Times in the Freight Unit
+      element_name: Transportation Stages and Dates/Times in the Freight Unit
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Étapes prédéfinies dans la demande distinguées des transbordements ajoutés par la planification.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      source_title: Transportation Stages and Dates/Times in the Freight Unit
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/9c8fdae3f57b48bc9cf4d5cfae3f130c.html
+      source_version: 2025 FPS01
+      source_locator: Transportation Stages
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM687
+      - U709
+      concept_name: Multi-Leg Transport
+      scope_summary: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      approach_summary: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+    - vendor: Oracle
+      product: Order Movement
+      element_name: Order Movement
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Un déplacement demandé peut être réparti entre plusieurs expéditions sans scinder la demande initiale.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      source_title: Order Movement
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/order_movement/order_movement.htm
+      source_version: 25C
+      source_locator: Creating an order movement
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM688
+      - U709
+      concept_name: Multi-Leg Transport
+      scope_summary: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      approach_summary: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+        et résultat final convenus.
+  source_refs:
+  - U709
+  - C119
+  - ELM687
+  - ELM688
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 6284324abdfd4e46c4b274f534e4ab3350887864f8e917f0f5219ef21e0e53bb
+      definition: a820191ee059116d5cf0113c749b1dbf81664863391807a16360a1959683b0af
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - market_comparisons
+- id: transport-scheduled
+  revision: 1
+  kind: behavior
+  fields:
+    name: Scheduled Transport
+    definition: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de
+      programme ou d’un départ manqué.
+    scope: |-
+      L’engagement dépend d’une occurrence de service identifiée ; changer de départ peut nécessiter une nouvelle acceptation.
+
+      Décrire le rattachement et ses suites, pas construire les horaires, le réseau ou une tournée. Une simple date demandée ne suffit pas. Deux sources SAP attestent le mécanisme sans consensus interéditeurs.
+
+      Exemple fictif : La navette entre deux entrepôts part chaque soir ; le lot doit être pris en charge sur le départ convenu.
+    nature: process_variant
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    market_comparisons:
+    - vendor: SAP
+      product: Use of Schedules
+      element_name: Use of Schedules
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Ordres associés à un départ programmé ; données et capacités reprises, changements du programme signalés.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      source_title: Use of Schedules
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/65978154f98b46c2b77906547c880936.html
+      source_version: Version non établie dans le passage indexé
+      source_locator: Features
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM689
+      - U709
+      concept_name: Scheduled Transport
+      scope_summary: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      approach_summary: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+    - vendor: SAP
+      product: Ad Hoc Loading
+      element_name: Ad Hoc Loading
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Des ordres routiers peuvent être préparés avant l’affectation des marchandises, avec reprise des arrêts
+        d’un programme.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      source_title: Ad Hoc Loading
+      source_url: https://help.sap.com/docs/PRODUCTS/f5d3e1005efd4e86acf9a65abf428082/df9df83274d04a79b186c38eb69e8d5b.html
+      source_version: 2025 FPS01
+      source_locator: Business Details
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM690
+      - U709
+      concept_name: Scheduled Transport
+      scope_summary: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      approach_summary: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement
+        de programme ou d’un départ manqué.
+  source_refs:
+  - U709
+  - C119
+  - ELM689
+  - ELM690
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 7d7fc25f466af3f22f5c275af03dbd3ce9c5b2f759bb75a3763017daa54b5cff
+      definition: e660268a2d162d92effbc124bd92e9529c2c5bc27dc404c143329efccc844425
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - market_comparisons
+- id: transport-appointments
+  revision: 1
+  kind: behavior
+  fields:
+    name: Pickup & Delivery Appointments
+    definition: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+      et conséquences sur l’engagement.
+    scope: |-
+      Distinguer une fenêtre souhaitée, un horaire estimé et un rendez-vous effectivement accepté.
+
+      Aucun Appointment Order systématique. Ne pas recopier la planification de quai ou la décision d’adaptation. Oracle documente aussi la collecte ; DHL étaye surtout la livraison.
+
+      Exemple fictif : Un magasin confirme un créneau de réception ; un retard impose de tenir le créneau renégocié.
+    nature: process_variant
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    market_comparisons:
+    - vendor: Oracle
+      product: Set Appointments
+      element_name: Set Appointments
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Le rendez-vous convenu avec le prestataire se distingue de l’horaire calculé ; vérification de compatibilité
+        entre arrêts.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      source_title: Set Appointments
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/general/appointments.htm
+      source_version: 25C
+      source_locator: Introduction ; Order Appointments ; Shipment Stop Appointments
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM691
+      - U709
+      concept_name: Pickup & Delivery Appointments
+      scope_summary: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      approach_summary: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+    - vendor: DHL
+      product: NZ Exporter’s Guide to Last Mile Delivery
+      element_name: NZ Exporter’s Guide to Last Mile Delivery
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Choix de fenêtres, report ou redirection et solutions après absence du destinataire.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      source_title: NZ Exporter’s Guide to Last Mile Delivery
+      source_url: https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions
+      source_version: Page évolutive, édition non indiquée
+      source_locator: Can customers choose their delivery time? ; What happens if the customer isn’t home?
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM692
+      - U709
+      concept_name: Pickup & Delivery Appointments
+      scope_summary: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      approach_summary: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications
+        et conséquences sur l’engagement.
+  source_refs:
+  - U709
+  - C119
+  - ELM691
+  - ELM692
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 52581230e3cad8683e9e1c5880fb9bdb9e058eb3770da60ee88eb905c7d19038
+      definition: 1f684183bbd56fa103b00ec69243552c0a5addb0a45d8f25ff6099c1f1eb3adb
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - market_comparisons
+- id: transport-rescheduling-redirection
+  revision: 1
+  kind: behavior
+  fields:
+    name: Delivery Rescheduling & Redirection
+    definition: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison
+      infructueuse.
+    scope: |-
+      Une instruction du destinataire peut modifier le résultat convenu ; conserver demande, acceptation et limites données par l’expéditeur.
+
+      La demande de changement ne vaut ni acceptation ni modification automatique de la promesse commerciale. Fulfilment choisit les adaptations ; Order Management conserve les engagements à satisfaire. Proche du rendez-vous, mais couvre aussi changement de lieu et remise après échec.
+
+      Exemple fictif : Après une absence, le destinataire demande un retrait en point relais ; tenir la nouvelle remise acceptée.
+    nature: process_variant
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    market_comparisons:
+    - vendor: DHL
+      product: NZ Exporter’s Guide to Last Mile Delivery
+      element_name: NZ Exporter’s Guide to Last Mile Delivery
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Choix de fenêtres, report ou redirection et solutions après absence du destinataire.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      source_title: NZ Exporter’s Guide to Last Mile Delivery
+      source_url: https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions
+      source_version: Page évolutive, édition non indiquée
+      source_locator: Can customers choose their delivery time? ; What happens if the customer isn’t home?
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM692
+      - U709
+      concept_name: Delivery Rescheduling & Redirection
+      scope_summary: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      approach_summary: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+    - vendor: UPS
+      product: Help and Support Center
+      element_name: Help and Support Center
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Demande de changement de date ou lieu ; options pouvant être restreintes par l’expéditeur.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      source_title: Help and Support Center
+      source_url: https://www.ups.com/us/en/business-solutions/grow-your-business-solutions
+      source_version: Page évolutive, édition non indiquée
+      source_locator: How do I change a delivery I’m receiving?
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM693
+      - U709
+      concept_name: Delivery Rescheduling & Redirection
+      scope_summary: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      approach_summary: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative
+        de livraison infructueuse.
+  source_refs:
+  - U709
+  - C119
+  - ELM692
+  - ELM693
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 3aa6fb4fad31817948ec92dbc32ba00cc4b46dd79b34b2797df01aab004bcf33
+      definition: 61edac7b06428ab4262a3431ca1b2aa8d1e34477ef0020156bbe17807eb27748
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - market_comparisons
+- id: service-order-transport-booking
+  revision: 1
+  kind: capability
+  fields:
+    name: Transport Booking Order
+    definition: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa
+      libération, avant ou indépendamment des instructions détaillées de déplacement.
+    scope: |-
+      Recommander une capacité distincte si FLOW porte cet engagement de capacité pour lui-même. Si le booking est seulement la prise en charge du même déplacement, rester dans Transport Order et son cycle de vie.
+
+      Capacité confirmée sur un service, départ ou période ; la confirmation ne prouve pas le déplacement des marchandises.
+
+      Une allocation interne de ressources reste Matching ; elle n’est pas une réservation commerciale auprès du prestataire. Un accord-cadre de capacité relève des accords de référence ; ne pas le transformer automatiquement en Order. Choix de l’offre et coordination des départs restent Fulfilment ; aucun lien un-à-un imposé entre booking et déplacements.
+
+      Exemple fictif : Réserver de la place pour un départ maritime de collection, puis préciser les lots effectivement expédiés.
+
+      Cette capacité cible ne prouve pas que ce service est déjà commandé ou réalisé chez Beaumanoir.
+    nature: action
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    category:
+      id: transport
+      display_name: Transport
+      order: 20
+    market_comparisons:
+    - vendor: SAP
+      product: Sample Ocean Freight Process for Shippers (Outbound)
+      element_name: Sample Ocean Freight Process for Shippers (Outbound)
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Le chargeur commence par une pré-réservation de capacité via un ocean freight booking.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      source_title: Sample Ocean Freight Process for Shippers (Outbound)
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/ca69ceb75dad454bad9bbeb25613b198.html?version=latest
+      source_version: Version non établie dans le passage indexé
+      source_locator: Introduction du processus chargeur
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM694
+      - U709
+      concept_name: Transport Booking Order
+      scope_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      approach_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+    - vendor: DCSA
+      product: Booking standard
+      element_name: Booking standard
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Échanges de données et suivi du booking d’espace maritime ; distinction avec les Shipping Instructions.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      source_title: Booking standard
+      source_url: https://dcsa.org/standards/booking
+      source_version: Présentation publique évolutive ; version du standard non établie
+      source_locator: The problem ; The solution
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM695
+      - U709
+      concept_name: Transport Booking Order
+      scope_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      approach_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+    - vendor: SAP
+      product: Freight Booking – Confirm
+      element_name: Freight Booking – Confirm
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Confirmation de capacité et de service dans les périodes convenues sous condition de remise à temps des
+        marchandises.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      source_title: Freight Booking – Confirm
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/2f36056ae9a044bba55bcbad204b7bc5/2ef80c370bc645c19fc266b746d3094f.html
+      source_version: Version non établie dans le passage indexé
+      source_locator: 'Service Nodes : TransportationOrderBooking ; BookingCapacity'
+      consulted_on: '2026-09-24'
+      evidence_limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités.
+        Extraits/synthèses et liens, pas de reproduction substantielle.
+      status: proposed
+      source_refs:
+      - ELM696
+      - U709
+      concept_name: Transport Booking Order
+      scope_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      approach_summary: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements
+        et sa libération, avant ou indépendamment des instructions détaillées de déplacement.
+  source_refs:
+  - U709
+  - C119
+  - ELM694
+  - ELM695
+  - ELM696
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 3bd41de7b1c952cffc6f4ad2bc7ce63d01c50771a6cfe28c5edb7238b12e055c
+      definition: c9676ad721a9efff23d5220c438eb750da729f1b6f93cdf75191172c08b56d1a
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - category
+  - market_comparisons
+- id: service-order-document-production
+  revision: 1
+  kind: capability
+  fields:
+    name: Document Production Order
+    definition: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis
+      aux destinataires attendus.
+    scope: |-
+      La réception, le mouvement de stock et les faits douaniers ne sont pas créés par le document. Mettre en forme ou joindre une facture existante ne vaut pas émettre une créance.
+
+      Order autonome seulement si prestation explicitement confiée et suivie ; une sortie automatique de réception ne crée pas systématiquement un Order.
+
+      Rendre visibles délai, complétude, rejet et reprise du livrable documentaire.
+
+      Nom proposé FLOW ; les sources parlent de shipping documents et goods receipt slip, pas d’une famille normalisée Document Production Order.
+
+      Fulfilment Orchestration coordonne le déclenchement distant, l’attente et les suites. Operations Tracking capte le résultat métier, distinct de l’accusé de réception technique. Service Order Management tient la demande et les engagements ; le service spécialisé réalise la prestation.
+    nature: action
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    category:
+      id: documents
+      display_name: Documents
+      order: 30
+    market_comparisons:
+    - vendor: Oracle
+      product: Overview of Executing Shipping Documents
+      element_name: Overview of Executing Shipping Documents
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Shipping génère des documents, dont packing slip et commercial invoice, liés à l’expédition.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis
+        aux destinataires attendus.
+      source_title: Overview of Executing Shipping Documents
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famlo/overview-of-executing-shipping-documents.html
+      source_version: 25D
+      source_locator: Overview
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM699
+      - U709
+      concept_name: Document Production Order
+      scope_summary: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis
+        aux destinataires attendus.
+      approach_summary: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et
+        transmis aux destinataires attendus.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible
+        et transmis aux destinataires attendus.
+    - vendor: SAP
+      product: Goods Receipt Slip (WE_SCHEINVERS2)
+      element_name: Goods Receipt Slip (WE_SCHEINVERS2)
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Le bon de réception est imprimable lors de la comptabilisation du mouvement de réception ; il en constitue
+        un justificatif.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis
+        aux destinataires attendus.
+      source_title: Goods Receipt Slip (WE_SCHEINVERS2)
+      source_url: https://help.sap.com/docs/SAP_ERP/36ce973bca7242118fba2bee0511f4d6/8edae4535dd4414de10000000a174cb4.html
+      source_version: ERP 6.0 EHP8
+      source_locator: Purpose
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM700
+      - U709
+      concept_name: Document Production Order
+      scope_summary: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis
+        aux destinataires attendus.
+      approach_summary: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et
+        transmis aux destinataires attendus.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible
+        et transmis aux destinataires attendus.
+  source_refs:
+  - U709
+  - C119
+  - ELM699
+  - ELM700
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 5bcc2db5d663b2699af9ae8e73b89a1cf391445822d42e6beeca7ef2e75f1171
+      definition: 76d8d6ad34077ca29fa832335f4a856297630f8d78d213027207f57c20e3f6f2
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - category
+  - market_comparisons
+- id: service-order-customs-clearance
+  revision: 1
+  kind: capability
+  fields:
+    name: Customs Clearance Order
+    definition: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat
+      de la procédure et au traitement des écarts.
+    scope: |-
+      La production du dossier est un moyen. Le prestataire traite la procédure ; l’autorité conserve sa décision. La politique globale de conformité commerce international n’est pas absorbée par cet Order.
+
+
+
+      Distinguer dossier prêt, déclaration traitée et marchandises effectivement libérées.
+
+      Customs clearance est établi ; suffixe Order et maille capacité sont une adaptation FLOW.
+
+      Fulfilment Orchestration coordonne le déclenchement distant, l’attente et les suites. Operations Tracking capte le résultat métier, distinct de l’accusé de réception technique. Service Order Management tient la demande et les engagements ; le service spécialisé réalise la prestation.
+    nature: action
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    category:
+      id: customs
+      display_name: Douane
+      order: 40
+    market_comparisons:
+    - vendor: DHL
+      product: Customs Services
+      element_name: Customs Services
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Le service douanier couvre dédouanement, documentation et conformité. Il dépasse la seule production documentaire
+        ; les autorités décident du dédouanement.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat
+        de la procédure et au traitement des écarts.
+      source_title: Customs Services
+      source_url: https://www.dhl.com/us-en/home/global-forwarding/products-and-solutions/customs-services.html
+      source_version: Page évolutive sans édition
+      source_locator: 'FAQ: customs services and customs broker'
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM703
+      - U709
+      concept_name: Customs Clearance Order
+      scope_summary: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat
+        de la procédure et au traitement des écarts.
+      approach_summary: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au
+        résultat de la procédure et au traitement des écarts.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au
+        résultat de la procédure et au traitement des écarts.
+    - vendor: SAP
+      product: Creating Documents — Customs Management
+      element_name: Creating Documents — Customs Management
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Customs Management utilise les données logistiques du système source pour construire les documents des
+        procédures douanières.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat
+        de la procédure et au traitement des écarts.
+      source_title: Creating Documents — Customs Management
+      source_url: https://help.sap.com/docs/SAP_GLOBAL_TRADE_SERVICES/bdb1d2fb216941a69f6300006343e977/4c9ab10f125a0780e10000000a42189b.html
+      source_version: Version non établie
+      source_locator: Creating customs declarations and customs shipments
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM704
+      - U709
+      concept_name: Customs Clearance Order
+      scope_summary: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat
+        de la procédure et au traitement des écarts.
+      approach_summary: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au
+        résultat de la procédure et au traitement des écarts.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au
+        résultat de la procédure et au traitement des écarts.
+  source_refs:
+  - U709
+  - C119
+  - ELM703
+  - ELM704
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 00d52e1970ad9d779dbb57df0369174a52684cba837697b5939b92aad5439a36
+      definition: 9b48468d63d63afc7d87a23528c259af7507c930e509d61aa0b7a583acfee663
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - category
+  - market_comparisons
+- id: service-order-billing
+  revision: 1
+  kind: capability
+  fields:
+    name: Billing Order
+    definition: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+      rejet et correction.
+    scope: |-
+      La responsabilité financière d’émission, des taxes, de la créance et de la comptabilisation reste chez le service de facturation. FLOW porte la demande, les références et la progression nécessaire au flux.
+
+
+
+      Éviter une commande livrée dont la facturation nécessaire reste sans suivi.
+
+      Billing services est documenté ; Billing Order est une proposition locale, pas une nomenclature interéditeurs.
+
+      Fulfilment Orchestration coordonne le déclenchement distant, l’attente et les suites. Operations Tracking capte le résultat métier, distinct de l’accusé de réception technique. Service Order Management tient la demande et les engagements ; le service spécialisé réalise la prestation.
+    nature: action
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    category:
+      id: financial
+      display_name: Services financiers
+      order: 50
+    market_comparisons:
+    - vendor: ASCM
+      product: Your Comprehensive Guide to Supply Chain Solutions for Improved Operations
+      element_name: Your Comprehensive Guide to Supply Chain Solutions for Improved Operations
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: SCOR couvre les interactions depuis la commande jusqu’à la facture payée. Cadre de processus de bout en
+        bout, sans prescription de frontières de domaines.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      source_title: Your Comprehensive Guide to Supply Chain Solutions for Improved Operations
+      source_url: https://www.ascm.org/ascm-insights/supply-chain-solutions-for-improved-operations/
+      source_version: '2026-07-10'
+      source_locator: What is SCOR?
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM698
+      - U709
+      concept_name: Billing Order
+      scope_summary: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      approach_summary: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+    - vendor: Oracle
+      product: How Order-to-Cash Works in Order Management
+      element_name: How Order-to-Cash Works in Order Management
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture
+        et traite les paiements. Le processus traverse les responsabilités.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      source_title: How Order-to-Cash Works in Order Management
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html
+      source_version: 26A
+      source_locator: Steps 3–5
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM701
+      - U709
+      concept_name: Billing Order
+      scope_summary: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      approach_summary: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation,
+        rejet et correction.
+  source_refs:
+  - U709
+  - C119
+  - ELM698
+  - ELM701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 825c92e591be92c5ee5bf7c49bb84a63604a1361a53ab01a8dd0815bceca64ef
+      definition: 704c8320a1d96c6db73ac156af5d4763b961cef448be4a521c4b493f24164aca
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - category
+  - market_comparisons
+- id: service-order-payment-collection
+  revision: 1
+  kind: capability
+  fields:
+    name: Payment Collection Order
+    definition: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+      le déclenchement et les suites.
+    scope: |-
+      Distinguer autorisation, capture, règlement reçu et affectation à une créance. Le service financier ou de paiement exécute ; comptabilité, trésorerie, rapprochement et recouvrement des impayés ne sont pas automatiquement inclus.
+
+      Si FLOW ne fait que recevoir un statut payé ou une autorisation de poursuivre, conserver une dépendance et un statut : pas d’Order artificiel.
+
+      Coordonner les étapes financières qui conditionnent l’exécution sans perdre les échecs ou paiements partiels.
+
+      Collection est ambigu avec recouvrement des impayés ; nom provisoire à préciser avec le résultat effectivement confié. Autorisation carte seule ne vaut pas encaissement.
+
+      Fulfilment Orchestration coordonne le déclenchement distant, l’attente et les suites. Operations Tracking capte le résultat métier, distinct de l’accusé de réception technique. Service Order Management tient la demande et les engagements ; le service spécialisé réalise la prestation.
+    nature: action
+    finality: Tenir les exigences, engagements et résultats de la prestation confiée.
+    category:
+      id: financial
+      display_name: Services financiers
+      order: 50
+    market_comparisons:
+    - vendor: Oracle
+      product: How Order-to-Cash Works in Order Management
+      element_name: How Order-to-Cash Works in Order Management
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture
+        et traite les paiements. Le processus traverse les responsabilités.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      source_title: How Order-to-Cash Works in Order Management
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html
+      source_version: 26A
+      source_locator: Steps 3–5
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM701
+      - U709
+      concept_name: Payment Collection Order
+      scope_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      approach_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+    - vendor: SAP
+      product: Manual Incoming Payments
+      element_name: Manual Incoming Payments
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Les encaissements relèvent des comptes clients, de la gestion des paiements et de la liquidité ; le rapprochement
+        avec les créances fait partie du traitement financier.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      source_title: Manual Incoming Payments
+      source_url: https://help.sap.com/docs/SAP_BUSINESS_BYDESIGN/2754875d2d2a403f95e58a41a9c7d6de/2c25dd46722d1014880ed85ecdf0cc88.html?locale=en-US
+      source_version: August 2026
+      source_locator: Overview
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM702
+      - U709
+      concept_name: Payment Collection Order
+      scope_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      approach_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+    - vendor: Oracle
+      product: Overview of Setting Up Credit Cards
+      element_name: Overview of Setting Up Credit Cards
+      element_type: Processus, service ou documentation produit
+      relationship: Recouvrement partiel
+      similarities: Order Management mobilise Oracle Payments pour le traitement carte ; l’autorisation peut venir du système
+        amont avec Financials. Intégration explicite, pas propriété de toute la finance dans Order Management.
+      differences: La source décrit un service, un processus ou un produit ; FLOW porte les demandes et engagements. Le découpage
+        en capacités et comportements est une adaptation, sans preuve installée Beaumanoir.
+      flow_position: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      source_title: Overview of Setting Up Credit Cards
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/overview-of-setting-up-credit-cards.html
+      source_version: 26B
+      source_locator: Overview and integration
+      consulted_on: '2026-09-24'
+      evidence_limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni
+        taxonomie universelle des Orders ni déploiement Beaumanoir.
+      status: proposed
+      source_refs:
+      - ELM705
+      - U709
+      concept_name: Payment Collection Order
+      scope_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      approach_summary: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+      term_choice: Nom de la proposition FLOW validée dans la discussion ; pas de nomenclature universelle revendiquée.
+      definition_choice: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement
+        le déclenchement et les suites.
+  source_refs:
+  - U709
+  - C119
+  - ELM701
+  - ELM702
+  - ELM705
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u709
+  adoption_ids: []
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Proposition cumulative rétablie U709. Nom, définition présentée et rattachement capturés ; compléments éditoriaux
+      et comparaison restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 4e0e0f7f98493754f1258d02bceea97f8e8f48495c500b10e14a9ed3888d557c
+      definition: aa7a68e58722f6b7d83513aff8b3b87155521e65d22054beac702ed26469bdd2
+    note: Portée cumulative U709 ; capture séparée sur état final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - nature
+  - finality
+  - category
+  - market_comparisons
 relations:
 - id: REL-MEMBER-D01.f
   revision: 1
@@ -37873,70 +39903,6 @@ relations:
     validated_fields: []
     value_sha256: {}
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-- id: REL-U682-CONTAINS-service-order-vas
-  revision: 1
-  type: contains
-  source_id: subdomain-service-orders
-  target_id: service-order-vas
-  source_refs:
-  - U679
-  - U681
-  - U682
-  last_modified: '2026-09-24T07:34:47.738310Z'
-  review:
-    state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
-  lifecycle:
-    state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
-    recorded_by: Codex
-    source_refs:
-    - U679
-    - U681
-    - U682
-    validated_fields:
-    - source_id
-    - target_id
-    - type
-    value_sha256:
-      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
-      target_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
-      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-- id: REL-U682-LIFECYCLE-service-order-vas
-  revision: 1
-  type: relates-to
-  source_id: service-order-vas
-  target_id: D07.b
-  source_refs:
-  - U679
-  - U681
-  - U682
-  qualification:
-    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
-      ce lien n’est pas une décomposition.
-    conditions:
-    - Lorsqu’une prestation concernée est sollicitée ou évolue.
-    effects:
-    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
-    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
-  last_modified: '2026-09-24T07:34:47.738310Z'
-  review:
-    state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
-  lifecycle:
-    state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
-    recorded_by: Codex
-    source_refs:
-    - U679
-    - U681
-    - U682
-    validated_fields: []
-    value_sha256: {}
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
 - id: REL-U682-CONTAINS-service-order-cross-docking
   revision: 1
   type: contains
@@ -38002,67 +39968,65 @@ relations:
     value_sha256: {}
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
 - id: REL-U682-CONTAINS-vas-labeling-relabeling
-  revision: 1
+  revision: 2
   type: contains
-  source_id: service-order-vas
+  source_id: service-order-labeling
   target_id: vas-labeling-relabeling
   source_refs:
   - U679
   - U681
   - U682
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
     note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
       détaillés proposés.
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_at: '2026-09-24T12:15:20.686819Z'
     recorded_by: Codex
     source_refs:
-    - U679
-    - U681
-    - U682
+    - U707
     validated_fields:
     - source_id
     - target_id
     - type
     value_sha256:
-      source_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
+      source_id: fb21b543c948fb7afc4b56b71cdca61c12dbaf251cd5f3f7dd9bc0991dd1d910
       target_id: e6e67e03e22c75f9753a393ffcb6f9345bea8942044aa4a77a60bf43906838ec
       type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
 - id: REL-U682-CONTAINS-vas-repacking
-  revision: 1
+  revision: 2
   type: contains
-  source_id: service-order-vas
+  source_id: service-order-packing
   target_id: vas-repacking
   source_refs:
   - U679
   - U681
   - U682
-  last_modified: '2026-09-24T07:34:47.738310Z'
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
   review:
     state: partial
     note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
       détaillés proposés.
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_at: '2026-09-24T12:15:20.686819Z'
     recorded_by: Codex
     source_refs:
-    - U679
-    - U681
-    - U682
+    - U707
     validated_fields:
     - source_id
     - target_id
     - type
     value_sha256:
-      source_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
+      source_id: 6e52f844d22dd5ee16be6c89d6a91f8af02bfc4c4abe8dd4b1bc80f2735ede7f
       target_id: e6309bb5ad40d74ea736906bad46a060eacff7fe2bad2d655dc7c3bef4f47d45
       type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
-    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
 - id: REL-U682-ORCHESTRATION-SERVICE-ORDERS
   revision: 1
   type: provides-knowledge
@@ -38172,6 +40136,789 @@ relations:
     - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
     scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
   last_modified: '2026-09-24T08:19:57.499780Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U707-CONTAINS-service-order-labeling
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-labeling
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: fb21b543c948fb7afc4b56b71cdca61c12dbaf251cd5f3f7dd9bc0991dd1d910
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-labeling
+  revision: 1
+  type: relates-to
+  source_id: service-order-labeling
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-kitting
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-kitting
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 6a27c3426ac71e480e9a93e95ba02cc351b8ba8e0efe4fcb58a552aa5c7a13d2
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-kitting
+  revision: 1
+  type: relates-to
+  source_id: service-order-kitting
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-garment-finishing
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-garment-finishing
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 8f0f91ac5d7f8ddb79b79bef365c2dfb07658c6905f29258aa5bae95b6d54b64
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-garment-finishing
+  revision: 1
+  type: relates-to
+  source_id: service-order-garment-finishing
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-cleaning
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-cleaning
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 2386d6020f2c833e99de63682a63297139ca3ab0a2168299488d70ee06af3994
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-cleaning
+  revision: 1
+  type: relates-to
+  source_id: service-order-cleaning
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-repair-alteration
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-repair-alteration
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 680db2dd8c8655392cbe5e438b47590813068e21ddc711f43f09bbad63423e12
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-repair-alteration
+  revision: 1
+  type: relates-to
+  source_id: service-order-repair-alteration
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-personalization
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-personalization
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: d266e3893f99219fa390880d735e377822a13437d9c8fefbac65fc070ece08a0
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-personalization
+  revision: 1
+  type: relates-to
+  source_id: service-order-personalization
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-CONTAINS-service-order-inspection
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-inspection
+  source_refs:
+  - U707
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: partial
+    note: Rattachement de la famille confirmé U707.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 59720c3a985db1c37c4d3a25ff19b66a64d171b35100bf8d569adf39a7c24800
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U707-LIFECYCLE-service-order-inspection
+  revision: 1
+  type: relates-to
+  source_id: service-order-inspection
+  target_id: D07.b
+  source_refs:
+  - U707
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T12:14:48.125870Z'
+  review:
+    state: proposed
+    note: Lien de coopération proposé, distinct de la décomposition.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:15:20.686819Z'
+    recorded_by: Codex
+    source_refs:
+    - U707
+    validated_fields: []
+    value_sha256: {}
+    note: Correction de portée U707 ; descriptions détaillées proposées, intentions capturées séparément.
+- id: REL-U709-CONTAINS-transport-multi-stop
+  revision: 1
+  type: contains
+  source_id: service-order-transport
+  target_id: transport-multi-stop
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      target_id: 59bc5450e3332a0756793656c3f11fd78ef960a01bc452c5f4a6d18e58bca26c
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-CONTAINS-transport-multi-leg
+  revision: 1
+  type: contains
+  source_id: service-order-transport
+  target_id: transport-multi-leg
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      target_id: b05a8b9d3c0e32d5be95a8ac900e3814b77eb2d497965134c014d8ce2027fd75
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-CONTAINS-transport-scheduled
+  revision: 1
+  type: contains
+  source_id: service-order-transport
+  target_id: transport-scheduled
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      target_id: 6d89715bb2fbb385da2f16d7f4ea16c888a5617bb3f47cce62cadeecdcd01a43
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-CONTAINS-transport-appointments
+  revision: 1
+  type: contains
+  source_id: service-order-transport
+  target_id: transport-appointments
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      target_id: d6ef91d065f7db7a47dcda5d3ec8491cc563e5328628a4964fca819a9043b342
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-CONTAINS-transport-rescheduling-redirection
+  revision: 1
+  type: contains
+  source_id: service-order-transport
+  target_id: transport-rescheduling-redirection
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      target_id: 9ae3d0f8108d700e6c1857360b1fe256ff13430c0fcfeb3135d953bb80dee756
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-CONTAINS-service-order-transport-booking
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-transport-booking
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 27b13b33213344cde0dc99dad366662c43a2c1658d0184a0f6dee0ed8f591c49
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-LIFECYCLE-service-order-transport-booking
+  revision: 1
+  type: relates-to
+  source_id: service-order-transport-booking
+  target_id: D07.b
+  source_refs:
+  - U709
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U709-CONTAINS-service-order-document-production
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-document-production
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: ff738c696ef32d1e67ff1c21ed6a2294bb0bff8f7705d707dcc4d433e5086001
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-LIFECYCLE-service-order-document-production
+  revision: 1
+  type: relates-to
+  source_id: service-order-document-production
+  target_id: D07.b
+  source_refs:
+  - U709
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U709-CONTAINS-service-order-customs-clearance
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-customs-clearance
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: e502a0abe6c5db8962efd4925cd015b6b92cbd2241c1fe865eae76d69e9336c7
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-LIFECYCLE-service-order-customs-clearance
+  revision: 1
+  type: relates-to
+  source_id: service-order-customs-clearance
+  target_id: D07.b
+  source_refs:
+  - U709
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U709-CONTAINS-service-order-billing
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-billing
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: d8d78eb0f4e294654d7b3d4700efa27f641ac00e5b4d3b896ba07621d426b479
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-LIFECYCLE-service-order-billing
+  revision: 1
+  type: relates-to
+  source_id: service-order-billing
+  target_id: D07.b
+  source_refs:
+  - U709
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U709-CONTAINS-service-order-payment-collection
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-payment-collection
+  source_refs:
+  - U709
+  last_modified: '2026-09-24T12:20:10.043782Z'
+  review:
+    state: partial
+    note: Rattachement de la proposition complète U709.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T12:20:10.043782Z'
+    recorded_by: Codex
+    source_refs:
+    - U709
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 66845cb95ad11c0ddeaec5c6d9c0c4ed6119bd4539ed39020077cff03f3cfb3e
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Capture séparée sur état final.
+- id: REL-U709-LIFECYCLE-service-order-payment-collection
+  revision: 1
+  type: relates-to
+  source_id: service-order-payment-collection
+  target_id: D07.b
+  source_refs:
+  - U709
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:20:10.043782Z'
   review:
     state: partial
     note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
@@ -38416,6 +41163,9 @@ limitations:
 - U472 retire l’univers Business Services (universe-case) et son entrée de glossaire TER067. Identifiants non réutilisables
   ; états antérieurs et accords conservés dans audits/2026-09-19-business-services-U472/before/ et les publications historiques.
   Le commerce est différé après la Supply Chain.
+- 'U707/C118 : service-order-vas retiré au profit des dix familles fashion. Identifiant retiré non réutilisable ; état et
+  accords historiques conservés dans Git et la publication 2026-09-24.3. vas-labeling-relabeling et vas-repacking conservent
+  leurs identifiants et changent de parent.'
 lifecycle_policy: 1
 information_catalog:
   id: flow-business-information

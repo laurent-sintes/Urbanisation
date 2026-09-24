@@ -1,5 +1,5 @@
 id: DOCUMENT-FINANCIAL-SERVICES-U702
-status: proposed_not_adopted
+status: applied_U709
 date: '2026-09-24'
 author: Codex
 source_refs:
@@ -8,6 +8,7 @@ source_refs:
 - U704
 - U705
 - U706
+- U709
 canonical_authority: modeles/backlog/model.yaml
 comparison_ref: CMP277
 sources:
@@ -126,7 +127,7 @@ conclusion: Élargissement recommandé des prestations orchestrées aux document
   conditionné à une responsabilité active. Ne pas confondre processus SCM complet et propriété de toutes ses fonctions financières.
 proposals:
 - name: Document Production Order
-  recommendation: recommended
+  recommendation: applied_U709_with_stated_boundaries
   result: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux
     destinataires attendus.
   sources:
@@ -139,8 +140,9 @@ proposals:
   benefit: Rendre visibles délai, complétude, rejet et reprise du livrable documentaire.
   naming_limit: Nom proposé FLOW ; les sources parlent de shipping documents et goods receipt slip, pas d’une famille normalisée
     Document Production Order.
+  canonical_id: service-order-document-production
 - name: Customs Clearance Order
-  recommendation: recommended
+  recommendation: applied_U709_with_stated_boundaries
   result: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la
     procédure et au traitement des écarts.
   sources:
@@ -150,8 +152,9 @@ proposals:
     politique globale de conformité commerce international n’est pas absorbée par cet Order.
   benefit: Distinguer dossier prêt, déclaration traitée et marchandises effectivement libérées.
   naming_limit: Customs clearance est établi ; suffixe Order et maille capacité sont une adaptation FLOW.
+  canonical_id: service-order-customs-clearance
 - name: Billing Order
-  recommendation: recommended_scope_extension
+  recommendation: applied_U709_with_stated_boundaries
   result: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet
     et correction.
   sources:
@@ -161,8 +164,9 @@ proposals:
     de facturation. FLOW porte la demande, les références et la progression nécessaire au flux.
   benefit: Éviter une commande livrée dont la facturation nécessaire reste sans suivi.
   naming_limit: Billing services est documenté ; Billing Order est une proposition locale, pas une nomenclature interéditeurs.
+  canonical_id: service-order-billing
 - name: Payment Collection Order
-  recommendation: conditional_scope_extension
+  recommendation: applied_U709_with_stated_boundaries
   result: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le
     déclenchement et les suites.
   sources:
@@ -176,6 +180,7 @@ proposals:
   benefit: Coordonner les étapes financières qui conditionnent l’exécution sans perdre les échecs ou paiements partiels.
   naming_limit: Collection est ambigu avec recouvrement des impayés ; nom provisoire à préciser avec le résultat effectivement
     confié. Autorisation carte seule ne vaut pas encaissement.
+  canonical_id: service-order-payment-collection
 model_integration:
   service_catalog: Offres, résultats, conditions et fournisseurs des services.
   service_order_management: Demandes confiées et engagements acceptés ; les nouveaux Orders proposés restent ici.
@@ -246,7 +251,30 @@ remote_execution_agreement:
     service_order_management: 83a2a8d0aa9112265606f39b64dc8c63b9d7dba54ab29bd77df402985d2dcd75
     completion: 8b1a7f39b3146c76641f3aec1ce692afc286c08af1a047fc6d353706f4d8a727
     capability_impact: 043d570389001a25762ffb173d55553a04c04a2eba3d9fa08370d6abb6996719
-  scope: Accord ciblé sur les énoncés présentés ; aucune approbation de champs canoniques entiers ni des nouvelles familles
-    proposées.
+  scope: 'Accord U706 relu selon U709 : la proposition complète de services est adoptée, avec exécution distante et suivi
+    ; les détails rédigés ensuite restent proposés.'
   capture_note: Accord conservé dans l’annexe de proposition avec valeurs et empreintes. record_decision.py cible uniquement
     les champs de nodes/relations ; aucune approbation plus large de scope n’est créée.
+publication_delivery:
+  state: applied
+  source_refs:
+  - U709
+  summary: Quatre familles de services documentaires, douaniers et financiers ; réalisation externe possible.
+  required_nodes:
+  - id: service-order-document-production
+    fields:
+      name: Document Production Order
+    parent: subdomain-service-orders
+  - id: service-order-customs-clearance
+    fields:
+      name: Customs Clearance Order
+    parent: subdomain-service-orders
+  - id: service-order-billing
+    fields:
+      name: Billing Order
+    parent: subdomain-service-orders
+  - id: service-order-payment-collection
+    fields:
+      name: Payment Collection Order
+    parent: subdomain-service-orders
+  absent_nodes: []

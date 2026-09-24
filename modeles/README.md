@@ -284,3 +284,8 @@ Les champs facultatifs `fields.request_origins` (capacité uniquement) et `field
 ### Catégorie visuelle des capacités (U701)
 
 `fields.category` est facultatif : `id` stable, `display_name` affiché et `order` entier optionnel. Ces métadonnées classent visuellement les capacités à l’intérieur de leur sous-domaine sans modifier leur parent ni créer un niveau métier. Réutiliser les mêmes libellé et ordre pour un identifiant dans un même sous-domaine. Les publications historiques sans ce champ gardent leur présentation ; les nouvelles affectations restent des propositions éditoriales tant qu’elles ne sont pas adoptées.
+
+
+### Application des accords cumulatifs — U709
+
+Un accord valide la proposition complète construite dans la discussion, avec ses conditions explicites. Le modèle canonique porte son application ; les annexes conservent preuves et correspondances. Une déclaration `publication_delivery` dans l’annexe rend le lot vérifiable : `applied` contrôle les nœuds attendus, leurs champs, parents et retraits ; `pending` reste visible sans être adopté automatiquement. La préparation expose ces lots dans son bilan et bloque une application incomplète. Ce contrôle repose sur des déclarations explicites et ne déduit pas les accords du texte libre des anciennes études.
