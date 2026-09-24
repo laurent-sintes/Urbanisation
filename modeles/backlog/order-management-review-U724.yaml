@@ -1,0 +1,816 @@
+id: ORDER-MANAGEMENT-REVIEW-U724
+status: applied_U725
+source_refs:
+- U724
+- CMP283
+- U711
+- U717
+- U723
+- U725
+scope:
+  subdomain: D04
+  capabilities: 11
+  order_families: 7
+  transverse_capabilities: 4
+  behaviors: 36
+  model: modeles/backlog/model.yaml
+  publication_baseline: 2026-09-24.7
+sources:
+- id: ELM724
+  reference: MKT20
+  vendor: Oracle
+  title: Create, Search, and Apply Actions on Sales Orders
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html
+  edition: 26B
+  locator: Apply actions / Holds / Cancel / Schedule
+  finding: Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande
+    acceptée ne prouve pas son achèvement.
+  consulted_on: '2026-09-24'
+- id: ELM725
+  reference: MKT14
+  vendor: Microsoft
+  title: Approve and confirm purchase orders
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+  edition: Page évolutive
+  locator: Approval and confirmation
+  finding: Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas
+    à un statut universel.
+  consulted_on: '2026-09-24'
+- id: ELM726
+  reference: MKT20
+  vendor: Oracle
+  title: Check Availability
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html
+  edition: 25C
+  locator: Introduction
+  finding: La disponibilité permet de déterminer les possibilités de satisfaction ; appui à la distinction entre calcul et
+    engagement porté par la commande.
+  consulted_on: '2026-09-24'
+- id: ELM727
+  reference: MKT14
+  vendor: Microsoft
+  title: Order promising
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations
+  edition: Page évolutive
+  locator: Order promising and delivery date calculations
+  finding: Les méthodes de calcul de dates alimentent les dates de la commande ; ne prescrivent pas une capacité FLOW distincte
+    Fulfillment Commitment.
+  consulted_on: '2026-09-24'
+- id: ELM728
+  reference: MKT14
+  vendor: Microsoft
+  title: Set up consignment
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+  edition: Page évolutive
+  locator: Consignment replenishment orders
+  finding: La demande d’apport et son suivi sont distincts du changement de propriété et du stock détenu ; perspective fournisseur
+    entrant.
+  consulted_on: '2026-09-24'
+- id: ELM729
+  reference: MKT13
+  vendor: SAP
+  title: Customer Consignment
+  url: https://help.sap.com/doc/6f9449d2ad114d39bc708ea88f5d1aea/2405/en-US/Customer_Consignment_EN.pdf
+  edition: Business ByDesign 2405
+  locator: Customer consignment / fill-up / pick-up
+  finding: L’apport, la consommation et la reprise sont distingués dans la consignation client ; les types documentaires ne
+    prescrivent pas les natures FLOW.
+  consulted_on: '2026-09-24'
+- id: ELM730
+  reference: MKT14
+  vendor: Microsoft
+  title: Delivery schedules
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+  edition: Page évolutive
+  locator: Introduction
+  finding: Quantités de lignes réparties en plusieurs livraisons ; scission de réalisation et nombre de commandes commerciales
+    ne sont pas équivalents.
+  consulted_on: '2026-09-24'
+- id: ELM731
+  reference: MKT20
+  vendor: Oracle
+  title: Ship Order Lines in Shipment Sets
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html
+  edition: 26A
+  locator: Shipment sets
+  finding: Des ensembles de lignes portent des contraintes de livraison commune. Ne prouve pas une fusion générique de commandes.
+  consulted_on: '2026-09-24'
+- id: ELM732
+  reference: MKT14
+  vendor: Microsoft
+  title: Archive Dynamics 365 Supply Chain Management Sales orders data
+  url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+  edition: Page mise à jour le 14 janvier 2026
+  locator: Prerequisites / View historical data
+  finding: L’archivage conserve des commandes et données liées pour consultation ; fonctions de plateforme sans prescription
+    de capacité métier autonome.
+  consulted_on: '2026-09-24'
+- id: ELM733
+  reference: MKT14
+  vendor: Microsoft
+  title: Archive documents
+  url: https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+  edition: Page mise à jour le 15 octobre 2025
+  locator: Introduction / Archive / Restore
+  finding: Versions archivées, consultation et restauration conditionnelle sont distinctes ; ne pas confondre archivage, clôture
+    et réouverture.
+  consulted_on: '2026-09-24'
+items:
+- id: D03.n
+  current_name: Fulfillment Commitment
+  current_type: management
+  recommendation: absorb
+  proposed_name: Fulfillment Commitment
+  proposed_type: null
+  rationale: Retirer le nœud autonome ; conserver propositions, confirmations et révisions des engagements dans les familles
+    pertinentes et le contrat commun du sous-domaine. Ne pas déplacer la confirmation dans Promising.
+  existing_evidence_reused:
+  - title: Check Availability
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html
+    source_refs:
+    - U477
+    - ELM350
+    - CMP191
+  - title: Exploring Backorder Processing
+    url: https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe
+    source_refs:
+    - U435
+    - U460
+    - U477
+    - ELM458
+    - CMP191
+  behaviors:
+  - BHV021
+  - BHV022
+  - BHV023
+- id: D04.i
+  current_name: Sales Order
+  current_type: action
+  recommendation: keep
+  proposed_name: Sales Order
+  proposed_type: action
+  rationale: Préserver vente, promesse portée par la commande et variantes ; intégrer explicitement ses évolutions et conservation.
+  existing_evidence_reused:
+  - title: Customer orders in point of sale (POS)
+    url: https://learn.microsoft.com/en-us/dynamics365/commerce/customer-orders-overview
+    source_refs:
+    - U400
+    - U401
+    - ELM240
+    - CMP151
+    - U477
+    - ELM392
+    - CMP189
+  - title: Direct deliveries
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/direct-deliveries
+    source_refs:
+    - U400
+    - U401
+    - ELM240
+    - CMP151
+    - U477
+    - ELM436
+    - CMP189
+  - title: Intercompany orders and return orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/intercompany-orders-and-return-orders
+    source_refs:
+    - U400
+    - U401
+    - ELM240
+    - CMP151
+    - U477
+    - ELM437
+    - CMP189
+  behaviors:
+  - BHV066
+  - BHV067
+  - BHV068
+  - BHV069
+  - BHV096
+- id: D04.j
+  current_name: Purchase Order
+  current_type: action
+  recommendation: keep
+  proposed_name: Purchase Order
+  proposed_type: action
+  rationale: Conserver Supplier Confirmation spécifique, distincte de notre promesse client. Achat de prestation = engagement
+    commercial ; Service Order = demande d’exécution.
+  existing_evidence_reused:
+  - title: Create purchase orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-creation
+    source_refs:
+    - U390
+    - U391
+    - ELM235
+    - CMP146
+    - U477
+    - ELM429
+    - CMP189
+  - title: What’s the difference between a purchase order, a purchase agreement, and a contract agreement?
+    url: https://docs.oracle.com/en/cloud/saas/procurement/26a/oaprc/Chunk145966296.html
+    source_refs:
+    - U477
+    - ELM345
+    - CMP189
+  - title: Vendor collaboration with external vendors
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/vendor-collaboration-work-external-vendors
+    source_refs:
+    - U403
+    - ELM242
+    - CMP153
+    - U477
+    - ELM432
+    - CMP189
+  - title: Firm planned orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    - U349
+    - CMP125
+    - U350
+    - U424
+    - U477
+    - ELM419
+    - CMP189
+    - U560
+    - CMP234
+  - title: Manually Release Plan Recommendations
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+    source_refs:
+    - ELM566
+    - U552
+    - CMP229
+    - U560
+    - CMP234
+  behaviors:
+  - BHV058
+  - BHV059
+  - BHV060
+  - BHV078
+- id: D04.k
+  current_name: Transfer Order
+  current_type: action
+  recommendation: keep
+  proposed_name: Transfer Order
+  proposed_type: action
+  rationale: Conserver les intentions de transfert ; trajet et prestation de transport restent dans Service Order Management
+    / Fulfilment.
+  existing_evidence_reused:
+  - title: Integrate transfer orders
+    url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/integrate-transfer-orders
+    source_refs:
+    - U400
+    - U401
+    - ELM240
+    - CMP151
+    - U477
+    - ELM404
+    - CMP189
+  - title: Set up warehouses for transfer orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/transfer-orders-warehouse
+    source_refs:
+    - U400
+    - U401
+    - ELM240
+    - CMP151
+    - U477
+    - ELM444
+    - CMP189
+  - title: Firm planned orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    - U349
+    - CMP125
+    - U350
+    - U424
+    - U477
+    - ELM419
+    - CMP189
+    - U560
+    - CMP234
+  - title: Manually Release Plan Recommendations
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+    source_refs:
+    - ELM566
+    - U552
+    - CMP229
+    - U560
+    - CMP234
+  behaviors:
+  - BHV070
+  - BHV071
+  - BHV072
+  - BHV073
+  - BHV074
+- id: D04.l
+  current_name: Return Order
+  current_type: action
+  recommendation: keep
+  proposed_name: Return Order
+  proposed_type: action
+  rationale: Conserver les parcours ; ne décide pas du devenir ni n’exécute réparation ou rebut.
+  existing_evidence_reused:
+  - title: Managing Customer Returns
+    url: https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc
+    source_refs:
+    - U477
+    - ELM455
+    - CMP189
+  - title: Specify how to dispose of returned items
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items
+    source_refs:
+    - U384
+    - ELM232
+    - CMP143
+    - U385
+    - U477
+    - ELM438
+    - CMP189
+  - title: Sales returns
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/sales-returns
+    source_refs:
+    - U612
+    - ELM632
+    - CMP264
+  behaviors:
+  - BHV050
+  - BHV051
+  - BHV052
+  - BHV053
+  - BHV054
+- id: D04.m
+  current_name: Supplier Return
+  current_type: action
+  recommendation: rename
+  proposed_name: Supplier Return Order
+  proposed_type: action
+  rationale: Alignement des noms des familles ; le glossaire dit déjà Supplier Return Order. Avoir, remplacement et réparation
+    restent des résultats distincts.
+  existing_evidence_reused:
+  - title: Process purchase returns or cancellations
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/purchasing-how-process-purchase-returns-cancellations
+    source_refs:
+    - U386
+    - ELM233
+    - CMP144
+    - U387
+    - U477
+    - ELM390
+    - CMP189
+  - title: Return to Supplier for Credit Only
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/25a/inv25a/25A-inventory-wn-f35542.htm
+    source_refs:
+    - U386
+    - ELM233
+    - CMP144
+    - U387
+    - U477
+    - ELM346
+    - CMP189
+  - title: Returns Management
+    url: https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement
+    source_refs:
+    - U477
+    - ELM387
+    - CMP189
+  behaviors:
+  - BHV055
+  - BHV056
+  - BHV057
+- id: D04.n
+  current_name: Order Structuring
+  current_type: action
+  recommendation: keep
+  proposed_name: Order Structuring
+  proposed_type: action
+  rationale: 'Responsabilité portant sur les relations entre demandes et leurs parties : filiation, groupes et fusions autorisées.
+    Ne choisit ni allocations ni regroupements de transport.'
+  existing_evidence_reused:
+  - title: Delivery schedules
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules
+    source_refs:
+    - U355
+    - ELM220
+    - CMP129
+    - U363
+    - CMP133
+    - U438
+    - U477
+    - ELM435
+    - CMP189
+  - title: Ship Order Lines in Shipment Sets
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html#s20054853
+    source_refs:
+    - U477
+    - ELM362
+    - CMP189
+  - title: Commingling purchase orders
+    url: https://docs.infor.com/ln/10.7/en-us/lnolh/help/td/onlinemanual/000321.html
+    source_refs:
+    - U477
+    - ELM335
+    - CMP189
+  behaviors:
+  - BHV044
+  - BHV086
+  - BHV087
+- id: D04.o
+  current_name: Order Lifecycle Management
+  current_type: management
+  recommendation: absorb
+  proposed_name: Order Lifecycle Management
+  proposed_type: null
+  rationale: Retirer le nœud et ses six Behaviors transverses ; conserver toutes les dimensions dans le contrat du sous-domaine
+    et les responsabilités des familles, sans copie systématique de Behaviors.
+  existing_evidence_reused:
+  - title: Order Management Statuses
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html
+    source_refs:
+    - U353
+    - U354
+    - ELM219
+    - CMP128
+    - U363
+    - CMP133
+    - U420
+    - U424
+    - U477
+    - ELM353
+    - CMP189
+  - title: Approve and confirm purchase orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation
+    source_refs:
+    - U351
+    - ELM217
+    - CMP126
+    - U363
+    - CMP133
+    - U420
+    - U424
+    - U477
+    - ELM427
+    - CMP189
+  - title: Hold Your Sales Orders
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html
+    source_refs:
+    - U351
+    - ELM217
+    - CMP126
+    - U363
+    - CMP133
+    - U420
+    - U424
+    - U477
+    - ELM368
+    - CMP189
+  - title: Firm planned orders
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming
+    source_refs:
+    - U346
+    - U347
+    - ELM216
+    - CMP124
+    - U349
+    - CMP125
+    - U350
+    - U424
+    - U477
+    - ELM419
+    - CMP189
+    - U560
+    - CMP234
+  behaviors:
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV043
+- id: D04.q
+  current_name: Order Archiving
+  current_type: management
+  recommendation: absorb
+  proposed_name: Order Archiving
+  proposed_type: null
+  rationale: À cette maille, conserver l’historisation, la conservation et la consultation comme responsabilités communes
+    des Orders. Clôture, archivage, purge et réouverture restent distincts.
+  existing_evidence_reused:
+  - title: Archive sales orders
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+    - U363
+    - CMP133
+    - U420
+    - U438
+    - U477
+    - ELM401
+    - CMP189
+  - title: Archive documents
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents
+    source_refs:
+    - U352
+    - ELM218
+    - CMP127
+    - U363
+    - CMP133
+    - U420
+    - U438
+    - U477
+    - ELM388
+    - CMP189
+  behaviors: []
+- id: D04.r
+  current_name: Consignment Fill-up Order
+  current_type: management
+  recommendation: retype
+  proposed_name: Consignment Fill-up Order
+  proposed_type: action
+  rationale: Même responsabilité de prise en charge d’une demande que les autres Orders. Le régime durable du stock reste
+    Consigned Inventory Management.
+  existing_evidence_reused:
+  - title: Consignment Orders
+    url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U601
+    - U625
+    - U626
+  - title: Set up consignment
+    url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    source_refs:
+    - U435
+    - U477
+    - ELM406
+    - CMP190
+    - U595
+    - U600
+    - U625
+    - U626
+  behaviors:
+  - BHV061
+  - BHV062
+- id: D04.t
+  current_name: Consignment Pick-up Order
+  current_type: management
+  recommendation: retype
+  proposed_name: Consignment Pick-up Order
+  proposed_type: action
+  rationale: Reprise de biens restés consignés ; ne pas fusionner avec retour après cession ou transfert interne.
+  existing_evidence_reused:
+  - title: Consignment Orders
+    url: https://help.sap.com/docs/SAP_FASHION_MANAGEMENT/3d09d3032a1649f4abf6eea0a8f3ed11/a620215320ce9254e10000000a4450e5.html
+    source_refs:
+    - ELM615
+    - CMP259
+    - U600
+    - U611
+    - U625
+    - U626
+  - title: Examples of Consigned Inventory Returns
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/examples-of-consigned-inventory-returns.html
+    source_refs:
+    - ELM624
+    - U600
+    - U611
+    - U626
+  behaviors: []
+market_comparisons:
+- topic: Cycle de vie et visibilité des Orders
+  sources:
+  - ELM724
+  - ELM725
+  conclusion: Responsabilités nécessaires ; leur regroupement sous les familles plutôt qu’une capacité séparée est une convention
+    FLOW cohérente avec Service Order Management.
+- topic: Possibilité et engagement
+  sources:
+  - ELM726
+  - ELM727
+  - ELM725
+  conclusion: Ne pas supprimer l’engagement avec le nœud Fulfillment Commitment. Calcul et engagement restent distincts ;
+    engagement reçu du fournisseur et engagement émis au client également.
+- topic: Consignation
+  sources:
+  - ELM728
+  - ELM729
+  conclusion: Conserver les intentions d’apport et reprise ; harmoniser en Action selon la convention FLOW, sans prétendre
+    que les éditeurs prescrivent ce type.
+- topic: Structuration
+  sources:
+  - ELM730
+  - ELM731
+  conclusion: Conserver filiation et ensembles ; le support marché de la fusion générique reste limité, correspondance Infor
+    antérieure à préserver avec ses restrictions.
+- topic: Archivage
+  sources:
+  - ELM732
+  - ELM733
+  conclusion: Fonction réelle, pas nécessité démontrée d’une capacité autonome à la maille retenue. Deux produits Microsoft
+    ne prouvent pas consensus.
+proposed_addition:
+  name: Order Visibility
+  nature: knowledge
+  parent: D04
+  definition: Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order
+    et à travers le carnet.
+  boundary: Consomme les états tenus par les familles et les résultats rapprochés par Fulfilment ; ne capte pas directement
+    les événements des exécutants, ne modifie pas les Orders et ne recalcule pas la promesse.
+  benefit: Point d’accès commun à la connaissance du carnet après retrait des capacités transverses de mutation.
+  sources:
+  - ELM724
+  - ELM725
+  status: applied_U725
+common_contract:
+- Identifier origine, parties, lignes, quantités, lieux et dates demandées.
+- Distinguer proposition, intention ferme, engagement confirmé, protection, autorisation de prise en charge et suspension.
+- Gérer révisions, annulations et clôture à la portée quantité/ligne/ensemble, selon les autorisations.
+- Conserver demandé, proposé, confirmé, réalisé et reste à satisfaire séparément.
+- Préserver prix engagé, versions, filiation et historique ; aucun effet réalisé effacé.
+- Distinguer conservation historique, archivage, purge et réouverture ; aucune durée ni régime juridique inventé.
+cooperation:
+  Order Promising: Calcule et recommande les possibilités quantité/date/conditions.
+  Demand & Supply Matching: Arbitre la couverture et les affectations ; les engagements appartiennent aux Orders.
+  Order Management: Porte la demande et ses engagements et révisions autorisées.
+  Service Order Management: Porte les demandes de prestations et leurs engagements spécifiques.
+  Fulfilment Orchestration: Coordonne et adapte l’exécution en préservant promesse et grands équilibres ; fournit les résultats
+    rapprochés.
+  Inventory Management: Porte faits, états et réservations ; une promesse ne vaut pas réservation.
+additional_findings:
+- id: OM-01
+  finding: REL-NEEDS-U290-019 cible D02.e Apply Plan mais décrit Supply Assignment.
+  action: Retirer avec D03.n ou requalifier vers le responsable actuel du résultat, jamais conserver le lien par simple remplacement
+    de nom.
+- id: OM-02
+  finding: REL-EXECUTION-PROMISING décrit encore D15 retiré et le calcul de promesse vers D04.
+  action: Réécrire selon D18 calcul / D04 engagement et D06 retours d’exécution.
+- id: OM-03
+  finding: Les scopes empilent anciens noms Demand, Availability et Consignment Replenishment Order ; Purchase Order répète
+    Matching.
+  action: Réécrire les descriptions courantes, conserver les accords et les anciens textes dans Git.
+- id: OM-04
+  finding: 'Les Behaviors sont des axes parfois combinables : parcours, relation intercompany, confirmation fournisseur et
+    consignation.'
+  action: Expliciter les axes non exclusifs sans imposer un arbre de sous-comportements ni dupliquer le cycle commun.
+- id: OM-05
+  finding: Orders entrants ne signifie pas uniquement commandes émises par un acteur externe ; transferts, propositions APS
+    et achats expriment aussi des demandes prises en charge.
+  action: Clarifier la frontière par le résultat demandé ; distinguer achat de prestation et ordre de service.
+migration_requirements:
+- Préserver les IDs des sept familles ; ne pas réutiliser les IDs retirés.
+- Replacer les responsabilités des six Behaviors Lifecycle et trois Behaviors Commitment dans les textes des familles/sous-domaine
+  avant retrait.
+- Traiter tous les liens entrants et sortants des nœuds retirés, les liens de glossaire et les illustrations masquées sans
+  étendre leur catalogue.
+- Éviter sept copies des mêmes Behaviors de cycle et confirmation.
+- Capturer uniquement les champs effectivement approuvés après accord ; publier séparément.
+proposed_result:
+  capabilities: 9
+  order_families: 7
+  cross_family:
+  - Order Structuring
+  - Order Visibility
+  type_convention: Action pour les sept familles selon U384 ; Knowledge pour Visibility. Ne pas changer toutes les familles
+    en Management pour résoudre deux exceptions.
+publication_delivery:
+  state: applied
+  source_refs:
+  - U725
+  summary: 'Neuf capacités : sept familles Action, Order Structuring et Order Visibility. Responsabilités Lifecycle/Commitment/Archiving
+    conservées sans nœuds autonomes.'
+  absent_nodes:
+  - BHV021
+  - BHV022
+  - BHV023
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV043
+  - D03.n
+  - D04.o
+  - D04.q
+  required_nodes:
+  - id: D04.i
+    parent: D04
+    fields:
+      name: Sales Order
+      nature: action
+  - id: D04.j
+    parent: D04
+    fields:
+      name: Purchase Order
+      nature: action
+  - id: D04.k
+    parent: D04
+    fields:
+      name: Transfer Order
+      nature: action
+  - id: D04.l
+    parent: D04
+    fields:
+      name: Return Order
+      nature: action
+  - id: D04.m
+    parent: D04
+    fields:
+      name: Supplier Return Order
+      nature: action
+  - id: D04.r
+    parent: D04
+    fields:
+      name: Consignment Fill-up Order
+      nature: action
+  - id: D04.t
+    parent: D04
+    fields:
+      name: Consignment Pick-up Order
+      nature: action
+  - id: D04.n
+    parent: D04
+    fields:
+      name: Order Structuring
+      nature: action
+  - id: order-visibility
+    parent: D04
+    fields:
+      name: Order Visibility
+      nature: knowledge
+migration:
+  retired_node_ids:
+  - BHV021
+  - BHV022
+  - BHV023
+  - BHV036
+  - BHV037
+  - BHV038
+  - BHV039
+  - BHV040
+  - BHV043
+  - D03.n
+  - D04.o
+  - D04.q
+  retired_relation_ids:
+  - REL-MEMBER-D03.n
+  - REL-ILL-001
+  - REL-ILL-002
+  - REL-ILL-003
+  - REL-MEMBER-D04.o
+  - REL-EXECUTION-ADAPTATION-PROMISE-REVISION
+  - REL-MEMBER-BHV021
+  - REL-MEMBER-BHV022
+  - REL-MEMBER-BHV023
+  - REL-NEEDS-U290-012
+  - REL-NEEDS-U290-014
+  - REL-NEEDS-U290-016
+  - REL-NEEDS-U290-017
+  - REL-NEEDS-U290-018
+  - REL-NEEDS-U290-019
+  - REL-NEEDS-U290-020
+  - REL-NEEDS-U290-021
+  - REL-NEEDS-U290-022
+  - REL-NEEDS-U290-047
+  - REL-NEEDS-U290-049
+  - REL-NEEDS-U290-055
+  - REL-NEEDS-U290-061
+  - REL-NEEDS-U290-066
+  - REL-NEEDS-U290-071
+  - REL-NEEDS-U290-077
+  - REL-NEEDS-U290-078
+  - REL-BEHAVIOR-BHV036
+  - REL-BEHAVIOR-BHV037
+  - REL-NEEDS-U349-D03.n
+  - REL-NEEDS-U349-D02.e
+  - REL-BEHAVIOR-BHV038
+  - REL-BEHAVIOR-BHV039
+  - REL-BEHAVIOR-BHV040
+  - REL-BEHAVIOR-BHV043
+  - REL-MEMBER-D04.q
+  - REL-NEEDS-U363-D04.q-D04.o
+  - REL-NEEDS-U363-D04.q-D04.n
+  - REL-NEEDS-U363-D04.o-D04.n
+  - REL-NEEDS-U383-ARCHIVING-D04.i
+  - REL-NEEDS-U383-ARCHIVING-D04.j
+  - REL-NEEDS-U383-ARCHIVING-D04.k
+  - REL-NEEDS-U383-ARCHIVING-D04.l
+  - REL-NEEDS-U383-ARCHIVING-D04.m
+  - REL-NEEDS-U424-D03.p-D04.o
+  - REL-AUDIT-U435-PLNK-02
+  - REL-AUDIT-U435-PLNK-05
+  - REL-AUDIT-U435-CONSIGNED-LIFECYCLE
+  - REL-AUDIT-U435-ARCHIVING-CONSIGNED
+  - REL-U560-COMMITMENT-COLLECTIVE-PLAN
+  responsibility_destination: D04 contrat commun, familles pertinentes ; vue consolidée order-visibility ; les effets et distinctions
+    sont conservés dans les scopes.
+  illustrations: Liens illustratifs de promesse rattachés à Sales Order, sans ajout d’objet ni exposition du catalogue masqué.

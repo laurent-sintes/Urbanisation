@@ -5787,6 +5787,22 @@
       "captured_text": "## U723\n\n**id**\n\nU723\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète Price Book et sa frontière\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur U719–U722 : Price Book pour les tarifs de produits et services, Price Book Visibility dans Master Data et ingestion commune ; utilisation pour évaluer substitutions et trajets, distinction tarif/prix calculé/prix engagé, maîtrise commerciale externe. Conserver Product Catalog, Service Catalog et Assortment ; Catalog qualifie une offre structurée sans devenir un suffixe systématique. Aucune règle particulière de refacturation ni attribution automatique à un domaine source ; détails rédigés après accord proposés."
     },
     {
+      "id": "U724",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u724",
+      "line": 17809,
+      "content_sha256": "0e169f8ceb6659a1a3c981687502492ec8abadffaa73e2de11c836765d35463e",
+      "captured_text": "## U724\n\n**id**\n\nU724\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAuditer Order Management et ses responsabilités transverses\n\n**texte**\n\nSous domaine Order Management :\n\n- Order Lifecycle Management est inutile car on a listé tous les Orders, c'est largement suffisant, non ?\n- Fullfillment Commitment : je ne comprends pas ce que c'est. Ce n'est pas traité ailleurs ?\n- Les order de consignation sont bizarrement d'une autre type que les autres order.\n\nD'un point de vue général, auditer ce sous domaine.\n\n**contexte et portée**\n\nDemande d’audit général : utilité de Lifecycle, compréhension et recouvrements de Fulfillment Commitment, incohérence du type des Consignment Orders. Instruire une proposition cohérente avec les familles de Service Orders et préserver les responsabilités en cas de retrait. Aucun retrait ni retypage adopté implicitement."
+    },
+    {
+      "id": "U725",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u725",
+      "line": 17838,
+      "content_sha256": "f2a928e083d6556871271f46cad108b272eba8ad64843350fa6bbbf01d8c2861",
+      "captured_text": "## U725\n\n**id**\n\nU725\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la simplification complète d’Order Management\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -14339,6 +14355,14 @@
       "captured_text": "## CMP282\n\nU722 — Codex, 24 septembre 2026. Comparaison des noms du backlog et du Price Book proposé U719–U721. ELM722 Microsoft et ELM723 Salesforce distinguent catalogue et composantes tarifaires ; ELM716 conserve Assortment, ELM721/531 attestent Price Book / Price List pour produits et services. Les vocabulaires se recouvrent parfois : Salesforce décrit aussi le Price Book comme un catalogue de produits et services tarifés. On ne peut en déduire une norme « toute offre doit porter Catalog ».\n\nRecommandation FLOW : Catalog nomme une collection structurée de produits ou services proposés, consultable pour identifier ce qui peut être demandé ; conserver Product Catalog et Service Catalog. Assortment nomme la sélection affectée à un périmètre ; Price Book nomme l’ensemble tarifaire. Ne pas ajouter Catalog à tous les référentiels ni employer Price Book Catalog pour un livre tarifaire : cela pourrait désigner une collection de livres, autre objet. Bénéfice : préciser le rôle sans uniformisation artificielle ; compromis : frontière offre/sélection/tarif à expliciter malgré les recouvrements éditeurs. Deux documents primaires pour catalogue/tarif ; appuis antérieurs pour les notions conservées. Proposition non appliquée."
     },
     {
+      "id": "CMP283",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp283",
+      "line": 2716,
+      "content_sha256": "78ef712fa70d57a70323ffaa921414c3c483dee01d6ddef32df69abe50f4aeae",
+      "captured_text": "## CMP283\n\nU724 — Codex, 24 septembre 2026. Audit des onze capacités et trente-six Behaviors d’Order Management, backlog après U723. [Proposition et couverture des fiches](../modeles/backlog/order-management-review-U724.yaml). Les preuves des sept familles sont conservées ; recherches ciblées ELM724–733 sur les frontières remises en cause. Cycle de vie : Oracle actions d’Orders et Microsoft approbation/confirmation ; promesse : Oracle Check Availability et Microsoft Order promising ; consignation : Microsoft et SAP Business ByDesign ; structuration : Microsoft échéanciers et Oracle shipment sets ; archivage : Microsoft SCM et Business Central. Aucun document ne prescrit la taxonomie Action/Management de FLOW ni la suppression de ces capacités.\n\nRecommandation : sept familles Action, Order Structuring et Order Visibility Knowledge. Absorber Lifecycle, Fulfillment Commitment et Archiving en préservant leurs responsabilités explicites ; ne pas déplacer l’engagement dans le calcul Promising. Supplier Return devient Supplier Return Order. Corriger les liens obsolètes vers D15 et Apply Plan décrit comme Supply Assignment. Bénéfice : cohérence avec Service Order Management, ownership lisible et moins de doublons ; compromis : maintenir le contrat commun sans perdre les dimensions et contraintes spécifiques. Audit analytique terminé, proposition non appliquée ; la liste d’actions reste dans le backlog unique."
+    },
+    {
       "id": "CMP003",
       "path": "marche/comparaisons.md",
       "anchor": "",
@@ -20121,6 +20145,86 @@
       "line": 5611,
       "content_sha256": "a7494641a4eaf622842ad2f6ebc258eec552686aea12a483542e5122c21469f3",
       "captured_text": "### ELM723\n\nMKT73 — Salesforce, [Product Catalog Management Set Up](https://help.salesforce.com/s/articleView?id=sf.product_catalog_set_up_product_catalog_management.htm&language=en_US&type=5). Page évolutive, consultée le 24 septembre 2026. Price book filtering : catalogue et price book peuvent se recouper partiellement ; le filtre retient les produits associés au price book choisi. Appui à la distinction entre organisation de l’offre et tarifs. Aucun modèle universel ni équivalence stricte avec FLOW. CMP282, U722."
+    },
+    {
+      "id": "ELM724",
+      "path": "marche/elements.md",
+      "anchor": "elm724",
+      "line": 5616,
+      "content_sha256": "6122b0a5135f3e5590faf1edbf95b90f12bd5e9e5bf571dc4607fe1dd046ff39",
+      "captured_text": "### ELM724\n\nMKT20 — Oracle, [Create, Search, and Apply Actions on Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html). 26B. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Apply actions / Holds / Cancel / Schedule. Reformulation : Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande acceptée ne prouve pas son achèvement. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM725",
+      "path": "marche/elements.md",
+      "anchor": "elm725",
+      "line": 5621,
+      "content_sha256": "f396fa46abd73def5fc5a0f650ae8bbfa9f12fdb520cc28b6af535e3073c0833",
+      "captured_text": "### ELM725\n\nMKT14 — Microsoft, [Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Approval and confirmation. Reformulation : Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas à un statut universel. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM726",
+      "path": "marche/elements.md",
+      "anchor": "elm726",
+      "line": 5626,
+      "content_sha256": "06f8279d282b5e5f959b07e91289be40736afd046791d13902e73b83da1697af",
+      "captured_text": "### ELM726\n\nMKT20 — Oracle, [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html). 25C. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction. Reformulation : La disponibilité permet de déterminer les possibilités de satisfaction ; appui à la distinction entre calcul et engagement porté par la commande. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM727",
+      "path": "marche/elements.md",
+      "anchor": "elm727",
+      "line": 5631,
+      "content_sha256": "2ce893aeb841fc79f6b44e93cf93297b88e4b5ac4c5f8faeb16e45497b661557",
+      "captured_text": "### ELM727\n\nMKT14 — Microsoft, [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Order promising and delivery date calculations. Reformulation : Les méthodes de calcul de dates alimentent les dates de la commande ; ne prescrivent pas une capacité FLOW distincte Fulfillment Commitment. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM728",
+      "path": "marche/elements.md",
+      "anchor": "elm728",
+      "line": 5636,
+      "content_sha256": "eeed5972e06b655958cf464e79bbbdc8931abeb9c0924bd5991f526ddf74c283",
+      "captured_text": "### ELM728\n\nMKT14 — Microsoft, [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Consignment replenishment orders. Reformulation : La demande d’apport et son suivi sont distincts du changement de propriété et du stock détenu ; perspective fournisseur entrant. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM729",
+      "path": "marche/elements.md",
+      "anchor": "elm729",
+      "line": 5641,
+      "content_sha256": "1a3d1a7a46c1109cac41f6fa135ec8710487cc4e7f02f3bb27247b003a17a84d",
+      "captured_text": "### ELM729\n\nMKT13 — SAP, [Customer Consignment](https://help.sap.com/doc/6f9449d2ad114d39bc708ea88f5d1aea/2405/en-US/Customer_Consignment_EN.pdf). Business ByDesign 2405. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Customer consignment / fill-up / pick-up. Reformulation : L’apport, la consommation et la reprise sont distingués dans la consignation client ; les types documentaires ne prescrivent pas les natures FLOW. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM730",
+      "path": "marche/elements.md",
+      "anchor": "elm730",
+      "line": 5646,
+      "content_sha256": "14dce32488d87440ef077abbb5fccb9a2572f00d6c65f68c3b85a256673a2d68",
+      "captured_text": "### ELM730\n\nMKT14 — Microsoft, [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction. Reformulation : Quantités de lignes réparties en plusieurs livraisons ; scission de réalisation et nombre de commandes commerciales ne sont pas équivalents. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM731",
+      "path": "marche/elements.md",
+      "anchor": "elm731",
+      "line": 5651,
+      "content_sha256": "0ce9dfbd707c9cef6e3598351b7636af0845f3634c0cb85506a0511f5b31ae25",
+      "captured_text": "### ELM731\n\nMKT20 — Oracle, [Ship Order Lines in Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html). 26A. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Shipment sets. Reformulation : Des ensembles de lignes portent des contraintes de livraison commune. Ne prouve pas une fusion générique de commandes. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM732",
+      "path": "marche/elements.md",
+      "anchor": "elm732",
+      "line": 5656,
+      "content_sha256": "a031db138a0f0cfe25f50ebe934ff4e6f325444e3404c5be1b841001aaed671f",
+      "captured_text": "### ELM732\n\nMKT14 — Microsoft, [Archive Dynamics 365 Supply Chain Management Sales orders data](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so). Page mise à jour le 14 janvier 2026. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Prerequisites / View historical data. Reformulation : L’archivage conserve des commandes et données liées pour consultation ; fonctions de plateforme sans prescription de capacité métier autonome. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
+    },
+    {
+      "id": "ELM733",
+      "path": "marche/elements.md",
+      "anchor": "elm733",
+      "line": 5661,
+      "content_sha256": "47eac0f074e89aab932d94247c2da9a4576bc4ccc89decd5618a66401cbee559",
+      "captured_text": "### ELM733\n\nMKT14 — Microsoft, [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents). Page mise à jour le 15 octobre 2025. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction / Archive / Restore. Reformulation : Versions archivées, consultation et restauration conditionnelle sont distinctes ; ne pas confondre archivage, clôture et réouverture. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724."
     },
     {
       "id": "ELM003",

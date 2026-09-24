@@ -5611,3 +5611,53 @@ MKT14 — Microsoft, [Create Commerce catalogs for B2B sites](https://learn.micr
 ### ELM723
 
 MKT73 — Salesforce, [Product Catalog Management Set Up](https://help.salesforce.com/s/articleView?id=sf.product_catalog_set_up_product_catalog_management.htm&language=en_US&type=5). Page évolutive, consultée le 24 septembre 2026. Price book filtering : catalogue et price book peuvent se recouper partiellement ; le filtre retient les produits associés au price book choisi. Appui à la distinction entre organisation de l’offre et tarifs. Aucun modèle universel ni équivalence stricte avec FLOW. CMP282, U722.
+
+
+### ELM724
+
+MKT20 — Oracle, [Create, Search, and Apply Actions on Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html). 26B. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Apply actions / Holds / Cancel / Schedule. Reformulation : Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande acceptée ne prouve pas son achèvement. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM725
+
+MKT14 — Microsoft, [Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Approval and confirmation. Reformulation : Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas à un statut universel. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM726
+
+MKT20 — Oracle, [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html). 25C. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction. Reformulation : La disponibilité permet de déterminer les possibilités de satisfaction ; appui à la distinction entre calcul et engagement porté par la commande. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM727
+
+MKT14 — Microsoft, [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Order promising and delivery date calculations. Reformulation : Les méthodes de calcul de dates alimentent les dates de la commande ; ne prescrivent pas une capacité FLOW distincte Fulfillment Commitment. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM728
+
+MKT14 — Microsoft, [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Consignment replenishment orders. Reformulation : La demande d’apport et son suivi sont distincts du changement de propriété et du stock détenu ; perspective fournisseur entrant. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM729
+
+MKT13 — SAP, [Customer Consignment](https://help.sap.com/doc/6f9449d2ad114d39bc708ea88f5d1aea/2405/en-US/Customer_Consignment_EN.pdf). Business ByDesign 2405. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Customer consignment / fill-up / pick-up. Reformulation : L’apport, la consommation et la reprise sont distingués dans la consignation client ; les types documentaires ne prescrivent pas les natures FLOW. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM730
+
+MKT14 — Microsoft, [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules). Page évolutive. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction. Reformulation : Quantités de lignes réparties en plusieurs livraisons ; scission de réalisation et nombre de commandes commerciales ne sont pas équivalents. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM731
+
+MKT20 — Oracle, [Ship Order Lines in Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/ship-order-lines-in-shipment-sets.html). 26A. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Shipment sets. Reformulation : Des ensembles de lignes portent des contraintes de livraison commune. Ne prouve pas une fusion générique de commandes. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM732
+
+MKT14 — Microsoft, [Archive Dynamics 365 Supply Chain Management Sales orders data](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so). Page mise à jour le 14 janvier 2026. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Prerequisites / View historical data. Reformulation : L’archivage conserve des commandes et données liées pour consultation ; fonctions de plateforme sans prescription de capacité métier autonome. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.
+
+
+### ELM733
+
+MKT14 — Microsoft, [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents). Page mise à jour le 15 octobre 2025. Consulté le 24 septembre 2026, texte primaire accessible ; passage : Introduction / Archive / Restore. Reformulation : Versions archivées, consultation et restauration conditionnelle sont distinctes ; ne pas confondre archivage, clôture et réouverture. Limite : fonction ou objet produit, pas taxonomie universelle de capacités ni réalisation Beaumanoir. CMP283, U724.

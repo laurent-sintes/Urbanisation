@@ -8625,8 +8625,8 @@ terms:
   short_description: Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.
   definition: Commande portant un renvoi de marchandises vers un fournisseur, distincte de l’achat d’origine.
   context: Sens de travail dans le contexte Supply, selon la refonte D04 U214 ; définition détaillée proposée U215.
-  notes: Famille gérée par [Supplier Return](model:D04.m). Aucune création de nœud objet ni de schéma détaillé ; cycle distinct
-    des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
+  notes: Famille gérée par [Supplier Return Order](model:D04.m). Aucune création de nœud objet ni de schéma détaillé ; cycle
+    distinct des Service Orders. Le nom de capacité adopté ne vaut pas validation de cette définition lexicale.
   source_refs:
   - U212
   - U214

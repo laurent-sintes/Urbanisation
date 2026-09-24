@@ -146,17 +146,15 @@ Gérer les commandes, leurs exigences et leurs évolutions, et porter les engage
 
 | Repère | Capacité | Type | Origine des demandes | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D03.n | Fulfillment Commitment | management | — | Validé par l’urbaniste — portée : name | Proposer, confirmer et réviser les engagements de satisfaction d’une commande, en quantités, dates et conditions. | Établir et maintenir des engagements Supply explicites et cohérents avec les possibilités retenues. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.i | Sales Order | action | — | En cours d’instruction — portée : name | Gérer les commandes clients à satisfaire : enregistrer ce qui est demandé, maintenir les quantités, destinations et échéances applicables, suivre les évolutions autorisées et déterminer ce qui reste à servir. | Disposer d’une commande client exploitable et d’un reste à satisfaire explicable pendant son traitement. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.j | Purchase Order | action | — | En cours d’instruction — portée : name | Prendre en charge les commandes d’achat de biens ou de prestations adressées aux fournisseurs, maintenir les attentes et les évolutions autorisées et rapprocher les réalisations pour connaître le reste à satisfaire. | Disposer d’attentes d’achat explicables, en biens ou prestations, et connaître ce qui reste à satisfaire selon les accords applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.k | Transfer Order | action | Frontoffice, Backoffice | En cours d’instruction — portée : name, request_origins | Gérer les ordres de déplacement de marchandises entre sites : maintenir origine, destination, quantités et échéances, suivre les modifications et rapprocher départs et arrivées pour connaître le transfert restant à satisfaire. | Rendre explicite ce qui doit être transféré, vers quel site et ce qui reste à acheminer ou à recevoir. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.l | Return Order | action | — | En cours d’instruction — portée : name, definition | Prendre en charge les retours clients, leurs commandes et leurs suites logistiques, jusqu’au résultat attendu selon les décisions et autorisations applicables. | Connaître le retour client attendu, suivre ses suites logistiques et expliquer le résultat obtenu pour chaque produit ou quantité. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.m | Supplier Return | action | — | En cours d’instruction — portée : name | Prendre en charge les retours de marchandises aux fournisseurs et suivre leurs suites attendues, selon les accords applicables, en distinguant renvoi sans remplacement, remplacement et réparation avec restitution du bien. | Piloter un retour fournisseur explicite et traçable, distinct de la commande d’achat initiale. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.n | Order Structuring | action | — | En cours d’instruction — portée : name | Scinder, regrouper ou fusionner des commandes et leurs éléments, en préservant la traçabilité des demandes, les quantités et les engagements. | Conserver une lecture cohérente de l’ensemble, de ses engagements et de sa satisfaction au fil des évolutions de ses composants. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.o | Order Lifecycle Management | management | — | Validé par l’urbaniste — portée : name, nature, definition | Gouverner les évolutions autorisées des Orders selon leurs différentes dimensions métier, en préservant la cohérence entre engagements, modifications en préparation et réalisations acquises. | Savoir ce qui peut progresser, ce qui est bloqué et pourquoi, ainsi que les conditions de reprise ou de fin du traitement. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.q | Order Archiving | management | — | Validé par l’urbaniste — portée : name | Organiser la conservation historique des Orders éligibles en dehors de leur usage opérationnel courant, tout en préservant leur consultation, leurs versions utiles et leurs liens. | Permettre la recherche et l’explication d’anciens engagements sans maintenir indéfiniment les commandes dans le traitement courant ; maîtriser ce qui reste consultable. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.r | Consignment Fill-up Order | management | — | En cours d’instruction | Demander et suivre la mise en consignation initiale ou complémentaire de marchandises : produits, quantités, destinations, échéances et reste à apporter, conformément à l’accord applicable. | Constituer ou alimenter le stock consigné sans confondre mise à disposition et acquisition par le détenteur. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D04.t | Consignment Pick-up Order | management | — | Proposé par l’IA | Demander et suivre la reprise ou la restitution au propriétaire de marchandises restées consignées, avec les quantités, lieux, échéances et conditions applicables. | Mettre fin à la mise à disposition des biens concernés sous consignation et rendre leur restitution vérifiable. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.i | Sales Order | action | — | Proposé par l’IA | Gérer les commandes clients à satisfaire : enregistrer ce qui est demandé, maintenir les quantités, destinations et échéances applicables, suivre les évolutions autorisées et déterminer ce qui reste à servir. | Disposer d’une commande client exploitable et d’un reste à satisfaire explicable pendant son traitement. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.j | Purchase Order | action | — | Proposé par l’IA | Prendre en charge les commandes d’achat de biens ou de prestations adressées aux fournisseurs, maintenir les attentes et les évolutions autorisées et rapprocher les réalisations pour connaître le reste à satisfaire. | Disposer d’attentes d’achat explicables, en biens ou prestations, et connaître ce qui reste à satisfaire selon les accords applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.k | Transfer Order | action | Frontoffice, Backoffice | Proposé par l’IA | Gérer les ordres de déplacement de marchandises entre sites : maintenir origine, destination, quantités et échéances, suivre les modifications et rapprocher départs et arrivées pour connaître le transfert restant à satisfaire. | Rendre explicite ce qui doit être transféré, vers quel site et ce qui reste à acheminer ou à recevoir. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.l | Return Order | action | — | Proposé par l’IA | Prendre en charge les retours clients, leurs commandes et leurs suites logistiques, jusqu’au résultat attendu selon les décisions et autorisations applicables. | Connaître le retour client attendu, suivre ses suites logistiques et expliquer le résultat obtenu pour chaque produit ou quantité. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.m | Supplier Return Order | action | — | Proposé par l’IA | Prendre en charge les retours de marchandises aux fournisseurs et suivre leurs suites attendues, selon les accords applicables, en distinguant renvoi sans remplacement, remplacement et réparation avec restitution du bien. | Piloter un retour fournisseur explicite et traçable, distinct de la commande d’achat initiale. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.n | Order Structuring | action | — | Proposé par l’IA | Scinder, regrouper ou fusionner des commandes et leurs éléments, en préservant la traçabilité des demandes, les quantités et les engagements. | Conserver une lecture cohérente de l’ensemble, de ses engagements et de sa satisfaction au fil des évolutions de ses composants. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.r | Consignment Fill-up Order | action | — | Proposé par l’IA | Demander et suivre la mise en consignation initiale ou complémentaire de marchandises : produits, quantités, destinations, échéances et reste à apporter, conformément à l’accord applicable. | Constituer ou alimenter le stock consigné sans confondre mise à disposition et acquisition par le détenteur. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D04.t | Consignment Pick-up Order | action | — | Proposé par l’IA | Demander et suivre la reprise ou la restitution au propriétaire de marchandises restées consignées, avec les quantités, lieux, échéances et conditions applicables. | Mettre fin à la mise à disposition des biens concernés sous consignation et rendre leur restitution vérifiable. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| order-visibility | Order Visibility | knowledge | — | Proposé par l’IA | Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet. | Comprendre les demandes, leurs engagements et ce qui reste à satisfaire dans le carnet. | Proposé par l’IA |
 
 ## D01 — Inventory Management
 
@@ -171,7 +169,7 @@ Statut : **En cours d’instruction — portée : name**.
 | D01.c | Inventory Visibility | knowledge | Proposé par l’IA | Fournir une lecture cohérente des positions de stock physiques, logiques et projetées, dans les différents lieux et périmètres, avec provenance et fraîcheur, en intégrant les apports attendus sans double compte. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.d | Stocktaking | action | Validé par l’urbaniste — portée : definition, finality, name | établir les quantités constatées par comptage, les confronter aux quantités enregistrées, qualifier les écarts et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D02.c | Reservation | action | Validé par l’urbaniste — portée : name | établir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Donner effet à un engagement de ressource. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D01.h | Consigned Inventory Management | management | En cours d’instruction — portée : name, definition | Appliquer au stock consigné les conditions de l’accord : propriété, droits d’usage, échéances et suites autorisées ; mobiliser les capacités responsables lorsqu’une acquisition, un retour ou une autre issue devient nécessaire. | Respecter les droits et obligations sur le stock fournisseur détenu, pendant sa présence dans le réseau et lors de ses suites. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.h | Consigned Inventory Management | management | Proposé par l’IA | Appliquer au stock consigné les conditions de l’accord : propriété, droits d’usage, échéances et suites autorisées ; mobiliser les capacités responsables lorsqu’une acquisition, un retour ou une autre issue devient nécessaire. | Respecter les droits et obligations sur le stock fournisseur détenu, pendant sa présence dans le réseau et lors de ses suites. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D06 — Fulfilment Orchestration
 
@@ -188,7 +186,7 @@ Composer et coordonner les prestations, suivre leurs dépendances et rechercher 
 | D07.a | Service Requirements Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les prestations nécessaires. | Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.e | Service Selection Decision | decision | En cours d’instruction — portée : name | Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte de leur admissibilité et des contraintes. | Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.f | Process Adaptation Decision | decision | En cours d’instruction — portée : name | Déterminer les adaptations du plan d’exécution permettant de préserver la promesse de l’Order et les grands équilibres du Matching face aux aléas. | Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.i | Return Disposition Decision | decision | En cours d’instruction — portée : name, definition, nature | Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables et les possibilités de récupération de valeur. | Retenir une orientation pertinente pour récupérer la valeur des produits retournés et maîtriser leurs coûts et risques. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.i | Return Disposition Decision | decision | Proposé par l’IA | Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables et les possibilités de récupération de valeur. | Retenir une orientation pertinente pour récupérer la valeur des produits retournés et maîtriser leurs coûts et risques. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | operations-visibility | Operations Visibility | knowledge | Proposé par l’IA | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Comprendre l’avancement et les résultats des prestations et processus Supply. | Proposé par l’IA |
 
 ## D03 — Demand & Supply Matching
@@ -202,12 +200,12 @@ Construire et maintenir le master plan de matching qui arbitre la couverture de 
 | D05.f | Demand & Supply Optimization Planning | planning | En cours d’instruction — portée : nature | Construire, comparer, maintenir et faire appliquer le master plan de matching qui couvre les commandes et la demande prévisionnelle résiduelle en mobilisant les décisions spécialisées. | Maintenir un plan commun cohérent et rendre visibles ses effets pris en compte et les besoins restant à couvrir. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.a | Inventory Target Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins, le niveau de service recherché, les délais et les risques. | Définir les niveaux de stock auxquels comparer la situation connue ou attendue selon le compromis de service, immobilisation et risque. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.d | Group Protection Decision | decision | En cours d’instruction — portée : definition, name | Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires. | Déterminer la répartition des droits d’usage du stock entre groupes, en préservant les usages retenus. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.e | Replenishment Decision | decision | En cours d’instruction — portée : name | Déterminer les apports successifs et leurs ajustements en quantité et en date pour entretenir la disponibilité pendant la commercialisation, selon les besoins, les objectifs de stock, les apports engagés et les contraintes applicables. | Entretenir la disponibilité en ajustant les apports continus, tout en maîtrisant l’immobilisation et le risque d’excédent. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.e | Replenishment Decision | decision | Proposé par l’IA | Déterminer les apports successifs et leurs ajustements en quantité et en date pour entretenir la disponibilité pendant la commercialisation, selon les besoins, les objectifs de stock, les apports engagés et les contraintes applicables. | Entretenir la disponibilité en ajustant les apports continus, tout en maîtrisant l’immobilisation et le risque d’excédent. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.c | Stock Redistribution Decision | decision | En cours d’instruction — portée : name | Déterminer les transferts de stock existant entre sites pour mieux répondre aux besoins, reconstituer des assortiments utiles ou regrouper des stocks dispersés, en tenant compte des coûts et risques. | Obtenir une répartition du stock mieux adaptée aux besoins des périmètres concernés. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.g | Initial Stocking Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les quantités à apporter à chaque magasin et leurs dates pour constituer le stock initial nécessaire au lancement, à partir de l’assortiment retenu, des objectifs de stock et des contraintes applicables. | Préparer la disponibilité initiale des produits en magasin, en maîtrisant l’immobilisation et le risque dès le lancement. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.h | Reservation Policy Decision | decision | En cours d’instruction — portée : name, definition | Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin de sécuriser la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes. | Choisir comment sécuriser les ressources d’une promesse tout en maîtrisant leur indisponibilité pour les autres demandes. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.m | Order Prioritization | decision | Validé par l’urbaniste — portée : name, definition | Établir et réviser les priorités relatives des commandes. | Arbitrer les commandes à satisfaire en priorité lorsque leurs besoins se trouvent en concurrence. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.o | Fulfillment Plan Decision | decision | En cours d’instruction — portée : name, nature | Déterminer un scénario cohérent d’affectation des ressources Supply aux commandes et aux besoins prévisionnels identifiés, en mobilisant les décisions spécialisées et les politiques applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction. | Proposer un plan d’affectation collectivement cohérent pour satisfaire les commandes et les besoins prévisionnels identifiés selon les objectifs applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.o | Fulfillment Plan Decision | decision | Proposé par l’IA | Déterminer un scénario cohérent d’affectation des ressources Supply aux commandes et aux besoins prévisionnels identifiés, en mobilisant les décisions spécialisées et les politiques applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction. | Proposer un plan d’affectation collectivement cohérent pour satisfaire les commandes et les besoins prévisionnels identifiés selon les objectifs applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D18 — Order Promising
 
@@ -220,7 +218,7 @@ Déterminer et recommander ce qu’on peut promettre, en quantité, date et cond
 | D03.i | Available-to-Promise (ATP) | decision | — | Validé par l’urbaniste — portée : finality, name, nature | Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles. | Établir une solution de promesse réalisable dans la situation de référence. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.j | Capable-to-Promise (CTP) | decision | — | En cours d’instruction — portée : finality, name, nature | Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D03.k | Profitable-to-Promise (PTP) | decision | — | Proposé par l’IA | Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans les contraintes de service applicables. | Retenir une solution économiquement pertinente parmi les possibilités examinées. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.l | Delivery Schedule Decision | decision | — | Validé par l’urbaniste — portée : definition, finality, name, nature | Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les possibilités réalisables et selon les conditions de la commande. | Retenir un échéancier acceptable pour honorer la commande. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.l | Delivery Schedule Decision | decision | — | Proposé par l’IA | Choisir la répartition des quantités promises dans le temps, en une ou plusieurs échéances, parmi les possibilités réalisables et selon les conditions de la commande. | Retenir un échéancier acceptable pour honorer la commande. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D18.a | Supply Visibility | knowledge | Domain-View | Proposé par l’IA | Rendre visibles les ressources attendues, leurs quantités, lieux, échéances, engagements et incertitudes, en reliant chaque apport à son origine et à son avancement. | Permettre de planifier la couverture des besoins avec une connaissance fiable des apports à venir. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## subdomain-policies — Policies
@@ -258,7 +256,7 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 | service-order-picking | Picking Order | action | En cours d’instruction — portée : name | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-cross-docking | Cross-Docking Order | action | En cours d’instruction — portée : name | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
-| service-order-transport | Transport Order | action | En cours d’instruction — portée : name, definition | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-transport | Transport Order | action | Proposé par l’IA | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-labeling | Labeling Order | action | En cours d’instruction — portée : name | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-kitting | Kitting Order | action | En cours d’instruction — portée : name | Tenir les demandes de constitution, séparation et recomposition d’ensembles confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-garment-finishing | Garment Finishing Order | action | En cours d’instruction — portée : name | Tenir les demandes de finition d’aspect des vêtements confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
@@ -330,9 +328,9 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV075 | Additional Supply Feasibility | En cours d’instruction — portée : name, definition | Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires, avec quantités, dates et conditions de disponibilité. |
-| BHV076 | Fulfillment Alternative Feasibility | En cours d’instruction — portée : name, definition | Les possibilités obtenues en modifiant les modalités de satisfaction par rapport à la situation de référence. |
-| BHV077 | Commitment Rebalancing Feasibility | En cours d’instruction — portée : name, definition | Les possibilités obtenues en révisant des engagements modifiables, en explicitant les conséquences sur les commandes concernées. |
+| BHV075 | Additional Supply Feasibility | Proposé par l’IA | Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires, avec quantités, dates et conditions de disponibilité. |
+| BHV076 | Fulfillment Alternative Feasibility | Proposé par l’IA | Les possibilités obtenues en modifiant les modalités de satisfaction par rapport à la situation de référence. |
+| BHV077 | Commitment Rebalancing Feasibility | Proposé par l’IA | Les possibilités obtenues en révisant des engagements modifiables, en explicitant les conséquences sur les commandes concernées. |
 
 **Justification de la décomposition — D04.i :** Livraison, retrait, livraison fournisseur et relation intersociétés changent la prise en charge de la commande, la preuve de satisfaction et les engagements à coordonner. Ces parcours doivent se lire dans la capacité. La vente sur stock consigné ajoute les droits et obligations envers son propriétaire, indépendamment du mode de livraison.
 
@@ -356,10 +354,10 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV058 | Stock Procurement | En cours d’instruction — portée : name, definition | Acheter des marchandises destinées au stock du réseau ; suivre les quantités et dates restant à recevoir. |
-| BHV059 | Direct Delivery | Validé par l’urbaniste — portée : name, definition | Acheter des marchandises livrées directement par le fournisseur au client ; coordonner les attentes des commandes d’achat et de vente. |
-| BHV060 | Service Procurement | Validé par l’urbaniste — portée : name, definition | Acheter une prestation ; suivre ce qui est attendu puis reconnu réalisé. |
-| BHV078 | Supplier Confirmation | En cours d’instruction — portée : name, definition | Prendre en charge l’établissement et les révisions de l’engagement fournisseur sur une commande d’achat, en distinguant la demande, la réponse fournisseur et les conditions finalement acceptées. |
+| BHV058 | Stock Procurement | Proposé par l’IA | Acheter des marchandises destinées au stock du réseau ; suivre les quantités et dates restant à recevoir. |
+| BHV059 | Direct Delivery | Proposé par l’IA | Acheter des marchandises livrées directement par le fournisseur au client ; coordonner les attentes des commandes d’achat et de vente. |
+| BHV060 | Service Procurement | Proposé par l’IA | Acheter une prestation ; suivre ce qui est attendu puis reconnu réalisé. |
+| BHV078 | Supplier Confirmation | Proposé par l’IA | Prendre en charge l’établissement et les révisions de l’engagement fournisseur sur une commande d’achat, en distinguant la demande, la réponse fournisseur et les conditions finalement acceptées. |
 
 **Justification de la décomposition — D04.k :** Les transferts servent des intentions distinctes : démarrer un stock, l’alimenter, le rééquilibrer, le regrouper ou satisfaire une commande identifiée. L’attendu et la justification doivent rester lisibles même lorsque le transport ou l’outil est commun.
 
@@ -385,21 +383,21 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV050 | Return to Stock | En cours d’instruction — portée : name, definition | Prendre en charge la remise en disponibilité du produit. |
 | BHV051 | Repair and Refurbishment | En cours d’instruction — portée : name, definition | Prendre en charge une remise en état, suivre son résultat et la suite attendue. |
-| BHV052 | Return to Supplier | En cours d’instruction — portée : name, definition | Relier le retour client à sa prise en charge par Supplier Return. |
+| BHV052 | Return to Supplier | Proposé par l’IA | Relier le retour client à sa prise en charge par Supplier Return Order. |
 | BHV053 | Return to Customer | En cours d’instruction — portée : name, definition | Prendre en charge la restitution du produit au client, après réparation ou décision de non-reprise. |
 | BHV054 | Scrapping | En cours d’instruction — portée : name, definition | Prendre en charge la mise au rebut retenue : conserver l’autorisation, suivre la réalisation et rapprocher la preuve avec la sortie de stock. |
 
 **Justification de la décomposition — D04.m :** Le retour sans remplacement éteint l’attente de marchandises au titre des quantités reprises ; le retour avec remplacement conserve un apport attendu. Cette différence change le suivi des quantités, des dates et des engagements aval. Elle justifie deux parcours métier, indépendamment des motifs du retour et des interfaces. Le retour pour réparation ajoute un attendu distinct : récupérer le même bien remis en état, avec sa traçabilité et son immobilisation, plutôt que recevoir un autre produit.
 
-## Comportements — Supplier Return
+## Comportements — Supplier Return Order
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV055 | Return for Credit | Validé par l’urbaniste — portée : name, definition | Prendre en charge un retour fournisseur donnant lieu à un avoir ou remboursement attendu, sans remplacement des marchandises retournées. |
-| BHV056 | Return for Replacement | Validé par l’urbaniste — portée : name, definition | Prendre en charge un retour associé à un remplacement attendu, en conservant les liens entre marchandises renvoyées et apports de remplacement. |
-| BHV057 | Return for Repair | En cours d’instruction — portée : name | Prendre en charge l’envoi d’un bien au fournisseur pour réparation puis sa récupération, en préservant son identité et l’attendu de restitution. |
+| BHV055 | Return for Credit | Proposé par l’IA | Prendre en charge un retour fournisseur donnant lieu à un avoir ou remboursement attendu, sans remplacement des marchandises retournées. |
+| BHV056 | Return for Replacement | Proposé par l’IA | Prendre en charge un retour associé à un remplacement attendu, en conservant les liens entre marchandises renvoyées et apports de remplacement. |
+| BHV057 | Return for Repair | Proposé par l’IA | Prendre en charge l’envoi d’un bien au fournisseur pour réparation puis sa récupération, en préservant son identité et l’attendu de restitution. |
 
 **Justification de la décomposition — D04.n :** Trois effets métier distincts justifient le découpage proposé. Split rend des parties traitables séparément ; Grouping maintient plusieurs demandes avec des conditions communes ; Merging remplace plusieurs demandes par une demande active unique. Chacun décrit un mécanisme et son effet, sans comportement par bouton ni sous-comportement.
 
@@ -410,23 +408,8 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
 | BHV044 | Order Splitting | En cours d’instruction | Scinder un Order ou ses éléments en parties traitables distinctement, en préservant la filiation, la cohérence des quantités et les engagements applicables. |
-| BHV086 | Order Grouping | En cours d’instruction | Relier des Orders ou leurs éléments dans un ensemble à traiter selon des conditions communes, tout en conservant chaque demande distincte. |
-| BHV087 | Order Merging | En cours d’instruction | Réunir plusieurs Orders compatibles, ou leurs éléments, dans une demande unique qui les remplace pour la suite du traitement, en conservant leur origine. |
-
-**Justification de la décomposition — D04.o :** Une commande peut être ferme, partiellement libérée, gelée sur certains éléments et suspendue sur une progression, tandis qu’une modification reste en brouillon. Ces effets distincts et leurs contraintes de combinaison justifient six mécanismes métier, sans comportement par état ni cycle linéaire universel. Préparation/révision distingue contenu applicable et proposé ; fin de la demande préserve la différence entre retrait du besoin et clôture.
-
-## Comportements — Order Lifecycle Management
-
-Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
-
-| Repère | Comportement | Statut | Définition |
-| --- | --- | --- | --- |
-| BHV036 | Order Firming | Validé par l’urbaniste — portée : name, definition | Transformer une intention planifiée en ordre ferme, avec les engagements et restrictions de révision associés. |
-| BHV037 | Order Freezing | Validé par l’urbaniste — portée : name | Protéger les éléments désignés d’un Order contre leur modification par les réoptimisations, en explicitant la portée du gel et les conditions autorisées de révision. |
-| BHV038 | Order Preparation & Revision | En cours d’instruction | Gouverner la préparation et la prise d’effet du contenu initial ou révisé d’un Order, en distinguant le contenu applicable des modifications en préparation et en préservant les engagements et réalisations acquis. |
-| BHV039 | Order Release | Validé par l’urbaniste — portée : name, definition | Autoriser la prise en charge de tout ou partie d’un Order, ou d’un ensemble d’Orders liés, lorsque les conditions de lancement individuelles et collectives sont satisfaites. |
-| BHV040 | Order Hold & Resume | Validé par l’urbaniste — portée : name | Suspendre une progression désignée pour un motif métier puis permettre sa reprise lorsque les conditions de levée sont réunies. |
-| BHV043 | Order Termination | En cours d’instruction | Gouverner le retrait autorisé de tout ou partie du besoin et la clôture de son suivi opérationnel, en préservant les réalisations acquises et en explicitant le devenir du reliquat. |
+| BHV086 | Order Grouping | Proposé par l’IA | Relier des Orders ou leurs éléments dans un ensemble à traiter selon des conditions communes, tout en conservant chaque demande distincte. |
+| BHV087 | Order Merging | Proposé par l’IA | Réunir plusieurs Orders compatibles, ou leurs éléments, dans une demande unique qui les remplace pour la suite du traitement, en conservant leur origine. |
 
 **Justification de la décomposition — D05.a :** Trois façons de déterminer les cibles selon la demande servie et le périmètre d’arbitrage : disponibilité client et contraintes locales du magasin ; alimentation de la demande aval du centre de distribution ; coordination des protections et des cibles entre échelons interdépendants. Le bénéfice est de rendre explicites les compromis locaux et globaux sans créer un comportement par type de bâtiment ni une séquence imposée.
 
@@ -450,7 +433,7 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV083 | Requirement-based Replenishment | Validé par l’urbaniste — portée : name, definition | Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des apports attendus. |
 | BHV084 | Target-based Replenishment | Validé par l’urbaniste — portée : name, definition | Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une commande identifiée pour chaque apport. |
-| BHV085 | Replenishment Adjustment | Validé par l’urbaniste — portée : name, definition | Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant les engagements. |
+| BHV085 | Replenishment Adjustment | Proposé par l’IA | Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant les engagements. |
 
 **Justification de la décomposition — D05.c :** Distinguer deux mécanismes aux bénéfices différents : améliorer la couverture des lieux receveurs en préservant les donneurs, ou réduire la fragmentation du stock par concentration, avec reconstitution d’assortiments ou regroupement de reliquats même sans manque immédiat à destination.
 
@@ -471,7 +454,7 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| D02.e | Apply Plan | En cours d’instruction — portée : name, definition | Faire appliquer les recommandations autorisées et constater leur prise en compte. |
+| D02.e | Apply Plan | Proposé par l’IA | Faire appliquer les recommandations autorisées et constater leur prise en compte. |
 | BHV006 | Simulation & Analysis | En cours d’instruction — portée : name, definition, nature | Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les engagements, les stocks, les coûts et les risques pour éclairer les choix. |
 | BHV016 | Adjust Plan | En cours d’instruction — portée : name, definition, nature | Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. |
 | D04.s | Scope Planning | En cours d’instruction — portée : name, definition, scope, nature | Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail. |
@@ -480,18 +463,6 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV099 | Stop Planning | En cours d’instruction — portée : name, definition, scope, nature | Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif. |
 | BHV100 | Rerun Planning | En cours d’instruction — portée : name, definition, scope, nature | Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. |
 | BHV101 | Monitor Plan | En cours d’instruction — portée : name, definition, scope, nature | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. |
-
-**Justification de la décomposition — D03.n :** Distinguer proposition, établissement de l’engagement et réexamen de cet engagement : trois façons d’agir avec effets différents, sans multiplier les capacités d’action.
-
-## Comportements — Fulfillment Commitment
-
-Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
-
-| Repère | Comportement | Statut | Définition |
-| --- | --- | --- | --- |
-| BHV021 | Promise Proposal | Validé par l’urbaniste — portée : name | Formaliser les quantités, dates et conditions proposées pour satisfaire une commande, à partir des possibilités et arbitrages établis, sans confirmer encore l’engagement. |
-| BHV022 | Promise Confirmation | Validé par l’urbaniste — portée : name | établir les quantités et dates promises, en distinguant la part confirmée de celle qui ne l’est pas. |
-| BHV023 | Promise Revision | Validé par l’urbaniste — portée : name | Réexaminer les promesses lorsque les ressources, commandes, dates ou priorités changent et établir les modifications autorisées. |
 
 **Justification de la décomposition — D05.h :** Le jalon du parcours, la proximité du besoin, la différenciation des engagements de service et l’adaptation au risque changent chacun la façon de sécuriser une promesse et le coût d’immobilisation. Quatre mécanismes combinables sont retenus U343 ; durées, seuils, canaux et interfaces restent des paramètres ou des contextes. La complexité visée est l’arbitrage de ces mécanismes sans retirer implicitement les garanties existantes.
 
@@ -538,7 +509,7 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV063 | Consumption-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer le transfert de propriété lors de la vente ou consommation prévue par l’accord. |
 | BHV064 | Aging-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer l’acquisition à l’échéance d’une durée contractuelle. |
-| BHV065 | Consignment Exit | En cours d’instruction — portée : name, definition | Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. |
+| BHV065 | Consignment Exit | Proposé par l’IA | Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. |
 
 **Justification de la décomposition — service-order-transport :** Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise. Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
 
@@ -2400,7 +2371,7 @@ Choisir une promesse économiquement pertinente évite de gagner une livraison a
 
 - Oracle nomme profitable to promise la recherche d’une solution à moindre coût dans son ordre de priorités de service. Microsoft DOM traite aussi coûts et contraintes, au niveau plus large de l’optimisation des commandes. Les deux rapprochent service rendu et moyens mobilisés.
 - FLOW isole l’arbitrage économique. Le coût n’annule pas une obligation de délai ; les valeurs inconnues restent inconnues. Le compromis collectif de service, engagements, coûts et risques reste multidimensionnel, sans formule adoptée par cette comparaison.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. Fulfillment Commitment garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
 
 ### Oracle — Seattle plutôt que Denver
 
@@ -2466,7 +2437,7 @@ Retenir quelles quantités fournir à quelles dates rend la solution compréhens
 
 - Microsoft Delivery schedules représente une commande livrée en plusieurs fois. Oracle Check Availability permet de travailler les dates d’expédition et d’arrivée avant leur application. Microsoft insiste sur la représentation des livraisons ; Oracle sur le choix des possibilités.
 - FLOW nomme la décision qui retient l’échéancier. Deux dates de livraison n’imposent pas deux commandes ; la formalisation de la proposition puis sa confirmation gardent leur responsabilité.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. Fulfillment Commitment garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
 
 ### Illustration FLOW — une commande, deux dates
 
@@ -3128,16 +3099,16 @@ Dynamics 365 SCM · Document et processus produit · Appui sémantique · statut
 
 Références : U612, ELM632, CMP264.
 
-## Sources d’inspiration — D04.m Supplier Return
+## Sources d’inspiration — D04.m Supplier Return Order
 
-Savoir ce qui est attendu après un renvoi au fournisseur : argent, remplacement ou retour du bien réparé. Supplier Return garde ces trois résultats distincts.
+Savoir ce qui est attendu après un renvoi au fournisseur : argent, remplacement ou retour du bien réparé. Supplier Return Order garde ces trois résultats distincts.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/business-central/purchasing-how-process-purchase-returns-cancellations) — Purchase return order | Renvoi fournisseur, avoir et remplacement éventuel. | Relier retour, correction et nouvel achat de remplacement. |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/readiness/scm/25a/inv25a/25A-inventory-wn-f35542.htm) — Return for credit only | Retour fournisseur sans marchandise de remplacement. | Attendre le crédit sans rouvrir la quantité d’achat. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement) — Return to Vendor | Retour fournisseur pour crédit, remplacement ou réparation. | Qualifier le résultat attendu du fournisseur. |
-| Notre modèle — Supplier Return | Marchandises renvoyées et contrepartie ou restitution attendue. | Relier le renvoi à son résultat sans réouvrir implicitement un achat de remplacement. |
+| Notre modèle — Supplier Return Order | Marchandises renvoyées et contrepartie ou restitution attendue. | Relier le renvoi à son résultat sans réouvrir implicitement un achat de remplacement. |
 
 ### Ce que nous en retenons
 
@@ -3327,122 +3298,6 @@ LN · Concept et usage documentés · Recouvrement partiel · statut : proposed
 **Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
 
 Références : U477, ELM335, CMP189.
-
-## Exemples concrets — D04.o Order Lifecycle Management
-
-### Réviser une partie sans effacer la version applicable
-
-Une commande de 100 pièces est ferme et 60 pièces sont libérées. Une révision prépare le report de la date demandée des 40 autres pièces.
-
-**Ce qui se passe.** Tant que cette révision n’est pas applicable, la version en vigueur demeure la référence ; aucune suspension des 60 pièces n’est implicite.
-
-**Ce que cela illustre.** Préparation, engagement ferme, autorisation de traitement et suspension sont des dimensions distinctes. Les réalisations acquises ne sont pas réécrites.
-
-Références : U424, U462.
-
-## Sources d’inspiration — D04.o Order Lifecycle Management
-
-Savoir ce qui peut encore changer, commencer ou s’arrêter dans une commande. Order Lifecycle Management distingue ces droits et engagements au lieu de les résumer par un seul statut.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html) — Order management status | Progression d’une vente à plusieurs niveaux. | Différencier commande, ligne, tâche et processus. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Approval / confirmation | Préparation, approbation et engagement d’un achat. | Distinguer les décisions et conserver les versions confirmées. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html) — Task hold | Étape d’une vente suspendue. | Cibler la progression et justifier sa reprise. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming) — Planned order firming | Proposition planifiée transformée en ordre effectif. | Affermir manuellement ou selon un horizon et des règles. |
-| Notre modèle — Order Lifecycle Management | Préparation, engagement, gel, lancement, suspension et fin de la commande. | Rendre explicites les transitions autorisées et conserver les engagements et réalisations acquis. |
-
-### Ce que nous en retenons
-
-- Oracle sépare les statuts des objets et les blocages des étapes ; Microsoft sépare les décisions d’approbation et de confirmation d’achat. Les deux montrent pourquoi « commande en cours » ne suffit pas.
-- FLOW organise ces questions en dimensions métier indépendantes. Une commande peut être engagée, partiellement réalisée et suspendue pour son reliquat sans contradiction.
-- La prise en charge d’une proposition issue d’un plan amont reste dans la famille d’Order concernée. Le cycle de vie gouverne les transitions ; l’affermissement n’autorise pas implicitement la réservation, le lancement ou la modification d’une promesse.
-
-### Illustration FLOW — Engagée mais suspendue
-
-Une commande confirmée est bloquée avant expédition pour vérifier l’adresse.
-
-**Ce qui se passe.** Le blocage porte sur le départ ; l’engagement reste identifié.
-
-**Ce que cela illustre dans FLOW.** Reprendre le traitement et réviser la promesse sont deux décisions différentes.
-
-Source : [Hold Your Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html).
-
-Références : U351, ELM217, CMP126, U363, CMP133, U420, U424, U477, ELM368, CMP189.
-
-### Détails des références
-
-#### Oracle — Order management status
-
-Order Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Plusieurs progressions coexistent autour d’une commande.
-
-**Différences.** Les niveaux de statut Oracle ne constituent pas les six dimensions métier FLOW.
-
-**Position FLOW.** Rendre explicites les transitions autorisées et conserver les engagements et réalisations acquis.
-
-[Order Management Statuses](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fauom/order-management-statuses.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
-
-**Passage.** Order ; Order line ; Fulfillment line ; Task ; Orchestration process
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U353, U354, ELM219, CMP128, U363, CMP133, U420, U424, U477, ELM353, CMP189.
-
-#### Microsoft — Approval / confirmation
-
-Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Préparation, approbation et confirmation produisent des effets différents.
-
-**Différences.** La succession propre aux achats Microsoft n’est pas un cycle universel des Orders.
-
-**Position FLOW.** Rendre explicites les transitions autorisées et conserver les engagements et réalisations acquis.
-
-[Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Approval statuses ; Confirming ; Changes ; Finalized
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U420, U424, U477, ELM427, CMP189.
-
-#### Oracle — Task hold
-
-Order Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une suspension vise une étape déterminée.
-
-**Différences.** La levée d’un blocage ne confirme ni une nouvelle promesse ni la clôture de l’ordre.
-
-**Position FLOW.** Rendre explicites les transitions autorisées et conserver les engagements et réalisations acquis.
-
-[Hold Your Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html) — Oracle Fusion Cloud SCM 26B, consulté le 2026-09-19.
-
-**Passage.** Hold tasks ; Multiple holds ; Release a hold
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U420, U424, U477, ELM368, CMP189.
-
-#### Microsoft — Planned order firming
-
-Planning Optimization · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une proposition devient un achat, transfert ou ordre de fabrication effectif.
-
-**Différences.** Le déclenchement automatique de Microsoft n’impose pas une règle FLOW.
-
-**Position FLOW.** FLOW distingue provenance du besoin, intention planifiée et engagement de l’Order ; affermissement et lancement conservent des responsabilités distinctes.
-
-[Firm planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-21.
-
-**Passage.** Manual firming ; Automatic firming ; Grouping
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM419, CMP189, U560, CMP234.
 
 ## Sources d’inspiration — D13 Fulfillment Network
 
@@ -5407,94 +5262,6 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 Références : U477, ELM415, CMP190, U640.
 
-## Exemples concrets — D03.n Fulfillment Commitment
-
-### Demander 100 vendredi, promettre en deux temps
-
-Une commande demande 100 pièces vendredi.
-
-**Ce qui se passe.** La proposition porte sur 60 vendredi et 40 lundi ; la confirmation établit les quantités et dates engagées selon les autorisations applicables.
-
-**Ce que cela illustre.** La demande, la proposition et l’engagement restent lisibles séparément. Confirmer ne réserve pas automatiquement les ressources.
-
-Références : U441, U443, U436, U462.
-
-### Même promesse, autre ressource
-
-40 pièces étaient affectées à l’arrivage A ; l’arrivage B offre les mêmes conditions de satisfaction.
-
-**Ce qui se passe.** L’affectation peut passer de A à B sans changer l’engagement. Inversement, un retard de transport peut conduire à réexaminer la date promise avec la même ressource.
-
-**Ce que cela illustre.** Fulfillment Commitment et Supply Assignment répondent à deux questions distinctes.
-
-Références : U443, U462.
-
-## Sources d’inspiration — D03.n Fulfillment Commitment
-
-Tenir ce qui est proposé puis réellement promis évite de confondre une option avec un engagement pris. Fulfillment Commitment porte les quantités, dates et conditions de satisfaction ainsi que leurs révisions autorisées.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Schedule an availability result | Résultat retenu après exploration. | Appliquer la réponse choisie. |
-| [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Order confirmations | Quantités déjà confirmées. | Réexaminer les confirmations après changement. |
-| Notre modèle — Fulfillment Commitment | Propositions, confirmations et révisions de satisfaction. | Conserver distincts demande, réponse envisagée et engagement confirmé. |
-
-### Ce que nous en retenons
-
-- Oracle Check Availability sépare le résultat exploré de son application. SAP BOP décrit le réexamen de confirmations déjà données. Ces documents éclairent deux moments de la vie d’une réponse : sa préparation et son évolution.
-- FLOW les réunit sous Fulfillment Commitment, sans refaire les décisions de faisabilité ni d’échéancier. La confirmation documentaire d’une commande chez Microsoft est un usage plus large du mot confirmation ; elle ne suffit pas à définir cette responsabilité.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. Fulfillment Commitment garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
-
-### Illustration FLOW — confirmer une part de la proposition
-
-Une solution propose 60 pièces vendredi et 40 lundi pour une demande de 100.
-
-**Ce qui se passe.** Seules les 60 du vendredi sont confirmées ; les 40 restent proposées.
-
-**Ce que cela illustre dans FLOW.** Le passage de l’exploration à l’application est documenté par Oracle ; FLOW précise ici la part engagée sans réservation implicite.
-
-Source : [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html).
-
-Références : U477, ELM350, CMP191.
-
-### Détails des références
-
-#### Oracle — Schedule an availability result
-
-Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Un résultat affiché n’est pas encore appliqué.
-
-**Différences.** Schedule transmet des données de commande dans Oracle.
-
-**Position FLOW.** FLOW isole l’engagement de satisfaction des autres changements d’Order.
-
-[Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
-
-**Passage.** Examine the Attributes ; Schedule the Order Line
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM350, CMP191.
-
-#### SAP — Order confirmations
-
-SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Les engagements doivent rester lisibles quand la situation évolue.
-
-**Différences.** BOP rassemble contrôle, arbitrage et modification.
-
-**Position FLOW.** FLOW réserve la révision à une modification autorisée.
-
-[Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Cours SAP S/4HANA Cloud Public Edition ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U435, U460, U477, ELM458, CMP191.
-
 ## Sources d’inspiration — BHV016 Adjust Plan
 
 Adjust Plan distingue la préparation d’une révision cohérente du lancement de calcul, de l’autorisation et de l’application. Nom et maille : convention FLOW.
@@ -5820,201 +5587,6 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 **Limite de preuve.** Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
 
 Références : U477, ELM371, CMP190.
-
-## Sources d’inspiration — BHV021 Promise Proposal
-
-Présenter une quantité et une date envisageables permet d’échanger avec le demandeur avant de s’engager. Promise Proposal formalise le résultat des décisions utiles sans confirmer la promesse.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Availability result | Article, quantité et date envisageables. | Explorer sans appliquer avant Schedule. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives) — Delivery alternatives | Options de livraison comparables. | Présenter dates, quantités et transport. |
-| Notre modèle — Promise Proposal | Solution proposée et conditions de satisfaction. | Rendre l’option lisible sans refaire la faisabilité ni l’échéancier. |
-
-### Ce que nous en retenons
-
-- Oracle Check Availability conserve des résultats exploratoires tant que la ligne n’est pas planifiée. Microsoft Delivery alternatives rend comparables plusieurs possibilités. Les deux rendent une option visible avant sa sélection, avec des parcours produits différents.
-- FLOW retient ce bénéfice de dialogue : la proposition présentée doit rester explicitement non confirmée. Elle n’est ni une affectation de ressource ni une réservation.
-
-### Oracle — comparer avant de planifier
-
-L’exemple Oracle oppose l’article demandé, disponible le 10 mars, à un substitut autorisé disponible le 1er mars.
-
-**Ce qui se passe.** La modification reste exploratoire tant que l’utilisateur ne planifie pas la ligne.
-
-**Ce que cela illustre dans FLOW.** FLOW formalise la solution proposée et ses conditions ; il ne déduit pas un accord du seul résultat affiché.
-
-Source : [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html).
-
-Références : U477, ELM350, CMP191.
-
-### Détails des références
-
-#### Oracle — Availability result
-
-Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** La possibilité reste distincte du résultat engagé.
-
-**Différences.** Le parcours Oracle inclut calcul et application.
-
-**Position FLOW.** Promise Proposal présente un résultat déjà établi par les décisions.
-
-[Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
-
-**Passage.** Examine the Attributes ; Schedule the Order Line
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM350, CMP191.
-
-#### Microsoft — Delivery alternatives
-
-Dynamics 365 SCM · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Rendre plusieurs réponses compréhensibles.
-
-**Différences.** L’écran comprend aussi recherche et sélection.
-
-**Position FLOW.** FLOW nomme le moment de formalisation, sans en faire un écran.
-
-[Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives) — Documentation évolutive ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Delivery date control methods ; Delivery alternatives ; Availability information
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM433, CMP191.
-
-## Sources d’inspiration — BHV022 Promise Confirmation
-
-Établir clairement la part promise permet à chacun de savoir sur quoi il peut compter. Promise Confirmation fait passer les quantités et dates autorisées du statut de proposition à celui d’engagement.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Order confirmations | Quantités confirmées ou non. | Établir un résultat de confirmation. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Schedule the order line | Résultat choisi pour application. | Passer de l’exploration à la ligne planifiée. |
-| Notre modèle — Promise Confirmation | Part confirmée et part restant non confirmée. | Confirmer selon les conditions applicables, sans déduire une réservation. |
-
-### Ce que nous en retenons
-
-- SAP BOP distingue les quantités confirmées de celles qui ne le sont pas. Oracle Check Availability distingue les résultats explorés de ceux transmis après planification. Les deux donnent un effet différent à une simple possibilité et à une réponse appliquée.
-- FLOW précise cet effet comme un [engagement](glossary:TER013) de satisfaction. Il ne suppose ni réception du stock, ni départ physique, ni blocage automatique de la ressource.
-
-### Illustration FLOW — 60 confirmées sur 100
-
-Une commande demande 100 pièces, mais les conditions permettent de confirmer seulement 60 vendredi.
-
-**Ce qui se passe.** Les 60 sont promises ; les 40 restantes restent visibles comme non confirmées.
-
-**Ce que cela illustre dans FLOW.** SAP illustre l’existence de parts confirmées et non confirmées ; la règle autorisant cette confirmation relève du cas FLOW.
-
-Source : [Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe).
-
-Références : U477, ELM458, CMP191.
-
-### Détails des références
-
-#### SAP — Order confirmations
-
-SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Distinguer une part servie de la demande encore sans confirmation.
-
-**Différences.** Le traitement SAP choisit et applique en un même parcours.
-
-**Position FLOW.** FLOW ne redécide pas la priorité dans ce comportement.
-
-[Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Cours SAP S/4HANA Cloud Public Edition ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM458, CMP191.
-
-#### Oracle — Schedule the order line
-
-Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Le résultat n’a pas le même effet avant et après application.
-
-**Différences.** Schedule n’est pas une définition universelle de confirmation.
-
-**Position FLOW.** La confirmation FLOW conserve un contrat métier propre.
-
-[Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
-
-**Passage.** Examine the Attributes ; Schedule the Order Line
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM350, CMP191.
-
-## Sources d’inspiration — BHV023 Promise Revision
-
-Réexaminer une promesse quand la situation change permet de traiter l’écart avant qu’il devienne une mauvaise surprise. Promise Revision établit les modifications autorisées et conserve leur effet sur les quantités et dates engagées.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Reconfirmation | Confirmations après changement d’offre. | Réexaminer selon les règles. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Order promising update | Date devenue irréalisable. | Relancer le calcul dans les cas décrits. |
-| Notre modèle — Promise Revision | Engagements affectés par les ressources, demandes ou priorités. | Mobiliser les décisions utiles puis tenir la révision autorisée. |
-
-### Ce que nous en retenons
-
-- SAP BOP peut redistribuer des confirmations après une pénurie ou un nouvel arrivage. Microsoft Order promising décrit un recalcul lorsque l’ancienne date ne peut plus être tenue, mais pas automatiquement lorsqu’une date meilleure devient possible. Les déclencheurs diffèrent.
-- FLOW ne choisit pas une règle automatique universelle : le changement appelle un réexamen et l’application des autorisations. Changer la ressource affectée peut laisser la promesse inchangée, et l’inverse est possible.
-
-### Microsoft — une date devenue intenable
-
-Dans l’exemple Microsoft, une hausse de quantité rend impossible le 20 juillet et reporte la possibilité au 25.
-
-**Ce qui se passe.** Le calcul est relancé ; à l’inverse, une baisse de quantité permettant le 15 ne remplace pas automatiquement le 20.
-
-**Ce que cela illustre dans FLOW.** FLOW sépare évolution des possibilités et décision de réviser l’engagement.
-
-Source : [Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations).
-
-Références : U477, ELM434, CMP191.
-
-### Détails des références
-
-#### SAP — Reconfirmation
-
-SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Un engagement peut devenir inadéquat.
-
-**Différences.** BOP peut aussi déconfirmer et redistribuer.
-
-**Position FLOW.** FLOW rend explicite le périmètre révisable.
-
-[Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Cours SAP S/4HANA Cloud Public Edition ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM458, CMP191.
-
-#### Microsoft — Order promising update
-
-Dynamics 365 SCM / Commerce / Intelligent Order Management · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** La modification d’une demande peut affecter sa promesse.
-
-**Différences.** Le produit impose un déclencheur particulier.
-
-**Position FLOW.** FLOW conserve une règle de révision à préciser selon le contexte.
-
-[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Documentation évolutive, mise à jour affichée le 21 avril 2026, consulté le 2026-09-19.
-
-**Passage.** Order promising ; ATP calculations ; Example ; CTP calculations
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM434, CMP191.
 
 ## Sources d’inspiration — BHV024 Inventory Rebalancing
 
@@ -6881,397 +6453,6 @@ PeopleSoft FSCM · Concept documenté par la source primaire · Recouvrement par
 
 Références : U477, ELM337, CMP190.
 
-## Sources d’inspiration — BHV036 Order Firming
-
-Transformer une proposition d’approvisionnement en ordre ferme. Order Firming nomme ce passage d’engagement sans lui attribuer automatiquement tous les effets d’un gel.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming) — Planned order firming | Proposition planifiée transformée en ordre effectif. | Affermir manuellement ou selon un horizon et des règles. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Freeze / firming time fence | Horizon de protection et horizon d’affermissement. | Paramétrer séparément deux effets du plan. |
-| Notre modèle — Order Firming | Intention planifiée, ordre résultant et restrictions associées. | Expliciter ce que l’affermissement engage et les révisions encore autorisées. |
-
-### Ce que nous en retenons
-
-- Microsoft Firm planned orders décrit le passage à l’ordre ; Master plans distingue le paramétrage de ce passage et celui du gel. Deux documents d’un éditeur éclairent la distinction, sans prouver un vocabulaire universel.
-- FLOW garde Firming pour le changement d’engagement. Les éléments protégés et les exceptions de révision doivent être précisés séparément.
-- La prise en charge d’une proposition issue d’un plan amont reste dans la famille d’Order concernée. Le cycle de vie gouverne les transitions ; l’affermissement n’autorise pas implicitement la réservation, le lancement ou la modification d’une promesse.
-
-### Illustration FLOW — De proposition à achat
-
-Le plan propose 120 pièces pour lundi ; l’acheteur affermit la proposition.
-
-**Ce qui se passe.** Un ordre ferme devient la référence de suivi.
-
-**Ce que cela illustre dans FLOW.** L’affermissement ne prouve pas, à lui seul, l’accord du fournisseur, une réservation ou l’autorisation de lancement ; les règles de révision restent explicites.
-
-Source : [Firm planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming).
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM419, CMP189.
-
-### Détails des références
-
-#### Microsoft — Planned order firming
-
-Planning Optimization · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une proposition devient un achat, transfert ou ordre de fabrication effectif.
-
-**Différences.** Le déclenchement automatique de Microsoft n’impose pas une règle FLOW.
-
-**Position FLOW.** FLOW distingue provenance du besoin, intention planifiée et engagement de l’Order ; affermissement et lancement conservent des responsabilités distinctes.
-
-[Firm planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-21.
-
-**Passage.** Manual firming ; Automatic firming ; Grouping
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM419, CMP189, U560, CMP234.
-
-#### Microsoft — Freeze / firming time fence
-
-Master planning · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Les horizons d’affermissement et de gel ont des effets distincts.
-
-**Différences.** La proximité de la date ne rend pas ces deux décisions équivalentes.
-
-**Position FLOW.** Expliciter ce que l’affermissement engage et les révisions encore autorisées.
-
-[Master plans](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Freeze time fence ; Firming time fence
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U470, U471, ELM303, CMP186, U477, ELM415, CMP189.
-
-## Sources d’inspiration — BHV037 Order Freezing
-
-Protéger ce qui a été décidé contre un nouveau calcul qui le modifierait. Order Freezing précise les éléments gelés et les exceptions permises.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Freeze / firming time fence | Horizon de protection et horizon d’affermissement. | Paramétrer séparément deux effets du plan. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Keep supply for confirmed demand | Chaîne de ressources d’une demande confirmée. | Préserver les liens et certains résultats lors d’un nouveau plan. |
-| Notre modèle — Order Freezing | Quantités, dates ou liens désignés, et conditions de révision. | Définir la portée de la protection ; ne pas la confondre avec une suspension du traitement. |
-
-### Ce que nous en retenons
-
-- Microsoft décrit d’un côté un horizon gelé, de l’autre une préservation liée aux demandes confirmées. La protection est donc temporelle dans un cas et liée à un engagement dans l’autre.
-- FLOW garde un sens plus explicite : dire ce qui ne peut plus être changé par quel recalcul. Une commande gelée peut continuer à être exécutée.
-
-### Illustration FLOW — Conserver une couverture engagée
-
-Une vente confirmée est couverte par un achat identifié ; le prochain plan propose un autre achat.
-
-**Ce qui se passe.** La règle de protection peut conserver la chaîne déjà retenue.
-
-**Ce que cela illustre dans FLOW.** La protection du lien n’est pas automatiquement celle de tous les champs.
-
-Source : [Keep supply for confirmed demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand).
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM418, CMP189.
-
-### Détails des références
-
-#### Microsoft — Freeze / firming time fence
-
-Master planning · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une zone du plan peut être protégée des changements.
-
-**Différences.** L’horizon Freeze de Microsoft est une forme particulière du gel.
-
-**Position FLOW.** Définir la portée de la protection ; ne pas la confondre avec une suspension du traitement.
-
-[Master plans](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Freeze time fence ; Firming time fence
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM415, CMP189.
-
-#### Microsoft — Keep supply for confirmed demand
-
-Planning Optimization · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** La couverture d’une demande confirmée peut être conservée au recalcul.
-
-**Différences.** La fonction protège une chaîne précise et laisse certains ajustements possibles.
-
-**Position FLOW.** Définir la portée de la protection ; ne pas la confondre avec une suspension du traitement.
-
-[Keep supply for confirmed demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** What data is preserved ; Confirmed demand ; Examples
-
-**Limite de preuve.** Fonction conditionnée à la version et à la configuration documentées ; n’établit pas un gel universel de tous les champs.
-
-Références : U346, U347, ELM216, CMP124, U349, CMP125, U350, U424, U477, ELM418, CMP189.
-
-## Sources d’inspiration — BHV038 Order Preparation & Revision
-
-Préparer un changement sans perdre de vue ce qui s’applique encore. Order Preparation & Revision rend distincts le contenu en travail et la version applicable.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Approval / confirmation | Préparation, approbation et engagement d’un achat. | Distinguer les décisions et conserver les versions confirmées. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-changes-after-confirmation) — Confirmed purchase order changes | Réponses fournisseur modifiant quantité ou date. | Évaluer les conséquences avant de retenir le changement. |
-| Notre modèle — Order Preparation & Revision | Contenu initial ou révisé et conditions de sa prise d’effet. | Examiner les conséquences du changement avant application, en préservant le déjà réalisé. |
-
-### Ce que nous en retenons
-
-- Microsoft décrit la gouvernance de l’achat puis un outil de revue des changements fournisseur. Le premier document traite l’autorisation ; le second aide à comprendre les conséquences.
-- FLOW rassemble ces deux besoins pour toute préparation ou révision concernée. Une nouvelle date demandée ne remplace pas silencieusement une date déjà engagée.
-
-### Illustration FLOW — Réviser le reste
-
-Sur 100 pièces commandées, 60 sont déjà reçues ; une nouvelle date est proposée pour les 40 autres.
-
-**Ce qui se passe.** Le changement vise le reliquat et reste identifiable jusqu’à son acceptation.
-
-**Ce que cela illustre dans FLOW.** Les 60 reçues ne redeviennent pas une quantité à négocier.
-
-Source : [Review and accept changes to confirmed purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-changes-after-confirmation).
-
-Références : U477, ELM428, CMP189.
-
-### Détails des références
-
-#### Microsoft — Approval / confirmation
-
-Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une demande de changement ne vaut pas confirmation révisée.
-
-**Différences.** Les étapes d’approbation dépendent du parcours d’achat configuré.
-
-**Position FLOW.** Examiner les conséquences du changement avant application, en préservant le déjà réalisé.
-
-[Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Approval statuses ; Confirming ; Changes ; Finalized
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U424, ELM251, CMP162, U477, ELM427, CMP189.
-
-#### Microsoft — Confirmed purchase order changes
-
-Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Quantités et dates proposées se comparent aux valeurs antérieures.
-
-**Différences.** L’évaluation produit ne remplace pas les règles métier d’acceptation FLOW.
-
-**Position FLOW.** Examiner les conséquences du changement avant application, en préservant le déjà réalisé.
-
-[Review and accept changes to confirmed purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-changes-after-confirmation) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Assess changes ; Review impacted demand ; Accept changes
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U477, ELM428, CMP189.
-
-## Sources d’inspiration — BHV039 Order Release
-
-Autoriser un lancement lorsque ses conditions sont remplies. Order Release peut concerner une quantité, une commande ou un ensemble qui doit partir ensemble.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process) — Release to warehouse | Commandes ou quantités transmises au dépôt. | Autoriser le lancement et former les expéditions. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html) — Shipment set | Contraintes collectives de lignes à satisfaire ensemble. | Coordonner les étapes selon les attributs communs. |
-| Notre modèle — Order Release | Éligibilité au lancement individuelle et collective. | Distinguer autorisation, transmission et exécution effective. |
-
-### Ce que nous en retenons
-
-- Microsoft documente l’autorisation vers le dépôt ; Oracle montre les dépendances d’un ensemble à expédier. Les deux approches combinent un contrôle individuel et des conditions de traitement collectif.
-- FLOW retient cette logique de lancement explicite. Un engagement ou une réservation ne vaut pas, par lui-même, autorisation de démarrer.
-
-### Illustration FLOW — Attendre l’ensemble convenu
-
-Une tenue doit partir complète ; veste et pantalon sont prêts, la chemise manque.
-
-**Ce qui se passe.** L’autorisation du groupe attend la condition de complétude retenue.
-
-**Ce que cela illustre dans FLOW.** L’exemple illustre une règle métier choisie ; il ne l’impose pas à tous les groupes.
-
-Source : [Guidelines for Managing Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html).
-
-Références : U410, ELM245, CMP156, U420, U424, U477, ELM358, CMP189.
-
-### Détails des références
-
-#### Microsoft — Release to warehouse
-
-Warehouse Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** La libération peut porter sur une partie de commande.
-
-**Différences.** Release to warehouse est une destination particulière, pas la définition de toutes les releases.
-
-**Position FLOW.** Distinguer autorisation, transmission et exécution effective.
-
-[Release to warehouse process](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Introduction ; Manual and automatic release ; Partial release
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U420, U424, U477, ELM442, CMP189.
-
-#### Oracle — Shipment set
-
-Order Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Des conditions collectives peuvent retenir plusieurs lignes.
-
-**Différences.** Shipment Set décrit une contrainte de groupe ; sa présence ne prouve pas un départ exécuté.
-
-**Position FLOW.** Distinguer autorisation, transmission et exécution effective.
-
-[Guidelines for Managing Shipment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/guidelines-for-managing-shipment-sets.html) — Oracle Fusion Cloud SCM 26A, consulté le 2026-09-19.
-
-**Passage.** Shipment set attributes ; Shippable and nonshippable lines
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U410, ELM245, CMP156, U420, U424, U477, ELM358, CMP189.
-
-## Sources d’inspiration — BHV040 Order Hold & Resume
-
-Suspendre une étape pour une raison précise puis permettre sa reprise. Order Hold & Resume conserve le motif, la portée du blocage et les conditions de levée.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds) — Order hold | Commande bloquée pour un motif identifié. | Suspendre puis lever le blocage avec les droits requis. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html) — Task hold | Étape d’une vente suspendue. | Cibler la progression et justifier sa reprise. |
-| Notre modèle — Order Hold & Resume | Progression suspendue, motif et reprise autorisée. | Viser l’étape concernée et traiter séparément les effets sur engagements et ressources. |
-
-### Ce que nous en retenons
-
-- Microsoft présente le blocage de commande avant expédition ; Oracle le positionne sur des tâches et autorise plusieurs motifs simultanés. Leur point commun est un empêchement explicite et réversible.
-- FLOW garde cette précision pour expliquer ce qui peut continuer. Lever un blocage ne supprime pas un autre motif encore actif.
-
-### Illustration FLOW — Deux contrôles, deux levées
-
-Une expédition attend une adresse correcte ; la facturation attend un contrôle distinct.
-
-**Ce qui se passe.** La correction d’adresse permet seulement de lever le premier blocage.
-
-**Ce que cela illustre dans FLOW.** Reprise doit toujours préciser la progression libérée.
-
-Source : [Hold Your Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html).
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, U477, ELM368, CMP189.
-
-### Détails des références
-
-#### Microsoft — Order hold
-
-Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Un motif peut empêcher l’expédition jusqu’à contrôle.
-
-**Différences.** Le devenir des réservations est une option distincte du blocage.
-
-**Position FLOW.** Viser l’étape concernée et traiter séparément les effets sur engagements et ressources.
-
-[Manage order holds](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/tasks/manage-order-holds) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Create a hold code ; Apply ; Remove
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, U477, ELM440, CMP189.
-
-#### Oracle — Task hold
-
-Order Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Plusieurs blocages peuvent viser des tâches différentes.
-
-**Différences.** Le mécanisme Oracle ne transforme pas toute la commande en un état unique arrêté.
-
-**Position FLOW.** Viser l’étape concernée et traiter séparément les effets sur engagements et ressources.
-
-[Hold Your Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/sales-order-hold.html) — Oracle Fusion Cloud SCM 26B, consulté le 2026-09-19.
-
-**Passage.** Hold tasks ; Multiple holds ; Release a hold
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, U477, ELM368, CMP189.
-
-## Sources d’inspiration — BHV043 Order Termination
-
-Retirer ce qui n’est plus attendu et fermer le suivi lorsqu’il n’a plus de suite. Order Termination distingue annulation du reliquat et clôture, sans effacer les réalisations.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html) — Order cancellation | Reliquat d’une vente encore annulable. | Conserver les expéditions acquises, retirer ce qui reste. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Approval / confirmation | Préparation, approbation et engagement d’un achat. | Distinguer les décisions et conserver les versions confirmées. |
-| Notre modèle — Order Termination | Quantités retirées, reliquat résolu et fin du suivi opérationnel. | Expliciter les effets encore annulables et préserver ce qui a déjà été réalisé. |
-
-### Ce que nous en retenons
-
-- Oracle montre l’annulation de ce qui reste à expédier ; Microsoft décrit une clôture financière empêchant les modifications. Retrait de demande et fin de traitement ont donc des effets différents.
-- FLOW les rend explicites dans Order Termination. Un reliquat ne disparaît pas sous le seul mot « clôturé » : son devenir doit rester compréhensible.
-
-### Trois unités encore annulables
-
-Oracle illustre dix unités commandées, dont sept déjà expédiées et trois restant sur d’autres lignes.
-
-**Ce qui se passe.** Les trois restantes peuvent être annulées selon le parcours ; les sept expédiées restent réalisées.
-
-**Ce que cela illustre dans FLOW.** La fin de la demande conserve la trace de ce qui a effectivement été servi.
-
-Source : [Cancel Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html).
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, U477, ELM366, CMP189.
-
-### Détails des références
-
-#### Oracle — Order cancellation
-
-Order Management · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** La partie livrée n’est pas annulée comme le reliquat.
-
-**Différences.** Une vente close peut nécessiter un retour plutôt qu’une annulation.
-
-**Position FLOW.** Expliciter les effets encore annulables et préserver ce qui a déjà été réalisé.
-
-[Cancel Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauom/cancel-sales-orders.html) — Oracle Fusion Cloud SCM 26B, consulté le 2026-09-19.
-
-**Passage.** Cancel an order ; Partially shipped lines ; Closed orders
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, U477, ELM366, CMP189.
-
-#### Microsoft — Approval / confirmation
-
-Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Finalized a un effet de clôture propre à l’achat.
-
-**Différences.** La clôture financière Microsoft ne définit pas toutes les fins de suivi FLOW.
-
-**Position FLOW.** Expliciter les effets encore annulables et préserver ce qui a déjà été réalisé.
-
-[Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Approval statuses ; Confirming ; Changes ; Finalized
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U351, ELM217, CMP126, U363, CMP133, U424, ELM251, CMP162, U477, ELM427, CMP189.
-
 ## Sources d’inspiration — BHV044 Order Splitting
 
 Traiter séparément des parties d’une demande tout en conservant son origine. Order Splitting porte la filiation et la cohérence des quantités et engagements.
@@ -7337,71 +6518,6 @@ Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · stat
 
 Références : U470, U471, ELM302, CMP186, U477, ELM435, CMP189.
 
-## Sources d’inspiration — D04.q Order Archiving
-
-Retrouver l’histoire d’une commande lorsqu’elle quitte le travail courant. Order Archiving conserve les versions et liens utiles selon des critères explicites.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so) — Sales order archive | Commandes de vente éligibles hors usage courant. | Sélectionner les commandes entièrement facturées puis conserver leur histoire. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents) — Document archive | Versions des documents de vente et d’achat. | Conserver, consulter et parfois restaurer une version. |
-| Notre modèle — Order Archiving | Commandes éligibles à la conservation historique et consultation ultérieure. | Séparer archivage, clôture et purge ; rendre les traces consultables. |
-
-### Ce que nous en retenons
-
-- Microsoft SCM met l’accent sur les commandes entièrement facturées et leur conservation ; Business Central insiste sur les versions documentaires et leur réutilisation éventuelle.
-- FLOW retient la conservation historique comme responsabilité propre. Archiver ne prouve ni que toute obligation est éteinte ni que le contenu pourra être restauré dans le courant.
-
-### Illustration FLOW — Retrouver une ancienne date
-
-Une commande a changé de date avant sa clôture ; un litige demande la version précédente.
-
-**Ce qui se passe.** L’archive permet de consulter le contenu et les liens conservés.
-
-**Ce que cela illustre dans FLOW.** La consultation de preuve ne modifie pas la commande actuelle.
-
-Source : [Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents).
-
-Références : U352, ELM218, CMP127, U363, CMP133, U420, U438, U477, ELM388, CMP189.
-
-### Détails des références
-
-#### Microsoft — Sales order archive
-
-Dynamics 365 finance and operations · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** La commande peut sortir de l’usage courant tout en restant consultable.
-
-**Différences.** La fonction SCM impose ses propres critères, dont l’exclusion de certains intercompany.
-
-**Position FLOW.** Séparer archivage, clôture et purge ; rendre les traces consultables.
-
-[Archive sales orders](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/sysadmin/archive-so) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Prerequisites ; Long term retention ; History
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U352, ELM218, CMP127, U363, CMP133, U420, U438, U477, ELM401, CMP189.
-
-#### Microsoft — Document archive
-
-Dynamics 365 Business Central · Concept et usage documentés · Recouvrement partiel · statut : proposed
-
-**Points communs.** Plusieurs versions documentaires peuvent être conservées.
-
-**Différences.** Restaurer une version reste conditionnel ; une archive n’est pas toujours un ordre réactivable.
-
-**Position FLOW.** Séparer archivage, clôture et purge ; rendre les traces consultables.
-
-[Archive documents](https://learn.microsoft.com/en-us/dynamics365/business-central/across-how-to-archive-documents) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
-
-**Passage.** Archive sales and purchase documents ; Restore ; Retention policies
-
-**Limite de preuve.** Documentation primaire consultée ; périmètre du produit, sans preuve de déploiement Beaumanoir.
-
-Références : U352, ELM218, CMP127, U363, CMP133, U420, U438, U477, ELM388, CMP189.
-
 ## Sources d’inspiration — D03.o Fulfillment Plan Decision
 
 Choisir ensemble les ressources destinées aux commandes et aux besoins prévisionnels identifiés produit un plan dont les engagements sont compatibles. Fulfillment Plan Decision construit ce scénario avec les décisions spécialisées, en explicitant les besoins non satisfaits.
@@ -7418,7 +6534,7 @@ Choisir ensemble les ressources destinées aux commandes et aux besoins prévisi
 
 - Microsoft IFO produit un fulfillment plan indiquant les sources et quantités retenues. Oracle Backlog Planning répartit l’offre sur le carnet selon des priorités. Microsoft met en avant les sources et contraintes ; Oracle, la replanification des demandes concurrentes.
 - FLOW reprend l’exigence de cohérence du [plan d’affectation](glossary:TER078), sans confondre stratégie et résultat. Décider le plan ne l’applique pas, ne confirme pas la promesse et ne réserve pas les ressources.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. Fulfillment Commitment garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
 - Microsoft Supply Chain Management considère commandes et prévisions dans un master plan et documente leur consommation. Ce plan produit aussi des Planned Orders, au-delà du périmètre FLOW retenu. Les exemples OMS Microsoft IFO et Oracle Backlog Management restent centrés sur les commandes : leur documentation ne démontre pas la couverture des prévisions dans le même optimiseur.
 
 ### Illustration FLOW — éviter deux réponses incompatibles
@@ -7840,7 +6956,7 @@ Passer d’un retour client à un renvoi au fournisseur sans perdre le lien entr
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics-gp/distribution/returnsmanagement) — Return to Vendor from customer return | Retour fournisseur issu du retour client. | Créer le retour fournisseur en conservant le lien au client. |
 | [SAP](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Customer returns | Retour, inspection et suite choisie pour le client. | Relier commande de retour, compensation et documents de suivi. |
-| Notre modèle — Return to Supplier | Lien entre le retour client et la demande Supplier Return. | Transmettre l’attendu et conserver la filiation entre deux commandes de retour distinctes. |
+| Notre modèle — Return to Supplier | Lien entre le retour client et la demande Supplier Return Order. | Transmettre l’attendu et conserver la filiation entre deux commandes de retour distinctes. |
 
 ### Ce que nous en retenons
 
@@ -12071,7 +11187,7 @@ Cent cartons préparés attendent une collecte pour un magasin.
 
 **Ce que cela illustre dans FLOW.** L’engagement de transport est distinct de la promesse commerciale ; aucune réalisation Beaumanoir déduite.
 
-Source : [Order Release](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm).
+Source : [l’autorisation de prise en charge](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm).
 
 Références : U698, ELM684.
 
@@ -12081,7 +11197,7 @@ Références : U698, ELM684.
 
 SAP S/4HANA Transportation Management · Objet ou interface de produit TMS · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont les termes natifs comparés, sans nomenclature universelle revendiquée.
+**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et l’autorisation de prise en charge sont les termes natifs comparés, sans nomenclature universelle revendiquée.
 
 **Pourquoi cette définition.** Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation du transport.
 
@@ -12103,7 +11219,7 @@ Références : ELM683, CMP275, U698.
 
 Oracle Transportation Management · Objet ou interface de produit TMS · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont les termes natifs comparés, sans nomenclature universelle revendiquée.
+**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et l’autorisation de prise en charge sont les termes natifs comparés, sans nomenclature universelle revendiquée.
 
 **Pourquoi cette définition.** Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation du transport.
 
@@ -13624,6 +12740,78 @@ Define product pricing with price lists and price list items · Fonction documen
 **Limite de preuve.** Appui lexical et fonctionnel ; aucune équivalence universelle de capacité ni réalisation installée déduite.
 
 Références : ELM531, CMP281, U723.
+
+## Sources d’inspiration — order-visibility Order Visibility
+
+Order Visibility
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html) — Create, Search, and Apply Actions on Sales Orders | Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande acceptée ne prouve pas son achèvement. | Restituer les informations tenues par les familles d’Orders : demandé, proposé, confirmé, réalisé et reste à satisfaire, avec version, origine et fraîcheur. Lire séparément affermissement, gel, autorisation, suspension et terminaison, à la portée pertinente. Permettre la consultation des historiques sans réactiver les demandes. Consommer les résultats rapprochés par Fulfilment ; ne pas capter directement les événements des exécutants, modifier les Orders, recalculer la promesse ou enregistrer un mouvement de stock. Exemple fictif : une commande de 100 pièces comporte 60 confirmées, dont 40 réalisées ; présenter les 20 confirmées restant à servir et les 40 non confirmées sans double comptage. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Approve and confirm purchase orders | Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas à un statut universel. | Restituer les informations tenues par les familles d’Orders : demandé, proposé, confirmé, réalisé et reste à satisfaire, avec version, origine et fraîcheur. Lire séparément affermissement, gel, autorisation, suspension et terminaison, à la portée pertinente. Permettre la consultation des historiques sans réactiver les demandes. Consommer les résultats rapprochés par Fulfilment ; ne pas capter directement les événements des exécutants, modifier les Orders, recalculer la promesse ou enregistrer un mouvement de stock. Exemple fictif : une commande de 100 pièces comporte 60 confirmées, dont 40 réalisées ; présenter les 20 confirmées restant à servir et les 40 non confirmées sans double comptage. |
+| Notre modèle — Order Visibility | Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet. | Restituer les informations tenues par les familles d’Orders : demandé, proposé, confirmé, réalisé et reste à satisfaire, avec version, origine et fraîcheur. Lire séparément affermissement, gel, autorisation, suspension et terminaison, à la portée pertinente. Permettre la consultation des historiques sans réactiver les demandes. Consommer les résultats rapprochés par Fulfilment ; ne pas capter directement les événements des exécutants, modifier les Orders, recalculer la promesse ou enregistrer un mouvement de stock. Exemple fictif : une commande de 100 pièces comporte 60 confirmées, dont 40 réalisées ; présenter les 20 confirmées restant à servir et les 40 non confirmées sans double comptage. |
+
+### Ce que nous en retenons
+
+- Distinguer visibilité du carnet et mutation des Orders.
+
+### Illustration FLOW — satisfaction partielle
+
+100 pièces demandées, 60 confirmées et 40 réalisées.
+
+**Ce qui se passe.** Lire séparément le confirmé restant à servir et la part non confirmée.
+
+**Ce que cela illustre dans FLOW.** L’état consulté ne crée pas un nouvel engagement.
+
+Source : [Create, Search, and Apply Actions on Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html).
+
+Références : U725, ELM724.
+
+### Détails des références
+
+#### Oracle — Create, Search, and Apply Actions on Sales Orders
+
+Create, Search, and Apply Actions on Sales Orders · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Order Visibility explicite la restitution de connaissance du carnet.
+
+**Pourquoi cette définition.** Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet.
+
+**Points communs.** Les actions de révision, annulation, suspension et planification portent les Orders ou leurs lignes ; une demande acceptée ne prouve pas son achèvement.
+
+**Différences.** Les produits combinent consultation et mutations ; FLOW distingue la visibilité des capacités portant les Orders.
+
+**Position FLOW.** Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet.
+
+[Create, Search, and Apply Actions on Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/search-and-apply-actions-on-sales-orders.html) — 26B, consulté le 2026-09-24.
+
+**Passage.** Apply actions / Holds / Cancel / Schedule
+
+**Limite de preuve.** Appui fonctionnel, pas taxonomie universelle ni preuve de réalisation Beaumanoir.
+
+Références : ELM724, CMP283, U725.
+
+#### Microsoft — Approve and confirm purchase orders
+
+Approve and confirm purchase orders · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Order Visibility explicite la restitution de connaissance du carnet.
+
+**Pourquoi cette définition.** Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet.
+
+**Points communs.** Approbation et confirmation sont distinguées dans la prise en charge des achats ; les états ne se réduisent pas à un statut universel.
+
+**Différences.** Les produits combinent consultation et mutations ; FLOW distingue la visibilité des capacités portant les Orders.
+
+**Position FLOW.** Restituer une vue cohérente des demandes, engagements, réalisations imputées et restes à satisfaire, par Order et à travers le carnet.
+
+[Approve and confirm purchase orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/purchase-order-approval-confirmation) — Page évolutive, consulté le 2026-09-24.
+
+**Passage.** Approval and confirmation
+
+**Limite de preuve.** Appui fonctionnel, pas taxonomie universelle ni preuve de réalisation Beaumanoir.
+
+Références : ELM725, CMP283, U725.
 
 ## Sources d’inspiration — Capacité métier
 
@@ -21644,7 +20832,7 @@ Conditions de réalisation retenues comme engagement du fournisseur pour une par
 **Usages par les capacités :**
 
 - Purchase Order — maintient : Distingue l’attendu initial des conditions fournisseur effectivement acceptées.
-- Fulfillment Commitment — utilise : Prend en compte les conditions fournisseur pertinentes pour examiner la promesse de satisfaction, sans copie automatique.
+- Sales Order — utilise : Prend en compte les conditions fournisseur pertinentes pour examiner la promesse de satisfaction, sans copie automatique.
 
 **Exemples :**
 
@@ -21996,7 +21184,7 @@ Conditions de satisfaction proposées pour une partie identifiée d’une demand
 
 **Usages par les capacités :**
 
-- Fulfillment Commitment — établit et révise : Promise Proposal BHV021 formalise ce qui peut être proposé sans refaire la décision d’échéancier.
+- Sales Order — établit et révise : la proposition de satisfaction BHV021 formalise ce qui peut être proposé sans refaire la décision d’échéancier.
 - Delivery Schedule Decision — détermine les conditions utilisées : Delivery Schedule Decision choisit la distribution quantité–date qui alimente la proposition ; ne la confirme pas pour autant.
 
 **Exemples :**
@@ -22063,7 +21251,7 @@ Conditions de satisfaction confirmées pour une partie identifiée d’une deman
 
 **Usages par les capacités :**
 
-- Fulfillment Commitment — confirme et fait évoluer : Promise Confirmation BHV022 et Promise Revision BHV023 maintiennent les conditions engagées.
+- Sales Order — confirme et fait évoluer : la confirmation de l’engagement BHV022 et la révision de l’engagement BHV023 maintiennent les conditions engagées.
 
 **Exemples :**
 

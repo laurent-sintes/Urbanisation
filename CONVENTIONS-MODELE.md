@@ -324,3 +324,8 @@ U718 précise les trois domaines fournisseurs : Commerce, Finance et Design. Les
 ## Tarifs et noms des référentiels — U723
 
 Price Book est le huitième sujet Master Data : tarifs de produits et services, reçus par l’ingestion commune et exposés par Price Book Visibility. Product Catalog et Service Catalog organisent l’offre ; Assortment sélectionne les produits. Catalog n’est pas un suffixe générique de référentiel ; conserver Price Book. Les substitutions et trajets mobilisent les évaluations économiques sans transfert de maîtrise commerciale ni révision automatique du prix engagé. Le calcul tarifaire peut être externe ; Order Management porte les modifications autorisées des engagements.
+
+
+## Order Management — U725
+
+Sept familles Action : Sales Order, Purchase Order, Transfer Order, Return Order, Supplier Return Order, Consignment Fill-up Order et Consignment Pick-up Order. Order Structuring conserve filiation et ensembles ; Order Visibility Knowledge restitue la connaissance du carnet. Lifecycle, Fulfillment Commitment, Archiving et leurs neuf Behaviors transverses sont retirés comme nœuds ; leurs responsabilités restent dans le contrat du sous-domaine et les familles. Promising calcule, Matching arbitre, les Orders portent leurs engagements. Les identifiants retirés ne sont pas réutilisables.

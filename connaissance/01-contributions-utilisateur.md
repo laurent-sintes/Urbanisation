@@ -17804,3 +17804,55 @@ Je valide
 **contexte et portée**
 
 Accord cumulatif U709 sur U719–U722 : Price Book pour les tarifs de produits et services, Price Book Visibility dans Master Data et ingestion commune ; utilisation pour évaluer substitutions et trajets, distinction tarif/prix calculé/prix engagé, maîtrise commerciale externe. Conserver Product Catalog, Service Catalog et Assortment ; Catalog qualifie une offre structurée sans devenir un suffixe systématique. Aucune règle particulière de refacturation ni attribution automatique à un domaine source ; détails rédigés après accord proposés.
+
+
+## U724
+
+**id**
+
+U724
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Auditer Order Management et ses responsabilités transverses
+
+**texte**
+
+Sous domaine Order Management :
+
+- Order Lifecycle Management est inutile car on a listé tous les Orders, c'est largement suffisant, non ?
+- Fullfillment Commitment : je ne comprends pas ce que c'est. Ce n'est pas traité ailleurs ?
+- Les order de consignation sont bizarrement d'une autre type que les autres order.
+
+D'un point de vue général, auditer ce sous domaine.
+
+**contexte et portée**
+
+Demande d’audit général : utilité de Lifecycle, compréhension et recouvrements de Fulfillment Commitment, incohérence du type des Consignment Orders. Instruire une proposition cohérente avec les familles de Service Orders et préserver les responsabilités en cas de retrait. Aucun retrait ni retypage adopté implicitement.
+
+
+## U725
+
+**id**
+
+U725
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la simplification complète d’Order Management
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite.

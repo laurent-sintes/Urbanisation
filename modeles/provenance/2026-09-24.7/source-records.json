@@ -16833,6 +16833,126 @@
       "line": 17491,
       "content_sha256": "29e107f70e0ed49b13c11d127581a270f2a30af0fb8dfe3b0502a614070ba67c",
       "captured_text": "## U711\n\n**id**\n\nU711\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète de lisibilité du modèle\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur les cinq points U710 : rôle dominant des sous-domaines et présentation Atlas, suffixe Policy, zéro ou au moins deux comportements différenciants, intégration de Repacking et Labeling / Relabeling aux capacités, retrait de Service Order Lifecycle avec préservation des responsabilités, catégories ciblées dans Matching et Fulfilment. N’adopte pas les détails éditoriaux rédigés ensuite ; aucune publication implicite."
+    },
+    {
+      "id": "CMP280",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp280",
+      "line": 2691,
+      "content_sha256": "d492fe9036dbec119f96ca616a5d786e14dfe55ae995c01b8e743e59646dcae3",
+      "captured_text": "## CMP280\n\nU712, étude Codex du 24 septembre 2026. SAP MDI (ELM710) documente producteurs, consommateurs et objets ; Microsoft (ELM711/712) les frontières sémantiques et contrats de domaines. Appui au type Integration et à l’axe de provenance, pas preuve d’une taxonomie universelle de capacités. Oracle ELM713/714 distingue réception d’événements, corrélation et exploitation ; deux documents du même éditeur ne valent pas consensus. Proposer Integration pour les ingestions ; conserver la distinction avec les états métier produits par Inventory Tracking et Operations Tracking. Regrouper Master Data Ingestion par domaines sources est cohérent avec U514/U515, en conservant les sept sujets et sans inventer les fournisseurs. Échanges est une catégorie visuelle locale. Bénéfice : rendre les frontières et contrats visibles ; compromis : ne pas déplacer toutes les responsabilités alimentées par événements vers un type technique. Proposition dans integration-type-U712.yaml ; non appliquée."
+    },
+    {
+      "id": "CMP281",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp281",
+      "line": 2696,
+      "content_sha256": "4cd5f61dc926521807c22ef3848aba7475adf8e24e476fc6048680af7299547b",
+      "captured_text": "## CMP281\n\nU719 — Codex, 24 septembre 2026. Réexamen de U516/CMP210 sur le backlog courant. ELM530 Salesforce ProductPriceModel reconsulté : prix contextualisé selon site, client, date, devise et quantité ; ELM715/716 Microsoft distinguent tarification et assortiment. Le couple assortiment/tarif contribue au calcul sans suffire universellement. ELM717 Oracle Fusion étaye la substitution en pénurie ; ELM718 JD Edwards World illustre historiquement le choix du prix original ou substitut, sans extrapolation à Fusion. Deux documents par comparaison : ELM530/715 pour Price Book et calcul, ELM716/715 pour assortiment/prix, ELM717/718 pour substitution (un seul éditeur, pas consensus).\n\nRecommandation : référentiel Price Book et capacité Price Book Visibility dans Master Data, alimentation via l’ingestion commune depuis Commerce sous réserve du contrat réel ; séparer les tarifs des prix actuellement mélangés dans Product Catalog. L’autorité de pricing commercial reste extérieure ; Supply obtient une évaluation pour ses alternatives, arbitre les effets économiques et Order Management porte les changements autorisés des engagements. Prix payé, prix de référence, coût et marge restent distincts. Pas de nouvelle capacité Pricing générique ni de Policy autonome sans instruction complémentaire. Proposition, aucune modification canonique. [Proposition structurée](../modeles/backlog/price-book-boundary-U719.yaml).\n\n\nComplément CMP281 — U720 : Oracle Rate Inquiry (ELM719) expose itinéraires et coûts, Microsoft Landed Cost (ELM720) estime et affecte les coûts aux marchandises. Recouvrement partiel : évaluer économiquement les alternatives Supply. Limite : aucun de ces documents ne prouve qu’un surcoût de trajet augmente automatiquement le prix engagé avec le client. Recommandation : articuler tarifs produits et tarifs de prestations distincts, évaluation des options et autorité commerciale externe. Pas de Price Book unique imposé pour produits et transport.\n\n\nComplément CMP281 — U721 : ELM721 Salesforce et ELM531 Microsoft étayent un même concept de tarif pour produits et services. Réviser la proposition : Price Book est un sujet tarifaire commun, avec des livres distincts selon contexte et autorité ; Product Catalog et Service Catalog décrivent leurs offres respectives et référencent les tarifs. Distinguer tarifs produits/services reste utile, mais ne justifie pas automatiquement deux types de référentiels. Prix fixe, unité, tranche et contexte d’application ne constituent pas à eux seuls le prix final de la commande. Proposition non encore appliquée."
+    },
+    {
+      "id": "CMP282",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp282",
+      "line": 2709,
+      "content_sha256": "6eee168821abd684869fb1c5cb12b7aceb2c5d2045ad81e0861622286d43971c",
+      "captured_text": "## CMP282\n\nU722 — Codex, 24 septembre 2026. Comparaison des noms du backlog et du Price Book proposé U719–U721. ELM722 Microsoft et ELM723 Salesforce distinguent catalogue et composantes tarifaires ; ELM716 conserve Assortment, ELM721/531 attestent Price Book / Price List pour produits et services. Les vocabulaires se recouvrent parfois : Salesforce décrit aussi le Price Book comme un catalogue de produits et services tarifés. On ne peut en déduire une norme « toute offre doit porter Catalog ».\n\nRecommandation FLOW : Catalog nomme une collection structurée de produits ou services proposés, consultable pour identifier ce qui peut être demandé ; conserver Product Catalog et Service Catalog. Assortment nomme la sélection affectée à un périmètre ; Price Book nomme l’ensemble tarifaire. Ne pas ajouter Catalog à tous les référentiels ni employer Price Book Catalog pour un livre tarifaire : cela pourrait désigner une collection de livres, autre objet. Bénéfice : préciser le rôle sans uniformisation artificielle ; compromis : frontière offre/sélection/tarif à expliciter malgré les recouvrements éditeurs. Deux documents primaires pour catalogue/tarif ; appuis antérieurs pour les notions conservées. Proposition non appliquée."
+    },
+    {
+      "id": "ELM710",
+      "path": "marche/elements.md",
+      "anchor": "elm710",
+      "line": 5547,
+      "content_sha256": "d0ead00288025598bf2842cf5d6eb08122b8e1cc93d258149da9f8cec808fd3c",
+      "captured_text": "### ELM710\n\nMKT13 — SAP, [SAP Master Data Integration with SAP Field Service and Asset Management](https://help.sap.com/docs/SAP_FIELD_SERVICE_MANAGEMENT/703cab4eaf67401293a27fa1b63f4edb/mdi-introduction.html). Page évolutive, édition non indiquée. Consulté le 2026-09-24, passage indexé : Overview / providers and consumers. Identifiant natif non établi. Reformulation : Représentation des objets maîtres de différentes origines et distribution vers différents consommateurs. Ne prescrit pas un Behavior FLOW par fournisseur. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712."
+    },
+    {
+      "id": "ELM711",
+      "path": "marche/elements.md",
+      "anchor": "elm711",
+      "line": 5552,
+      "content_sha256": "b91295e7cef8a156d5ffe121d84b906955e6deae14afd92f45fd3cf39474c0a5",
+      "captured_text": "### ELM711\n\nMKT50 — Microsoft, [Use domain analysis to model microservices](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis). Page évolutive, édition non indiquée. Consulté le 2026-09-24, passage indexé : Context maps and integration patterns. Identifiant natif non établi. Reformulation : Les domaines négocient des contrats ; une carte de contextes explicite les points d’intégration et les responsabilités. Limites : Synthèse de documentation primaire ; nomenclature FLOW proposée, aucune preuve Beaumanoir. CMP280, U712."
+    },
+    {
+      "id": "ELM721",
+      "path": "marche/elements.md",
+      "anchor": "elm721",
+      "line": 5602,
+      "content_sha256": "98f15d0071d1fb7e2139bad6db073cf13b4c44e017b3477525e1030a78859ed3",
+      "captured_text": "### ELM721\n\nMKT73 — Salesforce, [Define Prices in Price Books](https://help.salesforce.com/s/articleView?id=ind.pricing_define_prices_in_price_books.htm&language=en_US&type=5). Page évolutive Revenue Management, consultée le 24 septembre 2026, introduction. Le Price Book porte des prix de vente de produits et services. Ne démontre pas la couverture de toutes les règles complexes de transport par une ligne de tarif simple. ELM531 Microsoft Define product pricing reconsulté le même jour : tarifs de produits et services, unités et méthodes. CMP281, U721."
+    },
+    {
+      "id": "U713",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u713",
+      "line": 17545,
+      "content_sha256": "f71032e5aceeb2020e93d448e029eec1911cab71fb306b254538ae10fd0254d2",
+      "captured_text": "## U713\n\n**id**\n\nU713\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer Tracking et Visibility\n\n**texte**\n\nTout ce qui est tracking doit être de type \"intégration\"\nCe sont les capacités Visibility qui sont de type knowledge.\n\n**contexte et portée**\n\nInstruction explicite : Tracking de type Integration, Visibility de type Knowledge. Remplace la recommandation contraire de Codex dans la proposition U712. Les descriptions doivent respecter cette frontière."
+    },
+    {
+      "id": "U714",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u714",
+      "line": 17569,
+      "content_sha256": "bde9ae3a115f06aefa8e6339798d142cb810510677338a49b0f556cf443976b2",
+      "captured_text": "## U714\n\n**id**\n\nU714\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPlan Visibility et ingestion depuis PLAN\n\n**texte**\n\nSous domaine Plans :\n\n- renommer Plans en Plan Visibility\n- séparer clairement les plan en Supply Plan et Demand Plan\n- avoir une capa d'ingestion sur le domaine PLAN (non référencé mais existant : l'APS)\n\n**contexte et portée**\n\nRenommage explicite du sous-domaine et séparation des deux sujets de visibilité ; une ingestion commune depuis le domaine externe PLAN, porté par l’APS, sans créer ce domaine dans la cartographie. Les noms détaillés des deux capacités de visibilité et leurs descriptions sont une mise en œuvre proposée de cette instruction."
+    },
+    {
+      "id": "U717",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u717",
+      "line": 17642,
+      "content_sha256": "36d74b46e916291f775440a0bf0f09ec8457274a09edc3af561978fe86d60100",
+      "captured_text": "## U717\n\n**id**\n\nU717\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète Intégration et Plan Visibility\n\n**texte**\n\nje valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur U712–U716 : Integration pour ingestion et Tracking, Knowledge pour Visibility ; chaque Tracking alimente une Visibility identifiée, plusieurs Tracking pouvant partager une vue. Ingestion Master Data commune, comportements par domaines fournisseurs lorsqu’ils sont identifiés, sept sujets référentiels conservés. Catégorie Intégration remplaçant Échanges, employée sélectivement. Plan Visibility distingue Supply Plan et Demand Plan et reçoit les deux par Plan Ingestion depuis PLAN/APS externe. Les descriptions et migrations détaillées écrites après cet accord restent proposées ; aucune release implicite."
+    },
+    {
+      "id": "U718",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u718",
+      "line": 17665,
+      "content_sha256": "951aca65d18cea56293f37e26870133a9a13ec1ae6a06c0790ca3bdce67abcb1",
+      "captured_text": "## U718\n\n**id**\n\nU718\n\n**date**\n\n2026-09-24\n\n**titre**\n\nIdentifier les domaines sources Master Data\n\n**texte**\n\nOn va partir simple : Commerce, Finance, Design.\n\n**contexte et portée**\n\nRéponse à la demande des domaines sources pour les comportements de Master Data Ingestion. Retenir Commerce, Finance et Design ; aucune répartition implicite des sept référentiels, des applications ou de leur autorité entre ces domaines."
+    },
+    {
+      "id": "U719",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u719",
+      "line": 17688,
+      "content_sha256": "dcb646c2842fc2984eeea1e5888f17dfb0af0904f24c1b639eaf10a9120db9f4",
+      "captured_text": "## U719\n\n**id**\n\nU719\n\n**date**\n\n2026-09-24\n\n**titre**\n\nRéexaminer Price Book et la frontière du pricing pour les substitutions\n\n**texte**\n\nDans la master data, on n'avait pas parlé de PriceBook Catalog à une époque ? Regarde la marché mais il me semble que l'association de l'assortiment à un pricebook permet à des capacités de calculer le prix d'un article d'une commande.\n\nNéanmoins, je me demande si c'est le de la supply chain management / orchestration de gérer les prix...\n\nJe pense que oui pour un cas : le remplacement d'un article par un autre en cas de pénurie.\n\nQu'en penses-tu ?\n\n**contexte et portée**\n\nDemande de recherche marché et d’avis, en continuité U516/CMP210. Examiner tarif, assortiment, calcul du prix de commande et substitution en pénurie. Aucun nouveau référentiel ou transfert de maîtrise tarifaire adopté par cette question."
+    },
+    {
+      "id": "U720",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u720",
+      "line": 17717,
+      "content_sha256": "629b65b89a22ab36acb8ea04a9f21858ebf4af7bb645688db709fc7c5507bc09",
+      "captured_text": "## U720\n\n**id**\n\nU720\n\n**date**\n\n2026-09-24\n\n**titre**\n\nTenir compte du trajet de transport dans le prix\n\n**texte**\n\nSelon le trajet du transport, le prix peut évoluer également.\n\n**contexte et portée**\n\nComplète U719 : les variantes de trajet peuvent modifier le prix. Distinguer coût logistique, prix de prestation, frais facturés et prix rendu commercial ; aucun transfert implicite de maîtrise tarifaire ni changement automatique du prix engagé."
+    },
+    {
+      "id": "U721",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u721",
+      "line": 17740,
+      "content_sha256": "19d7e075e30cc7de868fcd4eddd63f96b3a186b6b154f74965115be3a8bad63c",
+      "captured_text": "## U721\n\n**id**\n\nU721\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉtendre Price Book aux produits et services\n\n**texte**\n\nLe price book gère les prix des produits mais aussi des services du coup, non ?\n\n**contexte et portée**\n\nClarification U719/U720 : le concept Price Book peut couvrir produits et services, avec plusieurs livres tarifaires et conditions distinctes. Ne pas confondre un concept commun avec un tarif unique ni avec le calcul transactionnel ou la maîtrise commerciale."
+    },
+    {
+      "id": "U722",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u722",
+      "line": 17763,
+      "content_sha256": "d3a49423cd6c7b8481077949ea54944e78b52249185e15801d5ec7c01881e837",
+      "captured_text": "## U722\n\n**id**\n\nU722\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClarifier l’usage de Catalog dans les noms métier\n\n**texte**\n\nParfois on met \"Catalog\", parfois non. Quand c'est une offre, on met catalog ou il n'y a pas de raison ? Que dit le marché ?\n\n**contexte et portée**\n\nDemande de comparaison lexicale et de convention pour Product Catalog, Service Catalog, Assortment et Price Book. Aucun renommage ni nouveau référentiel adopté implicitement."
+    },
+    {
+      "id": "U723",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u723",
+      "line": 17786,
+      "content_sha256": "498521fe419adfa347e2673f9618468144fc8874bf6f48d61c7e270f8f7eacdb",
+      "captured_text": "## U723\n\n**id**\n\nU723\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la proposition complète Price Book et sa frontière\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U709 sur U719–U722 : Price Book pour les tarifs de produits et services, Price Book Visibility dans Master Data et ingestion commune ; utilisation pour évaluer substitutions et trajets, distinction tarif/prix calculé/prix engagé, maîtrise commerciale externe. Conserver Product Catalog, Service Catalog et Assortment ; Catalog qualifie une offre structurée sans devenir un suffixe systématique. Aucune règle particulière de refacturation ni attribution automatique à un domaine source ; détails rédigés après accord proposés."
     }
   ]
 }
